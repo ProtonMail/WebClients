@@ -1111,8 +1111,6 @@ const SubscriptionContainerInner = ({
         </>
     );
 
-    const { currentPlan, hasPlanCustomizer } = getHasPlanCustomizer({ plansMap, planIDs: model.planIDs });
-
     const [optimisticPlanIDs, setOptimisticPlanIDs] = useState<PlanIDs | null>(null);
     const optimisticPlanIDsRef = useRef<any | undefined>();
 
@@ -1199,7 +1197,7 @@ const SubscriptionContainerInner = ({
                                                 ? couponConfig?.checkoutSubtitle()
                                                 : c('Label').t`Subscription options`}
                                         </h2>
-                                        {hasPlanCustomizer && currentPlan && (
+                                        {getHasPlanCustomizer(model.planIDs) && (
                                             <ProtonPlanCustomizer
                                                 scribeAddonEnabled={scribeEnabled.paymentsEnabled}
                                                 lumoAddonEnabled={lumoAddonEnabled}
@@ -1207,8 +1205,7 @@ const SubscriptionContainerInner = ({
                                                 currency={model.currency}
                                                 cycle={model.cycle}
                                                 plansMap={plansMap}
-                                                currentPlan={currentPlan}
-                                                planIDs={optimisticPlanIDs ?? model.planIDs}
+                                                selectedPlanIDs={optimisticPlanIDs ?? model.planIDs}
                                                 onChangePlanIDs={handleOptimisticPlanIDs}
                                                 latestSubscription={latestSubscription}
                                                 allowedAddonTypes={allowedAddonTypes}

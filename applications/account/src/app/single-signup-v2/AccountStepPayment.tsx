@@ -364,11 +364,7 @@ const AccountStepPayment = ({
             >
                 {(() => {
                     const planIDs = options.planIDs;
-                    const { hasPlanCustomizer, currentPlan } = getHasPlanCustomizer({
-                        plansMap: model.plansMap,
-                        planIDs,
-                    });
-                    if (!hasPlanCustomizer || !currentPlan) {
+                    if (!getHasPlanCustomizer(planIDs)) {
                         return null;
                     }
                     return (
@@ -376,11 +372,10 @@ const AccountStepPayment = ({
                             separator
                             mode="signup"
                             loading={false}
-                            currentPlan={currentPlan}
                             currency={options.currency}
                             cycle={options.cycle}
                             plansMap={model.plansMap}
-                            planIDs={planIDs}
+                            selectedPlanIDs={planIDs}
                             onChangePlanIDs={(planIDs) => handleOptimistic({ planIDs })}
                             audience={isB2BPlan ? Audience.B2B : Audience.B2C}
                             scribeAddonEnabled

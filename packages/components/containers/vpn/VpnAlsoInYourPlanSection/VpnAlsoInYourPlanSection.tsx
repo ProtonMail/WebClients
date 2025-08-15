@@ -35,7 +35,7 @@ import {
     getPlanByName,
     getPlansMap,
     getPricePerCycle,
-    getSubscriptionPlanTitleAndName,
+    getSubscriptionPlanTitle,
     isManagedExternally,
 } from '@proton/payments';
 import { getExploreText } from '@proton/shared/lib/apps/i18n';
@@ -188,7 +188,7 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
 
     let space = getSpace(user);
 
-    const { planTitle, planName } = getSubscriptionPlanTitleAndName(user, subscription);
+    const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription);
     const loading = loadingSubscription || loadingPlans;
 
     if (!subscription || !plans || loading || !planName) {

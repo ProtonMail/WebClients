@@ -295,22 +295,18 @@ const PaymentStep = ({
                         })}
                     </div>
                     {(() => {
-                        const { hasPlanCustomizer, currentPlan } = getHasPlanCustomizer({
-                            plansMap,
-                            planIDs: subscriptionData.planIDs,
-                        });
-                        if (!hasPlanCustomizer || !currentPlan) {
+                        if (!getHasPlanCustomizer(subscriptionData.planIDs)) {
                             return null;
                         }
+
                         return (
                             <ProtonPlanCustomizer
                                 mode="signup"
-                                currentPlan={currentPlan}
                                 loading={false}
                                 currency={subscriptionData.currency}
                                 cycle={subscriptionData.cycle}
                                 plansMap={plansMap}
-                                planIDs={optimisticPlanIDs ?? subscriptionData.planIDs}
+                                selectedPlanIDs={optimisticPlanIDs ?? subscriptionData.planIDs}
                                 onChangePlanIDs={handleOptimisticPlanIDs}
                                 className="pb-7 mb-8"
                                 scribeAddonEnabled
