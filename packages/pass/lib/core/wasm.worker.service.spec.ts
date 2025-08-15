@@ -5,7 +5,7 @@ import { wasmWorkerServiceFactory } from './wasm.worker.service';
 
 type TestMethods = {
     add: { args: [number, number]; return: number };
-    sendBuffer: { args: [Uint8Array]; return: Uint8Array };
+    sendBuffer: { args: [Uint8Array<ArrayBuffer>]; return: Uint8Array<ArrayBuffer> };
 };
 
 const createMessagePort = (): MessagePort =>

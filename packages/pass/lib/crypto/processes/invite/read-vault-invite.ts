@@ -17,7 +17,7 @@ export const readVaultInviteContent = async ({
     encryptedVaultContent,
     invitedPrivateKey,
     inviterPublicKeys,
-}: ReadVaultInviteContentProcessParams): Promise<Uint8Array> => {
+}: ReadVaultInviteContentProcessParams): Promise<Uint8Array<ArrayBuffer>> => {
     const openedVaultKey = await openInviteKey({ inviteKey, invitedPrivateKey, inviterPublicKeys });
     const vaultKey = await importSymmetricKey(openedVaultKey);
 

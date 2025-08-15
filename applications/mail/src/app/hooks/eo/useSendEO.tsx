@@ -64,7 +64,7 @@ export const useSendEO = ({ message, encryptionKey, outsideKey }: Props) => {
         if (outsideKey && encryptionKey) {
             const decryptedAttachment = await getDecryptedAttachment(attachment, undefined, outsideKey, api);
 
-            const blobURL = createBlob(attachment, decryptedAttachment.data as Uint8Array);
+            const blobURL = createBlob(attachment, decryptedAttachment.data as Uint8Array<ArrayBuffer>);
 
             const blob = await blobURLtoBlob(blobURL);
 

@@ -5,8 +5,8 @@ import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 import { useHotkeys } from '../../hooks/useHotkeys';
 
 interface Props {
-    contents?: Uint8Array[];
-    onNewContents?: (content: Uint8Array[]) => void;
+    contents?: Uint8Array<ArrayBuffer>[];
+    onNewContents?: (content: Uint8Array<ArrayBuffer>[]) => void;
 }
 
 const TextPreview = ({ contents = [], onNewContents }: Props) => {

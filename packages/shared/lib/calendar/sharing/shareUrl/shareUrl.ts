@@ -60,7 +60,7 @@ export const generateEncryptedPassphrase = ({
     passphraseKey,
     passphrase,
 }: {
-    passphraseKey: Uint8Array;
+    passphraseKey: Uint8Array<ArrayBuffer>;
     passphrase: string;
 }) => encodeBase64(xorEncryptDecrypt({ key: uint8ArrayToString(passphraseKey), data: decodeBase64(passphrase) }));
 
@@ -123,7 +123,7 @@ export const buildLink = ({
 }: {
     urlID: string;
     accessLevel: ACCESS_LEVEL;
-    passphraseKey: Nullable<Uint8Array>;
+    passphraseKey: Nullable<Uint8Array<ArrayBuffer>>;
     cacheKey: string;
 }) => {
     // calendar.proton.me must be hardcoded here as using getAppHref would produce links that wouldn't work

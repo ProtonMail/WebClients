@@ -8,7 +8,7 @@ import { Doc, encodeStateAsUpdate } from 'yjs'
  * Converts Lexical JSON state to YJS delta-based state while removing comment marks from the resulting YJS state.
  */
 export class EditorYjsExporter extends EditorExporter {
-  async export(): Promise<Uint8Array> {
+  async export(): Promise<Uint8Array<ArrayBuffer>> {
     const provider: Provider = {
       awareness: {
         getLocalState: () => null,

@@ -15,7 +15,7 @@ import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 
 export const getVerificationStatusFromKeys = (
-    decryptedAttachment: WorkerDecryptionResult<Uint8Array>,
+    decryptedAttachment: WorkerDecryptionResult<Uint8Array<ArrayBuffer>>,
     verifyingKeys: PublicKeyReference[]
 ): MAIL_VERIFICATION_STATUS => {
     return verifyingKeys.length > 0
@@ -30,7 +30,7 @@ export const decryptAndVerify = async (
     signature?: string,
     publicKeys?: PublicKeyReference | PublicKeyReference[],
     encSignature?: string
-): Promise<WorkerDecryptionResult<Uint8Array>> => {
+): Promise<WorkerDecryptionResult<Uint8Array<ArrayBuffer>>> => {
     const encryptedBinary = new Uint8Array(encryptedBinaryBuffer);
 
     try {

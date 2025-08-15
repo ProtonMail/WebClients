@@ -13,7 +13,7 @@ import { getAndVerifyAttachment } from './attachmentLoader';
 
 export interface Download {
     attachment: Attachment;
-    data: Uint8Array;
+    data: Uint8Array<ArrayBuffer>;
     isError?: boolean;
     verificationStatus: MAIL_VERIFICATION_STATUS;
 }
@@ -42,7 +42,7 @@ export const formatDownload = async (
         );
         return {
             attachment,
-            data: data as Uint8Array,
+            data: data as Uint8Array<ArrayBuffer>,
             verificationStatus,
         };
     } catch (error: any) {

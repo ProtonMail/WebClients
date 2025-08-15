@@ -6,7 +6,7 @@ import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 type UpdateVaultProcessParams = {
     vaultKey: VaultShareKey;
-    content: Uint8Array;
+    content: Uint8Array<ArrayBuffer>;
 };
 
 export const updateVault = async ({ vaultKey, content }: UpdateVaultProcessParams): Promise<VaultUpdateRequest> => {

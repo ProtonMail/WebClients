@@ -30,7 +30,7 @@ export const postError = (error: Error) => {
 type IncomingDataMessage = {
     type: 'data';
     mimeType: string;
-    data: Uint8Array;
+    data: Uint8Array<ArrayBuffer>;
 };
 
 const handleData = async (message: IncomingDataMessage) => {

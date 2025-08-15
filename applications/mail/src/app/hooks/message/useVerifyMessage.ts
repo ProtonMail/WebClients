@@ -36,8 +36,8 @@ export const useVerifyMessage = (localID: string) => {
 
     return useCallback(
         async (
-            decryptedRawContent: Uint8Array = new Uint8Array(),
-            signature?: Uint8Array,
+            decryptedRawContent: Uint8Array<ArrayBuffer> = new Uint8Array(),
+            signature?: Uint8Array<ArrayBuffer>,
             decryptionErrors?: Error[]
         ) => {
             // Message can change during the whole sequence

@@ -122,7 +122,7 @@ export type ConsumeForkOptions = {
 
 export type ConsumeForkPayload =
     | {
-          key?: Uint8Array;
+          key?: Uint8Array<ArrayBuffer>;
           localState: MaybeNull<string>;
           mode: 'web';
           payloadVersion: AuthSessionVersion;

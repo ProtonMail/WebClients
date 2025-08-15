@@ -899,7 +899,7 @@ Z3SSOseslp6+4nnQ3zOqnisO
     });
 
     it('computeHashStream', async () => {
-        const emptyDataStream = new ReadableStream<Uint8Array>({
+        const emptyDataStream = new ReadableStream<Uint8Array<ArrayBuffer>>({
             start: (controller) => {
                 for (let i = 0; i < 100; i++) {
                     controller.enqueue(new Uint8Array());
@@ -915,7 +915,7 @@ Z3SSOseslp6+4nnQ3zOqnisO
 
         // `data` and `dataStream` share the underlying buffer: this is to test that no byte transferring is taking place
         const data = new Uint8Array(100).fill(1);
-        const dataStream = new ReadableStream<Uint8Array>({
+        const dataStream = new ReadableStream<Uint8Array<ArrayBuffer>>({
             pull: (controller) => {
                 for (let i = 0; i < 10; i++) {
                     controller.enqueue(data.subarray(i, i + 10));

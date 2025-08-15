@@ -15,7 +15,7 @@ const HEADER_BYTES_LENGTH =
 
 export const MAX_CHUNK_CONTENT_SIZE = MAX_UPDATE_SIZE - HEADER_BYTES_LENGTH - UPDATE_CHUNK_SAFE_SIZE_MARGIN
 
-export function isDocumentUpdateChunk(data: Uint8Array): boolean {
+export function isDocumentUpdateChunk(data: Uint8Array<ArrayBuffer>): boolean {
   return (
     data.length >= HEADER_BYTES_LENGTH &&
     data.slice(0, HEADER_SIGNAL.length).every((value, index) => value === HEADER_SIGNAL[index])
@@ -27,7 +27,7 @@ export type DocumentUpdateChunk = {
   id: number
   total: number
   index: number
-  content: Uint8Array
+  content: Uint8Array<ArrayBuffer>
 }
 
 export function serializeDocumentUpdateChunk({
@@ -35,7 +35,7 @@ export function serializeDocumentUpdateChunk({
   total,
   index,
   content,
-}: Omit<DocumentUpdateChunk, 'version'>): Uint8Array {
+}: Omit<DocumentUpdateChunk, 'version'>): Uint8Array<ArrayBuffer> {
   const serializedChunk = new Uint8Array(HEADER_BYTES_LENGTH + content.length)
   serializedChunk.set(HEADER_SIGNAL, 0)
   const dataView = new DataView(serializedChunk.buffer)
@@ -59,7 +59,7 @@ export function serializeDocumentUpdateChunk({
   return serializedChunk
 }
 
-export function deserializeDocumentUpdateChunk(data: Uint8Array): DocumentUpdateChunk {
+export function deserializeDocumentUpdateChunk(data: Uint8Array<ArrayBuffer>): DocumentUpdateChunk {
   const dataView = new DataView(data.buffer, data.byteOffset, data.byteLength)
 
   let offset = HEADER_SIGNAL.length
@@ -82,7 +82,7 @@ export function deserializeDocumentUpdateChunk(data: Uint8Array): DocumentUpdate
 }
 
 export function canDocumentUpdateBeSplit(
-  documentUpdate: Uint8Array,
+  documentUpdate: Uint8Array<ArrayBuffer>,
   options: {
     maxChunkSize: number
     maxChunks: number
@@ -95,16 +95,16 @@ export function canDocumentUpdateBeSplit(
 }
 
 export function splitDocumentUpdateIntoChunks(
-  documentUpdate: Uint8Array,
+  documentUpdate: Uint8Array<ArrayBuffer>,
   {
     maxChunkSize,
   }: {
     maxChunkSize: number
   },
-): Uint8Array[] {
+): Uint8Array<ArrayBuffer>[] {
   const id = crypto.getRandomValues(new Uint8Array(HEADER_ID_LENGTH))[0]
 
-  const chunks: Uint8Array[] = []
+  const chunks: Uint8Array<ArrayBuffer>[] = []
   const total = Math.ceil(documentUpdate.byteLength / maxChunkSize)
 
   for (let index = 0; index < total; index++) {
@@ -121,7 +121,7 @@ export function splitDocumentUpdateIntoChunks(
 export type DocumentUpdateChunkStateEntry = {
   total: number
   received: number
-  chunks: Map<number, Uint8Array>
+  chunks: Map<number, Uint8Array<ArrayBuffer>>
 }
 export type DocumentUpdateChunkState = Map<number, DocumentUpdateChunkStateEntry>
 
@@ -131,11 +131,11 @@ export function createDocumentUpdateChunkState(): DocumentUpdateChunkState {
 
 type ProcessDocumentUpdateChunkOptions = {
   state: DocumentUpdateChunkState
-  onDocumentUpdateResolved: (value: { documentUpdate: Uint8Array }) => Promise<void>
+  onDocumentUpdateResolved: (value: { documentUpdate: Uint8Array<ArrayBuffer> }) => Promise<void>
 }
 
 export async function processDocumentUpdateChunk(
-  serializedChunk: Uint8Array,
+  serializedChunk: Uint8Array<ArrayBuffer>,
   { state, onDocumentUpdateResolved }: ProcessDocumentUpdateChunkOptions,
 ) {
   const { version, id, total, index, content } = deserializeDocumentUpdateChunk(serializedChunk)

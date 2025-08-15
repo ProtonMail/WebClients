@@ -12,7 +12,7 @@ export type UpdatePair = {
 
 export type SquashResult = {
   unmodifiedUpdates: UpdatePair[]
-  updatesAsSquashed: Uint8Array | undefined
+  updatesAsSquashed: Uint8Array<ArrayBuffer> | undefined
 }
 
 export class SquashAlgorithm implements UseCaseInterface<SquashResult> {

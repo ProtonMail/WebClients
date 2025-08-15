@@ -39,7 +39,7 @@ export enum AuthDeviceState {
 }
 
 export interface DeviceSecretData {
-    data: Uint8Array;
+    data: Uint8Array<ArrayBuffer>;
     serializedData: string;
     key: CryptoKey;
     confirmationCode: string;
@@ -121,7 +121,7 @@ export const deserializeAuthDeviceSecret = (value: string) => {
     return base64StringToUint8Array(value);
 };
 
-const serializeAuthDeviceSecret = (value: Uint8Array) => {
+const serializeAuthDeviceSecret = (value: Uint8Array<ArrayBuffer>) => {
     return uint8ArrayToBase64String(value);
 };
 

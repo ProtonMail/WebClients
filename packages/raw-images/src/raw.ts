@@ -1,7 +1,7 @@
 interface FileSystemAPI {
     mkdir(path: string): void;
-    writeFile(name: string, data: Uint8Array, opts?: object): void;
-    readFile(path: string, opts?: { encoding: string }): Uint8Array;
+    writeFile(name: string, data: Uint8Array<ArrayBuffer>, opts?: object): void;
+    readFile(path: string, opts?: { encoding: string }): Uint8Array<ArrayBuffer>;
     unlink(path: string): void;
     rmdir(path: string): void;
     chdir(path: string): void;
@@ -36,7 +36,7 @@ declare global {
     }
 }
 
-export type ProcessResult = Uint8Array<ArrayBufferLike> | null;
+export type ProcessResult = Uint8Array<ArrayBuffer> | null;
 
 /**
  * Class for processing RAW image files and extracting thumbnails
@@ -84,7 +84,7 @@ export class RawProcessor {
      * @param extractFullSize Whether to extract the preview image for CR3 files
      * @returns Promise resolving to the Uint8Array thumbnail or CR3Result object or null
      */
-    public async extractThumbnail(rawData: Uint8Array, fileName: string = 'raw_file'): Promise<ProcessResult> {
+    public async extractThumbnail(rawData: Uint8Array<ArrayBuffer>, fileName: string = 'raw_file'): Promise<ProcessResult> {
         return this.extractDCRawThumbnail(rawData, fileName);
     }
 
@@ -94,7 +94,7 @@ export class RawProcessor {
      * @param fileName Optional filename to use
      * @returns Promise resolving to the Uint8Array thumbnail or null
      */
-    private async extractDCRawThumbnail(rawData: Uint8Array, fileName: string): Promise<ProcessResult> {
+    private async extractDCRawThumbnail(rawData: Uint8Array<ArrayBuffer>, fileName: string): Promise<ProcessResult> {
         try {
             const module = await this.dcrawModuleLoaded;
 
@@ -218,7 +218,7 @@ export class CR3Processor {
      * @param extractFullSize Whether to extract the preview image for CR3 files
      * @returns Promise resolving to the Uint8Array thumbnail or CR3Result object or null
      */
-    public async extractThumbnail(rawData: Uint8Array, fileName: string = 'raw_file'): Promise<ProcessResult> {
+    public async extractThumbnail(rawData: Uint8Array<ArrayBuffer>, fileName: string = 'raw_file'): Promise<ProcessResult> {
         return this.extractCR3Images(rawData, fileName);
     }
 
@@ -228,7 +228,7 @@ export class CR3Processor {
      * @param fileName Optional filename to use
      * @returns Promise resolving to ProcessResult object or null
      */
-    private async extractCR3Images(rawData: Uint8Array, fileName: string): Promise<ProcessResult | null> {
+    private async extractCR3Images(rawData: Uint8Array<ArrayBuffer>, fileName: string): Promise<ProcessResult | null> {
         try {
             const module = await this.initCR3Module();
 

@@ -2,7 +2,7 @@ import type { EncryptedBlock, ThumbnailEncryptedBlock } from '../interface';
 
 export type BlockHash = {
     index: number;
-    hash: Uint8Array;
+    hash: Uint8Array<ArrayBuffer>;
 };
 
 export type UploadingBlock = {
@@ -15,7 +15,7 @@ export type UploadingBlock = {
 
 export type UploadingBlockControl = {
     index: number;
-    encryptedData: Uint8Array;
+    encryptedData: Uint8Array<ArrayBuffer>;
     originalSize: number;
     uploadLink: string;
     uploadToken: string;
@@ -24,4 +24,4 @@ export type UploadingBlockControl = {
     onTokenExpiration: () => void;
 };
 
-export type Verifier = (encryptedBlock: Uint8Array) => Promise<Uint8Array>;
+export type Verifier = (encryptedBlock: Uint8Array<ArrayBuffer>) => Promise<Uint8Array<ArrayBuffer>>;
