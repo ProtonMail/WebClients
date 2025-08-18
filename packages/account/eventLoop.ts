@@ -1,5 +1,9 @@
 import { createAction } from '@reduxjs/toolkit';
 
+import type {
+    IncomingDelegatedAccessOutput,
+    OutgoingDelegatedAccessOutput,
+} from '@proton/account/delegatedAccess/interface';
 import type { Filter } from '@proton/components/containers/filters/interfaces';
 import { type Subscription } from '@proton/payments';
 import type { Invoice, SavedPaymentMethod } from '@proton/payments';
@@ -78,6 +82,8 @@ export interface EventLoop {
     GroupMemberships?: EventItemUpdate<GroupMembership, 'GroupMembership'>[];
     NewsletterSubscriptions?: EventItemUpdate<NewsletterSubscription, 'NewsletterSubscription'>[];
     RetentionRules?: EventItemUpdate<RetentionRule, 'RetentionRule'>[];
+    OutgoingDelegatedAccess?: EventItemUpdate<OutgoingDelegatedAccessOutput, 'DelegatedAccess'>[];
+    IncomingDelegatedAccess?: EventItemUpdate<IncomingDelegatedAccessOutput, 'DelegatedAccess'>[];
     DriveShareRefresh?: {
         Action: EVENT_ACTIONS;
     };
