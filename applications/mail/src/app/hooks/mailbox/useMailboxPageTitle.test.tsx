@@ -22,11 +22,11 @@ jest.mock('@proton/account/user/hooks', () => ({
     useUser: jest.fn().mockReturnValue([{ Email: EMAIL }]),
 }));
 
-jest.mock('@proton/mail/store/counts/messageCounts', () => ({
+jest.mock('@proton/mail/store/counts/messageCountsSlice', () => ({
     useMessageCounts: jest.fn().mockReturnValue([[{ LabelID: '0', Unread: UNREAD_COUNT, Total: 11 }]]),
 }));
 
-jest.mock('@proton/mail/store/counts/conversationCounts', () => ({
+jest.mock('@proton/mail/store/counts/conversationCountsSlice', () => ({
     useConversationCounts: jest.fn().mockReturnValue([[{ LabelID: '0', Unread: UNREAD_COUNT, Total: 11 }]]),
 }));
 
