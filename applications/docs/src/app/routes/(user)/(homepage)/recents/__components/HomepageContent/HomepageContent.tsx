@@ -73,9 +73,9 @@ function useRenderHomepageView(): JSX.Element | null {
         case 'viewed':
           variant = 'recents-viewed'
           break
-        case 'modified':
-          variant = 'recents-modified'
-          break
+        // case 'modified':
+        //   variant = 'recents-modified'
+        //   break
         case 'name':
           variant = 'recents-name'
           break
