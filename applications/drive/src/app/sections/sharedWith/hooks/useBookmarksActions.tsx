@@ -3,11 +3,13 @@ import { c, msgid } from 'ttag';
 import type { useConfirmActionModal } from '@proton/components';
 import { useNotifications } from '@proton/components';
 import { useDrive } from '@proton/drive/index';
+import { PROTON_LOCAL_DOMAIN } from '@proton/shared/lib/localDev';
 
 import { partialPublicViewKey } from '../../../hooks/util/usePartialPublicView';
 import { getActionEventManager } from '../../../utils/ActionEventManager/ActionEventManager';
 import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventManagerTypes';
 import { sendErrorReport } from '../../../utils/errorHandling';
+import { replaceLocalURL } from '../../../utils/replaceLocalURL';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 
 export const useBookmarksActions = () => {
@@ -17,7 +19,16 @@ export const useBookmarksActions = () => {
 
     const handleOpenBookmark = async (url: string) => {
         void countActionWithTelemetry(Actions.OpenPublicLinkFromSharedWithMe);
-        const urlToOpen = new URL(url);
+        // TODO: Remove that part once SDK support all domains
+        // It is basically to support local domain on e2e
+
+        const isLocalOrAtlas =
+            window.location.host.includes(PROTON_LOCAL_DOMAIN) || window.location.host.endsWith('proton.black');
+
+        const urlToOpen = new URL(replaceLocalURL(url));
+        if (isLocalOrAtlas) {
+            urlToOpen.host = window.location.host;
+        }
         urlToOpen.searchParams.append(partialPublicViewKey, 'true');
         window.location.assign(urlToOpen.toString());
     };
