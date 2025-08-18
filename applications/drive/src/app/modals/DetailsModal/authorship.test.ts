@@ -39,7 +39,7 @@ function createOkNode(
             // Mocked required properties
             uid: 'mock-uid',
             name: 'mock-name',
-            directMemberRole: MemberRole.Admin,
+            directRole: MemberRole.Admin,
             isShared: false,
             creationTime: new Date(),
             treeEventScopeId: 'tree-event-scope-id',
@@ -82,7 +82,7 @@ function createDegradedNode(
             // Mocked required properties
             uid: 'mock-uid',
             name: { ok: true, value: 'mock-name' },
-            directMemberRole: MemberRole.Admin,
+            directRole: MemberRole.Admin,
             isShared: false,
             creationTime: new Date(),
             treeEventScopeId: 'tree-event-scope-id',
