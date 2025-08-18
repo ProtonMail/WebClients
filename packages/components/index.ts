@@ -714,8 +714,6 @@ export { isBlackFridayPeriod, isCyberWeekPeriod } from './containers/offers/help
 export { default as useFetchOffer } from './containers/offers/hooks/useFetchOffer';
 export { default as useOfferConfig } from './containers/offers/hooks/useOfferConfig';
 export { default as useOfferModal } from './containers/offers/hooks/useOfferModal';
-export { mailTrial2024Config } from './containers/offers/operations/mailTrial2024/configuration';
-export { getCTAContent, getRenews } from './containers/offers/operations/mailTrial2024/text';
 export { ONBOARDING_THEMES } from './containers/onboarding/constants';
 export type { OnboardingStepProps, OnboardingStepRenderCallback } from './containers/onboarding/interface';
 export { default as OnboardingContent } from './containers/onboarding/OnboardingContent';
