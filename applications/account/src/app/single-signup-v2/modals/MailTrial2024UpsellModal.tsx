@@ -1,5 +1,7 @@
+import { c } from 'ttag';
+
 import type { ModalProps } from '@proton/components';
-import { getMailPlus2024InboxFeatures, mailTrial2024Config } from '@proton/components';
+import { getMailPlus2024InboxFeatures } from '@proton/components';
 import { PLANS } from '@proton/payments';
 
 import Trial2024UpsellModal, { type Props as Trial2024UpsellModalProps } from './Trial2024UpsellModal';
@@ -14,7 +16,7 @@ const MailTrial2024UpsellModal = (props: Props) => {
         <Trial2024UpsellModal
             {...props}
             planName={PLANS.MAIL}
-            ctaTitle={mailTrial2024Config.topButton.getCTAContent()}
+            ctaTitle={c('mailtrial2024: Action').t`Special Offer`}
             features={getMailPlus2024InboxFeatures()}
             telemetry={telemetry}
         />
