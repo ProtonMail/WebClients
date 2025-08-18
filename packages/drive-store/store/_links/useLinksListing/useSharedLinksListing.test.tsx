@@ -91,7 +91,7 @@ describe('useSharedLinksListing LEGACY', () => {
     it('should increment the page count when fetching the next page of shared links', async () => {
         const volumeId = '1';
         const page = 0;
-        let firstResponse = {
+        const firstResponse = {
             ShareURLContexts: [
                 {
                     ContextShareID: '1',
@@ -100,7 +100,7 @@ describe('useSharedLinksListing LEGACY', () => {
                 },
             ],
         };
-        let secondResponse = {
+        const secondResponse = {
             ShareURLContexts: [
                 {
                     ContextShareID: '1',
@@ -168,7 +168,7 @@ describe('useSharedLinksListing', () => {
 
     it('should call again if there is more shared links', async () => {
         const volumeId = '1';
-        let firstResponse = {
+        const firstResponse = {
             More: true,
             AnchorID: 'linkID',
             Links: [
@@ -179,7 +179,7 @@ describe('useSharedLinksListing', () => {
                 },
             ],
         };
-        let secondResponse = {
+        const secondResponse = {
             AnchorID: 'linkID2',
             Links: [
                 {

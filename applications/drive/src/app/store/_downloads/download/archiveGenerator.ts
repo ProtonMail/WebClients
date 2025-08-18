@@ -28,7 +28,7 @@ export default class ArchiveGenerator {
     private originalToAdjustedPath: Map<string, string>;
 
     constructor() {
-        let { readable, writable } = new TransformStream();
+        const { readable, writable } = new TransformStream();
 
         this.stream = readable;
         this.writer = writable;

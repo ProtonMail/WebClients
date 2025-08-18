@@ -66,7 +66,7 @@ export const useESCallbacks = ({
 
     const getPreviousEventID = async (): Promise<EventsObject> => {
         const latestEvent = await api<{ EventID: string }>(queryLatestEvents(await shareId));
-        let eventsToStore: EventsObject = {};
+        const eventsToStore: EventsObject = {};
         eventsToStore[await shareId] = latestEvent.EventID;
         return eventsToStore;
     };
@@ -115,7 +115,7 @@ export const useESCallbacks = ({
             return hasBit(event.Refresh, 1);
         });
 
-        let eventsToStore: EventsObject = {};
+        const eventsToStore: EventsObject = {};
         eventsToStore[await shareId] = newEvents[newEvents.length - 1].EventID;
 
         return {

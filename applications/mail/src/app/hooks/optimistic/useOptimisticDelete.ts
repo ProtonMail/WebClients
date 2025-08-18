@@ -77,7 +77,7 @@ const useOptimisticDelete = () => {
         dispatch(optimisticDeleteElementAction({ elementIDs }));
 
         if (conversationMode) {
-            let { value: conversationCounters = [] } = selectConversationCounts(store.getState());
+            const { value: conversationCounters = [] } = selectConversationCounts(store.getState());
 
             // Conversation counters
             const currentConversationCounter = conversationCounters.find(
@@ -94,7 +94,7 @@ const useOptimisticDelete = () => {
                 )
             );
         } else {
-            let { value: messageCounters = [] } = selectMessageCounts(store.getState());
+            const { value: messageCounters = [] } = selectMessageCounts(store.getState());
             // Message counters
             const currentMessageCounter = messageCounters.find(
                 (counter: any) => counter.LabelID === labelID
@@ -116,13 +116,13 @@ const useOptimisticDelete = () => {
             dispatch(optimisticRestoreConversationsAction(rollbackConversations));
             dispatch(optimisticRestoreDeleteElementAction({ elements: rollbackElements }));
             if (rollbackCounters.conversations) {
-                let { value: conversationCounters = [] } = selectConversationCounts(store.getState());
+                const { value: conversationCounters = [] } = selectConversationCounts(store.getState());
                 store.dispatch(
                     conversationCountsActions.set(replaceCounter(conversationCounters, rollbackCounters.conversations))
                 );
             }
             if (rollbackCounters.messages) {
-                let { value: messageCounters = [] } = selectMessageCounts(store.getState());
+                const { value: messageCounters = [] } = selectMessageCounts(store.getState());
                 store.dispatch(messageCountsActions.set(replaceCounter(messageCounters, rollbackCounters.messages)));
             }
         };

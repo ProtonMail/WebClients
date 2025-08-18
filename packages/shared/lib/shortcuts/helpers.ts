@@ -30,7 +30,7 @@ export const isValidShortcut = (shortcut: KeyboardKeyType[], event: KeyboardEven
         return false;
     }
 
-    let isOk = shortcut.map(() => false);
+    const isOk = shortcut.map(() => false);
     shortcutKeys.forEach((shortcutKey, index) => {
         if (
             (shortcutKey === 'shift' && eventShiftKeyPressed) ||

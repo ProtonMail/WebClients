@@ -24,7 +24,7 @@ export const getLocaleMapping = (localeCode: string) => {
 };
 
 export const stripLocaleTagPrefix = (pathname: string) => {
-    let [, localePrefix] = pathname.match(localeRegex) || [];
+    const [, localePrefix] = pathname.match(localeRegex) || [];
 
     const fullLocale = localeMap[localePrefix];
     if (!fullLocale) {

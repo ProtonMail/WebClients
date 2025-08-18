@@ -506,7 +506,7 @@ async function renderPaypal() {
 }
 
 async function renderSavedCard() {
-    let cbInstance = getChargebeeInstance();
+    const cbInstance = getChargebeeInstance();
     const threeDSHandler = await cbInstance.load3DSHandler();
     addCheckpoint('saved_card_loaded');
     const messageBus = getMessageBus();

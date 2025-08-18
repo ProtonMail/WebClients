@@ -62,17 +62,17 @@ const attachmentsReducer = createReducer<AttachmentMap>(initialState, (builder) 
     builder
         .addCase(upsertAttachment, (state, action) => {
             console.log('Action triggered: upsertAttachment', action.payload);
-            let attachment = action.payload;
+            const attachment = action.payload;
             state[attachment.id] = attachment;
         })
         .addCase(addAttachment, (state, action) => {
             console.log('Action triggered: addAttachment', action.payload);
-            let attachment = action.payload;
+            const attachment = action.payload;
             state[attachment.id] = attachment;
         })
         .addCase(deleteAttachment, (state, action) => {
             console.log('Action triggered: deleteAttachment', action.payload);
-            let attachmentId = action.payload;
+            const attachmentId = action.payload;
             delete state[attachmentId];
         })
         .addCase(deleteAllAttachments, () => {
@@ -82,8 +82,8 @@ const attachmentsReducer = createReducer<AttachmentMap>(initialState, (builder) 
         .addCase(clearProvisionalAttachments, (state) => {
             console.log('Action triggered: clearProvisionalAttachments');
             // Remove all attachments that don't have a spaceId (provisional attachments)
-            const provisionalIds = Object.keys(state).filter(id => !state[id].spaceId);
-            provisionalIds.forEach(id => {
+            const provisionalIds = Object.keys(state).filter((id) => !state[id].spaceId);
+            provisionalIds.forEach((id) => {
                 delete state[id];
             });
             console.log(`Cleared ${provisionalIds.length} provisional attachments`);

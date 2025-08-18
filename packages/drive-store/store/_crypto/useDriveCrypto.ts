@@ -146,7 +146,10 @@ function useDriveCrypto() {
     );
 
     const sign = useCallback(
-        async (payload: string | Uint8Array<ArrayBuffer>, keys?: { privateKey: PrivateKeyReference; address: Address }) => {
+        async (
+            payload: string | Uint8Array<ArrayBuffer>,
+            keys?: { privateKey: PrivateKeyReference; address: Address }
+        ) => {
             const { privateKey, address } = keys || (await getPrimaryAddressKey());
             const signature = await signMessage(payload, [privateKey]);
             return { signature, address };
@@ -174,7 +177,7 @@ function useDriveCrypto() {
     const decryptSharePassphrase = async (meta: ShareWithKey, privateKeys?: PrivateKeyReference[]) => {
         if (!privateKeys) {
             // AddressId will always be for the logged-in user
-            let keys = await getOwnAddressKeys(meta.addressId);
+            const keys = await getOwnAddressKeys(meta.addressId);
 
             if (!keys) {
                 throw new Error('Address key was not found');

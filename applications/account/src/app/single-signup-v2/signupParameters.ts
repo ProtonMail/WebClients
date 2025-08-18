@@ -86,7 +86,7 @@ export const getSignupParameters = ({
         }
     }
 
-    let signIn: SignupParameters2['signIn'] = 'standard';
+    const signIn: SignupParameters2['signIn'] = 'standard';
 
     if (partner === 'porkbun') {
         const preVerifiedAddressToken = searchParams.get('jwt') || undefined; // May be undefined in login scenario

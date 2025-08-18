@@ -165,8 +165,8 @@ export default function useShareActions() {
                 }
                 const shareIdsBatches = chunk(shareIds, 50);
                 for (const shareIdsBatch of shareIdsBatches) {
-                    let unreadableShareIDs: string[] = [];
-                    let passPhraseNodeKeyPackets: { ShareID: string; PassphraseNodeKeyPacket: string }[] = [];
+                    const unreadableShareIDs: string[] = [];
+                    const passPhraseNodeKeyPackets: { ShareID: string; PassphraseNodeKeyPacket: string }[] = [];
 
                     for (const shareId of shareIdsBatch) {
                         const share = await getShare(abortSignal, shareId);

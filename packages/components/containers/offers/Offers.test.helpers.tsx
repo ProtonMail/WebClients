@@ -14,7 +14,7 @@ export const DEFAULT_CONFIG = {
     DATE_VERSION: 'test-date-version',
 } as ProtonConfig;
 
-let routeHistory = createMemoryHistory({ initialEntries: ['/inbox'] });
+const routeHistory = createMemoryHistory({ initialEntries: ['/inbox'] });
 const MAIL_MAIN_ROUTE_PATH = '/:labelID?/:elementID?/:messageID?';
 
 export const OffersTestProvider = ({

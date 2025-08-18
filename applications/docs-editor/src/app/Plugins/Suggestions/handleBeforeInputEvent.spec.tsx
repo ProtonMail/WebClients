@@ -2141,8 +2141,7 @@ describe('$handleBeforeInputEvent', () => {
     })
 
     test('should not wrap existing selection with "delete" if inserting data transfer', async () => {
-      let commandDisposer!: () => void
-      commandDisposer = editor!.registerCommand(
+      const commandDisposer: () => void = editor!.registerCommand(
         SELECTION_INSERT_CLIPBOARD_NODES_COMMAND,
         () => true,
         COMMAND_PRIORITY_CRITICAL,

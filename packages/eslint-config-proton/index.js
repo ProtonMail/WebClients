@@ -138,6 +138,8 @@ module.exports = {
 
         '@typescript-eslint/consistent-type-imports': 'error',
 
+        'prefer-const': ['error', { ignoreReadBeforeAssign: true, destructuring: 'all' }],
+
         'arrow-body-style': 'off',
         'consistent-return': 'off',
         curly: ['error', 'all'],

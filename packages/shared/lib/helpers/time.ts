@@ -21,9 +21,9 @@ export type Options = DateFnsOptions & {
  * ** Day, month and year otherwise
  */
 export const readableTime = (unixTime: number, options: Options = {}) => {
-    let { sameDayFormat, format, ...dateFnsOptions } = options;
-    sameDayFormat = sameDayFormat ?? 'p';
-    format = format ?? 'PP';
+    const { sameDayFormat: maybeSameDayFormat, format: maybeFormat, ...dateFnsOptions } = options;
+    const sameDayFormat = maybeSameDayFormat ?? 'p';
+    const format = maybeFormat ?? 'PP';
 
     const date = fromUnixTime(unixTime);
 

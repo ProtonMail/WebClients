@@ -38,7 +38,7 @@ const isBlacklisted = (specs: HardwareSpecs, adapter: any): GpuAssessmentResult 
     }
 
     // Unlike what the name says, 'MacIntel' appears for both older Intel CPUs and newer Apple CPUs (M1 and later).
-    let isMac = specs.platform === 'MacIntel';
+    const isMac = specs.platform === 'MacIntel';
     if (isMac) {
         // The following criterion on maxBufferSize was chosen not because of the impact on the LLM, but because
         // based on hardware data analysis on a bunch of machines, it was a good differentiator of pre- vs post-M1.
