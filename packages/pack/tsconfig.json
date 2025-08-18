@@ -1,8 +1,3 @@
 {
-    "compilerOptions": {
-        "noImplicitAny": true,
-        "module": "commonjs",
-        "target": "esnext",
-        "esModuleInterop": true
-    }
+    "extends": "../../tsconfig.base.json"
 }
