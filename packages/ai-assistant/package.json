@@ -5,7 +5,7 @@
     "scripts": {
         "check-types": "tsc",
         "dev": "vite",
-        "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
+        "lint": "eslint src --ext .js,.ts,.tsx --quiet",
         "preview": "vite preview",
         "test": "jest",
         "test:dev": "jest --watch"
