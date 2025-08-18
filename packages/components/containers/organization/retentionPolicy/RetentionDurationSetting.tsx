@@ -91,7 +91,7 @@ const RetentionDurationSetting = ({ values, setValues }: Props) => {
                     },
                 ]}
             />
-            {values.lifetime !== null && (
+            {lifetime !== null && (
                 <div className="pl-8">
                     <div style={{ width: '128px' }}>
                         <InputFieldTwo
@@ -99,12 +99,12 @@ const RetentionDurationSetting = ({ values, setValues }: Props) => {
                             type="number"
                             min={30}
                             max={36500}
-                            value={lifetime ?? ''}
+                            value={lifetime}
                             onValue={(value: string) => setValues({ ...values, lifetime: Number(value) })}
                             placeholder={c('retention_policy_2025_Placeholder').t`Enter duration`}
                             suffix={
                                 <span className="px-2">
-                                    {c('retention_policy_2025_Label').ngettext(msgid`day`, `days`, lifetime ?? 1)}
+                                    {c('retention_policy_2025_Label').ngettext(msgid`day`, `days`, lifetime)}
                                 </span>
                             }
                             dense
