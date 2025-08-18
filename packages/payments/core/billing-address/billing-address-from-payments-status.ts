@@ -1,6 +1,6 @@
 import { getDefaultPostalCodeByStateCode } from '../../postal-codes/default-postal-codes';
 import { getStateCodeByPostalCode, isPostalCodeValid } from '../../postal-codes/postal-codes-validation';
-import { getDefaultState, isCountryWithStates } from '../countries';
+import { getDefaultState, isCountryWithRequiredPostalCode, isCountryWithStates } from '../countries';
 import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS } from './billing-address';
 
 function restoreDefaultsIfCountryIsMissing(normalized: BillingAddress): void {
@@ -28,7 +28,7 @@ function restoreState(normalized: BillingAddress): void {
 }
 
 function restoreZipCode(normalized: BillingAddress): void {
-    if (isCountryWithStates(normalized.CountryCode) && normalized.State && !normalized.ZipCode) {
+    if (isCountryWithRequiredPostalCode(normalized.CountryCode) && normalized.State && !normalized.ZipCode) {
         normalized.ZipCode = getDefaultPostalCodeByStateCode(normalized.CountryCode, normalized.State);
     }
 }
