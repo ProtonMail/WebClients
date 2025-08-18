@@ -1,4 +1,4 @@
-import { type PaymentStatus, queryPaymentMethodStatus } from '@proton/payments';
+import { type PaymentStatus } from '@proton/payments';
 import { addApiMock } from '@proton/testing/index';
 
 export const statusDefaultResponse: PaymentStatus = {
@@ -14,5 +14,5 @@ export const statusDefaultResponse: PaymentStatus = {
 };
 
 export function mockStatusApi(status = statusDefaultResponse) {
-    addApiMock(queryPaymentMethodStatus().url, () => status);
+    addApiMock('payments/v5/status', () => status);
 }

@@ -31,7 +31,6 @@ export {
     ProrationMode,
     queryFreePlan,
     queryInvoices,
-    queryPaymentMethodStatus,
     queryPaymentMethod,
     queryPlans,
     queryTransactions,

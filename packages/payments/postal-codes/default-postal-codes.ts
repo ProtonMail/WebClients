@@ -1,6 +1,6 @@
-import { type CountryWithStates } from '../core/countries';
+import type { CountryWithRequiredPostalCode } from '../core/countries';
 
-const defaultPostalCodes: Record<CountryWithStates, Record<string, string>> = {
+const defaultPostalCodes: Record<CountryWithRequiredPostalCode, Record<string, string>> = {
     US: {
         AA: '34000',
         AE: '09000',
@@ -82,7 +82,10 @@ const defaultPostalCodes: Record<CountryWithStates, Record<string, string>> = {
     },
 };
 
-export function getDefaultPostalCodeByStateCode(countryCode: CountryWithStates, stateCode: string): string | null {
+export function getDefaultPostalCodeByStateCode(
+    countryCode: CountryWithRequiredPostalCode,
+    stateCode: string
+): string | null {
     return (
         defaultPostalCodes[countryCode as keyof typeof defaultPostalCodes][
             stateCode as keyof (typeof defaultPostalCodes)[typeof countryCode]

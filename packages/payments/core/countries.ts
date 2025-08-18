@@ -255,7 +255,7 @@ export const getTopCounties = () => [
     { value: 'CA', label: c('Country name').t`Canada` },
 ];
 
-export const countriesWithStates = Object.freeze(['US', 'CA'] as const);
+export const countriesWithStates = Object.freeze(['US', 'CA', 'IN'] as const);
 export type CountryWithStates = (typeof countriesWithStates)[number];
 export function isCountryWithStates(countryCode: string): countryCode is CountryWithStates {
     return countriesWithStates.includes(countryCode as CountryWithStates);
@@ -267,7 +267,7 @@ export function isCountryWithRequiredPostalCode(countryCode: string): countryCod
     return countriesWithRequiredPostalCode.includes(countryCode as CountryWithRequiredPostalCode);
 }
 
-export function getStateList(countryCode: string) {
+export function getStateList(countryCode: CountryWithStates) {
     if (countryCode === 'US') {
         return [
             { stateName: 'Alabama', stateCode: 'AL' },
@@ -350,6 +350,47 @@ export function getStateList(countryCode: string) {
         ];
     }
 
+    if (countryCode === 'IN') {
+        return [
+            { stateName: 'Andaman and Nicobar Islands', stateCode: 'AN' },
+            { stateName: 'Andhra Pradesh', stateCode: 'AP' },
+            { stateName: 'Arunāchal Pradesh', stateCode: 'AR' },
+            { stateName: 'Assam', stateCode: 'AS' },
+            { stateName: 'Bihār', stateCode: 'BR' },
+            { stateName: 'Chandigarh', stateCode: 'CH' },
+            { stateName: 'Chhattīsgarh', stateCode: 'CG' },
+            { stateName: 'Dādra and Nagar Haveli and Damān and Diu', stateCode: 'DH' },
+            { stateName: 'Delhi', stateCode: 'DL' },
+            { stateName: 'Goa', stateCode: 'GA' },
+            { stateName: 'Gujarāt', stateCode: 'GJ' },
+            { stateName: 'Haryāna', stateCode: 'HR' },
+            { stateName: 'Himāchal Pradesh', stateCode: 'HP' },
+            { stateName: 'Jammu and Kashmīr', stateCode: 'JK' },
+            { stateName: 'Jhārkhand', stateCode: 'JH' },
+            { stateName: 'Karnātaka', stateCode: 'KA' },
+            { stateName: 'Kerala', stateCode: 'KL' },
+            { stateName: 'Ladākh', stateCode: 'LA' },
+            { stateName: 'Lakshadweep', stateCode: 'LD' },
+            { stateName: 'Madhya Pradesh', stateCode: 'MP' },
+            { stateName: 'Mahārāshtra', stateCode: 'MH' },
+            { stateName: 'Manipur', stateCode: 'MN' },
+            { stateName: 'Meghālaya', stateCode: 'ML' },
+            { stateName: 'Mizoram', stateCode: 'MZ' },
+            { stateName: 'Nāgāland', stateCode: 'NL' },
+            { stateName: 'Odisha', stateCode: 'OD' },
+            { stateName: 'Puducherry (Pondicherry)', stateCode: 'PY' },
+            { stateName: 'Punjab', stateCode: 'PB' },
+            { stateName: 'Rājasthān', stateCode: 'RJ' },
+            { stateName: 'Sikkim', stateCode: 'SK' },
+            { stateName: 'Tamil Nādu', stateCode: 'TN' },
+            { stateName: 'Telangāna', stateCode: 'TS' },
+            { stateName: 'Tripura', stateCode: 'TR' },
+            { stateName: 'Uttar Pradesh', stateCode: 'UP' },
+            { stateName: 'Uttarākhand', stateCode: 'UK' },
+            { stateName: 'West Bengal', stateCode: 'WB' },
+        ];
+    }
+
     return [];
 }
 
@@ -426,7 +467,7 @@ export const getLocalizedCountryByAbbr = (abbr: string, options: CountryOptions)
     }
 };
 
-export function getStateName(countryCode: string, stateCode: string) {
+export function getStateName(countryCode: CountryWithStates, stateCode: string) {
     const state = getStateList(countryCode).find(({ stateCode: code }) => code === stateCode);
     return state?.stateName ?? '';
 }

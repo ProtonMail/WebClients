@@ -10,7 +10,7 @@ import { type Api } from '@proton/shared/lib/interfaces';
 
 import { isPostalCode } from '../cardDetails';
 import { PAYMENT_METHOD_TYPES } from '../constants';
-import { isAllowedCountry, isCountryWithStates } from '../countries';
+import { isAllowedCountry, isCountryWithRequiredPostalCode } from '../countries';
 import {
     type ChargebeeCardParams,
     type PaymentVerificatorV5,
@@ -158,7 +158,7 @@ export class ChargebeeCardPaymentProcessor extends PaymentProcessor<ChargebeeCar
     getErrors() {
         const errors: Record<string, string> = {};
 
-        if (isCountryWithStates(this.countryCode) && !isPostalCode(this.postalCode)) {
+        if (isCountryWithRequiredPostalCode(this.countryCode) && !isPostalCode(this.postalCode)) {
             errors.postalCode = c('Error').t`Invalid postal code`;
         }
 
