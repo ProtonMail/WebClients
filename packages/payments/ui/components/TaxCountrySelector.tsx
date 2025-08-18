@@ -1,19 +1,15 @@
-import { type ChangeEvent, useEffect, useMemo, useState } from 'react';
+import { type ChangeEvent, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { InlineLinkButton, Input } from '@proton/atoms';
-import Option from '@proton/components/components/option/Option';
-import SearchableSelect, {
-    type SearcheableSelectProps,
-} from '@proton/components/components/selectTwo/SearchableSelect';
-import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import clsx from '@proton/utils/clsx';
 
-import { getStateList, getStateName, isCountryWithStates } from '../../core/countries';
+import { getStateName, isCountryWithRequiredPostalCode, isCountryWithStates } from '../../core/countries';
 import { type TaxCountryHook } from '../hooks/useTaxCountry';
 import { CountriesDropdown, useCountries } from './CountriesDropdown';
 import { InputWithSelectorPrefix, WarningIcon } from './InputWithSelectorPrefix';
+import { StateSelector } from './StateSelector';
 
 import './TaxCountrySelector.scss';
 
@@ -23,33 +19,6 @@ export type TaxCountrySelectorProps = TaxCountryHook & {
     buttonClassName?: string;
     spacingClassName?: string;
     forceExpand?: boolean;
-};
-
-type StateSelectorProps = {
-    onStateChange: (stateCode: string) => void;
-    federalStateCode: string | null;
-    selectedCountryCode: string;
-} & Omit<SearcheableSelectProps<string>, 'children'>;
-
-const StateSelector = ({ onStateChange, federalStateCode, selectedCountryCode, ...rest }: StateSelectorProps) => {
-    const states = useMemo(() => getStateList(selectedCountryCode), [selectedCountryCode]);
-
-    const props: SearcheableSelectProps<string> = {
-        onChange: ({ value: stateCode }: SelectChangeEvent<string>) => onStateChange?.(stateCode),
-        value: federalStateCode ?? '',
-        id: 'tax-state',
-        placeholder: c('Placeholder').t`Select state`,
-        children: states.map(({ stateName, stateCode }) => {
-            return (
-                <Option key={stateCode} value={stateCode} title={stateName} data-testid={`state-${stateCode}`}>
-                    {stateName}
-                </Option>
-            );
-        }),
-        ...rest,
-    };
-
-    return <SearchableSelect {...props} data-testid="tax-state-dropdown" />;
 };
 
 export const TaxCountrySelector = ({
@@ -68,7 +37,7 @@ export const TaxCountrySelector = ({
     zipCodeBackendValid,
 }: TaxCountrySelectorProps) => {
     const showStateCode = isCountryWithStates(selectedCountryCode);
-    const showZipCode = showStateCode;
+    const showZipCode = isCountryWithRequiredPostalCode(selectedCountryCode);
 
     const [collapsed, setCollapsed] = useState(true);
 
@@ -182,7 +151,7 @@ export const TaxCountrySelector = ({
                         data-testid="tax-country-dropdown"
                         className={clsx('country-selector', showBoth && 'country-selector--triplet')}
                     />
-                    {showStateCode && !showBoth ? <StateSelector {...commonStateProps} /> : null}
+                    {showStateCode && !showBoth ? <StateSelector {...commonStateProps} className="mt-1" /> : null}
                     {showZipCode && !showBoth ? <Input {...commonZipProps} /> : null}
                     {showBoth ? (
                         <InputWithSelectorPrefix
