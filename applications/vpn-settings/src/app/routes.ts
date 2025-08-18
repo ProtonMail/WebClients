@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { SectionConfig } from '@proton/components';
-import { Renew, type Subscription, isManagedExternally } from '@proton/payments';
+import { Renew, type Subscription, hasLumoPlan, isManagedExternally } from '@proton/payments';
 import { getHasVpnB2BPlan, hasCancellablePlan, isCancellableOnlyViaSupport } from '@proton/payments';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
@@ -36,7 +36,7 @@ export const getRoutes = ({ user, subscription, showVPNDashboard, showVPNDashboa
                     text: c('Title').t`Your plan`,
                     invisibleTitle: true,
                     id: 'YourPlanV2',
-                    available: !(user.isFree && showVPNDashboardVariant === 'B'),
+                    available: !((user.isFree || hasLumoPlan(subscription)) && showVPNDashboardVariant === 'B'),
                 },
                 {
                     text: c('Title').t`Upgrade your privacy`,

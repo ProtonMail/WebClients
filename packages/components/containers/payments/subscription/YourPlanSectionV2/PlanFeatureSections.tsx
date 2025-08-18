@@ -168,14 +168,8 @@ export const FreeVPNFeatures = ({
     );
 };
 
-export const FreeVPNFeaturesB = ({
-    serversCount,
-    isFreeUser,
-}: {
-    serversCount: VPNServersCountData | undefined;
-    isFreeUser: boolean;
-}) => {
-    if (!isFreeUser || !serversCount) {
+export const FreeVPNFeaturesB = ({ serversCount }: { serversCount: VPNServersCountData | undefined }) => {
+    if (!serversCount) {
         return false;
     }
     return (

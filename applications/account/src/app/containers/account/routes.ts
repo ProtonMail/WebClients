@@ -4,7 +4,7 @@ import type { ThemeColor } from '@proton/colors';
 import type { SectionConfig } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { referralReward } from '@proton/components/containers/referral/constants';
-import { DEFAULT_CURRENCY, isManagedExternally } from '@proton/payments';
+import { DEFAULT_CURRENCY, hasLumoPlan, isManagedExternally } from '@proton/payments';
 import { Renew, type Subscription } from '@proton/payments';
 import {
     getHasExternalMemberCapableB2BPlan,
@@ -141,7 +141,7 @@ export const getAccountAppRoutes = ({
                         text: c('Title').t`Your plan`,
                         invisibleTitle: true,
                         id: 'YourPlanV2',
-                        available: !(isFree && showVPNDashboardVariant === 'B'),
+                        available: !((isFree || hasLumoPlan(subscription)) && showVPNDashboardVariant === 'B'),
                     },
                     {
                         text: c('Title').t`Upgrade your privacy`,
