@@ -376,48 +376,28 @@ $colors: (
 		.bg-#{'' + $color-name}-#{$shade} {
 			background-color: #{$value};
 		}
-	}
-}
 
-// Generate border color classes
-@each $color-name, $color-map in $colors {
-	@each $shade, $value in $color-map {
+		// Generate border color classes
 		.border-#{'' + $color-name}-#{$shade} {
 			border-color: #{$value};
 		}
-	}
-}
 
-// Generate text color classes
-@each $color-name, $color-map in $colors {
-	@each $shade, $value in $color-map {
+		// Generate text color classes
 		.color-#{'' + $color-name}-#{$shade} {
 			color: #{$value};
 		}
-	}
-}
 
-// Generate hover background color classes
-@each $color-name, $color-map in $colors {
-	@each $shade, $value in $color-map {
+		// Generate hover background color classes
 		.hover\:bg-#{'' + $color-name}-#{$shade}:hover {
 			background-color: #{$value};
 		}
-	}
-}
 
-// Generate hover border color classes
-@each $color-name, $color-map in $colors {
-	@each $shade, $value in $color-map {
+		// Generate hover border color classes
 		.hover\:border-#{'' + $color-name}-#{$shade}:hover {
 			border-color: #{$value};
 		}
-	}
-}
 
-// Generate hover text color classes
-@each $color-name, $color-map in $colors {
-	@each $shade, $value in $color-map {
+		// Generate hover text color classes
 		.hover\:color-#{'' + $color-name}-#{$shade}:hover {
 			color: #{$value};
 		}
