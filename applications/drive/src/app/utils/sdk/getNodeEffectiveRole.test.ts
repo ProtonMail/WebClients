@@ -19,12 +19,12 @@ describe('getNodeEffectiveRole', () => {
 
     const createMockNode = (
         uid: string,
-        directMemberRole: MemberRole = MemberRole.Viewer,
+        directRole: MemberRole = MemberRole.Viewer,
         parentUid?: string
     ): NodeEntity => ({
         uid,
         parentUid,
-        directMemberRole,
+        directRole,
         name: `node-${uid}`,
         keyAuthor: { ok: true, value: 'test@proton.me' },
         nameAuthor: { ok: true, value: 'test@proton.me' },

@@ -15,7 +15,7 @@ export const mockNode = (overrides: Partial<NodeEntity> = {}): NodeEntity => ({
         ok: true,
         value: 'name-author-1',
     },
-    directMemberRole: MemberRole.Admin,
+    directRole: MemberRole.Admin,
     type: NodeType.File,
     mediaType: 'application/octet-stream',
     isShared: false,
