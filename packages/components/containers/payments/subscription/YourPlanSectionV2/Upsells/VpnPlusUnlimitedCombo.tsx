@@ -279,7 +279,7 @@ const CurrentPlan = ({ app, subscription, user, serversCount }: UpsellSectionPro
                         />
                     </header>
                     <Button disabled fullWidth>{c('Info').t`Current plan`}</Button>
-                    <FreeVPNFeaturesB serversCount={serversCount} isFreeUser={user.isFree} />
+                    <FreeVPNFeaturesB serversCount={serversCount} />
                 </div>
             </div>
         </DashboardCard>
