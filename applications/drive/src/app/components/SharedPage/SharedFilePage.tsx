@@ -8,6 +8,7 @@ import { type useBookmarksPublicView, useDownload, usePublicShare } from '../../
 import { useDriveDocsPublicSharingFF } from '../../store/_documents';
 import { usePublicFileView } from '../../store/_views/useFileView';
 import { FileBrowserStateProvider } from '../FileBrowser';
+import { FloatingElements } from '../FloatingElements/FloatingElements';
 import TransferManager from '../TransferManager/TransferManager';
 import { useReportAbuseModal } from '../modals/ReportAbuseModal/ReportAbuseModal';
 import ReportAbuseButton from './Layout/ReportAbuseButton';
@@ -89,12 +90,9 @@ export default function SharedFilePage({
                 />
                 {!viewportWidth['<=small'] && <ReportAbuseButton linkInfo={rootLink} />}
             </SharedPageLayout>
-            <div
-                className="fixed bottom-0 right-0 z-up w-full items-end max-w-custom"
-                style={{ '--max-w-custom': '50em' }}
-            >
+            <FloatingElements>
                 <TransferManager onVirusReport={handleVirusReport} />
-            </div>
+            </FloatingElements>
             {reportAbuseModal}
         </FileBrowserStateProvider>
     );
