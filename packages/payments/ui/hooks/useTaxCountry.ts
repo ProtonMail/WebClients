@@ -11,7 +11,7 @@ import {
     DEFAULT_TAX_BILLING_ADDRESS,
     getBillingAddressStatus,
 } from '../../core/billing-address/billing-address';
-import { getDefaultState, isCountryWithStates } from '../../core/countries';
+import { getDefaultState, isCountryWithRequiredPostalCode, isCountryWithStates } from '../../core/countries';
 import { type PaymentStatus } from '../../core/interface';
 import { getDefaultPostalCodeByStateCode } from '../../postal-codes/default-postal-codes';
 import { isPostalCodeValid } from '../../postal-codes/postal-codes-validation';
@@ -114,7 +114,7 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
 
         const State = isCountryWithStates(newCountryCode) ? getDefaultState(newCountryCode) : null;
         const ZipCode =
-            isCountryWithStates(newCountryCode) && State
+            isCountryWithRequiredPostalCode(newCountryCode) && State
                 ? getDefaultPostalCodeByStateCode(newCountryCode, State)
                 : null;
 
@@ -138,7 +138,7 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
         const newValue: BillingAddress = {
             ...current,
             State: newFederalStateCode,
-            ZipCode: isCountryWithStates(current.CountryCode)
+            ZipCode: isCountryWithRequiredPostalCode(current.CountryCode)
                 ? getDefaultPostalCodeByStateCode(current.CountryCode, newFederalStateCode)
                 : null,
         };
