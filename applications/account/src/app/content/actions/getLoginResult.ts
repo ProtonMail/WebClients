@@ -185,7 +185,7 @@ export const getLoginResult = async ({
 
     const toApp = getToApp(maybeToApp, user);
 
-    // OAuth session are only allowed for the VPN browser extension at the moment. Go to the restricted settings view.
+    // OAuth sessions are only allowed for the VPN browser extension at the moment. Go to the restricted settings view.
     if (persistedSession.source === SessionSource.Oauth && toApp !== APPS.PROTONVPNBROWSEREXTENSION) {
         const url = getOAuthSettingsUrl(session.data.localID);
         return {
