@@ -82,7 +82,7 @@ const getOverlayShift = (options: {
         }
 
         return maxDx;
-    } catch (_e) {
+    } catch (e) {
         return 0;
     }
 };
