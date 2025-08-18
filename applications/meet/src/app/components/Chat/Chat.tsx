@@ -14,7 +14,6 @@ import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useChatMessage } from '../../hooks/useChatMessage';
 import { useMeetingRoomUpdates } from '../../hooks/useMeetingRoomUpdates';
-import { useSortedParticipants } from '../../hooks/useSortedParticipants';
 import type { MeetChatMessage } from '../../types';
 import { MeetingSideBars } from '../../types';
 import { getParticipantDisplayColors } from '../../utils/getParticipantDisplayColors';
@@ -34,7 +33,7 @@ export const Chat = () => {
 
     const meetingRoomUpdates = useMeetingRoomUpdates();
 
-    const { sortedParticipants } = useSortedParticipants();
+    const { sortedParticipants } = useMeetContext();
 
     const sendMessage = useChatMessage();
 

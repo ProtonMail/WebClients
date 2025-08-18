@@ -5,14 +5,11 @@ import { useMeetContext } from '../contexts/MeetContext';
 import { useUIStateContext } from '../contexts/UIStateContext';
 import { useCurrentScreenShare } from './useCurrentScreenShare';
 import { useIsLargerThanMd } from './useIsLargerThanMd';
-import { useSortedParticipants } from './useSortedParticipants';
 
 export const usePaginationSizeUpdates = () => {
-    const { page, setPage, pageSize, setPageSize } = useMeetContext();
+    const { page, setPage, pageSize, setPageSize, sortedParticipants } = useMeetContext();
     const { sideBarState } = useUIStateContext();
     const { videoTrack } = useCurrentScreenShare();
-
-    const { sortedParticipants } = useSortedParticipants();
 
     const hasScreenShare = !!videoTrack;
 

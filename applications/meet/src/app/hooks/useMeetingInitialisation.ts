@@ -9,7 +9,7 @@ import { useMediaDeviceSetup } from './useMediaDeviceSetup';
 import { usePaginationSizeUpdates } from './usePaginationSizeUpdates';
 import { useParticipantEvents } from './useParticipantEvents';
 import { useParticipantNameMapUpdate } from './useParticipantNameMapUpdate';
-import { usePublicationQualityControls } from './usePublicationQualityControls';
+import { useParticipantVideoControls } from './useParticipantVideoControls';
 import { useScreenShareUpdates } from './useScreenShareUpdates';
 
 export const useMeetingInitialisation = ({
@@ -21,7 +21,7 @@ export const useMeetingInitialisation = ({
 }) => {
     useE2EE();
     useFaceTrackingPublisher({ faceTrack, isFaceTrackingEnabled });
-    usePublicationQualityControls();
+    useParticipantVideoControls();
     useParticipantEvents();
     useChat();
     usePaginationSizeUpdates();

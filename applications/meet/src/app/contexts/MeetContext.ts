@@ -1,6 +1,7 @@
 import { createContext, useContext } from 'react';
 
 import { VideoQuality } from '@proton-meet/livekit-client';
+import type { LocalParticipant, RemoteParticipant } from '@proton-meet/livekit-client';
 
 import { PAGE_SIZE } from '../constants';
 import type { MeetChatMessage, ParticipantEntity, ParticipantEventRecord } from '../types';
@@ -44,6 +45,9 @@ export interface MeetContextValues {
     participantsWithDisabledVideos: string[];
     setParticipantsWithDisabledVideos: (participantsWithDisabledVideos: string[]) => void;
     displayName: string;
+    sortedParticipants: (RemoteParticipant | LocalParticipant)[];
+    pagedParticipants: (RemoteParticipant | LocalParticipant)[];
+    pageCount: number;
 }
 
 export const MeetContext = createContext<MeetContextValues>({
@@ -85,6 +89,9 @@ export const MeetContext = createContext<MeetContextValues>({
     participantsWithDisabledVideos: [],
     setParticipantsWithDisabledVideos: () => {},
     displayName: '',
+    sortedParticipants: [],
+    pagedParticipants: [],
+    pageCount: 0,
 });
 
 export const useMeetContext = () => {
