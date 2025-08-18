@@ -33,6 +33,10 @@ jest.mock('../../../utils/telemetry', () => ({
     countActionWithTelemetry: jest.fn(),
 }));
 
+jest.mock('../../../utils/replaceLocalURL', () => ({
+    replaceLocalURL: jest.fn((url) => url),
+}));
+
 const mockCreateNotification = jest.fn();
 const mockRemoveBookmark = jest.fn();
 const mockEventManagerEmit = jest.fn();
@@ -57,6 +61,8 @@ describe('useBookmarksActions', () => {
         Object.defineProperty(window, 'location', {
             value: {
                 assign: jest.fn(),
+                hostname: 'proton.dev',
+                host: 'proton.dev',
             },
             writable: true,
         });
@@ -69,12 +75,12 @@ describe('useBookmarksActions', () => {
     describe('openBookmark', () => {
         it('should open bookmark URL with partial public view parameter', async () => {
             const { result } = renderHook(() => useBookmarksActions());
-            const testUrl = 'https://example.com/bookmark';
+            const testUrl = 'https://proton.dev/bookmark';
 
             await result.current.openBookmark(testUrl);
 
             expect(countActionWithTelemetry).toHaveBeenCalledWith(Actions.OpenPublicLinkFromSharedWithMe);
-            expect(window.location.assign).toHaveBeenCalledWith('https://example.com/bookmark?partialPublicView=true');
+            expect(window.location.assign).toHaveBeenCalledWith('https://proton.dev/bookmark?partialPublicView=true');
         });
     });
 

@@ -37,7 +37,7 @@ export const RemoveBookmarkButton = ({ uids, showConfirmModal, close, buttonType
                 title={c('Action').t`Remove`}
                 icon={<Icon name="cross-big" alt={c('Action').t`Remove`} />}
                 onClick={handleRemoveBookmark}
-                data-testid="toolbar-remove-bookmark"
+                data-testid="toolbar-delete-bookmark"
             />
         );
     }
