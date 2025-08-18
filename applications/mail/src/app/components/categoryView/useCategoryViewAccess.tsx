@@ -9,7 +9,10 @@ export const useCategoryViewAccess = () => {
     const categoryViewAccess = useFlag('CategoryView');
     const mailParams = useMailSelector(params);
 
-    return (
-        categoryViewAccess && (mailParams.labelID === MAILBOX_LABEL_IDS.INBOX || isCategoryLabel(mailParams.labelID))
-    );
+    return {
+        categoryViewAccess,
+        shouldShowTabs:
+            categoryViewAccess &&
+            (mailParams.labelID === MAILBOX_LABEL_IDS.INBOX || isCategoryLabel(mailParams.labelID)),
+    };
 };
