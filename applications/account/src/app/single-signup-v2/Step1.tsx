@@ -533,7 +533,7 @@ const Step1 = ({
 
     let step = 1;
 
-    const hidePlanSelectorCoupons = new Set([COUPON_CODES.TRYMAILPLUS2024, COUPON_CODES.MAILPLUSINTRO]);
+    const hidePlanSelectorCoupons = new Set([COUPON_CODES.MAILPLUSINTRO]);
     let hasPlanSelector =
         !model.planParameters?.defined &&
         ([SignupMode.Default, SignupMode.MailReferral].includes(mode) ||
