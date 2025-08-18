@@ -14,7 +14,7 @@ import { SECOND } from '@proton/shared/lib/constants';
 
 import type { DelegatedAccessTypeEnum, OutgoingDelegatedAccessOutput } from '../../interface';
 import type { EnrichedOutgoingDelegatedAccess } from './interface';
-import { getWaitTimeOptions } from './waitTimeOptions';
+import { getDefaultWaitTimeOptionValue, getWaitTimeOptions } from './waitTimeOptions';
 
 export interface EditOutgoingEmergencyContactModalProps
     extends Omit<ModalProps<'form'>, 'children' | 'buttons' | 'onSubmit'> {
@@ -41,7 +41,7 @@ export const EditOutgoingEmergencyContactModal = ({
         if (existingValue) {
             return existingValue.value;
         }
-        return waitTimeOptions[3].value;
+        return getDefaultWaitTimeOptionValue();
     });
     const user = (
         <span key="user" className="text-bold text-break">
