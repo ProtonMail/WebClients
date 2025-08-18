@@ -28,6 +28,7 @@ import type { Currency, FeatureLimitKey, FreeSubscription, PlanIDs, Pricing } fr
 import { getSupportedAddons, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from '../plan/addons';
 import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs, getPlanNameFromIDs } from '../plan/helpers';
 import type { Plan, PlansMap, SubscriptionPlan } from '../plan/interface';
+import { clearPlanIDs } from '../planIDs';
 import { getPricePerCycle, getPricePerMember, isMultiUserPersonalPlan } from '../price-helpers';
 import { isFreeSubscription } from '../type-guards';
 import { isSplittedUser, onSessionMigrationChargebeeStatus } from '../utils';
@@ -1065,10 +1066,10 @@ export function isForbiddenLumoPlus({
 
 export function isForbiddenPlusToPlus({
     subscription,
-    newPlanName,
+    newPlanIDs,
 }: {
     subscription: Subscription | FreeSubscription | null | undefined;
-    newPlanName: PLANS | undefined;
+    newPlanIDs: PlanIDs;
 }): boolean {
     if (!subscription) {
         return false;
@@ -1080,6 +1081,7 @@ export function isForbiddenPlusToPlus({
          **/ (plan) => plan.Name !== PLANS.PASS_LIFETIME
     );
     const isSubscribedToAPlusPlan = subscribedPlans.some((subscribedPlan) => getHasPlusPlan(subscribedPlan.Name));
+    const newPlanName = getPlanNameFromIDs(newPlanIDs);
     const isNotSamePlanName = !subscribedPlans.some((subscribedPlan) => subscribedPlan.Name === newPlanName);
     const allowPlusToPlusTransitions = [
         {
@@ -1107,7 +1109,7 @@ export function isForbiddenPlusToPlus({
             to: [PLANS.VPN2024],
         },
     ];
-    const allowPlusToPlusTransition = !allowPlusToPlusTransitions.some(({ from, to }) => {
+    const allowPlusToPlusTransition = allowPlusToPlusTransitions.some(({ from, to }) => {
         return subscribedPlans.some(
             (subscribedPlan) =>
                 subscribedPlan.Name &&
@@ -1117,7 +1119,18 @@ export function isForbiddenPlusToPlus({
         );
     });
     const isNewPlanAPlusPlan = getHasPlusPlan(newPlanName);
-    return Boolean(isSubscribedToAPlusPlan && isNewPlanAPlusPlan && isNotSamePlanName && allowPlusToPlusTransition);
+
+    const isSubscribedToLumoPlus = subscribedPlans.some((subscribedPlan) => subscribedPlan.Name === PLANS.LUMO);
+    const newPlanIDsHaveLumoAddon = hasLumoAddonFromPlanIDs(clearPlanIDs(newPlanIDs)) && isNewPlanAPlusPlan;
+    const transitionFromLumoPlusToAnotherPlusWithLumoAddon = isSubscribedToLumoPlus && newPlanIDsHaveLumoAddon;
+
+    return Boolean(
+        isSubscribedToAPlusPlan &&
+            isNewPlanAPlusPlan &&
+            isNotSamePlanName &&
+            !allowPlusToPlusTransition &&
+            !transitionFromLumoPlusToAnotherPlusWithLumoAddon
+    );
 }
 
 export function getIsPlanTransitionForbidden({
@@ -1137,7 +1150,7 @@ export function getIsPlanTransitionForbidden({
         return { type: 'lumo-plus', newPlanIDs: lumoForbidden.planIDs, newPlanName: lumoForbidden.planName } as const;
     }
 
-    if (isForbiddenPlusToPlus({ subscription, newPlanName })) {
+    if (isForbiddenPlusToPlus({ subscription, newPlanIDs: planIDs })) {
         return { type: 'plus-to-plus', newPlanName } as const;
     }
 
