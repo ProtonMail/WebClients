@@ -29,7 +29,7 @@ describe('getNodeEntity', () => {
         name: 'test-file.txt',
         keyAuthor: mockAuthor,
         nameAuthor: mockAuthor,
-        directMemberRole: MemberRole.Admin,
+        directRole: MemberRole.Admin,
         type: NodeType.File,
         mediaType: 'text/plain',
         isShared: false,
