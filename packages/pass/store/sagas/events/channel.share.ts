@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-throw-literal, curly */
+/* eslint-disable curly */
 import type { Action } from 'redux';
 import type { Task } from 'redux-saga';
 import { all, cancel, fork, put, select, take } from 'redux-saga/effects';
