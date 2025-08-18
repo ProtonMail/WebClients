@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-throw-literal, curly */
+/* eslint-disable curly */
 import type { Channel } from 'redux-saga';
 import { channel } from 'redux-saga';
 import { all, cancelled, fork, put, select, take, takeEvery } from 'redux-saga/effects';

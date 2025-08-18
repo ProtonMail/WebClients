@@ -141,7 +141,6 @@ describe('getNonEmptyErrorMessage', () => {
         it('when throwing a string', () => {
             const error = (() => {
                 try {
-                    // eslint-disable-next-line @typescript-eslint/no-throw-literal
                     throw 'a string';
                 } catch (e: any) {
                     return e;
@@ -154,7 +153,6 @@ describe('getNonEmptyErrorMessage', () => {
         it('when throwing undefined', () => {
             const error = (() => {
                 try {
-                    // eslint-disable-next-line @typescript-eslint/no-throw-literal
                     throw undefined;
                 } catch (e: any) {
                     return e;
@@ -166,7 +164,6 @@ describe('getNonEmptyErrorMessage', () => {
         it('when throwing null', () => {
             const error = (() => {
                 try {
-                    // eslint-disable-next-line @typescript-eslint/no-throw-literal
                     throw null;
                 } catch (e: any) {
                     return e;
@@ -178,7 +175,6 @@ describe('getNonEmptyErrorMessage', () => {
         it('when throwing an empty object', () => {
             const error = (() => {
                 try {
-                    // eslint-disable-next-line @typescript-eslint/no-throw-literal
                     throw {};
                 } catch (e: any) {
                     return e;
@@ -198,7 +194,6 @@ describe('getNonEmptyErrorMessage', () => {
         it('when throwing a string', () => {
             const error = (() => {
                 try {
-                    // eslint-disable-next-line @typescript-eslint/no-throw-literal
                     throw 'a string';
                 } catch (e: any) {
                     return e;
@@ -211,7 +206,6 @@ describe('getNonEmptyErrorMessage', () => {
         it('when throwing undefined', () => {
             const error = (() => {
                 try {
-                    // eslint-disable-next-line @typescript-eslint/no-throw-literal
                     throw undefined;
                 } catch (e: any) {
                     return e;
@@ -223,7 +217,6 @@ describe('getNonEmptyErrorMessage', () => {
         it('when throwing null', () => {
             const error = (() => {
                 try {
-                    // eslint-disable-next-line @typescript-eslint/no-throw-literal
                     throw null;
                 } catch (e: any) {
                     return e;
@@ -235,7 +228,6 @@ describe('getNonEmptyErrorMessage', () => {
         it('when throwing an empty object', () => {
             const error = (() => {
                 try {
-                    // eslint-disable-next-line @typescript-eslint/no-throw-literal
                     throw {};
                 } catch (e: any) {
                     return e;

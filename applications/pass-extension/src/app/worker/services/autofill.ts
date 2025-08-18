@@ -133,7 +133,7 @@ export const createAutoFillService = () => {
                     >(tabID, backgroundMessage({ type: WorkerMessageType.AUTOFILL_CHECK_FORM }))
                 )?.hasLoginForm ?? false
             );
-        } catch (err) {
+        } catch (_err) {
             return false;
         }
     };
