@@ -1,0 +1,7 @@
+@use 'sass:map';
+@import '~@proton/styles/scss/lib';
+
+// Allow floating elements wrapper to appear on top of preview
+.floating-elements {
+	z-index: #{map.get($z-indexes, 'transfer-manager')};
+}
