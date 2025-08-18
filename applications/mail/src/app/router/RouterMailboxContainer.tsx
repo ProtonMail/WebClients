@@ -8,11 +8,13 @@ import {
     PrivateMainArea,
     useActiveBreakpoint,
 } from '@proton/components';
+import { CATEGORY_LABEL_IDS_SET, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
-import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
+import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 import clsx from '@proton/utils/clsx';
 
+import { useCategoryViewAccess } from 'proton-mail/components/categoryView/useCategoryViewAccess';
 import MailHeader from 'proton-mail/components/header/MailHeader';
 import useScrollToTop from 'proton-mail/components/list/useScrollToTop';
 import { NewsletterSubscriptionView } from 'proton-mail/components/view/NewsletterSubscription/NewsletterSubscriptionView';
@@ -50,6 +52,8 @@ export const RouterMailboxContainer = () => {
 
     const [isResizing, setIsResizing] = useState(false);
 
+    const categoryViewControl = useCategoryViewAccess();
+
     /**
      * Temporary: Router mailbox side effects
      */
@@ -70,8 +74,21 @@ export const RouterMailboxContainer = () => {
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
     useScrollToTop(listContainerRef as RefObject<HTMLElement>, [urlPage, labelID, sort, filter, elementsParams.search]);
     const breakpoints = useActiveBreakpoint();
-    if (!labelID) {
-        return <Redirect to="/inbox" />;
+
+    if (!labelID || (categoryViewControl.categoryViewAccess && labelID === MAILBOX_LABEL_IDS.INBOX)) {
+        return (
+            <Redirect
+                to={`/${
+                    LABEL_IDS_TO_HUMAN[
+                        categoryViewControl.categoryViewAccess
+                            ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
+                            : MAILBOX_LABEL_IDS.INBOX
+                    ]
+                }`}
+            />
+        );
+    } else if (!categoryViewControl.categoryViewAccess && CATEGORY_LABEL_IDS_SET.has(labelID as MAILBOX_LABEL_IDS)) {
+        return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
     const viewPortIsNarrow = breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium;
