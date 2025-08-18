@@ -2,15 +2,12 @@ import { useEffect } from 'react';
 
 import { useLocalParticipant } from '@livekit/components-react';
 import type { RemoteParticipant, RemoteTrackPublication } from '@proton-meet/livekit-client';
-import { Track, VideoQuality } from '@proton-meet/livekit-client';
+import { Track } from '@proton-meet/livekit-client';
 
 import { useMeetContext } from '../contexts/MeetContext';
-import { useSortedParticipants } from './useSortedParticipants';
 
-const increasedVideoQuality = process.env.LIVEKIT_INCREASED_VIDEO_QUALITY === 'true';
-
-export const usePublicationQualityControls = () => {
-    const { sortedParticipants, pagedParticipants } = useSortedParticipants();
+export const useParticipantVideoControls = () => {
+    const { sortedParticipants, pagedParticipants } = useMeetContext();
     const { quality, participantsWithDisabledVideos, disableVideos } = useMeetContext();
     const { localParticipant } = useLocalParticipant();
 
@@ -32,26 +29,20 @@ export const usePublicationQualityControls = () => {
                     const isValid =
                         publication.kind === Track.Kind.Video && publication.source !== Track.Source.ScreenShare;
 
-                    if ((disableVideos || participantsWithDisabledVideos.includes(participant.identity)) && isValid) {
+                    if (
+                        (disableVideos || participantsWithDisabledVideos.includes(participant.identity)) &&
+                        isValid &&
+                        publication.isEnabled
+                    ) {
                         publication.setEnabled(false);
                         return;
                     }
 
                     if (isValid && typeof publication.setVideoQuality === 'function') {
-                        const isPaged = pagedParticipants.includes(participant);
+                        const isPaged = !!pagedParticipants.find((p) => p.identity === participant.identity);
 
-                        if (isPaged) {
-                            if (increasedVideoQuality) {
-                                publication.setVideoQuality(quality);
-                            }
-
-                            publication.setEnabled(true);
-                        } else {
-                            if (increasedVideoQuality) {
-                                publication.setVideoQuality(VideoQuality.LOW);
-                            }
-
-                            publication.setEnabled(false);
+                        if (isPaged !== publication.isEnabled) {
+                            publication.setEnabled(isPaged);
                         }
                     }
                 }

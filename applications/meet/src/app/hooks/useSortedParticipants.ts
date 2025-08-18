@@ -3,12 +3,17 @@ import { useMemo, useRef } from 'react';
 import { useLocalParticipant, useParticipants } from '@livekit/components-react';
 import type { LocalParticipant, RemoteParticipant } from '@proton-meet/livekit-client';
 
-import { useMeetContext } from '../contexts/MeetContext';
 import { useDebouncedActiveSpeakers } from './useDebouncedActiveSpeakers';
 
-export const useSortedParticipants = () => {
-    const { page, pageSize, selfView } = useMeetContext();
-
+export const useSortedParticipants = ({
+    page,
+    pageSize,
+    selfView,
+}: {
+    page: number;
+    pageSize: number;
+    selfView: boolean;
+}) => {
     const participants = useParticipants();
 
     const activeSpeakers = useDebouncedActiveSpeakers();

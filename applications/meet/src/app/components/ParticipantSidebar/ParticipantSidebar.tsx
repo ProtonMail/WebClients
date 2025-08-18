@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { IcChevronLeft, IcChevronRight } from '@proton/icons';
 
-import { useSortedParticipants } from '../../hooks/useSortedParticipants';
+import { useMeetContext } from '../../contexts/MeetContext';
 import { ParticipantTile } from '../ParticipantTile/ParticipantTile';
 
 import './ParticipantSidebar.scss';
@@ -19,7 +19,7 @@ export const ParticipantSidebar = ({
 }) => {
     const [isParticipantSidebarHovered, setIsParticipantSidebarHovered] = useState(false);
 
-    const { pagedParticipants } = useSortedParticipants();
+    const { pagedParticipants } = useMeetContext();
 
     return (
         <div

@@ -1,9 +1,9 @@
+import { useMeetContext } from '../contexts/MeetContext';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
-import { useSortedParticipants } from '../hooks/useSortedParticipants';
 import { ParticipantTile } from './ParticipantTile/ParticipantTile';
 
 export const ParticipantGrid = () => {
-    const { pagedParticipants } = useSortedParticipants();
+    const { pagedParticipants } = useMeetContext();
 
     const isLargerThanMd = useIsLargerThanMd();
 

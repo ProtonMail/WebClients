@@ -8,6 +8,7 @@ import { MeetContext } from '../contexts/MeetContext';
 import { UIStateProvider } from '../contexts/UIStateContext';
 import { useFaceTrackingSetup } from '../hooks/useFaceTrackingSetup';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
+import { useSortedParticipants } from '../hooks/useSortedParticipants';
 import type { MeetChatMessage, ParticipantEntity, ParticipantEventRecord, ParticipantSettings } from '../types';
 
 interface MeetContainerProps {
@@ -71,6 +72,12 @@ export const MeetContainer = ({
 
     const [participantsWithDisabledVideos, setParticipantsWithDisabledVideos] = useState<string[]>([]);
 
+    const { sortedParticipants, pagedParticipants, pageCount } = useSortedParticipants({
+        page,
+        pageSize,
+        selfView,
+    });
+
     const setIsVideoEnabled = useCallback(
         (isEnabled: boolean) => {
             setParticipantSettings(
@@ -123,6 +130,9 @@ export const MeetContainer = ({
                     participantsWithDisabledVideos,
                     setParticipantsWithDisabledVideos,
                     displayName,
+                    sortedParticipants,
+                    pagedParticipants,
+                    pageCount,
                 }}
             >
                 <UIStateProvider instantMeeting={instantMeeting}>

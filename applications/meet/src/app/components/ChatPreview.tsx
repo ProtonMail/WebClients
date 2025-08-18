@@ -6,7 +6,6 @@ import { CloseButton } from '../atoms/CloseButton/CloseButton';
 import { useMeetContext } from '../contexts/MeetContext';
 import { useUIStateContext } from '../contexts/UIStateContext';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
-import { useSortedParticipants } from '../hooks/useSortedParticipants';
 import type { MeetChatMessage } from '../types';
 import { MeetingSideBars } from '../types';
 import { getParticipantDisplayColors } from '../utils/getParticipantDisplayColors';
@@ -15,7 +14,7 @@ import { ChatItem } from './ChatItem/ChatItem';
 const CHAT_MESSAGE_TIMEOUT = 8000;
 
 export const ChatPreview = () => {
-    const { chatMessages, setChatMessages } = useMeetContext();
+    const { chatMessages, setChatMessages, sortedParticipants } = useMeetContext();
 
     const { sideBarState } = useUIStateContext();
 
@@ -26,8 +25,6 @@ export const ChatPreview = () => {
 
         return item ? { ...item, type: 'message' as const } : null;
     }, [chatMessages]);
-
-    const { sortedParticipants } = useSortedParticipants();
 
     const isLargerThanMd = useIsLargerThanMd();
 
