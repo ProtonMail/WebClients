@@ -10,7 +10,6 @@ import type { Optional } from '@proton/shared/lib/interfaces';
 export type OfferId =
     | 'go-unlimited-2022'
     | 'mail-trial-2023'
-    | 'mail-trial-2024'
     | 'pass-family-plan-2024-yearly'
     | 'anniversary-2025-bundle'
     | 'anniversary-2025-duo'
