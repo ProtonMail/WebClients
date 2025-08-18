@@ -18,7 +18,13 @@ import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/li
 // constants
 // ---------
 
-const ALLOWED_SORT_VALUES = ['viewed', 'modified', 'name', 'owner', 'location'] as const
+const ALLOWED_SORT_VALUES = [
+  'viewed',
+  // 'modified',
+  'name',
+  'owner',
+  'location',
+] as const
 const DEFAULT_RECENTS_SORT = 'viewed' satisfies RecentsSort
 const ORDERED_SECTION_IDS = [
   'search-results',
@@ -225,7 +231,8 @@ function useHomepageViewState({
   const state = useMemo(() => {
     const outputState = { ...protoState }
     if (outputState.view === 'recents') {
-      if (recentsSort === 'viewed' || recentsSort === 'modified') {
+      // if (recentsSort === 'viewed' || recentsSort === 'modified') {
+      if (recentsSort === 'viewed') {
         outputState.itemSections = splitIntoSectionsByTime(
           recentDocuments,
           recentsSort === 'viewed' ? 'lastViewed' : 'lastModified',

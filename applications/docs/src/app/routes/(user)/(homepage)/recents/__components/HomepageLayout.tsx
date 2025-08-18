@@ -349,6 +349,9 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
               className="!text-[var(--sidebar-text-color,var(--text-norm))] no-underline"
               href={getAppHref('/', APPS.PROTONDRIVE, getLocalID())}
               target="_blank"
+              onClick={() => {
+                application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.drive_opened)
+              }}
             >
               <SidebarListItemDiv className="flex items-center gap-2">
                 <Icon name="brand-proton-drive" /> {goToPlanOrAppNameText(DRIVE_APP_NAME)}

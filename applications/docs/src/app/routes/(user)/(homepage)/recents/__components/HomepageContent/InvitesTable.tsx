@@ -3,11 +3,13 @@ import { Icon } from '@proton/components'
 import { DateFormatter } from '@proton/docs-core'
 import { ServerTime } from '@proton/docs-shared'
 import { useDocInvites } from '@proton/drive-store'
+import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype'
 import { getInitials } from '@proton/shared/lib/helpers/string'
 import clsx from '@proton/utils/clsx'
-import { useState, type ComponentPropsWithoutRef } from 'react'
+import { type ComponentPropsWithoutRef, useState } from 'react'
 import { c, msgid } from 'ttag'
+import { useApplication } from '~/utils/application-context'
 import { useHomepageView } from '../../__utils/homepage-view'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import * as Table from './table'
@@ -20,6 +22,7 @@ const dateFormatter = new DateFormatter()
 export type InvitesTableProps = ComponentPropsWithoutRef<'div'>
 
 export function InvitesTable(props: InvitesTableProps) {
+  const application = useApplication()
   const { updateRecentDocuments } = useHomepageView()
   const { confirmModal, invitations, acceptInvite, rejectInvite, recentlyAcceptedInvites, openInvitedDocument } =
     useDocInvites()
@@ -93,6 +96,7 @@ export function InvitesTable(props: InvitesTableProps) {
                       openInvitedDocument(invite)
                       await acceptInvite(invite)
                       setTimeout(updateRecentDocuments, WAIT_AFTER_ACCEPT_INVITE)
+                      application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.invite_accepted)
                     }}
                     aria-label={c('Action').t`Accept invitation to document`}
                     data-testid="accept-invite-button"
@@ -106,7 +110,10 @@ export function InvitesTable(props: InvitesTableProps) {
                     icon
                     color="weak"
                     disabled={invite.isLocked}
-                    onClick={() => rejectInvite(invite)}
+                    onClick={async () => {
+                      await rejectInvite(invite)
+                      application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.invite_rejected)
+                    }}
                     aria-label={c('Action').t`Decline invitation to document`}
                     data-testid="reject-invite-button"
                   >
