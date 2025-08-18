@@ -3,6 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { EmergencyAccessSection } from '@proton/account/delegatedAccess/emergencyAccess/EmergencyAccessSection';
+import { NonPrivateEmergencyAccessSection } from '@proton/account/delegatedAccess/emergencyAccess/NonPrivateEmergencyAccessSection';
 import AuthDevicesSettings from '@proton/account/sso/AuthDevicesSettings';
 import { EasySwitchSettingsArea } from '@proton/activation';
 import {
@@ -179,6 +181,7 @@ const AccountSettingsRouter = ({
                         <OverviewSection ids={recoveryIds} />
                         <AccountRecoverySection />
                         <DataRecoverySection />
+                        <EmergencyAccessSection app={app} />
                         <SessionRecoverySection />
                     </PrivateMainSettingsArea>
                 </Route>
@@ -192,6 +195,7 @@ const AccountSettingsRouter = ({
                         </>
                         <TwoFactorSection />
                         <NonPrivateRecoverySection />
+                        <NonPrivateEmergencyAccessSection app={app} />
                         <FamilyPlanSection />
                         {/* Those 3 sections are here for members of family plan that don't have access to the dashboard any more */}
                         <PaymentMethodsSection />

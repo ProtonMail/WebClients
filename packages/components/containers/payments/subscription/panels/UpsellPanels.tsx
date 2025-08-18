@@ -1,15 +1,14 @@
 import { c } from 'ttag';
 
 import type { ButtonLikeShape } from '@proton/atoms';
-import Price from '@proton/components/components/price/Price';
 import Time from '@proton/components/components/time/Time';
 import { PLANS, PLAN_NAMES, type Subscription, hasBundle } from '@proton/payments';
-import { OfferPrice } from '@proton/payments/ui';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { Upsell } from '../helpers';
 import UpsellPanel from './UpsellPanel';
+import UpsellPriceV1 from './components/UpsellPriceV1';
 
 interface Props {
     upsells: Upsell[];
@@ -30,38 +29,8 @@ const UpsellPanels = ({ upsells, subscription }: Props) => {
     return (
         <>
             {upsells.map((upsell) => {
-                const getPriceElement = (upsell: Upsell) => {
-                    if (!upsell.price) {
-                        return null;
-                    }
-
-                    const { value, currency } = upsell.price;
-
-                    if (upsell.plan && upsell.cycle) {
-                        return (
-                            <OfferPrice
-                                key="offer-price"
-                                planToCheck={{
-                                    currency,
-                                    planIDs: {
-                                        [upsell.plan]: 1,
-                                    },
-                                    cycle: upsell.cycle,
-                                }}
-                                suffix={c('new_plans: Plan frequency').t`/month`}
-                            />
-                        );
-                    }
-
-                    return (
-                        <Price key="plan-price" currency={currency} suffix={c('new_plans: Plan frequency').t`/month`}>
-                            {value}
-                        </Price>
-                    );
-                };
-
                 const getDefaultCta = (upsell: Upsell) => {
-                    const price = getPriceElement(upsell);
+                    const price = <UpsellPriceV1 key="offer-price" upsell={upsell} />;
 
                     let label: string | string[];
                     if (!price) {

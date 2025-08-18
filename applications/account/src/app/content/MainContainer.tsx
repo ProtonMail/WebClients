@@ -4,6 +4,8 @@ import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { getTrustedContactRoute } from '@proton/account/delegatedAccess/available';
+import OutgoingEmergencyAccessTopBanner from '@proton/account/delegatedAccess/emergencyAccess/outgoing/OutgoingEmergencyAccessTopBanner';
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import { useGroups } from '@proton/account/groups/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
@@ -60,6 +62,7 @@ import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash';
 
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
+import { recoveryIds } from '../containers/account/recoveryIds';
 import OrganizationSettingsRouter from '../containers/organization/OrganizationSettingsRouter';
 import AccountSidebar from './AccountSidebar';
 import AccountStartupModals from './AccountStartupModals';
@@ -164,6 +167,7 @@ const MainContainer = () => {
     const isReferralExpansionEnabled = useFlag('ReferralExpansion');
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
+    const isEmergencyAccessAvailable = useFlag('EmergencyAccess');
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -224,6 +228,7 @@ const MainContainer = () => {
         isB2BTrial,
         isReferralExpansionEnabled,
         isRetentionPoliciesEnabled,
+        isEmergencyAccessAvailable,
         isSsoForPbsEnabled,
     });
 
@@ -277,6 +282,7 @@ const MainContainer = () => {
 
     const top = (
         <TopBanners app={app}>
+            <OutgoingEmergencyAccessTopBanner />
             <UnprivatizationRequestTopBanner />
             <SSODomainUnverifiedBanner app={app} />
             <AuthDevicesTopBanner />
@@ -403,6 +409,11 @@ const MainContainer = () => {
                             path={pathPrefix}
                             accountAppRoutes={routes.account}
                             redirect={redirect}
+                        />
+                    </Route>
+                    <Route path={[getTrustedContactRoute(`/${appSlug}`), getTrustedContactRoute()]}>
+                        <Redirect
+                            to={`/${appSlug}${routes.account.routes.recovery.to}${location.search}${location.hash || `#${recoveryIds.emergencyAccess}`}`}
                         />
                     </Route>
                     <Route path={anyOrganizationAppRoute}>

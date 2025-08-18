@@ -3,6 +3,7 @@ import { combineReducers } from '@reduxjs/toolkit';
 import {
     allowAddressDeletionReducer,
     authDevicesReducer,
+    delegatedAccessReducer,
     domainsAddressesReducer,
     memberAuthDevicesReducer,
     passwordPoliciesReducer,
@@ -38,6 +39,7 @@ export const rootReducer = combineReducers({
     ...memberAuthDevicesReducer,
     ...oauthTokenReducer,
     ...retentionPoliciesReducer,
+    ...delegatedAccessReducer,
 });
 
 export type AccountState = ReturnType<typeof rootReducer>;
