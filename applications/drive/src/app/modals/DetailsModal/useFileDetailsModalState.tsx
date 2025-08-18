@@ -81,7 +81,7 @@ export const useFileDetailsModalState = ({ volumeId, linkId, ...modalProps }: Us
                         parentUid: nodeEntity.parentUid,
                         keyAuthor: nodeEntity.keyAuthor,
                         nameAuthor: nodeEntity.nameAuthor,
-                        directMemberRole: nodeEntity.directMemberRole,
+                        directRole: nodeEntity.directRole,
                         type: nodeEntity.type,
                         mediaType: nodeEntity.mediaType,
                         isShared: nodeEntity.isShared,
@@ -263,6 +263,6 @@ function getDescriptiveMediaType(node: MaybeNode): string {
 }
 
 function isOwnFile(node: MaybeNode): boolean {
-    const memberRole = node.ok ? node.value.directMemberRole : node.error.directMemberRole;
+    const memberRole = node.ok ? node.value.directRole : node.error.directRole;
     return memberRole === MemberRole.Admin;
 }

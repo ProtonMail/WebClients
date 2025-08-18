@@ -104,6 +104,7 @@ import type { WebCoreSignupCtxCreateUserTotal } from './types/web_core_signup_ct
 import type { WebCoreSignupCtxErrorPageTotal } from './types/web_core_signup_ctx_errorPage_total_v1.schema';
 import type { WebCoreSignupCtxInitializationTotal } from './types/web_core_signup_ctx_initialization_total_v1.schema';
 import type { WebCoreSignupCtxLoginTotal } from './types/web_core_signup_ctx_login_total_v1.schema';
+import type { WebCoreSignupCtxRecoveryPhrasePayloadSentTotal } from './types/web_core_signup_ctx_recoveryPhrasePayloadSent_total_v1.schema';
 import type { WebCoreSignupCtxSetDisplayNameTotal } from './types/web_core_signup_ctx_setDisplayName_total_v1.schema';
 import type { WebCoreSignupCtxSetOrgNameTotal } from './types/web_core_signup_ctx_setOrgName_total_v1.schema';
 import type { WebCoreSignupCtxSetupUserTotal } from './types/web_core_signup_ctx_setupUser_total_v1.schema';
@@ -364,6 +365,8 @@ class Metrics extends MetricsBase {
     public core_signup_ctx_initialization_total: Counter<WebCoreSignupCtxInitializationTotal>;
 
     public core_signup_ctx_login_total: Counter<WebCoreSignupCtxLoginTotal>;
+
+    public core_signup_ctx_recoveryPhrasePayloadSent_total: Counter<WebCoreSignupCtxRecoveryPhrasePayloadSentTotal>;
 
     public core_signup_ctx_setDisplayName_total: Counter<WebCoreSignupCtxSetDisplayNameTotal>;
 
@@ -1015,6 +1018,12 @@ class Metrics extends MetricsBase {
             { name: 'web_core_signup_ctx_login_total', version: 1 },
             this.requestService
         );
+
+        this.core_signup_ctx_recoveryPhrasePayloadSent_total =
+            new Counter<WebCoreSignupCtxRecoveryPhrasePayloadSentTotal>(
+                { name: 'web_core_signup_ctx_recoveryPhrasePayloadSent_total', version: 1 },
+                this.requestService
+            );
 
         this.core_signup_ctx_setDisplayName_total = new Counter<WebCoreSignupCtxSetDisplayNameTotal>(
             { name: 'web_core_signup_ctx_setDisplayName_total', version: 1 },

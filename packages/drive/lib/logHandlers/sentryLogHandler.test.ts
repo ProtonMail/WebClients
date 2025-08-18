@@ -31,12 +31,15 @@ describe('SentryLogHandler', () => {
         handler.log(logRecord);
 
         expect(mockTraceError).toHaveBeenCalledWith(error, {
+            level: 'debug',
             tags: {
-                loggerName: 'test-logger',
-                component: 'drive-sdk',
+                component: 'drive-sdk-log',
             },
             extra: {
-                time: '2023-01-01T10:00:00.000Z',
+                logTime: '2023-01-01T10:00:00.000Z',
+                logLevel: 'ERROR',
+                loggerName: 'test-logger',
+                logMessage: 'Something went wrong',
             },
         });
     });
@@ -60,7 +63,7 @@ describe('SentryLogHandler', () => {
     it('should not send non-ERROR logs to Sentry', () => {
         const logRecord = {
             time: new Date(),
-            level: LogLevel.WARNING,
+            level: LogLevel.INFO,
             loggerName: 'test-logger',
             message: 'This is a warning',
         };
