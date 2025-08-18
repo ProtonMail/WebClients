@@ -186,7 +186,7 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
     const plans = plansResult?.plans;
     const freePlan = plansResult?.freePlan || FREE_PLAN;
 
-    let space = getSpace(user);
+    const space = getSpace(user);
 
     const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription);
     const loading = loadingSubscription || loadingPlans;

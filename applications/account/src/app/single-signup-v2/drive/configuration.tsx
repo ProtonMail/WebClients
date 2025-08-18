@@ -270,7 +270,7 @@ export const getDriveConfiguration = ({
 
     const features = getGenericFeatures(isLargeViewport, audience);
 
-    let planCards: SignupConfiguration['planCards'] = {
+    const planCards: SignupConfiguration['planCards'] = {
         [Audience.B2B]: [
             {
                 plan: PLANS.DRIVE_BUSINESS,

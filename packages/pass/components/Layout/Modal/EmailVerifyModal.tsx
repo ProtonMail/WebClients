@@ -52,7 +52,7 @@ export const EmailVerifyModal: FC<Props> = ({
         validateOnChange: true,
         validateOnMount: false,
         validate: ({ code }) => {
-            let errors: FormikErrors<FormValues> = {};
+            const errors: FormikErrors<FormValues> = {};
             if (!code) errors.code = c('Warning').t`Verification code is required`;
             if (!isNumber(code)) errors.code = c('Warning').t`Invalid code`;
             return errors;

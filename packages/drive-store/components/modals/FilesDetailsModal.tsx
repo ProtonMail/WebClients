@@ -26,8 +26,8 @@ interface Props {
 const FilesDetailsModal = ({ selectedItems, onClose, ...modalProps }: Props & ModalStateProps) => {
     const { isLoading, hasError, count, size } = useLinksDetailsView(selectedItems);
 
-    let title = c('Title').t`Item details`;
-    let labelCount = c('Title').t`Number of items`;
+    const title = c('Title').t`Item details`;
+    const labelCount = c('Title').t`Number of items`;
 
     const renderModalState = () => {
         if (isLoading) {

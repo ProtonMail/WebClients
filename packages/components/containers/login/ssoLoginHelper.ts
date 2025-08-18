@@ -330,7 +330,7 @@ const createSSOPolling = ({ api, user }: { api: Api; user: User }): SSOPolling =
     };
 
     let id = {};
-    let context: { success?: SSOPollingSuccessCb; error?: SSOPollingErrorCb } = {};
+    const context: { success?: SSOPollingSuccessCb; error?: SSOPollingErrorCb } = {};
 
     const unsubscribe = () => {
         clearInterval(intervalHandle);
@@ -430,7 +430,7 @@ export const getSSOInactiveData = async ({
 export const getSSOUnlockData = async ({ cache }: { cache: AuthCacheResult }): Promise<SSOUnlockData> => {
     const { api } = cache;
 
-    let [user, addresses, organizationData] = await Promise.all([
+    const [user, addresses, organizationData] = await Promise.all([
         cache.data.user || syncUser(cache),
         cache.data.addresses || syncAddresses(cache),
         getOrganizationData({ api }),

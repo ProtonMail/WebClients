@@ -72,7 +72,7 @@ const MemberAddresses = ({ addresses = [] }: MemberAddressesProps) => {
 
     const getAddressesListItems = () => {
         if (amountOfAddresses === 0) {
-            let n = amountOfAddresses;
+            const n = amountOfAddresses;
             return (
                 <li className="py-2">
                     <span className="md:hidden">{n}</span>

@@ -73,7 +73,7 @@ export const usePhotosRecovery = ({ onSucceed }: { onSucceed?: () => void } = {}
 
     const handlePrepareLinks = useCallback(
         async (abortSignal: AbortSignal, shares: Share[] | ShareWithKey[]) => {
-            let allRestoredData: { links: DecryptedLink[]; shareId: string }[] = [];
+            const allRestoredData: { links: DecryptedLink[]; shareId: string }[] = [];
             let totalNbLinks: number = 0;
 
             for (const share of shares) {

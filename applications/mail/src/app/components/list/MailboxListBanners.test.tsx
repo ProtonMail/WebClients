@@ -47,8 +47,8 @@ describe('ListBanners', () => {
     });
 
     describe('when showESSlowToolbar is true', () => {
-        let mockedOpenDropdown = jest.fn();
-        let mockedSetTemporaryToggleOff = jest.fn();
+        const mockedOpenDropdown = jest.fn();
+        const mockedSetTemporaryToggleOff = jest.fn();
 
         beforeEach(() => {
             mockUseEncryptedSearchContext({

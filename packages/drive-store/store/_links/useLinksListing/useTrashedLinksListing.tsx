@@ -81,7 +81,7 @@ export function useTrashedLinksListing() {
         volumeId: string,
         loadLinksMeta: FetchLoadLinksMeta
     ): Promise<boolean> => {
-        let trashFetchMeta = getTrashFetchState(volumeId);
+        const trashFetchMeta = getTrashFetchState(volumeId);
 
         if (trashFetchMeta.isEverythingFetched) {
             return false;

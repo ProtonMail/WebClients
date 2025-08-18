@@ -89,7 +89,7 @@ export function useSharedLinksListing() {
         volumeId: string,
         loadLinksMeta: FetchLoadLinksMeta
     ): Promise<boolean> => {
-        let sharedLinksFetchMeta = getSharedLinksFetchState(volumeId);
+        const sharedLinksFetchMeta = getSharedLinksFetchState(volumeId);
 
         if (sharedLinksFetchMeta.isEverythingFetched) {
             return false;
@@ -120,7 +120,7 @@ export function useSharedLinksListing() {
         loadLinksMeta: FetchLoadLinksMeta,
         AnchorID?: string
     ): Promise<{ AnchorID?: string; More: boolean }> => {
-        let sharedLinksFetchMeta = getSharedLinksFetchState(volumeId);
+        const sharedLinksFetchMeta = getSharedLinksFetchState(volumeId);
 
         if (sharedLinksFetchMeta.isEverythingFetched) {
             return {

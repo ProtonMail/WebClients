@@ -5,8 +5,8 @@ type FormatterCache = { code?: string; formatter?: Intl.DateTimeFormat };
 // Creating Intl.DateTimeFormat objects is expensive, so we have a local cache
 // Since dateLocale can mutate, we update it when the code updates.
 
-let monthFormatterCache: FormatterCache = {};
-let monthYearFormatterCache: FormatterCache = {};
+const monthFormatterCache: FormatterCache = {};
+const monthYearFormatterCache: FormatterCache = {};
 
 const getCachedFormatter = (cache: FormatterCache, options: Intl.DateTimeFormatOptions) => {
     if (cache.code !== dateLocale.code || !cache.formatter) {

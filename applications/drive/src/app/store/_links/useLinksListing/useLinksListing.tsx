@@ -294,7 +294,7 @@ export function useLinksListingProvider() {
         options
     ) => {
         // Shared links use own state for fetch meta.
-        let fetchMeta = options.fetchMeta;
+        const fetchMeta = options.fetchMeta;
 
         if (fetchMeta.isInProgress) {
             await fetchMeta.isInProgress;

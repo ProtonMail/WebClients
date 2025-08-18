@@ -5,7 +5,7 @@ type FormatterCache = { code?: string; formatter?: Intl.NumberFormat };
 // Creating Intl.NumberFormat objects is expensive, so we have a local cache
 // Since dateLocale can mutate, we update it when the code updates.
 
-let percentageFormatterCache: FormatterCache = {};
+const percentageFormatterCache: FormatterCache = {};
 
 const getCachedFormatter = (cache: FormatterCache, options: Intl.NumberFormatOptions) => {
     if (cache.code !== dateLocale.code || !cache.formatter) {

@@ -124,7 +124,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         let calendarEventV6Manager: ReturnType<typeof bootstrap.calendarEventManagerV6> | undefined;
         let eventManager: ReturnType<typeof bootstrap.eventManager> | undefined;
 
-        let hasEventLoopV6Enabled =
+        const hasEventLoopV6Enabled =
             unleashClient.isEnabled('CoreV6EventLoop') &&
             config.APP_NAME === 'proton-account' &&
             pathname.includes(APPS_CONFIGURATION[APPS.PROTONMAIL].settingsSlug);

@@ -6,7 +6,7 @@ import useMailtoHash from './useMailtoHash';
 jest.mock('proton-mail/containers/ComposeProvider');
 
 describe('useMailtoHash', () => {
-    let originalWindowLocation = window.location;
+    const originalWindowLocation = window.location;
 
     const mockReturn = jest.fn();
     const useOnMailToMock = useOnMailTo as jest.Mock;

@@ -61,7 +61,7 @@ describe('Encrypted Outside message images', () => {
         // Click on load banner
         screen.getByText('This message contains remote content.');
 
-        let loadButton = screen.getByTestId('remote-content:load');
+        const loadButton = screen.getByTestId('remote-content:load');
         fireEvent.click(loadButton);
 
         // Check that image has been loaded

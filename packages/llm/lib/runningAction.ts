@@ -40,7 +40,7 @@ export class BaseRunningAction implements RunningAction {
                 const elapsedSec = elapsedMs / 1000;
                 intervals = [...intervals, intervalMs].slice(-10);
                 const meanIntervalMs = intervals.reduce((a, b) => a + b, 0) / intervals.length;
-                let meanIntervalSec = meanIntervalMs / 1000.0;
+                const meanIntervalSec = meanIntervalMs / 1000.0;
                 const tokenPerSec = 1.0 / meanIntervalSec;
                 slow = elapsedSec > 5 && tokenPerSec < 2;
             }

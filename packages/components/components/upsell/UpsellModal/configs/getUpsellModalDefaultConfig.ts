@@ -9,9 +9,9 @@ export const getUpsellModalDefaultConfig: UpsellModalConfigCase = async (props) 
     const { currency, paymentsApi, plans } = props;
 
     // Paid users got the bundle for 12 months displayed
-    let planIDs: PlanIDs = { [PLANS.BUNDLE]: 1 };
-    let cycle = CYCLE.YEARLY;
-    let monthlyPrice = await getUpsellPlanMonthlyPrice({
+    const planIDs: PlanIDs = { [PLANS.BUNDLE]: 1 };
+    const cycle = CYCLE.YEARLY;
+    const monthlyPrice = await getUpsellPlanMonthlyPrice({
         currency,
         cycle,
         paymentsApi,

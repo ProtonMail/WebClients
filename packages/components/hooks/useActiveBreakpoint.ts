@@ -19,7 +19,7 @@ const getActiveBreakpoint = (): ActiveBreakpoint | '' => {
 const callbackStack: Set<Function> = new Set();
 const onResize = () => {
     const result = getActiveBreakpoint();
-    for (let callback of callbackStack.values()) {
+    for (const callback of callbackStack.values()) {
         callback(result);
     }
 };

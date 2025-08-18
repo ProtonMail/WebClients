@@ -45,7 +45,7 @@ describe('SubscriptionCheckout', () => {
     it('should display Proration if it is available and isProration is true', () => {
         checkResult.Proration = -451;
 
-        let { container } = renderWithProviders(
+        const { container } = renderWithProviders(
             <WrappedSubscriptionCheckout
                 freePlan={FREE_PLAN}
                 checkResult={checkResult}
@@ -76,7 +76,7 @@ describe('SubscriptionCheckout', () => {
     it('should display Proration if it is available and isProration is true', () => {
         checkResult.Proration = -451;
 
-        let { container } = renderWithProviders(
+        const { container } = renderWithProviders(
             <WrappedSubscriptionCheckout
                 freePlan={FREE_PLAN}
                 checkResult={checkResult}
@@ -107,7 +107,7 @@ describe('SubscriptionCheckout', () => {
     it('should not display proration if isProration is false', () => {
         checkResult.Proration = -451;
 
-        let { container } = renderWithProviders(
+        const { container } = renderWithProviders(
             <WrappedSubscriptionCheckout
                 freePlan={FREE_PLAN}
                 checkResult={checkResult}
@@ -138,7 +138,7 @@ describe('SubscriptionCheckout', () => {
     it('should display next start date if proration must be hidden', () => {
         checkResult.Proration = 0;
 
-        let { container } = renderWithProviders(
+        const { container } = renderWithProviders(
             <WrappedSubscriptionCheckout
                 freePlan={FREE_PLAN}
                 checkResult={checkResult}
@@ -183,7 +183,7 @@ describe('SubscriptionCheckout', () => {
             Coupon: null,
         };
 
-        let { container } = renderWithProviders(
+        const { container } = renderWithProviders(
             <WrappedSubscriptionCheckout
                 freePlan={FREE_PLAN}
                 checkResult={checkResult}
@@ -235,7 +235,7 @@ describe('SubscriptionCheckout', () => {
             Coupon: null,
         };
 
-        let { container } = renderWithProviders(
+        const { container } = renderWithProviders(
             <WrappedSubscriptionCheckout
                 freePlan={FREE_PLAN}
                 checkResult={checkResult}
@@ -287,7 +287,7 @@ describe('SubscriptionCheckout', () => {
             Coupon: null,
         };
 
-        let { container } = renderWithProviders(
+        const { container } = renderWithProviders(
             <WrappedSubscriptionCheckout
                 freePlan={FREE_PLAN}
                 checkResult={checkResult}

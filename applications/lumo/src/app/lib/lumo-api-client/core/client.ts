@@ -68,7 +68,7 @@ export class LumoApiClient {
             requestTitle = false,
             autoGenerateEncryption = true,
         } = options;
-        let { enableU2LEncryption, lumoPubKey, internalTools, externalTools, endpoint } = this.config;
+        const { enableU2LEncryption, lumoPubKey, internalTools, externalTools, endpoint } = this.config;
 
         // Auto-generate encryption keys if needed and not provided
         let requestKey = providedRequestKey;

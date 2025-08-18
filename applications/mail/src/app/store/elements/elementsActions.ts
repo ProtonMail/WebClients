@@ -186,7 +186,7 @@ export const pollTaskRunning = createAsyncThunk<TaskRunningInfo, undefined, Mail
         const currentLabels = (getState() as MailState).elements.taskRunning.labelIDs;
         const finishedLabels = [];
 
-        for (let label of currentLabels) {
+        for (const label of currentLabels) {
             const result = await extra.api<QueryResults>(queryMessageMetadata({ LabelID: label }));
             const isLabelStillRunning =
                 result?.TasksRunning && !Array.isArray(result.TasksRunning) && result.TasksRunning[label];

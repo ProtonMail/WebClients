@@ -27,7 +27,7 @@ export const CouponModal: FC<Props> = ({ onClose }) => {
         validateOnChange: true,
         validateOnMount: false,
         validate: ({ coupon }) => {
-            let errors: FormikErrors<FormValues> = {};
+            const errors: FormikErrors<FormValues> = {};
             if (!coupon) errors.coupon = c('Warning').t`Coupon cannot be empty`;
             return errors;
         },

@@ -37,7 +37,7 @@ export const CustomAddressAddModal: FC<Props> = ({ onClose }) => {
         validateOnChange: true,
         validateOnMount: false,
         validate: async ({ email }) => {
-            let errors: FormikErrors<FormValues> = {};
+            const errors: FormikErrors<FormValues> = {};
             if (!email) errors.email = c('Warning').t`Email is required`;
             else if (!(await PassUI.is_email_valid(email))) errors.email = c('Warning').t`Invalid email`;
             return errors;

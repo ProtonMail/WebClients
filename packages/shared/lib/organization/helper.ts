@@ -102,8 +102,8 @@ export const getOrganizationKeyInfo = (
     const userHasMissingKey = organizationKey?.Key.AccessToOrgKey === MEMBER_ORG_KEY_STATE.Missing;
 
     if (getIsPasswordless(organizationKey?.Key)) {
-        let hasActivation = organizationHasKeys && !!organizationKey?.Key.SignatureAddress;
-        let hasActivationAddress = organizationKey?.Key.EncryptionAddressID
+        const hasActivation = organizationHasKeys && !!organizationKey?.Key.SignatureAddress;
+        const hasActivationAddress = organizationKey?.Key.EncryptionAddressID
             ? addresses?.find((address) => address.ID === organizationKey.Key.EncryptionAddressID)
             : undefined;
 

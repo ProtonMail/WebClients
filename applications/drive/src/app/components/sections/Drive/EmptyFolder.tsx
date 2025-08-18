@@ -21,7 +21,7 @@ const EmptyFolder = ({ shareId, permissions }: { shareId: string; permissions: S
             return;
         }
 
-        let node = anchorRef.current;
+        const node = anchorRef.current;
 
         const handleContextMenu = (ev: MouseEvent) => {
             ev.stopPropagation();

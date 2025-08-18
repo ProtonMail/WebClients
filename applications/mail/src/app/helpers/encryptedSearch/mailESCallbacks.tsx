@@ -191,7 +191,7 @@ export const getESCallbacks = ({
         if (!event || !event.EventID) {
             return {};
         }
-        let eventsToStore: EventsObject = {};
+        const eventsToStore: EventsObject = {};
         eventsToStore[MAIL_EVENTLOOP_NAME] = event.EventID;
         return eventsToStore;
     };
@@ -251,7 +251,7 @@ export const getESCallbacks = ({
             throw new Error('Last event has no ID');
         }
 
-        let eventsToStore: EventsObject = {};
+        const eventsToStore: EventsObject = {};
         eventsToStore[MAIL_EVENTLOOP_NAME] = EventID;
 
         const esEvents: ESEvent<ESBaseMessage>[] = newEvents
@@ -277,7 +277,7 @@ export const getESCallbacks = ({
         const recipients = transformRecipients(getRecipients(metadata));
         const sender = transformRecipients([metadata.Sender]);
 
-        let result = testKeywords(keywords, [metadata.Subject, ...recipients, ...sender], hasApostrophe);
+        const result = testKeywords(keywords, [metadata.Subject, ...recipients, ...sender], hasApostrophe);
         if (!content) {
             return result;
         }

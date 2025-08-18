@@ -21,7 +21,7 @@ type OpenCb = (immediate?: boolean) => void;
 const tooltips = new Map<number, { state: State; close: MutableRefObject<CloseCb> }>();
 
 const closePendingTooltips = () => {
-    for (let [id, entry] of tooltips) {
+    for (const [id, entry] of tooltips) {
         if (entry.state === State.Closing) {
             entry.close.current();
             tooltips.delete(id);

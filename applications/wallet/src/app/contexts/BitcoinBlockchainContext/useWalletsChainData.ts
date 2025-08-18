@@ -263,7 +263,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
 
             if (account && canSync) {
                 try {
-                    let fullSyncDone = isFullSyncDone(fingerprint, derivationPath);
+                    const fullSyncDone = isFullSyncDone(fingerprint, derivationPath);
 
                     const wasmAccount = account.account;
 

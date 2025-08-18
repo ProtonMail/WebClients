@@ -36,7 +36,7 @@ export const convertEventType = (event: Event, numAddresses: number): ESEvent<ES
               };
           });
 
-    let eventsToStore: EventsObject = {};
+    const eventsToStore: EventsObject = {};
     eventsToStore[MAIL_EVENTLOOP_NAME] = EventID;
 
     return {

@@ -153,7 +153,7 @@ describe('file-storage/fs', () => {
         });
 
         test('calls `onReady` when no fallback needed', async () => {
-            let instance: FileStorage = new OPFS.FileStorageOPFS();
+            const instance: FileStorage = new OPFS.FileStorageOPFS();
             const onSwitch = jest.fn();
             const onReady = jest.fn();
 

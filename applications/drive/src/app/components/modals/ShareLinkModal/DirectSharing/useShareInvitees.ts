@@ -115,7 +115,7 @@ export const useShareInvitees = (existingEmails: string[]) => {
         );
 
         setInviteesMap((map) => new Map([...map, ...filteredInvitees, ...badInvitees]));
-        for (let [email, filteredInvitee] of filteredInvitees) {
+        for (const [email, filteredInvitee] of filteredInvitees) {
             // We consider a user as external if this one have no public keys
             const primaryPublicKey = await getPrimaryPublicKeyForEmail(email, abortController.current.signal, true);
             if (!primaryPublicKey) {

@@ -165,7 +165,7 @@ describe('Payment', () => {
     });
 
     it('should not render <Alert3DS> if flow type is "signup"', async () => {
-        let { container } = render(
+        const { container } = render(
             <WrappedPaymentsNoApi
                 onMethod={() => {}}
                 flow="signup"
@@ -243,9 +243,9 @@ describe('Payment', () => {
             },
         ];
 
-        let savedMethodExternal = paymentMethods[0] as SavedPaymentMethodExternal;
+        const savedMethodExternal = paymentMethods[0] as SavedPaymentMethodExternal;
 
-        let { container } = render(
+        const { container } = render(
             <WrappedPaymentsNoApi
                 onMethod={() => {}}
                 flow="subscription"
@@ -321,9 +321,9 @@ describe('Payment', () => {
             },
         ];
 
-        let savedMethodInternal: SavedPaymentMethodInternal = paymentMethods[0] as SavedPaymentMethodInternal;
+        const savedMethodInternal: SavedPaymentMethodInternal = paymentMethods[0] as SavedPaymentMethodInternal;
 
-        let { container } = render(
+        const { container } = render(
             <WrappedPaymentsNoApi
                 onMethod={() => {}}
                 flow="subscription"

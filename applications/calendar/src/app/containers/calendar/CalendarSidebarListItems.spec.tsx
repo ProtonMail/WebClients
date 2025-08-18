@@ -228,7 +228,7 @@ const mockSubscribedCalendar: VisualCalendar = {
 const getImportButton = () => screen.queryByText(/Import events/) as HTMLButtonElement;
 const getImportModal = () => screen.queryByText(/ImportModal/);
 
-let memoryHistory = createMemoryHistory();
+const memoryHistory = createMemoryHistory();
 
 function renderComponent(props?: Partial<CalendarSidebarListItemsProps>) {
     const defaultProps: CalendarSidebarListItemsProps = {

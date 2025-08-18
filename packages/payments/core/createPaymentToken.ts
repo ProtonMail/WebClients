@@ -368,7 +368,7 @@ export async function createPaymentTokenV5Paypal(
 > {
     const { type, amountAndCurrency } = params;
 
-    let data: CreatePaymentIntentData = {
+    const data: CreatePaymentIntentData = {
         ...amountAndCurrency,
         Payment: {
             Type: 'paypal',
@@ -382,8 +382,8 @@ export async function createPaymentTokenV5Paypal(
     } = await fetchPaymentIntentV5(api, data, abortController?.signal);
     forceEnableChargebee();
 
-    let paymentIntent = convertPaymentIntentData(paymentIntentData);
-    let authorizedStatus: AuthorizedV5PaymentToken = {
+    const paymentIntent = convertPaymentIntentData(paymentIntentData);
+    const authorizedStatus: AuthorizedV5PaymentToken = {
         authorized: true,
     };
 

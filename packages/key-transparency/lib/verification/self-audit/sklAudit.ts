@@ -33,7 +33,7 @@ export const auditSKL = async (
     }
     await verifyProofOfExistenceOrObsolescence(proof, email, epoch.TreeHash, signedKeyList);
     if (signedKeyList.Data && signedKeyList.Signature) {
-        let sklCreationTimestamp = await verifySKLSignature({
+        const sklCreationTimestamp = await verifySKLSignature({
             verificationKeys: addressVerificationKeys,
             signedKeyListData: signedKeyList.Data,
             signedKeyListSignature: signedKeyList.Signature,

@@ -142,7 +142,7 @@ class MailImportFoldersParser {
          * Example: 'p/c/cc' will become ['p', 'c', 'cc']
          */
         const folderSource = folder.Source || '';
-        let pathBasedOnSeparator = (() => {
+        const pathBasedOnSeparator = (() => {
             if (separator !== PROTON_DEFAULT_SEPARATOR) {
                 return folderSource.split(separator);
             }

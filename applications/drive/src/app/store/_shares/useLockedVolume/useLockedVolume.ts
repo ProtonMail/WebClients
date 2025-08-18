@@ -129,9 +129,9 @@ export function useLockedVolumeInner({
 
     const getLoadedLockedShares = useCallback(
         async (abortSignal: AbortSignal): Promise<LockedSharesPerVolume> => {
-            let loadedLockedShares = new Map();
+            const loadedLockedShares = new Map();
             const currentLockedSharesByVolume = getLockedSharesByVolume();
-            for (let [volumeId, lockedShares] of currentLockedSharesByVolume) {
+            for (const [volumeId, lockedShares] of currentLockedSharesByVolume) {
                 loadedLockedShares.set(volumeId, {
                     defaultShares: await Promise.all(
                         lockedShares.defaultShares.map((defaultShare) =>
@@ -187,8 +187,8 @@ export function useLockedVolumeInner({
 
     const getPreparedVolumes = useCallback(
         async (lockedUnpreparedShares: LockedSharesPerVolume, addressPrivateKeys: PrivateKeyReference[]) => {
-            let preparedVolumes = [];
-            for (let [volumeId, { defaultShares, devices, photos }] of lockedUnpreparedShares) {
+            const preparedVolumes = [];
+            for (const [volumeId, { defaultShares, devices, photos }] of lockedUnpreparedShares) {
                 const cacheKey = defaultShares
                     .concat(devices)
                     .concat(photos)
@@ -354,7 +354,7 @@ export function useLockedVolumeInner({
             return false;
         }
 
-        for (let preparedVolume of preparedVolumesForRestore) {
+        for (const preparedVolume of preparedVolumesForRestore) {
             // TODO: Not optimal as it's double the call that what we have in useDefaultShare.getDefaultPhotosShare,
             // but it prevent changing too many things
             const { Volume } = await debouncedRequest<GetDriveVolumeResult>(
