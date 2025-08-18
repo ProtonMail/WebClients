@@ -684,16 +684,28 @@ const SubscriptionContainerInner = ({
         });
     };
 
+    const switchCycle = (preferredCycle: Cycle, selectedPlanIDs: PlanIDs, currency: Currency) => {
+        const allowedCycles = getAllowedCycles({
+            subscription,
+            planIDs: selectedPlanIDs,
+            plansMap,
+            currency,
+        });
+
+        return allowedCycles.includes(preferredCycle) ? preferredCycle : allowedCycles[0];
+    };
+
     const normalizeModelBeforeCheck = (newModel: Model) => {
         const planTransitionForbidden = getIsPlanTransitionForbidden({
             subscription,
             plansMap,
             planIDs: newModel.planIDs,
         });
-
         if (planTransitionForbidden?.type === 'lumo-plus') {
             newModel.planIDs = planTransitionForbidden.newPlanIDs;
-            newModel.cycle = subscription?.Cycle ?? newModel.cycle;
+            // since we are switching the plan, it's the same as switching the cycle manually, so we need to make sure
+            // that the cycle is allowed
+            newModel.cycle = switchCycle(subscription?.Cycle ?? newModel.cycle, newModel.planIDs, newModel.currency);
         }
 
         if (planTransitionForbidden?.type === 'plus-to-plus') {
@@ -705,6 +717,11 @@ const SubscriptionContainerInner = ({
             setUpsellModal(true);
             // In case this transition is disallowed, reset the plan IDs to the plan IDs of the current subscription
             newModel.planIDs = getPlanIDs(latestSubscription);
+
+            // since we are switching the plan, it's the same as switching the cycle manually, so we need to make sure
+            // that the cycle is allowed
+            newModel.cycle = switchCycle(newModel.cycle, newModel.planIDs, newModel.currency);
+
             // Also, reset the step to the previous step (so that it doesn't change from plan selection -> checkout)
             newModel.step = model.step;
             // Continue here with the rest of the steps so that we actually perform the rest of the call correctly (but just with reset plan ids)

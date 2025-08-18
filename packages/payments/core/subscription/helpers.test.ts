@@ -629,6 +629,33 @@ describe('forbidden plan transitions', () => {
         const result = getIsPlanTransitionForbidden({ subscription: undefined, planIDs, plansMap });
         expect(result).toEqual(null);
     });
+
+    it('should be allowed to go from lumo plus to another plus with lumo addon', () => {
+        const subscription = buildSubscription(PLANS.LUMO);
+        const planIDs: PlanIDs = { [PLANS.VPN2024]: 1, [ADDON_NAMES.LUMO_VPN2024]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, planIDs, plansMap });
+        expect(result).toEqual(null);
+    });
+
+    it('should be forbidden to go from lumo plus to another plus without lumo addon', () => {
+        const subscription = buildSubscription(PLANS.LUMO);
+
+        expect(
+            getIsPlanTransitionForbidden({
+                subscription,
+                planIDs: { [PLANS.VPN2024]: 1, [ADDON_NAMES.LUMO_VPN2024]: 0 },
+                plansMap,
+            })
+        ).toEqual({ type: 'plus-to-plus', newPlanName: PLANS.VPN2024 });
+
+        expect(
+            getIsPlanTransitionForbidden({
+                subscription,
+                planIDs: { [PLANS.VPN2024]: 1 },
+                plansMap,
+            })
+        ).toEqual({ type: 'plus-to-plus', newPlanName: PLANS.VPN2024 });
+    });
 });
 
 describe('getLumoAddonNameByPlan', () => {
