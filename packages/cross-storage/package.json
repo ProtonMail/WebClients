@@ -4,7 +4,7 @@
     "module": "lib/index.ts",
     "scripts": {
         "check-types": "tsc",
-        "lint": "eslint ."
+        "lint": "eslint . --ext .js,.ts,.tsx --quiet --cache"
     },
     "dependencies": {
         "@proton/shared": "workspace:^"
