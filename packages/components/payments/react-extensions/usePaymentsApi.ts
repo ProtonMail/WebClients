@@ -18,13 +18,12 @@ import {
     SubscriptionMode,
     captureWrongPlanIDs,
     getLifetimeProductType,
+    getPaymentMethodStatus,
     getPaymentsVersion,
     getPlanName,
     isCheckForbidden,
     isLifetimePlanSelected,
     normalizeBillingAddress,
-    normalizePaymentMethodStatus,
-    queryPaymentMethodStatus,
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { type EnrichedCheckResponse } from '@proton/shared/lib/helpers/checkout';
@@ -231,17 +230,15 @@ export const usePaymentsApi = (
     const getFlag = useGetFlag();
 
     const getPaymentsApi = (api: Api): PaymentsApi => {
-        const paymentStatus = (): Promise<PaymentStatus> => {
-            return api<PaymentStatus>(queryPaymentMethodStatus())
-                .then((status) => normalizePaymentMethodStatus(status))
-                .then((status) => {
-                    // ProtonAccountLite doesn't support cash payments
-                    if (APP_NAME === APPS.PROTONACCOUNTLITE) {
-                        status.VendorStates.Cash = false;
-                    }
+        const paymentStatus = async (): Promise<PaymentStatus> => {
+            const status = await getPaymentMethodStatus(api);
 
-                    return status;
-                });
+            // ProtonAccountLite doesn't support cash payments
+            if (APP_NAME === APPS.PROTONACCOUNTLITE) {
+                status.VendorStates.Cash = false;
+            }
+
+            return status;
         };
 
         const checkSubscription = async (

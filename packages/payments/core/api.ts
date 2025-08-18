@@ -36,7 +36,7 @@ import { FREE_PLAN } from './subscription/freePlans';
 import type { Subscription } from './subscription/interface';
 import { isTokenPaymentMethod, isV5PaymentToken } from './type-guards';
 
-export const queryPaymentMethodStatus = () => ({
+const queryPaymentMethodStatus = () => ({
     url: `payments/v5/status`,
     method: 'get',
 });
