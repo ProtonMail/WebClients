@@ -27,7 +27,7 @@
         "@protontech/timezone-support": "^2.1.0",
         "@scure/base": "^1.2.6",
         "@sentry/browser": "^7.120.4",
-        "@types/node": "^22.17.1",
+        "@types/node": "^22.17.2",
         "@types/papaparse": "^5.3.16",
         "@types/ua-parser-js": "^0.7.39",
         "@types/webpack-env": "^1.18.8",
@@ -49,7 +49,7 @@
         "@babel/plugin-transform-runtime": "^7.28.3",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
-        "@types/jasmine": "^5.1.8",
+        "@types/jasmine": "^5.1.9",
         "@types/karma-junit-reporter": "^2.0.4",
         "@types/loglevel": "^1.6.3",
         "@webgpu/types": "^0.1.64",
@@ -69,6 +69,6 @@
         "ttag": "^1.8.12",
         "typescript": "^5.9.2",
         "url-loader": "^4.1.1",
-        "webpack": "^5.101.1"
+        "webpack": "^5.101.3"
     }
 }

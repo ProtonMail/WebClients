@@ -52,7 +52,7 @@
         "react-router-dom-v5-compat": "^6.30.0",
         "react-window": "^1.8.11",
         "ttag": "^1.8.12",
-        "web-streams-polyfill": "^4.1.0",
+        "web-streams-polyfill": "^4.2.0",
         "zustand": "^4.5.7"
     },
     "devDependencies": {
@@ -80,7 +80,7 @@
         "prettier": "^3.6.2",
         "pretty-format": "^29.7.0",
         "typescript": "^5.9.2",
-        "webpack": "^5.101.1"
+        "webpack": "^5.101.3"
     },
     "peerDependencies": {
         "@openpgp/web-stream-tools": "^0.1.0"
