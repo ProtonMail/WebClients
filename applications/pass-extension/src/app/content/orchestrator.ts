@@ -52,7 +52,7 @@ void (async () => {
 
         await unloadContentScript();
         await loadContentScript();
-    } catch (_err) {
+    } catch (err) {
         void unloadContentScript();
     }
 })();
