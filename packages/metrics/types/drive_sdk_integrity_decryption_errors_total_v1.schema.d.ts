@@ -13,6 +13,7 @@ export interface HttpsProtonMeDriveSdkIntegrityDecryptionErrorsTotalV1SchemaJson
     volumeType: "own_volume" | "own_photo_volume" | "shared" | "shared_public" | "unknown";
     field:
       | "shareKey"
+      | "shareUrlPassword"
       | "nodeKey"
       | "nodeName"
       | "nodeHashKey"

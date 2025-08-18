@@ -8120,7 +8120,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/drive@workspace:packages/drive"
   dependencies:
-    "@protontech/drive-sdk": "npm:^0.1.2"
+    "@protontech/drive-sdk": "npm:^0.2.0"
     "@types/jest": "npm:^29.5.14"
     "@types/node": "npm:^22.17.1"
     eslint: "npm:^8.57.1"
@@ -8856,14 +8856,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protontech/drive-sdk@npm:^0.1.2":
-  version: 0.1.2
-  resolution: "@protontech/drive-sdk@npm:0.1.2"
+"@protontech/drive-sdk@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@protontech/drive-sdk@npm:0.2.0"
   dependencies:
     "@noble/hashes": "npm:^1.8.0"
     bcryptjs: "npm:^2.4.3"
     ttag: "npm:^1.8.7"
-  checksum: 10c0/1736bb9b9ebaa900ed83c470409d696c1a89190b44623425eeac4bbae999f8687f4523dfd2141f062d5f92116efefe55fa0012fc88631eeda78f95a61404f0ab
+  checksum: 10c0/ca4b8a8725cd4f94add7ae40259de5941c6cb567597b0a1c5a052de436e0943ca52f5f0e97af946513751d7dfdb1a3938c015305719b88d5e229d5676f3a0c45
   languageName: node
   linkType: hard
 

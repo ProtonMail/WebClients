@@ -13,6 +13,8 @@ export interface HttpsProtonMeDriveSdkIntegrityVerificationErrorsTotalV1SchemaJs
     volumeType: "own_volume" | "own_photo_volume" | "shared" | "shared_public" | "unknown";
     field:
       | "shareKey"
+      | "membershipInviter"
+      | "membershipInvitee"
       | "nodeKey"
       | "nodeName"
       | "nodeHashKey"
