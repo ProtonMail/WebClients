@@ -24,7 +24,6 @@ import { InAppText } from '@proton/components/containers/payments/subscription/I
 import SubscriptionContainer from '@proton/components/containers/payments/subscription/SubscriptionContainer';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import {
-    COUPON_CODES,
     CURRENCIES,
     type Currency,
     FREE_PLAN,
@@ -58,7 +57,6 @@ import clsx from '@proton/utils/clsx';
 import broadcast, { MessageType } from '../broadcast';
 import LiteBox from '../components/LiteBox';
 import PromotionAlreadyApplied from '../components/PromotionAlreadyApplied';
-import PromotionExpired from '../components/PromotionExpired';
 import SubscribeAccountDone from '../components/SubscribeAccountDone';
 import { SubscribeType } from '../types/SubscribeType';
 
@@ -268,11 +266,6 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOv
         handleNotify(SubscribeType.Subscribed);
         onSubscribed?.();
     };
-
-    const bf2023IsExpired = coupon?.toLocaleUpperCase() === COUPON_CODES.BLACK_FRIDAY_2023;
-    if (bf2023IsExpired) {
-        return <PromotionExpired />;
-    }
 
     const activeSubscription = subscription?.UpcomingSubscription ?? subscription;
     const activeSubscriptionPlan = getPlan(activeSubscription);
