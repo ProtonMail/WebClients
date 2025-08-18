@@ -10,7 +10,7 @@
     },
     "scripts": {
         "build": "./scripts/build.sh",
-        "lint": "eslint lib --ext .js,.ts,tsx --quiet --cache",
+        "lint": "eslint lib --ext .js,.ts,tsx --quiet",
         "pretty": "prettier --write  $(find lib/ index.js -type f -name '*.js')",
         "test": "./test/test-linter.sh* && ./test/test-validator.sh",
         "test:ci": "yarn test"
