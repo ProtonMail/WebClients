@@ -4,7 +4,6 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useAppTitle } from '@proton/components';
-import { DriveEventType, useDrive } from '@proton/drive/index';
 
 import { FileBrowserStateProvider } from '../../components/FileBrowser';
 import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
@@ -21,7 +20,6 @@ import { useSharedWithMeNodesLoader } from './loaders/useSharedWithMeNodesLoader
 export const SharedWithMeView = () => {
     useAppTitle(c('Title').t`Shared with me`);
     const { activeShareId, setDefaultRoot } = useActiveShare();
-    const { drive } = useDrive();
 
     const { loadSharedWithMeNodes } = useSharedWithMeNodesLoader();
     const { loadInvitations } = useInvitationsLoader();
@@ -38,7 +36,6 @@ export const SharedWithMeView = () => {
         void traceTelemetry(Actions.SignUpFlowAndRedirectCompleted).end();
     }, []);
 
-    /* Legacy event subscription */
     useEffect(() => {
         const abortController = new AbortController();
 
@@ -51,31 +48,6 @@ export const SharedWithMeView = () => {
             abortController.abort();
         };
     }, [loadSharedWithMeNodes, loadInvitations, loadBookmarks, loadLegacySharedWithMeAlbums, loadLegacyInvitations]);
-
-    useEffect(() => {
-        const abortController = new AbortController();
-        const eventSubscriptionPromise = drive.subscribeToDriveEvents(async (event) => {
-            if (event.type === DriveEventType.SharedWithMeUpdated) {
-                await Promise.all([
-                    loadSharedWithMeNodes(abortController.signal),
-                    loadInvitations(abortController.signal),
-                    loadLegacySharedWithMeAlbums(abortController.signal),
-                    loadLegacyInvitations(abortController.signal),
-                ]);
-            }
-        });
-        return () => {
-            abortController.abort();
-            void eventSubscriptionPromise.then((eventSubscription) => eventSubscription.dispose());
-        };
-    }, [
-        drive,
-        loadBookmarks,
-        loadInvitations,
-        loadLegacyInvitations,
-        loadLegacySharedWithMeAlbums,
-        loadSharedWithMeNodes,
-    ]);
 
     return (
         <FileBrowserStateProvider itemIds={itemUids}>
