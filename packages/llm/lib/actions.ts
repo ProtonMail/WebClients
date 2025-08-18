@@ -72,7 +72,7 @@ export class GpuRefineRunningAction extends BaseRunningAction {
         const prompt = formatPromptCustomRefine(action);
         const refineCleanup = makeRefineCleanup(action);
         const wrappedCallback: GenerationCallback = (fulltext: string, details?: GenerationCallbackDetails) => {
-            let cleaned = refineCleanup(fulltext);
+            const cleaned = refineCleanup(fulltext);
             return callback(cleaned || '', details);
         };
         super(prompt, wrappedCallback, chat, action, ['</span>', '</div>']);
@@ -316,7 +316,7 @@ export class GpuLlmManager implements LlmManager {
         try {
             // Create Web-LLM worker
             if (!this.chat) {
-                let worker = new Worker(
+                const worker = new Worker(
                     // Note: This chunkName is important as it's used in the chunk plugin to avoid splitting it into multiple files
                     /* webpackChunkName: "llm-worker" */
                     new URL('./worker', import.meta.url),

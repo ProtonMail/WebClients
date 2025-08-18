@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
             return;
         }
 
-        let message = event.data;
+        const message = event.data;
 
         if (typeof message !== 'object' || !message.type) {
             postError(new Error('Unexpected message format'));

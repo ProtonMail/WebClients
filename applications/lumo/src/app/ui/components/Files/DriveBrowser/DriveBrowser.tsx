@@ -312,7 +312,7 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
     }, []);
 
     // Check for errors from both SDK and local initialization
-    let displayError = error || localError;
+    const displayError = error || localError;
     console.log('DriveBrowser render - SDK error:', error, 'localError:', localError, 'displayError:', displayError);
 
     return (

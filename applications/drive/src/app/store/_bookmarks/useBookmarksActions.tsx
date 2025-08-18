@@ -104,7 +104,7 @@ export const useBookmarksActions = () => {
 
     const deleteBookmarks = async (abortSignal: AbortSignal, tokensWithLinkId: { token: string; linkId: string }[]) => {
         try {
-            for (let { token, linkId } of tokensWithLinkId) {
+            for (const { token, linkId } of tokensWithLinkId) {
                 await deleteBookmark(abortSignal, token);
                 linksListing.removeCachedBookmarkLink(token, linkId);
             }

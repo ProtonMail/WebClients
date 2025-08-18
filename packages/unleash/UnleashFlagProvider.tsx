@@ -43,7 +43,7 @@ export const getUnleashConfig = ({ fetch }: Pick<IConfig, 'fetch'>): IConfig => 
 type SimpleFunc = () => void;
 
 export const createUnleashReadyPromise = (client: UnleashClient) => {
-    let promise = createPromise<void>();
+    const promise = createPromise<void>();
     const readyCallbackSet: Set<SimpleFunc> = new Set();
     const errorCallbackSet: Set<SimpleFunc> = new Set();
 

@@ -60,7 +60,7 @@ export const useSharedByMeNodes = () => {
             };
         });
 
-        let missingNodesToAdd: Record<string, LegacyItem> = {};
+        const missingNodesToAdd: Record<string, LegacyItem> = {};
         missingNodes.forEach((mappedNode) => (missingNodesToAdd[mappedNode.uid] = mappedNode));
         setSharedByMeNodes((prevSharedByMeNodes) => {
             return {

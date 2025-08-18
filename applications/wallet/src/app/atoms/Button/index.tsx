@@ -18,13 +18,8 @@ export const Button = forwardRef(
 
 Button.displayName = 'Button';
 
-const defaultElement = 'button';
-
 export const ButtonLike = forwardRef(
-    <E extends ElementType = typeof defaultElement>(
-        props: ButtonLikeProps<E> & { shadow?: boolean },
-        ref: Ref<Element>
-    ) => {
+    <E extends ElementType = 'button'>(props: ButtonLikeProps<E> & { shadow?: boolean }, ref: Ref<Element>) => {
         const className = clsx(props.className, 'wallet-button', props.shadow && 'shadow');
         return <CoreButtonLike pill ref={ref} {...{ ...props, className }} />;
     }

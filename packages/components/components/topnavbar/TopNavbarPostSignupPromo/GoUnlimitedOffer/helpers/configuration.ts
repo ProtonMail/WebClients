@@ -97,7 +97,7 @@ export const useGoUnlimited2025Config = (): UnlimitedOfferConfig => {
         const daysSinceLastRotationDate = differenceInDays(new Date(), lastRotationDate);
 
         if (daysSinceLastRotationDate >= POST_SIGNUP_GO_UNLIMITED_DURATION) {
-            let storedIndex = lastRotationDateFeature.Value.rotationIndex;
+            const storedIndex = lastRotationDateFeature.Value.rotationIndex;
             const nextIndex = (storedIndex + 1) % tips.length;
             setCurrentTipIndex(nextIndex);
             update({ rotationDate: getUnixTime(new Date()), rotationIndex: nextIndex });

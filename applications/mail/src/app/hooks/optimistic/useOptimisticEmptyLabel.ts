@@ -63,7 +63,7 @@ export const useOptimisticEmptyLabel = () => {
         dispatch(optimisticEmptyLabelElements());
 
         // Message counters
-        let { value: messageCounters = [] } = selectMessageCounts(mailStore.getState());
+        const { value: messageCounters = [] } = selectMessageCounts(mailStore.getState());
         rollbackCounters.messages = messageCounters.find((counter: any) => counter.LabelID === labelID) as LabelCount;
         mailStore.dispatch(
             messageCountsActions.set(
@@ -76,7 +76,7 @@ export const useOptimisticEmptyLabel = () => {
         );
 
         // Conversation counters
-        let { value: conversationCounters = [] } = selectConversationCounts(mailStore.getState());
+        const { value: conversationCounters = [] } = selectConversationCounts(mailStore.getState());
         rollbackCounters.conversations = conversationCounters.find(
             (counter: any) => counter.LabelID === labelID
         ) as LabelCount;
@@ -95,13 +95,13 @@ export const useOptimisticEmptyLabel = () => {
             dispatch(optimisticRestoreConversationsAction(rollbackConversations));
             dispatch(optimisticRestoreEmptyLabelElements({ elements: rollbackElements }));
             if (rollbackCounters.conversations) {
-                let { value: conversationCounters = [] } = selectConversationCounts(mailStore.getState());
+                const { value: conversationCounters = [] } = selectConversationCounts(mailStore.getState());
                 mailStore.dispatch(
                     conversationCountsActions.set(replaceCounter(conversationCounters, rollbackCounters.conversations))
                 );
             }
             if (rollbackCounters.messages) {
-                let { value: messageCounters = [] } = selectMessageCounts(mailStore.getState());
+                const { value: messageCounters = [] } = selectMessageCounts(mailStore.getState());
                 mailStore.dispatch(
                     messageCountsActions.set(replaceCounter(messageCounters, rollbackCounters.messages))
                 );

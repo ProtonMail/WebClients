@@ -136,7 +136,7 @@ export const usePassAliasesSetup = (): PassAliasesProviderReturnedValues => {
      */
     const getAliasOptions = async () => {
         // If default vault is not set create the default vault
-        let vault = await (async () => {
+        const vault = await (async () => {
             if (!passAliasVault) {
                 const defaultVault = await PassBridge.vault.createDefaultVault();
                 const { aliasesCountLimit, aliases, filteredAliases } = await fetchPassAliases(

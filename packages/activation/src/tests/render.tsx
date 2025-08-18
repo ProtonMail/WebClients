@@ -75,7 +75,7 @@ const notificationsManager = {
     setOffset: () => {},
 };
 
-let history = createMemoryHistory();
+const history = createMemoryHistory();
 const api = createApi({ config });
 
 export const EasySwitchTestProviders = ({ children }: { children: JSX.Element | (JSX.Element | null)[] | null }) => (

@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-throw-literal, curly */
+/* eslint-disable curly */
 import { all, call, fork, put, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';

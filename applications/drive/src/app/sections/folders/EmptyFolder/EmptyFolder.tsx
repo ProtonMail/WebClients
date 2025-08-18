@@ -24,7 +24,7 @@ export const EmptyFolder = ({ shareId, linkId }: { shareId: string; linkId: stri
             return;
         }
 
-        let node = anchorRef.current;
+        const node = anchorRef.current;
 
         const handleContextMenu = (ev: MouseEvent) => {
             ev.stopPropagation();

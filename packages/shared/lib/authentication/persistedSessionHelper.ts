@@ -565,7 +565,7 @@ export const getActiveSessions = async ({
     email?: string;
     options?: SessionOptions;
 }): Promise<GetActiveSessionsResult> => {
-    let persistedSessions = getPersistedSessions().sort((a, b) => {
+    const persistedSessions = getPersistedSessions().sort((a, b) => {
         return sessionComparator(a, b, localID);
     });
 

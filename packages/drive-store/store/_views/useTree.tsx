@@ -45,7 +45,7 @@ export function useTreeForModals(shareId: string, options?: Omit<TreeOptions, 'r
     const tree = useTree(shareId, { ...options });
     const isLoaded = tree.rootFolder?.isLoaded || false;
 
-    let items = getRootItems(tree);
+    const items = getRootItems(tree);
 
     return {
         ...tree,

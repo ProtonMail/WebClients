@@ -256,7 +256,7 @@ describe('Composer scheduled messages', () => {
                 })
             );
 
-            let spotlightTitle = screen.queryByTestId('composer:schedule-send:spotlight-title');
+            const spotlightTitle = screen.queryByTestId('composer:schedule-send:spotlight-title');
             expect(spotlightTitle).toBeTruthy();
         });
         it('Should be closed when dropdown is clicked', async () => {
@@ -272,7 +272,7 @@ describe('Composer scheduled messages', () => {
                 })
             );
 
-            let spotlightTitle = screen.queryByTestId('composer:schedule-send:spotlight-title');
+            const spotlightTitle = screen.queryByTestId('composer:schedule-send:spotlight-title');
             expect(spotlightTitle).toBeTruthy();
 
             const dropdownButton = screen.getByTestId('composer:scheduled-send:open-dropdown');
