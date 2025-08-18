@@ -14,12 +14,11 @@ import type {
     ICAL_ATTENDEE_STATUS,
     ICAL_EVENT_STATUS,
     MONTHLY_TYPE,
+    SHARED_SIGNED_FIELDS,
     WEEKLY_TYPE,
     YEARLY_TYPE,
 } from '../../calendar/constants';
-import { SHARED_SIGNED_FIELDS } from '../../calendar/constants';
 import type { API_CODES } from '../../constants';
-import { pick } from '../../helpers/object';
 import type { Address } from '../Address';
 import type { Nullable } from '../utils';
 import type { NotificationModel } from './Notification';
@@ -248,5 +247,4 @@ export interface EventModelReadView extends EventModelView {
     isAllDay: boolean;
 }
 
-const sharedPick = (x: VcalVeventComponent) => pick(x, [...SHARED_SIGNED_FIELDS, 'component']);
-export type SharedVcalVeventComponent = ReturnType<typeof sharedPick>;
+export type SharedVcalVeventComponent = Pick<VcalVeventComponent, (typeof SHARED_SIGNED_FIELDS)[number] | 'component'>;
