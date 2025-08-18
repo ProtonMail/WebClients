@@ -1,11 +1,7 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import Option from '@proton/components/components/option/Option';
-import type { SearcheableSelectProps } from '@proton/components/components/selectTwo/SearchableSelect';
-import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
-import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { type FormFieldValidator } from '@proton/components/components/v2/useFormErrors';
 import clsx from '@proton/utils/clsx';
@@ -15,37 +11,9 @@ import {
     billingCountryValidator,
     billingStateValidator,
 } from '../../core/billing-address/billing-address';
-import { getStateList, isCountryWithStates } from '../../core/countries';
+import { isCountryWithStates } from '../../core/countries';
 import { CountriesDropdown } from './CountriesDropdown';
-
-interface StateSelectorProps {
-    onStateChange: (stateCode: string) => void;
-    federalStateCode: string | null;
-    selectedCountryCode: string;
-    id?: string;
-    className?: string;
-}
-
-const StateSelector = ({ onStateChange, federalStateCode, selectedCountryCode, id, className }: StateSelectorProps) => {
-    const states = useMemo(() => getStateList(selectedCountryCode), [selectedCountryCode]);
-
-    const props: SearcheableSelectProps<string> = {
-        id,
-        className,
-        onChange: ({ value: stateCode }: SelectChangeEvent<string>) => onStateChange?.(stateCode),
-        value: federalStateCode ?? '',
-        placeholder: c('Placeholder').t`Select state`,
-        children: states.map(({ stateName, stateCode }) => {
-            return (
-                <Option key={stateCode} value={stateCode} title={stateName} data-testid={`state-${stateCode}`}>
-                    {stateName}
-                </Option>
-            );
-        }),
-    };
-
-    return <SearchableSelect {...props} data-testid="tax-state-dropdown" />;
-};
+import { StateSelector } from './StateSelector';
 
 interface CountryStateSelectorProps {
     selectedCountryCode: string;
