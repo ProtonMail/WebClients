@@ -169,7 +169,7 @@ export const Positioner = forwardRef(function Positioner(
 
     // If there is an active index, we process all the items after it, otherwise
     // we start from the beginning.
-    let startingIndex = needToAdjustItemsAboveActiveSeparately ? activeIndex + 1 : 0
+    const startingIndex = needToAdjustItemsAboveActiveSeparately ? activeIndex + 1 : 0
     for (let i = startingIndex; i < children.length; i++) {
       const item = positionsMap[i]
       if (!item) {

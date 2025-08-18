@@ -36,7 +36,7 @@ export const normalizeImporter = (apiImporter: ApiImporter) => {
 };
 
 export const normalizeImporters = (importersResponse: ApiImportListResponse) => {
-    let imports: Importer[] = [];
+    const imports: Importer[] = [];
     let activeImports: ActiveImporter[] = [];
 
     importersResponse.Importers.forEach((apiImporter) => {

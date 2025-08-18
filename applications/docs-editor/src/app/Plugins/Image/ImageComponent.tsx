@@ -34,7 +34,6 @@ export const RIGHT_CLICK_IMAGE_COMMAND: LexicalCommand<MouseEvent> = createComma
 
 function useSuspenseImage(src: string) {
   if (!imageCache.has(src)) {
-    // eslint-disable-next-line @typescript-eslint/no-throw-literal
     throw new Promise((resolve) => {
       const img = new Image()
       img.src = src

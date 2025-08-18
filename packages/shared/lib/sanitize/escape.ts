@@ -124,7 +124,7 @@ export const escapeURLinStyle = (style: string) => {
 };
 
 export const escapeForbiddenStyle = (style: string): string => {
-    let parsedStyle = style
+    const parsedStyle = style
         .replaceAll(REGEXP_POSITION_ABSOLUTE, 'position: relative')
         .replaceAll(REGEXP_HEIGHT_PERCENTAGE, (rule, prop) => {
             // Replace nothing in this case.

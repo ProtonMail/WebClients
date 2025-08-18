@@ -17,7 +17,7 @@ export default function useLinks() {
         links: { encrypted: EncryptedLink; decrypted: DecryptedLink }[];
         errors: any[];
     }> => {
-        let errors: any[] = [];
+        const errors: any[] = [];
         const queue = encryptedLinks.map((encrypted) => async () => {
             if (abortSignal.aborted) {
                 return;

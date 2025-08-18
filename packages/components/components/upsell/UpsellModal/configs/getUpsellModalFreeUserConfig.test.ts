@@ -19,7 +19,7 @@ jest.mock('@proton/payments/core/subscription/selected-plan', () => ({
 }));
 
 // @ts-expect-error - mock of paymentApi call
-let paymentsApiMock: PaymentsApi = {
+const paymentsApiMock: PaymentsApi = {
     checkSubscription: jest.fn(),
 };
 

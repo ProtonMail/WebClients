@@ -501,7 +501,7 @@ export function useLinkInner(
     const getLinkHashKey = debouncedFunctionDecorator(
         'getLinkHashKey',
         async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<Uint8Array<ArrayBuffer>> => {
-            let cachedHashKey = linksKeys.getHashKey(shareId, linkId);
+            const cachedHashKey = linksKeys.getHashKey(shareId, linkId);
             if (cachedHashKey) {
                 return cachedHashKey;
             }
@@ -786,7 +786,7 @@ export function useLinkInner(
                 // Sharing info will only be get in case the share is not own by the current user
                 // Also we only want it in the shared with me root view, so we need to check if parentLinkId is not present
                 // TODO: Improve that as we remove the parentLinkId for now, but it will be present in the future
-                let sharingInfo =
+                const sharingInfo =
                     !getIsPublicContext() && encryptedLink.sharingDetails && !encryptedLink.parentLinkId
                         ? await getDirectSharingInfo(abortSignal, encryptedLink.sharingDetails?.shareId)
                         : undefined;
@@ -903,7 +903,10 @@ export function useLinkInner(
         downloadCallback: (
             downloadUrl: string,
             downloadToken: string
-        ) => Promise<{ contents: Promise<Uint8Array<ArrayBuffer>[]>; verificationStatusPromise: Promise<VERIFICATION_STATUS> }>
+        ) => Promise<{
+            contents: Promise<Uint8Array<ArrayBuffer>[]>;
+            verificationStatusPromise: Promise<VERIFICATION_STATUS>;
+        }>
     ): Promise<string | undefined> => {
         const link = await getLink(abortSignal, shareId, linkId);
         if (link.cachedThumbnailUrl || !link.hasThumbnail || !link.activeRevision) {

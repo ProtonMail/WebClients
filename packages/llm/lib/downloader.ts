@@ -95,7 +95,7 @@ async function downloadFile(
         const totalReceivedLength = receivedLength;
         debouncedCallback(() => callback(downloadUrl, totalReceivedLength, contentLength));
     }
-    let headersMap = Object.fromEntries(headers);
+    const headersMap = Object.fromEntries(headers);
     const serializedHeaders = JSON.stringify(headersMap);
     return { status, statusText, headers: serializedHeaders, chunks };
 }
@@ -117,7 +117,7 @@ async function downloadFilesSequentially(
         const { downloadUrl, cacheUrl, cacheId } = files[i];
 
         // Do not download files that have already been downloaded and cached
-        let ignoreThisFile = filesToIgnore.some((f) => f.downloadUrl === downloadUrl);
+        const ignoreThisFile = filesToIgnore.some((f) => f.downloadUrl === downloadUrl);
         if (!ignoreThisFile) {
             // Start the download for a new file.
             const downloadResult = await downloadFile(downloadUrl, callback, abortController);
@@ -226,7 +226,7 @@ export async function downloadModel(
     // Consequently, it will be frequently updated, namely each time we receive a new chunk of data.
     const receivedSizes: Map<string, number> = new Map();
     for (const f of files) {
-        let ignoreThisFile = filesToIgnore.some((ignored) => ignored.downloadUrl === f.downloadUrl);
+        const ignoreThisFile = filesToIgnore.some((ignored) => ignored.downloadUrl === f.downloadUrl);
         if (ignoreThisFile) {
             receivedSizes.set(f.downloadUrl, f.expectedSize || 0);
         } else {
@@ -237,8 +237,8 @@ export async function downloadModel(
 
     const nFinishedFiles = () =>
         files.filter((f) => {
-            let r = receivedSizes.get(f.downloadUrl);
-            let e = expectedSizes.get(f.downloadUrl);
+            const r = receivedSizes.get(f.downloadUrl);
+            const e = expectedSizes.get(f.downloadUrl);
             return r !== undefined && e !== undefined && r >= e;
         }).length;
 
@@ -313,7 +313,7 @@ async function storeLocalDataInCache(object: any, filename: string, cacheId: Cac
 
 // Check if a given url is already present in the cache.
 async function existsInCache(cacheUrl: string, cache: Cache, expects?: { size?: number }): Promise<boolean> {
-    let cachedResponse = await cache.match(cacheUrl);
+    const cachedResponse = await cache.match(cacheUrl);
     if (!cachedResponse) {
         return false;
     }

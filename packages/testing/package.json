@@ -5,7 +5,7 @@
     "main": "index.ts",
     "scripts": {
         "check-types": "tsc",
-        "lint": "eslint index.ts lib --ext .js,.ts,.tsx --quiet --cache",
+        "lint": "eslint index.ts lib --ext .js,.ts,.tsx --quiet",
         "pretty": "prettier --write $(find . -path ./node_modules -prune -o -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')"
     },
     "devDependencies": {

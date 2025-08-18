@@ -23,7 +23,7 @@ const contextFiltersReducer = createReducer(initialState, (builder) => {
             const { messageId, filename } = action.payload;
 
             // Find existing filter for this message
-            let filter = state.filters.find((f) => f.messageId === messageId);
+            const filter = state.filters.find((f) => f.messageId === messageId);
 
             if (filter) {
                 // Add filename if not already excluded

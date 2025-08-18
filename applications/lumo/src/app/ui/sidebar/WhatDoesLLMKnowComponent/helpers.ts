@@ -34,15 +34,15 @@ export function truncateContent(text: string | undefined) {
         return;
     }
 
-    let tokens = text.split(/\s+/);
-    let estimatedTokenCount = estimateTokens(text);
+    const tokens = text.split(/\s+/);
+    const estimatedTokenCount = estimateTokens(text);
 
     if (estimatedTokenCount <= 64) {
         return text;
     }
 
-    let firstTokens = tokens.slice(0, 32).join(' ');
-    let lastTokens = tokens.slice(-32).join(' ');
+    const firstTokens = tokens.slice(0, 32).join(' ');
+    const lastTokens = tokens.slice(-32).join(' ');
 
     return `${firstTokens} [TRUNCATED] ${lastTokens}`; // More explicit truncation marker
 }

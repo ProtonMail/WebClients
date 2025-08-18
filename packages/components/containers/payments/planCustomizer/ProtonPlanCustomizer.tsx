@@ -93,7 +93,7 @@ const getTrialProps = (
         return {};
     }
 
-    let addonType: ADDON_PREFIXES | null = getAddonType(addonNameKey);
+    const addonType: ADDON_PREFIXES | null = getAddonType(addonNameKey);
 
     if (!addonType) {
         return {};

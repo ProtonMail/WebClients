@@ -58,8 +58,8 @@ export function $clearFormattingAsSuggestion(onSuggestionCreation: (id: string) 
         textNode = extractedTextNode
       }
 
-      let initialStyle = textNode.__style
-      let initialFormat = textNode.__format
+      const initialStyle = textNode.__style
+      const initialFormat = textNode.__format
 
       if (textNode.__style !== '') {
         textNode.setStyle('')

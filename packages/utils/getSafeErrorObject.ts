@@ -71,7 +71,7 @@ export function getSafeObject(obj: any): SafeObject | undefined {
         return undefined;
     }
 
-    let result: SafeObject = {};
+    const result: SafeObject = {};
 
     Object.entries(obj).forEach(([key, value]) => {
         const safeValue = getSafeValue(value);

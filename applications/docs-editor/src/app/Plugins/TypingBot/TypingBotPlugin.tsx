@@ -21,7 +21,7 @@ export default function TypingBotPlugin({
   const insertTextInDocument = useCallback(() => {
     editor.update(() => {
       const root = $getRoot()
-      let targetNode = position === 'beginning' ? root.getFirstChild() : root.getLastChild()
+      const targetNode = position === 'beginning' ? root.getFirstChild() : root.getLastChild()
 
       const text = generateRandomString(additionLength)
 

@@ -129,7 +129,7 @@ export function $formatTextAsSuggestion(
   const endOffset = endPoint.type === 'text' ? endPoint.offset : lastNode.getTextContentSize()
 
   let latestAnchorNode: TextNode | null = null
-  let latestAnchorOffset = 0
+  const latestAnchorOffset = 0
   let latestFocusNode: TextNode | null = null
   let latestFocusOffset = 0
   let formatForLastSelection = 0

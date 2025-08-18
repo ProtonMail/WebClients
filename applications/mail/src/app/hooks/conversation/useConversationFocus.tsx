@@ -70,7 +70,7 @@ export const useConversationFocus = (messages: Message[]) => {
 
         const focus = (element: HTMLElement | null) => element?.focus({ preventScroll: true });
 
-        let element = document.querySelector(
+        const element = document.querySelector(
             `[data-shortcut-target="message-container"][data-message-id="${messages[focusIndex]?.ID}"]`
         ) as HTMLElement | null;
 
@@ -93,7 +93,7 @@ export const useConversationFocus = (messages: Message[]) => {
 
     useEffect(() => {
         if (focusIndex !== undefined && nextScrollTo) {
-            let element = document.querySelector(
+            const element = document.querySelector(
                 `[data-shortcut-target="message-container"][data-message-id="${messages[focusIndex]?.ID}"]`
             ) as HTMLElement | null;
             element?.scrollIntoView({ block: alignmentRef.current, behavior: 'smooth' });

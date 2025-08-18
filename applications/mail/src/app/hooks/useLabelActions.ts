@@ -26,7 +26,7 @@ export const useLabelActions = (labelID: string): [primaryActions: Actions[], se
     const [folders = []] = useFolders();
 
     let primaryActions: Actions[] = [];
-    let secondaryActions: Actions[] = [];
+    const secondaryActions: Actions[] = [];
 
     switch (labelID) {
         case INBOX:

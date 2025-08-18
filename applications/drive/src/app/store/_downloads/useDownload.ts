@@ -104,7 +104,7 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
                 )
             ).Revision;
         } else {
-            let link = await getLink(abortSignal, shareId, linkId);
+            const link = await getLink(abortSignal, shareId, linkId);
 
             revisionId ||= link.activeRevision?.id;
             if (!revisionId) {

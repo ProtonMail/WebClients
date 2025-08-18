@@ -20,7 +20,7 @@ export const filterContactEmails = (protonDomains: Set<string>, contactEmails: C
 };
 
 export const deduplicateRecipients = (addedRecipients: Recipient[], recipients: Recipient[]) => {
-    let addedAddresses: string[] = [];
+    const addedAddresses: string[] = [];
     const deduplicatedAddedRecipients = addedRecipients.filter((addedRecipient, _, array) => {
         // If recipient has no addresses
         if (!addedRecipient.Address) {

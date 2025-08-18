@@ -8,10 +8,11 @@ module.exports = {
         jest: true,
         node: true,
     },
-    extends: ['airbnb-typescript', 'prettier', 'plugin:monorepo-cop/recommended', 'plugin:jsx-a11y/recommended'],
+    extends: ['prettier', 'plugin:monorepo-cop/recommended', 'plugin:jsx-a11y/recommended'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
-        project: './tsconfig.json',
+        projectService: true,
+        tsconfigRootDir: __dirname,
     },
     plugins: [
         'react',
@@ -34,7 +35,6 @@ module.exports = {
             },
         ],
         '@typescript-eslint/default-param-last': 'off',
-        '@typescript-eslint/no-shadow': 'off',
         '@typescript-eslint/no-redeclare': ['error'],
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/indent': 'off',
@@ -61,6 +61,85 @@ module.exports = {
                 format: ['PascalCase', 'UPPER_CASE'],
             },
         ],
+
+        /* Copied from deprecated eslint-config-airbnb-base */
+        'dot-notation': 'off',
+        '@typescript-eslint/dot-notation': ['error', { allowKeywords: true }],
+
+        'no-array-constructor': 'off',
+        '@typescript-eslint/no-array-constructor': 'error',
+
+        'no-empty-function': 'off',
+        '@typescript-eslint/no-empty-function': [
+            'error',
+            {
+                allow: ['arrowFunctions', 'functions', 'methods'],
+            },
+        ],
+
+        'no-implied-eval': 'off',
+        'no-new-func': 'off',
+        '@typescript-eslint/no-implied-eval': 'error',
+
+        'no-loop-func': 'off',
+        '@typescript-eslint/no-loop-func': 'error',
+
+        'no-magic-numbers': 'off',
+        '@typescript-eslint/no-magic-numbers': [
+            'off',
+            {
+                ignore: [],
+                ignoreArrayIndexes: true,
+                enforceConst: true,
+                detectObjects: false,
+            },
+        ],
+
+        'no-shadow': 'off',
+        '@typescript-eslint/no-shadow': 'off',
+
+        'no-throw-literal': 'off',
+        '@typescript-eslint/only-throw-error': 'off',
+
+        'no-unused-expressions': 'off',
+        '@typescript-eslint/no-unused-expressions': [
+            'error',
+            {
+                allowShortCircuit: false,
+                allowTernary: false,
+                allowTaggedTemplates: false,
+            },
+        ],
+
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': [
+            'error',
+            {
+                args: 'after-used',
+                argsIgnorePattern: '^_',
+                caughtErrors: 'none',
+                destructuredArrayIgnorePattern: '^_',
+                varsIgnorePattern: '^_',
+                ignoreRestSiblings: true,
+            },
+        ],
+
+        'no-use-before-define': 'off',
+        '@typescript-eslint/no-use-before-define': ['error', { functions: true, classes: true, variables: true }],
+
+        'no-useless-constructor': 'off',
+        '@typescript-eslint/no-useless-constructor': 'error',
+
+        'require-await': 'off',
+        '@typescript-eslint/require-await': 'off',
+
+        'no-return-await': 'off',
+        '@typescript-eslint/return-await': 'error',
+
+        '@typescript-eslint/consistent-type-imports': 'error',
+
+        'prefer-const': ['error', { ignoreReadBeforeAssign: true, destructuring: 'all' }],
+
         'arrow-body-style': 'off',
         'consistent-return': 'off',
         curly: ['error', 'all'],
@@ -182,7 +261,6 @@ module.exports = {
                 message: 'Use `LUMO_SHORT_APP_NAME` instead to avoid possible translation.',
             },
         ],
-        'no-shadow': 'off',
         'no-void': [2, { allowAsStatement: true }],
         'react-hooks/rules-of-hooks': 'error',
         'react/display-name': 'warn',
@@ -244,15 +322,18 @@ module.exports = {
         'custom-rules/no-template-in-translator-context': 'error',
         'custom-rules/validate-ttag': 'error',
         'custom-rules/date-formatting-locale': 'warn',
-        '@typescript-eslint/consistent-type-imports': 'error',
         'lodash/import-scope': [2, 'method'],
         '@protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer': 'error',
     },
     settings: {
+        'import/extensions': ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts'],
         'import/resolver': {
             // The built-in node resolver does not support the `exports` entrypoints.
             // The TS one is used as a workaround, see https://github.com/import-js/eslint-plugin-import/issues/1810#issuecomment-1189510672
             typescript: {},
+            node: {
+                extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
+            },
 
             alias: {
                 map: [

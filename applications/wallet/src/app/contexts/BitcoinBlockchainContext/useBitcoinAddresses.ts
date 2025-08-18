@@ -141,7 +141,7 @@ export const useBitcoinAddresses = ({
     );
 
     const walletAccountById: SimpleMap<(typeof allWalletAccounts)[0]> = useMemo(() => {
-        let dataByWalletAccountId: {
+        const dataByWalletAccountId: {
             [key: string]: { wallet: ApiWalletWithPassphraseInput; account: WasmApiWalletAccount; isSyncing: boolean };
         } = {};
         Object.values(allWalletAccounts).forEach((data) => {

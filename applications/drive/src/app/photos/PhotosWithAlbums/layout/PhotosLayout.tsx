@@ -344,7 +344,7 @@ export const PhotosLayout = () => {
     }, [handleDeleteAlbum, showDeleteAlbumModal, albumName, navigateToAlbums]);
 
     const handleToolbarPreview = useCallback(() => {
-        let selectedLinkId = selectedItemsLinkIds[0];
+        const selectedLinkId = selectedItemsLinkIds[0];
 
         if (selectedItemsLinkIds.length === 1 && selectedLinkId) {
             setPreviewLinkId(selectedLinkId);

@@ -35,7 +35,7 @@ const ResizeObserverMock = jest.fn(() => ({
 }));
 
 describe('SignupFlowModal', () => {
-    let assignMock = jest.fn();
+    const assignMock = jest.fn();
     const originalWindowLocation = window.location;
     const originalResizeObserver = window.ResizeObserver;
     const locationMock = {

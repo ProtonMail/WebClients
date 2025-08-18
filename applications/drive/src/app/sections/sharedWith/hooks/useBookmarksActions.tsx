@@ -34,9 +34,9 @@ export const useBookmarksActions = () => {
     };
 
     const deleteBookmarksInternal = async (uids: string[]) => {
-        let deletedBookmarkUids: string[] = [];
+        const deletedBookmarkUids: string[] = [];
 
-        for (let uid of uids) {
+        for (const uid of uids) {
             try {
                 await drive.removeBookmark(uid);
                 deletedBookmarkUids.push(uid);

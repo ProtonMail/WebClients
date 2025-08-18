@@ -46,31 +46,31 @@ const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
     builder
         .addCase(addMessage, (state, action) => {
             console.log('Action triggered: addMessage', action.payload);
-            let message = action.payload;
+            const message = action.payload;
             state[message.id] = message;
         })
         .addCase(deleteMessage, (state, action) => {
             console.log('Action triggered: deleteMessage', action.payload);
-            let id = action.payload;
+            const id = action.payload;
             delete state[id];
         })
         .addCase(appendChunk, (state, action) => {
             console.log('Action triggered: appendChunk', action.payload);
             const chunk = action.payload;
-            let message = state[chunk.messageId];
+            const message = state[chunk.messageId];
             message.content ??= '';
             message.content += chunk.content;
         })
         .addCase(setToolCall, (state, action) => {
             console.log('Action triggered: setToolCall', action.payload);
             const chunk = action.payload;
-            let message = state[chunk.messageId];
+            const message = state[chunk.messageId];
             message.toolCall = chunk.content;
         })
         .addCase(setToolResult, (state, action) => {
             console.log('Action triggered: setToolResult', action.payload);
             const chunk = action.payload;
-            let message = state[chunk.messageId];
+            const message = state[chunk.messageId];
             if (!message) {
                 console.warn(`cannot modify message ${chunk.messageId}: not found in Redux state`);
                 return;
@@ -81,7 +81,7 @@ const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
             console.log('Action triggered: finishMessage', action.payload);
             const finishAction = action.payload;
             const { messageId, content, status } = finishAction;
-            let message = state[messageId];
+            const message = state[messageId];
             if (!message) {
                 console.warn(`cannot modify message ${messageId}: not found in Redux state`);
                 return;

@@ -14,7 +14,7 @@ export const useShareBackgroundActions = () => {
             processedEventCounter: (eventId: string, event: DriveEvent) => void
         ) => {
             const abortController = new AbortController();
-            for (let event of events) {
+            for (const event of events) {
                 if (event.eventType === EVENT_TYPES.UPDATE_METADATA && event.data?.externalInvitationSignup) {
                     void convertExternalInvitation(abortController.signal, {
                         externalInvitationId: event.data.externalInvitationSignup,

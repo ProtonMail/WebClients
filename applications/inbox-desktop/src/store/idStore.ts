@@ -5,6 +5,7 @@ import { z } from "zod";
 
 const store = new Store<{ appID: AppID }>();
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const appIDSchema = z.object({
     id: z.string(),
     hash: z.string(),

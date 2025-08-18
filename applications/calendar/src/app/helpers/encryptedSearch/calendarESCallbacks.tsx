@@ -243,7 +243,7 @@ export const getESCallbacks = ({
         }
 
         let correctedEventsCount = 0;
-        let events = await searchUndecryptedElements(userID, indexKey, abortIndexingRef);
+        const events = await searchUndecryptedElements(userID, indexKey, abortIndexingRef);
         void recordProgress([0, events.length], 'metadata');
 
         const chunks = chunk(events, ES_MAX_ITEMS_PER_BATCH);

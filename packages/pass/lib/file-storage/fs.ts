@@ -37,7 +37,7 @@ export const onStorageFallback = async (
     onSwitch: (instance: FileStorage) => void,
     onReady: () => void
 ) => {
-    let options: StorageOptions = { OPFS: true, IDB: true };
+    const options: StorageOptions = { OPFS: true, IDB: true };
 
     try {
         switch (fs.type) {

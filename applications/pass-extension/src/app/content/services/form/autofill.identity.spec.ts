@@ -6,7 +6,7 @@ import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { autofillIdentityFields, getFirstName, getFullName, getLastName, getMiddleName } from './autofill.identity';
 
 let MOCK_ITEM = itemBuilder('identity');
-let MOCK_FIELDS: FieldHandle[] = [];
+const MOCK_FIELDS: FieldHandle[] = [];
 
 const createField = (identityType: IdentityFieldType, sectionIndex: number = 1, value: string = '') =>
     ({

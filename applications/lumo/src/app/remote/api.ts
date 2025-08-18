@@ -462,8 +462,8 @@ export class LumoApi {
         };
         let lastTimestamp: Date | undefined;
         while (true) {
-            let createTimeUntil = lastTimestamp ? dateToUnixTimestamp(lastTimestamp) : undefined;
-            let next = await this.listSpaces({ createTimeUntil });
+            const createTimeUntil = lastTimestamp ? dateToUnixTimestamp(lastTimestamp) : undefined;
+            const next = await this.listSpaces({ createTimeUntil });
             const newLastTimestamp = listify({ ...next.spaces, ...next.deletedSpaces })
                 .map((s) => new Date(s.createdAt))
                 .reduce(oldestDateReducer, lastTimestamp);

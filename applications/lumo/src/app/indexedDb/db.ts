@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/lines-between-class-members */
 import isEqual from 'lodash/isEqual';
 
 import { computeSha256AsBase64 } from '../crypto';

@@ -52,12 +52,12 @@ const spacesReducer = createReducer<SpaceMap>(initialState, (builder) => {
     builder
         .addCase(addSpace, (state, action) => {
             console.log('Action triggered: addSpace', action.payload);
-            let space = action.payload;
+            const space = action.payload;
             state[space.id] = space;
         })
         .addCase(deleteSpace, (state, action) => {
             console.log('Action triggered: deleteSpace', action.payload);
-            let id = action.payload;
+            const id = action.payload;
             delete state[id];
         })
         .addCase(deleteAllSpaces, () => {

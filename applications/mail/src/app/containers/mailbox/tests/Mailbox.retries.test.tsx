@@ -87,7 +87,7 @@ describe('Mailbox retries and waitings', () => {
         });
         addApiMock(`mail/v4/conversations`, conversationRequestSpy, 'get');
 
-        let resolvers: ((value: any) => void)[] = [];
+        const resolvers: ((value: any) => void)[] = [];
         const labelRequestSpy = jest.fn(() => {
             return new Promise((resolver) => {
                 resolvers.push(resolver as any);

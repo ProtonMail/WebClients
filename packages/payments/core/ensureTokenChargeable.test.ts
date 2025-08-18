@@ -14,9 +14,9 @@ const translations: EnsureTokenChargeableTranslations = {
 };
 
 describe('process', () => {
-    let ApprovalURL = 'https://example.proton.me';
-    let ReturnHost = 'https://return.proton.me';
-    let Token = 'some-payment-token-222';
+    const ApprovalURL = 'https://example.proton.me';
+    const ReturnHost = 'https://return.proton.me';
+    const Token = 'some-payment-token-222';
     let api: jest.Mock;
     let signal: AbortSignal;
 

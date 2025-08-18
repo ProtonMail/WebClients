@@ -120,7 +120,7 @@ const useEncryptedTextAnimation = (targetText: string, trigger: boolean, duratio
         const chars = '0123456789ABCDEF'; // Simple hex characters
         const totalChars = targetText.length;
 
-        let revealedChars = new Set<number>();
+        const revealedChars = new Set<number>();
         const animationSteps = 15; // Much fewer steps for speed
         const stepDelay = duration / animationSteps;
 

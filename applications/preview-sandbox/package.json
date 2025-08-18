@@ -7,7 +7,7 @@
     "scripts": {
         "build": "cross-env NODE_ENV=production ./bin/build.mjs",
         "check-types": "tsc",
-        "lint": "eslint src --ext .ts --cache",
+        "lint": "eslint src --ext .ts",
         "pretty": "prettier --write  $(find src -type f -name '*.ts')",
         "test": "echo No tests yet",
         "test:ci": "echo No tests yet"

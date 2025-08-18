@@ -876,8 +876,8 @@ describe('Lumo Persistence Integration Tests', () => {
         it('should load the state from indexeddb', async () => {
             const masterKeyBytes = fixedMasterKeyBytes();
             const masterKeyBase64 = uint8ArrayToBase64String(masterKeyBytes);
-            let sharedUserId = generateFakeUserId();
-            let sharedDbApi = new DbApi(sharedUserId);
+            const sharedUserId = generateFakeUserId();
+            const sharedDbApi = new DbApi(sharedUserId);
 
             // Create some test data
             console.log('Create some test data');
@@ -1760,7 +1760,7 @@ describe('Lumo Persistence Integration Tests', () => {
                     content,
                     status: 'succeeded' satisfies Status,
                 });
-                let messageId = message.id;
+                const messageId = message.id;
                 // We have created a message, but the app isn't aware of it (neither Redux nor IndexedDB)
 
                 // Let's add that message to the mock server db directly -- this bypasses the normal flow.

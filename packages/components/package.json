@@ -8,7 +8,7 @@
         "check-types": "tsc",
         "export": "./makeExport",
         "i18n:validate": "proton-i18n validate lint-functions",
-        "lint": "eslint index.ts containers components hooks typings --ext .js,.ts,.tsx --quiet --cache",
+        "lint": "eslint index.ts containers components hooks typings --ext .js,.ts,.tsx --quiet",
         "pretty": "prettier --write $(find . -path ./node_modules -prune -o -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "test": "jest",
         "test:ci": "jest --coverage --runInBand --ci --logHeapUsage",

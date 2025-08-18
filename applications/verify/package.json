@@ -8,7 +8,7 @@
         "i18n:extract:web": "proton-i18n extract",
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context:web": "proton-i18n validate",
-        "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
+        "lint": "eslint src --ext .js,.ts,.tsx --quiet",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --configV2",
         "test": "jest",
         "test:ci": "jest --coverage --runInBand --ci",

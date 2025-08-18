@@ -37,7 +37,7 @@ export const DevicesSidebar = ({
         const populateDevices = async () => {
             setLoading(true);
             try {
-                for await (let device of drive.iterateDevices()) {
+                for await (const device of drive.iterateDevices()) {
                     setDevice(device);
                 }
             } catch (e) {
