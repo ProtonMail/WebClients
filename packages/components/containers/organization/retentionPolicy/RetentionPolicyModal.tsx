@@ -112,8 +112,11 @@ const RetentionPolicyModal = ({
                 errors.lifetime = c('retention_policy_2025_Error').t`Lifetime must not be set for "Retain All" action`;
             }
             if (action !== RetentionRuleAction.RetainAll && (lifetime === null || lifetime < MIN_LIFETIME)) {
-                errors.lifetime = c('retention_policy_2025_Error')
-                    .t`Lifetime must be greater than ${MIN_LIFETIME} days`;
+                errors.lifetime = c('retention_policy_2025_Error').ngettext(
+                    msgid`Lifetime must be greater than ${MIN_LIFETIME} day`,
+                    `Lifetime must be greater than ${MIN_LIFETIME} days`,
+                    MIN_LIFETIME
+                );
             }
             if (isDuplicatedScope(scopes)) {
                 errors.scopes = c('retention_policy_2025_Error').t`Scopes cannot have the same value`;
