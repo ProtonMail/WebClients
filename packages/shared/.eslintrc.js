@@ -1,4 +1,5 @@
 module.exports = {
+    root: true,
     extends: ['@proton/eslint-config-proton'],
     parser: '@typescript-eslint/parser',
     plugins: ['jasmine'],
@@ -7,7 +8,7 @@ module.exports = {
     },
     parserOptions: {
         tsconfigRootDir: __dirname,
-        project: './tsconfig.json',
+        projectService: true,
     },
     rules: {
         'import/no-unresolved': [

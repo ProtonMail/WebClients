@@ -1,4 +1,5 @@
 module.exports = {
+    root: true,
     extends: ['@proton/eslint-config-proton', 'plugin:storybook/recommended'],
     parser: '@typescript-eslint/parser',
     env: {
@@ -6,7 +7,7 @@ module.exports = {
     },
     parserOptions: {
         tsconfigRootDir: __dirname,
-        project: './tsconfig.json',
+        projectService: true,
     },
     rules: {},
     ignorePatterns: ['.eslintrc.js'],

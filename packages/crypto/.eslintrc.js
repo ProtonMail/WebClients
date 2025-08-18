@@ -1,10 +1,11 @@
 module.exports = {
+    root: true,
     extends: ['@proton/eslint-config-proton'],
     parser: '@typescript-eslint/parser',
     plugins: ['chai-friendly', 'jasmine'],
     parserOptions: {
         tsconfigRootDir: __dirname,
-        project: './tsconfig.json',
+        projectService: true,
     },
     ignorePatterns: ['.eslintrc.js'],
     rules: {
