@@ -11,7 +11,7 @@
 export interface EmailContentRenderTimeSeconds {
   Value: number;
   Labels: {
-    location: "0" | "1" | "2" | "3" | "4" | "5" | "10" | "6" | "7" | "8" | "9" | "12" | "15" | "16" | "custom";
+    location: "0" | "1" | "2" | "3" | "4" | "5" | "10" | "6" | "7" | "8" | "9" | "12" | "15" | "16" | "40" | "custom";
     pageSize: "50" | "100" | "200";
     cached: "true" | "false";
   };
