@@ -152,6 +152,14 @@ const SORT_SELECT_OPTIONS = [
   { value: 'location', label: () => c('Sort menu options').t`Location` },
 ] satisfies { value: RecentsSort; label: () => string }[]
 
+const TELEMETRY_EVENT_BY_SORT: Record<RecentsSort, TelemetryDocsHomepageEvents> = {
+  viewed: TelemetryDocsHomepageEvents.sorting_changed_to_time,
+  //   modified: TelemetryDocsHomepageEvents.sorting_changed_to_modified,
+  name: TelemetryDocsHomepageEvents.sorting_changed_to_name,
+  owner: TelemetryDocsHomepageEvents.sorting_changed_to_owner,
+  location: TelemetryDocsHomepageEvents.sorting_changed_to_location,
+}
+
 function SortSelect() {
   const application = useApplication()
   const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>()
@@ -181,9 +189,7 @@ function SortSelect() {
               onClick={() => {
                 setRecentsSort(value)
                 close()
-                application.metrics.reportHomepageTelemetry(
-                  TelemetryDocsHomepageEvents[value === 'name' ? 'sorting_changed_to_name' : 'sorting_changed_to_time'],
-                )
+                application.metrics.reportHomepageTelemetry(TELEMETRY_EVENT_BY_SORT[value])
               }}
               className="flex items-center gap-2"
             >
@@ -327,7 +333,7 @@ function Row({ document, variant }: RowProps) {
       className="cursor-pointer hover:bg-[--optional-background-lowered]"
       onClick={(event) => {
         event.stopPropagation()
-        documentActions.open(document)
+        documentActions.open(document, variant === 'trash' ? 'trash' : 'normal')
       }}
       onContextMenu={(event) => {
         event.stopPropagation()
