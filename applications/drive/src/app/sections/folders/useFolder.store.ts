@@ -98,7 +98,7 @@ export const useFolderStore = create<FolderStore>()(
                 updatedItems.set(item.uid, item);
 
                 if (!state.itemUids.has(item.uid)) {
-                    let newUids = new Set(state.itemUids);
+                    const newUids = new Set(state.itemUids);
                     newUids.add(item.uid);
                     return {
                         items: updatedItems,
@@ -131,7 +131,7 @@ export const useFolderStore = create<FolderStore>()(
             set((state) => {
                 const updatedItems = new Map(state.items);
                 updatedItems.delete(uid);
-                let newUids = new Set(state.itemUids);
+                const newUids = new Set(state.itemUids);
                 newUids.delete(uid);
 
                 return {

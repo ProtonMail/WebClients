@@ -29,7 +29,7 @@ export function* toChunks(state: object, chunkSize: number = MAX_CHUNK_SIZE): Ge
     const { byteLength } = data;
 
     let index = 0;
-    let total = Math.ceil(byteLength / chunkSize);
+    const total = Math.ceil(byteLength / chunkSize);
 
     for (let offset = 0; offset < byteLength; offset += chunkSize) {
         const size = Math.min(chunkSize, byteLength - offset);

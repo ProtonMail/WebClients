@@ -4,7 +4,7 @@
   "description": "Docs RTS messaging types",
   "main": "index.ts",
   "scripts": {
-    "lint": "eslint . --ext ts --quiet --cache",
+    "lint": "eslint . --ext ts --quiet",
     "sync": "./scripts/sync.sh ."
   },
   "dependencies": {
@@ -12,8 +12,8 @@
   },
   "devDependencies": {
     "@types/google-protobuf": "^3.15.12",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
+    "@typescript-eslint/eslint-plugin": "^8.39.1",
+    "@typescript-eslint/parser": "^8.39.1",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^8.10.2",
     "eslint-plugin-prettier": "^5.5.4",

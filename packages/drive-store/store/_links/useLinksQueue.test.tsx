@@ -21,7 +21,7 @@ jest.useFakeTimers();
 jest.spyOn(global, 'setTimeout');
 
 const mockedAbort = jest.fn();
-let mockedAbortSignal = { aborted: false };
+const mockedAbortSignal = { aborted: false };
 // @ts-ignore - not mocking the entire AbortSignal, sorry =)
 global.AbortController = jest.fn(() => ({
     signal: mockedAbortSignal,

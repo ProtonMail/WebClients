@@ -80,8 +80,8 @@ export const FilesPanel = ({
             try {
                 // Use the MIME type from the file metadata, or derive it from the extension
                 const detectedMimeType = getMimeTypeFromExtension(file.name);
-                let mimeType = file.mimeType || detectedMimeType;
-                let fileName = file.name;
+                const mimeType = file.mimeType || detectedMimeType;
+                const fileName = file.name;
 
                 const fileBlob = new Blob([content], { type: mimeType });
                 const fileObject = new File([fileBlob], fileName, {

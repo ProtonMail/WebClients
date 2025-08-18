@@ -685,7 +685,7 @@ export class MessageBus {
 let messageBus: MessageBus | null = null;
 
 export function createMessageBus(props: ParentMessagesProps) {
-    let parentMessages = new MessageBus(props);
+    const parentMessages = new MessageBus(props);
     parentMessages.initialize();
 
     messageBus = parentMessages;

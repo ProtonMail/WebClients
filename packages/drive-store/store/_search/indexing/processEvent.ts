@@ -19,7 +19,7 @@ export default async function convertDriveEventsToSearchEvents(
     events: DriveEvents,
     getLinkPrivateKey: (abortSignal: AbortSignal, shareId: string, linkId: string) => Promise<PrivateKeyReference>
 ): Promise<SearchEvent> {
-    let eventsToStore: EventsObject = {};
+    const eventsToStore: EventsObject = {};
     eventsToStore[shareId] = events.eventId;
     return {
         eventsToStore,

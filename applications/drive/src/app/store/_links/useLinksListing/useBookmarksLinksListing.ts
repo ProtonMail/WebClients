@@ -37,7 +37,7 @@ export const useBookmarksLinksListing = () => {
         const bookmarks = await listBookmarks(abortSignal);
         const { privateKey } = await getShareCreatorKeys(abortSignal, shareId);
         const bookmarksWithLink = [];
-        for (let bookmark of bookmarks) {
+        for (const bookmark of bookmarks) {
             // If the bookmark link is already loaded and decrypted, we don't need to do it again
             const link = linksState.getLink(bookmark.sharedUrlInfo.token, bookmark.sharedUrlInfo.linkId);
 

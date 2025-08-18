@@ -8,7 +8,7 @@ beforeEach(() => {
     jest.clearAllMocks();
 });
 
-let amountAndCurrency = {
+const amountAndCurrency = {
     Amount: 1000,
     Currency: 'EUR' as Currency,
 };

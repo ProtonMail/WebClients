@@ -63,7 +63,7 @@ export function randomAddress(): Address {
 }
 
 export function randomContents(length: number = 20): Uint8Array<ArrayBuffer> {
-    let a = [];
+    const a = [];
     for (let i = 0; i < length; i++) {
         a[i] = Math.ceil(Math.random() * 255);
     }

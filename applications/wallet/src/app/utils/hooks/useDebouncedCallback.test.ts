@@ -4,7 +4,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import useDebouncedCallback from './useDebouncedCallback';
 
 describe('useDebouncedCallback', () => {
-    let date = 1713516247000;
+    const date = 1713516247000;
 
     beforeEach(() => {
         vitest.useFakeTimers({ now: date, shouldAdvanceTime: true });

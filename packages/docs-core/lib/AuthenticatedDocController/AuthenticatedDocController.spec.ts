@@ -17,7 +17,7 @@ import { DocumentUpdate } from '@proton/docs-proto'
 
 describe('AuthenticatedDocController', () => {
   let controller: AuthenticatedDocController
-  let driveCompat = {
+  const driveCompat = {
     getNode: jest.fn(),
     trashDocument: jest.fn(),
     restoreDocument: jest.fn(),

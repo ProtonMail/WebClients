@@ -162,7 +162,7 @@ const fetchAttendeeBusySlots = async (options: FetchAttendeeBusySlotsOptions) =>
     /** Based on the first successful result out of all the busy time slots calls for this attendee */
     const isDataAccessible = !!result[0].isDataAccessible;
 
-    let busySlots: BusySlot[] = result.reduce<BusySlot[]>((acc, res) => {
+    const busySlots: BusySlot[] = result.reduce<BusySlot[]>((acc, res) => {
         if (Array.isArray(res.busySlots)) {
             acc.push(...res.busySlots);
         }

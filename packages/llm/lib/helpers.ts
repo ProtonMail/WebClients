@@ -92,12 +92,12 @@ export function removeStopStrings(text: string, customStopStrings?: string[]) {
 export function convertToDoubleNewlines(input: string, splitParagraphs: boolean = true): string {
     const lines = input.split('\n');
 
-    let paragraphs: string[][] = [];
+    const paragraphs: string[][] = [];
     let paragraph: string[] = [];
     let inList = false; // we're currently in a list
     let listJustBegan = false; // marks that the next line will be a list
 
-    for (let originalLine of lines) {
+    for (const originalLine of lines) {
         const linePreserveStartSpace = originalLine.trimEnd();
         const line = originalLine.trim();
         if (!line) {

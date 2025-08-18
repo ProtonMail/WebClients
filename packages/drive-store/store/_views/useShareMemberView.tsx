@@ -267,7 +267,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
             const newInvitations = [];
             const newExternalInvitations = [];
 
-            for (let invitee of invitees) {
+            for (const invitee of invitees) {
                 const member = await addNewMember({
                     invitee,
                     permissions,
