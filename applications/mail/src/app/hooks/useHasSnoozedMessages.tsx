@@ -1,5 +1,4 @@
-import { useConversationCounts } from '@proton/mail/store/counts/conversationCounts';
-import { useMessageCounts } from '@proton/mail/store/counts/messageCounts';
+import { useConversationCounts, useMessageCounts } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
