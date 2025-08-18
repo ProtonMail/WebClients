@@ -6,7 +6,7 @@
         "build": "webpack-cli",
         "check-types": "tsc",
         "generate": "ts-node -P tsconfig.generate.json gen-themes-cli",
-        "lint": "eslint . --ext ts --quiet --cache",
+        "lint": "eslint . --ext ts --quiet",
         "test": "NODE_OPTIONS=--experimental-vm-modules jest",
         "test:ci": "NODE_OPTIONS=--experimental-vm-modules jest --coverage --runInBand --ci",
         "test:watch": "jest --watch"

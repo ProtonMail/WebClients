@@ -7,7 +7,7 @@
     "scripts": {
         "check-types": "tsc",
         "i18n:validate": "proton-i18n validate lint-functions lib",
-        "lint": "eslint lib test --ext .js,.ts,tsx --quiet --cache",
+        "lint": "eslint lib test --ext .js,.ts,tsx --quiet",
         "pretty": "prettier --write $(find lib -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "test": "NODE_ENV=test karma start test/karma.conf.js",
         "test:ci": "yarn test",

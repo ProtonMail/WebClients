@@ -6,7 +6,7 @@
     "scripts": {
         "check-types": "tsc",
         "i18n:validate": "proton-i18n validate lint-functions",
-        "lint": "eslint . src --ext .js,.ts,.tsx --quiet --cache",
+        "lint": "eslint . src --ext .js,.ts,.tsx --quiet",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "test": "jest ",
         "test:ci": "jest --runInBand --ci",
@@ -49,11 +49,11 @@
         "typescript": "^5.9.2",
         "whatwg-fetch": "^3.6.20"
     },
-    "devDependenciesComments": {
-        "msw": "2.4.0 has broken deps, see https://github.com/mswjs/msw/issues/2248"
-    },
     "peerDependencies": {
         "@types/react-router-dom": "^5.3.3",
         "react-router-dom": "^5.3.4"
+    },
+    "devDependenciesComments": {
+        "msw": "2.4.0 has broken deps, see https://github.com/mswjs/msw/issues/2248"
     }
 }
