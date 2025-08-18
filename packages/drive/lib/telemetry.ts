@@ -195,12 +195,9 @@ export class MetricHandler {
     }
 
     private onDecryptionError(metric: MetricDecryptionErrorEvent) {
-        // TODO: shareUrlPassword is not supported by metrics yet.
-        const field = metric.field === 'shareUrlPassword' ? 'shareKey' : metric.field;
-
         metrics.drive_sdk_integrity_decryption_errors_total.increment({
             volumeType: metric.volumeType || 'unknown',
-            field,
+            field: metric.field,
             fromBefore2024: this.getYesNoUnknown(metric.fromBefore2024),
         });
 

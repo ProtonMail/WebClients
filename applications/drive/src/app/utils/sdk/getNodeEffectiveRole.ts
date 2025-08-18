@@ -17,16 +17,16 @@ export const getNodeEffectiveRole = async (
     drive: ProtonDriveClient,
     role: MemberRole = MemberRole.Inherited
 ): Promise<MemberRole.Admin | MemberRole.Editor | MemberRole.Viewer> => {
-    if (role === MemberRole.Admin || node.directMemberRole === MemberRole.Admin) {
+    if (role === MemberRole.Admin || node.directRole === MemberRole.Admin) {
         return MemberRole.Admin;
     }
 
     if (node.parentUid) {
         const parent = await drive.getNode(node.parentUid);
         const { node: parentNode } = getNodeEntity(parent);
-        role = MemberHierarchy[node.directMemberRole] > MemberHierarchy[role] ? node.directMemberRole : role;
+        role = MemberHierarchy[node.directRole] > MemberHierarchy[role] ? node.directRole : role;
         return getNodeEffectiveRole(parentNode, drive, role);
-    } else if (node.directMemberRole === MemberRole.Inherited) {
+    } else if (node.directRole === MemberRole.Inherited) {
         sendErrorReport(
             new EnrichedError('Node has Inherited role and no parent', {
                 tags: { component: 'drive-sdk' },
@@ -36,5 +36,5 @@ export const getNodeEffectiveRole = async (
         return MemberRole.Viewer;
     }
 
-    return role !== MemberRole.Inherited ? role : node.directMemberRole;
+    return role !== MemberRole.Inherited ? role : node.directRole;
 };

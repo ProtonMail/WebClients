@@ -91,7 +91,7 @@ describe('MetricHandler', () => {
             });
 
             expect(captureMessage).toHaveBeenCalledWith('Metric event details: apiRetrySucceeded', {
-                level: 'info',
+                level: 'debug',
                 tags: {
                     driveSdkMetricEvent: 'apiRetrySucceeded',
                 },
@@ -205,7 +205,7 @@ describe('MetricHandler', () => {
                     type: 'unknown',
                 });
                 expect(captureMessage).toHaveBeenCalledWith('Metric event details: upload unknown error', {
-                    level: 'error',
+                    level: 'debug',
                     tags: {
                         driveSdkMetricEvent: 'uploadError',
                     },
@@ -397,7 +397,7 @@ describe('MetricHandler', () => {
                     type: 'unknown',
                 });
                 expect(captureMessage).toHaveBeenCalledWith('Metric event details: download unknown error', {
-                    level: 'error',
+                    level: 'debug',
                     tags: {
                         driveSdkMetricEvent: 'downloadError',
                     },
@@ -514,6 +514,7 @@ describe('MetricHandler', () => {
                     field: 'nodeKey',
                     fromBefore2024: true,
                     error: 'Invalid key',
+                    uid: 'uid',
                 },
             });
 
@@ -533,6 +534,7 @@ describe('MetricHandler', () => {
                     field: 'nodeKey',
                     fromBefore2024: undefined,
                     error: 'Invalid key',
+                    uid: 'uid',
                 },
             });
 
@@ -552,11 +554,12 @@ describe('MetricHandler', () => {
                     field: 'nodeKey',
                     fromBefore2024: false,
                     error: 'Invalid key',
+                    uid: 'uid',
                 },
             });
 
             expect(captureMessage).toHaveBeenCalledWith('Metric event details: decryption error', {
-                level: 'error',
+                level: 'debug',
                 tags: {
                     driveSdkMetricEvent: 'decryptionError',
                 },
@@ -578,6 +581,7 @@ describe('MetricHandler', () => {
                     field: 'nodeKey',
                     fromBefore2024: true,
                     error: 'Invalid key',
+                    uid: 'uid',
                 },
             });
 
@@ -594,6 +598,7 @@ describe('MetricHandler', () => {
                         field: 'nodeKey',
                         fromBefore2024: false,
                         error: 'Invalid key',
+                        uid: 'uid',
                     },
                 });
 
@@ -613,6 +618,7 @@ describe('MetricHandler', () => {
                         field: 'nodeKey',
                         fromBefore2024: false,
                         error: 'Invalid key',
+                        uid: 'uid',
                     },
                 });
 
@@ -624,6 +630,7 @@ describe('MetricHandler', () => {
                         field: 'nodeName',
                         fromBefore2024: false,
                         addressMatchingDefaultShare: true,
+                        uid: 'uid',
                     },
                 });
 
@@ -639,6 +646,7 @@ describe('MetricHandler', () => {
                         field: 'nodeKey',
                         fromBefore2024: false,
                         error: 'Invalid key',
+                        uid: 'uid',
                     },
                 });
 
@@ -655,6 +663,7 @@ describe('MetricHandler', () => {
                         field: 'nodeName',
                         fromBefore2024: false,
                         addressMatchingDefaultShare: true,
+                        uid: 'uid',
                     },
                 });
 
@@ -673,6 +682,7 @@ describe('MetricHandler', () => {
                     field: 'nodeName',
                     fromBefore2024: false,
                     addressMatchingDefaultShare: true,
+                    uid: 'uid',
                 },
             });
 
@@ -693,6 +703,7 @@ describe('MetricHandler', () => {
                     field: 'nodeName',
                     fromBefore2024: undefined,
                     addressMatchingDefaultShare: undefined,
+                    uid: 'uid',
                 },
             });
 
