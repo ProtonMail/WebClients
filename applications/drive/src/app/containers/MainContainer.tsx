@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom-v5-compat';
 
 import { useUser } from '@proton/account/user/hooks';
-import { GlobalLoader, GlobalLoaderProvider, LoaderPage, ModalsChildren, useDrawerWidth } from '@proton/components';
+import { GlobalLoader, GlobalLoaderProvider, LoaderPage, ModalsChildren } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useDrive } from '@proton/drive';
 import { useLoading } from '@proton/hooks';
@@ -11,6 +11,7 @@ import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import useFlag from '@proton/unleash/useFlag';
 
+import { FloatingElements } from '../components/FloatingElements/FloatingElements';
 import TransferManager from '../components/TransferManager/TransferManager';
 import DriveWindow from '../components/layout/DriveWindow';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
@@ -53,19 +54,6 @@ const DEFAULT_VOLUME_INITIAL_STATE: {
     volumeId: undefined,
     shareId: undefined,
     linkId: undefined,
-};
-
-const FloatingElements = () => {
-    const drawerWidth = useDrawerWidth();
-    return (
-        <div
-            className="flex fixed bottom-0 flex-column z-up w-full items-end right-custom max-w-custom"
-            style={{ '--right-custom': `${drawerWidth}px`, '--max-w-custom': '50em' }}
-        >
-            <GiftFloatingButton />
-            <TransferManager />
-        </div>
-    );
 };
 
 const InitContainer = () => {
@@ -209,7 +197,10 @@ const InitContainer = () => {
     return (
         <ActiveShareProvider defaultShareRoot={rootShare}>
             <ModalsChildren />
-            <FloatingElements />
+            <FloatingElements>
+                <GiftFloatingButton />
+                <TransferManager />
+            </FloatingElements>
             <DriveWindow>
                 <Routes>
                     <Route path="/u/:clientId">{routes}</Route>
