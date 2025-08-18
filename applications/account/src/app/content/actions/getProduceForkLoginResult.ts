@@ -62,7 +62,7 @@ export const getProduceForkLoginResult = async ({
         const { forkParameters, searchParameters } = data.payload;
         const { app } = forkParameters;
 
-        // OAuth session are only allowed for the VPN browser extension at the moment. Throw a disallowed product error if a fork is attempted.
+        // OAuth sessions are only allowed for the VPN browser extension at the moment. Throw a disallowed product error if a fork is attempted.
         if (session.data.persistedSession.source === SessionSource.Oauth && app !== APPS.PROTONVPNBROWSEREXTENSION) {
             return getProductDisabledLoginResult({ api, app, paths, session });
         }
