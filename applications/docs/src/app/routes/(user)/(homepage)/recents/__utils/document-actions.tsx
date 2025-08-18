@@ -1,14 +1,14 @@
 import { useAuthentication } from '@proton/components'
-import { type RecentDocumentsItem } from '@proton/docs-core'
+import type { RecentDocumentsItem } from '@proton/docs-core'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
-import { createContext, type ReactNode, useCallback, useContext, useMemo, useState } from 'react'
+import { type ReactNode, createContext, useCallback, useContext, useMemo, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
 import { useEvent } from '~/utils/misc'
 
 export type DocumentActionsContextValue = {
-  open: (document: RecentDocumentsItem) => void
+  open: (document: RecentDocumentsItem, type?: 'normal' | 'trash') => void
   share: (document: RecentDocumentsItem) => void
   move: (document: RecentDocumentsItem) => void
   openParent: (document: RecentDocumentsItem) => void
@@ -47,11 +47,15 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   const [currentlyRestoringId, setCurrentlyRestoringId] = useState<string | undefined>(undefined)
   const { getLocalID } = useAuthentication()
 
-  const open = useEvent(({ type, volumeId, linkId }: RecentDocumentsItem) => {
+  const open = useEvent(({ type, volumeId, linkId }: RecentDocumentsItem, source = 'normal') => {
     const pathname = type === 'spreadsheet' ? 'sheet' : 'doc'
     const to = `/${pathname}?mode=open&volumeId=${volumeId}&linkId=${linkId}`
     window.open(getAppHref(to, APPS.PROTONDOCS, getLocalID()))
-    application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_opened)
+    application.metrics.reportHomepageTelemetry(
+      source === 'trash'
+        ? TelemetryDocsHomepageEvents.document_opened_in_trash
+        : TelemetryDocsHomepageEvents.document_opened,
+    )
   })
 
   const share = useEvent(({ volumeId, linkId }: RecentDocumentsItem) => {
@@ -122,6 +126,7 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
     await application.recentDocumentsService.restoreDocument(document)
     setCurrentlyRestoringId(undefined)
     RESTORED_LISTENERS.forEach((listener) => listener(document.uniqueId()))
+    application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_restored)
   })
 
   const onRestored = useEvent((listener: (id: string) => void) => {
@@ -130,6 +135,7 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
 
   const deletePermanently = useEvent(async (document: RecentDocumentsItem) => {
     await application.recentDocumentsService.deleteDocumentPermanently(document)
+    application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_permanently_deleted)
   })
 
   const value = useMemo(
