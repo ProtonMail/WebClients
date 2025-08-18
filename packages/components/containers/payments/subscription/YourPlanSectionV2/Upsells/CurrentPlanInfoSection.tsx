@@ -479,7 +479,6 @@ const CurrentPlanInfoWithUpsellSection = ({
     userCanHave24MonthPlan,
     handleExplorePlans,
 }: Props) => {
-    const { isFree } = user;
     const [selectedCycle, setSelectedCycle] = useState<Cycle>(CYCLE.MONTHLY);
 
     return (
@@ -513,7 +512,7 @@ const CurrentPlanInfoWithUpsellSection = ({
                 <PlanCard
                     cta={<Button disabled fullWidth>{c('Action').t`Current plan`}</Button>}
                     planNameSection={<PlanNameSection app={app} user={user} subscription={subscription} />}
-                    featureSection={<FreeVPNFeaturesB serversCount={serversCount} isFreeUser={isFree} />}
+                    featureSection={<FreeVPNFeaturesB serversCount={serversCount} />}
                 />
                 <VPNPlanCard vpnUpsells={vpnUpsells} serversCount={serversCount} selectedCycle={selectedCycle} />
                 <BundlePlanCard
