@@ -15,7 +15,7 @@ import { BRAND_NAME, SECOND } from '@proton/shared/lib/constants';
 import { DelegatedAccessTypeEnum } from '../../interface';
 import shield from '../shield.svg';
 import ContactEmailInput, { type ContactEmailInputProps } from './ContactEmailInput';
-import { getWaitTimeOptions } from './waitTimeOptions';
+import { getDefaultWaitTimeOptionValue, getWaitTimeOptions } from './waitTimeOptions';
 
 export interface AddOutgoingEmergencyContactModalProps
     extends Omit<ModalProps<'form'>, 'children' | 'buttons' | 'onSubmit'> {
@@ -40,7 +40,7 @@ export const AddOutgoingEmergencyContactModal = ({
 }: AddOutgoingEmergencyContactModalProps) => {
     const [targetEmail, setTargetEmail] = useState('');
     const waitTimeOptions = getWaitTimeOptions();
-    const [waitTime, setWaitTime] = useState(waitTimeOptions[3].value);
+    const [waitTime, setWaitTime] = useState(getDefaultWaitTimeOptionValue());
     const [emailError, setEmailError] = useState<{ email: string; errorMessage: string } | null>(null);
     const [submitted, setSubmitted] = useState<boolean>(false);
 
