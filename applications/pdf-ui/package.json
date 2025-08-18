@@ -5,7 +5,7 @@
     "scripts": {
         "build": "tsc && vite build",
         "check-types": "tsc",
-        "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
+        "lint": "eslint src --ext .js,.ts,.tsx --quiet",
         "preview": "vite preview",
         "start": "vite"
     },

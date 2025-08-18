@@ -4,7 +4,7 @@
     "sideEffects": false,
     "scripts": {
         "check-types": "tsc",
-        "lint": "eslint . --ext .js,.ts,.tsx --quiet --cache",
+        "lint": "eslint . --ext .js,.ts,.tsx --quiet",
         "pretty": "prettier --write $(find . -path ./node_modules -prune -o -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "test": "jest",
         "test:ci": "jest --coverage --runInBand --ci",
