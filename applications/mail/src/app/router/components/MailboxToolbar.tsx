@@ -44,7 +44,7 @@ export const MailboxToolbar = ({
         handleCheck,
     } = actions;
 
-    const canSeeCategoryView = useCategoryViewAccess();
+    const categoryViewControl = useCategoryViewAccess();
 
     const { labelDropdownToggleRef, moveDropdownToggleRef, columnMode } = useMailboxLayoutProvider();
 
@@ -83,7 +83,7 @@ export const MailboxToolbar = ({
                 loading={loading}
                 onCheckAll={handleCheckAll}
             />
-            {canSeeCategoryView && <CategoriesTabs labelID={labelID} />}
+            {categoryViewControl.shouldShowTabs && <CategoriesTabs labelID={labelID} />}
         </>
     );
 };
