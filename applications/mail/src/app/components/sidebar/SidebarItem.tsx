@@ -29,6 +29,7 @@ import { shouldDisplayTotal } from '../../helpers/labels';
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
 import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
+import { useCategoryViewAccess } from '../categoryView/useCategoryViewAccess';
 import { folderLocation } from '../list/list-telemetry/listTelemetryHelper';
 import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import LocationAside from './LocationAside';
@@ -103,11 +104,17 @@ const SidebarItem = ({
     const [labels] = useLabels();
     const [folders] = useFolders();
 
+    const categoryViewControl = useCategoryViewAccess();
+
     const [refreshing, withRefreshing] = useLoading(false);
 
-    const humanID = LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS]
-        ? LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS]
-        : labelID;
+    // We want to redirect the inbox link to the primary category if the feature is enabled and pointing to inbox
+    const labelIDRoute =
+        categoryViewControl.categoryViewAccess && labelID === MAILBOX_LABEL_IDS.INBOX
+            ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
+            : (labelID as MAILBOX_LABEL_IDS);
+
+    const humanID = LABEL_IDS_TO_HUMAN[labelIDRoute] ?? labelID;
     const link = `/${humanID}`;
 
     const needsTotalDisplay = shouldDisplayTotal(labelID);
