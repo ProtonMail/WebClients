@@ -1,9 +1,10 @@
 module.exports = {
+    root: true,
     extends: ['@proton/eslint-config-proton'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
+        projectService: true,
         tsconfigRootDir: __dirname,
-        project: './tsconfig.json',
     },
     ignorePatterns: ['.eslintrc.js'],
 };
