@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-throw-literal, curly */
+/* eslint-disable curly */
 import { all, fork, put, select } from 'redux-saga/effects';
 
 import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
