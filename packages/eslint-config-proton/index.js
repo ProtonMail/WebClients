@@ -99,7 +99,7 @@ module.exports = {
         '@typescript-eslint/no-shadow': 'off',
 
         'no-throw-literal': 'off',
-        '@typescript-eslint/only-throw-error': 'error',
+        '@typescript-eslint/only-throw-error': 'off',
 
         'no-unused-expressions': 'off',
         '@typescript-eslint/no-unused-expressions': [
@@ -112,7 +112,17 @@ module.exports = {
         ],
 
         'no-unused-vars': 'off',
-        '@typescript-eslint/no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: true }],
+        '@typescript-eslint/no-unused-vars': [
+            'error',
+            {
+                args: 'after-used',
+                argsIgnorePattern: '^_',
+                caughtErrors: 'none',
+                destructuredArrayIgnorePattern: '^_',
+                varsIgnorePattern: '^_',
+                ignoreRestSiblings: true,
+            },
+        ],
 
         'no-use-before-define': 'off',
         '@typescript-eslint/no-use-before-define': ['error', { functions: true, classes: true, variables: true }],
@@ -314,10 +324,14 @@ module.exports = {
         '@protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer': 'error',
     },
     settings: {
+        'import/extensions': ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts'],
         'import/resolver': {
             // The built-in node resolver does not support the `exports` entrypoints.
             // The TS one is used as a workaround, see https://github.com/import-js/eslint-plugin-import/issues/1810#issuecomment-1189510672
             typescript: {},
+            node: {
+                extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
+            },
 
             alias: {
                 map: [
