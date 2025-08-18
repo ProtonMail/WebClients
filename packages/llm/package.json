@@ -5,7 +5,7 @@
     "main": "lib/index.ts",
     "scripts": {
         "check-types": "tsc",
-        "lint": "eslint lib --quiet --cache",
+        "lint": "eslint lib --ext .js,.ts,tsx --quiet --cache",
         "test": "jest"
     },
     "dependencies": {
