@@ -609,14 +609,14 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 }
             >
         ) => {
-            let addedLinkIds: string[] = [];
+            const addedLinkIds: string[] = [];
 
             const result = await batchAPIHelper(abortSignal, {
                 linkIds: [...linksInfoForAlbum.keys()],
                 batchRequestSize: MAX_ADD_ALBUM_PHOTOS_BATCH,
                 ignoredCodes: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS, API_CUSTOM_ERROR_CODES.INVALID_REQUIREMENT],
                 query: async (batchLinkIds) => {
-                    let linksPayloads = [];
+                    const linksPayloads = [];
                     for (const linkId of batchLinkIds) {
                         if (addedLinkIds.includes(linkId)) {
                             continue;

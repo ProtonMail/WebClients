@@ -49,10 +49,10 @@ const OnboardingChecklistSidebarHeader = ({
         </Counter>
     );
 
-    let text = canDisplayCountDown
+    const text = canDisplayCountDown
         ? c('Get started checklist instructions').t`Get more storage`
         : c('Get started checklist instructions').t`Finish setup`;
-    let subText =
+    const subText =
         !isOpened && canDisplayCountDown
             ? c('Get started checklist instructions').ngettext(
                   msgid`${remainingDaysCount} day left`,

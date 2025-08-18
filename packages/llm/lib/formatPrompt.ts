@@ -77,11 +77,11 @@ const INSTRUCTIONS_REFINE_WHOLE = [
     'Do not modify markdown link references.',
 ].join(' ');
 
-let INSTRUCTIONS_REFINE_USER_PREFIX_SPAN =
+const INSTRUCTIONS_REFINE_USER_PREFIX_SPAN =
     'In the span that has the class "modified", please do the following changes but keep the language unchanged: ';
-let INSTRUCTIONS_REFINE_USER_PREFIX_DIV =
+const INSTRUCTIONS_REFINE_USER_PREFIX_DIV =
     'In the div that has the class "modified", please do the following changes but keep the language unchanged: ';
-let INSTRUCTIONS_REFINE_USER_PREFIX_WHOLE = 'Please do the following changes but keep the language unchanged: ';
+const INSTRUCTIONS_REFINE_USER_PREFIX_WHOLE = 'Please do the following changes but keep the language unchanged: ';
 
 function removePartialSubstringAtEnd(s: string, end: string): string {
     const n = end.length;
@@ -344,8 +344,8 @@ export function formatPromptCustomRefine(action: CustomRefineAction): string {
     let system: string;
     let user: string;
     let newEmailStart: string;
-    let userInputFormat: 'plaintext' | 'markdown' = action.userInputFormat || 'plaintext';
-    let assistantOutputFormat: 'plaintext' | 'markdown' = action.assistantOutputFormat || 'plaintext';
+    const userInputFormat: 'plaintext' | 'markdown' = action.userInputFormat || 'plaintext';
+    const assistantOutputFormat: 'plaintext' | 'markdown' = action.assistantOutputFormat || 'plaintext';
 
     if (isEntireEmail) {
         oldEmail = mid.trim();

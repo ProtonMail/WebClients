@@ -35,7 +35,7 @@ describe('WalletAccountCreationModal', () => {
     it('should disabled options for index that are already used', async () => {
         const { rerender } = render(<WalletAccountCreationModal open apiWalletData={apiWalletsData[0]} />);
 
-        let select = await screen.findByTestId('account-index-selector');
+        const select = await screen.findByTestId('account-index-selector');
         await fireEvent.click(select);
 
         // segwit index options

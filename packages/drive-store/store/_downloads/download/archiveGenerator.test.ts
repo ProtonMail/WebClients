@@ -14,7 +14,7 @@ type TestLink = {
 };
 
 async function* generateLinks(links: TestLink[]) {
-    for (let link of links) {
+    for (const link of links) {
         if (link.isFile) {
             yield {
                 isFile: link.isFile,

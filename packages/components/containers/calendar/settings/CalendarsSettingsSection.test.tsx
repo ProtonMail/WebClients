@@ -69,7 +69,7 @@ jest.mock('@proton/calendar/holidaysDirectory/hooks', () => ({
     default: jest.fn(() => []),
 }));
 
-let memoryHistory = createMemoryHistory();
+const memoryHistory = createMemoryHistory();
 
 const renderComponent = ({
     user,

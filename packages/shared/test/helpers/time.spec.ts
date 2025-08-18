@@ -134,7 +134,7 @@ describe('readableTimeIntl()', () => {
     it('should use default intl options if sameDayFormat is false', () => {
         setMockedTime(unixTime * 1000);
 
-        let result = readableTimeIntl(unixTime, {
+        const result = readableTimeIntl(unixTime, {
             localeCode: enUSLocale.code,
             sameDayIntlOptions: false,
         });

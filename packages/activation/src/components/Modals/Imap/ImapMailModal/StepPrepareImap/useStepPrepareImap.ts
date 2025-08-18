@@ -152,7 +152,7 @@ const useStepPrepare = ({ user, handleCloseCustomizeModal }: Props) => {
 
     const handleUpdateFields = (updatedFields: { [K in keyof Fields]: Fields[K]['value'] }) => {
         const nextFields = cloneDeep(customFields);
-        for (let k in updatedFields) {
+        for (const k in updatedFields) {
             const key = k as keyof Fields;
             nextFields[key].value = updatedFields[key];
             nextFields[key].isUpdated = isDeepEqual(nextFields[key].initialValue, updatedFields[key]);
@@ -168,7 +168,7 @@ const useStepPrepare = ({ user, handleCloseCustomizeModal }: Props) => {
 
     const handleReset = () => {
         const nextFields = cloneDeep(customFields);
-        for (let k in nextFields) {
+        for (const k in nextFields) {
             const key = k as keyof Fields;
             nextFields[key].value = nextFields[key].initialValue;
             nextFields[key].isUpdated = false;

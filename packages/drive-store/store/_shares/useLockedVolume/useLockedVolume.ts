@@ -352,7 +352,7 @@ export function useLockedVolumeInner({
             return false;
         }
 
-        for (let lockedVolume of lockedVolumesForRestore) {
+        for (const lockedVolume of lockedVolumesForRestore) {
             // TODO: Not optimal as it's double the call that what we have in useDefaultShare.getDefaultPhotosShare,
             // but it prevent changing too many things
             const { Volume } = await debouncedRequest<GetDriveVolumeResult>(

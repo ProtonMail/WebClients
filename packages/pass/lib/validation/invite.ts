@@ -27,7 +27,7 @@ type ValidateShareInviteOptions = {
 export const validateInvite =
     ({ emailField, emailValidationResults, store }: ValidateShareInviteOptions) =>
     async (values: InviteFormValues) => {
-        let errors: FormikErrors<InviteFormValues> = {};
+        const errors: FormikErrors<InviteFormValues> = {};
 
         if (values.step === 'members') {
             const state = store.getState();

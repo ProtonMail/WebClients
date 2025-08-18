@@ -49,7 +49,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     useAppTitle(c('Title').t`Album`);
     const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const updateTitle = useAppTitleUpdate();
-    let [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams();
     const favoritePhotoToggle = useFavoritePhotoToggle();
     const { albumLinkId, albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
     const { setPreviewLinkId, modals } = usePhotoLayoutStore(

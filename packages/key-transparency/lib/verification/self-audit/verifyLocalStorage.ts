@@ -106,9 +106,9 @@ export const checkLSBlobs = async (
     api: Api
 ): Promise<LocalStorageAuditResult[]> => {
     const ktBlobsMap = await getAllKTBlobValuesWithInfo(userID, userPrivateKeys, ktLSAPI);
-    let results = [];
+    const results = [];
     for (const { addressID, ktBlobsContent } of ktBlobsMap.values()) {
-        let blobsToSave = [];
+        const blobsToSave = [];
         for (const ktBlobContent of ktBlobsContent) {
             const result = await verifyKTBlobContent(epoch, ktBlobContent, api);
             if (result === LocalStorageAuditStatus.RetryLater) {
@@ -123,7 +123,7 @@ export const checkLSBlobs = async (
         }
         await removeKTFromLS(userID, addressID, ktLSAPI);
         if (blobsToSave.length) {
-            let blobs: KTBlobValuesWithInfo = { userID, addressID, ktBlobsContent: blobsToSave };
+            const blobs: KTBlobValuesWithInfo = { userID, addressID, ktBlobsContent: blobsToSave };
             await encryptKTtoLS(blobs, userPrivateKeys[0], ktLSAPI);
         }
     }

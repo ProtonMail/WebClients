@@ -61,7 +61,7 @@ describe('drawer helpers', () => {
     });
 
     describe('isAuthorizedDrawerUrl', () => {
-        let location = getMockedWindowLocation({ hostname: windowHostname });
+        const location = getMockedWindowLocation({ hostname: windowHostname });
         const hostname = location.hostname;
 
         it('should be a url from an authorized domain', () => {
@@ -97,7 +97,7 @@ describe('drawer helpers', () => {
     });
 
     describe('getIsDrawerPostMessage', () => {
-        let location = getMockedWindowLocation({ hostname: windowHostname });
+        const location = getMockedWindowLocation({ hostname: windowHostname });
         const hostname = location.hostname;
 
         it('should be a drawer message', () => {
@@ -145,7 +145,7 @@ describe('drawer helpers', () => {
     });
 
     describe('postMessageFromIframe', () => {
-        let location = getMockedWindowLocation({ hostname: windowHostname });
+        const location = getMockedWindowLocation({ hostname: windowHostname });
 
         it('should post a message from the iframe', () => {
             const spy = spyOn(window.parent, 'postMessage');
