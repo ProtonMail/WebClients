@@ -1,7 +1,7 @@
 import type { SetStateAction } from 'react';
 
 import { type FormikErrors } from 'formik';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
@@ -97,12 +97,16 @@ const RetentionDurationSetting = ({ values, setValues }: Props) => {
                         <InputFieldTwo
                             id="policy-duration"
                             type="number"
-                            min={1}
+                            min={30}
                             max={36500}
                             value={lifetime ?? ''}
                             onValue={(value: string) => setValues({ ...values, lifetime: Number(value) })}
                             placeholder={c('retention_policy_2025_Placeholder').t`Enter duration`}
-                            suffix={<span className="px-2">{c('retention_policy_2025_Label').t`days`}</span>}
+                            suffix={
+                                <span className="px-2">
+                                    {c('retention_policy_2025_Label').ngettext(msgid`day`, `days`, lifetime ?? 1)}
+                                </span>
+                            }
                             dense
                         />
                     </div>
