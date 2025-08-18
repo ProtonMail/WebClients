@@ -193,7 +193,7 @@ export class ParsedSignedKeyList {
             return acc;
         }, {});
 
-        let resultMap: SimpleMap<SignedKeyListItem | undefined> = {};
+        const resultMap: SimpleMap<SignedKeyListItem | undefined> = {};
         for (const { ID, sha256Fingerprints } of keys) {
             const sklItems = mapFingerprintsToItems[sha256Fingerprints.join()];
             if (!sklItems) {

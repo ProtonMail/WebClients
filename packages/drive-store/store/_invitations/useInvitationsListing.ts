@@ -66,7 +66,7 @@ export function useInvitationsListing() {
     });
 
     const loadInvitationsDetails = async (invitations: ListDrivePendingInvitationsPayload['Invitations']) => {
-        for (let invitation of invitations) {
+        for (const invitation of invitations) {
             const cachedInvitation = getInvitation(invitation.InvitationID);
 
             const invitationDetailsWithName =

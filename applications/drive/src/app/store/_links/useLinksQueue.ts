@@ -33,7 +33,7 @@ export const useLinksQueue = ({ loadThumbnails }: Props = {}) => {
             while (queue.current.size > 0 && !controller.current.signal.aborted) {
                 // Remove items from the queue which are no longer visible
                 queue.current.forEach((item) => {
-                    let ref = domRefMap.current.get(item);
+                    const ref = domRefMap.current.get(item);
 
                     if (ref && !ref.current) {
                         queue.current.delete(item);

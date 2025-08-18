@@ -49,7 +49,6 @@ export class FetchMetaAndRawCommit {
     const serverBasedMeta: DocumentMetaInterface = metaResult.getValue()
 
     const latestCommitId = serverBasedMeta.latestCommitId()
-    let latestCommit: Commit | undefined
 
     const promises: Promise<ApiResult<RealtimeTokenResult> | ApiResult<Commit>>[] = [
       this.fetchRealtimeToken.execute(nodeMeta, latestCommitId).then((result) => {
@@ -78,7 +77,7 @@ export class FetchMetaAndRawCommit {
       })
     }
 
-    latestCommit = commitDataResult?.getValue()
+    const latestCommit: Commit | undefined = commitDataResult?.getValue()
     const realtimeToken = realtimeTokenResult.isFailed() ? undefined : realtimeTokenResult.getValue()
 
     return DynamicResult.ok({

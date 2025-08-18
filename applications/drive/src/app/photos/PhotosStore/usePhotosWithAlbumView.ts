@@ -57,7 +57,7 @@ export function updateByEvents(
 }
 
 export const usePhotosWithAlbumsView = () => {
-    let { albumShareId, albumLinkId } = useParams<{ albumShareId?: string; albumLinkId?: string }>();
+    const { albumShareId, albumLinkId } = useParams<{ albumShareId?: string; albumLinkId?: string }>();
     const eventsManager = useDriveEventManager();
     const { getCachedChildren, loadLinksMeta } = useLinksListing();
     const linkState = useLinksState();
@@ -193,11 +193,11 @@ export const usePhotosWithAlbumsView = () => {
         // To improve performance, let's build some maps ahead of time
         // For previews and selection, we need these maps to know where
         // each link is located in the data array.
-        let photoLinkIdToIndexMap: Record<string, number> = {};
+        const photoLinkIdToIndexMap: Record<string, number> = {};
 
         // We also provide a list of linkIds for the preview navigation,
         // so it's important that this array follows the sorted view order.
-        let photoLinkIds: string[] = [];
+        const photoLinkIds: string[] = [];
 
         photosViewData.forEach((item, index) => {
             if (!isPhotoGroup(item)) {
@@ -248,11 +248,11 @@ export const usePhotosWithAlbumsView = () => {
         // To improve performance, let's build some maps ahead of time
         // For previews and selection, we need these maps to know where
         // each link is located in the data array.
-        let albumPhotosLinkIdToIndexMap: Record<string, number> = {};
+        const albumPhotosLinkIdToIndexMap: Record<string, number> = {};
 
         // We also provide a list of linkIds for the preview navigation,
         // so it's important that this array follows the sorted view order.
-        let albumPhotosLinkIds: string[] = [];
+        const albumPhotosLinkIds: string[] = [];
 
         albumPhotosViewData.forEach((item, index) => {
             if (!isPhotoGroup(item)) {

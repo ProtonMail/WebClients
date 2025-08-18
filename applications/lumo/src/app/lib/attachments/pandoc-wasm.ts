@@ -43,7 +43,7 @@ async function getDetailedMemoryUsage(): Promise<{
         try {
             const measurement = await (performance as any).measureUserAgentSpecificMemory();
             let wasmTotal = 0;
-            let breakdown = [];
+            const breakdown = [];
 
             for (const entry of measurement.breakdown) {
                 if (entry.types.includes('wasm')) {

@@ -45,7 +45,7 @@ export const useTrashNodes = () => {
     const populateNodesFromSDK = useCallback(
         async (abortSignal: AbortSignal) => {
             setLoading(true);
-            let defaultShare = await getDefaultShare();
+            const defaultShare = await getDefaultShare();
             let shownErrorNotification = false;
             for await (const trashNode of drive.iterateTrashedNodes(abortSignal)) {
                 try {

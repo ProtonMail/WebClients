@@ -137,7 +137,7 @@ const TimeGrid = ({
         return hours.map((hourDate) => formatTime(new Date(hourDate.getTime() - secondaryTimezoneOffset)));
     }, [secondaryTimezoneOffset, formatTime]);
 
-    let [timeEvents, dayEvents] = useMemo(() => {
+    const [timeEvents, dayEvents] = useMemo(() => {
         const result = [...events, ...attendeeBusySlots].reduce<
             [(CalendarViewEvent | CalendarViewBusyEvent)[], (CalendarViewEvent | CalendarViewBusyEvent)[]]
         >(
