@@ -105,7 +105,7 @@ const createAuthenticationStore = ({ mode = appMode, initialAuth, store: { set, 
     const getTrusted = () => get(TRUST_SESSION_KEY) ?? false;
 
     const initialUID = getUID();
-    let initialAuthData: AuthData =
+    const initialAuthData: AuthData =
         initialAuth === false ? defaultAuthData : getInitialState(mode, initialUID, getLocalID());
     let basename = initialAuthData.basename;
     // Ensure the store is up-to-date

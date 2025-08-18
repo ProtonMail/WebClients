@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/lines-between-class-members */
 import { HttpResponse, http } from 'msw';
 
 import { computeSha256AsBase64 } from '../../crypto';

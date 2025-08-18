@@ -80,10 +80,10 @@ describe('useTrashedLinksListing', () => {
     it('should increment the page count when fetching the next page of trashed links', async () => {
         const volumeId = '1';
         const page = 0;
-        let firstResponse = {
+        const firstResponse = {
             Trash: [{ ShareID: '1', LinkIDs: generateArrayOfRandomStrings(PAGE_SIZE) }],
         };
-        let secondResponse = {
+        const secondResponse = {
             Trash: [{ ShareID: '1', LinkIDs: generateArrayOfRandomStrings(1) }],
         };
         mockRequest.mockResolvedValueOnce(firstResponse).mockResolvedValueOnce(secondResponse);

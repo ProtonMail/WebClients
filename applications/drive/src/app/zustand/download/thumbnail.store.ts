@@ -53,7 +53,7 @@ const saveMetadata = async (metadata: ThumbnailMetadata): Promise<void> => {
 // Enforce storage limits by removing oldest entries if it's above the limits defined
 // This is FIFO
 const enforceStorageLimits = async (metadata: ThumbnailMetadata): Promise<void> => {
-    let meta = { ...metadata };
+    const meta = { ...metadata };
 
     while (meta.queue.length > MAX_ENTRIES) {
         const oldestId = meta.queue.shift();

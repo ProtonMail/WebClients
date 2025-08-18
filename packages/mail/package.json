@@ -6,7 +6,7 @@
     "main": "index.ts",
     "scripts": {
         "check-types": "tsc",
-        "lint": "eslint . --ext ts --quiet --cache",
+        "lint": "eslint . --ext .js,.ts,tsx --quiet",
         "pretty:fix": "prettier --write  .",
         "test": "jest --logHeapUsage --forceExit",
         "test:ci": "jest --coverage --runInBand --ci --forceExit",

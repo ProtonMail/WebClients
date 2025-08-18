@@ -55,7 +55,7 @@ const RecipientItemGroup = ({
 
     const onCompose = useOnCompose();
 
-    let addresses = group.recipients.map((recipient) => recipient.Address).join(', ');
+    const addresses = group.recipients.map((recipient) => recipient.Address).join(', ');
 
     const labelText = getGroupLabel(group, true);
 

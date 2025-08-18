@@ -194,7 +194,7 @@ class DownloadServiceWorker {
                         }
 
                         // Only fetch blocks that aren't in cache
-                        let fetchedBlocks = new Map<number, Uint8Array<ArrayBuffer>>();
+                        const fetchedBlocks = new Map<number, Uint8Array<ArrayBuffer>>();
                         if (indicesToFetch.length > 0) {
                             client.postMessage(
                                 { type: 'get_block_data', indices: indicesToFetch } as GetBlockDataRequest,

@@ -167,7 +167,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             return;
         }
 
-        let contentProgress = await contentIndexingProgress.read(user.ID);
+        const contentProgress = await contentIndexingProgress.read(user.ID);
         if (!contentProgress) {
             return esLibraryFunctions.initializeES();
         }

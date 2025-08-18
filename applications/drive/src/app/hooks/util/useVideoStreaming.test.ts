@@ -54,7 +54,7 @@ describe('useVideoStreaming', () => {
     });
 
     it('should return undefined when required conditions are not met', () => {
-        let originalNavigator = global.navigator;
+        const originalNavigator = global.navigator;
         Object.defineProperty(global, 'navigator', {
             value: {},
             configurable: true,

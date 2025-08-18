@@ -22,6 +22,7 @@ const zDailyStatsValues = z.object({
 });
 export type DailyStatsValues = z.infer<typeof zDailyStatsValues>;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const zDailyStatsStored = zDailyStatsDimensions.merge(zDailyStatsValues).extend({ lastReport: z.number() });
 export type DailyStatsStored = z.infer<typeof zDailyStatsStored>;
 

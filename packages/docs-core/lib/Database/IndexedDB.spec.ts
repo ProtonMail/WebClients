@@ -1,7 +1,7 @@
 import 'fake-indexeddb/auto'
 import { IndexedDatabase } from './IndexedDB'
 import type { LoggerInterface } from '@proton/utils/logs'
-import type { DatabaseSchema} from './Schema';
+import type { DatabaseSchema } from './Schema'
 import { CURRENT_DB_VERSION, DATABASE_NAME, migrations } from './Schema'
 
 describe('IndexedDatabase', () => {
@@ -95,7 +95,7 @@ describe('IndexedDatabase', () => {
       ]
 
       // Initially open with version 1 and first migration
-      let dbV1 = new IndexedDatabase<TestSchemaV1>(TEST_DB_NAME, 1, [migrations[0]], mockLogger)
+      const dbV1 = new IndexedDatabase<TestSchemaV1>(TEST_DB_NAME, 1, [migrations[0]], mockLogger)
       let openResult = await dbV1.openDatabase()
       expect(openResult.isFailed()).toBe(false)
       let database = openResult.getValue()
@@ -112,7 +112,7 @@ describe('IndexedDatabase', () => {
       tx.abort()
 
       // Now upgrade to version 2 with both migrations
-      let dbV2 = new IndexedDatabase<TestSchemaV2>(TEST_DB_NAME, 2, migrations, mockLogger)
+      const dbV2 = new IndexedDatabase<TestSchemaV2>(TEST_DB_NAME, 2, migrations, mockLogger)
       openResult = await dbV2.openDatabase()
       expect(openResult.isFailed()).toBe(false)
       database = openResult.getValue()

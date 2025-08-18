@@ -10,7 +10,7 @@ export type ListInfo = {
 }
 
 export function $getListInfo(node: ListNode | ListItemNode): ListInfo {
-  let list = $isListNode(node) ? node : $findMatchingParent(node, $isListNode)
+  const list = $isListNode(node) ? node : $findMatchingParent(node, $isListNode)
   if (!list) {
     throw new Error('Could not find list')
   }

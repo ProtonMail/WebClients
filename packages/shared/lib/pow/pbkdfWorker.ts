@@ -71,7 +71,7 @@ async function solveChallengePbkdf2Preimage(b64challenge: string, deadlineUnixMi
         }
         i++;
     }
-    let solution = new Uint8Array(buffer.byteLength + stage.byteLength);
+    const solution = new Uint8Array(buffer.byteLength + stage.byteLength);
     solution.set(new Uint8Array(buffer), 0);
     solution.set(new Uint8Array(stage), buffer.byteLength);
 

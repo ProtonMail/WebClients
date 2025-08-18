@@ -92,10 +92,10 @@ export const usePhotoSelectionStore = create<PhotoSelectionState>((set, get) => 
 
     isGroupSelected: (data, groupIndex) => {
         const { selection } = get();
-        let linkIds = getGroupLinkIds(data, groupIndex);
+        const linkIds = getGroupLinkIds(data, groupIndex);
         let selectedCount = 0;
 
-        for (let linkId of linkIds) {
+        for (const linkId of linkIds) {
             if (selection[linkId]) {
                 selectedCount++;
             } else if (selectedCount > 0) {

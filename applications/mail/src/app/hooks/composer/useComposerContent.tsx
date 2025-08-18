@@ -453,15 +453,12 @@ export const useComposerContent = (args: EditorArgs) => {
      * This function perform an ultimate content check before sending especially.
      */
     const ensureMessageContent = () => {
-        let actualContent;
-        let modelContent;
-
         const { editorRef } = args;
         if (!editorRef.current || editorRef.current.isDisposed()) {
             return;
         }
-        actualContent = editorRef.current.getContent();
-        modelContent = getContent(modelMessage);
+        const actualContent = editorRef.current.getContent();
+        const modelContent = getContent(modelMessage);
 
         if (actualContent.trim() !== modelContent.trim()) {
             handleChangeContent(actualContent);

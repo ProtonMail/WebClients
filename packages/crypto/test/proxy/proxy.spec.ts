@@ -8,7 +8,7 @@ import { Api as CryptoApi } from '../../lib/worker/api';
 chaiUse(chaiAsPromised);
 
 describe('CryptoProxy', () => {
-    let api = new CryptoApi();
+    const api = new CryptoApi();
     it('setEndpoint - should throw if already set', async () => {
         CryptoProxy.setEndpoint(api);
         expect(() => CryptoProxy.setEndpoint(api)).to.throw(/already initialised/);
