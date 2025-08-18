@@ -2,8 +2,7 @@ import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { useDynamicFavicon } from '@proton/components';
-import { useConversationCounts } from '@proton/mail/store/counts/conversationCounts';
-import { useMessageCounts } from '@proton/mail/store/counts/messageCounts';
+import { useConversationCounts, useMessageCounts } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
