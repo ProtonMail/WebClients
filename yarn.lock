@@ -8480,7 +8480,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^8.40.0"
     "@typescript-eslint/parser": "npm:^8.40.0"
     eslint: "npm:^8.57.1"
-    eslint-config-prettier: "npm:^8.10.2"
+    eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-prettier: "npm:^5.5.4"
     google-protobuf: "npm:^3.21.4"
     protoc-gen-ts: "npm:^0.8.7"
@@ -8641,7 +8641,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^8.40.0"
     "@typescript-eslint/parser": "npm:^8.40.0"
     eslint: "npm:^8.57.1"
-    eslint-config-prettier: "npm:^9.1.2"
+    eslint-config-prettier: "npm:^10.1.8"
     eslint-import-resolver-alias: "npm:^1.1.2"
     eslint-import-resolver-typescript: "npm:4.4.4"
     eslint-plugin-custom-rules: "workspace:^"
@@ -23836,6 +23836,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-config-prettier@npm:^10.1.8":
+  version: 10.1.8
+  resolution: "eslint-config-prettier@npm:10.1.8"
+  peerDependencies:
+    eslint: ">=7.0.0"
+  bin:
+    eslint-config-prettier: bin/cli.js
+  checksum: 10c0/e1bcfadc9eccd526c240056b1e59c5cd26544fe59feb85f38f4f1f116caed96aea0b3b87868e68b3099e55caaac3f2e5b9f58110f85db893e83a332751192682
+  languageName: node
+  linkType: hard
+
 "eslint-config-prettier@npm:^2.9.0":
   version: 2.10.0
   resolution: "eslint-config-prettier@npm:2.10.0"
@@ -23846,28 +23857,6 @@ __metadata:
   bin:
     eslint-config-prettier-check: bin/cli.js
   checksum: 10c0/18737dd1a255c7c5959305a33496ad99e976dec413ed388761ed8b103642adf27f8480819f06f6e1838c24bd7353598ffb40d8b71e121bbce36f80f4bc5f442e
-  languageName: node
-  linkType: hard
-
-"eslint-config-prettier@npm:^8.10.2":
-  version: 8.10.2
-  resolution: "eslint-config-prettier@npm:8.10.2"
-  peerDependencies:
-    eslint: ">=7.0.0"
-  bin:
-    eslint-config-prettier: bin/cli.js
-  checksum: 10c0/b5953cf7a86f685e1218b16707bf36643b525513d08495226a6820caccd8b7bfc6b9aa64ac7cb2415dbe2c1f7dc4995832148bdc53ad45777f75a8ded1073b29
-  languageName: node
-  linkType: hard
-
-"eslint-config-prettier@npm:^9.1.2":
-  version: 9.1.2
-  resolution: "eslint-config-prettier@npm:9.1.2"
-  peerDependencies:
-    eslint: ">=7.0.0"
-  bin:
-    eslint-config-prettier: bin/cli.js
-  checksum: 10c0/d2e9dc913b1677764a4732433d83d258f40820458c65d0274cb9e3eaf6559b39f2136446f310c05abed065a4b3c2e901807ccf583dff76c6227eaebf4132c39a
   languageName: node
   linkType: hard
 
@@ -38170,7 +38159,7 @@ __metadata:
     clsx: "npm:^2.1.1"
     cross-env: "npm:^7.0.3"
     eslint: "npm:^8.57.1"
-    eslint-config-prettier: "npm:^9.1.2"
+    eslint-config-prettier: "npm:^10.1.8"
     fake-indexeddb: "npm:^6.1.0"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
@@ -38294,7 +38283,7 @@ __metadata:
     date-fns: "npm:^2.30.0"
     dompurify: "npm:^3.2.6"
     eslint: "npm:^8.57.1"
-    eslint-config-prettier: "npm:^9.1.2"
+    eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-testing-library: "npm:^6.5.0"
     jest: "npm:^29.7.0"
     jest-junit: "npm:^16.0.0"
