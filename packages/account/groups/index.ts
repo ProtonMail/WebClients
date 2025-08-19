@@ -163,6 +163,10 @@ export const groupsEventLoopV6Thunk = ({
     api: Api;
 }): ThunkAction<Promise<void>, GroupsState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
+        const [user, organization] = await Promise.all([dispatch(userThunk()), dispatch(organizationThunk())]);
+        if (!canFetch(user, organization)) {
+            return;
+        }
         await updateCollectionAsyncV6({
             events: event.Groups,
             get: (ID) => fetchGroup(ID, api),
