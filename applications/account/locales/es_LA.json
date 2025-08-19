@@ -1048,9 +1048,6 @@
       "See plan features": [
         "Ver funcionalidades del plan"
       ],
-      "Select ${ planTitle }": [
-        "Seleccione ${ planTitle }"
-      ],
       "Select a calendar to export": [
         "Seleccione un calendario para exportar"
       ],
@@ -1657,9 +1654,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puede tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el período de prueba."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Puede tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de Lumo durante el período de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
@@ -5316,9 +5310,6 @@
       "Continue": [
         "Continuar"
       ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "Todo en ${ PLAN_NAMES[PLANS.VPN2024] }"
-      ],
       "Fastest VPN servers": [
         "Servidores VPN más rápidos"
       ],
@@ -7974,9 +7965,6 @@
       "Private AI assistant": [
         "Asistente de IA privado"
       ],
-      "Promotion expired": [
-        "La promoción expiró."
-      ],
       "Protected by Swiss privacy laws": [
         "Protegido por las leyes de privacidad de Suiza"
       ],
@@ -8203,9 +8191,6 @@
       "Starts on ${ startsOnTime }": [
         "Comienza el ${ startsOnTime }"
       ],
-      "Stay tuned for future promotions.": [
-        "Manténgase al tanto de promociones futuras."
-      ],
       "Step ${ step }": [
         "Paso ${ step }",
         "Paso ${ step }"
@@ -8398,9 +8383,6 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Este mensaje no llegará al equipo de soporte. Si tiene algún problema con nuestro servicio o necesita más asistencia de nuestra parte ${ supportLink }."
-      ],
-      "This promotion link has expired.": [
-        "El enlace de esta promoción ha expirado."
       ],
       "This service is not available to users signing in with single sign-on.": [
         "Este servicio no está disponible para los usuarios que inician sesión con inicio de sesión único (SSO)."
@@ -13072,12 +13054,6 @@
       "Get unlimited privacy for two": [
         "Disfrute de privacidad ilimitada para dos"
       ],
-      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
-        "Entiendo que al perder mis detalles de recuperación, puedo perder permanentemente el acceso a mi cuenta."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
-        "Si se bloquea la cuenta ${ BRAND_NAME }, su **kit de recuperación** le permitirá iniciar sesión y recuperar los datos."
-      ],
       "Includes:": [
         "Incluye:"
       ],
@@ -13089,9 +13065,6 @@
       ],
       "Install app and extension": [
         "Instale la aplicación y la extensión"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "Es la única forma de restaurar la cuenta, por lo que tome las medidas necesarias para mantenerlo a salvo."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Únase a más de 100 millones de personas que han elegido ${ BRAND_NAME } para su seguridad en línea"
@@ -13814,14 +13787,6 @@
         "Verificar el número de teléfono aumenta la seguridad de la cuenta y permite opciones de recuperación adicionales."
       ]
     },
-    "RecoveryPhrase: Action": {
-      "Download PDF ${ size }": [
-        "Descargar PDF ${ size }"
-      ],
-      "Reveal recovery phrase": [
-        "Revelar frase de recuperación"
-      ]
-    },
     "Remark about a key type option": {
       "Classic": [
         "Clásica"
@@ -13931,9 +13896,6 @@
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
-        "La duración debe ser mayor que ${ MIN_LIFETIME } días"
-      ],
       "Lifetime must not be set for \"Retain All\" action": [
         "No se debe establecer una duración por siempre para la acción \"Retener Todo\""
       ],
@@ -13983,9 +13945,6 @@
       ],
       "Applies to": [
         "Se aplica a"
-      ],
-      "days": [
-        "días"
       ],
       "Keep items forever": [
         "Mantener elementos para siempre"
@@ -15059,9 +15018,6 @@
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Luego ${ priceWithDiscountPerMonth } al mes, si se suscribe."
-      ],
-      "To reedeem on your next paid subscription.": [
-        "Para canjear en su próxima suscripción de pago."
       ],
       "Total": [
         "Total"
@@ -18476,9 +18432,6 @@
       ],
       "It's you": [
         "Es usted"
-      ],
-      "Lumo": [
-        "Lumo"
       ],
       "Pending admin access": [
         "Acceso de administrador pendiente"
