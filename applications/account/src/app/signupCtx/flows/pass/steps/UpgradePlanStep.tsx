@@ -17,19 +17,16 @@ import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import { useSignup } from '../../../context/SignupContext';
-import { Step } from '../PassSignup';
 import { Layout } from '../components/Layout/Layout';
 import { OfferModal } from '../components/OfferModal/OfferModal';
 import { PlanCard, type PlanCardProps } from '../components/PlansTable/PlanCard';
 
 type Props = {
-    setStep: (step: Step) => void;
+    onContinue: (payment: boolean) => Promise<void>;
 };
 
-export const UpgradePlanStep: FC<Props> = ({ setStep }) => {
+export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
     const payments = usePaymentOptimistic();
-    const signup = useSignup();
 
     const offerModal = useAsyncModalHandles<MaybeNull<PLANS>, object>({ getInitialModalState: () => ({}) });
 
@@ -39,29 +36,30 @@ export const UpgradePlanStep: FC<Props> = ({ setStep }) => {
 
     const handlePayPlan = (plan: PLANS, coupon?: string) => {
         payments.selectPlan({ planIDs: { [plan]: 1 }, cycle: CYCLE.YEARLY, currency: payments.currency, coupon });
-        setStep(Step.Payment);
+        void onContinue(true);
     };
 
     const openOfferModal = () =>
         offerModal.handler({
             onSubmit: async (upgradeTo) => {
-                // TODO: Ask for real coupon discount to use at this point
                 if (upgradeTo) {
-                    return handlePayPlan(upgradeTo, 'COUPON-DISCOUNT-80%');
+                    return handlePayPlan(upgradeTo, 'PASSPLUSINTRO2024');
                 }
 
-                await signup.createUser();
-                await signup.setupUser();
-                setStep(Step.InstallExtension);
+                await onContinue(false);
             },
         });
+
+    // Using same variable name in translations as a duplicate key in OAuthConfirmForkContainer
+    const name = PASS_APP_NAME;
 
     const plans: PlanCardProps[] = [
         {
             title: c('Title').t`Free`,
             price: getPrice(0),
             priceSubtitle: c('Subtitle').t`Free forever`,
-            buttonText: c('Action').t`Continue to ${PASS_APP_NAME}`,
+            // translator: variable here is the name of the service to login to. Complete sentence: "Continue to Proton Pass"
+            buttonText: c('Action').t`Continue to ${name}`,
             buttonAction: openOfferModal,
             features: [
                 c('Label').t`Secure password generator`,
@@ -75,6 +73,7 @@ export const UpgradePlanStep: FC<Props> = ({ setStep }) => {
             priceSubtitle: c('Subtitle').t`per month, billed annually`,
             buttonText: c('Action').t`Get Pass Plus`,
             buttonAction: () => handlePayPlan(PLANS.PASS),
+            recommended: true,
             featuresTitle: c('Label').t`Get everything in Free, plus:`,
             features: [
                 c('Label').t`Unlimited Hide-my-email aliases`,
@@ -107,7 +106,6 @@ export const UpgradePlanStep: FC<Props> = ({ setStep }) => {
             buttonShape: 'solid',
             buttonAction: () => handlePayPlan(PLANS.BUNDLE),
             showProducts: true,
-            recommended: true,
             featuresTitle: c('Label').t`The best of ${BRAND_NAME} with one subscription`,
             features: [
                 c('Label').t`500 GB Storage`,
