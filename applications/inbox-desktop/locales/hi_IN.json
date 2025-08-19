@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } के बारे में"
+      ],
       "Actual Size": [
         "वास्तविक साइज़"
       ],
@@ -14,11 +17,14 @@
       "Clear application data": [
         "एप्लिकेशन डेटा साफ़ करें"
       ],
+      "Close Window": [
+        "विंडो बंद करें"
+      ],
       "Copy": [
         "कॉपी करें"
       ],
       "Cut": [
-        "काटें"
+        "कट करें"
       ],
       "Delete": [
         "मिटा दें"
@@ -26,11 +32,26 @@
       "Force Reload": [
         "जबर्दस्ती पुनः लोड करें"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } छिपायें"
+      ],
       "Hide Others": [
         "बाकियों को छुपाएं"
       ],
+      "Minimize": [
+        "छोटा करें"
+      ],
+      "Paste": [
+        "पेस्ट करें"
+      ],
+      "Paste and Match Style": [
+        "पेस्ट करें और स्टाइल मैच करें"
+      ],
       "Quit": [
         "बंद करें"
+      ],
+      "Quit ${ MAIL_APP_NAME }": [
+        "बाहर निकलें ${ MAIL_APP_NAME }"
       ],
       "Redo": [
         "फिर से"
@@ -50,8 +71,26 @@
       "Speech": [
         "भाषण"
       ],
+      "Start ${ MAIL_APP_NAME } at login": [
+        "लॉगिन पर ${ MAIL_APP_NAME } शुरू करें"
+      ],
+      "Start Speaking": [
+        "कृपया बोलना शुरू करें"
+      ],
+      "Stop Speaking": [
+        "कृपया बोलना बंद करे"
+      ],
+      "Toggle Full Screen": [
+        "पूरी स्क्रीन स्विच करें"
+      ],
       "Undo": [
         "पूर्ववत् करें"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } अनइंस्टाल करें"
+      ],
+      "Zoom": [
+        "बड़ा करें"
       ],
       "Zoom In": [
         "ज़ूम करें"
@@ -75,8 +114,17 @@
       "Emoji and Symbols": [
         "इमोजी और सिंबल"
       ],
+      "Save image as…": [
+        "इमेज को ऐसे … सेव करें"
+      ],
       "Speech": [
         "भाषण"
+      ],
+      "Start Speaking": [
+        "कृपया बोलना शुरू करें"
+      ],
+      "Stop Speaking": [
+        "कृपया बोलना बंद करे"
       ]
     },
     "Context Menu": {
@@ -86,8 +134,17 @@
       "Cut": [
         "काटें"
       ],
+      "Look Up “${ text }”": [
+        "देखें “${ text }”"
+      ],
+      "Paste": [
+        "पेस्ट करें"
+      ],
+      "Paste and Match Style": [
+        "पेस्ट करें और स्टाइल मैच करें"
+      ],
       "Redo": [
-        "फिर से"
+        "पहले जैसा करें"
       ],
       "Select All": [
         "सब चुनें"
