@@ -48,11 +48,14 @@ module.exports = ({
                   }),
                   (warningLogs || errorLogs) &&
                       new ESLintPlugin({
+                          configType: 'eslintrc',
                           extensions: ['js', 'ts', 'tsx'],
                           eslintPath: require.resolve('eslint'),
                           context: path.resolve('.'),
                           emitWarning: warningLogs,
                           emitError: errorLogs,
+                          failOnError: false,
+                          failOnWarning: false,
                           // ESLint class options
                           resolvePluginsRelativeTo: __dirname,
                           cwd: path.resolve('.'),
