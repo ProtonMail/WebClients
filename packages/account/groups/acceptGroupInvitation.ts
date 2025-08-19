@@ -78,7 +78,7 @@ export const acceptGroupInvitation = ({
             forwarderAddressKeys.map(({ armoredKey }) => CryptoProxy.importPublicKey({ armoredKey }))
         );
 
-        let activeKeys = await getActiveAddressKeys(address.SignedKeyList, addressKeys);
+        const activeKeys = await getActiveAddressKeys(address.SignedKeyList, addressKeys);
 
         const forwardingKey = membership.Keys;
         const decryptedToken = await decryptMemberToken(
