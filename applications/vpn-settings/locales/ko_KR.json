@@ -639,9 +639,6 @@
       "See plan features": [
         "플랜 기능 표시"
       ],
-      "Select ${ planTitle }": [
-        "${ planTitle } 선택"
-      ],
       "Select city ${ city }": [
         "선택된 도시 ${ city }"
       ],
@@ -3100,9 +3097,6 @@
       ],
       "Continue": [
         "계속하기"
-      ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "${ PLAN_NAMES[PLANS.VPN2024] }(에)서 하나로"
       ],
       "Fastest VPN servers": [
         "가장 빠른 VPN 서버"
@@ -6311,6 +6305,9 @@
       "Request an invite": [
         "가입 요청하기"
       ],
+      "Resume now": [
+        "지금 재개"
+      ],
       "settings": [
         "설정"
       ],
@@ -8099,9 +8096,6 @@
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
-        "수명이 ${ MIN_LIFETIME }일보다 길어야합니다"
-      ],
       "Lifetime must not be set for \"Retain All\" action": [
         "\"모두 유지\" 작업에 대한 수명은 설정할 수 없습니다."
       ],
@@ -8147,9 +8141,6 @@
       ],
       "Applies to": [
         "적용 대상"
-      ],
-      "days": [
-        "일"
       ],
       "Keep items forever": [
         "항목 영구 보존"
@@ -10717,9 +10708,6 @@
       ],
       "It's you": [
         "나"
-      ],
-      "Lumo": [
-        "Lumo"
       ],
       "Pending admin access": [
         "관리자 접근 권한 대기 중"

@@ -639,9 +639,6 @@
       "See plan features": [
         "Ver funcionalidades del plan"
       ],
-      "Select ${ planTitle }": [
-        "Seleccione ${ planTitle }"
-      ],
       "Select city ${ city }": [
         "Seleccione la ciudad ${ city }"
       ],
@@ -1034,9 +1031,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puede tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el período de prueba."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Puede tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de Lumo durante el período de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
@@ -3170,9 +3164,6 @@
       ],
       "Continue": [
         "Continuar"
-      ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "Todo en ${ PLAN_NAMES[PLANS.VPN2024] }"
       ],
       "Fastest VPN servers": [
         "Servidores VPN más rápidos"
@@ -8232,9 +8223,6 @@
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
-        "La duración debe ser mayor que ${ MIN_LIFETIME } días"
-      ],
       "Lifetime must not be set for \"Retain All\" action": [
         "No se debe establecer una duración por siempre para la acción \"Retener Todo\""
       ],
@@ -8284,9 +8272,6 @@
       ],
       "Applies to": [
         "Se aplica a"
-      ],
-      "days": [
-        "días"
       ],
       "Keep items forever": [
         "Mantener elementos para siempre"
@@ -10886,9 +10871,6 @@
       ],
       "It's you": [
         "Es usted"
-      ],
-      "Lumo": [
-        "Lumo"
       ],
       "Pending admin access": [
         "Acceso de administrador pendiente"

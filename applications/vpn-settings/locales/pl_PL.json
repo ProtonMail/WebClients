@@ -648,9 +648,6 @@
       "See plan features": [
         "Zobacz funkcje planu"
       ],
-      "Select ${ planTitle }": [
-        "Wybierz ${ planTitle }"
-      ],
       "Select city ${ city }": [
         "Wybierz miasto ${ city }"
       ],
@@ -1047,9 +1044,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Możesz mieć do ${ TRIAL_MAX_DEDICATED_IPS } dedykowanych serwerów w okresie próbnym."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Możesz mieć do ${ TRIAL_MAX_LUMO_SEATS } miejsc Lumo w okresie próbnym."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Możesz mieć do ${ TRIAL_MAX_SCRIBE_SEATS } miejsc Scribe w okresie próbnym."
@@ -3238,9 +3232,6 @@
       ],
       "Continue": [
         "Kontynuuj"
-      ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "Wszystko w planie ${ PLAN_NAMES[PLANS.VPN2024] }"
       ],
       "Fastest VPN servers": [
         "Najszybsze serwery VPN"
@@ -8488,9 +8479,6 @@
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
-        "Okres przechowywania musi być dłuższy niż ${ MIN_LIFETIME } dni"
-      ],
       "Lifetime must not be set for \"Retain All\" action": [
         "Okres przechowywania nie może być ustawiony dla akcji zachowania wszystkiego"
       ],
@@ -8542,9 +8530,6 @@
       ],
       "Applies to": [
         "Zastosuj do"
-      ],
-      "days": [
-        "dni"
       ],
       "Keep items forever": [
         "Zachowaj elementy na zawsze"
@@ -9979,9 +9964,6 @@
       "Account suspended": [
         "Konto zostało zawieszone"
       ],
-      "Account Temporarily Locked": [
-        "Konto zostało tymczasowo zablokowane"
-      ],
       "Action": [
         "Akcja"
       ],
@@ -11224,9 +11206,6 @@
       ],
       "It's you": [
         "Ty"
-      ],
-      "Lumo": [
-        "Lumo"
       ],
       "Pending admin access": [
         "Oczekiwanie na dostęp administratora"
