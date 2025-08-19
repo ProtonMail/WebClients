@@ -1122,14 +1122,20 @@ export function isForbiddenPlusToPlus({
 
     const isSubscribedToLumoPlus = subscribedPlans.some((subscribedPlan) => subscribedPlan.Name === PLANS.LUMO);
     const newPlanIDsHaveLumoAddon = hasLumoAddonFromPlanIDs(clearPlanIDs(newPlanIDs)) && isNewPlanAPlusPlan;
-    const transitionFromLumoPlusToAnotherPlusWithLumoAddon = isSubscribedToLumoPlus && newPlanIDsHaveLumoAddon;
+    const lumoPlusToAnotherPlusWithLumoAddon = isSubscribedToLumoPlus && newPlanIDsHaveLumoAddon;
+
+    // case for multi-subs. If user has Lumo Plus on mobile then they are ALLOWED to buy other Plus plans on web. After
+    // that, they will have one mobile and one web subscription.
+    const lumoPlusMobileToAnotherPlus =
+        isSubscribedToLumoPlus && isNewPlanAPlusPlan && isManagedExternally(subscription);
 
     return Boolean(
         isSubscribedToAPlusPlan &&
             isNewPlanAPlusPlan &&
             isNotSamePlanName &&
             !allowPlusToPlusTransition &&
-            !transitionFromLumoPlusToAnotherPlusWithLumoAddon
+            !lumoPlusToAnotherPlusWithLumoAddon &&
+            !lumoPlusMobileToAnotherPlus
     );
 }
 
