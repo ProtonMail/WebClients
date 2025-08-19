@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -6,18 +8,19 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useToggle from '@proton/components/hooks/useToggle';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updateHideRemoteImages } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
-import { SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
+import { DEFAULT_MAILSETTINGS, SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 
 interface Props {
     id: string;
-    hideRemoteImages: number;
-    onChange: (value: number) => void;
 }
 
-const RemoteToggle = ({ id, hideRemoteImages, onChange, ...rest }: Props) => {
+const RemoteToggle = ({ id, ...rest }: Props) => {
+    const [{ HideRemoteImages } = DEFAULT_MAILSETTINGS] = useMailSettings();
+    const [hideRemoteImages, setHideRemoteImages] = useState(HideRemoteImages);
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const api = useApi();
@@ -29,7 +32,7 @@ const RemoteToggle = ({ id, hideRemoteImages, onChange, ...rest }: Props) => {
         const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateHideRemoteImages(bit));
         dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         toggle();
-        onChange(bit);
+        setHideRemoteImages(bit);
         createNotification({ text: c('Success').t`Preference saved` });
     };
     return (
