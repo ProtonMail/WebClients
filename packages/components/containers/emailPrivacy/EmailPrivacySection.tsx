@@ -16,8 +16,7 @@ import ProtectionModeSelect from './ProtectionModeSelect';
 import RemoteToggle from './RemoteToggle';
 
 const EmailPrivacySection = () => {
-    const [{ HideRemoteImages, ImageProxy } = DEFAULT_MAILSETTINGS] = useMailSettings();
-    const [hideRemoteImages, setHideRemoteImages] = useState(HideRemoteImages);
+    const [{ ImageProxy } = DEFAULT_MAILSETTINGS] = useMailSettings();
     const [, setImageProxy] = useState(ImageProxy);
     const { getFeature } = useFeatures([FeatureCode.SpyTrackerProtectionIncorporator]);
 
@@ -27,8 +26,6 @@ const EmailPrivacySection = () => {
     useEffect(() => {
         setImageProxy(ImageProxy);
     }, [ImageProxy]);
-
-    const handleChangeShowImage = (newValue: number) => setHideRemoteImages(newValue);
 
     const showProtectionMode = ImageProxy !== IMAGE_PROXY_FLAGS.NONE && featureSpyTrackerIncorporator?.Value;
 
@@ -46,12 +43,7 @@ const EmailPrivacySection = () => {
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight isToggleContainer>
-                    <RemoteToggle
-                        id="remoteToggle"
-                        hideRemoteImages={hideRemoteImages}
-                        onChange={handleChangeShowImage}
-                        data-testid="privacy:remote-content-toggle"
-                    />
+                    <RemoteToggle id="remoteToggle" data-testid="privacy:remote-content-toggle" />
                 </SettingsLayoutRight>
             </SettingsLayout>
             <>
