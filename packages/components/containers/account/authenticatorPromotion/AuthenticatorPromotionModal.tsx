@@ -11,8 +11,8 @@ import { AUTHENTICATOR_APP_NAME, BRAND_NAME } from '@proton/shared/lib/constants
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 
-import authenticatorLogo from './authenticator-logo.svg';
-import authenticatorGraphic from './authenticator.jpg';
+import authenticatorLogo from './assets/authenticator-logo.svg';
+import authenticatorGraphic from './assets/authenticator.jpg';
 
 interface AuthenticatorModalProps {
     open: boolean;
@@ -20,7 +20,7 @@ interface AuthenticatorModalProps {
     onExit: () => void;
 }
 
-const AuthenticatorModal = ({ open, onClose, onExit }: AuthenticatorModalProps) => {
+const AuthenticatorPromotionModal = ({ open, onClose, onExit }: AuthenticatorModalProps) => {
     return (
         <Modal open={open} onClose={onClose} onExit={onExit} size="xlarge">
             <div className="flex flex-nowrap h-full">
@@ -98,4 +98,4 @@ const AuthenticatorModal = ({ open, onClose, onExit }: AuthenticatorModalProps) 
     );
 };
 
-export default AuthenticatorModal;
+export default AuthenticatorPromotionModal;
