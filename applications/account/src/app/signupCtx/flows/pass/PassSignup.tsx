@@ -9,7 +9,7 @@ import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
 import { SignupType } from '../../../signup/interfaces';
-import { type BaseSignupContextProps, SignupContextProvider } from '../../context/SignupContext';
+import { type BaseSignupContextProps, SignupContextProvider, useSignup } from '../../context/SignupContext';
 import { AccountDetailsStep } from './steps/AccountDetailsStep';
 import { InstallExtensionStep } from './steps/InstallExtensionStep';
 import { PaymentStep } from './steps/PaymentStep';
@@ -25,14 +25,38 @@ export enum Step {
 }
 
 const PassSignup = () => {
+    const signup = useSignup();
     const [step, setStep] = useState<Step>(Step.Signup);
+
+    const accountCreation = async () => {
+        await signup.createUser();
+        await signup.setupUser();
+    };
 
     return (
         <main className="pass-signup h-full">
-            {step === Step.Signup && <AccountDetailsStep setStep={setStep} />}
-            {step === Step.RecoveryKit && <RecoveryKitStep setStep={setStep} />}
-            {step === Step.UpgradePlan && <UpgradePlanStep setStep={setStep} />}
-            {step === Step.Payment && <PaymentStep setStep={setStep} />}
+            {step === Step.Signup && <AccountDetailsStep onContinue={() => setStep(Step.UpgradePlan)} />}
+            {step === Step.UpgradePlan && (
+                <UpgradePlanStep
+                    onContinue={async (payment: boolean) => {
+                        if (payment) {
+                            return setStep(Step.Payment);
+                        }
+                        await accountCreation();
+                        setStep(Step.RecoveryKit);
+                    }}
+                />
+            )}
+            {step === Step.Payment && (
+                <PaymentStep
+                    onContinue={async () => {
+                        await accountCreation();
+                        setStep(Step.RecoveryKit);
+                    }}
+                    onBack={() => setStep(Step.UpgradePlan)}
+                />
+            )}
+            {step === Step.RecoveryKit && <RecoveryKitStep onContinue={() => setStep(Step.InstallExtension)} />}
             {step === Step.InstallExtension && <InstallExtensionStep />}
         </main>
     );
@@ -51,7 +75,7 @@ const PassSignupPage = (props: BaseSignupContextProps) => {
             {...props}
             app={APPS.PROTONPASS}
             flowId={`pass-flow-${id}`}
-            onLogin={(session) => {
+            onLogin={async (session) => {
                 const url = new URL(getAppHref('/', APPS.PROTONPASS, session.localID));
                 replaceUrl(url.toString());
             }}
