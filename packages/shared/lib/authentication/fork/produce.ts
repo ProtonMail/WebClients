@@ -1,6 +1,6 @@
 import { serverTime } from '@proton/crypto';
 import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
-import type { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
+import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { type ReturnUrlResult, getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
 import { getRedirect } from '@proton/shared/lib/subscription/redirect';
 import { isSelf } from '@proton/shared/lib/user/helpers';
@@ -305,6 +305,10 @@ export const getShouldReAuth = (
 ) => {
     const shouldReauth = forkParameters?.prompt === 'login' || authSession.prompt === 'login';
     if (!shouldReauth) {
+        return false;
+    }
+    // OAuth sessions are only allowed for the VPN browser extension at the moment. They cannot reauth.
+    if (authSession.data.persistedSession.source === SessionSource.Oauth) {
         return false;
     }
     if (!getCanUserReAuth(authSession.data.User)) {
