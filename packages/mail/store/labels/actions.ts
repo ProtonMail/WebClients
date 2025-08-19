@@ -32,11 +32,9 @@ export const checkLabelAvailable = ({
     label,
 }: {
     label: Parameters<typeof checkLabelAvailabilityConfig>[0];
-}): ThunkAction<Promise<Label>, RequiredState, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<Promise<void>, RequiredState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, getState, extra) => {
-        const { Label } = await extra.api<{ Label: Label }>(checkLabelAvailabilityConfig(label));
-        dispatch(categoriesActions.upsertCategory(Label));
-        return Label;
+        await extra.api<{ Label: Label }>(checkLabelAvailabilityConfig(label));
     };
 };
 
