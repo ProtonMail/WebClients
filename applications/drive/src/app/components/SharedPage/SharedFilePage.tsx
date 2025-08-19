@@ -48,8 +48,10 @@ export default function SharedFilePage({
         const { linkInfo, comment } = await getVirusReportInfo({ errorMessage, rootLinkId: rootLink.linkId });
         return showReportAbuseModal({
             linkInfo,
-            onSubmit: submitAbuseReport,
-            onClose: () => cancelDownloads(transferId),
+            onSubmit: (params) => {
+                cancelDownloads(transferId);
+                return submitAbuseReport(params);
+            },
             prefilled: {
                 Category: 'malware',
                 Comment: comment,
