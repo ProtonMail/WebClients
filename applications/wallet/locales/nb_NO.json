@@ -145,6 +145,9 @@
       "Get verification code": [
         "Få verifiseringskode"
       ],
+      "Go to ${ planOrAppName }": [
+        "Gå til ${ planOrAppName }"
+      ],
       "Got it": [
         "Skjønner"
       ],
@@ -253,8 +256,8 @@
       "Secure your wallet": [
         "Sikre lommeboken din"
       ],
-      "Select ${ planTitle }": [
-        "Velg ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Velg ${ planOrAppName }"
       ],
       "Set recovery methods": [
         "Angi gjenopprettingsmetoder"
@@ -2156,18 +2159,6 @@
       "Address copied to clipboard": [
         "Adresse kopiert til utklippstavlen"
       ],
-      "Admin account allocation": [
-        "Adminkonto tildeling"
-      ],
-      "Allocated": [
-        "Tildelt"
-      ],
-      "Already allocated": [
-        "Allerede allokert"
-      ],
-      "Already used": [
-        "Allerede brukt"
-      ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
       ],
@@ -2266,6 +2257,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Skriv inn ditt eget passord (som organisasjonsadministrator)."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Alt i ${ planOrAppName }"
       ],
       "Expired": [
         "Utløpt"
@@ -2386,18 +2380,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynn å dele det med kontakter og bruk det til nettjenester."
-      ],
-      "Storage allocated to other users in this organisation": [
-        "Lagringsplass allokert til andre brukere i denne organisasjonen"
-      ],
-      "Storage allocated to this user": [
-        "Lagringsplass tildelt denne brukeren"
-      ],
-      "Storage for users": [
-        "Lagring for brukere"
-      ],
-      "Storage used by this user": [
-        "Lagringsplass anvendt av denne brukeren"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Send inn et innskudd ved å bruke følgende adresse eller skann QR-koden. Innskuddet ditt vil gjenspeiles i kontoen din etter bekreftelse."
@@ -2552,9 +2534,6 @@
       "${ n } month": [
         "${ n } måned",
         "${ n } måneder"
-      ],
-      "Account storage": [
-        "Kontolagring"
       ],
       "Address": [
         "Adresse"
@@ -4024,7 +4003,7 @@
       "${ feature } is now active": [
         "${ feature } er nå aktiv"
       ],
-      "Account Temporarily Locked": [
+      "Account temporarily locked": [
         "Konto midlertidig låst"
       ],
       "Add credit/debit card": [
