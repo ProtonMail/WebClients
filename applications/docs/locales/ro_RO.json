@@ -343,6 +343,9 @@
       "Generate password": [
         "Generare parolă"
       ],
+      "Get ${ planOrAppName }": [
+        "Luați ${ planOrAppName }"
+      ],
       "Get in touch": [
         "Contactați-ne"
       ],
@@ -355,8 +358,8 @@
       "Go back": [
         "Înapoi"
       ],
-      "Go to ${ DRIVE_SHORT_APP_NAME }": [
-        "Accesare ${ DRIVE_SHORT_APP_NAME }"
+      "Go to ${ planOrAppName }": [
+        "Accesare ${ planOrAppName }"
       ],
       "Go to label": [
         "Accesare etichetă"
@@ -610,8 +613,8 @@
       "See version history": [
         "Afișare istoric versiuni"
       ],
-      "Select ${ planTitle }": [
-        "Selectare ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Selectare ${ planOrAppName }"
       ],
       "Select all": [
         "Selectare toate"
@@ -833,6 +836,14 @@
         "Renunțând acum, unele evenimente nu vor fi importate."
       ]
     },
+    "anniversary_2025: Offers": {
+      "12 months": [
+        "12 luni"
+      ],
+      "24 months": [
+        "24 de luni"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicații ${ BRAND_NAME }"
@@ -866,6 +877,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "Ad-blocker and malware protection": [
+        "Protecție programe malițioase și blocare reclame"
       ],
       "Use your own email domain": [
         "Utilizați propriul domeniu de e-mail"
@@ -980,6 +994,9 @@
       ],
       "Discover and set up features": [
         "Descoperiți și setați funcțiile"
+      ],
+      "Maybe later": [
+        "Poate mai târziu"
       ],
       "Remind me later": [
         "Amintește-mi mai târziu"
@@ -2109,6 +2126,9 @@
       "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
         "${ DRIVE_APP_NAME } s-a actualizat. Împrospătați pagina."
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "Numele de utilizator este ${ user.Name }. Pentru a crea adresa ${ emailAddress }, accesați Setări > Identitate și adrese > Domeniu scurt (pm.me)"
+      ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
       ],
@@ -2342,6 +2362,12 @@
         "Remediați conflictul evidențiat pentru a continua.",
         "Remediați conflictele evidențiate pentru a continua.",
         "Remediați conflictele evidențiate pentru a continua."
+      ],
+      "Please select a country": [
+        "Selectați o țară."
+      ],
+      "Please select a state": [
+        "Selectați un stat."
       ],
       "Port is required": [
         "Portul este obligatoriu"
@@ -2798,12 +2824,32 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        "${ Label.Name } actualizată"
+        "S-a actualizat ${ Label.Name }."
       ]
     },
     "Font face option": {
+      "System default": [
+        "Implicit din sistem"
+      ],
       "Theme font": [
         "Font temă"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Mare"
+      ],
+      "Medium (recommended)": [
+        "Mediu (recomandat)"
+      ],
+      "Small": [
+        "Mic"
+      ],
+      "Very large": [
+        "Foarte mare"
+      ],
+      "Very small": [
+        "Foarte mic"
       ]
     },
     "Group": {
@@ -3273,9 +3319,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Verificarea adresei cu chei de încredere este activată pentru această adresă. Pentru a putea trimite la această adresă, aprobați cheile publice care pot fi folosite pentru trimitere."
       ],
-      "Admin account allocation": [
-        "Alocare cont admin"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Toate (${ totalFoldersCount } folder)",
         "Toate (${ totalFoldersCount } foldere)",
@@ -3285,15 +3328,6 @@
         "Toate (${ totalFoldersCount } etichetă)",
         "Toate (${ totalFoldersCount } etichete)",
         "Toate (${ totalFoldersCount } de etichete)"
-      ],
-      "Allocated": [
-        "Alocat"
-      ],
-      "Already allocated": [
-        "Deja alocat"
-      ],
-      "Already used": [
-        "Deja folosit"
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
@@ -3317,7 +3351,7 @@
         "Oricine are această legătură web vă poate accesa folderul."
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Sigur doriți să goliți folderul «Gunoi» și să ștergeți definitiv tot din el?"
+        "Sigur doriți să goliți gunoiul și să ștergeți definitiv tot din el?"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Sigur doriți să ștergeți definitiv „${ itemName }” din «Gunoi»?"
@@ -3543,6 +3577,9 @@
       "Every change you make is automatically and securely saved to Drive.": [
         "Fiecare modificare efectuată este salvată automat și în siguranță în Drive."
       ],
+      "Everything in ${ planOrAppName }": [
+        "Toate din ${ planOrAppName }"
+      ],
       "Expired": [
         "Expirat"
       ],
@@ -3580,10 +3617,10 @@
         "Folderul „${ link.name }” a fost șters în timpul descărcării."
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Lipsește semnătura folderului. Nu am putut verifica dacă ${ emailAddress } a încărcat ${ fileName }."
+        "Lipsește semnătura folderului. Nu am putut verifica dacă ${ emailAddress } a încărcat „${ fileName }”."
       ],
       "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Lipsește semnătura folderului. Nu am putut verifica cine a încărcat ${ fileName }."
+        "Lipsește semnătura folderului. Nu s-a putut verifica autorul care a încărcat „${ fileName }”."
       ],
       "Folder will not be uploaded": [
         "Folderul nu va fi încărcat."
@@ -3599,9 +3636,6 @@
       ],
       "Get Notified About Comments": [
         "Primiți notificări despre comentarii"
-      ],
-      "Go to ${ DRIVE_APP_NAME }": [
-        "Accesare ${ DRIVE_APP_NAME }"
       ],
       "here": [
         "aici"
@@ -3879,6 +3913,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selectați adresa sau adresele de e-mail de adăugat la ${ groupName }."
       ],
+      "Please try again in a few moments": [
+        "Reîncercați mai târziu."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Reîncercați folosind o metodă de plată diferită sau contactați-vă banca."
       ],
@@ -3993,23 +4030,20 @@
       "Start sharing it with contacts and use it for online services.": [
         "Începeți să o partajați contactelor personale și folosiți-l pentru serviciile online."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Spațiu alocat altor utilizatori din această organizație"
-      ],
-      "Storage allocated to this user": [
-        "Spațiu alocat acestui utilizator"
-      ],
-      "Storage for users": [
-        "Spațiu pentru utilizatori"
-      ],
-      "Storage used by this user": [
-        "Spațiu folosit de utilizator"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faceți o depunere folosind adresa următoare sau scanați codul QR. Depunerea va apărea în cont după confirmare."
       ],
       "Subscription auto-renews every month.": [
         "Abonamentul se reînnoiește automat în fiecare lună."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Abonamentul se încheie: reactivați-l până la ${ byDate } pentru a vă păstra beneficiile planului ${ planName }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonamentul se încheie: pentru a vă păstra beneficiile din ${ planName }, reactivați-vă abonamentul în App Store Apple până la ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonamentul se încheie: pentru a păstra vă beneficiile din ${ planName }, reactivați-vă abonamentul în Magazin Play de la Google până la ${ byDate }. ${ reactivateLink }"
       ],
       "Symbols (#$&)": [
         "Simboluri (#$&)"
@@ -4248,6 +4282,9 @@
       "Would you like to receive a new verification code?": [
         "Doriți să primiți un cod nou de verificare?"
       ],
+      "Writing assistant": [
+        "Asistent de scriere"
+      ],
       "you": [
         "dvs."
       ],
@@ -4328,7 +4365,7 @@
         "Urmează să refuzați invitația de a vă alătura albumului ${ invitationName }. Dacă veți continua, nu îl veți putea accesa decât dacă proprietarul vă invită din nou. Sigur doriți să continuați?"
       ],
       "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Urmează să refuzați invitația de a vă alătura folderului ${ invitationName }. Dacă veți continua, nu îl veți putea accesa decât dacă proprietarul vă invită din nou. Sigur doriți să continuați?"
+        "Urmează să refuzați invitația de a accesa folderul „${ invitationName }”. Dacă veți continua, nu îl veți putea accesa decât dacă proprietarul vă invită din nou. Sigur doriți să continuați?"
       ],
       "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Urmează să refuzați invitația de a vă alătura articolului ${ invitationName }. Dacă veți continua, nu îl veți putea accesa decât dacă proprietarul vă invită din nou. Sigur doriți să continuați?"
@@ -4476,9 +4513,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Reveniți mai târziu.)"
-      ],
-      "Account storage": [
-        "Spațiu cont"
       ],
       "Add email address": [
         "Adăugare e-mail"
@@ -4935,7 +4969,7 @@
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        "${ Label.Name } creată"
+        "S-a creat ${ Label.Name }."
       ]
     },
     "Limit of calendars reached": {
@@ -5010,8 +5044,14 @@
       "Pay invoice": [
         "Plată factură"
       ],
+      "Reactivate now": [
+        "Reactivare acum"
+      ],
       "Request an invite": [
         "Solicitați o invitație"
+      ],
+      "Resume now": [
+        "Reluare acum"
       ],
       "settings": [
         "setări"
@@ -6653,9 +6693,20 @@
         "(va deschide ${ PASS_APP_NAME })"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "Afișare evenimente"
+      ]
+    },
     "Security Center - Info": {
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte. ${ learnMoreLink }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Soluția noastră de securitate de ultimă oră, bazată pe inteligență artificială, concepută pentru utilizatorii care doresc o protecție sporită pentru conturile lor. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel este **activ** și vă protejează contul."
       ]
     },
     "Select files": {
@@ -6668,9 +6719,64 @@
         "Nu s-au găsit rezultate"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Anulare resetare"
+      ],
+      "Reset password": [
+        "Resetare parolă"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Recuperarea contului nu este disponibilă pentru cheile vechi ale adreselor."
+      ],
+      "Please generate keys before you try to change your password": [
+        "Generați cheile înainte de a încerca să vă schimbați parola."
+      ]
+    },
+    "session_recovery:available:info": {
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Accesați dispozitivul conectat (în sesiunea de unde a fost inițiată solicitarea) pentru a vă schimba parola."
+      ],
+      "This permission expires soon": [
+        "Această permisiune expiră în curând."
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Acum vă puteți schimba parola pentru contul ${ boldEmail } timp de ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Acum vă puteți schimba parola pentru contul ${ boldEmail }."
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Parola a fost salvată."
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Resetați-vă parola"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Anulare resetare parolă"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Introduceți parola curentă pentru a anula procesul de resetare a parolei. Nu vor fi efectuate alte modificări."
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "Resetarea parolei a fost anulată."
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Anulați resetarea parolei?"
       ]
     },
     "session_recovery:cancelled:info": {
@@ -7028,6 +7134,9 @@
     "Suffix for price": {
       "per month": [
         "pe lună"
+      ],
+      "per user per month": [
+        "per utilizator per lună"
       ]
     },
     "Tab subscription modal": {
@@ -7131,7 +7240,7 @@
       "Account recovery": [
         "Recuperare cont"
       ],
-      "Account Temporarily Locked": [
+      "Account temporarily locked": [
         "Cont blocat temporar"
       ],
       "Add contact group name": [
@@ -7438,6 +7547,9 @@
       ],
       "Network error": [
         "Eroare de rețea"
+      ],
+      "No breaches detected": [
+        "Nu s-au detectat divulgări"
       ],
       "Offline": [
         "Deconectat"
