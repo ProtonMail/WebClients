@@ -8,6 +8,8 @@ import {
     useNotifications,
 } from '@proton/components';
 import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
+import RemoteToggle from '@proton/components/containers/emailPrivacy/RemoteToggle';
+import EmbeddedToggle from '@proton/components/containers/messages/EmbeddedToggle';
 import useLoading from '@proton/hooks/useLoading';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -87,6 +89,22 @@ const PrivacySecuritySettings = ({
                             .t`Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.`}
                     >{c('Label').t`Show sender images`}</MobileSectionLabel>
                     <SenderImagesToggle id="senderImages" />
+                </MobileSectionRow>
+                <MobileSectionRow>
+                    <MobileSectionLabel
+                        htmlFor="embeddedToggle"
+                        description={c('Info')
+                            .t`When disabled, this prevents image files from loading on your device without your knowledge.`}
+                    >{c('Label').t`Auto show embedded images`}</MobileSectionLabel>
+                    <EmbeddedToggle id="embeddedToggle" />
+                </MobileSectionRow>
+                <MobileSectionRow>
+                    <MobileSectionLabel
+                        htmlFor="remoteToggle"
+                        description={c('Info')
+                            .t`When disabled, this prevents remote images from loading without your knowledge.`}
+                    >{c('Label').t`Auto show remote images`}</MobileSectionLabel>
+                    <RemoteToggle id="remoteToggle" data-testid="privacy:remote-content-toggle" />
                 </MobileSectionRow>
             </MobileSection>
         </div>,
