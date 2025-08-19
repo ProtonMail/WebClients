@@ -117,6 +117,9 @@
       "Cancel subscription": [
         "Cancel·la la subscripció"
       ],
+      "Cancel trial and pay": [
+        "Cancel·la la prova i paga"
+      ],
       "Change": [
         "Canvia"
       ],
@@ -351,6 +354,9 @@
       "Explore ${ target }": [
         "Descobriu ${ target }"
       ],
+      "Explore business plans": [
+        "Exploreu els plans per a empreses"
+      ],
       "Explore group plans": [
         "Exploreu els plans de grup"
       ],
@@ -378,6 +384,9 @@
       "Generate password": [
         "Genera la contrasenya"
       ],
+      "Get ${ planOrAppName }": [
+        "Obtén ${ planOrAppName }"
+      ],
       "Get a new encrypted email address": [
         "Obteniu una nova adreça de correu xifrada"
       ],
@@ -404,6 +413,9 @@
       ],
       "Get verification code": [
         "Obtenir codi de verificació"
+      ],
+      "Go to ${ planOrAppName }": [
+        "Aneu a ${ planOrAppName }"
       ],
       "Go to label": [
         "Ves a l'etiqueta"
@@ -486,6 +498,9 @@
       "More options": [
         "Més opcions"
       ],
+      "More options for accounts": [
+        "Més opcions per als comptes"
+      ],
       "Need help?": [
         "Necessiteu ajuda?"
       ],
@@ -500,6 +515,9 @@
       ],
       "OK": [
         "D'acord"
+      ],
+      "Open": [
+        "Obre"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
@@ -639,8 +657,8 @@
       "See plan features": [
         "Mostra les característiques del pla"
       ],
-      "Select ${ planTitle }": [
-        "Selecciona ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Seleccioneu ${ planOrAppName }"
       ],
       "Select city ${ city }": [
         "Seleccioneu la ciutat ${ city }"
@@ -1013,6 +1031,14 @@
         "Correu nou"
       ]
     },
+    "anniversary_2025: Offers": {
+      "12 months": [
+        "12 mesos"
+      ],
+      "24 months": [
+        "24 mesos"
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Desactivat"
@@ -1080,6 +1106,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
+      ],
+      "Ad-blocker and malware protection": [
+        "Bloquejador d'anuncis i protecció contra programari maliciós"
       ],
       "Use your own email domain": [
         "Utilitzeu el vostre propi domini de correu electrònic"
@@ -1262,6 +1291,9 @@
       ],
       "Discover and set up features": [
         "Descobriu i configureu les característiques"
+      ],
+      "Maybe later": [
+        "Potser més tard"
       ],
       "Remind me later": [
         "Recorda-m'ho més tard"
@@ -2602,6 +2634,9 @@
       ]
     },
     "Error": {
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } és el vostre nom d'usuari. Per a crear ${ emailAddress }, aneu a Preferències > Identitat i adreces > Domini curt (pm.me)"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "S'ha assignat tot l'espai d'emmagatzematge. Reduïu l'emmagatzematge assignat a altres usuaris."
       ],
@@ -2781,6 +2816,12 @@
       ],
       "Please generate keys before you try to change your password": [
         "Genereu les claus abans d’intentar canviar la vostra contrasenya."
+      ],
+      "Please select a country": [
+        "Seleccioneu un país"
+      ],
+      "Please select a state": [
+        "Seleccioneu un estat"
       ],
       "Please select at least one location before continuing.": [
         "Seleccioneu almenys una ubicació abans de continuar."
@@ -3144,9 +3185,6 @@
       "Continue": [
         "Continua"
       ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "Tot a ${ PLAN_NAMES[PLANS.VPN2024] }"
-      ],
       "Fastest VPN servers": [
         "Els servidors VPN més ràpids"
       ],
@@ -3167,6 +3205,15 @@
       ]
     },
     "Features": {
+      "${ VPN_CONNECTIONS } devices": [
+        "${ VPN_CONNECTIONS } dispositius"
+      ],
+      "Ad-blocker and malware protection": [
+        "Bloquejador d'anuncis i protecció contra programari maliciós"
+      ],
+      "All premium ${ BRAND_NAME } services": [
+        "Tots els serveis prèmium de ${ BRAND_NAME }"
+      ],
       "and more premium features...": [
         "i més característiques premium..."
       ],
@@ -3176,11 +3223,17 @@
       "Lightning-fast speeds": [
         "Velocitats ultraràpides"
       ],
+      "Lightning-fast VPN speeds": [
+        "Velocitats ultraràpides de VPN"
+      ],
       "NetShield Ad-blocker": [
         "Bloquejador d'anuncis NetShield"
       ],
       "Secure streaming": [
         "Estríming segur"
+      ],
+      "Stream from Netflix, HBO, and more": [
+        "Reproduïu en continu des de Netflix, HBO i més"
       ]
     },
     "Features: Tooltip": {
@@ -3357,8 +3410,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "Valor per defecte del sistema"
+      ],
       "Theme font": [
         "Família tipogràfica del tema"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Gran"
+      ],
+      "Medium (recommended)": [
+        "Mitjà (recomanat)"
+      ],
+      "Small": [
+        "Petit"
+      ],
+      "Very large": [
+        "Molt gran"
+      ],
+      "Very small": [
+        "Molt petit"
       ]
     },
     "Footer": {
@@ -3634,6 +3707,9 @@
       "${ number } server": [
         "${ number } servidor",
         "${ number } servidors"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "L'oferta permanent del ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per a l'accés permanent al ${ PASS_SHORT_APP_NAME }."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per a accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }. El preu i la data de renovació de la subscripció de ${ planTitle } es mantindran sense canvis."
@@ -4209,6 +4285,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "Introduïu la frase de recuperació per a canviar la contrasenya ara."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Tot a ${ planOrAppName }"
       ],
       "Example: ${ spfExample }": [
         "Exemple: ${ spfExample }"
@@ -4879,6 +4958,15 @@
       "Subscription auto-renews every month.": [
         "La subscripció es renova automàticament cada mes."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Fi de la subscripció: reactiveu-la abans del ${ byDate } per mantenir els vostres beneficis de ${ planName }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "La vostra subscripció és a punt de finalitzar: per mantenir els avantatges del pla ${ planName }, reinicieu-la a Apple App Store abans del ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "La vostra subscripció és a punt de finalitzar: per mantenir els avantatges del pla ${ planName }, reinicieu-la a Google Play Store abans del ${ byDate }. ${ reactivateLink }"
+      ],
       "Summary": [
         "Resum"
       ],
@@ -5310,6 +5398,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "Voleu rebre un codi de verificació nou?"
+      ],
+      "Writing assistant": [
+        "Assistent d'escriptura"
       ],
       "You already have a free account": [
         "Ja teniu un compte gratuït"
@@ -6435,8 +6526,14 @@
       "Privacy policy": [
         "Política de privacitat"
       ],
+      "Reactivate now": [
+        "Reactiva ara"
+      ],
       "Request an invite": [
         "Demana una invitació"
+      ],
+      "Resume now": [
+        "Repreneu-ho ara"
       ],
       "settings": [
         "preferències"
@@ -6739,6 +6836,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
       "${ n } calendar": [
         "${ n } calendari",
         "${ n } calendaris"
@@ -8241,6 +8341,9 @@
       "Delete rule": [
         "Eliminar aquesta regla"
       ],
+      "Delete this scope": [
+        "Elimina aquest àmbit"
+      ],
       "Edit": [
         "Edita"
       ],
@@ -8264,11 +8367,21 @@
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
-        "La vida útil ha de ser superior a ${ MIN_LIFETIME } dies"
+      "Lifetime must be greater than ${ MIN_LIFETIME } day": [
+        "La durada ha de ser superior a ${ MIN_LIFETIME } dia",
+        "La durada ha de ser superior a ${ MIN_LIFETIME } dies"
       ],
       "Lifetime must not be set for \"Retain All\" action": [
         "No s'ha de definir un termini per l'acció \"Conservar-ho tot\""
+      ],
+      "Scope value is not valid": [
+        "El valor de l'àmbit no és vàlid"
+      ],
+      "Scope value is required": [
+        "Es requereix un valor de l'àmbit"
+      ],
+      "Scopes cannot have the same value": [
+        "Els àmbits no poden tenir el mateix valor"
       ]
     },
     "retention_policy_2025_Info": {
@@ -8308,7 +8421,8 @@
       "Applies to": [
         "S'aplica a:"
       ],
-      "days": [
+      "day": [
+        "dia",
         "dies"
       ],
       "Keep items forever": [
@@ -8603,6 +8717,20 @@
     "session_recovery:available:action": {
       "Cancel password reset": [
         "Cancel·la el restabliment de contrasenya"
+      ],
+      "Cancel reset": [
+        "Cancel·li el restabliment"
+      ],
+      "Reset password": [
+        "Restableix la contrasenya"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "La recuperació del compte no està disponible per a les claus d'adreces antigues"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Genereu claus abans d'intentar canviar la contrasenya"
       ]
     },
     "session_recovery:available:info": {
@@ -8612,6 +8740,18 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Si no heu demanat restablir la teva contrasenya, cancel·leu la sol·licitud ara mateix."
       ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Aneu al dispositiu en què heu iniciat la sessió (en el qual es va iniciar la sol·licitud) per canviar la contrasenya."
+      ],
+      "This permission expires soon": [
+        "Aquest permís caduca aviat"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Ara podeu canviar la contrasenya del compte ${ boldEmail } lliurement durant ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Ara podeu canviar la contrasenya del compte ${ boldEmail }."
+      ],
       "You can now reset your password": [
         "Ja podeu restablir la contrasenya."
       ],
@@ -8619,9 +8759,34 @@
         "Podeu restablir la vostra contrasenya fins el ${ boldDate }."
       ]
     },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "S'ha desat la contrasenya"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Restabliu la contrasenya"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Cancel·la el restabliment de la contrasenya"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Introduïu la contrasenya actual per a cancel·lar el procés de restabliment de contrasenya. Cap altre canvi tindrà efecte."
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "S'ha cancel·lat el restabliment de la contrasenya."
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Voleu cancel·lar el restabliment de la contrasenya?"
       ]
     },
     "session_recovery:cancelled:info": {
@@ -8714,6 +8879,17 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Compartit per ${ ownerName }"
+      ]
+    },
+    "Signup": {
+      "1 month": [
+        "1 mes"
+      ],
+      "12 months": [
+        "12 mesos"
+      ],
+      "24 months": [
+        "24 mesos"
       ]
     },
     "Signup label": {
@@ -9306,6 +9482,11 @@
         "El vostre propi àlies de correu electrònic curt @pm.me"
       ]
     },
+    "subscription reminder": {
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "N'estas segur?"
@@ -9560,6 +9741,9 @@
     "Suffix for price": {
       "per month": [
         "al mes"
+      ],
+      "per user per month": [
+        "per usuari al mes"
       ]
     },
     "Tab in domain modal": {
@@ -9682,8 +9866,8 @@
       "Account suspended": [
         "Compte suspès"
       ],
-      "Account Temporarily Locked": [
-        "Compte bloquejat temporalment"
+      "Account temporarily locked": [
+        "El compte s'ha bloquejat temporalment"
       ],
       "Action": [
         "Acció"
@@ -10797,6 +10981,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Estalvieu fins a ${ priceString }** amb una subscripció més llarga. Mateixes funcionalitats prèmium per un preu més baix."
       ],
+      "Advanced security for your company?": [
+        "Voleu seguretat avançada per la vostra empresa?"
+      ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Tots els serveis prèmium de ${ BRAND_NAME }. Des de només ${ fallBackString } al mes."
       ],
@@ -10805,6 +10992,12 @@
       ],
       "Did you know?": [
         "Ho sabíeu?"
+      ],
+      "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
+        "Protegiu la vostra organització d'infraccions de dades amb ${ VPN_APP_NAME } per a Empreses."
+      ],
+      "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
+        "Privacitat il·limitada per a vós i una persona estimada. Des de només ${ priceString }/mes."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Podeu protegir fins a ${ FAMILY_MAX_USERS } persones amb ${ PLAN_NAMES[plan] }. A partir de només ${ priceString }/mes per compte."
@@ -10916,9 +11109,6 @@
       "It's you": [
         "Sou vós"
       ],
-      "Lumo": [
-        "Lumo"
-      ],
       "Pending admin access": [
         "Accés com a administrador pendent"
       ],
@@ -11000,6 +11190,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } a ${ numberOfCountries } país",
         "${ numberOfServers } a ${ numberOfCountries } països"
+      ],
+      "Select from ${ numberOfCountries }+ country": [
+        "Seleccioneu d'entre més d'${ numberOfCountries } país",
+        "Seleccioneu d'entre més de ${ numberOfCountries } països"
       ]
     },
     "vpn_2step: billing": {
