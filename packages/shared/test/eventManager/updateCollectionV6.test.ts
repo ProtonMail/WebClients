@@ -1,4 +1,4 @@
-import { type UpdateCollectionV6, updateCollectionV6 } from './updateCollectionV6';
+import { type UpdateCollectionV6, updateCollectionV6 } from '../../lib/eventManager/updateCollectionV6';
 
 // Test interface for our collection items
 interface TestItem {
@@ -258,6 +258,35 @@ describe('updateCollectionV6', () => {
             const result = updateCollectionV6(initialCollection, updates, { create: createFn });
 
             expect(result).toEqual([...initialCollection, { ID: '4', name: 'Different structure' }]);
+        });
+    });
+
+    describe('other ids', () => {
+        it('should allow specify other id keys', () => {
+            interface TestItemID {
+                OtherID: string;
+                name: string;
+                value?: number;
+            }
+
+            const collection: TestItemID[] = [
+                { OtherID: '1', name: 'Item 1' },
+                { OtherID: '2', name: 'Item 2' },
+            ];
+            const updates: UpdateCollectionV6<TestItemID> = {
+                delete: ['1'],
+                upsert: [
+                    { OtherID: '2', name: 'Updated Item' },
+                    { OtherID: '3', name: 'New Item' },
+                ],
+            };
+
+            const result = updateCollectionV6(collection, updates, { idKey: 'OtherID' });
+
+            expect(result).toEqual([
+                { OtherID: '2', name: 'Updated Item' },
+                { OtherID: '3', name: 'New Item' },
+            ]);
         });
     });
 });
