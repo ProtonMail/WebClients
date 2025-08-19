@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
-import { usePreviousSubscription } from '@proton/account/previousSubscription/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import Loader from '@proton/components/components/loader/Loader';
@@ -61,7 +60,6 @@ interface GetUpsellSectionProps {
     serversCount: VPNServersCountData;
     plansMap: FullPlansMap;
     freePlan: FreePlanDefault;
-    previousSubscriptionEndTime: number;
     variant: { name?: VPNDashboardVariant | 'disabled' | undefined };
 }
 
@@ -75,15 +73,7 @@ export type UpsellsHook = {
     user: UserModel;
 };
 
-const useUpsellSection = ({
-    subscription,
-    app,
-    user,
-    serversCount,
-    plansMap,
-    freePlan,
-    previousSubscriptionEndTime,
-}: GetUpsellSectionProps) => {
+const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, freePlan }: GetUpsellSectionProps) => {
     const isFree = user.isFree;
 
     const variant = useVariant('VPNDashboard');
@@ -97,7 +87,8 @@ const useUpsellSection = ({
     const hasVPNFree = isFree && app === APPS.PROTONVPN_SETTINGS;
     const hasLumo = hasLumoPlan(subscription);
 
-    const userCanHave24MonthPlan = user.isFree && user.canPay && !user.isDelinquent && !previousSubscriptionEndTime;
+    // Allow 24 month plan but conditions might change again
+    const userCanHave24MonthPlan = true;
 
     const upsellParams = {
         subscription,
@@ -352,7 +343,6 @@ const YourPlanUpsellsSectionV2Inner = ({ app }: YourPlanSectionV2Props) => {
     const [serversCount, serversCountLoading] = useVPNServersCount();
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
     const freePlan = plansResult?.freePlan || FREE_PLAN;
-    const [{ previousSubscriptionEndTime }, loadingPreviousSubscription] = usePreviousSubscription();
     const variant = useVariant('VPNDashboard');
 
     useLoad();
@@ -364,17 +354,10 @@ const YourPlanUpsellsSectionV2Inner = ({ app }: YourPlanSectionV2Props) => {
         serversCount,
         freePlan,
         plansMap,
-        previousSubscriptionEndTime,
         variant,
     });
 
-    const loading =
-        loadingSubscription ||
-        loadingPlans ||
-        serversCountLoading ||
-        plansMapLoading ||
-        loadingPreviousSubscription ||
-        upsellLoading;
+    const loading = loadingSubscription || loadingPlans || serversCountLoading || plansMapLoading || upsellLoading;
 
     if (!subscription || !plans || loading) {
         return <Loader />;
