@@ -1,11 +1,15 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import webpack from 'webpack';
+import { type Configuration, ProvidePlugin } from 'webpack';
 
+import { type WebpackEnvArguments, getWebpackOptions } from '@proton/pack/lib/config';
 import getConfig from '@proton/pack/webpack.config';
 import { addDevEntry, getIndexChunks } from '@proton/pack/webpack/entries';
 
-const result = (env: any): webpack.Configuration => {
-    const config = getConfig(env);
+import appConfig from './appConfig';
+
+const result = (opts: WebpackEnvArguments): Configuration => {
+    const webpackOptions = getWebpackOptions(opts, { appConfig });
+    const config = getConfig(webpackOptions);
 
     config.plugins = config.plugins || [];
 
@@ -30,7 +34,7 @@ const result = (env: any): webpack.Configuration => {
         })
     );
 
-    if (env.appMode === 'standalone') {
+    if (webpackOptions.appMode === 'standalone') {
         addDevEntry(config);
     }
 
@@ -48,7 +52,7 @@ const result = (env: any): webpack.Configuration => {
         experiments: { asyncWebAssembly: true },
         plugins: [
             ...config.plugins,
-            new webpack.ProvidePlugin({
+            new ProvidePlugin({
                 Buffer: [require.resolve('buffer'), 'Buffer'],
             }),
         ],
