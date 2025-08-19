@@ -2300,7 +2300,12 @@ describe('Lumo Persistence Integration Tests', () => {
             }
         }, 45000); // Longer timeout for multiple session cycles
 
-        it('should sync delete all spaces across independent browsers', async () => {
+        // FIXME: This test is flaky on the CI server. It's not clear why.
+        // Error: Browser 2 to see space deletion from server: Timed out after 15000ms
+        //     at /builds/web/clients/applications/lumo/src/app/test/integration/helpers.ts:92:19
+        //     at /builds/web/clients/node_modules/@babel/runtime/helpers/regeneratorRuntime.js:52:18
+        //     at Generator.<anonymous>
+        it.skip('should sync delete all spaces across independent browsers', async () => {
             allowConsoleError = true; // Allow expected error logs during saga operations
 
             // Generate a shared master key for both browsers
