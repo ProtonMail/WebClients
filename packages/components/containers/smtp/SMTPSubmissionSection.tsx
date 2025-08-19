@@ -138,8 +138,8 @@ const SMTPSubmissionSection = () => {
         );
     }
 
-    const mailProPlanName = PLAN_NAMES[PLANS.MAIL_PRO];
-    const familyPlanName = PLAN_NAMES[PLANS.FAMILY];
+    const plus = PLAN_NAMES[PLANS.MAIL];
+    const bundle = PLAN_NAMES[PLANS.BUNDLE];
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
         component: UPSELL_COMPONENT.BANNER,
@@ -157,7 +157,7 @@ const SMTPSubmissionSection = () => {
         );
         if (isSMPTEligible) {
             return (
-                <SettingsSection>
+                <SettingsSectionWide>
                     <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp-submission')}>
                         {
                             // translator: full sentence will be: SMTP submission allows 3rd-party services or devices to send email through <Proton Mail> for your custom domain addresses. To request access, please <create a ticket> describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.
@@ -165,20 +165,19 @@ const SMTPSubmissionSection = () => {
                                 .jt`SMTP submission allows 3rd-party services or devices to send email through ${MAIL_APP_NAME} for your custom domain addresses. To request access, please ${createTicket} describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.`
                         }
                     </SettingsParagraph>
-                </SettingsSection>
+                </SettingsSectionWide>
             );
         }
         return (
-            <SettingsSection>
+            <SettingsSectionWide>
                 <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp-submission')}>
                     {c('Info')
-                        .jt`SMTP submission allows 3rd-party services or devices to send email through ${MAIL_APP_NAME} for your custom domain addresses. This feature is only available to ${BRAND_NAME} for Business users with custom domains.`}
+                        .jt`SMTP submission allows 3rd-party services or devices to send email through ${MAIL_APP_NAME} for your custom domain addresses.`}
                 </SettingsParagraph>
                 <UpgradeBanner audience={Audience.B2B} upsellPath={upsellRef}>
-                    {c('new_plans: upgrade')
-                        .t`Included with ${BRAND_NAME} for Business, ${familyPlanName} and ${mailProPlanName}.`}
+                    {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
                 </UpgradeBanner>
-            </SettingsSection>
+            </SettingsSectionWide>
         );
     }
 
