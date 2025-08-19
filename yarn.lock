@@ -5715,15 +5715,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@manypkg/find-root@npm:^2.2.3":
-  version: 2.2.3
-  resolution: "@manypkg/find-root@npm:2.2.3"
-  dependencies:
-    "@manypkg/tools": "npm:^1.1.2"
-  checksum: 10c0/fef84441d00ec9e69a12359c3faa635faa1a8e47d72f3641227cfd3ee86ba57cd6caf079973ab8d3d6984c8c4cc9deda0e59138800268f22ec17b40af7b973ea
-  languageName: node
-  linkType: hard
-
 "@manypkg/find-root@npm:^3.1.0":
   version: 3.1.0
   resolution: "@manypkg/find-root@npm:3.1.0"
@@ -5740,17 +5731,6 @@ __metadata:
     "@manypkg/find-root": "npm:^3.1.0"
     "@manypkg/tools": "npm:^2.1.0"
   checksum: 10c0/e8baabd85a13f4537ae22124d5e53f1523ba0653f33006da45fc8bd642e0134786a6aad9d0a7ed99282ae20a80687ef5700bd72980441627b5c96658503ad83d
-  languageName: node
-  linkType: hard
-
-"@manypkg/tools@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "@manypkg/tools@npm:1.1.2"
-  dependencies:
-    fast-glob: "npm:^3.3.2"
-    jju: "npm:^1.4.0"
-    js-yaml: "npm:^4.1.0"
-  checksum: 10c0/54e4b8e0d2aeb2682dff2d660139a825ab583aac86f42262ae81c108d6cc54e6d6de7172270e845a2409aaac2e113e51d9a1442bd226207547bc1bb454c3a5b8
   languageName: node
   linkType: hard
 
@@ -46547,7 +46527,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "version@workspace:utilities/version"
   dependencies:
-    "@manypkg/find-root": "npm:^2.2.3"
+    "@manypkg/find-root": "npm:^3.1.0"
     "@manypkg/get-packages": "npm:^3.1.0"
     "@proton/eslint-config-proton": "workspace:^"
     "@types/prompts": "npm:^2.4.9"
