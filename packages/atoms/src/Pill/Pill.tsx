@@ -10,9 +10,10 @@ export interface PillProps extends ComponentPropsWithoutRef<'span'> {
     color?: string;
     backgroundColor?: string;
     className?: string;
+    rounded?: 'rounded-sm' | 'rounded-full';
 }
 
-export const Pill = ({ children, className, color, backgroundColor, ...rest }: PillProps) => {
+export const Pill = ({ children, className, color, backgroundColor, rounded = 'rounded-full', ...rest }: PillProps) => {
     const [text, background] = (() => {
         if (color && backgroundColor) {
             return [color, backgroundColor];
@@ -31,7 +32,7 @@ export const Pill = ({ children, className, color, backgroundColor, ...rest }: P
 
     return (
         <span
-            className={clsx('text-sm rounded-full text-normal inline-block px-3 py-0.5', className)}
+            className={clsx('text-sm text-normal inline-block px-3 py-0.5', rounded, className)}
             style={{ backgroundColor: background, color: text }}
             {...rest}
         >
