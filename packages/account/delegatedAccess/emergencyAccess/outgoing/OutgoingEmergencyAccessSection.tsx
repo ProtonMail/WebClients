@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Banner, Button } from '@proton/atoms';
-import Badge from '@proton/components/components/badge/Badge';
+import { Banner, Button, Pill, Tooltip } from '@proton/atoms';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Info from '@proton/components/components/link/Info';
@@ -43,7 +42,11 @@ const OutgoingDelegatedAccessCell = ({
     meta: { hasRequestedAccess, accessibleAtTimeDiff, canRejectAccess },
 }: Pick<OutgoingItemProps, 'value' | 'meta'>) => {
     if (isDisabled) {
-        return <Badge type="origin">{c('emergency_access').t`Disabled`}</Badge>;
+        return (
+            <Pill color="#5C5958" backgroundColor="#E5E4E1" rounded="rounded-sm" className="text-semibold">{c(
+                'emergency_access'
+            ).t`Disabled`}</Pill>
+        );
     }
 
     if (hasRequestedAccess) {
@@ -52,10 +55,21 @@ const OutgoingDelegatedAccessCell = ({
             ? c('emergency_access').t`Access will be granted on ${formattedAccessibleAt}`
             : undefined;
         return (
-            <>
-                <Badge type="warning" tooltip={tooltip}>{c('emergency_access').t`Requesting access`}</Badge>
-                {tooltip && <span title={tooltip}>{getFormattedRemainingDays(accessibleAtTimeDiff)}</span>}
-            </>
+            <div className="flex items-center justify-start gap-1">
+                <Tooltip title={tooltip}>
+                    <Pill
+                        color="#5C3700"
+                        backgroundColor="#F5D4A2"
+                        rounded="rounded-sm"
+                        className="text-semibold mr-1 text-center"
+                    >{c('emergency_access').t`Requesting access`}</Pill>
+                </Tooltip>
+                {tooltip && (
+                    <span title={tooltip} className="inline-block">
+                        {getFormattedRemainingDays(accessibleAtTimeDiff)}
+                    </span>
+                )}
+            </div>
         );
     }
 
@@ -63,10 +77,15 @@ const OutgoingDelegatedAccessCell = ({
         const formattedAccessibleAt = getFormattedAccessibleAtDate(accessibleAtDate);
         const aside = formattedAccessibleAt ? c('emergency_access').t`on ${formattedAccessibleAt}` : undefined;
         return (
-            <>
-                <Badge type="info">{c('emergency_access').t`Access granted`}</Badge>
-                {aside && <span>{aside}</span>}
-            </>
+            <div className="flex items-center justify-start gap-1">
+                <Pill
+                    color="#164616"
+                    backgroundColor="#C9E9C9"
+                    rounded="rounded-sm"
+                    className="text-semibold mr-1 text-center"
+                >{c('emergency_access').t`Access granted`}</Pill>
+                {aside && <span className="inline-block">{aside}</span>}
+            </div>
         );
     }
 };
@@ -96,23 +115,25 @@ const OutgoingItem = ({
                 <OutgoingDelegatedAccessCell value={value} meta={meta} />
             </TableCell>
             <TableCell>
-                <DropdownActions
-                    list={[
-                        canDelete && {
-                            text: c('Action').t`Remove`,
-                            onClick: () => notify({ type: 'delete', value }),
-                        },
-                        canGrantAccess && {
-                            text: c('emergency_access').t`Give access now`,
-                            onClick: () => notify({ type: 'grant-access', value }),
-                        },
-                        canChangeWaitTime && {
-                            text: c('emergency_access').t`Change wait time`,
-                            onClick: () => notify({ type: 'change-wait-time', value }),
-                        },
-                    ].filter(isTruthy)}
-                    size="small"
-                />
+                <div className="inline-flex">
+                    <DropdownActions
+                        list={[
+                            canDelete && {
+                                text: c('Action').t`Remove`,
+                                onClick: () => notify({ type: 'delete', value }),
+                            },
+                            canGrantAccess && {
+                                text: c('emergency_access').t`Give access now`,
+                                onClick: () => notify({ type: 'grant-access', value }),
+                            },
+                            canChangeWaitTime && {
+                                text: c('emergency_access').t`Change wait time`,
+                                onClick: () => notify({ type: 'change-wait-time', value }),
+                            },
+                        ].filter(isTruthy)}
+                        size="small"
+                    />
+                </div>
             </TableCell>
         </TableRow>
     );
