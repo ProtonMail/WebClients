@@ -429,9 +429,6 @@
       "Go back to album “${ albumName }“": [
         "앨범 \"${ albumName }\"(으)로 돌아가기"
       ],
-      "Go to ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }로 이동"
-      ],
       "Go to label": [
         "라벨로 이동"
       ],
@@ -776,9 +773,6 @@
       ],
       "See version history": [
         "버전 기록 보기"
-      ],
-      "Select ${ planTitle }": [
-        "${ planTitle } 선택"
       ],
       "Select all": [
         "전체 선택"
@@ -3529,9 +3523,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "이 주소에 대해 신뢰할 수 있는 키로 주소 확인을 사용할 수 있습니다. 이 주소로 보내려면 먼저 전송에 사용 할 수 있는 공개 키를 신뢰해야 합니다."
       ],
-      "Admin account allocation": [
-        "관리자 계정 할당 됨"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "총 (${ totalFoldersCount } 개 폴더)"
       ],
@@ -3540,15 +3531,6 @@
       ],
       "All your changes will be lost.": [
         "저장하지 않은 변경사항은 손실됩니다."
-      ],
-      "Allocated": [
-        "할당 됨"
-      ],
-      "Already allocated": [
-        "이미 할당 됨"
-      ],
-      "Already used": [
-        "이미 사용됨"
       ],
       "Also try looking in Trash.": [
         "또한 휴지통을 확인해 보세요."
@@ -4480,18 +4462,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "연락처에 있는 사람들과 공유하고 온라인 서비스에서 사용하세요."
       ],
-      "Storage allocated to other users in this organisation": [
-        "스토리지가 이 조직의 다른 사용자들에게 할당됨"
-      ],
-      "Storage allocated to this user": [
-        "이 사용자에게 스토리지가 할당 됨"
-      ],
-      "Storage for users": [
-        "사용자당 저장공간"
-      ],
-      "Storage used by this user": [
-        "이 사용자로 인해 사용된 스토리지"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "다음 주소를 사용하여 보증금을 제출하거나 QR 코드를 스캔하세요. 보증금은 확인 후 사용자의 계좌에 반영될 예정입니다."
       ],
@@ -5050,9 +5020,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(일시적으로 사용할 수 없습니다. 나중에 다시 확인해 주세요.)"
-      ],
-      "Account storage": [
-        "계정 저장공간"
       ],
       "Add email address": [
         "이메일 주소 추가"
@@ -5702,6 +5669,9 @@
       ],
       "Request an invite": [
         "가입 요청하기"
+      ],
+      "Resume now": [
+        "지금 재개"
       ],
       "settings": [
         "설정"
@@ -6893,12 +6863,6 @@
       ],
       "The spreadsheet failed to be created": [
         "스프레드시트를 생성하는데 실패했습니다."
-      ],
-      "This item was not removed from your list": [
-        "이 항목이 목록에서 삭제되지 않았습니다."
-      ],
-      "This item was successfully removed from your list": [
-        "항목이 목록에서 성공적으로 삭제되었습니다."
       ],
       "Trash failed to be emptied": [
         "휴지통 비우기 실패"

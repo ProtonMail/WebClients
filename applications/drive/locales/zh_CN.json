@@ -280,7 +280,7 @@
         "删除 ${ selectedCount } 个联系人组"
       ],
       "Delete album": [
-        "删除相册 "
+        "删除相册"
       ],
       "Delete contact": [
         "删除联系人"
@@ -425,9 +425,6 @@
       ],
       "Go back to album “${ albumName }“": [
         "返回相册 “${ albumName }”"
-      ],
-      "Go to ${ DRIVE_SHORT_APP_NAME }": [
-        "前往 ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Go to label": [
         "转至标签"
@@ -770,9 +767,6 @@
       ],
       "See version history": [
         "查看版本历史"
-      ],
-      "Select ${ planTitle }": [
-        "开通 ${ planTitle }"
       ],
       "Select all": [
         "全选"
@@ -1187,7 +1181,7 @@
         "${ users } 位用户"
       ],
       "Total for ${ n } month": [
-        "${ n } 月合计"
+        "每${ n }月支付"
       ]
     },
     "Collapsible tooltip": {
@@ -2519,7 +2513,7 @@
         "无效号码"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "部分联系人没有邮箱地址：${ noEmailsContactNamesList }"
+        "部分联系人没有邮箱地址：${ noEmailsContactNamesList } "
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "某个/些群组没有联系人：${ noContactGroupList } "
@@ -3511,9 +3505,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "已对此地址开启密钥验证，向对方发送邮件前需要先信任其公钥。"
       ],
-      "Admin account allocation": [
-        "分配管理员账户"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "全部（${ totalFoldersCount } 个文件夹）"
       ],
@@ -3522,15 +3513,6 @@
       ],
       "All your changes will be lost.": [
         "您的所有改动都将丢失。"
-      ],
-      "Allocated": [
-        "分配量"
-      ],
-      "Already allocated": [
-        "已分配"
-      ],
-      "Already used": [
-        "已使用"
       ],
       "Also try looking in Trash.": [
         "或者查看回收站中是否有您需要的文件。"
@@ -4462,18 +4444,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "开始与联系人分享，并将其用于在线服务。"
       ],
-      "Storage allocated to other users in this organisation": [
-        "此组织其他成员的存储空间分配量"
-      ],
-      "Storage allocated to this user": [
-        "该用户的存储空间分配量"
-      ],
-      "Storage for users": [
-        "用户存储"
-      ],
-      "Storage used by this user": [
-        "该用户的存储空间使用量"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "使用以下地址提交存款或扫描二维码。您的存款将在确认后反映在您的账户中。"
       ],
@@ -4604,7 +4574,7 @@
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
-        "为了保护您的隐私，${ DRIVE_APP_NAME } 可以以保护隐私的方式扫描您的文件并阻止恶意文件。不过，最好还是只从可信来源下载文件。"
+        "为了保护您的隐私，${ DRIVE_APP_NAME } 可以以保护隐私的方式扫描您的文件并阻止恶意文件。不过，最好还是只从可信来源下载文件。 "
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "导入日程需要先在 ${ CALENDAR_APP_NAME } 中创建日历，作为日程导入后的存放位置。"
@@ -5033,9 +5003,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
       ],
-      "Account storage": [
-        "账户存储空间"
-      ],
       "Add email address": [
         "添加邮箱地址"
       ],
@@ -5103,7 +5070,7 @@
         "取消下载"
       ],
       "Card details": [
-        "银行卡详情"
+        "支付卡详情"
       ],
       "Card holder": [
         "持卡人"
@@ -6875,12 +6842,6 @@
       ],
       "The spreadsheet failed to be created": [
         "电子表格创建失败"
-      ],
-      "This item was not removed from your list": [
-        "一些项目未能从您的列表中删除"
-      ],
-      "This item was successfully removed from your list": [
-        "已成功从您的列表中删除所有项目"
       ],
       "Trash failed to be emptied": [
         "未能清空回收站"

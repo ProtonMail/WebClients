@@ -448,9 +448,6 @@
       "Go back to album “${ albumName }“": [
         "Torna all'album “${ albumName }“"
       ],
-      "Go to ${ DRIVE_SHORT_APP_NAME }": [
-        "Vai a ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Go to label": [
         "Vai all'etichetta"
       ],
@@ -799,9 +796,6 @@
       "See version history": [
         "Visualizza la cronologia delle versioni"
       ],
-      "Select ${ planTitle }": [
-        "Seleziona ${ planTitle }"
-      ],
       "Select all": [
         "Seleziona tutti"
       ],
@@ -1099,9 +1093,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_DEDICATED_IPS } server dedicati durante il periodo di prova."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Puoi avere fino a ${ TRIAL_MAX_LUMO_SEATS } licenze Lumo durante il periodo di prova."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze Scribe durante il periodo di prova."
@@ -3648,9 +3639,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verifica dell'indirizzo con le chiavi attendibili è abilitata per questo indirizzo. Per poter inviare a questo indirizzo, prima considera attendibili le chiavi pubbliche che possono essere usate per l'invio."
       ],
-      "Admin account allocation": [
-        "Allocazione dell'account amministratore"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Tutti (${ totalFoldersCount } cartella)",
         "Tutte (${ totalFoldersCount } cartelle)"
@@ -3661,15 +3649,6 @@
       ],
       "All your changes will be lost.": [
         "Tutte le modifiche andranno perse."
-      ],
-      "Allocated": [
-        "Allocato"
-      ],
-      "Already allocated": [
-        "Già allocato"
-      ],
-      "Already used": [
-        "Già usato"
       ],
       "Also try looking in Trash.": [
         "Prova a cercare anche nel cestino."
@@ -4628,18 +4607,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Inizia a condividerlo con i contatti e utilizzalo per i servizi online."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Spazio di archiviazione allocato ad altri utenti in questa organizzazione"
-      ],
-      "Storage allocated to this user": [
-        "Memoria allocata per questo utente"
-      ],
-      "Storage for users": [
-        "Spazio per gli utenti"
-      ],
-      "Storage used by this user": [
-        "Memoria utilizzata da questo utente"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Invia un deposito utilizzando il seguente indirizzo, oppure scansionando il codice QR fornito. Il tuo deposito verrà correttamente accreditato una volta confermato."
       ],
@@ -5213,9 +5180,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito.)"
-      ],
-      "Account storage": [
-        "Spazio dell'account"
       ],
       "Add email address": [
         "Aggiungi indirizzo email"
@@ -7124,6 +7088,14 @@
       "Root folder failed to be loaded": [
         "Caricamento della cartella principale non riuscito"
       ],
+      "Selected item was not removed from your list": [
+        "L'elemento selezionato non è stato rimosso dal tuo elenco",
+        "Non è stato possibile rimuovere gli elementi selezionati dal tuo elenco."
+      ],
+      "Selected items were successfully removed from your list": [
+        "Gli elementi selezionati sono stati rimossi con successo dal tuo elenco",
+        "Gli elementi selezionati sono stati rimossi con successo dal tuo elenco"
+      ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Le foto selezionate sono già presenti in \"${ albumName }\""
       ],
@@ -7160,14 +7132,6 @@
       ],
       "The spreadsheet failed to be created": [
         "Creazione del foglio di calcolo non riuscita"
-      ],
-      "This item was not removed from your list": [
-        "Questo elemento non è stato rimosso dal tuo elenco",
-        "Questo elementi sono stati rimossi dal tuo elenco"
-      ],
-      "This item was successfully removed from your list": [
-        "Questo elemento è stato rimosso con successo dal tuo elenco",
-        "Tutti gli elementi sono stati rimossi con successo dal tuo elenco"
       ],
       "Trash failed to be emptied": [
         "Svuotamento del cestino non riuscito"
@@ -8321,6 +8285,9 @@
       ],
       "Account recovery": [
         "Recupero dell'account"
+      ],
+      "Account temporarily locked": [
+        "Account temporaneamente bloccato"
       ],
       "Active": [
         "Attivo"

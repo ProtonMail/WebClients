@@ -128,6 +128,9 @@
       "Cancel subscription": [
         "Cancel·la la subscripció"
       ],
+      "Cancel trial and pay": [
+        "Cancel·la la prova i paga"
+      ],
       "Cancel upload": [
         "Cancel·lar càrrega"
       ],
@@ -424,6 +427,9 @@
       "Generate password": [
         "Genera la contrasenya"
       ],
+      "Get ${ planOrAppName }": [
+        "Obtén ${ planOrAppName }"
+      ],
       "Get in touch": [
         "Contacte"
       ],
@@ -448,8 +454,8 @@
       "Go back to album “${ albumName }“": [
         "Torna a l'àlbum «${ albumName }»"
       ],
-      "Go to ${ DRIVE_SHORT_APP_NAME }": [
-        "Aneu a ${ DRIVE_SHORT_APP_NAME }"
+      "Go to ${ planOrAppName }": [
+        "Aneu a ${ planOrAppName }"
       ],
       "Go to label": [
         "Ves a l'etiqueta"
@@ -571,6 +577,9 @@
       "More options": [
         "Més opcions"
       ],
+      "More options for accounts": [
+        "Més opcions per als comptes"
+      ],
       "Move": [
         "Mou"
       ],
@@ -615,6 +624,9 @@
       ],
       "OK": [
         "D'acord"
+      ],
+      "Open": [
+        "Obre"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
@@ -799,8 +811,8 @@
       "See version history": [
         "Mostra l'historial de versions"
       ],
-      "Select ${ planTitle }": [
-        "Selecciona ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Seleccioneu ${ planOrAppName }"
       ],
       "Select all": [
         "Seleccionar-ho tot"
@@ -1065,6 +1077,14 @@
         "Si sortiu ara, és possible que alguns esdeveniments no s'importin"
       ]
     },
+    "anniversary_2025: Offers": {
+      "12 months": [
+        "12 mesos"
+      ],
+      "24 months": [
+        "24 mesos"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicacions de ${ BRAND_NAME }"
@@ -1103,6 +1123,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
+      ],
+      "Ad-blocker and malware protection": [
+        "Bloquejador d'anuncis i protecció contra programari maliciós"
       ],
       "Use your own email domain": [
         "Utilitzeu el vostre propi domini de correu electrònic"
@@ -1217,6 +1240,9 @@
       ],
       "Discover and set up features": [
         "Descobriu i configureu les característiques"
+      ],
+      "Maybe later": [
+        "Potser més tard"
       ],
       "Remind me later": [
         "Recorda-m'ho més tard"
@@ -2352,6 +2378,9 @@
       "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
         "${ DRIVE_APP_NAME } s'ha actualitzat. Actualitzeu la pàgina."
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } és el vostre nom d'usuari. Per a crear ${ emailAddress }, aneu a Preferències > Identitat i adreces > Domini curt (pm.me)"
+      ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
@@ -2619,6 +2648,12 @@
         "Arregleu el conflicte ressaltat per continuar.",
         "Arregleu els conflictes ressaltats per continuar."
       ],
+      "Please select a country": [
+        "Seleccioneu un país"
+      ],
+      "Please select a state": [
+        "Seleccioneu un estat"
+      ],
       "Port is required": [
         "Es requereix el port"
       ],
@@ -2781,6 +2816,9 @@
       ],
       "Validation error": [
         "S'ha produït un error de validació"
+      ],
+      "We were not able some of your shared items": [
+        "No hem pogut carregar alguns dels vostres elements compartits"
       ],
       "We were not able to load some invitations": [
         "No s'han pogut carregar algunes invitacions"
@@ -3125,8 +3163,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "Valor per defecte del sistema"
+      ],
       "Theme font": [
         "Família tipogràfica del tema"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Gran"
+      ],
+      "Medium (recommended)": [
+        "Mitjà (recomanat)"
+      ],
+      "Small": [
+        "Petit"
+      ],
+      "Very large": [
+        "Molt gran"
+      ],
+      "Very small": [
+        "Molt petit"
       ]
     },
     "Group": {
@@ -3558,6 +3616,9 @@
         "Teniu ${ invitationsCount } invitació pendent",
         "Teniu ${ invitationsCount } invitacions pendents"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "L'oferta permanent del ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per a l'accés permanent al ${ PASS_SHORT_APP_NAME }."
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per a accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }. El preu i la data de renovació de la subscripció de ${ planTitle } es mantindran sense canvis."
       ],
@@ -3661,9 +3722,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificació d'adreça amb claus de confiança està activada per a aquesta adreça. Per tal de poder enviar a aquesta adreça, verifiqueu la confiança en les claus públiques que es poden utilitzar per enviar."
       ],
-      "Admin account allocation": [
-        "Assignació del compte d'administrador"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Tot (${ totalFoldersCount } carpeta)",
         "Tot (${ totalFoldersCount } carpetes)"
@@ -3674,15 +3732,6 @@
       ],
       "All your changes will be lost.": [
         "Tots els vostres canvis es perdran."
-      ],
-      "Allocated": [
-        "Assignat"
-      ],
-      "Already allocated": [
-        "Ja assignat"
-      ],
-      "Already used": [
-        "Ja utilitzat"
       ],
       "Also try looking in Trash.": [
         "Proveu també de mirar a la Paperera."
@@ -4007,6 +4056,9 @@
       ],
       "Estimating time remaining...": [
         "Calculant el temps restant..."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Tot a ${ planOrAppName }"
       ],
       "Expired": [
         "Caducat"
@@ -4455,6 +4507,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupName }."
       ],
+      "Please try again in a few moments": [
+        "Torneu-ho a provar d'aquí a uns moments"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Torneu-ho a provar amb un mètode de pagament diferent o poseu-vos en contacte amb el vostre banc."
       ],
@@ -4650,23 +4705,20 @@
       "Start sharing it with contacts and use it for online services.": [
         "Comenceu a compartir-la amb els contactes i utilitzeu-la per als serveis en línia."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Emmagatzematge assignat a altres usuaris d'aquesta organització"
-      ],
-      "Storage allocated to this user": [
-        "Emmagatzematge assignat a aquest usuari"
-      ],
-      "Storage for users": [
-        "Emmagatzematge per als usuaris"
-      ],
-      "Storage used by this user": [
-        "Emmagatzematge utilitzat per aquest usuari"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envieu un dipòsit utilitzant l'adreça següent o escanegeu el codi QR. El dipòsit es reflectirà al vostre compte després de confirmar-lo."
       ],
       "Subscription auto-renews every month.": [
         "La subscripció es renova automàticament cada mes."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Fi de la subscripció: reactiveu-la abans del ${ byDate } per mantenir els vostres beneficis de ${ planName }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "La vostra subscripció és a punt de finalitzar: per mantenir els avantatges del pla ${ planName }, reinicieu-la a Apple App Store abans del ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "La vostra subscripció és a punt de finalitzar: per mantenir els avantatges del pla ${ planName }, reinicieu-la a Google Play Store abans del ${ byDate }. ${ reactivateLink }"
       ],
       "Symbols (#$&)": [
         "Símbols (#$&)"
@@ -4991,6 +5043,9 @@
       "Would you like to save them before removing?": [
         "Voleu desar-los abans d'eliminar-los?"
       ],
+      "Writing assistant": [
+        "Assistent d'escriptura"
+      ],
       "Yes": [
         "Sí"
       ],
@@ -5247,9 +5302,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
-      ],
-      "Account storage": [
-        "Emmagatzematge del compte"
       ],
       "Add email address": [
         "Afegeix una adreça de correu electrònic"
@@ -5904,8 +5956,14 @@
       "Photos": [
         "Fotos"
       ],
+      "Reactivate now": [
+        "Reactiva ara"
+      ],
       "Request an invite": [
         "Demana una invitació"
+      ],
+      "Resume now": [
+        "Repreneu-ho ara"
       ],
       "settings": [
         "preferències"
@@ -6318,6 +6376,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
       "${ n } calendar": [
         "${ n } calendari",
         "${ n } calendaris"
@@ -7174,6 +7235,14 @@
       "Root folder failed to be loaded": [
         "No s'ha pogut carregar la carpeta arrel"
       ],
+      "Selected item was not removed from your list": [
+        "L'element seleccionat no s'ha esborrat de la llista",
+        "Els elements seleccionats no s'han esborrat de la llista"
+      ],
+      "Selected items were successfully removed from your list": [
+        "L'element seleccionat s'ha esborrat correctament de la llista",
+        "Els elements seleccionats s'han esborrat correctament de la llista"
+      ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Les fotos seleccionades ja són a «${ albumName }»."
       ],
@@ -7210,14 +7279,6 @@
       ],
       "The spreadsheet failed to be created": [
         "No s'ha pogut crear el full de càlcul."
-      ],
-      "This item was not removed from your list": [
-        "Aquest element no s'ha eliminat de la llista.",
-        "Alguns elements no s'han eliminat de la llista."
-      ],
-      "This item was successfully removed from your list": [
-        "S'ha eliminat aquest element de la llista.",
-        "S'han eliminat aquests elements de la llista."
       ],
       "Trash failed to be emptied": [
         "No s'ha pogut buidar la paperera."
@@ -7758,9 +7819,20 @@
         "(obrirà ${ PASS_APP_NAME })"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "Mostra els esdeveniments"
+      ]
+    },
     "Security Center - Info": {
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers. ${ learnMoreLink }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "La nostra solució de seguretat avançada impulsada per IA dissenyada per als usuaris que busquen una protecció més elevada per als seus comptes. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "El Sentinel està **actiu** i salvaguarda el vostre compte."
       ]
     },
     "Select files": {
@@ -7773,9 +7845,64 @@
         "No s'ha trobat cap resultat."
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Cancel·li el restabliment"
+      ],
+      "Reset password": [
+        "Restableix la contrasenya"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "La recuperació del compte no està disponible per a les claus d'adreces antigues"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Genereu claus abans d'intentar canviar la contrasenya"
+      ]
+    },
+    "session_recovery:available:info": {
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Aneu al dispositiu en què heu iniciat la sessió (en el qual es va iniciar la sol·licitud) per canviar la contrasenya."
+      ],
+      "This permission expires soon": [
+        "Aquest permís caduca aviat"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Ara podeu canviar la contrasenya del compte ${ boldEmail } lliurement durant ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Ara podeu canviar la contrasenya del compte ${ boldEmail }."
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "S'ha desat la contrasenya"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Restabliu la contrasenya"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Cancel·la el restabliment de la contrasenya"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Introduïu la contrasenya actual per a cancel·lar el procés de restabliment de contrasenya. Cap altre canvi tindrà efecte."
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "S'ha cancel·lat el restabliment de la contrasenya."
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Voleu cancel·lar el restabliment de la contrasenya?"
       ]
     },
     "session_recovery:cancelled:info": {
@@ -8084,6 +8211,11 @@
         "El vostre propi àlies de correu electrònic curt @pm.me"
       ]
     },
+    "subscription reminder": {
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "N'esteu segur?"
@@ -8243,6 +8375,9 @@
     "Suffix for price": {
       "per month": [
         "per mes"
+      ],
+      "per user per month": [
+        "per usuari al mes"
       ]
     },
     "Tab subscription modal": {
@@ -8384,8 +8519,8 @@
       "Account recovery": [
         "Recuperació de compte"
       ],
-      "Account Temporarily Locked": [
-        "Compte bloquejat temporalment"
+      "Account temporarily locked": [
+        "El compte s'ha bloquejat temporalment"
       ],
       "Active": [
         "Actiu"
@@ -8828,6 +8963,9 @@
       ],
       "No albums shared with me": [
         "Sense àlbums compartits amb mi"
+      ],
+      "No breaches detected": [
+        "No s'ha detectat cap infracció"
       ],
       "No bursts": [
         "Sense ràfegues"
