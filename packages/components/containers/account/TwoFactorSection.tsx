@@ -12,7 +12,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { APPS, AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 import { getHasFIDO2Support } from '@proton/shared/lib/webauthn/helper';
@@ -20,15 +20,13 @@ import { getId } from '@proton/shared/lib/webauthn/id';
 import clsx from '@proton/utils/clsx';
 
 import { useAvailableRecoveryMethods } from '../../hooks/useSessionRecovery';
-import { PromotionBanner } from '../banner/PromotionBanner';
 import LostTwoFAModal from './LostTwoFAModal';
 import SettingsLayout from './SettingsLayout';
 import SettingsLayoutLeft from './SettingsLayoutLeft';
 import SettingsLayoutRight from './SettingsLayoutRight';
 import SettingsParagraph from './SettingsParagraph';
 import SettingsSection from './SettingsSection';
-import AuthenticatorModal from './authenticator/AuthenticatorModal';
-import authenticatorLogo from './authenticator/authenticator-logo.svg';
+import AuthenticatorPromotionBanner from './authenticatorPromotion/AuthenticatorPromotionBanner';
 import AddSecurityKeyModal from './fido/AddSecurityKeyModal';
 import EditSecurityKeyModal from './fido/EditSecurityKeyModal';
 import RemoveSecurityKeyModal from './fido/RemoveSecurityKeyModal';
@@ -48,7 +46,6 @@ const TwoFactorSection = () => {
     const [addSecurityKeyModal, setAddSecurityKeyModal, renderAddSecurityKeyModal] = useModalState();
     const [removeSecurityKeyModal, setRemoveSecurityKeyModal, renderRemoveSecurityKeyModal] = useModalState();
     const [editSecurityKeyModal, setEditSecurityKeyModal, renderEditSecurityKeyModal] = useModalState();
-    const [authenticatorModal, setAuthenticatorModal, renderAuthenticatorModal] = useModalState();
     const [tmpRemove, setTmpRemove] = useState<{ keys: { name: string; id: string }[]; type: 'all' | 'single' }>(
         defaultTmpRemove
     );
@@ -104,37 +101,11 @@ const TwoFactorSection = () => {
             {renderLostTwoFAModal && (
                 <LostTwoFAModal availableRecoveryMethods={availableRecoveryMethods} {...lostTwoFAPModal} />
             )}
-            {renderAuthenticatorModal && <AuthenticatorModal {...authenticatorModal} />}
             <SettingsParagraph large>
                 {c('Info')
                     .jt`Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.`}
 
-                <PromotionBanner
-                    rounded="xl"
-                    mode="banner"
-                    contentCentered={false}
-                    className="mt-4"
-                    icon={
-                        <div
-                            className="rounded mr-2 shadow-norm shadow-color-primary flex items-center justify-center w-custom h-custom"
-                            style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem', background: 'white' }}
-                        >
-                            <img src={authenticatorLogo} alt="" width={26} height={26} />
-                        </div>
-                    }
-                    description={
-                        <>
-                            <strong>{c('Info').t`Get ${AUTHENTICATOR_APP_NAME} for all your devices.`}</strong>
-                            <br />
-                            {c('Info').t`Download the app and import existing codes.`}
-                        </>
-                    }
-                    cta={
-                        <Button color="norm" fullWidth onClick={() => setAuthenticatorModal(true)}>
-                            {c('Action').t`Learn more`}
-                        </Button>
-                    }
-                />
+                <AuthenticatorPromotionBanner className="mt-4" />
             </SettingsParagraph>
             {hasTOTPEnabled && hasRecoveryMethod && (
                 <SettingsParagraph>
