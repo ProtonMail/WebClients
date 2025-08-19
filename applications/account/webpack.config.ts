@@ -4,8 +4,8 @@ import path from 'path';
 import type webpack from 'webpack';
 import 'webpack-dev-server';
 
-import { type WebpackEnvArgumentsV2, getWebpackOptions } from '@proton/pack/lib/configV2';
-import { addDevEntry, getConfigV2 } from '@proton/pack/webpack.config';
+import { type WebpackEnvArguments, getWebpackOptions } from '@proton/pack/lib/config';
+import { addDevEntry, getConfig } from '@proton/pack/webpack.config';
 import CopyIndexHtmlWebpackPlugin from '@proton/pack/webpack/copy-index-html-webpack-plugin';
 import { getIndexChunks, getSupportedEntry } from '@proton/pack/webpack/entries';
 
@@ -38,9 +38,9 @@ const getTemplateParameters = (
     };
 };
 
-const result = async (opts: WebpackEnvArgumentsV2): Promise<webpack.Configuration> => {
+const result = async (opts: WebpackEnvArguments): Promise<webpack.Configuration> => {
     const webpackOptions = getWebpackOptions(opts, { appConfig });
-    const config = getConfigV2(webpackOptions);
+    const config = getConfig(webpackOptions);
     const pagePromise = getPages();
 
     const plugins = config.plugins || [];

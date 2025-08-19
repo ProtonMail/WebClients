@@ -1,8 +1,44 @@
 import { join } from 'path';
+import { sync } from 'execa';
 
-// @ts-ignore TODO: these methods will be moved to this file at the end of the migration
-import { getGitBranch, getGitCommitHash, getGitTagVersion, getVersionNumberFromTag } from './config';
-import type { AppConfigV2, ProtonPackOptions, WebpackOptions } from './interface';
+import type { AppConfig, ProtonPackOptions, WebpackOptions } from './interface';
+
+const getGitBranch = () => {
+    try {
+        const { stdout = '' } = sync('git describe --all', { shell: true });
+        return stdout.trim();
+    } catch (e) {
+        return '';
+    }
+};
+
+const getGitCommitHash = () => {
+    try {
+        const { stdout = '' } = sync('git rev-parse HEAD', { shell: true });
+        return stdout.trim();
+    } catch (e) {
+        return '';
+    }
+};
+
+const getGitTagVersion = (applicationName: string) => {
+    try {
+        const { stdout = '' } = sync(`git tag --sort=-v:refname | grep ${applicationName} | head -n 1`, {
+            shell: true,
+        });
+        return stdout.trim();
+    } catch (e) {
+        return '';
+    }
+};
+
+/**
+ * Clean ex. proton-mail@4.x.x to 4.x.x
+ */
+const getVersionNumberFromTag = (tag: string) => {
+    return tag.replace(/[^@]*@/g, '');
+};
+
 
 const LOCALES = (() => {
     try {
@@ -14,17 +50,17 @@ const LOCALES = (() => {
 })();
 
 /**
- * This is sent from protonPack in `getWebpackArgsV2` as `--env protonPackOptions`
+ * This is sent from protonPack in `getWebpackArgs` as `--env protonPackOptions`
  */
-export interface WebpackEnvArgumentsV2 {
+export interface WebpackEnvArguments {
     protonPackOptions: string;
 }
 
 export interface ExtraWebpackOptions {
-    appConfig: AppConfigV2;
+    appConfig: AppConfig;
 }
 
-export const getWebpackOptions = (envArguments: WebpackEnvArgumentsV2, extra: ExtraWebpackOptions): WebpackOptions => {
+export const getWebpackOptions = (envArguments: WebpackEnvArguments, extra: ExtraWebpackOptions): WebpackOptions => {
     const { CI_COMMIT_TAG, NODE_ENV } = process.env;
     const { appConfig } = extra;
 

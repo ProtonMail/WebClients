@@ -2,8 +2,8 @@ import path from 'path';
 import webpack from 'webpack';
 import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 
-import { type WebpackEnvArgumentsV2, getWebpackOptions } from '@proton/pack/lib/configV2';
-import { getConfigV2 } from '@proton/pack/webpack.config';
+import { type WebpackEnvArguments, getWebpackOptions } from '@proton/pack/lib/config';
+import { getConfig } from '@proton/pack/webpack.config';
 import { NamedDeterministicChunkIdsPlugin } from '@proton/pass/utils/webpack/chunks/plugin';
 import { sideEffectsRule } from '@proton/pass/utils/webpack/rules';
 
@@ -36,9 +36,9 @@ const CRITICAL_OFFLINE_ASSETS = [
     'node_modules_openpgp_dist_lightweight_argon2id_min_mjs',
 ];
 
-const result = (opts: WebpackEnvArgumentsV2): webpack.Configuration => {
+const result = (opts: WebpackEnvArguments): webpack.Configuration => {
     const webpackOptions = getWebpackOptions(opts, { appConfig });
-    const config = getConfigV2(webpackOptions);
+    const config = getConfig(webpackOptions);
     const version = webpackOptions.buildData.version;
 
     config.plugins?.push(
