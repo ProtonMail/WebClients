@@ -92,6 +92,9 @@
       "Change": [
         "Αλλαγή"
       ],
+      "Change email": [
+        "Αλλαγή διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+      ],
       "Check DNS": [
         "Έλεγχος DNS"
       ],
@@ -103,6 +106,9 @@
       ],
       "Clear": [
         "Καθαρισμός"
+      ],
+      "Clear search": [
+        "Εκκαθάριση αναζήτησης"
       ],
       "Close": [
         "Κλείσιμο"
@@ -196,6 +202,9 @@
       ],
       "Delete alias": [
         "Διαγραφή ψευδώνυμου"
+      ],
+      "Delete all": [
+        "Διαγραφή όλων"
       ],
       "Delete it, I will never need it": [
         "Διαγράψτε το, δε θα το χρειαστώ ποτέ"
@@ -482,8 +491,14 @@
       "Resend invitation": [
         "Επανάληψη αποστολής πρόσκλησης"
       ],
+      "Reset": [
+        "Επαναφορά"
+      ],
       "Reset history": [
         "Επαναφορά ιστορικού"
+      ],
+      "Restore": [
+        "Επαναφορά"
       ],
       "Restore item": [
         "Επαναφορά στοιχείου"
@@ -672,6 +687,11 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } Εφαρμογή Επιφάνειας Εργασίας"
       ]
     },
     "Button": {
@@ -1203,6 +1223,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -1221,6 +1244,10 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Info": {
@@ -1483,6 +1510,9 @@
       "Congratulations, your access has been confirmed": [
         "Συγχαρητήρια, η πρόσβασή σας επιβεβαιώθηκε"
       ],
+      "Copied to clipboard": [
+        "Αντιγράφηκε στο πρόχειρο"
+      ],
       "Coupon successfully applied!": [
         "Το κουπόνι εφαρμόστηκε με επιτυχία!"
       ],
@@ -1533,6 +1563,12 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Τομέας: ${ domainPath } ή @"
+      ],
+      "Drop file here to upload": [
+        "Σύρετε ένα αρχείο εδώ για μεταφόρτωση"
+      ],
+      "Drop to import": [
+        "Απόθεση για εισαγωγή"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Εισαγάγετε εύκολα τους υπάρχοντες κωδικούς πρόσβασής σας στο ${ PASS_APP_NAME }."
@@ -2348,6 +2384,9 @@
       "your domain": [
         "ο τομέας σας"
       ],
+      "Your files will be encrypted and then saved": [
+        "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
+      ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ο οργανισμός σας απαιτεί να εξασφαλίσετε την πρόσβασή σας στο ${ PASS_APP_NAME }"
       ]
@@ -2798,6 +2837,9 @@
       "https://example.com": [
         "https://example.com"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "ID Card": [
         "Δελτίο Ταυτότητας"
       ],
@@ -2866,6 +2908,9 @@
       ],
       "Key type": [
         "Τύπος κλειδιού"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Συντόμευση πληκτρολογίου: ${ shortcut }"
       ],
       "Language": [
         "Γλώσσα"
@@ -3295,6 +3340,9 @@
       ],
       "The URL has been copied to the clipboard": [
         "Αυτός το URL αντιγράφτηκε στο πρόχειρο"
+      ],
+      "Theme": [
+        "Θέμα"
       ],
       "Tier/Level": [
         "Βαθμίδα/Επίπεδο"
