@@ -139,6 +139,9 @@
       "Forgot password?": [
         "Ați uitat parola?"
       ],
+      "Get ${ planOrAppName }": [
+        "Luați ${ planOrAppName }"
+      ],
       "Get in touch": [
         "Contactați-ne"
       ],
@@ -147,6 +150,9 @@
       ],
       "Get verification code": [
         "Obținere cod de verificare"
+      ],
+      "Go to ${ planOrAppName }": [
+        "Accesare ${ planOrAppName }"
       ],
       "Got it": [
         "Am înțeles"
@@ -259,8 +265,8 @@
       "Secure your wallet": [
         "Securizați-vă portofelul"
       ],
-      "Select ${ planTitle }": [
-        "Selectare ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Selectare ${ planOrAppName }"
       ],
       "Set recovery methods": [
         "Setați metode de recuperare"
@@ -427,6 +433,14 @@
         "Valoare"
       ]
     },
+    "anniversary_2025: Offers": {
+      "12 months": [
+        "12 luni"
+      ],
+      "24 months": [
+        "24 de luni"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicații ${ BRAND_NAME }"
@@ -445,6 +459,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "Ad-blocker and malware protection": [
+        "Protecție programe malițioase și blocare reclame"
       ],
       "Use your own email domain": [
         "Utilizați propriul domeniu de e-mail"
@@ -1843,6 +1860,9 @@
       ]
     },
     "Error": {
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "Numele de utilizator este ${ user.Name }. Pentru a crea adresa ${ emailAddress }, accesați Setări > Identitate și adrese > Domeniu scurt (pm.me)"
+      ],
       "Amount above the maximum.": [
         "Sumă peste cea maximă acceptată."
       ],
@@ -1911,6 +1931,12 @@
       ],
       "Payment process not supported": [
         "Metoda de plată nu este acceptată."
+      ],
+      "Please select a country": [
+        "Selectați o țară."
+      ],
+      "Please select a state": [
+        "Selectați un stat."
       ],
       "Process aborted": [
         "Proces abandonat"
@@ -2080,12 +2106,32 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        "${ Label.Name } actualizată"
+        "S-a actualizat ${ Label.Name }."
       ]
     },
     "Font face option": {
+      "System default": [
+        "Implicit din sistem"
+      ],
       "Theme font": [
         "Font temă"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Mare"
+      ],
+      "Medium (recommended)": [
+        "Mediu (recomandat)"
+      ],
+      "Small": [
+        "Mic"
+      ],
+      "Very large": [
+        "Foarte mare"
+      ],
+      "Very small": [
+        "Foarte mic"
       ]
     },
     "Gateway disclaimer": {
@@ -2201,18 +2247,6 @@
       "Address copied to clipboard": [
         "Adresa a fost copiată în memorie."
       ],
-      "Admin account allocation": [
-        "Alocare cont admin"
-      ],
-      "Allocated": [
-        "Alocat"
-      ],
-      "Already allocated": [
-        "Deja alocat"
-      ],
-      "Already used": [
-        "Deja folosit"
-      ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
       ],
@@ -2314,6 +2348,9 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Introduceți parola (ca și contact aprobat)."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Toate din ${ planOrAppName }"
       ],
       "Expired": [
         "Expirat"
@@ -2444,18 +2481,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Începeți să o partajați contactelor personale și folosiți-l pentru serviciile online."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Spațiu alocat altor utilizatori din această organizație"
-      ],
-      "Storage allocated to this user": [
-        "Spațiu alocat acestui utilizator"
-      ],
-      "Storage for users": [
-        "Spațiu pentru utilizatori"
-      ],
-      "Storage used by this user": [
-        "Spațiu folosit de utilizator"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faceți o depunere folosind adresa următoare sau scanați codul QR. Depunerea va apărea în cont după confirmare."
       ],
@@ -2539,6 +2564,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "Doriți să primiți un cod nou de verificare?"
+      ],
+      "Writing assistant": [
+        "Asistent de scriere"
       ],
       "You already have a free account": [
         "Deja aveți un cont gratuit"
@@ -2624,9 +2652,6 @@
         "O lună",
         "${ n } luni",
         "${ n } de luni"
-      ],
-      "Account storage": [
-        "Spațiu cont"
       ],
       "Address": [
         "Adresa"
@@ -2812,7 +2837,7 @@
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        "${ Label.Name } creată"
+        "S-a creat ${ Label.Name }."
       ]
     },
     "Link": {
@@ -4101,6 +4126,9 @@
     "Suffix for price": {
       "per month": [
         "pe lună"
+      ],
+      "per user per month": [
+        "per utilizator per lună"
       ]
     },
     "Sweep paper wallet": {
@@ -4156,7 +4184,7 @@
       "${ feature } is now active": [
         "${ feature } este acum activă"
       ],
-      "Account Temporarily Locked": [
+      "Account temporarily locked": [
         "Cont blocat temporar"
       ],
       "Add credit/debit card": [

@@ -253,8 +253,8 @@
       "Secure your wallet": [
         "Zabezpečte svou peněženku"
       ],
-      "Select ${ planTitle }": [
-        "Vybrat ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Vybrat ${ planOrAppName }"
       ],
       "Set recovery methods": [
         "Nastavit metody obnovení"
@@ -2178,18 +2178,6 @@
       "Address copied to clipboard": [
         "Adresa zkopírována do schránky"
       ],
-      "Admin account allocation": [
-        "Přidělení účtu správce"
-      ],
-      "Allocated": [
-        "Přiděleno"
-      ],
-      "Already allocated": [
-        "Již bylo přiděleno"
-      ],
-      "Already used": [
-        "Již použito"
-      ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
       ],
@@ -2288,6 +2276,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Zadejte vlastní heslo (jako správce organizace)."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Vše v ${ planOrAppName }"
       ],
       "Expired": [
         "Platnost vypršela"
@@ -2408,18 +2399,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začněte ji sdílet s kontakty a používejte ji pro online služby."
-      ],
-      "Storage allocated to other users in this organisation": [
-        "Úložný prostor přidělený ostatním uživatelům v této organizaci"
-      ],
-      "Storage allocated to this user": [
-        "Úložný prostor přidělený tomuto uživateli"
-      ],
-      "Storage for users": [
-        "Úložiště pro uživatele"
-      ],
-      "Storage used by this user": [
-        "Úložného prostoru využito tímto uživatelem"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Zálohu odešlete na následující adresu nebo naskenujte QR kód. Po potvrzení se vklad promítne na váš účet."
@@ -2580,9 +2559,6 @@
         "${ n } měsíce",
         "${ n } měsíců",
         "${ n } měsíců"
-      ],
-      "Account storage": [
-        "Prostor pro účet"
       ],
       "Address": [
         "Adresa"
@@ -4101,6 +4077,9 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } je nyní aktivní"
+      ],
+      "Account temporarily locked": [
+        "Účet dočasně uzamčen"
       ],
       "Add credit/debit card": [
         "Přidat kreditní/debetní kartu"

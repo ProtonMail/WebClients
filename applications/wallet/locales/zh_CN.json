@@ -253,9 +253,6 @@
       "Secure your wallet": [
         "保护你的钱包"
       ],
-      "Select ${ planTitle }": [
-        "开通 ${ planTitle }"
-      ],
       "Set recovery methods": [
         "设置恢复方式"
       ],
@@ -811,7 +808,7 @@
         "${ users } 位用户"
       ],
       "Total for ${ n } month": [
-        "${ n } 月合计"
+        "每${ n }月支付"
       ]
     },
     "Collapsible tooltip": {
@@ -2140,18 +2137,6 @@
       "Address copied to clipboard": [
         "地址已复制到剪贴板"
       ],
-      "Admin account allocation": [
-        "分配管理员账户"
-      ],
-      "Allocated": [
-        "分配量"
-      ],
-      "Already allocated": [
-        "已分配"
-      ],
-      "Already used": [
-        "已使用"
-      ],
       "American Express SafeKey logo": [
         "American Express SafeKey 图标"
       ],
@@ -2371,18 +2356,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "开始与联系人分享，并将其用于在线服务。"
       ],
-      "Storage allocated to other users in this organisation": [
-        "此组织其他成员的存储空间分配量"
-      ],
-      "Storage allocated to this user": [
-        "该用户的存储空间分配量"
-      ],
-      "Storage for users": [
-        "用户存储"
-      ],
-      "Storage used by this user": [
-        "该用户的存储空间使用量"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "使用以下地址提交存款或扫描二维码。您的存款将在确认后反映在您的账户中。"
       ],
@@ -2534,9 +2507,6 @@
       "${ n } month": [
         "${ n } 个月"
       ],
-      "Account storage": [
-        "账户存储空间"
-      ],
       "Address": [
         "地址"
       ],
@@ -2562,7 +2532,7 @@
         "比特币金额"
       ],
       "Card details": [
-        "银行卡详情"
+        "支付卡详情"
       ],
       "Card holder": [
         "持卡人"

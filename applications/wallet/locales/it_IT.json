@@ -253,9 +253,6 @@
       "Secure your wallet": [
         "Proteggi il tuo portafoglio"
       ],
-      "Select ${ planTitle }": [
-        "Seleziona ${ planTitle }"
-      ],
       "Set recovery methods": [
         "Imposta i metodi di recupero"
       ],
@@ -433,9 +430,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_DEDICATED_IPS } server dedicati durante il periodo di prova."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Puoi avere fino a ${ TRIAL_MAX_LUMO_SEATS } licenze Lumo durante il periodo di prova."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze Scribe durante il periodo di prova."
@@ -2190,18 +2184,6 @@
       "Address copied to clipboard": [
         "Indirizzo copiato negli appunti"
       ],
-      "Admin account allocation": [
-        "Allocazione dell'account amministratore"
-      ],
-      "Allocated": [
-        "Allocato"
-      ],
-      "Already allocated": [
-        "Già allocato"
-      ],
-      "Already used": [
-        "Già usato"
-      ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
       ],
@@ -2424,18 +2406,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Inizia a condividerlo con i contatti e utilizzalo per i servizi online."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Spazio di archiviazione allocato ad altri utenti in questa organizzazione"
-      ],
-      "Storage allocated to this user": [
-        "Memoria allocata per questo utente"
-      ],
-      "Storage for users": [
-        "Spazio per gli utenti"
-      ],
-      "Storage used by this user": [
-        "Memoria utilizzata da questo utente"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Invia un deposito utilizzando il seguente indirizzo, oppure scansionando il codice QR fornito. Il tuo deposito verrà correttamente accreditato una volta confermato."
       ],
@@ -2589,9 +2559,6 @@
       "${ n } month": [
         "${ n } mese",
         "${ n } mesi"
-      ],
-      "Account storage": [
-        "Spazio dell'account"
       ],
       "Address": [
         "Indirizzo"
@@ -4068,6 +4035,9 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } è adesso attivo"
+      ],
+      "Account temporarily locked": [
+        "Account temporaneamente bloccato"
       ],
       "Add credit/debit card": [
         "Aggiungi carta di credito/debito"
