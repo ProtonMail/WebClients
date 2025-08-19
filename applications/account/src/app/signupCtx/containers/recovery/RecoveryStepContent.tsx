@@ -22,10 +22,11 @@ interface Props {
 const RecoveryStepContent = ({ onContinue, title }: Props) => {
     const [understood, setUnderstood] = useState(false);
 
-    const { recoveryPhraseData, sendRecoveryPhrasePayload } = useSignup();
+    const { recoveryPhraseData, sendRecoveryPhrasePayload, captureSignupSentryMessage } = useSignup();
 
     useEffect(() => {
         if (!recoveryPhraseData) {
+            captureSignupSentryMessage('Recovery phrase data is missing. Skipping step.');
             /**
              * Recovery data has not been setup. We should gracefully handle and skip this step
              */

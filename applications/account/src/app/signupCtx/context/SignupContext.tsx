@@ -36,6 +36,7 @@ import { handleSetupOrg } from '../../signup/signupActions';
 import {
     sendSignupAccountCreationTelemetry,
     sendSignupLoadTelemetry,
+    sendSignupRecoveryPhraseSetTelemetry,
     sendSignupSubscriptionTelemetryEvent,
 } from '../../signup/signupTelemetry';
 import { useGetAccountKTActivation } from '../../useGetAccountKTActivation';
@@ -109,6 +110,11 @@ interface SignupContextType {
      * Sends recovery phrase payload to backend when user downloads/copies recovery phrase
      */
     sendRecoveryPhrasePayload: () => Promise<void>;
+    /**
+     * Capture a message to sentry.
+     * Includes relevant tags for the signup flow
+     */
+    captureSignupSentryMessage: (msg: string) => void;
 }
 
 const SignupContext = createContext<SignupContextType | null>(null);
@@ -612,8 +618,23 @@ export const InnerSignupContextProvider = ({
 
         try {
             await sendRecoveryPhrasePayloadHelper({ api, payload, password });
+
+            sendSignupRecoveryPhraseSetTelemetry({
+                flowId,
+                productIntent: app,
+            });
+
+            metrics.core_signup_ctx_recoveryPhrasePayloadSent_total.increment({
+                status: 'success',
+            });
         } catch (error) {
             traceSentryError(error);
+
+            observeError(error, (status) =>
+                metrics.core_signup_ctx_recoveryPhrasePayloadSent_total.increment({
+                    status,
+                })
+            );
 
             throw error;
         }
@@ -745,6 +766,7 @@ export const InnerSignupContextProvider = ({
         loginUrl,
         recoveryPhraseData,
         sendRecoveryPhrasePayload,
+        captureSignupSentryMessage: captureSentryMessage,
     };
 
     return (
