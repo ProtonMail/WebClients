@@ -1048,8 +1048,8 @@
       "See plan features": [
         "Zobrazit funkce tarifu"
       ],
-      "Select ${ planTitle }": [
-        "Vybrat ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Vybrat ${ planOrAppName }"
       ],
       "Select a calendar to export": [
         "Vybrat kalendář k exportu"
@@ -5310,9 +5310,6 @@
       "Continue": [
         "Pokračovat"
       ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "Vše v ${ PLAN_NAMES[PLANS.VPN2024] }"
-      ],
       "Fastest VPN servers": [
         "Nejrychlejší servery VPN"
       ],
@@ -7292,6 +7289,9 @@
       "Event invitations and responses will be sent in this language.": [
         "Pozvánky na události a odpovědi budou zaslány v tomto jazyce."
       ],
+      "Everything in ${ planOrAppName }": [
+        "Vše v ${ planOrAppName }"
+      ],
       "Example: ${ spfExample }": [
         "Příklad: ${ spfExample }"
       ],
@@ -8087,9 +8087,6 @@
       "Private AI assistant": [
         "Soukromý AI asistent"
       ],
-      "Promotion expired": [
-        "Propagační akce skončila"
-      ],
       "Protected by Swiss privacy laws": [
         "Chráněno švýcarskými zákony o ochraně soukromí"
       ],
@@ -8321,9 +8318,6 @@
       "Starts on ${ startsOnTime }": [
         "Začíná ${ startsOnTime }"
       ],
-      "Stay tuned for future promotions.": [
-        "Vyčkejte na budoucí propagační akce."
-      ],
       "Step ${ step }": [
         "Krok ${ step }",
         "Krok ${ step }",
@@ -8524,9 +8518,6 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Tato zpráva se nedostane k týmu podpory, pokud máte problém s naší službou nebo potřebujete další kroky z naší strany ${ supportLink }."
-      ],
-      "This promotion link has expired.": [
-        "Tento odkaz na propagační akci vypršel."
       ],
       "This service is not available to users signing in with single sign-on.": [
         "Tato služba není dostupná uživatelům, kteří se přihlašují pomocí jednotného přihlášení."
@@ -13330,12 +13321,6 @@
       "Get unlimited privacy for two": [
         "Získejte neomezené soukromí pro dva"
       ],
-      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
-        "Beru na vědomí, že v případě ztráty údajů pro obnovení mohu trvale ztratit přístup ke svému účtu."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
-        "Pokud dojde k uzamčení vašeho účtu ${ BRAND_NAME }, vaše **Sada pro obnovu** vám umožní přihlásit se a obnovit vaše data."
-      ],
       "Includes:": [
         "Zahrnuje:"
       ],
@@ -13347,9 +13332,6 @@
       ],
       "Install app and extension": [
         "Instalace aplikace a rozšíření"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "Jde o jediný způsob, jak plně obnovit váš účet. Proto se ujistěte, že jste ho uložili na bezpečné místo."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Připojte se k více než 100 milionům lidí, kteří si zvolili ${ BRAND_NAME }, aby zůstali v bezpečí online."
@@ -14076,14 +14058,6 @@
         "Ověřením telefonního čísla zvyšujete bezpečnost účtu a umožňujete další možnosti obnovení."
       ]
     },
-    "RecoveryPhrase: Action": {
-      "Download PDF ${ size }": [
-        "Stáhnout PDF ${ size }"
-      ],
-      "Reveal recovery phrase": [
-        "Zobrazit obnovovací frázi"
-      ]
-    },
     "Remark about a key type option": {
       "Classic": [
         "Klasický"
@@ -14248,9 +14222,6 @@
       ],
       "Applies to": [
         "Použito na"
-      ],
-      "days": [
-        "dnů"
       ],
       "Keep items forever": [
         "Uchovávat položky navždy"
@@ -15347,9 +15318,6 @@
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Poté ${ priceWithDiscountPerMonth } měsíčně, pokud se přihlásíte k odběru."
-      ],
-      "To reedeem on your next paid subscription.": [
-        "Uplatnit na vaši další platbu předplatného."
       ],
       "Total": [
         "Celkem"
@@ -16791,6 +16759,9 @@
       ],
       "Account suspended": [
         "Účet pozastaven"
+      ],
+      "Account temporarily locked": [
+        "Účet dočasně uzamčen"
       ],
       "Action": [
         "Akce"
@@ -18847,9 +18818,6 @@
       ],
       "It's you": [
         "To jsi ty"
-      ],
-      "Lumo": [
-        "Lumo"
       ],
       "Pending admin access": [
         "Čeká se na vyřízení správcovského přístupu"

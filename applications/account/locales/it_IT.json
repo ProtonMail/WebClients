@@ -70,6 +70,9 @@
       "Accept": [
         "Accetta"
       ],
+      "Access account": [
+        "Accedi all'account"
+      ],
       "activate": [
         "attiva"
       ],
@@ -859,6 +862,9 @@
       "Open navigation": [
         "Apri navigazione"
       ],
+      "Opt out": [
+        "Opt-out"
+      ],
       "Or": [
         "O"
       ],
@@ -958,6 +964,9 @@
       "Request a feature": [
         "Richiedi una funzionalità"
       ],
+      "Request access": [
+        "Richiesta di accesso"
+      ],
       "Request new code": [
         "Richiedi nuovo codice"
       ],
@@ -1047,9 +1056,6 @@
       ],
       "See plan features": [
         "Visualizza le caratteristiche del piano"
-      ],
-      "Select ${ planTitle }": [
-        "Seleziona ${ planTitle }"
       ],
       "Select a calendar to export": [
         "Seleziona un calendario da esportare"
@@ -1657,9 +1663,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_DEDICATED_IPS } server dedicati durante il periodo di prova."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Puoi avere fino a ${ TRIAL_MAX_LUMO_SEATS } licenze Lumo durante il periodo di prova."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze Scribe durante il periodo di prova."
@@ -4231,8 +4234,156 @@
       ]
     },
     "emergency_access": {
+      "${ BRAND_NAME } Account email": [
+        "Email dell'account ${ BRAND_NAME }"
+      ],
+      "${ n } day": [
+        "${ n } giorno",
+        "${ n } giorni"
+      ],
+      "${ n } day left": [
+        "${ n } un giorno alla scadenza",
+        "${ n } giorni rimasti"
+      ],
+      "${ user } will be able to use your account and change your data.": [
+        "${ user } potrà usare il tuo account e cambiare i tuoi dati."
+      ],
+      "Access granted": [
+        "Accesso consentito"
+      ],
+      "Access granted on ${ formattedAccessibleAt }": [
+        "Accesso concesso il ${ formattedAccessibleAt }"
+      ],
+      "Access will be granted on ${ formattedAccessibleAt }": [
+        "Accesso concesso il ${ formattedAccessibleAt }"
+      ],
+      "Add": [
+        "Aggiungi"
+      ],
+      "Add emergency contact": [
+        "Aggiungi contatto di emergenza"
+      ],
+      "Change access wait time": [
+        "Modifica il tempo di attesa per l'accesso"
+      ],
+      "Change the time that ${ user } will have to wait before automatically giving them access.": [
+        "Cambia il tempo che ${ user } dovrà attendere prima di consentirgli automaticamente di accedere."
+      ],
+      "Change wait time": [
+        "Modifica il tempo di attesa"
+      ],
+      "Disabled": [
+        "Disabilitato"
+      ],
+      "Emergency access": [
+        "Accesso di emergenza"
+      ],
+      "Emergency access for ${ user } removed": [
+        "Accesso di emergenza per ${ user } rimosso"
+      ],
+      "Emergency access granted": [
+        "Accesso di emergenza concesso"
+      ],
+      "Emergency access requested": [
+        "Accesso di emergenza richiesto"
+      ],
+      "Emergency contact added": [
+        "Contatto di emergenza aggiunto"
+      ],
+      "Emergency contact removed": [
+        "Contatto di emergenza rimosso"
+      ],
+      "Give immediate access?": [
+        "Dare accesso immediato?"
+      ],
+      "Immediate": [
+        "Immediato"
+      ],
+      "Included with ${ planName }": [
+        "Incluso con ${ planName }"
+      ],
+      "Less than a day": [
+        "Meno di un giorno"
+      ],
+      "None": [
+        "Nessuna azione"
+      ],
+      "on ${ formattedAccessibleAt }": [
+        "il ${ formattedAccessibleAt }"
+      ],
+      "Only ": [
+        "Solo "
+      ],
+      "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
+        "Richiedi l'accesso di emergenza solo quando c'è una **situazione valida** che ti richiede di gestire l'account di un altro utente."
+      ],
+      "People who trust me": [
+        "Persone che si fidano di me"
+      ],
+      "Protect your legacy with emergency access": [
+        "Proteggi la tua eredità con l'accesso di emergenza"
+      ],
+      "Remove trusted contact": [
+        "Rimuovi contatto attendibile"
+      ],
+      "Request access?": [
+        "Richiesta di accesso?"
+      ],
+      "Requesting access": [
+        "Richiesta di accesso"
+      ],
+      "Stop being trusted contact?": [
+        "Smettere di essere contatto attendibile?"
+      ],
+      "They added me as trusted contact. I can access their account in case of an emergency.": [
+        "Mi hanno aggiunto come contatto attendibile. Posso accedere al loro account in caso di emergenza."
+      ],
+      "They may ask to access my account in case of an emergency.": [
+        "Potrebbero chiedere di accedere al mio account in caso di emergenza."
+      ],
+      "This will take effect immediately.": [
+        "Questo avrà effetto immediatamente."
+      ],
+      "Time required before automatically granting them access": [
+        "Tempo richiesto prima di concedere loro automaticamente l'accesso"
+      ],
       "Trusted contact": [
         "Contatti sicuri"
+      ],
+      "View request": [
+        "Visualizza la richiesta"
+      ],
+      "Wait time saved": [
+        "Tempo di attesa salvato"
+      ],
+      "We’ll notify **${ user }** that you requested emergency access.": [
+        "Avviseremo **${ user }** che hai richiesto accesso di emergenza."
+      ],
+      "You can now access and manage their account.": [
+        "Ora puoi accedere e gestire il loro account."
+      ],
+      "You can remove their access at any time to regain exclusive control of your account.": [
+        "Puoi rimuovere il loro accesso in qualsiasi momento per riottenere il controllo esclusivo del tuo account."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Non sei stato ancora designato come contatto di emergenza per nessuno."
+      ],
+      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
+        "Hai raggiunto il massimo di ${ controller.meta.count } contatto attendibile.",
+        "Hai raggiunto il numero massimo di ${ controller.meta.count } contatti attendibili."
+      ],
+      "You will be notified when someone requests emergency access.": [
+        "Sarai avvisato quando qualcuno richiede accesso di emergenza."
+      ],
+      "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
+        "Non potrai più richiedere di accedere all'account di ${ user } in caso di emergenza."
+      ],
+      "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
+        "Riceverai accesso al loro account tra **${ days } giorni**, o quando approveranno la tua richiesta.",
+        "Riceverai accesso al loro account tra **${ days } giorni**, o quando approveranno la tua richiesta."
+      ],
+      "Your emergency contact ${ name } is requesting access to your account.": [
+        "Il tuo contatto di emergenza ${ name } sta richiedendo di accedere al tuo account."
       ]
     },
     "Empty group name": {
@@ -5320,9 +5471,6 @@
       ],
       "Continue": [
         "Continua"
-      ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "Tutto in ${ PLAN_NAMES[PLANS.VPN2024] }"
       ],
       "Fastest VPN servers": [
         "Server VPN più veloci"
@@ -7985,9 +8133,6 @@
       "Private AI assistant": [
         "Assistente AI privato"
       ],
-      "Promotion expired": [
-        "Promozione scaduta"
-      ],
       "Protected by Swiss privacy laws": [
         "Protezione dalle leggi svizzere sulla privacy"
       ],
@@ -8214,9 +8359,6 @@
       "Starts on ${ startsOnTime }": [
         "Inizia il ${ startsOnTime }"
       ],
-      "Stay tuned for future promotions.": [
-        "Rimani aggiornato per le prossime promozioni."
-      ],
       "Step ${ step }": [
         "Passaggio ${ step }",
         "Passaggio ${ step }"
@@ -8409,9 +8551,6 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Questo messaggio non verrà inviato al team di supporto, se hai un problema con il nostro servizio o hai bisogno di ulteriori azioni da parte nostra ${ supportLink }."
-      ],
-      "This promotion link has expired.": [
-        "Questo link promozionale è scaduto."
       ],
       "This service is not available to users signing in with single sign-on.": [
         "Questo servizio non è disponibile per gli utenti che accedono con single sign-on."
@@ -13113,12 +13252,6 @@
       "Get unlimited privacy for two": [
         "Ottieni privacy illimitata per due"
       ],
-      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
-        "Comprendo che se perdessi i miei dati di recupero, potrei perdere definitivamente l'accesso al mio account."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
-        "Se non riesci ad accedere al tuo account ${ BRAND_NAME }, il tuo **Kit di recupero** ti consentirà di accedere e recuperare i tuoi dati."
-      ],
       "Includes:": [
         "Include:"
       ],
@@ -13130,9 +13263,6 @@
       ],
       "Install app and extension": [
         "Installa l'app e l'estensione"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "È l'unico modo per ripristinare completamente il tuo account, quindi assicurati di conservarlo in un posto sicuro."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Unisciti ad oltre 100 milioni di persone che hanno scelto ${ BRAND_NAME } per stare al sicuro online"
@@ -13856,8 +13986,48 @@
       ]
     },
     "RecoveryPhrase: Action": {
-      "Reveal recovery phrase": [
-        "Rivela la frase di recupero"
+      "Continue": [
+        "Continua"
+      ],
+      "Copy": [
+        "Copia"
+      ],
+      "Show": [
+        "Mostra"
+      ]
+    },
+    "RecoveryPhrase: Info": {
+      "copy recovery phrase": [
+        "Copia frase di recupero"
+      ],
+      "Download PDF": [
+        "Scarica il PDF"
+      ],
+      "download PDF": [
+        "scarica il PDF"
+      ],
+      "I understand that if I lose my recovery phrase, I may permanently lose access to my account.": [
+        "Comprendo che, se perdo la mia frase di recupero, potrei perdere in modo permanente l’accesso al mio account."
+      ],
+      "It’s the only way to recover everything—store it safely.": [
+        "È l’unico modo per recuperare tutto: conservalo in un luogo sicuro."
+      ],
+      "Or ${ copyRecoverySwitchButton } as text.": [
+        "Oppure ${ copyRecoverySwitchButton } come testo."
+      ],
+      "Or ${ downloadRecoveryKitSwitchButton } instead.": [
+        "Oppure, in alternativa, ${ downloadRecoveryKitSwitchButton }."
+      ],
+      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "Il tuo **Kit di Recupero** consente di ripristinare l’account ${ BRAND_NAME } in caso di impossibilità di accesso."
+      ]
+    },
+    "RecoveryPhrase: Title": {
+      "Save your Recovery Kit": [
+        "Salva il tuo Kit di Recupero"
+      ],
+      "Save your recovery phrase": [
+        "Salva la tua frase di recupero"
       ]
     },
     "Remark about a key type option": {
@@ -13969,8 +14139,9 @@
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
-        "La durata deve essere superiore a ${ MIN_LIFETIME } giorni"
+      "Lifetime must be greater than ${ MIN_LIFETIME } day": [
+        "La durata deve essere maggiore di ${ MIN_LIFETIME } giorno.",
+        "La durata deve essere maggiore dei ${ MIN_LIFETIME } giorni."
       ],
       "Lifetime must not be set for \"Retain All\" action": [
         "La durata non deve essere impostata per l'azione \"Conserva tutto\""
@@ -14018,7 +14189,8 @@
       "Applies to": [
         "Si applica a"
       ],
-      "days": [
+      "day": [
+        "giorno",
         "giorni"
       ],
       "Keep items forever": [
@@ -15093,9 +15265,6 @@
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Poi ${ priceWithDiscountPerMonth } al mese, se ti abboni."
-      ],
-      "To reedeem on your next paid subscription.": [
-        "Per riscattare sul tuo prossimo abbonamento a pagamento."
       ],
       "Total": [
         "Totale"
@@ -16476,6 +16645,9 @@
       "Account suspended": [
         "Account sospeso"
       ],
+      "Account temporarily locked": [
+        "Account temporaneamente bloccato"
+      ],
       "Action": [
         "Azione"
       ],
@@ -16551,6 +16723,9 @@
       ],
       "Add users to \"${ policyName }\"": [
         "Aggiungi utenti a \"${ policyName }\""
+      ],
+      "Added on": [
+        "Aggiunto il"
       ],
       "Address": [
         "Indirizzo"
@@ -17549,6 +17724,9 @@
       "Signed in successfully!": [
         "Accesso effettuato con successo!"
       ],
+      "Signed in to another account": [
+        "Accedi ad un altro account"
+      ],
       "Signed in to member account": [
         "Accesso all'account membro"
       ],
@@ -18515,9 +18693,6 @@
       ],
       "It's you": [
         "Sei tu"
-      ],
-      "Lumo": [
-        "Lumo"
       ],
       "Pending admin access": [
         "Accesso amministratore in sospeso"

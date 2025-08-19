@@ -1045,9 +1045,6 @@
       "See plan features": [
         "查看套餐内容"
       ],
-      "Select ${ planTitle }": [
-        "开通 ${ planTitle }"
-      ],
       "Select a calendar to export": [
         "选择要导出的日历"
       ],
@@ -1751,7 +1748,7 @@
         "如果我们使用相同的 WiFi，别人能看到我的上网记录吗？"
       ],
       "Enable kill switch and auto-connect in your VPN settings.": [
-        "在 VPN 设置中启用  Kill Switch 和自动连接功能"
+        "在 VPN 设置中启用 Kill Switch 和自动连接功能"
       ],
       "Get round-the-clock protection": [
         "获得全天候保护"
@@ -2121,7 +2118,7 @@
         "${ users } 位用户"
       ],
       "Total for ${ n } month": [
-        "${ n } 月合计"
+        "每${ n }月支付"
       ]
     },
     "Checkout summary": {
@@ -5218,9 +5215,6 @@
       "Continue": [
         "继续"
       ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "一切尽在 ${ PLAN_NAMES[PLANS.VPN2024] }"
-      ],
       "Fastest VPN servers": [
         "高速 VPN 服务器"
       ],
@@ -6113,7 +6107,7 @@
     },
     "Info": {
       " and other security features.": [
-        "以及其他安全功能。"
+        " 以及其他安全功能。"
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers } / ${ totalUsers } 的用户目前可以访问共享服务器。"
@@ -7780,9 +7774,6 @@
       "Private AI assistant": [
         "私人 AI 助手"
       ],
-      "Promotion expired": [
-        "促销已过期"
-      ],
       "Protected by Swiss privacy laws": [
         "由瑞士隐私法律保护"
       ],
@@ -8008,9 +7999,6 @@
       "Starts on ${ startsOnTime }": [
         "将在 ${ startsOnTime } 开始"
       ],
-      "Stay tuned for future promotions.": [
-        "敬请关注后续其他促销活动。"
-      ],
       "Step ${ step }": [
         "步骤 ${ step }"
       ],
@@ -8196,9 +8184,6 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "如果您对我们的服务有任何问题，或需要我们采取进一步行动，该信息将不会发送到支持团队， ${ supportLink }。"
-      ],
-      "This promotion link has expired.": [
-        "促销链接已过期"
       ],
       "This service is not available to users signing in with single sign-on.": [
         "使用单点登录的用户无法使用此服务。"
@@ -9453,7 +9438,7 @@
         "大写字母"
       ],
       "Card details": [
-        "银行卡详情"
+        "支付卡详情"
       ],
       "Card holder": [
         "持卡人"
@@ -12759,12 +12744,6 @@
       "Get unlimited privacy for two": [
         "两人无限畅享隐私空间"
       ],
-      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
-        "我明白，如果我丢失了恢复信息，我可能会永久无法访问我的帐户。"
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
-        "如果您的 ${ BRAND_NAME } 账户被锁定，**恢复套件**将允许您登录并恢复数据。"
-      ],
       "Includes:": [
         "包含:"
       ],
@@ -12776,9 +12755,6 @@
       ],
       "Install app and extension": [
         "安装应用程序和扩展"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "这是完全恢复账户的唯一方法，因此请确保将其保存在安全的地方。"
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "加入 1 亿多选择 ${ BRAND_NAME } 的用户行列，确保安全上网"
@@ -13555,7 +13531,7 @@
     },
     "Safety review": {
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
-        "如果忘记密码，可通过**密保手机**恢复密码，并重新访问您的账户。"
+        " 如果忘记密码，可通过**密保手机**恢复密码，并重新访问您的账户。"
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "重置密码时，${ BRAND_NAME } 将使用此地址通过电子邮件发送重置密码。"
@@ -14501,9 +14477,6 @@
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "若您订阅，每月仅需 ${ priceWithDiscountPerMonth }。"
       ],
-      "To reedeem on your next paid subscription.": [
-        "这将在您下一账单中自动兑换。"
-      ],
       "Total": [
         "总计"
       ],
@@ -14884,7 +14857,7 @@
         "这是完全恢复账户的唯一方法，因此请务必将其妥善保管。"
       ],
       "Join ${ organizationName }": [
-        "加入 ${ organizationName } "
+        "加入 ${ organizationName }"
       ],
       "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
         "确保将其保存在安全的地方，以便在身份提供商凭据丢失时可以重新进入您的账户。"
@@ -17872,9 +17845,6 @@
       ],
       "It's you": [
         "这是您"
-      ],
-      "Lumo": [
-        "Lumo"
       ],
       "Pending admin access": [
         "等待管理员访问"

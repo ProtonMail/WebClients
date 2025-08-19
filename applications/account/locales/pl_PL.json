@@ -1060,9 +1060,6 @@
       "See plan features": [
         "Zobacz funkcje planu"
       ],
-      "Select ${ planTitle }": [
-        "Wybierz ${ planTitle }"
-      ],
       "Select a calendar to export": [
         "Wybierz kalendarz do wyeksportowania"
       ],
@@ -1676,9 +1673,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Możesz mieć do ${ TRIAL_MAX_DEDICATED_IPS } dedykowanych serwerów w okresie próbnym."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Możesz mieć do ${ TRIAL_MAX_LUMO_SEATS } miejsc Lumo w okresie próbnym."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Możesz mieć do ${ TRIAL_MAX_SCRIBE_SEATS } miejsc Scribe w okresie próbnym."
@@ -5415,9 +5409,6 @@
       "Continue": [
         "Kontynuuj"
       ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "Wszystko w planie ${ PLAN_NAMES[PLANS.VPN2024] }"
-      ],
       "Fastest VPN servers": [
         "Najszybsze serwery VPN"
       ],
@@ -8207,9 +8198,6 @@
       "Private AI assistant": [
         "Prywatny asystent AI"
       ],
-      "Promotion expired": [
-        "Promocja wygasła"
-      ],
       "Protected by Swiss privacy laws": [
         "Chroniony przez szwajcarskie prawa ochrony danych osobowych"
       ],
@@ -8441,9 +8429,6 @@
       "Starts on ${ startsOnTime }": [
         "Rozpocznie się ${ startsOnTime }"
       ],
-      "Stay tuned for future promotions.": [
-        "Bądź na bieżąco z przyszłymi promocjami."
-      ],
       "Step ${ step }": [
         "Krok ${ step }",
         "Krok ${ step }",
@@ -8644,9 +8629,6 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Wiadomość nie zostanie dostarczona do pomocy technicznej. Jeśli masz problem z naszą usługą lub potrzebujesz dalszej pomocy, ${ supportLink }."
-      ],
-      "This promotion link has expired.": [
-        "Link promocji wygasł."
       ],
       "This service is not available to users signing in with single sign-on.": [
         "Usługa nie jest dostępna dla użytkowników SSO."
@@ -13456,12 +13438,6 @@
       "Get unlimited privacy for two": [
         "Uzyskaj nieograniczoną prywatność dla dwojga"
       ],
-      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
-        "Rozumiem, że jeśli stracę dane odzyskiwania, mogę trwale utracić dostęp do konta."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
-        "Jeśli konto ${ BRAND_NAME } zostanie zablokowane, **zestaw odzyskiwania** umożliwi zalogowanie się i odzyskanie danych."
-      ],
       "Includes:": [
         "Zawiera:"
       ],
@@ -13473,9 +13449,6 @@
       ],
       "Install app and extension": [
         "Zainstaluj aplikację i rozszerzenie"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "Jest to jedyny sposób na pełne przywrócenie konta, więc upewnij się, że przechowujesz zestaw odzyskiwania w bezpiecznym miejscu."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Dołącz do ponad 100 milionów osób, którzy wybrali ${ BRAND_NAME }, aby zachować bezpieczeństwo w sieci"
@@ -14222,14 +14195,6 @@
         "Weryfikacja numeru telefonu zwiększa bezpieczeństwo konta i umożliwia dodatkowe opcje odzyskiwania konta."
       ]
     },
-    "RecoveryPhrase: Action": {
-      "Download PDF ${ size }": [
-        "Pobierz plik PDF ${ size }"
-      ],
-      "Reveal recovery phrase": [
-        "Pokaż hasło odzyskiwania"
-      ]
-    },
     "Remark about a key type option": {
       "Classic": [
         "Klasyczny"
@@ -14343,9 +14308,6 @@
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
-        "Okres przechowywania musi być dłuższy niż ${ MIN_LIFETIME } dni"
-      ],
       "Lifetime must not be set for \"Retain All\" action": [
         "Okres przechowywania nie może być ustawiony dla akcji zachowania wszystkiego"
       ],
@@ -14397,9 +14359,6 @@
       ],
       "Applies to": [
         "Zastosuj do"
-      ],
-      "days": [
-        "dni"
       ],
       "Keep items forever": [
         "Zachowaj elementy na zawsze"
@@ -15501,9 +15460,6 @@
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Następnie ${ priceWithDiscountPerMonth } miesięcznie."
-      ],
-      "To reedeem on your next paid subscription.": [
-        "Do wykorzystania w kolejnej płatnej subskrypcji."
       ],
       "Total": [
         "Razem"
@@ -16950,9 +16906,6 @@
       ],
       "Account suspended": [
         "Konto zostało zawieszone"
-      ],
-      "Account Temporarily Locked": [
-        "Konto zostało tymczasowo zablokowane"
       ],
       "Action": [
         "Akcja"
@@ -19015,9 +18968,6 @@
       ],
       "It's you": [
         "Ty"
-      ],
-      "Lumo": [
-        "Lumo"
       ],
       "Pending admin access": [
         "Oczekiwanie na dostęp administratora"
