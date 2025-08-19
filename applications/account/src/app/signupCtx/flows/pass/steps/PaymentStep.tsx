@@ -17,14 +17,14 @@ import { Audience } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
 import { useSignup } from '../../../context/SignupContext';
-import { Step } from '../PassSignup';
 import { Layout } from '../components/Layout/Layout';
 
 type Props = {
-    setStep: (step: Step) => void;
+    onContinue: () => Promise<void>;
+    onBack: () => void;
 };
 
-export const PaymentStep: FC<Props> = ({ setStep }) => {
+export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
     const signup = useSignup();
     const payments = usePaymentOptimistic();
     const [loading, setLoading] = useState(false);
@@ -41,9 +41,7 @@ export const PaymentStep: FC<Props> = ({ setStep }) => {
         onChargeable: async (operations, data) => {
             try {
                 signup.submitPaymentData(options, data);
-                await signup.createUser();
-                await signup.setupUser();
-                setStep(Step.InstallExtension);
+                await onContinue();
             } catch (error) {
                 setLoading(false);
             }
@@ -116,7 +114,7 @@ export const PaymentStep: FC<Props> = ({ setStep }) => {
         <Layout>
             <section className="max-w-custom" style={{ '--max-w-custom': '25rem' }}>
                 <div className="flex items-center justify-space-between mb-12">
-                    <Button shape="ghost" icon pill onClick={() => setStep(Step.UpgradePlan)}>
+                    <Button shape="ghost" icon pill onClick={onBack}>
                         <Icon name="arrow-left" size={6} />
                     </Button>
                     <div className="text-center">
@@ -132,24 +130,20 @@ export const PaymentStep: FC<Props> = ({ setStep }) => {
                 <form name="payment-form" onSubmit={handleProcess} method="post">
                     {(() => {
                         const planIDs = payments.options.planIDs;
-                        const { hasPlanCustomizer, currentPlan } = getHasPlanCustomizer({
-                            plansMap: payments.plansMap,
-                            planIDs,
-                        });
 
-                        if (!hasPlanCustomizer || !currentPlan) {
+                        if (!getHasPlanCustomizer(planIDs)) {
                             return null;
                         }
+
                         return (
                             <ProtonPlanCustomizer
                                 separator
                                 mode="signup"
                                 loading={false}
-                                currentPlan={currentPlan}
                                 currency={payments.options.currency}
                                 cycle={payments.options.cycle}
                                 plansMap={payments.plansMap}
-                                planIDs={planIDs}
+                                selectedPlanIDs={planIDs}
                                 onChangePlanIDs={(planIDs) => payments.selectPlanIDs(planIDs)}
                                 audience={Audience.B2C}
                                 scribeAddonEnabled
