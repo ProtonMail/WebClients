@@ -244,9 +244,6 @@
       "Secure your wallet": [
         "Защитите кошелёк"
       ],
-      "Select ${ planTitle }": [
-        "Выбрать ${ planTitle }"
-      ],
       "Set recovery methods": [
         "Установить методы восстановления"
       ],
@@ -428,9 +425,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Вам доступно до ${ TRIAL_MAX_DEDICATED_IPS } выделенных серверов в течение пробного периода."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Вам доступно до ${ TRIAL_MAX_LUMO_SEATS } мест Lumo в течение пробного периода."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Вам доступно до ${ TRIAL_MAX_SCRIBE_SEATS } мест Scribe в течение пробного периода."
@@ -2198,18 +2192,6 @@
       "Address copied to clipboard": [
         "Адрес скопирован в буфер обмена"
       ],
-      "Admin account allocation": [
-        "Распределение аккаунтов администраторов"
-      ],
-      "Allocated": [
-        "Выделено"
-      ],
-      "Already allocated": [
-        "Уже выделено"
-      ],
-      "Already used": [
-        "Уже используется"
-      ],
       "American Express SafeKey logo": [
         "Логотип American Express SafeKey"
       ],
@@ -2429,18 +2411,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Начните делиться им с контактами и использовать его для онлайн-сервисов."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Хранилище, выделенное другим пользователям в этой организации"
-      ],
-      "Storage allocated to this user": [
-        "Хранилище, выделенное этому пользователю"
-      ],
-      "Storage for users": [
-        "Хранилище для пользователей"
-      ],
-      "Storage used by this user": [
-        "Хранилище, используемое этим пользователем"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Отправьте депозит, используя указанный адрес, или отсканируйте QR-код. Ваш депозит будет отражен в вашем аккаунте после подтверждения."
       ],
@@ -2600,9 +2570,6 @@
         "${ n } месяца",
         "${ n } месяцев",
         "${ n } месяцев"
-      ],
-      "Account storage": [
-        "Хранилище учётной записи"
       ],
       "Address": [
         "Адрес"

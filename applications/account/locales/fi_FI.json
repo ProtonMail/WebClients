@@ -1024,9 +1024,6 @@
       "See plan features": [
         "Näytä tilauksen ominaisuudet"
       ],
-      "Select ${ planTitle }": [
-        "Valitse ${ planTitle }"
-      ],
       "Select a calendar to export": [
         "Valitse vietävä kalenteri"
       ],
@@ -3229,6 +3226,10 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Määritä tämä ensin aktivoidaksesi organisaatiosi ja mukauttaaksesi sähköpostiosoitettasi."
       ],
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
+        "Onnittelut! Olet ansainnut vapaiden kuukausien enimmäismäärän: ${ rewardsLimit } kuukauden ${ plusPlanName }.",
+        "Onnittelut! Olet ansainnut vapaiden kuukausien enimmäismäärän: ${ rewardsLimit } kuukautta ${ plusPlanName }."
+      ],
       "Connect your CRM, website, printers, and more.": [
         "Yhdistä CRM:si, verkkosivustosi, tulostimesi ja muuta."
       ],
@@ -5098,9 +5099,6 @@
       ],
       "Continue": [
         "Jatka"
-      ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "Kaikki ${ PLAN_NAMES[PLANS.VPN2024] }-tilauksesta"
       ],
       "Fastest VPN servers": [
         "Nopeimmat VPN-palvelimet"
@@ -7641,9 +7639,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Hinta sisältää kaikki tilillesi tallennetut soveltuvat tilausjaksopohjaiset alennukset sekä etukoodit."
       ],
-      "Promotion expired": [
-        "Tämä kampanja on päättynyt"
-      ],
       "Protected by Swiss privacy laws": [
         "Sveitsin tietosuojalakien suojaama"
       ],
@@ -7861,9 +7856,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Aloita sen jakaminen yhteystietojen kanssa ja käytä sitä verkkopalveluissa."
       ],
-      "Stay tuned for future promotions.": [
-        "Pysy kuulolla tulevista kampanjoista."
-      ],
       "Step ${ step }": [
         "${ step }. vaihe",
         "${ step }. vaihe"
@@ -8050,9 +8042,6 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Tämä viesti ei mene tukitiimille, jos sinulla on ongelmia palvelumme kanssa tai tarvitset lisätoimenpiteitä meiltä ${ supportLink }."
-      ],
-      "This promotion link has expired.": [
-        "Tämä kampanjalinkki on vanhentunut."
       ],
       "This service is not available to users signing in with single sign-on.": [
         "Tämä palvelu ei ole saatavilla kertakirjautumisen käyttäjille."
@@ -12591,12 +12580,6 @@
       "Get unlimited privacy for two": [
         "Hanki rajattoman yksityisyyden kahdelle"
       ],
-      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
-        "Ymmärrän, että kadottaessani palautustiedot, voin menettää pääsyn tililleni pysyvästi."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
-        "Jos olet menettänyt pääsyn ${ BRAND_NAME }-tilillesi, voit **palautuspakettisi** avulla kirjautua ja palauttaa tietosi."
-      ],
       "Includes:": [
         "Sisältää:"
       ],
@@ -12608,9 +12591,6 @@
       ],
       "Install app and extension": [
         "Asenna sovellus ja lisäosa"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "Se on ainoa tapa palauttaa tilisi kokonaan, joten varmista, että säilytät sen jossakin turvallisessa paikassa."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Liity yli 100 miljoonaan ihmiseen, jotka ovat valinneet ${ BRAND_NAME }in pysyäkseen turvassa verkossa"
@@ -14053,12 +14033,32 @@
         "${ maxAddresses } osoite",
         "${ maxAddresses } osoitetta"
       ],
+      "${ maxAddresses } email address": [
+        "${ maxAddresses } sähköpostiosoite",
+        "${ maxAddresses } sähköpostiosoitetta"
+      ],
+      "${ maxAddresses } extra email address": [
+        "${ maxAddresses } lisäsähköpostiosoite",
+        "${ maxAddresses } lisäsähköpostiosoitetta"
+      ],
       "${ maxCalendars } calendar": [
         "${ maxCalendars } kalenteri",
         "${ maxCalendars } kalenteria"
       ],
+      "${ maxDomains } email domain": [
+        "${ maxDomains } sähköpostin verkkotunnus",
+        "${ maxDomains } sähköpostin verkkotunnusta"
+      ],
+      "${ PASS_PLUS_VAULTS } vault for your passwords": [
+        "${ PASS_PLUS_VAULTS } holvi salasanoillesi",
+        "${ PASS_PLUS_VAULTS } holvia salasanoillesi"
+      ],
       "${ value } of secure storage per user": [
         "${ value } turvallista tallennustilaa/käyttäjä"
+      ],
+      "${ VPN_CONNECTIONS } high-speed VPN connection": [
+        "${ VPN_CONNECTIONS } suurinopeuksinen VPN-yhteys",
+        "${ VPN_CONNECTIONS } suurinopeuksista VPN-yhteyttä"
       ],
       "/user": [
         "/käyttäjä"
@@ -14158,6 +14158,10 @@
       ],
       "Up to 6 users": [
         "Enintään 6 käyttäjää"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "VPN, jolla on palvelin ${ vpnServersCountData.free.countries } maassa",
+        "VPN, jolla on palvelimia ${ vpnServersCountData.free.countries } maassa"
       ],
       "Yearly": [
         "Vuosittain"
@@ -17425,9 +17429,6 @@
       ],
       "It's you": [
         "Sinä"
-      ],
-      "Lumo": [
-        "Lumo"
       ],
       "Pending admin access": [
         "Odottaa ylläpito-oikeutta"

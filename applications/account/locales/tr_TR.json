@@ -436,6 +436,12 @@
       "Delete “${ label.Name }”": [
         "\"${ label.Name }\" etiketini sil"
       ],
+      "Deleting folder": [
+        "Klasör siliniyor"
+      ],
+      "Deleting label": [
+        "Etiket siliniyor"
+      ],
       "Deny access": [
         "İzin verme"
       ],
@@ -604,6 +610,9 @@
       "Explore ${ target }": [
         "${ target } tarifesini keşfedin"
       ],
+      "Explore business plans": [
+        "Kurumsal tarifeleri inceleyin"
+      ],
       "Explore group plans": [
         "Grup tarifelerine bakın"
       ],
@@ -658,6 +667,9 @@
       "Generate token": [
         "Kod oluştur"
       ],
+      "Get ${ planOrAppName }": [
+        "${ planOrAppName } edinin"
+      ],
       "Get a new encrypted email address": [
         "Yeni bir şifrelenmiş e-posta adresi edinin"
       ],
@@ -702,6 +714,9 @@
       ],
       "Go back": [
         "Geri dön"
+      ],
+      "Go to ${ planOrAppName }": [
+        "${ planOrAppName } uygulamasına git"
       ],
       "Go to label": [
         "Etikete git"
@@ -1060,8 +1075,8 @@
       "See plan features": [
         "Tarife özelliklerini görün"
       ],
-      "Select ${ planTitle }": [
-        "${ planTitle } tarifesini seçin"
+      "Select ${ planOrAppName }": [
+        "${ planOrAppName } tarifesini seç"
       ],
       "Select a calendar to export": [
         "Dışa aktarılacak bir takvim seçin"
@@ -1583,6 +1598,14 @@
         "Yeni e-posta"
       ]
     },
+    "anniversary_2025: Offers": {
+      "12 months": [
+        "12 ay"
+      ],
+      "24 months": [
+        "24 ay"
+      ]
+    },
     "app-switcher": {
       "Browse the web privately and block ads": [
         "İnternet üzerinde gizliliğinizi koruyarak ve reklamları engelleyerek gezinin"
@@ -1676,9 +1699,6 @@
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucuya sahip olabilirsiniz."
       ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_LUMO_SEATS } Lumo koltuğuna sahip olabilirsiniz."
-      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğuna sahip olabilirsiniz."
       ],
@@ -1746,7 +1766,7 @@
         "Yüksek hızlı İsviçre VPN hizmetini Siber Hafta fırsatlarıyla indirimli olarak alın"
       ],
       "Save with End of Year deals on a high-speed Swiss VPN": [
-        "Yüksek hızlı İsviçre VPN hizmetini Yıl Sonu fırsatlarıyla indirimli olarak alın"
+        "Yüksek hızlı İsviçre VPN hizmetini yıl sonu fırsatlarıyla indirimli olarak alın"
       ],
       "Select your Black Friday offer": [
         "Muhteşem Cuma teklifinizi seçin"
@@ -1798,6 +1818,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } bilgisayar uygulaması"
+      ],
+      "Ad-blocker and malware protection": [
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması"
       ],
       "Use your own email domain": [
         "Kendi e-posta etki alanınızı kullanın"
@@ -2002,6 +2025,9 @@
       ],
       "Invite": [
         "Davet et"
+      ],
+      "Maybe later": [
+        "Belki sonra"
       ],
       "Remind me later": [
         "Daha sonra hatırlat"
@@ -3780,10 +3806,10 @@
     },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
-        "Metin alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca gelecekte düzenlenecek faturalarda görüntülenecek ve var olan faturaları etkilemeyecek."
+        "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca gelecekte düzenlenecek faturalarda görüntülenecek ve var olan faturaları etkilemeyecek."
       ],
       "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Metin alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca seçtiğiniz faturayı değiştirir. Gelecekteki fatura bilgilerinizi değiştirmez."
+        "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca seçtiğiniz faturayı değiştirir. Gelecekteki fatura bilgilerinizi değiştirmez."
       ]
     },
     "edm": {
@@ -3928,13 +3954,13 @@
         "Diğer e-posta aboneliklerini değiştir"
       ],
       "Click the button below to unsubscribe from ${ categories } emails.": [
-        "${ categories } e-postalarının aboneliğinden ayrılmak için aşağıdaki düğmeye tıklayın."
+        "${ categories } e-postalarının aboneliğini sonlandırmak için aşağıdaki düğmeye tıklayın."
       ],
       "Email subscriptions": [
         "E-posta abonelikleri"
       ],
       "If you unsubscribed by accident, you are welcome to resubscribe.": [
-        "Abonelikten yanlışlıkla ayrıldıysanız yeniden abone olabilirsiniz."
+        "Aboneliği yanlışlıkla sonlandırdıysanız yeniden abone olabilirsiniz."
       ],
       "Resubscribe": [
         "Yeniden abone ol"
@@ -3943,10 +3969,10 @@
         "Teşekkür ederiz hoşça kalın"
       ],
       "Unsubscribe": [
-        "Abonelikten ayrıl"
+        "Aboneliği sonlandır"
       ],
       "Unsubscribe?": [
-        "Abonelikten çıkılsın mı?"
+        "Abonelik sonlandırılsın mı?"
       ],
       "Update email preferences": [
         "E-posta tercihlerini güncelle"
@@ -3961,7 +3987,7 @@
         "${ categoriesJsx } e-postalarına yeniden abone oldunuz."
       ],
       "You unsubscribed from ${ categories } emails, and will no longer receive this type of email from ${ BRAND_NAME }.": [
-        "${ categories } e-postalarının aboneliğinden ayrıldınız. Artık ${ BRAND_NAME } tarafından bu türde e-postalar almayacaksınız."
+        "${ categories } e-postalarının aboneliğini sonlandırdınız. Artık ${ BRAND_NAME } tarafından bu türde e-postalar almayacaksınız."
       ]
     },
     "Email verification": {
@@ -4180,7 +4206,7 @@
         "E-posta adresini yazın"
       ],
       "Type text or keyword": [
-        "Metin ya da anahtar sözcük yazın"
+        "Yazı ya da anahtar sözcük yazın"
       ],
       "Type text or keyword for this condition:": [
         "Bu koşulun metnini ya da anahtar sözcüğünü yazın:"
@@ -4281,11 +4307,20 @@
       ]
     },
     "Error": {
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "Kullanıcı adınız: ${ user.Name }. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
+      ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
       "Account does not exist": [
         "Hesap bulunamadı"
+      ],
+      "Add at least one action": [
+        "En az bir işlem ekleyin"
+      ],
+      "Add at least one condition": [
+        "En az bir koşul ekleyin"
       ],
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
@@ -4382,6 +4417,9 @@
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
       ],
+      "Error in one of the conditions": [
+        "Koşullardan biri hatalı"
+      ],
       "Error publishing changes": [
         "Değişiklikler yayınlanırken sorun çıktı"
       ],
@@ -4405,6 +4443,9 @@
       ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Dosya çok büyük. Logonuzun boyutu 30 KB ya da daha küçük olmalıdır."
+      ],
+      "Filter with this name already exists": [
+        "Aynı adlı bir süzgeç zaten var"
       ],
       "Folder name cannot be empty.": [
         "Klasör adı boş olamaz."
@@ -4578,6 +4619,12 @@
       ],
       "Please generate keys before you try to change your password": [
         "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
+      ],
+      "Please select a country": [
+        "Lütfen bir ülke seçin"
+      ],
+      "Please select a state": [
+        "Lütfen bir il seçin"
       ],
       "Please select at least one location before continuing.": [
         "İlerlemeden önce lütfen en az bir konum seçin."
@@ -4801,6 +4848,9 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "SMTP gönderimi kodu oluşturmak için bir özel etki alanı adresiniz olması gerekir."
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Yazılabilecek en fazla karakter sayısına ulaştınız. Lütfen iletinizi kısaltın."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Hesabınızın ya da kuruluşunuzun ödenmemiş bir faturası var. Lütfen süresi geçmiş tüm faturaları ödeyin."
@@ -5364,9 +5414,6 @@
       "Continue": [
         "İlerle"
       ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "${ PLAN_NAMES[PLANS.VPN2024] } özelliklerinin tümü"
-      ],
       "Fastest VPN servers": [
         "En hızlı VPN sunucuları"
       ],
@@ -5387,6 +5434,15 @@
       ]
     },
     "Features": {
+      "${ VPN_CONNECTIONS } devices": [
+        "${ VPN_CONNECTIONS } aygıt"
+      ],
+      "Ad-blocker and malware protection": [
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması"
+      ],
+      "All premium ${ BRAND_NAME } services": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetleri"
+      ],
       "and more premium features...": [
         "ve diğer ücretli özellikler..."
       ],
@@ -5396,11 +5452,17 @@
       "Lightning-fast speeds": [
         "Işık hızında"
       ],
+      "Lightning-fast VPN speeds": [
+        "Işık hızında VPN"
+      ],
       "NetShield Ad-blocker": [
         "NetShield reklam engelleyici"
       ],
       "Secure streaming": [
         "Güvenli yayın akışı"
+      ],
+      "Stream from Netflix, HBO, and more": [
+        "Netflix, HBO ve diğerlerinin yayın akışlarını izleyin"
       ]
     },
     "Features: Tooltip": {
@@ -5545,6 +5607,9 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } güncellendi"
+      ],
+      "Filter ${ Filter.Name } updated": [
+        "${ Filter.Name } süzgeci güncellendi"
       ]
     },
     "filter: Label": {
@@ -5605,8 +5670,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "Sistem varsayılanı"
+      ],
       "Theme font": [
         "Tema yazı tipi"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Büyük"
+      ],
+      "Medium (recommended)": [
+        "Orta (önerilen)"
+      ],
+      "Small": [
+        "Küçük"
+      ],
+      "Very large": [
+        "Çok büyük"
+      ],
+      "Very small": [
+        "Çok küçük"
       ]
     },
     "Footer": {
@@ -6706,6 +6791,9 @@
       "and": [
         "ve"
       ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Alt klasörler de silinecek. Ancak ${ nameDeleted } klasöründeki e-postalar silinmeyecek ve Tüm e-postalar klasöründe bulunabilecek."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Bu bağlantıya sahip olan herkes bu takvimdeki etkinliklerin başlık, yer veya katılımcılar gibi tüm bilgileri görebilir."
       ],
@@ -6732,6 +6820,12 @@
       ],
       "Are you sure you want to delete this filter?": [
         "Bu süzgeci silmek istediğinize emin misiniz?"
+      ],
+      "Are you sure you want to delete this folder?": [
+        "Bu klasörü silmek istediğinize emin misiniz?"
+      ],
+      "Are you sure you want to delete this label?": [
+        "Bu etiketi silmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to discard your changes?": [
         "Değişiklikleri silmek istediğinize emin misiniz?"
@@ -7002,6 +7096,9 @@
       "default email address": [
         "varsayılan e-posta adresi"
       ],
+      "Default email application": [
+        "Varsayılan e-posta uygulaması"
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Diğer tüm MX kayıtlarını silin veya ${ MAIL_APP_NAME } kaydının Priority değerinin en küçüğü olduğundan emin olun."
       ],
@@ -7142,6 +7239,9 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Çöp ve İstenmeyen klasörlerine taşınan 30 günden eski e-postalar otomatik olarak silinir."
       ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "${ nameDeleted } etiketi ile işaretlenmiş e-postalar silinmeyecek ve hala ilgili klasörde bulunabilecek."
+      ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Plus sunucularına ve özelliklerine erişiminizi sürdürmek için otomatik yenilemeyi açın."
       ],
@@ -7255,6 +7355,9 @@
       ],
       "Event invitations and responses will be sent in this language.": [
         "Etkinlik davetleri ve yanıtları bu dilde gönderilir."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "${ planOrAppName } özelliklerinin tümü"
       ],
       "Example: ${ spfExample }": [
         "Örnek: ${ spfExample }"
@@ -7456,6 +7559,9 @@
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Sorun yaşıyorsanız, size yardımcı olmak için buradayız. ${ boldPhoneCall } yapın ya da ${ boldZoomMeeting } ile destek uzmanlarımızdan biriyle görüşün."
+      ],
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Görseller, otomatik yanıt içinde kullanılmasına izin verilmediğinden kaldırıldı"
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar",
@@ -8040,9 +8146,6 @@
       "Private AI assistant": [
         "Kişisel Yapay Zeka yardımcısı"
       ],
-      "Promotion expired": [
-        "Fırsatın süresi dolmuş"
-      ],
       "Protected by Swiss privacy laws": [
         "İsviçre gizlilik yasaları tarafından korunmaktadır"
       ],
@@ -8275,9 +8378,6 @@
       "Starts on ${ startsOnTime }": [
         "Başlangıç tarihi: ${ startsOnTime }"
       ],
-      "Stay tuned for future promotions.": [
-        "Gelecekteki fırsatları kaçırmayın."
-      ],
       "Step ${ step }": [
         "${ step }. adım",
         "${ step }. adım"
@@ -8306,6 +8406,15 @@
       "Subscription auto-renews every month.": [
         "Abonelik her ay otomatik olarak yenilenir."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonelik sona eriyor: ${ planName } avantajlarınızı korumak için, aboneliğinizi Apple App Store üzerinden ${ byDate } tarihine kadar yeniden başlatın. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonelik sona eriyor: ${ planName } avantajlarınızı sürdürmek için, aboneliğinizi Google Play Store üzerinden ${ byDate } tarihine kadar yeniden başlatın. ${ reactivateLink }"
+      ],
       "Summary": [
         "Özet"
       ],
@@ -8323,6 +8432,9 @@
       ],
       "Symbols (#$&)": [
         "Simgeler (#$&)"
+      ],
+      "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
+        "Dosyalarınızı ${ DRIVE_APP_NAME } uygulamasıyla eşitleyin ve yönetin. ${ DOCS_APP_NAME } ile belgeler oluşturun, paylaşın ve güvenle saklayın. Tüm bunları ${ ios }, ${ android } ve ${ desktop } üzerinde yapın."
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Tech Radar Pro tarafından 5 üzerinden 4,2 puanla önerildi"
@@ -8471,9 +8583,6 @@
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Hizmetimizle ilgili bir sorun yaşıyorsanız ya da tarafımızdan ek bir işlem yapılmasını istiyorsanız, bu ileti destek ekibimize ulaşmayacak ${ supportLink }."
       ],
-      "This promotion link has expired.": [
-        "Bu fırsat bağlantısının süresi dolmuş."
-      ],
       "This service is not available to users signing in with single sign-on.": [
         "Bu hizmet, tek oturum açma ile oturum açan kullanıcılar tarafından kullanılamaz."
       ],
@@ -8481,7 +8590,7 @@
         "Bu pencereyi kapattığınızda bu kod yeniden görülemeyecek ve artık kimse ile paylaşamayacaksınız."
       ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
-        "Bu abonelikten ayrılma bağlantısının geçerlilik süresi dolmuş. Lütfen bu e-posta listesinden gelmiş daha yeni bir e-postayı açın."
+        "Bu aboneliği sonlandırma bağlantısının geçerlilik süresi dolmuş. Lütfen bu e-posta listesinden gelmiş daha yeni bir e-postayı açın."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Şu anda kuruluşunuzun ödemelerinden bu kullanıcı sorumludur. Bu kullanıcının yetki düzeyini düşürürseniz kuruluşunuzun ödemelerinden siz sorumlu olacaksınız."
@@ -8676,7 +8785,7 @@
         "Kaydedilmemiş değişiklikler"
       ],
       "Unsubscribe link expired": [
-        "Abonelikten ayrılma bağlantısının geçerlilik süresi dolmuş"
+        "Aboneliği sonlandırma bağlantısının geçerlilik süresi dolmuş"
       ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
@@ -8953,6 +9062,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "Yeni bir doğrulama kodu almak ister misiniz?"
+      ],
+      "Writing assistant": [
+        "Yazma yardımcısı"
       ],
       "Yearly": [
         "Yıllık"
@@ -9719,6 +9831,9 @@
       "App password": [
         "Uygulama parolası"
       ],
+      "Apply filter to existing emails": [
+        "Süzgeci var olan e-postalara uygula"
+      ],
       "Apply policy to": [
         "İlkeyi şunlara uygula"
       ],
@@ -9756,7 +9871,7 @@
         "Otomatik yanıtlama"
       ],
       "Auto-unsubscribe": [
-        "Otomatik abonelikten ayrılma"
+        "Otomatik abonelik sonlandırma"
       ],
       "Automatically save contacts": [
         "Kişileri otomatik olarak kaydet"
@@ -9855,7 +9970,7 @@
         "Oluşturucu görünümü"
       ],
       "Composer text direction": [
-        "Oluşturucu metin doğrultusu"
+        "Oluşturucunun yazı doğrultusu"
       ],
       "Config to connect to ${ serverName }": [
         "${ serverName } bağlantısı kurmak için yapılandır"
@@ -10071,7 +10186,7 @@
         "Tüm e-postalar klasöründe İstenmeyen/Çöp iletiler görüntülenmesin"
       ],
       "Expires": [
-        "Geçerlilik sonu"
+        "Geçerlilik süresi sonu"
       ],
       "File": [
         "Dosya"
@@ -10959,8 +11074,14 @@
       "privacy policy": [
         "gizlilik ilkesi"
       ],
+      "Reactivate now": [
+        "Yeniden etkinleştir"
+      ],
       "Request an invite": [
         "Davet iste"
+      ],
+      "Resume now": [
+        "Şimdi sürdür"
       ],
       "Set email address": [
         "E-posta adresini ayarla"
@@ -12434,6 +12555,9 @@
       ]
     },
     "Notification": {
+      "${ Filter.Name } created": [
+        "${ Filter.Name } eklendi"
+      ],
       "A disabled address cannot be default": [
         "Kullanımdan kaldırlmış bir adres varsayılan olamaz"
       ],
@@ -12581,6 +12705,11 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "${ appName } hoş geldiniz"
+      ]
+    },
+    "Onboarding modal": {
+      "Desktop": [
+        "Bilgisayar"
       ]
     },
     "Option": {
@@ -12768,7 +12897,7 @@
         "Kalıcı"
       ],
       "Plain text": [
-        "Düz metin"
+        "Düz yazı"
       ],
       "Receive from all": [
         "Tümünden al"
@@ -12903,7 +13032,7 @@
         "İyi bir logo seçmeye yönelik ipuçları"
       ],
       "Use a graphical icon or image rather than text.": [
-        "Metin yerine bir simge ya da görsel kullanın."
+        "Yazı yerine bir simge ya da görsel kullanın."
       ],
       "Use a solid background color.": [
         "Düz bir arka plan rengi kullanın."
@@ -13174,12 +13303,6 @@
       "Get unlimited privacy for two": [
         "İki kişi için sınırsız gizlilik sağlayın"
       ],
-      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
-        "Kurtarma bilgilerimi kaybedersem hesabıma erişimi kalıcı olarak kaybedeceğimi anladım."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
-        "${ BRAND_NAME } hesabınıza erişiminizi kaybederseniz, **Kurtarma paketiniz** oturum açmanızı ve verilerinizi kurtarmanızı sağlar."
-      ],
       "Includes:": [
         "İçindekiler:"
       ],
@@ -13191,9 +13314,6 @@
       ],
       "Install app and extension": [
         "Uygulamayı ve eklentiyi kurun"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "Hesabınızı tam olarak kurtarmanın tek yolu bu olduğundan bunu güvenli bir yerde sakladığınızdan emin olun."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "İnternet üzerinde güvende kalmak için ${ BRAND_NAME } kullanan 100 milyondan fazla kişiye katılın"
@@ -13937,11 +14057,48 @@
       ]
     },
     "RecoveryPhrase: Action": {
-      "Download PDF ${ size }": [
-        "PDF indir ${ size }"
+      "Continue": [
+        "İlerle"
       ],
-      "Reveal recovery phrase": [
-        "Kurtarma ifadesini görüntüle"
+      "Copy": [
+        "Kopyala"
+      ],
+      "Show": [
+        "Görüntüle"
+      ]
+    },
+    "RecoveryPhrase: Info": {
+      "copy recovery phrase": [
+        "kurtarma ifadesini kopyala"
+      ],
+      "Download PDF": [
+        "PDF indir"
+      ],
+      "download PDF": [
+        "PDF indir"
+      ],
+      "I understand that if I lose my recovery phrase, I may permanently lose access to my account.": [
+        "Kurtarma ifademi kaybedersem, hesabıma kalıcı olarak erişimeyeceğimi anladım."
+      ],
+      "It’s the only way to recover everything—store it safely.": [
+        "Her şeye yeniden erişmenin tek yolu budur. Güvende tutun."
+      ],
+      "Or ${ copyRecoverySwitchButton } as text.": [
+        "Ya da ${ copyRecoverySwitchButton } ile metin olarak."
+      ],
+      "Or ${ downloadRecoveryKitSwitchButton } instead.": [
+        "Ya da ${ downloadRecoveryKitSwitchButton } kullanın."
+      ],
+      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "**Kurtarma paketiniz**, hesabınız kilitlenirse ${ BRAND_NAME } hesabınıza erişmenizi sağlar."
+      ]
+    },
+    "RecoveryPhrase: Title": {
+      "Save your Recovery Kit": [
+        "Kurtarma paketinizi güncelleyin"
+      ],
+      "Save your recovery phrase": [
+        "Kurtarma ifadenizi kaydedin"
       ]
     },
     "Remark about a key type option": {
@@ -13954,7 +14111,7 @@
     },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
-        "Aboneliğinden çıktığınızda bu takvime erişemeyeceksiniz. Bu takvimdeki tüm etkinlikler hesabınızdan silinecek. Ancak özgün herkese açık bağlantı ile erişilebilir kalacaklar."
+        "Aboneliğini sonlandırdıktan sonra bu takvime erişemeyeceksiniz. Bu takvimdeki tüm etkinlikler hesabınızdan silinecek. Ancak özgün herkese açık bağlantı ile erişilebilir kalacaklar."
       ],
       "You will no longer have access to this calendar.": [
         "Bu takvime artık erişiminiz yok."
@@ -13979,7 +14136,7 @@
         "Takvimi kaldır"
       ],
       "Unsubscribe?": [
-        "Abonelikten çıkılsın mı?"
+        "Abonelik sonlandırılsın mı?"
       ]
     },
     "Remove organization logo": {
@@ -14053,9 +14210,6 @@
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
-        "Tutma süresi ${ MIN_LIFETIME } günden fazla olmalıdır"
-      ],
       "Lifetime must not be set for \"Retain All\" action": [
         "\"Tümü tutulsun\" işlemi için tutma süresi ayarlanmamalıdır"
       ],
@@ -14105,9 +14259,6 @@
       ],
       "Applies to": [
         "Şunlar için geçerlidir"
-      ],
-      "days": [
-        "gün"
       ],
       "Keep items forever": [
         "Ögeler sonsuza dek tutulsun"
@@ -14668,6 +14819,20 @@
     "session_recovery:available:action": {
       "Cancel password reset": [
         "Parola sıfırlama işlemini iptal et"
+      ],
+      "Cancel reset": [
+        "Sıfırlamayı iptal et"
+      ],
+      "Reset password": [
+        "Parolayı sıfırla"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Eski adres anahtarları ile hesap kurtarma işlemi yapılamaz"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
       ]
     },
     "session_recovery:available:info": {
@@ -14677,6 +14842,18 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Parola sıfırlama isteğinde bulunmadıysanız, bu isteği şimdi iptal edin."
       ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Parolanızı değiştirmek için oturumunuzun açık olduğu (isteğin yapıldığı oturum) aygıta geçin."
+      ],
+      "This permission expires soon": [
+        "Bu izin yakında kaldırılacak"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Artık ${ boldEmail } hesabınızın parolasını ${ boldDaysRemaining } içinde özgürce değiştirebilirsiniz."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Şimdi ${ boldEmail } hesabınızın parolasını değiştirebilirsiniz."
+      ],
       "You can now reset your password": [
         "Şimdi parolanızı sıfırlayabilirsiniz"
       ],
@@ -14684,9 +14861,34 @@
         "Parolanızı ${ boldDate } tarihinden başlayarak sıfırlayabilirsiniz."
       ]
     },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Parola kaydedildi"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Parolanızı sıfırlayın"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Parola sıfırlama işlemini iptal et"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Parola sıfırlama işlemini iptal etmek için geçerli parolanızı yazın. Başka bir değişiklik yapılmayacak."
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "Parola sıfırlama isteği iptal edildi"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Parola sıfırlama işlemi iptal edilsin mi?"
       ]
     },
     "session_recovery:cancelled:info": {
@@ -14980,6 +15182,15 @@
       "/user": [
         "/kullanıcı"
       ],
+      "1 month": [
+        "1 ay"
+      ],
+      "12 months": [
+        "12 ay"
+      ],
+      "24 months": [
+        "24 ay"
+      ],
       "30 custom email addresses": [
         "30 özel e-posta adresi"
       ],
@@ -15182,7 +15393,7 @@
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Abone olursanız, aylık ${ priceWithDiscountPerMonth }."
       ],
-      "To reedeem on your next paid subscription.": [
+      "To redeem on your next paid subscription.": [
         "Bir sonraki ücretli aboneliğinizde kullanmak için."
       ],
       "Total": [
@@ -16050,7 +16261,7 @@
         "Otomatik ödemeyi sürdür"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Ayrıca, el ile ödeme yapmayı unutursanız ve tüm ödeme yöntemleri için otomatik ödeme kapatılmışsa, hesabınızın tarifesini otomatik olarak düşürebiliriz ve bu da birçok özelliğin kaybolmasına neden olur."
+        "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Ayrıca, el ile ödeme yapmayı unutursanız ve tüm ödeme yöntemleri için otomatik ödeme kapatılmışsa, hesabınızın tarifesini otomatik olarak düşürebiliriz ve bu da birçok özelliği kaybetmenize neden olur."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Free tarifesinin depolama kotasını aşarsanız ya da diğer ücretli özellikleri kullanıyorsanız dosyaları, e-postaları veya diğer verileri sizin için otomatik olarak silemeyeceğimizden otomatik olarak tarifenizi düşüremeyiz. Otomatik ödemeyi kapatırsanız, hesabın askıya alınmasını önlemek için bir sonraki faturanızı son ödeme tarihinden önce el ile ödemeyi unutmayın."
@@ -16281,7 +16492,7 @@
         "Yazma yardımcısı ayarları güncellendi"
       ],
       "You have successfully unsubscribed": [
-        "Abonelikten ayrıldınız"
+        "Aboneliği sonlandırdınız"
       ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Geçerli bir kurtarma e-posta adresi yazdıysanız, bir dakika içinde kullanıcı adınızın bulunduğu bir e-posta alacaksınız."
@@ -16315,6 +16526,9 @@
       ]
     },
     "Success notification": {
+      "${ label.Name } removed": [
+        "${ label.Name } silindi"
+      ],
       "Address deleted": [
         "Adres silindi"
       ],
@@ -16369,6 +16583,9 @@
     "Suffix for price": {
       "per month": [
         "aylık"
+      ],
+      "per user per month": [
+        "bir kullanıcı için aylık"
       ]
     },
     "Summary of errors during export calendar": {
@@ -16564,7 +16781,7 @@
       "Account suspended": [
         "Hesap askıya alınmış"
       ],
-      "Account Temporarily Locked": [
+      "Account temporarily locked": [
         "Hesap geçici olarak kilitlendi"
       ],
       "Action": [
@@ -16612,6 +16829,9 @@
       ],
       "Add external address?": [
         "Dış e-posta adresi eklensin mi?"
+      ],
+      "Add filter": [
+        "Süzgeç ekle"
       ],
       "Add PayPal payment method": [
         "PayPal ödeme yöntemi ekle"
@@ -16929,11 +17149,17 @@
       "Delete filter?": [
         "Süzgeç silinsin mi?"
       ],
+      "Delete folder?": [
+        "Klasör silinsin mi?"
+      ],
       "Delete group?": [
         "Grup silinsin mi?"
       ],
       "Delete key permanently?": [
         "Anahtar kalıcı olarak silinsin mi?"
+      ],
+      "Delete label?": [
+        "Etiket silinsin mi?"
       ],
       "Delete organization logo?": [
         "Kuruluş logosu silinsin mi?"
@@ -17025,6 +17251,9 @@
       ],
       "Edit email address": [
         "E-posta adresini düzenle"
+      ],
+      "Edit filter": [
+        "Süzgeci düzenle"
       ],
       "Edit Gateway ${ currentName }": [
         "${ currentName } ağ geçidini düzenle"
@@ -17714,7 +17943,7 @@
         "Verilerin kaybolmasına karşı önlem alın!"
       ],
       "Text": [
-        "Metin"
+        "Yazı"
       ],
       "Theme": [
         "Tema"
@@ -18260,7 +18489,7 @@
     },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
-        "${ BRAND_NAME } kullanmayan PGP kullanıcılarıyla yazışırken iletileri imzalamak veya şifrelemek için kullanılacak varsayılan PGP ayarlarını seçin. Inline PGP için iletilerin düz metin biçiminde olması gerektiğini unutmayın."
+        "${ BRAND_NAME } kullanmayan PGP kullanıcılarıyla yazışırken iletileri imzalamak veya şifrelemek için kullanılacak varsayılan PGP ayarlarını seçin. Inline PGP için iletilerin düz yazı biçiminde olması gerektiğini unutmayın."
       ]
     },
     "Tooltip prompt to trust keys": {
@@ -18484,6 +18713,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Daha uzun süre abone olarak ${ priceString }** kadar kazanç sağlayın. Aynı ücretli özellikler, daha düşük fiyat."
       ],
+      "Advanced security for your company?": [
+        "Kuruluşunuz için gelişmiş güvenlik mi arıyorsunuz?"
+      ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Tüm ücretli ${ BRAND_NAME } hizmetleri. Aylık yalnızca ${ fallBackString } ile başlayarak"
       ],
@@ -18492,6 +18724,12 @@
       ],
       "Did you know?": [
         "Biliyor muydunuz?"
+      ],
+      "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
+        "${ VPN_APP_NAME } for Business ile kuruluşunuzun verilerinin ele geçirilmesini engelleyin."
+      ],
+      "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
+        "Siz ve sevdiğiniz için sınırsız gizlilik. Yalnızca ${ priceString }/ay ile başlayan fiyatlarla."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "${ PLAN_NAMES[plan] } ile ${ FAMILY_MAX_USERS } kişiye kadar koruyabilirsiniz. Her hesap için yalnızca ${ priceString }/ay ile başlayan fiyatlarla."
@@ -18613,9 +18851,6 @@
       "It's you": [
         "Bu sizsiniz"
       ],
-      "Lumo": [
-        "Lumo"
-      ],
       "Pending admin access": [
         "Yönetici erişimi bekleniyor"
       ],
@@ -18705,6 +18940,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } ülkede ${ numberOfServers }",
         "${ numberOfCountries } ülkede ${ numberOfServers }"
+      ],
+      "Select from ${ numberOfCountries }+ country": [
+        "${ numberOfCountries } üzerinde ülkeden birini seçin",
+        "${ numberOfCountries } üzerinde ülkeden birini seçin"
       ]
     },
     "vpn_2step: billing": {

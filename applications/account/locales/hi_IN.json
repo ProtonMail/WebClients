@@ -919,9 +919,6 @@
       "See plan features": [
         "प्लान की विशेषताएं देखें"
       ],
-      "Select ${ planTitle }": [
-        "${ planTitle } चुनें"
-      ],
       "Select a calendar to export": [
         "निर्यात के लिए एक कैलेंडर का चयन करें"
       ],
@@ -4195,10 +4192,10 @@
         "अपलोड की गई फ़ाइलें मान्य निजी कुंजी नहीं हैं। कृपया सत्यापित करें और पुनः प्रयास करें।"
       ],
       "Username must begin with a letter or digit": [
-        "यूज़रनेम की शुरुआत में अक्षर या अंक होना चाहिए"
+        "यूज़रनेम अक्षर या अंकसे शुरु होना चाहिए"
       ],
       "Username must end with a letter or digit": [
-        "यूज़रनेम के आखिर में अक्षर या अंक होना चाहिए"
+        "यूज़रनेम के अंत में अक्षर या अंक होना चाहिए"
       ],
       "Validation error": [
         "मान्यता त्रुटि"
@@ -4783,9 +4780,6 @@
       ],
       "Continue": [
         "जारी रखें"
-      ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "${ PLAN_NAMES[PLANS.VPN2024] } में सब कुछ"
       ],
       "Fastest VPN servers": [
         "सबसे तेज़ वीपीएन सर्वर"
@@ -6381,7 +6375,7 @@
         "जल्दी एक्सेस"
       ],
       "Edit email address": [
-        "ईमेल पता संपादित करें"
+        "ईमेल एड्रेस संपादित करें"
       ],
       "Edit label": [
         "लेबल बदलाव करें"
@@ -7185,9 +7179,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "दाम में आपके खाते में सेव किए चक्र वाले छूट और खत्म-नहीं कूपन, जो लागू हो सकते है, शामिल है।"
       ],
-      "Promotion expired": [
-        "प्रचार खत्म हो गया"
-      ],
       "Protected by Swiss privacy laws": [
         "स्विस निजता कानूनो से सुरक्षित रखा गया"
       ],
@@ -7396,9 +7387,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "इसे संपर्कों के साथ साझा करना शुरू करें और इसे ऑनलाइन सेवाओं के लिए उपयोग करें।"
       ],
-      "Stay tuned for future promotions.": [
-        "भविष्य के प्रचार के लिए बने रहें।"
-      ],
       "Step ${ step }": [
         "कदम ${ step }",
         "कदम ${ step }"
@@ -7579,9 +7567,6 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "यह संदेश सपोर्ट टीम तक नहीं पहुंचेगा, यदि आपको हमारी सेवा में कोई समस्या है या हमारी ओर से आगे की कार्रवाई की आवश्यकता है ${ supportLink }।"
-      ],
-      "This promotion link has expired.": [
-        "यह प्रचार लिंक खत्म हो गया।"
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "ये विंडो बंद करने के बाद ये टोकन मौजूद नही होगा, और आपको इसे किसी के साथ शेयर नहीं करना चाहिए।"
@@ -8109,7 +8094,7 @@
         "आप ये विंडो अब बंद कर सकते हैं।"
       ],
       "You can now return to the application to continue": [
-        "अब आप एप्लीकेशन पर लौट सकते हैं ताकि आप जारी रख सकें"
+        "जारी रखने के लिए एप्लीकेशन पे लौटे"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "नए ईमेल संदेश इस फ़ोल्डर में आने पर आप अलर्ट प्राप्त कर सकते हैं।"
@@ -11897,12 +11882,6 @@
       "Get unlimited privacy for two": [
         "दो व्यक्तियों के लिए असीमित निजता प्राप्त करें"
       ],
-      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
-        "मैं समझता हूँ कि अगर मैं अपनी रिकवरी विवरण खो देता हूँ, तो मैं अपने खाता तक स्थायी रूप से पहुँच खो सकता हूँ।"
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
-        "यदि आप अपने ${ BRAND_NAME } खाता से बाहर हो जाते हैं, तो आपका **रिकवरी किट** आपको साइनइन करने और अपना डाटा रिकवर करने की अनुमति देगा।"
-      ],
       "Includes:": [
         "शामिल:"
       ],
@@ -11914,9 +11893,6 @@
       ],
       "Install app and extension": [
         "ऐप और एक्सटेंशन इंस्टॉल करें"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "यह आपके खाता को पूरी तरह से रीस्टोर करने का एकमात्र तरीका है, इसलिए सुनिश्चित करें कि आप इसे कहीं सुरक्षित रखें।"
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "100 मिलियन से अधिक लोगों में शामिल हों जिन्होंने ऑनलाइन सुरक्षित रहने के लिए ${ BRAND_NAME } को चुना है"
@@ -14545,6 +14521,9 @@
       ],
       "Account suspended": [
         "खाता निलंबित"
+      ],
+      "Account temporarily locked": [
+        "अकाउंट अस्थायी समय के लिए बंद किया गया है"
       ],
       "Action": [
         "कार्य"
