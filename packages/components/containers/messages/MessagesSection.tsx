@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
 import Info from '@proton/components/components/link/Info';
@@ -34,14 +32,12 @@ const MessagesSection = () => {
         {
             ViewMode,
             StickyLabels,
-            HideEmbeddedImages,
             ConfirmLink,
             SpamAction,
             AutoDeleteSpamAndTrashDays,
             AlmostAllMail,
         } = DEFAULT_MAILSETTINGS,
     ] = useMailSettings();
-    const [hideEmbeddedImages, setHideEmbeddedImages] = useState(HideEmbeddedImages);
     const { createNotification } = useNotifications();
     const isAlmostAllMailEnabled = !!useFeature(FeatureCode.AlmostAllMail).feature?.Value;
     const dispatch = useDispatch();
@@ -50,8 +46,6 @@ const MessagesSection = () => {
     const [loadingViewMode, withLoadingViewMode] = useLoading();
     const [loadingStickyLabels, withLoadingStickyLabels] = useLoading();
     const [loadingSpamAction, withLoadingSpamAction] = useLoading();
-
-    const handleChangeHideEmbedded = (newValue: number) => setHideEmbeddedImages(newValue);
 
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
@@ -90,11 +84,7 @@ const MessagesSection = () => {
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight isToggleContainer>
-                    <EmbeddedToggle
-                        id="embeddedToggle"
-                        hideEmbeddedImages={hideEmbeddedImages}
-                        onChange={handleChangeHideEmbedded}
-                    />
+                    <EmbeddedToggle id="embeddedToggle" />
                 </SettingsLayoutRight>
             </SettingsLayout>
             <SettingsLayout>

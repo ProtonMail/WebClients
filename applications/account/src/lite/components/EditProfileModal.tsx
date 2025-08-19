@@ -3,22 +3,24 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { updateAddressThunk } from '@proton/account/addresses/updateAddress';
 import { Button } from '@proton/atoms';
-import type { EditorActions, ModalProps } from '@proton/components';
 import {
     Editor,
+    type EditorActions,
     Form,
     InputFieldTwo,
+    type ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    useApi,
+    useErrorHandler,
     useFormErrors,
 } from '@proton/components';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import useLoading from '@proton/hooks/useLoading';
-import { updateAddress } from '@proton/shared/lib/api/addresses';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address } from '@proton/shared/lib/interfaces';
 
 interface Props extends ModalProps {
@@ -26,23 +28,23 @@ interface Props extends ModalProps {
 }
 
 const EditProfileModal = ({ address, ...rest }: Props) => {
+    const dispatch = useDispatch();
     const [displayName, setDisplayName] = useState(address.DisplayName);
     const [signature, setSignature] = useState(address.Signature);
-    const api = useApi();
     const [submitting, withLoading] = useLoading();
     const { onFormSubmit } = useFormErrors();
     const { openEmojiPickerRef, toolbarConfig, setToolbarConfig, modalLink, modalImage, modalDefaultFont } = useToolbar(
         {}
     );
+    const handleError = useErrorHandler();
 
     const handleSubmit = async () => {
-        await api(
-            updateAddress(address.ID, {
-                DisplayName: displayName,
-                Signature: signature,
-            })
-        );
-        rest.onClose?.();
+        try {
+            await dispatch(updateAddressThunk({ address, displayName, signature }));
+            rest.onClose?.();
+        } catch (e) {
+            handleError(e);
+        }
     };
     const handleClose = submitting ? undefined : rest.onClose;
     const handleReady = (actions: EditorActions) => {
@@ -69,6 +71,7 @@ const EditProfileModal = ({ address, ...rest }: Props) => {
                     id="displayName"
                     autoFocus
                     value={displayName}
+                    placeholder={c('Placeholder').t`Choose display name`}
                     maxLength={255}
                     onValue={setDisplayName}
                     label={c('Label').t`New display name`}
