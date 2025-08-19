@@ -3,8 +3,8 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import webpack from 'webpack';
 
-import { type WebpackEnvArgumentsV2, getWebpackOptions } from '@proton/pack/lib/configV2';
-import { addDevEntry, getConfigV2 } from '@proton/pack/webpack.config';
+import { type WebpackEnvArguments, getWebpackOptions } from '@proton/pack/lib/config';
+import { addDevEntry, getConfig } from '@proton/pack/webpack.config';
 import { getIndexChunks } from '@proton/pack/webpack/entries';
 
 import appConfig from './appConfig';
@@ -13,9 +13,9 @@ import appConfig from './appConfig';
  * There are some specific references to Buffer in the drive application,
  * e.g. MimeTypes so it has to be polyfilled
  */
-const result = (opts: WebpackEnvArgumentsV2): webpack.Configuration => {
+const result = (opts: WebpackEnvArguments): webpack.Configuration => {
     const webpackOptions = getWebpackOptions(opts, { appConfig });
-    const config = getConfigV2(webpackOptions);
+    const config = getConfig(webpackOptions);
 
     config.plugins = config.plugins || [];
 
