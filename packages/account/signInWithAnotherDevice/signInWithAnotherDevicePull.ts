@@ -316,7 +316,7 @@ export const signInWithAnotherDevicePull = ({
 }) => {
     const signal = abortController.signal;
     let start: undefined | (() => void);
-    let initTime = Date.now();
+    const initTime = Date.now();
 
     const handleSuccess: PollArguments['onSuccess'] = ({ session, forkData }) => {
         if (signal.aborted) {

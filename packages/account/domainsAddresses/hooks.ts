@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
 
-import { Action, ThunkDispatch, createSelector } from '@reduxjs/toolkit';
+import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
+import { createSelector } from '@reduxjs/toolkit';
 
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 
-import { DomainAddressesState, domainAddressesThunk, selectDomainAddresses } from './index';
+import type { DomainAddressesState } from './index';
+import { domainAddressesThunk, selectDomainAddresses } from './index';
 
 interface Result {
     value: {
