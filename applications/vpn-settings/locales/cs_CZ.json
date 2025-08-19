@@ -639,8 +639,8 @@
       "See plan features": [
         "Zobrazit funkce tarifu"
       ],
-      "Select ${ planTitle }": [
-        "Vybrat ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Vybrat ${ planOrAppName }"
       ],
       "Select city ${ city }": [
         "Vybrat město ${ city }"
@@ -3154,9 +3154,6 @@
       "Continue": [
         "Pokračovat"
       ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "Vše v ${ PLAN_NAMES[PLANS.VPN2024] }"
-      ],
       "Fastest VPN servers": [
         "Nejrychlejší servery VPN"
       ],
@@ -4276,6 +4273,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "Pro změnu hesla zadejte svoji obnovovací frázi."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Vše v ${ planOrAppName }"
       ],
       "Example: ${ spfExample }": [
         "Příklad: ${ spfExample }"
@@ -8429,9 +8429,6 @@
       "Applies to": [
         "Použito na"
       ],
-      "days": [
-        "dnů"
-      ],
       "Keep items forever": [
         "Uchovávat položky navždy"
       ],
@@ -9849,6 +9846,9 @@
       "Account suspended": [
         "Účet pozastaven"
       ],
+      "Account temporarily locked": [
+        "Účet dočasně uzamčen"
+      ],
       "Action": [
         "Akce"
       ],
@@ -11088,9 +11088,6 @@
       ],
       "It's you": [
         "To jsi ty"
-      ],
-      "Lumo": [
-        "Lumo"
       ],
       "Pending admin access": [
         "Čeká se na vyřízení správcovského přístupu"
