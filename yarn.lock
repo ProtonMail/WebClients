@@ -8886,7 +8886,7 @@ __metadata:
     dedent: "npm:^1.6.0"
     esbuild-loader: "npm:^4.3.0"
     eslint: "npm:^8.57.1"
-    eslint-webpack-plugin: "npm:^4.2.0"
+    eslint-webpack-plugin: "npm:^5.0.2"
     execa: "npm:^5.1.1"
     favicons: "npm:^7.2.0"
     favicons-webpack-plugin: "npm:^6.0.1"
@@ -13618,23 +13618,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:*":
+"@types/eslint@npm:*, @types/eslint@npm:^9.6.1":
   version: 9.6.1
   resolution: "@types/eslint@npm:9.6.1"
   dependencies:
     "@types/estree": "npm:*"
     "@types/json-schema": "npm:*"
   checksum: 10c0/69ba24fee600d1e4c5abe0df086c1a4d798abf13792d8cfab912d76817fe1a894359a1518557d21237fbaf6eda93c5ab9309143dee4c59ef54336d1b3570420e
-  languageName: node
-  linkType: hard
-
-"@types/eslint@npm:^8.56.10":
-  version: 8.56.12
-  resolution: "@types/eslint@npm:8.56.12"
-  dependencies:
-    "@types/estree": "npm:*"
-    "@types/json-schema": "npm:*"
-  checksum: 10c0/e4ca426abe9d55f82b69a3250bec78b6d340ad1e567f91c97ecc59d3b2d6a1d8494955ac62ad0ea14b97519db580611c02be8277cbea370bdfb0f96aa2910504
   languageName: node
   linkType: hard
 
@@ -24227,19 +24217,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-webpack-plugin@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "eslint-webpack-plugin@npm:4.2.0"
+"eslint-webpack-plugin@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "eslint-webpack-plugin@npm:5.0.2"
   dependencies:
-    "@types/eslint": "npm:^8.56.10"
+    "@types/eslint": "npm:^9.6.1"
+    flatted: "npm:^3.3.3"
     jest-worker: "npm:^29.7.0"
-    micromatch: "npm:^4.0.5"
+    micromatch: "npm:^4.0.8"
     normalize-path: "npm:^3.0.0"
-    schema-utils: "npm:^4.2.0"
+    schema-utils: "npm:^4.3.0"
   peerDependencies:
     eslint: ^8.0.0 || ^9.0.0
     webpack: ^5.0.0
-  checksum: 10c0/cf5c9b7afa3c025fffadb3e1451e7a55d914c3070614bb4d57f887774d164ca4298bb777f7c3afa16f47af9869174a19d6aebb4d1ca719bc2cc49f2eccd71a3b
+  checksum: 10c0/29b8ad12ceb0cb8efeccb10d02131042ae95f9c0fdcc612c0cc9c239cb481b677de745f195e789ac0500d5f05bd09d39a36da82299d404c14c68982938a880b1
   languageName: node
   linkType: hard
 
