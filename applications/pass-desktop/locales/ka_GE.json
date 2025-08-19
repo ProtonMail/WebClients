@@ -1269,8 +1269,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "სისტემის ნაგულისხმევი"
+      ],
       "Theme font": [
         "თემის ფონტი"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "დიდი"
+      ],
+      "Medium (recommended)": [
+        "საშუალო (რეკომენდებული)"
+      ],
+      "Small": [
+        "პატარა"
+      ],
+      "Very large": [
+        "ძალიან დიდი"
+      ],
+      "Very small": [
+        "ძალიან პატარა"
       ]
     },
     "Info": {
@@ -3744,6 +3764,9 @@
       ]
     },
     "PassOnboardingOffer": {
+      "${ plusTitle } Lifetime for ${ plusLifetimePrice }": [
+        "${ plusTitle } Lifetime ფასით ${ plusLifetimePrice }"
+      ],
       "${ price }/month": [
         "${ price } /თვეში"
       ]
