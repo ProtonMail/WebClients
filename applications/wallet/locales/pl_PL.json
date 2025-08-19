@@ -259,9 +259,6 @@
       "Secure your wallet": [
         "Zabezpiecz portfel"
       ],
-      "Select ${ planTitle }": [
-        "Wybierz ${ planTitle }"
-      ],
       "Set recovery methods": [
         "Ustaw metody odzyskiwania"
       ],
@@ -443,9 +440,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Możesz mieć do ${ TRIAL_MAX_DEDICATED_IPS } dedykowanych serwerów w okresie próbnym."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Możesz mieć do ${ TRIAL_MAX_LUMO_SEATS } miejsc Lumo w okresie próbnym."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Możesz mieć do ${ TRIAL_MAX_SCRIBE_SEATS } miejsc Scribe w okresie próbnym."
@@ -2246,18 +2240,6 @@
       "Address copied to clipboard": [
         "Adres został skopiowany do schowka"
       ],
-      "Admin account allocation": [
-        "Przestrzeń dyskowa administratora"
-      ],
-      "Allocated": [
-        "Przydzielona"
-      ],
-      "Already allocated": [
-        "Już przydzielona"
-      ],
-      "Already used": [
-        "Już używana"
-      ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
       ],
@@ -2489,18 +2471,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Zacznij udostępniać go kontaktom i korzystać z niego w usługach online."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Przestrzeń dyskowa przydzielona do innych użytkowników organizacji"
-      ],
-      "Storage allocated to this user": [
-        "Przestrzeń dyskowa przydzielona do użytkownika"
-      ],
-      "Storage for users": [
-        "Przestrzeń dyskowa dla użytkowników"
-      ],
-      "Storage used by this user": [
-        "Przestrzeń dyskowa używana przez użytkownika"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Wyślij środki na poniższy adres lub zeskanuj kod QR. Wpłata zostanie zaksięgowana na koncie po potwierdzeniu."
       ],
@@ -2672,9 +2642,6 @@
         "${ n } miesiące",
         "${ n } miesięcy",
         "${ n } miesiąca"
-      ],
-      "Account storage": [
-        "Przestrzeń dyskowa konta"
       ],
       "Address": [
         "Adres"
@@ -4228,9 +4195,6 @@
     "Title": {
       "${ feature } is now active": [
         "Funkcja ${ feature } jest aktywna"
-      ],
-      "Account Temporarily Locked": [
-        "Konto zostało tymczasowo zablokowane"
       ],
       "Add credit/debit card": [
         "Dodaj kartę płatniczą"

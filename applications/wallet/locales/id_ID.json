@@ -145,6 +145,9 @@
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
+      "Go to ${ planOrAppName }": [
+        "Tuju ${ planOrAppName }"
+      ],
       "Got it": [
         "Dimengerti"
       ],
@@ -253,8 +256,8 @@
       "Secure your wallet": [
         "Amankan dompet Anda"
       ],
-      "Select ${ planTitle }": [
-        "Pilih ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Pilih ${ planOrAppName }"
       ],
       "Set recovery methods": [
         "Atur metode pemulihan"
@@ -425,6 +428,11 @@
     "Balance": {
       "Loading balance": [
         "Memuat saldo"
+      ]
+    },
+    "bf2023: Deal details": {
+      "Premium Password Manager": [
+        "Pengelola Kata Sandi Premium"
       ]
     },
     "BF2024: Deal details": {
@@ -1887,6 +1895,9 @@
       "Payment process not supported": [
         "Proses pembayaran tidak didukung"
       ],
+      "Please select a country": [
+        "Silakan pilih negara"
+      ],
       "Process aborted": [
         "Proses dibatalkan"
       ],
@@ -2150,18 +2161,6 @@
       "Address copied to clipboard": [
         "Alamat disalin ke papan klip"
       ],
-      "Admin account allocation": [
-        "Alokasi akun admin"
-      ],
-      "Allocated": [
-        "Dialokasikan"
-      ],
-      "Already allocated": [
-        "Telah dialokasikan"
-      ],
-      "Already used": [
-        "Telah digunakan"
-      ],
       "American Express SafeKey logo": [
         "Logo American Express Safekey"
       ],
@@ -2263,6 +2262,9 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Masukkan kata sandi Anda (selaku kontak terpercaya)"
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Segalanya di ${ planOrAppName }"
       ],
       "Expired": [
         "Kedaluwarsa"
@@ -2383,18 +2385,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Mulai membagikan dengan kontak Anda dan gunakan untuk layanan daring."
-      ],
-      "Storage allocated to other users in this organisation": [
-        "Ruang penyimpanan yang dialokasikan kepada pengguna lain di dalam organisasi ini"
-      ],
-      "Storage allocated to this user": [
-        "Ruang penyimpanan yang dialokasikan kepada pengguna ini"
-      ],
-      "Storage for users": [
-        "Ruang penyimpanan untuk anggota"
-      ],
-      "Storage used by this user": [
-        "Ruang penyimpanan yang digunakan oleh pengguna ini"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Kirimkan deposit melalui alamat berikut atau pindai kode QR di bawah ini. Deposit Anda akan muncul pada akun setelah terkonfirmasi."
@@ -2546,9 +2536,6 @@
       ],
       "${ n } month": [
         "${ n } bulan"
-      ],
-      "Account storage": [
-        "Penyimpanan akun"
       ],
       "Address": [
         "Alamat"
