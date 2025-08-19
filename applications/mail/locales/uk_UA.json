@@ -486,9 +486,6 @@
       "See plan features": [
         "Переглянути можливості тарифного плану"
       ],
-      "Select ${ planTitle }": [
-        "Оберіть ${ planTitle }"
-      ],
       "Select all": [
         "Вибрати все"
       ],
@@ -3010,9 +3007,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Перевірка адреси з довіреними ключами увімкнена для цієї адреси. Щоб мати змогу надсилати на цю адресу, спочатку зробіть довіреними відкриті ключі, які можна використовувати для надсилання."
       ],
-      "Admin account allocation": [
-        "Розподілення для облікового запису адміністратора"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Усі (${ totalFoldersCount } тека)",
         "Усі (${ totalFoldersCount } теки)",
@@ -3027,15 +3021,6 @@
       ],
       "All your changes will be lost.": [
         "Всі зміни будуть втрачені."
-      ],
-      "Allocated": [
-        "Розподілено"
-      ],
-      "Already allocated": [
-        "Вже розподілено"
-      ],
-      "Already used": [
-        "Вже використано"
       ],
       "American Express SafeKey logo": [
         "Логотип American Express SafeKey"
@@ -3466,18 +3451,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Почніть ділитися ним з контактами та використовуйте його для онлайн-сервісів."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Обсяг сховища, розподілений між іншими користувачами в цій організації"
-      ],
-      "Storage allocated to this user": [
-        "Обсяг сховища, розподілений для цього користувача"
-      ],
-      "Storage for users": [
-        "Сховище для користувачів"
-      ],
-      "Storage used by this user": [
-        "Сховище, використане цим користувачем"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Відправте депозит за вказаною адресою або скануйте QR-код. Після підтвердження ваш депозит буде врахований у вашому рахунку."
       ],
@@ -3749,9 +3722,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Тимчасово недоступно. Повторіть спробу пізніше.)"
-      ],
-      "Account storage": [
-        "Сховище облікового запису"
       ],
       "Add email address": [
         "Додати адресу е-пошти"

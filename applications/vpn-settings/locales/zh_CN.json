@@ -639,9 +639,6 @@
       "See plan features": [
         "查看套餐内容"
       ],
-      "Select ${ planTitle }": [
-        "开通 ${ planTitle }"
-      ],
       "Select city ${ city }": [
         "选择城市 ${ city }"
       ],
@@ -1255,7 +1252,7 @@
         "用户 ${ users }"
       ],
       "Total for ${ n } month": [
-        "${ n } 月合计"
+        "每${ n }月支付"
       ]
     },
     "Checkout summary": {
@@ -3098,9 +3095,6 @@
       "Continue": [
         "继续"
       ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "一切尽在 ${ PLAN_NAMES[PLANS.VPN2024] }"
-      ],
       "Fastest VPN servers": [
         "高速 VPN 服务器"
       ],
@@ -3514,7 +3508,7 @@
     },
     "Info": {
       " and other security features.": [
-        "以及其他安全功能。"
+        " 以及其他安全功能。"
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers } / ${ totalUsers } 的用户目前可以访问共享服务器。"
@@ -10537,9 +10531,6 @@
       ],
       "It's you": [
         "这是您"
-      ],
-      "Lumo": [
-        "Lumo"
       ],
       "Pending admin access": [
         "等待管理员访问"

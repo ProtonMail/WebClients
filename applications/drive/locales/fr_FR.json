@@ -448,8 +448,8 @@
       "Go back to album “${ albumName }“": [
         "Retourner à l’album « ${ albumName } »"
       ],
-      "Go to ${ DRIVE_SHORT_APP_NAME }": [
-        "Accéder à ${ DRIVE_SHORT_APP_NAME }"
+      "Go to ${ planOrAppName }": [
+        "Accéder à ${ planOrAppName }"
       ],
       "Go to label": [
         "Afficher le label"
@@ -799,8 +799,8 @@
       "See version history": [
         "Afficher l'historique des versions"
       ],
-      "Select ${ planTitle }": [
-        "Sélectionner ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Sélectionner ${ planOrAppName }"
       ],
       "Select all": [
         "Tout sélectionner"
@@ -1099,9 +1099,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_DEDICATED_IPS } serveur dédié maximum pendant la version d'essai."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Vous pouvez bénéficier de ${ TRIAL_MAX_LUMO_SEATS } accès maximum à Lumo pendant la période d’essai."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_SCRIBE_SEATS } accès maximum à Scribe pendant la période d’essai."
@@ -3670,9 +3667,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La vérification d’adresse avec les clés approuvées est activée pour cette adresse. Pour être en mesure d’envoyer à cette adresse, commencez par approuver des clés publiques pouvant être utilisées pour l’envoi."
       ],
-      "Admin account allocation": [
-        "Attribution de compte administrateur"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Tous (${ totalFoldersCount } dossier)",
         "Tous (${ totalFoldersCount } dossiers)"
@@ -3683,15 +3677,6 @@
       ],
       "All your changes will be lost.": [
         "Toutes vos modifications seront perdues."
-      ],
-      "Allocated": [
-        "Alloué"
-      ],
-      "Already allocated": [
-        "Déjà alloué"
-      ],
-      "Already used": [
-        "Déjà utilisé"
       ],
       "Also try looking in Trash.": [
         "Vérifiez aussi dans le dossier Corbeille."
@@ -4016,6 +4001,9 @@
       ],
       "Estimating time remaining...": [
         "Estimation du temps restant en cours"
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Tout ce qui est inclus dans ${ planOrAppName }"
       ],
       "Expired": [
         "Expiré"
@@ -4650,23 +4638,17 @@
       "Start sharing it with contacts and use it for online services.": [
         "Commencez à la partager avec vos contacts et utilisez-la pour les services en ligne."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Espace de stockage alloué à d'autres utilisateurs de cette organisation"
-      ],
-      "Storage allocated to this user": [
-        "Espace de stockage alloué à cet utilisateur"
-      ],
-      "Storage for users": [
-        "Espace de stockage pour les utilisateurs"
-      ],
-      "Storage used by this user": [
-        "Espace de stockage utilisé par cet utilisateur"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faites un versement en utilisant l'adresse suivante ou scannez le code QR. Votre versement sera affiché sur votre compte après confirmation."
       ],
       "Subscription auto-renews every month.": [
         "L'abonnement est renouvelé automatiquement tous les mois."
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Fin de l'abonnement : Pour conserver vos avantages ${ planName }, veuillez renouveler votre abonnement dans l'Appli Store d'Apple avant le ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Fin de l'abonnement : Pour conserver les avantages de votre ${ planName }, veuillez renouveler votre abonnement dans le Google Play Store avant le ${ byDate }. ${ reactivateLink }"
       ],
       "Symbols (#$&)": [
         "Symboles (#$&)"
@@ -5232,9 +5214,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible, nous vous invitons à vérifier plus tard)"
-      ],
-      "Account storage": [
-        "Espace de stockage du compte"
       ],
       "Add email address": [
         "Ajouter une adresse e-mail"
@@ -5891,6 +5870,9 @@
       ],
       "Request an invite": [
         "Demander une invitation"
+      ],
+      "Resume now": [
+        "Reprendre à présent"
       ],
       "settings": [
         "paramètres"
@@ -7150,6 +7132,14 @@
       "Root folder failed to be loaded": [
         "Le dossier racine n'a pas pu être chargé."
       ],
+      "Selected item was not removed from your list": [
+        "L'élément sélectionné n'a pas été supprimé votre liste",
+        "Les éléments sélectionnés n'ont pas pu être supprimés de votre liste."
+      ],
+      "Selected items were successfully removed from your list": [
+        "La suppression des éléments sélectionnés de votre liste ont été prises en charge",
+        "La suppression des éléments sélectionnés de votre liste ont été prises en charge"
+      ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Les photos sélectionnées sont déjà dans « ${ albumName } »."
       ],
@@ -7186,14 +7176,6 @@
       ],
       "The spreadsheet failed to be created": [
         "La feuille de calcul n'a pas pu être créée."
-      ],
-      "This item was not removed from your list": [
-        "Cet élément n'a pas été retiré de votre liste.",
-        "Certains éléments n'ont pas été retirés de votre liste."
-      ],
-      "This item was successfully removed from your list": [
-        "Cet élément a été retiré de votre liste.",
-        "Tous les éléments ont été retirés de votre liste."
       ],
       "Trash failed to be emptied": [
         "Le dossier Corbeille n'a pas pu être vidé."
@@ -8342,7 +8324,7 @@
       "Account recovery": [
         "Récupération du compte"
       ],
-      "Account Temporarily Locked": [
+      "Account temporarily locked": [
         "Compte temporairement verrouillé"
       ],
       "Active": [

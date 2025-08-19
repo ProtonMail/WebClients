@@ -75,6 +75,14 @@
         "請求書を確認"
       ]
     },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } デスクトップアプリ"
+      ],
+      "Use your own email domain": [
+        "独自メールドメインを使用する"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "アブハジア"
@@ -955,8 +963,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "システムのデフォルト"
+      ],
       "Theme font": [
         "テーマ フォント"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "大"
+      ],
+      "Medium (recommended)": [
+        "中 (推奨)"
+      ],
+      "Small": [
+        "小"
+      ],
+      "Very large": [
+        "特大"
+      ],
+      "Very small": [
+        "極小"
       ]
     },
     "Human verification method": {
@@ -1006,6 +1034,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "(組織管理者としての)パスワードを入力してください。"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "(信頼済みの連絡先としての)パスワードを入力してください。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
@@ -1089,6 +1120,9 @@
       ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
+      ],
+      "Your password (trusted contact)": [
+        "パスワード (信頼済みの連絡先)"
       ]
     },
     "Link": {
@@ -1105,6 +1139,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
       "${ n } custom email domain": [
         "${ n } 件の独自メールドメイン"
       ],
@@ -1167,6 +1204,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "メールクライアント対応 (IMAP/SMTP 経由)"
+      ],
+      "Email groups": [
+        "メールグループ"
       ],
       "Encrypted contact details": [
         "暗号化された連絡先の詳細"
@@ -1240,6 +1280,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "最大 ${ n } 個のメール アドレス/エイリアスを作成し、家族に割り当てることができます。 これらはオンライン Id に使用します。\n例: ショッピングアカウントのJohnShopper@${ domain }。"
+      ],
+      "Email everyone in a group with a single email address": [
+        "一つのメールアドレスでグループ全員にメール"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "メールアドレスが存在しない、存在しなくなった、入力ミスがあった場合などでも、あなたのドメイン宛に送信されたすべてのメールを受信できます"
@@ -1353,6 +1396,9 @@
       ]
     },
     "Title": {
+      "Account temporarily locked": [
+        "アカウントが一時的にロックされています"
+      ],
       "Enter 2FA code": [
         "2要素認証コードを入力"
       ],

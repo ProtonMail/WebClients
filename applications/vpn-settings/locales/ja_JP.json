@@ -354,6 +354,9 @@
       "Explore ${ target }": [
         "${ target }を探索"
       ],
+      "Explore business plans": [
+        "ビジネスプランを探索する"
+      ],
       "Explore group plans": [
         "グループプランを探索"
       ],
@@ -381,6 +384,9 @@
       "Generate password": [
         "パスワードを生成"
       ],
+      "Get ${ planOrAppName }": [
+        "${ planOrAppName } を入手"
+      ],
       "Get a new encrypted email address": [
         "新しい暗号化メールアドレスを取得する"
       ],
@@ -407,6 +413,9 @@
       ],
       "Get verification code": [
         "認証コードを取得"
+      ],
+      "Go to ${ planOrAppName }": [
+        "${ planOrAppName }へ移動"
       ],
       "Go to label": [
         "ラベルへ移動"
@@ -488,6 +497,9 @@
       ],
       "More options": [
         "詳細設定を表示"
+      ],
+      "More options for accounts": [
+        "アカウントのその他のオプション"
       ],
       "Need help?": [
         "お困りですか?"
@@ -645,8 +657,8 @@
       "See plan features": [
         "プランの機能を見る"
       ],
-      "Select ${ planTitle }": [
-        "${ planTitle } を選択"
+      "Select ${ planOrAppName }": [
+        "${ planOrAppName } を選択"
       ],
       "Select city ${ city }": [
         "都市 ${ city }を選択"
@@ -1017,6 +1029,14 @@
         "新しいメール"
       ]
     },
+    "anniversary_2025: Offers": {
+      "12 months": [
+        "12 か月"
+      ],
+      "24 months": [
+        "24 か月"
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "無効"
@@ -1078,6 +1098,17 @@
     "bf2023: Title": {
       "Offer unavailable": [
         "オファーは利用できません"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } デスクトップアプリ"
+      ],
+      "Ad-blocker and malware protection": [
+        "広告ブロックとマルウェア保護"
+      ],
+      "Use your own email domain": [
+        "独自メールドメインを使用する"
       ]
     },
     "Billing cycle": {
@@ -1147,6 +1178,9 @@
       ],
       "Protect your whole household with 1 device": [
         "1 台のデバイスで家庭全体を保護"
+      ],
+      "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
+        "すべての主要なプラットフォームから ${ PLAN_NAMES[PLANS.VPN2024] }でストリーミングします。"
       ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "この記事は、WireGuardおよびステルスVPNプロトコルを含むように更新されました。"
@@ -1253,6 +1287,9 @@
       ],
       "Discover and set up features": [
         "機能の発見と設定"
+      ],
+      "Maybe later": [
+        "たぶんあとで"
       ],
       "Remind me later": [
         "後で通知する"
@@ -2576,12 +2613,20 @@
         "確認メールが ${ address } に送信されました"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "信頼済みの連絡先"
+      ]
+    },
     "Empty group name": {
       "Unnamed": [
         "不明"
       ]
     },
     "Error": {
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "あなたのユーザー名は${ user.Name }です。 ${ emailAddress }を作成するには、設定 > 署名とアドレス > 短縮ドメイン (@pm.me) に移動してください。"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "すべてのストレージ容量が割り当てられています。他のユーザーに割り当てられたストレージ容量を小さくしてください。"
       ],
@@ -2761,6 +2806,12 @@
       ],
       "Please generate keys before you try to change your password": [
         "パスワードを変更する前に鍵を生成してください"
+      ],
+      "Please select a country": [
+        "国を選択してください"
+      ],
+      "Please select a state": [
+        "州を選択してください"
       ],
       "Please select at least one location before continuing.": [
         "続行する前に少なくとも1つの場所を選択してください。"
@@ -3118,9 +3169,6 @@
       "Continue": [
         "続ける"
       ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "${ PLAN_NAMES[PLANS.VPN2024] } のすべての機能を含みます"
-      ],
       "Fastest VPN servers": [
         "最速の VPN サーバー"
       ],
@@ -3141,6 +3189,15 @@
       ]
     },
     "Features": {
+      "${ VPN_CONNECTIONS } devices": [
+        "${ VPN_CONNECTIONS } 台のデバイス"
+      ],
+      "Ad-blocker and malware protection": [
+        "広告ブロックとマルウェア保護"
+      ],
+      "All premium ${ BRAND_NAME } services": [
+        "すべてのプレミアム ${ BRAND_NAME } サービス"
+      ],
       "and more premium features...": [
         "そして更に、プレミアムな機能が..."
       ],
@@ -3150,11 +3207,17 @@
       "Lightning-fast speeds": [
         "最高速の速度"
       ],
+      "Lightning-fast VPN speeds": [
+        "最高速のVPN速度"
+      ],
       "NetShield Ad-blocker": [
         "NetShield による広告ブロック"
       ],
       "Secure streaming": [
         "安全なストリーミング"
+      ],
+      "Stream from Netflix, HBO, and more": [
+        "Netflix、HBOなどからのストリーム"
       ]
     },
     "Features: Tooltip": {
@@ -3325,8 +3388,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "システムのデフォルト"
+      ],
       "Theme font": [
         "テーマ フォント"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "大"
+      ],
+      "Medium (recommended)": [
+        "中 (推奨)"
+      ],
+      "Small": [
+        "小"
+      ],
+      "Very large": [
+        "特大"
+      ],
+      "Very small": [
+        "極小"
       ]
     },
     "Footer": {
@@ -3658,6 +3741,9 @@
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } 人のメンバー)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } /月)"
       ],
       "(default)": [
         "（デフォルト）"
@@ -4139,6 +4225,9 @@
       "Enter your own password (as organization admin).": [
         "(組織管理者としての)パスワードを入力してください。"
       ],
+      "Enter your own password (as trusted contact).": [
+        "(信頼済みの連絡先としての)パスワードを入力してください。"
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "回復用メールアドレスを入力してください。ユーザー名またはメールアドレスを送信します。"
       ],
@@ -4147,6 +4236,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "今すぐパスワードを変更するには、回復用フレーズを入力してください。"
+      ],
+      "Everything in ${ planOrAppName }": [
+        "${ planOrAppName } のすべての機能を含みます"
       ],
       "Example: ${ spfExample }": [
         "例: ${ spfExample }"
@@ -4553,6 +4645,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "専用サーバーをゲートウェイに編成し、どのメンバーがアクセスできるかを決定します。"
       ],
+      "Other accounts": [
+        "その他のアカウント"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "組織に他の管理者がいる場合、あなたの責任で新しいパスワードを伝えてください。"
       ],
@@ -4807,6 +4902,15 @@
       ],
       "Subscription auto-renews every month.": [
         "サブスクリプションは毎月自動更新されます。"
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "サブスクリプションがもうすぐ終了します: ${ planName }の特典を維持するには${ byDate }までに更新してください。${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "サブスクリプションの終了: お客様の${ planName }の特典を維持するには、${ byDate }までにApple App Storeでサブスクリプションを再開してください。${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "サブスクリプションの終了: ${ planName } の特典を維持するには、${ byDate } までに Google Play ストアでサブスクリプションを再開してください。${ reactivateLink }"
       ],
       "Summary": [
         "概要"
@@ -5236,6 +5340,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "新しい認証コードを受け取りますか?"
+      ],
+      "Writing assistant": [
+        "執筆アシスタント"
       ],
       "You already have a free account": [
         "あなたはすでに無料アカウントをお持ちです"
@@ -6156,6 +6263,9 @@
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
       ],
+      "Your password (trusted contact)": [
+        "パスワード (信頼済みの連絡先)"
+      ],
       "ZIP code": [
         "郵便番号"
       ]
@@ -6343,8 +6453,14 @@
       "Privacy policy": [
         "プライバシーポリシー"
       ],
+      "Reactivate now": [
+        "今すぐ再アクティブ"
+      ],
       "Request an invite": [
         "招待をリクエスト"
+      ],
+      "Resume now": [
+        "今すぐ再開"
       ],
       "settings": [
         "設定"
@@ -6647,6 +6763,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
       "${ n } calendar": [
         "${ n } 個のカレンダー"
       ],
@@ -6790,6 +6909,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "メールクライアント対応 (IMAP/SMTP 経由)"
+      ],
+      "Email groups": [
+        "メールグループ"
       ],
       "Enables HIPAA compliance": [
         "HIPAA コンプライアンス準拠"
@@ -7129,6 +7251,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "家族、友人、同僚とカレンダーを簡単に共有できます。"
+      ],
+      "Email everyone in a group with a single email address": [
+        "一つのメールアドレスでグループ全員にメール"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "メールアドレスが存在しない、存在しなくなった、入力ミスがあった場合などでも、あなたのドメイン宛に送信されたすべてのメールを受信できます"
@@ -8136,8 +8261,8 @@
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
-        "期間は${ MIN_LIFETIME }日よりも長く設定してください。"
+      "Lifetime must be greater than ${ MIN_LIFETIME } day": [
+        "期間は ${ MIN_LIFETIME } 日よりも長く設定してください。"
       ],
       "Lifetime must not be set for \"Retain All\" action": [
         "「すべて保持」アクションには、期間を設定できません。"
@@ -8188,7 +8313,7 @@
       "Applies to": [
         "適用先"
       ],
-      "days": [
+      "day": [
         "日"
       ],
       "Keep items forever": [
@@ -8483,6 +8608,20 @@
     "session_recovery:available:action": {
       "Cancel password reset": [
         "パスワードリセットをキャンセルする"
+      ],
+      "Cancel reset": [
+        "リセットをキャンセル"
+      ],
+      "Reset password": [
+        "パスワードをリセット"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "旧式のアドレスキーに対してはアカウントの回復が利用できません。"
+      ],
+      "Please generate keys before you try to change your password": [
+        "パスワードを変更する前に、キーを生成してください。"
       ]
     },
     "session_recovery:available:info": {
@@ -8492,6 +8631,18 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "パスワードのリセットを要求していない場合、要求をキャンセルしてください。"
       ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "サインインしているデバイス (パスワード変更の要求がされたデバイス)に移動して、パスワードを変更してください。"
+      ],
+      "This permission expires soon": [
+        "この権限はまもなく有効期限が切れます"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "アカウント ${ boldEmail } のパスワードを、あと ${ boldDaysRemaining } 日間は自由に変更可能です。"
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "${ boldEmail }アカウントのパスワードを今すぐ変更できます。"
+      ],
       "You can now reset your password": [
         "現在、パスワードをリセットできます"
       ],
@@ -8499,9 +8650,34 @@
         "${ boldDate }までパスワードをリセットできます。"
       ]
     },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "パスワードが保存されました"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "パスワードをリセット"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "パスワードリセットをキャンセルする"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "パスワードリセットのプロセスをキャンセルするには、現在のパスワードを入力してください。他に変更は適用されません。"
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "パスワードリセットはキャンセルされました"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "パスワードのリセットをキャンセルしますか？"
       ]
     },
     "session_recovery:cancelled:info": {
@@ -8592,6 +8768,17 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "${ ownerName } による共有"
+      ]
+    },
+    "Signup": {
+      "1 month": [
+        "1 ヶ月"
+      ],
+      "12 months": [
+        "12 か月"
+      ],
+      "24 months": [
+        "24 か月"
       ]
     },
     "Signup label": {
@@ -9419,6 +9606,9 @@
     "Suffix for price": {
       "per month": [
         "1ヶ月あたり"
+      ],
+      "per user per month": [
+        "1 ユーザー/月"
       ]
     },
     "Tab in domain modal": {
@@ -9540,6 +9730,9 @@
       ],
       "Account suspended": [
         "アカウントが停止されました"
+      ],
+      "Account temporarily locked": [
+        "アカウントが一時的にロックされています"
       ],
       "Action": [
         "操作"
@@ -10647,6 +10840,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "長期契約で**最大${ priceString } 節約できます**。同じプレミアム機能で、より低価格。"
       ],
+      "Advanced security for your company?": [
+        "あなたの会社のための高度なセキュリティ？"
+      ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "全てのプレミアム ${ BRAND_NAME } サービス。毎月たった ${ fallBackString } から。"
       ],
@@ -10655,6 +10851,12 @@
       ],
       "Did you know?": [
         "知ってましたか？"
+      ],
+      "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
+        "${ VPN_APP_NAME } for Business を利用して、お客様の組織をデータ侵害から保護します。"
+      ],
+      "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
+        "あなたと大切な人のための無制限のプライバシー。月額${ priceString }から。"
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "${ FAMILY_MAX_USERS } を持つ最大 ${ PLAN_NAMES[plan] }人を保護することができます。アカウントごとに ${ priceString }/月から開始します。"
@@ -10766,9 +10968,6 @@
       "It's you": [
         "あなたです"
       ],
-      "Lumo": [
-        "Lumo"
-      ],
       "Pending admin access": [
         "管理者のアクセスが保留中"
       ],
@@ -10844,6 +11043,9 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } か国で ${ numberOfServers } 台"
+      ],
+      "Select from ${ numberOfCountries }+ country": [
+        "${ numberOfCountries }ヶ国以上から選択"
       ]
     },
     "vpn_2step: billing": {

@@ -70,6 +70,9 @@
       "Accept": [
         "Accepter"
       ],
+      "Access account": [
+        "Accéder au compte"
+      ],
       "activate": [
         "activer"
       ],
@@ -601,6 +604,9 @@
       "Explore ${ target }": [
         "Découvrez ${ target }"
       ],
+      "Explore business plans": [
+        "Explorer les abonnements pour les entreprises"
+      ],
       "Explore group plans": [
         "Découvrez les abonnements groupés"
       ],
@@ -697,8 +703,14 @@
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
+      "Give access now": [
+        "Donner l'accès maintenant"
+      ],
       "Go back": [
         "Retour"
+      ],
+      "Go to ${ planOrAppName }": [
+        "Accéder à ${ planOrAppName }"
       ],
       "Go to label": [
         "Afficher le label"
@@ -958,6 +970,9 @@
       "Request a feature": [
         "Demander une fonctionnalité"
       ],
+      "Request access": [
+        "Demander l'accès"
+      ],
       "Request new code": [
         "Demander un nouveau code"
       ],
@@ -1048,8 +1063,8 @@
       "See plan features": [
         "Voir les fonctionnalités de l'abonnement"
       ],
-      "Select ${ planTitle }": [
-        "Sélectionner ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Sélectionner ${ planOrAppName }"
       ],
       "Select a calendar to export": [
         "Sélectionner le calendrier à exporter"
@@ -1194,6 +1209,9 @@
       ],
       "Stay": [
         "Rester"
+      ],
+      "Stop being trusted contact": [
+        "Cesser d'être un contact approuvé"
       ],
       "Stop using single sign-on": [
         "Arrêter d'utiliser l'authentification unique"
@@ -1666,9 +1684,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_DEDICATED_IPS } serveur dédié maximum pendant la version d'essai."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Vous pouvez bénéficier de ${ TRIAL_MAX_LUMO_SEATS } accès maximum à Lumo pendant la période d’essai."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_SCRIBE_SEATS } accès maximum à Scribe pendant la période d’essai."
@@ -4246,8 +4261,91 @@
       ]
     },
     "emergency_access": {
+      "${ BRAND_NAME } Account email": [
+        "Adresse e-mail du compte ${ BRAND_NAME }"
+      ],
+      "${ n } day": [
+        "${ n } jour",
+        "${ n } jours"
+      ],
+      "${ n } day left": [
+        "${ n } jour restant",
+        "${ n } jours restants"
+      ],
+      "Access granted": [
+        "L'accès a été autorisé."
+      ],
+      "Access requested": [
+        "L'accès a été demandé."
+      ],
+      "Add": [
+        "Ajouter"
+      ],
+      "Add emergency contact": [
+        "Ajouter un contact d'urgence"
+      ],
+      "Change access wait time": [
+        "Modifier le temps d'attente pour accéder"
+      ],
+      "Change wait time": [
+        "Modifier le temps d'attente"
+      ],
+      "Disabled": [
+        "Désactivé"
+      ],
+      "Emergency access": [
+        "Accès d’urgence"
+      ],
+      "Emergency access granted": [
+        "L'accès d'urgence est accordé."
+      ],
+      "Emergency access requested": [
+        "L'accès d'urgence a été demandé."
+      ],
+      "Emergency contact removed": [
+        "Le contact d'urgence a été retiré."
+      ],
+      "Give access now": [
+        "Accorder l'accès maintenant"
+      ],
+      "Immediate": [
+        "Immédiat"
+      ],
+      "Less than a day": [
+        "Moins d’un jour"
+      ],
+      "None": [
+        "Aucun"
+      ],
+      "Only ": [
+        "Seulement "
+      ],
+      "People I trust": [
+        "Les personnes que j'approuve"
+      ],
+      "People who trust me": [
+        "Les personnes qui m'ont approuvé"
+      ],
+      "Remove trusted contact": [
+        "Retirer le contact de confiance"
+      ],
+      "Request access?": [
+        "Demander l'accès?"
+      ],
       "Trusted contact": [
         "Contacts de confiance"
+      ],
+      "Wait time": [
+        "Temps d'attente"
+      ],
+      "Wait time for access": [
+        "Temps d'attente pour accéder"
+      ],
+      "Wait time saved": [
+        "Temps d'attente enregistré"
+      ],
+      "You'll receive access to their account immediately.": [
+        "Vous recevrez un accès à leur compte immédiatement."
       ]
     },
     "Empty group name": {
@@ -4261,6 +4359,9 @@
       ],
       "Account does not exist": [
         "Ce compte n'existe pas."
+      ],
+      "Address cannot be yours": [
+        "L'adresse ne peut pas être la vôtre"
       ],
       "Address primary private key not found": [
         "La clé privée principale de l’adresse n’a pas été trouvée."
@@ -5339,9 +5440,6 @@
       "Continue": [
         "Continuer"
       ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "Tout ce qui est inclus dans ${ PLAN_NAMES[PLANS.VPN2024] }"
-      ],
       "Fastest VPN servers": [
         "Serveurs VPN les plus rapides"
       ],
@@ -5362,6 +5460,15 @@
       ]
     },
     "Features": {
+      "${ VPN_CONNECTIONS } devices": [
+        "${ VPN_CONNECTIONS } appareils"
+      ],
+      "Ad-blocker and malware protection": [
+        "Bloqueur de publicité et protection contre les logiciels malveillants"
+      ],
+      "All premium ${ BRAND_NAME } services": [
+        "Tous les services premium de ${ BRAND_NAME }"
+      ],
       "and more premium features...": [
         "et plus de fonctionnalités premium…"
       ],
@@ -5370,6 +5477,9 @@
       ],
       "Lightning-fast speeds": [
         "Vitesses extrêmement élevées"
+      ],
+      "Lightning-fast VPN speeds": [
+        "Vitesses VPN extrêmement élevées"
       ],
       "NetShield Ad-blocker": [
         "Bloqueur de publicités NetShield"
@@ -7222,6 +7332,9 @@
       "Event invitations and responses will be sent in this language.": [
         "Les invitations aux événements et les réponses seront envoyées dans cette langue."
       ],
+      "Everything in ${ planOrAppName }": [
+        "Tout ce qui est inclus dans ${ planOrAppName }"
+      ],
       "Example: ${ spfExample }": [
         "Exemple : ${ spfExample }"
       ],
@@ -8000,9 +8113,6 @@
       "Private AI assistant": [
         "Assistant IA privé"
       ],
-      "Promotion expired": [
-        "La promotion a expiré."
-      ],
       "Protected by Swiss privacy laws": [
         "Protégé par les lois suisses sur la vie privée"
       ],
@@ -8229,9 +8339,6 @@
       "Starts on ${ startsOnTime }": [
         "Débute le ${ startsOnTime }"
       ],
-      "Stay tuned for future promotions.": [
-        "Ne manquez pas les prochaines promotions."
-      ],
       "Step ${ step }": [
         "Étape ${ step }",
         "Étape ${ step }"
@@ -8259,6 +8366,12 @@
       ],
       "Subscription auto-renews every month.": [
         "L'abonnement est renouvelé automatiquement tous les mois."
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Fin de l'abonnement : Pour conserver vos avantages ${ planName }, veuillez renouveler votre abonnement dans l'Appli Store d'Apple avant le ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Fin de l'abonnement : Pour conserver les avantages de votre ${ planName }, veuillez renouveler votre abonnement dans le Google Play Store avant le ${ byDate }. ${ reactivateLink }"
       ],
       "Summary": [
         "Résumé"
@@ -8424,9 +8537,6 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Ce message ne parviendra pas à l'équipe support. Si vous rencontrez un problème avec notre service ou si vous avez besoin de plus d'assistance de notre part ${ supportLink }."
-      ],
-      "This promotion link has expired.": [
-        "Ce lien promotionnel a expiré."
       ],
       "This service is not available to users signing in with single sign-on.": [
         "Ce service n’est pas accessible aux utilisateurs qui se connectent avec l’authentification unique."
@@ -10904,6 +11014,9 @@
       "Request an invite": [
         "Demander une invitation"
       ],
+      "Resume now": [
+        "Reprendre à présent"
+      ],
       "Set email address": [
         "Définir l'adresse e-mail"
       ],
@@ -13104,12 +13217,6 @@
       "Get unlimited privacy for two": [
         "Profitez d'une confidentialité illimitée pour deux personnes."
       ],
-      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
-        "Je comprends qu'en cas de perte de mes informations de récupération, je peux perdre définitivement l'accès à mon compte."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
-        "Si vous ne pouvez pas accéder à votre compte ${ BRAND_NAME }, votre **Kit de récupération** vous permettra de vous connecter et de récupérer vos données."
-      ],
       "Includes:": [
         "Comprend :"
       ],
@@ -13121,9 +13228,6 @@
       ],
       "Install app and extension": [
         "Installez les applications et extensions"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "Il s'agit du seul moyen de restaurer complètement votre compte, nous vous conseillons de le garder en lieu sûr."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Rejoignez plus de 100 millions de personnes qui ont choisi ${ BRAND_NAME } pour être en sécurité en ligne."
@@ -13847,11 +13951,48 @@
       ]
     },
     "RecoveryPhrase: Action": {
-      "Download PDF ${ size }": [
-        "Télécharger le PDF ${ size }"
+      "Continue": [
+        "Continuer"
       ],
-      "Reveal recovery phrase": [
-        "Afficher la phrase de récupération."
+      "Copy": [
+        "Copier"
+      ],
+      "Show": [
+        "Montrer"
+      ]
+    },
+    "RecoveryPhrase: Info": {
+      "copy recovery phrase": [
+        "copier la phrase de récupération"
+      ],
+      "Download PDF": [
+        "Télécharger en PDF"
+      ],
+      "download PDF": [
+        "télécharger en PDF"
+      ],
+      "I understand that if I lose my recovery phrase, I may permanently lose access to my account.": [
+        "Je comprends qu'en cas de perte de ma phrase de récupération, je peux perdre définitivement l'accès à mon compte."
+      ],
+      "It’s the only way to recover everything—store it safely.": [
+        "C'est le seul moyen de tout récupérer, stockez-le en sécurité."
+      ],
+      "Or ${ copyRecoverySwitchButton } as text.": [
+        "Ou ${ copyRecoverySwitchButton } comme texte."
+      ],
+      "Or ${ downloadRecoveryKitSwitchButton } instead.": [
+        "Ou plutôt ${ downloadRecoveryKitSwitchButton }."
+      ],
+      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "Votre **Kit de récupération** vous permet de restaurer votre compte ${ BRAND_NAME } si vous êtes bloqué."
+      ]
+    },
+    "RecoveryPhrase: Title": {
+      "Save your Recovery Kit": [
+        "Enregistrez votre Kit de récupération"
+      ],
+      "Save your recovery phrase": [
+        "Enregistrez votre phrase de récupération"
       ]
     },
     "Remark about a key type option": {
@@ -13963,7 +14104,8 @@
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+      "Lifetime must be greater than ${ MIN_LIFETIME } day": [
+        "La durée doit être supérieure à ${ MIN_LIFETIME } jour.",
         "La durée doit être supérieure à ${ MIN_LIFETIME } jours."
       ],
       "Lifetime must not be set for \"Retain All\" action": [
@@ -14016,7 +14158,8 @@
       "Applies to": [
         "S'applique à"
       ],
-      "days": [
+      "day": [
+        "jour",
         "jours"
       ],
       "Keep items forever": [
@@ -14893,6 +15036,15 @@
       "/user": [
         "/utilisateur"
       ],
+      "1 month": [
+        "1 mois"
+      ],
+      "12 months": [
+        "12 mois"
+      ],
+      "24 months": [
+        "24 mois"
+      ],
       "30 custom email addresses": [
         "30 adresses e-mail personnalisées"
       ],
@@ -15095,7 +15247,7 @@
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Puis un rabais mensuel de ${ priceWithDiscountPerMonth }, en vous abonnant."
       ],
-      "To reedeem on your next paid subscription.": [
+      "To redeem on your next paid subscription.": [
         "À utiliser lors de votre prochain abonnement payant."
       ],
       "Total": [
@@ -16477,7 +16629,7 @@
       "Account suspended": [
         "Compte suspendu"
       ],
-      "Account Temporarily Locked": [
+      "Account temporarily locked": [
         "Compte temporairement verrouillé"
       ],
       "Action": [
@@ -16555,6 +16707,9 @@
       ],
       "Add users to \"${ policyName }\"": [
         "Ajouter des utilisateurs à « ${ policyName } »"
+      ],
+      "Added on": [
+        "Ajoutée le"
       ],
       "Address": [
         "Adresse"
@@ -16980,6 +17135,9 @@
       ],
       "Email privacy": [
         "Confidentialité des messages"
+      ],
+      "Emergency access": [
+        "Accès d’urgence"
       ],
       "Enable advanced account protection": [
         "Activer la protection avancée du compte"
@@ -18403,6 +18561,9 @@
       "Did you know?": [
         "Le saviez-vous ?"
       ],
+      "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
+        "Protégez votre organisation des fuites de données avec ${ VPN_APP_NAME } for Business."
+      ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Vous pouvez protéger jusqu'à ${ FAMILY_MAX_USERS } personnes avec ${ PLAN_NAMES[plan] }. À partir de seulement ${ priceString }/mois par compte."
       ],
@@ -18523,9 +18684,6 @@
       "It's you": [
         "C'est vous"
       ],
-      "Lumo": [
-        "Lumo"
-      ],
       "Pending admin access": [
         "Accès administrateur en attente"
       ],
@@ -18615,6 +18773,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } dans ${ numberOfCountries } pays",
         "${ numberOfServers } dans ${ numberOfCountries } pays"
+      ],
+      "Select from ${ numberOfCountries }+ country": [
+        "Sélection depuis ${ numberOfCountries } pays",
+        "Sélection depuis ${ numberOfCountries } pays"
       ]
     },
     "vpn_2step: billing": {

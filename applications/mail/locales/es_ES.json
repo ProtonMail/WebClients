@@ -42,6 +42,9 @@
       "Activate recovery": [
         "Activar recuperación"
       ],
+      "Active": [
+        "Activa"
+      ],
       "Add": [
         "Añadir"
       ],
@@ -111,6 +114,9 @@
       "Clear": [
         "Borrar"
       ],
+      "Clear application data": [
+        "Borrar datos de la aplicación"
+      ],
       "Clear browser data": [
         "Borrar datos del navegador"
       ],
@@ -137,6 +143,9 @@
       ],
       "Collaborate on documents": [
         "Colabora en documentos"
+      ],
+      "Collapse URL": [
+        "Minimizar tamaño URL"
       ],
       "Compose": [
         "Escribir"
@@ -173,6 +182,9 @@
       ],
       "Copy password": [
         "Copiar la contraseña"
+      ],
+      "Copy password to clipboard": [
+        "Copiar contraseña al portapapeles"
       ],
       "Create a new contact group": [
         "Crear un grupo de contactos"
@@ -251,6 +263,9 @@
       "Edit": [
         "Editar"
       ],
+      "Edit draft": [
+        "Editar borrador"
+      ],
       "Edit email address": [
         "Editar dirección de correo electrónico"
       ],
@@ -310,6 +325,9 @@
       ],
       "Go to label": [
         "Ir a la etiqueta"
+      ],
+      "Go to page ${ page }": [
+        "Ir a la página ${ page }"
       ],
       "Go to panel ${ index }": [
         "Ir al panel ${ index }"
@@ -380,8 +398,14 @@
       "Mark as favorite": [
         "Marcar como favorito"
       ],
+      "Mark as read": [
+        "Marcar como leído"
+      ],
       "Mark as resolved": [
         "Marcar como resuelta"
+      ],
+      "Mark as unread": [
+        "Marcar como no leído"
       ],
       "Mark for deletion": [
         "Marcar para eliminar"
@@ -419,6 +443,9 @@
       "Next": [
         "Siguiente"
       ],
+      "Next conversation": [
+        "Siguiente conversación"
+      ],
       "Next month": [
         "Mes siguiente"
       ],
@@ -433,6 +460,9 @@
       ],
       "Not now": [
         "Ahora no"
+      ],
+      "Not saved": [
+        "Sin guardar"
       ],
       "OK": [
         "Aceptar"
@@ -524,17 +554,26 @@
       "Search countries": [
         "Buscar países"
       ],
+      "Search in ${ option.text }": [
+        "Buscar en ${ option.text }"
+      ],
       "See plan features": [
         "Ver las funciones del plan"
-      ],
-      "Select ${ planTitle }": [
-        "Selecciona ${ planTitle }"
       ],
       "Select all": [
         "Seleccionar todo"
       ],
       "Send": [
         "Enviar"
+      ],
+      "Send read receipt": [
+        "Enviar confirmación de lectura"
+      ],
+      "Send unsubscribe email": [
+        "Enviar un correo para cancelar la suscripción"
+      ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "Establecer ${ MAIL_APP_NAME } como aplicación de correo por defecto"
       ],
       "Set recovery methods": [
         "Establecer los métodos de recuperación"
@@ -569,6 +608,9 @@
       "Show advanced PGP settings": [
         "Mostrar configuración PGP avanzada"
       ],
+      "Show attachment details": [
+        "Mostrar detalles del adjunto"
+      ],
       "Show less": [
         "Mostrar menos"
       ],
@@ -590,6 +632,9 @@
       "Skip verification": [
         "Omitir verificación"
       ],
+      "Star": [
+        "Destacar"
+      ],
       "Start import": [
         "Iniciar la importación"
       ],
@@ -599,14 +644,26 @@
       "Stay": [
         "Permanecer"
       ],
+      "Stop downloading assistant": [
+        "Detener la descarga del asistente"
+      ],
+      "Stop moving to Trash": [
+        "Dejar de mover a la papelera"
+      ],
       "Submit": [
         "Enviar"
       ],
       "Take a tour": [
         "Explora ahora"
       ],
+      "This message contains embedded images.": [
+        "Este mensaje contiene imágenes incrustadas."
+      ],
       "Toggle Calendar app": [
         "Cambiar a la aplicación Calendar"
+      ],
+      "Tomorrow": [
+        "Mañana"
       ],
       "Trust": [
         "Confiar"
@@ -701,6 +758,9 @@
       "What do I get?": [
         "¿Qué obtengo?"
       ],
+      "Why not?": [
+        "¿Por qué no?"
+      ],
       "Yes": [
         "Sí"
       ],
@@ -740,6 +800,11 @@
         "No tienes ningún grupo."
       ]
     },
+    "Add participant to calendar event": {
+      "Participant added": [
+        "Participante añadido"
+      ]
+    },
     "Addon": {
       "${ ips } server": [
         "${ ips } servidor",
@@ -765,6 +830,11 @@
       ],
       "By leaving now, some events may not be imported": [
         "Si sales ahora, no se puede importar algunos eventos."
+      ]
+    },
+    "Alternative text for conversation image": {
+      "Conversation": [
+        "Conversación"
       ]
     },
     "Animation": {
@@ -821,9 +891,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores exclusivos durante el periodo de prueba."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de Lumo durante el periodo de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
@@ -960,6 +1027,14 @@
         "¿Asistir?"
       ]
     },
+    "Calendar invite info": {
+      "${ participantName } accepted your invitation and proposed a new time for this event.": [
+        "${ participantName } ha aceptado tu invitación y ha propuesto una hora nueva para este evento."
+      ],
+      "${ participantName } tentatively accepted your invitation.": [
+        "${ participantName } ha aceptado provisionalmente tu invitación."
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } usuario",
@@ -1046,6 +1121,11 @@
       ],
       "strawberry": [
         "fresa"
+      ]
+    },
+    "Commander action": {
+      "Go to Inbox": [
+        "Ir a la bandeja de entrada"
       ]
     },
     "Confirm modal title": {
@@ -1902,6 +1982,11 @@
         "Islas Aland"
       ]
     },
+    "CustomFilter": {
+      "Recipient": [
+        "Destinatario"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mes"
@@ -2057,6 +2142,11 @@
         "Se trata de una necesidad temporal que podría volver en el futuro."
       ]
     },
+    "Email reminder error": {
+      "Event is no longer in your calendar": [
+        "El evento ya no está en tu calendario."
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Cancelación de un evento el ${ formattedStart }"
@@ -2159,6 +2249,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Se ha producido un error al conectar a la API de Bitcoin."
+      ],
+      "Error while uploading attachments. Message is not sent.": [
+        "Error al cargar archivos adjuntos. El mensaje no se ha enviado."
       ],
       "Failed to load the STL preview": [
         "Error al cargar la vista previa STL"
@@ -2286,6 +2379,9 @@
       ],
       "Process aborted": [
         "Proceso anulado"
+      ],
+      "Public key could not be trusted": [
+        "No se ha podido verificar la clave pública"
       ],
       "Request timed out": [
         "Tiempo de espera agotado"
@@ -2672,6 +2768,11 @@
         "Megabytes"
       ]
     },
+    "Filter modal type": {
+      "If the sender": [
+        "Si el remitente"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } actualizado"
@@ -2701,6 +2802,21 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "forwardmessage": {
+      "Date: On ${ date }": [
+        "Fecha: el ${ date }"
+      ]
+    },
+    "Free trial desktop": {
+      "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
+        "Disfruta de un acceso rápido, seguro y libre de distracciones a tu bandeja de entrada y calendario."
+      ]
+    },
+    "Get started checklist instructions": {
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Usando tu dispositivo móvil, escanea este código QR o visita la tienda de iOS o Android."
       ]
     },
     "Gmail forwarding": {
@@ -2734,6 +2850,12 @@
     "Header": {
       "Contacts": [
         "Contactos"
+      ],
+      "Resume downloading": [
+        "Reanudar la descarga"
+      ],
+      "Tell us more": [
+        "Cuéntanos más"
       ]
     },
     "Hint": {
@@ -2756,6 +2878,12 @@
       ],
       "SMS": [
         "SMS"
+      ]
+    },
+    "ICS widget label for event details": {
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } participante",
+        "${ totalAttendees } participantes"
       ]
     },
     "Import calendar": {
@@ -3133,9 +3261,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificación de dirección con claves de confianza está activada para esta dirección. Para poder enviar a esta dirección, primero verifica las claves públicas que se pueden utilizar para enviar."
       ],
-      "Admin account allocation": [
-        "Asignación de la cuenta de administrador"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Todo (${ totalFoldersCount } carpeta)",
         "Todo (${ totalFoldersCount } carpetas)"
@@ -3146,15 +3271,6 @@
       ],
       "All your changes will be lost.": [
         "Todos los cambios se perderán."
-      ],
-      "Allocated": [
-        "Asignado"
-      ],
-      "Already allocated": [
-        "Ya asignado"
-      ],
-      "Already used": [
-        "Ya en uso"
       ],
       "American Express SafeKey logo": [
         "Logo de American Express SafeKey"
@@ -3285,6 +3401,12 @@
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descarga hoy tu aplicación favorita y lleva la privacidad contigo donde quieras que vayas."
+      ],
+      "Downloading paused: ${ progressDisplay } GB": [
+        "Descarga pausada: ${ progressDisplay } GB"
+      ],
+      "Draft discarded": [
+        "Borrador descartado"
       ],
       "Duplicate key updated": [
         "Clave duplicada actualizada"
@@ -3444,6 +3566,9 @@
       "Low Priority": [
         "Prioridad baja"
       ],
+      "Mark all as read": [
+        "Marcar todo como leído"
+      ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
       ],
@@ -3574,6 +3699,9 @@
       "Primary": [
         "Principal"
       ],
+      "Recipient: ": [
+        "Destinatario: "
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación permanecerá en este dispositivo a menos que la elimines."
       ],
@@ -3582,6 +3710,9 @@
       ],
       "Restore": [
         "Restaurar"
+      ],
+      "Seems like you are all caught up for now": [
+        "Parece que ya estás al día por ahora"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecciona el formato de correo electrónico que quieres utilizar por defecto al enviar un correo electrónico a esta dirección."
@@ -3616,23 +3747,17 @@
       "Start sharing it with contacts and use it for online services.": [
         "Comienza a compartirla con tus contactos y úsala para servicios en línea."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Almacenamiento asignado a otros usuarios de esta organización"
-      ],
-      "Storage allocated to this user": [
-        "Almacenamiento asignado a este usuario"
-      ],
-      "Storage for users": [
-        "Almacenamiento para usuarios"
-      ],
-      "Storage used by this user": [
-        "Almacenamiento utilizado por este usuario"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envía un depósito usando la siguiente dirección o escanea el código QR. Tu depósito aparecerá en tu cuenta después de la confirmación."
       ],
       "Subscription auto-renews every month.": [
         "La suscripción se renueva automáticamente cada mes."
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Suscripción a punto de finalizar: Para mantener los beneficios de tu ${ planName }, reinicia tu suscripción en la Apple App Store antes del ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Tu suscripción finaliza: Para mantener los beneficios de tu ${ planName }, reinicia tu suscripción en Google Play Store antes del ${ byDate }. ${ reactivateLink }"
       ],
       "Symbols (#$&)": [
         "Símbolos (#$&)"
@@ -3669,6 +3794,12 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homógrafo. Verifica que este es el enlace que quieres visitar o no lo abras."
+      ],
+      "This message will be sent in the morning at ${ formattedTime }": [
+        "Este mensaje se enviará por la mañana a las ${ formattedTime }"
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
+        "Este mensaje se enviará mañana a las ${ formattedTime }"
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Esto cerrará la sesión de todas las cuentas que han iniciado sesión."
@@ -3711,6 +3842,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Pasa a un plan superior ahora para obtener funciones premium, productos y almacenamiento a un precio especial."
+      ],
+      "Upgrade to send emails from your custom email domain.": [
+        "Mejora tu plan para enviar correos electrónicos desde tu dominio de correo electrónico personalizado."
       ],
       "Uppercase and lowercase letters": [
         "Letras mayúsculas y minúsculas"
@@ -3757,8 +3891,14 @@
       "Week": [
         "Semana"
       ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "¿Cuándo deseas que se borre automáticamente tu mensaje de la bandeja de entrada del destinatario y de tu carpeta de enviados?"
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes usar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "Cuando viajes o uses un WiFi público, conéctate a ${ VPN_APP_NAME } para que nadie rastree tu actividad en línea o robe tus datos. Es gratuito."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
@@ -3912,9 +4052,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Vuelve a comprobarlo más tarde.)"
       ],
-      "Account storage": [
-        "Almacenamiento de la cuenta"
-      ],
       "Add email address": [
         "Añadir correo electrónico"
       ],
@@ -3926,6 +4063,12 @@
       ],
       "Address": [
         "Dirección"
+      ],
+      "All contacts": [
+        "Todos los contactos"
+      ],
+      "Always move sender's emails": [
+        "Mover siempre los correos de remitentes"
       ],
       "App password": [
         "Contraseña de la aplicación"
@@ -3971,6 +4114,9 @@
       ],
       "Category": [
         "Categoría"
+      ],
+      "CC": [
+        "CC"
       ],
       "City": [
         "Ciudad"
@@ -4056,6 +4202,9 @@
       "Folder location": [
         "Ubicación de la carpeta"
       ],
+      "Forums": [
+        "Foros"
+      ],
       "Forwards to": [
         "Reenvía a"
       ],
@@ -4116,6 +4265,9 @@
       "Move to Inbox": [
         "Mover a la bandeja de entrada"
       ],
+      "Moved to ${ labelName }": [
+        "Movido a ${ labelName }"
+      ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
       ],
@@ -4127,6 +4279,9 @@
       ],
       "New password": [
         "Nueva contraseña"
+      ],
+      "Not factually correct": [
+        "Los hechos no son correctos"
       ],
       "Note": [
         "Nota"
@@ -4190,6 +4345,9 @@
       ],
       "Sign emails": [
         "Firmar correos electrónicos"
+      ],
+      "Size:": [
+        "Tamaño:"
       ],
       "Start date": [
         "Fecha de inicio"
@@ -4366,6 +4524,9 @@
       "Request an invite": [
         "Solicitar una invitación"
       ],
+      "Resume now": [
+        "Reanudar ahora"
+      ],
       "settings": [
         "ajustes"
       ],
@@ -4443,6 +4604,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Una versión nueva de ${ appName } está disponible. ${ reloadButton }."
+      ]
+    },
+    "Message image": {
+      "Image has not been loaded in order to protect your privacy.": [
+        "No se ha cargado la imagen para proteger tu privacidad."
       ]
     },
     "MIME type": {
@@ -5254,6 +5420,9 @@
       ],
       "Contact group updated": [
         "Grupo de contactos actualizado"
+      ],
+      "The writing assistant is ready to use": [
+        "El asistente de escritura está listo para usar"
       ]
     },
     "Oauth instructions": {
@@ -5264,6 +5433,14 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Para que la importación funcione, debes seleccionar todos los elementos solicitados como se muestra en el GIF."
+      ]
+    },
+    "Onboarding modal": {
+      "Auto-delete spam and trash": [
+        "Eliminado automático del spam y la papelera"
+      ],
+      "Your domain ${ domain } and ${ subscriptionName } subscription are ready to use.": [
+        "El dominio ${ domain } y la suscripción ${ subscriptionName } están listos para usar."
       ]
     },
     "Onboarding Proton": {
@@ -5451,6 +5628,9 @@
       "Please describe the problem and include any error messages": [
         "Describe el problema e incluye cualquier mensaje de error."
       ],
+      "Please share what you expected": [
+        "Comparte lo que esperabas"
+      ],
       "Search for group name": [
         "Buscar por nombre de grupo"
       ],
@@ -5465,6 +5645,9 @@
       ],
       "Start typing an email address": [
         "Comienza a escribir una dirección de correo electrónico."
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "Dile al asistente de escritura qué debe escribir. Por ejemplo: \"Escribe un correo electrónico de seguimiento para un cliente\""
       ],
       "Your organization name": [
         "El nombre de tu organización"
@@ -5540,6 +5723,11 @@
         "Trabajo"
       ]
     },
+    "Reply to calendar invitation": {
+      "Cannot send to organizer address: ${ errorMessage }": [
+        "No se puede enviar a la dirección del organizador: ${ errorMessage }"
+      ]
+    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "No se ha completado el inicio de sesión."
@@ -5599,6 +5787,11 @@
         "No se han encontrado resultados."
       ]
     },
+    "Sent email icon": {
+      "End-to-end encrypted": [
+        "Cifrado de extremo a extremo"
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "Se ha cancelado el restablecimiento de contraseña."
@@ -5617,6 +5810,11 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Abrir en ${ appName }"
+      ]
+    },
+    "Signature verification warning": {
+      "Sender verification failed": [
+        "Error al verificar el remitente"
       ]
     },
     "Signing preference for emails": {
@@ -5702,6 +5900,11 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Se te redirigirá a tu proveedor de SSO de terceros."
+      ]
+    },
+    "Status": {
+      "Alias disabled": [
+        "Alias desactivado"
       ]
     },
     "Storage": {
@@ -5975,6 +6178,9 @@
       "Last modified aliases stored in your oldest vault": [
         "Últimos alias modificados guardados en tu caja fuerte más antigua"
       ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "Los mensajes de ${ sendersList } serán movidos a ${ folder }"
+      ],
       "Payment method added": [
         "Método de pago añadido"
       ],
@@ -6110,14 +6316,23 @@
         "${ minutes } minutos"
       ]
     },
+    "Tip Action": {
+      "Create an alias": [
+        "Crear un alias"
+      ]
+    },
     "Title": {
       "${ feature } is now active": [
         "La funcionalidad ${ feature } ya está activada."
       ],
+      "${ unreads } unread message": [
+        "${ unreads } mensaje sin leer",
+        "${ unreads } mensajes sin leer"
+      ],
       "Account recovery": [
         "Recuperación de cuenta"
       ],
-      "Account Temporarily Locked": [
+      "Account temporarily locked": [
         "Cuenta temporalmente bloqueada"
       ],
       "Add contact group name": [
@@ -6335,6 +6550,9 @@
       "Link confirmation": [
         "Confirmación de enlace"
       ],
+      "Mark as read": [
+        "Marcar como leído"
+      ],
       "Merge contacts": [
         "Combinar contactos"
       ],
@@ -6383,6 +6601,9 @@
       "Re-signing contacts": [
         "Volviendo a firmar los contactos"
       ],
+      "Recipient missing": [
+        "Falta el destinatario"
+      ],
       "Recommended": [
         "Recomendado"
       ],
@@ -6394,6 +6615,9 @@
       ],
       "Recover data": [
         "Recuperar datos"
+      ],
+      "Reply": [
+        "Responder"
       ],
       "Report a problem": [
         "Notificar un problema"
@@ -6442,6 +6666,9 @@
       ],
       "Start import process": [
         "Iniciar el proceso de importación"
+      ],
+      "Subject missing": [
+        "Falta el asunto"
       ],
       "Summary": [
         "Resumen"
