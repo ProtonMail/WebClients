@@ -55,13 +55,7 @@ const ABUSE_CATEGORIES: AbuseCategory[] = [
 
 const CATEGORIES_WITH_EMAIL_VERIFICATION: AbuseCateroryType[] = ['copyright', 'stolen-data'];
 
-const ReportAbuseModal = ({
-    onClose,
-    linkInfo,
-    onSubmit,
-    prefilled,
-    ...modalProps
-}: AbuseFormProps & ModalStateProps) => {
+const ReportAbuseModal = ({ linkInfo, onSubmit, prefilled, ...modalProps }: AbuseFormProps & ModalStateProps) => {
     const [submitting, withSubmitting] = useLoading();
     const { createNotification } = useNotifications();
 
@@ -102,7 +96,7 @@ const ReportAbuseModal = ({
 
             await onSubmit(payload);
             createNotification({ text: c('Info').t`Report has been sent` });
-            onClose();
+            modalProps.onClose();
         } catch (e) {
             createNotification({ text: c('Error').t`Report failed to be sent`, type: 'error' });
             sendErrorReport(e);
@@ -117,8 +111,7 @@ const ReportAbuseModal = ({
     return (
         <ModalTwo
             as={Form}
-            onClose={onClose}
-            onReset={onClose}
+            onReset={modalProps.onClose}
             onSubmit={() => withSubmitting(handleSubmit()).catch(noop)}
             size="small"
             {...modalProps}
@@ -173,7 +166,7 @@ const ReportAbuseModal = ({
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button color="weak" type="reset" disabled={submitting} onClick={onClose}>
+                <Button color="weak" type="reset" disabled={submitting} onClick={modalProps.onClose}>
                     {c('Action').t`Cancel`}
                 </Button>
                 <Button color="norm" type="submit" loading={submitting}>
@@ -184,7 +177,6 @@ const ReportAbuseModal = ({
     );
 };
 
-export default ReportAbuseModal;
 export const useReportAbuseModal = () => {
     return useModalTwoStatic(ReportAbuseModal);
 };
