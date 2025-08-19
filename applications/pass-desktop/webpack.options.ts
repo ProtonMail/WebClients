@@ -1,4 +1,4 @@
-import { getWebpackOptions } from '@proton/pack/lib/configV2';
+import { getWebpackOptions } from '@proton/pack/lib/config';
 import { type ProtonPackOptions } from '@proton/pack/lib/interface';
 
 import appConfig from './appConfig';
