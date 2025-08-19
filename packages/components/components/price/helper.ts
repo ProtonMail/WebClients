@@ -20,11 +20,11 @@ export const getSimplePriceString = (currency: Currency, rawPrice: number, suffi
     const optionalNegative = isNegative ? '-' : '';
 
     if (currency === 'EUR') {
-        return `${optionalNegative}${price} ${CurrencySymbols.EUR}${suffix}`;
+        return `${optionalNegative}${price}\u00A0${CurrencySymbols.EUR}${suffix}`;
     }
     if (!isCurrencyWithSpace(currency)) {
         return `${optionalNegative}${CurrencySymbols[currency]}${price}${suffix}`;
     }
 
-    return `${optionalNegative}${currency} ${price}${suffix}`;
+    return `${optionalNegative}${currency}\u00A0${price}${suffix}`;
 };
