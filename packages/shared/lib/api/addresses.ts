@@ -37,7 +37,7 @@ export const createAddress = ({ MemberID, Local, Domain, DisplayName, Signature 
     data: { MemberID, Local, Domain, DisplayName, Signature },
 });
 
-export const orderAddress = (AddressIDs: string[]) => ({
+export const updateAddressesOrder = (AddressIDs: string[]) => ({
     url: 'core/v4/addresses/order',
     method: 'put',
     data: { AddressIDs },
