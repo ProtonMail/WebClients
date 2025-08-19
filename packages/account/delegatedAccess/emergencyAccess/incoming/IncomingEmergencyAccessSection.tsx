@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import Badge from '@proton/components/components/badge/Badge';
+import { Pill, Tooltip } from '@proton/atoms';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Info from '@proton/components/components/link/Info';
 import Table from '@proton/components/components/table/Table';
@@ -41,7 +41,11 @@ const IncomingDelegatedAccessCell = ({
     meta: { canLogin, hasRequestedAccess, accessibleAtTimeDiff },
 }: Pick<IncomingItemProps, 'value' | 'meta'>) => {
     if (isDisabled) {
-        return <Badge type="origin">{c('emergency_access').t`Disabled`}</Badge>;
+        return (
+            <Pill color="#5C5958" backgroundColor="#E5E4E1" rounded="rounded-sm" className="text-semibold">{c(
+                'emergency_access'
+            ).t`Disabled`}</Pill>
+        );
     }
 
     if (canLogin) {
@@ -49,17 +53,33 @@ const IncomingDelegatedAccessCell = ({
         const tooltip = formattedAccessibleAt
             ? c('emergency_access').t`Access granted on ${formattedAccessibleAt}`
             : undefined;
-        return <Badge type="success" tooltip={tooltip}>{c('emergency_access').t`Access granted`}</Badge>;
+        return (
+            <Tooltip title={tooltip}>
+                <Pill
+                    color="#164616"
+                    backgroundColor="#C9E9C9"
+                    rounded="rounded-sm"
+                    className="text-semibold text-center"
+                >{c('emergency_access').t`Access granted`}</Pill>
+            </Tooltip>
+        );
     }
 
     if (hasRequestedAccess) {
         const formattedAccessibleAt = getFormattedAccessibleAtDate(accessibleAtDate);
         const tooltip = c('emergency_access').t`Access will be granted on ${formattedAccessibleAt}`;
         return (
-            <>
-                <Badge type="info" tooltip={tooltip}>{c('emergency_access').t`Access requested`}</Badge>
+            <div className="flex items-center justify-start gap-1">
+                <Tooltip title={tooltip}>
+                    <Pill
+                        color="#093E53"
+                        backgroundColor="#C0E4F2"
+                        rounded="rounded-sm"
+                        className="text-semibold mr-1 text-center"
+                    >{c('emergency_access').t`Access requested`}</Pill>
+                </Tooltip>
                 <span title={tooltip}>{getFormattedRemainingDays(accessibleAtTimeDiff)}</span>
-            </>
+            </div>
         );
     }
 };
@@ -70,25 +90,27 @@ const IncomingDelegatedAccessActions = ({
     notify,
 }: Pick<IncomingItemProps, 'value' | 'meta' | 'notify'>) => {
     return (
-        <DropdownActions
-            list={[
-                canRequestAccess && {
-                    text: c('Action').t`Request access`,
-                    onClick: () => notify({ type: 'request-access', value }),
-                },
-                canLogin && {
-                    loading: value.loading.access,
-                    text: c('Action').t`Access account`,
-                    onClick: () => notify({ type: 'access', value }),
-                },
-                canDelete && {
-                    actionType: 'delete' as const,
-                    text: c('Action').t`Stop being trusted contact`,
-                    onClick: () => notify({ type: 'delete', value }),
-                },
-            ].filter(isTruthy)}
-            size="small"
-        />
+        <div className="inline-flex">
+            <DropdownActions
+                list={[
+                    canRequestAccess && {
+                        text: c('Action').t`Request access`,
+                        onClick: () => notify({ type: 'request-access', value }),
+                    },
+                    canLogin && {
+                        loading: value.loading.access,
+                        text: c('Action').t`Access account`,
+                        onClick: () => notify({ type: 'access', value }),
+                    },
+                    canDelete && {
+                        actionType: 'delete' as const,
+                        text: c('Action').t`Stop being trusted contact`,
+                        onClick: () => notify({ type: 'delete', value }),
+                    },
+                ].filter(isTruthy)}
+                size="small"
+            />
+        </div>
     );
 };
 
