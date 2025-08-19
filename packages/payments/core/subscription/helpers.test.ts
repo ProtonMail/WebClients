@@ -656,6 +656,26 @@ describe('forbidden plan transitions', () => {
             })
         ).toEqual({ type: 'plus-to-plus', newPlanName: PLANS.VPN2024 });
     });
+
+    it('should be allowed to go from Lumo Plus on iOS to other Plus subscription on web (multi-subs)', () => {
+        const subscription = buildSubscription(PLANS.LUMO, {
+            External: SubscriptionPlatform.iOS,
+        });
+
+        const planIDs: PlanIDs = { [PLANS.VPN2024]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, planIDs, plansMap });
+        expect(result).toEqual(null);
+    });
+
+    it('should be allowed to go from Lumo Plus on Android to other Plus subscription on web (multi-subs)', () => {
+        const subscription = buildSubscription(PLANS.LUMO, {
+            External: SubscriptionPlatform.Android,
+        });
+
+        const planIDs: PlanIDs = { [PLANS.VPN2024]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, planIDs, plansMap });
+        expect(result).toEqual(null);
+    });
 });
 
 describe('getLumoAddonNameByPlan', () => {
