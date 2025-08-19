@@ -10,10 +10,9 @@ import { IcShield2CheckFilled } from '@proton/icons';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SignupType } from '../../../../signup/interfaces';
-import { usePasswordInputInline } from '../../../accountDetailsInputs/password/usePasswordInput';
-import useEmailInput from '../../../accountDetailsInputs/username/useEmailInput';
+import { usePasswordInputInline } from '../../../containers/password/usePasswordInput';
+import useEmailInput from '../../../containers/username/useEmailInput';
 import { useSignup } from '../../../context/SignupContext';
-import { Step } from '../PassSignup';
 import { Layout } from '../components/Layout/Layout';
 import { AccountDetailsAside } from './AccountDetailsAside';
 
@@ -60,10 +59,10 @@ const SwitchSignupType = () => {
 };
 
 type Props = {
-    setStep: (step: Step) => void;
+    onContinue: () => void;
 };
 
-export const AccountDetailsStep: FC<Props> = ({ setStep }) => {
+export const AccountDetailsStep: FC<Props> = ({ onContinue }) => {
     const signup = useSignup();
     const [loading, setLoading] = useState(false);
 
@@ -80,7 +79,7 @@ export const AccountDetailsStep: FC<Props> = ({ setStep }) => {
             setLoading(true);
             const accountData = await signup.accountForm.getValidAccountData({ passwords: true });
             signup.submitAccountData(accountData);
-            setStep(Step.RecoveryKit);
+            onContinue();
         } finally {
             setLoading(false);
         }
