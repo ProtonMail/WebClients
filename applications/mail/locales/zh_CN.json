@@ -525,9 +525,6 @@
       "See plan features": [
         "查看套餐内容"
       ],
-      "Select ${ planTitle }": [
-        "开通 ${ planTitle }"
-      ],
       "Select all": [
         "全选"
       ],
@@ -935,7 +932,7 @@
         "${ users } 位用户"
       ],
       "Total for ${ n } month": [
-        "${ n } 月合计"
+        "每${ n }月支付"
       ]
     },
     "Collapsible tooltip": {
@@ -2184,7 +2181,7 @@
         "无效号码"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "部分联系人没有邮箱地址：${ noEmailsContactNamesList }"
+        "部分联系人没有邮箱地址：${ noEmailsContactNamesList } "
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "某个/些群组没有联系人：${ noContactGroupList } "
@@ -3048,9 +3045,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "已对此地址开启密钥验证，向对方发送邮件前需要先信任其公钥。"
       ],
-      "Admin account allocation": [
-        "分配管理员账户"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "全部（${ totalFoldersCount } 个文件夹）"
       ],
@@ -3059,15 +3053,6 @@
       ],
       "All your changes will be lost.": [
         "您的所有改动都将丢失。"
-      ],
-      "Allocated": [
-        "分配量"
-      ],
-      "Already allocated": [
-        "已分配"
-      ],
-      "Already used": [
-        "已使用"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey 图标"
@@ -3143,6 +3128,9 @@
       ],
       "Create in": [
         "创建于"
+      ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "我们的条款 ${ termsLink } 不允许创建多个免费账户。"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "根据当前账户等级的剩余有效时间折算返还的余额"
@@ -3252,6 +3240,9 @@
       "finance": [
         "金融"
       ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "若需要了解更多移除这些限制的信息，请通过${ mailLink }登录。"
+      ],
       "here": [
         "此处"
       ],
@@ -3260,6 +3251,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "若您认为这是我们的问题，请联系 ${ contactLink }。"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "如果您取消，您的 ${ planTitle } 订阅在 ${ expiryDate } 到期后将不会续订。"
@@ -3522,18 +3516,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "开始与联系人分享，并将其用于在线服务。"
       ],
-      "Storage allocated to other users in this organisation": [
-        "此组织其他成员的存储空间分配量"
-      ],
-      "Storage allocated to this user": [
-        "该用户的存储空间分配量"
-      ],
-      "Storage for users": [
-        "用户存储"
-      ],
-      "Storage used by this user": [
-        "该用户的存储空间使用量"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "使用以下地址提交存款或扫描二维码。您的存款将在确认后反映在您的账户中。"
       ],
@@ -3594,6 +3576,9 @@
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "恢复数据需要重新激活数据创建时使用的通讯录密钥，这意味着您必须持有生成该密钥时的账户密码。"
       ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "您可以通过升级到付费套餐来移除这些限制。"
+      ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "开启地址密钥验证前，您需要先信任其若干个公钥，包括您要用于发送邮件的密钥。这样可以防止其密钥被伪造。"
       ],
@@ -3641,6 +3626,9 @@
       ],
       "We couldn’t process your payment.": [
         "我们未能处理您的支付。"
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "我们的套餐专为您这样需要多个邮箱地址的用户所设计。"
       ],
       "We need to authenticate your payment method with your bank.": [
         "我们需要向您的发卡银行核实支付方式是否有效。"
@@ -3815,9 +3803,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
       ],
-      "Account storage": [
-        "账户存储空间"
-      ],
       "Add email address": [
         "添加邮箱地址"
       ],
@@ -3861,7 +3846,7 @@
         "日历"
       ],
       "Card details": [
-        "银行卡详情"
+        "支付卡详情"
       ],
       "Card holder": [
         "持卡人"
@@ -4206,6 +4191,9 @@
       "clearing your browser cache": [
         "清除浏览器缓存"
       ],
+      "contact us": [
+        "联系我们"
+      ],
       "Enforcing 2FA for organizations": [
         "强制组织启用 2FA"
       ],
@@ -4270,6 +4258,9 @@
         "设置"
       ],
       "Terms": [
+        "服务条款"
+      ],
+      "terms of service": [
         "服务条款"
       ],
       "Trash": [
@@ -4531,6 +4522,9 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "降级至 ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "开通 ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -5963,6 +5957,9 @@
       ],
       "Account recovery": [
         "账户恢复"
+      ],
+      "Account restricted": [
+        "账户受限"
       ],
       "Add contact group name": [
         "添加联系人群组名称"

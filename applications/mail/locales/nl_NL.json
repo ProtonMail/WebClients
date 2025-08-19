@@ -308,6 +308,9 @@
       "Get verification code": [
         "Krijg verificatie code"
       ],
+      "Go to ${ planOrAppName }": [
+        "Ga naar ${ planOrAppName }"
+      ],
       "Go to label": [
         "Ga naar label"
       ],
@@ -527,8 +530,8 @@
       "See plan features": [
         "Bekijk de abonnementskenmerken"
       ],
-      "Select ${ planTitle }": [
-        "Selecteer ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Selecteer ${ planOrAppName }"
       ],
       "Select all": [
         "Alles selecteren"
@@ -821,9 +824,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "U kunt tot ${ TRIAL_MAX_LUMO_SEATS } Lumo-plaatsen hebben tijdens de proefperiode."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-plaatsen hebben tijdens de proefperiode."
@@ -3124,9 +3124,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adresverificatie met vertrouwde sleutels is voor dit adres ingeschakeld. Vertrouw eerst een aantal openbare sleutels sleutels om berichten te kunnen versturen naar deze ontvanger."
       ],
-      "Admin account allocation": [
-        "Toewijzing beheerdersaccount"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Alles (${ totalFoldersCount } map)",
         "Alle (${ totalFoldersCount } mappen)"
@@ -3137,15 +3134,6 @@
       ],
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
-      ],
-      "Allocated": [
-        "Toegewezen"
-      ],
-      "Already allocated": [
-        "Reeds toegewezen"
-      ],
-      "Already used": [
-        "Al gebruikt"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
@@ -3325,6 +3313,9 @@
       ],
       "Estimating time remaining...": [
         "Geschatte resterende tijd..."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Alles van ${ planOrAppName }"
       ],
       "Expired": [
         "Verlopen"
@@ -3603,18 +3594,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begin het te delen met contacten en gebruik het voor online diensten."
-      ],
-      "Storage allocated to other users in this organisation": [
-        "Opslagruimte toegewezen aan andere gebruikers binnen deze organisatie"
-      ],
-      "Storage allocated to this user": [
-        "Opslagruimte toegewezen aan deze gebruiker"
-      ],
-      "Storage for users": [
-        "Opslag voor gebruikers"
-      ],
-      "Storage used by this user": [
-        "Opslagruimte gebruikt door deze gebruiker"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
@@ -3899,9 +3878,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
-      ],
-      "Account storage": [
-        "Opslagruimte account"
       ],
       "Add email address": [
         "E-mailadres toevoegen"
@@ -6101,6 +6077,9 @@
       ],
       "Account recovery": [
         "Accountherstel"
+      ],
+      "Account temporarily locked": [
+        "Account tijdelijk geblokkeerd"
       ],
       "Add contact group name": [
         "Naam contactgroep toevoegen"
