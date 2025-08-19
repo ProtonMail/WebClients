@@ -788,8 +788,8 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
             name: 'smtp-token',
             plans: {
                 [PLANS.FREE]: getSMTPToken(false),
-                [PLANS.BUNDLE]: getSMTPToken(false),
-                [PLANS.MAIL]: getSMTPToken(false),
+                [PLANS.BUNDLE]: getSMTPToken(true),
+                [PLANS.MAIL]: getSMTPToken(true),
                 [PLANS.VPN2024]: getSMTPToken(false),
                 [PLANS.DRIVE]: getSMTPToken(false),
                 [PLANS.DRIVE_1TB]: getSMTPToken(false),
