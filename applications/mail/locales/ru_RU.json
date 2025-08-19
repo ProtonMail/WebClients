@@ -528,9 +528,6 @@
       "See plan features": [
         "Посмотреть возможности тарифа"
       ],
-      "Select ${ planTitle }": [
-        "Выбрать ${ planTitle }"
-      ],
       "Select all": [
         "Выделить все"
       ],
@@ -826,9 +823,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Вам доступно до ${ TRIAL_MAX_DEDICATED_IPS } выделенных серверов в течение пробного периода."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Вам доступно до ${ TRIAL_MAX_LUMO_SEATS } мест Lumo в течение пробного периода."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Вам доступно до ${ TRIAL_MAX_SCRIBE_SEATS } мест Scribe в течение пробного периода."
@@ -3227,9 +3221,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Проверка адреса доверяемыми ключами для этого адреса включена. Чтобы получить возможность отправки на этот адрес, сначала включите режим доверия публичным ключам, которые можно применять для отправки."
       ],
-      "Admin account allocation": [
-        "Распределение аккаунтов администраторов"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Всё (${ totalFoldersCount } папка)",
         "Всё (${ totalFoldersCount } папки)",
@@ -3244,15 +3235,6 @@
       ],
       "All your changes will be lost.": [
         "Все ваши изменения будут потеряны."
-      ],
-      "Allocated": [
-        "Выделено"
-      ],
-      "Already allocated": [
-        "Уже выделено"
-      ],
-      "Already used": [
-        "Уже используется"
       ],
       "American Express SafeKey logo": [
         "Логотип American Express SafeKey"
@@ -3719,18 +3701,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Начните делиться им с контактами и использовать его для онлайн-сервисов."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Хранилище, выделенное другим пользователям в этой организации"
-      ],
-      "Storage allocated to this user": [
-        "Хранилище, выделенное этому пользователю"
-      ],
-      "Storage for users": [
-        "Хранилище для пользователей"
-      ],
-      "Storage used by this user": [
-        "Хранилище, используемое этим пользователем"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Отправьте депозит, используя указанный адрес, или отсканируйте QR-код. Ваш депозит будет отражен в вашем аккаунте после подтверждения."
       ],
@@ -4020,9 +3990,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Временно недоступно. Проверьте позже.)"
-      ],
-      "Account storage": [
-        "Хранилище учётной записи"
       ],
       "Add email address": [
         "Добавить адрес эл. почты"
@@ -6104,6 +6071,12 @@
       ]
     },
     "Success": {
+      "${ count } message deleted": [
+        "${ count } сообщение удалено",
+        "${ count } сообщения удалены",
+        "${ count } сообщений удалено",
+        "${ count } сообщений удалено"
+      ],
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } контакт выглядит одинаково.",
         "${ countMergeableContacts } контакта выглядят одинаково.",
@@ -6305,6 +6278,12 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } теперь активна"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } сообщение",
+        "${ numMessages } сообщения",
+        "${ numMessages } сообщений",
+        "${ numMessages } сообщений"
       ],
       "${ unreads } unread message": [
         "${ unreads } непрочитанное сообщение",

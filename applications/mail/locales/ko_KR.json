@@ -102,6 +102,9 @@
       "Cancel subscription": [
         "구독 취소"
       ],
+      "Change page": [
+        "페이지 변경"
+      ],
       "Change password": [
         "비밀번호 변경"
       ],
@@ -134,6 +137,9 @@
       ],
       "Click here.": [
         "여기를 클릭하세요."
+      ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "클립보드로 ${ defaultEmailAddress }(을)를 복사하려면 클릭"
       ],
       "Close": [
         "닫기"
@@ -303,6 +309,9 @@
       "Export contact group": [
         "연락처 그룹 내보내기"
       ],
+      "Fewer search options": [
+        "간단 검색 옵션"
+      ],
       "Filter on...": [
         "필터링..."
       ],
@@ -317,6 +326,9 @@
       ],
       "Generate password": [
         "비밀번호 생성"
+      ],
+      "Generate text": [
+        "텍스트 생성"
       ],
       "Get in touch": [
         "연락하기"
@@ -354,6 +366,9 @@
       "Hide advanced PGP settings": [
         "고급 PGP 설정 숨기기"
       ],
+      "Hide details": [
+        "세부사항 숨기기"
+      ],
       "Images will be loaded without a proxy": [
         "이미지가 프록시 없이 로드됩니다"
       ],
@@ -384,8 +399,14 @@
       "Increase": [
         "증가"
       ],
+      "Insert ${ totalChecked } contact": [
+        "${ totalChecked }개의 연락처 추가"
+      ],
       "Insert contacts": [
         "연락처 입력"
+      ],
+      "Label as": [
+        "라벨 추가"
       ],
       "Label as...": [
         "다음에 라벨 추가..."
@@ -498,6 +519,9 @@
       "Open navigation": [
         "탐색 열기"
       ],
+      "Page ${ pageNumber }": [
+        "${ pageNumber }번째 페이지"
+      ],
       "Pay": [
         "결제"
       ],
@@ -534,11 +558,17 @@
       "Refer a friend": [
         "친구 초대"
       ],
+      "Refine it": [
+        "정제하기"
+      ],
       "Refresh the page": [
         "페이지 새로 고침"
       ],
       "Remove": [
         "삭제"
+      ],
+      "Remove ${ attachmentName }": [
+        "${ attachmentName } 삭제"
       ],
       "Remove bonuses": [
         "보너스 제거"
@@ -594,8 +624,8 @@
       "See plan features": [
         "플랜 기능 표시"
       ],
-      "Select ${ planTitle }": [
-        "${ planTitle } 선택"
+      "Select All": [
+        "모두 선택"
       ],
       "Select all": [
         "전체 선택"
@@ -605,6 +635,15 @@
       ],
       "Send": [
         "보내기"
+      ],
+      "Send anyway": [
+        "이대로 보내기"
+      ],
+      "Set": [
+        "설정"
+      ],
+      "Set encryption": [
+        "암호화 설정"
       ],
       "Set recovery methods": [
         "복구 방법 마련하기"
@@ -701,6 +740,9 @@
       ],
       "Unmark for deletion": [
         "삭제를 표시 해제합니다."
+      ],
+      "Unstar": [
+        "별표 제거"
       ],
       "Unsubscribe": [
         "구독 취소"
@@ -865,6 +907,11 @@
         "${ BRAND_NAME } 애플리케이션"
       ]
     },
+    "Assistant feedback": {
+      "By submitting this feedback, the prompt and your comments will be visible to ${ BRAND_NAME }'s moderation team.": [
+        "이 피드백을 제출하게 되면 당신의 프롬포트와 코멘트를 ${ BRAND_NAME }의 모더레이션 팀이 볼 수 있게 됩니다."
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "비어있는 ICS 파일"
@@ -1017,8 +1064,17 @@
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName }이(가) 초대를 수락했으며 한 번 일어나는 이 이벤트의 새 시간을 제안했습니다."
       ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "${ participantName } 이(가) 사용자의 초대 세부 사항과 일치하지 않는 이벤트에 대한 최신 업데이트를 요청했습니다. 캘린더에서 초대장 세부 사항을 확인하세요."
+      ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
         "${ participantName } 이(가) 한 번의 이벤트에 대한 초대를 거부했습니다."
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        "${ participantName } 이(가) 이 이벤트의 초대를 거절했습니다."
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        "${ participantName } 이(가) 한 번의 이벤트에 대한 초대를 수락했습니다."
       ],
       "${ participantName } had accepted an invitation to this event.": [
         "${ participantName } 이(가) 이 이벤트의 초대를 수락했습니다."
@@ -1026,8 +1082,20 @@
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } 이(가) 한 번의 이벤트에 대한 초대를 수락했으며 이 이벤트의 새 시간을 제안했습니다. 응답 및 제안이 만료되었습니다."
       ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        "${ participantName } 이(가) 한 번의 이벤트에 대한 초대를 거부했습니다."
+      ],
+      "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } 이(가) 한 번의 이벤트에 대한 초대를 거절하고 새 시간을 제안했습니다. 응답 및 제안이 만료되었습니다."
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } 이(가) 한 번의 이벤트에 대한 초대를 잠정적으로 수락했으며 이 이벤트의 새 시간을 제안했습니다. 응답 및 제안이 만료되었습니다."
+      ],
       "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
         "${ participantName }이(가) 잠정적으로 한 번의 이벤트에 대한 초대를 수락했습니다."
+      ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "새로운 시간 제안이 초대 세부사항과 맞지 않습니다. 캘린더에서 초대 세부사항을 확인해 주십시오."
       ],
       "This response is out of date. You have no calendars.": [
         "응답할 기한이 지났습니다. 캘린더가 없습니다."
@@ -1111,12 +1179,23 @@
         "스트로베리"
       ]
     },
+    "Commander action": {
+      "Go to Sent": [
+        "보낸 편지함으로 이동"
+      ],
+      "Search": [
+        "검색"
+      ]
+    },
     "Composer email icon": {
       "End-to-end encrypted": [
         "종단간 암호화됨"
       ]
     },
     "Confirm modal title": {
+      "Edit and reschedule": [
+        "편집 및 다시 예약"
+      ],
       "Quit import customization?": [
         "불러오기 사용자 지정을 종료하시겠어요?"
       ],
@@ -2078,6 +2157,12 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "연락처 병합 중... 몇 분 정도 소요될 수 있습니다. 처리가 완료되면, 이 모달을 닫을 수 있습니다."
       ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "${ senderEmailAddress }을(를) 포함한 ${ otherSendersCount }개 주소로부터 새로운 이메일이 전송될 수 없으며, 영구 삭제됩니다."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "${ senderEmailAddress }(으)로 부터 새 메일이 전송될 수 없으며 영구 삭제됩니다."
+      ],
       "No labels": [
         "레이블 없음"
       ],
@@ -2109,6 +2194,11 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "업로드한 CSV 파일에서 다음 필드를 감지했습니다. 가져오고자 하는 것을 확인하세요"
+      ]
+    },
+    "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length }개의 새로운 메세지"
       ]
     },
     "Downgrade account reason": {
@@ -2189,6 +2279,9 @@
       ],
       "Checkout expired, please try again": [
         "체크아웃 만료됨, 다시 시도하십시오"
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "${ n }일 이내의 날짜를 선택하세요."
       ],
       "Contact could not be saved": [
         "연락처를 저장할 수 없습니다"
@@ -2361,8 +2454,17 @@
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "${ BRAND_NAME } 사용자를 불러오기 위한 기본 키가 전송에 유효하지 않습니다"
       ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "글쓰기 도우미 다운로드 중 문제가 발생했습니다. 비공개 모드를 사용 중이라면, 일반 브라우징 모드로 전환하거나 서버로 글쓰기 도우미를 사용해 보세요."
+      ],
       "Process aborted": [
         "과정 중단됨"
+      ],
+      "re-activate the previous key": [
+        "기존 키 재활성화"
+      ],
+      "Removed duplicate recipient: ${ recipents }": [
+        "중복된 수신자를 삭제했습니다: ${ recipents }"
       ],
       "Request timed out": [
         "요청 시간이 초과되었습니다."
@@ -2399,6 +2501,9 @@
       ],
       "Thanks for the feedback!": [
         "의견을 주셔서 감사합니다!"
+      ],
+      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
+        "첨부파일을 복호화할 수 없었습니다.\n상응하는 비밀 키를 가지고 있다면 직접\nGnuPG 등의 프로그램으로 파일을 복호화할 수 있습니다."
       ],
       "The email addresses do not match": [
         "이메일 주소가 일치하지 않습니다."
@@ -2442,6 +2547,9 @@
       "This label name is not available. Please choose a different name.": [
         "이 라벨 이름은 사용할 수 없어요. 다른 이름을 선택하세요."
       ],
+      "This message has already been sent": [
+        "이 메시지는 이미 전송되었습니다."
+      ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "이 메시지는 현재 브라우저에서 제대로 열 수 없는 URL 링크있을 수 있습니다."
       ],
@@ -2479,7 +2587,15 @@
         "가져오기가 처리되지 않았습니다."
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "한 번에 최대 ${ maxAttendees }명의 참가자를 초대할 수 있습니다."
+      ]
+    },
     "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        "임시 메시지를 받은 편지함으로 이동할 수 없음"
+      ],
       "Sent messages cannot be moved to Inbox": [
         "보낸 메시지가 받은 편지함으로 이동할 수 없음"
       ],
@@ -2768,6 +2884,9 @@
     "Filter option": {
       "Read": [
         "읽음"
+      ],
+      "Unread": [
+        "읽지 않음"
       ]
     },
     "filter: Label": {
@@ -2799,17 +2918,32 @@
     "Free trial desktop": {
       "Start free trial": [
         "무료 체험 시작"
+      ],
+      "Try the new desktop app": [
+        "새로운 데스크톱 앱을 사용해보세요"
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME } 앱"
+      ],
       "${ remainingDaysCount } day": [
         "${ remainingDaysCount }일"
       ],
       "${ remainingDaysCount } day left": [
         "${ remainingDaysCount }일 남음"
       ],
+      "auto-forwarding": [
+        "자동 포워딩"
+      ],
       "Block email communications from scammers permanently.": [
         "사기꾼으로부터의 이메일의 수발신을 영구적으로 차단합니다."
+      ],
+      "Discover privacy features": [
+        "개인정보 관련 기능 알아보기"
+      ],
+      "Popular online services": [
+        "인기 있는 온라인 서비스"
       ],
       "privacy features": [
         "개인정보 보호 기능"
@@ -3176,6 +3310,15 @@
       "${ elementsCount } conversation will be marked as read.": [
         "${ elementsCount }개 대회가 읽음으로 표시됩니다."
       ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount }개의 대화가 읽지 않음으로 표시됩니다."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount }개의 대화가 이동됩니다"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount }개의 대화가 다음 라벨로부터 해제됩니다:"
+      ],
       "${ elementsCount } message will be labelled as:": [
         "${ elementsCount }개 메시지가 다음으로 라벨됩니다:"
       ],
@@ -3211,6 +3354,9 @@
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } 링크가 정리되었습니다"
+      ],
+      "${ NumMessages } message in conversation": [
+        "대화 내 ${ NumMessages }개의 메시지"
       ],
       "${ numOccurrences } occurrence found": [
         "${ numOccurrences }개 발견되었습니다"
@@ -3275,6 +3421,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } 회원)"
       ],
+      "(No Recipient)": [
+        "(수신자 없음)"
+      ],
       "**${ total }** result found in ${ labelName }": [
         "${ labelName }(에)서 **${ total }**개 결과 찾음"
       ],
@@ -3308,29 +3457,20 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "이 주소에 대해 신뢰할 수 있는 키로 주소 확인을 사용할 수 있습니다. 이 주소로 보내려면 먼저 전송에 사용 할 수 있는 공개 키를 신뢰해야 합니다."
       ],
-      "Admin account allocation": [
-        "관리자 계정 할당 됨"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "총 (${ totalFoldersCount } 개 폴더)"
       ],
       "All (${ totalFoldersCount } label)": [
         "총 (${ totalFoldersCount } 개 라벨)"
       ],
+      "All messages from this mailing list will be moved to Archive.": [
+        "이 메일링 리스트의 모든 메시지가 보관함으로 이동됩니다."
+      ],
       "All messages stored with this label will be permanently deleted.": [
         "라벨이 저장된 모든 메시지들이 완전히 삭제되었습니다."
       ],
       "All your changes will be lost.": [
         "저장하지 않은 변경사항은 손실됩니다."
-      ],
-      "Allocated": [
-        "할당 됨"
-      ],
-      "Already allocated": [
-        "이미 할당 됨"
-      ],
-      "Already used": [
-        "이미 사용됨"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey 로고"
@@ -3355,6 +3495,9 @@
       ],
       "Are you sure you want to permanently delete ${ count } message?": [
         "${ count } 개 메시지를 영구적으로 삭제하시겠습니까?"
+      ],
+      "Are you sure you want to permanently delete this conversation?": [
+        "정말 해당 대화를 영구적으로 삭제하시겠습니까?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "최소 ${ BETTER_PASSWORD_LENGTH }글자"
@@ -3503,6 +3646,9 @@
       "Edit email address": [
         "이메일 주소 변경"
       ],
+      "Edit expiration time": [
+        "만료 시간 수정"
+      ],
       "email": [
         "이메일"
       ],
@@ -3551,6 +3697,9 @@
       "Expired": [
         "만료됨"
       ],
+      "Expires in ${ minutesDiff } minute": [
+        "${ minutesDiff }분 뒤 만료"
+      ],
       "Expires in less than ${ hoursDiff } hour": [
         "${ hoursDiff }시간 내에 만료"
       ],
@@ -3562,6 +3711,9 @@
       ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "무료로 ${ ASSISTANT_TRIAL_TIME_DAYS }일 동안 사용해 보세요"
+      ],
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "${ numAttachments }개의 첨부파일 포함 (${ numAttachmentsSize })"
       ],
       "here": [
         "여기"
@@ -3613,6 +3765,9 @@
       ],
       "Inherited from parent folder": [
         "상위폴더에 상속되어 있습니다"
+      ],
+      "Insert image": [
+        "이미지 삽입"
       ],
       "Internet connection lost": [
         "인터넷 연결 없음"
@@ -3740,11 +3895,17 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "신뢰할 수 있는 키 중 하나 이상이 소유자에 의해 \"유출되었음\"으로 표시되었습니다. 이 열쇠들을 \"신뢰하지 않는\" 것을 추천합니다."
       ],
+      "Optional": [
+        "선택사항"
+      ],
       "or discover other features:": [
         "혹은 다른 기능 살펴보기:"
       ],
       "Organization size": [
         "조직 크기"
+      ],
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "시스템이 이 메시지를 피싱 시도라고 경고했습니다. 해당 메일이 합법적인 내용인지 확인해 주세요."
       ],
       "password": [
         "비밀번호"
@@ -3760,6 +3921,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME이 현재 작성 모드를 사용하여 자동으로 메시지를 보냅니다."
+      ],
+      "Please add at least one recipient.": [
+        "최소 한 명의 수신자를 추가해주세요."
       ],
       "Please authenticate your card in the verification tab.": [
         "인증 탭에서 카드를 인증해 주세요."
@@ -3827,6 +3991,9 @@
       "Saved at ${ dateString }": [
         "${ dateString }에 저장됨"
       ],
+      "Saving draft…": [
+        "임시 저장 중..."
+      ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "암호화 클라우드 스토리지에 파일을 안전하게 보호하세요, 무료로 오늘 바로 시작하세요."
       ],
@@ -3841,6 +4008,15 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "불러올 캘린더를 선택하세요. 새 캘린더가 사용자 플랜의 가능한 한도 내에서 각각 생성됩니다."
+      ],
+      "Sender has been blocked.": [
+        "전송자가 차단되었습니다."
+      ],
+      "Sending message...": [
+        "메시지 전송 중..."
+      ],
+      "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
+        "@pm.me 주소에서 메시지를 보내는 것은 유료 기능입니다. 사용자의 메시지는 기본 주소에서 발송됩니다 ${ email }"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "안전한 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>로 보냈습니다."
@@ -3865,18 +4041,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "연락처에 있는 사람들과 공유하고 온라인 서비스에서 사용하세요."
-      ],
-      "Storage allocated to other users in this organisation": [
-        "스토리지가 이 조직의 다른 사용자들에게 할당됨"
-      ],
-      "Storage allocated to this user": [
-        "이 사용자에게 스토리지가 할당 됨"
-      ],
-      "Storage for users": [
-        "사용자당 저장공간"
-      ],
-      "Storage used by this user": [
-        "이 사용자로 인해 사용된 스토리지"
       ],
       "Subject: ": [
         "제목: "
@@ -3916,6 +4080,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "이 브라우저는 PDF 미리보기를 지원하지 않습니다. 파일을 다운로드하세요."
+      ],
+      "This conversation contains non-trashed messages.": [
+        "이 대화에는 버리지 않은 메시지가 포함되어 있습니다."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "이 대화는 스팸으로 마크됩니다. 추후 이메일도 구독하지 않으시겠어요?"
@@ -3983,6 +4150,12 @@
       "Total VPN connections": [
         "총 VPN 연결"
       ],
+      "Trash existing messages": [
+        "존재하는 메시지 휴지통 이동"
+      ],
+      "Unread conversations": [
+        "읽지 않은 대화"
+      ],
       "Unread messages": [
         "메시지를 읽지 않음으로 표시"
       ],
@@ -3997,6 +4170,9 @@
       ],
       "Upgrade to support our mission of privacy for all.": [
         "모두를 위한 개인정보 보호라는 미션을 지원하기 위해 업그레이드 해주세요."
+      ],
+      "Upgrade to unlock premium features.": [
+        "프리미엄 기능을 잠금해제하기 위해 업그레이드하세요."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
         "Apple Mail, Outlook 및 Thunderbird를 ${ MAIL_APP_NAME }로 사용하려면 업그레이드 하세요."
@@ -4027,6 +4203,9 @@
       ],
       "Visa Secure logo": [
         "Visa Secure 로고"
+      ],
+      "We could not verify the sender's trusted keys.": [
+        "전송자의 인증 키를 인증할 수 없습니다."
       ],
       "We couldn’t process your payment.": [
         "결제를 처리할 수 없습니다."
@@ -4109,6 +4288,9 @@
       "You have ${ unread } in your inbox.": [
         "받은 메일함에 ${ unread }가 있습니다."
       ],
+      "You have **${ count } conversation** stored in this folder": [
+        "이 폴더에 **대화 ${ count }**개를 저장했습니다"
+      ],
       "You have **${ count } conversation** tagged with this label": [
         "이 라벨로 태그된 **대화 ${ count }개**가 있습니다"
       ],
@@ -4127,6 +4309,9 @@
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "사용자의 이메일에 제목이 있지 않습니다. 이 메시지를 계속 보내시겠어요?"
       ],
+      "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
+        "저장 공간의 100%를 채웠습니다. 새 메시지를 작성하려면 일부 공간을 비우거나 계정의 추가 저장 공간 업그레이드를 고려해보세요."
+      ],
       "You may be redirected to your bank’s website.": [
         "은행 웹사이트로 리다이렉트 됩니다."
       ],
@@ -4138,6 +4323,12 @@
       ],
       "You selected **${ count } conversation** with this label": [
         "이 라벨에 있는 **대화 ${ count }개**를 선택했습니다"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "이 폴더의 **메시지 ${ count }개**를 선택했습니다"
+      ],
+      "You selected **${ count } message** with this label": [
+        "해당 라벨의 **${ count } 개의 메시지** 선택"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
         "${ location }(에)서 **${ elementsCount }개 대화**를 선택했습니다."
@@ -4198,6 +4389,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "회원님의 전화번호는 이번 인증에만 사용됩니다."
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "몇 번의 클릭만으로 정리된 받은 편지함을 만들어 보세요"
       ]
     },
     "Info on errors": {
@@ -4259,8 +4453,8 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(일시적으로 사용할 수 없습니다. 나중에 다시 확인해 주세요.)"
       ],
-      "Account storage": [
-        "계정 저장공간"
+      "/month": [
+        "/월간"
       ],
       "Add email address": [
         "이메일 주소 추가"
@@ -4415,6 +4609,9 @@
       "Forwards to": [
         "다음으로 전달:"
       ],
+      "From": [
+        "보낸 사람"
+      ],
       "From: ${ fromEmail }": [
         "보낸 사람: ${ fromEmail }"
       ],
@@ -4454,6 +4651,9 @@
       "Last name": [
         "성"
       ],
+      "Layout": [
+        "레이아웃"
+      ],
       "Location": [
         "위치"
       ],
@@ -4468,6 +4668,9 @@
       ],
       "Message:": [
         "메시지:"
+      ],
+      "Move messages to": [
+        "다음 위치로 메시지 이동:"
       ],
       "Move to Archive": [
         "보관 편지함으로 이동"
@@ -4486,6 +4689,9 @@
       ],
       "New password": [
         "새 비밀번호"
+      ],
+      "Newsletters": [
+        "뉴스레터"
       ],
       "Note": [
         "메모"
@@ -4568,6 +4774,9 @@
       "System information": [
         "시스템 정보"
       ],
+      "The filter is disabled. ${ enableButton }": [
+        "필터가 비활성화된 상태입니다. ${ enableButton }"
+      ],
       "To: ${ toEmail }": [
         "받는 사람: ${ toEmail }"
       ],
@@ -4577,8 +4786,14 @@
       "Transactions": [
         "거래 내역"
       ],
+      "Undisclosed Recipients": [
+        "받는 사람 비공개"
+      ],
       "Unknown": [
         "알 수 없음"
+      ],
+      "Updates": [
+        "업데이트"
       ],
       "Upload picture": [
         "사진 업로드"
@@ -4626,6 +4841,11 @@
         "이름"
       ]
     },
+    "Label Recipient": {
+      "To": [
+        "수신자:"
+      ]
+    },
     "Label, credit card": {
       "ZIP code": [
         "우편번호"
@@ -4650,6 +4870,11 @@
         "${ Label.Name } 생성됨"
       ]
     },
+    "Labels": {
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "활성화된 뉴스레터 또는 메일링 리스트 구독이 없습니다."
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "사이드 패널"
@@ -4672,6 +4897,15 @@
       ],
       "clearing your browser cache": [
         "브라우저 캐시를 삭제하면"
+      ],
+      "Create a calendar linked to an active email address.": [
+        "활성화된 메일 주소에 연결된 캘린더를 생성하세요."
+      ],
+      "Create a new calendar to add this event": [
+        "이 이벤트를 추가하려면 새 캘린더를 만드세요."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "이벤트를 취소하려면 비활성화된 캘린더에 연결된 메일 주소를 활성화하세요."
       ],
       "Enforcing 2FA for organizations": [
         "조직 전체에 2단계 인증 강제화"
@@ -4727,6 +4961,9 @@
       "Learn more": [
         "더 알아보기"
       ],
+      "Manage blocked email addresses": [
+        "차단된 이메일 주소 관리"
+      ],
       "Open updated event in ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME }에서 업데이트된 이벤트 열기"
       ],
@@ -4741,6 +4978,12 @@
       ],
       "Request an invite": [
         "가입 요청하기"
+      ],
+      "Resume now": [
+        "지금 재개"
+      ],
+      "Scheduled": [
+        "예약됨"
       ],
       "settings": [
         "설정"
@@ -4765,6 +5008,14 @@
       ],
       "You need to activate your calendar keys to manage this invitation": [
         "이 초대를 관리하려면 캘린더 키 활성화가 필요합니다."
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "업데이트된 이벤트를 보려면 키를 활성화해야 합니다."
+      ]
+    },
+    "Link to settings": {
+      "settings": [
+        "설정"
       ]
     },
     "Loading info": {
@@ -4807,6 +5058,17 @@
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ]
+    },
+    "Mailbox": {
+      "Archive": [
+        "아카이브"
+      ],
+      "Inbox": [
+        "받은 편지함"
+      ],
+      "Spam": [
+        "스팸 메일함"
       ]
     },
     "Message": {
@@ -5635,16 +5897,40 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Finance": [
+        "금융"
+      ],
+      "I have moved my logins to ${ BRAND_NAME }": [
+        "${ BRAND_NAME }으로 내 로그인 정보를 이동했어요"
+      ],
       "Social media": [
         "소셜 미디어"
       ]
     },
     "Onboarding modal": {
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle }가 나와 지정된 수신자만 이메일에 접근할 수 있음을 보장합니다."
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "Play Store에서 ${ MAIL_APP_NAME } 받기"
+      ],
+      "Advanced encryption": [
+        "고급 암호화"
+      ],
       "Clear out deleted and spam emails after 30 days.": [
         "삭제되거나 스팸함에 보관된 이메일을 30일 후 삭제합니다."
       ],
+      "Continue": [
+        "계속"
+      ],
       "Distraction-free emailing": [
         "방해 없는 이메일"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "데스크톱 앱으로 더 빠르고 집중된 이메일 경험을 즐겨보세요."
+      ],
+      "Protection from trackers": [
+        "트래커로부터 보호"
       ]
     },
     "Onboarding Proton": {
@@ -5858,6 +6144,9 @@
       "Search for name or email": [
         "이름 및 이메일을 위해 검색"
       ],
+      "Search messages": [
+        "메시지 검색"
+      ],
       "Select": [
         "선택"
       ],
@@ -5866,6 +6155,9 @@
       ],
       "Start typing an email address": [
         "이메일 주소 입력을 시작하세요"
+      ],
+      "Subject": [
+        "제목"
       ],
       "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
         "작성하고자 하는 것을 글쓰기 도우미에게 알려주세요. 예시: \"내 체육관 멤버십을 취소해 줘\""
@@ -5942,6 +6234,9 @@
       ]
     },
     "Received email icon": {
+      "End-to-end encrypted and signed message": [
+        "종단간 암호화와 서명된 메시지"
+      ],
       "End-to-end encrypted message": [
         "종단간 암호화된 메시지"
       ],
@@ -5952,12 +6247,25 @@
         "PGP 암호화 사용 및 서명됨"
       ]
     },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays }일"
+      ]
+    },
+    "Reply to calendar invitation": {
+      "Re-encrypting invitation failed. Please try again.": [
+        "초대 재암호화 실패. 다시 시도해주세요."
+      ]
+    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "로그인이 성공적으로 완료되지 못했습니다."
       ]
     },
     "Search - no results": {
+      "No messages scheduled": [
+        "예약된 메시지 없음"
+      ],
       "No results found": [
         "결과를 찾을 수 없어요."
       ]
@@ -6022,8 +6330,25 @@
       ]
     },
     "Send email with warnings": {
+      "The following address is not valid: ${ invalidAddresses }": [
+        "유효하지 않은 주소: ${ invalidAddresses }"
+      ],
       "We have detected some warnings. The following email address may not receive emails:": [
         "경고를 감지했습니다. 다음 이메일 주소는 이메일을 못받을 수 있습니다:"
+      ]
+    },
+    "Sent email icon": {
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        "${ MAIL_APP_NAME }에 의해 인증된 PGP 수신자에게 암호화됨"
+      ],
+      "End-to-end encrypted to verified recipient": [
+        "검증된 수신자에게 종단간 암호화로 전송"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "인증된 수신자에게 ${ MAIL_APP_NAME }로 부터 제로 액세스 암호화로 발송됨"
+      ],
+      "Sent by you with end-to-end encryption to verified recipient": [
+        "인증된 수신자에게 제로 액세스 암호화로 발송됨"
       ]
     },
     "session_recovery:cancellation:notification": {
@@ -6119,6 +6444,9 @@
       "Check out what's included with your subscription and start enjoying the benefits.": [
         "구독에 포함된 내용을 확인하고 혜택을 누려보세요."
       ],
+      "Email tracking protection": [
+        "이메일 트래킹 보호"
+      ],
       "Get up to ${ credits } in credits.": [
         "최대 ${ credits }의 크레딧 받기"
       ],
@@ -6138,6 +6466,14 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "서드 파티 SSO 제공자로 리다이렉트됩니다."
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "${ MAIL_APP_NAME } 주소를 새로운 주소로 입력하고 변경사항을 저장, 확인 혹은 인증하세요."
+      ],
+      "Select service to update": [
+        "업데이트할 서비스 선택"
       ]
     },
     "Storage": {
@@ -6360,11 +6696,20 @@
       ]
     },
     "Success": {
+      "${ count } conversation deleted": [
+        "${ count }개의 대화가 삭제되었습니다"
+      ],
+      "${ count } draft deleted": [
+        "${ count }개의 임시 메시지 삭제"
+      ],
       "${ count } message deleted": [
         "메시지 ${ count }개가 삭제됨"
       ],
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts }개 연락처가 동일한 것 같습니다."
+      ],
+      "${ elementsCount } conversation added to ${ labelName }.": [
+        "${ elementsCount }개의 대화가 ${ labelName }에 추가되었습니다."
       ],
       "${ elementsCount } conversation marked as read.": [
         "대화 ${ elementsCount }개를 읽음으로 표시했습니다."
@@ -6374,6 +6719,12 @@
       ],
       "${ elementsCount } conversation marked as unread.": [
         "대화 ${ elementsCount }개를 읽지않음으로 표시했습니다."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount }개의 대화가 ${ labelName } 라벨로 이동되었고 발신자가 스팸 아님 목록에 추가되었습니다."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ labelName } 라벨로 ${ elementsCount }개의 대화를 이동했습니다."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
         "대화 ${ elementsCount }개가 스팸으로 이동되고 보낸 사람이 스팸 목록에 추가되었습니다."
@@ -6401,6 +6752,15 @@
       ],
       "${ elementsCount } message marked as unread.": [
         "메시지 ${ elementsCount }개가 읽지않음으로 표시되었습니다."
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } 개의 메시지가 ${ labelName }라벨로 이동되었고 발신자가 스팸 아님 목록에 추가되었습니다."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ labelName } 라벨로 ${ elementsCount }개의 메시지를 이동했습니다."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount }개의 메시지가 스팸함으로 이동되고 보낸 사람이 스팸 목록에 추가되었습니다."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ labelName }에서 메시지 ${ elementsCount }개를 삭제했습니다."
@@ -6435,8 +6795,17 @@
       "Conversation added to ${ labelName }.": [
         "대화가 ${ labelName }에 추가되었습니다."
       ],
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "대화가 ${ labelName } 라벨로 이동되었고 발신자가 스팸 아님 목록에 추가되었습니다."
+      ],
+      "Conversation moved to ${ labelName }.": [
+        "대화가 ${ labelName }(으)로 이동되었습니다."
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList } 로 부터 전송된 대화가 ${ labelsList } 로 라벨 표시됩니다"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "${ sendersList }와의 대화가 ${ folder } 로 이동됩니다."
       ],
       "Copied to clipboard": [
         "클립보드에 복사됨"
@@ -6455,6 +6824,12 @@
       ],
       "Last modified aliases stored in your oldest vault": [
         "마지막으로 편집한 별칭이 가장 오래된 금고에 보관되었습니다"
+      ],
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "메시지가 ${ labelName } 으로 이동되었으며 보낸 사람이 스팸 아님 목록에 추가되었습니다."
+      ],
+      "Message moved to ${ labelName }.": [
+        "메시지가 ${ labelName }(으)로 이동되었습니다."
       ],
       "Move ${ selectionCount } conversation": [
         "대화 ${ selectionCount }개 이동"
@@ -6572,6 +6947,11 @@
         "vCard 란"
       ]
     },
+    "Time": {
+      "Yesterday": [
+        "어제"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours }시간"
@@ -6612,6 +6992,9 @@
       "Account recovery": [
         "계정 복구"
       ],
+      "Action all messages": [
+        "모든 메시지 조치"
+      ],
       "Add contact group name": [
         "연락처 그룹 이름 추가"
       ],
@@ -6635,6 +7018,9 @@
       ],
       "Apply gift code": [
         "기프트 코드 적용"
+      ],
+      "Archive": [
+        "보관 편지함"
       ],
       "Are you sure you want to close the preview?": [
         "정말로 미리보기를 닫으시겠습니까?"
@@ -6722,6 +7108,9 @@
       ],
       "Data recovery": [
         "데이터 복구"
+      ],
+      "Decryption error": [
+        "복호화 오류"
       ],
       "Delete ${ count } contact": [
         "${ count }개의 연락처 삭제"
@@ -6840,6 +7229,9 @@
       "Link confirmation": [
         "링크 확인"
       ],
+      "Mark conversations as unread": [
+        "대화를 읽지 않음으로 표시"
+      ],
       "Mark email as legitimate": [
         "스팸이 아님"
       ],
@@ -6860,6 +7252,9 @@
       ],
       "More": [
         "더 보기"
+      ],
+      "More options": [
+        "추가 옵션"
       ],
       "Network error": [
         "네트워크 오류"
@@ -6903,6 +7298,9 @@
       "Re-sign all contacts": [
         "모든 연락처에 다시 서명"
       ],
+      "Re-sign contact": [
+        "연락처에 다시 서명"
+      ],
       "Re-signing contacts": [
         "연락처 다시 서명"
       ],
@@ -6938,6 +7336,12 @@
       ],
       "Select contact group": [
         "연락처 그룹"
+      ],
+      "Send email": [
+        "이메일 전송"
+      ],
+      "Send with changed preferences?": [
+        "변경된 설정으로 보내시겠어요?"
       ],
       "Send with encryption disabled?": [
         "암호화 없이 보내시겠어요?"
@@ -6983,6 +7387,9 @@
       ],
       "Trust new key?": [
         "이 키를 신뢰할까요?"
+      ],
+      "Trust pinned keys?": [
+        "고정된 키를 신뢰하시겠어요?"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 켜기"
