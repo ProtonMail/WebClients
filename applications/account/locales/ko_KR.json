@@ -1048,9 +1048,6 @@
       "See plan features": [
         "플랜 기능 표시"
       ],
-      "Select ${ planTitle }": [
-        "${ planTitle } 선택"
-      ],
       "Select a calendar to export": [
         "내보낼 캘린더를 선택하세요."
       ],
@@ -5224,9 +5221,6 @@
       "Continue": [
         "계속하기"
       ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "${ PLAN_NAMES[PLANS.VPN2024] }(에)서 하나로"
-      ],
       "Fastest VPN servers": [
         "가장 빠른 VPN 서버"
       ],
@@ -7827,9 +7821,6 @@
       "Private AI assistant": [
         "개인정보가 보호되는 AI 어시스턴트"
       ],
-      "Promotion expired": [
-        "프로모션이 만료되었습니다"
-      ],
       "Protected by Swiss privacy laws": [
         "스위스 개인정보법에 의해 보호됨"
       ],
@@ -8055,9 +8046,6 @@
       "Starts on ${ startsOnTime }": [
         "${ startsOnTime }에 시작"
       ],
-      "Stay tuned for future promotions.": [
-        "향후 프로모션을 계속 지켜봐 주시기 바랍니다."
-      ],
       "Step ${ step }": [
         "${ step } 단계"
       ],
@@ -8246,9 +8234,6 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "이 메시지는 지원 팀으로 전해지지 않으므로, 당사 서비스에 문제가 있거나 필요한 조치가 있다면 ${ supportLink }."
-      ],
-      "This promotion link has expired.": [
-        "이 프로모션 링크는 만료되었습니다."
       ],
       "This service is not available to users signing in with single sign-on.": [
         "이 서비스는 싱글 사인온(SSO) 사용자에게 제공되지 않습니다"
@@ -10705,6 +10690,9 @@
       "Request an invite": [
         "가입 요청하기"
       ],
+      "Resume now": [
+        "지금 재개"
+      ],
       "Set email address": [
         "이메일 주소 설정"
       ],
@@ -12890,12 +12878,6 @@
       "Get unlimited privacy for two": [
         "두 명을 위한 무제한 프라이버시 보호 받기"
       ],
-      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
-        "만일 복구 방법을 잃어버리면 계정에 영구적으로 접근할 수 없음을 확인합니다."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
-        "만약 ${ BRAND_NAME } 계정이 잠기면 **복구 키트**를 사용하여 로그인하고 데이터를 복구할 수 있습니다."
-      ],
       "Includes:": [
         "포함:"
       ],
@@ -12907,9 +12889,6 @@
       ],
       "Install app and extension": [
         "앱 및 확장 프로그램 설치"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "계정을 완전히 복원하는 유일한 방법이므로, 안전한 곳에 확실히 보관해주세요."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "온라인에서 안전을 위해 ${ BRAND_NAME }을 선택한 1억 명이 넘는 사람들과 함께 하세요"
@@ -13630,11 +13609,6 @@
         "휴대 전화 인증은 계정 보호성이 증가하고 추가적인 복구 옵션을 제공합니다."
       ]
     },
-    "RecoveryPhrase: Action": {
-      "Reveal recovery phrase": [
-        "복구 문구 표시"
-      ]
-    },
     "Remark about a key type option": {
       "Classic": [
         "클래식"
@@ -13742,9 +13716,6 @@
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
-        "수명이 ${ MIN_LIFETIME }일보다 길어야합니다"
-      ],
       "Lifetime must not be set for \"Retain All\" action": [
         "\"모두 유지\" 작업에 대한 수명은 설정할 수 없습니다."
       ],
@@ -13790,9 +13761,6 @@
       ],
       "Applies to": [
         "적용 대상"
-      ],
-      "days": [
-        "일"
       ],
       "Keep items forever": [
         "항목 영구 보존"
@@ -14847,9 +14815,6 @@
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "구독시 매월 ${ priceWithDiscountPerMonth }(으)로 갱신됩니다."
-      ],
-      "To reedeem on your next paid subscription.": [
-        "다음 유료 구독 시 사용하실 수 있습니다."
       ],
       "Total": [
         "합계"
@@ -18227,9 +18192,6 @@
       ],
       "It's you": [
         "나"
-      ],
-      "Lumo": [
-        "Lumo"
       ],
       "Pending admin access": [
         "관리자 접근 권한 대기 중"

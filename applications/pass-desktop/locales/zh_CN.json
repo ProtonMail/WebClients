@@ -775,7 +775,7 @@
         "设置 2FA 以获得更多安全"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
-        "某些 DNS 注册商可能需要完整的记录路径，在这种情况下，请使用 ${ domain }  作为域值。"
+        "某些 DNS 注册商可能需要完整的记录路径，在这种情况下，请使用 ${ domain } 作为域值。"
       ],
       "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
         "些域名注册商（Namecheap、Cloudflare 等）可能使用 @ 作为根域名。"
@@ -1685,7 +1685,7 @@
         "为了获得 ${ PASS_APP_NAME } 的最佳体验，请授予必要的扩展权限"
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
-        "安装 ${ PASS_APP_NAME } 到 ${ browser.title } 以快速自动填充您的登录信息。 "
+        "安装 ${ PASS_APP_NAME } 到 ${ browser.title } 以快速自动填充您的登录信息。"
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
         "安装 ${ PASS_APP_NAME } 到 ${ browser.title } 以快速自动填充您的登录信息。 "
@@ -1871,7 +1871,7 @@
         "永久删除选定项目"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        " PIN 码设置成功，该密码可用于解锁 ${ PASS_APP_NAME }"
+        "PIN 码设置成功，该密码可用于解锁 ${ PASS_APP_NAME }"
       ],
       "Pinning item...": [
         "正在固定项目..."
@@ -2557,7 +2557,7 @@
         "银行名称"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
-        "除了储存登录信息外，${ PASS_APP_NAME } 还通过集成的邮箱别名功能保护您的身份。每当你注册一个新的在线账户时，${ PASS_APP_NAME } 都会自动创建一个别名，以保护您的真实邮箱地址。"
+        "除了储存登录信息外，${ PASS_APP_NAME } 还通过集成的邮箱别名功能保护您的身份。每当你注册一个新的在线账户时，${ PASS_APP_NAME } 都会自动创建一个别名，以保护您的真实邮箱地址。 "
       ],
       "Biometrics": [
         "生物识别"
@@ -2881,10 +2881,10 @@
         "导入密码"
       ],
       "Imported from: ": [
-        "导入自："
+        "导入自： "
       ],
       "Imported on : ": [
-        "导入时间："
+        "导入时间： "
       ],
       "Include numbers": [
         "包含数字"
@@ -3418,10 +3418,10 @@
         "今天"
       ],
       "Total imported items: ": [
-        "总导入项目数："
+        "总导入项目数： "
       ],
       "Total items: ": [
-        "总计："
+        "总计： "
       ],
       "TOTP": [
         "TOTP"

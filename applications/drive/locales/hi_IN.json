@@ -392,9 +392,6 @@
       "Go back": [
         "वापस जाएं"
       ],
-      "Go to ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } पे जाएं"
-      ],
       "Go to label": [
         "लेबल पे जाएं"
       ],
@@ -709,9 +706,6 @@
       ],
       "See version history": [
         "संस्करण इतिहास देखें"
-      ],
-      "Select ${ planTitle }": [
-        "${ planTitle } चुनें"
       ],
       "Select all": [
         "सब चुनें"
@@ -2508,10 +2502,10 @@
         "इस फ़ोल्डर में अपलोड फिलहाल अक्षम है"
       ],
       "Username must begin with a letter or digit": [
-        "यूज़रनेम की शुरुआत में अक्षर या अंक होना चाहिए"
+        "यूज़रनेम अक्षर या अंकसे शुरु होना चाहिए"
       ],
       "Username must end with a letter or digit": [
-        "यूज़रनेम के आखिर में अक्षर या अंक होना चाहिए"
+        "यूज़रनेम के अंत में अक्षर या अंक होना चाहिए"
       ],
       "Validation error": [
         "मान्यता त्रुटि"
@@ -3320,9 +3314,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "इस पते के लिए विश्वसनीय कुंजी के साथ पता सत्यापन सक्षम है। इस पते पर भेजने में सक्षम होने के लिए, पहले सार्वजनिक कुंजियों पर भरोसा करें जिनका उपयोग भेजने के लिए किया जा सकता है।"
       ],
-      "Admin account allocation": [
-        "एडमिन खाता बंटवारा"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "सभी (${ totalFoldersCount } फोल्डर)",
         "सभी (${ totalFoldersCount } फोल्डर)"
@@ -3333,15 +3324,6 @@
       ],
       "All your changes will be lost.": [
         "आपके सभी परिवर्तन खो जाएंगे।"
-      ],
-      "Allocated": [
-        "आवंटित"
-      ],
-      "Already allocated": [
-        "पहले से दिया गया"
-      ],
-      "Already used": [
-        "पहले से ही इस्तेमाल किया हुआ"
       ],
       "Also try looking in Trash.": [
         "कचरे में भी देख लें।"
@@ -3589,7 +3571,7 @@
         "डुप्लिकेट कुंजी अपडेट की गई"
       ],
       "Edit email address": [
-        "ईमेल पता संपादित करें"
+        "ईमेल एड्रेस संपादित करें"
       ],
       "email": [
         "ईमेल"
@@ -4204,18 +4186,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "इसे संपर्कों के साथ साझा करना शुरू करें और इसे ऑनलाइन सेवाओं के लिए उपयोग करें।"
       ],
-      "Storage allocated to other users in this organisation": [
-        "इस संगठन में अन्य उपयोगकर्ताओं को आवंटित संग्रहण"
-      ],
-      "Storage allocated to this user": [
-        "इस यूज़र को दिया गया स्टोरेज"
-      ],
-      "Storage for users": [
-        "यूज़र के लिए स्टोरेज"
-      ],
-      "Storage used by this user": [
-        "इस यूज़र का स्टोरेज इस्तेमाल"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "निम्नलिखित पते का उपयोग करके जमा करें या क्यूआर कोड स्कैन करें। पुष्टि के बाद आपकी जमा राशि आपके खाते में दिखाई देगी।"
       ],
@@ -4575,7 +4545,7 @@
         "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किये है को हटाए।"
       ],
       "You can now return to the application to continue": [
-        "अब आप एप्लीकेशन पर लौट सकते हैं ताकि आप जारी रख सकें"
+        "जारी रखने के लिए एप्लीकेशन पे लौटे"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "नए ईमेल संदेश इस फ़ोल्डर में आने पर आप अलर्ट प्राप्त कर सकते हैं।"
@@ -4759,9 +4729,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(अस्थाई रूप से अनुपलब्ध। कृपया फिर से बाद में जाँच करें।)"
-      ],
-      "Account storage": [
-        "खाता संग्रहण"
       ],
       "Add email address": [
         "ईमेल पता जोड़ें"
@@ -6560,14 +6527,6 @@
       "The link to your item was deleted": [
         "आपके चीज़ का लिंक मिटाया गया"
       ],
-      "This item was not removed from your list": [
-        "यह आइटम आपकी सूची से नहीं हटाया गया",
-        "कुछ आइटम आपकी सूची से हटाने में असफल रहे"
-      ],
-      "This item was successfully removed from your list": [
-        "यह आइटम आपकी सूची से सफलतापूर्वक हटाया गया",
-        "सभी आइटम आपकी सूची से सफलतापूर्वक हटाए गए"
-      ],
       "Trash failed to be emptied": [
         "कचरा खाली नहीं किया जा सका"
       ],
@@ -7646,6 +7605,9 @@
       ],
       "Account recovery": [
         "खाता पुनर्प्राप्ति"
+      ],
+      "Account temporarily locked": [
+        "अकाउंट अस्थायी समय के लिए बंद किया गया है"
       ],
       "Active": [
         "सक्रिय"

@@ -351,6 +351,9 @@
       "Explore ${ target }": [
         "Telusuri ${ target }"
       ],
+      "Explore business plans": [
+        "Telusuri paket bisnis"
+      ],
       "Explore group plans": [
         "Telusuri paket grup"
       ],
@@ -404,6 +407,9 @@
       ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
+      ],
+      "Go to ${ planOrAppName }": [
+        "Tuju ${ planOrAppName }"
       ],
       "Go to label": [
         "Tuju label"
@@ -642,8 +648,8 @@
       "See plan features": [
         "Lihat fitur paket"
       ],
-      "Select ${ planTitle }": [
-        "Pilih ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Pilih ${ planOrAppName }"
       ],
       "Select city ${ city }": [
         "Pilih kota ${ city }"
@@ -1039,6 +1045,11 @@
         "Hemat lebih lagi dengan paket 12 bulan"
       ]
     },
+    "bf2023: Deal details": {
+      "Premium Password Manager": [
+        "Pengelola Kata Sandi Premium"
+      ]
+    },
     "bf2023: header": {
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Dapatkan harga hemat untuk aplikasi VPN Swiss berkecepatan tinggi dengan penawaran Jumat Hitam"
@@ -1250,6 +1261,9 @@
       ],
       "Discover and set up features": [
         "Telusuri dan siapkan berbagai fitur"
+      ],
+      "Maybe later": [
+        "Mungkin nanti"
       ],
       "Remind me later": [
         "Ingatkan saya nanti"
@@ -2764,6 +2778,9 @@
       "Please generate keys before you try to change your password": [
         "Silakan buat kunci terlebih dahulu sebelum Anda mengubah kata sandi Anda"
       ],
+      "Please select a country": [
+        "Silakan pilih negara"
+      ],
       "Please select at least one location before continuing.": [
         "Silakan pilih setidaknya satu lokasi sebelum melanjutkan."
       ],
@@ -3117,9 +3134,6 @@
       "Continue": [
         "Lanjutkan"
       ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "Segalanya di ${ PLAN_NAMES[PLANS.VPN2024] }"
-      ],
       "Fastest VPN servers": [
         "Server VPN tercepat"
       ],
@@ -3140,6 +3154,15 @@
       ]
     },
     "Features": {
+      "${ VPN_CONNECTIONS } devices": [
+        "${ VPN_CONNECTIONS } perangkat"
+      ],
+      "Ad-blocker and malware protection": [
+        "Pemblokir iklan dan perlindungan perangkat lunak jahat"
+      ],
+      "All premium ${ BRAND_NAME } services": [
+        "Seluruh layanan premium ${ BRAND_NAME }"
+      ],
       "and more premium features...": [
         "dan berbagai fitur premium lainnya..."
       ],
@@ -3149,11 +3172,17 @@
       "Lightning-fast speeds": [
         "Kecepatan secepat kilat"
       ],
+      "Lightning-fast VPN speeds": [
+        "VPN secepat kilat"
+      ],
       "NetShield Ad-blocker": [
         "Pemblokir iklan NetShield"
       ],
       "Secure streaming": [
         "Streaming aman"
+      ],
+      "Stream from Netflix, HBO, and more": [
+        "Tonton Netflix, HBO, dan lainnya"
       ]
     },
     "Features: Tooltip": {
@@ -3330,7 +3359,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacy by default."
+        "${ BRAND_NAME }. Privasi sebagai hal yang baku."
       ]
     },
     "Gmail forwarding": {
@@ -4144,6 +4173,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Masukkan frasa keamanan Anda untuk mengubah kata sandi Anda sekarang juga."
       ],
+      "Everything in ${ planOrAppName }": [
+        "Segalanya di ${ planOrAppName }"
+      ],
       "Example: ${ spfExample }": [
         "Contoh: ${ spfExample }"
       ],
@@ -4797,6 +4829,12 @@
       ],
       "Subscription auto-renews every month.": [
         "Langganan akan diperbarui secara otomatis setiap bulannya."
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Langganan akan segera berakhir: Untuk mempertahankan manfaat ${ planName } Anda, langgan kembali paket Anda di Apple App Store sebelum ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Langganan akan segera berakhir: Untuk mempertahankan manfaat ${ planName } Anda, langgan kembali paket Anda di Google Play Store sebelum ${ byDate }. ${ reactivateLink }"
       ],
       "Summary": [
         "Rangkuman"
@@ -6323,6 +6361,9 @@
       ],
       "Request an invite": [
         "Minta undangan"
+      ],
+      "Resume now": [
+        "Lanjutkan sekarang"
       ],
       "settings": [
         "pengaturan"
@@ -8106,9 +8147,6 @@
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
-        "Durasi Lifetime harus lebih dari ${ MIN_LIFETIME } hari"
-      ],
       "Lifetime must not be set for \"Retain All\" action": [
         "Lifetime tidak boleh diatur ke tindakan \"Pertahankan Semua\""
       ],
@@ -8157,9 +8195,6 @@
       ],
       "Applies to": [
         "Berlaku pada"
-      ],
-      "days": [
-        "hari"
       ],
       "Keep items forever": [
         "Simpan item untuk selamanya"
@@ -8562,6 +8597,17 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Dibagikan oleh ${ ownerName }"
+      ]
+    },
+    "Signup": {
+      "1 month": [
+        "1 bulan"
+      ],
+      "12 months": [
+        "12 bulan"
+      ],
+      "24 months": [
+        "24 bulan"
       ]
     },
     "Signup label": {
@@ -10609,6 +10655,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Hemat hingga ${ priceString }** dengan langganan yang berdurasi lebih lama. Fitur premium yang sama, harga yang lebih rendah."
       ],
+      "Advanced security for your company?": [
+        "Keamanan tingkat lanjut untuk perusahaan Anda?"
+      ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Seluruh layanan premium ${ BRAND_NAME }. Dari hanya ${ fallBackString } per bulannya"
       ],
@@ -10617,6 +10666,12 @@
       ],
       "Did you know?": [
         "Tahukah Anda?"
+      ],
+      "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
+        "Lindungi organisasi Anda dari pembobolan data dengan ${ VPN_APP_NAME } for Business."
+      ],
+      "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
+        "Privasi tanpa batas untuk Anda dan orang terkasih. Mulai dari hanya ${ priceString }/bulan."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Anda dapat melindungi hingga ${ FAMILY_MAX_USERS } pengguna dengan ${ PLAN_NAMES[plan] }. Dimulai dari hanya ${ priceString }/bulan per akun."
@@ -10728,9 +10783,6 @@
       "It's you": [
         "Ini Anda"
       ],
-      "Lumo": [
-        "Lumo"
-      ],
       "Pending admin access": [
         "Menunggu akses admin"
       ],
@@ -10806,6 +10858,9 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } di ${ numberOfCountries } negara"
+      ],
+      "Select from ${ numberOfCountries }+ country": [
+        "Pilih dari ${ numberOfCountries }+ negara"
       ]
     },
     "vpn_2step: billing": {
