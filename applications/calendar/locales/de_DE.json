@@ -322,6 +322,9 @@
       "Get verification code": [
         "Verifizierungscode anfordern"
       ],
+      "Go to ${ planOrAppName }": [
+        "Gehe zu ${ planOrAppName }"
+      ],
       "Go to label": [
         "Zu Kategorie wechseln"
       ],
@@ -583,8 +586,8 @@
       "See plan features": [
         "Funktionen des Abonnements anzeigen"
       ],
-      "Select ${ planTitle }": [
-        "${ planTitle } auswählen"
+      "Select ${ planOrAppName }": [
+        "${ planOrAppName } auswählen"
       ],
       "Select all": [
         "Alle auswählen"
@@ -910,9 +913,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_DEDICATED_IPS } dedizierte Server haben."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_LUMO_SEATS } Lumo-Lizenzen haben."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-Lizenzen haben."
@@ -3700,9 +3700,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Die Adressprüfung mit vertrauenswürdigen Schlüsseln ist für diese Adresse aktiviert. Um an diese Adresse senden zu können, musst du zunächst öffentlichen Schlüsseln vertrauen, die für den Versand verwendet werden können."
       ],
-      "Admin account allocation": [
-        "Admin-Konto-Zuweisung"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Alle (${ totalFoldersCount } Ordner)",
         "Alle (${ totalFoldersCount } Ordner)"
@@ -3713,15 +3710,6 @@
       ],
       "All participants will get a cancellation email. Which event would you like to delete?": [
         "Alle Teilnehmer erhalten eine Absage-E-Mail. Welchen Termin möchtest du löschen?"
-      ],
-      "Allocated": [
-        "Zugewiesen"
-      ],
-      "Already allocated": [
-        "Bereits zugewiesen"
-      ],
-      "Already used": [
-        "Bereits verwendet"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey Logo"
@@ -3947,6 +3935,9 @@
       ],
       "Estimating time remaining...": [
         "Verbleibende Zeit wird ermittelt..."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Alles in ${ planOrAppName }"
       ],
       "Existent and added participants will be notified.": [
         "Vorhandene und hinzugefügte Teilnehmer werden benachrichtigt."
@@ -4266,23 +4257,17 @@
       "Start sharing it with contacts and use it for online services.": [
         "Gib es an deine Kontakte weiter und nutze es für Online-Dienste."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Speicherplatz, der anderen Benutzern in dieser Organisation zugewiesen ist"
-      ],
-      "Storage allocated to this user": [
-        "Diesem Benutzer zugewiesener Speicherplatz"
-      ],
-      "Storage for users": [
-        "Speicherplatz für Benutzer"
-      ],
-      "Storage used by this user": [
-        "Von diesem Benutzer verwendeter Speicherplatz"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
       ],
       "Subscription auto-renews every month.": [
         "Abonnement wird automatisch jeden Monat verlängert."
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnement endet: Um deine ${ planName }-Vorteile zu behalten, starte dein Abonnement bis zum ${ byDate } im Apple App Store neu. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnement endet: Um deine ${ planName }-Vorteile zu behalten, starte dein Abonnement bis zum ${ byDate } im Google Play Store neu. ${ reactivateLink }"
       ],
       "Symbols (#$&)": [
         "Symbole (#$&)"
@@ -4756,9 +4741,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
-      ],
-      "Account storage": [
-        "Kontenspeicher"
       ],
       "Add email address": [
         "E-Mail-Adresse hinzufügen"
@@ -5283,6 +5265,9 @@
       ],
       "Request an invite": [
         "Einladung anfordern"
+      ],
+      "Resume now": [
+        "Jetzt fortsetzen"
       ],
       "settings": [
         "Einstellungen"
@@ -7512,7 +7497,7 @@
       "Account recovery": [
         "Kontowiederherstellung"
       ],
-      "Account Temporarily Locked": [
+      "Account temporarily locked": [
         "Konto vorübergehend gesperrt"
       ],
       "Add another notification to remind you of this event": [

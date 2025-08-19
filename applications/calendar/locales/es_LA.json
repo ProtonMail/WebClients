@@ -583,9 +583,6 @@
       "See plan features": [
         "Ver funcionalidades del plan"
       ],
-      "Select ${ planTitle }": [
-        "Seleccione ${ planTitle }"
-      ],
       "Select all": [
         "Seleccionar todo"
       ],
@@ -910,9 +907,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puede tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el período de prueba."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Puede tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de Lumo durante el período de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
@@ -3695,9 +3689,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificación de dirección con claves de confianza está activada para esta dirección. Para poder enviar a esta dirección, primero confíe en las claves públicas que se pueden usar para enviar."
       ],
-      "Admin account allocation": [
-        "Asignación de la cuenta de administrador"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Todo (${ totalFoldersCount } carpeta)",
         "Todo (${ totalFoldersCount } carpetas)"
@@ -3708,15 +3699,6 @@
       ],
       "All participants will get a cancellation email. Which event would you like to delete?": [
         "Todos los participantes recibirán un correo electrónico de cancelación. ¿Qué evento desea eliminar?"
-      ],
-      "Allocated": [
-        "Asignado"
-      ],
-      "Already allocated": [
-        "Ya asignado"
-      ],
-      "Already used": [
-        "Ya usado"
       ],
       "American Express SafeKey logo": [
         "Logo de American Express SafeKey"
@@ -4258,18 +4240,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Comience a compartirla con sus contactos y úsela para servicios en línea."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Almacenamiento asignado a otros usuarios en esta organización"
-      ],
-      "Storage allocated to this user": [
-        "Almacenamiento asignado a este usuario"
-      ],
-      "Storage for users": [
-        "Almacenamiento para usuarios"
-      ],
-      "Storage used by this user": [
-        "Almacenamiento usado por este usuario"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envíe un depósito usando la siguiente dirección o escanee el código QR. El depósito aparecerá en la cuenta después de la confirmación."
       ],
@@ -4748,9 +4718,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Compruebe más tarde.)"
-      ],
-      "Account storage": [
-        "Almacenamiento de la cuenta"
       ],
       "Add email address": [
         "Agregar correo electrónico"

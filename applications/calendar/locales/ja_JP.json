@@ -311,6 +311,9 @@
       "Generate password": [
         "パスワードを生成"
       ],
+      "Get ${ planOrAppName }": [
+        "${ planOrAppName } を入手"
+      ],
       "Get in touch": [
         "連絡する"
       ],
@@ -322,6 +325,9 @@
       ],
       "Get verification code": [
         "認証コードを取得"
+      ],
+      "Go to ${ planOrAppName }": [
+        "${ planOrAppName }へ移動"
       ],
       "Go to label": [
         "ラベルへ移動"
@@ -442,6 +448,9 @@
       ],
       "More options": [
         "詳細設定を表示"
+      ],
+      "More options for accounts": [
+        "アカウントのその他のオプション"
       ],
       "New event": [
         "新しい予定"
@@ -584,8 +593,8 @@
       "See plan features": [
         "プランの機能を見る"
       ],
-      "Select ${ planTitle }": [
-        "${ planTitle } を選択"
+      "Select ${ planOrAppName }": [
+        "${ planOrAppName } を選択"
       ],
       "Select all": [
         "すべて選択"
@@ -870,6 +879,14 @@
         "このタブを閉じないでください。バックグラウンドで処理中のリクエストがあります。"
       ]
     },
+    "anniversary_2025: Offers": {
+      "12 months": [
+        "12 か月"
+      ],
+      "24 months": [
+        "24 か月"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } アプリケーション"
@@ -908,6 +925,17 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "プレミアムパスワードマネージャー"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } デスクトップアプリ"
+      ],
+      "Ad-blocker and malware protection": [
+        "広告ブロックとマルウェア保護"
+      ],
+      "Use your own email domain": [
+        "独自メールドメインを使用する"
       ]
     },
     "Billing cycle option": {
@@ -1019,6 +1047,9 @@
       ],
       "Discover and set up features": [
         "機能の発見と設定"
+      ],
+      "Maybe later": [
+        "たぶんあとで"
       ],
       "Remind me later": [
         "後で通知する"
@@ -2452,6 +2483,11 @@
         "${ formattedStart } から始まる予定の更新"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "信頼済みの連絡先"
+      ]
+    },
     "Error": {
       "${ list } doesn't have a valid email address": [
         "次の連絡先には有効なメールアドレスが登録されていません: ${ list }"
@@ -2464,6 +2500,9 @@
       ],
       "${ list } has no contacts": [
         "次のグループには連絡先が追加されていません: ${ list }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "あなたのユーザー名は${ user.Name }です。 ${ emailAddress }を作成するには、設定 > 署名とアドレス > 短縮ドメイン (@pm.me) に移動してください。"
       ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
@@ -2713,6 +2752,12 @@
       ],
       "Please fix the highlighted conflict to proceed.": [
         "続行するためにハイライトされた競合を修正してください。"
+      ],
+      "Please select a country": [
+        "国を選択してください"
+      ],
+      "Please select a state": [
+        "州を選択してください"
       ],
       "Port is required": [
         "ポートは必須です"
@@ -3207,8 +3252,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "システムのデフォルト"
+      ],
       "Theme font": [
         "テーマ フォント"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "大"
+      ],
+      "Medium (recommended)": [
+        "中 (推奨)"
+      ],
+      "Small": [
+        "小"
+      ],
+      "Very large": [
+        "特大"
+      ],
+      "Very small": [
+        "極小"
       ]
     },
     "Group": {
@@ -3586,6 +3651,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } 人のメンバー)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } /月)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ボーナスストレージ"
       ],
@@ -3628,9 +3696,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "信頼された鍵でのアドレス検証がこのアドレスに対して有効になっています。このアドレス宛にメッセージを送信するには、最初に公開鍵を信頼する必要があります。"
       ],
-      "Admin account allocation": [
-        "管理者アカウント割り当て"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "すべて (${ totalFoldersCount } フォルダー)"
       ],
@@ -3639,15 +3704,6 @@
       ],
       "All participants will get a cancellation email. Which event would you like to delete?": [
         "参加者全員にキャンセルメールが届きます。 どのイベントを削除しますか?"
-      ],
-      "Allocated": [
-        "割り当て"
-      ],
-      "Already allocated": [
-        "割り当て済み"
-      ],
-      "Already used": [
-        "すでに使用されています"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey ロゴ"
@@ -3859,6 +3915,9 @@
       "Enter your own password (as organization admin).": [
         "(組織管理者としての)パスワードを入力してください。"
       ],
+      "Enter your own password (as trusted contact).": [
+        "(信頼済みの連絡先としての)パスワードを入力してください。"
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "推定残り時間: ${ estimatedMinutes } 分"
       ],
@@ -3867,6 +3926,9 @@
       ],
       "Estimating time remaining...": [
         "残り時間..."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "${ planOrAppName } のすべての機能を含みます"
       ],
       "Existent and added participants will be notified.": [
         "既存の参加者と追加した参加者には通知されます。"
@@ -4078,6 +4140,9 @@
       "Organization size": [
         "組織の規模"
       ],
+      "Other accounts": [
+        "その他のアカウント"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "組織内の他のユーザーには、あなたの埋まっているスロットが表示されます。イベントの詳細は共有されません。"
       ],
@@ -4119,6 +4184,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "グループ ${ groupName } に追加するメールアドレスを選択してください。"
+      ],
+      "Please try again in a few moments": [
+        "しばらくしてからもう一度お試しください"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "別の支払い方法で再度お試しいただくか、銀行へお問い合わせください。"
@@ -4189,23 +4257,20 @@
       "Start sharing it with contacts and use it for online services.": [
         "連絡先と共有し、オンラインサービスでご利用ください。"
       ],
-      "Storage allocated to other users in this organisation": [
-        "この組織の他のユーザーに割り当てられたストレージ"
-      ],
-      "Storage allocated to this user": [
-        "ストレージはこのユーザーに割り当て済みです"
-      ],
-      "Storage for users": [
-        "ユーザーのストレージ"
-      ],
-      "Storage used by this user": [
-        "ストレージはこのユーザーによって使われています"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "以下のアドレスを使用するか、QRコードをスキャンして入金してください。確認後、デポジットはアカウントに反映されます。"
       ],
       "Subscription auto-renews every month.": [
         "サブスクリプションは毎月自動更新されます。"
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "サブスクリプションがもうすぐ終了します: ${ planName }の特典を維持するには${ byDate }までに更新してください。${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "サブスクリプションの終了: お客様の${ planName }の特典を維持するには、${ byDate }までにApple App Storeでサブスクリプションを再開してください。${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "サブスクリプションの終了: ${ planName } の特典を維持するには、${ byDate } までに Google Play ストアでサブスクリプションを再開してください。${ reactivateLink }"
       ],
       "Symbols (#$&)": [
         "記号 (#$&)"
@@ -4392,6 +4457,9 @@
       ],
       "Would you like to update this event?": [
         "この予定を更新してよろしいですか？"
+      ],
+      "Writing assistant": [
+        "執筆アシスタント"
       ],
       "Yearly": [
         "毎年"
@@ -4687,9 +4755,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(一時的に利用できません。あとでお試しください。)"
-      ],
-      "Account storage": [
-        "アカウントの容量"
       ],
       "Add email address": [
         "メールアドレスの追加"
@@ -5086,6 +5151,9 @@
       ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
+      ],
+      "Your password (trusted contact)": [
+        "パスワード (信頼済みの連絡先)"
       ]
     },
     "Label for contact group color": {
@@ -5208,8 +5276,14 @@
       "Pay invoice": [
         "請求の支払い"
       ],
+      "Reactivate now": [
+        "今すぐ再アクティブ"
+      ],
       "Request an invite": [
         "招待をリクエスト"
+      ],
+      "Resume now": [
+        "今すぐ再開"
       ],
       "settings": [
         "設定"
@@ -5535,6 +5609,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
       "${ n } calendar": [
         "${ n } 個のカレンダー"
       ],
@@ -5663,6 +5740,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "メールクライアント対応 (IMAP/SMTP 経由)"
+      ],
+      "Email groups": [
+        "メールグループ"
       ],
       "Enables HIPAA compliance": [
         "HIPAA コンプライアンス準拠"
@@ -5949,6 +6029,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "家族、友人、同僚とカレンダーを簡単に共有できます。"
+      ],
+      "Email everyone in a group with a single email address": [
+        "一つのメールアドレスでグループ全員にメール"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "メールアドレスが存在しない、存在しなくなった、入力ミスがあった場合などでも、あなたのドメイン宛に送信されたすべてのメールを受信できます"
@@ -6725,9 +6808,20 @@
         "(${ PASS_APP_NAME } を開きます)"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "予定を表示"
+      ]
+    },
     "Security Center - Info": {
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "第三者のサービスから、あなたのパスワードやその他のデータが漏洩した場合に通知します。${ learnMoreLink }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "私たちの、最先端のAI駆動セキュリティソリューションは、アカウントの高度な保護を求めるユーザー向けに設計されています。${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinelが**有効**で、アカウントを保護しています。"
       ]
     },
     "Select files": {
@@ -6743,9 +6837,64 @@
         "該当する結果が見つかりませんでした"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "リセットをキャンセル"
+      ],
+      "Reset password": [
+        "パスワードをリセット"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "旧式のアドレスキーに対してはアカウントの回復が利用できません。"
+      ],
+      "Please generate keys before you try to change your password": [
+        "パスワードを変更する前に、キーを生成してください。"
+      ]
+    },
+    "session_recovery:available:info": {
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "サインインしているデバイス (パスワード変更の要求がされたデバイス)に移動して、パスワードを変更してください。"
+      ],
+      "This permission expires soon": [
+        "この権限はまもなく有効期限が切れます"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "アカウント ${ boldEmail } のパスワードを、あと ${ boldDaysRemaining } 日間は自由に変更可能です。"
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "${ boldEmail }アカウントのパスワードを今すぐ変更できます。"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "パスワードが保存されました"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "パスワードをリセット"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "パスワードリセットをキャンセルする"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "パスワードリセットのプロセスをキャンセルするには、現在のパスワードを入力してください。他に変更は適用されません。"
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "パスワードリセットはキャンセルされました"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "パスワードのリセットをキャンセルしますか？"
       ]
     },
     "session_recovery:cancelled:info": {
@@ -7302,6 +7451,9 @@
     "Suffix for price": {
       "per month": [
         "毎月"
+      ],
+      "per user per month": [
+        "1 ユーザー/月"
       ]
     },
     "Tab subscription modal": {
@@ -7397,6 +7549,9 @@
       ],
       "Account recovery": [
         "アカウントの回復"
+      ],
+      "Account temporarily locked": [
+        "アカウントが一時的にロックされています"
       ],
       "Add another notification to remind you of this event": [
         "この予定をリマインドするために、別の通知を追加"
@@ -7691,6 +7846,9 @@
       ],
       "Network error": [
         "ネットワークエラー"
+      ],
+      "No breaches detected": [
+        "侵害は検出されませんでした"
       ],
       "Open actions dropdown": [
         "アクションのドロップダウンを開く"
