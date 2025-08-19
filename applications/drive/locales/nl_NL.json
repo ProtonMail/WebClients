@@ -430,8 +430,8 @@
       "Go back to album “${ albumName }“": [
         "Ga terug naar album “${ albumName }“"
       ],
-      "Go to ${ DRIVE_SHORT_APP_NAME }": [
-        "Ga naar ${ DRIVE_SHORT_APP_NAME }"
+      "Go to ${ planOrAppName }": [
+        "Ga naar ${ planOrAppName }"
       ],
       "Go to label": [
         "Ga naar label"
@@ -775,8 +775,8 @@
       "See version history": [
         "Versiegeschiedenis bekijken"
       ],
-      "Select ${ planTitle }": [
-        "Selecteer ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Selecteer ${ planOrAppName }"
       ],
       "Select all": [
         "Alles selecteren"
@@ -1075,9 +1075,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "U kunt tot ${ TRIAL_MAX_LUMO_SEATS } Lumo-plaatsen hebben tijdens de proefperiode."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-plaatsen hebben tijdens de proefperiode."
@@ -3589,9 +3586,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adresverificatie met vertrouwde sleutels is voor dit adres ingeschakeld. Vertrouw eerst een aantal openbare sleutels sleutels om berichten te kunnen versturen naar deze ontvanger."
       ],
-      "Admin account allocation": [
-        "Toewijzing beheerdersaccount"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Alles (${ totalFoldersCount } map)",
         "Alle (${ totalFoldersCount } mappen)"
@@ -3602,15 +3596,6 @@
       ],
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
-      ],
-      "Allocated": [
-        "Toegewezen"
-      ],
-      "Already allocated": [
-        "Reeds toegewezen"
-      ],
-      "Already used": [
-        "Al gebruikt"
       ],
       "Also try looking in Trash.": [
         "Probeer ook te zoeken in de Prullenbak."
@@ -3929,6 +3914,9 @@
       ],
       "Estimating time remaining...": [
         "Geschatte resterende tijd..."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Alles van ${ planOrAppName }"
       ],
       "Expired": [
         "Verlopen"
@@ -4545,18 +4533,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Begin het te delen met contacten en gebruik het voor online diensten."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Opslagruimte toegewezen aan andere gebruikers binnen deze organisatie"
-      ],
-      "Storage allocated to this user": [
-        "Opslagruimte toegewezen aan deze gebruiker"
-      ],
-      "Storage for users": [
-        "Opslag voor gebruikers"
-      ],
-      "Storage used by this user": [
-        "Opslagruimte gebruikt door deze gebruiker"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
       ],
@@ -5121,9 +5097,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
-      ],
-      "Account storage": [
-        "Opslagruimte account"
       ],
       "Add email address": [
         "E-mailadres toevoegen"
@@ -6957,6 +6930,14 @@
       "Root folder failed to be loaded": [
         "Hoofdmap kon niet geladen worden"
       ],
+      "Selected item was not removed from your list": [
+        "Geselecteerd item werd niet uit uw lijst verwijderd.",
+        "Geselecteerde items werden niet uit uw lijst verwijderd."
+      ],
+      "Selected items were successfully removed from your list": [
+        "Geselecteerde item is met succes verwijderd uit uw lijst",
+        "Geselecteerde items zijn met succes verwijderd uit uw lijst"
+      ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Geselecteerde foto('s) al in \"${ albumName }\""
       ],
@@ -6993,14 +6974,6 @@
       ],
       "The spreadsheet failed to be created": [
         "De spreadsheet kon niet aangemaakt worden"
-      ],
-      "This item was not removed from your list": [
-        "Dit item werd niet uit uw lijst verwijderd.",
-        "Sommige items werden niet uit uw lijst verwijderd."
-      ],
-      "This item was successfully removed from your list": [
-        "Dit item is met succes verwijderd uit uw lijst",
-        "Alle items zijn met succes verwijderd uit uw lijst"
       ],
       "Trash failed to be emptied": [
         "Prullenbak legen mislukt"
@@ -8142,6 +8115,9 @@
       ],
       "Account recovery": [
         "Accountherstel"
+      ],
+      "Account temporarily locked": [
+        "Account tijdelijk geblokkeerd"
       ],
       "Active": [
         "Actief"

@@ -433,8 +433,8 @@
       "Go back to album “${ albumName }“": [
         "Gå tilbake til albumet \"${ albumName }\""
       ],
-      "Go to ${ DRIVE_SHORT_APP_NAME }": [
-        "Gå til ${ DRIVE_SHORT_APP_NAME }"
+      "Go to ${ planOrAppName }": [
+        "Gå til ${ planOrAppName }"
       ],
       "Go to label": [
         "Gå til etikett"
@@ -781,8 +781,8 @@
       "See version history": [
         "Se versjonshistorikk"
       ],
-      "Select ${ planTitle }": [
-        "Velg ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Velg ${ planOrAppName }"
       ],
       "Select all": [
         "Velg alle"
@@ -3593,9 +3593,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adresseverifisering med klarerte nøkler er aktivert for denne adressen. For å kunne sende til denne adressen skal de offentlige nøklene, som kan brukes for å sende, først angis som klarerte."
       ],
-      "Admin account allocation": [
-        "Adminkonto tildeling"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "(${ totalFoldersCount } mappe)",
         "Alle (${ totalFoldersCount } mapper)"
@@ -3606,15 +3603,6 @@
       ],
       "All your changes will be lost.": [
         "Alle endringene dine vil gå tapt."
-      ],
-      "Allocated": [
-        "Tildelt"
-      ],
-      "Already allocated": [
-        "Allerede allokert"
-      ],
-      "Already used": [
-        "Allerede brukt"
       ],
       "Also try looking in Trash.": [
         "Prøv også å se i papirkurven."
@@ -3933,6 +3921,9 @@
       ],
       "Estimating time remaining...": [
         "Beregner gjenstående tid…"
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Alt i ${ planOrAppName }"
       ],
       "Expired": [
         "Utløpt"
@@ -4552,23 +4543,17 @@
       "Start sharing it with contacts and use it for online services.": [
         "Begynn å dele det med kontakter og bruk det til nettjenester."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Lagringsplass allokert til andre brukere i denne organisasjonen"
-      ],
-      "Storage allocated to this user": [
-        "Lagringsplass tildelt denne brukeren"
-      ],
-      "Storage for users": [
-        "Lagring for brukere"
-      ],
-      "Storage used by this user": [
-        "Lagringsplass anvendt av denne brukeren"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Send inn et innskudd ved å bruke følgende adresse eller skann QR-koden. Innskuddet ditt vil gjenspeiles i kontoen din etter bekreftelse."
       ],
       "Subscription auto-renews every month.": [
         "Abonnementet fornyes automatisk hver måned."
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnementet avsluttes: For å beholde fordelene med ${ planName }, start abonnementet på nytt i Apple App Store innen ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnementet avsluttes: For å beholde fordelene med ${ planName }, start abonnementet på nytt i Google Play Store innen ${ byDate }. ${ reactivateLink }"
       ],
       "Symbols (#$&)": [
         "Symboler (#$&)"
@@ -5131,9 +5116,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig. Kom tilbake senere)."
-      ],
-      "Account storage": [
-        "Kontolagring"
       ],
       "Add email address": [
         "Legg til e-postadresse"
@@ -5784,6 +5766,9 @@
       ],
       "Request an invite": [
         "Be om en invitasjon"
+      ],
+      "Resume now": [
+        "Gjenoppta nå"
       ],
       "settings": [
         "innstillinger"
@@ -7077,14 +7062,6 @@
       "The spreadsheet failed to be created": [
         "Regnearket kunne ikke opprettes"
       ],
-      "This item was not removed from your list": [
-        "Dette elementet ble ikke fjernet fra listen din",
-        "Noen elementer kunne ikke fjernes fra listen din"
-      ],
-      "This item was successfully removed from your list": [
-        "Dette elementet ble fjernet fra listen din",
-        "Alle elementer ble fjernet fra listen din"
-      ],
       "Trash failed to be emptied": [
         "Papirkurven kunne ikke tømmes"
       ],
@@ -8218,7 +8195,7 @@
       "Account recovery": [
         "Kontogjenoppretting"
       ],
-      "Account Temporarily Locked": [
+      "Account temporarily locked": [
         "Konto midlertidig låst"
       ],
       "Active": [
