@@ -447,9 +447,6 @@
       "Go back to album “${ albumName }“": [
         "Zpět do alba “${ albumName }“"
       ],
-      "Go to ${ DRIVE_SHORT_APP_NAME }": [
-        "Jít do ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Go to label": [
         "Přejít na štítek"
       ],
@@ -795,8 +792,8 @@
       "See version history": [
         "Zobrazit historii verzí"
       ],
-      "Select ${ planTitle }": [
-        "Vybrat ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Vybrat ${ planOrAppName }"
       ],
       "Select all": [
         "Vybrat vše"
@@ -3717,9 +3714,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Ověření Adresy pomocí Důvěryhodných Klíčů je pro tuto adresu povoleno. Chcete-li posílat zprávy na tuto adresu, nejprve důvěřujte veřejným klíčům, které mohou být použity pro odesílání."
       ],
-      "Admin account allocation": [
-        "Přidělení účtu správce"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Všechna (${ totalFoldersCount } složka)",
         "Všechny (${ totalFoldersCount } složky)",
@@ -3734,15 +3728,6 @@
       ],
       "All your changes will be lost.": [
         "Veškeré vaše změny budou ztraceny."
-      ],
-      "Allocated": [
-        "Přiděleno"
-      ],
-      "Already allocated": [
-        "Již bylo přiděleno"
-      ],
-      "Already used": [
-        "Již použito"
       ],
       "Also try looking in Trash.": [
         "Zkuste se podívat také do Koše."
@@ -4067,6 +4052,9 @@
       ],
       "Estimating time remaining...": [
         "Odhaduji zbývající čas..."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Vše v ${ planOrAppName }"
       ],
       "Expired": [
         "Platnost vypršela"
@@ -4692,18 +4680,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Začněte ji sdílet s kontakty a používejte ji pro online služby."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Úložný prostor přidělený ostatním uživatelům v této organizaci"
-      ],
-      "Storage allocated to this user": [
-        "Úložný prostor přidělený tomuto uživateli"
-      ],
-      "Storage for users": [
-        "Úložiště pro uživatele"
-      ],
-      "Storage used by this user": [
-        "Úložného prostoru využito tímto uživatelem"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Zálohu odešlete na následující adresu nebo naskenujte QR kód. Po potvrzení se vklad promítne na váš účet."
       ],
@@ -5292,9 +5268,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
-      ],
-      "Account storage": [
-        "Prostor pro účet"
       ],
       "Add email address": [
         "Přidat e-mailovou adresu"
@@ -7274,18 +7247,6 @@
       "The spreadsheet failed to be created": [
         "Vytvoření tabulky selhalo"
       ],
-      "This item was not removed from your list": [
-        "Tato položka nebyla odebrána ze seznamu",
-        "Odebrání některých položek ze seznamu selhalo",
-        "Odebrání některých položek ze seznamu selhalo",
-        "Odebrání některých položek ze seznamu selhalo"
-      ],
-      "This item was successfully removed from your list": [
-        "Tato položka byla úspěšně odebrána z vašeho seznamu",
-        "Všechny položky byly úspěšně odebrány z vašeho seznamu",
-        "Všechny položky byly úspěšně odebrány z vašeho seznamu",
-        "Všechny položky byly úspěšně odebrány z vašeho seznamu"
-      ],
       "Trash failed to be emptied": [
         "Koš se nepodařilo vyprázdnit"
       ],
@@ -8462,6 +8423,9 @@
       ],
       "Account recovery": [
         "Obnovení účtu"
+      ],
+      "Account temporarily locked": [
+        "Účet dočasně uzamčen"
       ],
       "Active": [
         "Aktivní"

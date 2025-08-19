@@ -448,8 +448,8 @@
       "Go back to album “${ albumName }“": [
         "Zurück zum Album „${ albumName }“"
       ],
-      "Go to ${ DRIVE_SHORT_APP_NAME }": [
-        "Zu ${ DRIVE_SHORT_APP_NAME } gehen"
+      "Go to ${ planOrAppName }": [
+        "Gehe zu ${ planOrAppName }"
       ],
       "Go to label": [
         "Zu Kategorie wechseln"
@@ -799,8 +799,8 @@
       "See version history": [
         "Versionsverlauf anzeigen"
       ],
-      "Select ${ planTitle }": [
-        "${ planTitle } auswählen"
+      "Select ${ planOrAppName }": [
+        "${ planOrAppName } auswählen"
       ],
       "Select all": [
         "Alle auswählen"
@@ -1099,9 +1099,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_DEDICATED_IPS } dedizierte Server haben."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_LUMO_SEATS } Lumo-Lizenzen haben."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-Lizenzen haben."
@@ -3670,9 +3667,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Die Adressprüfung mit vertrauenswürdigen Schlüsseln ist für diese Adresse aktiviert. Um an diese Adresse senden zu können, musst du zunächst öffentlichen Schlüsseln vertrauen, die für den Versand verwendet werden können."
       ],
-      "Admin account allocation": [
-        "Admin-Konto-Zuweisung"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Alle (${ totalFoldersCount } Ordner)",
         "Alle (${ totalFoldersCount } Ordner)"
@@ -3683,15 +3677,6 @@
       ],
       "All your changes will be lost.": [
         "Alle deine Änderungen gehen dabei verloren."
-      ],
-      "Allocated": [
-        "Zugewiesen"
-      ],
-      "Already allocated": [
-        "Bereits zugewiesen"
-      ],
-      "Already used": [
-        "Bereits verwendet"
       ],
       "Also try looking in Trash.": [
         "Versuchen, auch den Papierkorb zu durchsuchen."
@@ -4016,6 +4001,9 @@
       ],
       "Estimating time remaining...": [
         "Verbleibende Zeit wird ermittelt..."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Alles in ${ planOrAppName }"
       ],
       "Expired": [
         "Abgelaufen"
@@ -4650,23 +4638,17 @@
       "Start sharing it with contacts and use it for online services.": [
         "Gib es an deine Kontakte weiter und nutze es für Online-Dienste."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Speicherplatz, der anderen Benutzern in dieser Organisation zugewiesen ist"
-      ],
-      "Storage allocated to this user": [
-        "Diesem Benutzer zugewiesener Speicherplatz"
-      ],
-      "Storage for users": [
-        "Speicherplatz für Benutzer"
-      ],
-      "Storage used by this user": [
-        "Von diesem Benutzer verwendeter Speicherplatz"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
       ],
       "Subscription auto-renews every month.": [
         "Abonnement wird automatisch jeden Monat verlängert."
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnement endet: Um deine ${ planName }-Vorteile zu behalten, starte dein Abonnement bis zum ${ byDate } im Apple App Store neu. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnement endet: Um deine ${ planName }-Vorteile zu behalten, starte dein Abonnement bis zum ${ byDate } im Google Play Store neu. ${ reactivateLink }"
       ],
       "Symbols (#$&)": [
         "Symbole (#$&)"
@@ -5235,9 +5217,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
-      ],
-      "Account storage": [
-        "Kontenspeicher"
       ],
       "Add email address": [
         "E-Mail-Adresse hinzufügen"
@@ -5891,6 +5870,9 @@
       ],
       "Request an invite": [
         "Einladung anfordern"
+      ],
+      "Resume now": [
+        "Jetzt fortsetzen"
       ],
       "settings": [
         "Einstellungen"
@@ -7150,6 +7132,14 @@
       "Root folder failed to be loaded": [
         "Stammordner konnte nicht geladen werden"
       ],
+      "Selected item was not removed from your list": [
+        "Ausgewählter Eintrag konnte nicht aus deiner Liste entfernt werden.",
+        "Ausgewählte Einträge konnten nicht aus deiner Liste entfernt werden."
+      ],
+      "Selected items were successfully removed from your list": [
+        "Ausgewählter Eintrag wurden erfolgreich aus deiner Liste entfernt.",
+        "Ausgewählte Einträge wurden erfolgreich aus deiner Liste entfernt."
+      ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Die ausgewählten Fotos befinden sich bereits in „${ albumName }“"
       ],
@@ -7186,14 +7176,6 @@
       ],
       "The spreadsheet failed to be created": [
         "Fehler beim Erstellen der Tabellenkalkulation"
-      ],
-      "This item was not removed from your list": [
-        "Dieser Eintrag wurde nicht aus deiner Liste entfernt",
-        "Einige Einträge konnten nicht von deiner Liste entfernt werden"
-      ],
-      "This item was successfully removed from your list": [
-        "Dieser Eintrag wurde erfolgreich aus deiner Liste entfernt",
-        "Alle Einträge wurde erfolgreich aus deiner Liste entfernt"
       ],
       "Trash failed to be emptied": [
         "Der Papierkorb konnte nicht geleert werden"
@@ -8348,7 +8330,7 @@
       "Account recovery": [
         "Kontowiederherstellung"
       ],
-      "Account Temporarily Locked": [
+      "Account temporarily locked": [
         "Konto vorübergehend gesperrt"
       ],
       "Active": [
