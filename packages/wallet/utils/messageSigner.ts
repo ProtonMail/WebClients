@@ -2,7 +2,7 @@ import { WasmMessageSigner } from '@proton/andromeda';
 
 type MessageSignerCache = { messageSigner?: WasmMessageSigner };
 
-let messageSignerCache: MessageSignerCache = {};
+const messageSignerCache: MessageSignerCache = {};
 
 // Creating WasmMessageSigner object is expensive, so we have a local cache
 const getCachedWasmMessageSigner = (cache: MessageSignerCache) => {

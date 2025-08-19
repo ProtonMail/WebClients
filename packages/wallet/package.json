@@ -6,7 +6,7 @@
     "main": "index.ts",
     "scripts": {
         "check-types": "tsc",
-        "lint": "true",
+        "lint": "eslint . --ext .js,.ts,tsx --quiet",
         "test": "TZ=UTC vitest",
         "test:ci": "yarn test --coverage",
         "test:ui": "yarn test --ui",
