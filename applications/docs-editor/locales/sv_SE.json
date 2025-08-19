@@ -44,6 +44,9 @@
       "Apply": [
         "Tillämpa"
       ],
+      "Bold": [
+        "Fet"
+      ],
       "Bulleted List": [
         "Punktlista"
       ],
@@ -73,6 +76,9 @@
       ],
       "Code block": [
         "Kodblock"
+      ],
+      "Color": [
+        "Färg"
       ],
       "Colour": [
         "Färg"
@@ -131,11 +137,17 @@
       "Insert left": [
         "Infoga vänster"
       ],
+      "Insert link": [
+        "Infoga länk"
+      ],
       "Insert right": [
         "Infoga höger"
       ],
       "Insert table": [
         "Infoga tabell"
+      ],
+      "Italic": [
+        "Kursiv"
       ],
       "Justify align": [
         "Justera justerat"
@@ -206,11 +218,23 @@
       "Table options": [
         "Tabellalternativ"
       ],
+      "Underline": [
+        "Understreck"
+      ],
       "Undo": [
         "Ångra"
       ]
     },
     "color": {
+      "apple": [
+        "äpple"
+      ],
+      "black": [
+        "svart"
+      ],
+      "caramel": [
+        "karamell"
+      ],
       "carrot": [
         "morot"
       ],
@@ -222,6 +246,12 @@
       ],
       "copper": [
         "koppar"
+      ],
+      "dandelion": [
+        "maskros"
+      ],
+      "dark midnight blue": [
+        "mörk midnattsblå"
       ],
       "enzian": [
         "lila"
@@ -235,14 +265,41 @@
       "gray": [
         "grå"
       ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "lemon yellow": [
+        "citrongul"
+      ],
+      "light moss green": [
+        "ljus mossgrön"
+      ],
+      "light red": [
+        "ljusröd"
+      ],
+      "maize": [
+        "majs"
+      ],
+      "mughal green": [
+        "mogulgrön"
+      ],
       "ocean": [
         "hav"
       ],
       "olive": [
         "oliv"
       ],
+      "outer space": [
+        "yttre rymden"
+      ],
       "pacific": [
         "stilla havet"
+      ],
+      "pastel gray": [
+        "pastellgrå"
+      ],
+      "persian red": [
+        "persisk röd"
       ],
       "pickle": [
         "gurka"
@@ -252,6 +309,9 @@
       ],
       "pink": [
         "rosa"
+      ],
+      "pistachio": [
+        "pistasch"
       ],
       "plum": [
         "plommon"
@@ -265,8 +325,14 @@
       "reef": [
         "rev"
       ],
+      "ruddy pink": [
+        "rödblommig rosa"
+      ],
       "sahara": [
         "sahara"
+      ],
+      "satin sheen gold": [
+        "satin glänsande guld"
       ],
       "slateblue": [
         "skifferblå"
@@ -276,6 +342,9 @@
       ],
       "strawberry": [
         "jordgubb"
+      ],
+      "white": [
+        "vit"
       ]
     },
     "Confirm": {
@@ -335,8 +404,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "Systemstandard"
+      ],
       "Theme font": [
         "Temats typsnitt"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Stor"
+      ],
+      "Medium (recommended)": [
+        "Medium (rekommenderas)"
+      ],
+      "Small": [
+        "Liten"
+      ],
+      "Very large": [
+        "Väldigt stor"
+      ],
+      "Very small": [
+        "Väldigt liten"
       ]
     },
     "Info": {
@@ -358,6 +447,9 @@
       ],
       "Comments": [
         "Kommentarer"
+      ],
+      "Copied to clipboard": [
+        "Kopierat till urklipp"
       ],
       "Editing": [
         "Redigerar"
@@ -397,6 +489,9 @@
       ],
       "Suggesting": [
         "Föreslår"
+      ],
+      "Text color": [
+        "Textfärg"
       ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Innehållet du försöker klistra in är för stort för att klistras in på en gång. Försök igen genom att klistra in mindre delar åt gången."
@@ -490,6 +585,9 @@
       "Insert table row": [
         "Infoga tabellrad"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Tangentbordsgenväg: ${ shortcut }"
+      ],
       "Link text": [
         "Länktext"
       ],
@@ -524,6 +622,9 @@
       ],
       "Reply...": [
         "Svara …"
+      ],
+      "Text": [
+        "Text"
       ]
     },
     "Title": {
