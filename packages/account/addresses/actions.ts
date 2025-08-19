@@ -9,8 +9,8 @@ import {
     deleteAddress as deleteAddressConfig,
     disableAddress as disableAddressConfig,
     enableAddress as enableAddressConfig,
-    orderAddress as orderAddressConfig,
     setupAddress as setupAddressConfig,
+    updateAddressesOrder,
 } from '@proton/shared/lib/api/addresses';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -69,7 +69,7 @@ export const orderAddresses = ({
     addresses: Address[];
 }): ThunkAction<Promise<void>, RequiredState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, getState, extra) => {
-        await extra.api(orderAddressConfig(addresses.map(({ ID }) => ID)));
+        await extra.api(updateAddressesOrder(addresses.map(({ ID }) => ID)));
         if (!member || member.Self) {
             // If the address is getting set as default it affects the user.Email value
             dispatch(addressesThunk({ cache: CacheType.None })).catch(noop);
