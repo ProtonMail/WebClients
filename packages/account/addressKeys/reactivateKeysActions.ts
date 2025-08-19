@@ -15,7 +15,7 @@ import { type AddressKeysState } from '../addressKeys/index';
 import { addressesThunk } from '../addresses';
 import type { KtState } from '../kt';
 import { getKTActivation } from '../kt/actions';
-import { type OrganizationKeyState } from '../organizationKey';
+import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
 import { userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';
 
@@ -61,6 +61,7 @@ export const reactivateKeysThunk = ({
             await Promise.all([
                 dispatch(userThunk({ cache: CacheType.None })),
                 dispatch(addressesThunk({ cache: CacheType.None })),
+                dispatch(organizationKeyThunk({ cache: CacheType.None })), // Organization key potentially affected
             ]);
         } finally {
             extra.eventManager.start();
