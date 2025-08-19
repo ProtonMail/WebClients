@@ -62,6 +62,7 @@ export const ToggleButton = ({
                     )}
                     style={{ '--w-custom': '7rem', '--h-custom': '3.5rem' }}
                     onClick={onClick}
+                    onMouseUp={(e) => (e.currentTarget as HTMLButtonElement).blur()}
                     aria-label={ariaLabel}
                 >
                     {isOn ? <OnIconComponent size={6} /> : <OffIconComponent size={6} />}
@@ -80,6 +81,7 @@ export const ToggleButton = ({
                     e.stopPropagation();
                     onPopupButtonClick();
                 }}
+                onMouseUp={(e) => (e.currentTarget as HTMLButtonElement).blur()}
                 style={{
                     '--w-custom': '3rem',
                     '--h-custom': '3rem',
