@@ -70,6 +70,9 @@
       "Accept": [
         "Aceitar"
       ],
+      "Access account": [
+        "Acessar conta"
+      ],
       "activate": [
         "ativar"
       ],
@@ -601,6 +604,9 @@
       "Explore ${ target }": [
         "Explore ${ target }"
       ],
+      "Explore business plans": [
+        "Explore planos empresariais"
+      ],
       "Explore group plans": [
         "Explore planos de grupo"
       ],
@@ -697,6 +703,9 @@
       "Get verification code": [
         "Obter código de verificação"
       ],
+      "Give access now": [
+        "Permitir acesso"
+      ],
       "Go back": [
         "Voltar"
       ],
@@ -741,6 +750,9 @@
       ],
       "Increase": [
         "Aumentar"
+      ],
+      "Insert image": [
+        "Inserir imagem"
       ],
       "Invite": [
         "Convidar"
@@ -832,6 +844,9 @@
       "More options": [
         "Mais opções"
       ],
+      "More options for accounts": [
+        "Mais opções para contas"
+      ],
       "Need help?": [
         "Precisa de ajuda?"
       ],
@@ -858,6 +873,9 @@
       ],
       "Open navigation": [
         "Abrir navegação"
+      ],
+      "Opt out": [
+        "Rejeitar"
       ],
       "Or": [
         "Ou"
@@ -958,6 +976,9 @@
       "Request a feature": [
         "Solicitar um recurso"
       ],
+      "Request access": [
+        "Solicitar acesso"
+      ],
       "Request new code": [
         "Solicitar um novo código"
       ],
@@ -1048,9 +1069,6 @@
       "See plan features": [
         "Veja recursos do plano"
       ],
-      "Select ${ planTitle }": [
-        "Selecionar ${ planTitle }"
-      ],
       "Select a calendar to export": [
         "Selecione um calendário para exportar"
       ],
@@ -1095,6 +1113,12 @@
       ],
       "Send reminder": [
         "Enviar lembrete"
+      ],
+      "Set as default": [
+        "Definir como padrão"
+      ],
+      "Set as default mail application": [
+        "Definir como aplicativo de e-mail padrão"
       ],
       "Set catch-all": [
         "Definir catch-all"
@@ -1191,6 +1215,9 @@
       ],
       "Stay": [
         "Permanecer"
+      ],
+      "Stop being trusted contact": [
+        "Deixar de ser um contato de confiança"
       ],
       "Stop using single sign-on": [
         "Parar de usar início de sessão único"
@@ -1658,9 +1685,6 @@
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Você pode ter até ${ TRIAL_MAX_DEDICATED_IPS } servidor dedicado durante o período de avaliação."
       ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Você pode ter até ${ TRIAL_MAX_LUMO_SEATS } licenças do Lumo durante o período de avaliação."
-      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Você pode ter até ${ TRIAL_MAX_SCRIBE_SEATS } licenças do Scribe durante o período de avaliação."
       ],
@@ -1713,6 +1737,11 @@
       ],
       "Save even more with a 12-month plan": [
         "Economize mais com o plano de 12 meses"
+      ]
+    },
+    "bf2023: Deal details": {
+      "Premium Password Manager": [
+        "Gerenciador de senha premium"
       ]
     },
     "bf2023: header": {
@@ -1772,6 +1801,14 @@
         "Oferta indisponível"
       ]
     },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicativo para computador do ${ MAIL_APP_NAME }"
+      ],
+      "Use your own email domain": [
+        "Use o seu próprio domínio de e-mail"
+      ]
+    },
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Renovação automática por ${ renewPrice }, durante ${ renewLength } mês",
@@ -1790,6 +1827,9 @@
       ],
       "Annually": [
         "Anualmente"
+      ],
+      "Lifetime": [
+        "Acesso vitalício"
       ],
       "Monthly": [
         "Mensalmente"
@@ -1840,6 +1880,9 @@
       ],
       "Protect your whole household with 1 device": [
         "Proteja toda a sua casa com 1 dispositivo"
+      ],
+      "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
+        "Faça streaming para todas as grandes plataformas com ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Este artigo foi atualizado para incluir os protocolos WireGuard e Stealth VPN."
@@ -1965,6 +2008,9 @@
       ],
       "Invite": [
         "Convidar"
+      ],
+      "Maybe later": [
+        "Talvez mais tarde"
       ],
       "Remind me later": [
         "Lembre-me mais tarde"
@@ -3333,6 +3379,12 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } em ${ DRIVE_APP_NAME } permite que você colabore com outras pessoas em um ambiente seguro e criptografado."
       ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } não é seu aplicativo padrão de e-mail."
+      ],
+      "${ MAIL_APP_NAME } is your default mail application.": [
+        "${ MAIL_APP_NAME } é seu aplicativo padrão de e-mail."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Adicione pastas e arquivos ao ${ DRIVE_APP_NAME } e convide os membros da equipe para visualizar ou editar."
       ],
@@ -4228,8 +4280,189 @@
       ]
     },
     "emergency_access": {
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME } endereço de e-mail"
+      ],
+      "${ n } day": [
+        "${ n } dia",
+        "${ n } dias"
+      ],
+      "${ n } day left": [
+        "${ n } dia restante",
+        "${ n } dias restantes"
+      ],
+      "${ user } will be able to use your account and change your data.": [
+        "${ user } poderá usar sua conta e mudar os seus dados."
+      ],
+      "${ user } will no longer be able to request access to your account in case of emergency.": [
+        "${ user } não poderá mais solicitar acesso à sua conta em caso de emergência."
+      ],
+      "Access granted": [
+        "Acesso garantido"
+      ],
+      "Access granted on ${ formattedAccessibleAt }": [
+        "Acesso concedido em ${ formattedAccessibleAt }"
+      ],
+      "Access requested": [
+        "Acesso solicitado"
+      ],
+      "Access will be granted on ${ formattedAccessibleAt }": [
+        "Acesso garantido em ${ formattedAccessibleAt }"
+      ],
+      "Add": [
+        "Adicionar"
+      ],
+      "Add emergency contact": [
+        "Adicionar contato de emergência"
+      ],
+      "Change access wait time": [
+        "Mudar tempo de espera de acesso"
+      ],
+      "Change the time that ${ user } will have to wait before automatically giving them access.": [
+        "Mude o tempo que ${ user } terá que esperar antes de receber acesso automaticamente."
+      ],
+      "Change wait time": [
+        "Mudar o tempo de espera"
+      ],
+      "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
+        "Escolha alguém de confiança com os seus dados. Essa pessoa já precisa ter uma conta ${ BRAND_NAME }."
+      ],
+      "Disabled": [
+        "Desativado"
+      ],
+      "Emergency access": [
+        "Acesso de emergência"
+      ],
+      "Emergency access for ${ user } removed": [
+        "Acesso de emergência para ${ user } removido"
+      ],
+      "Emergency access granted": [
+        "Acesso de emergência garantido"
+      ],
+      "Emergency access requested": [
+        "Acesso de emergência solicitado"
+      ],
+      "Emergency contact added": [
+        "Contato de emergência adicionado"
+      ],
+      "Emergency contact removed": [
+        "Contato de emergência removido"
+      ],
+      "Give access now": [
+        "Permitir acesso"
+      ],
+      "Give immediate access?": [
+        "Dar acesso imediato?"
+      ],
+      "Immediate": [
+        "Imediato"
+      ],
+      "Included with ${ planName }": [
+        "Incluído com ${ planName }"
+      ],
+      "Less than a day": [
+        "Menos de um dia"
+      ],
+      "None": [
+        "Nenhum"
+      ],
+      "on ${ formattedAccessibleAt }": [
+        "em ${ formattedAccessibleAt }"
+      ],
+      "Only ": [
+        "Somente "
+      ],
+      "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
+        "Somente solicite acesso de emergência quando houver uma **situação válida** que exija que você gerencie a conta de outro usuário."
+      ],
+      "People I trust": [
+        "Pessoas de confiança"
+      ],
+      "People who trust me": [
+        "Pessoas que confiam em mim"
+      ],
+      "Protect your legacy with emergency access": [
+        "Proteja o seu legado com acesso de emergência"
+      ],
+      "Remove trusted contact": [
+        "Remover contato de confiança"
+      ],
+      "Request access?": [
+        "Solicitar acesso?"
+      ],
+      "Requesting access": [
+        "Solicitar acesso"
+      ],
+      "Stop being trusted contact?": [
+        "Deixar de ser um contato de confiança?"
+      ],
+      "They added me as trusted contact. I can access their account in case of an emergency.": [
+        "Eles me adicionaram como contato de confiança. Consigo acessar a conta deles em caso de emergência."
+      ],
+      "They may ask to access my account in case of an emergency.": [
+        "Eles podem pedir para acessar minha conta em caso de emergência."
+      ],
+      "This will take effect immediately.": [
+        "Isso entrará em vigor imediatamente."
+      ],
+      "Time required before automatically giving access": [
+        "Tempo necessário antes de conceder acesso automaticamente."
+      ],
+      "Time required before automatically granting them access": [
+        "Tempo necessário antes de garantir acesso automaticamente a eles"
+      ],
       "Trusted contact": [
         "Contato de confiança"
+      ],
+      "Upgrade to ${ planName }": [
+        "Faça upgrade para ${ planName }"
+      ],
+      "View request": [
+        "Ver solicitação"
+      ],
+      "Wait time": [
+        "Tempo de espera"
+      ],
+      "Wait time for access": [
+        "Tempo de espera para acesso"
+      ],
+      "Wait time saved": [
+        "Tempo de espera salvo"
+      ],
+      "We’ll notify **${ user }** that you requested emergency access.": [
+        "Notificaremos **${ user }** que você solicitou acesso de emergência."
+      ],
+      "You are signed in to the account ${ account }.": [
+        "Você iniciou sessão à conta ${ account }."
+      ],
+      "You can now access and manage their account.": [
+        "Você agora pode acessar e gerenciar a conta."
+      ],
+      "You can remove their access at any time to regain exclusive control of your account.": [
+        "Você pode remover o cesso deles a qualquer momento para recuperar o controle exclusivo de sua conta."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Você ainda não foi designado como contato de emergência para ninguém."
+      ],
+      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
+        "Você atingiu o máximo de ${ controller.meta.count } contato de confiança.",
+        "Você atingiu o máximo de ${ controller.meta.count } contato de confiança."
+      ],
+      "You will be notified when someone requests emergency access.": [
+        "Você será notificado quando alguém solicitar acesso de emergência."
+      ],
+      "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
+        "Você não poderá mais solicitar acesso à conta de${ user } em caso de emergência."
+      ],
+      "You'll receive access to their account immediately.": [
+        "Você receberá acesso à conta imediatamente."
+      ],
+      "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
+        "Você receberá acesso à conta deles em **${ days } dia**, ou quando eles aprovarem sua solicitação.",
+        "Você receberá acesso à conta deles em **${ days } dias**, ou quando eles aprovarem sua solicitação."
+      ],
+      "Your emergency contact ${ name } is requesting access to your account.": [
+        "Seu contato de emergência ${ name } está solicitando acesso a sua conta."
       ]
     },
     "Empty group name": {
@@ -4243,6 +4476,9 @@
       ],
       "Account does not exist": [
         "A conta não existe"
+      ],
+      "Address cannot be yours": [
+        "Endereço não pode ser seu"
       ],
       "Address primary private key not found": [
         "Chave privada principal do endereço não encontrada"
@@ -4629,6 +4865,9 @@
       ],
       "The address might be misspelled": [
         "O endereço pode estar incorreto"
+      ],
+      "The amount due has changed. Please try again.": [
+        "O valor devido foi alterado. Tente novamente."
       ],
       "The email addresses do not match": [
         "Os endereços de e-mail não correspondem."
@@ -5321,9 +5560,6 @@
       "Continue": [
         "Continuar"
       ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "Tudo que está incluso no ${ PLAN_NAMES[PLANS.VPN2024] }"
-      ],
       "Fastest VPN servers": [
         "Servidores de VPN mais rápidos"
       ],
@@ -5344,6 +5580,15 @@
       ]
     },
     "Features": {
+      "${ VPN_CONNECTIONS } devices": [
+        "${ VPN_CONNECTIONS } dispositivos"
+      ],
+      "Ad-blocker and malware protection": [
+        "Bloqueador de anúncios e proteção contra malware"
+      ],
+      "All premium ${ BRAND_NAME } services": [
+        "Todos os serviços premium da ${ BRAND_NAME }"
+      ],
       "and more premium features...": [
         "e outros recursos premium..."
       ],
@@ -6354,6 +6599,9 @@
       "${ PASS_APP_NAME } is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${ BRAND_NAME }.": [
         "O ${ PASS_APP_NAME } é o gerenciador de senhas de última geração projetado para facilitar o uso e a produtividade. Código aberto, co-desenvolvido pela SimpleLogin e ${ BRAND_NAME }."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }. O preço e a data de renovação da sua assinatura ${ planTitle } permanecem inalterados."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado ${ serverPricePerMonth }"
       ],
@@ -6444,6 +6692,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membro)",
         "(${ memberCount } membros)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mês)"
       ],
       "(default)": [
         "(padrão)"
@@ -7563,6 +7814,9 @@
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Estou usando o @ProtonMail e pensei que você poderia gostar. É um serviço de e-mail seguro que protege sua privacidade. Inscreva-se com meu link de referência para obter 1 mês de recursos premium gratuitamente: ${ referrerLink }"
       ],
+      "JCB logo": [
+        "Logotipo JCB"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Apenas confirme sua seleção e faremos o restante."
       ],
@@ -7844,6 +8098,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organize seus servidores dedicados em Gateways e decida quais membros podem acessá-los."
       ],
+      "Other accounts": [
+        "Outras contas"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Existem outros administradores na sua organização. Você é responsável por informar a nova senha."
       ],
@@ -7985,9 +8242,6 @@
       "Private AI assistant": [
         "Assistente de IA privado"
       ],
-      "Promotion expired": [
-        "Promoção expirada"
-      ],
       "Protected by Swiss privacy laws": [
         "Protegido pelas leis de privacidade suíças"
       ],
@@ -8038,6 +8292,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
+      ],
+      "Registering your subscription…": [
+        "Registrando sua assinatura…"
       ],
       "Remember to share the user's sign in details with them.": [
         "Lembre-se de compartilhar os detalhes de início de sessão do usuário com ele."
@@ -8214,9 +8471,6 @@
       "Starts on ${ startsOnTime }": [
         "Começa em ${ startsOnTime }"
       ],
-      "Stay tuned for future promotions.": [
-        "Fique atento às futuras promoções."
-      ],
       "Step ${ step }": [
         "Etapa ${ step }",
         "Etapas ${ step }"
@@ -8245,6 +8499,12 @@
       "Subscription auto-renews every month.": [
         "A assinatura é renovada automaticamente todos os meses."
       ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Fim da assinatura: para manter os benefícios do seu ${ planName }, reinicie sua assinatura no aplicativo Apple Store até ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Fim da assinatura: Para manter os benefícios do seu ${ planName }, reinicie sua assinatura na Google Play Store até ${ byDate }. ${ reactivateLink }"
+      ],
       "Summary": [
         "Resumo"
       ],
@@ -8262,6 +8522,9 @@
       ],
       "Symbols (#$&)": [
         "Símbolos (#$&)"
+      ],
+      "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
+        "Sincronize e gerencie arquivos com o aplicativo ${ DRIVE_APP_NAME }. Crie e compartilhe documentos no ${ DOCS_APP_NAME } e armazene-os com segurança. Tudo no ${ ios }, ${ android } e ${ desktop }."
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Recomendado por Tech Radar Pro com classificação de 4,2 de 5"
@@ -8409,9 +8672,6 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Esta mensagem não chegará à equipe de suporte, se você tiver um problema com nossos serviços ou precisar de maiores ações de nossa parte ${ supportLink }."
-      ],
-      "This promotion link has expired.": [
-        "O link da promoção expirou"
       ],
       "This service is not available to users signing in with single sign-on.": [
         "Este serviço não está disponível para usuários que iniciam sessão com o início de sessão único."
@@ -8836,6 +9096,9 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Quando desativado, isso impede que arquivos de imagem sejam carregados no seu dispositivo sem seu conhecimento."
       ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "Quando ativado, verificaremos se o ${ MAIL_APP_NAME } é seu aplicativo de e-mail padrão e o notificaremo caso não seja."
+      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Ao ativar o SAML para ${ appName } em seu provedor de identidade, você poderá ser solicitado a usar o URL de retorno de chamada (ACS) e o ID do emissor. Basta copiar e colar os dados abaixo nos campos do seu provedor de identidade."
       ],
@@ -9107,6 +9370,9 @@
       "Your ${ BRAND_NAME } password": [
         "Sua senha da ${ BRAND_NAME }"
       ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Sua assinatura do ${ plan } será substituída pela versão ${ PASS_SHORT_APP_NAME } Lifetime. O saldo restante da sua assinatura será adicionado à sua conta. A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Suas contas do ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão vinculadas. Para excluir ambas, inicia sessão em ${ loginLink } e exclua sua conta lá."
       ],
@@ -9160,6 +9426,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Sua próxima data de cobrança é ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Sua próxima data de cobrança é ${ renewalTime }. Entre em contato com o suporte se precisar de uma mudança imediata de plano."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Sua organização usa o login único (SSO). Pressione iniciar seção para continuar com seu provedor SSO."
       ],
@@ -9180,6 +9449,12 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Sua frase de recuperação é uma sequência de 12 palavras geradas aleatoriamente em uma ordem específica."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Seu plano começa em ${ renewalTime } e será renovado automaticamente todo mês."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Sua assinatura será renovada automaticamente em ${ renewalTime }."
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Seu ticket de suporte foi fechado. Agradecemos o contato com o suporte da ${ BRAND_NAME }."
@@ -10889,6 +11164,9 @@
       "Request an invite": [
         "Solicitar um convite"
       ],
+      "Resume now": [
+        "Continuar agora"
+      ],
       "Set email address": [
         "Definir endereço de e-mail"
       ],
@@ -11521,6 +11799,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe"
+      ],
       "${ n } calendar": [
         "${ n } calendário",
         "${ n } calendários"
@@ -11684,6 +11965,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Suporte a clientes de e-mail (via IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Grupos de e-mail"
       ],
       "Enables HIPAA compliance": [
         "Permite a conformidade com a HIPAA"
@@ -12008,6 +12292,9 @@
       "Downgrade account?": [
         "Fazer downgrade da conta?"
       ],
+      "Review subscription": [
+        "Revisar assinatura"
+      ],
       "Review subscription and pay": [
         "Revisar assinatura e pagar"
       ],
@@ -12087,6 +12374,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Compartilhe facilmente seus calendários com familiares, amigos ou colegas."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Envie e-mail a todos em um grupo com um único endereço de e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Garante que você receba todos os e-mails enviados ao seu domínio, mesmo que o endereço de e-mail não exista, tenha deixado de existir ou contenha um erro de digitação"
@@ -12502,6 +12792,11 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Bem-vindo ao ${ appName }"
+      ]
+    },
+    "Onboarding modal": {
+      "Desktop": [
+        "Área de trabalho"
       ]
     },
     "Option": {
@@ -13104,12 +13399,6 @@
       "Get unlimited privacy for two": [
         "Obtenha privacidade ilimitada para duas pessoas"
       ],
-      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
-        "Entendo que, se perder meus detalhes de recuperação, poderei perder permanentemente o acesso à minha conta."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
-        "Se sua conta ${ BRAND_NAME } for bloqueada, seu **kit de recuperação** permitirá que você faça login e recupere seus dados."
-      ],
       "Includes:": [
         "Incluí:"
       ],
@@ -13121,9 +13410,6 @@
       ],
       "Install app and extension": [
         "Instale o aplicativo e a extensão"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "É a única maneira de restaurar totalmente sua conta, portanto, mantenha-a em um lugar seguro."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Junte-se a mais de 100 milhões de pessoas que escolheram a ${ BRAND_NAME } para manter a segurança on-line"
@@ -13397,8 +13683,23 @@
       "MM/YY": [
         "MM/AA"
       ],
+      "More plans are available in other currencies": [
+        "Mais planos estão disponíveis em outras moedas"
+      ],
       "Processing payment": [
         "Processando pagamento"
+      ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "O preço da renovação está sujeito a alterações de acordo com os ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Renova por ${ renewPriceStr }, cancele a qualquer momento."
+      ],
+      "terms & conditions": [
+        "termos e condições"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ renewPriceStr } todo mês. Você pode cancelar a qualquer momento."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "A transação foi detectada com sucesso. Os créditos serão adicionados à sua conta assim que a transação for totalmente confirmada."
@@ -13428,6 +13729,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "O seu cartão foi recusado. Tente um cartão diferente ou entre em contato com o seu banco para autorizar o pagamento."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Permission": {
@@ -13852,11 +14158,6 @@
         "Verificar o seu número de telefone aumenta a segurança de sua conta e permite opções adicionais de recuperação."
       ]
     },
-    "RecoveryPhrase: Action": {
-      "Reveal recovery phrase": [
-        "Mostrar frase de recuperação"
-      ]
-    },
     "Remark about a key type option": {
       "Classic": [
         "Clássico"
@@ -13966,7 +14267,8 @@
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+      "Lifetime must be greater than ${ MIN_LIFETIME } day": [
+        "A duração deve ser maior que ${ MIN_LIFETIME } dia",
         "A duração deve ser maior que ${ MIN_LIFETIME } dias"
       ],
       "Lifetime must not be set for \"Retain All\" action": [
@@ -14019,7 +14321,8 @@
       "Applies to": [
         "Aplicar para"
       ],
-      "days": [
+      "day": [
+        "dia",
         "dias"
       ],
       "Keep items forever": [
@@ -14893,6 +15196,15 @@
       "/user": [
         "/usuário"
       ],
+      "1 month": [
+        "1 mês"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "24 months": [
+        "24 meses"
+      ],
       "30 custom email addresses": [
         "30 endereços de e-mail personalizados"
       ],
@@ -15094,9 +15406,6 @@
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Então ${ priceWithDiscountPerMonth } por mês, se você se inscrever."
-      ],
-      "To reedeem on your next paid subscription.": [
-        "Para resgatar na sua próxima assinatura paga."
       ],
       "Total": [
         "Total"
@@ -15938,6 +16247,11 @@
         "Seu próprio alias de e-mail @pm.me"
       ]
     },
+    "subscription reminder": {
+      "and 15 more premium features": [
+        "e mais 15 recursos premium"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Você tem certeza?"
@@ -16551,6 +16865,9 @@
       "Add users to \"${ policyName }\"": [
         "Adicionar usuários a «${ policyName }»"
       ],
+      "Added on": [
+        "Adicionada em"
+      ],
       "Address": [
         "Endereço"
       ],
@@ -16659,6 +16976,9 @@
       "Change second password": [
         "Alterar segunda senha"
       ],
+      "Check your default mail application": [
+        "Verifique seu aplicativo de e-mail padrão"
+      ],
       "Choose an account": [
         "Escolha uma conta"
       ],
@@ -16724,6 +17044,9 @@
       ],
       "Couldn’t create accounts": [
         "Não foi possível criar contas."
+      ],
+      "Coupon": [
+        "Cupom"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Criar ${ selectedUserIds.length } usuário",
@@ -16972,6 +17295,9 @@
       ],
       "Email privacy": [
         "Privacidade do e-mail"
+      ],
+      "Emergency access": [
+        "Acesso de emergência"
       ],
       "Enable advanced account protection": [
         "Ativar proteção avançada de conta com"
@@ -17553,6 +17879,9 @@
       ],
       "Signed in successfully!": [
         "Iniciado sessão"
+      ],
+      "Signed in to another account": [
+        "Sessão iniciada em outra conta"
       ],
       "Signed in to member account": [
         "Iniciado sessão à conta de membro"
@@ -18395,6 +18724,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Economize até ${ priceString }** com uma assinatura mais longa. Os mesmos recursos premium, preço mais baixo."
       ],
+      "Advanced security for your company?": [
+        "Segurança avançada para sua empresa?"
+      ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Todos os serviços premium da ${ BRAND_NAME }. A partir de apenas ${ fallBackString } por mês"
       ],
@@ -18524,9 +18856,6 @@
       "It's you": [
         "É você"
       ],
-      "Lumo": [
-        "Lumo"
-      ],
       "Pending admin access": [
         "Acesso administrador pendente"
       ],
@@ -18616,6 +18945,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } em ${ numberOfCountries } país",
         "${ numberOfServers } em ${ numberOfCountries } países"
+      ],
+      "Select from ${ numberOfCountries }+ country": [
+        "Selecione em ${ numberOfCountries }+ país",
+        "Selecione em ${ numberOfCountries }+ países"
       ]
     },
     "vpn_2step: billing": {

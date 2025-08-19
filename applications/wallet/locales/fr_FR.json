@@ -145,6 +145,9 @@
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
+      "Go to ${ planOrAppName }": [
+        "Accéder à ${ planOrAppName }"
+      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -253,8 +256,8 @@
       "Secure your wallet": [
         "Sécurisez votre portefeuille"
       ],
-      "Select ${ planTitle }": [
-        "Sélectionner ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Sélectionner ${ planOrAppName }"
       ],
       "Set recovery methods": [
         "Définir les méthodes de récupération"
@@ -433,9 +436,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_DEDICATED_IPS } serveur dédié maximum pendant la version d'essai."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Vous pouvez bénéficier de ${ TRIAL_MAX_LUMO_SEATS } accès maximum à Lumo pendant la période d’essai."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_SCRIBE_SEATS } accès maximum à Scribe pendant la période d’essai."
@@ -2190,18 +2190,6 @@
       "Address copied to clipboard": [
         "L'adresse a été copiée dans le presse-papiers."
       ],
-      "Admin account allocation": [
-        "Attribution de compte administrateur"
-      ],
-      "Allocated": [
-        "Alloué"
-      ],
-      "Already allocated": [
-        "Déjà alloué"
-      ],
-      "Already used": [
-        "Déjà utilisé"
-      ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
       ],
@@ -2303,6 +2291,9 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Saisissez votre propre mot de passe (en tant que contacts de confiance)."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Tout ce qui est inclus dans ${ planOrAppName }"
       ],
       "Expired": [
         "Expiré"
@@ -2423,18 +2414,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Commencez à la partager avec vos contacts et utilisez-la pour les services en ligne."
-      ],
-      "Storage allocated to other users in this organisation": [
-        "Espace de stockage alloué à d'autres utilisateurs de cette organisation"
-      ],
-      "Storage allocated to this user": [
-        "Espace de stockage alloué à cet utilisateur"
-      ],
-      "Storage for users": [
-        "Espace de stockage pour les utilisateurs"
-      ],
-      "Storage used by this user": [
-        "Espace de stockage utilisé par cet utilisateur"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faites un versement en utilisant l'adresse suivante ou scannez le code QR. Votre versement sera affiché sur votre compte après confirmation."
@@ -2589,9 +2568,6 @@
       "${ n } month": [
         "${ n } mois",
         "${ n } mois"
-      ],
-      "Account storage": [
-        "Espace de stockage du compte"
       ],
       "Address": [
         "Adresse"
@@ -4064,7 +4040,7 @@
       "${ feature } is now active": [
         "La fonction ${ feature } est maintenant active."
       ],
-      "Account Temporarily Locked": [
+      "Account temporarily locked": [
         "Compte temporairement verrouillé"
       ],
       "Add credit/debit card": [

@@ -330,6 +330,12 @@
       "Delete permanently": [
         "完全に削除"
       ],
+      "Deleting folder": [
+        "フォルダを削除中"
+      ],
+      "Deleting label": [
+        "ラベルを削除中"
+      ],
       "Deselect all": [
         "すべての選択を解除"
       ],
@@ -483,6 +489,9 @@
       "Generate text": [
         "テキストを生成"
       ],
+      "Get ${ planOrAppName }": [
+        "${ planOrAppName } を入手"
+      ],
       "Get in touch": [
         "連絡する"
       ],
@@ -494,6 +503,9 @@
       ],
       "Get verification code": [
         "認証コードを取得"
+      ],
+      "Go to ${ planOrAppName }": [
+        "${ planOrAppName }へ移動"
       ],
       "Go to label": [
         "ラベルへ移動"
@@ -587,6 +599,9 @@
       ],
       "Insert contacts": [
         "連絡先を挿入"
+      ],
+      "Insert image": [
+        "画像を挿入"
       ],
       "Label as": [
         "ラベル付け"
@@ -698,6 +713,9 @@
       ],
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "アカウントのその他のオプション"
       ],
       "More refine actions": [
         "その他の修正操作"
@@ -972,8 +990,8 @@
       "See plan features": [
         "プランの機能を見る"
       ],
-      "Select ${ planTitle }": [
-        "${ planTitle } を選択"
+      "Select ${ planOrAppName }": [
+        "${ planOrAppName } を選択"
       ],
       "Select All": [
         "すべて選択"
@@ -1013,6 +1031,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as default email application": [
         "${ MAIL_APP_NAME } をデフォルトのメールアプリケーションとして設定する"
+      ],
+      "Set as default": [
+        "デフォルトとして設定"
       ],
       "Set encryption": [
         "暗号化を設定"
@@ -1439,6 +1460,14 @@
         "新しいメール"
       ]
     },
+    "anniversary_2025: Offers": {
+      "12 months": [
+        "12 か月"
+      ],
+      "24 months": [
+        "24 か月"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } アプリケーション"
@@ -1494,6 +1523,17 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "プレミアムパスワードマネージャー"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } デスクトップアプリ"
+      ],
+      "Ad-blocker and malware protection": [
+        "広告ブロックとマルウェア保護"
+      ],
+      "Use your own email domain": [
+        "独自メールドメインを使用する"
       ]
     },
     "Billing cycle option": {
@@ -1605,6 +1645,9 @@
       ],
       "Discover and set up features": [
         "機能の発見と設定"
+      ],
+      "Maybe later": [
+        "たぶんあとで"
       ],
       "Remind me later": [
         "後で通知する"
@@ -3201,6 +3244,11 @@
         "ゼロアクセス暗号化。受信者のアカウントでエンドツーエンドの暗号化を無効にしています。"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "信頼済みの連絡先"
+      ]
+    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "暗号化されたヘッダーファイル名"
@@ -3210,11 +3258,20 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "<${ email }> で次のエラーが発生しました: ${ error.message }。この連絡先にほかのキーを追加するか、暗号化を無効にすることで問題は解決します。"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "あなたのユーザー名は${ user.Name }です。 ${ emailAddress }を作成するには、設定 > 署名とアドレス > 短縮ドメイン (@pm.me) に移動してください。"
+      ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
       "A problem occurred, please try again.": [
         "問題が発生しました。もう一度お試しください。"
+      ],
+      "Add at least one action": [
+        "少なくとも1つのアクションを追加してください"
+      ],
+      "Add at least one condition": [
+        "条件を少なくとも一つ追加してください"
       ],
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
@@ -3309,6 +3366,9 @@
       "Error connecting to the Bitcoin API.": [
         "Bitcoin APIへの接続中にエラーが発生しました。"
       ],
+      "Error in one of the conditions": [
+        "いずれかの条件にエラーがあります"
+      ],
       "Error while saving draft. Please try again.": [
         "下書きを保存しているときにエラーが発生しました。再度お試しください。"
       ],
@@ -3323,6 +3383,9 @@
       ],
       "Failed to load the STL preview": [
         "STLプレビューの読み込みに失敗しました"
+      ],
+      "Filter with this name already exists": [
+        "この名前のフィルターが既に存在します"
       ],
       "Folder name cannot be empty.": [
         "フォルダー名は空欄にできません。"
@@ -3452,6 +3515,12 @@
       ],
       "Please select a category and what went wrong with the generated text": [
         "カテゴリと生成されたテキストの間違いを選択してください"
+      ],
+      "Please select a country": [
+        "国を選択してください"
+      ],
+      "Please select a state": [
+        "州を選択してください"
       ],
       "Please try again or refresh the page.": [
         "もう一度やり直すか、ページを再読み込みしてください。"
@@ -3656,6 +3725,9 @@
       ],
       "You must set a name": [
         "名前を設定してください"
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "文字数が上限に達しました。メッセージを短くしてください。"
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "最近パスワードをリセットしたため、メールを復号化できません。以前のパスワードを覚えていらっしゃる場合、${ reActivateKeyLink }してメッセージにアクセスすることができます。${ learnMoreLink }"
@@ -4009,6 +4081,9 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } は更新されました"
+      ],
+      "Filter ${ Filter.Name } updated": [
+        "フィルター ${ Filter.Name } が更新されました"
       ]
     },
     "Filter option": {
@@ -4050,8 +4125,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "システムのデフォルト"
+      ],
       "Theme font": [
         "テーマ フォント"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "大"
+      ],
+      "Medium (recommended)": [
+        "中 (推奨)"
+      ],
+      "Small": [
+        "小"
+      ],
+      "Very large": [
+        "特大"
+      ],
+      "Very small": [
+        "極小"
       ]
     },
     "Footer": {
@@ -4743,6 +4838,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } 人のメンバー)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } /月)"
+      ],
       "(No Recipient)": [
         "(宛先なし)"
       ],
@@ -4782,9 +4880,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "信頼された鍵でのアドレス検証がこのアドレスに対して有効になっています。このアドレス宛にメッセージを送信するには、最初に公開鍵を信頼する必要があります。"
       ],
-      "Admin account allocation": [
-        "管理者アカウント割り当て"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "すべて (${ totalFoldersCount } フォルダー)"
       ],
@@ -4812,15 +4907,6 @@
       "All your changes will be lost.": [
         "変更内容はすべて失われます。"
       ],
-      "Allocated": [
-        "割り当て"
-      ],
-      "Already allocated": [
-        "割り当て済み"
-      ],
-      "Already used": [
-        "すでに使用されています"
-      ],
       "American Express SafeKey logo": [
         "American Express SafeKey ロゴ"
       ],
@@ -4845,6 +4931,9 @@
       "Any scheduled or snoozed messages will be canceled.": [
         "スケジュールまたはスヌーズされたメッセージはすべてキャンセルされます。"
       ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "「${ nameDeleted }」フォルダ内のサブフォルダはすべて削除されますが、フォルダ内に保存されているメールは削除されずに「すべてのメール」フォルダに残ります。"
+      ],
       "Apply to future messages": [
         "今後のメッセージに適用する"
       ],
@@ -4862,6 +4951,12 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "このラベルが付いたすべてのメッセージを削除してよろしいですか？"
+      ],
+      "Are you sure you want to delete this folder?": [
+        "このフォルダを削除してよろしいですか？"
+      ],
+      "Are you sure you want to delete this label?": [
+        "このラベルを本当に削除してもよろしいですか?"
       ],
       "Are you sure you want to discard your changes?": [
         "変更を破棄してよろしいですか?"
@@ -5034,6 +5129,9 @@
       "default email address": [
         "既定のメールアドレス"
       ],
+      "Default email application": [
+        "既定のメールアプリ"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "検出はお客様のデバイス上で行われるため、お客様のメールのデータは当社のサーバーに送信されません。"
       ],
@@ -5145,6 +5243,9 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "30 日以上前にゴミ箱とスパムに移動したメールは自動的にクリアされます。"
       ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "「${ nameDeleted }」のラベルの付いたメールは削除されず、元のフォルダに残ります。"
+      ],
       "embedded image": [
         "個の埋め込み画像"
       ],
@@ -5169,6 +5270,9 @@
       "Enter your own password (as organization admin).": [
         "(組織管理者としての)パスワードを入力してください。"
       ],
+      "Enter your own password (as trusted contact).": [
+        "(信頼済みの連絡先としての)パスワードを入力してください。"
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "推定残り時間: ${ estimatedMinutes } 分"
       ],
@@ -5177,6 +5281,9 @@
       ],
       "Estimating time remaining...": [
         "残り時間..."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "${ planOrAppName } のすべての機能を含みます"
       ],
       "Expand selection": [
         "選択を展開"
@@ -5268,6 +5375,9 @@
       "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
         "お客様のパスワードがダークウェブに流出した場合、${ BRAND_NAME } はどのサービスからデータが漏洩したのか、そして被害を食い止める方法をお知らせします。"
       ],
+      "Images have been removed because they are not allowed in auto-reply": [
+        "自動返信では許可されていないため画像は削除されました"
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ totalCalendarsCount } 件中 ${ calendarCount } 件のカレンダーをインポート"
       ],
@@ -5303,6 +5413,9 @@
       ],
       "Initializing…": [
         "初期化中…"
+      ],
+      "Insert image": [
+        "画像を挿入"
       ],
       "Internet connection lost": [
         "インターネット接続が切断されました"
@@ -5535,6 +5648,9 @@
       "Organization size": [
         "組織の規模"
       ],
+      "Other accounts": [
+        "その他のアカウント"
+      ],
       "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
         "システムはこれを疑わしいとしています。フィッシングメールや詐欺メールでない場合は、正当なものとしてマークしてください。"
       ],
@@ -5588,6 +5704,9 @@
       ],
       "Please share what you expected": [
         "期待していたことを共有してください"
+      ],
+      "Please try again in a few moments": [
+        "しばらくしてからもう一度お試しください"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "別の支払い方法で再度お試しいただくか、銀行へお問い合わせください。"
@@ -5742,6 +5861,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "${ MAIL_APP_NAME } をこのブラウザの既定のメールアプリに設定すると、メールのリンクをクリックした際に自動で ${ MAIL_APP_NAME } が開かれます。"
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "${ MAIL_APP_NAME }をデフォルトのメールアプリに設定しましょう。メールのリンクをクリックした時に、自動で${ MAIL_APP_NAME }が開きます。"
+      ],
       "Setting up ${ feature }…": [
         "${ feature }を設定しています…"
       ],
@@ -5778,20 +5900,8 @@
       "Start sharing it with contacts and use it for online services.": [
         "連絡先と共有し、オンラインサービスでご利用ください。"
       ],
-      "Storage allocated to other users in this organisation": [
-        "この組織の他のユーザーに割り当てられたストレージ"
-      ],
-      "Storage allocated to this user": [
-        "ストレージはこのユーザーに割り当て済みです"
-      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "ストレージ機能はこのブラウザではサポートされていません。コンテンツの検索を有効にするためには、このサポートが必要です。"
-      ],
-      "Storage for users": [
-        "ユーザーのストレージ"
-      ],
-      "Storage used by this user": [
-        "ストレージはこのユーザーによって使われています"
       ],
       "Subject": [
         "件名"
@@ -5811,8 +5921,20 @@
       "Subscription auto-renews every month.": [
         "サブスクリプションは毎月自動更新されます。"
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "サブスクリプションがもうすぐ終了します: ${ planName }の特典を維持するには${ byDate }までに更新してください。${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "サブスクリプションの終了: お客様の${ planName }の特典を維持するには、${ byDate }までにApple App Storeでサブスクリプションを再開してください。${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "サブスクリプションの終了: ${ planName } の特典を維持するには、${ byDate } までに Google Play ストアでサブスクリプションを再開してください。${ reactivateLink }"
+      ],
       "Symbols (#$&)": [
         "記号 (#$&)"
+      ],
+      "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
+        "${ DRIVE_APP_NAME }アプリでファイルを同期して管理します。${ DOCS_APP_NAME }でドキュメントを作成して共有し、安全に保存します。すべて${ ios }、${ android }、${ desktop }で利用可能です。"
       ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"
@@ -6216,6 +6338,9 @@
       "Would you like to receive a new verification code?": [
         "新しい認証コードを受け取りますか?"
       ],
+      "Writing assistant": [
+        "執筆アシスタント"
+      ],
       "writing assistant iframe": [
         "執筆アシスタント iframe"
       ],
@@ -6492,9 +6617,6 @@
       "/month": [
         "/ 月"
       ],
-      "Account storage": [
-        "アカウントの容量"
-      ],
       "Active filter:": [
         "有効なフィルター:"
       ],
@@ -6524,6 +6646,9 @@
       ],
       "App password": [
         "アプリのパスワード"
+      ],
+      "Apply filter to existing emails": [
+        "既存のメールにフィルターを適用"
       ],
       "Apply to future messages": [
         "今後のメッセージに適用する"
@@ -6998,6 +7123,9 @@
       ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
+      ],
+      "Your password (trusted contact)": [
+        "パスワード (信頼済みの連絡先)"
       ]
     },
     "Label attach to date input to select a date": {
@@ -7226,8 +7354,14 @@
       "Re-enable the address linked to this calendar to update your invitation.": [
         "招待を更新するには、このカレンダーにリンクされたメールアドレスを再度有効化してください。"
       ],
+      "Reactivate now": [
+        "今すぐ再アクティブ"
+      ],
       "Request an invite": [
         "招待をリクエスト"
+      ],
+      "Resume now": [
+        "今すぐ再開"
       ],
       "Scheduled": [
         "スケジュール済み"
@@ -7597,6 +7731,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
       "${ n } calendar": [
         "${ n } 個のカレンダー"
       ],
@@ -7725,6 +7862,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "メールクライアント対応 (IMAP/SMTP 経由)"
+      ],
+      "Email groups": [
+        "メールグループ"
       ],
       "Enables HIPAA compliance": [
         "HIPAA コンプライアンス準拠"
@@ -8012,6 +8152,9 @@
       "Easily share your calendars with your family, friends, or colleagues": [
         "家族、友人、同僚とカレンダーを簡単に共有できます。"
       ],
+      "Email everyone in a group with a single email address": [
+        "一つのメールアドレスでグループ全員にメール"
+      ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "メールアドレスが存在しない、存在しなくなった、入力ミスがあった場合などでも、あなたのドメイン宛に送信されたすべてのメールを受信できます"
       ],
@@ -8190,6 +8333,9 @@
       ]
     },
     "Notification": {
+      "${ Filter.Name } created": [
+        "${ Filter.Name } が作成されました"
+      ],
       "Block removed": [
         "ブロックが解除されました"
       ],
@@ -8287,6 +8433,9 @@
       ],
       "Continue": [
         "続ける"
+      ],
+      "Desktop": [
+        "デスクトップ"
       ],
       "Discover ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } を発見"
@@ -8867,9 +9016,20 @@
         "(${ PASS_APP_NAME } を開きます)"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "予定を表示"
+      ]
+    },
     "Security Center - Info": {
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "第三者のサービスから、あなたのパスワードやその他のデータが漏洩した場合に通知します。${ learnMoreLink }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "私たちの、最先端のAI駆動セキュリティソリューションは、アカウントの高度な保護を求めるユーザー向けに設計されています。${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinelが**有効**で、アカウントを保護しています。"
       ]
     },
     "Select files": {
@@ -8963,9 +9123,64 @@
         "ゼロアクセス暗号化で保存されています"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "リセットをキャンセル"
+      ],
+      "Reset password": [
+        "パスワードをリセット"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "旧式のアドレスキーに対してはアカウントの回復が利用できません。"
+      ],
+      "Please generate keys before you try to change your password": [
+        "パスワードを変更する前に、キーを生成してください。"
+      ]
+    },
+    "session_recovery:available:info": {
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "サインインしているデバイス (パスワード変更の要求がされたデバイス)に移動して、パスワードを変更してください。"
+      ],
+      "This permission expires soon": [
+        "この権限はまもなく有効期限が切れます"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "アカウント ${ boldEmail } のパスワードを、あと ${ boldDaysRemaining } 日間は自由に変更可能です。"
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "${ boldEmail }アカウントのパスワードを今すぐ変更できます。"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "パスワードが保存されました"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "パスワードをリセット"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "パスワードリセットをキャンセルする"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "パスワードリセットのプロセスをキャンセルするには、現在のパスワードを入力してください。他に変更は適用されません。"
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "パスワードリセットはキャンセルされました"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "パスワードのリセットをキャンセルしますか？"
       ]
     },
     "session_recovery:cancelled:info": {
@@ -9403,8 +9618,14 @@
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } 件の会話を未読にしました。"
       ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount }件の会話を${ labelName }に移動し、送信元のアドレスは迷惑メールから除外されました。"
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } 件の会話を ${ labelName } に移動しました。"
+      ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
-        "${ elementsCount } 件の会話を迷惑メールに移動し、送信元のアドレスは迷惑メールリストに登録されました。"
+        "${ elementsCount } 件の会話を迷惑メールに移動し、送信元のアドレスを迷惑メールリストに登録しました。"
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } 件の会話から ${ labelName } のラベルを外しました。"
@@ -9429,6 +9650,12 @@
       ],
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } 件のメッセージを未読にしました。"
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount }件のメールを${ labelName }に移動し、送信元のアドレスは迷惑メールから除外されました。"
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } 件のメッセージが ${ labelName } に移動されました。"
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
         "${ elementsCount }件のメールを迷惑メールに移動しました。差出人は迷惑メールリストに登録済みです。"
@@ -9480,6 +9707,12 @@
       ],
       "Conversation marked as unread.": [
         "会話を未読にしました。"
+      ],
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "会話を${ labelName }に移動し、差出人のアドレスは迷惑メールから除外されました。"
+      ],
+      "Conversation moved to ${ labelName }.": [
+        "会話が ${ labelName } に移動されました。"
       ],
       "Conversation moved to spam and sender added to your spam list.": [
         "会話を迷惑メールに移動し、差出人のアドレスは迷惑メールリストに追加されました。"
@@ -9543,6 +9776,12 @@
       ],
       "Message marked as unread.": [
         "メッセージを未読にしました。"
+      ],
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "メールを${ labelName }に移動し、送信元のアドレスは迷惑メールから除外しました。"
+      ],
+      "Message moved to ${ labelName }.": [
+        "メッセージが ${ labelName } に移動されました。"
       ],
       "Message moved to spam and sender added to your spam list.": [
         "メールを迷惑メールに移動しました。送信元のアドレスは迷惑メールリストに登録済みです。"
@@ -9621,6 +9860,9 @@
       " is now active": [
         " は現在アクティブです"
       ],
+      "${ label.Name } removed": [
+        "${ label.Name } が削除されました"
+      ],
       "The filter has been disabled": [
         "フィルターは無効化されました"
       ],
@@ -9642,6 +9884,9 @@
     "Suffix for price": {
       "per month": [
         "毎月"
+      ],
+      "per user per month": [
+        "1 ユーザー/月"
       ]
     },
     "Tab subscription modal": {
@@ -9779,6 +10024,9 @@
       "Account recovery": [
         "アカウントの回復"
       ],
+      "Account temporarily locked": [
+        "アカウントが一時的にロックされています"
+      ],
       "Action all conversations": [
         "すべての会話を操作"
       ],
@@ -9790,6 +10038,9 @@
       ],
       "Add credit/debit card": [
         "クレジット・デビットカードの追加"
+      ],
+      "Add filter": [
+        "フィルターを追加"
       ],
       "Add to ${ groupCount } group": [
         "${ groupCount } グループに追加"
@@ -9968,6 +10219,12 @@
       "Delete draft": [
         "下書きの削除"
       ],
+      "Delete folder?": [
+        "フォルダを削除しますか？"
+      ],
+      "Delete label?": [
+        "ラベルを削除しますか？"
+      ],
       "Delete message": [
         "メッセージを削除する"
       ],
@@ -10003,6 +10260,9 @@
       ],
       "Edit email settings": [
         "メール設定を編集"
+      ],
+      "Edit filter": [
+        "フィルターの編集"
       ],
       "Edit image": [
         "画像の編集"
@@ -10228,6 +10488,9 @@
       ],
       "No attachment found": [
         "添付ファイルが見つかりませんでした"
+      ],
+      "No breaches detected": [
+        "侵害は検出されませんでした"
       ],
       "No newsletters found": [
         "ニュースレターが見つかりません"

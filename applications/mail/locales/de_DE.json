@@ -344,6 +344,9 @@
       "Get verification code": [
         "Verifizierungscode anfordern"
       ],
+      "Go to ${ planOrAppName }": [
+        "Gehe zu ${ planOrAppName }"
+      ],
       "Go to label": [
         "Zu Kategorie wechseln"
       ],
@@ -642,8 +645,8 @@
       "See plan features": [
         "Funktionen des Abonnements anzeigen"
       ],
-      "Select ${ planTitle }": [
-        "${ planTitle } auswählen"
+      "Select ${ planOrAppName }": [
+        "${ planOrAppName } auswählen"
       ],
       "Select All": [
         "Alles auswählen"
@@ -974,9 +977,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_DEDICATED_IPS } dedizierte Server haben."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_LUMO_SEATS } Lumo-Lizenzen haben."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-Lizenzen haben."
@@ -2500,8 +2500,14 @@
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Der für den Benutzer ${ BRAND_NAME } abgerufene Primärschlüssel ist für den Versand nicht gültig."
       ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "Problem beim Herunterladen des Schreibassistenten. Wenn du den privaten Modus verwendest, versuche es mit dem normalen Browser-Modus oder führe den Schreibassistenten auf Servern aus."
+      ],
       "Process aborted": [
         "Prozess abgebrochen"
+      ],
+      "re-activate the previous key": [
+        "Vorherigen Schlüssel erneut aktivieren"
       ],
       "Removed duplicate recipient: ${ recipents }": [
         "Doppelter Empfänger wurde entfernt: ${ recipents }",
@@ -2970,6 +2976,9 @@
       "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
         "Hol dir unbegrenzten Zugriff mit jedem ${ MAIL_APP_NAME }-Tarif."
       ],
+      "Start free trial": [
+        "Kostenlose Testversion starten"
+      ],
       "Try the new desktop app": [
         "Probiere die neue Desktop-App aus"
       ]
@@ -3379,6 +3388,10 @@
         "${ currentProgress } von ${ totalProgress }",
         "${ currentProgress } von ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } Unterhaltung wird kategorisiert als:",
+        "${ elementsCount } Unterhaltungen werden kategorisiert als:"
+      ],
       "${ elementsCount } conversation will be marked as read.": [
         "${ elementsCount } Unterhaltung wird als „Gelesen“ gekennzeichnet.",
         "${ elementsCount } Unterhaltungen wird als „Gelesen“ gekennzeichnet."
@@ -3445,6 +3458,10 @@
         "${ numOccurrences } Ereignis gefunden",
         "${ numOccurrences } Ereignisse gefunden"
       ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } Ereignis im E-Mail-Inhalt gefunden",
+        "${ numOccurrences } Ereignisse im E-Mail-Inhalt gefunden"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
       ],
@@ -3509,6 +3526,10 @@
       "(No Recipient)": [
         "(Kein Empfänger)"
       ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** Ergebnis in ${ labelName } gefunden",
+        "**${ total }** Ergebnisse in ${ labelName } gefunden"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } Bonus-Speicherplatz"
       ],
@@ -3540,9 +3561,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Die Adressprüfung mit vertrauenswürdigen Schlüsseln ist für diese Adresse aktiviert. Um an diese Adresse senden zu können, musst du zunächst öffentlichen Schlüsseln vertrauen, die für den Versand verwendet werden können."
       ],
-      "Admin account allocation": [
-        "Admin-Konto-Zuweisung"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Alle (${ totalFoldersCount } Ordner)",
         "Alle (${ totalFoldersCount } Ordner)"
@@ -3559,15 +3577,6 @@
       ],
       "All your changes will be lost.": [
         "Alle deine Änderungen gehen dabei verloren."
-      ],
-      "Allocated": [
-        "Zugewiesen"
-      ],
-      "Already allocated": [
-        "Bereits zugewiesen"
-      ],
-      "Already used": [
-        "Bereits verwendet"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey Logo"
@@ -3791,6 +3800,9 @@
       ],
       "Estimating time remaining...": [
         "Verbleibende Zeit wird ermittelt..."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Alles in ${ planOrAppName }"
       ],
       "Expiration time": [
         "Gültigkeitsdauer"
@@ -4170,18 +4182,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Gib es an deine Kontakte weiter und nutze es für Online-Dienste."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Speicherplatz, der anderen Benutzern in dieser Organisation zugewiesen ist"
-      ],
-      "Storage allocated to this user": [
-        "Diesem Benutzer zugewiesener Speicherplatz"
-      ],
-      "Storage for users": [
-        "Speicherplatz für Benutzer"
-      ],
-      "Storage used by this user": [
-        "Von diesem Benutzer verwendeter Speicherplatz"
-      ],
       "Subject: ": [
         "Betreff: "
       ],
@@ -4190,6 +4190,12 @@
       ],
       "Subscription auto-renews every month.": [
         "Abonnement wird automatisch jeden Monat verlängert."
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnement endet: Um deine ${ planName }-Vorteile zu behalten, starte dein Abonnement bis zum ${ byDate } im Apple App Store neu. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnement endet: Um deine ${ planName }-Vorteile zu behalten, starte dein Abonnement bis zum ${ byDate } im Google Play Store neu. ${ reactivateLink }"
       ],
       "Symbols (#$&)": [
         "Symbole (#$&)"
@@ -4560,6 +4566,10 @@
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "Durch Klicken auf „Schlüssel vertrauen“ wird ein neuer Kontakt erstellt und dieser öffentliche Schlüssel diesem Absender zugeordnet. E-Mails von dieser Adresse werden automatisch kryptografisch verifiziert."
       ],
+      "Do you want to trust the primary public key with the following fingerprint?": [
+        "Möchtest du dem primären öffentlichen Schlüssel mit dem folgenden Fingerabdruck vertrauen?",
+        "Möchtest du den primären öffentlichen Schlüsseln mit den folgenden Fingerabdrücken vertrauen?"
+      ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Es wurde die Adressüberprüfung mit vertrauenswürdigen Schlüsseln für diese E-Mail-Adresse aktiviert, aber es wurde kein aktiver Verschlüsselungsschlüssel als vertrauenswürdig eingestuft. Du musst einen für das Senden gültigen Schlüssel als vertrauenswürdig einstufen, um eine Nachricht an diese E-Mail-Adresse senden zu können.",
         "Es wurde die Adressüberprüfung mit vertrauenswürdigen Schlüsseln für diese E-Mail-Adressen aktiviert, aber es wurde kein aktiver Verschlüsselungsschlüssel als vertrauenswürdig eingestuft. Du musst einen für das Senden gültigen Schlüssel als vertrauenswürdig einstufen, um eine Nachricht an diese E-Mail-Adressen senden zu können."
@@ -4578,9 +4588,6 @@
       ],
       "/month": [
         "/ Monat"
-      ],
-      "Account storage": [
-        "Kontenspeicher"
       ],
       "Add email address": [
         "E-Mail-Adresse hinzufügen"
@@ -5017,6 +5024,9 @@
     "Labels": {
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
         "Newsletter oder Verteilerlisten, von denen du abgemeldet bist, werden hier angezeigt."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Du hast keine aktiven Newsletter oder Verteilerlisten-Abonnemente."
       ]
     },
     "Landmarks": {
@@ -5116,6 +5126,9 @@
       ],
       "Request an invite": [
         "Einladung anfordern"
+      ],
+      "Resume now": [
+        "Jetzt fortsetzen"
       ],
       "Scheduled": [
         "Geplant"
@@ -6041,6 +6054,9 @@
       ],
       "Contact group updated": [
         "Kontaktgruppe aktualisiert"
+      ],
+      "Password has been set successfully": [
+        "Passwort wurde erfolgreich gesetzt"
       ]
     },
     "Oauth instructions": {
@@ -6303,6 +6319,9 @@
       ],
       "Subject": [
         "Betreff"
+      ],
+      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
+        "Sage dem Schreibassistenten, was er schreiben soll. Beispiel: „Kündige meine Mitgliedschaft im Fitnessstudio.“"
       ],
       "Your organization name": [
         "Name deiner Organisation"
@@ -6623,6 +6642,11 @@
         "Du wirst zu deinem SSO-Anbieter weitergeleitet."
       ]
     },
+    "Step": {
+      "Select service to update": [
+        "Zu aktualisierenden Dienst auswählen"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "Mehr Speicherplatz erhalten"
@@ -6901,6 +6925,10 @@
         "${ elementsCount } Unterhaltung nicht mehr zurückstellen",
         "${ elementsCount } Unterhaltungen nicht mehr zurückstellen"
       ],
+      "${ elementsCount } message added to ${ labelName }.": [
+        "${ elementsCount } Nachricht zu „${ labelName }“ hinzugefügt.",
+        "${ elementsCount } Nachrichten zu „${ labelName }“ hinzugefügt."
+      ],
       "${ elementsCount } message marked as read.": [
         "${ elementsCount } Nachricht als gelesen markiert.",
         "${ elementsCount } Nachrichten als gelesen markiert."
@@ -6916,6 +6944,10 @@
       "${ elementsCount } message moved to ${ labelName }.": [
         "${ elementsCount } Nachricht nach „${ labelName }“ verschoben.",
         "${ elementsCount } Nachrichten nach „${ labelName }“ verschoben."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } Nachricht in Spam verschoben und Absender zur Spamliste hinzugefügt.",
+        "${ elementsCount } Nachrichten in Spam verschoben und Absender zur Spamliste hinzugefügt."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } Nachricht aus „${ labelName }“ entfernt.",
@@ -7167,7 +7199,7 @@
       "Account recovery": [
         "Kontowiederherstellung"
       ],
-      "Account Temporarily Locked": [
+      "Account temporarily locked": [
         "Konto vorübergehend gesperrt"
       ],
       "Add contact group name": [
@@ -7373,6 +7405,9 @@
       ],
       "Exporting contacts": [
         "Kontakte werden exportiert"
+      ],
+      "Filter on...": [
+        "Filtern nach..."
       ],
       "Get more from your VPN": [
         "Hole mehr aus deinem VPN heraus"
@@ -7618,6 +7653,10 @@
       ],
       "Warning: suspected fake website": [
         "Warnung: Verdacht auf gefälschte Website"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Wir haben dich vor ${ trackersCount } Tracker geschützt",
+        "Wir haben dich vor ${ trackersCount } Trackern geschützt"
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Willkommen bei ${ BRAND_NAME } for Business"

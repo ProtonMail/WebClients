@@ -117,6 +117,9 @@
       "Cancel subscription": [
         "Скасаваць падпіску"
       ],
+      "Cancel trial and pay": [
+        "Скасаваць пробны перыяд і купіць падпіску"
+      ],
       "Change": [
         "Змяніць"
       ],
@@ -351,6 +354,9 @@
       "Explore ${ target }": [
         "Даследуйце ${ target }"
       ],
+      "Explore business plans": [
+        "Даследаваць тарыфныя планы для бізнесу"
+      ],
       "Explore group plans": [
         "Даследуйце групавыя тарыфныя планы"
       ],
@@ -378,6 +384,9 @@
       "Generate password": [
         "Згенерыраваць пароль"
       ],
+      "Get ${ planOrAppName }": [
+        "Атрымаць ${ planOrAppName }"
+      ],
       "Get a new encrypted email address": [
         "Атрымаць новы зашыфраваны адрас электроннай пошты"
       ],
@@ -404,6 +413,9 @@
       ],
       "Get verification code": [
         "Атрымаць праверачны код"
+      ],
+      "Go to ${ planOrAppName }": [
+        "Перайдзіце ў ${ planOrAppName }"
       ],
       "Go to label": [
         "Перайсці ў меткі"
@@ -486,6 +498,9 @@
       "More options": [
         "Дадатковыя параметры"
       ],
+      "More options for accounts": [
+        "Больш параметраў для ўліковых запісаў"
+      ],
       "Need help?": [
         "Неабходна дапамога?"
       ],
@@ -500,6 +515,9 @@
       ],
       "OK": [
         "OK"
+      ],
+      "Open": [
+        "Адкрыць"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Адкрыць налады ${ CALENDAR_APP_NAME }"
@@ -639,8 +657,8 @@
       "See plan features": [
         "Паглядзець функцыі тарыфнага плана"
       ],
-      "Select ${ planTitle }": [
-        "Выбраць ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Выбраць ${ planOrAppName }"
       ],
       "Select city ${ city }": [
         "Выбраць горад ${ city }"
@@ -1017,6 +1035,14 @@
         "Новы ліст"
       ]
     },
+    "anniversary_2025: Offers": {
+      "12 months": [
+        "12 месяцаў"
+      ],
+      "24 months": [
+        "24 месяцы"
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Адключана"
@@ -1040,6 +1066,11 @@
       ],
       "Save even more with a 12-month plan": [
         "Зэканомце яшчэ больш пры аплаце за 12 месяцаў"
+      ]
+    },
+    "bf2023: Deal details": {
+      "Premium Password Manager": [
+        "Прэміяльны менеджар пароляў"
       ]
     },
     "bf2023: header": {
@@ -1078,6 +1109,17 @@
         "Прапанова недаступна"
       ]
     },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
+      ],
+      "Ad-blocker and malware protection": [
+        "Блакіроўшчык рэкламы і абарона ад шкодных праграм"
+      ],
+      "Use your own email domain": [
+        "Выкарыстоўвайце ўласны дамен электроннай пошты"
+      ]
+    },
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewLength } месяц",
@@ -1098,6 +1140,9 @@
       ],
       "Annually": [
         "Штогод"
+      ],
+      "Lifetime": [
+        "Пажыццёва"
       ],
       "Monthly": [
         "Штомесяц"
@@ -1254,6 +1299,9 @@
       ],
       "Discover and set up features": [
         "Пазнаёміцца і наладзіць функцыі"
+      ],
+      "Maybe later": [
+        "Магчыма пазней"
       ],
       "Remind me later": [
         "Нагадаць мне пазней"
@@ -2606,6 +2654,9 @@
       ]
     },
     "Error": {
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } з'яўляецца вашым імем карыстальніка. Перайдзіце ў Налады -> Ідэнтычнасць і адрасы -> Кароткі дамен (pm.me), каб стварыць ${ emailAddress }."
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Уся прастора сховішча была размеркавана. Паменшыце сховішча, якое вы вылучылі іншым карыстальнікам."
       ],
@@ -2786,6 +2837,12 @@
       "Please generate keys before you try to change your password": [
         "Згенерыруйце ключы перад тым, як паспрабаваць змяніць пароль"
       ],
+      "Please select a country": [
+        "Выберыце краіну"
+      ],
+      "Please select a state": [
+        "Выберыце штат"
+      ],
       "Please select at least one location before continuing.": [
         "Выберыце прынамсі адно месцазнаходжанне перад працягам."
       ],
@@ -2833,6 +2890,9 @@
       ],
       "Tab closed": [
         "Укладка закрыта"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Сума для аплаты змянілася. Паспрабуйце яшчэ раз."
       ],
       "The email addresses do not match": [
         "Адрасы электроннай пошты не супадаюць"
@@ -3157,9 +3217,6 @@
       "Continue": [
         "Працягнуць"
       ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "Усё, што ўваходзіць у ${ PLAN_NAMES[PLANS.VPN2024] }"
-      ],
       "Fastest VPN servers": [
         "Найхутчэйшыя серверы VPN"
       ],
@@ -3180,6 +3237,15 @@
       ]
     },
     "Features": {
+      "${ VPN_CONNECTIONS } devices": [
+        "${ VPN_CONNECTIONS } прылад"
+      ],
+      "Ad-blocker and malware protection": [
+        "Блакіроўшчык рэкламы і абарона ад шкодных праграм"
+      ],
+      "All premium ${ BRAND_NAME } services": [
+        "Усе прэміяльныя сэрвісы ${ BRAND_NAME }"
+      ],
       "and more premium features...": [
         "і іншыя прэміяльныя функцыі..."
       ],
@@ -3189,11 +3255,17 @@
       "Lightning-fast speeds": [
         "Звышвысокія хуткасці"
       ],
+      "Lightning-fast VPN speeds": [
+        "Звышвысокія хуткасці VPN"
+      ],
       "NetShield Ad-blocker": [
         "Блакіроўшчык рэкламы NetShield"
       ],
       "Secure streaming": [
         "Бяспечная трансляцыя"
+      ],
+      "Stream from Netflix, HBO, and more": [
+        "Трансляцыі з Netflix, HBO і іншае"
       ]
     },
     "Features: Tooltip": {
@@ -3345,6 +3417,12 @@
         "Мегабайты",
         "Мегабайтаў",
         "Мегабайтаў"
+      ],
+      "Terabyte": [
+        "тэрабайт",
+        "тэрабайты",
+        "тэрабайтаў",
+        "Тэрабайтаў"
       ]
     },
     "Filter notification": {
@@ -3382,8 +3460,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "Прадвызначана сістэмай"
+      ],
       "Theme font": [
         "Шрыфт тэмы"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Вялікі"
+      ],
+      "Medium (recommended)": [
+        "Сярэдні (рэкамендуецца)"
+      ],
+      "Small": [
+        "Маленькі"
+      ],
+      "Very large": [
+        "Вельмі вялікі"
+      ],
+      "Very small": [
+        "Вельмі маленькі"
       ]
     },
     "Footer": {
@@ -3680,6 +3778,12 @@
         "${ number } сервераў",
         "${ number } серверы"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }. Кошт і дата падаўжэння вашай падпіскі ${ planTitle } застануцца нязменнымі."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
       ],
@@ -3763,6 +3867,9 @@
         "(${ memberCount } удзельнікі)",
         "(${ memberCount } удзельнікаў)",
         "(${ memberCount } удзельнікаў)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/месяц)"
       ],
       "(default)": [
         "(прадвызначана)"
@@ -4283,6 +4390,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Увядзіце фразу аднаўлення, каб змяніць пароль."
       ],
+      "Everything in ${ planOrAppName }": [
+        "Усё, што ўваходзіць у ${ planOrAppName }"
+      ],
       "Example: ${ spfExample }": [
         "Прыклад: ${ spfExample }"
       ],
@@ -4505,6 +4615,9 @@
       "Item updated in vault": [
         "Элемент абноўлены ў сховішчы"
       ],
+      "JCB logo": [
+        "Лагатып JCB"
+      ],
       "Keys created": [
         "Ключы створаны"
       ],
@@ -4691,6 +4804,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Арганізуйце свае вылучаныя серверы ў шлюзы і вырашыце, якія ўдзельнікі змогуць атрымаць доступ да іх."
       ],
+      "Other accounts": [
+        "Іншыя ўліковыя запісы"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "У вашай арганізацыі існуюць іншыя ўліковыя запісы са статусам адміністратар. Вы адказваеце за тое, каб паведаміць ім новы пароль."
       ],
@@ -4807,6 +4923,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
+      ],
+      "Registering your subscription…": [
+        "Рэгістрацыя вашай падпіскі…"
       ],
       "Remember to share the user's sign in details with them.": [
         "Не забудзьце абагуліць падрабязнасці ўваходу з імі."
@@ -4954,6 +5073,15 @@
       ],
       "Subscription auto-renews every month.": [
         "Падпіска будзе аўтаматычна падаўжацца кожны месяц."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Завяршэнне падпіскі: актывуйце яе паўторна да ${ byDate }, каб пакінуць перавагі свайго тарыфнага плана ${ planName }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Завяршэнне падпіскі: перазапусціце сваю падпіску ў Apple App Store да ${ byDate }, каб далей пакінуць перавагі ${ planName }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Завяршэнне падпіскі: перазапусціце сваю падпіску ў Google Play Store да ${ byDate }, каб далей пакінуць перавагі ${ planName }. ${ reactivateLink }"
       ],
       "Summary": [
         "Зводка"
@@ -5393,6 +5521,9 @@
       "Would you like to receive a new verification code?": [
         "Ці хочаце вы атрымаць новы праверачны код?"
       ],
+      "Writing assistant": [
+        "Памочнік у напісанні"
+      ],
       "You already have a free account": [
         "У вас ужо ёсць бясплатны ўліковы запіс"
       ],
@@ -5546,6 +5677,9 @@
       "Your ${ BRAND_NAME } password": [
         "Ваш пароль ${ BRAND_NAME }"
       ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Ваша падпіска ${ plan } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Рэшта балансу вашай падпіскі будзе дададзена на ваш уліковы запіс. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. За пажыццёвы доступ да ${ PASS_SHORT_APP_NAME } уносіцца аднаразовая плата."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Вашы ўліковыя запісы ${ VPN_APP_NAME } і ${ MAIL_APP_NAME } звязаны паміж сабой. Каб выдаліць іх абодва, увайдзіце праз ${ loginLink } і там выдаліце свой уліковы запіс."
       ],
@@ -5576,6 +5710,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Наступная дата спагнання грашовых сродкаў адбудзецца ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Наступная дата спагнання адбудзецца ${ renewalTime }. Звяжыцеся са службай падтрымкі, калі вы запатрабавалі неадкладную змену тарыфнага плана."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Ваша арганізацыя выкарыстоўвае адзіны ўваход (SSO). Націсніце кнопку \"Увайсці\", каб працягнуць уваход з вашым пастаўшчыком SSO."
       ],
@@ -5587,6 +5724,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожны месяц."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Ваша падпіска будзе аўтаматычна падоўжана ${ renewalTime }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "У вас будзе магчымасць неадкладна дадаць гэтыя серверы ў іншы шлюз."
@@ -6529,8 +6672,14 @@
       "Privacy policy": [
         "Палітыка прыватнасці"
       ],
+      "Reactivate now": [
+        "Актываваць паўторна"
+      ],
       "Request an invite": [
         "Запытаць запрашэнне"
+      ],
+      "Resume now": [
+        "Узнавіць"
       ],
       "settings": [
         "налады"
@@ -6833,6 +6982,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
       "${ n } calendar": [
         "${ n } каляндар",
         "${ n } календароў",
@@ -7006,6 +7158,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Падтрымка паштовых кліентаў (праз IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Групы электроннай пошты"
       ],
       "Enables HIPAA compliance": [
         "Забеспячэнне адпаведнасці HIPAA"
@@ -7285,6 +7440,9 @@
       "Downgrade account?": [
         "Панізіць уліковы запіс?"
       ],
+      "Review subscription": [
+        "Прагляд падпіскі"
+      ],
       "Review subscription and pay": [
         "Прагляд падпіскі і аплаты"
       ],
@@ -7357,6 +7515,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Лёгка дзяліцеся вашымі календарамі з сям'ёй, сябрамі або калегамі"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Адпраўка паведамлення кожнаму ў групе з адзінага адраса электроннай пошты"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Гарантуе, што вы атрымаеце ўсе лісты, якія адпраўлены на ваш дамен, нават калі адрас электроннай пошты не існуе, больш не існуе або ў напісанні адраса зроблена памылка"
@@ -8004,8 +8165,23 @@
       "MM/YY": [
         "ММ/ГГ"
       ],
+      "More plans are available in other currencies": [
+        "Больш тарыфных планаў даступна з іншымі валютамі"
+      ],
       "Processing payment": [
         "Апрацоўка плацяжу"
+      ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Кошт падаўжэння можа быць зменены ў адпаведнасці з ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Падаўжаецца за ${ renewPriceStr }. Скасаваць можна ў любы час."
+      ],
+      "terms & conditions": [
+        "умовы выкарыстання"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за кожны месяц. Скасаваць можна ў любы момант."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Трансакцыя паспяхова выяўлена. Крэдыты будуць дададзены на ваш рахунак пасля таго, як яна будзе цалкам пацверджана."
@@ -8035,6 +8211,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі плацяжу."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Permission": {
@@ -8371,9 +8552,6 @@
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
-        "Тэрмін службы павінен быць больш за ${ MIN_LIFETIME } дзён"
-      ],
       "Lifetime must not be set for \"Retain All\" action": [
         "Тэрмін дзеяння нельга задаваць для дзеяння \"Захаваць усе\""
       ],
@@ -8425,9 +8603,6 @@
       ],
       "Applies to": [
         "Ужыць да"
-      ],
-      "days": [
-        "дзён"
       ],
       "Keep items forever": [
         "Заўсёды захоўваць элементы"
@@ -8721,25 +8896,124 @@
     "session_recovery:available:action": {
       "Cancel password reset": [
         "Скасаваць скіданне пароля"
+      ],
+      "Cancel reset": [
+        "Скасаваць скіданне"
+      ],
+      "Reset password": [
+        "Скінуць пароль"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Аднаўленне ўліковага запісу недаступна для састарэлых адрасных ключоў"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Згенерыруйце ключы перад спробай змянення пароля"
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } дзень",
+        "${ timeRemaining.inDays } дні",
+        "${ timeRemaining.inDays } дзён",
+        "${ timeRemaining.inDays } дзён"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } гадзіна",
+        "${ timeRemaining.inHours } гадзіны",
+        "${ timeRemaining.inHours } гадзін",
+        "${ timeRemaining.inHours } гадзін"
+      ],
       "Didn’t make this request?": [
         "Не рабілі гэты запыт?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Скасуйце запыт, калі вы не запытвалі скіданне пароля."
       ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Перайдзіце на прыладу, якая знаходзіцца ў сістэме (з якой быў ініцыяваны запыт), каб змяніць пароль."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Гэты дазвол міне праз ${ timeRemaining.inDays } дзень",
+        "Гэты дазвол міне праз ${ timeRemaining.inDays } дні",
+        "Гэты дазвол міне праз ${ timeRemaining.inDays } дзён",
+        "Гэты дазвол міне праз ${ timeRemaining.inDays } дзён"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзіну",
+        "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзіны",
+        "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзін",
+        "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзін"
+      ],
+      "This permission expires soon": [
+        "Неўзабаве гэты дазвол міне"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Цяпер вы можаце змяніць свой пароль для ўліковага запісу ${ boldEmail } у вас яшчэ ёсць на гэта ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Цяпер вы можаце змяніць свой пароль для ўліковага запісу ${ boldEmail }"
+      ],
       "You can now reset your password": [
         "Цяпер вы можаце скінуць свой пароль"
       ],
       "You can reset your password until ${ boldDate }.": [
         "Вы можаце скінуць свой пароль да ${ boldDate }"
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "У вас ${ timeRemaining.inDays } дзень, каб скінуць свой пароль.",
+        "У вас ${ timeRemaining.inDays } дні, каб скінуць свой пароль.",
+        "У вас ${ timeRemaining.inDays } дзён, каб скінуць свой пароль.",
+        "У вас ${ timeRemaining.inDays } дзён, каб скінуць свой пароль."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "У вас ${ timeRemaining.inHours } гадзіна, каб скінуць свой пароль.",
+        " У вас ${ timeRemaining.inHours } гадзіны, каб скінуць свой пароль.",
+        " У вас ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль.",
+        " У вас ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "У вас ${ timeRemaining.inMinutes } хвіліна, каб скінуць свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } хвіліны, каб скінуць свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "У вас ${ timeRemaining.inSeconds } секунда, каб скінуць свой пароль.",
+        " У вас ${ timeRemaining.inSeconds } секунды, каб скінуць свой пароль.",
+        " У вас ${ timeRemaining.inSeconds } секунд, каб скінуць свой пароль.",
+        " У вас ${ timeRemaining.inSeconds } секунд, каб скінуць свой пароль."
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Пароль захаваны"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Скінуць ваш пароль"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Скасаваць скіданне пароля"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Увядзіце свой бягучы пароль, каб скасаваць працэс скідання пароля. Акрамя гэтай аперацыя іншыя змяненні зроблены не будуць."
       ]
     },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "Скіданне пароля скасавана."
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Скасаваць скіданне пароля?"
       ]
     },
     "session_recovery:cancelled:info": {
@@ -8753,6 +9027,12 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "яшчэ ${ gracePeriodHoursRemaining } гадзіна",
+        "яшчэ ${ gracePeriodHoursRemaining } гадзіны",
+        "яшчэ ${ gracePeriodHoursRemaining } гадзін",
+        "яшчэ ${ gracePeriodHoursRemaining } гадзін"
+      ],
       "Didn’t make this request?": [
         "Не рабілі гэты запыт?"
       ],
@@ -8761,6 +9041,12 @@
       ],
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
         "Скіданне пароля даступна з ${ boldDate }. Гэта дае вам час на скасаванне любых махлярскіх запытаў."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзіны.",
+        "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзін.",
+        "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзін.",
+        "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзін."
       ],
       "You can change your password in ${ gracePeriodHoursRemaining } hour": [
         "Вы можаце змяніць свой пароль на працягу ${ gracePeriodHoursRemaining } гадзіны",
@@ -8838,6 +9124,17 @@
         "Абагулена ${ ownerName }"
       ]
     },
+    "Signup": {
+      "1 month": [
+        "1 месяц"
+      ],
+      "12 months": [
+        "12 месяцаў"
+      ],
+      "24 months": [
+        "24 месяцы"
+      ]
+    },
     "Signup label": {
       "${ BRAND_NAME } password": [
         "Пароль ад ${ BRAND_NAME }"
@@ -8864,6 +9161,40 @@
       ],
       "Special offer": [
         "Спецыяльная прапанова"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } дзень",
+        "${ days } дні",
+        "${ days } дзён",
+        "${ days } дзён"
+      ],
+      "${ hours } hour": [
+        "${ hours } гадзіна",
+        "${ hours } гадзіны",
+        "${ hours } гадзін",
+        "${ hours } гадзін"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвіліна",
+        "${ minutes } хвіліны",
+        "${ minutes } хвілін",
+        "${ minutes } хвілін"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунд"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } месяц БЯСПЛАТНА",
+        "${ n } месяцы БЯСПЛАТНА",
+        "${ n } месяцаў БЯСПЛАТНА",
+        "${ n } месяцаў БЯСПЛАТНА"
       ]
     },
     "specialoffer: Deal details": {
@@ -8901,6 +9232,14 @@
       ],
       "Upgrade": [
         "Палепшыць"
+      ]
+    },
+    "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяцы",
+        "${ n } месяцаў",
+        "${ n } месяцаў"
       ]
     },
     "specialoffer: Tooltip": {
@@ -9470,6 +9809,11 @@
         "Кароткі псеўданім электроннай пошты @pm.me"
       ]
     },
+    "subscription reminder": {
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Вы ўпэўнены?"
@@ -9724,6 +10068,9 @@
     "Suffix for price": {
       "per month": [
         "ў месяц"
+      ],
+      "per user per month": [
+        "на карыстальніка ў месяц"
       ]
     },
     "Tab in domain modal": {
@@ -9845,6 +10192,9 @@
       ],
       "Account suspended": [
         "Уліковы запіс прыпынены"
+      ],
+      "Account temporarily locked": [
+        "Уліковы запіс часова заблакаваны"
       ],
       "Action": [
         "Дзеянне"
@@ -10040,6 +10390,9 @@
       ],
       "Couldn’t create accounts": [
         "Немагчыма стварыць уліковыя запісы"
+      ],
+      "Coupon": [
+        "Купон"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Стварыць ${ selectedUserIds.length } карыстальніка",
@@ -10967,6 +11320,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Зэканомце да ${ priceString }** з працяглай падпіскай. Тыя ж самыя прэміяльныя функцыі за меншую плату."
       ],
+      "Advanced security for your company?": [
+        "Пашыраная бяспека для вашай кампаніі?"
+      ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Усе прэміяльныя сэрвісы ${ BRAND_NAME }. Усяго ад ${ fallBackString } у месяц"
       ],
@@ -10975,6 +11331,12 @@
       ],
       "Did you know?": [
         "Ці ведалі вы што?"
+      ],
+      "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
+        "Абараніце сваю арганізацыю ад парушэнняў даных з дапамогай ${ VPN_APP_NAME } for Business."
+      ],
+      "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
+        "Неабмежаваная прыватнасць для вас і каханага чалавека. Усяго ад ${ priceString }/месяц."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Вы можаце абараніць да ${ FAMILY_MAX_USERS } асоб з тарыфным планам ${ PLAN_NAMES[plan] }. Пачынаючы ўсяго ад ${ priceString } у месяц за ўліковы запіс."
@@ -11086,9 +11448,6 @@
       "It's you": [
         "Гэта вы"
       ],
-      "Lumo": [
-        "Lumo"
-      ],
       "Pending admin access": [
         "Чаканне правоў доступу адміністратара"
       ],
@@ -11182,6 +11541,12 @@
         "${ numberOfServers } у ${ numberOfCountries } краінах",
         "${ numberOfServers } у ${ numberOfCountries } краінах",
         "${ numberOfServers } у ${ numberOfCountries } краінах"
+      ],
+      "Select from ${ numberOfCountries }+ country": [
+        "Выбірайце з ${ numberOfCountries }+ краіны",
+        "Выбірайце з ${ numberOfCountries } краін",
+        "Выбірайце з ${ numberOfCountries } краін",
+        "Выбірайце з ${ numberOfCountries } краін"
       ]
     },
     "vpn_2step: billing": {

@@ -309,6 +309,9 @@
       "Details": [
         "Rincian"
       ],
+      "Diagnostics": [
+        "Diagnostik"
+      ],
       "Discard": [
         "Buang"
       ],
@@ -345,8 +348,14 @@
       "Download apps": [
         "Unduh aplikasi"
       ],
+      "Download info": [
+        "Unduh informasi"
+      ],
       "Download logs": [
         "Unduh log"
+      ],
+      "Download results": [
+        "Unduh hasil"
       ],
       "Drive Locked": [
         "Drive Terkunci"
@@ -435,8 +444,8 @@
       "Go back to album “${ albumName }“": [
         "Kembali ke album \"${ albumName }\""
       ],
-      "Go to ${ DRIVE_SHORT_APP_NAME }": [
-        "Tuju ${ DRIVE_SHORT_APP_NAME }"
+      "Go to ${ planOrAppName }": [
+        "Tuju ${ planOrAppName }"
       ],
       "Go to label": [
         "Tuju label"
@@ -753,6 +762,9 @@
       "Retry": [
         "Coba lagi"
       ],
+      "Run diagnostics": [
+        "Jalankan diagnostik"
+      ],
       "Save": [
         "Simpan"
       ],
@@ -786,8 +798,8 @@
       "See version history": [
         "Lihat riwayat versi"
       ],
-      "Select ${ planTitle }": [
-        "Pilih ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Pilih ${ planOrAppName }"
       ],
       "Select all": [
         "Pilih semua"
@@ -1080,6 +1092,11 @@
         "Diundang"
       ]
     },
+    "bf2023: Deal details": {
+      "Premium Password Manager": [
+        "Pengelola Kata Sandi Premium"
+      ]
+    },
     "BF2024: Deal details": {
       "Use your own email domain": [
         "Gunakan domain email milik Anda sendiri"
@@ -1191,6 +1208,9 @@
       ],
       "Discover and set up features": [
         "Telusuri dan siapkan berbagai fitur"
+      ],
+      "Maybe later": [
+        "Mungkin nanti"
       ],
       "Remind me later": [
         "Ingatkan saya nanti"
@@ -2393,6 +2413,9 @@
       "Device name does not match": [
         "Nama perangkat tidak sesuai"
       ],
+      "Diagnostics failed": [
+        "Diagnostik gagal"
+      ],
       "Domain not available, try again later": [
         "Domain tidak tersedia, coba lagi nanti"
       ],
@@ -2581,6 +2604,9 @@
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Silakan selesaikan permasalahan yang disorot untuk melanjutkan."
+      ],
+      "Please select a country": [
+        "Silakan pilih negara"
       ],
       "Port is required": [
         "Nomor port diperlukan"
@@ -3572,9 +3598,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Verifikasi Alamat dengan Kunci Terpercaya sudah diaktifkan untuk alamat ini. Agar dapat mengirim ke alamat ini, percayai terlebih dahulu kunci publik yang akan dipakai untuk mengirim pesan."
       ],
-      "Admin account allocation": [
-        "Alokasi akun admin"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Semua (${ totalFoldersCount } folder)"
       ],
@@ -3583,15 +3606,6 @@
       ],
       "All your changes will be lost.": [
         "Seluruh perubahan yang Anda buat akan hilang."
-      ],
-      "Allocated": [
-        "Dialokasikan"
-      ],
-      "Already allocated": [
-        "Telah dialokasikan"
-      ],
-      "Already used": [
-        "Telah digunakan"
       ],
       "Also try looking in Trash.": [
         "Cobalah juga untuk mencari di Sampah."
@@ -3794,6 +3808,9 @@
       "Delete locked drive": [
         "Hapus drive yang terkunci"
       ],
+      "Details": [
+        "Rincian"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Tanda tangan digital berhasil diverifikasi. Berkas ini diunggah secara aman oleh ${ emailAddress }."
       ],
@@ -3911,6 +3928,9 @@
       "Estimating time remaining...": [
         "Memperkirakan waktu yang tersisa..."
       ],
+      "Everything in ${ planOrAppName }": [
+        "Segalanya di ${ planOrAppName }"
+      ],
       "Expired": [
         "Kedaluwarsa"
       ],
@@ -3976,6 +3996,9 @@
       ],
       "from the version history?": [
         "dari riwayat versi secara permanen?"
+      ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "Dapatkan log dan informasi lainnya untuk keperluan dukungan teknis dan penyelesaian masalah"
       ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Dapatkan aplikasi kami untuk mencadangkan foto dari ponsel Anda, atau unggah foto Anda di sini."
@@ -4055,6 +4078,9 @@
       "Initializing": [
         "Memulai"
       ],
+      "Integrity issues found": [
+        "Masalah integritas ditemukan"
+      ],
       "Internet connection lost": [
         "Koneksi internet terputus"
       ],
@@ -4066,6 +4092,9 @@
       ],
       "Invite link copied": [
         "Tautan undangan disalin"
+      ],
+      "Issues found": [
+        "Masalah ditemukan"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Sepertinya baru-baru ini Anda mencoba untuk mengunggah ${ uploadName }. Apabila unggahan gagal, silakan ${ replaceFile }. Apabila unggahan masih berlangsung, mengubah berkas akan membatalkan unggahan yang telah ada."
@@ -4210,6 +4239,9 @@
       ],
       "No group found": [
         "Tidak ada grup yang ditemukan"
+      ],
+      "No issue found": [
+        "Tidak ada masalah yang ditemukan"
       ],
       "No payment is required at this time.": [
         "Tidak ada pembayaran yang dibutuhkan untuk saat ini."
@@ -4415,6 +4447,9 @@
       "Restoring Photos... Please keep the tab open": [
         "Memulihkan Foto... Mohon biarkan tab ini terbuka"
       ],
+      "Running diagnostics...": [
+        "Menjalankan diagnostik..."
+      ],
       "Saving...": [
         "Menyimpan..."
       ],
@@ -4526,23 +4561,17 @@
       "Start sharing it with contacts and use it for online services.": [
         "Mulai membagikan dengan kontak Anda dan gunakan untuk layanan daring."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Ruang penyimpanan yang dialokasikan kepada pengguna lain di dalam organisasi ini"
-      ],
-      "Storage allocated to this user": [
-        "Ruang penyimpanan yang dialokasikan kepada pengguna ini"
-      ],
-      "Storage for users": [
-        "Ruang penyimpanan untuk anggota"
-      ],
-      "Storage used by this user": [
-        "Ruang penyimpanan yang digunakan oleh pengguna ini"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Kirimkan deposit melalui alamat berikut atau pindai kode QR di bawah ini. Deposit Anda akan muncul pada akun setelah terkonfirmasi."
       ],
       "Subscription auto-renews every month.": [
         "Langganan akan diperbarui secara otomatis setiap bulannya."
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Langganan akan segera berakhir: Untuk mempertahankan manfaat ${ planName } Anda, langgan kembali paket Anda di Apple App Store sebelum ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Langganan akan segera berakhir: Untuk mempertahankan manfaat ${ planName } Anda, langgan kembali paket Anda di Google Play Store sebelum ${ byDate }. ${ reactivateLink }"
       ],
       "Symbols (#$&)": [
         "Simbol (#$&)"
@@ -4651,6 +4680,9 @@
       ],
       "This will upload a new version of the folder": [
         "Dengan ini, versi baru folder akan diunggah"
+      ],
+      "Time": [
+        "Waktu"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Untuk menyelesaikan pembayaran Anda, silakan kirim ${ btcAmountBold } ke alamat di bawah ini."
@@ -5099,9 +5131,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
-      ],
-      "Account storage": [
-        "Penyimpanan akun"
       ],
       "Add email address": [
         "Tambah alamat email"
@@ -5754,6 +5783,9 @@
       ],
       "Request an invite": [
         "Minta undangan"
+      ],
+      "Resume now": [
+        "Lanjutkan sekarang"
       ],
       "settings": [
         "pengaturan"
@@ -6976,6 +7008,12 @@
       "Root folder failed to be loaded": [
         "Folder akar gagal dimuat"
       ],
+      "Selected item was not removed from your list": [
+        "Item yang dipilih gagal dihapus dari daftar Anda"
+      ],
+      "Selected items were successfully removed from your list": [
+        "Item yang dipilih berhasil dihapus dari daftar Anda"
+      ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Foto yang dipilih sudah ada di \"${ albumName }\""
       ],
@@ -7011,12 +7049,6 @@
       ],
       "The spreadsheet failed to be created": [
         "Lembar kerja gagal dibuat"
-      ],
-      "This item was not removed from your list": [
-        "Beberapa item gagal dihapus dari daftar Anda"
-      ],
-      "This item was successfully removed from your list": [
-        "Seluruh item berhasil dihapus dari daftar Anda"
       ],
       "Trash failed to be emptied": [
         "Gagal mengosongkan sampah"
@@ -7209,6 +7241,18 @@
       ],
       "No parent folder": [
         "Tidak ada folder induk"
+      ],
+      "Only current location": [
+        "Hanya lokasi saat ini"
+      ],
+      "Only current location: ${ name }": [
+        "Hanya lokasi saat ini: ${ name }"
+      ],
+      "Verify content": [
+        "Verifikasi konten"
+      ],
+      "Verify thumbnails": [
+        "Verifikasi thumbnail"
       ]
     },
     "Option group label": {
@@ -8333,6 +8377,9 @@
       "Devices": [
         "Perangkat"
       ],
+      "Diagnostics": [
+        "Diagnostik"
+      ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Tanda tangan digital terverifikasi secara parsial. Berkas ini dibuat dengan menggunakan tautan berbagi yang tersedia secara publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas mereka tidak dapat diverifikasi."
       ],
@@ -8504,11 +8551,20 @@
       "Last uploaded by": [
         "Terakhir diunggah oleh"
       ],
+      "Level": [
+        "Tingkatan"
+      ],
       "Link confirmation": [
         "Konfirmasi tautan"
       ],
       "Location": [
         "Lokasi"
+      ],
+      "Logger": [
+        "Pencatat log"
+      ],
+      "Logs": [
+        "Log"
       ],
       "Manage secure link": [
         "Kelola tautan aman"
@@ -8521,6 +8577,9 @@
       ],
       "Merging contacts": [
         "Menggabungkan kontak"
+      ],
+      "Message": [
+        "Pesan"
       ],
       "MIME type": [
         "Jenis MIME"
@@ -8791,6 +8850,9 @@
       ],
       "This link is password protected": [
         "Tautan ini dilindungi oleh kata sandi"
+      ],
+      "Time": [
+        "Waktu"
       ],
       "Total size": [
         "Ukuran total"

@@ -354,9 +354,6 @@
       "Go back": [
         "Zpět"
       ],
-      "Go to ${ DRIVE_SHORT_APP_NAME }": [
-        "Jít do ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Go to label": [
         "Přejít na štítek"
       ],
@@ -603,8 +600,8 @@
       "See version history": [
         "Zobrazit historii verzí"
       ],
-      "Select ${ planTitle }": [
-        "Vybrat ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Vybrat ${ planOrAppName }"
       ],
       "Select all": [
         "Vybrat vše"
@@ -3279,9 +3276,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Ověření Adresy pomocí Důvěryhodných Klíčů je pro tuto adresu povoleno. Chcete-li posílat zprávy na tuto adresu, nejprve důvěřujte veřejným klíčům, které mohou být použity pro odesílání."
       ],
-      "Admin account allocation": [
-        "Přidělení účtu správce"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Všechna (${ totalFoldersCount } složka)",
         "Všechny (${ totalFoldersCount } složky)",
@@ -3293,15 +3287,6 @@
         "Všechny (${ totalFoldersCount } štítky)",
         "Všech (${ totalFoldersCount } štítků)",
         "Všech (${ totalFoldersCount } štítků)"
-      ],
-      "Allocated": [
-        "Přiděleno"
-      ],
-      "Already allocated": [
-        "Již bylo přiděleno"
-      ],
-      "Already used": [
-        "Již použito"
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
@@ -3549,6 +3534,9 @@
       "Every change you make is automatically and securely saved to Drive.": [
         "Každá provedená změna se automaticky a bezpečně uloží na disk Drive."
       ],
+      "Everything in ${ planOrAppName }": [
+        "Vše v ${ planOrAppName }"
+      ],
       "Expired": [
         "Platnost vypršela"
       ],
@@ -3605,9 +3593,6 @@
       ],
       "Get Notified About Comments": [
         "Buďte upozorněni na komentáře"
-      ],
-      "Go to ${ DRIVE_APP_NAME }": [
-        "Jít do ${ DRIVE_APP_NAME }"
       ],
       "here": [
         "zde"
@@ -3992,18 +3977,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začněte ji sdílet s kontakty a používejte ji pro online služby."
-      ],
-      "Storage allocated to other users in this organisation": [
-        "Úložný prostor přidělený ostatním uživatelům v této organizaci"
-      ],
-      "Storage allocated to this user": [
-        "Úložný prostor přidělený tomuto uživateli"
-      ],
-      "Storage for users": [
-        "Úložiště pro uživatele"
-      ],
-      "Storage used by this user": [
-        "Úložného prostoru využito tímto uživatelem"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Zálohu odešlete na následující adresu nebo naskenujte QR kód. Po potvrzení se vklad promítne na váš účet."
@@ -4467,9 +4440,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
-      ],
-      "Account storage": [
-        "Prostor pro účet"
       ],
       "Add email address": [
         "Přidat e-mailovou adresu"
@@ -7139,6 +7109,9 @@
       ],
       "Account recovery": [
         "Obnovení účtu"
+      ],
+      "Account temporarily locked": [
+        "Účet dočasně uzamčen"
       ],
       "Add contact group name": [
         "Přidat název skupiny kontaktů"

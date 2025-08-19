@@ -294,7 +294,7 @@
         "Belgenin son biçimini oku ya da yazdır"
       ],
       "Use the dropdown above to switch and start making suggestions.": [
-        "Açmak ve öneride bulunmaya başlamak için yukarıdaki açılır menüyü kullanın."
+        "Açmak ve öneride bulunmaya başlamak için yukarıdaki açılan kutuyu kullanın."
       ]
     },
     "Error": {
@@ -338,8 +338,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "Sistem varsayılanı"
+      ],
       "Theme font": [
         "Tema yazı tipi"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Büyük"
+      ],
+      "Medium (recommended)": [
+        "Orta (önerilen)"
+      ],
+      "Small": [
+        "Küçük"
+      ],
+      "Very large": [
+        "Çok büyük"
+      ],
+      "Very small": [
+        "Çok küçük"
       ]
     },
     "Info": {
@@ -416,13 +436,13 @@
     },
     "Label": {
       "${ name } background color and white text color": [
-        "${ name } arka plan rengi ve beyaz metin rengi"
+        "${ name } arka plan rengi ve beyaz yazı rengi"
       ],
       "${ name } text color and highlight": [
-        "${ name } metin rengi ve vurgusu"
+        "${ name } yazı rengi ve vurgusu"
       ],
       "${ name } text color with no background": [
-        "Arka plan olmadan ${ name } metin rengi"
+        "Arka plan olmadan ${ name } yazı rengi"
       ],
       "Add link": [
         "Bağlantı ekle"
@@ -509,7 +529,7 @@
         "Bağlantıyı değiştir"
       ],
       "Text and highlight color": [
-        "Metin ve vurgu rengi"
+        "Yazı ve vurgu rengi"
       ],
       "with \"${ replaceWith }\"": [
         "\"${ replaceWith }\" ile"

@@ -354,6 +354,9 @@
       "Explore ${ target }": [
         "${ target } tarifesini keşfedin"
       ],
+      "Explore business plans": [
+        "Kurumsal tarifeleri inceleyin"
+      ],
       "Explore group plans": [
         "Grup tarifelerine bakın"
       ],
@@ -381,6 +384,9 @@
       "Generate password": [
         "Parola üret"
       ],
+      "Get ${ planOrAppName }": [
+        "${ planOrAppName } edinin"
+      ],
       "Get a new encrypted email address": [
         "Yeni bir şifrelenmiş e-posta adresi edinin"
       ],
@@ -407,6 +413,9 @@
       ],
       "Get verification code": [
         "Doğrulama kodu alın"
+      ],
+      "Go to ${ planOrAppName }": [
+        "${ planOrAppName } uygulamasına git"
       ],
       "Go to label": [
         "Etikete git"
@@ -648,8 +657,8 @@
       "See plan features": [
         "Tarife özelliklerini görün"
       ],
-      "Select ${ planTitle }": [
-        "${ planTitle } tarifesini seçin"
+      "Select ${ planOrAppName }": [
+        "${ planOrAppName } tarifesini seç"
       ],
       "Select city ${ city }": [
         "${ city } ilini seç"
@@ -1022,6 +1031,14 @@
         "Yeni e-posta"
       ]
     },
+    "anniversary_2025: Offers": {
+      "12 months": [
+        "12 ay"
+      ],
+      "24 months": [
+        "24 ay"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde her ${ cycle } ayda bir otomatik olarak yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
@@ -1043,9 +1060,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucuya sahip olabilirsiniz."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_LUMO_SEATS } Lumo koltuğuna sahip olabilirsiniz."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğuna sahip olabilirsiniz."
@@ -1135,6 +1149,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } bilgisayar uygulaması"
+      ],
+      "Ad-blocker and malware protection": [
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması"
       ],
       "Use your own email domain": [
         "Kendi e-posta etki alanınızı kullanın"
@@ -1317,6 +1334,9 @@
       ],
       "Discover and set up features": [
         "Özellikleri keşfedin ve ayarlayın"
+      ],
+      "Maybe later": [
+        "Belki sonra"
       ],
       "Remind me later": [
         "Daha sonra hatırlat"
@@ -2665,6 +2685,9 @@
       ]
     },
     "Error": {
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "Kullanıcı adınız: ${ user.Name }. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Tüm depolama alanı dağıtıldı. Lütfen diğer kullanıcılara ayrılmış depolama alanlarını azaltın."
       ],
@@ -2844,6 +2867,12 @@
       ],
       "Please generate keys before you try to change your password": [
         "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
+      ],
+      "Please select a country": [
+        "Lütfen bir ülke seçin"
+      ],
+      "Please select a state": [
+        "Lütfen bir il seçin"
       ],
       "Please select at least one location before continuing.": [
         "İlerlemeden önce lütfen en az bir konum seçin."
@@ -3207,9 +3236,6 @@
       "Continue": [
         "İlerle"
       ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "${ PLAN_NAMES[PLANS.VPN2024] } özelliklerinin tümü"
-      ],
       "Fastest VPN servers": [
         "En hızlı VPN sunucuları"
       ],
@@ -3230,6 +3256,15 @@
       ]
     },
     "Features": {
+      "${ VPN_CONNECTIONS } devices": [
+        "${ VPN_CONNECTIONS } aygıt"
+      ],
+      "Ad-blocker and malware protection": [
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması"
+      ],
+      "All premium ${ BRAND_NAME } services": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetleri"
+      ],
       "and more premium features...": [
         "ve diğer ücretli özellikler..."
       ],
@@ -3239,11 +3274,17 @@
       "Lightning-fast speeds": [
         "Işık hızında"
       ],
+      "Lightning-fast VPN speeds": [
+        "Işık hızında VPN"
+      ],
       "NetShield Ad-blocker": [
         "NetShield reklam engelleyici"
       ],
       "Secure streaming": [
         "Güvenli yayın akışı"
+      ],
+      "Stream from Netflix, HBO, and more": [
+        "Netflix, HBO ve diğerlerinin yayın akışlarını izleyin"
       ]
     },
     "Features: Tooltip": {
@@ -3420,8 +3461,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "Sistem varsayılanı"
+      ],
       "Theme font": [
         "Tema yazı tipi"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Büyük"
+      ],
+      "Medium (recommended)": [
+        "Orta (önerilen)"
+      ],
+      "Small": [
+        "Küçük"
+      ],
+      "Very large": [
+        "Çok büyük"
+      ],
+      "Very small": [
+        "Çok küçük"
       ]
     },
     "Footer": {
@@ -4276,6 +4337,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Parolanızı değiştirmek için kurtarma ifadenizi yazın."
       ],
+      "Everything in ${ planOrAppName }": [
+        "${ planOrAppName } özelliklerinin tümü"
+      ],
       "Example: ${ spfExample }": [
         "Örnek: ${ spfExample }"
       ],
@@ -4945,6 +5009,15 @@
       "Subscription auto-renews every month.": [
         "Abonelik her ay otomatik olarak yenilenir."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonelik sona eriyor: ${ planName } avantajlarınızı korumak için, aboneliğinizi Apple App Store üzerinden ${ byDate } tarihine kadar yeniden başlatın. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonelik sona eriyor: ${ planName } avantajlarınızı sürdürmek için, aboneliğinizi Google Play Store üzerinden ${ byDate } tarihine kadar yeniden başlatın. ${ reactivateLink }"
+      ],
       "Summary": [
         "Özet"
       ],
@@ -5376,6 +5449,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "Yeni bir doğrulama kodu almak ister misiniz?"
+      ],
+      "Writing assistant": [
+        "Yazma yardımcısı"
       ],
       "You already have a free account": [
         "Zaten ücretsiz bir hesabınız var"
@@ -5947,7 +6023,7 @@
         "Etkinlik"
       ],
       "Expires": [
-        "Geçerlilik sonu"
+        "Geçerlilik süresi sonu"
       ],
       "First name": [
         "Ad"
@@ -6497,8 +6573,14 @@
       "Privacy policy": [
         "Gizlilik ilkesi"
       ],
+      "Reactivate now": [
+        "Yeniden etkinleştir"
+      ],
       "Request an invite": [
         "Davet iste"
+      ],
+      "Resume now": [
+        "Şimdi sürdür"
       ],
       "settings": [
         "ayarlar"
@@ -8310,9 +8392,6 @@
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
-        "Tutma süresi ${ MIN_LIFETIME } günden fazla olmalıdır"
-      ],
       "Lifetime must not be set for \"Retain All\" action": [
         "\"Tümü tutulsun\" işlemi için tutma süresi ayarlanmamalıdır"
       ],
@@ -8362,9 +8441,6 @@
       ],
       "Applies to": [
         "Şunlar için geçerlidir"
-      ],
-      "days": [
-        "gün"
       ],
       "Keep items forever": [
         "Ögeler sonsuza dek tutulsun"
@@ -8658,6 +8734,20 @@
     "session_recovery:available:action": {
       "Cancel password reset": [
         "Parola sıfırlama işlemini iptal et"
+      ],
+      "Cancel reset": [
+        "Sıfırlamayı iptal et"
+      ],
+      "Reset password": [
+        "Parolayı sıfırla"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Eski adres anahtarları ile hesap kurtarma işlemi yapılamaz"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
       ]
     },
     "session_recovery:available:info": {
@@ -8667,6 +8757,18 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Parola sıfırlama isteğinde bulunmadıysanız, bu isteği şimdi iptal edin."
       ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Parolanızı değiştirmek için oturumunuzun açık olduğu (isteğin yapıldığı oturum) aygıta geçin."
+      ],
+      "This permission expires soon": [
+        "Bu izin yakında kaldırılacak"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Artık ${ boldEmail } hesabınızın parolasını ${ boldDaysRemaining } içinde özgürce değiştirebilirsiniz."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Şimdi ${ boldEmail } hesabınızın parolasını değiştirebilirsiniz."
+      ],
       "You can now reset your password": [
         "Şimdi parolanızı sıfırlayabilirsiniz"
       ],
@@ -8674,9 +8776,34 @@
         "Parolanızı ${ boldDate } tarihinden başlayarak sıfırlayabilirsiniz."
       ]
     },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Parola kaydedildi"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Parolanızı sıfırlayın"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Parola sıfırlama işlemini iptal et"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Parola sıfırlama işlemini iptal etmek için geçerli parolanızı yazın. Başka bir değişiklik yapılmayacak."
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "Parola sıfırlama isteği iptal edildi"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Parola sıfırlama işlemi iptal edilsin mi?"
       ]
     },
     "session_recovery:cancelled:info": {
@@ -8774,6 +8901,17 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "${ appName } uygulamasında aç"
+      ]
+    },
+    "Signup": {
+      "1 month": [
+        "1 ay"
+      ],
+      "12 months": [
+        "12 ay"
+      ],
+      "24 months": [
+        "24 ay"
       ]
     },
     "Signup label": {
@@ -9608,6 +9746,9 @@
     "Suffix for price": {
       "per month": [
         "aylık"
+      ],
+      "per user per month": [
+        "bir kullanıcı için aylık"
       ]
     },
     "Tab in domain modal": {
@@ -9730,7 +9871,7 @@
       "Account suspended": [
         "Hesap askıya alınmış"
       ],
-      "Account Temporarily Locked": [
+      "Account temporarily locked": [
         "Hesap geçici olarak kilitlendi"
       ],
       "Action": [
@@ -10845,6 +10986,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Daha uzun süre abone olarak ${ priceString }** kadar kazanç sağlayın. Aynı ücretli özellikler, daha düşük fiyat."
       ],
+      "Advanced security for your company?": [
+        "Kuruluşunuz için gelişmiş güvenlik mi arıyorsunuz?"
+      ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Tüm ücretli ${ BRAND_NAME } hizmetleri. Aylık yalnızca ${ fallBackString } ile başlayarak"
       ],
@@ -10853,6 +10997,12 @@
       ],
       "Did you know?": [
         "Biliyor muydunuz?"
+      ],
+      "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
+        "${ VPN_APP_NAME } for Business ile kuruluşunuzun verilerinin ele geçirilmesini engelleyin."
+      ],
+      "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
+        "Siz ve sevdiğiniz için sınırsız gizlilik. Yalnızca ${ priceString }/ay ile başlayan fiyatlarla."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "${ PLAN_NAMES[plan] } ile ${ FAMILY_MAX_USERS } kişiye kadar koruyabilirsiniz. Her hesap için yalnızca ${ priceString }/ay ile başlayan fiyatlarla."
@@ -10964,9 +11114,6 @@
       "It's you": [
         "Bu sizsiniz"
       ],
-      "Lumo": [
-        "Lumo"
-      ],
       "Pending admin access": [
         "Yönetici erişimi bekleniyor"
       ],
@@ -11044,6 +11191,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } ülkede ${ numberOfServers }",
         "${ numberOfCountries } ülkede ${ numberOfServers }"
+      ],
+      "Select from ${ numberOfCountries }+ country": [
+        "${ numberOfCountries } üzerinde ülkeden birini seçin",
+        "${ numberOfCountries } üzerinde ülkeden birini seçin"
       ]
     },
     "vpn_2step: billing": {

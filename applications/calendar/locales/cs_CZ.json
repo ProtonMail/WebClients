@@ -587,8 +587,8 @@
       "See plan features": [
         "Zobrazit funkce tarifu"
       ],
-      "Select ${ planTitle }": [
-        "Vybrat ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Vybrat ${ planOrAppName }"
       ],
       "Select all": [
         "Vybrat vše"
@@ -3772,9 +3772,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Ověření Adresy pomocí Důvěryhodných Klíčů je pro tuto adresu povoleno. Chcete-li posílat zprávy na tuto adresu, nejprve důvěřujte veřejným klíčům, které mohou být použity pro odesílání."
       ],
-      "Admin account allocation": [
-        "Přidělení účtu správce"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Všechna (${ totalFoldersCount } složka)",
         "Všechny (${ totalFoldersCount } složky)",
@@ -3789,15 +3786,6 @@
       ],
       "All participants will get a cancellation email. Which event would you like to delete?": [
         "Všichni účastníci obdrží e-mail o zrušení. Kterou událost chcete smazat?"
-      ],
-      "Allocated": [
-        "Přiděleno"
-      ],
-      "Already allocated": [
-        "Již bylo přiděleno"
-      ],
-      "Already used": [
-        "Již použito"
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
@@ -4026,6 +4014,9 @@
       ],
       "Estimating time remaining...": [
         "Odhaduji zbývající čas..."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Vše v ${ planOrAppName }"
       ],
       "Existent and added participants will be notified.": [
         "Existující a přidaní účastníci budou upozorněni."
@@ -4350,18 +4341,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začněte ji sdílet s kontakty a používejte ji pro online služby."
-      ],
-      "Storage allocated to other users in this organisation": [
-        "Úložný prostor přidělený ostatním uživatelům v této organizaci"
-      ],
-      "Storage allocated to this user": [
-        "Úložný prostor přidělený tomuto uživateli"
-      ],
-      "Storage for users": [
-        "Úložiště pro uživatele"
-      ],
-      "Storage used by this user": [
-        "Úložného prostoru využito tímto uživatelem"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Zálohu odešlete na následující adresu nebo naskenujte QR kód. Po potvrzení se vklad promítne na váš účet."
@@ -4849,9 +4828,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
-      ],
-      "Account storage": [
-        "Prostor pro účet"
       ],
       "Add email address": [
         "Přidat e-mailovou adresu"
@@ -7741,6 +7717,9 @@
       ],
       "Account recovery": [
         "Obnovení účtu"
+      ],
+      "Account temporarily locked": [
+        "Účet dočasně uzamčen"
       ],
       "Add another notification to remind you of this event": [
         "Přidat další upozornění pro připomenutí této události"

@@ -348,9 +348,6 @@
       "Go back": [
         "返回"
       ],
-      "Go to ${ DRIVE_SHORT_APP_NAME }": [
-        "前往 ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Go to label": [
         "转至标签"
       ],
@@ -596,9 +593,6 @@
       ],
       "See version history": [
         "查看版本历史"
-      ],
-      "Select ${ planTitle }": [
-        "开通 ${ planTitle }"
       ],
       "Select all": [
         "全选"
@@ -961,7 +955,7 @@
         "${ users } 位用户"
       ],
       "Total for ${ n } month": [
-        "${ n } 月合计"
+        "每${ n }月支付"
       ]
     },
     "Collapsible tooltip": {
@@ -2255,7 +2249,7 @@
         "无效号码"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "部分联系人没有邮箱地址：${ noEmailsContactNamesList }"
+        "部分联系人没有邮箱地址：${ noEmailsContactNamesList } "
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "某个/些群组没有联系人：${ noContactGroupList } "
@@ -3145,23 +3139,11 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "已对此地址开启密钥验证，向对方发送邮件前需要先信任其公钥。"
       ],
-      "Admin account allocation": [
-        "分配管理员账户"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "全部（${ totalFoldersCount } 个文件夹）"
       ],
       "All (${ totalFoldersCount } label)": [
         "全部（${ totalFoldersCount } 个标签）"
-      ],
-      "Allocated": [
-        "分配量"
-      ],
-      "Already allocated": [
-        "已分配"
-      ],
-      "Already used": [
-        "已使用"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey 图标"
@@ -3462,9 +3444,6 @@
       ],
       "Get Notified About Comments": [
         "获得评论通知"
-      ],
-      "Go to ${ DRIVE_APP_NAME }": [
-        "前往 ${ DRIVE_APP_NAME }"
       ],
       "here": [
         "此处"
@@ -3840,18 +3819,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "开始与联系人分享，并将其用于在线服务。"
-      ],
-      "Storage allocated to other users in this organisation": [
-        "此组织其他成员的存储空间分配量"
-      ],
-      "Storage allocated to this user": [
-        "该用户的存储空间分配量"
-      ],
-      "Storage for users": [
-        "用户存储"
-      ],
-      "Storage used by this user": [
-        "该用户的存储空间使用量"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "使用以下地址提交存款或扫描二维码。您的存款将在确认后反映在您的账户中。"
@@ -4307,9 +4274,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
       ],
-      "Account storage": [
-        "账户存储空间"
-      ],
       "Add email address": [
         "添加邮箱地址"
       ],
@@ -4374,7 +4338,7 @@
         "取消下载"
       ],
       "Card details": [
-        "银行卡详情"
+        "支付卡详情"
       ],
       "Card holder": [
         "持卡人"

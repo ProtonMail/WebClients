@@ -55,6 +55,9 @@
       "Cancel subscription": [
         "Скасаваць падпіску"
       ],
+      "Cancel trial and pay": [
+        "Скасаваць пробны перыяд і купіць падпіску"
+      ],
       "Change password": [
         "Змяніць пароль"
       ],
@@ -136,6 +139,9 @@
       "Forgot password?": [
         "Забылі пароль?"
       ],
+      "Get ${ planOrAppName }": [
+        "Атрымаць ${ planOrAppName }"
+      ],
       "Get in touch": [
         "Звязацца з намі"
       ],
@@ -144,6 +150,9 @@
       ],
       "Get verification code": [
         "Атрымаць праверачны код"
+      ],
+      "Go to ${ planOrAppName }": [
+        "Перайдзіце ў ${ planOrAppName }"
       ],
       "Got it": [
         "Зразумела"
@@ -183,6 +192,9 @@
       ],
       "More options": [
         "Дадатковыя параметры"
+      ],
+      "More options for accounts": [
+        "Больш параметраў для ўліковых запісаў"
       ],
       "Need help?": [
         "Неабходна дапамога?"
@@ -253,8 +265,8 @@
       "Secure your wallet": [
         "Абараніць свой кашалёк"
       ],
-      "Select ${ planTitle }": [
-        "Выбраць ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Выбраць ${ planOrAppName }"
       ],
       "Set recovery methods": [
         "Задаць спосабы аднаўлення"
@@ -423,6 +435,14 @@
         "Значэнне"
       ]
     },
+    "anniversary_2025: Offers": {
+      "12 months": [
+        "12 месяцаў"
+      ],
+      "24 months": [
+        "24 месяцы"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Праграмы ${ BRAND_NAME }"
@@ -431,6 +451,22 @@
     "Balance": {
       "Loading balance": [
         "Загрузка балансу"
+      ]
+    },
+    "bf2023: Deal details": {
+      "Premium Password Manager": [
+        "Прэміяльны менеджар пароляў"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
+      ],
+      "Ad-blocker and malware protection": [
+        "Блакіроўшчык рэкламы і абарона ад шкодных праграм"
+      ],
+      "Use your own email domain": [
+        "Выкарыстоўвайце ўласны дамен электроннай пошты"
       ]
     },
     "Billing cycle option": {
@@ -442,6 +478,9 @@
       ],
       "Annually": [
         "Штогод"
+      ],
+      "Lifetime": [
+        "Пажыццёва"
       ],
       "Monthly": [
         "Штомесяц"
@@ -1825,6 +1864,9 @@
       ]
     },
     "Error": {
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } з'яўляецца вашым імем карыстальніка. Перайдзіце ў Налады -> Ідэнтычнасць і адрасы -> Кароткі дамен (pm.me), каб стварыць ${ emailAddress }."
+      ],
       "Amount above the maximum.": [
         "Сума вышэй за максімум."
       ],
@@ -1894,6 +1936,12 @@
       "Payment process not supported": [
         "Апрацоўка плацяжу не падтрымліваецца"
       ],
+      "Please select a country": [
+        "Выберыце краіну"
+      ],
+      "Please select a state": [
+        "Выберыце штат"
+      ],
       "Process aborted": [
         "Працэс перарваны"
       ],
@@ -1905,6 +1953,9 @@
       ],
       "Tab closed": [
         "Укладка закрыта"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Сума для аплаты змянілася. Паспрабуйце яшчэ раз."
       ],
       "The email addresses do not match": [
         "Адрасы электроннай пошты не супадаюць"
@@ -2060,6 +2111,12 @@
         "Мегабайты",
         "Мегабайтаў",
         "Мегабайтаў"
+      ],
+      "Terabyte": [
+        "тэрабайт",
+        "тэрабайты",
+        "тэрабайтаў",
+        "Тэрабайтаў"
       ]
     },
     "Filter notification": {
@@ -2068,8 +2125,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "Прадвызначана сістэмай"
+      ],
       "Theme font": [
         "Шрыфт тэмы"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Вялікі"
+      ],
+      "Medium (recommended)": [
+        "Сярэдні (рэкамендуецца)"
+      ],
+      "Small": [
+        "Маленькі"
+      ],
+      "Very large": [
+        "Вельмі вялікі"
+      ],
+      "Very small": [
+        "Вельмі маленькі"
       ]
     },
     "Gateway disclaimer": {
@@ -2139,6 +2216,12 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe памочнік у напісанні"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }. Кошт і дата падаўжэння вашай падпіскі ${ planTitle } застануцца нязменнымі."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
       ],
@@ -2153,6 +2236,9 @@
         "(${ memberCount } удзельнікі)",
         "(${ memberCount } удзельнікаў)",
         "(${ memberCount } удзельнікаў)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/месяц)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонуснага сховішча"
@@ -2177,18 +2263,6 @@
       ],
       "Address copied to clipboard": [
         "Адрас скапіяваны ў буфер абмену"
-      ],
-      "Admin account allocation": [
-        "Вылучэнне ўліковага запісу адміністратара"
-      ],
-      "Allocated": [
-        "Вылучана"
-      ],
-      "Already allocated": [
-        "Ужо вылучана"
-      ],
-      "Already used": [
-        "Ужо выкарыстоўваўся"
       ],
       "American Express SafeKey logo": [
         "Лагатып American Express SafeKey"
@@ -2292,6 +2366,9 @@
       "Enter your own password (as trusted contact).": [
         "Увядзіце свой пароль (як давераны кантакт)."
       ],
+      "Everything in ${ planOrAppName }": [
+        "Усё, што ўваходзіць у ${ planOrAppName }"
+      ],
       "Expired": [
         "Пратэрмінавана"
       ],
@@ -2324,6 +2401,9 @@
       ],
       "Internet connection lost": [
         "Падключэнне да інтэрнэту страчана"
+      ],
+      "JCB logo": [
+        "Лагатып JCB"
       ],
       "Keys created": [
         "Ключы створаны"
@@ -2370,6 +2450,9 @@
       "Organization size": [
         "Памер арганізацыі"
       ],
+      "Other accounts": [
+        "Іншыя ўліковыя запісы"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
       ],
@@ -2394,6 +2477,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
       ],
+      "Registering your subscription…": [
+        "Рэгістрацыя вашай падпіскі…"
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
       ],
@@ -2411,18 +2497,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Пачніце абагульваць яго са сваімі кантактамі і выкарыстоўваць для сэрвісаў у інтэрнэце."
-      ],
-      "Storage allocated to other users in this organisation": [
-        "Сховішча, вылучанае для іншых карыстальнікаў у гэтай арганізацыі"
-      ],
-      "Storage allocated to this user": [
-        "Сховішча, вылучанае для гэтага карыстальніка"
-      ],
-      "Storage for users": [
-        "Сховішча для карыстальнікаў"
-      ],
-      "Storage used by this user": [
-        "Сховішча, выкарыстанае гэтым карыстальнікам"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Адпраўце дэпазіт выкарыстоўваючы наступны адрас або адсканіруйце QR-код. Ваш дэпазіт адлюструецца на вашым рахунку пасля пацвярджэння."
@@ -2508,6 +2582,9 @@
       "Would you like to receive a new verification code?": [
         "Ці хочаце вы атрымаць новы праверачны код?"
       ],
+      "Writing assistant": [
+        "Памочнік у напісанні"
+      ],
       "You already have a free account": [
         "У вас ужо ёсць бясплатны ўліковы запіс"
       ],
@@ -2559,14 +2636,26 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. Лісты больш не будуць дастаўляцца ў вашу паштовую скрыню. Абагуленыя спасылкі на воблачным дыску больш не дзейнічаюць і вы не можаце запампоўваць новыя файлы. Для аднаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
       ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Ваша падпіска ${ plan } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Рэшта балансу вашай падпіскі будзе дададзена на ваш уліковы запіс. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. За пажыццёвы доступ да ${ PASS_SHORT_APP_NAME } уносіцца аднаразовая плата."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Наступная дата спагнання грашовых сродкаў адбудзецца ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Наступная дата спагнання адбудзецца ${ renewalTime }. Звяжыцеся са службай падтрымкі, калі вы запатрабавалі неадкладную змену тарыфнага плана."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожны месяц."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Ваша падпіска будзе аўтаматычна падоўжана ${ renewalTime }."
       ]
     },
     "Info; access rights for shared calendar": {
@@ -2583,9 +2672,6 @@
         "${ n } месяцы",
         "${ n } месяцаў",
         "${ n } месяцаў"
-      ],
-      "Account storage": [
-        "Сховішча ўліковага запісу"
       ],
       "Address": [
         "Адрас"
@@ -2926,6 +3012,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
       "${ n } calendar": [
         "${ n } каляндар",
         "${ n } календары",
@@ -3096,6 +3185,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Падтрымка паштовых кліентаў (праз IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Групы электроннай пошты"
       ],
       "Enables HIPAA compliance": [
         "Забеспячэнне адпаведнасці HIPAA"
@@ -3322,6 +3414,9 @@
       "Downgrade account?": [
         "Панізіць уліковы запіс?"
       ],
+      "Review subscription": [
+        "Прагляд падпіскі"
+      ],
       "Review subscription and pay": [
         "Прагляд падпіскі і аплаты"
       ],
@@ -3386,6 +3481,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Лёгка дзяліцеся сваімі календарамі з сям'ёй, сябрамі або калегамі"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Адпраўка паведамлення кожнаму ў групе з адзінага адраса электроннай пошты"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Гарантуе, што вы атрымаеце ўсе лісты, якія адпраўлены на ваш дамен, нават калі адрас электроннай пошты не існуе, больш не існуе або ў напісанні адраса зроблена памылка"
@@ -3634,6 +3732,21 @@
       "MM/YY": [
         "ММ/ГГ"
       ],
+      "More plans are available in other currencies": [
+        "Больш тарыфных планаў даступна з іншымі валютамі"
+      ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Кошт падаўжэння можа быць зменены ў адпаведнасці з ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Падаўжаецца за ${ renewPriceStr }. Скасаваць можна ў любы час."
+      ],
+      "terms & conditions": [
+        "умовы выкарыстання"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за кожны месяц. Скасаваць можна ў любы момант."
+      ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
       ]
@@ -3656,6 +3769,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі плацяжу."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Placeholder": {
@@ -3805,6 +3923,14 @@
         "Прадвызначана выкарыстоўваецца метад подпісу Electrum, бо гэта самы просты і распаўсюджаны метад, які запытваюць банкі. BIP 137 выкарыстоўваецца для падпісання трансакцый у аўтаномным рэжыме і з'яўляецца больш прасунутым."
       ]
     },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } месяц БЯСПЛАТНА",
+        "${ n } месяцы БЯСПЛАТНА",
+        "${ n } месяцаў БЯСПЛАТНА",
+        "${ n } месяцаў БЯСПЛАТНА"
+      ]
+    },
     "specialoffer: Deal details": {
       "3 TB": [
         "3 ТБ"
@@ -3840,6 +3966,14 @@
       ],
       "Upgrade": [
         "Палепшыць"
+      ]
+    },
+    "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяцы",
+        "${ n } месяцаў",
+        "${ n } месяцаў"
       ]
     },
     "specialoffer: Tooltip": {
@@ -4053,6 +4187,9 @@
     "Suffix for price": {
       "per month": [
         "у месяц"
+      ],
+      "per user per month": [
+        "на карыстальніка ў месяц"
       ]
     },
     "Sweep paper wallet": {
@@ -4108,6 +4245,9 @@
       "${ feature } is now active": [
         "${ feature } цяпер у актыўным стане"
       ],
+      "Account temporarily locked": [
+        "Уліковы запіс часова заблакаваны"
+      ],
       "Add credit/debit card": [
         "Дадаць крэдытную/плацежную картку"
       ],
@@ -4155,6 +4295,9 @@
       ],
       "Connect your custom domain": [
         "Падключэнне свайго карыстальніцкага дамена"
+      ],
+      "Coupon": [
+        "Купон"
       ],
       "Credits": [
         "Крэдыты"

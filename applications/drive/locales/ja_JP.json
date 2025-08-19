@@ -312,6 +312,9 @@
       "Details": [
         "詳細"
       ],
+      "Diagnostics": [
+        "診断"
+      ],
       "Discard": [
         "破棄"
       ],
@@ -348,8 +351,14 @@
       "Download apps": [
         "アプリをダウンロード"
       ],
+      "Download info": [
+        "情報ダウンロード"
+      ],
       "Download logs": [
         "ログをダウンロードする"
+      ],
+      "Download results": [
+        "結果をダウンロード"
       ],
       "Drive Locked": [
         "ドライブはロックされています"
@@ -414,6 +423,9 @@
       "Generate password": [
         "パスワードを生成"
       ],
+      "Get ${ planOrAppName }": [
+        "${ planOrAppName } を入手"
+      ],
       "Get in touch": [
         "連絡する"
       ],
@@ -438,8 +450,8 @@
       "Go back to album “${ albumName }“": [
         "アルバム「${ albumName }」に戻る"
       ],
-      "Go to ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }へ移動"
+      "Go to ${ planOrAppName }": [
+        "${ planOrAppName }へ移動"
       ],
       "Go to label": [
         "ラベルへ移動"
@@ -560,6 +572,9 @@
       ],
       "More options": [
         "詳細設定を表示"
+      ],
+      "More options for accounts": [
+        "アカウントのその他のオプション"
       ],
       "Move": [
         "移動"
@@ -756,6 +771,9 @@
       "Retry": [
         "再試行"
       ],
+      "Run diagnostics": [
+        "診断を実行"
+      ],
       "Save": [
         "保存"
       ],
@@ -789,8 +807,8 @@
       "See version history": [
         "バージョン履歴を表示"
       ],
-      "Select ${ planTitle }": [
-        "${ planTitle } を選択"
+      "Select ${ planOrAppName }": [
+        "${ planOrAppName } を選択"
       ],
       "Select all": [
         "すべて選択"
@@ -1053,6 +1071,14 @@
         "今終了すると、インポートされない予定がある可能性があります"
       ]
     },
+    "anniversary_2025: Offers": {
+      "12 months": [
+        "12 か月"
+      ],
+      "24 months": [
+        "24 か月"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } アプリケーション"
@@ -1086,6 +1112,17 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "プレミアムパスワードマネージャー"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } デスクトップアプリ"
+      ],
+      "Ad-blocker and malware protection": [
+        "広告ブロックとマルウェア保護"
+      ],
+      "Use your own email domain": [
+        "独自メールドメインを使用する"
       ]
     },
     "Billing cycle option": {
@@ -1197,6 +1234,9 @@
       ],
       "Discover and set up features": [
         "機能の発見と設定"
+      ],
+      "Maybe later": [
+        "たぶんあとで"
       ],
       "Remind me later": [
         "後で通知する"
@@ -2318,12 +2358,20 @@
         "${ formattedStart } から始まる予定の更新"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "信頼済みの連絡先"
+      ]
+    },
     "Error": {
       "\"${ sanitizedName }\" already exists": [
         "「${ sanitizedName }」はすでに存在しています"
       ],
       "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
         "${ DRIVE_APP_NAME } が更新されました。 ページを更新してください。"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "あなたのユーザー名は${ user.Name }です。 ${ emailAddress }を作成するには、設定 > 署名とアドレス > 短縮ドメイン (@pm.me) に移動してください。"
       ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
@@ -2393,6 +2441,9 @@
       ],
       "Device name does not match": [
         "デバイス名が一致しません"
+      ],
+      "Diagnostics failed": [
+        "診断が失敗しました"
       ],
       "Domain not available, try again later": [
         "ドメインが利用できません。再度お試しください。"
@@ -2583,6 +2634,12 @@
       "Please fix the highlighted conflict to proceed.": [
         "続行するためにハイライトされた競合を修正してください。"
       ],
+      "Please select a country": [
+        "国を選択してください"
+      ],
+      "Please select a state": [
+        "州を選択してください"
+      ],
       "Port is required": [
         "ポートは必須です"
       ],
@@ -2745,11 +2802,32 @@
       "Validation error": [
         "検証エラー"
       ],
+      "We were not able some of your shared items": [
+        "共有アイテムの一部を読み込むことができませんでした"
+      ],
+      "We were not able to load some invitations": [
+        "招待の一部を読み込めませんでした"
+      ],
+      "We were not able to load some items shared with you": [
+        "共有アイテムの一部を読み込むことができませんでした"
+      ],
+      "We were not able to load some of your bookmarks": [
+        "ブックマークの一部を読み込めませんでした"
+      ],
+      "We were not able to load some of your invitation to shared items": [
+        "共有アイテムへの招待の一部を読み込むことができませんでした"
+      ],
+      "We were not able to load some of your saved shared links": [
+        "保存済みの共有リンクの一部を読み込むことができませんでした"
+      ],
       "We were not able to load some of your shared items": [
         "共有アイテムの一部を読み込むことができませんでした"
       ],
       "We were not able to load some of your shared items details": [
         "共有アイテムの一部の詳細を読み込むことができませんでした。"
+      ],
+      "We were not able to load some of your shared items info": [
+        "共有アイテムの一部の情報を読み込むことができませんでした。"
       ],
       "You must set a name": [
         "名前を設定してください"
@@ -3063,8 +3141,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "システムのデフォルト"
+      ],
       "Theme font": [
         "テーマ フォント"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "大"
+      ],
+      "Medium (recommended)": [
+        "中 (推奨)"
+      ],
+      "Small": [
+        "小"
+      ],
+      "Very large": [
+        "特大"
+      ],
+      "Very small": [
+        "極小"
       ]
     },
     "Group": {
@@ -3468,6 +3566,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } 件のグループが見つかりました"
       ],
+      "${ invitationsCount } pending invitation": [
+        "保留中の招待が${ invitationsCount }件"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME }のLifetimeプランには更新料金はなく、一度の支払いで${ PASS_SHORT_APP_NAME }への生涯アクセスが可能です。"
       ],
@@ -3525,6 +3626,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } 人のメンバー)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } /月)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ボーナスストレージ"
       ],
@@ -3558,9 +3662,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "信頼された鍵でのアドレス検証がこのアドレスに対して有効になっています。このアドレス宛にメッセージを送信するには、最初に公開鍵を信頼する必要があります。"
       ],
-      "Admin account allocation": [
-        "管理者アカウント割り当て"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "すべて (${ totalFoldersCount } フォルダー)"
       ],
@@ -3569,15 +3670,6 @@
       ],
       "All your changes will be lost.": [
         "変更内容はすべて失われます。"
-      ],
-      "Allocated": [
-        "割り当て"
-      ],
-      "Already allocated": [
-        "割り当て済み"
-      ],
-      "Already used": [
-        "すでに使用されています"
       ],
       "Also try looking in Trash.": [
         "ごみ箱もご確認ください。"
@@ -3780,6 +3872,9 @@
       "Delete locked drive": [
         "ロックされたドライブの削除"
       ],
+      "Details": [
+        "詳細"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "デジタル署名が検証されました。このファイルは ${ emailAddress } によって安全にアップロードされました。"
       ],
@@ -3885,6 +3980,9 @@
       "Enter your own password (as organization admin).": [
         "(組織管理者としての)パスワードを入力してください。"
       ],
+      "Enter your own password (as trusted contact).": [
+        "(信頼済みの連絡先としての)パスワードを入力してください。"
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "推定残り時間: ${ estimatedMinutes } 分"
       ],
@@ -3893,6 +3991,9 @@
       ],
       "Estimating time remaining...": [
         "残り時間..."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "${ planOrAppName } のすべての機能を含みます"
       ],
       "Expired": [
         "有効期限切れ"
@@ -3959,6 +4060,9 @@
       ],
       "from the version history?": [
         "バージョン履歴から"
+      ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "技術サポートおよびトラブルシューティングのためにログやその他の情報を取得します"
       ],
       "Get the app to backup photos from your phone or upload them here.": [
         "携帯電話から写真をバックアップするか、こちらにアップロードしてください。"
@@ -4038,6 +4142,9 @@
       "Initializing": [
         "初期化中"
       ],
+      "Integrity issues found": [
+        "整合性の問題が見つかりました"
+      ],
       "Internet connection lost": [
         "インターネット接続が切断されました"
       ],
@@ -4049,6 +4156,9 @@
       ],
       "Invite link copied": [
         "招待リンクをコピーしました"
+      ],
+      "Issues found": [
+        "問題が見つかりました"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "最近、${ uploadName } のアップロードを試みたようです。アップロードが失敗した場合、${ replaceFile } してください。アップロードが進行中の場合、置き換えると進行中のアップロードがキャンセルされます。"
@@ -4197,6 +4307,9 @@
       "No group found": [
         "グループが見つかりませんでした"
       ],
+      "No issue found": [
+        "問題が見つかりません"
+      ],
       "No payment is required at this time.": [
         "現時点での支払いは必要ありません。"
       ],
@@ -4253,6 +4366,9 @@
       ],
       "Organization size": [
         "組織の規模"
+      ],
+      "Other accounts": [
+        "その他のアカウント"
       ],
       "Owner": [
         "所有者"
@@ -4322,6 +4438,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "グループ ${ groupName } に追加するメールアドレスを選択してください。"
+      ],
+      "Please try again in a few moments": [
+        "しばらくしてからもう一度お試しください"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "別の支払い方法で再度お試しいただくか、銀行へお問い合わせください。"
@@ -4403,6 +4522,9 @@
       ],
       "Restoring Photos... Please keep the tab open": [
         "写真を復元中... タブを開いたままにしてください"
+      ],
+      "Running diagnostics...": [
+        "診断を実行中..."
       ],
       "Saving...": [
         "保存中..."
@@ -4515,23 +4637,20 @@
       "Start sharing it with contacts and use it for online services.": [
         "連絡先と共有し、オンラインサービスでご利用ください。"
       ],
-      "Storage allocated to other users in this organisation": [
-        "この組織の他のユーザーに割り当てられたストレージ"
-      ],
-      "Storage allocated to this user": [
-        "ストレージはこのユーザーに割り当て済みです"
-      ],
-      "Storage for users": [
-        "ユーザーのストレージ"
-      ],
-      "Storage used by this user": [
-        "ストレージはこのユーザーによって使われています"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "以下のアドレスを使用するか、QRコードをスキャンして入金してください。確認後、デポジットはアカウントに反映されます。"
       ],
       "Subscription auto-renews every month.": [
         "サブスクリプションは毎月自動更新されます。"
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "サブスクリプションがもうすぐ終了します: ${ planName }の特典を維持するには${ byDate }までに更新してください。${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "サブスクリプションの終了: お客様の${ planName }の特典を維持するには、${ byDate }までにApple App Storeでサブスクリプションを再開してください。${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "サブスクリプションの終了: ${ planName } の特典を維持するには、${ byDate } までに Google Play ストアでサブスクリプションを再開してください。${ reactivateLink }"
       ],
       "Symbols (#$&)": [
         "記号 (#$&)"
@@ -4640,6 +4759,9 @@
       ],
       "This will upload a new version of the folder": [
         "フォルダーの新しいバージョンをアップロードします"
+      ],
+      "Time": [
+        "時間"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "お支払い手続きを完了するために、下のアドレスに ${ btcAmountBold } を送信してください。"
@@ -4850,6 +4972,9 @@
       ],
       "Would you like to save them before removing?": [
         "削除する前に保存しますか？"
+      ],
+      "Writing assistant": [
+        "執筆アシスタント"
       ],
       "Yes": [
         "はい"
@@ -5100,9 +5225,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(一時的に利用できません。あとでお試しください。)"
-      ],
-      "Account storage": [
-        "アカウントの容量"
       ],
       "Add email address": [
         "メールアドレスの追加"
@@ -5631,6 +5753,9 @@
       ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
+      ],
+      "Your password (trusted contact)": [
+        "パスワード (信頼済みの連絡先)"
       ]
     },
     "Label for contact group color": {
@@ -5750,8 +5875,14 @@
       "Photos": [
         "写真"
       ],
+      "Reactivate now": [
+        "今すぐ再アクティブ"
+      ],
       "Request an invite": [
         "招待をリクエスト"
+      ],
+      "Resume now": [
+        "今すぐ再開"
       ],
       "settings": [
         "設定"
@@ -6102,6 +6233,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
       "${ n } calendar": [
         "${ n } 個のカレンダー"
       ],
@@ -6230,6 +6364,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "メールクライアント対応 (IMAP/SMTP 経由)"
+      ],
+      "Email groups": [
+        "メールグループ"
       ],
       "Enables HIPAA compliance": [
         "HIPAA コンプライアンス準拠"
@@ -6516,6 +6653,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "家族、友人、同僚とカレンダーを簡単に共有できます。"
+      ],
+      "Email everyone in a group with a single email address": [
+        "一つのメールアドレスでグループ全員にメール"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "メールアドレスが存在しない、存在しなくなった、入力ミスがあった場合などでも、あなたのドメイン宛に送信されたすべてのメールを受信できます"
@@ -6914,6 +7054,12 @@
       "Root folder failed to be loaded": [
         "ルートフォルダーの読み込みに失敗しました"
       ],
+      "Selected item was not removed from your list": [
+        "選択したアイテムをリストから削除できませんでした"
+      ],
+      "Selected items were successfully removed from your list": [
+        "選択したアイテムをリストから正常に削除しました"
+      ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "選択された写真はすでに「${ albumName }」にあります"
       ],
@@ -6949,12 +7095,6 @@
       ],
       "The spreadsheet failed to be created": [
         "スプレッドシートの作成に失敗しました"
-      ],
-      "This item was not removed from your list": [
-        "このアイテムはリストから削除されました"
-      ],
-      "This item was successfully removed from your list": [
-        "このアイテムはリストから正しく削除されました"
       ],
       "Trash failed to be emptied": [
         "ごみ箱を空にできませんでした"
@@ -7147,6 +7287,18 @@
       ],
       "No parent folder": [
         "親フォルダーなし"
+      ],
+      "Only current location": [
+        "現在地のみ"
+      ],
+      "Only current location: ${ name }": [
+        "現在地のみ: ${ name }"
+      ],
+      "Verify content": [
+        "コンテンツを検証"
+      ],
+      "Verify thumbnails": [
+        "サムネイルを確認"
       ]
     },
     "Option group label": {
@@ -7480,9 +7632,20 @@
         "(${ PASS_APP_NAME } を開きます)"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "予定を表示"
+      ]
+    },
     "Security Center - Info": {
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "第三者のサービスから、あなたのパスワードやその他のデータが漏洩した場合に通知します。${ learnMoreLink }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "私たちの、最先端のAI駆動セキュリティソリューションは、アカウントの高度な保護を求めるユーザー向けに設計されています。${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinelが**有効**で、アカウントを保護しています。"
       ]
     },
     "Select files": {
@@ -7495,9 +7658,64 @@
         "該当する結果が見つかりませんでした"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "リセットをキャンセル"
+      ],
+      "Reset password": [
+        "パスワードをリセット"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "旧式のアドレスキーに対してはアカウントの回復が利用できません。"
+      ],
+      "Please generate keys before you try to change your password": [
+        "パスワードを変更する前に、キーを生成してください。"
+      ]
+    },
+    "session_recovery:available:info": {
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "サインインしているデバイス (パスワード変更の要求がされたデバイス)に移動して、パスワードを変更してください。"
+      ],
+      "This permission expires soon": [
+        "この権限はまもなく有効期限が切れます"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "アカウント ${ boldEmail } のパスワードを、あと ${ boldDaysRemaining } 日間は自由に変更可能です。"
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "${ boldEmail }アカウントのパスワードを今すぐ変更できます。"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "パスワードが保存されました"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "パスワードをリセット"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "パスワードリセットをキャンセルする"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "パスワードリセットのプロセスをキャンセルするには、現在のパスワードを入力してください。他に変更は適用されません。"
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "パスワードリセットはキャンセルされました"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "パスワードのリセットをキャンセルしますか？"
       ]
     },
     "session_recovery:cancelled:info": {
@@ -7960,6 +8178,9 @@
     "Suffix for price": {
       "per month": [
         "毎月"
+      ],
+      "per user per month": [
+        "1 ユーザー/月"
       ]
     },
     "Tab subscription modal": {
@@ -8091,6 +8312,9 @@
       ],
       "Account recovery": [
         "アカウントの回復"
+      ],
+      "Account temporarily locked": [
+        "アカウントが一時的にロックされています"
       ],
       "Active": [
         "アクティブ"
@@ -8296,6 +8520,9 @@
       "Devices": [
         "デバイス"
       ],
+      "Diagnostics": [
+        "診断"
+      ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "デジタル署名が部分的に検証されました。このファイルは、${ BRAND_NAME } アカウントを持たないユーザーによる公開共有リンクを使用して作成されたため、本人確認はできません。"
       ],
@@ -8467,11 +8694,20 @@
       "Last uploaded by": [
         "最終アップロード元"
       ],
+      "Level": [
+        "レベル"
+      ],
       "Link confirmation": [
         "リンクの確認"
       ],
       "Location": [
         "場所"
+      ],
+      "Logger": [
+        "記録装置"
+      ],
+      "Logs": [
+        "ログ"
       ],
       "Manage secure link": [
         "セキュアリンクの管理"
@@ -8484,6 +8720,9 @@
       ],
       "Merging contacts": [
         "連絡先の統合中"
+      ],
+      "Message": [
+        "メッセージ"
       ],
       "MIME type": [
         "MIME タイプ"
@@ -8511,6 +8750,9 @@
       ],
       "No albums shared with me": [
         "私と共有されたアルバムはありません"
+      ],
+      "No breaches detected": [
+        "侵害は検出されませんでした"
       ],
       "No bursts": [
         "バーストはありません"
@@ -8754,6 +8996,9 @@
       ],
       "This link is password protected": [
         "このリンクはパスワード保護されています"
+      ],
+      "Time": [
+        "時間"
       ],
       "Total size": [
         "合計サイズ"

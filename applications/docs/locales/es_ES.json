@@ -350,9 +350,6 @@
       "Go back": [
         "Regresar"
       ],
-      "Go to ${ DRIVE_SHORT_APP_NAME }": [
-        "Ir a ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Go to label": [
         "Ir a la etiqueta"
       ],
@@ -601,9 +598,6 @@
       ],
       "See version history": [
         "Ver historial de versiones"
-      ],
-      "Select ${ planTitle }": [
-        "Selecciona ${ planTitle }"
       ],
       "Select all": [
         "Seleccionar todo"
@@ -856,9 +850,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores exclusivos durante el periodo de prueba."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de Lumo durante el periodo de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
@@ -3230,9 +3221,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificación de dirección con claves de confianza está activada para esta dirección. Para poder enviar a esta dirección, primero verifica las claves públicas que se pueden utilizar para enviar."
       ],
-      "Admin account allocation": [
-        "Asignación de la cuenta de administrador"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Todo (${ totalFoldersCount } carpeta)",
         "Todo (${ totalFoldersCount } carpetas)"
@@ -3240,15 +3228,6 @@
       "All (${ totalFoldersCount } label)": [
         "Todo (${ totalFoldersCount } etiqueta)",
         "Todo (${ totalFoldersCount } etiquetas)"
-      ],
-      "Allocated": [
-        "Asignado"
-      ],
-      "Already allocated": [
-        "Ya asignado"
-      ],
-      "Already used": [
-        "Ya en uso"
       ],
       "American Express SafeKey logo": [
         "Logo de American Express SafeKey"
@@ -3553,9 +3532,6 @@
       ],
       "Get Notified About Comments": [
         "Recibir notificaciones sobre los comentarios"
-      ],
-      "Go to ${ DRIVE_APP_NAME }": [
-        "Ir a ${ DRIVE_APP_NAME }"
       ],
       "here": [
         "aquí"
@@ -3935,23 +3911,17 @@
       "Start sharing it with contacts and use it for online services.": [
         "Comienza a compartirla con tus contactos y úsala para servicios en línea."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Almacenamiento asignado a otros usuarios de esta organización"
-      ],
-      "Storage allocated to this user": [
-        "Almacenamiento asignado a este usuario"
-      ],
-      "Storage for users": [
-        "Almacenamiento para usuarios"
-      ],
-      "Storage used by this user": [
-        "Almacenamiento utilizado por este usuario"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envía un depósito usando la siguiente dirección o escanea el código QR. Tu depósito aparecerá en tu cuenta después de la confirmación."
       ],
       "Subscription auto-renews every month.": [
         "La suscripción se renueva automáticamente cada mes."
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Suscripción a punto de finalizar: Para mantener los beneficios de tu ${ planName }, reinicia tu suscripción en la Apple App Store antes del ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Tu suscripción finaliza: Para mantener los beneficios de tu ${ planName }, reinicia tu suscripción en Google Play Store antes del ${ byDate }. ${ reactivateLink }"
       ],
       "Symbols (#$&)": [
         "Símbolos (#$&)"
@@ -4403,9 +4373,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Vuelve a comprobarlo más tarde.)"
-      ],
-      "Account storage": [
-        "Almacenamiento de la cuenta"
       ],
       "Add email address": [
         "Añadir correo electrónico"
@@ -4939,6 +4906,9 @@
       ],
       "Request an invite": [
         "Solicitar una invitación"
+      ],
+      "Resume now": [
+        "Reanudar ahora"
       ],
       "settings": [
         "ajustes"
@@ -7076,7 +7046,7 @@
       "Account recovery": [
         "Recuperación de cuenta"
       ],
-      "Account Temporarily Locked": [
+      "Account temporarily locked": [
         "Cuenta temporalmente bloqueada"
       ],
       "Add contact group name": [

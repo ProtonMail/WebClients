@@ -83,6 +83,11 @@
         "Använd din egen e-postdomän"
       ]
     },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Molnlagring och delning för stora filer"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "Abchazien"
@@ -914,6 +919,9 @@
       ],
       "Something went wrong": [
         "Något gick fel"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Vi kunde inte ladda denna sida. Uppdatera sidan eller kontrollera din internetanslutning."
       ]
     },
     "fido2: Error": {
@@ -947,6 +955,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -965,11 +976,35 @@
       "Megabyte": [
         "Kilobyte",
         "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
       ]
     },
     "Font face option": {
+      "System default": [
+        "Systemstandard"
+      ],
       "Theme font": [
         "Temats typsnitt"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Stor"
+      ],
+      "Medium (recommended)": [
+        "Medium (rekommenderas)"
+      ],
+      "Small": [
+        "Liten"
+      ],
+      "Very large": [
+        "Väldigt stor"
+      ],
+      "Very small": [
+        "Väldigt liten"
       ]
     },
     "Human verification method": {
@@ -1002,6 +1037,9 @@
       "Country code": [
         "Landskod"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "Att skapa flera gratiskonton är inte tillåtet enligt våra ${ termsLink }."
+      ],
       "Each code can only be used once": [
         "Varje kod kan endast användas en gång"
       ],
@@ -1023,8 +1061,14 @@
       "Enter your own password (as trusted contact).": [
         "Ange ditt eget lösenord (som betrodd kontakt)."
       ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "För ytterligare information och för att ta bort begränsningar, logga in på ${ mailLink }."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Om du har problem med att skapa ditt konto, begär en inbjudan så svarar vi inom en arbetsdag."
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Om du tror att vi har gjort ett misstag, ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
@@ -1049,6 +1093,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "För att ta bort restriktionerna kan du uppgradera till ett betalt paket."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Vi har paket designade specifikt för användare som dig som behöver mer än en e-postadress."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi skickar en ny verifieringskod till ${ strong }"
@@ -1111,16 +1161,27 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "kontakta oss"
+      ],
       "Learn more": [
         "Lär dig mer"
       ],
       "Request an invite": [
         "Begär en inbjudan"
+      ],
+      "terms of service": [
+        "användarvillkor"
       ]
     },
     "new_plans": {
       "Keep your inbox organized with folders": [
         "Håll din inkorg organiserad med mappar"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Skaffa ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -1162,8 +1223,38 @@
       "${ size } attachment size": [
         "${ size } bilagestorlek"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } lagringsutrymme per användare"
+      ],
       "${ size } storage": [
         "${ size } lagringsutrymme"
+      ],
+      "${ size } storage per user": [
+        "${ size } lagringsutrymme per användare"
+      ],
+      "1 TB secure storage": [
+        "1 TB säkert lagringsutrymme"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-postadresser/alias"
+      ],
+      "10 more premium features": [
+        "10 fler premiumfunktioner"
+      ],
+      "10-year file version history": [
+        "10-års filversionshistorik"
+      ],
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "200 GB of storage": [
+        "200 GB lagringsutrymme"
+      ],
+      "Advanced account protection": [
+        "Avancerat kontoskydd"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Alla ${ BRAND_NAME }-produkter och -funktioner"
       ],
       "Auto-delete Spam and Trash": [
         "Ta automatiskt bort skräppost och papperskorg"
@@ -1180,11 +1271,17 @@
       "Catch-all": [
         "Catch-all"
       ],
+      "Collaborate and share large files": [
+        "Samarbeta och dela stora filer"
+      ],
       "Contact groups": [
         "Kontaktgrupper"
       ],
       "Contact groups management": [
         "Hantering av kontaktgrupper"
+      ],
+      "Custom and secure business email": [
+        "Anpassad och säker e-post för företag"
       ],
       "Custom email domains": [
         "Anpassade e-postdomäner"
@@ -1207,17 +1304,50 @@
       "End-to-end encryption": [
         "End-to-end-kryptering"
       ],
+      "Generate emails with a prompt": [
+        "Generera e-post med en prompt"
+      ],
       "HTML signatures": [
         "HTML-signaturer"
+      ],
+      "Password health": [
+        "Lösenordshälsa"
       ],
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
       ],
+      "Private photo backup": [
+        "Privat säkerhetskopiering av foto"
+      ],
+      "Proofread and refine your emails": [
+        "Korrekturläs och finjustera din e-post"
+      ],
+      "Quickly craft replies": [
+        "Skapa svar snabbt"
+      ],
+      "Recover previous file versions": [
+        "Återställ tidigare filversioner"
+      ],
+      "Save time emailing": [
+        "Spara tid på att skicka e-post"
+      ],
       "Schedule and snooze emails for any time": [
         "Schemalägg och snooza e-post när som helst"
       ],
+      "Secure file storage and sharing": [
+        "Säker fillagring och delning"
+      ],
+      "Share files with no size limit": [
+        "Dela filer utan storleksbegränsning"
+      ],
       "SMTP submission": [
         "SMTP-inlämning"
+      ],
+      "Support for up to 2 users": [
+        "Stöd för upp till 2 användare"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synkronisera och säkerhetskopiera alla dina filer mellan enheter"
       ],
       "Unlimited filters": [
         "Obegränsade filter"
@@ -1239,11 +1369,20 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 anpassad e-postdomän"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Skapa flera e-postadresser för dina onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton, JohnNews@${ domain2 } för nyhetsprenumeration"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lagringsutrymmet delas mellan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } och ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
+      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Säkra din e-post med end-to-end-kryptering. Inkluderar stöd för anpassade e-postdomäner, 15 e-postadresser, obegränsat antal hide-my-email-alias och mer."
       ],
@@ -1341,11 +1480,20 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Öka ditt lagringsutrymme till totalt ${ bundleStorage }"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Stöd för ${ n } anpassad e-postdomän",
+        "Stöd för ${ n } anpassade e-postdomäner"
       ]
     },
     "Placeholder": {
       "Password": [
         "Lösenord"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alla premiumfunktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "saml: Error": {
@@ -1389,7 +1537,10 @@
       ]
     },
     "Title": {
-      "Account Temporarily Locked": [
+      "Account restricted": [
+        "Kontot begränsat"
+      ],
+      "Account temporarily locked": [
         "Konto tillfälligt låst"
       ],
       "Enter 2FA code": [

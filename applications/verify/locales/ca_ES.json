@@ -968,8 +968,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "Valor per defecte del sistema"
+      ],
       "Theme font": [
         "Família tipogràfica del tema"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Gran"
+      ],
+      "Medium (recommended)": [
+        "Mitjà (recomanat)"
+      ],
+      "Small": [
+        "Petit"
+      ],
+      "Very large": [
+        "Molt gran"
+      ],
+      "Very small": [
+        "Molt petit"
       ]
     },
     "Human verification method": {
@@ -1124,6 +1144,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
       "${ n } custom email domain": [
         "${ n } domini de correu electrònic personalitzat",
         "${ n } dominis de correu electrònic personalitzats"
@@ -1386,8 +1409,8 @@
       ]
     },
     "Title": {
-      "Account Temporarily Locked": [
-        "Compte bloquejat temporalment"
+      "Account temporarily locked": [
+        "El compte s'ha bloquejat temporalment"
       ],
       "Enter 2FA code": [
         "Introduïu el codi 2FA"

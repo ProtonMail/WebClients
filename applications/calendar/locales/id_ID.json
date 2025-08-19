@@ -320,6 +320,9 @@
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
+      "Go to ${ planOrAppName }": [
+        "Tuju ${ planOrAppName }"
+      ],
       "Go to label": [
         "Tuju label"
       ],
@@ -581,8 +584,8 @@
       "See plan features": [
         "Lihat fitur paket"
       ],
-      "Select ${ planTitle }": [
-        "Pilih ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Pilih ${ planOrAppName }"
       ],
       "Select all": [
         "Pilih semua"
@@ -902,6 +905,11 @@
         "Baru!"
       ]
     },
+    "bf2023: Deal details": {
+      "Premium Password Manager": [
+        "Pengelola Kata Sandi Premium"
+      ]
+    },
     "BF2024: Deal details": {
       "Use your own email domain": [
         "Gunakan domain email milik Anda sendiri"
@@ -1013,6 +1021,9 @@
       ],
       "Discover and set up features": [
         "Telusuri dan siapkan berbagai fitur"
+      ],
+      "Maybe later": [
+        "Mungkin nanti"
       ],
       "Remind me later": [
         "Ingatkan saya nanti"
@@ -1166,7 +1177,7 @@
         "Tautan kalender tidak dapat diakses dari luar ekosistem penyedia kalender."
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Tautan kalender untuk sementara tidak dapat diakses. Pastikan tautan dari penyedia kalender masih valid."
+        "Tautan kalender untuk sementara tidak dapat diakses. Silakan pastikan bahwa tautan dari penyedia kalender ini masih valid."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Lebih dari 12 jam telah berlalu sejak pembaruan terakhir — ${ CALENDAR_APP_NAME } akan mencoba untuk memperbarui kalender dalam beberapa jam."
@@ -2713,6 +2724,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Silakan selesaikan permasalahan yang disorot untuk melanjutkan."
       ],
+      "Please select a country": [
+        "Silakan pilih negara"
+      ],
       "Port is required": [
         "Nomor port diperlukan"
       ],
@@ -3618,9 +3632,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Verifikasi Alamat dengan Kunci Terpercaya sudah diaktifkan untuk alamat ini. Agar dapat mengirim ke alamat ini, percayai terlebih dahulu kunci publik yang akan dipakai untuk mengirim pesan."
       ],
-      "Admin account allocation": [
-        "Alokasi akun admin"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Semua (${ totalFoldersCount } folder)"
       ],
@@ -3629,15 +3640,6 @@
       ],
       "All participants will get a cancellation email. Which event would you like to delete?": [
         "Seluruh peserta akan menerima email pembatalan. Acara mana yang ingin Anda hapus?"
-      ],
-      "Allocated": [
-        "Dialokasikan"
-      ],
-      "Already allocated": [
-        "Telah dialokasikan"
-      ],
-      "Already used": [
-        "Telah digunakan"
       ],
       "American Express SafeKey logo": [
         "Logo American Express Safekey"
@@ -3860,6 +3862,9 @@
       ],
       "Estimating time remaining...": [
         "Memperkirakan waktu yang tersisa..."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Segalanya di ${ planOrAppName }"
       ],
       "Existent and added participants will be notified.": [
         "Peserta yang sudah ada atau yang ditambahkan akan diberi tahu."
@@ -4176,23 +4181,17 @@
       "Start sharing it with contacts and use it for online services.": [
         "Mulai membagikan dengan kontak Anda dan gunakan untuk layanan daring."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Ruang penyimpanan yang dialokasikan kepada pengguna lain di dalam organisasi ini"
-      ],
-      "Storage allocated to this user": [
-        "Ruang penyimpanan yang dialokasikan kepada pengguna ini"
-      ],
-      "Storage for users": [
-        "Ruang penyimpanan untuk anggota"
-      ],
-      "Storage used by this user": [
-        "Ruang penyimpanan yang digunakan oleh pengguna ini"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Kirimkan deposit melalui alamat berikut atau pindai kode QR di bawah ini. Deposit Anda akan muncul pada akun setelah terkonfirmasi."
       ],
       "Subscription auto-renews every month.": [
         "Langganan akan diperbarui secara otomatis setiap bulannya."
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Langganan akan segera berakhir: Untuk mempertahankan manfaat ${ planName } Anda, langgan kembali paket Anda di Apple App Store sebelum ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Langganan akan segera berakhir: Untuk mempertahankan manfaat ${ planName } Anda, langgan kembali paket Anda di Google Play Store sebelum ${ byDate }. ${ reactivateLink }"
       ],
       "Symbols (#$&)": [
         "Simbol (#$&)"
@@ -4662,9 +4661,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
-      ],
-      "Account storage": [
-        "Penyimpanan akun"
       ],
       "Add email address": [
         "Tambah alamat email"
@@ -5188,6 +5184,9 @@
       ],
       "Request an invite": [
         "Minta undangan"
+      ],
+      "Resume now": [
+        "Lanjutkan sekarang"
       ],
       "settings": [
         "pengaturan"

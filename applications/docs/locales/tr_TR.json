@@ -341,6 +341,9 @@
       "Generate password": [
         "Parola üret"
       ],
+      "Get ${ planOrAppName }": [
+        "${ planOrAppName } edinin"
+      ],
       "Get in touch": [
         "Bizimle görüşün"
       ],
@@ -353,8 +356,8 @@
       "Go back": [
         "Geri dön"
       ],
-      "Go to ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } uygulamasına git"
+      "Go to ${ planOrAppName }": [
+        "${ planOrAppName } uygulamasına git"
       ],
       "Go to label": [
         "Etikete git"
@@ -498,7 +501,7 @@
         "PDF (.pdf)"
       ],
       "Plain Text (.txt)": [
-        "Düz metin (*.txt)"
+        "Düz yazı (*.txt)"
       ],
       "Preview contact": [
         "Kişiyi ön izle"
@@ -608,8 +611,8 @@
       "See version history": [
         "Sürüm geçmişini görüntüle"
       ],
-      "Select ${ planTitle }": [
-        "${ planTitle } tarifesini seçin"
+      "Select ${ planOrAppName }": [
+        "${ planOrAppName } tarifesini seç"
       ],
       "Select all": [
         "Tümünü seç"
@@ -828,6 +831,14 @@
         "Şimdi ayrılırsanız, bazı etkinlikler içe aktarılamayabilir"
       ]
     },
+    "anniversary_2025: Offers": {
+      "12 months": [
+        "12 ay"
+      ],
+      "24 months": [
+        "24 ay"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } uygulamaları"
@@ -863,9 +874,6 @@
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucuya sahip olabilirsiniz."
       ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_LUMO_SEATS } Lumo koltuğuna sahip olabilirsiniz."
-      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğuna sahip olabilirsiniz."
       ],
@@ -887,6 +895,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } bilgisayar uygulaması"
+      ],
+      "Ad-blocker and malware protection": [
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması"
       ],
       "Use your own email domain": [
         "Kendi e-posta etki alanınızı kullanın"
@@ -1001,6 +1012,9 @@
       ],
       "Discover and set up features": [
         "Özellikleri keşfedin ve ayarlayın"
+      ],
+      "Maybe later": [
+        "Belki sonra"
       ],
       "Remind me later": [
         "Daha sonra hatırlat"
@@ -2136,6 +2150,9 @@
       "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
         "${ DRIVE_APP_NAME } güncellendi. Lütfen sayfayı yenileyin."
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "Kullanıcı adınız: ${ user.Name }. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
+      ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
@@ -2363,6 +2380,12 @@
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
         "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
+      ],
+      "Please select a country": [
+        "Lütfen bir ülke seçin"
+      ],
+      "Please select a state": [
+        "Lütfen bir il seçin"
       ],
       "Port is required": [
         "Bağlantı noktasının yazılması zorunludur"
@@ -2816,8 +2839,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "Sistem varsayılanı"
+      ],
       "Theme font": [
         "Tema yazı tipi"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Büyük"
+      ],
+      "Medium (recommended)": [
+        "Orta (önerilen)"
+      ],
+      "Small": [
+        "Küçük"
+      ],
+      "Very large": [
+        "Çok büyük"
+      ],
+      "Very small": [
+        "Çok küçük"
       ]
     },
     "Group": {
@@ -3264,9 +3307,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Bu adres için güvenilen anahtarlar ile adres doğrulama özelliği açıldı. Bu adrese e-posta gönderebilmek için, önce göndermek için kullanılabilecek herkese açık anahtarlara güvenin."
       ],
-      "Admin account allocation": [
-        "Yönetici hesabına ayrılan"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Tümü (${ totalFoldersCount } klasör)",
         "Tümü (${ totalFoldersCount } klasör)"
@@ -3274,15 +3314,6 @@
       "All (${ totalFoldersCount } label)": [
         "Tümü (${ totalFoldersCount } etiket)",
         "Tümü (${ totalFoldersCount } etiket)"
-      ],
-      "Allocated": [
-        "Ayrılmış"
-      ],
-      "Already allocated": [
-        "Zaten ayrılmış"
-      ],
-      "Already used": [
-        "Zaten kullanılmış"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logosu"
@@ -3531,6 +3562,9 @@
       "Every change you make is automatically and securely saved to Drive.": [
         "Yaptığınız değişiklikler otomatik ve güvenli olarak Drive üzerine kaydedilir."
       ],
+      "Everything in ${ planOrAppName }": [
+        "${ planOrAppName } özelliklerinin tümü"
+      ],
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
@@ -3587,9 +3621,6 @@
       ],
       "Get Notified About Comments": [
         "Yorumlar bildirilsin"
-      ],
-      "Go to ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } uygulamasına git"
       ],
       "here": [
         "buraya"
@@ -3864,6 +3895,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Lütfen ${ groupName } grubuna eklenecek e-posta adresini ya da adreslerini seçin."
       ],
+      "Please try again in a few moments": [
+        "Lütfen biraz sonra yeniden deneyin"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Lütfen farklı bir ödeme yöntemi kullanarak yeniden deneyin ya da bankanızla görüşün."
       ],
@@ -3978,23 +4012,20 @@
       "Start sharing it with contacts and use it for online services.": [
         "Bu adresi kişilerinizle paylaşmaya ve çevrim içi hizmetlerde kullanmaya başlayın."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Bu kuruluştaki diğer kullanıcılara ayrılmış depolama alanı"
-      ],
-      "Storage allocated to this user": [
-        "Bu kullanıcıya ayrılmış depolama alanı"
-      ],
-      "Storage for users": [
-        "Kullanıcıların depolama alanı"
-      ],
-      "Storage used by this user": [
-        "Bu kullanıcının kullandığı depolama alanı"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
       ],
       "Subscription auto-renews every month.": [
         "Abonelik her ay otomatik olarak yenilenir."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonelik sona eriyor: ${ planName } avantajlarınızı korumak için, aboneliğinizi Apple App Store üzerinden ${ byDate } tarihine kadar yeniden başlatın. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonelik sona eriyor: ${ planName } avantajlarınızı sürdürmek için, aboneliğinizi Google Play Store üzerinden ${ byDate } tarihine kadar yeniden başlatın. ${ reactivateLink }"
       ],
       "Symbols (#$&)": [
         "Simgeler (#$&)"
@@ -4233,6 +4264,9 @@
       "Would you like to receive a new verification code?": [
         "Yeni bir doğrulama kodu almak ister misiniz?"
       ],
+      "Writing assistant": [
+        "Yazma yardımcısı"
+      ],
       "you": [
         "siz"
       ],
@@ -4459,9 +4493,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
       ],
-      "Account storage": [
-        "Hesap depolama alanı"
-      ],
       "Add email address": [
         "E-posta adresi ekle"
       ],
@@ -4625,7 +4656,7 @@
         "Bu bağlantıyı silin ve erişimi olan herkesi kaldırın."
       ],
       "Expires": [
-        "Geçerlilik sonu"
+        "Geçerlilik süresi sonu"
       ],
       "Extended address": [
         "Açık adres"
@@ -4992,8 +5023,14 @@
       "Pay invoice": [
         "Faturayı öde"
       ],
+      "Reactivate now": [
+        "Yeniden etkinleştir"
+      ],
       "Request an invite": [
         "Davet iste"
+      ],
+      "Resume now": [
+        "Şimdi sürdür"
       ],
       "settings": [
         "ayarlar"
@@ -5200,7 +5237,7 @@
         "OpenDocument çalışma sayfası belgesi"
       ],
       "OpenDocument text document": [
-        "OpenDocument metin belgesi"
+        "OpenDocument yazı belgesi"
       ],
       "OpenType font": [
         "OpenType yazı tipi"
@@ -5215,7 +5252,7 @@
         "RAR arşivi"
       ],
       "Rich Text Format (RTF)": [
-        "Zengin metin biçimi (RTF)"
+        "Zengin yazı biçimi (RTF)"
       ],
       "Scalable Vector Graphics (SVG)": [
         "Ölçeklenebilir vektör grafiği (SVG)"
@@ -5230,7 +5267,7 @@
         "Tape arşivi (TAR)"
       ],
       "Text": [
-        "Metin"
+        "Yazı"
       ],
       "TrueType Font": [
         "TrueType yazı tipi"
@@ -6592,9 +6629,20 @@
         "(${ PASS_APP_NAME } açılacak)"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "Etkinlikleri görüntüle"
+      ]
+    },
     "Security Center - Info": {
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmetten sızdırıldığında bildirim alın. ${ learnMoreLink }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Hesapları için daha yüksek düzeyde koruma isteyen kullanıcılar için tasarlanmış, yapay zeka destekli son teknoloji güvenlik çözümümüz. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel **açık** ve hesabınızı koruyor."
       ]
     },
     "Select files": {
@@ -6607,9 +6655,64 @@
         "Herhangi bir sonuç bulunamadı"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Sıfırlamayı iptal et"
+      ],
+      "Reset password": [
+        "Parolayı sıfırla"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Eski adres anahtarları ile hesap kurtarma işlemi yapılamaz"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
+      ]
+    },
+    "session_recovery:available:info": {
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Parolanızı değiştirmek için oturumunuzun açık olduğu (isteğin yapıldığı oturum) aygıta geçin."
+      ],
+      "This permission expires soon": [
+        "Bu izin yakında kaldırılacak"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Artık ${ boldEmail } hesabınızın parolasını ${ boldDaysRemaining } içinde özgürce değiştirebilirsiniz."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Şimdi ${ boldEmail } hesabınızın parolasını değiştirebilirsiniz."
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Parola kaydedildi"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Parolanızı sıfırlayın"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Parola sıfırlama işlemini iptal et"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Parola sıfırlama işlemini iptal etmek için geçerli parolanızı yazın. Başka bir değişiklik yapılmayacak."
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "Parola sıfırlama isteği iptal edildi"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Parola sıfırlama işlemi iptal edilsin mi?"
       ]
     },
     "session_recovery:cancelled:info": {
@@ -6918,7 +7021,7 @@
         "Otomatik ödemeyi sürdür"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Ayrıca, el ile ödeme yapmayı unutursanız ve tüm ödeme yöntemleri için otomatik ödeme kapatılmışsa, hesabınızın tarifesini otomatik olarak düşürebiliriz ve bu da birçok özelliğin kaybolmasına neden olur."
+        "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Ayrıca, el ile ödeme yapmayı unutursanız ve tüm ödeme yöntemleri için otomatik ödeme kapatılmışsa, hesabınızın tarifesini otomatik olarak düşürebiliriz ve bu da birçok özelliği kaybetmenize neden olur."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Free tarifesinin depolama kotasını aşarsanız ya da diğer ücretli özellikleri kullanıyorsanız dosyaları, e-postaları veya diğer verileri sizin için otomatik olarak silemeyeceğimizden otomatik olarak tarifenizi düşüremeyiz. Otomatik ödemeyi kapatırsanız, hesabın askıya alınmasını önlemek için bir sonraki faturanızı son ödeme tarihinden önce el ile ödemeyi unutmayın."
@@ -6995,7 +7098,7 @@
         "Doğrulandı"
       ],
       "You have successfully unsubscribed": [
-        "Abonelikten ayrıldınız"
+        "Aboneliği sonlandırdınız"
       ]
     },
     "Suffix": {
@@ -7009,6 +7112,9 @@
     "Suffix for price": {
       "per month": [
         "aylık"
+      ],
+      "per user per month": [
+        "bir kullanıcı için aylık"
       ]
     },
     "Tab subscription modal": {
@@ -7106,7 +7212,7 @@
       "Account recovery": [
         "Hesap kurtarma"
       ],
-      "Account Temporarily Locked": [
+      "Account temporarily locked": [
         "Hesap geçici olarak kilitlendi"
       ],
       "Add contact group name": [
@@ -7409,6 +7515,9 @@
       ],
       "Network error": [
         "Ağ sorunu"
+      ],
+      "No breaches detected": [
+        "Herhangi bir veri sızıntısı yok"
       ],
       "Offline": [
         "Çevrim dışı"

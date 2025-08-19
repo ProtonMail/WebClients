@@ -583,6 +583,9 @@
       "Explore ${ target }": [
         "Verken ${ target }"
       ],
+      "Explore business plans": [
+        "Bekijk bedrijfsabonnementen"
+      ],
       "Explore group plans": [
         "Bekijk groepsabonnementen"
       ],
@@ -681,6 +684,9 @@
       ],
       "Go back": [
         "Ga terug"
+      ],
+      "Go to ${ planOrAppName }": [
+        "Ga naar ${ planOrAppName }"
       ],
       "Go to label": [
         "Ga naar label"
@@ -1030,8 +1036,8 @@
       "See plan features": [
         "Bekijk de abonnementskenmerken"
       ],
-      "Select ${ planTitle }": [
-        "Selecteer ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Selecteer ${ planOrAppName }"
       ],
       "Select a calendar to export": [
         "Selecteer een agenda om te exporteren"
@@ -1636,9 +1642,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "U kunt tot ${ TRIAL_MAX_LUMO_SEATS } Lumo-plaatsen hebben tijdens de proefperiode."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-plaatsen hebben tijdens de proefperiode."
@@ -5269,9 +5272,6 @@
       "Continue": [
         "Doorgaan"
       ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "Alles in ${ PLAN_NAMES[PLANS.VPN2024] }"
-      ],
       "Fastest VPN servers": [
         "Snelste VPN-servers"
       ],
@@ -5292,6 +5292,15 @@
       ]
     },
     "Features": {
+      "${ VPN_CONNECTIONS } devices": [
+        "${ VPN_CONNECTIONS } apparaten"
+      ],
+      "Ad-blocker and malware protection": [
+        "Advertentieblokkering en bescherming tegen malware"
+      ],
+      "All premium ${ BRAND_NAME } services": [
+        "Alle premium ${ BRAND_NAME }-diensten"
+      ],
       "and more premium features...": [
         "en meer premium functies..."
       ],
@@ -5301,11 +5310,17 @@
       "Lightning-fast speeds": [
         "Hoge snelheden"
       ],
+      "Lightning-fast VPN speeds": [
+        "Zeer hoge VPN-snelheden"
+      ],
       "NetShield Ad-blocker": [
         "NetShield adblocker"
       ],
       "Secure streaming": [
         "Veilig streamen"
+      ],
+      "Stream from Netflix, HBO, and more": [
+        "Stream van Netflix, HBO en meer"
       ]
     },
     "Features: Tooltip": {
@@ -7106,6 +7121,9 @@
       "Event invitations and responses will be sent in this language.": [
         "Evenementuitnodigingen en antwoorden worden in deze taal verzonden."
       ],
+      "Everything in ${ planOrAppName }": [
+        "Alles van ${ planOrAppName }"
+      ],
       "Example: ${ spfExample }": [
         "Voorbeeld: ${ spfExample }"
       ],
@@ -7857,9 +7875,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "De prijs is inclusief alle toepasselijke cyclusgebonden kortingen en geldige coupons die in uw account zijn opgeslagen."
       ],
-      "Promotion expired": [
-        "Promotie verlopen"
-      ],
       "Protected by Swiss privacy laws": [
         "Beschermd door Zwitserse privacywetten"
       ],
@@ -8083,9 +8098,6 @@
       "Starts on ${ startsOnTime }": [
         "Start op ${ startsOnTime }"
       ],
-      "Stay tuned for future promotions.": [
-        "Blijf kijken voor toekomstige promoties."
-      ],
       "Step ${ step }": [
         "Stap ${ step }",
         "Stap ${ step }"
@@ -8275,9 +8287,6 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Dit bericht zal het supportteam niet bereiken. Als u een probleem heeft met onze dienst of als er vanuit onze kant actie ondernomen moet worden ${ supportLink }."
-      ],
-      "This promotion link has expired.": [
-        "Deze promotielink is verlopen."
       ],
       "This service is not available to users signing in with single sign-on.": [
         "Deze service is niet beschikbaar voor gebruikers die inloggen met Single Sign-On."
@@ -12853,12 +12862,6 @@
       "Get unlimited privacy for two": [
         "Krijg onbeperkte privacy voor twee"
       ],
-      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
-        "Ik begrijp dat wanneer ik mijn herstelgegevens verlies, ik definitief de toegang tot mijn account verlies."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
-        "Als u buitengesloten raakt uit uw ${ BRAND_NAME }-account, zal uw **herstelkit** u toelaten om in te liggen en uw data te herstellen."
-      ],
       "Includes:": [
         "Omvat:"
       ],
@@ -12870,9 +12873,6 @@
       ],
       "Install app and extension": [
         "Installeer app en extensie"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "Het is de enige manier om uw account volledig te herstellen, dus wees er zeker van dat u deze herstelkit ergens veilig bewaart."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Sluit u aan bij meer dan 100 miljoen anderen die ${ BRAND_NAME } kozen om veilig online te zijn"
@@ -14319,6 +14319,15 @@
       ],
       "/user": [
         "/gebruiker"
+      ],
+      "1 month": [
+        "1 maand"
+      ],
+      "12 months": [
+        "12 maanden"
+      ],
+      "24 months": [
+        "24 maanden"
       ],
       "30 custom email addresses": [
         "30 aangepaste e-mailadressen"
@@ -15784,6 +15793,9 @@
       ],
       "Account suspended": [
         "Account opgeschort"
+      ],
+      "Account temporarily locked": [
+        "Account tijdelijk geblokkeerd"
       ],
       "Action": [
         "Actie"
@@ -17666,6 +17678,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Bespaar tot ${ priceString }** met een langer abonnement. Dezelfde premium functies, lagere prijs."
       ],
+      "Advanced security for your company?": [
+        "Geavanceerde beveiliging voor uw bedrijf?"
+      ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Alle premium ${ BRAND_NAME } diensten. Vanaf slechts ${ fallBackString } per maand"
       ],
@@ -17674,6 +17689,12 @@
       ],
       "Did you know?": [
         "Wist u dat?"
+      ],
+      "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
+        "Bescherm uw organisatie tegen dataschendingen met ${ VPN_APP_NAME } voor Bedrijven."
+      ],
+      "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
+        "Onbeperkte privacy voor u en een dierbare. Vanaf slechts ${ priceString }/maand."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "U kunt tot ${ FAMILY_MAX_USERS } mensen beveiligen met ${ PLAN_NAMES[plan] }. Vanaf slechts ${ priceString }/maand per account."
@@ -17884,6 +17905,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } land",
         "${ numberOfServers } in ${ numberOfCountries } landen"
+      ],
+      "Select from ${ numberOfCountries }+ country": [
+        "Selecteer uit ${ numberOfCountries }+ land",
+        "Selecteer uit ${ numberOfCountries }+ landen"
       ]
     },
     "vpn_2step: billing": {

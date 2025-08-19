@@ -75,6 +75,14 @@
         "Паглядзець рахунак"
       ]
     },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
+      ],
+      "Use your own email domain": [
+        "Выкарыстоўвайце ўласны дамен электроннай пошты"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "Абхазія"
@@ -967,11 +975,37 @@
         "Мегабайты",
         "Мегабайтаў",
         "Мегабайтаў"
+      ],
+      "Terabyte": [
+        "тэрабайт",
+        "тэрабайты",
+        "тэрабайтаў",
+        "Тэрабайтаў"
       ]
     },
     "Font face option": {
+      "System default": [
+        "Прадвызначана сістэмай"
+      ],
       "Theme font": [
         "Шрыфт тэмы"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Вялікі"
+      ],
+      "Medium (recommended)": [
+        "Сярэдні (рэкамендуецца)"
+      ],
+      "Small": [
+        "Маленькі"
+      ],
+      "Very large": [
+        "Вельмі вялікі"
+      ],
+      "Very small": [
+        "Вельмі маленькі"
       ]
     },
     "Human verification method": {
@@ -1126,6 +1160,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
       "${ n } custom email domain": [
         "${ n } карыстальніцкі дамен электроннай пошты",
         "${ n } карыстальніцкія дамены электроннай пошты",
@@ -1213,6 +1250,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Падтрымка паштовых кліентаў (праз IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Групы электроннай пошты"
+      ],
       "Encrypted contact details": [
         "Зашыфраваныя кантактныя звесткі"
       ],
@@ -1285,6 +1325,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтычнасці ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Адпраўка паведамлення кожнаму ў групе з адзінага адраса электроннай пошты"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Гарантуе, што вы атрымаеце ўсе лісты, якія адпраўлены на ваш дамен, нават калі адрас электроннай пошты не існуе, больш не існуе або ў напісанні адраса зроблена памылка"
@@ -1398,6 +1441,9 @@
       ]
     },
     "Title": {
+      "Account temporarily locked": [
+        "Уліковы запіс часова заблакаваны"
+      ],
       "Enter 2FA code": [
         "Увядзіце код 2ФА"
       ],

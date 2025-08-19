@@ -114,6 +114,9 @@
       "Cancel subscription": [
         "გამოწერის გაუქმება"
       ],
+      "Cancel trial and pay": [
+        "გამოსაცდელი პერიოდის გაუქმება და გადახდა"
+      ],
       "Change password": [
         "პაროლის შეცვლა"
       ],
@@ -338,6 +341,9 @@
       "Generate password": [
         "პაროლის გენერირება"
       ],
+      "Get ${ planOrAppName }": [
+        "${ planOrAppName }-ის მიღება"
+      ],
       "Get in touch": [
         "დაგვიკავშირდით"
       ],
@@ -350,8 +356,8 @@
       "Go back": [
         "უკან დაბრუნება"
       ],
-      "Go to ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }-ზე გადასვლა"
+      "Go to ${ planOrAppName }": [
+        "${ planOrAppName }-ზე გადასვლა"
       ],
       "Go to label": [
         "ჭდეზე გადასვლა"
@@ -439,6 +445,9 @@
       ],
       "More info: ${ safeTitle }": [
         "გაიგეთ მეტი: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "მეტი პარამეტრი ანგარიშებისთვის"
       ],
       "Move": [
         "გადატანა"
@@ -602,8 +611,8 @@
       "See version history": [
         "ვერსიის ისტორიის ნახვა"
       ],
-      "Select ${ planTitle }": [
-        "აირჩიეთ ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "აირჩიეთ ${ planOrAppName }"
       ],
       "Select all": [
         "ყველაფრის მონიშვნა"
@@ -822,6 +831,14 @@
         "თუ ახლა გახვალთ, ზოგი მოვლენა შეიძლება შემოტანილი არ იყოს"
       ]
     },
+    "anniversary_2025: Offers": {
+      "12 months": [
+        "12 თვე"
+      ],
+      "24 months": [
+        "24 თვე"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-ის აპლიკაციები"
@@ -845,6 +862,22 @@
       ],
       "Unsupported event": [
         "გაუთვალისწინებელი შემთხვევა"
+      ]
+    },
+    "bf2023: Deal details": {
+      "Premium Password Manager": [
+        "პაროლების მმართველის ფასიანი ვერსია"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
+      ],
+      "Ad-blocker and malware protection": [
+        "რეკლამების დაბლოკვა და არასასურველი პროგრამებისგან დაცვა"
+      ],
+      "Use your own email domain": [
+        "გამოიყენეთ თქვენი საკუთარი ელფოსტის დომენი"
       ]
     },
     "Billing cycle option": {
@@ -956,6 +989,9 @@
       ],
       "Discover and set up features": [
         "აღმოაჩინეთ და მოირგეთ ფუნქციები"
+      ],
+      "Maybe later": [
+        "მოგვიანებით"
       ],
       "Remind me later": [
         "შემახსენე მოგვიანებით"
@@ -1963,6 +1999,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების დაშიფვრა და შემოტანა... ამას რამდენიმე წუთი შეიძლება დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
       ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "დარწმუნდით, რომ ორგანიზაციის მონაცემებთან წვდომა დაცულია მაშინაც კი, როცა თქვენი გუნდი ოფისში არაა, ან საჯარო WiFi-ს იყენებს."
+      ],
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "დარწმუნდით, რომ გაქვთ უმაღლესი დონის დაცვა ${ PROTON_SENTINEL_NAME } პროგრამით."
       ],
@@ -2296,6 +2335,12 @@
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტი.",
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტები."
       ],
+      "Please select a country": [
+        "აირჩიეთ ქვეყანა"
+      ],
+      "Please select a state": [
+        "აირჩიეთ შტატი"
+      ],
       "Port is required": [
         "პორტი აუცილებელია"
       ],
@@ -2350,6 +2395,9 @@
       ],
       "The address might be misspelled": [
         "ალბათ, მისამართი შეგეშალათ"
+      ],
+      "The amount due has changed. Please try again.": [
+        "გადასახდელი თანხა შეიცვალა. თავიდან სცადეთ."
       ],
       "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
         "დოკუმენტი, რომლის გადაყვანასაც ცდილობთ, მეტისმეტად დიდია. ეს, შეიძლება, მაშინ მოხეს, თუ დოკუმენტი ბევრ სურათს ან სხვა მედიას შეიცავს. სცადეთ თავიდან, ამჯერად ცოტა პატარა დოკუმენტით."
@@ -2742,8 +2790,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "სისტემის ნაგულისხმევი"
+      ],
       "Theme font": [
         "თემის ფონტი"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "დიდი"
+      ],
+      "Medium (recommended)": [
+        "საშუალო (რეკომენდებული)"
+      ],
+      "Small": [
+        "პატარა"
+      ],
+      "Very large": [
+        "ძალიან დიდი"
+      ],
+      "Very small": [
+        "ძალიან პატარა"
       ]
     },
     "Group": {
@@ -3097,6 +3165,9 @@
         "ნაპოვნია ${ groupCounts } ჯგუფი",
         "ნაპოვნია ${ groupCounts } ჯგუფი"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } სამუდამო გეგმას განახლების ფასი არ გააჩნია. ის ერთჯერადი გადასახადია და ${ PASS_SHORT_APP_NAME }-თან სამუდამო წვდომას მოგცემთ."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }-ს სულ ცოტა 1 გამოყოფილი სერვერი ესაჭიროება ${ serverPricePerMonth }"
       ],
@@ -3141,6 +3212,9 @@
         "(${ memberCount } წევრი)",
         "(${ memberCount } წევრი)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } /თვეში)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } დამატებითი საცავი"
       ],
@@ -3178,9 +3252,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "ამ მისამართისთვის ჩართულია მისამართის დადასტურება სანდო გასაღებებით. იმისათვის, რომ შეძლოთ ამ მისამართზე გაგზავნა, ჯერ ენდეთ საჯარო გასაღებებს, რომლებიც შეიძლება, გამოყენებულ იქნას გაგზავნისთვის."
       ],
-      "Admin account allocation": [
-        "ადმინისტრატორის ანგარიშის გამოყოფა"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "ყველა (${ totalFoldersCount } საქაღალდე)",
         "ყველა (${ totalFoldersCount } საქაღალდე)"
@@ -3188,15 +3259,6 @@
       "All (${ totalFoldersCount } label)": [
         "ყველა (${ totalFoldersCount } ჭდე)",
         "ყველა (${ totalFoldersCount } ჭდე)"
-      ],
-      "Allocated": [
-        "გამოყოფილი"
-      ],
-      "Already allocated": [
-        "გამოყოფილია"
-      ],
-      "Already used": [
-        "გამოყენებულია"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey-ის ლოგო"
@@ -3430,6 +3492,9 @@
       "Enter your own password (as organization admin).": [
         "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც ორგანიზაციის ადმინმა)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც სანდო კონტაქტმა)."
+      ],
       "Error converting document: ${ errorMessage }": [
         "დოკუმენტის გადაყვანის შეცდომა: ${ errorMessage }"
       ],
@@ -3441,6 +3506,9 @@
       ],
       "Every change you make is automatically and securely saved to Drive.": [
         "ყოველი ცვლილება, რომელსაც შეიტანთ, ავტომატურად და დაცულად შეინახება Drive-ზე."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "ყველაფერი ${ planOrAppName }-ში"
       ],
       "Expired": [
         "ვადაგასულია"
@@ -3493,11 +3561,11 @@
       "Free 5GB encrypted storage to get started": [
         "უფასო 5გბ დაშიფრული საცავი დასაწყისისთვის"
       ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "მიიღეთ ელფოსტის განახლებები კომენტარებისა და მინიშნებებისთვის, რომლებიც თქვენ დოკუმენტებს დაემატება."
+      ],
       "Get Notified About Comments": [
         "გაფრთხილებების მიღება კომენტარების შესახებ"
-      ],
-      "Go to ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME }-ზე გადასვლა"
       ],
       "here": [
         "აქ"
@@ -3663,6 +3731,9 @@
       "No contacts added yet": [
         "კონტაქტები ჯერ არ დამატებულა"
       ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "URL-ში დოკუმენტი მითითებული არაა. დაბრუნდით ${ DRIVE_APP_NAME }-ზე და აირჩიეთ დოკუმენტი."
+      ],
       "No email address": [
         "ელ-ფოსტის მისამართის გარეშე"
       ],
@@ -3769,6 +3840,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "აირჩიეთ, ${ groupName }-ში ელფოსტის რომელი მისამართის დამატება გნებავთ."
       ],
+      "Please try again in a few moments": [
+        "გთხოვთ, ხელახლა სცადოთ რამდენიმე წამში"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "ან თავიდან სცადეთ, ან გადახდის სხვა საშუალება გამოიყენეთ, ან დაუკავშირდით თქვენს ბანკს."
       ],
@@ -3807,6 +3881,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ამ გვერდის განახლება ან ${ link } პრობლემების უმრავლესობას ავტომატურად წყვეტს."
+      ],
+      "Registering your subscription…": [
+        "თქვენი გამოწერის რეგისტრაცია…"
       ],
       "Restored version to": [
         "ვერსია აღდგენილია მნიშვნელობაზე"
@@ -3879,18 +3956,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "დაიწყეთ კონტაქტებთან გაზიარება და გამოიყენეთ ის ინტერნეტ-სერვისებისთვის."
-      ],
-      "Storage allocated to other users in this organisation": [
-        "ამ ორგანიზაციის სხვა მომხმარებლებისთვის გამოყოფილი საცავი"
-      ],
-      "Storage allocated to this user": [
-        "ამ მომხმარებლისთვის გამოყოფილი საცავი"
-      ],
-      "Storage for users": [
-        "საცავი მომხმარებლებისთვის"
-      ],
-      "Storage used by this user": [
-        "ამ მომხმარებლის მიერ გამოყენებული საცავი"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "გადმორიცხეთ დეპოზიტი შემდეგ მისამართზე ან დაასკანერეთ QR კოდი. თქვენი დეპოზიტი ანგარიშში დადასტურების შემდეგ აისახება."
@@ -4123,6 +4188,9 @@
       "Would you like to receive a new verification code?": [
         "გნებავთ შემოწმების ახალი კოდის მიღება?"
       ],
+      "Writing assistant": [
+        "წერაში დამხმარე"
+      ],
       "you": [
         "თქვენ"
       ],
@@ -4251,11 +4319,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "თქვენი შემდეგი გადახდის თარიღია ${ renewalTime }"
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "თქვენი შემდეგი გადახდის თარიღია ${ renewalTime }. დაუკავშირდით მხარდაჭერის გუნდს, თუ სატარიფო გეგმის შეცვლა დაუყოვნებლივ გჭირდებათ."
+      ],
       "Your password was leaked:": [
         "თქვენი პაროლი გაჟონილია:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "თქვენი ტელეფონის ნომერი, მხოლოდ, ერთხელ, შესამოწმებლად იქნება გამოყენებული."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება თვეში ერთხელ."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "თქვენი გამოწერის ავტომატური განახლების თარიღი: ${ renewalTime }."
       ]
     },
     "Info on errors": {
@@ -4327,9 +4404,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
-      ],
-      "Account storage": [
-        "ანგარიშის საცავი"
       ],
       "Add email address": [
         "ელფოსტის მისამართის დამატება"
@@ -4750,6 +4824,9 @@
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "თქვენი პაროლი (სანდო კონტაქტი)"
       ]
     },
     "Label for contact group color": {
@@ -4858,8 +4935,14 @@
       "Pay invoice": [
         "ინვოისის გადახდა"
       ],
+      "Reactivate now": [
+        "რეაქტივაცია ახლავე"
+      ],
       "Request an invite": [
         "მოსაწვევის მოთხოვნა"
+      ],
+      "Resume now": [
+        "გაგრძელება ახლა"
       ],
       "settings": [
         "მორგება"
@@ -5206,6 +5289,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe წერის დამხმარე"
+      ],
       "${ n } calendar": [
         "${ n } კალენდარი",
         "${ n } კალენდარი"
@@ -5641,6 +5727,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "გაუზიარეთ კალენდარი თქვენს ოჯახს, მეგობრებს და კოლეგებს"
+      ],
+      "Email everyone in a group with a single email address": [
+        "მიწერეთ ყველას ჯგუფში ერთი ელფოსტის მისამართით"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "იძლევა გარანტიას, რომ მიიღებთ ყველა ელფოსტას, რომელიც თქვენს დომენზე იქნება გამოგზავნილი მაშინაც კი, თუ მომხმარებელი არ არსებობს, აღარ არსებობს ან აკრეფის შეცდომაა"
@@ -6167,8 +6256,20 @@
       "MM/YY": [
         "თთ/წწ"
       ],
+      "More plans are available in other currencies": [
+        "მეტი სატარიფო გეგმა ხელმისაწვდომია სხვა ვალუტებში"
+      ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "განახლების ფასები იცვლება ${ termsAndConditionsLink }-ის წესებით."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "განახლების დრო ${ renewPriceStr }. გააუქმეთ ნებისმიერ დროს."
+      ],
       "terms & conditions": [
         "პირობები და წესები"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ renewPriceStr } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
@@ -6440,9 +6541,17 @@
         "(გახსნის ${ PASS_APP_NAME }-ს)"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "მოვლენების ნახვა"
+      ]
+    },
     "Security Center - Info": {
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel **აქტიურია** და იცავს თქვენს ანგარიშს."
       ]
     },
     "Select files": {
@@ -6455,9 +6564,47 @@
         "შედეგების გარეშე"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "ჩამოყრის გაუქმება"
+      ],
+      "Reset password": [
+        "პაროლის ჩამოყრა"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "ანგარიშის აღდგენა მოძველებული მისამართის გასაღებებისთვის ხელმისაწვდომი არაა"
+      ]
+    },
+    "session_recovery:available:info": {
+      "This permission expires soon": [
+        "ამ წვდომის ვადა მალე იწურება"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "პაროლი დამახსოვრებულია"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "თქვენი პაროლის ჩამოყრა"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "პაროლის ჩამოყრის გაუქმება"
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "პაროლის ჩამოყრა გაუქმდა"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "გავაუქმო პაროლის ჩამოყრა?"
       ]
     },
     "session_recovery:cancelled:info": {
@@ -6690,6 +6837,11 @@
         "პრიორიტეტული მხარდაჭერა"
       ]
     },
+    "subscription reminder": {
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "დარწმუნებული ბრძანდებით?"
@@ -6801,6 +6953,9 @@
     "Suffix for price": {
       "per month": [
         "თვეში"
+      ],
+      "per user per month": [
+        "თითოეული მომხმარებლისთვის თვეში"
       ]
     },
     "Tab subscription modal": {
@@ -6897,6 +7052,9 @@
       ],
       "Account recovery": [
         "ანგარიშის აღდგენა"
+      ],
+      "Account temporarily locked": [
+        "ანგარიში დროებით დაბლოკილია"
       ],
       "Add contact group name": [
         "დაამატეთ კონტაქტის ჯგუფის სახელი"
@@ -7198,6 +7356,9 @@
       ],
       "Network error": [
         "ქსელის შეცდომა"
+      ],
+      "No breaches detected": [
+        "გაჟონვები აღმოჩენილი არაა"
       ],
       "Offline": [
         "გათიშულია"

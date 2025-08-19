@@ -527,9 +527,6 @@
       "See plan features": [
         "Näytä tilauksen ominaisuudet"
       ],
-      "Select ${ planTitle }": [
-        "Valitse ${ planTitle }"
-      ],
       "Select all": [
         "Valitse kaikki"
       ],
@@ -2996,6 +2993,10 @@
         "${ contactEmailsLength } jäsen",
         "${ contactEmailsLength } jäsentä"
       ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } jäsen)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } jäsentä)"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } sisältää useita sähköpostiosoitteita."
       ],
@@ -3042,6 +3043,10 @@
       "${ storage } storage": [
         "${ storage } tallennustilaa"
       ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } seuranta estetty",
+        "${ trackersCount } seurantaa estetty"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } yhteystieto päivitettiin.",
         "${ updated } yhteystietoa päivitettiin."
@@ -3078,9 +3083,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Osoitteen varmennus luotetuilla avaimilla on käytössä tälle osoitteelle. Jotta voit lähettää tähän osoitteeseen, luota ensin lähetykseen käytettäviin julkisiin avaimiin."
       ],
-      "Admin account allocation": [
-        "Varattu ylläpitäjän tilille"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Kaikki (${ totalFoldersCount } kansio)",
         "Kaikki (${ totalFoldersCount } kansiota)"
@@ -3091,15 +3093,6 @@
       ],
       "All your changes will be lost.": [
         "Kaikki muutokset menetetään."
-      ],
-      "Allocated": [
-        "Varattu"
-      ],
-      "Already allocated": [
-        "Jo varattu"
-      ],
-      "Already used": [
-        "Jo käytetty"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey -logo"
@@ -3558,18 +3551,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Aloita sen jakaminen yhteystietojen kanssa ja käytä sitä verkkopalveluissa."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Organisaation käyttäjille varattu tallennustila"
-      ],
-      "Storage allocated to this user": [
-        "Käyttäjälle varattu tallennustila"
-      ],
-      "Storage for users": [
-        "Tallennustilaa käyttäjille"
-      ],
-      "Storage used by this user": [
-        "Käyttäjän varaama tallennustila"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
       ],
@@ -3764,6 +3745,10 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Kaikki laajemmat ${ MAIL_APP_NAME } -määritykset, kuten käyttäjät, osoitteet ja omat verkkotunnukset on poistettava käytöstä tai poistettava ennen tilauksen alennusta."
       ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Valitsit **${ elementsCount } viestin** sijainnista ${ location }",
+        "Valitsit **${ elementsCount } viestiä** sijainnista ${ location }"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sinut ohjataan pian PayPaliin maksun vahvistamiseksi."
       ],
@@ -3799,6 +3784,10 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Kirjautumistietojasi ei säilytetä tuonnin päätyttyä."
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Viestisi tuhoutuu ${ numberOfDays } päivän kuluttua.",
+        "Viestisi tuhoutuu ${ numberOfDays } päivän kuluttua."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Seuraava laskutuspäivä on ${ renewalTime }."
@@ -3853,9 +3842,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
-      ],
-      "Account storage": [
-        "Tilin tallennustila"
       ],
       "Add email address": [
         "Lisää sähköpostiosoite"
@@ -5868,6 +5854,18 @@
         "${ countMergeableContacts } yhteystieto näyttää identtiseltä.",
         "${ countMergeableContacts } yhteystietoa näyttää identtiseltä."
       ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } keskustelu siirrettiin roskapostiin ja sen lähettäjä lisättiin roskapostilistallesi.",
+        "${ elementsCount } keskustelua siirrettiin roskapostiin ja niiden lähettäjät lisättiin roskapostilistallesi."
+      ],
+      "${ elementsCount } conversation removed from ${ labelName }.": [
+        "${ elementsCount } keskustelulta poistettiin tunniste ${ labelName }.",
+        "${ elementsCount } keskustelulta poistettiin tunniste ${ labelName }."
+      ],
+      "${ elementsCount } message marked as unread.": [
+        "${ elementsCount } viesti merkittiin lukemattomaksi.",
+        "${ elementsCount } viestiä merkittiin lukemattomaksi."
+      ],
       "Address copied to clipboard": [
         "Osoite kopioitiin leikepöydälle"
       ],
@@ -6167,6 +6165,10 @@
       "Delete ${ count } contact group": [
         "Poista ${ count } yhteystietoryhmä",
         "Poista ${ count } yhteystietoryhmää"
+      ],
+      "Delete ${ count } draft": [
+        "Poista ${ count } luonnos",
+        "Poista ${ count } luonnosta"
       ],
       "Delete ${ value }": [
         "Poista ${ value }"

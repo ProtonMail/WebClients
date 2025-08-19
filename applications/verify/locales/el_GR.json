@@ -83,6 +83,11 @@
         "Χρησιμοποιήστε τον δικό σας τομέα ηλεκτρονικού ταχυδρομείου"
       ]
     },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Αποθήκευση και κοινή χρήση στο cloud για μεγάλα αρχεία"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "Αμπχαζία"
@@ -914,6 +919,9 @@
       ],
       "Something went wrong": [
         "Κάτι πήγε στραβά"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Δεν ήταν δυνατή η φόρτωση αυτής της σελίδας. Ανανεώστε τη σελίδα ή ελέγξτε τη σύνδεσή σας στο διαδίκτυο."
       ]
     },
     "fido2: Error": {
@@ -947,6 +955,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -965,11 +976,35 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Font face option": {
+      "System default": [
+        "Προεπιλογή συστήματος"
+      ],
       "Theme font": [
         "Γραμματοσειρά εμφάνισης"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Μεγάλο"
+      ],
+      "Medium (recommended)": [
+        "Μεσαίο (συνιστάται)"
+      ],
+      "Small": [
+        "Μικρό"
+      ],
+      "Very large": [
+        "Πολύ μεγάλο"
+      ],
+      "Very small": [
+        "Πολύ μικρό"
       ]
     },
     "Human verification method": {
@@ -1002,6 +1037,9 @@
       "Country code": [
         "Κωδικός χώρας"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "Η δημιουργία πολλαπλών δωρεάν λογαριασμών δεν επιτρέπεται από το ${ termsLink }."
+      ],
       "Each code can only be used once": [
         "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μια φορά"
       ],
@@ -1023,8 +1061,14 @@
       "Enter your own password (as trusted contact).": [
         "Εισάγετε τον κωδικό πρόσβασής σας (ως έμπιστη επαφή)."
       ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "Για περισσότερες πληροφορίες και για να καταργήσετε τους περιορισμούς, συνδεθείτε στο ${ mailLink }."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Εάν πιστεύετε ότι κάναμε λάθος, παρακαλούμε ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Αν δε βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
@@ -1049,6 +1093,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Για να καταργήσετε τους περιορισμούς, μπορείτε να κάνετε αναβάθμιση σε πλάνο επί πληρωμή."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Έχουμε πλάνα σχεδιασμένα ειδικά για χρήστες όπως εσείς που χρειάζονται περισσότερες από μία διευθύνσεις ηλεκτρονικού ταχυδρομείου."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
@@ -1111,16 +1161,27 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "επικοινωνήστε μαζί μας"
+      ],
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
       "Request an invite": [
         "Ζητήστε μια πρόσκληση"
+      ],
+      "terms of service": [
+        "όροι χρήσης"
       ]
     },
     "new_plans": {
       "Keep your inbox organized with folders": [
         "Διατηρήστε τα εισερχόμενά σας οργανωμένα με φακέλους"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Αποκτήστε ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -1159,11 +1220,48 @@
         "${ n } μήνυμα ανά ημέρα",
         "${ n } μηνύματα ανά ημέρα"
       ],
+      "${ options }-day file version history": [
+        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου",
+        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου"
+      ],
       "${ size } attachment size": [
         "${ size } μέγεθος συνημμένων"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } ασφαλούς αποθηκευτικού χώρου ανά χρήστη"
+      ],
       "${ size } storage": [
         "${ size } αποθηκευτικός χώρος"
+      ],
+      "${ size } storage per user": [
+        "${ size } αποθηκευτικός χώρος ανά χρήστη"
+      ],
+      "1 TB secure storage": [
+        "Ασφαλής χώρος αποθήκευσης 1 TB"
+      ],
+      "10 email addresses/aliases": [
+        "10 διεύθυνσεις email/ψευδώνυμα"
+      ],
+      "10 more premium features": [
+        "10 περισσότερα premium χαρακτηριστικά"
+      ],
+      "10-year file version history": [
+        "Ιστορικό εκδόσεων αρχείων 10 ετών"
+      ],
+      "15 GB storage": [
+        "15 GB αποθηκευτικού χώρου"
+      ],
+      "200 GB of storage": [
+        "200 GB αποθηκευτικού χώρου"
+      ],
+      "Advanced account protection": [
+        "Προηγμένη προστασία λογαριασμού"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Όλα τα προϊόντα και δυνατότητες ${ BRAND_NAME }"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Όλες οι βασικές ${ BRAND_NAME } υπηρεσίες (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "Auto-delete Spam and Trash": [
         "Αυτόματη διαγραφή Ανεπιθύμητων μηνυμάτων και Κάδου απορριμμάτων"
@@ -1180,11 +1278,17 @@
       "Catch-all": [
         "Catch-all"
       ],
+      "Collaborate and share large files": [
+        "Συνεργασία και κοινή χρήση μεγάλων αρχείων"
+      ],
       "Contact groups": [
         "Ομάδες επαφών"
       ],
       "Contact groups management": [
         "Διαχείριση ομάδων επαφών"
+      ],
+      "Custom and secure business email": [
+        "Προσαρμοσμένο και ασφαλές επαγγελματικό ηλεκτρονικό ταχυδρομείο"
       ],
       "Custom email domains": [
         "Προσαρμοσμένοι τομείς"
@@ -1207,17 +1311,53 @@
       "End-to-end encryption": [
         "Διατερματική κρυπτογράφηση"
       ],
+      "Generate emails with a prompt": [
+        "Δημιουργήστε μηνύματα ηλεκτρονικού ταχυδρομείου με μια προτροπή"
+      ],
       "HTML signatures": [
         "Υπογραφές HTML"
+      ],
+      "Online document editor": [
+        "Online επεξεργαστής εγγράφων"
+      ],
+      "Password health": [
+        "Υγεία κωδικού πρόσβασης"
       ],
       "Password-protected Emails": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου που προστατεύονται με κωδικό πρόσβασης"
       ],
+      "Private photo backup": [
+        "Ιδιωτικό αντίγραφο ασφαλείας φωτογραφιών"
+      ],
+      "Proofread and refine your emails": [
+        "Διορθώστε και βελτιώστε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας"
+      ],
+      "Quickly craft replies": [
+        "Δημιουργήστε γρήγορα απαντήσεις"
+      ],
+      "Recover previous file versions": [
+        "Ανάκτηση προηγούμενων εκδόσεων αρχείων"
+      ],
+      "Save time emailing": [
+        "Εξοικονομήστε χρόνο στέλνοντας μηνύματα"
+      ],
       "Schedule and snooze emails for any time": [
         "Προγραμματίστε και αναβάλλετε μηνύματα ηλεκτρονικού ταχυδρομείου για οποιαδήποτε στιγμή"
       ],
+      "Secure file storage and sharing": [
+        "Ασφαλής αποθήκευση και κοινή χρήση αρχείων"
+      ],
+      "Share files with no size limit": [
+        "Κοινή χρήση αρχείων χωρίς όριο μεγέθους"
+      ],
       "SMTP submission": [
         "Υποβολή SMTP"
+      ],
+      "Support for up to 2 users": [
+        "Υποστήριξη για έως 2 χρήστες"
+      ],
+      "Sync and backup all your files across devices": [
+        "Συγχρονίστε και δημιουργήστε αντίγραφα ασφαλείας όλων των αρχείων σας σε όλες τις συσκευές"
       ],
       "Unlimited filters": [
         "Απεριόριστα φίλτρα"
@@ -1239,11 +1379,20 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Δημιουργήστε πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου για τις διαδικτυακές ταυτότητες σας, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών, JohnNews@${ domain2 } για συνδρομή ειδήσεων"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης στο cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
+      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Ασφαλίστε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένους τομείς email, 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
       ],
@@ -1341,11 +1490,20 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Μεγαλώστε τον αποθηκευτικό σας χώρο σε συνολικά ${ bundleStorage }"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Υποστήριξη για ${ n } παραμετροποιημένο τομέα ηλεκτρονικού ταχυδρομείου",
+        "Υποστήριξη για ${ n } παραμετροποιημένους τομείς ηλεκτρονικού ταχυδρομείου"
       ]
     },
     "Placeholder": {
       "Password": [
         "Κωδικός πρόσβασης"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Όλα τα premium χαρακτηριστικά από ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "saml: Error": {
@@ -1389,8 +1547,11 @@
       ]
     },
     "Title": {
-      "Account Temporarily Locked": [
-        "Λογαριασμός Προσωρινά Κλειδωμένος"
+      "Account restricted": [
+        "Ο λογαριασμός περιορίστηκε"
+      ],
+      "Account temporarily locked": [
+        "Ο λογαριασμός έχει κλειδωθεί προσωρινά"
       ],
       "Enter 2FA code": [
         "Εισαγωγή κωδικού 2FA"
