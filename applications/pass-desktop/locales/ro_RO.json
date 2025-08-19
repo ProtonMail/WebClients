@@ -787,7 +787,7 @@
         "Unii registratori de domenii (Namecheap, Cloudflare etc.) pot folosi @ pentru domeniul rădăcină."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
-        "SPF ${ WIKIPEDIA_LINK_SPF } este o metodă de autentificare a e-mailului concepută pentru a detecta falsificarea adreselor expeditorului în timpul livrării e-mailului. Configurarea SPF este foarte recomandată pentru a reduce șansele ca e-mailurile trimise să vă ajungă în folderul de mesaje nedorite (spam) al destinatarului."
+        "SPF ${ WIKIPEDIA_LINK_SPF } este o metodă de autentificare a e-mailului concepută pentru a detecta falsificarea adreselor expeditorului în timpul livrării mesajelor. Configurarea SPF este foarte recomandată pentru a reduce șansele ca mesajele trimise să vă ajungă în folderul de mesaje nedorite (spam) al destinatarului."
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Pornire monitorizare divulgare date legate de conturile create cu adresa de e-mail și aliasurile hide-my-email proprii."
@@ -1297,8 +1297,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "Implicit din sistem"
+      ],
       "Theme font": [
         "Font temă"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Mare"
+      ],
+      "Medium (recommended)": [
+        "Mediu (recomandat)"
+      ],
+      "Small": [
+        "Mic"
+      ],
+      "Very large": [
+        "Foarte mare"
+      ],
+      "Very small": [
+        "Foarte mic"
       ]
     },
     "Info": {
