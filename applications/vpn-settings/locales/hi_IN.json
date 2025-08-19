@@ -597,9 +597,6 @@
       "See plan features": [
         "प्लान की विशेषताएं देखें"
       ],
-      "Select ${ planTitle }": [
-        "${ planTitle } चुनें"
-      ],
       "Select city ${ city }": [
         "${ city } का शहर चुनें"
       ],
@@ -2617,10 +2614,10 @@
         "अज्ञात भुगतान टोकन स्थिति"
       ],
       "Username must begin with a letter or digit": [
-        "यूज़रनेम की शुरुआत में अक्षर या अंक होना चाहिए"
+        "यूज़रनेम अक्षर या अंकसे शुरु होना चाहिए"
       ],
       "Username must end with a letter or digit": [
-        "यूज़रनेम के आखिर में अक्षर या अंक होना चाहिए"
+        "यूज़रनेम के अंत में अक्षर या अंक होना चाहिए"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "सत्यापन सफल नहीं हुआ, कृपया एक घंटे में पुनः प्रयास करें।"
@@ -2879,9 +2876,6 @@
       ],
       "Continue": [
         "जारी रखें"
-      ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "${ PLAN_NAMES[PLANS.VPN2024] } में सब कुछ"
       ],
       "Fastest VPN servers": [
         "सबसे तेज़ वीपीएन सर्वर"
@@ -3769,7 +3763,7 @@
         "प्रत्येक डोमेन के पास केवल एक SPF (TXT) रिकॉर्ड हो सकता है। यदि आप वर्तमान SPF (TXT) रिकॉर्ड को रखना चाहते हैं, तो आप अपने वर्तमान रिकॉर्ड में ${ spf } जोड़ सकते हैं (इसे ${ spfValue } के बाद डालें)।"
       ],
       "Edit email address": [
-        "ईमेल पता संपादित करें"
+        "ईमेल एड्रेस संपादित करें"
       ],
       "eduGAIN configuration saved": [
         "eduGAIN संरचना सहेजी गई"
@@ -4933,7 +4927,7 @@
         "आप अब खाते को एक एडमिन की तरह एक्सेस कर और संभाल सकते है।"
       ],
       "You can now return to the application to continue": [
-        "अब आप एप्लीकेशन पर लौट सकते हैं ताकि आप जारी रख सकें"
+        "जारी रखने के लिए एप्लीकेशन पे लौटे"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "एक वक्त में सिर्फ एक बातचीत खोला जा सकता है। नई बातचीत शुरू करने से पहले पिछले बातचीत बंद कर लें।"
@@ -8777,6 +8771,9 @@
       ],
       "Account suspended": [
         "खाता निलंबित"
+      ],
+      "Account temporarily locked": [
+        "अकाउंट अस्थायी समय के लिए बंद किया गया है"
       ],
       "Action": [
         "कार्य"

@@ -354,6 +354,9 @@
       "Explore ${ target }": [
         "Explorare ${ target }"
       ],
+      "Explore business plans": [
+        "Explorați planurile business"
+      ],
       "Explore group plans": [
         "Explorare planuri de grup"
       ],
@@ -381,6 +384,9 @@
       "Generate password": [
         "Generare parolă"
       ],
+      "Get ${ planOrAppName }": [
+        "Luați ${ planOrAppName }"
+      ],
       "Get a new encrypted email address": [
         "Obțineți o adresă de e-mail criptată"
       ],
@@ -407,6 +413,9 @@
       ],
       "Get verification code": [
         "Obținere cod de verificare"
+      ],
+      "Go to ${ planOrAppName }": [
+        "Accesare ${ planOrAppName }"
       ],
       "Go to label": [
         "Accesare etichetă"
@@ -648,8 +657,8 @@
       "See plan features": [
         "Afișare caracteristici plan"
       ],
-      "Select ${ planTitle }": [
-        "Selectați ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Selectare ${ planOrAppName }"
       ],
       "Select city ${ city }": [
         "Selectare orașul ${ city }"
@@ -1024,6 +1033,14 @@
         "Mesaj nou"
       ]
     },
+    "anniversary_2025: Offers": {
+      "12 months": [
+        "12 luni"
+      ],
+      "24 months": [
+        "24 de luni"
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Dezactivat"
@@ -1092,6 +1109,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "Ad-blocker and malware protection": [
+        "Protecție programe malițioase și blocare reclame"
       ],
       "Use your own email domain": [
         "Utilizați propriul domeniu de e-mail"
@@ -1275,6 +1295,9 @@
       ],
       "Discover and set up features": [
         "Descoperiți și setați funcțiile"
+      ],
+      "Maybe later": [
+        "Poate mai târziu"
       ],
       "Remind me later": [
         "Amintește-mi mai târziu"
@@ -2621,6 +2644,9 @@
       ]
     },
     "Error": {
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "Numele de utilizator este ${ user.Name }. Pentru a crea adresa ${ emailAddress }, accesați Setări > Identitate și adrese > Domeniu scurt (pm.me)"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Tot spațiul de stocare a fost alocat. Reduceți spațiul alocat altor utilizatori."
       ],
@@ -2800,6 +2826,12 @@
       ],
       "Please generate keys before you try to change your password": [
         "Generați cheile înainte de a vă schimba parola."
+      ],
+      "Please select a country": [
+        "Selectați o țară."
+      ],
+      "Please select a state": [
+        "Selectați un stat."
       ],
       "Please select at least one location before continuing.": [
         "Selectați cel puțin un loc înainte de a continua."
@@ -3169,9 +3201,6 @@
       "Continue": [
         "Continuare"
       ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "Toate din ${ PLAN_NAMES[PLANS.VPN2024] }"
-      ],
       "Fastest VPN servers": [
         "Cele mai rapide servere VPN"
       ],
@@ -3192,6 +3221,15 @@
       ]
     },
     "Features": {
+      "${ VPN_CONNECTIONS } devices": [
+        "Dispozitive: ${ VPN_CONNECTIONS }"
+      ],
+      "Ad-blocker and malware protection": [
+        "Protecție programe malițioase și blocare reclame"
+      ],
+      "All premium ${ BRAND_NAME } services": [
+        "Toate serviciile premium ${ BRAND_NAME }"
+      ],
       "and more premium features...": [
         "și alte funcții premium..."
       ],
@@ -3201,11 +3239,17 @@
       "Lightning-fast speeds": [
         "Viteză foarte mare"
       ],
+      "Lightning-fast VPN speeds": [
+        "Viteze VPN foarte mari"
+      ],
       "NetShield Ad-blocker": [
         "Blocare reclame cu NetShield"
       ],
       "Secure streaming": [
         "Transmisii în flux securizate"
+      ],
+      "Stream from Netflix, HBO, and more": [
+        "Vizionare transmisie în flux de la Netflix, HBO și altele"
       ]
     },
     "Features: Tooltip": {
@@ -3355,7 +3399,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        "${ Label.Name } actualizată"
+        "S-a actualizat ${ Label.Name }."
       ]
     },
     "FilterSettings": {
@@ -3388,8 +3432,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "Implicit din sistem"
+      ],
       "Theme font": [
         "Font temă"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Mare"
+      ],
+      "Medium (recommended)": [
+        "Mediu (recomandat)"
+      ],
+      "Small": [
+        "Mic"
+      ],
+      "Very large": [
+        "Foarte mare"
+      ],
+      "Very small": [
+        "Foarte mic"
       ]
     },
     "Footer": {
@@ -4271,6 +4335,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Introduceți acum fraza de recuperare pentru a vă modifica parola."
       ],
+      "Everything in ${ planOrAppName }": [
+        "Toate din ${ planOrAppName }"
+      ],
       "Example: ${ spfExample }": [
         "Exemplu: ${ spfExample }"
       ],
@@ -4949,6 +5016,15 @@
       "Subscription auto-renews every month.": [
         "Abonamentul se reînnoiește automat în fiecare lună."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Abonamentul se încheie: reactivați-l până la ${ byDate } pentru a vă păstra beneficiile planului ${ planName }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonamentul se încheie: pentru a vă păstra beneficiile din ${ planName }, reactivați-vă abonamentul în App Store Apple până la ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonamentul se încheie: pentru a păstra vă beneficiile din ${ planName }, reactivați-vă abonamentul în Magazin Play de la Google până la ${ byDate }. ${ reactivateLink }"
+      ],
       "Summary": [
         "Sumar"
       ],
@@ -5383,6 +5459,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "Doriți să primiți un cod nou de verificare?"
+      ],
+      "Writing assistant": [
+        "Asistent de scriere"
       ],
       "You already have a free account": [
         "Deja aveți un cont gratuit"
@@ -6406,7 +6485,7 @@
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        "${ Label.Name } creată"
+        "S-a creat ${ Label.Name }."
       ]
     },
     "Lable": {
@@ -6526,8 +6605,14 @@
       "Privacy policy": [
         "Politica de confidențialitate"
       ],
+      "Reactivate now": [
+        "Reactivare acum"
+      ],
       "Request an invite": [
         "Solicitați o invitație"
+      ],
+      "Resume now": [
+        "Reluare acum"
       ],
       "settings": [
         "setări"
@@ -8378,9 +8463,6 @@
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
-        "Perioada de retenție trebuie să fie mai mare de ${ MIN_LIFETIME } zile."
-      ],
       "Lifetime must not be set for \"Retain All\" action": [
         "Durata de viață nu trebuie setată pentru acțiunea „Păstrare toate”"
       ],
@@ -8431,9 +8513,6 @@
       ],
       "Applies to": [
         "Aplicat la"
-      ],
-      "days": [
-        "zile"
       ],
       "Keep items forever": [
         "Păstrare permanentă articole"
@@ -8727,6 +8806,20 @@
     "session_recovery:available:action": {
       "Cancel password reset": [
         "Anulare resetare parolă"
+      ],
+      "Cancel reset": [
+        "Anulare resetare"
+      ],
+      "Reset password": [
+        "Resetare parolă"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Recuperarea contului nu este disponibilă pentru cheile vechi ale adreselor."
+      ],
+      "Please generate keys before you try to change your password": [
+        "Generați cheile înainte de a încerca să vă schimbați parola."
       ]
     },
     "session_recovery:available:info": {
@@ -8736,6 +8829,18 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Dacă nu ați solicitat resetarea parolei, anulați solicitarea acum."
       ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Accesați dispozitivul conectat (în sesiunea de unde a fost inițiată solicitarea) pentru a vă schimba parola."
+      ],
+      "This permission expires soon": [
+        "Această permisiune expiră în curând."
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Acum vă puteți schimba parola pentru contul ${ boldEmail } timp de ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Acum vă puteți schimba parola pentru contul ${ boldEmail }."
+      ],
       "You can now reset your password": [
         "Acum vă puteți reseta parola"
       ],
@@ -8743,9 +8848,34 @@
         "Vă puteți reseta parola până la ${ boldDate }."
       ]
     },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Parola a fost salvată."
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Resetați-vă parola"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Anulare resetare parolă"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Introduceți parola curentă pentru a anula procesul de resetare a parolei. Nu vor fi efectuate alte modificări."
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "Resetarea parolei a fost anulată."
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Anulați resetarea parolei?"
       ]
     },
     "session_recovery:cancelled:info": {
@@ -8840,6 +8970,17 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Partajat de ${ ownerName }"
+      ]
+    },
+    "Signup": {
+      "1 month": [
+        "O lună"
+      ],
+      "12 months": [
+        "12 luni"
+      ],
+      "24 months": [
+        "24 de luni"
       ]
     },
     "Signup label": {
@@ -9705,6 +9846,9 @@
     "Suffix for price": {
       "per month": [
         "pe lună"
+      ],
+      "per user per month": [
+        "per utilizator per lună"
       ]
     },
     "Tab in domain modal": {
@@ -9827,7 +9971,7 @@
       "Account suspended": [
         "Cont suspendat"
       ],
-      "Account Temporarily Locked": [
+      "Account temporarily locked": [
         "Cont blocat temporar"
       ],
       "Action": [
@@ -10948,6 +11092,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Economisiți până la ${ priceString }** cu un abonament de durată mai mare. Aceleași funcții premium, preț mai mic."
       ],
+      "Advanced security for your company?": [
+        "Securitate avansată pentru compania dvs.?"
+      ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Toate serviciile ${ BRAND_NAME } premium. De la doar ${ fallBackString } lunar."
       ],
@@ -10956,6 +11103,12 @@
       ],
       "Did you know?": [
         "Știați că?"
+      ],
+      "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
+        "Protejați-vă organizația împotriva divulgărilor de date cu ${ VPN_APP_NAME } for Business."
+      ],
+      "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
+        "Confidențialitate nelimitată pentru dvs. și o persoană apropiată. De la doar ${ priceString }/lună."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Puteți proteja până la ${ FAMILY_MAX_USERS } persoane cu ${ PLAN_NAMES[plan] }. Începând de la doar ${ priceString }/lună per cont."
@@ -11067,9 +11220,6 @@
       "It's you": [
         "Sunt eu"
       ],
-      "Lumo": [
-        "Lumo"
-      ],
       "Pending admin access": [
         "Acces de administrare în așteptare"
       ],
@@ -11147,6 +11297,11 @@
         "${ numberOfServers } într-o țară",
         "${ numberOfServers } în ${ numberOfCountries } țări",
         "${ numberOfServers } în ${ numberOfCountries } de țări"
+      ],
+      "Select from ${ numberOfCountries }+ country": [
+        "Selectare din peste ${ numberOfCountries } țară",
+        "Selectare din peste ${ numberOfCountries } țări",
+        "Selectare din peste ${ numberOfCountries } de țări"
       ]
     },
     "vpn_2step: billing": {

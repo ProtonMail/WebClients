@@ -639,9 +639,6 @@
       "See plan features": [
         "Visualizza le caratteristiche del piano"
       ],
-      "Select ${ planTitle }": [
-        "Seleziona ${ planTitle }"
-      ],
       "Select city ${ city }": [
         "Visualizza la città ${ city }"
       ],
@@ -1034,9 +1031,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_DEDICATED_IPS } server dedicati durante il periodo di prova."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Puoi avere fino a ${ TRIAL_MAX_LUMO_SEATS } licenze Lumo durante il periodo di prova."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze Scribe durante il periodo di prova."
@@ -3178,9 +3172,6 @@
       ],
       "Continue": [
         "Continua"
-      ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "Tutto in ${ PLAN_NAMES[PLANS.VPN2024] }"
       ],
       "Fastest VPN servers": [
         "Server VPN più veloci"
@@ -8273,8 +8264,9 @@
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
-        "La durata deve essere superiore a ${ MIN_LIFETIME } giorni"
+      "Lifetime must be greater than ${ MIN_LIFETIME } day": [
+        "La durata deve essere maggiore di ${ MIN_LIFETIME } giorno.",
+        "La durata deve essere maggiore dei ${ MIN_LIFETIME } giorni."
       ],
       "Lifetime must not be set for \"Retain All\" action": [
         "La durata non deve essere impostata per l'azione \"Conserva tutto\""
@@ -8322,7 +8314,8 @@
       "Applies to": [
         "Si applica a"
       ],
-      "days": [
+      "day": [
+        "giorno",
         "giorni"
       ],
       "Keep items forever": [
@@ -9701,6 +9694,9 @@
       "Account suspended": [
         "Account sospeso"
       ],
+      "Account temporarily locked": [
+        "Account temporaneamente bloccato"
+      ],
       "Action": [
         "Azione"
       ],
@@ -10928,9 +10924,6 @@
       ],
       "It's you": [
         "Sei tu"
-      ],
-      "Lumo": [
-        "Lumo"
       ],
       "Pending admin access": [
         "Accesso amministratore in sospeso"

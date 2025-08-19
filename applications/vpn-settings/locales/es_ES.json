@@ -639,9 +639,6 @@
       "See plan features": [
         "Ver las funciones del plan"
       ],
-      "Select ${ planTitle }": [
-        "Selecciona ${ planTitle }"
-      ],
       "Select city ${ city }": [
         "Selecciona la ciudad ${ city }"
       ],
@@ -1034,9 +1031,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores exclusivos durante el periodo de prueba."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de Lumo durante el periodo de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
@@ -3176,9 +3170,6 @@
       "Continue": [
         "Continuar"
       ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "Todo en ${ PLAN_NAMES[PLANS.VPN2024] }"
-      ],
       "Fastest VPN servers": [
         "Servidores VPN más rápidos"
       ],
@@ -4896,6 +4887,12 @@
       "Subscription auto-renews every month.": [
         "La suscripción se renueva automáticamente cada mes."
       ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Suscripción a punto de finalizar: Para mantener los beneficios de tu ${ planName }, reinicia tu suscripción en la Apple App Store antes del ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Tu suscripción finaliza: Para mantener los beneficios de tu ${ planName }, reinicia tu suscripción en Google Play Store antes del ${ byDate }. ${ reactivateLink }"
+      ],
       "Summary": [
         "Resumen"
       ],
@@ -6439,6 +6436,9 @@
       ],
       "Request an invite": [
         "Solicitar una invitación"
+      ],
+      "Resume now": [
+        "Reanudar ahora"
       ],
       "settings": [
         "ajustes"
@@ -8240,8 +8240,9 @@
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
-        "La duración debe ser mayor que ${ MIN_LIFETIME } días"
+      "Lifetime must be greater than ${ MIN_LIFETIME } day": [
+        "La duración debe ser superior a ${ MIN_LIFETIME } día",
+        "La duración debe ser superior a ${ MIN_LIFETIME } días"
       ],
       "Lifetime must not be set for \"Retain All\" action": [
         "No se debe establecer una duración para la acción \"Conservar todo\""
@@ -8289,7 +8290,8 @@
       "Applies to": [
         "Se aplica a"
       ],
-      "days": [
+      "day": [
+        "día",
         "días"
       ],
       "Keep items forever": [
@@ -9668,7 +9670,7 @@
       "Account suspended": [
         "Cuenta suspendida"
       ],
-      "Account Temporarily Locked": [
+      "Account temporarily locked": [
         "Cuenta temporalmente bloqueada"
       ],
       "Action": [
@@ -10898,9 +10900,6 @@
       ],
       "It's you": [
         "Eres tú"
-      ],
-      "Lumo": [
-        "Lumo"
       ],
       "Pending admin access": [
         "Acceso de administrador pendiente"

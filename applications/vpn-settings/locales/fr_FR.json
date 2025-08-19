@@ -351,6 +351,9 @@
       "Explore ${ target }": [
         "Découvrez ${ target }"
       ],
+      "Explore business plans": [
+        "Explorer les abonnements pour les entreprises"
+      ],
       "Explore group plans": [
         "Découvrez les abonnements groupés"
       ],
@@ -404,6 +407,9 @@
       ],
       "Get verification code": [
         "Obtenir un code de vérification"
+      ],
+      "Go to ${ planOrAppName }": [
+        "Accéder à ${ planOrAppName }"
       ],
       "Go to label": [
         "Afficher le label"
@@ -639,8 +645,8 @@
       "See plan features": [
         "Voir les fonctionnalités de l'abonnement"
       ],
-      "Select ${ planTitle }": [
-        "Sélectionner ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Sélectionner ${ planOrAppName }"
       ],
       "Select city ${ city }": [
         "Sélectionnez la ville ${ city }"
@@ -1040,9 +1046,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_DEDICATED_IPS } serveur dédié maximum pendant la version d'essai."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Vous pouvez bénéficier de ${ TRIAL_MAX_LUMO_SEATS } accès maximum à Lumo pendant la période d’essai."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_SCRIBE_SEATS } accès maximum à Scribe pendant la période d’essai."
@@ -3185,9 +3188,6 @@
       "Continue": [
         "Continuer"
       ],
-      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
-        "Tout ce qui est inclus dans ${ PLAN_NAMES[PLANS.VPN2024] }"
-      ],
       "Fastest VPN servers": [
         "Serveurs VPN les plus rapides"
       ],
@@ -3208,6 +3208,15 @@
       ]
     },
     "Features": {
+      "${ VPN_CONNECTIONS } devices": [
+        "${ VPN_CONNECTIONS } appareils"
+      ],
+      "Ad-blocker and malware protection": [
+        "Bloqueur de publicité et protection contre les logiciels malveillants"
+      ],
+      "All premium ${ BRAND_NAME } services": [
+        "Tous les services premium de ${ BRAND_NAME }"
+      ],
       "and more premium features...": [
         "et plus de fonctionnalités premium…"
       ],
@@ -3216,6 +3225,9 @@
       ],
       "Lightning-fast speeds": [
         "Vitesses extrêmement élevées"
+      ],
+      "Lightning-fast VPN speeds": [
+        "Vitesses VPN extrêmement élevées"
       ],
       "NetShield Ad-blocker": [
         "Bloqueur de publicités NetShield"
@@ -4245,6 +4257,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Entrez votre phrase de récupération pour changer votre mot de passe."
       ],
+      "Everything in ${ planOrAppName }": [
+        "Tout ce qui est inclus dans ${ planOrAppName }"
+      ],
       "Example: ${ spfExample }": [
         "Exemple : ${ spfExample }"
       ],
@@ -4904,6 +4919,12 @@
       ],
       "Subscription auto-renews every month.": [
         "L'abonnement est renouvelé automatiquement tous les mois."
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Fin de l'abonnement : Pour conserver vos avantages ${ planName }, veuillez renouveler votre abonnement dans l'Appli Store d'Apple avant le ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Fin de l'abonnement : Pour conserver les avantages de votre ${ planName }, veuillez renouveler votre abonnement dans le Google Play Store avant le ${ byDate }. ${ reactivateLink }"
       ],
       "Summary": [
         "Résumé"
@@ -6451,6 +6472,9 @@
       ],
       "Request an invite": [
         "Demander une invitation"
+      ],
+      "Resume now": [
+        "Reprendre à présent"
       ],
       "settings": [
         "paramètres"
@@ -8252,7 +8276,8 @@
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+      "Lifetime must be greater than ${ MIN_LIFETIME } day": [
+        "La durée doit être supérieure à ${ MIN_LIFETIME } jour.",
         "La durée doit être supérieure à ${ MIN_LIFETIME } jours."
       ],
       "Lifetime must not be set for \"Retain All\" action": [
@@ -8305,7 +8330,8 @@
       "Applies to": [
         "S'applique à"
       ],
-      "days": [
+      "day": [
+        "jour",
         "jours"
       ],
       "Keep items forever": [
@@ -8716,6 +8742,17 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Ouvrir dans ${ appName }"
+      ]
+    },
+    "Signup": {
+      "1 month": [
+        "1 mois"
+      ],
+      "12 months": [
+        "12 mois"
+      ],
+      "24 months": [
+        "24 mois"
       ]
     },
     "Signup label": {
@@ -9684,7 +9721,7 @@
       "Account suspended": [
         "Compte suspendu"
       ],
-      "Account Temporarily Locked": [
+      "Account temporarily locked": [
         "Compte temporairement verrouillé"
       ],
       "Action": [
@@ -10805,6 +10842,9 @@
       "Did you know?": [
         "Le saviez-vous ?"
       ],
+      "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
+        "Protégez votre organisation des fuites de données avec ${ VPN_APP_NAME } for Business."
+      ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Vous pouvez protéger jusqu'à ${ FAMILY_MAX_USERS } personnes avec ${ PLAN_NAMES[plan] }. À partir de seulement ${ priceString }/mois par compte."
       ],
@@ -10915,9 +10955,6 @@
       "It's you": [
         "C'est vous"
       ],
-      "Lumo": [
-        "Lumo"
-      ],
       "Pending admin access": [
         "Accès administrateur en attente"
       ],
@@ -10999,6 +11036,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } dans ${ numberOfCountries } pays",
         "${ numberOfServers } dans ${ numberOfCountries } pays"
+      ],
+      "Select from ${ numberOfCountries }+ country": [
+        "Sélection depuis ${ numberOfCountries } pays",
+        "Sélection depuis ${ numberOfCountries } pays"
       ]
     },
     "vpn_2step: billing": {
