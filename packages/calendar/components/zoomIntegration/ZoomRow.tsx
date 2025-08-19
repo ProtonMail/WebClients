@@ -95,7 +95,7 @@ export const ZoomRow = ({ model, setModel, accessLevel, onRowClick, hasZoomError
 
     const createVideoConferenceMeeting = async () => {
         try {
-            let currentProcessState = processState;
+            const currentProcessState = processState;
             setProcessState('loading');
 
             const data = await silentApi<VideoConferenceMeetingCreation>(createZoomMeeting());
