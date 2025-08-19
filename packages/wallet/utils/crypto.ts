@@ -52,7 +52,7 @@ export const decryptPgp = async <T extends 'binary' | 'utf8'>(
     return data as DecryptReturnType<T>;
 };
 
-const isString = (data: string | Uint8Array): data is string => typeof data === 'string';
+const isString = (data: string | Uint8Array<ArrayBuffer>): data is string => typeof data === 'string';
 
 export const encryptPgp = async <T extends string | Uint8Array<ArrayBuffer>>(
     data: T,
@@ -143,7 +143,7 @@ export const signData = async <T extends string | Uint8Array<ArrayBuffer>>(
     return signature;
 };
 
-export const verifySignedData = async <T extends string | Uint8Array>(
+export const verifySignedData = async <T extends string | Uint8Array<ArrayBuffer>>(
     data: T,
     signature: string,
     context: WalletSignatureContext,
