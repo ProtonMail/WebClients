@@ -110,7 +110,7 @@ const DropdownActions = ({
     }
 
     return (
-        <ButtonGroup size={size}>
+        <ButtonGroup size={size} className="shrink-0">
             <Button
                 disabled={disabled || loading}
                 className={className}
