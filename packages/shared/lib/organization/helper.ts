@@ -63,6 +63,8 @@ export const getIsSMPTEligible = (organization?: Organization) => {
         PLANS.PASS_FAMILY,
         PLANS.DUO,
         PLANS.VISIONARY,
+        PLANS.MAIL,
+        PLANS.BUNDLE,
     ].includes(organization?.PlanName as PLANS);
 };
 
