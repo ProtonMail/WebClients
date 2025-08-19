@@ -350,6 +350,9 @@
       "Increase": [
         "Aumentar"
       ],
+      "Insert image": [
+        "Inserir imagem"
+      ],
       "Learn more": [
         "Saiba mais"
       ],
@@ -400,6 +403,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "Mais opções para contas"
       ],
       "Move": [
         "Mover"
@@ -527,14 +533,14 @@
       "See plan features": [
         "Veja recursos do plano"
       ],
-      "Select ${ planTitle }": [
-        "Selecionar ${ planTitle }"
-      ],
       "Select all": [
         "Selecionar tudo"
       ],
       "Send": [
         "Enviar"
+      ],
+      "Set as default": [
+        "Definir como padrão"
       ],
       "Set recovery methods": [
         "Definir métodos de recuperação"
@@ -822,9 +828,6 @@
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Você pode ter até ${ TRIAL_MAX_DEDICATED_IPS } servidor dedicado durante o período de avaliação."
       ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Você pode ter até ${ TRIAL_MAX_LUMO_SEATS } licenças do Lumo durante o período de avaliação."
-      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Você pode ter até ${ TRIAL_MAX_SCRIBE_SEATS } licenças do Scribe durante o período de avaliação."
       ],
@@ -838,6 +841,19 @@
         "Você atingiu o limite de avaliação."
       ]
     },
+    "bf2023: Deal details": {
+      "Premium Password Manager": [
+        "Gerenciador de senha premium"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicativo para computador do ${ MAIL_APP_NAME }"
+      ],
+      "Use your own email domain": [
+        "Use o seu próprio domínio de e-mail"
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 mês"
@@ -847,6 +863,9 @@
       ],
       "Annually": [
         "Anualmente"
+      ],
+      "Lifetime": [
+        "Acesso vitalício"
       ],
       "Monthly": [
         "Mensalmente"
@@ -944,6 +963,9 @@
       ],
       "Discover and set up features": [
         "Descubra e configure os recursos"
+      ],
+      "Maybe later": [
+        "Talvez mais tarde"
       ],
       "Remind me later": [
         "Lembre-me mais tarde"
@@ -2320,6 +2342,9 @@
       "Tab closed": [
         "Guia fechada"
       ],
+      "The amount due has changed. Please try again.": [
+        "O valor devido foi alterado. Tente novamente."
+      ],
       "The email addresses do not match": [
         "Os endereços de e-mail não correspondem."
       ],
@@ -3136,6 +3161,9 @@
         "${ numOccurrences } ocorrência encontrada no conteúdo do e-mail",
         "${ numOccurrences } ocorrências encontradas no conteúdo do e-mail"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }. O preço e a data de renovação da sua assinatura ${ planTitle } permanecem inalterados."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado ${ serverPricePerMonth }"
       ],
@@ -3193,6 +3221,9 @@
         "(${ memberCount } membro)",
         "(${ memberCount } membros)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mês)"
+      ],
       "**${ total }** result found in ${ labelName }": [
         "**${ total }** resultado encontrado em ${ labelName }",
         "**${ total }** resultados encontrados em ${ labelName }"
@@ -3225,9 +3256,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "A verificação de endereço com chaves de confiança ​​está ativada para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser usadas para envio."
       ],
-      "Admin account allocation": [
-        "Alocação da conta do administrador"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Tudo (${ totalFoldersCount } pasta)",
         "Todas (${ totalFoldersCount } pastas)"
@@ -3238,15 +3266,6 @@
       ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
-      ],
-      "Allocated": [
-        "Alocado"
-      ],
-      "Already allocated": [
-        "Já alocado"
-      ],
-      "Already used": [
-        "Já usado"
       ],
       "American Express SafeKey logo": [
         "Logotipo do American Express SafeKey"
@@ -3525,6 +3544,9 @@
       "It's better to have:": [
         "É melhor ter:"
       ],
+      "JCB logo": [
+        "Logotipo JCB"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Apenas confirme sua seleção e faremos o restante."
       ],
@@ -3630,6 +3652,9 @@
       "Organization size": [
         "Tamanho da organização"
       ],
+      "Other accounts": [
+        "Outras contas"
+      ],
       "password": [
         "senha"
       ],
@@ -3700,6 +3725,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
       ],
+      "Registering your subscription…": [
+        "Registrando sua assinatura…"
+      ],
       "Restore": [
         "Restaurar"
       ],
@@ -3740,26 +3768,23 @@
       "Start sharing it with contacts and use it for online services.": [
         "Comece a compartilhá-lo com contatos e a usá-lo em serviços online."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Armazenamento atribuído a outros usuários desta organização"
-      ],
-      "Storage allocated to this user": [
-        "Armazenamento alocado a este usuário"
-      ],
-      "Storage for users": [
-        "Armazenamento para usuários"
-      ],
-      "Storage used by this user": [
-        "Armazenamento usado por este usuário"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envie um depósito usado o seguinte endereço ou escaneie o código QR. O seu depósito aparecerá na sua conta após confirmação."
       ],
       "Subscription auto-renews every month.": [
         "A assinatura é renovada automaticamente todos os meses."
       ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Fim da assinatura: para manter os benefícios do seu ${ planName }, reinicie sua assinatura no aplicativo Apple Store até ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Fim da assinatura: Para manter os benefícios do seu ${ planName }, reinicie sua assinatura na Google Play Store até ${ byDate }. ${ reactivateLink }"
+      ],
       "Symbols (#$&)": [
         "Símbolos (#$&)"
+      ],
+      "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
+        "Sincronize e gerencie arquivos com o aplicativo ${ DRIVE_APP_NAME }. Crie e compartilhe documentos no ${ DOCS_APP_NAME } e armazene-os com segurança. Tudo no ${ ios }, ${ android } e ${ desktop }."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
@@ -3999,6 +4024,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Sua conta da ${ BRAND_NAME } está suspensa no momento. Os e-mails não estão mais sendo entregues em sua caixa de entrada. Seus links de compartilhamento do Drive não estão mais ativos e você não pode enviar novos arquivos. Para continuar usando sua conta, pague as faturas vencidas."
       ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Sua assinatura do ${ plan } será substituída pela versão ${ PASS_SHORT_APP_NAME } Lifetime. O saldo restante da sua assinatura será adicionado à sua conta. A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. O seu acesso será restringido em breve. ${ payInvoiceLink }"
       ],
@@ -4033,11 +4061,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Sua próxima data de cobrança é ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Sua próxima data de cobrança é ${ renewalTime }. Entre em contato com o suporte se precisar de uma mudança imediata de plano."
+      ],
       "Your password was leaked:": [
         "Sua senha foi vazada:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Seu número de telefone somente será usado nessa verificação única."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Seu plano começa em ${ renewalTime } e será renovado automaticamente todo mês."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Sua assinatura será renovada automaticamente em ${ renewalTime }."
       ]
     },
     "Info on errors": {
@@ -4093,9 +4130,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
-      ],
-      "Account storage": [
-        "Armazenamento da conta"
       ],
       "Add email address": [
         "Adicionar endereços de e-mail"
@@ -4548,6 +4582,9 @@
       "Request an invite": [
         "Solicitar um convite"
       ],
+      "Resume now": [
+        "Continuar agora"
+      ],
       "settings": [
         "configurações"
       ],
@@ -4822,6 +4859,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe"
+      ],
       "${ n } calendar": [
         "${ n } calendário",
         "${ n } calendários"
@@ -4964,6 +5004,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Suporte a clientes de e-mail (via IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Grupos de e-mail"
       ],
       "Enables HIPAA compliance": [
         "Permite a conformidade com a HIPAA"
@@ -5189,6 +5232,9 @@
       "Downgrade account?": [
         "Fazer downgrade da conta?"
       ],
+      "Review subscription": [
+        "Revisar assinatura"
+      ],
       "Review subscription and pay": [
         "Revisar assinatura e pagar"
       ],
@@ -5256,6 +5302,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Compartilhe facilmente seus calendários com familiares, amigos ou colegas."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Envie e-mail a todos em um grupo com um único endereço de e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Garante que você receba todos os e-mails enviados ao seu domínio, mesmo que o endereço de e-mail não exista, tenha deixado de existir ou contenha um erro de digitação"
@@ -5453,6 +5502,11 @@
         "Para que a importação funcione, você deve selecionar todos os itens solicitados conforme mostrado no GIF."
       ]
     },
+    "Onboarding modal": {
+      "Desktop": [
+        "Área de trabalho"
+      ]
+    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configure a sua organização, vincule seu nome de domínio e crie contas para garantir que todos os membros da sua organização estejam protegidos."
@@ -5562,6 +5616,21 @@
       "MM/YY": [
         "MM/AA"
       ],
+      "More plans are available in other currencies": [
+        "Mais planos estão disponíveis em outras moedas"
+      ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "O preço da renovação está sujeito a alterações de acordo com os ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Renova por ${ renewPriceStr }, cancele a qualquer momento."
+      ],
+      "terms & conditions": [
+        "termos e condições"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ renewPriceStr } todo mês. Você pode cancelar a qualquer momento."
+      ],
       "Timeout exceeded": [
         "Tempo limite excedido"
       ]
@@ -5584,6 +5653,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "O seu cartão foi recusado. Tente um cartão diferente ou entre em contato com o seu banco para autorizar o pagamento."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "PGP key encryption warning": {
@@ -5731,6 +5805,12 @@
       ],
       "Work": [
         "Trabalho"
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } dia",
+        "${ remainingDays } dias"
       ]
     },
     "saml: Error": {
@@ -6103,6 +6183,11 @@
         "Seu próprio alias de e-mail @pm.me"
       ]
     },
+    "subscription reminder": {
+      "and 15 more premium features": [
+        "e mais 15 recursos premium"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Você tem certeza?"
@@ -6130,6 +6215,10 @@
       ]
     },
     "Success": {
+      "${ count } draft deleted": [
+        "${ count } rascunho excluído",
+        "${ count } rascunhos excluídos"
+      ],
       "${ count } message deleted": [
         "${ count } mensagem excluída",
         "${ count } mensagens excluídas"
@@ -6181,6 +6270,10 @@
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } mensagem marcada como não lida.",
         "${ elementsCount } mensagens marcadas como não lidas."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } mensagem movida para o spam e o remetente adicionado à sua lista de spam.",
+        "${ elementsCount } mensagens movidas para o spam e os remetentes adicionados à sua lista de spam."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } mensagem removida de ${ labelName }.",
@@ -6473,6 +6566,9 @@
       ],
       "Continue with partial import?": [
         "Continue com uma importação parcial?"
+      ],
+      "Coupon": [
+        "Cupom"
       ],
       "Create contact": [
         "Criar contato"

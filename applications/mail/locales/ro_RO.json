@@ -334,6 +334,12 @@
       "Delete permanently": [
         "Ștergere permanentă"
       ],
+      "Deleting folder": [
+        "Se ștergere folderul"
+      ],
+      "Deleting label": [
+        "Se șterge eticheta"
+      ],
       "Deselect all": [
         "Deselectare toate"
       ],
@@ -487,6 +493,9 @@
       "Generate text": [
         "Generare text"
       ],
+      "Get ${ planOrAppName }": [
+        "Luați ${ planOrAppName }"
+      ],
       "Get in touch": [
         "Contactați-ne"
       ],
@@ -498,6 +507,9 @@
       ],
       "Get verification code": [
         "Obținere cod de verificare"
+      ],
+      "Go to ${ planOrAppName }": [
+        "Accesare ${ planOrAppName }"
       ],
       "Go to label": [
         "Accesare etichetă"
@@ -724,34 +736,34 @@
         "Mutare"
       ],
       "Move all to archive": [
-        "Mutare toate în «Arhivă»"
+        "Mutare toate în „Arhivă”"
       ],
       "Move all to trash": [
-        "Mutare toate în «Gunoi»"
+        "Mutare toate în „Gunoi”"
       ],
       "Move to": [
         "Mutare în"
       ],
       "Move to archive": [
-        "Mutare în «Arhivă»"
+        "Mutare în „Arhivă”"
       ],
       "Move to Archive": [
-        "Mutare în «Arhivă»"
+        "Mutare în „Arhivă”"
       ],
       "Move to folder": [
         "Mutare în folder"
       ],
       "Move to inbox": [
-        "Mutare în «Primite»"
+        "Mutare în „Primite”"
       ],
       "Move to inbox (not spam)": [
-        "Mutare în «Primite» (adresă acceptată)"
+        "Mutare în „Primite” (adresă acceptată)"
       ],
       "Move to spam": [
-        "Mutare în «Nedorite»"
+        "Mutare în „Nedorite”"
       ],
       "Move to spam and unsubscribe": [
-        "Mutare în «Nedorite» și dezabonare"
+        "Mutare în „Nedorite” și dezabonare"
       ],
       "Move to trash": [
         "Mutare în «Gunoi»"
@@ -984,8 +996,8 @@
       "See plan features": [
         "Afișare caracteristici plan"
       ],
-      "Select ${ planTitle }": [
-        "Selectare ${ planTitle }"
+      "Select ${ planOrAppName }": [
+        "Selectare ${ planOrAppName }"
       ],
       "Select All": [
         "Selectare toate"
@@ -1141,7 +1153,7 @@
         "Oprire mutare în arhivă"
       ],
       "Stop moving to Trash": [
-        "Oprire mutare în «Gunoi»"
+        "Oprire mutare în „Gunoi”"
       ],
       "Submit": [
         "Trimitere"
@@ -1458,6 +1470,14 @@
         "Mesaj nou"
       ]
     },
+    "anniversary_2025: Offers": {
+      "12 months": [
+        "12 luni"
+      ],
+      "24 months": [
+        "24 de luni"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicații ${ BRAND_NAME }"
@@ -1518,6 +1538,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "Ad-blocker and malware protection": [
+        "Protecție programe malițioase și blocare reclame"
       ],
       "Use your own email domain": [
         "Utilizați propriul domeniu de e-mail"
@@ -1632,6 +1655,9 @@
       ],
       "Discover and set up features": [
         "Descoperiți și setați funcțiile"
+      ],
+      "Maybe later": [
+        "Poate mai târziu"
       ],
       "Remind me later": [
         "Amintește-mi mai târziu"
@@ -2010,7 +2036,7 @@
         "Accesare «Ciorne»"
       ],
       "Go to Inbox": [
-        "Accesare «Primite»"
+        "Accesare „Primite”"
       ],
       "Go to Sent": [
         "Accesare «Trimise»"
@@ -2019,10 +2045,10 @@
         "Accesare «Nedorite»"
       ],
       "Go to Starred": [
-        "Accesare «Favorite»"
+        "Accesare „Favorite”"
       ],
       "Go to Trash": [
-        "Accesare «Gunoi»"
+        "Accesare „Gunoi”"
       ],
       "New message": [
         "Mesaj nou"
@@ -2070,7 +2096,7 @@
         "Editare și reprogramare"
       ],
       "Message saved to Drafts": [
-        "Mesaj salvat în «Ciorne»"
+        "Mesaj salvat în „Ciorne”"
       ],
       "Quit import customization?": [
         "Părăsiți modificarea importării?"
@@ -3256,11 +3282,20 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } pentru <${ email }>. Puteți adăuga o altă cheie sau dezactiva criptarea pentru acest contact pentru a rezolva problema."
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "Numele de utilizator este ${ user.Name }. Pentru a crea adresa ${ emailAddress }, accesați Setări > Identitate și adrese > Domeniu scurt (pm.me)"
+      ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
       ],
       "A problem occurred, please try again.": [
         "A apărut o problemă. Reîncercați."
+      ],
+      "Add at least one action": [
+        "Adăugați cel puțin o acțiune."
+      ],
+      "Add at least one condition": [
+        "Adăugați cel puțin o condiție."
       ],
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
@@ -3361,6 +3396,9 @@
       "Error connecting to the Bitcoin API.": [
         "Eroare de conectare la Bitcoin API."
       ],
+      "Error in one of the conditions": [
+        "Eroare în una dintre condiții."
+      ],
       "Error while saving draft. Please try again.": [
         "Eroare la salvarea ciornei. Mai încercați."
       ],
@@ -3375,6 +3413,9 @@
       ],
       "Failed to load the STL preview": [
         "Nu s-a putut încărca examinarea STL."
+      ],
+      "Filter with this name already exists": [
+        "Filtrul cu acest nume există deja."
       ],
       "Folder name cannot be empty.": [
         "Numele folderului nu poate fi gol."
@@ -3512,6 +3553,12 @@
       ],
       "Please select a category and what went wrong with the generated text": [
         "Selectați o categorie și ce nu a fost bine cu textul generat."
+      ],
+      "Please select a country": [
+        "Selectați o țară."
+      ],
+      "Please select a state": [
+        "Selectați un stat."
       ],
       "Please try again or refresh the page.": [
         "Mai încercați sau reîmprospătați pagina."
@@ -3723,6 +3770,9 @@
       "You must set a name": [
         "Trebuie specificat un nume"
       ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "S-a atins numărul maxim de caractere. Scurtați mesajul."
+      ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Mesajele nu pot fi decriptate din cauza unei resetări recente a parolei. Dacă vă amintiți parola anterioară, puteți să ${ reActivateKeyLink } pentru a vă accesa mesajele. ${ learnMoreLink }"
       ],
@@ -3745,16 +3795,16 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        "Ciornele nu pot fi mutate în «Primite»"
+        "Ciornele nu pot fi mutate în „Primite”"
       ],
       "Drafts cannot be moved to Spam": [
         "Ciornele nu pot fi mutate în «Nedorite»."
       ],
       "Sent messages cannot be moved to Inbox": [
-        "Mesajele trimise nu pot fi mutate în folderul «Primite»."
+        "Mesajele trimise nu pot fi mutate în folderul „Primite”."
       ],
       "Sent messages cannot be moved to Spam": [
-        "Mesajele trimise nu pot fi mutate în «Nedorite»."
+        "Mesajele trimise nu pot fi mutate în „Nedorite”."
       ],
       "This action cannot be performed": [
         "Această acțiune nu poate fi efectuată."
@@ -4088,7 +4138,10 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        "${ Label.Name } actualizată"
+        "S-a actualizat ${ Label.Name }."
+      ],
+      "Filter ${ Filter.Name } updated": [
+        "S-a actualizat filtrul ${ Filter.Name }."
       ]
     },
     "Filter option": {
@@ -4130,8 +4183,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "Implicit din sistem"
+      ],
       "Theme font": [
         "Font temă"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Mare"
+      ],
+      "Medium (recommended)": [
+        "Mediu (recomandat)"
+      ],
+      "Small": [
+        "Mic"
+      ],
+      "Very large": [
+        "Foarte mare"
+      ],
+      "Very small": [
+        "Foarte mic"
       ]
     },
     "Footer": {
@@ -4973,9 +5046,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Verificarea adresei cu chei de încredere este activată pentru această adresă. Pentru a putea trimite la această adresă, aprobați cheile publice care pot fi folosite pentru trimitere."
       ],
-      "Admin account allocation": [
-        "Alocare cont admin"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Toate (${ totalFoldersCount } folder)",
         "Toate (${ totalFoldersCount } foldere)",
@@ -4990,7 +5060,7 @@
         "Toate mesajele din această listă de adrese vor fi marcate ca fiind citite."
       ],
       "All messages from this mailing list will be moved to Archive.": [
-        "Toate mesajele din această listă adrese vor fi mutate în «Arhivă»."
+        "Toate mesajele din această listă de adrese vor fi mutate în „Arhivă”."
       ],
       "All messages from this mailing list will be moved to Trash.": [
         "Toate mesajele din această listă de adrese vor fi mutate în «Gunoi»."
@@ -5006,15 +5076,6 @@
       ],
       "All your changes will be lost.": [
         "Toate modificările vor fi pierdute."
-      ],
-      "Allocated": [
-        "Alocat"
-      ],
-      "Already allocated": [
-        "Deja alocat"
-      ],
-      "Already used": [
-        "Deja folosit"
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
@@ -5040,6 +5101,9 @@
       "Any scheduled or snoozed messages will be canceled.": [
         "Orice mesaj programat sau amânat va fi anulat."
       ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Va fi șters și orice subfolder. Totuși, mesajele stocate în folderul ${ nameDeleted } nu vor fi șterse și pot fi găsite în folderul „Toate mesajele”."
+      ],
       "Apply to future messages": [
         "Aplicare la mesajele viitoare"
       ],
@@ -5058,14 +5122,20 @@
       "Are you sure you want to delete all messages with this label?": [
         "Sigur doriți să ștergeți toate mesajele cu această etichetă?"
       ],
+      "Are you sure you want to delete this folder?": [
+        "Sigur doriți să ștergeți acest folder?"
+      ],
+      "Are you sure you want to delete this label?": [
+        "Sigur doriți să ștergeți această etichetă?"
+      ],
       "Are you sure you want to discard your changes?": [
         "Sigur doriți să renunțați la modificări?"
       ],
       "Are you sure you want to move all messages in this location to archive?": [
-        "Sigur doriți să mutați toate mesajele de aici în «Arhivă»?"
+        "Sigur doriți să mutați toate mesajele de aici în „Arhivă”?"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
-        "Sigur doriți să mutați toate mesajele de aici în «Gunoi»?"
+        "Sigur doriți să mutați toate mesajele de aici în „Gunoi”?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Conversații care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?",
@@ -5101,7 +5171,7 @@
         "Necesită atenție"
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Ștergere automată mesaje din folderul «Gunoi» și «Nedorite» mai vechi de 30 de zile."
+        "Ștergere automată mesaje mai vechi de 30 de zile din „Gunoi” și „Nedorite”."
       ],
       "Awaiting transaction": [
         "Se așteaptă tranzacția"
@@ -5353,6 +5423,9 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Mesajele mutate în folderele «Gunoi» și «Nedorite» care au stat mai mult de 30 de zile acolo vor fi șterse automat."
       ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Mesajele etichetate cu eticheta ${ nameDeleted } nu vor fi șterse și pot fi găsite în continuare în folderul respectiv."
+      ],
       "embedded image": [
         "imagine inclusă",
         "imagini incluse",
@@ -5392,6 +5465,9 @@
       ],
       "Estimating time remaining...": [
         "Se estimează timpul rămas..."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Toate din ${ planOrAppName }"
       ],
       "Expand selection": [
         "Extindere selecție"
@@ -5493,6 +5569,9 @@
       "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
         "Dacă parola ajunge pe internetul ascuns, ${ BRAND_NAME } vă poate spune din ce serviciu v-au fost divulgate datele și cum să opriți amenințarea."
       ],
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Imaginile au fost eliminate deoarece nu sunt permise în răspunsurile automate."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importare ${ calendarCount } din ${ totalCalendarsCount } calendar",
         "Importare ${ calendarCount } din ${ totalCalendarsCount } calendare",
@@ -5561,7 +5640,7 @@
         "Păstrați-vă datele de conectare și cardurile de plăți în siguranță, dar întotdeauna la îndemână, adăugându-le la ${ PASS_APP_NAME }. Este gratuit și este inclus în contul ${ BRAND_NAME }."
       ],
       "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
-        "Păstrați-vă mesajele ordonate, ștergându-le pe cele din «Gunoi» și «Nedorite» dacă se află acolo de mai mult de 30 de zile."
+        "Păstrați-vă mesajele ordonate, ștergându-le pe cele din „Gunoi” și „Nedorite” dacă se află acolo de mai mult de 30 de zile."
       ],
       "Key fingerprint": [
         "Amprentă cheie"
@@ -5672,7 +5751,7 @@
         "Mesajul va fi trimis mâine la ora ${ formattedTime }"
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
-        "Mesajele care au stat în folderul «Gunoi» și «Nedorite» mai mult de 30 de zile vor fi șterse automat."
+        "Mesajele care au stat în „Gunoi” și „Nedorite” mai mult de 30 de zile vor fi șterse automat."
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Mesajele adresate tuturor adreselor de e-mail personale vor fi livrate în contul de e-mail."
@@ -5825,6 +5904,9 @@
       ],
       "Please share what you expected": [
         "Spuneți-ne la ce v-ați așteptat"
+      ],
+      "Please try again in a few moments": [
+        "Reîncercați mai târziu."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Reîncercați folosind o metodă de plată diferită sau contactați-vă banca."
@@ -6020,20 +6102,8 @@
       "Start sharing it with contacts and use it for online services.": [
         "Începeți să o partajați contactelor personale și folosiți-l pentru serviciile online."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Spațiu alocat altor utilizatori din această organizație"
-      ],
-      "Storage allocated to this user": [
-        "Spațiu alocat acestui utilizator"
-      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Capacitatea de stocare nu este acceptată în acest navigator web. Este nevoie de această funcție pentru a activa căutarea în conținutul mesajelor."
-      ],
-      "Storage for users": [
-        "Spațiu pentru utilizatori"
-      ],
-      "Storage used by this user": [
-        "Spațiu folosit de utilizator"
       ],
       "Subject": [
         "Subiect"
@@ -6053,8 +6123,20 @@
       "Subscription auto-renews every month.": [
         "Abonamentul se reînnoiește automat în fiecare lună."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Abonamentul se încheie: reactivați-l până la ${ byDate } pentru a vă păstra beneficiile planului ${ planName }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonamentul se încheie: pentru a vă păstra beneficiile din ${ planName }, reactivați-vă abonamentul în App Store Apple până la ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonamentul se încheie: pentru a păstra vă beneficiile din ${ planName }, reactivați-vă abonamentul în Magazin Play de la Google până la ${ byDate }. ${ reactivateLink }"
+      ],
       "Symbols (#$&)": [
         "Simboluri (#$&)"
+      ],
+      "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
+        "Sincronizați și gestionați mesajele cu aplicația ${ DRIVE_APP_NAME }. Creați și partajați documente în ${ DOCS_APP_NAME } și stocați-le în siguranță. Disponibile pe ${ ios }, ${ android } și ${ desktop }."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporar indisponibil. Reveniți mai târziu."
@@ -6189,7 +6271,7 @@
         "Aceste mesaje vor fi marcate ca nedorite. Doriți să vă dezabonați și de la mesajele ulterioare?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
-        "Acest mesaj va fi mutat în «Ciorne» pentru a putea fi editat. Va trebui să-l reprogramați când va fi trimis."
+        "Acest mesaj va fi mutat în „Ciorne” pentru a putea fi editat. Va trebui să-l reprogramați când va fi trimis."
       ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "Mesajul va fi trimis dimineață la ora ${ formattedTime }"
@@ -6237,7 +6319,7 @@
         "Aceasta vă va deconectat din toate conturile conectate acum."
       ],
       "to ${ destinationElement } folder.": [
-        "în folderul ${ destinationElement }."
+        "în folderul „${ destinationElement }”."
       ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "Pentru a evita distragerea de la filele deschise din navigatorul web, utilizați aplicația desktop."
@@ -6330,7 +6412,7 @@
         "Treceți la un plan superior pentru a adăuga mai multe adrese în contul personal."
       ],
       "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
-        "Modificați-vă planul cu unul superior pentru a putea șterge automat mesajele care au stat în folderul «Gunoi» și «Nedorite» mai mult de 30 de zile."
+        "Modificați-vă planul cu unul superior pentru a putea șterge automat mesajele care au stat în „Gunoi” și „Nedorite” mai mult de 30 de zile."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Treceți la alt plan pentru a crea mai multe foldere, filtre și adrese."
@@ -6464,6 +6546,9 @@
       "Would you like to receive a new verification code?": [
         "Doriți să primiți un cod nou de verificare?"
       ],
+      "Writing assistant": [
+        "Asistent de scriere"
+      ],
       "writing assistant iframe": [
         "iframe asistent de scriere"
       ],
@@ -6532,7 +6617,7 @@
         "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte."
       ],
       "You have ${ unread } in your inbox.": [
-        "În folderul «Primite» aveți: ${ unread }"
+        "În «Primite» aveți: ${ unread }"
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Conversații stocate în acest folder: **${ count }**.",
@@ -6596,9 +6681,9 @@
         "Mesaje selectate cu această etichetă: **${ count }**"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
-        "Conversații selectate în **«${ location }»**: ${ elementsCount }.",
-        "Conversații selectate în **«${ location }»**: ${ elementsCount }.",
-        "Conversații selectate în **«${ location }»**: ${ elementsCount }."
+        "Conversații selectate în „**${ location }**”: ${ elementsCount }.",
+        "Conversații selectate în „**${ location }**”: ${ elementsCount }.",
+        "Conversații selectate în „**${ location }**”: ${ elementsCount }."
       ],
       "You selected **${ elementsCount } conversation**.": [
         "**Conversații** selectate: ${ elementsCount }.",
@@ -6606,9 +6691,9 @@
         "**Conversații** selectate: ${ elementsCount }."
       ],
       "You selected **${ elementsCount } message** in ${ location }": [
-        "Mesaje selectate în **«${ location }»**: ${ elementsCount }.",
-        "Mesaje selectate în **«${ location }»**: ${ elementsCount }.",
-        "Mesaje selectate în **«${ location }»**: ${ elementsCount }."
+        "Mesaje selectate în „**${ location }**”: ${ elementsCount }.",
+        "Mesaje selectate în „**${ location }**”: ${ elementsCount }.",
+        "Mesaje selectate în „**${ location }**”: ${ elementsCount }."
       ],
       "You selected **${ elementsCount } message**.": [
         "Mesaje selectate: **${ elementsCount }**.",
@@ -6734,7 +6819,7 @@
     },
     "Key pinning": {
       "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
-        "Apăsând pe «Cheie de încredere» această cheie publică va fi asociată acestui expeditor, iar mesajele de la această adresă vor fi verificate criptografic automat."
+        "Apăsând pe „Cheie de încredere” această cheie publică va fi asociată acestui expeditor, iar mesajele de la această adresă vor fi verificate criptografic automat."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "Apăsând pe «Cheie de încredere» se va crea un contact nou și se va asocia această cheie publică acestui expeditor. Mesajele de la această adresă vor fi verificate criptografic automat."
@@ -6776,9 +6861,6 @@
       "/month": [
         "/lună"
       ],
-      "Account storage": [
-        "Spațiu cont"
-      ],
       "Active filter:": [
         "Filtru activ:"
       ],
@@ -6808,6 +6890,9 @@
       ],
       "App password": [
         "Parola aplicației"
+      ],
+      "Apply filter to existing emails": [
+        "Aplicare filtru la mesajele existente"
       ],
       "Apply to future messages": [
         "Aplicare la mesajele viitoare"
@@ -7077,10 +7162,10 @@
         "S-a mutat în ${ labelName }"
       ],
       "Moved to Archive": [
-        "S-a mutat în «Arhivă»"
+        "Mutat în „Arhivă”"
       ],
       "Moved to Trash": [
-        "Mutat în «Gunoi»"
+        "Mutat în „Gunoi”"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Trebuie să aibă cel puțin ${ MIN_PASSWORD_LENGTH } caractere"
@@ -7336,7 +7421,7 @@
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        "${ Label.Name } creată"
+        "S-a creat ${ Label.Name }."
       ]
     },
     "Labels": {
@@ -7513,8 +7598,14 @@
       "Re-enable the address linked to this calendar to update your invitation.": [
         "Reactivați adresa asociată acestui calendar pentru a vă actualiza invitația."
       ],
+      "Reactivate now": [
+        "Reactivare acum"
+      ],
       "Request an invite": [
         "Solicitați o invitație"
+      ],
+      "Resume now": [
+        "Reluare acum"
       ],
       "Scheduled": [
         "Programat"
@@ -7691,7 +7782,7 @@
         "Trimitere programată anulată"
       ],
       "Scheduling canceled. Message has been moved to Drafts.": [
-        "Programarea a fost anulată. Mesajul a fost mutat în «Ciorne»."
+        "Programarea a fost anulată. Mesajul a fost mutat în „Ciorne”."
       ],
       "Sending undone": [
         "Trimitere anulată"
@@ -8536,6 +8627,9 @@
       ]
     },
     "Notification": {
+      "${ Filter.Name } created": [
+        "S-a creat filtrul ${ Filter.Name }."
+      ],
       "Block removed": [
         "Blocare eliminată."
       ],
@@ -8626,13 +8720,16 @@
         "Acces oricând, oriunde"
       ],
       "Auto-delete spam and trash": [
-        "Ștergere automată mesaje din «Gunoi» și «Nedorite»"
+        "Ștergere automată mesaje din „Gunoi” și „Nedorite”"
       ],
       "Clear out deleted and spam emails after 30 days.": [
         "Goliți mesajele șterse și cele nedorite după 30 de zile."
       ],
       "Continue": [
         "Continuare"
+      ],
+      "Desktop": [
+        "Desktop"
       ],
       "Discover ${ MAIL_APP_NAME }": [
         "Descoperiți ${ MAIL_APP_NAME }"
@@ -9221,9 +9318,20 @@
         "(va deschide ${ PASS_APP_NAME })"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "Afișare evenimente"
+      ]
+    },
     "Security Center - Info": {
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte. ${ learnMoreLink }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Soluția noastră de securitate de ultimă oră, bazată pe inteligență artificială, concepută pentru utilizatorii care doresc o protecție sporită pentru conturile lor. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel este **activ** și vă protejează contul."
       ]
     },
     "Select files": {
@@ -9327,9 +9435,64 @@
         "Stocat criptat cu acces exclusiv personal"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Anulare resetare"
+      ],
+      "Reset password": [
+        "Resetare parolă"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Recuperarea contului nu este disponibilă pentru cheile vechi ale adreselor."
+      ],
+      "Please generate keys before you try to change your password": [
+        "Generați cheile înainte de a încerca să vă schimbați parola."
+      ]
+    },
+    "session_recovery:available:info": {
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Accesați dispozitivul conectat (în sesiunea de unde a fost inițiată solicitarea) pentru a vă schimba parola."
+      ],
+      "This permission expires soon": [
+        "Această permisiune expiră în curând."
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Acum vă puteți schimba parola pentru contul ${ boldEmail } timp de ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Acum vă puteți schimba parola pentru contul ${ boldEmail }."
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Parola a fost salvată."
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Resetați-vă parola"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Anulare resetare parolă"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Introduceți parola curentă pentru a anula procesul de resetare a parolei. Nu vor fi efectuate alte modificări."
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "Resetarea parolei a fost anulată."
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Anulați resetarea parolei?"
       ]
     },
     "session_recovery:cancelled:info": {
@@ -9796,24 +9959,24 @@
         "Conversații marcate ca necitite: ${ elementsCount }."
       ],
       "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
-        "Conversații mutate în «${ labelName }»: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese permise.",
-        "Conversații mutate în «${ labelName }»: ${ elementsCount }. Expeditorii au fost adăugați în lista de adrese permise.",
-        "Conversații mutate în «${ labelName }»: ${ elementsCount }. Expeditorii au fost adăugați în lista de adrese permise."
+        "Conversații mutate în „${ labelName }”: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese permise.",
+        "Conversații mutate în „${ labelName }”: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese permise.",
+        "Conversații mutate în „${ labelName }”: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese permise."
       ],
       "${ elementsCount } conversation moved to ${ labelName }.": [
-        "Conversații mutate în «${ labelName }»: ${ elementsCount }.",
-        "Conversații mutate în «${ labelName }»: ${ elementsCount }.",
-        "Conversații mutate în «${ labelName }»: ${ elementsCount }."
+        "Conversații mutate în „${ labelName }”: ${ elementsCount }.",
+        "Conversații mutate în „${ labelName }”: ${ elementsCount }.",
+        "Conversații mutate în „${ labelName }”: ${ elementsCount }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
-        "Conversații mutate în «Nedorite»: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese blocate.",
-        "Conversații mutate în «Nedorite»: ${ elementsCount }. Expeditorii au fost adăugați în lista de adrese blocate.",
-        "Conversații mutate în «Nedorite»: ${ elementsCount }. Expeditorii au fost adăugați în lista de adrese blocate."
+        "Conversații mutate în „Nedorite”: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese blocate.",
+        "Conversații mutate în „Nedorite”: ${ elementsCount }. Expeditorii au fost adăugați în lista de adrese blocate.",
+        "Conversații mutate în „Nedorite”: ${ elementsCount }. Expeditorii au fost adăugați în lista de adrese blocate."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
-        "Conversații eliminate din «${ labelName }»: ${ elementsCount }.",
-        "Conversații eliminate din «${ labelName }»: ${ elementsCount }.",
-        "Conversații eliminate din «${ labelName }»: ${ elementsCount }."
+        "Conversații eliminate din „${ labelName }”: ${ elementsCount }.",
+        "Conversații eliminate din „${ labelName }”: ${ elementsCount }.",
+        "Conversații eliminate din „${ labelName }”: ${ elementsCount }."
       ],
       "${ elementsCount } conversation removed from Starred.": [
         "Conversații eliminate din favorite: ${ elementsCount }",
@@ -9851,19 +10014,19 @@
         "Mesaje marcate ca necitite: ${ elementsCount }"
       ],
       "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
-        "Mesaje mutate în «${ labelName }»: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese permise.",
-        "Mesaje mutate în «${ labelName }»: ${ elementsCount }. Expeditorii au fost adăugați în lista de adrese permise.",
-        "Mesaje mutate în «${ labelName }»: ${ elementsCount }. Expeditorii au fost adăugați în lista de adrese permise."
+        "Mesaje mutate în „${ labelName }”: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese permise.",
+        "Mesaje mutate în „${ labelName }”: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese permise.",
+        "Mesaje mutate în „${ labelName }”: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese permise."
       ],
       "${ elementsCount } message moved to ${ labelName }.": [
-        "Mesaje mutate în «${ labelName }»: ${ elementsCount }.",
-        "Mesaje mutate în «${ labelName }»: ${ elementsCount }.",
-        "Mesaje mutate în «${ labelName }»: ${ elementsCount }."
+        "Mesaje mutate în „${ labelName }”: ${ elementsCount }.",
+        "Mesaje mutate în „${ labelName }”: ${ elementsCount }.",
+        "Mesaje mutate în „${ labelName }”: ${ elementsCount }."
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
-        "Mesaje mutate în folderul «Nedorite»: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese blocate.",
-        "Mesaje mutate în folderul «Nedorite»: ${ elementsCount }. Expeditorii au fost adăugați în lista de adrese blocate.",
-        "Mesaje mutate în folderul «Nedorite»: ${ elementsCount }. Expeditorii au fost adăugați în lista de adrese blocate."
+        "Mesaje mutate în „Nedorite”: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese blocate.",
+        "Mesaje mutate în „Nedorite”: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese blocate.",
+        "Mesaje mutate în „Nedorite”: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese blocate."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "Mesaje eliminate din ${ labelName }: ${ elementsCount }.",
@@ -9922,10 +10085,10 @@
         "Conversație marcată ca necitită."
       ],
       "Conversation moved to ${ labelName } and sender added to your not spam list.": [
-        "Conversația a fost mutată în «${ labelName }» și expeditorul a fost adăugat în lista de adrese permise."
+        "Conversația a fost mutată în „${ labelName }” și expeditorul a fost adăugat în lista de adrese permise."
       ],
       "Conversation moved to ${ labelName }.": [
-        "Conversația a fost mutată în «${ labelName }»."
+        "Conversația a fost mutată în „${ labelName }”."
       ],
       "Conversation moved to spam and sender added to your spam list.": [
         "Conversația a fost mutată în «Nedorite» și expeditorul adăugat în lista de adrese blocate."
@@ -9991,19 +10154,19 @@
         "Mesaj marcat ca necitit."
       ],
       "Message moved to ${ labelName } and sender added to your not spam list.": [
-        "Mesajul a fost mutat în «${ labelName }» și expeditorul a fost adăugat în lista de adrese permise."
+        "Mesajul a fost mutat în „${ labelName }” și expeditorul a fost adăugat în lista de adrese permise."
       ],
       "Message moved to ${ labelName }.": [
-        "Mesaj mutat în «${ labelName }»."
+        "Mesaj mutat în „${ labelName }”."
       ],
       "Message moved to spam and sender added to your spam list.": [
-        "Mesajul a fost mutat în «Nedorite» și expeditorul adăugat în lista de adrese blocate."
+        "Mesajul a fost mutat în „Nedorite” și expeditorul adăugat în lista de adrese blocate."
       ],
       "Message removed from ${ labelName }.": [
         "Mesaj eliminat din ${ labelName }."
       ],
       "Message removed from Starred.": [
-        "Mesajul a fost eliminat din «Favorite»."
+        "Mesajul a fost eliminat din „Favorite”."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Mesajele de la ${ sendersList } vor fi etichetate cu ${ labelsList }."
@@ -10077,6 +10240,9 @@
       " is now active": [
         " este acum activ."
       ],
+      "${ label.Name } removed": [
+        "S-a eliminat ${ label.Name }."
+      ],
       "The filter has been disabled": [
         "Filtrul a fost dezactivat"
       ],
@@ -10098,6 +10264,9 @@
     "Suffix for price": {
       "per month": [
         "pe lună"
+      ],
+      "per user per month": [
+        "per utilizator per lună"
       ]
     },
     "Tab subscription modal": {
@@ -10251,7 +10420,7 @@
       "Account recovery": [
         "Recuperare cont"
       ],
-      "Account Temporarily Locked": [
+      "Account temporarily locked": [
         "Cont blocat temporar"
       ],
       "Action all conversations": [
@@ -10265,6 +10434,9 @@
       ],
       "Add credit/debit card": [
         "Adăugare card de credit/debit"
+      ],
+      "Add filter": [
+        "Adăugare filtru"
       ],
       "Add to ${ groupCount } group": [
         "Adăugare la un grup",
@@ -10455,6 +10627,12 @@
       "Delete draft": [
         "Ștergere ciornă"
       ],
+      "Delete folder?": [
+        "Ștergeți folderul?"
+      ],
+      "Delete label?": [
+        "Ștergeți eticheta?"
+      ],
       "Delete message": [
         "Ștergere mesaj"
       ],
@@ -10490,6 +10668,9 @@
       ],
       "Edit email settings": [
         "Editare setări e-mail"
+      ],
+      "Edit filter": [
+        "Editare filtru"
       ],
       "Edit image": [
         "Editare imagine"
@@ -10668,10 +10849,10 @@
         "Mutare toate mesajele"
       ],
       "Move all messages to archive": [
-        "Mutare toate mesajele în «Arhivă»"
+        "Mutare toate mesajele în „Arhivă”"
       ],
       "Move all messages to trash": [
-        "Mutare toate mesajele în «Gunoi»"
+        "Mutare toate mesajele în „Gunoi”"
       ],
       "Move to": [
         "Mutare în"
@@ -10680,13 +10861,13 @@
         "Mutare în «Primite»"
       ],
       "Move to inbox (not spam)": [
-        "Mutare în «Primite» (adresă acceptată)"
+        "Mutare în „Primite” (adresă acceptată)"
       ],
       "Move to spam": [
-        "Mutare în «Nedorite»"
+        "Mutare în „Nedorite”"
       ],
       "Move to trash": [
-        "Mutare în «Gunoi»"
+        "Mutare în „Gunoi”"
       ],
       "Moving a scheduled message": [
         "Se mută un mesaj programat"
@@ -10717,6 +10898,9 @@
       ],
       "No attachment found": [
         "Nu există atașamente"
+      ],
+      "No breaches detected": [
+        "Nu s-au detectat divulgări"
       ],
       "No newsletters found": [
         "Nu există buletine informative"

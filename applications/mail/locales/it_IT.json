@@ -527,9 +527,6 @@
       "See plan features": [
         "Visualizza le caratteristiche del piano"
       ],
-      "Select ${ planTitle }": [
-        "Seleziona ${ planTitle }"
-      ],
       "Select all": [
         "Seleziona tutti"
       ],
@@ -821,9 +818,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_DEDICATED_IPS } server dedicati durante il periodo di prova."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Puoi avere fino a ${ TRIAL_MAX_LUMO_SEATS } licenze Lumo durante il periodo di prova."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze Scribe durante il periodo di prova."
@@ -2113,6 +2107,10 @@
       "Checkout expired, please try again": [
         "Checkout scaduto, riprova"
       ],
+      "Choose a date within the next ${ n } day.": [
+        "Scegli una data entro il prossimo ${ n } giorno.",
+        "Scegli una data entro i prossimi ${ n } giorni."
+      ],
       "Contact could not be saved": [
         "Impossibile salvare il contatto"
       ],
@@ -2287,6 +2285,10 @@
       "Process aborted": [
         "Processo interrotto"
       ],
+      "Removed duplicate recipient: ${ recipents }": [
+        "Destinatario duplicato rimosso: ${ recipents }",
+        "Destinatari duplicati rimossi: ${ recipents }"
+      ],
       "Request timed out": [
         "Timeout della richiesta"
       ],
@@ -2385,6 +2387,10 @@
       ],
       "Wrong password": [
         "Password errata"
+      ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "Non puoi aprire più di ${ maxActiveComposer } finestre del compositore per volta",
+        "Non puoi aprire più di ${ maxActiveComposer } finestre del compositore per volta"
       ],
       "You must set a name": [
         "È necessario impostare un nome"
@@ -2701,6 +2707,16 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } giorno",
+        "${ remainingDaysCount } giorni"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } giorno rimasto",
+        "${ remainingDaysCount } giorni rimasti"
       ]
     },
     "Gmail forwarding": {
@@ -3064,6 +3080,46 @@
         "${ contactsCount } contatto trovato",
         "${ contactsCount } contatti trovati"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } su ${ totalProgress }",
+        "${ currentProgress } su ${ totalProgress }"
+      ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } conversazione verrà etichettata come:",
+        "${ elementsCount } conversazioni verranno etichettate come:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } conversazione verrà segnata come letta.",
+        "${ elementsCount } conversazioni verranno segnate come lette."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } conversazione verrà spostata.",
+        "${ elementsCount } conversazioni verranno spostate."
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } conversazione non verrà più etichettata come:",
+        "${ elementsCount } conversazioni non verranno più etichettate come:"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } messaggio verrà etichettato come:",
+        "${ elementsCount } messaggi verranno etichettati come:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } messaggio verrà segnato come letto.",
+        "${ elementsCount } messaggi verranno segnati come letti."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } messaggio verrà segnato come non letto.",
+        "${ elementsCount } messaggi verranno segnati come non letti."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } messaggio verrà spostato.",
+        "${ elementsCount } messaggi verranno spostati."
+      ],
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } immagine incorporata",
+        "${ embeddedAttachmentsCount } immagini incorporate"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: immagine a grandezza naturale"
       ],
@@ -3081,6 +3137,18 @@
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } link ripulito",
         "${ numberOfUTMTrackers } link ripuliti"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } messaggio nella conversazione",
+        "${ NumMessages } messaggi nella conversazione"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } occorrenza trovata",
+        "${ numOccurrences } occorrenze trovate"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } occorrenza trovata nel contenuto delle mail",
+        "${ numOccurrences } occorrenze trovate nel contenuto delle mail"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } richiede almeno 1 server dedicato ${ serverPricePerMonth }"
@@ -3111,9 +3179,25 @@
       "${ storage } storage": [
         "${ storage } di archiviazione"
       ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } non letto",
+        "${ subscription.UnreadMessageCount } non letti"
+      ],
+      "${ total } message": [
+        "${ total } messaggio",
+        "${ total } messaggi"
+      ],
       "${ trackersCount } tracker blocked": [
         "${ trackersCount } tracker bloccato",
         "${ trackersCount } tracker bloccati"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } newsletter",
+        "${ unreadCount } newsletter"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } messaggio programmato",
+        "${ unreadCount } messaggi programmati"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contatto aggiornato con successo.",
@@ -3122,6 +3206,10 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membro)",
         "(${ memberCount } membri)"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** risultato trovato in ${ labelName }",
+        "**${ total }** risultati trovati in ${ labelName }"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } memoria bonus"
@@ -3151,9 +3239,6 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verifica dell'indirizzo con le chiavi attendibili è abilitata per questo indirizzo. Per poter inviare a questo indirizzo, prima considera attendibili le chiavi pubbliche che possono essere usate per l'invio."
       ],
-      "Admin account allocation": [
-        "Allocazione dell'account amministratore"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Tutti (${ totalFoldersCount } cartella)",
         "Tutte (${ totalFoldersCount } cartelle)"
@@ -3164,15 +3249,6 @@
       ],
       "All your changes will be lost.": [
         "Tutte le modifiche andranno perse."
-      ],
-      "Allocated": [
-        "Allocato"
-      ],
-      "Already allocated": [
-        "Già allocato"
-      ],
-      "Already used": [
-        "Già usato"
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
@@ -3188,6 +3264,14 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Sei sicuro di voler annullare le tue modifiche?"
+      ],
+      "Are you sure you want to permanently delete ${ count } draft?": [
+        "Sei sicuro di voler eliminare definitivamente ${ count } bozza?",
+        "Sei sicuro di voler eliminare definitivamente ${ count } bozze?"
+      ],
+      "Are you sure you want to permanently delete ${ count } message?": [
+        "Sei sicuro di voler eliminare definitivamente ${ count } messaggio?",
+        "Sei sicuro di voler eliminare definitivamente ${ count } messaggi?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Almeno ${ BETTER_PASSWORD_LENGTH } caratteri"
@@ -3329,6 +3413,10 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Le email spostate in Cestino e Spam verranno cancellate automaticamente dopo 30 giorni."
       ],
+      "embedded image": [
+        "immagine incorporata",
+        "immagini incorporate"
+      ],
       "Enabling auto-deletion…": [
         "Attivazione dell'eliminazione automatica…"
       ],
@@ -3363,8 +3451,24 @@
       "Expired": [
         "Scaduto"
       ],
+      "Expires in ${ minutesDiff } minute": [
+        "Scade tra ${ minutesDiff } minuto",
+        "Scade tra ${ minutesDiff } minuti"
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Scade tra meno di ${ hoursDiff } ora",
+        "Scade tra meno di ${ hoursDiff } ore"
+      ],
+      "file attached": [
+        "file allegato",
+        "file allegati"
+      ],
       "finance": [
         "dati finanziari"
+      ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Gratis da provare per ${ ASSISTANT_TRIAL_TIME_DAYS } giorno",
+        "Gratis da provare per ${ ASSISTANT_TRIAL_TIME_DAYS } giorni"
       ],
       "here": [
         "qui"
@@ -3605,6 +3709,10 @@
       "Restore": [
         "Ripristina"
       ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Seleziona tutti i ${ elementsCount } elementi in ${ location }",
+        "Seleziona tutti i ${ elementsCount } elementi in ${ location }"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleziona il formato email che desideri usare per impostazione predefinita quando invii un'email a questo indirizzo email."
       ],
@@ -3638,18 +3746,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Inizia a condividerlo con i contatti e utilizzalo per i servizi online."
       ],
-      "Storage allocated to other users in this organisation": [
-        "Spazio di archiviazione allocato ad altri utenti in questa organizzazione"
-      ],
-      "Storage allocated to this user": [
-        "Memoria allocata per questo utente"
-      ],
-      "Storage for users": [
-        "Spazio per gli utenti"
-      ],
-      "Storage used by this user": [
-        "Memoria utilizzata da questo utente"
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Invia un deposito utilizzando il seguente indirizzo, oppure scansionando il codice QR fornito. Il tuo deposito verrà correttamente accreditato una volta confermato."
       ],
@@ -3670,6 +3766,10 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Le informazioni sono state rese pubbliche da un servizio di terze parti. Quelle relative al tuo account ${ BRAND_NAME } rimangono sicure e crittografate. ${ learnMoreLink }"
+      ],
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+        "La verifica di ${ contactNames } non è riuscita: i contatti non sono firmati correttamente.\nQuesto potrebbe essere causato da una reimpostazione della password.\nDevi firmare nuovamente i contatti per poter inviare un messaggio a ${ contactAddresses } o modificare i contatti.",
+        "La verifica di ${ contactNames } non è riuscita: i contatti non sono firmati correttamente.\nQuesto potrebbe essere causato da un reset della password.\nÈ necessario firmare nuovamente i contatti per inviare un messaggio a ${ contactAddresses } o modificare i contatti."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Il processo di verifica aprirà una nuova finestra del browser. Disabilita qualsiasi blocco pop-up."
@@ -3695,6 +3795,10 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Questo link potrebbe essere un attacco omografo. Verifica che questo sia il link che desideri visitare o non aprirlo."
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Questo messaggio verrà segnalato come spam. Vorresti anche terminare la sottoscrizione a future email?",
+        "Questi messaggi verranno segnalati come spam. Vorresti anche terminare la sottoscrizione a future email?"
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Verrai disconnesso da tutti gli account attualmente connessi."
@@ -3836,6 +3940,14 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Ricevi notifiche se la tua password o altri dati vengono divulgati da servizi di terze parti."
       ],
+      "You have **${ count } conversation** stored in this folder": [
+        "Hai **${ count } conversazione** memorizzata in questa cartella",
+        "Hai **${ count } conversazioni** memorizzate in questa cartella"
+      ],
+      "You have **${ count } conversation** tagged with this label": [
+        "Hai **${ count } conversazione** taggata con questa etichetta",
+        "Hai **${ count } conversazioni** taggate con questa etichetta"
+      ],
       "You have **${ count } message** stored in this folder": [
         "Hai **${ count } messaggio ** archiviato in questa cartella",
         "Hai **${ count } messaggi ** archiviati in queste cartelle"
@@ -3856,6 +3968,14 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Devi disabilitare o rimuovere qualsiasi utente aggiuntivo di ${ MAIL_APP_NAME }, indirizzi e domini personalizzati prima di poter effettuare il downgrade."
       ],
+      "You selected **${ count } conversation** from this folder": [
+        "Hai selezionato **${ count } conversazione** da questa cartella",
+        "Hai selezionato **${ count } conversazioni** da questa cartella"
+      ],
+      "You selected **${ count } message** with this label": [
+        "Hai selezionato **${ count } messaggio** con questa etichetta",
+        "Hai selezionato **${ count } messaggi** con questa etichetta"
+      ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
         "Hai selezionato** ${ elementsCount }conversazione** in${ location }",
         "Hai selezionato**${ elementsCount } conversazioni** in${ location }"
@@ -3867,6 +3987,10 @@
       "You selected **${ elementsCount } message** in ${ location }": [
         "Hai selezionato ** ${ elementsCount } messaggio** in ${ location }",
         "Hai selezionato **${ elementsCount } messaggi** in${ location }h"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Hai selezionato **${ elementsCount } messaggio**.",
+        "Hai selezionato **${ elementsCount } messaggi**."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sarai presto reindirizzato a PayPal per verificare il pagamento."
@@ -3952,6 +4076,10 @@
       ]
     },
     "Key pinning": {
+      "Do you want to trust the primary public key with the following fingerprint?": [
+        "Vuoi fidarti della chiave pubblica primaria con la seguente impronta digitale?",
+        "Vuoi fidarti delle chiavi pubbliche primarie con le seguenti impronte digitali?"
+      ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Hai attivato la Verifica dell’indirizzo con Chiavi Attendibili per questo indirizzo email,\nma non è stata ancora autorizzata alcuna chiave di crittografia attiva.\nDevi autorizzare una chiave valida per l’invio prima di poter inviare un messaggio a questo indirizzo email.",
         "Hai attivato la Verifica dell’indirizzo con Chiavi Attendibili per questi indirizzi email,\nma non sono state ancora autorizzate chiavi di crittografia attive.\nDevi autorizzare chiavi valide per l’invio prima di poter inviare un messaggio a questi indirizzi email."
@@ -3967,9 +4095,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito.)"
-      ],
-      "Account storage": [
-        "Spazio dell'account"
       ],
       "Add email address": [
         "Aggiungi indirizzo email"
@@ -5601,6 +5726,12 @@
         "Lavoro"
       ]
     },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } g",
+        "${ remainingDays } g"
+      ]
+    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "L'accesso non è stato completato correttamente."
@@ -5670,6 +5801,12 @@
       "We have detected some warnings. The following email address may not receive emails:": [
         "Abbiamo rilevato alcuni avvisi. Il seguente indirizzo email potrebbe non ricevere email:",
         "Abbiamo rilevato alcuni avvisi. I seguenti indirizzi email potrebbero non ricevere email:"
+      ]
+    },
+    "Sent email icon": {
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Inviato da ${ MAIL_APP_NAME } con la crittografia zero access al destinatario verificato",
+        "Inviato da ${ MAIL_APP_NAME } con la crittografia zero access ai destinatari verificati"
       ]
     },
     "session_recovery:cancellation:notification": {
@@ -6003,9 +6140,37 @@
       ]
     },
     "Success": {
+      "${ count } conversation deleted": [
+        "${ count } conversazione eliminata",
+        "${ count } conversazioni eliminate"
+      ],
+      "${ count } draft deleted": [
+        "${ count } bozza eliminata",
+        "${ count } bozze eliminate"
+      ],
+      "${ count } message deleted": [
+        "${ count } messaggio eliminato",
+        "${ count } messaggi eliminati"
+      ],
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } contatto sembra identico.",
         "${ countMergeableContacts } contatti sembrano identici."
+      ],
+      "${ elementsCount } conversation added to ${ labelName }.": [
+        "${ elementsCount } conversazione aggiunta a ${ labelName }.",
+        "${ elementsCount } conversazioni aggiunte a ${ labelName }."
+      ],
+      "${ elementsCount } conversation marked as read.": [
+        "${ elementsCount } conversazione segnata come letta.",
+        "${ elementsCount } conversazioni segnate come lette."
+      ],
+      "${ elementsCount } conversation marked as Starred.": [
+        "${ elementsCount } conversazione segnata come preferita.",
+        "${ elementsCount } conversazioni segnate come preferite."
+      ],
+      "${ elementsCount } conversation marked as unread.": [
+        "${ elementsCount } conversazione segnata come non letta.",
+        "${ elementsCount } conversazioni segnate come non lette."
       ],
       "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
         "${ elementsCount } conversazione è stata spostata in ${ labelName } e il mittente è stato aggiunto alla tua lista non spam.",
@@ -6023,9 +6188,25 @@
         "${ elementsCount } conversazione rimossa da ${ labelName }.",
         "${ elementsCount } conversazioni rimosse da${ labelName }."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } conversazione rimossa dai Preferiti.",
+        "${ elementsCount } conversazioni rimosse dai Preferiti."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } conversazione posticipata",
+        "${ elementsCount } conversazioni posticipate"
+      ],
       "${ elementsCount } conversation unsnoozed": [
         "${ elementsCount } conversazione riattivata",
         "${ elementsCount } conversazioni riattivate"
+      ],
+      "${ elementsCount } message added to ${ labelName }.": [
+        "${ elementsCount } messaggio aggiunto a ${ labelName }.",
+        "${ elementsCount } messaggi aggiunti a ${ labelName }."
+      ],
+      "${ elementsCount } message marked as read.": [
+        "${ elementsCount } messaggio segnato come letto.",
+        "${ elementsCount } messaggi segnati come letti."
       ],
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } messaggio segnato come non letto.",
@@ -6038,6 +6219,14 @@
       "${ elementsCount } message moved to ${ labelName }.": [
         "${ elementsCount } messaggio spostato in${ labelName }.",
         "${ elementsCount } messaggi spostati in ${ labelName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } messaggio spostato in spam e mittente aggiunto alla lista degli spam.",
+        "${ elementsCount } messaggi spostati in spam e mittenti aggiunti alla lista degli spam."
+      ],
+      "${ elementsCount } message removed from ${ labelName }.": [
+        "${ elementsCount } messaggio rimosso da ${ labelName }.",
+        "${ elementsCount } messaggi rimossi da ${ labelName }."
       ],
       "${ elementsCount } message removed from Starred.": [
         "${ elementsCount } messaggio rimosso da Speciali.",
@@ -6095,6 +6284,14 @@
       ],
       "Message moved to ${ labelName }.": [
         "Messaggio spostato in ${ labelName }."
+      ],
+      "Move ${ selectionCount } conversation": [
+        "Sposta ${ selectionCount } conversazione",
+        "Sposta ${ selectionCount } conversazioni"
+      ],
+      "Move ${ selectionCount } message": [
+        "Sposta ${ selectionCount } messaggio",
+        "Sposta ${ selectionCount } messaggi"
       ],
       "Payment method added": [
         "Metodo di pagamento aggiunto"
@@ -6235,8 +6432,19 @@
       "${ feature } is now active": [
         "${ feature } è adesso attivo"
       ],
+      "${ numMessages } message": [
+        "${ numMessages } messaggio",
+        "${ numMessages } messaggi"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } messaggio non letto",
+        "${ unreads } messaggi non letti"
+      ],
       "Account recovery": [
         "Recupero dell'account"
+      ],
+      "Account temporarily locked": [
+        "Account temporaneamente bloccato"
       ],
       "Add contact group name": [
         "Aggiungi nome gruppo di contatti"
@@ -6355,9 +6563,17 @@
         "Elimina ${ count } gruppo di contatti",
         "Elimina ${ count } gruppi di contatti"
       ],
+      "Delete ${ count } conversation": [
+        "Elimina ${ count } conversazione",
+        "Elimina ${ count } conversazioni"
+      ],
       "Delete ${ count } draft": [
         "Elimina${ count } bozza",
         "Elimina${ count } bozze"
+      ],
+      "Delete ${ count } message": [
+        "Elimina ${ count } messaggio",
+        "Elimina ${ count } messaggi"
       ],
       "Delete ${ value }": [
         "Elimina ${ value }"
@@ -6567,6 +6783,10 @@
       "Trash": [
         "Cestino"
       ],
+      "Trust new key?": [
+        "Fidarsi della nuova chiave?",
+        "Fidarsi delle nuove chiavi?"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Attiva ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -6593,6 +6813,10 @@
       ],
       "Warning: suspected fake website": [
         "Attenzione: sospetto sito web falso"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Ti abbiamo protetto da ${ trackersCount } tracker.",
+        "Ti abbiamo protetto da ${ trackersCount } tracker."
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Benvenuto in ${ BRAND_NAME } for Business"
@@ -6764,6 +6988,10 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Alcuni dei contatti da unire presentano errori. Controllali singolarmente"
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "La verifica della firma dell'allegato non è riuscita.\nPuoi ancora scaricare questo allegato, ma potrebbe essere stato manomesso.",
+        "La verifica delle firme degli allegati non è riuscita.\nPuoi ancora scaricare questi allegati ma potrebbero essere stati manomessi."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "I dati del contatto sono danneggiati e non possono essere visualizzati."
