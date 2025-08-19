@@ -104,7 +104,7 @@ const slice = createSlice({
         eventLoopV6: (state, action: PayloadAction<UpdateCollectionV6<Member>>) => {
             if (state.value) {
                 state.value = updateCollectionV6(state.value, action.payload, {
-                    create: (a) => ({
+                    create: (a): EnhancedMember => ({
                         ...a,
                         // In the event loop v6 we are always fetching individual members and get partial addresses
                         addressState: 'partial',
