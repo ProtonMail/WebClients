@@ -3,14 +3,14 @@ import { config as dotenvConfig } from 'dotenv'
 import path from 'node:path'
 dotenvConfig({ path: path.join(__dirname, '.env') })
 
-import { type WebpackEnvArgumentsV2, getWebpackOptions } from '@proton/pack/lib/configV2'
-import { addDevEntry, getConfigV2 } from '@proton/pack/webpack.config'
+import { type WebpackEnvArguments, getWebpackOptions } from '@proton/pack/lib/config'
+import { addDevEntry, getConfig } from '@proton/pack/webpack.config'
 
 import appConfig from './appConfig'
 
-const result = (opts: WebpackEnvArgumentsV2): Configuration => {
+const result = (opts: WebpackEnvArguments): Configuration => {
   const webpackOptions = getWebpackOptions(opts, { appConfig })
-  const config = getConfigV2(webpackOptions)
+  const config = getConfig(webpackOptions)
 
   config.plugins?.push(
     new DefinePlugin({

@@ -8,27 +8,16 @@ const chalk = require('chalk');
 
 const program = new Command();
 
-const { getConfigData, getApi, getConfigFile, getConfigHead } = require('../lib/config');
+const getApi = (value) => {
+    if (value.startsWith('http') || value.startsWith('/api')) {
+        return value;
+    }
+    throw new Error('--api must start with http or /api');
+};
 
 const getPort = (basePort) => {
     portfinder.basePort = basePort;
     return portfinder.getPortPromise();
-};
-
-const writeConfig = async (configFile) => {
-    const configPath = path.resolve('./src/app/config.ts');
-    console.log(`writing file ${configPath}`);
-
-    await fs.mkdir(path.dirname(configPath), { recursive: true });
-    await fs.writeFile(configPath, configFile);
-};
-
-const writeConfigHead = async (configFile) => {
-    const configPath = path.resolve('./src/config.ejs');
-    console.log(`writing file ${configPath}`);
-
-    await fs.mkdir(path.dirname(configPath), { recursive: true });
-    await fs.writeFile(configPath, configFile);
 };
 
 const addGlobalOptions = (program) => {
@@ -37,13 +26,12 @@ const addGlobalOptions = (program) => {
         .option('--analyze', '')
         .option('--optimizeAssets', '')
         .option('--featureFlags <featureFlags>', '')
-        .option('--api <api>', '', (api) => getApi(api), getApi(''))
+        .option('--api <api>', '', (api) => getApi(api), '')
         .option('--sso <sso>', '')
         .option('--no-api-proxy', '')
         .option('--inline-icons', false)
         .option('--webpackOnCaffeine', '', false)
         .option('--handleSupportAndErrors', '', false)
-        .option('--configV2', '', false)
         .option('--logical', '', false)
         .option(
             '--publicPath <publicPath>',
@@ -58,48 +46,9 @@ const addGlobalOptions = (program) => {
         );
 };
 
-const getWebpackArgsV2 = (options, env) => {
+const getWebpackArgs = (options, env) => {
     const extraWebpackArgs = env.args.join(' ');
     return `--env protonPackOptions=${JSON.stringify(options)} ${extraWebpackArgs}`;
-};
-
-const getWebpackArgs = (options, env, { appData, buildData }) => {
-    const envArgs = {
-        api: appData.api === '/api' ? undefined : appData.api,
-        sso: appData.sso,
-        appMode: options.appMode,
-        publicPath: options.publicPath === '/' ? undefined : options.publicPath,
-        featureFlags: options.featureFlags,
-        writeSri: options.sri ? undefined : options.sri,
-        inlineIcons: options.inlineIcons,
-        warningLogs: options.warningLogs,
-        errorLogs: options.errorLogs,
-        overlayWarnings: options.overlayWarnings,
-        overlayErrors: options.overlayErrors,
-        overlayRuntimeErrors: options.overlayRuntimeErrors,
-        logical: Boolean(options.logical),
-        webpackOnCaffeine: Boolean(options.webpackOnCaffeine),
-        handleSupportAndErrors: Boolean(options.handleSupportAndErrors),
-        analyze: options.analyze,
-        optimizeAssets: options.optimizeAssets,
-        ...buildData,
-    };
-    const extraWebpackArgs = env.args.join(' ');
-    const webpackEnvArgs = Object.entries(envArgs)
-        .filter(([, value]) => value !== undefined && value !== '')
-        .reduce((acc, [key, value]) => {
-            if (typeof value === 'boolean') {
-                if (value) {
-                    return `${acc} --env ${key}`;
-                } else {
-                    return acc;
-                }
-            }
-
-            return `${acc} --env ${key}=${value.replace(/ /g, '\\ ')}`;
-        }, '');
-
-    return `${webpackEnvArgs} ${extraWebpackArgs}`;
 };
 
 const commandWithLog = (...args) => {
@@ -112,19 +61,7 @@ addGlobalOptions(program.command('build').description('create an optimized produ
     .action(async (options, env) => {
         console.log(chalk.magenta('Creating a production build...\n'));
 
-        let webpackArgs;
-
-        if (options.configV2) {
-            webpackArgs = getWebpackArgsV2(options, env);
-        } else {
-            const configData = getConfigData(options);
-            if (options.optimizeAssets) {
-                await writeConfigHead(getConfigHead(configData));
-            } else {
-                await writeConfig(getConfigFile(configData));
-            }
-            webpackArgs = getWebpackArgs(options, env, configData);
-        }
+        const webpackArgs = getWebpackArgs(options, env);
 
         const outputPath = path.resolve('./dist');
         await commandWithLog(`rm -rf ${outputPath}`);
@@ -162,19 +99,7 @@ addGlobalOptions(program.command('dev-server').description('run locally'))
     .action(async (options, env) => {
         console.log(chalk.magenta('Starting development server...\n'));
 
-        let webpackArgs;
-
-        if (options.configV2) {
-            webpackArgs = getWebpackArgsV2(options, env);
-        } else {
-            const configData = getConfigData(options);
-            if (options.optimizeAssets) {
-                await writeConfigHead(getConfigHead(configData));
-            } else {
-                await writeConfig(getConfigFile(configData));
-            }
-            webpackArgs = getWebpackArgs(options, env, configData);
-        }
+        const webpackArgs = getWebpackArgs(options, env);
 
         const port = await getPort(options.port || 8080);
 
@@ -184,20 +109,6 @@ addGlobalOptions(program.command('dev-server').description('run locally'))
                 stdio: 'inherit',
             }
         );
-    });
-
-addGlobalOptions(program.command('config').description('write config'))
-    .option('--version <version>', 'override the default (based on the tag) version number')
-    .action(async (options) => {
-        if (options.configV2) {
-            return;
-        }
-        const configData = getConfigData(options);
-        if (options.optimizeAssets) {
-            await writeConfigHead(getConfigHead(configData));
-        } else {
-            await writeConfig(getConfigFile(configData));
-        }
     });
 
 program.parse(process.argv);
