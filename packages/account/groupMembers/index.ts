@@ -14,10 +14,12 @@ import { getGroupMember, getGroupMembers } from '@proton/shared/lib/api/groups';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { type UpdateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
-import { type Api, GROUP_MEMBER_STATE, type GroupMember } from '@proton/shared/lib/interfaces';
+import { type Api, GROUP_MEMBER_STATE, type GroupMember, type User } from '@proton/shared/lib/interfaces';
+import { isAdmin } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
 import type { ModelState } from '../interface';
+import { type UserState, userThunk } from '../user';
 
 const { DELETE } = EVENT_ACTIONS;
 
@@ -31,7 +33,7 @@ export interface GroupMemberByIDByGroupID {
     [GroupID: string]: ModelState<GroupMembers | undefined>;
 }
 
-export interface GroupMembersState {
+export interface GroupMembersState extends UserState {
     [name]: GroupMemberByIDByGroupID;
 }
 
@@ -154,6 +156,8 @@ const slice = createSlice({
 export const { updateOverridePermissions, resumeGroupMember } = slice.actions;
 const promiseStore = createPromiseMapStore<GroupMembers>();
 
+const canFetch = (user: User) => isAdmin(user);
+
 export const groupMembersThunk = ({
     groupId,
     cache,
@@ -167,6 +171,11 @@ export const groupMembersThunk = ({
         };
         const cb = async () => {
             try {
+                const user = await dispatch(userThunk());
+                if (!canFetch(user)) {
+                    return {};
+                }
+
                 dispatch(slice.actions.pending({ id: groupId }));
 
                 const { Members: groupMembers } = await extraArgument.api<{
@@ -215,6 +224,10 @@ export const groupMembersEventLoopV6Thunk = ({
     api: Api;
 }): ThunkAction<Promise<void>, GroupMembersState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
+        const user = await dispatch(userThunk());
+        if (!canFetch(user)) {
+            return;
+        }
         await updateCollectionAsyncV6({
             n: 100,
             events: event.GroupMembers,
