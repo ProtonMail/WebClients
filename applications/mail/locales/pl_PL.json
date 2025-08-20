@@ -46,7 +46,7 @@
         "Aktywuj odzyskiwanie"
       ],
       "Active": [
-        "Aktywne"
+        "Włączony"
       ],
       "Add": [
         "Dodaj"
@@ -133,7 +133,7 @@
         "Zastosuj"
       ],
       "Archive": [
-        "Archiwizuj"
+        "Archiwum"
       ],
       "As Scheduled": [
         "Zgodnie z planem"
@@ -142,7 +142,7 @@
         "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontakt",
         "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontakty",
         "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontaktów",
-        "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontaktów"
+        "Każda grupa kontaktów może mieć co najwyżej ${ maxContacts } kontaktów."
       ],
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
@@ -157,7 +157,7 @@
         "Uwierzytelnij"
       ],
       "Auto-delete spam and trash": [
-        "Automatyczne usuwanie spamu i kosza"
+        "Auto usuwanie spamu i kosza"
       ],
       "Back": [
         "Wstecz"
@@ -361,7 +361,7 @@
         "Obecny plan"
       ],
       "Custom": [
-        "Niestandardowo"
+        "Niestandardowe"
       ],
       "Customize": [
         "Dostosuj"
@@ -388,7 +388,7 @@
         "Usuń ${ selectedCount } grupy kontaktów"
       ],
       "Delete all": [
-        "Usuń wszystko"
+        "Usuń wszystkie"
       ],
       "Delete contact": [
         "Usuń kontakt"
@@ -868,7 +868,7 @@
         "Zmień zaznaczenie"
       ],
       "Monday": [
-        "Poniedziałek"
+        "poniedziałek"
       ],
       "More": [
         "Więcej"
@@ -1165,7 +1165,7 @@
         "Przywróć oryginalny widok"
       ],
       "Run on ${ BRAND_NAME } servers": [
-        "Uruchom na serwerach ${ BRAND_NAME }"
+        "Włącz na serwerach ${ BRAND_NAME }"
       ],
       "Save": [
         "Zapisz"
@@ -1204,7 +1204,7 @@
         "Wybierz ${ planTitle }"
       ],
       "Select All": [
-        "Zaznacz wszystkie"
+        "Zaznacz wszystko"
       ],
       "Select all": [
         "Zaznacz wszystkie"
@@ -1255,7 +1255,7 @@
         "Ustaw jako okładkę albumu"
       ],
       "Set as default": [
-        "Ustaw jako domyślną"
+        "Ustaw jako domyślny"
       ],
       "Set encryption": [
         "Ustaw szyfrowanie"
@@ -1357,7 +1357,7 @@
         "Pomiń weryfikację"
       ],
       "Snooze": [
-        "Odłóż"
+        "Odłożone"
       ],
       "Star": [
         "Oznacz gwiazdką"
@@ -1600,10 +1600,10 @@
         "Tak, będę uczestniczyć"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontakt",
+        "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontaktów",
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontakty",
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontaktów",
-        "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontaktów"
+        "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontakt"
       ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
         "Darmowa wersja próbna aplikacji desktopowej zakończy się za 2 dni. ${ upgradeButton }"
@@ -1622,6 +1622,15 @@
       ],
       "Zoom out": [
         "Pomniejsz"
+      ],
+      "Change password": [
+        "Zmień hasło"
+      ],
+      "Go to ${ planOrAppName }": [
+        "Przejdź do ${ planOrAppName }"
+      ],
+      "Select ${ planOrAppName }": [
+        "Wybierz plan ${ planOrAppName }"
       ]
     },
     "action": {
@@ -1862,10 +1871,10 @@
         "Nieograniczona liczba folderów, etykiet i filtrów"
       ],
       "Use your own email domain": [
-        "Użyj własnej domeny"
+        "Użyj własnej domeny e-mail"
       ],
       "years": [
-        "lat"
+        "lata"
       ]
     },
     "anniversary_2025: offer": {
@@ -1923,7 +1932,7 @@
         "Brak przechowywania logów, aby chronić Twoją prywatność. Szybsze przetwarzanie."
       ],
       "Run on ${ BRAND_NAME } servers": [
-        "Uruchom na serwerach ${ BRAND_NAME }"
+        "Włącz na serwerach ${ BRAND_NAME }"
       ],
       "Run on device": [
         "Uruchom na urządzeniu"
@@ -2108,7 +2117,7 @@
         "Nieograniczona liczba danych logowania, karty płatniczych, aliasów hide-my-email i nie tylko"
       ],
       "Use your own email domain": [
-        "Użyj własnej domeny e-mail"
+        "Użyj własnej domeny"
       ],
       "Version history": [
         "Historia wersji"
@@ -2288,7 +2297,7 @@
         "Odkryj i skonfiguruj funkcje"
       ],
       "Got it": [
-        "Ok"
+        "OK"
       ],
       "Maybe later": [
         "Może później"
@@ -2872,7 +2881,7 @@
     },
     "Composer email icon": {
       "End-to-end encrypted": [
-        "Zaszyfrowana end-to-end"
+        "Szyfrowany end-to-end"
       ],
       "End-to-end encrypted to verified recipient": [
         "Zaszyfrowana end-to-end do zweryfikowanego odbiorcy"
@@ -2901,7 +2910,7 @@
         "Zmaksymalizowany"
       ],
       "Normal": [
-        "Standardowy"
+        "Standardowa"
       ]
     },
     "Condition for custom filter": {
@@ -3929,7 +3938,7 @@
       "Every ${ interval } day, ${ timesString }": [
         "Co ${ interval } dzień, ${ timesString }",
         "Co ${ interval } dni, ${ timesString }",
-        "Co ${ interval } dni, ${ timesString }",
+        "Co ${ interval } dnia, ${ timesString }",
         "Co ${ interval } dnia, ${ timesString }"
       ]
     },
@@ -3939,8 +3948,8 @@
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Co ${ interval } dzień, ${ untilString }",
-        "Co ${ interval } dni, ${ untilString }",
-        "Co ${ interval } dni, ${ untilString }",
+        "Co ${ interval } dnia, ${ untilString }",
+        "Co ${ interval } dnia, ${ untilString }",
         "Co ${ interval } dnia, ${ untilString }"
       ]
     },
@@ -4858,7 +4867,7 @@
         "Niektóre nazwy etykiet przekraczają maksymalny limit znaków ${ MAIL_APP_NAME }. Dostosuj proces importowania, aby zmienić te nazwy."
       ],
       "Something went wrong. Please try again.": [
-        "Coś poszło nie tak. Spróbuj ponownie później."
+        "Coś poszło nie tak. Spróbuj ponownie."
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "${ BRAND_NAME } nie może odszyfrować wiadomości. Sprawdź, czy wszystkie klucze są aktywne."
@@ -5028,7 +5037,7 @@
         "Zaproszenie może zawierać maksymalnie ${ maxAttendees } uczestnika",
         "Zaproszenie może zawierać maksymalnie ${ maxAttendees } uczestników",
         "Zaproszenie może zawierać maksymalnie ${ maxAttendees } uczestników",
-        "Zaproszenie może zawierać maksymalnie ${ maxAttendees } uczestników"
+        "Na jedno zaproszenie może przypadać co najwyżej ${ maxAttendees } uczestników."
       ]
     },
     "Error display when performing invalid move on message": {
@@ -5298,7 +5307,7 @@
         "Odrzuć zaproszenie"
       ],
       "Got it": [
-        "Ok"
+        "OK"
       ],
       "Switch plans": [
         "Zmień plany"
@@ -5434,7 +5443,7 @@
         "Zawiera obsługę 3 niestandardowych domen, 90 adresów e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
+        "Zabezpiecz swoje pliki za pomocą szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ]
     },
     "Feature": {
@@ -5525,7 +5534,7 @@
         "Nie przenoś"
       ],
       "Inbox": [
-        "Odebrane"
+        "Skrzynka odbiorcza"
       ],
       "Inbox - Default": [
         "Odebrane (domyślny)"
@@ -5534,10 +5543,10 @@
         "Wybierz folder"
       ],
       "Spam": [
-        "Spam"
+        "Przenieś do spamu"
       ],
       "Trash": [
-        "Kosz"
+        "Przenieś do kosza"
       ]
     },
     "Filter modal operators": {
@@ -5587,7 +5596,7 @@
     },
     "Filter option": {
       "All": [
-        "Wszystkie"
+        "Wszystko"
       ],
       "Hide moved message": [
         "Ukryj przeniesioną wiadomość"
@@ -5633,12 +5642,12 @@
     },
     "Font Face Default": {
       "Default": [
-        "Domyślna"
+        "Domyślny"
       ]
     },
     "Font face option": {
       "System default": [
-        "Domyślny systemu"
+        "Domyślne ustawienia systemu"
       ],
       "Theme font": [
         "Czcionka"
@@ -6576,7 +6585,7 @@
         "${ storage } przestrzeni dyskowej"
       ],
       "${ subscription.UnreadMessageCount } unread": [
-        "${ subscription.UnreadMessageCount } nieprzeczytana",
+        "${ subscription.UnreadMessageCount } nieprzeczytanych",
         "${ subscription.UnreadMessageCount } nieprzeczytane",
         "${ subscription.UnreadMessageCount } nieprzeczytanych",
         "${ subscription.UnreadMessageCount } nieprzeczytanych"
@@ -6702,13 +6711,13 @@
         "Aktywacja jest w toku"
       ],
       "Active": [
-        "Aktywne"
+        "Włączony"
       ],
       "Ad targeting": [
         "Kierowanie reklam"
       ],
       "Add image URL": [
-        "Dodaj adres URL obrazu"
+        "Dodaj adres URL zdjęcia"
       ],
       "Address copied to clipboard": [
         "Adres został skopiowany do schowka"
@@ -6765,10 +6774,10 @@
         "Wszystkie zmiany zostaną utracone."
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Zostanie zaimportowane maksymalnie ${ MAX_CONTACTS_PER_USER } kontakt",
+        "Zostanie zaimportowanych maksymalnie ${ MAX_CONTACTS_PER_USER } kontaktów",
         "Zostaną zaimportowane maksymalnie ${ MAX_CONTACTS_PER_USER } kontakty",
         "Zostanie zaimportowanych maksymalnie ${ MAX_CONTACTS_PER_USER } kontaktów",
-        "Zostanie zaimportowanych maksymalnie ${ MAX_CONTACTS_PER_USER } kontaktów"
+        "Zostanie zaimportowane maksymalnie ${ MAX_CONTACTS_PER_USER } kontakt"
       ],
       "Allocated": [
         "Przydzielona"
@@ -7179,7 +7188,7 @@
         "Edytuj link"
       ],
       "email": [
-        "wiadomość"
+        "adres e-mail"
       ],
       "Email address": [
         "Adres e-mail"
@@ -7266,7 +7275,7 @@
         "Wygasa za ${ minutesDiff } minutę",
         "Wygasa za ${ minutesDiff } minuty",
         "Wygasa za ${ minutesDiff } minut",
-        "Wygasa za ${ minutesDiff } minuty"
+        "Wygasa za ${ minutesDiff } minut"
       ],
       "Expires in less than ${ hoursDiff } hour": [
         "Wygasa za mniej niż ${ hoursDiff } godzinę",
@@ -7287,7 +7296,7 @@
         "finanse"
       ],
       "Folder": [
-        "Folder"
+        "folder"
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "Aby uzyskać dodatkowe informacje i usunąć ograniczenia, zaloguj się pod adresem ${ mailLink }."
@@ -7304,7 +7313,7 @@
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "Za darmo do wypróbowania przez ${ ASSISTANT_TRIAL_TIME_DAYS } dzień",
         "Za darmo do wypróbowania przez ${ ASSISTANT_TRIAL_TIME_DAYS } dni",
-        "Za darmo do wypróbowania przez ${ ASSISTANT_TRIAL_TIME_DAYS } dni",
+        "Za darmo do wypróbowania przez ${ ASSISTANT_TRIAL_TIME_DAYS } dnia",
         "Za darmo do wypróbowania przez ${ ASSISTANT_TRIAL_TIME_DAYS } dnia"
       ],
       "From": [
@@ -7383,7 +7392,7 @@
         "Opis obrazu"
       ],
       "Image URL": [
-        "Adres URL obrazu"
+        "Adres URL zdjęcia"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
         "Obrazy zostały usunięte, ponieważ nie są dozwolone w automatycznej odpowiedzi"
@@ -7557,7 +7566,7 @@
         "Użytkownik"
       ],
       "Members": [
-        "Członkowie"
+        "Użytkownicy"
       ],
       "Merged": [
         "Scalony"
@@ -7677,7 +7686,7 @@
         "Żaden z przesłanych kluczy nie jest przeznaczony do szyfrowania. Prześlij prawidłowy klucz lub wyłącz opcję \"Zaszyfruj wiadomości\", aby wysyłać wiadomości na ten adres."
       ],
       "Normal": [
-        "Standardowy"
+        "Standardowa"
       ],
       "Not a valid URL": [
         "To nie jest prawidłowy adres URL"
@@ -7950,7 +7959,7 @@
         "Wygląda na to, że jesteś już na bieżąco z wiadomościami"
       ],
       "Select all ${ elementsCount } in ${ location }": [
-        "Zaznacz ${ elementsCount } w ${ location }",
+        "Zaznacz wszystkie ${ elementsCount } w ${ location }",
         "Zaznacz wszystkie ${ elementsCount } w ${ location }",
         "Zaznacz wszystkie ${ elementsCount } w ${ location }",
         "Zaznacz wszystkie ${ elementsCount } w ${ location }"
@@ -8908,6 +8917,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od uporządkowanej skrzynki odbiorczej dzieli Cię kilka kliknięć"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Wpisz swoje hasło (jako zaufany kontakt)."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Wszystko w planie ${ planOrAppName }"
       ]
     },
     "info": {
@@ -8918,7 +8933,7 @@
         "Znaleziono ${ filteredList.length } poleceń."
       ],
       "Optional": [
-        "Opcjonalnie"
+        "Opcjonalne"
       ],
       "Selected color:": [
         "Wybrany kolor:"
@@ -9223,7 +9238,7 @@
         "Przestrzeń dyskowa konta"
       ],
       "Actions": [
-        "Akcje"
+        "Działania"
       ],
       "Active filter:": [
         "Aktywny filtr:"
@@ -9869,6 +9884,9 @@
       ],
       "Your password (admin)": [
         "Twoje hasło (administratora)"
+      ],
+      "Your password (trusted contact)": [
+        "Twoje hasło (zaufany kontakt)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10080,7 +10098,7 @@
         "w przypadku wycieku danych"
       ],
       "Inbox": [
-        "Odebrane"
+        "Skrzynka odbiorcza"
       ],
       "Labels": [
         "Etykiety"
@@ -10134,7 +10152,7 @@
         "Zaplanowane"
       ],
       "Sent": [
-        "Wysłane"
+        "Wysłano"
       ],
       "settings": [
         "ustawieniach"
@@ -10149,7 +10167,7 @@
         "Odłożone"
       ],
       "Spam": [
-        "Spam"
+        "Przenieś do spamu"
       ],
       "Starred": [
         "Wyróżnione"
@@ -10312,13 +10330,13 @@
         "Archiwum"
       ],
       "Inbox": [
-        "Odebrane"
+        "Skrzynka odbiorcza"
       ],
       "Spam": [
-        "Spam"
+        "Przenieś do spamu"
       ],
       "Trash": [
-        "Kosz"
+        "Przenieś do kosza"
       ]
     },
     "mailtrial2024: Action": {
@@ -11082,7 +11100,7 @@
         "Na ${ n } urządzenie jednocześnie",
         "Na ${ n } urządzenia jednocześnie",
         "Na ${ n } urządzeń jednocześnie",
-        "Na ${ n } urządzeń jednocześnie"
+        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie"
       ],
       "User credential management": [
         "Zarządzanie danymi logowania użytkownika"
@@ -11647,7 +11665,7 @@
         "Płać rocznie i uzyskaj najlepszą ofertę"
       ],
       "Save": [
-        "Zaoszczędź"
+        "Zapisz"
       ],
       "Save big when you pay annually": [
         "Zaoszczędź więcej przy płatności rocznej"
@@ -11802,7 +11820,7 @@
         "Ciesz się szybszym wysyłaniem wiadomości za pomocą aplikacji desktopowej."
       ],
       "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
-        "Uzyskaj dostęp do poczty w dowolnym momencie, gdziekolwiek jesteś. Pobierz naszą aplikację ${ mobileAppAppStoreLink } lub ${ mobileAppGooglePlayLink }."
+        "Uzyskaj dostęp do poczty e-mail w dowolnym momencie i zoptymalizuj korzystanie z urządzeń mobilnych, pobierz naszą aplikację ${ mobileAppAppStoreLink } lub ${ mobileAppGooglePlayLink }."
       ],
       "Get notified if your password is compromised.": [
         "Otrzymaj powiadomienie, jeśli Twoje hasło zostanie naruszone."
@@ -11854,6 +11872,9 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Twoja domena i subskrypcja są gotowe do użycia."
+      ],
+      "Android": [
+        "Android"
       ]
     },
     "Onboarding Proton": {
@@ -11939,10 +11960,10 @@
     },
     "Online Accounts Name": {
       "Banking": [
-        "Finanse"
+        "Bankowość"
       ],
       "Crypto": [
-        "Kryptowaluty"
+        "Kryptowaluta"
       ],
       "E-commerce and Retail": [
         "Zakupy"
@@ -11954,7 +11975,7 @@
         "Jedzenie"
       ],
       "Gaming": [
-        "Gry"
+        "Rozrywka"
       ],
       "Most popular": [
         "Najpopularniejsze"
@@ -11971,7 +11992,7 @@
         "Dodaj do istniejącej grupy"
       ],
       "All": [
-        "Wszystkie"
+        "Wszystko"
       ],
       "Automatic (${ value })": [
         "Automatyczny (${ value })"
@@ -12134,7 +12155,7 @@
         "W tym czasie nie będzie można edytować lub anulować subskrypcji. Poczekaj na zakończenie płatności przed dokonaniem zmian. Dziękujemy za cierpliwość."
       ],
       "Got it": [
-        "Ok"
+        "OK"
       ],
       "I'm purchasing as a business": [
         "Kupuję jako firma"
@@ -12299,7 +12320,7 @@
         "Adres e-mail"
       ],
       "End date": [
-        "Zakres dat do"
+        "Data zakończenia"
       ],
       "Filter folders": [
         "Filtruj foldery"
@@ -12395,7 +12416,7 @@
         "Napisz, jak możemy ulepszyć usługi ${ BRAND_NAME }"
       ],
       "Start date": [
-        "Zakres dat od"
+        "Data rozpoczęcia"
       ],
       "Start typing an email address": [
         "Wpisz adres e-mail"
@@ -12580,10 +12601,10 @@
     },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
-        "${ remainingDays } dzień",
-        "${ remainingDays } dni",
-        "${ remainingDays } dni",
-        "${ remainingDays } dnia"
+        "${ remainingDays } d",
+        "${ remainingDays } d",
+        "${ remainingDays } d",
+        "${ remainingDays } d"
       ],
       "<1 d": [
         "za mniej niż dzień"
@@ -12782,7 +12803,7 @@
         "Zaszyfrowana przez ${ MAIL_APP_NAME } do zweryfikowanego odbiorcy"
       ],
       "End-to-end encrypted": [
-        "Zaszyfrowana end-to-end"
+        "Szyfrowany end-to-end"
       ],
       "End-to-end encrypted to PGP recipient": [
         "Zaszyfrowana end-to-end do odbiorcy PGP"
@@ -12823,7 +12844,7 @@
         "Anuluj resetowanie hasła"
       ],
       "Reset password": [
-        "Resetowanie hasła"
+        "Zresetuj hasło"
       ]
     },
     "session_recovery:available:error": {
@@ -12843,7 +12864,7 @@
       ],
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } godzinę",
-        "${ timeRemaining.inHours } godziny",
+        "${ timeRemaining.inHours } godzin",
         "${ timeRemaining.inHours } godzin",
         "${ timeRemaining.inHours } godziny"
       ],
@@ -12856,14 +12877,14 @@
       "This permission expires in ${ timeRemaining.inDays } day": [
         "Uprawnienie wygaśnie za ${ timeRemaining.inDays } dzień",
         "Uprawnienie wygaśnie za ${ timeRemaining.inDays } dni",
-        "Uprawnienie wygaśnie za ${ timeRemaining.inDays } dni",
+        "Uprawnienie wygaśnie za ${ timeRemaining.inDays } dnia",
         "Uprawnienie wygaśnie za ${ timeRemaining.inDays } dnia"
       ],
       "This permission expires in ${ timeRemaining.inHours } hour": [
         "Uprawnienie wygaśnie za ${ timeRemaining.inHours } godzinę",
         "Uprawnienie wygaśnie za ${ timeRemaining.inHours } godziny",
         "Uprawnienie wygaśnie za ${ timeRemaining.inHours } godzin",
-        "Uprawnienie wygaśnie za ${ timeRemaining.inHours } godziny"
+        "To uprawnienie wygasa za ${ timeRemaining.inHours } godzin"
       ],
       "This permission expires soon": [
         "Uprawnienie wkrótce wygaśnie"
@@ -12877,26 +12898,26 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Masz ${ timeRemaining.inDays } dzień na zresetowanie hasła.",
         "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inDays } dnia na zresetowanie hasła.",
         "Masz ${ timeRemaining.inDays } dnia na zresetowanie hasła."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Masz ${ timeRemaining.inHours } godzinę na zresetowanie hasła.",
         "Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła.",
         "Masz ${ timeRemaining.inHours } godzin na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła."
+        "Masz ${ timeRemaining.inHours } godzin na zresetowanie hasła."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Masz ${ timeRemaining.inMinutes } minutę na zresetowanie hasła.",
         "Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła.",
         "Masz ${ timeRemaining.inMinutes } minut na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła."
+        "Masz ${ timeRemaining.inMinutes } minut na zresetowanie hasła."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Masz ${ timeRemaining.inSeconds } sekundę na zresetowanie hasła.",
         "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła.",
         "Masz ${ timeRemaining.inSeconds } sekund na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła."
+        "Masz ${ timeRemaining.inSeconds } sekund na zresetowanie hasła."
       ]
     },
     "session_recovery:available:link": {
@@ -12949,7 +12970,7 @@
         "Anuluj żądanie"
       ],
       "Got it": [
-        "Ok"
+        "OK"
       ],
       "Learn more": [
         "Dowiedz się więcej"
@@ -12960,7 +12981,7 @@
         "${ gracePeriodHoursRemaining } godzinę",
         "${ gracePeriodHoursRemaining } godziny",
         "${ gracePeriodHoursRemaining } godzin",
-        "${ gracePeriodHoursRemaining } godziny"
+        "${ gracePeriodHoursRemaining } godzin"
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Jeśli żądanie zmiany hasła nie zostało wysłane przez Ciebie, anuluj je."
@@ -12969,7 +12990,7 @@
         "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godzinę.",
         "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godziny.",
         "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godzin.",
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godziny."
+        "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Aby upewnić się, że to Ty próbujesz zresetować hasło, czekamy 72 godziny przed zatwierdzeniem żądań. Hasło możesz zmienić za ${ boldTimeLeft }. ${ viewRequest }"
@@ -12990,7 +13011,7 @@
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "Wyloguj"
+        "Wylogowanie"
       ],
       "Stay signed in": [
         "Pozostań zalogowany"
@@ -13001,7 +13022,7 @@
         "${ gracePeriodHoursRemaining } godzinę",
         "${ gracePeriodHoursRemaining } godziny",
         "${ gracePeriodHoursRemaining } godzin",
-        "${ gracePeriodHoursRemaining } godziny"
+        "${ gracePeriodHoursRemaining } godzin"
       ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } jest dostępne."
@@ -13151,7 +13172,7 @@
         "${ n } miesiąc ZA DARMO",
         "${ n } miesiące ZA DARMO",
         "${ n } miesięcy ZA DARMO",
-        "${ n } miesięcy ZA DARMO"
+        "${ n } miesiąca BEZPŁATNIE"
       ]
     },
     "specialoffer: Deal details": {
@@ -13249,7 +13270,7 @@
         "/ miesiąc"
       ],
       "1 year": [
-        "1 rok"
+        "rok"
       ],
       "15 months": [
         "15 miesięcy"
@@ -13352,7 +13373,7 @@
         "Otrzymaj płatne wersje wszystkich nowych usług prywatności bez dodatkowych kosztów, a także wcześniejszy dostęp do wszystkich przyszłych funkcji i usług."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
+        "Zabezpiecz swoje pliki za pomocą szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ]
     },
     "Spotlight": {
@@ -13411,7 +13432,7 @@
         "Alias został wyłączony"
       ],
       "Unsubscribed": [
-        "Subskrypcja została anulowana"
+        "Anulowane"
       ]
     },
     "Step": {
@@ -13430,7 +13451,7 @@
     },
     "Step in filter modal": {
       "Actions": [
-        "Akcje"
+        "Działania"
       ],
       "Conditions": [
         "Warunki"
@@ -13625,7 +13646,7 @@
     },
     "Subscription length": {
       "Lifetime": [
-        "Dożywotnia"
+        "Dożywotnio"
       ]
     },
     "Subscription price": {
@@ -13749,7 +13770,7 @@
         "Buduj zaufanie i rozpoznawalność marki dzięki profesjonalnym adresom e-mail we własnej domenie."
       ],
       "Catch-all email address": [
-        "Adresy catch-all"
+        "Adres catch-all"
       ],
       "Comprehensive privacy and security": [
         "Wszechstronna ochrona prywatności i bezpieczeństwo"
@@ -14273,7 +14294,7 @@
         "Wiadomości od ${ sendersList } zostaną przeniesione do folderu ${ folder }"
       ],
       "Move ${ selectionCount } conversation": [
-        "Przenieś wątek",
+        "Przenieś ${ selectionCount } wątek",
         "Przenieś ${ selectionCount } wątki",
         "Przenieś ${ selectionCount } wątków",
         "Przenieś ${ selectionCount } wątków"
@@ -14343,6 +14364,42 @@
       ],
       "You have successfully unsubscribed": [
         "Subskrypcja została anulowana"
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } wątek został przeniesiony do folderu ${ labelName }, a nadawca został usunięty z listy spamu.",
+        "${ elementsCount } wątki zostały przeniesione do folderu ${ labelName }, a nadawca został usunięty z listy spamu.",
+        "${ elementsCount } wątków zostało przeniesionych do folderu ${ labelName }, a nadawca został usunięty z listy spamu.",
+        "${ elementsCount } wątków zostało przeniesionych do folderu ${ labelName }, a nadawca został usunięty z listy spamu."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "Przeniesiono ${ elementsCount } wątek do folderu ${ labelName }.",
+        "Przeniesiono ${ elementsCount } wątki do folderu ${ labelName }.",
+        "Przeniesiono ${ elementsCount } wątków do folderu ${ labelName }.",
+        "Przeniesiono ${ elementsCount } wątków do folderu ${ labelName }."
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } wiadomość została przeniesiona do folderu ${ labelName }, a nadawca został usunięty z listy spamu.",
+        "${ elementsCount } wiadomości zostały przeniesione do folderu ${ labelName }, a nadawca został usunięty z listy spamu.",
+        "${ elementsCount } wiadomości zostało przeniesionych do folderu ${ labelName }, a nadawca został usunięty z listy spamu.",
+        "${ elementsCount } wiadomości zostało przeniesionych do folderu ${ labelName }, a nadawca został usunięty z listy spamu."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "Przeniesiono ${ elementsCount } wiadomość do folderu ${ labelName }.",
+        "Przeniesiono ${ elementsCount } wiadomości do folderu ${ labelName }.",
+        "Przeniesiono ${ elementsCount } wiadomości do folderu ${ labelName }.",
+        "Przeniesiono ${ elementsCount } wiadomości do folderu ${ labelName }."
+      ],
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "Wątek został przeniesiony do folderu ${ labelName }, a nadawca został usunięty z listy spamu."
+      ],
+      "Conversation moved to ${ labelName }.": [
+        "Wątek został przeniesiony do folderu ${ labelName }."
+      ],
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "Wiadomość została przeniesiona do folderu ${ labelName }, a nadawca został usunięty z listy spamu."
+      ],
+      "Message moved to ${ labelName }.": [
+        "Wiadomość została przeniesiona do folderu ${ labelName }."
       ]
     },
     "Success notification": {
@@ -14389,7 +14446,7 @@
         "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera historię wersji, szyfrowane udostępnianie plików i wiele więcej."
+        "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje historię wersji, zaszyfrowane udostępnianie plików i nie tylko."
       ]
     },
     "Tab subscription modal": {
@@ -14475,26 +14532,26 @@
       "${ ceilDays } day": [
         "${ ceilDays } dzień",
         "${ ceilDays } dni",
-        "${ ceilDays } dni",
+        "${ ceilDays } dnia",
         "${ ceilDays } dnia"
       ],
       "${ ceilHours } hour": [
         "${ ceilHours } godzina",
         "${ ceilHours } godziny",
         "${ ceilHours } godzin",
-        "${ ceilHours } godziny"
+        "${ ceilHours } godzin"
       ],
       "${ ceilMinutes } minute": [
         "${ ceilMinutes } minuta",
         "${ ceilMinutes } minuty",
         "${ ceilMinutes } minut",
-        "${ ceilMinutes } minuty"
+        "${ ceilMinutes } minut"
       ],
       "${ seconds } second": [
         "${ seconds } sekunda",
         "${ seconds } sekundy",
         "${ seconds } sekund",
-        "${ seconds } sekundy"
+        "${ seconds } sekund"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -14566,7 +14623,7 @@
         "Uzyskaj adres “@${ PM_DOMAIN }“"
       ],
       "Open ": [
-        "Otwórz "
+        "Nierozwiązane "
       ],
       "Show me how": [
         "Pokaż jak"
@@ -14598,7 +14655,7 @@
         "${ unreads } nieprzeczytanych wiadomości"
       ],
       "(active)": [
-        "(aktywny)"
+        "(włączony)"
       ],
       "A filter name is required": [
         "Nazwa filtra jest wymagana"
@@ -14676,7 +14733,7 @@
         "Czy na pewno?"
       ],
       "Attachments": [
-        "Załączniki"
+        "Zawiera załącznik"
       ],
       "Auto-deletion is active": [
         "Automatyczne usuwanie jest aktywne"
@@ -14820,19 +14877,19 @@
         "Usuń ${ count } grupy kontaktów"
       ],
       "Delete ${ count } conversation": [
-        "Usuń wątek",
+        "Usuń ${ count } wątek",
         "Usuń ${ count } wątki",
         "Usuń ${ count } wątków",
-        "Usuń ${ count } wątków"
+        "Usuń ${ count } wątów"
       ],
       "Delete ${ count } draft": [
-        "Usuń szkic",
+        "Usuń ${ count } szkic",
         "Usuń ${ count } szkice",
         "Usuń ${ count } szkiców",
         "Usuń ${ count } szkiców"
       ],
       "Delete ${ count } message": [
-        "Usuń wiadomość",
+        "Usuń ${ count } wiadomość",
         "Usuń ${ count } wiadomości",
         "Usuń ${ count } wiadomości",
         "Usuń ${ count } wiadomości"
@@ -15321,7 +15378,7 @@
         "Wybierz grupę kontaktów"
       ],
       "Self-destruct message": [
-        "Samoniszcząca się wiadomość"
+        "Ustaw samozniszczenie"
       ],
       "Send email": [
         "Wyślij wiadomość"
@@ -15387,13 +15444,13 @@
         "Uprość zarządzanie hasłami"
       ],
       "Snooze": [
-        "Odłóż"
+        "Odłożone"
       ],
       "Snooze message": [
         "Odłóż wiadomość"
       ],
       "Snooze:": [
-        "Odłóż:"
+        "Odłożone:"
       ],
       "Sort conversations": [
         "Sortuj wątki"
@@ -15716,7 +15773,7 @@
         "${ n } urządzenie",
         "${ n } urządzenia",
         "${ n } urządzeń",
-        "${ n } urządzenia"
+        "${ n } urządzeń"
       ],
       "${ n } server": [
         "${ n } serwer",
@@ -15753,6 +15810,12 @@
         "Serwery w ponad ${ numberOfCountries } krajach",
         "Serwery w ponad ${ numberOfCountries } krajach",
         "Serwery w ponad ${ numberOfCountries } krajach"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } kraju",
+        "${ numberOfCountries } krajach",
+        "${ numberOfCountries } krajach",
+        "${ numberOfCountries } krajach"
       ]
     },
     "vpn_2024: renew": {
@@ -15799,7 +15862,7 @@
         "${ n } konto na portfel",
         "${ n } konta na portfel",
         "${ n } kont na portfel",
-        "${ n } konta na portfel"
+        "${ n } kont na portfel"
       ],
       "${ n } wallet": [
         "${ n } portfel",
@@ -15912,7 +15975,7 @@
         "pon., ${ formatTime }"
       ],
       "Sat, ${ formatTime }": [
-        "sob, ${ formatTime }"
+        "sob., ${ formatTime }"
       ],
       "Sun, ${ formatTime }": [
         "nie., ${ formatTime }"
@@ -16234,6 +16297,11 @@
       ],
       "Passcode:": [
         "Kod dostępu:"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Zaufany kontakt"
       ]
     }
   }

@@ -133,7 +133,7 @@
         "Použiť"
       ],
       "Archive": [
-        "Archív"
+        "Archivovať"
       ],
       "As Scheduled": [
         "Podľa plánu"
@@ -157,7 +157,7 @@
         "Overiť"
       ],
       "Auto-delete spam and trash": [
-        "Automatické mazanie spamu a koša"
+        "Automaticky vymazať spam a Kôš"
       ],
       "Back": [
         "Späť"
@@ -172,7 +172,7 @@
         "Zablokovať sledovanie emailov"
       ],
       "Block messages from this sender": [
-        "Blokovať správy tohto odosielateľa"
+        "Blokovať správy od tohto odosielateľa"
       ],
       "Block sender": [
         "Blokovať odosielateľa"
@@ -250,7 +250,7 @@
         "Zatvoriť"
       ],
       "Close composer": [
-        "Zavrieť editor správy"
+        "Zatvoriť editor"
       ],
       "Close navigation": [
         "Zavrieť menu"
@@ -388,7 +388,7 @@
         "Zmazať ${ selectedCount } skupinu kontaktov"
       ],
       "Delete all": [
-        "Zmazať všetko"
+        "Výmazať všetko"
       ],
       "Delete contact": [
         "Zmazať kontakt"
@@ -508,7 +508,7 @@
         "Emoji"
       ],
       "Enable": [
-        "Povoliť"
+        "Zapnúť"
       ],
       "Enable ${ darkWebMonitoring }": [
         "Povoliť ${ darkWebMonitoring }"
@@ -670,7 +670,7 @@
         "Hide-my-email"
       ],
       "hide-my-email aliases": [
-        "hide-my-email aliasy"
+        "Hide-my-email aliasy"
       ],
       "I like this response": [
         "Páči sa mi táto odpoveď"
@@ -728,15 +728,15 @@
       ],
       "Insert ${ totalChecked } contact": [
         "Vložiť ${ totalChecked } kontakt",
+        "Vložiť ${ totalChecked } kontakt",
         "Vložiť ${ totalChecked } kontakty",
-        "Vložiť ${ totalChecked } kontaktov",
         "Vložiť ${ totalChecked } kontaktov"
       ],
       "Insert contact": [
         "Vložiť kontakt"
       ],
       "Insert contacts": [
-        "Vložiť kontakty"
+        "Vložte kontakty"
       ],
       "Insert image": [
         "Vložiť obrázok"
@@ -757,7 +757,7 @@
         "Označiť ako"
       ],
       "Label as...": [
-        "Označiť ako…"
+        "Označenie ako..."
       ],
       "label emails as": [
         "označiť emaily ako"
@@ -778,7 +778,7 @@
         "Porozprávajme sa"
       ],
       "Load": [
-        "Nahrať"
+        "Načítať"
       ],
       "Load embedded images": [
         "Načítať vložené obrázky"
@@ -925,7 +925,7 @@
         "Presunúť do priečinka Doručená pošta"
       ],
       "Move to inbox (not spam)": [
-        "Presunúť do schránky (nie je spam)"
+        "Presunúť do priečinka Doručenej pošty (nie do spamu)"
       ],
       "Move to spam": [
         "Presunúť do spamu"
@@ -940,7 +940,7 @@
         "Presunúť do koša"
       ],
       "Move to...": [
-        "Presunúť do…"
+        "Presunúť do..."
       ],
       "Need help?": [
         "Potrebujete pomoc?"
@@ -1054,7 +1054,7 @@
         "Prečítať správu"
       ],
       "Read receipt sent": [
-        "Odoslané potvrdenie o prijatí"
+        "Potvrdenie o prečítaní bolo odoslané"
       ],
       "Recently received": [
         "Nedávno prijaté"
@@ -1255,7 +1255,7 @@
         "Nastaviť ako obal albumu"
       ],
       "Set as default": [
-        "Nastaviť ako predvolené"
+        "Nastaviť ako predvolený"
       ],
       "Set encryption": [
         "Nastavenie šifrovania"
@@ -1360,7 +1360,7 @@
         "Odložiť"
       ],
       "Star": [
-        "Označiť hviezdičkou"
+        "S hviezdičkou"
       ],
       "Start import": [
         "Spustiť import"
@@ -1471,7 +1471,7 @@
         "Zrušiť odloženie"
       ],
       "Unstar": [
-        "Odstrániť hviezdičku"
+        "Bez hviezdičky"
       ],
       "Unsubscribe": [
         "Odhlásiť odber"
@@ -1597,7 +1597,7 @@
         "Áno, budem sa zúčastňovať"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktu",
+        "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov"
@@ -1619,6 +1619,18 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Change password": [
+        "Zmeniť heslo"
+      ],
+      "Go to ${ planOrAppName }": [
+        "Prejsť do ${ planOrAppName }"
+      ],
+      "Select ${ planOrAppName }": [
+        "Vybrať ${ planOrAppName }"
+      ],
+      "Trust key": [
+        "Dôveryhodný kľúč"
       ]
     },
     "action": {
@@ -1862,7 +1874,7 @@
         "Používajte vlastnú emailovú doménu"
       ],
       "years": [
-        "roky"
+        "roka"
       ]
     },
     "anniversary_2025: offer": {
@@ -1878,7 +1890,7 @@
         "${ n } mesiacov"
       ],
       "/ month": [
-        "/ mesiac"
+        "/ mesačným"
       ],
       "12 months": [
         "12 mesiacov"
@@ -2325,25 +2337,25 @@
         "${ participantName } požiadal(a) o najnovšie aktualizácie udalosti, ktorá sa nezhoduje s podrobnosťami vašej pozvánky. Skontrolujte podrobnosti pozvánky vo svojom kalendári."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } odmietol/odmietla pozvanie a navrhol/navrhla nový čas jedného výskytu tejto udalosti."
+        "${ participantName } odmietol/odmietla pozvanie a navrhol/navrhla nový čas pre jeden výskyt tejto udalosti."
       ],
       "${ participantName } declined an invitation and proposed a new time for this event.": [
         "${ participantName } odmietol/odmietla pozvanie a navrhol/navrhla nový čas pre túto udalosť."
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
-        "${ participantName } odmietol/odmietla pozvanie jedného výskytu tejto udalosti."
+        "${ participantName } odmietol/odmietla pozvanie na jeden výskyt udalosti."
       ],
       "${ participantName } declined an invitation to this event.": [
         "${ participantName } odmietol/odmietla pozvanie na túto udalosť."
       ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } odmietol/odmietla vaše pozvanie a navrhol/navrhla nový čas jedného výskytu tejto udalosti."
+        "${ participantName } odmietol/odmietla vaše pozvanie a navrhol/navrhla nový čas pre jeden výskyt tejto udalosti."
       ],
       "${ participantName } declined your invitation and proposed a new time for this event.": [
         "${ participantName } odmietol/odmietla vašu pozvánku a navrhol/navrhla nový čas pre túto udalosť."
       ],
       "${ participantName } declined your invitation to one occurrence of the event.": [
-        "${ participantName } odmietol/odmietla vaše pozvanie jedného výskytu tejto udalosti."
+        "${ participantName } odmietol/odmietla vaše pozvanie na jeden výskyt udalosti."
       ],
       "${ participantName } declined your invitation.": [
         "${ participantName } odmietol/odmietla vašu pozvánku."
@@ -2367,19 +2379,19 @@
         "${ participantName } prijal vaše pozvanie a navrhol nový čas pre túto udalosť. Odpoveď a návrh sú neaktuálne."
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } odmietol/odmietla pozvanie a navrhol/navrhla nový čas jedného výskytu tejto udalosti. Odpoveď a návrh sú neaktuálne."
+        "${ participantName } odmietol/odmietla pozvanie a navrhol/navrhla nový čas pre jeden výskyt tejto udalosti. Odpoveď a návrh sú neaktuálne."
       ],
       "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } odmietol/odmietla pozvanie a navrhol/navrhla nový čas pre túto udalosť. Odpoveď a návrh sú neaktuálne."
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        "${ participantName } odmietol/odmietla pozvanie jedného výskytu tejto udalosti."
+        "${ participantName } odmietol/odmietla pozvanie na jeden výskyt udalosti."
       ],
       "${ participantName } had declined an invitation to this event.": [
         "${ participantName } odmietol/odmietla pozvanie na túto udalosť."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } odmietol/odmietla vaše pozvanie a navrhol/navrhla nový čas jedného výskytu tejto udalosti. Odpoveď a návrh sú neaktuálne."
+        "${ participantName } odmietol/odmietla vaše pozvanie a navrhol/navrhla nový čas pre jeden výskyt tejto udalosti. Odpoveď a návrh sú neaktuálne."
       ],
       "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } odmietol/odmietla vaše pozvanie a navrhol/navrhla nový čas pre túto udalosť. Odpoveď a návrh sú neaktuálne."
@@ -2391,10 +2403,10 @@
         "${ participantName } už predtým prijal vaše pozvanie."
       ],
       "${ participantName } had previously declined your invitation to one occurrence of the event.": [
-        "${ participantName } už predtým odmietol/odmietla vaše pozvanie jedného výskytu tejto udalosti."
+        "${ participantName } už v minulosti odmietol/odmietla vaše pozvanie na jeden výskyt udalosti."
       ],
       "${ participantName } had previously declined your invitation.": [
-        "${ participantName } už predtým odmietol/odmietla vašu pozvánku."
+        "${ participantName } už v minulosti odmietol/odmietla vašu pozvánku."
       ],
       "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
         "${ participantName } predtým predbežne prijal vaše pozvanie jedného výskytu tejto udalosti."
@@ -2472,16 +2484,16 @@
         "${ participantName } predbežne prijal vaše pozvanie."
       ],
       "(Attendance optional)": [
-        "(Účasť nie je povinná)"
+        "(Účasť je voliteľná)"
       ],
       "Adding occurrences to an event is not supported for the moment": [
-        "Pridanie výskytov k udalosti nie je v tejto chvíli podporované"
+        "Pridávanie výskytov udalosti v tejto chvíli nie je podporované"
       ],
       "Event refreshing is not supported for the moment": [
-        "Obnovovanie udalostí nie je zatiaľ podporované"
+        "Obnovenie udalosti momentálne nie je podporované"
       ],
       "Event rescheduling is not supported for the moment": [
-        "Zmena plánu udalosti nie je v tejto chvíli podporovaná"
+        "Preplánovanie udalosti momentálne nie je podporované"
       ],
       "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
         "Túto odpoveď nemožno pridať do ${ CALENDAR_APP_NAME }, pretože zatiaľ podporujeme iba odpovede na všetky udalosti série"
@@ -2821,7 +2833,7 @@
         "Prejsť do zložky Obľúbené"
       ],
       "Go to Trash": [
-        "Prejsť do Koša"
+        "Prejsť do zložky Kôš"
       ],
       "New message": [
         "Nová správa"
@@ -2832,10 +2844,10 @@
     },
     "Composer email icon": {
       "End-to-end encrypted": [
-        "Šifrované End-to-end"
+        "Šifrovanie počas celého spojenia"
       ],
       "End-to-end encrypted to verified recipient": [
-        "Správa overenému príjemcovi s koncovým šifrovaním"
+        "Šifrované typu End-to-end overenému príjemcovi"
       ],
       "End-to-end encrypted. ${ warningsText }": [
         "Šifrované End-to-end. ${ warningsText }"
@@ -2861,7 +2873,7 @@
         "Maximalizované"
       ],
       "Normal": [
-        "Normálne"
+        "Normálna"
       ]
     },
     "Condition for custom filter": {
@@ -2930,7 +2942,7 @@
         "Zadajte zobrazované meno alebo prezývku"
       ],
       "First name": [
-        "Meno"
+        "Krstné meno"
       ],
       "Gender": [
         "Pohlavie"
@@ -3960,7 +3972,7 @@
         "Zahŕňa aj"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
-        "Automatické mazanie emailov presunutých do koša a spamu pred viac než 30 dňami."
+        "Automatické vymazanie emailov presunutých do koša a spamu pred viac ako 30 dňami."
       ],
       "Automatically forward incoming email to another email address.": [
         "Automaticky pre posielajte prichádzajúce emaily na inú emailovú adresu."
@@ -4436,7 +4448,7 @@
       "Choose a date within the next ${ n } day.": [
         "Vyberte dátum v budúcom ${ n } dni.",
         "Vyberte dátum v nasledujúcich ${ n } dňoch.",
-        "Vyberte dátum v nasledujúcich ${ n } dňoch.",
+        "Vyberte dátum v rámci nasledujúcich ${ n } dní.",
         "Vyberte dátum v rámci nasledujúcich ${ n } dní."
       ],
       "Condition incomplete": [
@@ -4470,7 +4482,7 @@
         "Nepodarilo sa otvoriť aktualizovaný trezor"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
-        "Chyba dešifrovania: Dešifrovanie obsahu tejto správy zlyhalo."
+        "Chyba dešifrovania: dešifrovanie šifrovaného obsahu tejto správy zlyhalo."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Zrušte výber aspoň ${ calendarsToFixCount } kalendára",
@@ -4716,7 +4728,7 @@
         "Vyberte kategóriu a čo sa pri generovaní textu pokazilo, prosím"
       ],
       "Please select a country": [
-        "Vyberte krajinu, prosím"
+        "Prosím, vyberte krajinu"
       ],
       "Please select a state": [
         "Vyberte kraj, prosím"
@@ -4975,6 +4987,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhľadávanie našlo príliš veľa výsledkov. Upresnite hľadanie a skúste to prosím znova."
+      ],
+      "This action cannot be performed": [
+        "Túto akciu nie je možné vykonať"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5266,7 +5281,7 @@
     },
     "familyOffer_2023:Deal details": {
       "Up to 6 users": [
-        "Až do 6 užívateľov"
+        "Až 6 používateľov"
       ]
     },
     "familyOffer_2023:Error": {
@@ -5369,7 +5384,7 @@
         "Nastavte svoju rodinu"
       ],
       "Set up your family account": [
-        "Nastavte svoj rodinný účet"
+        "Nastavte si rodinný účet"
       ]
     },
     "familyOffer_2023:Title": {
@@ -5473,13 +5488,13 @@
     },
     "Filter Actions": {
       "Archive": [
-        "Archív"
+        "Archivovať"
       ],
       "Do not move": [
         "Nepresúvať"
       ],
       "Inbox": [
-        "Doručená pošta"
+        "Doručené"
       ],
       "Inbox - Default": [
         "Doručená pošta - predvolená"
@@ -5488,10 +5503,10 @@
         "Vyberte priečinok"
       ],
       "Spam": [
-        "Spam"
+        "Nevyžiadaná pošta"
       ],
       "Trash": [
-        "Kôš"
+        "Presunúť do koša"
       ]
     },
     "Filter modal operators": {
@@ -5541,7 +5556,7 @@
     },
     "Filter option": {
       "All": [
-        "Všetky"
+        "Všetko"
       ],
       "Hide moved message": [
         "Skryť presunutú správu"
@@ -5563,7 +5578,7 @@
     },
     "Filter preview": {
       "read": [
-        "prečítané"
+        "čítať"
       ],
       "starred": [
         "s hviezdičkou"
@@ -5587,7 +5602,7 @@
     },
     "Font Face Default": {
       "Default": [
-        "Predvolená"
+        "Predvolené"
       ]
     },
     "Font face option": {
@@ -5600,7 +5615,7 @@
     },
     "Font Size Default": {
       "Default": [
-        "Predvolená"
+        "Predvolené"
       ]
     },
     "Font size option": {
@@ -5641,7 +5656,7 @@
     },
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
-        "Desktopová aplikácia ${ MAIL_APP_NAME } "
+        "Desktopová aplikácia ${ MAIL_APP_NAME }"
       ],
       "14-day desktop app trial.": [
         "14-dňová skúšobná verzia desktopovej aplikácie."
@@ -5653,7 +5668,7 @@
         "Získajte neobmedzený prístup s akýmkoľvek plánom ${ MAIL_APP_NAME }."
       ],
       "No credit card required.": [
-        "Nie je potrebná platobná karta."
+        "Platobná karta nie je potrebná."
       ],
       "Start free trial": [
         "Začať bezplatnú skúšobnú verziu"
@@ -5670,10 +5685,10 @@
         "${ MAIL_APP_NAME } aplikácia"
       ],
       "${ MAIL_APP_NAME } on App Store": [
-        "${ MAIL_APP_NAME } na App Store"
+        "${ MAIL_APP_NAME } v App Store"
       ],
       "${ MAIL_APP_NAME } on Play Store": [
-        "${ MAIL_APP_NAME } na Play Store"
+        "${ MAIL_APP_NAME } v Play Store"
       ],
       "${ remainingDaysCount } day": [
         "${ remainingDaysCount } deň",
@@ -5730,7 +5745,7 @@
         "Dokončiť nastavenie"
       ],
       "For your eyes only": [
-        "Iba pre vaše oči"
+        "Len pre vaše oči"
       ],
       "Get more storage": [
         "Získajte viac úložného priestoru"
@@ -5748,7 +5763,7 @@
         "Pokračujte v používaní aplikácie ${ MAIL_APP_NAME } a objavte ďalšie spôsoby, ako ${ BRAND_NAME } chráni vaše súkromie a zjednodušuje odosielanie emailov."
       ],
       "Learn more": [
-        "Dozvedieť sa viac"
+        "Zistiť viac"
       ],
       "Nice! You've updated all services in this category.": [
         "Pekne! Aktualizovali ste všetky služby v tejto kategórii."
@@ -5760,7 +5775,7 @@
         "funkcie ochrany súkromia"
       ],
       "Protection from trackers": [
-        "Ochrana pred trackermi"
+        "Ochrana pred sledovaním"
       ],
       "Set up ${ strongText } from Gmail": [
         "Nastaviť ${ strongText } zo služby Gmail"
@@ -5809,7 +5824,7 @@
         "Pokyny na pripojenie"
       ],
       "Less details": [
-        "Menej detailov"
+        "Menej podrobností"
       ],
       "Meeting host:": [
         "Poskytovateľ schôdzky:"
@@ -5818,7 +5833,7 @@
         "Odkaz na schôdzku:"
       ],
       "More details": [
-        "Viac detailov"
+        "Ďalšie podrobnosti"
       ]
     },
     "Group": {
@@ -6530,7 +6545,7 @@
         "${ storage } úložisko"
       ],
       "${ subscription.UnreadMessageCount } unread": [
-        "${ subscription.UnreadMessageCount } neprečítaná",
+        "${ subscription.UnreadMessageCount } neprečítaných",
         "${ subscription.UnreadMessageCount } neprečítané",
         "${ subscription.UnreadMessageCount } neprečítaných",
         "${ subscription.UnreadMessageCount } neprečítaných"
@@ -6662,7 +6677,7 @@
         "Cielená reklama"
       ],
       "Add image URL": [
-        "Pridať URL obrázku"
+        "Pridať URL adresu obrázka"
       ],
       "Address copied to clipboard": [
         "Adresa bola skopírovaná do schránky"
@@ -6800,19 +6815,19 @@
         "Naozaj chcete natrvalo vymazať ${ count } konverzáciu?",
         "Naozaj chcete natrvalo vymazať ${ count } konverzácie?",
         "Naozaj chcete natrvalo vymazať ${ count } konverzácií?",
-        "Naozaj chcete natrvalo vymazať ${ count } konverzácií?"
+        "Naozaj chcete natrvalo odstrániť ${ count } konverzácií?"
       ],
       "Are you sure you want to permanently delete ${ count } draft?": [
         "Naozaj chcete natrvalo vymazať ${ count } koncept?",
         "Naozaj chcete natrvalo vymazať ${ count } koncepty?",
         "Naozaj chcete natrvalo vymazať ${ count } konceptov?",
-        "Naozaj chcete natrvalo vymazať ${ count } konceptov?"
+        "Naozaj chcete natrvalo odstrániť ${ count } konceptov?"
       ],
       "Are you sure you want to permanently delete ${ count } message?": [
         "Naozaj chcete natrvalo vymazať ${ count } správu?",
         "Naozaj chcete natrvalo vymazať ${ count } správy?",
         "Naozaj chcete natrvalo vymazať ${ count } správ?",
-        "Naozaj chcete natrvalo vymazať ${ count } správ?"
+        "Naozaj chcete natrvalo odstrániť ${ count } správ?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
         "Naozaj chcete natrvalo vymazať túto konverzáciu?"
@@ -6839,7 +6854,7 @@
         "Automatické vymazanie emailov presunutých do koša a spamu pred viac ako 30 dňami."
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Automaticky mažte správy, ktoré boli v koši a spame viac ako 30 dní."
+        "Automaticky zmazať správy, ktoré boli v koši a spame viac ako 30 dní."
       ],
       "Awaiting transaction": [
         "Čakanie na transakciu"
@@ -7028,7 +7043,7 @@
         "Detekcia prebieha vo vašom zariadení, takže žiadne údaje z vašich emailov sa neodosielajú na naše servery."
       ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
-        "Vedeli ste, že súčasťou vášho ${ BRAND_NAME } účtu je aj šifrované cloudové úložisko? Prejdite na ${ DRIVE_APP_NAME } a využite svoj priestor naplno. Je to zadarmo."
+        "Vedeli ste, že súčasťou vášho ${ BRAND_NAME } je aj šifrované cloudové úložisko? Účet? Prejdite na ${ DRIVE_APP_NAME } a využite svoj priestor naplno. Je to zadarmo."
       ],
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
         "Vedeli ste to? Len pre vás sme vyhradili kratšiu emailovú adresu. Je to vaše používateľské meno, za ktorým nasleduje “@${ PM_DOMAIN }”."
@@ -7097,7 +7112,7 @@
         "Koncept zmazaný"
       ],
       "Draft saved.": [
-        "Koncept uložený."
+        "Koncept bol uložený."
       ],
       "Drop file here to upload": [
         "Sem presuňte súbor na nahranie"
@@ -7136,7 +7151,7 @@
         "email"
       ],
       "Email address": [
-        "Emailová adresa"
+        "E-mailová adresa"
       ],
       "Email copied to clipboard": [
         "Email skopírovaný do schránky"
@@ -7286,7 +7301,7 @@
         "Obsahuje ${ numAttachments } prílohu (${ numAttachmentsSize })",
         "Obsahuje ${ numAttachments } prílohy (${ numAttachmentsSize })",
         "Obsahuje ${ numAttachments } príloh (${ numAttachmentsSize })",
-        "Obsahuje ${ numAttachments } prílohy (${ numAttachmentsSize })"
+        "Obsahuje ${ numAttachments } príloh (${ numAttachmentsSize })"
       ],
       "here": [
         "tu"
@@ -7475,7 +7490,7 @@
         "Načítanie kalendára, počkajte, prosím. V novej karte budete presmerovaní na našu plánovaciu platformu Calendly."
       ],
       "Loading message": [
-        "Nahrávam správu"
+        "Načítavanie správy"
       ],
       "Loading preview": [
         "Načítanie náhľadu"
@@ -7902,9 +7917,9 @@
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "Vybrať ${ elementsCount } v ${ location }",
-        "Vybrať všetky ${ elementsCount } v ${ location }",
-        "Vybrať všetkých ${ elementsCount } v ${ location }",
-        "Vybrať všetkých ${ elementsCount } v ${ location }"
+        "Vybrať ${ elementsCount } v ${ location }",
+        "Vybrať ${ elementsCount } v ${ location }",
+        "Vybrať ${ elementsCount } v ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát emailu, ktorý chcete aby bol použitý ako predvolený pre zasielanie emailu na túto emailovú adresu."
@@ -8006,7 +8021,7 @@
         "Začnite ju zdieľať s kontaktmi a používajte ju na online služby."
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Začnite používať kratšiu a výstižnejšiu verziu svojej emailovej adresy."
+        "Začnite používať kratšiu verziu vašej emailovej adresy."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Zostaňte ľahko pripojení povolením nasledujúcich nastavení VPN:"
@@ -8453,7 +8468,7 @@
         "Visa Secure logo"
       ],
       "VPN IP": [
-        "VPN IP"
+        "IP VPN"
       ],
       "Warning": [
         "Varovanie"
@@ -8696,7 +8711,7 @@
         "Vybrali ste **${ elementsCount } konverzáciu** v ${ location }",
         "Vybrali ste **${ elementsCount } konverzácie** v ${ location }",
         "Vybrali ste **${ elementsCount } konverzácií** v ${ location }",
-        "Vybrali ste **${ elementsCount } konverzácií** v ${ location }"
+        "Vybrali ste **${ elementsCount } konverzácie** v ${ location }"
       ],
       "You selected **${ elementsCount } conversation**.": [
         "Vybrali ste **${ elementsCount } konverzáciu**.",
@@ -8859,6 +8874,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Všetko v ${ planOrAppName }"
       ]
     },
     "info": {
@@ -8993,13 +9011,13 @@
         "Prejsť na všetku poštu"
       ],
       "Go to Archive": [
-        "Prejsť do archívu"
+        "Prejsť do Archívu"
       ],
       "Go to Drafts": [
         "Prejsť do zložky Koncepty"
       ],
       "Go to Inbox": [
-        "Prejsť do zložky Doručená pošta"
+        "Doručená pošta"
       ],
       "Go to Sent": [
         "Prejsť do zložky Odoslané"
@@ -9023,7 +9041,7 @@
         "Prejsť na poslednú"
       ],
       "Label as...": [
-        "Označiť ako..."
+        "Označenie ako..."
       ],
       "Load embedded images": [
         "Načítať vložené obrázky"
@@ -9050,7 +9068,7 @@
         "Presun doprava / rozšírenie"
       ],
       "Move to Archive": [
-        "Presunúť do Archívu"
+        "Presunúť do archívu"
       ],
       "Move to Inbox": [
         "Presunúť do Doručených"
@@ -9059,7 +9077,7 @@
         "Presunúť do Spamu"
       ],
       "Move to Trash": [
-        "Presunúť do Koša"
+        "Presunúť do koša"
       ],
       "Move to...": [
         "Presunúť do..."
@@ -9113,7 +9131,7 @@
         "Zobraziť neprečítané emaily"
       ],
       "Star": [
-        "Hviezdička"
+        "S hviezdičkou"
       ]
     },
     "Keyboard shortcut section name": {
@@ -9174,7 +9192,7 @@
         "Úložisko účtu"
       ],
       "Actions": [
-        "Akcia"
+        "Akcie"
       ],
       "Active filter:": [
         "Aktívny filter:"
@@ -9201,7 +9219,7 @@
         "Všetky kontakty"
       ],
       "Also archive": [
-        "Aj archivované"
+        "Taktiež archivovať"
       ],
       "Always label sender's emails": [
         "Vždy označiť emaily odosielateľa"
@@ -9732,7 +9750,7 @@
         "Filter je deaktivovaný. ${ enableButton }"
       ],
       "Theme": [
-        "Motív"
+        "Vzhľad"
       ],
       "Then": [
         "Potom"
@@ -9938,7 +9956,7 @@
         "Všetky správy"
       ],
       "Archive": [
-        "Archív"
+        "Archivovať"
       ],
       "clearing your browser cache": [
         "vymazanie medzipamäte prehliadača"
@@ -10031,7 +10049,7 @@
         "ak dôjde k úniku vašich údajov"
       ],
       "Inbox": [
-        "Doručená pošta"
+        "Doručené"
       ],
       "Labels": [
         "Štítky"
@@ -10076,7 +10094,7 @@
         "Znovu povoľte adresu spojenú s týmto kalendárom, aby ste mohli spravovať svoju pozvánku."
       ],
       "Reactivate now": [
-        "Znovu aktivovať teraz"
+        "Znovu aktivovať"
       ],
       "Request an invite": [
         "Požiadať o pozvánku"
@@ -10100,7 +10118,7 @@
         "Odložené"
       ],
       "Spam": [
-        "Spam"
+        "Nevyžiadaná pošta"
       ],
       "Starred": [
         "S hviezdičkou"
@@ -10246,7 +10264,7 @@
     },
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe, asistent písania"
+        "Asistent písania ${ BRAND_NAME } Scribe"
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Pridať asistenta písania ${ BRAND_NAME } Scribe"
@@ -10260,16 +10278,16 @@
     },
     "Mailbox": {
       "Archive": [
-        "Archív"
+        "Archivovať"
       ],
       "Inbox": [
-        "Doručená pošta"
+        "Doručené"
       ],
       "Spam": [
-        "Spam"
+        "Nevyžiadaná pošta"
       ],
       "Trash": [
-        "Kôš"
+        "Presunúť do koša"
       ]
     },
     "mailtrial2024: Action": {
@@ -10874,7 +10892,7 @@
         "Usporiadanie položiek pomocou viacerých trezorov"
       ],
       "Passkeys supported": [
-        "Podpora prístupových kľúčov"
+        "Prístupové kľúče sú podporované"
       ],
       "Password health": [
         "Zdravie hesla"
@@ -10901,7 +10919,7 @@
         "Prioritná podpora a živý chat"
       ],
       "Private photo backup": [
-        "Zálohovanie súkromných fotografií"
+        "Súkromná záloha fotografií"
       ],
       "Proofread and refine your emails": [
         "Korigujte a zdokonaľujte vaše emaily"
@@ -11031,7 +11049,7 @@
       ],
       "Use on up to ${ n } device at once": [
         "Používajte na ${ n } zariadení",
-        "Používajte súčasne až na ${ n } zariadeniach",
+        "Používajte až na ${ n } zariadeniach súčasne",
         "Používajte súčasne až na ${ n } zariadeniach",
         "Používajte súčasne až na ${ n } zariadeniach"
       ],
@@ -11574,7 +11592,7 @@
         "Získajte ${ BRAND_NAME } Unlimited"
       ],
       "Get the deal": [
-        "Využiť ponuku"
+        "Využite ponuku"
       ],
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Posledná šanca získať 80% zľavu na prvý mesiac ${ plan }."
@@ -11656,7 +11674,7 @@
         "História verzií súboru (viac ako 1 týždeň)"
       ],
       "Free": [
-        "Zdarma"
+        "Free"
       ],
       "Plus": [
         "Plus"
@@ -11805,6 +11823,9 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Vaša doména a predplatné sú pripravené na používanie."
+      ],
+      "Android": [
+        "Android"
       ]
     },
     "Onboarding Proton": {
@@ -11905,7 +11926,7 @@
         "Jedlo a nápoje"
       ],
       "Gaming": [
-        "Hry"
+        "Hranie"
       ],
       "Most popular": [
         "Najpopulárnejšie"
@@ -11922,7 +11943,7 @@
         "Pridať do existujúcej skupiny"
       ],
       "All": [
-        "Všetky"
+        "Všetko"
       ],
       "Automatic (${ value })": [
         "Automaticky (${ value })"
@@ -12173,7 +12194,7 @@
     },
     "Payments.plan_name": {
       "Free": [
-        "Zdarma"
+        "Free"
       ]
     },
     "Payments.Saved payment method details": {
@@ -12265,7 +12286,7 @@
         "Filtrovať rýchle akcie"
       ],
       "First name": [
-        "Meno"
+        "Krstné meno"
       ],
       "Generating": [
         "Generovanie"
@@ -12346,7 +12367,7 @@
         "Dajte nám vedieť, čo by podľa vás mohlo vylepšiť ${ BRAND_NAME }"
       ],
       "Start date": [
-        "Dátum zahájenia"
+        "Dátum začiatku"
       ],
       "Start typing an email address": [
         "Začnite písať emailovú adresu"
@@ -12482,7 +12503,7 @@
     },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
-        "End-to-end šifrovaná a podpísaná správa"
+        "End-to-End šifrovaná a podpísaná správa"
       ],
       "End-to-end encrypted message": [
         "End-to-end šifrovaná správa"
@@ -12719,7 +12740,7 @@
         "Šifrované pomocou ${ MAIL_APP_NAME } overenému príjemcovi"
       ],
       "End-to-end encrypted": [
-        "Šifrované End-to-end"
+        "Šifrovanie počas celého spojenia"
       ],
       "End-to-end encrypted to PGP recipient": [
         "Šifrované typu End-to-end pre príjemcu PGP"
@@ -12734,7 +12755,7 @@
         "Podpísané pomocou PGP"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        "Odoslané pomocou ${ MAIL_APP_NAME } so šifrovaním s nulovým prístupom"
+        "Odoslané z ${ MAIL_APP_NAME } so šifrovaním s nulovým prístupom"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
         "Odoslané prostredníctvom ${ MAIL_APP_NAME } overenému príjemcovi so šifrovaním s nulovým prístupom",
@@ -12752,7 +12773,7 @@
         "Odoslané vami overeným príjemcom so šifrovaním typu end-to-end"
       ],
       "Stored with zero-access encryption": [
-        "Uložené vrátane šifrovania s nulovým prístupom"
+        "Uložené so šifrovaním s nulovým prístupom"
       ]
     },
     "session_recovery:available:action": {
@@ -12760,7 +12781,7 @@
         "Zrušiť obnovenie"
       ],
       "Reset password": [
-        "Obnoviť heslo"
+        "Resetovať heslo"
       ]
     },
     "session_recovery:available:error": {
@@ -12833,7 +12854,7 @@
         "Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundu.",
         " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundy.",
         " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd."
+        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundy."
       ]
     },
     "session_recovery:available:link": {
@@ -12848,7 +12869,7 @@
     },
     "session_recovery:available:title": {
       "Reset your password": [
-        "Obnovenie vášho hesla"
+        "Obnoviť heslo"
       ]
     },
     "session_recovery:cancellation:action": {
@@ -12917,12 +12938,12 @@
     },
     "session_recovery:in_progress:link": {
       "View request": [
-        "Zobraziť požiadavku"
+        "Zobraziť žiadosť"
       ]
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "Vyžiadané obnovenie hesla"
+        "Vyžiadané resetovanie hesla"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -13073,8 +13094,8 @@
       ],
       "${ seconds } second": [
         "${ seconds } sekunda",
-        "${ seconds } sekúnd",
         "${ seconds } sekundy",
+        "${ seconds } sekúnd",
         "${ seconds } sekúnd"
       ]
     },
@@ -13082,7 +13103,7 @@
       "${ n } month FREE": [
         "${ n } mesiacov ZDARMA",
         "${ n } mesiac ZDARMA",
-        "${ n } mesiac ZDARMA",
+        "${ n } mesiacov ZDARMA",
         "${ n } mesiac ZDARMA"
       ]
     },
@@ -13175,7 +13196,7 @@
         "${ n } mesiacov"
       ],
       "/ month": [
-        "/ mesiac"
+        "/ mesačným"
       ],
       "/month": [
         "/mesiac"
@@ -13208,7 +13229,7 @@
         "Účtovaná suma ${ amount } za 30 mesiacov"
       ],
       "Get the deal": [
-        "Využiť ponuku"
+        "Využite ponuku"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Obnoví sa po 1 roku za zľavnenú cenu ${ discountedAmount } namiesto ${ regularAmount } (zľava ${ discount }%)"
@@ -13284,7 +13305,7 @@
         "Získajte bezplatne platené verzie všetkých nových služieb ochrany súkromia, ktoré v budúcnosti vydáme, vrátane predbežného prístupu ku všetkým budúcim funkciám a produktom."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, zdieľanie šifrovaných súborov a ďalšie."
+        "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, šifrované zdieľanie súborov a ďalšie funkcie."
       ]
     },
     "Spotlight": {
@@ -13295,7 +13316,7 @@
         "Spoznajte výhody vášho predplatného"
       ],
       "Email tracking protection": [
-        "Ochrana pred sledovacími prvkami v emailoch"
+        "Ochrana pred emailovými sledovačmi"
       ],
       "Get up to ${ credits } in credits.": [
         "Získajte až ${ credits } v kreditoch."
@@ -13368,10 +13389,10 @@
         "Podmienky"
       ],
       "Name": [
-        "Meno"
+        "Názov"
       ],
       "Preview": [
-        "Náhľad"
+        "Ukážka"
       ]
     },
     "Storage": {
@@ -13433,7 +13454,7 @@
         "Ak chcete nahrať alebo synchronizovať súbory, uvoľnite miesto alebo ${ upgrade }"
       ],
       "upgrade for more storage": [
-        "upgradujte pre získanie väčšieho úložiska"
+        "upgrajdujte pre väčšie úložisko"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Kredity za zostávajúci čas pridáme do vášho ${ BRAND_NAME } účtu."
@@ -13836,7 +13857,7 @@
     },
     "subscription reminder": {
       "15 GB storage": [
-        "15 GB úložného priestoru"
+        "15 GB úložisko"
       ],
       "and 15 more premium features": [
         "a ďalších 15 prémiových funkcií"
@@ -13863,7 +13884,7 @@
         "Podporte naše poslanie"
       ],
       "Upgrade": [
-        "Prejsť na platený plán"
+        "Upgrade"
       ],
       "Upgrade your productivity": [
         "Zlepšite svoju produktivitu"
@@ -14163,7 +14184,7 @@
         "Vyhľadanie v obsahu správy povolené"
       ],
       "Message deleted": [
-        "Správa bola zmazaná"
+        "Správa bola odstránená"
       ],
       "Message expiration canceled": [
         "Platnosť správy bola zrušená"
@@ -14272,6 +14293,42 @@
       ],
       "You have successfully unsubscribed": [
         "Predplatné bolo úspešne zrušené"
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } konverzácia bola presunutá do ${ labelName } a odosielateľ bol pridaný do vášho zoznamu, ktorý nie je spam.",
+        "${ elementsCount } konverzácie boli presunuté do ${ labelName } a odosielatelia boli pridaní do vášho zoznamu, ktorý nie je spam.",
+        "${ elementsCount } konverzácií bolo presunutých do ${ labelName } a odosielatelia boli pridaní do vášho zoznamu, ktorý nie je spam.",
+        "${ elementsCount } konverzácií bolo presunutých do ${ labelName } a odosielatelia boli pridaní do vášho zoznamu, ktorý nie je spam."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } konverzácia presunutá do ${ labelName }.",
+        "${ elementsCount } konverzácii presunutých do priečinka ${ labelName }.",
+        "${ elementsCount } konverzácii presunutých do priečinka ${ labelName }.",
+        "${ elementsCount } konverzácii presunutých do priečinka ${ labelName }."
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } správa bola presunutá do ${ labelName } a odosielateľ bol pridaný do vášho zoznamu, ktorý nie je spam.",
+        "${ elementsCount } správy boli presunuté do ${ labelName } a odosielatelia boli pridaní do vášho zoznamu, ktorý nie je spam.",
+        "${ elementsCount } správ bolo presunutých do ${ labelName } a odosielatelia boli pridaní do vášho zoznamu, ktorý nie je spam.",
+        "${ elementsCount } správ bolo presunutých do ${ labelName } a odosielatelia boli pridaní do vášho zoznamu, ktorý nie je spam."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } správa presunutá do priečinka ${ labelName }.",
+        "${ elementsCount } správ presunutých do priečinka ${ labelName }.",
+        "${ elementsCount } správy presunuté do priečinka ${ labelName }.",
+        "${ elementsCount } správy presunuté do priečinka ${ labelName }."
+      ],
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "Konverzácia presunutá do priečinka ${ labelName } a odosielateľ pridaný na vášho \"nie je spam\" zoznamu."
+      ],
+      "Conversation moved to ${ labelName }.": [
+        "Konverzácia presunutá do priečinka ${ labelName }."
+      ],
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "Správa presunutá do priečinka ${ labelName } a odosielateľ pridaný na vášho \"nie je spam\" zoznamu."
+      ],
+      "Message moved to ${ labelName }.": [
+        "Správa presunutá do ${ labelName }."
       ]
     },
     "Success notification": {
@@ -14375,7 +14432,7 @@
         "Zobrazované meno"
       ],
       "First name": [
-        "Meno"
+        "Krstné meno"
       ],
       "Import": [
         "Importovať"
@@ -14527,7 +14584,7 @@
         "${ unreads } neprečítaných správ"
       ],
       "(active)": [
-        "(aktívny)"
+        "(aktívne)"
       ],
       "A filter name is required": [
         "Názov filtra je povinný"
@@ -14590,7 +14647,7 @@
         "Použiť darčekový kód"
       ],
       "Archive": [
-        "Archív"
+        "Archivovať"
       ],
       "Archive all messages?": [
         "Archivovať všetky správy?"
@@ -14773,7 +14830,7 @@
         "Zmazať všetky správy"
       ],
       "Delete conversation": [
-        "Odstrániť konverzáciu"
+        "Vymazať konverzáciu"
       ],
       "Delete draft": [
         "Zmazať koncept"
@@ -14785,7 +14842,7 @@
         "Odstrániť štítok?"
       ],
       "Delete message": [
-        "Vymazať správu"
+        "Odstrániť správu"
       ],
       "Deleting contacts": [
         "Mazanie kontaktov"
@@ -15103,7 +15160,7 @@
         "Nenájdená žiadna príloha"
       ],
       "No breaches detected": [
-        "Nebol zistený únik"
+        "Neboli zistené žiadne úniky údajov"
       ],
       "No need to empty the trash": [
         "Kôš nie je potrebné vyprázdniť"
@@ -15268,7 +15325,7 @@
         "Odosielateľ"
       ],
       "Sender changed": [
-        "Odosielateľ bol zmenený"
+        "Odosielateľ zmenený"
       ],
       "Sending error": [
         "Chyba pri odosielaní"
@@ -15379,7 +15436,7 @@
         "Zapnúť ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Unsubscribe": [
-        "Odhlásiť odber"
+        "Odhlásiť sa z odberu"
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "Odhlásiť odber z ${ subscription.Name }?"
@@ -15959,7 +16016,7 @@
         "Každý ${ interval } týždeň v ${ multipleDaysString }, ${ timesString }",
         "Každé ${ interval } týždne v ${ multipleDaysString }, ${ timesString }",
         "Každých ${ interval } týždňov v ${ multipleDaysString }, ${ timesString }",
-        "Každých ${ interval } týždňov v ${ multipleDaysString }, ${ timesString }"
+        "Každé ${ interval } týždne v ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
         "Každý ${ interval } týždeň vo všetky dni, ${ timesString }",

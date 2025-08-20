@@ -88,7 +88,7 @@
         "Adicionar um grupo"
       ],
       "Add note": [
-        "Adicionar nota"
+        "Adicionar uma nota"
       ],
       "Add participant": [
         "Adicionar participantes"
@@ -133,7 +133,7 @@
         "Aplicar"
       ],
       "Archive": [
-        "Arquivar"
+        "Arquivo"
       ],
       "As Scheduled": [
         "Conforme agendado"
@@ -155,7 +155,7 @@
         "Autenticar"
       ],
       "Auto-delete spam and trash": [
-        "Exclusão automática de conteúdo de spam e da lixeira"
+        "Auto-exclusão de spam e Lixeira"
       ],
       "Back": [
         "Voltar"
@@ -302,7 +302,7 @@
         "Restaurar tamanho"
       ],
       "Copy address": [
-        "Copiar endereço"
+        "Copiar o endereço"
       ],
       "Copy addresses": [
         "Copiar endereços"
@@ -344,7 +344,7 @@
         "Criar uma pasta ${ boldFolderName }"
       ],
       "Create label": [
-        "Criar marcador"
+        "Criar Marcador"
       ],
       "Create new contact": [
         "Criar um contato"
@@ -359,7 +359,7 @@
         "Plano atual"
       ],
       "Custom": [
-        "Personalizar"
+        "Personalizada"
       ],
       "Customize": [
         "Personalizar"
@@ -502,7 +502,7 @@
         "Emoji"
       ],
       "Enable": [
-        "Ativar"
+        "Habilitar"
       ],
       "Enable ${ darkWebMonitoring }": [
         "Ative o ${ darkWebMonitoring }"
@@ -664,7 +664,7 @@
         "Hide-my-email"
       ],
       "hide-my-email aliases": [
-        "aliases do hide-my-email"
+        "aliases do Hide-my-email"
       ],
       "I like this response": [
         "Gostei da resposta"
@@ -746,10 +746,10 @@
         "Manter minha assinatura"
       ],
       "Label as": [
-        "Marcar como"
+        "Rotular como"
       ],
       "Label as...": [
-        "Marcar como..."
+        "Rotular como..."
       ],
       "label emails as": [
         "marcar e-mail como"
@@ -785,7 +785,7 @@
         "Carregando${ ellipsis }"
       ],
       "Make ${ MAIL_APP_NAME } your default email application": [
-        "Tornar ${ MAIL_APP_NAME } como seu aplicativo de e-mail padrão"
+        "Defina ${ MAIL_APP_NAME } como seu aplicativo de e-mail padrão"
       ],
       "Make it friendly": [
         "Mais amigável"
@@ -812,7 +812,7 @@
         "Marcar como favorito"
       ],
       "Mark as read": [
-        "Marcar como lido"
+        "Marcar como lida"
       ],
       "Mark as resolved": [
         "Marcar como resolvido"
@@ -1196,7 +1196,7 @@
         "Selecionar ${ planTitle }"
       ],
       "Select All": [
-        "Selecionar todos"
+        "Selecionar tudo"
       ],
       "Select all": [
         "Selecionar tudo"
@@ -1253,7 +1253,7 @@
         "Definir criptografia"
       ],
       "Set expiration time": [
-        "Definir a data de vencimento"
+        "Definir a data de expiração"
       ],
       "Set recovery methods": [
         "Definir métodos de recuperação"
@@ -1352,7 +1352,7 @@
         "Adiar"
       ],
       "Star": [
-        "Favorito"
+        "Favoritar"
       ],
       "Start import": [
         "Iniciar importação"
@@ -1466,7 +1466,7 @@
         "Retomar"
       ],
       "Unstar": [
-        "Remover estrela"
+        "Remover favorito"
       ],
       "Unsubscribe": [
         "Cancelar inscrição"
@@ -1612,6 +1612,15 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Change password": [
+        "Alterar senha"
+      ],
+      "Go to ${ planOrAppName }": [
+        "Acesse o ${ planOrAppName }"
+      ],
+      "Select ${ planOrAppName }": [
+        "Selecionar ${ planOrAppName }"
       ]
     },
     "action": {
@@ -2001,7 +2010,7 @@
     },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
-        "Garantia de devolução do seu dinheiro por até 30 dias"
+        "Garantia de devolução do seu dinheiro em até 30 dias"
       ]
     },
     "bf2023: Tooltip": {
@@ -2017,7 +2026,7 @@
         "${ plan } e ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
-        "${ storageSize } de armazenamento"
+        "${ storageSize } armazenamento"
       ],
       "1 TB total": [
         "1 TB no total"
@@ -2071,7 +2080,7 @@
         "Alertas de integridade da senha"
       ],
       "Private photo backup": [
-        "Backup de fotos privado"
+        "Backup de fotos privadas"
       ],
       "Protect 10 devices at a time": [
         "Proteja 10 dispositivos por vez"
@@ -2475,7 +2484,7 @@
         "${ participantName } aceitou provisoriamente o seu convite."
       ],
       "(Attendance optional)": [
-        "(comparecimento opcional)"
+        "(Comparecimento opcional)"
       ],
       "Adding occurrences to an event is not supported for the moment": [
         "A adição de ocorrências a um evento não é suportada no momento"
@@ -2585,7 +2594,7 @@
         "Armazenamento em nuvem criptografado para fotos e documentos"
       ],
       "Encrypted password manager": [
-        "Gerenciador de senhas criptografado"
+        "Gerenciador de senhas criptografadas"
       ],
       "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
         "Nosso plano básico e gratuito com e-mail e armazenamento criptografados de ponta a ponta. Não há recursos premium incluídos."
@@ -2606,7 +2615,7 @@
         "Experimente o ${ upsellPlanName } e mantenha o acesso a todos os recursos premium de e-mail e calendário."
       ],
       "Ultra fast and private VPN": [
-        "VPN privada ultrarrápida"
+        "VPN ultrarrápida e privada"
       ]
     },
     "Checkout row": {
@@ -4467,7 +4476,7 @@
         "Não foi possível abrir o cofre atualizado"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
-        "Erro ao descriptografar: não foi possível a decodificar o conteúdo criptografado desta mensagem."
+        "Erro ao descriptografar: não foi possível decodificar o conteúdo criptografado desta mensagem."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Desmarque pelo menos ${ calendarsToFixCount } calendário",
@@ -4614,7 +4623,7 @@
         "Assinatura ausente"
       ],
       "Name is required": [
-        "Nome é obrigatório"
+        "O nome é obrigatório."
       ],
       "Network error: Please check your connection and try again.": [
         "Erro de conexão: Verifique sua conexão com a internet e tente novamente."
@@ -4798,7 +4807,7 @@
         "Alguns dos seus nomes de marcadores excederam o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
       ],
       "Something went wrong. Please try again.": [
-        "Ocorreu um erro. Tente novamente mais tarde."
+        "Ocorreu um erro. Tente novamente."
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Desculpe, a ${ BRAND_NAME } não pode descriptografar sua mensagem. Verifique se todas as suas chaves estão ativas."
@@ -4959,7 +4968,7 @@
     },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
-        "É permitido no máximo ${ maxAttendees } participante por convite",
+        "É permitido no máximo ${ maxAttendees } participantes por convite",
         "São permitidos no máximo ${ maxAttendees } participantes por convite"
       ]
     },
@@ -4977,7 +4986,7 @@
         "Mensagens enviadas não podem ser movidas para Spam"
       ],
       "This action cannot be performed": [
-        "Não é possível executar essa ação."
+        "Não é possível executar essa ação"
       ]
     },
     "Error importing calendar": {
@@ -5164,7 +5173,7 @@
     },
     "Event invistation error": {
       "Unexpected error": [
-        "Erro inesperado"
+        "Ocorreu um erro inesperado"
       ]
     },
     "Event invitation error": {
@@ -5517,7 +5526,7 @@
         "Mostrar mensagens movidas"
       ],
       "Unread": [
-        "Não lidos"
+        "Não lido"
       ]
     },
     "Filter option to only show message with attachments": {
@@ -5605,7 +5614,7 @@
     },
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
-        "Aplicativo para computador do ${ MAIL_APP_NAME }"
+        "Aplicativo ${ MAIL_APP_NAME } para desktop"
       ],
       "14-day desktop app trial.": [
         "14 dias de avaliação do aplicativo para computador"
@@ -5617,10 +5626,10 @@
         "Obtenha acesso ilimitado com qualquer plano do ${ MAIL_APP_NAME }."
       ],
       "No credit card required.": [
-        "Não é necessário cartão de crédito."
+        "Cartão de crédito não necessário."
       ],
       "Start free trial": [
-        "Iniciar avaliação gratuita"
+        "Iniciar a avaliação gratuita"
       ],
       "Try the new desktop app": [
         "Teste o novo aplicativo para computador"
@@ -5690,7 +5699,7 @@
         "Concluir configuração"
       ],
       "For your eyes only": [
-        "Só para você"
+        "Somente para seus olhos"
       ],
       "Get more storage": [
         "Obter mais armazenamento"
@@ -5772,7 +5781,7 @@
         "Menos detalhes"
       ],
       "Meeting host:": [
-        "Host da reunião:"
+        "Organizador da reunião:"
       ],
       "Meeting link:": [
         "Link da reunião:"
@@ -5873,7 +5882,7 @@
         "Hora de término fora dos limites"
       ],
       "Event validation failed": [
-        "Falha na validação do evento"
+        "Erro na validação do evento"
       ],
       "Floating times not supported": [
         "Tempos flutuantes não suportados"
@@ -6265,28 +6274,28 @@
         "${ currentProgress } de ${ totalProgress }"
       ],
       "${ elementsCount } conversation will be labelled as:": [
-        "A conversa ${ elementsCount } será rotulada como:",
-        "As conversas ${ elementsCount } serão rotuladas como:"
+        "A conversa ${ elementsCount } será marcada como:",
+        "As conversas ${ elementsCount } serão marcadas como:"
       ],
       "${ elementsCount } conversation will be marked as read.": [
         "${ elementsCount } conversa será marcada como lida.",
         "${ elementsCount } conversas serão marcadas como lidas."
       ],
       "${ elementsCount } conversation will be marked as unread.": [
-        "${ elementsCount } conversa será marcada como não lida.",
-        "${ elementsCount } conversas serão marcadas como não lidas."
+        "A conversa ${ elementsCount } será marcada como não lida.",
+        "As conversas ${ elementsCount } serão marcadas como não lidas."
       ],
       "${ elementsCount } conversation will be moved": [
-        "${ elementsCount } conversa será movida",
-        "${ elementsCount } conversas serão movidas"
+        "A conversa ${ elementsCount } será movida",
+        "As conversas ${ elementsCount } serão movidas"
       ],
       "${ elementsCount } conversation will be unlabelled from:": [
         "A conversa ${ elementsCount } não será rotulada de:",
         "As conversas de ${ elementsCount } não serão rotuladas de:"
       ],
       "${ elementsCount } message will be labelled as:": [
-        "A mensagem ${ elementsCount } será rotulada como:",
-        "As mensagens ${ elementsCount } serão rotuladas como:"
+        "${ elementsCount } mensagem será marcada como:",
+        "${ elementsCount } mensagens serão rotuladas como:"
       ],
       "${ elementsCount } message will be marked as read.": [
         "${ elementsCount } mensagem será marcada como lida.",
@@ -6301,8 +6310,8 @@
         "${ elementsCount } mensagens serão movidas"
       ],
       "${ elementsCount } message will be unlabelled from:": [
-        "A mensagem ${ elementsCount } não será rotulada de:",
-        "Mensagens ${ elementsCount } não serão rotuladas de:"
+        "A mensagem ${ elementsCount } não será desmarcada de: ",
+        "As mensagens ${ elementsCount } não serão rotuladas de:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } imagem incorporada",
@@ -6426,8 +6435,8 @@
         "${ unreadCount } boletins"
       ],
       "${ unreadCount } scheduled message": [
-        "${ unreadCount } mensagem programada",
-        "${ unreadCount } mensagens programadas"
+        "${ unreadCount } mensagem agendada",
+        "${ unreadCount } mensagens agendadas"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contato atualizado.",
@@ -6641,16 +6650,16 @@
         "Tem certeza que deseja mover todas as mensagens desse local para a lixeira?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
-        "Você tem certeza de que deseja excluir permanentemente ${ count } conversa?",
-        "Você tem certeza de que deseja excluir permanentemente ${ count } conversas?"
+        "Você tem certeza de que deseja excluir permanentemente esta ${ count } conversa?",
+        "Você tem certeza de que deseja excluir permanentemente estas ${ count } conversas?"
       ],
       "Are you sure you want to permanently delete ${ count } draft?": [
-        "Você tem certeza de que deseja excluir permanentemente ${ count } rascunho?",
-        "Você tem certeza de que deseja excluir permanentemente ${ count } rascunhos?"
+        "Você tem certeza de que deseja excluir permanentemente este ${ count } rascunho?",
+        "Você tem certeza de que quer excluir permanentemente ${ count } rascunhos?"
       ],
       "Are you sure you want to permanently delete ${ count } message?": [
-        "Você tem certeza de que deseja excluir permanentemente ${ count } mensagem?",
-        "Você tem certeza de que deseja excluir permanentemente ${ count } mensagens?"
+        "Você tem certeza de que deseja excluir permanentemente esta ${ count } mensagem?",
+        "Você tem certeza de que deseja excluir permanentemente estas ${ count } mensagens?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
         "Você tem certeza de que quer excluir permanentemente esta conversa?"
@@ -6971,7 +6980,7 @@
         "Endereço de e-mail"
       ],
       "Email copied to clipboard": [
-        "E-mail copiado para área de transferência"
+        "E-mail copiado para a área de transferência"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "A hospedagem de e-mail está disponível apenas para domínios que você já possui. O registro de domínio não está disponível no momento através da ${ BRAND_NAME }. Você pode hospedar e-mail para domínios registrados em qualquer registrador de domínio."
@@ -7060,7 +7069,7 @@
         "Os filtros funcionam em todos os e-mails, incluindo os e-mails recebidos e enviados. Cada filtro deve conter pelo menos um nome, uma condição e uma ação a ser salva."
       ],
       "finance": [
-        "finanças"
+        "finança"
       ],
       "Folder": [
         "Pasta"
@@ -7078,8 +7087,8 @@
         "Para obter mais resultados de pesquisa, tente pesquisar essa palavra-chave no conteúdo de suas mensagens de e-mail."
       ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
-        "Gratuito para experimentar por ${ ASSISTANT_TRIAL_TIME_DAYS } dia",
-        "Gratuito para experimentar por ${ ASSISTANT_TRIAL_TIME_DAYS } dias"
+        "Teste grátis por ${ ASSISTANT_TRIAL_TIME_DAYS } dia",
+        "Teste grátis por ${ ASSISTANT_TRIAL_TIME_DAYS } dias"
       ],
       "From": [
         "De"
@@ -7298,7 +7307,7 @@
         "Carregando..."
       ],
       "Low Priority": [
-        "Prioridade baixa"
+        "Baixa prioridade"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
         "Defina ${ MAIL_APP_NAME } como seu aplicativo de e-mail padrão."
@@ -7364,7 +7373,7 @@
         "A mensagem será enviada amanhã às ${ formattedTime }"
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
-        "As mensagens que estiverem na lixeira e no spam há mais de 30 dias serão automaticamente apagadas."
+        "Mensagens que estiverem na lixeira e no spam por mais de 30 dias serão excluídas automaticamente."
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "As mensagens para todos os seus endereços de e-mail irão para sua caixa de entrada."
@@ -7523,7 +7532,7 @@
         "Número do telefone"
       ],
       "Plain text": [
-        "Texto sem formatação"
+        "Texto Simples"
       ],
       "Please add at least one recipient.": [
         "Insira pelo menos um destinatário."
@@ -7578,7 +7587,7 @@
         "Compartilhe o que você esperava"
       ],
       "Please try again in a few moments": [
-        "Tente novamente em alguns instantes"
+        "Por favor, tente novamente em alguns instantes"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente com outro método de pagamento ou entre em contato com seu banco."
@@ -7744,7 +7753,7 @@
         "Enviando"
       ],
       "Sending message...": [
-        "Enviando mensagem..."
+        "Enviando a mensagem..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "O envio de mensagens de um endereço @pm.me é um recurso pago. A sua mensagem será enviada do seu endereço padrão ${ email }"
@@ -7819,7 +7828,7 @@
         "Comece a compartilhá-lo com contatos e a usá-lo em serviços online."
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Comece a usar a versão mais curta e atraente de seu endereço de e-mail."
+        "Comece a usar versão mais curta e atraente do seu endereço de e-mail."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Mantenha-se conectado de forma simples ativando as seguintes configurações de VPN:"
@@ -7928,8 +7937,8 @@
         "O remetente solicitou uma confirmação de leitura."
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "Não foi possível verificar ${ contactNames }: o contato não está assinado corretamente.\nPode ser o resultado de uma redefinição de senha.\nVocê precisa assinar novamente o contato para poder enviar a mensagem para ${ contactAddresses } ou editar o contato.",
-        "Não foi possível verificar ${ contactNames }: o contato não está assinado corretamente.\nPode ser o resultado de uma redefinição de senha.\nVocê precisa assinar novamente os contatos para poder enviar a mensagem para ${ contactAddresses } ou editar os contatos."
+        "A verificação do ${ contactNames } falhou: o contato não está assinado corretamente. \nIsso pode ter sido causado por uma redefinição de senha. \nVocê deverá assinar novamente para poder enviar uma mensagem para ${ contactAddresses } ou editar o contato.",
+        "A verificação do ${ contactNames } falhou: os contatos selecionados não foram assinados corretamente.\nIsso pode ter sido causado por uma redefinição de senha. \nVocê deverá re-assinar os contatos novamente para poder enviar uma mensagem para ${ contactAddresses } ou editar os contatos."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "O processo de verificação abrirá uma nova guia do navegador. Desative todos os bloqueadores de pop-up ativos."
@@ -7968,8 +7977,8 @@
         "Esta conversa contém mensagens na lixeira."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Esta mensagem será marcada como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?",
-        "Estas mensagens serão marcadas como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?"
+        "Esta conversa será marcada como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?",
+        "Estas conversas serão marcadas como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Este e-mail não atendeu aos requisitos de autenticação de seu domínio. Pode ser falsificado ou encaminhado indevidamente."
@@ -8023,8 +8032,8 @@
         "Essa mensagem será automaticamente excluída em ${ value }"
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Esta mensagem será marcada como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?",
-        "Estas mensagens serão marcadas como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?"
+        "Esta conversa será marcada como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?",
+        "Estas conversas serão marcadas como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Esta mensagem será movida para Rascunhos para que você possa editá-la. Você precisará reagendar quando ela será enviada."
@@ -8429,8 +8438,8 @@
         "Você tem **${ count } conversas** armazenadas nesta pasta"
       ],
       "You have **${ count } conversation** tagged with this label": [
-        "Você tem **${ count } conversa** marcada com este marcador",
-        "Você tem **${ count } conversas** marcadas com este marcador"
+        "Você tem **${ count } conversa** com este marcador",
+        "Você tem **${ count } conversas** com este marcador"
       ],
       "You have **${ count } message** stored in this folder": [
         "Você tem **${ count } mensagem** armazenada nesta pasta",
@@ -8630,6 +8639,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Você está a alguns cliques de distância de ter uma caixa de entrada organizada"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Digite sua própria senha (como contato de confiança)."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Tudo que está incluso no ${ planOrAppName }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Fim da assinatura: para manter os benefícios do seu ${ planName }, reinicie sua assinatura no aplicativo Apple Store até ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Fim da assinatura: Para manter os benefícios do seu ${ planName }, reinicie sua assinatura na Google Play Store até ${ byDate }. ${ reactivateLink }"
       ]
     },
     "info": {
@@ -8707,11 +8728,11 @@
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Você deseja confiar na chave pública principal com a seguinte impressão digital?",
-        "Você deseja confiar as chaves públicas principals com as seguintes impressões digitais?"
+        "Você deseja confiar nas chaves públicas principais com as seguintes impressões digitais?"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Você ativou a verificação de endereço com chaves de confiança para este endereço de e-mail,\nmas nenhuma chave de criptografia ativa foi confiada.\nVocê deve confiar em uma chave válida para enviar uma mensagem para este endereço de e-mail.",
-        "Você ativou a verificação de endereço com chaves de confiança para estes endereços de e-mail,\nmas nenhuma chave de criptografia ativa foi confiada.\nVocê deve confiar nas chaves válidas para envio, para poder enviar uma mensagem a estes endereços de e-mail."
+        "Você ativou a verificação de endereço com chaves de confiança para estes endereços de e-mail,\nmas nenhuma chave de criptografia ativa foi confiada.\nVocê deve confiar nas chaves válidas para envio, para poder enviar uma mensagem para estes endereços de e-mail."
       ]
     },
     "Key validation warning": {
@@ -8757,13 +8778,13 @@
         "Ir para Todas as Mensagens"
       ],
       "Go to Archive": [
-        "Ir para o Arquivo"
+        "Ir para Arquivo"
       ],
       "Go to Drafts": [
         "Ir para Rascunhos"
       ],
       "Go to Inbox": [
-        "Ir para a Caixa de Entrada"
+        "Ir para a Caixa de entrada"
       ],
       "Go to Sent": [
         "Ir para Enviados"
@@ -8772,7 +8793,7 @@
         "Ir para Spam"
       ],
       "Go to Starred": [
-        "Ir para com estrela"
+        "Ir para Favoritos"
       ],
       "Go to Trash": [
         "Ir para Lixeira"
@@ -8787,7 +8808,7 @@
         "Pular para o último"
       ],
       "Label as...": [
-        "Marcar como..."
+        "Rotular como..."
       ],
       "Load embedded images": [
         "Carregar imagens incorporadas"
@@ -8796,10 +8817,10 @@
         "Carregar conteúdo remoto"
       ],
       "Mark as read": [
-        "Marcar como lido"
+        "Marcar como lida"
       ],
       "Mark as unread": [
-        "Marcar como não lido"
+        "Marcar como não lida"
       ],
       "Minimize / maximize composer": [
         "Minimizar / maximizar o editor"
@@ -8814,7 +8835,7 @@
         "Mover para a direita / expandir"
       ],
       "Move to Archive": [
-        "Mover para Arquivo"
+        "Mover para o arquivo"
       ],
       "Move to Inbox": [
         "Mover para Caixa de Entrada"
@@ -8877,7 +8898,7 @@
         "Mostrar e-mails não lidos"
       ],
       "Star": [
-        "Favorito"
+        "Favoritar"
       ]
     },
     "Keyboard shortcut section name": {
@@ -8993,7 +9014,7 @@
         "Aplicar filtro aos e-mails existentes"
       ],
       "Apply to future messages": [
-        "Aplicar para mensagens futuras"
+        "Aplicar para as mensagens futuras"
       ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
@@ -9248,7 +9269,7 @@
         "Palavra-chave"
       ],
       "Label as": [
-        "Marcar como"
+        "Rotular como"
       ],
       "Label messages as": [
         "Marcar mensagens como"
@@ -9582,6 +9603,9 @@
       ],
       "Your password (admin)": [
         "Sua senha (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Sua senha (contato de confiança)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9847,7 +9871,7 @@
         "Agendado"
       ],
       "Sent": [
-        "Enviados"
+        "Enviada"
       ],
       "settings": [
         "configurações"
@@ -9911,6 +9935,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Você precisa reativar suas chaves para ver o convite atualizado"
+      ],
+      "Resume now": [
+        "Continuar agora"
       ]
     },
     "Link to calendar event": {
@@ -9955,7 +9982,7 @@
         "faça upgrade para mais armazenamento"
       ],
       "Upgrade to restore full access": [
-        "Atualizar para restaurar o acesso total"
+        "Faça upgrade para restaurar o acesso total"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "Seu ${ driveStorage } está cheio. Para enviar ou sincronizar arquivos, libere espaço ou ${ cta }."
@@ -10311,7 +10338,7 @@
     },
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
-        "Assistente de escrita ${ BRAND_NAME } Scribe"
+        "Assistente de escrita da ${ BRAND_NAME } Scribe"
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
@@ -10377,7 +10404,7 @@
         "Até ${ numberOfUsers } usuários"
       ],
       "${ options }-day file version history": [
-        "Histórico de versões de arquivo de ${ options } dia",
+        "Histórico de versões de arquivo de ${ options } dias",
         "Histórico de versões de arquivo de ${ options } dias"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
@@ -11204,7 +11231,7 @@
         "O grupo de contatos foi atualizado"
       ],
       "Link copied to clipboard": [
-        "Link copiado para área de transferência"
+        "O link foi copiado para área de transferência"
       ],
       "Meeting host copied to clipboard": [
         "O organizador da reunião foi copiado para área de transferência"
@@ -11271,7 +11298,7 @@
         "Obtenha o ${ BRAND_NAME } Unlimited"
       ],
       "Get the deal": [
-        "Obtenha a oferta"
+        "Aproveitar a oferta"
       ],
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Última oportunidade de obter 80% de desconto no primeiro mês do ${ plan }."
@@ -11295,7 +11322,7 @@
         "Pague anualmente e assegure nossa melhor oferta"
       ],
       "Save": [
-        "Economize"
+        "Salvar"
       ],
       "Save big when you pay annually": [
         "Aproveite descontos incríveis ao pagar anualmente!"
@@ -11353,7 +11380,7 @@
         "Histórico de versões do arquivo (mais de 1 semana)"
       ],
       "Free": [
-        "Gratuito"
+        "Free"
       ],
       "Plus": [
         "Plus"
@@ -11593,10 +11620,10 @@
     },
     "Online Accounts Name": {
       "Banking": [
-        "Transações bancárias"
+        "Serviços bancários"
       ],
       "Crypto": [
-        "Cripto"
+        "Criptomoeda"
       ],
       "E-commerce and Retail": [
         "Comércio eletrônico e na loja"
@@ -11614,7 +11641,7 @@
         "Mais populares"
       ],
       "Travel": [
-        "Viagens"
+        "Viagem"
       ],
       "Utilities": [
         "Utilitários"
@@ -11828,7 +11855,7 @@
         "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. O cupom é válido para renovações de ${ couponRedemptions }. Em seguida, ele será renovado automaticamente a ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. Depois, ele será renovado automaticamente por ${ renewPriceStr } todo mês. Você pode cancelar a qualquer momento."
+        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ renewPriceStr } todo mês. Você pode cancelar a qualquer momento."
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Então ele será renovado automaticamente por ${ renewPriceStr } por ${ renewalLength } mês. Você pode cancelar a qualquer momento.",
@@ -11949,7 +11976,7 @@
         "Endereço de e-mail"
       ],
       "End date": [
-        "Data de término"
+        "Data final"
       ],
       "Filter folders": [
         "Filtrar pastas"
@@ -12075,7 +12102,7 @@
         "Texto"
       ],
       "To": [
-        "Para"
+        "Até"
       ],
       "Type text or keyword": [
         "Digite o texto ou a palavra-chave"
@@ -12224,8 +12251,8 @@
     },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
-        "${ remainingDays } d",
-        "${ remainingDays } d"
+        "${ remainingDays } dia",
+        "${ remainingDays } dias"
       ],
       "<1 d": [
         "<1 d"
@@ -12597,12 +12624,12 @@
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "A redefinição de senha foi solicitada"
+        "Redefinição de senha solicitada."
       ]
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "Encerrar sessão"
+        "Sair da sessão"
       ],
       "Stay signed in": [
         "Manter sessão iniciada"
@@ -12874,7 +12901,7 @@
         "Com o preço de ${ amount } por 30 meses"
       ],
       "Get the deal": [
-        "Aproveite a oferta"
+        "Aproveitar a oferta"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "É renovado após 1 ano com valor promocional de ${ discountedAmount } em vez de ${ regularAmount } (${ discount }% discount)"
@@ -13093,7 +13120,7 @@
         "Para enviar ou receber e-mails, libere espaço ou ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
-        "Para enviar ou receber e-mails, libere espaço ou atualize para obter mais armazenamento."
+        "Para enviar ou receber e-mails, libere espaço ou faça upgrade para obter mais armazenamento."
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Para enviar ou sincronizar arquivos, libere espaço ou ${ upgrade }"
@@ -13327,7 +13354,7 @@
         "Privacidade e segurança abrangentes"
       ],
       "Desktop app and email client support (via IMAP)": [
-        "Aplicativo de desktop e suporte ao cliente de e-mail (via IMAP)"
+        "Suporte para aplicativo de área de trabalho e cliente de e-mail (via IMAP)"
       ],
       "Direct contribution to our mission": [
         "Contribuição direta para a nossa missão"
@@ -13479,7 +13506,7 @@
     },
     "subscription reminder": {
       "15 GB storage": [
-        "Armazenamento de 15 GB"
+        "15 GB de armazenamento"
       ],
       "and 15 more premium features": [
         "e mais 15 recursos premium"
@@ -13556,7 +13583,7 @@
       ],
       "${ count } draft deleted": [
         "${ count } rascunho excluído",
-        "${ count } rascunhos excluídas"
+        "${ count } rascunhos excluídos"
       ],
       "${ count } message deleted": [
         "${ count } mensagem excluída",
@@ -13595,12 +13622,12 @@
         "${ elementsCount } conversas movidas para o spam e os remetentes adicionados à sua lista de spam."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
-        "${ elementsCount } mensagem removida de ${ labelName }.",
-        "${ elementsCount } mensagens removidas de ${ labelName }."
+        "${ elementsCount } conversa removida de ${ labelName }.",
+        "${ elementsCount } conversas removidas de ${ labelName }."
       ],
       "${ elementsCount } conversation removed from Starred.": [
-        "${ elementsCount } mensagem removida com estrela.",
-        "${ elementsCount } mensagens removidas com estrela."
+        "${ elementsCount } mensagem removida da lista com Estrela.",
+        "${ elementsCount } mensagens removidas da lista com Estrela."
       ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } conversa adiada",
@@ -13643,8 +13670,8 @@
         "${ elementsCount } mensagens removidas de ${ labelName }."
       ],
       "${ elementsCount } message removed from Starred.": [
-        "${ elementsCount } mensagem removida com estrela.",
-        "${ elementsCount } mensagens removidas com estrela."
+        "${ elementsCount } mensagem removida da lista com Estrela.",
+        "${ elementsCount } mensagens removidas da lista com Estrela."
       ],
       "Address copied to clipboard": [
         "O endereço foi copiado para a área de transferência"
@@ -13754,7 +13781,7 @@
         "Pesquisa de conteúdo de mensagens ativada"
       ],
       "Message deleted": [
-        "Mensagem excluida"
+        "Mensagem excluída"
       ],
       "Message expiration canceled": [
         "Expiração de mensagem cancelada"
@@ -13801,7 +13828,7 @@
         "Mover ${ selectionCount } mensagens"
       ],
       "Password copied to clipboard": [
-        "Senha copiada para a área de transferência"
+        "A senha foi copiada para a área de transferências."
       ],
       "Payment method added": [
         "Método de pagamento adicionado"
@@ -13859,6 +13886,34 @@
       ],
       "You have successfully unsubscribed": [
         "Você cancelou a inscrição"
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } conversa movida para ${ labelName } e remetente adicionado à sua lista de permitidos.",
+        "${ elementsCount } conversas movidas para ${ labelName } e remetentes adicionados à sua lista de permitidos."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } conversa movida para ${ labelName }.",
+        "${ elementsCount } conversas movidas para ${ labelName }."
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } mensagem movida para ${ labelName } e remetente adicionado à sua lista de permitidos.",
+        "${ elementsCount } mensagens movidas para ${ labelName } e remetentes adicionados à sua lista de permitidos."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } mensagem movida para ${ labelName }.",
+        "${ elementsCount } mensagens movidas para ${ labelName }."
+      ],
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "A conversa foi movida para ${ labelName } e o remetente foi adicionado à sua lista de não spam."
+      ],
+      "Conversation moved to ${ labelName }.": [
+        "Conversa movida para ${ labelName }."
+      ],
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "A mensagem foi movida para ${ labelName } e o remetente foi adicionado à sua lista de não spam."
+      ],
+      "Message moved to ${ labelName }.": [
+        "Mensagem movida para ${ labelName }."
       ]
     },
     "Success notification": {
@@ -13899,7 +13954,7 @@
         "Crie detalhes seguros de início de sessão em todos os seus dispositivos. Inclui aliases ilimitados, 20 cofres, A2F integrada, preenchimento automático de cartão de crédito e muito mais."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Inclui mais de 2.950 servidores em mais de 65 países. Conecte até 10 dispositivos, acesse serviços de streaming no mundo todo, malware e bloqueador de anúncios e muito mais."
+        "Inclui 2.950 servidores em mais de 65 países. Conecte até 10 dispositivos, acesse serviços de streaming no mundo todo, malware e bloqueador de anúncios e muito mais."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do hide-my-email, compartilhamento de calendário e muito mais."
@@ -14062,7 +14117,7 @@
         "Obter meu endereço “@${ PM_DOMAIN }“"
       ],
       "Open ": [
-        "Abrir "
+        "Aberto "
       ],
       "Show me how": [
         "Mostre-me como"
@@ -14263,7 +14318,7 @@
         "Criar pasta \"${ search }\""
       ],
       "Create label \"${ search }\"": [
-        "Criar marcador \"${ search }\""
+        "Criar o marcador \"${ search }\""
       ],
       "Create new group": [
         "Criar um grupo"
@@ -14312,7 +14367,7 @@
         "Excluir ${ count } rascunhos"
       ],
       "Delete ${ count } message": [
-        "Excluir ${ count } mensagens",
+        "Excluir ${ count } mensagem",
         "Excluir ${ count } mensagens"
       ],
       "Delete ${ value }": [
@@ -14509,7 +14564,7 @@
         "O código de verificação não é válido."
       ],
       "Label as": [
-        "Marcar como"
+        "Rotular como"
       ],
       "Label options": [
         "Opções do marcador"
@@ -14650,7 +14705,7 @@
         "Nenhum anexo encontrado"
       ],
       "No breaches detected": [
-        "Nenhuma violação detectada"
+        "Nenhuma violação detetada"
       ],
       "No need to empty the trash": [
         "Não é necessário esvaziar a lixeira"
@@ -14776,13 +14831,13 @@
         "Agende agora, envie depois"
       ],
       "Schedule send": [
-        "Agendar envio"
+        "Envio agendado"
       ],
       "Schedule send:": [
-        "Agendar envio:"
+        "Envio agendado:"
       ],
       "Security center": [
-        "Central de segurança"
+        "Centro de segurança"
       ],
       "Select a plan": [
         "Selecione um plano"
@@ -14912,7 +14967,7 @@
       ],
       "Trust new key?": [
         "Confiar na nova chave?",
-        "Confiar em novas chaves?"
+        "Confiar nas novas chaves?"
       ],
       "Trust pinned keys?": [
         "Confiar em chaves fixadas?"
@@ -15618,6 +15673,11 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contato de confiança"
       ]
     }
   }
