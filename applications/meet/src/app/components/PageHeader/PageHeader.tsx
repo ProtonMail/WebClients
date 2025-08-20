@@ -11,6 +11,8 @@ import {
     UserDropdown,
     useModalState,
 } from '@proton/components';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import { IcBug } from '@proton/icons';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -42,23 +44,25 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeader
             <div className="flex gap-4 items-center">
                 <img className="logo cursor-pointer" src={logo} alt="" onClick={() => history.push('/dashboard')} />
 
-                <div className="hidden md:block">
+                <div className="flex gap-2 items-center">
                     {guestMode ? (
                         <UnAuthenticatedAppsDropdown app={APPS.PROTONMEET} />
                     ) : (
                         <AppsDropdown app={APPS.PROTONMEET} />
                     )}
+
+                    <DropdownButton
+                        as="button"
+                        className="apps-dropdown-button shrink-0"
+                        onClick={() => setBugReportModal(true)}
+                        hasCaret={false}
+                    >
+                        <IcBug size={6} className="apps-dropdown-button-icon shrink-0 no-print" />
+                    </DropdownButton>
                 </div>
             </div>
 
             <div className="flex gap-4 items-center">
-                <Button
-                    className="action-button rounded-full border-none hidden lg:block"
-                    onClick={() => setBugReportModal(true)}
-                    size="large"
-                >
-                    {c('meet_2025 Action').t`Contact support`}
-                </Button>
                 {isScheduleInAdvanceEnabled && (
                     <Button
                         className="action-button rounded-full border-none hidden md:block"
