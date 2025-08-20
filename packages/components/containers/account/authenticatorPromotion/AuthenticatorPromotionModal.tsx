@@ -13,6 +13,7 @@ import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 
 import authenticatorLogo from './assets/authenticator-logo.svg';
 import authenticatorGraphic from './assets/authenticator.jpg';
+import { sendAuthenticatorPromoModalClick } from './authenticatorTelemetry';
 
 interface AuthenticatorModalProps {
     open: boolean;
@@ -21,6 +22,11 @@ interface AuthenticatorModalProps {
 }
 
 const AuthenticatorPromotionModal = ({ open, onClose, onExit }: AuthenticatorModalProps) => {
+    const handleModalCtaClick = () => {
+        sendAuthenticatorPromoModalClick();
+        onClose();
+    };
+
     return (
         <Modal open={open} onClose={onClose} onExit={onExit} size="xlarge">
             <div className="flex flex-nowrap h-full">
@@ -71,15 +77,18 @@ const AuthenticatorPromotionModal = ({ open, onClose, onExit }: AuthenticatorMod
                             <ButtonLike
                                 as="a"
                                 href={getStaticURL('/authenticator')}
+                                target="_blank"
                                 color="norm"
                                 className="flex flex-nowrap gap-2 items-center justify-center"
                                 fullWidth
+                                onClick={handleModalCtaClick}
                             >
                                 {getPlanOrAppNameText(AUTHENTICATOR_APP_NAME)}
                                 <IcArrowOutSquare className="shrink-0" />
                             </ButtonLike>
-                            <Button color="norm" shape="ghost" onClick={onClose} fullWidth>{c('Info')
-                                .t`Maybe later`}</Button>
+                            <Button color="norm" shape="ghost" onClick={onClose} fullWidth>
+                                {c('Info').t`Maybe later`}
+                            </Button>
                         </div>
                     </ModalFooter>
                 </div>

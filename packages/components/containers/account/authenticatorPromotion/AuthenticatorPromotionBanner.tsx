@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -7,9 +9,19 @@ import { AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';
 import { PromotionBanner } from '../../banner/PromotionBanner';
 import AuthenticatorPromotionModal from './AuthenticatorPromotionModal';
 import authenticatorLogo from './assets/authenticator-logo.svg';
+import { sendAuthenticatorPromoBannerClick, sendAuthenticatorPromoLoad } from './authenticatorTelemetry';
 
 const AuthenticatorPromotionBanner = ({ className }: { className?: string }) => {
     const [authenticatorModal, setAuthenticatorModal, renderAuthenticatorModal] = useModalState();
+
+    useEffect(() => {
+        sendAuthenticatorPromoLoad();
+    }, []);
+
+    const handleBannerCtaClick = () => {
+        sendAuthenticatorPromoBannerClick();
+        setAuthenticatorModal(true);
+    };
 
     return (
         <>
@@ -35,7 +47,7 @@ const AuthenticatorPromotionBanner = ({ className }: { className?: string }) => 
                     </>
                 }
                 cta={
-                    <Button color="norm" fullWidth onClick={() => setAuthenticatorModal(true)}>
+                    <Button color="norm" fullWidth onClick={handleBannerCtaClick}>
                         {c('Action').t`Learn more`}
                     </Button>
                 }
