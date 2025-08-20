@@ -85,6 +85,7 @@ export const useDocumentActions = () => {
         const w = getNewWindow();
 
         try {
+            // TODO:EVENTS doesn't seem to be returning an id we can use to get the Node
             openDocumentWindow({
                 type,
                 mode: 'create',
