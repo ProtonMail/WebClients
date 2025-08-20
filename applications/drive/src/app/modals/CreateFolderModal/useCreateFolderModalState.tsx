@@ -13,7 +13,7 @@ import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 
 export type CreateFolderModalInnerProps = {
     parentFolderUid?: string;
-    onSuccess?: (folderId: string, newName: string) => void;
+    onSuccess?: ({ uid, nodeId, name }: { uid?: string; nodeId: string; name: string }) => void;
 };
 
 export type UseCreateFolderModalStateProps = ModalStateProps &
@@ -81,7 +81,7 @@ export const useCreateFolderModalState = ({
             const { nodeId } = splitNodeUid(node.uid);
             // Needs to pass nodeId because the same callback is called by the legacy app component
             // in public pages we don't have the ability to get the uid from the shareId
-            onSuccess?.(nodeId, name);
+            onSuccess?.({ uid: node.uid, nodeId, name });
             onClose();
         } catch (error) {
             handleError(error, { fallbackMessage: c('Error').t`Failed to create folder`, extra: { parentFolderUid } });

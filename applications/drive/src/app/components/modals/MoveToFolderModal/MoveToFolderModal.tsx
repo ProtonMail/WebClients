@@ -35,7 +35,7 @@ const MoveToFolderModalDeprecated = ({ shareId, selectedItems, onClose, ...modal
     const [loading, withLoading] = useLoading();
     const [selectedFolder, setSelectedFolder] = useState<string>();
     const { viewportWidth } = useActiveBreakpoint();
-    const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
+    const [createFolderModal, showCreateFolderModal] = useCreateFolderModal({ forceLegacy: true });
 
     const moveLinksToFolder = async (parentFolderId: string) => {
         await moveLinks(new AbortController().signal, {
@@ -71,9 +71,9 @@ const MoveToFolderModalDeprecated = ({ shareId, selectedItems, onClose, ...modal
 
         void showCreateFolderModal({
             folder: { shareId: shareId, linkId: targetLinkId },
-            onSuccess: async (newFolderId: string) => {
+            onSuccess: async ({ nodeId }) => {
                 expand(targetLinkId);
-                setSelectedFolder(newFolderId);
+                setSelectedFolder(nodeId);
             },
             createFolder,
         });
