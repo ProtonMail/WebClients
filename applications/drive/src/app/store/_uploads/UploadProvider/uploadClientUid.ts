@@ -1,4 +1,5 @@
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import * as storage from '@proton/shared/lib/helpers/storage';
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
 
 import { sendErrorReport } from '../../../utils/errorHandling';
@@ -37,14 +38,14 @@ export function generateClientUid(clientUid?: string) {
     // The worst case scenario would be not knowing the state, but it's
     // better to at least upload the file than fail here.
     try {
-        localStorage.setItem(key, UploadingState.Uploading);
+        storage.setItem(key, UploadingState.Uploading);
     } catch (e) {
         handleLocalStorageError(e);
     }
 
     const uploadFailed = () => {
         try {
-            localStorage.setItem(key, UploadingState.Failed);
+            storage.setItem(key, UploadingState.Failed);
         } catch (e) {
             handleLocalStorageError(e);
         }
@@ -52,7 +53,7 @@ export function generateClientUid(clientUid?: string) {
     };
 
     const uploadFinished = () => {
-        localStorage.removeItem(key);
+        storage.removeItem(key);
         removeEventListener('unload', uploadFailed);
     };
 
@@ -77,7 +78,7 @@ export function generateClientUid(clientUid?: string) {
  */
 export function isClientUidAvailable(clientUid: string): boolean {
     const key = getStorageKey(clientUid);
-    const result = localStorage.getItem(key);
+    const result = storage.getItem(key);
     return result === UploadingState.Failed;
 }
 
@@ -115,9 +116,9 @@ function isQuotaExceededError(err: unknown): boolean {
 }
 
 function clearAllUploadUIDsFromLocalStorage() {
-    Object.keys(localStorage).forEach((key) => {
+    Object.keys(storage).forEach((key) => {
         if (key.startsWith(KEY_PREFIX)) {
-            localStorage.removeItem(key);
+            storage.removeItem(key);
         }
     });
 }
