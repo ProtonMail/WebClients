@@ -169,10 +169,15 @@ export const renameSecurityKey = (credentialID: string, data: { Name: string }) 
     data,
 });
 
-export const setupTotp = (TOTPSharedSecret: string, TOTPConfirmation: string) => ({
+export const setupTotp = (TOTPConfirmation: string) => ({
     url: 'core/v4/settings/2fa/totp',
     method: 'post',
-    data: { TOTPSharedSecret, TOTPConfirmation },
+    data: { TOTPConfirmation },
+});
+
+export const getSetupTotpSecret = () => ({
+    url: 'core/v4/settings/2fa/totp/secret',
+    method: 'get',
 });
 
 export const disableTotp = () => ({
