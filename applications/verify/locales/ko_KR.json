@@ -75,6 +75,19 @@
         "청구서 보기"
       ]
     },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 데스크톱 앱"
+      ],
+      "Use your own email domain": [
+        "기존 이메일 도메인 사용"
+      ]
+    },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "큰 용량의 파일 보관과 공유를 위한 클라우드 스토리지"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "압하지야"
@@ -906,6 +919,9 @@
       ],
       "Something went wrong": [
         "문제가 발생했습니다"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "이 페이지를 로드할 수 없습니다. 페이지를 새로고침 하거나 인터넷 연결을 확인하세요."
       ]
     },
     "fido2: Error": {
@@ -938,6 +954,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -952,11 +971,34 @@
       ],
       "Megabyte": [
         "메가바이트"
+      ],
+      "Terabyte": [
+        "테라바이트"
       ]
     },
     "Font face option": {
+      "System default": [
+        "시스템 기본값"
+      ],
       "Theme font": [
         "테마 폰트"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "크게"
+      ],
+      "Medium (recommended)": [
+        "중간 (권장)"
+      ],
+      "Small": [
+        "적게"
+      ],
+      "Very large": [
+        "매우 크게"
+      ],
+      "Very small": [
+        "매우 작게"
       ]
     },
     "Human verification method": {
@@ -989,6 +1031,9 @@
       "Country code": [
         "국가 코드"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "여러개의 무료 계정을 만드는 것은 당사의 ${ termsLink }에 따라 허용되지 않습니다."
+      ],
       "Each code can only be used once": [
         "각각의 코드는 한 번만 사용할 수 있습니다."
       ],
@@ -1007,8 +1052,14 @@
       "Enter your own password (as organization admin).": [
         "사용자의 비밀번호 입력 (조직 관리자와 같음)"
       ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "추가적인 정보와 제한을 없애기 위해 ${ mailLink }(에)서 로그인 해주세요."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "오류라고 생각되신다면, ${ contactLink }해주세요."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "받은 편지함에서 이메일을 찾지 못하셨다면 스팸 폴더를 확인하세요."
@@ -1033,6 +1084,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "제한을 해제하기 위해 유료 플랜 업그레이드가 가능합니다."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "하나 이상의 이메일 주소가 필요한 회원님과 같은 사용자를 위해 특별히 설계된 플랜이 존재합니다."
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } 에 새 인증 코드를 보내드려요."
@@ -1092,11 +1149,17 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "문의"
+      ],
       "Learn more": [
         "더 알아보기"
       ],
       "Request an invite": [
         "가입 요청하기"
+      ],
+      "terms of service": [
+        "서비스 이용약관"
       ]
     },
     "new_plans": {
@@ -1104,7 +1167,15 @@
         "폴더로 조직된 받은 편지함 정리"
       ]
     },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "${ planTitle } 구매하기"
+      ]
+    },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
       "${ n } custom email domain": [
         "사용자 지정 이메일 도메인 ${ n }개"
       ],
@@ -1129,11 +1200,47 @@
       "${ n } message per day": [
         "하루 당 ${ n } 메시지"
       ],
+      "${ options }-day file version history": [
+        "${ options }일 파일 버전 기록"
+      ],
       "${ size } attachment size": [
         "첨부 파일 크기: ${ size }"
       ],
+      "${ size } of secure storage per user": [
+        "사용자 당 ${ size } 보안 스토리지"
+      ],
       "${ size } storage": [
         "${ size } 저장공간"
+      ],
+      "${ size } storage per user": [
+        "사용자 당 ${ size } 저장 공간"
+      ],
+      "1 TB secure storage": [
+        "1 TB 보안 저장공간"
+      ],
+      "10 email addresses/aliases": [
+        "10개의 이메일 주소/별칭"
+      ],
+      "10 more premium features": [
+        "10개 더 많은 프리미엄 기능들"
+      ],
+      "10-year file version history": [
+        "10년 파일 버전 기록"
+      ],
+      "15 GB storage": [
+        "15 GB 저장 공간"
+      ],
+      "200 GB of storage": [
+        "200GB 저장공간"
+      ],
+      "Advanced account protection": [
+        "향상된 계정 보호 기능"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "모든 ${ BRAND_NAME } 제품 및 기능"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "모든 기본 ${ BRAND_NAME } 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "Auto-delete Spam and Trash": [
         "스팸 및 휴지통 자동 삭제"
@@ -1150,11 +1257,17 @@
       "Catch-all": [
         "Catch-all"
       ],
+      "Collaborate and share large files": [
+        "큰 파일을 공동으로 작업하고 공유하세요"
+      ],
       "Contact groups": [
         "연락처 그룹"
       ],
       "Contact groups management": [
         "연락처 그룹 관리"
+      ],
+      "Custom and secure business email": [
+        "커스텀 및 보안 비즈니스 이메일"
       ],
       "Custom email domains": [
         "사용자 지정 이메일 도메인"
@@ -1168,23 +1281,62 @@
       "Email client support (via IMAP/SMTP)": [
         "이메일 클라이언트 지원 (IMAP/SMTP)"
       ],
+      "Email groups": [
+        "이메일 그룹"
+      ],
       "Encrypted contact details": [
         "암호화된 연락처 세부정보"
       ],
       "End-to-end encryption": [
         "종단간 암호화"
       ],
+      "Generate emails with a prompt": [
+        "프롬프트로 이메일 생성하기"
+      ],
       "HTML signatures": [
         "HTML 서명"
+      ],
+      "Online document editor": [
+        "온라인 문서 편집기"
+      ],
+      "Password health": [
+        "비밀번호 건강도"
       ],
       "Password-protected Emails": [
         "비밀번호로 보호된 이메일"
       ],
+      "Private photo backup": [
+        "안전한 사진 백업"
+      ],
+      "Proofread and refine your emails": [
+        "이메일 교정 및 수정하기"
+      ],
+      "Quickly craft replies": [
+        "신속하게 답변 작성하기"
+      ],
+      "Recover previous file versions": [
+        "기존 파일 버전 복원"
+      ],
+      "Save time emailing": [
+        "이메일 작성 시간 줄이기"
+      ],
       "Schedule and snooze emails for any time": [
         "언제든지 이메일을 예약하거나 다시 알림받기"
       ],
+      "Secure file storage and sharing": [
+        "안전한 파일 저장 공간 및 공유"
+      ],
+      "Share files with no size limit": [
+        "크기 제한 없는 파일 공유"
+      ],
       "SMTP submission": [
         "SMTP 세부 사항"
+      ],
+      "Support for up to 2 users": [
+        "최대 2명 지원"
+      ],
+      "Sync and backup all your files across devices": [
+        "기기를 넘나들며 파일을 동기화 및 백업하세요"
       ],
       "Unlimited filters": [
         "무제한 필터"
@@ -1206,11 +1358,20 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1개 커스텀 이메일 도메인"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, 그리고 ${ DRIVE_APP_NAME } 에 스토리지 공간이 공유됩니다."
       ]
     },
     "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: 버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
+      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: 사용자 지정 이메일 도메인, 15개 이메일 주소, 무제한 hide-my-email 별칭 등 기능을 포함하는 이메일로 보호하세요."
       ],
@@ -1240,6 +1401,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "가족 구성원에게 할당할 수 있는 이메일 주소/별칭을 ${ n }개까지 생성할 수 있습니다. 온라인 신원으로 사용할 수 있고, 쇼핑 계정으로 홍쇼핑@${ domain }을(를) 사용하는 것을 예로 들 수 있습니다."
+      ],
+      "Email everyone in a group with a single email address": [
+        "그룹 내의 모두에게 하나의 주소로 이메일을 전송하기"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "이메일 주소가 존재하지 않거나, 더 이상 존재하지 않거나, 오타가 있더라도 도메인으로 전송된 모든 이메일을 받을 수 있습니다."
@@ -1305,11 +1469,19 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "최종 ${ bundleStorage }으로 저장 공간을 부스트 하세요"
+      ],
+      "Support for ${ n } custom email domain": [
+        "${ n }개 커스텀 이메일 도메인 지원"
       ]
     },
     "Placeholder": {
       "Password": [
         "비밀번호"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 프리미엄 기능"
       ]
     },
     "saml: Error": {
@@ -1353,6 +1525,9 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "계정 제한됨"
+      ],
       "Enter 2FA code": [
         "2단계 인증 코드 입력"
       ],

@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Preverjanje pristnosti"
+      ],
       "Cancel": [
         "Prekliči"
       ],
@@ -28,6 +31,9 @@
       ],
       "Edit sign-in details": [
         "Uredi podrobnosti prijave"
+      ],
+      "Forgot password?": [
+        "Pozabljeno geslo?"
       ],
       "Get verification code": [
         "Pridobi kodo za preverjanje"
@@ -53,6 +59,12 @@
       "Try another method": [
         "Poskusi z drugim načinom"
       ],
+      "Use authentication code": [
+        "Uporabi kodo za preverjanje pristnosti"
+      ],
+      "Use recovery code": [
+        "Uporabite kode za obnovitev"
+      ],
       "Verify": [
         "Preveri"
       ],
@@ -61,6 +73,19 @@
       ],
       "View invoice": [
         "Ogled računa"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Program ${ MAIL_APP_NAME } za namizje"
+      ],
+      "Use your own email domain": [
+        "Uporabite svojo e-poštno domeno"
+      ]
+    },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Shramba v oblaku in skupna raba velikih datotek"
       ]
     },
     "Country name": {
@@ -894,6 +919,27 @@
       ],
       "Something went wrong": [
         "Nekaj je šlo narobe"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Te strani ni bilo mogoče naložiti. Osvežite stran ali preverite svojo povezavo z internetom."
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Vstavite varnostni ključ, povezan z vašim računom ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Varnostni ključ"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Varnostni ključ"
       ]
     },
     "file size format": {
@@ -911,6 +957,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -937,11 +986,37 @@
         "Megabajta",
         "Megabajti",
         "Megabajtov"
+      ],
+      "Terabyte": [
+        "Terabajt",
+        "Terabajta",
+        "Terabajti",
+        "Terabajtov"
       ]
     },
     "Font face option": {
+      "System default": [
+        "Sistemsko privzeto"
+      ],
       "Theme font": [
         "Pisava teme"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Veliko"
+      ],
+      "Medium (recommended)": [
+        "Srednje (priporočeno)"
+      ],
+      "Small": [
+        "Majhno"
+      ],
+      "Very large": [
+        "Zelo veliko"
+      ],
+      "Very small": [
+        "Zelo majhno"
       ]
     },
     "Human verification method": {
@@ -974,14 +1049,35 @@
       "Country code": [
         "Koda države"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "Ustvarjanje več brezplačnih računov ni dovoljeno v skladu z našimi ${ termsLink }."
+      ],
+      "Each code can only be used once": [
+        "Vsaka koda se lahko uporabi samo enkrat"
+      ],
       "Edit email address": [
         "Uredi e-poštni naslov"
+      ],
+      "Enter the code from your authenticator app": [
+        "Vnesite kodo iz aplikacije za preverjanje pristnosti"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vnesite kodo za preverjanje, ki je bila poslana na ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Vnesite potrditveno kodo. Števka ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "Za dodatne informacije in odstranitev omejitev se prijavite na ${ mailLink }."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Če imate težave z ustvarjanjem računa, lahko zahtevate povabilo in odzvali se bomo v enem delovnem dnevu."
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Če menite, da smo se zmotili, se obrnite na nas ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Če sporočila ne najdete v nabiralniku, poglejte v mapo z neželeno pošto."
@@ -1007,8 +1103,17 @@
       "To fight spam and abuse, please verify you are human.": [
         "Zaradi boja proti neželeni vsebini in zlorabam najprej potrdite, da ste človek."
       ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Če želite odstraniti omejitve, lahko nadgradite na plačljiv paket."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Imamo pakete, zasnovane posebej za uporabnike, kot ste vi, ki potrebujete več kot en e-poštni naslov."
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Poslali vam bomo novo kodo za preverjanje na ${ strong }."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ali želite prejeti novo kodo za preverjanje ali uporabiti drugačen način preverjanja?"
@@ -1033,6 +1138,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Aplikacija za preverjanje pristnosti"
+      ],
       "Code is 6 digits without spaces": [
         "Koda vsebuje 6 števk brez presledkov"
       ],
@@ -1053,14 +1161,23 @@
       ],
       "Verification code": [
         "Koda za preverjanje"
+      ],
+      "Your password (admin)": [
+        "Vaše geslo (admin)"
       ]
     },
     "Link": {
+      "contact us": [
+        "stopite v stik z nami"
+      ],
       "Learn more": [
         "Več o tem"
       ],
       "Request an invite": [
         "Zahtevaj povabilo"
+      ],
+      "terms of service": [
+        "pogoji storitve"
       ]
     },
     "new_plans": {
@@ -1068,7 +1185,15 @@
         "Imejte urejen poštni predal z mapami."
       ]
     },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Pridobite ${ planTitle }"
+      ]
+    },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Pomočnik pri pisanju ${ BRAND_NAME } Scribe"
+      ],
       "${ n } custom email domain": [
         "${ n } e-poštna domena po meri",
         "${ n } e-poštni domeni po meri",
@@ -1117,11 +1242,50 @@
         "${ n } sporočila na dan",
         "${ n } sporočil na dan"
       ],
+      "${ options }-day file version history": [
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke"
+      ],
       "${ size } attachment size": [
         "${ size } velikost priponke"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } varne shrambe na uporabnika"
+      ],
       "${ size } storage": [
         "${ size } shrambe"
+      ],
+      "${ size } storage per user": [
+        "${ size } shrambe na uporabnika"
+      ],
+      "1 TB secure storage": [
+        "1 TB varnega prostora za shranjevanje"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-poštnih naslovov/psevdonimov"
+      ],
+      "10 more premium features": [
+        "Še 10 premijskih funkcij"
+      ],
+      "10-year file version history": [
+        "Zgodovina različic datotek za 10 let"
+      ],
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "200 GB of storage": [
+        "200 GB prostora za shranjevanje"
+      ],
+      "Advanced account protection": [
+        "Napredni program za zaščito računa"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Vsi izdelki in funkcije ${ BRAND_NAME }"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Vse osnovne storitve ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "Auto-delete Spam and Trash": [
         "Samodejno brisanje neželene pošte in smeti"
@@ -1138,11 +1302,17 @@
       "Catch-all": [
         "Ujemi vse"
       ],
+      "Collaborate and share large files": [
+        "Sodelovanje in skupna raba velikih datotek"
+      ],
       "Contact groups": [
         "Skupina stikov"
       ],
       "Contact groups management": [
         "Urejanje skupin stikov"
+      ],
+      "Custom and secure business email": [
+        "Varna poslovna e-pošta po meri"
       ],
       "Custom email domains": [
         "E-poštne domene po meri"
@@ -1156,23 +1326,62 @@
       "Email client support (via IMAP/SMTP)": [
         "Podpora za e-poštne odjemalce (prek protokola IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Skupine e-pošte"
+      ],
       "Encrypted contact details": [
         "Šifrirani podatki o stikih"
       ],
       "End-to-end encryption": [
         "Celovito šifriranje"
       ],
+      "Generate emails with a prompt": [
+        "Ustvarite e-pošto s pozivom"
+      ],
       "HTML signatures": [
         "HTML podpisi"
+      ],
+      "Online document editor": [
+        "Spletni urejevalnik dokumentov"
+      ],
+      "Password health": [
+        "Kakovost gesla"
       ],
       "Password-protected Emails": [
         "E-pošta, zaščitena z geslom"
       ],
+      "Private photo backup": [
+        "Zasebna varnostna kopija fotografij"
+      ],
+      "Proofread and refine your emails": [
+        "Lektoriranje in izboljšanje vaše e-pošte"
+      ],
+      "Quickly craft replies": [
+        "Hitro ustvarite odgovore"
+      ],
+      "Recover previous file versions": [
+        "Obnovi prejšnje različice datoteke"
+      ],
+      "Save time emailing": [
+        "Prihranite čas pri pošiljanju e-pošte"
+      ],
       "Schedule and snooze emails for any time": [
         "Načrtujte pošiljanje ali prestavite dostavo za čas po meri"
       ],
+      "Secure file storage and sharing": [
+        "Varna shramba datotek in skupna raba"
+      ],
+      "Share files with no size limit": [
+        "Souporaba datotek brez omejitve velikosti"
+      ],
       "SMTP submission": [
         "Pošiljanje SMTP"
+      ],
+      "Support for up to 2 users": [
+        "Podpora za do 2 uporabnika"
+      ],
+      "Sync and backup all your files across devices": [
+        "Varno kopirajte vse svoje datoteke in jih sinhronizirajte v vseh napravah."
       ],
       "Unlimited filters": [
         "Neomejeno število filtrov"
@@ -1194,11 +1403,20 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 e-poštna domena po meri"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Ustvarite več e-poštnih naslovov za vaše spletne identitete, npr. JanezNakupi@${ domain } za nakupovalne račune in JanezNovice@${ domain2 } za naročnine na novice."
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Prostor za shranjevanje si delijo ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } in ${ DRIVE_APP_NAME }."
       ]
     },
     "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Zavarujte svoje datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano skupno rabo datotek in drugo."
+      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Zavarujte vaša sporočila s celovitim šifriranjem. Vključuje podporo za e-poštne domene po meri, 15 e-poštnih naslovov, neomejeno število vzdevkov hide-my-email in drugo."
       ],
@@ -1228,6 +1446,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Ustvarite do ${ n } e-poštnih naslovov/vzdevkov, ki jih lahko dodelite družinskim članom. Uporabite jih za spletne identitete, npr. JohnShopper@${ domain } za nakupovalne račune."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Pošljite e-pošto vsem v skupini z enim samim e-poštnim naslovom"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Zagotovi, da prejmete vsa sporočila, ki so poslana v vašo domeno, tudi če e-poštni naslov ne obstaja, ne obstaja več ali je napačno napisan."
@@ -1293,6 +1514,12 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Povečajte svoj prostor za shranjevanje na skupno ${ bundleStorage }."
+      ],
+      "Support for ${ n } custom email domain": [
+        "Podpora za ${ n } e-poštno domeno po meri",
+        "Podpora za ${ n } e-poštnih domen po meri",
+        "Podpora za ${ n } e-poštnih domen po meri",
+        "Podpora za ${ n } e-poštnih domen po meri"
       ]
     },
     "Placeholder": {
@@ -1303,6 +1530,9 @@
     "sso": {
       "Sign in": [
         "Prijava"
+      ],
+      "Sign in to your organization": [
+        "Prijavite se v svojo organizacijo"
       ]
     },
     "storage_split: feature": {
@@ -1330,8 +1560,14 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "Račun je omejen"
+      ],
       "Enter 2FA code": [
         "Vnesite kodo 2FA"
+      ],
+      "Enter your password": [
+        "Vnesite svoje geslo"
       ],
       "Human verification": [
         "Ali si človek"
