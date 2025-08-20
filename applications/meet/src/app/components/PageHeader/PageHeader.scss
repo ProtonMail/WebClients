@@ -47,10 +47,6 @@
 
 	.logo {
 		block-size: 2.5rem;
-
-		@include media('>small') {
-			block-size: 3rem;
-		}
 	}
 }
 
