@@ -69,6 +69,7 @@ export {
     ConnectionError,
     NonProtonInvitationState,
     DriveEventType,
+    ServerError,
 } from '@protontech/drive-sdk';
 
 let driveSingleton: ProtonDriveClient;
