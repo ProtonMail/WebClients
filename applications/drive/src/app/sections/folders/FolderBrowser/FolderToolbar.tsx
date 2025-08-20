@@ -66,7 +66,7 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
         uploadFile: { fileInputRef, handleFileClick, handleFileChange },
         uploadFolder: { folderInputRef, handleFolderClick, handleFolderChange },
         modals,
-    } = useFolderActions({ selectedItems, shareId, linkId });
+    } = useFolderActions({ selectedItems, shareId, linkId, volumeId });
 
     const isAdmin = role === MemberRole.Admin;
     const shouldShowShareButton = permissions.canShare && selectedItems.length === 0 && items.length > 0;

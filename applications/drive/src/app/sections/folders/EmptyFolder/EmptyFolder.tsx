@@ -10,7 +10,7 @@ import { DriveEmptyView } from '../../../components/layout/DriveEmptyView';
 import { FolderContextMenu } from '../FolderBrowser/FolderContextMenu';
 import { useFolderStore } from '../useFolder.store';
 
-export const EmptyFolder = ({ shareId, linkId }: { shareId: string; linkId: string }) => {
+export const EmptyFolder = ({ shareId, linkId, volumeId }: { shareId: string; linkId: string; volumeId: string }) => {
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLDivElement>();
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
     const { permissions } = useFolderStore(
@@ -65,6 +65,7 @@ export const EmptyFolder = ({ shareId, linkId }: { shareId: string; linkId: stri
                 dataTestId="my-files-empty-placeholder"
             />
             <FolderContextMenu
+                volumeId={volumeId}
                 shareId={shareId}
                 linkId={linkId}
                 isOpen={isOpen}

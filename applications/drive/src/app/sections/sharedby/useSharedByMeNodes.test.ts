@@ -97,6 +97,7 @@ const mockLegacyItem: LegacyItem = {
     isAnonymous: false,
     metaDataModifyTime: 1640995200,
     thumbnailId: 'rev1',
+    parentUid: undefined,
 };
 
 const mockLegacyNode = {

@@ -1,5 +1,3 @@
-import type { NodeEntity } from '@proton/drive/index';
-
 /**
  * EventManager Events
  *
@@ -10,11 +8,17 @@ import type { NodeEntity } from '@proton/drive/index';
  *      - `uids` for string array of uids
  *      - `items` for all else
  */
+import type { NodeEntity } from '@proton/drive';
+
+export type NodeEventMeta = { uid: string; parentUid: string | undefined; isTrashed?: boolean; isShared?: boolean };
 
 export enum ActionEventName {
-    // Specific events that update only a part of the view, used for optimistic updates
-    TRASH_NODES_OPTIMISTIC = 'TRASH_NODES_OPTIMISTIC',
-    RENAME_NODES_OPTIMISTIC = 'RENAME_NODES_OPTIMISTIC',
+    // Specific events that update only a part of the view, can be optimistic or not
+    MOVED_NODES = 'MOVED_NODES',
+    TRASHED_NODES = 'TRASHED_NODES',
+    RESTORED_NODES = 'RESTORED_NODES',
+    RENAMED_NODES = 'RENAMED_NODES',
+    SHARE_CHANGED_NODES = 'SHARE_CHANGED_NODES',
 
     // Generic events that update the whole node
     UPDATED_NODES = 'UPDATED_NODES_EVENT',
@@ -32,23 +36,38 @@ export enum ActionEventName {
     ALL = '*',
 }
 
+export interface MovedNodesEvent {
+    type: ActionEventName.MOVED_NODES;
+    items: { uid: string; parentUid: string | undefined }[];
+}
+
+export interface ShareChangedEvent {
+    type: ActionEventName.SHARE_CHANGED_NODES;
+    items: { uid: string; isShared: boolean }[];
+}
+
 export interface TrashedNodesEvent {
-    type: ActionEventName.TRASH_NODES_OPTIMISTIC;
+    type: ActionEventName.TRASHED_NODES;
     uids: string[];
 }
+export interface RestoredNodesEvent {
+    type: ActionEventName.RESTORED_NODES;
+    uids: string[];
+}
+
 export interface RenamedNodesEvent {
-    type: ActionEventName.RENAME_NODES_OPTIMISTIC;
+    type: ActionEventName.RENAMED_NODES;
     items: { newName: string; uid: string }[];
 }
 
 export interface UpdatedNodesEvent {
     type: ActionEventName.UPDATED_NODES;
-    nodes: NodeEntity[];
+    items: NodeEventMeta[];
 }
 
 export interface CreatedNodesEvent {
     type: ActionEventName.CREATED_NODES;
-    nodes: NodeEntity[];
+    items: NodeEventMeta[];
 }
 
 export interface DeletedNodesEvent {
@@ -75,7 +94,10 @@ export interface RejectInvitationsEvent {
 }
 
 export type ActionEvent =
+    | MovedNodesEvent
+    | ShareChangedEvent
     | TrashedNodesEvent
+    | RestoredNodesEvent
     | RenamedNodesEvent
     | UpdatedNodesEvent
     | CreatedNodesEvent
@@ -87,8 +109,11 @@ export type ActionEvent =
 export type ActionEventListener<T extends ActionEvent> = (event: T) => void;
 
 export type ActionEventMap = {
-    [ActionEventName.TRASH_NODES_OPTIMISTIC]: TrashedNodesEvent;
-    [ActionEventName.RENAME_NODES_OPTIMISTIC]: RenamedNodesEvent;
+    [ActionEventName.MOVED_NODES]: MovedNodesEvent;
+    [ActionEventName.SHARE_CHANGED_NODES]: ShareChangedEvent;
+    [ActionEventName.TRASHED_NODES]: TrashedNodesEvent;
+    [ActionEventName.RESTORED_NODES]: RestoredNodesEvent;
+    [ActionEventName.RENAMED_NODES]: RenamedNodesEvent;
     [ActionEventName.UPDATED_NODES]: UpdatedNodesEvent;
     [ActionEventName.CREATED_NODES]: CreatedNodesEvent;
     [ActionEventName.DELETED_NODES]: DeletedNodesEvent;
