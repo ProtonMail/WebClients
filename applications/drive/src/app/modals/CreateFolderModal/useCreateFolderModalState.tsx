@@ -11,14 +11,22 @@ import { formatLinkName, useDriveEventManager, validateLinkNameField } from '../
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 
-export type UseCreateFolderModalStateProps = ModalStateProps & {
+export type CreateFolderModalInnerProps = {
     parentFolderUid?: string;
     onSuccess?: (folderId: string, newName: string) => void;
-
-    // Here only for retro compatibility, should be removed once the SDK migration is done
-    folder?: { shareId: string; linkId: string };
-    createFolder?: (abortSignal: AbortSignal, shareId: string, parentLinkId: string, name: string) => Promise<string>;
 };
+
+export type UseCreateFolderModalStateProps = ModalStateProps &
+    CreateFolderModalInnerProps & {
+        // Here only for retro compatibility, should be removed once the SDK migration is done
+        folder?: { shareId: string; linkId: string };
+        createFolder?: (
+            abortSignal: AbortSignal,
+            shareId: string,
+            parentLinkId: string,
+            name: string
+        ) => Promise<string>;
+    };
 
 export const useCreateFolderModalState = ({
     parentFolderUid,
@@ -68,6 +76,7 @@ export const useCreateFolderModalState = ({
                 type: 'success',
                 text: c('Notification').jt`"${name}" created successfully`,
             });
+
             const { node } = getNodeEntity(newFolder);
             const { nodeId } = splitNodeUid(node.uid);
             // Needs to pass nodeId because the same callback is called by the legacy app component

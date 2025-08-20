@@ -16,6 +16,7 @@ import {
     Row,
     useModalTwoStatic,
 } from '@proton/components';
+import type { NodeEntity } from '@proton/drive';
 import { useLoading } from '@proton/hooks';
 import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
@@ -26,12 +27,13 @@ import { getIsPublicContext } from '../../utils/getIsPublicContext';
 
 interface Props {
     onClose?: () => void;
-    onSubmit: (formattedName: string) => Promise<void>;
+    onSubmit?: (newName: string) => Promise<void>;
     isFile: boolean;
-    isDoc: boolean;
+    isDoc?: boolean;
     name: string;
-    volumeId?: string;
-    linkId?: string;
+    volumeId: string;
+    linkId: string;
+    onSuccess?: (node: NodeEntity) => void;
 }
 
 const RenameModalDeprecated = ({
@@ -40,8 +42,8 @@ const RenameModalDeprecated = ({
     name: linkName,
     onClose,
     onSubmit,
-    volumeId, // here so they don't get added to the dom with modalProps
-    linkId, // here so they don't get added to the dom with modalProps
+    volumeId,
+    linkId,
     ...modalProps
 }: Props & ModalStateProps) => {
     const [name, setName] = useState(linkName);
@@ -74,7 +76,7 @@ const RenameModalDeprecated = ({
         const formattedName = formatLinkName(name);
         setName(formattedName);
 
-        await onSubmit(formattedName);
+        await onSubmit?.(formattedName);
         onClose?.();
     };
 
@@ -127,5 +129,10 @@ const RenameModalDeprecated = ({
 export const useRenameModal = () => {
     const useSDKModal = useFlag('DriveWebSDKRenameModal');
     const isPublic = getIsPublicContext();
-    return useModalTwoStatic(useSDKModal && !isPublic ? RenameModal : RenameModalDeprecated);
+
+    const [renameModal, showRenameModal] = useModalTwoStatic(
+        useSDKModal && !isPublic ? RenameModal : RenameModalDeprecated
+    );
+
+    return [renameModal, showRenameModal] as const;
 };
