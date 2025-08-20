@@ -11,6 +11,7 @@ import { type FolderButtonProps } from './types';
 type Item = {
     uid: string;
     name: string;
+    parentUid: string | undefined;
 };
 
 type Props = Omit<FolderButtonProps, 'onClick'> & {

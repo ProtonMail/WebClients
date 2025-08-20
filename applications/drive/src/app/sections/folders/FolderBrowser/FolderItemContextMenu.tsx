@@ -25,6 +25,7 @@ import { useFolderStore } from '../useFolder.store';
 export function FolderItemContextMenu({
     shareId,
     linkId,
+    volumeId,
     selectedItems,
     anchorRef,
     isOpen,
@@ -35,6 +36,7 @@ export function FolderItemContextMenu({
 }: ContextMenuProps & {
     shareId: string;
     linkId: string;
+    volumeId: string;
     selectedItems: LegacyItem[];
 }) {
     const selectedItem = selectedItems.length > 0 ? selectedItems[0] : undefined;
@@ -55,7 +57,7 @@ export function FolderItemContextMenu({
     const {
         actions: { showDetailsModal, showRevisionsModal, showRenameModal, showMoveModal, showLinkSharingModal },
         modals,
-    } = useFolderActions({ selectedItems, shareId, linkId });
+    } = useFolderActions({ selectedItems, shareId, linkId, volumeId });
 
     return (
         <>

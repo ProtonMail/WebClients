@@ -5,7 +5,10 @@ import { useShallow } from 'zustand/react/shallow';
 import { useActiveBreakpoint } from '@proton/components';
 import { MemberRole, ThumbnailType, splitNodeUid, useDrive } from '@proton/drive/index';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
+import type { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
+import type {
+    SortParams} from '../../../components/FileBrowser';
 import FileBrowser, {
     type BrowserItemId,
     Cells,
@@ -32,9 +35,8 @@ import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import type { EncryptedLink, LinkShareUrl, SignatureIssues } from '../../../store';
-import { useDocumentActions, useUserSettings } from '../../../store';
+import { useDocumentActions } from '../../../store';
 import { useDriveDocsFeatureFlag } from '../../../store/_documents';
-import { useControlledSorting } from '../../../store/_views/utils';
 import { SortField } from '../../../store/_views/utils/useSorting';
 import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
@@ -42,6 +44,7 @@ import { useThumbnailStore } from '../../../zustand/thumbnails/thumbnails.store'
 import { EmptyDeviceRoot } from '../EmptyFolder/EmptyDeviceRoot';
 import { EmptyFolder } from '../EmptyFolder/EmptyFolder';
 import { getSelectedItems } from '../getSelectedItems';
+import type { FolderViewItem} from '../useFolder.store';
 import { useFolderStore } from '../useFolder.store';
 import { FolderContextMenu } from './FolderContextMenu';
 import { FolderItemContextMenu } from './FolderItemContextMenu';
@@ -68,6 +71,10 @@ export interface DriveItem extends FileBrowserBaseItem {
 
 interface Props {
     activeFolder: DriveFolder;
+    layout: LayoutSetting;
+    sortParams: SortParams<SortField.name | SortField.fileModifyTime | SortField.size>;
+    setSorting: (sortParams: SortParams<SortField.name | SortField.fileModifyTime | SortField.size>) => Promise<void>;
+    sortedList: FolderViewItem[];
 }
 
 type ItemWithAdditionalProps = LegacyItem & {
@@ -96,8 +103,8 @@ const headerItemsSmallScreen: ListViewHeaderItem[] = [headerItems.checkbox, head
 type DriveSortFields = Extract<SortField, SortField.name | SortField.fileModifyTime | SortField.size>;
 const SORT_FIELDS: DriveSortFields[] = [SortField.name, SortField.fileModifyTime, SortField.size];
 
-export function FolderBrowser({ activeFolder }: Props) {
-    const { shareId, linkId } = activeFolder;
+export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, sortedList }: Props) {
+    const { shareId, linkId, volumeId } = activeFolder;
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
 
     const browserContextMenu = useContextMenuControls();
@@ -112,28 +119,18 @@ export function FolderBrowser({ activeFolder }: Props) {
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const { thumbnails, setThumbnail } = useThumbnailStore();
     const openPreview = useOpenPreview();
-    const {
-        items: folderItems,
-        permissions,
-        isLoading,
-        role,
-        folder,
-    } = useFolderStore(
+    const { permissions, isLoading, role, folder } = useFolderStore(
         useShallow((state) => ({
             isLoading: state.isLoading,
             role: state.role,
-            items: state.getFolderItems(),
             permissions: state.permissions,
             folder: state.folder,
         }))
     );
 
-    const { layout, sort, changeSort } = useUserSettings();
-    const { sortedList, sortParams, setSorting } = useControlledSorting(folderItems, sort, changeSort);
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, isLoading);
     const isAdmin = role === MemberRole.Admin;
 
-    // ItemWithAdditionalProps[]
     const browserItems = sortedList.map((node) => ({
         ...node,
         isAdmin,
@@ -246,7 +243,7 @@ export function FolderBrowser({ activeFolder }: Props) {
             return <EmptyDeviceRoot />;
         }
 
-        return <EmptyFolder shareId={shareId} linkId={linkId} />;
+        return <EmptyFolder shareId={shareId} linkId={linkId} volumeId={volumeId} />;
     }
 
     const Cells = viewportWidth['>=large'] ? myFilesLargeScreenCells : myFilesSmallScreenCells;
@@ -255,6 +252,7 @@ export function FolderBrowser({ activeFolder }: Props) {
     return (
         <>
             <FolderContextMenu
+                volumeId={volumeId}
                 shareId={shareId}
                 linkId={linkId}
                 anchorRef={contextMenuAnchorRef}
@@ -264,6 +262,7 @@ export function FolderBrowser({ activeFolder }: Props) {
                 position={browserContextMenu.position}
             />
             <FolderItemContextMenu
+                volumeId={volumeId}
                 shareId={shareId}
                 linkId={linkId}
                 selectedItems={selectedItems}

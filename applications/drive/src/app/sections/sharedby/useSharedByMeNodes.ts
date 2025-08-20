@@ -57,6 +57,7 @@ export const useSharedByMeNodes = () => {
                 uid,
                 isLegacy: true,
                 thumbnailId: node.activeRevision?.id || uid,
+                parentUid: undefined,
             };
         });
 

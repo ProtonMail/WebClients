@@ -5,6 +5,7 @@ import { generateNodeUid, splitNodeUid, useDrive } from '@proton/drive';
 
 import { useActiveShare } from '../../hooks/drive/useActiveShare';
 import { type DecryptedLink, useDriveEventManager, useTreeForModals } from '../../store';
+import type { NodeEventMeta } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { CreateFolderModal } from '../CreateFolderModal';
 import { useMovedItemsNotification } from './useMovedItemsNotification';
@@ -17,11 +18,13 @@ export type MoveItemsModalStateItem = {
     isFile: boolean;
 };
 
-export type UseMoveItemsModalStateProps = ModalStateProps & {
+export type MoveItemsModalInnerProps = {
     shareId: string;
     selectedItems: MoveItemsModalStateItem[];
-    onSuccess?: (targetFolderUid: string, movedItems: MoveItemsModalStateItem[]) => void;
+    onSuccess?: (items: { uid: string; parentUid: string | undefined }[]) => void;
 };
+
+export type UseMoveItemsModalStateProps = ModalStateProps & MoveItemsModalInnerProps;
 
 export const useMoveItemsModalState = ({
     onClose,
@@ -54,31 +57,34 @@ export const useMoveItemsModalState = ({
         const failedIds = [];
         const volumeIdSet = new Set<string>();
         const uids = Object.keys(itemMap);
-
+        const eventItems: NodeEventMeta[] = [];
         for (const itemId of uids) {
-            const targetId = parentMap.get(itemId);
-            if (!targetId) {
+            const toFolderUid = parentMap.get(itemId);
+            if (!toFolderUid) {
                 continue;
             }
 
             try {
-                for await (const result of drive.moveNodes([itemId], targetId)) {
+                for await (const result of drive.moveNodes([itemId], toFolderUid)) {
                     const { uid, ok } = result;
                     if (ok) {
                         successIds.push({ uid: result.uid, name: itemMap[uid].name });
-                        const { volumeId } = splitNodeUid(targetId);
+                        const { volumeId } = splitNodeUid(toFolderUid);
                         volumeIdSet.add(volumeId);
+                        eventItems.push({ uid, parentUid: toFolderUid });
                     } else {
                         failedIds.push({ uid: result.uid, error: result.error });
                     }
                 }
             } catch (e) {
-                handleError(e, { extra: { itemsUId: uids, targetId } });
+                handleError(e, { extra: { itemsUId: uids, toFolderUid } });
             }
         }
+        onSuccess?.(eventItems);
         createMovedItemsNotifications(successIds, failedIds);
+
         volumeIdSet.forEach(async (volumeId) => {
-            await events.pollEvents.volumes(volumeId);
+            await events.pollEvents.volumes(volumeId); // TODO:EVENTS remove once views are all ported to sdk
         });
     };
 
@@ -86,6 +92,7 @@ export const useMoveItemsModalState = ({
         const successIds = [];
         const failedIds = [];
         const parentMap = new Map();
+        const eventItems = [];
         if (!targetFolderUid) {
             return;
         }
@@ -101,14 +108,14 @@ export const useMoveItemsModalState = ({
                 const { uid, ok } = result;
                 if (ok) {
                     successIds.push({ uid: result.uid, name: itemMap[uid].name });
+                    eventItems.push({ uid, parentUid: targetFolderUid });
                 } else {
                     failedIds.push({ uid: result.uid, error: result.error });
                 }
             }
-
             const undoFunc = () => undoMove(itemMap, parentMap);
             createMovedItemsNotifications(successIds, failedIds, undoFunc);
-            onSuccess?.(targetFolderUid, selectedItems);
+            onSuccess?.(eventItems);
             const { volumeId } = splitNodeUid(targetFolderUid);
             await events.pollEvents.volumes(volumeId); // TODO:EVENTS
         } catch (e) {
