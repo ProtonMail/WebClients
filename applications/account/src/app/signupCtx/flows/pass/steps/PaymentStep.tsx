@@ -9,7 +9,7 @@ import PaymentWrapper from '@proton/components/containers/payments/PaymentWrappe
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { IcShield } from '@proton/icons';
-import { PAYMENT_METHOD_TYPES, getPaymentsVersion, getPlanFromPlanIDs } from '@proton/payments';
+import { CYCLE, PAYMENT_METHOD_TYPES, getPaymentsVersion, getPlanFromPlanIDs } from '@proton/payments';
 import { PayButton, usePaymentOptimistic, useTaxCountry, useVatNumber } from '@proton/payments/ui';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -29,8 +29,11 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
     const payments = usePaymentOptimistic();
     const [loading, setLoading] = useState(false);
     const { options } = payments;
-    const yearlyPlanValue = getSimplePriceString(payments.currency, payments.selectedPlan.getPlan().Amount * 12);
-    const monthlyPlanValue = getSimplePriceString(payments.currency, payments.selectedPlan.getPlan().Amount);
+    const amountDue = getSimplePriceString(payments.currency, options.checkResult.AmountDue);
+    const monthlyPlanValue =
+        payments.checkResult.Cycle === CYCLE.YEARLY
+            ? getSimplePriceString(payments.currency, options.checkResult.AmountDue / 12)
+            : null;
 
     const paymentFacade = usePaymentFacade({
         checkResult: options.checkResult,
@@ -119,11 +122,13 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
                     </Button>
                     <div className="text-center">
                         <span className="text-sm color-weak">{payments.selectedPlan.getPlan().Title}</span>
-                        <h3 className="text-5xl text-bold my-1">{yearlyPlanValue}</h3>
-                        <h4 className="text-sm color-weak">
-                            {monthlyPlanValue}
-                            {c('Label').t`/month x 12 months`}
-                        </h4>
+                        <h3 className="text-5xl text-bold my-1">{amountDue}</h3>
+                        {monthlyPlanValue && (
+                            <h4 className="text-sm color-weak">
+                                {monthlyPlanValue}
+                                {c('Label').t`/month x 12 months`}
+                            </h4>
+                        )}
                     </div>
                     <span />
                 </div>
