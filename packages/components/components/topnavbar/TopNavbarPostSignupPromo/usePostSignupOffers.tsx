@@ -22,6 +22,7 @@ interface Props {
 }
 
 interface Offer extends Pick<OfferHookReturnValue, 'isLoading' | 'isEligible'> {
+    id: string;
     Component: ComponentType<any>;
     props?: Record<string, any>;
 }
@@ -42,55 +43,64 @@ export const usePostSignupOffers = ({ app }: Props) => {
     // Define offers in order of priority
     const offers: Offer[] = [
         {
+            id: 'mail-one-dollar-offer',
             isEligible: mailPostSignup.isEligible,
             isLoading: mailPostSignup.isLoading,
             Component: MailPostSignupOneDollar,
         },
         {
+            id: 'drive-one-dollar-offer',
             isEligible: drivePostSignup.isEligible,
             isLoading: drivePostSignup.isLoading,
             Component: DrivePostSignupOneDollar,
         },
         {
+            id: 'mail-subscription-reminder',
             isEligible: mailSubscription.isEligible,
             isLoading: mailSubscription.isLoading,
             Component: MailSubscriptionReminder,
             props: { app },
         },
         {
-            isEligible: alwaysOnUpsell.isEligible,
-            isLoading: alwaysOnUpsell.isLoading,
-            Component: AlwaysOnUpsell,
-            props: { app },
-        },
-        {
+            id: 'mail-monthly-nudge',
             isEligible: mailPaidUser.isEligible,
             isLoading: mailPaidUser.isLoading,
             Component: MonthylPaidUsersNudge,
             props: { plan: PLANS.MAIL },
         },
         {
+            id: 'drive-monthly-nudge',
             isEligible: drivePaidUser.isEligible,
             isLoading: drivePaidUser.isLoading,
             Component: MonthylPaidUsersNudge,
             props: { plan: PLANS.DRIVE },
         },
         {
+            id: 'bundle-monthly-nudge',
             isEligible: bundlePaidUser.isEligible,
             isLoading: bundlePaidUser.isLoading,
             Component: MonthylPaidUsersNudge,
             props: { plan: PLANS.BUNDLE },
         },
         {
+            id: 'go-unlimited',
             isEligible: goUnlimited2025.isEligible,
             isLoading: goUnlimited2025.isLoading,
             Component: GoUnlimited2025,
+        },
+        {
+            id: 'always-on-upsell',
+            isEligible: alwaysOnUpsell.isEligible,
+            isLoading: alwaysOnUpsell.isLoading,
+            Component: AlwaysOnUpsell,
+            props: { app },
         },
     ];
 
     const eligibleOffer = offers.find((offer) => offer.isEligible && !offer.isLoading);
 
     return {
+        id: eligibleOffer?.id,
         eligibleOffer: eligibleOffer ? <eligibleOffer.Component {...eligibleOffer.props} /> : undefined,
         loading: offers.some((offer) => offer.isLoading),
     };
