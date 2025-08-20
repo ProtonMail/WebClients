@@ -79,6 +79,7 @@ export function useFolder() {
                 setFolder({
                     ...legacyNode,
                     isRoot: !node.parentUid,
+                    shareId: activeFolder.shareId,
                 });
                 setRole(role);
                 setPermissions({

@@ -125,6 +125,7 @@ export const useCreateFolderModal = () => {
     const handleShowModal = async ({ folder, ...rest }: Props) => {
         const parentFolderUid =
             shouldUseSDK && folder ? await drive.getNodeUid(folder.shareId, folder.linkId) : undefined;
+
         return showModal({ folder, parentFolderUid, ...rest });
     };
 

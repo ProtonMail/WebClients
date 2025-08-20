@@ -12,6 +12,8 @@ import { useAlbumOnboardingModal } from '../../components/modals/AlbumOnboarding
 import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
 import UploadDragDrop from '../../components/uploads/UploadDragDrop/UploadDragDrop';
 import { useActiveShare } from '../../hooks/drive/useActiveShare';
+import { useUserSettings } from '../../store';
+import { useControlledSorting } from '../../store/_views/utils';
 import { FolderBrowser } from './FolderBrowser/FolderBrowser';
 import { FolderToolbar } from './FolderBrowser/FolderToolbar';
 import { useFolder } from './useFolder';
@@ -24,12 +26,18 @@ export function FolderView() {
     const { activeFolder } = useActiveShare();
     const parentUid = generateNodeUid(activeFolder.volumeId, activeFolder.linkId);
     const { load } = useFolder();
-    const { permissions, itemUids } = useFolderStore(
+
+    const { permissions, items: folderItems } = useFolderStore(
         useShallow((state) => ({
-            itemUids: state.getItemUids(),
             permissions: state.permissions,
+            items: state.getFolderItems(),
         }))
     );
+
+    const { layout, sort, changeSort } = useUserSettings();
+    const { sortedList, sortParams, setSorting } = useControlledSorting(folderItems, sort, changeSort);
+    const sortedUids = sortedList.map((item) => item.uid);
+    const browserViewProps = { layout, sortParams, setSorting, sortedList };
 
     useEffect(() => {
         const ac = new AbortController();
@@ -49,7 +57,7 @@ export function FolderView() {
     );
 
     return (
-        <FileBrowserStateProvider itemIds={itemUids}>
+        <FileBrowserStateProvider itemIds={sortedUids}>
             {renderAlbumOnboardingModal}
             {permissions.canEdit ? (
                 <UploadDragDrop
@@ -60,12 +68,12 @@ export function FolderView() {
                 >
                     <ToolbarRow titleArea={breadcrumbs} toolbar={toolbar} />
 
-                    {activeFolder && <FolderBrowser activeFolder={activeFolder} />}
+                    {activeFolder && <FolderBrowser activeFolder={activeFolder} {...browserViewProps} />}
                 </UploadDragDrop>
             ) : (
                 <>
                     <ToolbarRow titleArea={breadcrumbs} toolbar={toolbar} />
-                    {activeFolder && <FolderBrowser activeFolder={activeFolder} />}
+                    {activeFolder && <FolderBrowser activeFolder={activeFolder} {...browserViewProps} />}
                 </>
             )}
         </FileBrowserStateProvider>

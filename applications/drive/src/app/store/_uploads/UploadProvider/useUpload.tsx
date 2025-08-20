@@ -4,16 +4,21 @@ import { c } from 'ttag';
 
 import { useGetUser } from '@proton/account/user/hooks';
 import { useEventManager, useNotifications, useOnline, usePreventLeave } from '@proton/components';
+import { useDrive } from '@proton/drive/index';
 import { APPS } from '@proton/shared/lib/constants';
 import { MAX_SAFE_UPLOADING_FILE_COUNT, MAX_SAFE_UPLOADING_FILE_SIZE } from '@proton/shared/lib/drive/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
+import useFlag from '@proton/unleash/useFlag';
 
 import { TransferCancel, TransferSkipped, TransferState } from '../../../components/TransferManager/transfer';
 import type { FileThresholdModalType } from '../../../components/modals/FileThresholdModal';
 import { useFileThresholdModal } from '../../../components/modals/FileThresholdModal';
+import { getActionEventManager } from '../../../utils/ActionEventManager/ActionEventManager';
+import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventManagerTypes';
 import { sendErrorReport } from '../../../utils/errorHandling';
+import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import {
     isPhotosDisabledUploadError,
@@ -80,7 +85,11 @@ function useBaseUpload(
     const { createNotification } = useNotifications();
     const { preventLeave } = usePreventLeave();
     const { isSharedWithMe: getIsSharedWithMe } = useDirectSharingInfo();
+    const useSDK = useFlag('DriveWebSDKFolders');
+    const shouldUseSdk = useSDK && !isPublicContext;
+    const { handleError } = useSdkErrorHandler();
 
+    const { drive } = useDrive();
     const metrics = useUploadMetrics(plan);
     const { log, downloadLogs, clearLogs } = useTransferLog('upload');
     const queue = useUploadQueue((id, message) => log(id, `queue: ${message}`));
@@ -237,9 +246,24 @@ function useBaseUpload(
         void preventLeave(
             controls
                 .start()
-                .then(({ folderId, folderName }) => {
+                .then(async ({ folderId, folderName }) => {
                     queue.updateWithData(nextFolderUpload.id, TransferState.Done, { folderId, name: folderName });
                     nextFolderUpload.callbacks.onFolderUpload?.({ folderId, folderName });
+                    if (shouldUseSdk) {
+                        try {
+                            const uid = await drive.getNodeUid(nextFolderUpload.shareId, folderId);
+                            const parentUid = await drive.getNodeUid(
+                                nextFolderUpload.shareId,
+                                nextFolderUpload.parentId
+                            );
+                            getActionEventManager().emit({
+                                type: ActionEventName.CREATED_NODES,
+                                items: [{ uid, parentUid }],
+                            });
+                        } catch (e) {
+                            handleError(e);
+                        }
+                    }
                 })
                 .catch((error) => {
                     if (isTransferCancelError(error)) {
@@ -298,10 +322,22 @@ function useBaseUpload(
                         queue.updateState(nextFileUpload.id, TransferState.Finalizing);
                     },
                 })
-                .then((file) => {
+                .then(async (file) => {
                     queue.updateState(nextFileUpload.id, TransferState.Done);
                     metrics.uploadSucceeded(nextFileUpload.shareId, nextFileUpload.numberOfErrors);
                     nextFileUpload.callbacks.onFileUpload?.(file);
+                    if (shouldUseSdk && file) {
+                        try {
+                            const uid = await drive.getNodeUid(nextFileUpload.shareId, file.fileId);
+                            const parentUid = await drive.getNodeUid(nextFileUpload.shareId, nextFileUpload.parentId);
+                            getActionEventManager().emit({
+                                type: ActionEventName.CREATED_NODES,
+                                items: [{ uid, parentUid }],
+                            });
+                        } catch (e) {
+                            handleError(e);
+                        }
+                    }
                 })
                 .catch((error) => {
                     if (isPhotosDisabledUploadError(error)) {
