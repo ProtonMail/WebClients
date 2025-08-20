@@ -4,9 +4,95 @@
     "language": "en_US"
   },
   "contexts": {
+    "Action": {
+      "Display navigation bar": [
+        "Show navigation bar"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "You can't send vCard files of more than ${ maxAttachments } contacts",
+        "You can't send vCard files of more than ${ maxAttachments } contacts"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "Unlimited folders, labels and filters": [
+        "Unlimited folders, labels, and filters"
+      ]
+    },
+    "BF2024: Deal details": {
+      "Unlimited folders, labels and filters": [
+        "Unlimited folders, labels, and filters"
+      ]
+    },
+    "Description": {
+      "When do you want your message to be sent?": [
+        "When do you want your message to be sent? "
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Paramètres par défaut du système"
+      ]
+    },
+    "Info": {
+      "Are you sure you want to permanently delete this message?": [
+        "Are you sure you want to permanently delete this message?"
+      ],
+      "file attached": [
+        "attachment",
+        "attachments"
+      ],
+      "More info": [
+        "Learn more"
+      ],
+      "This message will be automatically deleted on ${ value }": [
+        "This message will be automatically deleted at ${ value }"
+      ]
+    },
+    "new_plans: feature": {
+      "Tor over VPN": [
+        "TOR over VPN"
+      ]
+    },
+    "new_plans: info": {
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business."
+      ]
+    },
     "new_plans: tooltip": {
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize your email signature with logos, images, social media icons, links to your contact details, and more"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Route your internet traffic through the TOR network with a single click"
+      ]
+    },
+    "session_recovery:available:info": {
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "You have ${ timeRemaining.inHours } hour to reset your password.",
+        "You have ${ timeRemaining.inHours } hours to reset your password."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "You have ${ timeRemaining.inMinutes } minute to reset your password.",
+        "You have ${ timeRemaining.inMinutes } minutes to reset your password."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "You have ${ timeRemaining.inSeconds } second to reset your password.",
+        "You have ${ timeRemaining.inSeconds } seconds to reset your password."
+      ]
+    },
+    "Spotlight": {
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "This is now your default address. Open the dropdown to send from a different address."
+      ]
+    },
+    "Subscription reminder": {
+      "Users won’t be able to upload files on their devices": [
+        "Users won’t be able to upload files from their devices"
+      ]
+    },
+    "Tor out of date": {
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }"
       ]
     }
   }
