@@ -377,7 +377,7 @@ const UnlimitedBannerGradient = ({
         <DashboardGrid>
             {showUpsellHeader || gridSectionHeaderCopy ? (
                 <DashboardGridSectionHeader
-                    title={showUpsellHeader ? sectionHeaderCopy : gridSectionHeaderCopy}
+                    title={showUpsellHeader && priceDifference > 0 ? sectionHeaderCopy : gridSectionHeaderCopy}
                     cta={
                         <Button color="norm" shape="ghost" onClick={handleExplorePlans}>
                             {c('Action').t`Compare all plans`}
