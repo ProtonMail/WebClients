@@ -4,8 +4,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, PassLogo } from '@proton/components';
-import type { MaybeNull } from '@proton/pass/types';
-import { PLANS } from '@proton/payments';
 import { DARK_WEB_MONITORING_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import './OfferModal.scss';
@@ -17,7 +15,7 @@ type OfferModalProps = {
     rawPrice: number;
     getPrice: (price: number) => string;
     onClose: () => void;
-    onContinue: (upgradeTo: MaybeNull<PLANS>) => void;
+    onContinue: (upgradeTo: boolean) => void;
 };
 
 export const OfferModal: FC<OfferModalProps> = ({ loading, rawPrice, getPrice, onClose, onContinue }) => {
@@ -67,7 +65,7 @@ export const OfferModal: FC<OfferModalProps> = ({ loading, rawPrice, getPrice, o
                         color="norm"
                         fullWidth
                         pill
-                        onClick={() => onContinue(PLANS.PASS)}
+                        onClick={() => onContinue(true)}
                         loading={loading}
                     >
                         {c('Action').t`Get limited-time offer`}
@@ -88,7 +86,7 @@ export const OfferModal: FC<OfferModalProps> = ({ loading, rawPrice, getPrice, o
                         color="norm"
                         fullWidth
                         pill
-                        onClick={() => onContinue(null)}
+                        onClick={() => onContinue(false)}
                         loading={loading}
                     >
                         {c('Action').t`No thanks`}
