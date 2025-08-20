@@ -44,6 +44,9 @@
       "Apply": [
         "Toteuta"
       ],
+      "Bold": [
+        "Lihavointi"
+      ],
       "Bulleted List": [
         "Luettelo"
       ],
@@ -73,6 +76,9 @@
       ],
       "Code block": [
         "Koodilohko"
+      ],
+      "Color": [
+        "Väri"
       ],
       "Colour": [
         "Väri"
@@ -125,14 +131,23 @@
       "Insert comment": [
         "Lisää kommentti"
       ],
+      "Insert image": [
+        "Lisää kuva"
+      ],
       "Insert left": [
         "Lisää vasemmalle"
+      ],
+      "Insert link": [
+        "Lisää linkki"
       ],
       "Insert right": [
         "Lisää oikealle"
       ],
       "Insert table": [
         "Lisää taulukko"
+      ],
+      "Italic": [
+        "Kursivointi"
       ],
       "Justify align": [
         "Tasaa molemmat reunat"
@@ -154,6 +169,9 @@
       ],
       "Outdent": [
         "Pienennä sisennystä"
+      ],
+      "Quote": [
+        "Lainaus"
       ],
       "Re-open": [
         "Avaa uudelleen"
@@ -203,16 +221,40 @@
       "Table options": [
         "Taulukon valinnat"
       ],
+      "Underline": [
+        "Alleviivaus"
+      ],
       "Undo": [
         "Kumoa"
       ]
     },
     "color": {
+      "apple": [
+        "omena"
+      ],
+      "azureish white": [
+        "taivaansininen valkoinen"
+      ],
+      "black": [
+        "musta"
+      ],
+      "blanched almond": [
+        "valkaistu manteli"
+      ],
+      "blue-gray": [
+        "siniharmaa"
+      ],
+      "caramel": [
+        "karamelli"
+      ],
       "carrot": [
         "porkkana"
       ],
       "cerise": [
         "kirsikka"
+      ],
+      "cinnabar": [
+        "sinooperi"
       ],
       "cobalt": [
         "koboltti"
@@ -220,17 +262,62 @@
       "copper": [
         "kupari"
       ],
+      "cyan-blue azure": [
+        "syaaninsininen taivaansininen"
+      ],
+      "dandelion": [
+        "voikukka"
+      ],
+      "dark cerulean": [
+        "tumma cerulean"
+      ],
+      "dark midnight blue": [
+        "tumma keskiyön sininen"
+      ],
+      "dim gray": [
+        "himmeä harmaa"
+      ],
       "enzian": [
         "enzian"
       ],
       "fern": [
         "saniainen"
       ],
+      "field drab": [
+        "likaisenruskea"
+      ],
       "forest": [
         "metsä"
       ],
+      "gainsboro": [
+        "gainsboro"
+      ],
       "gray": [
         "harmaa"
+      ],
+      "japanese laurel": [
+        "kiiltopensas"
+      ],
+      "kiwi": [
+        "kiivi"
+      ],
+      "lemon yellow": [
+        "sitruunankeltainen"
+      ],
+      "light carmine pink": [
+        "vaalea karmiininpunainen"
+      ],
+      "light moss green": [
+        "vaalea sammalvihreä"
+      ],
+      "light red": [
+        "vaalea punainen"
+      ],
+      "maize": [
+        "maissi"
+      ],
+      "mughal green": [
+        "mughalin vihreä"
       ],
       "ocean": [
         "valtameri"
@@ -238,8 +325,32 @@
       "olive": [
         "oliivi"
       ],
+      "outer space": [
+        "ulkoavaruus"
+      ],
       "pacific": [
         "tyynimeri"
+      ],
+      "palatinate blue": [
+        "palatinan sininen"
+      ],
+      "pale cerulean": [
+        "kalpea cerulean"
+      ],
+      "pastel gray": [
+        "pastellinharmaa"
+      ],
+      "persian plum": [
+        "persianluumu"
+      ],
+      "persian red": [
+        "persianpunainen"
+      ],
+      "philippine gray": [
+        "filippiinien harmaa"
+      ],
+      "philippine silver": [
+        "filippiinien hopea"
       ],
       "pickle": [
         "suolakurkku"
@@ -249,6 +360,9 @@
       ],
       "pink": [
         "pinkki"
+      ],
+      "pistachio": [
+        "pistaasi"
       ],
       "plum": [
         "luumu"
@@ -262,8 +376,14 @@
       "reef": [
         "riutta"
       ],
+      "ruddy pink": [
+        "punertava pinkki"
+      ],
       "sahara": [
         "sahara"
+      ],
+      "satin sheen gold": [
+        "satiinin kiiltävä kulta"
       ],
       "slateblue": [
         "liuskeensininen"
@@ -273,6 +393,12 @@
       ],
       "strawberry": [
         "mansikka"
+      ],
+      "vivid auburn": [
+        "kirkas kastanjanruskea"
+      ],
+      "white": [
+        "valkoinen"
       ]
     },
     "Confirm": {
@@ -316,6 +442,12 @@
       "Request timed out": [
         "Pyyntö aikakatkaistiin"
       ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Dokumentin päivityksen käsittelyssä tapahtui virhe. Päivitä sivu ja yritä uudelleen."
+      ],
+      "Tried to import Sheet data into Lexical": [
+        "Yritettiin tuoda taulukon tiedot Lexicaliin"
+      ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Word-asiakirjaa ei voida muuntaa. Jos se on suojattu salasanalla, poista salasana ja yritä uudelleen."
       ]
@@ -329,8 +461,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "Järjestelmän oletus"
+      ],
       "Theme font": [
         "Teeman fontti"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Suuri"
+      ],
+      "Medium (recommended)": [
+        "Keskikokoinen (suositus)"
+      ],
+      "Small": [
+        "Pieni"
+      ],
+      "Very large": [
+        "Erittäin suuri"
+      ],
+      "Very small": [
+        "Erittäin pieni"
       ]
     },
     "Info": {
@@ -341,6 +493,9 @@
         "${ usersTranslation } kirjoittaa...",
         "${ usersTranslation } kirjoittavat..."
       ],
+      "Alpha only experimental feature": [
+        "Vain alfavaiheen kokeellinen ominaisuus"
+      ],
       "Are you sure you want to delete this comment?": [
         "Haluatko varmasti poistaa kommentin?"
       ],
@@ -349,6 +504,9 @@
       ],
       "Comments": [
         "Kommentit"
+      ],
+      "Copied to clipboard": [
+        "Kopioitu leikepöydälle"
       ],
       "Editing": [
         "Muokkaus"
@@ -388,6 +546,9 @@
       ],
       "Suggesting": [
         "Ehdottaminen"
+      ],
+      "Text color": [
+        "Tekstin väri"
       ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Sisältö, jota yrität liittää, on liian suuri liitettäväksi kerralla. Yritä liittää se vaiheittain pienempinä osina."
@@ -481,6 +642,9 @@
       "Insert table row": [
         "Lisää taulukkoon rivi"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Pikanäppäin: ${ shortcut }"
+      ],
       "Link text": [
         "Linkin teksti"
       ],
@@ -515,6 +679,9 @@
       ],
       "Reply...": [
         "Vastaa..."
+      ],
+      "Text": [
+        "Tekstitiedosto"
       ]
     },
     "Title": {

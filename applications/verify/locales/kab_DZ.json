@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Asesteb"
+      ],
       "Cancel": [
         "Sefsex"
       ],
@@ -29,6 +32,9 @@
       "Edit sign-in details": [
         "Ẓreg ttfaṣil n tuqqna"
       ],
+      "Forgot password?": [
+        "Tettud awal uffir?"
+      ],
       "Get verification code": [
         "Awi tangalt n usentem"
       ],
@@ -52,6 +58,12 @@
       ],
       "Try another method": [
         "Ɛreḍ tarrayt nniḍen"
+      ],
+      "Use authentication code": [
+        "Seqdec tangalt n usesteb"
+      ],
+      "Use recovery code": [
+        "Seqdec tangalt n tririt"
       ],
       "Verify": [
         "Senqed"
@@ -878,6 +890,16 @@
         "Yella wayen yeḍran"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "Tasarutt n tɣellist"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Tasarutt n tɣellist"
+      ]
+    },
     "file size format": {
       "byte": [
         "ibiten",
@@ -891,6 +913,9 @@
       ],
       "MB": [
         "KAṬ"
+      ],
+      "TB": [
+        "TAṬ"
       ]
     },
     "file size format, long": {
@@ -900,8 +925,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "Anagraw amezwar"
+      ],
       "Theme font": [
         "Tasefsit n usentel"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Meqqer"
+      ],
+      "Medium (recommended)": [
+        "Alemmas (yettuwelleh)"
+      ],
+      "Small": [
+        "Wezzil"
+      ],
+      "Very large": [
+        "Meqqer aṭas"
+      ],
+      "Very small": [
+        "Wezzil aṭas"
       ]
     },
     "Human verification method": {
@@ -934,8 +979,14 @@
       "Edit email address": [
         "Ẓreg tansa n yimayl"
       ],
+      "Enter the code from your authenticator app": [
+        "Sekcem tangalt seg usnas-ik n usesteb"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Sekcem tangalt n usenged i yettwaznen ɣer ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Sekcem awal-ik uffir (am unedbal n tkebbanit)"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ma tufiḍ ugur deg usnulfu n umiḍan-inek/m, ttxil-k/m suter tinnubga ad d-nerr deg yiwen n wass uxeddim."
@@ -978,6 +1029,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Asnas n usesteb"
+      ],
       "Code is 6 digits without spaces": [
         "Tangalt tesɛa 6 n yizwilen war tallunt"
       ],
@@ -998,19 +1052,33 @@
       ],
       "Verification code": [
         "Tangalt n usenqed"
+      ],
+      "Your password (admin)": [
+        "Awal-ik uffir (anedbal)"
       ]
     },
     "Link": {
+      "contact us": [
+        "nermes-aɣ-d"
+      ],
       "Learn more": [
         "Issin ugar"
       ],
       "Request an invite": [
         "Suter tinubga"
+      ],
+      "terms of service": [
+        "tiwtilin n useqdec"
       ]
     },
     "new_plans": {
       "Keep your inbox organized with folders": [
         "Eǧǧ tanaka-k n urmas teddes s yikaramen."
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Awi ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -1051,6 +1119,15 @@
       ],
       "${ size } storage": [
         "${ size } n uḥraz"
+      ],
+      "${ size } storage per user": [
+        "${ size } uḥraz i aseqdac"
+      ],
+      "10 email addresses/aliases": [
+        "10 n tansiwin n yimayl/mefferismawen"
+      ],
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
       ],
       "Auto-reply": [
         "Tiririt tawurmant"
@@ -1112,6 +1189,10 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Snerni tallunt-ik n uḥraz i usemday n ${ bundleStorage }"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Asefrek i ${ n } taɣult n yimayl udmawan",
+        "Asefrek i ${ n } tiɣula n yimayl udmawan"
       ]
     },
     "Placeholder": {
@@ -1122,6 +1203,9 @@
     "sso": {
       "Sign in": [
         "Qqen"
+      ],
+      "Sign in to your organization": [
+        "Kcem ɣer tkebbanit-ik"
       ]
     },
     "Success": {
@@ -1133,6 +1217,9 @@
       ]
     },
     "Title": {
+      "Enter your password": [
+        "Sekcem awal-ik uffir"
+      ],
       "Human verification": [
         "Asenqed b-umdan"
       ],
