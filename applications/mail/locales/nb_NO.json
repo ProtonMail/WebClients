@@ -103,7 +103,7 @@
         "Legg til gruppe"
       ],
       "Adds it above your existing message": [
-        "Legger den til over den eksisterende meldingen"
+        "Legger den til over din eksisterende melding"
       ],
       "Align center": [
         "Midtstill"
@@ -155,7 +155,7 @@
         "Autentiser"
       ],
       "Auto-delete spam and trash": [
-        "Auto-slett søppelpost og meldinger i papirkurven"
+        "Slett automatisk søppelpost og papirkurvinnhold"
       ],
       "Back": [
         "Tilbake"
@@ -556,7 +556,7 @@
         "Færre søkealternativer"
       ],
       "Filter on...": [
-        "Filtrer på..."
+        "Filter på..."
       ],
       "Fit to window": [
         "Tilpass til vindu"
@@ -1235,7 +1235,7 @@
         "Send lesebekreftelse"
       ],
       "Send unsubscribe email": [
-        "Send avmelding-e-post"
+        "Send e-post for avmelding"
       ],
       "Set": [
         "Angi"
@@ -1286,7 +1286,7 @@
         "Delingsalternativer"
       ],
       "Shorten": [
-        "Forkorte"
+        "Forkort"
       ],
       "Show": [
         "Vis"
@@ -1445,7 +1445,7 @@
         "Opphev blokkering"
       ],
       "Underline": [
-        "Understreking"
+        "Understrek"
       ],
       "Undo": [
         "Angre"
@@ -1586,7 +1586,7 @@
         "Ja, jeg vil delta"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakt.",
+        "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakter.",
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakter."
       ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
@@ -1609,6 +1609,15 @@
       ],
       "Upgrade for 200GB": [
         "Oppgrader for 200 GB"
+      ],
+      "Change password": [
+        "Endre passord"
+      ],
+      "Go to ${ planOrAppName }": [
+        "Gå til ${ planOrAppName }"
+      ],
+      "Select ${ planOrAppName }": [
+        "Velg ${ planOrAppName }"
       ]
     },
     "action": {
@@ -1635,7 +1644,7 @@
     },
     "Add participant to calendar event": {
       "Failed to add participant": [
-        "Kan ikke legge til deltaker"
+        "Kunne ikke legge til deltaker"
       ],
       "Invitation sent and participant added": [
         "Invitasjon sendt og deltaker lagt til"
@@ -1705,7 +1714,7 @@
         "Stjernemerk samtalen"
       ],
       "Star message": [
-        "Stjernemerk meldingen"
+        "Stjernemerk melding"
       ],
       "Unread email": [
         "Ulest e-post"
@@ -1744,7 +1753,7 @@
     },
     "anniversary_2025": {
       "Get the deal": [
-        "Skaff deg tilbudet"
+        "Skaff deg avtalen"
       ]
     },
     "anniversary_2025: Offer": {
@@ -1972,7 +1981,7 @@
     },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
-        "30-dagers pengene-tilbake-garanti"
+        "30 dagers tilbakebetalingsgaranti"
       ]
     },
     "bf2023: Tooltip": {
@@ -2320,7 +2329,7 @@
         "${ participantName } takket nei til invitasjonen til en forekomst av hendelsen."
       ],
       "${ participantName } declined your invitation.": [
-        "${ participantName } avviste din invitasjon."
+        "${ participantName } avviste invitasjonen din."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } hadde takket ja til en invitasjon og foreslo et nytt tidspunkt for en forekomst av denne hendelsen. Svar og forslag er utdatert."
@@ -2362,7 +2371,7 @@
         "${ participantName } hadde tidligere takket ja til invitasjonen til en forekomst av hendelsen."
       ],
       "${ participantName } had previously accepted your invitation.": [
-        "${ participantName } hadde tidligere takket ja til invitasjonen til hendelsen."
+        "${ participantName } hadde tidligere takket ja til invitasjonen."
       ],
       "${ participantName } had previously declined your invitation to one occurrence of the event.": [
         "${ participantName } hadde tidligere avslått en invitasjon til en forekomst av hendelsen."
@@ -2449,13 +2458,13 @@
         "(Oppmøte valgfritt)"
       ],
       "Adding occurrences to an event is not supported for the moment": [
-        "Å legge forekomster til en hendelse støttes ikke for øyeblikket"
+        "Å legge forekomster til en hendelse støttes ikke for øyeblikket."
       ],
       "Event refreshing is not supported for the moment": [
-        "Hendelsesoppdatering støttes ikke for øyeblikket"
+        "Hendelsesoppdatering støttes ikke for øyeblikket."
       ],
       "Event rescheduling is not supported for the moment": [
-        "Omplanlegging av hendelse støttes ikke for øyeblikket"
+        "Omplanlegging av hendelse støttes ikke for øyeblikket."
       ],
       "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
         "Dette svaret kan ikke legges til ${ CALENDAR_APP_NAME } da vi bare støtter svar på alle hendelser i en serie for øyeblikket."
@@ -2578,6 +2587,9 @@
       ],
       "Ultra fast and private VPN": [
         "Superrask og privat VPN"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium funksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Checkout row": {
@@ -2776,19 +2788,19 @@
         "Opprett en ny etikett"
       ],
       "Go to Archive": [
-        "Gå til arkiv"
+        "Gå til Arkiv"
       ],
       "Go to Drafts": [
         "Gå til utkast"
       ],
       "Go to Inbox": [
-        "Gå til innboks"
+        "Gå til Innboks"
       ],
       "Go to Sent": [
         "Gå til sendt"
       ],
       "Go to Spam": [
-        "Gå til søppelpost"
+        "Gå til Søppelpost"
       ],
       "Go to Starred": [
         "Gå til stjernemerkede"
@@ -2826,7 +2838,7 @@
         "PGP-signert"
       ],
       "The address might be misspelled": [
-        "Adressen kan være feilstavet."
+        "Adressen kan være feilstavet"
       ]
     },
     "Composer size": {
@@ -4043,7 +4055,7 @@
         "For å starte, gi organisasjonen din et navn."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
-        "Slå på beskyttelse mot e-postsporing for å forhindre at annonsører og andre sporer posisjonen din og nettaktiviteten din."
+        "Slå på beskyttelse mot e-postsporere for å forhindre at annonsører og andre sporer din plassering og pålogget aktivitet."
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Oppgrader for å få ${ activatePmUser } som en kortere e-postadresse som er enklere å huske, i tillegg til den nåværende e-postadressen din."
@@ -4218,7 +4230,7 @@
         "Denne hendelsesforekomsten ble kansellert."
       ],
       "This event occurrence was updated.": [
-        "Hendelsesforekomsten ble oppdatert."
+        "Denne hendelsesforekomsten ble oppdatert."
       ],
       "This event was updated.": [
         "Denne hendelsen ble oppdatert."
@@ -4327,7 +4339,7 @@
         "${ BRAND_NAME } kan ikke koble til den eksterne kontoen"
       ],
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "${ error.message } for ${ email }. Du kan legge til en annen nøkkel eller deaktivere kryptering for denne kontakten for å løse problemet."
+        "${ error.message } for <${ email }>. Du kan legge til en annen nøkkel eller deaktivere kryptering for denne kontakten for å løse problemet."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også sjekke vår ${ statusPageLink }"
@@ -4782,8 +4794,8 @@
         "Det forfalte beløpet er endret. Prøv igjen."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
-        "Vedlegget kan ikke dekrypteres.\nHvis du har den tilsvarende private nøkkelen, vil du fortsatt kunne dekryptere\nfilen med et program som GnuPG.",
-        "Noen av vedleggene kan ikke dekrypteres.\nHvis du har den tilsvarende private nøkkelen, vil du fortsatt kunne dekryptere\nfilene med et program som GnuPG."
+        "Vedlegget kan ikke dekrypteres.\\nHvis du har den tilsvarende private nøkkelen, vil du fortsatt kunne dekryptere\\nfilen med et program som GnuPG.",
+        "Noen av vedleggene kan ikke dekrypteres.Hvis du har den tilsvarende private nøkkelen, vil du fortsatt kunne dekryptere filene med et program som GnuPG."
       ],
       "The email addresses do not match": [
         "E-postadressene samsvarer ikke"
@@ -4846,7 +4858,7 @@
         "Denne meldingen er allerede sendt"
       ],
       "This message has already been sent. A new draft has been saved.": [
-        "Denne meldingen er allerede sendt. Et nytt ukast er lagret."
+        "Denne meldingen er allerede sendt. Et nytt utkast er lagret."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne meldingen kan inneholde noen koblinger til nettadresser som ikke kan åpnes riktig av din nåværende nettleser."
@@ -4867,7 +4879,7 @@
         "Ukjent feil"
       ],
       "Unknown error.": [
-        "Ukjent feil"
+        "Ukjent feil."
       ],
       "Unknown payment token status": [
         "Ukjent status for betalingstoken"
@@ -4905,10 +4917,10 @@
         "Du har nådd det maksimale tegntallet. Forkort meldingen."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
-        "E-postene dine kan ikke dekrypteres på grunn av en nylig tilbakestilling av passord. Hvis du husker ditt forrige passord, kan du ${ reActivateKeyLink } for å få tilgang til meldingene dine. ${ learnMoreLink }."
+        "E-postene dine kan ikke dekrypteres på grunn av en nylig tilbakestilling av passord. Hvis du husker ditt forrige passord, kan du ${ reActivateKeyLink } for å få tilgang til meldingene dine. ${ learnMoreLink }"
       ],
       "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "E-postene dine kan ikke dekrypteres. Dette kan skyldes tilbakestilling av passord. ${ learnMoreLink }."
+        "E-postene dine kan ikke dekrypteres. Dette kan skyldes tilbakestilling av passord. ${ learnMoreLink }"
       ],
       "Your import will not be processed.": [
         "Importen din blir ikke behandlet."
@@ -4918,12 +4930,15 @@
       ],
       "Attachments are limited to ${ readableAttachmentMaxSize }": [
         "Vedlegg er begrenset til ${ readableAttachmentMaxSize }"
+      ],
+      "This action cannot be performed": [
+        "Denne handlingen kan ikke utføres"
       ]
     },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
-        "På det meste ${ maxAttendees } deltaker er tillatt per invitasjon.",
-        "På det meste ${ maxAttendees } deltakere er tillatt per invitasjon."
+        "På det meste er ${ maxAttendees } deltaker tillatt per invitasjon.",
+        "På det meste er ${ maxAttendees } deltakere tillatt per invitasjon"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -5107,7 +5122,7 @@
         "Når ekstra passord er aktivert, kan aliasadministrasjon bare gjøres i ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
-        "Du har ingen kontakter enda. Start ved å opprette en ny kontakt."
+        "Du har ingen kontakter enda. Start ved å opprette en ny kontakt"
       ]
     },
     "Error notification": {
@@ -5188,7 +5203,7 @@
     },
     "familyOffer_2023:Action": {
       "Decline invitation": [
-        "Avvis invitasjon"
+        "Avslå invitasjon"
       ],
       "Got it": [
         "Skjønner"
@@ -5418,7 +5433,7 @@
         "Søppelpost"
       ],
       "Trash": [
-        "Papirkurv"
+        "Legg i papirkurven"
       ]
     },
     "Filter modal operators": {
@@ -5577,7 +5592,7 @@
         "Gled deg over rask, sikker og distraksjonsfri tilgang til innboksen og kalenderen din."
       ],
       "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
-        "Få ubegrenset tilgang med alle ${ MAIL_APP_NAME }-planer."
+        "Skaff deg ubegrenset tilgang med valgfri ${ MAIL_APP_NAME }-plan."
       ],
       "No credit card required.": [
         "Ingen kredittkort kreves."
@@ -5695,7 +5710,7 @@
         "Lagringsplass låst opp"
       ],
       "Tasks to complete count": [
-        "Ventende oppgaver"
+        "Antall ventende oppgaver"
       ],
       "This feature is currently unavailable": [
         "Denne funksjonen er utilgjengelig for øyeblikket."
@@ -6519,7 +6534,7 @@
         "Alle meldinger lagret i denne mappen, blir slettet permanent."
       ],
       "All messages stored with this label will be permanently deleted.": [
-        "Alle meldinger som er lagret med denne etiketten, blir slettet permanent."
+        "Alle meldinger som er lagret med denne etiketten vil bli slettet permanent."
       ],
       "All your calendars are disabled.": [
         "Alle kalenderene dine er deaktivert."
@@ -6712,7 +6727,7 @@
         "Nullstill valg"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
-        "Sletting av nettleserdata deaktiverer også meldingsinnholdssøk på denne enheten. Alle meldinger må lastes ned på nytt for å søke i dem."
+        "Sletting av nettleserdata deaktiverer også meldingsinnholdssøk på denne enheten. Alle meldinger må lastes ned på nytt for å søke blant dem."
       ],
       "Clears browser data (including downloaded messages, …)": [
         "Tømmer nettleserdata (inkludert nedlastede meldinger, …)"
@@ -6844,7 +6859,7 @@
         "Vil du laste ned disse vedleggene allikevel?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
-        "Vil du signere kontaktinformasjonen på nytt og i prosessen klarére nøklene med følgende fingeravtrykk?"
+        "Vil du signere kontaktdetaljene på nytt og i prosessen klarere nøklene med følgende fingeravtrykk?"
       ],
       "Do you want to re-sign the contact details?": [
         "Vil du signere kontaktinformasjonen på nytt?"
@@ -6940,7 +6955,7 @@
         "E-posthotell er kun tilgjengelig for domener du allerede eier. Domeneregistrering er for øyeblikket ikke tilgjengelig gjennom ${ BRAND_NAME }. Du kan verte e-post for domener registrert på alle domeneregistratorer."
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
-        "E-post videresendes til postkassen din; e-postadressen din forblir skjult."
+        "E-post videresendes til postkassen; e-postadressen din forblir skjult."
       ],
       "Email tracker protection is disabled": [
         "E-postsporingsbeskyttelse er deaktivert"
@@ -6965,7 +6980,7 @@
         "Krypter melding"
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
-        "Gled deg over en raskere, fokusert e-postopplevelse med skrivebordsappen."
+        "Gled deg over en raskere, fokusert e-postopplevelse med skrivebords-appen."
       ],
       "Enter the code from your authenticator app": [
         "Skriv inn koden fra autentiseringsappen"
@@ -7152,7 +7167,7 @@
         "Inkluder søppelpost/papirkurv."
       ],
       "Include your prompt and the response to help us improve accuracy.": [
-        "Ta med forespørselen din og svaret for å hjelpe oss med å forbedre nøyaktigheten."
+        "Ta med forespørselen og svaret ditt for å hjelpe oss med å forbedre nøyaktigheten."
       ],
       "Included for free with your plan": [
         "Inkludert gratis i planen din"
@@ -7167,7 +7182,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -7233,7 +7249,7 @@
         "Finn ut hva du kan gjøre ${ dataLeakedLink }"
       ],
       "Left to Right": [
-        "Venstre til høyre"
+        "Venstre til Høyre"
       ],
       "Link type": [
         "Type kobling"
@@ -7266,10 +7282,10 @@
         "Gjør ${ MAIL_APP_NAME } til standard e-postapplikasjon."
       ],
       "Manage your folders": [
-        "Administrer dine mapper"
+        "Administrer mappene dine"
       ],
       "Manage your labels": [
-        "Administrer dine etiketter"
+        "Administrer etikettene dine"
       ],
       "Mark all as read": [
         "Merk alle som lest"
@@ -7308,22 +7324,22 @@
         "Melding sendt"
       ],
       "Message sent.": [
-        "Melding sendt"
+        "Melding sendt."
       ],
       "Message view": [
         "Meldingsvisning"
       ],
       "Message will be sent in the morning at ${ formattedTime }": [
-        "Meldingen blir sendt om morgenen kl. ${ formattedTime }."
+        "Meldingen blir sendt om morgenen kl. ${ formattedTime }"
       ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
-        "Meldingen blir sendt den ${ dateString } kl. ${ formattedTime }."
+        "Meldingen blir sendt på ${ dateString } kl. ${ formattedTime }"
       ],
       "Message will be sent today at ${ formattedTime }": [
-        "Meldingen blir sendt i dag kl. ${ formattedTime }."
+        "Meldingen blir sendt i dag kl. ${ formattedTime }"
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
-        "Meldingen blir sendt i morgen kl. ${ formattedTime }."
+        "Meldingen blir sendt i morgen kl. ${ formattedTime }"
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Meldinger i papirkurven eller søppelposten som har vært der lenger enn 30 dager, slettes automatisk."
@@ -7615,7 +7631,7 @@
         "Registrerer abonnementet ditt…"
       ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
-        "Husk å oppdatere dette i passordbehandleren din eller der du oppbevarer konto- og påloggingsinformasjonen din."
+        "Husk å oppdatere dette i passordbehandleren eller der du oppbevarer konto- og påloggingsinformasjonen din."
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Fjerner alle data knyttet til denne appen (inkludert nedlastede meldinger, …)"
@@ -7630,7 +7646,7 @@
         "Gjenopprett"
       ],
       "Right to Left": [
-        "Høyre til venstre"
+        "Høyre til Venstre"
       ],
       "Right-click for options": [
         "Høyreklikk for alternativer"
@@ -7675,7 +7691,7 @@
         "Det virker som du er à jour nå"
       ],
       "Select all ${ elementsCount } in ${ location }": [
-        "Velg ${ elementsCount } i ${ location }",
+        "Velg alle ${ elementsCount } i ${ location }",
         "Velg alle ${ elementsCount } i ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
@@ -7706,7 +7722,7 @@
         "Sender melding..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
-        "Sending av meldinger fra en @pm.me-adresse er en betalt funksjon. Meldingen din vil bli sendt fra standardadressen din ${ email }."
+        "Sending av meldinger fra en @pm.me-adresse er en betalt funksjon. Meldingen din vil bli sendt fra standardadressen din ${ email }"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Sendt med <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> sikker e-post."
@@ -7778,7 +7794,7 @@
         "Begynn å dele det med kontakter og bruk det til nettjenester."
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Begynn å bruke den kortere, mer fengende versjonen av e-postadressen din."
+        "Bruk en kortere og mer fengende versjon av e-postadressen din."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Hold deg tilkoblet uten problemer ved å aktivere følgende VPN-innstillinger:"
@@ -7887,8 +7903,8 @@
         "Avsenderen har bedt om lesebekreftelse."
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "Bekreftelsen av ${ contactNames } har mislyktes: kontakten er ikke signert riktig.\nDette kan være et resultat av tilbakestilling av passord.\nDu må signere kontakten på nytt for å sende en melding til ${ contactAddresses } eller redigere kontakten.",
-        "Bekreftelsen av ${ contactNames } har mislyktes: kontaktene er ikke signert riktig.\nDette kan være et resultat av tilbakestilling av passord.\nDu må signere kontaktene på nytt for å sende en melding til ${ contactAddresses } eller redigere kontaktene."
+        "Verifiseringen av ${ contactNames } mislyktes: kontakten er ikke signert riktig.\nDette kan være et resultat av tilbakestilling av passord.\nDu må signere kontakten på nytt for å sende en melding til ${ contactAddresses } eller redigere kontakten.",
+        "Verifiseringen av ${ contactNames } mislyktes: kontaktene er ikke signert riktig.\nDette kan være et resultat av tilbakestilling av passord.\nDu må signere kontaktene på nytt for å sende en melding til ${ contactAddresses } eller redigere kontaktene."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifiseringsprosessen vil åpne en ny nettleserfane. Deaktiver alle aktive blokkeringer av sprettoppvinduer."
@@ -7903,7 +7919,7 @@
         "Det er ingen meldinger fra denne avsenderen i innboksen din."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
-        "Det har oppstått en feil med signaturen som brukes til å bekrefte kontaktinformasjonen, som kan være et resultat av tilbakestilling av passord."
+        "Det har oppstått en feil med signaturen som brukes til å bekrefte kontaktdetaljene, som kan være et resultat av tilbakestilling av passord."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "De kan ikke sende deg søppelpost hvis de ikke kjenner e-postadressen din. Beskytt innboksen din med hide-my-email-aliaser."
@@ -7943,7 +7959,7 @@
         "Dette er et navn eller kallenavn for organisasjonen din som brukerne dine vil se. Du kan endre det når som helst."
       ],
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
-        "Dette er ment som et skrivehjelpemiddel. Kontroller om foreslått tekst er nøyaktig. ${ learnMoreResult }."
+        "Dette er ment som et skrivehjelpemiddel. Kontroller om foreslått tekst er nøyaktig. ${ learnMoreResult }"
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dette er nå din ${ defaultEmailAddress } for å sende nye meldinger."
@@ -7976,10 +7992,10 @@
         "Denne meldingen er signert av nøkkelen vedlagt, som ikke er klarert enda."
       ],
       "This message will be automatically deleted at ${ value }": [
-        "Denne meldingen slettes automatisk kl. ${ value }."
+        "Denne meldingen slettes automatisk kl. ${ value }"
       ],
       "This message will be automatically deleted on ${ value }": [
-        "Denne meldingen slettes automatisk kl. ${ value }."
+        "Denne meldingen slettes automatisk på ${ value }"
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Denne meldingen vil bli merket som søppelpost. Ønsker du å melde deg av fremtidige e-poster?",
@@ -7989,10 +8005,10 @@
         "Denne meldingen flyttes til utkast, slik at du kan redigere den. Du må planlegge på nytt når den skal sendes."
       ],
       "This message will be sent in the morning at ${ formattedTime }": [
-        "Denne meldingen blir sendt om morgenen kl. ${ formattedTime }."
+        "Denne meldingen blir sendt om morgenen kl. ${ formattedTime }"
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
-        "Denne meldingen blir sendt den ${ dateString } kl. ${ formattedTime }."
+        "Denne meldingen blir sendt på ${ dateString } kl. ${ formattedTime }."
       ],
       "This message will be sent shortly": [
         "Denne meldingen vil bli sendt om kort tid"
@@ -8004,16 +8020,16 @@
         "Denne meldingen blir sendt i morgen kl. ${ formattedTime }."
       ],
       "This message will expire ${ formattedDate }": [
-        "Denne meldingen vil utløpe ${ formattedDate }."
+        "Denne meldingen vil utløpe ${ formattedDate }"
       ],
       "This message will expire on ${ value }": [
         "Denne meldingen utløper på ${ value }."
       ],
       "This message will expire today at ${ value }": [
-        "Denne meldingen utløper i dag kl. ${ value }."
+        "Denne meldingen utløper i dag kl. ${ value }"
       ],
       "This message will expire tomorrow at ${ value }": [
-        "Denne meldingen utløper i morgen kl. ${ value }."
+        "Denne meldingen utløper i morgen kl. ${ value }"
       ],
       "This only needs to be done once.": [
         "Dette trenger bare å gjøres en gang."
@@ -8061,10 +8077,10 @@
         "For å fjerne begrensninger kan du oppgradere til en betalt plan."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        "For å melde deg av denne adresselisten, vil en e-post bli sendt fra ${ boldFrom } med følgende detaljer som definert av avsenderen av nyhetsbrevet:"
+        "For å avslutte abonnementet på denne e-postlisten, vil en e-post bli sendt fra ${ boldFrom } med følgende detaljer som definert av avsenderen av nyhetsbrevet:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
-        "For å melde deg av denne adresselisten, vil du bli tatt til følgende nettadresse der instruksjoner vil bli gitt av avsenderen av nyhetsbrevet:"
+        "For å melde deg av denne e-postlisten, vil du bli tatt til følgende nettadresse der instruksjoner vil bli gitt av avsenderen av nyhetsbrevet:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Hvis du vil bruke adressebekreftelse, må du klarere én eller flere tilgjengelige fellesnøkler, inkludert den du vil bruke til sending. Dette forhindrer at krypteringsnøklene forfalskes."
@@ -8157,7 +8173,7 @@
         "Oppgrader for å kunne lett sende e-post til kontaktgrupper."
       ],
       "Upgrade to support a privacy-first internet.": [
-        "Oppgrader for å støtte et personvern-først internett."
+        "Oppgrader for å støtte et internett der personvernet kommer først."
       ],
       "Upgrade to support our mission of privacy for all.": [
         "Oppgrader for å støtte vår misjon om personvern for alle."
@@ -8187,7 +8203,7 @@
         "Nettadresse: ${ unsubscribeMethods.HttpClient }"
       ],
       "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
-        "Bruk forskjellige e-postadresser til forskjellige formål, slik at du enkelt kan skille e-postene dine etter jobb, personlig eller andre områder."
+        "Bruk forskjellige e-postadresser til forskjellige formål, slik at du enkelt kan skille e-postene dine etter jobb, privat eller andre områder."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Bruk tastatursnarveier for å behandle e-posten din raskere."
@@ -8247,7 +8263,7 @@
         "Vi trenger å autentisere betalingen med banken din."
       ],
       "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
-        "Vi har fjernet sporingsinformasjon fra koblingene nedenfor for å beskytte deg mot annonsører og andre som prøver å spore nettaktiviteten din."
+        "Vi har fjernet sporingsinformasjon fra følgende koblingene for å beskytte deg mot annonsører og andre som prøver å spore nettaktiviteten din."
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi bruker 3-D Secure for å beskytte dine betalinger"
@@ -8286,7 +8302,7 @@
         "Når du kobler til VPN, bruker det krypteringsteknologi for å skjule IP-adressen din (en unik kode som er tildelt enheten din)."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
-        "Når du aktiverte klarerte nøkler for ${ senderName }, ble de offentlige nøklene lagt til i kontaktinformasjonen."
+        "Når du aktiverte klarerte nøkler for ${ senderName }, ble de offentlige nøklene lagt til i kontaktdetaljene."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
@@ -8295,7 +8311,7 @@
         "Når du registrerer deg for et nyhetsbrev, bruk et alias i stedet for e-postadressen din. Identiteten din forblir skjult, og du kan deaktivere aliaset når som helst."
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
-        "Når du er på reise eller bruker offentlig Wi-Fi, kan du koble til ${ VPN_APP_NAME } for å forhindre at noen sporer nettaktiviteten din eller stjeler dataene dine. Det er gratis."
+        "Når du er på reise eller bruker offentlig Wi-Fi, kan du koble til ${ VPN_APP_NAME } for å forhindre at noen sporer nettaktiviteten eller stjeler dataene dine. Det er gratis."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ønsker du å motta en ny verifiseringskode eller å bruke en alternativ verifiseringsmetode?"
@@ -8409,7 +8425,7 @@
         "Du har ikke angitt noe emne for e-posten din. Ønsker du å sende meldingen uansett?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
-        "Du har nådd 100% av lagringskapasiteten din. Vurder å frigjøre plass eller oppgradere kontoen din med ekstra lagringsplass for å skrive nye meldinger."
+        "Du har nådd 100% av lagringskapasiteten. Vurder å frigjøre plass eller oppgradere kontoen din med ekstra lagringsplass for å skrive nye meldinger."
       ],
       "You have reached the maximum number of 5 replies.": [
         "Du har nådd maksimalt antall 5 svar."
@@ -8421,8 +8437,8 @@
         "Du må deaktivere og fjerne alle eventuelle ${ MAIL_APP_NAME }-brukere, adresser og egendefinerte domener før du kan nedgradere."
       ],
       "You selected **${ count } conversation** from this folder": [
-        "Du har valgt **${ count } samtale** fra denne mappen",
-        "Du har valgt **${ count } samtaler** fra denne mappen"
+        "Du valgte **${ count } samtale** fra denne mappen",
+        "Du valgte **${ count } samtaler** fra denne mappen"
       ],
       "You selected **${ count } conversation** with this label": [
         "Du har valgt **${ count } samtale** med denne etiketten",
@@ -8438,7 +8454,7 @@
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
         "Du valgte **${ elementsCount } samtale** i ${ location }.",
-        "Du valgte **${ elementsCount } samtaler** i ${ location }."
+        "Du valgte **${ elementsCount } samtaler** i ${ location }"
       ],
       "You selected **${ elementsCount } conversation**.": [
         "Du valgte **${ elementsCount } samtale**.",
@@ -8589,6 +8605,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Alt i ${ planOrAppName }"
+      ],
+      "No change will be made to the selected emails": [
+        "Ingen endringer vil bli gjort i de valgte e-postene"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnementet avsluttes: For å beholde fordelene med ${ planName }, start abonnementet på nytt i Apple App Store innen ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnementet avsluttes: For å beholde fordelene med ${ planName }, start abonnementet på nytt i Google Play Store innen ${ byDate }. ${ reactivateLink }"
       ]
     },
     "info": {
@@ -8597,7 +8625,7 @@
         "${ filteredList.length } kommandoer funnet."
       ],
       "Optional": [
-        "Valgfritt"
+        "Valgfri"
       ],
       "Selected color:": [
         "Valgt farge:"
@@ -8713,25 +8741,25 @@
         "Gå til All e-post"
       ],
       "Go to Archive": [
-        "Gå til arkiv"
+        "Gå til Arkiv"
       ],
       "Go to Drafts": [
-        "Gå til utkast"
+        "Gå til Utkast"
       ],
       "Go to Inbox": [
-        "Gå til innboks"
+        "Gå til Innboks"
       ],
       "Go to Sent": [
         "Gå til sendt"
       ],
       "Go to Spam": [
-        "Gå til søppelpost"
+        "Gå til Søppelpost"
       ],
       "Go to Starred": [
         "Gå til stjernemerkede"
       ],
       "Go to Trash": [
-        "Gå til papirkurven"
+        "Gå til Papirkurv"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8770,10 +8798,10 @@
         "Flytt til høyre / utvid"
       ],
       "Move to Archive": [
-        "Flytt til arkiv"
+        "Flytt til Arkiv"
       ],
       "Move to Inbox": [
-        "Flytt til innboks"
+        "Flytt til Innboks"
       ],
       "Move to Spam": [
         "Flytt til søppelpost"
@@ -8925,7 +8953,7 @@
         "Merk alltid avsenderens e-poster"
       ],
       "Always move sender's emails": [
-        "Alltid flytt avsenderens e-poster"
+        "Alltid flytt avsenders e-poster"
       ],
       "AND": [
         "OG"
@@ -8961,7 +8989,7 @@
         "Blindkopi"
       ],
       "Beta Access": [
-        "Beta-tilgang"
+        "Testversjon-tilgang"
       ],
       "Billing cycle": [
         "Faktureringssyklus"
@@ -9557,7 +9585,7 @@
     },
     "Label attach to time input to select hours": {
       "Time": [
-        "Tidspunkt"
+        "Tid"
       ]
     },
     "Label for contact group color": {
@@ -9683,10 +9711,10 @@
         "Aktiver en e-postadresse tilknyttet en av dine kalendere."
       ],
       "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Aktiver e-postadressen som er tilknyttet den deaktiverte kalenderen, for å avbryte hendelsen."
+        "Aktiver e-postadressen som er knyttet til den deaktiverte kalenderen for å avbryte aktiviteten."
       ],
       "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Aktiver e-postadressen som er tilknyttet den deaktiverte kalenderen, for å modifisere svaret ditt."
+        "For å modifisere svaret ditt, aktiver e-postadressen som er tilknyttet den deaktiverte kalenderen."
       ],
       "Enable your address again to modify your answer.": [
         "Aktiver adressen din igjen for å modifisere svaret ditt."
@@ -9764,7 +9792,7 @@
         "Administrer blokkerte e-postadresser"
       ],
       "Manage your folders": [
-        "Administrer dine mapper"
+        "Administrer mappene dine"
       ],
       "More": [
         "Mer"
@@ -9773,7 +9801,7 @@
         "Åpne i ${ CALENDAR_APP_NAME }"
       ],
       "Open updated event in ${ CALENDAR_APP_NAME }": [
-        "Åpne oppdatert hendelse i ${ CALENDAR_APP_NAME }."
+        "Åpne oppdatert hendelse i ${ CALENDAR_APP_NAME }"
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
         "Eller du kan slette en av kalenderne dine og opprette en ny som er tilknyttet en aktiv e-postadresse."
@@ -9830,7 +9858,7 @@
         "brukervilkår"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
-        "Denne ICS-filen inneholder mer enn en hendelse. Last den ned og importer hendelsene i ${ CALENDAR_APP_NAME }."
+        "Denne ICS-filen inneholder mer enn én hendelse. Last den ned og importer hendelsene i ${ CALENDAR_APP_NAME }"
       ],
       "Trash": [
         "Papirkurv"
@@ -9860,13 +9888,16 @@
         "Du må aktivere kalendernøklene for å se den oppdaterte invitasjonen"
       ],
       "You need to reactivate your keys to manage this invitation": [
-        "Du må aktivere nøklene på nytt for å behandle denne invitasjonen"
+        "Du må aktivere nøklene på nytt for å administrere denne invitasjonen"
       ],
       "You need to reactivate your keys to see the updated event": [
         "Du må aktivere nøklene på nytt for å se den oppdaterte hendelsen"
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du må aktivere nøklene på nytt for å se den oppdaterte invitasjonen"
+      ],
+      "Resume now": [
+        "Gjenoppta nå"
       ]
     },
     "Link to calendar event": {
@@ -10011,7 +10042,7 @@
         "Vs:"
       ],
       "On ${ date }, ${ senderString } wrote:": [
-        "På ${ date }, ${ senderString } skrev:"
+        "På ${ date }, skrev ${ senderString }:"
       ],
       "Re:": [
         "Sv:"
@@ -10377,7 +10408,7 @@
         "10-års filversjonshistorikk"
       ],
       "15 GB storage": [
-        "15 GB lagring"
+        "15 GB lagringsplass"
       ],
       "200 GB of storage": [
         "200 GB lagringsplass"
@@ -11357,7 +11388,7 @@
         "Sosiale medier"
       ],
       "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "Bruk ${ MAIL_APP_NAME }-adressen din til å logge på nettjenester for å unngå å bli sporet og profilert. Endre e-postadressen din for populære tjenester nå. ${ learnMoreLink }."
+        "Bruk ${ MAIL_APP_NAME }-adressen din til å logge på nettjenester for å unngå å bli sporet og profilert. Endre e-postadressen din for populære tjenester nå. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -11395,7 +11426,7 @@
         "Tilgang når som helst, hvor som helst"
       ],
       "Auto-delete spam and trash": [
-        "Autoslett søppelpost/papirkurv"
+        "Slett automatisk søppelpost og papirkurvinnhold"
       ],
       "browser": [
         "nettleser"
@@ -11419,7 +11450,7 @@
         "Last ned skrivebordsappen"
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
-        "Gled deg over en raskere, fokusert e-postopplevelse med skrivebordsappen."
+        "Gled deg over en raskere, fokusert e-postopplevelse med skrivebords-appen."
       ],
       "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
         "For tilgang til e-post når som helst og optimalisert mobilopplevelse, last ned vår ${ mobileAppAppStoreLink }- eller ${ mobileAppGooglePlayLink }-app."
@@ -11474,6 +11505,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Domenet og abonnementet ditt er klart til bruk."
+      ],
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
       ]
     },
     "Onboarding Proton": {
@@ -11554,7 +11591,7 @@
     },
     "Online accounts": {
       "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "Har du en konto med noen av disse tjenestene? Bare klikk for å endre e-postadressen til din ${ MAIL_APP_NAME }-adresse."
+        "Har du en konto med noen av disse tjenestene? Bare klikk for å endre e-postadressen til ${ MAIL_APP_NAME }-adressen din."
       ]
     },
     "Online Accounts Name": {
@@ -11990,7 +12027,7 @@
         "Søk i meldinger"
       ],
       "Search name, email or group": [
-        "Søk navn, e-post eller gruppe"
+        "Søk etter navn, e-post eller gruppe"
       ],
       "Search parent folder": [
         "Søk i overordnet mappe"
@@ -12072,6 +12109,12 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Oppgrader til ${ upsellPlanTitle }"
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Som abonnent på **${ currentPlanTitle }** kan du låse opp **${ unlockPlanTitle }** og flere ${ BRAND_NAME }-tjenester ved å oppgradere til **${ upsellPlanTitle }**."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Flere ${ BRAND_NAME }-tjenester.${ br }Ett enkelt abonnement."
       ]
     },
     "Price": {
@@ -12326,7 +12369,7 @@
     },
     "Send email with encryption disabled": {
       "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
-        "Kontaktene for følgende adresser har deaktivert ende-til-ende kryptering på kontoen, så de tilsvarende krypteringsinnstillingene er oppdatert tilsvarende:"
+        "Kontaktene for følgende adresser har deaktivert ende-til-ende-kryptering på kontoen, så de tilsvarende krypteringspreferansene er oppdatert tilsvarende:"
       ]
     },
     "Send email with errors": {
@@ -12335,7 +12378,7 @@
       ],
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
         "Vi har oppdaget feil. E-posten din kan ikke sendes til den oppgitte e-postadressen av følgende årsak:",
-        "Vi har oppdaget feil. E-posten din kan ikke sendes til noen av de oppgitte e-postadressene av følgende årsak:"
+        "Vi har oppdaget feil. E-posten din kan ikke sendes til noen av e-postadressene som er oppgitt av følgende årsaker:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Vi har oppdaget noen feil. E-posten din kan ikke sendes til en eller flere av de oppgitte e-postadressene av følgende årsaker:"
@@ -12398,8 +12441,8 @@
         "Sendt av deg med ende-til-ende-kryptering"
       ],
       "Sent by you with end-to-end encryption to verified recipient": [
-        "Sendt av deg med ende-til-ende kryptering til bekreftet mottaker.",
-        "Sendt av deg med ende-til-ende kryptering til bekreftede mottakere."
+        "Sendt av deg med ende-til-ende-kryptering til bekreftet mottaker.",
+        "Sendt av deg med ende-til-ende-kryptering til bekreftede mottakere."
       ],
       "Stored with zero-access encryption": [
         "Lagret med nulltilgangskryptering"
@@ -12557,7 +12600,7 @@
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "Logg av"
+        "Logg ut"
       ],
       "Stay signed in": [
         "Forbli pålogget"
@@ -12604,7 +12647,7 @@
         "PGP-signert melding. Bekreftelse av avsender mislyktes: ${ verificationErrorsMessage }"
       ],
       "Sender could not be verified: Message not signed": [
-        "Avsenderen kunne ikke bekreftes: Meldingen er ikke signert"
+        "Avsenderen kunne ikke bekreftes: meldingen er ikke signert"
       ],
       "Sender verification failed": [
         "Verifisering av avsender mislyktes"
@@ -12794,7 +12837,7 @@
         "/måned"
       ],
       "/month": [
-        "/måned"
+        "/måneders"
       ],
       "1 year": [
         "1 år"
@@ -12959,7 +13002,7 @@
         "Alias deaktivert"
       ],
       "Unsubscribed": [
-        "Avsluttet abonnement"
+        "Abonnement avsluttet"
       ]
     },
     "Step": {
@@ -13425,6 +13468,9 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt eget korte @pm.me e-postalias"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } gir deg tilgang til alle premiumfunksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }. Personvern er innebygd, slik at du kan fortsette å jobbe sikkert med dataene og identiteten din beskyttet."
       ]
     },
     "subscription reminder": {
@@ -13549,8 +13595,8 @@
         "${ elementsCount } samtaler fjernet fra ${ labelName }."
       ],
       "${ elementsCount } conversation removed from Starred.": [
-        "${ elementsCount } samtale er fjernet fra favorittene.",
-        "${ elementsCount } samtaler er fjernet fra favorittene."
+        "${ elementsCount } samtale fjernet fra stjernemerket.",
+        "${ elementsCount } samtaler fjernet fra stjernemerket."
       ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } samtale slumret",
@@ -13593,8 +13639,8 @@
         "${ elementsCount } meldinger fjernet fra ${ labelName }."
       ],
       "${ elementsCount } message removed from Starred.": [
-        "${ elementsCount } melding er fjernet fra favorittene.",
-        "${ elementsCount } meldinger er fjernet fra favorittene."
+        "${ elementsCount } melding fjernet fra stjernemerket.",
+        "${ elementsCount } meldinger fjernet fra stjernemerket."
       ],
       "Address copied to clipboard": [
         "Adresse kopiert til utklippstavlen"
@@ -13809,6 +13855,34 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avsluttet abonnementet"
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } samtale flyttet til ${ labelName } og avsender lagt til din ikke-søppelpostliste.",
+        "${ elementsCount } samtaler flyttet til ${ labelName } og avsenderene lagt til din ikke-søppelpostliste."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } samtale flyttet til ${ labelName }.",
+        "${ elementsCount } samtaler flyttet til ${ labelName }."
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } melding flyttet til ${ labelName } og avsender lagt til ikke-søppelpostlisten din.",
+        "${ elementsCount } meldinger flyttet til ${ labelName } og avsenderene lagt til ikke-søppelpostlisten din."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } melding flyttet til ${ labelName }.",
+        "${ elementsCount } meldinger flyttet til ${ labelName }."
+      ],
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "Samtalen flyttet til ${ labelName } og avsender lagt til ikke-søppelpostlisten."
+      ],
+      "Conversation moved to ${ labelName }.": [
+        "Samtalen flyttet til ${ labelName }"
+      ],
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "Meldingen flyttet til ${ labelName } og avsender lagt til ikke-søppelpostlisten."
+      ],
+      "Message moved to ${ labelName }.": [
+        "Meldingen flyttet til ${ labelName }."
       ]
     },
     "Success notification": {
@@ -14243,7 +14317,7 @@
         "Dag-tema"
       ],
       "Decryption error": [
-        "Krypteringsfeil"
+        "Dekrypteringsfeil"
       ],
       "Delete ${ count } contact": [
         "Slett ${ count } kontakt",
@@ -14272,19 +14346,19 @@
         "Slett alle meldinger"
       ],
       "Delete conversation": [
-        "Slett samtale"
+        "Slett samtalen"
       ],
       "Delete draft": [
         "Slett utkast"
       ],
       "Delete folder?": [
-        "Slett mappe?"
+        "Slette mappe?"
       ],
       "Delete label?": [
-        "Slett etikett?"
+        "Slette etikett?"
       ],
       "Delete message": [
-        "Slett melding"
+        "Slett meldingen"
       ],
       "Deleting contacts": [
         "Sletter kontakter"
@@ -14528,7 +14602,7 @@
         "Flere handlinger"
       ],
       "More options": [
-        "Flere valg"
+        "Flere alternativer"
       ],
       "More selections": [
         "Flere valg"
@@ -14558,7 +14632,7 @@
         "Flytt til søppelpost"
       ],
       "Move to trash": [
-        "Flytt til papirkurven"
+        "Flytt til papirkurv"
       ],
       "Moving a scheduled message": [
         "Flytter en planlagt melding"
@@ -14600,7 +14674,7 @@
         "Ingen vedlegg funnet"
       ],
       "No breaches detected": [
-        "Ingen sikkerhetsbrudd oppdaget"
+        "Ingen brudd oppdaget"
       ],
       "No need to empty the trash": [
         "Du trenger ikke å tømme papirkurven"
@@ -14753,7 +14827,7 @@
         "Send e-post"
       ],
       "Send with changed preferences?": [
-        "Sende med endrede innstillinger?"
+        "Sende med endrede preferanser?"
       ],
       "Send with encryption disabled?": [
         "Sende med kryptering deaktivert?"
@@ -14874,7 +14948,7 @@
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Unsubscribe": [
-        "Avslutt abonnement"
+        "Avslutt abonnementet"
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "Avslutte abonnementet på ${ subscription.Name }?"
@@ -14916,8 +14990,8 @@
         "Advarsel: mistenkt falskt nettsted"
       ],
       "We protected you from ${ trackersCount } tracker": [
-        "Vi beskyttet deg fra ${ trackersCount } sporer",
-        "Vi beskyttet deg fra ${ trackersCount } sporere"
+        "Vi beskyttet deg mot ${ trackersCount } sporer",
+        "Vi beskyttet deg mot ${ trackersCount } sporere"
       ],
       "Welcome": [
         "Velkommen"
@@ -14978,6 +15052,9 @@
       ],
       "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
         "Oppgrader lagringsplassen din for ${ formattedPrice } med ${ planName }"
+      ],
+      "Account temporarily locked": [
+        "Konto midlertidig låst"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15089,7 +15166,7 @@
     },
     "Unlimited offer": {
       "/month": [
-        "/måned"
+        "/måneders"
       ],
       "Only": [
         "Kun"
@@ -15264,8 +15341,8 @@
         "Noen av kontaktene som skal slås sammen, viser feil. Gjennomgå dem individuelt."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
-        "Bekreftelsen av vedleggets signatur mislyktes.\nDu kan fortsatt laste ned dette vedlegget, men det kan ha blitt tuklet med.",
-        "Noen av vedleggenes signaturer ble ikke bekreftet.\nDu kan fortsatt laste ned disse vedleggene, men de kan ha blitt tuklet med."
+        "Bekreftelsen av vedleggets signatur mislyktes.\\nDu kan fortsatt laste ned dette vedlegget, men det kan ha blitt tuklet med.",
+        "Noen av vedleggenes signaturer ble ikke bekreftet. Du kan fortsatt laste ned disse vedleggene, men de kan ha blitt tuklet med."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kontaktdataene er skadet og kan ikke vises."
@@ -15568,6 +15645,19 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Betrodd kontakt"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Alle premiumfunksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium funksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ]
     }
   }

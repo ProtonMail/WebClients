@@ -127,16 +127,16 @@
         "Alla olästa"
       ],
       "All Unstarred": [
-        "Alla ostjärnmärkta"
+        "Alla ej stjärnmärkta"
       ],
       "Apply": [
         "Tillämpa"
       ],
       "Archive": [
-        "Arkivera"
+        "Arkiv"
       ],
       "As Scheduled": [
-        "Enligt schema"
+        "Som schemalagd"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Högst ${ maxContacts } kontakt tillåts per kontaktgrupp",
@@ -248,7 +248,7 @@
         "Stäng"
       ],
       "Close composer": [
-        "Stäng redigeringsfönstret"
+        "Stäng redigeringsfönster"
       ],
       "Close navigation": [
         "Stäng navigering"
@@ -299,7 +299,7 @@
         "Fortsätt med Outlook"
       ],
       "Contract composer": [
-        "Krymp redigeringsfönstret"
+        "Krymp redigeringsfönster"
       ],
       "Copy address": [
         "Kopiera adress"
@@ -382,7 +382,7 @@
         "Ta bort ${ selectedCount } kontaktgrupper"
       ],
       "Delete all": [
-        "Ta bort alla"
+        "Ta bort allt"
       ],
       "Delete contact": [
         "Ta bort kontakt"
@@ -520,7 +520,7 @@
         "Expandera"
       ],
       "Expand composer": [
-        "Expandera redigeringsfönstret"
+        "Expandera redigeringsfönster"
       ],
       "Expand navigation bar to see folders": [
         "Expandera navigeringsfält för att se mappar"
@@ -556,7 +556,7 @@
         "Färre sökalternativ"
       ],
       "Filter on...": [
-        "Filtrera på..."
+        "Filtrera på …"
       ],
       "Fit to window": [
         "Passa till fönster"
@@ -676,7 +676,7 @@
         "Bild kommer att laddas utan en proxy"
       ],
       "Images will be loaded without a proxy": [
-        "Bilder kommer att laddas utan proxy"
+        "Bilder kommer att laddas utan en proxy"
       ],
       "Import": [
         "Importera"
@@ -749,10 +749,10 @@
         "Märk som"
       ],
       "Label as...": [
-        "Märk som..."
+        "Märk som …"
       ],
       "label emails as": [
-        "märk e-postmeddelanden som"
+        "märk e-post som"
       ],
       "Later": [
         "Senare"
@@ -827,10 +827,10 @@
         "Markera för borttagning"
       ],
       "Mark legitimate": [
-        "Markera som legitimt"
+        "Markera legitimt"
       ],
       "Maximize composer": [
-        "Maximera redigeringsfönstret"
+        "Maximera redigeringsfönster"
       ],
       "Maybe": [
         "Kanske"
@@ -851,13 +851,13 @@
         "Meddelanden till denna mottagare"
       ],
       "Minimize composer": [
-        "Minimera redigeringsfönstret"
+        "Minimera redigeringsfönster"
       ],
       "Modify": [
         "Modifiera"
       ],
       "Modify selection": [
-        "Modifiera markering"
+        "Modifiera val"
       ],
       "Monday": [
         "Måndag"
@@ -932,7 +932,7 @@
         "Flytta till papperskorg"
       ],
       "Move to...": [
-        "Flytta till..."
+        "Flytta till …"
       ],
       "Need help?": [
         "Behöver du hjälp?"
@@ -980,7 +980,7 @@
         "Öppna"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
-        "Öppna i ${ CALENDAR_APP_NAME }"
+        "Öppna ${ CALENDAR_APP_NAME }"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
@@ -1088,7 +1088,7 @@
         "Ta bort från favoriter"
       ],
       "Remove from list": [
-        "Ta bort från listan"
+        "Ta bort från lista"
       ],
       "Remove gift code": [
         "Ta bort presentkod"
@@ -1214,13 +1214,13 @@
         "Välj datum och tid"
       ],
       "Self-destruct in 7 days": [
-        "Självförstör om 7 dagar"
+        "Självförstörelse om 7 dagar"
       ],
       "Self-destruct message": [
         "Självförstörande meddelande"
       ],
       "Self-destruct on ...": [
-        "Självförstörelse den ..."
+        "Självförstörelse om …"
       ],
       "Send": [
         "Skicka"
@@ -1253,7 +1253,7 @@
         "Ställ in kryptering"
       ],
       "Set expiration time": [
-        "Ange utgångstidpunkt"
+        "Ställ in utgångstid"
       ],
       "Set recovery methods": [
         "Ställ in återställningsmetoder"
@@ -1379,7 +1379,7 @@
         "Sluta flytta till papperskorg"
       ],
       "Strikethrough": [
-        "Genomstrykning"
+        "Linje igenom"
       ],
       "Submit": [
         "Skicka"
@@ -1400,7 +1400,7 @@
         "Denna helg"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
-        "För att söka i din e-post på ett säkert sätt måste vi ladda ner en kopia av dina meddelanden till din webbläsare. Den första nedladdningen kan ta en stund."
+        "För att söka i din e-post på ett säkert sätt måste vi ladda ner en kopia av dina meddelanden till din webbläsare. Den initiala nedladdningen kan ta en stund."
       ],
       "Toggle Calendar app": [
         "Växla Calendar-app"
@@ -1445,7 +1445,7 @@
         "Avblockera"
       ],
       "Underline": [
-        "Understruken"
+        "Understreck"
       ],
       "Undo": [
         "Ångra"
@@ -1472,7 +1472,7 @@
         "Prenumeration avslutad"
       ],
       "Unsubscribing": [
-        "Avslutar prenumerationen"
+        "Avslutar prenumeration"
       ],
       "Untrust": [
         "Sluta lita på"
@@ -1568,7 +1568,7 @@
         "Visa mottagare"
       ],
       "View rendered HTML": [
-        "Visa renderad HTML"
+        "Visa återgiven HTML"
       ],
       "What do I get?": [
         "Vad får jag?"
@@ -1586,17 +1586,17 @@
         "Ja, jag ska delta"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakt",
+        "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter",
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
       ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Din gratis provperiod av skrivbordsappen slutar om 2 dagar. ${ upgradeButton }"
+        "Din gratis provperiod av din app för stationär dator slutar om 2 dagar. ${ upgradeButton }"
       ],
       "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Din gratis provperiod av skrivbordsappen slutar om 5 dagar. ${ upgradeButton }"
+        "Din gratis provperiod av din app för stationär dator slutar om 5 dagar. ${ upgradeButton }"
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Din gratis provperiod av skrivbordsappen slutar den ${ formattedEndDate }. ${ upgradeButton }"
+        "Din gratis provperiod av din app för stationär dator slutar den ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
         "Din skrivassistent för e-post"
@@ -1609,6 +1609,18 @@
       ],
       "Upgrade for 200GB": [
         "Uppgradera för 200 GB"
+      ],
+      "Change password": [
+        "Ändra lösenord"
+      ],
+      "Go to ${ planOrAppName }": [
+        "Gå till ${ planOrAppName }"
+      ],
+      "Select ${ planOrAppName }": [
+        "Välj ${ planOrAppName }"
+      ],
+      "Trust key": [
+        "Lita på nyckel"
       ]
     },
     "action": {
@@ -1711,10 +1723,10 @@
         "Oläst e-post"
       ],
       "Unstar conversation": [
-        "Sluta stjärnmarkera konversationen"
+        "Sluta stjärnmarkera konversation"
       ],
       "Unstar message": [
-        "Sluta stjärnmarkera meddelandet"
+        "Sluta stjärnmarkera meddelande"
       ]
     },
     "Alternative text for conversation image": {
@@ -1892,7 +1904,7 @@
         "Snabbt och säkert. Inga loggar förs."
       ],
       "No logs are kept to protect your privacy. Faster processing.": [
-        "Inga loggar förs för att skydda din integritet. Snabbare bearbetning."
+        "Inga loggar sparas för att skydda din integritet. Snabbare bearbetning."
       ],
       "Run on ${ BRAND_NAME } servers": [
         "Kör på ${ BRAND_NAME }-servrar"
@@ -1969,7 +1981,7 @@
     },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
-        "30 dagars pengarna-tillbaka-garanti"
+        "30-dagars pengarna tillbaka-garanti"
       ]
     },
     "bf2023: Tooltip": {
@@ -1979,7 +1991,7 @@
     },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME }-skrivbordsapp"
+        "${ MAIL_APP_NAME }-app för stationär dator"
       ],
       "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ plan } och ${ CALENDAR_SHORT_APP_NAME }"
@@ -2039,10 +2051,10 @@
         "Aviseringar om lösenordshälsa"
       ],
       "Private photo backup": [
-        "Privat säkerhetskopiering av foto"
+        "Privat säkerhetskopiering av foton"
       ],
       "Protect 10 devices at a time": [
-        "Skydda 10 enheter samtidigt"
+        "Skydda 10 enheter åt gången"
       ],
       "Secure file storage & sharing": [
         "Säker fillagring och delning"
@@ -2102,7 +2114,7 @@
         "Specialdesignade NetShield skyddar dina enheter och snabbar upp din surfning genom att blockera annonser, spårare och skadlig kod."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
-        "Lagringsutrymmet delas mellan alla ${ BRAND_NAME }-tjänster."
+        "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
       ]
     },
     "Billing cycle option": {
@@ -2127,7 +2139,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }-skrivbordsapp"
+        "Applikation för stationär dator ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -2317,16 +2329,16 @@
         "${ participantName } avböjde din inbjudan till en förekomst av händelsen."
       ],
       "${ participantName } declined your invitation.": [
-        "${ participantName } har avböjt din inbjudan."
+        "${ participantName } avböjde din inbjudan."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } hade accepterat en inbjudan och föreslog en ny tid för en förekomst av denna händelse. Svar och förslag är inaktuella."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } hade tackat ja till en inbjudan och föreslagit en ny tid för denna händelse. Svar och förslag är inaktuella."
+        "${ participantName } hade accepterat en inbjudan och föreslagit en ny tid för denna händelse. Svar och förslag är inaktuella."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        "${ participantName } hade accepterat en inbjudan till en förekomst av händelsen."
+        "${ participantName } har accepterat en inbjudan till en förekomst av händelsen."
       ],
       "${ participantName } had accepted an invitation to this event.": [
         "${ participantName } hade accepterat en inbjudan till denna händelse."
@@ -2440,7 +2452,7 @@
         "${ participantName } accepterade preliminärt din inbjudan till en förekomst av händelsen."
       ],
       "${ participantName } tentatively accepted your invitation.": [
-        "${ participantName } accepterade din inbjudan preliminärt."
+        "${ participantName } accepterade preliminärt din inbjudan."
       ],
       "(Attendance optional)": [
         "(Frivilligt deltagande)"
@@ -2452,7 +2464,7 @@
         "Uppdatering av händelse stöds inte för tillfället"
       ],
       "Event rescheduling is not supported for the moment": [
-        "Ombokning av händelser stöds inte för närvarande"
+        "Omläggning av schema för händelse stöds inte för tillfället"
       ],
       "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
         "Detta svar kan inte läggas till i ${ CALENDAR_APP_NAME } eftersom vi endast stöder svar på alla händelser i en serie för tillfället"
@@ -2505,7 +2517,7 @@
     },
     "Calendar widget banner": {
       "Event already ended": [
-        "Händelse har redan slutat"
+        "Händelsen har redan slutat"
       ],
       "Event in progress": [
         "Händelse pågår"
@@ -2575,6 +2587,9 @@
       ],
       "Ultra fast and private VPN": [
         "Ultrasnabb och privat VPN"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alla premiumfunktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Checkout row": {
@@ -2802,7 +2817,7 @@
     },
     "Composer email icon": {
       "End-to-end encrypted": [
-        "End-to-end-krypterat"
+        "End-to-end-krypterad"
       ],
       "End-to-end encrypted to verified recipient": [
         "End-to-end-krypterat till verifierad mottagare"
@@ -2871,7 +2886,7 @@
         "Redigera och schemalägg på nytt"
       ],
       "Message saved to Drafts": [
-        "Meddelande sparat i Utkast"
+        "Meddelande sparat i utkast"
       ],
       "Quit import customization?": [
         "Avsluta importanpassning?"
@@ -3979,7 +3994,7 @@
         "För obegränsad åtkomst till skrivassistenten och mer, uppgradera till ${ BRAND_NAME } Duo."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
-        "Bli aviserad om ditt lösenord eller annan data har läckts från en tredjepartstjänst."
+        "Bli aviserad om ditt lösenord eller annan data har läckt från en tjänst från tredje part."
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hjälp ditt team att säkert lagra lösenord till känslig företags- och klientinformation."
@@ -4010,10 +4025,10 @@
         "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
       ],
       "Set a data recovery method to prevent data loss.": [
-        "Konfigurera en dataåterställningsmetod för att förhindra dataförlust."
+        "Ställ in en dataåterställningsmetod för att förhindra dataförlust."
       ],
       "Set a recovery method to prevent losing access to your account.": [
-        "Konfigurera en återställningsmetod för att förhindra att du förlorar åtkomst till ditt konto."
+        "Ställ in en återställningsmetod för att förhindra att du förlorar åtkomst till ditt konto."
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Ställ in konton för alla användare och bjud in dem att gå med i ${ BRAND_NAME }."
@@ -4025,10 +4040,10 @@
         "För att fortsätta använda skrivassistenten, lägg till den i din prenumeration."
       ],
       "To continue to use the writing assistant, request access from your admin.": [
-        "För att fortsätta använda skrivassistenten, begär åtkomst från din administratör."
+        "För att fortsätta använda skrivassistenten, begär åtkomst från din admin."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
-        "För att säkerställa högsta möjliga säkerhet för ditt konto, välj en återställningsfras."
+        "För att säkerställa högsta möjliga säkerhet för ditt konto, ställ in en återställningsfras."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "För import via en CSV- och VCF-fil, se till att filen inte överstiger ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Om din fil är större, dela upp den i mindre filer. ${ learnMoreLink }."
@@ -4123,7 +4138,7 @@
         "Jag hittade en VPN med bättre funktioner"
       ],
       "I have not managed to connect": [
-        "Jag har inte lyckats ansluta"
+        "Jag har inte lyckats att ansluta"
       ],
       "I only needed a VPN short-term": [
         "Jag behövde bara en VPN kortsiktigt"
@@ -4132,7 +4147,7 @@
         "Jag använder ett annat ${ BRAND_NAME }-konto"
       ],
       "It doesn't do what I need": [
-        "Den gör inte vad jag behöver"
+        "Det gör inte vad jag behöver"
       ],
       "Missing feature(s)": [
         "Saknade funktion(er)"
@@ -4155,7 +4170,7 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve": [
-        "Hjälp oss bli bättre"
+        "Hjälp oss att förbättra"
       ]
     },
     "Downgrade warning": {
@@ -4261,8 +4276,8 @@
         "Händelse börjar nu"
       ],
       "Event starts in ${ minutesUntilEvent } minute": [
-        "Händelsen startar om ${ minutesUntilEvent } minut",
-        "Händelsen startar om ${ minutesUntilEvent } minuter"
+        "Händelse startar om ${ minutesUntilEvent } minut",
+        "Händelse startar om ${ minutesUntilEvent } minuter"
       ],
       "Event starts tomorrow": [
         "Händelse börjar imorgon"
@@ -4348,7 +4363,7 @@
         "Adressens privata nyckel hittades inte"
       ],
       "Alias is not valid": [
-        "Alias är ogiltigt"
+        "Alias är inte giltigt"
       ],
       "Alias is required": [
         "Alias är obligatoriskt"
@@ -4427,7 +4442,7 @@
         "Kunde inte öppna uppdaterat valv"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
-        "Dekrypteringsfel: dekryptering av detta meddelandets krypterade innehåll misslyckades."
+        "Dekrypteringsfel: dekryptering av detta meddelandes krypterade innehåll misslyckades."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Avmarkera minst ${ calendarsToFixCount } kalender",
@@ -4562,7 +4577,7 @@
         "Slå samman minst ${ calendarsToFixCount } kalendrar med befintliga ${ BRAND_NAME }-kalendrar"
       ],
       "Message needs to be sent first": [
-        "Meddelandet måste skickas först"
+        "Meddelande måste skickas först"
       ],
       "Message processing error.": [
         "Meddelandehanteringsfel."
@@ -4574,7 +4589,7 @@
         "Signatur saknas"
       ],
       "Name is required": [
-        "Namn krävs"
+        "Namn är obligatoriskt"
       ],
       "Network error: Please check your connection and try again.": [
         "Nätverksfel: Kontrollera din anslutning och försök igen."
@@ -4639,7 +4654,7 @@
         "Aktivera din sökning igen"
       ],
       "Please enter a valid postal code": [
-        "Skriv in ett giltigt postnummer"
+        "Ange ett giltigt postnummer"
       ],
       "Please enter a valid ZIP code": [
         "Ange ett giltigt postnummer"
@@ -4667,7 +4682,7 @@
         "Välj en delstat"
       ],
       "Please select billing country": [
-        "Välj faktureringsland"
+        "Välj land för fakturering"
       ],
       "Please select billing state": [
         "Välj delstat för fakturering"
@@ -4773,7 +4788,7 @@
         "Text är för lång för att finjustera"
       ],
       "Thanks for the feedback!": [
-        "Tack för feedbacken!"
+        "Tack för din feedback!"
       ],
       "The amount due has changed. Please try again.": [
         "Det förfallna beloppet har ändrats. Försök igen."
@@ -4915,6 +4930,9 @@
       ],
       "Attachments are limited to ${ readableAttachmentMaxSize }": [
         "Bilagor är begränsade till ${ readableAttachmentMaxSize }"
+      ],
+      "This action cannot be performed": [
+        "Denna åtgärd kan inte utföras"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4931,10 +4949,10 @@
         "Utkast kan inte flyttas till skräppost"
       ],
       "Sent messages cannot be moved to Inbox": [
-        "Skickat meddelande kan inte flyttas till inkorg"
+        "Skickade meddelanden kan inte flyttas till inkorg"
       ],
       "Sent messages cannot be moved to Spam": [
-        "Skickat meddelande kan inte flyttas till skräppost"
+        "Skickade meddelanden kan inte flyttas till skräppost"
       ],
       "This action cannot be performed": [
         "Denna åtgärd kan inte utföras"
@@ -5068,10 +5086,10 @@
     },
     "Error message": {
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Alias ​​kan inte användas när ett extralösenord är aktiverat i ${ PASS_APP_NAME }."
+        "Alias kan inte användas när ett extra lösenord är aktiverat i ${ PASS_APP_NAME }."
       ],
       "App currently unavailable": [
-        "Appen är för närvarande otillgänglig"
+        "App är för närvarande inte tillgänglig"
       ],
       "Error: ${ errorMessage }": [
         "Fel: ${ errorMessage }"
@@ -5080,7 +5098,7 @@
         "Inga resultat hittades"
       ],
       "No results found for \"${ query }\"": [
-        "Inga resultat hittades för \"${ query }\""
+        "Inga resultat hittades för ”${ query }”"
       ],
       "Oops, something went wrong": [
         "Hoppsan, något gick fel"
@@ -5245,13 +5263,13 @@
         "Du kan inte byta paket just nu."
       ],
       "Storage assigned to you: ${ assignedStorage }": [
-        "Lagringsutrymme tilldelat dig: ${ assignedStorage }"
+        "Lagringsutrymme tilldelat till dig: ${ assignedStorage }"
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Prenumerationen kommer att faktureras till den primära administratören av detta paket."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
-        "Du har bjudits in att gå med i ${ invite.OrganizationName }"
+        "Du är inbjuden att gå med i ${ invite.OrganizationName }"
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Du kan bara acceptera 3 inbjudningar under en 6-månadersperiod. Kontakta ${ supportLink } om du behöver ett undantag."
@@ -5260,7 +5278,7 @@
         "Du kan inte acceptera denna inbjudan med ditt nuvarande paket."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Du har bjudits in att gå med i ${ bannerOrganization }. ${ viewInviteButton }"
+        "Du har blivit inbjuden att gå med i ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the family group": [
         "Du har gått med i familjegruppen"
@@ -5275,7 +5293,7 @@
         "Ditt konto har fler e-postadresser än vad som är tillgängligt för dig i detta paket. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Ditt konto använder ${ usedSpace } lagringsutrymme, vilket överstiger de ${ inviteSpace } du tilldelades. Ta bort lite data eller be administratören för paketet att öka ditt lagringsutrymme."
+        "Ditt konto använder ${ usedSpace } lagringsutrymme, vilket överstiger ${ inviteSpace } du tilldelades. Ta bort lite data eller be administratören för paketet att öka ditt lagringsutrymme."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5302,10 +5320,10 @@
         "Bjud in medlemmar och få igång allt."
       ],
       "Set up your family": [
-        "Konfigurera din familj"
+        "Ställ in din familj"
       ],
       "Set up your family account": [
-        "Konfigurera ditt familjekonto"
+        "Ställ in ditt familjekonto"
       ]
     },
     "familyOffer_2023:Title": {
@@ -5397,7 +5415,7 @@
     },
     "Filter Actions": {
       "Archive": [
-        "Arkiv"
+        "Arkivera"
       ],
       "Do not move": [
         "Flytta inte"
@@ -5440,7 +5458,7 @@
         "Om ämnet"
       ],
       "Select…": [
-        "Välj…"
+        "Välj …"
       ],
       "The attachment": [
         "Bilagan"
@@ -5538,7 +5556,7 @@
         "Liten"
       ],
       "Very large": [
-        "Mycket stor"
+        "Väldigt stor"
       ],
       "Very small": [
         "Väldigt liten"
@@ -5551,7 +5569,7 @@
     },
     "forwardmessage": {
       "Date: On ${ date }": [
-        "Datum: den ${ date }"
+        "Datum: Den ${ date }"
       ],
       "From: ${ senderString }": [
         "Från: ${ senderString }"
@@ -5565,16 +5583,16 @@
     },
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME }-skrivbordsapp"
+        "${ MAIL_APP_NAME }-app för stationär dator"
       ],
       "14-day desktop app trial.": [
-        "14-dagars provperiod av skrivbordsappen"
+        "14-dagars provperiod av app för stationär dator."
       ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Njut av snabb, säker och distraktionsfri åtkomst till din inkorg och kalender."
       ],
       "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
-        "Få obegränsad åtkomst med alla ${ MAIL_APP_NAME }-paket."
+        "Få obegränsad åtkomst med valfritt ${ MAIL_APP_NAME }-paket."
       ],
       "No credit card required.": [
         "Inget kreditkort krävs."
@@ -5583,7 +5601,7 @@
         "Starta gratis provperiod"
       ],
       "Try the new desktop app": [
-        "Prova den nya skrivbordsappen"
+        "Prova den nya appen för stationär dator"
       ],
       "Upgrade now": [
         "Uppgradera nu"
@@ -5632,7 +5650,7 @@
         "Ändrade konton"
       ],
       "Checklist complete": [
-        "Checklista färdig"
+        "Checklista klar"
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Fyll i denna checklista inom ${ daysCount } för att dubbla ditt lagringsutrymme gratis."
@@ -5644,7 +5662,7 @@
         "Upptäck integritetsfunktioner"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
-        "Kryptering så stark att bara du och avsedda mottagare kan se dina e-postmeddelanden."
+        "Kryptering så stark att bara du och avsedda mottagare kan visa din e-post."
       ],
       "Finish setup": [
         "Slutför inställning"
@@ -5689,7 +5707,7 @@
         "Logga in på mobilappen för att slutföra detta steg"
       ],
       "Storage unlocked": [
-        "Lagringsutrymme Upplåst"
+        "Lagringsutrymme upplåst"
       ],
       "Tasks to complete count": [
         "Antal uppgifter att slutföra"
@@ -5704,7 +5722,7 @@
         "Använd din mobila enhet, skanna denna QR-kod eller besök iOS- eller Android-butiken."
       ],
       "We stop advertisers and data collectors from profiling you.": [
-        "Vi stoppar annonsörer och datainsamlare från att profilera dig."
+        "Vi hindrar annonsörer och datainsamlare från att profilera dig."
       ],
       "You've unlocked 1 GB": [
         "Du har låst upp 1 GB"
@@ -5775,7 +5793,7 @@
         "Sidopanel"
       ],
       "Hardware not compatible": [
-        "Hårdvaran är okompatibel"
+        "Hårdvara inte kompatibel"
       ],
       "Report an issue": [
         "Rapportera ett problem"
@@ -5790,7 +5808,7 @@
         "Säkerhetscenter"
       ],
       "Set up the writing assistant": [
-        "Konfigurera skrivassistenten"
+        "Ställ in skrivassistenten"
       ],
       "Tell us more": [
         "Berätta mer"
@@ -6178,7 +6196,7 @@
         "${ boldUnsubscribe } från dem med ett klick."
       ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
-        "${ BRAND_NAME } Scribe hjälper dig att skapa bättre e-postmeddelanden snabbt och enkelt."
+        "${ BRAND_NAME } Scribe hjälper dig att skapa bättre e-post snabbt och enkelt."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
@@ -6297,8 +6315,8 @@
         "${ numberOfUTMTrackers } länkar rensade"
       ],
       "${ NumMessages } message in conversation": [
-        "${ NumMessages } meddelande i konversationen",
-        "${ NumMessages } meddelanden i konversationen"
+        "${ NumMessages } meddelande i konversation",
+        "${ NumMessages } meddelanden i konversation"
       ],
       "${ numOccurrences } occurrence found": [
         "${ numOccurrences } förekomst hittades",
@@ -6394,7 +6412,7 @@
         "${ updated } kontakter uppdaterades."
       ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
-        "${ VPN_APP_NAME } maskerar din IP-adress så att webbplatser inte kan identifiera dig."
+        "${ VPN_APP_NAME } maskerar din IP-adress så webbplatser inte kan identifiera dig."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
@@ -6472,7 +6490,7 @@
         "Målgruppsanpassning av annonser"
       ],
       "Add image URL": [
-        "Lägg till bild-URL"
+        "Lägga till bild-URL"
       ],
       "Address copied to clipboard": [
         "Adress kopierad till urklipp"
@@ -6595,7 +6613,7 @@
         "Är du säker på att du vill flytta alla meddelanden på denna plats till arkiv?"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
-        "Är du säker på att du vill flytta alla meddelanden på denna plats till papperskorgen?"
+        "Är du säker på att du vill flytta alla meddelanden på denna plats till papperskorg?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Är du säker på att du vill ta bort ${ count } konversation permanent?",
@@ -6610,7 +6628,7 @@
         "Är du säker på att du vill ta bort ${ count } meddelanden permanent?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
-        "Är du säker på att du vill ta bort denna konversationen permanent?"
+        "Är du säker på att du vill ta bort denna konversation permanent?"
       ],
       "Are you sure you want to permanently delete this draft?": [
         "Är du säker på att du vill ta bort detta utkast permanent?"
@@ -6631,7 +6649,7 @@
         "Uppmärksamhet krävs"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
-        "Rensa automatiskt bort e-postmeddelanden flyttade till papperskorgen och skräppost för mer än 30 dagar sedan."
+        "Rensa automatiskt bort e-post som flyttats till papperskorg och skräppost för mer än 30 dagar sedan."
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
         "Ta bort meddelanden som har legat i papperskorg och skräppost i mer än 30 dagar automatiskt."
@@ -6709,7 +6727,7 @@
         "Genom att rensa webbläsardata inaktiverades även sökning av meddelandeinnehåll på denna enhet. Alla meddelanden måste laddas ner igen för att kunna söka i dem."
       ],
       "Clears browser data (including downloaded messages, …)": [
-        "Rensar webbläsardata (inklusive nedladdade meddelanden, …)"
+        "Rensar webbläsardata (inklusive nedladdade meddelanden …)"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
@@ -6721,7 +6739,7 @@
         "Stäng denna skärm för att avsluta."
       ],
       "Composer:": [
-        "Kompositör:"
+        "Redigeringsfönster:"
       ],
       "Confirm phishing report": [
         "Bekräfta nätfiskerapport"
@@ -6739,7 +6757,7 @@
         "Tilldelning borttagen för kontakt från grupp ${ contactGroupName }"
       ],
       "Copied to clipboard": [
-        "Kopierad till urklipp"
+        "Kopierat till urklipp"
       ],
       "Copy the link to clipboard": [
         "Kopiera länken till urklipp"
@@ -6798,7 +6816,7 @@
         "Anpassad årligen"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Anpassa utseendet och känslan för ${ BRAND_NAME }-applikationerna."
+        "Anpassa utseendet och känslan för ${ BRAND_NAME }-applikationer."
       ],
       "Daily": [
         "Dagligen"
@@ -6822,7 +6840,7 @@
         "Visste du att du har krypterad molnlagring inkluderat med ditt ${ BRAND_NAME }-konto? Gå till ${ DRIVE_APP_NAME } och få ut det mesta av ditt utrymme. Det är gratis."
       ],
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
-        "Visste du detta? Vi har reserverat en kortare e-postadress för dig. Det är ditt användarnamn följt av “@${ PM_DOMAIN }“."
+        "Visste du detta ? Vi har reserverat en kortare e-postadress för dig. Det är ditt användarnamn följt av “@${ PM_DOMAIN }“."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Upptäck nya funktioner upplåsta och börja använda dem direkt!"
@@ -6841,7 +6859,7 @@
         "Vill du signera kontaktuppgifterna igen och samtidigt lita på nycklarna med följande fingeravtryck?"
       ],
       "Do you want to re-sign the contact details?": [
-        "Vill du signera dessa kontaktuppgifter igen?"
+        "Vill du signera kontaktdetaljerna igen?"
       ],
       "Don't forget to share the password with the recipient": [
         "Glöm inte att dela lösenordet med mottagaren"
@@ -6871,7 +6889,7 @@
         "Ladda ner din favoritapp idag och ta integritet med dig var du än går."
       ],
       "Downloading assistant… ${ progressDisplay } GB": [
-        "Laddar ner assistent… ${ progressDisplay } GB"
+        "Laddar ner assistent … ${ progressDisplay } GB"
       ],
       "Downloading paused": [
         "Nedladdning pausad"
@@ -6889,7 +6907,7 @@
         "Utkast sparat."
       ],
       "Drop file here to upload": [
-        "Släpp filer här för att ladda upp"
+        "Släpp fil här för att ladda upp"
       ],
       "Drop to import": [
         "Släpp för att importera"
@@ -6913,7 +6931,7 @@
         "Redigera e-postadress"
       ],
       "Edit encryption": [
-        "Byt kryptering"
+        "Redigera kryptering"
       ],
       "Edit expiration time": [
         "Redigera utgångstid"
@@ -6934,7 +6952,7 @@
         "E-postlagring är endast tillgängligt för domäner som du redan äger. Domänregistrering är för närvarande inte tillgänglig via ${ BRAND_NAME }. Du kan lagra e-post för domäner som är registrerade hos vilken domänregistrator som helst."
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
-        "E-post vidarebefordras till din brevlåda, din e-postadress förblir dold."
+        "E-post vidarebefordras till din brevlåda; din e-postadress förblir dold."
       ],
       "Email tracker protection is disabled": [
         "Spårningsskydd för e-post är inaktiverad"
@@ -6987,7 +7005,7 @@
         "Beräknar återstående tid..."
       ],
       "Expand selection": [
-        "Expandera markering"
+        "Expandera val"
       ],
       "Expand text": [
         "Expandera text"
@@ -7006,8 +7024,8 @@
         "Löper ut om ${ minutesDiff } minuter"
       ],
       "Expires in less than ${ hoursDiff } hour": [
-        "Löper ut om mindre än ${ hoursDiff } timme.",
-        "Löper ut om mindre än ${ hoursDiff } timmar."
+        "Löper ut om mindre än ${ hoursDiff } timme",
+        "Löper ut om mindre än ${ hoursDiff } timmar"
       ],
       "file attached": [
         "fil bifogad",
@@ -7103,7 +7121,7 @@
         "Om du fortsätter med nedgraderingen förlorar du åtkomst till betalda funktioner i ${ VPN_APP_NAME }."
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
-        "Om ditt alias säljs, läcks eller missbrukas är det bara att inaktivera det för att sluta ta emot skräppost."
+        "Om ditt alias säljs, läcker eller missbrukas är det bara att inaktivera det för att sluta ta emot skräppost."
       ],
       "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
         "Om ditt lösenord hamnar på den mörka webben kan ${ BRAND_NAME } berätta för dig vilken tjänst din data läckte från och hur du stoppar skadan."
@@ -7115,7 +7133,7 @@
         "Bild-URL"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "Bilder har tagits bort eftersom de inte är tillåtna i autosvar"
+        "Bilder har tagits bort eftersom de inte är tillåtna i automatiska svar"
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importera ${ calendarCount } av ${ totalCalendarsCount } kalender",
@@ -7131,7 +7149,7 @@
         "Importera brevlåda"
       ],
       "Important note": [
-        "Viktig notering"
+        "Viktigt meddelande"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerar din data från ${ fromEmail } till ${ toEmail }."
@@ -7146,7 +7164,7 @@
         "Inkludera skräppost/papperskorg."
       ],
       "Include your prompt and the response to help us improve accuracy.": [
-        "Inkludera din prompt och svaret för att hjälpa oss att förbättra noggrannheten."
+        "Inkludera din prompt och svaret för att hjälpa oss förbättra noggrannhet."
       ],
       "Included for free with your plan": [
         "Inkluderat gratis med ditt paket"
@@ -7158,10 +7176,11 @@
         "Ärvd från överordnad mapp"
       ],
       "Initializing…": [
-        "Initierar…"
+        "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -7308,16 +7327,16 @@
         "Meddelandevy"
       ],
       "Message will be sent in the morning at ${ formattedTime }": [
-        "Meddelandet kommer att skickas på morgonen kl. ${ formattedTime }."
+        "Meddelandet kommer att skickas på morgonen kl. ${ formattedTime }"
       ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
-        "Meddelandet kommer att skickas den ${ dateString } kl. ${ formattedTime }"
+        "Meddelande kommer att skickas den ${ dateString } kl. ${ formattedTime }"
       ],
       "Message will be sent today at ${ formattedTime }": [
-        "Meddelandet kommer att skickas idag kl. ${ formattedTime }"
+        "Meddelande kommer att skickas idag kl. ${ formattedTime }"
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
-        "Meddelandet kommer att skickas imorgon kl. ${ formattedTime }"
+        "Meddelande kommer att skickas imorgon kl. ${ formattedTime }"
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Meddelanden som har legat i papperskorg och skräppost i mer än 30 dagar kommer att tas bort automatiskt."
@@ -7606,13 +7625,13 @@
         "Uppdatera sidan eller ${ link } kommer automatiskt att lösa de flesta problemen."
       ],
       "Registering your subscription…": [
-        "Registrerar din prenumeration…"
+        "Registrerar din prenumeration …"
       ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Kom ihåg att uppdatera detta i din lösenordshanterare eller var du än förvarar ditt konto och inloggningsinformation."
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
-        "Tar bort all data associerad med denna app (inklusive nedladdade meddelanden, …)"
+        "Tar bort all data associerad med denna app (inklusive nedladdade meddelanden …)"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Att rapportera ett meddelande som ett nätfiskeförsök kommer skicka meddelandet till oss så att vi kan analysera det och förbättra våra filter. Detta innebär att vi kommer kunna se innehållet i meddelandet i sin helhet."
@@ -7630,7 +7649,7 @@
         "Högerklicka för alternativ"
       ],
       "Sat, ${ formatTime }": [
-        "Lör, ${ formatTime }"
+        "Lör. ${ formatTime }"
       ],
       "Saved at ${ dateString }": [
         "Sparad den ${ dateString }"
@@ -7642,7 +7661,7 @@
         "Sparad: ${ dateString }"
       ],
       "Saving draft…": [
-        "Sparar utkast…"
+        "Sparar utkast …"
       ],
       "Scan the QR code with your mobile device": [
         "Skanna QR-koden med din mobila enhet"
@@ -7651,7 +7670,7 @@
         "Schemalagd sändning av detta meddelande kommer att avbrytas."
       ],
       "Scheduling message...": [
-        "Schemalägger meddelande..."
+        "Schemalägger meddelande …"
       ],
       "Scribe panel": [
         "Scribe-panel"
@@ -7669,7 +7688,7 @@
         "Ser ut som att du är ikapp just nu"
       ],
       "Select all ${ elementsCount } in ${ location }": [
-        "Välj ${ elementsCount } i ${ location }",
+        "Välj alla ${ elementsCount } i ${ location }",
         "Välj alla ${ elementsCount } i ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
@@ -7697,7 +7716,7 @@
         "Skickar"
       ],
       "Sending message...": [
-        "Skickar meddelande..."
+        "Skickar meddelande …"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Att skicka meddelanden från @pm.me-adress är en betald funktion. Ditt meddelande kommer att skickas från din standardadress ${ email }"
@@ -7706,7 +7725,7 @@
         "Skickat med <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> säker e-post."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "SEPA-betalningar är inte tillgängliga för tillfället. Försök igen senare."
+        "SEPA-betalningar är inte tillgängliga just nu. Försök igen senare."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servrarna kan inte nås. Försök igen om några minuter"
@@ -7796,7 +7815,7 @@
         "Ämne"
       ],
       "Subject is end-to-end encrypted": [
-        "Ämnet är end-to-end-krypterat"
+        "Ämne är end-to-end-krypterat"
       ],
       "Subject:": [
         "Ämne:"
@@ -7860,7 +7879,7 @@
         "Den exponerade informationen läckte från en tredjepartstjänst. Din ${ BRAND_NAME }-kontoinformation förblir säker och krypterad. ${ learnMoreLink }"
       ],
       "The initial setup may take a few minutes.": [
-        "Den initiala konfigurationen kan ta några minuter."
+        "Den initiala installationen kan ta några minuter."
       ],
       "The local database is being prepared": [
         "Den lokala databasen förbereds"
@@ -7925,7 +7944,7 @@
         "Dessa konversationer kommer att markeras som skräppost. Vill du också avsluta prenumeration på kommande e-postmeddelanden?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
-        "Detta e-postmeddelande har misslyckats med domänens autentiseringskrav. Det kan vara förfalskat eller felaktigt vidarebefordrat."
+        "Det här e-postmeddelandet har misslyckats med domänens autentiseringskrav. Det kan vara förfalskat eller felaktigt vidarebefordrat."
       ],
       "This file is too large to preview": [
         "Denna fil är för stor för att förhandsgranska"
@@ -7964,7 +7983,7 @@
         "Detta meddelande är från en e-postlista."
       ],
       "This message is signed by a key that has not been trusted yet.": [
-        "Detta meddelande är signerat med en nyckel som inte är betrodd ännu."
+        "Detta meddelande är signerat med en nyckel som inte är betrodd än."
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Detta meddelande är signerat med den bifogade nyckeln som inte har blivit betrodd ännu."
@@ -8001,7 +8020,7 @@
         "Detta meddelande kommer löpa ut ${ formattedDate }"
       ],
       "This message will expire on ${ value }": [
-        "Detta meddelande kommer löpa ut ${ value }"
+        "Detta meddelande kommer löpa ut den ${ value }"
       ],
       "This message will expire today at ${ value }": [
         "Detta meddelande kommer löpa ut idag kl. ${ value }"
@@ -8064,7 +8083,7 @@
         "Imorgon, ${ formattedTime }"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
-        "Många meddelanden väntar på att skickas. Vänta tills ett annat meddelande har skickats för att schemalägga detta."
+        "För många meddelanden väntar på att skickas. Vänta tills ett annat meddelande har skickats för att schemalägga detta."
       ],
       "Total email addresses": [
         "Totalt antal e-postadresser"
@@ -8118,7 +8137,7 @@
         "Fil stöds inte"
       ],
       "Updating message content search...": [
-        "Uppdaterar sökning av meddelandeinnehåll..."
+        "Uppdaterar sökning av meddelandeinnehåll …"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
@@ -8136,7 +8155,7 @@
         "Uppgradera för att skapa fler mappar, filter och adresser."
       ],
       "Upgrade to level up your privacy.": [
-        "Uppgradera för att levla upp din integritet."
+        "Uppgradera för att höja din integritet."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Uppgradera för att skicka e-post från @pm.me-adresser."
@@ -8148,7 +8167,7 @@
         "Uppgradera för att enkelt skicka e-post till kontaktgrupper."
       ],
       "Upgrade to support a privacy-first internet.": [
-        "Uppgradera för att stödja ett Internet där integriteten kommer först."
+        "Uppgradera för att stödja ett internet där integriteten kommer först."
       ],
       "Upgrade to support our mission of privacy for all.": [
         "Uppgradera för att stödja vårt uppdrag om integritet för alla."
@@ -8163,7 +8182,7 @@
         "Uppgradera för att använda ${ MAIL_APP_NAME } med Apple Mail, Outlook eller Thunderbird."
       ],
       "Upgrade to use auto-reply when you're away.": [
-        "Uppgradera för att använda autosvar när du är borta."
+        "Uppgradera för att använda automatiskt svar när du är borta."
       ],
       "Upload picture": [
         "Ladda upp bild"
@@ -8220,7 +8239,7 @@
         "Vi blockerade följande annonsörer och organisationer från att se när du öppnar detta e-postmeddelande, vilken enhet du använder och var du befinner dig."
       ],
       "We cannot enable message content search in this browser.": [
-        "Vi kan inte aktivera sökning av meddelandeinnehåll i den här webbläsaren."
+        "Vi kan inte aktivera sökning av meddelandeinnehåll i denna webbläsare."
       ],
       "We could not verify the sender's trusted keys.": [
         "Vi kunde inte verifiera avsändarens betrodda nycklar."
@@ -8298,7 +8317,7 @@
         "Skrivassistent"
       ],
       "writing assistant iframe": [
-        "skrivassistent-iframe"
+        "skrivassistent iframe"
       ],
       "Yearly": [
         "Årligen"
@@ -8360,7 +8379,7 @@
         "Du kan slå på aviseringar för att bli uppmärksammad när nya e-postmeddelanden kommer till denna mapp."
       ],
       "You can use ${ VPN_APP_NAME } for free, today.": [
-        "Du kan använda ${ VPN_APP_NAME } gratis idag."
+        "Du kan använda ${ VPN_APP_NAME } gratis i dag."
       ],
       "You cannot reply from the invited address.": [
         "Du kan inte svara från den inbjudna adressen."
@@ -8397,13 +8416,13 @@
         "Du har en provperiod på ${ planTitle }-prenumeration. Ingen betalning krävs för närvarande. Din prenumeration kommer att förnyas automatiskt i slutet av provperioden."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
-        "Du har inte angett något ämne för din e-post. Vill du skicka meddelandet ändå?"
+        "Du har inte gett ditt meddelande något ämne. Vill du skicka meddelandet ändå?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Du har nått 100 % av din lagringskapacitet. Överväg att frigöra lite utrymme eller uppgradera ditt konto med ytterligare lagringsutrymme för att skriva nya meddelanden."
       ],
       "You have reached the maximum number of 5 replies.": [
-        "Du har nått gränsen på maximalt 5 svar."
+        "Du har nått det maximala antalet på 5 svar."
       ],
       "You may be redirected to your bank’s website.": [
         "Du kan bli omdirigerad till webbplatsen för din bank."
@@ -8558,7 +8577,7 @@
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer att förnyas automatiskt var ${ cycle }:e månad."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
-        "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas varje månad."
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer förnyas automatiskt varje månad."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Din prenumeration kommer förnyas automatiskt den ${ renewalTime }."
@@ -8577,6 +8596,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Ange ditt eget lösenord (som betrodd kontakt)."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Allt i ${ planOrAppName }"
       ]
     },
     "info": {
@@ -8698,31 +8723,31 @@
         "Filter"
       ],
       "Forward": [
-        "Vidarebefordra"
+        "Vidarebefordrad"
       ],
       "Go to All Mail": [
-        "Gå till All e-post"
+        "Gå till all e-post"
       ],
       "Go to Archive": [
-        "Gå till Arkiv"
+        "Gå till arkiv"
       ],
       "Go to Drafts": [
-        "Gå till Utkast"
+        "Gå till utkast"
       ],
       "Go to Inbox": [
-        "Gå till Inkorg"
+        "Gå till inkorg"
       ],
       "Go to Sent": [
-        "Gå till Skickat"
+        "Gå till skickat"
       ],
       "Go to Spam": [
-        "Gå till Skräppost"
+        "Gå till skräppost"
       ],
       "Go to Starred": [
-        "Gå till Stjärnmärkt"
+        "Gå till stjärnmärkt"
       ],
       "Go to Trash": [
-        "Gå till Papperskorg"
+        "Gå till papperskorg"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8734,7 +8759,7 @@
         "Hoppa till sista"
       ],
       "Label as...": [
-        "Märk som..."
+        "Märk som …"
       ],
       "Load embedded images": [
         "Ladda inbäddade bilder"
@@ -8758,7 +8783,7 @@
         "Flytta vänster/minimera"
       ],
       "Move right / expand": [
-        "Flytta åt höger/expandera"
+        "Flytta höger/expandera"
       ],
       "Move to Archive": [
         "Flytta till arkiv"
@@ -8773,7 +8798,7 @@
         "Flytta till papperskorg"
       ],
       "Move to...": [
-        "Flytta till..."
+        "Flytta till …"
       ],
       "Move up": [
         "Flytta upp"
@@ -8937,7 +8962,7 @@
         "Applösenord"
       ],
       "Apply filter to existing emails": [
-        "Tillämpa filter till all befintlig e-post"
+        "Tillämpa filter till befintlig e-post"
       ],
       "Apply to future messages": [
         "Tillämpa till framtida meddelanden"
@@ -8952,7 +8977,7 @@
         "Hemlig kopia"
       ],
       "Beta Access": [
-        "Betaåtkomst"
+        "Beta-åtkomst"
       ],
       "Billing cycle": [
         "Faktureringsperiod"
@@ -9018,7 +9043,7 @@
         "Företagsnamn"
       ],
       "Composer": [
-        "Redigeringsfönster"
+        "Kompositör"
       ],
       "Conditions": [
         "Villkor"
@@ -9369,7 +9394,7 @@
         "Offentliga nycklar"
       ],
       "Read": [
-        "Läst"
+        "Läs"
       ],
       "Recipient": [
         "Mottagare"
@@ -9447,7 +9472,7 @@
         "Sedan"
       ],
       "Thomas": [
-        "Thomas"
+        "Tomas"
       ],
       "Time": [
         "Tid"
@@ -9529,6 +9554,9 @@
       ],
       "Your password (admin)": [
         "Ditt lösenord (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ditt lösenord (betrodd kontakt)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9647,7 +9675,7 @@
         "All e-post"
       ],
       "Archive": [
-        "Arkiv"
+        "Arkivera"
       ],
       "clearing your browser cache": [
         "rensar din webbläsares cache"
@@ -9674,10 +9702,10 @@
         "Aktivera en e-postadress länkad till en av dina kalendrar."
       ],
       "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Aktivera e-postadressen som är länkad till den inaktiverade kalendern för att avbryta händelsen."
+        "Aktivera e-postadressen länkad till den inaktiverade kalendern för att avbryta händelsen."
       ],
       "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Aktivera e-postadressen som är länkad till den inaktiverade kalendern för att ändra ditt svar."
+        "Aktivera e-postadressen länkad till den inaktiverade kalendern för att ändra ditt svar."
       ],
       "Enable your address again to modify your answer.": [
         "Aktivera din adress igen för att ändra ditt svar."
@@ -9749,7 +9777,7 @@
         "Lär dig mer"
       ],
       "Less": [
-        "Mindre"
+        "Färre"
       ],
       "Manage blocked email addresses": [
         "Hantera blockerade e-postadresser"
@@ -9767,7 +9795,7 @@
         "Öppna uppdaterad händelse i ${ CALENDAR_APP_NAME }"
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Eller så kan du ta bort en av dina kalendrar och skapa en ny länkad till en aktiv e-postadress."
+        "Eller så kan du ta bort en av dina kalendrar och skapa en ny som är länkad till en aktiv e-postadress."
       ],
       "Outbox": [
         "Utkorg"
@@ -9782,7 +9810,7 @@
         "Återaktivera adressen som är länkad till denna kalender för att hantera din inbjudan."
       ],
       "Re-enable the address linked to this calendar to update your invitation.": [
-        "Återaktivera adressen som är länkad till denna kalender för att uppdatera din inbjudan."
+        "Återaktivera adressen länkad till denna kalender för att uppdatera din inbjudan."
       ],
       "Reactivate now": [
         "Återaktivera nu"
@@ -9858,6 +9886,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du måste återaktivera dina nycklar för att se den uppdaterade inbjudan"
+      ],
+      "Resume now": [
+        "Återuppta nu"
       ]
     },
     "Link to calendar event": {
@@ -10021,7 +10052,7 @@
         "Bild kunde inte laddas."
       ],
       "Image has not been loaded in order to protect your privacy.": [
-        "Bilden har inte laddats in för att skydda din integritet."
+        "Bild har inte laddats in för att skydda din integritet."
       ]
     },
     "Message notification": {
@@ -10029,13 +10060,13 @@
         "Schemalagd sändning ångrad"
       ],
       "Scheduling canceled. Message has been moved to Drafts.": [
-        "Schemaläggning avbruten. Meddelandet har flyttats till Utkast."
+        "Schemaläggning avbruten. Meddelande har flyttats till utkast."
       ],
       "Sending undone": [
         "Skickar ångrad"
       ],
       "Undoing send...": [
-        "Ångrar skicka..."
+        "Ångrar skicka …"
       ]
     },
     "MIME type": {
@@ -10324,7 +10355,7 @@
         "Upp till ${ numberOfUsers } användare"
       ],
       "${ options }-day file version history": [
-        "${ options }-dags filversionshistorik",
+        "${ options }-dagars filversionshistorik",
         "${ options }-dagars filversionshistorik"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
@@ -10561,7 +10592,7 @@
         "Prioriterad support och livechatt"
       ],
       "Private photo backup": [
-        "Privat säkerhetskopiering av foton"
+        "Privat säkerhetskopiering av foto"
       ],
       "Proofread and refine your emails": [
         "Korrekturläs och finjustera din e-post"
@@ -11169,7 +11200,7 @@
         "Lösenkod kopierat till urklipp"
       ],
       "Password has been set successfully": [
-        "Lösenord har valts"
+        "Lösenord har ställts in"
       ],
       "Sender ${ firstSenderAddress } blocked": [
         "Avsändare ${ firstSenderAddress } blockerad"
@@ -11206,7 +11237,7 @@
     },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
-        "${ BRAND_NAME } Obegränsat i 12 månader"
+        "${ BRAND_NAME } Unlimited för 12 månader"
       ],
       "${ planName } for 12 months": [
         "${ planName } för 12 månader"
@@ -11328,6 +11359,9 @@
       ],
       "Edit docs online": [
         "Redigera dokument online"
+      ],
+      "File version history (over 1 week)": [
+        "Filens versionshistorik (över 1 vecka)"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11355,7 +11389,7 @@
         "${ addFreePromiseTitle } betyder att du aldrig kommer se sponsrade annonser i våra appar."
       ],
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
-        "${ advancedEncryptionTitle } säkerställer att endast du och avsedda mottagare kan komma åt din e-post"
+        "${ advancedEncryptionTitle } säkerställer att endast du och avsedda mottagare kan komma åt din e-post."
       ],
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
         "${ industryLeadingSpamProtectionTitle } hindrar bedragares e-postmeddelanden från att någonsin nå din inkorg."
@@ -11370,7 +11404,7 @@
         "${ protectionFromTrackersTitle } innebär att du inte längre följs över internet."
       ],
       "Activate premium features": [
-        "Premiumfunktioner"
+        "Aktivera premiumfunktioner"
       ],
       "Activate selected": [
         "Aktivera valda"
@@ -11382,7 +11416,7 @@
         "Åtkomst när som helst, var som helst"
       ],
       "Auto-delete spam and trash": [
-        "Ta bort skräppost"
+        "Ta bort skräppost och papperskorg automatiskt"
       ],
       "browser": [
         "webbläsare"
@@ -11403,22 +11437,22 @@
         "Distraktionsfritt e-postande"
       ],
       "Download the desktop app": [
-        "Ladda ner skrivbordsappen"
+        "Ladda ner appen för stationär dator"
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
-        "Njut av en snabbare, fokuserad e-postupplevelse med skrivbordsappen."
+        "Njut av en snabbare, fokuserad e-postupplevelse med appen för stationär dator."
       ],
       "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
         "För åtkomst när som helst till e-post och en optimerad mobil upplevelse ladda ner vår ${ mobileAppAppStoreLink }- eller ${ mobileAppGooglePlayLink }-app."
       ],
       "Get notified if your password is compromised.": [
-        "Bli aviserad om ditt lösenord är avslöjat."
+        "Bli aviserad om ditt lösenord är komprometterat."
       ],
       "Industry-leading spam protection": [
-        "Branschledande skräppostskydd"
+        "Branschledande skydd mot skräppost"
       ],
       "Let's get started": [
-        "Låt oss börja"
+        "Låt oss komma igång"
       ],
       "Make the most of your paid plan.": [
         "Få ut det mesta av ditt betalda paket."
@@ -11442,7 +11476,7 @@
         "Börja använda ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Börja använda den kortare, klatschigare versionen av din e-postadress."
+        "Börja använda den kortare och mer slagkraftiga versionen av din e-postadress."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "För att komma igång, välj ett visningsnamn. Detta är vad andra kommer att se när du skickar ett e-postmeddelande, bjuder in dem till en händelse eller delar en fil."
@@ -11461,6 +11495,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Din domän och din prenumeration är redo att användas."
+      ],
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
       ]
     },
     "Onboarding Proton": {
@@ -11598,7 +11638,7 @@
         "Standardmappar"
       ],
       "Move to...": [
-        "Flytta till…"
+        "Flytta till …"
       ]
     },
     "Option group label": {
@@ -11656,7 +11696,7 @@
         "Alla premiumfunktioner. 6 användare. 1 enkel prenumeration."
       ],
       "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
-        "Faktureras årligen till ${ yearlyPrice }. Spara ${ yearlySavedPrice } med ${ passFamilyPlanName } (jämfört med 6 individuella ${ passPlusPlanName }-prenumerationer)."
+        "Faktureras årligen med ${ yearlyPrice }. Spara ${ yearlySavedPrice } med ${ passFamilyPlanName } (jämfört med 6 individuella ${ passPlusPlanName }-prenumerationer)."
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
         "Exklusivt erbjudande endast tillgängligt för ${ PASS_APP_NAME } tidiga supportrar."
@@ -12007,7 +12047,7 @@
         "Berätta för skrivassistenten vad som ska skrivas. Exempel: ”Avsluta mitt gymmedlemskap”"
       ],
       "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
-        "Berätta för skrivassistenten vad som ska skrivas. Exempel: ”Bjud in Jane till min fest”"
+        "Berätta för skrivassistenten vad du vill skriva. Exempel: ”Bjud in Jane till min fest”"
       ],
       "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
         "Berätta för skrivassistenten vad som ska skrivas. Exempel: ”Tacka min medarbetare för hjälpen med ett projekt”"
@@ -12053,6 +12093,9 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Uppgradera till ${ upsellPlanTitle }"
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Fler ${ BRAND_NAME }-tjänster.${ br }En enkel prenumeration."
       ]
     },
     "Price": {
@@ -12324,7 +12367,7 @@
     },
     "Send email with warnings": {
       "Do you want to send the email anyway?": [
-        "Vill du skicka e-post ändå?"
+        "Vill du skicka e-posten ändå?"
       ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Följande adress är inte giltig: ${ invalidAddresses }",
@@ -12354,10 +12397,10 @@
         "Krypterad av ${ MAIL_APP_NAME } till verifierad mottagare"
       ],
       "End-to-end encrypted": [
-        "End-to-end-krypterat"
+        "End-to-end-krypterad"
       ],
       "End-to-end encrypted to PGP recipient": [
-        "End-to-end-krypterat till verifierad PGP-mottagare"
+        "End-to-end-krypterat till PGP-mottagare"
       ],
       "End-to-end encrypted to verified PGP recipient": [
         "End-to-end-krypterat till verifierad PGP-mottagare"
@@ -12396,7 +12439,7 @@
     },
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
-        "Kontoåterställning är inte tillgänglig för föråldrade adressnycklar"
+        "Kontoåterställning är inte tillgänglig för äldre adressnycklar"
       ],
       "Please generate keys before you try to change your password": [
         "Generera nycklar innan du försöker ändra ditt lösenord"
@@ -12585,7 +12628,7 @@
         "PGP-signerat meddelande. Avsändarverifiering misslyckades: ${ verificationErrorsMessage }"
       ],
       "Sender could not be verified: Message not signed": [
-        "Avsändaren kunde inte verifieras: Meddelandet inte signerat"
+        "Avsändare kunde inte verifieras: Meddelande inte signerat"
       ],
       "Sender verification failed": [
         "Avsändarverifiering misslyckades"
@@ -12636,10 +12679,10 @@
         "Största först"
       ],
       "Newest first": [
-        "Nyaste först"
+        "Nyast först"
       ],
       "Oldest first": [
-        "Äldst först"
+        "Äldsta först"
       ],
       "Smallest first": [
         "Minsta först"
@@ -12772,7 +12815,7 @@
         "${ n } månader"
       ],
       "/ month": [
-        "/ månad"
+        "/månad"
       ],
       "/month": [
         "/månad"
@@ -12907,13 +12950,13 @@
         "Detta är nu din standardadress. Öppna rullgardinsmenyn för att skicka från en annan adress. "
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
-        "Aktivera ${ DARK_WEB_MONITORING_NAME } för att bli aviserad om din data har läckt från en tredjepartstjänst."
+        "Slå på ${ DARK_WEB_MONITORING_NAME } för att bli aviserad om din data har läckt från en tredjepartstjänst."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Vi laddar nu bilder som standard och blockerar avsändare från att spåra dig. Detta kan ändras i ${ settingsLink }."
       ],
       "You can now schedule your messages to be sent later": [
-        "Du kan nu schemalägga dina meddelanden för att skickas senare"
+        "Du kan nu schemalägga dina meddelanden att skickas senare"
       ],
       "Your pm.me email is active": [
         "Din pm.me-adress är aktiv"
@@ -13258,7 +13301,7 @@
         "Omfattande integritet och säkerhet"
       ],
       "Desktop app and email client support (via IMAP)": [
-        "Skrivbordsapp och stöd för e-postklienter (via IMAP)"
+        "Stöd för app för stationär dator och e-postklient (via IMAP)"
       ],
       "Direct contribution to our mission": [
         "Direkt bidrag till vårt uppdrag"
@@ -13300,7 +13343,7 @@
         "Om din användning överskrider gränserna för gratispaketet kan du uppleva begränsad åtkomst till produktfunktioner och din data."
       ],
       "Invited members will be removed from your organization": [
-        "Inbjudna medlemmar kommer tas bort från din organisation"
+        "Inbjudna medlemmar kommer att tas bort från din organisation"
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
         "Håll ditt team säkert när du är på språng med våra appar för webb, iOS, Android, Windows, Mac och Linux."
@@ -13422,7 +13465,7 @@
         "Varningar om dataintrång ${ strongArgument }"
       ],
       "Desktop app": [
-        "Skrivbordsapp"
+        "App för stationär dator"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
         "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
@@ -13634,7 +13677,7 @@
         "Konversation flyttad till ${ folderName }."
       ],
       "Conversation moved to spam and sender added to your spam list.": [
-        "Konversationen flyttades till skräppost och avsändaren lades till i din blockeringslista."
+        "Konversation flyttad till skräppost och avsändare lades till i din skräppostlista."
       ],
       "Conversation removed from ${ labelName }.": [
         "Konversation borttagen från ${ labelName }."
@@ -13709,7 +13752,7 @@
         "Meddelandet flyttat till ${ folderName }."
       ],
       "Message moved to spam and sender added to your spam list.": [
-        "Meddelandet flyttades till skräppost och avsändaren lades till i din blockeringslista."
+        "Meddelande flyttad till skräppost och avsändare lades till i din skräppostlista."
       ],
       "Message removed from ${ labelName }.": [
         "Meddelande borttaget från ${ labelName }."
@@ -13765,7 +13808,7 @@
         "Självförstörelse borttagen"
       ],
       "Self-destruction set": [
-        "Självförstörelse konfigurerat"
+        "Självförstörelse inställt"
       ],
       "Thanks for the feedback!": [
         "Tack för feedbacken!"
@@ -13786,10 +13829,38 @@
         "Inställning för skrivassistent uppdaterad"
       ],
       "You have successfully canceled your subscription.": [
-        "Du har sagt upp din prenumeration."
+        "Du har avbrutit din prenumeration."
       ],
       "You have successfully unsubscribed": [
         "Du har avslutat din prenumeration"
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } meddelande flyttades till ${ labelName } och avsändaren lades till på Tillåt-listan.",
+        "${ elementsCount } meddelanden flyttades till ${ labelName } och avsändarna lades till på Tillåt-listan."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } konversation flyttades till ${ labelName }.",
+        "${ elementsCount } konversationer flyttades till ${ labelName }."
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } meddelande flyttades till ${ labelName } och avsändaren lades till på Tillåt-listan.",
+        "${ elementsCount } meddelanden flyttades till ${ labelName } och avsändarna lades till på Tillåt-listan."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } meddelande flyttades till ${ labelName }.",
+        "${ elementsCount } meddelanden flyttades till ${ labelName }."
+      ],
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "Konversation flyttat till ${ labelName } och avsändaren har lagts till i din lista som inte är skräppost."
+      ],
+      "Conversation moved to ${ labelName }.": [
+        "Konversation flyttad till ${ labelName }."
+      ],
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "Meddelandet flyttat till ${ labelName } och avsändaren har lagts till i din lista som inte är skräppost."
+      ],
+      "Message moved to ${ labelName }.": [
+        "Meddelande flyttat till ${ labelName }."
       ]
     },
     "Success notification": {
@@ -13972,25 +14043,25 @@
         "Skapa ett alias"
       ],
       "Create label “${ suggestedLabelName }“": [
-        "Skapa etikett “${ suggestedLabelName }“"
+        "Skapa etikett ”${ suggestedLabelName }”"
       ],
       "Create new email address": [
         "Skapa ny e-postadress"
       ],
       "Create “${ suggestedFolderName }“ folder": [
-        "Skapa “${ suggestedFolderName }“-mapp"
+        "Skapa ”${ suggestedFolderName }”-mapp"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Ladda ner ${ VPN_APP_NAME }"
       ],
       "Download Desktop app": [
-        "Ladda ner skrivbordsappen"
+        "Ladda ner app för stationär dator"
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Aktivera ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Get my “@${ PM_DOMAIN }“ address": [
-        "Skaffa min “@${ PM_DOMAIN }“-adress"
+        "Skaffa min ”@${ PM_DOMAIN }”-adress"
       ],
       "Open ": [
         "Öppna "
@@ -14022,7 +14093,7 @@
         "(aktiv)"
       ],
       "A filter name is required": [
-        "Ett filternamn är krävs"
+        "Ett filternamn är obligatoriskt"
       ],
       "A filter with this name already exists": [
         "Ett filter med detta namn finns redan"
@@ -14080,7 +14151,7 @@
         "Tillämpa presentkod"
       ],
       "Archive": [
-        "Arkiv"
+        "Arkivera"
       ],
       "Archive all messages?": [
         "Arkivera alla meddelanden?"
@@ -14185,16 +14256,16 @@
         "Kupong"
       ],
       "Craft better emails": [
-        "Skapa bättre e-postmeddelanden"
+        "Skapa bättre e-post"
       ],
       "Create contact": [
         "Skapa kontakt"
       ],
       "Create folder \"${ search }\"": [
-        "Skapa mapp “${ search }“"
+        "Skapa mapp ”${ search }”"
       ],
       "Create label \"${ search }\"": [
-        "Skapa etikett “${ search }“"
+        "Skapa etikett ”${ search }”"
       ],
       "Create new group": [
         "Skapa ny grupp"
@@ -14265,7 +14336,7 @@
         "Ta bort etikett?"
       ],
       "Delete message": [
-        "Ta bort meddelande"
+        "Radera meddelande"
       ],
       "Deleting contacts": [
         "Tar bort kontakter"
@@ -14358,13 +14429,13 @@
         "Filternamn kan inte bara innehålla mellanslag"
       ],
       "Filter on...": [
-        "Filtrera på..."
+        "Filtrera på …"
       ],
       "Folder options": [
         "Mappalternativ"
       ],
       "Forward": [
-        "Vidarebefordra"
+        "Vidarebefordrad"
       ],
       "Get more from your VPN": [
         "Få ut mer av din VPN"
@@ -14425,7 +14496,7 @@
         "Importera grupper"
       ],
       "Increase security with ${ VPN_APP_NAME }": [
-        "Öka säkerhet med ${ VPN_APP_NAME }"
+        "Öka säkerheten med ${ VPN_APP_NAME }"
       ],
       "Increase your privacy with more addresses": [
         "Öka din integritet med fler adresser"
@@ -14455,7 +14526,7 @@
         "Ladda fjärrinnehåll"
       ],
       "Make a secure connection your default": [
-        "Gör en säker anslutning till din standard"
+        "Gör en säker anslutning din standard"
       ],
       "Mark all messages as read": [
         "Markera alla meddelanden som lästa"
@@ -14494,7 +14565,7 @@
         "Meddelandelista"
       ],
       "Message will expire": [
-        "Meddelandet kommer löpa ut"
+        "Meddelande kommer löpa ut"
       ],
       "Minicalendar": [
         "Minikalender"
@@ -14578,7 +14649,7 @@
         "Inga aktiva nyhetsbrev"
       ],
       "No attachment found": [
-        "Inga bilagor hittades"
+        "Ingen bilaga hittades"
       ],
       "No breaches detected": [
         "Inga intrång upptäckta"
@@ -14602,7 +14673,7 @@
         "Anteckningar"
       ],
       "On-device suggestions": [
-        "På-enhet förslag"
+        "Förslag på enhet"
       ],
       "One email, many recipients": [
         "En e-post, flera mottagare"
@@ -14686,7 +14757,7 @@
         "Återställ data"
       ],
       "Remove from list?": [
-        "Ta bort från listan?"
+        "Ta bort från lista?"
       ],
       "Reply": [
         "Svara"
@@ -14740,7 +14811,7 @@
         "Skicka med kryptering inaktiverat?"
       ],
       "Send without expiration?": [
-        "Skicka utan utgångsdatum?"
+        "Skicka utan utgång?"
       ],
       "Sender": [
         "Avsändare"
@@ -14752,7 +14823,7 @@
         "Sändningsfel"
       ],
       "Sending notice": [
-        "Skickar notis"
+        "Skickar avisering"
       ],
       "Sending original message": [
         "Skickar originalmeddelande"
@@ -14761,7 +14832,7 @@
         "Ställ in återställningsmetoder"
       ],
       "Set recovery phrase": [
-        "Välj återställningsfras"
+        "Ställ in återställningsfras"
       ],
       "Set up ${ protonDuoPlanName }": [
         "Ställ in ${ protonDuoPlanName }"
@@ -14861,7 +14932,7 @@
         "Avsluta prenumeration från ${ subscription.Name }?"
       ],
       "Unsubscribe request sent": [
-        "Begäran om att avsluta prenumeration skickat"
+        "Begäran om att avsluta prenumeration skickad"
       ],
       "Upgrade complete!": [
         "Uppgradering slutförd!"
@@ -14916,7 +14987,7 @@
         "Vad vill du importera?"
       ],
       "When is it most important to use a VPN?": [
-        "När är det viktigast att använda ett VPN?"
+        "När är det viktigast att använda en VPN?"
       ],
       "You can now create unlimited folders and labels": [
         "Du kan nu skapa ett obegränsat antal mappar och etiketter"
@@ -14956,6 +15027,9 @@
       ],
       "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
         "Uppgradera ditt lagringsutrymme för ${ formattedPrice } med ${ planName }"
+      ],
+      "Account temporarily locked": [
+        "Konto tillfälligt låst"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15007,7 +15081,7 @@
         "Om du har köpt en presentkod eller fått en från vårt supportteam kan du ange den här."
       ],
       "Load image": [
-        "Läs in bild"
+        "Ladda bild"
       ],
       "Not all information listed here was exposed for all users.": [
         "All information som anges här har inte exponerats för alla användare."
@@ -15025,7 +15099,7 @@
         "Bilden kunde inte laddas"
       ],
       "The image could not be loaded using proxy": [
-        "Bilden kunde läsas in med proxy"
+        "Bilden kunde inte laddas med proxy"
       ],
       "The import will start with the most recent messages.": [
         "Importering kommer att börja med de senaste meddelandena."
@@ -15281,13 +15355,13 @@
     },
     "WeekDay": {
       "Mon, ${ formatTime }": [
-        "Mån, ${ formatTime }"
+        "Mån. ${ formatTime }"
       ],
       "Sat, ${ formatTime }": [
-        "Lör, ${ formatTime }"
+        "Lör. ${ formatTime }"
       ],
       "Sun, ${ formatTime }": [
-        "Sön, ${ formatTime }"
+        "Sön. ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {
@@ -15393,31 +15467,31 @@
         "Var ${ interval }:e vecka på onsdag, ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Veckovis på ${ multipleDaysString }, ${ timesString }"
+        "Varje vecka på ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on all days, ${ timesString }": [
-        "Veckovis alla dagar, ${ timesString }"
+        "Varje vecka alla dagar, ${ timesString }"
       ],
       "Weekly on Friday, ${ timesString }": [
-        "Veckovis på fredag, ${ timesString }"
+        "Varje vecka på fredag, ${ timesString }"
       ],
       "Weekly on Monday, ${ timesString }": [
-        "Veckovis på måndag, ${ timesString }"
+        "Varje vecka på måndag, ${ timesString }"
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "Veckovis på lördag, ${ timesString }"
+        "Varje vecka på lördag, ${ timesString }"
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "Veckovis på söndag, ${ timesString }"
+        "Varje vecka på söndag, ${ timesString }"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "Veckovis på torsdag, ${ timesString }"
+        "Varje vecka på torsdag, ${ timesString }"
       ],
       "Weekly on Tuesday, ${ timesString }": [
-        "Veckovis på tisdag, ${ timesString }"
+        "Varje vecka på tisdag, ${ timesString }"
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "Veckovis på onsdag, ${ timesString }"
+        "Varje vecka på onsdag, ${ timesString }"
       ]
     },
     "Weekly recurring event, frequency (until)": {
@@ -15458,31 +15532,31 @@
         "Var ${ interval }:e vecka på onsdag, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Veckovis på ${ multipleDaysString }, ${ untilString }"
+        "Varje vecka på ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Veckovis alla dagar, ${ untilString }"
+        "Varje vecka alla dagar, ${ untilString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Veckovis på fredag, ${ untilString }"
+        "Varje vecka på fredag, ${ untilString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Veckovis på måndag, ${ untilString }"
+        "Varje vecka på måndag, ${ untilString }"
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "Veckovis på lördag, ${ untilString }"
+        "Varje vecka på lördag, ${ untilString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Veckovis på söndag, ${ untilString }"
+        "Varje vecka på söndag, ${ untilString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Veckovis på torsdag, ${ untilString }"
+        "Varje vecka på torsdag, ${ untilString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Veckovis på tisdag, ${ untilString }"
+        "Varje vecka på tisdag, ${ untilString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Veckovis på onsdag, ${ untilString }"
+        "Varje vecka på onsdag, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -15546,6 +15620,19 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Betrodd kontakt"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Alla premiumfunktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alla premiumfunktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
       ]
     }
   }
