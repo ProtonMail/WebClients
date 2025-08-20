@@ -21,6 +21,7 @@ import { useFolderStore } from '../useFolder.store';
 export function FolderContextMenu({
     shareId,
     linkId,
+    volumeId,
     anchorRef,
     isOpen,
     position,
@@ -29,6 +30,7 @@ export function FolderContextMenu({
 }: ContextMenuProps & {
     shareId: string;
     linkId: string;
+    volumeId: string;
 }) {
     useEffect(() => {
         if (position) {
@@ -51,7 +53,7 @@ export function FolderContextMenu({
         uploadFile: { fileInputRef, handleFileClick, handleFileChange },
         uploadFolder: { folderInputRef, handleFolderClick, handleFolderChange },
         modals,
-    } = useFolderActions({ selectedItems: [], shareId, linkId });
+    } = useFolderActions({ selectedItems: [], shareId, linkId, volumeId });
 
     const { permissions } = useFolderStore(
         useShallow((state) => ({
