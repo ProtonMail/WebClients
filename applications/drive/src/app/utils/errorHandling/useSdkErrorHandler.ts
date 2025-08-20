@@ -1,7 +1,16 @@
 import { useCallback } from 'react';
 
+import { c } from 'ttag';
+
 import { useNotifications } from '@proton/components';
-import { AbortError, ConnectionError, ProtonDriveError, RateLimitedError, ValidationError } from '@proton/drive';
+import {
+    AbortError,
+    ConnectionError,
+    ProtonDriveError,
+    RateLimitedError,
+    ServerError,
+    ValidationError,
+} from '@proton/drive';
 
 import { sendErrorReport } from '.';
 import { EnrichedError } from './EnrichedError';
@@ -26,7 +35,11 @@ export const useSdkErrorHandler = () => {
     const handleError = useCallback(
         (
             error: Error | unknown,
-            { fallbackMessage = '', extra = {}, showNotification = true }: HandleErrorOptions = {}
+            {
+                fallbackMessage = c('Error').t`An error occurred`,
+                extra = {},
+                showNotification = true,
+            }: HandleErrorOptions = {}
         ) => {
             const errorToHandle = error instanceof Error ? error : new Error(fallbackMessage);
             const message = error instanceof ProtonDriveError ? errorToHandle.message : fallbackMessage;
@@ -36,20 +49,24 @@ export const useSdkErrorHandler = () => {
 
             console.error(errorToHandle);
             if (shouldTrackError(errorToHandle)) {
-                sendErrorReport(
-                    new EnrichedError(errorToHandle.message, {
-                        tags: {
-                            component: 'drive-sdk',
-                        },
-                        extra: {
-                            fallbackMessage,
-                            originalErrorName: errorToHandle.name,
-                            originalErrorStack: errorToHandle.stack,
-                            originalErrorCause: errorToHandle.cause,
-                            ...extra,
-                        },
-                    })
-                );
+                const enrichedError = new EnrichedError(errorToHandle.message, {
+                    tags: {
+                        component: 'drive-sdk',
+                    },
+                    extra: {
+                        fallbackMessage,
+                        ...(error instanceof ServerError && {
+                            serverErrorCode: error.code,
+                            serverErrorStatusCode: error.statusCode,
+                        }),
+                        ...extra,
+                    },
+                });
+                enrichedError.name = errorToHandle.name;
+                enrichedError.stack = errorToHandle.stack;
+                enrichedError.cause = errorToHandle.cause;
+
+                sendErrorReport(enrichedError);
             }
         },
         [createNotification]
