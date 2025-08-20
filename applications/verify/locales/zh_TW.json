@@ -75,6 +75,16 @@
         "查看帳單"
       ]
     },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 桌面應用程式"
+      ]
+    },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "大型文件雲端儲存與共享"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "阿布哈茲"
@@ -906,6 +916,9 @@
       ],
       "Something went wrong": [
         "發生錯誤"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "我們無法載入此頁面。請重新整理頁面或檢查您的網際網路連線。"
       ]
     },
     "fido2: Error": {
@@ -938,6 +951,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -952,11 +968,34 @@
       ],
       "Megabyte": [
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabytes"
       ]
     },
     "Font face option": {
+      "System default": [
+        "系統預設值"
+      ],
       "Theme font": [
         "選擇布景主題字體"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "大"
+      ],
+      "Medium (recommended)": [
+        "中（建議）"
+      ],
+      "Small": [
+        "小"
+      ],
+      "Very large": [
+        "非常大"
+      ],
+      "Very small": [
+        "非常小"
       ]
     },
     "Human verification method": {
@@ -989,6 +1028,9 @@
       "Country code": [
         "國家代碼"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "根據我們的${ termsLink }不允許創建多重免費帳號。"
+      ],
       "Each code can only be used once": [
         "每組驗證代碼只能使用一次"
       ],
@@ -1007,8 +1049,14 @@
       "Enter your own password (as organization admin).": [
         "輸入您的個人密碼 (組織機構管理員身份)。"
       ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "請於${ mailLink }登入以取得更多資訊或移除限制。"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "若您相信我們出錯，請聯繫${ contactLink }。"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
@@ -1033,6 +1081,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "為防止垃圾郵件及濫用行為，請驗證您是真人。"
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "若要移除限制，您可升級至付費方案。"
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "我們有針對像您一樣需要多個電子郵件地址的使用者設計的方案。"
       ],
       "We'll send a new verification code to ${ strong }": [
         "我們將會向 ${ strong } 傳送新的驗證碼"
@@ -1092,11 +1146,17 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "聯絡我們"
+      ],
       "Learn more": [
         "瞭解詳情"
       ],
       "Request an invite": [
         "需求邀請"
+      ],
+      "terms of service": [
+        "服務條款"
       ]
     },
     "new_plans": {
@@ -1104,7 +1164,15 @@
         "用資料夾讓信箱井然有序"
       ]
     },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "選用 ${ planTitle }"
+      ]
+    },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME }Scribe撰寫幫手"
+      ],
       "${ n } custom email domain": [
         "${ n } 個自訂電郵網域"
       ],
@@ -1129,11 +1197,47 @@
       "${ n } message per day": [
         "${ n } 封郵件 / 每天"
       ],
+      "${ options }-day file version history": [
+        "${ options }-天的檔案版本紀錄"
+      ],
       "${ size } attachment size": [
         "${ size } 的附件大小"
       ],
+      "${ size } of secure storage per user": [
+        "每位使用者${ size }安全空間"
+      ],
       "${ size } storage": [
         "${ size } 儲存空間"
+      ],
+      "${ size } storage per user": [
+        "${ size } 可用空間 / 每位使用者"
+      ],
+      "1 TB secure storage": [
+        "1TB安全儲存空間"
+      ],
+      "10 email addresses/aliases": [
+        "10 組電子郵件地址/別名"
+      ],
+      "10 more premium features": [
+        "10多項豐富的頂級功能"
+      ],
+      "10-year file version history": [
+        "10年的檔案版本紀錄"
+      ],
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "200 GB of storage": [
+        "200 GB的儲存空間"
+      ],
+      "Advanced account protection": [
+        "進階的帳號保護"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "全部${ BRAND_NAME }產品及功能"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "全部基於${ BRAND_NAME }的服務(${ MAIL_SHORT_APP_NAME },${ VPN_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME })"
       ],
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
@@ -1150,11 +1254,17 @@
       "Catch-all": [
         "全部擷取"
       ],
+      "Collaborate and share large files": [
+        "合作和共享大型檔案"
+      ],
       "Contact groups": [
         "聯絡人群組"
       ],
       "Contact groups management": [
         "聯絡人群組管理"
+      ],
+      "Custom and secure business email": [
+        "自訂和自訂商用電子郵件"
       ],
       "Custom email domains": [
         "自訂電郵網域"
@@ -1168,23 +1278,62 @@
       "Email client support (via IMAP/SMTP)": [
         "電子郵件客戶端支援（透過 IMAP/SMTP）"
       ],
+      "Email groups": [
+        "電子郵件群組"
+      ],
       "Encrypted contact details": [
         "經加密的聯絡人詳細資訊"
       ],
       "End-to-end encryption": [
         "端對端加密"
       ],
+      "Generate emails with a prompt": [
+        "透過提示生成電子郵件"
+      ],
       "HTML signatures": [
         "HTML簽名"
+      ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
+      "Password health": [
+        "密碼穩固性"
       ],
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
       ],
+      "Private photo backup": [
+        "私人照片備份"
+      ],
+      "Proofread and refine your emails": [
+        "校閱與修飾你的電子郵件"
+      ],
+      "Quickly craft replies": [
+        "快速替回復打草稿"
+      ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
+      ],
+      "Save time emailing": [
+        "儲存寄件時間"
+      ],
       "Schedule and snooze emails for any time": [
         "隨時計畫和延後電子郵件"
       ],
+      "Secure file storage and sharing": [
+        "安全地儲存和共享檔案"
+      ],
+      "Share files with no size limit": [
+        "分享檔案無大小限制"
+      ],
       "SMTP submission": [
         "SMTP 傳送"
+      ],
+      "Support for up to 2 users": [
+        "支援最多2位使用者"
+      ],
+      "Sync and backup all your files across devices": [
+        "於裝置同步及備份您全部的檔案"
       ],
       "Unlimited filters": [
         "無限制篩選器"
@@ -1206,11 +1355,20 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1個自訂電子郵件網域"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "創建多重電子郵件位址身分，如JohnShopper@${ domain }給購物用途， JohnNews@${ domain2 }給訂閱新聞使用"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }：透過加密的雲端儲存保護檔案。包含自動同步、加密的檔案共享、及更多。"
+      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }：透過端對端加密保護您的電子郵件。包含對自訂電子郵件網域、15 個電子郵件位址、無限的 hide-my-email 別名等的支援。"
       ],
@@ -1234,6 +1392,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "創建${ n }個電子郵件位址/別名分配至家庭成員。包含線上身分，如，JohnShopper@${ domain }給購物帳號。"
+      ],
+      "Email everyone in a group with a single email address": [
+        "使用一個電子郵件地址給群組中的每位使用者"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "確保您接收所有傳送至您的網域的電子郵件，即使電子郵件位址並不存在、不復存在，或是拼寫有誤"
@@ -1299,6 +1460,9 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "將現有儲存空間加大至 ${ bundleStorage }為總可用量"
+      ],
+      "Support for ${ n } custom email domain": [
+        "支援 ${ n } 組自訂電子郵件網域"
       ]
     },
     "Placeholder": {
@@ -1342,6 +1506,9 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "帳號已受限制"
+      ],
       "Enter 2FA code": [
         "輸入雙重驗證碼"
       ],

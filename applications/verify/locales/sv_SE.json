@@ -1220,6 +1220,10 @@
         "${ n } meddelande per dag",
         "${ n } meddelanden per dag"
       ],
+      "${ options }-day file version history": [
+        "${ options }-dagars filversionshistorik",
+        "${ options }-dagars filversionshistorik"
+      ],
       "${ size } attachment size": [
         "${ size } bilagestorlek"
       ],
@@ -1255,6 +1259,9 @@
       ],
       "All ${ BRAND_NAME } products and features": [
         "Alla ${ BRAND_NAME }-produkter och -funktioner"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alla grundläggande tjänster för ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "Auto-delete Spam and Trash": [
         "Ta automatiskt bort skräppost och papperskorg"
@@ -1309,6 +1316,9 @@
       ],
       "HTML signatures": [
         "HTML-signaturer"
+      ],
+      "Online document editor": [
+        "Dokumentredigerare online"
       ],
       "Password health": [
         "Lösenordshälsa"

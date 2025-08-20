@@ -44,6 +44,9 @@
       "Apply": [
         "적용"
       ],
+      "Bold": [
+        "굵게"
+      ],
       "Bulleted List": [
         "글 머리 기호 목록"
       ],
@@ -73,6 +76,9 @@
       ],
       "Code block": [
         "코드 블럭"
+      ],
+      "Color": [
+        "색상"
       ],
       "Colour": [
         "색"
@@ -125,14 +131,23 @@
       "Insert comment": [
         "주석 삽입하기"
       ],
+      "Insert image": [
+        "이미지 삽입"
+      ],
       "Insert left": [
         "좌측에 삽입"
+      ],
+      "Insert link": [
+        "링크 삽입"
       ],
       "Insert right": [
         "우측에 삽입"
       ],
       "Insert table": [
         "테이블 삽입"
+      ],
+      "Italic": [
+        "기울임"
       ],
       "Justify align": [
         "단락 정렬"
@@ -154,6 +169,9 @@
       ],
       "Outdent": [
         "내어쓰기"
+      ],
+      "Quote": [
+        "인용"
       ],
       "Re-open": [
         "다시 열기"
@@ -203,16 +221,40 @@
       "Table options": [
         "테이블 옵션"
       ],
+      "Underline": [
+        "밑줄"
+      ],
       "Undo": [
         "되돌리기"
       ]
     },
     "color": {
+      "apple": [
+        "애플"
+      ],
+      "azureish white": [
+        "아즈리쉬 화이트"
+      ],
+      "black": [
+        "검정"
+      ],
+      "blanched almond": [
+        "블랜치드 아몬드"
+      ],
+      "blue-gray": [
+        "블루 그레이"
+      ],
+      "caramel": [
+        "캐러멜"
+      ],
       "carrot": [
         "캐럿"
       ],
       "cerise": [
         "체리"
+      ],
+      "cinnabar": [
+        "시나바"
       ],
       "cobalt": [
         "코발트"
@@ -220,17 +262,62 @@
       "copper": [
         "코퍼"
       ],
+      "cyan-blue azure": [
+        "사이언 블루 애저"
+      ],
+      "dandelion": [
+        "서양 민들레"
+      ],
+      "dark cerulean": [
+        "다크 세룰리안"
+      ],
+      "dark midnight blue": [
+        "다크 미드나이트 블루"
+      ],
+      "dim gray": [
+        "딤 그레이"
+      ],
       "enzian": [
         "엔지안"
       ],
       "fern": [
         "펀"
       ],
+      "field drab": [
+        "필드 드라브"
+      ],
       "forest": [
         "포레스트"
       ],
+      "gainsboro": [
+        "게인스보로"
+      ],
       "gray": [
         "그레이"
+      ],
+      "japanese laurel": [
+        "재패니즈 로렐"
+      ],
+      "kiwi": [
+        "키위"
+      ],
+      "lemon yellow": [
+        "레몬 옐로"
+      ],
+      "light carmine pink": [
+        "라이트 카민 핑크"
+      ],
+      "light moss green": [
+        "라이트 모스 그린"
+      ],
+      "light red": [
+        "라이트 레드"
+      ],
+      "maize": [
+        "메이즈"
+      ],
+      "mughal green": [
+        "무굴 그린"
       ],
       "ocean": [
         "오션"
@@ -238,8 +325,32 @@
       "olive": [
         "올리브"
       ],
+      "outer space": [
+        "오터 스페이스"
+      ],
       "pacific": [
         "퍼시픽"
+      ],
+      "palatinate blue": [
+        "팔라티네이트 블루"
+      ],
+      "pale cerulean": [
+        "페일 세룰리안"
+      ],
+      "pastel gray": [
+        "파스텔 그레이"
+      ],
+      "persian plum": [
+        "퍼시앙 플럼"
+      ],
+      "persian red": [
+        "퍼시안 레드"
+      ],
+      "philippine gray": [
+        "필리핀 그레이"
+      ],
+      "philippine silver": [
+        "필리핀 실버"
       ],
       "pickle": [
         "피클"
@@ -249,6 +360,9 @@
       ],
       "pink": [
         "핑크"
+      ],
+      "pistachio": [
+        "피스타치오"
       ],
       "plum": [
         "프럼"
@@ -262,8 +376,14 @@
       "reef": [
         "리프"
       ],
+      "ruddy pink": [
+        "러디 핑크"
+      ],
       "sahara": [
         "사하라"
+      ],
+      "satin sheen gold": [
+        "스테인 신 골드"
       ],
       "slateblue": [
         "슬레이트 블루"
@@ -273,6 +393,12 @@
       ],
       "strawberry": [
         "스트로베리"
+      ],
+      "vivid auburn": [
+        "비비드 오번"
+      ],
+      "white": [
+        "흰색"
       ]
     },
     "Confirm": {
@@ -335,8 +461,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "시스템 기본값"
+      ],
       "Theme font": [
         "테마 폰트"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "크게"
+      ],
+      "Medium (recommended)": [
+        "중간 (권장)"
+      ],
+      "Small": [
+        "적게"
+      ],
+      "Very large": [
+        "매우 크게"
+      ],
+      "Very small": [
+        "매우 작게"
       ]
     },
     "Info": {
@@ -357,6 +503,9 @@
       ],
       "Comments": [
         "댓글"
+      ],
+      "Copied to clipboard": [
+        "클립보드로 복사함"
       ],
       "Editing": [
         "편집"
@@ -396,6 +545,9 @@
       ],
       "Suggesting": [
         "제안 중"
+      ],
+      "Text color": [
+        "텍스트 색상"
       ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "복사하려는 콘텐츠가 붙여넣기에 너무 큽니다. 콘텐츠를 줄여서 다시 붙여넣기를 시도해 보세요."
@@ -489,6 +641,9 @@
       "Insert table row": [
         "행 삽입"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "키보드 단축키: ${ shortcut }"
+      ],
       "Link text": [
         "링크 텍스트"
       ],
@@ -523,6 +678,9 @@
       ],
       "Reply...": [
         "회신..."
+      ],
+      "Text": [
+        "텍스트"
       ]
     },
     "Title": {

@@ -92,6 +92,9 @@
       "Change": [
         "შეცვლა"
       ],
+      "Change email": [
+        "ელფოსტის შეცვლა"
+      ],
       "Check DNS": [
         "DNS-ის შემოწმება"
       ],
@@ -103,6 +106,9 @@
       ],
       "Clear": [
         "გასუფთავება"
+      ],
+      "Clear search": [
+        "ძებნის გასუფთავება"
       ],
       "Close": [
         "დახურვა"
@@ -196,6 +202,9 @@
       ],
       "Delete alias": [
         "ფსევდონიმი წაშლა"
+      ],
+      "Delete all": [
+        "ყველას წაშლა"
       ],
       "Delete it, I will never need it": [
         "წაშალე, ის მე არასდროს დამჭირდება"
@@ -482,8 +491,14 @@
       "Resend invitation": [
         "მოსაწვევის თავიდან გაგზავნა"
       ],
+      "Reset": [
+        "ჩამოყრა"
+      ],
       "Reset history": [
         "ისტორიის ჩამოყრა"
+      ],
+      "Restore": [
+        "აღდგენა"
       ],
       "Restore item": [
         "ელემენტის აღდგენა"
@@ -672,6 +687,11 @@
       ],
       "Your password manager is not here? Request it.": [
         "თქვენი პაროლების მმართველი აქ არაა? მოითხოვეთ ის."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ]
     },
     "Button": {
@@ -1185,6 +1205,9 @@
       ],
       "MB": [
         "მბ"
+      ],
+      "TB": [
+        "ტბ"
       ]
     },
     "file size format, long": {
@@ -1203,6 +1226,10 @@
       "Megabyte": [
         "მეგაბაიტი",
         "მეგაბაიტი"
+      ],
+      "Terabyte": [
+        "ტერაბაიტი",
+        "ტერაბაიტი"
       ]
     },
     "Info": {
@@ -1465,6 +1492,9 @@
       "Congratulations, your access has been confirmed": [
         "გილოცავთ, თქვენი წვდომა დადასტურებულია"
       ],
+      "Copied to clipboard": [
+        "დაკოპირდა გაცვლის ბაფერში"
+      ],
       "Coupon successfully applied!": [
         "კუპონის გამოყენება წარმატებულია!"
       ],
@@ -1515,6 +1545,12 @@
       ],
       "Domain: ${ domainPath } or @": [
         "დომენი: ${ domainPath } ან @"
+      ],
+      "Drop file here to upload": [
+        "ასატვირთად გადმოათრიეთ ფაილები აქ"
+      ],
+      "Drop to import": [
+        "შემოსატანად დააგდეთ"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "ადვილად შემოიტანეთ თქვენი არსებული პაროლები ${ PASS_APP_NAME }-ში."
@@ -2315,6 +2351,9 @@
       "your domain": [
         "თქვენი დომენი"
       ],
+      "Your files will be encrypted and then saved": [
+        "თქვენი ფაილები ჯერ დაიშიფრება და, მხოლოდ, შემდეგ შეინახება"
+      ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "თქვენი ორგანიზაცია ითხოვთ, დაიცვათ თქვენი წვდომა ${ PASS_APP_NAME }-ზე"
       ]
@@ -2765,6 +2804,9 @@
       "https://example.com": [
         "https://example.com"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "ID Card": [
         "ID ბარათი"
       ],
@@ -2833,6 +2875,9 @@
       ],
       "Key type": [
         "გასაღების ტიპი"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "კლავიატურის მალსახმობი: ${ shortcut }"
       ],
       "Language": [
         "ენა"
@@ -3262,6 +3307,9 @@
       ],
       "The URL has been copied to the clipboard": [
         "ბმული დაკოპირდა ბუფერში"
+      ],
+      "Theme": [
+        "თემა"
       ],
       "Tier/Level": [
         "დონე"

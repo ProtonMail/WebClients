@@ -92,6 +92,9 @@
       "Change": [
         "変更"
       ],
+      "Change email": [
+        "メールアドレスを変更"
+      ],
       "Check DNS": [
         "DNSを確認"
       ],
@@ -103,6 +106,9 @@
       ],
       "Clear": [
         "消去"
+      ],
+      "Clear search": [
+        "検索をクリア"
       ],
       "Close": [
         "閉じる"
@@ -196,6 +202,9 @@
       ],
       "Delete alias": [
         "エイリアスを削除"
+      ],
+      "Delete all": [
+        "全て削除"
       ],
       "Delete it, I will never need it": [
         "もう使わないので削除してください"
@@ -482,8 +491,14 @@
       "Resend invitation": [
         "招待の再送"
       ],
+      "Reset": [
+        "リセット"
+      ],
       "Reset history": [
         "履歴をリセット"
+      ],
+      "Restore": [
+        "復元"
       ],
       "Restore item": [
         "アイテムを復元"
@@ -670,6 +685,11 @@
       ],
       "Your password manager is not here? Request it.": [
         "あなたのパスワードマネージャーがここにはありませんか？リクエストしてください。"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } デスクトップアプリ"
       ]
     },
     "Button": {
@@ -1197,6 +1217,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -1211,6 +1234,9 @@
       ],
       "Megabyte": [
         "メガバイト"
+      ],
+      "Terabyte": [
+        "テラバイト"
       ]
     },
     "Info": {
@@ -1463,6 +1489,9 @@
       "Congratulations, your access has been confirmed": [
         "おめでとうございます。アクセスが確認されました"
       ],
+      "Copied to clipboard": [
+        "クリップボードにコピーされました"
+      ],
       "Coupon successfully applied!": [
         "クーポンを適用しました！"
       ],
@@ -1513,6 +1542,12 @@
       ],
       "Domain: ${ domainPath } or @": [
         "ドメイン: ${ domainPath } または @"
+      ],
+      "Drop file here to upload": [
+        "アップロードするファイルをここにドロップ"
+      ],
+      "Drop to import": [
+        "ドロップしてインポート"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "既存のパスワードを ${ PASS_APP_NAME } に簡単にインポートします。"
@@ -2318,6 +2353,9 @@
       "your domain": [
         "あなたのドメイン"
       ],
+      "Your files will be encrypted and then saved": [
+        "ファイルは暗号化して保存されます"
+      ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "あなたの組織では、 ${ PASS_APP_NAME }へのアクセスの安全性を要求しています"
       ]
@@ -2755,6 +2793,9 @@
       "https://example.com": [
         "https://example.com"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "ID Card": [
         "個人番号カード"
       ],
@@ -2823,6 +2864,9 @@
       ],
       "Key type": [
         "キー種類"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "キーボードショートカット: ${ shortcut }"
       ],
       "Language": [
         "言語"
@@ -3252,6 +3296,9 @@
       ],
       "The URL has been copied to the clipboard": [
         "URLをクリップボードにコピーしました"
+      ],
+      "Theme": [
+        "テーマ"
       ],
       "Tier/Level": [
         "階級/レベル"

@@ -92,6 +92,9 @@
       "Change": [
         "Змяніць"
       ],
+      "Change email": [
+        "Змяніць эл. пошту"
+      ],
       "Check DNS": [
         "Праверыць DNS"
       ],
@@ -103,6 +106,9 @@
       ],
       "Clear": [
         "Ачысціць"
+      ],
+      "Clear search": [
+        "Ачысціць пошук"
       ],
       "Close": [
         "Закрыць"
@@ -196,6 +202,9 @@
       ],
       "Delete alias": [
         "Выдаліць псеўданім"
+      ],
+      "Delete all": [
+        "Выдаліць усе"
       ],
       "Delete it, I will never need it": [
         "Выдаліць яго. Ён мне больш непатрэбны"
@@ -482,8 +491,14 @@
       "Resend invitation": [
         "Паўторна адправіць запрашэнне"
       ],
+      "Reset": [
+        "Скінуць"
+      ],
       "Reset history": [
         "Скінуць гісторыю"
+      ],
+      "Restore": [
+        "Аднавіць"
       ],
       "Restore item": [
         "Аднавіць элемент"
@@ -676,6 +691,11 @@
       ],
       "Your password manager is not here? Request it.": [
         "Адсутнічае ваш менеджар пароляў? Запытайце яго."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ]
     },
     "Button": {
@@ -1215,6 +1235,9 @@
       ],
       "MB": [
         "МБ"
+      ],
+      "TB": [
+        "ТБ"
       ]
     },
     "file size format, long": {
@@ -1529,6 +1552,9 @@
       "Congratulations, your access has been confirmed": [
         "Віншуем! Вы паспяхова пацвердзілі свой доступ"
       ],
+      "Copied to clipboard": [
+        "Скапіявана ў буфер абмену"
+      ],
       "Coupon successfully applied!": [
         "Купон паспяхова ўжыты!"
       ],
@@ -1579,6 +1605,12 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Дамен: ${ domainPath } або @"
+      ],
+      "Drop file here to upload": [
+        "Перацягніце файл сюды, каб запампаваць"
+      ],
+      "Drop to import": [
+        "Перацягніце, каб імпартаваць"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Без намаганняў імпартуйце свае існуючыя паролі ў ${ PASS_APP_NAME }."
@@ -2414,6 +2446,9 @@
       "your domain": [
         "ваш дамен"
       ],
+      "Your files will be encrypted and then saved": [
+        "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
+      ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
       ]
@@ -2890,6 +2925,9 @@
       "https://example.com": [
         "https://pryklad.com"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "ID Card": [
         "Пасведчанне асобы"
       ],
@@ -2958,6 +2996,9 @@
       ],
       "Key type": [
         "Тып ключа"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Спалучэнні клавіш: ${ shortcut }"
       ],
       "Language": [
         "Мова"
@@ -3387,6 +3428,9 @@
       ],
       "The URL has been copied to the clipboard": [
         "URL-адрас скапіяваны ў буфер абмену"
+      ],
+      "Theme": [
+        "Тэма"
       ],
       "Tier/Level": [
         "Узровень"

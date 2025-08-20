@@ -4,6 +4,30 @@
     "language": "en_US"
   },
   "contexts": {
+    "Action": {
+      "Display navigation bar": [
+        "Show navigation bar"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "You can't send vCard files of more than ${ maxAttachments } contacts",
+        "You can't send vCard files of more than ${ maxAttachments } contacts"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "Unlimited folders, labels and filters": [
+        "Unlimited folders, labels, and filters"
+      ]
+    },
+    "BF2024: Deal details": {
+      "Unlimited folders, labels and filters": [
+        "Unlimited folders, labels, and filters"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Paramètres par défaut du système"
+      ]
+    },
     "Info": {
       "${ scanErrorCount } scan failed": [
         "${ scanErrorCount } scan failed",
@@ -22,14 +46,46 @@
         "Anyone on the internet with the link can edit"
       ]
     },
+    "new_plans: feature": {
+      "Tor over VPN": [
+        "TOR over VPN"
+      ]
+    },
+    "new_plans: info": {
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business."
+      ]
+    },
     "new_plans: tooltip": {
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize your email signature with logos, images, social media icons, links to your contact details, and more"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Route your internet traffic through the TOR network with a single click"
       ]
     },
     "Notification": {
       "Public link update access failed ": [
         "Public link update access failed"
+      ]
+    },
+    "session_recovery:available:info": {
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "You have ${ timeRemaining.inHours } hour to reset your password.",
+        "You have ${ timeRemaining.inHours } hours to reset your password."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "You have ${ timeRemaining.inMinutes } minute to reset your password.",
+        "You have ${ timeRemaining.inMinutes } minutes to reset your password."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "You have ${ timeRemaining.inSeconds } second to reset your password.",
+        "You have ${ timeRemaining.inSeconds } seconds to reset your password."
+      ]
+    },
+    "Subscription reminder": {
+      "Users won’t be able to upload files on their devices": [
+        "Users won’t be able to upload files from their devices"
       ]
     }
   }

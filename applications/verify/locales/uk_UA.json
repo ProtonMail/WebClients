@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Автентифікація"
+      ],
       "Cancel": [
         "Скасувати"
       ],
@@ -28,6 +31,9 @@
       ],
       "Edit sign-in details": [
         "Змінити дані входу"
+      ],
+      "Forgot password?": [
+        "Не пам’ятаю пароль?"
       ],
       "Get verification code": [
         "Отримати код підтвердження"
@@ -53,6 +59,12 @@
       "Try another method": [
         "Спробувати інший спосіб"
       ],
+      "Use authentication code": [
+        "Використати код підтвердження"
+      ],
+      "Use recovery code": [
+        "Використати код відновлення"
+      ],
       "Verify": [
         "Перевірити"
       ],
@@ -61,6 +73,19 @@
       ],
       "View invoice": [
         "Переглянути рахунок"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Програма ${ MAIL_APP_NAME } для комп'ютера"
+      ],
+      "Use your own email domain": [
+        "Використовуйте свій власний домен електронної пошти"
+      ]
+    },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Хмарне зберігання та спільний доступ до великих файлів"
       ]
     },
     "Country name": {
@@ -894,6 +919,27 @@
       ],
       "Something went wrong": [
         "Виникла проблема"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Не вдалося завантажити цю сторінку. Перезавантажте сторінку або перевірте з'єднання з інтернетом."
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Щось пішло не так під час автентифікації за допомогою вашого ключа безпеки. Будь ласка, повторіть спробу."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Вставте ключ безпеки, прив'язаний до вашого облікового запису ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Ключ безпеки"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Ключ безпеки"
       ]
     },
     "file size format": {
@@ -911,6 +957,9 @@
       ],
       "MB": [
         "МБ"
+      ],
+      "TB": [
+        "ТБ"
       ]
     },
     "file size format, long": {
@@ -937,11 +986,37 @@
         "Мегабайти",
         "Мегабайтів",
         "Мегабайтів"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайти",
+        "Терабайтів",
+        "Терабайтів"
       ]
     },
     "Font face option": {
+      "System default": [
+        "Системна"
+      ],
       "Theme font": [
         "Шрифт теми"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Великий"
+      ],
+      "Medium (recommended)": [
+        "Середній (рекомендовано)"
+      ],
+      "Small": [
+        "Маленький"
+      ],
+      "Very large": [
+        "Дуже великий"
+      ],
+      "Very small": [
+        "Дуже маленький"
       ]
     },
     "Human verification method": {
@@ -974,14 +1049,29 @@
       "Country code": [
         "Код країни"
       ],
+      "Each code can only be used once": [
+        "Кожен код можна використати лише один раз"
+      ],
       "Edit email address": [
         "Змінити адресу електронної пошти"
+      ],
+      "Enter the code from your authenticator app": [
+        "Введіть код з вашого додатку автентифікатора"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введіть код підтвердження. Цифри ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Введіть власний пароль (як адміністратор організації)."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Якщо ви вважаєте, що ми зробили помилку, зв'яжіться з нами ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
@@ -1007,8 +1097,17 @@
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
       ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Щоб зняти обмеження, ви можете перейти на платний тариф."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "У нас є плани, розроблені спеціально для таких користувачів, як ви, яким потрібна більш ніж одна поштова адреса."
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Ми надішлемо новий код підтвердження на ${ strong }"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Коли ви налаштовуєте двоетапну перевірку, ми надаємо коди відновлення, які ви можете використовувати для входу в систему, якщо втратите доступ до програми автентифікації."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
@@ -1033,6 +1132,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Програма автентифікації"
+      ],
       "Code is 6 digits without spaces": [
         "Код складається з 6 цифр без пробілів"
       ],
@@ -1053,14 +1155,23 @@
       ],
       "Verification code": [
         "Код підтвердження"
+      ],
+      "Your password (admin)": [
+        "Новий пароль (адмін)"
       ]
     },
     "Link": {
+      "contact us": [
+        "зв'яжіться з нами"
+      ],
       "Learn more": [
         "Докладніше"
       ],
       "Request an invite": [
         "Запитати запрошення"
+      ],
+      "terms of service": [
+        "умови надання послуг"
       ]
     },
     "new_plans": {
@@ -1068,7 +1179,15 @@
         "Упорядковуйте вхідні за допомогою тек"
       ]
     },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Отримати ${ planTitle }"
+      ]
+    },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Письмовий асистент Scribe"
+      ],
       "${ n } custom email domain": [
         "${ n } власний домен",
         "${ n } власні домени",
@@ -1117,11 +1236,47 @@
         "${ n } повідомлень на добу",
         "${ n } повідомлення на добу"
       ],
+      "${ options }-day file version history": [
+        "${ options }-денна історія версій файлів",
+        "${ options }-денна історія версій файлів",
+        "${ options }-денна історія версій файлів",
+        "${ options }-денна історія версій файлів"
+      ],
       "${ size } attachment size": [
         "Розмір вкладень ${ size }"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } захищеного сховища для користувача"
+      ],
       "${ size } storage": [
         "${ size } сховища"
+      ],
+      "${ size } storage per user": [
+        "${ size } сховища на користувача"
+      ],
+      "1 TB secure storage": [
+        "1 ТБ безпечного сховища"
+      ],
+      "10 email addresses/aliases": [
+        "10 адрес/псевдонімів е-пошти"
+      ],
+      "10 more premium features": [
+        "Ще 10 преміум функцій"
+      ],
+      "10-year file version history": [
+        "10-річна історія версій файлу"
+      ],
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
+      "Advanced account protection": [
+        "Розширений захист облікового запису"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Всі ${ BRAND_NAME } продукти та функції"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Всі базові ${ BRAND_NAME } послуги (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "Auto-delete Spam and Trash": [
         "Автоматичне видалення спаму та смітника"
@@ -1138,11 +1293,17 @@
       "Catch-all": [
         "Catch-all"
       ],
+      "Collaborate and share large files": [
+        "Співпраця та обмін великими файлами"
+      ],
       "Contact groups": [
         "Групи контактів"
       ],
       "Contact groups management": [
         "Керування групами контактів"
+      ],
+      "Custom and secure business email": [
+        "Користувальницька та захищена бізнес-пошта"
       ],
       "Custom email domains": [
         "Власні домени електронної пошти"
@@ -1156,23 +1317,56 @@
       "Email client support (via IMAP/SMTP)": [
         "Підтримка поштових клієнтів (через IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Групи електронної пошти"
+      ],
       "Encrypted contact details": [
         "Зашифровані подробиці контакту"
       ],
       "End-to-end encryption": [
         "Наскрізне шифрування"
       ],
+      "Generate emails with a prompt": [
+        "Генерувати електронні листи за запитом"
+      ],
       "HTML signatures": [
         "HTML-підписи"
+      ],
+      "Online document editor": [
+        "Онлайн редактор документів"
+      ],
+      "Password health": [
+        "Якість пароля"
       ],
       "Password-protected Emails": [
         "Електронні листи, захищені паролем"
       ],
+      "Proofread and refine your emails": [
+        "Вичитуйте та вдосконалюйте свої електронні листи"
+      ],
+      "Quickly craft replies": [
+        "Швидко створюйте відповіді"
+      ],
+      "Recover previous file versions": [
+        "Відновити попередні версії файлів"
+      ],
+      "Save time emailing": [
+        "Заощаджуйте час з електронною поштою"
+      ],
       "Schedule and snooze emails for any time": [
         "Плануйте і відкладайте електронні листи на будь-який час"
       ],
+      "Share files with no size limit": [
+        "Обмінюйтеся файлами без обмеження розміру"
+      ],
       "SMTP submission": [
         "Надсилання через SMTP"
+      ],
+      "Support for up to 2 users": [
+        "Підтримка до 2 користувачів"
+      ],
+      "Sync and backup all your files across devices": [
+        "Синхронізуйте та створюйте резервні копії всіх файлів на різних пристроях"
       ],
       "Unlimited filters": [
         "Необмежена кількість фільтрів"
@@ -1194,11 +1388,20 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 користувацький домен електронної пошти"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Створіть різні адреси електронної пошти для ваших онлайн-профілів, наприклад, ArtemShopper@${ domain } для інтернет-магазинів, ArtemNews@${ domain2 } для підписки на новини"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: захистіть свої файли у зашифрованому хмарному сховищі. Забезпечує автоматичну синхронізацію, зашифрований обмін файлами тощо."
+      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: захистіть свої електронні листи за допомогою наскрізного шифрування. Підтримуються власні домени електронної пошти, 15 адрес електронної пошти, необмежена кількість псевдонімів hide-my-email та багато інших можливостей."
       ],
@@ -1228,6 +1431,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Створіть до ${ n } адрес електронної пошти/псевдонімів, які можна призначити членам сім'ї. Використовуйте їх для ідентифікації в інтернеті, наприклад, JohnShopper@${ domain } для облікових записів покупок."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Надсилайте електронні листи всім членам групи з однієї адреси електронної пошти"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Гарантовано отримуйте всі електронні листи, надіслані на ваш домен, навіть якщо адреси не існує або вона введена з помилкою"
@@ -1293,6 +1499,12 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Розширте загальний обсяг свого сховища до ${ bundleStorage }"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Підтримка ${ n } власного домену електронної пошти",
+        "Підтримка ${ n } власних доменів електронної пошти",
+        "Підтримка ${ n } власних доменів електронної пошти",
+        "Підтримка ${ n } власних доменів електронної пошти"
       ]
     },
     "Placeholder": {
@@ -1343,6 +1555,9 @@
     "Title": {
       "Enter 2FA code": [
         "Введіть код 2FA"
+      ],
+      "Enter your password": [
+        "Введіть ваш пароль"
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""

@@ -44,6 +44,9 @@
       "Apply": [
         "Terapkan"
       ],
+      "Bold": [
+        "Cetak tebal"
+      ],
       "Bulleted List": [
         "Daftar Per Poin"
       ],
@@ -73,6 +76,9 @@
       ],
       "Code block": [
         "Balok kode"
+      ],
+      "Color": [
+        "Warna"
       ],
       "Colour": [
         "Warna"
@@ -131,11 +137,17 @@
       "Insert left": [
         "Sisipkan di kiri"
       ],
+      "Insert link": [
+        "Sisipkan tautan"
+      ],
       "Insert right": [
         "Sisipkan di kanan"
       ],
       "Insert table": [
         "Sisipkan tabel"
+      ],
+      "Italic": [
+        "Cetak miring"
       ],
       "Justify align": [
         "Rata kanan dan kiri"
@@ -157,6 +169,9 @@
       ],
       "Outdent": [
         "Batas luar"
+      ],
+      "Quote": [
+        "Kutip"
       ],
       "Re-open": [
         "Buka kembali"
@@ -206,16 +221,40 @@
       "Table options": [
         "Opsi tabel"
       ],
+      "Underline": [
+        "Garis bawah"
+      ],
       "Undo": [
         "Urungkan"
       ]
     },
     "color": {
+      "apple": [
+        "hijau apel"
+      ],
+      "azureish white": [
+        "putih kebiruan"
+      ],
+      "black": [
+        "hitam"
+      ],
+      "blanched almond": [
+        "almond panggang"
+      ],
+      "blue-gray": [
+        "biru-abu"
+      ],
+      "caramel": [
+        "karamel"
+      ],
       "carrot": [
         "wortel"
       ],
       "cerise": [
         "ceri"
+      ],
+      "cinnabar": [
+        "cinnabar"
       ],
       "cobalt": [
         "kobalt"
@@ -223,17 +262,62 @@
       "copper": [
         "tembaga"
       ],
+      "cyan-blue azure": [
+        "biru langit-laut"
+      ],
+      "dandelion": [
+        "dandelion"
+      ],
+      "dark cerulean": [
+        "biru laut gelap"
+      ],
+      "dark midnight blue": [
+        "biru temaram"
+      ],
+      "dim gray": [
+        "abu pucat"
+      ],
       "enzian": [
         "enzian"
       ],
       "fern": [
         "perdu"
       ],
+      "field drab": [
+        "coklat lapangan"
+      ],
       "forest": [
         "hutan"
       ],
+      "gainsboro": [
+        "gainsboro"
+      ],
       "gray": [
         "abu-abu"
+      ],
+      "japanese laurel": [
+        "laurel jepang"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "lemon yellow": [
+        "kuning lemon"
+      ],
+      "light carmine pink": [
+        "merah jambu karmina"
+      ],
+      "light moss green": [
+        "hijau lumut"
+      ],
+      "light red": [
+        "merah terang"
+      ],
+      "maize": [
+        "jagung"
+      ],
+      "mughal green": [
+        "hijau mughal"
       ],
       "ocean": [
         "samudera"
@@ -241,8 +325,32 @@
       "olive": [
         "zaitun"
       ],
+      "outer space": [
+        "luar angkasa"
+      ],
       "pacific": [
         "pasifik"
+      ],
+      "palatinate blue": [
+        "biru palatina"
+      ],
+      "pale cerulean": [
+        "biru laut pucat"
+      ],
+      "pastel gray": [
+        "abu pastel"
+      ],
+      "persian plum": [
+        "plum persia"
+      ],
+      "persian red": [
+        "merah persia"
+      ],
+      "philippine gray": [
+        "abu filipina"
+      ],
+      "philippine silver": [
+        "perak filipina"
       ],
       "pickle": [
         "acar"
@@ -252,6 +360,9 @@
       ],
       "pink": [
         "merah jambu"
+      ],
+      "pistachio": [
+        "kacang pistasi"
       ],
       "plum": [
         "plem"
@@ -265,8 +376,14 @@
       "reef": [
         "karang"
       ],
+      "ruddy pink": [
+        "merah jambu pucat"
+      ],
       "sahara": [
         "sahara"
+      ],
+      "satin sheen gold": [
+        "emas satin"
       ],
       "slateblue": [
         "biru tanah"
@@ -276,6 +393,12 @@
       ],
       "strawberry": [
         "stroberi"
+      ],
+      "vivid auburn": [
+        "coklat menyala"
+      ],
+      "white": [
+        "putih"
       ]
     },
     "Confirm": {
@@ -338,8 +461,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "Bawaan sistem"
+      ],
       "Theme font": [
         "Jenis tulisan tema"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Besar"
+      ],
+      "Medium (recommended)": [
+        "Sedang (direkomendasikan)"
+      ],
+      "Small": [
+        "Kecil"
+      ],
+      "Very large": [
+        "Sangat besar"
+      ],
+      "Very small": [
+        "Mungil"
       ]
     },
     "Info": {
@@ -360,6 +503,9 @@
       ],
       "Comments": [
         "Komentar"
+      ],
+      "Copied to clipboard": [
+        "Disalin ke papan klip"
       ],
       "Editing": [
         "Sunting"
@@ -399,6 +545,9 @@
       ],
       "Suggesting": [
         "Tulis Saran"
+      ],
+      "Text color": [
+        "Warna teks"
       ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Konten yang Anda coba salin terlalu besar untuk dapat disalin dalam satu waktu. Coba lagi dengan menyalin potongan salinan yang lebih pendek secara satu per satu."
@@ -492,6 +641,9 @@
       "Insert table row": [
         "Sisipkan baris tabel"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Pintasan keyboard: ${ shortcut }"
+      ],
       "Link text": [
         "Teks tautan"
       ],
@@ -526,6 +678,9 @@
       ],
       "Reply...": [
         "Balas..."
+      ],
+      "Text": [
+        "Teks"
       ]
     },
     "Title": {

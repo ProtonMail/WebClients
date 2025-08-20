@@ -44,6 +44,9 @@
       "Apply": [
         "Uygula"
       ],
+      "Bold": [
+        "Koyu"
+      ],
       "Bulleted List": [
         "Madde imli liste"
       ],
@@ -73,6 +76,9 @@
       ],
       "Code block": [
         "Kod bloğu"
+      ],
+      "Color": [
+        "Renk"
       ],
       "Colour": [
         "Renk"
@@ -131,11 +137,17 @@
       "Insert left": [
         "Sola ekle"
       ],
+      "Insert link": [
+        "Bağlantı ekle"
+      ],
       "Insert right": [
         "Sağa ekle"
       ],
       "Insert table": [
         "Tablo ekle"
+      ],
+      "Italic": [
+        "Yatık"
       ],
       "Justify align": [
         "İki yana hizala"
@@ -157,6 +169,9 @@
       ],
       "Outdent": [
         "Dışa kaydır"
+      ],
+      "Quote": [
+        "Alıntıla"
       ],
       "Re-open": [
         "Yeniden aç"
@@ -206,16 +221,40 @@
       "Table options": [
         "Tablo seçenekleri"
       ],
+      "Underline": [
+        "Altı çizili"
+      ],
       "Undo": [
         "Geri al"
       ]
     },
     "color": {
+      "apple": [
+        "elma"
+      ],
+      "azureish white": [
+        "masmavi beyaz"
+      ],
+      "black": [
+        "siyah"
+      ],
+      "blanched almond": [
+        "beyazlatılmış badem"
+      ],
+      "blue-gray": [
+        "mavi gri"
+      ],
+      "caramel": [
+        "karamel"
+      ],
       "carrot": [
         "havuç"
       ],
       "cerise": [
         "kiraz"
+      ],
+      "cinnabar": [
+        "zencefil"
       ],
       "cobalt": [
         "kobalt"
@@ -223,17 +262,62 @@
       "copper": [
         "bakır"
       ],
+      "cyan-blue azure": [
+        "camgöbeği gök mavisi"
+      ],
+      "dandelion": [
+        "karahindiba"
+      ],
+      "dark cerulean": [
+        "koyu gök mavisi"
+      ],
+      "dark midnight blue": [
+        "koyu gece mavisi"
+      ],
+      "dim gray": [
+        "koyu gri"
+      ],
       "enzian": [
         "kantaron"
       ],
       "fern": [
         "eğrelti otu"
       ],
+      "field drab": [
+        "orta koyu sarı"
+      ],
       "forest": [
         "orman"
       ],
+      "gainsboro": [
+        "grimsi"
+      ],
       "gray": [
         "gri"
+      ],
+      "japanese laurel": [
+        "japon defnesi"
+      ],
+      "kiwi": [
+        "kivi"
+      ],
+      "lemon yellow": [
+        "limon sarısı"
+      ],
+      "light carmine pink": [
+        "açık parlak pembe"
+      ],
+      "light moss green": [
+        "açık yosun yeşili"
+      ],
+      "light red": [
+        "açık kırmızı"
+      ],
+      "maize": [
+        "mısır"
+      ],
+      "mughal green": [
+        "babür yeşili"
       ],
       "ocean": [
         "okyanus"
@@ -241,8 +325,32 @@
       "olive": [
         "zeytin"
       ],
+      "outer space": [
+        "uzay boşluğu"
+      ],
       "pacific": [
         "pasifik"
+      ],
+      "palatinate blue": [
+        "palatinat mavisi"
+      ],
+      "pale cerulean": [
+        "soluk gök mavisi"
+      ],
+      "pastel gray": [
+        "pastel gri"
+      ],
+      "persian plum": [
+        "iran eriği"
+      ],
+      "persian red": [
+        "iran kırmızısı"
+      ],
+      "philippine gray": [
+        "filipin grisi"
+      ],
+      "philippine silver": [
+        "filipin gümüşü"
       ],
       "pickle": [
         "salatalık"
@@ -252,6 +360,9 @@
       ],
       "pink": [
         "pembe"
+      ],
+      "pistachio": [
+        "fıstık"
       ],
       "plum": [
         "erik"
@@ -265,8 +376,14 @@
       "reef": [
         "resif"
       ],
+      "ruddy pink": [
+        "pembemsi kırmızı"
+      ],
       "sahara": [
         "çöl"
+      ],
+      "satin sheen gold": [
+        "saten parlak altın"
       ],
       "slateblue": [
         "arduvaz mavisi"
@@ -276,6 +393,12 @@
       ],
       "strawberry": [
         "çilek"
+      ],
+      "vivid auburn": [
+        "canlı kumral"
+      ],
+      "white": [
+        "beyaz"
       ]
     },
     "Confirm": {
@@ -382,6 +505,9 @@
       "Comments": [
         "Yorumlar"
       ],
+      "Copied to clipboard": [
+        "Panoya kopyalandı"
+      ],
       "Editing": [
         "Düzenleniyor"
       ],
@@ -420,6 +546,9 @@
       ],
       "Suggesting": [
         "Öneriliyor"
+      ],
+      "Text color": [
+        "Yazı rengi"
       ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Yapıştırmaya çalıştığınız içerik tek seferde yapıştırılamayacak kadar büyük. Daha küçük parçaları birer birer yapıştırmayı deneyin."
@@ -513,6 +642,9 @@
       "Insert table row": [
         "Tablo satırı ekle"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Klavye kısayolu: ${ shortcut }"
+      ],
       "Link text": [
         "Bağlantı metni"
       ],
@@ -547,6 +679,9 @@
       ],
       "Reply...": [
         "Yanıtla..."
+      ],
+      "Text": [
+        "Yazı"
       ]
     },
     "sheets_2025:Action": {

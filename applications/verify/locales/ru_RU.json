@@ -75,6 +75,19 @@
         "Посмотреть счет"
       ]
     },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Приложение для настольных компьютеров ${ MAIL_APP_NAME }"
+      ],
+      "Use your own email domain": [
+        "Используйте свой собственный домен электронной почты"
+      ]
+    },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Облачное хранилище и обмен большими файлами"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "Абхазия"
@@ -906,6 +919,9 @@
       ],
       "Something went wrong": [
         "Что-то пошло не так"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Мы не смогли загрузить эту страницу. Пожалуйста, обновите страницу или проверьте подключение к Интернету."
       ]
     },
     "fido2: Error": {
@@ -941,6 +957,9 @@
       ],
       "MB": [
         "МБ"
+      ],
+      "TB": [
+        "ТБ"
       ]
     },
     "file size format, long": {
@@ -967,11 +986,37 @@
         "Мегабайтов",
         "Мегабайтов",
         "Мегабайтов"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайта",
+        "Терабайтов",
+        "Терабайтов"
       ]
     },
     "Font face option": {
+      "System default": [
+        "Системный по умолчанию"
+      ],
       "Theme font": [
         "Шрифт темы"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Большой"
+      ],
+      "Medium (recommended)": [
+        "Средний (Рекомендуется)"
+      ],
+      "Small": [
+        "Маленький"
+      ],
+      "Very large": [
+        "Очень большой"
+      ],
+      "Very small": [
+        "Очень маленький"
       ]
     },
     "Human verification method": {
@@ -1004,6 +1049,9 @@
       "Country code": [
         "Код страны"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "Создание нескольких бесплатных учетных записей не допускается нашим ${ termsLink }."
+      ],
       "Each code can only be used once": [
         "Каждый код может быть использован только один раз"
       ],
@@ -1022,8 +1070,14 @@
       "Enter your own password (as organization admin).": [
         "Введите свой пароль как администратора организации."
       ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "Для получения дополнительной информации и снятия ограничений, пожалуйста, войдите на ${ mailLink }."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Если вы считаете, что мы ошиблись, пожалуйста, ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
@@ -1048,6 +1102,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Для отмены ограничений вы можете перейти на платный тарифный план."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Мы разработали специальные планы для тех пользователей, которым нужны несколько адресов электронной почты."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Мы отправим новый код подтверждения на ${ strong }"
@@ -1107,11 +1167,17 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "связаться с нами"
+      ],
       "Learn more": [
         "Подробнее"
       ],
       "Request an invite": [
         "Запросить приглашение"
+      ],
+      "terms of service": [
+        "условия использования"
       ]
     },
     "new_plans": {
@@ -1119,7 +1185,15 @@
         "Поддерживайте порядок в почтовом ящике с помощью папок"
       ]
     },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Перейти на тариф ${ planTitle }"
+      ]
+    },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Помощник по написанию ${ BRAND_NAME } Scribe"
+      ],
       "${ n } custom email domain": [
         "${ n } пользовательский домен электронной почты",
         "${ n } пользовательских домена электронной почты",
@@ -1168,11 +1242,44 @@
         "${ n } сообщений в день",
         "Сообщений в день: ${ n }"
       ],
+      "${ options }-day file version history": [
+        "${ options }-дневный журнал версий файла",
+        "${ options }-дневный журнал версий файла",
+        "${ options }-дневный журнал версий файла",
+        "${ options }-дневный журнал версий файла"
+      ],
       "${ size } attachment size": [
         "Размер вложения: ${ size }"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } защищенного хранилища на пользователя"
+      ],
       "${ size } storage": [
         "${ size } хранилища"
+      ],
+      "${ size } storage per user": [
+        "${ size } хранилища на пользователя"
+      ],
+      "10 email addresses/aliases": [
+        "10 адресов электронной почты или псевдонимов"
+      ],
+      "10 more premium features": [
+        "и еще 10 платных функций"
+      ],
+      "10-year file version history": [
+        "10-летняя история версий файла"
+      ],
+      "15 GB storage": [
+        "15 ГБ хранилище"
+      ],
+      "200 GB of storage": [
+        "200 ГБ памяти"
+      ],
+      "Advanced account protection": [
+        "Расширенная защита аккаунта"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Все основные сервисы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "Auto-delete Spam and Trash": [
         "Автоудаление спама и сообщений в корзине"
@@ -1189,11 +1296,17 @@
       "Catch-all": [
         "Прием всей почты домена"
       ],
+      "Collaborate and share large files": [
+        "Работайте вместе и делитесь большими файлами"
+      ],
       "Contact groups": [
         "Группы контактов"
       ],
       "Contact groups management": [
         "Управление группами контактов"
+      ],
+      "Custom and secure business email": [
+        "Настраивамая и защищённая бизнес-почта"
       ],
       "Custom email domains": [
         "Пользовательские домены электронной почты"
@@ -1207,6 +1320,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Поддержка почтовых клиентов (через IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Группы адресов электронной почты"
+      ],
       "Encrypted contact details": [
         "Зашифрованная контактная информация"
       ],
@@ -1216,14 +1332,38 @@
       "HTML signatures": [
         "Подписи HTML"
       ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
+      "Password health": [
+        "Надежность пароля"
+      ],
       "Password-protected Emails": [
         "Электронные письма, защищенные паролем"
+      ],
+      "Private photo backup": [
+        "Конфиденциальное резервное копирование фото"
+      ],
+      "Recover previous file versions": [
+        "Восстановить предыдущие версии файла"
+      ],
+      "Save time emailing": [
+        "Экономьте время на переписке по электронной почте"
       ],
       "Schedule and snooze emails for any time": [
         "Планируйте и откладывайте сообщения электронной почты на любое время"
       ],
+      "Secure file storage and sharing": [
+        "Безопасное хранение и обмен файлами"
+      ],
+      "Share files with no size limit": [
+        "Делитесь файлами без ограничений по размеру"
+      ],
       "SMTP submission": [
         "Отправки через SMTP"
+      ],
+      "Sync and backup all your files across devices": [
+        "Синхронизируйте файлы на всех устройствах и создавайте резервные копии"
       ],
       "Unlimited filters": [
         "Неограниченное количество фильтров"
@@ -1245,11 +1385,20 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 пользовательский домен электронной почты"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, VanyaShopper@${ domain } для учетных записей покупок, VanyaNews@${ domain2 } для подписки на новости"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Объём хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Защитите свои файлы с помощью зашифрованного облачного хранилища. Включает автоматическую синхронизацию, общий доступ к зашифрованным файлам и многое другое."
+      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME } Защитите свою электронную почту с помощью сквозного шифрования. Включает поддержку пользовательских почтовых доменов, 15 адресов электронной почты, неограниченное количество ide-my-email псевдонимов и многое другое."
       ],
@@ -1279,6 +1428,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Создайте до ${ n } адресов электронной почты или псевдонимов, которые можно назначить членам семьи. Используйте их для идентификации в Интернете, например JohnShopper@${ domain } для аккаунтов для покупок."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Отправляйте сообщения всем членам группы с помощью одного адреса электронной почты"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Гарантирует, что вы получите все письма, отправленные на ваш домен, даже если адрес электронной почты не существует, его больше нет или в нем допущена ошибка"
@@ -1344,6 +1496,12 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Увеличьте объем хранилища в общей сложности до ${ bundleStorage }"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Поддержка ${ n } пользовательского домена электронной почты",
+        "Поддержка ${ n } пользовательских доменов электронной почты",
+        "Поддержка ${ n } пользовательских доменов электронной почты",
+        "Поддержка ${ n } пользовательских доменов электронной почты"
       ]
     },
     "Placeholder": {
@@ -1392,6 +1550,9 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "Учётная запись ограничена"
+      ],
       "Enter 2FA code": [
         "Введите код двухфакторной аутентификации"
       ],

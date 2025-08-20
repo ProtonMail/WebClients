@@ -92,6 +92,9 @@
       "Change": [
         "변경"
       ],
+      "Change email": [
+        "이메일 변경"
+      ],
       "Check DNS": [
         "DNS 확인"
       ],
@@ -103,6 +106,9 @@
       ],
       "Clear": [
         "비우기"
+      ],
+      "Clear search": [
+        "검색 지우기"
       ],
       "Close": [
         "닫기"
@@ -196,6 +202,9 @@
       ],
       "Delete alias": [
         "별칭 삭제"
+      ],
+      "Delete all": [
+        "전체 삭제"
       ],
       "Delete it, I will never need it": [
         "삭제할게요, 필요하지 않아요."
@@ -482,8 +491,14 @@
       "Resend invitation": [
         "초대장 재전송"
       ],
+      "Reset": [
+        "초기화"
+      ],
       "Reset history": [
         "기록 재설정"
+      ],
+      "Restore": [
+        "복원"
       ],
       "Restore item": [
         "항목 복구"
@@ -670,6 +685,11 @@
       ],
       "Your password manager is not here? Request it.": [
         "사용중이신 비밀번호 관리자가 여기 없나요? 추가하도록 요청하세요."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } 데스크탑 어플리케이션"
       ]
     },
     "Button": {
@@ -1197,6 +1217,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -1211,6 +1234,9 @@
       ],
       "Megabyte": [
         "메가바이트"
+      ],
+      "Terabyte": [
+        "테라바이트"
       ]
     },
     "Info": {
@@ -1463,6 +1489,9 @@
       "Congratulations, your access has been confirmed": [
         "축하합니다! 접근이 수락되었습니다."
       ],
+      "Copied to clipboard": [
+        "클립보드로 복사함"
+      ],
       "Coupon successfully applied!": [
         "쿠폰을 성공적으로 적용했습니다!"
       ],
@@ -1513,6 +1542,12 @@
       ],
       "Domain: ${ domainPath } or @": [
         "도메인: ${ domainPath } 또는 @"
+      ],
+      "Drop file here to upload": [
+        "업로드할 파일을 여기에 놓습니다"
+      ],
+      "Drop to import": [
+        "드래그해서 불러오기"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "기존 비밀번호를 ${ PASS_APP_NAME }로 쉽게 가져오세요."
@@ -2321,6 +2356,9 @@
       "your domain": [
         "나의 도메인"
       ],
+      "Your files will be encrypted and then saved": [
+        "파일이 암호화된 후 저장됩니다"
+      ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "조직에서 ${ PASS_APP_NAME }에 대한 액세스 권한을 보호해야 합니다"
       ]
@@ -2758,6 +2796,9 @@
       "https://example.com": [
         "https://example.com"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "ID Card": [
         "신분증"
       ],
@@ -2826,6 +2867,9 @@
       ],
       "Key type": [
         "키 유형"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "키보드 단축키: ${ shortcut }"
       ],
       "Language": [
         "언어"
@@ -3255,6 +3299,9 @@
       ],
       "The URL has been copied to the clipboard": [
         "URL이 클립보드로 복사되었습니다."
+      ],
+      "Theme": [
+        "테마"
       ],
       "Tier/Level": [
         "티어/레벨"

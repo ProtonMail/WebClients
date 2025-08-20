@@ -112,6 +112,9 @@
       "Change": [
         "変更"
       ],
+      "Change email": [
+        "メールアドレスを変更"
+      ],
       "Check DNS": [
         "DNSを確認"
       ],
@@ -123,6 +126,9 @@
       ],
       "Clear": [
         "消去"
+      ],
+      "Clear search": [
+        "検索をクリア"
       ],
       "Close": [
         "閉じる"
@@ -207,6 +213,9 @@
       ],
       "Delete alias": [
         "エイリアスを削除"
+      ],
+      "Delete all": [
+        "全て削除"
       ],
       "Delete it, I will never need it": [
         "もう使わないので削除してください"
@@ -502,8 +511,14 @@
       "Resend invitation": [
         "招待の再送"
       ],
+      "Reset": [
+        "リセット"
+      ],
       "Reset history": [
         "履歴をリセット"
+      ],
+      "Restore": [
+        "復元"
       ],
       "Restore item": [
         "アイテムを復元"
@@ -704,6 +719,11 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }をアンインストール"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } デスクトップアプリ"
       ]
     },
     "Button": {
@@ -1260,6 +1280,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -1274,6 +1297,9 @@
       ],
       "Megabyte": [
         "メガバイト"
+      ],
+      "Terabyte": [
+        "テラバイト"
       ]
     },
     "Font face option": {
@@ -1524,6 +1550,9 @@
       "Congratulations, your access has been confirmed": [
         "おめでとうございます。アクセスが確認されました"
       ],
+      "Copied to clipboard": [
+        "クリップボードにコピーされました"
+      ],
       "Coupon successfully applied!": [
         "クーポンを適用しました！"
       ],
@@ -1568,6 +1597,12 @@
       ],
       "Domain: ${ domainPath } or @": [
         "ドメイン: ${ domainPath } または @"
+      ],
+      "Drop file here to upload": [
+        "アップロードするファイルをここにドロップ"
+      ],
+      "Drop to import": [
+        "ドロップしてインポート"
       ],
       "Editor": [
         "編集者"
@@ -1773,6 +1808,9 @@
       "Latest breach on ${ formattedDate }": [
         "${ formattedDate } の最新の侵害"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "${ dataLeakedLink } で何をすべきか学びましょう"
+      ],
       "Leaving item...": [
         "アイテムから退出しています..."
       ],
@@ -1865,6 +1903,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME } へのオンラインアクセスにはPINコードが必要です。3回の試行に失敗するとログアウトされます。"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "当社のアラートは安全性を優先しています。侵害された情報を認識できない場合は、このレポートを無視してください。"
       ],
       "Owner": [
         "所有者"
@@ -2400,6 +2441,9 @@
       "your domain": [
         "あなたのドメイン"
       ],
+      "Your files will be encrypted and then saved": [
+        "ファイルは暗号化して保存されます"
+      ],
       "Your information was found on ${ displayedDate }": [
         "あなたの情報は ${ displayedDate }で見つかりました。"
       ],
@@ -2885,6 +2929,9 @@
       "https://example.com": [
         "https://example.com"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "ID Card": [
         "個人番号カード"
       ],
@@ -2959,6 +3006,9 @@
       ],
       "Key type": [
         "キー種類"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "キーボードショートカット: ${ shortcut }"
       ],
       "Language": [
         "言語"
@@ -3425,6 +3475,9 @@
       "The URL has been copied to the clipboard": [
         "URLをクリップボードにコピーしました"
       ],
+      "Theme": [
+        "テーマ"
+      ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "このアイテムは、 ${ date } またはビューの上限に達するまでアクセスできます。"
       ],
@@ -3595,8 +3648,16 @@
       "auto create rules ››": [
         "自動生成ルール >>"
       ],
+      "if your data is leaked": [
+        "もしデータが漏洩した場合"
+      ],
       "Learn more": [
         "詳細"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } を有効にする"
       ]
     },
     "Medium": {
@@ -3632,6 +3693,17 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "組織には 2FA が必要です"
+      ],
+      "SSO integration": [
+        "SSO 統合"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } が無効になりました"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } が有効になりました"
       ]
     },
     "Option": {
@@ -3886,6 +3958,20 @@
       ],
       "Used on ${ url }": [
         "${ url } で使用されます"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } および他 ${ remainingCount } 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } および他 1 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "あなたの情報の漏洩が見つかりました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
       ]
     },
     "sso": {
@@ -4218,6 +4304,9 @@
       "Inactive 2FA": [
         "非アクティブな 2FA"
       ],
+      "Information exposed in breach": [
+        "侵害で漏洩した情報"
+      ],
       "Install extension": [
         "拡張機能のインストール"
       ],
@@ -4483,6 +4572,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "今日"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "ここに記載されているすべての情報がすべてのユーザーに公開されたわけではありません。"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "暗号化されたパスワードは、それらが解読されない限り、漏洩した場合でも安全です。"
       ]
     },
     "Validation": {

@@ -112,6 +112,9 @@
       "Change": [
         "Modifier"
       ],
+      "Change email": [
+        "Modifier l'e-mail"
+      ],
       "Check DNS": [
         "Vérifier le DNS"
       ],
@@ -123,6 +126,9 @@
       ],
       "Clear": [
         "Effacer"
+      ],
+      "Clear search": [
+        "Effacer la recherche"
       ],
       "Close": [
         "Fermer"
@@ -207,6 +213,9 @@
       ],
       "Delete alias": [
         "Supprimer l'alias"
+      ],
+      "Delete all": [
+        "Tout supprimer"
       ],
       "Delete it, I will never need it": [
         "Supprimez-le. Je n'en aurai jamais besoin."
@@ -493,8 +502,14 @@
       "Resend invitation": [
         "Renvoyer l'invitation"
       ],
+      "Reset": [
+        "Réinitialiser"
+      ],
       "Reset history": [
         "Réinitialiser l'historique"
+      ],
+      "Restore": [
+        "Restauration"
       ],
       "Restore item": [
         "Restaurer l'élément"
@@ -674,6 +689,11 @@
       ],
       "Your password manager is not here? Request it.": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Application de bureau ${ MAIL_APP_NAME }"
       ]
     },
     "Button": {
@@ -1234,6 +1254,9 @@
       ],
       "MB": [
         "Mo"
+      ],
+      "TB": [
+        "To"
       ]
     },
     "file size format, long": {
@@ -1252,6 +1275,10 @@
       "Megabyte": [
         "Megaoctet",
         "Megaoctets"
+      ],
+      "Terabyte": [
+        "Téraoctet",
+        "Téraoctets"
       ]
     },
     "Info": {
@@ -1487,6 +1514,9 @@
       "Congratulations, your access has been confirmed": [
         "Votre accès a été confirmé."
       ],
+      "Copied to clipboard": [
+        "Copié dans le presse-papiers"
+      ],
       "Coupon successfully applied!": [
         "Le code promo a été appliqué."
       ],
@@ -1531,6 +1561,12 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domaine : ${ domainPath } ou @"
+      ],
+      "Drop file here to upload": [
+        "Déposez les fichiers ici pour les importer."
+      ],
+      "Drop to import": [
+        "Déposez ici pour importer"
       ],
       "Editor": [
         "Éditeur"
@@ -1739,6 +1775,9 @@
       "Latest breach on ${ formattedDate }": [
         "Dernière fuite de données le ${ formattedDate }"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Apprenez ce qu'il faut faire ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "Vous quittez l'élément..."
       ],
@@ -1829,6 +1868,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "L'accès en ligne à ${ PASS_APP_NAME } nécessitera un code PIN. Vous serez déconnecté après 3 tentatives n'ayant pas abouti."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Nos alertes privilégient la sécurité. Si vous ne reconnaissez pas les informations compromises, vous pouvez ignorer ce rapport."
       ],
       "Owner": [
         "Propriétaire"
@@ -2201,6 +2243,9 @@
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Approuvé par plus de 50 000 utilisateurs professionnels et 100 millions de comptes dans le monde entier."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Testez les nouveaux produits, mises à jour et fonctionnalités de ${ BRAND_NAME } avant qu'ils ne soient accessibles au public. Cela rechargera l'application."
+      ],
       "Unable to copy to clipboard": [
         "Impossible de copier dans le presse-papiers"
       ],
@@ -2366,6 +2411,9 @@
       ],
       "your domain": [
         "votre domaine"
+      ],
+      "Your files will be encrypted and then saved": [
+        "Vos fichiers seront chiffrés puis sauvegardés."
       ],
       "Your information was found on ${ displayedDate }": [
         "Vos informations ont été trouvées le ${ displayedDate }."
@@ -2550,6 +2598,9 @@
       ],
       "Bank Name": [
         "Nom de la banque"
+      ],
+      "Beta Access": [
+        "Accès à la version bêta"
       ],
       "Biometrics": [
         "Données biométriques"
@@ -2848,6 +2899,9 @@
       "https://example.com": [
         "https://exemple.fr"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "ID Card": [
         "Carte d'identité"
       ],
@@ -2919,6 +2973,9 @@
       ],
       "Key type": [
         "Type de clé"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Raccourci clavier : ${ shortcut }"
       ],
       "Language": [
         "Langue"
@@ -3364,6 +3421,9 @@
       "The URL has been copied to the clipboard": [
         "L'URL a été copiée dans le presse-papiers."
       ],
+      "Theme": [
+        "Thème"
+      ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Cet élément est accessible jusqu'au ${ date } ou jusqu'à ce que la limite de visualisation soit atteinte."
       ],
@@ -3531,8 +3591,16 @@
       "auto create rules ››": [
         "créer automatiquement des règles ››"
       ],
+      "if your data is leaked": [
+        "si vos données sont divulguées"
+      ],
       "Learn more": [
         "En savoir plus"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Activer ${ reason }"
       ]
     },
     "Medium": {
@@ -3556,6 +3624,17 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "A2F requise pour l'organisation"
+      ],
+      "SSO integration": [
+        "Authentification unique (SSO) intégrée"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } a été désactivé."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } a été activé."
       ]
     },
     "Option": {
@@ -3811,6 +3890,20 @@
       ],
       "Used on ${ url }": [
         "Utilisé sur ${ url }"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } et ${ remainingCount } autre fuite potentielle de données ont été détectées. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } et une autre fuite potentielle de données ont été détectées. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour consulter ces informations. ${ link }"
       ]
     },
     "sso": {
@@ -4146,6 +4239,9 @@
       "Inactive 2FA": [
         "A2F inactive"
       ],
+      "Information exposed in breach": [
+        "Informations divulguées lors de la fuite de données"
+      ],
       "Install extension": [
         "Installer l'extension"
       ],
@@ -4416,6 +4512,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Aujourd'hui"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Toutes les informations répertoriées ici n'ont pas été exposées à tous les utilisateurs."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "À moins d’être déchiffrés, les mots de passe chiffrés restent sécurisés même s’ils sont exposés."
       ]
     },
     "Validation": {

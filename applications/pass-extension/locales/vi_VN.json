@@ -23,6 +23,9 @@
       "Add domain": [
         "Thêm tên miền"
       ],
+      "Add field": [
+        "Thêm trường"
+      ],
       "Add mailbox": [
         "Thêm hộp thư"
       ],
@@ -40,6 +43,9 @@
       ],
       "Advanced options": [
         "Tùy chọn nâng cao"
+      ],
+      "Authenticate": [
+        "Xác thực"
       ],
       "Back": [
         "Quay lại"
@@ -70,6 +76,9 @@
       ],
       "Clear": [
         "Dọn sạch"
+      ],
+      "Clear search": [
+        "Xóa tìm kiếm"
       ],
       "Close": [
         "Đóng"
@@ -157,6 +166,9 @@
       ],
       "Delete alias": [
         "Xóa bí danh"
+      ],
+      "Delete all": [
+        "Xóa tất"
       ],
       "Delete it, I will never need it": [
         "Xoá nó, tôi sẽ không cần nó"
@@ -397,6 +409,12 @@
       ],
       "Resend invitation": [
         "Gửi lại lời mời"
+      ],
+      "Reset": [
+        "Đặt lại"
+      ],
+      "Restore": [
+        "Khôi phục"
       ],
       "Restore item": [
         "Khôi phục nội dung"
@@ -895,6 +913,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -909,9 +930,18 @@
       ],
       "Megabyte": [
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabytes"
       ]
     },
     "Info": {
+      "\"${ payload.itemName }\" item was dismissed": [
+        "Nội dung \"${ payload.itemName }\" đã bỏ qua"
+      ],
+      "\"${ payload.itemName }\" update was dismissed": [
+        "Cập nhật nội dung \"${ payload.itemName }\" đã bỏ qua"
+      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } đã chặn"
       ],
@@ -920,6 +950,9 @@
       ],
       "${ count } view": [
         "${ count } lượt xem"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } lượt xem"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } đã chuyển tiếp"
@@ -1074,6 +1107,9 @@
       "Congratulations, your access has been confirmed": [
         "Chúc mừng, truy cập của bạn đã được xác nhận"
       ],
+      "Copied to clipboard": [
+        "Đã sao chép vào bảng tạm"
+      ],
       "Creating alias...": [
         "Đang tạo bí danh..."
       ],
@@ -1100,6 +1136,12 @@
       ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Xem video YouTube của ${ PASS_APP_NAME }"
+      ],
+      "Drop file here to upload": [
+        "Thả tệp vào đây để tải lên"
+      ],
+      "Drop to import": [
+        "Thả để nhập"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Dễ dàng nhập khẩu mật khẩu hiện có của bạn vào ${ PASS_APP_NAME }."
@@ -1130,6 +1172,9 @@
       ],
       "Enter the address you want to email.": [
         "Nhập địa chỉ bạn muốn gửi email."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Nhập mã xác minh. Số ${ digit }."
       ],
       "Enter your extra password": [
         "Nhập mật khẩu phụ"
@@ -1470,6 +1515,9 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Mật khẩu cấp hai sẽ được yêu cầu để sử dụng ${ PASS_APP_NAME }. Nó hoạt động như là một mật khẩu khác ngoài mật khẩu ${ BRAND_NAME }của bạn."
       ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "${ totalIgnored } nội dung không thể nhập vào:"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Đoạn văn bản mà bạn cố gắng dán vào dài hơn mức tối đa là ${ maxLength } ký tự."
       ],
@@ -1629,6 +1677,9 @@
       "your domain": [
         "tên miền của bạn"
       ],
+      "Your files will be encrypted and then saved": [
+        "Các tệp của bạn sẽ được mã hoá và sau đó được lưu"
+      ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Tổ chức của bạn yêu cầu phải bảo mật truy cập của bạn tới ${ PASS_APP_NAME }"
       ]
@@ -1645,6 +1696,9 @@
       ],
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } từ"
+      ],
+      "${ count } item": [
+        "${ count } nội dung"
       ],
       "${ days } day": [
         "${ days } ngày"
@@ -1688,6 +1742,9 @@
       "15 minutes": [
         "15 phút"
       ],
+      "2 minutes": [
+        "2 phút"
+      ],
       "24 hours": [
         "24 giờ"
       ],
@@ -1720,6 +1777,9 @@
       ],
       "Account": [
         "Tài khoản"
+      ],
+      "Account Type": [
+        "Dạng Tài Khoản"
       ],
       "Address": [
         "Địa chỉ"
@@ -1768,6 +1828,9 @@
       ],
       "Autosuggest": [
         "Tự động đề xuất"
+      ],
+      "Backup password": [
+        "Mật khẩu sao lưu"
       ],
       "Birthdate": [
         "Ngày sinh"
@@ -1949,6 +2012,9 @@
       "Hide password": [
         "Ẩn mật khẩu"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "Identities": [
         "Các danh tính"
       ],
@@ -1982,6 +2048,9 @@
       "Invitations": [
         "Lời mời"
       ],
+      "IP Address": [
+        "Địa chỉ IP"
+      ],
       "Item ID": [
         "ID nội dung"
       ],
@@ -1990,6 +2059,12 @@
       ],
       "Key": [
         "Chìa khóa"
+      ],
+      "Key fingerprint": [
+        "Khoá Vân tay"
+      ],
+      "Key type": [
+        "Loại khóa"
       ],
       "Language": [
         "Ngôn ngữ"
@@ -2054,6 +2129,9 @@
       "Need help?": [
         "Cần giúp?"
       ],
+      "Network": [
+        "Mạng"
+      ],
       "New": [
         "Mới"
       ],
@@ -2093,6 +2171,9 @@
       "Other": [
         "Khác"
       ],
+      "Owner": [
+        "Chủ sở hữu"
+      ],
       "Passkey": [
         "Khóa truy cập"
       ],
@@ -2116,6 +2197,12 @@
       ],
       "Pause list": [
         "Danh sách tạm dừng"
+      ],
+      "Permissions": [
+        "Quyền"
+      ],
+      "Personal": [
+        "Nhà riêng"
       ],
       "Personal details": [
         "Thông tin cá nhân"
@@ -2204,6 +2291,9 @@
       "Selected": [
         "Đã chọn"
       ],
+      "Server": [
+        "Máy chủ"
+      ],
       "Settings": [
         "Cài đặt"
       ],
@@ -2228,6 +2318,9 @@
       "Special characters (!&*)": [
         "Ký tự đặc biệt (!&*)"
       ],
+      "SSN": [
+        "Số căn cước công dân"
+      ],
       "State or province": [
         "Tỉnh thành"
       ],
@@ -2251,6 +2344,9 @@
       ],
       "Text": [
         "Văn bản"
+      ],
+      "Theme": [
+        "Chủ đề"
       ],
       "Title": [
         "Tiêu đề"
@@ -2445,6 +2541,9 @@
       "Add note": [
         "Thêm ghi chú"
       ],
+      "Add password": [
+        "Thêm mật khẩu"
+      ],
       "Add SSID": [
         "Thêm SSID"
       ],
@@ -2513,8 +2612,31 @@
       ]
     },
     "sso": {
+      "If you didn't make this request, cancel it now.": [
+        "Nếu bạn không thực hiện yêu cầu này, hãy huỷ ngay bây giờ."
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Đã yêu cầu đăng nhập trên thiết bị khác. Có phải bạn không?"
+      ],
       "Sign-in requested on another device. Was it you? ": [
         "Đã yêu cầu đăng nhập trên thiết bị khác. Có phải bạn không? "
+      ],
+      "Yes, it was me": [
+        "Đúng, đó là tôi"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Bật"
+      ],
+      "Inactive": [
+        "Không hoạt động"
+      ],
+      "Signed out": [
+        "Đã đăng xuất"
+      ],
+      "Unknown": [
+        "Không biết"
       ]
     },
     "Success": {
@@ -2529,6 +2651,9 @@
       ],
       "Mailbox successfully verified": [
         "Hộp thư đã được xác minh thành công"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Kho lưu trữ không thể có hơn ${ targetMaxMembers } thành viên."
       ]
     },
     "Theme": {
@@ -2545,6 +2670,9 @@
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Cài đặt ${ PASS_APP_NAME }"
+      ],
+      "Actions": [
+        "Các thao tác"
       ],
       "Add mailbox": [
         "Thêm hộp thư"
@@ -2638,6 +2766,9 @@
       ],
       "Grant permissions": [
         "Cấp quyền"
+      ],
+      "Hide my email": [
+        "Hide my email"
       ],
       "History": [
         "Lịch sử"
@@ -2816,6 +2947,11 @@
       ],
       "URL is invalid": [
         "URL không hợp lệ"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Di chuyển nội dung tới"
       ]
     },
     "Warning": {

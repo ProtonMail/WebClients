@@ -44,6 +44,9 @@
       "Apply": [
         "Aplicare"
       ],
+      "Bold": [
+        "Îngroșat"
+      ],
       "Bulleted List": [
         "Listă cu buline"
       ],
@@ -73,6 +76,9 @@
       ],
       "Code block": [
         "Bloc de cod"
+      ],
+      "Color": [
+        "Culoare"
       ],
       "Colour": [
         "Culoare"
@@ -131,11 +137,17 @@
       "Insert left": [
         "Inserare la stânga"
       ],
+      "Insert link": [
+        "Inserare legătură web"
+      ],
       "Insert right": [
         "Inserare la dreapta"
       ],
       "Insert table": [
         "Inserare tabel"
+      ],
+      "Italic": [
+        "Înclinat"
       ],
       "Justify align": [
         "Aliniere stânga-dreapta"
@@ -157,6 +169,9 @@
       ],
       "Outdent": [
         "Anulare indentare"
+      ],
+      "Quote": [
+        "Citat"
       ],
       "Re-open": [
         "Redeschidere"
@@ -206,16 +221,40 @@
       "Table options": [
         "Opțiuni tabel"
       ],
+      "Underline": [
+        "Subliniere"
+      ],
       "Undo": [
         "Anulare"
       ]
     },
     "color": {
+      "apple": [
+        "măr"
+      ],
+      "azureish white": [
+        "alb azuric"
+      ],
+      "black": [
+        "neagră"
+      ],
+      "blanched almond": [
+        "migdale decolorate"
+      ],
+      "blue-gray": [
+        "albastru-gri"
+      ],
+      "caramel": [
+        "caramel"
+      ],
       "carrot": [
         "morcov"
       ],
       "cerise": [
         "cireșiu"
+      ],
+      "cinnabar": [
+        "cinabru"
       ],
       "cobalt": [
         "cobalt"
@@ -223,17 +262,62 @@
       "copper": [
         "cupru"
       ],
+      "cyan-blue azure": [
+        "azur cian-albastru"
+      ],
+      "dandelion": [
+        "galben păpădie"
+      ],
+      "dark cerulean": [
+        "albastru cenușiu închis"
+      ],
+      "dark midnight blue": [
+        "albastru închis nocturn"
+      ],
+      "dim gray": [
+        "gri închis"
+      ],
       "enzian": [
         "gențiană"
       ],
       "fern": [
         "ferigă"
       ],
+      "field drab": [
+        "cafeniu închis"
+      ],
       "forest": [
         "pădure"
       ],
+      "gainsboro": [
+        "gri deschis"
+      ],
       "gray": [
         "gri"
+      ],
+      "japanese laurel": [
+        "laur japonez"
+      ],
+      "kiwi": [
+        "verde kiwi"
+      ],
+      "lemon yellow": [
+        "galben lămâie"
+      ],
+      "light carmine pink": [
+        "roz carmin deschis"
+      ],
+      "light moss green": [
+        "verzui cenușiu deschis"
+      ],
+      "light red": [
+        "roșu deschis"
+      ],
+      "maize": [
+        "porumb"
+      ],
+      "mughal green": [
+        "verde închis"
       ],
       "ocean": [
         "ocean"
@@ -241,8 +325,32 @@
       "olive": [
         "măsliniu"
       ],
+      "outer space": [
+        "spațiu cosmic"
+      ],
       "pacific": [
         "pacific"
+      ],
+      "palatinate blue": [
+        "albastru palatinat"
+      ],
+      "pale cerulean": [
+        "albastru cenusiu"
+      ],
+      "pastel gray": [
+        "verzui deschis"
+      ],
+      "persian plum": [
+        "prune persane"
+      ],
+      "persian red": [
+        "roșu persan"
+      ],
+      "philippine gray": [
+        "gri filipinez"
+      ],
+      "philippine silver": [
+        "argintiu filipinez"
       ],
       "pickle": [
         "murături"
@@ -252,6 +360,9 @@
       ],
       "pink": [
         "roz"
+      ],
+      "pistachio": [
+        "verde fistic"
       ],
       "plum": [
         "prună"
@@ -265,8 +376,14 @@
       "reef": [
         "recif"
       ],
+      "ruddy pink": [
+        "roz ruddy"
+      ],
       "sahara": [
         "Sahara"
+      ],
+      "satin sheen gold": [
+        "maroniu deschis"
       ],
       "slateblue": [
         "ardezie albastră"
@@ -276,6 +393,12 @@
       ],
       "strawberry": [
         "căpșună"
+      ],
+      "vivid auburn": [
+        "castaniu viu"
+      ],
+      "white": [
+        "alb"
       ]
     },
     "Confirm": {
@@ -383,6 +506,9 @@
       "Comments": [
         "Comentarii"
       ],
+      "Copied to clipboard": [
+        "Copiat în memorie."
+      ],
       "Editing": [
         "Se editează"
       ],
@@ -421,6 +547,9 @@
       ],
       "Suggesting": [
         "Sugerare"
+      ],
+      "Text color": [
+        "Culoare text"
       ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Conținutul pe care încercați să-l inserați este prea mare pentru a fi lipit deodată. Încercați din nou lipind bucăți mai mici."
@@ -514,6 +643,9 @@
       "Insert table row": [
         "Inserare rând tabel"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Combinații taste: ${ shortcut }"
+      ],
       "Link text": [
         "Text legătură web"
       ],
@@ -548,6 +680,9 @@
       ],
       "Reply...": [
         "Răspuns..."
+      ],
+      "Text": [
+        "text"
       ]
     },
     "Title": {

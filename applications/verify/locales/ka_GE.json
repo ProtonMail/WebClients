@@ -83,6 +83,11 @@
         "გამოიყენეთ თქვენი საკუთარი ელფოსტის დომენი"
       ]
     },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "ღრუბლოვანი საცავი და გაზიარება დიდი ფაილებისთვის"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "აფხაზეთი"
@@ -914,6 +919,9 @@
       ],
       "Something went wrong": [
         "რაღაც არასწორად წავიდა"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "ეს გვერდი ვერ ჩავტვირთეთ. განაახლეთ ეს გვერდი ან შეამოწმეთ თქვენი ინტერნეტკავშირი."
       ]
     },
     "fido2: Error": {
@@ -947,6 +955,9 @@
       ],
       "MB": [
         "მბ"
+      ],
+      "TB": [
+        "ტბ"
       ]
     },
     "file size format, long": {
@@ -965,6 +976,10 @@
       "Megabyte": [
         "მეგაბაიტი",
         "მეგაბაიტი"
+      ],
+      "Terabyte": [
+        "ტერაბაიტი",
+        "ტერაბაიტი"
       ]
     },
     "Font face option": {
@@ -1022,6 +1037,9 @@
       "Country code": [
         "ქვეყნის კოდი"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "ერთზე მეტი უფასო ანგარიშის შექმნა თქვენი ${ termsLink }-სთვის მხარდაჭერილი არაა."
+      ],
       "Each code can only be used once": [
         "თითოეული კოდის გამოყენება, მხოლოდ, ერთხელ შეგიძლიათ"
       ],
@@ -1043,8 +1061,14 @@
       "Enter your own password (as trusted contact).": [
         "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც სანდო კონტაქტმა)."
       ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "დამატებითი ინფორმაციისთვის და შეზღუდვების მოსაცილებლად შედით ბმულზე ${ mailLink }."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "თუ გექმნებათ ანგარიშის შექმნის პრობლემა, გამოითხოვეთ მოსაწვევი და ჩვენ 1 სამუშაო დღეში გიპასუხებთ."
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "თუ გჯერათ, რომ რამე შეგვეშალა, დაგვიკავშირდით ბმულზე ${ contactLink }"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "თუ ვერ იპოვეთ ელფოსტა თქვენს საფოსტო ყუთში, გადაამოწმეთ სპამის საქაღალდეც."
@@ -1069,6 +1093,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "სპამისაგან თავდასაცავად გთხოვთ, დაამტკიცოთ, რომ ადამიანი ხართ."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "შეზღუდვების მოსაცილებლად, შეგიძლიათ, ტარიფი ფასიანზე ასწიოთ."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "ჩვენ გვაქვს გეგმები, რომლებიც აწყობილია ზუსტად თქვენნაირი მომხმარებლებისთვის, ვისაც ერთზე მეტი ელფოსტის მისამართი სჭირდება."
       ],
       "We'll send a new verification code to ${ strong }": [
         "შემოწმების ახალი კოდი გაიგზავნება ${ strong }-ზე"
@@ -1131,16 +1161,27 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "დაგვიკავშირდით"
+      ],
       "Learn more": [
         "გაიგეთ მეტი"
       ],
       "Request an invite": [
         "მოსაწვევის მოთხოვნა"
+      ],
+      "terms of service": [
+        "პირობები და სერვერისები"
       ]
     },
     "new_plans": {
       "Keep your inbox organized with folders": [
         "დაალაგეთ თქვენი საფოსტო ყუთი საქაღალდეების გამოყენებით"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "${ planTitle }-ის მიღება"
       ]
     },
     "new_plans: feature": {
@@ -1179,11 +1220,48 @@
         "${ n }-მდე შეტყობინება დღეში",
         "${ n }-მდე შეტყობინება დღეში"
       ],
+      "${ options }-day file version history": [
+        "${ options }-დღიანი ფაილის ვერსიის ისტორია",
+        "${ options }-დღიანი ფაილის ვერსიის ისტორია"
+      ],
       "${ size } attachment size": [
         "${ size } მიმაგრებული ფაილი"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } დაცული საცავი თითოეული მომხმარებლისთვის"
+      ],
       "${ size } storage": [
         "${ size } საცავი"
+      ],
+      "${ size } storage per user": [
+        "${ size }/მომხმარებელი"
+      ],
+      "1 TB secure storage": [
+        "1 ტბ დაცული საცავი"
+      ],
+      "10 email addresses/aliases": [
+        "10 ელ ფოსტა/ფსევდონიმი"
+      ],
+      "10 more premium features": [
+        "და კიდევ 10 ფასიანი ფუნქცია"
+      ],
+      "10-year file version history": [
+        "10-წლიანი ფაილის ვერსიის ისტორია"
+      ],
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "200 GB of storage": [
+        "200 გბ საცავი"
+      ],
+      "Advanced account protection": [
+        "დამატებითი ანგარიშის დაცვის პროგრამა"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "${ BRAND_NAME }-ის ყველა პროდუქტი და ფუნქცია"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "ყველა ${ BRAND_NAME }-ის სერვისი (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "Auto-delete Spam and Trash": [
         "სპამისა და ნაგვის ყუთის ავტომატური წაშლა"
@@ -1200,11 +1278,17 @@
       "Catch-all": [
         "ყველას დაჭერა"
       ],
+      "Collaborate and share large files": [
+        "იმუშავეთ ერთად და გააზიარეთ დიდი ფაილები"
+      ],
       "Contact groups": [
         "კონტაქტის ჯგუფები"
       ],
       "Contact groups management": [
         "კონტაქტების ჯგუფების მართვა"
+      ],
+      "Custom and secure business email": [
+        "მორგებული და დაცული საქმიანი ელფოსტა"
       ],
       "Custom email domains": [
         "თქვენი ელფოსტის დომენები"
@@ -1227,17 +1311,53 @@
       "End-to-end encryption": [
         "გამჭოლი შიფრაცია"
       ],
+      "Generate emails with a prompt": [
+        "ელფოსტების გენერაცია მოთხოვნით"
+      ],
       "HTML signatures": [
         "HTML ხელმოწერები"
+      ],
+      "Online document editor": [
+        "დოკუმენტების რედაქტორი ინტერნეტში"
+      ],
+      "Password health": [
+        "პაროლის სიძლიერე"
       ],
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
       ],
+      "Private photo backup": [
+        "კონფიდენციალური სურათების მარქაფი"
+      ],
+      "Proofread and refine your emails": [
+        "თქვენი ელფოსტების კორექტურა და ოპტიმიზაცია"
+      ],
+      "Quickly craft replies": [
+        "უცებ შექმენით პასუხები"
+      ],
+      "Recover previous file versions": [
+        "წინა ფაილის ვერსიების აღდგენა"
+      ],
+      "Save time emailing": [
+        "დაზოგეთ ელფოსტის წერის დრო"
+      ],
       "Schedule and snooze emails for any time": [
         "დაგეგმეთ და ჩააჩუმეთ ელფოსტები სასურველი დროით"
       ],
+      "Secure file storage and sharing": [
+        "დაცული ფაილების საცავი და გაზიარება"
+      ],
+      "Share files with no size limit": [
+        "გააზიარეთ ფაილები ზომის შეზღუდვის გარეშე"
+      ],
       "SMTP submission": [
         "SMTP-ის მორგება"
+      ],
+      "Support for up to 2 users": [
+        "მხარდაჭერა 2 მომხმარებლამდე"
+      ],
+      "Sync and backup all your files across devices": [
+        "დაასინქრონეთ და დაამარქაფეთ ყველა თქვენი ფაილი ყველა თქვენს მოწყობილობაზე"
       ],
       "Unlimited filters": [
         "ფილტრების ულიმიტო რაოდენობა"
@@ -1259,11 +1379,20 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 ელფოსტის ხელით მითითებული დომენი"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "შექმენით მრავალი ელექტრონული ფოსტის მისამართი თქვენი ონლაინ ვინაობისთვის, მაგ., JohnShopper@p${ domain } სავაჭრო ანგარიშებისთვის, JohnNews@${ domain2 } ახალი ამბების გამოწერებისთვის"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "საცავის სივრცე გაზიარებულია ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } და ${ DRIVE_APP_NAME } შორის"
       ]
     },
     "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს ავტომატურ სინქრონზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
+      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: დაიცავით თქვენი ელფოსტა გამჭოლი შიფრაციით. შეიცავს მომხმარებლის დომენების მხარდაჭერას, 15 ელფოსტის მისამართს, განუსაზღვრელ hide-my-email-ის ფსევდონიმს და სხვ."
       ],
@@ -1361,6 +1490,10 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "გაზარდეთ თქვენი საცავი ${ bundleStorage }-მდე"
+      ],
+      "Support for ${ n } custom email domain": [
+        "${ n } მომხმარებლის დომენის მხარდაჭერა",
+        "${ n } მომხმარებლის დომენის მხარდაჭერა"
       ]
     },
     "Placeholder": {
@@ -1409,6 +1542,9 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "ანგარიში შეზღუდულია"
+      ],
       "Account temporarily locked": [
         "ანგარიში დროებით დაბლოკილია"
       ],

@@ -92,11 +92,17 @@
       "Continue": [
         "ادامه"
       ],
+      "Copy address": [
+        "روگرفت نشانی"
+      ],
       "Copy password": [
         "کپی گذرواژه"
       ],
       "Create": [
         "ایجاد"
+      ],
+      "Create folder": [
+        "ایجاد پوشه"
       ],
       "Current plan": [
         "اشتراک کنونی"
@@ -194,11 +200,20 @@
       "Fit to window": [
         "متناسب کردن با پنجره"
       ],
+      "Forgot password?": [
+        "فراموشی رمز عبور?"
+      ],
+      "Get ${ planOrAppName }": [
+        "دریافت ${ planOrAppName }"
+      ],
       "Get a new encrypted email address": [
         "دریافت یک آدرس ایمیل رمزگذاری شده جدید"
       ],
       "Get verification code": [
         "دریافت کد تایید"
+      ],
+      "Go to ${ planOrAppName }": [
+        "برو به ${ planOrAppName }"
       ],
       "Go to label": [
         "رفتن به برچسب"
@@ -254,8 +269,14 @@
       "Next month": [
         "ماه بعد"
       ],
+      "Next page": [
+        "صفحه بعد"
+      ],
       "OK": [
         "تایید"
+      ],
+      "Open": [
+        "بازگشایی"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "بازگشایی تنظیمات ${ CALENDAR_APP_NAME }"
@@ -280,6 +301,9 @@
       ],
       "Previous month": [
         "ماه پیشین"
+      ],
+      "Previous page": [
+        "صفحه قبل"
       ],
       "Recover data": [
         "بازیابی داده‌"
@@ -323,6 +347,9 @@
       "Resend code": [
         "ارسال دوباره کد"
       ],
+      "Reset": [
+        "تنظیم مجدد"
+      ],
       "Reset credentials": [
         "بازنشانی اعتبارنامه‌ها"
       ],
@@ -362,6 +389,12 @@
       "See plan features": [
         "مشاهده ویژگی های طرح"
       ],
+      "Select ${ planOrAppName }": [
+        "انتخاب ${ planOrAppName }"
+      ],
+      "Select country": [
+        "انتخاب کشور"
+      ],
       "Select file": [
         "انتخاب فایل"
       ],
@@ -379,6 +412,9 @@
       ],
       "Set new password": [
         "تنظیم گذرواژه جدید"
+      ],
+      "Settings": [
+        "تنظیمات"
       ],
       "Share": [
         "هم‌رسانی"
@@ -430,6 +466,9 @@
       ],
       "Switch account": [
         "تغییر حساب"
+      ],
+      "Switch or add account": [
+        "تغییر یا افزودن حساب"
       ],
       "Take a tour": [
         "نمایش آموزش"
@@ -577,6 +616,44 @@
         "رمزگذاری شده"
       ]
     },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "۱۵ گیگابایت فضای ذخیره‌سازی"
+      ],
+      "200 GB storage": [
+        "۲۰۰ گیگابایت فضای ذخیره‌سازی"
+      ],
+      "Protect up to 10 devices": [
+        "محافظت از حداکثر ۱۰ تا دستگاه"
+      ],
+      "Unlimited folders, labels and filters": [
+        "پوشه‌ها، برچسب‌ها و فیلترهای نامحدود"
+      ],
+      "years": [
+        "سال"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } ماه",
+        "${ n } ماه"
+      ],
+      "/ month": [
+        "/ ماه"
+      ],
+      "12 months": [
+        "12 ماه"
+      ],
+      "15 months": [
+        "15 ماه"
+      ],
+      "24 months": [
+        "24 ماه"
+      ],
+      "30 months": [
+        "30 ماه"
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "غیرفعال"
@@ -594,6 +671,45 @@
       ],
       "Close": [
         "بستن"
+      ]
+    },
+    "bf2023: Deal details": {
+      "1 user": [
+        "۱ کاربر"
+      ],
+      "6 users": [
+        "6 کاربر"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "ضمانت ۳۰ روزهٔ بازگشت پول"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } فضای ذخیره سازی"
+      ],
+      "1 user": [
+        "۱ کاربر"
+      ],
+      "10 email addresses": [
+        "۱۰ نشانی ایمیل"
+      ],
+      "2 users": [
+        "2 کاربر"
+      ],
+      "6 users": [
+        "6 کاربر"
+      ],
+      "Ad-blocker and malware protection": [
+        "محدودسازی تبلیغات و محافظت در برابر بدافزارها"
+      ],
+      "Unlimited folders, labels and filters": [
+        "پوشه‌ها، برچسب‌ها و فیلترهای نامحدود"
+      ],
+      "VPN Accelerator": [
+        "شتاب دهنده VPN"
       ]
     },
     "Billing cycle": {
@@ -695,6 +811,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "بستن"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "ادامه با استفاده از ${ MAIL_APP_NAME }."
       ],
@@ -704,8 +823,19 @@
       "Create label": [
         "ایجاد برچسب"
       ],
+      "Maybe later": [
+        "شاید بعدا"
+      ],
       "Take a tour": [
         "نمایش آموزش"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } فضای ذخیره سازی"
+      ],
+      "Save ${ upsellSavings }": [
+        "${ upsellSavings } پس‌انداز کنید"
       ]
     },
     "Checkout row": {
@@ -1027,6 +1157,9 @@
       ],
       "Falkland Islands": [
         "جزایر فالکلند"
+      ],
+      "Falkland Islands (Malvinas)": [
+        "جزایر فالکلند (مالویناس)"
       ],
       "Faroe Islands": [
         "جزایر فارو"
@@ -1469,6 +1602,9 @@
       "Syria": [
         "سوریه"
       ],
+      "Syrian Arab Republic": [
+        "جمهوری عربی سوریه"
+      ],
       "Taiwan": [
         "تایوان"
       ],
@@ -1638,6 +1774,9 @@
       "${ name } failed to move to spam list": [
         "${ name } موفق نشد تا به لیست هرزنامه انتقال پیدا کند"
       ],
+      "${ name } moved to allow list": [
+        "${ name } به فهرست مجاز منتقل شد."
+      ],
       "${ name } moved to spam list": [
         "${ name } به لیست هرزنامه نقل مکان داده شد"
       ],
@@ -1662,6 +1801,11 @@
         "نیاز موقت، ممکن است در آینده بازگردد"
       ]
     },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "به پیشرفت ما کمک کنید"
+      ]
+    },
     "Download": {
       "Android": [
         "اندروید"
@@ -1677,6 +1821,11 @@
       ],
       "Windows": [
         "ویندوز"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Priority support": [
+        "اولویت پشتیبانی"
       ]
     },
     "Email spam notification": {
@@ -1710,6 +1859,9 @@
       ],
       "Amount above the maximum.": [
         "مبلغ بالاتر از حداکثر است."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "مبلغ کمتر از حداقل است (${ minimumAmount })."
       ],
       "Authentication canceled.": [
         "احراز هویت لغو شود."
@@ -1819,6 +1971,9 @@
       "Please generate keys before you try to change your password": [
         "لطفا قبل از تلاش برای تغییر رمز خود کلیدها را ایجاد کنید"
       ],
+      "Please select a country": [
+        "لطفاً کشور دیگری را انتخاب کنید"
+      ],
       "Please set a recovery email first": [
         "لطفا ابتدا یک ایمیل بازیابی تنظیم کنید"
       ],
@@ -1842,6 +1997,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "خطایی رخ داد، لطفاً برای ادامه ${ refresh } کنید. اگر این پیغام خطا را هنوز می‌بینید لطفاً با ${ supportTeam }. ما تماس بگیرید."
+      ],
+      "Something went wrong. Please try again.": [
+        "مشکلی پیش آمده است. لطفا دوباره امتحان کنید."
       ],
       "Tab closed": [
         "زبانه بسته شد"
@@ -1918,12 +2076,23 @@
         "هیچ تصویری انتخاب نشده است"
       ]
     },
+    "familyOffer_2023:Action": {
+      "Got it": [
+        "متوجه شدم"
+      ]
+    },
     "familyOffer_2023:Error": {
       "Organization not recognized. Try again.": [
         "شازمان شناسایی نشد. دوباره تلاش کنید."
       ]
     },
     "familyOffer_2023:Family plan": {
+      "customer support": [
+        "پشتیبانی مشتری"
+      ],
+      "Manage addresses": [
+        "مدیریت نشانی‌ها"
+      ],
       "Pending": [
         "در انتظار"
       ]
@@ -1975,6 +2144,11 @@
       ],
       "Torrenting support (P2P)": [
         "پشتیبانی تورنت (P2P)"
+      ]
+    },
+    "Features": {
+      "Ad-blocker and malware protection": [
+        "محدودسازی تبلیغات و محافظت در برابر بدافزارها"
       ]
     },
     "fido2: Action": {
@@ -2036,6 +2210,10 @@
       "Megabyte": [
         "مگابایت",
         "مگابایت"
+      ],
+      "Terabyte": [
+        "ترابایت",
+        "ترابایت"
       ]
     },
     "Filter notification": {
@@ -2052,6 +2230,11 @@
       ],
       "Spam:": [
         "هرزنامه:"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "پیش‌فرض سیستم"
       ]
     },
     "Footer": {
@@ -2118,6 +2301,9 @@
       "Organization key fingerprint": [
         "اثر انگشت کلید سازمان"
       ],
+      "Payment details": [
+        "جزئیات پرداخت"
+      ],
       "Select your pricing plan": [
         "طرح مورد نظر خود را انتخاب کنید"
       ],
@@ -2183,6 +2369,10 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } پیشنهاد یافت شد، از صفحه کلید برای پیمایش استفاده کنید.",
+        "${ itemsCount } پیشنهاد یافت شد، از صفحه کلید برای پیمایش استفاده کنید."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "پس از درج، از کلیدهای بالا و پایین برای دسترسی و مرور پیشنهادها استفاده کنید. برای تایید انتخاب خود Enter را فشار داده یا برای بستن جعبه پیشنهادات Escape را فشار دهید."
       ]
@@ -2337,6 +2527,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "روی \"درخواست کد جدید\" کلیک کنید تا یک کد تایید جدید به ${ strong } ارسال شود. اگر این شماره تلفن نادرست است، جهت اصلاح آن روی \"ویرایش\" کلیک نمایید."
       ],
+      "Copied to clipboard": [
+        "به حافظه موقت کپی شد"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "حساب کاربری‌های فرعی ایجاد و مدیریت کنید و به آنها در دامنه سفارشی خود رایانشانی اختصاص دهید."
       ],
@@ -2440,6 +2633,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "شماره تلفن بازیابی خود را وارد کنید و ما نام کاربری یا رایانشانی شما را برایتان ارسال خواهیم کرد."
       ],
+      "Everything in ${ planOrAppName }": [
+        "همه چیز موجود در ${ planOrAppName }"
+      ],
       "Expired": [
         "منقضی شد"
       ],
@@ -2451,6 +2647,9 @@
       ],
       "Get ${ upsellPlanName }": [
         "دریافت ${ upsellPlanName }"
+      ],
+      "Got it": [
+        "متوجه شدم"
       ],
       "Groups": [
         "گروه‌ها"
@@ -2664,6 +2863,9 @@
       ],
       "Session timed out": [
         "زمان نشست پایان یافت"
+      ],
+      "Set up your organization": [
+        "سازمان خود را راه اندازی کنید"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "از آنجا که شما یک کاربر وفادار هستید، حساب شما امکانات اضافی فعال شده‌ای دارد."
@@ -2902,6 +3104,9 @@
       "Your email will only be used for this one-time verification.": [
         "از رایانامه شما فقط برای این تایید یکبار مصرف استفاده خواهد شد."
       ],
+      "Your files will be encrypted and then saved": [
+        "فایل‌های شما رمزگذاری شده و سپس ذخیره می‌شوند"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "اطلاعات شما پیش ما محفوظ است. ما فقط وقتی با شما تماس می‌گیریم که برای ارائه خدمات نیاز باشد."
       ],
@@ -2913,6 +3118,11 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "از شماره تلفن شما فقط برای این تایید یکبار مصرف استفاده خواهد شد."
+      ]
+    },
+    "info": {
+      "Optional": [
+        "اختیاری"
       ]
     },
     "Info for domain modal": {
@@ -3409,6 +3619,9 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "بلی، من می‌خواهم که برای همیشه این حساب و همه داده‌هایش را حذف کنم."
       ],
+      "Your password (admin)": [
+        "گذرواژه شما (مدیر)"
+      ],
       "ZIP code": [
         "کد پستی"
       ]
@@ -3416,6 +3629,16 @@
     "label": {
       "Recovery phone number": [
         "شماره تلفن بازیابی"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "از"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "به"
       ]
     },
     "Label for adding a new custom domain": {
@@ -3451,6 +3674,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "کد پستی"
+      ],
       "ZIP code": [
         "کد پستی"
       ]
@@ -3498,6 +3724,9 @@
       ],
       "Forgot username?": [
         "نام کاربریتان را فراموش کرده‌اید؟"
+      ],
+      "Groups": [
+        "گروه‌ها"
       ],
       "Help": [
         "راهنما"
@@ -3557,6 +3786,69 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "طرح خود را ارتقا دهید تا از گفتگو با پشتیبانی و سایر قابلیت های ویژه بهره‌مند شوید، یا ازفرم پشتیبانی رایگان ما برای گزارش مشکل خود استفاده کنید."
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "اطلاعات بیشتر"
+      ]
+    },
+    "Log event": {
+      "Account password change": [
+        "تغییر گذرواژه حساب"
+      ],
+      "Authentication failure (second factor failed)": [
+        "احراز هویت موفق نبود (دومین مرحله ناموفق بود)"
+      ],
+      "Authentication failure (wrong password)": [
+        "احراز هویت موفق نبود (گذرواژه اشتباه)"
+      ],
+      "Authentication success": [
+        "احراز هویت موفقیت‌آمیز بود"
+      ],
+      "Mailbox password change": [
+        "تغییر گذرواژه صندوق‌‌نامه"
+      ],
+      "Password reset": [
+        "بازنشانی گذرواژه"
+      ],
+      "Second factor disabled (authenticator app)": [
+        "عامل دوم غیرفعال است (برنامه احراز هویت)"
+      ],
+      "Second factor disabled (security key)": [
+        "عامل دوم غیرفعال است (کلید امنیتی)"
+      ],
+      "Second factor enabled (authenticator app)": [
+        "عامل دوم فعال است (برنامه احراز هویت)"
+      ],
+      "Sign in failure (second factor failed)": [
+        "ورود به سیستم انجام نشد (عامل دوم ناموفق بود)"
+      ],
+      "Sign in failure (wrong password)": [
+        "ورود به سیستم انجام نشد (گذرواژه اشتباه است)"
+      ],
+      "Sign in success": [
+        "ورود موفقیت‌آمیز بود"
+      ],
+      "Sign in success (awaiting second factor)": [
+        "ورود به سیستم موفق‌آمیز بود (در انتظار عامل دوم)"
+      ],
+      "Sign out": [
+        "خروج از حساب"
+      ],
+      "Two password mode disabled": [
+        "حالت دو گذرواژه غیرفعال است"
+      ],
+      "Two password mode enabled": [
+        "حالت دو گذرواژه فعال است"
+      ],
+      "Unknown": [
+        "ناشناخته"
+      ]
+    },
+    "mail_signup_2024: Info": {
+      "for ${ price }": [
+        "برای ${ price }"
       ]
     },
     "Member action": {
@@ -3677,6 +3969,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } و ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } تقویم",
         "${ n } تقویم"
@@ -3718,6 +4013,9 @@
       ],
       "${ size } storage": [
         "${ size } ذخیره سازی"
+      ],
+      "${ size } storage per user": [
+        "${ size } فضای ذخیره‌سازی برای هر کاربر"
       ],
       "1 user": [
         "۱ کاربر"
@@ -3810,6 +4108,9 @@
       "Password-protected Emails": [
         "ایمیل محافظت شده با رمزعبور"
       ],
+      "Phone support (20+ users)": [
+        "پشتیبانی تلفنی (20+ کاربر)"
+      ],
       "Priority email support": [
         "اولویت پشتیبانی ایمیلی"
       ],
@@ -3834,6 +4135,9 @@
       "Strict no-logs policy": [
         "سیاست سخت‌گیرانه عدم ثبت رویدادها"
       ],
+      "Tor over VPN": [
+        "Tor روی VPN"
+      ],
       "Two-factor authentication": [
         "احراز هویت دو مرحله‌ای"
       ],
@@ -3852,6 +4156,9 @@
       "Unlimited labels": [
         "بی نهایت برچسب"
       ],
+      "Unlimited logins and notes": [
+        "ورودها و یادداشت‌های نامحدود"
+      ],
       "Unlimited messages per day": [
         "پیام‌های نامحدود در روز"
       ],
@@ -3866,6 +4173,12 @@
       ],
       "User session management": [
         "مدیریت نشست کاربر"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ users } user": [
+        "${ users } کاربر",
+        "${ users } کاربران"
       ]
     },
     "new_plans: heading": {
@@ -4041,6 +4354,9 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "برای کاربران رمزعبور کاربری و تایید دو مرحله ای را بازیابی کنید"
       ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "با تنها یک کلیک ترافیک اینترنت خود را از طریق شبکه Tor عبور دهید"
+      ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "جزئیات مخاطبین خود را مانند شماره تلفن، آدرس، روز تولد و یادداشت های شخصی را بطور امن ذخیره کنید. رمزگذاری دسترسی صفر تضمین میکند که ${ BRAND_NAME } هیچوقت به آنها دسترسی نداشته باشد."
       ],
@@ -4101,6 +4417,10 @@
       ],
       "Browser extension": [
         "افزونه مرورگر"
+      ],
+      "Support for ${ n } custom email domain": [
+        "پشتیبانی از ${ n } دامنه ایمیل سفارشی",
+        "پشتیبانی از ${ n } دامنه ایمیل سفارشی"
       ]
     },
     "news": {
@@ -4115,6 +4435,12 @@
       ],
       "1-2 emails per month": [
         "1-2 رایانامه در هر ماه"
+      ],
+      "Daily email notifications": [
+        "اعلان‌های رایانامه‌ای روزانه"
+      ],
+      "Email subscriptions": [
+        "اشتراک‌های رایانامه"
       ]
     },
     "Notification": {
@@ -4128,9 +4454,33 @@
         "تعداد درخواست‌های API اخیر بیش از حد زیاد است"
       ]
     },
+    "Offer": {
+      "Maybe later": [
+        "شاید بعدا"
+      ],
+      "Save": [
+        "ذخیره"
+      ]
+    },
+    "Offer feature": {
+      "Email addresses": [
+        "رایانشانی‌ها"
+      ],
+      "Free": [
+        "رایگان"
+      ],
+      "Storage": [
+        "حافظه"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "خوش آمدید به ${ appName }"
+      ]
+    },
+    "Onboarding Trial": {
+      "Continue": [
+        "ادامه"
       ]
     },
     "Option": {
@@ -4201,6 +4551,9 @@
       "CVC": [
         "کد امنیتی"
       ],
+      "Got it": [
+        "متوجه شدم"
+      ],
       "MM/YY": [
         "ماه/سال"
       ]
@@ -4214,6 +4567,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "کارت شما پذیرفته نشد. لطفا کارت دیگری را امتحان کنید یا با بانک خود تماس بگیرید تا مبلغ را اجازه دهند."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "رایگان"
       ]
     },
     "Placeholder": {
@@ -4238,6 +4596,9 @@
       "E.g., ": [
         "به‌عنوان مثال., "
       ],
+      "End date": [
+        "تاریخ پایان"
+      ],
       "example@domain.com": [
         "example@domain.com"
       ],
@@ -4250,6 +4611,9 @@
       "Group name": [
         "نام گروه"
       ],
+      "Organization name": [
+        "نام سازمان"
+      ],
       "Other": [
         "سایر موارد"
       ],
@@ -4258,6 +4622,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "لطفا مشکل را شرح دهید و هر گونه پیغام خطا را ذکر کنید"
+      ],
+      "Postal code": [
+        "کد پستی"
       ],
       "Search": [
         "جستجو"
@@ -4270,6 +4637,12 @@
       ],
       "Select a reason": [
         "دلیلی انتخاب کنید"
+      ],
+      "Start date": [
+        "تاریخ شروع"
+      ],
+      "ZIP code": [
+        "کد پستی"
       ]
     },
     "placeholder": {
@@ -4288,9 +4661,28 @@
         "${ cycle } ماه"
       ]
     },
+    "plus_block": {
+      "Upgrade to ${ upsellPlanTitle }": [
+        "ارتقا به ${ upsellPlanTitle }"
+      ]
+    },
     "Price": {
       "Free": [
         "رایگان"
+      ]
+    },
+    "Protection type": {
+      "Blocked": [
+        "مسدود شده"
+      ],
+      "CAPTCHA": [
+        "کپچا"
+      ],
+      "Ok": [
+        "تایید"
+      ],
+      "Unknown": [
+        "ناشناخته"
       ]
     },
     "Recovery Email": {
@@ -4361,6 +4753,51 @@
         "به دلیل تغییر گذرواژه، امتیازات مدیر سازمان شما محدود شده است. اقدامات زیر دیگر مجاز نیستند:"
       ]
     },
+    "retention_policy_2025_Action": {
+      "Cancel": [
+        "لغو"
+      ],
+      "Confirm": [
+        "تایید"
+      ],
+      "Delete": [
+        "حذف"
+      ],
+      "Edit": [
+        "ویرایش"
+      ],
+      "Save changes": [
+        "ذخیره‌ی تغییرات"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ n } day": [
+        "${ n } روز",
+        "${ n } روز"
+      ],
+      "${ remainingCount } more": [
+        "${ remainingCount } دیگر"
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "day": [
+        "روز",
+        "روز"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Group": [
+        "گروه"
+      ],
+      "User": [
+        "کاربر"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "عملیات"
+      ]
+    },
     "Role": {
       "Admin": [
         "مدیر"
@@ -4411,11 +4848,53 @@
     "session_recovery:available:action": {
       "Cancel password reset": [
         "لغو بازنشانی رمزعبور"
+      ],
+      "Reset password": [
+        "بازیابی رمزعبور"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Please generate keys before you try to change your password": [
+        "لطفا قبل از تلاش برای تغییر رمز خود کلیدها را ایجاد کنید"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } روز",
+        "${ timeRemaining.inDays } روز"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } ساعت",
+        "${ timeRemaining.inHours } ساعت"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "لغو بازنشانی گذرواژه"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "بازنشانی گذرواژه لغو شود؟"
       ]
     },
     "session_recovery:in_progress:action": {
       "Cancel password reset": [
         "لغو بازنشانی رمزعبور"
+      ],
+      "Cancel request": [
+        "لغو درخواست"
+      ],
+      "Got it": [
+        "متوجه شدم"
+      ],
+      "Learn more": [
+        "اطلاعات بیشتر"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "درخواست بازنشانی گذرواژه ثبت شد"
       ]
     },
     "session_recovery:initiation:action": {
@@ -4434,6 +4913,22 @@
         "درخواست بازنشانی گذرواژه?"
       ]
     },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "خروج از حساب"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } ساعت",
+        "${ gracePeriodHoursRemaining } ساعت"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "بازنشانی گذرواژه"
+      ]
+    },
     "session_recovery:status:info": {
       "Available": [
         "در دسترس"
@@ -4445,6 +4940,17 @@
     "Settings section title": {
       "Organization": [
         "سازمان"
+      ]
+    },
+    "Signup": {
+      "1 month": [
+        "۱ ماه"
+      ],
+      "12 months": [
+        "12 ماه"
+      ],
+      "24 months": [
+        "24 ماه"
       ]
     },
     "Signup label": {
@@ -4466,7 +4972,28 @@
         "بستن"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } روز",
+        "${ days } روز"
+      ],
+      "${ hours } hour": [
+        "${ hours } ساعت",
+        "${ hours } ساعت"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } دقیقه",
+        "${ minutes } دقیقه"
+      ],
+      "${ seconds } second": [
+        "${ seconds } ثانیه",
+        "${ seconds } ثانیه"
+      ]
+    },
     "specialoffer: Deal details": {
+      "1 user": [
+        "۱ کاربر"
+      ],
       "6 users": [
         "6 کاربر"
       ],
@@ -4477,6 +5004,33 @@
     "specialoffer: Link": {
       "Upgrade": [
         "ارتقاء"
+      ]
+    },
+    "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } ماه",
+        "${ n } ماه"
+      ],
+      "/ month": [
+        "/ ماه"
+      ],
+      "/month": [
+        "/ماهانه"
+      ],
+      "1 year": [
+        "۱ سال"
+      ],
+      "15 months": [
+        "15 ماه"
+      ],
+      "2 years": [
+        "۲ سال"
+      ],
+      "30 months": [
+        "30 ماه"
+      ],
+      "Save ${ discount }%": [
+        "${ discount } پس‌انداز کنید%"
       ]
     },
     "sso": {
@@ -4539,8 +5093,14 @@
       ]
     },
     "storage_split: info": {
+      "${ app } storage": [
+        "${ app } فضای ذخیره سازی"
+      ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "با تنزیل درجه منافع زیر را از دست خواهید داد. آیا مایل به ادامه هستید؟"
+      ],
+      "Your storage is full": [
+        "فضای ذخیره سازی شما پر شده است"
       ]
     },
     "Subscription": {
@@ -4611,15 +5171,48 @@
         "فهمیدم"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "۱۵ گیگابایت فضای ذخیره‌سازی"
+      ],
+      "Upgrade": [
+        "ارتقاء"
+      ]
+    },
     "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } فضای ذخیره‌سازی برای هر کاربر"
+      ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } فضای ذخیره‌سازی کلی"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } دامنه ایمیل سفارشی",
+        "${ planNumberOfDomains } دامنه ایمیل سفارشی"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } آدرس ایمیل",
+        "${ planNumberOfEmails } آدرس ایمیل"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } آدرس ایمیل برای هر کاربر",
+        "${ planNumberOfEmails } آدرس ایمیل برای هر کاربر"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } کاربر",
+        "${ planNumberOfUsers } کاربر"
+      ],
+      "2 users": [
+        "2 کاربر"
       ],
       "Got it": [
         "متوجه شدم"
       ],
       "Keep ${ config.planName }": [
         "${ config.planName } را نگه دار"
+      ],
+      "Learn more": [
+        "اطلاعات بیشتر"
       ],
       "Priority support": [
         "اولویت پشتیبانی"
@@ -4628,6 +5221,11 @@
     "Subscription renewal state": {
       "Disable": [
         "غیرفعال"
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "${ priceString } پس‌انداز کنید"
       ]
     },
     "Subscription status": {
@@ -4689,6 +5287,9 @@
       ],
       "Organization activated": [
         "سازمان فعال شد"
+      ],
+      "Password copied to clipboard": [
+        "رمزعبور به کلیپبورد کپی شد"
       ],
       "Password updated": [
         "گذرواژه بروز شد"
@@ -4842,9 +5443,30 @@
         "پوسته‌ها"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } روز",
+        "${ ceilDays } روز"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } ساعت",
+        "${ ceilHours } ساعت"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } دقیقه",
+        "${ ceilMinutes } دقیقه"
+      ],
+      "${ seconds } second": [
+        "${ seconds } ثانیه",
+        "${ seconds } ثانیه"
+      ]
+    },
     "Title": {
       "${ VPN_APP_NAME } clients": [
         "مشتریان ${ VPN_APP_NAME }"
+      ],
+      "(active)": [
+        "(فعال)"
       ],
       "1. Give a name to the config to be generated": [
         "1. نامی به پیکربندی بدهید تا تولید شود"
@@ -4899,6 +5521,9 @@
       ],
       "Add to spam list": [
         "افزودن به لیست هرزنامه"
+      ],
+      "Add user": [
+        "افزودن کاربر"
       ],
       "Allocate storage": [
         "اختصاص فضای ذخیره‌سازی"
@@ -5050,6 +5675,9 @@
       "Email subscriptions": [
         "اشتراک‌های رایانامه"
       ],
+      "Enter your password": [
+        "کلمه عبور خود را وارد نمایید"
+      ],
       "Error": [
         "خطا"
       ],
@@ -5194,6 +5822,9 @@
       "Set up two-factor authentication": [
         "تنظیم احراز هویت دو مرحله‌ای"
       ],
+      "Set up your organization": [
+        "سازمان خود را راه اندازی کنید"
+      ],
       "Settings": [
         "تنظیمات"
       ],
@@ -5229,6 +5860,9 @@
       ],
       "Type": [
         "نوع"
+      ],
+      "Upgrade to ${ planName }": [
+        "ارتقا به ${ planName }"
       ],
       "Upgrade your privacy": [
         "حريم خصوصی خود را ارتقا دهید"
@@ -5332,6 +5966,9 @@
     "Tor out of date": {
       "stable release": [
         "نسخه پایدار"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "این نسخه از مرورگر Tor پشتیبانی نمیشود. لطفا به آخرین نسخه ${ stableRelease } بروزرسانی کنید"
       ]
     },
     "Transaction state display as badge": {
@@ -5360,6 +5997,11 @@
       ],
       "Refund": [
         "باز پرداخت"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/ماهانه"
       ]
     },
     "unprivatization": {
@@ -5450,6 +6092,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } دستگاه",
+        "${ n } دستگاه"
+      ],
       "${ n } server": [
         "${ n } سرور",
         "${ n }+ سرور"
@@ -5457,6 +6103,10 @@
       "${ n } VPN connection": [
         "${ n } اتصال VPN",
         "${ n } اتصال VPN"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } کشور",
+        "${ numberOfCountries } کشور"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } در ${ numberOfCountries } کشور",

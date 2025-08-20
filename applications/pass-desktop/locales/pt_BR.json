@@ -112,6 +112,9 @@
       "Change": [
         "Alterar"
       ],
+      "Change email": [
+        "Alterar e-mail"
+      ],
       "Check DNS": [
         "Verificar o DNS"
       ],
@@ -123,6 +126,9 @@
       ],
       "Clear": [
         "Limpar"
+      ],
+      "Clear search": [
+        "Limpar pesquisa"
       ],
       "Close": [
         "Fechar"
@@ -207,6 +213,9 @@
       ],
       "Delete alias": [
         "Excluir alias"
+      ],
+      "Delete all": [
+        "Excluir tudo"
       ],
       "Delete it, I will never need it": [
         "Exclua-o, eu nunca vou precisar dele"
@@ -502,8 +511,14 @@
       "Resend invitation": [
         "Reenviar convite"
       ],
+      "Reset": [
+        "Redefinir"
+      ],
       "Reset history": [
         "Redefinir histórico"
+      ],
+      "Restore": [
+        "Restaurar"
       ],
       "Restore item": [
         "Restaurar item"
@@ -706,6 +721,11 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "Desinstalar ${ PASS_APP_NAME }"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplicativo para computador do ${ MAIL_APP_NAME }"
       ]
     },
     "Button": {
@@ -1266,6 +1286,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -1284,11 +1307,35 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Font face option": {
+      "System default": [
+        "Padrão do sistema"
+      ],
       "Theme font": [
         "Fonte do tema"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Médio (recomendado)"
+      ],
+      "Small": [
+        "Pequeno"
+      ],
+      "Very large": [
+        "Muito grande"
+      ],
+      "Very small": [
+        "Muito pequeno"
       ]
     },
     "Info": {
@@ -1524,6 +1571,9 @@
       "Congratulations, your access has been confirmed": [
         "Parabéns, seu acesso foi confirmado."
       ],
+      "Copied to clipboard": [
+        "Copiado para a área de transferência"
+      ],
       "Coupon successfully applied!": [
         "O cupom foi aplicado!"
       ],
@@ -1568,6 +1618,12 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domínio: ${ domainPath } ou @"
+      ],
+      "Drop file here to upload": [
+        "Solte o arquivo aqui para enviar"
+      ],
+      "Drop to import": [
+        "Solte para importar"
       ],
       "Editor": [
         "Editor"
@@ -1776,6 +1832,9 @@
       "Latest breach on ${ formattedDate }": [
         "Última violação em ${ formattedDate }"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Saiba o que fazer ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "Deixando o item..."
       ],
@@ -1872,6 +1931,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "O acesso on-line ao ${ PASS_APP_NAME } exigirá um código PIN. Você será desconectado após 3 tentativas fracassadas."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Nossos alertas priorizam a segurança. Se você não reconhecer nenhuma das informações violadas, você pode ignorar este relatório com segurança."
       ],
       "Owner": [
         "Proprietário"
@@ -2413,6 +2475,9 @@
       "your domain": [
         "seu domínio"
       ],
+      "Your files will be encrypted and then saved": [
+        "Seus arquivos serão criptografados e depois salvos"
+      ],
       "Your information was found on ${ displayedDate }": [
         "Sua informação foi encontrada em ${ displayedDate }"
       ],
@@ -2912,6 +2977,9 @@
       "https://example.com": [
         "https://exemplo.com"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "ID Card": [
         "Carteira de identidade"
       ],
@@ -2986,6 +3054,9 @@
       ],
       "Key type": [
         "Tipo de chave"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Atalho de teclado: ${ shortcut }"
       ],
       "Language": [
         "Idioma"
@@ -3452,6 +3523,9 @@
       "The URL has been copied to the clipboard": [
         "O link foi copiado para a área de transferência"
       ],
+      "Theme": [
+        "Tema"
+      ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Este item está disponível até ${ date } ou até que o limite de visualizações seja atingido."
       ],
@@ -3622,8 +3696,16 @@
       "auto create rules ››": [
         "criação automática de regras ››"
       ],
+      "if your data is leaked": [
+        "se seus dados vazarem"
+      ],
       "Learn more": [
         "Saiba mais"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Ativar ${ reason }"
       ]
     },
     "Medium": {
@@ -3661,6 +3743,17 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Requer A2F para a organização"
+      ],
+      "SSO integration": [
+        "Integração SSO"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } foi desativado"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } foi ativado"
       ]
     },
     "Option": {
@@ -3916,6 +4009,20 @@
       ],
       "Used on ${ url }": [
         "Usado no ${ url }"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } e ${ remainingCount } outros potenciais vazamentos foram detectados. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } e outro potencial vazamento foi detectado. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Um potencial ${ name } vazamento foi detectado. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Suas informações foram encontradas em pelo menos um vazamento de dados. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes. ${ link }"
       ]
     },
     "sso": {
@@ -4251,6 +4358,9 @@
       "Inactive 2FA": [
         "A2F inativa"
       ],
+      "Information exposed in breach": [
+        "Informação exposta na violação"
+      ],
       "Install extension": [
         "Instalar extensão"
       ],
@@ -4521,6 +4631,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hoje"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Nem todas as informações listadas aqui foram expostas para todos os usuários."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A menos que sejam decifradas, as senhas criptografadas permanecem seguras mesmo se forem expostas."
       ]
     },
     "Validation": {
