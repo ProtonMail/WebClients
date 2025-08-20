@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { getIsAddressExternal } from '@proton/shared/lib/helpers/address';
+import { getIsAddressExternal, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { unescape } from '@proton/shared/lib/sanitize/escape';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
@@ -154,7 +154,9 @@ export const buildPartyCrasherParticipantData = (
     attendees: VcalAttendeeProperty[]
 ): { participant?: Participant; selfAttendee: VcalAttendeeProperty; selfAddress: Address } | undefined => {
     let isCatchAllPartyCrasher = false;
-    const selfInternalAddresses = ownAddresses.filter((address) => !getIsAddressExternal(address));
+    const selfInternalAddresses = ownAddresses.filter(
+        (address) => !getIsAddressExternal(address) || getIsBYOEAddress(address)
+    );
 
     const canonicalizedOriginalTo = canonicalizeInternalEmail(originalTo);
     let selfAddress = selfInternalAddresses.find(
@@ -170,6 +172,34 @@ export const buildPartyCrasherParticipantData = (
         } else {
             return;
         }
+    }
+
+    if (getIsBYOEAddress(selfAddress)) {
+        // We are using the BYOE address to determine if the user is the originalTo.
+        // However, the BYOE address is not linked to a calendar, so we have to use the default proton address to create the participant.
+        const selfAddressBYOE = ownAddresses.find((address) => !getIsAddressExternal(address));
+        const fakeOriginalTo = selfAddressBYOE?.Email;
+
+        const selfAttendee: VcalAttendeeProperty = {
+            value: buildMailTo(fakeOriginalTo),
+            parameters: {
+                cn: fakeOriginalTo,
+                partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
+            },
+        };
+
+        return {
+            participant: getParticipant({
+                participant: selfAttendee,
+                selfAddress,
+                selfAttendee,
+                contactEmails,
+                index: attendees.length,
+                emailTo: fakeOriginalTo,
+            }),
+            selfAttendee,
+            selfAddress: selfAddressBYOE || selfAddress,
+        };
     }
 
     const fakeOriginalTo = isCatchAllPartyCrasher ? selfAddress.Email : originalTo;
