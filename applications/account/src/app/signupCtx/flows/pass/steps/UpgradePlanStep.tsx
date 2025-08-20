@@ -12,8 +12,7 @@ import {
     PROTON_UNLIMITED_PRICE,
 } from '@proton/pass/constants';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
-import type { MaybeNull } from '@proton/pass/types';
-import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
+import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -28,7 +27,7 @@ type Props = {
 export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
     const payments = usePaymentOptimistic();
 
-    const offerModal = useAsyncModalHandles<MaybeNull<PLANS>, object>({ getInitialModalState: () => ({}) });
+    const offerModal = useAsyncModalHandles<boolean, object>({ getInitialModalState: () => ({}) });
 
     const getPrice = (price: number) => getSimplePriceString(payments.currency, price);
 
@@ -43,7 +42,13 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
         offerModal.handler({
             onSubmit: async (upgradeTo) => {
                 if (upgradeTo) {
-                    return handlePayPlan(upgradeTo, 'PASSPLUSINTRO2024');
+                    payments.selectPlan({
+                        planIDs: { [PLANS.PASS]: 1 },
+                        cycle: CYCLE.MONTHLY,
+                        currency: payments.currency,
+                        coupon: COUPON_CODES.PASSPLUSINTRO2024,
+                    });
+                    return onContinue(true);
                 }
 
                 await onContinue(false);
