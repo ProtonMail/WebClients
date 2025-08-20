@@ -3,16 +3,12 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 import { fromUnixTime } from 'date-fns';
 
+import { useUser } from '@proton/account/user/hooks';
 import { useApi, useEventManager } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import {
-    hidePaidUserChecklist,
-    seenCompletedChecklist,
-    updateChecklistDisplay,
-    updateChecklistItem,
-} from '@proton/shared/lib/api/checklist';
+import { seenCompletedChecklist, updateChecklistDisplay, updateChecklistItem } from '@proton/shared/lib/api/checklist';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type { ChecklistApiResponse, ChecklistKeyType } from '@proton/shared/lib/interfaces';
+import { type ChecklistApiResponse, type ChecklistKeyType, ChecklistType } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces';
 
 import useCanCheckItem from '../hooks/useCanCheckItem';
@@ -21,12 +17,18 @@ import useChecklist from '../hooks/useChecklist';
 
 const { REDUCED, HIDDEN } = CHECKLIST_DISPLAY_TYPE;
 
-export const CHECKLIST_ITEMS_TO_COMPLETE = [
-    ChecklistKey.AccountLogin,
-    ChecklistKey.Import,
-    ChecklistKey.ProtectInbox,
-    ChecklistKey.MobileApp,
-];
+export const getMailChecklistItemsToComplete = (checklistType?: ChecklistType) => {
+    if (!checklistType) {
+        return [];
+    }
+
+    switch (checklistType) {
+        case ChecklistType.MailBYOEUser:
+            return [ChecklistKey.ProtectInbox, ChecklistKey.MobileApp, ChecklistKey.ClaimAddress];
+        default:
+            return [ChecklistKey.AccountLogin, ChecklistKey.Import, ChecklistKey.ProtectInbox, ChecklistKey.MobileApp];
+    }
+};
 
 export interface OnboardingChecklistContext {
     /**
@@ -44,6 +46,7 @@ export interface OnboardingChecklistContext {
     changeChecklistDisplay: (display: CHECKLIST_DISPLAY_TYPE) => void;
     markItemsAsDone: (item: ChecklistKeyType) => void;
     canDisplayChecklist: boolean;
+    itemsToComplete: ChecklistKeyType[];
 }
 
 const GetStartedChecklistContext = createContext<OnboardingChecklistContext | undefined>(undefined);
@@ -62,6 +65,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const api = useApi();
     const silentApi = getSilentApi(api);
     const { call } = useEventManager();
+    const [user] = useUser();
     const [submitting, withSubmitting] = useLoading();
     const { canMarkItemsAsDone } = useCanCheckItem();
 
@@ -69,27 +73,19 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const [doneItems, setDoneItems] = useState<ChecklistKeyType[]>([]);
     const [displayState, setDisplayState] = useState<CHECKLIST_DISPLAY_TYPE>(HIDDEN);
 
-    const [freeUserChecklist, loadingFreeChecklist] = useChecklist('get-started') as [
-        GetStartedChecklistApiResponse,
-        boolean,
-    ];
-    const [paidUserChecklist, loadingPaidChecklist] = useChecklist('paying-user') as [
-        GetStartedChecklistApiResponse,
-        boolean,
-    ];
+    const { checklist, loading, checklistType } = useChecklist();
 
-    const isLoading = loadingFreeChecklist || loadingPaidChecklist;
-    const isUserPaid = paidUserChecklist.Code === 1000;
-    const items = isUserPaid ? paidUserChecklist.Items : freeUserChecklist.Items;
-    const isChecklistFinished = CHECKLIST_ITEMS_TO_COMPLETE?.every((item) => items?.includes(item));
+    const items = checklist.Items;
+    const itemsToComplete = getMailChecklistItemsToComplete(checklistType);
+    const isChecklistFinished = itemsToComplete.every((item) => items?.includes(item)) && itemsToComplete.length > 0;
 
     const createdAt: Date = (() => {
-        const timestamp = isUserPaid ? paidUserChecklist.CreatedAt : freeUserChecklist.CreatedAt;
+        const timestamp = checklist.CreatedAt;
         // Ensure timestamp is a valid number
         return fromUnixTime(timestamp);
     })();
     const expiresAt: Date | undefined = (() => {
-        const timestamp = isUserPaid ? paidUserChecklist.ExpiresAt : freeUserChecklist.ExpiresAt;
+        const timestamp = checklist.ExpiresAt;
         return timestamp ? fromUnixTime(timestamp) : undefined;
     })();
     // // To prevent old users from seeing the checklist again
@@ -100,19 +96,14 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
             return;
         }
 
-        if (isUserPaid) {
-            setDoneItems(paidUserChecklist.Items ?? []);
-            setDisplayState(paidUserChecklist.Display);
-        } else {
-            setDoneItems(freeUserChecklist.Items ?? []);
-            setDisplayState(freeUserChecklist.Display);
-        }
-    }, [freeUserChecklist, paidUserChecklist, submitting]);
+        setDoneItems(checklist.Items ?? []);
+        setDisplayState(checklist.Display);
+    }, [checklist, submitting]);
 
     const markItemsAsDone = async (item: ChecklistKeyType) => {
         setDoneItems([...doneItems, item]);
-        if (canMarkItemsAsDone) {
-            await silentApi(updateChecklistItem(item));
+        if (canMarkItemsAsDone && checklistType) {
+            await silentApi(updateChecklistItem(item, checklistType));
             await call();
         }
     };
@@ -122,30 +113,24 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
         void withSubmitting(async () => {
             // Reduce the checklist and mark first checklist item as done
             if (newState === REDUCED) {
-                const items = isUserPaid ? paidUserChecklist.Items : freeUserChecklist.Items;
+                const items = checklist.Items;
                 if (!items.includes(ChecklistKey.ProtectInbox)) {
                     setDoneItems([...doneItems, ChecklistKey.ProtectInbox]);
-                    if (canMarkItemsAsDone) {
-                        await silentApi(updateChecklistItem('ProtectInbox'));
+                    if (canMarkItemsAsDone && checklistType) {
+                        await silentApi(updateChecklistItem('ProtectInbox', checklistType));
                         await call();
                     }
                 }
             }
 
-            // Send information to the backend when paid user hide the checklist
-            if (newState === HIDDEN && isUserPaid) {
-                await silentApi(hidePaidUserChecklist());
-            }
-
             if (isChecklistFinished && (newState === REDUCED || newState === HIDDEN)) {
-                const checklist = isUserPaid ? 'paying-user' : 'get-started';
-                if (canMarkItemsAsDone) {
-                    await silentApi(seenCompletedChecklist(checklist));
+                if (canMarkItemsAsDone && checklistType) {
+                    await silentApi(seenCompletedChecklist(checklistType));
                 }
             }
 
-            if (canMarkItemsAsDone) {
-                await api(updateChecklistDisplay(newState));
+            if ((canMarkItemsAsDone || (newState === HIDDEN && user.hasPaidMail)) && checklistType) {
+                await api(updateChecklistDisplay(newState, checklistType));
                 await call();
             }
         });
@@ -158,11 +143,12 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
         displayState,
         expiresAt,
         isChecklistFinished,
-        isUserPaid,
+        isUserPaid: user.hasPaidMail,
         items: new Set([...doneItems]),
-        loading: isLoading,
+        loading,
         markItemsAsDone,
-        userWasRewarded: isUserPaid ? paidUserChecklist.UserWasRewarded : freeUserChecklist.UserWasRewarded,
+        userWasRewarded: checklist.UserWasRewarded,
+        itemsToComplete,
     };
 
     return <GetStartedChecklistContext.Provider value={context}>{children}</GetStartedChecklistContext.Provider>;

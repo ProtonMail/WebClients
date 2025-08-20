@@ -19,10 +19,7 @@ import {
     getCalendarWithReactivatedKeys,
     getDoesCalendarNeedUserAction,
     getIsCalendarDisabled,
-    getOwnedPersonalCalendars,
-    getVisualCalendars,
 } from '@proton/shared/lib/calendar/calendar';
-import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import {
     CALENDAR_TYPE,
     ICAL_ATTENDEE_STATUS,
@@ -30,7 +27,6 @@ import {
     ICAL_METHOD,
 } from '@proton/shared/lib/calendar/constants';
 import { getCreationKeys } from '@proton/shared/lib/calendar/crypto/keys/helpers';
-import setupCalendarHelper from '@proton/shared/lib/calendar/crypto/keys/setupCalendarHelper';
 import { getIsProtonUID, naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
 import { EventInvitationError } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { INVITATION_ERROR_TYPE } from '@proton/shared/lib/calendar/icsSurgery/errors/icsSurgeryErrorTypes';
@@ -67,9 +63,7 @@ import type { Address, Api } from '@proton/shared/lib/interfaces';
 import type {
     CalendarEvent,
     CalendarEventEncryptionData,
-    CalendarUserSettings,
     CalendarWidgetData,
-    CalendarWithOwnMembers,
     Participant,
     PmInviteData,
     SyncMultipleApiResponse,
@@ -111,56 +105,6 @@ import {
 
 const { CANCELLED } = ICAL_EVENT_STATUS;
 const { NONE, KEEP_PARTSTAT, RESET_PARTSTAT, UPDATE_PARTSTAT, CANCEL } = UPDATE_ACTION;
-
-/**
- * Get calendars and calendar user settings. If no calendar exists, create one
- */
-export const getOrCreatePersonalCalendarsAndSettings = async ({
-    api,
-    callEventManager,
-    addresses,
-    isFreeUser,
-    getAddressKeys,
-    getCalendars,
-    getCalendarUserSettings,
-}: {
-    api: Api;
-    callEventManager: () => Promise<void>;
-    addresses: Address[];
-    isFreeUser: boolean;
-    getAddressKeys: GetAddressKeys;
-    getCalendars: () => Promise<CalendarWithOwnMembers[] | undefined>;
-    getCalendarUserSettings: () => Promise<CalendarUserSettings>;
-}) => {
-    const silentApi = <T>(config: any) => api<T>({ ...config, silence: true });
-    let [calendarsWithOwnMembers = [], calendarUserSettings] = await Promise.all([
-        getCalendars(),
-        getCalendarUserSettings(),
-    ]);
-    let calendars = getVisualCalendars(calendarsWithOwnMembers);
-
-    const { isCalendarsLimitReached } = getHasUserReachedCalendarsLimit(calendars, isFreeUser);
-
-    if (!getOwnedPersonalCalendars(calendars).length && !isCalendarsLimitReached) {
-        // create a calendar automatically
-        try {
-            const { calendar, updatedCalendarUserSettings } = await setupCalendarHelper({
-                api: silentApi,
-                addresses,
-                getAddressKeys,
-            });
-            // refresh list of calendars without awaiting
-            // (the refresh is just in case another widget gets opened quickly after, so that it knows there's a new calendar)
-            void callEventManager();
-            calendarUserSettings = { ...calendarUserSettings, ...updatedCalendarUserSettings };
-            calendars = getVisualCalendars([calendar]);
-        } catch {
-            // fail silently
-            noop();
-        }
-    }
-    return { calendars, calendarUserSettings };
-};
 
 const getRelevantEventsByUID = ({ api, uid, calendarIDs }: { api: Api; uid: string; calendarIDs: string[] }) => {
     // No need to search for invitations in subscribed calendars

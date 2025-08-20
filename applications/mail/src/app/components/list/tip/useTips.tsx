@@ -24,7 +24,7 @@ import {
     PASS_APP_NAME,
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
-import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
+import { getActiveAddresses, getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { isDesktopInboxUser, isDriveUser, isPassUser, isVPNUser } from '@proton/shared/lib/helpers/usedClientsFlags';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
@@ -325,7 +325,10 @@ const useTips = () => {
                 }
                 return userSettings && !isDesktopInboxUser(BigInt(userSettings.UsedClientFlags));
             case TipActionType.GetProtonSubdomainAddress:
-                return user.isFree || (user.isAdmin && user.isSelf && !hasEnabledPremiumAddresses);
+                return (
+                    (user.isFree || (user.isAdmin && user.isSelf && !hasEnabledPremiumAddresses)) &&
+                    !getIsBYOEOnlyAccount(addresses)
+                );
             case TipActionType.CreateAlias:
                 return !missScopePass;
             case TipActionType.ScheduleMessage:
