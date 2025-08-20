@@ -112,6 +112,9 @@
       "Change": [
         "Zmeniť"
       ],
+      "Change email": [
+        "Zmeniť email"
+      ],
       "Check DNS": [
         "Skontrolovať DNS"
       ],
@@ -123,6 +126,9 @@
       ],
       "Clear": [
         "Vyčistiť"
+      ],
+      "Clear search": [
+        "Vyčistiť vyhľadávanie"
       ],
       "Close": [
         "Zatvoriť"
@@ -207,6 +213,9 @@
       ],
       "Delete alias": [
         "Odstrániť alias"
+      ],
+      "Delete all": [
+        "Výmazať všetko"
       ],
       "Delete it, I will never need it": [
         "Vymazať, nikdy ho nebudem potrebovať"
@@ -493,8 +502,14 @@
       "Resend invitation": [
         "Znovu poslať pozvánku"
       ],
+      "Reset": [
+        "Resetovať"
+      ],
       "Reset history": [
         "Resetovať históriu"
+      ],
+      "Restore": [
+        "Obnoviť"
       ],
       "Restore item": [
         "Obnoviť položku"
@@ -678,6 +693,11 @@
       ],
       "Your password manager is not here? Request it.": [
         "Chýba tu váš správca hesiel? Požiadajte oň."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } desktopová aplikácia"
       ]
     },
     "Button": {
@@ -1246,6 +1266,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -1272,6 +1295,12 @@
         "Megabajty",
         "Megabajtov",
         "Megabajtov"
+      ],
+      "Terabyte": [
+        "terabajt",
+        "terabajty",
+        "terabajtov",
+        "terabajtov"
       ]
     },
     "Info": {
@@ -1527,6 +1556,9 @@
       "Congratulations, your access has been confirmed": [
         "Blahoželáme, váš prístup bol potvrdený"
       ],
+      "Copied to clipboard": [
+        "Skopírované do schránky"
+      ],
       "Coupon successfully applied!": [
         "Kupón bol úspešne použitý!"
       ],
@@ -1571,6 +1603,12 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Doména: ${ domainPath } alebo @"
+      ],
+      "Drop file here to upload": [
+        "Sem presuňte súbor na nahranie"
+      ],
+      "Drop to import": [
+        "Presuňte na import"
       ],
       "Editor": [
         "Editor"
@@ -1785,6 +1823,9 @@
       "Latest breach on ${ formattedDate }": [
         "Posledný únik údajov dňa ${ formattedDate }"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Zistite, čo robiť ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "Opúšťanie položky..."
       ],
@@ -1877,6 +1918,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online prístup k ${ PASS_APP_NAME } bude vyžadovať PIN kód. Po troch neúspešných pokusoch dôjde k odhláseniu."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Prioritou našich upozornení je bezpečnosť. Ak nepoznáte žiadnu z ohrozených informácií, môžete túto správu pokojne ignorovať."
       ],
       "Owner": [
         "Vlastník"
@@ -2253,6 +2297,9 @@
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Má dôveru viac ako 50 000 firemných používateľov a 100 miliónov účtov na celom svete."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Vyskúšajte nové ${ BRAND_NAME } funkcie, aktualizácie a produkty pred ich zverejnením. Týmto sa obnoví aplikácia"
+      ],
       "Unable to copy to clipboard": [
         "Nedá sa kopírovať do schránky"
       ],
@@ -2426,6 +2473,9 @@
       ],
       "your domain": [
         "vaša doména"
+      ],
+      "Your files will be encrypted and then saved": [
+        "Vaše súbory budú zašifrované a potom uložené"
       ],
       "Your information was found on ${ displayedDate }": [
         "Vaše informácie boli nájdené dňa ${ displayedDate }"
@@ -2638,6 +2688,9 @@
       ],
       "Bank Name": [
         "Názov banky"
+      ],
+      "Beta Access": [
+        "Beta prístup"
       ],
       "Biometrics": [
         "Biometria"
@@ -2936,6 +2989,9 @@
       "https://example.com": [
         "https://example.com"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "ID Card": [
         "ID karta"
       ],
@@ -3007,6 +3063,9 @@
       ],
       "Key type": [
         "Typ kľúča"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Klávesová skratka: ${ shortcut }"
       ],
       "Language": [
         "Jazyk"
@@ -3452,6 +3511,9 @@
       "The URL has been copied to the clipboard": [
         "URL adresa bola skopírovaná do schránky"
       ],
+      "Theme": [
+        "Vzhľad"
+      ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Táto položka je prístupná do ${ date } alebo do dosiahnutia limitu zobrazení."
       ],
@@ -3619,8 +3681,16 @@
       "auto create rules ››": [
         "automatické vytvorenie pravidiel ››"
       ],
+      "if your data is leaked": [
+        "ak dôjde k úniku vašich údajov"
+      ],
       "Learn more": [
         "Zistiť viac"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Povoliť ${ reason }"
       ]
     },
     "Medium": {
@@ -3648,6 +3718,17 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Vyžadovať 2FA pre organizáciu"
+      ],
+      "SSO integration": [
+        "SSO integrácia"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } bol zakázaný"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } bol povolený"
       ]
     },
     "Option": {
@@ -3905,6 +3986,20 @@
       ],
       "Used on ${ url }": [
         "Používa sa na ${ url }"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } a ${ remainingCount } ďalšie zistené potenciálne úniky. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } a 1 ďalší zistený potenciálny únik. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Bol zistený potenciálny únik ${ name }. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Vaše informácie sa našli v najmenej jednom úniku údajov. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ]
     },
     "sso": {
@@ -4246,6 +4341,9 @@
       "Inactive 2FA": [
         "Neaktívne 2FA"
       ],
+      "Information exposed in breach": [
+        "Informácie odhalené pri úniku"
+      ],
       "Install extension": [
         "Inštalovať rozšírenie"
       ],
@@ -4526,6 +4624,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Dnes"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Nie všetky informácie, ktoré sú tu uvedené, boli sprístupnené všetkým používateľom."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Pokiaľ nie sú dešifrované, zašifrované heslá zostávajú v bezpečí, aj keď sú odhalené."
       ]
     },
     "Validation": {
