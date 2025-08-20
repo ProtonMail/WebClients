@@ -1,6 +1,5 @@
 import { renderHook } from '@testing-library/react';
 
-import { usePreviousSubscription } from '@proton/account/previousSubscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
@@ -16,9 +15,6 @@ const mockUseConfig = jest.mocked(useConfig);
 
 jest.mock('@proton/account/user/hooks');
 const mockUseUser = jest.mocked(useUser);
-
-jest.mock('@proton/account/previousSubscription/hooks');
-const mockUsePreviousSubscription = jest.mocked(usePreviousSubscription);
 
 jest.mock('@proton/unleash/useFlag');
 const mockUseFlag = jest.mocked(useFlag);
@@ -39,40 +35,12 @@ describe('Always-on upsell eligibility', () => {
 
         it('should be eligible, feature flag enabled', () => {
             mockUseFlag.mockReturnValue(true);
-            mockUsePreviousSubscription.mockReturnValue([
-                { hasHadSubscription: false, previousSubscriptionEndTime: 0 },
-                false,
-            ]);
             const { result } = renderHook(() => useAlwaysOnUpsell());
             expect(result.current.isEligible).toBeTruthy();
         });
 
         it('should not be eligible, feature flag not enabled', () => {
             mockUseFlag.mockReturnValue(false);
-            mockUsePreviousSubscription.mockReturnValue([
-                { hasHadSubscription: false, previousSubscriptionEndTime: 0 },
-                false,
-            ]);
-            const { result } = renderHook(() => useAlwaysOnUpsell());
-            expect(result.current.isEligible).toBeFalsy();
-        });
-
-        it('should be eligible, no previous subscription', () => {
-            mockUseFlag.mockReturnValue(true);
-            mockUsePreviousSubscription.mockReturnValue([
-                { hasHadSubscription: false, previousSubscriptionEndTime: 0 },
-                false,
-            ]);
-            const { result } = renderHook(() => useAlwaysOnUpsell());
-            expect(result.current.isEligible).toBeTruthy();
-        });
-
-        it('should not be eligible, feature flag not enabled', () => {
-            mockUseFlag.mockReturnValue(true);
-            mockUsePreviousSubscription.mockReturnValue([
-                { hasHadSubscription: true, previousSubscriptionEndTime: 1 },
-                false,
-            ]);
             const { result } = renderHook(() => useAlwaysOnUpsell());
             expect(result.current.isEligible).toBeFalsy();
         });
@@ -91,7 +59,6 @@ describe('Always-on upsell eligibility', () => {
                 getIsUserEligible({
                     user,
                     protonConfig,
-                    previousSubscriptionEndTime: 0,
                 })
             ).toBeFalsy();
         });
@@ -107,23 +74,6 @@ describe('Always-on upsell eligibility', () => {
                 getIsUserEligible({
                     user: nonFreeUser,
                     protonConfig,
-                    previousSubscriptionEndTime: 0,
-                })
-            ).toBeFalsy();
-        });
-
-        it('should not be eligible, previous subscription', () => {
-            const user = {
-                isFree: true,
-                isDelinquent: false,
-                CreateTime: today.getTime() / 1000,
-            } as unknown as UserModel;
-
-            expect(
-                getIsUserEligible({
-                    user,
-                    protonConfig,
-                    previousSubscriptionEndTime: 10000000000,
                 })
             ).toBeFalsy();
         });
@@ -139,7 +89,6 @@ describe('Always-on upsell eligibility', () => {
                 getIsUserEligible({
                     user: delinquentUser,
                     protonConfig,
-                    previousSubscriptionEndTime: 0,
                 })
             ).toBeFalsy();
         });
@@ -149,7 +98,6 @@ describe('Always-on upsell eligibility', () => {
                 getIsUserEligible({
                     user: freeUser,
                     protonConfig: { APP_NAME: 'proton-calendar' } as unknown as ProtonConfig,
-                    previousSubscriptionEndTime: 0,
                 })
             ).toBeFalsy();
         });
