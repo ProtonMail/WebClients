@@ -59,7 +59,6 @@ describe('Always-on upsell eligibility', () => {
                 getIsUserEligible({
                     user,
                     protonConfig,
-                    lastSubscriptionEnd: 0,
                 })
             ).toBeFalsy();
         });
@@ -75,23 +74,6 @@ describe('Always-on upsell eligibility', () => {
                 getIsUserEligible({
                     user: nonFreeUser,
                     protonConfig,
-                    lastSubscriptionEnd: 0,
-                })
-            ).toBeFalsy();
-        });
-
-        it('should not be eligible, previous subscription', () => {
-            const user = {
-                isFree: true,
-                isDelinquent: false,
-                CreateTime: today.getTime() / 1000,
-            } as unknown as UserModel;
-
-            expect(
-                getIsUserEligible({
-                    user,
-                    protonConfig,
-                    lastSubscriptionEnd: 10000000000,
                 })
             ).toBeFalsy();
         });
@@ -107,7 +89,6 @@ describe('Always-on upsell eligibility', () => {
                 getIsUserEligible({
                     user: delinquentUser,
                     protonConfig,
-                    lastSubscriptionEnd: 0,
                 })
             ).toBeFalsy();
         });
@@ -117,7 +98,6 @@ describe('Always-on upsell eligibility', () => {
                 getIsUserEligible({
                     user: freeUser,
                     protonConfig: { APP_NAME: 'proton-calendar' } as unknown as ProtonConfig,
-                    lastSubscriptionEnd: 0,
                 })
             ).toBeFalsy();
         });
