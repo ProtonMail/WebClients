@@ -2,7 +2,7 @@ import noop from '@proton/utils/noop';
 
 type HttpMethod = 'get' | 'post' | 'put' | 'delete';
 
-type ApiMockHandler = (...arg: any[]) => any;
+export type ApiMockHandler = (...arg: any[]) => any;
 
 type ApiMockEntry = {
     method?: HttpMethod;

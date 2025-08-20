@@ -24,7 +24,7 @@ describe('useCanCheckItem', () => {
         });
 
         it('should return true if user is free', () => {
-            mockUseUser.mockReturnValue([{ isFree: true }]);
+            mockUseUser.mockReturnValue([{ isFree: true, Flags: { 'has-a-byoe-addres': false } }]);
             mockUseSubscription.mockReturnValue([{}]);
             mockUseUserSettings.mockReturnValue([{}]);
 
@@ -33,7 +33,7 @@ describe('useCanCheckItem', () => {
         });
 
         it('should return true if free user with get-started checklist', () => {
-            mockUseUser.mockReturnValue([{ isFree: true }]);
+            mockUseUser.mockReturnValue([{ isFree: true, Flags: { 'has-a-byoe-addres': false } }]);
             mockUseSubscription.mockReturnValue([{}]);
             mockUseUserSettings.mockReturnValue([{ Checklists: ['get-started'] }]);
 
@@ -42,7 +42,7 @@ describe('useCanCheckItem', () => {
         });
 
         it('should return false if paid users with get-started checklist', () => {
-            mockUseUser.mockReturnValue([{ isFree: false }]);
+            mockUseUser.mockReturnValue([{ isFree: false, Flags: { 'has-a-byoe-addres': false } }]);
             mockUseSubscription.mockReturnValue([{}]);
             mockUseUserSettings.mockReturnValue([{ Checklists: ['get-started'] }]);
 
@@ -51,7 +51,7 @@ describe('useCanCheckItem', () => {
         });
 
         it('should return true if paid VPN2024 user with get-started checklist', () => {
-            mockUseUser.mockReturnValue([{ isFree: false }]);
+            mockUseUser.mockReturnValue([{ isFree: false, Flags: { 'has-a-byoe-addres': false } }]);
             mockUseSubscription.mockReturnValue([{ Plans: [{ Name: PLANS.VPN2024 }] }]);
             mockUseUserSettings.mockReturnValue([{ Checklists: ['get-started'] }]);
 
@@ -60,7 +60,7 @@ describe('useCanCheckItem', () => {
         });
 
         it('should return false if paid VPN2024 user without get-started checklist', () => {
-            mockUseUser.mockReturnValue([{ isFree: false }]);
+            mockUseUser.mockReturnValue([{ isFree: false, Flags: { 'has-a-byoe-addres': false } }]);
             mockUseSubscription.mockReturnValue([{ Plans: [{ Name: PLANS.VPN2024 }] }]);
             mockUseUserSettings.mockReturnValue([{ Checklists: [] }]);
 
@@ -69,7 +69,7 @@ describe('useCanCheckItem', () => {
         });
 
         it('should return false if paid MAIL user with get-started checklist', () => {
-            mockUseUser.mockReturnValue([{ isFree: false }]);
+            mockUseUser.mockReturnValue([{ isFree: false, Flags: { 'has-a-byoe-addres': false } }]);
             mockUseSubscription.mockReturnValue([{ Plans: [{ Name: PLANS.MAIL }] }]);
             mockUseUserSettings.mockReturnValue([{ Checklists: ['get-started'] }]);
 
@@ -80,7 +80,7 @@ describe('useCanCheckItem', () => {
 
     describe('paying-user', () => {
         it('should return true if user is free user with paying-user checklist', () => {
-            mockUseUser.mockReturnValue([{ isFree: true }]);
+            mockUseUser.mockReturnValue([{ isFree: true, Flags: { 'has-a-byoe-addres': false } }]);
             mockUseSubscription.mockReturnValue([{}]);
             mockUseUserSettings.mockReturnValue([{ Checklists: ['paying-user'] }]);
 
@@ -89,7 +89,7 @@ describe('useCanCheckItem', () => {
         });
 
         it('should return true if user is paid Mail user with paying-user checklist', () => {
-            mockUseUser.mockReturnValue([{ isFree: false }]);
+            mockUseUser.mockReturnValue([{ isFree: false, Flags: { 'has-a-byoe-addres': false } }]);
             mockUseSubscription.mockReturnValue([{ Plans: [{ Name: PLANS.MAIL }] }]);
             mockUseUserSettings.mockReturnValue([{ Checklists: ['paying-user'] }]);
 
@@ -98,12 +98,32 @@ describe('useCanCheckItem', () => {
         });
 
         it('should return false if user is paid Mail without paying-user checklist', () => {
-            mockUseUser.mockReturnValue([{ isFree: false }]);
+            mockUseUser.mockReturnValue([{ isFree: false, Flags: { 'has-a-byoe-addres': false } }]);
             mockUseSubscription.mockReturnValue([{ Plans: [{ Name: PLANS.MAIL }] }]);
             mockUseUserSettings.mockReturnValue([{ Checklists: [] }]);
 
             const { result } = renderHook(() => useCanCheckItem());
             expect(result.current.canMarkItemsAsDone).toBe(false);
+        });
+    });
+
+    describe('byoe-user', () => {
+        it('should return true if user is free user with byoe-user checklist', () => {
+            mockUseUser.mockReturnValue([{ isFree: true, Flags: { 'has-a-byoe-addres': true } }]);
+            mockUseSubscription.mockReturnValue([{}]);
+            mockUseUserSettings.mockReturnValue([{ Checklists: ['byoe-user'] }]);
+
+            const { result } = renderHook(() => useCanCheckItem());
+            expect(result.current.canMarkItemsAsDone).toBe(true);
+        });
+
+        it('should return true if user is paid Mail user with byoe-user checklist', () => {
+            mockUseUser.mockReturnValue([{ isFree: false, Flags: { 'has-a-byoe-addres': true } }]);
+            mockUseSubscription.mockReturnValue([{ Plans: [{ Name: PLANS.MAIL }] }]);
+            mockUseUserSettings.mockReturnValue([{ Checklists: ['paying-user'] }]);
+
+            const { result } = renderHook(() => useCanCheckItem());
+            expect(result.current.canMarkItemsAsDone).toBe(true);
         });
     });
 });

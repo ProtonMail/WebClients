@@ -48,6 +48,7 @@ import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
 import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton/shared/lib/keys/memberHelper';
+import { useFlag } from '@proton/unleash/index';
 import noop from '@proton/utils/noop';
 
 import Addresses from '../addresses/Addresses';
@@ -243,6 +244,8 @@ const SubUserEditModal = ({
         unprivatization.mode !== MemberUnprivatizationMode.MagicLinkInvite;
 
     const canRevokeAdmin = !isSelf && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN;
+
+    const hasAccessToBYOE = useFlag('InboxBringYourOwnEmail');
 
     const errorHandler = useErrorHandler();
 
@@ -675,7 +678,12 @@ const SubUserEditModal = ({
                         <div>
                             <h3 className="text-strong mb-2">{c('Label').t`Addresses`}</h3>
                             <div>
-                                <Addresses organization={organization} memberID={member.ID} hasDescription={false} />
+                                <Addresses
+                                    organization={organization}
+                                    memberID={member.ID}
+                                    hasDescription={false}
+                                    hasAccessToBYOE={hasAccessToBYOE}
+                                />
                             </div>
                         </div>
                     )}

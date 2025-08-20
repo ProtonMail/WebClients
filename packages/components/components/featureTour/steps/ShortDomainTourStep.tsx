@@ -10,6 +10,7 @@ import useToggle from '@proton/components/hooks/useToggle';
 import { PLANS } from '@proton/payments';
 import { isTrial } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { SentryMailInitiatives, traceError } from '@proton/shared/lib/helpers/sentry';
 import shortDomainImg from '@proton/styles/assets/img/illustrations/new-upsells-img/pm-me.svg';
 
@@ -26,7 +27,10 @@ export const shouldDisplayShortDomainTourStep: ShouldDisplayTourStep = async (di
     ]);
     return {
         canDisplay:
-            addresses !== undefined && addresses.length > 0 && (isTrial(subscription, PLANS.MAIL) || user.hasPaidMail),
+            addresses !== undefined &&
+            addresses.length > 0 &&
+            (isTrial(subscription, PLANS.MAIL) || user.hasPaidMail) &&
+            !getIsBYOEOnlyAccount(addresses),
         preloadUrls: [shortDomainImg],
     };
 };
