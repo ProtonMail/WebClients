@@ -4,6 +4,7 @@ import {
     type NodeEntity,
     NodeType,
     RevisionState,
+    getDrive,
     splitNodeRevisionUid,
     splitNodeUid,
 } from '@proton/drive';
@@ -36,7 +37,7 @@ export type LegacyItem = FileBrowserBaseItem & {
     isLocked?: boolean;
     thumbnailId: string;
     isShared?: boolean;
-    parentUid?: string;
+    parentUid: string | undefined;
     deprecatedShareId?: string;
     rootUid?: string;
     /**
@@ -82,7 +83,7 @@ const getRootNode = async (node: NodeEntity, drive: ProtonDriveClient): Promise<
 export const mapNodeToLegacyItem = async (
     maybeNode: MaybeNode | NodeEntity,
     defaultShareId: string,
-    drive: ProtonDriveClient
+    drive: ProtonDriveClient = getDrive()
 ): Promise<LegacyItem> => {
     let node: NodeEntity;
     if ('ok' in maybeNode) {

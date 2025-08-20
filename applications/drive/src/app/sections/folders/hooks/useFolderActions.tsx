@@ -1,26 +1,26 @@
-import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
+import { generateNodeUid } from '@proton/drive/index';
 
 import { useCreateFileModal } from '../../../components/modals/CreateFileModal';
-import { useCreateFolderModal } from '../../../components/modals/CreateFolderModal';
 import { useDetailsModal } from '../../../components/modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
-import { useMoveToFolderModal } from '../../../components/modals/MoveToFolderModal/MoveToFolderModal';
-import { useRenameModal } from '../../../components/modals/RenameModal';
 import { useRevisionsModal } from '../../../components/modals/RevisionsModal/RevisionsModal';
 import { useFileSharingModal } from '../../../components/modals/SelectLinkToShareModal/SelectLinkToShareModal';
-import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
-import { useActions, useDocumentActions, useFileUploadInput, useFolderUploadInput } from '../../../store';
+import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
+import { useMoveItemsModal } from '../../../modals/MoveItemsModal';
+import { useRenameModal } from '../../../modals/RenameModal';
+import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
+import { useDocumentActions, useFileUploadInput, useFolderUploadInput } from '../../../store';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
 
 type Props = {
     shareId: string;
     linkId: string;
+    volumeId: string;
     selectedItems: LegacyItem[];
 };
 
-export const useFolderActions = ({ selectedItems, shareId, linkId }: Props) => {
+export const useFolderActions = ({ selectedItems, shareId, linkId, volumeId }: Props) => {
     const { createDocument } = useDocumentActions();
-    const { renameLink } = useActions();
 
     // Upload hooks
     const {
@@ -35,18 +35,20 @@ export const useFolderActions = ({ selectedItems, shareId, linkId }: Props) => {
         handleChange: handleFolderChange,
     } = useFolderUploadInput(shareId, linkId);
 
+    const uid = generateNodeUid(volumeId, linkId);
+
     // Modal hooks
     const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
     const [createFileModal, showCreateFileModal] = useCreateFileModal();
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const [linkSharingModal, showLinkSharingModal] = useSharingModal();
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [revisionsModal, showRevisionsModal] = useRevisionsModal();
     const [renameModal, showRenameModal] = useRenameModal();
-    const [moveModal, showMoveModal] = useMoveToFolderModal();
+    const [moveModal, showMoveModal] = useMoveItemsModal();
 
-    const createFolder = () => showCreateFolderModal({ folder: { shareId, linkId } });
+    const createFolder = () => showCreateFolderModal({ parentFolderUid: uid });
 
     const createNewDocument = () => {
         void createDocument({ type: 'doc', shareId: shareId, parentLinkId: linkId });
@@ -64,15 +66,7 @@ export const useFolderActions = ({ selectedItems, shareId, linkId }: Props) => {
             return;
         }
 
-        showRenameModal({
-            isFile: item.isFile,
-            name: item.name,
-            isDoc: isProtonDocsDocument(item.mimeType),
-            volumeId: item.volumeId,
-            linkId: item.linkId,
-            onSubmit: (formattedName: string) =>
-                renameLink(new AbortController().signal, item.rootShareId, item.linkId, formattedName),
-        });
+        showRenameModal(item);
     };
 
     const showDetails = () => {

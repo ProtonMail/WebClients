@@ -16,6 +16,7 @@ import { useActiveShare } from '../hooks/drive/useActiveShare';
 import { useFolderContainerTitle } from '../hooks/drive/useFolderContainerTitle';
 import useDriveNavigation from '../hooks/drive/useNavigate';
 import { FolderView } from '../sections/folders/FolderView';
+import { subscribeToFolderEvents } from '../sections/folders/subscribeToFolderEvents';
 import { useContextShareHandler, useDefaultShare, useDriveEventManager } from '../store';
 import { VolumeTypeForEvents, useVolumesState } from '../store/_volumes';
 import { getIsPublicContext } from '../utils/getIsPublicContext';
@@ -100,11 +101,20 @@ export default function FolderContainer({ type }: { type: LinkURLType }) {
             });
     }, [folderPromise]);
 
+    useEffect(() => {
+        if (useSDK) {
+            const unsubscribe = subscribeToFolderEvents();
+            return () => {
+                unsubscribe();
+            };
+        }
+    }, []);
+
     // With sharing we need to subscribe to events from different volumes.
     // This will happen during Shared with me navigation
     useEffect(() => {
         const volumeId = volumesState.findVolumeId(activeFolder.shareId);
-        if (!volumeId) {
+        if (!volumeId || useSDK) {
             return;
         }
         getDefaultShare()

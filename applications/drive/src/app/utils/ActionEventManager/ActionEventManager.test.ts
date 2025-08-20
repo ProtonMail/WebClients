@@ -38,11 +38,11 @@ describe('ActionEventManager', () => {
         it('should call listener when event is emitted', () => {
             const mockListener = jest.fn();
             const testEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASH_NODES_OPTIMISTIC,
+                type: ActionEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
-            eventBus.subscribe(ActionEventName.TRASH_NODES_OPTIMISTIC, mockListener);
+            eventBus.subscribe(ActionEventName.TRASHED_NODES, mockListener);
             eventBus.emit(testEvent);
 
             expect(mockListener).toHaveBeenCalledWith(testEvent);
@@ -53,12 +53,12 @@ describe('ActionEventManager', () => {
             const mockListener1 = jest.fn();
             const mockListener2 = jest.fn();
             const testEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASH_NODES_OPTIMISTIC,
+                type: ActionEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
-            eventBus.subscribe(ActionEventName.TRASH_NODES_OPTIMISTIC, mockListener1);
-            eventBus.subscribe(ActionEventName.TRASH_NODES_OPTIMISTIC, mockListener2);
+            eventBus.subscribe(ActionEventName.TRASHED_NODES, mockListener1);
+            eventBus.subscribe(ActionEventName.TRASHED_NODES, mockListener2);
             eventBus.emit(testEvent);
 
             expect(mockListener1).toHaveBeenCalledWith(testEvent);
@@ -69,11 +69,11 @@ describe('ActionEventManager', () => {
             const trashListener = jest.fn();
             const createListener = jest.fn();
             const trashEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASH_NODES_OPTIMISTIC,
+                type: ActionEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
-            eventBus.subscribe(ActionEventName.TRASH_NODES_OPTIMISTIC, trashListener);
+            eventBus.subscribe(ActionEventName.TRASHED_NODES, trashListener);
             eventBus.subscribe(ActionEventName.CREATED_NODES, createListener);
             eventBus.emit(trashEvent);
 
@@ -86,11 +86,11 @@ describe('ActionEventManager', () => {
         it('should remove listener when unsubscribed', () => {
             const mockListener = jest.fn();
             const testEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASH_NODES_OPTIMISTIC,
+                type: ActionEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
-            const unsubscribe = eventBus.subscribe(ActionEventName.TRASH_NODES_OPTIMISTIC, mockListener);
+            const unsubscribe = eventBus.subscribe(ActionEventName.TRASHED_NODES, mockListener);
             unsubscribe();
             eventBus.emit(testEvent);
 
@@ -101,12 +101,12 @@ describe('ActionEventManager', () => {
             const mockListener1 = jest.fn();
             const mockListener2 = jest.fn();
             const testEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASH_NODES_OPTIMISTIC,
+                type: ActionEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
-            const unsubscribe1 = eventBus.subscribe(ActionEventName.TRASH_NODES_OPTIMISTIC, mockListener1);
-            eventBus.subscribe(ActionEventName.TRASH_NODES_OPTIMISTIC, mockListener2);
+            const unsubscribe1 = eventBus.subscribe(ActionEventName.TRASHED_NODES, mockListener1);
+            eventBus.subscribe(ActionEventName.TRASHED_NODES, mockListener2);
             unsubscribe1();
             eventBus.emit(testEvent);
 
@@ -124,13 +124,13 @@ describe('ActionEventManager', () => {
             const rejectInvitationListener = jest.fn();
 
             const trashEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASH_NODES_OPTIMISTIC,
+                type: ActionEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
             const createEvent: CreatedNodesEvent = {
                 type: ActionEventName.CREATED_NODES,
-                nodes: [mockNodeEntity],
+                items: [{ uid: mockNodeEntity.uid, parentUid: undefined }],
             };
 
             const deleteBookmarkEvent: DeleteBookmarksEvent = {
@@ -153,8 +153,8 @@ describe('ActionEventManager', () => {
                 uids: ['invitation-1'],
             };
 
-            eventBus.subscribe(ActionEventName.TRASH_NODES_OPTIMISTIC, trashListener);
-            eventBus.subscribe(ActionEventName.CREATED_NODES, createListener);
+            eventBus.subscribe(ActionEventName.TRASHED_NODES, trashListener);
+			eventBus.subscribe(ActionEventName.CREATED_NODES, createListener);
             eventBus.subscribe(ActionEventName.DELETE_BOOKMARKS, bookmarkDeleteListener);
             eventBus.subscribe(ActionEventName.ACCEPT_INVITATIONS, acceptInvitationListener);
             eventBus.subscribe(ActionEventName.REJECT_INVITATIONS, rejectInvitationListener);
@@ -181,12 +181,12 @@ describe('ActionEventManager', () => {
             const successListener = jest.fn();
 
             const testEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASH_NODES_OPTIMISTIC,
+                type: ActionEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
-            eventBus.subscribe(ActionEventName.TRASH_NODES_OPTIMISTIC, errorListener);
-            eventBus.subscribe(ActionEventName.TRASH_NODES_OPTIMISTIC, successListener);
+            eventBus.subscribe(ActionEventName.TRASHED_NODES, errorListener);
+            eventBus.subscribe(ActionEventName.TRASHED_NODES, successListener);
 
             expect(() => eventBus.emit(testEvent)).not.toThrow();
             expect(errorListener).toHaveBeenCalled();
@@ -198,12 +198,12 @@ describe('ActionEventManager', () => {
         it('should call ALL listener for any event type', () => {
             const allListener = jest.fn();
             const trashEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASH_NODES_OPTIMISTIC,
+                type: ActionEventName.TRASHED_NODES,
                 uids: ['1'],
             };
             const createEvent: CreatedNodesEvent = {
                 type: ActionEventName.CREATED_NODES,
-                nodes: [mockNodeEntity],
+                items: [{ uid: mockNodeEntity.uid, parentUid: undefined }],
             };
             const bookmarkEvent: DeleteBookmarksEvent = {
                 type: ActionEventName.DELETE_BOOKMARKS,
@@ -244,11 +244,11 @@ describe('ActionEventManager', () => {
             const specificListener = jest.fn();
             const allListener = jest.fn();
             const testEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASH_NODES_OPTIMISTIC,
+                type: ActionEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
-            eventBus.subscribe(ActionEventName.TRASH_NODES_OPTIMISTIC, specificListener);
+            eventBus.subscribe(ActionEventName.TRASHED_NODES, specificListener);
             eventBus.subscribe(ActionEventName.ALL, allListener);
             eventBus.emit(testEvent);
 
@@ -261,7 +261,7 @@ describe('ActionEventManager', () => {
         it('should be able to unsubscribe from ALL events', () => {
             const allListener = jest.fn();
             const testEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASH_NODES_OPTIMISTIC,
+                type: ActionEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
@@ -276,7 +276,7 @@ describe('ActionEventManager', () => {
             const allListener1 = jest.fn();
             const allListener2 = jest.fn();
             const testEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASH_NODES_OPTIMISTIC,
+                type: ActionEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
@@ -292,7 +292,7 @@ describe('ActionEventManager', () => {
             const allListener1 = jest.fn();
             const allListener2 = jest.fn();
             const testEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASH_NODES_OPTIMISTIC,
+                type: ActionEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 

@@ -1,24 +1,26 @@
-import type { NodeEntity } from '@proton/drive/index';
 import { useDrive } from '@proton/drive/index';
 
 import useListNotifications from '../../../store/_actions/useListNotifications';
+import { getActionEventManager } from '../../../utils/ActionEventManager/ActionEventManager';
+import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventManagerTypes';
 import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
-import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 
-type Item = { uid: string; name: string };
+type Item = { uid: string; parentUid: string | undefined };
 
 export const useTrashActions = () => {
     const { drive } = useDrive();
     const { handleError } = useSdkErrorHandler();
     const { createTrashedItemsNotifications } = useListNotifications();
     const restoreItems = async (items: Item[]) => {
-        const restored: NodeEntity[] = [];
+        const uids = items.map((d) => d.uid);
+        const restored = [];
+        getActionEventManager().emit({ type: ActionEventName.RESTORED_NODES, uids });
+
         try {
             const uids = items.map((t) => t.uid);
             for await (const result of drive.restoreNodes(uids)) {
                 if (result.ok) {
-                    const { node } = getNodeEntity(await drive.getNode(result.uid));
-                    restored.push(node);
+                    restored.push(result.uid);
                 }
             }
         } catch (e) {
@@ -27,10 +29,11 @@ export const useTrashActions = () => {
     };
 
     const trashItems = async (items: Item[]) => {
-        const itemsMapped = items.map((d) => ({ ...d, linkId: d.uid }));
-        const uids = itemsMapped.map((t) => t.uid);
+        const itemsMap = items.map((d) => ({ ...d, linkId: d.uid }));
+        const uids = items.map((d) => d.uid);
         const success = [];
         const failure = [];
+        getActionEventManager().emit({ type: ActionEventName.TRASHED_NODES, uids });
 
         try {
             for await (const result of drive.trashNodes(uids)) {
@@ -43,8 +46,7 @@ export const useTrashActions = () => {
         } catch (e) {
             handleError(e);
         }
-
-        createTrashedItemsNotifications(itemsMapped, success, failure, () => restoreItems(items));
+        createTrashedItemsNotifications(Object.values(itemsMap), success, failure, () => restoreItems(items));
     };
 
     return {

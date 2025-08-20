@@ -23,13 +23,15 @@ export type FolderViewItem = {
     fileModifyTime: number;
     trashed: number | null;
     rootUid?: string;
+    parentUid: string | undefined;
 };
 
-type FolderViewData = {
+export type FolderViewData = {
     uid: string;
     name: string;
-    parentUid?: string;
+    parentUid: string | undefined;
     isRoot: boolean;
+    shareId: string;
 };
 
 type FolderPermissions = {
@@ -119,16 +121,19 @@ export const useFolderStore = create<FolderStore>()(
                         ...existingItem,
                         ...item,
                     });
-                } else {
-                    throw new Error(`Updating non existing uid: ${uid}`);
+
+                    return {
+                        items: updatedItems,
+                    };
                 }
 
-                return {
-                    items: updatedItems,
-                };
+                return {};
             }),
         removeItem: (uid: string) =>
             set((state) => {
+                if (!state.items.has(uid)) {
+                    return {};
+                }
                 const updatedItems = new Map(state.items);
                 updatedItems.delete(uid);
                 const newUids = new Set(state.itemUids);

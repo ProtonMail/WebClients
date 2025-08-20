@@ -21,6 +21,7 @@ interface Props {
     shareId: string;
     selectedItems: MoveItemsModalStateItem[];
     onClose?: () => void;
+    onSuccess?: (items: { uid: string; parentUid: string | undefined }[]) => void;
 }
 
 const MoveToFolderModalDeprecated = ({ shareId, selectedItems, onClose, ...modalProps }: Props) => {
@@ -145,6 +146,7 @@ export const useMoveToFolderModal = () => {
         if (!shareId || !selectedItems.length) {
             return;
         }
+
         void showMoveToFolderModal({ shareId, selectedItems, ...rest });
     };
 
