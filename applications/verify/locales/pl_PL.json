@@ -83,6 +83,11 @@
         "Użyj własnej domeny"
       ]
     },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Przechowywanie i udostępnianie dużych plików w chmurze"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "Abchazja"
@@ -914,6 +919,9 @@
       ],
       "Something went wrong": [
         "Coś poszło nie tak"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Nie możemy załadować strony. Odśwież stronę lub sprawdź swoje połączenie."
       ]
     },
     "fido2: Error": {
@@ -949,6 +957,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -975,11 +986,37 @@
         "megabajty",
         "megabajtów",
         "megabajtów"
+      ],
+      "Terabyte": [
+        "terabajt",
+        "terabajty",
+        "terabajtów",
+        "terabajtów"
       ]
     },
     "Font face option": {
+      "System default": [
+        "Domyślne ustawienia systemu"
+      ],
       "Theme font": [
         "Czcionka"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Duża"
+      ],
+      "Medium (recommended)": [
+        "Średnia (zalecana)"
+      ],
+      "Small": [
+        "Mała"
+      ],
+      "Very large": [
+        "Bardzo duża"
+      ],
+      "Very small": [
+        "Bardzo mała"
       ]
     },
     "Human verification method": {
@@ -1012,6 +1049,9 @@
       "Country code": [
         "Kod kraju"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "Tworzenie wielu bezpłatnych kont nie jest dozwolone przez ${ termsLink }."
+      ],
       "Each code can only be used once": [
         "Każdy kod może zostać użyty tylko jeden raz"
       ],
@@ -1033,8 +1073,14 @@
       "Enter your own password (as trusted contact).": [
         "Wpisz swoje hasło (jako zaufany kontakt)."
       ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "Aby uzyskać dodatkowe informacje i usunąć ograniczenia, zaloguj się pod adresem ${ mailLink }."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Jeśli uważasz, że popełniliśmy błąd, ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jeśli nie widzisz wiadomości w skrzynce odbiorczej, sprawdź folder spam."
@@ -1059,6 +1105,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Ulepsz do płatnego planu, aby usunąć ograniczenia."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Mamy plany zaprojektowane specjalnie dla użytkowników takich jak Ty, którzy potrzebują więcej niż jednego adresu e-mail."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wyślemy nowy kod weryfikacyjny do ${ strong }"
@@ -1121,16 +1173,27 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "skontaktuj się z nami"
+      ],
       "Learn more": [
         "Dowiedz się więcej"
       ],
       "Request an invite": [
         "Poproś o zaproszenie"
+      ],
+      "terms of service": [
+        "regulamin"
       ]
     },
     "new_plans": {
       "Keep your inbox organized with folders": [
         "Zachowaj porządek w skrzynce odbiorczej dzięki folderom"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Wybierz plan ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -1185,11 +1248,50 @@
         "${ n } wiadomości dziennie",
         "${ n } wiadomości dziennie"
       ],
+      "${ options }-day file version history": [
+        "${ options }-dniowa historia wersji plików",
+        "${ options }-dniowa historia wersji plików",
+        "${ options }-dniowa historia wersji plików",
+        "${ options }-dniowa historia wersji plików"
+      ],
       "${ size } attachment size": [
         "${ size } rozmiaru załącznika"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } bezpiecznej przestrzeni dyskowej na użytkownika"
+      ],
       "${ size } storage": [
         "${ size } przestrzeni dyskowej"
+      ],
+      "${ size } storage per user": [
+        "${ size } przestrzeni dyskowej na użytkownika"
+      ],
+      "1 TB secure storage": [
+        "1 TB bezpiecznej przestrzeni dyskowej"
+      ],
+      "10 email addresses/aliases": [
+        "10 adresów e-mail / aliasów"
+      ],
+      "10 more premium features": [
+        "10 więcej funkcji premium"
+      ],
+      "10-year file version history": [
+        "10-letnia historia wersji plików"
+      ],
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "200 GB of storage": [
+        "200 GB przestrzeni dyskowej"
+      ],
+      "Advanced account protection": [
+        "Zaawansowana ochrona konta"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Wszystkie usługi i funkcje ${ BRAND_NAME }"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Wszystkie podstawowe usługi ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "Auto-delete Spam and Trash": [
         "Automatyczne usuwanie spamu i kosza"
@@ -1206,11 +1308,17 @@
       "Catch-all": [
         "Catch-all"
       ],
+      "Collaborate and share large files": [
+        "Współpraca i udostępnianie dużych plików"
+      ],
       "Contact groups": [
         "Grupy kontaktów"
       ],
       "Contact groups management": [
         "Zarządzanie grupami kontaktów"
+      ],
+      "Custom and secure business email": [
+        "Niestandardowy i bezpieczny adres firmowy"
       ],
       "Custom email domains": [
         "Niestandardowe domeny"
@@ -1233,17 +1341,53 @@
       "End-to-end encryption": [
         "Szyfrowanie end-to-end"
       ],
+      "Generate emails with a prompt": [
+        "Generowanie wiadomości z zadania"
+      ],
       "HTML signatures": [
         "Podpisy HTML"
+      ],
+      "Online document editor": [
+        "Edytor dokumentów online"
+      ],
+      "Password health": [
+        "Jakość hasła"
       ],
       "Password-protected Emails": [
         "Wiadomości chronione hasłem"
       ],
+      "Private photo backup": [
+        "Prywatna kopia zapasowa zdjęć"
+      ],
+      "Proofread and refine your emails": [
+        "Sprawdzaj i poprawiaj teksty"
+      ],
+      "Quickly craft replies": [
+        "Twórz szybsze wiadomości"
+      ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
+      ],
+      "Save time emailing": [
+        "Zaoszczędź czas podczas pisania"
+      ],
       "Schedule and snooze emails for any time": [
         "Planowanie i usypianie wiadomości o dowolnej porze"
       ],
+      "Secure file storage and sharing": [
+        "Bezpieczne przechowywanie i udostępnianie plików"
+      ],
+      "Share files with no size limit": [
+        "Udostępniaj pliki bez limitów"
+      ],
       "SMTP submission": [
         "Poświadczenia SMTP"
+      ],
+      "Support for up to 2 users": [
+        "Wsparcie do 2 użytkowników"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synchronizuj wszystkie pliki i wykonuj ich kopie zapasowe na różnych urządzeniach"
       ],
       "Unlimited filters": [
         "Nieograniczona liczba filtrów"
@@ -1265,11 +1409,20 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 niestandardowa domena"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Utwórz wiele adresów e-mail dla swoich tożsamości internetowych, np. JanZakupowy@${ domain } dla kont zakupowych i JanWiadomości@${ domain2 } dla subskrybowania wiadomości"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Zabezpiecz swoje pliki za pomocą szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
+      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Zabezpiecz pocztę e-mail za pomocą szyfrowania end-to-end. Zawiera obsługę niestandardowych domen, 15 adresów e-mail, nieograniczoną liczbę aliasów hide-my-email i wiele więcej."
       ],
@@ -1367,11 +1520,22 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Zwiększ przestrzeń dyskową do ${ bundleStorage }"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Wsparcie dla ${ n } niestandardowej domeny",
+        "Wsparcie dla ${ n } niestandardowych domen",
+        "Wsparcie dla ${ n } niestandardowych domen",
+        "Wsparcie dla ${ n } niestandardowych domen"
       ]
     },
     "Placeholder": {
       "Password": [
         "Hasło"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Wszystkie funkcje premium usług ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "saml: Error": {
@@ -1415,6 +1579,9 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "Konto zostało ograniczone"
+      ],
       "Enter 2FA code": [
         "Wpisz kod uwierzytelniający"
       ],

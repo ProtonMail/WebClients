@@ -83,6 +83,11 @@
         "Utilitzeu el vostre propi domini de correu electrònic"
       ]
     },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Emmagatzematge al núvol i compartició dels vostres fitxers"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "Abkhàzia"
@@ -914,6 +919,9 @@
       ],
       "Something went wrong": [
         "S'ha produït un error."
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
       ]
     },
     "fido2: Error": {
@@ -947,6 +955,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -965,6 +976,10 @@
       "Megabyte": [
         "megabyte",
         "megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Font face option": {
@@ -1022,6 +1037,9 @@
       "Country code": [
         "Codi de país"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "Crear diversos comptes gratuïts no està permès pels nostres ${ termsLink }"
+      ],
       "Each code can only be used once": [
         "Cada codi només es pot utilitzar una vegada"
       ],
@@ -1043,8 +1061,14 @@
       "Enter your own password (as trusted contact).": [
         "Introduïu la vostra contrasenya (com a contacte de confiança)."
       ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "Per obtenir informació addicional i esborrar restriccions, inicieu sessió a ${ mailLink }."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Si creieu que hem comès un error, si us plau ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
@@ -1069,6 +1093,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Per esborrar restriccions, podeu actualitzar a un pla de pagament."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Si necessiteu més d'una adreça de correu electrònica, tenim plans dissenyats específicament a la vostra mida."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviarem un codi de verificació nou a ${ strong }"
@@ -1131,16 +1161,27 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "contacteu-nos"
+      ],
       "Learn more": [
         "Més informació"
       ],
       "Request an invite": [
         "Demana una invitació"
+      ],
+      "terms of service": [
+        "condicions de servei"
       ]
     },
     "new_plans": {
       "Keep your inbox organized with folders": [
         "Mantingueu la vostra safata d'entrada organitzada amb carpetes."
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Obtingueu ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -1179,11 +1220,48 @@
         "${ n } missatge per dia",
         "${ n } missatges per dia"
       ],
+      "${ options }-day file version history": [
+        "Historial de versions de fitxers de ${ options } dies",
+        "Historial de versions de fitxers de ${ options } dies"
+      ],
       "${ size } attachment size": [
         "${ size } en fitxers adjunts"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } d'emmagatzematge segur per usuari"
+      ],
       "${ size } storage": [
         "${ size } d'emmagatzematge"
+      ],
+      "${ size } storage per user": [
+        "${ size } d'emmagatzematge per usuari"
+      ],
+      "1 TB secure storage": [
+        "1 TB d'emmagatzematge segur"
+      ],
+      "10 email addresses/aliases": [
+        "10 adreces de correu electrònic/àlies"
+      ],
+      "10 more premium features": [
+        "10 característiques prèmium més"
+      ],
+      "10-year file version history": [
+        "Historial de versions de fitxers de 10 anys"
+      ],
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "200 GB of storage": [
+        "200 GB d'emmagatzematge"
+      ],
+      "Advanced account protection": [
+        "Protecció avançada del compte"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Tots els productes i funcions de ${ BRAND_NAME }"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Tots els serveis bàsics de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "Auto-delete Spam and Trash": [
         "Neteja automàticament el correu brossa i la paperera"
@@ -1200,11 +1278,17 @@
       "Catch-all": [
         "Adreça d'arreplega"
       ],
+      "Collaborate and share large files": [
+        "Col·laboreu i compartiu fitxers grans"
+      ],
       "Contact groups": [
         "Grups de contactes"
       ],
       "Contact groups management": [
         "Gestió de grups de contactes"
+      ],
+      "Custom and secure business email": [
+        "Correu electrònic empresarial personalitzat i segur"
       ],
       "Custom email domains": [
         "Dominis de correu personalitzats"
@@ -1227,17 +1311,53 @@
       "End-to-end encryption": [
         "Xifratge d'extrem a extrem"
       ],
+      "Generate emails with a prompt": [
+        "Genera correus electrònics amb una indicació"
+      ],
       "HTML signatures": [
         "Signatures HTML"
+      ],
+      "Online document editor": [
+        "Editor de documents en línia"
+      ],
+      "Password health": [
+        "Estat de la contrasenya"
       ],
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
       ],
+      "Private photo backup": [
+        "Còpia de seguretat de fotos privada"
+      ],
+      "Proofread and refine your emails": [
+        "Corregiu i refineu els vostres correus electrònics"
+      ],
+      "Quickly craft replies": [
+        "Crea respostes ràpidament"
+      ],
+      "Recover previous file versions": [
+        "Recupereu versions anteriors dels fitxers"
+      ],
+      "Save time emailing": [
+        "Estalvieu temps en l'enviament dels vostres correus electrònics"
+      ],
       "Schedule and snooze emails for any time": [
         "Programeu i ajorneu correus electrònics per a qualsevol moment."
       ],
+      "Secure file storage and sharing": [
+        "Compartició i emmagatzematge segurs de fitxers"
+      ],
+      "Share files with no size limit": [
+        "Compartiu fitxers sense límit de mida"
+      ],
       "SMTP submission": [
         "Tramesa SMTP"
+      ],
+      "Support for up to 2 users": [
+        "Suport per a 2 usuaris"
+      ],
+      "Sync and backup all your files across devices": [
+        "Sincronitzeu i feu una còpia de seguretat de tots els fitxers entre dispositius."
       ],
       "Unlimited filters": [
         "Filtres il·limitats"
@@ -1259,11 +1379,20 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 domini de correu electrònic personalitzat"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia. Per exemple: JoanComprador@${ domain } per a comptes de compres, JoanNoticies@${ domain2 } per a la subscripció a notícies"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, sincronització automàtica i compartició de fitxers xifrats."
+      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Protegiu els vostres correus electrònics amb xifratge d’extrem a extrem. Inclou suport per a dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, nombre il·limitat d'àlies hide-my-email, etc."
       ],
@@ -1361,11 +1490,20 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Augmenteu l'espai d'emmagatzematge a ${ bundleStorage } en total"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Suport per a ${ n } domini de correu electrònic personalitzat",
+        "Suport per a ${ n } dominis de correu electrònic personalitzats"
       ]
     },
     "Placeholder": {
       "Password": [
         "Contrasenya"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Totes les característiques prèmium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "saml: Error": {
@@ -1409,6 +1547,9 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "Compte restringit"
+      ],
       "Account temporarily locked": [
         "El compte s'ha bloquejat temporalment"
       ],
