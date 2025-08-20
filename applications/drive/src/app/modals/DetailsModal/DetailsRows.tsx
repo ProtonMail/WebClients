@@ -27,7 +27,7 @@ export function TimeRow({ label, time }: { label: string; time: Date }) {
     );
 }
 
-export function SizeRow({ label, size, dataTestId }: { label: string; size: number; dataTestId?: string }) {
+export function SizeRow({ label, size, dataTestId }: { label: React.ReactNode; size: number; dataTestId?: string }) {
     return (
         <DetailsRow label={label} dataTestId={dataTestId}>
             <span title={bytesSize(size)}>{humanSize({ bytes: size })}</span>
