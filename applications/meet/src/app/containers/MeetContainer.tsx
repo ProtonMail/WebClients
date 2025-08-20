@@ -8,6 +8,7 @@ import { MeetContext } from '../contexts/MeetContext';
 import { UIStateProvider } from '../contexts/UIStateContext';
 import { useFaceTrackingSetup } from '../hooks/useFaceTrackingSetup';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
+import { useIsNarrowHeight } from '../hooks/useIsNarrowHeight';
 import { useSortedParticipants } from '../hooks/useSortedParticipants';
 import type { MeetChatMessage, ParticipantEntity, ParticipantEventRecord, ParticipantSettings } from '../types';
 
@@ -58,8 +59,9 @@ export const MeetContainer = ({
     const [page, setPage] = useState(0);
 
     const isLargerThanMd = useIsLargerThanMd();
+    const isNarrowHeight = useIsNarrowHeight();
 
-    const [pageSize, setPageSize] = useState(isLargerThanMd ? PAGE_SIZE : SMALL_SCREEN_PAGE_SIZE);
+    const [pageSize, setPageSize] = useState(isLargerThanMd && !isNarrowHeight ? PAGE_SIZE : SMALL_SCREEN_PAGE_SIZE);
     const [resolution, setResolution] = useState<string | null>(null);
 
     const [chatMessages, setChatMessages] = useState<MeetChatMessage[]>([]);
