@@ -112,6 +112,9 @@
       "Change": [
         "Módosítás"
       ],
+      "Change email": [
+        "E-mail cím módosítása"
+      ],
       "Check DNS": [
         "DNS ellenőrzése"
       ],
@@ -123,6 +126,9 @@
       ],
       "Clear": [
         "Törlés"
+      ],
+      "Clear search": [
+        "Keresés törlése"
       ],
       "Close": [
         "Bezárás"
@@ -207,6 +213,9 @@
       ],
       "Delete alias": [
         "E-mail álnév törlése"
+      ],
+      "Delete all": [
+        "Összes törlése"
       ],
       "Delete it, I will never need it": [
         "Törlés, soha nem lesz rá szükségem"
@@ -502,8 +511,14 @@
       "Resend invitation": [
         "Meghívó újraküldése"
       ],
+      "Reset": [
+        "Törlés"
+      ],
       "Reset history": [
         "Előzmények visszaállítása"
+      ],
+      "Restore": [
+        "Visszaállítás"
       ],
       "Restore item": [
         "Elem helyreállítása"
@@ -706,6 +721,11 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } alkalmazás eltávolítása"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } asztali alkalmazás"
       ]
     },
     "Button": {
@@ -1266,6 +1286,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -1284,14 +1307,44 @@
       "Megabyte": [
         "Megabájt",
         "Megabájt"
+      ],
+      "Terabyte": [
+        "Terabájt",
+        "Terabájt"
       ]
     },
     "Font face option": {
+      "System default": [
+        "Rendszer alapértelmezett"
+      ],
       "Theme font": [
         "Téma betűtípus"
       ]
     },
+    "Font size option": {
+      "Large": [
+        "Nagy"
+      ],
+      "Medium (recommended)": [
+        "Közepes (ajánlott)"
+      ],
+      "Small": [
+        "Kicsi"
+      ],
+      "Very large": [
+        "Nagyon nagy"
+      ],
+      "Very small": [
+        "Nagyon kicsi"
+      ]
+    },
     "Info": {
+      "\"${ payload.itemName }\" item was dismissed": [
+        "\"${ payload.itemName }\" elem elvetve"
+      ],
+      "\"${ payload.itemName }\" update was dismissed": [
+        "\"${ payload.itemName }\" frissítése elvetve"
+      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } blokkolva",
         "${ blockedEmailsCount } blokkolva"
@@ -1518,6 +1571,9 @@
       "Congratulations, your access has been confirmed": [
         "A hozzáférése jóváhagyva"
       ],
+      "Copied to clipboard": [
+        "Vágólapra másolva"
+      ],
       "Coupon successfully applied!": [
         "A kupon sikeresen alkalmazva!"
       ],
@@ -1562,6 +1618,12 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domain: ${ domainPath } vagy @"
+      ],
+      "Drop file here to upload": [
+        "Húzza ide a fájlokat a feltöltéshez"
+      ],
+      "Drop to import": [
+        "Húzza ide az importáláshoz"
       ],
       "Editor": [
         "Szerkesztő"
@@ -1770,6 +1832,9 @@
       "Latest breach on ${ formattedDate }": [
         "Legutolsó adatszivárgás: ${ formattedDate }"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Tudja meg, mit kell tennie ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "Elem elhagyása..."
       ],
@@ -1863,6 +1928,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "A ${ PASS_APP_NAME } alkalmazáshoz való online hozzáféréshez PIN kód szükséges. 3 sikertelen próbálkozás után ki lesz jelentkeztetve."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Figyelmeztetéseink a biztonságot helyezik előtérbe.Ha nem ismeri fel ezeket a feltört információkat nyugodtan figyelmen kívül hagyhatja ezt."
       ],
       "Owner": [
         "Tulajdonos"
@@ -2404,6 +2472,9 @@
       "your domain": [
         "saját domain név"
       ],
+      "Your files will be encrypted and then saved": [
+        "A fájlok titkosításra majd pedig mentésre kerülnek"
+      ],
       "Your information was found on ${ displayedDate }": [
         "Az ön információja meg lett találva ezen a napon: ${ displayedDate }"
       ],
@@ -2903,6 +2974,9 @@
       "https://example.com": [
         "https://example.com"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "ID Card": [
         "Személyi igazolvány"
       ],
@@ -2977,6 +3051,9 @@
       ],
       "Key type": [
         "Kulcs típusa"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Gyorsbillentyű: ${ shortcut }"
       ],
       "Language": [
         "Nyelv"
@@ -3443,6 +3520,9 @@
       "The URL has been copied to the clipboard": [
         "Az URL a vágólapra lett másolva"
       ],
+      "Theme": [
+        "Téma"
+      ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Ez az elem ${ date } napjáig vagy a megtekintési korlát eléréséig érhető el."
       ],
@@ -3613,8 +3693,16 @@
       "auto create rules ››": [
         "szabályok automatikus létrehozása ››"
       ],
+      "if your data is leaked": [
+        "ha az adatai kiszivárogtak"
+      ],
       "Learn more": [
         "További információk"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Engedélyezi: ${ reason }"
       ]
     },
     "Medium": {
@@ -3652,6 +3740,17 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Kétlépcsős hitelesítés megkövetelése a szervezetben"
+      ],
+      "SSO integration": [
+        "SSO integráció"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } letiltva"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } engedélyezésre került"
       ]
     },
     "Option": {
@@ -3904,6 +4003,20 @@
       ],
       "Used on ${ url }": [
         "Használva: ${ url }"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } és ${ remainingCount } lehetséges adatszivárgást észleltünk. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } szolgáltatást a részletek megtekintéséhez. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } és 1 másik lehetséges adatszivárgást észleltünk. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } szolgáltatást a részletek megtekintéséhez. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Lehetséges ${ name } adatszivárgást észleltünk. A részletek megtekintéséhez kapcsolja be a ${ DARK_WEB_MONITORING_NAME } funkciót. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Az Ön információja legalább egy adatszivárgásban megtalálható. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } szolgáltatást a részletek megtekintéséhez. ${ link }"
       ]
     },
     "sso": {
@@ -4239,6 +4352,9 @@
       "Inactive 2FA": [
         "Kétlépcsős hitelesítés kikapcsolva"
       ],
+      "Information exposed in breach": [
+        "Adatvédelmi incidens során kiszivárgott információk"
+      ],
       "Install extension": [
         "Telepítse a bővítményt"
       ],
@@ -4509,6 +4625,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Ma"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Nem minden itt felsorolt információt tettek közzé minden felhasználó esetén."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Hacsak nem fejtik meg őket, a titkosított jelszavak akkor is biztonságban maradnak, ha nyilvánosságra kerülnek."
       ]
     },
     "Validation": {
