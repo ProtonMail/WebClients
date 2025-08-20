@@ -3,6 +3,7 @@ import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces';
+import { telemetry } from '@proton/shared/lib/telemetry';
 import noop from '@proton/utils/noop';
 
 import type { AccountStore } from './store/store';
@@ -65,6 +66,22 @@ export const bootstrapApp = async ({
             bootstrap.loadCrypto({ appName, unleashClient }),
             unleashPromise,
         ]);
+
+        if (!!userData.userSettings.Telemetry) {
+            telemetry.init({
+                config,
+                uid: authentication.UID,
+                eventOptions: {
+                    pageView: false,
+                    click: false,
+                    form: false,
+                    performance: false,
+                    modal: false,
+                },
+                overridenPageTitle: 'VPN Settings',
+            });
+        }
+
         // Needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
 

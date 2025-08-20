@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button, Href, InlineLinkButton } from '@proton/atoms';
+import { Button, InlineLinkButton } from '@proton/atoms';
 import { Tooltip } from '@proton/atoms';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Icon from '@proton/components/components/icon/Icon';
@@ -12,8 +12,8 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { APPS, AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';
-import { getKnowledgeBaseUrl, getStaticURL } from '@proton/shared/lib/helpers/url';
+import { APPS } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 import { getHasFIDO2Support } from '@proton/shared/lib/webauthn/helper';
 import { getId } from '@proton/shared/lib/webauthn/id';
@@ -26,6 +26,7 @@ import SettingsLayoutLeft from './SettingsLayoutLeft';
 import SettingsLayoutRight from './SettingsLayoutRight';
 import SettingsParagraph from './SettingsParagraph';
 import SettingsSection from './SettingsSection';
+import AuthenticatorPromotionBanner from './authenticatorPromotion/AuthenticatorPromotionBanner';
 import AddSecurityKeyModal from './fido/AddSecurityKeyModal';
 import EditSecurityKeyModal from './fido/EditSecurityKeyModal';
 import RemoveSecurityKeyModal from './fido/RemoveSecurityKeyModal';
@@ -93,10 +94,6 @@ const TwoFactorSection = () => {
 
     const hasSecurityKeySupport = getHasFIDO2Support(APP_NAME, location.hostname);
 
-    const protonAuthenticatorDownloadLink = (
-        <Href href={getStaticURL('/authenticator/download')}>{AUTHENTICATOR_APP_NAME}</Href>
-    );
-
     return (
         <SettingsSection>
             {renderEnableTOTPModal && <EnableTOTPModal {...enableTOTPModal} />}
@@ -104,12 +101,11 @@ const TwoFactorSection = () => {
             {renderLostTwoFAModal && (
                 <LostTwoFAModal availableRecoveryMethods={availableRecoveryMethods} {...lostTwoFAPModal} />
             )}
-            <SettingsParagraph>
-                {
-                    // translator: Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using Proton Authenticator for storing your 2FA codes.
-                    c('Info')
-                        .jt`Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${protonAuthenticatorDownloadLink} for storing your 2FA codes.`
-                }
+            <SettingsParagraph large>
+                {c('Info')
+                    .jt`Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.`}
+
+                <AuthenticatorPromotionBanner className="mt-4" />
             </SettingsParagraph>
             {hasTOTPEnabled && hasRecoveryMethod && (
                 <SettingsParagraph>
