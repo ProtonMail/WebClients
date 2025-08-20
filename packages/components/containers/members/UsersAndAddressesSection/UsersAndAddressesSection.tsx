@@ -159,6 +159,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const allowLumoUpdate = lumoAddonAvailable;
 
     const showMultipleUserUploadButton = hasExternalMemberCapableB2BPlan;
+    const showAddAddress = !hasExternalMemberCapableB2BPlan || hasPassB2BPlan;
     const showAddressesSection = !hasExternalMemberCapableB2BPlan && hasMaxAddresses;
     const showFeaturesColumn = !hasExternalMemberCapableB2BPlan || hasDriveB2BPlan || hasPassBusiness(subscription);
 
@@ -551,7 +552,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                     />
                 )}
                 <div className="flex items-center mb-2 gap-2 mr-4">
-                    {hasExternalMemberCapableB2BPlan ? (
+                    {!showAddAddress ? (
                         <>
                             {hasSetupActiveOrganizationWithKeys && (
                                 <SetupOrgSpotlight app={app}>
