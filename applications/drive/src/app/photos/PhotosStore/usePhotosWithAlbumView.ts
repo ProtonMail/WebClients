@@ -71,6 +71,7 @@ export const usePhotosWithAlbumsView = () => {
         albumPhotos,
         albums,
         loadPhotos,
+        initializePhotosView,
         loadAlbums,
         loadSharedWithMeAlbums,
         addAlbumPhotos,
@@ -536,5 +537,6 @@ export const usePhotosWithAlbumsView = () => {
         updatePhotoFavoriteFromCache,
         addNewAlbumPhotoToCache,
         removeTagsFromPhoto,
+        initializePhotosView,
     };
 };
