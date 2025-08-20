@@ -129,7 +129,7 @@ const ExtraEvent = ({
     });
 
     useEffect(() => {
-        const run = async () => {
+        const initializeEventModel = async () => {
             if (!invitationIcs?.vevent) {
                 return;
             }
@@ -307,7 +307,7 @@ const ExtraEvent = ({
             }
         };
 
-        void withLoading(run());
+        void withLoading(initializeEventModel());
     }, [retryCount]);
 
     if (loading) {
@@ -337,7 +337,6 @@ const ExtraEvent = ({
                         reloadWidget={handleReloadWidget}
                     />
                 </div>
-                <hr className="m-0" />
                 <ExtraEventDetails model={model} weekStartsOn={getWeekStartsOn(userSettings)} />
             </div>
         </div>

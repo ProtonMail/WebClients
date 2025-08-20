@@ -38,6 +38,7 @@ const BREAKPOINTS = {
 const ToolbarRowWide = ({
     classname,
     selectAll,
+    addressesDropdown,
     sort,
     onSort,
     filter,
@@ -81,6 +82,7 @@ const ToolbarRowWide = ({
                 <div className="flex items-center flex-nowrap toolbar-inner gap-2">
                     {selectAll}
                     <LabelName selectedIDs={selectedIDs} labelName={labelName} />
+                    {addressesDropdown}
 
                     <ReadUnreadButtons selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
 
