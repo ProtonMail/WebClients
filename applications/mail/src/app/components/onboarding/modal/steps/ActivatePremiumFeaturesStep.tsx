@@ -1,9 +1,10 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { memberThunk, organizationThunk, subscriptionThunk, useUserSettings, userThunk } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import {
     LabelStack,
@@ -25,11 +26,13 @@ import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry'
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { DARK_WEB_MONITORING_STATE } from '@proton/shared/lib/interfaces';
+import { getIsBYOEAccount } from '@proton/shared/lib/keys';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 import aliasesIcon from '@proton/styles/assets/img/onboarding/mail_onboarding_aliases.svg';
 import autoDeleteIcon from '@proton/styles/assets/img/onboarding/mail_onboarding_auto_delete.svg';
 import monitoringIcon from '@proton/styles/assets/img/onboarding/mail_onboarding_dark_web_monitoring.svg';
 import clsx from '@proton/utils/clsx';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { useMailOnboardingTelemetry } from 'proton-mail/components/onboarding/useMailOnboardingTelemetry';
 
@@ -45,33 +48,31 @@ interface Feature {
     icon: string;
 }
 
-const useGetFeatures = (shortDomain: string) => {
-    return useMemo<Feature[]>(() => {
-        const aliases: Feature = {
-            id: 'aliases',
-            title: shortDomain,
-            // translator: Keep this description short. Avoid going over 70 char
-            description: c('Onboarding modal').t`Start using the shorter, catchier version of your email address.`,
-            icon: aliasesIcon,
-        };
-        const monitoring: Feature = {
-            id: 'monitoring',
-            title: DARK_WEB_MONITORING_NAME,
-            // translator: Keep this description short. Avoid going over 70 char
-            description: c('Onboarding modal').t`Get notified if your password is compromised.`,
-            icon: monitoringIcon,
-        };
-        const autoDelete: Feature = {
-            id: 'autoDelete',
-            // translator: Keep this title short.
-            title: c('Onboarding modal').t`Auto-delete spam and trash`,
-            // translator: Keep this description short. Avoid going over 70 char
-            description: c('Onboarding modal').t`Clear out deleted and spam emails after 30 days.`,
-            icon: autoDeleteIcon,
-        };
+const useGetFeatures = (shortDomain: string, isBYOE: boolean) => {
+    const aliases: Feature = {
+        id: 'aliases',
+        title: shortDomain,
+        // translator: Keep this description short. Avoid going over 70 char
+        description: c('Onboarding modal').t`Start using the shorter, catchier version of your email address.`,
+        icon: aliasesIcon,
+    };
+    const monitoring: Feature = {
+        id: 'monitoring',
+        title: DARK_WEB_MONITORING_NAME,
+        // translator: Keep this description short. Avoid going over 70 char
+        description: c('Onboarding modal').t`Get notified if your password is compromised.`,
+        icon: monitoringIcon,
+    };
+    const autoDelete: Feature = {
+        id: 'autoDelete',
+        // translator: Keep this title short.
+        title: c('Onboarding modal').t`Auto-delete spam and trash`,
+        // translator: Keep this description short. Avoid going over 70 char
+        description: c('Onboarding modal').t`Clear out deleted and spam emails after 30 days.`,
+        icon: autoDeleteIcon,
+    };
 
-        return [aliases, monitoring, autoDelete];
-    }, [shortDomain]);
+    return [!isBYOE && aliases, monitoring, autoDelete].filter(isTruthy);
 };
 
 interface FeatureItemProps extends Feature {
@@ -152,10 +153,12 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
     const { call } = useEventManager();
     const { shortDomainAddress, createShortDomainAddress, loadingDependencies, hasShortDomain } =
         useShortDomainAddress();
-    const features = useGetFeatures(shortDomainAddress);
+    const [user] = useUser();
+    const isBYOE = getIsBYOEAccount(user);
+    const features = useGetFeatures(shortDomainAddress, isBYOE);
 
     const [checkedFeatures, setCheckedFeatures] = useState<Record<FeatureID, boolean>>({
-        aliases: true,
+        aliases: !isBYOE, // We don't want BYOE users to set up short domain address during onboarding
         autoDelete: true,
         monitoring: true,
     });
@@ -215,7 +218,7 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
                     c('Onboarding modal').t`Activate premium features`
                 }
                 description={c('Onboarding modal').t`Make the most of your paid plan.`}
-                className="mb-16"
+                className="mb-16 onboarding-modal-premium-features"
             >
                 <div className="flex flex-column gap-4">
                     {loadingDeps ? (
@@ -242,7 +245,7 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
                     )}
                 </div>
             </OnboardingContent>
-            <footer>
+            <footer className="mt-auto">
                 <Button size="large" fullWidth color="norm" onClick={handleNext} disabled={loadingDeps}>
                     {hasAllItemsActivated || hasNoItemsChecked
                         ? c('Onboarding modal').t`Start using ${BRAND_NAME}`

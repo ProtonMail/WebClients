@@ -10,47 +10,42 @@ const getModalItems = (): { icon: IconName; getTitle: () => string; getText: () 
     return [
         {
             icon: 'brand-google',
-            getTitle: () => c('loc_nightly: BYOE').t`Allow ${BRAND_NAME} to access to your Gmail account`,
-            getText: () => c('loc_nightly: BYOE').t`We only ask permission to access data that's strictly necessary.`,
+            getTitle: () => c('loc_nightly: BYOE').t`Allow ${BRAND_NAME} to connect to your Gmail`,
+            getText: () =>
+                c('loc_nightly: BYOE')
+                    .t`We only ask permission to access data that's strictly necessary. Nothing more.`,
         },
         {
             icon: 'arrow-down-to-square',
-            getTitle: () => c('loc_nightly: BYOE').t`Import your latest messages`,
+            getTitle: () => c('loc_nightly: BYOE').t`Pick up where you left off`,
             getText: () =>
-                c('loc_nightly: BYOE').t`We’ll import your latest messages, so you can quickly get productive.`,
+                c('loc_nightly: BYOE')
+                    .t`We’ll bring in your most recent emails, ensuring your ${MAIL_APP_NAME} inbox is up-to-date and ready for action.`,
         },
         {
             icon: 'inbox',
-            getTitle: () => c('loc_nightly: BYOE').t`Receive new emails automatically`,
+            getTitle: () => c('loc_nightly: BYOE').t`Receive new emails`,
             getText: () =>
-                c('loc_nightly: BYOE').t`New Gmail messages will seamlessly forward to your ${MAIL_APP_NAME} inbox.`,
+                c('loc_nightly: BYOE')
+                    .t`Emails sent to your Gmail address will automatically be forwarded to your ${MAIL_APP_NAME} inbox.`,
         },
         {
             icon: 'envelope-arrow-up-and-right',
-            getTitle: () => c('loc_nightly: BYOE').t`Send emails from ${BRAND_NAME}`,
+            getTitle: () => c('loc_nightly: BYOE').t`Send messages from ${BRAND_NAME}`,
             getText: () =>
                 c('loc_nightly: BYOE')
-                    .t`Send and manage your Gmail messages within ${MAIL_APP_NAME} apps — and leave your Gmail inbox behind.`,
+                    .t`Send and manage your Gmail messages within ${MAIL_APP_NAME} apps — and leave Gmail behind.`,
         },
     ];
 };
 
 interface Props extends ModalProps {
-    showIcon?: boolean;
-    buttonText?: string;
     onSubmit?: () => void;
     submitDisabled?: boolean;
     isLoading?: boolean;
 }
 
-const AddBYOEModal = ({
-    showIcon,
-    buttonText = c('Action').t`Next`,
-    onSubmit,
-    submitDisabled,
-    isLoading,
-    ...rest
-}: Props) => {
+const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, ...rest }: Props) => {
     const { onClose } = rest;
 
     return (
@@ -58,7 +53,7 @@ const AddBYOEModal = ({
             <ModalTwoHeader
                 title={c('loc_nightly: BYOE').t`Connecting your Gmail address`}
                 subline={c('loc_nightly: BYOE')
-                    .t`It's simple to connect your Gmail address to ${BRAND_NAME} — and significantly more private.`}
+                    .t`Connecting your Gmail address to ${MAIL_APP_NAME} is simple — and far more private: no ads, protection from trackers and encrypted sending.`}
             />
             <ModalTwoContent>
                 {getModalItems().map((item) => {
@@ -84,8 +79,8 @@ const AddBYOEModal = ({
                     disabled={submitDisabled}
                     loading={isLoading}
                 >
-                    {showIcon && <img src={googleLogo} alt="" />}
-                    {buttonText}
+                    <img src={googleLogo} alt="" />
+                    {c('loc_nightly: BYOE').t`Connect to Gmail`}
                 </Button>
             </ModalTwoFooter>
         </ModalTwo>

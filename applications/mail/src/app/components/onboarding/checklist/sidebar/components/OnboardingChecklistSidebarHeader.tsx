@@ -5,12 +5,12 @@ import { c, msgid } from 'ttag';
 import { Icon, SimpleSidebarListItemHeader } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
+import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+
 interface Props {
     canCloseChecklist: boolean;
     canDisplayCountDown: boolean;
     isOpened: boolean;
-    itemsCompletedCount: number;
-    itemsToCompleteCount: number;
     onCloseChecklist: () => void;
     onToggleChecklist: (value: boolean) => void;
     remainingDaysCount: number;
@@ -28,12 +28,13 @@ const OnboardingChecklistSidebarHeader = ({
     canCloseChecklist,
     canDisplayCountDown,
     isOpened,
-    itemsCompletedCount,
-    itemsToCompleteCount,
     onCloseChecklist,
     onToggleChecklist,
     remainingDaysCount,
 }: Props) => {
+    const { items, itemsToComplete } = useGetStartedChecklist();
+    const itemsCompletedCount = itemsToComplete.filter((key) => items.has(key)).length;
+
     const action = canCloseChecklist ? (
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
         <button
@@ -45,7 +46,7 @@ const OnboardingChecklistSidebarHeader = ({
         </button>
     ) : (
         <Counter title={c('Get started checklist instructions').t`Tasks to complete count`}>
-            {itemsCompletedCount}/{itemsToCompleteCount}
+            {itemsCompletedCount}/{itemsToComplete.length}
         </Counter>
     );
 

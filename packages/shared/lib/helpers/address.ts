@@ -131,3 +131,11 @@ export const getAddressFlagsData = (address: Address | undefined) => {
         },
     };
 };
+
+export const getIsBYOEOnlyAccount = (addresses: Address[] | undefined) => {
+    if (!addresses || !addresses.length) {
+        return false;
+    }
+
+    return addresses.every((address) => getIsBYOEAddress(address));
+};

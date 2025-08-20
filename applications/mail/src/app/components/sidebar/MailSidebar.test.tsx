@@ -4,11 +4,12 @@ import type { Location } from 'history';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { conversationCountsActions } from '@proton/mail';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
-import type { Label } from '@proton/shared/lib/interfaces';
+import { ChecklistKey, type Label } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import range from '@proton/utils/range';
@@ -20,6 +21,9 @@ import { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
 import MailSidebar from './MailSidebar';
 
 jest.mock('../../../../CHANGELOG.md', () => 'ProtonMail Changelog');
+
+jest.mock('@proton/account/userSettings/hooks');
+const mockedUserSettings = useUserSettings as jest.MockedFunction<any>;
 
 loudRejection();
 
@@ -87,6 +91,7 @@ describe('MailSidebar', () => {
 
     beforeEach(() => {
         mockedUseGetStartedChecklist = jest.spyOn(GetStartedChecklistProviderModule, 'useGetStartedChecklist');
+        mockedUserSettings.mockReturnValue([{}]);
     });
 
     const setupTest = () => {
@@ -433,6 +438,7 @@ describe('Sidebar checklist display', () => {
     beforeEach(() => {
         minimalCache();
         mockedUseGetStartedChecklist = jest.spyOn(GetStartedChecklistProviderModule, 'useGetStartedChecklist');
+        mockedUserSettings.mockReturnValue([{ Checklists: ['get-started-checklist'] }]);
     });
 
     it('Should display the checklist if state is reduced', async () => {
@@ -442,6 +448,12 @@ describe('Sidebar checklist display', () => {
             canDisplayChecklist: true,
             displayState: CHECKLIST_DISPLAY_TYPE.REDUCED,
             items: new Set(),
+            itemsToComplete: [
+                ChecklistKey.AccountLogin,
+                ChecklistKey.Import,
+                ChecklistKey.ProtectInbox,
+                ChecklistKey.MobileApp,
+            ],
         } as OnboardingChecklistContext);
 
         await mailTestRender(<MailSidebar {...props} />);
@@ -454,6 +466,12 @@ describe('Sidebar checklist display', () => {
             items: new Set(),
             expiresAt: addDays(new Date(), 10),
             canDisplayChecklist: true,
+            itemsToComplete: [
+                ChecklistKey.AccountLogin,
+                ChecklistKey.Import,
+                ChecklistKey.ProtectInbox,
+                ChecklistKey.MobileApp,
+            ],
         } as OnboardingChecklistContext);
 
         await mailTestRender(<MailSidebar {...props} />);
@@ -468,6 +486,12 @@ describe('Sidebar checklist display', () => {
             items: new Set(),
             expiresAt: addDays(new Date(), 10),
             canDisplayChecklist: true,
+            itemsToComplete: [
+                ChecklistKey.AccountLogin,
+                ChecklistKey.Import,
+                ChecklistKey.ProtectInbox,
+                ChecklistKey.MobileApp,
+            ],
         } as OnboardingChecklistContext);
 
         await mailTestRender(<MailSidebar {...props} />);
@@ -497,6 +521,12 @@ describe('Sidebar checklist display', () => {
             userWasRewarded: false,
             daysBeforeExpire: 0,
             hasExpired: true,
+            itemsToComplete: [
+                ChecklistKey.AccountLogin,
+                ChecklistKey.Import,
+                ChecklistKey.ProtectInbox,
+                ChecklistKey.MobileApp,
+            ],
         } as OnboardingChecklistContext);
 
         await mailTestRender(<MailSidebar {...props} />);

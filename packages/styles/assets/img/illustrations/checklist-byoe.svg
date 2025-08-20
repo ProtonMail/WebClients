@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 22 22">
+    <g clip-path="url(#a)">
+        <path
+            fill="#fff"
+            d="M0 6.111A6.111 6.111 0 0 1 6.111 0h9.778A6.111 6.111 0 0 1 22 6.111v9.778A6.111 6.111 0 0 1 15.889 22H6.11A6.111 6.111 0 0 1 0 15.889V6.11Z"
+        />
+        <path
+            fill="url(#b)"
+            fill-rule="evenodd"
+            d="M12.815 9.516 9.08 13.664 4.278 8.379v-2.28a.31.31 0 0 1 .506-.238l5.327 4.424a1.39 1.39 0 0 0 1.778 0l.926-.77Z"
+            clip-rule="evenodd"
+        />
+        <path
+            fill="url(#c)"
+            d="m14.841 7.832-2.026 1.683-2.682 2.37a1.236 1.236 0 0 1-1.609.024L4.278 8.378v6.775c0 .768.622 1.347 1.39 1.347h9.173l.96-4.312-.96-4.356Z"
+        />
+        <path
+            fill="url(#d)"
+            fill-rule="evenodd"
+            d="M14.841 7.835V16.5h1.49a1.39 1.39 0 0 0 1.391-1.39V6.098a.31.31 0 0 0-.506-.238L14.84 7.835Z"
+            clip-rule="evenodd"
+        />
+    </g>
+    <defs>
+        <linearGradient id="b" x1="9.323" x2="4.814" y1="13.737" y2="-1.927" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E3D9FF" />
+            <stop offset="1" stop-color="#7341FF" />
+        </linearGradient>
+        <linearGradient id="d" x1="22.07" x2="11.768" y1="23.446" y2="1.131" gradientUnits="userSpaceOnUse">
+            <stop offset=".271" stop-color="#E3D9FF" />
+            <stop offset="1" stop-color="#7341FF" />
+        </linearGradient>
+        <radialGradient
+            id="c"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientTransform="matrix(13.4388 0 0 12.6036 15.751 8.893)"
+            gradientUnits="userSpaceOnUse"
+        >
+            <stop offset=".556" stop-color="#6D4AFF" />
+            <stop offset=".994" stop-color="#AA8EFF" />
+        </radialGradient>
+        <clipPath id="a">
+            <rect width="22" height="22" fill="#fff" rx="6.111" />
+        </clipPath>
+    </defs>
+</svg>

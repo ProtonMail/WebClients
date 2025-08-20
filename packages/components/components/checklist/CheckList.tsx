@@ -2,12 +2,15 @@ import type { CSSProperties } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { isAdmin } from '@proton/shared/lib/user/helpers';
 import accountLoginSmall from '@proton/styles/assets/img/illustrations/checklist-account-login-small.svg';
 import accountLogin from '@proton/styles/assets/img/illustrations/checklist-account-login.svg';
 import appStoreSmall from '@proton/styles/assets/img/illustrations/checklist-app-store-small.svg';
 import appStore from '@proton/styles/assets/img/illustrations/checklist-app-store.svg';
+import byoeImg from '@proton/styles/assets/img/illustrations/checklist-byoe.svg';
 import gmailForwardSmall from '@proton/styles/assets/img/illustrations/checklist-gmail-forward-small.svg';
 import gmailForward from '@proton/styles/assets/img/illustrations/checklist-gmail-forward.svg';
 import protectInboxSmall from '@proton/styles/assets/img/illustrations/checklist-protect-inbox-small.svg';
@@ -62,12 +65,19 @@ export const CheckListGmailForward = ({
     disabled = false,
     'data-testid': dataTestId,
 }: CheckListItemProps) => {
+    const [user] = useUser();
+    const hasAccessToBYOE = useFlag('InboxBringYourOwnEmail') && isAdmin(user);
+
     const isInMaintenance = useFlag('MaintenanceImporter');
     // translator: This text is in bold inside the sentence "Set up auto-forwarding from Gmail"
     const strongText = <strong key="get-started">{c('Get started checklist instructions').t`auto-forwarding`}</strong>;
     // translator: The whole sentence is "Set up auto-forwarding from Gmail" with "auto-forwarding" in bold
-    const text = c('Get started checklist instructions').jt`Set up ${strongText} from Gmail`;
-    const smallText = c('Get started checklist instructions').t`Auto-forward Gmail`;
+    const text = hasAccessToBYOE
+        ? c('loc_nightly: BYOE').t`Connect Gmail address`
+        : c('Get started checklist instructions').jt`Set up ${strongText} from Gmail`;
+    const smallText = hasAccessToBYOE
+        ? c('loc_nightly: BYOE').t`Connect Gmail address`
+        : c('Get started checklist instructions').t`Auto-forward Gmail`;
 
     const item = (
         <CheckListItem
@@ -92,6 +102,30 @@ export const CheckListGmailForward = ({
     }
 
     return item;
+};
+
+export const CheckListClaimProtonAddress = ({
+    onClick,
+    done = false,
+    style,
+    disabled = false,
+    'data-testid': dataTestId,
+}: CheckListItemProps) => {
+    const text = c('Get started checklist instructions').t`Claim ${BRAND_NAME} address`;
+
+    return (
+        <CheckListItem
+            largeIcon={byoeImg}
+            smallIcon={byoeImg}
+            text={text}
+            onClick={onClick}
+            smallVariant
+            style={style}
+            done={done}
+            disabled={disabled}
+            data-testid={dataTestId}
+        />
+    );
 };
 
 export const CheckListAccountLogin = ({

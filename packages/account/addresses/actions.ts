@@ -488,6 +488,11 @@ export const setupExternalUserForProton = ({
 
             await preAuthKTCommit(user.ID, api);
         }
+
+        await Promise.all([
+            dispatch(userThunk({ cache: CacheType.None })),
+            dispatch(addressesThunk({ cache: CacheType.None })),
+        ]);
     };
 };
 

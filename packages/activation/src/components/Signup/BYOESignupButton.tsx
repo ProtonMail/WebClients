@@ -19,7 +19,6 @@ import { InlineLinkButton } from '@proton/atoms';
 import { Icon, useModalState } from '@proton/components';
 import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks/index';
 import { useVariant } from '@proton/unleash/index';
 
@@ -41,7 +40,6 @@ const BYOESignupButton = ({
     passwordInputRef,
 }: Props) => {
     const variant = useVariant('InboxBringYourOwnEmailSignup');
-    const { createNotification } = useNotifications();
     const api = useApi();
     const [addBYOEModalProps, setAddBYOEModalOpen, renderAddBYOEModal] = useModalState();
     const [loading, withLoading] = useLoading();
@@ -62,13 +60,7 @@ const BYOESignupButton = ({
                 onEmailValue(result.ValidatedOAuthTokenOutput.Account);
                 setSignupType(SignupType.BringYourOwnEmail);
             }
-        } catch {
-            // TODO update string
-            createNotification({
-                type: 'error',
-                text: c('loc_nightly: BYOE').t`Something went wrong while logging into your Gmail account`,
-            });
-        }
+        } catch {}
 
         setAddBYOEModalOpen(false);
         // Need to add a timeout because closing the modal would remove the focus from the input
@@ -92,14 +84,18 @@ const BYOESignupButton = ({
     }
 
     return (
-        <div>
+        <div className="text-center mb-4">
             {signupType === SignupType.BringYourOwnEmail ? (
-                <InlineLinkButton id="add-byoe" className="color-weak mb-4" onClick={onUseInternalAddress}>
+                <InlineLinkButton id="add-byoe" className="inline-flex items-center" onClick={onUseInternalAddress}>
                     <ProtonLogo variant="glyph-only" size={4} className="mr-2" />
                     {c('loc_nightly: BYOE').t`Get a new encrypted address`}
                 </InlineLinkButton>
             ) : (
-                <InlineLinkButton id="add-byoe" className="color-weak mb-4" onClick={() => setAddBYOEModalOpen(true)}>
+                <InlineLinkButton
+                    id="add-byoe"
+                    className="inline-flex items-center"
+                    onClick={() => setAddBYOEModalOpen(true)}
+                >
                     {variant.name === 'Bold' ? (
                         <>
                             <Icon name="brand-google" className="mr-2" />
@@ -112,13 +108,7 @@ const BYOESignupButton = ({
             )}
 
             {renderAddBYOEModal && (
-                <AddBYOEModal
-                    {...addBYOEModalProps}
-                    showIcon
-                    onSubmit={handleShowOauthPopup}
-                    buttonText={c('loc_nightly: BYOE').t`Connect to Gmail`}
-                    isLoading={loading}
-                />
+                <AddBYOEModal {...addBYOEModalProps} onSubmit={handleShowOauthPopup} isLoading={loading} />
             )}
         </div>
     );

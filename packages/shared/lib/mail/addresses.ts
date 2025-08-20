@@ -84,3 +84,22 @@ export const sortAddresses = (addresses?: Address[]) => {
     }
     return [];
 };
+
+export const splitExternalAddresses = (addresses?: Address[]) => {
+    if (!addresses) {
+        return { otherAddresses: [], externalAddresses: [] };
+    }
+
+    return addresses.reduce<{ otherAddresses: Address[]; externalAddresses: Address[] }>(
+        (acc, address) => {
+            if (address?.Type === ADDRESS_TYPE.TYPE_EXTERNAL) {
+                acc.externalAddresses.push(address);
+            } else {
+                acc.otherAddresses.push(address);
+            }
+
+            return acc;
+        },
+        { otherAddresses: [], externalAddresses: [] }
+    );
+};

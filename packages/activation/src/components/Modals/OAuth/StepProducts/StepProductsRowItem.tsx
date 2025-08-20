@@ -15,9 +15,19 @@ interface Props {
     setValue: (value: boolean) => void;
     error?: string;
     children?: ReactNode;
+    disabledText?: ReactNode;
 }
 
-const StepProductsRowItem = ({ id, label, disabled, value, setValue, error, children }: Props) => {
+const StepProductsRowItem = ({
+    id,
+    label,
+    disabled,
+    value,
+    setValue,
+    error,
+    children,
+    disabledText = c('Label').t`(Temporarily unavailable. Please check back later.)`,
+}: Props) => {
     if (error) {
         return <StepPrepareDisabledCheckbox id={id}>{error}</StepPrepareDisabledCheckbox>;
     }
@@ -38,11 +48,7 @@ const StepProductsRowItem = ({ id, label, disabled, value, setValue, error, chil
             <div className="flex flex-column flex-1">
                 <div className={clsx(disabled && 'color-weak')}>
                     {label}
-                    {disabled && (
-                        <span className="block">
-                            {c('Label').t`(Temporarily unavailable. Please check back later.)`}
-                        </span>
-                    )}
+                    {disabled && <span className="block">{disabledText}</span>}
                 </div>
                 {children}
             </div>
