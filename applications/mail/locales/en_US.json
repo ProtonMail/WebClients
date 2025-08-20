@@ -9,7 +9,7 @@
         "Show navigation bar"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "You can't send vCard files of more than ${ maxAttachments } contact",
+        "You can't send vCard files of more than ${ maxAttachments } contacts",
         "You can't send vCard files of more than ${ maxAttachments } contacts"
       ]
     },
@@ -30,6 +30,12 @@
       ],
       "This message will be automatically deleted on ${ value }": [
         "This message will be automatically deleted at ${ value }"
+      ],
+      "Are you sure you want to permanently delete this message?": [
+        "Are you sure you want to permanently delete this message?"
+      ],
+      "More info": [
+        "Learn more"
       ]
     },
     "new_plans: feature": {
@@ -101,6 +107,16 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Wallet problem"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "Unlimited folders, labels and filters": [
+        "Unlimited folders, labels, and filters"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Paramètres par défaut du système"
       ]
     }
   }
