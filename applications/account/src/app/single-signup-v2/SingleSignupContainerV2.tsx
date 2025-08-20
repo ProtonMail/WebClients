@@ -48,6 +48,7 @@ import { appendReturnUrlParams } from '@proton/shared/lib/authentication/returnU
 import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -1385,8 +1386,8 @@ const SingleSignupContainerV2 = ({
                                     subscriptionData,
                                     inviteData: model.inviteData,
                                     referralData: model.referralData,
-                                    persistent: false,
-                                    trusted: false,
+                                    persistent: isElectronApp,
+                                    trusted: isElectronApp,
                                     clientType,
                                     ktActivation: await getKtActivation(),
                                 };
