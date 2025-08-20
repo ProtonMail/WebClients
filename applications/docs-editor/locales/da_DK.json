@@ -44,6 +44,9 @@
       "Apply": [
         "Anvend"
       ],
+      "Bold": [
+        "Fed"
+      ],
       "Bulleted List": [
         "Punktopstillet liste"
       ],
@@ -73,6 +76,9 @@
       ],
       "Code block": [
         "Kodeblok"
+      ],
+      "Color": [
+        "Farve"
       ],
       "Colour": [
         "Farve"
@@ -125,14 +131,23 @@
       "Insert comment": [
         "Indsæt kommentar"
       ],
+      "Insert image": [
+        "Indsæt billede"
+      ],
       "Insert left": [
         "Indsæt til venstre"
+      ],
+      "Insert link": [
+        "Indsæt link"
       ],
       "Insert right": [
         "Indsæt til højre"
       ],
       "Insert table": [
         "Indsæt tabel"
+      ],
+      "Italic": [
+        "Kursiv"
       ],
       "Justify align": [
         "Begrund justering"
@@ -154,6 +169,9 @@
       ],
       "Outdent": [
         "Udryk"
+      ],
+      "Quote": [
+        "Anførselstegn"
       ],
       "Re-open": [
         "Åbn igen"
@@ -203,16 +221,40 @@
       "Table options": [
         "Tilvalg i tabel"
       ],
+      "Underline": [
+        "Understreg"
+      ],
       "Undo": [
         "Fortryd"
       ]
     },
     "color": {
+      "apple": [
+        "æble"
+      ],
+      "azureish white": [
+        "azurblålig hvid"
+      ],
+      "black": [
+        "sort"
+      ],
+      "blanched almond": [
+        "blancherede mandler"
+      ],
+      "blue-gray": [
+        "blågrå"
+      ],
+      "caramel": [
+        "karamel"
+      ],
       "carrot": [
         "gulerod"
       ],
       "cerise": [
         "kirsebærrød"
+      ],
+      "cinnabar": [
+        "cinnober"
       ],
       "cobalt": [
         "kobolt"
@@ -220,17 +262,62 @@
       "copper": [
         "kobber"
       ],
+      "cyan-blue azure": [
+        "cyanblå azur"
+      ],
+      "dandelion": [
+        "mælkebøtte"
+      ],
+      "dark cerulean": [
+        "mørk cerulean"
+      ],
+      "dark midnight blue": [
+        "mørk midnatsblå"
+      ],
+      "dim gray": [
+        "svag grå"
+      ],
       "enzian": [
         "ensian"
       ],
       "fern": [
         "bregne"
       ],
+      "field drab": [
+        "brun"
+      ],
       "forest": [
         "skov"
       ],
+      "gainsboro": [
+        "gainsboro"
+      ],
       "gray": [
         "grå"
+      ],
+      "japanese laurel": [
+        "japansk laurbær"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "lemon yellow": [
+        "citrongul"
+      ],
+      "light carmine pink": [
+        "lys karminrosa"
+      ],
+      "light moss green": [
+        "lys mosgrøn"
+      ],
+      "light red": [
+        "lysrød"
+      ],
+      "maize": [
+        "majs"
+      ],
+      "mughal green": [
+        "mughal grøn"
       ],
       "ocean": [
         "ocean"
@@ -238,8 +325,32 @@
       "olive": [
         "oliven"
       ],
+      "outer space": [
+        "det ydre rum"
+      ],
       "pacific": [
         "stillehav"
+      ],
+      "palatinate blue": [
+        "palatinatblå"
+      ],
+      "pale cerulean": [
+        "lys cerulean"
+      ],
+      "pastel gray": [
+        "pastelgrå"
+      ],
+      "persian plum": [
+        "persisk blomme"
+      ],
+      "persian red": [
+        "persisk rød"
+      ],
+      "philippine gray": [
+        "filippinsk grå"
+      ],
+      "philippine silver": [
+        "filippinsk sølv"
       ],
       "pickle": [
         "syltet agurk"
@@ -249,6 +360,9 @@
       ],
       "pink": [
         "pink"
+      ],
+      "pistachio": [
+        "pistacie"
       ],
       "plum": [
         "blomme"
@@ -262,8 +376,14 @@
       "reef": [
         "rev"
       ],
+      "ruddy pink": [
+        "rødlig pink"
+      ],
       "sahara": [
         "sahara"
+      ],
+      "satin sheen gold": [
+        "satinglans guld"
       ],
       "slateblue": [
         "skiferblå"
@@ -273,6 +393,12 @@
       ],
       "strawberry": [
         "jordbær"
+      ],
+      "vivid auburn": [
+        "levende rødbrun"
+      ],
+      "white": [
+        "hvid"
       ]
     },
     "Confirm": {
@@ -335,8 +461,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "Systemstandard"
+      ],
       "Theme font": [
         "Temaskrifttype"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Stor"
+      ],
+      "Medium (recommended)": [
+        "Mellem (anbefalet)"
+      ],
+      "Small": [
+        "Lille"
+      ],
+      "Very large": [
+        "Meget stor"
+      ],
+      "Very small": [
+        "Meget lille"
       ]
     },
     "Info": {
@@ -358,6 +504,9 @@
       ],
       "Comments": [
         "Kommentarer"
+      ],
+      "Copied to clipboard": [
+        "Kopieret til udklipsholder"
       ],
       "Editing": [
         "Redigerer"
@@ -397,6 +546,9 @@
       ],
       "Suggesting": [
         "Foreslår"
+      ],
+      "Text color": [
+        "Tekstfarve"
       ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Indholdet, du prøver at indsætte, er for stort til at blive indsat på én gang. Prøv igen med mindre stykker ad gangen."
@@ -490,6 +642,9 @@
       "Insert table row": [
         "Indsæt tabelrække"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Tastaturgenvej: ${ shortcut }"
+      ],
       "Link text": [
         "Tekst til link"
       ],
@@ -524,6 +679,9 @@
       ],
       "Reply...": [
         "Svar..."
+      ],
+      "Text": [
+        "Tekst"
       ]
     },
     "Title": {

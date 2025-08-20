@@ -44,6 +44,9 @@
       "Apply": [
         "Použiť"
       ],
+      "Bold": [
+        "Tučné"
+      ],
       "Bulleted List": [
         "Odrážkový zoznam"
       ],
@@ -73,6 +76,9 @@
       ],
       "Code block": [
         "Blok kódu"
+      ],
+      "Color": [
+        "Farba"
       ],
       "Colour": [
         "Farba"
@@ -125,14 +131,23 @@
       "Insert comment": [
         "Vložiť komenár"
       ],
+      "Insert image": [
+        "Vložiť obrázok"
+      ],
       "Insert left": [
         "Vložiť vľavo"
+      ],
+      "Insert link": [
+        "Vložiť odkaz"
       ],
       "Insert right": [
         "Vložiť vpravo"
       ],
       "Insert table": [
         "Vložiť tabuľku"
+      ],
+      "Italic": [
+        "Kurzíva"
       ],
       "Justify align": [
         "Zarovnať podľa okrajov"
@@ -154,6 +169,9 @@
       ],
       "Outdent": [
         "Predsadenie"
+      ],
+      "Quote": [
+        "Citovať"
       ],
       "Re-open": [
         "Znovu otvoriť"
@@ -203,16 +221,40 @@
       "Table options": [
         "Možnosti tabuľky"
       ],
+      "Underline": [
+        "Podčiarknuté"
+      ],
       "Undo": [
         "Vrátiť späť"
       ]
     },
     "color": {
+      "apple": [
+        "jablko"
+      ],
+      "azureish white": [
+        "azúrovo biela"
+      ],
+      "black": [
+        "čierna"
+      ],
+      "blanched almond": [
+        "blanšírované mandle"
+      ],
+      "blue-gray": [
+        "modrošedá"
+      ],
+      "caramel": [
+        "karamel"
+      ],
       "carrot": [
         "mrkva"
       ],
       "cerise": [
         "čerešňa"
+      ],
+      "cinnabar": [
+        "rumelka"
       ],
       "cobalt": [
         "kobalt"
@@ -220,17 +262,62 @@
       "copper": [
         "meď"
       ],
+      "cyan-blue azure": [
+        "azúrovo-modrá"
+      ],
+      "dandelion": [
+        "púpava"
+      ],
+      "dark cerulean": [
+        "tmavo blankytná"
+      ],
+      "dark midnight blue": [
+        "tmavá polnočná modrá"
+      ],
+      "dim gray": [
+        "tmavo šedá"
+      ],
       "enzian": [
         "horec"
       ],
       "fern": [
         "papraď"
       ],
+      "field drab": [
+        "poľná jednotvárna"
+      ],
       "forest": [
         "les"
       ],
+      "gainsboro": [
+        "veľmi svetlo šedá"
+      ],
       "gray": [
         "sivá"
+      ],
+      "japanese laurel": [
+        "japonský vavrín"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "lemon yellow": [
+        "citrónovo žltá"
+      ],
+      "light carmine pink": [
+        "svetlo karmínovo ružová"
+      ],
+      "light moss green": [
+        "machovo svetlo zelená"
+      ],
+      "light red": [
+        "svetlo červená"
+      ],
+      "maize": [
+        "kukurica"
+      ],
+      "mughal green": [
+        "mughalská zelená"
       ],
       "ocean": [
         "oceán"
@@ -238,8 +325,32 @@
       "olive": [
         "oliva"
       ],
+      "outer space": [
+        "vesmírny priestor"
+      ],
       "pacific": [
         "pacifik"
+      ],
+      "palatinate blue": [
+        "palatinátovo modrá"
+      ],
+      "pale cerulean": [
+        "bledo blankytná"
+      ],
+      "pastel gray": [
+        "pastelovo šedá"
+      ],
+      "persian plum": [
+        "perzská slivka"
+      ],
+      "persian red": [
+        "perzská červená"
+      ],
+      "philippine gray": [
+        "filipínska šedá"
+      ],
+      "philippine silver": [
+        "filipínska strieborná"
       ],
       "pickle": [
         "uhorka"
@@ -249,6 +360,9 @@
       ],
       "pink": [
         "ružová"
+      ],
+      "pistachio": [
+        "pistácia"
       ],
       "plum": [
         "slivka"
@@ -262,8 +376,14 @@
       "reef": [
         "útes"
       ],
+      "ruddy pink": [
+        "perzská červená"
+      ],
       "sahara": [
         "sahara"
+      ],
+      "satin sheen gold": [
+        "saténovo lesklá zlatá"
       ],
       "slateblue": [
         "bridlicová modrá"
@@ -273,6 +393,12 @@
       ],
       "strawberry": [
         "jahoda"
+      ],
+      "vivid auburn": [
+        "živá gaštanová"
+      ],
+      "white": [
+        "biela"
       ]
     },
     "Confirm": {
@@ -335,8 +461,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "Podľa systému"
+      ],
       "Theme font": [
         "Písmo motívu"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Veľké"
+      ],
+      "Medium (recommended)": [
+        "Stredné (odporúčané)"
+      ],
+      "Small": [
+        "Malé"
+      ],
+      "Very large": [
+        "Veľmi veľké"
+      ],
+      "Very small": [
+        "Veľmi malé"
       ]
     },
     "Info": {
@@ -360,6 +506,9 @@
       ],
       "Comments": [
         "Komentáre"
+      ],
+      "Copied to clipboard": [
+        "Skopírované do schránky"
       ],
       "Editing": [
         "Upravuje"
@@ -399,6 +548,9 @@
       ],
       "Suggesting": [
         "Navrhovanie"
+      ],
+      "Text color": [
+        "Farba textu"
       ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Obsah, ktorý sa pokúšate vložiť, je príliš veľký na to, aby sa dal vložiť naraz. Skúste to znova a vkladajte po menších častiach."
@@ -492,6 +644,9 @@
       "Insert table row": [
         "Vložiť riadok tabuľky"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Klávesová skratka: ${ shortcut }"
+      ],
       "Link text": [
         "Text odkazu"
       ],
@@ -526,6 +681,9 @@
       ],
       "Reply...": [
         "Odpovedať..."
+      ],
+      "Text": [
+        "Text"
       ]
     },
     "Title": {
