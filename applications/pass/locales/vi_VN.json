@@ -20,6 +20,9 @@
       "Add domain": [
         "Thêm tên miền"
       ],
+      "Add field": [
+        "Thêm trường"
+      ],
       "Add mailbox": [
         "Thêm hộp thư"
       ],
@@ -40,6 +43,9 @@
       ],
       "Advanced options": [
         "Tùy chọn nâng cao"
+      ],
+      "Authenticate": [
+        "Xác thực"
       ],
       "Back": [
         "Quay lại"
@@ -70,6 +76,9 @@
       ],
       "Clear": [
         "Dọn sạch"
+      ],
+      "Clear search": [
+        "Xóa tìm kiếm"
       ],
       "Close": [
         "Đóng"
@@ -145,6 +154,9 @@
       ],
       "Delete alias": [
         "Xóa bí danh"
+      ],
+      "Delete all": [
+        "Xóa tất"
       ],
       "Delete it, I will never need it": [
         "Xoá nó, tôi sẽ không cần nó"
@@ -373,6 +385,12 @@
       ],
       "Resend invitation": [
         "Gửi lại lời mời"
+      ],
+      "Reset": [
+        "Đặt lại"
+      ],
+      "Restore": [
+        "Khôi phục"
       ],
       "Restore item": [
         "Khôi phục nội dung"
@@ -849,6 +867,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -863,9 +884,18 @@
       ],
       "Megabyte": [
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabytes"
       ]
     },
     "Info": {
+      "\"${ payload.itemName }\" item was dismissed": [
+        "Nội dung \"${ payload.itemName }\" đã bỏ qua"
+      ],
+      "\"${ payload.itemName }\" update was dismissed": [
+        "Cập nhật nội dung \"${ payload.itemName }\" đã bỏ qua"
+      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } đã chặn"
       ],
@@ -874,6 +904,9 @@
       ],
       "${ count } view": [
         "${ count } lượt xem"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } lượt xem"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } đã chuyển tiếp"
@@ -1001,6 +1034,9 @@
       "Congratulations, your access has been confirmed": [
         "Chúc mừng, truy cập của bạn đã được xác nhận"
       ],
+      "Copied to clipboard": [
+        "Đã sao chép vào bảng tạm"
+      ],
       "Current version": [
         "Phiên bản hiện tại"
       ],
@@ -1021,6 +1057,12 @@
       ],
       "Disabling offline mode...": [
         "Đang tắt chế độ ngoại tuyến..."
+      ],
+      "Drop file here to upload": [
+        "Thả tệp vào đây để tải lên"
+      ],
+      "Drop to import": [
+        "Thả để nhập"
       ],
       "Editor": [
         "Biên tập viên"
@@ -1051,6 +1093,9 @@
       ],
       "Enter the address you want to email.": [
         "Nhập địa chỉ bạn muốn gửi email."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Nhập mã xác minh. Số ${ digit }."
       ],
       "Enter your extra password": [
         "Nhập mật khẩu phụ"
@@ -1367,6 +1412,9 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Mật khẩu cấp hai sẽ được yêu cầu để sử dụng ${ PASS_APP_NAME }. Nó hoạt động như là một mật khẩu khác ngoài mật khẩu ${ BRAND_NAME }của bạn."
       ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "${ totalIgnored } nội dung không thể nhập vào:"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Đoạn văn bản mà bạn cố gắng dán vào dài hơn mức tối đa là ${ maxLength } ký tự."
       ],
@@ -1396,6 +1444,9 @@
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Để chuyển dữ liệu từ trình quản lý mật khẩu khác, vào trình quản lý mật khẩu đó, xuất dữ liệu của bạn và tải nó lên ${ PASS_APP_NAME }. Khi dữ liệu của bạn đã được nhập vào, xóa tệp đã xuất ban đầu."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Thử các tính năng, bản cập nhật và sản phẩm ${ BRAND_NAME } mới trước khi chúng được phát hành ra công chúng. Thao tác này sẽ tải lại ứng dụng"
       ],
       "Unable to copy to clipboard": [
         "Không thể sao chép vào bộ nhớ tạm"
@@ -1508,6 +1559,9 @@
       "your domain": [
         "tên miền của bạn"
       ],
+      "Your files will be encrypted and then saved": [
+        "Các tệp của bạn sẽ được mã hoá và sau đó được lưu"
+      ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Tổ chức của bạn yêu cầu phải bảo mật truy cập của bạn tới ${ PASS_APP_NAME }"
       ]
@@ -1524,6 +1578,9 @@
       ],
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } từ"
+      ],
+      "${ count } item": [
+        "${ count } nội dung"
       ],
       "${ days } day": [
         "${ days } ngày"
@@ -1567,6 +1624,9 @@
       "15 minutes": [
         "15 phút"
       ],
+      "2 minutes": [
+        "2 phút"
+      ],
       "24 hours": [
         "24 giờ"
       ],
@@ -1596,6 +1656,9 @@
       ],
       "Account": [
         "Tài khoản"
+      ],
+      "Account Type": [
+        "Dạng Tài Khoản"
       ],
       "Address": [
         "Địa chỉ"
@@ -1629,6 +1692,9 @@
       ],
       "Auto-lock after": [
         "Tự động khóa sau"
+      ],
+      "Backup password": [
+        "Mật khẩu sao lưu"
       ],
       "Birthdate": [
         "Ngày sinh"
@@ -1825,6 +1891,9 @@
       "Highest": [
         "Cao nhất"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "Identities": [
         "Các danh tính"
       ],
@@ -1855,6 +1924,9 @@
       "Invitations": [
         "Lời mời"
       ],
+      "IP Address": [
+        "Địa chỉ IP"
+      ],
       "Item ID": [
         "ID nội dung"
       ],
@@ -1863,6 +1935,12 @@
       ],
       "Key": [
         "Chìa khóa"
+      ],
+      "Key fingerprint": [
+        "Khoá Vân tay"
+      ],
+      "Key type": [
+        "Loại khóa"
       ],
       "Language": [
         "Ngôn ngữ"
@@ -1927,6 +2005,9 @@
       "Need help?": [
         "Cần giúp?"
       ],
+      "Network": [
+        "Mạng"
+      ],
       "New": [
         "Mới"
       ],
@@ -1969,6 +2050,9 @@
       "Other": [
         "Khác"
       ],
+      "Owner": [
+        "Chủ sở hữu"
+      ],
       "Passkey": [
         "Khóa truy cập"
       ],
@@ -1983,6 +2067,12 @@
       ],
       "Password history": [
         "Lịch sử mật khẩu"
+      ],
+      "Permissions": [
+        "Quyền"
+      ],
+      "Personal": [
+        "Nhà riêng"
       ],
       "Personal details": [
         "Thông tin cá nhân"
@@ -2071,6 +2161,9 @@
       "Selected": [
         "Đã chọn"
       ],
+      "Server": [
+        "Máy chủ"
+      ],
       "Share": [
         "Chia sẻ"
       ],
@@ -2091,6 +2184,9 @@
       ],
       "Special characters (!&*)": [
         "Ký tự đặc biệt (!&*)"
+      ],
+      "SSN": [
+        "Số căn cước công dân"
       ],
       "State or province": [
         "Tỉnh thành"
@@ -2121,6 +2217,9 @@
       ],
       "Text": [
         "Văn bản"
+      ],
+      "Theme": [
+        "Chủ đề"
       ],
       "Title": [
         "Tiêu đề"
@@ -2322,6 +2421,9 @@
       "Add note": [
         "Thêm ghi chú"
       ],
+      "Add password": [
+        "Thêm mật khẩu"
+      ],
       "Add SSID": [
         "Thêm SSID"
       ],
@@ -2403,6 +2505,20 @@
         "Đúng, đó là tôi"
       ]
     },
+    "sso: auth device state": {
+      "Active": [
+        "Bật"
+      ],
+      "Inactive": [
+        "Không hoạt động"
+      ],
+      "Signed out": [
+        "Đã đăng xuất"
+      ],
+      "Unknown": [
+        "Không biết"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Đồng bộ bí danh đã hoàn tất! Bí danh SimpleLogin của bạn sẽ được cập nhật trong vài phút nữa."
@@ -2415,6 +2531,9 @@
       ],
       "Mailbox successfully verified": [
         "Hộp thư đã được xác minh thành công"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Kho lưu trữ không thể có hơn ${ targetMaxMembers } thành viên."
       ]
     },
     "Theme": {
@@ -2434,6 +2553,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "Quản lý ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Actions": [
+        "Các thao tác"
       ],
       "Add mailbox": [
         "Thêm hộp thư"
@@ -2720,6 +2842,11 @@
       ],
       "URL is invalid": [
         "URL không hợp lệ"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Di chuyển nội dung tới"
       ]
     },
     "Warning": {
