@@ -43,6 +43,9 @@
       "Add domain": [
         "Dodaj domeno"
       ],
+      "Add field": [
+        "Dodaj polje"
+      ],
       "Add mailbox": [
         "Dodaj poštni predal"
       ],
@@ -66,6 +69,9 @@
       ],
       "Advanced options": [
         "Napredne nastavitve"
+      ],
+      "Authenticate": [
+        "Preverjanje pristnosti"
       ],
       "Back": [
         "Nazaj"
@@ -97,6 +103,9 @@
       "Change": [
         "Spremeni"
       ],
+      "Change email": [
+        "Spremeni naslov"
+      ],
       "Check DNS": [
         "Preveri DNS"
       ],
@@ -105,6 +114,9 @@
       ],
       "Clear": [
         "Počisti"
+      ],
+      "Clear search": [
+        "Počisti iskanje"
       ],
       "Close": [
         "Zapri"
@@ -186,6 +198,9 @@
       ],
       "Delete alias": [
         "Izbriši vzdevek"
+      ],
+      "Delete all": [
+        "Izbriši vse"
       ],
       "Delete mailbox": [
         "Izbriši poštni predal"
@@ -451,8 +466,14 @@
       "Resend invitation": [
         "Ponovno pošlji povabilo"
       ],
+      "Reset": [
+        "Ponastavi"
+      ],
       "Reset history": [
         "Ponastavi zgodovino"
+      ],
+      "Restore": [
+        "Obnovi"
       ],
       "Restore item": [
         "Obnovi predmet"
@@ -623,6 +644,11 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "Odstrani ${ PASS_APP_NAME }"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } Namizna aplikacija"
       ]
     },
     "Button": {
@@ -1021,6 +1047,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -1047,14 +1076,46 @@
         "Megabajta",
         "Megabajti",
         "Megabajtov"
+      ],
+      "Terabyte": [
+        "Terabajt",
+        "Terabajta",
+        "Terabajti",
+        "Terabajtov"
       ]
     },
     "Font face option": {
+      "System default": [
+        "Sistemsko privzeto"
+      ],
       "Theme font": [
         "Pisava teme"
       ]
     },
+    "Font size option": {
+      "Large": [
+        "Veliko"
+      ],
+      "Medium (recommended)": [
+        "Srednje (priporočeno)"
+      ],
+      "Small": [
+        "Majhno"
+      ],
+      "Very large": [
+        "Zelo veliko"
+      ],
+      "Very small": [
+        "Zelo majhno"
+      ]
+    },
     "Info": {
+      "\"${ payload.itemName }\" item was dismissed": [
+        "Predmet »${ payload.itemName }« je bil opuščen"
+      ],
+      "\"${ payload.itemName }\" update was dismissed": [
+        "Posodobitev »${ payload.itemName }« je bila opuščena"
+      ],
       "${ count } time": [
         "${ count }-krat",
         "${ count }-krat",
@@ -1181,6 +1242,9 @@
       "Congratulations, your access has been confirmed": [
         "Čestitamo, vaš dostop je potrjen"
       ],
+      "Copied to clipboard": [
+        "Kopirano v odložišče"
+      ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV ponuja priročno obliko za ogled vaših podatkov. Vendar zaradi enostavnosti nekateri podatki ne bodo vključeni (polja po meri, gesla ...). Za celoten izvoz priporočamo uporabo drugega formata."
       ],
@@ -1202,6 +1266,12 @@
       "Disabling auto-lock": [
         "Onemogočanje samodejnega zaklepa"
       ],
+      "Drop file here to upload": [
+        "Spusti datoteko tukaj za nalaganje."
+      ],
+      "Drop to import": [
+        "Spusti za uvoz."
+      ],
       "Editor": [
         "Urejevalnik"
       ],
@@ -1222,6 +1292,9 @@
       ],
       "Enter the address you want to email.": [
         "Vnesite naslov, na katerega želite poslati e-pošto."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Vnesite potrditveno kodo. Števka ${ digit }."
       ],
       "Enter your extra password": [
         "Vnesite dodatno geslo"
@@ -1337,6 +1410,9 @@
       "Latest breach on ${ formattedDate }": [
         "Zadnja kršitev dne ${ formattedDate }"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Preberite, kaj storiti ${ dataLeakedLink }"
+      ],
       "Leaving vault...": [
         "Zapuščam trezor ..."
       ],
@@ -1408,6 +1484,9 @@
       ],
       "Offline support successfully disabled": [
         "Način brez povezave je bil onemogočen."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Naša opozorila dajejo prednost varnosti. Če ne prepoznate nobenih informacij o vdorih, lahko to poročilo varno prezrete."
       ],
       "Owner": [
         "Lastnik"
@@ -1709,6 +1788,9 @@
       "your domain": [
         "vaša domena"
       ],
+      "Your files will be encrypted and then saved": [
+        "Vaše datoteke bodo šifrirane in nato shranjene."
+      ],
       "Your information was found on ${ displayedDate }": [
         "Vaše informacije so bile najdene ${ displayedDate }"
       ]
@@ -1821,6 +1903,9 @@
       ],
       "Account": [
         "Račun"
+      ],
+      "Account Type": [
+        "Vrsta računa"
       ],
       "Add section": [
         "Dodaj razdelek"
@@ -2014,6 +2099,9 @@
       "File format": [
         "Format datoteke"
       ],
+      "Finance": [
+        "Finance"
+      ],
       "First name": [
         "Ime"
       ],
@@ -2068,6 +2156,9 @@
       "https://example.com": [
         "https://example.com"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "ID Card": [
         "Osebna izkaznica"
       ],
@@ -2113,6 +2204,9 @@
       "Invitations": [
         "Vabila"
       ],
+      "IP Address": [
+        "IP naslov"
+      ],
       "Item ID": [
         "ID predmeta"
       ],
@@ -2121,6 +2215,15 @@
       ],
       "Key": [
         "Ključ"
+      ],
+      "Key fingerprint": [
+        "Ključ prstnega odtisa naprave"
+      ],
+      "Key type": [
+        "Vrsta ključa"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Bližnjica na tipkovnici: ${ shortcut }"
       ],
       "Language": [
         "Jezik"
@@ -2200,6 +2303,9 @@
       "Need help?": [
         "Potrebujete pomoč?"
       ],
+      "Network": [
+        "Omrežje"
+      ],
       "Never": [
         "Nikoli"
       ],
@@ -2251,6 +2357,9 @@
       "Other": [
         "Drugo"
       ],
+      "Owner": [
+        "Lastnik"
+      ],
       "Passkey": [
         "Identifikacijski ključ"
       ],
@@ -2268,6 +2377,12 @@
       ],
       "Password history": [
         "Zgodovina gesel"
+      ],
+      "Permissions": [
+        "Dovoljenja"
+      ],
+      "Personal": [
+        "Osebni"
       ],
       "Personal details": [
         "Osebni podatki"
@@ -2298,6 +2413,9 @@
       ],
       "Priority:": [
         "Prioriteta:"
+      ],
+      "Product": [
+        "Izdelek"
       ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Zaščitite ${ PASS_APP_NAME } z dodatnim geslom"
@@ -2365,6 +2483,9 @@
       "Selected": [
         "Izbrano"
       ],
+      "Server": [
+        "Strežnik"
+      ],
       "Share": [
         "Deli"
       ],
@@ -2388,6 +2509,9 @@
       ],
       "Special characters (!&*)": [
         "Posebni znaki (!&*)"
+      ],
+      "SSN": [
+        "SSN"
       ],
       "State or province": [
         "Država ali pokrajina"
@@ -2419,8 +2543,14 @@
       "Tax number": [
         "Davčna številka"
       ],
+      "Technology": [
+        "Tehnologija"
+      ],
       "Text": [
         "Besedilo"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "Title": [
         "Naslov"
@@ -2500,6 +2630,9 @@
       "Vulnerable": [
         "Ranljivo"
       ],
+      "Wallet Name": [
+        "Ime denarnice"
+      ],
       "Weak": [
         "Šibko"
       ],
@@ -2542,6 +2675,11 @@
         "Več o tem"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Omogoči ${ reason }"
+      ]
+    },
     "Medium": {
       "Plus": [
         "Plus"
@@ -2575,6 +2713,17 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Za organizacijo zahtevajte 2FA"
+      ],
+      "SSO integration": [
+        "SSO integracija"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } je bil onemogočen."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } je bil omogočen."
       ]
     },
     "Option": {
@@ -2674,6 +2823,9 @@
       "Add note": [
         "Dodaj opombo"
       ],
+      "Add password": [
+        "Dodaj geslo"
+      ],
       "Add text": [
         "Dodaj tekst"
       ],
@@ -2753,12 +2905,32 @@
         "Uporabljeno na ${ url }"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Zaznani ${ name } in ${ remainingCount } drugih možnih uhajanj podatkov. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Zaznano je bilo ${ name } in 1 drugo potencialno uhajanje podatkov. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Zaznano je bilo morebitno uhajanje podatkov ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Vaši osebni podatki so bili najdeni v vsaj enem primeru uhajanja podatkov. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ]
+    },
     "sso": {
+      "If you didn't make this request, cancel it now.": [
+        "Če tega niste zahtevali, jo takoj prekličite."
+      ],
       "Invalid confirmation code": [
         "Neveljavna potrditvena koda"
       ],
       "Sign-in failed": [
         "Prijava ni uspela"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Zahteva za prijavo na drugi napravi. Ste bili vi?"
       ],
       "Sign-in requested on another device. Was it you? ": [
         "Zahteva za prijavo na drugi napravi. Ste bili vi? "
@@ -2963,6 +3135,9 @@
       "Inactive 2FA": [
         "Neaktiven 2FA"
       ],
+      "Information exposed in breach": [
+        "Informacije, razkrite pri kršitvi"
+      ],
       "Install extension": [
         "Namestite razširitev"
       ],
@@ -3037,6 +3212,9 @@
       ],
       "Pending access to the shared data": [
         "Čakanje na dostop do podatkov v skupni rabi"
+      ],
+      "Permanently remove all items?": [
+        "Ali želite trajno odstraniti vse elemente?"
       ],
       "Pinned (${ items.length })": [
         "Pripeto (${ items.length })"
@@ -3174,6 +3352,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Danes"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Vse informacije, navedene tukaj, niso bile razkrite za vse uporabnike."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Če niso dešifrirana, šifrirana gesla ostanejo varna, tudi če so izpostavljena."
       ]
     },
     "Validation": {
