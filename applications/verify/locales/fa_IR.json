@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "احراز هویت"
+      ],
       "Cancel": [
         "انصراف"
       ],
@@ -29,6 +32,9 @@
       "Edit sign-in details": [
         "ویرایش جزئیات ورود"
       ],
+      "Forgot password?": [
+        "فراموشی رمز عبور?"
+      ],
       "Get verification code": [
         "دریافت کد تایید"
       ],
@@ -52,6 +58,12 @@
       ],
       "Try another method": [
         "روش دیگری بیازمایید"
+      ],
+      "Use authentication code": [
+        "از کد تایید استفاده نمایید"
+      ],
+      "Use recovery code": [
+        "از کد بازیابی استفاده کنید"
       ],
       "Verify": [
         "تایید"
@@ -884,6 +896,24 @@
         "مشکلی پیش آمد"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "مشکلی در صحت سنجی کلید امنیتی شما پیش آمد. لطفا دوباره امتحان کنید."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "کلید امنیتی مرتبط با اکانت ${ BRAND_NAME } خودتان را وارد کنید."
+      ],
+      "Security key": [
+        "کلید امنیتی"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "کلید امنیتی"
+      ]
+    },
     "file size format": {
       "byte": [
         "بایت",
@@ -915,6 +945,15 @@
       "Megabyte": [
         "مگابایت",
         "مگابایت"
+      ],
+      "Terabyte": [
+        "ترابایت",
+        "ترابایت"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "پیش‌فرض سیستم"
       ]
     },
     "Human verification method": {
@@ -941,8 +980,14 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "روی \"درخواست کد جدید\" کلیک کنید تا یک کد تایید جدید به ${ strong } ارسال شود. اگر این شماره تلفن نادرست است، جهت اصلاح آن روی \"ویرایش\" کلیک نمایید."
       ],
+      "Each code can only be used once": [
+        "هر کد تنها یک بار می‌تواند استفاده شود"
+      ],
       "Edit email address": [
         "ویرایش رایانشانی"
+      ],
+      "Enter the code from your authenticator app": [
+        "کد سامانه تایید کننده را وارد نمایید"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "کد تاییدی که به ${ destinationText } ارسال شد را وارد نمایید."
@@ -980,6 +1025,9 @@
       "We'll send a new verification code to ${ strong }": [
         "یک کد تأیید جدید به ${ strong } ارسال خواهیم کرد"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "زمانی که شما اصالت‌سنجی دو-عاملی را فعال کنید، ما به شما کد بازیابی میدهیم که در صورت عدم دسترسی به برنامه اصالت‌سنجی خود، میتوانید از این کدها برای ورود به حساب استفاده کنید."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "آیا می‌خواهید یک کد تایید جدید دریافت نمایید یا از یک روش تایید جایگزین استفاده کنید؟"
       ],
@@ -994,6 +1042,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "برنامه اصالت سنجی"
+      ],
       "Code is 6 digits without spaces": [
         "کد ۶ رقمی بدون فاصله می‌باشد"
       ],
@@ -1014,19 +1065,33 @@
       ],
       "Verification code": [
         "کد تایید"
+      ],
+      "Your password (admin)": [
+        "گذرواژه شما (مدیر)"
       ]
     },
     "Link": {
+      "contact us": [
+        "تماس با ما"
+      ],
       "Learn more": [
         "بیشتر بدانید"
       ],
       "Request an invite": [
         "درخواست دعوت‌نامه"
+      ],
+      "terms of service": [
+        "شرایط سرویس"
       ]
     },
     "new_plans": {
       "Keep your inbox organized with folders": [
         "صندوق دریافتی خود را با پوشه ها منظم نگه دارید"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "دریافت ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -1067,6 +1132,15 @@
       ],
       "${ size } storage": [
         "${ size } ذخیره سازی"
+      ],
+      "${ size } storage per user": [
+        "${ size } فضای ذخیره‌سازی برای هر کاربر"
+      ],
+      "10 email addresses/aliases": [
+        "10 نشانی ایمیل/نام مستعار"
+      ],
+      "15 GB storage": [
+        "۱۵ گیگابایت فضای ذخیره‌سازی"
       ],
       "Auto-reply": [
         "پاسخ خودکار"
@@ -1188,6 +1262,10 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "فضای ذخیره‌سازی خود را به ${ bundleStorage } افزایش دهید"
+      ],
+      "Support for ${ n } custom email domain": [
+        "پشتیبانی از ${ n } دامنه ایمیل سفارشی",
+        "پشتیبانی از ${ n } دامنه ایمیل سفارشی"
       ]
     },
     "Placeholder": {
@@ -1198,6 +1276,9 @@
     "sso": {
       "Sign in": [
         "ورود به حساب"
+      ],
+      "Sign in to your organization": [
+        "به سازمان خود وارد شوید"
       ]
     },
     "Success": {
@@ -1209,6 +1290,9 @@
       ]
     },
     "Title": {
+      "Enter your password": [
+        "کلمه عبور خود را وارد نمایید"
+      ],
       "Human verification": [
         "تشخیص انسان"
       ],
