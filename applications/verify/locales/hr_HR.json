@@ -75,6 +75,11 @@
         "Prikaži fakturu"
       ]
     },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } desktop aplikacija"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "Abhazija"
@@ -919,6 +924,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -941,11 +949,36 @@
         "Megabajt",
         "Megabajta",
         "Megabajta"
+      ],
+      "Terabyte": [
+        "Terabajt",
+        "Terabajta",
+        "Terabajta"
       ]
     },
     "Font face option": {
+      "System default": [
+        "Zadani sustav"
+      ],
       "Theme font": [
         "Font teme"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Veliko"
+      ],
+      "Medium (recommended)": [
+        "Srednjo (preporučeno)"
+      ],
+      "Small": [
+        "Malo"
+      ],
+      "Very large": [
+        "Jako veliko"
+      ],
+      "Very small": [
+        "Jako malo"
       ]
     },
     "Human verification method": {
@@ -1048,14 +1081,28 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "kontaktirajte nas"
+      ],
       "Learn more": [
         "Saznajte više"
       ],
       "Request an invite": [
         "Zatraži pozivnicu"
+      ],
+      "terms of service": [
+        "uvjeti korištenja"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Nabavite ${ planTitle }"
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe pomoćnik za pisanje"
+      ],
       "${ n } email address": [
         "${ n } adresa e-pošte",
         "${ n } adresa e-pošte/pseudonim",
@@ -1094,6 +1141,12 @@
       "${ size } attachment size": [
         "Veličina privitka: ${ size }"
       ],
+      "${ size } storage per user": [
+        "${ size } prostora za pohranu po korisniku"
+      ],
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
       "Auto-delete Spam and Trash": [
         "Automatsko brisanje neželjene pošte i otpada"
       ],
@@ -1121,6 +1174,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Podrška email klijenta (putem IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grupe e-pošte"
+      ],
       "Encrypted contact details": [
         "Šifrirani podaci o kontaktu"
       ],
@@ -1129,6 +1185,9 @@
       ],
       "HTML signatures": [
         "HTML potpisi"
+      ],
+      "Online document editor": [
+        "Online uređivač dokumenata"
       ],
       "Password-protected Emails": [
         "Emailovi zaštićeni lozinkom"

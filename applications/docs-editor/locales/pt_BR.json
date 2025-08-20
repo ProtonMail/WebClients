@@ -44,6 +44,9 @@
       "Apply": [
         "Aplicar"
       ],
+      "Bold": [
+        "Negrito"
+      ],
       "Bulleted List": [
         "Lista com marcadores"
       ],
@@ -73,6 +76,9 @@
       ],
       "Code block": [
         "Bloco de código"
+      ],
+      "Color": [
+        "Cor"
       ],
       "Colour": [
         "Cor"
@@ -131,11 +137,17 @@
       "Insert left": [
         "Inserir à esquerda"
       ],
+      "Insert link": [
+        "Inserir link"
+      ],
       "Insert right": [
         "Inserir à direita"
       ],
       "Insert table": [
         "Inserir tabela"
+      ],
+      "Italic": [
+        "Itálico"
       ],
       "Justify align": [
         "Justificar"
@@ -157,6 +169,9 @@
       ],
       "Outdent": [
         "Diminuir recuo"
+      ],
+      "Quote": [
+        "Citar"
       ],
       "Re-open": [
         "Reabrir"
@@ -206,16 +221,40 @@
       "Table options": [
         "Opções de tabela"
       ],
+      "Underline": [
+        "Sublinhado"
+      ],
       "Undo": [
         "Desfazer"
       ]
     },
     "color": {
+      "apple": [
+        "maçã"
+      ],
+      "azureish white": [
+        "branco azul-celeste"
+      ],
+      "black": [
+        "preto"
+      ],
+      "blanched almond": [
+        "amêndoa branqueada"
+      ],
+      "blue-gray": [
+        "cinza azulado"
+      ],
+      "caramel": [
+        "caramelo"
+      ],
       "carrot": [
         "cenoura"
       ],
       "cerise": [
         "cereja"
+      ],
+      "cinnabar": [
+        "cinábrio"
       ],
       "cobalt": [
         "cobalto"
@@ -223,17 +262,62 @@
       "copper": [
         "cobre"
       ],
+      "cyan-blue azure": [
+        "azul ciano"
+      ],
+      "dandelion": [
+        "dente-de-leão"
+      ],
+      "dark cerulean": [
+        "cerúleo escuro"
+      ],
+      "dark midnight blue": [
+        "azul escuro da meia-noite"
+      ],
+      "dim gray": [
+        "cinza escuro"
+      ],
       "enzian": [
         "enzian"
       ],
       "fern": [
         "samambaia"
       ],
+      "field drab": [
+        "campo monótono"
+      ],
       "forest": [
         "floresta"
       ],
+      "gainsboro": [
+        "cinza médio"
+      ],
       "gray": [
         "cinza"
+      ],
+      "japanese laurel": [
+        "louro japonês"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "lemon yellow": [
+        "amarelo limão"
+      ],
+      "light carmine pink": [
+        "rosa carmim claro"
+      ],
+      "light moss green": [
+        "verde musgo claro"
+      ],
+      "light red": [
+        "vermelho claro"
+      ],
+      "maize": [
+        "milho"
+      ],
+      "mughal green": [
+        "verde mogol"
       ],
       "ocean": [
         "oceano"
@@ -241,8 +325,32 @@
       "olive": [
         "azeitona"
       ],
+      "outer space": [
+        "espaço sideral"
+      ],
       "pacific": [
         "pacífico"
+      ],
+      "palatinate blue": [
+        "azul palatinado"
+      ],
+      "pale cerulean": [
+        "cerúleo pálido"
+      ],
+      "pastel gray": [
+        "cinza pastel"
+      ],
+      "persian plum": [
+        "ameixa persa"
+      ],
+      "persian red": [
+        "vermelho persa"
+      ],
+      "philippine gray": [
+        "cinza filipino"
+      ],
+      "philippine silver": [
+        "prata filipina"
       ],
       "pickle": [
         "pepininhos"
@@ -252,6 +360,9 @@
       ],
       "pink": [
         "rosa"
+      ],
+      "pistachio": [
+        "pistache"
       ],
       "plum": [
         "ameixa"
@@ -265,8 +376,14 @@
       "reef": [
         "recife"
       ],
+      "ruddy pink": [
+        "rosa avermelhado"
+      ],
       "sahara": [
         "saara"
+      ],
+      "satin sheen gold": [
+        "ouro de cetim"
       ],
       "slateblue": [
         "azul ardósia"
@@ -276,6 +393,12 @@
       ],
       "strawberry": [
         "morango"
+      ],
+      "vivid auburn": [
+        "ruivo vívido"
+      ],
+      "white": [
+        "branco"
       ]
     },
     "Confirm": {
@@ -338,8 +461,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "Padrão do sistema"
+      ],
       "Theme font": [
         "Fonte do tema"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Médio (recomendado)"
+      ],
+      "Small": [
+        "Pequeno"
+      ],
+      "Very large": [
+        "Muito grande"
+      ],
+      "Very small": [
+        "Muito pequeno"
       ]
     },
     "Info": {
@@ -361,6 +504,9 @@
       ],
       "Comments": [
         "Comentários"
+      ],
+      "Copied to clipboard": [
+        "Copiado para a área de transferência"
       ],
       "Editing": [
         "Editar"
@@ -400,6 +546,9 @@
       ],
       "Suggesting": [
         "Sugerindo"
+      ],
+      "Text color": [
+        "Cor do texto"
       ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "O conteúdo que você está tentando colar é muito grande para ser colado de uma só vez. Tente novamente colando partes menores de cada vez."
@@ -493,6 +642,9 @@
       "Insert table row": [
         "Inserir linha na tabela"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Atalho de teclado: ${ shortcut }"
+      ],
       "Link text": [
         "Texto do link"
       ],
@@ -527,6 +679,9 @@
       ],
       "Reply...": [
         "Responder..."
+      ],
+      "Text": [
+        "Texto"
       ]
     },
     "sheets_2025:Action": {

@@ -75,6 +75,19 @@
         "Factuur bekijken"
       ]
     },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-desktopapp"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ]
+    },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Cloud opslag en het delen van grote bestanden"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "Abchazië"
@@ -906,6 +919,9 @@
       ],
       "Something went wrong": [
         "Er is iets fout gegaan"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "We konden deze pagina niet laden. Ververs de pagina of controleer uw internetverbinding."
       ]
     },
     "fido2: Error": {
@@ -939,6 +955,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -957,11 +976,35 @@
       "Megabyte": [
         "Megabyt",
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Font face option": {
+      "System default": [
+        "Systeem standaard"
+      ],
       "Theme font": [
         "Thema lettertype"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Groot"
+      ],
+      "Medium (recommended)": [
+        "Gemiddeld (aanbevolen)"
+      ],
+      "Small": [
+        "Klein"
+      ],
+      "Very large": [
+        "Zeer groot"
+      ],
+      "Very small": [
+        "Zeer klein"
       ]
     },
     "Human verification method": {
@@ -994,6 +1037,9 @@
       "Country code": [
         "Landcode"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "Het creëren van meerdere gratis accounts is niet toegestaan door onze ${ termsLink }."
+      ],
       "Each code can only be used once": [
         "Elke code kan maar één keer gebruikt worden"
       ],
@@ -1012,8 +1058,17 @@
       "Enter your own password (as organization admin).": [
         "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Voer uw eigen wachtwoord in (als vertrouwd contact)."
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "Voor meer informatie en het opheffen van beperkingen, meld u aan bij ${ mailLink }."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Als u denkt dat we een fout hebben gemaakt, gelieve ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
@@ -1038,6 +1093,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Om beperkingen op te heffen, kunt u upgraden naar een betaald abonnement."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "We hebben plannen speciaal ontworpen voor gebruikers zoals u die meer dan één e-mailadres nodig hebben."
       ],
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
@@ -1094,14 +1155,23 @@
       ],
       "Your password (admin)": [
         "Uw wachtwoord (beheerder)"
+      ],
+      "Your password (trusted contact)": [
+        "Uw wachtwoord (vertrouwd contact)"
       ]
     },
     "Link": {
+      "contact us": [
+        "neem contact op"
+      ],
       "Learn more": [
         "Meer informatie"
       ],
       "Request an invite": [
         "Uitnodiging aanvragen"
+      ],
+      "terms of service": [
+        "servicevoorwaarden"
       ]
     },
     "new_plans": {
@@ -1109,7 +1179,15 @@
         "Houd uw inbox overzichtelijk met mappen"
       ]
     },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Neem ${ planTitle }"
+      ]
+    },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Schrijfassistent"
+      ],
       "${ n } custom email domain": [
         "${ n } aangepast e-maildomein",
         "${ n } aangepaste e-maildomeinen"
@@ -1142,11 +1220,48 @@
         "${ n } bericht per dag",
         "${ n } berichten per dag"
       ],
+      "${ options }-day file version history": [
+        "Bestandsversiegeschiedenis van ${ options } dag",
+        "Bestandsversiegeschiedenis van ${ options } dag"
+      ],
       "${ size } attachment size": [
         "${ size } bijlagegrootte"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } veilige opslag per gebruiker"
+      ],
       "${ size } storage": [
         "${ size } opslagruimte"
+      ],
+      "${ size } storage per user": [
+        "${ size } opslagruimte per gebruiker"
+      ],
+      "1 TB secure storage": [
+        "1 TB veilige opslag"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-mailadressen/aliassen"
+      ],
+      "10 more premium features": [
+        "10 meer premium functies"
+      ],
+      "10-year file version history": [
+        "10-jarige bestandsversiegeschiedenis"
+      ],
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "200 GB of storage": [
+        "200 GB opslagruimte"
+      ],
+      "Advanced account protection": [
+        "Geavanceerde accountbeveiliging"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Alle ${ BRAND_NAME } producten en functies"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alle basisdiensten van ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "Auto-delete Spam and Trash": [
         "Spam en Prullenbak automatisch verwijderen"
@@ -1163,11 +1278,17 @@
       "Catch-all": [
         "Catch-all"
       ],
+      "Collaborate and share large files": [
+        "Samenwerken en grote bestanden delen"
+      ],
       "Contact groups": [
         "Contactgroepen"
       ],
       "Contact groups management": [
         "Beheer van contactgroepen"
+      ],
+      "Custom and secure business email": [
+        "Aangepaste en veilige zakelijke e-mail"
       ],
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
@@ -1181,23 +1302,62 @@
       "Email client support (via IMAP/SMTP)": [
         "Ondersteuning van e-mailclient (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "E-mailgroepen"
+      ],
       "Encrypted contact details": [
         "Versleutelde contactpersoonsgegevens"
       ],
       "End-to-end encryption": [
         "End-to-end versleuteling"
       ],
+      "Generate emails with a prompt": [
+        "Genereer e-mails met een prompt"
+      ],
       "HTML signatures": [
         "HTML-handtekeningen"
+      ],
+      "Online document editor": [
+        "Online document editor"
+      ],
+      "Password health": [
+        "Wachtwoordgezondheid"
       ],
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
       ],
+      "Private photo backup": [
+        "Privé foto back-up"
+      ],
+      "Proofread and refine your emails": [
+        "Controleer en verfijn uw e-mails"
+      ],
+      "Quickly craft replies": [
+        "Snel antwoorden opstellen"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Save time emailing": [
+        "Bespaar tijd op e-mailen"
+      ],
       "Schedule and snooze emails for any time": [
         "E-mails plannen en snoozen wanneer u wilt"
       ],
+      "Secure file storage and sharing": [
+        "Veilig bestanden opslaan en delen"
+      ],
+      "Share files with no size limit": [
+        "Deel bestanden zonder maximale grootte"
+      ],
       "SMTP submission": [
         "SMTP-indiening"
+      ],
+      "Support for up to 2 users": [
+        "Ondersteuning voor maximaal 2 gebruikers"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synchroniseer en back-up al uw bestanden op alle apparaten"
       ],
       "Unlimited filters": [
         "Onbeperkt aantal filters"
@@ -1219,11 +1379,20 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 eigen e-maildomein"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Maak meerdere e-mailadressen aan voor uw online-identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain2 } voor nieuwsabonnementen"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Beveilig uw bestanden met versleutelde cloud-opslag. Inclusief automatisch synchroniseren, versleutelde bestandsdeling en meer."
+      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Beveilig uw e-mails met end-to-end versleuteling. Dit is inclusief ondersteuning voor eigen e-mail domeinen, 15 e-mailadressen, ongelimiteerde hide-my-email aliassen en meer."
       ],
@@ -1253,6 +1422,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Maak maximaal ${ n } e-mailadressen/aliassen aan die u aan gezinsleden kunt toewijzen. Gebruik ze voor online identiteiten, bijvoorbeeld JohnShopper@${ domain } voor shopping-accounts."
+      ],
+      "Email everyone in a group with a single email address": [
+        "E-mail iedereen in een groep met één e-mailadres"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Zorgt dat u alle e-mails ontvangt die naar uw domein worden verzonden, zelfs als het e-mailadres niet (meer) bestaat of een typfout bevat"
@@ -1318,11 +1490,20 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Verhoog uw opslagruimte tot ${ bundleStorage }"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Ondersteuning voor ${ n } aangepast e-maildomein",
+        "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
       ]
     },
     "Placeholder": {
       "Password": [
         "Wachtwoord"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium functies van ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "saml: Error": {
@@ -1366,6 +1547,9 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "Account beperkt"
+      ],
       "Account temporarily locked": [
         "Account tijdelijk geblokkeerd"
       ],

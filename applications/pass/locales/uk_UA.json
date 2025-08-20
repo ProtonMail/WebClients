@@ -46,6 +46,9 @@
       "Add domain": [
         "Додати домен"
       ],
+      "Add field": [
+        "Додати поле"
+      ],
       "Add mailbox": [
         "Додати поштову скриньку"
       ],
@@ -69,6 +72,9 @@
       ],
       "Advanced options": [
         "Додаткові параметри"
+      ],
+      "Authenticate": [
+        "Автентифікація"
       ],
       "Back": [
         "Назад"
@@ -97,6 +103,9 @@
       "Change": [
         "Змінити"
       ],
+      "Change email": [
+        "Змінити електронну пошту"
+      ],
       "Check DNS": [
         "Перевірити DNS"
       ],
@@ -108,6 +117,9 @@
       ],
       "Clear": [
         "Очистити"
+      ],
+      "Clear search": [
+        "Очистити пошук"
       ],
       "Close": [
         "Закрити"
@@ -190,6 +202,9 @@
       "Delete alias": [
         "Видалити псевдонім"
       ],
+      "Delete all": [
+        "Видалити все"
+      ],
       "Delete it, I will never need it": [
         "Видалити, мені це ніколи не буде потрібно"
       ],
@@ -231,6 +246,9 @@
       ],
       "Edit vault": [
         "Редагувати сховище"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Увімкнути ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Enable this alias to receive emails sent to this alias": [
         "Увімкнути цей псевдонім для отримання електронних листів, надісланих на цей псевдонім"
@@ -457,6 +475,12 @@
       "Resend invitation": [
         "Повторно надіслати запрошення"
       ],
+      "Reset": [
+        "Скинути"
+      ],
+      "Restore": [
+        "Відновити"
+      ],
       "Restore item": [
         "Відновити елемент"
       ],
@@ -630,6 +654,11 @@
       ],
       "Your password manager is not here? Request it.": [
         "Немає вашого менеджера паролів? Попросіть його."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Програма ${ MAIL_APP_NAME } для комп'ютера"
       ]
     },
     "Button": {
@@ -1162,6 +1191,9 @@
       ],
       "MB": [
         "МБ"
+      ],
+      "TB": [
+        "ТБ"
       ]
     },
     "file size format, long": {
@@ -1188,9 +1220,21 @@
         "Мегабайти",
         "Мегабайтів",
         "Мегабайтів"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайти",
+        "Терабайтів",
+        "Терабайтів"
       ]
     },
     "Info": {
+      "\"${ payload.itemName }\" item was dismissed": [
+        "\"${ payload.itemName }\" елемент було відхилено"
+      ],
+      "\"${ payload.itemName }\" update was dismissed": [
+        "Оновлення \"${ payload.itemName }\" було відхилено"
+      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } заблоковано",
         "${ blockedEmailsCount } заблоковано",
@@ -1404,6 +1448,9 @@
       "Congratulations, your access has been confirmed": [
         "Вітаємо, ваш доступ підтверджено"
       ],
+      "Copied to clipboard": [
+        "Скопійовано до буфера обміну"
+      ],
       "Create contact illustration": [
         "Створити зображення контакту"
       ],
@@ -1445,6 +1492,12 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Домен: ${ domainPath } або @"
+      ],
+      "Drop file here to upload": [
+        "Перетягніть файл сюди, щоб вивантажити"
+      ],
+      "Drop to import": [
+        "Перетягніть, щоб імпортувати"
       ],
       "Editor": [
         "Редактор"
@@ -1499,6 +1552,9 @@
       ],
       "Enter the address you want to email.": [
         "Введіть адресу, на яку ви хочете надіслати листа."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введіть код підтвердження. Цифри ${ digit }."
       ],
       "Enter your extra password": [
         "Уведіть ваш додатковий пароль"
@@ -1721,6 +1777,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Онлайн доступ до ${ PASS_APP_NAME } вимагатиме PIN-код. Ви вийдете з системи після 3 невдалих спроб."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Пріоритетом наших сповіщень є безпека. Якщо ви не впізнаєте жодної з порушених даних, ви можете сміливо ігнорувати це повідомлення."
       ],
       "Owner": [
         "Власник"
@@ -2004,6 +2063,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Щоб переглянути імпортовані дані, натисніть на іконку ${ PASS_APP_NAME } на панелі інструментів вашого браузера."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Спробуйте нові функції, оновлення та продукти ${ BRAND_NAME } до того, як вони будуть випущені для широкого загалу. Це призведе до перезапуску програми"
+      ],
       "Unable to copy to clipboard": [
         "Неможливо скопіювати в буфер обміну"
       ],
@@ -2169,6 +2231,9 @@
       "your domain": [
         "ваш домен"
       ],
+      "Your files will be encrypted and then saved": [
+        "Ваші файли буде зашифровано, а потім збережено"
+      ],
       "Your information was found on ${ displayedDate }": [
         "Вашу інформацію було знайдено на ${ displayedDate }"
       ],
@@ -2309,6 +2374,9 @@
       "Account": [
         "Обліковий запис"
       ],
+      "Account Type": [
+        "Тип облікового запису"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Додайте випадковий префікс для цього домену під час створення нового псевдоніма."
       ],
@@ -2356,6 +2424,9 @@
       ],
       "Backup password": [
         "Резервний пароль"
+      ],
+      "Beta Access": [
+        "Бета-доступ"
       ],
       "Biometrics": [
         "Біометрика"
@@ -2540,6 +2611,9 @@
       "File format": [
         "Формат файлу"
       ],
+      "Finance": [
+        "Фінанси"
+      ],
       "First name": [
         "Ім'я"
       ],
@@ -2597,11 +2671,17 @@
       "Hospital": [
         "Лікарня"
       ],
+      "Host": [
+        "Хост"
+      ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Як розблокувати ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "Ідентифікаційнa карткa"
@@ -2648,6 +2728,9 @@
       "Invitations": [
         "Запрошення"
       ],
+      "IP Address": [
+        "IP-адреса"
+      ],
       "Issuing State/Country": [
         "Держава/Країна видачі"
       ],
@@ -2659,6 +2742,15 @@
       ],
       "Key": [
         "Ключ"
+      ],
+      "Key fingerprint": [
+        "Цифровий відбиток ключа"
+      ],
+      "Key type": [
+        "Тип ключа"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Комбінація клавіш: ${ shortcut }"
       ],
       "Language": [
         "Мова"
@@ -2756,6 +2848,9 @@
       "Need help?": [
         "Потрібна допомога?"
       ],
+      "Network": [
+        "Мережа"
+      ],
       "New": [
         "Нове"
       ],
@@ -2813,6 +2908,9 @@
       "Other": [
         "Інше"
       ],
+      "Owner": [
+        "Власник"
+      ],
       "Passkey": [
         "Ключ доступу"
       ],
@@ -2833,6 +2931,12 @@
       ],
       "Patient Name": [
         "Ім'я Пацієнта"
+      ],
+      "Permissions": [
+        "Дозволи"
+      ],
+      "Personal": [
+        "Особистий"
       ],
       "Personal details": [
         "Персональні подробиці"
@@ -2863,6 +2967,9 @@
       ],
       "Priority:": [
         "Пріоритет:"
+      ],
+      "Product": [
+        "Продукт"
       ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Захистіть ${ PASS_APP_NAME } додатковим паролем"
@@ -2936,6 +3043,9 @@
       "Selected": [
         "Вибрано"
       ],
+      "Server": [
+        "Сервер"
+      ],
       "Share": [
         "Спільний доступ"
       ],
@@ -2962,6 +3072,9 @@
       ],
       "Special characters (!&*)": [
         "Спеціальні символи (!&*)"
+      ],
+      "SSN": [
+        "SSN"
       ],
       "State or province": [
         "Область або район"
@@ -2996,11 +3109,17 @@
       "Tax number": [
         "Податковий номер"
       ],
+      "Technology": [
+        "Технології"
+      ],
       "Text": [
         "Текст"
       ],
       "The URL has been copied to the clipboard": [
         "URL-адресу скопійовано до буфера обміну"
+      ],
+      "Theme": [
+        "Тема"
       ],
       "Tier/Level": [
         "Рівень/Рівень"
@@ -3083,6 +3202,9 @@
       "Vulnerable": [
         "Вразливий"
       ],
+      "Wallet Name": [
+        "Назва гаманця"
+      ],
       "Weak": [
         "Слабкий"
       ],
@@ -3134,6 +3256,11 @@
         "Докладніше"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Увімкнути ${ reason }"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } елемент",
@@ -3154,6 +3281,14 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Вимагати двоетапну автентифікацію для організації"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } вимкнено"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } увімкнено"
       ]
     },
     "Option": {
@@ -3333,6 +3468,20 @@
       ],
       "Used on ${ url }": [
         "Використовується на ${ url }"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено ${ name } та ${ remainingCount } інших потенційних витоків даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено ${ name } та ще 1 потенційний витік даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено потенційний витік даних ${ name }. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Вашу інформацію знайдено принаймні в одному витоці даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці. ${ link }"
       ]
     },
     "sso": {
