@@ -112,6 +112,9 @@
       "Change": [
         "변경"
       ],
+      "Change email": [
+        "이메일 변경"
+      ],
       "Check DNS": [
         "DNS 확인"
       ],
@@ -123,6 +126,9 @@
       ],
       "Clear": [
         "비우기"
+      ],
+      "Clear search": [
+        "검색 지우기"
       ],
       "Close": [
         "닫기"
@@ -207,6 +213,9 @@
       ],
       "Delete alias": [
         "별칭 삭제"
+      ],
+      "Delete all": [
+        "전체 삭제"
       ],
       "Delete it, I will never need it": [
         "삭제할게요, 필요하지 않아요."
@@ -502,8 +511,14 @@
       "Resend invitation": [
         "초대장 재전송"
       ],
+      "Reset": [
+        "초기화"
+      ],
       "Reset history": [
         "기록 재설정"
+      ],
+      "Restore": [
+        "복원"
       ],
       "Restore item": [
         "항목 복구"
@@ -704,6 +719,11 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 제거"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } 데스크탑 어플리케이션"
       ]
     },
     "Button": {
@@ -1260,6 +1280,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -1274,11 +1297,34 @@
       ],
       "Megabyte": [
         "메가바이트"
+      ],
+      "Terabyte": [
+        "테라바이트"
       ]
     },
     "Font face option": {
+      "System default": [
+        "시스템 기본값"
+      ],
       "Theme font": [
         "테마 폰트"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "크게"
+      ],
+      "Medium (recommended)": [
+        "중간 (권장)"
+      ],
+      "Small": [
+        "적게"
+      ],
+      "Very large": [
+        "매우 크게"
+      ],
+      "Very small": [
+        "매우 작게"
       ]
     },
     "Info": {
@@ -1504,6 +1550,9 @@
       "Congratulations, your access has been confirmed": [
         "축하합니다! 접근이 수락되었습니다."
       ],
+      "Copied to clipboard": [
+        "클립보드로 복사함"
+      ],
       "Coupon successfully applied!": [
         "쿠폰을 성공적으로 적용했습니다!"
       ],
@@ -1548,6 +1597,12 @@
       ],
       "Domain: ${ domainPath } or @": [
         "도메인: ${ domainPath } 또는 @"
+      ],
+      "Drop file here to upload": [
+        "업로드할 파일을 여기에 놓습니다"
+      ],
+      "Drop to import": [
+        "드래그해서 불러오기"
       ],
       "Editor": [
         "편집자"
@@ -1753,6 +1808,9 @@
       "Latest breach on ${ formattedDate }": [
         "${ formattedDate }에 마지막으로 유출됨"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "대처법에 대해 알아보세요 ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "항목에서 떠나는 중..."
       ],
@@ -1848,6 +1906,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME }이 온라인에 접근하려면 PIN 코드가 필요합니다. 3번의 시도가 실패하면 로그아웃됩니다."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "당사의 알림은 안전을 최우선으로 합니다. 만약 유출된 정보에 대해 아는 것이 없다면, 이 보고서를 무시할 수 있습니다."
       ],
       "Owner": [
         "소유자"
@@ -2383,6 +2444,9 @@
       "your domain": [
         "나의 도메인"
       ],
+      "Your files will be encrypted and then saved": [
+        "파일이 암호화된 후 저장됩니다"
+      ],
       "Your information was found on ${ displayedDate }": [
         "${ displayedDate }에 사용자의 정보가 발견되었습니다."
       ],
@@ -2868,6 +2932,9 @@
       "https://example.com": [
         "https://example.com"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "ID Card": [
         "신분증"
       ],
@@ -2942,6 +3009,9 @@
       ],
       "Key type": [
         "키 유형"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "키보드 단축키: ${ shortcut }"
       ],
       "Language": [
         "언어"
@@ -3408,6 +3478,9 @@
       "The URL has been copied to the clipboard": [
         "URL이 클립보드로 복사되었습니다."
       ],
+      "Theme": [
+        "테마"
+      ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "이 항목은 ${ date }이 되거나 보기 제한에 도달하기 전까지 접근가능합니다."
       ],
@@ -3578,8 +3651,16 @@
       "auto create rules ››": [
         "자동 생성 규칙 ››"
       ],
+      "if your data is leaked": [
+        "사용자의 데이터가 유출된 경우"
+      ],
       "Learn more": [
         "더 알아보기"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } 활성화"
       ]
     },
     "Medium": {
@@ -3615,6 +3696,17 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "조직에 2단계 인증 요구"
+      ],
+      "SSO integration": [
+        "SSO 통합"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason }이(가) 비활성화 되었습니다."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason }이(가) 활성화 되었습니다."
       ]
     },
     "Option": {
@@ -3869,6 +3961,20 @@
       ],
       "Used on ${ url }": [
         "${ url }(애)서 사용됨"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name }와(과) ${ remainingCount }개의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name }와(과) 하나의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "잠재적인 ${ name } 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "회원님의 정보가 적어도 하나의 데이터 유출에서 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
       ]
     },
     "sso": {
@@ -4201,6 +4307,9 @@
       "Inactive 2FA": [
         "2단계 인증 꺼짐"
       ],
+      "Information exposed in breach": [
+        "유출 시 노출된 정보"
+      ],
       "Install extension": [
         "확장 프로그램 설치"
       ],
@@ -4466,6 +4575,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "오늘"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "여기에 나열된 모든 정보가 모든 사용자에게 공개된 것은 아닙니다."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "해독되지 않는 한, 암호화된 비밀번호는 노출되더라도 안전하게 유지됩니다."
       ]
     },
     "Validation": {
