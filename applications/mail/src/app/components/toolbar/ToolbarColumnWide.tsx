@@ -57,6 +57,7 @@ const ToolbarColumnWide = ({
     onPage,
     total,
     onCheckAll,
+    addressesDropdown,
 }: Props) => {
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
@@ -82,6 +83,7 @@ const ToolbarColumnWide = ({
             >
                 <div className="flex items-center flex-nowrap toolbar-inner gap-2">
                     <LabelName selectedIDs={selectedIDs} labelName={labelName} />
+                    {addressesDropdown}
 
                     <ReadUnreadButtons selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
 

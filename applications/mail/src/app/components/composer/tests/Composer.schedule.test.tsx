@@ -41,6 +41,7 @@ export const getUser = (hasPaidMail: boolean) => {
         hasPaidMail,
         UsedSpace: 10,
         MaxSpace: 100,
+        Flags: { 'has-a-byoe-address': false },
     } as UserModel;
 };
 
