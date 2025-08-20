@@ -92,6 +92,9 @@
       "Change": [
         "Modifica"
       ],
+      "Change email": [
+        "Modifica email"
+      ],
       "Check DNS": [
         "Controlla il DNS"
       ],
@@ -103,6 +106,9 @@
       ],
       "Clear": [
         "Cancella"
+      ],
+      "Clear search": [
+        "Cancella ricerca"
       ],
       "Close": [
         "Chiudi"
@@ -196,6 +202,9 @@
       ],
       "Delete alias": [
         "Elimina alias"
+      ],
+      "Delete all": [
+        "Elimina tutto"
       ],
       "Delete it, I will never need it": [
         "Cancellalo, non ne avrò mai bisogno"
@@ -482,8 +491,14 @@
       "Resend invitation": [
         "Invia nuovamente l'invito"
       ],
+      "Reset": [
+        "Azzera"
+      ],
       "Reset history": [
         "Azzera cronologia"
+      ],
+      "Restore": [
+        "Ripristina"
       ],
       "Restore item": [
         "Ripristina elemento"
@@ -672,6 +687,11 @@
       ],
       "Your password manager is not here? Request it.": [
         "Il tuo gestore di password non è presente? Richiedilo."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Applicazione desktop ${ MAIL_APP_NAME }"
       ]
     },
     "Button": {
@@ -1203,6 +1223,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -1221,6 +1244,10 @@
       "Megabyte": [
         "Megabyte",
         "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
       ]
     },
     "Info": {
@@ -1483,6 +1510,9 @@
       "Congratulations, your access has been confirmed": [
         "Il tuo accesso è stato confermato"
       ],
+      "Copied to clipboard": [
+        "Copiato negli appunti"
+      ],
       "Coupon successfully applied!": [
         "Coupon applicato correttamente!"
       ],
@@ -1533,6 +1563,12 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Dominio: ${ domainPath } o @"
+      ],
+      "Drop file here to upload": [
+        "Trascina qui i file da caricare."
+      ],
+      "Drop to import": [
+        "Trascina per importare"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importa facilmente le tue password esistenti in ${ PASS_APP_NAME }."
@@ -2351,6 +2387,9 @@
       "your domain": [
         "il tuo dominio"
       ],
+      "Your files will be encrypted and then saved": [
+        "I tuoi file verranno crittografati e poi salvati."
+      ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La tua organizzazione richiede che tu protegga l'accesso a ${ PASS_APP_NAME }"
       ]
@@ -2801,6 +2840,9 @@
       "https://example.com": [
         "https://example.com"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "ID Card": [
         "Carta d'identità"
       ],
@@ -2869,6 +2911,9 @@
       ],
       "Key type": [
         "Tipo di chiave"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Scorciatoia da tastiera: ${ shortcut }"
       ],
       "Language": [
         "Lingua"
@@ -3298,6 +3343,9 @@
       ],
       "The URL has been copied to the clipboard": [
         "L'URL è stato copiato negli appunti"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "Tier/Level": [
         "Livello/Grado"

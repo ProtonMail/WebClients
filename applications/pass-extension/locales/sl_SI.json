@@ -26,6 +26,9 @@
       "Add domain": [
         "Dodaj domeno"
       ],
+      "Add field": [
+        "Dodaj polje"
+      ],
       "Add mailbox": [
         "Dodaj poštni predal"
       ],
@@ -46,6 +49,9 @@
       ],
       "Advanced options": [
         "Napredne nastavitve"
+      ],
+      "Authenticate": [
+        "Preverjanje pristnosti"
       ],
       "Back": [
         "Nazaj"
@@ -77,6 +83,9 @@
       "Change": [
         "Spremeni"
       ],
+      "Change email": [
+        "Spremeni naslov"
+      ],
       "Check DNS": [
         "Preveri DNS"
       ],
@@ -85,6 +94,9 @@
       ],
       "Clear": [
         "Počisti"
+      ],
+      "Clear search": [
+        "Počisti iskanje"
       ],
       "Close": [
         "Zapri"
@@ -175,6 +187,9 @@
       ],
       "Delete alias": [
         "Izbriši vzdevek"
+      ],
+      "Delete all": [
+        "Izbriši vse"
       ],
       "Delete mailbox": [
         "Izbriši poštni predal"
@@ -431,8 +446,14 @@
       "Resend invitation": [
         "Ponovno pošlji povabilo"
       ],
+      "Reset": [
+        "Ponastavi"
+      ],
       "Reset history": [
         "Ponastavi zgodovino"
+      ],
+      "Restore": [
+        "Obnovi"
       ],
       "Restore item": [
         "Obnovi predmet"
@@ -589,6 +610,11 @@
       ],
       "Write us on X/Twitter": [
         "Pišite nam na X/Twitter"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } Namizna aplikacija"
       ]
     },
     "Button": {
@@ -958,6 +984,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -984,9 +1013,21 @@
         "Megabajta",
         "Megabajti",
         "Megabajtov"
+      ],
+      "Terabyte": [
+        "Terabajt",
+        "Terabajta",
+        "Terabajti",
+        "Terabajtov"
       ]
     },
     "Info": {
+      "\"${ payload.itemName }\" item was dismissed": [
+        "Predmet »${ payload.itemName }« je bil opuščen"
+      ],
+      "\"${ payload.itemName }\" update was dismissed": [
+        "Posodobitev »${ payload.itemName }« je bila opuščena"
+      ],
       "${ count } time": [
         "${ count }-krat",
         "${ count }-krat",
@@ -1089,6 +1130,9 @@
       "automatically": [
         "samodejno"
       ],
+      "Autosaved on ${ url }": [
+        "Samodejno shranjeno na ${ url }"
+      ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Pred izvozom podatkov v tej obliki odprite nastavitve Safarija -> zavihek \"Splošno\" -> onemogočite možnost \"Odpri varne datoteke po prenosu\". To bo Safariju preprečilo nepravilno ekstrahiranje izvožene datoteke."
       ],
@@ -1134,6 +1178,9 @@
       "Congratulations, your access has been confirmed": [
         "Čestitamo, vaš dostop je potrjen"
       ],
+      "Copied to clipboard": [
+        "Kopirano v odložišče"
+      ],
       "Creating alias...": [
         "Ustvarjanje vzdevka ..."
       ],
@@ -1161,6 +1208,12 @@
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Odkrijte ${ PASS_APP_NAME } Youtube Video"
       ],
+      "Drop file here to upload": [
+        "Spusti datoteko tukaj za nalaganje."
+      ],
+      "Drop to import": [
+        "Spusti za uvoz."
+      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Preprosto uvozite obstoječa gesla v ${ PASS_APP_NAME }."
       ],
@@ -1184,6 +1237,9 @@
       ],
       "Enter the address you want to email.": [
         "Vnesite naslov, na katerega želite poslati e-pošto."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Vnesite potrditveno kodo. Števka ${ digit }."
       ],
       "Enter your extra password": [
         "Vnesite dodatno geslo"
@@ -1655,6 +1711,9 @@
       ],
       "your domain": [
         "vaša domena"
+      ],
+      "Your files will be encrypted and then saved": [
+        "Vaše datoteke bodo šifrirane in nato shranjene."
       ]
     },
     "Label": {
@@ -1759,6 +1818,9 @@
       ],
       "Account": [
         "Račun"
+      ],
+      "Account Type": [
+        "Vrsta računa"
       ],
       "Add section": [
         "Dodaj razdelek"
@@ -1958,6 +2020,9 @@
       "File format": [
         "Format datoteke"
       ],
+      "Finance": [
+        "Finance"
+      ],
       "First name": [
         "Ime"
       ],
@@ -1993,6 +2058,9 @@
       ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "Osebna izkaznica"
@@ -2033,6 +2101,9 @@
       "Invitations": [
         "Vabila"
       ],
+      "IP Address": [
+        "IP naslov"
+      ],
       "Item ID": [
         "ID predmeta"
       ],
@@ -2041,6 +2112,15 @@
       ],
       "Key": [
         "Ključ"
+      ],
+      "Key fingerprint": [
+        "Ključ prstnega odtisa naprave"
+      ],
+      "Key type": [
+        "Vrsta ključa"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Bližnjica na tipkovnici: ${ shortcut }"
       ],
       "Language": [
         "Jezik"
@@ -2117,6 +2197,9 @@
       "Need help?": [
         "Potrebujete pomoč?"
       ],
+      "Network": [
+        "Omrežje"
+      ],
       "New": [
         "Novo"
       ],
@@ -2162,6 +2245,9 @@
       "Other": [
         "Drugo"
       ],
+      "Owner": [
+        "Lastnik"
+      ],
       "Passkey": [
         "Identifikacijski ključ"
       ],
@@ -2189,6 +2275,12 @@
       "Pause list": [
         "Zaustavi seznam"
       ],
+      "Permissions": [
+        "Dovoljenja"
+      ],
+      "Personal": [
+        "Osebni"
+      ],
       "Personal details": [
         "Osebni podatki"
       ],
@@ -2215,6 +2307,9 @@
       ],
       "Priority:": [
         "Prioriteta:"
+      ],
+      "Product": [
+        "Izdelek"
       ],
       "Prompt for auto-save": [
         "Poziv za samodejno shranjevanje"
@@ -2282,6 +2377,9 @@
       "Selected": [
         "Izbrano"
       ],
+      "Server": [
+        "Strežnik"
+      ],
       "Settings": [
         "Nastavitve"
       ],
@@ -2309,6 +2407,9 @@
       "Special characters (!&*)": [
         "Posebni znaki (!&*)"
       ],
+      "SSN": [
+        "SSN"
+      ],
       "State or province": [
         "Država ali pokrajina"
       ],
@@ -2333,8 +2434,14 @@
       "Tax number": [
         "Davčna številka"
       ],
+      "Technology": [
+        "Tehnologija"
+      ],
       "Text": [
         "Besedilo"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "Title": [
         "Naslov"
@@ -2410,6 +2517,9 @@
       ],
       "Vulnerable": [
         "Ranljivo"
+      ],
+      "Wallet Name": [
+        "Ime denarnice"
       ],
       "Weak": [
         "Šibko"
@@ -2556,6 +2666,9 @@
       "Add note": [
         "Dodaj opombo"
       ],
+      "Add password": [
+        "Dodaj geslo"
+      ],
       "Add text": [
         "Dodaj tekst"
       ],
@@ -2636,11 +2749,17 @@
       ]
     },
     "sso": {
+      "If you didn't make this request, cancel it now.": [
+        "Če tega niste zahtevali, jo takoj prekličite."
+      ],
       "Invalid confirmation code": [
         "Neveljavna potrditvena koda"
       ],
       "Sign-in failed": [
         "Prijava ni uspela"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Zahteva za prijavo na drugi napravi. Ste bili vi?"
       ],
       "Sign-in requested on another device. Was it you? ": [
         "Zahteva za prijavo na drugi napravi. Ste bili vi? "
@@ -2812,6 +2931,9 @@
       "Grant permissions": [
         "Odobrite dovoljenja"
       ],
+      "Hide my email": [
+        "Hide my email"
+      ],
       "History": [
         "Zgodovina"
       ],
@@ -2880,6 +3002,9 @@
       ],
       "Pending access to the shared data": [
         "Čakanje na dostop do podatkov v skupni rabi"
+      ],
+      "Permanently remove all items?": [
+        "Ali želite trajno odstraniti vse elemente?"
       ],
       "Pin the extension": [
         "Pripnite razširitev"

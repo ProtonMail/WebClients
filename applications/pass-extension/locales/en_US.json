@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Make default": [
+        "Set as default"
+      ],
       "More info": [
         "Learn more"
       ]
@@ -37,6 +40,9 @@
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Discover ${ PASS_APP_NAME } YouTube Video"
       ],
+      "For security reason, your access needs to be confirmed": [
+        "For security reasons, your access needs to be confirmed"
+      ],
       "Please confirm your extra password in order to auto-lock with biometrics.": [
         "Please confirm your extra password to unlock with biometrics."
       ]
@@ -56,6 +62,9 @@
       ]
     },
     "Title": {
+      "Hide my email": [
+        "Hide-my-email"
+      ],
       "Please note that once deleted, the alias can't be restored.": [
         "Please note that once deleted, the alias can't be restored.",
         "Please note that once deleted, the aliases can't be restored."
