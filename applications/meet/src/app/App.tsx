@@ -51,7 +51,7 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
 
         if (isGuest && location.pathname.match(userPattern)) {
             const cleanPath = location.pathname.replace(userPattern, '');
-            history.replace(cleanPath);
+            history.replace(cleanPath + location.hash);
         }
 
         if (window.location.pathname.includes('dashboard') && isGuest) {
