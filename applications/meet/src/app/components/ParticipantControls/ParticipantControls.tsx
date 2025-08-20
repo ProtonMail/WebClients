@@ -12,6 +12,7 @@ import {
     IcMeetParticipants,
     IcMeetSettings,
 } from '@proton/icons';
+import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { Pagination } from '../../atoms/Pagination/Pagination';
@@ -21,6 +22,7 @@ import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useAudioToggle } from '../../hooks/useAudioToggle';
 import { useDevices } from '../../hooks/useDevices';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
+import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
 import { useVideoToggle } from '../../hooks/useVideoToggle';
 import { MeetingSideBars, PermissionPromptStatus, PopUpControls } from '../../types';
 import { AudioSettings } from '../AudioSettings/AudioSettings';
@@ -39,6 +41,7 @@ export const ParticipantControls = () => {
     const { audioDeviceId, videoDeviceId, roomName, page, setPage, pageSize, participantsMap } = useMeetContext();
 
     const isLargerThanMd = useIsLargerThanMd();
+    const isNarrowHeight = useIsNarrowHeight();
 
     const {
         sideBarState,
@@ -128,18 +131,28 @@ export const ParticipantControls = () => {
 
     return (
         <div className="w-full flex flex-nowrap flex-column">
-            {!isLargerThanMd && pageCount > 1 && (
+            {!isLargerThanMd && !isNarrowHeight && pageCount > 1 && (
                 <div className="w-full flex justify-center">
                     <Pagination totalPages={pageCount} currentPage={page} onPageChange={setPage} />
                 </div>
             )}
             <div
-                className="flex flex-nowrap justify-center items-center gap-2 h-custom w-full"
+                className={clsx(
+                    isNarrowHeight ? 'justify-space-between' : 'justify-center',
+                    'flex flex-nowrap items-center gap-2 h-custom w-full'
+                )}
                 style={{ '--h-custom': '5.5rem' }}
             >
-                <div className="hidden lg:flex flex-1 justify-start h3">{roomName}</div>
+                <div
+                    className={clsx(
+                        isLargerThanMd || isNarrowHeight ? '' : 'hidden',
+                        'lg:flex flex-1 justify-start h3'
+                    )}
+                >
+                    {roomName}
+                </div>
                 <div className="participant-controls-buttons flex flex-nowrap gap-2">
-                    {isLargerThanMd ? (
+                    {isLargerThanMd && !isNarrowHeight ? (
                         <>
                             <ToggleButton
                                 buttonRef={anchorRef}
@@ -286,7 +299,7 @@ export const ParticipantControls = () => {
 
                     <LeaveModal hasAdminPermission={hasAdminPermission} />
                 </div>
-                <div className="hidden md:flex flex-1 justify-end">
+                <div className={clsx(isLargerThanMd || isNarrowHeight ? '' : 'hidden', 'flex flex-1 justify-end')}>
                     {pageCount > 1 && <Pagination totalPages={pageCount} currentPage={page} onPageChange={setPage} />}
                 </div>
             </div>

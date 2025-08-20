@@ -11,6 +11,7 @@ import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useCurrentScreenShare } from '../../hooks/useCurrentScreenShare';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
+import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
 import { useMeetingInitialisation } from '../../hooks/useMeetingInitialisation';
 import { Chat } from '../Chat/Chat';
 import { MeetingDetails } from '../MeetingDetails/MeetingDetails';
@@ -41,6 +42,8 @@ export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyPro
 
     const isLargerThanMd = useIsLargerThanMd();
 
+    const isNarrowHeight = useIsNarrowHeight();
+
     const [participantSideBarOpen, setParticipantSideBarOpen] = useState(true);
 
     const { participantNameMap, meetingLink, roomName } = useMeetContext();
@@ -60,9 +63,11 @@ export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyPro
 
     return (
         <div className={clsx('w-full h-full flex flex-column flex-nowrap gap-4 overflow-hidden pl-4 pr-4 pb-0 pt-4')}>
-            <div className="flex lg:hidden flex-nowrap gap-2">
-                <div className="flex-1 justify-start h3 text-ellipsis overflow-hidden">{roomName}</div>
-            </div>
+            {!isNarrowHeight && (
+                <div className="flex lg:hidden flex-nowrap gap-2">
+                    <div className="flex-1 justify-start h3 text-ellipsis overflow-hidden">{roomName}</div>
+                </div>
+            )}
             {videoTrack && (
                 <ScreenShareHeading
                     name={participantNameMap[participant?.identity ?? ''] ?? ''}

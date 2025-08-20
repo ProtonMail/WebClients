@@ -1,5 +1,6 @@
 import { useMeetContext } from '../contexts/MeetContext';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
+import { useIsNarrowHeight } from '../hooks/useIsNarrowHeight';
 import { ParticipantTile } from './ParticipantTile/ParticipantTile';
 
 export const ParticipantGrid = () => {
@@ -7,8 +8,10 @@ export const ParticipantGrid = () => {
 
     const isLargerThanMd = useIsLargerThanMd();
 
+    const isNarrowHeight = useIsNarrowHeight();
+
     const gridTemplateColumns = (participantCount: number) => {
-        if (!isLargerThanMd) {
+        if (!isLargerThanMd && !isNarrowHeight) {
             if (participantCount === 1 || participantCount === 2) {
                 return '1fr';
             }
@@ -38,7 +41,7 @@ export const ParticipantGrid = () => {
     };
 
     const gridTemplateRows = (participantCount: number) => {
-        if (!isLargerThanMd) {
+        if (!isLargerThanMd && !isNarrowHeight) {
             if (participantCount === 1) {
                 return '1fr';
             }
