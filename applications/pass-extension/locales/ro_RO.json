@@ -92,6 +92,9 @@
       "Change": [
         "Schimbare"
       ],
+      "Change email": [
+        "Modificare e-mail"
+      ],
       "Check DNS": [
         "Verificare DNS"
       ],
@@ -103,6 +106,9 @@
       ],
       "Clear": [
         "Eliminare"
+      ],
+      "Clear search": [
+        "Golire căutare"
       ],
       "Close": [
         "Închidere"
@@ -196,6 +202,9 @@
       ],
       "Delete alias": [
         "Ștergere alias"
+      ],
+      "Delete all": [
+        "Ștergere toate"
       ],
       "Delete it, I will never need it": [
         "Ștergere, nu mai am nevoie de el"
@@ -482,8 +491,14 @@
       "Resend invitation": [
         "Retrimitere invitație"
       ],
+      "Reset": [
+        "Resetare"
+      ],
       "Reset history": [
         "Resetare istoric"
+      ],
+      "Restore": [
+        "Restaurare"
       ],
       "Restore item": [
         "Restabilire articol"
@@ -674,6 +689,11 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplicați ${ MAIL_APP_NAME } Desktop"
       ]
     },
     "Button": {
@@ -1209,6 +1229,9 @@
       ],
       "MB": [
         "MiB"
+      ],
+      "TB": [
+        "TiB"
       ]
     },
     "file size format, long": {
@@ -1231,6 +1254,11 @@
         "Megabait",
         "Megabaiți",
         "Megabaiți"
+      ],
+      "Terabyte": [
+        "Tibibait",
+        "Tibibaiți",
+        "Tibibaiți"
       ]
     },
     "Info": {
@@ -1503,6 +1531,9 @@
       "Congratulations, your access has been confirmed": [
         "Accesul v-a fost confirmat."
       ],
+      "Copied to clipboard": [
+        "Copiat în memorie."
+      ],
       "Coupon successfully applied!": [
         "Cuponul a fost aplicat!"
       ],
@@ -1553,6 +1584,12 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domeniu: ${ domainPath } sau @"
+      ],
+      "Drop file here to upload": [
+        "Plasați fișiere aici pentru încărcare"
+      ],
+      "Drop to import": [
+        "Plasare pentru importare"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importați ușor parolele existente în ${ PASS_APP_NAME }."
@@ -2378,6 +2415,9 @@
       "your domain": [
         "domeniul personal"
       ],
+      "Your files will be encrypted and then saved": [
+        "Fișierele vor fi criptate și apoi salvate."
+      ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizația vă solicită să vă securizați accesul la ${ PASS_APP_NAME }"
       ]
@@ -2841,6 +2881,9 @@
       "https://example.com": [
         "https://example.com"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "ID Card": [
         "Carte de identitate"
       ],
@@ -2909,6 +2952,9 @@
       ],
       "Key type": [
         "Tip cheie"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Combinații taste: ${ shortcut }"
       ],
       "Language": [
         "Limba"
@@ -3338,6 +3384,9 @@
       ],
       "The URL has been copied to the clipboard": [
         "Legătura web a fost copiată în memorie"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "Tier/Level": [
         "Rang/Nivel"

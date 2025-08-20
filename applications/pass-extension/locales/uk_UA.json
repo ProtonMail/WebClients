@@ -29,6 +29,9 @@
       "Add domain": [
         "Додати домен"
       ],
+      "Add field": [
+        "Додати поле"
+      ],
       "Add mailbox": [
         "Додати поштову скриньку"
       ],
@@ -49,6 +52,9 @@
       ],
       "Advanced options": [
         "Додаткові параметри"
+      ],
+      "Authenticate": [
+        "Автентифікація"
       ],
       "Back": [
         "Назад"
@@ -77,6 +83,9 @@
       "Change": [
         "Змінити"
       ],
+      "Change email": [
+        "Змінити електронну пошту"
+      ],
       "Check DNS": [
         "Перевірити DNS"
       ],
@@ -88,6 +97,9 @@
       ],
       "Clear": [
         "Очистити"
+      ],
+      "Clear search": [
+        "Очистити пошук"
       ],
       "Close": [
         "Закрити"
@@ -178,6 +190,9 @@
       ],
       "Delete alias": [
         "Видалити псевдонім"
+      ],
+      "Delete all": [
+        "Видалити все"
       ],
       "Delete it, I will never need it": [
         "Видалити, мені це ніколи не буде потрібно"
@@ -452,6 +467,12 @@
       "Resend invitation": [
         "Повторно надіслати запрошення"
       ],
+      "Reset": [
+        "Скинути"
+      ],
+      "Restore": [
+        "Відновити"
+      ],
       "Restore item": [
         "Відновити елемент"
       ],
@@ -634,6 +655,11 @@
       ],
       "Your password manager is not here? Request it.": [
         "Немає вашого менеджера паролів? Попросіть його."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Програма ${ MAIL_APP_NAME } для комп'ютера"
       ]
     },
     "Button": {
@@ -1137,6 +1163,9 @@
       ],
       "MB": [
         "МБ"
+      ],
+      "TB": [
+        "ТБ"
       ]
     },
     "file size format, long": {
@@ -1163,9 +1192,21 @@
         "Мегабайти",
         "Мегабайтів",
         "Мегабайтів"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайти",
+        "Терабайтів",
+        "Терабайтів"
       ]
     },
     "Info": {
+      "\"${ payload.itemName }\" item was dismissed": [
+        "\"${ payload.itemName }\" елемент було відхилено"
+      ],
+      "\"${ payload.itemName }\" update was dismissed": [
+        "Оновлення \"${ payload.itemName }\" було відхилено"
+      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } заблоковано",
         "${ blockedEmailsCount } заблоковано",
@@ -1403,6 +1444,9 @@
       "Congratulations, your access has been confirmed": [
         "Вітаємо, ваш доступ підтверджено"
       ],
+      "Copied to clipboard": [
+        "Скопійовано до буфера обміну"
+      ],
       "Create contact illustration": [
         "Створити зображення контакту"
       ],
@@ -1450,6 +1494,12 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Домен: ${ domainPath } або @"
+      ],
+      "Drop file here to upload": [
+        "Перетягніть файл сюди, щоб вивантажити"
+      ],
+      "Drop to import": [
+        "Перетягніть, щоб імпортувати"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Легко імпортуйте наявні паролі в ${ PASS_APP_NAME }."
@@ -1504,6 +1554,9 @@
       ],
       "Enter the address you want to email.": [
         "Введіть адресу, на яку ви хочете надіслати листа."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введіть код підтвердження. Цифри ${ digit }."
       ],
       "Enter your extra password": [
         "Уведіть ваш додатковий пароль"
@@ -2177,6 +2230,9 @@
       "your domain": [
         "ваш домен"
       ],
+      "Your files will be encrypted and then saved": [
+        "Ваші файли буде зашифровано, а потім збережено"
+      ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша організація вимагає, щоб ви захистили свій доступ до ${ PASS_APP_NAME }"
       ]
@@ -2313,6 +2369,9 @@
       ],
       "Account": [
         "Обліковий запис"
+      ],
+      "Account Type": [
+        "Тип облікового запису"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Додайте випадковий префікс для цього домену під час створення нового псевдоніма."
@@ -2545,6 +2604,9 @@
       "File format": [
         "Формат файлу"
       ],
+      "Finance": [
+        "Фінанси"
+      ],
       "First name": [
         "Ім'я"
       ],
@@ -2581,8 +2643,14 @@
       "Hospital": [
         "Лікарня"
       ],
+      "Host": [
+        "Хост"
+      ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "ID Card": [
         "Ідентифікаційнa карткa"
@@ -2626,6 +2694,9 @@
       "Invitations": [
         "Запрошення"
       ],
+      "IP Address": [
+        "IP-адреса"
+      ],
       "Issuing State/Country": [
         "Держава/Країна видачі"
       ],
@@ -2637,6 +2708,15 @@
       ],
       "Key": [
         "Ключ"
+      ],
+      "Key fingerprint": [
+        "Цифровий відбиток ключа"
+      ],
+      "Key type": [
+        "Тип ключа"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Комбінація клавіш: ${ shortcut }"
       ],
       "Language": [
         "Мова"
@@ -2731,6 +2811,9 @@
       "Need help?": [
         "Потрібна допомога?"
       ],
+      "Network": [
+        "Мережа"
+      ],
       "New": [
         "Нове"
       ],
@@ -2782,6 +2865,9 @@
       "Other": [
         "Інше"
       ],
+      "Owner": [
+        "Власник"
+      ],
       "Passkey": [
         "Ключ доступу"
       ],
@@ -2812,6 +2898,12 @@
       "Pause list": [
         "Список винятків"
       ],
+      "Permissions": [
+        "Дозволи"
+      ],
+      "Personal": [
+        "Особистий"
+      ],
       "Personal details": [
         "Персональні подробиці"
       ],
@@ -2838,6 +2930,9 @@
       ],
       "Priority:": [
         "Пріоритет:"
+      ],
+      "Product": [
+        "Продукт"
       ],
       "Prompt for auto-save": [
         "Запит на автозбереження"
@@ -2911,6 +3006,9 @@
       "Selected": [
         "Вибрано"
       ],
+      "Server": [
+        "Сервер"
+      ],
       "Settings": [
         "Налаштування"
       ],
@@ -2941,6 +3039,9 @@
       "Special characters (!&*)": [
         "Спеціальні символи (!&*)"
       ],
+      "SSN": [
+        "SSN"
+      ],
       "State or province": [
         "Область або район"
       ],
@@ -2968,11 +3069,17 @@
       "Tax number": [
         "Податковий номер"
       ],
+      "Technology": [
+        "Технології"
+      ],
       "Text": [
         "Текст"
       ],
       "The URL has been copied to the clipboard": [
         "URL-адресу скопійовано до буфера обміну"
+      ],
+      "Theme": [
+        "Тема"
       ],
       "Tier/Level": [
         "Рівень/Рівень"
@@ -3054,6 +3161,9 @@
       ],
       "Vulnerable": [
         "Вразливий"
+      ],
+      "Wallet Name": [
+        "Назва гаманця"
       ],
       "Weak": [
         "Слабкий"
@@ -3568,6 +3678,9 @@
       ],
       "Grant permissions": [
         "Надати дозволи"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
       ],
       "History": [
         "Історія"

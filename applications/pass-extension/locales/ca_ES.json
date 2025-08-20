@@ -92,6 +92,9 @@
       "Change": [
         "Canvia"
       ],
+      "Change email": [
+        "Canvia el correu electrònic"
+      ],
       "Check DNS": [
         "Verifica el DNS"
       ],
@@ -103,6 +106,9 @@
       ],
       "Clear": [
         "Neteja"
+      ],
+      "Clear search": [
+        "Neteja la cerca"
       ],
       "Close": [
         "Tanca"
@@ -196,6 +202,9 @@
       ],
       "Delete alias": [
         "Elimina l'àlies"
+      ],
+      "Delete all": [
+        "Elimina-ho tot"
       ],
       "Delete it, I will never need it": [
         "Elimina'l. No el necessitaré mai."
@@ -482,8 +491,14 @@
       "Resend invitation": [
         "Reenvia la invitació"
       ],
+      "Reset": [
+        "Restableix"
+      ],
       "Reset history": [
         "Restableix l'historial"
+      ],
+      "Restore": [
+        "Restaura"
       ],
       "Restore item": [
         "Restaura l'element"
@@ -672,6 +687,11 @@
       ],
       "Your password manager is not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
       ]
     },
     "Button": {
@@ -1203,6 +1223,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -1221,6 +1244,10 @@
       "Megabyte": [
         "megabyte",
         "megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Info": {
@@ -1483,6 +1510,9 @@
       "Congratulations, your access has been confirmed": [
         "S'ha confirmat el vostre accés"
       ],
+      "Copied to clipboard": [
+        "S'ha copiat al porta-retalls."
+      ],
       "Coupon successfully applied!": [
         "S'ha aplicat el cupó."
       ],
@@ -1533,6 +1563,12 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domini: ${ domainPath } o @"
+      ],
+      "Drop file here to upload": [
+        "Arrossegueu el fitxer aquí per carregar-lo."
+      ],
+      "Drop to import": [
+        "Arrossegueu aquí per a importar"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importeu fàcilment les vostres contrasenyes existents a ${ PASS_APP_NAME }."
@@ -2351,6 +2387,9 @@
       "your domain": [
         "el vostre domini"
       ],
+      "Your files will be encrypted and then saved": [
+        "Es xifraran els fitxers i després es desaran."
+      ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La vostra organització us demana que assegureu el vostre accés a ${ PASS_APP_NAME }."
       ]
@@ -2801,6 +2840,9 @@
       "https://example.com": [
         "https://exemple.cat"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "ID Card": [
         "Targeta d'identitat"
       ],
@@ -2869,6 +2911,9 @@
       ],
       "Key type": [
         "Tipus de clau"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Drecera de teclat: ${ shortcut }"
       ],
       "Language": [
         "Idioma"
@@ -3298,6 +3343,9 @@
       ],
       "The URL has been copied to the clipboard": [
         "S'ha copiat l'URL al porta-retalls."
+      ],
+      "Theme": [
+        "Tema"
       ],
       "Tier/Level": [
         "Nivell"
