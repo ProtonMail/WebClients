@@ -153,3 +153,7 @@ export function useDrive() {
         }, []),
     };
 }
+
+export const getDrive = (): ProtonDriveClient => {
+    return driveSingleton;
+};

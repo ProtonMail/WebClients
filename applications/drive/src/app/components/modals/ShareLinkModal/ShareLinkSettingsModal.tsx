@@ -77,7 +77,9 @@ const SharingSettingsModal = ({
             title: c('Title').t`Discard changes?`,
             submitText: c('Title').t`Discard`,
             message: c('Info').t`You will lose all unsaved changes.`,
-            onSubmit: async () => modalProps.onClose?.(),
+            onSubmit: async () => {
+                modalProps.onClose?.();
+            },
             canUndo: true,
         });
     };
@@ -90,6 +92,7 @@ const SharingSettingsModal = ({
             canUndo: true, // Just to hide the message
             onSubmit: async () => {
                 await stopSharing();
+
                 modalProps.onClose?.();
             },
         });
