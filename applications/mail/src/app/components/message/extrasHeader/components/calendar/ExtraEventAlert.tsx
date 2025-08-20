@@ -1,11 +1,13 @@
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { Alert, SettingsLink } from '@proton/components';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
 import type { InvitationModel } from '../../../../../helpers/calendar/invite';
@@ -14,6 +16,8 @@ interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
 }
 const ExtraEventAlert = ({ model }: Props) => {
+    const [addresses] = useAddresses();
+
     const {
         isOrganizerMode,
         isImport,
@@ -127,7 +131,7 @@ const ExtraEventAlert = ({ model }: Props) => {
                 </Alert>
             );
         }
-        if (!calendarData) {
+        if (!calendarData && !getIsBYOEOnlyAccount(addresses)) {
             // no default calendar was found, which means that either the user has no calendar,
             // all user calendars are disabled, or no calendar is active yet
             if (hasNoCalendars) {

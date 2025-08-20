@@ -9,6 +9,8 @@ import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
+import ComposerBYOEClaimAddressButton from 'proton-mail/components/composer/addresses/ComposerBYOEClaimAddressButton';
+
 import type { MessageSendInfo } from '../../hooks/useSendInfo';
 import type { ComposerID } from '../../store/composers/composerTypes';
 import type { MessageChange } from './Composer';
@@ -66,7 +68,7 @@ const ComposerMeta = forwardRef<HTMLDivElement, Props>(
                         >
                             {c('Info').t`From`}
                         </Label>
-                        <div className="inline-flex self-start">
+                        <div className="inline-flex self-start max-w-full">
                             <SelectSender
                                 composerID={composerID}
                                 message={message}
@@ -74,6 +76,7 @@ const ComposerMeta = forwardRef<HTMLDivElement, Props>(
                                 addressesBlurRef={addressesBlurRef}
                             />
                         </div>
+                        <ComposerBYOEClaimAddressButton />
                     </div>
                 </ComposerShortDomainSpotlight>
                 <ComposerAddresses

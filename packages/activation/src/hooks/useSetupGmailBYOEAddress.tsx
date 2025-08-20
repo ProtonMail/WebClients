@@ -1,12 +1,10 @@
-import { useEffect } from 'react';
-
 import { c } from 'ttag';
 
 import { createBYOEAddress } from '@proton/account/addresses/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { deleteSyncItem, loadSyncList } from '@proton/activation/src/logic/sync/sync.actions';
+import { deleteSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import type { Sync } from '@proton/activation/src/logic/sync/sync.interface';
 import { getAllSync } from '@proton/activation/src/logic/sync/sync.selectors';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -30,15 +28,6 @@ const useSetupGmailBYOEAddress = () => {
 
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();
-    const dispatchEasySwitch = useEasySwitchDispatch();
-
-    // Fetch syncs
-    useEffect(() => {
-        const request = easySwitchDispatch(loadSyncList());
-        return () => {
-            request.abort();
-        };
-    }, []);
 
     const handleSyncCallback = async (hasError: boolean, sync?: Sync, displayName?: string) => {
         if (!hasAccessToBYOE) {
@@ -76,7 +65,7 @@ const useSetupGmailBYOEAddress = () => {
                 } catch (e) {
                     handleError(e);
                     // If we're not able to add the address, we want to delete the forwarding we just added
-                    dispatchEasySwitch(deleteSyncItem({ syncId: sync.id, showNotification: false })).catch(noop);
+                    void easySwitchDispatch(deleteSyncItem({ syncId: sync.id, showNotification: false })).catch(noop);
                 }
             }
         }

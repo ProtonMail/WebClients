@@ -29,8 +29,8 @@ import {
 import type { Nullable, RequireOnly } from '../interfaces/utils';
 import type { PaginationParams } from './interface';
 
-const CALENDAR_V1 = 'calendar/v1';
-const CALENDAR_V2 = 'calendar/v2';
+export const CALENDAR_V1 = 'calendar/v1';
+export const CALENDAR_V2 = 'calendar/v2';
 
 export const queryLatestModelEventID = (calendarID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/modelevents/latest`,

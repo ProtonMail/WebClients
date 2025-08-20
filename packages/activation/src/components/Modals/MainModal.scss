@@ -4,9 +4,3 @@
 	max-inline-size: rem(580);
 	inline-size: 100%;
 }
-
-.import-buttons {
-	display: grid;
-	grid-gap: #{rem(20)};
-	grid-template-columns: repeat(auto-fit, minmax(#{rem(160)}, 1fr));
-}

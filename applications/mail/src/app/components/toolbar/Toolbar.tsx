@@ -1,10 +1,12 @@
-import type { Ref } from 'react';
+import type { ReactElement, Ref } from 'react';
 import { memo } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
+
+import ToolbarAddressesDropdown from 'proton-mail/components/toolbar/ToolbarAddressesDropdown';
 
 import { isLabelIDNewsletterSubscription } from '../../helpers/labels';
 import type { Props as ListSettingsProps } from '../list/ListSettings';
@@ -45,6 +47,7 @@ export interface Props extends ListSettingsProps {
     bordered?: boolean;
     toolbarInHeader?: boolean;
     onCheckAll?: (check: boolean) => void;
+    addressesDropdown?: ReactElement;
 }
 
 type Variant =
@@ -85,6 +88,7 @@ const Toolbar = (props: Props) => {
         // Base css class
         classname,
         selectAll: <SelectAll {...selectAllProps} />,
+        addressesDropdown: <ToolbarAddressesDropdown labelID={props.labelID} selectedIDs={selectedIDs} />,
     };
 
     switch (variant) {

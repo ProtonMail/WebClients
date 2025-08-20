@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import type { EasySwitchFeatureFlag } from '@proton/activation/src/interface';
 import { ImportProvider, ImportType } from '@proton/activation/src/interface';
 import {
@@ -14,6 +15,7 @@ import {
 } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { FeatureCode, useFeature } from '@proton/features';
+import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 
 import { getEnabledFeature } from '../OAuthModal.helpers';
 import { getScopeFromProvider } from './useStepProducts.helpers';
@@ -24,6 +26,8 @@ interface Props {
 
 const useStepProducts = ({ triggerOAuth }: Props) => {
     const dispatch = useEasySwitchDispatch();
+    const [addresses] = useAddresses();
+    const isBYOEAccount = getIsBYOEOnlyAccount(addresses);
     const products = useEasySwitchSelector(selectOauthImportStateProducts);
     const provider = useEasySwitchSelector(selectOauthDraftProvider);
 
@@ -36,7 +40,9 @@ const useStepProducts = ({ triggerOAuth }: Props) => {
 
     const [mailChecked, setMailChecked] = useState(products.includes(ImportType.MAIL) ?? false);
     const [contactChecked, setContactChecked] = useState(products.includes(ImportType.CONTACTS) ?? false);
-    const [calendarChecked, setCalendarChecked] = useState(products.includes(ImportType.CALENDAR) ?? false);
+    const [calendarChecked, setCalendarChecked] = useState(
+        (products.includes(ImportType.CALENDAR) && !isBYOEAccount) ?? false
+    );
 
     const handleCancel = () => {
         dispatch(displayConfirmLeaveModal(false));
@@ -78,6 +84,7 @@ const useStepProducts = ({ triggerOAuth }: Props) => {
         handleSubmit,
         nextDisabled,
         enabledFeatures: getEnabledFeature(provider, featureMap),
+        isBYOEOnlyAccount: isBYOEAccount,
     };
 };
 

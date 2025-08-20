@@ -17,5 +17,17 @@
 }
 
 .onboarding-modal--new {
-	min-block-size: rem(600); // Keep reasonnably same height
+	min-block-size: rem(600); // Keep reasonably same height
+
+	&:has(.onboarding-modal-premium-features) {
+		.scroll-child {
+			display: flex;
+			block-size: 100%;
+		}
+
+		.modal-two-content {
+			display: flex;
+			flex-flow: column nowrap;
+		}
+	}
 }

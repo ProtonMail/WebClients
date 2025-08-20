@@ -5,9 +5,9 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { useGetCalendars } from '@proton/calendar/calendars/hooks';
-import { useApi, useEventManager, useGetCalendarEventRaw, useGetCalendarInfo } from '@proton/components';
+import { useApi, useGetCalendarEventRaw, useGetCalendarInfo } from '@proton/components';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
+import useGetOrCreateCalendarAndSettings from '@proton/components/hooks/useGetOrCreateCalendarAndSettings';
 import { CryptoProxy } from '@proton/crypto';
 import { arrayToBinaryString, arrayToHexString, decodeUtf8 } from '@proton/crypto/lib/utils';
 import { useLoading } from '@proton/hooks';
@@ -30,6 +30,7 @@ import {
     INVITATION_ERROR_TYPE,
 } from '@proton/shared/lib/calendar/icsSurgery/errors/icsSurgeryErrorTypes';
 import { getIsVcalErrorComponent, getVcalendarHasNoErrorComponents } from '@proton/shared/lib/calendar/vcalHelper';
+import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type {
     VcalErrorComponent,
@@ -52,7 +53,6 @@ import {
     getSupportedEventInvitation,
     parseVcalendar,
 } from '../../../../helpers/calendar/invite';
-import { getOrCreatePersonalCalendarsAndSettings } from '../../../../helpers/calendar/inviteApi';
 import { isNetworkError } from '../../../../helpers/errors';
 import { getMessageHasData } from '../../../../helpers/message/messages';
 import { useGetAttachment } from '../../../../hooks/attachments/useAttachment';
@@ -67,13 +67,10 @@ interface Props {
 }
 const ExtraEvents = ({ message }: Props) => {
     const api = useApi();
-    const { call } = useEventManager();
     const isMounted = useIsMounted();
     const getMessageKeys = useGetMessageKeys();
     const getAttachment = useGetAttachment();
     const dispatch = useMailDispatch();
-    // const messageCache = useMessageCache();
-    const getCalendars = useGetCalendars();
     const [contactEmails = [], loadingContactEmails] = useContactEmails();
     const [addresses = [], loadingAddresses] = useAddresses();
     const getAddressKeys = useGetAddressKeys();
@@ -86,6 +83,7 @@ const ExtraEvents = ({ message }: Props) => {
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
     const isColorPerEventEnabled = useFlag('ColorPerEventWeb');
     const canImportEventColor = isColorPerEventEnabled && user.hasPaidMail;
+    const getOrCreateCalendarAndSettings = useGetOrCreateCalendarAndSettings();
 
     const [loadingWidget, withLoadingWidget] = useLoading();
     const [loadedWidget, setLoadedWidget] = useState('');
@@ -124,16 +122,18 @@ const ExtraEvents = ({ message }: Props) => {
             }
             const run = async () => {
                 const getCalData = async () => {
+                    // Pure BYOE accounts have no calendar, and we cannot create one since the user has no proton address
+                    if (getIsBYOEOnlyAccount(addresses)) {
+                        return {
+                            calendars: [],
+                            defaultCalendar: undefined,
+                            canCreateCalendar: false,
+                            maxUserCalendarsDisabled: true,
+                        };
+                    }
+
                     const isFreeUser = !user.hasPaidMail;
-                    const { calendars, calendarUserSettings } = await getOrCreatePersonalCalendarsAndSettings({
-                        api,
-                        callEventManager: call,
-                        addresses,
-                        isFreeUser,
-                        getAddressKeys,
-                        getCalendars,
-                        getCalendarUserSettings,
-                    });
+                    const { calendars, calendarUserSettings } = await getOrCreateCalendarAndSettings();
                     const defaultCalendar = getDefaultCalendar(calendars, calendarUserSettings.DefaultCalendarID);
                     const ownedPersonalCalendars = getOwnedPersonalCalendars(calendars);
                     const disabledCalendars = ownedPersonalCalendars.filter(unary(getIsCalendarDisabled));

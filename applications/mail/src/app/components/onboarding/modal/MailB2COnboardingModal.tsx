@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { useWelcomeFlags } from '@proton/account';
-import { OnboardingModal } from '@proton/components';
+import { OnboardingModal, useEventManager } from '@proton/components';
 import type { OnboardingStepComponent } from '@proton/components/containers/onboarding/interface';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import isTruthy from '@proton/utils/isTruthy';
@@ -86,6 +86,7 @@ const STEPS: Record<
 };
 
 const MailB2COnboardingModal = (props: MailOnboardingProps) => {
+    const { call } = useEventManager();
     const { endReplay } = useWelcomeFlags();
     const dispatch = useMailDispatch();
     const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
@@ -143,11 +144,13 @@ const MailB2COnboardingModal = (props: MailOnboardingProps) => {
             <OnboardingModal
                 {...props}
                 onClose={() => {
+                    // Call the event manager when closing the modal so that BYOE users get as much imported emails as possible
+                    void call();
                     endReplay();
                     props.onClose?.();
                 }}
                 onDone={handleDone}
-                modalContentClassname="mx-12 mt-12 mb-6"
+                modalContentClassname="mx-12 pt-12 pb-6"
                 modalClassname="onboarding-modal--larger onboarding-modal--new"
                 showGenericSteps={false}
                 extraProductStep={getStepComponent('activate-premium-features')}

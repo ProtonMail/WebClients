@@ -1,13 +1,13 @@
-import type { CHECKLIST_DISPLAY_TYPE, ChecklistId, ChecklistKeyType } from '../interfaces';
+import type { CHECKLIST_DISPLAY_TYPE, ChecklistId, ChecklistKeyType, ChecklistType } from '../interfaces';
 
-export const getChecklist = (checklistId: ChecklistId) => ({
+export const getChecklist = (checklistType: ChecklistType) => ({
     method: 'get',
-    url: `core/v4/checklist/${checklistId}`,
+    url: `core/v4/checklist/${checklistType}`,
 });
 
-export const seenCompletedChecklist = (checklistId: ChecklistId) => ({
+export const seenCompletedChecklist = (checklistType: ChecklistType) => ({
     method: 'post',
-    url: `core/v4/checklist/${checklistId}/seen-completed-list`,
+    url: `core/v4/checklist/seen-completed-list/${checklistType}`,
 });
 
 export const getDriveChecklist = (checklistId: ChecklistId) => ({
@@ -20,22 +20,22 @@ export const seenCompletedDriveChecklist = (checklistId: ChecklistId) => ({
     url: `drive/v2/checklist/${checklistId}/seen-completed-list`,
 });
 
-export const hidePaidUserChecklist = () => ({
-    method: 'post',
-    url: `core/v4/checklist/paying-user/hide`,
-});
-
-export const updateChecklistItem = (Item: ChecklistKeyType) => ({
+export const updateChecklistItem = (Item: ChecklistKeyType, Type: ChecklistType) => ({
     method: 'put',
     url: `core/v4/checklist/check-item`,
     data: {
         Item,
+        Type,
     },
 });
-export const updateChecklistDisplay = (Display: Omit<CHECKLIST_DISPLAY_TYPE, CHECKLIST_DISPLAY_TYPE.FULL>) => ({
+export const updateChecklistDisplay = (
+    Display: Omit<CHECKLIST_DISPLAY_TYPE, CHECKLIST_DISPLAY_TYPE.FULL>,
+    Type: ChecklistType
+) => ({
     method: 'put',
     url: `core/v4/checklist/update-display`,
     data: {
         Display,
+        Type,
     },
 });
