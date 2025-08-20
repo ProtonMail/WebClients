@@ -112,6 +112,9 @@
       "Change": [
         "Ändern"
       ],
+      "Change email": [
+        "E-Mail-Adresse ändern"
+      ],
       "Check DNS": [
         "DNS überprüfen"
       ],
@@ -123,6 +126,9 @@
       ],
       "Clear": [
         "Löschen"
+      ],
+      "Clear search": [
+        "Suche löschen"
       ],
       "Close": [
         "Schließen"
@@ -207,6 +213,9 @@
       ],
       "Delete alias": [
         "Alias löschen"
+      ],
+      "Delete all": [
+        "Alle löschen"
       ],
       "Delete it, I will never need it": [
         "Lösche es, ich werde es nie brauchen"
@@ -493,8 +502,14 @@
       "Resend invitation": [
         "Einladung erneut senden"
       ],
+      "Reset": [
+        "Zurücksetzen"
+      ],
       "Reset history": [
         "Verlauf löschen"
+      ],
+      "Restore": [
+        "Wiederherstellen"
       ],
       "Restore item": [
         "Eintrag wiederherstellen"
@@ -674,6 +689,11 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ist dein Passwort-Manager nicht dabei? Fordere ihn an."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } Desktopanwendung"
       ]
     },
     "Button": {
@@ -1234,6 +1254,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -1252,6 +1275,10 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
       ]
     },
     "Info": {
@@ -1487,6 +1514,9 @@
       "Congratulations, your access has been confirmed": [
         "Gratulation, dein Zugriff wurde bestätigt."
       ],
+      "Copied to clipboard": [
+        "In die Zwischenablage kopiert"
+      ],
       "Coupon successfully applied!": [
         "Gutschein erfolgreich angewendet"
       ],
@@ -1531,6 +1561,12 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domain: ${ domainPath } oder @"
+      ],
+      "Drop file here to upload": [
+        "Ziehe Dateien hierher, um sie hochzuladen"
+      ],
+      "Drop to import": [
+        "Ablegen zum Importieren"
       ],
       "Editor": [
         "Bearbeiter"
@@ -1739,6 +1775,9 @@
       "Latest breach on ${ formattedDate }": [
         "Letztes Datenleck am ${ formattedDate }"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Erfahre, was zu tun ist ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "Eintrag verlassen..."
       ],
@@ -1829,6 +1868,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online-Zugang zu ${ PASS_APP_NAME } wird einen PIN-Code benötigen. Du wirst nach 3 falschen Versuchen abgemeldet werden."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Bei unseren Warnungen steht die Sicherheit im Vordergrund. Wenn du keine der gefährdeten Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
       ],
       "Owner": [
         "Besitzer"
@@ -2201,6 +2243,9 @@
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Vertrauenswürdig für über 50'000 Geschäftsbenutzern und 100 Millionen Konten weltweit."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Teste neue Funktionen, Updates und Produkte von ${ BRAND_NAME }, bevor sie für die Öffentlichkeit freigegeben werden. Dadurch wird die Seite neu geladen."
+      ],
       "Unable to copy to clipboard": [
         "Kopieren in die Zwischenablage nicht möglich"
       ],
@@ -2366,6 +2411,9 @@
       ],
       "your domain": [
         "deine Domain"
+      ],
+      "Your files will be encrypted and then saved": [
+        "Deine Dateien werden verschlüsselt und anschließend gespeichert"
       ],
       "Your information was found on ${ displayedDate }": [
         "Deine Informationen wurden am ${ displayedDate } gefunden."
@@ -2550,6 +2598,9 @@
       ],
       "Bank Name": [
         "Bankname"
+      ],
+      "Beta Access": [
+        "Beta-Zugang"
       ],
       "Biometrics": [
         "Biometrie"
@@ -2848,6 +2899,9 @@
       "https://example.com": [
         "https://beispiel.de"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "ID Card": [
         "Ausweis"
       ],
@@ -2919,6 +2973,9 @@
       ],
       "Key type": [
         "Schlüsseltyp"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Tastaturkürzel: ${ shortcut }"
       ],
       "Language": [
         "Sprache"
@@ -3364,6 +3421,9 @@
       "The URL has been copied to the clipboard": [
         "Der Link wurde in die Zwischenablage kopiert."
       ],
+      "Theme": [
+        "Farbschema"
+      ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Dieser Eintrag ist bis ${ date } oder bis zum Erreichen der Anzeigegrenze zugänglich."
       ],
@@ -3531,8 +3591,16 @@
       "auto create rules ››": [
         "Regeln automatisch erstellen ››"
       ],
+      "if your data is leaked": [
+        "wenn deine Daten offengelegt wurden"
+      ],
       "Learn more": [
         "Mehr erfahren"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } aktivieren"
       ]
     },
     "Medium": {
@@ -3556,6 +3624,17 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "2FA für die Organisation erforderlich"
+      ],
+      "SSO integration": [
+        "SSO-Integration"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } wurde deaktiviert."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } wurde aktiviert."
       ]
     },
     "Option": {
@@ -3811,6 +3890,20 @@
       ],
       "Used on ${ url }": [
         "Verwendet auf ${ url }"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } und noch ${ remainingCount } weitere potenzielle Lecks entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } und noch 1 weiteres potenzielles Leck entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
       ]
     },
     "sso": {
@@ -4146,6 +4239,9 @@
       "Inactive 2FA": [
         "Inaktive 2FA"
       ],
+      "Information exposed in breach": [
+        "Informationen, die beim Datenleck offengelegt wurden"
+      ],
       "Install extension": [
         "Erweiterung installieren"
       ],
@@ -4416,6 +4512,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Heute"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Nicht alle hier aufgeführten Informationen wurden für alle Benutzer offengelegt."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Solange sie nicht entschlüsselt werden, bleiben verschlüsselte Passwörter sicher, auch wenn sie offengelegt wurden."
       ]
     },
     "Validation": {

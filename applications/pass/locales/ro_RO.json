@@ -112,6 +112,9 @@
       "Change": [
         "Schimbare"
       ],
+      "Change email": [
+        "Modificare e-mail"
+      ],
       "Check DNS": [
         "Verificare DNS"
       ],
@@ -123,6 +126,9 @@
       ],
       "Clear": [
         "Eliminare"
+      ],
+      "Clear search": [
+        "Golire căutare"
       ],
       "Close": [
         "Închidere"
@@ -207,6 +213,9 @@
       ],
       "Delete alias": [
         "Ștergere alias"
+      ],
+      "Delete all": [
+        "Ștergere toate"
       ],
       "Delete it, I will never need it": [
         "Ștergere, nu mai am nevoie de el"
@@ -493,8 +502,14 @@
       "Resend invitation": [
         "Retrimitere invitație"
       ],
+      "Reset": [
+        "Resetare"
+      ],
       "Reset history": [
         "Resetare istoric"
+      ],
+      "Restore": [
+        "Restaurare"
       ],
       "Restore item": [
         "Restabilire articol"
@@ -676,6 +691,11 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplicați ${ MAIL_APP_NAME } Desktop"
       ]
     },
     "Button": {
@@ -1240,6 +1260,9 @@
       ],
       "MB": [
         "MiB"
+      ],
+      "TB": [
+        "TiB"
       ]
     },
     "file size format, long": {
@@ -1262,6 +1285,11 @@
         "Megabait",
         "Megabaiți",
         "Megabaiți"
+      ],
+      "Terabyte": [
+        "Tibibait",
+        "Tibibaiți",
+        "Tibibaiți"
       ]
     },
     "Info": {
@@ -1507,6 +1535,9 @@
       "Congratulations, your access has been confirmed": [
         "Accesul v-a fost confirmat."
       ],
+      "Copied to clipboard": [
+        "Copiat în memorie."
+      ],
       "Coupon successfully applied!": [
         "Cuponul a fost aplicat!"
       ],
@@ -1551,6 +1582,12 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domeniu: ${ domainPath } sau @"
+      ],
+      "Drop file here to upload": [
+        "Plasați fișiere aici pentru încărcare"
+      ],
+      "Drop to import": [
+        "Plasare pentru importare"
       ],
       "Editor": [
         "Editor"
@@ -1762,6 +1799,9 @@
       "Latest breach on ${ formattedDate }": [
         "Ultima divulgare: ${ formattedDate }"
       ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Aflați ce aveți de făcut ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "Se părăsește articolul…"
       ],
@@ -1853,6 +1893,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Accesul la online la ${ PASS_APP_NAME } va necesita un cod PIN. După 3 încercări nereușite contul va fi deconectat."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Alertele noastre au ca prioritate siguranța. Dacă nu recunoașteți niciuna dintre informațiile divulgate, puteți ignora acest raport."
       ],
       "Owner": [
         "Proprietar"
@@ -2227,6 +2270,9 @@
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Aprobat de peste 50.000 de utilizatori de afaceri și 100 de milioane de conturi din întreaga lume."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului. Aceasta va reporni aplicația."
+      ],
       "Unable to copy to clipboard": [
         "Nu se poate copia în memorie."
       ],
@@ -2396,6 +2442,9 @@
       ],
       "your domain": [
         "domeniul personal"
+      ],
+      "Your files will be encrypted and then saved": [
+        "Fișierele vor fi criptate și apoi salvate."
       ],
       "Your information was found on ${ displayedDate }": [
         "Informațiile v-au fost găsite la ${ displayedDate }"
@@ -2594,6 +2643,9 @@
       ],
       "Bank Name": [
         "Nume bancă"
+      ],
+      "Beta Access": [
+        "Acces la Beta"
       ],
       "Biometrics": [
         "Date biometrice"
@@ -2892,6 +2944,9 @@
       "https://example.com": [
         "https://example.com"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "ID Card": [
         "Carte de identitate"
       ],
@@ -2963,6 +3018,9 @@
       ],
       "Key type": [
         "Tip cheie"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Combinații taste: ${ shortcut }"
       ],
       "Language": [
         "Limba"
@@ -3408,6 +3466,9 @@
       "The URL has been copied to the clipboard": [
         "Legătura web a fost copiată în memorie"
       ],
+      "Theme": [
+        "Tema"
+      ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Acest articol este disponibil până la ${ date } sau până când este atinsă limita de vizualizări."
       ],
@@ -3575,8 +3636,16 @@
       "auto create rules ››": [
         "creare automată reguli ››"
       ],
+      "if your data is leaked": [
+        "dacă datele v-au fost divulgate"
+      ],
       "Learn more": [
         "Detalii"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Activare ${ reason }"
       ]
     },
     "Medium": {
@@ -3602,6 +3671,17 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Este necesară A2F pentru organizație"
+      ],
+      "SSO integration": [
+        "Integrare SSO"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } a fost dezactivat"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } a fost activat"
       ]
     },
     "Option": {
@@ -3858,6 +3938,20 @@
       ],
       "Used on ${ url }": [
         "Folosit la ${ url }"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } şi încă ${ remainingCount } potențiale divulgări au fost detectate. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } şi încă o potențială divulgare a fost detectată. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "A fost detectată o potențială divulgare pentru ${ name }. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Informațiile v-au fost găsite în cel puțin o compromitere a datelor. Activați opțiunea ${ DARK_WEB_MONITORING_NAME } pentru a vedea detalii și a acționa. ${ link }"
       ]
     },
     "sso": {
@@ -4196,6 +4290,9 @@
       "Inactive 2FA": [
         "A2F inactive"
       ],
+      "Information exposed in breach": [
+        "Informații expuse în divulgare"
+      ],
       "Install extension": [
         "Instalați extensia"
       ],
@@ -4471,6 +4568,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Astăzi"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Nu toate informațiile afișate aici au fost expuse pentru toți utilizatorii."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Dacă nu sunt decriptate, parolele criptate rămân în siguranță chiar dacă au fost expuse."
       ]
     },
     "Validation": {
