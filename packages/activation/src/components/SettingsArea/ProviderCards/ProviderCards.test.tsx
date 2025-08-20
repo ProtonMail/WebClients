@@ -253,7 +253,7 @@ describe('Provider cards process testing', () => {
         await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
         const productButtons = screen.getAllByTestId('MailModal:ProductButton');
         expect(productButtons).toHaveLength(3);
-        fireEvent.click(productButtons[1]);
+        fireEvent.click(productButtons[2]);
 
         await waitFor(() => screen.getByTestId('Instruction:defaultCalendarInstructions'));
     });
@@ -279,7 +279,7 @@ describe('Provider cards process testing', () => {
         await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
         productButtons = screen.getAllByTestId('MailModal:ProductButton');
         expect(productButtons).toHaveLength(3);
-        fireEvent.click(productButtons[1]);
+        fireEvent.click(productButtons[2]);
 
         await waitFor(() => screen.getByTestId('Instruction:defaultCalendarInstructions'));
         fireEvent.click(screen.getByTestId('Instruction:close'));
@@ -289,7 +289,7 @@ describe('Provider cards process testing', () => {
         await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
         productButtons = screen.getAllByTestId('MailModal:ProductButton');
         expect(productButtons).toHaveLength(3);
-        fireEvent.click(productButtons[2]);
+        fireEvent.click(productButtons[1]);
 
         await waitFor(() => screen.getByTestId('Instruction:defaultContactInstructions'));
         fireEvent.click(screen.getByTestId('Instruction:close'));
@@ -316,7 +316,7 @@ describe('Provider cards process testing', () => {
         await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
         productButtons = screen.getAllByTestId('MailModal:ProductButton');
         expect(productButtons).toHaveLength(3);
-        fireEvent.click(productButtons[1]);
+        fireEvent.click(productButtons[2]);
 
         await waitFor(() => screen.getByTestId('Instruction:yahooCalendarInstructions'));
         fireEvent.click(screen.getByTestId('Instruction:close'));
@@ -326,7 +326,7 @@ describe('Provider cards process testing', () => {
         await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
         productButtons = screen.getAllByTestId('MailModal:ProductButton');
         expect(productButtons).toHaveLength(3);
-        fireEvent.click(productButtons[2]);
+        fireEvent.click(productButtons[1]);
 
         await waitFor(() => screen.getByTestId('Instruction:yahooContactInstructions'));
         fireEvent.click(screen.getByTestId('Instruction:close'));

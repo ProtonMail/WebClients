@@ -6,10 +6,7 @@ import { useLocalState } from '@proton/components';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
-import {
-    CHECKLIST_ITEMS_TO_COMPLETE,
-    useGetStartedChecklist,
-} from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 
 import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 import OnboardingChecklistModalsProvider from '../OnboardingChecklistModalsProvider';
@@ -68,8 +65,6 @@ const OnboardingChecklistSidebar = () => {
                 canCloseChecklist={canCloseChecklist}
                 canDisplayCountDown={canDisplayCountDown}
                 isOpened={isOpened}
-                itemsCompletedCount={CHECKLIST_ITEMS_TO_COMPLETE.filter((key) => items.has(key)).length}
-                itemsToCompleteCount={CHECKLIST_ITEMS_TO_COMPLETE.length}
                 onCloseChecklist={() => {
                     changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.HIDDEN);
                     void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.close_checklist, {

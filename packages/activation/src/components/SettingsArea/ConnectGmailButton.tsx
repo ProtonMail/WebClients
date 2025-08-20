@@ -10,13 +10,7 @@ import { Button } from '@proton/atoms';
 import { UpsellModal, useModalState } from '@proton/components';
 import useConfig from '@proton/components/hooks/useConfig';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
-import {
-    type APP_NAMES,
-    BRAND_NAME,
-    MAIL_APP_NAME,
-    SHARED_UPSELL_PATHS,
-    UPSELL_COMPONENT,
-} from '@proton/shared/lib/constants';
+import { type APP_NAMES, MAIL_APP_NAME, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { isFree, isPaid } from '@proton/shared/lib/user/helpers';
 import forwardImg from '@proton/styles/assets/img/illustrations/new-upsells-img/easy-switch-forward.svg';
@@ -104,17 +98,17 @@ const ConnectGmailButton = ({
                     upsellRef={upsellRef}
                     title={
                         hasAccessToBYOE
-                            ? c('Title').t`Connect more Gmail addresses with ${planName}`
+                            ? c('Title').t`Connect more addresses`
                             : c('Title').t`Multiple accounts, 1 private inbox`
                     }
                     description={
                         <>
                             <span>
                                 {hasAccessToBYOE
-                                    ? /*translator: full sentence is "You've connected your 1 Gmail address."*/
+                                    ? /*translator: full sentence is "You've connected 1 Gmail address to Proton Mail."*/
                                       c('loc_nightly: BYOE').ngettext(
-                                          msgid`You've connected ${MAX_SYNC_FREE_USER} Gmail address to ${BRAND_NAME}.`,
-                                          `You've connected ${MAX_SYNC_FREE_USER} Gmail addresses to ${BRAND_NAME}.`,
+                                          msgid`You've connected ${MAX_SYNC_FREE_USER} Gmail address to ${MAIL_APP_NAME}.`,
+                                          `You've connected ${MAX_SYNC_FREE_USER} Gmail addresses to ${MAIL_APP_NAME}.`,
                                           MAX_SYNC_FREE_USER
                                       )
                                     : /*translator: full sentence is "You're forwarding emails from 1 external account to Proton Mail."*/
