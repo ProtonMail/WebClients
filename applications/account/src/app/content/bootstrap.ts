@@ -28,6 +28,7 @@ import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronC
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import initLogicalProperties from '@proton/shared/lib/logical/logical';
+import { telemetry } from '@proton/shared/lib/telemetry';
 import noop from '@proton/utils/noop';
 
 import locales from '../locales';
@@ -113,6 +114,22 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             bootstrap.loadCrypto({ appName, unleashClient }),
             unleashPromise,
         ]);
+
+        if (!!userData.userSettings.Telemetry) {
+            telemetry.init({
+                config,
+                uid: authentication.UID,
+                eventOptions: {
+                    pageView: false,
+                    click: false,
+                    form: false,
+                    performance: false,
+                    modal: false,
+                },
+                overridenPageTitle: 'Account',
+            });
+        }
+
         // postLoad needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
 
