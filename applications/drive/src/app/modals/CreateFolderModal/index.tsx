@@ -18,13 +18,18 @@ export const useCreateFolderModal = () => {
     const [modal, showModal] = useModalTwoStatic(CreateFolderModal);
     const { drive } = useDrive();
     const handleShowModal = async ({ onSuccess, ...rest }: CreateFolderModalInnerProps) => {
-        const handleSuccess = async (nodeUid: string, newName: string) => {
-            const { node } = getNodeEntity(await drive.getNode(nodeUid));
+        const handleSuccess = async ({ uid, nodeId, name }: { uid?: string; nodeId: string; name: string }) => {
+            // TODO: Remove this once we can remove legacy CreatFolderModalDeprecated
+            // This should never happen as we pass the uid in CreateFolderModal onSuccess action.
+            if (!uid) {
+                throw new Error('Missing uid in onSuccess callback for create folder modal');
+            }
+            const { node } = getNodeEntity(await drive.getNode(uid));
             getActionEventManager().emit({
                 type: ActionEventName.CREATED_NODES,
                 items: [{ uid: node.uid, parentUid: node.parentUid, isShared: node.isShared, isTrashed: false }],
             });
-            onSuccess?.(nodeUid, newName);
+            onSuccess?.({ uid, nodeId, name });
         };
         return showModal({ onSuccess: handleSuccess, ...rest });
     };
