@@ -30,7 +30,7 @@ interface Props {
     folder?: { shareId: string; linkId: string };
     createFolder?: (abortSignal: AbortSignal, shareId: string, parentLinkId: string, name: string) => Promise<string>;
     parentFolderUid?: string;
-    onSuccess?: (folderId: string, newName: string) => void;
+    onSuccess?: ({ uid, nodeId, name }: { uid?: string; nodeId: string; name: string }) => void;
 }
 
 const CreateFolderModalDeprecated = ({
@@ -74,7 +74,7 @@ const CreateFolderModalDeprecated = ({
                 parentFolder.linkId,
                 formattedName
             );
-            onSuccess?.(nodeId, formattedName);
+            onSuccess?.({ nodeId, name: formattedName });
         }
         onClose?.();
     };
@@ -115,17 +115,20 @@ const CreateFolderModalDeprecated = ({
     );
 };
 
-export const useCreateFolderModal = () => {
+// Force legacy is used in the case the modal is opened from MoveToFolderModalDeprecated
+// To prevent issues, we load the legacy for both
+export const useCreateFolderModal = ({ forceLegacy = false }: { forceLegacy: boolean } = { forceLegacy: false }) => {
     const useSDKModal = useFlag('DriveWebSDKCreateFolderModal');
     const isPublic = getIsPublicContext();
     const { drive } = useDrive();
     const shouldUseSDK = useSDKModal && !isPublic;
 
-    const [modal, showModal] = useModalTwoStatic(shouldUseSDK ? CreateFolderModal : CreateFolderModalDeprecated);
+    const [modal, showModal] = useModalTwoStatic(
+        shouldUseSDK && !forceLegacy ? CreateFolderModal : CreateFolderModalDeprecated
+    );
     const handleShowModal = async ({ folder, ...rest }: Props) => {
         const parentFolderUid =
-            shouldUseSDK && folder ? await drive.getNodeUid(folder.shareId, folder.linkId) : undefined;
-
+            shouldUseSDK && !forceLegacy && folder ? await drive.getNodeUid(folder.shareId, folder.linkId) : undefined;
         return showModal({ folder, parentFolderUid, ...rest });
     };
 
