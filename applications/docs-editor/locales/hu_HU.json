@@ -44,6 +44,9 @@
       "Apply": [
         "Alkalmazás"
       ],
+      "Bold": [
+        "Kövér"
+      ],
       "Bulleted List": [
         "Felsorolásjeles lista"
       ],
@@ -73,6 +76,9 @@
       ],
       "Code block": [
         "Kódblokk"
+      ],
+      "Color": [
+        "Szín"
       ],
       "Colour": [
         "Szín"
@@ -125,14 +131,23 @@
       "Insert comment": [
         "Megjegyzés beszúrása"
       ],
+      "Insert image": [
+        "Kép beillesztése"
+      ],
       "Insert left": [
         "Beillesztés balra"
+      ],
+      "Insert link": [
+        "Hivatkozás beszúrása"
       ],
       "Insert right": [
         "Beillesztés jobbra"
       ],
       "Insert table": [
         "Táblázat beillesztése"
+      ],
+      "Italic": [
+        "Dőlt"
       ],
       "Justify align": [
         "Sorkizárás"
@@ -154,6 +169,9 @@
       ],
       "Outdent": [
         "Behúzás csökkentése"
+      ],
+      "Quote": [
+        "Idézet"
       ],
       "Re-open": [
         "Újranyitás"
@@ -203,16 +221,40 @@
       "Table options": [
         "Táblázat beállítások"
       ],
+      "Underline": [
+        "Aláhúzott"
+      ],
       "Undo": [
         "Visszavonás"
       ]
     },
     "color": {
+      "apple": [
+        "alma"
+      ],
+      "azureish white": [
+        "azúrkék fehér"
+      ],
+      "black": [
+        "fekete"
+      ],
+      "blanched almond": [
+        "blansírozott mandula"
+      ],
+      "blue-gray": [
+        "kékesszürke"
+      ],
+      "caramel": [
+        "karamell"
+      ],
       "carrot": [
         "sárgarépa"
       ],
       "cerise": [
         "cseresznye"
+      ],
+      "cinnabar": [
+        "cinóber"
       ],
       "cobalt": [
         "kobalt"
@@ -220,17 +262,62 @@
       "copper": [
         "réz"
       ],
+      "cyan-blue azure": [
+        "cián-kék azúrkék"
+      ],
+      "dandelion": [
+        "pitypang"
+      ],
+      "dark cerulean": [
+        "sötét cerulán"
+      ],
+      "dark midnight blue": [
+        "sötét éjkék"
+      ],
+      "dim gray": [
+        "halványszürke"
+      ],
       "enzian": [
         "encián"
       ],
       "fern": [
         "páfrány"
       ],
+      "field drab": [
+        "terepszínű"
+      ],
       "forest": [
         "erdő"
       ],
+      "gainsboro": [
+        "gainsboro"
+      ],
       "gray": [
         "szürke"
+      ],
+      "japanese laurel": [
+        "japán babér"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "lemon yellow": [
+        "citrom sárga"
+      ],
+      "light carmine pink": [
+        "világos kárminrózsaszín"
+      ],
+      "light moss green": [
+        "világos moha zöld"
+      ],
+      "light red": [
+        "világos piros"
+      ],
+      "maize": [
+        "kukorica"
+      ],
+      "mughal green": [
+        "mugli zöld"
       ],
       "ocean": [
         "óceán"
@@ -238,8 +325,32 @@
       "olive": [
         "olíva"
       ],
+      "outer space": [
+        "világűr"
+      ],
       "pacific": [
         "csendes-óceáni"
+      ],
+      "palatinate blue": [
+        "palatinátkék"
+      ],
+      "pale cerulean": [
+        "halvány cerulán"
+      ],
+      "pastel gray": [
+        "pasztellszürke"
+      ],
+      "persian plum": [
+        "perzsaszilva"
+      ],
+      "persian red": [
+        "perzsavörös"
+      ],
+      "philippine gray": [
+        "filippínó szürke"
+      ],
+      "philippine silver": [
+        "filippínó ezüst"
       ],
       "pickle": [
         "pác"
@@ -249,6 +360,9 @@
       ],
       "pink": [
         "rózsaszín"
+      ],
+      "pistachio": [
+        "pisztácia"
       ],
       "plum": [
         "szilva"
@@ -262,8 +376,14 @@
       "reef": [
         "zátony"
       ],
+      "ruddy pink": [
+        "vöröses rózsaszín"
+      ],
       "sahara": [
         "szahara"
+      ],
+      "satin sheen gold": [
+        "szaténfényű arany"
       ],
       "slateblue": [
         "palakék"
@@ -273,6 +393,12 @@
       ],
       "strawberry": [
         "eper"
+      ],
+      "vivid auburn": [
+        "élénk vörösesbarna"
+      ],
+      "white": [
+        "fehér"
       ]
     },
     "Confirm": {
@@ -332,8 +458,28 @@
       ]
     },
     "Font face option": {
+      "System default": [
+        "Rendszer alapértelmezett"
+      ],
       "Theme font": [
         "Téma betűtípus"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Nagy"
+      ],
+      "Medium (recommended)": [
+        "Közepes (ajánlott)"
+      ],
+      "Small": [
+        "Kicsi"
+      ],
+      "Very large": [
+        "Nagyon nagy"
+      ],
+      "Very small": [
+        "Nagyon kicsi"
       ]
     },
     "Info": {
@@ -355,6 +501,9 @@
       ],
       "Comments": [
         "Hozzászólások"
+      ],
+      "Copied to clipboard": [
+        "Vágólapra másolva"
       ],
       "Editing": [
         "Szerkesztés"
@@ -394,6 +543,9 @@
       ],
       "Suggesting": [
         "Javaslatok"
+      ],
+      "Text color": [
+        "Szöveg színe"
       ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "A tartalom, amit beilleszteni próbál túl nagy ahhoz, hogy egyszerre beillessze. Próbálja kisebb részletekben beilleszteni."
@@ -487,6 +639,9 @@
       "Insert table row": [
         "Sor beillesztése"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Gyorsbillentyű: ${ shortcut }"
+      ],
       "Link text": [
         "Link szövege"
       ],
@@ -521,6 +676,9 @@
       ],
       "Reply...": [
         "Válasz..."
+      ],
+      "Text": [
+        "Szöveg"
       ]
     },
     "Title": {
