@@ -112,7 +112,7 @@
         "Venstrestil"
       ],
       "Align right": [
-        "Højrejustér"
+        "Højerstil"
       ],
       "Alignment": [
         "Justering"
@@ -133,7 +133,7 @@
         "Anvend"
       ],
       "Archive": [
-        "Arkivér"
+        "Arkiv"
       ],
       "As Scheduled": [
         "Som Planlagt"
@@ -173,7 +173,7 @@
         "Blokér beskeder fra denne afsender"
       ],
       "Block sender": [
-        "Blokér afsender"
+        "Bloker afsender"
       ],
       "Block senders": [
         "Blokér afsendere"
@@ -302,7 +302,7 @@
         "Sammentræk skrivevinduet"
       ],
       "Copy address": [
-        "Kopiér adresse"
+        "Kopier adresse"
       ],
       "Copy addresses": [
         "Kopiér adresser"
@@ -326,7 +326,7 @@
         "Opret en ny kontaktgruppe"
       ],
       "Create a new folder": [
-        "Opret ny mappe"
+        "Opret en ny mappe"
       ],
       "Create a new label": [
         "Opret en ny etiket"
@@ -359,7 +359,7 @@
         "Nuværende abonnement"
       ],
       "Custom": [
-        "Brugerdefineret"
+        "Tilpas"
       ],
       "Customize": [
         "Tilpas"
@@ -502,7 +502,7 @@
         "Emoji"
       ],
       "Enable": [
-        "Aktivér"
+        "Aktiver"
       ],
       "Enable ${ darkWebMonitoring }": [
         "Aktiver ${ darkWebMonitoring }"
@@ -535,7 +535,7 @@
         "Udvid widget til videokonference"
       ],
       "Expiration time": [
-        "Udløbstid"
+        "Udløbstidspunkt"
       ],
       "Explore ${ VPN_APP_NAME }": [
         "Opdag ${ VPN_APP_NAME }"
@@ -592,7 +592,7 @@
         "Kom godt i gang"
       ],
       "Get the app": [
-        "Hent appen"
+        "Få appen"
       ],
       "Get the apps": [
         "Få appsene"
@@ -746,10 +746,10 @@
         "Bevar mit abonnement"
       ],
       "Label as": [
-        "Anvend etiketten"
+        "Mærk som"
       ],
       "Label as...": [
-        "Anvend etiketten..."
+        "Tilføj etikette..."
       ],
       "label emails as": [
         "giv e-mails etiketten"
@@ -908,7 +908,7 @@
         "Flyt til arkiv"
       ],
       "Move to Archive": [
-        "Flyt til arkiv"
+        "Flyt til Arkiv"
       ],
       "Move to folder": [
         "Flyt til mappe"
@@ -995,7 +995,7 @@
         "Side ${ pageNumber }"
       ],
       "Pause": [
-        "Sæt på pause"
+        "Pause"
       ],
       "Pay": [
         "Betal"
@@ -1151,7 +1151,7 @@
         "Genoptag"
       ],
       "Resume downloading": [
-        "Genoptag download"
+        "Genoptag overførsel"
       ],
       "Revert to original display": [
         "Vend tilbage til oprindelig visning"
@@ -1217,7 +1217,7 @@
         "Selvdestruér om 7 dage"
       ],
       "Self-destruct message": [
-        "Selvdestruér besked"
+        "Selvdestruerende besked"
       ],
       "Self-destruct on ...": [
         "Selvdestruér den ..."
@@ -1352,7 +1352,7 @@
         "Udsæt"
       ],
       "Star": [
-        "Stjernemarkér"
+        "Stjerne"
       ],
       "Start import": [
         "Start importering"
@@ -1556,7 +1556,7 @@
         "Vis headeroplysninger"
       ],
       "View HTML": [
-        "Se HTML"
+        "Vis HTML"
       ],
       "View invoice": [
         "Vis faktura"
@@ -1609,6 +1609,18 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Change password": [
+        "Skift adgangskode"
+      ],
+      "Go to ${ planOrAppName }": [
+        "Gå til ${ planOrAppName }"
+      ],
+      "Select ${ planOrAppName }": [
+        "Vælg ${ planOrAppName }"
+      ],
+      "Trust key": [
+        "Stol på nøgle"
       ]
     },
     "action": {
@@ -1773,7 +1785,7 @@
         "Fordobl din krypterede lagerplads – få 1 TB til alle dine data"
       ],
       "Encrypted password manager": [
-        "Krypteret adgangskodehåndtering"
+        "Krypteret adgangskodeadministrator"
       ],
       "Here's an exclusive gift to celebrate our journey together.": [
         "Her er en eksklusiv gave for at fejre vores fælles rejse."
@@ -1982,7 +1994,7 @@
     },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } desktop app"
+        "${ MAIL_APP_NAME } desktop applikation."
       ],
       "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ plan } og ${ CALENDAR_SHORT_APP_NAME }"
@@ -2024,7 +2036,7 @@
         "Adminpanel til at administrere din familie"
       ],
       "Advanced account protection": [
-        "Avanceret program til beskyttelse af konto"
+        "Avanceret kontobeskyttelse"
       ],
       "Easily add or remove users": [
         "Tilsæt eller fjern brugere nemt"
@@ -2036,13 +2048,13 @@
         "Engangsbetaling, livstidsaftale"
       ],
       "Online document editor": [
-        "Online dokumentredigering"
+        "Online dokumenteditor"
       ],
       "Password health alerts": [
         "Adgangskode-sundhed"
       ],
       "Private photo backup": [
-        "Privat sikkerhedskopiering af billeder"
+        "Privat sikkerhedskopiering af fotos"
       ],
       "Protect 10 devices at a time": [
         "Beskyt 10 enheder ad gangen"
@@ -2452,7 +2464,7 @@
         "Tilføjelse af forekomster til en begivenhed understøttes ikke i øjeblikket"
       ],
       "Event refreshing is not supported for the moment": [
-        "Opdatering af begivenheder understøttes ikke i øjeblikket"
+        "Opfriskning af begivenheder understøttes ikke i øjeblikket"
       ],
       "Event rescheduling is not supported for the moment": [
         "Flytning af begivenheder understøttes ikke i øjeblikket"
@@ -2516,7 +2528,7 @@
     },
     "Cancel expiration of the message": {
       "Cancel": [
-        "Annullér"
+        "Annuller"
       ],
       "Cancel expiration": [
         "Annullér udløb"
@@ -2553,7 +2565,7 @@
         "Krypteret sky-lagring til billeder og dokumenter"
       ],
       "Encrypted password manager": [
-        "Krypteret adgangskodeadministrator"
+        "Krypteret adgangskodehåndtering"
       ],
       "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
         "Vores grundlæggende, gratis abonnement med end-to-end-krypteret e-mail og lagerplads. Ingen premium-funktioner inkluderet."
@@ -2802,7 +2814,7 @@
     },
     "Composer email icon": {
       "End-to-end encrypted": [
-        "End-to-end krypteret"
+        "End-to-end-krypteret"
       ],
       "End-to-end encrypted to verified recipient": [
         "End-to-end krypteret til bekræftet modtager"
@@ -2891,7 +2903,7 @@
         "Fødselsdag"
       ],
       "Display name": [
-        "Visningsnavn"
+        "Vist navn"
       ],
       "Email": [
         "E-mail"
@@ -4203,7 +4215,7 @@
         "${ eventTitle } blev annulleret."
       ],
       "All events in this series were updated.": [
-        "Alle begivenheder i denne serie er blevet opdateret."
+        "Alle begivenheder i denne serie blev opdateret."
       ],
       "Here's what changed:": [
         "Sådan har det ændret sig:"
@@ -4215,10 +4227,10 @@
         "Denne forekomst af begivenheden blev aflyst."
       ],
       "This event occurrence was updated.": [
-        "Denne begivenhed er blevet opdateret."
+        "Denne eventhændelse blev opdateret."
       ],
       "This event was updated.": [
-        "Denne begivenhed er blevet opdateret."
+        "Denne event blev opdateret."
       ]
     },
     "Email body for invitation (date part)": {
@@ -4664,7 +4676,7 @@
         "Vælg venligst en region"
       ],
       "Please select billing country": [
-        "Vælg venligst faktureringsland"
+        "Vælg faktureringsland"
       ],
       "Please select billing state": [
         "Vælg venligst faktureringsstat"
@@ -4755,7 +4767,7 @@
         "Nogle af dine etikettenavne overskrider ${ MAIL_APP_NAME }'s maksimale tegngrænse. Tilpas venligst importen for at ændre disse navne."
       ],
       "Something went wrong. Please try again.": [
-        "Besked er optaget. Prøv venligst igen."
+        "Et eller andet gik galt. Prøv igen."
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Beklager, ${ BRAND_NAME } kan ikke dekryptere din besked. Kontroller at alle dine nøgler er aktive."
@@ -4770,7 +4782,7 @@
         "Teksten er for lang til at finpudse"
       ],
       "Thanks for the feedback!": [
-        "Tak for din feedback!"
+        "Tak for tilbagemeldingen!"
       ],
       "The amount due has changed. Please try again.": [
         "Det skyldige beløb er ændret. Prøv venligst igen."
@@ -4909,6 +4921,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din søgning gav for mange resultater. Begræns din søgning, og forsøg igen."
+      ],
+      "This action cannot be performed": [
+        "Denne handling kan ikke udføres"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5080,7 +5095,7 @@
         "Ups, noget gik galt"
       ],
       "Open in browser": [
-        "Åbn i browser"
+        "Åbn i browseren"
       ],
       "Please refresh the page or try again later.": [
         "Opdater venligst siden eller prøv igen senere."
@@ -5391,7 +5406,7 @@
     },
     "Filter Actions": {
       "Archive": [
-        "Arkivér"
+        "Arkiv"
       ],
       "Do not move": [
         "Flyt ikke"
@@ -5471,7 +5486,7 @@
         "Vis flyttet besked"
       ],
       "Unread": [
-        "Ulæst"
+        "Ulæste"
       ]
     },
     "Filter option to only show message with attachments": {
@@ -5644,7 +5659,7 @@
         "Afslut opsætning"
       ],
       "For your eyes only": [
-        "Kun for dine øjne"
+        "Strengt fortroligt"
       ],
       "Get more storage": [
         "Få mere lagerplads"
@@ -5662,7 +5677,7 @@
         "Bliv ved med at bruge ${ MAIL_APP_NAME } for at opdage flere måder, hvorpå ${ BRAND_NAME } beskytter dit privatliv og forenkler e-mailing."
       ],
       "Learn more": [
-        "Få mere at vide"
+        "Yderligere oplysninger"
       ],
       "Nice! You've updated all services in this category.": [
         "Fedt! Du har opdateret alle tjenesterne i denne kategori."
@@ -5674,7 +5689,7 @@
         "privatlivsfunktioner"
       ],
       "Protection from trackers": [
-        "Beskyttelse fra trackere"
+        "Beskyttelse mod trackere"
       ],
       "Set up ${ strongText } from Gmail": [
         "Indstil ${ strongText } fra Gmail"
@@ -6357,7 +6372,7 @@
       ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } ulæst",
-        "${ subscription.UnreadMessageCount } ulæste"
+        "${ subscription.UnreadMessageCount } ulæst"
       ],
       "${ total } conversation": [
         "${ total } samtale",
@@ -6631,7 +6646,7 @@
         "Fjern automatisk e-mails, der er flyttet til papirkurven og spam for mere end 30 dage siden."
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Slet automatisk beskeder, der har været i papirkurven og spam i mere end 30 dage."
+        "Slet automatisk beskeder, der har ligget i papirkurven og spam i mere end 30 dage."
       ],
       "Awaiting transaction": [
         "Afventer transaktion"
@@ -6688,7 +6703,7 @@
         "Centrér"
       ],
       "Change your password": [
-        "Ændr din adgangskode"
+        "Skift din adgangskode"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Tjekker kontakt ${ progress } af ${ max }..."
@@ -6916,13 +6931,13 @@
         "Rediger udløbstidspunkt"
       ],
       "Edit link": [
-        "Redigér link"
+        "Rediger link"
       ],
       "email": [
         "e-mail"
       ],
       "Email address": [
-        "E-mail"
+        "Mailadresse"
       ],
       "Email copied to clipboard": [
         "E-mail kopieret til udklipsholder"
@@ -7017,7 +7032,7 @@
         "finans"
       ],
       "Folder": [
-        "Mapppe"
+        "Mappe"
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "For yderligere information og for at fjerne begrænsninger, log ind på ${ mailLink }."
@@ -7291,16 +7306,16 @@
         "Status for download af besked:"
       ],
       "Message headers": [
-        "Beskedoverskrfter"
+        "Beskedoverskrifter"
       ],
       "Message list": [
         "Beskedliste"
       ],
       "Message sent": [
-        "Besked afsendt"
+        "Besked sendt"
       ],
       "Message sent.": [
-        "Besked afsendt."
+        "Besked sendt."
       ],
       "Message view": [
         "Beskedvisning"
@@ -7387,7 +7402,7 @@
         "Ingen resultater fundet"
       ],
       "No trackers found": [
-        "Ingen e-mail-trackere fundet"
+        "Ingen trackere fundet"
       ],
       "non-${ MAIL_APP_NAME }": [
         "ikke-${ MAIL_APP_NAME }"
@@ -7432,7 +7447,7 @@
         "Åbn vejledningen for anbefalede handlinger og nyttige links."
       ],
       "Optional": [
-        "Valgfrit"
+        "Valgfri"
       ],
       "or discover other features:": [
         "eller opdag andre funktioner:"
@@ -7474,7 +7489,7 @@
         "Telefonnummer"
       ],
       "Plain text": [
-        "Almindelig tekst"
+        "Simpel tekst"
       ],
       "Please add at least one recipient.": [
         "Angiv mindst én modtager."
@@ -7910,7 +7925,7 @@
         "Denne samtale indeholder en planlagt besked. Afsendelsen af denne besked vil blive annulleret."
       ],
       "This conversation contains non-trashed messages.": [
-        "Denne samtale indeholder ikke-kasserede beskeder."
+        "Denne samtale indeholder ikke-beskadigede beskeder."
       ],
       "This conversation contains one or more expiring messages": [
         "Denne samtale indeholder en eller flere beskeder med udløb"
@@ -8581,6 +8596,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Alt i ${ planOrAppName }"
       ]
     },
     "info": {
@@ -8589,7 +8607,7 @@
         "${ filteredList.length } kommandoer funder."
       ],
       "Optional": [
-        "Valgfrit"
+        "Valgfri"
       ],
       "Selected color:": [
         "Valgte farve:"
@@ -8708,22 +8726,22 @@
         "Gå til arkiv"
       ],
       "Go to Drafts": [
-        "Gå til Kladder"
+        "Gå til kladder"
       ],
       "Go to Inbox": [
         "Gå til indbakke"
       ],
       "Go to Sent": [
-        "Gå til Sendt"
+        "Gå til sendt"
       ],
       "Go to Spam": [
-        "Gå til Spam"
+        "Gå til spam"
       ],
       "Go to Starred": [
-        "Gå til Stjernemarkeret"
+        "Gå til stjernemarkeret"
       ],
       "Go to Trash": [
-        "Gå til Papirkurv"
+        "Gå til papirkurv"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8735,7 +8753,7 @@
         "Gå til sidste"
       ],
       "Label as...": [
-        "Tilføj etiket..."
+        "Tilføj etikette..."
       ],
       "Load embedded images": [
         "Indlæs indlejrede billeder"
@@ -8762,16 +8780,16 @@
         "Flyt til højre / udvid"
       ],
       "Move to Archive": [
-        "Flyt til arkiv"
+        "Flyt til Arkiv"
       ],
       "Move to Inbox": [
-        "Flyt til indbakke"
+        "Flyt til Indbakke"
       ],
       "Move to Spam": [
         "Flyt til Spam"
       ],
       "Move to Trash": [
-        "Flyt til Papirkurv"
+        "Flyt til papirkurven"
       ],
       "Move to...": [
         "Flyt til..."
@@ -8795,7 +8813,7 @@
         "Åbn dette hjælpevindue"
       ],
       "Reply": [
-        "Svar"
+        "Besvar"
       ],
       "Reply all": [
         "Svar alle"
@@ -8825,7 +8843,7 @@
         "Vis ulæste e-mails"
       ],
       "Star": [
-        "Stjernemarkér"
+        "Stjerne"
       ]
     },
     "Keyboard shortcut section name": {
@@ -8941,7 +8959,7 @@
         "Anvend filter på eksisterende e-mails"
       ],
       "Apply to future messages": [
-        "Anvend på fremtidige beskeder"
+        "Anvendes for fremtidige meddelelser"
       ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
@@ -9196,7 +9214,7 @@
         "Nøgleord"
       ],
       "Label as": [
-        "Etikettér som"
+        "Mærk som"
       ],
       "Label messages as": [
         "Giv beskeder etiketten"
@@ -9897,7 +9915,7 @@
     },
     "locked_state_storage_banner: info": {
       "Learn more": [
-        "Få mere at vide"
+        "Yderligere oplysninger"
       ],
       "upgrade for more storage": [
         "opgrader for at få mere lagerplads"
@@ -10393,7 +10411,7 @@
         "Avanceret kontobeskyttelse"
       ],
       "Advanced alias features (powered by SimpleLogin)": [
-        "Avancerede aliasfunktioner (drevet af SimpleLogin)"
+        "Avancerede alias-funktioner (drevet af SimpleLogin)"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Alle ${ BRAND_NAME } produkter og funktioner"
@@ -10526,7 +10544,7 @@
         "Flere administratorroller"
       ],
       "Online document editor": [
-        "Online dokumentredigering"
+        "Online dokumenteditor"
       ],
       "Organize items with multiple vaults": [
         "Organiser elementer med flere bokse"
@@ -10625,7 +10643,7 @@
         "Synkronisér og sikkerhedskopiér alle dine filer mellem enheder"
       ],
       "Tor over VPN": [
-        "Tor over VPN"
+        "Tor via VPN"
       ],
       "Two-factor authentication": [
         "To-faktor-godkendelse"
@@ -11296,7 +11314,7 @@
         "Filversionshistorik (over 1 uge)"
       ],
       "Free": [
-        "Gratis"
+        "Free"
       ],
       "Plus": [
         "Plus"
@@ -11351,7 +11369,7 @@
         "${ protectionFromTrackersTitle } betyder, at det er slut med at blive forfulgt på tværs af internettet."
       ],
       "Activate premium features": [
-        "Premium funktioner"
+        "Aktivér premium-funktioner"
       ],
       "Activate selected": [
         "Aktivér valgte"
@@ -11366,7 +11384,7 @@
         "Altid, overalt adgang"
       ],
       "Auto-delete spam and trash": [
-        "Slet spam og papirkurv auto."
+        "Tøm spam og papirkurv automatisk"
       ],
       "browser": [
         "browser"
@@ -11387,7 +11405,7 @@
         "Forstyrrelsesfri e-mailing"
       ],
       "Download the desktop app": [
-        "Download skrivebords-appen"
+        "Download desktop-appen"
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Få en hurtigere og mere fokuseret e-mailoplevelse med desktop-appen."
@@ -11396,7 +11414,7 @@
         "For at få adgang til e-mail når som helst og en optimeret mobiloplevelse kan du downloade vores ${ mobileAppAppStoreLink } eller ${ mobileAppGooglePlayLink }-app."
       ],
       "Get notified if your password is compromised.": [
-        "Få besked, hvis din adgangskode er blevet kompromitteret."
+        "Bliv underrettet hvis din adgangskode bliver kompromitteret."
       ],
       "Industry-leading spam protection": [
         "Brancheførende beskyttelse mod spam"
@@ -11445,6 +11463,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Dit domæne og abonnement er klar til brug."
+      ],
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
       ]
     },
     "Onboarding Proton": {
@@ -11461,7 +11485,7 @@
         "Link dit domænenavn, og opret konti til alle medlemmer af din organisation."
       ],
       "Make it your own": [
-        "Gør det til dit eget"
+        "Gør den til din egen"
       ],
       "Pick a theme": [
         "Vælg et tema"
@@ -11530,7 +11554,7 @@
     },
     "Online Accounts Name": {
       "Banking": [
-        "Bankvirksomhed"
+        "Bank"
       ],
       "Crypto": [
         "Krypto"
@@ -11548,7 +11572,7 @@
         "Spil"
       ],
       "Most popular": [
-        "Mest populære"
+        "Mest populær"
       ],
       "Travel": [
         "Rejser"
@@ -12332,7 +12356,7 @@
         "Krypteret af ${ MAIL_APP_NAME } til bekræftet modtager"
       ],
       "End-to-end encrypted": [
-        "End-to-end krypteret"
+        "End-to-end-krypteret"
       ],
       "End-to-end encrypted to PGP recipient": [
         "End-to-end krypteret til PGP-modtager"
@@ -12461,7 +12485,7 @@
     },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
-        "Annullér nulstilling af adgangskode?"
+        "Annuller nulstilling af adgangskode?"
       ]
     },
     "session_recovery:cancelled:info": {
@@ -12476,13 +12500,13 @@
     },
     "session_recovery:in_progress:action": {
       "Cancel request": [
-        "Annuller anmodning"
+        "Annullér anmodning"
       ],
       "Got it": [
         "Forstået"
       ],
       "Learn more": [
-        "Få mere at vide"
+        "Yderligere oplysninger"
       ]
     },
     "session_recovery:in_progress:info": {
@@ -12511,7 +12535,7 @@
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "Der er anmodet om nulstilling af adgangskode"
+        "Nulstilling af adgangskode anmodet"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -12542,7 +12566,7 @@
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
-        "Nulstilling af adgangskode"
+        "Adgangskodenulstilling"
       ]
     },
     "session_recovery:sign_out:title": {
@@ -12750,7 +12774,7 @@
         "${ n } måneder"
       ],
       "/ month": [
-        "/ måned"
+        "/måned"
       ],
       "/month": [
         "/måned"
@@ -12783,7 +12807,7 @@
         "Faktureret med ${ amount } for 30 måneder"
       ],
       "Get the deal": [
-        "Få tilbuddet"
+        "Tag imod tilbuddet"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Fornyes efter 1 år til en nedsat pris på ${ discountedAmount } i stedet for ${ regularAmount } (${ discount }% rabat)"
@@ -13002,7 +13026,7 @@
         "For at sende eller modtage e-mails, frigør plads eller ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
-        "For at sende eller modtage e-mails, frigør plads eller opgrader til mere lagerplads."
+        "Frigør plads eller opgrader til mere lagerplads for at sende eller modtage e-mails."
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "For at uploade eller synkronisere filer, frigør plads eller ${ upgrade }"
@@ -13033,7 +13057,7 @@
         "Din lagerplads er ${ percentage }% fyldt. ${ cta }."
       ],
       "Your storage is full": [
-        "Dit lager er fuldt"
+        "Din lagerplads er fyldt"
       ],
       "Your storage is full. ${ cta }.": [
         "Din lagerplads er fyldt. ${ cta }."
@@ -13281,7 +13305,7 @@
         "Hold dit team sikkert på farten med vores apps til web, iOS, Android, Windows, Mac og Linux."
       ],
       "Learn more": [
-        "Få mere at vide"
+        "Yderligere oplysninger"
       ],
       "Learn more about our impact": [
         "Lær mere om vores indflydelse"
@@ -13765,6 +13789,34 @@
       ],
       "You have successfully unsubscribed": [
         "Du har afmeldt dig"
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } samtale flyttet til ${ labelName } og afsender tilføjet din ikke-spam-liste.",
+        "${ elementsCount } samtaler flyttet til ${ labelName } og afsendere tilføjet din ikke-spam-liste."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } Konversation flyttet til ${ labelName }.",
+        "${ elementsCount } Konversationer er flyttet til ${ labelName }."
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } besked flyttet til ${ labelName } og afsender tilføjet til din ikke-spam-liste.",
+        "${ elementsCount } beskeder flyttet til ${ labelName } og afsendere tilføjet til din ikke-spam-liste."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } Besked flyttet til ${ labelName }.",
+        "${ elementsCount } beskeder flyttet til ${ labelName }."
+      ],
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "Samtale flyttet til ${ labelName } og afsender tilføjet din ikke-spam-liste."
+      ],
+      "Conversation moved to ${ labelName }.": [
+        "Samtale flyttet til ${ labelName }."
+      ],
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "Besked flyttet til ${ labelName } og afsender tilføjet din ikke-spam-liste."
+      ],
+      "Message moved to ${ labelName }.": [
+        "Besked flyttet til ${ labelName }."
       ]
     },
     "Success notification": {
@@ -13865,7 +13917,7 @@
         "CSV-felt"
       ],
       "Display name": [
-        "Visningsnavn"
+        "Vist navn"
       ],
       "First name": [
         "Fornavn"
@@ -13950,7 +14002,7 @@
         "Opret etiketten \"${ suggestedLabelName }\""
       ],
       "Create new email address": [
-        "Opret ny e-mailadresse"
+        "Opret ny mailadresse"
       ],
       "Create “${ suggestedFolderName }“ folder": [
         "Opret mappen \"${ suggestedFolderName }\""
@@ -14070,7 +14122,7 @@
         "Er du sikker?"
       ],
       "Attachments": [
-        "Vedhæftninger"
+        "Vedhæftede filer"
       ],
       "Auto-deletion is active": [
         "Automatisk sletning er aktiv"
@@ -14091,7 +14143,7 @@
         "Blind karbonkopi"
       ],
       "Block sender": [
-        "Blokér afsender"
+        "Bloker afsender"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Opsig abonnement på ${ MAIL_SHORT_APP_NAME }"
@@ -14252,7 +14304,7 @@
         "Opdag fordelene ved dit abonnement"
       ],
       "Distraction-free emailing": [
-        "Uforstyrret e-mail"
+        "Forstyrrelsesfri e-mailing"
       ],
       "Don't give spam a chance": [
         "Lad ikke spam få en chance"
@@ -14415,7 +14467,7 @@
         "Ugyldig verifikationskode"
       ],
       "Label as": [
-        "Etikettér som"
+        "Mærk som"
       ],
       "Label options": [
         "Etiketindstillinger"
@@ -14481,7 +14533,7 @@
         "Mere"
       ],
       "More actions": [
-        "Flere muligheder"
+        "Flere handlinger"
       ],
       "More options": [
         "Flere muligheder"
@@ -14727,7 +14779,7 @@
         "Afsendelsesfejl"
       ],
       "Sending notice": [
-        "Sende-notifikation"
+        "Sender notifikation"
       ],
       "Sending original message": [
         "Sender oprindelig besked"
@@ -14745,7 +14797,7 @@
         "Indstil videresendelse af e-mail"
       ],
       "Set up your family account": [
-        "Konfigurér din familiekonto"
+        "Opsæt din familie-konto"
       ],
       "Set up your organization": [
         "Konfigurer din organisation"

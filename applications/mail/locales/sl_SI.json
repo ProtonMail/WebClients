@@ -133,7 +133,7 @@
         "Potrdi"
       ],
       "Archive": [
-        "Arhiviraj"
+        "Arhiv"
       ],
       "As Scheduled": [
         "Kot načrtovano"
@@ -166,7 +166,7 @@
         "Blokiraj"
       ],
       "Block email tracking": [
-        "Blokiraj sledenje v e-pošti"
+        "Blokiraj sledenje e-pošte"
       ],
       "Block messages from this sender": [
         "Blokiraj sporočila tega pošiljatelja"
@@ -316,7 +316,7 @@
         "Ustvari novo skupino stikov"
       ],
       "Create a new folder": [
-        "Ustvari novo mapo"
+        "Ustvarite novo mapo"
       ],
       "Create a new label": [
         "Ustvari novo oznako"
@@ -331,7 +331,7 @@
         "Ustvari mapo"
       ],
       "Create label": [
-        "Ustvari oznako"
+        "Ustvarite oznako"
       ],
       "Create new contact": [
         "Ustvari nov stik"
@@ -889,13 +889,13 @@
         "Premakni v mapo"
       ],
       "Move to inbox": [
-        "Premakni v prejeto"
+        "Premakni v mapo Prejeto"
       ],
       "Move to inbox (not spam)": [
         "Premakni med prejeto (ni neželeno)"
       ],
       "Move to spam": [
-        "Premakni med neželeno pošto"
+        "Premakni v neželeno pošto"
       ],
       "Move to spam and unsubscribe": [
         "Premakni med neželeno pošto in se odjavi"
@@ -1021,7 +1021,7 @@
         "Preberi sporočilo"
       ],
       "Read receipt sent": [
-        "Potrdilo o branju je bilo poslano."
+        "Potrdilo o branju je poslano"
       ],
       "Recently received": [
         "Nedavno prejeto"
@@ -1369,7 +1369,7 @@
         "Sporočilo vsebuje oddaljeno vsebino."
       ],
       "This weekend": [
-        "Ta vikend"
+        "Ta konec tedna"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Za varno iskanje po e-pošti moramo prenesti kopijo vaših sporočil v vaš brskalnik. Začetni prenos lahko traja nekaj trenutkov."
@@ -1390,7 +1390,7 @@
         "Prikaži/skrij nadzorno ploščo VPN"
       ],
       "Tomorrow": [
-        "Jutri"
+        "jutri"
       ],
       "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
         "Zaščita pred sledilniki je preprečila nalaganje nekaterih slik. Naložite jih, če zaupate pošiljatelju."
@@ -1435,7 +1435,7 @@
         "Prekliči dremež"
       ],
       "Unstar": [
-        "Odstrani zvezdico"
+        "Odznači"
       ],
       "Unsubscribe": [
         "Odjavi se"
@@ -1552,7 +1552,7 @@
         "Da, udeležil/-a se bom"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Pošiljanje datotek vCard z več kot ${ maxAttachments } stikom ni mogoče.",
+        "Pošiljanje datotek vCard z več kot ${ maxAttachments } stiki ni mogoče.",
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stikoma ni mogoče.",
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stiki ni mogoče.",
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stiki ni mogoče."
@@ -1574,6 +1574,51 @@
       ],
       "Zoom out": [
         "Pomanjšaj"
+      ],
+      "Authenticate": [
+        "Preverjanje pristnosti"
+      ],
+      "Change password": [
+        "Spremeni geslo"
+      ],
+      "Change sorting": [
+        "Spremeni razvrščanje"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Ustvari mapo ${ boldFolderName }"
+      ],
+      "Download application logs": [
+        "Naloži dnevnike aplikacije"
+      ],
+      "Emoji": [
+        "Čustveni simboli"
+      ],
+      "Explore ${ VPN_APP_NAME }": [
+        "Raziščite ${ VPN_APP_NAME }"
+      ],
+      "Forgot password?": [
+        "Pozabljeno geslo?"
+      ],
+      "Go to ${ planOrAppName }": [
+        "Pojdi na ${ planOrAppName }"
+      ],
+      "Hide-my-email": [
+        "Hide-my-email"
+      ],
+      "Select ${ planOrAppName }": [
+        "Izberite ${ planOrAppName }"
+      ],
+      "Stop downloading assistant": [
+        "Ustavi prenašanje pomočnika"
+      ],
+      "Trust key": [
+        "Zaupaj ključu"
+      ],
+      "Use authentication code": [
+        "Uporabi kodo za preverjanje pristnosti"
+      ],
+      "Use recovery code": [
+        "Uporabite kode za obnovitev"
       ]
     },
     "action": {
@@ -1650,6 +1695,12 @@
         "${ users } uporabnika",
         "${ users } uporabnikov",
         "${ users } uporabniki"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } sedež ${ LUMO_APP_NAME }",
+        "${ seats } sedeža ${ LUMO_APP_NAME }",
+        "${ seats } sedeži ${ LUMO_APP_NAME }",
+        "${ seats } sedežev ${ LUMO_APP_NAME }"
       ]
     },
     "Alert": {
@@ -1737,7 +1788,19 @@
         "Uporabite svojo e-poštno domeno"
       ],
       "years": [
-        "leta"
+        "leti"
+      ],
+      "Encrypted password manager": [
+        "Šifriran upravitelj gesel"
+      ],
+      "Online document editor": [
+        "Spletni urejevalnik dokumentov"
+      ],
+      "Protect up to 10 devices": [
+        "Zaščitite do 10 naprav"
+      ],
+      "Recover previous file versions": [
+        "Obnovi prejšnje različice datoteke"
       ]
     },
     "anniversary_2025: offer": {
@@ -1760,6 +1823,15 @@
       ],
       "30 months": [
         "30 mesecev"
+      ],
+      "${ n } month": [
+        "${ n } mesec",
+        "${ n } mesecev",
+        "${ n } mesecev",
+        "${ n } mesecev"
+      ],
+      "for ${ durationDeal }": [
+        "za ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -1841,7 +1913,7 @@
     },
     "bf2023: Deal details": {
       "1 user": [
-        "1 uporabnik"
+        "En uporabnik"
       ],
       "3 TB": [
         "3 TB"
@@ -1874,7 +1946,7 @@
         "1 TB prostora za shranjevanje"
       ],
       "1 user": [
-        "1 uporabnik"
+        "En uporabnik"
       ],
       "1 user account": [
         "1 uporabniški račun"
@@ -1988,7 +2060,7 @@
         "Letno"
       ],
       "Lifetime": [
-        "Lifetime"
+        "Za vedno"
       ],
       "Monthly": [
         "Mesečno"
@@ -2318,10 +2390,10 @@
         "Dodajanje ponovitev k dogodku trenutno ni podprto"
       ],
       "Event refreshing is not supported for the moment": [
-        "Osveževanje dogodkov trenutno ni podprto"
+        "Osveževanje dogodka trenutno ni podprto"
       ],
       "Event rescheduling is not supported for the moment": [
-        "Prerazporejanje dogodkov trenutno ni podprto"
+        "Preureditev dogodka trenutno ni podprta"
       ],
       "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
         "Tega odgovora ni bilo mogoče vnesti v ${ CALENDAR_APP_NAME }, saj trenutno podpiramo samo odgovarjanje na vse dogodke v seriji"
@@ -2407,7 +2479,7 @@
         "${ planMaxSpace } shrambe za e-pošto"
       ],
       "Advanced account protection": [
-        "Napredna zaščita računa"
+        "Napredni program za zaščito računa"
       ],
       "Cancel and downgrade": [
         "Prekliči in zmanjšaj"
@@ -2631,7 +2703,7 @@
     },
     "Commander action": {
       "Create a new folder": [
-        "Ustvari novo mapo"
+        "Ustvarite novo mapo"
       ],
       "Create a new label": [
         "Ustvari novo oznako"
@@ -2666,7 +2738,7 @@
     },
     "Composer email icon": {
       "End-to-end encrypted": [
-        "Šifrirano od konca do konca"
+        "Celovito šifrirano"
       ],
       "End-to-end encrypted to verified recipient": [
         "Od konca do konca šifrirano za preverjenega prejemnika"
@@ -2755,7 +2827,7 @@
         "Rojstni dan"
       ],
       "Display name": [
-        "Prikazno ime"
+        "Ime za prikaz"
       ],
       "Email": [
         "E-pošta"
@@ -3676,7 +3748,7 @@
         "Filter vklopljen"
       ],
       "Next": [
-        "Naprej"
+        "Naslednji"
       ],
       "Recipient": [
         "Prejemnik"
@@ -3740,10 +3812,10 @@
     },
     "Date label": {
       "Today": [
-        "Danes"
+        "danes"
       ],
       "Tomorrow": [
-        "Jutri"
+        "jutri"
       ]
     },
     "Default display name vcard": {
@@ -3866,7 +3938,7 @@
         "Nova sporočila pošiljatelja ${ senderEmailAddress } ne bodo dostavljena in bodo dokončno izbrisana."
       ],
       "No folders": [
-        "Ni map za prikaz"
+        "Ni map"
       ],
       "No labels": [
         "Brez oznak"
@@ -4559,7 +4631,7 @@
         "Podpis ni potrjen"
       ],
       "Signature verification error.": [
-        "Napaka pri preverjanju podpisa."
+        "Napaka pri preverjanju podpisa.."
       ],
       "Signature verification failed": [
         "Preverjanje podpisa ni uspelo"
@@ -4743,6 +4815,24 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vašemu iskanju ustreza preveč rezultatov. Omejite iskanje in poskusite znova."
+      ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Priponke so omejene na ${ readableAttachmentMaxSize }"
+      ],
+      "No address with sending permissions": [
+        "Ni naslova z dovoljenji za pošiljanje"
+      ],
+      "Please select billing country": [
+        "Izberite državo za izstavitev računa"
+      ],
+      "Please select billing state": [
+        "Izberite državo za izstavitev računa"
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Pošiljanje priponk je omejeno, medtem ko presegate omejitve svojega paketa, ali dokler ne nadgradite svojega paketa."
+      ],
+      "This action cannot be performed": [
+        "Tega dejanja ni mogoče izvesti"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5050,7 +5140,7 @@
         "Računi z domenami po meri se ne morejo pridružiti družinskemu paketu."
       ],
       "customer support": [
-        "podporo strankam"
+        "podpora strankam"
       ],
       "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Družinski paket trenutno ne omogoča uporabe zunanjih računov. Pred pridružitvijo ustvarite naslov ${ BRAND_NAME }. ${ addressSettingsLink }"
@@ -5215,7 +5305,7 @@
     },
     "Filter": {
       "Show": [
-        "Pokaži"
+        "Prikaži"
       ]
     },
     "Filter Actions": {
@@ -5238,7 +5328,7 @@
         "Neželena pošta"
       ],
       "Trash": [
-        "Smetnjak"
+        "Smeti"
       ]
     },
     "Filter modal operators": {
@@ -5334,7 +5424,7 @@
     },
     "Font Face Default": {
       "Default": [
-        "Privzeto"
+        "Privzeta"
       ]
     },
     "Font face option": {
@@ -5347,7 +5437,7 @@
     },
     "Font Size Default": {
       "Default": [
-        "Privzeto"
+        "Privzeta"
       ]
     },
     "Font size option": {
@@ -5388,7 +5478,7 @@
     },
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
-        "Program ${ MAIL_APP_NAME } za namizja"
+        "Program ${ MAIL_APP_NAME } za namizje"
       ],
       "14-day desktop app trial.": [
         "14-dnevni preizkus aplikacije za namizne računalnike."
@@ -5420,7 +5510,7 @@
         "${ MAIL_APP_NAME } v trgovini App Store"
       ],
       "${ MAIL_APP_NAME } on Play Store": [
-        "${ MAIL_APP_NAME } v trgovini Play"
+        "${ MAIL_APP_NAME } v Play Store"
       ],
       "${ remainingDaysCount } day": [
         "${ remainingDaysCount } dan",
@@ -5495,7 +5585,7 @@
         "Še naprej uporabljajte ${ MAIL_APP_NAME }, da odkrijete več načinov, kako ${ BRAND_NAME } varuje vašo zasebnost in poenostavlja pošiljanje e-pošte."
       ],
       "Learn more": [
-        "Več o tem"
+        "Izvedi več."
       ],
       "Nice! You've updated all services in this category.": [
         "Lepo! Posodobili ste vse storitve v tej kategoriji."
@@ -5611,10 +5701,10 @@
         "Nadaljuj s prenašanjem"
       ],
       "Search": [
-        "Iskanje"
+        "Išči"
       ],
       "Security Center": [
-        "Varnostno središče"
+        "Center za varnost"
       ],
       "Set up the writing assistant": [
         "Nastavi pomočnika pri pisanju"
@@ -6532,7 +6622,7 @@
         "Ali ste prepričani, da želite trajno izbrisati to sporočilo?"
       ],
       "Attach public key": [
-        "Priloži javni ključ"
+        "Pripni javni ključ"
       ],
       "Attention required": [
         "Pozornost!"
@@ -7414,7 +7504,7 @@
         "Zaupajte nam, kakšna so bila vaša pričakovanja"
       ],
       "Please try again in a few moments": [
-        "Poskusite znova čez nekaj trenutkov"
+        "Poskusite znova čez nekaj trenutkov."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Prosimo, poskusite znova z uporabo drugega načina plačila ali se obrnite na vašo banko."
@@ -7546,7 +7636,7 @@
         "Videti je, da ste zaenkrat na tekočem."
       ],
       "Select all ${ elementsCount } in ${ location }": [
-        "Izberite vsa ${ elementsCount } v ${ location }",
+        "Izberite vse ${ elementsCount } v ${ location }",
         "Izberite oba ${ elementsCount } v ${ location }",
         "Izberite vse ${ elementsCount } v ${ location }",
         "Izberite vse ${ elementsCount } v ${ location }"
@@ -7615,7 +7705,7 @@
         "Skrajšaj besedilo"
       ],
       "Show original message": [
-        "Prikaži izvirno sporočilo"
+        "Prikaži originalno sporočilo"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Ker ste zvest uporabnik, smo vašemu računu omogočili dodatne funkcionalnosti."
@@ -8029,7 +8119,7 @@
         "Nadgradite naročniški paket za uporabo samodejnega odgovora ob odsotnosti."
       ],
       "Upload picture": [
-        "Naloži sliko"
+        "Naloži fotografijo"
       ],
       "Uppercase and lowercase letters": [
         "Velike in male črke"
@@ -8405,7 +8495,7 @@
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "Vaše sporočilo bo poteklo v ${ numberOfDays } dnevu.",
-        "Vaše sporočilo bo poteklo v ${ numberOfDays } dneh.",
+        "Vaše sporočilo bo poteklo v ${ numberOfDays } dnevih.",
         "Vaše sporočilo bo poteklo v ${ numberOfDays } dneh.",
         "Vaše sporočilo bo poteklo v ${ numberOfDays } dneh."
       ],
@@ -8447,6 +8537,60 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Do urejenega poštnega predala vas loči le nekaj klikov."
+      ],
+      "${ boldUnsubscribe } from them with one click.": [
+        "${ boldUnsubscribe } od njih z enim klikom."
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** rezultat najden v ${ labelName }",
+        "**${ total }** rezultata najdena v ${ labelName }",
+        "**${ total }** rezultati najdeni v ${ labelName }",
+        "**${ total }** rezultatov najdenih v ${ labelName }"
+      ],
+      "Download application logs for troubleshooting": [
+        "Naloži aplikacijske dnevnike za reševanje težav"
+      ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
+        "Tega sporočila zaradi konfiguracije prejemnika ni mogoče poslati z datumom poteka za ${ firstRecipients }."
+      ],
+      "Each code can only be used once": [
+        "Vsaka koda se lahko uporabi samo enkrat"
+      ],
+      "Enter the code from your authenticator app": [
+        "Vnesite kodo iz aplikacije za preverjanje pristnosti"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Vnesite potrditveno kodo. Števka ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Vse v ${ planOrAppName }"
+      ],
+      "No change will be made to the selected emails": [
+        "Spremembe ne bo na izbranih e-poštnih sporočilih."
+      ],
+      "No messages to show": [
+        "Ni sporočil za prikaz"
+      ],
+      "Preferences updated": [
+        "Nastavitve posodobljene"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Naročnina se končuje: Za ohranitev ugodnosti ${ planName } obnovite svojo naročnino v Apple App Store do ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Naročnina se izteka: Za ohranitev ugodnosti ${ planName }, obnovite vašo naročnino v trgovini Google Play do ${ byDate }. ${ reactivateLink }"
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "V mapi Prejeto nimate sporočil od tega pošiljatelja."
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Za odklepanje nadgradite na ${ plan }"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
       ]
     },
     "info": {
@@ -8534,7 +8678,7 @@
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Za ta e-poštni naslov ste omogočili preverjanje naslova z zaupanja vrednimi ključi,\nvendar nobenemu aktivnemu šifrirnemu ključu ni bilo potrjeno zaupanje.\nČe želite poslati sporočilo na ta e-poštni naslov, morate zaupati ključu, ki je veljaven za pošiljanje.",
         "Za ta e-poštna naslova ste omogočili preverjanje naslova z zaupanja vrednimi ključi,\nvendar nobenemu aktivnemu šifrirnemu ključu ni bilo potrjeno zaupanje.\nČe želite poslati sporočila na te e-poštne naslove, morate zaupati veljavnim ključem za pošiljanje.",
-        "Za te e-poštne naslove ste omogočili preverjanje naslova z zaupanja vrednimi ključi,\nvendar nobenemu aktivnemu šifrirnemu ključu ni bilo potrjeno zaupanje.\nČe želite poslati sporočila na te e-poštne naslove, morate zaupati veljavnim ključem za pošiljanje.",
+        "Za ta e-poštna naslova ste omogočili preverjanje naslova z zaupanja vrednimi ključi,\nvendar nobenemu aktivnemu šifrirnemu ključu ni bilo potrjeno zaupanje.\nČe želite poslati sporočila na te e-poštne naslove, morate zaupati veljavnim ključem za pošiljanje.",
         "Za te e-poštne naslove ste omogočili preverjanje naslova z zaupanja vrednimi ključi,\nvendar nobenemu aktivnemu šifrirnemu ključu ni bilo potrjeno zaupanje.\nČe želite poslati sporočila na te e-poštne naslove, morate zaupati veljavnim ključem za pošiljanje."
       ]
     },
@@ -8680,7 +8824,7 @@
         "Shrani osnutek"
       ],
       "Search": [
-        "Iskanje"
+        "Išči"
       ],
       "Select / unselect": [
         "Izberi / prekliči izbor"
@@ -8689,7 +8833,7 @@
         "Izberi / prekliči izbor vseh."
       ],
       "Send email": [
-        "Pošlji sporočilo"
+        "Pošlji e-pošto"
       ],
       "Show all emails": [
         "Prikaži vsa sporočila"
@@ -8701,7 +8845,7 @@
         "Prikaži neprebrana sporočila"
       ],
       "Star": [
-        "Zvezdica"
+        "Označi z zvezdico"
       ]
     },
     "Keyboard shortcut section name": {
@@ -8783,7 +8927,7 @@
         "Vsi stiki"
       ],
       "Also archive": [
-        "Tudi arhiviraj"
+        "Tudi arhiv"
       ],
       "Always label sender's emails": [
         "Vedno dodaj oznako pošiljateljevim sporočilom"
@@ -9047,7 +9191,7 @@
         "Bližnjica na tipkovnici: ${ shortcut }"
       ],
       "Keyboard shortcuts": [
-        "Bližnjice na tipkovnici"
+        "Bližnjice s tipkovnico"
       ],
       "Keyword": [
         "Ključna beseda"
@@ -9308,7 +9452,7 @@
         "Orodna vrstica"
       ],
       "Undisclosed Recipients": [
-        "Nerazkriti prejemniki"
+        "nerazkriti prejemniki"
       ],
       "Unknown": [
         "Neznano"
@@ -9344,7 +9488,7 @@
         "Kaj je vaš glavni razlog za preklic naročnine ali menjavo za nižji paket?"
       ],
       "With attachment": [
-        "S priponkami"
+        "S priponko"
       ],
       "Without attachment": [
         "Brez priponk"
@@ -9363,6 +9507,33 @@
       ],
       "Your location": [
         "Vaša lokacija"
+      ],
+      "Authenticator app": [
+        "Aplikacija za preverjanje pristnosti"
+      ],
+      "Choose what to do instead": [
+        "Izberite, kaj storiti namesto tega"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "Ustvarjanje mape ${ newFolderName } ni uspelo"
+      ],
+      "Forums": [
+        "Forumi"
+      ],
+      "Promotions": [
+        "Reklame"
+      ],
+      "Social": [
+        "Družabno"
+      ],
+      "Transactions": [
+        "Transakcije"
+      ],
+      "Updates": [
+        "Posodobitve"
+      ],
+      "Your password (admin)": [
+        "Vaše geslo (admin)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9405,6 +9576,9 @@
     },
     "Label, credit card": {
       "ZIP code": [
+        "Poštna številka"
+      ],
+      "Postal code": [
         "Poštna številka"
       ]
     },
@@ -9672,11 +9846,14 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Za ogled posodobljenega povabila morate ponovno aktivirati vaše ključe."
+      ],
+      "Resume now": [
+        "Obnovi zdaj"
       ]
     },
     "Link to calendar event": {
       "Open in ${ CALENDAR_APP_NAME }": [
-        "Odpri v ${ CALENDAR_APP_NAME }ju"
+        "Odpri v ${ CALENDAR_APP_NAME }"
       ]
     },
     "Link to settings": {
@@ -9712,7 +9889,7 @@
     },
     "locked_state_storage_banner: info": {
       "Learn more": [
-        "Več informacij"
+        "Izvedi več."
       ],
       "upgrade for more storage": [
         "dokupite prostor za shranjevanje"
@@ -9792,7 +9969,7 @@
         "Neželena pošta"
       ],
       "Trash": [
-        "Smetnjak"
+        "Smeti"
       ]
     },
     "mailtrial2024: Action": {
@@ -10247,7 +10424,7 @@
         "Skrbniška plošča"
       ],
       "Advanced account protection": [
-        "Napredna zaščita računa"
+        "Napredni program za zaščito računa"
       ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Napredne funkcije vzdevkov (omogoča SimpleLogin)"
@@ -10978,6 +11155,12 @@
       ],
       "Require 2FA": [
         "Obvezno 2FA"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Podpora za ${ n } e-poštno domeno po meri",
+        "Podpora za ${ n } e-poštnih domen po meri",
+        "Podpora za ${ n } e-poštnih domen po meri",
+        "Podpora za ${ n } e-poštnih domen po meri"
       ]
     },
     "Notification": {
@@ -11225,7 +11408,7 @@
         "Morda kasneje"
       ],
       "Next": [
-        "Naprej"
+        "Naslednji"
       ],
       "Protection from trackers": [
         "Zaščita pred sledilniki"
@@ -11256,6 +11439,24 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Vaša domena in naročnina sta pripravljeni za uporabo."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } pomeni, da v naših aplikacijah nikoli ne boste videli plačanih oglasov."
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } preprečuje, da bi goljufiva e-pošta sploh kdaj dosegla vašo mapo Prejeto."
+      ],
+      "Ad-free promise": [
+        "Obljuba brez oglasov"
+      ],
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Your domain ${ domain } and ${ subscriptionName } subscription are ready to use.": [
+        "Vaša domena ${ domain } in naročnina ${ subscriptionName } sta pripravljeni za uporabo."
       ]
     },
     "Onboarding Proton": {
@@ -11301,7 +11502,7 @@
         "Nadaljuj"
       ],
       "help center": [
-        "center za pomoč"
+        "središče za pomoč"
       ],
       "If you need help,": [
         "Če potrebujete pomoč,"
@@ -11344,7 +11545,7 @@
         "Spletne trgovine"
       ],
       "Entertainment": [
-        "Zabava"
+        "Razvedrilo"
       ],
       "Food and beverage": [
         "Hrana in pijača"
@@ -11637,7 +11838,7 @@
         "E-poštni naslov"
       ],
       "End date": [
-        "Končni datum"
+        "Datum zaključka"
       ],
       "Filter folders": [
         "Filtriraj mape"
@@ -11730,7 +11931,7 @@
         "Delite, kaj bi po vašem mnenju lahko izboljšalo ${ BRAND_NAME }"
       ],
       "Start date": [
-        "Začetni datum"
+        "Start date"
       ],
       "Start typing an email address": [
         "Začnite pisati e-poštni naslov"
@@ -11760,13 +11961,19 @@
         "Besedilo"
       ],
       "To": [
-        "Za"
+        "Do"
       ],
       "Type text or keyword": [
-        "Vnesite besedilo ali ključno besedo"
+        "Vpišite besedilo ali ključno besedo"
       ],
       "Your organization name": [
         "Ime vaše organizacije"
+      ],
+      "Postal code": [
+        "Poštna številka"
+      ],
+      "ZIP code": [
+        "Poštna številka"
       ]
     },
     "Placeholder for contact group name": {
@@ -11882,7 +12089,7 @@
         "Sporočilo, podpisano s PGP. Preverjanje pošiljatelja neuspešno"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        "Poslano z ${ MAIL_APP_NAME } s šifriranjem brez dostopa"
+        "Poslano s ${ MAIL_APP_NAME } s šifriranjem brez dostopa"
       ],
       "Stored with zero-access encryption": [
         "Shranjeno s šifriranjem brez dostopa"
@@ -11890,7 +12097,7 @@
     },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
-        "${ remainingDays } dan",
+        "${ remainingDays } dni",
         "${ remainingDays } dneva",
         "${ remainingDays } dni",
         "${ remainingDays } dni"
@@ -12087,7 +12294,7 @@
         "Šifriral ${ MAIL_APP_NAME } za preverjenega prejemnika"
       ],
       "End-to-end encrypted": [
-        "Šifrirano od konca do konca"
+        "Celovito šifrirano"
       ],
       "End-to-end encrypted to PGP recipient": [
         "Šifrirano od konca do konca za prejemnika PGP"
@@ -12096,7 +12303,7 @@
         "Šifrirano od konca do konca za preverjenega prejemnika PGP"
       ],
       "End-to-end encrypted to verified recipient": [
-        "Šifrirano od konca do konca za preverjenega prejemnika"
+        "Od konca do konca šifrirano za preverjenega prejemnika"
       ],
       "PGP-signed": [
         "Podpisano s PGP"
@@ -12120,7 +12327,7 @@
         "Sporočilo ste poslali s šifriranjem od konca do konca preverjenim prejemnikom"
       ],
       "Stored with zero-access encryption": [
-        "Shranjeno s šifriranjem brez dostopa"
+        "Shranjeno s šifriranjem brez dostopa (zero-access)"
       ]
     },
     "session_recovery:available:action": {
@@ -12128,7 +12335,7 @@
         "Prekliči ponastavitev"
       ],
       "Reset password": [
-        "Ponastavi geslo"
+        "Ponastavitev gesla"
       ]
     },
     "session_recovery:available:error": {
@@ -12257,7 +12464,7 @@
         "Razumem"
       ],
       "Learn more": [
-        "Več informacij"
+        "Izvedi več."
       ]
     },
     "session_recovery:in_progress:info": {
@@ -12290,12 +12497,12 @@
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "Ponastavitev gesla je bila poslana."
+        "Zahteva za ponastavitev gesla je bila poslana"
       ]
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "Odjava"
+        "Odjavi se"
       ],
       "Stay signed in": [
         "Ostanite prijavljeni"
@@ -12456,7 +12663,7 @@
     },
     "specialoffer: Deal details": {
       "1 user": [
-        "1 uporabnik"
+        "En uporabnik"
       ],
       "3 TB": [
         "3 TB"
@@ -12518,6 +12725,9 @@
       ],
       "Upgrade": [
         "Nadgradnja"
+      ],
+      "Get unlimited aliases": [
+        "Pridobite neomejeno število vzdevkov"
       ]
     },
     "specialoffer: Offers": {
@@ -12660,6 +12870,9 @@
     "sso": {
       "Sign in": [
         "Prijava"
+      ],
+      "Sign in to your organization": [
+        "Prijavite se v svojo organizacijo"
       ]
     },
     "State": {
@@ -12796,6 +13009,12 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Izgubili boste dostop do neomejenega števila prijav in opomb, neomejenega števila vzdevkov hide-my-email za skrivanje e-pošte, 20 trezorjev in prednostne podpore."
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Vaš ${ productString } je poln ${ percentage } %. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Vaš ${ productString } je poln. ${ cta }."
       ]
     },
     "Subscription": {
@@ -13028,7 +13247,7 @@
         "Zagotovite varnost svoji ekipi na poti z našimi aplikacijami za splet, iOS, Android, Windows, Mac in Linux."
       ],
       "Learn more": [
-        "Več o tem"
+        "Izvedi več."
       ],
       "Learn more about our impact": [
         "Več o našem vplivu"
@@ -13483,7 +13702,7 @@
         "Premakni ${ selectionCount } sporočil"
       ],
       "Password copied to clipboard": [
-        "Geslo kopirano v odložišče"
+        "Geslo je kopirano v odložišče."
       ],
       "Payment method added": [
         "Način plačila je bil dodan."
@@ -13538,6 +13757,48 @@
       ],
       "You have successfully unsubscribed": [
         "Naročnina je preklicana"
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } pogovor je premaknjen v mapo ${ labelName } in pošiljatelj dodan na seznam želenih.",
+        "${ elementsCount } pogovora sta premaknjena v mapo ${ labelName } in pošiljatelja dodana na seznam želenih.",
+        "${ elementsCount } pogovori so premaknjeni v mapo ${ labelName } in pošiljatelji dodani na seznam želenih.",
+        "${ elementsCount } pogovorov je premaknjenih v mapo ${ labelName } in pošiljatelji dodani na seznam želenih."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } pogovor premaknjen v mapo ${ labelName }.",
+        "${ elementsCount } pogovora premaknjena v mapo ${ labelName }.",
+        "${ elementsCount } pogovori premaknjeni v mapo ${ labelName }.",
+        "${ elementsCount } pogovorov premaknjenih v mapo ${ labelName }."
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } sporočilo je premaknjeno v mapo ${ labelName } in pošiljatelj dodan na seznam želenih.",
+        "${ elementsCount } sporočili sta premaknjeni v mapo ${ labelName } in pošiljatelja dodana na seznam želenih.",
+        "${ elementsCount } sporočila so premaknjena v mapo ${ labelName } in pošiljatelji dodani na seznam želenih.",
+        "${ elementsCount } sporočil je premaknjenih v mapo ${ labelName } in pošiljatelji dodani na seznam želenih."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } sporočilo premaknjeno v mapo ${ labelName }.",
+        "${ elementsCount } sporočili premaknjeni v mapo ${ labelName }.",
+        "${ elementsCount } sporočila premaknjena v mapo ${ labelName }.",
+        "${ elementsCount } sporočil premaknjenih v mapo ${ labelName }."
+      ],
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "Pogovor je premaknjen v mapo ${ labelName } in pošiljatelj dodan na seznam želenih."
+      ],
+      "Conversation moved to ${ labelName }.": [
+        "Pogovor je premaknjen v ${ labelName }."
+      ],
+      "Conversation removed from Starred.": [
+        "Pogovoru je odstranjena oznaka zvezdice."
+      ],
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "Sporočilo je premaknjeno v mapo ${ labelName } in pošiljatelj dodan na seznam želenih."
+      ],
+      "Message moved to ${ labelName }.": [
+        "Sporočilo premaknjeno v mapo ${ labelName }."
+      ],
+      "Message removed from Starred.": [
+        "Sporočilu je odstranjena oznaka \"Z zvezdico\"."
       ]
     },
     "Success notification": {
@@ -13638,7 +13899,7 @@
         "Polje CSV"
       ],
       "Display name": [
-        "Prikazno ime"
+        "Ime za prikaz"
       ],
       "First name": [
         "Ime"
@@ -13672,6 +13933,24 @@
         "${ ceilHours } uri",
         "${ ceilHours } ure",
         "${ ceilHours } ur"
+      ],
+      "${ ceilDays } day": [
+        "${ ceilDays } dan",
+        "${ ceilDays } dni",
+        "${ ceilDays } dni",
+        "${ ceilDays } dnevi"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuta",
+        "${ ceilMinutes } minute",
+        "${ ceilMinutes } minuti",
+        "${ ceilMinutes } minuti"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunda",
+        "${ seconds } sekundi",
+        "${ seconds } sekunde",
+        "${ seconds } sekund"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -13802,7 +14081,7 @@
         "Dodajte kreditno/debetno kartico"
       ],
       "Add filter": [
-        "Dodajanje filtra"
+        "Dodaj filter"
       ],
       "Add to ${ groupCount } group": [
         "Dodaj v ${ groupCount } skupino",
@@ -14021,10 +14300,10 @@
         "Izbriši osnutek"
       ],
       "Delete folder?": [
-        "Izbriši mapo?"
+        "Želite izbrisati mapo?"
       ],
       "Delete label?": [
-        "Izbriši oznako?"
+        "Želite izbrisati oznako?"
       ],
       "Delete message": [
         "Izbriši sporočilo"
@@ -14294,10 +14573,10 @@
         "Premakni med prejeto (ni neželeno)"
       ],
       "Move to spam": [
-        "Premakni med neželeno pošto"
+        "Premakni v neželeno pošto"
       ],
       "Move to trash": [
-        "Premakni v smetnjak"
+        "Premakni v smeti"
       ],
       "Moving a scheduled message": [
         "Premikanje načrtovanega sporočila"
@@ -14333,19 +14612,19 @@
         "Ni priponk"
       ],
       "No breaches detected": [
-        "Ni odkritih kršitev"
+        "Ni odkritih uhajanj podatkov"
       ],
       "No need to empty the trash": [
         "Ni vam treba prazniti smeti"
       ],
       "No trackers found": [
-        "Ni najdenih sledilnikov"
+        "Nobenih sledilnikov ni bilo najdenih."
       ],
       "No-reply address detected": [
         "Zaznan naslov brez možnosti odgovora"
       ],
       "Notes": [
-        "Zapiski"
+        "Opombe"
       ],
       "On-device suggestions": [
         "Predlogi v napravi"
@@ -14495,7 +14774,7 @@
         "Napaka pri pošiljanju"
       ],
       "Sending notice": [
-        "Pošiljanje obvestila"
+        "Obvestilo pred pošiljanjem"
       ],
       "Sending original message": [
         "Pošiljanje izvirnega sporočila"
@@ -14576,7 +14855,7 @@
         "To polje ne sme biti izpolnjeno le s presledki"
       ],
       "To": [
-        "Za"
+        "Do"
       ],
       "Trash": [
         "Smetnjak"
@@ -14694,6 +14973,30 @@
       ],
       "Your subscriptions in one place": [
         "Vaše naročnine na enem mestu"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } sporočilo",
+        "${ numMessages } sporočil",
+        "${ numMessages } sporočil",
+        "${ numMessages } sporočili"
+      ],
+      "Enter your password": [
+        "Vnesite svoje geslo"
+      ],
+      "Newsletters view": [
+        "Pogled glasil"
+      ],
+      "No newsletters found": [
+        "Ni najdenih glasil"
+      ],
+      "No unsubscribed newsletters": [
+        "Ni odjavljenih glasil"
+      ],
+      "Remove from list?": [
+        "Odstrani s seznama?"
+      ],
+      "Upgrade to ${ planName }": [
+        "Nadgradi na ${ planName }."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14932,7 +15235,7 @@
         "Varnejši način shranjevanja Bitcoina"
       ],
       "Bitcoin via Email": [
-        "Bitcoin prek elektronske pošte"
+        "Bitcoin prek e-pošte"
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
         "Šifriran in varen e-poštni naslov ${ MAIL_APP_NAME }. Lahko preprosto pošljete Bitcoin vsakomur, samo s pomočjo imena ${ BRAND_NAME }."
@@ -15355,6 +15658,52 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Izkoristite posebno ponudbo"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Zaupanja vreden stik"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Vstavite varnostni ključ, povezan z vašim računom ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Varnostni ključ"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Varnostni ključ"
+      ]
+    },
+    "Labels": {
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Novičniki ali poštni seznami, od katerih ste se odjavili, se bodo prikazali tukaj."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Nimate nobenih glasil ali naročnin na poštne sezname."
+      ]
+    },
+    "Payments.VAT number name": {
+      "VAT number": [
+        "ID za DDV"
+      ]
+    },
+    "plus_block": {
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Nadgradi na ${ upsellPlanTitle }."
       ]
     }
   }

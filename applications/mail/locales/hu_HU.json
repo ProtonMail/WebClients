@@ -155,7 +155,7 @@
         "Hitelesítés"
       ],
       "Auto-delete spam and trash": [
-        "Levélszemét és Lomtár automatikus törlése"
+        "Levélszemét és lomtár automatikus törlése"
       ],
       "Back": [
         "Vissza"
@@ -173,13 +173,13 @@
         "Üzenetek tiltása ettől a feladótól"
       ],
       "Block sender": [
-        "Feladó letiltása"
+        "Feladó tiltása"
       ],
       "Block senders": [
         "Feladók letiltása"
       ],
       "Bold": [
-        "Félkövér"
+        "Kövér"
       ],
       "Cancel": [
         "Mégsem"
@@ -523,7 +523,7 @@
         "Videokonferencia-widget kibontása"
       ],
       "Expiration time": [
-        "Lejárati idő"
+        "Időkorlát"
       ],
       "Explore ${ VPN_APP_NAME }": [
         "Fedezze fel a ${ VPN_APP_NAME } szolgáltatást"
@@ -544,7 +544,7 @@
         "Kevesebb keresési beállítás"
       ],
       "Filter on...": [
-        "Szűrő hozzáadása a..."
+        "Szűrés..."
       ],
       "Fit to window": [
         "Ablakhoz illesztés"
@@ -716,7 +716,7 @@
         "Névjegy beszúrása"
       ],
       "Insert contacts": [
-        "Névjegyek beszúrása"
+        "Névjegy beszúrása"
       ],
       "Insert image": [
         "Kép beillesztése"
@@ -734,10 +734,10 @@
         "Előfizetés megtartása"
       ],
       "Label as": [
-        "Címkézés, mint"
+        "Címkézés"
       ],
       "Label as...": [
-        "Címkézés, mint..."
+        "Címkézés..."
       ],
       "label emails as": [
         "címke hozzáadása:"
@@ -851,7 +851,7 @@
         "Hétfő"
       ],
       "More": [
-        "Továbbiak"
+        "Tovább"
       ],
       "More actions": [
         "További műveletek"
@@ -869,7 +869,7 @@
         "További lehetőségek a fiókokhoz"
       ],
       "More refine actions": [
-        "Pontosabb műveletek"
+        "További pontosító műveletek"
       ],
       "More search options": [
         "További keresési beállítások"
@@ -890,7 +890,7 @@
         "áthelyezés ide:"
       ],
       "Move to": [
-        "Mozgatás ide"
+        "Áthelyezés ide"
       ],
       "Move to archive": [
         "Archiválás"
@@ -920,7 +920,7 @@
         "Áthelyezés a lomtárba"
       ],
       "Move to...": [
-        "Áthelyezés..."
+        "Áthelyezés ide..."
       ],
       "Need help?": [
         "Segíthetünk?"
@@ -983,7 +983,7 @@
         "${ pageNumber }. oldal"
       ],
       "Pause": [
-        "Felfüggesztés"
+        "Szüneteltetés"
       ],
       "Pay": [
         "Fizetés"
@@ -1118,7 +1118,7 @@
         "Kód újraküldése"
       ],
       "Reset": [
-        "Alaphelyzet"
+        "Törlés"
       ],
       "Reset search form": [
         "Keresőmező alaphelyzetbe állítása"
@@ -1130,7 +1130,7 @@
         "Panel átméretezése"
       ],
       "Restore": [
-        "Helyreállítás"
+        "Visszaállítás"
       ],
       "Resume": [
         "Folytatás"
@@ -1172,7 +1172,7 @@
         "Üzleti csomagok megtekintése"
       ],
       "See how": [
-        "Lásd hogyan"
+        "Lássa hogyan"
       ],
       "See plan features": [
         "Csomag részleteinek megtekintése"
@@ -1364,7 +1364,7 @@
         "Ne helyezze át a Lomtárba"
       ],
       "Strikethrough": [
-        "Áthúzás"
+        "Áthúzott"
       ],
       "Submit": [
         "Küldés"
@@ -1594,6 +1594,15 @@
       ],
       "Zoom out": [
         "Távolítás"
+      ],
+      "Change password": [
+        "Jelszó módosítása"
+      ],
+      "Go to ${ planOrAppName }": [
+        "Nyissa meg a ${ planOrAppName } alkalmazást"
+      ],
+      "Select ${ planOrAppName }": [
+        "${ planOrAppName } választása"
       ]
     },
     "action": {
@@ -1837,7 +1846,7 @@
         "${ n } hónap"
       ],
       "/ month": [
-        "/ hónap"
+        "/ hó"
       ],
       "12 months": [
         "12 hónap"
@@ -1983,13 +1992,13 @@
         "8500+ szerver több mint 110 országban"
       ],
       "Ad-blocker and malware protection": [
-        "Hirdetésblokkoló és rosszindulatú programok elleni védelem"
+        "Hirdetésblokkoló és rosszindulatú program elleni védelem"
       ],
       "Admin panel to manage your family": [
         "Admin panel a család kezelése érdekében"
       ],
       "Advanced account protection": [
-        "Fejlett fiókvédelmi program"
+        "Fejlett fiókvédelem"
       ],
       "Easily add or remove users": [
         "Felhasználók egyszerű hozzáadása vagy eltávolítása"
@@ -2001,13 +2010,13 @@
         "Egyszeri fizetés, örök életre szóló ajánlat"
       ],
       "Online document editor": [
-        "Online dokumentum szerkesztő"
+        "Online dokumentumszerkesztő"
       ],
       "Password health alerts": [
         "Jelszó egészségügyi figyelmeztetések"
       ],
       "Private photo backup": [
-        "Privát fotók biztonsági mentése"
+        "Privát fotó biztonsági mentés"
       ],
       "Protect 10 devices at a time": [
         "Védje meg egyszerre 10 eszközét"
@@ -2022,7 +2031,7 @@
         "Korlátlan bejelentkezés, bankkártyák, hide-my-email e-mail álnevek és sok más"
       ],
       "Use your own email domain": [
-        "Használja a saját e-mail domain nevét"
+        "Saját e-mail domain használata"
       ],
       "Version history": [
         "Verziótörténet"
@@ -2044,7 +2053,7 @@
         "Hozzáférés a védett tartalmakhoz és privát böngészés. Több mint 110 ország több mint 8500 szerverét, 10 eszközt, nagy sebességű streaminget, hirdetésblokkolót és rosszindulatú programok elleni védelmet, VPN gyorsítót és még sok mást tartalmaz."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Hozzáférjen videós szolgáltatásokhoz, mint Netflix, Disney+, Prime Video és továbbiak, akárhonnan."
+        "Akárhonnan hozzáférhet a videó tartalmakhoz, beleértve a Netflixet, a Disney+-t, a Prime Videót és más szolgáltatásokat."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Biztonságos bejelentkezés minden eszközén. Korlátlan hide-my-email álnévvel, megosztással, integrált kétlépcsős hitelesítéssel, ${ DARK_WEB_MONITORING_NAME } szolgáltatással és sok mással."
@@ -2177,7 +2186,7 @@
     },
     "Button": {
       "Close": [
-        "Bezár"
+        "Bezárás"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Folytatás ezzel: ${ MAIL_APP_NAME }."
@@ -2195,7 +2204,7 @@
         "Adatvédelmi funkciók felfedezése és beállítása"
       ],
       "Got it": [
-        "Értem"
+        "Értem."
       ],
       "Maybe later": [
         "Talán később"
@@ -2478,7 +2487,7 @@
     },
     "Cancel expiration of the message": {
       "Cancel": [
-        "Eltávolítás"
+        "Törlés"
       ],
       "Cancel expiration": [
         "Időkorlát eltávolítása"
@@ -2489,7 +2498,7 @@
         "A ${ formattedEndDate } dátumig aktiválja újra, hogy megtartsa az alábbi funkciókat:"
       ],
       "Reactivate subscription": [
-        "Előfizetés újraaktiválása"
+        "Előfizetés megújítása"
       ],
       "Your subscription is ending soon": [
         "Előfizetése hamarosan lejár"
@@ -2521,7 +2530,7 @@
         "Alapvető, ingyenes csomagunk végpontok közt titkosított e-maillel és tárhellyel. Prémium funkciók nélkül."
       ],
       "Save ${ upsellSavings }": [
-        "${ upsellSavings } kedvezmény"
+        "Megtakarítás ${ upsellSavings }"
       ],
       "Save money with ${ upsellPlanName }": [
         "Pénzt takaríthat meg a következővel: ${ upsellPlanName }"
@@ -2764,7 +2773,7 @@
     },
     "Composer email icon": {
       "End-to-end encrypted": [
-        "Végpontok közt titkosított"
+        "Végponttól végpontig titkosítva"
       ],
       "End-to-end encrypted to verified recipient": [
         "Végpontok közt titkosított, ellenőrzött címzettnek"
@@ -2853,7 +2862,7 @@
         "Születésnap"
       ],
       "Display name": [
-        "Megjelenített név"
+        "Megjelenítendő név"
       ],
       "Email": [
         "E-mail"
@@ -3774,7 +3783,7 @@
         "Szűrés"
       ],
       "Next": [
-        "Következő"
+        "Tovább"
       ],
       "Recipient": [
         "Címzett"
@@ -3941,7 +3950,7 @@
         "Ha korlátlan hozzáférést szeretne a szövegíró asszisztenshez és más funkciókhoz, frissítsen ${ BRAND_NAME } Duo verzióra."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
-        "Kapjon értesítést ha az ön jelszava vagy más információja benne volt egy harmadik féltől származó adatszivárgásban."
+        "Értesítést kap, ha jelszava vagy más adata kiszivárgott egy harmadik fél szolgáltatásából."
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Segítsen csapatának biztonságosan tárolni a jelszavakat az érzékeny üzleti adatokhoz és az ügyfelek információihoz."
@@ -4177,10 +4186,10 @@
         "Az esemény előfordulása törölve lett."
       ],
       "This event occurrence was updated.": [
-        "Ennek az események az előfordulása frissítve lett."
+        "Ezt az eseményt frissítették."
       ],
       "This event was updated.": [
-        "Ez az esemény frissítve lett."
+        "Ezt az eseményt frissítették."
       ]
     },
     "Email body for invitation (date part)": {
@@ -4605,7 +4614,7 @@
         "Kérjük, válasszon ki egy megyét"
       ],
       "Please try again or refresh the page.": [
-        "Próbálja meg újra, vagy frissítse az oldalt"
+        "Kérjük, próbálja újra, vagy frissítse az oldalt."
       ],
       "Please try generating the text again": [
         "Próbálja meg újragenerálni a szöveget"
@@ -4844,6 +4853,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A keresés túl sok találatot eredményezett. Korlátozza a keresést majd próbálja meg újra."
+      ],
+      "Please select billing country": [
+        "Kérjük, válassza ki a számlázási országot"
+      ],
+      "Please select billing state": [
+        "Kérjük, válassza ki a számlázási megyét"
+      ],
+      "This action cannot be performed": [
+        "Ez a művelet nem hajtható végre"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5015,7 +5033,7 @@
         "Hoppá, valami hiba történt"
       ],
       "Open in browser": [
-        "Megnyitás böngészőben"
+        "Megnyitás a böngészőben"
       ],
       "Please refresh the page or try again later.": [
         "Frissítse az oldalt vagy próbálja újra később."
@@ -5117,7 +5135,7 @@
         "Meghívó visszautasítása"
       ],
       "Got it": [
-        "Értem"
+        "Értem."
       ],
       "Switch plans": [
         "Csomag váltása"
@@ -5332,7 +5350,7 @@
         "Ne helyezze át"
       ],
       "Inbox": [
-        "Beérkezett üzenetek"
+        "Bejövő"
       ],
       "Inbox - Default": [
         "Beérkezett üzenetek - Alapértelmezett"
@@ -5394,7 +5412,7 @@
     },
     "Filter option": {
       "All": [
-        "Mind"
+        "Összes"
       ],
       "Hide moved message": [
         "Áthelyezett üzenet elrejtése"
@@ -5475,7 +5493,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacy by default."
+        "${ BRAND_NAME }. Adatvédelem az első."
       ]
     },
     "forwardmessage": {
@@ -5707,7 +5725,7 @@
         "A hardver nem kompatibilis"
       ],
       "Report an issue": [
-        "Hibabejelentés"
+        "Hibajelentés"
       ],
       "Resume downloading": [
         "Letöltés folytatása"
@@ -6556,7 +6574,7 @@
         "Figyelem szükséges"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
-        "Automatikusan törli a 30 napnál régebbi, Kukába vagy Levélszemétbe áthelyezett e-maileket."
+        "Automatikusan üríti a 30 napnál régebbi, Lomtárba és levélszemétbe helyezett e-maileket."
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
         "A 30 napnál régebben a lomtárba vagy a levélszemét mappába helyezett üzenetek automatikus törlése."
@@ -6753,7 +6771,7 @@
         "Fedezze fel a ${ planTitle } csomaggal elérhetővé vált új funkciókat, és használja őket azonnal!"
       ],
       "Discover ProtectBuy logo": [
-        "Fedezze fel a ProtectBuy-t logó"
+        "Discover ProtectBuy logo"
       ],
       "Do you want to download this attachment anyway?": [
         "Ettől függetlenül letölti a csatolt fájlt?",
@@ -6866,7 +6884,7 @@
       ],
       "embedded image": [
         "beágyazott kép",
-        "beágyazott kép"
+        "beágyazott képek"
       ],
       "Enabling auto-deletion…": [
         "Automatikus törlés engedélyezése..."
@@ -6955,7 +6973,7 @@
         "${ ASSISTANT_TRIAL_TIME_DAYS } napig ingyenesen kipróbálható"
       ],
       "From": [
-        "Forrás:"
+        "Küldő"
       ],
       "Generate text": [
         "Szöveg létrehozása"
@@ -7439,7 +7457,7 @@
         "Kérjük ossza meg velünk a problémát."
       ],
       "Please share what you expected": [
-        "Kérjük, ossza meg mire számitott."
+        "Kérjük, ossza meg mire számított."
       ],
       "Please try again in a few moments": [
         "Néhány perc múlva próbálja meg újra"
@@ -7580,7 +7598,7 @@
         "Úgy tűnik minden el van intézve"
       ],
       "Select all ${ elementsCount } in ${ location }": [
-        "Az ${ elementsCount } üzenet kiválasztása, itt: ${ location }",
+        "Mind a ${ elementsCount } üzenet kiválasztása, itt: ${ location }",
         "Mind a ${ elementsCount } üzenet kiválasztása, itt: ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
@@ -7872,7 +7890,7 @@
         "Ez az üzenet egy ${ PASS_APP_NAME } e-mail álnévről érkezett."
       ],
       "This message is from a mailing list.": [
-        "Ez az üzenet levelezési listáról érkezett."
+        "Ez az üzenet egy levelezőlistáról származik."
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "Ez az üzenet egy olyan kulccsal van aláírva, ami még nincs megbízhatóként megjelölve."
@@ -8095,7 +8113,7 @@
         "Felhasználó aktiválva"
       ],
       "username": [
-        "felhasználói név"
+        "felhasználónév"
       ],
       "Users": [
         "Felhasználók"
@@ -8149,7 +8167,7 @@
         "Eltávolítottuk a nyomkövető információkat a következő hivatkozásokról, annak megakadályozására, hogy hirdetők és mások az online tevékenységét nyomon követhessék."
       ],
       "We use 3-D Secure to protect your payments": [
-        "Erős ügyfélhitelesítést használunk az Ön fizetésének biztonsága érdekében."
+        "Fizetéseidet a 3-D Secure technológia védi"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "A tranzakció befejezéséhez átirányítjuk a PayPalhoz egy új böngészőfülön. Kérjük engedélyezze a felugró ablakokat."
@@ -8482,6 +8500,13 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Már csak néhány kattintás választja el a rendetlenség-mentes postaládától"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } hírlevél",
+        "${ unreadCount } hírlevél"
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Minden a következőben: ${ planOrAppName }"
       ]
     },
     "info": {
@@ -8636,7 +8661,7 @@
         "Ugrás az utolsóra"
       ],
       "Label as...": [
-        "Címkézés, mint..."
+        "Címkézés..."
       ],
       "Load embedded images": [
         "Beágyazott képek betöltése"
@@ -8672,7 +8697,7 @@
         "Áthelyezés a levélszeméthez"
       ],
       "Move to Trash": [
-        "Áthelyezés a lomtárba"
+        "Áthelyezés a Lomtárba"
       ],
       "Move to...": [
         "Áthelyezés..."
@@ -8776,7 +8801,7 @@
         "(Átmenetileg nem elérhető. Próbálja meg később.)"
       ],
       "/month": [
-        "/hónap"
+        "/hó"
       ],
       "Account holder": [
         "Fiók tulajdonos"
@@ -9055,7 +9080,7 @@
         "Megértettem a kockázatot"
       ],
       "IBAN": [
-        "IBAN szám"
+        "IBAN"
       ],
       "If": [
         "Ha"
@@ -9088,7 +9113,7 @@
         "Kulcsszó"
       ],
       "Label as": [
-        "Címkézés, mint"
+        "Címkézés"
       ],
       "Label messages as": [
         "Üzenetek megjelölése címkével"
@@ -9136,7 +9161,7 @@
         "Üzenetek áthelyezése ide:"
       ],
       "Move to": [
-        "Mozgatás ide"
+        "Áthelyezés ide"
       ],
       "Move to Archive": [
         "Áthelyezés az archívumba"
@@ -9319,10 +9344,10 @@
         "Akkor"
       ],
       "Thomas": [
-        "Áron"
+        "Tamás"
       ],
       "Time": [
-        "Időpont"
+        "Idő"
       ],
       "To:": [
         "Címzett:"
@@ -9395,11 +9420,23 @@
       ],
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "Nem sikerült létrehozni a(z) ${ newFolderName } mappát"
+      ],
+      "Moved to ${ labelName }": [
+        "Áthelyezve ${ labelName }"
+      ],
+      "Transactions": [
+        "Tranzakciók"
+      ],
+      "Updates": [
+        "Frissítések"
       ]
     },
     "Label (begin date/advanced search)": {
       "From": [
-        "Forrás"
+        "Küldő"
       ]
     },
     "Label (end date/advanced search)": {
@@ -9414,7 +9451,7 @@
     },
     "Label attach to time input to select hours": {
       "Time": [
-        "Időpont"
+        "Idő"
       ]
     },
     "Label for contact group color": {
@@ -9429,7 +9466,7 @@
     },
     "Label Recipient": {
       "From": [
-        "Feladó"
+        "Küldő"
       ],
       "To": [
         "Címzett"
@@ -9437,6 +9474,9 @@
     },
     "Label, credit card": {
       "ZIP code": [
+        "Irányítószám"
+      ],
+      "Postal code": [
         "Irányítószám"
       ]
     },
@@ -9592,7 +9632,7 @@
         "ha az adatai kiszivárogtak"
       ],
       "Inbox": [
-        "Beérkezett üzenetek"
+        "Bejövő"
       ],
       "Labels": [
         "Címkék"
@@ -9610,7 +9650,7 @@
         "Mappák kezelése"
       ],
       "More": [
-        "Továbbiak"
+        "Tovább"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "Megnyitás ebben: ${ CALENDAR_APP_NAME }"
@@ -9643,7 +9683,7 @@
         "Meghívó kérése"
       ],
       "Scheduled": [
-        "Ütemezés"
+        "Ütemezett"
       ],
       "Sent": [
         "Elküldött"
@@ -9714,7 +9754,7 @@
     },
     "Link to calendar event": {
       "Open in ${ CALENDAR_APP_NAME }": [
-        "${ CALENDAR_APP_NAME } megnyitása"
+        "Megnyitás ebben: ${ CALENDAR_APP_NAME }"
       ]
     },
     "Link to settings": {
@@ -9774,7 +9814,7 @@
     },
     "Log preference": {
       "Enable ${ reason }": [
-        "${ reason } engedélyezése"
+        "Engedélyezi: ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -9814,7 +9854,7 @@
         "Archívum"
       ],
       "Inbox": [
-        "Beérkezett üzenetek"
+        "Bejövő"
       ],
       "Spam": [
         "Levélszemét"
@@ -10232,7 +10272,7 @@
         "99.95% SLA"
       ],
       "Ad-blocker and malware protection": [
-        "Hirdetésblokkoló és rosszindulatú programok elleni védelem"
+        "Hirdetésblokkoló és rosszindulatú program elleni védelem"
       ],
       "Admin console": [
         "Admin konzol"
@@ -10346,7 +10386,7 @@
         "Ingyenes VPN egy eszközön"
       ],
       "Fully refundable for 30 days": [
-        "30 napig teljesen visszaigényelhető"
+        "Teljes visszatérítés 30 napon belül"
       ],
       "GDPR data processing agreement": [
         "GDPR adatfeldolgozói megállapodás"
@@ -10377,7 +10417,7 @@
         "Több adminisztrátori szerep"
       ],
       "Online document editor": [
-        "Online dokumentum szerkesztő"
+        "Online dokumentumszerkesztő"
       ],
       "Organize items with multiple vaults": [
         "Elemek rendezése több tárolóba"
@@ -10419,7 +10459,7 @@
         "Gyorsan fogalmazzon válaszokat"
       ],
       "Recover previous file versions": [
-        "Régebbi fájl verziók visszaállítása"
+        "Régebbi fájlverziók helyreállítása"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Fiókbiztonságának rendszeres ellenőrzése. Figyelmeztetjük, ha gyenge vagy újrahasznált jelszavai vannak, amelyeket frissíteni lenne szükséges."
@@ -10610,7 +10650,7 @@
         "Korai hozzáférés az új alkalmazásokhoz és lehetőségekhez"
       ],
       "Encrypted email and calendar to get you started.": [
-        "Titkosított e-mail és naptár, az induláshoz."
+        "Kezdésként titkosított e-mail és naptár"
       ],
       "Enhanced security and premium features for teams.": [
         "Megnövelt biztonság és prémium funkciók a csoportok számára."
@@ -11137,7 +11177,7 @@
     },
     "Onboarding List Placeholder": {
       "Finance": [
-        "Pénzügy"
+        "Pénzügyek"
       ],
       "I have moved my logins to ${ BRAND_NAME }": [
         "Áthelyeztem a bejelentkezéseimet a ${ BRAND_NAME } alkalmazásba"
@@ -11172,7 +11212,7 @@
         "A ${ protectionFromTrackersTitle } azt jelenti, hogy Önt többé nem követik az interneten."
       ],
       "Activate premium features": [
-        "Prémium funkciók"
+        "Prémium jellemzők aktiválása"
       ],
       "Activate selected": [
         "Kiválasztottak aktiválása"
@@ -11184,7 +11224,7 @@
         "Hozzáférés bárhol, bármikor"
       ],
       "Auto-delete spam and trash": [
-        "Törlés: levélszemét, lomtár"
+        "Levélszemét és lomtár automatikus törlése"
       ],
       "browser": [
         "böngésző"
@@ -11229,7 +11269,7 @@
         "Talán később"
       ],
       "Next": [
-        "Következő"
+        "Tovább"
       ],
       "Protection from trackers": [
         "Védelem a nyomkövetőkkel szemben"
@@ -11244,13 +11284,13 @@
         "${ BRAND_NAME } használatának megkezdése"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Használja az e-mail cím rövidebb, fülbemászóbb változatát."
+        "Kezdje el használni az e-mail címe rövidebb, frappánsabb változatát."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "A kezdéshez válasszon egy megjelenített nevet. Ezt fogják látni az emberek, ha e-mailt küld nekik, ha meghívja őket egy eseményre vagy megoszt velük egy fájlt."
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
-        "Üdvözli a ${ MAIL_APP_NAME }"
+        "Üdvözöljük a következőkben: ${ MAIL_APP_NAME }"
       ],
       "Where privacy is default.": [
         "Ahol az adatvédelem az alap."
@@ -11263,6 +11303,9 @@
       ],
       "Your domain and subscription are ready to use.": [
         "A domainnév és az előfizetés használatra kész."
+      ],
+      "Android": [
+        "Android"
       ]
     },
     "Onboarding Proton": {
@@ -11380,7 +11423,7 @@
         "Hozzáadás meglévő csoporthoz"
       ],
       "All": [
-        "Mind"
+        "Összes"
       ],
       "Automatic (${ value })": [
         "Automatikus (${ value })"
@@ -11403,7 +11446,7 @@
         "Alapértelmezett mappák"
       ],
       "Move to...": [
-        "Áthelyezés..."
+        "Áthelyezés ide..."
       ]
     },
     "Option group label": {
@@ -11532,13 +11575,13 @@
         "Az előfizetés automatikus megújulása jelenleg szünetel. Ha most módosítja az előfizetést, az automatikus megújulás ismét életbe lép."
       ],
       "CVC": [
-        "Biztonsági kód"
+        "CVC"
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Ez idő alatt nem tudja módosítani vagy törölni az előfizetését. Kérjük, várjon, amíg a fizetés befejeződik, mielőtt bármilyen változtatással próbálkozna. Köszönjük türelmét."
       ],
       "Got it": [
-        "Rendben"
+        "Értem."
       ],
       "MM/YY": [
         "HH/ÉÉ"
@@ -11700,7 +11743,7 @@
         "Vezetéknév"
       ],
       "Link": [
-        "Hivatkozás"
+        "Link"
       ],
       "Name": [
         "Név"
@@ -11794,6 +11837,12 @@
       ],
       "Your organization name": [
         "A szervezet neve"
+      ],
+      "Postal code": [
+        "Irányítószám"
+      ],
+      "ZIP code": [
+        "Irányítószám"
       ]
     },
     "Placeholder for contact group name": {
@@ -12105,7 +12154,7 @@
         "A ${ MAIL_APP_NAME } által titkosítva, ellenőrzött címzettnek"
       ],
       "End-to-end encrypted": [
-        "Végpontok közt titkosított"
+        "Végponttól végpontig titkosítva"
       ],
       "End-to-end encrypted to PGP recipient": [
         "Végpontok közt titkosított, PGP címzettnek"
@@ -12252,7 +12301,7 @@
         "Kérelem törlése"
       ],
       "Got it": [
-        "Értem"
+        "Értem."
       ],
       "Learn more": [
         "További információk"
@@ -12526,7 +12575,7 @@
         "/ hó"
       ],
       "/month": [
-        "/hónap"
+        "/hó"
       ],
       "1 year": [
         "1 év"
@@ -12556,7 +12605,7 @@
         "30 hónapra ${ amount } számlázva"
       ],
       "Get the deal": [
-        "Érdekel az ajánlat"
+        "Ajánlat elfogadása"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "1 év után megújul, kedvezményes ${ discountedAmount } áron, a ${ regularAmount } helyett (${ discount }% kedvezmény)"
@@ -12891,7 +12940,7 @@
     },
     "Subscription length": {
       "Lifetime": [
-        "Életre szóló"
+        "Élettartam"
       ]
     },
     "Subscription price": {
@@ -13006,7 +13055,7 @@
         "Átfogó adatvédelem és biztonság"
       ],
       "Desktop app and email client support (via IMAP)": [
-        "Asztali alkalmazás és e-mail kliens támogatás (IMAP-on keresztül)"
+        "Asztali alkalmazás és e-mail kliens támogatása (IMAP-on keresztül)"
       ],
       "Direct contribution to our mission": [
         "Közvetlen hozzájárulás a küldetésünkhöz"
@@ -13087,7 +13136,7 @@
         "Kapjon új e-maileket"
       ],
       "See your colleagues’ availability": [
-        "Nézze meg kollégái elérhetőségét!"
+        "Lássa kollégái elérhetőségét"
       ],
       "Send emails with attachments": [
         "Küldjön e-maileket mellékletekkel"
@@ -13524,6 +13573,34 @@
       ],
       "You have successfully unsubscribed": [
         "Sikeresen leiratkozott"
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } beszélgetés átkerült a ${ labelName } mappába, a feladó pedig bekerült a nem levélszemét listába.",
+        "${ elementsCount } beszélgetés átkerült a ${ labelName } mappába, a feladó pedig bekerült a nem levélszemét listába."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } beszélgetés áthelyezve a(z) ${ labelName } mappába.",
+        "${ elementsCount } beszélgetés áthelyezve a(z) ${ labelName } mappába."
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } üzenet átkerült a ${ labelName } mappába, a feladó pedig bekerült a nem levélszemét listába.",
+        "${ elementsCount } üzenet átkerült a ${ labelName } mappába, a feladó pedig bekerült a nem levélszemét listába."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } üzenet áthelyezve a(z) ${ labelName } mappába.",
+        "${ elementsCount } üzenet áthelyezve a(z) ${ labelName } mappába."
+      ],
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "A beszélgetés átkerült a ${ labelName } mappába, a feladó pedig bekerült a nem levélszemét listába."
+      ],
+      "Conversation moved to ${ labelName }.": [
+        "A beszélgetés átkerült a ${ labelName } mappába."
+      ],
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "Az üzenet átkerült a ${ labelName } mappába, a feladó pedig bekerült a nem levélszemét listába."
+      ],
+      "Message moved to ${ labelName }.": [
+        "Üzenet áthelyezve a ${ labelName } mappába."
       ]
     },
     "Success notification": {
@@ -13624,7 +13701,7 @@
         "CSV mező"
       ],
       "Display name": [
-        "Megjelenített név"
+        "Megjelenítendő név"
       ],
       "First name": [
         "Keresztnév"
@@ -13850,7 +13927,7 @@
         "Titkos másolat"
       ],
       "Block sender": [
-        "Feladó letiltása"
+        "Feladó tiltása"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } előfizetés lemondása"
@@ -14011,7 +14088,7 @@
         "Fedezze fel az előfizetése előnyeit"
       ],
       "Distraction-free emailing": [
-        "Figyelemelterelés nélküli e-mail"
+        "Figyelemelterelés nélküli e-mailezés"
       ],
       "Don't give spam a chance": [
         "Ne adjon esélyt a levélszemétnek"
@@ -14225,7 +14302,7 @@
         "Üzenet részletei"
       ],
       "Message list": [
-        "Levelek listája"
+        "Üzenet lista"
       ],
       "Message will expire": [
         "Az üzenet lejár"
@@ -14237,7 +14314,7 @@
         "Mobil"
       ],
       "More": [
-        "Továbbiak"
+        "Tovább"
       ],
       "More actions": [
         "További műveletek"
@@ -14261,7 +14338,7 @@
         "Az összes üzenetet áthelyezése a Lomtárba"
       ],
       "Move to": [
-        "Mozgatás ide"
+        "Áthelyezés ide"
       ],
       "Move to inbox": [
         "Áthelyezés a beérkezett üzenetekhez"
@@ -14273,7 +14350,7 @@
         "Áthelyezés a levélszeméthez"
       ],
       "Move to trash": [
-        "Áthelyezés a lomtárba"
+        "Áthelyezés a Lomtárba"
       ],
       "Moving a scheduled message": [
         "Üzemezett üzenet áthelyezése"
@@ -14312,7 +14389,7 @@
         "Nincs melléklet"
       ],
       "No breaches detected": [
-        "Nem észleltünk adatszivárgást."
+        "Nincs adatvédelmi incidens észlelve"
       ],
       "No need to empty the trash": [
         "Nincs szükség a lomtár ürítésére"
@@ -14432,7 +14509,7 @@
         "Ütemezze most, küldje el később"
       ],
       "Schedule send": [
-        "Ütemezett küldés"
+        "Küldés ütemezése"
       ],
       "Schedule send:": [
         "Küldés ütemezése:"
@@ -14477,7 +14554,7 @@
         "Hiba a küldés közben"
       ],
       "Sending notice": [
-        "Küldési információk"
+        "Küldési tudnivaló"
       ],
       "Sending original message": [
         "Eredeti üzenet küldése"
@@ -14626,7 +14703,7 @@
         "Megvédtük ${ trackersCount } követőtől"
       ],
       "Welcome": [
-        "Üdvözöljük"
+        "Üdvözli"
       ],
       "Welcome ${ userName }": [
         "Üdvözöljük, ${ userName }"
@@ -14675,6 +14752,9 @@
       ],
       "Your subscriptions in one place": [
         "Az előfizetései egy helyen"
+      ],
+      "Upgrade to ${ planName }": [
+        "Váltás ${ planName } csomagra"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14878,7 +14958,7 @@
     },
     "vpn_2step: feature": {
       "Advanced VPN customizations": [
-        "Speciális VPN beállítások"
+        "Fejlett VPN beállítások"
       ],
       "No ads": [
         "Nincsenek hirdetések"
@@ -15265,6 +15345,24 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Előfizetés lemondása"
+      ],
+      "Keep subscription": [
+        "Előfizetés megtartása"
+      ]
+    },
+    "Payments.VAT number name": {
+      "VAT number": [
+        "Áfa-szám"
+      ]
+    },
+    "plus_block": {
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Frissítés ${ upsellPlanTitle }"
       ]
     }
   }
