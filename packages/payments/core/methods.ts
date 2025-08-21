@@ -108,7 +108,6 @@ export interface PaymentMethodsParameters {
     planIDs?: PlanIDs;
     subscription?: Subscription | FreeSubscription;
     canUseApplePay?: boolean;
-    enableApplePay?: boolean;
     isTrial?: boolean;
 }
 
@@ -239,8 +238,6 @@ export class PaymentMethods {
 
     public canUseApplePay: boolean;
 
-    public enableApplePay: boolean;
-
     public isTrial: boolean;
 
     constructor({
@@ -261,7 +258,6 @@ export class PaymentMethods {
         planIDs,
         subscription,
         canUseApplePay,
-        enableApplePay,
         isTrial,
     }: PaymentMethodsParameters) {
         this._paymentStatus = paymentStatus;
@@ -282,7 +278,6 @@ export class PaymentMethods {
         this.planIDs = planIDs;
         this.subscription = subscription;
         this.canUseApplePay = !!canUseApplePay;
-        this.enableApplePay = !!enableApplePay;
         this.isTrial = !!isTrial;
     }
 
@@ -597,7 +592,6 @@ export class PaymentMethods {
 
         return (
             this.paymentStatus.VendorStates.Apple &&
-            this.enableApplePay &&
             isApplePayAmountValid &&
             isAllowedFlow &&
             this.canUseApplePay &&
@@ -663,7 +657,6 @@ export async function initializePaymentMethods({
     planIDs?: PlanIDs;
     subscription?: Subscription;
     canUseApplePay?: boolean;
-    enableApplePay?: boolean;
     isTrial?: boolean;
 }) {
     const paymentMethodStatusPromise = maybePaymentMethodStatus ?? paymentsApi.paymentStatus();
