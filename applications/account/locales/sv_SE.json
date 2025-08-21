@@ -256,6 +256,9 @@
       "Claim it": [
         "Gör anspråk på den"
       ],
+      "Claim this address": [
+        "Gör anspråk på denna adress"
+      ],
       "Clear all formatting": [
         "Rensa all formatering"
       ],
@@ -303,9 +306,6 @@
       ],
       "Connect to video conferencing": [
         "Anslut till videokonferens"
-      ],
-      "Connect your Gmail address": [
-        "Anslut din Gmail-adress"
       ],
       "Connected": [
         "Ansluten"
@@ -726,6 +726,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Skaffa ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Skaffa en gratis ${ BRAND_NAME }-adress"
       ],
       "Get a new encrypted email address": [
         "Skaffa en ny krypterad e-postadress"
@@ -5242,6 +5245,9 @@
       "People I trust": [
         "Personer jag betror"
       ],
+      "People who trust me": [
+        "Människor som litar på mig"
+      ],
       "Protect your legacy with emergency access": [
         "Skydda ditt arv med nödåtkomst"
       ],
@@ -5256,6 +5262,9 @@
       ],
       "Stop being trusted contact?": [
         "Sluta vara betrodd kontakt?"
+      ],
+      "They added me as trusted contact. I can access their account in case of an emergency.": [
+        "De har lagt till mig som betrodd kontakt. Jag kan komma åt deras konto i händelse av en nödsituation."
       ],
       "This will take effect immediately.": [
         "Detta kommer träda i kraft omedelbart."
@@ -5286,6 +5295,16 @@
       ],
       "You can now access and manage their account.": [
         "Du kan nu komma åt och hantera deras konto."
+      ],
+      "You can remove their access at any time to regain exclusive control of your account.": [
+        "Du kan när som helst ta bort deras åtkomst för att återfå exklusiv kontroll för ditt konto."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Du har inte blivit utsedd som en nödkontakt för någon än."
+      ],
+      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
+        "Du har nått maximala antalet av ${ controller.meta.count } betrodd kontakt.",
+        "Du har nått maximalt antal av ${ controller.meta.count } betrodda kontakter."
       ],
       "You will be notified when someone requests emergency access.": [
         "Du kommer bli aviserad när någon begär nödåtkomst."
@@ -7937,8 +7956,14 @@
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Skaffa en ${ BRAND_NAME }-adress** för att använda alla ${ BRAND_NAME_TWO }-tjänster inklusive ${ MAIL_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }."
       ],
+      "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
+        "**Importera dina befintliga koder** från andra 2FA-appar, som Google Authenticator"
+      ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Bjud in dina vänner** till ${ BRAND_NAME } med din hänvisningslänk."
+      ],
+      "**Sync codes** to all your devices": [
+        "**Synkronisera koder** till alla dina enheter"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Mer",
@@ -8034,6 +8059,9 @@
       ],
       "Add a recovery phone number": [
         "Lägg till ett telefonnummer för återställning"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Lägg till ytterligare ett lager av säkerhet till ditt konto. Du måste verifiera dig själv med 2FA varje gång du loggar in."
       ],
       "Add domain": [
         "Lägg till domän"
@@ -8716,6 +8744,9 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Njut av en snabbare, fokuserad e-postupplevelse med appen för stationär dator."
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Säkerställ fullständig privat och krypterad kommunikation. Gör anspråk på din gratis ${ BRAND_NAME } e-postadress nu."
+      ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "Ange ett lösenord för att slutföra ditt ${ BRAND_NAME } konto och börja använda ${ VPN_APP_NAME } på alla dina enheter!"
       ],
@@ -9287,6 +9318,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Logga för Mastercard SecureCode"
+      ],
+      "Maybe later": [
+        "Kanske senare"
       ],
       "Medium Priority": [
         "Medium prioritet"
@@ -11876,6 +11910,9 @@
       ],
       "Days of the week": [
         "Dagar i veckan"
+      ],
+      "Default email address": [
+        "Standard e-postadress"
       ],
       "Default language": [
         "Standardspråk"
@@ -16485,6 +16522,9 @@
       ]
     },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Som en prenumerant på **${ currentPlanTitle }** kan du låsa upp **${ unlockPlanTitle }** och fler ${ BRAND_NAME }-tjänster genom att uppgradera till **${ upsellPlanTitle }**."
+      ],
       "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
         "Fler ${ BRAND_NAME }-tjänster.${ br }En enkel prenumeration."
       ],
@@ -20189,6 +20229,9 @@
       "Choose user affiliations": [
         "Välj användartillhörighet"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Gör anspråk på din ${ MAIL_APP_NAME }-adress"
+      ],
       "Click a value in the table to use it as filter": [
         "Klicka ett värde i tabellen för att använda det som filter"
       ],
@@ -20222,8 +20265,8 @@
       "Connect apps and devices": [
         "Anslut appar och enheter"
       ],
-      "Connect more Gmail addresses with ${ planName }": [
-        "Anslut fler Gmail-adresser med ${ planName }"
+      "Connect more addresses": [
+        "Anslut fler adresser"
       ],
       "Connect organization": [
         "Anslut organisation"
@@ -22423,6 +22466,9 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-post"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Krypterad och säker ${ MAIL_APP_NAME } e-postadress. Du kan enkelt skicka Bitcoin till vem som helst med bara deras ${ BRAND_NAME }-namn."
       ],
       "Encrypted cloud storage for photos and documents": [
         "Krypterad molnlagring för foton och dokument"
