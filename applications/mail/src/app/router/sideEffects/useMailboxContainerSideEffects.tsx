@@ -2,6 +2,7 @@ import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/h
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { useInboxDesktopBadgeCount } from '@proton/components';
 
+import useAutoOpenContactsDrawer from 'proton-mail/hooks/drawer/useAutoOpenContactsDrawer';
 import useNewEmailNotification from 'proton-mail/hooks/mailbox/notifications/useNewEmailNotification';
 import { type EncryptedSearchParams, useApplyEncryptedSearch } from 'proton-mail/hooks/mailbox/useApplyEncryptedSearch';
 import { useMailboxFavicon } from 'proton-mail/hooks/mailbox/useMailboxFavicon';
@@ -46,6 +47,9 @@ export const useMailboxContainerSideEffects = ({
     useInboxDesktopBadgeCount();
 
     useNewEmailNotification(() => handleCheckAll(false));
+
+    // When URL contains a contact route, we need to open the contact drawer app
+    useAutoOpenContactsDrawer();
 
     // Launch two calendar-specific API calls here to boost calendar widget performance
     useCalendars();
