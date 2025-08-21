@@ -38,8 +38,6 @@ interface Props {
     onCheckAll: (checked: boolean) => void;
 }
 
-const { SPAM } = MAILBOX_LABEL_IDS;
-
 const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onCheckAll }: Props) => {
     const theme = useTheme();
 
@@ -182,7 +180,7 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
 
     const showText = checkeds || total;
 
-    const showSimpleLoginPlaceholder = checkeds === 0 && labelID === SPAM;
+    const showSimpleLoginPlaceholder = checkeds === 0 && labelID === MAILBOX_LABEL_IDS.SPAM;
 
     return (
         <section

@@ -15,9 +15,6 @@ import type { Conversation } from '../models/conversation';
 import type { Element } from '../models/element';
 import { getLabelIDs } from './elements';
 
-const { SENT, DRAFTS, ALL_SENT, ALL_DRAFTS, SCHEDULED, STARRED, ALL_MAIL, SNOOZED, ALMOST_ALL_MAIL } =
-    MAILBOX_LABEL_IDS;
-
 export type LabelChanges = { [labelID: string]: boolean };
 
 export interface FolderInfo {
@@ -56,47 +53,47 @@ export const getStandardFolders = (): FolderMap => ({
     [MAILBOX_LABEL_IDS.SENT]: {
         icon: 'paper-plane',
         name: c('Link').t`Sent`,
-        to: `/${LABEL_IDS_TO_HUMAN[SENT]}`,
+        to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SENT]}`,
     },
     [MAILBOX_LABEL_IDS.ALL_SENT]: {
         icon: 'paper-plane',
         name: c('Link').t`Sent`,
-        to: `/${LABEL_IDS_TO_HUMAN[ALL_SENT]}`,
+        to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_SENT]}`,
     },
     [MAILBOX_LABEL_IDS.DRAFTS]: {
         icon: 'file-lines',
         name: c('Link').t`Drafts`,
-        to: `/${LABEL_IDS_TO_HUMAN[DRAFTS]}`,
+        to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.DRAFTS]}`,
     },
     [MAILBOX_LABEL_IDS.ALL_DRAFTS]: {
         icon: 'file-lines',
         name: c('Link').t`Drafts`,
-        to: `/${LABEL_IDS_TO_HUMAN[ALL_DRAFTS]}`,
+        to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_DRAFTS]}`,
     },
     [MAILBOX_LABEL_IDS.SCHEDULED]: {
         icon: 'paper-plane-clock',
         name: c('Link').t`Scheduled`,
-        to: `/${LABEL_IDS_TO_HUMAN[SCHEDULED]}`,
+        to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SCHEDULED]}`,
     },
     [MAILBOX_LABEL_IDS.STARRED]: {
         icon: 'star',
         name: c('Link').t`Starred`,
-        to: `/${LABEL_IDS_TO_HUMAN[STARRED]}`,
+        to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.STARRED]}`,
     },
     [MAILBOX_LABEL_IDS.SNOOZED]: {
         icon: 'clock',
         name: c('Link').t`Snooze`,
-        to: `/${LABEL_IDS_TO_HUMAN[SNOOZED]}`,
+        to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SNOOZED]}`,
     },
     [MAILBOX_LABEL_IDS.ALL_MAIL]: {
         icon: 'envelopes',
         name: c('Link').t`All mail`,
-        to: `/${LABEL_IDS_TO_HUMAN[ALL_MAIL]}`,
+        to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_MAIL]}`,
     },
     [MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL]: {
         icon: 'envelopes',
         name: c('Link').t`All mail`,
-        to: `/${LABEL_IDS_TO_HUMAN[ALMOST_ALL_MAIL]}`,
+        to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL]}`,
     },
 });
 
@@ -113,19 +110,27 @@ export const getCurrentFolders = (
 
     return labelIDs
         .filter((labelID) => {
-            if ([SENT, ALL_SENT].includes(labelID as MAILBOX_LABEL_IDS)) {
-                return (hasBit(ShowMoved, SHOW_MOVED.SENT) ? ALL_SENT : SENT) === labelID;
+            if ([MAILBOX_LABEL_IDS.SENT, MAILBOX_LABEL_IDS.ALL_SENT].includes(labelID as MAILBOX_LABEL_IDS)) {
+                return (
+                    (hasBit(ShowMoved, SHOW_MOVED.SENT) ? MAILBOX_LABEL_IDS.ALL_SENT : MAILBOX_LABEL_IDS.SENT) ===
+                    labelID
+                );
             }
-            if ([DRAFTS, ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS)) {
-                return (hasBit(ShowMoved, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS) === labelID;
+            if ([MAILBOX_LABEL_IDS.DRAFTS, MAILBOX_LABEL_IDS.ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS)) {
+                return (
+                    (hasBit(ShowMoved, SHOW_MOVED.DRAFTS) ? MAILBOX_LABEL_IDS.ALL_DRAFTS : MAILBOX_LABEL_IDS.DRAFTS) ===
+                    labelID
+                );
             }
             // We don't want to show "All mail" folder in the details
-            if ([ALL_MAIL, ALMOST_ALL_MAIL].includes(labelID as MAILBOX_LABEL_IDS)) {
+            if (
+                [MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL].includes(labelID as MAILBOX_LABEL_IDS)
+            ) {
                 return false;
             }
 
             // We don't wait to show both the starred and empty start folder
-            if (labelID === STARRED) {
+            if (labelID === MAILBOX_LABEL_IDS.STARRED) {
                 return false;
             }
             return true;
@@ -268,7 +273,7 @@ export const applyLabelChangesOnOneMessageOfAConversation = (
 
 // For some locations, we want to display the total number of messages instead of the number of unread (e.g. Scheduled folder)
 export const shouldDisplayTotal = (labelID: string) => {
-    const needsDisplayTotalLabels = [SCHEDULED, SNOOZED];
+    const needsDisplayTotalLabels = [MAILBOX_LABEL_IDS.SCHEDULED, MAILBOX_LABEL_IDS.SNOOZED];
 
     return needsDisplayTotalLabels.includes(labelID as MAILBOX_LABEL_IDS);
 };
@@ -280,10 +285,17 @@ export const canMoveAll = (
     selectedIDs: string[],
     isSearch: boolean
 ) => {
-    // We also need to hide move all actions in ALL_DRAFTS and ALL_SENT location because the goal of this setting
-    // is to keep the message in DRAFTS and SENT locations all the time.
+    // We also need to hide move all actions in MAILBOX_LABEL_IDS.ALL_DRAFTS and MAILBOX_LABEL_IDS.ALL_SENT location because the goal of this setting
+    // is to keep the message in MAILBOX_LABEL_IDS.DRAFTS and MAILBOX_LABEL_IDS.SENT locations all the time.
     return (
-        !labelIncludes(currentLabelID, destinationLabelID, ALL_MAIL, SCHEDULED, ALL_DRAFTS, ALL_SENT) &&
+        !labelIncludes(
+            currentLabelID,
+            destinationLabelID,
+            MAILBOX_LABEL_IDS.ALL_MAIL,
+            MAILBOX_LABEL_IDS.SCHEDULED,
+            MAILBOX_LABEL_IDS.ALL_DRAFTS,
+            MAILBOX_LABEL_IDS.ALL_SENT
+        ) &&
         elementIDs.length > 0 &&
         selectedIDs.length === 0 &&
         !isSearch

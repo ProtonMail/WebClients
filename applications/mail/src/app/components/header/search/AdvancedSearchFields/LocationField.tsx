@@ -14,8 +14,15 @@ interface Props {
     onChange: (nextValue: string) => void;
 }
 
-const { INBOX, ALL_MAIL, ALMOST_ALL_MAIL, SENT, DRAFTS, ALL_SENT, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
-const LOCATION_FIELD_MAIN_OPTIONS: string[] = [ALL_MAIL, ALMOST_ALL_MAIL, INBOX, DRAFTS, SENT, ALL_SENT, ALL_DRAFTS];
+const LOCATION_FIELD_MAIN_OPTIONS: string[] = [
+    MAILBOX_LABEL_IDS.ALL_MAIL,
+    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+    MAILBOX_LABEL_IDS.INBOX,
+    MAILBOX_LABEL_IDS.DRAFTS,
+    MAILBOX_LABEL_IDS.SENT,
+    MAILBOX_LABEL_IDS.ALL_SENT,
+    MAILBOX_LABEL_IDS.ALL_DRAFTS,
+];
 
 const LocationField = ({ value, onChange }: Props) => {
     const { AlmostAllMail } = useMailModel('MailSettings');
@@ -56,7 +63,9 @@ const LocationField = ({ value, onChange }: Props) => {
                 {showCustomValue ? (
                     <Button
                         className="flex flex-nowrap items-center"
-                        onClick={() => onChange(AlmostAllMail ? ALMOST_ALL_MAIL : ALL_MAIL)}
+                        onClick={() =>
+                            onChange(AlmostAllMail ? MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL : MAILBOX_LABEL_IDS.ALL_MAIL)
+                        }
                         color="norm"
                         shape="solid"
                         size="small"

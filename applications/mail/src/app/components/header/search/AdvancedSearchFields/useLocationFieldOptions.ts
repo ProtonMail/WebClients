@@ -53,22 +53,6 @@ interface UseLocationFieldOptionsReturn {
     isLabel(item: Item): item is ItemLabel;
 }
 
-const {
-    INBOX,
-    TRASH,
-    SPAM,
-    STARRED,
-    ARCHIVE,
-    ALL_MAIL,
-    ALMOST_ALL_MAIL,
-    ALL_SENT,
-    SENT,
-    ALL_DRAFTS,
-    DRAFTS,
-    SCHEDULED,
-    SNOOZED,
-} = MAILBOX_LABEL_IDS;
-
 const getMarginByFolderLvl = (lvl: number) => {
     switch (lvl) {
         case 1:
@@ -111,21 +95,25 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
     const treeview = buildTreeview(folders);
     const { canScheduleSend } = useScheduleSendFeature();
 
-    const DRAFT_TYPE = hasBit(mailSettings.ShowMoved, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS;
-    const SENT_TYPE = hasBit(mailSettings.ShowMoved, SHOW_MOVED.SENT) ? ALL_SENT : SENT;
     const { AlmostAllMail } = mailSettings;
     const folderMap = getStandardFolders();
     const defaultFolders: ItemDefaultFolder[] = [
-        buildFolderOption(folderMap, AlmostAllMail ? ALMOST_ALL_MAIL : ALL_MAIL),
-        buildFolderOption(folderMap, INBOX),
-        buildFolderOption(folderMap, SNOOZED),
-        buildFolderOption(folderMap, DRAFT_TYPE),
-        ...(canScheduleSend ? [buildFolderOption(folderMap, SCHEDULED)] : []),
-        buildFolderOption(folderMap, SENT_TYPE),
-        buildFolderOption(folderMap, STARRED),
-        buildFolderOption(folderMap, ARCHIVE),
-        buildFolderOption(folderMap, SPAM),
-        buildFolderOption(folderMap, TRASH),
+        buildFolderOption(folderMap, AlmostAllMail ? MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL : MAILBOX_LABEL_IDS.ALL_MAIL),
+        buildFolderOption(folderMap, MAILBOX_LABEL_IDS.INBOX),
+        buildFolderOption(folderMap, MAILBOX_LABEL_IDS.SNOOZED),
+        buildFolderOption(
+            folderMap,
+            hasBit(mailSettings.ShowMoved, SHOW_MOVED.DRAFTS) ? MAILBOX_LABEL_IDS.ALL_DRAFTS : MAILBOX_LABEL_IDS.DRAFTS
+        ),
+        ...(canScheduleSend ? [buildFolderOption(folderMap, MAILBOX_LABEL_IDS.SCHEDULED)] : []),
+        buildFolderOption(
+            folderMap,
+            hasBit(mailSettings.ShowMoved, SHOW_MOVED.SENT) ? MAILBOX_LABEL_IDS.ALL_SENT : MAILBOX_LABEL_IDS.SENT
+        ),
+        buildFolderOption(folderMap, MAILBOX_LABEL_IDS.STARRED),
+        buildFolderOption(folderMap, MAILBOX_LABEL_IDS.ARCHIVE),
+        buildFolderOption(folderMap, MAILBOX_LABEL_IDS.SPAM),
+        buildFolderOption(folderMap, MAILBOX_LABEL_IDS.TRASH),
     ];
 
     const customFolders: ItemCustomFolder[] = treeview.reduce(

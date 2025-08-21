@@ -26,23 +26,22 @@ import { getSenders, isMessage as testIsMessage } from '../../helpers/elements';
 import { getFolderName } from '../../helpers/labels';
 import type { Element } from '../../models/element';
 
-const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
 const DEFAULT_FOLDERS: Folder[] = [
     {
-        ID: INBOX,
-        Name: getFolderName(INBOX),
+        ID: MAILBOX_LABEL_IDS.INBOX,
+        Name: getFolderName(MAILBOX_LABEL_IDS.INBOX),
     } as Folder,
     {
-        ID: TRASH,
-        Name: getFolderName(TRASH),
+        ID: MAILBOX_LABEL_IDS.TRASH,
+        Name: getFolderName(MAILBOX_LABEL_IDS.TRASH),
     } as Folder,
     {
-        ID: SPAM,
-        Name: getFolderName(SPAM),
+        ID: MAILBOX_LABEL_IDS.SPAM,
+        Name: getFolderName(MAILBOX_LABEL_IDS.SPAM),
     } as Folder,
     {
-        ID: ARCHIVE,
-        Name: getFolderName(ARCHIVE),
+        ID: MAILBOX_LABEL_IDS.ARCHIVE,
+        Name: getFolderName(MAILBOX_LABEL_IDS.ARCHIVE),
     } as Folder,
 ];
 

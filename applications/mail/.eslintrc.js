@@ -10,6 +10,13 @@ module.exports = {
         'no-console': 'off',
         'no-nested-ternary': 'off',
         '@typescript-eslint/no-misused-promises': 'off',
+        'no-restricted-syntax': [
+            'error',
+            {
+                selector: "VariableDeclarator[id.type='ObjectPattern'][init.name='MAILBOX_LABEL_IDS']",
+                message: 'Destructuring MAILBOX_LABEL_IDS is not allowed. Use MAILBOX_LABEL_IDS.PROPERTY instead.',
+            },
+        ],
     },
     ignorePatterns: ['.eslintrc.js', 'assets/sandbox.js'],
     overrides: [

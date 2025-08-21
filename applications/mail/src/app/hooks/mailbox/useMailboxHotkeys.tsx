@@ -32,8 +32,6 @@ import { useStar } from '../actions/useStar';
 import { useGetElementsFromIDs } from './useElements';
 import { useFolderNavigationHotkeys } from './useFolderNavigationHotkeys';
 
-const { TRASH, SPAM, ARCHIVE, INBOX, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT } = MAILBOX_LABEL_IDS;
-
 export interface MailboxHotkeysContext {
     labelID: string;
     elementID?: string;
@@ -358,7 +356,7 @@ export const useMailboxHotkeys = (
             'A',
             async (e) => {
                 if (Shortcuts) {
-                    await moveElementsTo(e, ARCHIVE);
+                    await moveElementsTo(e, MAILBOX_LABEL_IDS.ARCHIVE);
                 }
             },
         ],
@@ -366,7 +364,7 @@ export const useMailboxHotkeys = (
             'I',
             async (e) => {
                 if (Shortcuts) {
-                    await moveElementsTo(e, INBOX);
+                    await moveElementsTo(e, MAILBOX_LABEL_IDS.INBOX);
                 }
             },
         ],
@@ -374,7 +372,7 @@ export const useMailboxHotkeys = (
             'S',
             async (e) => {
                 if (Shortcuts) {
-                    await moveElementsTo(e, SPAM);
+                    await moveElementsTo(e, MAILBOX_LABEL_IDS.SPAM);
                 }
             },
         ],
@@ -407,14 +405,25 @@ export const useMailboxHotkeys = (
             'T',
             async (e) => {
                 if (Shortcuts) {
-                    await moveElementsTo(e, TRASH);
+                    await moveElementsTo(e, MAILBOX_LABEL_IDS.TRASH);
                 }
             },
         ],
         [
             ['Meta', 'Backspace'],
             async () => {
-                if (Shortcuts && labelIncludes(labelID, DRAFTS, ALL_DRAFTS, SPAM, TRASH, SENT, ALL_SENT)) {
+                if (
+                    Shortcuts &&
+                    labelIncludes(
+                        labelID,
+                        MAILBOX_LABEL_IDS.DRAFTS,
+                        MAILBOX_LABEL_IDS.ALL_DRAFTS,
+                        MAILBOX_LABEL_IDS.SPAM,
+                        MAILBOX_LABEL_IDS.TRASH,
+                        MAILBOX_LABEL_IDS.SENT,
+                        MAILBOX_LABEL_IDS.ALL_SENT
+                    )
+                ) {
                     const elements = getElementsForShortcuts();
                     if (!elements.length) {
                         return;

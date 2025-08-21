@@ -25,35 +25,20 @@ import SnoozeToolbarDropdownStepWrapper, {
 import { type DropdownRender } from '../message/extrasHeader/HeaderDropdown';
 import ToolbarDropdown from './ToolbarDropdown';
 
-const {
-    DRAFTS,
-    ALL_DRAFTS,
-    ALL_MAIL,
-    ALMOST_ALL_MAIL,
-    INBOX,
-    SENT,
-    ALL_SENT,
-    ARCHIVE,
-    STARRED,
-    SCHEDULED,
-    TRASH,
-    SPAM,
-} = MAILBOX_LABEL_IDS;
-
 const canEmpty = (labelID: string, elementIDs: string[], selectedIDs: string[], isSearch: boolean) => {
     return (
         !labelIncludes(
             labelID,
-            INBOX,
-            DRAFTS,
-            ALL_DRAFTS,
-            STARRED,
-            SENT,
-            ALL_SENT,
-            ARCHIVE,
-            ALL_MAIL,
-            ALMOST_ALL_MAIL,
-            SCHEDULED
+            MAILBOX_LABEL_IDS.INBOX,
+            MAILBOX_LABEL_IDS.DRAFTS,
+            MAILBOX_LABEL_IDS.ALL_DRAFTS,
+            MAILBOX_LABEL_IDS.STARRED,
+            MAILBOX_LABEL_IDS.SENT,
+            MAILBOX_LABEL_IDS.ALL_SENT,
+            MAILBOX_LABEL_IDS.ARCHIVE,
+            MAILBOX_LABEL_IDS.ALL_MAIL,
+            MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+            MAILBOX_LABEL_IDS.SCHEDULED
         ) &&
         elementIDs.length > 0 &&
         selectedIDs.length === 0 &&
@@ -104,8 +89,8 @@ const MoreDropdown = ({
     const inMore = {
         move: actions.length > 0 && selectedIDs.length > 0,
         additionalDropdowns: isTiny && selectedIDs.length > 0,
-        moveAllToArchive: canMoveAll(labelID, ARCHIVE, elementIDs, selectedIDs, isSearch),
-        moveAllToTrash: canMoveAll(labelID, TRASH, elementIDs, selectedIDs, isSearch),
+        moveAllToArchive: canMoveAll(labelID, MAILBOX_LABEL_IDS.ARCHIVE, elementIDs, selectedIDs, isSearch),
+        moveAllToTrash: canMoveAll(labelID, MAILBOX_LABEL_IDS.TRASH, elementIDs, selectedIDs, isSearch),
         delete: canEmpty(labelID, elementIDs, selectedIDs, isSearch),
     };
 
@@ -128,7 +113,7 @@ const MoreDropdown = ({
         void moveAllToFolder({
             type: MoveAllType.moveAll,
             sourceLabelID: labelID,
-            destinationLabelID: ARCHIVE,
+            destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
             telemetryEvent: TelemetryMailSelectAllEvents.button_move_to_archive,
             sourceAction: SOURCE_ACTION.MORE_DROPDOWN,
         });
@@ -137,7 +122,7 @@ const MoreDropdown = ({
         void moveAllToFolder({
             type: MoveAllType.moveAll,
             sourceLabelID: labelID,
-            destinationLabelID: TRASH,
+            destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
             telemetryEvent: TelemetryMailSelectAllEvents.button_move_to_trash,
             sourceAction: SOURCE_ACTION.MORE_DROPDOWN,
         });
@@ -147,7 +132,7 @@ const MoreDropdown = ({
         <DropdownMenuButton
             key="context-menu-inbox"
             className="text-left"
-            onClick={() => onMove(INBOX, SOURCE_ACTION.TOOLBAR)}
+            onClick={() => onMove(MAILBOX_LABEL_IDS.INBOX, SOURCE_ACTION.TOOLBAR)}
             data-testid="toolbar:more-dropdown--movetoinbox"
         >
             <Icon name="inbox" className="mr-2" />
@@ -159,7 +144,7 @@ const MoreDropdown = ({
         <DropdownMenuButton
             key="context-menu-nospam"
             className="text-left"
-            onClick={() => onMove(INBOX, SOURCE_ACTION.TOOLBAR)}
+            onClick={() => onMove(MAILBOX_LABEL_IDS.INBOX, SOURCE_ACTION.TOOLBAR)}
             data-testid="toolbar:more-dropdown--movetonospam"
         >
             <Icon name="fire-slash" className="mr-2" />
@@ -171,7 +156,7 @@ const MoreDropdown = ({
         <DropdownMenuButton
             key="context-menu-archive"
             className="text-left"
-            onClick={() => onMove(ARCHIVE, SOURCE_ACTION.TOOLBAR)}
+            onClick={() => onMove(MAILBOX_LABEL_IDS.ARCHIVE, SOURCE_ACTION.TOOLBAR)}
             data-testid="toolbar:more-dropdown--movetonoarchive"
         >
             <Icon name="archive-box" className="mr-2" />
@@ -183,7 +168,7 @@ const MoreDropdown = ({
         <DropdownMenuButton
             key="context-menu-trash"
             className="text-left"
-            onClick={() => onMove(TRASH, SOURCE_ACTION.TOOLBAR)}
+            onClick={() => onMove(MAILBOX_LABEL_IDS.TRASH, SOURCE_ACTION.TOOLBAR)}
             data-testid="toolbar:more-dropdown--movetotrash"
         >
             <Icon name="trash" className="mr-2" />
@@ -195,7 +180,7 @@ const MoreDropdown = ({
         <DropdownMenuButton
             key="context-menu-spam"
             className="text-left"
-            onClick={() => onMove(SPAM, SOURCE_ACTION.TOOLBAR)}
+            onClick={() => onMove(MAILBOX_LABEL_IDS.SPAM, SOURCE_ACTION.TOOLBAR)}
             data-testid="toolbar:more-dropdown--movetospam"
         >
             <Icon name="fire" className="mr-2" />

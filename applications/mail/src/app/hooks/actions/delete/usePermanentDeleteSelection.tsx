@@ -26,8 +26,6 @@ import useOptimisticDelete from '../../optimistic/useOptimisticDelete';
 import { MOVE_BACK_ACTION_TYPES } from '../moveBackAction/interfaces';
 import { useMoveBackAction } from '../moveBackAction/useMoveBackAction';
 
-const { DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
-
 export const getDeleteTitle = (
     isDraft: boolean,
     isConversationMode: boolean,
@@ -162,7 +160,7 @@ export const usePermanentDeleteSelection = (labelID: string) => {
     const [selectedIDs, setSelectedIDs] = useState<string[]>([]);
     const [deleteModalProps, setDeleteModalOpen] = useModalState();
 
-    const draft = labelID === DRAFTS || labelID === ALL_DRAFTS;
+    const draft = labelID === MAILBOX_LABEL_IDS.DRAFTS || labelID === MAILBOX_LABEL_IDS.ALL_DRAFTS;
     const selectedItemsCount = useMemo(() => {
         return selectedIDs.length;
     }, [selectedIDs]);
