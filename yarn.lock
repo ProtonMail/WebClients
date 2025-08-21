@@ -8260,7 +8260,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/collect-metrics@workspace:^, @proton/collect-metrics@workspace:utilities/collect-metrics":
+"@proton/collect-metrics@workspace:utilities/collect-metrics":
   version: 0.0.0-use.local
   resolution: "@proton/collect-metrics@workspace:utilities/collect-metrics"
   dependencies:
@@ -8863,7 +8863,6 @@ __metadata:
     "@babel/preset-typescript": "npm:^7.27.1"
     "@babel/runtime": "npm:^7.28.3"
     "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.6.1"
-    "@proton/collect-metrics": "workspace:^"
     "@sentry/webpack-plugin": "npm:^1.21.0"
     "@swc/core": "npm:^1.13.3"
     autoprefixer: "npm:^10.4.21"
@@ -8905,6 +8904,11 @@ __metadata:
     webpack-dev-server: "npm:^5.2.2"
     webpack-retry-chunk-load-plugin: "npm:^3.1.1"
     webpack-subresource-integrity: "npm:^5.1.0"
+  peerDependencies:
+    "@proton/collect-metrics": "workspace:^"
+  peerDependenciesMeta:
+    "@proton/collect-metrics":
+      optional: true
   bin:
     proton-pack: ./bin/protonPack.js
   languageName: unknown
