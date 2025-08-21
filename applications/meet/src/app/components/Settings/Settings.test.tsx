@@ -16,8 +16,8 @@ vi.mock('../../hooks/useLocalParticipantResolution', () => ({
 }));
 
 const mockContextValues = {
-    selfView: true,
-    setSelfView: vi.fn(),
+    disableVideos: false,
+    setDisableVideos: vi.fn(),
 };
 
 const mockUIStateContextValues = {
@@ -65,26 +65,23 @@ describe('Settings', () => {
             </Wrapper>
         );
 
-        expect(screen.getByText('Dark Mode')).toBeInTheDocument();
-        expect(screen.getByText('Hide self view')).toBeInTheDocument();
-        expect(screen.getByText('Show meeting timer')).toBeInTheDocument();
-        expect(screen.getByText('Desktop notifications')).toBeInTheDocument();
+        expect(screen.getByText('Hide participant videos')).toBeInTheDocument();
     });
 
-    it('should allow for toggling the self view', async () => {
-        const setSelfView = vi.fn();
+    it('should allow for toggling the disable videos', async () => {
+        const setDisableVideos = vi.fn();
 
         render(
-            <Wrapper contextValue={{ setSelfView }}>
+            <Wrapper contextValue={{ setDisableVideos }}>
                 <Settings />
             </Wrapper>
         );
 
         const user = userEvent.setup();
 
-        const hideSelfViewCheckbox = screen.getByRole('checkbox', { name: 'Hide self view' });
-        await user.click(hideSelfViewCheckbox);
+        const hideParticipantVideosCheckbox = screen.getByRole('checkbox', { name: 'Hide participant videos' });
+        await user.click(hideParticipantVideosCheckbox);
 
-        expect(setSelfView).toHaveBeenCalledWith(!mockContextValues.selfView);
+        expect(setDisableVideos).toHaveBeenCalledWith(!mockContextValues.disableVideos);
     });
 });

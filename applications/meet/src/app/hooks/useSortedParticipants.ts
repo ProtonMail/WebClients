@@ -5,15 +5,7 @@ import type { LocalParticipant, RemoteParticipant } from '@proton-meet/livekit-c
 
 import { useDebouncedActiveSpeakers } from './useDebouncedActiveSpeakers';
 
-export const useSortedParticipants = ({
-    page,
-    pageSize,
-    selfView,
-}: {
-    page: number;
-    pageSize: number;
-    selfView: boolean;
-}) => {
+export const useSortedParticipants = ({ page, pageSize }: { page: number; pageSize: number }) => {
     const participants = useParticipants();
 
     const activeSpeakers = useDebouncedActiveSpeakers();
@@ -39,17 +31,11 @@ export const useSortedParticipants = ({
                 }) as RemoteParticipant | LocalParticipant
         );
 
-        const filteredParticipants = participantsWithDisplayColors.filter((participant) =>
-            selfView ? true : participants.length === 1 || participant.identity !== localParticipant.identity
-        );
-
         const start = page * pageSize;
 
-        const local = participants.find(
-            (participant) => participant.identity === localIdentity && (selfView || participants.length === 1)
-        ) as LocalParticipant;
+        const local = participants.find((participant) => participant.identity === localIdentity) as LocalParticipant;
 
-        const speakingButNotOnFirstPage = filteredParticipants.filter(
+        const speakingButNotOnFirstPage = participantsWithDisplayColors.filter(
             (participant) =>
                 participant.identity !== localIdentity &&
                 activeIdentities.has(participant.identity) &&
@@ -63,7 +49,7 @@ export const useSortedParticipants = ({
             );
         });
 
-        const restOfParticipants = filteredParticipants.filter(
+        const restOfParticipants = participantsWithDisplayColors.filter(
             (participant) =>
                 participant.identity !== localIdentity &&
                 !activeIdentities.has(participant.identity) &&
@@ -71,7 +57,7 @@ export const useSortedParticipants = ({
         );
 
         const sortingResult = [
-            ...(selfView || participants.length === 1 ? [local] : []),
+            local,
             ...speakingButNotOnFirstPage,
             ...validPrevFirstPageParticipants,
             ...restOfParticipants,
@@ -86,7 +72,7 @@ export const useSortedParticipants = ({
             sortedParticipants: sortingResult,
             pagedParticipants,
         };
-    }, [participants, activeSpeakers, localIdentity, selfView, localParticipant, page, pageSize]);
+    }, [participants, activeSpeakers, localIdentity, localParticipant, page, pageSize]);
 
     return { sortedParticipants, pagedParticipants, pageCount: Math.ceil(sortedParticipants.length / pageSize) };
 };

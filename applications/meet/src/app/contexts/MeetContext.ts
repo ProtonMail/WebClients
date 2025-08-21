@@ -25,8 +25,6 @@ export interface MeetContextValues {
     setChatMessages: React.Dispatch<React.SetStateAction<MeetChatMessage[]>>;
     participantEvents: ParticipantEventRecord[];
     setParticipantEvents: React.Dispatch<React.SetStateAction<ParticipantEventRecord[]>>;
-    selfView: boolean;
-    setSelfView: (selfView: boolean) => void;
     pageSize: number;
     setPageSize: (pageSize: number) => void;
     handleLeave: () => void;
@@ -67,8 +65,6 @@ export const MeetContext = createContext<MeetContextValues>({
     setChatMessages: () => {},
     participantEvents: [],
     setParticipantEvents: () => {},
-    selfView: true,
-    setSelfView: () => {},
     pageSize: PAGE_SIZE,
     setPageSize: () => {},
     handleLeave: () => {},

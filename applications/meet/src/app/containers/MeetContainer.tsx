@@ -63,7 +63,6 @@ export const MeetContainer = ({
     const [chatMessages, setChatMessages] = useState<MeetChatMessage[]>([]);
     const [participantEvents, setParticipantEvents] = useState<ParticipantEventRecord[]>([]);
 
-    const [selfView, setSelfView] = useState(true);
     const [disableVideos, setDisableVideos] = useState(false);
 
     const faceTrack = useFaceTrackingSetup({ isFaceTrackingEnabled, videoDeviceId });
@@ -73,7 +72,6 @@ export const MeetContainer = ({
     const { sortedParticipants, pagedParticipants, pageCount } = useSortedParticipants({
         page,
         pageSize,
-        selfView,
     });
 
     const setIsVideoEnabled = useCallback(
@@ -108,8 +106,6 @@ export const MeetContainer = ({
                     setChatMessages,
                     participantEvents,
                     setParticipantEvents,
-                    selfView,
-                    setSelfView,
                     pageSize,
                     setPageSize,
                     handleLeave,
