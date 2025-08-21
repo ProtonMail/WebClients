@@ -7,10 +7,6 @@ import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import type { InvitationModel } from './invite';
 import { UPDATE_ACTION } from './invite';
 
-const { REPLY, COUNTER, REFRESH, REQUEST, CANCEL, ADD } = ICAL_METHOD;
-const { ACCEPTED, TENTATIVE, DECLINED } = ICAL_ATTENDEE_STATUS;
-const { KEEP_PARTSTAT, RESET_PARTSTAT } = UPDATE_ACTION;
-
 export const getHasBeenUpdatedText = (model: RequireSome<InvitationModel, 'invitationIcs'>) => {
     const { invitationIcs, invitationApi, isOutdated, isFromFuture, updateAction } = model;
     const { method } = invitationIcs;
@@ -19,11 +15,16 @@ export const getHasBeenUpdatedText = (model: RequireSome<InvitationModel, 'invit
         return;
     }
 
-    if (method === REPLY && invitationApi && invitationIcs.attendee?.partstat && isOutdated) {
+    if (method === ICAL_METHOD.REPLY && invitationApi && invitationIcs.attendee?.partstat && isOutdated) {
         return c('Calendar invite info').t`This response is out of date.`;
     }
 
-    if (method === REQUEST && !isOutdated && updateAction && [KEEP_PARTSTAT, RESET_PARTSTAT].includes(updateAction)) {
+    if (
+        method === ICAL_METHOD.REQUEST &&
+        !isOutdated &&
+        updateAction &&
+        [UPDATE_ACTION.KEEP_PARTSTAT, UPDATE_ACTION.RESET_PARTSTAT].includes(updateAction)
+    ) {
         return c('Calendar invite info').t`This event has been updated.`;
     }
 };
@@ -44,7 +45,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
         return null;
     }
 
-    if (method === REPLY) {
+    if (method === ICAL_METHOD.REPLY) {
         if (!attendeeIcs.partstat) {
             return null;
         }
@@ -59,7 +60,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
 
             if (hasDecryptionError) {
                 // the event exists in the calendar but we couldn't decrypt it
-                if (partstat === ACCEPTED) {
+                if (partstat === ICAL_ATTENDEE_STATUS.ACCEPTED) {
                     if (isPartyCrasher) {
                         return c('Calendar invite info').t`${participantName} accepted an invitation to this event.`;
                     }
@@ -67,7 +68,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
                     return c('Calendar invite info').t`${participantName} accepted your invitation.`;
                 }
 
-                if (partstat === DECLINED) {
+                if (partstat === ICAL_ATTENDEE_STATUS.DECLINED) {
                     if (isPartyCrasher) {
                         return c('Calendar invite info').t`${participantName} declined an invitation to this event.`;
                     }
@@ -75,7 +76,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
                     return c('Calendar invite info').t`${participantName} declined your invitation.`;
                 }
 
-                if (partstat === TENTATIVE) {
+                if (partstat === ICAL_ATTENDEE_STATUS.TENTATIVE) {
                     if (isPartyCrasher) {
                         return c('Calendar invite info')
                             .t`${participantName} tentatively accepted an invitation to this event.`;
@@ -95,7 +96,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
         }
 
         if (isOutdated) {
-            if (partstat === ACCEPTED) {
+            if (partstat === ICAL_ATTENDEE_STATUS.ACCEPTED) {
                 if (isSingleEdit) {
                     if (isPartyCrasher) {
                         return c('Calendar invite info')
@@ -113,7 +114,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
                 return c('Calendar invite info').t`${participantName} had previously accepted your invitation.`;
             }
 
-            if (partstat === DECLINED) {
+            if (partstat === ICAL_ATTENDEE_STATUS.DECLINED) {
                 if (isSingleEdit) {
                     if (isPartyCrasher) {
                         return c('Calendar invite info')
@@ -131,7 +132,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
                 return c('Calendar invite info').t`${participantName} had previously declined your invitation.`;
             }
 
-            if (partstat === TENTATIVE) {
+            if (partstat === ICAL_ATTENDEE_STATUS.TENTATIVE) {
                 if (isSingleEdit) {
                     if (isPartyCrasher) {
                         return c('Calendar invite info')
@@ -152,7 +153,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
             }
         }
 
-        if (partstat === ACCEPTED) {
+        if (partstat === ICAL_ATTENDEE_STATUS.ACCEPTED) {
             if (isSingleEdit) {
                 if (isPartyCrasher) {
                     return c('Calendar invite info')
@@ -170,7 +171,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
             return c('Calendar invite info').t`${participantName} accepted your invitation.`;
         }
 
-        if (partstat === DECLINED) {
+        if (partstat === ICAL_ATTENDEE_STATUS.DECLINED) {
             if (isSingleEdit) {
                 if (isPartyCrasher) {
                     return c('Calendar invite info')
@@ -188,7 +189,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
             return c('Calendar invite info').t`${participantName} declined your invitation.`;
         }
 
-        if (partstat === TENTATIVE) {
+        if (partstat === ICAL_ATTENDEE_STATUS.TENTATIVE) {
             if (isSingleEdit) {
                 if (isPartyCrasher) {
                     return c('Calendar invite info')
@@ -208,7 +209,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
         }
     }
 
-    if (method === COUNTER) {
+    if (method === ICAL_METHOD.COUNTER) {
         // due to a scope problem with ttag (https://github.com/ttag-org/ttag-cli/issues/99),
         // we need to introduce an artificial return here
         return (() => {
@@ -227,7 +228,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
 
                 if (hasDecryptionError) {
                     // the event exists in the calendar but we couldn't decrypt it
-                    if (partstat === ACCEPTED) {
+                    if (partstat === ICAL_ATTENDEE_STATUS.ACCEPTED) {
                         if (isSingleEdit) {
                             if (isPartyCrasher) {
                                 return c('Calendar invite info')
@@ -247,7 +248,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
                             .t`${participantName} accepted your invitation and proposed a new time for this event.`;
                     }
 
-                    if (partstat === DECLINED) {
+                    if (partstat === ICAL_ATTENDEE_STATUS.DECLINED) {
                         if (isSingleEdit) {
                             if (isPartyCrasher) {
                                 return c('Calendar invite info')
@@ -267,7 +268,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
                             .t`${participantName} declined your invitation and proposed a new time for this event.`;
                     }
 
-                    if (partstat === TENTATIVE) {
+                    if (partstat === ICAL_ATTENDEE_STATUS.TENTATIVE) {
                         if (isSingleEdit) {
                             if (isPartyCrasher) {
                                 return c('Calendar invite info')
@@ -310,7 +311,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
             }
 
             if (isOutdated) {
-                if (partstat === ACCEPTED) {
+                if (partstat === ICAL_ATTENDEE_STATUS.ACCEPTED) {
                     if (isSingleEdit) {
                         if (isPartyCrasher) {
                             return c('Calendar invite info')
@@ -330,7 +331,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
                         .t`${participantName} had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.`;
                 }
 
-                if (partstat === DECLINED) {
+                if (partstat === ICAL_ATTENDEE_STATUS.DECLINED) {
                     if (isSingleEdit) {
                         if (isPartyCrasher) {
                             return c('Calendar invite info')
@@ -349,7 +350,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
                         .t`${participantName} had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.`;
                 }
 
-                if (partstat === TENTATIVE) {
+                if (partstat === ICAL_ATTENDEE_STATUS.TENTATIVE) {
                     if (isSingleEdit) {
                         if (isPartyCrasher) {
                             return c('Calendar invite info')
@@ -377,7 +378,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
                     .t`${participantName} had proposed a new time for this event. This proposal is out of date.`;
             }
 
-            if (partstat === ACCEPTED) {
+            if (partstat === ICAL_ATTENDEE_STATUS.ACCEPTED) {
                 if (isSingleEdit) {
                     if (isPartyCrasher) {
                         return c('Calendar invite info')
@@ -397,7 +398,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
                     .t`${participantName} accepted your invitation and proposed a new time for this event.`;
             }
 
-            if (partstat === DECLINED) {
+            if (partstat === ICAL_ATTENDEE_STATUS.DECLINED) {
                 if (isSingleEdit) {
                     if (isPartyCrasher) {
                         return c('Calendar invite info')
@@ -417,7 +418,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
                     .t`${participantName} declined your invitation and proposed a new time for this event.`;
             }
 
-            if (partstat === TENTATIVE) {
+            if (partstat === ICAL_ATTENDEE_STATUS.TENTATIVE) {
                 if (isSingleEdit) {
                     if (isPartyCrasher) {
                         return c('Calendar invite info')
@@ -446,7 +447,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
         })();
     }
 
-    if (method === REFRESH) {
+    if (method === ICAL_METHOD.REFRESH) {
         // due to a scope problem with ttag (https://github.com/ttag-org/ttag-cli/issues/99),
         // we need to introduce an artificial return here
         return (() => {
@@ -483,7 +484,7 @@ export const getAttendeeSummaryText = (model: RequireSome<InvitationModel, 'invi
     const { method, attendee: attendeeIcs } = invitationIcs;
     const { vevent: veventApi, attendee: attendeeApi } = invitationApi || {};
 
-    if (method === REQUEST) {
+    if (method === ICAL_METHOD.REQUEST) {
         if (!veventApi) {
             return null;
         }
@@ -501,24 +502,24 @@ export const getAttendeeSummaryText = (model: RequireSome<InvitationModel, 'invi
             return null;
         }
 
-        if (partstat === ACCEPTED) {
+        if (partstat === ICAL_ATTENDEE_STATUS.ACCEPTED) {
             return c('Calendar invite info').t`You already accepted this invitation.`;
         }
 
-        if (partstat === TENTATIVE) {
+        if (partstat === ICAL_ATTENDEE_STATUS.TENTATIVE) {
             return c('Calendar invite info').t`You already tentatively accepted this invitation.`;
         }
 
-        if (partstat === DECLINED) {
+        if (partstat === ICAL_ATTENDEE_STATUS.DECLINED) {
             return c('Calendar invite info').t`You already declined this invitation.`;
         }
     }
 
-    if (method === CANCEL) {
+    if (method === ICAL_METHOD.CANCEL) {
         return c('Calendar invite info').t`This event has been canceled.`;
     }
 
-    if (method === ADD) {
+    if (method === ICAL_METHOD.ADD) {
         if (!veventApi) {
             return c('Calendar invite info').t`This invitation is out of date. The event has been deleted.`;
         }
