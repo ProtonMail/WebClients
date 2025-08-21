@@ -55,8 +55,6 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         MeetingDecryptionReadinessStatus.UNINITIALIZED
     );
 
-    const [currentEpoch, setCurrentEpoch] = useState<number | null>(null);
-    const [currentKey, setCurrentKey] = useState<string | null>(null);
     const currentKeyRef = useRef<string | null>(null);
 
     const [password, setPassword] = useState('');
@@ -127,8 +125,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
     const getGroupKeyInfo = async () => {
         try {
             const newGroupKeyInfo = (await wasmAppRef.current?.getGroupKey()) as GroupKeyInfo;
-            setCurrentKey(newGroupKeyInfo.key);
-            setCurrentEpoch(Number(newGroupKeyInfo.epoch));
+            currentKeyRef.current = newGroupKeyInfo.key;
             return { key: newGroupKeyInfo.key, epoch: newGroupKeyInfo.epoch };
         } catch (err: any) {
             console.error('Error while calling getGroupKeyInfo');
@@ -178,8 +175,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
             await wasmAppRef.current.setMlsGroupUpdateHandler();
 
             const groupKeyData = await wasmAppRef.current.getGroupKey();
-            setCurrentKey(groupKeyData.key);
-            setCurrentEpoch(Number(groupKeyData.epoch));
+
+            currentKeyRef.current = groupKeyData.key;
 
             startHealthCheck.current = true;
 
@@ -214,10 +211,6 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
     }, []);
 
     useEffect(() => {
-        currentKeyRef.current = currentKey;
-    }, [currentKey]);
-
-    useEffect(() => {
         const intervalId = setInterval(async () => {
             if (wasmAppRef.current && startHealthCheck.current) {
                 try {
@@ -227,8 +220,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                         console.info('MLSgroup updated, update to align the latest status.');
 
                         await onNewGroupKeyInfo(groupKeyData.key, groupKeyData.epoch);
-                        setCurrentKey(groupKeyData.key);
-                        setCurrentEpoch(Number(groupKeyData.epoch));
+                        currentKeyRef.current = groupKeyData.key;
                     }
                 } catch (error) {
                     console.error('Failed to check groupKey:', error);
@@ -561,8 +553,6 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                                 setParticipantSettings={setParticipantSettings}
                                 shareLink={shareLink}
                                 roomName={meetingDetails.meetingName as string}
-                                currentEpoch={currentEpoch}
-                                currentKey={currentKey}
                                 participantNameMap={participantNameMap}
                                 participantsMap={participantsMap}
                                 getParticipants={() => getParticipants(meetingDetails.meetingId as string)}
