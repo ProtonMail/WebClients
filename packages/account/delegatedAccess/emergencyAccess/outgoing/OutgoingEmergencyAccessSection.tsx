@@ -20,6 +20,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import { ContactCell } from '../ContactCell';
 import { getFormattedAccessibleAtDate, getFormattedRemainingDays, getFormattedTriggerDelay } from '../date';
 import { type OutgoingController, useOutgoingController } from './OutgoingController';
+import OutgoingEmergencyAccessBanners from './OutgoingEmergencyAccessBanners';
 import { getMetaOutgoingDelegatedAccess } from './helper';
 import type { MetaIncomingDelegatedAccess } from './interface';
 
@@ -209,6 +210,7 @@ export const OutgoingEmergencyAccessSection = () => {
 
     return (
         <>
+            <OutgoingEmergencyAccessBanners />
             <div className="text-semibold text-xl mb-3">{c('emergency_access').t`People I trust`}</div>
             <SettingsParagraph>
                 {c('emergency_access').t`They may ask to access my account in case of an emergency.`}

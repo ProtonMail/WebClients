@@ -5,9 +5,10 @@ import { Href } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Time from '@proton/components/components/time/Time';
 import { REACTIVATE_SOURCE } from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
+import { getReactivateSubscriptionAction } from '@proton/components/containers/payments/subscription/helpers/subscriptionExpires';
 import useConfig from '@proton/components/hooks/useConfig';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
-import { SubscriptionPlatform, isManagedExternally } from '@proton/payments';
+import { SubscriptionPlatform } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -38,13 +39,15 @@ const SubscriptionEndsBanner = ({ app }: { app: APP_NAMES }) => {
         </Time>
     );
 
-    if (isManagedExternally(subscription)) {
-        if (subscription.External === SubscriptionPlatform.Android) {
+    const reactivateLinkData = getReactivateSubscriptionAction(subscription, REACTIVATE_SOURCE.banners);
+
+    if (reactivateLinkData.type === 'external') {
+        if (reactivateLinkData.platform === SubscriptionPlatform.Android) {
             const reactivateLink = (
                 <Href
                     key="reactivate-subscription"
                     className="color-inherit"
-                    href="https://play.google.com/store/account/subscriptions"
+                    href={reactivateLinkData.href}
                     target="_blank"
                 >
                     {
@@ -64,12 +67,12 @@ const SubscriptionEndsBanner = ({ app }: { app: APP_NAMES }) => {
             );
         }
 
-        if (subscription.External === SubscriptionPlatform.iOS) {
+        if (reactivateLinkData.platform === SubscriptionPlatform.iOS) {
             const reactivateLink = (
                 <Href
                     key="reactivate-subscription"
                     className="color-inherit"
-                    href="https://apps.apple.com/account/subscriptions"
+                    href={reactivateLinkData.href}
                     target="_blank"
                 >
                     {
@@ -88,6 +91,8 @@ const SubscriptionEndsBanner = ({ app }: { app: APP_NAMES }) => {
                 </TopBanner>
             );
         }
+
+        return null;
     }
 
     const reactivateLink = (
@@ -95,7 +100,7 @@ const SubscriptionEndsBanner = ({ app }: { app: APP_NAMES }) => {
             data-testid="reactivate-link"
             key="reactivate-subscription"
             className="color-inherit"
-            path={`/dashboard?source=${REACTIVATE_SOURCE.banners}#your-subscriptions`}
+            path={reactivateLinkData.path}
         >{c('Link').t`Reactivate now`}</SettingsLink>
     );
 

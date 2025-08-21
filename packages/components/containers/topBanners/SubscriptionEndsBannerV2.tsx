@@ -1,10 +1,14 @@
-import { differenceInDays, fromUnixTime } from 'date-fns';
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { Banner, ButtonLike } from '@proton/atoms';
+import { Banner, ButtonLike, Href } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { REACTIVATE_SOURCE } from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
+import {
+    getReactivateSubscriptionAction,
+    getSubscriptionExpiresDaysLeft,
+    getSubscriptionExpiresText,
+} from '@proton/components/containers/payments/subscription/helpers/subscriptionExpires';
 import useConfig from '@proton/components/hooks/useConfig';
 import { hasDeprecatedVPN } from '@proton/payments';
 import { hasVPN2024 } from '@proton/payments';
@@ -27,15 +31,8 @@ const SubscriptionEndsBannerV2 = ({ app }: { app: APP_NAMES }) => {
         return null;
     }
 
-    const daysLeft = differenceInDays(fromUnixTime(expirationDate), new Date());
-
-    const daysLeftPluralString = c('Info').ngettext(
-        msgid`${planName} expires in ${daysLeft} day.`,
-        `${planName} expires in ${daysLeft} days.`,
-        daysLeft
-    );
-
-    const daysLeftString = daysLeft > 0 ? daysLeftPluralString : c('Info').t`${planName} expires today.`;
+    const daysLeft = getSubscriptionExpiresDaysLeft(expirationDate, new Date());
+    const daysLeftString = getSubscriptionExpiresText(planName, daysLeft);
 
     const urgent = daysLeft < 10;
 
@@ -54,16 +51,28 @@ const SubscriptionEndsBannerV2 = ({ app }: { app: APP_NAMES }) => {
         }
     };
 
-    const reactivateLink = (
-        <ButtonLike
-            as={SettingsLink}
-            color="danger"
-            size="small"
-            data-testid="reactivate-link"
-            key="reactivate-subscription"
-            path={`/subscription?source=${REACTIVATE_SOURCE.banners}#your-subscriptions`}
-        >{c('Link').t`Reactivate now`}</ButtonLike>
-    );
+    const reactivateLinkData = getReactivateSubscriptionAction(subscription, REACTIVATE_SOURCE.banners);
+
+    const reactivateLink =
+        reactivateLinkData.type === 'internal' ? (
+            <ButtonLike
+                as={SettingsLink}
+                color="danger"
+                size="small"
+                data-testid="reactivate-link"
+                key="reactivate-subscription-internal"
+                path={reactivateLinkData.path}
+            >{c('Link').t`Reactivate now`}</ButtonLike>
+        ) : (
+            <ButtonLike
+                as={Href}
+                color="danger"
+                data-testid="reactivate-link"
+                key="reactivate-subscription-external"
+                href={reactivateLinkData.href}
+                target="_blank"
+            >{c('Link').t`Reactivate now`}</ButtonLike>
+        );
 
     return (
         <Banner variant={urgent ? 'danger-outline' : undefined} action={reactivateLink}>
