@@ -162,6 +162,9 @@
       "Choose a file or drag it here": [
         "Datei auswählen oder hierhinein ziehen"
       ],
+      "Claim this address": [
+        "Diese Adresse beanspruchen"
+      ],
       "Clear": [
         "Löschen"
       ],
@@ -469,6 +472,9 @@
       ],
       "Get ${ planOrAppName }": [
         "${ planOrAppName } holen"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Hole dir eine kostenlose ${ BRAND_NAME }-Adresse"
       ],
       "Get in touch": [
         "Kontakt aufnehmen"
@@ -3205,6 +3211,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Mindestbetrag unterschritten (${ minimumAmount })."
       ],
+      "An error occurred": [
+        "Ein Fehler ist aufgetreten"
+      ],
       "An error occurred while loading alias options": [
         "Beim Laden der Alias-Optionen ist ein Fehler aufgetreten"
       ],
@@ -3664,6 +3673,9 @@
       ],
       "Unknown location": [
         "Unbekannter Ort"
+      ],
+      "Unknown number of downloads": [
+        "Unbekannte Anzahl an Downloads"
       ],
       "Unknown payment token status": [
         "Unbekannter Status des Zahlungstoken"
@@ -4629,6 +4641,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s Verschlüsselungstechnologie bedeutet, dass keiner Zugriff auf dein Passwort hat - nicht einmal wir."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } braucht eine ${ BRAND_NAME }-Adresse für sichere Termin-Synchronisierung und Verschlüsselung. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } benötigt eine ${ BRAND_NAME }-Adresse für die sichere Termin-Synchronisierung und Verschlüsselung. Hol dir jetzt deine kostenlose ${ MAIL_APP_NAME }-Adresse."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } neuer Kalender",
         "${ calendarsToBeCreatedCount } neue Kalender"
@@ -5192,6 +5210,9 @@
       ],
       "End-to-end encrypted": [
         "Ende-zu-Ende-verschlüsselt"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Sorge für vollständig private und verschlüsselte Kommunikation. Sichere dir jetzt deine kostenlose ${ BRAND_NAME }-E-Mail-Adresse."
       ],
       "Enter password": [
         "Passwort eingeben"
@@ -7237,6 +7258,9 @@
       ],
       "Uploaded by": [
         "Hochgeladen von"
+      ],
+      "Username": [
+        "Benutzername"
       ],
       "VAT": [
         "MwSt."
@@ -11417,6 +11441,9 @@
       "Check for malicious files": [
         "Auf bösartige Dateien untersuchen"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Deine ${ MAIL_APP_NAME }-Adresse beanspruchen"
+      ],
       "Clearing data": [
         "Daten werden gelöscht"
       ],
@@ -11676,6 +11703,9 @@
         "${ searchView.numberOfResults } Ergebnis gefunden",
         "${ searchView.numberOfResults } Ergebnisse gefunden"
       ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Erhalte vollen Zugang zu ${ CALENDAR_APP_NAME }"
+      ],
       "Get more from your VPN": [
         "Hole mehr aus deinem VPN heraus"
       ],
@@ -11847,6 +11877,9 @@
       ],
       "Notes": [
         "Notizen"
+      ],
+      "Number of downloads": [
+        "Anzahl Downloads"
       ],
       "Number of items": [
         "Anzahl der Elemente"

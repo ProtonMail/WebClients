@@ -162,6 +162,9 @@
       "Choose a file or drag it here": [
         "Επιλέξτε ένα αρχείο ή σύρετέ το εδώ"
       ],
+      "Claim this address": [
+        "Διεκδικήστε αυτή τη διεύθυνση"
+      ],
       "Clear": [
         "Καθαρισμός"
       ],
@@ -469,6 +472,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Αποκτήστε το ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Αποκτήστε μια δωρεάν ${ BRAND_NAME } διεύθυνση"
       ],
       "Get in touch": [
         "Επικοινωνήστε"
@@ -3177,6 +3183,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Ποσό χαμηλότερο από το ελάχιστο. (${ minimumAmount })."
       ],
+      "An error occurred": [
+        "Παρουσιάστηκε σφάλμα"
+      ],
       "An error occurred while loading alias options": [
         "Παρουσιάστηκε σφάλμα κατά τη φόρτωση επιλογών ψευδωνύμου"
       ],
@@ -3636,6 +3645,9 @@
       ],
       "Unknown location": [
         "Άγνωστη τοποθεσία"
+      ],
+      "Unknown number of downloads": [
+        "Άγνωστος αριθμός λήψεων"
       ],
       "Unknown payment token status": [
         "Άγνωστη κατάσταση πληρωμής"
@@ -4604,6 +4616,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Η τεχνολογία κρυπτογράφησης του ${ BRAND_NAME } σημαίνει ότι κανείς δεν μπορεί να έχει πρόσβαση στον κωδικό πρόσβασής σας - ούτε καν εμείς."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "Το ${ CALENDAR_APP_NAME } απαιτεί μια διεύθυνση ${ BRAND_NAME } για ασφαλή συγχρονισμό και κρυπτογράφηση εκδηλώσεων. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "Το ${ CALENDAR_APP_NAME } απαιτεί μια διεύθυνση ${ BRAND_NAME } για ασφαλή συγχρονισμό γεγονότων και κρυπτογράφηση. Αποκτήστε τη δωρεάν ${ MAIL_APP_NAME } διεύθυνση σας τώρα."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } νέο ημερολόγιο",
         "${ calendarsToBeCreatedCount } νέα ημερολόγια"
@@ -5167,6 +5185,9 @@
       ],
       "End-to-end encrypted": [
         "Διατερματικά κρυπτογραφημένο"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Διασφαλίστε πλήρως ιδιωτική και κρυπτογραφημένη επικοινωνία. Αποκτήστε επίσης τώρα τη δωρεάν ${ BRAND_NAME } ηλεκτρονική διεύθυνση σας."
       ],
       "Enter password": [
         "Εισάγετε κωδικό πρόσβασης"
@@ -7215,6 +7236,9 @@
       ],
       "Uploaded by": [
         "Ανέβηκε από"
+      ],
+      "Username": [
+        "Όνομα Χρήστη"
       ],
       "VAT": [
         "ΦΠΑ"
@@ -11344,6 +11368,9 @@
       "Check for malicious files": [
         "Ελέγξτε για κακόβουλα αρχεία"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Δημιουργήστε τη ${ MAIL_APP_NAME } διεύθυνσή σας"
+      ],
       "Clearing data": [
         "Εκκαθάριση δεδομένων"
       ],
@@ -11603,6 +11630,9 @@
         "Βρέθηκε ${ searchView.numberOfResults } αποτέλεσμα",
         "Βρέθηκαν ${ searchView.numberOfResults } αποτελέσματα"
       ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Αποκτήστε πλήρη πρόσβαση στο ${ CALENDAR_APP_NAME }"
+      ],
       "Get more from your VPN": [
         "Αποκτήστε περισσότερα από το VPN σας."
       ],
@@ -11774,6 +11804,9 @@
       ],
       "Notes": [
         "Σημειώσεις"
+      ],
+      "Number of downloads": [
+        "Αριθμός λήψεων"
       ],
       "Number of items": [
         "Πλήθος αντικειμένων"
