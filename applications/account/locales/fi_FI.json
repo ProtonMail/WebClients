@@ -292,9 +292,6 @@
       "Connect to video conferencing": [
         "Yhdistä videoneuvotteluun"
       ],
-      "Connect your Gmail address": [
-        "Yhdistä Gmail-osoitteesi"
-      ],
       "Connected": [
         "Yhdistetty"
       ],
@@ -4973,6 +4970,9 @@
       "Only ": [
         "Vain "
       ],
+      "Trusted contact": [
+        "Luotettu yhteyshenkilö"
+      ],
       "Upgrade to ${ planName }": [
         "Päivitä tilaukseen ${ planName }"
       ],
@@ -9470,6 +9470,12 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Tilaus päättyy pian: uudelleenaktivoi ${ byDate } mennessä säilyttääksesi ${ planName }-etusi. ${ reactivateLink }"
       ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Tilaus päättyy: Jotta ${ planName } -etusi säilyvät, käynnistä tilauksesi uudelleen Apple App Storessa viimeistään ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Tilaus päättyy: Jotta ${ planName } -etusi säilyvät, käynnistä tilauksesi uudelleen Google Play Kaupassa viimeistään ${ byDate }. ${ reactivateLink }"
+      ],
       "Summary": [
         "Yhteenveto"
       ],
@@ -10384,6 +10390,9 @@
         "Ilmainen kokeilujaksosi sisältää ${ ownedCount } oman palvelimen.",
         "Ilmainen kokeilujaksosi sisältää ${ ownedCount } omaa palvelinta."
       ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Ilmainen kokeilujaksosi muunnettiin onnistuneesti ${ cycle } kuukauden tilaukseksi. Uusimispäivämääräsi on ${ nextBillingDate }."
+      ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Tuonti tililtä ${ accounts } on tilapäisesti viivästynyt.",
         "Tuonnit tileiltä ${ accounts } ovat tilapäisesti viivästyneet."
@@ -10439,6 +10448,9 @@
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Voit lisätä nämä palvelimet toiseen yhdyskäytävään välittömästi."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
       ],
       "You’re all set": [
         "Kaikki on kunnossa"
@@ -12432,6 +12444,9 @@
       ],
       "Request an invite": [
         "Pyydä kutsu"
+      ],
+      "Resume now": [
+        "Jatka nyt"
       ],
       "Set email address": [
         "Aseta sähköpostiosoite"
@@ -17369,6 +17384,9 @@
       ]
     },
     "specialoffer: Title": {
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Pidä salasanasi turvassa ja järjestettynä useissa holveissa "
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Päivitä tilauksesi ja säästä enemmän kahden vuoden ${ planName } -tilauksella"
       ]

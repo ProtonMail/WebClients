@@ -70,6 +70,9 @@
       "Accept": [
         "Terima"
       ],
+      "Access account": [
+        "Akses akun"
+      ],
       "activate": [
         "aktifkan"
       ],
@@ -300,9 +303,6 @@
       ],
       "Connect to video conferencing": [
         "Hubungkan ke konferensi video"
-      ],
-      "Connect your Gmail address": [
-        "Connect email gmail Anda"
       ],
       "Connected": [
         "Terhubung"
@@ -778,6 +778,9 @@
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
+      "Give access now": [
+        "Berikan akses sekarang"
+      ],
       "Go back": [
         "Kembali"
       ],
@@ -1006,6 +1009,9 @@
       "Open navigation": [
         "Buka navigasi"
       ],
+      "Opt out": [
+        "Undur diri"
+      ],
       "Or": [
         "Atau"
       ],
@@ -1119,6 +1125,9 @@
       ],
       "Request a feature": [
         "Minta fitur"
+      ],
+      "Request access": [
+        "Minta akses"
       ],
       "Request new code": [
         "Minta kode baru"
@@ -1389,6 +1398,9 @@
       ],
       "Stay": [
         "Tinggal"
+      ],
+      "Stop being trusted contact": [
+        "Berhenti menjadi kontak terpercaya"
       ],
       "Stop using single sign-on": [
         "Berhenti gunakan single sign-on"
@@ -2696,6 +2708,9 @@
       ],
       "Advanced account protection": [
         "Perlindungan akun bertingkat lanjut"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Seluruh fitur premium ${ BRAND_NAME } dari ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Batalkan dan turunkan"
@@ -4224,6 +4239,9 @@
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Untuk mengimpor melalui berkas CSV dan VCF, pastikan berkas Anda tidak melebihi batas ukuran ${ MAX_IMPORT_FILE_SIZE_STRING } atau batas jumlah ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda melebihi batas ini, silakan pisahkan berkas Anda ke beberapa berkas yang lebih kecil. ${ learnMoreLink }"
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Untuk mengimpor kontak Anda dari Google atau Outlook, ${ easySwitchLink }."
+      ],
       "To start, give your organization a name.": [
         "Untuk memulai, beri nama organisasi Anda."
       ],
@@ -5135,20 +5153,86 @@
       ]
     },
     "emergency_access": {
+      "${ BRAND_NAME } Account email": [
+        "Email Akun ${ BRAND_NAME }"
+      ],
       "${ n } day": [
         "${ n } hari"
       ],
       "${ n } day left": [
         "${ n } hari tersisa"
       ],
+      "${ user } will be able to use your account and change your data.": [
+        "${ user } akan dapat menggunakan akun Anda dan mengubah data Anda."
+      ],
+      "${ user } will no longer be able to request access to your account in case of emergency.": [
+        "${ user } tidak akan lagi dapat meminta akses ke akun Anda di kala terdapat kejadian darurat."
+      ],
       "Access granted": [
         "Akses diberikan"
+      ],
+      "Access granted on ${ formattedAccessibleAt }": [
+        "Akses diberikan pada ${ formattedAccessibleAt }"
+      ],
+      "Access requested": [
+        "Akses diminta"
+      ],
+      "Access will be granted on ${ formattedAccessibleAt }": [
+        "Akses akan diberikan pada ${ formattedAccessibleAt }"
       ],
       "Add": [
         "Tambahkan"
       ],
+      "Add emergency contact": [
+        "Tambah kontak darurat"
+      ],
+      "Change access wait time": [
+        "Ubah waktu tunggu akses"
+      ],
+      "Change the time that ${ user } will have to wait before automatically giving them access.": [
+        "Ubah seberapa lama ${ user } harus menunggu sebelum mereka secara otomatis diberikan akses."
+      ],
+      "Change wait time": [
+        "Ubah waktu tunggu"
+      ],
+      "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
+        "Pilih seseorang yang Anda percayai dengan data Anda. Mereka harus telah memiliki Akun ${ BRAND_NAME }."
+      ],
       "Disabled": [
         "Dinonaktifkan"
+      ],
+      "Emergency access": [
+        "Akses darurat"
+      ],
+      "Emergency access for ${ user } removed": [
+        "Akses darurat untuk ${ user } dihapus"
+      ],
+      "Emergency access granted": [
+        "Akses darurat diberikan"
+      ],
+      "Emergency access requested": [
+        "Akses darurat diminta"
+      ],
+      "Emergency contact added": [
+        "Kontak darurat ditambahkan"
+      ],
+      "Emergency contact removed": [
+        "Kontak darurat dihapus"
+      ],
+      "Give access now": [
+        "Berikan akses sekarang"
+      ],
+      "Give immediate access?": [
+        "Berikan akses dengan segera?"
+      ],
+      "Immediate": [
+        "Segera"
+      ],
+      "Included with ${ planName }": [
+        "Terliput dengan ${ planName }"
+      ],
+      "Less than a day": [
+        "Kurang dari satu hari"
       ],
       "None": [
         "Tidak ada"
@@ -5159,6 +5243,45 @@
       "Only ": [
         "Hanya "
       ],
+      "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
+        "Mohon untuk hanya meminta akses darurat ketika benar-benar terdapat **situasi yang mendesak**, yang mengharuskan Anda untuk mengelola akun pengguna lain."
+      ],
+      "People I trust": [
+        "Orang--orang yang saya percayai"
+      ],
+      "People who trust me": [
+        "Orang-orang yang memercayai saya"
+      ],
+      "Protect your legacy with emergency access": [
+        "Lindungi pusaka Anda dengan akses darurat"
+      ],
+      "Remove trusted contact": [
+        "Hapus kontak terpercaya"
+      ],
+      "Request access?": [
+        "Minta akses?"
+      ],
+      "Requesting access": [
+        "Meminta akses"
+      ],
+      "Stop being trusted contact?": [
+        "Berhenti menjadi kontak terpercaya?"
+      ],
+      "They added me as trusted contact. I can access their account in case of an emergency.": [
+        "Mereka telah menambahkan saya sebagai kontak terpercaya. Saya akan dapat mengakses akun mereka apabila terdapat kejadian darurat."
+      ],
+      "They may ask to access my account in case of an emergency.": [
+        "Mereka dapat meminta akses ke akun saya apabila terdapat kejadian darurat."
+      ],
+      "This will take effect immediately.": [
+        "Hal ini akan berlaku dengan segera."
+      ],
+      "Time required before automatically giving access": [
+        "Waktu yang dibutuhkan sebelum memberikan akses secara otomatis"
+      ],
+      "Time required before automatically granting them access": [
+        "Waktu yang dibutuhkan sebelum akses diberikan secara otomatis"
+      ],
       "Trusted contact": [
         "Kontak terpercaya"
       ],
@@ -5168,8 +5291,47 @@
       "View request": [
         "Tampilkan permintaan"
       ],
+      "Wait time": [
+        "Waktu tunggu"
+      ],
+      "Wait time for access": [
+        "Waktu tunggu akses"
+      ],
+      "Wait time saved": [
+        "Waktu tunggu disimpan"
+      ],
+      "We’ll notify **${ user }** that you requested emergency access.": [
+        "Kami akan memberi tahu **${ user }** bahwa Anda meminta akses darurat."
+      ],
       "You are signed in to the account ${ account }.": [
         "Anda terdaftar masuk dengan akun ${ account }."
+      ],
+      "You can now access and manage their account.": [
+        "Anda kini dapat mengakses dan mengelola akun mereka."
+      ],
+      "You can remove their access at any time to regain exclusive control of your account.": [
+        "Anda dapat menghapus akses mereka kapan saja untuk memperoleh kembali kontrol eksklusif terhadap akun Anda."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Anda belum ditetapkan sebagai kontak darurat bagi siapa pun."
+      ],
+      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
+        "Anda telah mencapai batas jumlah maksimum ${ controller.meta.count } kontak terpercaya."
+      ],
+      "You will be notified when someone requests emergency access.": [
+        "Anda akan diberi tahu pada saat seseorang meminta akses darurat."
+      ],
+      "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
+        "Anda tidak akan lagi dapat meminta akses ke akun ${ user } di kala terdapat kejadian darurat."
+      ],
+      "You'll receive access to their account immediately.": [
+        "Anda akan menerima akses ke akun mereka dengan segera."
+      ],
+      "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
+        "Anda akan menerima akses ke akun mereka dalam **${ days } hari** atau pada saat mereka menyetujui permintaan Anda."
+      ],
+      "Your emergency contact ${ name } is requesting access to your account.": [
+        "Kontak darurat ${ name } milik Anda meminta akses ke akun Anda."
       ]
     },
     "Empty group name": {
@@ -5198,6 +5360,9 @@
       ],
       "Add at least one condition": [
         "Tambah setidaknya satu kondisi"
+      ],
+      "Address cannot be yours": [
+        "Alamat ini tidak dapat dimiliki oleh Anda"
       ],
       "Address primary private key not found": [
         "Kunci pribadi utama alamat tidak ditemukan"
@@ -7851,9 +8016,6 @@
       "Add a recovery phone number": [
         "Tambahkan nomor telepon pemulihan"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
-        "Tambahkan lapisan keamanan lain ke akun Anda. Anda perlu memverifikasi diri Anda dengan 2FA setiap kali Anda masuk. Kami merekomendasikan penggunaan ${ protonAuthenticatorDownloadLink } untuk menyimpan kode 2FA Anda."
-      ],
       "Add domain": [
         "Tambah domain"
       ],
@@ -9684,6 +9846,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
+        "Submisi SMTP memungkinkan layanan atau perangkat milik pihak ketiga untuk mengirimkan email melalui ${ MAIL_APP_NAME } bagi alamat domain khusus milik Anda."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Pengiriman SMTP memungkinkan layanan atau perangkat pihak ketiga untuk mengirim email melalui ${ MAIL_APP_NAME } untuk alamat domain khusus Anda. Untuk meminta akses, silakan ${ createTicket } yang menyertakan rincian penggunaan Anda, domain khusus apa saja yang Anda ingin gunakan, dan kisaran volume email yang masuk per jamnya dan per harinya."
       ],
@@ -10370,6 +10535,9 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Pada saat dinonaktifkan, opsi ini akan mencegah berkas gambar untuk dimuat pada perangkat Anda tanpa Anda ketahui."
+      ],
+      "When disabled, this prevents remote images from loading without your knowledge.": [
+        "Pada saat dinonaktifkan, opsi ini akan mencegah gambar eksternal untuk dimuat pada perangkat Anda tanpa Anda ketahui."
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
         "Pada saat diaktifkan, kami akan memeriksa apakah ${ MAIL_APP_NAME } merupakan aplikasi email bawaan Anda dan memberitahukan Anda apabila aplikasi kami tidak terpasang sebagai bawaan."
@@ -11686,6 +11854,9 @@
       ],
       "Days of the week": [
         "Hari dalam pekan"
+      ],
+      "Default email address": [
+        "Alamat email bawaan"
       ],
       "Default language": [
         "Bahasa bawaan"
@@ -16185,6 +16356,12 @@
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Seluruh produk premium ${ BRAND_NAME } terliput dalam Duo."
       ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Seluruh fitur premium ${ BRAND_NAME } dari ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, dan ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Seluruh fitur premium ${ BRAND_NAME } dari ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Best if you need ${ maxSpace } of storage and for couples.": [
         "Paket terbaik bagi Anda yang memerlukan ruang penyimpanan ${ maxSpace } dan yang berpasangan."
       ],
@@ -16222,6 +16399,9 @@
       ]
     },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Sebagai pelanggan **${ currentPlanTitle }**, Anda dapat membuka akses ke **${ unlockPlanTitle }** dan lebih banyak layanan premium ${ BRAND_NAME } dengan meningkatkan ke **${ upsellPlanTitle }**."
+      ],
       "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
         "Lebih banyak layanan ${ BRAND_NAME }.${ br }Satu langganan mudah."
       ],
@@ -18853,6 +19033,9 @@
       "${ planMaxSpace } total storage": [
         "Ruang penyimpanan total ${ planMaxSpace }"
       ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } memberikan Anda akses ke seluruh fitur premium ${ BRAND_NAME } dari ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }. Paket ini hadir dengan privasi yang terpadu secara bawaan, sehingga Anda dapat tenang mengetahui bahwa data dan identitas Anda terjaga dengan aman."
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
       ],
@@ -19750,6 +19933,9 @@
       "Account suspended": [
         "Akun ditangguhkan"
       ],
+      "Account temporarily locked": [
+        "Akun sementara terkunci"
+      ],
       "Action": [
         "Tindakan"
       ],
@@ -19830,6 +20016,9 @@
       ],
       "Add users to \"${ policyName }\"": [
         "Tambah pengguna ke \"${ policyName }\""
+      ],
+      "Added on": [
+        "Ditambahkan pada"
       ],
       "Address": [
         "Alamat"
@@ -19986,9 +20175,6 @@
       ],
       "Connect apps and devices": [
         "Hubungkan aplkasi dan perangkat"
-      ],
-      "Connect more Gmail addresses with ${ planName }": [
-        "Hubungkan lebih banyak alamat Gmail dengan ${ planName }"
       ],
       "Connect organization": [
         "Sambungkan organisasi"
@@ -20283,6 +20469,9 @@
       ],
       "Email privacy": [
         "Privasi email"
+      ],
+      "Emergency access": [
+        "Akses darurat"
       ],
       "Enable advanced account protection": [
         "Aktifkan perlindungan akun lanjutan"
@@ -20907,6 +21096,9 @@
       ],
       "Signed in successfully!": [
         "Upaya sign in berhasil!"
+      ],
+      "Signed in to another account": [
+        "Terdaftar masuk ke akun lainnya"
       ],
       "Signed in to member account": [
         "Terdaftar masuk dengan akun anggota"
@@ -22144,7 +22336,10 @@
         "Perlindungan akun bertingkat lanjut"
       ],
       "Bitcoin via Email": [
-        "Bitcoin via e-mail"
+        "Bitcoin via email"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Alamat email ${ MAIL_APP_NAME } yang terenkripsi dan aman. Anda dapat dengan mudah mengirim Bitcoin kepada siapa pun hanya dengan nama ${ BRAND_NAME } mereka."
       ],
       "Encrypted cloud storage for photos and documents": [
         "Ruang penyimpanan clipboard terenkripsi untuk foto dan dokumen"
@@ -22160,6 +22355,9 @@
       ],
       "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
         "Paket kami yang paling eksklusif. Dapatkan akses dini ke fitur-fitur baru dan semua layanan premium ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Tukarkan Bitcoin secara aman via email alih-alih melalui alamat Bitcoin 26 karakter yang kompleks dan rentan terhadap kesalahan"
       ],
       "Securely hold and transact Bitcoin for free.": [
         "Simpan dan lakukan transaksi Bitcoin secara aman dan gratis."

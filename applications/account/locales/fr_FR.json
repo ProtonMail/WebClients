@@ -256,6 +256,9 @@
       "Claim it": [
         "La revendiquer"
       ],
+      "Claim this address": [
+        "Revendiquer cette adresse"
+      ],
       "Clear all formatting": [
         "Effacer toute la mise en forme"
       ],
@@ -303,9 +306,6 @@
       ],
       "Connect to video conferencing": [
         "Se connecter à la vidéoconférence"
-      ],
-      "Connect your Gmail address": [
-        "Connectez votre adresse Gmail"
       ],
       "Connected": [
         "Connecté"
@@ -729,6 +729,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Essayez ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Obtenez une adresse ${ BRAND_NAME } gratuite"
       ],
       "Get a new encrypted email address": [
         "Obtenir une nouvelle adresse e-mail chiffrée"
@@ -7979,11 +7982,20 @@
       "**${ appName }** is not supported.": [
         "**${ appName }** n'est pas pris en charge."
       ],
+      "**Enable automatic backups** for peace of mind": [
+        "**Activez les sauvegardes automatiques** pour garder l'esprit tranquille"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obtenez une adresse ${ BRAND_NAME }** pour utiliser tous les services ${ BRAND_NAME_TWO }, dont ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }."
       ],
+      "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
+        "**Importez vos codes existants** depuis d'autres applications 2FA, telles que Google Authenticator"
+      ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Invitez vos amis** sur ${ BRAND_NAME } avec votre lien de parrainage."
+      ],
+      "**Sync codes** to all your devices": [
+        "**Synchronisez les codes** sur tous vos appareils"
       ],
       "+ ${ invisibleCount } More": [
         "${ invisibleCount } de plus",
@@ -8079,9 +8091,6 @@
       ],
       "Add a recovery phone number": [
         "Ajouter un numéro de téléphone de récupération"
-      ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
-        "Ajoutez un niveau de sécurité supplémentaire à votre compte. Vous devrez vous authentifier avec l'authentification à deux facteurs à chaque connexion. Nous vous recommandons d'utiliser ${ protonAuthenticatorDownloadLink } pour stocker vos codes d'authentification à deux facteurs."
       ],
       "Add domain": [
         "Ajouter un domaine"
@@ -8653,6 +8662,9 @@
       "Download recovery file": [
         "Télécharger le fichier de récupération"
       ],
+      "Download the app and import existing codes.": [
+        "Téléchargez l'application et importez vos codes existants."
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Téléchargez votre application préférée et protégez votre vie privée partout où vous allez."
       ],
@@ -8908,6 +8920,9 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "La génération d’une nouvelle phrase de récupération désactivera l’ancienne."
       ],
+      "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
+        "Obtenez ${ AUTHENTICATOR_APP_NAME } pour tous vos appareils."
+      ],
       "Get ${ upsellPlanName }": [
         "Obtenir ${ upsellPlanName }"
       ],
@@ -9162,6 +9177,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Cela prend 10 jours pour modifier le pays d'un serveur. Assurez-vous que votre sélection soit correcte."
       ],
+      "It won't be linked to your ${ BRAND_NAME } Account, so there's **no risk of getting locked out**.": [
+        "Il ne sera pas lié à votre compte ${ BRAND_NAME }, donc il n'y a **aucun risque d'être bloqué**."
+      ],
       "It's better to have:": [
         "Il est préférable d'avoir :"
       ],
@@ -9344,6 +9362,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
+      ],
+      "Maybe later": [
+        "Peut-être plus tard"
       ],
       "Medium Priority": [
         "Priorité moyenne"
@@ -10109,6 +10130,9 @@
       "The most recent data update, excluding breaches.": [
         "La mise à jour des données la plus récente à l'exception des fuites de données."
       ],
+      "The most secure and private two-factor authentication app, that's free and open-source.": [
+        "L'application d'authentification à deux facteurs la plus sécurisée et privée, qui est gratuite et open source."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "Le nom sera visible par vos utilisateurs quand ils seront connectés."
       ],
@@ -10666,6 +10690,9 @@
       ],
       "Why?": [
         "Pourquoi ?"
+      ],
+      "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
+        "Avec ${ AUTHENTICATOR_APP_NAME }, vous pouvez :"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Avec l'abonnement Business ou Enterprise, vous pouvez acheter des ${ boldDedicatedServers } pour votre organisation et configurer des ${ boldGateways } pour contrôler les utilisateurs y ayant accès."
@@ -20397,6 +20424,9 @@
       "Choose user affiliations": [
         "Choisir les affiliations de l'utilisateur"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Revendiquez votre adresse ${ MAIL_APP_NAME }"
+      ],
       "Click a value in the table to use it as filter": [
         "Cliquez sur une valeur dans le tableau pour l'utiliser comme filtre."
       ],
@@ -20429,9 +20459,6 @@
       ],
       "Connect apps and devices": [
         "Connecter les applications et les appareils"
-      ],
-      "Connect more Gmail addresses with ${ planName }": [
-        "Connectez plus d'adresses Gmail avec ${ planName }"
       ],
       "Connect organization": [
         "Connecter l'organisation"
@@ -21454,6 +21481,9 @@
       ],
       "Time zone": [
         "Fuseau horaire"
+      ],
+      "Try ${ AUTHENTICATOR_APP_NAME }": [
+        "Essayez ${ AUTHENTICATOR_APP_NAME }"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activer ${ DARK_WEB_MONITORING_NAME }"

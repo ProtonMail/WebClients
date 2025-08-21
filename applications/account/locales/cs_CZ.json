@@ -253,6 +253,9 @@
       "Claim it": [
         "Získat ji"
       ],
+      "Claim this address": [
+        "Nárokovat tuto adresu"
+      ],
       "Clear all formatting": [
         "Vymazat veškeré formátování"
       ],
@@ -300,9 +303,6 @@
       ],
       "Connect to video conferencing": [
         "Připojit se k videokonferenci"
-      ],
-      "Connect your Gmail address": [
-        "Připojte svou Gmail adresu"
       ],
       "Connected": [
         "Připojeno"
@@ -723,6 +723,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Získat ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Získejte ${ BRAND_NAME } adresu zdarma"
       ],
       "Get a new encrypted email address": [
         "Získat novou šifrovanou e-mailovou adresu"
@@ -7734,6 +7737,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Díky šifrovací technologii ${ BRAND_NAME } se k vašemu heslu nikdo nedostane - ani my ne."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } vyžaduje ${ BRAND_NAME } adresu pro bezpečnou synchronizaci událostí a šifrování. ${ claimAddressButton }"
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nový kalendář",
         "${ calendarsToBeCreatedCount } nové kalendáře",
@@ -8087,9 +8093,6 @@
       ],
       "Add a recovery phone number": [
         "Přidat telefonní číslo pro obnovení"
-      ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
-        "Přidejte další vrstvu zabezpečení ke svému účtu. Při každém přihlášení se budete muset ověřit pomocí 2FA. K ukládání kódů 2FA doporučujeme použít ${ protonAuthenticatorDownloadLink }."
       ],
       "Add domain": [
         "Přidat doménu"
@@ -8798,6 +8801,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Dopřejte si rychlejší a soustředěnější správu e-mailů pomocí desktopové aplikace."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Zajistěte si plně soukromou a šifrovanou komunikaci. Získejte nyní vaši bezplatnou ${ BRAND_NAME } emailovou adresu."
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "Zadejte heslo pro dokončení nastavení svého účtu ${ BRAND_NAME } a začněte používat ${ VPN_APP_NAME } na všech svých zařízeních!"
@@ -10048,7 +10054,7 @@
         "Předplatné vyprší: opětovně aktivujte dne ${ byDate } pro zachování vašich výhod tarifu ${ planName }. ${ reactivateLink }"
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
-        "Předplatné končí: Chcete-li si ponechat výhody svého ${ planName }, restartujte své předplatné v Apple App Store do ${ byDate }. ${ reactivateLink }"
+        "Předplatné končí: Chcete-li si ponechat výhody svého předplatného ${ planName }, restartujte své předplatné v Apple App Store do ${ byDate }. ${ reactivateLink }"
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Předplatné končí: Chcete-li si ponechat výhody svého předplatného ${ planName }, restartujte své předplatné v Obchodě Play do ${ byDate }. ${ reactivateLink }"
@@ -13194,7 +13200,7 @@
         "Požádat o pozvánku"
       ],
       "Resume now": [
-        "Pokračovat nyní"
+        "Obnovit nyní"
       ],
       "Set email address": [
         "Nastavit e-mailovou adresu"
@@ -20721,6 +20727,9 @@
       "Choose user affiliations": [
         "Výběr příslušnosti uživatele"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Získejte vaši ${ MAIL_APP_NAME } adresu."
+      ],
       "Click a value in the table to use it as filter": [
         "Kliknutím na hodnotu v tabulce ji použijete jako filtr."
       ],
@@ -20754,8 +20763,8 @@
       "Connect apps and devices": [
         "Připojit aplikace a zařízení"
       ],
-      "Connect more Gmail addresses with ${ planName }": [
-        "Připojení více adres Gmail s ${ planName }"
+      "Connect more addresses": [
+        "Připojit více adres"
       ],
       "Connect organization": [
         "Připojení organizace"
