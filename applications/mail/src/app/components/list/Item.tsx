@@ -27,9 +27,13 @@ import ItemSenders from './ItemSenders';
 
 import './delight/DelightItem.scss';
 
-const { SENT, ALL_SENT, ALL_MAIL, ALMOST_ALL_MAIL, STARRED, DRAFTS, ALL_DRAFTS, SCHEDULED } = MAILBOX_LABEL_IDS;
-
-const labelsWithIcons = [ALL_MAIL, ALMOST_ALL_MAIL, STARRED, ALL_SENT, ALL_DRAFTS] as string[];
+const labelsWithIcons = [
+    MAILBOX_LABEL_IDS.ALL_MAIL,
+    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+    MAILBOX_LABEL_IDS.STARRED,
+    MAILBOX_LABEL_IDS.ALL_SENT,
+    MAILBOX_LABEL_IDS.ALL_DRAFTS,
+] as string[];
 
 interface Props {
     conversationMode: boolean;
@@ -86,7 +90,13 @@ const Item = ({
     const elementRef = useRef<HTMLDivElement>(null);
 
     const displayRecipients =
-        [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, SCHEDULED].includes(labelID as MAILBOX_LABEL_IDS) ||
+        [
+            MAILBOX_LABEL_IDS.SENT,
+            MAILBOX_LABEL_IDS.ALL_SENT,
+            MAILBOX_LABEL_IDS.DRAFTS,
+            MAILBOX_LABEL_IDS.ALL_DRAFTS,
+            MAILBOX_LABEL_IDS.SCHEDULED,
+        ].includes(labelID as MAILBOX_LABEL_IDS) ||
         isSent(element) ||
         isDraft(element);
     const { getRecipientLabel, getRecipientsOrGroups, getRecipientsOrGroupsLabels } = useRecipientLabel();

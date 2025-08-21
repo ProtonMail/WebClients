@@ -69,8 +69,6 @@ import type { DropdownRender } from './HeaderDropdown';
 import HeaderDropdown from './HeaderDropdown';
 import { MESSAGE_FILTER_DROPDOWN_ID, MESSAGE_FOLDER_DROPDOWN_ID, MESSAGE_LABEL_DROPDOWN_ID } from './constants';
 
-const { INBOX, TRASH, SPAM, ARCHIVE, ALMOST_ALL_MAIL } = MAILBOX_LABEL_IDS;
-
 interface Props {
     labelID: string;
     message: MessageState;
@@ -141,8 +139,8 @@ const HeaderMoreDropdown = ({
         const folderName = getFolderName(folderID, folders);
 
         if (
-            labelID === ALMOST_ALL_MAIL &&
-            folderID === TRASH &&
+            labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL &&
+            folderID === MAILBOX_LABEL_IDS.TRASH &&
             location.pathname === CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].route
         ) {
             dispatch(newsletterSubscriptionsActions.setSelectedElementId(undefined));
@@ -249,8 +247,8 @@ const HeaderMoreDropdown = ({
 
     const messageLabelIDs = message.data?.LabelIDs || [];
     const selectedIDs = [messageID];
-    const isSpam = messageLabelIDs.includes(SPAM);
-    const isInTrash = messageLabelIDs.includes(TRASH);
+    const isSpam = messageLabelIDs.includes(MAILBOX_LABEL_IDS.SPAM);
+    const isInTrash = messageLabelIDs.includes(MAILBOX_LABEL_IDS.TRASH);
     const fromFolderID = getCurrentFolderID(messageLabelIDs, folders);
     const { viewportWidth } = useActiveBreakpoint();
     const additionalDropdowns: DropdownRender[] | undefined = viewportWidth['<=small']
@@ -353,7 +351,7 @@ const HeaderMoreDropdown = ({
                         <Button
                             icon
                             disabled={!messageLoaded}
-                            onClick={handleMove(INBOX, SPAM)}
+                            onClick={handleMove(MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.SPAM)}
                             data-testid="message-header-expanded:move-spam-to-inbox"
                         >
                             <Icon name="fire-slash" alt={c('Title').t`Move to inbox (not spam)`} />
@@ -376,7 +374,7 @@ const HeaderMoreDropdown = ({
                         <Button
                             icon
                             disabled={!messageLoaded}
-                            onClick={handleMove(INBOX, TRASH)}
+                            onClick={handleMove(MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.TRASH)}
                             data-testid="message-header-expanded:move-trashed-to-inbox"
                         >
                             <Icon name="inbox" alt={c('Title').t`Move to inbox`} />
@@ -387,7 +385,7 @@ const HeaderMoreDropdown = ({
                         <Button
                             icon
                             disabled={!messageLoaded}
-                            onClick={handleMove(TRASH, fromFolderID)}
+                            onClick={handleMove(MAILBOX_LABEL_IDS.TRASH, fromFolderID)}
                             data-testid="message-header-expanded:move-to-trash"
                         >
                             <Icon name="trash" alt={c('Title').t`Move to trash`} />
@@ -501,7 +499,7 @@ const HeaderMoreDropdown = ({
 
                                     <DropdownMenuButton
                                         className="text-left flex flex-nowrap items-center"
-                                        onClick={handleMove(ARCHIVE, fromFolderID)}
+                                        onClick={handleMove(MAILBOX_LABEL_IDS.ARCHIVE, fromFolderID)}
                                         data-testid="message-view-more-dropdown:archive"
                                     >
                                         <Icon name="archive-box" className="mr-2" />
@@ -546,7 +544,7 @@ const HeaderMoreDropdown = ({
                                     ) : (
                                         <DropdownMenuButton
                                             className="text-left flex flex-nowrap items-center"
-                                            onClick={handleMove(SPAM, fromFolderID)}
+                                            onClick={handleMove(MAILBOX_LABEL_IDS.SPAM, fromFolderID)}
                                             data-testid="message-view-more-dropdown:move-to-spam"
                                         >
                                             <Icon name="fire" className="mr-2" />

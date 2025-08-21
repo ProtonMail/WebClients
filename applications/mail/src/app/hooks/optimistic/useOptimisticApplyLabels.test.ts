@@ -3,8 +3,6 @@ import type { Label } from '@proton/shared/lib/interfaces';
 
 import { getIsElementMovingOutFromLabel } from 'proton-mail/hooks/optimistic/useOptimisticApplyLabels';
 
-const { INBOX, TRASH, ALL_MAIL, ARCHIVE, ALMOST_ALL_MAIL, ALL_DRAFTS, ALL_SENT, SPAM } = MAILBOX_LABEL_IDS;
-
 describe('useOptimisticApplyLabels', () => {
     describe('getIsElementMovingOutFromLabel', () => {
         const customLabels: Label[] = [
@@ -16,8 +14,8 @@ describe('useOptimisticApplyLabels', () => {
             // Move an item from INBOX to TRASH
             expect(
                 getIsElementMovingOutFromLabel({
-                    currentLabelID: INBOX,
-                    inputChanges: { [TRASH]: true },
+                    currentLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    inputChanges: { [MAILBOX_LABEL_IDS.TRASH]: true },
                     labels: customLabels,
                 })
             ).toBeTruthy();
@@ -25,8 +23,8 @@ describe('useOptimisticApplyLabels', () => {
             // Move an item from ALMOST_ALL_MAIL to TRASH
             expect(
                 getIsElementMovingOutFromLabel({
-                    currentLabelID: ALMOST_ALL_MAIL,
-                    inputChanges: { [TRASH]: true },
+                    currentLabelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    inputChanges: { [MAILBOX_LABEL_IDS.TRASH]: true },
                     labels: customLabels,
                 })
             ).toBeTruthy();
@@ -34,8 +32,8 @@ describe('useOptimisticApplyLabels', () => {
             // Move an item from ALMOST_ALL_MAIL to SPAM
             expect(
                 getIsElementMovingOutFromLabel({
-                    currentLabelID: ALMOST_ALL_MAIL,
-                    inputChanges: { [SPAM]: true },
+                    currentLabelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    inputChanges: { [MAILBOX_LABEL_IDS.SPAM]: true },
                     labels: customLabels,
                 })
             ).toBeTruthy();
@@ -44,7 +42,7 @@ describe('useOptimisticApplyLabels', () => {
             expect(
                 getIsElementMovingOutFromLabel({
                     currentLabelID: customLabels[0].ID,
-                    inputChanges: { [TRASH]: true },
+                    inputChanges: { [MAILBOX_LABEL_IDS.TRASH]: true },
                     labels: customLabels,
                 })
             ).toBeTruthy();
@@ -53,7 +51,7 @@ describe('useOptimisticApplyLabels', () => {
             expect(
                 getIsElementMovingOutFromLabel({
                     currentLabelID: customLabels[0].ID,
-                    inputChanges: { [SPAM]: true },
+                    inputChanges: { [MAILBOX_LABEL_IDS.SPAM]: true },
                     labels: customLabels,
                 })
             ).toBeTruthy();
@@ -64,7 +62,7 @@ describe('useOptimisticApplyLabels', () => {
             expect(
                 getIsElementMovingOutFromLabel({
                     currentLabelID: undefined,
-                    inputChanges: { [INBOX]: true },
+                    inputChanges: { [MAILBOX_LABEL_IDS.INBOX]: true },
                     labels: customLabels,
                 })
             ).toBeFalsy();
@@ -72,8 +70,8 @@ describe('useOptimisticApplyLabels', () => {
             // Move an item from ALMOST_ALL_MAIL to ARCHIVE
             expect(
                 getIsElementMovingOutFromLabel({
-                    currentLabelID: ALMOST_ALL_MAIL,
-                    inputChanges: { [ARCHIVE]: true },
+                    currentLabelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    inputChanges: { [MAILBOX_LABEL_IDS.ARCHIVE]: true },
                     labels: customLabels,
                 })
             ).toBeFalsy();
@@ -82,7 +80,7 @@ describe('useOptimisticApplyLabels', () => {
             expect(
                 getIsElementMovingOutFromLabel({
                     currentLabelID: customLabels[0].ID,
-                    inputChanges: { [INBOX]: true },
+                    inputChanges: { [MAILBOX_LABEL_IDS.INBOX]: true },
                     labels: customLabels,
                 })
             ).toBeFalsy();
@@ -90,8 +88,8 @@ describe('useOptimisticApplyLabels', () => {
             // Move an item from ALL_MAIL to INBOX
             expect(
                 getIsElementMovingOutFromLabel({
-                    currentLabelID: ALL_MAIL,
-                    inputChanges: { [INBOX]: true },
+                    currentLabelID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                    inputChanges: { [MAILBOX_LABEL_IDS.INBOX]: true },
                     labels: customLabels,
                 })
             ).toBeFalsy();
@@ -99,8 +97,8 @@ describe('useOptimisticApplyLabels', () => {
             // Move an item from ALL_MAIL to TRASH
             expect(
                 getIsElementMovingOutFromLabel({
-                    currentLabelID: ALL_MAIL,
-                    inputChanges: { [TRASH]: true },
+                    currentLabelID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                    inputChanges: { [MAILBOX_LABEL_IDS.TRASH]: true },
                     labels: customLabels,
                 })
             ).toBeFalsy();
@@ -108,8 +106,8 @@ describe('useOptimisticApplyLabels', () => {
             // Move an item from ALL_MAIL to SPAM
             expect(
                 getIsElementMovingOutFromLabel({
-                    currentLabelID: ALL_MAIL,
-                    inputChanges: { [SPAM]: true },
+                    currentLabelID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                    inputChanges: { [MAILBOX_LABEL_IDS.SPAM]: true },
                     labels: customLabels,
                 })
             ).toBeFalsy();
@@ -117,7 +115,7 @@ describe('useOptimisticApplyLabels', () => {
             // Move an item from ALL_SENT to customLabel
             expect(
                 getIsElementMovingOutFromLabel({
-                    currentLabelID: ALL_SENT,
+                    currentLabelID: MAILBOX_LABEL_IDS.ALL_SENT,
                     inputChanges: { [customLabels[0].ID]: true },
                     labels: customLabels,
                 })
@@ -126,8 +124,8 @@ describe('useOptimisticApplyLabels', () => {
             // Move an item from ALL_SENT to TRASH
             expect(
                 getIsElementMovingOutFromLabel({
-                    currentLabelID: ALL_MAIL,
-                    inputChanges: { [TRASH]: true },
+                    currentLabelID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                    inputChanges: { [MAILBOX_LABEL_IDS.TRASH]: true },
                     labels: customLabels,
                 })
             ).toBeFalsy();
@@ -135,7 +133,7 @@ describe('useOptimisticApplyLabels', () => {
             // Move an item from ALL_DRAFTS to customLabel
             expect(
                 getIsElementMovingOutFromLabel({
-                    currentLabelID: ALL_DRAFTS,
+                    currentLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
                     inputChanges: { [customLabels[0].ID]: true },
                     labels: customLabels,
                 })
@@ -144,8 +142,8 @@ describe('useOptimisticApplyLabels', () => {
             // Move an item from ALL_DRAFTS to TRASH
             expect(
                 getIsElementMovingOutFromLabel({
-                    currentLabelID: ALL_DRAFTS,
-                    inputChanges: { [TRASH]: true },
+                    currentLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
+                    inputChanges: { [MAILBOX_LABEL_IDS.TRASH]: true },
                     labels: customLabels,
                 })
             ).toBeFalsy();

@@ -20,8 +20,6 @@ import { useGetConversation } from '../conversation/useConversation';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useGetMessage } from './useMessage';
 
-const { ALL_DRAFTS } = MAILBOX_LABEL_IDS;
-
 export const useCreateDraft = () => {
     const api = useApi();
     const dispatch = useMailDispatch();
@@ -131,7 +129,7 @@ export const useDeleteDraft = () => {
             if (!messageID) {
                 return;
             }
-            const response: any = await api(deleteMessages([messageID], ALL_DRAFTS));
+            const response: any = await api(deleteMessages([messageID], MAILBOX_LABEL_IDS.ALL_DRAFTS));
 
             // For the "Please refresh your page, the message has moved."
             // Backend is not replying with an HTTP error but with an error inside the Response

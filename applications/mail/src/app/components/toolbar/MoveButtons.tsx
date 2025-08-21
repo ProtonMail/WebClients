@@ -11,8 +11,6 @@ import { useLabelActions } from '../../hooks/useLabelActions';
 import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import DeleteButton from './DeleteButton';
 
-const { TRASH, SPAM, ARCHIVE, INBOX } = MAILBOX_LABEL_IDS;
-
 interface Props {
     labelID: string;
     isExtraTiny: boolean;
@@ -49,7 +47,7 @@ const MoveButtons = ({ labelID = '', isExtraTiny, viewportIsNarrow, selectedIDs 
         <ToolbarButton
             key="inbox"
             title={titleInbox}
-            onClick={() => withLoading(onMove(INBOX, SOURCE_ACTION.TOOLBAR))}
+            onClick={() => withLoading(onMove(MAILBOX_LABEL_IDS.INBOX, SOURCE_ACTION.TOOLBAR))}
             disabled={loading || !selectedIDs.length}
             data-testid="toolbar:movetoinbox"
             icon={<Icon name="inbox" alt={c('Action').t`Move to inbox`} />}
@@ -70,7 +68,7 @@ const MoveButtons = ({ labelID = '', isExtraTiny, viewportIsNarrow, selectedIDs 
         <ToolbarButton
             key="archive"
             title={titleArchive}
-            onClick={() => withLoading(onMove(ARCHIVE, SOURCE_ACTION.TOOLBAR))}
+            onClick={() => withLoading(onMove(MAILBOX_LABEL_IDS.ARCHIVE, SOURCE_ACTION.TOOLBAR))}
             disabled={!selectedIDs.length}
             data-testid="toolbar:movetoarchive"
             icon={<Icon name="archive-box" alt={c('Action').t`Move to archive`} />}
@@ -91,7 +89,7 @@ const MoveButtons = ({ labelID = '', isExtraTiny, viewportIsNarrow, selectedIDs 
         <ToolbarButton
             key="spam"
             title={titleSpam}
-            onClick={() => withLoading(onMove(SPAM, SOURCE_ACTION.TOOLBAR))}
+            onClick={() => withLoading(onMove(MAILBOX_LABEL_IDS.SPAM, SOURCE_ACTION.TOOLBAR))}
             disabled={loading || !selectedIDs.length}
             data-testid="toolbar:movetospam"
             icon={<Icon name="fire" alt={c('Action').t`Move to spam`} />}
@@ -112,7 +110,7 @@ const MoveButtons = ({ labelID = '', isExtraTiny, viewportIsNarrow, selectedIDs 
         <ToolbarButton
             key="nospam"
             title={titleNoSpam}
-            onClick={() => withLoading(onMove(INBOX, SOURCE_ACTION.TOOLBAR))}
+            onClick={() => withLoading(onMove(MAILBOX_LABEL_IDS.INBOX, SOURCE_ACTION.TOOLBAR))}
             disabled={loading || !selectedIDs.length}
             data-testid="toolbar:movetonospam"
             icon={<Icon name="fire-slash" alt={c('Action').t`Move to inbox (not spam)`} />}
@@ -133,7 +131,7 @@ const MoveButtons = ({ labelID = '', isExtraTiny, viewportIsNarrow, selectedIDs 
         <ToolbarButton
             key="trash"
             title={titleTrash}
-            onClick={() => withLoading(onMove(TRASH, SOURCE_ACTION.TOOLBAR))}
+            onClick={() => withLoading(onMove(MAILBOX_LABEL_IDS.TRASH, SOURCE_ACTION.TOOLBAR))}
             disabled={loading || !selectedIDs.length}
             data-testid="toolbar:movetotrash"
             icon={<Icon name="trash" alt={c('Action').t`Move to trash`} />}

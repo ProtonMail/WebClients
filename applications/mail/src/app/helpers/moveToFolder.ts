@@ -22,8 +22,6 @@ import type { MoveToSpamModalProps, MoveToSpamModalResolveProps } from '../compo
 import type { Conversation } from '../models/conversation';
 import type { Element } from '../models/element';
 
-const { SPAM, TRASH, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, INBOX, ARCHIVE, SCHEDULED, SNOOZED } = MAILBOX_LABEL_IDS;
-
 const joinSentences = (success: string, notAuthorized: string) => [success, notAuthorized].filter(isTruthy).join(' ');
 
 export const getNotificationTextMoved = (
@@ -41,7 +39,7 @@ export const getNotificationTextMoved = (
               messagesNotAuthorizedToMove
           )
         : '';
-    if (folderID === SPAM) {
+    if (folderID === MAILBOX_LABEL_IDS.SPAM) {
         if (isMessage) {
             if (elementsCount === 1) {
                 return c('Success').t`Message moved to spam and sender added to your spam list.`;
@@ -67,7 +65,7 @@ export const getNotificationTextMoved = (
 
     // Done to avoid ttag library bug
     const labelName = folderName;
-    if (fromLabelID === SPAM && folderID !== TRASH) {
+    if (fromLabelID === MAILBOX_LABEL_IDS.SPAM && folderID !== MAILBOX_LABEL_IDS.TRASH) {
         if (isMessage) {
             if (elementsCount === 1) {
                 // translator: Strictly 1 message moved from spam, the variable is the name of the destination folder
@@ -121,19 +119,19 @@ export const getNotificationTextUnauthorized = (folderID?: string, fromLabelID?:
     let notificationText = c('Error display when performing invalid move on message')
         .t`This action cannot be performed`;
 
-    if (fromLabelID === SENT || fromLabelID === ALL_SENT) {
-        if (folderID === INBOX) {
+    if (fromLabelID === MAILBOX_LABEL_IDS.SENT || fromLabelID === MAILBOX_LABEL_IDS.ALL_SENT) {
+        if (folderID === MAILBOX_LABEL_IDS.INBOX) {
             notificationText = c('Error display when performing invalid move on message')
                 .t`Sent messages cannot be moved to Inbox`;
-        } else if (folderID === SPAM) {
+        } else if (folderID === MAILBOX_LABEL_IDS.SPAM) {
             notificationText = c('Error display when performing invalid move on message')
                 .t`Sent messages cannot be moved to Spam`;
         }
-    } else if (fromLabelID === DRAFTS || fromLabelID === ALL_DRAFTS) {
-        if (folderID === INBOX) {
+    } else if (fromLabelID === MAILBOX_LABEL_IDS.DRAFTS || fromLabelID === MAILBOX_LABEL_IDS.ALL_DRAFTS) {
+        if (folderID === MAILBOX_LABEL_IDS.INBOX) {
             notificationText = c('Error display when performing invalid move on message')
                 .t`Drafts cannot be moved to Inbox`;
-        } else if (folderID === SPAM) {
+        } else if (folderID === MAILBOX_LABEL_IDS.SPAM) {
             notificationText = c('Error display when performing invalid move on message')
                 .t`Drafts cannot be moved to Spam`;
         }
@@ -189,8 +187,8 @@ export const searchForScheduled = async (
     setContainFocus?: Dispatch<SetStateAction<boolean>>
 ) => {
     await searchForLabelsAndOpenModal(
-        [TRASH],
-        SCHEDULED,
+        [MAILBOX_LABEL_IDS.TRASH],
+        MAILBOX_LABEL_IDS.SCHEDULED,
         folderID,
         isMessage,
         elements,
@@ -219,8 +217,8 @@ export const searchForSnoozed = async (
     }
 
     await searchForLabelsAndOpenModal(
-        [TRASH, ARCHIVE, INBOX],
-        SNOOZED,
+        [MAILBOX_LABEL_IDS.TRASH, MAILBOX_LABEL_IDS.ARCHIVE, MAILBOX_LABEL_IDS.INBOX],
+        MAILBOX_LABEL_IDS.SNOOZED,
         destinationFolderID,
         isMessage,
         elements,
@@ -229,7 +227,7 @@ export const searchForSnoozed = async (
         setContainFocus
     );
 
-    const hasSnoozeLabel = searchForLabelInElement(isMessage, elements, SNOOZED).length;
+    const hasSnoozeLabel = searchForLabelInElement(isMessage, elements, MAILBOX_LABEL_IDS.SNOOZED).length;
     if (hasSnoozeLabel && folders.map(({ ID }) => ID).includes(destinationFolderID)) {
         await handleShowModal({ isMessage, onCloseCustomAction: () => setContainFocus?.(true) });
     }
@@ -243,7 +241,7 @@ export const askToUnsubscribe = async (
     handleShowSpamModal: (ownProps: MoveToSpamModalProps) => Promise<MoveToSpamModalResolveProps>,
     mailSettings: MailSettings
 ) => {
-    if (folderID === SPAM) {
+    if (folderID === MAILBOX_LABEL_IDS.SPAM) {
         if (mailSettings.SpamAction === null) {
             const canBeUnsubscribed = elements.some((message) => isUnsubscribable(message));
 

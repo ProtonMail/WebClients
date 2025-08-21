@@ -47,7 +47,6 @@ interface SearchModel {
 const UNDEFINED = undefined;
 const AUTO_WILDCARD = undefined;
 const ALL_ADDRESSES = 'all';
-const { ALL_MAIL, ALMOST_ALL_MAIL } = MAILBOX_LABEL_IDS;
 
 const DEFAULT_MODEL_WITHOUT_LABEL_ID: Omit<SearchModel, 'labelID'> = {
     keyword: '',
@@ -136,7 +135,7 @@ const AdvancedSearch = ({
 
     const DEFAULT_MODEL: SearchModel = {
         ...DEFAULT_MODEL_WITHOUT_LABEL_ID,
-        labelID: AlmostAllMail ? ALMOST_ALL_MAIL : ALL_MAIL,
+        labelID: AlmostAllMail ? MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL : MAILBOX_LABEL_IDS.ALL_MAIL,
     };
 
     const [model, updateModel] = useState<SearchModel>({

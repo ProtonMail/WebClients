@@ -10,9 +10,6 @@ import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-const { DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, TRASH, SPAM, ARCHIVE, INBOX, STARRED, ALL_MAIL, ALMOST_ALL_MAIL } =
-    MAILBOX_LABEL_IDS;
-
 export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
     const history = useHistory<any>();
     const { Shortcuts, ShowMoved, AlmostAllMail } = useMailModel('MailSettings');
@@ -30,7 +27,7 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                       if (!isBusy(e)) {
                           e.stopPropagation();
                           e.preventDefault();
-                          navigateTo(INBOX);
+                          navigateTo(MAILBOX_LABEL_IDS.INBOX);
                       }
                   },
               ],
@@ -41,7 +38,11 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                       if (!isBusy(e)) {
                           e.stopPropagation();
                           e.preventDefault();
-                          navigateTo(hasBit(ShowMoved, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS);
+                          navigateTo(
+                              hasBit(ShowMoved, SHOW_MOVED.DRAFTS)
+                                  ? MAILBOX_LABEL_IDS.ALL_DRAFTS
+                                  : MAILBOX_LABEL_IDS.DRAFTS
+                          );
                       }
                   },
               ],
@@ -52,7 +53,9 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                       if (!isBusy(e)) {
                           e.stopPropagation();
                           e.preventDefault();
-                          navigateTo(hasBit(ShowMoved, SHOW_MOVED.SENT) ? ALL_SENT : SENT);
+                          navigateTo(
+                              hasBit(ShowMoved, SHOW_MOVED.SENT) ? MAILBOX_LABEL_IDS.ALL_SENT : MAILBOX_LABEL_IDS.SENT
+                          );
                       }
                   },
               ],
@@ -63,7 +66,7 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                       if (!isBusy(e)) {
                           e.stopPropagation();
                           e.preventDefault();
-                          navigateTo(STARRED);
+                          navigateTo(MAILBOX_LABEL_IDS.STARRED);
                       }
                   },
               ],
@@ -74,7 +77,7 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                       if (!isBusy(e)) {
                           e.stopPropagation();
                           e.preventDefault();
-                          navigateTo(ARCHIVE);
+                          navigateTo(MAILBOX_LABEL_IDS.ARCHIVE);
                       }
                   },
               ],
@@ -85,7 +88,7 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                       if (!isBusy(e)) {
                           e.stopPropagation();
                           e.preventDefault();
-                          navigateTo(SPAM);
+                          navigateTo(MAILBOX_LABEL_IDS.SPAM);
                       }
                   },
               ],
@@ -96,7 +99,7 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                       if (!isBusy(e)) {
                           e.stopPropagation();
                           e.preventDefault();
-                          navigateTo(TRASH);
+                          navigateTo(MAILBOX_LABEL_IDS.TRASH);
                       }
                   },
               ],
@@ -107,7 +110,7 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                       if (!isBusy(e)) {
                           e.stopPropagation();
                           e.preventDefault();
-                          navigateTo(AlmostAllMail ? ALMOST_ALL_MAIL : ALL_MAIL);
+                          navigateTo(AlmostAllMail ? MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL : MAILBOX_LABEL_IDS.ALL_MAIL);
                       }
                   },
               ],

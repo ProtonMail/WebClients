@@ -5,8 +5,6 @@ import { getRecipients, getSender } from '@proton/shared/lib/mail/messages';
 
 import { getAttachmentCounts, getMessagesAuthorizedToMove } from './messages';
 
-const { INBOX, SENT, DRAFTS, TRASH, SPAM } = MAILBOX_LABEL_IDS;
-
 describe('message', () => {
     describe('getSender', () => {
         it('should return Sender', () => {
@@ -32,37 +30,37 @@ describe('message', () => {
     });
 
     describe('getMessagesAuthorizedToMove', () => {
-        const inboxMessage = { ID: '0', LabelIDs: [INBOX], Flags: 1 } as Message;
-        const sentMessage = { ID: '1', LabelIDs: [SENT], Flags: 2 } as Message;
-        const draftMessage = { ID: '2', LabelIDs: [DRAFTS], Flags: 0 } as Message;
+        const inboxMessage = { ID: '0', LabelIDs: [MAILBOX_LABEL_IDS.INBOX], Flags: 1 } as Message;
+        const sentMessage = { ID: '1', LabelIDs: [MAILBOX_LABEL_IDS.SENT], Flags: 2 } as Message;
+        const draftMessage = { ID: '2', LabelIDs: [MAILBOX_LABEL_IDS.DRAFTS], Flags: 0 } as Message;
 
         it('should return messages authorized to move', () => {
-            expect(getMessagesAuthorizedToMove([inboxMessage, sentMessage, draftMessage], INBOX)).toEqual([
-                inboxMessage,
-            ]);
-            expect(getMessagesAuthorizedToMove([inboxMessage, sentMessage, draftMessage], SENT)).toEqual([sentMessage]);
-            expect(getMessagesAuthorizedToMove([inboxMessage, sentMessage, draftMessage], DRAFTS)).toEqual([
-                draftMessage,
-            ]);
+            expect(
+                getMessagesAuthorizedToMove([inboxMessage, sentMessage, draftMessage], MAILBOX_LABEL_IDS.INBOX)
+            ).toEqual([inboxMessage]);
+            expect(
+                getMessagesAuthorizedToMove([inboxMessage, sentMessage, draftMessage], MAILBOX_LABEL_IDS.SENT)
+            ).toEqual([sentMessage]);
+            expect(
+                getMessagesAuthorizedToMove([inboxMessage, sentMessage, draftMessage], MAILBOX_LABEL_IDS.DRAFTS)
+            ).toEqual([draftMessage]);
         });
 
         it('should move all to trash', () => {
-            expect(getMessagesAuthorizedToMove([inboxMessage, sentMessage, draftMessage], TRASH)).toEqual([
-                inboxMessage,
-                sentMessage,
-                draftMessage,
-            ]);
+            expect(
+                getMessagesAuthorizedToMove([inboxMessage, sentMessage, draftMessage], MAILBOX_LABEL_IDS.TRASH)
+            ).toEqual([inboxMessage, sentMessage, draftMessage]);
         });
 
         it('should authorize move to Inbox when message is sent to himself', () => {
-            const message = { ID: '0', LabelIDs: [SENT], Flags: 3 } as Message;
-            expect(getMessagesAuthorizedToMove([message], INBOX)).toEqual([message]);
+            const message = { ID: '0', LabelIDs: [MAILBOX_LABEL_IDS.SENT], Flags: 3 } as Message;
+            expect(getMessagesAuthorizedToMove([message], MAILBOX_LABEL_IDS.INBOX)).toEqual([message]);
         });
 
         it('should not move Sent and Draft messages to Spam', () => {
-            expect(getMessagesAuthorizedToMove([inboxMessage, sentMessage, draftMessage], SPAM)).toEqual([
-                inboxMessage,
-            ]);
+            expect(
+                getMessagesAuthorizedToMove([inboxMessage, sentMessage, draftMessage], MAILBOX_LABEL_IDS.SPAM)
+            ).toEqual([inboxMessage]);
         });
     });
 
