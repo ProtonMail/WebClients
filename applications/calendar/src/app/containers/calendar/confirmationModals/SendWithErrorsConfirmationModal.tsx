@@ -10,8 +10,6 @@ import type { CleanSendIcsActionData, InviteActions } from '../../../interfaces/
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
 import type { AugmentedSendPreferences } from '../interface';
 
-const { CHANGE_PARTSTAT, DECLINE_INVITATION, NONE } = INVITE_ACTION_TYPES;
-
 const getModalContent = (
     newInviteActions: InviteActions,
     originalInviteActions: InviteActions,
@@ -24,7 +22,7 @@ const getModalContent = (
     submit?: React.ReactNode;
     close?: React.ReactNode;
 } => {
-    if (originalInviteActions.type === CHANGE_PARTSTAT) {
+    if (originalInviteActions.type === INVITE_ACTION_TYPES.CHANGE_PARTSTAT) {
         if (originalInviteActions.isProtonProtonInvite) {
             // For Proton-Proton invites the answer was changed before sending the email
             return {
@@ -39,7 +37,7 @@ const getModalContent = (
             close: <Button className="ml-auto" color="norm" onClick={onClose}>{c('Action').t`OK`}</Button>,
         };
     }
-    if (originalInviteActions.type === DECLINE_INVITATION) {
+    if (originalInviteActions.type === INVITE_ACTION_TYPES.DECLINE_INVITATION) {
         return {
             title: c('Title').t`Organizer cannot be notified`,
             warningText: c('Info').t`The organizer cannot be notified that you decline the invitation:`,
@@ -53,7 +51,7 @@ const getModalContent = (
     return {
         title: c('Title').t`Participants cannot be notified`,
         warningText:
-            newInviteActions.type === NONE
+            newInviteActions.type === INVITE_ACTION_TYPES.NONE
                 ? c('Info').t`None of the participants can be notified about your changes:`
                 : c('Info').t`The following participants cannot be notified about your changes:`,
         alertText: c('Info').t`Would you like to continue anyway?`,
