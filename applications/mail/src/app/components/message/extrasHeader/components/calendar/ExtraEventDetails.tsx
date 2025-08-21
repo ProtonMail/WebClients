@@ -20,8 +20,6 @@ import type { InvitationModel } from '../../../../../helpers/calendar/invite';
 import { getParticipantsList } from '../../../../../helpers/calendar/invite';
 import ExtraEventParticipants from './ExtraEventParticipants';
 
-const { REFRESH, REPLY } = ICAL_METHOD;
-
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
     weekStartsOn: WeekStartsOn;
@@ -39,7 +37,7 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
         invitationIcs: { method },
         invitationApi,
     } = model;
-    const displayApiDetails = [REFRESH, REPLY].includes(method);
+    const displayApiDetails = [ICAL_METHOD.REFRESH, ICAL_METHOD.REPLY].includes(method);
     const { vevent, organizer, participants } = invitationApi && displayApiDetails ? invitationApi : invitationIcs;
     const { rrule, dtstart } = vevent;
 

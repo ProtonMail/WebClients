@@ -21,8 +21,6 @@ import type { DecryptedAttachment } from 'proton-mail/store/attachments/attachme
 
 import { convert } from '../attachment/attachmentConverter';
 
-const { NOT_VERIFIED, NOT_SIGNED } = MAIL_VERIFICATION_STATUS;
-
 const binaryToString = (data: Uint8Array<ArrayBuffer>) =>
     utf8ArrayToString(data)
         .replace(/\r\n/g, '\n')
@@ -181,11 +179,11 @@ export const verifyMessage = async (
         }
 
         if (!cryptoSignature && !mimeSignature) {
-            return { verificationStatus: NOT_SIGNED, signature: undefined };
+            return { verificationStatus: MAIL_VERIFICATION_STATUS.NOT_SIGNED, signature: undefined };
         }
 
         if (!publicKeys.length) {
-            return { verificationStatus: NOT_VERIFIED, signature: cryptoSignature };
+            return { verificationStatus: MAIL_VERIFICATION_STATUS.NOT_VERIFIED, signature: cryptoSignature };
         }
 
         if (cryptoSignature) {
@@ -196,7 +194,7 @@ export const verifyMessage = async (
         return { verificationStatus: getMailVerificationStatus(mimeVerified!), signature: mimeSignature };
     } catch (error: any) {
         return {
-            verificationStatus: NOT_VERIFIED,
+            verificationStatus: MAIL_VERIFICATION_STATUS.NOT_VERIFIED,
             verificationErrors: [error],
         };
     }
