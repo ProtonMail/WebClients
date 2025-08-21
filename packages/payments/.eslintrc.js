@@ -13,6 +13,14 @@ module.exports = {
                 forbid: ['@proton/payments', '@proton/payments/**'],
             },
         ],
+        'no-restricted-syntax': [
+            'error',
+            {
+                selector: "VariableDeclarator[id.type='ObjectPattern'][init.name=/^[A-Z_]+$/]",
+                message:
+                    'Destructuring of enum-like constants is not allowed. Use CONSTANT.PROPERTY instead to maintain code readability.',
+            },
+        ],
     },
     ignorePatterns: ['.eslintrc.js'],
 };

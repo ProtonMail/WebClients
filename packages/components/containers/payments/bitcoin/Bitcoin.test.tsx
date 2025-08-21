@@ -119,7 +119,7 @@ it('should show loading during the initial fetching', async () => {
 
 it('should check the token every 10 seconds', async () => {
     addApiMock(getTokenStatusV5('token-123').url, () => {
-        return { Status: PAYMENT_TOKEN_STATUS.STATUS_PENDING };
+        return { Status: PAYMENT_TOKEN_STATUS.PENDING };
     });
 
     render(
@@ -138,7 +138,7 @@ it('should check the token every 10 seconds', async () => {
     });
 
     addApiMock(getTokenStatusV5('token-123').url, function second() {
-        return { Status: PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE };
+        return { Status: PAYMENT_TOKEN_STATUS.CHARGEABLE };
     });
 
     await act(async () => {

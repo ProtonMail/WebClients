@@ -5,9 +5,9 @@ import type { AmountAndCurrency } from '@proton/payments';
 import {
     MAX_BITCOIN_AMOUNT,
     PAYMENT_TOKEN_STATUS,
+    type PaymentsVersion,
     createTokenV4,
     getTokenStatusV4,
-    type PaymentsVersion,
 } from '@proton/payments';
 import { addApiMock, addApiResolver, apiMock, flushPromises } from '@proton/testing';
 
@@ -206,7 +206,7 @@ describe('', () => {
 
         addApiMock(getTokenStatusV4('Token-12345').url, () => ({
             Code: 1000,
-            Status: PAYMENT_TOKEN_STATUS.STATUS_PENDING,
+            Status: PAYMENT_TOKEN_STATUS.PENDING,
         }));
 
         const { result, rerender } = renderHook(
@@ -272,7 +272,7 @@ describe('', () => {
         const resolveToken = () =>
             resolvers.resolve({
                 Code: 1000,
-                Status: PAYMENT_TOKEN_STATUS.STATUS_PENDING,
+                Status: PAYMENT_TOKEN_STATUS.PENDING,
             });
 
         const rejectToken = () =>
@@ -377,7 +377,7 @@ describe('', () => {
 
         addApiMock(getTokenStatusV4('Token-12345').url, () => ({
             Code: 1000,
-            Status: PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE,
+            Status: PAYMENT_TOKEN_STATUS.CHARGEABLE,
         }));
 
         jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);

@@ -11,9 +11,6 @@ import type {
     RemoveEventListener,
 } from './interface';
 
-const { STATUS_PENDING, STATUS_CHARGEABLE, STATUS_FAILED, STATUS_CONSUMED, STATUS_NOT_SUPPORTED } =
-    PAYMENT_TOKEN_STATUS;
-
 const DELAY_PULLING = 5000;
 const DELAY_LISTENING = 1000;
 
@@ -53,23 +50,23 @@ const pull = async ({
 
     const { Status } = await api({ ...getTokenStatusV4(Token), signal });
 
-    if (Status === STATUS_FAILED) {
+    if (Status === PAYMENT_TOKEN_STATUS.FAILED) {
         throw new Error(translations.paymentProcessFailedError);
     }
 
-    if (Status === STATUS_CONSUMED) {
+    if (Status === PAYMENT_TOKEN_STATUS.CONSUMED) {
         throw new Error(translations.paymentProcessConsumedError);
     }
 
-    if (Status === STATUS_NOT_SUPPORTED) {
+    if (Status === PAYMENT_TOKEN_STATUS.NOT_SUPPORTED) {
         throw new Error(translations.paymentProcessNotSupportedError);
     }
 
-    if (Status === STATUS_CHARGEABLE) {
+    if (Status === PAYMENT_TOKEN_STATUS.CHARGEABLE) {
         return;
     }
 
-    if (Status === STATUS_PENDING) {
+    if (Status === PAYMENT_TOKEN_STATUS.PENDING) {
         await wait(DELAY_PULLING);
         return pull({ Token, api, timer: timer + DELAY_PULLING, signal, translations });
     }
@@ -116,7 +113,7 @@ export const ensureTokenChargeable = (
                 try {
                     reset();
                     const { Status } = await api({ ...getTokenStatusV4(Token), signal });
-                    if (Status === STATUS_CHARGEABLE) {
+                    if (Status === PAYMENT_TOKEN_STATUS.CHARGEABLE) {
                         return resolve();
                     }
 
@@ -252,7 +249,7 @@ export const ensureTokenChargeableV5 = async (
             if ((tab && tab.closed) || noNeedToAuthorize) {
                 try {
                     const { Status } = await api({ ...getTokenStatusV5(token.PaymentToken), signal });
-                    if (Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE) {
+                    if (Status === PAYMENT_TOKEN_STATUS.CHARGEABLE) {
                         return resolve();
                     }
 

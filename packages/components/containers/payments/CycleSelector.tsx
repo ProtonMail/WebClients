@@ -15,8 +15,6 @@ import Select from '../../components/select/Select';
 import type { SelectTwoProps as ForwardedSelectTwoProps } from '../../components/selectTwo/SelectTwo';
 import SelectTwo from '../../components/selectTwo/SelectTwo';
 
-const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
-
 type CycleOption = { text: string; element?: ReactNode; value: Cycle };
 
 interface SharedProps {
@@ -52,9 +50,9 @@ export function getRestrictedCycle(
     props: Pick<SharedProps, 'options' | 'cycle' | 'minimumCycle' | 'maximumCycle' | 'additionalOptions'>
 ) {
     const defaultOptions: CycleOption[] = [
-        { text: c('Billing cycle option').t`Monthly`, value: MONTHLY },
-        { text: c('Billing cycle option').t`Annually`, value: YEARLY },
-        { text: c('Billing cycle option').t`Two-year`, value: TWO_YEARS },
+        { text: c('Billing cycle option').t`Monthly`, value: CYCLE.MONTHLY },
+        { text: c('Billing cycle option').t`Annually`, value: CYCLE.YEARLY },
+        { text: c('Billing cycle option').t`Two-year`, value: CYCLE.TWO_YEARS },
     ];
 
     const options = (props.options || defaultOptions)

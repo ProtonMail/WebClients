@@ -112,7 +112,7 @@ export class ChargebeePaypalPaymentProcessor extends PaymentProcessor<ChargebeeP
                 ...getTokenStatusV5(token.PaymentToken),
                 signal: abortSignal,
             });
-            if (Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE) {
+            if (Status === PAYMENT_TOKEN_STATUS.CHARGEABLE) {
                 void this.onTokenIsChargeable?.(token);
             }
         });

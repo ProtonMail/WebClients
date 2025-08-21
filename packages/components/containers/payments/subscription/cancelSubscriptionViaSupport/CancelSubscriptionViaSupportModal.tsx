@@ -37,22 +37,20 @@ enum REASON {
     OTHER,
 }
 
-const { TOO_EXPENSIVE, MISSING_FEATURE, ANOTHER_SERVICE, OTHER } = REASON;
-
 const reasons: { [key in REASON]: { tag: string; label: string } } = {
-    [TOO_EXPENSIVE]: {
+    [REASON.TOO_EXPENSIVE]: {
         tag: 'tag_1',
         label: c('VPN B2B cancellation reason').t`It’s too expensive`,
     },
-    [MISSING_FEATURE]: {
+    [REASON.MISSING_FEATURE]: {
         tag: 'tag_2',
         label: c('VPN B2B cancellation reason').t`It’s missing a key feature`,
     },
-    [ANOTHER_SERVICE]: {
+    [REASON.ANOTHER_SERVICE]: {
         tag: 'tag_3',
         label: c('VPN B2B cancellation reason').t`I found another service that I like better`,
     },
-    [OTHER]: {
+    [REASON.OTHER]: {
         tag: 'tag_4',
         label: c('VPN B2B cancellation reason').t`Other`,
     },

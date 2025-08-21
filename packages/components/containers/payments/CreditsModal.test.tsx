@@ -35,7 +35,7 @@ const createTokenMock = jest.fn((request) => {
 
     return {
         Token,
-        Status: PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE,
+        Status: PAYMENT_TOKEN_STATUS.CHARGEABLE,
     };
 });
 
