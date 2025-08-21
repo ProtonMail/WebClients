@@ -78,7 +78,6 @@ export const useRenameModalState = ({
         const nodeUid = generateNodeUid(volumeId, linkId);
         const successNotificationText = c('Notification').t`"${newName}" renamed successfully`;
         const unhandledErrorNotificationText = c('Notification').t`"${newName}" failed to be renamed`;
-        onSubmit?.(newName);
         await drive
             .renameNode(nodeUid, newName)
             .then(async () => {
