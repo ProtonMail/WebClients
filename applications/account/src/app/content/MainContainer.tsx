@@ -346,11 +346,19 @@ const MainContainer = () => {
             return <Redirect to={`/${appSlug}${pathFromLocation}`} />;
         }
 
-        if (
-            getIsSectionAvailable(routes.account.routes.subscription) &&
-            pathFromLocation === `/${appSlug}${routes.account.routes.dashboard.to}#invoices`
-        ) {
-            return <Redirect to={`/${appSlug}${routes.account.routes.subscription.to}#invoices`} />;
+        /**
+         * Dashboard -> Subscription redirects when dashboard v2 (and subscription) is active
+         */
+        if (getIsSectionAvailable(routes.account.routes.subscription)) {
+            if (location.pathname === `/${appSlug}${routes.account.routes.dashboard.to}`) {
+                if (location.hash === '#invoices' || location.hash === '#your-subscriptions') {
+                    return (
+                        <Redirect
+                            to={`/${appSlug}${routes.account.routes.subscription.to}${location.search}${location.hash}`}
+                        />
+                    );
+                }
+            }
         }
 
         const path = (() => {

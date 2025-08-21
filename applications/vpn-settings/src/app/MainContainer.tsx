@@ -78,7 +78,6 @@ import LiveChatZendesk, {
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import { APPS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
-import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { useFlag } from '@proton/unleash';
@@ -256,11 +255,15 @@ const MainContainer: FunctionComponent = () => {
             return <PrivateMainAreaLoading />;
         }
 
-        if (
-            getIsSectionAvailable(vpnRoutes.subscription) &&
-            getPathFromLocation(location) === `${vpnRoutes.dashboard.to}#invoices`
-        ) {
-            return <Redirect to={`${vpnRoutes.subscription.to}#invoices`} />;
+        /**
+         * Dashboard -> Subscription redirects when dashboard v2 (and subscription) is active
+         */
+        if (getIsSectionAvailable(vpnRoutes.subscription)) {
+            if (location.pathname === vpnRoutes.dashboard.to) {
+                if (location.hash === '#invoices' || location.hash === '#your-subscriptions') {
+                    return <Redirect to={`${vpnRoutes.subscription.to}${location.search}${location.hash}`} />;
+                }
+            }
         }
 
         return <Redirect to={getRedirectPath()} />;
