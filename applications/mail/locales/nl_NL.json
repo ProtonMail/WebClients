@@ -36,6 +36,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
+      "${ numberOfAddresses } address": [
+        "${ numberOfAddresses } adres",
+        "${ numberOfAddresses } adressen"
+      ],
       "A to Z": [
         "A tot Z"
       ],
@@ -214,6 +218,15 @@
       "Choose a file or drag it here": [
         "Kies een bestand of sleep het hierheen"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Claim uw ${ BRAND_NAME }-adres"
+      ],
+      "Claim this address": [
+        "Claim dit adres"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Claim uw gratis ${ BRAND_NAME }-adres"
+      ],
       "Clear": [
         "Wissen"
       ],
@@ -312,6 +325,9 @@
       ],
       "Copy alias “${ name }”": [
         "Kopieer alias \"${ name }\""
+      ],
+      "Copy email address": [
+        "Kopieer e-mailadres"
       ],
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
@@ -588,6 +604,9 @@
       "Get ${ planOrAppName }": [
         "Neem ${ planOrAppName }"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Krijg een gratis ${ BRAND_NAME }-adres"
+      ],
       "Get in touch": [
         "Neem contact op"
       ],
@@ -792,6 +811,9 @@
       ],
       "Make it friendly": [
         "Hou het vriendelijk"
+      ],
+      "Manage addresses": [
+        "Adressen beheren"
       ],
       "Manage advanced account protections": [
         "Geavanceerde accountbeveiligingen beheren"
@@ -4061,6 +4083,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Vereenvoudig het synchroniseren en plannen met gedeelde agenda's."
       ],
+      "This view shows messages sent to the following addresses:": [
+        "Deze weergave toont berichten verzonden naar de volgende adressen:"
+      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Voeg de schrijfassistent toe aan uw abonnement om deze te blijven gebruiken."
       ],
@@ -5679,6 +5704,9 @@
       "Checklist complete": [
         "Controlelijst voltooid"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Claim uw ${ BRAND_NAME }-adres"
+      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Voltooi deze checklist in ${ daysCount } om uw opslagruimte gratis te verdubbelen."
       ],
@@ -6233,6 +6261,12 @@
       ],
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "De wachtwoordbeheerder van ${ BRAND_NAME } laat u wachtwoorden maken, opslaan en automatisch invullen, zodat u ze nooit hoeft te resetten."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } vereist een ${ BRAND_NAME } adres voor veilige afspraak synchronisatie en versleuteling. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } vereist een ${ BRAND_NAME } adres voor veilige afspraak synchronisatie en versleuteling. Vraag nu uw gratis ${ MAIL_APP_NAME } adres aan."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nieuwe agenda",
@@ -6996,6 +7030,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Geniet van een snellere, doelgerichte e-mailervaring met de desktop app."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Zorg voor volledig privé en versleutelde communicatie. Vraag nu uw gratis ${ BRAND_NAME }-e-mailadres aan."
       ],
       "Enter the code from your authenticator app": [
         "Voer de code van uw authenticatie app in"
@@ -9524,6 +9561,9 @@
       ],
       "Upload picture": [
         "Afbeelding uploaden"
+      ],
+      "Username": [
+        "Gebruikersnaam"
       ],
       "VAT": [
         "BTW"
@@ -14173,6 +14213,9 @@
       "Change password": [
         "Wachtwoord wijzigen"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Claim uw ${ MAIL_APP_NAME }-adres"
+      ],
       "Clearing data": [
         "Data aan het wissen"
       ],
@@ -14396,6 +14439,9 @@
       ],
       "Forward": [
         "Doorsturen"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Krijg volledige toegang tot ${ CALENDAR_APP_NAME }"
       ],
       "Get more from your VPN": [
         "Haal meer uit uw VPN"
@@ -14972,6 +15018,9 @@
       ],
       "Your account is protected": [
         "Uw account is beschermd"
+      ],
+      "Your addresses": [
+        "Uw adressen"
       ],
       "Your changes are not synced yet": [
         "Uw wijzigingen zijn nog niet gesynchroniseerd"

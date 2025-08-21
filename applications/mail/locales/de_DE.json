@@ -36,6 +36,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
+      "${ numberOfAddresses } address": [
+        "${ numberOfAddresses } Adresse",
+        "${ numberOfAddresses } Adressen"
+      ],
       "A to Z": [
         "A bis Z"
       ],
@@ -214,6 +218,15 @@
       "Choose a file or drag it here": [
         "Datei auswählen oder hierhinein ziehen"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Deine ${ BRAND_NAME }-Adresse beanspruchen"
+      ],
+      "Claim this address": [
+        "Diese Adresse beanspruchen"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Deine kostenlose ${ BRAND_NAME }-Adresse beanspruchen"
+      ],
       "Clear": [
         "Löschen"
       ],
@@ -312,6 +325,9 @@
       ],
       "Copy alias “${ name }”": [
         "Alias “${ name }” kopieren"
+      ],
+      "Copy email address": [
+        "E-Mail-Adresse kopieren"
       ],
       "Copy email to clipboard": [
         "E-Mail in Zwischenablage kopieren"
@@ -588,6 +604,9 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName } holen"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Hole dir eine kostenlose ${ BRAND_NAME }-Adresse"
+      ],
       "Get in touch": [
         "Kontakt aufnehmen"
       ],
@@ -792,6 +811,9 @@
       ],
       "Make it friendly": [
         "Freundlicher machen"
+      ],
+      "Manage addresses": [
+        "E-Mail-Adressen verwalten"
       ],
       "Manage advanced account protections": [
         "Erweiterte Konto-Sicherheitsmaßnahmen verwalten"
@@ -4055,6 +4077,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Vereinfache die Synchronisierung und Planung mit geteilten Kalendern."
       ],
+      "This view shows messages sent to the following addresses:": [
+        "Diese Ansicht zeigt Nachrichten, die an die folgenden Adressen gesendet wurden:"
+      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Wenn du den Schreibassistenten weiterhin nutzen möchtest, füge ihn zu deinem Abonnement hinzu."
       ],
@@ -5673,6 +5698,9 @@
       "Checklist complete": [
         "Checkliste vollständig"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "${ BRAND_NAME }-Adresse beanspruchen"
+      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Schließe diese Checkliste innerhalb von ${ daysCount } ab, um deinen Speicherplatz kostenlos zu verdoppeln."
       ],
@@ -6227,6 +6255,12 @@
       ],
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "Mit dem Passwort-Manager von ${ BRAND_NAME } kannst du Passwörter erstellen, speichern und automatisch ausfüllen, sodass du sie nie zurücksetzen musst."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } braucht eine ${ BRAND_NAME }-Adresse für sichere Termin-Synchronisierung und Verschlüsselung. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } benötigt eine ${ BRAND_NAME }-Adresse für die sichere Termin-Synchronisierung und Verschlüsselung. Hol dir jetzt deine kostenlose ${ MAIL_APP_NAME }-Adresse."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } neuer Kalender",
@@ -6990,6 +7024,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Genieße ein schnelleres, konzentriertes E-Mail-Erlebnis mit der Desktop-App."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Sorge für vollständig private und verschlüsselte Kommunikation. Sichere dir jetzt deine kostenlose ${ BRAND_NAME }-E-Mail-Adresse."
       ],
       "Enter the code from your authenticator app": [
         "Code aus deiner Authentifizierungs-App ein eingeben"
@@ -9512,6 +9549,9 @@
       ],
       "Upload picture": [
         "Bild hochladen"
+      ],
+      "Username": [
+        "Benutzername"
       ],
       "VAT": [
         "MwSt."
@@ -14143,6 +14183,9 @@
       "Change password": [
         "Passwort ändern"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Deine ${ MAIL_APP_NAME }-Adresse beanspruchen"
+      ],
       "Clearing data": [
         "Daten werden gelöscht"
       ],
@@ -14366,6 +14409,9 @@
       ],
       "Forward": [
         "Weiterleiten"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Erhalte vollen Zugang zu ${ CALENDAR_APP_NAME }"
       ],
       "Get more from your VPN": [
         "Hole mehr aus deinem VPN heraus"
@@ -14942,6 +14988,9 @@
       ],
       "Your account is protected": [
         "Dein Konto ist geschützt"
+      ],
+      "Your addresses": [
+        "Deine Adressen"
       ],
       "Your changes are not synced yet": [
         "Deine Änderungen wurden noch nicht synchronisiert"
