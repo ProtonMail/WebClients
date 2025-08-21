@@ -20,8 +20,6 @@ import clsx from '@proton/utils/clsx';
 
 import useMonthlyOptions from './useMonthlyOptions';
 
-const { ONCE, DAILY, WEEKLY, MONTHLY, YEARLY, CUSTOM } = FREQUENCY;
-
 interface FrequencyOption {
     text: ReactNode;
     title: string;
@@ -57,7 +55,7 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
         return {
             text: c('Option').jt`Every month ${description}`,
             title: c('Title').t`Every month ${option.text}`,
-            type: MONTHLY,
+            type: FREQUENCY.MONTHLY,
             value: `MONTHLY ${option.value}`,
             monthly: { type: option.value },
             shouldDisplay: true,
@@ -74,21 +72,21 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
         {
             text: c('Option').t`Does not repeat`,
             title: c('Title').t`Does not repeat`,
-            type: ONCE,
-            value: ONCE,
+            type: FREQUENCY.ONCE,
+            value: FREQUENCY.ONCE,
             shouldDisplay: true,
         },
         {
             text: c('Option').t`Every day`,
             title: c('Title').t`Every day`,
-            type: DAILY,
-            value: DAILY,
+            type: FREQUENCY.DAILY,
+            value: FREQUENCY.DAILY,
             shouldDisplay: true,
         },
         {
             text: c('Option').jt`Every weekday ${everyWeekdayDescription}`,
             title: c('Title').t`Every weekday ${startOfTheWeekDay} - ${endOfTheWeekDay}`,
-            type: WEEKLY,
+            type: FREQUENCY.WEEKLY,
             value: `WEEKLY ${WEEKLY_TYPE.ON_DAYS}`,
             weekly: {
                 type: WEEKLY_TYPE.ON_DAYS,
@@ -99,8 +97,8 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
         {
             text: c('Option').jt`Every week ${everyWeekDescription}`,
             title: c('Title').t`Every week on ${weekdaysLong[currentDay]}`,
-            type: WEEKLY,
-            value: WEEKLY,
+            type: FREQUENCY.WEEKLY,
+            value: FREQUENCY.WEEKLY,
             shouldDisplay: true,
             weekly: {
                 type: WEEKLY_TYPE.ON_DAYS,
@@ -111,15 +109,15 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
         {
             text: c('Option').t`Every year`,
             title: c('Title').t`Every year`,
-            type: YEARLY,
-            value: YEARLY,
+            type: FREQUENCY.YEARLY,
+            value: FREQUENCY.YEARLY,
             shouldDisplay: true,
         },
         {
             text: c('Option').t`Custom...`,
             title: c('Option').t`Custom...`,
-            type: CUSTOM,
-            value: CUSTOM,
+            type: FREQUENCY.CUSTOM,
+            value: FREQUENCY.CUSTOM,
             shouldDisplay: true,
         },
     ];
@@ -129,18 +127,18 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
     };
 
     const getInitialSelection = () => {
-        const isDefault = frequencyModel.type === ONCE;
-        const isCustom = frequencyModel.type === CUSTOM;
-        const isDaily = frequencyModel.frequency === DAILY;
-        const isYearly = frequencyModel.frequency === YEARLY;
-        const isWeekly = frequencyModel.frequency === WEEKLY;
-        const isMonthly = frequencyModel.frequency === MONTHLY;
+        const isDefault = frequencyModel.type === FREQUENCY.ONCE;
+        const isCustom = frequencyModel.type === FREQUENCY.CUSTOM;
+        const isDaily = frequencyModel.frequency === FREQUENCY.DAILY;
+        const isYearly = frequencyModel.frequency === FREQUENCY.YEARLY;
+        const isWeekly = frequencyModel.frequency === FREQUENCY.WEEKLY;
+        const isMonthly = frequencyModel.frequency === FREQUENCY.MONTHLY;
 
         if (isDefault) {
             return frequencies[0];
         }
 
-        const customOption = frequencies.find((option) => option.type === CUSTOM);
+        const customOption = frequencies.find((option) => option.type === FREQUENCY.CUSTOM);
 
         if (isCustom) {
             let option = undefined;
@@ -149,7 +147,7 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
                 if (isWeekly) {
                     option = frequencies.find(
                         (option) =>
-                            option.type === WEEKLY &&
+                            option.type === FREQUENCY.WEEKLY &&
                             option.weekly?.type === frequencyModel.weekly.type &&
                             validateWeeklyDays(option, frequencyModel)
                     );
@@ -157,7 +155,8 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
 
                 if (isMonthly) {
                     option = frequencies.find(
-                        (option) => option.type === MONTHLY && option.monthly?.type === frequencyModel.monthly.type
+                        (option) =>
+                            option.type === FREQUENCY.MONTHLY && option.monthly?.type === frequencyModel.monthly.type
                     );
                 }
 
@@ -172,7 +171,7 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
             return (
                 frequencies.find(
                     (option) =>
-                        option.type === WEEKLY &&
+                        option.type === FREQUENCY.WEEKLY &&
                         option.weekly?.type === frequencyModel.weekly.type &&
                         validateWeeklyDays(option, frequencyModel)
                 ) ||
@@ -184,7 +183,8 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
         if (isMonthly) {
             return (
                 frequencies.find(
-                    (option) => option.type === MONTHLY && option.monthly?.type === frequencyModel.monthly.type
+                    (option) =>
+                        option.type === FREQUENCY.MONTHLY && option.monthly?.type === frequencyModel.monthly.type
                 ) ||
                 customOption ||
                 frequencies[0]
@@ -202,7 +202,7 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
     }, [start]);
 
     useEffect(() => {
-        if (frequencyModel.type === CUSTOM) {
+        if (frequencyModel.type === FREQUENCY.CUSTOM) {
             setSelectedOption(getInitialSelection);
         }
     }, [frequencyModel]);
@@ -213,7 +213,8 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
         toggle();
     };
 
-    const selectedOptionTitle = selectedOption.value === CUSTOM ? c('Option').t`Custom` : selectedOption.title;
+    const selectedOptionTitle =
+        selectedOption.value === FREQUENCY.CUSTOM ? c('Option').t`Custom` : selectedOption.title;
 
     return (
         <>
@@ -252,9 +253,12 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
                 {filteredFrequencies.map(({ type, value, title, text }) => {
                     return (
                         <React.Fragment key={title}>
-                            {type === CUSTOM && <hr className="my-2" />}
+                            {type === FREQUENCY.CUSTOM && <hr className="my-2" />}
                             <DropdownMenuButton
-                                className={clsx('text-left flex flex-nowrap items-center', type === CUSTOM && 'mb-1')}
+                                className={clsx(
+                                    'text-left flex flex-nowrap items-center',
+                                    type === FREQUENCY.CUSTOM && 'mb-1'
+                                )}
                                 onClick={() => {
                                     const frequencyOption = filteredFrequencies.find(
                                         (option) => option.value === value
@@ -264,16 +268,17 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
                                             ...frequencyModel,
                                             type: frequencyOption.type,
                                             frequency:
-                                                frequencyOption.type !== CUSTOM
+                                                frequencyOption.type !== FREQUENCY.CUSTOM
                                                     ? frequencyOption.type
                                                     : frequencyModel.frequency,
                                             monthly: frequencyOption.monthly ?? frequencyModel.monthly,
                                             weekly: frequencyOption.weekly ?? frequencyModel.weekly,
                                             ends:
-                                                frequencyOption.type !== CUSTOM
+                                                frequencyOption.type !== FREQUENCY.CUSTOM
                                                     ? { type: END_TYPE.NEVER, count: 2 }
                                                     : frequencyModel.ends,
-                                            interval: frequencyOption.type !== CUSTOM ? 1 : frequencyModel.interval,
+                                            interval:
+                                                frequencyOption.type !== FREQUENCY.CUSTOM ? 1 : frequencyModel.interval,
                                         });
                                         setSelectedOption(frequencyOption);
                                     }

@@ -8,9 +8,6 @@ import type { AugmentedSendPreferences } from '../containers/calendar/interface'
 import type { InviteActions } from '../interfaces/Invite';
 import { INVITE_ACTION_TYPES } from '../interfaces/Invite';
 
-const { CHANGE_PARTSTAT, DECLINE_INVITATION, NONE, SEND_INVITATION, CANCEL_INVITATION, SEND_UPDATE } =
-    INVITE_ACTION_TYPES;
-
 export const getCleanSendDataFromSendPref = ({
     emailsWithError,
     sendPreferencesMap,
@@ -73,7 +70,7 @@ export const getCleanSendDataFromSendPref = ({
         emailsWithError: [],
     };
 
-    if (type === SEND_INVITATION) {
+    if (type === INVITE_ACTION_TYPES.SEND_INVITATION) {
         if (!vevent) {
             throw new Error('Cannot create event without vevent component');
         }
@@ -110,38 +107,40 @@ export const getCleanSendDataFromSendPref = ({
             ...cleanData,
             inviteActions: {
                 ...cleanData.inviteActions,
-                type: hasAddedOrRemoved ? SEND_INVITATION : NONE,
+                type: hasAddedOrRemoved ? INVITE_ACTION_TYPES.SEND_INVITATION : INVITE_ACTION_TYPES.NONE,
             },
             emailsWithError: [...addedEmailsWithError, ...removedEmailsWithError],
         };
     }
-    if (type === SEND_UPDATE) {
+    if (type === INVITE_ACTION_TYPES.SEND_UPDATE) {
         const cannotNotify = !invitedCleanAttendees?.length && !removedCleanAttendees?.length;
         return {
             ...cleanData,
             inviteActions: {
                 ...cleanData.inviteActions,
-                type: cannotNotify ? NONE : SEND_UPDATE,
+                type: cannotNotify ? INVITE_ACTION_TYPES.NONE : INVITE_ACTION_TYPES.SEND_UPDATE,
             },
             emailsWithError: [...invitedEmailsWithError, ...addedEmailsWithError, ...removedEmailsWithError],
         };
     }
-    if (type === CANCEL_INVITATION) {
+    if (type === INVITE_ACTION_TYPES.CANCEL_INVITATION) {
         return {
             ...cleanData,
             inviteActions: {
                 ...cleanData.inviteActions,
-                type: cancelledCleanAttendees?.length ? CANCEL_INVITATION : NONE,
+                type: cancelledCleanAttendees?.length
+                    ? INVITE_ACTION_TYPES.CANCEL_INVITATION
+                    : INVITE_ACTION_TYPES.NONE,
             },
             emailsWithError: cancelledEmailsWithError,
         };
     }
-    if ([CHANGE_PARTSTAT, DECLINE_INVITATION].includes(type)) {
+    if ([INVITE_ACTION_TYPES.CHANGE_PARTSTAT, INVITE_ACTION_TYPES.DECLINE_INVITATION].includes(type)) {
         return {
             sendPreferencesMap,
             inviteActions: {
                 ...inviteActions,
-                type: NONE,
+                type: INVITE_ACTION_TYPES.NONE,
             },
             vevent,
             cancelVevent,
