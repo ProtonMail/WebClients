@@ -21,8 +21,6 @@ import {
 import { message } from '../../../../helpers/test/pinKeys';
 import ExtraPinKey from './ExtraPinKey';
 
-const { SIGNED_AND_VALID, SIGNED_AND_INVALID, NOT_SIGNED, NOT_VERIFIED } = MAIL_VERIFICATION_STATUS;
-
 const setup = async (
     message: Message,
     messageVerification: MessageVerification,
@@ -59,7 +57,7 @@ describe('Extra pin key banner not displayed', () => {
         const messageVerification = {
             signingPublicKey: signingKey.publicKeys[0],
             senderPinnedKeys: [...senderKey.publicKeys] as PublicKeyReference[],
-            verificationStatus: SIGNED_AND_VALID,
+            verificationStatus: MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID,
         } as MessageVerification;
 
         await setup(message, messageVerification, true);
@@ -70,9 +68,9 @@ describe('Extra pin key banner not displayed', () => {
 
     it.each`
         verificationStatus
-        ${NOT_SIGNED}
-        ${NOT_VERIFIED}
-        ${SIGNED_AND_INVALID}
+        ${MAIL_VERIFICATION_STATUS.NOT_SIGNED}
+        ${MAIL_VERIFICATION_STATUS.NOT_VERIFIED}
+        ${MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID}
     `('should not render the banner when signing public key is already pinned', async ({ verificationStatus }) => {
         const senderKey = await generateKeys('sender', message.Sender.Address);
 
@@ -111,11 +109,11 @@ describe('Extra pin key banner displayed', () => {
 
     // AUTOPROMPT
     it.each`
-        verificationStatus    | shouldDisablePrompt
-        ${NOT_VERIFIED}       | ${true}
-        ${NOT_VERIFIED}       | ${false}
-        ${SIGNED_AND_INVALID} | ${true}
-        ${SIGNED_AND_INVALID} | ${false}
+        verificationStatus                             | shouldDisablePrompt
+        ${MAIL_VERIFICATION_STATUS.NOT_VERIFIED}       | ${true}
+        ${MAIL_VERIFICATION_STATUS.NOT_VERIFIED}       | ${false}
+        ${MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID} | ${true}
+        ${MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID} | ${false}
     `(
         'should render the banner when prompt key pinning is AUTOPROMPT',
         async ({ verificationStatus, shouldDisablePrompt }) => {
@@ -157,7 +155,7 @@ describe('Extra pin key banner displayed', () => {
             signingPublicKey: signingKey.publicKeys[0],
             senderPinnedKeys: [...senderKey.publicKeys] as PublicKeyReference[],
             senderPinnableKeys: [...signingKey.publicKeys] as PublicKeyReference[],
-            verificationStatus: NOT_VERIFIED,
+            verificationStatus: MAIL_VERIFICATION_STATUS.NOT_VERIFIED,
         } as MessageVerification;
 
         await setup(message, messageVerification);
@@ -175,7 +173,7 @@ describe('Extra pin key banner displayed', () => {
         const messageVerification = {
             signingPublicKey: signingKey.publicKeys[0],
             senderPinnedKeys: [...senderKey.publicKeys] as PublicKeyReference[],
-            verificationStatus: SIGNED_AND_INVALID,
+            verificationStatus: MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID,
         } as MessageVerification;
 
         await setup(message, messageVerification);
@@ -185,8 +183,8 @@ describe('Extra pin key banner displayed', () => {
     // PIN_ATTACHED_SIGNING
     it.each`
         verificationStatus
-        ${NOT_VERIFIED}
-        ${SIGNED_AND_INVALID}
+        ${MAIL_VERIFICATION_STATUS.NOT_VERIFIED}
+        ${MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID}
     `('should render the banner when prompt key pinning is PIN_ATTACHED_SIGNING', async ({ verificationStatus }) => {
         const signingKey = await generateKeys('signing', message.Sender.Address);
 
@@ -206,11 +204,11 @@ describe('Extra pin key banner displayed', () => {
 
     // PIN_ATTACHED
     it.each`
-        verificationStatus    | hasSigningKey
-        ${NOT_SIGNED}         | ${false}
-        ${NOT_SIGNED}         | ${true}
-        ${NOT_VERIFIED}       | ${false}
-        ${SIGNED_AND_INVALID} | ${false}
+        verificationStatus                             | hasSigningKey
+        ${MAIL_VERIFICATION_STATUS.NOT_SIGNED}         | ${false}
+        ${MAIL_VERIFICATION_STATUS.NOT_SIGNED}         | ${true}
+        ${MAIL_VERIFICATION_STATUS.NOT_VERIFIED}       | ${false}
+        ${MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID} | ${false}
     `(
         'should render the banner when prompt key pinning is PIN_ATTACHED',
         async ({ verificationStatus, hasSigningKey }) => {
