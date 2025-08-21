@@ -10,7 +10,6 @@ import { getShouldOpenReferralModal } from '@proton/components/containers/referr
 import TrialEndedModal from '@proton/components/containers/subscription/TrialEndedModal';
 import { FeatureCode, useFeature } from '@proton/features';
 import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash/index';
 
 import type { StartupModal } from './types';
 
@@ -63,10 +62,9 @@ export const useTrialEndedModal: () => StartupModal = () => {
 
     const [userSettings] = useUserSettings();
 
-    const isEnabled = useFlag('ManualTrialsFE');
     const displayTrialEndModal = !!userSettings?.Flags?.DisplayTrialEndModal;
 
-    const showModal = isEnabled && displayTrialEndModal;
+    const showModal = displayTrialEndModal;
 
     return {
         showModal,

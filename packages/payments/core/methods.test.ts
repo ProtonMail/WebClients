@@ -1621,7 +1621,6 @@ describe('Apple Pay', () => {
             billingAddress: undefined,
             enableSepa: true,
             canUseApplePay: true,
-            enableApplePay: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(true);
@@ -1644,7 +1643,6 @@ describe('Apple Pay', () => {
             billingAddress: undefined,
             enableSepa: true,
             canUseApplePay: false,
-            enableApplePay: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(false);
@@ -1668,7 +1666,6 @@ describe('Apple Pay', () => {
             billingAddress: undefined,
             enableSepa: true,
             canUseApplePay: true,
-            enableApplePay: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(false);
@@ -1691,7 +1688,6 @@ describe('Apple Pay', () => {
             billingAddress: undefined,
             enableSepa: true,
             canUseApplePay: true,
-            enableApplePay: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(false);
@@ -1721,7 +1717,6 @@ describe('Apple Pay', () => {
             billingAddress: undefined,
             enableSepa: true,
             canUseApplePay: true,
-            enableApplePay: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(true);
@@ -1744,7 +1739,6 @@ describe('Apple Pay', () => {
                 billingAddress: undefined,
                 enableSepa: true,
                 canUseApplePay: true,
-                enableApplePay: true,
             });
 
             expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(
@@ -1770,7 +1764,6 @@ describe('Apple Pay', () => {
             billingAddress: undefined,
             enableSepa: true,
             canUseApplePay: true,
-            enableApplePay: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(true);
@@ -1792,7 +1785,7 @@ describe('Apple Pay', () => {
             chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
-            enableApplePay: true,
+
             // canUseApplePay: undefined - testing default behavior
         });
 
@@ -1816,7 +1809,6 @@ describe('Apple Pay', () => {
             billingAddress: undefined,
             enableSepa: true,
             canUseApplePay: true,
-            enableApplePay: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(true);

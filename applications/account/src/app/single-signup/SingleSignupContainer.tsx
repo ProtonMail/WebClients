@@ -47,7 +47,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
-import { useFlag, useFlagsStatus } from '@proton/unleash/index';
+import { useFlag } from '@proton/unleash/index';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
@@ -169,10 +169,7 @@ const SingleSignupContainer = ({
 
     const isVariantB = getSearchParams().get('v') === 'b' || getSearchParams().get('v') === 'aff';
 
-    const isB2BTrialEnabled = useFlag('ManualTrialsFE');
     const hasZipCodeValidation = useFlag('PaymentsZipCodeValidation');
-
-    const { flagsReady } = useFlagsStatus();
 
     const [signupParameters, setSignupParameters] = useState(() => {
         const result = getSignupSearchParams(location.pathname, getSearchParams());
@@ -191,14 +188,6 @@ const SingleSignupContainer = ({
 
         return result;
     });
-    useEffect(() => {
-        if (flagsReady && !isB2BTrialEnabled && signupParameters.trial) {
-            // remove ?trial from search params and redirect
-            const url = new URL(window.location.href);
-            url.searchParams.delete('trial');
-            window.location.href = url.toString();
-        }
-    }, [flagsReady, isB2BTrialEnabled, signupParameters.trial]);
 
     const [model, setModel] = useState<VPNSignupModel>(() => {
         // Add free plan
