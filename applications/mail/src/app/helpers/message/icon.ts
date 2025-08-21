@@ -20,24 +20,6 @@ import { STATUS_ICONS_FILLS, X_PM_HEADERS } from '../../models/crypto';
 // The logic for determining the status icons can be found in Confluence under the title
 // Encryption status for outgoing and incoming email
 
-const { SEND_PM, SEND_EO, SEND_PGP_INLINE, SEND_PGP_MIME } = PACKAGE_TYPE;
-const { NOT_VERIFIED, NOT_SIGNED, SIGNED_AND_INVALID, SIGNED_AND_VALID } = MAIL_VERIFICATION_STATUS;
-const { PLAIN, CHECKMARK, SIGN, WARNING, FAIL } = STATUS_ICONS_FILLS;
-const {
-    NONE,
-    PGP_INLINE,
-    PGP_INLINE_PINNED,
-    PGP_MIME,
-    PGP_MIME_PINNED,
-    PGP_PM,
-    PGP_PM_PINNED,
-    PGP_EO,
-    INTERNAL,
-    EXTERNAL,
-    END_TO_END,
-    ON_COMPOSE,
-    ON_DELIVERY,
-} = X_PM_HEADERS;
 const API_NO_ADDRESS_ERROR = 'This address does not exist. Please try again';
 
 export interface MessageViewIcons {
@@ -73,54 +55,59 @@ export const getSendStatusIcon = (sendPreferences: SendPreferences): StatusIcon 
             error.message === KEY_VERIFICATION_ERROR_MESSAGE
                 ? c('loc_nightly: Composer email icon').t`Unable to send to this address at this time`
                 : error.message;
-        return { colorClassName: 'color-danger', isEncrypted: false, fill: FAIL, text: errorMessage };
+        return {
+            colorClassName: 'color-danger',
+            isEncrypted: false,
+            fill: STATUS_ICONS_FILLS.FAIL,
+            text: errorMessage,
+        };
     }
     if (sendPreferences.encryptionDisabled) {
         return {
             colorClassName: 'color-norm',
             isEncrypted: false,
-            fill: PLAIN,
+            fill: STATUS_ICONS_FILLS.PLAIN,
             text: c('email_forwarding_2023: Composer email icon')
                 .t`Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.`,
         };
     }
-    if (pgpScheme === SEND_PM) {
+    if (pgpScheme === PACKAGE_TYPE.SEND_PM) {
         const result = { colorClassName: 'color-info', isEncrypted: true };
         if (isPublicKeyPinned) {
             return {
                 ...result,
-                fill: CHECKMARK,
+                fill: STATUS_ICONS_FILLS.CHECKMARK,
                 text: c('Composer email icon').t`End-to-end encrypted to verified recipient`,
             };
         }
         return {
             ...result,
-            fill: PLAIN,
+            fill: STATUS_ICONS_FILLS.PLAIN,
             text: c('Composer email icon').t`End-to-end encrypted`,
         };
     }
-    if (pgpScheme === SEND_EO) {
+    if (pgpScheme === PACKAGE_TYPE.SEND_EO) {
         return {
             colorClassName: 'color-info',
             isEncrypted: true,
-            fill: PLAIN,
+            fill: STATUS_ICONS_FILLS.PLAIN,
             text: c('Composer email icon').t`End-to-end encrypted`,
         };
     }
-    if ([SEND_PGP_INLINE, SEND_PGP_MIME].includes(pgpScheme)) {
+    if ([PACKAGE_TYPE.SEND_PGP_INLINE, PACKAGE_TYPE.SEND_PGP_MIME].includes(pgpScheme)) {
         // sign must be true to fall in here
         const result = { colorClassName: 'color-success', isEncrypted: encrypt };
         if (warningsText) {
             if (hasApiKeys) {
                 return {
                     ...result,
-                    fill: WARNING,
+                    fill: STATUS_ICONS_FILLS.WARNING,
                     text: c('Composer email icon').t`End-to-end encrypted. ${warningsText}`,
                 };
             }
             return {
                 ...result,
-                fill: WARNING,
+                fill: STATUS_ICONS_FILLS.WARNING,
                 text: c('Composer email icon').t`PGP-encrypted. ${warningsText}`,
             };
         }
@@ -129,22 +116,26 @@ export const getSendStatusIcon = (sendPreferences: SendPreferences): StatusIcon 
                 if (hasApiKeys) {
                     return {
                         ...result,
-                        fill: CHECKMARK,
+                        fill: STATUS_ICONS_FILLS.CHECKMARK,
                         text: c('Composer email icon').t`End-to-end encrypted to verified recipient`,
                     };
                 }
                 return {
                     ...result,
-                    fill: CHECKMARK,
+                    fill: STATUS_ICONS_FILLS.CHECKMARK,
                     text: c('Composer email icon').t`PGP-encrypted to verified recipient`,
                 };
             }
             if (hasApiKeys) {
-                return { ...result, fill: PLAIN, text: c('Composer email icon').t`End-to-end encrypted` };
+                return {
+                    ...result,
+                    fill: STATUS_ICONS_FILLS.PLAIN,
+                    text: c('Composer email icon').t`End-to-end encrypted`,
+                };
             }
-            return { ...result, fill: SIGN, text: c('Composer email icon').t`PGP-encrypted` };
+            return { ...result, fill: STATUS_ICONS_FILLS.SIGN, text: c('Composer email icon').t`PGP-encrypted` };
         }
-        return { ...result, fill: SIGN, text: c('Composer email icon').t`PGP-signed` };
+        return { ...result, fill: STATUS_ICONS_FILLS.SIGN, text: c('Composer email icon').t`PGP-signed` };
     }
 };
 
@@ -168,16 +159,24 @@ export const getSentStatusIcon = ({
         const encryptions = Object.values(mapEncryption);
         const hasHeaderInfo = !!encryptions.length;
         const allExternal =
-            hasHeaderInfo && !encryptions.some((encryption) => [PGP_PM, PGP_PM_PINNED, PGP_EO].includes(encryption));
+            hasHeaderInfo &&
+            !encryptions.some((encryption) =>
+                [X_PM_HEADERS.PGP_PM, X_PM_HEADERS.PGP_PM_PINNED, X_PM_HEADERS.PGP_EO].includes(encryption)
+            );
         const allPinned =
             hasHeaderInfo &&
             !encryptions.some(
-                (encryption) => ![PGP_PM_PINNED, PGP_MIME_PINNED, PGP_INLINE_PINNED].includes(encryption)
+                (encryption) =>
+                    ![
+                        X_PM_HEADERS.PGP_PM_PINNED,
+                        X_PM_HEADERS.PGP_MIME_PINNED,
+                        X_PM_HEADERS.PGP_INLINE_PINNED,
+                    ].includes(encryption)
             );
-        const allEncrypted = hasHeaderInfo && !encryptions.some((encryption) => encryption === NONE);
+        const allEncrypted = hasHeaderInfo && !encryptions.some((encryption) => encryption === X_PM_HEADERS.NONE);
         if (allPinned) {
             const text =
-                contentEncryption === END_TO_END
+                contentEncryption === X_PM_HEADERS.END_TO_END
                     ? c('Sent email icon').ngettext(
                           msgid`Sent by you with end-to-end encryption to verified recipient`,
                           `Sent by you with end-to-end encryption to verified recipients`,
@@ -191,7 +190,7 @@ export const getSentStatusIcon = ({
             return {
                 colorClassName: allExternal ? 'color-success' : 'color-info',
                 isEncrypted: true,
-                fill: CHECKMARK,
+                fill: STATUS_ICONS_FILLS.CHECKMARK,
                 text,
             };
         }
@@ -199,9 +198,9 @@ export const getSentStatusIcon = ({
             return {
                 colorClassName: allExternal ? 'color-success' : 'color-info',
                 isEncrypted: true,
-                fill: PLAIN,
+                fill: STATUS_ICONS_FILLS.PLAIN,
                 text:
-                    contentEncryption === END_TO_END
+                    contentEncryption === X_PM_HEADERS.END_TO_END
                         ? c('Sent email icon').t`Sent by you with end-to-end encryption`
                         : c('Sent email icon').t`Sent by ${MAIL_APP_NAME} with zero-access encryption`,
             };
@@ -209,77 +208,83 @@ export const getSentStatusIcon = ({
         return {
             colorClassName: isImported ? 'color-norm' : 'color-info',
             isEncrypted: true,
-            fill: PLAIN,
+            fill: STATUS_ICONS_FILLS.PLAIN,
             text: c('Sent email icon').t`Stored with zero-access encryption`,
         };
     }
 
     const [authentication, encryption] = [mapAuthentication[emailAddress], mapEncryption[emailAddress]];
-    if (encryption === NONE && [PGP_INLINE, PGP_MIME].includes(authentication)) {
-        if (contentEncryption !== ON_COMPOSE) {
+    if (encryption === X_PM_HEADERS.NONE && [X_PM_HEADERS.PGP_INLINE, X_PM_HEADERS.PGP_MIME].includes(authentication)) {
+        if (contentEncryption !== X_PM_HEADERS.ON_COMPOSE) {
             return;
         }
         return {
             colorClassName: 'color-success',
             isEncrypted: false,
-            fill: SIGN,
+            fill: STATUS_ICONS_FILLS.SIGN,
             text: c('Sent email icon').t`PGP-signed`,
         };
     }
-    if ([PGP_INLINE, PGP_MIME].includes(encryption) && [NONE, PGP_INLINE, PGP_MIME].includes(authentication)) {
+    if (
+        [X_PM_HEADERS.PGP_INLINE, X_PM_HEADERS.PGP_MIME].includes(encryption) &&
+        [X_PM_HEADERS.NONE, X_PM_HEADERS.PGP_INLINE, X_PM_HEADERS.PGP_MIME].includes(authentication)
+    ) {
         return {
             colorClassName: 'color-success',
             isEncrypted: true,
-            fill: PLAIN,
+            fill: STATUS_ICONS_FILLS.PLAIN,
             text:
-                contentEncryption === END_TO_END
+                contentEncryption === X_PM_HEADERS.END_TO_END
                     ? c('Sent email icon').t`End-to-end encrypted to PGP recipient`
                     : c('Sent email icon').t`Encrypted by ${MAIL_APP_NAME} to PGP recipient`,
         };
     }
     if (
-        [PGP_INLINE_PINNED, PGP_MIME_PINNED].includes(encryption) &&
-        [NONE, PGP_INLINE, PGP_MIME].includes(authentication)
+        [X_PM_HEADERS.PGP_INLINE_PINNED, X_PM_HEADERS.PGP_MIME_PINNED].includes(encryption) &&
+        [X_PM_HEADERS.NONE, X_PM_HEADERS.PGP_INLINE, X_PM_HEADERS.PGP_MIME].includes(authentication)
     ) {
         return {
             colorClassName: 'color-success',
             isEncrypted: true,
-            fill: CHECKMARK,
+            fill: STATUS_ICONS_FILLS.CHECKMARK,
             text:
-                contentEncryption === END_TO_END
+                contentEncryption === X_PM_HEADERS.END_TO_END
                     ? c('Sent email icon').t`End-to-end encrypted to verified PGP recipient`
                     : c('Sent email icon').t`Encrypted by ${MAIL_APP_NAME} to verified PGP recipient`,
         };
     }
-    if (authentication === PGP_EO && encryption === PGP_EO) {
+    if (authentication === X_PM_HEADERS.PGP_EO && encryption === X_PM_HEADERS.PGP_EO) {
         return {
             colorClassName: 'color-info',
             isEncrypted: true,
-            fill: PLAIN,
+            fill: STATUS_ICONS_FILLS.PLAIN,
             text:
-                contentEncryption === END_TO_END
+                contentEncryption === X_PM_HEADERS.END_TO_END
                     ? c('Sent email icon').t`End-to-end encrypted`
                     : c('Sent email icon').t`Encrypted by ${MAIL_APP_NAME}`,
         };
     }
-    if (encryption === PGP_PM && [NONE, PGP_PM].includes(authentication)) {
+    if (encryption === X_PM_HEADERS.PGP_PM && [X_PM_HEADERS.NONE, X_PM_HEADERS.PGP_PM].includes(authentication)) {
         return {
             colorClassName: 'color-info',
             isEncrypted: true,
-            fill: PLAIN,
+            fill: STATUS_ICONS_FILLS.PLAIN,
             text:
-                contentEncryption === END_TO_END
+                contentEncryption === X_PM_HEADERS.END_TO_END
                     ? c('Sent email icon').t`End-to-end encrypted`
                     : c('Sent email icon').t`Encrypted by ${MAIL_APP_NAME}`,
         };
     }
-    if (encryption === PGP_PM_PINNED && [NONE, PGP_PM].includes(authentication)) {
+    if (
+        encryption === X_PM_HEADERS.PGP_PM_PINNED &&
+        [X_PM_HEADERS.NONE, X_PM_HEADERS.PGP_PM].includes(authentication)
+    ) {
         return {
             colorClassName: 'color-info',
             isEncrypted: true,
-            fill: CHECKMARK,
+            fill: STATUS_ICONS_FILLS.CHECKMARK,
             text:
-                contentEncryption === END_TO_END
+                contentEncryption === X_PM_HEADERS.END_TO_END
                     ? c('Sent email icon').t`End-to-end encrypted to verified recipient`
                     : c('Sent email icon').t`Encrypted by ${MAIL_APP_NAME} to verified recipient`,
         };
@@ -312,10 +317,10 @@ export const getSentStatusIconInfo = (message: MessageState): MessageViewIcons =
 
 const getInternalMessageText = (verificationStatus: MAIL_VERIFICATION_STATUS | undefined): string => {
     switch (verificationStatus) {
-        case NOT_SIGNED:
+        case MAIL_VERIFICATION_STATUS.NOT_SIGNED:
             return c('loc_nightly: Received email icon').t`End-to-end encrypted message with no signature`;
-        case SIGNED_AND_VALID:
-        case SIGNED_AND_INVALID:
+        case MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID:
+        case MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID:
             return c('loc_nightly: Received email icon').t`End-to-end encrypted signed message`;
         default:
             return c('loc_nightly: Received email icon').t`End-to-end encrypted message`;
@@ -331,7 +336,7 @@ const getReceivedStatusIconInternalWithKT = (
         return {
             colorClassName: 'color-norm',
             isEncrypted: false,
-            fill: PLAIN,
+            fill: STATUS_ICONS_FILLS.PLAIN,
             text: c('loc_nightly: Received email icon').t`Stored with zero-access encryption`,
         };
     }
@@ -359,7 +364,7 @@ const getReceivedStatusIconInternalWithKT = (
     const warningResult = {
         ...result,
         text: c('loc_nightly: Signature verification warning').t`Sender verification failed`,
-        fill: WARNING,
+        fill: STATUS_ICONS_FILLS.WARNING,
     };
 
     if (apiKeysErrors?.length) {
@@ -374,7 +379,7 @@ const getReceivedStatusIconInternalWithKT = (
                 ...result,
                 text: c('loc_nightly: Signature verification warning no address')
                     .t`This email is end-to-end encrypted, but the email address is inactive, so we cannot verify its signature.`,
-                fill: PLAIN,
+                fill: STATUS_ICONS_FILLS.PLAIN,
             };
         }
         // Special text for KT errors in message details
@@ -400,13 +405,13 @@ const getReceivedStatusIconInternalWithKT = (
         };
     }
 
-    if (verificationStatus === NOT_SIGNED) {
+    if (verificationStatus === MAIL_VERIFICATION_STATUS.NOT_SIGNED) {
         if (hasProtonSender(message) && message.Time < SIGNATURE_START.BULK) {
             // Don't show a warning on official emails
             return {
                 ...result,
                 text: messageEncryptionDetails,
-                fill: PLAIN,
+                fill: STATUS_ICONS_FILLS.PLAIN,
             };
         }
         return warningResult;
@@ -452,7 +457,7 @@ const getReceivedStatusIconInternalWithKT = (
         };
     }
 
-    if (verificationStatus === SIGNED_AND_INVALID) {
+    if (verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID) {
         return {
             ...warningResult,
             senderVerificationDetails: {
@@ -470,12 +475,12 @@ const getReceivedStatusIconInternalWithKT = (
         };
     }
 
-    if (verificationStatus === SIGNED_AND_VALID) {
+    if (verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID) {
         if (hasPinnedKeys) {
             return {
                 ...result,
                 text: c('loc_nightly: Received email icon').t`End-to-end encrypted message from verified sender.`,
-                fill: CHECKMARK,
+                fill: STATUS_ICONS_FILLS.CHECKMARK,
                 senderVerificationDetails: {
                     description: c('loc_nightly: Signature verification success')
                         .t`Sender verified with a trusted key.`,
@@ -489,7 +494,7 @@ const getReceivedStatusIconInternalWithKT = (
             return {
                 ...result,
                 text: messageEncryptionDetails,
-                fill: PLAIN,
+                fill: STATUS_ICONS_FILLS.PLAIN,
                 senderVerificationDetails: {
                     description: c('loc_nightly: Signature verification success')
                         .t`Sender verified with Key Transparency.`,
@@ -501,7 +506,7 @@ const getReceivedStatusIconInternalWithKT = (
     return {
         ...result,
         text: messageEncryptionDetails,
-        fill: PLAIN,
+        fill: STATUS_ICONS_FILLS.PLAIN,
     };
 };
 
@@ -518,19 +523,19 @@ export const getReceivedStatusIcon = (
     const { verificationStatus, pinnedKeysVerified, senderPinnedKeys } = verification;
     const hasPinnedKeys = !!senderPinnedKeys?.length;
 
-    if (origin === INTERNAL) {
+    if (origin === X_PM_HEADERS.INTERNAL) {
         if (ktActivation === KeyTransparencyActivation.SHOW_UI) {
-            return getReceivedStatusIconInternalWithKT(message, verification, encryption === END_TO_END);
+            return getReceivedStatusIconInternalWithKT(message, verification, encryption === X_PM_HEADERS.END_TO_END);
         }
         const result = { colorClassName: 'color-info', isEncrypted: true };
-        if (encryption === END_TO_END) {
+        if (encryption === X_PM_HEADERS.END_TO_END) {
             const verificationErrorsMessage = verification.verificationErrors
                 ?.map(({ message }) => message)
                 .filter(Boolean)
                 .join('; ');
             const warningsText = (() => {
                 const expectSigned = inSigningPeriod(message) || hasPinnedKeys;
-                if (verificationStatus === NOT_SIGNED && expectSigned) {
+                if (verificationStatus === MAIL_VERIFICATION_STATUS.NOT_SIGNED && expectSigned) {
                     return c('Signature verification warning').t`Sender could not be verified: Message not signed`;
                 }
                 if (verificationErrorsMessage) {
@@ -541,56 +546,60 @@ export const getReceivedStatusIcon = (
             })();
 
             if (warningsText) {
-                return { ...result, fill: WARNING, text: warningsText };
+                return { ...result, fill: STATUS_ICONS_FILLS.WARNING, text: warningsText };
             }
-            if (verificationStatus === NOT_SIGNED) {
+            if (verificationStatus === MAIL_VERIFICATION_STATUS.NOT_SIGNED) {
                 return {
                     ...result,
-                    fill: PLAIN,
+                    fill: STATUS_ICONS_FILLS.PLAIN,
                     text: c('Received email icon').t`End-to-end encrypted message`,
                 };
             }
-            if (verificationStatus === NOT_VERIFIED) {
+            if (verificationStatus === MAIL_VERIFICATION_STATUS.NOT_VERIFIED) {
                 return {
                     ...result,
-                    fill: PLAIN,
+                    fill: STATUS_ICONS_FILLS.PLAIN,
                     text: c('Received email icon').t`End-to-end encrypted and signed message`,
                 };
             }
-            if (verificationStatus === SIGNED_AND_INVALID) {
+            if (verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID) {
                 return {
                     ...result,
-                    fill: WARNING,
+                    fill: STATUS_ICONS_FILLS.WARNING,
                     text: c('Signature verification warning').t`Sender verification failed`,
                 };
             }
-            if (verificationStatus === SIGNED_AND_VALID) {
+            if (verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID) {
                 if (hasPinnedKeys && !pinnedKeysVerified) {
                     return {
                         ...result,
-                        fill: WARNING,
+                        fill: STATUS_ICONS_FILLS.WARNING,
                         text: c('Signature verification warning').t`Sender's trusted keys verification failed`,
                     };
                 }
                 return {
                     ...result,
-                    fill: CHECKMARK,
+                    fill: STATUS_ICONS_FILLS.CHECKMARK,
                     text: c('Received email icon').t`End-to-end encrypted message from verified sender`,
                 };
             }
-            return { ...result, fill: PLAIN, text: c('Received email icon').t`End-to-end encrypted message` };
-        }
-        if (encryption === ON_DELIVERY) {
             return {
                 ...result,
-                fill: PLAIN,
+                fill: STATUS_ICONS_FILLS.PLAIN,
+                text: c('Received email icon').t`End-to-end encrypted message`,
+            };
+        }
+        if (encryption === X_PM_HEADERS.ON_DELIVERY) {
+            return {
+                ...result,
+                fill: STATUS_ICONS_FILLS.PLAIN,
                 text: c('Received email icon').t`Sent by ${MAIL_APP_NAME} with zero-access encryption`,
             };
         }
     }
 
-    if (origin === EXTERNAL) {
-        if (encryption === END_TO_END) {
+    if (origin === X_PM_HEADERS.EXTERNAL) {
+        if (encryption === X_PM_HEADERS.END_TO_END) {
             const result = { colorClassName: 'color-success', isEncrypted: true };
             const verificationErrorsMessage = verification.verificationErrors
                 ?.map(({ message }) => message)
@@ -602,51 +611,55 @@ export const getReceivedStatusIcon = (
                 : undefined;
 
             if (warningsText) {
-                return { ...result, fill: WARNING, text: warningsText };
+                return { ...result, fill: STATUS_ICONS_FILLS.WARNING, text: warningsText };
             }
-            if (verificationStatus === NOT_SIGNED) {
+            if (verificationStatus === MAIL_VERIFICATION_STATUS.NOT_SIGNED) {
                 return {
                     ...result,
-                    fill: PLAIN,
+                    fill: STATUS_ICONS_FILLS.PLAIN,
                     text: c('Received email icon').t`PGP-encrypted message`,
                 };
             }
-            if (verificationStatus === NOT_VERIFIED) {
+            if (verificationStatus === MAIL_VERIFICATION_STATUS.NOT_VERIFIED) {
                 return {
                     ...result,
-                    fill: SIGN,
+                    fill: STATUS_ICONS_FILLS.SIGN,
                     text: c('Received email icon').t`PGP-encrypted and signed message`,
                 };
             }
-            if (verificationStatus === SIGNED_AND_INVALID) {
+            if (verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID) {
                 return {
                     ...result,
-                    fill: WARNING,
+                    fill: STATUS_ICONS_FILLS.WARNING,
                     text: c('Signature verification warning').t`Sender verification failed`,
                 };
             }
-            if (verificationStatus === SIGNED_AND_VALID) {
+            if (verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID) {
                 if (hasPinnedKeys && !pinnedKeysVerified) {
                     return {
                         ...result,
-                        fill: WARNING,
+                        fill: STATUS_ICONS_FILLS.WARNING,
                         text: c('Signature verification warning').t`Sender's trusted keys verification failed`,
                     };
                 }
                 return {
                     ...result,
-                    fill: CHECKMARK,
+                    fill: STATUS_ICONS_FILLS.CHECKMARK,
                     text: c('Received email icon').t`PGP-encrypted message from verified sender`,
                 };
             }
-            return { ...result, fill: PLAIN, text: c('Received email icon').t`PGP-encrypted message` };
+            return {
+                ...result,
+                fill: STATUS_ICONS_FILLS.PLAIN,
+                text: c('Received email icon').t`PGP-encrypted message`,
+            };
         }
-        if (encryption === ON_DELIVERY) {
-            if (verificationStatus === NOT_SIGNED) {
+        if (encryption === X_PM_HEADERS.ON_DELIVERY) {
+            if (verificationStatus === MAIL_VERIFICATION_STATUS.NOT_SIGNED) {
                 return {
                     colorClassName: 'color-norm',
                     isEncrypted: false,
-                    fill: PLAIN,
+                    fill: STATUS_ICONS_FILLS.PLAIN,
                     text: c('Received email icon').t`Stored with zero-access encryption`,
                 };
             }
@@ -662,33 +675,33 @@ export const getReceivedStatusIcon = (
                 : undefined;
 
             if (warningsText) {
-                return { ...result, fill: WARNING, text: warningsText };
+                return { ...result, fill: STATUS_ICONS_FILLS.WARNING, text: warningsText };
             }
-            if (verificationStatus === NOT_VERIFIED) {
+            if (verificationStatus === MAIL_VERIFICATION_STATUS.NOT_VERIFIED) {
                 return {
                     ...result,
-                    fill: SIGN,
+                    fill: STATUS_ICONS_FILLS.SIGN,
                     text: c('Received email icon').t`PGP-signed message`,
                 };
             }
-            if (verificationStatus === SIGNED_AND_VALID) {
+            if (verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID) {
                 if (hasPinnedKeys && !pinnedKeysVerified) {
                     return {
                         ...result,
-                        fill: WARNING,
+                        fill: STATUS_ICONS_FILLS.WARNING,
                         text: c('Signature verification warning').t`Sender's trusted keys verification failed`,
                     };
                 }
                 return {
                     ...result,
-                    fill: CHECKMARK,
+                    fill: STATUS_ICONS_FILLS.CHECKMARK,
                     text: c('Received email icon').t`PGP-signed message from verified sender`,
                 };
             }
-            if (verificationStatus === SIGNED_AND_INVALID) {
+            if (verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID) {
                 return {
                     ...result,
-                    fill: WARNING,
+                    fill: STATUS_ICONS_FILLS.WARNING,
                     text: c('Received email icon').t`PGP-signed message. Sender verification failed`,
                 };
             }
@@ -698,32 +711,32 @@ export const getReceivedStatusIcon = (
     return {
         colorClassName: 'color-norm',
         isEncrypted: false,
-        fill: PLAIN,
+        fill: STATUS_ICONS_FILLS.PLAIN,
         text: c('Received email icon').t`Stored with zero-access encryption`,
     };
 };
 
 export const getStatusIconName = ({ isEncrypted, fill }: Pick<Partial<StatusIcon>, 'isEncrypted' | 'fill'>) => {
-    if (fill === PLAIN) {
+    if (fill === STATUS_ICONS_FILLS.PLAIN) {
         return 'lock-filled';
     }
-    if (fill === CHECKMARK) {
+    if (fill === STATUS_ICONS_FILLS.CHECKMARK) {
         return isEncrypted ? 'lock-check-filled' : 'lock-open-check-filled';
     }
-    if (fill === SIGN) {
+    if (fill === STATUS_ICONS_FILLS.SIGN) {
         return isEncrypted ? 'lock-pen-filled' : 'lock-open-pen-filled';
     }
-    if (fill === WARNING) {
+    if (fill === STATUS_ICONS_FILLS.WARNING) {
         return isEncrypted ? 'lock-exclamation-filled' : 'lock-open-exclamation-filled';
     }
-    if (fill === FAIL) {
+    if (fill === STATUS_ICONS_FILLS.FAIL) {
         return 'exclamation-circle';
     }
     return '';
 };
 
 export const getSendIconHref = ({ isEncrypted, fill }: Pick<Partial<StatusIcon>, 'isEncrypted' | 'fill'>) => {
-    if (fill === CHECKMARK || fill === WARNING) {
+    if (fill === STATUS_ICONS_FILLS.CHECKMARK || fill === STATUS_ICONS_FILLS.WARNING) {
         return getKnowledgeBaseUrl('/digital-signature');
     }
     if (isEncrypted) {

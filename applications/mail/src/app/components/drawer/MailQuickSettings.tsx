@@ -64,8 +64,6 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 import ClearBrowserDataModal from '../header/ClearBrowserDataModal';
 import MailDefaultHandlerModal from '../header/MailDefaultHandlerModal';
 
-const { OFF, UNSET, SERVER_ONLY } = AI_ASSISTANT_ACCESS;
-
 interface QuickSettingsSelectOption {
     value: any;
     text: string;
@@ -224,7 +222,7 @@ const MailQuickSettings = () => {
         }
     };
 
-    const aiFlag = AIAssistantFlags === UNSET ? SERVER_ONLY : AIAssistantFlags;
+    const aiFlag = AIAssistantFlags === AI_ASSISTANT_ACCESS.UNSET ? AI_ASSISTANT_ACCESS.SERVER_ONLY : AIAssistantFlags;
 
     const showOnboardingModalTrigger = useCanReplayOnboarding();
     const {
@@ -377,7 +375,7 @@ const MailQuickSettings = () => {
                     <QuickSettingsSectionRow
                         label={c('Label').t`Writing assistant`}
                         labelInfo={
-                            aiFlag === OFF ? (
+                            aiFlag === AI_ASSISTANT_ACCESS.OFF ? (
                                 <Info
                                     title={c('Info').t`Learn more`}
                                     onClick={() => openNewTab(getKnowledgeBaseUrl('/proton-scribe-writing-assistant'))}
@@ -394,7 +392,7 @@ const MailQuickSettings = () => {
                         }
                     />
                     {/* Need to use handleSettingChange because at this stage we're still on the server mode, so we need to start the local init process*/}
-                    {aiFlag !== OFF && (
+                    {aiFlag !== AI_ASSISTANT_ACCESS.OFF && (
                         <ToggleAssistantEnvironment
                             aiFlag={AIAssistantFlags}
                             onEnableLocal={handleEnableAssistantLocal}

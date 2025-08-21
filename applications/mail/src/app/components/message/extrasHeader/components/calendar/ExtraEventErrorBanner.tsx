@@ -9,14 +9,17 @@ import { INVITATION_ERROR_TYPE } from '@proton/shared/lib/calendar/icsSurgery/er
 
 import { sendInviteErrorTelemetryReport } from '../../../../../helpers/calendar/invite';
 
-const { DECRYPTION_ERROR, FETCHING_ERROR, UPDATING_ERROR, CANCELLATION_ERROR } = INVITATION_ERROR_TYPE;
-
 interface Props {
     error: EventInvitationError;
     onReload: () => void;
 }
 
-const tryAgainErrorSet = new Set([DECRYPTION_ERROR, FETCHING_ERROR, UPDATING_ERROR, CANCELLATION_ERROR]);
+const tryAgainErrorSet = new Set([
+    INVITATION_ERROR_TYPE.DECRYPTION_ERROR,
+    INVITATION_ERROR_TYPE.FETCHING_ERROR,
+    INVITATION_ERROR_TYPE.UPDATING_ERROR,
+    INVITATION_ERROR_TYPE.CANCELLATION_ERROR,
+]);
 
 export const ExtraEventErrorBanner = ({ error, onReload }: Props) => {
     const api = useApi();
