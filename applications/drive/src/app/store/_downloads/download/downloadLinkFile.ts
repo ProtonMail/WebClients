@@ -34,49 +34,28 @@ export default function initDownloadLinkFile(
 
     const log = (message: string) => logCallback(`file ${link.linkId}: ${message}`);
 
-    const transformBlockStream = async (
-        abortSignal: AbortSignal,
-        stream: ReadableStream<Uint8Array<ArrayBuffer>>,
-        encSignature: string
-    ) => {
+    const transformBlockStream = async (abortSignal: AbortSignal, stream: ReadableStream<Uint8Array<ArrayBuffer>>) => {
         if (!keysPromise) {
             keysPromise = callbacks.getKeys(abortSignal, link);
         }
 
         const keys = await keysPromise;
 
-        const decryptedSignature = encSignature
-            ? await markErrorAsCrypto<Uint8Array<ArrayBuffer>>(async () => {
-                  const { data: decryptedSignature } = await CryptoProxy.decryptMessage({
-                      armoredMessage: encSignature,
-                      decryptionKeys: keys.privateKey,
-                      format: 'binary',
-                  });
-                  return decryptedSignature;
-              })
-            : undefined;
-
         const binaryMessage = await readToEnd<Uint8Array<ArrayBuffer>>(stream);
         const hash = (await generateContentHash(binaryMessage)).BlockHash;
 
         try {
-            const { data, verificationStatus } = await markErrorAsCrypto<{
+            const { data } = await markErrorAsCrypto<{
                 data: Uint8Array<ArrayBuffer>;
                 verificationStatus: VERIFICATION_STATUS;
             }>(async () => {
                 const { data, verificationStatus } = await CryptoProxy.decryptMessage({
                     binaryMessage,
-                    binarySignature: decryptedSignature,
                     sessionKeys: keys.sessionKeys,
-                    verificationKeys: keys.addressPublicKeys,
                     format: 'binary',
                 });
                 return { data, verificationStatus };
             });
-
-            if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-                await callbacks.onSignatureIssue?.(abortSignal, link, { blocks: verificationStatus });
-            }
 
             return {
                 hash,
@@ -88,7 +67,11 @@ export default function initDownloadLinkFile(
         }
     };
 
-    const checkManifestSignature = async (abortSignal: AbortSignal, hash: Uint8Array<ArrayBuffer>, signature: string) => {
+    const checkManifestSignature = async (
+        abortSignal: AbortSignal,
+        hash: Uint8Array<ArrayBuffer>,
+        signature: string
+    ) => {
         if (!keysPromise) {
             keysPromise = callbacks.getKeys(abortSignal, link);
         }
