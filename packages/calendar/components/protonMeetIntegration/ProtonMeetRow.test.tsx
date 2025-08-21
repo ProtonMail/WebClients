@@ -1,6 +1,6 @@
 import { Router } from 'react-router-dom';
 
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { createBrowserHistory } from 'history';
 
@@ -12,7 +12,23 @@ import { getPassphraseFromEncryptedPassword } from '@proton/meet/utils/cryptoUti
 import { type EventModel, VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar';
 
 import { calendarUrlQueryParams } from '../../constants';
+import {
+    VideoConferenceProtonMeetIntegration,
+    useVideoConfTelemetry,
+} from '../videoConferencing/useVideoConfTelemetry';
 import { ProtonMeetRow } from './ProtonMeetRow';
+import { useProtonMeetIntegration } from './useProtonMeetIntegration';
+
+jest.mock('../videoConferencing/useVideoConfTelemetry', () => {
+    const original = jest.requireActual('../videoConferencing/useVideoConfTelemetry');
+
+    return {
+        ...original,
+        useVideoConfTelemetry: jest.fn().mockReturnValue({
+            sentEventProtonMeet: jest.fn(),
+        }),
+    };
+});
 
 jest.mock('@proton/account/user/hooks', () => ({
     useUser: jest.fn().mockReturnValue([
@@ -77,12 +93,31 @@ describe('ProtonMeetRow', () => {
         jest.clearAllMocks();
     });
 
+    const WrappedProtonMeetRow = ({
+        model,
+        setModel,
+        isActive,
+    }: {
+        model: EventModel;
+        setModel: (model: EventModel) => void;
+        isActive: boolean;
+    }) => {
+        const protonMeetIntegration = useProtonMeetIntegration({
+            model,
+            setModel: jest.fn(),
+            isActive,
+            setActiveProvider: jest.fn(),
+        });
+
+        return <ProtonMeetRow model={model} setModel={setModel} {...protonMeetIntegration} />;
+    };
+
     const renderProtonMeetRow = (params?: {
         model?: Partial<EventModel>;
         location?: Partial<Location>;
         isActive?: boolean;
     }) => {
-        const { model = mockModel, location = {}, isActive = true } = params ?? {};
+        const { model = mockModel, location = {}, isActive = false } = params ?? {};
 
         const history = createBrowserHistory();
 
@@ -93,8 +128,8 @@ describe('ProtonMeetRow', () => {
         return render(
             <NotificationsProvider>
                 <Router history={history}>
-                    {/* @ts-expect-error */}
-                    <ProtonMeetRow model={model} setModel={jest.fn()} isActive={isActive} />
+                    {/* @ts-expect-error - partial mock */}
+                    <WrappedProtonMeetRow model={model} setModel={jest.fn()} isActive={isActive} />
                 </Router>
             </NotificationsProvider>
         );
@@ -113,14 +148,15 @@ describe('ProtonMeetRow', () => {
 
         (getPassphraseFromEncryptedPassword as jest.Mock).mockReturnValue('');
 
-        renderProtonMeetRow({ model: modelWithMeeting });
+        renderProtonMeetRow({ model: modelWithMeeting, isActive: true });
 
         const user = userEvent.setup();
 
         expect(screen.getByText('Join with Proton Meet')).toBeInTheDocument();
-        expect(screen.getByText('Add secret passphrase')).toBeInTheDocument();
 
         await user.click(screen.getByText('More details'));
+
+        expect(screen.getByText('Add secret passphrase')).toBeInTheDocument();
 
         expect(screen.getByText(modelWithMeeting.conferenceHost)).toBeInTheDocument();
         expect(screen.getByText(modelWithMeeting.conferenceUrl)).toBeInTheDocument();
@@ -140,9 +176,11 @@ describe('ProtonMeetRow', () => {
 
         (getPassphraseFromEncryptedPassword as jest.Mock).mockReturnValue('');
 
-        renderProtonMeetRow({ model: modelWithMeeting });
+        renderProtonMeetRow({ model: modelWithMeeting, isActive: true });
 
         const user = userEvent.setup();
+
+        await user.click(screen.getByText('More details'));
 
         await user.click(screen.getByText('Add secret passphrase'));
 
@@ -159,7 +197,7 @@ describe('ProtonMeetRow', () => {
         );
     });
 
-    it('should automatically create a meeting when having the Proton Meet video conference provider in the url', () => {
+    it('should automatically create a meeting when having the Proton Meet video conference provider in the url', async () => {
         const createMeeting = jest.fn().mockResolvedValue({
             meetingLink: `https://meet.proton.me${meetingLink}`,
             id: 'abcdefgh',
@@ -168,6 +206,12 @@ describe('ProtonMeetRow', () => {
 
         (useCreateMeeting as jest.Mock).mockReturnValue({
             createMeeting,
+        });
+
+        const sentEventProtonMeet = jest.fn();
+
+        (useVideoConfTelemetry as jest.Mock).mockReturnValue({
+            sentEventProtonMeet,
         });
 
         renderProtonMeetRow({
@@ -179,6 +223,10 @@ describe('ProtonMeetRow', () => {
         });
 
         expect(createMeeting).toHaveBeenCalled();
+
+        await waitFor(() => {
+            expect(sentEventProtonMeet).toHaveBeenCalledWith(VideoConferenceProtonMeetIntegration.create_proton_meet);
+        });
     });
 
     it('should not automatically create a meeting when not having the Proton Meet video conference provider in the url', () => {

@@ -98,6 +98,7 @@ export enum TelemetryCalendarVideoConferencing {
     video_conference_widget = 'video_conference_widget',
     video_conference_settings_toggle = 'video_conference_settings_toggle',
     video_conference_zoom_integration = 'video_conference_zoom_integration',
+    video_conference_proton_meet_integration = 'video_conference_proton_meet_integration',
 }
 
 export enum TelemetryMailNewsletterSubscriptions {

@@ -1,0 +1,14 @@
+.video-conference-dropdown-content {
+	&::before,
+	&::after {
+		display: none;
+	}
+
+	background-image: none;
+
+	ul > *:last-child {
+		.dropdown-item-hr {
+			opacity: 0;
+		}
+	}
+}

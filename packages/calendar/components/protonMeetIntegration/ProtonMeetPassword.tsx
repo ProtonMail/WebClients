@@ -68,21 +68,19 @@ export const ProtonMeetPassword = () => {
         <>
             {passphrase !== undefined && savePassphrase !== undefined && (
                 <div className="mt-2">
-                    {passphrase && (
+                    {passphrase ? (
                         <>
                             <EventDetailsRow
                                 prefix={c('l10n_nightly Label').t`Passphrase:`}
                                 suffix={passphrase}
                                 copySuccessText={c('Notification').t`Passphrase copied to clipboard`}
                             />
-
-                            <Button className="inline-block" shape="underline" onClick={handleOpen} color="norm">
+                            <Button className="inline-block p-0" shape="underline" onClick={handleOpen} color="norm">
                                 {c('l10n_nightly Action').t`Update secret passphrase`}
                             </Button>
                         </>
-                    )}
-                    {!passphrase && (
-                        <Button shape="underline" onClick={handleOpen} color="norm">
+                    ) : (
+                        <Button className="p-0" shape="underline" onClick={handleOpen} color="norm">
                             {c('l10n_nightly Action').t`Add secret passphrase`}
                         </Button>
                     )}

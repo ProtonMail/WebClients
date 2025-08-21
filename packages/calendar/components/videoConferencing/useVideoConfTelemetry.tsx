@@ -34,6 +34,11 @@ export enum VideoConferenceZoomIntegration {
     create_zoom_meeting_failed = 'create_zoom_meeting_failed',
 }
 
+export enum VideoConferenceProtonMeetIntegration {
+    create_proton_meet = 'create_proton_meet',
+    create_proton_meet_failed = 'create_proton_meet_failed',
+}
+
 export const useVideoConfTelemetry = () => {
     const api = useApi();
     const [user] = useUser();
@@ -63,8 +68,15 @@ export const useVideoConfTelemetry = () => {
         });
     };
 
-    const sendEventVideoConferenceZoomIntegration = (value: VideoConferenceZoomIntegration, errorCode?: string) => {
+    const sentEventZoom = (value: VideoConferenceZoomIntegration, errorCode?: string) => {
         sendReport(TelemetryCalendarVideoConferencing.video_conference_zoom_integration, {
+            eventType: value,
+            errorCode,
+        });
+    };
+
+    const sentEventProtonMeet = (value: VideoConferenceProtonMeetIntegration, errorCode?: string) => {
+        sendReport(TelemetryCalendarVideoConferencing.video_conference_proton_meet_integration, {
             eventType: value,
             errorCode,
         });
@@ -73,6 +85,7 @@ export const useVideoConfTelemetry = () => {
     return {
         sendEventVideoConfSource,
         sendEventVideoConferenceSettingsToggle,
-        sendEventVideoConferenceZoomIntegration,
+        sentEventZoom,
+        sentEventProtonMeet,
     };
 };

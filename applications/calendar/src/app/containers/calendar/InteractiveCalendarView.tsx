@@ -380,7 +380,7 @@ const InteractiveCalendarView = ({
 
     const { viewportWidth } = useActiveBreakpoint();
 
-    const { sendEventVideoConferenceZoomIntegration } = useVideoConfTelemetry();
+    const { sentEventZoom } = useVideoConfTelemetry();
 
     const { modalsMap, closeModal, updateModal } = useModalsMap<ModalsMap>({
         createEventModal: { isOpen: false },
@@ -1749,7 +1749,7 @@ const InteractiveCalendarView = ({
                 } catch (e: any) {
                     // If the error is a video conference error, we open the oauth modal and try again
                     if (e?.cause === VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR) {
-                        sendEventVideoConferenceZoomIntegration(
+                        sentEventZoom(
                             VideoConferenceZoomIntegration.create_zoom_meeting_failed,
                             `${VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR}-intaractiveCalendar`
                         );
