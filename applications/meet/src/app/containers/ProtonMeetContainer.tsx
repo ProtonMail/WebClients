@@ -125,18 +125,13 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
     const notifications = useNotifications();
 
     const getGroupKeyInfo = async () => {
-        console.log('Calling getGroupKeyInfo');
         try {
             const newGroupKeyInfo = (await wasmAppRef.current?.getGroupKey()) as GroupKeyInfo;
             setCurrentKey(newGroupKeyInfo.key);
             setCurrentEpoch(Number(newGroupKeyInfo.epoch));
-            console.log('Got new key and epoch', {
-                key: newGroupKeyInfo.key,
-                epoch: newGroupKeyInfo.epoch,
-            });
             return { key: newGroupKeyInfo.key, epoch: newGroupKeyInfo.epoch };
         } catch (err: any) {
-            console.error('Error while calling getGroupKeyInfo', err);
+            console.error('Error while calling getGroupKeyInfo');
             throw err;
         }
     };
@@ -145,9 +140,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         console.log('Calling onNewGroupKeyInfo');
         try {
             await keyProviderRef.current?.setKey(key, epoch);
-            console.log('Successfully set key in keyProvider:', key, epoch);
         } catch (err) {
-            console.error('Could not set new encryption key:', key, epoch, err);
+            console.error('Could not set new encryption key');
         }
     };
 
@@ -204,7 +198,6 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
             if (wasmAppRef.current && wasmAppRef.current.getWsState && startHealthCheck.current) {
                 try {
                     const connectionStatus = await wasmAppRef.current.getWsState();
-                    console.log('connectionStatus', connectionStatus);
                     if (connectionStatus !== 2) {
                         console.error('ws disconnection');
                         if (confirm('Connection lost, please join meeting again')) {
