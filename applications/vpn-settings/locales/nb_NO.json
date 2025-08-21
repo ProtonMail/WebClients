@@ -141,6 +141,12 @@
       "Chat with us": [
         "Snakk med oss"
       ],
+      "Check import progress": [
+        "Kontroller importfremdriften"
+      ],
+      "Choose a file or drag it here": [
+        "Velg en fil eller dra den hit"
+      ],
       "Choose my own password": [
         "Velg mitt eget passord"
       ],
@@ -186,6 +192,9 @@
       "Continue anyway": [
         "Fortsett likevel"
       ],
+      "Continue import": [
+        "Fortsett importen"
+      ],
       "Continue with this password": [
         "Fortsett med dette passordet"
       ],
@@ -221,6 +230,12 @@
       ],
       "Current plan": [
         "Gjeldende plan"
+      ],
+      "Customize": [
+        "Tilpass"
+      ],
+      "Customize import": [
+        "Tilpass import"
       ],
       "Customize plan": [
         "Tilpass plan"
@@ -332,6 +347,9 @@
       ],
       "Edit invoice note": [
         "Rediger fakturamerknad"
+      ],
+      "Edit label": [
+        "Rediger etikett"
       ],
       "Edit name": [
         "Rediger navn"
@@ -456,6 +474,18 @@
       "Hide plan features": [
         "Skjul planfunksjoner"
       ],
+      "Import": [
+        "Importer"
+      ],
+      "Import calendars": [
+        "Importer kalendere"
+      ],
+      "Import contacts": [
+        "Importer kontakter"
+      ],
+      "Import emails": [
+        "Importer e-poster"
+      ],
       "Import emails, calendars, contacts": [
         "Importer e-poster, kalendere, kontakter"
       ],
@@ -504,8 +534,14 @@
       "Manage advanced account protections": [
         "Administrer avansert kontobeskyttelse"
       ],
+      "Manage folders": [
+        "Behandle mapper"
+      ],
       "Manage groups": [
         "Administrer grupper"
+      ],
+      "Manage labels": [
+        "Behandle etiketter"
       ],
       "Manage subscription": [
         "Behandle abonnement"
@@ -585,6 +621,12 @@
       "Publish changes": [
         "Publiser endringer"
       ],
+      "Quit": [
+        "Avslutt"
+      ],
+      "Reconnect": [
+        "Koble til på nytt"
+      ],
       "Recover data": [
         "Gjenopprett data"
       ],
@@ -656,6 +698,9 @@
       ],
       "Reset password": [
         "Tilbakestill passord"
+      ],
+      "Reset to default": [
+        "Tilbakestill til standard"
       ],
       "Restore": [
         "Gjenopprett"
@@ -816,11 +861,20 @@
       "Skip": [
         "Hopp over"
       ],
+      "Skip verification": [
+        "Hopp over bekreftelse"
+      ],
       "Spam": [
         "Søppelpost"
       ],
+      "Start import": [
+        "Start importen"
+      ],
       "Start live chat": [
         "Start direkte chat"
+      ],
+      "Stay": [
+        "Bli"
       ],
       "Stop using single sign-on": [
         "Slutt å bruke enkel pålogging"
@@ -1090,6 +1144,14 @@
         "administrator"
       ]
     },
+    "Alert": {
+      "By leaving now, some contacts may not be imported": [
+        "Ved å forlate nå kan det hende at enkelte kontakter ikke blir importert."
+      ],
+      "By leaving now, some events may not be imported": [
+        "Ved å forlate nå kan det hende at enkelte hendelser ikke blir importert."
+      ]
+    },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Dette vil koble fra alle rutere og klienter som bruker dette sertifikatet."
@@ -1250,6 +1312,26 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ta e-postproduktiviteten til nye nivåer. La ${ BRAND_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "Tom ICS-fil"
+      ],
+      "Invalid event": [
+        "Ugyldig hendelse"
+      ],
+      "Invalid ICS file": [
+        "Ugyldig ICS-fil"
+      ],
+      "Invalid method": [
+        "Ugyldig metode"
+      ],
+      "Unsupported calendar component": [
+        "Ikke støttet kalenderkomponent"
+      ],
+      "Unsupported event": [
+        "Ikke støttet hendelse"
       ]
     },
     "b2b_trials_Action": {
@@ -1822,6 +1904,14 @@
         "jordbær"
       ]
     },
+    "Confirm modal title": {
+      "Quit import customization?": [
+        "Avslutte importtilpasning?"
+      ],
+      "Quit import?": [
+        "Avslutt import?"
+      ]
+    },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
         "Er du sikker på at du vil slette denne betalingsmåten?"
@@ -1830,6 +1920,94 @@
     "Confirmation title": {
       "Delete payment method": [
         "Slett betalingsmåte"
+      ]
+    },
+    "Contact field label": {
+      "Address": [
+        "Adresse"
+      ],
+      "Anniversary": [
+        "Jubileum"
+      ],
+      "Birthday": [
+        "Bursdag"
+      ],
+      "Display name": [
+        "Visningsnavn"
+      ],
+      "Email": [
+        "E-post"
+      ],
+      "First name": [
+        "Fornavn"
+      ],
+      "Gender": [
+        "Kjønn"
+      ],
+      "Language": [
+        "Språk"
+      ],
+      "Last name": [
+        "Etternavn"
+      ],
+      "Logo": [
+        "Logo"
+      ],
+      "Member": [
+        "Medlem"
+      ],
+      "Name": [
+        "Navn"
+      ],
+      "Note": [
+        "Notat"
+      ],
+      "Organization": [
+        "Organisasjon"
+      ],
+      "Phone": [
+        "Telefon"
+      ],
+      "Photo": [
+        "Bilde"
+      ],
+      "Role": [
+        "Rolle"
+      ],
+      "Time zone": [
+        "Tidssone"
+      ],
+      "Title": [
+        "Tittel"
+      ],
+      "URL": [
+        "Nettadresse"
+      ]
+    },
+    "Contact type label": {
+      "Fax": [
+        "Faks"
+      ],
+      "Main": [
+        "Hoved"
+      ],
+      "Mobile": [
+        "Mobil"
+      ],
+      "Other": [
+        "Annet"
+      ],
+      "Pager": [
+        "Personsøker"
+      ],
+      "Personal": [
+        "Personlig"
+      ],
+      "Work": [
+        "Arbeid"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "CountriesStep:Info": {
@@ -2714,6 +2892,11 @@
         "/bruker per måned"
       ]
     },
+    "Default display name vcard": {
+      "Unknown": [
+        "Ukjent"
+      ]
+    },
     "Delete address prompt": {
       "Are you sure you want to delete this address?": [
         "Er du sikker på at du vil slette denne adressen?"
@@ -2803,6 +2986,9 @@
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Oppmuntre bruken av tofaktorautentisering i organisasjonen din for ekstra sikkerhet."
       ],
+      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        "Krypterer og importerer kontakter... Dette kan ta noen minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Sørg for sikker tilgang til organisasjonsdata, selv om teamet ditt er eksternt eller bruker offentlig WiFi."
       ],
@@ -2827,6 +3013,9 @@
       "If disabled, only admins will have access.": [
         "Hvis deaktivert, vil bare administratorer ha tilgang."
       ],
+      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
+        "Det ser ut til at kontaktlisten du importerer, inneholder noen grupper. Se gjennom hvordan disse gruppene skal importeres."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Hold forskjellige deler av livet ditt atskilt og innboksen din organisert med flere adresser."
       ],
@@ -2842,11 +3031,33 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Forenkle synkronisering og planlegging med delte kalendere."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "For import via CSV- og VCF-fil, forsikre deg om at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis filen er større, del den opp i mindre filer. ${ learnMoreLink }."
+      ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "For å importere kontaktene dine fra Google eller Outlook, ${ easySwitchLink }."
+      ],
       "To start, give your organization a name.": [
         "For å starte, gi organisasjonen din et navn."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Bruk denne veiledningen for å hjelpe organisasjonen din med å dra nytte av ${ BRAND_NAME }s bransjeledende kryptering og personvernøkosystem."
+      ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Du kan importere hendelser i iCal-format (ICS fil). Filen kan ha en maks størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og ha opp til ${ MAX_IMPORT_EVENTS_STRING } hendelser. Hvis filen er større, må du dele den opp i flere mindre filer."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "bruk Easy Switch-importassistenten"
+      ]
+    },
+    "Description of the purpose of the import CSV modal": {
+      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
+        "Vi har også automatisk matchet CSV-felt med vCard-felt. Du kan se gjennom og endre dette samsvaret manuelt."
+      ],
+      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
+        "Vi har oppdaget følgende felt i CSV-filen du lastet opp. Merk av for de du ønsker å importere."
       ]
     },
     "Disable address prompt": {
@@ -3127,6 +3338,71 @@
         "Du har logget på en annen enhet"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "NOTAT: \n${ eventComment }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "Beskrivelse:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } ble kansellert."
+      ],
+      "All events in this series were updated.": [
+        "Alle hendelsene i denne serien ble oppdatert."
+      ],
+      "Here's what changed:": [
+        "Her er hva som er endret:"
+      ],
+      "NOTE:": [
+        "NOTAT:"
+      ],
+      "This event occurrence was canceled.": [
+        "Denne hendelsesforekomsten ble kansellert."
+      ],
+      "This event occurrence was updated.": [
+        "Denne hendelsesforekomsten ble oppdatert."
+      ],
+      "This event was updated.": [
+        "Denne hendelsen ble oppdatert."
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "Tidspunkt:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "Tidspunkt:\n${ formattedStart } (hele dagen)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "Tidspunkt:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Fjernet"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "Sted:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } aksepterte din invitasjon til ${ eventTitle }"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } avslo invitasjonen din til ${ eventTitle }"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } foreløpig aksepterte invitasjonen din til ${ eventTitle }"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } lagt til"
@@ -3156,6 +3432,26 @@
         "${ name } ble slettet"
       ]
     },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "Avlysning av en hendelse den ${ formattedStart }."
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Avlysning av en hendelse med start den ${ formattedStart }."
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Invitasjon til en hendelse den ${ formattedStart }."
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Invitasjon til en hendelse med start den ${ formattedStart }."
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Oppdatering til en hendelse den ${ formattedStart }."
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Oppdatering til en hendelse med start den ${ formattedStart }."
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Verifiserings-e-post sendt til ${ address }"
@@ -3181,6 +3477,12 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } er ditt brukernavn. For å opprette ${ emailAddress }, gå til Innstillinger > Identitet og adresser > Kort domene (pm.me)"
       ],
+      "A group with this name already exists": [
+        "En gruppe med dette navnet eksisterer allerede."
+      ],
+      "Address primary private key not found": [
+        "Adresse til primærprivatnøkkel ikke funnet"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "All lagringsplass er tildelt. Reduser lagringsplass tildelt andre brukere."
       ],
@@ -3196,6 +3498,9 @@
       "Authentication error.": [
         "Autentiseringsfeil"
       ],
+      "Calendar limit reached": [
+        "Kalendergrensen nådd"
+      ],
       "Checkout expired, please try again": [
         "Utsjekkingen utløpt. Prøv igjen."
       ],
@@ -3208,6 +3513,14 @@
       "Couldn't load transactions. Please try again later.": [
         "Kunne ikke laste inn transaksjoner. Prøv igjen senere."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Fjern valget fra minst ${ calendarsToFixCount } kalender",
+        "Fjern valgene fra minst ${ calendarsToFixCount } kalendere"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Fjern valget fra minst ${ calendarsToFixCount } kalender eller",
+        "Fjern valgene fra minst ${ calendarsToFixCount } kalendere eller"
+      ],
       "Domain not available, try again later": [
         "Domenet er ikke tilgjengelig. Prøv igjen senere."
       ],
@@ -3219,6 +3532,9 @@
       ],
       "Email address is not available": [
         "E-postadresse er ikke tilgjengelig"
+      ],
+      "Email address is required": [
+        "E-postadresse kreves"
       ],
       "Email is not valid": [
         "E-post er ikke gyldig"
@@ -3244,8 +3560,14 @@
       "File too large. Your logo must be 30 KB or smaller.": [
         "Filen er for stor. Logoen må være 30 kB eller mindre."
       ],
+      "Folder name cannot be empty.": [
+        "Mappenavn kan ikke være tomt."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Dersom tiden på TV-en har utløpt, trykk på 'oppdater' og tast inn koden på nytt."
+      ],
+      "IMAP server is required": [
+        "IMAP-tjener kreves"
       ],
       "Impossible to create the gateway": [
         "Umulig å opprette porttjeneren"
@@ -3298,6 +3620,9 @@
       "Invalid invitation link": [
         "Ugyldig invitasjonskobling"
       ],
+      "Invalid name": [
+        "Ugyldig navn"
+      ],
       "Invalid postal code": [
         "Ugyldig postnummer"
       ],
@@ -3306,6 +3631,16 @@
       ],
       "Invalid ZIP code": [
         "Ugyldig postnummer"
+      ],
+      "Label name cannot be empty.": [
+        "Etikettnavn kan ikke være tomt."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Slå sammen minst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender.",
+        "Slå sammen minst ${ calendarsToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere."
+      ],
+      "Missing key packet": [
+        "Mangler nøkkelpakke"
       ],
       "Name already exists": [
         "Navnet finnes allerede"
@@ -3325,6 +3660,9 @@
       "No image selected": [
         "Ingen bilde valgt"
       ],
+      "No valid address found": [
+        "Ingen gyldig adresse funnet"
+      ],
       "Not a valid number": [
         "Ikke et gyldig tall"
       ],
@@ -3336,6 +3674,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisasjonsnøkkelen må være aktivert for å opprette ikke-private brukere"
+      ],
+      "Password is required": [
+        "Passord kreves"
       ],
       "Passwords do not match": [
         "Passordene samsvarer ikke"
@@ -3382,6 +3723,10 @@
       "Please enter ZIP code": [
         "Skriv inn postnummer"
       ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Løs den uthevede konflikten for å fortsette.",
+        "Løs de uthevede konfliktene for å fortsette."
+      ],
       "Please generate keys before you try to change your password": [
         "Generer nøkler før du prøver å endre passordet."
       ],
@@ -3427,8 +3772,17 @@
       "Please upload only 1 file": [
         "Last opp bare 1 fil"
       ],
+      "Port is required": [
+        "Port kreves"
+      ],
       "Postal code is required": [
         "Postnummer er påkrevd"
+      ],
+      "Primary address key is not decrypted": [
+        "Hovedadressenøkkelen er ikke dekryptert"
+      ],
+      "Primary address key is not decrypted.": [
+        "Hovedadresseøkkelen er ikke dekryptert."
       ],
       "Process aborted": [
         "Prosessen ble avbrutt"
@@ -3438,6 +3792,21 @@
       ],
       "Signature verification failed": [
         "Signaturbekreftelse mislyktes"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Noen av dine mappenavn er utilgjengelige. Tilpass importen for å redigere disse navnene."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Noen av dine mappenavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense. Tilpass importen for å redigere disse navnene."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Noen av dine etikettnavn er reservert. Tilpass importen for å redigere disse navnene."
+      ],
+      "Some of your label names are unavailable. Please customize the import to edit these names.": [
+        "Noen av dine etikettnavn er utilgjengelige. Tilpass importen for å endre disse navnene."
+      ],
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense.Tilpass importen for å redigere disse navnene."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noe gikk galt, ${ refresh } siden for å fortsette. Hvis du fortsatt ser denne feilmeldingen kan du kontakte vårt ${ supportTeam }."
@@ -3463,11 +3832,26 @@
       "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
         "Filen er for liten, minimumsstørrelsen er ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Mappenavnet er ikke gyldig. Velg et annet navn."
+      ],
+      "The folder name is too long. Please choose a different name.": [
+        "Mappenavnet er for langt. Velg et annet navn."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Etikettnavnet er ikke gyldig. Velg et annet navn."
+      ],
+      "The label name is too long. Please choose a different name.": [
+        "Etikettnavnet er for langt. Velg et annet navn."
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimumsbeløpet av kreditt som kan legges til er ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Retningslinjenavnet må bestå av mellom 3 og 40 tegn."
+      ],
+      "There are too many folders in your external account. Please customize the import to delete some folders.": [
+        "Det er for mange mapper i din eksterne konto. Tilpass importen for å slette noen mapper."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette feltet overskrider maksimalt tillatt ${ maximumLength } tegn."
@@ -3477,6 +3861,12 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dette feltet krever minimum ${ minimumLength } tegn."
+      ],
+      "This folder name is not available. Please choose a different name.": [
+        "Dette mappenavnet er ikke tilgjengelig. Velg et annet navn."
+      ],
+      "This label name is not available. Please choose a different name.": [
+        "Dette etikettenavnet er ikke tilgjengelig. Velg et annet navn."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "For å opprette ikke-private brukerkontoer og få tilgang til kontoene deres, må du gjenopprette administratorrettighetene dine."
@@ -3517,6 +3907,9 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Feil verifiseringskode. Sørg for at du kopierte verifiseringskoden riktig og prøv igjen. Det kan ta opptil 24 timer før endringene trer i kraft."
       ],
+      "You have reached the maximum number of calendars.": [
+        "Du har nådd maksimalt antall kalendere."
+      ],
       "You have reached the number of contacts limit for your account": [
         "Du har nådd grensen for antall kontakter for kontoen din"
       ],
@@ -3526,8 +3919,14 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har brukt alle brukerne i planen din. Oppgrader planen din for å legge til en ny bruker."
       ],
+      "You must set a name": [
+        "Du må angi et navn"
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Din konto eller organisasjon har en forfalt faktura. Betal alle ubetalte fakturaer."
+      ],
+      "Your import will not be processed.": [
+        "Importen din blir ikke behandlet."
       ],
       "ZIP code is required": [
         "Postnummer kreves"
@@ -3536,6 +3935,132 @@
     "error": {
       "Select users to view their activity": [
         "Velg brukere for å se aktiviteten deres"
+      ]
+    },
+    "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Det oppstod en feil under lesing av filen ${ formattedFilename }. Filen har ikke riktig format."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Det oppstod en feil under opplasting av filen ${ formattedFilename }. Maksimum filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Det oppstod en feil under opplasting av filen ${ formattedFilename }. Kun ICS-filformat støttes."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Det oppstod en feil under opplasting av filen. Ingen fil er valgt."
+      ],
+      "An unexpected error occurred. Import must be restarted.": [
+        "Det oppstod en uventet feil. Importen må startes på nytt."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS } hendelse.",
+        "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS } hendelser."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Filen ${ formattedFilename } har en ugyldig metode og kan ikke importeres."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Filen ${ formattedFilename } har ingen hendelser å importere."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Filen ${ formattedFilename } er tom."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Filen ${ formattedFilename } er ikke en kalender."
+      ]
+    },
+    "Error importing contact": {
+      "Encryption failed": [
+        "Kryptering mislyktes"
+      ],
+      "Missing FN property": [
+        "Mangler FN-egenskap"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard-versjoner < 3.0 er ikke støttet"
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Det oppstod en feil under lesing av filen ${ formattedFilename }. Filen har ikke riktig format."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Det oppstod en feil under opplasting av filen ${ formattedFilename }. Maksimum filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "Det oppstod en feil under opplasting av filen ${ formattedFilename }. Ingen .csv eller .vcf fil valgt."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Det oppstod en feil under opplasting av filen. Ingen fil er valgt."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Filen ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_CONTACTS_STRING } kontakter."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "Filen ${ formattedFilename } har ingen kontakter å importere."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Filen ${ formattedFilename } er tom."
+      ]
+    },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Dårlig format. Komponenten kan ikke leses."
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Component with wrong format": [
+        "Komponent med feil format"
+      ],
+      "Custom time zone": [
+        "Tilpasset tidssone"
+      ],
+      "Element": [
+        "Element"
+      ],
+      "Encryption failed": [
+        "Kryptering mislyktes"
+      ],
+      "Event": [
+        "Hendelse"
+      ],
+      "Free-busy time information": [
+        "Ledig-opptatt tidsinformasjon"
+      ],
+      "Invalid event": [
+        "Ugyldig hendelse"
+      ],
+      "Journal entry": [
+        "Journalinnlegg"
+      ],
+      "Missing start time": [
+        "Mangler starttidspunkt"
+      ],
+      "No UID, title or start time": [
+        "Ingen UID, tittel eller starttid"
+      ],
+      "Notification out of bounds": [
+        "Varsel utenfor grensene"
+      ],
+      "Original recurring event could not be found": [
+        "Opprinnelig gjentakende hendelse ikke funnet"
+      ],
+      "Time zone": [
+        "Tidssone"
+      ],
+      "Time zone component ignored": [
+        "Tidssonekomponent ignorert"
+      ],
+      "To-do entry": [
+        "Gjøremålsoppføring"
+      ],
+      "Unknown": [
+        "Ukjent"
+      ],
+      "Unsupported event": [
+        "Ikke støttet hendelse"
       ]
     },
     "Error importing users": {
@@ -3584,11 +4109,65 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "Sertifikat ${ name } ikke funnet eller allerede tilbakekalt"
+      ],
+      "Display name cannot be empty": [
+        "Visningsnavn kan ikke være tomt"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Ingen bilde valgt"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Uventet feil"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "Vedlagt ICS-fil kunne ikke dekrypteres"
+      ],
+      "Attached ICS file could not be read": [
+        "Vedlagt ICS-fil kunne ikke leses"
+      ],
+      "Invalid invitation": [
+        "Ugyldig invitasjon"
+      ],
+      "Invalid response": [
+        "Ugyldig svar"
+      ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Hendelsen kunne ikke legges til kalenderen din. Ingen svar ble sendt."
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Hendelsen kunne ikke oppdateres i kalenderen din. Ingen svar ble sendt."
+      ],
+      "Unsupported invitation": [
+        "Ikke støttet invitasjon"
+      ],
+      "Unsupported response": [
+        "Ikke støttet respons"
+      ],
+      "We could not cancel the event in your calendar": [
+        "Vi kunne ikke avbryte hendelsen i kalenderen din."
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Vi kunne ikke hente hendelsen fra kalenderen din"
+      ],
+      "We could not update the event in your calendar": [
+        "Vi kunne ikke oppdatere hendelsen i kalenderen din"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Svaret ditt ble sendt, men hendelsen kunne ikke legges til kalenderen din."
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Svaret ditt ble sendt, men hendelsen kunne ikke oppdateres i kalenderen din."
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(ingen tittel)"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4345,6 +4924,310 @@
         "SMS"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Tidssone for kalender ikke støttet"
+      ],
+      "Edited event not supported": [
+        "Redigert hendelse ikke støttet"
+      ],
+      "End time out of bounds": [
+        "Sluttid utenfor grensene"
+      ],
+      "Event validation failed": [
+        "Hendelsesvalidering mislyktes"
+      ],
+      "Floating times not supported": [
+        "Flytende tider ikke støttet"
+      ],
+      "Malformed all-day event": [
+        "Misdannet heldagshendelse"
+      ],
+      "Malformed end time": [
+        "Misdannet sluttidspunkt"
+      ],
+      "Malformed recurring event": [
+        "Misdannet gjentakende hendelse"
+      ],
+      "Malformed start time": [
+        "Misdannet starttidspunkt"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Bare den gregorianske kalenderskalaen er tillatt"
+      ],
+      "Recurring event has no occurrences": [
+        "Gjentakende hendelse har ingen forekomster"
+      ],
+      "Recurring rule not supported": [
+        "Gjentakende regel ikke støttet"
+      ],
+      "Start time out of bounds": [
+        "Starttid utenfor grensene"
+      ],
+      "Time zone not supported": [
+        "Tidssone ikke støttet"
+      ]
+    },
+    "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } hendelse kryptert og lagt til i kalenderen",
+        "${ totalImported }/${ totalToImport } hendelser kryptert og lagt til i kalenderen"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Det oppstod en feil under kryptering og tillegging av hendelsen din. ${ totalImported } av ${ totalToImport } hendelse importert.",
+        "Det oppstod en feil under kryptering og tillegging av hendelsene dine. ${ totalImported } av ${ totalToImport } hendelser importert."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "En feil oppstod mens hendelsen din ble kryptert og lagt til. Ingen hendelse kunne importeres."
+      ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "En feil oppstod mens hendelsene dine ble kryptert og lagt til. Ingen hendelse kunne importeres."
+      ],
+      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
+        "Krypterer og legger til kontakter: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "Krypterer og legger til hendelser i kalenderen: ${ totalImported }/${ totalToImport }."
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Hendelsen er importert. Den importerte hendelsen vises nå i kalenderen din."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Hendelsene er importert. De importerte hendelsene vises nå i kalenderen din."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "Ikke lukk fanen før importprosessen er fullført."
+      ]
+    },
+    "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } støtter foreløpig ikke enkelte typer hendelser, detaljer og formater."
+      ],
+      "vCard versions < 3.0": [
+        "vCard-versjoner < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Importerte invitasjoner vises i ${ CALENDAR_APP_NAME } som enkle hendelser uten arrangør- og deltakerdetaljer. For å få hendelsesoppdateringer og se deltakere, be arrangørene om å invitere deg ved å bruke ${ BRAND_NAME }-e-postadressen."
+      ],
+      "This file contains an event invitation:": [
+        "Denne filen inneholder en hendelsesinvitasjon:",
+        "Denne filen inneholder hendelsesinvitasjoner:"
+      ],
+      "This file contains an invitation response:": [
+        "Denne filen inneholder et svar på en invitasjon:",
+        "Denne filen inneholder svar på invitasjoner:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Denne filen inneholder data som ikke kan importeres:"
+      ]
+    },
+    "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } kontakt kryptert og lagt til i kontaktlisten.",
+        "${ totalImported }/${ totalToImport } kontakter kryptert og lagt til i kontaktlisten."
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "En feil oppstod mens kontakten din ble kryptert og lagt til. Ingen kontakt kunne importeres."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Det oppstod en feil under kryptering og tillegging av kontaktene dine. ${ totalImported } ut av ${ totalToImport } hendelser importert."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "En feil oppstod mens kontaktene din ble kryptert og lagt til. Ingen kontakter kunne importeres."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Kontakten er importert. Den importerte kontakten vises nå i kontaktlisten."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Kontaktene er importert. De importerte kontaktene vises nå i kontaktlisten."
+      ]
+    },
+    "Import contact error": {
+      "Contact ${ contactId }: ": [
+        "Kontakt ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } kontakt",
+        "${ totalContacts } kontakter"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "ukjent"
+      ]
+    },
+    "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } støtter ikke ${ forNow }:"
+      ],
+      "for now": [
+        "for nå"
+      ]
+    },
+    "Import error": {
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } kan ikke koble til kontoen din. Vennlist sørg for at:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } kan ikke koble til din eksterne konto. Kontroller at e-posttjenerdressen og portnummeret er riktige."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } kan ikke koble til den eksterne kontoen din. Sørg for at:"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at e-posttjeneradressen og portnummeret stemmer."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at:"
+      ],
+      "2-step verification is enabled in your external account.": [
+        "Totrinnsbekreftelse er aktiveret på din eksterne konto."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "Totrinnsbekreftelse er aktiveret på din eksterne e-postkonto."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "IMAP-adgang er aktivert på din eksterne konto."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "IMAP-adgang er aktivert på din Yahoo-konto."
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "For mange nylige forespørsler. Prøv igjen om noen få øyeblikk."
+      ],
+      "Use your app password if:": [
+        "Bruk app-passordet ditt hvis:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Bruk app-passordet istedenfor det vanlige passordet hvis:"
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "App-passordet ditt er riktig. Ikke bruk ditt vanlige passord."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "Din e-postkonto krever et app-passord for å eksportere dine data."
+      ],
+      "Your email account requires one to export your data.": [
+        "Din e-postkonto krever ett for å eksportere dine data."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "E-postadressen og app-passordet ditt er riktig. Ikke bruk ditt vanlige passord."
+      ],
+      "Your email address and password are correct.": [
+        "e-postadressen og passordet er riktig."
+      ],
+      "Your password is correct.": [
+        "Passordet ditt er riktig."
+      ]
+    },
+    "Import instructions": {
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "Avhengig av e-postleverandøren din, må du kanskje generere en ${ knowledgeBaseLink } først før du kan importere til ${ BRAND_NAME }."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Utvid rullegardinmenyen ved å klikke på de 3 prikkene (...)."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Generer ${ boldAppPassword } og bruk det i stedet for ditt vanlige passord når du blir bedt om det av ${ BRAND_NAME }."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Gå til ${ boldAccountInfo } under profilen din i ${ yahooMailLink }."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "Gå til ${ boldAccountSecurity }."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "Åpne dine ${ yahooMailLink }-kontakter."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Velg ${ boldExportCSV }."
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "For å importere en kalender til ${ BRAND_NAME }, vil du trenge ${ knowledgeBaseLink }. Last ned dette fra Yahoo i 3 enkle trinn:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "For å importere en kalender til ${ BRAND_NAME }, vil du trenge ${ knowledgeBaseLink }. Last ned dette før du starter importprosessen."
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "For å importere kontakter til ${ BRAND_NAME }, vil du trenge en ${ knowledgeBaseLink }. Last ned dette fra Yahoo i 3 enkle trinn:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "For å importere kontakter til ${ BRAND_NAME }, vil du trenge en ${ knowledgeBaseLink }. Last ned dette før du starter importprosessen."
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "For å importere e-postmeldinger til ${ BRAND_NAME }, trenger du et ${ appPasswordLink } fra Yahoo. Få det ved å følge disse trinnene:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Kontoinformasjon"
+      ],
+      "Account security": [
+        "Kontosikkerhet"
+      ],
+      "app password": [
+        "app-passord"
+      ],
+      "Export": [
+        "Eksporter"
+      ],
+      "Export to CSV file": [
+        "Eksporter til CSV-fil"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "app-passord"
+      ],
+      "app password or enable IMAP": [
+        "app-passord eller aktiver IMAP"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "CSV- eller en VCF (vCard)-fil"
+      ],
+      "full calendar view": [
+        "full kalendervisning"
+      ],
+      "ICS file": [
+        "ICS-fil"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Gå til ${ calendarViewLink } i Yahoo."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Hold musepekeren over kalenderen du ønsker å importere, og åpne rullegardinmenyen."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Velg ${ boldExport } for å eksportere kalenderen som en ICS-fil."
+      ]
+    },
+    "Import warning": {
+      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
+        "${ totalContactsDiscarded } ut av ${ totalContacts } blir ikke importert. Klikk for detaljer."
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } av ${ totalEvents } hendelse vil ikke bli importert. Utvid for detaljer.",
+        "${ totalEventsDiscarded } av ${ totalEvents } hendelser vil ikke bli importert. Utvid for detaljer."
+      ],
+      "No contact can be imported. Click for details": [
+        "Ingen kontakt kunne importeres. Klikk for detaljer."
+      ],
+      "No event can be imported. Expand for details.": [
+        "Ingen hendelser kan importeres. Utvid for mer informasjon."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Deler av kalenderinnholdet ditt støttes ikke, og kan ikke importeres."
+      ]
+    },
     "Info": {
       " and other security features.": [
         " og andre sikkerhetsfunksjoner."
@@ -4364,6 +5247,14 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi betyr at ingen kan få tilgang til ditt passord - ikke engang vi."
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } ny kalender",
+        "${ calendarsToBeCreatedCount } nye kalendere"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } sammenslått kalender",
+        "${ calendarsToBeMergedCount } sammenslåtte kalendere"
       ],
       "${ countriesCount } country enabled": [
         "${ countriesCount } land aktivert",
@@ -4437,6 +5328,14 @@
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert overvåking av mistenkelig aktivitet."
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } mappe funnet",
+        "${ providerFoldersNumLocalized } mapper funnet"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } etikett funnet i Gmail",
+        "${ providerFoldersNumLocalized } etiketter funnet i Gmail"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } tjener er fortsatt under oppsett. Dette tar vanligvis rundt ${ provisioningDuration }.",
         "${ provisioningCounter } tjenere er fortsatt under oppsett. Dette tar vanligvis rundt ${ provisioningDuration }."
@@ -4459,9 +5358,21 @@
         "${ resultsCount } resultat funnet",
         "${ resultsCount } resultater funnet"
       ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
+        "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalendere"
+      ],
       "${ selectedEntities.length } selected": [
         "${ selectedEntities.length } valgt",
         "${ selectedEntities.length } valgt"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } mappe valgt",
+        "${ selectedFoldersCountLocalized } mapper valgt"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } etikett valgt",
+        "${ selectedFoldersCountLocalized } etiketter valgt"
       ],
       "${ storage } storage": [
         "${ storage } lagringsplass"
@@ -4554,9 +5465,6 @@
       "add a recovery method": [
         "legger til en gjenoppretingsmetode"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
-        "Legg til et nytt sikkerhetslag for kontoen din. Du må verifisere deg med 2FA hver gang du logger på. Vi anbefaler å bruke ${ protonAuthenticatorDownloadLink } for lagring av 2FA-kodene dine."
-      ],
       "Add domain": [
         "Legg til domene"
       ],
@@ -4594,6 +5502,14 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "KI-drevet assistent for å hjelpe deg med å lage bedre e-poster, raskt og enkelt."
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "(${ totalFoldersCount } mappe)",
+        "Alle (${ totalFoldersCount } mapper)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "(${ totalFoldersCount } etikett)",
+        "Alle (${ totalFoldersCount } etiketter)"
+      ],
       "All inactive members deleted": [
         "Alle inaktive medlemmer slettet"
       ],
@@ -4605,6 +5521,10 @@
       ],
       "All your changes will be lost.": [
         "Alle endringene dine vil gå tapt."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Alle kontaktene dine blir importert, opptil en grense på ${ MAX_CONTACTS_PER_USER }.",
+        "Alle kontaktene dine blir importert, opptil en grense på ${ MAX_CONTACTS_PER_USER }."
       ],
       "Allocated": [
         "Tildelt"
@@ -4630,11 +5550,17 @@
       "Amount due": [
         "Skyldig beløp"
       ],
+      "and": [
+        "og"
+      ],
       "Are you sure you want to cancel editing the group?": [
         "Er du sikker å at du vil avbryte redigeringen av gruppen?"
       ],
       "Are you sure you want to discard your changes?": [
         "Er du sikker på at du vil forkaste de ulagrede endringene dine?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Er du sikker på at du vil forkaste importen din?"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Er du sikker på at du vil gi administrative privilegier til denne brukeren?"
@@ -4717,6 +5643,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikk \"be om ny kode\" for å få en ny verifiseringskode sendt til ${ strong }. Hvis dette telefonnummeret er feil, klikker du \"rediger\" for å rette det opp."
       ],
+      "Close this screen to exit.": [
+        "Lukk dette skjermbildet for å avslutte."
+      ],
       "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
         "Skylagring, integrert med ${ DOCS_APP_NAME }"
       ],
@@ -4759,6 +5688,16 @@
       "Country code": [
         "Landskode"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Opprett ${ calendarsToBeCreatedCount } ny kalender",
+        "Opprett ${ calendarsToBeCreatedCount } nye kalendere"
+      ],
+      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
+        "Opprett en etikett for de importerte meldingene, et tidsintervall for denne importen og mappene du vil importere."
+      ],
+      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
+        "Opprett en etikett for de importerte meldingene, et tidsintervall for denne importen og etikettene du vil importere."
+      ],
       "Create a secure cloud for ${ value } member": [
         "Opprett en sikker sky for ${ value } medlem",
         "Opprett en sikker sky for ${ value } medlemmer"
@@ -4768,6 +5707,9 @@
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
         "Opprett e-postadresser for andre, administrer ${ MAIL_APP_NAME } for en virksomhet, skole eller gruppe. Start ved å legge til organisasjonsnavn og egendefinerte domener (f.eks. @dittfirma.no). "
+      ],
+      "Create in": [
+        "Opprett i"
       ],
       "Create your first Gateway": [
         "Opprett din første porttjener"
@@ -4991,6 +5933,9 @@
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Skriv inn koden som ble sendt til ${ email }. Finner du ikke meldingen i innboksen din, sjekk søppelpostmappen."
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Angi påloggingsinformasjonen til e-postkontoen du ønskere å importere fra."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Angi enhets-ID-en for en **eduGAIN**-organisasjon for **${ domain.DomainName }**."
       ],
@@ -5135,11 +6080,27 @@
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Hvis du har problemer, er vi her for å hjelpe. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en av våre brukerstøttespesialister."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importer ${ calendarCount } av ${ totalCalendarsCount } kalender",
+        "Importer ${ calendarCount } av ${ totalCalendarsCount } kalendere"
+      ],
+      "Import from": [
+        "Importer fra"
+      ],
+      "Import in progress": [
+        "Import pågår"
+      ],
+      "Import mailbox": [
+        "Importer postboks"
+      ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "VIKTIG: Hvis DNS-konsollen ikke tillater at CNAME-verdier slutter med en prikk, kan du fjerne den siste prikken i CNAME-verdiene."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Viktig: sørg for å lagre gjenopprettingskodene. Ellers kan du permanent miste tilgang til kontoen din hvis du mister tofaktorautentiseringsenheten."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I neste trinn, vil du kunne sende inn et innskudd ved å bruke en Bitcoin-adresse."
@@ -5252,11 +6213,20 @@
       "JCB logo": [
         "JCB-logo"
       ],
+      "Just confirm your selection and we'll do the rest.": [
+        "Bare bekreft valget ditt og vi vil gjøre resten."
+      ],
       "Keys created": [
         "Nøkler opprettet"
       ],
+      "Label all imported messages as": [
+        "Merk alle importerte meldinger som"
+      ],
       "Labels:": [
         "Etiketter:"
+      ],
+      "Large imports can take several days.": [
+        "Store importer kan ta flere dager."
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Lær hvordan å logge inn på ${ VPN_APP_NAME } med tredjeparts VPN-applikasjoner."
@@ -5333,6 +6303,9 @@
       "Member": [
         "Medlem"
       ],
+      "Merged": [
+        "Slått sammen"
+      ],
       "Messages to all your email addresses will go to your inbox.": [
         "Meldinger til alle e-postadressene dine vil gå til innboksen din."
       ],
@@ -5356,6 +6329,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Gi den nye mappen et navn, og velg den overordnede mappen du vil legge den i. Hvis du ikke velger en overordnet mappe, opprettes denne nye mappen som en mappe på øverste nivå."
+      ],
+      "New": [
+        "Ny"
       ],
       "New activity data will stop being collected and shown.": [
         "Nye aktivitetsdata vil slutte å bli samlet inn og vist."
@@ -5520,6 +6496,9 @@
       "Please open the document to view it.": [
         "Åpne dokumentet for å se det."
       ],
+      "Please select the folders you would like to import:": [
+        "Velg mappene du vil importere:"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igjen ved å bruke en annen betalingsmåte eller kontakt banken din."
       ],
@@ -5643,6 +6622,12 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Velg brukertilknytningene fra ${ getFormattedOrganization } som du vil tillate inn i ${ BRAND_NAME }-organisasjonen din:"
       ],
+      "Select what you want to import.": [
+        "Velg hva du ønsker å importere."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Velg hvilke kalendere du vil importere. En ny kalender opprettes for hver importerte kalender i henhold til antall kalendere som er tilgjengelige i planen din."
+      ],
       "Self-custodial crypto wallet": [
         "Selvforvaltet kryptolommebok"
       ],
@@ -5762,6 +6747,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Anbefales av TechRadar Pro med en vurdering på 4.2 av 5 stjerner"
+      ],
+      "Temporarily unavailable. Please check back later.": [
+        "Midlertidig utilgjengelig. Kom tilbake senere."
       ],
       "Thank you": [
         "Tusen takk"
@@ -5924,6 +6912,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For å bekjempe søppelpost og misbruk må du bekrefte at du er et menneske."
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "For å importere hendelser, først opprett en kalender i ${ CALENDAR_APP_NAME }. Dette er hvor hendelsene vil vises etter importen."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "For å holde tritt med den siste utviklingen på ${ BRAND_NAME }s produkter, kan du abonnere på våre forskjellige e-poster og ${ blogLink } i ny og ne."
@@ -6126,8 +7117,14 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vi vil sende deg til PayPal i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
       ],
+      "We'll email you once import is complete.": [
+        "Vi sender deg en e-post når importen er fullført."
+      ],
       "We'll get back to you shortly.": [
         "Vi vil komme tilbake til deg innen kort tid."
+      ],
+      "We'll notify you when the import is done.": [
+        "Vi varsler deg når importen er ferdig."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifiseringskode til ${ strong }"
@@ -6220,14 +7217,26 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du bruker mer lagringsplass enn det som er inkludert i en ${ downgradedPlanName }-plan. Slett eller fjern data for å nedgradere."
       ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Du kan også slå sammen importerte kalendere med eksisterende ${ BRAND_NAME }-kalendere."
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Du kan endre dette når som helst i ${ settingsLink }."
+      ],
+      "You can check the progress ${ importProgressLink }.": [
+        "Du kan sjekke fremdriften ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "Du kan lukke fanen eller nettleseren i mellomtiden."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigere den en gang for å sikre riktig e-postadresse for bekreftelse."
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Du kan håndheve passordreglene som medlemmer av organisasjonen din må bruke når de oppretter eller tilbakestiller passordet til deres ${ BRAND_NAME } konto."
+      ],
+      "You can import one data type at a time.": [
+        "Du kan importere én datatype om gangen."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet.",
@@ -6358,6 +7367,9 @@
       "Your account was successfully updated with this promotion": [
         "Kontoen din ble oppdatert med denne kampanjen"
       ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Dataene dine er klare til import fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
+      ],
       "Your email will only be used for this one-time verification.": [
         "E-posten din vil kun bli brukt til denne engangsbekreftelsen."
       ],
@@ -6370,6 +7382,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din informasjon er trygg hos oss. Vi kontakter deg kun når det kreves for å tilby våre tjenester."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "Påloggingsinformasjonen lagres ikke etter at importen er fullført."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Din neste faktureringsdato er ${ renewalTime }."
@@ -6455,6 +7470,11 @@
         "Angi en merknad for fakturaene. Disse detaljene vil bli lagt til både personlige og organisatoriske fakturaer. De vises bare på fakturaer som utstedes i fremtiden."
       ]
     },
+    "Info on errors": {
+      "Click for details": [
+        "Klikk for detaljer"
+      ]
+    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "Du kan forhindre utløp ved å aktivere abonnementet på nytt"
@@ -6463,6 +7483,16 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "For å unngå tjenesteavbrudd på grunn av ubetalte fakturaer, må du sørge for at du har minst 1 gyldig betalingsmåte lagret til enhver tid."
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } mappe valgt",
+        "${ selectedFoldersCount } mapper valgt"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etikett valgt",
+        "${ selectedFoldersCount } etiketter valgt"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -6573,6 +7603,9 @@
         "${ UsedAddresses } av ${ MaxAddresses } e-postadresse",
         "${ UsedAddresses } av ${ MaxAddresses } e-postadresser"
       ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Midlertidig utilgjengelig. Kom tilbake senere)."
+      ],
       "Account holder": [
         "Kontoinnehaver"
       ],
@@ -6624,6 +7657,9 @@
       "Anderson": [
         "Andersen"
       ],
+      "App password": [
+        "App-passord"
+      ],
       "Apply policy to": [
         "Anvend retningslinjen på"
       ],
@@ -6665,6 +7701,12 @@
       ],
       "BTC amount": [
         "BTC-beløp"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Calendars": [
+        "Kalendere"
       ],
       "Card details": [
         "Kortopplysninger"
@@ -6725,6 +7767,9 @@
       ],
       "Confirm second password": [
         "Bekreft andre passord"
+      ],
+      "Contacts": [
+        "Kontakter"
       ],
       "Copy": [
         "Kopier"
@@ -6798,6 +7843,21 @@
       "Email or username": [
         "E-post eller brukernavn"
       ],
+      "Emails": [
+        "E-poster"
+      ],
+      "Emails (all messages)": [
+        "E-poster (alle meldinger)"
+      ],
+      "Emails (last 12 months)": [
+        "E-poster (siste 12 måneder)"
+      ],
+      "Emails (last 3 months)": [
+        "E-poster (siste 3 måneder)"
+      ],
+      "Emails (last month)": [
+        "E-poster (siste måned)"
+      ],
       "Enabled": [
         "Aktivert"
       ],
@@ -6824,6 +7884,9 @@
       ],
       "Folder location": [
         "Mappeplassering"
+      ],
+      "From: ${ fromEmail }": [
+        "Fra: ${ fromEmail }"
       ],
       "Gateway name": [
         "Navn på porttjener"
@@ -6855,6 +7918,15 @@
       "Import all messages": [
         "Importer alle meldinger"
       ],
+      "Import interval": [
+        "Importintervall"
+      ],
+      "Import to email address": [
+        "Importer til e-postadresse"
+      ],
+      "Import to:": [
+        "Importer til:"
+      ],
       "Include application logs in bug report": [
         "Inkluder applikasjonslogger i feilrapport"
       ],
@@ -6872,6 +7944,9 @@
       ],
       "Key": [
         "Nøkkel"
+      ],
+      "Label messages as": [
+        "Merk meldinger som"
       ],
       "Last 12 months only": [
         "Kun siste 12 måneder"
@@ -6891,8 +7966,14 @@
       "Logo": [
         "Logo"
       ],
+      "Mail Server (IMAP)": [
+        "E-posttjener (IMAP)"
+      ],
       "Main": [
         "Hjem"
+      ],
+      "Manage categories": [
+        "Administrer kategorier"
       ],
       "Maximum number of characters is ${ MAX_CHARS }": [
         "Maksimalt antall tegn er ${ MAX_CHARS }"
@@ -6917,6 +7998,12 @@
       ],
       "Moderate NAT": [
         "Moderat NAT"
+      ],
+      "Move to Archive": [
+        "Flytt til arkiv"
+      ],
+      "Move to Inbox": [
+        "Flytt til innboks"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Må minst ha ${ MIN_PASSWORD_LENGTH } tegn"
@@ -7026,6 +8113,9 @@
       "Policy name": [
         "Navn på retningslinje"
       ],
+      "Port": [
+        "Port"
+      ],
       "Postal code": [
         "Postnummer"
       ],
@@ -7125,6 +8215,9 @@
       ],
       "To help us improve, please explain why you are leaving.": [
         "For å hjelpe oss med å forbedre oss, vennligst forklar hvorfor du slutter."
+      ],
+      "To: ${ toEmail }": [
+        "Til: ${ toEmail }"
       ],
       "Two-password mode": [
         "To-passordmodus"
@@ -7284,9 +8377,28 @@
         "${ Label.Name } opprettet"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Fra: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Til: ${ to }"
+      ]
+    },
     "Lable": {
       "Select an identity provider to start": [
         "Velg en identitetsleverandør for å starte"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "For å legge til en ny kalender, fjern en eksisterende."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "For å legge til en ny kalender, fjern en annen kalender eller oppgrader din ${ BRAND_NAME }-plan til en ${ MAIL_SHORT_APP_NAME }-betalt plan."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Du har nådd maksimalt antall kalendere som er tilgjengelige i planen din."
       ]
     },
     "Link": {
@@ -7455,6 +8567,30 @@
         "Oppgrader for å låse opp chat-støtte og andre premiumfunksjoner, eller bruk vårt gratis støtteskjema for å rapportere problemet ditt."
       ]
     },
+    "Loading info": {
+      "Almost there": [
+        "Nesten der"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Mengde kalender opprettet: ${ createdCalendarCount } av ${ calendarsToBeCreated }.",
+        "Mengde kalendere opprettet: ${ createdCalendarCount } ut av ${ calendarsToBeCreated }."
+      ],
+      "Connecting to your email provider": [
+        "Kobler til e-postleverandøren din"
+      ],
+      "Creating new calendars": [
+        "Oppretter nye kalendere"
+      ],
+      "Gathering your data": [
+        "Samler dataene dine"
+      ],
+      "We're gathering your data from your provider": [
+        "Vi samler inn dataene dine fra leverandøren din"
+      ],
+      "Your import is starting": [
+        "Importen din starter"
+      ]
+    },
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Lær mer"
@@ -7557,6 +8693,24 @@
         "Aktiver ${ reason }"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importer alle meldinger fra ${ itemsToImportCount } mappe og merk dem som.",
+        "Importer alle meldinger fra ${ itemsToImportCount } mapper og merk dem som."
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importer alle meldinger fra ${ itemsToImportCount } etikett og merk dem som.",
+        "Importer alle meldinger fra ${ itemsToImportCount } etiketter og merk dem som."
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importer alle meldinger fra ${ selectedItemsToImportCount } ut av ${ itemsToImportCount } mappe og merk dem som.",
+        "Importer alle meldinger fra ${ selectedItemsToImportCount } ut av ${ itemsToImportCount } mapper og merk dem som."
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importer alle meldinger fra ${ selectedItemsToImportCount } ut av ${ itemsToImportCount } etikett og merk dem som.",
+        "Importer alle meldinger fra ${ selectedItemsToImportCount } ut av ${ itemsToImportCount } etiketter og merk dem som."
+      ]
+    },
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skriveassistent"
@@ -7652,6 +8806,26 @@
       ],
       "Sign in to access your ${ appName } account": [
         "Logg på for å få tilgang til ${ appName }-kontoen din"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Slik importerer du kalendere fra en annen tjeneste"
+      ],
+      "How to import calendars from Yahoo": [
+        "Slik importerer du kalendere fra Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Slik importerer du kontakter fra en annen tjeneste"
+      ],
+      "How to import contacts from Yahoo": [
+        "Slik importerer du kontakter fra Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Slik importerer du e-post fra en annen tjeneste"
+      ],
+      "How to import emails from Yahoo": [
+        "Slik importerer du e-post fra Yahoo"
       ]
     },
     "Monetary unit": {
@@ -8769,6 +9943,21 @@
         "Noen bilder ble ikke lastet opp på grunn av dupliserte filnavn i gjeldende utvalg."
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Deretter må du logge på Google-kontoen din og gi ${ BRAND_NAME } tilgang til dataene dine."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "For at importen skal fungere, må du velge alle forespurte elementer som vist i GIF-en."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Velg hva ${ BRAND_NAME } kan få tilgang til: se e-postmeldinger og innstillinger, se og last ned kontaktene dine, se og last ned alle agendaer du får tilgang til fra Google Calendar."
+      ]
+    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Ubegrenset i 12 måneder"
@@ -8939,6 +10128,9 @@
       ]
     },
     "Option": {
+      "Add to existing group": [
+        "Legg til eksisterende gruppe"
+      ],
       "Allowed ${ defaultLabel }": [
         "Tillatt ${ defaultLabel }"
       ],
@@ -8947,6 +10139,9 @@
       ],
       "Country configs": [
         "Landkonfigurasjoner"
+      ],
+      "Create new group": [
+        "Opprett ny gruppe"
       ],
       "Free server configs": [
         "Gratis tjenerkonfigurasjon"
@@ -8962,6 +10157,9 @@
       ],
       "I'd like to merge this account into another one": [
         "Jeg vil gjerne slå sammen denne kontoen til en annen"
+      ],
+      "Ignore group": [
+        "Ignorer gruppe"
       ],
       "iOS": [
         "iOS"
@@ -9039,6 +10237,14 @@
       ],
       "No one": [
         "Ingen"
+      ]
+    },
+    "Option group label": {
+      "Create new calendar": [
+        "Opprett ny kalender"
+      ],
+      "Merge with calendar": [
+        "Slå sammen med kalender"
       ]
     },
     "Organization capacity error": {
@@ -9125,6 +10331,11 @@
       ],
       "Verify your email address ${ email } to set organization identity.": [
         "Bekreft e-postadressen din, ${ email }, for å angi organisasjonsidentitet."
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "Deg"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9542,6 +10753,9 @@
       "Main street 12": [
         "Gatenavn 12"
       ],
+      "Name": [
+        "Navn"
+      ],
       "Organization name": [
         "Organisasjonsnavn"
       ],
@@ -9677,6 +10891,38 @@
     "Price": {
       "Free": [
         "Free"
+      ]
+    },
+    "Property type": {
+      "Address": [
+        "Adresse"
+      ],
+      "Email": [
+        "E-post"
+      ],
+      "Fax": [
+        "Faks"
+      ],
+      "Home": [
+        "Hjem"
+      ],
+      "Main": [
+        "Hoved"
+      ],
+      "Mobile": [
+        "Mobil"
+      ],
+      "Other": [
+        "Annet"
+      ],
+      "Pager": [
+        "Personsøker"
+      ],
+      "Phone": [
+        "Telefon"
+      ],
+      "Work": [
+        "Arbeid"
       ]
     },
     "Protection type": {
@@ -11856,6 +13102,9 @@
       "Country": [
         "Land"
       ],
+      "CSV field": [
+        "CSV-felt"
+      ],
       "Edit": [
         "Rediger"
       ],
@@ -11873,6 +13122,9 @@
       ],
       "Event": [
         "Hendelse"
+      ],
+      "Import": [
+        "Importer"
       ],
       "Invitation email": [
         "E-postinvitasjon"
@@ -11897,6 +13149,12 @@
       ],
       "Total storage": [
         "Total lagringsplass"
+      ],
+      "Values": [
+        "Verdier"
+      ],
+      "vCard field": [
+        "vCard-felt"
       ]
     },
     "Themes": {
@@ -11995,6 +13253,9 @@
       ],
       "Add address": [
         "Legg til adresse"
+      ],
+      "Add contact group name": [
+        "Legg til navn på kontaktgruppen"
       ],
       "Add countries to \"${ policyName }\"": [
         "Legg til land til \"${ policyName }\""
@@ -12146,9 +13407,6 @@
       "Connect apps and devices": [
         "Koble til apper og enheter"
       ],
-      "Connect more Gmail addresses with ${ planName }": [
-        "Koble til flere Gmail-adresser med ${ planName }"
-      ],
       "Connect organization": [
         "Koble organisasjon"
       ],
@@ -12163,6 +13421,9 @@
       ],
       "Contact us": [
         "Kontakt oss"
+      ],
+      "Continue with partial import?": [
+        "Fortsette med delvis import?"
       ],
       "Couldn’t create accounts": [
         "Kunne ikke opprette kontoer"
@@ -12210,8 +13471,17 @@
       "Customization": [
         "Tilpasning"
       ],
+      "Customize and confirm": [
+        "Tilpass og bekreft"
+      ],
+      "Customize calendar import": [
+        "Tilpass kalenderimport"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Tilpass antall IP-adresser i planen din"
+      ],
+      "Customize your mail import": [
+        "Tilpass e-postimporten din"
       ],
       "Data retention": [
         "Dataoppbevaring"
@@ -12434,8 +13704,24 @@
       "Human verification": [
         "Menneskelig verifisering"
       ],
+      "Import as simple event?": [
+        "Importer som enkel hendelse?",
+        "Importer som enkle hendelser?"
+      ],
+      "Import contacts": [
+        "Importer kontakter"
+      ],
       "Import emails, calendars, contacts": [
         "Importer e-poster, kalendere, kontakter"
+      ],
+      "Import events": [
+        "Importer hendelser"
+      ],
+      "Import failed": [
+        "Importen mislyktes"
+      ],
+      "Import groups": [
+        "Importer grupper"
       ],
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
@@ -12539,6 +13825,9 @@
       "Recommended": [
         "Anbefalt"
       ],
+      "Reconnect your account": [
+        "Koble til kontoen din på nytt"
+      ],
       "Recovery": [
         "Gjenoppretting"
       ],
@@ -12590,6 +13879,12 @@
       "Select a plan": [
         "Velg en plan"
       ],
+      "Select action to take on contact group": [
+        "Velg handling som skal utføres på kontaktgruppen"
+      ],
+      "Select contact group": [
+        "Velg kontaktgruppe"
+      ],
       "Send email reminders?": [
         "Sende e-postpåminnelser?"
       ],
@@ -12632,6 +13927,9 @@
       "Sign in": [
         "Logg på"
       ],
+      "Sign in and grant access": [
+        "Logg på og gi tilgang"
+      ],
       "Sign in to join the Beta program": [
         "Logg på for å bli med i testprogrammet"
       ],
@@ -12652,6 +13950,12 @@
       ],
       "Spam, block, and allow lists": [
         "Lister over søppelpost, blokkeringer og tillatelser"
+      ],
+      "Start a new import": [
+        "Start en ny import"
+      ],
+      "Start import process": [
+        "Start importprosessen"
       ],
       "Status": [
         "Status"
@@ -12768,6 +14072,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Velkommen til ${ BRAND_NAME } for Business"
       ],
+      "What would you like to import?": [
+        "Hva ønsker du å importere?"
+      ],
       "Wipe all logs?": [
         "Slette alle logger?"
       ],
@@ -12875,11 +14182,26 @@
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Kopier og lim inn denne URL-adressen i enhets-ID-feltet for identitetsleverandøren."
       ],
+      "Customize import to reduce the number of folders": [
+        "Tilpass import for å redusere antall mapper"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Tilpass import for å redusere antall etiketter"
+      ],
       "Device name and app version": [
         "Enhetsnavn og appversjon"
       ],
       "Display name for the entity in the eduGAIN database": [
         "Visningsnavn for enheten i eduGAIN-databasen"
+      ],
+      "Each imported email will have this label": [
+        "Hver importert e-post vil ha denne etiketten"
+      ],
+      "Edit folder names": [
+        "Rediger mappenavn"
+      ],
+      "Edit label names": [
+        "Rediger navn på etiketter"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-adresse for endepunkt fra identitetsleverandøren (f.eks. https://idp.eksempel.com/sso/saml)."
@@ -12895,6 +14217,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "For eksempel **passord, qwerty** osv."
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail kategoriserer automatisk noen e-poster som 'sosialt' eller 'kampanjer'. Du kan velge hvor du vil importere disse e-postene til."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Identitetsleverandørens offentlige nøkkel for å signere godkjenningsdeklarasjoner. Få sertifikathashen fra identitetsleverandøren."
@@ -12916,6 +14241,12 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "Angi brukerne av eduGAIN-enheten som har tillatelse til å autentisere med SAML SSO"
+      ],
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }."
+      ],
+      "The import will start with the most recent messages.": [
+        "Importen starter med de nyeste meldingene."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Den nye abonnementssyklusen starter ${ formattedTime }"
@@ -13284,6 +14615,14 @@
         "Prøv et kortere brukernavn (maks ${ n } tegn)"
       ]
     },
+    "Video control": {
+      "Click to replay the video": [
+        "Klikk for å spille av videoen på nytt"
+      ],
+      "Replay video": [
+        "Spill av video på nytt"
+      ]
+    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "Jeg fant en annen tjeneste som jeg liker bedre"
@@ -13487,6 +14826,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } vil slå sammen alle mapper med samme navn. Du kan unngå dette ved å endre navnene før import."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } vil overføre så mye data som mulig, og starter med de nyeste meldingene dine."
+      ],
       "Are you sure you want to delete the phone number?": [
         "Er du sikker på at du vil slette telefonnummeret?"
       ],
@@ -13508,17 +14853,29 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Feilrapporter er ikke ende-til-ende-kryptert, ikke send noe sensitiv informasjon."
       ],
+      "Skip verification?": [
+        "Hopp over bekreftelse?"
+      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Innstillingene for dato og klokkeslett på enheten er ikke synkronisert. ${ learnMore }"
       ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Denne importen kan overskride lagringskapasiteten som for øyeblikket er tilgjengelig på ${ BRAND_NAME }-kontoen. Vurder å tilpasse importen."
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Dessverre er vi ikke på nett for øyeblikket. Fyll ut skjemaet nedenfor for å beskrive problemet ditt, så ser vi nærmere på det og tar kontakt når vi er tilbake på nettet."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Vi kan ikke bekrefte e-posttjeneren. Hvis du klarérer den, kan du hoppe over denne verifiseringen."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Vi oppdaget et problem med DNS-konfigurasjonen din. Sørg for at dine poster samsvarer med instruksjonene nedenfor. Hvis problemet vedvarer, vil vi bli nødt til å skru DKIM-signering av."
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Du må ${ activateLink } organisasjonsnøkkelen før du kan legge til en e-postadresse til et ikke-privat medlem."
+      ],
+      "You will lose any customization you made so far.": [
+        "Du vil miste enhver tilpasning du har gjort så langt."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. ${ action }"

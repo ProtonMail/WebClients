@@ -141,6 +141,12 @@
       "Chat with us": [
         "チャットする"
       ],
+      "Check import progress": [
+        "インポートの進行を確認"
+      ],
+      "Choose a file or drag it here": [
+        "ファイルを選択するかここにドラッグしてください"
+      ],
       "Choose my own password": [
         "自分のパスワードを選択"
       ],
@@ -186,6 +192,9 @@
       "Continue anyway": [
         "とにかく続行"
       ],
+      "Continue import": [
+        "インポートを続行"
+      ],
       "Continue with this password": [
         "このパスワードで続行する"
       ],
@@ -221,6 +230,12 @@
       ],
       "Current plan": [
         "現在のプラン"
+      ],
+      "Customize": [
+        "カスタマイズ"
+      ],
+      "Customize import": [
+        "インポートをカスタマイズ"
       ],
       "Customize plan": [
         "プランのカスタマイズ"
@@ -332,6 +347,9 @@
       ],
       "Edit invoice note": [
         "請求書メモを編集"
+      ],
+      "Edit label": [
+        "ラベルを編集"
       ],
       "Edit name": [
         "名前の編集"
@@ -459,6 +477,18 @@
       "Hide plan features": [
         "プランの機能を隠す"
       ],
+      "Import": [
+        "インポート"
+      ],
+      "Import calendars": [
+        "カレンダーをインポート"
+      ],
+      "Import contacts": [
+        "連絡先をインポート"
+      ],
+      "Import emails": [
+        "メールをインポート"
+      ],
       "Import emails, calendars, contacts": [
         "メール、カレンダー、連絡先をインポート"
       ],
@@ -507,8 +537,14 @@
       "Manage advanced account protections": [
         "高度なアカウント保護を管理"
       ],
+      "Manage folders": [
+        "フォルダーを管理"
+      ],
       "Manage groups": [
         "グループの管理"
+      ],
+      "Manage labels": [
+        "ラベルを管理"
       ],
       "Manage subscription": [
         "サブスクリプションを管理"
@@ -588,6 +624,12 @@
       "Publish changes": [
         "変更を公開"
       ],
+      "Quit": [
+        "終了"
+      ],
+      "Reconnect": [
+        "再接続"
+      ],
       "Recover data": [
         "データを復元する"
       ],
@@ -659,6 +701,9 @@
       ],
       "Reset password": [
         "パスワードをリセット"
+      ],
+      "Reset to default": [
+        "初期値に戻す"
       ],
       "Restore": [
         "復元"
@@ -819,11 +864,20 @@
       "Skip": [
         "スキップ"
       ],
+      "Skip verification": [
+        "検証をスキップする"
+      ],
       "Spam": [
         "迷惑メール"
       ],
+      "Start import": [
+        "インポート開始"
+      ],
       "Start live chat": [
         "ライブチャットを開始する"
+      ],
+      "Stay": [
+        "終了しない"
       ],
       "Stop using single sign-on": [
         "シングル サインオンの使用を停止する"
@@ -1088,6 +1142,14 @@
         "管理者"
       ]
     },
+    "Alert": {
+      "By leaving now, some contacts may not be imported": [
+        "今終了すると、インポートされない連絡先がある可能性があります"
+      ],
+      "By leaving now, some events may not be imported": [
+        "今終了すると、インポートされない予定がある可能性があります"
+      ]
+    },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "この認証情報を使用しているすべてのルーターやクライアントが切断されます。"
@@ -1247,6 +1309,26 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "メールの生産性を新しいレベルに。${ BRAND_NAME }Scribeがメールの作成、返信、校正をお手伝いします。"
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "空の ICS ファイルです"
+      ],
+      "Invalid event": [
+        "無効な予定です"
+      ],
+      "Invalid ICS file": [
+        "無効な ICS ファイルです"
+      ],
+      "Invalid method": [
+        "無効なメソッドです"
+      ],
+      "Unsupported calendar component": [
+        "非対応のカレンダーコンポーネントです"
+      ],
+      "Unsupported event": [
+        "サポートされていない予定です"
       ]
     },
     "b2b_trials_Action": {
@@ -1813,6 +1895,14 @@
         "ストロベリー"
       ]
     },
+    "Confirm modal title": {
+      "Quit import customization?": [
+        "インポートのカスタマイズを終了しますか?"
+      ],
+      "Quit import?": [
+        "インポートを終了しますか？"
+      ]
+    },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
         "この支払い方法を削除してよろしいですか？"
@@ -1821,6 +1911,94 @@
     "Confirmation title": {
       "Delete payment method": [
         "支払い方法の削除"
+      ]
+    },
+    "Contact field label": {
+      "Address": [
+        "住所"
+      ],
+      "Anniversary": [
+        "記念日"
+      ],
+      "Birthday": [
+        "誕生日"
+      ],
+      "Display name": [
+        "表示名"
+      ],
+      "Email": [
+        "メールアドレス"
+      ],
+      "First name": [
+        "名"
+      ],
+      "Gender": [
+        "性別"
+      ],
+      "Language": [
+        "言語"
+      ],
+      "Last name": [
+        "姓"
+      ],
+      "Logo": [
+        "ロゴ"
+      ],
+      "Member": [
+        "メンバー"
+      ],
+      "Name": [
+        "名前"
+      ],
+      "Note": [
+        "メモ"
+      ],
+      "Organization": [
+        "組織"
+      ],
+      "Phone": [
+        "電話番号"
+      ],
+      "Photo": [
+        "写真"
+      ],
+      "Role": [
+        "役割"
+      ],
+      "Time zone": [
+        "タイムゾーン"
+      ],
+      "Title": [
+        "肩書き"
+      ],
+      "URL": [
+        "URL"
+      ]
+    },
+    "Contact type label": {
+      "Fax": [
+        "Fax"
+      ],
+      "Main": [
+        "メイン"
+      ],
+      "Mobile": [
+        "携帯電話"
+      ],
+      "Other": [
+        "その他"
+      ],
+      "Pager": [
+        "ポケベル"
+      ],
+      "Personal": [
+        "個人"
+      ],
+      "Work": [
+        "勤務先"
+      ],
+      "Yomi": [
+        "ふりがな"
       ]
     },
     "CountriesStep:Info": {
@@ -2703,6 +2881,11 @@
         "/ 毎月 (1 ユーザーあたり)"
       ]
     },
+    "Default display name vcard": {
+      "Unknown": [
+        "不明"
+      ]
+    },
     "Delete address prompt": {
       "Are you sure you want to delete this address?": [
         "本当にこのアドレスを削除してよいですか。"
@@ -2792,6 +2975,9 @@
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "セキュリティを強化するために、組織内で2要素認証の使用を推奨します。"
       ],
+      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "チームがリモートまたは公共のWi-Fiを使用している場合でも、組織のデータへの安全なアクセスを確保します。"
       ],
@@ -2816,6 +3002,9 @@
       "If disabled, only admins will have access.": [
         "もし無効にした場合、管理者のみがアクセスできます。"
       ],
+      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
+        "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "追加のアドレスを使用して、生活の異なる部分を分け、受信箱を整理しましょう。"
       ],
@@ -2831,11 +3020,33 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "共有カレンダーで同期やスケジューリングを簡単に。"
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSVファイルおよびVCFファイルでインポートするには、ファイルが${ MAX_IMPORT_FILE_SIZE_STRING }または${ MAX_IMPORT_CONTACTS_STRING }件の連絡先を超えないようにしてください。ファイルが大きすぎる場合は、小さいファイルに分割してください。${ learnMoreLink }"
+      ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "${ easySwitchLink }で、GoogleやOutlookから連絡先をインポート"
+      ],
       "To start, give your organization a name.": [
         "まず、組織に名前を付けてください。"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "このガイドを利用して、あなたの組織が${ BRAND_NAME }の業界をリードする暗号化をプライバシーのエコシステムから速やかに恩恵を受けられるようにしてください。"
+      ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "iCal形式(ICSファイル)でイベントをインポートできます。ファイルの最大サイズは${ MAX_IMPORT_FILE_SIZE_STRING }で、最大${ MAX_IMPORT_EVENTS_STRING }件のイベントを含むことができます。ファイルがそれより大きい場合は、小さいファイルに分割してください。"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switchインポートアシスタントを使用する"
+      ]
+    },
+    "Description of the purpose of the import CSV modal": {
+      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
+        "また、CSVのフィールドを自動的にvCardのフィールドに変換しています。手動で変換が正しく行われているか確かめることもできます。"
+      ],
+      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
+        "アップロードされたCSVファイルから以下のフィールドを検出しました。インポートしたいものを選択してください。"
       ]
     },
     "Disable address prompt": {
@@ -3114,6 +3325,71 @@
         "別のデバイスでのサインインに成功しました"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "注意:\n${ eventComment }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "説明:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } はキャンセルされました。"
+      ],
+      "All events in this series were updated.": [
+        "この連続した全てのイベントは更新されました。"
+      ],
+      "Here's what changed:": [
+        "変更内容:"
+      ],
+      "NOTE:": [
+        "注意:"
+      ],
+      "This event occurrence was canceled.": [
+        "この繰り返しイベントはキャンセルされました。"
+      ],
+      "This event occurrence was updated.": [
+        "この予定の繰り返しは更新されました。"
+      ],
+      "This event was updated.": [
+        "この予定は更新されました。"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "時間：${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "時間：${ formattedStart }(終日)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "時間：${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "削除済み"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "場所:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress }は${ eventTitle }への招待を受け入れました"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress }は${ eventTitle }への招待を拒否しました"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress }は${ eventTitle }への招待を仮承諾しました"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } が追加されました"
@@ -3143,6 +3419,26 @@
         "${ name } が正常に削除されました"
       ]
     },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "${ formattedStart } の予定のキャンセル"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "${ formattedStart } から始まる予定のキャンセル"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "${ formattedStart } の予定への招待"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "${ formattedStart } から始まる予定の招待"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "${ formattedStart } の予定の更新"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "${ formattedStart } から始まる予定の更新"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "確認メールが ${ address } に送信されました"
@@ -3168,6 +3464,12 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "あなたのユーザー名は${ user.Name }です。 ${ emailAddress }を作成するには、設定 > 署名とアドレス > 短縮ドメイン (@pm.me) に移動してください。"
       ],
+      "A group with this name already exists": [
+        "この名前のグループは既に存在します"
+      ],
+      "Address primary private key not found": [
+        "メールアドレスのプライマリー秘密鍵が見つかりません"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "すべてのストレージ容量が割り当てられています。他のユーザーに割り当てられたストレージ容量を小さくしてください。"
       ],
@@ -3183,6 +3485,9 @@
       "Authentication error.": [
         "認証エラー。"
       ],
+      "Calendar limit reached": [
+        "カレンダーの制限に達しました"
+      ],
       "Checkout expired, please try again": [
         "チェックアウトの有効期限が切れました。もう一度やり直してください。"
       ],
@@ -3195,6 +3500,12 @@
       "Couldn't load transactions. Please try again later.": [
         "取引を読み込めませんでした。後ほど再度お試しください。"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "${ calendarsToFixCount } 件のカレンダーの選択を解除"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "${ calendarsToFixCount } 件のカレンダーの選択を解除するか"
+      ],
       "Domain not available, try again later": [
         "ドメインが利用できません。再度お試しください。"
       ],
@@ -3206,6 +3517,9 @@
       ],
       "Email address is not available": [
         "メールアドレスは利用できません。"
+      ],
+      "Email address is required": [
+        "メールアドレスは必須です"
       ],
       "Email is not valid": [
         "メールアドレスが無効です"
@@ -3231,8 +3545,14 @@
       "File too large. Your logo must be 30 KB or smaller.": [
         "ファイルが大きすぎます。ロゴは 30 KB 以下である必要があります。"
       ],
+      "Folder name cannot be empty.": [
+        "フォルダー名は空欄にできません。"
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "TV 上で時間切れになったら、「再読み込み」をクリックして再度コードを入力してください。"
+      ],
+      "IMAP server is required": [
+        "IMAP サーバーは必須です"
       ],
       "Impossible to create the gateway": [
         "ゲートウェイを作成できません"
@@ -3285,6 +3605,9 @@
       "Invalid invitation link": [
         "無効な招待リンクです"
       ],
+      "Invalid name": [
+        "無効な名前です"
+      ],
       "Invalid postal code": [
         "無効な郵便番号です"
       ],
@@ -3293,6 +3616,15 @@
       ],
       "Invalid ZIP code": [
         "郵便番号が正しくありません"
+      ],
+      "Label name cannot be empty.": [
+        "ラベル名は空欄にできません。"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "${ calendarsToFixCount } 件のカレンダーを既存の ${ BRAND_NAME } カレンダーに結合します"
+      ],
+      "Missing key packet": [
+        "キーパケットが見つかりません"
       ],
       "Name already exists": [
         "名前は既に存在します"
@@ -3312,6 +3644,9 @@
       "No image selected": [
         "画像が選択されていません"
       ],
+      "No valid address found": [
+        "有効なアドレスが見つかりません"
+      ],
       "Not a valid number": [
         "無効な番号です"
       ],
@@ -3323,6 +3658,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "非プライベートユーザーを作成するには、組織の鍵を有効にする必要があります"
+      ],
+      "Password is required": [
+        "パスワードは必須です"
       ],
       "Passwords do not match": [
         "パスワードが一致しません"
@@ -3369,6 +3707,9 @@
       "Please enter ZIP code": [
         "郵便番号を入力してください"
       ],
+      "Please fix the highlighted conflict to proceed.": [
+        "続行するためにハイライトされた競合を修正してください。"
+      ],
       "Please generate keys before you try to change your password": [
         "パスワードを変更する前に鍵を生成してください"
       ],
@@ -3414,8 +3755,17 @@
       "Please upload only 1 file": [
         "ファイルを 1 つだけアップロードしてください"
       ],
+      "Port is required": [
+        "ポートは必須です"
+      ],
       "Postal code is required": [
         "郵便番号は必須です"
+      ],
+      "Primary address key is not decrypted": [
+        "プライマリーアドレス鍵が復号されていません"
+      ],
+      "Primary address key is not decrypted.": [
+        "プライマリーアドレス鍵が復号されていません。"
       ],
       "Process aborted": [
         "処理が中断されました"
@@ -3425,6 +3775,21 @@
       ],
       "Signature verification failed": [
         "署名の検証に失敗しました"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "フォルダー名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "フォルダー名の中に ${ MAIL_APP_NAME } の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "ラベル名の中に予約済みのものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
+      ],
+      "Some of your label names are unavailable. Please customize the import to edit these names.": [
+        "ラベル名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
+      ],
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "ラベル名の中に ${ MAIL_APP_NAME } の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
@@ -3450,11 +3815,26 @@
       "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
         "ファイルが小さすぎます。最小サイズは ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS } です"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "このフォルダー名は無効です。別の名前を選択してください。"
+      ],
+      "The folder name is too long. Please choose a different name.": [
+        "フォルダー名が長すぎます。別の名前を選択してください。"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "このラベル名は無効です。別の名前を選択してください。"
+      ],
+      "The label name is too long. Please choose a different name.": [
+        "ラベル名が長すぎます。別の名前を選択してください。"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "追加クレジットの最低金額は ${ price } です。"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "ポリシー名は 3 文字以上 40 文字以下で入力してください。"
+      ],
+      "There are too many folders in your external account. Please customize the import to delete some folders.": [
+        "外部アカウントのフォルダが多すぎます。インポートをカスタマイズしてフォルダをいくつか削除してください。"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "このフィールドは${ maximumLength }文字の最大値を超えています。"
@@ -3464,6 +3844,12 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "このフィールドには ${ minimumLength } 文字以上の入力が必要です。"
+      ],
+      "This folder name is not available. Please choose a different name.": [
+        "このフォルダー名は利用できません。別の名前を選択してください。"
+      ],
+      "This label name is not available. Please choose a different name.": [
+        "このラベル名は利用できません。別の名前を選択してください。"
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "非プライベート ユーザー アカウントを作成し、そのアカウントにアクセスするには、管理者権限を復元する必要があります。"
@@ -3504,6 +3890,9 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "間違った検証コードです。 検証コードが正しくコピーされているか確認し、もう一度試してください。 変更が有効になるまでに最大24時間を要する場合があります。"
       ],
+      "You have reached the maximum number of calendars.": [
+        "カレンダーの上限数に達しました。"
+      ],
       "You have reached the number of contacts limit for your account": [
         "このアカウントの連絡先の数が上限に達しています"
       ],
@@ -3513,8 +3902,14 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "現在のプランでのユーザー数の上限に達しました。新規ユーザーを追加するにはアップグレードしてください。"
       ],
+      "You must set a name": [
+        "名前を設定してください"
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "あなたのアカウントあるいは組織には未払いの請求があります。すべての未払いの請求をお支払いください。"
+      ],
+      "Your import will not be processed.": [
+        "インポートできませんでした。"
       ],
       "ZIP code is required": [
         "郵便番号は必須です"
@@ -3523,6 +3918,131 @@
     "error": {
       "Select users to view their activity": [
         "アクティビティを表示するユーザーを選択します"
+      ]
+    },
+    "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "ファイル ${ formattedFilename } の読み取り中にエラーが発生しました。不正なファイル形式です。"
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "ファイル ${ formattedFilename } のアップロード中にエラーが発生しました。最大ファイルサイズは${ MAX_IMPORT_FILE_SIZE_STRING }です。"
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "ファイル ${ formattedFilename } のアップロード中にエラーが発生しました。ICS ファイル形式のみが許可されています。"
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "ファイルのアップロード中にエラーが発生しました。ファイルが選択されていません。"
+      ],
+      "An unexpected error occurred. Import must be restarted.": [
+        "予期しないエラーが発生しました。インポートを再起動する必要があります。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "ファイル ${ formattedFilename } には ${ MAX_IMPORT_EVENTS } 以上の予定が含まれています。"
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "ファイル${ formattedFilename }はメソッドが正しくなく、インポートできません。"
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "ファイル${ formattedFilename }にはインポートする予定がありません。"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "ファイル${ formattedFilename }が空です。"
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "ファイル${ formattedFilename }はカレンダーではありません。"
+      ]
+    },
+    "Error importing contact": {
+      "Encryption failed": [
+        "暗号化に失敗しました"
+      ],
+      "Missing FN property": [
+        "FN プロパティが見つかりません"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard バージョン 3.0 未満はサポートされていません"
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "ファイル ${ formattedFilename } の読み取り中にエラーが発生しました。不正なファイル形式です。"
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "ファイル ${ formattedFilename } をアップロードしているときにエラーが発生しました。最大ファイルサイズは ${ MAX_IMPORT_FILE_SIZE_STRING } です。"
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "ファイル ${ formattedFilename } のアップロード中にエラーが発生しました。.csv または .vcf ファイルが選択されていません。"
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "ファイルのアップロード中にエラーが発生しました。ファイルが選択されていません。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "あなたのファイル ${ formattedFilename } には${ MAX_IMPORT_CONTACTS_STRING } 以上の連絡先が含まれています。"
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "ファイル ${ formattedFilename } にインポートする連絡先がありません。"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "ファイル${ formattedFilename } は空です。"
+      ]
+    },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "不正なフォーマットです。コンポーネントを読み込めません。"
+      ],
+      "Calendar": [
+        "カレンダー"
+      ],
+      "Component with wrong format": [
+        "無効なコンポーネント形式です"
+      ],
+      "Custom time zone": [
+        "独自のタイムゾーン"
+      ],
+      "Element": [
+        "要素"
+      ],
+      "Encryption failed": [
+        "暗号化に失敗しました"
+      ],
+      "Event": [
+        "予定"
+      ],
+      "Free-busy time information": [
+        "予定の有無に関する情報"
+      ],
+      "Invalid event": [
+        "無効な予定です"
+      ],
+      "Journal entry": [
+        "Journal のエントリー"
+      ],
+      "Missing start time": [
+        "開始日時が存在しません"
+      ],
+      "No UID, title or start time": [
+        "UID、タイトルまたは開始日時が存在しません"
+      ],
+      "Notification out of bounds": [
+        "通知が指定可能な範囲を超えています"
+      ],
+      "Original recurring event could not be found": [
+        "元の定期的な予定が見つかりませんでした"
+      ],
+      "Time zone": [
+        "タイムゾーン"
+      ],
+      "Time zone component ignored": [
+        "タイムゾーン構成は無視されました"
+      ],
+      "To-do entry": [
+        "To-do のエントリー"
+      ],
+      "Unknown": [
+        "不明"
+      ],
+      "Unsupported event": [
+        "サポートされていない予定です"
       ]
     },
     "Error importing users": {
@@ -3571,11 +4091,65 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "証明書 ${ name } は見つからないか、すでに失効しています"
+      ],
+      "Display name cannot be empty": [
+        "表示名は空白にできません"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "画像が選択されていません"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "予期せぬエラー"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "添付された ICS ファイルを復号できません"
+      ],
+      "Attached ICS file could not be read": [
+        "添付された ICS ファイルを読み込めません"
+      ],
+      "Invalid invitation": [
+        "無効な招待状"
+      ],
+      "Invalid response": [
+        "無効なレスポンスです"
+      ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "予定をカレンダーに追加できませんでした。回答は送信されません。"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "予定をカレンダーに追加できませんでした。回答は送信されていません。"
+      ],
+      "Unsupported invitation": [
+        "サポートされていない招待です"
+      ],
+      "Unsupported response": [
+        "未対応のレスポンスです"
+      ],
+      "We could not cancel the event in your calendar": [
+        "カレンダーの予定をキャンセルすることができませんでした"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "カレンダーからこのイベントを探し出すことができませんでした"
+      ],
+      "We could not update the event in your calendar": [
+        "カレンダーの予定を更新することができませんでした"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "回答は送信されましたが、予定をカレンダーに追加できませんでした"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "回答が送信されましたが、予定はカレンダーで更新できませんでした"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(タイトルなし)"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4323,6 +4897,303 @@
         "SMS"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "カレンダーのタイムゾーンがサポートされていません"
+      ],
+      "Edited event not supported": [
+        "編集された予定はサポートされていません"
+      ],
+      "End time out of bounds": [
+        "終了日時が指定可能な範囲を超えています"
+      ],
+      "Event validation failed": [
+        "予定の検証に失敗しました"
+      ],
+      "Floating times not supported": [
+        "浮動時間はサポートされていません"
+      ],
+      "Malformed all-day event": [
+        "不正な終日の予定です"
+      ],
+      "Malformed end time": [
+        "異常な終了日時です"
+      ],
+      "Malformed recurring event": [
+        "不正な定期的な予定です"
+      ],
+      "Malformed start time": [
+        "異常な開始日時です"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "グレゴリオ暦のスケールのみ許可されています"
+      ],
+      "Recurring event has no occurrences": [
+        "定期的な予定に繰り返しがありません"
+      ],
+      "Recurring rule not supported": [
+        "繰り返しルールがサポートされていません"
+      ],
+      "Start time out of bounds": [
+        "開始日時が指定可能な範囲を超えています"
+      ],
+      "Time zone not supported": [
+        "タイムゾーンはサポートされていません"
+      ]
+    },
+    "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } 件の予定が暗号化され、カレンダーに追加されました"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "予定の暗号化と追加中にエラーが発生しました。${ totalToImport } のうち ${ totalImported } の予定のインポートに成功しました。"
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "予定の暗号化と追加中にエラーが発生しました。予定をインポートできませんでした。"
+      ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "予定の暗号化と追加中にエラーが発生しました。予定をインポートできませんでした。"
+      ],
+      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
+        "連絡先の暗号化と追加: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "予定を暗号化し、カレンダーに追加中: ${ totalToImport }件中${ totalImported }件が完了"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "予定は正常にインポートされました。インポートされた予定はカレンダーに表示されます。"
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "予定は正常にインポートされました。インポートされた予定はカレンダーに表示されます。"
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "インポートが完了するまでタブを閉じないでください。"
+      ]
+    },
+    "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME }は現在、特定の予定の種類や詳細、フォーマットに対応していません。"
+      ],
+      "vCard versions < 3.0": [
+        "vCard バージョン3.0 以前"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "インポートされた招待は、${ CALENDAR_APP_NAME }にシンプルなイベントとして主催者と参加者の詳細なしで表示されます。イベントの最新情報を入手して参加者を確認するには、${ BRAND_NAME }メールアドレスを使用して主催者に招待するよう依頼してください。"
+      ],
+      "This file contains an event invitation:": [
+        "このファイルには予定の招待が含まれています:"
+      ],
+      "This file contains an invitation response:": [
+        "このファイルには招待への回答が含まれています："
+      ],
+      "This file contains some data that we cannot import:": [
+        "このファイルにはインポートできないデータが含まれています:"
+      ]
+    },
+    "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } 件の連絡先が暗号化され、連絡先リストに追加されました"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "連絡先の暗号化と追加中にエラーが発生しました。連絡先をインポートできませんでした。"
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "連絡先の暗号化と追加中にエラーが発生しました。${ totalToImport } 件のうち ${ totalImported } 件の連絡先が正常にインポートされました。"
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "連絡先の暗号化と追加中にエラーが発生しました。連絡先をインポートできませんでした。"
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "連絡先が正常にインポートされました。インポートされた連絡先が連絡先リストに表示されます。"
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "連絡先が正常にインポートされました。インポートされた連絡先が連絡先リストに表示されます。"
+      ]
+    },
+    "Import contact error": {
+      "Contact ${ contactId }: ": [
+        "連絡先 ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } 件の連絡先"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "不明"
+      ]
+    },
+    "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } は ${ forNow } をサポートしていません。"
+      ],
+      "for now": [
+        "現時点"
+      ]
+    },
+    "Import error": {
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } はあなたのアカウントに接続できません。以下を確認してください。"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } はあなたの外部アカウントに接続できません。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } はあなたの外部アカウントに接続できません。以下を確認してください。"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } はあなたの Yahoo アカウントに接続できません。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } はあなたの Yahoo アカウントに接続できません。以下を確認してください。"
+      ],
+      "2-step verification is enabled in your external account.": [
+        "2 段階認証は外部アカウントで有効になっています。"
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "2 段階認証は外部メールアカウントで有効になっています。"
+      ],
+      "IMAP access is enabled in your external account.": [
+        "IMAP アクセスは外部アカウントで有効になっています。"
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "IMAP アクセスは Yahoo アカウントで有効になっています。"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "最近のリクエストが多すぎます。しばらくしてから再度お試しください。"
+      ],
+      "Use your app password if:": [
+        "次の場合にアプリのパスワードを使用してください。"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "以下の場合、通常のパスワードの代わりにアプリのパスワードを使用してください。"
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "アプリのパスワードが正しいです。通常のパスワードを使用しないでください。"
+      ],
+      "Your email account requires an app password to export your data.": [
+        "メールアカウントはデータをエクスポートするためにアプリのパスワードを必要としています。"
+      ],
+      "Your email account requires one to export your data.": [
+        "データをエクスポートするためにメールアカウントが必要です。"
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "メールアドレスとアプリパスワードは正しいです。通常のパスワードを使用しないでください。"
+      ],
+      "Your email address and password are correct.": [
+        "あなたのメールアドレスとパスワードは正しいです。"
+      ],
+      "Your password is correct.": [
+        "パスワードは正しいです。"
+      ]
+    },
+    "Import instructions": {
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "手順がメールサービスプロバイダーによって異なるため、${ BRAND_NAME } にメールをインポートする前に${ knowledgeBaseLink }を生成することをおすすめします。"
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "3 点リーダー（...）をクリックしてドロップダウンを展開します。"
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "${ boldAppPassword }を生成し、${ BRAND_NAME } からプロンプトが表示に通常のパスワードの代わりに入力してください。"
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "${ yahooMailLink } のプロフィールから${ boldAccountInfo }に移動します。"
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "${ boldAccountSecurity }に移動します。"
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "${ yahooMailLink } の連絡先を開きます。"
+      ],
+      "Select ${ boldExportCSV }.": [
+        "${ boldExportCSV } を選択します。"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "カレンダーを ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "カレンダーを ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。インポート作業の開始前にダウンロードしてください。"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink } が必要です。インポート作業の開始前にダウンロードしてください。"
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "メールを ${ BRAND_NAME } へインポートするには、Yahoo から${ appPasswordLink }を取得する必要があります。以下の手順に従ってください。"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "アカウント情報"
+      ],
+      "Account security": [
+        "アカウントのセキュリティ"
+      ],
+      "app password": [
+        "アプリ パスワード"
+      ],
+      "Export": [
+        "エクスポート"
+      ],
+      "Export to CSV file": [
+        "CSV ファイルでエクスポート"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "アプリ パスワード"
+      ],
+      "app password or enable IMAP": [
+        "IMAP を有効にするか、アプリ パスワード"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "CSV または VCF (vCard) ファイル"
+      ],
+      "full calendar view": [
+        "フルカレンダー表示"
+      ],
+      "ICS file": [
+        "ICS ファイル"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Yahoo の ${ calendarViewLink } へ移動してください。"
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "インポートするカレンダーの上にカーソルを置き、メニューを開きます。"
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "${ boldExport } を選択して ICS ファイルとしてカレンダーをエクスポートします。"
+      ]
+    },
+    "Import warning": {
+      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
+        "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。詳細はクリックしてください"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEvents } 件のうち ${ totalEventsDiscarded } 件の予定はインポートされません。クリックして詳細を展開します。"
+      ],
+      "No contact can be imported. Click for details": [
+        "連絡先をインポートすることはできません。詳細はクリックしてください"
+      ],
+      "No event can be imported. Expand for details.": [
+        "予定をインポートできませんでした。クリックして詳細を展開します。"
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "カレンダーの内容の一部がサポートされていないため、インポートされません。"
+      ]
+    },
     "Info": {
       " and other security features.": [
         " およびその他のセキュリティ機能。"
@@ -4341,6 +5212,12 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } の暗号化技術は私たちでさえもパスワードにアクセスできないことを意味しています。"
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } 個の新しいカレンダー"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } 個の結合されたカレンダー"
       ],
       "${ countriesCount } country enabled": [
         "${ countriesCount } か国が有効"
@@ -4405,6 +5282,12 @@
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } は、疑わしいアクティビティの専用モニタリングでアカウントを保護します。"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } 件のフォルダーが存在"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } ラベルが Gmail に見つかりました"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } サーバーはまだセットアップ中です。 通常、これには ${ provisioningDuration } 程度かかります。"
       ],
@@ -4423,8 +5306,17 @@
       "${ resultsCount } result found": [
         "${ resultsCount } 件の結果が見つかりました"
       ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
+      ],
       "${ selectedEntities.length } selected": [
         "${ selectedEntities.length }個が選択済み"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } 件のフォルダーを選択済み"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } 件のラベルを選択"
       ],
       "${ storage } storage": [
         "${ storage } ストレージ"
@@ -4513,9 +5405,6 @@
       "add a recovery method": [
         "回復手段の追加"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
-        "アカウントにセキュリティのレイヤーをもう1つ追加します。サインインするたびに、2要素認証でご自身を認証していただく必要があります。2要素認証コードを保存するには、${ protonAuthenticatorDownloadLink }をご利用いただくことをお勧めします。"
-      ],
       "Add domain": [
         "ドメインを追加"
       ],
@@ -4549,6 +5438,12 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI を活用したアシスタントにより、より良いメールを迅速かつ簡単に作成できるようになります。"
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "すべて (${ totalFoldersCount } フォルダー)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "すべて (${ totalFoldersCount } 件のラベル)"
+      ],
       "All inactive members deleted": [
         "全ての非アクティブメンバーは削除されました"
       ],
@@ -4560,6 +5455,9 @@
       ],
       "All your changes will be lost.": [
         "変更内容はすべて失われます。"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "${ MAX_CONTACTS_PER_USER } の制限まで、すべての連絡先がインポートされます"
       ],
       "Allocated": [
         "割り当て"
@@ -4585,11 +5483,17 @@
       "Amount due": [
         "支払額"
       ],
+      "and": [
+        "と"
+      ],
       "Are you sure you want to cancel editing the group?": [
         "本当にグループの編集をキャンセルしてもいいですか？"
       ],
       "Are you sure you want to discard your changes?": [
         "変更を破棄してよろしいですか?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "インポートを破棄してもよろしいですか?"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "このユーザーに管理者権限を与えてもよろしいですか?"
@@ -4672,6 +5576,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
       ],
+      "Close this screen to exit.": [
+        "画面を閉じると終了します。"
+      ],
       "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
         "${ DOCS_APP_NAME }と統合したクラウドストレージ"
       ],
@@ -4714,6 +5621,15 @@
       "Country code": [
         "国コード"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } 件の新しいカレンダーを作成"
+      ],
+      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
+        "インポートされたメッセージのラベル、インポートする期間、およびインポート先のフォルダーを設定します。"
+      ],
+      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
+        "インポートされたメッセージのラベル、インポートする期間、およびインポート先のラベルを設定します。"
+      ],
       "Create a secure cloud for ${ value } member": [
         "${ value } 人のメンバーのために安全なクラウドを作成します"
       ],
@@ -4722,6 +5638,9 @@
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
         "他の人のためにメールアドレスを作成し、ビジネス、学校、またはグループのために ${ MAIL_APP_NAME } を管理します。組織名とカスタムドメイン (例: @yourcompany.com ) を追加して始めましょう。 "
+      ],
+      "Create in": [
+        "作成日時"
       ],
       "Create your first Gateway": [
         "最初のゲートウェイを作成する"
@@ -4942,6 +5861,9 @@
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "${ email } に送信したコードを入力してください。受信トレイにメールがない場合、迷惑メールフォルダーを確認してください。"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "インポートするメールアカウントの認証情報を入力します。"
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "**${ domain.DomainName }**の**eduGAIN**組織のエンティティ ID を入力してください。"
       ],
@@ -5089,11 +6011,26 @@
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "問題がある場合は、私たちがお手伝いいたします。弊社のサポート スペシャリストのいずれかに ${ boldPhoneCall } または ${ boldZoomMeeting } を依頼してください。"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ totalCalendarsCount } 件中 ${ calendarCount } 件のカレンダーをインポート"
+      ],
+      "Import from": [
+        "インポート元"
+      ],
+      "Import in progress": [
+        "インポートは進行しています"
+      ],
+      "Import mailbox": [
+        "メールボックスのインポート"
+      ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "重要: DNS コンソールで CNAME 値がドットで終わることが許可されていない場合は、CNAME 値の最後のドットを削除できます。"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "重要: 回復用コードを確実に保存してください。適切に保存されていない場合、2 要素認証デバイスを紛失した場合、アカウントにアクセスできなくなります。"
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "次のステップでは、Bitcoin アドレスを使用してデポジットを送信することができます。"
@@ -5206,11 +6143,20 @@
       "JCB logo": [
         "JCB ロゴ"
       ],
+      "Just confirm your selection and we'll do the rest.": [
+        "あとは、選択を確認するだけです。"
+      ],
       "Keys created": [
         "作成されたキー"
       ],
+      "Label all imported messages as": [
+        "インポートされたすべてのメッセージに次のようにラベル"
+      ],
       "Labels:": [
         "ラベル:"
+      ],
+      "Large imports can take several days.": [
+        "膨大なインポートには数日かかる場合があります。"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "サードパーティの VPN アプリを使用して、${ VPN_APP_NAME } にサインインする方法を学ぶ"
@@ -5287,6 +6233,9 @@
       "Member": [
         "メンバー"
       ],
+      "Merged": [
+        "結合済み"
+      ],
       "Messages to all your email addresses will go to your inbox.": [
         "すべてのメールアドレスへのメッセージは受信トレイに移動します。"
       ],
@@ -5310,6 +6259,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
+      ],
+      "New": [
+        "新規"
       ],
       "New activity data will stop being collected and shown.": [
         "新しいアクティビティデータの収集と表示が停止されます。"
@@ -5467,6 +6419,9 @@
       "Please open the document to view it.": [
         "文書を表示するにはまず開いてください。"
       ],
+      "Please select the folders you would like to import:": [
+        "インポートしたいフォルダーを選択してください:"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "別の支払い方法で再度お試しいただくか、銀行へお問い合わせください。"
       ],
@@ -5590,6 +6545,12 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "${ getFormattedOrganization } から ${ BRAND_NAME } 組織に許可したいユーザー所属を選択してください："
       ],
+      "Select what you want to import.": [
+        "インポートしたいものを選択してください。"
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "インポートするカレンダーを選択します。プランで利用可能なカレンダーの数に応じて、インポートしたカレンダーごとに新しいカレンダーが作成されます。"
+      ],
       "Self-custodial crypto wallet": [
         "自己管理型暗号通貨ウォレット"
       ],
@@ -5706,6 +6667,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Tech radar proのおすすめ 星 5 つ中の星 4.2"
+      ],
+      "Temporarily unavailable. Please check back later.": [
+        "一時的に利用できません。あとでお試しください。"
       ],
       "Thank you": [
         "ありがとうございます"
@@ -5865,6 +6829,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたが人間であることを確認します。"
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "予定をインポートするには、まず ${ CALENDAR_APP_NAME } に予定のインポート先となるカレンダーを作成してください。"
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "${ BRAND_NAME } 製品の最新の開発状況を把握するために、さまざまなメールや ${ blogLink } を随時購読していただけます。"
@@ -6067,8 +7034,14 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "この取引を完了するために、新しいブラウザーのタブで PayPal にリダイレクトします。 ポップアップブロッカーを使用している場合は無効にして続けてください。"
       ],
+      "We'll email you once import is complete.": [
+        "インポートが完了したらメールでお知らせします。"
+      ],
       "We'll get back to you shortly.": [
         "すぐにお返事します。"
+      ],
+      "We'll notify you when the import is done.": [
+        "インポートが完了したら通知します。"
       ],
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"
@@ -6157,8 +7130,17 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "${ downgradedPlanName } プランに含まれるストレージを超えるストレージを使用しています。 ダウングレードするには、データを削除してください。"
       ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "存在する ${ BRAND_NAME } カレンダーにインポートしたカレンダーを結合することもできます。"
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "${ settingsLink } でいつでも変更できます。"
+      ],
+      "You can check the progress ${ importProgressLink }.": [
+        "進捗を確認するには ${ importProgressLink }。"
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "このタブやブラウザを閉じても構いません。"
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "確認のための正しいメールアドレスを確認するために、一度編集することができます。"
@@ -6168,6 +7150,9 @@
       ],
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "弊社のプレミアムプライバシーサービスを1つのバンドルで入手できます。しかもたった **${ priceString }/月**です。"
+      ],
+      "You can import one data type at a time.": [
+        "1 回にインポートできるのは 1 種類のみです。"
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "カレンダーを最大 ${ MAX_CALENDARS_FREE } 個まで保持することができます。あなたの ${ MAIL_SHORT_APP_NAME } サブスクリプションをキャンセルする前に、共有カレンダーリンクと共有したカレンダーの ${ BRAND_NAME } ユーザーを削除してください。"
@@ -6292,6 +7277,9 @@
       "Your account was successfully updated with this promotion": [
         "あなたのアカウントはこのプロモーションで正常に更新されました"
       ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "データは ${ importedEmailAddressStrong } から ${ BRAND_NAME } アカウントにインポートできる状態です。"
+      ],
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
       ],
@@ -6303,6 +7291,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "あなたの情報は安全です。 サービスの提供に必要な場合にのみ、お客様に連絡します。"
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "インポート完了後、ログイン情報は保存されません。"
       ],
       "Your next billing date is ${ renewalTime }.": [
         "次回の請求日は ${ renewalTime } です。"
@@ -6387,6 +7378,11 @@
         "請求書のメモを入力してください。これらの詳細は、個人と組織の両方の請求書に追加されます。 これらは、今後発行される請求書にのみ表示されます。"
       ]
     },
+    "Info on errors": {
+      "Click for details": [
+        "クリックして詳細を確認"
+      ]
+    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "サブスクリプションを再度有効にすることで、有効期限切れを防ぐことができます。"
@@ -6395,6 +7391,14 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "未払いによるサービスの中断を避けるため、少なくとも 1 つの有効な支払い方法を設定しておく必要があります。"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } 件のフォルダが選択済み"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } 件のラベルが選択済み"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -6501,6 +7505,9 @@
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ MaxAddresses } 件のうち ${ UsedAddresses } 件のメールアドレス"
       ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "(一時的に利用できません。あとでお試しください。)"
+      ],
       "Account holder": [
         "アカウント所有者"
       ],
@@ -6552,6 +7559,9 @@
       "Anderson": [
         "アンダーソン"
       ],
+      "App password": [
+        "アプリのパスワード"
+      ],
       "Apply policy to": [
         "ポリシーを適用"
       ],
@@ -6593,6 +7603,12 @@
       ],
       "BTC amount": [
         "Bitcoin 金額"
+      ],
+      "Calendar": [
+        "カレンダー"
+      ],
+      "Calendars": [
+        "カレンダー"
       ],
       "Card details": [
         "カード詳細"
@@ -6653,6 +7669,9 @@
       ],
       "Confirm second password": [
         "セカンドパスワードを確認"
+      ],
+      "Contacts": [
+        "連絡先"
       ],
       "Copy": [
         "コピー"
@@ -6726,6 +7745,21 @@
       "Email or username": [
         "メールアドレスまたはユーザー名"
       ],
+      "Emails": [
+        "メール"
+      ],
+      "Emails (all messages)": [
+        "メール (すべてのメッセージ)"
+      ],
+      "Emails (last 12 months)": [
+        "メール (過去 12 か月)"
+      ],
+      "Emails (last 3 months)": [
+        "メール (過去 3 か月)"
+      ],
+      "Emails (last month)": [
+        "メール (過去 1 か月)"
+      ],
       "Enabled": [
         "有効"
       ],
@@ -6752,6 +7786,9 @@
       ],
       "Folder location": [
         "フォルダーの場所"
+      ],
+      "From: ${ fromEmail }": [
+        "送信者: ${ fromEmail }"
       ],
       "Gateway name": [
         "ゲートウェイ名"
@@ -6783,6 +7820,15 @@
       "Import all messages": [
         "すべてのメッセージをインポート"
       ],
+      "Import interval": [
+        "インポートの間隔"
+      ],
+      "Import to email address": [
+        "メールアドレスをインポート"
+      ],
+      "Import to:": [
+        "インポート先："
+      ],
       "Include application logs in bug report": [
         "バグレポートにアプリのログを含める"
       ],
@@ -6800,6 +7846,9 @@
       ],
       "Key": [
         "鍵"
+      ],
+      "Label messages as": [
+        "メッセージにつけるラベル"
       ],
       "Last 12 months only": [
         "過去 12 か月のみ"
@@ -6819,8 +7868,14 @@
       "Logo": [
         "ロゴ"
       ],
+      "Mail Server (IMAP)": [
+        "メールサーバー (IMAP)"
+      ],
       "Main": [
         "メイン"
+      ],
+      "Manage categories": [
+        "カテゴリーを管理"
       ],
       "Maximum number of characters is ${ MAX_CHARS }": [
         "最大文字数は${ MAX_CHARS }です"
@@ -6845,6 +7900,12 @@
       ],
       "Moderate NAT": [
         "モデレート NAT"
+      ],
+      "Move to Archive": [
+        "アーカイブに移動"
+      ],
+      "Move to Inbox": [
+        "受信トレイに移動"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "少なくとも ${ MIN_PASSWORD_LENGTH } 文字以上でなければなりません"
@@ -6954,6 +8015,9 @@
       "Policy name": [
         "ポリシー名"
       ],
+      "Port": [
+        "ポート"
+      ],
       "Postal code": [
         "郵便番号"
       ],
@@ -7052,6 +8116,9 @@
       ],
       "To help us improve, please explain why you are leaving.": [
         "今後の改善のために、なぜあなたが去ろうとしているのかを教えてください。"
+      ],
+      "To: ${ toEmail }": [
+        "宛先: ${ toEmail }"
       ],
       "Two-password mode": [
         "2 パスワードモード"
@@ -7211,9 +8278,28 @@
         "${ Label.Name } が作成されました"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "送信者: ${ from }"
+      ],
+      "To: ${ to }": [
+        "宛先: ${ to }"
+      ]
+    },
     "Lable": {
       "Select an identity provider to start": [
         "始めるにはアイデンティティプロバイダを選択"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "新しいカレンダーを追加するには、既存のカレンダーを削除します。"
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "新しいカレンダーを追加するには、ほかのカレンダーを削除するか、${ BRAND_NAME } プランから有料の${ MAIL_SHORT_APP_NAME } プランへアップグレードしてください。"
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "このプランで利用できるカレンダーの最大数に達しました。"
       ]
     },
     "Link": {
@@ -7382,6 +8468,29 @@
         "アップグレードしてチャットによるサポートやその他プレミアム機能を解放するか、無料のサポートフォームで問題をご報告ください。"
       ]
     },
+    "Loading info": {
+      "Almost there": [
+        "もう少しです"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "作成されたカレンダーの数: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
+      ],
+      "Connecting to your email provider": [
+        "メールプロバイダーに接続しています"
+      ],
+      "Creating new calendars": [
+        "新しいカレンダーを作成しています"
+      ],
+      "Gathering your data": [
+        "データを集めています"
+      ],
+      "We're gathering your data from your provider": [
+        "プロバイダーからデータを収集しています"
+      ],
+      "Your import is starting": [
+        "インポートが開始しました"
+      ]
+    },
     "locked_state_storage_banner: info": {
       "Learn more": [
         "もっと詳しく"
@@ -7484,6 +8593,20 @@
         "${ reason } を有効にする"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount } フォルダーからすべてのメッセージをインポートし、それらを次のようにラベル付けします"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } ラベルからすべてのメッセージをインポートし、それらを次のようにラベル付けします"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount } つのフォルダのうち ${ selectedItemsToImportCount } つからすべてのメッセージをインポートし、ラベルを付けします"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "${ selectedItemsToImportCount } からすべてのメッセージを${ itemsToImportCount } ラベルからインポートし、それらをラベル付けします"
+      ]
+    },
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 執筆アシスタント"
@@ -7579,6 +8702,26 @@
       ],
       "Sign in to access your ${ appName } account": [
         "${ appName } アカウントにアクセスするには、サインインしてください"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "その他のサービスからカレンダーをインポートする方法"
+      ],
+      "How to import calendars from Yahoo": [
+        "Yahoo からカレンダーをインポートする方法"
+      ],
+      "How to import contacts from another service": [
+        "その他のサービスから連絡先をインポートする方法"
+      ],
+      "How to import contacts from Yahoo": [
+        "Yahoo から連絡先をインポートする方法"
+      ],
+      "How to import emails from another service": [
+        "その他のサービスからメールをインポートする方法"
+      ],
+      "How to import emails from Yahoo": [
+        "Yahoo からメールをインポートする方法"
       ]
     },
     "Monetary unit": {
@@ -8680,6 +9823,21 @@
         "現在選択されているファイル名が重複しているため、一部の画像はアップロードされませんでした。"
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "次に、Google アカウントにサインインして ${ BRAND_NAME } にデータにアクセスすることを許可します。"
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "インポートするには、GIF にあるように要求されたすべてのアイテムを選択します。"
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "${ BRAND_NAME } がアクセスできるものを選択してください：あなたのメールメッセージと設定を表示、連絡先の表示とダウンロード、Google カレンダーからアクセスするすべての予定表の表示とダウンロード。"
+      ]
+    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "12 ヶ月間の${ BRAND_NAME } Unlimited"
@@ -8850,11 +10008,17 @@
       ]
     },
     "Option": {
+      "Add to existing group": [
+        "既存のグループに追加"
+      ],
       "Allowed ${ defaultLabel }": [
         "許可済み${ defaultLabel }"
       ],
       "Country configs": [
         "各国の設定ファイル"
+      ],
+      "Create new group": [
+        "新しいグループを作成"
       ],
       "Free server configs": [
         "無料サーバーの設定ファイル"
@@ -8867,6 +10031,9 @@
       ],
       "I'd like to merge this account into another one": [
         "このアカウントを別のアカウントに統合したい"
+      ],
+      "Ignore group": [
+        "グループを無視"
       ],
       "It's missing a key feature that I need": [
         "欲しい機能が含まれていない"
@@ -8929,6 +10096,14 @@
       ],
       "No one": [
         "誰も"
+      ]
+    },
+    "Option group label": {
+      "Create new calendar": [
+        "新しいカレンダーを作成"
+      ],
+      "Merge with calendar": [
+        "カレンダーと統合"
       ]
     },
     "Organization capacity error": {
@@ -9012,6 +10187,11 @@
       ],
       "Verify your email address ${ email } to set organization identity.": [
         "組織のアイデンティティを設定するには、メールアドレスの ${ email } を確認してください。"
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "あなた"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9424,6 +10604,9 @@
       "Main street 12": [
         "メインストリート12"
       ],
+      "Name": [
+        "名前"
+      ],
       "Organization name": [
         "組織名"
       ],
@@ -9554,6 +10737,38 @@
     "Price": {
       "Free": [
         "Free"
+      ]
+    },
+    "Property type": {
+      "Address": [
+        "住所"
+      ],
+      "Email": [
+        "メールアドレス"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Home": [
+        "自宅"
+      ],
+      "Main": [
+        "メイン"
+      ],
+      "Mobile": [
+        "携帯電話"
+      ],
+      "Other": [
+        "その他"
+      ],
+      "Pager": [
+        "ポケベル"
+      ],
+      "Phone": [
+        "電話番号"
+      ],
+      "Work": [
+        "勤務先"
       ]
     },
     "Protection type": {
@@ -11683,6 +12898,9 @@
       "Country": [
         "国"
       ],
+      "CSV field": [
+        "CSV フィールド"
+      ],
       "Edit": [
         "編集"
       ],
@@ -11700,6 +12918,9 @@
       ],
       "Event": [
         "予定"
+      ],
+      "Import": [
+        "インポート"
       ],
       "Invitation email": [
         "招待メール"
@@ -11724,6 +12945,12 @@
       ],
       "Total storage": [
         "総ストレージ容量"
+      ],
+      "Values": [
+        "値"
+      ],
+      "vCard field": [
+        "vCard フィールド"
       ]
     },
     "Themes": {
@@ -11817,6 +13044,9 @@
       ],
       "Add address": [
         "アドレスを追加"
+      ],
+      "Add contact group name": [
+        "連絡先グループの名前を追加"
       ],
       "Add countries to \"${ policyName }\"": [
         "「${ policyName }」 に国を追加"
@@ -11968,9 +13198,6 @@
       "Connect apps and devices": [
         "アプリとデバイスを接続"
       ],
-      "Connect more Gmail addresses with ${ planName }": [
-        "${ planName }でより多くのGmailアドレスと接続"
-      ],
       "Connect organization": [
         "組織を接続"
       ],
@@ -11985,6 +13212,9 @@
       ],
       "Contact us": [
         "お問い合わせ"
+      ],
+      "Continue with partial import?": [
+        "部分的なインポートを続行しますか?"
       ],
       "Couldn’t create accounts": [
         "アカウントの作成に失敗しました"
@@ -12031,8 +13261,17 @@
       "Customization": [
         "カスタマイズ"
       ],
+      "Customize and confirm": [
+        "カスタマイズと確認"
+      ],
+      "Customize calendar import": [
+        "カレンダーのインポートをカスタマイズ"
+      ],
       "Customize the number of IP addresses in your plan": [
         "プランのIPアドレス数のカスタマイズ"
+      ],
+      "Customize your mail import": [
+        "メールのインポートをカスタマイズ"
       ],
       "Data retention": [
         "データ保持"
@@ -12253,8 +13492,23 @@
       "Human verification": [
         "人間であることの検証"
       ],
+      "Import as simple event?": [
+        "シンプルな予定としてインポートしますか?"
+      ],
+      "Import contacts": [
+        "連絡先をインポート"
+      ],
       "Import emails, calendars, contacts": [
         "メール、カレンダー、連絡先をインポート"
+      ],
+      "Import events": [
+        "予定をインポート"
+      ],
+      "Import failed": [
+        "インポートに失敗"
+      ],
+      "Import groups": [
+        "グループをインポート"
       ],
       "Invalid verification code": [
         "無効な検証コードです"
@@ -12358,6 +13612,9 @@
       "Recommended": [
         "推奨"
       ],
+      "Reconnect your account": [
+        "アカウントに再接続"
+      ],
       "Recovery": [
         "回復"
       ],
@@ -12409,6 +13666,12 @@
       "Select a plan": [
         "プランを選択"
       ],
+      "Select action to take on contact group": [
+        "この連絡先グループで行うアクションを選択"
+      ],
+      "Select contact group": [
+        "連絡先グループの選択"
+      ],
       "Send email reminders?": [
         "メールでのリマインダーを送信しますか？"
       ],
@@ -12451,6 +13714,9 @@
       "Sign in": [
         "サインイン"
       ],
+      "Sign in and grant access": [
+        "サインインして権限を付与"
+      ],
       "Sign in to join the Beta program": [
         "サインインしてベータプログラムに参加する"
       ],
@@ -12471,6 +13737,12 @@
       ],
       "Spam, block, and allow lists": [
         "迷惑メール・ブロックアドレス・許可アドレスリスト"
+      ],
+      "Start a new import": [
+        "新しいインポートを開始"
+      ],
+      "Start import process": [
+        "インポートを開始"
       ],
       "Status": [
         "状態"
@@ -12586,6 +13858,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Businessへようこそ"
       ],
+      "What would you like to import?": [
+        "何をインポートしたいですか?"
+      ],
       "Wipe all logs?": [
         "全てのログを削除しますか？"
       ],
@@ -12693,11 +13968,26 @@
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "このURLをコピーして、アイデンティティプロバイダーのエンティティIDフィールドに貼り付けてください。"
       ],
+      "Customize import to reduce the number of folders": [
+        "フォルダー数を減らすためにインポートをカスタマイズします"
+      ],
+      "Customize import to reduce the number of labels": [
+        "ラベルの数を減らすためにインポートをカスタマイズします"
+      ],
       "Device name and app version": [
         "デバイス名とアプリバージョン"
       ],
       "Display name for the entity in the eduGAIN database": [
         "EduGAINデータベース内のエンティティの表示名"
+      ],
+      "Each imported email will have this label": [
+        "インポートされたメールすべてにこのラベルがついています"
+      ],
+      "Edit folder names": [
+        "フォルダー名を編集"
+      ],
+      "Edit label names": [
+        "ラベル名を編集"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "ユーザー情報プロバイダーからのエンドポイントURL(例：https://idp.example.com/sso/saml)"
@@ -12713,6 +14003,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "例：**password、qwerty** など。"
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmailは「ソーシャル」や「プロモーション」など、自動的にメールを種類分けしているものがあります。各種類のメールをどこにインポートするかを選択できます。"
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "認証アサーションに署名するための、ユーザー情報プロバイダの公開鍵。ユーザー情報プロバイダから証明書ハッシュを取得する。"
@@ -12734,6 +14027,12 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "EduGAINエンティティのユーザーのうち、SAML SSOで認証することが許可されているユーザーを指定してください"
+      ],
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれぞれのフォルダーとして表示されます"
+      ],
+      "The import will start with the most recent messages.": [
+        "インポートは新しいメッセージから始まります。"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "新しいサブスクリプション サイクルは ${ formattedTime } に始まります"
@@ -13108,6 +14407,14 @@
         "もっと短いユーザ名にしてください (${ n } 文字以内)"
       ]
     },
+    "Video control": {
+      "Click to replay the video": [
+        "クリックして動画を再生"
+      ],
+      "Replay video": [
+        "ビデオを再生"
+      ]
+    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "もっと気に入ったサービスを見つけた"
@@ -13286,6 +14593,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } は同じ名前ですべてのフォルダーを結合します。これを避けるには、インポートする前にフォルダー名を変更してください。"
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } は、最新のメッセージからできるだけ多くのデータを転送します。"
+      ],
       "Are you sure you want to delete the phone number?": [
         "本当にこの電話番号を削除しますか？"
       ],
@@ -13307,17 +14620,29 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されません。機密情報を送信しないでください。"
       ],
+      "Skip verification?": [
+        "検証をスキップしますか?"
+      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "デバイスの日時設定を同期できません。${ learnMore }"
       ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "このインポートは現在 ${ BRAND_NAME } アカウントで利用可能なストレージ容量を超えている可能性があります。インポートのカスタマイズを検討してください。"
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "申し訳ありませんが、現在オンラインではありません。以下のフォームに問題点をご記入ください。お調べして、オンラインに戻り次第ご連絡いたします。"
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "メールサーバーを検証できませんでした。信頼できる場合は、この検証をスキップできます。"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS 構成に問題があります。次の手段に従いレコードを確認してください。それでも問題が解決しない場合は DKIM 署名をオフにする必要があります。"
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "メール アドレスを非公開メンバーに追加する前に、組織キーを ${ activateLink } する必要があります。"
+      ],
+      "You will lose any customization you made so far.": [
+        "今までに行ったカスタマイズはすべて失われます。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "無料トライアルは ${ textDate } に終了します。${ action }"
