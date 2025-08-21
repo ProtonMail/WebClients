@@ -55,6 +55,7 @@ export type LegacyItem = FileBrowserBaseItem & {
         sharedOn: number;
         sharedBy: string;
     };
+    treeEventScopeId?: string;
 };
 
 const getLegacyIsAnonymous = (node: NodeEntity) => {
@@ -132,5 +133,6 @@ export const mapNodeToLegacyItem = async (
         rootShareId: rootNode.deprecatedShareId || defaultShareId,
         rootUid: rootNode.uid,
         isShared: node.isShared,
+        treeEventScopeId: node.treeEventScopeId,
     };
 };
