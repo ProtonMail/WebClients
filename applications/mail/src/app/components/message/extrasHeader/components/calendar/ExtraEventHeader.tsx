@@ -9,8 +9,6 @@ import type { RequireSome } from '@proton/shared/lib/interfaces';
 
 import type { InvitationModel } from '../../../../../helpers/calendar/invite';
 
-const { DECLINECOUNTER, REPLY, REFRESH } = ICAL_METHOD;
-
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
 }
@@ -25,7 +23,7 @@ const ExtraEventHeader = ({ model }: Props) => {
         hasMultipleVevents,
     } = model;
 
-    const displayApiDetails = [REFRESH, DECLINECOUNTER, REPLY].includes(method);
+    const displayApiDetails = [ICAL_METHOD.REFRESH, ICAL_METHOD.DECLINECOUNTER, ICAL_METHOD.REPLY].includes(method);
 
     const { vevent } = invitationApi && displayApiDetails ? invitationApi : invitationIcs;
     const { dtstart, summary } = vevent;

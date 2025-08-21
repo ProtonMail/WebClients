@@ -103,9 +103,6 @@ import {
     processEventInvitation,
 } from './invite';
 
-const { CANCELLED } = ICAL_EVENT_STATUS;
-const { NONE, KEEP_PARTSTAT, RESET_PARTSTAT, UPDATE_PARTSTAT, CANCEL } = UPDATE_ACTION;
-
 const getRelevantEventsByUID = ({ api, uid, calendarIDs }: { api: Api; uid: string; calendarIDs: string[] }) => {
     // No need to search for invitations in subscribed calendars
     return getPaginatedEventsByUID({ api, uid, calendarType: CALENDAR_TYPE.PERSONAL }).then((events) =>
@@ -505,7 +502,7 @@ export const updateEventInvitation = async ({
         })
     ) {
         // do not update
-        return { action: NONE };
+        return { action: UPDATE_ACTION.NONE };
     }
 
     if (isOrganizerMode) {
@@ -519,14 +516,14 @@ export const updateEventInvitation = async ({
         if (method === ICAL_METHOD.REPLY || updateCounter) {
             if (!veventApi) {
                 if (!recurrenceIdIcs) {
-                    return { action: NONE };
+                    return { action: UPDATE_ACTION.NONE };
                 }
                 // In the future, create single edit. Not supported for now
-                return { action: NONE };
+                return { action: UPDATE_ACTION.NONE };
             }
             if (recurrenceIdIcs) {
                 // Replies to single edits not supported for the moment
-                return { action: NONE };
+                return { action: UPDATE_ACTION.NONE };
             }
             if (!partstatIcs || !partstatApi || !attendeesApi) {
                 throw new EventInvitationError(INVITATION_ERROR_TYPE.UPDATING_ERROR);
@@ -537,7 +534,7 @@ export const updateEventInvitation = async ({
                     veventIcs.dtstamp ? propertyToUTCDate(veventIcs.dtstamp) : message.data.Time
                 );
                 if (attendeeApi.updateTime && updateTime <= attendeeApi.updateTime) {
-                    return { action: NONE };
+                    return { action: UPDATE_ACTION.NONE };
                 }
                 const updatedVevent = {
                     ...veventApi,
@@ -565,7 +562,7 @@ export const updateEventInvitation = async ({
                     throw new Error('Missing attendee after update');
                 }
                 return {
-                    action: UPDATE_PARTSTAT,
+                    action: UPDATE_ACTION.UPDATE_PARTSTAT,
                     invitation: { ...updatedInvitation, calendarEvent: updatedCalendarEvent },
                 };
             } catch (error: any) {
@@ -573,17 +570,17 @@ export const updateEventInvitation = async ({
             }
         }
 
-        return { action: NONE };
+        return { action: UPDATE_ACTION.NONE };
     }
     // attendee mode
     if (method === ICAL_METHOD.REQUEST) {
         if (!veventApi) {
-            return { action: NONE };
+            return { action: UPDATE_ACTION.NONE };
         }
         const createSingleEdit = getHasRecurrenceId(veventIcs) && !getHasRecurrenceId(veventApi);
         // If veventIcs is a singleEdit and veventApi the parent, always reset the partstat.
         // TODO: compare veventIcs with the corresponding occurrence of veventApi
-        let action = createSingleEdit ? RESET_PARTSTAT : NONE;
+        let action = createSingleEdit ? UPDATE_ACTION.RESET_PARTSTAT : UPDATE_ACTION.NONE;
 
         if (!createSingleEdit) {
             const hasUpdatedDtstamp = getHasModifiedDtstamp(veventIcs, veventApi);
@@ -602,15 +599,19 @@ export const updateEventInvitation = async ({
                   hasUpdatedRrule ||
                   hasUpdatedAttendees
                 : false;
-            action = hasBreakingChange ? RESET_PARTSTAT : hasNonBreakingChange ? KEEP_PARTSTAT : NONE;
+            action = hasBreakingChange
+                ? UPDATE_ACTION.RESET_PARTSTAT
+                : hasNonBreakingChange
+                  ? UPDATE_ACTION.KEEP_PARTSTAT
+                  : UPDATE_ACTION.NONE;
         }
 
-        if ([KEEP_PARTSTAT, RESET_PARTSTAT].includes(action)) {
+        if ([UPDATE_ACTION.KEEP_PARTSTAT, UPDATE_ACTION.RESET_PARTSTAT].includes(action)) {
             // update the api event by the ics one with the appropriate answer
             const canCreateSingleEdit = createSingleEdit ? getCanCreateSingleEdit(veventIcs, veventApi) : undefined;
             if (createSingleEdit && !canCreateSingleEdit) {
                 // The parent has been updated. Nothing to do then
-                return { action: NONE };
+                return { action: UPDATE_ACTION.NONE };
             }
             try {
                 if (!partstatIcs) {
@@ -677,13 +678,13 @@ export const updateEventInvitation = async ({
         let cancel = false;
         if (veventApi) {
             if (getIsVeventCancelled(veventApi)) {
-                return { action: NONE };
+                return { action: UPDATE_ACTION.NONE };
             }
             cancel = true;
         } else {
             const parentExdates = parentInvitationApi?.vevent.exdate;
             if (!recurrenceIdIcs || !parentExdates) {
-                return { action: NONE };
+                return { action: UPDATE_ACTION.NONE };
             }
             const isCancelled = parentExdates.find((exdate) => {
                 return +propertyToUTCDate(exdate) === +propertyToUTCDate(recurrenceIdIcs);
@@ -696,20 +697,20 @@ export const updateEventInvitation = async ({
             const canCreateSingleEdit = createSingleEdit ? getCanCreateSingleEdit(veventIcs, veventApi) : undefined;
             if (createSingleEdit && !canCreateSingleEdit) {
                 // The parent has been updated. Nothing to do then
-                return { action: NONE };
+                return { action: UPDATE_ACTION.NONE };
             }
             try {
                 const updatedVevent = createSingleEdit
                     ? {
                           ...omit(veventIcs, ['rrule']),
-                          status: { value: CANCELLED },
+                          status: { value: ICAL_EVENT_STATUS.CANCELLED },
                       }
                     : {
                           ...veventApi,
                           dtstamp: veventIcs.dtstamp,
                           // on cancellation, sequence might be incremented, only the organizer knows
                           sequence: { value: veventIcs.sequence?.value || 0 },
-                          status: { value: CANCELLED },
+                          status: { value: ICAL_EVENT_STATUS.CANCELLED },
                       };
                 const { vevent, hasDefaultNotifications } = getInvitedVeventWithAlarms({
                     vevent: updatedVevent,
@@ -734,14 +735,14 @@ export const updateEventInvitation = async ({
                 if (!getInvitationHasAttendee(updatedInvitation)) {
                     throw new Error('Missing attendee after update');
                 }
-                return { action: CANCEL, invitation: { ...updatedInvitation, calendarEvent } };
+                return { action: UPDATE_ACTION.CANCEL, invitation: { ...updatedInvitation, calendarEvent } };
             } catch (error: any) {
                 throw new EventInvitationError(INVITATION_ERROR_TYPE.CANCELLATION_ERROR);
             }
         }
-        return { action: RESET_PARTSTAT };
+        return { action: UPDATE_ACTION.RESET_PARTSTAT };
     }
-    return { action: NONE };
+    return { action: UPDATE_ACTION.NONE };
 };
 
 export const deleteCalendarEventFromInvitation = ({
