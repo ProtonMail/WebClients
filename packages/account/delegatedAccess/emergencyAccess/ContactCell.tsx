@@ -1,9 +1,25 @@
+import { c } from 'ttag';
+
 import { Avatar } from '@proton/atoms';
 import { getInitials } from '@proton/shared/lib/helpers/string';
+import clsx from '@proton/utils/clsx';
 
-export const ContactCell = ({ name, email, formatted }: { name: string; email: string; formatted: string }) => {
+import { getFormattedCreateTime } from './date';
+
+export const ContactCell = ({
+    name,
+    email,
+    formatted,
+    createdAtDate,
+}: {
+    name: string;
+    email: string;
+    formatted: string;
+    createdAtDate: Date;
+}) => {
     const value = name || email;
     const initials = getInitials(value);
+    const formattedDate = getFormattedCreateTime(createdAtDate);
     return (
         <div className="flex flex-nowrap items-center gap-2">
             <Avatar color="weak">{initials}</Avatar>
@@ -11,11 +27,19 @@ export const ContactCell = ({ name, email, formatted }: { name: string; email: s
                 <div className="text-ellipsis" data-testid="delegated-access:username" title={formatted}>
                     {value}
                 </div>
-                {name && (
-                    <div data-testid="delegated-access:email" className="text-ellipsis color-weak" title={email}>
-                        {email}
-                    </div>
-                )}
+                <div>
+                    {name && (
+                        <span
+                            data-testid="delegated-access:email"
+                            className={clsx('block text-sm text-ellipsis', name && 'color-weak')}
+                            title={email}
+                        >
+                            {email}
+                        </span>
+                    )}
+                    <span className="block text-sm color-weak">{c('emergency_access')
+                        .t`Added on ${formattedDate}`}</span>
+                </div>
             </div>
         </div>
     );
