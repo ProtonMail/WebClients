@@ -16,7 +16,6 @@ const WriteWebpackPlugin = require('./write-webpack-plugin').default;
 const HtmlEditWebpackPlugin = require('./html-edit-webpack-plugin').default;
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const SriWebpackPlugin = require('./sri-webpack-plugin').default;
-const { WebpackCollectMetricsPlugin } = require('@proton/collect-metrics');
 
 const defaultFaviconConfig = require('./favicon.config');
 const faviconConfig = require(path.resolve('./favicon.config.js'));
@@ -39,6 +38,12 @@ module.exports = ({
     analyze,
     defineWebpackConfig,
 }) => {
+    let WebpackCollectMetricsPlugin;
+
+    if (CI) {
+        WebpackCollectMetricsPlugin = require('@proton/collect-metrics').WebpackCollectMetricsPlugin;
+    }
+
     return [
         ...(isProduction
             ? []
