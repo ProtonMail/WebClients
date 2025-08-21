@@ -426,9 +426,9 @@
         "Domenii personale adiționale: ${ domains }"
       ],
       "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servere",
-        "${ ips } de servere"
+        "Servere: ${ ips }",
+        "Servere: ${ ips }",
+        "Servere: ${ ips }"
       ],
       "${ price } per dedicated server": [
         "${ price } per server dedicat"
@@ -443,9 +443,9 @@
         "${ price } per utilizator"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } licență ${ LUMO_APP_NAME }",
-        "${ seats } licențe ${ LUMO_APP_NAME }",
-        "${ seats } de licențe ${ LUMO_APP_NAME }"
+        "Licențe ${ LUMO_APP_NAME }: ${ seats }",
+        "Licențe ${ LUMO_APP_NAME }: ${ seats }",
+        "Licențe ${ LUMO_APP_NAME }: ${ seats }"
       ],
       "${ seats } writing assistant seat": [
         "Licențe asistent de scriere: ${ seats }",
@@ -1118,7 +1118,7 @@
         "Economisiți cu ${ upsellPlanName }"
       ],
       "Secure personal and shared calendar": [
-        "Calendar personal și partajat securizat"
+        "Calendar personal securizat și partajat"
       ],
       "Try ${ planName }": [
         "Încercați ${ planName }"
@@ -2223,7 +2223,7 @@
         "Nevoie temporară, poate voi mai reveni."
       ],
       "The VPN is too slow": [
-        "Viteza pe VPN e prea mică"
+        "Viteza prin VPN e prea mică"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -2436,7 +2436,7 @@
         "Pentru a folosi ${ MAIL_APP_NAME } sau ${ CALENDAR_APP_NAME }, comutați la versiunea web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Această pagină nu s-a putut încărca. Reîmprospătați pagina sau verificați conexiunea la internet."
+        "Această pagină nu s-a putut încărca. Reîmprospătați-o sau verificați conexiunea la internet."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -2765,7 +2765,7 @@
         "Cod țară"
       ],
       "Create a secure cloud for ${ value } member": [
-        "Creați un cont cloud securizat pentru ${ value } membru",
+        "Creați un cont în cloud securizat pentru ${ value } membru",
         "Creați un cont cloud securizat pentru ${ value } membri",
         "Creați un cont cloud securizat pentru ${ value } de membri"
       ],
@@ -2986,9 +2986,9 @@
         "Faceți o depunere folosind adresa următoare sau scanați codul QR. Depunerea va apărea în cont după confirmare."
       ],
       "Subscription auto-renews every ${ cycle } month.": [
-        "Abonamentul se autoreînnoiește la fiecare ${ cycle } lună.",
-        "Abonamentul se autoreînnoiește la fiecare ${ cycle } luni.",
-        "Abonamentul se autoreînnoiește la fiecare ${ cycle } de luni."
+        "Interval luni reînnoire automată abonament: ${ cycle }.",
+        "Interval luni reînnoire automată abonament: ${ cycle }.",
+        "Interval luni reînnoire automată abonament: ${ cycle }."
       ],
       "Subscription auto-renews every month.": [
         "Abonamentul se reînnoiește automat în fiecare lună."
@@ -3127,9 +3127,9 @@
         "Pentru verificarea plății se va deschide o filă către PayPal."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Plata va fi apoi la ${ renewCycle } lună cu ${ renewAmountStr }.",
-        "Plata va fi apoi la ${ renewCycle } luni cu ${ renewAmountStr }.",
-        "Plata va fi apoi la ${ renewCycle } de luni cu ${ renewAmountStr }."
+        "Luni interval de plată: ${ renewCycle }. Suma: ${ renewAmountStr }.",
+        "Luni interval de plată: ${ renewCycle }. Suma: ${ renewAmountStr }.",
+        "Luni interval de plată: ${ renewCycle }. Suma: ${ renewAmountStr }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile web de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, trebuie să plătiți toate facturile restante."
@@ -3153,9 +3153,9 @@
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Planul programat începe ${ renewalTime } și se va reînnoi automat la ${ cycle } lună.",
-        "Planul programat începe ${ renewalTime } și se va reînnoi automat la ${ cycle } luni.",
-        "Planul programat începe ${ renewalTime } și se va reînnoi automat la ${ cycle } de luni."
+        "Început plan programat: ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }.",
+        "Început plan programat: ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }.",
+        "Început plan programat: ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Planul programat începe ${ renewalTime } și se va reînnoi automat lunar."
@@ -3649,9 +3649,9 @@
         "${ n } de conexiuni VPN"
       ],
       "${ numberOfUsers } user": [
-        "${ numberOfUsers } utilizator",
-        "Maxim ${ numberOfUsers } utilizatori",
-        "Maxim ${ numberOfUsers } de utilizatori"
+        "Nr. maxim de utilizatori: ${ numberOfUsers }",
+        "Nr. maxim de utilizatori: ${ numberOfUsers }",
+        "Nr. maxim de utilizatori: ${ numberOfUsers }"
       ],
       "${ options }-day file version history": [
         "Istoric versiuni fișiere: ${ options } zi",
@@ -3763,7 +3763,7 @@
         "Monitorizarea divulgării datelor"
       ],
       "Dedicated servers optimized for streaming": [
-        "Servere dedicate optimizate pentru transmisii în flux"
+        "Servere dedicate optimizate pentru conținut transmis în flux"
       ],
       "Desktop app": [
         "Aplicația desktop"
@@ -3867,7 +3867,7 @@
         "Asistență prioritară și conversații live"
       ],
       "Recover previous file versions": [
-        "Recuperați versiunile anterioare ale fișierului"
+        "Recuperați versiunile anterioare ale fișierelor"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Verificări regulate ale securității contului deținut. Vă alertăm dacă aveți parole slabe sau reutilizate care trebuie modificate."
@@ -3968,17 +3968,17 @@
         "Până la ${ n } utilizatori"
       ],
       "Up to ${ n } user (${ adminsText }, ${ usersText })": [
-        "Nr. maxim utilizatori: ${ n } (${ adminsText }, ${ usersText })",
-        "Nr. maxim utilizatori: ${ n } (${ adminsText }, ${ usersText })",
-        "Nr. maxim utilizatori: ${ n } (${ adminsText }, ${ usersText })"
+        "Nr. maxim de utilizatori: ${ n } (${ adminsText }, ${ usersText })",
+        "Nr. maxim de utilizatori: ${ n } (${ adminsText }, ${ usersText })",
+        "Nr. maxim de utilizatori: ${ n } (${ adminsText }, ${ usersText })"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Până la ${ totalStorageSize } spațiu"
       ],
       "Use on up to ${ n } device at once": [
-        "Folosiți pe maxim ${ n } un dispozitiv",
-        "Folosiți pe maxim ${ n } dispozitive simultan",
-        "Folosiți pe maxim ${ n } de dispozitive simultan"
+        "Nr. maxim de dispozitive simultane: ${ n }",
+        "Nr. maxim de dispozitive simultane: ${ n }",
+        "Nr. maxim de dispozitive simultane: ${ n }"
       ],
       "User credential management": [
         "Gestionare acreditări utilizatori"
@@ -4323,7 +4323,7 @@
         "Suport pentru protocoalele de partajare a fișierelor, cum ar fi BitTorrent."
       ],
       "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
-        "Încărcați sigla companiei proprii pentru a vă personaliza experiența echipei în aplicațiile web ${ BRAND_NAME }."
+        "Încărcați sigla propriei companii pentru a vă personaliza experiența echipei în aplicațiile web ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Utilizați propria adresă de domeniu pentru e-mail. De exemplu: nume@adresapersonala.ro"
@@ -4399,9 +4399,9 @@
         "Necesită A2F"
       ],
       "Support for ${ n } custom email domain": [
-        "Suport pentru ${ n } domeniu de e-mail personal",
-        "Suport pentru ${ n } domenii de e-mail personale",
-        "Suport pentru ${ n } de domenii de e-mail personale"
+        "Domenii de e-mail personal acceptate: ${ n }",
+        "Domenii de e-mail personal acceptate: ${ n }",
+        "Domenii de e-mail personal acceptate: ${ n }"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -4564,7 +4564,7 @@
         "Există alte planuri în monede diferite"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "Reactivați mai întâi abonamentul pentru a reduce numărul de suplimente."
+        "Reactivați mai întâi abonamentul pentru a reduce numărul de module."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Prețul de reînnoire poate fi modificat în conformitate cu informațiile din ${ termsAndConditionsLink }."
@@ -4576,9 +4576,9 @@
         "termeni și condiții"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Cuponul este valid pentru ${ couponRedemptions } reînnoire.",
-        "Cuponul este valid pentru ${ couponRedemptions } reînnoiri.",
-        "Cuponul este valid pentru ${ couponRedemptions } de reînnoiri."
+        "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }",
+        "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }",
+        "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Prețul redus special de ${ priceWithDiscount } este valid pentru ${ subscriptionLength } lună.",
@@ -4586,17 +4586,17 @@
         "Prețul redus special de ${ priceWithDiscount } este valid pentru primele ${ subscriptionLength } de luni."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoire. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
-        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
-        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } de reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând."
+        "Prețul de ${ priceWithDiscount } cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoire. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul de ${ priceWithDiscount } cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul de ${ priceWithDiscount } cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } de reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } lunar. Puteți anula oricând."
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
-        "Apoi se va autoreînnoi cu ${ renewPriceStr } pentru ${ renewalLength } lună. Puteți anula oricând.",
-        "Apoi se va autoreînnoi cu ${ renewPriceStr } pentru ${ renewalLength } luni. Puteți anula oricând.",
-        "Apoi se va autoreînnoi cu ${ renewPriceStr } pentru ${ renewalLength } de luni. Puteți anula oricând."
+        "Apoi se va reînnoi automat cu ${ renewPriceStr } pentru ${ renewalLength } lună. Puteți anula oricând.",
+        "Apoi se va reînnoi automat cu ${ renewPriceStr } pentru ${ renewalLength } luni. Puteți anula oricând.",
+        "Apoi se va reînnoi automat cu ${ renewPriceStr } pentru ${ renewalLength } de luni. Puteți anula oricând."
       ],
       "This number will be shown on all future invoices": [
         "Acest număr va fi afișat pe toate facturile viitoare."
@@ -4836,10 +4836,10 @@
         "${ passwordReset } este acum posibilă."
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "Dacă vă deconectați înainte de a vă reseta parola, ați putea să vă pierdeți accesul la cont."
+        "Dacă vă deconectați înainte de a vă reseta parola, v-ați putea pierde accesul la cont."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "Dacă vă deconectați fără a vă reseta parola, ați putea să vă pierdeți accesul la cont."
+        "Dacă vă deconectați fără a vă reseta parola, v-ați putea pierde accesul la cont."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "Veți putea să vă resetați parola peste ${ boldTimeLeft }."
@@ -4847,7 +4847,7 @@
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
-        "Resetarea parolei"
+        "Resetare parolă"
       ]
     },
     "session_recovery:sign_out:title": {
@@ -4897,9 +4897,9 @@
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } lună GRATUIT",
-        "${ n } luni GRATUITE",
-        "${ n } de luni GRATUITE"
+        "Luni GRATUITE: ${ n }",
+        "Luni GRATUITE: ${ n }",
+        "Luni GRATUITE: ${ n }"
       ]
     },
     "specialoffer: Deal details": {
@@ -5212,14 +5212,14 @@
         "${ planName } vă oferă toate aplicațiile, toate funcțiile, acces anticipat la versiuni noi și tot ce aveți nevoie pentru a avea controlul asupra datelor și asupra securității acestora."
       ],
       "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } domeniu personal de e-mail",
-        "${ planNumberOfDomains } domenii personale de e-mail",
-        "${ planNumberOfDomains } de domenii personale de e-mail"
+        "Domenii personale de e-mail: ${ planNumberOfDomains }",
+        "Domenii personale de e-mail: ${ planNumberOfDomains }",
+        "Domenii personale de e-mail: ${ planNumberOfDomains }"
       ],
       "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adresă de e-mail",
-        "${ planNumberOfEmails } adrese de e-mail",
-        "${ planNumberOfEmails } adrese de e-mail"
+        "Adrese de e-mail: ${ planNumberOfEmails }",
+        "Adrese de e-mail: ${ planNumberOfEmails }",
+        "Adrese de e-mail: ${ planNumberOfEmails }"
       ],
       "Folders, labels, and custom filters": [
         "Foldere, etichete și filtre personale"
@@ -5312,7 +5312,7 @@
         "Creați detalii de conectare sigure pe toate dispozitivele. Include aliasuri nelimitate, 20 de seifuri, integrare autentificare cu doi factori, autocompletare date card de credit și multe altele."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Include 2950+ servere în peste 65 de țări, conectați până la 10 dispozitive, accesați servicii de transmisii în flux la nivel mondial, programe malițioase, blocare de reclame și multe altele."
+        "Include peste 8.500 de servere în peste 110 țări, conectați până la 10 dispozitive, accesați servicii de transmisii în flux la nivel mondial, programe malițioase, blocare de reclame și multe altele."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Include suport pentru un domeniu de e-mail personal, 10 adrese de e-mail, 10 aliasuri hide-my-email, partajare calendar și altele."
@@ -5654,14 +5654,14 @@
     },
     "VPN Plan Feature": {
       "${ n } device": [
-        "${ n } dispozitiv",
-        "${ n } dispozitive",
-        "${ n } de dispozitive"
+        "Dispozitive: ${ n }",
+        "Dispozitive: ${ n }",
+        "Dispozitive: ${ n }"
       ],
       "${ n } server": [
-        "Un server",
-        "Peste ${ n } servere",
-        "Peste ${ n } de servere"
+        "Servere: ${ n }",
+        "Servere: ${ n }+",
+        "Servere: ${ n }+"
       ],
       "${ n } VPN connection": [
         "O conexiune VPN",
@@ -5669,9 +5669,9 @@
         "${ n } de conexiuni VPN"
       ],
       "${ numberOfCountries } country": [
-        "${ numberOfCountries } țară",
-        "${ numberOfCountries } țări",
-        "${ numberOfCountries } de țări"
+        "Țări: ${ numberOfCountries }",
+        "Țări: ${ numberOfCountries }",
+        "Țări: ${ numberOfCountries }"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } în ${ numberOfCountries } țară",
@@ -5684,14 +5684,14 @@
         "${ numberOfServers } în ${ numberOfCountries } de țări"
       ],
       "Auto-selects from ${ numberOfCountries } country": [
-        "Autoselectare din ${ numberOfCountries } țară",
-        "Autoselectare din ${ numberOfCountries } țări",
-        "Autoselectare din ${ numberOfCountries } de țări"
+        "Țări disponibile selectare automată: ${ numberOfCountries }",
+        "Țări disponibile selectare automată: ${ numberOfCountries }",
+        "Țări disponibile selectare automată: ${ numberOfCountries }"
       ],
       "Servers in ${ numberOfCountries }+ country": [
-        "Servere în peste ${ numberOfCountries } țară",
-        "Servere în peste ${ numberOfCountries } țări",
-        "Servere în peste ${ numberOfCountries } de țări"
+        "Nr. minim de țări cu servere: ${ numberOfCountries }",
+        "Nr. minim de țări cu servere: ${ numberOfCountries }",
+        "Nr. minim de țări cu servere: ${ numberOfCountries }"
       ]
     },
     "vpn_2step: feature": {
@@ -6761,9 +6761,9 @@
     },
     "wallet_signup_2024: Info": {
       "${ n } ${ BRAND_NAME } email address": [
-        "${ n } adresă de e-mail ${ BRAND_NAME }",
-        "${ n } adrese de e-mail ${ BRAND_NAME }",
-        "${ n } de adrese de e-mail ${ BRAND_NAME }"
+        "Adrese de e-mail ${ BRAND_NAME }: ${ n }",
+        "Adrese de e-mail ${ BRAND_NAME }: ${ n }",
+        "Adrese de e-mail ${ BRAND_NAME }: ${ n }"
       ],
       "${ n } account per wallet": [
         "Conturi per portofel: ${ n }",
@@ -6785,7 +6785,7 @@
         "Adresă de e-mail ${ MAIL_APP_NAME } criptată și sigură. Puteți trimite cu ușurință Bitcoin oricui doar cu numele ${ BRAND_NAME }."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
-        "Schimbați în siguranță Bitcoin prin e-mail, în loc de adrese Bitcoin complexe, de 26 de caractere, care sunt predispuse la eroare"
+        "Schimbați în siguranță Bitcoin prin e-mail, în loc de adrese Bitcoin complexe, de 26 de caractere, care sunt predispuse la erori de redactare."
       ]
     },
     "wallet_signup_2024:app-switcher": {
