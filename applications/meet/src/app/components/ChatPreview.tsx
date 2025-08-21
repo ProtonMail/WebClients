@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import type { LocalParticipant, RemoteParticipant } from '@proton-meet/livekit-client';
 
@@ -14,11 +14,11 @@ import { ChatItem } from './ChatItem/ChatItem';
 const CHAT_MESSAGE_TIMEOUT = 8000;
 
 export const ChatPreview = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
     const { chatMessages, setChatMessages, sortedParticipants } = useMeetContext();
 
     const { sideBarState } = useUIStateContext();
-
-    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     const latestChatMessage = useMemo(() => {
         const item = chatMessages.sort((a, b) => b.timestamp - a.timestamp)[0];
@@ -37,37 +37,21 @@ export const ChatPreview = () => {
         );
     };
 
-    const shouldNotDisplayLastMessage =
-        !latestChatMessage || sideBarState[MeetingSideBars.Chat] || latestChatMessage.seen;
+    const shouldNotDisplayLastMessage = !isOpen || sideBarState[MeetingSideBars.Chat] || !latestChatMessage;
 
     useEffect(() => {
-        if (!latestChatMessage) {
-            return;
+        if (latestChatMessage && !sideBarState[MeetingSideBars.Chat]) {
+            setIsOpen(true);
         }
 
-        if (timeoutRef.current) {
-            clearTimeout(timeoutRef.current);
-        }
-
-        timeoutRef.current = setTimeout(() => {
-            setChatMessages(
-                chatMessages.map((item) =>
-                    item.id !== latestChatMessage.id
-                        ? item
-                        : {
-                              ...item,
-                              seen: true,
-                          }
-                )
-            );
+        const timeoutId = setTimeout(() => {
+            setIsOpen(false);
         }, CHAT_MESSAGE_TIMEOUT);
 
         return () => {
-            if (timeoutRef.current) {
-                clearTimeout(timeoutRef.current);
-            }
+            clearTimeout(timeoutId);
         };
-    }, [chatMessages, latestChatMessage]);
+    }, [latestChatMessage]);
 
     if (shouldNotDisplayLastMessage || !isLargerThanMd) {
         return null;
