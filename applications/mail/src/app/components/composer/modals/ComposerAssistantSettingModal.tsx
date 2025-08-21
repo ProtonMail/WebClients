@@ -25,8 +25,6 @@ import clsx from '@proton/utils/clsx';
 import { useComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
 import ComposerInnerModal from 'proton-mail/components/composer/modals/ComposerInnerModal';
 
-const { SERVER_ONLY, CLIENT_ONLY, UNSET } = AI_ASSISTANT_ACCESS;
-
 interface Props {
     composerID: string;
     onClose: () => void;
@@ -50,7 +48,7 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal,
 
     // Default to server only if unset
     const [inputValue, setInputValue] = useState<AI_ASSISTANT_ACCESS>(
-        UNSET === AIAssistantFlags ? SERVER_ONLY : AIAssistantFlags
+        AI_ASSISTANT_ACCESS.UNSET === AIAssistantFlags ? AI_ASSISTANT_ACCESS.SERVER_ONLY : AIAssistantFlags
     );
 
     const handleSubmit = async () => {
@@ -69,14 +67,14 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal,
 
         await updateSetting();
 
-        if (inputValue === SERVER_ONLY) {
+        if (inputValue === AI_ASSISTANT_ACCESS.SERVER_ONLY) {
             await closeModal();
             onToggleAssistant(inputValue);
             createNotification({ text: notificationText });
             return;
         }
 
-        if (inputValue === CLIENT_ONLY) {
+        if (inputValue === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
             const { hasCompatibleHardware, hasCompatibleBrowser } = await handleCheckHardwareCompatibility();
             const canRunLocally = hasCompatibleHardware && hasCompatibleBrowser;
             if (canRunLocally) {
@@ -141,13 +139,13 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal,
                 <Button
                     className={clsx(
                         'flex flex-row flex-nowrap rounded-xl',
-                        inputValue === CLIENT_ONLY && 'display-focus-visible'
+                        inputValue === AI_ASSISTANT_ACCESS.CLIENT_ONLY && 'display-focus-visible'
                     )}
                     disabled={loading}
-                    aria-pressed={inputValue === CLIENT_ONLY}
+                    aria-pressed={inputValue === AI_ASSISTANT_ACCESS.CLIENT_ONLY}
                     shape="outline"
-                    color={inputValue === CLIENT_ONLY ? 'norm' : 'weak'}
-                    onClick={() => setInputValue(CLIENT_ONLY)}
+                    color={inputValue === AI_ASSISTANT_ACCESS.CLIENT_ONLY ? 'norm' : 'weak'}
+                    onClick={() => setInputValue(AI_ASSISTANT_ACCESS.CLIENT_ONLY)}
                     id={`assistant-setting-${composerID}`}
                 >
                     <span className="shrink-0 flex my-auto">
@@ -163,7 +161,7 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal,
                     <span
                         className={clsx(
                             'shrink-0 my-auto',
-                            inputValue === CLIENT_ONLY ? 'color-primary' : 'visibility-hidden'
+                            inputValue === AI_ASSISTANT_ACCESS.CLIENT_ONLY ? 'color-primary' : 'visibility-hidden'
                         )}
                     >
                         <Icon name="checkmark" />
@@ -172,13 +170,13 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal,
                 <Button
                     className={clsx(
                         'flex flex-row flex-nowrap rounded-xl',
-                        inputValue === SERVER_ONLY && 'display-focus-visible'
+                        inputValue === AI_ASSISTANT_ACCESS.SERVER_ONLY && 'display-focus-visible'
                     )}
                     disabled={loading}
-                    aria-pressed={inputValue === SERVER_ONLY}
+                    aria-pressed={inputValue === AI_ASSISTANT_ACCESS.SERVER_ONLY}
                     shape="outline"
-                    color={inputValue === SERVER_ONLY ? 'norm' : 'weak'}
-                    onClick={() => setInputValue(SERVER_ONLY)}
+                    color={inputValue === AI_ASSISTANT_ACCESS.SERVER_ONLY ? 'norm' : 'weak'}
+                    onClick={() => setInputValue(AI_ASSISTANT_ACCESS.SERVER_ONLY)}
                     id={`assistant-setting-${composerID}`}
                 >
                     <span className="shrink-0 flex my-auto">
@@ -192,7 +190,7 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal,
                     <span
                         className={clsx(
                             'shrink-0 my-auto',
-                            inputValue === SERVER_ONLY ? 'color-primary' : 'visibility-hidden'
+                            inputValue === AI_ASSISTANT_ACCESS.SERVER_ONLY ? 'color-primary' : 'visibility-hidden'
                         )}
                     >
                         <Icon name="checkmark" />

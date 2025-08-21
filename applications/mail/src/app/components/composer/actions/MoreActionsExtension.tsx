@@ -23,8 +23,6 @@ import { exportPlainText, plainTextToHTML, setDocumentContent } from '../../../h
 import type { MessageChange, MessageChangeFlag } from '../Composer';
 import type { ExternalEditorActions } from '../editor/EditorWrapper';
 
-const { FLAG_PUBLIC_KEY, FLAG_RECEIPT_REQUEST } = MESSAGE_FLAGS;
-
 const getClassname = (status: boolean) => (status ? undefined : 'visibility-hidden');
 
 interface Props {
@@ -44,11 +42,12 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
     const isReceiptRequest = testIsRequestReadReceipt(message?.data);
 
     const handleTogglePublicKey = async () => {
-        const changes = new Map([[FLAG_PUBLIC_KEY, !isAttachPublicKey]]);
+        const changes = new Map([[MESSAGE_FLAGS.FLAG_PUBLIC_KEY, !isAttachPublicKey]]);
         onChangeFlag(changes);
     };
 
-    const handleToggleReceiptRequest = () => onChangeFlag(new Map([[FLAG_RECEIPT_REQUEST, !isReceiptRequest]]));
+    const handleToggleReceiptRequest = () =>
+        onChangeFlag(new Map([[MESSAGE_FLAGS.FLAG_RECEIPT_REQUEST, !isReceiptRequest]]));
 
     const handleChangeMetadata = useCallback(
         (change: Partial<EditorMetadata>) => {

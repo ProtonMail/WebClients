@@ -15,8 +15,6 @@ import { constructMime } from './sendMimeBuilder';
 // Reference: Angular/src/app/composer/services/encryptMessage.js
 // Reference: Angular/src/app/composer/services/generateTopPackages.js
 
-const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;
-
 /**
  * Generates the mime top-level packages, which include all attachments in the body.
  * Build the multipart/alternate MIME entity containing both the HTML and plain text entities.
@@ -30,21 +28,21 @@ const generateMimePackage = async (
 ): Promise<Package> => ({
     Flags: addReceived(message.data?.Flags),
     Addresses: {},
-    MIMEType: MIME,
+    MIMEType: MIME_TYPES.MIME,
     Body: await constructMime(message, messageKeys, getAttachment, onUpdateAttachment, api),
 });
 
 const generatePlainTextPackage = async (message: MessageState): Promise<Package> => ({
     Flags: addReceived(message.data?.Flags),
     Addresses: {},
-    MIMEType: PLAINTEXT,
+    MIMEType: MIME_TYPES.PLAINTEXT,
     Body: getPlainText(message, true),
 });
 
 const generateHTMLPackage = async (message: MessageState): Promise<Package> => ({
     Flags: addReceived(message.data?.Flags),
     Addresses: {},
-    MIMEType: DEFAULT,
+    MIMEType: MIME_TYPES.DEFAULT,
     // We NEVER upconvert, if the user wants html: plaintext is actually fine as well
     Body: prepareExport(message),
 });
@@ -66,17 +64,18 @@ export const generateTopPackages = async (
         .filter(isTruthy)
         .reduce(
             (packages, { encrypt, sign, pgpScheme, mimeType }) => ({
-                [PLAINTEXT]: packages[PLAINTEXT] || mimeType === MIME_TYPES.PLAINTEXT,
-                [DEFAULT]:
-                    packages[DEFAULT] ||
-                    mimeType === DEFAULT ||
+                [MIME_TYPES.PLAINTEXT]: packages[MIME_TYPES.PLAINTEXT] || mimeType === MIME_TYPES.PLAINTEXT,
+                [MIME_TYPES.DEFAULT]:
+                    packages[MIME_TYPES.DEFAULT] ||
+                    mimeType === MIME_TYPES.DEFAULT ||
                     (pgpScheme === PACKAGE_TYPE.SEND_PGP_MIME && !encrypt && !sign),
-                [MIME]: packages[MIME] || (pgpScheme === PACKAGE_TYPE.SEND_PGP_MIME && (encrypt || sign)),
+                [MIME_TYPES.MIME]:
+                    packages[MIME_TYPES.MIME] || (pgpScheme === PACKAGE_TYPE.SEND_PGP_MIME && (encrypt || sign)),
             }),
             {
-                [PLAINTEXT]: false,
-                [DEFAULT]: false,
-                [MIME]: false,
+                [MIME_TYPES.PLAINTEXT]: false,
+                [MIME_TYPES.DEFAULT]: false,
+                [MIME_TYPES.MIME]: false,
             } as PackageStatus
         );
 
@@ -87,8 +86,8 @@ export const generateTopPackages = async (
     await Promise.all(
         demandedPackages.map(async (type) => {
             switch (type) {
-                case MIME:
-                    packages[MIME] = await generateMimePackage(
+                case MIME_TYPES.MIME:
+                    packages[MIME_TYPES.MIME] = await generateMimePackage(
                         message,
                         messageKeys,
                         getAttachment,
@@ -96,11 +95,11 @@ export const generateTopPackages = async (
                         api
                     );
                     return;
-                case PLAINTEXT:
-                    packages[PLAINTEXT] = await generatePlainTextPackage(message);
+                case MIME_TYPES.PLAINTEXT:
+                    packages[MIME_TYPES.PLAINTEXT] = await generatePlainTextPackage(message);
                     return;
-                case DEFAULT:
-                    packages[DEFAULT] = await generateHTMLPackage(message);
+                case MIME_TYPES.DEFAULT:
+                    packages[MIME_TYPES.DEFAULT] = await generateHTMLPackage(message);
                     return;
                 default:
                     throw new Error(); // Should never happen.

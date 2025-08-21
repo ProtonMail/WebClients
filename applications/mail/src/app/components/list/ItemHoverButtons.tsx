@@ -25,8 +25,6 @@ import { folderLocation } from './list-telemetry/listTelemetryHelper';
 import { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 import SnoozeDropdown from './snooze/containers/SnoozeDropdown';
 
-const { READ, UNREAD } = MARK_AS_STATUS;
-
 interface Props {
     element: Element; // Element of the current line
     labelID: string;
@@ -75,7 +73,7 @@ const ItemHoverButtons = ({
         void markAs({
             elements: [element],
             labelID,
-            status: isUnread ? READ : UNREAD,
+            status: isUnread ? MARK_AS_STATUS.READ : MARK_AS_STATUS.UNREAD,
             sourceAction: SOURCE_ACTION.HOVER_BUTTONS,
             silent: true,
         });

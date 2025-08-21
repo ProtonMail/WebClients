@@ -13,8 +13,9 @@ module.exports = {
         'no-restricted-syntax': [
             'error',
             {
-                selector: "VariableDeclarator[id.type='ObjectPattern'][init.name='MAILBOX_LABEL_IDS']",
-                message: 'Destructuring MAILBOX_LABEL_IDS is not allowed. Use MAILBOX_LABEL_IDS.PROPERTY instead.',
+                selector: "VariableDeclarator[id.type='ObjectPattern'][init.name=/^[A-Z_]+$/]",
+                message:
+                    'Destructuring of enum-like constants is not allowed. Use CONSTANT.PROPERTY instead to maintain code readability.',
             },
         ],
     },

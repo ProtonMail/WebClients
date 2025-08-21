@@ -20,8 +20,6 @@ import {
     getStatusIconName,
 } from './icon';
 
-const { NOT_SIGNED, NOT_VERIFIED, SIGNED_AND_VALID, SIGNED_AND_INVALID } = MAIL_VERIFICATION_STATUS;
-
 const fakeKey1: PublicKeyReference = {
     getFingerprint() {
         return 'fakeKey1';
@@ -623,24 +621,24 @@ describe('icon', () => {
 
     describe('getReceivedStatusIcon', () => {
         it.each`
-            origin        | encryption       | pinnedKeys    | pinnedKeysVerified | verificationStatus    | colorClassName     | iconName                          | text
-            ${'internal'} | ${'on-delivery'} | ${[]}         | ${false}           | ${NOT_VERIFIED}       | ${'color-info'}    | ${'lock-filled'}                  | ${'Sent by Proton Mail with zero-access encryption'}
-            ${'internal'} | ${'end-to-end'}  | ${[]}         | ${false}           | ${NOT_SIGNED}         | ${'color-info'}    | ${'lock-filled'}                  | ${'End-to-end encrypted message'}
-            ${'internal'} | ${'end-to-end'}  | ${[fakeKey1]} | ${true}            | ${NOT_SIGNED}         | ${'color-info'}    | ${'lock-exclamation-filled'}      | ${'Sender could not be verified: Message not signed'}
-            ${'internal'} | ${'end-to-end'}  | ${[]}         | ${false}           | ${NOT_VERIFIED}       | ${'color-info'}    | ${'lock-filled'}                  | ${'End-to-end encrypted and signed message'}
-            ${'internal'} | ${'end-to-end'}  | ${[fakeKey1]} | ${true}            | ${SIGNED_AND_VALID}   | ${'color-info'}    | ${'lock-check-filled'}            | ${'End-to-end encrypted message from verified sender'}
-            ${'internal'} | ${'end-to-end'}  | ${[fakeKey1]} | ${false}           | ${SIGNED_AND_VALID}   | ${'color-info'}    | ${'lock-exclamation-filled'}      | ${"Sender's trusted keys verification failed"}
-            ${'internal'} | ${'end-to-end'}  | ${[fakeKey1]} | ${true}            | ${SIGNED_AND_INVALID} | ${'color-info'}    | ${'lock-exclamation-filled'}      | ${'Sender verification failed'}
-            ${'external'} | ${'end-to-end'}  | ${[]}         | ${false}           | ${NOT_SIGNED}         | ${'color-success'} | ${'lock-filled'}                  | ${'PGP-encrypted message'}
-            ${'external'} | ${'end-to-end'}  | ${[]}         | ${false}           | ${NOT_VERIFIED}       | ${'color-success'} | ${'lock-pen-filled'}              | ${'PGP-encrypted and signed message'}
-            ${'external'} | ${'end-to-end'}  | ${[fakeKey1]} | ${true}            | ${SIGNED_AND_VALID}   | ${'color-success'} | ${'lock-check-filled'}            | ${'PGP-encrypted message from verified sender'}
-            ${'external'} | ${'end-to-end'}  | ${[fakeKey1]} | ${false}           | ${SIGNED_AND_VALID}   | ${'color-success'} | ${'lock-exclamation-filled'}      | ${"Sender's trusted keys verification failed"}
-            ${'external'} | ${'end-to-end'}  | ${[fakeKey1]} | ${true}            | ${SIGNED_AND_INVALID} | ${'color-success'} | ${'lock-exclamation-filled'}      | ${'Sender verification failed'}
-            ${'external'} | ${'on-delivery'} | ${[]}         | ${false}           | ${NOT_VERIFIED}       | ${'color-success'} | ${'lock-open-pen-filled'}         | ${'PGP-signed message'}
-            ${'external'} | ${'on-delivery'} | ${[fakeKey1]} | ${true}            | ${SIGNED_AND_VALID}   | ${'color-success'} | ${'lock-open-check-filled'}       | ${'PGP-signed message from verified sender'}
-            ${'external'} | ${'on-delivery'} | ${[fakeKey1]} | ${false}           | ${SIGNED_AND_VALID}   | ${'color-success'} | ${'lock-open-exclamation-filled'} | ${"Sender's trusted keys verification failed"}
-            ${'external'} | ${'on-delivery'} | ${[fakeKey1]} | ${false}           | ${SIGNED_AND_INVALID} | ${'color-success'} | ${'lock-open-exclamation-filled'} | ${'PGP-signed message. Sender verification failed'}
-            ${'external'} | ${'on-delivery'} | ${[]}         | ${false}           | ${NOT_SIGNED}         | ${'color-norm'}    | ${'lock-filled'}                  | ${'Stored with zero-access encryption'}
+            origin        | encryption       | pinnedKeys    | pinnedKeysVerified | verificationStatus                             | colorClassName     | iconName                          | text
+            ${'internal'} | ${'on-delivery'} | ${[]}         | ${false}           | ${MAIL_VERIFICATION_STATUS.NOT_VERIFIED}       | ${'color-info'}    | ${'lock-filled'}                  | ${'Sent by Proton Mail with zero-access encryption'}
+            ${'internal'} | ${'end-to-end'}  | ${[]}         | ${false}           | ${MAIL_VERIFICATION_STATUS.NOT_SIGNED}         | ${'color-info'}    | ${'lock-filled'}                  | ${'End-to-end encrypted message'}
+            ${'internal'} | ${'end-to-end'}  | ${[fakeKey1]} | ${true}            | ${MAIL_VERIFICATION_STATUS.NOT_SIGNED}         | ${'color-info'}    | ${'lock-exclamation-filled'}      | ${'Sender could not be verified: Message not signed'}
+            ${'internal'} | ${'end-to-end'}  | ${[]}         | ${false}           | ${MAIL_VERIFICATION_STATUS.NOT_VERIFIED}       | ${'color-info'}    | ${'lock-filled'}                  | ${'End-to-end encrypted and signed message'}
+            ${'internal'} | ${'end-to-end'}  | ${[fakeKey1]} | ${true}            | ${MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID}   | ${'color-info'}    | ${'lock-check-filled'}            | ${'End-to-end encrypted message from verified sender'}
+            ${'internal'} | ${'end-to-end'}  | ${[fakeKey1]} | ${false}           | ${MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID}   | ${'color-info'}    | ${'lock-exclamation-filled'}      | ${"Sender's trusted keys verification failed"}
+            ${'internal'} | ${'end-to-end'}  | ${[fakeKey1]} | ${true}            | ${MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID} | ${'color-info'}    | ${'lock-exclamation-filled'}      | ${'Sender verification failed'}
+            ${'external'} | ${'end-to-end'}  | ${[]}         | ${false}           | ${MAIL_VERIFICATION_STATUS.NOT_SIGNED}         | ${'color-success'} | ${'lock-filled'}                  | ${'PGP-encrypted message'}
+            ${'external'} | ${'end-to-end'}  | ${[]}         | ${false}           | ${MAIL_VERIFICATION_STATUS.NOT_VERIFIED}       | ${'color-success'} | ${'lock-pen-filled'}              | ${'PGP-encrypted and signed message'}
+            ${'external'} | ${'end-to-end'}  | ${[fakeKey1]} | ${true}            | ${MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID}   | ${'color-success'} | ${'lock-check-filled'}            | ${'PGP-encrypted message from verified sender'}
+            ${'external'} | ${'end-to-end'}  | ${[fakeKey1]} | ${false}           | ${MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID}   | ${'color-success'} | ${'lock-exclamation-filled'}      | ${"Sender's trusted keys verification failed"}
+            ${'external'} | ${'end-to-end'}  | ${[fakeKey1]} | ${true}            | ${MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID} | ${'color-success'} | ${'lock-exclamation-filled'}      | ${'Sender verification failed'}
+            ${'external'} | ${'on-delivery'} | ${[]}         | ${false}           | ${MAIL_VERIFICATION_STATUS.NOT_VERIFIED}       | ${'color-success'} | ${'lock-open-pen-filled'}         | ${'PGP-signed message'}
+            ${'external'} | ${'on-delivery'} | ${[fakeKey1]} | ${true}            | ${MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID}   | ${'color-success'} | ${'lock-open-check-filled'}       | ${'PGP-signed message from verified sender'}
+            ${'external'} | ${'on-delivery'} | ${[fakeKey1]} | ${false}           | ${MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID}   | ${'color-success'} | ${'lock-open-exclamation-filled'} | ${"Sender's trusted keys verification failed"}
+            ${'external'} | ${'on-delivery'} | ${[fakeKey1]} | ${false}           | ${MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID} | ${'color-success'} | ${'lock-open-exclamation-filled'} | ${'PGP-signed message. Sender verification failed'}
+            ${'external'} | ${'on-delivery'} | ${[]}         | ${false}           | ${MAIL_VERIFICATION_STATUS.NOT_SIGNED}         | ${'color-norm'}    | ${'lock-filled'}                  | ${'Stored with zero-access encryption'}
         `(
             'should use color $colorClassName, lock $iconName when origin $origin, encryption $encryption, verified pinned keys $pinnedKeysVerified and verification status $verificationStatus',
             ({
