@@ -5,16 +5,17 @@ import { getNodeEffectiveRole } from './getNodeEffectiveRole';
 
 describe('getNodeEffectiveRole', () => {
     let mockDrive: jest.Mocked<ProtonDriveClient>;
+    let consoleWarnSpy: jest.SpyInstance;
 
     beforeEach(() => {
         mockDrive = {
             getNode: jest.fn(),
         } as any;
-        jest.spyOn(console, 'warn').mockImplementation(() => {});
+        consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation();
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        consoleWarnSpy.mockRestore();
     });
 
     const createMockNode = (

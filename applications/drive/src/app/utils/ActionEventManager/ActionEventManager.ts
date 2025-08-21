@@ -1,5 +1,12 @@
+import type { DriveEvent } from '@protontech/drive-sdk';
+import type { EventSubscription } from '@protontech/drive-sdk/dist/internal/events/interface';
+
+import { DriveEventType, getDrive } from '@proton/drive';
+import { getItem } from '@proton/shared/lib/helpers/storage';
+
 import { sendErrorReport } from '../errorHandling';
 import { EnrichedError } from '../errorHandling/EnrichedError';
+import { handleSdkError } from '../errorHandling/useSdkErrorHandler';
 import {
     type ActionEvent,
     type ActionEventListener,
@@ -74,25 +81,40 @@ import {
 class ActionEventManager {
     private listeners = new Map<string, ActionEventListener<ActionEvent>[]>();
 
-    /**
-     * Emits an event to all subscribed listeners for the event type.
-     * Errors in individual listeners are caught and logged without stopping other listeners.
-     *
-     * @param event - The event to emit with type-specific payload
-     */
-    emit(event: ActionEvent): void {
+    private myFilesRootFolderTreeEventScopeId: string | undefined;
+
+    private treeEventSubscriptions = new Map<
+        string,
+        {
+            subscription: Promise<EventSubscription>;
+            contexts: Set<string>;
+        }
+    >();
+
+    private debugMode: boolean;
+
+    // TODO: Create an helper to get the value
+    constructor() {
+        const debugValue = getItem('proton-drive-debug', 'false');
+        this.debugMode = debugValue === 'true';
+    }
+
+    async emit(event: ActionEvent): Promise<void> {
         const eventListeners = this.listeners.get(event.type) || [];
         const allEventListeners = this.listeners.get(ActionEventName.ALL) || [];
 
         const allListeners = [...eventListeners, ...allEventListeners];
 
-        for (const listener of allListeners) {
-            try {
-                listener(event);
-            } catch (error) {
-                sendErrorReport(new EnrichedError('Error in action event listener', { extra: { event, error } }));
-            }
-        }
+        // TODO: We need to verify the logic when we will have persisted storage
+        await Promise.allSettled(
+            allListeners.map(async (listener) => {
+                try {
+                    await listener(event);
+                } catch (error) {
+                    sendErrorReport(new EnrichedError('Error in action event listener', { extra: { event, error } }));
+                }
+            })
+        );
     }
 
     /**
@@ -102,7 +124,10 @@ class ActionEventManager {
      * @param listener - The callback function to execute when the event is emitted
      * @returns A function that can be called to unsubscribe the listener
      */
-    subscribe<K extends keyof ActionEventMap>(eventType: K, listener: (event: ActionEventMap[K]) => void): () => void {
+    subscribe<K extends keyof ActionEventMap>(
+        eventType: K,
+        listener: (event: ActionEventMap[K]) => Promise<void>
+    ): () => void {
         if (!this.listeners.has(eventType)) {
             this.listeners.set(eventType, []);
         }
@@ -126,7 +151,7 @@ class ActionEventManager {
      */
     private unsubscribe<K extends keyof ActionEventMap>(
         eventType: K,
-        listener: (event: ActionEventMap[K]) => void
+        listener: (event: ActionEventMap[K]) => Promise<void>
     ): void {
         const eventListeners = this.listeners.get(eventType);
         if (eventListeners) {
@@ -143,6 +168,169 @@ class ActionEventManager {
      */
     clear(): void {
         this.listeners.clear();
+    }
+
+    /**
+     * Subscribe to my updates sdk events (Basically user main volume events)
+     * @param context - A unique context identifier (e.g., 'trashContainer', 'folderView')
+     */
+    async subscribeSdkEventsMyUpdates(context: string): Promise<void> {
+        const drive = getDrive();
+        let treeEventScopeId = this.myFilesRootFolderTreeEventScopeId;
+        try {
+            if (!treeEventScopeId) {
+                const rootFolderResult = await drive.getMyFilesRootFolder();
+                treeEventScopeId = rootFolderResult.ok
+                    ? rootFolderResult.value.treeEventScopeId
+                    : rootFolderResult.error.treeEventScopeId;
+
+                this.myFilesRootFolderTreeEventScopeId = treeEventScopeId;
+            }
+            this.subscribeSdkEventsScope(treeEventScopeId, context);
+        } catch (error) {
+            handleSdkError(error);
+        }
+    }
+
+    /**
+     * Unsubscribe from  Subscribe to my updates sdk events for a given context
+     * Only reset myFilesRootFolderTreeEventScopeId when no contexts remain
+     * @param context - The context identifier that was used when subscribing
+     */
+    async unsubscribeSdkEventsMyUpdates(context: string): Promise<void> {
+        if (!this.myFilesRootFolderTreeEventScopeId) {
+            console.warn(
+                `[ActionEventManager] Trying to unsubscribe to SdkEventsMyUpdates without having the treeEventScopeId for it`,
+                { context }
+            );
+            return;
+        }
+
+        await this.unsubscribeSdkEventsScope(this.myFilesRootFolderTreeEventScopeId, context);
+
+        // We only reset in case there is no more subscription to it
+        if (!this.treeEventSubscriptions.get(this.myFilesRootFolderTreeEventScopeId)) {
+            this.myFilesRootFolderTreeEventScopeId = undefined;
+        }
+    }
+
+    /**
+     * Subscribe to a specific tree event scope with context tracking
+     * @param treeEventScopeId - The tree event scope ID to subscribe to
+     * @param context - A unique context identifier (e.g., 'trashContainer', 'folderView')
+     */
+    subscribeSdkEventsScope(treeEventScopeId: string, context: string) {
+        const existing = this.treeEventSubscriptions.get(treeEventScopeId);
+
+        if (existing) {
+            if (this.debugMode) {
+                // eslint-disable-next-line no-console
+                console.debug(
+                    '[ActionEventManager] Subscribtion for given treeEventScopeId exist, adding new context and skip subscription',
+                    { treeEventScopeId, context, existingContext: Array.from(existing.contexts.values()) }
+                );
+            }
+            existing.contexts.add(context);
+            return;
+        }
+
+        const drive = getDrive();
+        const subscription = drive.subscribeToTreeEvents(treeEventScopeId, async (event: DriveEvent) => {
+            await this.handleSdkEvent(event);
+        });
+
+        this.treeEventSubscriptions.set(treeEventScopeId, {
+            subscription,
+            contexts: new Set([context]),
+        });
+
+        if (this.debugMode) {
+            // eslint-disable-next-line no-console
+            console.debug('[ActionEventManager] Subscribed to new Sdk event scope', { treeEventScopeId, context });
+        }
+    }
+
+    /**
+     * Unsubscribe from a specific tree event scope for a given context
+     * Only disposes the actual subscription when no contexts remain
+     * @param treeEventScopeId - The tree event scope ID to unsubscribe from
+     * @param context - The context identifier that was used when subscribing
+     */
+    async unsubscribeSdkEventsScope(treeEventScopeId: string, context: string): Promise<void> {
+        const existing = this.treeEventSubscriptions.get(treeEventScopeId);
+        if (!existing) {
+            console.warn(
+                `[ActionEventManager] Trying to unsubscribe to SdkEventsScope without having the treeEventScopeId for it`,
+                { treeEventScopeId, context }
+            );
+            return;
+        }
+
+        existing.contexts.delete(context);
+
+        if (existing.contexts.size === 0) {
+            await existing.subscription.then(({ dispose }) => dispose());
+            this.treeEventSubscriptions.delete(treeEventScopeId);
+            if (this.debugMode) {
+                // eslint-disable-next-line no-console
+                console.debug(`[ActionEventManager] Unsubscribe to Sdk events`, { treeEventScopeId });
+            }
+        } else if (this.debugMode) {
+            // eslint-disable-next-line no-console
+            console.debug(
+                `[ActionEventManager] Skipping unsubscribe as some contexts are still subscribed to this event scope`,
+                { treeEventScopeId, context, existingContext: Array.from(existing.contexts.values()) }
+            );
+        }
+    }
+
+    /**
+     * Handle incoming SDK events and emit corresponding ActionEvents
+     */
+    private async handleSdkEvent(event: DriveEvent): Promise<void> {
+        try {
+            switch (event.type) {
+                case DriveEventType.NodeCreated:
+                    await this.emit({
+                        type: ActionEventName.CREATED_NODES,
+                        items: [
+                            {
+                                uid: event.nodeUid,
+                                parentUid: event.parentNodeUid,
+                                isTrashed: event.isTrashed,
+                                isShared: event.isShared,
+                            },
+                        ],
+                    });
+                    break;
+                case DriveEventType.NodeUpdated:
+                    await this.emit({
+                        type: ActionEventName.UPDATED_NODES,
+                        items: [
+                            {
+                                uid: event.nodeUid,
+                                parentUid: event.parentNodeUid,
+                                isTrashed: event.isTrashed,
+                                isShared: event.isShared,
+                            },
+                        ],
+                    });
+                    break;
+                case DriveEventType.NodeDeleted:
+                    await this.emit({
+                        type: ActionEventName.DELETED_NODES,
+                        uids: [event.nodeUid],
+                    });
+                    break;
+                case DriveEventType.SharedWithMeUpdated:
+                    await this.emit({
+                        type: ActionEventName.REFRESH_SHARED_WITH_ME,
+                    });
+                    break;
+            }
+        } catch (error) {
+            sendErrorReport(new EnrichedError('Error handling SDK event', { extra: { event, error } }));
+        }
     }
 }
 

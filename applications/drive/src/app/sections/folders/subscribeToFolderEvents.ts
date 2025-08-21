@@ -23,7 +23,7 @@ const getLegacyItemFromUid = async (uid: string, folder: FolderViewData) => {
 };
 
 export const subscribeToFolderEvents = () =>
-    getActionEventManager().subscribe(ActionEventName.ALL, (event) => {
+    getActionEventManager().subscribe(ActionEventName.ALL, async (event) => {
         const store = useFolderStore.getState();
         const { folder } = store;
         if (!folder) {
