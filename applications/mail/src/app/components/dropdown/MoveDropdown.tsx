@@ -47,8 +47,6 @@ import './MoveDropdown.scss';
 
 export const moveDropdownContentProps = { className: 'flex flex-column flex-nowrap items-stretch' };
 
-const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
-
 interface Props {
     selectedIDs: string[];
     labelID: string;
@@ -103,8 +101,12 @@ const MoveDropdown = ({
      */
     const elements = inputIsMessage ? getMessagesOrElements(selectedIDs) : getElementsFromIDs(selectedIDs);
     const isMessage = testIsMessage(elements[0]);
-    const canMoveToInbox = isMessage ? !!getMessagesAuthorizedToMove(elements as Message[], INBOX).length : true;
-    const canMoveToSpam = isMessage ? !!getMessagesAuthorizedToMove(elements as Message[], SPAM).length : true;
+    const canMoveToInbox = isMessage
+        ? !!getMessagesAuthorizedToMove(elements as Message[], MAILBOX_LABEL_IDS.INBOX).length
+        : true;
+    const canMoveToSpam = isMessage
+        ? !!getMessagesAuthorizedToMove(elements as Message[], MAILBOX_LABEL_IDS.SPAM).length
+        : true;
 
     /*
      * translator: Text displayed in a button to suggest the creation of a new folder in the move dropdown
@@ -121,17 +123,17 @@ const MoveDropdown = ({
     const list = treeview
         .concat([
             canMoveToInbox && {
-                ID: INBOX,
+                ID: MAILBOX_LABEL_IDS.INBOX,
                 Name: c('Mailbox').t`Inbox`,
                 icon: 'inbox',
             },
-            { ID: ARCHIVE, Name: c('Mailbox').t`Archive`, icon: 'archive-box' },
+            { ID: MAILBOX_LABEL_IDS.ARCHIVE, Name: c('Mailbox').t`Archive`, icon: 'archive-box' },
             canMoveToSpam && {
-                ID: SPAM,
+                ID: MAILBOX_LABEL_IDS.SPAM,
                 Name: c('Mailbox').t`Spam`,
                 icon: 'fire',
             },
-            { ID: TRASH, Name: c('Mailbox').t`Trash`, icon: 'trash' },
+            { ID: MAILBOX_LABEL_IDS.TRASH, Name: c('Mailbox').t`Trash`, icon: 'trash' },
         ] as FolderItem[])
         .filter(isTruthy)
         .filter((folder) => {
@@ -146,7 +148,7 @@ const MoveDropdown = ({
         // If the destination folder is SPAM, we don't want to create a filter even if always is checked
         // Senders will be moved to spam anyway, but since we don't want to create filters in the "Spam case",
         // We only need to ignore the value in that scenario
-        const canApplyAlways = selectedFolderID !== SPAM;
+        const canApplyAlways = selectedFolderID !== MAILBOX_LABEL_IDS.SPAM;
 
         if (applyOptimisticLocationEnabled && !selectAll) {
             await applyLocation({

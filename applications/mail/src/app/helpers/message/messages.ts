@@ -16,8 +16,6 @@ import type { MarkAsChanges } from '../../hooks/optimistic/useOptimisticMarkAs';
 import { getContent, setContent } from './messageContent';
 import { getEmbeddedImages } from './messageImages';
 
-const { SENT, DRAFTS, INBOX, SPAM } = MAILBOX_LABEL_IDS;
-
 export const getAttachmentCounts = (attachments: Attachment[], messageImages: MessageImages | undefined) => {
     const size = attachmentsSize({ Attachments: attachments } as Message);
     const sizeLabel = humanSize({ bytes: size });
@@ -72,21 +70,30 @@ export const mergeMessages = (
 
 export const getMessagesAuthorizedToMove = (messages: Message[], destinationFolderID: string) => {
     return messages.filter((message) => {
-        if ([SENT, DRAFTS, INBOX, SPAM].includes(destinationFolderID as MAILBOX_LABEL_IDS)) {
+        if (
+            [
+                MAILBOX_LABEL_IDS.SENT,
+                MAILBOX_LABEL_IDS.DRAFTS,
+                MAILBOX_LABEL_IDS.INBOX,
+                MAILBOX_LABEL_IDS.SPAM,
+            ].includes(destinationFolderID as MAILBOX_LABEL_IDS)
+        ) {
             const excludedDestinations = [];
 
             if (!isSentAndReceived(message)) {
                 if (isReceived(message)) {
-                    excludedDestinations.push(...[SENT, DRAFTS]);
+                    excludedDestinations.push(...[MAILBOX_LABEL_IDS.SENT, MAILBOX_LABEL_IDS.DRAFTS]);
                 }
 
                 if (isSent(message)) {
-                    excludedDestinations.push(...[INBOX, DRAFTS, SPAM]);
+                    excludedDestinations.push(
+                        ...[MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.DRAFTS, MAILBOX_LABEL_IDS.SPAM]
+                    );
                 }
             }
 
             if (isDraft(message)) {
-                excludedDestinations.push(...[INBOX, SENT, SPAM]);
+                excludedDestinations.push(...[MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.SENT, MAILBOX_LABEL_IDS.SPAM]);
             }
 
             return !excludedDestinations.includes(destinationFolderID as MAILBOX_LABEL_IDS);

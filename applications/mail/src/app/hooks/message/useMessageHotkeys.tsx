@@ -34,8 +34,6 @@ import { useMoveToFolder } from '../actions/move/useMoveToFolder';
 import { useStar } from '../actions/useStar';
 import { ComposeTypes } from '../composer/useCompose';
 
-const { TRASH, SPAM, ARCHIVE, INBOX } = MAILBOX_LABEL_IDS;
-
 enum ARROW_SCROLL_DIRECTIONS {
     UP,
     DOWN,
@@ -330,7 +328,7 @@ export const useMessageHotkeys = (
             async (e) => {
                 if (hotkeysEnabledAndMessageReady) {
                     e.stopPropagation();
-                    await moveElementTo(e, INBOX);
+                    await moveElementTo(e, MAILBOX_LABEL_IDS.INBOX);
                 }
             },
         ],
@@ -339,7 +337,7 @@ export const useMessageHotkeys = (
             async (e) => {
                 if (hotkeysEnabledAndMessageReady) {
                     e.stopPropagation();
-                    await moveElementTo(e, ARCHIVE);
+                    await moveElementTo(e, MAILBOX_LABEL_IDS.ARCHIVE);
                 }
             },
         ],
@@ -348,7 +346,7 @@ export const useMessageHotkeys = (
             async (e) => {
                 if (hotkeysEnabledAndMessageReady) {
                     e.stopPropagation();
-                    await moveElementTo(e, SPAM);
+                    await moveElementTo(e, MAILBOX_LABEL_IDS.SPAM);
                 }
             },
         ],
@@ -357,7 +355,7 @@ export const useMessageHotkeys = (
             async (e) => {
                 if (hotkeysEnabledAndMessageReady) {
                     e.stopPropagation();
-                    await moveElementTo(e, TRASH);
+                    await moveElementTo(e, MAILBOX_LABEL_IDS.TRASH);
                 }
             },
         ],
