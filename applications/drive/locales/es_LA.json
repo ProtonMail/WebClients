@@ -162,6 +162,9 @@
       "Choose a file or drag it here": [
         "Elija un archivo o arrástrelo aquí"
       ],
+      "Claim this address": [
+        "Reclamar esta dirección"
+      ],
       "Clear": [
         "Borrar"
       ],
@@ -347,6 +350,9 @@
       "Details": [
         "Detalles"
       ],
+      "Diagnostics": [
+        "Diagnósticos"
+      ],
       "Discard": [
         "Descartar"
       ],
@@ -386,8 +392,14 @@
       "Download apps": [
         "Descargar aplicaciones"
       ],
+      "Download info": [
+        "Descargar información"
+      ],
       "Download logs": [
         "Descargar los registros"
+      ],
+      "Download results": [
+        "Descargar resultados"
       ],
       "Drive Locked": [
         "Unidad bloqueada"
@@ -460,6 +472,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Obtenga ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Obtenga una dirección gratuita de ${ BRAND_NAME }"
       ],
       "Get in touch": [
         "Contáctenos"
@@ -865,6 +880,9 @@
       ],
       "Retry": [
         "Reintentar"
+      ],
+      "Run diagnostics": [
+        "Ejecutar diagnósticos"
       ],
       "Save": [
         "Guardar"
@@ -3142,6 +3160,11 @@
         "Actualización de un evento a partir del ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contacto de confianza"
+      ]
+    },
     "Error": {
       "\"${ sanitizedName }\" already exists": [
         "«${ sanitizedName }» ya existe."
@@ -3190,6 +3213,9 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Cantidad inferior al mínimo (${ minimumAmount })."
+      ],
+      "An error occurred": [
+        "Ocurrió un error"
       ],
       "An error occurred while loading alias options": [
         "Ocurrió un error al cargar las opciones del alias"
@@ -3249,6 +3275,9 @@
       ],
       "Device name does not match": [
         "El nombre del dispositivo no coincide"
+      ],
+      "Diagnostics failed": [
+        "Error de diagnóstico"
       ],
       "Domain not available, try again later": [
         "Dominio no disponible, inténtelo más tarde"
@@ -3648,6 +3677,9 @@
       "Unknown location": [
         "Ubicación desconocida"
       ],
+      "Unknown number of downloads": [
+        "Número de descargas desconocido"
+      ],
       "Unknown payment token status": [
         "Estado del token de pago desconocido"
       ],
@@ -3663,11 +3695,32 @@
       "Validation error": [
         "Error de validación"
       ],
+      "We were not able some of your shared items": [
+        "No pudimos cargar algunos de sus elementos compartidos"
+      ],
+      "We were not able to load some invitations": [
+        "No pudimos cargar algunas invitaciones"
+      ],
+      "We were not able to load some items shared with you": [
+        "No pudimos cargar algunos elementos compartidos con usted"
+      ],
+      "We were not able to load some of your bookmarks": [
+        "No pudimos cargar algunos de sus marcadores"
+      ],
+      "We were not able to load some of your invitation to shared items": [
+        "No pudimos cargar algunas de sus invitaciones a elementos compartidos"
+      ],
+      "We were not able to load some of your saved shared links": [
+        "No pudimos cargar algunos de sus enlaces compartidos guardados"
+      ],
       "We were not able to load some of your shared items": [
         "No pudimos cargar algunos de sus elementos compartidos"
       ],
       "We were not able to load some of your shared items details": [
         "No pudimos cargar algunos de los detalles de sus elementos compartidos"
+      ],
+      "We were not able to load some of your shared items info": [
+        "No pudimos cargar alguna de la información de sus elementos compartidos"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "No puede enviar un correo a más de ${ maxContacts } destinatario.",
@@ -4594,6 +4647,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnología de cifrado de ${ BRAND_NAME } significa que nadie tiene acceso a la contraseña, ni siquiera nosotros."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } requiere una dirección de ${ BRAND_NAME } para la sincronización segura de eventos y cifrado. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } requiere una dirección de ${ BRAND_NAME } para la sincronización segura de eventos y cifrado. Reclame su dirección gratuita de ${ MAIL_APP_NAME } ahora."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } calendario nuevo",
         "${ calendarsToBeCreatedCount } calendarios nuevos"
@@ -5158,6 +5217,9 @@
       "End-to-end encrypted": [
         "Cifrado de extremo a extremo"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Asegure una comunicación privada y cifrada completa. Reclame su dirección gratuita de ${ BRAND_NAME } ahora."
+      ],
       "Enter password": [
         "Ingrese la contraseña"
       ],
@@ -5175,6 +5237,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Ingrese su propia contraseña (como administrador de la organización)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Ingrese su propia contraseña (como contacto de confianza)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Tiempo restante estimado: ${ estimatedMinutes } minuto",
@@ -5257,6 +5322,9 @@
       ],
       "Geoblocking": [
         "Bloqueo geográfico"
+      ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "Obtener registros y otra información para soporte técnico y resolución de problemas"
       ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Descargue la aplicación para hacer una copia de seguridad de las fotos de su teléfono o cárguelas aquí."
@@ -5349,6 +5417,9 @@
       "Initializing": [
         "Inicializando"
       ],
+      "Integrity issues found": [
+        "Problemas de integridad encontrados"
+      ],
       "Internet connection lost": [
         "Sin conexión a Internet"
       ],
@@ -5360,6 +5431,9 @@
       ],
       "Invite link copied": [
         "Enlace de la invitación copiado"
+      ],
+      "Issues found": [
+        "Problemas encontrados"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Parece ser que recientemente ha intentado cargar ${ uploadName }. Si no se pudo cargar, ${ replaceFile }. Si la carta está en proceso, reemplazarla cancelará la carga en curso."
@@ -5517,6 +5591,9 @@
       ],
       "No group found": [
         "Ningún grupo encontrado"
+      ],
+      "No issue found": [
+        "No se encontró ningún problema"
       ],
       "No payment is required at this time.": [
         "No se requiere ningún pago en este momento."
@@ -5783,6 +5860,9 @@
       "Restoring Photos... Please keep the tab open": [
         "Restaurando las fotos... mantenga la pestaña abierta"
       ],
+      "Running diagnostics...": [
+        "Ejecutando diagnósticos..."
+      ],
       "Saving...": [
         "Guardando..."
       ],
@@ -5924,6 +6004,12 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "La suscripción terminará pronto: reactívela antes de ${ byDate } para mantener los beneficios de ${ planName }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Suscripción a punto de finalizar: Para mantener los beneficios de su ${ planName }, reinicie su suscripción en la Apple App Store antes del ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Su suscripción finaliza: Para mantener los beneficios de su ${ planName }, reinicie su suscripción en Google Play Store antes del ${ byDate }. ${ reactivateLink }"
       ],
       "Surveillance": [
         "Vigilancia"
@@ -7185,6 +7271,9 @@
       "Uploaded by": [
         "Cargado por"
       ],
+      "Username": [
+        "Nombre de usuario"
+      ],
       "VAT": [
         "IVA"
       ],
@@ -7229,6 +7318,9 @@
       ],
       "Your password (admin)": [
         "Su contraseña (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Su contraseña (contacto de confianza)"
       ]
     },
     "Label for contact group color": {
@@ -7367,6 +7459,9 @@
       ],
       "Request an invite": [
         "Solicitar una invitación"
+      ],
+      "Resume now": [
+        "Reanudar ahora"
       ],
       "settings": [
         "ajustes"
@@ -8936,6 +9031,14 @@
       "Root folder failed to be loaded": [
         "Error al cargar la carpeta raíz"
       ],
+      "Selected item was not removed from your list": [
+        "El elemento seleccionado no se eliminó de su lista",
+        "Los elementos seleccionados no se borraron de su lista."
+      ],
+      "Selected items were successfully removed from your list": [
+        "Los elementos seleccionados se eliminaron correctamente de su lista.",
+        "Los elementos seleccionados se borraron correctamente de su lista"
+      ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Las fotos seleccionadas ya están en «${ albumName }»."
       ],
@@ -9338,6 +9441,18 @@
       ],
       "No parent folder": [
         "No hay carpeta principal"
+      ],
+      "Only current location": [
+        "Solo la ubicación actual"
+      ],
+      "Only current location: ${ name }": [
+        "Solo la ubicación actual: ${ name }"
+      ],
+      "Verify content": [
+        "Verificar contenido"
+      ],
+      "Verify thumbnails": [
+        "Verificar miniaturas"
       ]
     },
     "Option group label": {
@@ -11248,6 +11363,9 @@
       "Account security": [
         "Seguridad de la cuenta"
       ],
+      "Account temporarily locked": [
+        "Cuenta temporalmente bloqueada"
+      ],
       "Active": [
         "Activa"
       ],
@@ -11348,6 +11466,9 @@
       ],
       "Check for malicious files": [
         "Buscar archivos maliciosos"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Reclame su dirección de ${ MAIL_APP_NAME }"
       ],
       "Clearing data": [
         "Limpiando datos"
@@ -11471,6 +11592,9 @@
       ],
       "Devices": [
         "Dispositivos"
+      ],
+      "Diagnostics": [
+        "Diagnósticos"
       ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Firma digital parcialmente verificada. Este archivo fue cargado usando un enlace para compartir de acceso público por un usuario sin una cuenta de ${ BRAND_NAME }, por lo que su identidad no puede ser verificada."
@@ -11604,6 +11728,9 @@
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults } resultado encontrado",
         "${ searchView.numberOfResults } resultados encontrados"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Obtener acceso completo a ${ CALENDAR_APP_NAME }"
       ],
       "Get more from your VPN": [
         "Obtenga más de su VPN"
@@ -11776,6 +11903,9 @@
       ],
       "Notes": [
         "Notas"
+      ],
+      "Number of downloads": [
+        "Número de descargas"
       ],
       "Number of items": [
         "Número de elementos"
