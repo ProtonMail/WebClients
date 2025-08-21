@@ -147,7 +147,6 @@ export const usePaymentFacade = ({
 }: PaymentFacadeProps) => {
     const enableSepa = useFlag('SepaPayments');
     const enableSepaB2C = useFlag('SepaPaymentsB2C');
-    const enableApplePay = useFlag('ApplePayWeb');
 
     const defaultApi = useApi();
     const api = apiOverride ?? defaultApi;
@@ -226,7 +225,6 @@ export const usePaymentFacade = ({
             planIDs,
             isTrial,
             canUseApplePay,
-            enableApplePay,
         },
         {
             api,
