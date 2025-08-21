@@ -10,7 +10,9 @@ import { getClientID } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 
+import { LatestEventIdProvider } from './lib/latestEventIdProvider';
 import { initOpenPGPCryptoModule } from './lib/openPGPCryptoModule';
+import { proxyDriveClientWithEventTracking } from './lib/proxyDriveClientWithEventTracking';
 import type { UserPlan } from './lib/telemetry';
 import { initTelemetry } from './lib/telemetry';
 import { useAccount } from './lib/useAccount';
@@ -53,6 +55,7 @@ export type {
     MaybeBookmark,
     Bookmark,
     BookmarkOrUid,
+    DriveEvent,
 } from '@protontech/drive-sdk';
 
 /* Other export */
@@ -74,6 +77,7 @@ export {
 
 let driveSingleton: ProtonDriveClient;
 let memoryLogHandlerSingleton: MemoryLogHandler | undefined;
+let latestEventIdProvider: LatestEventIdProvider;
 
 /**
  * Provides access to Drive SDK connected to the clients monorepo.
@@ -115,18 +119,23 @@ export function useDrive() {
 
             const { telemetry, memoryLogHandler } = initTelemetry(options.userPlan, debug);
 
-            driveSingleton = new ProtonDriveClient({
+            latestEventIdProvider = new LatestEventIdProvider();
+
+            const driveClient = new ProtonDriveClient({
                 httpClient,
                 entitiesCache: new MemoryCache(),
                 cryptoCache: new MemoryCache(),
                 account,
                 openPGPCryptoModule,
                 srpModule,
+                latestEventIdProvider,
                 config: {
                     baseUrl: `${window.location.host}/api`,
                 },
                 telemetry,
             });
+
+            driveSingleton = proxyDriveClientWithEventTracking(driveClient, latestEventIdProvider);
 
             memoryLogHandlerSingleton = memoryLogHandler;
         },

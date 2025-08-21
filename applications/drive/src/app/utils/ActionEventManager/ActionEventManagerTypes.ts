@@ -32,6 +32,9 @@ export enum ActionEventName {
     ACCEPT_INVITATIONS = 'ACCEPT_INVITATIONS',
     REJECT_INVITATIONS = 'REJECT_INVITATIONS',
 
+    // Refresh events
+    REFRESH_SHARED_WITH_ME = 'REFRESH_SHARED_WITH_ME',
+
     // Only available to listen to with .subscribe()
     ALL = '*',
 }
@@ -93,6 +96,10 @@ export interface RejectInvitationsEvent {
     uids: string[];
 }
 
+export interface RefreshShareWithMeEvent {
+    type: ActionEventName.REFRESH_SHARED_WITH_ME;
+}
+
 export type ActionEvent =
     | MovedNodesEvent
     | ShareChangedEvent
@@ -104,9 +111,10 @@ export type ActionEvent =
     | DeletedNodesEvent
     | DeleteBookmarksEvent
     | AcceptInvitationsEvent
-    | RejectInvitationsEvent;
+    | RejectInvitationsEvent
+    | RefreshShareWithMeEvent;
 
-export type ActionEventListener<T extends ActionEvent> = (event: T) => void;
+export type ActionEventListener<T extends ActionEvent> = (event: T) => Promise<void>;
 
 export type ActionEventMap = {
     [ActionEventName.MOVED_NODES]: MovedNodesEvent;
@@ -120,5 +128,6 @@ export type ActionEventMap = {
     [ActionEventName.DELETE_BOOKMARKS]: DeleteBookmarksEvent;
     [ActionEventName.ACCEPT_INVITATIONS]: AcceptInvitationsEvent;
     [ActionEventName.REJECT_INVITATIONS]: RejectInvitationsEvent;
+    [ActionEventName.REFRESH_SHARED_WITH_ME]: RefreshShareWithMeEvent;
     [ActionEventName.ALL]: ActionEvent;
 };
