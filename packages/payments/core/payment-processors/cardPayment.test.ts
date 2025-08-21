@@ -150,7 +150,7 @@ describe('CardPaymentProcessor', () => {
     it('should call mockVerifyPayment', async () => {
         addTokensResponse({
             ...MOCK_TOKEN_RESPONSE,
-            Status: PAYMENT_TOKEN_STATUS.STATUS_PENDING,
+            Status: PAYMENT_TOKEN_STATUS.PENDING,
             ApprovalURL: 'https://verify.proton.me',
             ReturnHost: 'https://proton.me',
         } as any);
@@ -209,7 +209,7 @@ describe('CardPaymentProcessor', () => {
     it('should throw when verification failed', async () => {
         addTokensResponse({
             ...MOCK_TOKEN_RESPONSE,
-            Status: PAYMENT_TOKEN_STATUS.STATUS_PENDING,
+            Status: PAYMENT_TOKEN_STATUS.PENDING,
             ApprovalURL: 'https://verify.proton.me',
             ReturnHost: 'https://proton.me',
         } as any);

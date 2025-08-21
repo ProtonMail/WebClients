@@ -271,7 +271,7 @@ it('should verify the payment token', async () => {
         v: 5,
         chargeable: false,
         type: 'card',
-        status: PAYMENT_TOKEN_STATUS.STATUS_PENDING,
+        status: PAYMENT_TOKEN_STATUS.PENDING,
         approvalURL: 'https://verify.proton.me',
         returnHost: 'https://account.proton.me',
     });
@@ -322,7 +322,7 @@ it('should throw an error during token processing if verification failed', async
         v: 5,
         chargeable: false,
         type: 'card',
-        status: PAYMENT_TOKEN_STATUS.STATUS_PENDING,
+        status: PAYMENT_TOKEN_STATUS.PENDING,
         approvalURL: 'https://verify.proton.me',
         returnHost: 'https://account.proton.me',
     });
