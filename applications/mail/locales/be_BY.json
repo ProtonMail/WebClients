@@ -36,6 +36,12 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
+      "${ numberOfAddresses } address": [
+        "${ numberOfAddresses } адрас",
+        "${ numberOfAddresses } адрасы",
+        "${ numberOfAddresses } адрасоў",
+        "${ numberOfAddresses } адрасоў"
+      ],
       "A to Z": [
         "Ад А да Я"
       ],
@@ -216,6 +222,15 @@
       "Choose a file or drag it here": [
         "Выберыце файл або перацягніце яго сюды"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Атрымаць адрас ${ BRAND_NAME }"
+      ],
+      "Claim this address": [
+        "Атрымаць гэты адрас"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Атрымайце свой бясплатны адрас ${ BRAND_NAME }"
+      ],
       "Clear": [
         "Ачысціць"
       ],
@@ -314,6 +329,9 @@
       ],
       "Copy alias “${ name }”": [
         "Капіяваць псеўданім “${ name }”"
+      ],
+      "Copy email address": [
+        "Скапіяваць адрас электроннай пошты"
       ],
       "Copy email to clipboard": [
         "Скапіяваць ліст у буфер абмену"
@@ -594,6 +612,9 @@
       "Get ${ planOrAppName }": [
         "Атрымаць ${ planOrAppName }"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Атрымайце бясплатны адрас ${ BRAND_NAME }"
+      ],
       "Get in touch": [
         "Звязацца з намі"
       ],
@@ -800,6 +821,9 @@
       ],
       "Make it friendly": [
         "Зрабіць прыязным"
+      ],
+      "Manage addresses": [
+        "Кіраванне адрасамі"
       ],
       "Manage advanced account protections": [
         "Кіраваць пашыранай абаронай уліковага запісу"
@@ -4067,6 +4091,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Спрасціце сінхранізацыю і планаванне з дапамогай абагуленых календароў."
       ],
+      "This view shows messages sent to the following addresses:": [
+        "Гэты выгляд паказвае паведамленні, якія адпраўлены на наступныя адрасы:"
+      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Дадайце памочніка ў апісанні ў сваю падпіску, каб працягнуць карыстацца ім."
       ],
@@ -5731,6 +5758,9 @@
       "Checklist complete": [
         "Кантрольны спіс завершаны"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Атрымаць адрас ${ BRAND_NAME }"
+      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Завяршыце гэты кантрольны спіс за ${ daysCount }, каб падвоіць сваё сховішча бясплатна."
       ],
@@ -6305,6 +6335,12 @@
       ],
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "Менеджар пароляў ${ BRAND_NAME } дазваляе ствараць, захоўваць і аўтазапаўняць паролі і таму, вам ніколі не давядзецца скідаць іх."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } патрабуе адрас ${ BRAND_NAME } для бяспечнай сінхранізацыі падзей і шыфравання. ${ claimAddressButton }"
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } патрабуе адрас ${ BRAND_NAME } для бяспечнай сінхранізацыі падзей і шыфравання. Атрымайце свой бясплатны адрас ${ MAIL_APP_NAME }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } новы каляндар",
@@ -7178,6 +7214,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Атрымлівайце асалоду ад больш хуткай і мэтанакіраванай адпраўкі электроннай пошты з праграмай для кам'ютара."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Забяспечце цалкам прыватную і зашыфраваную сувязь. Атрымайце бясплатны адрас электроннай пошты ${ BRAND_NAME }."
       ],
       "Enter the code from your authenticator app": [
         "Увядзіце код з вашай праграмы аўтэнтыфікацыі"
@@ -8922,6 +8961,9 @@
       "Expired": [
         "Пратэрмінаваны"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Састарэлы"
       ],
@@ -9777,6 +9819,9 @@
       ],
       "Upload picture": [
         "Запампаваць малюнак"
+      ],
+      "Username": [
+        "Імя карыстальніка"
       ],
       "VAT": [
         "ПДВ"
@@ -13180,7 +13225,7 @@
         "${ n } месяцаў"
       ],
       "/ month": [
-        "/ месячнай"
+        "/ месяц"
       ],
       "/month": [
         "/месяц"
@@ -14535,7 +14580,7 @@
         "${ unreads } непрачытаных паведамленняў"
       ],
       "(active)": [
-        "(актыўная)"
+        "(актыўны)"
       ],
       "A filter name is required": [
         "Патрабуецца назва фільтра"
@@ -14553,7 +14598,7 @@
         "Бяспека ўліковага запісу"
       ],
       "Account temporarily locked": [
-        "Уліковы запіс часова заблакаваны"
+        "Уліковы запіс часова заблакіраваны"
       ],
       "Action all conversations": [
         "Дзеянне да ўсіх размоў"
@@ -14662,6 +14707,9 @@
       ],
       "Change password": [
         "Змяніць пароль"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Атрымайце адрас ${ MAIL_APP_NAME }"
       ],
       "Clearing data": [
         "Ачыстка даных"
@@ -14896,6 +14944,9 @@
       ],
       "Forward": [
         "Пераслаць"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Атрымаць поўны доступ да ${ CALENDAR_APP_NAME }"
       ],
       "Get more from your VPN": [
         "Атрымайце больш ад свайго VPN"
@@ -15478,6 +15529,9 @@
       ],
       "Your account is protected": [
         "Ваш уліковы запіс абаронены"
+      ],
+      "Your addresses": [
+        "Вашы адрасы"
       ],
       "Your changes are not synced yet": [
         "Пакуль вашы змены не сінхранізаваны"

@@ -36,6 +36,10 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
+      "${ numberOfAddresses } address": [
+        "${ numberOfAddresses } adresse",
+        "${ numberOfAddresses } adresses"
+      ],
       "A to Z": [
         "De A à Z"
       ],
@@ -214,6 +218,15 @@
       "Choose a file or drag it here": [
         "Choisissez un fichier ou faites-le glisser ici."
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Revendiquer l'adresse ${ BRAND_NAME }"
+      ],
+      "Claim this address": [
+        "Revendiquer cette adresse"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Revendiquez votre adresse ${ BRAND_NAME } gratuite"
+      ],
       "Clear": [
         "Effacer"
       ],
@@ -312,6 +325,9 @@
       ],
       "Copy alias “${ name }”": [
         "Copier l'alias « ${ name } »"
+      ],
+      "Copy email address": [
+        "Copier l’adresse e-mail"
       ],
       "Copy email to clipboard": [
         "Copier l’adresse e-mail dans le presse-papiers"
@@ -588,6 +604,9 @@
       "Get ${ planOrAppName }": [
         "Essayez ${ planOrAppName }"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Obtenez une adresse ${ BRAND_NAME } gratuite"
+      ],
       "Get in touch": [
         "Nous contacter"
       ],
@@ -792,6 +811,9 @@
       ],
       "Make it friendly": [
         "Plus amical"
+      ],
+      "Manage addresses": [
+        "Gérer les adresses"
       ],
       "Manage advanced account protections": [
         "Gérer les protections avancées du compte"
@@ -4061,6 +4083,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifiez la synchronisation et la planification grâce aux calendriers partagés."
       ],
+      "This view shows messages sent to the following addresses:": [
+        "Cette vue montre les messages envoyés aux adresses suivantes :"
+      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Pour continuer à utiliser l'assistant d'écriture, ajoutez-le à votre abonnement"
       ],
@@ -5675,6 +5700,9 @@
       "Checklist complete": [
         "La checklist est terminée."
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Revendiquer l'adresse ${ BRAND_NAME }"
+      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Terminez cette liste dans ${ daysCount } pour doubler gratuitement votre espace de stockage."
       ],
@@ -6229,6 +6257,9 @@
       ],
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "Le gestionnaire de mots de passe de ${ BRAND_NAME } vous permet de créer, de stocker et de remplir automatiquement les mots de passe, afin que vous n'ayez jamais à les réinitialiser."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } nécessite une adresse ${ BRAND_NAME } pour une synchronisation d'événements sécurisée et le chiffrement. Obtenez votre adresse ${ MAIL_APP_NAME } gratuite dès maintenant."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nouveau calendrier",
@@ -9512,6 +9543,9 @@
       ],
       "Upload picture": [
         "Importer une image"
+      ],
+      "Username": [
+        "Nom d'utilisateur"
       ],
       "VAT": [
         "TVA"
@@ -14161,6 +14195,9 @@
       "Change password": [
         "Changer le mot de passe"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Revendiquez votre adresse ${ MAIL_APP_NAME }"
+      ],
       "Clearing data": [
         "Effacement des données"
       ],
@@ -14384,6 +14421,9 @@
       ],
       "Forward": [
         "Transférer"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Obtenir un accès complet à ${ CALENDAR_APP_NAME }"
       ],
       "Get more from your VPN": [
         "Tirez le meilleur parti de votre VPN"
@@ -14960,6 +15000,9 @@
       ],
       "Your account is protected": [
         "Votre compte est protégé."
+      ],
+      "Your addresses": [
+        "Vos adresses"
       ],
       "Your changes are not synced yet": [
         "Vos modifications ne sont pas encore synchronisées."

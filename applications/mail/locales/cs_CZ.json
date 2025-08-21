@@ -216,6 +216,15 @@
       "Choose a file or drag it here": [
         "Vyberte soubor nebo jej sem přetáhněte"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Získat adresu ${ BRAND_NAME }"
+      ],
+      "Claim this address": [
+        "Nárokovat tuto adresu"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Získejte vaší bezplatnou adresu ${ BRAND_NAME }"
+      ],
       "Clear": [
         "Smazat"
       ],
@@ -314,6 +323,9 @@
       ],
       "Copy alias “${ name }”": [
         "Kopírovat alias \"${ name }\""
+      ],
+      "Copy email address": [
+        "Kopírovat e-mailovou adresu"
       ],
       "Copy email to clipboard": [
         "Zkopírovat e-mail do schránky"
@@ -594,6 +606,9 @@
       "Get ${ planOrAppName }": [
         "Získat ${ planOrAppName }"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Získejte ${ BRAND_NAME } adresu zdarma"
+      ],
       "Get in touch": [
         "Kontaktujte nás"
       ],
@@ -724,7 +739,7 @@
         "Zvýšit"
       ],
       "Inline": [
-        "Vložený"
+        "Vložit"
       ],
       "Insert": [
         "Vložit"
@@ -800,6 +815,9 @@
       ],
       "Make it friendly": [
         "Přátelská forma"
+      ],
+      "Manage addresses": [
+        "Spravovat adresy"
       ],
       "Manage advanced account protections": [
         "Spravovat pokročilé ochrany účtu"
@@ -1567,7 +1585,7 @@
         "Zobrazit detaily kontaktu"
       ],
       "View headers": [
-        "Zobrazit hlavičku"
+        "Zobrazit hlavičky"
       ],
       "View HTML": [
         "Zobrazit HTML"
@@ -1734,10 +1752,10 @@
         "Označit zprávu"
       ],
       "Unread email": [
-        "Nepřečtená pošta"
+        "Nepřečtený e-mail"
       ],
       "Unstar conversation": [
-        "Odznačit konverzaci"
+        "Odebrat označení konverzace"
       ],
       "Unstar message": [
         "Odebrat zprávě hvězdičku"
@@ -2367,7 +2385,7 @@
         "${ participantName } přijal(a) pozvání na tuto událost."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } přijatá pozvánka a navržen nový čas pro výskyt této události. Odpověď a návrhy jsou zastaralé."
+        "${ participantName } odmítl(a) vaše pozvání a navrhl(a) nový čas pro jeden výskyt této události. Odpověď a návrh jsou zastaralé."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } přijal(a) vaše pozvání a navrhl(a) nový čas této události. Odpověď a návrh je zastaralý."
@@ -2424,7 +2442,7 @@
         "${ participantName } navrhl/a nový čas pro tuto událost. Tento návrh je zastaralý. Událost již neexistuje ve vašem kalendáři."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
-        "${ participantName } navrhl/a nový čas pro tuto událost. Tento návrh je zastaralý. Nemáte žádné kalendáře."
+        "${ participantName } navrhl(a) nový čas pro tuto událost. Tento návrh je zastaralý. Nemáte žádné kalendáře."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } předběžně přijal(a) pozvání a navrhl(a) nový čas pro jeden výskyt události. Odpověď a návrh jsou zastaralé."
@@ -2451,7 +2469,7 @@
         "${ participantName } navrhl/a nový čas pro jeden výskyt této události."
       ],
       "${ participantName } proposed a new time for this event.": [
-        "${ participantName } navrhl/a nový čas pro tuto událost."
+        "${ participantName } navrhl(a) nový čas pro tuto událost."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } předběžně přijal(a) pozvání a navrhl(a) nový čas pro jeden výskyt této události."
@@ -2526,7 +2544,7 @@
         "Toto pozvání jste již přijali."
       ],
       "You already declined this invitation.": [
-        "Toto pozvání jste již odmítl."
+        "Toto pozvání jste již odmítli."
       ],
       "You already tentatively accepted this invitation.": [
         "Toto pozvání jste již předběžně přijali."
@@ -2850,7 +2868,7 @@
         "Koncově šifrováno. ${ warningsText }"
       ],
       "PGP-encrypted": [
-        "PGP-šifrováno"
+        "Šifrované pomocí PGP"
       ],
       "PGP-encrypted to verified recipient": [
         "PGP-šifrováno ověřenému příjemci"
@@ -2867,7 +2885,7 @@
     },
     "Composer size": {
       "Maximized": [
-        "Maximální"
+        "Maximalizováno"
       ],
       "Normal": [
         "Normální"
@@ -4070,6 +4088,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Zjednodušte synchronizaci a plánování pomocí sdílených kalendářů."
       ],
+      "This view shows messages sent to the following addresses:": [
+        "Toto zobrazení zobrazuje zprávy odeslané na následující adresy:"
+      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Pro pokračování v používání asistenta psaní, ho přidejte k vašemu předplatnému."
       ],
@@ -4628,7 +4649,7 @@
         "Sloučit alespoň ${ calendarsToFixCount } kalendářů s ${ BRAND_NAME } existujícími kalendáři"
       ],
       "Message needs to be sent first": [
-        "Nejdříve je potřeba zaslat zprávu"
+        "Nejdříve je potřeba odeslat zprávu"
       ],
       "Message processing error.": [
         "Chyba při zpracování zprávy."
@@ -4769,7 +4790,7 @@
         "Problém se stažením asistenta psaní. Pokud používáte soukromý režim, zkuste použít normální režim prohlížení nebo spusťte asistenta psaní na serverech."
       ],
       "Problem downloading the writing assistant. Please try again.": [
-        "Problém při stahování asistenta psaní. Zkuste to prosím znovu."
+        "Problém se stažením asistenta psaní. Zkuste to prosím znovu."
       ],
       "Problem loading the writing assistant to your device. Please try again.": [
         "Problém při načítání asistenta psaní do vašeho zařízení. Zkuste to prosím znovu."
@@ -5734,6 +5755,9 @@
       "Checklist complete": [
         "Kontrolní seznam je kompletní"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Nárokovat adresu ${ BRAND_NAME }"
+      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Pro zdvojnásobení svého úložného prostoru dokončete vše na tomto kontrolním seznamu během ${ daysCount }."
       ],
@@ -6309,6 +6333,12 @@
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "Správce hesel ${ BRAND_NAME } vám umožňuje vytvářet, ukládat a automaticky vyplňovat hesla, takže je nikdy nebudete muset resetovat."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } vyžaduje ${ BRAND_NAME } adresu pro bezpečnou synchronizaci událostí a šifrování. ${ claimAddressButton }"
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } vyžaduje ${ BRAND_NAME } adresu pro bezpečnou synchronizaci událostí a šifrování. Získejte vaši bezplatnou ${ MAIL_APP_NAME } adresu nyní."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nový kalendář",
         "${ calendarsToBeCreatedCount } nové kalendáře",
@@ -6799,7 +6829,7 @@
         "Jste si jistí, že chcete zahodit váš import?"
       ],
       "Are you sure you want to move all messages in this location to archive?": [
-        "Určitě chcete všechny zprávy v tomto umístění přesunout do archivu?"
+        "Jste si jisti, že chcete přesunout všechny zprávy odtud do archivu?"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
         "Opravdu chcete všechny zprávy v tomto umístění přesunout do koše?"
@@ -6910,7 +6940,7 @@
         "Kontroluji kontakt ${ progress } z ${ max }..."
       ],
       "Clear browser data": [
-        "Vymazat data prohlížeče"
+        "Vyčistit data prohlížeče"
       ],
       "Clear data": [
         "Smazat data"
@@ -7181,6 +7211,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Dopřejte si rychlejší a soustředěnější správu e-mailů pomocí desktopové aplikace."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Zajistěte si plně soukromou a šifrovanou komunikaci. Získejte nyní vaši bezplatnou ${ BRAND_NAME } emailovou adresu."
       ],
       "Enter the code from your authenticator app": [
         "Zadejte kód z vaší ověřovací aplikace"
@@ -7552,13 +7585,13 @@
         "Zpráva bude odeslána ráno v čase ${ formattedTime }"
       ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
-        "Zpráva bude odeslána dne ${ dateString } v ${ formattedTime }"
+        "Zpráva bude odeslána dne ${ dateString } v(e) ${ formattedTime }"
       ],
       "Message will be sent today at ${ formattedTime }": [
-        "Zpráva bude odeslána dnes v ${ formattedTime }"
+        "Zpráva bude odeslána dnes v(e) ${ formattedTime }"
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
-        "Zpráva bude odeslána zítra v ${ formattedTime }"
+        "Zpráva bude odeslána zítra v(e) ${ formattedTime }"
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Zprávy, které byly v koši a spamu déle než 30 dní, budou automaticky smazány."
@@ -8056,7 +8089,7 @@
         "Předplatné vyprší: opětovně aktivujte dne ${ byDate } pro zachování vašich výhod tarifu ${ planName }. ${ reactivateLink }"
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
-        "Předplatné končí: Chcete-li si ponechat výhody svého ${ planName }, restartujte své předplatné v Apple App Store do ${ byDate }. ${ reactivateLink }"
+        "Předplatné končí: Chcete-li si ponechat výhody svého předplatného ${ planName }, restartujte své předplatné v Apple App Store do ${ byDate }. ${ reactivateLink }"
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Předplatné končí: Chcete-li si ponechat výhody svého předplatného ${ planName }, restartujte své předplatné v Obchodě Play do ${ byDate }. ${ reactivateLink }"
@@ -8233,16 +8266,16 @@
         "Tato zpráva bude přesunuta do konceptů, takže ji budete moci měnit. Bude potřeba znovu naplánovat její odeslání."
       ],
       "This message will be sent in the morning at ${ formattedTime }": [
-        "Tato zpráva bude odeslána ráno v ${ formattedTime }"
+        "Tato zpráva bude odeslána ráno v(e) ${ formattedTime }"
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
-        "Tato zpráva bude odeslána dne ${ dateString } v ${ formattedTime }"
+        "Tato zpráva bude odeslána dne ${ dateString } v(e) ${ formattedTime }"
       ],
       "This message will be sent shortly": [
         "Tato zpráva bude brzy odeslána"
       ],
       "This message will be sent today at ${ formattedTime }": [
-        "Tato zpráva bude odeslána dnes v ${ formattedTime }"
+        "Tato zpráva bude odeslána dnes v(e) ${ formattedTime }"
       ],
       "This message will be sent tomorrow at ${ formattedTime }": [
         "Tato zpráva bude odeslána zítra v ${ formattedTime }"
@@ -8254,7 +8287,7 @@
         "Platnost této zprávy vyprší v(ve) ${ value }"
       ],
       "This message will expire today at ${ value }": [
-        "Platnost této zprávy vyprší dnes v(ve) ${ value }"
+        "Platnost této zprávy vyprší dnes v(e) ${ value }"
       ],
       "This message will expire tomorrow at ${ value }": [
         "Platnost této zprávy vyprší zítra v(ve) ${ value }"
@@ -9356,7 +9389,7 @@
         "Hustota"
       ],
       "Did not follow instructions": [
-        "Neřídil se pokyny"
+        "Neřídil(a) se pokyny"
       ],
       "Do you have any suggestions for our team?": [
         "Máte pro náš tým nějaké návrhy?"
@@ -9778,6 +9811,9 @@
       "Upload picture": [
         "Nahrát obrázek"
       ],
+      "Username": [
+        "Uživatelské jméno"
+      ],
       "VAT": [
         "DPH"
       ],
@@ -10087,7 +10123,7 @@
         "Požádat o pozvánku"
       ],
       "Resume now": [
-        "Pokračovat nyní"
+        "Obnovit nyní"
       ],
       "Scheduled": [
         "Naplánováno"
@@ -12364,7 +12400,7 @@
         "Text"
       ],
       "To": [
-        "Do"
+        "Komu"
       ],
       "Type text or keyword": [
         "Zadejte text nebo klíčové slovo"
@@ -12663,7 +12699,7 @@
     },
     "Send email with changed preferences": {
       "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
-        "Kontakty pro následující adresy byly smazány, odpovídající volby šifrování byly tedy aktualizovány:"
+        "Kontakty pro následující adresy byly odstraněny, a proto byly odpovídajícím způsobem aktualizovány příslušné předvolby šifrování:"
       ]
     },
     "Send email with encryption disabled": {
@@ -12745,7 +12781,7 @@
         "Odesláno pomocí ${ MAIL_APP_NAME } se šifrováním s nulovým přístupem ověřeným příjemcům"
       ],
       "Sent by you with end-to-end encryption": [
-        "Odesláno Vámi s end-to-end šifrováním"
+        "Odesláno vámi s koncovým šifrováním"
       ],
       "Sent by you with end-to-end encryption to verified recipient": [
         "Odesláno vámi s koncovým šifrováním ověřenému příjemci",
@@ -14120,7 +14156,7 @@
         "Konverzace byla přesunuta do spamu a odesílatel byl přidán do vašeho seznamu spamů."
       ],
       "Conversation removed from ${ labelName }.": [
-        "Konverzace odstraněna z ${ labelName }."
+        "Konverzace odebrána z ${ labelName }."
       ],
       "Conversation removed from Starred.": [
         "Konverzaci byla odebrána hvězdička."
@@ -14660,6 +14696,9 @@
       "Change password": [
         "Změnit heslo"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Získejte vaši ${ MAIL_APP_NAME } adresu."
+      ],
       "Clearing data": [
         "Mazání dat"
       ],
@@ -14893,6 +14932,9 @@
       ],
       "Forward": [
         "Přeposlat"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Získat plný přístup do ${ CALENDAR_APP_NAME }"
       ],
       "Get more from your VPN": [
         "Získejte více ze své VPN"
@@ -15475,6 +15517,9 @@
       ],
       "Your account is protected": [
         "Váš účet je chráněn"
+      ],
+      "Your addresses": [
+        "Vaše adresy"
       ],
       "Your changes are not synced yet": [
         "Vaše změny zatím nejsou synchronizovány"
