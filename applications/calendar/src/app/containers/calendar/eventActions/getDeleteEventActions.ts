@@ -33,8 +33,6 @@ import getRecurringDeleteType from './getRecurringDeleteType';
 import { getUpdatedDeleteInviteActions } from './inviteActions';
 import { getOriginalEvent } from './recurringHelper';
 
-const { DECLINE_INVITATION, DECLINE_DISABLED, CANCEL_INVITATION, CANCEL_DISABLED } = INVITE_ACTION_TYPES;
-
 const getDeleteSingleEventActionsHelper = async ({
     oldEventData,
     oldEditEventData,
@@ -62,13 +60,13 @@ const getDeleteSingleEventActionsHelper = async ({
         inviteActions: updatedInviteActions,
         isAttendee,
     });
-    if (inviteType === CANCEL_INVITATION) {
+    if (inviteType === INVITE_ACTION_TYPES.CANCEL_INVITATION) {
         const { inviteActions: cleanInviteActions } = await sendIcs({
             inviteActions: updatedInviteActions,
             cancelVevent: oldVevent,
         });
         updatedInviteActions = cleanInviteActions;
-    } else if (inviteType === DECLINE_INVITATION && sendCancellationNotice && oldVevent) {
+    } else if (inviteType === INVITE_ACTION_TYPES.DECLINE_INVITATION && sendCancellationNotice && oldVevent) {
         const { inviteActions: cleanInviteActions, timestamp } = await sendIcs({
             inviteActions: updatedInviteActions,
             vevent: oldVevent,
@@ -212,8 +210,12 @@ const getDeleteEventActions = async ({
         inviteActions: inviteActionsWithSharedData,
         oldVevent: originalEditEventData.veventComponent,
     });
-    const isDeleteInvitation = [DECLINE_INVITATION, DECLINE_DISABLED].includes(updatedDeleteInviteActions.type);
-    const isCancelInvitation = [CANCEL_INVITATION, CANCEL_DISABLED].includes(updatedDeleteInviteActions.type);
+    const isDeleteInvitation = [INVITE_ACTION_TYPES.DECLINE_INVITATION, INVITE_ACTION_TYPES.DECLINE_DISABLED].includes(
+        updatedDeleteInviteActions.type
+    );
+    const isCancelInvitation = [INVITE_ACTION_TYPES.CANCEL_INVITATION, INVITE_ACTION_TYPES.CANCEL_DISABLED].includes(
+        updatedDeleteInviteActions.type
+    );
     const selfAttendeeToken = getSelfAttendeeToken(originalEditEventData.veventComponent, addresses);
     const isCalendarDisabled = getIsCalendarDisabled(oldCalendarData);
 

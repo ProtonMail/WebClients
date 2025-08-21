@@ -11,8 +11,6 @@ import type { CalendarsEventsCache } from './eventStore/interface';
 import type { InteractiveState, SharedViewProps, TargetEventData, TargetMoreData, TimeGridRef } from './interface';
 import CalendarSearchView from './search/CalendarSearchView';
 
-const { DAY, WEEK, MONTH, MAIL, DRIVE, SEARCH } = VIEWS;
-
 interface Props extends SharedViewProps {
     calendars: VisualCalendar[];
     calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
@@ -77,7 +75,7 @@ const CalendarView = ({
     isDrawerApp,
     ...rest
 }: Props) => {
-    if ([DAY, WEEK, MAIL, DRIVE].includes(view)) {
+    if ([VIEWS.DAY, VIEWS.WEEK, VIEWS.MAIL, VIEWS.DRIVE].includes(view)) {
         return (
             <TimeGrid
                 tzid={tzid}
@@ -108,7 +106,7 @@ const CalendarView = ({
             />
         );
     }
-    if (view === MONTH) {
+    if (view === VIEWS.MONTH) {
         return (
             <DayGrid
                 tzid={tzid}
@@ -131,7 +129,7 @@ const CalendarView = ({
             />
         );
     }
-    if (view === SEARCH) {
+    if (view === VIEWS.SEARCH) {
         return (
             <CalendarSearchView
                 calendars={calendars}

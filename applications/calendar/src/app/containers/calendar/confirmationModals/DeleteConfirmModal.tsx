@@ -7,10 +7,8 @@ import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import type { InviteActions, RecurringActionData } from '../../../interfaces/Invite';
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
 
-const { DECLINE_INVITATION, DECLINE_DISABLED, CANCEL_INVITATION, CANCEL_DISABLED } = INVITE_ACTION_TYPES;
-
 const getTexts = ({ type, sendCancellationNotice }: InviteActions) => {
-    if (type === DECLINE_INVITATION && sendCancellationNotice) {
+    if (type === INVITE_ACTION_TYPES.DECLINE_INVITATION && sendCancellationNotice) {
         return {
             title: c('Title').t`Delete event`,
             submit: c('Action').t`Delete`,
@@ -18,7 +16,7 @@ const getTexts = ({ type, sendCancellationNotice }: InviteActions) => {
                 .t`The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?`,
         };
     }
-    if (type === DECLINE_DISABLED && sendCancellationNotice) {
+    if (type === INVITE_ACTION_TYPES.DECLINE_DISABLED && sendCancellationNotice) {
         return {
             title: c('Title').t`Delete event`,
             submit: c('Action').t`Delete`,
@@ -26,7 +24,7 @@ const getTexts = ({ type, sendCancellationNotice }: InviteActions) => {
                 .t`The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?`,
         };
     }
-    if (type === CANCEL_INVITATION) {
+    if (type === INVITE_ACTION_TYPES.CANCEL_INVITATION) {
         return {
             title: c('Title').t`Delete event`,
             submit: c('Action').t`Delete`,
@@ -34,7 +32,7 @@ const getTexts = ({ type, sendCancellationNotice }: InviteActions) => {
                 .t`A cancellation email will be sent to the event participants. Would you like to delete this event?`,
         };
     }
-    if (type === CANCEL_DISABLED) {
+    if (type === INVITE_ACTION_TYPES.CANCEL_DISABLED) {
         return {
             title: c('Title').t`Delete event`,
             submit: c('Action').t`Delete`,

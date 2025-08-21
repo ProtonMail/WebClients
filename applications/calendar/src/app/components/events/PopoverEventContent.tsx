@@ -56,8 +56,6 @@ type AttendeeViewModel = {
 type GroupedAttendees = {
     [key: string]: AttendeeViewModel[];
 };
-const { ACCEPTED, DECLINED, TENTATIVE, NEEDS_ACTION } = ICAL_ATTENDEE_STATUS;
-
 interface Props {
     calendar: VisualCalendar;
     model: EventModelReadView;
@@ -190,10 +188,10 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
                 return acc;
             },
             {
-                [ACCEPTED]: [],
-                [DECLINED]: [],
-                [TENTATIVE]: [],
-                [NEEDS_ACTION]: [],
+                [ICAL_ATTENDEE_STATUS.ACCEPTED]: [],
+                [ICAL_ATTENDEE_STATUS.DECLINED]: [],
+                [ICAL_ATTENDEE_STATUS.TENTATIVE]: [],
+                [ICAL_ATTENDEE_STATUS.NEEDS_ACTION]: [],
                 other: [],
             }
         );
@@ -202,10 +200,10 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
         return (
             <ul className="unstyled m-0">
                 {[
-                    ...groupedAttendees[ACCEPTED],
-                    ...groupedAttendees[TENTATIVE],
-                    ...groupedAttendees[DECLINED],
-                    ...groupedAttendees[NEEDS_ACTION],
+                    ...groupedAttendees[ICAL_ATTENDEE_STATUS.ACCEPTED],
+                    ...groupedAttendees[ICAL_ATTENDEE_STATUS.TENTATIVE],
+                    ...groupedAttendees[ICAL_ATTENDEE_STATUS.DECLINED],
+                    ...groupedAttendees[ICAL_ATTENDEE_STATUS.NEEDS_ACTION],
                     ...groupedAttendees.other,
                 ].map(
                     ({ icon, name, comment, title, initials, tooltip, extraText, email, contactID, isCurrentUser }) => (
@@ -238,15 +236,24 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
     const organizerPartstatIcon = organizerPartstat ? <AttendeeStatusIcon partstat={organizerPartstat} /> : null;
 
     const groupedReplies = {
-        [ACCEPTED]: { count: groupedAttendees[ACCEPTED].length, text: c('Event reply').t`yes` },
-        [TENTATIVE]: { count: groupedAttendees[TENTATIVE].length, text: c('Event reply').t`maybe` },
-        [DECLINED]: { count: groupedAttendees[DECLINED].length, text: c('Event reply').t`no` },
-        [NEEDS_ACTION]: {
+        [ICAL_ATTENDEE_STATUS.ACCEPTED]: {
+            count: groupedAttendees[ICAL_ATTENDEE_STATUS.ACCEPTED].length,
+            text: c('Event reply').t`yes`,
+        },
+        [ICAL_ATTENDEE_STATUS.TENTATIVE]: {
+            count: groupedAttendees[ICAL_ATTENDEE_STATUS.TENTATIVE].length,
+            text: c('Event reply').t`maybe`,
+        },
+        [ICAL_ATTENDEE_STATUS.DECLINED]: {
+            count: groupedAttendees[ICAL_ATTENDEE_STATUS.DECLINED].length,
+            text: c('Event reply').t`no`,
+        },
+        [ICAL_ATTENDEE_STATUS.NEEDS_ACTION]: {
             count:
                 attendeesWithoutOrganizer.length -
-                (groupedAttendees[ACCEPTED].length +
-                    groupedAttendees[TENTATIVE].length +
-                    groupedAttendees[DECLINED].length +
+                (groupedAttendees[ICAL_ATTENDEE_STATUS.ACCEPTED].length +
+                    groupedAttendees[ICAL_ATTENDEE_STATUS.TENTATIVE].length +
+                    groupedAttendees[ICAL_ATTENDEE_STATUS.DECLINED].length +
                     groupedAttendees.other.length),
             text: c('Event reply').t`pending`,
         },

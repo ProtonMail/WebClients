@@ -2,8 +2,6 @@ import { c } from 'ttag';
 
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 
-const { DAY, WEEK, MONTH, YEAR, AGENDA, CUSTOM, MAIL, DRIVE, SEARCH } = VIEWS;
-
 export const getNavigationArrowsText = (view: VIEWS) => {
     const dayText = {
         previous: c('Action').t`Previous day`,
@@ -23,27 +21,27 @@ export const getNavigationArrowsText = (view: VIEWS) => {
     };
 
     const previous = {
-        [DAY]: dayText.previous,
-        [WEEK]: weekText.previous,
-        [MONTH]: monthText.previous,
-        [AGENDA]: monthText.previous,
-        [CUSTOM]: monthText.previous,
-        [YEAR]: yearText.previous,
-        [MAIL]: weekText.previous,
-        [DRIVE]: weekText.previous,
-        [SEARCH]: weekText.previous,
+        [VIEWS.DAY]: dayText.previous,
+        [VIEWS.WEEK]: weekText.previous,
+        [VIEWS.MONTH]: monthText.previous,
+        [VIEWS.AGENDA]: monthText.previous,
+        [VIEWS.CUSTOM]: monthText.previous,
+        [VIEWS.YEAR]: yearText.previous,
+        [VIEWS.MAIL]: weekText.previous,
+        [VIEWS.DRIVE]: weekText.previous,
+        [VIEWS.SEARCH]: weekText.previous,
     };
 
     const next = {
-        [DAY]: dayText.next,
-        [WEEK]: weekText.next,
-        [MONTH]: monthText.next,
-        [AGENDA]: monthText.next,
-        [CUSTOM]: monthText.next,
-        [YEAR]: yearText.next,
-        [MAIL]: weekText.next,
-        [DRIVE]: weekText.next,
-        [SEARCH]: weekText.next,
+        [VIEWS.DAY]: dayText.next,
+        [VIEWS.WEEK]: weekText.next,
+        [VIEWS.MONTH]: monthText.next,
+        [VIEWS.AGENDA]: monthText.next,
+        [VIEWS.CUSTOM]: monthText.next,
+        [VIEWS.YEAR]: yearText.next,
+        [VIEWS.MAIL]: weekText.next,
+        [VIEWS.DRIVE]: weekText.next,
+        [VIEWS.SEARCH]: weekText.next,
     };
 
     return {

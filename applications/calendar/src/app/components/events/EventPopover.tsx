@@ -62,8 +62,6 @@ import useReadEvent from './useReadEvent';
 
 import './EventPopover.scss';
 
-const { ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
-
 interface Props {
     formatTime: (date: Date) => string;
     /**
@@ -163,7 +161,10 @@ const EventPopover = ({
 
     const handleDelete = () => {
         const sendCancellationNotice =
-            !eventReadError && !isCalendarDisabled && !isCancelled && [ACCEPTED, TENTATIVE].includes(userPartstat);
+            !eventReadError &&
+            !isCalendarDisabled &&
+            !isCancelled &&
+            [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.TENTATIVE].includes(userPartstat);
 
         if (model.isAttendee) {
             return withLoadingDelete(

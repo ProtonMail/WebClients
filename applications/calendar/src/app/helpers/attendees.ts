@@ -10,8 +10,6 @@ import type { RequireOnly, SimpleMap } from '@proton/shared/lib/interfaces/utils
 
 import type { DisplayNameEmail } from '../containers/calendar/interface';
 
-const { NEEDS_ACTION, DECLINED, ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
-
 export const modifyEventModelPartstat = (
     model: RequireOnly<EventModel, 'isAllDay'>,
     partstat: ICAL_ATTENDEE_STATUS,
@@ -24,12 +22,12 @@ export const modifyEventModelPartstat = (
     const notificationsKey = isAllDay ? 'fullDayNotifications' : 'partDayNotifications';
     if (modelWithPartstat.attendees && selfAttendee && selfAttendeeIndex !== undefined) {
         addDefaultNotifications =
-            [NEEDS_ACTION, DECLINED].includes(selfAttendee.partstat) &&
-            [ACCEPTED, TENTATIVE].includes(partstat) &&
+            [ICAL_ATTENDEE_STATUS.NEEDS_ACTION, ICAL_ATTENDEE_STATUS.DECLINED].includes(selfAttendee.partstat) &&
+            [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.TENTATIVE].includes(partstat) &&
             model[notificationsKey]?.length === 0;
         modelWithPartstat.attendees[selfAttendeeIndex].partstat = partstat;
     }
-    if (partstat === DECLINED) {
+    if (partstat === ICAL_ATTENDEE_STATUS.DECLINED) {
         return {
             ...modelWithPartstat,
             hasDefaultNotifications: false,

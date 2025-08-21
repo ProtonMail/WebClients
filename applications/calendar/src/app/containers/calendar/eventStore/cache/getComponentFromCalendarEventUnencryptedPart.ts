@@ -6,14 +6,16 @@ import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 
 import type { CalendarVcalVeventComponent, SharedVcalVeventComponent } from '../interface';
 
-const { CLEAR_TEXT, SIGNED } = CALENDAR_CARD_TYPE;
-
 const getComponentFromCalendarEventUnencryptedPart = (eventData: CalendarEvent): SharedVcalVeventComponent => {
-    const unencryptedSharedPart = eventData.SharedEvents.find(({ Type }) => [CLEAR_TEXT, SIGNED].includes(Type));
+    const unencryptedSharedPart = eventData.SharedEvents.find(({ Type }) =>
+        [CALENDAR_CARD_TYPE.CLEAR_TEXT, CALENDAR_CARD_TYPE.SIGNED].includes(Type)
+    );
     if (!unencryptedSharedPart) {
         throw new Error('Missing unencrypted shared part');
     }
-    const unencryptedCalendarPart = eventData.CalendarEvents.find(({ Type }) => [CLEAR_TEXT, SIGNED].includes(Type));
+    const unencryptedCalendarPart = eventData.CalendarEvents.find(({ Type }) =>
+        [CALENDAR_CARD_TYPE.CLEAR_TEXT, CALENDAR_CARD_TYPE.SIGNED].includes(Type)
+    );
     try {
         const sharedEvent = parse(unwrap(unencryptedSharedPart.Data)) as SharedVcalVeventComponent;
         const calendarEvent = unencryptedCalendarPart
