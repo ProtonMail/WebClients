@@ -1058,6 +1058,9 @@
       "Enter your own password (as organization admin).": [
         "Ingrese su propia contraseña (como administrador de la organización)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Ingrese su propia contraseña (como contacto de confianza)."
+      ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "Para obtener información adicional y eliminar restricciones, inicie sesión en ${ mailLink }."
       ],
@@ -1152,6 +1155,9 @@
       ],
       "Your password (admin)": [
         "Su contraseña (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Su contraseña (contacto de confianza)"
       ]
     },
     "Link": {
@@ -1543,6 +1549,9 @@
     "Title": {
       "Account restricted": [
         "Cuenta restringida"
+      ],
+      "Account temporarily locked": [
+        "Cuenta temporalmente bloqueada"
       ],
       "Enter 2FA code": [
         "Ingrese el código 2FA"

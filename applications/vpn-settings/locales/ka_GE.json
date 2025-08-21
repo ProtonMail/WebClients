@@ -141,6 +141,12 @@
       "Chat with us": [
         "დაგველაპარაკეთ"
       ],
+      "Check import progress": [
+        "შემოტანის პროცესის შემოწმება"
+      ],
+      "Choose a file or drag it here": [
+        "აირჩიეთ ფაილი ან გადმოათრიეთ აქ"
+      ],
       "Choose my own password": [
         "ჩემი პაროლის არჩევა"
       ],
@@ -186,6 +192,9 @@
       "Continue anyway": [
         "მაინც გაგრძელება"
       ],
+      "Continue import": [
+        "შემოტანის გაგრძელება"
+      ],
       "Continue with this password": [
         "ამ პაროლის გამოყენება"
       ],
@@ -221,6 +230,12 @@
       ],
       "Current plan": [
         "მიმდინარე ტარიფი"
+      ],
+      "Customize": [
+        "მორგება"
+      ],
+      "Customize import": [
+        "შემოტანის მორგება"
       ],
       "Customize plan": [
         "გეგმის მორგება"
@@ -332,6 +347,9 @@
       ],
       "Edit invoice note": [
         "ინვოისის შენიშვნის ჩასწორება"
+      ],
+      "Edit label": [
+        "ჭდის ჩასწორება"
       ],
       "Edit name": [
         "სახელის ჩასწორება"
@@ -459,6 +477,18 @@
       "Hide plan features": [
         "ტარიფის თვისებების დამალვა"
       ],
+      "Import": [
+        "შემოტანა"
+      ],
+      "Import calendars": [
+        "კალენდრების შემოტანა"
+      ],
+      "Import contacts": [
+        "კონტაქტების შემოტანა"
+      ],
+      "Import emails": [
+        "ელფოსტის შემოტანა"
+      ],
       "Import emails, calendars, contacts": [
         "ელფოსტების, კალენდრების, კონტაქტების შემოტანა"
       ],
@@ -507,8 +537,14 @@
       "Manage advanced account protections": [
         "ანგარიშის დამატებითი დაცვის მართვა"
       ],
+      "Manage folders": [
+        "საქაღალდეების მართვა"
+      ],
       "Manage groups": [
         "ჯგუფების მართვა"
+      ],
+      "Manage labels": [
+        "ჭდეების მართვა"
       ],
       "Manage subscription": [
         "გამოწერის მართვა"
@@ -588,6 +624,12 @@
       "Publish changes": [
         "ცვლილებების გამოცემა"
       ],
+      "Quit": [
+        "გასვლა"
+      ],
+      "Reconnect": [
+        "თავიდან დაკავშირება"
+      ],
       "Recover data": [
         "მონაცემების აღდგენა"
       ],
@@ -659,6 +701,9 @@
       ],
       "Reset password": [
         "პაროლის თავიდან დაყენება"
+      ],
+      "Reset to default": [
+        "ნაგულისხმებზე დაბრუნება"
       ],
       "Restore": [
         "აღდგენა"
@@ -819,11 +864,20 @@
       "Skip": [
         "გამოტოვება"
       ],
+      "Skip verification": [
+        "შემოწმების გამოტოვება"
+      ],
       "Spam": [
         "სპამი"
       ],
+      "Start import": [
+        "შემოტანის დაწყება"
+      ],
       "Start live chat": [
         "ცოცხალი ჩატის გაშვება"
+      ],
+      "Stay": [
+        "დარჩენა"
       ],
       "Stop using single sign-on": [
         "SSO-ის გამოყენების შეწყვეტა"
@@ -1093,6 +1147,14 @@
         "ადმინისტრატორი"
       ]
     },
+    "Alert": {
+      "By leaving now, some contacts may not be imported": [
+        "თუ ახლა გახვალთ, თქვენი ზოგიერთი კონტაქტი შეიძლება, ვერ შემოვიტანოთ"
+      ],
+      "By leaving now, some events may not be imported": [
+        "თუ ახლა გახვალთ, ზოგი მოვლენა შეიძლება შემოტანილი არ იყოს"
+      ]
+    },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "გაითიშება ყველა რაუტერი და კლიენტი, რომელიც ამ სერტიფიკატს იყენებს."
@@ -1238,6 +1300,26 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "აიყვანეთ ელფოსტის წარმადობა ახალ დონეებზე. მიეცით საშუალება ${ BRAND_NAME } Scribe-ს, რომ დაგეხმაროთ თქვენი ელფოსტების წერაში, პასუხში და გადამოწმებაში."
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "ცარიელი ICS ფაილი"
+      ],
+      "Invalid event": [
+        "არასწორი მოვლენა"
+      ],
+      "Invalid ICS file": [
+        "არასწორი ICS ფაილი"
+      ],
+      "Invalid method": [
+        "არასწორი მეთოდი"
+      ],
+      "Unsupported calendar component": [
+        "კალენდრის მხარდაუჭერელი კომპონენტი"
+      ],
+      "Unsupported event": [
+        "გაუთვალისწინებელი შემთხვევა"
       ]
     },
     "b2b_trials_Action": {
@@ -1798,6 +1880,14 @@
         "მარწყვისფერი"
       ]
     },
+    "Confirm modal title": {
+      "Quit import customization?": [
+        "დავამთავროთ შემოტანის მორგება?"
+      ],
+      "Quit import?": [
+        "შევწყვიტო შემოტანა?"
+      ]
+    },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ გადახდის ამ მეთოდის წაშლა?"
@@ -1806,6 +1896,94 @@
     "Confirmation title": {
       "Delete payment method": [
         "გადახდის მეთოდის წაშლა"
+      ]
+    },
+    "Contact field label": {
+      "Address": [
+        "მისამართი"
+      ],
+      "Anniversary": [
+        "აღნიშვნა"
+      ],
+      "Birthday": [
+        "დაბადების დღე"
+      ],
+      "Display name": [
+        "საჩვენებელი სახელი"
+      ],
+      "Email": [
+        "ელ-ფოსტა"
+      ],
+      "First name": [
+        "სახელი"
+      ],
+      "Gender": [
+        "სქესი"
+      ],
+      "Language": [
+        "ენა"
+      ],
+      "Last name": [
+        "გვარი"
+      ],
+      "Logo": [
+        "ლოგო"
+      ],
+      "Member": [
+        "წევრი"
+      ],
+      "Name": [
+        "სახელი"
+      ],
+      "Note": [
+        "შენიშვნა"
+      ],
+      "Organization": [
+        "ორგანიზაცია"
+      ],
+      "Phone": [
+        "ტელეფონი"
+      ],
+      "Photo": [
+        "ფოტო"
+      ],
+      "Role": [
+        "როლი"
+      ],
+      "Time zone": [
+        "დროის სარტყელი"
+      ],
+      "Title": [
+        "სათაური"
+      ],
+      "URL": [
+        "URL"
+      ]
+    },
+    "Contact type label": {
+      "Fax": [
+        "ფაქსი"
+      ],
+      "Main": [
+        "მთავარი"
+      ],
+      "Mobile": [
+        "მობილური"
+      ],
+      "Other": [
+        "სხვა"
+      ],
+      "Pager": [
+        "პეიჯერი"
+      ],
+      "Personal": [
+        "პირადი"
+      ],
+      "Work": [
+        "სამსახურის"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "CountriesStep:Info": {
@@ -2690,6 +2868,11 @@
         "/მომხმარებელი თვეში"
       ]
     },
+    "Default display name vcard": {
+      "Unknown": [
+        "უცნობი"
+      ]
+    },
     "Delete address prompt": {
       "Are you sure you want to delete this address?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ მისამართის წაშლა?"
@@ -2776,6 +2959,9 @@
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "წაახალისეთ 2FA-ის გამოყენება თქვენს ორგანიზაციაში დამატებითი უსაფრთხოებისთვის."
       ],
+      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        "მიმდინარეობს კონტაქტების დაშიფვრა და შემოტანა... ამას რამდენიმე წუთი შეიძლება დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "დარწმუნდით, რომ ორგანიზაციის მონაცემებთან წვდომა დაცულია მაშინაც კი, როცა თქვენი გუნდი ოფისში არაა, ან საჯარო WiFi-ს იყენებს."
       ],
@@ -2794,6 +2980,9 @@
       "If disabled, only admins will have access.": [
         "თუ გამორთულია, წვდომა, მხოლოდ, ადმინებს ექნებათ."
       ],
+      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
+        "როგორც ჩანს კონტაქტების სია, რომლის შემოტანასაც ცდილობთ, ჯგუფებსაც შეიცავს. გადახედეთ, გნებავთ თუ არა ამ ჯგუფების შემოტანა."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "იქონიეთ თქვენი ცხოვრების ნაწილები ცალ-ცალკე და საფოსტო ყუთი კი - დალაგებული, დამატებითი მისამართებით."
       ],
@@ -2809,8 +2998,30 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "გაამართივეთ გაზიარებული კალენდრების დაგეგმვა და სინქრონიზაცია."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV და VCF ფაილების შემოსატანად დარწმუნდით, რომ ფაილი ${ MAX_IMPORT_FILE_SIZE_STRING }-ზე ან ${ MAX_IMPORT_CONTACTS_STRING }-ზე მეტ კონტაქტს არ შეიცავს. თუ თქვენი ფაილი უფრო დიდია, დაყავით ის უფრო პატარა ფაილებად. ${ learnMoreLink }."
+      ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Google-დან ან Outlook-დან კონტაქტების შემოსატანად, ${ easySwitchLink }."
+      ],
       "To start, give your organization a name.": [
         "დასაწყებად, მიანიჭეთ თქვენს ორგანიზაიას სახელი."
+      ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "შეგიძლიათ, შემოიტანოთ ფაილები iCAL ფორმატში (ICS ფაილები). ფაილის მაქსიმალური ზომაა ${ MAX_IMPORT_FILE_SIZE_STRING } და შეიძლება შეიცავდეს ${ MAX_IMPORT_EVENTS_STRING }-მდე მოვლენას. თუ თქვენი ფაილი უფრო დიდია, სცადეთ, ის უფრო პატარა ფაილებად დახლიჩოთ."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
+      ]
+    },
+    "Description of the purpose of the import CSV modal": {
+      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
+        "ჩვენ ასევე ავტომატურად დავამთხვიეთ CSV-ის ველები vCard-ის ველებს. შეგიძლიათ, გადახედოთ და სურვილისამებრ შეცვალოთ."
+      ],
+      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
+        "თქვენს მიერ ატვირთულ CSV ფაილში ამოჩენილია შემდეგი ველები. მონიშნეთ ისინი, რომლების შემოტანაც გსურთ."
       ]
     },
     "Disable address prompt": {
@@ -3074,6 +3285,71 @@
         "თქვენ წარმატებით შესვედით სხვა მოწყობილობაზე"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "შენიშვნა:\n${ eventComment }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "აღწერა:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } გაუქმდა."
+      ],
+      "All events in this series were updated.": [
+        "ამ სერიაში ყველა მოვლენა განახლდა."
+      ],
+      "Here's what changed:": [
+        "აი, რა შეიცვალა:"
+      ],
+      "NOTE:": [
+        "შენიშვნა:"
+      ],
+      "This event occurrence was canceled.": [
+        "ამ მოვლენის მოხდენა გაუქმდა."
+      ],
+      "This event occurrence was updated.": [
+        "ამ მოვლენის მოხდენის დრო განახლდა."
+      ],
+      "This event was updated.": [
+        "ეს მოვლენა განახლდა."
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "როდის:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "როდის:\n${ formattedStart } (მთელი დღე)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "როდის:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "წაიშალა"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "მდებარეობა:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } დაეთანხმა ${ eventTitle }-ზე მოსაწვევს"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } უარყო ${ eventTitle }-ზე მოსაწვევი"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } ფრთხილად დაეთანხმა თქვენს მოსაწვევს მოვლენაზე ${ eventTitle }"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } დაემატა"
@@ -3103,6 +3379,26 @@
         "${ name } წარმატებით წაიშალა"
       ]
     },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "მოვლენის გაუქმება ${ formattedStart }-ზე"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "იმ მოვლენის გაუქმება, ${ formattedStart }-ზე რომ უნდა დაწყებულიყო"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "მოსაწვევი მოვლენაზე, რომელიც იწყება ${ formattedStart }-ზე"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "მოსაწვევი მოვლენაზე, რომელიც ${ formattedStart }-ზე იწყება"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "მოვლენის განახლება ${ formattedStart }-ზე"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "მოვლენის განახლება ${ formattedStart }-დან"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "გადამოწმების ელფოსტა გაგზავნილია ${ address }-თან"
@@ -3125,6 +3421,12 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. ასევე შეგიძლიათ, შეამოწმოთ ჩვენი ${ statusPageLink }"
       ],
+      "A group with this name already exists": [
+        "ჯგუფი ამ სახელით უკვე არსებობს"
+      ],
+      "Address primary private key not found": [
+        "მისამართის ძირითადი პირადი გასაღები ნაპოვნი არაა"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "შესაძლო სივრცე მთლიანად გაცემულია. შეამცირეთ სხვა მომხმარებლების მიერ მოხმარებული ადგილის რაოდენობა."
       ],
@@ -3140,6 +3442,9 @@
       "Authentication error.": [
         "ავთენტიკაციის შეცდომა."
       ],
+      "Calendar limit reached": [
+        "კალენდრის ლიმიტი"
+      ],
       "Checkout expired, please try again": [
         "გადახდის დრო გავიდა. თავიდან სცადეთ"
       ],
@@ -3152,6 +3457,14 @@
       "Couldn't load transactions. Please try again later.": [
         "ტრანზაქციების ჩატვირთვა შეუძლებელია. მოგვიანებით სცადეთ."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "მოხსენით მონიშვნა, სულ ცოტა, ${ calendarsToFixCount } კალენდარზე",
+        "მოხსენით მონიშვნა, სულ ცოტა, ${ calendarsToFixCount } კალენდარზე"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "მოხსენით მონიშვნა სულ ცოტა ${ calendarsToFixCount } კალენდარზე, ან",
+        "მოხსენით მონიშვნა სულ ცოტა ${ calendarsToFixCount } კალენდარზე, ან"
+      ],
       "Domain not available, try again later": [
         "დომენი ხელმიუწვდომელია. თავიდან სცადეთ"
       ],
@@ -3163,6 +3476,9 @@
       ],
       "Email address is not available": [
         "ელფოსტის მისამართი მიუწვდომელია"
+      ],
+      "Email address is required": [
+        "ელფოსტის მისამართი აუცილებელია"
       ],
       "Email is not valid": [
         "ელფოსტა არასწორია"
@@ -3188,8 +3504,14 @@
       "File too large. Your logo must be 30 KB or smaller.": [
         "ფაილი მეტისმეტად დიდია. ლოგო 30 კბ ან უფრო მცირე ზომის უნდა იყოს."
       ],
+      "Folder name cannot be empty.": [
+        "საქაღალდის სახელი ცარიელი არ შეიძლება იყოს."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "თუ ვადა თქვენს TV-ზე უკვე უკვე გავიდა, დააწკაპუნეთ განახლებაზე თქვენს TV-ზე და კოდი თავიდან შეიყვანეთ."
+      ],
+      "IMAP server is required": [
+        "IMAP სერვერის მითითება აუცილებელია"
       ],
       "Impossible to create the gateway": [
         "რაუტერის შექმნა შეუძლებელია"
@@ -3242,6 +3564,9 @@
       "Invalid invitation link": [
         "არასწორი მოსაწვევის ბმული"
       ],
+      "Invalid name": [
+        "არასწორი სახელი"
+      ],
       "Invalid postal code": [
         "არასწორი საფოსტო კოდი"
       ],
@@ -3250,6 +3575,16 @@
       ],
       "Invalid ZIP code": [
         "არასწორი ZIP კოდი"
+      ],
+      "Label name cannot be empty.": [
+        "ჭდის სახელი ცარიელი არ შეიძლება იყოს."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "${ calendarsToFixCount } კალენდართან შერწყმისთვის, სულ ცოტა, ${ BRAND_NAME }-ის კალენდარი უნდა გქონდეთ",
+        "${ calendarsToFixCount } კალენდართან შერწყმისთვის, სულ ცოტა, ${ BRAND_NAME }-ის კალენდარი უნდა გქონდეთ"
+      ],
+      "Missing key packet": [
+        "აკლია საკვანძო პაკეტი"
       ],
       "Name already exists": [
         "სახელი უკვე არსებობს"
@@ -3269,6 +3604,9 @@
       "No image selected": [
         "გამოსახულება არჩეული არაა"
       ],
+      "No valid address found": [
+        "სწორი მისამართები ნაპოვნი არაა"
+      ],
       "Not a valid number": [
         "არასწორი ნომერი"
       ],
@@ -3280,6 +3618,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "არაკონფიდენციალური მომხმარებლების შესაქმნელად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
+      ],
+      "Password is required": [
+        "პაროლი აუცილებელია"
       ],
       "Passwords do not match": [
         "პაროლები არ ემთხვევა"
@@ -3326,6 +3667,10 @@
       "Please enter ZIP code": [
         "შეიყვანეთ ZIP კოდი"
       ],
+      "Please fix the highlighted conflict to proceed.": [
+        "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტი.",
+        "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტები."
+      ],
       "Please generate keys before you try to change your password": [
         "პაროლის შეცვლამდე საჭიროა გასაღებების გენერაცია"
       ],
@@ -3371,8 +3716,17 @@
       "Please upload only 1 file": [
         "ატვირთეთ, მხოლოდ, ერთი ფაილი"
       ],
+      "Port is required": [
+        "პორტი აუცილებელია"
+      ],
       "Postal code is required": [
         "საფოსტო კოდი აუცილებელია"
+      ],
+      "Primary address key is not decrypted": [
+        "ძირითადი მისამართის გასაღები გაშიფრული არაა"
+      ],
+      "Primary address key is not decrypted.": [
+        "ძირითადი მისამართის გასაღები გაშიფრული არაა."
       ],
       "Process aborted": [
         "პროცესი გაჩერდა"
@@ -3382,6 +3736,21 @@
       ],
       "Signature verification failed": [
         "ხელმოწერის შემოწმების შეცდომა"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "თქვენი საქაღალდეების ზოგიერთი სახელი მიუწვდომელია. მათი სახელების გადასარქმევად მოირგეთ შემოტანის პროცესი."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "ზოგიერთი საქაღალდის სახელი ${ MAIL_APP_NAME }-ის სიმბოლოების მაქსიმალურ სიგრძეზე დიდია. ჩაასწორეთ ეს სახელები."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "თქვენი ჭდის ზოგიერთი სახელი დარეზერვებულია. მათი სახელების გადასარქმევად მოირგეთ შემოტანის პროცესი."
+      ],
+      "Some of your label names are unavailable. Please customize the import to edit these names.": [
+        "თქვენი ჭდეების ზოგიერთი სახელი მიუწვდომელია. მათი სახელების გადასარქმევად მოირგეთ შემოტანის პროცესი."
+      ],
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "ჭდეების ზოგიერთი სახელი ${ MAIL_APP_NAME }-ის სიმბოლოების მაქსიმალურ სიგრძეზე დიდია. ჩაასწორეთ ეს სახელები."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "რაღაც არასწორად მუშაობს. გასაგრძელებლად ${ refresh }. თუ ჯერ კიდევ ხედავთ შეცდომის შეტყობინებას, დაუკავშირდით ჩვენს ${ supportTeam }."
@@ -3407,11 +3776,26 @@
       "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
         "ფაილი მეტისმეტად პატარაა. მინიმალური ზომაა ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "საქაღალდის სახელი არასწორია. აირჩიეთ სხვა სახელი."
+      ],
+      "The folder name is too long. Please choose a different name.": [
+        "საქაღალდის სახელი ძალიან გრძელია. აირჩიეთ სხვა სახელი."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "ჭდის სახელი არასწორია. აირჩიეთ სხვა სახელი."
+      ],
+      "The label name is too long. Please choose a different name.": [
+        "ჭდის სახელი ძალიან გრძელია. აირჩიეთ სხვა სახელი."
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "დამატებადი თანხის მინიმალური რაოდენობაა ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "პოლიტიკის სახელი 3-40 სიმბოლოს უნდა შეიცავდეს."
+      ],
+      "There are too many folders in your external account. Please customize the import to delete some folders.": [
+        "თქვენს გარე ანგარიშზე, მეტისმეტად, ბევრი საქაღალდეა. გთხოვთ, ხელით მიუთითოთ შემოსატანი საქაღალდეები."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "ველი ${ maximumLength } დაშვებულ სიმბოლოს აჭარბებს."
@@ -3421,6 +3805,12 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "ეს ველი მოითხოვს, მინიმუმ, ${ minimumLength } სიმბოლოს."
+      ],
+      "This folder name is not available. Please choose a different name.": [
+        "საქაღალდის სახელი მიუწვდომელია. აირჩიეთ სხვა სახელი."
+      ],
+      "This label name is not available. Please choose a different name.": [
+        "ჭდის სახელი მიუწვდომელია. აირჩიეთ სხვა სახელი."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "იმისათვის, რომ არაკონფიდენციალური მომხმარებლის ანგარიშები შექმნათ და მათ ანგარიშებთან წვდომა გქონდეთ, თქვენი ადმინისტრატორის უფლებების აღდგენა დაგჭირდებათ."
@@ -3461,6 +3851,9 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "შემოწმების არასწორი კოდი. დარწმუნდით, რომ კოდი სწორად დააკოპირეთ და თავიდან სცადეთ. ცვლილებებს შეიძლება 24 საათამდე დასჭირდეს."
       ],
+      "You have reached the maximum number of calendars.": [
+        "თქვენ მიაღწიეთ კალენდრების მაქსიმალურ რაოდენობას."
+      ],
       "You have reached the number of contacts limit for your account": [
         "თქვენ მიაღწიეთ კონტაქტების რაოდენობის ზღვარს თქვენი ანგარიშისთვის"
       ],
@@ -3470,8 +3863,14 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "იყენებთ თქვენს სატარიფო გეგმაში შემავალ ყველა მომხმარებელს. ახალი მომხმარებლის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
       ],
+      "You must set a name": [
+        "სახელის დაყენება აუცილებელია"
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "ანგარიშს ან ორგანიზაციას გადაცილებული ინვოისი აქვს. საჭიროა ყველა ინვოისის გადახდა."
+      ],
+      "Your import will not be processed.": [
+        "თქვენი შემოტანა არ დამუშავდება."
       ],
       "ZIP code is required": [
         "საფოსტო კოდი აუცილებელია"
@@ -3480,6 +3879,132 @@
     "error": {
       "Select users to view their activity": [
         "აირჩიეთ მომხმარებლები მატი აქტივობების სანახავად"
+      ]
+    },
+    "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "თქვენი ფაილის ${ formattedFilename } წაკითხვისას მოხდა შეცდომა. არასწორი ფაილის ფორმატი."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "${ formattedFilename }-ის ატვირთვის შეცდომა. ასატვირთი ფაილს მაქსიმალური ზომაა ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "შეცდომა თქვენი ფაილის ატვირთვისას (${ formattedFilename }). დაშვებულია, მხოლოდ, ICS ფორმატის ფაილები."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "შეცდომა ფაილის ატვირთვისას. ფაილი არჩეული არაა."
+      ],
+      "An unexpected error occurred. Import must be restarted.": [
+        "მოულოდნელი შეცდომა. შემოტანა თავიდან უნდა დაიწყოთ."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "ფაილი ${ formattedFilename } ${ MAX_IMPORT_EVENTS }-ზე მეტ მოვლენას შეიცავს.",
+        "ფაილი ${ formattedFilename } ${ MAX_IMPORT_EVENTS }-ზე მეტ მოვლენას შეიცავს."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "თქვენს ფაილს ${ formattedFilename } არასწორი მეთოდი აქვს და მისი შემოტანა შეუძლებელია."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "თქვენს ფაილში ${ formattedFilename } შემოსატანი მოვლენები ნაპოვნი არაა."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "თქვენი ფაილი ${ formattedFilename } ცარიელია."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "თქვენი ფაილი ${ formattedFilename } კალენდარი არაა."
+      ]
+    },
+    "Error importing contact": {
+      "Encryption failed": [
+        "დაშიფრვის შეცდომა"
+      ],
+      "Missing FN property": [
+        "FN თვისება ვერ ვიპოვე"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard-ის ვერსია < 3.0 მხარდაუჭერელია"
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "თქვენი ფაილის ${ formattedFilename } წაკითხვისას მოხდა შეცდომა. არასწორი ფაილის ფორმატი."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "${ formattedFilename }-ის ატვირთვის შეცდომა. ასატვირთი ფაილს მაქსიმალური ზომაა ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "შეცდომა თქვენი ფაილის ატვირთვისას (${ formattedFilename }). არჩეული ფაილი .csv ან .vcf ფაილს არ წარმოადგენს"
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "შეცდომა ფაილის ატვირთვისას. ფაილი არჩეული არაა."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "ფაილი ${ formattedFilename } ${ MAX_IMPORT_CONTACTS_STRING }-ზე მეტ კონტაქტს შეიცავს."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "თქვენს ფაილში ${ formattedFilename } შემოსატანი კონტაქტები ნაპოვნი არაა."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "თქვენი ფაილი ${ formattedFilename } ცარიელია."
+      ]
+    },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "ცუდი ფორმატი. კომპონენტის წაკითხვა შეუძლებელია."
+      ],
+      "Calendar": [
+        "კალენდარი"
+      ],
+      "Component with wrong format": [
+        "კომპონენტი არასწორი ფორმატით"
+      ],
+      "Custom time zone": [
+        "მორგებული დროის ზონა"
+      ],
+      "Element": [
+        "ელემენტი"
+      ],
+      "Encryption failed": [
+        "დაშიფრვის შეცდომა"
+      ],
+      "Event": [
+        "მოვლენა"
+      ],
+      "Free-busy time information": [
+        "თავისუფალ-დაკავებულობის დროის ინფორმაცია"
+      ],
+      "Invalid event": [
+        "არასწორი მოვლენა"
+      ],
+      "Journal entry": [
+        "ჟურნალის ჩანაწერი"
+      ],
+      "Missing start time": [
+        "აკლია საწყისი დრო"
+      ],
+      "No UID, title or start time": [
+        "UID-ის, სათაურის ან დაწყების დროის გარეშე"
+      ],
+      "Notification out of bounds": [
+        "გაფრთხილება საზღვრებს მიღმაა"
+      ],
+      "Original recurring event could not be found": [
+        "საწყისი გამეორებადი მოვლენის მოვლა შეუძლებელია"
+      ],
+      "Time zone": [
+        "დროის სარტყელი"
+      ],
+      "Time zone component ignored": [
+        "დროის სარტყლის კომპონენტი გამოტოვებულია"
+      ],
+      "To-do entry": [
+        "გეგმის ელემენტი"
+      ],
+      "Unknown": [
+        "უცნობი"
+      ],
+      "Unsupported event": [
+        "გაუთვალისწინებელი შემთხვევა"
       ]
     },
     "Error importing users": {
@@ -3528,11 +4053,65 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "სერტიფიკატი ${ name } არ არსებობს ან გაუქმებულია"
+      ],
+      "Display name cannot be empty": [
+        "საჩვენებელი სახელი ცარიელი ვერ იქნება"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "გამოსახულება არჩეული არაა"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "გაუთვალისწინებელი შეცდომა"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "მიმაგრებული ICS ფაილის გაშიფვრა შეუძლებელია"
+      ],
+      "Attached ICS file could not be read": [
+        "მიმაგრებული ICS ფაილის წაკითხვა შეუძლებელია"
+      ],
+      "Invalid invitation": [
+        "არასწორი მოსაწვევი"
+      ],
+      "Invalid response": [
+        "არასწორი პასუხი"
+      ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "მოვლენის თქვენს კალენდარში დამატება შეუძლებელია. პასუხი გაგზავნილი არაა"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "თქვენს კალენდარში მოვლენის განახლება შეუძლებელია. პასუხი გაგზავნილი არაა"
+      ],
+      "Unsupported invitation": [
+        "გაუგებარი მოსაწვევი"
+      ],
+      "Unsupported response": [
+        "მხარდაუჭერელი პასუხი"
+      ],
+      "We could not cancel the event in your calendar": [
+        "თქვენს კალენდარში მოვლენის გაუქმება შეუძლებელია"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "თქვენი კალენდრიდან მოვლენის გამოთხოვნა შეუძლებელია"
+      ],
+      "We could not update the event in your calendar": [
+        "თქვენს კალენდარში მოვლენის განახლება შეუძლებელია"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "თქვენი პასუხი გაგზავნილია, მაგრამ კალენდარში მოვლენის ჩამატება არ მომხდარა"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "თქვენი პასუხი გაგზავნილია, მაგრამ კალენდარში მოვლენა არ განახლებულა"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(უსათაურო)"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4295,6 +4874,310 @@
         "SMS"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "კალენდრის დროის სარტყელი მხარდაუჭერელია"
+      ],
+      "Edited event not supported": [
+        "ჩასწორებული მოვლენა მხარდაჭერილი არაა"
+      ],
+      "End time out of bounds": [
+        "დასრულების დრო საზღვრებს მიღმაა"
+      ],
+      "Event validation failed": [
+        "მოვლენის შემოწმების შეცდომა"
+      ],
+      "Floating times not supported": [
+        "მცოცავი გრაფიკი მხარდაჭერილი არაა"
+      ],
+      "Malformed all-day event": [
+        "არასწორი მთელ-დღიანი მოვლენა"
+      ],
+      "Malformed end time": [
+        "არასწორი დასასრულის დრო"
+      ],
+      "Malformed recurring event": [
+        "არასწორი გამეორებადი მოვლენა"
+      ],
+      "Malformed start time": [
+        "არასწორი საწყისი დრო"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "დაშვებულია, მხოლოდ, გრეგორიანული კალენდარი"
+      ],
+      "Recurring event has no occurrences": [
+        "განმეორებადი მოვლენა ჯერ არ მომხდარა"
+      ],
+      "Recurring rule not supported": [
+        "გამეორების წესი მხარდაუჭერელია"
+      ],
+      "Start time out of bounds": [
+        "საწყისი დრო საზღვრებს მიღმაა"
+      ],
+      "Time zone not supported": [
+        "მხარდაუჭერელი დროის სარტყელი"
+      ]
+    },
+    "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } მოვლენა დაიშიფრა და ჩაემატა თქვენს კალენდარში",
+        "${ totalImported }/${ totalToImport } მოვლენა დაიშიფრა და ჩაემატა თქვენს კალენდარში"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "შეცდომა დაშიფვრისა და მოვლენაში დამატებისას. წარმატებით შემოტანილია ${ totalImported } კონტაქტი ${ totalToImport }-დან.",
+        "შეცდომა დაშიფვრისა და მოვლენაში დამატებისას. წარმატებით შემოტანილია ${ totalImported } კონტაქტი ${ totalToImport }-დან."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "თქვენი მოვლენის დაშიფვრისა და დამატებისას მოხდა შეცდომა. ვერცერთი მოვლენის იმპორტი ვერ მოხერხდა."
+      ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "მოვლენის შიფრაციისა და დამატების შეცდომა. მოვლენები შემოტანილი არ იქნება."
+      ],
+      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
+        "კონტაქტების დაშიფვრა და დამატება: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "მოვლენების დაშიფვრა და კალენდარში დამატება: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "მოვლენის შემოტანა წარმატებულია. შემოტანილი მოვლენა თქვენს კალენდარში გამოჩნდება."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "მოვლენების შემოტანა წარმატებულია. შემოტანილი მოვლენები თქვენს კალენდარში გამოჩნდება."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "შემოტანის დამთავრებამდე ამ ჩანართს ნუ დახურავთ."
+      ]
+    },
+    "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME }-ს მოვლენების, დეტალებისა და ფორმატების ზოგიერთი ტიპის მხარდაჭერა ჯერ არ გააჩნია."
+      ],
+      "vCard versions < 3.0": [
+        "vCard-ის ვერსია < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "შემოტანილი მოსაწვევები გამოჩნდება ${ CALENDAR_APP_NAME }-ში, როგორც მარტივი მოვლენა ორგანიზატორის და მონაწილეების დეტალების გარეშე. მოვლენის განახლებების მისაღებად და მონაწილეების სანახავად სთხოვეთ ორგანიზატორებს, ${ BRAND_NAME }-ის ელფოსტის მისამართის გამოყენებით მოგიწვიონ."
+      ],
+      "This file contains an event invitation:": [
+        "ეს ფაილი შეიცავს მოსაწვევს:",
+        "ეს ფაილი შეიცავს მოსაწვევებს:"
+      ],
+      "This file contains an invitation response:": [
+        "ეს ფაილი მოსაწვევზე პასუხს შეიცავს:",
+        "ეს ფაილი მოსაწვევზე პასუხს შეიცავს:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "ეს ფაილი შეიცავს მონაცემებს, რომელიც ვერ შემოგვაქვს:"
+      ]
+    },
+    "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } კონტაქტი დაშიფრული და დამატებულია თქვენი კონტაქტების სიაში",
+        "${ totalImported }/${ totalToImport } კონტაქტი დაშიფრული და დამატებულია თქვენი კონტაქტების სიაში"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "შეცდომა თქვენი კონტაქტის დაშიფვრისა და დამატებისას. კონტაქტი არ შემოტანილა."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "შეცდომა დაშიფვრისა და კონტაქტებში დამატებისას. წარმატებით შემოტანილია ${ totalImported } კონტაქტი ${ totalToImport }-დან."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "შეცდომა თქვენი კონტაქტების დაშიფვრისა და დამატებისას. კონტაქტის შემოტანა ვერ მოხერხდა."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "კონტაქტი წარმატებით იქნა შემოტანილი. კონტაქტი ახლა სიაში გამოჩნდება."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "კონტაქტები წარმატებით იქნა შემოტანილი. კონტაქტები ახლა სიაში გამოჩნდება."
+      ]
+    },
+    "Import contact error": {
+      "Contact ${ contactId }: ": [
+        "კონტაქტი ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } კონტაქტი",
+        "${ totalContacts } კონტაქტი"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "უცნობი"
+      ]
+    },
+    "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME }-ს ${ forNow }-ის მხარდაჭერა არ გააჩნია:"
+      ],
+      "for now": [
+        "ჯერჯერობით"
+      ]
+    },
+    "Import error": {
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME }-ს თქვენს ანგარიშთან დაკავშირება არ შეუძლია. დარწმუნდით, რომ:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME }-ს არ შეუძლია თქვენს გარე ანგარიშთნ მიერთება. დარწმუნდით, რომ საფოსტო სერვერის მისამართი და პორტის ნომერი სწორად შეიყვანეთ."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME }-ს თქვენს გარე ანგარიშთან დაკავშირება არ შეუძლია. დარწმუნდით, რომ:"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME }-ს არ შეუძლია Yahoo-ის თქვენს ანგარიშთნ მიერთება. დარწმუნდით, რომ საფოსტო სერვერის მისამართი და პორტის ნომერი სწორად შეიყვანეთ."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME }-ს Yahoo-ის თქვენს ანგარიშთან დაკავშირება არ შეუძლია. დარწმუნდით, რომ:"
+      ],
+      "2-step verification is enabled in your external account.": [
+        "თქვენს გარე ანგარიშში 2FA ჩართულია."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "ელფოსტის თქვენს გარე ანგარიშში 2FA ჩართულია."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "თქვენს გარე ანგარიშს ჩართული აქვს IMAP წვდომა."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "Yahoo-ს თქვენს ანგარიშს ჩართული აქვს IMAP წვდომა."
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "ახლახან გაგზავნილი იყო ძალიან ბევრი მოთხოვნა. მოგვიანებით სცადეთ."
+      ],
+      "Use your app password if:": [
+        "გამოვიყენოთ აპის პაროლი, თუ:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "შეგიძლიათ ჩვეულებრივი პაროლის მაგიერ აპის პაროლი გამოიყენოთ, თუ:"
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "აპლიკაციის პაროლი სწორია. არ გამოიყენოთ თქვენი ჩვეულებრივი პაროლი."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "შეიყვანეთ თქვენი ანგარიშიდან მონაცემების გამოტანის პაროლი."
+      ],
+      "Your email account requires one to export your data.": [
+        "შეიყვანეთ თქვენი ანგარიშიდან მონაცემების გამოტანის პაროლი."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "ელფოსტის მისამართი და აპლიკაციის პაროლი სწორია. არ გამოიყენოთ თქვენი ჩვეულებრივი პაროლი."
+      ],
+      "Your email address and password are correct.": [
+        "თქვენი ელფოსტის მისამართი და პაროლი სწორია."
+      ],
+      "Your password is correct.": [
+        "პაროლი სწორია."
+      ]
+    },
+    "Import instructions": {
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "თქვენი ელფოსტის სერვისის მომწოდებლიდან გამომდინარე, სანამ ${ BRAND_NAME }-ში შემოტანას შეძლებთ, შეიძლება${ knowledgeBaseLink }-ის გენერირება დაგჭირდეთ."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "ჩამოსაშლელი მენიუს გაგრძელება სამ წერტილზე დაწკაპუნებით შეგიძლიათ (...)."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "დააგენერირეთ ${ boldAppPassword } და ჩაწერეთ პაროლის ადგილას, როცა ${ BRAND_NAME }-ი გკითხავთ."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "თქვენს პროფილზე ${ yahooMailLink } გადადით ${ boldAccountInfo }-ზე."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "${ boldAccountSecurity }-ზე გადასვლა."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "გახსენით თქვენი ${ yahooMailLink }-ის კონტაქტები."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "აირჩიეთ ${ boldExportCSV }."
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "${ BRAND_NAME }-ში კალენდრის შემოსატანად გჭირდებათ ${ knowledgeBaseLink }. გადმოწერეთ ის Yahoo-დან 3 იოლი ნაბიჯით:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "${ BRAND_NAME }-ში კალენდრის შემოსატანად გჭირდებათ ${ knowledgeBaseLink }. გადმოწერეთ შემოტანის პროცესის დაწყებამდე."
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "${ BRAND_NAME }-ში კონტაქტების შემოსატანად გჭირდებათ ${ knowledgeBaseLink }. გადმოწერეთ ის Yahoo-დან 3 იოლი ნაბიჯით:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "${ BRAND_NAME }-ში კონტაქტების შემოსატანად გჭირდებათ ${ knowledgeBaseLink }. გადმოწერეთ შემოტანის პროცესის დაწყებამდე."
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "${ BRAND_NAME }-ში ელფოსტების შემოსატანად გჭირდებათ ${ appPasswordLink } Yahoo-სგან. მისი მიღებისთვის საჭირო ნაბიჯები:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "ანგარიშის ინფორმაცია"
+      ],
+      "Account security": [
+        "ანგარიშის უსაფრთხოება"
+      ],
+      "app password": [
+        "აპლიკაციის პაროლი"
+      ],
+      "Export": [
+        "გატანა"
+      ],
+      "Export to CSV file": [
+        "CSV ფაილში გატანა"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "აპლიკაციის პაროლი"
+      ],
+      "app password or enable IMAP": [
+        "აპის პაროლი ან IMAP-ის ჩართვა"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "CSV ან VCF(vCard) ფაილი"
+      ],
+      "full calendar view": [
+        "კალენდრის სრული ხედი"
+      ],
+      "ICS file": [
+        "ICS ფაილი"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Yahoo ${ calendarViewLink }-ზე გადასვლა."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "შემოსატანად და კონტექსტური მენიუს გასახსნელად თაგუნა კალენდარს უნდა გადაატაროთ."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "კალენდრის ICS ფაილად გასატანად აირჩიეთ ${ boldExport }."
+      ]
+    },
+    "Import warning": {
+      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
+        "შემოტანილი იქნება ${ totalContactsDiscarded } ${ totalContacts }-დან. დეტალებისთვის დააწკაპუნეთ"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEvents }-დან ${ totalEventsDiscarded } მოვლენა არ იქნება შემოტანილი. დეტალებისთვის ჩამოშალეთ.",
+        "${ totalEvents }-დან ${ totalEventsDiscarded } მოვლენა არ იქნება შემოტანილი. დეტალებისთვის ჩამოშალეთ."
+      ],
+      "No contact can be imported. Click for details": [
+        "კონტაქტების შემოტანა შეუძლებელია. წკაპი დეტალებისთვის"
+      ],
+      "No event can be imported. Expand for details.": [
+        "მოვლენის შემოტანა შეუძლებელია. გაშალეთ მეტი დეტალისთვის."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "თქვენი კალენდრის შემცველობის ნაწილი მხარდაუჭერელია და შემოტანილი არ იქნება."
+      ]
+    },
     "Info": {
       " and other security features.": [
         " და სხვა უსაფრთხოების ფუნქციები."
@@ -4314,6 +5197,14 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }-ის დაშიფვრის ტექნოლოგია ნიშნავს, რომ თქვენს პაროლთან წვდომა არავის აქვს, ჩვენც კი."
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } ახალი კალენდარი",
+        "${ calendarsToBeCreatedCount } ახალი კალენდარი"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } შერწყმული კალენდარი",
+        "${ calendarsToBeMergedCount } შერწყმული კალენდარი"
       ],
       "${ countriesCount } country enabled": [
         "ჩართულია ${ countriesCount } ქვეყანა",
@@ -4380,6 +5271,14 @@
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } იცავს თქვენს ანგარიშს საეჭვო აქტივობების გამოყოფილი მონიტორინგით."
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "ნაპოვნია ${ providerFoldersNumLocalized } საქაღალდე",
+        "ნაპოვნია ${ providerFoldersNumLocalized } საქაღალდე"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "Gmail-ში ნაპოვნია ${ providerFoldersNumLocalized } ჭდე",
+        "Gmail-ში ნაპოვნია ${ providerFoldersNumLocalized } ჭდე"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "ჯერ კიდევ მიმდინარეობს ${ provisioningCounter } სერვერს დაყენება. ამას, ჩვეულებრივ, ${ provisioningDuration } სჭირდება.",
         "ჯერ კიდევ მიმდინარეობს ${ provisioningCounter } სერვერს დაყენება. ამას, ჩვეულებრივ, ${ provisioningDuration } სჭირდება."
@@ -4402,9 +5301,21 @@
         "აღმოჩენილია ${ resultsCount } შედეგი",
         "აღმოჩენილია ${ resultsCount } შედეგი"
       ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "კალენდარი ${ selectedCalendarsTotal } ${ providerCalendars.length }-დან",
+        "კალენდარი ${ selectedCalendarsTotal } ${ providerCalendars.length }-დან"
+      ],
       "${ selectedEntities.length } selected": [
         "მონიშნულია ${ selectedEntities.length }",
         "მონიშნულია ${ selectedEntities.length }"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "მონიშნულია ${ selectedFoldersCountLocalized } საქაღალდე",
+        "მონიშნულია ${ selectedFoldersCountLocalized } საქაღალდე"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "მონიშნულია ${ selectedFoldersCountLocalized } ჭდე",
+        "მონიშნულია ${ selectedFoldersCountLocalized } ჭდე"
       ],
       "${ storage } storage": [
         "${ storage } საცავი"
@@ -4534,6 +5445,14 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "ხელოვნურ ინტელექტზე დაფუძნებული ასისტენტი, რომელიც დაგეხმარებათ, ადვილად და პრობლემები გარეშე შექმნათ უკეთესი ელფოსტები."
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "ყველა (${ totalFoldersCount } საქაღალდე)",
+        "ყველა (${ totalFoldersCount } საქაღალდე)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "ყველა (${ totalFoldersCount } ჭდე)",
+        "ყველა (${ totalFoldersCount } ჭდე)"
+      ],
       "All inactive members deleted": [
         "ყველა არააქტიური მომხმარებელი წაიშალა"
       ],
@@ -4545,6 +5464,10 @@
       ],
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }",
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }"
       ],
       "Allocated": [
         "გამოყოფილი"
@@ -4570,11 +5493,17 @@
       "Amount due": [
         "გადასახდელი თანხა"
       ],
+      "and": [
+        "და"
+      ],
       "Are you sure you want to cancel editing the group?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ ჯგუფის ჩასწორების გაუქმება?"
       ],
       "Are you sure you want to discard your changes?": [
         "გნებავთ თქვენი ცვლილებების გაუქმება?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "გნებავთ თქვენი შემოტანის გაუქმება?"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, ამ მომხმარებელს ადმინისტრირების პრივილეგიები მიანიჭოთ?"
@@ -4654,6 +5583,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "დააწკაპუნეთ \"ახალი კოდის გამოთხოვნაზე\" და თქვენ ${ strong }-ზე ახალი კოდი გამოგეგზავნებათ. თუ ტელეფონის ეს ნომერი არასწორია, ჩაასწორეთ ის."
       ],
+      "Close this screen to exit.": [
+        "გასასვლელად დახურეთ ეს ეკრანი."
+      ],
       "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
         "ღრუბლოვანი საცავი, ინტეგრირებულია ${ DOCS_APP_NAME }-სთან"
       ],
@@ -4696,6 +5628,16 @@
       "Country code": [
         "ქვეყნის კოდი"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "შექმენით ${ calendarsToBeCreatedCount } ახალი კალენდარი",
+        "შექმენით ${ calendarsToBeCreatedCount } ახალი კალენდარი"
+      ],
+      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
+        "შემოტანილი შეტყობინებების ჭდის შექმნა. შემოტანის დროის დიაპაზონი და საქაღალდეები, რომლის შემოტანაც გნებავთ."
+      ],
+      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
+        "შემოტანილი შეტყობინებების ჭდის შექმნა. შემოტანის დროის დიაპაზონი და ჭდეები, რომლის შემოტანაც გნებავთ."
+      ],
       "Create a secure cloud for ${ value } member": [
         "დაცული ღრუბლის შექმნა ${ value } წევრისთვის",
         "დაცული ღრუბლის შექმნა ${ value } წევრისთვის"
@@ -4705,6 +5647,9 @@
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
         "შექმენით ელფოსტის მისამართები სხვა ხალხსთვის. განაგეთ ${ MAIL_APP_NAME } ბიზნესის, სკოლის ან ჯგუფისთვის. დაიწყეთ თქვენი ორგანიზაციის სახელისა და მისი დომენის (მაგ: @yourdomain.com) დამატებით. "
+      ],
+      "Create in": [
+        "რაში შევქმნა"
       ],
       "Create your first Gateway": [
         "შექმენით თქვენი პირველი რაუტერი"
@@ -4928,6 +5873,9 @@
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "შეიყვანეთ კოდი, რომელიც ${ email }-ზე გამოგიგზავნეთ. თუ შეტყობინებას საფოსტო ყუთში ვერ პოულობთ, სპამშიც ჩაიხედეთ."
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "შეიყვანეთ ელფოსტის მომხმარებელი და პაროლი, საიდანაც შემოტანას აპირებთ."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "შეიყვანეთ ობიექტის ID **eduGAIN** ორგანიზაციისთვის **${ domain.DomainName }**-სთვის."
       ],
@@ -5072,11 +6020,27 @@
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "თუ პრობლემები გაქვთ, ჩვენ დასახმარებლად მზად ვართ. ${ boldPhoneCall } ან ${ boldZoomMeeting } ჩვენი მხარდაჭერის სპეცალისტით."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ calendarCount }-დან ${ totalCalendarsCount } კალენდრის შემოტანა",
+        "${ calendarCount }-დან ${ totalCalendarsCount } კალენდრის შემოტანა"
+      ],
+      "Import from": [
+        "შემოტანა"
+      ],
+      "Import in progress": [
+        "შემოტანა"
+      ],
+      "Import mailbox": [
+        "საფოსტო ყუთის შემოტანა"
+      ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "მნიშვნელოვანია: თუ თქვენს DNS კონსოლს CNAME მნიშვნელობების, რომლებიც მძიმით მთავრდება, მხარდაჭერა არ აქვს, CNAME-ის მნიშვნელობებში ბოლო წერტილი შეგიძლიათ წაშალოთ."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "მნიშვნელოვანია: დარწმუნდით, რომ აღდგენის კოდები საიმედოდ შეინახეთ. წინააღმდეგ შემთხვევაში თუ 2FA მოწყობილობას დაკარგავთ, თქვენს ანგარიშზე წვდომა სამუდამოდ გაგიუქმდებათ."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "მიმდინარეობს მონაცემების ${ fromEmail }-დან ${ toEmail }-ში შემოტანა."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "შემდეგ ნაბიჯზე თქვენ საშუალება გექნებათ, დეპოზიტი ბიტკოინის მისამართით გადმოგვცეთ."
@@ -5189,11 +6153,20 @@
       "JCB logo": [
         "JCB ლოგო"
       ],
+      "Just confirm your selection and we'll do the rest.": [
+        "დაადასტურეთ თქვენი არჩევანი. დანარჩენს ჩვენ გავაკეთებთ."
+      ],
       "Keys created": [
         "გასაღებები შექმნა"
       ],
+      "Label all imported messages as": [
+        "ყველა შემოტანილ შეტყობინებაზე ჭდის დადება"
+      ],
       "Labels:": [
         "ჭდეები:"
+      ],
+      "Large imports can take several days.": [
+        "დიდი მოცულობით ინფორმაციის შემოტანას შეიძლება რამდენიმე დღე დასჭირდეს."
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "ნახეთ, მესამე პირების მიერ შექმნილი VPN აპლიკაციებით ${ VPN_APP_NAME }-ში როგორ უნდა შეხვიდეთ."
@@ -5267,6 +6240,9 @@
       "Member": [
         "წევრი"
       ],
+      "Merged": [
+        "შერწყმული"
+      ],
       "Messages to all your email addresses will go to your inbox.": [
         "შეტყობინებები ყველა თქვენს ელფოსტის მისამართზე საფოსტ ყუთში მოგივათ."
       ],
@@ -5290,6 +6266,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "შეიყვანეთ ახალი საქაღალდის სახელი და აირჩიეთ საქაღალდე, რომელშიც ის უნდა შეიქმნას. თუ არ აირჩევთ, ახალი საქაღალდე ყველაზე მაღალ დონეზე შეიქმნება."
+      ],
+      "New": [
+        "ახალი"
       ],
       "New activity data will stop being collected and shown.": [
         "ახალი აქტივობის მონაცემების შეგროვებას და ჩვენებას შევწყვეტთ."
@@ -5451,6 +6430,9 @@
       "Please open the document to view it.": [
         "გახსენით დოკუმენტი, რომ ნახოთ ის."
       ],
+      "Please select the folders you would like to import:": [
+        "აირჩიეთ შემოსატანი საქაღალდეები:"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "ან თავიდან სცადეთ, ან გადახდის სხვა საშუალება გამოიყენეთ, ან დაუკავშირდით თქვენს ბანკს."
       ],
@@ -5574,6 +6556,12 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "აირჩიეთ მომხმარებლის წევრობა ${ getFormattedOrganization }-დან რომელიც გნებავთ, თქვენს ${ BRAND_NAME } ორგანიზაციაში ჩართოთ:"
       ],
+      "Select what you want to import.": [
+        "მონიშნეთ, რისი შემოტანაც გნებავთ."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "აირჩიეთ რომელი კალენდრები შემოტანა. ყოველი შემოტანილი კალენდრისთვის შეიქმნება ახალი კალენდარი თქვენს გეგმაში არსებული კალენდრების რაოდენობის მიხედვით."
+      ],
       "Self-custodial crypto wallet": [
         "თვითმართვადი კრიპტოსაფულე"
       ],
@@ -5687,6 +6675,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro რეკომენდაციას გვიწევთ 4.2 ქულით 5-დან"
+      ],
+      "Temporarily unavailable. Please check back later.": [
+        "დროებით მიუწვდომელია. მოგვიანებით სცადეთ."
       ],
       "Thank you": [
         "მადლობა"
@@ -5843,6 +6834,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "სპამისაგან თავდასაცავად გთხოვთ, დაამტკიცოთ, რომ ადამიანი ხართ."
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "მოვლენების შემოსატანად ჯერ შექმენით კალენდარი ${ CALENDAR_APP_NAME }-ში. შემოტანილი მოვლენები ამ კალენდარში გამოჩნდება."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "იმისათვის, რომ ყოველთვის იცოდეთ ყველა სიახლე ${ BRAND_NAME }-ის პროდუქტების შესახებ, შეგიძლიათ გამოიწეროთ ჩვენი სხვადასხვა საფოსტო დაგზავნები და ხანდახან ჩვენს ${ blogLink }-ზე შეიხედოთ ხოლმე."
@@ -6039,8 +7033,14 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "ამ ტრანზაქციის დასასრულებლად გადამისამართებული იქნებით PayPal-ზე ბრაუზერის ახალ ჩანართში. თუ იყენებთ მხტუნარების მბლოკავებს, გთხოვთ, გამორთოთ ისინი."
       ],
+      "We'll email you once import is complete.": [
+        "როცა შემოტანა დასრულდება, ელფოსტაზე მოგწერთ."
+      ],
       "We'll get back to you shortly.": [
         "მალე დავბრუნდები."
+      ],
+      "We'll notify you when the import is done.": [
+        "როდესაც შემოტანა დასრულდება, შეგატყობინებთ."
       ],
       "We'll send a new verification code to ${ strong }": [
         "შემოწმების ახალი კოდი გაიგზავნება ${ strong }-ზე"
@@ -6130,14 +7130,26 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "იყენებთ უფრო მეტ საცავს, ვიდრე ${ downgradedPlanName } ტარიფი შეიცავს. წაშალეთ მონაცემები იმისთვის, რომ ტარიფის ჩამოწევა შეძლოთ."
       ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "ასევე შეგიძლიათ, შემოტანილი კალენდრების შერწყმა ${ BRAND_NAME }-ის არსებულ კალენდრებთან."
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "ამის შეცვლა ყოველთვის შეგიძლიათ ${ settingsLink }-ში."
+      ],
+      "You can check the progress ${ importProgressLink }.": [
+        "მიმდინარეობის ნახვა შეგიძლიათ აქ: ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "ამასობაში შეგიძლიათ, ბრაუზერის ჩანართი დახუროთ."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "იმისათვის, რომ დარწმუნდეთ, რომ ეს გადასამოწმებლად სწორი ელფოსტის მისამართია, ის, შეგიძლიათ, ერთხელ ჩაასწოროთ."
       ],
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "შეგიძლიათ, ჩვენი ფასიანი ფუნქცია ერთ პაკეტში მიიღოთ - და ის მხოლოდ **${ priceString } ღირს თვეში**."
+      ],
+      "You can import one data type at a time.": [
+        "ერთ ცდაზე მონაცემების, მხოლოდ, ერთი ტიპის შემოტანა შეგიძლიათ."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "შეგიძლიათ გქონდეთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. წაშალეთ გაზიარებული კალენდრის ბმულები და ყველა ${ BRAND_NAME }-ის მომხმარებელი, ვისაც კალენდარი გაუზიარეთ, სანამ თქვენს ${ MAIL_SHORT_APP_NAME }-ის გამოწერას გააუქმებდით.",
@@ -6258,6 +7270,9 @@
       "Your account was successfully updated with this promotion": [
         "თქვენი ანგარიში წარმატებით განახლდა ამ სარეკლამო აქციით"
       ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "მონაცემების შემოტანა ${ importedEmailAddressStrong }-დან ${ BRAND_NAME }-ის თქვენს ანგარიშზე მზადაა დასაწყებად."
+      ],
       "Your email will only be used for this one-time verification.": [
         "თქვენი ელფოსტა, მხოლოდ, ერთხელ შესამოწმებლად იქნება გამოყენებული."
       ],
@@ -6270,6 +7285,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "ჩვენთან თქვენი ინფორმაცია დაცულია. ჩვენ, მხოლოდ, დაგიკავშირდებით, როცა ეს ჩვენი სერვისების მოსაწოდებლადაა საჭირო."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "შესვლისას გამოყენებული თქვენი ინფორმაცია შემოტანის დასრულების შემდეგ შენახული არ იქნება."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "თქვენი შემდეგი გადახდის თარიღია ${ renewalTime }"
@@ -6347,6 +7365,11 @@
         "თქვენ შეგიძლიათ დაამატოთ გადახდის მეთოდი, რომ თქვენი გამოწერა ავტომატურად განახლდეს. ასევე ხელმისაწვდომია გადახდის სხვა მეთოდებიც."
       ]
     },
+    "Info on errors": {
+      "Click for details": [
+        "დეტალებისთვის დააწკაპუნეთ აქ"
+      ]
+    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "ვადის გასვლა გამოწერის თავიდან აქტივაციით შეგიძლიათ, აიცილოთ"
@@ -6355,6 +7378,16 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "სერვისის გადაუხდელი ინვოისების გამო წყვეტის თავიდან დარწმუნდით, რომ დროის ნებისმიერ მომენტში გადახდის ერთი სწორი ფორმა მაინც არსებობს."
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "მონიშნულია ${ selectedFoldersCount } საქაღალდე",
+        "მონიშნულია ${ selectedFoldersCount } საქაღალდე"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "მონიშნულია ${ selectedFoldersCount } ჭდე",
+        "მონიშნულია ${ selectedFoldersCount } ჭდე"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -6465,6 +7498,9 @@
         "${ UsedAddresses }/${ MaxAddresses } ელფოსტის მისამართი",
         "${ UsedAddresses }/${ MaxAddresses } ელფოსტის მისამართი"
       ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
+      ],
       "Account holder": [
         "ანგარიშის მფლობელი"
       ],
@@ -6516,6 +7552,9 @@
       "Anderson": [
         "ღობეგლეჯიაშვილი"
       ],
+      "App password": [
+        "აპის პაროლი"
+      ],
       "Apply policy to": [
         "პოლიტიკის გადატარება"
       ],
@@ -6557,6 +7596,12 @@
       ],
       "BTC amount": [
         "BTC-ის რაოდენობა"
+      ],
+      "Calendar": [
+        "კალენდარი"
+      ],
+      "Calendars": [
+        "კალენდრები"
       ],
       "Card details": [
         "ბარათის დეტალები"
@@ -6617,6 +7662,9 @@
       ],
       "Confirm second password": [
         "დაადასტურეთ მეორე პაროლი"
+      ],
+      "Contacts": [
+        "კონტაქტები"
       ],
       "Copy": [
         "კოპირება"
@@ -6690,6 +7738,21 @@
       "Email or username": [
         "ელფოსტა ან მომხმარებლის სახელი"
       ],
+      "Emails": [
+        "ელფოსტები"
+      ],
+      "Emails (all messages)": [
+        "ელფოსტა (ყველა შეტყობინება)"
+      ],
+      "Emails (last 12 months)": [
+        "ელფოსტა (გასული 12 თვე)"
+      ],
+      "Emails (last 3 months)": [
+        "ელფოსტა (გასული სამი თვე)"
+      ],
+      "Emails (last month)": [
+        "ელფოსტა (გასული თვე)"
+      ],
       "Enabled": [
         "ჩართულია"
       ],
@@ -6716,6 +7779,9 @@
       ],
       "Folder location": [
         "საქაღალდის მდებარეობა"
+      ],
+      "From: ${ fromEmail }": [
+        "გამომგზავნელი: ${ fromEmail }"
       ],
       "Gateway name": [
         "რაუტერის სახელი"
@@ -6744,6 +7810,15 @@
       "Import all messages": [
         "ყველა შეტყობინების შემოტანა"
       ],
+      "Import interval": [
+        "შემოტანის დაყოვნება"
+      ],
+      "Import to email address": [
+        "ელფოსტის მისამართზე შემოტანა"
+      ],
+      "Import to:": [
+        "შემოტანა:"
+      ],
       "Include application logs in bug report": [
         "აპლიკაციის ჟურნალის ჩასმა შეცდომის ანგარიშში"
       ],
@@ -6761,6 +7836,9 @@
       ],
       "Key": [
         "გასაღები"
+      ],
+      "Label messages as": [
+        "შეტყობინებების მონიშვნა, როგორც"
       ],
       "Last 12 months only": [
         "მხოლოდ, ბოლო 12 თვე"
@@ -6780,8 +7858,14 @@
       "Logo": [
         "ლოგო"
       ],
+      "Mail Server (IMAP)": [
+        "მეილსერვერი (IMAP)"
+      ],
       "Main": [
         "მთავარი"
+      ],
+      "Manage categories": [
+        "კატეგორიების მართვა"
       ],
       "Maximum number of characters is ${ MAX_CHARS }": [
         "სიმბოლოების მაქსიმალური რაოდენობაა ${ MAX_CHARS }"
@@ -6806,6 +7890,12 @@
       ],
       "Moderate NAT": [
         "საშუალო NAT-ი"
+      ],
+      "Move to Archive": [
+        "არქივში გადატანა"
+      ],
+      "Move to Inbox": [
+        "შემომავლებში გადატანა"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს"
@@ -6915,6 +8005,9 @@
       "Policy name": [
         "პოლიტიკის სახელი"
       ],
+      "Port": [
+        "პორტი"
+      ],
       "Postal code": [
         "საფოსტო კოდი"
       ],
@@ -7014,6 +8107,9 @@
       ],
       "To help us improve, please explain why you are leaving.": [
         "იმისათვის, რომ უკეთესები გავხდეთ, აგვიხსენთ, რატომ გვტოვებთ."
+      ],
+      "To: ${ toEmail }": [
+        "მიმღები: ${ toEmail }"
       ],
       "Two-password mode": [
         "2-პაროლიანი რეჟიმი"
@@ -7173,9 +8269,28 @@
         "${ Label.Name } შეიქმნა"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "გამომგზავნელი: ${ from }"
+      ],
+      "To: ${ to }": [
+        "მიმღები: ${ to }"
+      ]
+    },
     "Lable": {
       "Select an identity provider to start": [
         "დასაწყებად აირჩიეთ იდენტიფიკატორის მომწოდებელი"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "ახალი კალენდრის დასამატებლად არსებული წაშალეთ."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "ახალი კალენდრის დასამატებლად წაშალეთ სხვა კალენდარი ან განაახლეთ თქვენი ${ BRAND_NAME } გეგმა ${ MAIL_SHORT_APP_NAME } ფასიან გეგმაზე."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "თქვენ მიაღწიეთ თქვენს გეგმაში ხელმისაწვდომი კალენდრების მაქსიმალურ რაოდენობას."
       ]
     },
     "Link": {
@@ -7344,6 +8459,30 @@
         "გადადით ფასიან ვერსიაზე ჩატისა და სხვა ფასიანი ფუნქციების მხარდაჭერისთვის, ან გამოიყენეთ ჩვენი უფასო მხარდაჭერის ფორმა, რათა თქვენი პრობლემის შესახებ შეგვატყობინოთ."
       ]
     },
+    "Loading info": {
+      "Almost there": [
+        "თითქმის მივედით"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "შექმნილი კალენდრების რაოდენობა: ${ createdCalendarCount } ${ calendarsToBeCreated }-დან",
+        "შექმნილი კალენდრების რაოდენობა: ${ createdCalendarCount } ${ calendarsToBeCreated }-დან"
+      ],
+      "Connecting to your email provider": [
+        "ვუკავშირდები თქვენი ელფოსტის სერვისის მომწოდებელს"
+      ],
+      "Creating new calendars": [
+        "ახალი კალენდრების შექმნა"
+      ],
+      "Gathering your data": [
+        "თქვენი მონაცემების შეგროვება"
+      ],
+      "We're gathering your data from your provider": [
+        "ვაგროვებთ მონაცემებს თქვენი მომწოდებლის შესახებ"
+      ],
+      "Your import is starting": [
+        "შემოტანის დასაწყისი"
+      ]
+    },
     "locked_state_storage_banner: info": {
       "Learn more": [
         "გაიგეთ მეტი"
@@ -7443,6 +8582,24 @@
         "${ reason }-ის ჩართვა"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "შემოიტანეთ ყველა შეტყობინება ${ itemsToImportCount } საქაღალდეებიდან და მონიშნეთ ისინი როგორც",
+        "შემოიტანეთ ყველა შეტყობინება ${ itemsToImportCount } საქაღალდეებიდან და მონიშნეთ ისინი როგორც"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } ჭდიდან ყველა შეტყობინების შემოტანა და მათი მონიშვნა, როგორც",
+        "${ itemsToImportCount } ჭდიდან ყველა შეტყობინების შემოტანა და მათი მონიშვნა, როგორც"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "ყველა შეტყობინების შემოტანა ${ selectedItemsToImportCount }/${ itemsToImportCount } საქაღალდიდან და მათი მონიშვნა, როგორც",
+        "ყველა შეტყობინების შემოტანა ${ selectedItemsToImportCount }/${ itemsToImportCount } საქაღალდიდან და მათი მონიშვნა, როგორც"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "ყველა შეტყობინების შემოტანა${ selectedItemsToImportCount }/${ itemsToImportCount } ჭდიდან და მათი მონიშვნა, როგორც",
+        "ყველა შეტყობინების შემოტანა${ selectedItemsToImportCount }/${ itemsToImportCount } ჭდიდან და მათი მონიშვნა, როგორც"
+      ]
+    },
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe წერის დამხმარე"
@@ -7538,6 +8695,26 @@
       ],
       "Sign in to access your ${ appName } account": [
         "თქვენი ${ appName }-ის ანგარიშთან წვდომისთვის საჭიროა, შეხვიდეთ"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "როგორ შემოვიტანოთ კონტაქტები სხვა სერვისებიდან"
+      ],
+      "How to import calendars from Yahoo": [
+        "როგორ შემოვიტანოთ კალენდრები Yahoo-დან"
+      ],
+      "How to import contacts from another service": [
+        "როგორ შემოვიტანოთ კონტაქტები სხვა სერვისებიდან"
+      ],
+      "How to import contacts from Yahoo": [
+        "როგორ შემოვიტანოთ ელფოსტები Yahoo-დან"
+      ],
+      "How to import emails from another service": [
+        "როგორ შემოვიტანოთ ელფოსტა სხვა სერვისიდან"
+      ],
+      "How to import emails from Yahoo": [
+        "როგორ შემოიტანოთ ელფოსტები Yahoo-დან"
       ]
     },
     "Monetary unit": {
@@ -8649,6 +9826,21 @@
         "ზოგიერთი გამოსახულება არ აიტვირთა, რადგან მიმდინარე მონიშნულებში ფაილის სახელები მეორდება."
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "შემდეგ დაგჭირდებათ, შეხვიდეთ თქვენი Google-ის ანგარიშში და ${ BRAND_NAME }-ს თქვენს მონაცემებზე მისცეთ წვდომა."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "შემოსატანად საჭიროა, რომ მონიშნოთ ყველა საჭირო ელემენტი, ისე, როგორც ეს GIF-ზეა."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "აირჩიეთ, რასთან აქვს ${ BRAND_NAME }-ს წვდომა: ნახოს თქვენი ელფოსტის შეტყობინებები დ პარამეტრები, ნახოს და გადმოწეროს თქვენი კონტაქტები; გადმოწეროს და ნახოს ყველა გეგმა Google Calendar-დან."
+      ]
+    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } შეუზღუდავი 12 თვით"
@@ -8789,11 +9981,17 @@
       ]
     },
     "Option": {
+      "Add to existing group": [
+        "არსებულ ჯგუფში ჩამატება"
+      ],
       "Allowed ${ defaultLabel }": [
         "დაშვებულია ${ defaultLabel }"
       ],
       "Country configs": [
         "ქვეყნების მორგება"
+      ],
+      "Create new group": [
+        "ახალი ჯგუფის შექმნა"
       ],
       "Free server configs": [
         "უფასო სერვერების კონფიგურაციები"
@@ -8806,6 +10004,9 @@
       ],
       "I'd like to merge this account into another one": [
         "მე მინდა ამ ანგარიშის სხვა ანგარიშთან შერწყმა"
+      ],
+      "Ignore group": [
+        "ჯგუფის იგნორი"
       ],
       "It's missing a key feature that I need": [
         "აკლია ჩემთვის კრიტიკული თვისება"
@@ -8868,6 +10069,14 @@
       ],
       "No one": [
         "არავინ"
+      ]
+    },
+    "Option group label": {
+      "Create new calendar": [
+        "ახალი კალენდრის შექმნა"
+      ],
+      "Merge with calendar": [
+        "კალენდართან შერწყმა"
       ]
     },
     "Organization capacity error": {
@@ -8954,6 +10163,11 @@
       ],
       "Verify your email address ${ email } to set organization identity.": [
         "გადაამოწმეთ თქვენი ელფოსტის მისამართი ${ email }, რომ დააყენოთ ორგანიზაციის იდენტიფიკატორი."
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "თქვენ"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9355,6 +10569,9 @@
       "Main street 12": [
         "ევას შესახვევი 13"
       ],
+      "Name": [
+        "სახელი"
+      ],
       "Organization name": [
         "ორგანიზაციის სახელი"
       ],
@@ -9479,6 +10696,38 @@
     "Price": {
       "Free": [
         "Free"
+      ]
+    },
+    "Property type": {
+      "Address": [
+        "მისამართი"
+      ],
+      "Email": [
+        "ელ-ფოსტა"
+      ],
+      "Fax": [
+        "ფაქსი"
+      ],
+      "Home": [
+        "სახლის"
+      ],
+      "Main": [
+        "მთავარი"
+      ],
+      "Mobile": [
+        "მობილური"
+      ],
+      "Other": [
+        "სხვა"
+      ],
+      "Pager": [
+        "პეიჯერი"
+      ],
+      "Phone": [
+        "ტელეფონი"
+      ],
+      "Work": [
+        "სამსახურის"
       ]
     },
     "Protection type": {
@@ -11638,6 +12887,9 @@
       "Country": [
         "ქვეყანა"
       ],
+      "CSV field": [
+        "CSV ველი"
+      ],
       "Edit": [
         "ჩასწორება"
       ],
@@ -11655,6 +12907,9 @@
       ],
       "Event": [
         "მოვლენა"
+      ],
+      "Import": [
+        "შემოტანა"
       ],
       "Invitation email": [
         "მოწვევის ელფოსტა"
@@ -11679,6 +12934,12 @@
       ],
       "Total storage": [
         "სრული საცავი"
+      ],
+      "Values": [
+        "მნიშვნელობები"
+      ],
+      "vCard field": [
+        "vCard-ის ველი"
       ]
     },
     "Themes": {
@@ -11777,6 +13038,9 @@
       ],
       "Add address": [
         "მისამართის დამატება"
+      ],
+      "Add contact group name": [
+        "დაამატეთ კონტაქტის ჯგუფის სახელი"
       ],
       "Add countries to \"${ policyName }\"": [
         "ქვეყნების დამატება \"${ policyName }\"-ში"
@@ -11928,9 +13192,6 @@
       "Connect apps and devices": [
         "აპებისა და მოწყობილობების დაკავშირება"
       ],
-      "Connect more Gmail addresses with ${ planName }": [
-        "დაუკავშირდით მეტ Gmail-ის მისამართს ${ planName }-თან ერთად"
-      ],
       "Connect organization": [
         "ორგანიზაციასთან მიერთება"
       ],
@@ -11945,6 +13206,9 @@
       ],
       "Contact us": [
         "დაგვიკავშირდით"
+      ],
+      "Continue with partial import?": [
+        "გავაგრძელო ნაწილობრივი შემოტანით?"
       ],
       "Couldn’t create accounts": [
         "ანგარიშების შექმნის შეცდომა"
@@ -11992,8 +13256,17 @@
       "Customization": [
         "მორგება"
       ],
+      "Customize and confirm": [
+        "მოირგეთ და დაეთანხმეთ"
+      ],
+      "Customize calendar import": [
+        "კალენდრის შემოტანის მორგება"
+      ],
       "Customize the number of IP addresses in your plan": [
         "თქვენს ტარიფში IP მისამართების რაოდენობის ხელით მითითება"
+      ],
+      "Customize your mail import": [
+        "თქვენი ელფოსტის შემოტანის მორგება"
       ],
       "Data retention": [
         "მონაცემების შენარჩუნება"
@@ -12216,8 +13489,24 @@
       "Human verification": [
         "ადამიანის შემოწმება"
       ],
+      "Import as simple event?": [
+        "შემოვიტანო მარტივი მოვლენის სახით?",
+        "შემოვიტანო მარტივი მოვლენების სახით?"
+      ],
+      "Import contacts": [
+        "კონტაქტების შემოტანა"
+      ],
       "Import emails, calendars, contacts": [
         "ელფოსტების, კალენდრების, კონტაქტების შემოტანა"
+      ],
+      "Import events": [
+        "მოვლენების შემოტანა"
+      ],
+      "Import failed": [
+        "შემოტანის შეცდომა"
+      ],
+      "Import groups": [
+        "ჯგუფების შემოტანა"
       ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
@@ -12321,6 +13610,9 @@
       "Recommended": [
         "რეკომენდებულია"
       ],
+      "Reconnect your account": [
+        "თქვენი ანგარიშის თავიდან დაკავშირება"
+      ],
       "Recovery": [
         "აღდგენა"
       ],
@@ -12372,6 +13664,12 @@
       "Select a plan": [
         "აირჩეთ გეგმა"
       ],
+      "Select action to take on contact group": [
+        "აირჩიეთ კონტაქტების ჯგუფზე განსახორციელებელი ქმედება"
+      ],
+      "Select contact group": [
+        "მონიშნეთ კონტაქტების ჯგუფი"
+      ],
       "Send email reminders?": [
         "გავაგზავნო ელფოსტის შეხსენებები?"
       ],
@@ -12414,6 +13712,9 @@
       "Sign in": [
         "შესვლა"
       ],
+      "Sign in and grant access": [
+        "შესვლა და წვდომის მინიჭება"
+      ],
       "Sign in to join the Beta program": [
         "შედით სისტემაში ბეტა პროგრამაში დასარეგისტრირებლად"
       ],
@@ -12434,6 +13735,12 @@
       ],
       "Spam, block, and allow lists": [
         "სპამი, დაბლოკვა და დაშვებული სიები"
+      ],
+      "Start a new import": [
+        "ახალი შემოტანის დაწყება"
+      ],
+      "Start import process": [
+        "შემოტანის დაწყება"
       ],
       "Status": [
         "სტატუსი"
@@ -12544,6 +13851,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "მოგესალმებათ ${ BRAND_NAME } for Business"
       ],
+      "What would you like to import?": [
+        "რისი შემოტანა გნებავთ?"
+      ],
       "Wipe all logs?": [
         "წავშალო ჟურნალიდან ყველაფერი?"
       ],
@@ -12651,11 +13961,26 @@
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "დააკოპირეთ და ჩასვით ეს ბმული თქვენი იდენტიფიკატორის მომწოდებლის ერთეულის ID-ის ველში"
       ],
+      "Customize import to reduce the number of folders": [
+        "საქაღალდეების რაოდენობის შესამცირებლად მოირგეთ შემოტანის პარამეტრები"
+      ],
+      "Customize import to reduce the number of labels": [
+        "ჭდეების რაოდენობის შესამცირებლად მოირგეთ შემოტანის პარამეტრები"
+      ],
       "Device name and app version": [
         "მოწყობილობის სახელი და აპის ვერსია"
       ],
       "Display name for the entity in the eduGAIN database": [
         "სახელის ჩვენება ობექტისთვის eduGAIN მონაცემთა ბაზაში"
+      ],
+      "Each imported email will have this label": [
+        "ყველა შემოტანილ ელფოსტას ეს ჭდე ექნება"
+      ],
+      "Edit folder names": [
+        "საქაღალდის სახელების ჩასწორება"
+      ],
+      "Edit label names": [
+        "ჭდის სახელების ჩასწორება"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "ბოლოწერტილის ბმული იდენტიფიკატორის მომწოდებლისგან (მაგ: https://idp.example.com/sso/saml)"
@@ -12671,6 +13996,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "მაგალითად, **passord, querty** და ა.შ."
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail-ი ავტომატურად ახდენს ზოგიერთი ელფოსტისთვის კატეგორიების მინიჭებას, როგორიცაა, მაგალითად, სოციალური ან რეკლამები. შეგიძლიათ, აირჩიოთ, ასეთი ელფოსტები სად შემოიტანოთ."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "იდენტიფიკაციის მომწოდებლის საჯარო გასაღების ავთენტიკაციის ბილეთების ხელმოსაწერად. მიიღეთ სერტიფიკატის ჰეში თქვენი იდენტიფიკატორის მომწოდებლიდან."
@@ -12689,6 +14017,12 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "მიუთითეთ eduGAIN ობიექტის მომხმარებლები, რომლებსაც SAML SSO-ით შესვლის უფლება გააჩნიათ"
+      ],
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "სისტემური ქვესაქაღალდეები ${ MAIL_APP_NAME }-ში ცალკე საქაღალდეებად გამოჩნდება"
+      ],
+      "The import will start with the most recent messages.": [
+        "შემოტანა უახლესი შეყობინებებიდან დაიწყება."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "გამოწერის ახალი ციკლის დაწყების დრო: ${ formattedTime }"
@@ -13054,6 +14388,14 @@
         "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)"
       ]
     },
+    "Video control": {
+      "Click to replay the video": [
+        "ვიდეოს თავიდან დასაკრავად დააწკაპუნეთ"
+      ],
+      "Replay video": [
+        "ვიდეოს თავიდან დაკვრა"
+      ]
+    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "სხვა სერვისი ვიპოვე, რომელიც უფრო მომწონს"
@@ -13240,6 +14582,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME }-ი ერთი სახელის მქონე ყველა საქაღალდის შერწყმას მოახდენს. ამის თავიდან ასაცილებლად შემოტანამდე დარწმუნდით, რომ სახელები უნიკალურია."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME }-ი გადაიტანს იმდენ მონაცემს, უკანასკნელი შეტყობინებებით დაწყებული, რამდენიც ეს შესაძლებელი იქნება."
+      ],
       "Are you sure you want to delete the phone number?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ მონიშნული ტელეფონის ნომრის წაშლა?"
       ],
@@ -13261,17 +14609,29 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "ანგარიშები გამჭოლად არაა დაშიფრული. ნუ გააგზავნით კონფიდენციალურ ინფორმაციას."
       ],
+      "Skip verification?": [
+        "გამოვტოვო შემოწმება?"
+      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "თქვენ მოწყობილობის თარიღისა და დროის პარამეტრები აცდენილია რეალობას. ${ learnMore }"
       ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "ამ შემოტანით თქვენ შეიძლება, თქვენი ანგარიშისთვის ${ BRAND_NAME }-ში გამოყოფილ სივრცეს გადააჭარბოთ. შეეცადეთ ყველაფერი არ შემოიტანოთ."
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "სამწუხაროდ, ამჟამად, ონლაინ არ ვართ. შეავსეთ ქვედა ფორმა, აღწერეთ თქვენი პრობლემა და ჩვენ მალევე დაგიკავშირდებით."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "ელფოსტის სერვერი ვერ შევამოწმეთ. თუ ენდობით მას, შემოწმება შეგიძლიათ, გამოტოვოთ."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "ნაპოვნია პრობლემა DNS-ის თქვენს კონფიგურაციასთან. დარწმუნდით, რომ ჩანაწერები ემთხვევა ქვემოთ მოყვანილ ინსტრუქციებს. თუ პრობლემა მაინც არ გაქრება, ჩვენ DKIM-ით ხელმოწერის გამორთვა მოგვიწევს."
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "არაკონფიდენციალური წევრისთვის ელფოსტის მისამართის დამატებამდე საჭიროა ორგანიზაციის გასაღების ${ activateLink }."
+      ],
+      "You will lose any customization you made so far.": [
+        "დაკარგავთ ყველაფერს, რაც თქვენზე მოირგეთ."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ textDate }. ${ action }"

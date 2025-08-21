@@ -132,6 +132,12 @@
       "Chat with us": [
         "हमसे बात करें"
       ],
+      "Check import progress": [
+        "आयात प्रगति की जाँच करें"
+      ],
+      "Choose a file or drag it here": [
+        "कोई फाइल चुनें या उसे यहां खीच के लाएं"
+      ],
       "Choose my own password": [
         "मेरा खुद का पासवर्ड चुनें"
       ],
@@ -168,6 +174,9 @@
       "Continue anyway": [
         "फिर भी जारी रखें"
       ],
+      "Continue import": [
+        "आयात जारी रखें"
+      ],
       "Continue with this password": [
         "इस पासवर्ड के साथ जारी रखें"
       ],
@@ -200,6 +209,12 @@
       ],
       "Current plan": [
         "चालू प्लान"
+      ],
+      "Customize": [
+        "कस्टम"
+      ],
+      "Customize import": [
+        "आयात को अनुकूलित करें"
       ],
       "Customize plan": [
         "योजना अनुकूलित करें"
@@ -306,6 +321,9 @@
       "Edit invoice note": [
         "इनवॉइस नोट संपादित करें"
       ],
+      "Edit label": [
+        "लेबल में बदलाव करें"
+      ],
       "Edit name": [
         "नाम बदलें"
       ],
@@ -408,6 +426,18 @@
       "Hide plan features": [
         "योजना की विशेषताओं को छुपाएं"
       ],
+      "Import": [
+        "आयात करें"
+      ],
+      "Import calendars": [
+        "कैलेंडर आयात करें"
+      ],
+      "Import contacts": [
+        "संपर्क आयात करें"
+      ],
+      "Import emails": [
+        "ईमेल आयात करें"
+      ],
       "Import new SAML metadata": [
         "नया SAML मेटाडाटा आयात करें"
       ],
@@ -446,6 +476,12 @@
       ],
       "Make admin": [
         "एडमिन बनाएं"
+      ],
+      "Manage folders": [
+        "फोल्डर संभाले"
+      ],
+      "Manage labels": [
+        "लेबल संभाले"
       ],
       "Manage subscription": [
         "सदस्यता संभालें"
@@ -512,6 +548,12 @@
       ],
       "Previous page": [
         "पिछला पृष्ठ"
+      ],
+      "Quit": [
+        "बंद करें"
+      ],
+      "Reconnect": [
+        "वापस जुड़ें"
       ],
       "Recover data": [
         "डाटा रिकवर करें"
@@ -581,6 +623,9 @@
       ],
       "Reset password": [
         "पासवर्ड रीसेट करें"
+      ],
+      "Reset to default": [
+        "डिफ़ॉल्ट पर रीसेट करें"
       ],
       "Restore": [
         "रीस्टोर करें"
@@ -717,11 +762,20 @@
       "Skip": [
         "छोड़ें"
       ],
+      "Skip verification": [
+        "सत्यापन छोड़ें"
+      ],
       "Spam": [
         "स्पैम"
       ],
+      "Start import": [
+        "आयात शुरू करें"
+      ],
       "Start live chat": [
         "लाइव चैट शुरू करें"
+      ],
+      "Stay": [
+        "रुकें"
       ],
       "Stop using single sign-on": [
         "सिंगल साइन-ऑन का उपयोग बंद करें"
@@ -940,6 +994,14 @@
         "व्यवस्थापक"
       ]
     },
+    "Alert": {
+      "By leaving now, some contacts may not be imported": [
+        "अभी छोड़ने से, हो सकता है कि कुछ संपर्क आयात न हों"
+      ],
+      "By leaving now, some events may not be imported": [
+        "अभी छोड़ते हुए, कुछ इवेंट शायद आयात ना हो।"
+      ]
+    },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "ये इस प्रमाण का इस्तेमाल करने वाले सारे राऊटर और क्लाइंट का कनेक्शन तोड़ देगा।"
@@ -1003,6 +1065,26 @@
       ],
       "30 months": [
         "30 महीने"
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "खाली ICS फ़ाइल"
+      ],
+      "Invalid event": [
+        "अमान्य घटना"
+      ],
+      "Invalid ICS file": [
+        "अमान्य आईसीएस फ़ाइल"
+      ],
+      "Invalid method": [
+        "अमान्य तरीका"
+      ],
+      "Unsupported calendar component": [
+        "असमर्थित कैलेंडर घटक"
+      ],
+      "Unsupported event": [
+        "असमर्थित घटना"
       ]
     },
     "b2b_trials_Action": {
@@ -1407,6 +1489,14 @@
         "स्ट्रॉबेरी"
       ]
     },
+    "Confirm modal title": {
+      "Quit import customization?": [
+        "आयात अनुकूलन छोड़ें?"
+      ],
+      "Quit import?": [
+        "आयात छोड़ें?"
+      ]
+    },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
         "क्या आप वाकई इस भुगतान विधि को हटाना चाहते हैं?"
@@ -1415,6 +1505,94 @@
     "Confirmation title": {
       "Delete payment method": [
         "भुगतान विधि हटाएं"
+      ]
+    },
+    "Contact field label": {
+      "Address": [
+        "पता"
+      ],
+      "Anniversary": [
+        "सालगिरह"
+      ],
+      "Birthday": [
+        "जन्मदिन"
+      ],
+      "Display name": [
+        "डिस्प्ले नाम"
+      ],
+      "Email": [
+        "ईमेल"
+      ],
+      "First name": [
+        "पहला नाम"
+      ],
+      "Gender": [
+        "लिंग"
+      ],
+      "Language": [
+        "भाषा"
+      ],
+      "Last name": [
+        "अंतिम नाम"
+      ],
+      "Logo": [
+        "लोगो"
+      ],
+      "Member": [
+        "सदस्य"
+      ],
+      "Name": [
+        "नाम"
+      ],
+      "Note": [
+        "नोट"
+      ],
+      "Organization": [
+        "संगठन"
+      ],
+      "Phone": [
+        "फोन"
+      ],
+      "Photo": [
+        "तस्वीर"
+      ],
+      "Role": [
+        "भूमिका"
+      ],
+      "Time zone": [
+        "समय क्षेत्र"
+      ],
+      "Title": [
+        "टाइटल"
+      ],
+      "URL": [
+        "यूआरएल"
+      ]
+    },
+    "Contact type label": {
+      "Fax": [
+        "फैक्स"
+      ],
+      "Main": [
+        "मुख्‍य"
+      ],
+      "Mobile": [
+        "मोबाइल"
+      ],
+      "Other": [
+        "दूसरा"
+      ],
+      "Pager": [
+        "पेजर"
+      ],
+      "Personal": [
+        "निजी"
+      ],
+      "Work": [
+        "दफ्तर"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "CountriesStep:Info": {
@@ -2248,6 +2426,11 @@
         "/यूज़र हर महीने"
       ]
     },
+    "Default display name vcard": {
+      "Unknown": [
+        "अनजान"
+      ]
+    },
     "Delete address prompt": {
       "Are you sure you want to delete this address?": [
         "क्या आप वाकई इस पते को मिटाना चाहते हैं?"
@@ -2310,17 +2493,34 @@
       "Create policies to decide who can connect to shared servers in each country.": [
         "हर देश में साझा सर्वर से कौन कनेक्ट कर सकता है, यह तय करने के लिए नीतियाँ बनाएं।"
       ],
+      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        "संपर्कों को एन्क्रिप्ट और आयात किया जा रहा है... इसमें कुछ मिनट लग सकते हैं. जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
+      ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "आपके संगठन के सभी सदस्य सभी देशों में साझा सर्वर से कनेक्ट कर सकते हैं।"
       ],
       "If disabled, only admins will have access.": [
         "यदि अक्षम है, तो केवल एडमिन को ही पहुँच प्राप्त होगी।"
       ],
+      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
+        "ऐसा लगता है कि आप जिस संपर्क सूची को आयात कर रहे हैं उसमें कुछ समूह हैं। कृपया समीक्षा करें कि इन समूहों को कैसे आयात किया जाना चाहिए।"
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "अतिरिक्त पतों के साथ अपने जीवन के विभिन्न हिस्सों को अलग रखें और अपने इंबॉक्स को व्यवस्थित रखें।"
       ],
       "No one in your organization can connect to shared servers.": [
         "आपके संगठन में कोई भी साझा सर्वर से कनेक्ट नहीं कर सकता।"
+      ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "आप iCal फॉर्मैट (ICS फाइल) में इवेंट आयात कर सकते है। फाइल ज़्यादा-से-ज़्यादा ${ MAX_IMPORT_FILE_SIZE_STRING } साइज़ का होना चाहिए और ज़्यादा-से-ज़्यादा ${ MAX_IMPORT_EVENTS_STRING } तक इवेंट रखा हो सकता है। अगर आपका फाइल ज़्यादा बड़ा है, तो उसे छोटे फाइलों में तोड़े।"
+      ]
+    },
+    "Description of the purpose of the import CSV modal": {
+      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
+        "साथ ही, हमने स्वचालित रूप से CSV फ़ील्ड का vCard फ़ील्ड से मिलान कर लिया है। आप इस मिलान की मैन्युअल रूप से समीक्षा कर सकते हैं और इसे बदल सकते हैं।"
+      ],
+      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
+        "हमने आपके द्वारा अपलोड की गई CSV फ़ाइल में निम्न फ़ील्ड का पता लगाया है। उन लोगों की जाँच करें जिन्हें आप आयात करना चाहते हैं।"
       ]
     },
     "Disable address prompt": {
@@ -2503,6 +2703,46 @@
         "टेक्स्ट फील्ड वैकल्पिक हैं। इस फॉर्म में दी गई जानकारी केवल आपके द्वारा चयनित इनवॉइस को बदलेगी और आपके भविष्य के इनवॉइस विवरण को प्रभावित नहीं करेगी।"
       ]
     },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "विवरण:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } रद्द कर दिया गया था।"
+      ],
+      "All events in this series were updated.": [
+        "इस श्रृंखला में सभी कार्यक्रमों को अपडेट किया गया था।"
+      ],
+      "Here's what changed:": [
+        "यहां देखें क्या बदलाव हुए हैं:"
+      ],
+      "This event occurrence was updated.": [
+        "इस कार्यक्रम घटना को अपडेट किया गया था।"
+      ],
+      "This event was updated.": [
+        "यह कार्यक्रम अपडेट किया गया था।"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "समय:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "समय:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "हटाया गया"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "स्थान:\n${ eventLocation }"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } जोड़ा"
@@ -2532,6 +2772,26 @@
         "${ name } सफलतापूर्वक मिटाया गया"
       ]
     },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "${ formattedStart } पर किसी ईवेंट को रद्द करना"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "${ formattedStart } से शुरू होने वाले किसी ईवेंट को रद्द"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "${ formattedStart } पर किसी ईवेंट के लिए आमंत्रण"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "${ formattedStart } से शुरू होने वाले किसी ईवेंट के लिए आमंत्रण"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "${ formattedStart } पर किसी ईवेंट के लिए अपडेट"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "${ formattedStart } से शुरू होने वाले किसी ईवेंट के लिए अपडेट"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "सत्यापन ईमेल ${ address } पर भेजा गया"
@@ -2543,6 +2803,12 @@
       ]
     },
     "Error": {
+      "A group with this name already exists": [
+        "इस नाम का एक समूह पहले से मौजूद है"
+      ],
+      "Address primary private key not found": [
+        "पता प्राथमिक निजी कुंजी नहीं मिली"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "सभी भंडारण स्थान आवंटित किया गया है। कृपया अन्य उपयोगकर्ताओं को आवंटित संग्रहण कम करें।"
       ],
@@ -2558,6 +2824,9 @@
       "Authentication error.": [
         "प्रमाणीकरण त्रुटि"
       ],
+      "Calendar limit reached": [
+        "कैलेंडर की सीमा पूरी हो गई"
+      ],
       "Checkout expired, please try again": [
         "चेकआउट की समय सीमा समाप्त हो गई है, कृपया पुनः प्रयास करें।"
       ],
@@ -2570,6 +2839,14 @@
       "Couldn't load transactions. Please try again later.": [
         "लेन-देन लोड नहीं हो सके। कृपया बाद में पुन: प्रयास करें।"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को चुनें में से बाहर निकाले",
+        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को चुनें में से बाहर निकाले"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को हटाएं या",
+        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को हटाएं या"
+      ],
       "Domain not available, try again later": [
         "डोमेन मौजूद नहीं, बाद में वापिस कोशिश करें"
       ],
@@ -2581,6 +2858,9 @@
       ],
       "Email address is not available": [
         "ईमेल पता उपलब्ध नहीं है"
+      ],
+      "Email address is required": [
+        "ईमेल पता चाहिए"
       ],
       "Email is not valid": [
         "ईमेल मान्य नहीं है"
@@ -2597,8 +2877,14 @@
       "File too large. Your logo must be 30 KB or smaller.": [
         "फ़ाइल बहुत बड़ी है। आपका चिन्ह 30 KB या उससे छोटा होना चाहिए।"
       ],
+      "Folder name cannot be empty.": [
+        "फ़ोल्डर का नाम रिक्त नहीं हो सकता |"
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "अगर आपके टीवी का वक्त एक्सपायर हो गया है, तो अपने टीवी को रीफ्रेश करें और अपना कोड वापस डालें।"
+      ],
+      "IMAP server is required": [
+        "IMAP सर्वर चाहिए"
       ],
       "Impossible to create the gateway": [
         "गेटवे बनाना असंभव"
@@ -2648,11 +2934,24 @@
       "Invalid invitation link": [
         "अमान्य आमंत्रण लिंक"
       ],
+      "Invalid name": [
+        "अमान्य नाम"
+      ],
       "Invalid postal code": [
         "अमान्य पोस्टल कोड"
       ],
       "Invalid verification code": [
         "अवैध सत्यापन कोड"
+      ],
+      "Label name cannot be empty.": [
+        "लेबल का नाम खाली नहीं हो सकता |"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "मौजूदा ${ BRAND_NAME } कैलेंडर के साथ कम-से-कम ${ calendarsToFixCount } कैलेंडर जोड़ें",
+        "मौजूदा ${ BRAND_NAME } कैलेंडर के साथ कम-से-कम ${ calendarsToFixCount } कैलेंडर जोड़ें"
+      ],
+      "Missing key packet": [
+        "लुप्त कुञ्जी खण्ड"
       ],
       "Name does not match": [
         "नाम मेल नहीं खाता"
@@ -2669,6 +2968,9 @@
       "No image selected": [
         "कोई छवि चयनित नहीं है।"
       ],
+      "No valid address found": [
+        "कोई मान्य पता नहीं मिला"
+      ],
       "Not a valid number": [
         "मान्य संख्या नहीं है"
       ],
@@ -2680,6 +2982,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "संगठन कुंजी को सक्रिय करना आवश्यक है ताकि गैर-निजी उपयोगकर्ता बनाए जा सकें"
+      ],
+      "Password is required": [
+        "पासवर्ड चाहिए"
       ],
       "Passwords do not match": [
         "पासवर्ड्स समान नहीं हैं"
@@ -2710,6 +3015,10 @@
       ],
       "Please enter a valid Entity ID URL": [
         "कृपया एक वैध Entity ID यूआरएल दर्ज करें"
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोध को ठीक करें।",
+        "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोधों को ठीक करें।"
       ],
       "Please generate keys before you try to change your password": [
         "अपना पासवर्ड बदलने का प्रयास करने से पहले कृपया कुंजियाँ बनाएँ।"
@@ -2747,6 +3056,15 @@
       "Please upload only 1 file": [
         "कृपया केवल 1 फाइल अपलोड करें"
       ],
+      "Port is required": [
+        "पोर्ट चाहिए"
+      ],
+      "Primary address key is not decrypted": [
+        "प्राथमिक पता कुंजी डिक्रिप्ट नहीं है"
+      ],
+      "Primary address key is not decrypted.": [
+        "प्राथमिक पता कुंजी डिक्रिप्ट नहीं है।"
+      ],
       "Process aborted": [
         "प्रक्रिया निरस्त की गई"
       ],
@@ -2755,6 +3073,21 @@
       ],
       "Signature verification failed": [
         "हस्ताक्षर सत्यापन असफल"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "आपके कुछ फ़ोल्डर नाम अनुपलब्ध हैं। कृपया इन नामों को संपादित करने के लिए आयात को अनुकूलित करें।"
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "आपके कुछ फोल्डर ${ MAIL_APP_NAME } के अक्षर सीमा को पार कर रहे है। कृपया आयात को बदले इन नाम को बदलने के लिए।"
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "आपके कुछ परचीयों के नाम आरक्षित हैं। आयात करने के लिए कृपया इनके नाम बदलें।"
+      ],
+      "Some of your label names are unavailable. Please customize the import to edit these names.": [
+        "आपके कुछ लेबल नाम अनुपलब्ध हैं। कृपया इन नामों को संपादित करने के लिए आयात को अनुकूलित करें।"
+      ],
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "आपके कुछ लेबल नाम ${ MAIL_APP_NAME } की अधिकतम वर्ण सीमा से अधिक हैं। कृपया इन नामों को संपादित करने के लिए आयात को अनुकूलित करें।"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "कुछ गलत हुआ, आगे बढ़ने के लिए कृपया पेज ${ refresh } करें। अगर फिर भी यह त्रुटि है तो ${ supportTeam } से सम्पर्क करें।"
@@ -2774,11 +3107,26 @@
       "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
         "फ़ाइल बहुत छोटी है, न्यूनतम आकार ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS } होना चाहिए"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "फ़ोल्डर का नाम अमान्य है। कृपया कोई दूसरा नाम चुनें |"
+      ],
+      "The folder name is too long. Please choose a different name.": [
+        "फ़ोल्डर का नाम बहुत लंबा है। कृपया कोई दूसरा नाम चुनें।"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "लेबल नाम अमान्य है. कृपया कोई दूसरा नाम चुनें |"
+      ],
+      "The label name is too long. Please choose a different name.": [
+        "लेबल का नाम बहुत लंबा है. कृपया कोई दूसरा नाम चुनें |"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "जोड़ने के लिए क्रेडिट रकम कम-से-कम ${ price } होना चाहिए"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "नीति का नाम 3 और 40 वर्णों के बीच होना चाहिए।"
+      ],
+      "There are too many folders in your external account. Please customize the import to delete some folders.": [
+        "आपके बाहरी खाते में बहुत सारे फ़ोल्डर हैं। कृपया कुछ फ़ोल्डरों को हटाने के लिए आयात को अनुकूलित करें।"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "ये फील्ड ${ maximumLength } अक्षर की सीमा पार करता है।"
@@ -2788,6 +3136,12 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "इस फ़ील्ड के लिए कम से कम ${ minimumLength } वर्णों की आवश्यकता है।"
+      ],
+      "This folder name is not available. Please choose a different name.": [
+        "यह फ़ोल्डर नाम उपलब्ध नहीं है। कृपया कोई दूसरा नाम चुनें |"
+      ],
+      "This label name is not available. Please choose a different name.": [
+        "यह लेबल नाम उपलब्ध नहीं है। कृपया कोई दूसरा नाम चुनें |"
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "गैर-निजी उपयोगकर्ता खाते बनाने और उन खाते तक की पहुँच के लिए, आपको अपने प्रबंधक प्रिविलेज़ को पुनःस्थापित करने की आवश्यकता होगी।"
@@ -2825,17 +3179,149 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "गलत सत्यापन कोड। कृपया सुनिश्चित करें कि आपने सत्यापन कोड को सही तरीके से कॉपी किया है और पुनः प्रयास करें। परिवर्तनों को प्रभावी होने में 24 घंटे तक का समय लग सकता है।"
       ],
+      "You have reached the maximum number of calendars.": [
+        "आप कैलेंडर के नंबर के लिमिट पे पहुंच चुके है।"
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "आपने अपनी योजना में सभी पतों का उपयोग किया है। कृपया एक नया पता जोड़ने के लिए अपनी योजना को अपग्रेड करें।"
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "आपने अपनी योजना में सभी उपयोगकर्ताओं का उपयोग किया है। कृपया एक नया उपयोगकर्ता जोड़ने के लिए अपनी योजना को अपग्रेड करें।"
       ],
+      "You must set a name": [
+        "आपको एक नाम सेट करना होगा"
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "आपके खाते या संगठन की रसीद लंबित है। कृपया सभी बकाया रसीदों का भुगतान करें।"
       ],
+      "Your import will not be processed.": [
+        "आपका आयात संसाधित नहीं किया जाएगा।"
+      ],
       "ZIP code is required": [
         "ज़िप कोड आवश्यक है"
+      ]
+    },
+    "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "आपके फाइल ${ formattedFilename } को पढ़ते समय एक गड़बड़ हो गई। गलत फाइल फॉर्मेट।"
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "आपकी फ़ाइल ${ formattedFilename } अपलोड करते समय एक त्रुटि हुई। अधिकतम फ़ाइल आकार ${ MAX_IMPORT_FILE_SIZE_STRING } है।"
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "आपका फाइल ${ formattedFilename } अपलोड करते हुए कुछ गड़बड़ हो गई। सिर्फ ICS फाइल फॉर्मेट की अनुमति है।"
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "आपकी फ़ाइल अपलोड करते समय एक त्रुटि हुई। कोई फ़ाइल नहीं चुनी गई है।"
+      ],
+      "An unexpected error occurred. Import must be restarted.": [
+        "एक अप्रत्याशित त्रुटि हुई। आयात फिर से शुरू होना चाहिए।"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS } से ज़्यादा इवेंट हैं।",
+        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS } से ज़्यादा इवेंट हैं।"
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "आपके फाइल ${ formattedFilename } में एक अमान्य तरीका है और आयात नहीं जा सकता"
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "आपके फाइल ${ formattedFilename } में आयात करने के लिए कोई इवेंट नहीं है।"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "आपकी फ़ाइल ${ formattedFilename } खाली है।"
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "आपका फाइल ${ formattedFilename } एक कैलेंडर नहीं है।"
+      ]
+    },
+    "Error importing contact": {
+      "Encryption failed": [
+        "एन्क्रिप्शन विफल"
+      ],
+      "Missing FN property": [
+        "एफएन संपत्ति की कमी"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard संस्करण < 3.0 सपोर्ट नहीं किया जाता"
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "आपके फाइल ${ formattedFilename } को पढ़ते समय एक गड़बड़ हो गई। गलत फाइल फॉर्मेट।"
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "आपकी फ़ाइल ${ formattedFilename } अपलोड करते समय एक त्रुटि हुई। अधिकतम फ़ाइल आकार ${ MAX_IMPORT_FILE_SIZE_STRING } है।"
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "आपकी फ़ाइल ${ formattedFilename } अपलोड करते समय एक त्रुटि हुई। कोई .csv या .vcf फ़ाइल चयनित नहीं है"
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "आपकी फ़ाइल अपलोड करते समय एक त्रुटि हुई। कोई फ़ाइल नहीं चुनी गई है।"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "आपकी फ़ाइल ${ formattedFilename } में ${ MAX_IMPORT_CONTACTS_STRING } से अधिक संपर्क हैं।"
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "आपकी फ़ाइल ${ formattedFilename } में आयात करने के लिए कोई संपर्क नहीं है।"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "आपकी फ़ाइल ${ formattedFilename } खाली है।"
+      ]
+    },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "खराब प्रारूप। घटक पढ़ा नहीं जा सकता।"
+      ],
+      "Calendar": [
+        "कैलेंडर"
+      ],
+      "Component with wrong format": [
+        "गलत प्रारूप वाला घटक"
+      ],
+      "Custom time zone": [
+        "कस्टम समय क्षेत्र"
+      ],
+      "Element": [
+        "तत्त्व"
+      ],
+      "Encryption failed": [
+        "एन्क्रिप्शन विफल"
+      ],
+      "Event": [
+        "इवेंट"
+      ],
+      "Free-busy time information": [
+        "खाली व्यस्त समय की जानकारी"
+      ],
+      "Invalid event": [
+        "अमान्य घटना"
+      ],
+      "Journal entry": [
+        "जर्नल प्रविष्टि"
+      ],
+      "Missing start time": [
+        "प्रारंभ समय गुम है"
+      ],
+      "No UID, title or start time": [
+        "कोई यूआईडी, शीर्षक या प्रारंभ समय नहीं"
+      ],
+      "Notification out of bounds": [
+        "सीमा से बाहर अधिसूचना"
+      ],
+      "Original recurring event could not be found": [
+        "मूल पुनरावर्ती घटना नहीं मिली"
+      ],
+      "Time zone": [
+        "समय क्षेत्र"
+      ],
+      "To-do entry": [
+        "करने-को एंट्री"
+      ],
+      "Unknown": [
+        "अनजान"
+      ],
+      "Unsupported event": [
+        "असमर्थित घटना"
       ]
     },
     "Error importing users": {
@@ -2880,6 +3366,57 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "कोई छवि चयनित नहीं है."
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "अनअपेक्षित त्रुटि"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "संलग्न आईसीएस फ़ाइल को डिक्रिप्ट नहीं किया जा सका"
+      ],
+      "Attached ICS file could not be read": [
+        "संलग्न ICS फ़ाइल को पढ़ा नहीं जा सका"
+      ],
+      "Invalid invitation": [
+        "आमंत्रण अमान्य"
+      ],
+      "Invalid response": [
+        "अमान्य प्रतिक्रिया"
+      ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "इवेंट को आपके कैलेंडर में नहीं जोड़ा जा सका। कोई जवाब नहीं भेजा गया"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "इवेंट को आपके कैलेंडर में अपडेट नहीं किया जा सका। कोई जवाब नहीं भेजा गया"
+      ],
+      "Unsupported invitation": [
+        "असमर्थित आमंत्रण"
+      ],
+      "Unsupported response": [
+        "असमर्थित प्रतिक्रिया"
+      ],
+      "We could not cancel the event in your calendar": [
+        "हम आपके कैलेंडर में ईवेंट रद्द नहीं कर सके"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "हम आपके कैलेंडर से ईवेंट पुनर्प्राप्त नहीं कर सके"
+      ],
+      "We could not update the event in your calendar": [
+        "हम आपके कैलेंडर में ईवेंट को अपडेट नहीं कर सके"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "आपका उत्तर भेज दिया गया था, लेकिन ईवेंट को आपके कैलेंडर में नहीं जोड़ा जा सका"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "आपका उत्तर भेज दिया गया था, लेकिन ईवेंट को आपके कैलेंडर में अपडेट नहीं किया जा सका"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(कोई शीर्षक नहीं)"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -3560,6 +4097,301 @@
         "एसएमएस"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "कैलेंडर समय क्षेत्र सपोर्ट नहीं किया जाता"
+      ],
+      "Edited event not supported": [
+        "संपादित घटना समर्थित नहीं है"
+      ],
+      "End time out of bounds": [
+        "समाप्ति समय सीमा से बाहर"
+      ],
+      "Event validation failed": [
+        "घटना सत्यापन विफल"
+      ],
+      "Floating times not supported": [
+        "फ़्लोटिंग समय समर्थित नहीं"
+      ],
+      "Malformed all-day event": [
+        "खराब पूरे दिन इवेंट"
+      ],
+      "Malformed end time": [
+        "विकृत समाप्ति समय"
+      ],
+      "Malformed recurring event": [
+        "विकृत पुनरावर्ती घटना"
+      ],
+      "Malformed start time": [
+        "विकृत प्रारंभ समय"
+      ],
+      "Recurring event has no occurrences": [
+        "आवर्ती घटना की कोई घटना नहीं होती"
+      ],
+      "Recurring rule not supported": [
+        "आवर्ती नियम समर्थित नहीं है"
+      ],
+      "Start time out of bounds": [
+        "समय सीमा से बाहर प्रारंभ करें"
+      ],
+      "Time zone not supported": [
+        "समय क्षेत्र समर्थित नहीं है"
+      ]
+    },
+    "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } इवेंट एन्क्रिप्ट किए और आपके कैलेंडर में जोड़े गए",
+        "${ totalImported }/${ totalToImport } इवेंट एन्क्रिप्ट किए और आपके कैलेंडर में जोड़े गए"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "आपके इवेंट को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। ${ totalToImport } में से ${ totalImported } इवेंट सफलतापूर्वक आयात किया गया।",
+        "आपके इवेंट को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। ${ totalToImport } में से ${ totalImported } इवेंट सफलतापूर्वक आयात किए गए।"
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "आपके इवेंट को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। कोई इवेंट आयात नहीं किया जा सका।"
+      ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "आपके इवेंट को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। कोई इवेंट आयात नहीं किया जा सका।"
+      ],
+      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
+        "संपर्कों को एन्क्रिप्ट करना और जोड़ना: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "आपके कैलेंडर में इवेंट एन्क्रिप्ट कर रहे और जोड़ रहे: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "इवेंट सफलतापूर्वक आयात किया गया। आयात किया इवेंट अब आपके कैलेंडर में दिखाई देगा।"
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "इवेंट सफलतापूर्वक आयात किया गए। आयात किए इवेंट अब आपके कैलेंडर में दिखाई देंगे।"
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "आयात खत्म होने से पहले टैब बंद ना करें।"
+      ]
+    },
+    "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } फिलहाल कुछ खास इवेंट प्रकार, जानकारी, और फॉर्मेट सपोर्ट नहीं करता।"
+      ],
+      "vCard versions < 3.0": [
+        "vCard संस्करण < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "आयात किए गए न्योते ${ CALENDAR_APP_NAME } में आयोजक और प्रतिभागी जानकारी के बिना सादे इवेंट के रूप में दिखाए जाते है। इवेंट अपडेट लेने और प्रतिभागी देखने के लिए, आयोजक को आपके ${ BRAND_NAME } ईमेल पते पे न्योता भेजने को बोले।"
+      ],
+      "This file contains an event invitation:": [
+        "इस फाइल में इवेंट का एक न्योता है:",
+        "इस फाइल में इवेंट के न्योते है:"
+      ],
+      "This file contains an invitation response:": [
+        "इस फाइल में न्योते के जवाब है:",
+        "इस फाइल में न्योते के जवाब है:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "इस फाइल में कुछ ऐसा डाटा है जिसे हम आयात नहीं कर सकते:"
+      ]
+    },
+    "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } संपर्क एन्क्रिप्ट किया गया और आपकी संपर्क सूची में जोड़ा गया",
+        "${ totalImported }/${ totalToImport } ईवेंट एन्क्रिप्ट किया गया और आपके कैलेंडर में जोड़ा गया"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "आपके संपर्क को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। कोई संपर्क आयात नहीं किया जा सका।"
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "आपके संपर्को को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। ${ totalToImport } में से ${ totalImported } संपर्क सफलतापूर्वक आयात किए गए।"
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "आपके संपर्को को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। कोई संपर्क आयात नहीं किया जा सका।"
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "संपर्क सफलतापूर्वक आयात किया गया। आयात किया संपर्क अब आपकी संपर्क सूची में दिखाई देगा।"
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "संपर्क सफलतापूर्वक आयात किए गए। आयात किए संपर्क अब आपकी संपर्क सूची में दिखाई देंगे।"
+      ]
+    },
+    "Import contact error": {
+      "Contact ${ contactId }: ": [
+        "संपर्क ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } संपर्क",
+        "${ totalContacts } संपर्क"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "अनजान"
+      ]
+    },
+    "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } ${ forNow } ये सपोर्ट नहीं करता:"
+      ],
+      "for now": [
+        "अभी के लिए"
+      ]
+    },
+    "Import error": {
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } आपके खाते से जुड़ नहीं सका। कृपया देख ले की:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } आपके बाहरी खाते से जुड़ नहीं सका। कृपया पक्का करें कि मेल सर्वर का पता और पोर्ट नंबर सही है।"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } आपके बाहरी खाते से जुड़ नहीं सका। देख ले की:"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } आपके Yahoo खाते से जुड़ नहीं पा रहा। कृपया पक्का कर ले की मेल सर्वर पता और पोर्ट नंबर सही है।"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } आपके Yahoo खाते से जुड़ नहीं सका। देख ले की:"
+      ],
+      "2-step verification is enabled in your external account.": [
+        "आपके बाहरी खाते में 2-कदम सत्यापन सक्षम है।"
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "आपके बाहरी ईमेल खाते में 2-कदम सत्यापन सक्षम है।"
+      ],
+      "IMAP access is enabled in your external account.": [
+        "आपके बाहरी खाते में IMAP एक्सेस सक्षम है।"
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "आपके Yahoo खाते में IMAP एक्सेस सक्षम है।"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "बहुत अधिक हाल के अनुरोध। कृपया कुछ ही क्षणों में पुनः प्रयास करें।"
+      ],
+      "Use your app password if:": [
+        "अपने ऐप पासवर्ड का उपयोग करें यदि:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "अपने नियमित पासवर्ड के बजाय अपने ऐप पासवर्ड का उपयोग करें यदि:"
+      ],
+      "Your email account requires an app password to export your data.": [
+        "आपके ईमेल खाते को आपका डाटा निर्यात करने के लिए एक ऐप पासवर्ड की ज़रूरत है"
+      ],
+      "Your email account requires one to export your data.": [
+        "आपके ईमेल खाते को आपका निर्यात किया डाटा चाहिए।"
+      ],
+      "Your email address and password are correct.": [
+        "आपका ईमेल पता और पासवर्ड सही है |"
+      ],
+      "Your password is correct.": [
+        "आपका पासवर्ड सही है |"
+      ]
+    },
+    "Import instructions": {
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "आपके ईमेल सेवा प्रदाता के हिसाब से, आपको ${ BRAND_NAME } पे आयात करने से पहले ${ knowledgeBaseLink } बनाना पड़ सकता है।"
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "3 डॉट (...) पे दबाकर ड्रॉपडाउन मेन्यू खोलें।"
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "${ boldAppPassword } बनाएं और जब ${ BRAND_NAME } मांगे तो अपने बार-बार इस्तेमाल होने वाले पासवर्ड की जगह उसे इस्तेमाल करें।"
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "${ yahooMailLink } में अपने प्रोफाइल में ${ boldAccountInfo } पे जाएं।"
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "${ boldAccountSecurity } पे जाएं।"
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "अपने ${ yahooMailLink } संपर्क खोलें।"
+      ],
+      "Select ${ boldExportCSV }.": [
+        "${ boldExportCSV } चुनें।"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "${ BRAND_NAME } पे कैलेंडर आयात करने के लिए आपको ${ knowledgeBaseLink } चाहिए। उसे Yahoo से डाउनलोड करें 3 आसान कदमों में:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "${ BRAND_NAME } पे कैलेंडर आयात करने के लिए, आपको ${ knowledgeBaseLink } चाहिए। आयात शुरू करने से पहले इसे डाउनलोड कर लें।"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "${ BRAND_NAME } पे कैलेंडर आयात करने के लिए आपको ${ knowledgeBaseLink } चाहिए। उसे Yahoo से डाउनलोड करें तीन आसान चीज़े करके:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "${ BRAND_NAME } पे कैलेंडर आयात करने के लिए, आपको ${ knowledgeBaseLink } चाहिए। आयात शुरू करने से पहले इसे डाउनलोड कर लें।"
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "${ BRAND_NAME } पे ईमेल आयात करने के लिए, आपको Yahoo से ${ appPasswordLink } चाहिए होगा। इन चीज़ो को करके वो पाएं:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "अकाउंट जानकारी"
+      ],
+      "Account security": [
+        "खाते की सुरक्षा"
+      ],
+      "app password": [
+        "ऐप का पासवर्ड"
+      ],
+      "Export": [
+        "निर्यात"
+      ],
+      "Export to CSV file": [
+        "CSV फ़ाइल में निर्यात करें"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "ऐप का पासवर्ड"
+      ],
+      "app password or enable IMAP": [
+        "ऐप पासवर्ड या IMAP सक्षम करें"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "CSV या VCF (vCard) फाइल"
+      ],
+      "full calendar view": [
+        "कैलेंडर दृश्य चुनें"
+      ],
+      "ICS file": [
+        "ICS फाइल"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "${ calendarViewLink } पे जाए Yahoo पे"
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "आप जिस कैलेंडर को आयात करना चाहते है उस पे माउस रखें और ड्रॉपडाउन मेन्यू खोलें।"
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "कैलेंडर एक ICS फाइल की तरह निर्यात करने के लिए ${ boldExport } चुनें।"
+      ]
+    },
+    "Import warning": {
+      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
+        "${ totalContactsDiscarded } में से ${ totalContacts } संपर्क आयात नहीं किए जाएंगे। विवरण के लिए क्लिक करें"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEvents } में से ${ totalEventsDiscarded } इवेंट आयात नहीं किया जाएगा। जानकारी के लिए फैलाए।",
+        "${ totalEvents } में से ${ totalEventsDiscarded } इवेंट आयात नहीं किए जाएगे। जानकारी के लिए फैलाए।"
+      ],
+      "No contact can be imported. Click for details": [
+        "कोई संपर्क आयात नहीं किया जा सकता है। विवरण के लिए क्लिक करें"
+      ],
+      "No event can be imported. Expand for details.": [
+        "कोई इवेंट आयात नहीं किया जा सका। जानकारी के लिए फैलाएं।"
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "आपके कैलेंडर कंटेंट का कुछ हिस्सा सपोर्ट नहीं किया जाता है और आयात नहीं किया जाएगा।"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } के लिए आपकी अनुमति की आवश्यकता है ${ enableDesktopNotifications }"
@@ -3572,6 +4404,14 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } की एन्क्रिप्शन टेकनोलॉजी का मतलब है की कोई भी आपका पासवर्ड एक्सेस नहीं कर सकता - यहां तक की हम भी नहीं।"
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } नया कैलेंडर",
+        "${ calendarsToBeCreatedCount } नए कैलेंडर"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } मर्ज किया गया कैलेंडर",
+        "${ calendarsToBeMergedCount } मर्ज किए गए कैलेंडर"
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% छूट"
@@ -3628,6 +4468,14 @@
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } संदिग्ध गतिविधि की समर्पित निगरानी के साथ आपके खाते की रक्षा करता है।"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } फोल्डर मिला",
+        "${ providerFoldersNumLocalized } फोल्डर मिले"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } लेबल Gmail में मिला",
+        "${ providerFoldersNumLocalized } लेबल Gmail में मिले"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } सर्वर अभी भी सेटअप किया जा रहा है। इसमें आमतौर पर लगभग ${ provisioningDuration } का समय लगता है।",
         "${ provisioningCounter } सर्वर अभी भी सेटअप किए जा रहा है। इसमें आमतौर पर लगभग ${ provisioningDuration } का समय लगता है।"
@@ -3646,9 +4494,21 @@
         "${ remainingAddresses.length } और ईमेल पता",
         "${ remainingAddresses.length } और ईमेल पता"
       ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर",
+        "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर"
+      ],
       "${ selectedEntities.length } selected": [
         "${ selectedEntities.length } चयनित",
         "${ selectedEntities.length } चयनित"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } फ़ोल्डर का चयन किया",
+        "${ selectedFoldersCountLocalized } फ़ोल्डर्स का चयन किया"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } लेबल चयनित",
+        "${ selectedFoldersCountLocalized } लेबल चयनित"
       ],
       "${ storage } storage": [
         "${ storage } स्टोरेज"
@@ -3766,6 +4626,14 @@
         "प्रभावित उपयोगकर्ता पंक्ति पर है",
         "प्रभावित उपयोगकर्ता पंक्तियों पर हैं"
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "सभी (${ totalFoldersCount } फोल्डर)",
+        "सभी (${ totalFoldersCount } फोल्डर)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "सभी (${ totalFoldersCount } लेबल)",
+        "सभी (${ totalFoldersCount } लेबल)"
+      ],
       "All inactive members deleted": [
         "सभी निष्क्रिय सदस्य मिटा दिए गए"
       ],
@@ -3802,11 +4670,17 @@
       "Amount due": [
         "देय राशि"
       ],
+      "and": [
+        "और"
+      ],
       "Are you sure you want to cancel editing the group?": [
         "क्या आप वाकई ग्रुप का संपादन रद्द करना चाहते हैं?"
       ],
       "Are you sure you want to discard your changes?": [
         "क्या आप वाकई अपने परिवर्तनों को छोड़ना चाहते हैं?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "क्या आप वाकई अपना आयात छोड़ना चाहते हैं?"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "क्या आप वाकई इस उपयोगकर्ता को प्रशासनिक विशेषाधिकार देना चाहते हैं?"
@@ -3883,6 +4757,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong } पर एक नया सत्यापन कोड भेजने के लिए \"नए कोड का अनुरोध करें\" पर क्लिक करें। यदि यह फ़ोन नंबर गलत है, तो इसे ठीक करने के लिए \"संपादित करें\" पर क्लिक करें।"
       ],
+      "Close this screen to exit.": [
+        "बाहर निकलने के लिए इस स्क्रीन को बंद करें।"
+      ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET संपादकों का चयन पुरस्कार, 10 में से 8.4 रेटिंग के साथ"
       ],
@@ -3922,11 +4799,24 @@
       "Country code": [
         "देश का कोड"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } नया कैलेंडर बनाएं",
+        "${ calendarsToBeCreatedCount } नए कैलेंडर बनाएं"
+      ],
+      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
+        "आयातित संदेशों के लिए एक लेबल बनाएं, इस आयात के लिए एक समय सीमा और आपके द्वारा आयात किए जाने वाले फ़ोल्डर।"
+      ],
+      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
+        "आयातित संदेशों के लिए एक लेबल बनाएं, इस आयात के लिए एक समय सीमा, और वे लेबल जिन्हें आप आयात करना चाहते हैं।"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "उप-खाते बनाएं और प्रबंधित करें और उन्हें अपने कस्टम डोमेन पर ईमेल पते असाइन करें।"
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
         "अन्य लोगों के लिए ईमेल पते बनाएं, व्यवसाय, स्कूल या समूह के लिए ${ MAIL_APP_NAME } प्रबंधित करें। अपने संगठन का नाम और कस्टम डोमेन (उदा. @aapkicompany.in) जोड़कर प्रारंभ करें। "
+      ],
+      "Create in": [
+        "में बनाएँ"
       ],
       "Create your first Gateway": [
         "पहला गेटवे बनाएं"
@@ -4126,6 +5016,9 @@
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "वह कोड दर्ज करें जो ${ email } को भेजा गया था। यदि आपको अपने इनबॉक्स में संदेश नहीं मिल रहा है, तो कृपया अपना स्पैम फ़ोल्डर देखें।"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "आप जिस ईमेल खाते से आयात करना चाहते हैं, उसके क्रेडेंशियल दर्ज करें।"
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "एक **eduGAIN** संगठन के लिए **${ domain.DomainName }** का Entity ID दर्ज करें।"
       ],
@@ -4264,11 +5157,27 @@
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "अगर आपको कोई समस्या है, हम यहाँ हैं आपकी सहायता के लिए। ${ boldPhoneCall } या ${ boldZoomMeeting } हमारे सहायता विशेषज्ञों के साथ।"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें",
+        "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें"
+      ],
+      "Import from": [
+        "यहां से आयात करें"
+      ],
+      "Import in progress": [
+        "आयात चल रहा है"
+      ],
+      "Import mailbox": [
+        "मेलबॉक्स आयात करें"
+      ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "महत्वपूर्ण: यदि आपका DNS कंसोल CNAME संख्या को बिंदु से समाप्त करने की अनुमति नहीं देता है, तो आप CNAME संख्या में अंतिम बिंदु को हटा सकते हैं।"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "महत्वपूर्ण: कृपया सुनिश्चित करें कि आपने पुनर्प्राप्ति कोड सहेजे हैं। यदि आप अपना दो-कारक प्रमाणीकरण उपकरण खो देते हैं, तो आप स्थायी रूप से अपने खाते तक पहुंच खो सकते हैं।"
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "${ fromEmail } से ${ toEmail } पे डाटा आयात कर रहे।"
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "अगले चरण में, आप बिटकॉइन पते का उपयोग करके राशि जमा करने में सक्षम होंगे।"
@@ -4375,11 +5284,20 @@
       "Item updated in vault": [
         "तिजोरी में आइटम अपडेट हुआ"
       ],
+      "Just confirm your selection and we'll do the rest.": [
+        "बस अपने चयन की पुष्टि करें और हम बाकी काम करेंगे।"
+      ],
       "Keys created": [
         "कुंजी बनाई गई"
       ],
+      "Label all imported messages as": [
+        "सभी आयातित संदेशों को लेबल करें"
+      ],
       "Labels:": [
         "लेबल:"
+      ],
+      "Large imports can take several days.": [
+        "बड़े आयात में कई दिन लग सकते हैं।"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "दूसरे वीपीएन ऐप से ${ VPN_APP_NAME } पे साइनइन करना सीखें।"
@@ -4447,6 +5365,9 @@
       "Member": [
         "सदस्य"
       ],
+      "Merged": [
+        "संविलीन"
+      ],
       "Messages to all your email addresses will go to your inbox.": [
         "आपके सभी ईमेल पतों पर भेजे गए संदेश आपके इंबॉक्स में जाएंगे।"
       ],
@@ -4470,6 +5391,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "अपने नए फ़ोल्डर को नाम दें और उस मूल फ़ोल्डर का चयन करें जिसे आप इसे रखना चाहते हैं। यदि आप किसी मूल फ़ोल्डर का चयन नहीं करते हैं, तो यह नया फ़ोल्डर एक शीर्ष स्तर फ़ोल्डर के रूप में बनाया जाएगा।"
+      ],
+      "New": [
+        "नया"
       ],
       "New user invited to organization": [
         "संगठन में नया यूज़र आमंत्रित किया गया"
@@ -4598,6 +5522,9 @@
       "please open a support ticket": [
         "कृपया सहायता टिकट खोलें"
       ],
+      "Please select the folders you would like to import:": [
+        "कृपया उन फ़ोल्डरों का चयन करें जिन्हें आप आयात करना चाहते हैं:"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "एक अलग भुगतान तरीका इस्तेमाल आज़माएं, या अपने बैंक से संपर्क करें।"
       ],
@@ -4706,6 +5633,12 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "अपने ${ BRAND_NAME } संगठन में शामिल करने के लिए ${ getFormattedOrganization } से उपयोगकर्ता संबद्धताएँ चुनें:"
       ],
+      "Select what you want to import.": [
+        "आयात चयन करें"
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "जिन कैलेंडर को आयात करना है उन्हे चुने। हर आयात किये गए कैलेंडर के लिए एक नया कैलेंडर बनेगा इस हिसाब से की आपके प्लान में कितने कैलेंडर मौजूद है।"
+      ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "अपने सदस्यों को अपने खातों को 2FA से सुरक्षित रखने के लिए ईमेल भेजें।"
       ],
@@ -4803,6 +5736,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro ने 5 में से 4.2 तारे की रेटिंग के साथ सिफारिश की"
+      ],
+      "Temporarily unavailable. Please check back later.": [
+        "अस्थाई रूप से अनुपलब्ध। कृपया फिर से बाद में जाँच करें।"
       ],
       "Thank you": [
         "शुक्रिया"
@@ -4944,6 +5880,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "स्पैम और दुर्व्यवहार से लड़ने के लिए, कृपया सत्यापित करें कि आप इंसान हैं"
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "इवेंट आयात करने के लिए, पहले ${ CALENDAR_APP_NAME } में एक कैलेंडर बनाएं। आयात के बाद इवेंट इधर दिखाएं जाएंगे।"
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "${ BRAND_NAME } उत्पादों के नवीनतम विकास से जुड़े रहने के लिए, आप समय-समय पर हमारे विभिन्न ईमेल और ${ blogLink } की सदस्यता ले सकते हैं।"
@@ -5131,6 +6070,9 @@
       "We'll get back to you shortly.": [
         "हम शीघ्र ही आपसे संपर्क करेंगे।"
       ],
+      "We'll notify you when the import is done.": [
+        "आयात हो जाने पर हम आपको सूचित करेंगे।"
+      ],
       "We'll send a new verification code to ${ strong }": [
         "हम ${ strong } को एक नया सत्यापन कोड भेजेंगे"
       ],
@@ -5222,11 +6164,20 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "आप ${ downgradedPlanName } योजना में शामिल से अधिक स्टोरेज का उपयोग कर रहे हैं। कृपया डाउनग्रेड करने के लिए डेटा को मिटाएं या हटाएं।"
       ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "आप मौजूदा ${ BRAND_NAME } कैलेंडर के साथ आयात किए कैलेंडर भी जोड़ सकते है"
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "आप इसे ${ settingsLink } में कभी भी बदल सकते हैं।"
       ],
+      "You can check the progress ${ importProgressLink }.": [
+        "आप प्रगति की जांच कर सकते हैं ${ importProgressLink }।"
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "सत्यापन के लिए सही ईमेल पता सुनिश्चित करने के लिए आप इसे एक बार संपादित कर सकते हैं।"
+      ],
+      "You can import one data type at a time.": [
+        "आप एक बार में एक डेटा प्रकार आयात कर सकते हैं।"
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किया है को हटाए।",
@@ -5334,11 +6285,17 @@
       "Your account was successfully updated with this promotion": [
         "आपका खाता इस प्रोमोशन के साथ सफलतापूर्वक अपडेट किया गया था"
       ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "आपका डाटा ${ importedEmailAddressStrong } से आपके ${ BRAND_NAME } खाते पे आयात करने के लिए तैयार है।"
+      ],
       "Your email will only be used for this one-time verification.": [
         "आपके ईमेल का उपयोग केवल इस एक बार के सत्यापन के लिए किया जाएगा।"
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "आपकी जानकारी हमारे साथ सुरक्षित है। हम आपसे केवल तब संपर्क करेंगे जब हमारी सेवाएं प्रदान करने के लिए आवश्यक हो।"
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "आयात पूर्ण होने के बाद आपकी लॉगिन जानकारी सहेजी नहीं जाएगी।"
       ],
       "Your next billing date is ${ renewalTime }.": [
         "आपकी अगली बिलिंग तिथि ${ renewalTime } है।"
@@ -5391,6 +6348,11 @@
         "इनवॉइस के लिए एक नोट दर्ज करें। ये विवरण व्यक्तिगत और संगठनात्मक दोनों इनवॉइस में जोड़े जाएंगे। ये केवल भविष्य में जारी की जाने वाली इनवॉइस पर ही दिखाई देंगे।"
       ]
     },
+    "Info on errors": {
+      "Click for details": [
+        "विवरण देखने के लिए क्लिक करें"
+      ]
+    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "आप सदस्यता को पुनः सक्रिय करके समाप्ति से रोक सकते हैं"
@@ -5399,6 +6361,16 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "अवैतनिक चालान के कारण किसी भी सेवा रुकावट से बचने के लिए, कृपया सुनिश्चित करें कि आपके पास कम से कम 1 वैध भुगतान विधि है जो किसी भी समय किसी भी बिंदु पर सहेजी गई है।"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } फ़ोल्डर चयनित",
+        "${ selectedFoldersCount } फ़ोल्डर्स का चयन किया"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } लेबल चयनित",
+        "${ selectedFoldersCount } लेबल चयनित"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -5509,6 +6481,9 @@
         "${ UsedAddresses } का ${ MaxAddresses } ईमेल पता",
         "${ UsedAddresses } का ${ MaxAddresses } ईमेल पता"
       ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "(अस्थाई रूप से अनुपलब्ध। कृपया फिर से बाद में जाँच करें।)"
+      ],
       "Account storage": [
         "खाता संग्रहण"
       ],
@@ -5554,6 +6529,9 @@
       "Amount due": [
         "देय राशि"
       ],
+      "App password": [
+        "ऐप का पासवर्ड"
+      ],
       "Apply policy to": [
         "नीति लागू करें"
       ],
@@ -5595,6 +6573,12 @@
       ],
       "BTC amount": [
         "बीटीसी राशि"
+      ],
+      "Calendar": [
+        "कैलेंडर"
+      ],
+      "Calendars": [
+        "कैलेंडर"
       ],
       "Card details": [
         "कार्ड विवरण"
@@ -5649,6 +6633,9 @@
       ],
       "Confirm second password": [
         "दूसरे पासवर्ड की पुष्टि करें"
+      ],
+      "Contacts": [
+        "संपर्क"
       ],
       "Copy": [
         "कॉपी करें"
@@ -5719,6 +6706,21 @@
       "Email or username": [
         "ईमेल या उपयोगकर्ता का नाम"
       ],
+      "Emails": [
+        "ईमेल"
+      ],
+      "Emails (all messages)": [
+        "ईमेल (सारे संदेश)"
+      ],
+      "Emails (last 12 months)": [
+        "ईमेल (पिछले 12 महीने)"
+      ],
+      "Emails (last 3 months)": [
+        "ईमेल (पिछले 3 महीने)"
+      ],
+      "Emails (last month)": [
+        "ईमेल (पिछले महीने)"
+      ],
       "Enabled": [
         "सक्षम"
       ],
@@ -5745,6 +6747,9 @@
       ],
       "Folder location": [
         "फ़ोल्डर स्थान"
+      ],
+      "From: ${ fromEmail }": [
+        "से: ${ fromEmail }"
       ],
       "Gateway name": [
         "गेटवे का नाम"
@@ -5773,6 +6778,15 @@
       "Import all messages": [
         "सभी संदेशों को आयात करें"
       ],
+      "Import interval": [
+        "इम्पोर्ट अंतराल"
+      ],
+      "Import to email address": [
+        "ईमेल पते पर आयात करें"
+      ],
+      "Import to:": [
+        "इधर आयात करें:"
+      ],
       "Integrated 2FA authenticator": [
         "एकीकृत 2-एफए सत्यापन"
       ],
@@ -5787,6 +6801,9 @@
       ],
       "Key": [
         "चाबी"
+      ],
+      "Label messages as": [
+        "संदेशों को लेबल करें"
       ],
       "Last 12 months only": [
         "पिछले 12 महीने ही"
@@ -5806,8 +6823,14 @@
       "Logo": [
         "चिन्ह"
       ],
+      "Mail Server (IMAP)": [
+        "मेल सर्वर (IMAP)"
+      ],
       "Main": [
         "मुख्‍य"
+      ],
+      "Manage categories": [
+        "श्रेणीयों को संभालें"
       ],
       "Members without 2FA": [
         "2-एफए के बिना सदस्य"
@@ -5826,6 +6849,12 @@
       ],
       "Moderate NAT": [
         "मध्यम एनएटी"
+      ],
+      "Move to Archive": [
+        "पुरालेख में डालें"
+      ],
+      "Move to Inbox": [
+        "इनबॉक्स में ले जाएँ"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "कम से कम ${ MIN_PASSWORD_LENGTH } अक्षर होने चाहिए"
@@ -5932,6 +6961,9 @@
       "Policy name": [
         "नीति नाम"
       ],
+      "Port": [
+        "पोर्ट"
+      ],
       "Postal code": [
         "डाक कोड"
       ],
@@ -6019,6 +7051,9 @@
       ],
       "To help us improve, please explain why you are leaving.": [
         "हमें सुधार करने में मदद करने के लिए, कृपया बताएं कि आप क्यों जा रहे हैं।"
+      ],
+      "To: ${ toEmail }": [
+        "को: ${ toEmail }"
       ],
       "Two-password mode": [
         "दो-पासवर्ड मोड"
@@ -6169,9 +7204,28 @@
         "${ Label.Name } बनाया गया"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "प्रेषक: ${ from }"
+      ],
+      "To: ${ to }": [
+        "को: ${ to }"
+      ]
+    },
     "Lable": {
       "Select an identity provider to start": [
         "शुरू करने के लिए एक पहचान प्रदाता चुनें"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "नया कैलेंडर जोड़ने के लिए एक मौजूदा कैलेंडर हटाएं।"
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "एक नया कैलेंडर जोड़ने को, कोई दूसरा कैलेंडर हटाएं या अपना ${ BRAND_NAME } प्लान ${ MAIL_SHORT_APP_NAME } के खरीदे जाने वाले प्लान पे अपग्रेड करें।"
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "आप अपने प्लान में कैलेंडरों की सीमा पे पहुंच गए है।"
       ]
     },
     "Link": {
@@ -6283,6 +7337,30 @@
         "बातचीत और दूसरे प्रीमियम सुविधाओं के लिए अपग्रेड करें, या फिर अपनी समस्या रिपोर्ट करने के लिए हमारा मुफ्त सपोर्ट फॉर्म इस्तेमाल करें।"
       ]
     },
+    "Loading info": {
+      "Almost there": [
+        "लगभग हो गया"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "कैलेंडर बनाएं गए: ${ calendarsToBeCreated } में से ${ createdCalendarCount }",
+        "कैलेंडर बनाएं गए: ${ calendarsToBeCreated } में से ${ createdCalendarCount }"
+      ],
+      "Connecting to your email provider": [
+        "अपने ईमेल प्रदाता से जुड़ना"
+      ],
+      "Creating new calendars": [
+        "नए कैलेंडर बन रहे है"
+      ],
+      "Gathering your data": [
+        "आपका डेटा इकट्ठा हो रहा है"
+      ],
+      "We're gathering your data from your provider": [
+        "हम आपके प्रदाता से आपका डेटा एकत्र कर रहे हैं"
+      ],
+      "Your import is starting": [
+        "आपका आयात शुरू हो रहा है"
+      ]
+    },
     "locked_state_storage_banner: info": {
       "Learn more": [
         "ज़्यादा जानें"
@@ -6345,6 +7423,24 @@
       ],
       "Unknown": [
         "अज्ञात"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें",
+        "${ itemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें",
+        "${ itemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें",
+        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें",
+        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6433,6 +7529,26 @@
       ],
       "Sign in to access your ${ appName } account": [
         "${ appName } खाते तक पहुंचने के लिए साइन इन करें"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "किसी अन्य सेवा से कैलेंडर कैसे आयात करें"
+      ],
+      "How to import calendars from Yahoo": [
+        "Yahoo से कैलेंडर कैसे आयात करें"
+      ],
+      "How to import contacts from another service": [
+        "किसी अन्य सेवा से संपर्क कैसे आयात करें"
+      ],
+      "How to import contacts from Yahoo": [
+        "Yahoo से संपर्क कैसे आयात करें"
+      ],
+      "How to import emails from another service": [
+        "किसी अन्य सेवा से ईमेल कैसे आयात करें"
+      ],
+      "How to import emails from Yahoo": [
+        "Yahoo से ईमेल कैसे आयात करें"
       ]
     },
     "Monetary unit": {
@@ -7376,6 +8492,16 @@
         "वीडियो कॉन्फ्रेंसिंग सेटिंग्स अपडेट कर दी गई हैं"
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "आपको अपने Google खाते मेंं साइन इन करके ${ BRAND_NAME } को अपने डाटा का एक्सेस देना पड़ेगा।"
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "आयात करने के लिए आपको GIF में दिखाई गई सारी चीज़े चुननी होगी।"
+      ]
+    },
     "Offer": {
       "Get the deal": [
         "सौदा पाएं"
@@ -7415,8 +8541,14 @@
       ]
     },
     "Option": {
+      "Add to existing group": [
+        "मौजूदा समूह में जोड़ें"
+      ],
       "Country configs": [
         "देश विन्यास"
+      ],
+      "Create new group": [
+        "नया ग्रुप बनाएं"
       ],
       "Free server configs": [
         "नि: शुल्क सर्वर कॉन्फ़िगरेशन"
@@ -7429,6 +8561,9 @@
       ],
       "I'd like to merge this account into another one": [
         "मैं इस खाते को दूसरे खाते में मर्ज करना चाहूंगा"
+      ],
+      "Ignore group": [
+        "समूह पर ध्यान न दें"
       ],
       "It's missing a key feature that I need": [
         "यह एक महत्वपूर्ण विशेषता याद आ रही है जिसकी मुझे आवश्यकता है"
@@ -7488,6 +8623,14 @@
       ],
       "No one": [
         "कोई भी नहीं"
+      ]
+    },
+    "Option group label": {
+      "Create new calendar": [
+        "कैलेंडर बनाएँ"
+      ],
+      "Merge with calendar": [
+        "कैलेंडर के साथ मर्ज करें"
       ]
     },
     "Organization capacity error": {
@@ -7574,6 +8717,11 @@
       ],
       "Verify your email address ${ email } to set organization identity.": [
         "संगठन पहचान सेट करने के लिए अपना ईमेल पता ${ email } सत्यापित करें।"
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "आप"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -7861,6 +9009,9 @@
       "Main street 12": [
         "मुख्य सड़क 12"
       ],
+      "Name": [
+        "नाम"
+      ],
       "Organization name": [
         "संगठन नाम"
       ],
@@ -7967,6 +9118,38 @@
     "Price": {
       "Free": [
         "Free"
+      ]
+    },
+    "Property type": {
+      "Address": [
+        "पता"
+      ],
+      "Email": [
+        "ईमेल"
+      ],
+      "Fax": [
+        "फैक्स"
+      ],
+      "Home": [
+        "घर"
+      ],
+      "Main": [
+        "मुख्‍य"
+      ],
+      "Mobile": [
+        "मोबाइल"
+      ],
+      "Other": [
+        "दूसरा"
+      ],
+      "Pager": [
+        "पेजर"
+      ],
+      "Phone": [
+        "फोन"
+      ],
+      "Work": [
+        "दफ्तर"
       ]
     },
     "Protection type": {
@@ -9558,6 +10741,9 @@
       "Country": [
         "देश"
       ],
+      "CSV field": [
+        "CSV फ़ील्ड"
+      ],
       "Edit": [
         "बदलाव करें"
       ],
@@ -9575,6 +10761,9 @@
       ],
       "Event": [
         "इवेंट"
+      ],
+      "Import": [
+        "आयात"
       ],
       "Invitation email": [
         "न्योता ईमेल"
@@ -9599,6 +10788,12 @@
       ],
       "Total storage": [
         "कुल स्टोरेज"
+      ],
+      "Values": [
+        "मान/वैल्यू"
+      ],
+      "vCard field": [
+        "vCard फील्ड"
       ]
     },
     "Themes": {
@@ -9685,6 +10880,9 @@
       ],
       "Add address": [
         "पता जोड़े"
+      ],
+      "Add contact group name": [
+        "संपर्क समूह का नाम जोड़ें"
       ],
       "Add countries to \"${ policyName }\"": [
         "\"${ policyName }\" में देशों को जोड़ें"
@@ -9836,6 +11034,9 @@
       "Contact us": [
         "हमसे संपर्क करें"
       ],
+      "Continue with partial import?": [
+        "आंशिक आयात जारी रखें?"
+      ],
       "Couldn’t create accounts": [
         "खाते नहीं बना सके"
       ],
@@ -9879,8 +11080,17 @@
       "Customization": [
         "अनुकूलन"
       ],
+      "Customize and confirm": [
+        "अनुकूलित करें और पुष्टि करें"
+      ],
+      "Customize calendar import": [
+        "कैलेंडर आयात अनुकूलित करें"
+      ],
       "Customize the number of IP addresses in your plan": [
         "प्लान में IP पतों की संख्या को अनुकूलित करें"
+      ],
+      "Customize your mail import": [
+        "अपना मेल आयात अनुकूलित करें"
       ],
       "Date": [
         "दिनांक"
@@ -10082,6 +11292,19 @@
       "Human verification": [
         "मानव सत्यापन"
       ],
+      "Import as simple event?": [
+        "साधारण ईवेंट के रूप में आयात करें?",
+        "साधारण ईवेंट के रूप में आयात करें?"
+      ],
+      "Import contacts": [
+        "संपर्क आयात करें"
+      ],
+      "Import events": [
+        "घटनाओं को आयात करें"
+      ],
+      "Import failed": [
+        "आयात विफल"
+      ],
       "Invalid verification code": [
         "अवैध सत्यापन कोड"
       ],
@@ -10175,6 +11398,9 @@
       "Recommended": [
         "अनुशंसित"
       ],
+      "Reconnect your account": [
+        "अपने खाते को फिर से कनेक्ट करें"
+      ],
       "Recovery": [
         "पुनर्प्राप्ति"
       ],
@@ -10226,6 +11452,12 @@
       "Select a plan": [
         "प्लान चुनें"
       ],
+      "Select action to take on contact group": [
+        "संपर्क समूह पर कार्रवाई करने के लिए कार्रवाई का चयन करें"
+      ],
+      "Select contact group": [
+        "संपर्क समूह चुनें"
+      ],
       "Send email reminders?": [
         "ईमेल अनुस्मारक भेजें?"
       ],
@@ -10262,6 +11494,9 @@
       "Sign in": [
         "साइन इन करें"
       ],
+      "Sign in and grant access": [
+        "साइन इन करें और पहुंच प्रदान करें"
+      ],
       "Sign in to join the Beta program": [
         "बीटा कार्यक्रम में शामिल होने के लिए साइन इन करें"
       ],
@@ -10276,6 +11511,12 @@
       ],
       "Spam, block, and allow lists": [
         "स्पैम, ब्लॉक और अलाउ सूची"
+      ],
+      "Start a new import": [
+        "एक नया आयात शुरू करें"
+      ],
+      "Start import process": [
+        "आयात प्रक्रिया शुरू करें"
       ],
       "Status": [
         "स्थिति"
@@ -10370,6 +11611,9 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "हम आपके नए पते पर एक ईमेल भेजेंगे जिसमें परिवर्तन को पूरा करने के निर्देश होंगे।"
+      ],
+      "What would you like to import?": [
+        "आप क्या आयात करना चाहेंगे?"
       ],
       "WireGuard configuration": [
         "WireGuard संरचना"
@@ -10475,8 +11719,23 @@
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "इस यूआरएल को कॉपी करके अपने पहचान प्रदाता के इकाई आईडी फील्ड में पेस्ट करें"
       ],
+      "Customize import to reduce the number of folders": [
+        "फ़ोल्डरों की संख्या कम करने के लिए आयात को अनुकूलित करें"
+      ],
+      "Customize import to reduce the number of labels": [
+        "लेबल की संख्या कम करने के लिए आयात को अनुकूलित करें"
+      ],
       "Display name for the entity in the eduGAIN database": [
         "eduGAIN डेटाबेस में एंटिटी के लिए डिस्प्ले नाम"
+      ],
+      "Each imported email will have this label": [
+        "प्रत्येक आयातित ईमेल में यह लेबल होगा"
+      ],
+      "Edit folder names": [
+        "फ़ोल्डर के नाम संपादित करें"
+      ],
+      "Edit label names": [
+        "लेबल नाम संपादित करें"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "पहचान प्रदाता से एंडपॉइंट URL (उदा. https://idp.udaaharan.in/sso/saml)"
@@ -10486,6 +11745,9 @@
       ],
       "Feature in early access": [
         "Early access में खासियत"
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "जीमेल अपने आप कुछ ईपत्रों को 'समाचिक' अथवा 'प्रचार ' जैसी श्रेणियों में डालता है। आप चुन सकते हैं कि इन ईपत्र को कहा पर आयात करना है।"
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "सत्यापन अभिकथन पर हस्ताक्षर करने के लिए पहचान प्रदाता की सार्वजनिक कुंजी। पहचान प्रदाता से प्रमाणपत्र हैश प्राप्त करें।"
@@ -10504,6 +11766,12 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "उन eduGAIN एंटिटी के उपयोगकर्ताओं को निर्दिष्ट करें जिन्हें SAML SSO के साथ प्रमाणीकृत होने की अनुमति है"
+      ],
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "तान्त्रिक उपसञ्चय ${ MAIL_APP_NAME } में अलग सञ्चय जैसे दिखेंगे"
+      ],
+      "The import will start with the most recent messages.": [
+        "आयात सबसे हाल के संदेशों से शुरू होगा।"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "नई सदस्यता साइकिल ${ formattedTime } को शुरू होगी"
@@ -10866,6 +12134,14 @@
         "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)"
       ]
     },
+    "Video control": {
+      "Click to replay the video": [
+        "वीडियो फिर से चलाने के लिए क्लिक करें"
+      ],
+      "Replay video": [
+        "वीडियो फिर से चलाएं"
+      ]
+    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "मुझे एक और सेवा मिली जो मुझे बेहतर लगी"
@@ -11009,6 +12285,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } एक नाम वाले सारे फोल्डर को जोड़ देगा। ये रोकने के लिए, आयात से पहले नाम बदल लें।"
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME }, आपके सबसे हाल के संदेशों से शुरू करते हुए, जितना हो सके उतना डाटा ट्रांसफर करेगा।"
+      ],
       "Are you sure you want to delete the phone number?": [
         "क्या आप वाकई फ़ोन नंबर हटाना चाहते हैं?"
       ],
@@ -11030,17 +12312,29 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "रिपोर्ट एंड-टू-एंड एन्क्रिप्टेड नहीं हैं, कृपया कोई संवेदनशील जानकारी न भेजें।"
       ],
+      "Skip verification?": [
+        "सत्यापन छोड़ें?"
+      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "आपके उपकरण की दिनांक और समय सेटिंग समन्वयन से बाहर हैं। ${ learnMore }"
       ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "ये आयात आपके ${ BRAND_NAME } खाते के मौजूदा स्टोरेज क्षमता से ज़्यादा हो सकता है। कृपया अपने आयात को बदलने पे विचार करें।"
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "दुर्भाग्य से, हम इस समय ऑनलाइन नहीं हैं। अपनी समस्या का वर्णन करने के लिए कृपया नीचे दिया गया फ़ॉर्म भरें, और जब हम वापस ऑनलाइन होंगे तो हम इस पर गौर करेंगे और संपर्क में रहेंगे।"
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "हम मेल सर्वर को सत्यापित नहीं कर सके। यदि आप इस पर भरोसा करते हैं, तो आप इस सत्यापन को छोड़ सकते हैं।"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "हमें आपके DNS कॉन्फ़िगरेशन में समस्या का पता चला है। कृपया सुनिश्चित करें कि आपके रिकॉर्ड नीचे दिए गए निर्देशों से मेल खाते हैं। यदि समस्या बनी रहती है, तो हमें डीकेआईएम को बंद करना होगा।"
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "गैर-निजी सदस्य के ईमेल पते को जोड़ने से पहले, आपको संगठन कुंजी ${ activateLink } करनी होगी।"
+      ],
+      "You will lose any customization you made so far.": [
+        "आप अब तक किए गए किसी भी अनुकूलन को खो देंगे।"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "आपका निःशुल्क परीक्षण ${ textDate } को समाप्त होगा। ${ action }"
