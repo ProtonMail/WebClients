@@ -77,6 +77,7 @@ export const PhotosWithAlbumsContext = createContext<{
     albumPhotos: AlbumPhoto[];
     albums: Map<string, DecryptedAlbum>;
     loadPhotos: (abortSignal: AbortSignal, tags?: PhotoTag[]) => Promise<void>;
+    initializePhotosView: (abortSignal: AbortSignal) => Promise<void>;
     addAlbumPhotos: (
         abortSignal: AbortSignal,
         albumShareId: string,
@@ -143,31 +144,6 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const { createPhotosWithAlbumsShare } = useCreatePhotosWithAlbums();
     const { createNotification } = useNotifications();
 
-    // We will need the photosShare for loadAlbum and loadPhotos
-    useEffect(() => {
-        const abortController = new AbortController();
-        void getDefaultPhotosShare().then(async (defaultPhotosShare) => {
-            let photosShare = defaultPhotosShare;
-            if (!defaultPhotosShare) {
-                const { shareId } = await createPhotosWithAlbumsShare();
-                photosShare = await getShareWithKey(abortController.signal, shareId);
-            }
-            if (!photosShare) {
-                return;
-            }
-
-            setPhotosShare(photosShare);
-            const { address } = await getShareCreatorKeys(abortController.signal, photosShare);
-            setUserAddressEmail(address.Email);
-            setVolumeShareIds(photosShare.volumeId, [photosShare.shareId]);
-        });
-        return () => {
-            abortController.abort();
-        };
-        // Due to unstable deps params and because this will need to be done only once on load, we don't add deps params
-        // TODO: Make all used functions stable to prevent skipping deps params
-    }, []);
-
     useEffect(() => {
         if (volumeId === undefined) {
             return;
@@ -218,6 +194,43 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             }
         },
         [request, shareId, volumeId]
+    );
+
+    const initializePhotosView = useCallback(
+        async (abortSignal: AbortSignal) => {
+            if (photosShare) {
+                return;
+            }
+
+            const defaultPhotosShare = await getDefaultPhotosShare();
+            let photosShareResult = defaultPhotosShare;
+
+            if (!defaultPhotosShare) {
+                const { shareId } = await createPhotosWithAlbumsShare();
+                photosShareResult = await getShareWithKey(abortSignal, shareId);
+            }
+
+            if (!photosShareResult) {
+                return;
+            }
+
+            setPhotosShare(photosShareResult);
+            const { address } = await getShareCreatorKeys(abortSignal, photosShareResult);
+            setUserAddressEmail(address.Email);
+            setVolumeShareIds(photosShareResult.volumeId, [photosShareResult.shareId]);
+
+            await loadPhotos(abortSignal);
+        },
+        [
+            // Unstable dependencies:
+            // createPhotosWithAlbumsShare,
+            // getDefaultPhotosShare,
+            // getShareCreatorKeys,
+            // getShareWithKey,
+            loadPhotos,
+            photosShare,
+            setVolumeShareIds,
+        ]
     );
 
     const loadAlbumPhotos = useCallback(
@@ -1136,6 +1149,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 loadAlbums,
                 loadSharedWithMeAlbums,
                 loadPhotos,
+                initializePhotosView,
                 removeAlbumsFromCache,
                 addNewAlbumPhotoToCache,
                 updatePhotoFavoriteFromCache,
