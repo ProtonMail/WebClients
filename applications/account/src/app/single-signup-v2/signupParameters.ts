@@ -21,7 +21,6 @@ export const getSignupParameters = ({
     initialSearchParams?: URLSearchParams;
     visionarySignupEnabled: boolean;
     location: H.Location<{ invite?: InviteData }>;
-    isB2BTrialEnabled: boolean;
     partner?: 'porkbun';
 }): SignupParameters2 => {
     const searchParams = new URLSearchParams(location.search);

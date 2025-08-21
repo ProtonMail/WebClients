@@ -207,7 +207,6 @@ export const usePaymentFacade = (
         subscription,
         isTrial,
         canUseApplePay,
-        enableApplePay,
     }: {
         amount: number;
         currency: Currency;
@@ -244,7 +243,6 @@ export const usePaymentFacade = (
         subscription?: Subscription;
         isTrial?: boolean;
         canUseApplePay?: boolean;
-        enableApplePay?: boolean;
     },
     {
         api,
@@ -300,7 +298,6 @@ export const usePaymentFacade = (
             planIDs,
             subscription,
             canUseApplePay,
-            enableApplePay,
             isTrial,
         },
         {

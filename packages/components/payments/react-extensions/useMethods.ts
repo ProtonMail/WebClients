@@ -52,7 +52,6 @@ export interface Props {
     planIDs?: PlanIDs;
     subscription?: Subscription;
     canUseApplePay?: boolean;
-    enableApplePay?: boolean;
     isTrial?: boolean;
 }
 
@@ -183,7 +182,6 @@ export const useMethods = (
         planIDs,
         subscription,
         canUseApplePay,
-        enableApplePay,
         isTrial,
     }: Props,
     { api, isAuthenticated }: Dependencies
@@ -206,7 +204,6 @@ export const useMethods = (
         pendingSubscription?: Subscription;
         pendingPaymentStatus?: PaymentStatus;
         pendingCanUseApplePay?: boolean;
-        pendingEnableApplePay?: boolean;
         pendingIsTrial?: boolean;
     }>();
 
@@ -273,7 +270,6 @@ export const useMethods = (
                 planIDs,
                 subscription,
                 canUseApplePay,
-                enableApplePay,
                 isTrial,
             });
 
@@ -300,7 +296,6 @@ export const useMethods = (
                     pendingSubscription,
                     pendingPaymentStatus: pendingPaymentExtended,
                     pendingCanUseApplePay,
-                    pendingEnableApplePay,
                     pendingIsTrial,
                 } = pendingDataRef.current;
                 pendingDataRef.current = undefined;
@@ -372,10 +367,6 @@ export const useMethods = (
                     paymentMethodsRef.current.canUseApplePay = pendingCanUseApplePay;
                 }
 
-                if (pendingEnableApplePay !== undefined) {
-                    paymentMethodsRef.current.enableApplePay = pendingEnableApplePay;
-                }
-
                 if (pendingIsTrial !== undefined) {
                     paymentMethodsRef.current.isTrial = pendingIsTrial;
                 }
@@ -413,7 +404,6 @@ export const useMethods = (
                 pendingSubscription: subscription,
                 pendingPaymentStatus: paymentStatus,
                 pendingCanUseApplePay: canUseApplePay,
-                pendingEnableApplePay: enableApplePay,
                 pendingIsTrial: isTrial,
             };
             return;
@@ -434,7 +424,6 @@ export const useMethods = (
         paymentMethodsRef.current.planIDs = planIDs;
         paymentMethodsRef.current.subscription = subscription;
         paymentMethodsRef.current.canUseApplePay = !!canUseApplePay;
-        paymentMethodsRef.current.enableApplePay = !!enableApplePay;
         paymentMethodsRef.current.isTrial = !!isTrial;
         if (paymentStatus) {
             paymentMethodsRef.current.paymentStatus = paymentStatus;
@@ -453,7 +442,6 @@ export const useMethods = (
         overrideChargebeeUserExists,
         chargebeeUserExists,
         canUseApplePay,
-        enableApplePay,
         isTrial,
     ]);
 

@@ -58,7 +58,7 @@ import type { User } from '@proton/shared/lib/interfaces/User';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
-import { useFlag, useFlagsStatus } from '@proton/unleash';
+import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -190,10 +190,7 @@ const SingleSignupContainerV2 = ({
     const getKtActivation = useGetAccountKTActivation();
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
-    const isB2BTrialEnabled = useFlag('ManualTrialsFE');
     const hasZipCodeValidation = useFlag('PaymentsZipCodeValidation');
-
-    const { flagsReady } = useFlagsStatus();
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
@@ -255,7 +252,6 @@ const SingleSignupContainerV2 = ({
             location,
             visionarySignupEnabled,
             initialSearchParams,
-            isB2BTrialEnabled,
             partner,
         });
     });
@@ -339,15 +335,6 @@ const SingleSignupContainerV2 = ({
         generateMnemonic,
         CustomStep,
     } = signupConfiguration;
-
-    useEffect(() => {
-        if (flagsReady && !isB2BTrialEnabled && signupParameters.trial) {
-            // remove ?trial from search params and redirect
-            const url = new URL(window.location.href);
-            url.searchParams.delete('trial');
-            window.location.href = url.toString();
-        }
-    }, [flagsReady, isB2BTrialEnabled, signupParameters.trial]);
 
     useEffect(() => {
         const run = async () => {
