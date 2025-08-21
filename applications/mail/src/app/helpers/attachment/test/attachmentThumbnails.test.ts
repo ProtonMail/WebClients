@@ -8,15 +8,13 @@ import {
 } from 'proton-mail/helpers/attachment/attachmentThumbnails';
 import type { Conversation } from 'proton-mail/models/conversation';
 
-const { SPAM, INBOX } = MAILBOX_LABEL_IDS;
-
 const getConversation = (isSpam = false) => {
     return {
         AttachmentsMetadata: [
             { ID: '1' } as AttachmentsMetadata,
             { ID: '2' } as AttachmentsMetadata,
         ] as AttachmentsMetadata[],
-        Labels: isSpam ? [{ ID: SPAM }] : [{ ID: INBOX }],
+        Labels: isSpam ? [{ ID: MAILBOX_LABEL_IDS.SPAM }] : [{ ID: MAILBOX_LABEL_IDS.INBOX }],
     } as Conversation;
 };
 
@@ -26,7 +24,7 @@ const getMessage = (isSpam = false) => {
             { ID: '1' } as AttachmentsMetadata,
             { ID: '2' } as AttachmentsMetadata,
         ] as AttachmentsMetadata[],
-        LabelIDs: isSpam ? [SPAM] : [INBOX],
+        LabelIDs: isSpam ? [MAILBOX_LABEL_IDS.SPAM] : [MAILBOX_LABEL_IDS.INBOX],
         ConversationID: 'conversationID',
     } as Message;
 };
@@ -50,7 +48,7 @@ describe('attachmentThumbnails', () => {
             expect(canShowAttachmentThumbnails(false, {} as Message, [])).toBeFalsy();
         });
 
-        it('should not show attachment thumbnails when element is in SPAM', () => {
+        it('should not show attachment thumbnails when element is in MAILBOX_LABEL_IDS.SPAM', () => {
             expect(canShowAttachmentThumbnails(false, getConversation(true), attachmentsMetadata)).toBeFalsy();
             expect(canShowAttachmentThumbnails(false, getMessage(true), attachmentsMetadata)).toBeFalsy();
         });

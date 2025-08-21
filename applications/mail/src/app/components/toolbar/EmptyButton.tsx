@@ -12,9 +12,6 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
 
-const { DRAFTS, ALL_DRAFTS, ALL_MAIL, ALMOST_ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, TRASH, SPAM } =
-    MAILBOX_LABEL_IDS;
-
 interface Props {
     labelID: string;
     elementIDs: string[];
@@ -29,7 +26,18 @@ const EmptyButton = ({ labelID = '', elementIDs }: Props) => {
 
     const displayEmpty =
         !breakpoints.viewportWidth['<=small'] &&
-        !labelIncludes(labelID, INBOX, DRAFTS, ALL_DRAFTS, STARRED, SENT, ALL_SENT, ARCHIVE, ALL_MAIL, ALMOST_ALL_MAIL);
+        !labelIncludes(
+            labelID,
+            MAILBOX_LABEL_IDS.INBOX,
+            MAILBOX_LABEL_IDS.DRAFTS,
+            MAILBOX_LABEL_IDS.ALL_DRAFTS,
+            MAILBOX_LABEL_IDS.STARRED,
+            MAILBOX_LABEL_IDS.SENT,
+            MAILBOX_LABEL_IDS.ALL_SENT,
+            MAILBOX_LABEL_IDS.ARCHIVE,
+            MAILBOX_LABEL_IDS.ALL_MAIL,
+            MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL
+        );
 
     if (!displayEmpty) {
         return null;
@@ -39,9 +47,9 @@ const EmptyButton = ({ labelID = '', elementIDs }: Props) => {
 
     const isLabel = isCustomLabel(labelID, labels);
     let title;
-    if (labelID === TRASH) {
+    if (labelID === MAILBOX_LABEL_IDS.TRASH) {
         title = c('Action').t`Empty trash`;
-    } else if (labelID === SPAM) {
+    } else if (labelID === MAILBOX_LABEL_IDS.SPAM) {
         title = c('Action').t`Empty spam`;
     } else if (isLabel) {
         title = c('Action').t`Empty label`;

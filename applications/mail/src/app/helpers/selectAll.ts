@@ -6,8 +6,6 @@ import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 import { getLabelName } from './labels';
 
-const { ALL_MAIL, ALMOST_ALL_MAIL } = MAILBOX_LABEL_IDS;
-
 export const getSelectAllBannerText = (conversationMode: boolean, elementsCount: number) => {
     /* translator: To have plural forms AND a part in bold, we need to surround the bold part with "**" so that we can replace it by a <strong> tag in the code.
      * Here, "{elementsCount} conversations" or "{elementsCount} messages" will be bold. You need to put them in your translation too.
@@ -97,7 +95,7 @@ export const getCanDisplaySelectAllBanner = ({
     isSearch: boolean;
     hasFilter: boolean;
 }) => {
-    const unauthorizedSelectAllLabelIDs = [ALL_MAIL, ALMOST_ALL_MAIL];
+    const unauthorizedSelectAllLabelIDs = [MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL];
 
     return (
         selectAllFeatureAvailable &&

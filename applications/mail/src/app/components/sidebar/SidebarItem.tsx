@@ -36,9 +36,15 @@ import LocationAside from './LocationAside';
 
 import './SidebarItem.scss';
 
-const { ALL_MAIL, ALMOST_ALL_MAIL, ALL_DRAFTS, ALL_SENT, SCHEDULED, SNOOZED, OUTBOX } = MAILBOX_LABEL_IDS;
-
-const NO_DROP_SET: Set<string> = new Set([ALL_MAIL, ALMOST_ALL_MAIL, ALL_DRAFTS, ALL_SENT, SCHEDULED, SNOOZED, OUTBOX]);
+const NO_DROP_SET: Set<string> = new Set([
+    MAILBOX_LABEL_IDS.ALL_MAIL,
+    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+    MAILBOX_LABEL_IDS.ALL_DRAFTS,
+    MAILBOX_LABEL_IDS.ALL_SENT,
+    MAILBOX_LABEL_IDS.SCHEDULED,
+    MAILBOX_LABEL_IDS.SNOOZED,
+    MAILBOX_LABEL_IDS.OUTBOX,
+]);
 
 const defaultShortcutHandlers: HotkeyTuple[] = [];
 

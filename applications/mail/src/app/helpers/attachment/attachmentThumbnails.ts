@@ -6,8 +6,6 @@ import { hasIcalExtension, hasKeyExtension } from 'proton-mail/helpers/attachmen
 import { hasLabel } from 'proton-mail/helpers/elements';
 import type { Element } from 'proton-mail/models/element';
 
-const { SPAM } = MAILBOX_LABEL_IDS;
-
 const ATTACHMENT_THUMBNAILS_BLOCK_LIST: string[] = [MIME_TYPES.ICS, MIME_TYPES.APPLICATION_ICS, MIME_TYPES.PGP_KEYS];
 
 export const canShowAttachmentThumbnails = (
@@ -16,7 +14,7 @@ export const canShowAttachmentThumbnails = (
     attachmentMetadata: AttachmentsMetadata[]
 ) => {
     // Do not show attachments for SPAM elements to protect the user
-    const isSpam = hasLabel(element, SPAM);
+    const isSpam = hasLabel(element, MAILBOX_LABEL_IDS.SPAM);
 
     const hasAttachmentsMetadata = attachmentMetadata.length > 0;
     return !isSpam && !isCompactView && hasAttachmentsMetadata;
