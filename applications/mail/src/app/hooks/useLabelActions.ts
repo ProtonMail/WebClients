@@ -3,22 +3,6 @@ import { isCustomFolder, isCustomLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 
-const {
-    TRASH,
-    SPAM,
-    DRAFTS,
-    ARCHIVE,
-    SENT,
-    INBOX,
-    ALL_DRAFTS,
-    ALL_SENT,
-    STARRED,
-    ALL_MAIL,
-    ALMOST_ALL_MAIL,
-    SCHEDULED,
-    SNOOZED,
-} = MAILBOX_LABEL_IDS;
-
 type Actions = 'inbox' | 'trash' | 'delete' | 'archive' | 'spam' | 'nospam';
 
 export const useLabelActions = (labelID: string): [primaryActions: Actions[], secondaryActions: Actions[]] => {
@@ -29,29 +13,29 @@ export const useLabelActions = (labelID: string): [primaryActions: Actions[], se
     const secondaryActions: Actions[] = [];
 
     switch (labelID) {
-        case INBOX:
-        case STARRED:
-        case ALL_MAIL:
-        case ALMOST_ALL_MAIL:
+        case MAILBOX_LABEL_IDS.INBOX:
+        case MAILBOX_LABEL_IDS.STARRED:
+        case MAILBOX_LABEL_IDS.ALL_MAIL:
+        case MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL:
             primaryActions = ['trash', 'archive', 'spam'];
             break;
-        case DRAFTS:
-        case ALL_DRAFTS:
-        case SENT:
-        case ALL_SENT:
+        case MAILBOX_LABEL_IDS.DRAFTS:
+        case MAILBOX_LABEL_IDS.ALL_DRAFTS:
+        case MAILBOX_LABEL_IDS.SENT:
+        case MAILBOX_LABEL_IDS.ALL_SENT:
             primaryActions = ['trash', 'archive', 'delete'];
             break;
-        case SCHEDULED:
-        case SNOOZED:
+        case MAILBOX_LABEL_IDS.SCHEDULED:
+        case MAILBOX_LABEL_IDS.SNOOZED:
             primaryActions = ['trash', 'archive'];
             break;
-        case ARCHIVE:
+        case MAILBOX_LABEL_IDS.ARCHIVE:
             primaryActions = ['trash', 'inbox', 'spam'];
             break;
-        case SPAM:
+        case MAILBOX_LABEL_IDS.SPAM:
             primaryActions = ['trash', 'nospam', 'delete'];
             break;
-        case TRASH:
+        case MAILBOX_LABEL_IDS.TRASH:
             primaryActions = ['inbox', 'archive', 'delete'];
             break;
         case CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS:

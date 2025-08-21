@@ -14,8 +14,6 @@ import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApp
 import { useMoveToFolder } from '../../../hooks/actions/move/useMoveToFolder';
 import type { Element } from '../../../models/element';
 
-const { SPAM } = MAILBOX_LABEL_IDS;
-
 interface Props extends ModalProps {
     message: MessageState;
     onBack: () => void;
@@ -44,14 +42,14 @@ const MessagePhishingModal = ({ message, onBack, ...rest }: Props) => {
             await applyLocation({
                 type: APPLY_LOCATION_TYPES.MOVE,
                 elements: [message.data || ({} as Element)],
-                destinationLabelID: SPAM,
+                destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                 askUnsubscribe: false,
             });
         } else {
             await moveToFolder({
                 elements: [message.data || ({} as Element)],
                 sourceLabelID: '',
-                destinationLabelID: SPAM,
+                destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                 folderName: '',
                 silent: true,
                 askUnsub: false,
