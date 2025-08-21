@@ -141,6 +141,12 @@
       "Chat with us": [
         "채팅으로 문의하기"
       ],
+      "Check import progress": [
+        "가져오기 진행상황 확인"
+      ],
+      "Choose a file or drag it here": [
+        "파일을 선택하거나 드래그하세요"
+      ],
       "Choose my own password": [
         "나만의 비밀번호 선택"
       ],
@@ -186,6 +192,9 @@
       "Continue anyway": [
         "무시하고 계속"
       ],
+      "Continue import": [
+        "사용자 지정 설정값으로 계속하기"
+      ],
       "Continue with this password": [
         "이 비밀번호로 계속"
       ],
@@ -221,6 +230,12 @@
       ],
       "Current plan": [
         "현재 플랜"
+      ],
+      "Customize": [
+        "맞춤화"
+      ],
+      "Customize import": [
+        "사용자 지정 설정값 가져오기"
       ],
       "Customize plan": [
         "플랜 고급 설정"
@@ -332,6 +347,9 @@
       ],
       "Edit invoice note": [
         "청구서 메모 수정"
+      ],
+      "Edit label": [
+        "라벨 편집"
       ],
       "Edit name": [
         "이름 편집"
@@ -456,6 +474,18 @@
       "Hide plan features": [
         "플랜 기능 숨기기"
       ],
+      "Import": [
+        "불러오기"
+      ],
+      "Import calendars": [
+        "캘린더 불러오기"
+      ],
+      "Import contacts": [
+        "연락처 가져오기"
+      ],
+      "Import emails": [
+        "이메일 가져오기"
+      ],
       "Import emails, calendars, contacts": [
         "이메일, 캘린더 및 연락처 불러오기"
       ],
@@ -504,8 +534,14 @@
       "Manage advanced account protections": [
         "향상된 계정 보호 관리"
       ],
+      "Manage folders": [
+        "폴더 관리"
+      ],
       "Manage groups": [
         "그룹 관리"
+      ],
+      "Manage labels": [
+        "라벨 관리"
       ],
       "Manage subscription": [
         "구독 관리"
@@ -585,6 +621,12 @@
       "Publish changes": [
         "변경 사항 게시"
       ],
+      "Quit": [
+        "나가기"
+      ],
+      "Reconnect": [
+        "다시 연결"
+      ],
       "Recover data": [
         "데이터 복구"
       ],
@@ -656,6 +698,9 @@
       ],
       "Reset password": [
         "비밀번호 재설정"
+      ],
+      "Reset to default": [
+        "기본값으로 재설정"
       ],
       "Restore": [
         "복원"
@@ -816,11 +861,20 @@
       "Skip": [
         "건너뛰기"
       ],
+      "Skip verification": [
+        "인증 건너뛰기"
+      ],
       "Spam": [
         "스팸 메일함"
       ],
+      "Start import": [
+        "가져오기 시작"
+      ],
       "Start live chat": [
         "라이브 채팅 시작하기"
+      ],
+      "Stay": [
+        "기다리기"
       ],
       "Stop using single sign-on": [
         "싱글 사인온 (SSO) 중지"
@@ -1085,6 +1139,14 @@
         "관리자"
       ]
     },
+    "Alert": {
+      "By leaving now, some contacts may not be imported": [
+        "지금 떠나면, 일부 연락처가 불러오지 않을 수 있습니다."
+      ],
+      "By leaving now, some events may not be imported": [
+        "지금 떠나면, 이벤트가 일부 이벤트를 못 불러올 수 있습니다."
+      ]
+    },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "이 인증서를 사용하는 모든 라우터와 클라이언트의 연결이 끊어집니다."
@@ -1244,6 +1306,26 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "이메일 생산성을 한 단계 더 높은 경지로. ${ BRAND_NAME } Scribe가 이메일의 작성과 답장, 교정에 도움을 드립니다."
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "비어있는 ICS 파일"
+      ],
+      "Invalid event": [
+        "유효하지 않은 이벤트"
+      ],
+      "Invalid ICS file": [
+        "유효하지 않은 ICS 파일"
+      ],
+      "Invalid method": [
+        "유효하지 않은 방법"
+      ],
+      "Unsupported calendar component": [
+        "지원되지 않는 캘린더 구성"
+      ],
+      "Unsupported event": [
+        "지원되지 않는 이벤트"
       ]
     },
     "b2b_trials_Action": {
@@ -1810,6 +1892,14 @@
         "스트로베리"
       ]
     },
+    "Confirm modal title": {
+      "Quit import customization?": [
+        "불러오기 사용자 지정을 종료하시겠어요?"
+      ],
+      "Quit import?": [
+        "불러오기를 종료하시겠어요?"
+      ]
+    },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
         "이 결제 수단을 정말 삭제하시겠습니까?"
@@ -1818,6 +1908,94 @@
     "Confirmation title": {
       "Delete payment method": [
         "결제 방법 삭제"
+      ]
+    },
+    "Contact field label": {
+      "Address": [
+        "주소"
+      ],
+      "Anniversary": [
+        "기념일"
+      ],
+      "Birthday": [
+        "생일"
+      ],
+      "Display name": [
+        "표시되는 이름"
+      ],
+      "Email": [
+        "이메일"
+      ],
+      "First name": [
+        "이름"
+      ],
+      "Gender": [
+        "성별"
+      ],
+      "Language": [
+        "언어"
+      ],
+      "Last name": [
+        "성"
+      ],
+      "Logo": [
+        "로고"
+      ],
+      "Member": [
+        "구성원"
+      ],
+      "Name": [
+        "이름"
+      ],
+      "Note": [
+        "비고"
+      ],
+      "Organization": [
+        "조직"
+      ],
+      "Phone": [
+        "전화"
+      ],
+      "Photo": [
+        "사진"
+      ],
+      "Role": [
+        "역할"
+      ],
+      "Time zone": [
+        "시간대"
+      ],
+      "Title": [
+        "제목"
+      ],
+      "URL": [
+        "URL"
+      ]
+    },
+    "Contact type label": {
+      "Fax": [
+        "팩스"
+      ],
+      "Main": [
+        "메인"
+      ],
+      "Mobile": [
+        "모바일"
+      ],
+      "Other": [
+        "기타"
+      ],
+      "Pager": [
+        "호출기"
+      ],
+      "Personal": [
+        "개인"
+      ],
+      "Work": [
+        "직장"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "CountriesStep:Info": {
@@ -2700,6 +2878,11 @@
         "/월 사용자 당"
       ]
     },
+    "Default display name vcard": {
+      "Unknown": [
+        "알 수 없음"
+      ]
+    },
     "Delete address prompt": {
       "Are you sure you want to delete this address?": [
         "이 주소를 삭제하시려는 것이 맞습니까?"
@@ -2789,6 +2972,9 @@
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "보한 강화를 위해 조직에서 2단계 인증 사용을 권장하도록 설정해 보세요."
       ],
+      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        "암호화 및 연락처 불러오기 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "팀이 원격으로 있거나 공용 WiFi를 사용하는 경우에도 조직 데이터에 대한 안전한 접근이 보장됩니다."
       ],
@@ -2813,6 +2999,9 @@
       "If disabled, only admins will have access.": [
         "비활성화시 관리자만 접근 가능합니다."
       ],
+      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
+        "불러올 연락처가 그룹을 포함하는 것 같습니다. 이 그룹들을 어떻게 불러올지 확인해 주세요."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "내 삶의 다른 부분을 분리하고 받은 편지함을 추가 주소로 정리하세요."
       ],
@@ -2828,11 +3017,33 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "공유 캘린더로 동기화 및 일정 예약을 간소화하세요."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 연락처 ${ MAX_IMPORT_CONTACTS_STRING }개를 초과하지 않도록 않도록 해주세요. 파일이 더 크다면, 더 작은 파일로 나눠주세요. ${ learnMoreLink }."
+      ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Google 및 Outlook에서 콘텐츠를 불러오려면, ${ easySwitchLink }"
+      ],
       "To start, give your organization a name.": [
         "시작하려면 먼저 조직의 이름을 지정하세요."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "이 가이드를 통해 조직이 ${ BRAND_NAME }의 업계 최고의 암호화 및 개인정보 보호 생태계로부터 즉시 혜택을 받을 수 있습니다."
+      ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "iCal 포맷(ICS 파일)으로 이벤트를 불러올 수 있습니다. 파일 크기가 최대 ${ MAX_IMPORT_FILE_SIZE_STRING } 및 최대 ${ MAX_IMPORT_EVENTS_STRING }개의 이벤트를 포함하고 있어야 합니다. 만약 파일이 너무 크다면, 작은 파일들로 분할해 주세요."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch 불러오기 마법사를 사용하세요."
+      ]
+    },
+    "Description of the purpose of the import CSV modal": {
+      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
+        "또한 CSV 란과 vCard 란을 자동으로 일치시켰습니다. 이 일치를 수동으로 보거나 편집이 가능합니다."
+      ],
+      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
+        "업로드한 CSV 파일에서 다음 필드를 감지했습니다. 가져오고자 하는 것을 확인하세요"
       ]
     },
     "Disable address prompt": {
@@ -3111,6 +3322,71 @@
         "다른 기기에서 로그인하는데 성공했습니다."
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "참고:\n${ eventComment }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "설명:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle }이(가) 취소되었습니다."
+      ],
+      "All events in this series were updated.": [
+        "이 시리즈의 모든 이벤트가 업데이트되었습니다."
+      ],
+      "Here's what changed:": [
+        "바뀐 점은 다음과 같습니다:"
+      ],
+      "NOTE:": [
+        "참고:"
+      ],
+      "This event occurrence was canceled.": [
+        "이 이벤트의 개최는 취소되었습니다."
+      ],
+      "This event occurrence was updated.": [
+        "이 이벤트의 개최가 업데이트되었습니다."
+      ],
+      "This event was updated.": [
+        "이 이벤트는 업데이트 되었습니다."
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "시간:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "시간:\n${ formattedStart } (종일)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "시간:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "제거됨"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "위치:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress }이(가) ${ eventTitle } 의 초대를 수락했습니다"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress }이(가) ${ eventTitle }의 초대를 거부했습니다"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress }이(가) ${ eventTitle } 의 초대를 잠정적으로 수락했습니다"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } 추가됨"
@@ -3140,6 +3416,26 @@
         "${ name } 을(를) 성공적으로 삭제했습니다"
       ]
     },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "${ formattedStart }에 있는 이벤트가 취소되었습니다"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "${ formattedStart }에 시작하는 이벤트가 취소되었습니다"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "${ formattedStart }에 있는 이벤트에 초대합니다"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "${ formattedStart }에 시작하는 이벤트에 초대합니다"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "${ formattedStart } 의 이벤트를 업데이트 합니다"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "${ formattedStart } 에 시작하는 이벤트를 업데이트 합니다"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "인증 이메일이 ${ address }으로 전송되었습니다."
@@ -3165,6 +3461,12 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name }이(가) 회원님의 사용자 이름입니다. ${ emailAddress }를 생성하려면, 설정 > 신원 및 주소 > 짧은 도메인 (pm.me)로 이동하세요."
       ],
+      "A group with this name already exists": [
+        "이 이름을 가진 그룹이 이미 있습니다"
+      ],
+      "Address primary private key not found": [
+        "기본 주소 키 찾을 수 없음"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "모든 저장 공간이 할당되었습니다. 다른 사용자에게 할당 된 저장공간을 줄이십시오."
       ],
@@ -3180,6 +3482,9 @@
       "Authentication error.": [
         "인증 오류"
       ],
+      "Calendar limit reached": [
+        "캘린더 개수 제한에 도달했습니다"
+      ],
       "Checkout expired, please try again": [
         "체크아웃 만료됨, 다시 시도하십시오"
       ],
@@ -3192,6 +3497,12 @@
       "Couldn't load transactions. Please try again later.": [
         "거래내역을 불러올 수 없습니다. 나중에 다시 시도해 주세요."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "최소${ calendarsToFixCount } 개 캘린더를 선택 해제하세요"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "최소 ${ calendarsToFixCount }개의 캘린더를 선택 해제하거나"
+      ],
       "Domain not available, try again later": [
         "도메인을 사용할 수 없습니다. 나중에 다시 시도해주세요."
       ],
@@ -3203,6 +3514,9 @@
       ],
       "Email address is not available": [
         "이메일 주소가 유효하지 않습니다"
+      ],
+      "Email address is required": [
+        "이메일 주소가 필요함"
       ],
       "Email is not valid": [
         "유효하지 않은 이메일"
@@ -3228,8 +3542,14 @@
       "File too large. Your logo must be 30 KB or smaller.": [
         "파일이 너무 큽니다. 로고는 30KB 이하여야 합니다."
       ],
+      "Folder name cannot be empty.": [
+        "폴더 이름은 비워둘 수 없습니다."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "TV의 인증 시간이 만료된 경우 TV에서 새로 고침을 클릭하고 코드를 다시 입력하십시오."
+      ],
+      "IMAP server is required": [
+        "IMAP 서버가 필요함"
       ],
       "Impossible to create the gateway": [
         "게이트웨이를 생성할 수 없습니다."
@@ -3282,6 +3602,9 @@
       "Invalid invitation link": [
         "유효하지 않은 초대 링크"
       ],
+      "Invalid name": [
+        "유효하지 않은 이름"
+      ],
       "Invalid postal code": [
         "유효하지 않은 우편번호"
       ],
@@ -3290,6 +3613,15 @@
       ],
       "Invalid ZIP code": [
         "유효하지 않은 우편 번호"
+      ],
+      "Label name cannot be empty.": [
+        "라벨 이름은 비워둘 수 없습니다."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "기존 ${ BRAND_NAME } 캘린더에 최소 ${ calendarsToFixCount }개의 캘린더를 병합하세요."
+      ],
+      "Missing key packet": [
+        "키 패킷 없음"
       ],
       "Name already exists": [
         "이름이 이미 존재합니다."
@@ -3309,6 +3641,9 @@
       "No image selected": [
         "선택된 이미지가 없습니다"
       ],
+      "No valid address found": [
+        "유효한 주소를 찾을 수 없습니다"
+      ],
       "Not a valid number": [
         "유효하지 않은 번호"
       ],
@@ -3320,6 +3655,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "개인이 아닌 사용자를 생성하려면 조직 키는 활성화 상태여야 합니다."
+      ],
+      "Password is required": [
+        "비밀번호가 필요함"
       ],
       "Passwords do not match": [
         "비밀번호가 일치하지 않습니다"
@@ -3366,6 +3704,9 @@
       "Please enter ZIP code": [
         "우편 번호를 입력해 주세요"
       ],
+      "Please fix the highlighted conflict to proceed.": [
+        "계속하려면 표시된 충돌을 해결해 주세요."
+      ],
       "Please generate keys before you try to change your password": [
         "비밀번호를 변경하기 전에 먼저 키를 생성해주세요"
       ],
@@ -3411,8 +3752,17 @@
       "Please upload only 1 file": [
         "하나의 파일만 업로드하세요"
       ],
+      "Port is required": [
+        "포트가 필요함"
+      ],
       "Postal code is required": [
         "우편 번호가 필요합니다"
+      ],
+      "Primary address key is not decrypted": [
+        "기본 주소 키가 복호화되지 않았습니다"
+      ],
+      "Primary address key is not decrypted.": [
+        "기본 주소 키가 복호화되지 않았습니다."
       ],
       "Process aborted": [
         "과정 중단됨"
@@ -3422,6 +3772,21 @@
       ],
       "Signature verification failed": [
         "서명 검증 실패"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "가능하지 않은 폴더 이름들이 존재합니다. 해당 폴더의 이름들을 수정하기 위해 불러온 내역을 설정해 주세요."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "일부 폴더가 ${ MAIL_APP_NAME }의 최대 글자 수를 초과합니다. 해당되는 이름을 수정해 주세요."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "라벨 중 일부가 예약된 상태입니다. 이름을 변경하기 위해 불러올 항목을 선택해 주세요."
+      ],
+      "Some of your label names are unavailable. Please customize the import to edit these names.": [
+        "사용할 수 없는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
+      ],
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "${ MAIL_APP_NAME }의 최대 글자 수 제한을 초과하는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "문제가 발생했습니다. 진행하려면 ${ refresh } 해주세요. 그래도 이 오류가 지속될 경우 ${ supportTeam } 으로 문의해 주세요."
@@ -3447,11 +3812,26 @@
       "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
         "파일이 너무 작습니다. 최소 크기는 ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS } 입니다"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "폴더 이름이 유효하지 않습니다. 다른 이름을 사용해 주세요."
+      ],
+      "The folder name is too long. Please choose a different name.": [
+        "폴더 이름이 너무 깁니다. 다른 이름을 사용해 주세요."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "라벨 이름이 유효하지 않습니다. 다른 이름을 사용해 주세요."
+      ],
+      "The label name is too long. Please choose a different name.": [
+        "라벨 이름이 너무 깁니다. 다른 이름을 사용해 주세요."
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "추가할 수 있는 최소 금액은 ${ price } 입니다."
       ],
       "The policy name must be between 3 and 40 characters.": [
         "정책 이름은 3자에서 40자 사이여야 합니다."
+      ],
+      "There are too many folders in your external account. Please customize the import to delete some folders.": [
+        "외부 계정에 너무 많은 폴더가 있습니다. 일부 폴더를 삭제하려면 사용자 지정 가져오기를 설정하세요."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "이 필드가 최대 ${ maximumLength } 글자를 초과합니다."
@@ -3461,6 +3841,12 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "이 필드에는 ${ minimumLength }자 이상이 필요합니다."
+      ],
+      "This folder name is not available. Please choose a different name.": [
+        "이 폴더 이름을 사용할 수 없어요. 다른 이름을 선택하세요."
+      ],
+      "This label name is not available. Please choose a different name.": [
+        "이 라벨 이름은 사용할 수 없어요. 다른 이름을 선택하세요."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "개인이 아닌 사용자를 생성하거나 해당 계정에 접근하도록 하려면, 관리자 권한을 복원해야만 합니다."
@@ -3501,6 +3887,9 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "잘못된 인증 코드입니다. 제대로 인증 코드를 복사했는지 확인하고 다시 시도해보세요. 변경할 때까지 24시간이 걸릴 수도 있습니다."
       ],
+      "You have reached the maximum number of calendars.": [
+        "캘린더 갯수의 한도에 도달했습니다."
+      ],
       "You have reached the number of contacts limit for your account": [
         "계정의 최대 연락처 수를 초과했습니다"
       ],
@@ -3510,8 +3899,14 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "현재 요금제에서 사용 가능한 모든 사용자를 사용했습니다. 새 사용자를 추가하려면 요금제를 업그레이드해 주세요."
       ],
+      "You must set a name": [
+        "이름을 반드시 설정해야 합니다"
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "사용자의 계정 및 조직에 연체된 요금이 존재합니다. 연체된 요금을 지불해 주세요."
+      ],
+      "Your import will not be processed.": [
+        "가져오기가 처리되지 않았습니다."
       ],
       "ZIP code is required": [
         "우편번호가 필요합니다"
@@ -3520,6 +3915,131 @@
     "error": {
       "Select users to view their activity": [
         "활동을 확인할 사용자를 선택하세요"
+      ]
+    },
+    "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "${ formattedFilename } 파일을 읽는데 문제가 발생했습니다. 올바르지 않은 파일 포맷."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "${ formattedFilename } 파일을 업로드 하는 중에 문제가 발생했습니다. 최대 업로드 가능 용량 ${ MAX_IMPORT_FILE_SIZE_STRING } 을(를) 초과했습니다."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "${ formattedFilename } 파일을 업로드하는 동안 오류가 발생했습니다. 오직 ICS 파일 포맷만 허용됩니다."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "파일을 업로드하는 동안 오류가 발생했습니다. 파일을 선택하지 않았습니다."
+      ],
+      "An unexpected error occurred. Import must be restarted.": [
+        "알 수 없는 오류. 불러오기가 재시작되어야 함."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "파일 ${ formattedFilename }에 이벤트가 ${ MAX_IMPORT_EVENTS }개 넘게 포함되어 있습니다."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "사용자의 ${ formattedFilename } 파일은 유효하지 않은 방법이므로 불러올 수 없습니다."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "사용자의 ${ formattedFilename } 파일에 불러올 이벤트가 없습니다."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "사용자의 ${ formattedFilename } 파일이 비어있습니다."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "사용자의 ${ formattedFilename } 파일은 캘린더가 아닙니다."
+      ]
+    },
+    "Error importing contact": {
+      "Encryption failed": [
+        "암호화 실패"
+      ],
+      "Missing FN property": [
+        "FN 속성 없음"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard 버전 3.0 이하 지원되지 않음"
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "${ formattedFilename } 파일을 읽는데 문제가 발생했습니다. 올바르지 않은 파일 포맷."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "${ formattedFilename } 파일을 업로드 하는 중에 문제가 발생했습니다. 최대 업로드 가능 용량 ${ MAX_IMPORT_FILE_SIZE_STRING } 을(를) 초과했습니다."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "${ formattedFilename } 파일을 업로드하는 동안 오류가 발생했습니다. .csv 또는 .vcf 파일이 선택되지 않았습니다."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "파일을 업로드하는 동안 오류가 발생했습니다. 파일을 선택하지 않았습니다."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "파일 ${ formattedFilename } 에 연락처가 ${ MAX_IMPORT_CONTACTS_STRING } 개 넘게 포함되어 있습니다."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "${ formattedFilename } 파일에 가져올 연락처가 없습니다."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "사용자의 ${ formattedFilename } 파일이 비어있습니다."
+      ]
+    },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "나쁜 포맷. 구성을 읽을 수 없음."
+      ],
+      "Calendar": [
+        "캘린더"
+      ],
+      "Component with wrong format": [
+        "잘못된 포맷의 구성"
+      ],
+      "Custom time zone": [
+        "시간대 사용자 지정"
+      ],
+      "Element": [
+        "요소"
+      ],
+      "Encryption failed": [
+        "암호화 실패"
+      ],
+      "Event": [
+        "이벤트"
+      ],
+      "Free-busy time information": [
+        "여유-바쁜 시간 정보"
+      ],
+      "Invalid event": [
+        "유효하지 않은 이벤트"
+      ],
+      "Journal entry": [
+        "일지 항목"
+      ],
+      "Missing start time": [
+        "시작 시간 없음"
+      ],
+      "No UID, title or start time": [
+        "UID, 제목 및 시작 시간 없음"
+      ],
+      "Notification out of bounds": [
+        "범위를 벗어난 알림"
+      ],
+      "Original recurring event could not be found": [
+        "기존 반복 이벤트를 찾을 수 없습니다"
+      ],
+      "Time zone": [
+        "시간대"
+      ],
+      "Time zone component ignored": [
+        "시간대 구성 무시됨"
+      ],
+      "To-do entry": [
+        "할 일 항목"
+      ],
+      "Unknown": [
+        "알 수 없음"
+      ],
+      "Unsupported event": [
+        "지원되지 않는 이벤트"
       ]
     },
     "Error importing users": {
@@ -3568,11 +4088,65 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "인증서 ${ name }가 없거나 이미 폐기되었습니다"
+      ],
+      "Display name cannot be empty": [
+        "디스플레이 이름은 비어 있을 수 없습니다"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "선택된 이미지가 없음"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "예기치 않은 오류"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "첨부도니 ICS 파일을 복호화할 수 없음"
+      ],
+      "Attached ICS file could not be read": [
+        "첨부된 ICS 파일을 읽을 수 없음"
+      ],
+      "Invalid invitation": [
+        "유효하지 않은 초대"
+      ],
+      "Invalid response": [
+        "유효하지 않은 대답"
+      ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "이벤트가 캘린더에 추가되지 않았습니다. 답장이 전송되지 않았습니다."
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "이벤트가 캘린더에 추가되지 않았습니다. 답장이 전송되지 않았습니다."
+      ],
+      "Unsupported invitation": [
+        "지원되지 않은 초대"
+      ],
+      "Unsupported response": [
+        "지원되지 않은 대답"
+      ],
+      "We could not cancel the event in your calendar": [
+        "캘린더의 이벤트를 취소할 수 없습니다"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "캘린더의 이벤트를 수신할 수 없습니다"
+      ],
+      "We could not update the event in your calendar": [
+        "캘린더의 이벤트를 업데이트 할 수 없습니다"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "답장이 전송되었습니다, 이벤트가 당신의 캘린더에서 업데이트되지 않을 수 있습니다"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "답장이 전송되었습니다, 이벤트가 당신의 캘린더에서 업데이트되지 않을 수 있습니다"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(제목 없음)"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4311,6 +4885,303 @@
         "SMS"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "캘린더 시간대가 지원되지 않음"
+      ],
+      "Edited event not supported": [
+        "편집된 이벤트 지원되지 않음"
+      ],
+      "End time out of bounds": [
+        "범위를 벗어난 종료 시간"
+      ],
+      "Event validation failed": [
+        "이벤트이벤트 검증 실패"
+      ],
+      "Floating times not supported": [
+        "유동 시간 지원되지 않음"
+      ],
+      "Malformed all-day event": [
+        "잘못된 상시 이벤트"
+      ],
+      "Malformed end time": [
+        "잘못된 종료 시간"
+      ],
+      "Malformed recurring event": [
+        "잘못된 반복 이벤트"
+      ],
+      "Malformed start time": [
+        "잘못된 시작 시간"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "그레고리력 척도만 허용됩니다."
+      ],
+      "Recurring event has no occurrences": [
+        "반복되는 이벤트가 존재하지 않습니다"
+      ],
+      "Recurring rule not supported": [
+        "반복 규칙이 지원되지 않음"
+      ],
+      "Start time out of bounds": [
+        "범위를 벗어난 시작 시간"
+      ],
+      "Time zone not supported": [
+        "시간대 지원되지 않음"
+      ]
+    },
+    "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "이벤트 ${ totalToImport }개 중 ${ totalImported }개를 암호화 및 캘린더에 추가했습니다"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "이벤트를 암호화하고 추가하는 데 오류가 발생했습니다. 이벤트 ${ totalToImport }개 중 ${ totalImported }개를 성공적으로 불러왔습니다."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "이벤트 생성 및 암호화 중 문제가 발생했습니다. 이벤트를 불러올 수 없습니다."
+      ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "암호화 및 이벤트 추가 중 문제가 발생했습니다. 불러올 이벤트가 없습니다."
+      ],
+      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
+        "연락처를 암호화 및 추가하는 중: ${ totalToImport }/${ totalImported }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "암호화 및 초대를 캘린더에 추가 중: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "이벤트를 성공적으로 불러옴. 불러온 이벤트가 캘린더에 곧 나타납니다."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "이벤트를 성공적으로 불러옴. 불러온 이벤트가 캘린더에 곧 나타납니다."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "불러오기 처리가 완료되기 전에 탭을 닫지 마세요."
+      ]
+    },
+    "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } 은 현재 특정 이벤트 유형, 세부 사항 및 형식을 지원하지 않습니다."
+      ],
+      "vCard versions < 3.0": [
+        "vCard 버전 3.0 이하"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "가져온 초대는 ${ CALENDAR_APP_NAME } 에 주최자 및 참가자 세부 정보가 없는 간단한 이벤트로 표시됩니다. 이벤트 업데이트를 받고 참가자를 보려면, 주최자에게 ${ BRAND_NAME } 이메일 주소를 사용하여 초대를 요청하세요."
+      ],
+      "This file contains an event invitation:": [
+        "이 파일은 이벤트 초대를 포함하고 있습니다:"
+      ],
+      "This file contains an invitation response:": [
+        "이 파일은 초대 응답을 포함합니다:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "이 파일은 불러올 수 없는 데이터를 포함하고 있습니다:"
+      ]
+    },
+    "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport }개의 연락처를 연락처 목록에 암호화하여 추가했습니다."
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "사용자의 연락처를 암호화 및 생성 중에 오류가 감지되었습니다. 연락처를 불러올 수 없습니다."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "연락처를 암호화하고 추가하는 데 오류가 발생했습니다. 연락처 ${ totalImported } 개 중 ${ totalToImport } 개를 성공적으로 불러왔습니다."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "사용자의 연락처를 암호화 및 생성 중에 오류가 감지되었습니다. 연락처를 불러올 수 없습니다."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "연락처를 성공적으로 불러옴. 불러온 연락처가 곧 연락처 리스트에 나타납니다."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "연락처를 성공적으로 불러옴. 불러온 연락처가 곧 연락처 리스트에 나타납니다."
+      ]
+    },
+    "Import contact error": {
+      "Contact ${ contactId }: ": [
+        "연락처 (${ contactId }): "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "연락처 ${ totalContacts }개"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "알 수 없음"
+      ]
+    },
+    "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } 이(가) 지원되지 않습니다 ${ forNow }:"
+      ],
+      "for now": [
+        "지금"
+      ]
+    },
+    "Import error": {
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } 이(가) 계정에 연결할 수 없습니다. 확인해 주세요:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME }이 외부 계정와 연결할 수 없습니다. 메일 서버 주소 및 포트 번호가 올바른지 확인하십시오."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME }이 외부 계정와 연결할 수 없습니다. 다음 사항을 확인하세요:"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } 이(가) Yahoo 계정에 연결할 수 없습니다. 메일 서버 주소 및 포트 번호가 올바른지 확인하십시오."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } 이(가) Yahoo 계정에 연결할 수 없습니다. 확인해 주세요:"
+      ],
+      "2-step verification is enabled in your external account.": [
+        "2단계 인증이 사용자의 외부 계정에 활성화되어 있습니다."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "2단계 인증이 사용자의 외부 이메일 계정에 활성화 되어있습니다."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "사용자의 외부 계정의 IMAP 접근이 활성화되었습니다."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "IMAP 접근이 Yahoo 계정에 활성화 되어 있는지 확인하세요."
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "너무 많은 요청을 시도했습니다. 잠시 후 다시 시도해 주세요."
+      ],
+      "Use your app password if:": [
+        "다음과 같은 경우 앱 비밀번호를 사용하세요:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "다음과 같은 경우 일반 비밀번호 대신 앱 비밀번호를 사용하세요:"
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "앱 비밀번호가 일치합니다. 일반적인 비밀번호를 사용하지 마십시오."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "사용자의 이메일 계정이 데이터를 내보내기 위해 앱 패스워드가 필요합니다."
+      ],
+      "Your email account requires one to export your data.": [
+        "데이터를 내보내려면 이메일 계정이 필요합니다."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "이메일 주소 및 앱 비밀번호가 일치하는지 확인하세요. 일반적인 비밀번호를 사용하지 마세요."
+      ],
+      "Your email address and password are correct.": [
+        "이메일 주소 및 비밀번호가 올바릅니다."
+      ],
+      "Your password is correct.": [
+        "사용자의 비밀번호가 알맞습니다."
+      ]
+    },
+    "Import instructions": {
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "사용자의 이메일 서비스 제공자에 따라, ${ BRAND_NAME }으로 불러오기 전에 먼저 ${ knowledgeBaseLink }가 필요할 수 있습니다."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "3개의 점 (...) 을 클릭하여 드롭다운 메뉴를 확장하세요."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "${ boldAppPassword }를 설정하고 ${ BRAND_NAME }에 표시되었던 기존 비밀번호를 입력하세요."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "${ yahooMailLink } 프로필에서 ${ boldAccountInfo }로 이동하세요."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "${ boldAccountSecurity }으로 이동하세요."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "${ yahooMailLink } 연락처를 실행하세요."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "${ boldExportCSV } 선택"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "캘린더를 ${ BRAND_NAME }에 가져오려면 ${ knowledgeBaseLink }이 필요합니다. 간단한 3단계로 Yahoo에서 다운로드하세요:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "캘린더를 ${ BRAND_NAME }에 가져오려면 ${ knowledgeBaseLink }이 필요합니다. 가져오기를 시작하기 전에 해당 파일을 다운로드하세요."
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "연락처를 ${ BRAND_NAME }에 가져오려면 ${ knowledgeBaseLink }이(가) 필요합니다. 쉬운 3단계로 Yahoo에서 다운로드하세요:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "연락처를 ${ BRAND_NAME }에 가져오려면 ${ knowledgeBaseLink }이(가) 필요합니다. 가져오기를 시작하기 전에 해당 파일을 다운로드 하세요."
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "${ BRAND_NAME }에서 이메일을 불러오려면, Yahoo에서 ${ appPasswordLink }가 필요합니다. 다음을 통해 다운로드하세요:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "계정 정보"
+      ],
+      "Account security": [
+        "계정 보안"
+      ],
+      "app password": [
+        "앱 비밀번호"
+      ],
+      "Export": [
+        "내보내기"
+      ],
+      "Export to CSV file": [
+        "CSV 파일 내보내기"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "앱 비밀번호"
+      ],
+      "app password or enable IMAP": [
+        "앱 비밀번호 또는 IMAP 활성화"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "CSV 또는 VCF (vCard) 파일"
+      ],
+      "full calendar view": [
+        "캘린더 전체 보기"
+      ],
+      "ICS file": [
+        "ICS 파일"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Yahoo에서 ${ calendarViewLink }로 이동하세요."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "가져오려는 캘린더 위에 마우스를 올려놓고 드롭다운 메뉴를 여세요."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "캘린더를 ICS 파일로 내보내기 위해 ${ boldExport }를 선택하세요."
+      ]
+    },
+    "Import warning": {
+      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
+        "${ totalContacts } 연락처 중 ${ totalContactsDiscarded } 개가 불러오지 않습니다. 자세한 정보를 보려면 클릭하세요"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEvents } 이벤트 중 ${ totalEventsDiscarded } 개가 불러오지 않습니다. 자세한 정보를 보려면 펼치세요."
+      ],
+      "No contact can be imported. Click for details": [
+        "불러올 연락처 없음. 세부사항을 보려면 클릭하십시오"
+      ],
+      "No event can be imported. Expand for details.": [
+        "불러올 이벤트 없음. 세부사항을 보려면 펼치십시오"
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "캘린더 콘텐츠 중 일부가 지원되지 않으며, 불러와지지 않습니다."
+      ]
+    },
     "Info": {
       " and other security features.": [
         " 과 다른 보안 기능을 잠금 해제하세요."
@@ -4329,6 +5200,12 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }의 암호화 기술은 그 누구도 회원님의 비밀번호에 접근할 수 없음을 뜻합니다 - 심지어 우리도요."
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount }개 새 달력"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount }개 캘린더로 병합됨"
       ],
       "${ countriesCount } country enabled": [
         "${ countriesCount }개 국가 활성화됨"
@@ -4393,6 +5270,12 @@
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME }이 의심스러운 활동에 대한 전담 모니터링으로 계정을 보호합니다."
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized }개 폴더 찾음"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "Gmail에서 ${ providerFoldersNumLocalized }개 라벨 찾음"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } 서버는 아직 설정 중입니다. ${ provisioningDuration } 정도 소요됩니다."
       ],
@@ -4411,8 +5294,17 @@
       "${ resultsCount } result found": [
         "${ resultsCount }개 결과 발견"
       ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal }개 중 ${ providerCalendars.length }개 캘린더"
+      ],
       "${ selectedEntities.length } selected": [
         "${ selectedEntities.length }개 선택됨"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized }개 폴더 선택함"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized }개 라벨 선택함"
       ],
       "${ storage } storage": [
         "저장공간 ${ storage }"
@@ -4501,9 +5393,6 @@
       "add a recovery method": [
         "복구 수단 추가"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
-        "계정에 또 다른 보안 계층을 추가하세요. 로그인할 때마다 2단계 인증으로 본인 여부를 확인해야 합니다. 2단계 인증 코드를 저장하기 위해 ${ protonAuthenticatorDownloadLink }을(를) 사용하는 것을 권장합니다."
-      ],
       "Add domain": [
         "도메인 추가"
       ],
@@ -4537,6 +5426,12 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI를 기반으로 한 글쓰기 도우미가 더 빠르고 효율적으로 이메일 생성을 도와드려요."
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "총 (${ totalFoldersCount } 개 폴더)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "총 (${ totalFoldersCount } 개 라벨)"
+      ],
       "All inactive members deleted": [
         "모든 비활성 상태의 구성원이 삭제되었습니다."
       ],
@@ -4548,6 +5443,9 @@
       ],
       "All your changes will be lost.": [
         "저장하지 않은 변경사항은 손실됩니다."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "최대 ${ MAX_CONTACTS_PER_USER }개까지 연락처가 불러오기됩니다."
       ],
       "Allocated": [
         "할당 됨"
@@ -4573,11 +5471,17 @@
       "Amount due": [
         "총 금액"
       ],
+      "and": [
+        "그리고"
+      ],
       "Are you sure you want to cancel editing the group?": [
         "편집 중인 그룹을 정말 삭제하시겠어요?"
       ],
       "Are you sure you want to discard your changes?": [
         "사용자의 변경사항을 취소하시겠습니까?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "정말로 불러오기를 취소하시겠어요?"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "정말 이 사용자로 관리자 권한을 이전하시겠습니까?"
@@ -4660,6 +5564,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
       ],
+      "Close this screen to exit.": [
+        "이 스크린을 닫아 종료합니다."
+      ],
       "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
         "${ DOCS_APP_NAME }와 통합된 클라우드 스토리지"
       ],
@@ -4702,6 +5609,15 @@
       "Country code": [
         "국가 코드"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount }개의 새 달력 만들기"
+      ],
+      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
+        "가져온 메시지에 대한 라벨, 가져오기의 시간 범위 및 가져오려는 폴더를 만드세요."
+      ],
+      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
+        "가져온 메시지의 라벨, 이 가져오기의 시간 범위, 그리고 가져오고자 하는 라벨을 생성하세요."
+      ],
       "Create a secure cloud for ${ value } member": [
         "${ value }명의 구성원을 위한 보안 클라우드 만들기"
       ],
@@ -4710,6 +5626,9 @@
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
         "다른 사람들을 위해 이메일 주소를 생성하고, 비즈니스, 학교 혹은 그룹에 쓰일 ${ MAIL_APP_NAME }을 관리하세요. 조직 이름과 사용자 지정 도메인을 추가할 준비를 시작하세요. (예 @yourcompany.com). "
+      ],
+      "Create in": [
+        "만들기"
       ],
       "Create your first Gateway": [
         "첫 게이트웨이를 생성하세요"
@@ -4930,6 +5849,9 @@
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "${ email } (으) 로 전송된 코드를 입력하세요. 받은 편지함에서 이메일을 찾을 수 없는 경우 스팸 폴더를 확인하세요."
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "가져오기를 원하는 이메일 계정의 계정 정보를 입력하세요."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "**${ domain.DomainName }**을 위한 **eduGAIN**의 Entity ID를 입력하세요."
       ],
@@ -5074,11 +5996,26 @@
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "만약 문제를 가지고 계신다면, 저희가 도와드리겠습니다. 자사 지원 전문가를 ${ boldPhoneCall }하거나 ${ boldZoomMeeting }을 통해 만나실 수 있습니다."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ totalCalendarsCount }개 중 ${ calendarCount }개 캘린더가 불러오기됩니다"
+      ],
+      "Import from": [
+        "다음에서 가져오기"
+      ],
+      "Import in progress": [
+        "처리가 진행 중입니다"
+      ],
+      "Import mailbox": [
+        "메일함 불러오기"
+      ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "중요 사항: 만일 사용자의 DNS 콘솔이 온 점으로 끝나는 것을 허용하지 않을시, 뒷 편의 CNAME 값에서 온 점 (.) 제거가 가능합니다."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "중요: 복구 코드를 저장했는지 확인하십시오. 그렇지 않으면 2단계 인증 기기를 분실한 경우 계정에 대한 접근권한이 영구히 손실될 수 있습니다."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "${ toEmail }(에)서 ${ fromEmail }(으)로 데이터를 전달 중입니다."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "다음 단계에서, Bitcoin 주소를 사용하여 보증금을 제출할 수 있습니다."
@@ -5191,11 +6128,20 @@
       "JCB logo": [
         "JCB 로고"
       ],
+      "Just confirm your selection and we'll do the rest.": [
+        "선택만 확인하시면 나머지는 저희가 하겠습니다."
+      ],
       "Keys created": [
         "키 생성됨"
       ],
+      "Label all imported messages as": [
+        "가져온 모든 메시지에 라벨 지정:"
+      ],
       "Labels:": [
         "라벨:"
+      ],
+      "Large imports can take several days.": [
+        "가져올 내용이 많은 경우 며칠 정도 걸릴 수 있습니다."
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "서드 파티 VPN 애플리케이션을 사용하여 ${ VPN_APP_NAME }에 로그인하는 방법을 알아보세요."
@@ -5272,6 +6218,9 @@
       "Member": [
         "회원"
       ],
+      "Merged": [
+        "합쳤음"
+      ],
       "Messages to all your email addresses will go to your inbox.": [
         "내 모든 이메일 주소로 오는 메시지는 받은 편지함으로 이동됩니다."
       ],
@@ -5295,6 +6244,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "새 폴더의 이름을 지정하고 넣고 싶은 상위 폴더를 선택하세요. 상위 폴더를 선택하지 않으면, 이 새 폴더는 최상위 폴더로 생성됩니다."
+      ],
+      "New": [
+        "신규"
       ],
       "New activity data will stop being collected and shown.": [
         "신규 활동 데이터 수집이 중단되며 보여지지 않습니다."
@@ -5455,6 +6407,9 @@
       "Please open the document to view it.": [
         "문서를 확인하려면 열어주세요."
       ],
+      "Please select the folders you would like to import:": [
+        "가져올 폴더 선택:"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "다른 결제 수단을 사용하거나, 은행에 연락하세요."
       ],
@@ -5578,6 +6533,12 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "${ getFormattedOrganization }에서 ${ BRAND_NAME } 조직에 허용하려는 사용자 제휴를 선택하세요."
       ],
+      "Select what you want to import.": [
+        "처리할 파일을 선택하세요."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "불러올 캘린더를 선택하세요. 새 캘린더가 사용자 플랜의 가능한 한도 내에서 각각 생성됩니다."
+      ],
       "Self-custodial crypto wallet": [
         "개인 관리형 암호화폐 지갑"
       ],
@@ -5694,6 +6655,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro가 5점 만점 중 4.2점으로 추천합니다"
+      ],
+      "Temporarily unavailable. Please check back later.": [
+        "일시적으로 사용할 수 없어요. 나중에 다시 시도해주세요."
       ],
       "Thank you": [
         "진심으로 감사드립니다."
@@ -5853,6 +6817,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "이벤트를 불러오려면, ${ CALENDAR_APP_NAME } 에서 캘린더를 생성하세요. 이벤트가 어디에 생성되었는지 처리 후 표시됩니다."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "${ BRAND_NAME } 제품의 최신 개발 소식을 알고 싶으시다면 다양한 이메일을 구독해보거나 가끔씩 ${ blogLink } 해보세요."
@@ -6055,8 +7022,14 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "이 거래를 완료하기 위해 새 브라우저 탭의 PayPal로 보내집니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
       ],
+      "We'll email you once import is complete.": [
+        "불러오기가 완료되면 이메일로 보내드리겠습니다."
+      ],
       "We'll get back to you shortly.": [
         "곧 돌아오겠습니다."
+      ],
+      "We'll notify you when the import is done.": [
+        "처리가 완료되면 알려드리겠습니다."
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } 에 새 인증 코드를 보내드려요."
@@ -6145,8 +7118,17 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "${ downgradedPlanName } 플랜에 포함된 저장 공간보다 더 많이 사용하고 계십니다. 다운그레이드를 진행하려면 일부 데이터를 지우거나 완전 삭제하세요."
       ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "기존 ${ BRAND_NAME } 캘린더에 불러온 캘린더를 병합할 수도 있습니다."
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "언제든지 ${ settingsLink }(에)서 변경하실 수 있습니다."
+      ],
+      "You can check the progress ${ importProgressLink }.": [
+        "진행 상황을 ${ importProgressLink } 에서 확인하실 수 있습니다."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "도중에 탭이나 브라우저를 닫으셔도 됩니다."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "인증을 위해 올바른 이메일 주소를 사용할 수 있도록 한 번 편집할 수 있습니다."
@@ -6156,6 +7138,9 @@
       ],
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "불과 매달 **${ priceString }**의 가격에 하나의 번들로 모든 프리미엄 개인 정보 보호 서비스를 얻을 수 있어요."
+      ],
+      "You can import one data type at a time.": [
+        "한 번에 하나의 데이터 유형을 가져올 수 있어요."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "최대 ${ MAX_CALENDARS_FREE }개 캘린더를 보관할 수 있습니다. ${ MAIL_SHORT_APP_NAME } 구독을 취소하기 전에 공유 캘린더 링크와 캘린더를 공유한 ${ BRAND_NAME } 사용자를 제거하십시오."
@@ -6280,6 +7265,9 @@
       "Your account was successfully updated with this promotion": [
         "사용자의 계정이 해당 프로모션으로 성공적으로 업데이트되었습니다"
       ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "${ importedEmailAddressStrong }(에)서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 완료되었습니다."
+      ],
       "Your email will only be used for this one-time verification.": [
         "회원님의 이메일 주소는 이번 인증에만 사용됩니다."
       ],
@@ -6291,6 +7279,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "회원님의 정보는 Proton에서 안전하게 보호되고 있습니다. 서비스 제공에 필요한 상황에만 연락해 드립니다."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "로그인 정보는 가져오기 작업이 끝나면 삭제됩니다."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "다음 결제일은 ${ renewalTime } 입니다."
@@ -6375,6 +7366,11 @@
         "청구서에 대한 메모를 입력하세요. 이 세부 사항은 개인 및 조직 청구서 모두에 추가됩니다. 추후 발행되는 청구서에 표시됩니다."
       ]
     },
+    "Info on errors": {
+      "Click for details": [
+        "자세한 내용을 보려면 클릭하세요"
+      ]
+    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "구독을 다시 활성화하여 만료를 방지할 수 있습니다."
@@ -6383,6 +7379,14 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "미지급 송장으로 인한 서비스 중단을 피하려면, 언제든지 최소 1개의 유효한 결제 방법이 저장되어 있는지 확인하십시오."
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount }개 폴더 선택함"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } 개 라벨 선택함"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -6489,6 +7493,9 @@
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "이메일 주소 ${ MaxAddresses }개 중 ${ UsedAddresses }개 사용 중"
       ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "(일시적으로 사용할 수 없습니다. 나중에 다시 확인해 주세요.)"
+      ],
       "Account holder": [
         "예금주"
       ],
@@ -6540,6 +7547,9 @@
       "Anderson": [
         "길동"
       ],
+      "App password": [
+        "앱 비밀번호"
+      ],
       "Apply policy to": [
         "다음 항목에 정책 적용:"
       ],
@@ -6581,6 +7591,12 @@
       ],
       "BTC amount": [
         "BTC 금액"
+      ],
+      "Calendar": [
+        "캘린더"
+      ],
+      "Calendars": [
+        "캘린더"
       ],
       "Card details": [
         "카드 상세정보"
@@ -6641,6 +7657,9 @@
       ],
       "Confirm second password": [
         "2차 비밀번호 확인하기"
+      ],
+      "Contacts": [
+        "연락처"
       ],
       "Copy": [
         "복사"
@@ -6714,6 +7733,21 @@
       "Email or username": [
         "이메일 또는 사용자 이름"
       ],
+      "Emails": [
+        "이메일"
+      ],
+      "Emails (all messages)": [
+        "이메일 (모든 메시지)"
+      ],
+      "Emails (last 12 months)": [
+        "이메일 (지난 12개월)"
+      ],
+      "Emails (last 3 months)": [
+        "이메일 (지난 3개월)"
+      ],
+      "Emails (last month)": [
+        "이마일 (지난 달)"
+      ],
       "Enabled": [
         "활성화됨"
       ],
@@ -6740,6 +7774,9 @@
       ],
       "Folder location": [
         "폴더 위치"
+      ],
+      "From: ${ fromEmail }": [
+        "보낸 사람: ${ fromEmail }"
       ],
       "Gateway name": [
         "게이트웨이 이름"
@@ -6771,6 +7808,15 @@
       "Import all messages": [
         "모든 메시지 가져오기"
       ],
+      "Import interval": [
+        "가져오기 간격"
+      ],
+      "Import to email address": [
+        "이메일 주소로 가져오기"
+      ],
+      "Import to:": [
+        "가져오기:"
+      ],
       "Include application logs in bug report": [
         "버그 신고에 애플리케이션 로그 포함"
       ],
@@ -6788,6 +7834,9 @@
       ],
       "Key": [
         "키"
+      ],
+      "Label messages as": [
+        "메시지에 다음으로 라벨 지정"
       ],
       "Last 12 months only": [
         "지난 12개월"
@@ -6807,8 +7856,14 @@
       "Logo": [
         "로고"
       ],
+      "Mail Server (IMAP)": [
+        "메일 서버 (IMAP)"
+      ],
       "Main": [
         "메인"
+      ],
+      "Manage categories": [
+        "카테고리 관리"
       ],
       "Maximum number of characters is ${ MAX_CHARS }": [
         "최대 문자 수는 ${ MAX_CHARS }자입니다."
@@ -6833,6 +7888,12 @@
       ],
       "Moderate NAT": [
         "일반형 NAT"
+      ],
+      "Move to Archive": [
+        "보관 편지함으로 이동"
+      ],
+      "Move to Inbox": [
+        "받은 편지함으로 이동"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "최소한 ${ MIN_PASSWORD_LENGTH }글자여야 합니다."
@@ -6942,6 +8003,9 @@
       "Policy name": [
         "정책 이름"
       ],
+      "Port": [
+        "포트"
+      ],
       "Postal code": [
         "우편번호"
       ],
@@ -7040,6 +8104,9 @@
       ],
       "To help us improve, please explain why you are leaving.": [
         "저희가 한 층 발전할 수 있도록 왜 떠나시는지 알려주세요."
+      ],
+      "To: ${ toEmail }": [
+        "받는 사람: ${ toEmail }"
       ],
       "Two-password mode": [
         "2차 비밀번호 모드"
@@ -7199,9 +8266,28 @@
         "${ Label.Name } 생성됨"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "보낸 사람: ${ from }"
+      ],
+      "To: ${ to }": [
+        "받는 사람: ${ to }"
+      ]
+    },
     "Lable": {
       "Select an identity provider to start": [
         "시작하려면 신원 제공자 (SSO) 선택하기"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "새 캘린더를 생성하려면, 병합된 일정을 삭제해주세요."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "새로운 캘린더를 생성하려면, 다른 캘린더를 삭제하거나 ${ BRAND_NAME } 플랜을 ${ MAIL_SHORT_APP_NAME } 유료 플랜으로 업그레이드 하세요."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "사용자 플랜의 사용 가능한 최대 수의 캘린더에 도달했습니다."
       ]
     },
     "Link": {
@@ -7370,6 +8456,29 @@
         "채팅 지원과 다른 프리미엄 서비스를 잠금해제 하기 위해 업그레이드 하거나, 문제를 신고하기 위해 무료 지원팀에 연락하세요."
       ]
     },
+    "Loading info": {
+      "Almost there": [
+        "거의 다왔습니다"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "생성된 캘린더수: ${ calendarsToBeCreated }개 중 ${ createdCalendarCount }개"
+      ],
+      "Connecting to your email provider": [
+        "사용자의 이메일 제공자에 연결 중"
+      ],
+      "Creating new calendars": [
+        "새 캘린더 만드는 중"
+      ],
+      "Gathering your data": [
+        "데이터를 모으는 중"
+      ],
+      "We're gathering your data from your provider": [
+        "제공자로부터 데이터를 가져오는 중입니다"
+      ],
+      "Your import is starting": [
+        "가져오기 작업이 시작 중입니다!"
+      ]
+    },
     "locked_state_storage_banner: info": {
       "Learn more": [
         "더 알아보기"
@@ -7472,6 +8581,20 @@
         "${ reason } 활성화"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount }개의 폴더에서 모든 메시지를 불러오며 해당 메시지에 다음 이름으로 라벨이 지정됩니다:"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount }개의 라벨에서 모든 메시지를 불러오며 해당 메시지에 다음 이름으로 라벨이 지정됩니다:"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount }개 중 ${ selectedItemsToImportCount }개 라벨의 모든 폴더를 불러온 뒤 다음 이름으로 라벨이 지정됩니다:"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount }개 중 ${ selectedItemsToImportCount }개 라벨의 모든 메시지를 불러온 뒤 다음 이름으로 라벨이 지정됩니다:"
+      ]
+    },
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
@@ -7567,6 +8690,26 @@
       ],
       "Sign in to access your ${ appName } account": [
         "${ appName } 계정에 접근하려면 로그인"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "기타 서비스에서 캘린더를 가져오는 방법"
+      ],
+      "How to import calendars from Yahoo": [
+        "Yahoo에서 캘린더를 가져오는 방법"
+      ],
+      "How to import contacts from another service": [
+        "기타 서비스에서 연락처를 가져오는 방법"
+      ],
+      "How to import contacts from Yahoo": [
+        "Yahoo에서 연락처를 가져오는 방법"
+      ],
+      "How to import emails from another service": [
+        "기타 서비스에서 이메일을 가져오는 방법"
+      ],
+      "How to import emails from Yahoo": [
+        "Yahoo에서 이메일을 가져오는 방법"
       ]
     },
     "Monetary unit": {
@@ -8668,6 +9811,21 @@
         "선택한 이미지 중 일부가 중복된 파일명으로 인해 업로드되지 않았습니다."
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "다음으로 사용자의 Google 계정에 로그인한 뒤 ${ BRAND_NAME }에 데이터 접근 권한을 부여해야 합니다."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "가져오기가 작동하려면, GIF에 표시된 대로 요청된 모든 항목을 선택해야 합니다."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "${ BRAND_NAME }이 접근할 수 있는 것을 선택하세요: 이메일 메시지와 설정을 확인하고, 연락처를 확인 및 다운로드하고, Google Calendar에서 액세스하는 모든 아젠다를 확인하고 다운로드하세요."
+      ]
+    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Unlimited 12개월 플랜"
@@ -8838,6 +9996,9 @@
       ]
     },
     "Option": {
+      "Add to existing group": [
+        "병합할 그룹 추가"
+      ],
       "Allowed ${ defaultLabel }": [
         "허용됨 ${ defaultLabel }"
       ],
@@ -8846,6 +10007,9 @@
       ],
       "Country configs": [
         "지역 설정"
+      ],
+      "Create new group": [
+        "새 그룹 만들기"
       ],
       "Free server configs": [
         "무료 서버 구성"
@@ -8861,6 +10025,9 @@
       ],
       "I'd like to merge this account into another one": [
         "이 계정을 다른 계정으로 병합하고 싶습니다."
+      ],
+      "Ignore group": [
+        "그룹 무시"
       ],
       "iOS": [
         "iOS"
@@ -8938,6 +10105,14 @@
       ],
       "No one": [
         "아무도"
+      ]
+    },
+    "Option group label": {
+      "Create new calendar": [
+        "새 캘린더 생성"
+      ],
+      "Merge with calendar": [
+        "캘린더와 병합"
       ]
     },
     "Organization capacity error": {
@@ -9021,6 +10196,11 @@
       ],
       "Verify your email address ${ email } to set organization identity.": [
         "조직 신원을 설정하기 위해 이메일 주소 ${ email }을(를) 인증하세요."
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "나"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9433,6 +10613,9 @@
       "Main street 12": [
         "행복로 12"
       ],
+      "Name": [
+        "이름"
+      ],
       "Organization name": [
         "조직 이름"
       ],
@@ -9566,6 +10749,38 @@
     "Price": {
       "Free": [
         "Free"
+      ]
+    },
+    "Property type": {
+      "Address": [
+        "주소"
+      ],
+      "Email": [
+        "이메일"
+      ],
+      "Fax": [
+        "팩스"
+      ],
+      "Home": [
+        "집"
+      ],
+      "Main": [
+        "메인"
+      ],
+      "Mobile": [
+        "모바일"
+      ],
+      "Other": [
+        "기타"
+      ],
+      "Pager": [
+        "호출기"
+      ],
+      "Phone": [
+        "전화"
+      ],
+      "Work": [
+        "직장"
       ]
     },
     "Protection type": {
@@ -11698,6 +12913,9 @@
       "Country": [
         "국가"
       ],
+      "CSV field": [
+        "CSV 란"
+      ],
       "Edit": [
         "편집하기"
       ],
@@ -11715,6 +12933,9 @@
       ],
       "Event": [
         "이벤트"
+      ],
+      "Import": [
+        "불러오기"
       ],
       "Invitation email": [
         "초대 이메일"
@@ -11739,6 +12960,12 @@
       ],
       "Total storage": [
         "총 저장공간"
+      ],
+      "Values": [
+        "값"
+      ],
+      "vCard field": [
+        "vCard 란"
       ]
     },
     "Themes": {
@@ -11829,6 +13056,9 @@
       ],
       "Add address": [
         "주소 추가"
+      ],
+      "Add contact group name": [
+        "연락처 그룹 이름 추가"
       ],
       "Add countries to \"${ policyName }\"": [
         "\"${ policyName }\"에 국가 추가"
@@ -11980,9 +13210,6 @@
       "Connect apps and devices": [
         "앱 및 장치 연결하기"
       ],
-      "Connect more Gmail addresses with ${ planName }": [
-        "더 많은 Gmail 주소를 ${ planName }(으)로 연결하기"
-      ],
       "Connect organization": [
         "조직에 연결"
       ],
@@ -11997,6 +13224,9 @@
       ],
       "Contact us": [
         "문의"
+      ],
+      "Continue with partial import?": [
+        "일부 불러오기 계속?"
       ],
       "Couldn’t create accounts": [
         "계정을 만들 수 없음"
@@ -12043,8 +13273,17 @@
       "Customization": [
         "커스터마이징"
       ],
+      "Customize and confirm": [
+        "사용자 정의 및 확인"
+      ],
+      "Customize calendar import": [
+        "사용자 캘린더 가져오기"
+      ],
       "Customize the number of IP addresses in your plan": [
         "요금제의 IP 주소 숫자를 사용자화하세요."
+      ],
+      "Customize your mail import": [
+        "사용자 메일 가져오기"
       ],
       "Data retention": [
         "데이터 보존"
@@ -12265,8 +13504,23 @@
       "Human verification": [
         "사람임을 인증"
       ],
+      "Import as simple event?": [
+        "간단 이벤트로 불러올까요?"
+      ],
+      "Import contacts": [
+        "연락처 가져오기"
+      ],
       "Import emails, calendars, contacts": [
         "이메일, 캘린더 및 연락처 불러오기"
+      ],
+      "Import events": [
+        "이벤트 불러오기"
+      ],
+      "Import failed": [
+        "불러오기 실패함"
+      ],
+      "Import groups": [
+        "그룹 가져오기"
       ],
       "Invalid verification code": [
         "잘못된 검증 코드"
@@ -12370,6 +13624,9 @@
       "Recommended": [
         "권장"
       ],
+      "Reconnect your account": [
+        "계정 재연결"
+      ],
       "Recovery": [
         "복구"
       ],
@@ -12421,6 +13678,12 @@
       "Select a plan": [
         "플랜 선택"
       ],
+      "Select action to take on contact group": [
+        "연락처 그룹에 대해 수행할 작업 선택"
+      ],
+      "Select contact group": [
+        "연락처 그룹"
+      ],
       "Send email reminders?": [
         "이메일 알리미를 전송할까요?"
       ],
@@ -12463,6 +13726,9 @@
       "Sign in": [
         "로그인"
       ],
+      "Sign in and grant access": [
+        "로그인 및 엑세스 권한 부여"
+      ],
       "Sign in to join the Beta program": [
         "베타 프로그램에 참여하려면 로그인"
       ],
@@ -12483,6 +13749,12 @@
       ],
       "Spam, block, and allow lists": [
         "스팸, 차단 및 허용 리스트"
+      ],
+      "Start a new import": [
+        "신규 불러오기 시작"
+      ],
+      "Start import process": [
+        "불러오기 과정 시작"
       ],
       "Status": [
         "상태"
@@ -12598,6 +13870,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business에 오신 것을 환영합니다"
       ],
+      "What would you like to import?": [
+        "무엇을 가져오시겠어요?"
+      ],
       "Wipe all logs?": [
         "모든 로그를 삭제하시겠습니까?"
       ],
@@ -12705,11 +13980,26 @@
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "사용자의 인증 제공자의 Entity ID 입력란에 URL 값을 복사해서 붙여넣어 주세요."
       ],
+      "Customize import to reduce the number of folders": [
+        "폴더 수를 줄이기 위해 가져오기를 사용자 정의하세요"
+      ],
+      "Customize import to reduce the number of labels": [
+        "라벨 수를 줄이기 위해 가져오기를 사용자 정의하세요"
+      ],
       "Device name and app version": [
         "기기 이름 및 앱 버전"
       ],
       "Display name for the entity in the eduGAIN database": [
         "eduGAIN 데이터베이스에 있는 객체의 표시 이름"
+      ],
+      "Each imported email will have this label": [
+        "각각의 불러온 이메일이 이 라벨을 갖습니다"
+      ],
+      "Edit folder names": [
+        "폴더 이름 쉉"
+      ],
+      "Edit label names": [
+        "라벨 이름 편집"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "사용자의 인증 제공자로 부터 받은 엔드포인트 URL (예: https://idp.example.com/sso/saml)"
@@ -12725,6 +14015,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "예: **password, qwerty** 등"
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail은 자동으로 일부 이메일을 소셜 및 프로모션 등으로 카테코리화 합니다. 이 이메일을 어디에 불러올지 선택하실 수 있습니다."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "인증 주장에 서명하기 위한 인증 제공자의 공개 키입니다. 인증 제공자로부터 인증서 해시값을 받으세요."
@@ -12746,6 +14039,12 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "어떤 eduGAIN 사용자가 SAML SSO로 인증할 수 있는지 지정하세요"
+      ],
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }의 시스템 하위폴더가 별도로 폴더를 표시합니다"
+      ],
+      "The import will start with the most recent messages.": [
+        "최근의 주된 메시지 불러오기가 곧 시작됩니다."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "새로운 구독 결제 주기가 ${ formattedTime } 부터 시작합니다"
@@ -13111,6 +14410,14 @@
         "더 짧은 이름을 사용하세요 (최대 ${ n }글자)"
       ]
     },
+    "Video control": {
+      "Click to replay the video": [
+        "이 비디오 회신하려면 클릭"
+      ],
+      "Replay video": [
+        "영상 다시 보기"
+      ]
+    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "더 낫다고 생각되는 서비스를 찾았습니다"
@@ -13309,6 +14616,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } 이(가) 모든 폴더를 같은 이름으로 병합합니다. 원치 않는다면, 불러오기 전에 이름을 변경하십시오."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } 이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송할 것입니다."
+      ],
       "Are you sure you want to delete the phone number?": [
         "정말로 전화번호를 삭제하시겠습니까?"
       ],
@@ -13330,17 +14643,29 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "보고서는 종단간 암호화되지 않음으로 민감한 정보를 보내지 마십시오."
       ],
+      "Skip verification?": [
+        "인증 건너뛰기?"
+      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "날짜 및 시간 설정은 기기 동기화 범위에 벗어납니다. ${ learnMore }"
       ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "이 불러오기가 현재 ${ BRAND_NAME } 계정에서의 저장 공간을 초과할 수 있습니다. 불러올 파일들을 선별하는 것을 고려해 보세요."
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "안타깝게도, 현재 온라인이 아닙니다. 겪고 계신 문제를 설명하기 위해 아래 양식을 작성해 주시면, 다시 온라인에 접속하실 때 살펴보고 연락드리겠습니다."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "메일 서버를 인증할 수 없습니다. 해당 서버를 신뢰하신다면, 이 인증을 건너뛸 수도 있습니다."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS 구성에 문제를 감지했습니다. 아래 설명과 리코드가 일치한지 확인하십시오. 문제가 지속될시, DKIM 전환 로그아웃이 필요합니다."
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "비공개 구성원에 이메일 주소를 추가하기 전에 조직 키를 ${ activateLink }해야 합니다."
+      ],
+      "You will lose any customization you made so far.": [
+        "지금까지 만든 커스터마이징을 모두 잃게 됩니다."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "무료 체험이 ${ textDate } 에 종료됩니다. ${ action }"
