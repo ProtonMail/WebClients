@@ -18,6 +18,7 @@ import ContactsWidgetGroupsContainer from '@proton/components/containers/contact
 import type { CustomAction } from '@proton/components/containers/contacts/widget/types';
 import { CONTACT_WIDGET_TABS } from '@proton/components/containers/contacts/widget/types';
 import useDrawerContactFocus from '@proton/components/hooks/useDrawerContactFocus';
+import useContactsDrawerFromURL from '@proton/mail/hooks/autoOpenContacts/useContactsDrawerFromURL';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -57,6 +58,8 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
         onSelectEmails,
         onLimitReached,
     } = useContactModals({ onMailTo, onCompose });
+
+    useContactsDrawerFromURL({ onEdit, onGroupEdit, onSelectGroupTab: () => setTab(options[1]) });
 
     const handleDetails = (contactID: string) => {
         void onDetails(contactID);
