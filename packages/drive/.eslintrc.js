@@ -1,4 +1,3 @@
-const isFixMode = process.argv.includes('--fix');
 module.exports = {
     root: true,
     extends: ['@proton/eslint-config-proton'],
