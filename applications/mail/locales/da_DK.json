@@ -36,6 +36,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
+      "${ numberOfAddresses } address": [
+        "${ numberOfAddresses } adresse",
+        "${ numberOfAddresses } adresser"
+      ],
       "A to Z": [
         "A til Z"
       ],
@@ -309,6 +313,9 @@
       ],
       "Copy alias “${ name }”": [
         "Kopier alias \"${ name }\""
+      ],
+      "Copy email address": [
+        "Kopiér e-mailadresse"
       ],
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
@@ -789,6 +796,9 @@
       ],
       "Make it friendly": [
         "Gør det venligt"
+      ],
+      "Manage addresses": [
+        "Administrer adresser"
       ],
       "Manage advanced account protections": [
         "Administrer avancerede kontobeskyttelser"
@@ -9403,6 +9413,9 @@
       ],
       "Upload picture": [
         "Upload billede"
+      ],
+      "Username": [
+        "Brugernavn"
       ],
       "VAT": [
         "Moms"

@@ -70,6 +70,9 @@
       "Accept": [
         "Прыняць"
       ],
+      "Access account": [
+        "Доступ да ўліковага запісу"
+      ],
       "activate": [
         "актываваць"
       ],
@@ -253,6 +256,9 @@
       "Claim it": [
         "Атрымаць яго"
       ],
+      "Claim this address": [
+        "Атрымаць гэты адрас"
+      ],
       "Clear all formatting": [
         "Ачысціць усё фарматаванне"
       ],
@@ -300,9 +306,6 @@
       ],
       "Connect to video conferencing": [
         "Падключыцца да відэаканферэнцыі"
-      ],
-      "Connect your Gmail address": [
-        "Падключыць адрас Gmail"
       ],
       "Connected": [
         "Падключана"
@@ -727,6 +730,9 @@
       "Get ${ planOrAppName }": [
         "Атрымаць ${ planOrAppName }"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Атрымайце бясплатны адрас ${ BRAND_NAME }"
+      ],
       "Get a new encrypted email address": [
         "Атрымаць новы зашыфраваны адрас электроннай пошты"
       ],
@@ -777,6 +783,9 @@
       ],
       "Get verification code": [
         "Атрымаць праверачны код"
+      ],
+      "Give access now": [
+        "Даць доступ"
       ],
       "Go back": [
         "Вярнуцца"
@@ -1006,6 +1015,9 @@
       "Open navigation": [
         "Адкрыць панэль навігацыі"
       ],
+      "Opt out": [
+        "Адмовіцца"
+      ],
       "Or": [
         "Або"
       ],
@@ -1119,6 +1131,9 @@
       ],
       "Request a feature": [
         "Запытаць функцыю"
+      ],
+      "Request access": [
+        "Запытаць доступ"
       ],
       "Request new code": [
         "Запытаць новы код"
@@ -1389,6 +1404,9 @@
       ],
       "Stay": [
         "Застацца"
+      ],
+      "Stop being trusted contact": [
+        "Перастаць быць давераным кантактам"
       ],
       "Stop using single sign-on": [
         "Спыніць выкарыстанне адзінага ўваходу"
@@ -4993,7 +5011,7 @@
         "Пераслана ад"
       ],
       "Forward to": [
-        "Перасылка на"
+        "Пераслаць на"
       ],
       "From": [
         "Ад"
@@ -5207,6 +5225,9 @@
       ]
     },
     "emergency_access": {
+      "${ BRAND_NAME } Account email": [
+        "Уліковы запіс электроннай пошты ${ BRAND_NAME }"
+      ],
       "${ n } day": [
         "${ n } дзень",
         "${ n } дні",
@@ -5219,14 +5240,77 @@
         "Засталося ${ n } дзён",
         "Засталося ${ n } дзён"
       ],
+      "${ user } will be able to use your account and change your data.": [
+        "У ${ user } будзе магчымасць выкарыстоўваць ваш уліковы запіс і змяняць вашы даныя."
+      ],
+      "${ user } will no longer be able to request access to your account in case of emergency.": [
+        "${ user } больш не зможа запытваць доступ да вашага ўліковага запісу ў выпадку экстраннай сітуацыі."
+      ],
       "Access granted": [
         "Доступ дазволены"
+      ],
+      "Access granted on ${ formattedAccessibleAt }": [
+        "Доступ прадастаўлены ў ${ formattedAccessibleAt }"
+      ],
+      "Access requested": [
+        "Доступ запытаны"
+      ],
+      "Access will be granted on ${ formattedAccessibleAt }": [
+        "Доступ будзе прадастаўлены ў ${ formattedAccessibleAt }"
       ],
       "Add": [
         "Дадаць"
       ],
+      "Add emergency contact": [
+        "Дадаць экстранны кантакт"
+      ],
+      "Change access wait time": [
+        "Змяніць час чакання доступу"
+      ],
+      "Change the time that ${ user } will have to wait before automatically giving them access.": [
+        "Змяніце час, які ${ user } павінен будзе чакаць, перад тым як аўтаматычна прадаставіць ім доступ."
+      ],
+      "Change wait time": [
+        "Змяніць час чакання"
+      ],
+      "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
+        "Выберыце тую асобу, якой зможаце даверыць свае даныя. У яе таксама павінен быць уліковы запіс ${ BRAND_NAME }."
+      ],
       "Disabled": [
         "Адключана"
+      ],
+      "Emergency access": [
+        "Экстранны доступ"
+      ],
+      "Emergency access for ${ user } removed": [
+        "Аварыйны доступ для ${ user } выдалены"
+      ],
+      "Emergency access granted": [
+        "Экстранны доступ прадастаўлены"
+      ],
+      "Emergency access requested": [
+        "Экстраны доступ запытаны"
+      ],
+      "Emergency contact added": [
+        "Экстранны кантакт дададзены"
+      ],
+      "Emergency contact removed": [
+        "Экстранны кантакт выдалены"
+      ],
+      "Give access now": [
+        "Даць доступ"
+      ],
+      "Give immediate access?": [
+        "Даць неадкладны доступ?"
+      ],
+      "Immediate": [
+        "Неадкладна"
+      ],
+      "Included with ${ planName }": [
+        "Уключаны з ${ planName }"
+      ],
+      "Less than a day": [
+        "Менш за дзень"
       ],
       "None": [
         "Няма"
@@ -5237,6 +5321,42 @@
       "Only ": [
         "Толькі "
       ],
+      "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
+        "Запытвайце экстраны доступ толькі ў **абгрунтаваных сітуацыях**, якія патрабуюць кіравання ўліковым запісам іншага карыстальніка."
+      ],
+      "People I trust": [
+        "Людзі, якім я давяраю"
+      ],
+      "People who trust me": [
+        "Людзі, якія давяраюць мне"
+      ],
+      "Remove trusted contact": [
+        "Выдаліць давераны кантакт"
+      ],
+      "Request access?": [
+        "Запытаць доступ?"
+      ],
+      "Requesting access": [
+        "Запыт доступу"
+      ],
+      "Stop being trusted contact?": [
+        "Перастаць быць давераным кантактам?"
+      ],
+      "They added me as trusted contact. I can access their account in case of an emergency.": [
+        "Яны дадалі мяне ў якасці давераганага кантакту і я магу атрымліваць доступ да іх улікогвага запісу ў выпадку экстраннай сітуацыі."
+      ],
+      "They may ask to access my account in case of an emergency.": [
+        "Яны могуць папрасіць доступ да майго ўліковага запісу ў выпадку экстраннай сітуацыі."
+      ],
+      "This will take effect immediately.": [
+        "Гэта дзеянне ўступіць у сілу неадкладна."
+      ],
+      "Time required before automatically giving access": [
+        "Час, які патрабуецца, перад тым як доступ будзе прадастаўлены аўтаматычна"
+      ],
+      "Time required before automatically granting them access": [
+        "Час, які ім неабходны для аўтаматычнага прадастаўлення доступу"
+      ],
       "Trusted contact": [
         "Давераны кантакт"
       ],
@@ -5246,8 +5366,53 @@
       "View request": [
         "Паглядзець запыт"
       ],
+      "Wait time": [
+        "Час чакання"
+      ],
+      "Wait time for access": [
+        "Час чакання для доступу"
+      ],
+      "Wait time saved": [
+        "Зэканомлены час чакання"
+      ],
+      "We’ll notify **${ user }** that you requested emergency access.": [
+        "Мы апавясцім **${ user }**, што вы запыталі экстранны доступ."
+      ],
       "You are signed in to the account ${ account }.": [
         "Вы ўвайшлі ва ўліковы запіс ${ account }."
+      ],
+      "You can now access and manage their account.": [
+        "Цяпер вы можаце атрымаць доступ да іх уліковага запісу і кіраваць ім."
+      ],
+      "You can remove their access at any time to regain exclusive control of your account.": [
+        "Вы можаце выдаліць іх доступ у любы час, каб аднавіць эксклюзіўны кантроль над сваім уліковым запісам."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Вас пакуль яшчэ ніхто не прызначаў у якасці экстраннага кантакту."
+      ],
+      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
+        "Вы дасягнулі максімальнай колькасці ў ${ controller.meta.count } давяраны кантакт.",
+        "Вы дасягнулі максімальнай колькасці ў ${ controller.meta.count } давяраныя кантакты.",
+        "Вы дасягнулі максімальнай колькасці ў ${ controller.meta.count } давяраных кантактаў.",
+        "Вы дасягнулі максімальнай колькасці ў ${ controller.meta.count } давяраных кантактаў."
+      ],
+      "You will be notified when someone requests emergency access.": [
+        "Вы атрымаеце апавяшчэнне, калі хто-небудзь запытае экстраны доступ."
+      ],
+      "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
+        "Вы больш не зможаце запытваць доступ да ўліковага запісу ${ user } у выпадку экстраннай сітуацыі."
+      ],
+      "You'll receive access to their account immediately.": [
+        "Vous recevrez un accès à leur compte immédiatement."
+      ],
+      "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
+        "Вы атрымаеце доступ да іх уліковага запісу праз **${ days } дзень**, або калі яны ўхваляць ваш запыт.",
+        "Вы атрымаеце доступ да іх уліковага запісу праз **${ days } дні**, або калі яны ўхваляць ваш запыт.",
+        "Вы атрымаеце доступ да іх уліковага запісу праз **${ days } дзён**, або калі яны ўхваляць ваш запыт.",
+        "Вы атрымаеце доступ да іх уліковага запісу праз **${ days } дзён**, або калі яны ўхваляць ваш запыт."
+      ],
+      "Your emergency contact ${ name } is requesting access to your account.": [
+        "Ваш кантакт для экстраных выпадкаў ${ name } запытвае доступ да вашага ўліковага запісу."
       ]
     },
     "Empty group name": {
@@ -5276,6 +5441,9 @@
       ],
       "Add at least one condition": [
         "Дадайце прынамсі адну ўмову"
+      ],
+      "Address cannot be yours": [
+        "Адрас не можа быць вашым"
       ],
       "Address primary private key not found": [
         "Асноўны прыватны ключ адраса не знойдзены"
@@ -7743,6 +7911,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Тэхналогія шыфравання ${ BRAND_NAME } азначае, што ніхто не зможа атрымаць доступ да вашага пароля - нават мы."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } патрабуе адрас ${ BRAND_NAME } для бяспечнай сінхранізацыі падзей і шыфравання. ${ claimAddressButton }"
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } новы каляндар",
         "${ calendarsToBeCreatedCount } новыя календары",
@@ -8096,9 +8267,6 @@
       ],
       "Add a recovery phone number": [
         "Дадаць нумар тэлефона для аднаўлення"
-      ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
-        "Дадайце яшчэ адзін узровень бяспекі да вашага ўліковага запісу. Вам неабходна будзе пацвярджаць сябе з дапамогай 2ФА кожны раз, калі вы ўваходзіце. Рэкамендуецца выкарыстоўваць ${ protonAuthenticatorDownloadLink } для захавання вашых кодаў 2ФА."
       ],
       "Add domain": [
         "Дадаць дамен"
@@ -8807,6 +8975,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Атрымлівайце асалоду ад больш хуткай і мэтанакіраванай адпраўкі электроннай пошты з праграмай для кам'ютара."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Забяспечце цалкам прыватную і зашыфраваную сувязь. Атрымайце бясплатны адрас электроннай пошты ${ BRAND_NAME }."
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "Увядзіце пароль, каб завяршыць падрыхтоўку ўліковага запісу ${ BRAND_NAME } і пачаць выкарыстоўваць ${ VPN_APP_NAME } паміж усімі вашымі прыладамі!"
@@ -17150,7 +17321,7 @@
     },
     "retention_policy_2025_Error": {
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
-        "Тэрмін службы павінен быць большы за ${ MIN_LIFETIME } дзень",
+        "Тэрмін службы павінен быць больш за ${ MIN_LIFETIME } дзень",
         "Тэрмін службы павінен быць больш за ${ MIN_LIFETIME } дні",
         "Тэрмін службы павінен быць больш за ${ MIN_LIFETIME } дзён",
         "Тэрмін службы павінен быць больш за ${ MIN_LIFETIME } дзён"
@@ -18860,7 +19031,7 @@
         "${ n } месяцаў"
       ],
       "/ month": [
-        "/ месячнай"
+        "/ месяц"
       ],
       "/month": [
         "/месяц"
@@ -20498,7 +20669,7 @@
         "${ PASS_SHORT_APP_NAME } Monitor Report"
       ],
       "(active)": [
-        "(актыўная)"
+        "(актыўны)"
       ],
       "1. Give a name to the config to be generated": [
         "1. Выберыце назву для згенерыраванай канфігурацыі"
@@ -20552,7 +20723,7 @@
         "Уліковы запіс прыпынены"
       ],
       "Account temporarily locked": [
-        "Уліковы запіс часова заблакаваны"
+        "Уліковы запіс часова заблакіраваны"
       ],
       "Action": [
         "Дзеянне"
@@ -20637,6 +20808,9 @@
       ],
       "Add users to \"${ policyName }\"": [
         "Дадаць карыстальнікаў у \"${ policyName }\""
+      ],
+      "Added on": [
+        "Дададзена"
       ],
       "Address": [
         "Адрас"
@@ -20761,6 +20935,9 @@
       "Choose user affiliations": [
         "Выберыце прыналежнасці карыстальнікаў"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Атрымайце адрас ${ MAIL_APP_NAME }"
+      ],
       "Click a value in the table to use it as filter": [
         "Націсніце значэнне ў табліцы, каб выкарыстоўваць яго ў якасці фільтра."
       ],
@@ -20794,8 +20971,8 @@
       "Connect apps and devices": [
         "Падключэнне праграм і прылад"
       ],
-      "Connect more Gmail addresses with ${ planName }": [
-        "Падключайце больш адрасоў Gmail з ${ planName }"
+      "Connect more addresses": [
+        "Падключыць больш адрасоў"
       ],
       "Connect organization": [
         "Падключэнне арганізацыі"
@@ -21096,6 +21273,9 @@
       ],
       "Email privacy": [
         "Прыватнасць электроннай пошты"
+      ],
+      "Emergency access": [
+        "Экстранны доступ"
       ],
       "Enable advanced account protection": [
         "Уключэнне пашыранай абароны ўліковага запісу"
@@ -21726,6 +21906,9 @@
       ],
       "Signed in successfully!": [
         "Паспяховы ўваход!"
+      ],
+      "Signed in to another account": [
+        "Выкананы ўваход у іншы ўліковы запіс"
       ],
       "Signed in to member account": [
         "Уваход ва ўліковы запіс удзельніка"
@@ -22639,7 +22822,7 @@
         "**Зэканомце да ${ priceString }** з працяглай падпіскай. Тыя ж самыя прэміяльныя функцыі за меншую плату."
       ],
       "Advanced security for your company?": [
-        "Пашыраная бяспека для вашай кампаніі?"
+        "Пашырыць бяспеку для вашай кампаніі?"
       ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Усе прэміяльныя сэрвісы ${ BRAND_NAME }. Усяго ад ${ fallBackString } у месяц"

@@ -141,8 +141,17 @@
       "Chat with us": [
         "Chat met ons"
       ],
+      "Check import progress": [
+        "Import-voortgang checken"
+      ],
+      "Choose a file or drag it here": [
+        "Kies een bestand of sleep het hierheen"
+      ],
       "Choose my own password": [
         "Mijn eigen wachtwoord kiezen"
+      ],
+      "Claim this address": [
+        "Claim dit adres"
       ],
       "Close": [
         "Sluiten"
@@ -186,6 +195,9 @@
       "Continue anyway": [
         "Ga toch verder"
       ],
+      "Continue import": [
+        "Doorgaan met importeren"
+      ],
       "Continue with this password": [
         "Ga verder met dit wachtwoord"
       ],
@@ -221,6 +233,12 @@
       ],
       "Current plan": [
         "Huidig abonnement"
+      ],
+      "Customize": [
+        "Personaliseer"
+      ],
+      "Customize import": [
+        "Importeren aanpassen"
       ],
       "Customize plan": [
         "Abonnement aanpassen"
@@ -333,6 +351,9 @@
       "Edit invoice note": [
         "Factuurnota bewerken"
       ],
+      "Edit label": [
+        "Label bewerken"
+      ],
       "Edit name": [
         "Naam bewerken"
       ],
@@ -402,6 +423,9 @@
       "Get ${ planOrAppName }": [
         "Neem ${ planOrAppName }"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Krijg een gratis ${ BRAND_NAME }-adres"
+      ],
       "Get a new encrypted email address": [
         "Verkrijg een nieuw versleuteld e-mailadres"
       ],
@@ -459,6 +483,18 @@
       "Hide plan features": [
         "Verberg abonnementsfuncties"
       ],
+      "Import": [
+        "Importeren"
+      ],
+      "Import calendars": [
+        "Agenda's importeren"
+      ],
+      "Import contacts": [
+        "Contactpersonen importeren"
+      ],
+      "Import emails": [
+        "E-mails importeren"
+      ],
       "Import emails, calendars, contacts": [
         "Importeer e-mails, agenda's, contacten"
       ],
@@ -507,8 +543,14 @@
       "Manage advanced account protections": [
         "Geavanceerde accountbeveiligingen beheren"
       ],
+      "Manage folders": [
+        "Mappen beheren"
+      ],
       "Manage groups": [
         "Groepen beheren"
+      ],
+      "Manage labels": [
+        "Labels beheeren"
       ],
       "Manage subscription": [
         "Abonnement beheren"
@@ -588,6 +630,12 @@
       "Publish changes": [
         "Publiceer wijzigingen"
       ],
+      "Quit": [
+        "Afsluiten"
+      ],
+      "Reconnect": [
+        "Opnieuw verbinden"
+      ],
       "Recover data": [
         "Gegevens herstellen"
       ],
@@ -659,6 +707,9 @@
       ],
       "Reset password": [
         "Wachtwoord resetten"
+      ],
+      "Reset to default": [
+        "Terugzetten naar standaard"
       ],
       "Restore": [
         "Herstellen"
@@ -819,11 +870,20 @@
       "Skip": [
         "Overslaan"
       ],
+      "Skip verification": [
+        "Verificatie overslaan"
+      ],
       "Spam": [
         "Spam"
       ],
+      "Start import": [
+        "Begin met importeren"
+      ],
       "Start live chat": [
         "Start Live Chat"
+      ],
+      "Stay": [
+        "Blijf"
       ],
       "Stop using single sign-on": [
         "Stop met single sign-on"
@@ -1093,6 +1153,14 @@
         "beheerder"
       ]
     },
+    "Alert": {
+      "By leaving now, some contacts may not be imported": [
+        "Door nu te verlaten, worden sommige contacten mogelijk niet geïmporteerd"
+      ],
+      "By leaving now, some events may not be imported": [
+        "Door nu te verlaten, worden sommige afspraken mogelijk niet geïmporteerd"
+      ]
+    },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Dit zal alle routers en clients die dit certificaat gebruiken loskoppelen."
@@ -1253,6 +1321,26 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Til e-mailproductiviteit naar een hoger niveau. Laat ${ BRAND_NAME } Scribe u helpen bij het schrijven, beantwoorden en proeflezen van uw e-mails."
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "Leeg ICS-bestand"
+      ],
+      "Invalid event": [
+        "Ongeldige afspraak"
+      ],
+      "Invalid ICS file": [
+        "Ongeldig ICS-bestand"
+      ],
+      "Invalid method": [
+        "Ongeldige methode"
+      ],
+      "Unsupported calendar component": [
+        "Niet-ondersteunde agendacomponent"
+      ],
+      "Unsupported event": [
+        "Niet-ondersteunde afspraak"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -1876,6 +1964,14 @@
         "aardbei"
       ]
     },
+    "Confirm modal title": {
+      "Quit import customization?": [
+        "Persoonlijke instellingen m.b.t. importeren sluiten?"
+      ],
+      "Quit import?": [
+        "Importeren beëindigen?"
+      ]
+    },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
         "Weet u zeker dat u deze betaalmethode wil verwijderen?"
@@ -1884,6 +1980,94 @@
     "Confirmation title": {
       "Delete payment method": [
         "Betalingsmethode verwijderen"
+      ]
+    },
+    "Contact field label": {
+      "Address": [
+        "Adres"
+      ],
+      "Anniversary": [
+        "Feestdag"
+      ],
+      "Birthday": [
+        "Verjaardag"
+      ],
+      "Display name": [
+        "Weergavenaam"
+      ],
+      "Email": [
+        "E-mailadres"
+      ],
+      "First name": [
+        "Voornaam"
+      ],
+      "Gender": [
+        "Geslacht"
+      ],
+      "Language": [
+        "Taal"
+      ],
+      "Last name": [
+        "Achternaam"
+      ],
+      "Logo": [
+        "Logo"
+      ],
+      "Member": [
+        "Lid"
+      ],
+      "Name": [
+        "Naam"
+      ],
+      "Note": [
+        "Notitie"
+      ],
+      "Organization": [
+        "Organisatie"
+      ],
+      "Phone": [
+        "Telefoonnummer"
+      ],
+      "Photo": [
+        "Foto"
+      ],
+      "Role": [
+        "Rol"
+      ],
+      "Time zone": [
+        "Tijdzone"
+      ],
+      "Title": [
+        "Titel"
+      ],
+      "URL": [
+        "Website"
+      ]
+    },
+    "Contact type label": {
+      "Fax": [
+        "Fax"
+      ],
+      "Main": [
+        "Primair"
+      ],
+      "Mobile": [
+        "Mobiel"
+      ],
+      "Other": [
+        "Anders"
+      ],
+      "Pager": [
+        "Pager"
+      ],
+      "Personal": [
+        "Persoonlijk"
+      ],
+      "Work": [
+        "Werk"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "CountriesStep:Info": {
@@ -2768,6 +2952,11 @@
         "/gebruiker per maand"
       ]
     },
+    "Default display name vcard": {
+      "Unknown": [
+        "Onbekend"
+      ]
+    },
     "Delete address prompt": {
       "Are you sure you want to delete this address?": [
         "Weet u zeker dat u dit adres wil verwijderen?"
@@ -2857,6 +3046,9 @@
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Moedig het gebruik van tweestapsverificatie in uw organisatie aan voor extra beveiliging."
       ],
+      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        "Versleutelen en importeren van contacten... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Zorg voor veilige toegang tot gegevens van de organisatie, zelfs als uw team op afstand is of openbare wifi gebruikt."
       ],
@@ -2881,6 +3073,9 @@
       "If disabled, only admins will have access.": [
         "Indien uitgeschakeld, hebben alleen beheerders toegang."
       ],
+      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
+        "Het lijkt erop dat de contactenlijst die u importeert enkele groepen bevat. Bekijk hoe deze groepen moeten worden geïmporteerd."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Houd verschillende delen van uw leven gescheiden en uw postvak in georganiseerd met extra adressen."
       ],
@@ -2896,11 +3091,33 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Vereenvoudig het synchroniseren en plannen met gedeelde agenda's."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Voor importeren via CSV- en VCF-bestand, zorg ervoor dat het bestand niet ${ MAX_IMPORT_FILE_SIZE_STRING } of ${ MAX_IMPORT_CONTACTS_STRING } contacten overschrijdt. Als uw bestand groter is, splits het dan in kleinere bestanden. ${ learnMoreLink }."
+      ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Importeer uw contacten uit Google of Outlook, ${ easySwitchLink }."
+      ],
       "To start, give your organization a name.": [
         "Geef uw organisatie een naam om te beginnen."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gebruik deze handleiding om uw organisatie snel te laten profiteren van ${ BRAND_NAME }'s toonaangevende versleuteling en privacy ecosysteem."
+      ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "U kunt afspraken importeren in iCal formaat (. ics-bestand). Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en mag maximaal ${ MAX_IMPORT_EVENTS_STRING } afspraken bevatten. Als uw bestand groter is, splitst u het op in kleinere bestanden."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
+      ]
+    },
+    "Description of the purpose of the import CSV modal": {
+      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
+        "Ook hebben we de CSV-velden automatisch vergeleken met vergelijkbare vCard-velden. U kunt de overeenkomsten bekijken en handmatig wijzigen."
+      ],
+      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
+        "We hebben de volgende velden gedetecteerd in het CSV-bestand dat u heeft geüpload. Controleer de velden die u wilt importeren."
       ]
     },
     "Disable address prompt": {
@@ -3181,6 +3398,71 @@
         "U bent succesvol ingelogd op een ander apparaat"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "LET OP:\n${ eventComment }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "BESCHRIJVING:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } werd geannuleerd."
+      ],
+      "All events in this series were updated.": [
+        "Alle gebeurtenissen in deze serie zijn bijgewerkt."
+      ],
+      "Here's what changed:": [
+        "Dit is wat er is veranderd:"
+      ],
+      "NOTE:": [
+        "LET OP:"
+      ],
+      "This event occurrence was canceled.": [
+        "Deze afspraakgebeurtenis werd geannuleerd."
+      ],
+      "This event occurrence was updated.": [
+        "Deze afspraakgebeurtenis werd bijgewerkt."
+      ],
+      "This event was updated.": [
+        "Deze afspraak werd bijgewerkt."
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "TIJD:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "TIJD:\n${ formattedStart } (hele dag)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "TIJD:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Verwijderd"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "LOCATIE:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } heeft uw uitnodiging voor ${ eventTitle } geaccepteerd"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } heeft uw uitnodiging voor ${ eventTitle } afgewezen"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } heeft voorlopig uw uitnodiging voor ${ eventTitle } geaccepteerd"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } toegevoegd"
@@ -3210,6 +3492,26 @@
         "${ name } succesvol verwijderd"
       ]
     },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "Annulering van een afspraak op ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Annulering van een afspraak die begint op ${ formattedStart }"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Uitnodiging voor een afspraak op ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Uitnodiging voor een afspraak die begint op ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Update voor een afspraak op ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Update voor een afspraak die begint op ${ formattedStart }"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Verificatiemail verzonden naar ${ address }"
@@ -3235,6 +3537,12 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } is uw gebruikersnaam. Om ${ emailAddress } aan te maken gaat u naar Instellingen > Identiteit en adressen > Kort domein (pm.me)"
       ],
+      "A group with this name already exists": [
+        "Er bestaat al een groep met deze naam"
+      ],
+      "Address primary private key not found": [
+        "Primaire adressleutel is niet gevonden"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Alle opslagruimte is reeds toegewezen. Beperk de toegewezen opslagruimte van andere gebruikers."
       ],
@@ -3250,6 +3558,9 @@
       "Authentication error.": [
         "Verificatiefout."
       ],
+      "Calendar limit reached": [
+        "Agendalimiet bereikt"
+      ],
       "Checkout expired, please try again": [
         "Checkout is verlopen, probeer het opnieuw"
       ],
@@ -3262,6 +3573,14 @@
       "Couldn't load transactions. Please try again later.": [
         "Kon transacties niet laden. Probeer het later nog eens."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda",
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda's"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda of",
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda's of"
+      ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
       ],
@@ -3273,6 +3592,9 @@
       ],
       "Email address is not available": [
         "E-mailadres is niet beschikbaar."
+      ],
+      "Email address is required": [
+        "E-mailadres is vereist"
       ],
       "Email is not valid": [
         "E-mailadres is ongeldig"
@@ -3298,8 +3620,14 @@
       "File too large. Your logo must be 30 KB or smaller.": [
         "Bestand is te groot. Uw logo moet 30 KB of kleiner zijn."
       ],
+      "Folder name cannot be empty.": [
+        "Mapnaam mag niet leeg zijn."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Als de tijd op uw TV is verlopen, klik op vernieuwen op uw TV en voer uw code opnieuw in."
+      ],
+      "IMAP server is required": [
+        "IMAP-server is vereist"
       ],
       "Impossible to create the gateway": [
         "De gateway instellen is niet mogelijk"
@@ -3352,6 +3680,9 @@
       "Invalid invitation link": [
         "Ongeldige uitnodigingskoppeling"
       ],
+      "Invalid name": [
+        "Ongeldige naam"
+      ],
       "Invalid postal code": [
         "Ongeldige postcode"
       ],
@@ -3360,6 +3691,16 @@
       ],
       "Invalid ZIP code": [
         "Ongeldige postcode"
+      ],
+      "Label name cannot be empty.": [
+        "Labelnaam mag niet leeg zijn."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Minstens ${ calendarsToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
+        "Minstens ${ calendarsToFixCount } agenda's samenvoegen met bestaande ${ BRAND_NAME }-agenda's"
+      ],
+      "Missing key packet": [
+        "Ontbrekend sleutelpakket"
       ],
       "Name already exists": [
         "Naam bestaat al"
@@ -3379,6 +3720,9 @@
       "No image selected": [
         "Geen afbeelding geselecteerd"
       ],
+      "No valid address found": [
+        "Geen geldig adres gevonden"
+      ],
       "Not a valid number": [
         "Geen geldig getal"
       ],
@@ -3390,6 +3734,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisatiesleutel moet worden geactiveerd om niet-privé gebruikers te maken"
+      ],
+      "Password is required": [
+        "Wachtwoord is vereist"
       ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
@@ -3436,6 +3783,10 @@
       "Please enter ZIP code": [
         "Voer de postcode in."
       ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Los het gemarkeerde conflict op om verder te gaan.",
+        "Los de gemarkeerde conflicten op om verder te gaan."
+      ],
       "Please generate keys before you try to change your password": [
         "Genereer sleutels voordat u uw wachtwoord probeert te wijzigen"
       ],
@@ -3481,6 +3832,18 @@
       "Please upload only 1 file": [
         "Upload slechts 1 bestand"
       ],
+      "Port is required": [
+        "Poort is vereist"
+      ],
+      "Postal code is required": [
+        "Postcode is vereist"
+      ],
+      "Primary address key is not decrypted": [
+        "Primaire adressleutel is niet ontsleuteld"
+      ],
+      "Primary address key is not decrypted.": [
+        "Primaire adressleutel is niet ontsleuteld."
+      ],
       "Process aborted": [
         "Proces afgebroken"
       ],
@@ -3489,6 +3852,21 @@
       ],
       "Signature verification failed": [
         "Controle van handtekening mislukt"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Sommige namen van mappen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Sommige van uw mapnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Sommige namen van uw labels zijn gereserveerd. Pas de import aan om deze namen te bewerken."
+      ],
+      "Some of your label names are unavailable. Please customize the import to edit these names.": [
+        "Sommige labelnamen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
+      ],
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
@@ -3514,11 +3892,26 @@
       "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
         "Het bestand is te klein, de minimale grootte is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "De mapnaam is ongeldig. Kies een andere naam."
+      ],
+      "The folder name is too long. Please choose a different name.": [
+        "De mapnaam is te lang. Kies een andere naam."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "De naam van het label is ongeldig. Kies een andere naam."
+      ],
+      "The label name is too long. Please choose a different name.": [
+        "De naam van het label is te lang. Kies een andere naam."
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "De naam van de policy moet tussen 3 en 40 tekens lang zijn."
+      ],
+      "There are too many folders in your external account. Please customize the import to delete some folders.": [
+        "Er zijn te veel mappen op uw externe account. Pas de import aan om enkele mappen te verwijderen."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
@@ -3528,6 +3921,12 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
+      ],
+      "This folder name is not available. Please choose a different name.": [
+        "Deze mapnaam is niet beschikbaar. Kies een andere naam."
+      ],
+      "This label name is not available. Please choose a different name.": [
+        "Deze labelnaam is niet beschikbaar. Kies een andere naam."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Om niet-privé gebruikersaccounts en toegang tot hun accounts aan te maken, moet u uw beheerdersbevoegdheden herstellen."
@@ -3568,6 +3967,9 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Verkeerde verificatiecode. Controleer of u de verificatiecode correct gekopieerd hebt en probeer het opnieuw. Het kan maximaal 24 uur duren voordat wijzigingen doorgevoerd zijn."
       ],
+      "You have reached the maximum number of calendars.": [
+        "U hebt het maximum aantal agenda's bereikt."
+      ],
       "You have reached the number of contacts limit for your account": [
         "U heeft de limiet van het aantal contacten bereikt voor dit account"
       ],
@@ -3577,8 +3979,14 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "U heeft het maximale aantal gebruikers bereikt dat uw huidige abonnement toestaat. Upgrade uw abonnement om een nieuwe gebruiker toe te voegen."
       ],
+      "You must set a name": [
+        "U moet een naam instellen"
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Uw account of organisatie heeft een openstaande factuur. Betaal alle openstaande facturen."
+      ],
+      "Your import will not be processed.": [
+        "Uw import zal niet worden verwerkt."
       ],
       "ZIP code is required": [
         "Postcode is vereist"
@@ -3587,6 +3995,132 @@
     "error": {
       "Select users to view their activity": [
         "Selecteer gebruikers om hun activiteit te bekijken."
+      ]
+    },
+    "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Onjuiste bestandsindeling."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Alleen ICS-bestandsindelingen zijn toegestaan."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Fout opgetreden tijdens het uploaden van uw bestand. Er is geen bestand geselecteerd."
+      ],
+      "An unexpected error occurred. Import must be restarted.": [
+        "Er is een onverwachte fout opgetreden. Importeren moet opnieuw gestart worden."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS } afspraak.",
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS } afspraken."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Uw bestand ${ formattedFilename } heeft een ongeldige methode en kan niet worden geïmporteerd."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Uw bestand ${ formattedFilename } heeft geen afspraken om te importeren."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Uw bestand ${ formattedFilename } is leeg."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Uw bestand ${ formattedFilename } is geen agenda."
+      ]
+    },
+    "Error importing contact": {
+      "Encryption failed": [
+        "Versleutelen is mislukt"
+      ],
+      "Missing FN property": [
+        "Missende FN-eigenschap"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard-versies < 3.0 niet ondersteund"
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Onjuiste bestandsindeling."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "Er is een fout opgetreden tijdens het uploaden van uw bestand ${ formattedFilename }. Geen .csv- of .vcf-bestand geselecteerd"
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Fout opgetreden tijdens het uploaden van uw bestand. Er is geen bestand geselecteerd."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_CONTACTS_STRING } contacten."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "Uw bestand ${ formattedFilename } heeft geen contactpersonen om te importeren."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Uw bestand ${ formattedFilename } is leeg."
+      ]
+    },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Verkeerd formaat. Onderdeel kan niet gelezen worden."
+      ],
+      "Calendar": [
+        "Agenda"
+      ],
+      "Component with wrong format": [
+        "Component met verkeerde indeling"
+      ],
+      "Custom time zone": [
+        "Aangepaste tijdzone"
+      ],
+      "Element": [
+        "Element"
+      ],
+      "Encryption failed": [
+        "Versleutelen is mislukt"
+      ],
+      "Event": [
+        "Afspraak"
+      ],
+      "Free-busy time information": [
+        "Informatie over vrije tijd"
+      ],
+      "Invalid event": [
+        "Ongeldige afspraak"
+      ],
+      "Journal entry": [
+        "Logboek-item"
+      ],
+      "Missing start time": [
+        "Begintijd ontbreekt"
+      ],
+      "No UID, title or start time": [
+        "Geen UID, titel of starttijd"
+      ],
+      "Notification out of bounds": [
+        "Melding buiten de grenzen"
+      ],
+      "Original recurring event could not be found": [
+        "Oorspronkelijke terugkerende afspraak kan niet worden gevonden"
+      ],
+      "Time zone": [
+        "Tijdzone"
+      ],
+      "Time zone component ignored": [
+        "Tijdzone component genegeerd"
+      ],
+      "To-do entry": [
+        "To-do item"
+      ],
+      "Unknown": [
+        "Onbekend"
+      ],
+      "Unsupported event": [
+        "Niet-ondersteunde afspraak"
       ]
     },
     "Error importing users": {
@@ -3635,11 +4169,65 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "Certificaat ${ name } niet gevonden of reeds ingetrokken"
+      ],
+      "Display name cannot be empty": [
+        "Weergavenaam kan niet leeg zijn"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Geen afbeelding geselecteerd"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Onverwachte fout"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "Bijgevoegd ICS-bestand kon niet worden ontsleuteld"
+      ],
+      "Attached ICS file could not be read": [
+        "Bijgevoegd ICS-bestand kon niet worden gelezen"
+      ],
+      "Invalid invitation": [
+        "Ongeldige uitnodiging"
+      ],
+      "Invalid response": [
+        "Ongeldige reactie"
+      ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Deze afspraak kon niet aan uw agenda worden toegevoegd. Er werd geen antwoord verstuurd"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Deze afspraak kon niet worden bijgewerkt in uw agenda. Er werd geen antwoord verstuurd"
+      ],
+      "Unsupported invitation": [
+        "Niet-ondersteunde uitnodiging"
+      ],
+      "Unsupported response": [
+        "Niet-ondersteunde reactie"
+      ],
+      "We could not cancel the event in your calendar": [
+        "We konden de afspraak in uw agenda niet annuleren"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "We konden de afspraak niet ophalen uit uw agenda"
+      ],
+      "We could not update the event in your calendar": [
+        "We konden de afspraak niet bijwerken in uw agenda"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Uw antwoord werd verzonden, maar de afspraak kon niet worden toegevoegd aan uw agenda"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Uw antwoord werd verstuurd, maar de afspraak kon niet worden bijgewerkt in uw agenda"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(geen titel)"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4402,6 +4990,310 @@
         "SMS"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Agenda-tijdzone niet ondersteund"
+      ],
+      "Edited event not supported": [
+        "Bewerkte afspraak niet ondersteund"
+      ],
+      "End time out of bounds": [
+        "Eindtijd valt buiten de grenzen"
+      ],
+      "Event validation failed": [
+        "Validatie van afspraak mislukt"
+      ],
+      "Floating times not supported": [
+        "Zwevende tijden niet ondersteund"
+      ],
+      "Malformed all-day event": [
+        "Misvormde afspraak gedurende de hele dag"
+      ],
+      "Malformed end time": [
+        "Misvormde eindtijd"
+      ],
+      "Malformed recurring event": [
+        "Misvormde periodieke afspraak"
+      ],
+      "Malformed start time": [
+        "Misvormde begintijd"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Alleen de Gregoriaanse agendaschaal is toegestaan"
+      ],
+      "Recurring event has no occurrences": [
+        "Terugkerende afspraak heeft geen voorvallen"
+      ],
+      "Recurring rule not supported": [
+        "Herhalingsvoorwaarde niet ondersteund"
+      ],
+      "Start time out of bounds": [
+        "Begintijd valt buiten de grenzen"
+      ],
+      "Time zone not supported": [
+        "Tijdzone niet ondersteund"
+      ]
+    },
+    "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/ 1 afspraak versleuteld en toegevoegd aan uw agenda",
+        "${ totalImported }/${ totalToImport } afspraken versleuteld en toegevoegd aan uw agenda"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. ${ totalImported } van de ${ totalToImport } afspraak succesvol geïmporteerd.",
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. ${ totalImported } van de ${ totalToImport } afspraken succesvol geïmporteerd."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. Er kon geen enkele afspraak worden geïmporteerd."
+      ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. Er kon geen enkele afspraak worden geïmporteerd."
+      ],
+      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
+        "Versleutelen en toevoegen van contacten: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "Versleutelen en toevoegen van afspraken aan uw agenda: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Afspraak succesvol geïmporteerd. De geïmporteerde afspraak zal nu in uw agenda verschijnen."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Afspraken succesvol geïmporteerd. De geïmporteerde afspraken zullen nu in uw agenda verschijnen."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "Gelieve het tabblad niet te sluiten voordat het importproces is voltooid."
+      ]
+    },
+    "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } ondersteunt momenteel bepaalde afspraaktypen, -details en -indelingen niet."
+      ],
+      "vCard versions < 3.0": [
+        "vCard-versies < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Geïmporteerde uitnodigingen verschijnen in ${ CALENDAR_APP_NAME } als eenvoudige afspraken zonder details over de organisator en deelnemers. Om updates van afspraken te krijgen en deelnemers te zien, vraag je organisatoren om u uit te nodigen met uw ${ BRAND_NAME }-e-mailadres."
+      ],
+      "This file contains an event invitation:": [
+        "Dit bestand bevat een uitnodiging voor een afspraak:",
+        "Dit bestand bevat uitnodigingen voor afspraken:"
+      ],
+      "This file contains an invitation response:": [
+        "Dit bestand bevat een antwoord op een uitnodiging:",
+        "Dit bestand bevat antwoorden op uitnodigingen:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Dit bestand bevat enkele gegevens die we niet kunnen importeren:"
+      ]
+    },
+    "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } contact versleuteld en toegevoegd aan uw contactenlijst",
+        "${ totalImported }/${ totalToImport } contacten versleuteld en toegevoegd aan uw contactenlijst"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw contact. Er kon geen contact worden geïmporteerd."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw contacten. ${ totalImported } van ${ totalToImport } contacten succesvol geïmporteerd."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw contacten. Er kon geen contact worden geïmporteerd."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Contactpersoon succesvol geïmporteerd. Het geïmporteerde contact zal nu in uw adresboek verschijnen."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Contacten succesvol geïmporteerd. De geïmporteerde contacten zullen nu in uw adresboek verschijnen."
+      ]
+    },
+    "Import contact error": {
+      "Contact ${ contactId }: ": [
+        "Contact ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } contactpersoon",
+        "${ totalContacts } contactpersonen"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "onbekend"
+      ]
+    },
+    "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } ondersteunt ${ forNow } nog geen:"
+      ],
+      "for now": [
+        "momenteel"
+      ]
+    },
+    "Import error": {
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } kan geen verbinding maken met uw account. Zorg ervoor dat:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } kan geen verbinding maken met uw externe account. Zorg ervoor dat het e-mailadres en het poortnummer correct zijn."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } kan geen verbinding maken met uw extern account. Zorg ervoor dat:"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } kan geen verbinding maken met uw Yahoo account. Zorg ervoor dat het adres van de mailserver en poortnummer correct zijn."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } kan geen verbinding maken met uw Yahoo account. Zorg ervoor dat:"
+      ],
+      "2-step verification is enabled in your external account.": [
+        "2-staps-verificatie is ingeschakeld in uw externe account."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "Tweestapsverificatie is ingeschakeld in uw externe e-mailaccount."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "IMAP-toegang is ingeschakeld in uw externe account."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "IMAP toegang is ingeschakeld in uw Yahoo account."
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Te veel recente pogingen. Probeer over enkele ogenblikken opnieuw."
+      ],
+      "Use your app password if:": [
+        "Gebruik uw app-wachtwoord als:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Gebruik het wachtwoord van uw app in plaats van het normale wachtwoord als:"
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Uw app-wachtwoord is juist. Gebruik uw gebruikelijke wachtwoord niet."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "Uw e-mailaccount vereist een app-wachtwoord om uw gegevens te exporteren."
+      ],
+      "Your email account requires one to export your data.": [
+        "Uw e-mailaccount vereist er één om uw gegevens te exporteren."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Uw e-mailadres en app-wachtwoord zijn juist. Gebruik niet uw gebruikelijke wachtwoord."
+      ],
+      "Your email address and password are correct.": [
+        "Uw e-mailadres en wachtwoord zijn juist."
+      ],
+      "Your password is correct.": [
+        "Uw wachtwoord is juist."
+      ]
+    },
+    "Import instructions": {
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "Afhankelijk van uw e-mail-serviceprovider moet u mogelijk eerst een ${ knowledgeBaseLink } voordat u kunt importeren naar ${ BRAND_NAME }."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Vouw het dropdown-menu uit door te klikken op de 3 puntjes (...)."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Genereer het ${ boldAppPassword } en gebruik het in plaats van uw gewone wachtwoord wanneer u hierom wordt gevraagd door ${ BRAND_NAME }."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Ga naar ${ boldAccountInfo } onder uw profiel in ${ yahooMailLink }."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "Ga naar ${ boldAccountSecurity }."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "Open de contacten van uw ${ yahooMailLink }."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Selecteer ${ boldExportCSV }."
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Om een agenda te importeren naar ${ BRAND_NAME } heeft u het ${ knowledgeBaseLink } nodig. Download het van Yahoo in 3 simpele stappen:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Om een agenda te importeren naar ${ BRAND_NAME } heeft u het ${ knowledgeBaseLink } nodig. Download dit voordat u start met het importproces."
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Om contacten te importeren naar ${ BRAND_NAME } heeft u een ${ knowledgeBaseLink } nodig. Download het van Yahoo in 3 simpele stappen:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Om contacten te importeren naar ${ BRAND_NAME } heeft u een ${ knowledgeBaseLink } nodig. Download dit voordat u start met het importproces."
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Om uw e-mails te importeren naar ${ BRAND_NAME } heeft u een ${ appPasswordLink } nodig van Yahoo. Krijg het door deze stappen te volgen:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Rekeninginformatie"
+      ],
+      "Account security": [
+        "Accountbeveiliging"
+      ],
+      "app password": [
+        "app-wachtwoord"
+      ],
+      "Export": [
+        "Exporteren"
+      ],
+      "Export to CSV file": [
+        "Exporteer naar CSV bestand"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "app-wachtwoord"
+      ],
+      "app password or enable IMAP": [
+        "appwachtwoord of IMAP inschakelen"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "CSV of een VCF (vCard) bestand"
+      ],
+      "full calendar view": [
+        "volledige agendaweergave"
+      ],
+      "ICS file": [
+        "ICS-bestand"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Ga naar ${ calendarViewLink } in Yahoo."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Beweeg uw muis naar de agenda die u wilt importeren en open het dropdown-menu."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Selecteer ${ boldExport } om de agenda te exporteren als een ICS-bestand."
+      ]
+    },
+    "Import warning": {
+      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
+        "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } van de ${ totalEvents } afspraak wordt niet geïmporteerd. Uitvouwen voor details.",
+        "${ totalEventsDiscarded } van de ${ totalEvents } afspraken worden niet geïmporteerd. Uitvouwen voor details."
+      ],
+      "No contact can be imported. Click for details": [
+        "Er kan geen contact worden geïmporteerd. Klik voor meer informatie"
+      ],
+      "No event can be imported. Expand for details.": [
+        "Er kan geen afspraak worden geïmporteerd. Uitvouwen voor details."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Een deel van je agenda-inhoud wordt niet ondersteund en zal niet worden geïmporteerd."
+      ]
+    },
     "Info": {
       " and other security features.": [
         " en andere beveiligingsfuncties."
@@ -4421,6 +5313,17 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s versleutelingstechnologie betekent dat niemand toegang heeft tot uw wachten - zelfs wij niet."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } vereist een ${ BRAND_NAME } adres voor veilige afspraak synchronisatie en versleuteling. ${ claimAddressButton }."
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } nieuwe agenda",
+        "${ calendarsToBeCreatedCount } nieuwe agenda's"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } samengevoegde agenda",
+        "${ calendarsToBeMergedCount } samengevoegde agenda's"
       ],
       "${ countriesCount } country enabled": [
         "${ countriesCount } land ingeschakeld",
@@ -4494,6 +5397,14 @@
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met toegewijde monitoring van verdachte activiteiten."
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } map gevonden",
+        "${ providerFoldersNumLocalized } mappen gevonden"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } label gevonden in Gmail",
+        "${ providerFoldersNumLocalized } labels gevonden in Gmail"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } server wordt nog ingesteld. Dit duurt ongeveer ${ provisioningDuration }.",
         "${ provisioningCounter } servers wordt nog ingesteld. Dit duurt ongeveer ${ provisioningDuration }."
@@ -4516,9 +5427,21 @@
         "${ resultsCount } resultaat gevonden",
         "${ resultsCount } resultaten gevonden"
       ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda",
+        "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda's"
+      ],
       "${ selectedEntities.length } selected": [
         "${ selectedEntities.length } geselecteerd",
         "${ selectedEntities.length } geselecteerd"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } map geselecteerd",
+        "${ selectedFoldersCountLocalized } mappen geselecteerd"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } label geselecteerd",
+        "${ selectedFoldersCountLocalized } labels geselecteerd"
       ],
       "${ storage } storage": [
         "${ storage } opslag"
@@ -4555,8 +5478,17 @@
       "(default)": [
         "(standaard)"
       ],
+      "**Enable automatic backups** for peace of mind": [
+        "**Automatische back-ups inschakelen** voor gemoedsrust"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Kies een ${ BRAND_NAME } e-mailadres** om gebruik te maken van alle ${ BRAND_NAME_TWO } diensten met inbegrip van ${ MAIL_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
+        "**Importeer uw bestaande codes** van andere 2FA-apps, zoals Google Authenticator"
+      ],
+      "**Sync codes** to all your devices": [
+        "**Synchroniseer codes** naar al uw apparaten"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Meer",
@@ -4611,6 +5543,9 @@
       "add a recovery method": [
         "een herstelmethode toe voegt"
       ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Voeg extra beveiliging toe aan uw account. U moet uzelf verifiëren met 2FA elke keer dat u zich aanmeldt."
+      ],
       "Add domain": [
         "Domein toevoegen"
       ],
@@ -4648,6 +5583,14 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Alles (${ totalFoldersCount } map)",
+        "Alle (${ totalFoldersCount } mappen)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Alle (${ totalFoldersCount } label)",
+        "Alle (${ totalFoldersCount } labels)"
+      ],
       "All inactive members deleted": [
         "Alle inactieve leden verwijderd"
       ],
@@ -4659,6 +5602,10 @@
       ],
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }",
+        "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }"
       ],
       "Allocated": [
         "Toegewezen"
@@ -4684,11 +5631,17 @@
       "Amount due": [
         "Verschuldigd bedrag"
       ],
+      "and": [
+        "en"
+      ],
       "Are you sure you want to cancel editing the group?": [
         "Weet u zeker dat u het bewerken van de groep wilt annuleren?"
       ],
       "Are you sure you want to discard your changes?": [
         "Weet u zeker dat u uw wijzigingen ongedaan wilt maken?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Weet u zeker dat u uw import wilt verwijderen?"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Weet u zeker dat u beheerdersrechten aan deze gebruiker wilt geven?"
@@ -4771,6 +5724,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
+      "Close this screen to exit.": [
+        "Sluit dit scherm om af te sluiten."
+      ],
       "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
         "Cloud opslag, geïntegreerd met ${ DOCS_APP_NAME }"
       ],
@@ -4813,6 +5769,16 @@
       "Country code": [
         "Landcode"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda",
+        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda's"
+      ],
+      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
+        "Maak een label voor de geïmporteerde berichten, een tijdbereik voor deze import, en de mappen die u wilt importeren."
+      ],
+      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
+        "Maak een label aan voor de geïmporteerde berichten, een tijdbereik voor deze import, en de labels die u wilt importeren."
+      ],
       "Create a secure cloud for ${ value } member": [
         "Maak een beveiligde cloud voor ${ value } lid",
         "Maak een beveiligde cloud voor ${ value } leden"
@@ -4822,6 +5788,9 @@
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
         "Maak e-mailadressen aan voor andere mensen, beheer ${ MAIL_APP_NAME } voor een bedrijf, school of groep. Ga aan de slag met het toevoegen van uw organisatienaam en aangepast domein (bijv. @yourcompany.com). "
+      ],
+      "Create in": [
+        "Maak in"
       ],
       "Create your first Gateway": [
         "Uw eerste gateway instellen"
@@ -4955,6 +5924,9 @@
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Download ons CSV-sjabloon, vul de gebruikersgegevens in en upload vervolgens uw ingevulde CSV-bestand om accounts voor deze gebruikers aan te maken."
       ],
+      "Download the app and import existing codes.": [
+        "Download de app en importeer bestaande codes."
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar u gaat."
       ],
@@ -5030,6 +6002,9 @@
       "Enhance your network security": [
         "Verbeter uw netwerkbeveiliging"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Zorg voor volledig privé en versleutelde communicatie. Vraag nu uw gratis ${ BRAND_NAME }-e-mailadres aan."
+      ],
       "Enter key manually instead": [
         "Sleutel handmatig invoeren"
       ],
@@ -5044,6 +6019,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Voer de code in die is verzonden naar ${ email }. Als u het bericht niet kan vinden in uw inbox, kijk dan in de map 'Spam'."
+      ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
       ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Voer de entiteit-ID van een **eduGAIN** organisatie in voor **${ domain.DomainName }**."
@@ -5116,6 +6094,9 @@
       ],
       "Gateways monitoring is enabled.": [
         "Gateways monitoring is ingeschakeld."
+      ],
+      "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
+        "Verkrijg ${ AUTHENTICATOR_APP_NAME } voor al uw apparaten."
       ],
       "Get ${ upsellPlanName }": [
         "Kies ${ upsellPlanName }"
@@ -5192,11 +6173,27 @@
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Indien u problemen heeft, zijn we hier om te helpen. ${ boldPhoneCall } of ${ boldZoomMeeting } met een van onze ondersteuningsspecialisten."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda",
+        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda's"
+      ],
+      "Import from": [
+        "Importeren van"
+      ],
+      "Import in progress": [
+        "Bezig met importeren"
+      ],
+      "Import mailbox": [
+        "Mailbox importeren"
+      ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "BELANGRIJK: Als uw DNS-console CNAME waarden niet toestaat te eindigen met een punt, kunt u de laatste stip in de CNAME waarden verwijderen."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Belangrijk: Zorg ervoor dat u de herstelcodes opslaat. Anders kunt u permanent toegang tot uw account verliezen als u uw tweestapsverificatieapparaat kwijtraakt."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "In de volgende stap kunt u een storting doen met een Bitcoin-adres."
@@ -5255,6 +6252,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Het duurt 10 dagen om het land van een server te veranderen, dus zorg ervoor dat uw selectie correct is."
       ],
+      "It won't be linked to your ${ BRAND_NAME } Account, so there's **no risk of getting locked out**.": [
+        "Het wordt niet gekoppeld aan uw ${ BRAND_NAME } account, dus er is **geen risico om buitengesloten te worden**."
+      ],
       "It's better to have:": [
         "Het is beter om:"
       ],
@@ -5309,11 +6309,20 @@
       "JCB logo": [
         "JCB-logo"
       ],
+      "Just confirm your selection and we'll do the rest.": [
+        "Bevestig uw keuze en wij doen de rest."
+      ],
       "Keys created": [
         "Sleutels aangemaakt"
       ],
+      "Label all imported messages as": [
+        "Label alle geïmporteerde berichten als"
+      ],
       "Labels:": [
         "Labels:"
+      ],
+      "Large imports can take several days.": [
+        "Grote importen kunnen meerdere dagen duren."
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Meer informatie over hoe u zich kunt aanmelden bij ${ VPN_APP_NAME } met VPN-applicaties via apps van derden."
@@ -5384,11 +6393,17 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
+      "Maybe later": [
+        "Misschien later"
+      ],
       "Medium Priority": [
         "Middelmatige prioriteit"
       ],
       "Member": [
         "Lid"
+      ],
+      "Merged": [
+        "Samengevoegd"
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Berichten naar al uw e-mailadressen gaan naar uw inbox."
@@ -5413,6 +6428,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
+      ],
+      "New": [
+        "Nieuw"
       ],
       "New activity data will stop being collected and shown.": [
         "Nieuwe activiteitsgegevens zullen niet langer worden verzameld en getoond."
@@ -5574,6 +6592,9 @@
       "Please open the document to view it.": [
         "Open het document om het te bekijken."
       ],
+      "Please select the folders you would like to import:": [
+        "Selecteer de mappen die u wilt importeren:"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Probeer opnieuw met een andere betalingsmethode, of neem contact op met uw bank."
       ],
@@ -5697,6 +6718,12 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Selecteer de bij ${ getFormattedOrganization } aangesloten gebruikers die u wilt toelaten tot uw ${ BRAND_NAME } organisatie:"
       ],
+      "Select what you want to import.": [
+        "Selecteer wat u wilt importeren."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt afhankelijk van het aantal beschikbare agenda's binnen uw abonnement."
+      ],
       "Self-custodial crypto wallet": [
         "Crypto portemonnee in eigen bewaarneming"
       ],
@@ -5817,6 +6844,9 @@
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Aanbevolen door TechRadar Pro met een beoordeling van 4,2 van de 5 sterren."
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Tijdelijk onbeschikbaar. Probeer later opnieuw."
+      ],
       "Thank you": [
         "Bedankt"
       ],
@@ -5852,6 +6882,9 @@
       ],
       "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
         "De groepen-functie wordt niet ondersteund in uw huidige abonnement. Eerder gemaakte groepen zijn uitgeschakeld en kunnen alleen worden verwijderd."
+      ],
+      "The most secure and private two-factor authentication app, that's free and open-source.": [
+        "De meest veilige en privé tweestapsverificatie app, die gratis en open source is."
       ],
       "The name will be visible to your users while they are signed in.": [
         "De naam zal zichtbaar zijn voor uw gebruikers wanneer ze ingelogd zijn."
@@ -5979,6 +7012,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "Maak eerst een agenda aan in ${ CALENDAR_APP_NAME } om afspraken te importeren. Dit is waar de afspraken tevoorschijn komen na het importeren."
+      ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Om de laatste ontwikkeling bij ${ BRAND_NAME }-producten te kunnen bijhouden, kunt u zich abonneren op onze verschillende e-mails en van tijd tot tijd ${ blogLink }."
       ],
@@ -6053,6 +7089,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
+      ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Upgrade naar Professional of een hoger abonnement om te ontgrendelen"
       ],
       "Upload your completed CSV file to create accounts": [
         "Upload uw voltooide CSV-bestand om accounts aan te maken"
@@ -6177,8 +7216,14 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
       ],
+      "We'll email you once import is complete.": [
+        "We sturen u een e-mail zodra de import voltooid is."
+      ],
       "We'll get back to you shortly.": [
         "We nemen zo snel mogelijk contact met u op."
+      ],
+      "We'll notify you when the import is done.": [
+        "We laten het u weten als de import klaar is."
       ],
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
@@ -6221,6 +7266,9 @@
       ],
       "Why?": [
         "Waarom?"
+      ],
+      "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
+        "Met ${ AUTHENTICATOR_APP_NAME } kunt u:"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Met een Business- of Enterprise-abonnement kan u ${ boldDedicatedServers } kopen voor uw organisatie en ${ boldGateways } instellen om te beheren welke gebruikers er toegang tot hebben."
@@ -6271,14 +7319,29 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "U gebruikt meer opslag dan is inbegrepen in een ${ downgradedPlanName } abonnement. Wis of verwijder gegevens om te kunnen downgraden."
       ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "U kunt geïmporteerde agenda's ook samenvoegen met bestaande ${ BRAND_NAME }-agenda's."
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "U kunt dit op elk gewenst moment in ${ settingsLink } wijzigen."
+      ],
+      "You can check the progress ${ importProgressLink }.": [
+        "U kunt de voortgang controleren ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "In de tussentijd kunt u de tab of browser sluiten."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "U kunt dit eenmaal bewerken om ervoor te zorgen dat het juiste e-mailadres voor verificatie is ingevoerd."
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "U kunt de wachtwoordregels afdwingen die leden van uw organisatie gebruiken wanneer ze het wachtwoord voor hun ${ BRAND_NAME }-account aanmaken of resetten."
+      ],
+      "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "U kunt onze premium privacy-diensten in één bundel krijgen—en het is maar **${ priceString }/maand**."
+      ],
+      "You can import one data type at a time.": [
+        "U kunt maar één type gegevens tegelijk importeren."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert.",
@@ -6409,6 +7472,9 @@
       "Your account was successfully updated with this promotion": [
         "Uw account werd succesvol bijgewerkt met deze promotie."
       ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw ${ BRAND_NAME } account."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
@@ -6421,6 +7487,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Uw gegevens zijn veilig bij ons. We nemen alleen contact met u op wanneer dit nodig is om onze diensten te leveren."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "Uw inloginformatie zal niet worden opgeslagen nadat de import is voltooid."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Uw volgende facturatiedatum is ${ renewalTime }."
@@ -6506,6 +7575,11 @@
         "Voeg een notitie voor de facturen toe. Deze gegevens worden toegevoegd aan zowel persoonlijke als organisatorische facturen. Ze zullen alleen verschijnen op in de toekomst uitgegeven facturen."
       ]
     },
+    "Info on errors": {
+      "Click for details": [
+        "Klik voor details"
+      ]
+    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "U kunt het vervallen voorkomen door uw abonnement opnieuw te activeren"
@@ -6514,6 +7588,16 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Om een onderbreking van uw account te voorkomen als gevolg van onbetaalde facturen, zorg ervoor dat u minstens één geldige betaalmethode toegevoegd hebt aan uw account."
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } map geselecteerd",
+        "${ selectedFoldersCount } mappen geselecteerd"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } label geselecteerd",
+        "${ selectedFoldersCount } labels geselecteerd"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -6624,6 +7708,9 @@
         "${ UsedAddresses } van de ${ MaxAddresses } e-mailadressen",
         "${ UsedAddresses } van de ${ MaxAddresses } e-mailadressen"
       ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
+      ],
       "Account holder": [
         "Rekeninghouder"
       ],
@@ -6675,6 +7762,9 @@
       "Anderson": [
         "Anderson"
       ],
+      "App password": [
+        "App-wachtwoord"
+      ],
       "Apply policy to": [
         "Policy toepassen op"
       ],
@@ -6716,6 +7806,12 @@
       ],
       "BTC amount": [
         "BTC-bedrag"
+      ],
+      "Calendar": [
+        "Agenda"
+      ],
+      "Calendars": [
+        "Agenda's"
       ],
       "Card details": [
         "Kaart details"
@@ -6776,6 +7872,9 @@
       ],
       "Confirm second password": [
         "Bevestig tweede wachtwoord"
+      ],
+      "Contacts": [
+        "Contacten"
       ],
       "Copy": [
         "Kopiëren"
@@ -6849,6 +7948,21 @@
       "Email or username": [
         "E-mailadres of gebruikersnaam"
       ],
+      "Emails": [
+        "E-mails"
+      ],
+      "Emails (all messages)": [
+        "E-mails (alle berichten)"
+      ],
+      "Emails (last 12 months)": [
+        "E-mails (laatste 12 maanden)"
+      ],
+      "Emails (last 3 months)": [
+        "E-mails (laatste 3 maanden)"
+      ],
+      "Emails (last month)": [
+        "E-mails (laatste maand)"
+      ],
       "Enabled": [
         "Ingeschakeld"
       ],
@@ -6875,6 +7989,9 @@
       ],
       "Folder location": [
         "Map locatie"
+      ],
+      "From: ${ fromEmail }": [
+        "Van: ${ fromEmail }"
       ],
       "Gateway name": [
         "Naam Gateway"
@@ -6906,6 +8023,15 @@
       "Import all messages": [
         "Alle berichten importeren"
       ],
+      "Import interval": [
+        "Interval importeren"
+      ],
+      "Import to email address": [
+        "Importeren naar e-mailadres"
+      ],
+      "Import to:": [
+        "Importeren naar:"
+      ],
       "Include application logs in bug report": [
         "Applicatie logs toevoegen aan het foutenrapport"
       ],
@@ -6923,6 +8049,9 @@
       ],
       "Key": [
         "Sleutel"
+      ],
+      "Label messages as": [
+        "Berichten labelen als"
       ],
       "Last 12 months only": [
         "Alleen afgelopen 12 maanden"
@@ -6942,8 +8071,14 @@
       "Logo": [
         "Logo"
       ],
+      "Mail Server (IMAP)": [
+        "Mailserver (IMAP)"
+      ],
       "Main": [
         "Primair"
+      ],
+      "Manage categories": [
+        "Beheer categorieën"
       ],
       "Maximum number of characters is ${ MAX_CHARS }": [
         "Het maximum aantal tekens is ${ MAX_CHARS }"
@@ -6968,6 +8103,12 @@
       ],
       "Moderate NAT": [
         "Gemiddelde NAT"
+      ],
+      "Move to Archive": [
+        "Verplaats naar Archief"
+      ],
+      "Move to Inbox": [
+        "Verplaats naar inbox"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten"
@@ -7077,6 +8218,9 @@
       "Policy name": [
         "Policy naam"
       ],
+      "Port": [
+        "Poort"
+      ],
       "Postal code": [
         "Postcode"
       ],
@@ -7176,6 +8320,9 @@
       ],
       "To help us improve, please explain why you are leaving.": [
         "Om ons te helpen verbeteren, willen we u vragen om uit te leggen waarom u weggaat."
+      ],
+      "To: ${ toEmail }": [
+        "Naar: ${ toEmail }"
       ],
       "Two-password mode": [
         "Twee-wachtwoord modus"
@@ -7335,9 +8482,28 @@
         "${ Label.Name } aangemaakt"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Van: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Aan: ${ to }"
+      ]
+    },
     "Lable": {
       "Select an identity provider to start": [
         "Selecteer een identiteitsprovider om te beginnen"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Om een nieuwe agenda toe te voegen moet u een bestaande verwijderen."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Om een nieuwe agenda toe te voegen moet u een andere agenda verwijderen of uw ${ BRAND_NAME }-abonnement upgraden naar een betaald ${ MAIL_SHORT_APP_NAME }-abonnement."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "U heeft het maximale aantal agenda's beschikbaar voor uw abonnement bereikt."
       ]
     },
     "Link": {
@@ -7506,6 +8672,30 @@
         "Upgraden om chatondersteuning en andere premium functies te ontgrendelen, of gebruik ons gratis ondersteuningsformulier om uw probleem te melden."
       ]
     },
+    "Loading info": {
+      "Almost there": [
+        "Bijna daar"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }",
+        "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }"
+      ],
+      "Connecting to your email provider": [
+        "Verbinding maken met uw e-mailprovider"
+      ],
+      "Creating new calendars": [
+        "Nieuwe agenda's maken"
+      ],
+      "Gathering your data": [
+        "Verzamelen van uw gegevens"
+      ],
+      "We're gathering your data from your provider": [
+        "We verzamelen uw gegevens van uw provider"
+      ],
+      "Your import is starting": [
+        "Uw import begint"
+      ]
+    },
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Meer info"
@@ -7608,6 +8798,24 @@
         "${ reason } inschakelen"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Alle berichten uit ${ itemsToImportCount } map importeren en labelen als",
+        "Alle berichten uit ${ itemsToImportCount } mappen importeren en labelen als"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Alle berichten van ${ itemsToImportCount }-label importeren en labelen als",
+        "Alle berichten van ${ itemsToImportCount }-labels importeren en labelen als"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen importeren en labelen als",
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen importeren en labelen als"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als",
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als"
+      ]
+    },
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
@@ -7703,6 +8911,26 @@
       ],
       "Sign in to access your ${ appName } account": [
         "Log in om toegang te krijgen tot uw ${ appName }-account"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Hoe u agenda's importeert uit een andere dienst"
+      ],
+      "How to import calendars from Yahoo": [
+        "Hoe u agenda's importeert uit Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Hoe u contacten importeert uit een andere dienst"
+      ],
+      "How to import contacts from Yahoo": [
+        "Hoe u contacten importeert uit Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Hoe u e-mails importeert uit een andere dienst"
+      ],
+      "How to import emails from Yahoo": [
+        "Hoe u e-mails importeert uit Yahoo"
       ]
     },
     "Monetary unit": {
@@ -8812,6 +10040,21 @@
         "Sommige afbeeldingen zijn niet geüpload vanwege dubbele bestandsnamen in de huidige selectie."
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Vervolgens moet u zich aanmelden bij uw Google-account en ${ BRAND_NAME } toegang geven tot uw gegevens."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Selecteer alle gewenste items, zoals weergegeven in de GIF, om de import te doen slagen."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Selecteer waar ${ BRAND_NAME } toegang toe heeft: uw e-mailberichten en -instellingen bekijken, uw contacten bekijken en downloaden, al uw agenda's bekijken en downloaden die u gebruikt vanuit Google Calendar."
+      ]
+    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Onbeperkt voor 12 maanden"
@@ -8982,11 +10225,17 @@
       ]
     },
     "Option": {
+      "Add to existing group": [
+        "Toevoegen aan bestaande groep"
+      ],
       "Allowed ${ defaultLabel }": [
         "Toegestaan ${ defaultLabel }"
       ],
       "Country configs": [
         "Landconfiguraties"
+      ],
+      "Create new group": [
+        "Nieuwe groep maken"
       ],
       "Free server configs": [
         "Gratis server configuratiebestanden"
@@ -8999,6 +10248,9 @@
       ],
       "I'd like to merge this account into another one": [
         "Ik wil dit account graag samenvoegen met een andere"
+      ],
+      "Ignore group": [
+        "Groep negeren"
       ],
       "It's missing a key feature that I need": [
         "Ik mis een belangrijke functie"
@@ -9061,6 +10313,14 @@
       ],
       "No one": [
         "Niemand"
+      ]
+    },
+    "Option group label": {
+      "Create new calendar": [
+        "Nieuwe agenda maken"
+      ],
+      "Merge with calendar": [
+        "Samenvoegen met agenda"
       ]
     },
     "Organization capacity error": {
@@ -9147,6 +10407,11 @@
       ],
       "Verify your email address ${ email } to set organization identity.": [
         "Verifieer uw e-mailadres ${ email } om de identiteit van uw organisatie in te stellen."
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "U"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9564,6 +10829,9 @@
       "Main street 12": [
         "Hoofdstraat 12"
       ],
+      "Name": [
+        "Naam"
+      ],
       "Organization name": [
         "Organisatienaam"
       ],
@@ -9701,6 +10969,38 @@
         "Gratis"
       ]
     },
+    "Property type": {
+      "Address": [
+        "Adres"
+      ],
+      "Email": [
+        "E-mailadres"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Home": [
+        "Thuis"
+      ],
+      "Main": [
+        "Primair"
+      ],
+      "Mobile": [
+        "Mobiel"
+      ],
+      "Other": [
+        "Anders"
+      ],
+      "Pager": [
+        "Pager"
+      ],
+      "Phone": [
+        "Telefoon"
+      ],
+      "Work": [
+        "Werk"
+      ]
+    },
     "Protection type": {
       "Blocked": [
         "Geblokkerd"
@@ -9820,8 +11120,14 @@
       "Create retention rule": [
         "Retentie regel aanmaken"
       ],
+      "Create rule": [
+        "Regel aanmaken"
+      ],
       "Delete": [
         "Verwijderen"
+      ],
+      "Delete rule": [
+        "Regel verwijderen"
       ],
       "Delete this scope": [
         "Deze scope verwijderen"
@@ -9840,6 +11146,9 @@
       ]
     },
     "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "${ strongText }, inclusief die in inbox, Verzonden en Concepten. Dit kan berichten verwijderen die gebruikers verwachten te behouden. Het is niet mogelijk om deze berichten later te herstellen."
+      ],
       "After ${ lifetime } day all messages will be deleted": [
         "Na ${ lifetime } dag zullen alle berichten worden verwijderd.",
         "Na ${ lifetime } dagen zullen alle berichten worden verwijderd"
@@ -9853,8 +11162,14 @@
       "Lifetime must not be set for \"Retain All\" action": [
         "De levensduur mag niet worden ingesteld voor de actie \"Alles behouden\""
       ],
+      "Scope value is not valid": [
+        "Bereikwaarde is niet geldig"
+      ],
       "Scope value is required": [
         "Bereikwaarde vereist"
+      ],
+      "Scopes cannot have the same value": [
+        "Bereiken mogen niet dezelfde waarde hebben"
       ]
     },
     "retention_policy_2025_Info": {
@@ -9870,6 +11185,9 @@
       ],
       "Forever": [
         "Voor altijd"
+      ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "Omvat alle berichten in Inbox, Verzonden en alle andere locaties. Verwijderde berichten kunnen niet worden hersteld."
       ],
       "Removes messages already deleted by users.": [
         "Verwijdert berichten die reeds door gebruikers verwijderd zijn."
@@ -9888,9 +11206,21 @@
       "After retention period expires": [
         "Nadat de bewaartermijn verloopt"
       ],
+      "Applies to": [
+        "Is van toepassing op"
+      ],
       "day": [
         "dag",
         "dagen"
+      ],
+      "Keep items forever": [
+        "Items voor altijd bewaren"
+      ],
+      "Keep messages forever": [
+        "Bewaar berichten voor altijd"
+      ],
+      "Retention period": [
+        "Bewaringstermijn"
       ],
       "Rule title": [
         "Titel regel"
@@ -9912,6 +11242,9 @@
       "Purge all messages": [
         "Alle berichten wissen"
       ],
+      "Purge deleted messages only": [
+        "Alleen gewiste berichten verwijderen"
+      ],
       "Specific users or groups": [
         "Specifieke gebruikers of groepen"
       ],
@@ -9920,6 +11253,9 @@
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "E.g. Cleanup unused mailboxes": [
+        "Bv. Opschonen van ongebruikte postvakken"
+      ],
       "Enter duration": [
         "Duur invoeren"
       ],
@@ -9928,6 +11264,9 @@
       ],
       "Search for rule, users, period, action": [
         "Zoeken naar regel, gebruikers, periode, actie"
+      ],
+      "Search policies": [
+        "Beleid zoeken"
       ]
     },
     "retention_policy_2025_TableHeader": {
@@ -9939,6 +11278,14 @@
       ],
       "Retention period": [
         "Bewaringstermijn"
+      ],
+      "Retention Rule": [
+        "Bewaarregel"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "Geen retentiebeleidsregels gevonden"
       ]
     },
     "retention_policy_2025_Title": {
@@ -11832,6 +13179,9 @@
       "Country": [
         "Land"
       ],
+      "CSV field": [
+        "CSV-veld"
+      ],
       "Edit": [
         "Bewerk"
       ],
@@ -11849,6 +13199,9 @@
       ],
       "Event": [
         "Afspraak"
+      ],
+      "Import": [
+        "Importeren"
       ],
       "Invitation email": [
         "Uitnodigingsmail"
@@ -11873,6 +13226,12 @@
       ],
       "Total storage": [
         "Totale opslagruimte"
+      ],
+      "Values": [
+        "Waarden"
+      ],
+      "vCard field": [
+        "vCard-veld"
       ]
     },
     "Themes": {
@@ -11971,6 +13330,9 @@
       ],
       "Add address": [
         "E-mailadres toevoegen"
+      ],
+      "Add contact group name": [
+        "Naam contactgroep toevoegen"
       ],
       "Add countries to \"${ policyName }\"": [
         "Landen toevoegen aan \"${ policyName }\""
@@ -12095,6 +13457,9 @@
       "Choose user affiliations": [
         "Gebruikersaffiliaties kiezen"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Claim uw ${ MAIL_APP_NAME }-adres"
+      ],
       "Click a value in the table to use it as filter": [
         "Klik op een waarde in de tabel om deze als filter te gebruiken"
       ],
@@ -12122,8 +13487,8 @@
       "Connect apps and devices": [
         "Apps en apparaten verbinden"
       ],
-      "Connect more Gmail addresses with ${ planName }": [
-        "Verbind meer Gmail-adressen met ${ planName }"
+      "Connect more addresses": [
+        "Verbind meer adressen"
       ],
       "Connect organization": [
         "Connecteer organisatie"
@@ -12139,6 +13504,9 @@
       ],
       "Contact us": [
         "Contacteer ons"
+      ],
+      "Continue with partial import?": [
+        "Doorgaan met gedeeltelijke invoer?"
       ],
       "Couldn’t create accounts": [
         "Kon geen accounts aanmaken"
@@ -12186,8 +13554,17 @@
       "Customization": [
         "Maatwerk"
       ],
+      "Customize and confirm": [
+        "Aanpassen en bevestigen"
+      ],
+      "Customize calendar import": [
+        "Agenda-import aanpassen"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Verander de hoeveelheid IP-adressen in uw abonnement"
+      ],
+      "Customize your mail import": [
+        "Uw e-mailimport aanpassen"
       ],
       "Data retention": [
         "Gegevensbewaring"
@@ -12410,8 +13787,24 @@
       "Human verification": [
         "Persoonsverificatie"
       ],
+      "Import as simple event?": [
+        "Importeren als eenvoudige afspraak?",
+        "Importeren als eenvoudige afspraken?"
+      ],
+      "Import contacts": [
+        "Contactpersonen importeren"
+      ],
       "Import emails, calendars, contacts": [
         "Importeer e-mails, agenda's, contacten"
+      ],
+      "Import events": [
+        "Afspraken importeren"
+      ],
+      "Import failed": [
+        "Import mislukt"
+      ],
+      "Import groups": [
+        "Importeer groepen"
       ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
@@ -12515,6 +13908,9 @@
       "Recommended": [
         "Aanbevolen"
       ],
+      "Reconnect your account": [
+        "Uw account opnieuw verbinden"
+      ],
       "Recovery": [
         "Herstel"
       ],
@@ -12566,6 +13962,12 @@
       "Select a plan": [
         "Selecteer een abonnement"
       ],
+      "Select action to take on contact group": [
+        "Selecteer actie voor de contactgroep"
+      ],
+      "Select contact group": [
+        "Contactgroep selecteren"
+      ],
       "Send email reminders?": [
         "E-mailherinneringen versturen?"
       ],
@@ -12608,6 +14010,9 @@
       "Sign in": [
         "Inloggen"
       ],
+      "Sign in and grant access": [
+        "Inloggen en toegang verlenen"
+      ],
       "Sign in to join the Beta program": [
         "Log in om deel te nemen aan het Bèta programma"
       ],
@@ -12628,6 +14033,12 @@
       ],
       "Spam, block, and allow lists": [
         "Spam, blokkeer en accepteer lijsten"
+      ],
+      "Start a new import": [
+        "Start een nieuwe import"
+      ],
+      "Start import process": [
+        "Importproces starten"
       ],
       "Status": [
         "Status"
@@ -12656,6 +14067,9 @@
       ],
       "There are no groups": [
         "Er zijn geen groepen"
+      ],
+      "Try ${ AUTHENTICATOR_APP_NAME }": [
+        "Probeer ${ AUTHENTICATOR_APP_NAME }"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } inschakelen"
@@ -12743,6 +14157,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Welkom bij ${ BRAND_NAME } voor Business"
+      ],
+      "What would you like to import?": [
+        "Wat zou u willen importeren?"
       ],
       "Wipe all logs?": [
         "Alle logboeken wissen?"
@@ -12851,11 +14268,26 @@
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Kopieer en plak deze URL in het entiteitID-veld van uw identiteitsprovider"
       ],
+      "Customize import to reduce the number of folders": [
+        "Import aanpassen om het aantal mappen te verminderen"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Import aanpassen om het aantal labels te verminderen"
+      ],
       "Device name and app version": [
         "Naam van apparaat en app-versie"
       ],
       "Display name for the entity in the eduGAIN database": [
         "Weergavenaam voor de entiteit in de eduGAIN database"
+      ],
+      "Each imported email will have this label": [
+        "Elke geïmporteerde e-mail heeft dit label"
+      ],
+      "Edit folder names": [
+        "Mapnamen bewerken"
+      ],
+      "Edit label names": [
+        "Labelnamen bewerken"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Eindpunt URL van identiteitsprovider (bv. https://idp.example.com/sso/saml)"
@@ -12871,6 +14303,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "Bijvoorbeeld: **wachtwoord, qwerty**, etc."
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail categorizeert sommige e-mails automatisch zoals like Sociaal of Reclame. U kunt kiezen naar waar u die wil importeren."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Identiteitsprovider heeft een publieke sleutel om authenticatieverklaringen te ondertekenen. Haal de certificaathash op van uw identiteitsprovider."
@@ -12892,6 +14327,12 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "Specificeer de gebruikers van de eduGAIN entiteit die zijn toegestaan om te verifiëren met SAML SSO"
+      ],
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
+      ],
+      "The import will start with the most recent messages.": [
+        "Het importeren begint met de meest recente berichten."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "De nieuwe abonnementscyclus start op ${ formattedTime }"
@@ -13269,6 +14710,14 @@
         "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
       ]
     },
+    "Video control": {
+      "Click to replay the video": [
+        "Klik om de video opnieuw af te spelen"
+      ],
+      "Replay video": [
+        "Video opnieuw afspelen"
+      ]
+    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "Ik heb een andere service gevonden die mijn voorkeur heeft"
@@ -13457,6 +14906,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } zal alle mappen met dezelfde naam samenvoegen. Om dit te voorkomen, verander de namen voordat ze geïmporteerd worden."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
+      ],
       "Are you sure you want to delete the phone number?": [
         "Bent u zeker dat u het telefoonnummer wilt verwijderen?"
       ],
@@ -13478,17 +14933,29 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
       ],
+      "Skip verification?": [
+        "Verificatie overslaan?"
+      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "De datum- en tijdinstellingen op uw apparaat zijn niet meer gesynchroniseerd. ${ learnMore }"
       ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Deze import mag groter zijn dan de opslagcapaciteit die momenteel beschikbaar is op uw ${ BRAND_NAME } account. Overweeg om uw import aan te passen."
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Helaas zijn wij op dit moment niet online. Beschrijf uw probleem in onderstaand formulier en we kijken ernaar en nemen contact met u op zodra we weer online zijn."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "We konden de mailserver niet verifiëren. Als u het vertrouwt dan kan u deze verificatie overslaan."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "We hebben een probleem met uw DNS-configuratie ontdekt. Zorg ervoor dat uw records overeenkomen met de instructies hieronder. Als het probleem zich blijft voordoen, moeten we het ondertekenen met DKIM stopzetten."
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "U moet ${ activateLink } de organisatiesleutel hebben voordat u een e-mailadres toevoegt aan een niet-privé lid."
+      ],
+      "You will lose any customization you made so far.": [
+        "U verliest elke aanpassing die u tot nu toe hebt gemaakt."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Uw gratis proefversie eindigt op ${ textDate }. ${ action }"

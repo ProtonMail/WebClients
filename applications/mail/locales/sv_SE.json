@@ -36,6 +36,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
+      "${ numberOfAddresses } address": [
+        "${ numberOfAddresses } adress",
+        "${ numberOfAddresses } adresser"
+      ],
       "A to Z": [
         "A till Ö"
       ],
@@ -214,6 +218,15 @@
       "Choose a file or drag it here": [
         "Välj en fil eller dra den hit"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Gör anspråk på ${ BRAND_NAME }-adress"
+      ],
+      "Claim this address": [
+        "Gör anspråk på denna adress"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Gör anspråk på din gratis ${ BRAND_NAME }-adress"
+      ],
       "Clear": [
         "Rensa"
       ],
@@ -312,6 +325,9 @@
       ],
       "Copy alias “${ name }”": [
         "Kopiera alias “${ name }“"
+      ],
+      "Copy email address": [
+        "Kopiera e-postadress"
       ],
       "Copy email to clipboard": [
         "Kopiera e-post till urklipp"
@@ -588,6 +604,9 @@
       "Get ${ planOrAppName }": [
         "Skaffa ${ planOrAppName }"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Skaffa en gratis ${ BRAND_NAME }-adress"
+      ],
       "Get in touch": [
         "Kontakta oss"
       ],
@@ -792,6 +811,9 @@
       ],
       "Make it friendly": [
         "Gör det vänligt"
+      ],
+      "Manage addresses": [
+        "Hantera adresser"
       ],
       "Manage advanced account protections": [
         "Hantera avancerade kontoskydd"
@@ -4023,6 +4045,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Förenkla synkronisering och schemaläggning med delade kalendrar."
       ],
+      "This view shows messages sent to the following addresses:": [
+        "Denna vy visar meddelanden som skickats till följande adresser:"
+      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "För att fortsätta använda skrivassistenten, lägg till den i din prenumeration."
       ],
@@ -5641,6 +5666,9 @@
       "Checklist complete": [
         "Checklista klar"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Gör anspråk på ${ BRAND_NAME }-adress"
+      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Fyll i denna checklista inom ${ daysCount } för att dubbla ditt lagringsutrymme gratis."
       ],
@@ -6195,6 +6223,9 @@
       ],
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "${ BRAND_NAME }s lösenordshanterare kan du skapa, lagra och autofylla lösenord, så att du aldrig behöver återställa dem."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } kräver en ${ BRAND_NAME }-adress för säker synkronisering och kryptering av händelser. Gör anspråk på din gratis ${ MAIL_APP_NAME }-adress nu."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
@@ -6955,6 +6986,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Njut av en snabbare, fokuserad e-postupplevelse med appen för stationär dator."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Säkerställ fullständig privat och krypterad kommunikation. Gör anspråk på din gratis ${ BRAND_NAME } e-postadress nu."
       ],
       "Enter the code from your authenticator app": [
         "Ange koden från din autentiseringsapp"
@@ -9468,6 +9502,9 @@
       ],
       "Upload picture": [
         "Ladda upp bild"
+      ],
+      "Username": [
+        "Användarnamn"
       ],
       "VAT": [
         "VAT"
@@ -12005,6 +12042,9 @@
       ]
     },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Som en prenumerant på **${ currentPlanTitle }** kan du låsa upp **${ unlockPlanTitle }** och fler ${ BRAND_NAME }-tjänster genom att uppgradera till **${ upsellPlanTitle }**."
+      ],
       "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
         "Fler ${ BRAND_NAME }-tjänster.${ br }En enkel prenumeration."
       ],
@@ -14102,6 +14142,9 @@
       "Change password": [
         "Ändra lösenord"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Gör anspråk på din ${ MAIL_APP_NAME }-adress"
+      ],
       "Clearing data": [
         "Rensar data"
       ],
@@ -14325,6 +14368,9 @@
       ],
       "Forward": [
         "Vidarebefordrad"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Skaffa full åtkomst till ${ CALENDAR_APP_NAME }"
       ],
       "Get more from your VPN": [
         "Få ut mer av din VPN"
@@ -14899,6 +14945,9 @@
       "Your account is protected": [
         "Ditt konto är skyddat"
       ],
+      "Your addresses": [
+        "Dina adresser"
+      ],
       "Your changes are not synced yet": [
         "Dina ändringar är inte synkroniserade än"
       ],
@@ -15132,6 +15181,9 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-post"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Krypterad och säker ${ MAIL_APP_NAME } e-postadress. Du kan enkelt skicka Bitcoin till vem som helst med bara deras ${ BRAND_NAME }-namn."
       ]
     },
     "wallet_signup_2024:app-switcher": {
