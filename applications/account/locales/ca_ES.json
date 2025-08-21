@@ -70,6 +70,9 @@
       "Accept": [
         "Accepta"
       ],
+      "Access account": [
+        "Accés al compte"
+      ],
       "activate": [
         "activar"
       ],
@@ -253,6 +256,9 @@
       "Claim it": [
         "Reclameu-la"
       ],
+      "Claim this address": [
+        "Aconseguiu aquesta adreça"
+      ],
       "Clear all formatting": [
         "Esborra tot el format"
       ],
@@ -300,9 +306,6 @@
       ],
       "Connect to video conferencing": [
         "Connecta't a la videoconferència"
-      ],
-      "Connect your Gmail address": [
-        "Connecteu la vostra adreça de Gmail"
       ],
       "Connected": [
         "Connectat"
@@ -727,6 +730,9 @@
       "Get ${ planOrAppName }": [
         "Obtén ${ planOrAppName }"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Aconseguiu una adreça gratuïta de ${ BRAND_NAME }"
+      ],
       "Get a new encrypted email address": [
         "Obteniu una nova adreça de correu xifrada"
       ],
@@ -1006,6 +1012,9 @@
       "Open navigation": [
         "Obre la navegació"
       ],
+      "Opt out": [
+        "Excloure"
+      ],
       "Or": [
         "O"
       ],
@@ -1119,6 +1128,9 @@
       ],
       "Request a feature": [
         "Demaneu una nova característica"
+      ],
+      "Request access": [
+        "Sol·licita accés"
       ],
       "Request new code": [
         "Demana un nou codi"
@@ -5189,6 +5201,9 @@
       "Add": [
         "Afegeix"
       ],
+      "Add emergency contact": [
+        "Afegir contacte d'emergència"
+      ],
       "Change access wait time": [
         "Canvieu el temps d'espera d'accés"
       ],
@@ -5249,8 +5264,17 @@
       "Protect your legacy with emergency access": [
         "Protegiu el vostre llegat amb l'accés d'emergència"
       ],
+      "Remove trusted contact": [
+        "Esborrar contacte de confiança"
+      ],
+      "Request access?": [
+        "Sol·licitar accés?"
+      ],
       "Requesting access": [
         "S'està sol·licitant accés"
+      ],
+      "Stop being trusted contact?": [
+        "Deixar de ser contacte de confiança?"
       ],
       "They added me as trusted contact. I can access their account in case of an emergency.": [
         "M'han afegit com a contacte de confiança. Puc accedir al seu compte en cas d'emergència."
@@ -7742,6 +7766,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnologia d'encriptació de ${ BRAND_NAME } significa que ningú pot accedir a la vostra contrasenya, ni tan sols nosaltres."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } requereix una adreça de ${ BRAND_NAME } per la sincronització segura d'esdeveniments i el xifratge. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nou calendari",
         "${ calendarsToBeCreatedCount } nous calendaris"
@@ -7943,11 +7970,20 @@
       "**${ appName }** is not supported.": [
         "**${ appName }** no és compatible."
       ],
+      "**Enable automatic backups** for peace of mind": [
+        "**Habiliteu còpies de seguretat automàtiques** per la vostra tranquil·litat"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obteniu una adreça de ${ BRAND_NAME }** per a utilitzar tots els serveis de ${ BRAND_NAME_TWO }, inclosos ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }."
       ],
+      "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
+        "**Importeu els vostres codis** d'altres aplicacions 2FA, com ara Google Authenticator"
+      ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Convideu amistats** a ${ BRAND_NAME } amb el vostre enllaç de referència."
+      ],
+      "**Sync codes** to all your devices": [
+        "**Sincronitzeu codis** a tots els vostres dispositius"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } més",
@@ -8044,8 +8080,8 @@
       "Add a recovery phone number": [
         "Afegeix un número de telèfon de recuperació"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
-        "Afegiu una altra capa de seguretat al compte. Haureu de verificar-vos amb 2FA cada vegada que inicieu la sessió. Recomanem utilitzar ${ protonAuthenticatorDownloadLink } per emmagatzemar els vostres codis de 2FA."
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Afegiu una capa de seguretat addicional al vostre compte. Haureu de verificar-vos amb 2FA cada vegada que inicieu la sessió."
       ],
       "Add domain": [
         "Afegeix un domini"
@@ -8617,6 +8653,9 @@
       "Download recovery file": [
         "Descarrega el fitxer de recuperació"
       ],
+      "Download the app and import existing codes.": [
+        "Descarregueu l'aplicació i importeu-ne els codis."
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descarregueu la vostra aplicació favorita avui i porteu la privadesa amb vosaltres allà on aneu."
       ],
@@ -8730,6 +8769,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Gaudiu d'una experiència de correu electrònic més ràpida i centrada amb l'aplicació d'escriptori."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Assegureu-vos una comunicació totalment privada i xifrada. Aconseguiu ara la vostra adreça gratuïta de correu de ${ BRAND_NAME }."
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "Introduïu una contrasenya per finalitzar el vostre compte ${ BRAND_NAME } i començar a utilitzar ${ VPN_APP_NAME } a tots els vostres dispositius!"
@@ -8871,6 +8913,9 @@
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "La generació d’una nova frase de recuperació desactivarà l'antiga."
+      ],
+      "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
+        "Obtingueu ${ AUTHENTICATOR_APP_NAME } per a tots els vostres dispositius."
       ],
       "Get ${ upsellPlanName }": [
         "Obteniu ${ upsellPlanName }"
@@ -9126,6 +9171,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Es triga 10 dies a canviar el país d'un servidor. Assegureu-vos que la vostra selecció sigui correcta."
       ],
+      "It won't be linked to your ${ BRAND_NAME } Account, so there's **no risk of getting locked out**.": [
+        "No s'enllaçarà al vostre compte de ${ BRAND_NAME }, de manera que no hi haurà **cap risc de quedar bloquejat**."
+      ],
       "It's better to have:": [
         "És millor tenir:"
       ],
@@ -9308,6 +9356,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
+      ],
+      "Maybe later": [
+        "Potser més tard"
       ],
       "Medium Priority": [
         "Prioritat mitjana"
@@ -10073,6 +10124,9 @@
       "The most recent data update, excluding breaches.": [
         "L'actualització de dades més recent, sense incloure les bretxes."
       ],
+      "The most secure and private two-factor authentication app, that's free and open-source.": [
+        "L'aplicació d'autenticació de dos factors més segura i privada, gratuïta i de codi obert."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "El nom serà visible per als vostres usuaris quan estiguin connectats."
       ],
@@ -10630,6 +10684,9 @@
       ],
       "Why?": [
         "Per què?"
+      ],
+      "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
+        "Amb ${ AUTHENTICATOR_APP_NAME }, podreu:"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Amb un pla Business o Enterprise, podeu comprar ${ boldDedicatedServers } per a la vostra organització i configurar ${ boldGateways } per a controlar quins usuaris poden accedir-hi."
@@ -20230,6 +20287,9 @@
       "Add users to \"${ policyName }\"": [
         "Afegeix usuaris a «${ policyName }»"
       ],
+      "Added on": [
+        "Afegit el"
+      ],
       "Address": [
         "Adreça"
       ],
@@ -20353,6 +20413,9 @@
       "Choose user affiliations": [
         "Trieu les afiliacions de l'usuari"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Aconseguiu la vostra adreça de ${ MAIL_APP_NAME }"
+      ],
       "Click a value in the table to use it as filter": [
         "Feu clic a un valor de la taula per utilitzar-lo com a filtre."
       ],
@@ -20386,8 +20449,8 @@
       "Connect apps and devices": [
         "Connecteu aplicacions i dispositius"
       ],
-      "Connect more Gmail addresses with ${ planName }": [
-        "Connecteu més adreces de Gmail amb ${ planName }"
+      "Connect more addresses": [
+        "Connecteu més adreces"
       ],
       "Connect organization": [
         "Connecta l'organització"
@@ -21413,6 +21476,9 @@
       ],
       "Time zone": [
         "Zona horària"
+      ],
+      "Try ${ AUTHENTICATOR_APP_NAME }": [
+        "Proveu ${ AUTHENTICATOR_APP_NAME }"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activeu ${ DARK_WEB_MONITORING_NAME }"

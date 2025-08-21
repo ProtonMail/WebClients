@@ -304,9 +304,6 @@
       "Connect to video conferencing": [
         "Görüntülü görüşmeye bağlanın"
       ],
-      "Connect your Gmail address": [
-        "Gmail adresinizi bağlayın"
-      ],
       "Connected": [
         "Bağlı"
       ],
@@ -2242,7 +2239,7 @@
         "Reklam engelleyici ve kötü amaçlı yazılım koruması"
       ],
       "Admin panel to manage your family": [
-        "Ailenizi yönetmek için yönetici panosu"
+        "Ailenizi yönetmek için yönetim panosu"
       ],
       "Advanced account protection": [
         "Gelişmiş hesap koruması"
@@ -2254,7 +2251,7 @@
         "Yüksek hızda yayın akışı izleme"
       ],
       "One-time payment, lifetime deal": [
-        "Bir kez öde, ömür boyu kullanım fırsatı"
+        "Bir kez ödeyip ömür boyu kullanma fırsatı"
       ],
       "Online document editor": [
         "Çevrim içi belge düzenleyici"
@@ -4799,10 +4796,10 @@
         "NOT:"
       ],
       "This event occurrence was canceled.": [
-        "Bu etkinlik kopyası iptal edildi."
+        "Bu etkinlik yinelemesi iptal edildi."
       ],
       "This event occurrence was updated.": [
-        "Bu etkinlik kopyası güncellendi."
+        "Bu etkinlik yinelemesi güncellendi."
       ],
       "This event was updated.": [
         "Bu etkinlik güncellendi."
@@ -5974,7 +5971,7 @@
         "Dosya yüklenemedi"
       ],
       "Unexpected error, we can't import the contacts": [
-        "Beklenmeyen bir sorun çıktı. Kişileri içe aktaramadık"
+        "Beklenmeyen bir sorun çıktı. Kişiler içe aktarılamadı"
       ],
       "Unknown error": [
         "Bilinmeyen sorun"
@@ -8160,9 +8157,6 @@
       "Add a recovery phone number": [
         "Bir kurtarma telefonu numarası ekle"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
-        "Hesabınıza bir güvenlik katmanı daha ekleyin. Her oturum açışınızda iki adımlı yapmanız gerekecektir. İki adımlı doğrulama kodlarınızı kaydetmek için ${ protonAuthenticatorDownloadLink } kullanmanızı öneririz."
-      ],
       "Add domain": [
         "Etki alanı ekle"
       ],
@@ -8429,7 +8423,7 @@
         "Göndericilerin bir iletiyi açıp açmadığınızı ve ne zaman açtığınızı görmesini engeller."
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha kararlı bir çevrim içi deneyim sağlayın."
+        "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha tutarlı bir çevrim içi deneyim sunun."
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "İletilerinizi, kişilerinizi ve takvimlerinizi ${ BRAND_NAME } üzerine alın."
@@ -14471,7 +14465,7 @@
         "Beğenilen"
       ],
       "Protect sensitive business information and collaborate securely.": [
-        "Önemli iş bilgilerinizi koruyun ve güvende kalarak işbirliği yapın."
+        "Önemli kurumsal bilgilerinizi koruyun ve güvende kalarak iş birliği yapın."
       ],
       "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
         "Ailenizi 6 kullanıcıya kadar tüm ücretli ${ plusTitle } özellikleriyle koruyun."
@@ -14740,7 +14734,7 @@
         "Ailenizi zararlı sitelerden koruyun ve sevdiğiniz yayın akışlarını izlemek için yüksek hızlı VPN sunucularımıza erişin"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
-        "Takma adlarla (e-postaları asıl gelen kutunuza ileten, rastgele oluşturulmuş bir e-posta adresi) gerçek e-posta adresinizin açığa çıkmasını veya sızdırılmasını engelleyin."
+        "Takma adlar (e-postaları asıl gelen kutunuza ileten, rastgele oluşturulmuş bir e-posta adresi) kullanarak gerçek e-posta adresinizin açığa çıkmasını veya sızdırılmasını engelleyin."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "En yüksek düzeyde hesap güvenliği koruması ve uzman desteği sağlar"
@@ -15221,7 +15215,7 @@
         "Gelişmiş tehdit koruması"
       ],
       "Collaborate with non-${ BRAND_NAME } users": [
-        "${ BRAND_NAME } dışı kullanıcılarla işbirliği yapın"
+        "${ BRAND_NAME } dışı kullanıcılarla iş birliği yapın"
       ],
       "Custom email domain": [
         "Özel e-posta etki alanı"
@@ -17821,7 +17815,7 @@
         "Parolanızı sıfırlamaya çalışan kişinin gerçekten siz olduğunuzu doğrulamak için istekleri onaylamadan önce 72 saat bekleriz. Parolanızı ${ boldTimeLeft } içinde değiştirebilirsiniz. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
-        "${ boldEmail } için bir parola sıfırlama isteğinde bulunuldu."
+        "${ boldEmail } için parola sıfırlama isteğinde bulunuldu."
       ],
       "You can change your password in ${ gracePeriodHoursRemaining } hour": [
         "Parolanizi ${ gracePeriodHoursRemaining } saat içinde değiştirebilirsiniz",
@@ -18675,7 +18669,7 @@
         "1 ay için ${ amount } olarak faturalanır"
       ],
       "Billed at ${ amount } for 12 months": [
-        "12 aylık ${ amount } olarak faturalanır"
+        "12 ay için ${ amount } olarak faturalanır"
       ],
       "Billed at ${ amount } for 15 months": [
         "15 ay için ${ amount } olarak faturalanır"
@@ -19295,7 +19289,7 @@
         "Anladım"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
-        "Apple App Store hesabınızda oturum açın, ardından ${ subscriptions } seçin."
+        "Apple App Store hesabınızda oturum açın ve ardından ${ subscriptions } seçin."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Play Store hesabınızda oturum açın, ardından ${ subscriptions } üzerine dokunun."
@@ -20506,9 +20500,6 @@
       ],
       "Connect apps and devices": [
         "Uygulamaları ve aygıtları bağlayın"
-      ],
-      "Connect more Gmail addresses with ${ planName }": [
-        "${ planName } ile daha fazla Gmail adresi bağlayın"
       ],
       "Connect organization": [
         "Kuruluş ile bağlantı kur"
@@ -21923,7 +21914,7 @@
         "Gönderilmiş veya Taslaklar kutularındaki iletiler, başka bir klasöre taşısanız bile o klasörde görünmeyi sürdürür."
       ],
       "Not all information listed here was exposed for all users.": [
-        "Burada listelenen tüm bilgiler tüm kullanıcılara görüntülenmemiştir."
+        "Burada listelenen tüm bilgiler tüm kullanıcılara görüntülenmez."
       ],
       "Origin Internet Service Provider (ISP)": [
         "Kaynak internet hizmeti sağlayıcısı (İSS)"

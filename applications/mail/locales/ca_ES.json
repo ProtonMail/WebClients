@@ -36,6 +36,10 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
+      "${ numberOfAddresses } address": [
+        "${ numberOfAddresses } adreça",
+        "${ numberOfAddresses } adreces"
+      ],
       "A to Z": [
         "De la A a la Z"
       ],
@@ -214,6 +218,15 @@
       "Choose a file or drag it here": [
         "Trieu un fitxer o arrossegueu-lo aquí"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Aconseguiu l'adreça de ${ BRAND_NAME }"
+      ],
+      "Claim this address": [
+        "Aconseguiu aquesta adreça"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Aconseguiu la vostra adreça gratuïta de ${ BRAND_NAME }"
+      ],
       "Clear": [
         "Neteja"
       ],
@@ -312,6 +325,9 @@
       ],
       "Copy alias “${ name }”": [
         "Copia l'àlies «${ name }»"
+      ],
+      "Copy email address": [
+        "Copia l'adreça de correu electrònic"
       ],
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
@@ -588,6 +604,9 @@
       "Get ${ planOrAppName }": [
         "Obtén ${ planOrAppName }"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Aconseguiu una adreça gratuïta de ${ BRAND_NAME }"
+      ],
       "Get in touch": [
         "Contacte"
       ],
@@ -792,6 +811,9 @@
       ],
       "Make it friendly": [
         "Més amigable"
+      ],
+      "Manage addresses": [
+        "Gestionar adreces"
       ],
       "Manage advanced account protections": [
         "Gestiona les proteccions avançades del compte"
@@ -4030,6 +4052,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifiqueu la sincronització i la programació amb calendaris compartits."
       ],
+      "This view shows messages sent to the following addresses:": [
+        "Aquesta vista mostra missatges enviats a les següents adreces:"
+      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Per continuar utilitzant l'assistent d'escriptura, afegiu-lo a la vostra subscripció."
       ],
@@ -5648,6 +5673,9 @@
       "Checklist complete": [
         "S'ha completat la llista de verificació"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Aconseguiu l'adreça de ${ BRAND_NAME }"
+      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Completeu aquesta llista en un termini de ${ daysCount } per duplicar el vostre emmagatzematge de manera gratuïta."
       ],
@@ -6202,6 +6230,12 @@
       ],
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "El gestor de contrasenyes de ${ BRAND_NAME } us permet crear, emmagatzemar i emplenar automàticament contrasenyes, de manera que mai no les haureu de restablir."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } requereix una adreça de ${ BRAND_NAME } per la sincronització segura d'esdeveniments i el xifratge. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } requereix una adreça de ${ BRAND_NAME } per a la sincronització segura d'esdeveniments i el xifratge. Aconseguiu ara la vostra adreça gratuïta de ${ MAIL_APP_NAME }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nou calendari",
@@ -6965,6 +6999,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Gaudiu d'una experiència de correu electrònic més ràpida i centrada amb l'aplicació d'escriptori."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Assegureu-vos una comunicació totalment privada i xifrada. Aconseguiu ara la vostra adreça gratuïta de correu de ${ BRAND_NAME }."
       ],
       "Enter the code from your authenticator app": [
         "Introduïu el codi de la vostra aplicació d'autenticació."
@@ -9493,6 +9530,9 @@
       ],
       "Upload picture": [
         "Carrega la imatge"
+      ],
+      "Username": [
+        "Nom d'usuari"
       ],
       "VAT": [
         "IVA"
@@ -14137,6 +14177,9 @@
       "Change password": [
         "Canvia la contrasenya"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Aconseguiu la vostra adreça de ${ MAIL_APP_NAME }"
+      ],
       "Clearing data": [
         "Netejant dades"
       ],
@@ -14360,6 +14403,9 @@
       ],
       "Forward": [
         "Reenvia"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Obtingueu accés complet a ${ CALENDAR_APP_NAME }"
       ],
       "Get more from your VPN": [
         "Obteniu més de la vostra VPN"
@@ -14936,6 +14982,9 @@
       ],
       "Your account is protected": [
         "El compte està protegit"
+      ],
+      "Your addresses": [
+        "Les vostres adreces"
       ],
       "Your changes are not synced yet": [
         "Els vostres canvis encara no estan sincronitzats"

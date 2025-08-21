@@ -36,6 +36,10 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
+      "${ numberOfAddresses } address": [
+        "${ numberOfAddresses } dirección",
+        "${ numberOfAddresses } direcciones"
+      ],
       "A to Z": [
         "A-Z"
       ],
@@ -103,7 +107,7 @@
         "Agregar al grupo"
       ],
       "Adds it above your existing message": [
-        "Lo agrega encima de su mensaje existente"
+        "Lo añade arriba de su mensaje existente"
       ],
       "Align center": [
         "Alinear al centro"
@@ -214,6 +218,15 @@
       "Choose a file or drag it here": [
         "Elija un archivo o arrástrelo aquí"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Reclamar dirección de ${ BRAND_NAME }"
+      ],
+      "Claim this address": [
+        "Reclamar esta dirección"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Reclame su dirección gratuita de ${ BRAND_NAME }"
+      ],
       "Clear": [
         "Borrar"
       ],
@@ -312,6 +325,9 @@
       ],
       "Copy alias “${ name }”": [
         "Copiar el alias «${ name }»"
+      ],
+      "Copy email address": [
+        "Copiar dirección de correo"
       ],
       "Copy email to clipboard": [
         "Copiar correo al portapapeles"
@@ -588,6 +604,9 @@
       "Get ${ planOrAppName }": [
         "Obtenga ${ planOrAppName }"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Obtenga una dirección gratuita de ${ BRAND_NAME }"
+      ],
       "Get in touch": [
         "Contáctenos"
       ],
@@ -792,6 +811,9 @@
       ],
       "Make it friendly": [
         "Más amigable"
+      ],
+      "Manage addresses": [
+        "Gestionar direcciones"
       ],
       "Manage advanced account protections": [
         "Gestionar protecciones avanzadas de la cuenta"
@@ -1145,7 +1167,7 @@
         "Restablecer valores por defecto"
       ],
       "Resize panel": [
-        "Cambia el tamaño del panel"
+        "Cambiar el tamaño del panel"
       ],
       "Restore": [
         "Restaurar"
@@ -1428,6 +1450,9 @@
       ],
       "Trust": [
         "Confiar"
+      ],
+      "Trust key": [
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -4058,6 +4083,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifique la sincronización y la programación con calendarios compartidos."
       ],
+      "This view shows messages sent to the following addresses:": [
+        "Esta vista muestra los mensajes enviados a las siguientes direcciones:"
+      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Para continuar usando el asistente de escritura, añádalo a su suscripción."
       ],
@@ -4349,6 +4377,11 @@
     "email_forwarding_2023: Composer email icon": {
       "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
         "Acceso cero cifrado. El destinatario ha desactivado el cifrado de extremo a extremo en la cuenta."
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contacto de confianza"
       ]
     },
     "Encrypted Headers": {
@@ -5671,6 +5704,9 @@
       "Checklist complete": [
         "Lista de verificación completada"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Reclamar dirección de ${ BRAND_NAME }"
+      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Complete esta lista de tareas en ${ daysCount } días para duplicar su almacenamiento gratis."
       ],
@@ -6226,6 +6262,12 @@
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "El gestor de contraseñas de ${ BRAND_NAME } le permite crear, almacenar y completar automáticamente sus contraseñas para que no tenga que restablecerlas nunca más."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } requiere una dirección de ${ BRAND_NAME } para la sincronización segura de eventos y cifrado. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } requiere una dirección de ${ BRAND_NAME } para la sincronización segura de eventos y cifrado. Reclame su dirección gratuita de ${ MAIL_APP_NAME } ahora."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } calendario nuevo",
         "${ calendarsToBeCreatedCount } calendarios nuevos"
@@ -6411,8 +6453,8 @@
         "${ total } mensajes"
       ],
       "${ trackersCount } email tracker blocked": [
-        "${ trackersCount } rastreador de correo electrónico bloqueado",
-        "${ trackersCount } rastreadores de correo electrónicos bloqueados"
+        "${ trackersCount } rastreador de correo bloqueado",
+        "${ trackersCount } rastreadores de correo bloqueados"
       ],
       "${ trackersCount } tracker blocked": [
         "${ trackersCount } rastreador bloqueado",
@@ -6626,25 +6668,25 @@
         "¿Está seguro de que quiere mover todos los mensajes de esta ubicación a la papelera?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
-        "¿Está seguro de que quiere eliminar permanentemente ${ count } conversación?",
-        "¿Está seguro de que quiere eliminar permanentemente ${ count } conversaciones?"
+        "¿En verdad desea eliminar permanentemente ${ count } conversación?",
+        "¿En verdad desea eliminar permanentemente ${ count } conversaciones?"
       ],
       "Are you sure you want to permanently delete ${ count } draft?": [
-        "¿Está seguro de que quiere eliminar permanentemente ${ count } borrador?",
-        "¿Está seguro de que quiere eliminar permanentemente ${ count } borradores?"
+        "¿En verdad desea eliminar permanentemente ${ count } borrador?",
+        "¿En verdad desea eliminar permanentemente ${ count } borradores?"
       ],
       "Are you sure you want to permanently delete ${ count } message?": [
-        "¿Está seguro de que quiere eliminar permanentemente ${ count } mensaje?",
-        "¿Está seguro de que quiere eliminar permanentemente ${ count } mensajes?"
+        "¿En verdad desea eliminar permanentemente ${ count } mensaje?",
+        "¿En verdad desea eliminar permanentemente ${ count } mensajes?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
-        "¿Está seguro de que quiere eliminar permanentemente esta conversación?"
+        "¿En verdad desea eliminar permanentemente esta conversación?"
       ],
       "Are you sure you want to permanently delete this draft?": [
         "¿Está seguro de que quiere eliminar permanentemente este borrador?"
       ],
       "Are you sure you want to permanently delete this message?": [
-        "¿Está seguro de que quiere eliminar permanentemente este mensaje?"
+        "¿En verdad desea eliminar permanentemente este mensaje?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Al menos ${ BETTER_PASSWORD_LENGTH } caracteres"
@@ -6866,7 +6908,7 @@
         "¿Desea descargar estos archivos adjuntos de todos modos?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
-        "¿Quiere volver a firmar los datos del contacto y en el proceso confiar en las claves con las siguientes huellas digitales?"
+        "¿Desea volver a firmar los datos del contacto y en el proceso confiar en las claves con las siguientes huellas digitales?"
       ],
       "Do you want to re-sign the contact details?": [
         "¿Quiere volver a firmar los datos del contacto?"
@@ -6989,6 +7031,9 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Disfrute de una experiencia de correo electrónico más rápida y centrada con la aplicación de escritorio."
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Asegure una comunicación privada y cifrada completa. Reclame su dirección gratuita de ${ BRAND_NAME } ahora."
+      ],
       "Enter the code from your authenticator app": [
         "Ingrese el código de la aplicación de autenticación."
       ],
@@ -7003,6 +7048,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Ingrese su propia contraseña (como administrador de la organización)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Ingrese su propia contraseña (como contacto de confianza)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Tiempo restante estimado: ${ estimatedMinutes } minuto",
@@ -7223,7 +7271,7 @@
         "Logo de JCB"
       ],
       "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
-        "Únese al programa ${ PROTON_SENTINEL_NAME } para disfrutar de nuestro nivel más alto en seguridad de su cuenta y soporte."
+        "Únase al programa ${ PROTON_SENTINEL_NAME } para disfrutar de nuestro nivel más alto en seguridad de su cuenta y soporte."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Solo tiene que confirmar la selección y nosotros haremos el resto."
@@ -7840,6 +7888,12 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "La suscripción terminará pronto: reactívela antes de ${ byDate } para mantener los beneficios de ${ planName }. ${ reactivateLink }"
       ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Suscripción a punto de finalizar: Para mantener los beneficios de su ${ planName }, reinicie su suscripción en la Apple App Store antes del ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Su suscripción finaliza: Para mantener los beneficios de su ${ planName }, reinicie su suscripción en Google Play Store antes del ${ byDate }. ${ reactivateLink }"
+      ],
       "Surveillance": [
         "Vigilancia"
       ],
@@ -8291,7 +8345,7 @@
         "¿Cuándo quiere que el mensaje se elimine automáticamente del buzón del destinatario y de la carpeta de enviados?"
       ],
       "When do you want your message to self-destruct?": [
-        "¿Cuándo quiere que el mensaje se autodestruya?"
+        "¿Cuándo desea que el mensaje se autodestruya?"
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
         "Cuando proporcione el correo, use un único alias desechable de Hide-my-email en lugar de la dirección de correo electrónico real."
@@ -8423,7 +8477,7 @@
         "Tiene una suscripción de prueba ${ planTitle }. No se requiere un pago en este momento. La suscripción será renovada automáticamente al finalizar el periodo de prueba."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
-        "No le ha dado un asunto a el correo electrónico. ¿Quiere enviar el mensaje de todos modos?"
+        "No le ha dado un asunto a el correo electrónico. ¿Desea enviar el mensaje de todos modos?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Ha alcanzado el 100% de la capacidad de almacenamiento. Considere liberar algo de espacio o actualizar la cuenta con espacio de almacenamiento adicional para escribir mensajes nuevos."
@@ -9508,6 +9562,9 @@
       "Upload picture": [
         "Cargar imagen"
       ],
+      "Username": [
+        "Nombre de usuario"
+      ],
       "VAT": [
         "IVA"
       ],
@@ -9555,6 +9612,9 @@
       ],
       "Your password (admin)": [
         "Su contraseña (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Su contraseña (contacto de confianza)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9815,6 +9875,9 @@
       ],
       "Request an invite": [
         "Solicitar una invitación"
+      ],
+      "Resume now": [
+        "Reanudar ahora"
       ],
       "Scheduled": [
         "Programado"
@@ -14041,6 +14104,9 @@
       "Account security": [
         "Seguridad de la cuenta"
       ],
+      "Account temporarily locked": [
+        "Cuenta temporalmente bloqueada"
+      ],
       "Action all conversations": [
         "Acción en todas las conversaciones"
       ],
@@ -14146,6 +14212,9 @@
       ],
       "Change password": [
         "Cambiar contraseña"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Reclame su dirección de ${ MAIL_APP_NAME }"
       ],
       "Clearing data": [
         "Limpiando datos"
@@ -14370,6 +14439,9 @@
       ],
       "Forward": [
         "Reenviar"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Obtener acceso completo a ${ CALENDAR_APP_NAME }"
       ],
       "Get more from your VPN": [
         "Obtenga más de su VPN"
@@ -14667,7 +14739,7 @@
         "Volver a firmar todos los contactos"
       ],
       "Re-sign contact": [
-        "Re-firmar contacto"
+        "Volver a firmar el contacto"
       ],
       "Re-signing contacts": [
         "Volviendo a firmar los contactos"
@@ -14946,6 +15018,9 @@
       ],
       "Your account is protected": [
         "La cuenta está protegida"
+      ],
+      "Your addresses": [
+        "Sus direcciones"
       ],
       "Your changes are not synced yet": [
         "Sus cambios aún no se han sincronizado"

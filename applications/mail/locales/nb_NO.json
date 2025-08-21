@@ -61,7 +61,7 @@
         "Legg til en annen konto"
       ],
       "Add Bcc recipients": [
-        "Legg til mottakere (blind kopi)"
+        "Legg til mottakere (blindkopi)"
       ],
       "Add birthday": [
         "Legg til bursdag"
@@ -312,6 +312,9 @@
       ],
       "Copy alias “${ name }”": [
         "Kopier alias \"${ name }\""
+      ],
+      "Copy email address": [
+        "Kopier e-postadresse"
       ],
       "Copy email to clipboard": [
         "Kopier e-post til utklippstavlen"
@@ -793,6 +796,9 @@
       "Make it friendly": [
         "Gjør det vennlig"
       ],
+      "Manage addresses": [
+        "Administrer adresser"
+      ],
       "Manage advanced account protections": [
         "Administrer avansert kontobeskyttelse"
       ],
@@ -1220,10 +1226,10 @@
         "Selvdestruksjon om 7 dager"
       ],
       "Self-destruct message": [
-        "Selvdestruksjonsmelding"
+        "Selvdestruerende melding"
       ],
       "Self-destruct on ...": [
-        "Selvdestruer den ..."
+        "Selvdestruer på…"
       ],
       "Send": [
         "Send"
@@ -1376,7 +1382,7 @@
         "Stopp merking som lest"
       ],
       "Stop moving to Archive": [
-        "Slutt flytting til arkivet"
+        "Stopp flytting til arkivet"
       ],
       "Stop moving to Trash": [
         "Stopp flytting til papirkurven"
@@ -2287,7 +2293,7 @@
         "${ participantName } takket ja til invitasjonen til en forekomst av hendelsen."
       ],
       "${ participantName } accepted your invitation.": [
-        "${ participantName } godtok din invitasjon."
+        "${ participantName } godtok invitasjonen din."
       ],
       "${ participantName } asked for the latest event updates.": [
         "${ participantName } ba om de siste hendelsesoppdateringene."
@@ -2428,7 +2434,7 @@
         "${ participantName } takket foreløpig ja til en invitasjon og foreslo et nytt tidspunkt til en forekomst av hendelsen."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
-        "${ participantName } takket foreløpig ja til en invitasjon og foreslo et nytt tidspunkt til denne hendelsen."
+        "${ participantName } takket foreløpig ja til en invitasjon og foreslo et nytt tidspunkt for denne hendelsen."
       ],
       "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
         "${ participantName } takket foreløpig ja til en invitasjon til en forekomst av hendelsen."
@@ -5622,7 +5628,7 @@
         "kontopålogginger"
       ],
       "Auto-forward Gmail": [
-        "Videresend automatisk Gmail"
+        "Videresend Gmail automatisk"
       ],
       "auto-forwarding": [
         "automatisk videresending"
@@ -5703,7 +5709,7 @@
         "Lagringsplass låst opp"
       ],
       "Tasks to complete count": [
-        "Antall ventende oppgaver"
+        "Gjenværende oppgaver som skal fullføres"
       ],
       "This feature is currently unavailable": [
         "Denne funksjonen er utilgjengelig for øyeblikket."
@@ -6909,7 +6915,7 @@
         "Hver kode kan bare brukes én gang"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
-        "Administrer og meld deg av nyhetsbrev og e-postlister enkelt."
+        "Administrer og enkelt meld deg av nyhetsbrev og e-postlister."
       ],
       "Edit email address": [
         "Rediger e-postadresse"
@@ -7203,7 +7209,7 @@
         "Bare bekreft valget ditt og vi vil gjøre resten."
       ],
       "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
-        "Hold påloggings- og kredittkortopplysningene dine trygge, men alltid tilgjengelig ved å legge dem til ${ PASS_APP_NAME }. Det er gratis, og inkludert i din ${ BRAND_NAME }-konto."
+        "Hold påloggings- og kredittkortopplysningene dine trygge, men alltid tilgjengelig ved å legge dem til ${ PASS_APP_NAME }. Det er gratis, og inkludert i ${ BRAND_NAME }-kontoen din."
       ],
       "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
         "Hold postkassen ryddig ved automatisk å tømme papirkurven og søppelpost som har vært der i mer enn 30 dager."
@@ -7709,7 +7715,7 @@
         "Sender melding..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
-        "Sending av meldinger fra en @pm.me-adresse er en betalt funksjon. Meldingen din vil bli sendt fra standardadressen din ${ email }"
+        "Sending av meldinger fra en @pm.me-adresse er en betalt funksjon. Meldingen vil bli sendt fra standardadressen din ${ email }"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Sendt med <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> sikker e-post."
@@ -8223,7 +8229,7 @@
         "Vi beklager. Dette kan ha vært en feil fra vår side. Kan du bekrefte at du vil merke denne e-posten som legitim?"
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
-        "Vi har blokkert følgende annonsører og organisasjoner fra å se når du åpner denne e-postadressen, hvilken enhet du bruker, og hvor du befinner deg."
+        "Vi har blokkert følgende annonsører og organisasjoner fra å se når du åpner denne e-posten, hvilken enhet du bruker, og hvor du befinner deg."
       ],
       "We cannot enable message content search in this browser.": [
         "Vi kan ikke aktivere søk etter meldingsinnhold i denne nettleseren."
@@ -8459,7 +8465,7 @@
         "Du blir ikke belastet hvis du avbryter før ${ trialEndsOnFormatted }."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
-        "Du skrev \"${ attachmentsFoundKeyword }\", men ingen vedlegg er lagt til. Ønsker du å sende meldingen uansett?"
+        "Du skrev \"${ attachmentsFoundKeyword }\", men ingen vedlegg er lagt til. Ønsker du uansett å sende meldingen?"
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }",
@@ -8653,10 +8659,10 @@
     },
     "Key pinning": {
       "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
-        "Ved å klikke \"klarér nøkkel\" vil du knytte denne offentlige nøkkelen til denne avsenderen, og e-post fra denne adressen blir automatisk kryptografisk verifisert."
+        "Ved å klikke \"klarér nøkkel\" vil du knytte denne offentlige nøkkelen til denne avsenderen, og e-poster fra denne adressen blir automatisk kryptografisk verifisert."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
-        "Ved å klikke \"klarér nøkkel\" opprettes en ny kontakt og knytter denne offentlige nøkkelen til denne avsenderen. E-post fra denne adressen blir automatisk kryptografisk verifisert."
+        "Ved å klikke \"klarér nøkkel\" opprettes en ny kontakt og knytter denne offentlige nøkkelen til denne avsenderen. E-poster fra denne adressen blir automatisk kryptografisk verifisert."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Vil du klarére den primære offentlige nøkkelen med følgende fingeravtrykk?",
@@ -9485,6 +9491,9 @@
       "Upload picture": [
         "Last opp bilde"
       ],
+      "Username": [
+        "Brukernavn"
+      ],
       "VAT": [
         "MVA"
       ],
@@ -9650,7 +9659,7 @@
         "All e-post"
       ],
       "Archive": [
-        "Arkiv"
+        "Arkiver"
       ],
       "clearing your browser cache": [
         "tømmer hurtigbufferen til nettleseren"
@@ -9677,7 +9686,7 @@
         "Aktiver en e-postadresse tilknyttet en av dine kalendere."
       ],
       "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Aktiver e-postadressen som er knyttet til den deaktiverte kalenderen for å avbryte aktiviteten."
+        "Aktiver e-postadressen som er knyttet til den deaktiverte kalenderen for å avbryte hendelsen."
       ],
       "Enable the email address linked to the disabled calendar to modify your answer.": [
         "For å modifisere svaret ditt, aktiver e-postadressen som er tilknyttet den deaktiverte kalenderen."
@@ -11372,7 +11381,7 @@
         "Last ned skrivebordsappen"
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
-        "Gled deg over en raskere, fokusert e-postopplevelse med skrivebords-appen."
+        "Gled deg over en raskere, fokusert e-postopplevelse med skrivebordsappen."
       ],
       "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
         "For tilgang til e-post når som helst og optimalisert mobilopplevelse, last ned vår ${ mobileAppAppStoreLink }- eller ${ mobileAppGooglePlayLink }-app."
@@ -12282,12 +12291,12 @@
     },
     "Send email with changed preferences": {
       "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
-        "Kontaktene for følgende adresser er slettet, så de tilsvarende krypteringsinnstillingene er oppdatert tilsvarende:"
+        "Kontaktene for følgende adresser er slettet, så de korresponderende krypteringsinnstillingene er oppdatert tilsvarende:"
       ]
     },
     "Send email with encryption disabled": {
       "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
-        "Kontaktene for følgende adresser har deaktivert ende-til-ende-kryptering på kontoen, så de tilsvarende krypteringspreferansene er oppdatert tilsvarende:"
+        "Kontaktene for følgende adresser har deaktivert ende-til-ende-kryptering på kontoen, så de korresponderende krypteringspreferansene er oppdatert tilsvarende:"
       ]
     },
     "Send email with errors": {
