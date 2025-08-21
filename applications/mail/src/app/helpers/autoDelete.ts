@@ -2,11 +2,11 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings, UserModel } from '@proton/shared/lib/interfaces';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
-const { SPAM, TRASH } = MAILBOX_LABEL_IDS;
+export const AUTO_DELETE_LABEL_IDS = [MAILBOX_LABEL_IDS.SPAM, MAILBOX_LABEL_IDS.TRASH];
 
-export const AUTO_DELETE_LABEL_IDS = [SPAM, TRASH];
-
-export function isAllowedAutoDeleteLabelID(labelID: string): labelID is typeof SPAM | typeof TRASH {
+export function isAllowedAutoDeleteLabelID(
+    labelID: string
+): labelID is typeof MAILBOX_LABEL_IDS.SPAM | typeof MAILBOX_LABEL_IDS.TRASH {
     if (AUTO_DELETE_LABEL_IDS.some((systemFolderId) => systemFolderId === labelID)) {
         return true;
     }
