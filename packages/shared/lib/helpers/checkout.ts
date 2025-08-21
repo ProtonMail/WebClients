@@ -164,21 +164,24 @@ export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {
     // So if users has business plan but doesn't have IP addons, then they still must have 1 IP for price
     // calculation purposes.
     if (plan?.Name === PLANS.VPN_BUSINESS) {
-        const { IP_VPN_BUSINESS: IP } = ADDON_NAMES;
-        const addon = addonsMap[IP];
+        const addon = addonsMap[ADDON_NAMES.IP_VPN_BUSINESS];
 
         if (addon) {
             addon.quantity += 1;
         } else {
-            addonsMap[IP] = {
-                name: IP,
+            addonsMap[ADDON_NAMES.IP_VPN_BUSINESS] = {
+                name: ADDON_NAMES.IP_VPN_BUSINESS,
                 quantity: 1,
-                pricing: plansMap[IP]?.Pricing ?? INCLUDED_IP_PRICING,
+                pricing: plansMap[ADDON_NAMES.IP_VPN_BUSINESS]?.Pricing ?? INCLUDED_IP_PRICING,
                 title: '',
             };
         }
 
-        addonsMap[IP].title = getAddonTitle(IP, addonsMap[IP].quantity, planIDs);
+        addonsMap[ADDON_NAMES.IP_VPN_BUSINESS].title = getAddonTitle(
+            ADDON_NAMES.IP_VPN_BUSINESS,
+            addonsMap[ADDON_NAMES.IP_VPN_BUSINESS].quantity,
+            planIDs
+        );
     }
 
     const addons: AddonDescription[] = Object.values(addonsMap).sort((a, b) => a.name.localeCompare(b.name));

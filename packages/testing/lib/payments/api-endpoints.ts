@@ -9,7 +9,7 @@ const tokensUrl = createTokenV4({} as any).url;
 export const MOCK_TOKEN_RESPONSE = {
     Token: 'token123',
     Code: 1000,
-    Status: PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE,
+    Status: PAYMENT_TOKEN_STATUS.CHARGEABLE,
 };
 
 export function addTokensResponse(response = MOCK_TOKEN_RESPONSE) {
@@ -19,7 +19,7 @@ export function addTokensResponse(response = MOCK_TOKEN_RESPONSE) {
         pending: () => {
             addApiMock(tokensUrl, () => ({
                 ...response,
-                Status: PAYMENT_TOKEN_STATUS.STATUS_PENDING,
+                Status: PAYMENT_TOKEN_STATUS.PENDING,
                 ApprovalURL: 'https://verify.proton.me',
                 ReturnHost: 'https://account.proton.me',
             }));
