@@ -132,4 +132,7 @@ export enum FeatureCode {
     // Go unlimited 2025
     OfferGoUnlimited2025 = 'OfferGoUnlimited2025',
     OfferUnlimitedRotationState = 'OfferUnlimitedRotationState',
+
+    // Meet
+    NewScheduleOptionSpotlight = 'NewScheduleOptionSpotlight',
 }
