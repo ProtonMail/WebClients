@@ -13,16 +13,21 @@ type ThumbnailsStore = {
 };
 
 export const useThumbnailStore = create<ThumbnailsStore>()(
-    devtools((set) => ({
-        thumbnails: {},
-        setThumbnail: (revId: string, obj: ThumbnailType) =>
-            set((state) => {
-                const newThumbnails = { ...state.thumbnails };
-                newThumbnails[revId] = obj;
-                return {
-                    ...state,
-                    thumbnails: newThumbnails,
-                };
-            }),
-    }))
+    devtools(
+        (set) => ({
+            thumbnails: {},
+            setThumbnail: (revId: string, obj: ThumbnailType) =>
+                set((state) => {
+                    const newThumbnails = { ...state.thumbnails };
+                    newThumbnails[revId] = obj;
+                    return {
+                        ...state,
+                        thumbnails: newThumbnails,
+                    };
+                }),
+        }),
+        {
+            name: 'drive-thumbnail',
+        }
+    )
 );
