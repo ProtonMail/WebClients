@@ -30,17 +30,6 @@ import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
 import type { AugmentedSendPreferences } from '../interface';
 import { withIncrementedSequence } from './sequence';
 
-const {
-    SEND_INVITATION,
-    SEND_UPDATE,
-    CHANGE_PARTSTAT,
-    DECLINE_INVITATION,
-    DECLINE_DISABLED,
-    CANCEL_INVITATION,
-    CANCEL_DISABLED,
-    NONE,
-} = INVITE_ACTION_TYPES;
-
 type PmVcalVeventComponent = RequireSome<VcalVeventComponent, 'x-pm-shared-event-id' | 'x-pm-session-key'>;
 
 interface EventInviteIcsAndPmVevent {
@@ -232,7 +221,11 @@ export const getCorrectedSaveInviteActions = ({
     hasModifiedDateTimes?: boolean;
     hasModifiedRrule?: boolean;
 }) => {
-    if (![NONE, SEND_INVITATION, SEND_UPDATE].includes(inviteActions.type)) {
+    if (
+        ![INVITE_ACTION_TYPES.NONE, INVITE_ACTION_TYPES.SEND_INVITATION, INVITE_ACTION_TYPES.SEND_UPDATE].includes(
+            inviteActions.type
+        )
+    ) {
         return {
             ...inviteActions,
         };
@@ -245,7 +238,7 @@ export const getCorrectedSaveInviteActions = ({
             // no need to send any invitation in this case
             return {
                 ...inviteActions,
-                type: NONE,
+                type: INVITE_ACTION_TYPES.NONE,
             };
         }
         return { ...inviteActions };
@@ -254,7 +247,7 @@ export const getCorrectedSaveInviteActions = ({
         // no need to send any invitation in this case
         return {
             ...inviteActions,
-            type: NONE,
+            type: INVITE_ACTION_TYPES.NONE,
         };
     }
     const hasInviteDataModification = getHasUpdatedInviteData({
@@ -270,7 +263,7 @@ export const getCorrectedSaveInviteActions = ({
     if (hasInviteDataModification) {
         return {
             ...inviteActions,
-            type: hasOldAttendees ? SEND_UPDATE : SEND_INVITATION,
+            type: hasOldAttendees ? INVITE_ACTION_TYPES.SEND_UPDATE : INVITE_ACTION_TYPES.SEND_INVITATION,
             addedAttendees,
             removedAttendees,
             hasRemovedAllAttendees,
@@ -281,7 +274,7 @@ export const getCorrectedSaveInviteActions = ({
         // no need to send any invitation in this case
         return {
             ...inviteActions,
-            type: NONE,
+            type: INVITE_ACTION_TYPES.NONE,
         };
     }
     return { ...inviteActions, addedAttendees, removedAttendees, hasRemovedAllAttendees };
@@ -297,24 +290,24 @@ export const getUpdatedDeleteInviteActions = ({
     const { type, selfAddress } = inviteActions;
     const hasAttendees = oldVevent ? getHasAttendees(oldVevent) : false;
     const active = selfAddress ? getIsAddressActive(selfAddress) : undefined;
-    if (type === CANCEL_INVITATION) {
+    if (type === INVITE_ACTION_TYPES.CANCEL_INVITATION) {
         if (!hasAttendees) {
             return {
                 ...inviteActions,
-                type: NONE,
+                type: INVITE_ACTION_TYPES.NONE,
             };
         }
         if (!active) {
             return {
                 ...inviteActions,
-                type: CANCEL_DISABLED,
+                type: INVITE_ACTION_TYPES.CANCEL_DISABLED,
             };
         }
     }
-    if (type === DECLINE_INVITATION && !active) {
+    if (type === INVITE_ACTION_TYPES.DECLINE_INVITATION && !active) {
         return {
             ...inviteActions,
-            type: DECLINE_DISABLED,
+            type: INVITE_ACTION_TYPES.DECLINE_DISABLED,
         };
     }
     return { ...inviteActions };
@@ -444,7 +437,7 @@ export const getSendIcsAction =
             recurringType,
         } = inviteActions;
 
-        if (type === NONE) {
+        if (type === INVITE_ACTION_TYPES.NONE) {
             return;
         }
 
@@ -461,7 +454,7 @@ export const getSendIcsAction =
         const hasRemovedAttendees = !!removedAttendees?.length;
 
         // Attendee action
-        if ([CHANGE_PARTSTAT, DECLINE_INVITATION].includes(type)) {
+        if ([INVITE_ACTION_TYPES.CHANGE_PARTSTAT, INVITE_ACTION_TYPES.DECLINE_INVITATION].includes(type)) {
             try {
                 if (!vevent) {
                     throw new Error('Cannot build invite ics without the event component');
@@ -547,7 +540,7 @@ export const getSendIcsAction =
         }
 
         // Organizer cancellation
-        if (type === CANCEL_INVITATION) {
+        if (type === INVITE_ACTION_TYPES.CANCEL_INVITATION) {
             try {
                 if (!sharedEventID) {
                     throw new Error('Missing shared event id');
@@ -629,7 +622,7 @@ export const getSendIcsAction =
             });
 
             // Organizer actions
-            if (type === SEND_INVITATION) {
+            if (type === INVITE_ACTION_TYPES.SEND_INVITATION) {
                 if (
                     !hasAddedAttendees &&
                     !hasRemovedAttendees &&
@@ -732,7 +725,7 @@ export const getSendIcsAction =
                 return;
             }
 
-            if (type === SEND_UPDATE) {
+            if (type === INVITE_ACTION_TYPES.SEND_UPDATE) {
                 const addedAttendeesEmails = (addedAttendees || []).map((attendee) => getAttendeeEmail(attendee));
                 const remainingAttendees = (attendees || []).filter(
                     (attendee) => !addedAttendeesEmails.includes(getAttendeeEmail(attendee))
