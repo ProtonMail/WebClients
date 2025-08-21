@@ -75,14 +75,12 @@ import { fromUrlParams, toUrlParams } from './getUrlHelper';
 import type { EventTargetAction, InteractiveRef, TimeGridRef } from './interface';
 import { useCalendarSearch } from './search/CalendarSearchProvider';
 
-const { DAY, WEEK, MONTH, SEARCH } = VIEWS;
-
 const getRange = (view: VIEWS, range: number) => {
     if (!range) {
         return range;
     }
     const max = Math.max(Math.min(range, 6), 1);
-    if (view === WEEK) {
+    if (view === VIEWS.WEEK) {
         return max;
     }
     return Math.min(max, 5);
@@ -200,9 +198,9 @@ const CalendarContainer = ({
         // We only care about new dates in the URL when the browser moves back or forward, not from push states coming from the app.
         if (history.action === 'POP') {
             setCustom({ view: urlView, range: urlRange, date: urlDate });
-            if (urlView !== SEARCH) {
+            if (urlView !== VIEWS.SEARCH) {
                 lastNonSearchViewRef.current = urlView;
-            } else if (urlView === SEARCH) {
+            } else if (urlView === VIEWS.SEARCH) {
                 setIsSearching(true);
             }
         }
@@ -296,14 +294,14 @@ const CalendarContainer = ({
         }
 
         if (viewportWidth['<=small']) {
-            return requestedView === SEARCH ? SEARCH : WEEK;
+            return requestedView === VIEWS.SEARCH ? VIEWS.SEARCH : VIEWS.WEEK;
         }
 
         if (SUPPORTED_VIEWS_IN_APP.includes(requestedView)) {
             return requestedView;
         }
 
-        return WEEK;
+        return VIEWS.WEEK;
     })();
 
     const { stopCEDTMetric } = useCalendarCEDTMetric();
@@ -394,7 +392,7 @@ const CalendarContainer = ({
             return;
         }
 
-        history.push({ pathname: newRoute, hash: view === SEARCH ? history.location.hash : undefined });
+        history.push({ pathname: newRoute, hash: view === VIEWS.SEARCH ? history.location.hash : undefined });
         // Intentionally not listening to everything to only trigger URL updates when these variables change.
     }, [view, range, utcDate]);
 
@@ -453,26 +451,26 @@ const CalendarContainer = ({
                 return;
             }
 
-            if (view === SEARCH) {
+            if (view === VIEWS.SEARCH) {
                 setCustom({ date: newDate });
                 return;
             }
 
             if (numberOfDays >= 7) {
                 setCustom({
-                    view: MONTH,
+                    view: VIEWS.MONTH,
                     range: Math.floor(numberOfDays / 7),
                     date: newDate,
                 });
-                lastNonSearchViewRef.current = MONTH;
+                lastNonSearchViewRef.current = VIEWS.MONTH;
                 return;
             }
             setCustom({
-                view: WEEK,
+                view: VIEWS.WEEK,
                 range: resetRange ? undefined : numberOfDays,
                 date: newDate,
             });
-            lastNonSearchViewRef.current = WEEK;
+            lastNonSearchViewRef.current = VIEWS.WEEK;
         },
         [view]
     );
@@ -481,12 +479,12 @@ const CalendarContainer = ({
         if (newDate < MINIMUM_DATE_UTC || newDate > MAXIMUM_DATE_UTC) {
             return;
         }
-        setCustom({ view: DAY, range: undefined, date: newDate });
-        lastNonSearchViewRef.current = DAY;
+        setCustom({ view: VIEWS.DAY, range: undefined, date: newDate });
+        lastNonSearchViewRef.current = VIEWS.DAY;
     }, []);
 
     const handleSearch = useCallback(() => {
-        setCustom({ view: SEARCH, range: undefined });
+        setCustom({ view: VIEWS.SEARCH, range: undefined });
     }, []);
 
     const handleGoBackFromSearch = useCallback(() => {
@@ -513,7 +511,7 @@ const CalendarContainer = ({
         disableCreate ||
         !createEventCalendarBootstrap ||
         !activeCalendars.some(unary(getIsCalendarWritable)) ||
-        view === SEARCH;
+        view === VIEWS.SEARCH;
 
     useEffect(() => {
         if (isLoading || calendarsEvents.some((event) => !event.data.eventReadResult)) {
