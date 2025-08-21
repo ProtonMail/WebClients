@@ -201,7 +201,7 @@ export const useSepaDirectDebit = (
                 ...amountAndCurrency,
                 PaymentToken,
                 v: 5,
-                chargeable: Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE,
+                chargeable: Status === PAYMENT_TOKEN_STATUS.CHARGEABLE,
                 authorized: true,
                 type: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
             };

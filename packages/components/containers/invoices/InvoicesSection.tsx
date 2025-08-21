@@ -37,8 +37,7 @@ const InvoicesSection = () => {
 
     const [user] = useUser();
 
-    const { ORGANIZATION, USER } = INVOICE_OWNER;
-    const [owner, setOwner] = useState(USER);
+    const [owner, setOwner] = useState(INVOICE_OWNER.USER);
 
     const [invoiceModalProps, setInvoiceModalOpen, renderInvoiceModal] = useModalState();
     const { openBillingAddressModal, editBillingAddressModal } = useEditBillingAddressModal();
@@ -59,7 +58,7 @@ const InvoicesSection = () => {
     }[document];
 
     const handleOwner =
-        (own = USER) =>
+        (own = INVOICE_OWNER.USER) =>
         () => {
             setOwner(own);
             invoicesHook.onSelect(1);
@@ -133,13 +132,16 @@ const InvoicesSection = () => {
                 ) : null}
                 {user.isPaid ? (
                     <ButtonGroup className="mr-4 mb-2">
-                        <Button className={owner === USER ? 'is-selected' : ''} onClick={handleOwner(USER)}>
+                        <Button
+                            className={owner === INVOICE_OWNER.USER ? 'is-selected' : ''}
+                            onClick={handleOwner(INVOICE_OWNER.USER)}
+                        >
                             {c('Action').t`User`}
                         </Button>
                         {user.isAdmin && (
                             <Button
-                                className={owner === ORGANIZATION ? 'is-selected' : ''}
-                                onClick={handleOwner(ORGANIZATION)}
+                                className={owner === INVOICE_OWNER.ORGANIZATION ? 'is-selected' : ''}
+                                onClick={handleOwner(INVOICE_OWNER.ORGANIZATION)}
                             >
                                 {c('Action').t`Organization`}
                             </Button>
