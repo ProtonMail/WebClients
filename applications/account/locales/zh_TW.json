@@ -6948,11 +6948,20 @@
       "* No credit card required.": [
         "* 無需信用卡。"
       ],
+      "**Enable automatic backups** for peace of mind": [
+        "**啟用自動備份**，讓您安枕無憂"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**取得一個 ${ BRAND_NAME } 位址**並用於全部 ${ BRAND_NAME_TWO } 服務，包括 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }。"
       ],
+      "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
+        "從其他雙重驗證應用程式**匯入您的現有代碼**，例如 Google Authenticator"
+      ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "使用您的推薦連結**邀請朋友**來 ${ BRAND_NAME }。"
+      ],
+      "**Sync codes** to all your devices": [
+        "**同步代碼**到您的所有裝置"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } 更多"
@@ -7040,6 +7049,9 @@
       ],
       "Add a recovery phone number": [
         "加入復原手機號碼"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "為您的帳戶添加額外的保障。 其後在每次登入時，您將需使用 2FA 核實您的身份。"
       ],
       "Add domain": [
         "加入網域"
@@ -7539,6 +7551,9 @@
       "Download recovery file": [
         "下載帳號救援檔案"
       ],
+      "Download the app and import existing codes.": [
+        "下載應用程式並匯入現有代碼。"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "現在就下載您最愛的應用程式，隱私隨身帶著走。"
       ],
@@ -7745,6 +7760,9 @@
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "產生新的復原短語並廢棄舊的。"
+      ],
+      "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
+        "在您的所有裝置上取得 ${ AUTHENTICATOR_APP_NAME }。"
       ],
       "Get ${ upsellPlanName }": [
         "取得 ${ upsellPlanName }"
@@ -8153,6 +8171,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 標誌"
+      ],
+      "Maybe later": [
+        "稍後再說"
       ],
       "Medium Priority": [
         "中等優先順序"
@@ -9335,6 +9356,9 @@
       ],
       "Why?": [
         "為什麼？"
+      ],
+      "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
+        "透過 ${ AUTHENTICATOR_APP_NAME }，您可以："
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "使用商業或企業方案，您可以為您的組織購買${ boldDedicatedServers }，並設定${ boldGateways }來控制哪些使用者可以存取它們。"
@@ -15945,6 +15969,9 @@
       ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n }使用者透過您的身分提供者已加入您的組織機構。立即查看帳號:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } 使用者已停用。此使用者可以安全地從您的組織中移除。"
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n }使用者要求您協助透過單一登入登入至它們的${ BRAND_NAME }帳號。"
