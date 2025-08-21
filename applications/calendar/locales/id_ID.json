@@ -1704,6 +1704,9 @@
       "Advanced account protection": [
         "Perlindungan akun bertingkat lanjut"
       ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Seluruh fitur premium ${ BRAND_NAME } dari ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Cancel and downgrade": [
         "Batalkan dan turunkan"
       ],
@@ -2992,6 +2995,9 @@
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Untuk mengimpor melalui berkas CSV dan VCF, pastikan berkas Anda tidak melebihi batas ukuran ${ MAX_IMPORT_FILE_SIZE_STRING } atau batas jumlah ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda melebihi batas ini, silakan pisahkan berkas Anda ke beberapa berkas yang lebih kecil. ${ learnMoreLink }"
+      ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Untuk mengimpor kontak Anda dari Google atau Outlook, ${ easySwitchLink }."
       ],
       "To start, give your organization a name.": [
         "Untuk memulai, beri nama organisasi Anda."
@@ -6080,6 +6086,9 @@
       "Expired": [
         "Kedaluwarsa"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Usang"
       ],
@@ -6567,6 +6576,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Username": [
+        "Nama pengguna"
       ],
       "VAT": [
         "PPN"
@@ -8827,7 +8839,18 @@
         "hubungi"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Seluruh fitur premium ${ BRAND_NAME } dari ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, dan ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Seluruh fitur premium ${ BRAND_NAME } dari ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Sebagai pelanggan **${ currentPlanTitle }**, Anda dapat membuka akses ke **${ unlockPlanTitle }** dan lebih banyak layanan premium ${ BRAND_NAME } dengan meningkatkan ke **${ upsellPlanTitle }**."
+      ],
       "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
         "Lebih banyak layanan ${ BRAND_NAME }.${ br }Satu langganan mudah."
       ],
@@ -9721,6 +9744,9 @@
       "${ planMaxSpace } total storage": [
         "Ruang penyimpanan total ${ planMaxSpace }"
       ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } memberikan Anda akses ke seluruh fitur premium ${ BRAND_NAME } dari ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }. Paket ini hadir dengan privasi yang terpadu secara bawaan, sehingga Anda dapat tenang mengetahui bahwa data dan identitas Anda terjaga dengan aman."
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
       ],
@@ -10364,6 +10390,9 @@
       ],
       "Account security": [
         "Keamanan akun"
+      ],
+      "Account temporarily locked": [
+        "Akun sementara terkunci"
       ],
       "Add a custom logo": [
         "Tambah logo khusus"
@@ -11199,7 +11228,13 @@
         "Cara yang lebih aman untuk menyimpan Bitcoin Anda"
       ],
       "Bitcoin via Email": [
-        "Bitcoin via e-mail"
+        "Bitcoin via email"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Alamat email ${ MAIL_APP_NAME } yang terenkripsi dan aman. Anda dapat dengan mudah mengirim Bitcoin kepada siapa pun hanya dengan nama ${ BRAND_NAME } mereka."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Tukarkan Bitcoin secara aman via email alih-alih melalui alamat Bitcoin 26 karakter yang kompleks dan rentan terhadap kesalahan"
       ]
     },
     "wallet_signup_2024:app-switcher": {
