@@ -53,19 +53,6 @@ interface ReasonDetail {
     content: ReactNode;
 }
 
-const {
-    DIFFERENT_ACCOUNT,
-    TOO_EXPENSIVE,
-    MISSING_FEATURE,
-    QUALITY_ISSUE,
-    STREAMING_SERVICE_UNSUPPORTED,
-    SWITCHING_TO_DIFFERENT_SERVICE,
-    TEMPORARY,
-    VPN_CONNECTION_ISSUE,
-    NOT_WILLING_TO_SHARE,
-    OTHER,
-} = SUBSCRIPTION_CANCELLATION_REASONS;
-
 export type KeepSubscription = {
     status: 'kept';
 };
@@ -114,7 +101,7 @@ const FeedbackDowngradeModal = ({
             !isVpnApp
                 ? {
                       title: c('Downgrade account reason').t`I use a different ${BRAND_NAME} account`,
-                      value: DIFFERENT_ACCOUNT,
+                      value: SUBSCRIPTION_CANCELLATION_REASONS.DIFFERENT_ACCOUNT,
                   }
                 : undefined,
             isPaid
@@ -122,47 +109,47 @@ const FeedbackDowngradeModal = ({
                       title: isVpnApp
                           ? c('Downgrade account reason').t`I found a cheaper VPN`
                           : c('Downgrade account reason').t`Subscription is too expensive`,
-                      value: TOO_EXPENSIVE,
+                      value: SUBSCRIPTION_CANCELLATION_REASONS.TOO_EXPENSIVE,
                   }
                 : undefined,
             {
                 title: c('Downgrade account reason').t`Missing feature(s)`,
-                value: MISSING_FEATURE,
+                value: SUBSCRIPTION_CANCELLATION_REASONS.MISSING_FEATURE,
             },
             {
                 title: isVpnApp
                     ? c('Downgrade account reason').t`The VPN is too slow`
                     : c('Downgrade account reason').t`Bugs or quality issue`,
-                value: QUALITY_ISSUE,
+                value: SUBSCRIPTION_CANCELLATION_REASONS.QUALITY_ISSUE,
             },
             isVpnApp
                 ? {
                       title: c('Downgrade account reason').t`It doesn't do what I need`,
-                      value: STREAMING_SERVICE_UNSUPPORTED,
+                      value: SUBSCRIPTION_CANCELLATION_REASONS.STREAMING_SERVICE_UNSUPPORTED,
                   }
                 : undefined,
             {
                 title: isVpnApp
                     ? c('Downgrade account reason').t`I found a VPN with better features`
                     : c('Downgrade account reason').t`Switching to a different provider`,
-                value: SWITCHING_TO_DIFFERENT_SERVICE,
+                value: SUBSCRIPTION_CANCELLATION_REASONS.SWITCHING_TO_DIFFERENT_SERVICE,
             },
             {
                 title: isVpnApp
                     ? c('Downgrade account reason').t`I only needed a VPN short-term`
                     : c('Downgrade account reason').t`Temporary need, may come back in the future`,
-                value: TEMPORARY,
+                value: SUBSCRIPTION_CANCELLATION_REASONS.TEMPORARY,
             },
             isVpnApp
                 ? {
                       title: c('Downgrade account reason').t`I have not managed to connect`,
-                      value: VPN_CONNECTION_ISSUE,
+                      value: SUBSCRIPTION_CANCELLATION_REASONS.VPN_CONNECTION_ISSUE,
                   }
                 : undefined,
             isVpnApp
                 ? {
                       title: c('Downgrade account reason').t`I do not wish to share`,
-                      value: NOT_WILLING_TO_SHARE,
+                      value: SUBSCRIPTION_CANCELLATION_REASONS.NOT_WILLING_TO_SHARE,
                   }
                 : undefined,
         ].filter(isTruthy);
@@ -171,7 +158,11 @@ const FeedbackDowngradeModal = ({
 
     const options = [
         ...randomisedOptions.map(({ title, value }) => <Option key={value} title={title} value={value} />),
-        <Option title={c('Downgrade account reason').t`Other reason (please comment)`} value={OTHER} key={OTHER} />,
+        <Option
+            title={c('Downgrade account reason').t`Other reason (please comment)`}
+            value={SUBSCRIPTION_CANCELLATION_REASONS.OTHER}
+            key={SUBSCRIPTION_CANCELLATION_REASONS.OTHER}
+        />,
     ];
 
     const sharedReasonDetailsProps = {
@@ -180,43 +171,17 @@ const FeedbackDowngradeModal = ({
     };
     const reasonDetails: ReasonDetail[] = [
         {
-            forReason: MISSING_FEATURE,
+            forReason: SUBSCRIPTION_CANCELLATION_REASONS.MISSING_FEATURE,
             content: (
                 <InputFieldTwo
-                    id={MISSING_FEATURE}
+                    id={SUBSCRIPTION_CANCELLATION_REASONS.MISSING_FEATURE}
                     as={TextAreaTwo}
                     rows={3}
                     label={c('Label').t`Could you please specify?`}
-                    error={validator(model.Reason === MISSING_FEATURE ? [requiredValidator(model.ReasonDetails)] : [])}
-                    {...sharedReasonDetailsProps}
-                />
-            ),
-        },
-
-        {
-            forReason: QUALITY_ISSUE,
-            content: (
-                <InputFieldTwo
-                    id={QUALITY_ISSUE}
-                    as={TextAreaTwo}
-                    rows={3}
-                    label={c('Label').t`Could you please specify?`}
-                    error={validator(model.Reason === QUALITY_ISSUE ? [requiredValidator(model.ReasonDetails)] : [])}
-                    {...sharedReasonDetailsProps}
-                />
-            ),
-        },
-
-        {
-            forReason: STREAMING_SERVICE_UNSUPPORTED,
-            content: (
-                <InputFieldTwo
-                    id={STREAMING_SERVICE_UNSUPPORTED}
-                    as={TextAreaTwo}
-                    rows={3}
-                    label={c('Label').t`Could you please specify which streaming service?`}
                     error={validator(
-                        model.Reason === STREAMING_SERVICE_UNSUPPORTED ? [requiredValidator(model.ReasonDetails)] : []
+                        model.Reason === SUBSCRIPTION_CANCELLATION_REASONS.MISSING_FEATURE
+                            ? [requiredValidator(model.ReasonDetails)]
+                            : []
                     )}
                     {...sharedReasonDetailsProps}
                 />
@@ -224,15 +189,53 @@ const FeedbackDowngradeModal = ({
         },
 
         {
-            forReason: SWITCHING_TO_DIFFERENT_SERVICE,
+            forReason: SUBSCRIPTION_CANCELLATION_REASONS.QUALITY_ISSUE,
             content: (
                 <InputFieldTwo
-                    id={SWITCHING_TO_DIFFERENT_SERVICE}
+                    id={SUBSCRIPTION_CANCELLATION_REASONS.QUALITY_ISSUE}
+                    as={TextAreaTwo}
+                    rows={3}
+                    label={c('Label').t`Could you please specify?`}
+                    error={validator(
+                        model.Reason === SUBSCRIPTION_CANCELLATION_REASONS.QUALITY_ISSUE
+                            ? [requiredValidator(model.ReasonDetails)]
+                            : []
+                    )}
+                    {...sharedReasonDetailsProps}
+                />
+            ),
+        },
+
+        {
+            forReason: SUBSCRIPTION_CANCELLATION_REASONS.STREAMING_SERVICE_UNSUPPORTED,
+            content: (
+                <InputFieldTwo
+                    id={SUBSCRIPTION_CANCELLATION_REASONS.STREAMING_SERVICE_UNSUPPORTED}
+                    as={TextAreaTwo}
+                    rows={3}
+                    label={c('Label').t`Could you please specify which streaming service?`}
+                    error={validator(
+                        model.Reason === SUBSCRIPTION_CANCELLATION_REASONS.STREAMING_SERVICE_UNSUPPORTED
+                            ? [requiredValidator(model.ReasonDetails)]
+                            : []
+                    )}
+                    {...sharedReasonDetailsProps}
+                />
+            ),
+        },
+
+        {
+            forReason: SUBSCRIPTION_CANCELLATION_REASONS.SWITCHING_TO_DIFFERENT_SERVICE,
+            content: (
+                <InputFieldTwo
+                    id={SUBSCRIPTION_CANCELLATION_REASONS.SWITCHING_TO_DIFFERENT_SERVICE}
                     as={TextAreaTwo}
                     rows={3}
                     label={c('Label').t`Could you please let us know which provider?`}
                     error={validator(
-                        model.Reason === SWITCHING_TO_DIFFERENT_SERVICE ? [requiredValidator(model.ReasonDetails)] : []
+                        model.Reason === SUBSCRIPTION_CANCELLATION_REASONS.SWITCHING_TO_DIFFERENT_SERVICE
+                            ? [requiredValidator(model.ReasonDetails)]
+                            : []
                     )}
                     {...sharedReasonDetailsProps}
                 />
