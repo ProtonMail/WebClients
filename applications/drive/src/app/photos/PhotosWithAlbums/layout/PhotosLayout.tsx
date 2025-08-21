@@ -90,6 +90,8 @@ export const PhotosLayout = () => {
         isAlbumsLoading,
         isPhotosLoading,
         handleSelectTag,
+
+        initializePhotosView,
     } = photosView;
 
     const { currentPageType, previewLinkId, setPageType, setPreviewLinkId, setLayoutModals } = usePhotoLayoutStore(
@@ -632,6 +634,15 @@ export const PhotosLayout = () => {
             abortController.abort();
         };
     }, [pathname, setPageType, clearSelection, handleSelectTag]);
+
+    useEffect(() => {
+        const abortController = new AbortController();
+        void initializePhotosView(abortController.signal);
+
+        return () => {
+            abortController.abort();
+        };
+    }, [initializePhotosView]);
 
     if (!previewShareId || !uploadLinkId || !currentPageType || !shareId || !linkId) {
         return <Loader />;
