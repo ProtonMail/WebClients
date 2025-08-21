@@ -103,6 +103,13 @@ export const getOrganizationAppRoutes = ({
         // The org must be setup to allow users to access this page
         (hasOrganizationKey || hasOrganization);
 
+    const canShowDomainNamesSection =
+        // user.hasPaidMail is needed, because for example VPN B2B doesn't need domains by design
+        // NOTE: This configuration is tied with the mail/routes.tsx domains availability
+        (hasOrganizationKey && user.hasPaidMail) ||
+        // If the organization is not active (end of subscription without renewal), we allow users to access this page to delete domains
+        (!isOrgActive && (organization?.UsedDomains ?? 0) > 0);
+
     const canShowScribeSection = Boolean(
         isScribeEnabled &&
             // Some b2b accounts do not support scribe
@@ -175,9 +182,7 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Domain names`,
                 to: '/domain-names',
                 icon: 'globe',
-                // user.hasPaidMail is needed, because for example VPN B2B doesn't need domains by design
-                // NOTE: This configuration is tied with the mail/routes.tsx domains availability
-                available: hasOrganizationKey && user.hasPaidMail,
+                available: canShowDomainNamesSection,
                 subsections: [
                     { id: 'domains' },
                     {
