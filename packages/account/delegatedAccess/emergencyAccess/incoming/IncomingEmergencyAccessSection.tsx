@@ -9,18 +9,15 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
+import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import { IcHourglass } from '@proton/icons';
 import { SECOND } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ContactCell } from '../ContactCell';
-import {
-    getFormattedAccessibleAtDate,
-    getFormattedCreateTime,
-    getFormattedRemainingDays,
-    getFormattedTriggerDelay,
-} from '../date';
+import { getFormattedAccessibleAtDate, getFormattedRemainingDays, getFormattedTriggerDelay } from '../date';
 import { type IncomingController, useIncomingController } from './IncomingController';
 import { getMetaIncomingDelegatedAccess } from './helper';
 import type { MetaIncomingDelegatedAccess } from './interface';
@@ -78,7 +75,10 @@ const IncomingDelegatedAccessCell = ({
                         className="text-semibold mr-1 text-center"
                     >{c('emergency_access').t`Access requested`}</Pill>
                 </Tooltip>
-                <span title={tooltip}>{getFormattedRemainingDays(accessibleAtTimeDiff)}</span>
+                <span title={tooltip} className="inline-flex items-center">
+                    <IcHourglass className="color-weak shrink-0 mr-1" />
+                    {getFormattedRemainingDays(accessibleAtTimeDiff)}
+                </span>
             </div>
         );
     }
@@ -126,12 +126,9 @@ const IncomingItem = ({
     return (
         <TableRow labels={labels}>
             <TableCell>
-                <ContactCell {...contact} />
+                <ContactCell {...contact} createdAtDate={createdAtDate} />
             </TableCell>
-            <TableCell>
-                <time>{getFormattedCreateTime(createdAtDate)}</time>
-            </TableCell>
-            <TableCell>
+            <TableCell label={c('emergency_access').t`Wait time for access`}>
                 <div>{getFormattedTriggerDelay(accessibleTriggerDelayMs)}</div>
             </TableCell>
             <TableCell>
@@ -166,13 +163,12 @@ const IncomingTable = ({
     const now = Date.now();
 
     const headerCells = [
-        { title: c('Title').t`Name`, className: 'w-1/4' },
-        { title: c('Title').t`Added on` },
+        { title: c('Title').t`Name`, className: 'w-1/3' },
         {
             title: c('emergency_access').t`Wait time`,
             info: c('emergency_access').t`Time required before automatically granting them access`,
         },
-        { title: c('Title').t`Status`, className: 'w-1/4' },
+        { title: c('Title').t`Status`, className: 'w-1/3' },
         { title: '' },
     ];
 
@@ -183,12 +179,12 @@ const IncomingTable = ({
             <TableHeader>
                 <TableRow>
                     {headerCells.map(({ title, info, className }) => (
-                        <TableCell key={title} type="header" className={className}>
+                        <TableHeaderCell key={title} className={className}>
                             <div className="flex items-center flex-nowrap">
                                 {title}
                                 {info && <Info className="ml-2 shrink-0" title={info} />}
                             </div>
-                        </TableCell>
+                        </TableHeaderCell>
                     ))}
                 </TableRow>
             </TableHeader>
