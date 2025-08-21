@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
+import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import generateUID from '@proton/utils/generateUID';
 
 import LogoBase, { type LogoProps } from './LogoBase';
@@ -28,7 +28,7 @@ const WalletLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: Log
             uid={uid}
             logoWidth={logoWidth}
             logoHeight={logoHeight}
-            title={hasTitle ? WALLET_APP_NAME : undefined}
+            title={hasTitle ? MEET_APP_NAME : undefined}
             variant={variant}
             {...rest}
         >
