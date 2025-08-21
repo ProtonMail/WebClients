@@ -5823,37 +5823,37 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@livekit/components-core@npm:0.12.4":
-  version: 0.12.4
-  resolution: "@livekit/components-core@npm:0.12.4"
+"@livekit/components-core@npm:0.12.9":
+  version: 0.12.9
+  resolution: "@livekit/components-core@npm:0.12.9"
   dependencies:
     "@floating-ui/dom": "npm:1.6.13"
     loglevel: "npm:1.9.1"
     rxjs: "npm:7.8.2"
   peerDependencies:
-    livekit-client: ^2.11.1
+    livekit-client: ^2.13.3
     tslib: ^2.6.2
-  checksum: 10c0/b5b6978aba408d9fbfec92f836234d15876727f30485b334351718e3eeb97c3f8378a42b8593e1207ac3b2c15e087515930efc5c5375c8bf3c60b23df5a6a9f9
+  checksum: 10c0/2db0b703cf7f069f925f61cf481d2308d660676abc5174ea25c19c7d8d4e305e9bb052952de6cdbe48e557b869ea4a817270a67ba8f614959254771c1ffa0b57
   languageName: node
   linkType: hard
 
-"@livekit/components-react@npm:^2.9.3":
-  version: 2.9.3
-  resolution: "@livekit/components-react@npm:2.9.3"
+"@livekit/components-react@npm:^2.9.14":
+  version: 2.9.14
+  resolution: "@livekit/components-react@npm:2.9.14"
   dependencies:
-    "@livekit/components-core": "npm:0.12.4"
+    "@livekit/components-core": "npm:0.12.9"
     clsx: "npm:2.1.1"
     usehooks-ts: "npm:3.1.1"
   peerDependencies:
-    "@livekit/krisp-noise-filter": ^0.2.12
-    livekit-client: ^2.11.1
+    "@livekit/krisp-noise-filter": ^0.2.12 || ^0.3.0
+    livekit-client: ^2.13.3
     react: ">=18"
     react-dom: ">=18"
     tslib: ^2.6.2
   peerDependenciesMeta:
     "@livekit/krisp-noise-filter":
       optional: true
-  checksum: 10c0/6fb19b1b42d12bdf5f27449770ccdac869973750276e5620180366344426c698c239189c717c1411d4e7254b68e9ff3751373acbb0ef612e1901f1c5b9823691
+  checksum: 10c0/ceee1311332f59e06690933e453d25051241d607b0d627bc8e31100f66b4dc9a22f9acb3468192585517b3d3b81a4224eeeb39bb15132d4b74b0181c9d709ff6
   languageName: node
   linkType: hard
 
@@ -8234,12 +8234,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@proton-meet/livekit-client@npm:2.15.4, livekit-client@npm:@proton-meet/livekit-client@2.15.4":
-  version: 2.15.4
-  resolution: "@proton-meet/livekit-client@npm:2.15.4"
+"@proton-meet/livekit-client@npm:2.15.8, livekit-client@npm:@proton-meet/livekit-client@2.15.8":
+  version: 2.15.8
+  resolution: "@proton-meet/livekit-client@npm:2.15.8"
   dependencies:
     "@livekit/mutex": "npm:1.1.1"
     "@livekit/protocol": "npm:1.39.3"
+    "@timephy/rnnoise-wasm": "npm:^1.0.0"
     events: "npm:^3.3.0"
     loglevel: "npm:^1.9.2"
     sdp-transform: "npm:^2.15.0"
@@ -8249,7 +8250,7 @@ __metadata:
     webrtc-adapter: "npm:^9.0.1"
   peerDependencies:
     "@types/dom-mediacapture-record": ^1
-  checksum: 10c0/3bb73cd82b24a1c94ae106dba326a5523c2162f5d58681e98f5ac2e07738760acfca08b6dca8ff4fd15dbdd0dda604b63d203e9c0ae75ed4d049de6c985ffd86
+  checksum: 10c0/ff9342d40b05e5fd1248ab536d49fa2937a88ee9b049fedcb4fe6a83ed90e953f7e70f7832f387f761437ca1ffaf5a5d92e885ea5da87b7379dc73ff59b3261c
   languageName: node
   linkType: hard
 
@@ -13269,6 +13270,13 @@ __metadata:
   peerDependencies:
     "@testing-library/dom": ">=7.21.4"
   checksum: 10c0/75fea130a52bf320d35d46ed54f3eec77e71a56911b8b69a3fe29497b0b9947b2dc80d30f04054ad4ce7f577856ae3e5397ea7dff0ef14944d3909784c7a93fe
+  languageName: node
+  linkType: hard
+
+"@timephy/rnnoise-wasm@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@timephy/rnnoise-wasm@npm:1.0.0"
+  checksum: 10c0/d8115410ae4960d875b92552928ebdaf5670a75e0f3b80e3355bd7fefee261219bc7e91861b0866bd00bd3395fa2c437f46a320b87fad2a7d19679070d8e72c3
   languageName: node
   linkType: hard
 
@@ -37654,8 +37662,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-meet@workspace:applications/meet"
   dependencies:
-    "@livekit/components-react": "npm:^2.9.3"
-    "@proton-meet/livekit-client": "npm:2.15.4"
+    "@livekit/components-react": "npm:^2.9.14"
+    "@proton-meet/livekit-client": "npm:2.15.8"
     "@proton-meet/proton-meet-core": "npm:0.1.9"
     "@proton/components": "workspace:packages/components"
     "@proton/cross-storage": "workspace:packages/cross-storage"
@@ -37682,7 +37690,7 @@ __metadata:
     cross-env: "npm:^7.0.3"
     eslint: "npm:^8.57.1"
     happy-dom: "npm:^17.4.6"
-    livekit-client: "npm:@proton-meet/livekit-client@2.15.4"
+    livekit-client: "npm:@proton-meet/livekit-client@2.15.8"
     prettier: "npm:^3.5.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
