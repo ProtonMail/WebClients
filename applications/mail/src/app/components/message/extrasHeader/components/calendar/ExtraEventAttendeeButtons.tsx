@@ -29,8 +29,6 @@ import type { InvitationModel } from '../../../../../helpers/calendar/invite';
 import { UPDATE_ACTION, getDisableButtons } from '../../../../../helpers/calendar/invite';
 import useInviteButtons from '../../../../../hooks/useInviteButtons';
 
-const { EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR } = INVITATION_ERROR_TYPE;
-
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
     setModel: Dispatch<SetStateAction<InvitationModel>>;
@@ -225,10 +223,13 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message, reloadWidget }: P
         reinviteEventID,
     });
 
-    if (error && [EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR].includes(error.type)) {
+    if (
+        error &&
+        [INVITATION_ERROR_TYPE.EVENT_CREATION_ERROR, INVITATION_ERROR_TYPE.EVENT_UPDATE_ERROR].includes(error.type)
+    ) {
         const { partstat, timestamp, isProtonInvite } = error;
         const { retryCreateEvent, retryUpdateEvent } = actions;
-        const isUpdate = error.type === EVENT_UPDATE_ERROR;
+        const isUpdate = error.type === INVITATION_ERROR_TYPE.EVENT_UPDATE_ERROR;
         const message = getICSErrorMessage({
             errorType: error.type,
             config: { ...error },

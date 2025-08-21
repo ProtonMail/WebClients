@@ -12,8 +12,6 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 import { elementsAreUnread as elementsAreUnreadSelector } from '../../store/elements/elementsSelectors';
 import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 
-const { READ, UNREAD } = MARK_AS_STATUS;
-
 interface Props {
     selectedIDs: string[];
     onMarkAs: (status: MARK_AS_STATUS, sourceAction: SOURCE_ACTION) => Promise<void>;
@@ -60,7 +58,7 @@ const ReadUnreadButtons = ({ selectedIDs, onMarkAs }: Props) => {
                     key="read"
                     title={titleRead}
                     disabled={!selectedIDs.length}
-                    onClick={() => onMarkAs(READ, SOURCE_ACTION.TOOLBAR)}
+                    onClick={() => onMarkAs(MARK_AS_STATUS.READ, SOURCE_ACTION.TOOLBAR)}
                     data-testid="toolbar:read"
                     icon={<Icon name="envelope-open" alt={c('Action').t`Mark as read`} />}
                 />
@@ -69,7 +67,7 @@ const ReadUnreadButtons = ({ selectedIDs, onMarkAs }: Props) => {
                     key="unread"
                     title={titleUnread}
                     disabled={!selectedIDs.length}
-                    onClick={() => onMarkAs(UNREAD, SOURCE_ACTION.TOOLBAR)}
+                    onClick={() => onMarkAs(MARK_AS_STATUS.UNREAD, SOURCE_ACTION.TOOLBAR)}
                     data-testid="toolbar:unread"
                     icon={<Icon name="envelope-dot" alt={c('Action').t`Mark as unread`} />}
                 />

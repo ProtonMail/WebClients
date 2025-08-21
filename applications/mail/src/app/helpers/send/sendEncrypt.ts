@@ -21,8 +21,6 @@ interface AttachmentKeys {
     SessionKey: SessionKey;
 }
 
-const { SEND_CLEAR, SEND_EO, SEND_CLEAR_MIME } = PACKAGE_TYPE;
-
 const packToBase64 = ({ data, algorithm: Algorithm = AES256 }: SessionKey) => {
     return { Key: arrayToBase64(data), Algorithm };
 };
@@ -222,7 +220,7 @@ const encryptBody = async (pack: Package, messageKeys: PublicPrivateKey, message
 
     await Promise.all(
         addresses.map(async (subPack) => {
-            if (subPack.Type !== SEND_EO) {
+            if (subPack.Type !== PACKAGE_TYPE.SEND_EO) {
                 return;
             }
             const [BodyKeyPacket] = await encryptKeyPacket({
@@ -235,7 +233,7 @@ const encryptBody = async (pack: Package, messageKeys: PublicPrivateKey, message
         })
     );
 
-    if ((pack.Type || 0) & (SEND_CLEAR | SEND_CLEAR_MIME)) {
+    if ((pack.Type || 0) & (PACKAGE_TYPE.SEND_CLEAR | PACKAGE_TYPE.SEND_CLEAR_MIME)) {
         // eslint-disable-next-line require-atomic-updates
         pack.BodyKey = packToBase64(sessionKey);
     }

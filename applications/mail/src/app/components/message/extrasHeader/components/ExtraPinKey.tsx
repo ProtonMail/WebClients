@@ -25,8 +25,6 @@ import { getContactEmail } from '../../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../../hooks/contact/useContacts';
 import TrustPublicKeyModal from '../../modals/TrustPublicKeyModal';
 
-const { NOT_VERIFIED, SIGNED_AND_INVALID } = MAIL_VERIFICATION_STATUS;
-
 enum PROMPT_KEY_PINNING_TYPE {
     AUTOPROMPT = 1,
     PIN_UNSEEN,
@@ -66,7 +64,10 @@ const getPromptKeyPinningType = ({
     const isAttachedKeyPinned =
         firstAttachedPublicKey && senderPinnedKeys.some((key) => firstAttachedPublicKey.equals(key));
 
-    if (verificationStatus === SIGNED_AND_INVALID || verificationStatus === NOT_VERIFIED) {
+    if (
+        verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID ||
+        verificationStatus === MAIL_VERIFICATION_STATUS.NOT_VERIFIED
+    ) {
         if (!signingPublicKey) {
             if (firstAttachedPublicKey) {
                 return PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED;

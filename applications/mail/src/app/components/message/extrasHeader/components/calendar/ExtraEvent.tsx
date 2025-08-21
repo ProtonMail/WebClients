@@ -45,9 +45,10 @@ import useCalendarWidgetDrawerEvents from './useCalendarWidgetDrawerEvents';
 
 import './CalendarWidget.scss';
 
-const { EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR } = INVITATION_ERROR_TYPE;
-
-const noErrorBannerSet = new Set([EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR]);
+const noErrorBannerSet = new Set([
+    INVITATION_ERROR_TYPE.EVENT_CREATION_ERROR,
+    INVITATION_ERROR_TYPE.EVENT_UPDATE_ERROR,
+]);
 
 interface Props {
     message: MessageStateWithData;

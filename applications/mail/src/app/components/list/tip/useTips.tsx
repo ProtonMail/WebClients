@@ -49,8 +49,6 @@ const suggestedFolderName = 'Receipts';
 const suggestedLabelName = 'To pay';
 const suggestedPaidLabelName = 'Paid';
 
-const { vpn, drive, pass } = MAIL_UPSELL_BANNERS_OPTIONS_URLS;
-
 const TIP_HIDDEN = -1 as const;
 
 const useTips = () => {
@@ -255,7 +253,7 @@ const useTips = () => {
                 // translator: Open Proton Drive
                 cta: (
                     <Href
-                        href={drive}
+                        href={MAIL_UPSELL_BANNERS_OPTIONS_URLS.drive}
                         className="link align-baseline"
                         tabIndex={0}
                         onClick={() => sendCTAButtonClickedReport(TipActionType.OpenProtonDrive)}
@@ -273,7 +271,7 @@ const useTips = () => {
                 // translator: Open Proton Pass
                 cta: (
                     <Href
-                        href={pass}
+                        href={MAIL_UPSELL_BANNERS_OPTIONS_URLS.pass}
                         className="link align-baseline"
                         tabIndex={0}
                         onClick={() => sendCTAButtonClickedReport(TipActionType.OpenProtonPass)}
@@ -291,7 +289,7 @@ const useTips = () => {
                 // translator: Download Proton VPN
                 cta: (
                     <Href
-                        href={vpn}
+                        href={MAIL_UPSELL_BANNERS_OPTIONS_URLS.vpn}
                         className="link align-baseline"
                         tabIndex={0}
                         onClick={() => sendCTAButtonClickedReport(TipActionType.DownloadProtonVPN)}
