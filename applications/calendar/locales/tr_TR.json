@@ -420,7 +420,7 @@
         "Saat dilimlerini gizle"
       ],
       "Image could not be loaded with tracker protection.": [
-        "Görsel izleyici koruması nedeniyle yüklenemedi."
+        "Görsel, etkinlik izleyici koruması tarafından yüklenmedi."
       ],
       "Image will be loaded without a proxy": [
         "Görsel bir vekil sunucu kullanılmadan yüklenecek"
@@ -1319,7 +1319,7 @@
         "Reklam engelleyici ve kötü amaçlı yazılım koruması"
       ],
       "Admin panel to manage your family": [
-        "Ailenizi yönetmek için yönetici panosu"
+        "Ailenizi yönetmek için yönetim panosu"
       ],
       "Advanced account protection": [
         "Gelişmiş hesap koruması"
@@ -1331,7 +1331,7 @@
         "Yüksek hızda yayın akışı izleme"
       ],
       "One-time payment, lifetime deal": [
-        "Bir kez öde, ömür boyu kullanım fırsatı"
+        "Bir kez ödeyip ömür boyu kullanma fırsatı"
       ],
       "Online document editor": [
         "Çevrim içi belge düzenleyici"
@@ -3071,7 +3071,7 @@
         "Birleştirmek veya tutmak istemediğiniz kişileri silinmek üzere işaretleyebilirsiniz. Silme işlemi yalnızca birleştirme düğmesine tıkladıktan sonra yapılır"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
-        "Hesap ve veri kurtarma yöntemleriniz ayarlandı ve iki adımlı doğrulama kullanıma alındı."
+        "Hesap ve veri kurtarma yöntemleriniz ayarlandı ve iki adımlı doğrulama açıldı."
       ],
       "Your account and data recovery methods are set.": [
         "Hesabınızı ve verilerinizi kurtarma yöntemleri ayarlandı."
@@ -3245,10 +3245,10 @@
         "NOT:"
       ],
       "This event occurrence was canceled.": [
-        "Bu etkinlik kopyası iptal edildi."
+        "Bu etkinlik yinelemesi iptal edildi."
       ],
       "This event occurrence was updated.": [
-        "Bu etkinlik kopyası güncellendi."
+        "Bu etkinlik yinelemesi güncellendi."
       ],
       "This event was updated.": [
         "Bu etkinlik güncellendi."
@@ -3789,7 +3789,7 @@
         "VPN panosu yüklenemedi. Lütfen bağlantınızı denetleyip yeniden deneyin."
       ],
       "Unexpected error, we can't import the contacts": [
-        "Beklenmeyen bir sorun çıktı. Kişileri içe aktaramadık"
+        "Beklenmeyen bir sorun çıktı. Kişiler içe aktarılamadı"
       ],
       "Unknown error": [
         "Bilinmeyen sorun"
@@ -5008,7 +5008,7 @@
         "Faturalama dönemi: ${ text }"
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha kararlı bir çevrim içi deneyim sağlayın."
+        "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha tutarlı bir çevrim içi deneyim sunun."
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "İletilerinizi, kişilerinizi ve takvimlerinizi ${ BRAND_NAME } üzerine alın."
@@ -6697,6 +6697,9 @@
       "URL": [
         "İnternet adresi"
       ],
+      "Username": [
+        "Kullanıcı adı"
+      ],
       "VAT": [
         "KDV"
       ],
@@ -7811,7 +7814,7 @@
         "Beğenilen"
       ],
       "Protect sensitive business information and collaborate securely.": [
-        "Önemli iş bilgilerinizi koruyun ve güvende kalarak işbirliği yapın."
+        "Önemli kurumsal bilgilerinizi koruyun ve güvende kalarak iş birliği yapın."
       ],
       "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
         "Ailenizi 6 kullanıcıya kadar tüm ücretli ${ plusTitle } özellikleriyle koruyun."
@@ -8010,7 +8013,7 @@
         "Ailenizi zararlı sitelerden koruyun ve sevdiğiniz yayın akışlarını izlemek için yüksek hızlı VPN sunucularımıza erişin"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
-        "Takma adlarla (e-postaları asıl gelen kutunuza ileten, rastgele oluşturulmuş bir e-posta adresi) gerçek e-posta adresinizin açığa çıkmasını veya sızdırılmasını engelleyin."
+        "Takma adlar (e-postaları asıl gelen kutunuza ileten, rastgele oluşturulmuş bir e-posta adresi) kullanarak gerçek e-posta adresinizin açığa çıkmasını veya sızdırılmasını engelleyin."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "En yüksek düzeyde hesap güvenliği koruması ve uzman desteği sağlar"
@@ -8177,7 +8180,7 @@
         "Görüşme kimliği panoya kopyalandı"
       ],
       "Passcode copied to clipboard": [
-        "Geçiş kodu panoya kopyalandı"
+        "Parola panoya kopyalandı"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8429,7 +8432,7 @@
         "Gelişmiş tehdit koruması"
       ],
       "Collaborate with non-${ BRAND_NAME } users": [
-        "${ BRAND_NAME } dışı kullanıcılarla işbirliği yapın"
+        "${ BRAND_NAME } dışı kullanıcılarla iş birliği yapın"
       ],
       "Custom email domain": [
         "Özel e-posta etki alanı"
@@ -9360,7 +9363,7 @@
         "Parolanızı sıfırlamaya çalışan kişinin gerçekten siz olduğunuzu doğrulamak için istekleri onaylamadan önce 72 saat bekleriz. Parolanızı ${ boldTimeLeft } içinde değiştirebilirsiniz. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
-        "${ boldEmail } için bir parola sıfırlama isteğinde bulunuldu."
+        "${ boldEmail } için parola sıfırlama isteğinde bulunuldu."
       ]
     },
     "session_recovery:in_progress:link": {
@@ -9627,7 +9630,7 @@
         "1 ay için ${ amount } olarak faturalanır"
       ],
       "Billed at ${ amount } for 12 months": [
-        "12 aylık ${ amount } olarak faturalanır"
+        "12 ay için ${ amount } olarak faturalanır"
       ],
       "Billed at ${ amount } for 15 months": [
         "15 ay için ${ amount } olarak faturalanır"
@@ -9902,7 +9905,7 @@
         "Anladım"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
-        "Apple App Store hesabınızda oturum açın, ardından ${ subscriptions } seçin."
+        "Apple App Store hesabınızda oturum açın ve ardından ${ subscriptions } seçin."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Play Store hesabınızda oturum açın, ardından ${ subscriptions } üzerine dokunun."
@@ -11329,7 +11332,7 @@
         "Görsel yükle"
       ],
       "Not all information listed here was exposed for all users.": [
-        "Burada listelenen tüm bilgiler tüm kullanıcılara görüntülenmemiştir."
+        "Burada listelenen tüm bilgiler tüm kullanıcılara görüntülenmez."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
