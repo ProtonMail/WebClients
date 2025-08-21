@@ -34,8 +34,6 @@ import {
 import { isConversationMode } from './mailSettings';
 import { getSnoozeDate } from './snooze';
 
-const { INBOX, TRASH, SPAM, SENT, DRAFTS, ARCHIVE, SCHEDULED, SNOOZED } = MAILBOX_LABEL_IDS;
-
 export interface TypeParams {
     labelID?: string;
     mailSettings: any;
@@ -186,14 +184,14 @@ export const hasAttachmentsFilter = (filter?: Filter) => filter?.Attachments ===
 export const getCurrentFolderIDs = (element: Element | undefined, customFoldersList: Folder[]): string[] => {
     const labelIDs = getLabelIDs(element, undefined);
     const standardFolders: { [labelID: string]: boolean } = {
-        [INBOX]: true,
-        [TRASH]: true,
-        [SPAM]: true,
-        [SENT]: true,
-        [DRAFTS]: true,
-        [ARCHIVE]: true,
-        [SCHEDULED]: true,
-        [SNOOZED]: true,
+        [MAILBOX_LABEL_IDS.INBOX]: true,
+        [MAILBOX_LABEL_IDS.TRASH]: true,
+        [MAILBOX_LABEL_IDS.SPAM]: true,
+        [MAILBOX_LABEL_IDS.SENT]: true,
+        [MAILBOX_LABEL_IDS.DRAFTS]: true,
+        [MAILBOX_LABEL_IDS.ARCHIVE]: true,
+        [MAILBOX_LABEL_IDS.SCHEDULED]: true,
+        [MAILBOX_LABEL_IDS.SNOOZED]: true,
     };
     const customFolders = toMap(customFoldersList, 'ID');
     return Object.keys(labelIDs).filter((labelID) => standardFolders[labelID] || customFolders[labelID]) || '';

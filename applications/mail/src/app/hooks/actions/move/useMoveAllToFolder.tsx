@@ -31,8 +31,6 @@ import { elementsMap as elementsMapSelector } from 'proton-mail/store/elements/e
 import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 import { layoutActions } from 'proton-mail/store/layout/layoutSlice';
 
-const { INBOX } = MAILBOX_LABEL_IDS;
-
 export enum MoveAllType {
     moveAll,
     selectAll,
@@ -111,7 +109,7 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
                 isMove: true,
                 unreadStatuses: [],
                 // We need to pass a "real" folder to perform optimistic on custom labels
-                currentLabelID: isCustomLabel(sourceLabelID, labels) ? INBOX : sourceLabelID,
+                currentLabelID: isCustomLabel(sourceLabelID, labels) ? MAILBOX_LABEL_IDS.INBOX : sourceLabelID,
             });
         }
 

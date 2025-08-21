@@ -9,8 +9,6 @@ import { getCurrentFolders, getStandardFolders } from '../../helpers/labels';
 import type { Element } from '../../models/element';
 import ItemIcon from './ItemIcon';
 
-const { ALL_SENT, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
-
 interface Props {
     element: Element | undefined;
     labelID: string;
@@ -34,10 +32,13 @@ const ItemLocation = ({
 
     // At some places, we want to display all icons except the current location for some folders (all sent and all drafts)
     if (!ignoreIconFilter) {
-        const labelsWithoutIcons: string[] = [ALL_SENT, ALL_DRAFTS];
+        const labelsWithoutIcons: string[] = [MAILBOX_LABEL_IDS.ALL_SENT, MAILBOX_LABEL_IDS.ALL_DRAFTS];
         if (labelsWithoutIcons.includes(labelID)) {
             const STANDARD_FOLDERS = getStandardFolders();
-            const labelsWithoutIconsToI18N = [STANDARD_FOLDERS[ALL_SENT].name, STANDARD_FOLDERS[ALL_DRAFTS].name];
+            const labelsWithoutIconsToI18N = [
+                STANDARD_FOLDERS[MAILBOX_LABEL_IDS.ALL_SENT].name,
+                STANDARD_FOLDERS[MAILBOX_LABEL_IDS.ALL_DRAFTS].name,
+            ];
             infos = infos.filter((info) => !labelsWithoutIconsToI18N.includes(info.name));
         }
     }
