@@ -30,7 +30,6 @@ export interface MessageOption {
 }
 
 const linkClasses = 'text-bold link align-baseline';
-const { plansSelection, vpn, protonBusiness, drive, securityAndPrivacy } = MAIL_UPSELL_BANNERS_OPTIONS_URLS;
 
 const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: Props) => {
     const theme = useTheme();
@@ -48,7 +47,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 text: c('Info').t`Upgrade to send email from @pm.me addresses.`,
                 cta: (
                     <MailUpsellOptionCTA
-                        url={plansSelection}
+                        url={MAIL_UPSELL_BANNERS_OPTIONS_URLS.plansSelection}
                         optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.SEND_FROM_PM_ADDRESS}
                     />
                 ),
@@ -58,7 +57,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 text: c('Info').t`Upgrade to create more folders, filters, and addresses.`,
                 cta: (
                     <MailUpsellOptionCTA
-                        url={plansSelection}
+                        url={MAIL_UPSELL_BANNERS_OPTIONS_URLS.plansSelection}
                         optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.GET_MORE_FOLDERS_FILTERS_AND_ADDRESSES}
                     />
                 ),
@@ -68,7 +67,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 text: c('Info').t`Upgrade to use auto-reply when you're away.`,
                 cta: (
                     <MailUpsellOptionCTA
-                        url={plansSelection}
+                        url={MAIL_UPSELL_BANNERS_OPTIONS_URLS.plansSelection}
                         optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.AUTO_REPLY}
                     />
                 ),
@@ -78,7 +77,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 text: c('Info').t`Upgrade to use ${MAIL_APP_NAME} with Apple Mail, Outlook or Thunderbird.`,
                 cta: (
                     <MailUpsellOptionCTA
-                        url={plansSelection}
+                        url={MAIL_UPSELL_BANNERS_OPTIONS_URLS.plansSelection}
                         optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.THIRD_PARTY_CLIENTS}
                     />
                 ),
@@ -88,7 +87,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 text: c('Info').t`Upgrade to support privacy and get more features.`,
                 cta: (
                     <MailUpsellOptionCTA
-                        url={plansSelection}
+                        url={MAIL_UPSELL_BANNERS_OPTIONS_URLS.plansSelection}
                         optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.GET_MORE_FEATURES}
                     />
                 ),
@@ -116,7 +115,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 text: c('Info').t`Upgrade to send emails from your custom email domain.`,
                 cta: (
                     <MailUpsellOptionCTA
-                        url={plansSelection}
+                        url={MAIL_UPSELL_BANNERS_OPTIONS_URLS.plansSelection}
                         optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.HOST_EMAILS_FROM_YOUR_DOMAINS}
                     />
                 ),
@@ -126,7 +125,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 text: c('Info').t`${MAIL_APP_NAME} can protect your business as well.`,
                 cta: (
                     <MailUpsellOptionCTA
-                        url={protonBusiness}
+                        url={MAIL_UPSELL_BANNERS_OPTIONS_URLS.plansSelection}
                         optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.PROTECT_YOUR_BUSINESS}
                     />
                 ),
@@ -136,7 +135,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 text: c('Info').t`Upgrade to add more addresses to your account.`,
                 cta: (
                     <MailUpsellOptionCTA
-                        url={plansSelection}
+                        url={MAIL_UPSELL_BANNERS_OPTIONS_URLS.plansSelection}
                         optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.ADD_MORE_ADDRESSES}
                     />
                 ),
@@ -146,7 +145,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 text: c('Info').t`Upgrade to send emails to contact groups easily.`,
                 cta: (
                     <MailUpsellOptionCTA
-                        url={plansSelection}
+                        url={MAIL_UPSELL_BANNERS_OPTIONS_URLS.plansSelection}
                         optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.CONTACT_GROUPS}
                     />
                 ),
@@ -156,7 +155,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 text: c('Info').t`Upgrade to support a privacy-first internet.`,
                 cta: (
                     <MailUpsellOptionCTA
-                        url={plansSelection}
+                        url={MAIL_UPSELL_BANNERS_OPTIONS_URLS.plansSelection}
                         optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.PRIVACY_FIRST_INTERNET}
                     />
                 ),
@@ -166,7 +165,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 text: c('Info').t`Upgrade to support our mission of privacy for all.`,
                 cta: (
                     <MailUpsellOptionCTA
-                        url={plansSelection}
+                        url={MAIL_UPSELL_BANNERS_OPTIONS_URLS.plansSelection}
                         optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.PRIVACY_FOR_ALL}
                     />
                 ),
@@ -175,7 +174,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 id: 19,
                 text: c('Info').t`Secure your files with encrypted cloud storage for free, today.`,
                 cta: (
-                    <Href href={drive} className={linkClasses} tabIndex={0}>
+                    <Href href={MAIL_UPSELL_BANNERS_OPTIONS_URLS.drive} className={linkClasses} tabIndex={0}>
                         {callToActionTexts.learnMore}
                     </Href>
                 ),
@@ -184,7 +183,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 id: 20,
                 text: c('Info').t`You can use ${VPN_APP_NAME} for free, today.`,
                 cta: (
-                    <Href href={vpn} className={linkClasses} tabIndex={0}>
+                    <Href href={MAIL_UPSELL_BANNERS_OPTIONS_URLS.vpn} className={linkClasses} tabIndex={0}>
                         {callToActionTexts.learnMore}
                     </Href>
                 ),
@@ -194,7 +193,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 text: c('Info').t`Upgrade to unlock premium features.`,
                 cta: (
                     <MailUpsellOptionCTA
-                        url={plansSelection}
+                        url={MAIL_UPSELL_BANNERS_OPTIONS_URLS.plansSelection}
                         optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.PREMIUM_FEATURES}
                     />
                 ),
@@ -204,7 +203,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 text: c('Info').t`Upgrade to level up your privacy.`,
                 cta: (
                     <MailUpsellOptionCTA
-                        url={plansSelection}
+                        url={MAIL_UPSELL_BANNERS_OPTIONS_URLS.plansSelection}
                         optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.LVL_UP_PRIVACY}
                     />
                 ),
@@ -216,7 +215,7 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                     .t`Join ${PROTON_SENTINEL_NAME} program for our highest level of account security and support.`,
                 cta: (
                     <MailUpsellOptionCTA
-                        url={securityAndPrivacy}
+                        url={MAIL_UPSELL_BANNERS_OPTIONS_URLS.securityAndPrivacy}
                         optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.PROTON_SENTINEL}
                     />
                 ),

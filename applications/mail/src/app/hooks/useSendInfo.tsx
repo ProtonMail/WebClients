@@ -29,8 +29,6 @@ import { STATUS_ICONS_FILLS } from '../models/crypto';
 import type { ContactsMap } from '../store/contacts/contactsTypes';
 import { useContactsMap } from './contact/useContacts';
 
-const { PRIMARY_NOT_PINNED, CONTACT_SIGNATURE_NOT_VERIFIED } = ENCRYPTION_PREFERENCES_ERROR_TYPES;
-
 const getSignText = (n: number, contactNames: string, contactAddresses: string) => {
     return c('Info').ngettext(
         msgid`The verification of ${contactNames} has failed: the contact is not signed correctly.
@@ -134,7 +132,7 @@ export const useUpdateRecipientSendInfo = (
             });
             const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
 
-            if (sendPreferences.error?.type === CONTACT_SIGNATURE_NOT_VERIFIED) {
+            if (sendPreferences.error?.type === ENCRYPTION_PREFERENCES_ERROR_TYPES.CONTACT_SIGNATURE_NOT_VERIFIED) {
                 if (!recipient.ContactID) {
                     return;
                 }
@@ -156,7 +154,7 @@ export const useUpdateRecipientSendInfo = (
                 return updateRecipientIcon();
             }
 
-            if (sendPreferences.error?.type === PRIMARY_NOT_PINNED) {
+            if (sendPreferences.error?.type === ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_NOT_PINNED) {
                 if (!recipient.ContactID) {
                     return;
                 }
@@ -326,7 +324,9 @@ export const useUpdateGroupSendInfo = (
             const results = await processApiRequestsSafe(requests, 100, 10 * 1000);
             const contactsResign = results
                 .filter(isTruthy)
-                .filter(({ error: { type } }) => type === CONTACT_SIGNATURE_NOT_VERIFIED)
+                .filter(
+                    ({ error: { type } }) => type === ENCRYPTION_PREFERENCES_ERROR_TYPES.CONTACT_SIGNATURE_NOT_VERIFIED
+                )
                 .map(({ contact }) => contact);
             const totalContactsResign = contactsResign.length;
             if (totalContactsResign) {
@@ -348,7 +348,7 @@ export const useUpdateGroupSendInfo = (
             }
             const contactsKeyPinning = results
                 .filter(isTruthy)
-                .filter(({ error: { type } }) => type === PRIMARY_NOT_PINNED)
+                .filter(({ error: { type } }) => type === ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_NOT_PINNED)
                 .map(({ contact }) => contact);
             if (contactsKeyPinning.length) {
                 await handleShowAskForKeyPinningModal({
