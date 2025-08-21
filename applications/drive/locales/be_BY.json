@@ -168,6 +168,9 @@
       "Choose a file or drag it here": [
         "Выберыце файл або перацягніце яго сюды"
       ],
+      "Claim this address": [
+        "Атрымаць гэты адрас"
+      ],
       "Clear": [
         "Ачысціць"
       ],
@@ -238,7 +241,7 @@
         "Працягнуць імпартаванне"
       ],
       "Continue on web": [
-        "Працягнуць на вэб"
+        "Працягнуць у вэб-праграме"
       ],
       "Continue transfers": [
         "Працягнуць перадачы"
@@ -479,6 +482,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Атрымаць ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Атрымайце бясплатны адрас ${ BRAND_NAME }"
       ],
       "Get in touch": [
         "Звязацца з намі"
@@ -3209,6 +3215,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Сума ніжэй за мінімум (${ minimumAmount })."
       ],
+      "An error occurred": [
+        "Адбылася памылка"
+      ],
       "An error occurred while loading alias options": [
         "Падчас загрузкі параметраў псеўданіма адбылася памылка"
       ],
@@ -3273,7 +3282,7 @@
         "Назва прылады не супадае"
       ],
       "Diagnostics failed": [
-        "Дыягностыка не атрымалася"
+        "Збой дыягностыкі"
       ],
       "Domain not available, try again later": [
         "Дамен недаступны. Паспрабуйце яшчэ раз"
@@ -3682,6 +3691,9 @@
       ],
       "Unknown location": [
         "Невядомае размяшчэнне"
+      ],
+      "Unknown number of downloads": [
+        "Невядомая колькасць спамповак"
       ],
       "Unknown payment token status": [
         "Невядомы статус плацежнага токена"
@@ -4696,6 +4708,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Тэхналогія шыфравання ${ BRAND_NAME } азначае, што ніхто не зможа атрымаць доступ да вашага пароля - нават мы."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } патрабуе адрас ${ BRAND_NAME } для бяспечнай сінхранізацыі падзей і шыфравання. ${ claimAddressButton }"
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } патрабуе адрас ${ BRAND_NAME } для бяспечнай сінхранізацыі падзей і шыфравання. Атрымайце свой бясплатны адрас ${ MAIL_APP_NAME }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } новы каляндар",
         "${ calendarsToBeCreatedCount } новыя календары",
@@ -5326,6 +5344,9 @@
       "End-to-end encrypted": [
         "Зашыфравана скразным метадам"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Забяспечце цалкам прыватную і зашыфраваную сувязь. Атрымайце бясплатны адрас электроннай пошты ${ BRAND_NAME }."
+      ],
       "Enter password": [
         "Увядзіце пароль"
       ],
@@ -5528,7 +5549,7 @@
         "Ініцыялізацыя"
       ],
       "Integrity issues found": [
-        "Знойдзеныя праблемы з цэласнасцю"
+        "Знойдзены праблемы з цэласнасцю"
       ],
       "Internet connection lost": [
         "Падключэнне да інтэрнэту страчана"
@@ -6819,6 +6840,9 @@
       "Expired": [
         "Пратэрмінаваны"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Састарэлы"
       ],
@@ -7408,6 +7432,9 @@
       ],
       "Uploaded by": [
         "Запампавана"
+      ],
+      "Username": [
+        "Імя карыстальніка"
       ],
       "VAT": [
         "ПДВ"
@@ -9680,10 +9707,10 @@
         "Адсутнічае бацькоўская папка"
       ],
       "Only current location": [
-        "Толькі бягучае месцазнаходжанне"
+        "Толькі бягучае размяшчэнне"
       ],
       "Only current location: ${ name }": [
-        "Толькі бягучае месцазнаходжанне: ${ name }"
+        "Толькі бягучае размяшчэнне: ${ name }"
       ],
       "Verify content": [
         "Праверыць змест"
@@ -10643,7 +10670,7 @@
         "${ n } месяцаў"
       ],
       "/ month": [
-        "/ месячнай"
+        "/ месяц"
       ],
       "/month": [
         "/месяц"
@@ -11705,7 +11732,7 @@
         "Бяспека ўліковага запісу"
       ],
       "Account temporarily locked": [
-        "Уліковы запіс часова заблакаваны"
+        "Уліковы запіс часова заблакіраваны"
       ],
       "Active": [
         "Актыўна"
@@ -11811,6 +11838,9 @@
       ],
       "Check for malicious files": [
         "Праверка на наяўнасць шкодных файлаў"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Атрымайце адрас ${ MAIL_APP_NAME }"
       ],
       "Clearing data": [
         "Ачыстка даных"
@@ -12079,6 +12109,9 @@
         "Знойдзены ${ searchView.numberOfResults } вынікаў",
         "Знойдзены ${ searchView.numberOfResults } вынікаў"
       ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Атрымаць поўны доступ да ${ CALENDAR_APP_NAME }"
+      ],
       "Get more from your VPN": [
         "Атрымайце больш ад свайго VPN"
       ],
@@ -12252,6 +12285,9 @@
       ],
       "Notes": [
         "Нататкі"
+      ],
+      "Number of downloads": [
+        "Колькасць спамповак"
       ],
       "Number of items": [
         "Колькасць элементаў"
