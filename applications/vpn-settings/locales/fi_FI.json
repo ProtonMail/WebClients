@@ -138,6 +138,12 @@
       "Chat with us": [
         "Keskustele kanssamme"
       ],
+      "Check import progress": [
+        "Tarkasta tuonnin tila"
+      ],
+      "Choose a file or drag it here": [
+        "Valitse tiedosto tai pudota se tähän"
+      ],
       "Choose my own password": [
         "Valitse oma salasana"
       ],
@@ -183,6 +189,9 @@
       "Continue anyway": [
         "Jatka silti"
       ],
+      "Continue import": [
+        "Jatka tuontia"
+      ],
       "Continue with this password": [
         "Jatka tällä salasanalla"
       ],
@@ -218,6 +227,12 @@
       ],
       "Current plan": [
         "Nykyinen tilaus"
+      ],
+      "Customize": [
+        "Mukauta"
+      ],
+      "Customize import": [
+        "Mukauta tuontia"
       ],
       "Customize plan": [
         "Mukauta tilausta"
@@ -329,6 +344,9 @@
       ],
       "Edit invoice note": [
         "Muokkaa laskun muistiinpanoa"
+      ],
+      "Edit label": [
+        "Muokkaa tunnistetta"
       ],
       "Edit name": [
         "Muokkaa nimeä"
@@ -447,6 +465,18 @@
       "Hide plan features": [
         "Piilota tilauksen ominaisuudet"
       ],
+      "Import": [
+        "Tuo"
+      ],
+      "Import calendars": [
+        "Tuo kalenterit"
+      ],
+      "Import contacts": [
+        "Tuo yhteystiedot"
+      ],
+      "Import emails": [
+        "Tuo viestit"
+      ],
       "Import emails, calendars, contacts": [
         "Tuo sähköposteja, kalentereita ja yhteystietoja"
       ],
@@ -495,8 +525,14 @@
       "Manage advanced account protections": [
         "Hallitse edistynyttä tilisuojausta"
       ],
+      "Manage folders": [
+        "Hallitse kansioita"
+      ],
       "Manage groups": [
         "Hallitse ryhmiä"
+      ],
+      "Manage labels": [
+        "Hallitse tunnisteita"
       ],
       "Manage subscription": [
         "Hallitse tilausta"
@@ -576,6 +612,12 @@
       "Publish changes": [
         "Julkaise muutokset"
       ],
+      "Quit": [
+        "Sulje"
+      ],
+      "Reconnect": [
+        "Yhdistä uudelleen"
+      ],
       "Recover data": [
         "Palauta tiedot"
       ],
@@ -647,6 +689,9 @@
       ],
       "Reset password": [
         "Nollaa salasana"
+      ],
+      "Reset to default": [
+        "Palauta oletukset"
       ],
       "Restore": [
         "Palauta"
@@ -807,11 +852,20 @@
       "Skip": [
         "Ohita"
       ],
+      "Skip verification": [
+        "Ohita vahvistus"
+      ],
       "Spam": [
         "Roskapostia"
       ],
+      "Start import": [
+        "Aloita tuonti"
+      ],
       "Start live chat": [
         "Aloita live-keskustelu"
+      ],
+      "Stay": [
+        "Pysy"
       ],
       "Stop using single sign-on": [
         "Lopeta kertakirjautumisen käyttö"
@@ -1072,6 +1126,14 @@
         "ylläpitäjä"
       ]
     },
+    "Alert": {
+      "By leaving now, some contacts may not be imported": [
+        "Jos poistut nyt, kaikkia yhteystietoja ei välttämättä tuoda"
+      ],
+      "By leaving now, some events may not be imported": [
+        "Jos poistut nyt, kaikkia tapahtumia ei välttämättä tuoda"
+      ]
+    },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Tämä katkaisee kaikkien tätä varmennettä käyttävien reitittimien ja asiakaspäätteiden yhteydet."
@@ -1182,6 +1244,26 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Vie sähköpostin tuottavuus uudelle tasolle. Anna ${ BRAND_NAME } Scriben auttaa sinua kirjoittamaan, vastaamaan ja oikolukemaan viestejäsi."
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "Tyhjä ICS-tiedosto"
+      ],
+      "Invalid event": [
+        "Virheellinen tapahtuma"
+      ],
+      "Invalid ICS file": [
+        "Virheellinen ICS-tiedosto"
+      ],
+      "Invalid method": [
+        "Virheellinen menetelmä"
+      ],
+      "Unsupported calendar component": [
+        "Kalenterikomponenttia ei tueta"
+      ],
+      "Unsupported event": [
+        "Tapahtumaa ei tueta"
       ]
     },
     "b2b_trials_Action": {
@@ -1716,6 +1798,14 @@
         "mansikka"
       ]
     },
+    "Confirm modal title": {
+      "Quit import customization?": [
+        "Lopetetaanko tuonnin mukautus?"
+      ],
+      "Quit import?": [
+        "Lopetetaanko tuonti?"
+      ]
+    },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
         "Haluatko varmasti poistaa maksutavan?"
@@ -1724,6 +1814,94 @@
     "Confirmation title": {
       "Delete payment method": [
         "Poista maksutapa"
+      ]
+    },
+    "Contact field label": {
+      "Address": [
+        "Osoite"
+      ],
+      "Anniversary": [
+        "Merkkipäivä"
+      ],
+      "Birthday": [
+        "Syntymäpäivä"
+      ],
+      "Display name": [
+        "Näyttönimi"
+      ],
+      "Email": [
+        "Sähköpostiosoite"
+      ],
+      "First name": [
+        "Etunimi"
+      ],
+      "Gender": [
+        "Sukupuoli"
+      ],
+      "Language": [
+        "Kieli"
+      ],
+      "Last name": [
+        "Sukunimi"
+      ],
+      "Logo": [
+        "Logo"
+      ],
+      "Member": [
+        "Jäsen"
+      ],
+      "Name": [
+        "Nimi"
+      ],
+      "Note": [
+        "Muistiinpano"
+      ],
+      "Organization": [
+        "Organisaatio"
+      ],
+      "Phone": [
+        "Puhelin"
+      ],
+      "Photo": [
+        "Kuva"
+      ],
+      "Role": [
+        "Rooli"
+      ],
+      "Time zone": [
+        "Aikavyöhyke"
+      ],
+      "Title": [
+        "Nimike"
+      ],
+      "URL": [
+        "URL-osoite"
+      ]
+    },
+    "Contact type label": {
+      "Fax": [
+        "Faksi"
+      ],
+      "Main": [
+        "Ensisijainen"
+      ],
+      "Mobile": [
+        "Matkapuhelin"
+      ],
+      "Other": [
+        "Muu"
+      ],
+      "Pager": [
+        "Hakulaite"
+      ],
+      "Personal": [
+        "Henkilökohtainen"
+      ],
+      "Work": [
+        "Työ"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "CountriesStep:Info": {
@@ -2608,6 +2786,11 @@
         "kuukaudessa/käyttäjä"
       ]
     },
+    "Default display name vcard": {
+      "Unknown": [
+        "Tuntematon"
+      ]
+    },
     "Delete address prompt": {
       "Are you sure you want to delete this address?": [
         "Haluatko varmasti poistaa osoitteen?"
@@ -2691,6 +2874,9 @@
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Kannusta kaksivaiheisen tunnistautumisen käyttöä organisaatiossasi turvallisuuden parantamiseksi."
       ],
+      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        "Yhteystietoja salataan ja tuodaan... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
+      ],
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "Varmista ensiluokkainen tietoturva tilillesi ${ PROTON_SENTINEL_NAME } -ohjelmalla."
       ],
@@ -2705,6 +2891,9 @@
       ],
       "If disabled, only admins will have access.": [
         "Vain ylläpitäjillä on käyttöoikeus, jos tämä poistetaan käytöstä."
+      ],
+      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
+        "Yhteystiedot, joita olet tuomassa, näyttävät sisältävän ryhmiä. Määritä miten ryhmät tuodaan."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Pidä elämäsi eri osat erillään ja postilaatikkosi järjestyksessä lisäosoitteiden avulla."
@@ -2721,8 +2910,30 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Yksinkertaista synkronointia ja ajoitusta jaetuilla kalentereilla."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Tuodaksesi CSV- ja VCF-tiedostoista, varmista ettei tiedoston koko ylitä ${ MAX_IMPORT_FILE_SIZE_STRING } tai yhteystietojen määrä ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa. Jos tiedostosi on suurempi, jaa se pienempiin osiin. ${ learnMoreLink }"
+      ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Tuo yhteystietosi Googlesta tai Outlookista ${ easySwitchLink }."
+      ],
       "To start, give your organization a name.": [
         "Aloita antamalla organisaatiollesi nimi."
+      ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Voit tuoda tapahtumia iCal-muodossa (ICS-tiedostosta). Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää enintään ${ MAX_IMPORT_EVENTS_STRING } tapahtumaa. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch -tuontiapurilla"
+      ]
+    },
+    "Description of the purpose of the import CSV modal": {
+      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
+        "Lisäksi CSV- ja vCard-kentät on automaattisesti kohdistettu. Voit tarkistaa ja muuttaa näitä parituksia manuaalisesti."
+      ],
+      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
+        "Lataamassasi CSV-tiedostossa havaittiin seuraavat kentät. Valitse ne, jotka haluat tuoda."
       ]
     },
     "Disable address prompt": {
@@ -2980,6 +3191,71 @@
         "Kirjautumisesi toiseen laitteeseen onnistui"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "MUISTIINPANO:\n${ eventComment }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "KUVAUS:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } peruttiin."
+      ],
+      "All events in this series were updated.": [
+        "Ketjun kaikki tapahtumakerrat päivitettiin."
+      ],
+      "Here's what changed:": [
+        "Tehdyt muutokset:"
+      ],
+      "NOTE:": [
+        "MUISTIINPANO:"
+      ],
+      "This event occurrence was canceled.": [
+        "Tämä tapahtumakerta peruttiin."
+      ],
+      "This event occurrence was updated.": [
+        "Tämä tapahtumakerta päivitettiin."
+      ],
+      "This event was updated.": [
+        "Tapahtuma päivitettiin."
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "AIKA:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "AIKA:\n${ formattedStart } (koko päivä)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "AIKA:\n${ formattedStart } – ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Poistettu"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "SIJAINTI:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } hyväksyi kutsusi tapahtumaan ${ eventTitle }"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } kieltäytyi kutsustasi tapahtumaan ${ eventTitle }"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } hyväksyi alustavasti kutsusi tapahtumaan ${ eventTitle }"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } lisättiin"
@@ -3009,9 +3285,34 @@
         "${ name } poistettiin"
       ]
     },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "${ formattedStart } ajoitetun tapahtuman peruutus"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "${ formattedStart } alkavan tapahtuman peruutus"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Kutsu ${ formattedStart } ajoitettuun tapahtumaan"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Kutsu ${ formattedStart } alkavaan tapahtumaan"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Päivitys ${ formattedStart } ajoitettuun tapahtumaan"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Päivitys ${ formattedStart } alkavaan tapahtumaan"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Vahvistusviesti lähetettiin osoitteeseen ${ address }"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Luotettu yhteyshenkilö"
       ]
     },
     "Empty group name": {
@@ -3029,6 +3330,12 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } on käyttäjätunnuksesi. Luodaksesi osoitteen ${ emailAddress }, avaa Asetukset > Identiteetti ja osoitteet > Lyhytosoite (pm.me)"
       ],
+      "A group with this name already exists": [
+        "Tämän niminen ryhmä on jo olemassa"
+      ],
+      "Address primary private key not found": [
+        "Osoitteen ensisijaista yksityistä avainta ei löytynyt"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Kaikki tallennustila on varattu. Vähennä muille käyttäjille varattua tallennustilaa."
       ],
@@ -3044,6 +3351,9 @@
       "Authentication error.": [
         "Todennusvirhe."
       ],
+      "Calendar limit reached": [
+        "Kalenterien enimmäismäärä on saavutettu"
+      ],
       "Checkout expired, please try again": [
         "Maksutapahtuma erääntyi. Yritä uudelleen."
       ],
@@ -3056,6 +3366,14 @@
       "Couldn't load transactions. Please try again later.": [
         "Siirtoja ei voitu ladata. Yritä myöhemmin uudelleen."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Poista ainakin ${ calendarsToFixCount } kalenterivalinta",
+        "Poista ainakin ${ calendarsToFixCount } kalenterivalintaa"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Poista ainakin ${ calendarsToFixCount } kalenterivalinta tai",
+        "Poista ainakin ${ calendarsToFixCount } kalenterivalintaa tai"
+      ],
       "Domain not available, try again later": [
         "Verkkotunnusta ei tavoiteta. Yritä myöhemmin uudelleen"
       ],
@@ -3067,6 +3385,9 @@
       ],
       "Email address is not available": [
         "Sähköpostiosoite ei ole saatavilla"
+      ],
+      "Email address is required": [
+        "Sähköpostiosoite vaaditaan"
       ],
       "Email is not valid": [
         "Virheellinen sähköpostiosoite"
@@ -3089,8 +3410,14 @@
       "File too large. Your logo must be 30 KB or smaller.": [
         "Tiedosto on liian suuri. Logotiedoston koko voi olla enintään 30 kt."
       ],
+      "Folder name cannot be empty.": [
+        "Kansion nimi ei voi olla tyhjä."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Jos televisiossasi näkyvä aika on umpeutunut, paina siellä olevaa päivityspainiketta ja syötä koodi uudelleen."
+      ],
+      "IMAP server is required": [
+        "IMAP-palvelin vaaditaan"
       ],
       "Impossible to create the gateway": [
         "Yhdyskäytävän luonti on mahdotonta"
@@ -3143,6 +3470,9 @@
       "Invalid invitation link": [
         "Virheellinen kutsulinkki"
       ],
+      "Invalid name": [
+        "Virheellinen nimi"
+      ],
       "Invalid postal code": [
         "Virheellinen postinumero"
       ],
@@ -3151,6 +3481,16 @@
       ],
       "Invalid ZIP code": [
         "Virheellinen postinumero"
+      ],
+      "Label name cannot be empty.": [
+        "Tunnisteen nimi ei voi olla tyhjä."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Yhdistä ainakin ${ calendarsToFixCount } kalenteri olemassa olevaan ${ BRAND_NAME }-kalenteriin",
+        "Yhdistä ainakin ${ calendarsToFixCount } kalenteria olemassa oleviin ${ BRAND_NAME }-kalentereihin"
+      ],
+      "Missing key packet": [
+        "Avainpaketti puuttuu"
       ],
       "Name does not match": [
         "Nimi ei täsmää"
@@ -3167,6 +3507,9 @@
       "No image selected": [
         "Kuvaa ei ole valittu"
       ],
+      "No valid address found": [
+        "Kelvollista osoitetta ei löytynyt"
+      ],
       "Not a valid number": [
         "Virheellinen numero"
       ],
@@ -3178,6 +3521,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisaatioavain on aktivoitava ei-yksityisten käyttäjien luomiseksi"
+      ],
+      "Password is required": [
+        "Salasana vaaditaan"
       ],
       "Passwords do not match": [
         "Salasanat eivät täsmää"
@@ -3214,6 +3560,10 @@
       ],
       "Please enter ZIP code": [
         "Syötä postinumero"
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Jatka korjaamalla korostettu ristiriita.",
+        "Jatka korjaamalla korostetut ristiriidat."
       ],
       "Please generate keys before you try to change your password": [
         "Luo avaimet ennen kuin yrität vaihtaa salasanaasi"
@@ -3260,8 +3610,17 @@
       "Please upload only 1 file": [
         "Lähetä vain 1 tiedosto"
       ],
+      "Port is required": [
+        "Portti vaaditaan"
+      ],
       "Postal code is required": [
         "Postinumero vaaditaan"
+      ],
+      "Primary address key is not decrypted": [
+        "Ensisijaisen osoitteen avaimen salausta ei ole purettu"
+      ],
+      "Primary address key is not decrypted.": [
+        "Ensisijaisen osoitteen avaimen salausta ei ole purettu."
       ],
       "Process aborted": [
         "Tapahtuma keskeytettiin"
@@ -3271,6 +3630,21 @@
       ],
       "Signature verification failed": [
         "Allekirjoituksen vahvistus epäonnistui"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Joidenkin kansioiden nimet eivät ole käytettävissä. Muuta nimiä muokkaamalla tuontia."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Joidenkin kansioiden nimet ylittävät ${ MAIL_APP_NAME }n enimmäismerkkimäärän. Muuta nimiä muokkaamalla tuontia."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Joidenkin tunnisteiden nimet eivät ole käytettävissä. Muuta nimiä muokkaamalla tuontia."
+      ],
+      "Some of your label names are unavailable. Please customize the import to edit these names.": [
+        "Joidenkin tunnisteiden nimet eivät ole käytettävissä. Muuta nimiä muokkaamalla tuontia."
+      ],
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Joidenkin tunnisteiden nimet ylittävät ${ MAIL_APP_NAME }n enimmäismerkkimäärän. Muuta nimiä muokkaamalla tuontia."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Jotain meni pieleen, ${ refresh } jatkaaksesi. Jos näet virheilmoituksen edelleen, ota yhteyttä ${ supportTeam }."
@@ -3296,11 +3670,26 @@
       "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
         "Kuva on liian pieni. Vähimmäiskoko on ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Kansion nimi on virheellinen. Valitse eri nimi."
+      ],
+      "The folder name is too long. Please choose a different name.": [
+        "Kansion nimi on liian pitkä. Valitse eri nimi."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Tunnisteen nimi on virheellinen. Valitse eri nimi."
+      ],
+      "The label name is too long. Please choose a different name.": [
+        "Tunnisteen nimi on liian pitkä. Valitse eri nimi."
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Lisättävien krediittien vähimmäissumma on ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Käytännön nimen on oltava 3–40 merkkiä."
+      ],
+      "There are too many folders in your external account. Please customize the import to delete some folders.": [
+        "Ulkoisella tililläsi on liian monta kansiota. Muokkaa tuontia tai poista joitakin kansioita."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Kenttä ylittää ${ maximumLength }-merkin enimmäismäärän."
@@ -3310,6 +3699,12 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Kenttä edellyttää vähintään ${ minimumLength } merkkiä."
+      ],
+      "This folder name is not available. Please choose a different name.": [
+        "Kansion nimi ei ole käytettävissä. Valitse eri nimi."
+      ],
+      "This label name is not available. Please choose a different name.": [
+        "Tunnisteen nimi ei ole käytettävissä. Valitse eri nimi."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Luodaksesi ei-yksityisiä käyttäjätilejä sinun on palautettava hallintaoikeutesi."
@@ -3350,6 +3745,9 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Virheellinen vahvistuskoodi. Varmista, että kopioit vahvistuskoodin oikein ja yritä uudelleen. Muutosten voimaantulo saattaa kestää jopa 24 tuntia."
       ],
+      "You have reached the maximum number of calendars.": [
+        "Olet saavuttanut kalenterien enimmäismäärän."
+      ],
       "You have reached the number of contacts limit for your account": [
         "Olet saavuttanut tilisi yhteystietojen enimmäismäärän"
       ],
@@ -3359,11 +3757,143 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Olet kuluttanut tilaukseesi sisältyvän käyttäjäkiintiön. Lisää uusia käyttäjiä päivittämällä tilauksesi."
       ],
+      "You must set a name": [
+        "Nimi on asetettava"
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Tililläsi tai organisaatiollasi on erääntynyt lasku. Maksa kaikki maksamattomat laskut."
       ],
+      "Your import will not be processed.": [
+        "Tuontiasi ei käsitellä."
+      ],
       "ZIP code is required": [
         "Postinumero vaaditaan"
+      ]
+    },
+    "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Virhe luettaessa tiedostoa \"${ formattedFilename }\". Väärä tiedostomuoto."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Virhe siirrettäessä tiedostoa ${ formattedFilename }. Tiedoston enimmäiskoko on ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Virhe siirrettäessä tiedostoa ${ formattedFilename }. Vain ICS-muotoiset tiedostot sallitaan."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Virhe siirrettäessä tiedostoa. Tiedostoa ei ole valittu."
+      ],
+      "An unexpected error occurred. Import must be restarted.": [
+        "Odottamaton virhe. Tuonti on aloitettava uudelleen."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Tiedosto ${ formattedFilename } sisältää enemmän kuin ${ MAX_IMPORT_EVENTS } tapahtuman.",
+        "Tiedosto ${ formattedFilename } sisältää yli ${ MAX_IMPORT_EVENTS } tapahtumaa."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Tiedostossa ${ formattedFilename } on virheellinen method-tietue, eikä sitä voida tuoda."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Tiedosto ${ formattedFilename } ei sisällä tuotavia tapahtumia."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Tiedosto \"${ formattedFilename }\" on tyhjä."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Tiedosto ${ formattedFilename } ei ole kalenteri."
+      ]
+    },
+    "Error importing contact": {
+      "Encryption failed": [
+        "Salaus epäonnistui"
+      ],
+      "Missing FN property": [
+        "Puuttuva FN-ominaisuus"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard 3.0:aa edeltäviä versioita ei tueta"
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Virhe luettaessa tiedostoa \"${ formattedFilename }\". Väärä tiedostomuoto."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Virhe siirrettäessä tiedostoa ${ formattedFilename }. Suurin sallittu tiedostokoko on ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "Virhe siirrettäessä tiedostoa ${ formattedFilename }. Ei valittua .csv- tai .vcf-tiedostoa"
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Virhe siirrettäessä tiedostoa. Tiedostoa ei ole valittu."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Tiedosto ${ formattedFilename } sisältää yli ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "Tiedosto ${ formattedFilename } ei sisällä tuotavia yhteystietoja."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Tiedosto \"${ formattedFilename }\" on tyhjä."
+      ]
+    },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Epäkelpo muoto. Komponenttia ei voida lukea."
+      ],
+      "Calendar": [
+        "Kalenteri"
+      ],
+      "Component with wrong format": [
+        "Väärän muotoinen komponentti"
+      ],
+      "Custom time zone": [
+        "Mukautettu aikavyöhyke"
+      ],
+      "Element": [
+        "Elementti"
+      ],
+      "Encryption failed": [
+        "Salaus epäonnistui"
+      ],
+      "Event": [
+        "Tapahtuma"
+      ],
+      "Free-busy time information": [
+        "Vapaa-varattu aikatietoja"
+      ],
+      "Invalid event": [
+        "Virheellinen tapahtuma"
+      ],
+      "Journal entry": [
+        "Päiväkirjamerkintä"
+      ],
+      "Missing start time": [
+        "Puuttuva aloitusaika"
+      ],
+      "No UID, title or start time": [
+        "Ei UID:ta, nimeä tai aloitusaikaa"
+      ],
+      "Notification out of bounds": [
+        "Ilmoitus on alueen ulkopuolella"
+      ],
+      "Original recurring event could not be found": [
+        "Ketjun alkuperäistä tapahtumaa ei löytynyt"
+      ],
+      "Time zone": [
+        "Aikavyöhyke"
+      ],
+      "Time zone component ignored": [
+        "Aikavyöhykekomponentti ohitettu"
+      ],
+      "To-do entry": [
+        "Tehtävämerkintä"
+      ],
+      "Unknown": [
+        "Tuntematon"
+      ],
+      "Unsupported event": [
+        "Tapahtumaa ei tueta"
       ]
     },
     "Error importing users": {
@@ -3412,11 +3942,65 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "Varmennetta ${ name } ei löytynyt tai se on jo mitätöity"
+      ],
+      "Display name cannot be empty": [
+        "Näyttönimi ei voi olla tyhjä"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Kuvaa ei valittu"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Odottamaton virhe"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "Liitetyn ICS-tiedoston salausta ei voitu purkaa"
+      ],
+      "Attached ICS file could not be read": [
+        "Liitettyä ICS-tiedostoa ei voitu lukea"
+      ],
+      "Invalid invitation": [
+        "Virheellinen kutsu"
+      ],
+      "Invalid response": [
+        "Virheellinen vastaus"
+      ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Tapahtumaa ei voitu lisätä kalenteriisi. Vastausta ei lähetetty"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Tapahtumaa ei voitu päivittää kalenteriisi. Vastausta ei lähetetty."
+      ],
+      "Unsupported invitation": [
+        "Kutsua ei tueta"
+      ],
+      "Unsupported response": [
+        "Vastausta ei tueta"
+      ],
+      "We could not cancel the event in your calendar": [
+        "Tapahtumaa ei voitu perua kalenteristasi"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Tapahtumaa ei voitu noutaa kalenteristasi"
+      ],
+      "We could not update the event in your calendar": [
+        "Tapahtumaa ei voitu päivittää kalenteriisi"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Vastauksesi lähetettiin, mutta tapahtumaa ei voitu lisätä kalenteriisi"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Vastauksesi lähetettiin, mutta tapahtumaa ei voitu päivittää kalenteriisi"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(ei nimeä)"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4164,6 +4748,310 @@
         "SMS"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Kalenterin aikavyöhykettä ei tueta"
+      ],
+      "Edited event not supported": [
+        "Muokattua tapahtumaa ei tueta"
+      ],
+      "End time out of bounds": [
+        "Päättymisaika on alueen ulkopuolella"
+      ],
+      "Event validation failed": [
+        "Tapahtuman vahvistus epäonnistui"
+      ],
+      "Floating times not supported": [
+        "Vaihtuvia aikoja ei tueta"
+      ],
+      "Malformed all-day event": [
+        "Virheellinen koko päivän tapahtuma"
+      ],
+      "Malformed end time": [
+        "Virheellinen päättymisaika"
+      ],
+      "Malformed recurring event": [
+        "Virheellinen toistuva tapahtuma"
+      ],
+      "Malformed start time": [
+        "Virheellinen aloitusaika"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Ainoastaan gregoriaaninen kalenteri on sallittu"
+      ],
+      "Recurring event has no occurrences": [
+        "Toistuva tapahtuma ei sisällä tapahtumakertoja"
+      ],
+      "Recurring rule not supported": [
+        "Toistuvuussääntöä ei tueta"
+      ],
+      "Start time out of bounds": [
+        "Aloitusaika on alueen ulkopuolella"
+      ],
+      "Time zone not supported": [
+        "Aikavyöhykettä ei tueta"
+      ]
+    },
+    "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } tapahtuma salattiin ja lisättiin kalenteriisi",
+        "${ totalImported }/${ totalToImport } tapahtumaa salattiin ja lisättiin kalenteriisi"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Virhe salattaessa ja lisättäessä tapahtumaa. ${ totalImported }/${ totalToImport } tapahtuma tuotiin.",
+        "Virhe salattaessa ja lisättäessä tapahtumia. ${ totalImported }/${ totalToImport } tapahtumaa tuotiin."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Virhe salattaessa ja lisättäessä yhteystietoja, jonka vuoksi tapahtumia ei tuotu."
+      ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Virhe salattaessa ja lisättäessä tapahtumia, jonka seurauksena tapahtumia ei tuotu."
+      ],
+      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
+        "Salataan ja lisätään yhteystietoja: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "Salataan ja lisätään tapahtumia kalenteriisi: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Tapahtuman tuonti onnistui ja löydät sen nyt kalenteristasi."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Tapahtumien tuonti onnistui ja löydät ne nyt kalenteristasi."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "Älä sulje välilehteä ennen tuonnin valmistumista."
+      ]
+    },
+    "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } ei toistaiseksi tue joitakin tapahtumien tyyppejä, tietoja ja muotoja."
+      ],
+      "vCard versions < 3.0": [
+        "vCard versiot < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Tuodut kutsut näkyvät ${ CALENDAR_APP_NAME }issa yksinkertaisina tapahtumina, ilman järjestäjä- ja osallistujatietoja. Vastaanottaaksesi tapahtumapäivityksiä ja nähdäksesi osallistujat, pyydä järjestäjiä kutsumaan sinut ${ BRAND_NAME }-sähköpostiosoitteellasi."
+      ],
+      "This file contains an event invitation:": [
+        "Tiedosto sisältää tapahtumakutsun:",
+        "Tiedosto sisältää tapahtumakutsuja:"
+      ],
+      "This file contains an invitation response:": [
+        "Tiedosto sisältää vastauksen kutsuun:",
+        "Tiedosto sisältää vastauksia kutsuihin:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Tiedosto sisältää joitakin tietoja, joita ei voida tuoda:"
+      ]
+    },
+    "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } yhteystieto salattiin ja lisättiin yhteystietoihisi",
+        "${ totalImported }/${ totalToImport } yhteystietoa salattiin ja lisättiin yhteystietoihisi"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Virhe salattaessa ja lisättäessä yhteystietoa, jonka vuoksi yhteystietoa ei tuotu."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Yhteystietoja lisättäessä ja salattaessa tapahtui virhe. ${ totalImported }/${ totalToImport } tapahtumaa tuotiin."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Virhe salattaessa ja lisättäessä yhteystietoja, jonka vuoksi yhteystietoja ei tuotu."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Yhteystieto tuotiin ja löydät sen nyt yhteystiedoistasi."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Yhteystiedot tuotiin ja löydät ne nyt yhteystiedoistasi."
+      ]
+    },
+    "Import contact error": {
+      "Contact ${ contactId }: ": [
+        "Ota yhteyttä ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } yhteystieto",
+        "${ totalContacts } yhteystietoa"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "tuntematon"
+      ]
+    },
+    "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } ei ${ forNow } tue:"
+      ],
+      "for now": [
+        "toistaiseksi"
+      ]
+    },
+    "Import error": {
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } ei saa yhteyttä tiliisi. Varmista, että:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } ei saa yhteyttä ulkoiseen tiliisi. Varmista, että sähköpostipalvelimen osoite ja porttinumero ovat oikein."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } ei saa yhteyttä ulkoiseen tiliisi. Varmista, että:"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } ei saa yhteyttä Yahoo-tiliisi. Varmista, että sähköpostipalvelimen osoite ja porttinumero ovat oikein."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } ei saa yhteyttä Yahoo-tiliisi. Varmista, että:"
+      ],
+      "2-step verification is enabled in your external account.": [
+        "Ulkoinen tilisi käyttää kaksivaiheista tunnistautumista."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "Ulkoinen sähköpostitilisi käyttää kaksivaiheista tunnistautumista."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "IMAP on ulkoisella tililläsi käytössä."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "IMAP on käytössä Yahoo-tilisi asetuksissa."
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Liian monta pyyntöä lyhyen ajan sisällä. Yritä hetken kuluttua uudelleen."
+      ],
+      "Use your app password if:": [
+        "Käytä sovellusalasanaa, jos:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Käytä normaalin salasanasi sijaan sovellusalasanaa, jos:"
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Sovellussalasanasi on oikein. Älä käytä normaalia salasanaasi."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "Sähköpostitilisi vaatii tietojesi vientiin sovellussalasanan."
+      ],
+      "Your email account requires one to export your data.": [
+        "Sähköpostitilisi vaatii sovellussalasanan tietojesi vientiin."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Sähköpostiosoitteesi ja sovellussalasanasi ovat oikein. Älä käytä normaalia salasanaasi."
+      ],
+      "Your email address and password are correct.": [
+        "Sähköpostiosoitteesi ja salasanasi ovat oikein."
+      ],
+      "Your password is correct.": [
+        "Salasanasi on oikein."
+      ]
+    },
+    "Import instructions": {
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "Sähköpostipalvelustasi riippuen, voit joutua luomaan ${ knowledgeBaseLink } ennen kuin voit tuoda tietoja ${ BRAND_NAME }iin."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Laajenna pudotusvalikko painamalla 3 pistettä (...)."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Luo ${ boldAppPassword } ja käytä sitä tavallisen salasanasi sijaan, kun ${ BRAND_NAME } pyytää sitä."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Avaa ${ yahooMailLink }-profiilistasi ${ boldAccountInfo }."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "Avaa ${ boldAccountSecurity }."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "Avaa ${ yahooMailLink } -yhteystiedot."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Valitse ${ boldExportCSV }."
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Kalenterin ${ BRAND_NAME }iin tuontiin tarvitaan ${ knowledgeBaseLink }. Lataa se Yahoosta seuraamalla kolmea helppoa ohjetta:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Kalenterin ${ BRAND_NAME }iin tuontiin tarvitaan ${ knowledgeBaseLink }. Lataa se ennen tuonnin aloitusta."
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Tuodaksesi yhteystietoja ${ BRAND_NAME }iin, tarvitset ${ knowledgeBaseLink }. Lataa tiedosto Yahoo-tililtä näillä helpoilla ohjeilla:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Tuodaksesi yhteystietoja ${ BRAND_NAME }iin, tarvitset ${ knowledgeBaseLink }. Lataa tiedosto ennen tuontiprosessin aloitusta."
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Tuodaksesi sähköposteja ${ BRAND_NAME }iin, tarvitset Yahoo-tilin ${ appPasswordLink }. Hanki sellainen seuraamalla näitä ohjeita:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Tilin tiedot"
+      ],
+      "Account security": [
+        "Tilin suojaus"
+      ],
+      "app password": [
+        "sovellussalasana"
+      ],
+      "Export": [
+        "Vie"
+      ],
+      "Export to CSV file": [
+        "Vie CSV-tiedostoon"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "sovellussalasanan"
+      ],
+      "app password or enable IMAP": [
+        "sovellussalasanan tai ottamaan IMAP-protokollan käyttöön"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "CSV tai VCF (vCard) -tiedoston"
+      ],
+      "full calendar view": [
+        "täysi kalenterinäkymä"
+      ],
+      "ICS file": [
+        "ICS-tiedosto"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Avaa Yahoon ${ calendarViewLink }."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Osoita kalenteria, jonka haluat tuoda ja avaa pudotusvalikko."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Valitse ${ boldExport } viedäksesi kalenterin ICS-tiedostona."
+      ]
+    },
+    "Import warning": {
+      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
+        "${ totalContactsDiscarded }/${ totalContacts } yhteystietoa ei tuoda. Näytä tiedot painamalla tästä."
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded }/${ totalEvents } tapahtumaa ei tuoda. Näytä tiedot laajentamalla.",
+        "${ totalEventsDiscarded }/${ totalEvents } tapahtumaa ei tuoda. Näytä tiedot laajentamalla."
+      ],
+      "No contact can be imported. Click for details": [
+        "Yhteystietoja ei voida tuoda. Painamalla tästä saat lisätietoja"
+      ],
+      "No event can be imported. Expand for details.": [
+        "Tapahtumia ei voida tuoda. Laajentamalla saat lisätietoja."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Osaa kalenterisi sisällöstä ei tueta, eikä sitä tämän vuoksi tuoda."
+      ]
+    },
     "Info": {
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } käyttäjällä on tällä hetkellä pääsy jaettuihin palvelimiin.",
@@ -4180,6 +5068,14 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } uusi kalenteri",
+        "${ calendarsToBeCreatedCount } uutta kalenteria"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } yhdistetty kalenteri",
+        "${ calendarsToBeMergedCount } yhdistettyä kalenteria"
       ],
       "${ countriesCount } country enabled": [
         "${ countriesCount } maa käytössä",
@@ -4253,6 +5149,14 @@
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } suojelee tiliäsi valvomalla epäilyttävää toimintaa."
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } kansio löytyi",
+        "${ providerFoldersNumLocalized } kansiota löytyi"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "Gmailista löytyi ${ providerFoldersNumLocalized } tunniste",
+        "Gmailista löytyi ${ providerFoldersNumLocalized } tunnistetta"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } palvelinta määritetään vielä. Tämä kestää yleensä n. ${ provisioningDuration }.",
         "${ provisioningCounter } palvelinta määritetään vielä. Tämä kestää yleensä n. ${ provisioningDuration }."
@@ -4275,9 +5179,21 @@
         "${ resultsCount } tulos löytyi",
         "${ resultsCount } tulosta löytyi"
       ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalenteri",
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalenteria"
+      ],
       "${ selectedEntities.length } selected": [
         "${ selectedEntities.length } valittu",
         "${ selectedEntities.length } valittu"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } kansio valittu",
+        "${ selectedFoldersCountLocalized } kansiota valittu"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } tunniste valittu",
+        "${ selectedFoldersCountLocalized } tunnistetta valittu"
       ],
       "${ storage } storage": [
         "${ storage } tallennustilaa"
@@ -4401,6 +5317,14 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia viestejä nopeasti ja vaivattomasti."
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Kaikki (${ totalFoldersCount } kansio)",
+        "Kaikki (${ totalFoldersCount } kansiota)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Kaikki (${ totalFoldersCount } tunniste)",
+        "Kaikki (${ totalFoldersCount } tunnistetta)"
+      ],
       "All inactive members deleted": [
         "Kaikki inaktiiviset jäsenet on poistettu"
       ],
@@ -4412,6 +5336,10 @@
       ],
       "All your changes will be lost.": [
         "Kaikki muutokset menetetään."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka",
+        "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka"
       ],
       "Allocated": [
         "Varattu"
@@ -4437,11 +5365,17 @@
       "Amount due": [
         "Veloitettava summa"
       ],
+      "and": [
+        "ja"
+      ],
       "Are you sure you want to cancel editing the group?": [
         "Haluatko varmasti perua ryhmän muokkauksen?"
       ],
       "Are you sure you want to discard your changes?": [
         "Haluatko varmasti hylätä muutokset?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Haluatko varmasti hylätä tuontisi?"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Haluatko varmasti antaa tälle käyttäjälle ylläpitäjän oikeudet?"
@@ -4521,6 +5455,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Paina \"Pyydä uusi koodi\" saadaksesi uuden vahvistuskoodin numeroon ${ strong }. Jos numero on väärin, korjaa se painamalla \"Muokkaa\"."
       ],
+      "Close this screen to exit.": [
+        "Poistu sulkemalla tämä ruutu."
+      ],
       "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
         "Pilvitallennus, integroitu ${ DOCS_APP_NAME } kanssa"
       ],
@@ -4560,6 +5497,16 @@
       "Country code": [
         "Maakoodi"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Luo ${ calendarsToBeCreatedCount } uusi kalenteri",
+        "Luo ${ calendarsToBeCreatedCount } uutta kalenteria"
+      ],
+      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
+        "Luo tuoduille viesteille tunniste, ajanjakso tälle tuonnille ja kansiot, jotka haluat tuoda."
+      ],
+      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
+        "Luo tuoduille viesteille tunniste, ajanjakso tälle tuonnille ja tunnisteet, jotka haluat tuoda."
+      ],
       "Create a secure cloud for ${ value } member": [
         "Luo suojattu pilvi ${ value } jäsenelle",
         "Luo suojattu pilvi ${ value } jäsenelle"
@@ -4569,6 +5516,9 @@
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
         "Luo sähköpostiosoitteita muille, hallinnoi ${ MAIL_APP_NAME }ia yritykselle, koululle tai ryhmälle. Aloita lisäämällä organisaatiosi nimi ja oma verkkotunnus (esim. @yrityksesi.fi)."
+      ],
+      "Create in": [
+        "Luo kalenteriin"
       ],
       "Create your first Gateway": [
         "Luo ensimmäinen yhdyskäytäväsi"
@@ -4783,6 +5733,9 @@
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Syötä osoitteeseen ${ email } lähetetty koodi. Jos et löydä viestiä saapuneista viesteistäsi, tarkista roskapostikansiosi."
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Syötä tuotavan tilin kirjautumistiedot."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Syötä **eduGAIN**-organisaation entiteetti-ID verkkotunnukselle **${ domain.DomainName }**."
       ],
@@ -4921,11 +5874,27 @@
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Jos kohtaat ongelmia, tarjoamme apua. ${ boldPhoneCall } tai ${ boldZoomMeeting } asiakaspalvelijamme kanssa."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Tuo ${ calendarCount }/${ totalCalendarsCount } kalenteri",
+        "Tuo ${ calendarCount }/${ totalCalendarsCount } kalenteria"
+      ],
+      "Import from": [
+        "Tuo lähteestä"
+      ],
+      "Import in progress": [
+        "Tuonti on käynnissä"
+      ],
+      "Import mailbox": [
+        "Tuo postilaatikko"
+      ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "TÄRKEÄÄ: Mikäli DNS-hallintasi ei hyväksy pisteeseen päättyviä CNAME-tietueita, voit poistaa viimeiset pisteet."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Tärkeää: Varmista, että tallennat palautuskoodisi. Muutoin saatat menettää pääsyn tilillesi pysyvästi, jos menetät todennuslaitteesi."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Tietojasi tuodaan tililtä ${ fromEmail } tilille ${ toEmail }."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Seuraavassa vaiheessa voit tehdä talletuksen Bitcoin-osoitteella."
@@ -5035,11 +6004,20 @@
       "JCB logo": [
         "JCB-logo"
       ],
+      "Just confirm your selection and we'll do the rest.": [
+        "Vahvista vain valintasi niin me teemme loput."
+      ],
       "Keys created": [
         "Avaimet luotiin"
       ],
+      "Label all imported messages as": [
+        "Merkitse kaikki viestit tunnisteella"
+      ],
       "Labels:": [
         "Tunnisteet:"
+      ],
+      "Large imports can take several days.": [
+        "Suuret tuonnit saattavat kestää useita päiviä."
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Lue miten kirjaudut ${ VPN_APP_NAME }:ään kolmannen osapuolen VPN-sovelluksilla."
@@ -5110,6 +6088,9 @@
       "Member": [
         "Jäsen"
       ],
+      "Merged": [
+        "Yhdistetty"
+      ],
       "Messages to all your email addresses will go to your inbox.": [
         "Kaikkiin sähköpostiosoitteisiisi lähetetyt viestit saapuvat postilaatikkoosi."
       ],
@@ -5133,6 +6114,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nimeä uusi kansio ja valitse mihin kansioon haluat sijoittaa sen. Jos et valitse yläkansiota, luodaan uusi kansio juuritason kansiona."
+      ],
+      "New": [
+        "Uusi"
       ],
       "New activity data will stop being collected and shown.": [
         "Jatkossa uusia aktiivisuustietoja ei enää kerätä, eikä niitä näytetä."
@@ -5288,6 +6272,9 @@
       "Please open the document to view it.": [
         "Avaa dokumentti tarkastellaksesi sitä."
       ],
+      "Please select the folders you would like to import:": [
+        "Valitse tuotavat kansiot:"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Yritä uudelleen eri maksutavalla tai ota yhteyttä pankkiisi."
       ],
@@ -5408,6 +6395,12 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Valitse ${ getFormattedOrganization }-käyttäjäyhteydet, jotka haluat sallia ${ BRAND_NAME }-organisaatioosi."
       ],
+      "Select what you want to import.": [
+        "Valitse mitä haluat tuoda."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Valitse tuotavat kalenterit. Jokaista tuotua kalenteria kohden luodaan uusi kalenteri tilaukseesi sisältyvän kalentereimäärän puitteissa."
+      ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Lähetä sähköpostiviestejä, joilla kehotat jäseniäsi suojaamaan heidän tilinsä 2FA:lla."
       ],
@@ -5501,6 +6494,12 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Tilaus päättyy pian: uudelleenaktivoi ${ byDate } mennessä säilyttääksesi ${ planName }-etusi. ${ reactivateLink }"
       ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Tilaus päättyy: Jotta ${ planName } -etusi säilyvät, käynnistä tilauksesi uudelleen Apple App Storessa viimeistään ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Tilaus päättyy: Jotta ${ planName } -etusi säilyvät, käynnistä tilauksesi uudelleen Google Play Kaupassa viimeistään ${ byDate }. ${ reactivateLink }"
+      ],
       "Summary": [
         "Yhteenveto"
       ],
@@ -5512,6 +6511,9 @@
       ],
       "Symbols (#$&)": [
         "Symbolit (#$&)"
+      ],
+      "Temporarily unavailable. Please check back later.": [
+        "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
       ],
       "Thank you": [
         "Kiitos"
@@ -5668,6 +6670,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Vahvista olevasi ihminen roskapostin ja väärinkäytösten torjumiseksi."
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "Tuodaksesi tapahtumia, luo ensin ${ CALENDAR_APP_NAME }iin kalenteri, johon tapahtumat lisätään."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Pysyäksesi ajan tasalla ${ BRAND_NAME }-tuotteiden viimeisimmistä muutoksista, voit tilata erilaisia sähköpostiuutiskirjeitä ja vierailla silloin tällöin ${ blogLink }."
@@ -5864,8 +6869,14 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Ohjaamme sinut uudessa välilehdessä PayPaliin suorittamaan maksun. Jos käytät ponnahdusikkunoiden estäjiä, poista ne käytöstä jatkaaksesi."
       ],
+      "We'll email you once import is complete.": [
+        "Ilmoitamme tuonnin valmistumisesta sähköpostitse."
+      ],
       "We'll get back to you shortly.": [
         "Palaamme asiaan pian."
+      ],
+      "We'll notify you when the import is done.": [
+        "Ilmoitamme sinulle kun tuonti on valmis."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Uusi vahvistuskoodi lähetetään kohteeseen ${ strong }"
@@ -5958,11 +6969,23 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Käytät enemmän tallennustilaa kuin ${ downgradedPlanName }-tilaus sisältyy. Sinun on poistettava tietoja tilauksesi alentamiseksi."
       ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Voit myös yhdistää tuotavat kalenterit olemassaoleviin ${ BRAND_NAME }-kalentereihin."
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Voit muuttaa tätä koska tahansa ${ settingsLink }."
       ],
+      "You can check the progress ${ importProgressLink }.": [
+        "Voit tarkastaa tilan ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "Voit sillä välin sulkea välilehden tai selaimen."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Voit muokata tätä kerran varmistaaksesi sähköpostiosoitteen olevan vahvistusta varten oikea."
+      ],
+      "You can import one data type at a time.": [
+        "Voit tuoda vain yhden tietotyypin kerrallaan."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, jolle olet jakanut kalentereitasi.",
@@ -6077,6 +7100,9 @@
       "Your account was successfully updated with this promotion": [
         "Ditt konto har uppdaterats med denna kampanj"
       ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Tietosi lähteestä ${ importedEmailAddressStrong } ovat valmiina ${ BRAND_NAME }-tilillesi tuontia varten."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Sähköpostiosoitettasi käytetään vain tähän kertaluontoiseen vahvistukseen."
       ],
@@ -6089,6 +7115,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Tietosi ovat turvassa meillä. Otamme sinuun yhteyttä vain, kun se on tarpeen palveluidemme tarjoamiseksi."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "Kirjautumistietojasi ei säilytetä tuonnin päätyttyä."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Seuraava laskutuspäivä on ${ renewalTime }."
@@ -6120,6 +7149,9 @@
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Voit lisätä nämä palvelimet toiseen yhdyskäytävään välittömästi."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
       ],
       "Zoom meeting": [
         "Zoom-kokousta"
@@ -6157,6 +7189,11 @@
         "Voit lisätä maksutavan, jolla tilauksesi uudistetaan automaattisesti. Myös muut maksutavat ovat käytettävissä."
       ]
     },
+    "Info on errors": {
+      "Click for details": [
+        "Painamalla lisätietoja"
+      ]
+    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "Voit estää päättymisen aktivoimalla tilauksen uudelleen."
@@ -6165,6 +7202,16 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Välttääksesi maksamattomista laskuista aiheutuvat katkokset, varmista että tilillesi on tallennettu ainakin yksi toimiva maksutapa."
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } kansio valittu",
+        "${ selectedFoldersCount } kansiota valittu"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } tunniste valittu",
+        "${ selectedFoldersCount } tunnistetta valittu"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -6275,6 +7322,9 @@
         "${ UsedAddresses }/${ MaxAddresses } sähköpostiosoite",
         "${ UsedAddresses }/${ MaxAddresses } sähköpostiosoitetta"
       ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
+      ],
       "Account holder": [
         "Tilinhaltija"
       ],
@@ -6326,6 +7376,9 @@
       "Anderson": [
         "Andersson"
       ],
+      "App password": [
+        "Sovellussalasana"
+      ],
       "Apply policy to": [
         "Sovella käytäntöä"
       ],
@@ -6367,6 +7420,12 @@
       ],
       "BTC amount": [
         "BTC-summa"
+      ],
+      "Calendar": [
+        "Kalenterin"
+      ],
+      "Calendars": [
+        "Kalenterit"
       ],
       "Card details": [
         "Kortin tiedot"
@@ -6427,6 +7486,9 @@
       ],
       "Confirm second password": [
         "Vahvista toinen salasana"
+      ],
+      "Contacts": [
+        "Yhteystiedot"
       ],
       "Copy": [
         "Kopioi"
@@ -6500,6 +7562,21 @@
       "Email or username": [
         "Sähköpostiosoite tai käyttäjätunnus"
       ],
+      "Emails": [
+        "Viestit"
+      ],
+      "Emails (all messages)": [
+        "Sähköpostit (kaikki viestit)"
+      ],
+      "Emails (last 12 months)": [
+        "Sähköpostit (viimeiset 12 kuukautta)"
+      ],
+      "Emails (last 3 months)": [
+        "Sähköpostit (viimeiset 3 kuukautta)"
+      ],
+      "Emails (last month)": [
+        "Viestit (viime kuukausi)"
+      ],
       "Enabled": [
         "Käytössä"
       ],
@@ -6526,6 +7603,9 @@
       ],
       "Folder location": [
         "Kansion sijainti"
+      ],
+      "From: ${ fromEmail }": [
+        "Lähettäjä: ${ fromEmail }"
       ],
       "Gateway name": [
         "Yhdyskäytävän nimi"
@@ -6557,6 +7637,15 @@
       "Import all messages": [
         "Tuo kaikki viestit"
       ],
+      "Import interval": [
+        "Tuontiväli"
+      ],
+      "Import to email address": [
+        "Tuo sähköpostiosoitteelle"
+      ],
+      "Import to:": [
+        "Tuo kohteeseen:"
+      ],
       "Integrated 2FA authenticator": [
         "Sisäänrakennettu kaksivaiheinen todentaja"
       ],
@@ -6571,6 +7660,9 @@
       ],
       "Key": [
         "Avain"
+      ],
+      "Label messages as": [
+        "Merkitse viestit tunnisteella"
       ],
       "Last 12 months only": [
         "Vain viimeiset 12 kuukautta"
@@ -6590,8 +7682,14 @@
       "Logo": [
         "Logo"
       ],
+      "Mail Server (IMAP)": [
+        "Sähköpostipalvelin (IMAP)"
+      ],
       "Main": [
         "Pää"
+      ],
+      "Manage categories": [
+        "Hallitse kategorioita"
       ],
       "Maximum number of characters is ${ MAX_CHARS }": [
         "Merkkien enimmäismäärä on ${ MAX_CHARS }"
@@ -6616,6 +7714,12 @@
       ],
       "Moderate NAT": [
         "Keskitasoinen NAT"
+      ],
+      "Move to Archive": [
+        "Siirrä arkistoon"
+      ],
+      "Move to Inbox": [
+        "Siirrä saapuneisiin"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Oltava vähintään ${ MIN_PASSWORD_LENGTH } merkkiä"
@@ -6725,6 +7829,9 @@
       "Policy name": [
         "Käytännön nimi"
       ],
+      "Port": [
+        "Portti"
+      ],
       "Postal code": [
         "Postinumero"
       ],
@@ -6821,6 +7928,9 @@
       ],
       "To help us improve, please explain why you are leaving.": [
         "Auttaaksesi meitä kehittymään, kertoisitko miksi olet lähdössä."
+      ],
+      "To: ${ toEmail }": [
+        "Vastaanottaja: ${ toEmail }"
       ],
       "Two-password mode": [
         "Kahden salasanan tila"
@@ -6977,9 +8087,28 @@
         "${ Label.Name } luotiin"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Lähettäjä: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Vastaanottaja: ${ to }"
+      ]
+    },
     "Lable": {
       "Select an identity provider to start": [
         "Aloita valitsemalla identiteetintarjoaja"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Lisätäksesi uuden kalenterin, poista nykyisiä kalentereita."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Lisätäksesi uuden kalenterin, poista nykyisiä kalentereita tai päivitä ${ BRAND_NAME }-tilauksesi maksulliseen ${ MAIL_SHORT_APP_NAME }-tilaukseen."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Olet saavuttanut tilaukseesi sisältyvän kalenterien enimmäismäärän."
       ]
     },
     "Link": {
@@ -7100,6 +8229,9 @@
       "Request an invite": [
         "Pyydä kutsu"
       ],
+      "Resume now": [
+        "Jatka nyt"
+      ],
       "settings": [
         "asetuksissa"
       ],
@@ -7143,6 +8275,30 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Päivitä tilauksesi käyttääksesi chat-asiakaspalvelua ja muista premium-ominaisuuksia, tai ilmoita ongelmastasi ilmaisella tukilomakeellamme."
+      ]
+    },
+    "Loading info": {
+      "Almost there": [
+        "Melkein valmis"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Kelentereita luotu: ${ createdCalendarCount }/${ calendarsToBeCreated }",
+        "Kelentereita luotu: ${ createdCalendarCount }/${ calendarsToBeCreated }"
+      ],
+      "Connecting to your email provider": [
+        "Yhdistetään sähköpostipalveluntarjoajaasi"
+      ],
+      "Creating new calendars": [
+        "Luodaan uusia kalentereita"
+      ],
+      "Gathering your data": [
+        "Tietojasi kerätään"
+      ],
+      "We're gathering your data from your provider": [
+        "Tietojasi kerätään palveluntarjoajalta"
+      ],
+      "Your import is starting": [
+        "Tuontisi alkaa"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -7233,6 +8389,24 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Ota ${ reason } käyttöön"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Tuo kaikki ${ itemsToImportCount } kansion viestit ja merkitse ne tunnisteella",
+        "Tuo kaikki ${ itemsToImportCount } kansion viestit ja merkitse ne tunnisteella"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Tuo kaikki ${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella",
+        "Tuo kaikki ${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } kansion viestit ja merkitse ne tunnisteella",
+        "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } kansion viestit ja merkitse ne tunnisteella"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella",
+        "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella"
       ]
     },
     "mail_signup_2024: Info": {
@@ -7327,6 +8501,26 @@
       ],
       "Sign in to access your ${ appName } account": [
         "Käytä ${ appName } -tiliäsi kirjautumalla sisään"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Miten kalenterit tuodaan muista palveluista"
+      ],
+      "How to import calendars from Yahoo": [
+        "Miten kalenterit tuodaan Yahoosta"
+      ],
+      "How to import contacts from another service": [
+        "Miten yhteystiedot tuodaan muista palveluista"
+      ],
+      "How to import contacts from Yahoo": [
+        "Miten yhteystiedot tuodaan Yahoosta"
+      ],
+      "How to import emails from another service": [
+        "Miten sähköpostit tuodaan muista palveluista"
+      ],
+      "How to import emails from Yahoo": [
+        "Miten sähköpostit tuodaan Yahoosta"
       ]
     },
     "Monetary unit": {
@@ -8430,6 +9624,21 @@
         "Joitain kuvia ei lähetetty, koska nykyinen valinta sisältää päällekkäisiä tiedostonimiä."
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Seuraavaksi sinun on kirjauduttava Google-tilillesi ja myönnettävä ${ BRAND_NAME }ille tietojesi käyttöoikeus."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Jotta tuonti toimii, sinun on valittava kaikki pyydetyt kohteet GIF-animaatiossa kuvatulla tavalla."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Valitse, mitä ${ BRAND_NAME } voi tehdä: tarkastella sähköpostiviestejäsi ja -asetuksiasi, tarkastella ja ladata yhteystietojasi, tarkastella ja ladata kaikkia käyttämiäsi esityslistoja Google Calendarista."
+      ]
+    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Unlimited 12 kuukaudeksi"
@@ -8534,11 +9743,17 @@
       ]
     },
     "Option": {
+      "Add to existing group": [
+        "Lisää olemassa olevaan ryhmään"
+      ],
       "Allowed ${ defaultLabel }": [
         "Sallittu ${ defaultLabel }"
       ],
       "Country configs": [
         "Maakohtaiset määritykset"
+      ],
+      "Create new group": [
+        "Luo uusi ryhmä"
       ],
       "Free server configs": [
         "Ilmaispalvelinten määritykset"
@@ -8551,6 +9766,9 @@
       ],
       "I'd like to merge this account into another one": [
         "Haluan yhdistää tämän tilin toiseen"
+      ],
+      "Ignore group": [
+        "Ohita ryhmä"
       ],
       "It's missing a key feature that I need": [
         "Siitä puuttuu erityisesti tarvitsemani ominaisuus"
@@ -8613,6 +9831,14 @@
       ],
       "No one": [
         "Ei ketään"
+      ]
+    },
+    "Option group label": {
+      "Create new calendar": [
+        "Luo uusi kalenteri"
+      ],
+      "Merge with calendar": [
+        "Yhdistä kalenteriin"
       ]
     },
     "Organization capacity error": {
@@ -8696,6 +9922,11 @@
       ],
       "Organization identity updated": [
         "Organisaatioidentiteettiä muutettiin"
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "Sinä"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9090,6 +10321,9 @@
       "Main street 12": [
         "Pääkatu 12"
       ],
+      "Name": [
+        "Nimi"
+      ],
       "Organization name": [
         "Organisaation nimi"
       ],
@@ -9208,6 +10442,38 @@
     "Price": {
       "Free": [
         "Free"
+      ]
+    },
+    "Property type": {
+      "Address": [
+        "Osoite"
+      ],
+      "Email": [
+        "Sähköposti"
+      ],
+      "Fax": [
+        "Faksi"
+      ],
+      "Home": [
+        "Koti"
+      ],
+      "Main": [
+        "Ensisijainen"
+      ],
+      "Mobile": [
+        "Matkapuhelin"
+      ],
+      "Other": [
+        "Muu"
+      ],
+      "Pager": [
+        "Hakulaite"
+      ],
+      "Phone": [
+        "Puhelin"
+      ],
+      "Work": [
+        "Työ"
       ]
     },
     "Protection type": {
@@ -10074,6 +11340,9 @@
       ]
     },
     "specialoffer: Title": {
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Pidä salasanasi turvassa ja järjestettynä useissa holveissa "
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Päivitä tilauksesi ja säästä enemmän kahden vuoden ${ planName } -tilauksella"
       ]
@@ -11189,6 +12458,9 @@
       "Country": [
         "Maa"
       ],
+      "CSV field": [
+        "CSV-kenttä"
+      ],
       "Edit": [
         "Muokkaa"
       ],
@@ -11206,6 +12478,9 @@
       ],
       "Event": [
         "Tapahtuma"
+      ],
+      "Import": [
+        "Tuonti"
       ],
       "Invitation email": [
         "Kutsusähköposti"
@@ -11230,6 +12505,12 @@
       ],
       "Total storage": [
         "Tallennustilaa yhteensä"
+      ],
+      "Values": [
+        "Arvot"
+      ],
+      "vCard field": [
+        "vCard-kenttä"
       ]
     },
     "Themes": {
@@ -11319,6 +12600,9 @@
       ],
       "Add address": [
         "Lisää osoite"
+      ],
+      "Add contact group name": [
+        "Lisää yhteystietoryhmän nimi"
       ],
       "Add countries to \"${ policyName }\"": [
         "Lisää maita käytäntöön \"${ policyName }\""
@@ -11479,6 +12763,9 @@
       "Contact us": [
         "Ota yhteyttä"
       ],
+      "Continue with partial import?": [
+        "Jatketaanko osittaista tuontia?"
+      ],
       "Couldn’t create accounts": [
         "Tilejä ei voitu luoda"
       ],
@@ -11525,8 +12812,17 @@
       "Customization": [
         "Mukautus"
       ],
+      "Customize and confirm": [
+        "Mukauta ja vahvista"
+      ],
+      "Customize calendar import": [
+        "Mukauta kalenterin tuontia"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Muuta tilauksesi IP-osoitemäärää"
+      ],
+      "Customize your mail import": [
+        "Mukauta viestien tuontia"
       ],
       "Date": [
         "Päiväys"
@@ -11743,8 +13039,24 @@
       "Human verification": [
         "Ihmisvahvistus"
       ],
+      "Import as simple event?": [
+        "Tuodaanko yksinkertaisena tapahtumana?",
+        "Tuodaanko yksinkertaisina tapahtumina?"
+      ],
+      "Import contacts": [
+        "Tuo yhteystietoja"
+      ],
       "Import emails, calendars, contacts": [
         "Tuo sähköpostit, kalenterit ja yhteystiedot"
+      ],
+      "Import events": [
+        "Tuo tapahtumia"
+      ],
+      "Import failed": [
+        "Tuonti epäonnistui"
+      ],
+      "Import groups": [
+        "Tuo ryhmiä"
       ],
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
@@ -11845,6 +13157,9 @@
       "Recommended": [
         "Suositus"
       ],
+      "Reconnect your account": [
+        "Yhdistä tilisi uudelleen"
+      ],
       "Recovery": [
         "Palautus"
       ],
@@ -11896,6 +13211,12 @@
       "Select a plan": [
         "Valitse tilaus"
       ],
+      "Select action to take on contact group": [
+        "Valitse yhteystietoryhmään kohdistettava toiminto"
+      ],
+      "Select contact group": [
+        "Valitse yhteystietoryhmä"
+      ],
       "Send email reminders?": [
         "Lähetetäänkö muistutuksia sähköpostitse?"
       ],
@@ -11938,6 +13259,9 @@
       "Sign in": [
         "Kirjaudu sisään"
       ],
+      "Sign in and grant access": [
+        "Kirjaudu ja myönnä käyttöoikeus"
+      ],
       "Sign in to join the Beta program": [
         "Liity beetaohjelmaan kirjautumalla"
       ],
@@ -11958,6 +13282,12 @@
       ],
       "Spam, block, and allow lists": [
         "Roskapostin, estettyjen ja sallittujen listat"
+      ],
+      "Start a new import": [
+        "Aloita uusi tuonti"
+      ],
+      "Start import process": [
+        "Aloita tuonti"
       ],
       "Status": [
         "Tila"
@@ -12065,6 +13395,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Tervetuloa ${ BRAND_NAME } for Businessiin"
       ],
+      "What would you like to import?": [
+        "Mitä haluat tuoda?"
+      ],
       "WireGuard configuration": [
         "WireGuard-määritykset"
       ],
@@ -12169,11 +13502,26 @@
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Kopio ja liitä tämä URL identiteetintarjoajasi entiteetti-ID-kenttään"
       ],
+      "Customize import to reduce the number of folders": [
+        "Vähennä kansioiden määrää mukauttamalla tuontia"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Vähennä tunnisteiden määrää mukauttamalla tuontia"
+      ],
       "Device name and app version": [
         "Laitteen nimi ja sovelluksen versio"
       ],
       "Display name for the entity in the eduGAIN database": [
         "Entiteetin näyttönimi eduGAIN-tietokannassa"
+      ],
+      "Each imported email will have this label": [
+        "Jokainen tuotu viesti merkitään tällä tunnisteella"
+      ],
+      "Edit folder names": [
+        "Muokkaa kansioiden nimiä"
+      ],
+      "Edit label names": [
+        "Muokkaa tunnisteiden nimiä"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Identiteetintarjoajan (esim. https://idp.esimerkki.fi/sso/saml) päätepisteen URL-osoite."
@@ -12189,6 +13537,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "Esimerkiksi **salasana, qwerty**, jne."
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail lajittelee joitakin viestejä automaattisesti kategorioihin kuten Sosiaaliset verkostot ja Tarjoukset. Voit valita minne nämä viestit tuodaan."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Identiteetintarjoajan julkinen avain, jota käytetään todentamisvaltuutusten allekirjoittamiseksi. Hae varmenteen tiiviste identiteetintarjoajaltasi."
@@ -12207,6 +13558,12 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "Määritä eduGAIN-entiteetin käyttäjät, joiden sallitaan tunnistautua SAML SSO:lla"
+      ],
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Järjestelmän alikansiot näkyvät ${ MAIL_APP_NAME }issa erillisinä kansioina"
+      ],
+      "The import will start with the most recent messages.": [
+        "Tuonti alkaa viimeisimmistä viesteistä."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Uusi tilausjakso alkaa ${ formattedTime }"
@@ -12560,6 +13917,14 @@
         "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkkiä)"
       ]
     },
+    "Video control": {
+      "Click to replay the video": [
+        "Toista video uudelleen painamalla tästä"
+      ],
+      "Replay video": [
+        "Toista video uudelleen"
+      ]
+    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "Löysin toisen palvelun, josta pidän enemmän"
@@ -12732,6 +14097,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } yhdistää samannimiset kansiot. Välttääksesi tämän, muuta nimet ennen tuontia."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } siirtää mahdollisimman paljon tietoa, aloittaen viimeisimmistä viesteistäsi."
+      ],
       "Are you sure you want to delete the phone number?": [
         "Haluatko varmasti poistaa puhelinnumeron?"
       ],
@@ -12753,17 +14124,29 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raportit eivät ole päästä päähän -salattuja, joten älä sisällytä niihin arkaluonteisia tietoja."
       ],
+      "Skip verification?": [
+        "Ohitetaanko vahvistus?"
+      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Laitteesi päiväys ja kellonaika eivät ole ajan tasalla. ${ learnMore }"
       ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Tämä tuonti saattaa ylittää ${ BRAND_NAME }-tilisi tämänhetkisen vapaan tallennuskapasiteetin. Harkitse tuontisi mukautusta."
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Valitettavasti emme ole juuri nyt tavoitettavissa. Kuvaile ongelmasi täyttämällä alla oleva lomake niin tutustumme siihen ja otamme yhteyttä kun olemme taas paikalla."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Sähköpostipalvelinta ei voitu vahvistaa. Jos luotat siihen, voit ohittaa tämän vahvistuksen."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS-asetuksissasi havaittiin ongelma. Varmista, että tietueesi vastaavat alla olevia ohjeita. Jos ongelma jatkuu, joudutaan DKIM-allekirjoitus poistamaan käytöstä."
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Sinun on ${ activateLink } organisaatioavain ennen kuin lisäät sähköpostiosoitteen ei-yksityiselle jäsenelle."
+      ],
+      "You will lose any customization you made so far.": [
+        "Menetät kaikki aiemmin tekemäsi mukautukset."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ilmainen kokeilusi päättyy ${ textDate }. ${ action }"

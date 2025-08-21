@@ -162,6 +162,9 @@
       "Choose a file or drag it here": [
         "Välj en fil eller dra den hit"
       ],
+      "Claim this address": [
+        "Gör anspråk på denna adress"
+      ],
       "Clear": [
         "Rensa"
       ],
@@ -469,6 +472,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Skaffa ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Skaffa en gratis ${ BRAND_NAME }-adress"
       ],
       "Get in touch": [
         "Kontakta oss"
@@ -3170,6 +3176,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Belopp under minimum (${ minimumAmount })."
       ],
+      "An error occurred": [
+        "Ett fel uppstod"
+      ],
       "An error occurred while loading alias options": [
         "Ett fel uppstod när alternativen för alias skulle laddas"
       ],
@@ -3629,6 +3638,9 @@
       ],
       "Unknown location": [
         "Okänd plats"
+      ],
+      "Unknown number of downloads": [
+        "Okänt antal nedladdningar"
       ],
       "Unknown payment token status": [
         "Okänd status för betalningstoken"
@@ -4588,6 +4600,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } kräver en ${ BRAND_NAME }-adress för säker synkronisering och kryptering av händelser. Gör anspråk på din gratis ${ MAIL_APP_NAME }-adress nu."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
         "${ calendarsToBeCreatedCount } nya kalendrar"
@@ -5151,6 +5166,9 @@
       ],
       "End-to-end encrypted": [
         "End-to-end-krypterat"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Säkerställ fullständig privat och krypterad kommunikation. Gör anspråk på din gratis ${ BRAND_NAME } e-postadress nu."
       ],
       "Enter password": [
         "Ange lösenord"
@@ -7178,6 +7196,9 @@
       ],
       "Uploaded by": [
         "Uppladdad av"
+      ],
+      "Username": [
+        "Användarnamn"
       ],
       "VAT": [
         "VAT"
@@ -9757,6 +9778,9 @@
       ]
     },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Som en prenumerant på **${ currentPlanTitle }** kan du låsa upp **${ unlockPlanTitle }** och fler ${ BRAND_NAME }-tjänster genom att uppgradera till **${ upsellPlanTitle }**."
+      ],
       "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
         "Fler ${ BRAND_NAME }-tjänster.${ br }En enkel prenumeration."
       ],
@@ -11357,6 +11381,9 @@
       "Check for malicious files": [
         "Kolla efter skadliga filer"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Gör anspråk på din ${ MAIL_APP_NAME }-adress"
+      ],
       "Clearing data": [
         "Rensar data"
       ],
@@ -11616,6 +11643,9 @@
         "Hittade ${ searchView.numberOfResults } resultat",
         "Hittade ${ searchView.numberOfResults } resultat"
       ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Skaffa full åtkomst till ${ CALENDAR_APP_NAME }"
+      ],
       "Get more from your VPN": [
         "Få ut mer av din VPN"
       ],
@@ -11787,6 +11817,9 @@
       ],
       "Notes": [
         "Anteckningar"
+      ],
+      "Number of downloads": [
+        "Antal nedladdningar"
       ],
       "Number of items": [
         "Antal objekt"
@@ -12381,6 +12414,9 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-post"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Krypterad och säker ${ MAIL_APP_NAME } e-postadress. Du kan enkelt skicka Bitcoin till vem som helst med bara deras ${ BRAND_NAME }-namn."
       ]
     },
     "wallet_signup_2024:app-switcher": {

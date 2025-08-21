@@ -138,6 +138,9 @@
       "Choose a file or drag it here": [
         "Elija un archivo o arrástrelo aquí"
       ],
+      "Claim this address": [
+        "Reclamar esta dirección"
+      ],
       "Clear": [
         "Borrar"
       ],
@@ -364,6 +367,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Obtenga ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Obtenga una dirección gratuita de ${ BRAND_NAME }"
       ],
       "Get in touch": [
         "Contáctenos"
@@ -3306,6 +3312,11 @@
         "Actualización de un evento a partir del ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contacto de confianza"
+      ]
+    },
     "Error": {
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } no se puede conectar a la cuenta externa"
@@ -4773,6 +4784,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnología de cifrado de ${ BRAND_NAME } significa que nadie tiene acceso a la contraseña, ni siquiera nosotros."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } requiere una dirección de ${ BRAND_NAME } para la sincronización segura de eventos y cifrado. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } calendario nuevo",
         "${ calendarsToBeCreatedCount } calendarios nuevos"
@@ -5185,6 +5199,9 @@
       "Enabling auto-deletion…": [
         "Activando la eliminación automática…"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Asegure una comunicación privada y cifrada completa. Reclame su dirección gratuita de ${ BRAND_NAME } ahora."
+      ],
       "Enter the code from your authenticator app": [
         "Ingrese el código de la aplicación de autenticación."
       ],
@@ -5199,6 +5216,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Ingrese su propia contraseña (como administrador de la organización)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Ingrese su propia contraseña (como contacto de confianza)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Tiempo restante estimado: ${ estimatedMinutes } minuto",
@@ -5633,6 +5653,12 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "La suscripción terminará pronto: reactívela antes de ${ byDate } para mantener los beneficios de ${ planName }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Suscripción a punto de finalizar: Para mantener los beneficios de su ${ planName }, reinicie su suscripción en la Apple App Store antes del ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Su suscripción finaliza: Para mantener los beneficios de su ${ planName }, reinicie su suscripción en Google Play Store antes del ${ byDate }. ${ reactivateLink }"
       ],
       "Surveillance": [
         "Vigilancia"
@@ -6683,6 +6709,9 @@
       "URL": [
         "URL"
       ],
+      "Username": [
+        "Nombre de usuario"
+      ],
       "VAT": [
         "IVA"
       ],
@@ -6727,6 +6756,9 @@
       ],
       "Your password (admin)": [
         "Su contraseña (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Su contraseña (contacto de confianza)"
       ]
     },
     "Label for contact group color": {
@@ -6868,6 +6900,9 @@
       ],
       "Request an invite": [
         "Solicitar una invitación"
+      ],
+      "Resume now": [
+        "Reanudar ahora"
       ],
       "settings": [
         "ajustes"
@@ -10601,6 +10636,9 @@
       "Account security": [
         "Seguridad de la cuenta"
       ],
+      "Account temporarily locked": [
+        "Cuenta temporalmente bloqueada"
+      ],
       "Add a custom logo": [
         "Agregue un logo personalizado"
       ],
@@ -10691,6 +10729,9 @@
       ],
       "Choose how often this event repeats": [
         "Elija con qué frecuencia se repite este evento"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Reclame su dirección de ${ MAIL_APP_NAME }"
       ],
       "Clearing data": [
         "Limpiando datos"

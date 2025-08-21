@@ -2271,6 +2271,11 @@
         "Soporte prioritario"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contacto de confianza"
+      ]
+    },
     "Error": {
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } es su nombre de usuario. Para crear ${ emailAddress }, vaya a Ajustes > Identidad y direcciones > Dominio corto (pm.me)"
@@ -2845,6 +2850,9 @@
       "Enter your own password (as organization admin).": [
         "Ingrese su propia contraseña (como administrador de la organización)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Ingrese su propia contraseña (como contacto de confianza)."
+      ],
       "Everything in ${ planOrAppName }": [
         "Todo en ${ planOrAppName }"
       ],
@@ -3377,6 +3385,9 @@
       ],
       "Your password (admin)": [
         "Su contraseña (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Su contraseña (contacto de confianza)"
       ]
     },
     "Label, credit card": {
@@ -5324,6 +5335,9 @@
     "Title": {
       "${ feature } is now active": [
         "La función ${ feature } ya está activada"
+      ],
+      "Account temporarily locked": [
+        "Cuenta temporalmente bloqueada"
       ],
       "Add credit/debit card": [
         "Agregar tarjeta de crédito/débito"

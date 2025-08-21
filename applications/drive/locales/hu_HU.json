@@ -228,6 +228,9 @@
       "Continue import": [
         "Importálás folytatása"
       ],
+      "Continue on web": [
+        "Folytatás a weben"
+      ],
       "Continue transfers": [
         "Le- és feltöltések folytatása"
       ],
@@ -341,6 +344,9 @@
       "Details": [
         "Részletek"
       ],
+      "Diagnostics": [
+        "Diagnosztika"
+      ],
       "Discard": [
         "Elvetés"
       ],
@@ -374,11 +380,20 @@
       "Download anyway": [
         "Letöltés mindenképpen"
       ],
+      "Download app": [
+        "Alkalmazás letöltése"
+      ],
       "Download apps": [
         "Alkalmazások letöltése"
       ],
+      "Download info": [
+        "Letöltési információk"
+      ],
       "Download logs": [
         "Naplók letöltése"
+      ],
+      "Download results": [
+        "Eredmények letöltése"
       ],
       "Drive Locked": [
         "Tárhely zárolva"
@@ -439,6 +454,9 @@
       ],
       "Forward as attachment": [
         "Továbbítás mellékletként"
+      ],
+      "Full data": [
+        "Teljes adatok"
       ],
       "Generate password": [
         "Jelszó létrehozása"
@@ -686,6 +704,9 @@
       "Next page": [
         "Következő oldal"
       ],
+      "No sensitive data": [
+        "Nincsenek érzékeny adatok"
+      ],
       "Not now": [
         "Most nem"
       ],
@@ -850,6 +871,9 @@
       ],
       "Retry": [
         "Újra"
+      ],
+      "Run diagnostics": [
+        "Diagnosztika futtatása"
       ],
       "Save": [
         "Mentés"
@@ -3143,6 +3167,9 @@
       "Device name does not match": [
         "Az eszköznév nem egyezik"
       ],
+      "Diagnostics failed": [
+        "Diagnosztika sikertelen"
+      ],
       "Domain not available, try again later": [
         "A domain név nem érhető el, próbálja meg később"
       ],
@@ -3179,11 +3206,35 @@
       "Failed to create folder": [
         "Nem sikerült létrehozni a mappát"
       ],
+      "Failed to create public share node": [
+        "Nem sikerült létrehozni a nyilvános megosztási csomópontot"
+      ],
+      "Failed to fetch node": [
+        "Csomópont lekérése sikertelen"
+      ],
+      "Failed to fetch sharing info": [
+        "Megosztási információk lekérése sikertelen"
+      ],
+      "Failed to get details, please try again later": [
+        "A részletek lekérése nem sikerült, próbálja újra később."
+      ],
       "Failed to load the STL preview": [
         "Nem sikerült betölteni az STL előnézetet"
       ],
+      "Failed to resend invitation": [
+        "Nem sikerült újraküldeni a meghívást"
+      ],
       "Failed to save some photos to your Drive": [
         "Nem sikerült menteni néhány fényképet az Ön Drive-jába"
+      ],
+      "Failed to unshare node": [
+        "Csomópont megosztásának megszüntetése sikertelen"
+      ],
+      "Failed to update direct share node": [
+        "Nem sikerült frissíteni a közvetlen megosztási csomópontot"
+      ],
+      "Failed to update public share node": [
+        "Nem sikerült frissíteni a nyilvános megosztási csomópontot"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "A fájl: \"${ item.name }\", hiba miatt nem tölthető fel: \"${ error }\""
@@ -3499,6 +3550,9 @@
       "Unknown error": [
         "Ismeretlen hiba"
       ],
+      "Unknown location": [
+        "Ismeretlen hely"
+      ],
       "Unknown payment token status": [
         "Ismeretlen fizetési token állapot"
       ],
@@ -3513,6 +3567,33 @@
       ],
       "Validation error": [
         "Érvényesítési hiba"
+      ],
+      "We were not able some of your shared items": [
+        "Nem sikerült betölteni néhány megosztott elemet"
+      ],
+      "We were not able to load some invitations": [
+        "Nem sikerült betölteni néhány meghívást"
+      ],
+      "We were not able to load some items shared with you": [
+        "Nem sikerült betölteni néhány Önnel megosztott elemet."
+      ],
+      "We were not able to load some of your bookmarks": [
+        "Nem sikerült betölteni néhány könyvjelzőjét"
+      ],
+      "We were not able to load some of your invitation to shared items": [
+        "Nem sikerült betölteni néhány meghívását a megosztott elemekhez"
+      ],
+      "We were not able to load some of your saved shared links": [
+        "Nem sikerült betölteni néhány mentett megosztott hivatkozást"
+      ],
+      "We were not able to load some of your shared items": [
+        "Nem sikerült betölteni néhány megosztott elemet"
+      ],
+      "We were not able to load some of your shared items details": [
+        "Nem sikerült betölteni néhány megosztott elemének részleteit"
+      ],
+      "We were not able to load some of your shared items info": [
+        "Nem sikerült betölteni néhány megosztott elemének információját"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nem küldhet emailt több, mint ${ maxContacts } címzettnek",
@@ -3532,6 +3613,9 @@
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nem dekódolható név"
       ]
     },
     "Error importing calendar": {
@@ -5091,6 +5175,9 @@
       "Geoblocking": [
         "Földrajzi tiltás"
       ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "Naplók és egyéb információk lekérése technikai támogatáshoz és hibaelhárításhoz"
+      ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Szerezze be az alkalmazást a telefonjáról készült fényképek biztonsági mentéséhez, vagy töltse fel őket ide."
       ],
@@ -5114,6 +5201,9 @@
       ],
       "How does encrypted search work?": [
         "Hogyan működik a titkosított keresés?"
+      ],
+      "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
+        "Ha ezek a fájlok nincsenek teljesen letöltve helyileg a ${ deviceName } eszközön, akkor elveszíti a hozzáférést hozzájuk."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
@@ -5179,6 +5269,9 @@
       "Initializing": [
         "Inicializálás"
       ],
+      "Integrity issues found": [
+        "Integritási problémák észlelve"
+      ],
       "Internet connection lost": [
         "Az internetkapcsolat megszakadt"
       ],
@@ -5190,6 +5283,9 @@
       ],
       "Invite link copied": [
         "Meghívó link másolva"
+      ],
+      "Issues found": [
+        "Talált problémák"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Úgy tűnik, hogy nemrég megpróbálta feltölteni ezt a fájlt: ${ uploadName }. Ha feltöltés nem sikerült, ${ replaceFile }. Ha a feltöltés még folyamatban van, lecserélése törölni fogja a folyamatban lévő feltöltést."
@@ -5347,6 +5443,9 @@
       ],
       "No group found": [
         "Nem található csoport"
+      ],
+      "No issue found": [
+        "Nincs észlelt probléma"
       ],
       "No payment is required at this time.": [
         "Jelenleg nincs fizetendő számla."
@@ -5609,6 +5708,9 @@
       ],
       "Restoring Photos... Please keep the tab open": [
         "Fotók helyreállítása... Kérjük, tartsa nyitva a lapot"
+      ],
+      "Running diagnostics...": [
+        "Diagnosztika futtatása..."
       ],
       "Saving...": [
         "Mentés..."
@@ -6092,6 +6194,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Amikor VPN-hez kapcsolódik, az titkosítási technológiát használ az IP-cím (az eszközhöz rendelt egyedi kód) elrejtéséhez."
       ],
+      "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
+        "Ha eltávolítja a ${ deviceName } eszközt a szinkronizált eszközök közül, akkor az eszközről a Saját számítógépekhez hozzáadott összes mappa véglegesen törlődik a ${ DRIVE_APP_NAME } alkalmazásból."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
       ],
@@ -6250,6 +6355,9 @@
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Önnek legalább egy lejárt számlatartozása van, ezért fiókját korlátoztuk. Tájékoztatjuk, hogy amennyiben nem rendezi tartozását, a jövőben az e-mailek és a fájlmegosztások letiltásra kerülhetnek. Kérjük mielőbb rendezze tartozását: ${ payInvoiceLink }"
+      ],
+      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
+        "A jelenlegi böngészője nem támogatja a nagy méretű fájlok/több fájl letöltését. Töltse le az asztali alkalmazást a zökkenőmentes feltöltésekhez és letöltésekhez."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Az adatok a ${ BRAND_NAME } fiókjába importálásra készen állnak a(z) ${ importedEmailAddressStrong } címről."
@@ -6990,6 +7098,9 @@
       ],
       "Uploaded by": [
         "Feltöltötte"
+      ],
+      "Username": [
+        "Felhasználónév"
       ],
       "VAT": [
         "ÁFA"
@@ -8484,6 +8595,22 @@
         "${ count } elem visszafejtése nem sikerült",
         "${ count } elem visszafejtése nem sikerült"
       ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "${ nbFailures } fényképet nem lehet eltávolítani innen: \"${ albumLink.name }\"",
+        "${ nbFailures } fényképet nem lehet eltávolítani innen: \"${ albumLink.name }\""
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "${ nbMainPhotosError } fényképet nem lehet hozzáadni ehhez: \"${ albumName }\"",
+        "${ nbMainPhotosError } fényképet nem lehet hozzáadni ehhez: \"${ albumName }\""
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "${ nbMainPhotosSuccess } fénykép hozzá lett adva ide: \"${ albumName }\"",
+        "${ nbMainPhotosSuccess } fénykép hozzá lett adva ide: \"${ albumName }\""
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "${ nbSuccesses } fénykép el lett távolítva innen: \"${ albumLink.name }\"",
+        "${ nbSuccesses } fénykép el lett távolítva innen: \"${ albumLink.name }\""
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } elem törölve",
         "${ numberOfItems } elem törölve"
@@ -8545,6 +8672,9 @@
       "Album renamed successfully": [
         "Album átnevezve"
       ],
+      "All items deleted permanently from trash": [
+        "Minden elem véglegesen törölve a Lomtárból"
+      ],
       "An invitation has been sent": [
         "Egy meghívás el küldve"
       ],
@@ -8575,6 +8705,9 @@
       "Encrypted search activated": [
         "Titkosított keresés aktiválva"
       ],
+      "Error while listing devices": [
+        "Hiba az eszközök listázása közben"
+      ],
       "External invitation removed from the share": [
         "Külső meghívás eltávolítva a megosztásból"
       ],
@@ -8602,8 +8735,14 @@
       "Failed to reject share invitation": [
         "Nem sikerült elutasítani a megosztási meghívót"
       ],
+      "Failed to remove device": [
+        "Nem sikerült eltávolítani az eszközt"
+      ],
       "Failed to remove the file": [
         "A fájl eltávolítása sikertelen"
+      ],
+      "Failed to rename device": [
+        "Nem sikerült átnevezni az eszközt"
       ],
       "Failed to upload files: ${ err }": [
         "Fájlok feltöltése nem sikerült: ${ err }"
@@ -8650,6 +8789,14 @@
       ],
       "Root folder failed to be loaded": [
         "A gyökérmappa betöltése nem sikerült"
+      ],
+      "Selected item was not removed from your list": [
+        "A kiválasztott elem nem lett eltávolítva a listáról.",
+        "A kiválasztott elemeket nem sikerült eltávolítani a listáról."
+      ],
+      "Selected items were successfully removed from your list": [
+        "A kiválasztott elemek sikeresen el lettek távolítva a listából.",
+        "A kiválasztott elemek sikeresen el lettek távolítva a listából."
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "A kiválasztott fénykép(ek) már a(z) „${ albumName }” albumban vannak"
@@ -9032,6 +9179,18 @@
       ],
       "No parent folder": [
         "Nincs szülő-mappa"
+      ],
+      "Only current location": [
+        "Csak aktuális hely"
+      ],
+      "Only current location: ${ name }": [
+        "Csak aktuális hely: ${ name }"
+      ],
+      "Verify content": [
+        "Tartalom ellenőrzése"
+      ],
+      "Verify thumbnails": [
+        "Ellenőrizze a bélyegképeket"
       ]
     },
     "Option group label": {
@@ -10904,6 +11063,9 @@
       "Addresses": [
         "Címek"
       ],
+      "Advanced details": [
+        "Speciális részletek"
+      ],
       "Album": [
         "Album"
       ],
@@ -11100,6 +11262,33 @@
       "Devices": [
         "Eszköz"
       ],
+      "Diagnostics": [
+        "Diagnosztika"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digitális aláírás részben ellenőrizve. Ezt a fájlt egy nyilvánosan elérhető megosztási hivatkozás használatával hozta létre egy ${ BRAND_NAME } fiókkal nem rendelkező felhasználó, akinek a személyazonossága nem ellenőrizhető."
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digitális aláírás részben ellenőrizve. Ezt a fájlt egy nyilvánosan elérhető megosztási hivatkozás használatával töltötte fel egy ${ BRAND_NAME } fiókkal nem rendelkező felhasználó, akinek a személyazonossága nem ellenőrizhető."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digitális aláírás részben ellenőrizve. Ezt a mappát egy nyilvánosan elérhető megosztási hivatkozás használatával hozta létre egy ${ BRAND_NAME } fiókkal nem rendelkező felhasználó, akinek a személyazonossága nem ellenőrizhető."
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digitális aláírás részben ellenőrizve. Ezt a mappát egy nyilvánosan elérhető megosztási hivatkozás használatával töltötte fel egy ${ BRAND_NAME } fiókkal nem rendelkező felhasználó, akinek a személyazonossága nem ellenőrizhető."
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "Digitális aláírás ellenőrizve. Ezt a fájlt biztonságosan létrehozta <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Digitális aláírás ellenőrizve. Ezt a fájlt biztonságosan feltöltötte <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "Digitális aláírás ellenőrizve. Ezt a mappát biztonságosan létrehozta <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Digitális aláírás ellenőrizve. Ezt a mappát biztonságosan feltöltötte <strong>${ emailAddress }</strong>."
+      ],
       "Discard": [
         "Elvetés"
       ],
@@ -11117,6 +11306,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } alkalmazások letöltése"
+      ],
+      "Download details": [
+        "Letöltés részletei"
       ],
       "Download the app": [
         "Töltse le az alkalmazást"
@@ -11267,6 +11459,9 @@
       "Last edited by": [
         "Utoljára szerkesztette:"
       ],
+      "Last uploaded by": [
+        "Utoljára feltöltötte"
+      ],
       "Level": [
         "Szint"
       ],
@@ -11287,6 +11482,9 @@
       ],
       "Manage secure link": [
         "Biztonságos hivatkozás kezelése"
+      ],
+      "Media type": [
+        "Médiatípus"
       ],
       "Merge contacts": [
         "Névjegyek egyesítése"
@@ -11389,6 +11587,9 @@
       ],
       "Original size": [
         "Eredeti méret"
+      ],
+      "Original size in bytes": [
+        "Eredeti méret bájtban"
       ],
       "Other information": [
         "Egyéb adatok"
@@ -11514,6 +11715,9 @@
       "Settings": [
         "Beállítások"
       ],
+      "SHA1": [
+        "SHA1"
+      ],
       "Share ${ name }": [
         "${ name } megosztása"
       ],
@@ -11543,6 +11747,9 @@
       ],
       "Size": [
         "Méret"
+      ],
+      "Size in bytes": [
+        "Méret bájtokban"
       ],
       "Sort files/folders": [
         "Fájlok és mappák rendezése"
@@ -11574,6 +11781,15 @@
       "The link expired": [
         "A hivatkozás lejárt"
       ],
+      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "A titkosítási kulcsok aláírásának ellenőrzése az eredeti készítő (${ claimedKeyAuthor }) által, aki létrehozta a csomópontot, sikertelen volt. Az ok: ${ nodeEntity.keyAuthor.error.error }"
+      ],
+      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "A fájl tartalom aláírásának ellenőrzése a feltöltő (${ claimedContentAuthor }) által, aki az utolsó revíziót feltöltötte, sikertelen volt. Az ok: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "A név aláírásának ellenőrzése a szerző (${ claimedNameAuthor }) által, aki utoljára állította be a nevet, sikertelen volt. Az ok: ${ nodeEntity.nameAuthor.error.error }"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "A fájl aláírása hiányzik vagy hibás. Nyissa meg a Menü (⋮) → Részletek pontot a további információért."
       ],
@@ -11597,6 +11813,12 @@
       ],
       "Type": [
         "Típus"
+      ],
+      "UID": [
+        "UID"
+      ],
+      "Unknown user": [
+        "Ismeretlen felhasználó"
       ],
       "Untitled document ${ date }": [
         "Névtelen dokumentum: ${ date }"
@@ -11648,6 +11870,30 @@
       ],
       "Warning: suspected fake website": [
         "Figyelem: gyanítottan hamis weboldal"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
+        "Nem tudtuk megerősíteni, hogy <strong>${ emailAddress }</strong> hozta létre ezt a fájlt."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "Nem tudtuk megerősíteni, hogy <strong>${ emailAddress }</strong> hozta létre ezt a mappát."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "Nem tudtuk megerősíteni, hogy <strong>${ emailAddress }</strong> töltötte fel ezt a fájlt."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "Nem tudtuk megerősíteni, hogy <strong>${ emailAddress }</strong> töltötte fel ezt a mappát."
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "Nem tudtuk megerősíteni, hogy egy anonim felhasználó hozta létre ezt a fájlt."
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "Nem tudtuk megerősíteni, hogy egy anonim felhasználó hozta létre ezt a mappát."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "Nem tudtuk megerősíteni, hogy egy anonim felhasználó töltötte fel ezt a fájlt."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "Nem tudtuk megerősíteni, hogy egy anonim felhasználó töltötte fel ezt a mappát."
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Üdvözöljük a ${ BRAND_NAME } üzleti verziójánál"

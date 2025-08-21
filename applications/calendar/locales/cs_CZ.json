@@ -140,6 +140,9 @@
       "Choose a file or drag it here": [
         "Vyberte soubor nebo jej sem přetáhněte"
       ],
+      "Claim this address": [
+        "Nárokovat tuto adresu"
+      ],
       "Clear": [
         "Smazat"
       ],
@@ -370,6 +373,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Získat ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Získejte ${ BRAND_NAME } adresu zdarma"
       ],
       "Get in touch": [
         "Kontaktujte nás"
@@ -4851,6 +4857,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Díky šifrovací technologii ${ BRAND_NAME } se k vašemu heslu nikdo nedostane - ani my ne."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } vyžaduje ${ BRAND_NAME } adresu pro bezpečnou synchronizaci událostí a šifrování. ${ claimAddressButton }"
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nový kalendář",
         "${ calendarsToBeCreatedCount } nové kalendáře",
@@ -5306,6 +5315,9 @@
       ],
       "Enabling auto-deletion…": [
         "Povolování automatického mazání..."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Zajistěte si plně soukromou a šifrovanou komunikaci. Získejte nyní vaši bezplatnou ${ BRAND_NAME } emailovou adresu."
       ],
       "Enter the code from your authenticator app": [
         "Zadejte kód z vaší ověřovací aplikace"
@@ -5767,7 +5779,7 @@
         "Předplatné vyprší: opětovně aktivujte dne ${ byDate } pro zachování vašich výhod tarifu ${ planName }. ${ reactivateLink }"
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
-        "Předplatné končí: Chcete-li si ponechat výhody svého ${ planName }, restartujte své předplatné v Apple App Store do ${ byDate }. ${ reactivateLink }"
+        "Předplatné končí: Chcete-li si ponechat výhody svého předplatného ${ planName }, restartujte své předplatné v Apple App Store do ${ byDate }. ${ reactivateLink }"
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Předplatné končí: Chcete-li si ponechat výhody svého předplatného ${ planName }, restartujte své předplatné v Obchodě Play do ${ byDate }. ${ reactivateLink }"
@@ -6838,6 +6850,9 @@
       "URL": [
         "URL"
       ],
+      "Username": [
+        "Uživatelské jméno"
+      ],
       "VAT": [
         "DPH"
       ],
@@ -7025,7 +7040,7 @@
         "Požádat o pozvánku"
       ],
       "Resume now": [
-        "Pokračovat nyní"
+        "Obnovit nyní"
       ],
       "settings": [
         "nastavení"
@@ -11080,6 +11095,9 @@
       ],
       "Choose how often this event repeats": [
         "Vyberte jak často se tato událost opakuje"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Získejte vaši ${ MAIL_APP_NAME } adresu."
       ],
       "Clearing data": [
         "Mazání dat"

@@ -256,6 +256,9 @@
       "Claim it": [
         "Διεκδικήστε το"
       ],
+      "Claim this address": [
+        "Διεκδικήστε αυτή τη διεύθυνση"
+      ],
       "Clear all formatting": [
         "Απαλοιφή μορφοποιήσεων"
       ],
@@ -303,9 +306,6 @@
       ],
       "Connect to video conferencing": [
         "Σύνδεση σε τηλεδιάσκεψη"
-      ],
-      "Connect your Gmail address": [
-        "Συνδέστε τη διεύθυνση Gmail σας"
       ],
       "Connected": [
         "Συνδεδεμένο"
@@ -729,6 +729,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Αποκτήστε το ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Αποκτήστε μια δωρεάν ${ BRAND_NAME } διεύθυνση"
       ],
       "Get a new encrypted email address": [
         "Λάβετε μια νέα κρυπτογραφημένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -7799,6 +7802,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Η τεχνολογία κρυπτογράφησης του ${ BRAND_NAME } σημαίνει ότι κανείς δεν μπορεί να έχει πρόσβαση στον κωδικό πρόσβασής σας - ούτε καν εμείς."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "Το ${ CALENDAR_APP_NAME } απαιτεί μια διεύθυνση ${ BRAND_NAME } για ασφαλή συγχρονισμό και κρυπτογράφηση εκδηλώσεων. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } νέο ημερολόγιο",
         "${ calendarsToBeCreatedCount } νέα ημερολόγια"
@@ -8000,11 +8006,20 @@
       "**${ appName }** is not supported.": [
         "**${ appName }** δεν υποστηρίζεται."
       ],
+      "**Enable automatic backups** for peace of mind": [
+        "**Ενεργοποιήστε αυτόματη δημιουργία αντιγράφων ασφαλείας** για να έχετε το κεφάλι σας ήσυχο"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Αποκτήστε μία ${ BRAND_NAME } διεύθυνση** για να χρησιμοποιήσετε όλες τις ${ BRAND_NAME_TWO } υπηρεσίες συμπεριλαμβανομένων των ${ MAIL_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }."
       ],
+      "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
+        "**Εισάγετε τους υπάρχοντες κωδικούς σας** από άλλες εφαρμογές 2FA, όπως το Google Authenticator"
+      ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Προσκαλέστε τους φίλους σας** στο ${ BRAND_NAME } με τον σύνδεσμο παραπομπής σας."
+      ],
+      "**Sync codes** to all your devices": [
+        "**Συγχρονίστε τους κωδικούς** σε όλες τις συσκευές σας"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Περισσότερο",
@@ -8101,8 +8116,8 @@
       "Add a recovery phone number": [
         "Προσθήκη ενός τηλεφωνικού αριθμού ανάκτησης"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
-        "Προσθέστε ένα επιπλέον επίπεδο ασφαλείας στον λογαριασμό σας. Θα χρειαστεί να επαληθεύετε τον εαυτό σας με 2FA κάθε φορά που συνδέεστε. Συνιστούμε να χρησιμοποιείτε το ${ protonAuthenticatorDownloadLink } για την αποθήκευση των κωδικών 2FA."
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Προσθέστε άλλο ένα επίπεδο ασφάλειας στον λογαριασμό σας. Θα πρέπει να επαληθεύετε τον εαυτό σας με έλεγχο ταυτότητας δύο παραγόντων κάθε φορά που συνδέεστε."
       ],
       "Add domain": [
         "Προσθήκη τομέα"
@@ -8674,6 +8689,9 @@
       "Download recovery file": [
         "Κατέβασμα αρχείου ανάκτησης"
       ],
+      "Download the app and import existing codes.": [
+        "Κατεβάστε την εφαρμογή και εισάγετε υπάρχοντες κωδικούς."
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Κατεβάστε την αγαπημένη σας εφαρμογή σήμερα και πάρτε την ιδιωτικότητα σας όπου κι αν πάτε."
       ],
@@ -8787,6 +8805,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Απολαύστε μια ταχύτερη, εστιασμένη εμπειρία αποστολής μηνυμάτων με την εφαρμογή για υπολογιστές."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Διασφαλίστε πλήρως ιδιωτική και κρυπτογραφημένη επικοινωνία. Αποκτήστε επίσης τώρα τη δωρεάν ${ BRAND_NAME } ηλεκτρονική διεύθυνση σας."
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "Εισάγετε έναν κωδικό πρόσβασης για να ολοκληρώσετε τον λογαριασμό σας ${ BRAND_NAME } και ξεκινήστε να χρησιμοποιείτε το ${ VPN_APP_NAME } σε όλες τις συσκευές σας."
@@ -8928,6 +8949,9 @@
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Η παραγωγή μιας νέας φράσης ανάκτησης θα απενεργοποιήσει την παλιά σας."
+      ],
+      "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
+        "Αποκτήστε το ${ AUTHENTICATOR_APP_NAME } για όλες τις συσκευές σας."
       ],
       "Get ${ upsellPlanName }": [
         "Απόκτηση ${ upsellPlanName }"
@@ -9183,6 +9207,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Χρειάζονται 10 ημέρες για να αλλάξετε τη χώρα ενός διακομιστή, οπότε βεβαιωθείτε ότι η επιλογή σας είναι σωστή."
       ],
+      "It won't be linked to your ${ BRAND_NAME } Account, so there's **no risk of getting locked out**.": [
+        "Δε θα είναι συνδεθεί με τον λογαριασμό σας ${ BRAND_NAME }, οπότε **δεν υπάρχει κίνδυνος να αποκλειστείτε**."
+      ],
       "It's better to have:": [
         "Είναι καλύτερα να έχετε:"
       ],
@@ -9365,6 +9392,9 @@
       ],
       "Mastercard SecureCode logo": [
         "λογότυπο Mastercard SecureCode"
+      ],
+      "Maybe later": [
+        "Ίσως αργότερα"
       ],
       "Medium Priority": [
         "Μεσαία προτεραιότητα"
@@ -10130,6 +10160,9 @@
       "The most recent data update, excluding breaches.": [
         "Η πιο πρόσφατη ενημέρωση δεδομένων, εξαιρουμένων των παραβιάσεων."
       ],
+      "The most secure and private two-factor authentication app, that's free and open-source.": [
+        "Η πιο ασφαλής και ιδιωτική εφαρμογή ταυτοποίησης δύο παραγόντων (2FA), που είναι δωρεάν και ανοιχτού κώδικα."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "Το όνομα θα είναι ορατό στους χρήστες σας ενώ είναι συνδεδεμένοι."
       ],
@@ -10687,6 +10720,9 @@
       ],
       "Why?": [
         "Γιατί;"
+      ],
+      "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
+        "Με το ${ AUTHENTICATOR_APP_NAME }, μπορείτε να:"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Με ένα Business ή Enterprise πλάνο, μπορείτε να αγοράσετε ${ boldDedicatedServers } για τον οργανισμό σας και να ρυθμίσετε τις ${ boldGateways } για να ελέγχετε ποιοι χρήστες μπορούν να έχουν πρόσβαση σε αυτές."
@@ -20410,6 +20446,9 @@
       "Choose user affiliations": [
         "Επιλέξτε συνεργασίες χρηστών"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Δημιουργήστε τη ${ MAIL_APP_NAME } διεύθυνσή σας"
+      ],
       "Click a value in the table to use it as filter": [
         "Κάντε κλικ σε μια τιμή στον πίνακα για να τη χρησιμοποιήσετε σαν φίλτρο"
       ],
@@ -20443,8 +20482,8 @@
       "Connect apps and devices": [
         "Σύνδεση εφαρμογών και συσκευών"
       ],
-      "Connect more Gmail addresses with ${ planName }": [
-        "Συνδέστε περισσότερες διευθύνσεις Gmail με ${ planName }"
+      "Connect more addresses": [
+        "Σύνδεση περισσότερων διευθύνσεων"
       ],
       "Connect organization": [
         "Σύνδεση οργανισμού"
@@ -21470,6 +21509,9 @@
       ],
       "Time zone": [
         "Ζωνη ωρας"
+      ],
+      "Try ${ AUTHENTICATOR_APP_NAME }": [
+        "Δοκιμάστε ${ AUTHENTICATOR_APP_NAME }"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ενεργοποίηση ${ DARK_WEB_MONITORING_NAME }"

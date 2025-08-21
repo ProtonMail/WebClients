@@ -2735,6 +2735,11 @@
         "Päivitys ${ formattedStart } alkavaan tapahtumaan"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Luotettu yhteyshenkilö"
+      ]
+    },
     "Error": {
       "\"${ sanitizedName }\" already exists": [
         "\"${ sanitizedName }\" on jo olemassa"
@@ -5041,6 +5046,12 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Tilaus päättyy pian: uudelleenaktivoi ${ byDate } mennessä säilyttääksesi ${ planName }-etusi. ${ reactivateLink }"
       ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Tilaus päättyy: Jotta ${ planName } -etusi säilyvät, käynnistä tilauksesi uudelleen Apple App Storessa viimeistään ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Tilaus päättyy: Jotta ${ planName } -etusi säilyvät, käynnistä tilauksesi uudelleen Google Play Kaupassa viimeistään ${ byDate }. ${ reactivateLink }"
+      ],
       "Surveillance": [
         "Tarkkailu"
       ],
@@ -5509,6 +5520,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Tilauksesi uudistuu automaattisesti ${ renewalTime }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
       ]
     },
     "info": {
@@ -6036,6 +6050,9 @@
       "Upload picture": [
         "Lataa kuva"
       ],
+      "Username": [
+        "Käyttäjätunnus"
+      ],
       "VAT": [
         "ALV"
       ],
@@ -6204,6 +6221,9 @@
       ],
       "Request an invite": [
         "Pyydä kutsu"
+      ],
+      "Resume now": [
+        "Jatka nyt"
       ],
       "settings": [
         "asetuksissa"
@@ -8765,6 +8785,9 @@
       ]
     },
     "specialoffer: Title": {
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Pidä salasanasi turvassa ja järjestettynä useissa holveissa "
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Päivitä tilauksesi ja säästä enemmän kahden vuoden ${ planName } -tilauksella"
       ]

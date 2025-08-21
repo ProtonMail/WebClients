@@ -141,6 +141,12 @@
       "Chat with us": [
         "Converse connosco"
       ],
+      "Check import progress": [
+        "Verifique o progresso da importação"
+      ],
+      "Choose a file or drag it here": [
+        "Escolha um ficheiro ou arraste-o para aqui"
+      ],
       "Choose my own password": [
         "Escolher a sua palavra-passe"
       ],
@@ -186,6 +192,9 @@
       "Continue anyway": [
         "Continuar mesmo assim"
       ],
+      "Continue import": [
+        "Continuar a importação"
+      ],
       "Continue with this password": [
         "Continuar com esta palavra-passe"
       ],
@@ -221,6 +230,12 @@
       ],
       "Current plan": [
         "Plano actual"
+      ],
+      "Customize": [
+        "Personalizar"
+      ],
+      "Customize import": [
+        "Personalizar importação"
       ],
       "Customize plan": [
         "Personalizar plano"
@@ -332,6 +347,9 @@
       ],
       "Edit invoice note": [
         "Editar a nota de fatura"
+      ],
+      "Edit label": [
+        "Editar etiqueta"
       ],
       "Edit name": [
         "Editar o nome"
@@ -456,6 +474,18 @@
       "Hide plan features": [
         "Ocultar as funcionalidades do plano"
       ],
+      "Import": [
+        "Importar"
+      ],
+      "Import calendars": [
+        "Importar calendários"
+      ],
+      "Import contacts": [
+        "Importar contactos"
+      ],
+      "Import emails": [
+        "Importar e-mails"
+      ],
       "Import emails, calendars, contacts": [
         "Importar e-mails, calendários, contactos"
       ],
@@ -504,8 +534,14 @@
       "Manage advanced account protections": [
         "Gerir as proteções avançadas da conta"
       ],
+      "Manage folders": [
+        "Gerir pastas"
+      ],
       "Manage groups": [
         "Gerir os grupos"
+      ],
+      "Manage labels": [
+        "Gerir etiquetas"
       ],
       "Manage subscription": [
         "Gerir subscrição"
@@ -585,6 +621,12 @@
       "Publish changes": [
         "Publicar as alterações"
       ],
+      "Quit": [
+        "Sair"
+      ],
+      "Reconnect": [
+        "Religar"
+      ],
       "Recover data": [
         "Recuperar dados"
       ],
@@ -656,6 +698,9 @@
       ],
       "Reset password": [
         "Repor palavra-passe"
+      ],
+      "Reset to default": [
+        "Reposição predefinida"
       ],
       "Restore": [
         "Restaurar"
@@ -816,11 +861,20 @@
       "Skip": [
         "Ignorar"
       ],
+      "Skip verification": [
+        "Saltar verificação"
+      ],
       "Spam": [
         "Spam"
       ],
+      "Start import": [
+        "Iniciar a importação"
+      ],
       "Start live chat": [
         "Iniciar um chat ao vivo"
+      ],
+      "Stay": [
+        "Ficar"
       ],
       "Stop using single sign-on": [
         "Parar de utilizar a autenticação única"
@@ -1087,6 +1141,14 @@
         "administrador"
       ]
     },
+    "Alert": {
+      "By leaving now, some contacts may not be imported": [
+        "Ao sair agora, alguns contactos podem não ser importados"
+      ],
+      "By leaving now, some events may not be imported": [
+        "Ao sair agora, alguns eventos podem não ser importados."
+      ]
+    },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Isto desligará todos os routers e clientes que utilizam este certificado."
@@ -1247,6 +1309,26 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Eleve a produtividade do e-mail a novos níveis. Deixe que o ${ BRAND_NAME } Scribe o ajude a escrever, responder e revisar os seus e-mails."
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "Arquivo ICS vazio"
+      ],
+      "Invalid event": [
+        "O evento não é válido."
+      ],
+      "Invalid ICS file": [
+        "O ficheiro ICS não é válido."
+      ],
+      "Invalid method": [
+        "O método não é válido."
+      ],
+      "Unsupported calendar component": [
+        "Componente de calendário não suportado"
+      ],
+      "Unsupported event": [
+        "Evento não suportado"
       ]
     },
     "b2b_trials_Action": {
@@ -1780,6 +1862,14 @@
         "morango"
       ]
     },
+    "Confirm modal title": {
+      "Quit import customization?": [
+        "Abandonar a configuração de importação?"
+      ],
+      "Quit import?": [
+        "Sair da importação?"
+      ]
+    },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
         "Tem a certeza de que deseja eliminar este método de pagamento?"
@@ -1788,6 +1878,94 @@
     "Confirmation title": {
       "Delete payment method": [
         "Eliminar método de pagamento"
+      ]
+    },
+    "Contact field label": {
+      "Address": [
+        "Endereço"
+      ],
+      "Anniversary": [
+        "Aniversário"
+      ],
+      "Birthday": [
+        "Data de nascimento"
+      ],
+      "Display name": [
+        "Nome exibido"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "First name": [
+        "Nome próprio"
+      ],
+      "Gender": [
+        "Sexo"
+      ],
+      "Language": [
+        "Idioma"
+      ],
+      "Last name": [
+        "Apelido"
+      ],
+      "Logo": [
+        "Logótipo"
+      ],
+      "Member": [
+        "Membro"
+      ],
+      "Name": [
+        "Nome"
+      ],
+      "Note": [
+        "Nota"
+      ],
+      "Organization": [
+        "Organização"
+      ],
+      "Phone": [
+        "Telefone"
+      ],
+      "Photo": [
+        "Fotografia"
+      ],
+      "Role": [
+        "Papel"
+      ],
+      "Time zone": [
+        "Fuso horário"
+      ],
+      "Title": [
+        "Título"
+      ],
+      "URL": [
+        "URL"
+      ]
+    },
+    "Contact type label": {
+      "Fax": [
+        "Fax"
+      ],
+      "Main": [
+        "Principal"
+      ],
+      "Mobile": [
+        "Telemóvel"
+      ],
+      "Other": [
+        "Outro"
+      ],
+      "Pager": [
+        "Pager"
+      ],
+      "Personal": [
+        "Pessoal"
+      ],
+      "Work": [
+        "Trabalho"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "CountriesStep:Info": {
@@ -2672,6 +2850,11 @@
         "/utilizador por mês"
       ]
     },
+    "Default display name vcard": {
+      "Unknown": [
+        "Desconhecido"
+      ]
+    },
     "Delete address prompt": {
       "Are you sure you want to delete this address?": [
         "Tem a certeza de que pretende eliminar este endereço?"
@@ -2761,6 +2944,9 @@
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Incentive o uso da autenticação em dois fatores na sua organização para garantir uma segurança adicional."
       ],
+      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        "A encriptar e importar contactos... Pode levar alguns minutos. Quando o processo terminar, poderá fechar este diálogo."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Garanta o acesso seguro aos dados da organização, mesmo que a sua equipa esteja remota ou a usar WiFi público."
       ],
@@ -2785,6 +2971,9 @@
       "If disabled, only admins will have access.": [
         "Se desativado, apenas os administradores terão acesso."
       ],
+      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
+        "Parece que a lista de contactos que está a importar já contém grupos. Reveja como esses grupos devem ser importados."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Separe as diferentes facetas da sua vida e organize a sua caixa de entrada com endereços adicionais."
       ],
@@ -2800,11 +2989,33 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifique a sincronização e o agendamento com calendários partilhados."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importar via ficheiro CSV ou VCF, certifique-se de que o ficheiro não excede ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contactos. Se o seu ficheiro for maior, divida-o em ficheiros mais pequenos. ${ learnMoreLink }."
+      ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Para importar os seus contactos do Google e Outlook, ${ easySwitchLink }."
+      ],
       "To start, give your organization a name.": [
         "Para começar, dê um nome à sua organização."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Use este guia para que a sua organização beneficie rapidamente da encriptação e do ecossistema de privacidade líderes do setor da ${ BRAND_NAME } ."
+      ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Pode importar eventos em formato iCal (ficheiro ICS). O ficheiro deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu ficheiro for maior, divida-o."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilize o assistente de importação Easy Switch"
+      ]
+    },
+    "Description of the purpose of the import CSV modal": {
+      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
+        "Também fizemos corresponder campos CSV com campos vCard. Pode rever e alterar as correspondências manualmente."
+      ],
+      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
+        "Encontrámos os seguintes campos no ficheiro CSV que enviou. Marque aqueles que deseja importar."
       ]
     },
     "Disable address prompt": {
@@ -3085,6 +3296,71 @@
         "Iniciou sessão noutro dispositivo."
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "NOTA:\n${ eventComment }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "DESCRIÇÃO:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } foi cancelado."
+      ],
+      "All events in this series were updated.": [
+        "Todos os eventos desta série foram atualizados."
+      ],
+      "Here's what changed:": [
+        "Aqui está o que mudou:"
+      ],
+      "NOTE:": [
+        "NOTA:"
+      ],
+      "This event occurrence was canceled.": [
+        "A ocorrência deste evento foi cancelada."
+      ],
+      "This event occurrence was updated.": [
+        "Esta ocorrência do evento foi atualizada."
+      ],
+      "This event was updated.": [
+        "Este evento foi atualizado."
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "PERÍODO: ${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "PERÍODO: ${ formattedStart } (o dia todo)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "PERIODO: ${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Removido"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "LOCAL:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } aceitou o seu convite para ${ eventTitle }."
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } recusou o seu convite para ${ eventTitle }."
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } aceitou provisoriamente o seu convite para ${ eventTitle }"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } adicionado"
@@ -3114,6 +3390,26 @@
         "${ name } eliminado"
       ]
     },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "Cancelamento de um evento em ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Cancelamento de um evento começando em ${ formattedStart }"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Convite para um evento em ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Convite para um evento começando em ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Actualização para um evento em ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Actualização para um evento começando em ${ formattedStart }"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "E-mail de verificação enviado para ${ address }"
@@ -3134,6 +3430,12 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } é o seu nome de utilizador. Para criar ${ emailAddress }, aceda a Definições > Identidade e endereços > Domínio curto (pm.me)."
       ],
+      "A group with this name already exists": [
+        "Já existe um grupo com este nome"
+      ],
+      "Address primary private key not found": [
+        "Chave privada primária do endereço não encontrada"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Foi alocado todo o espaço de armazenamento. Reduza o armazenamento alocado a outros membros."
       ],
@@ -3149,6 +3451,9 @@
       "Authentication error.": [
         "Erro de autenticação."
       ],
+      "Calendar limit reached": [
+        "Chegou ao número limite de calendários"
+      ],
       "Checkout expired, please try again": [
         "A finalização da compra expirou. Tente novamente."
       ],
@@ -3161,6 +3466,14 @@
       "Couldn't load transactions. Please try again later.": [
         "Não foi possível carregar as transações. Tente novamente mais tarde."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Desmarque pelo menos ${ calendarsToFixCount } calendário",
+        "Desmarque pelo menos ${ calendarsToFixCount } calendários"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Desmarque pelo menos ${ calendarsToFixCount } calendário ou",
+        "Desmarque pelo menos ${ calendarsToFixCount } calendários ou"
+      ],
       "Domain not available, try again later": [
         "Domínio indisponível, tente novamente mais tarde"
       ],
@@ -3172,6 +3485,9 @@
       ],
       "Email address is not available": [
         "O endereço de e-mail não se encontra disponível."
+      ],
+      "Email address is required": [
+        "O endereço de e-mail é obrigatório."
       ],
       "Email is not valid": [
         "O e-mail não é válido."
@@ -3197,8 +3513,14 @@
       "File too large. Your logo must be 30 KB or smaller.": [
         "O ficheiro é muito grande. O seu logótipo tem de ter 30 KB ou menos."
       ],
+      "Folder name cannot be empty.": [
+        "O nome da pasta não pode estar vazio."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Se o tempo na sua TV expirou, clique em Actualizar na sua TV e introduza o seu código novamente."
+      ],
+      "IMAP server is required": [
+        "Servidor IMAP é necessário."
       ],
       "Impossible to create the gateway": [
         "Foi impossível criar a porta de entrada."
@@ -3251,6 +3573,9 @@
       "Invalid invitation link": [
         "A ligação de convite é inválida."
       ],
+      "Invalid name": [
+        "O nome não é válido."
+      ],
       "Invalid postal code": [
         "O código postal é inválido."
       ],
@@ -3259,6 +3584,16 @@
       ],
       "Invalid ZIP code": [
         "Código postal inválido"
+      ],
+      "Label name cannot be empty.": [
+        "O nome da etiqueta não pode estar vazio."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Combine pelo menos ${ calendarsToFixCount } calendário com um calendário ${ BRAND_NAME } existente.",
+        "Combine pelo menos ${ calendarsToFixCount } calendários com calendários ${ BRAND_NAME } existentes"
+      ],
+      "Missing key packet": [
+        "Pacote chave em falta."
       ],
       "Name does not match": [
         "O nome não corresponde."
@@ -3275,6 +3610,9 @@
       "No image selected": [
         "Nenhuma imagem selecionada"
       ],
+      "No valid address found": [
+        "Nenhum endereço válido encontrado"
+      ],
       "Not a valid number": [
         "O número não é válido."
       ],
@@ -3286,6 +3624,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "A chave da organização deve ser ativada para criar utilizadores não privados."
+      ],
+      "Password is required": [
+        "A palavra-passe é obrigatória."
       ],
       "Passwords do not match": [
         "As palavras-passe não correspondem."
@@ -3332,6 +3673,10 @@
       "Please enter ZIP code": [
         "Introduzir o código postal"
       ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Corrija o conflito selecionado para proceder.",
+        "Corrija os conflitos selecionados para proceder."
+      ],
       "Please generate keys before you try to change your password": [
         "Gere chaves antes de tentar alterar a sua palavra-passe."
       ],
@@ -3377,8 +3722,17 @@
       "Please upload only 1 file": [
         "Envie apenas 1 ficheiro"
       ],
+      "Port is required": [
+        "A porta é obrigatória."
+      ],
       "Postal code is required": [
         "O código postal é obrigatório"
+      ],
+      "Primary address key is not decrypted": [
+        "A chave de endereço principal não está desencriptada."
+      ],
+      "Primary address key is not decrypted.": [
+        "A chave de endereço principal não está desencriptada."
       ],
       "Process aborted": [
         "Processo abortado"
@@ -3388,6 +3742,21 @@
       ],
       "Signature verification failed": [
         "Erro ao verificar a assinatura"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Alguns dos seus nomes de pasta estão indisponíveis. Personalize a importação para editar estes nomes."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Alguns dos nomes das suas pastas excedem o limite máximo de carateres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Alguns dos seus nomes de etiquetas estão reservados. Personalize a importação para editar estes nomes."
+      ],
+      "Some of your label names are unavailable. Please customize the import to edit these names.": [
+        "Alguns dos nomes das suas etiqueta estão indisponíveis. Personalize a importação para editar esses nomes."
+      ],
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Alguns dos nomes das suas etiquetas excedem o limite máximo de carateres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ocorreu um problema. ${ refresh } para continuar. Se ainda vir esta mensagem de erro, contacte a nossa ${ supportTeam }."
@@ -3413,11 +3782,26 @@
       "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
         "O ficheiro é muito pequeno. O tamanho mínimo é ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "O nome da pasta não é válido. Escolha um nome diferente."
+      ],
+      "The folder name is too long. Please choose a different name.": [
+        "O nome da pasta é muito longo. Escolha um nome diferente."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "O nome da etiqueta não é válido. Escolha um nome diferente."
+      ],
+      "The label name is too long. Please choose a different name.": [
+        "O nome da etiqueta é muito longo. Escolha um nome diferente."
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "O montante mínimo de crédito que pode ser adicionado é ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "O nome da política deve ter entre 3 e 40 caracteres."
+      ],
+      "There are too many folders in your external account. Please customize the import to delete some folders.": [
+        "Há pastas demais na sua conta externa. Personalize a importação para excluir algumas pastas."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede o máximo de ${ maximumLength } caracteres."
@@ -3427,6 +3811,12 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requer um mínimo de ${ minimumLength } carateres."
+      ],
+      "This folder name is not available. Please choose a different name.": [
+        "Este nome de pasta não está disponível. Escolha um nome diferente."
+      ],
+      "This label name is not available. Please choose a different name.": [
+        "Este nome de etiqueta não está disponível. Escolha um nome diferente."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Para criar contas de utilizadores não privados e aceder às suas contas, será necessário restaurar os seus privilégios de administrador."
@@ -3467,6 +3857,9 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Código de verificação errado. Verifique se copiou o código de verificação corretamente e tente de novo. Pode levar até 24 horas para que as alterações surtam efeito."
       ],
+      "You have reached the maximum number of calendars.": [
+        "Atingiu o número máximo de calendários."
+      ],
       "You have reached the number of contacts limit for your account": [
         "Atingiu o limite do número de contactos da sua conta"
       ],
@@ -3476,8 +3869,14 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Usou todos os utilizadores do seu plano. Subscreva um plano superior para adicionar um utilizador."
       ],
+      "You must set a name": [
+        "Tem de definir um nome"
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "A sua conta ou organização tem uma fatura em atraso. Regularize a situação."
+      ],
+      "Your import will not be processed.": [
+        "A sua importação não será processada."
       ],
       "ZIP code is required": [
         "O código postal é necessário."
@@ -3486,6 +3885,132 @@
     "error": {
       "Select users to view their activity": [
         "Selecione os utilizadores para ver as suas atividades."
+      ]
+    },
+    "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Ocorreu um erro ao ler o ficheiro ${ formattedFilename }. Formato de ficheiro incorreto."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Ocorreu um erro ao enviar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Ocorreu um erro ao enviar o seu ficheiro ${ formattedFilename }. Só são permitidos formatos ICS."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Ocorreu um erro ao enviar o ficheiro. Nenhum ficheiro foi selecionado."
+      ],
+      "An unexpected error occurred. Import must be restarted.": [
+        "Ocorreu um erro inesperado. A importação tem de ser reiniciada."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "O ficheiro ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS } evento.",
+        "O ficheiro ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS } eventos."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "O seu ficheiro ${ formattedFilename } tem um método inválido e não pode ser importado."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "O ficheiro ${ formattedFilename } não tem eventos para importar."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "O ficheiro ${ formattedFilename } está vazio."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "O ficheiro ${ formattedFilename } não é um calendário."
+      ]
+    },
+    "Error importing contact": {
+      "Encryption failed": [
+        "Erro ao encriptar"
+      ],
+      "Missing FN property": [
+        "A propriedade FN está ausente."
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Versões do vCard < 3.0 não são suportadas"
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Ocorreu um erro ao ler o ficheiro ${ formattedFilename }. Formato de ficheiro incorreto."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Ocorreu um erro ao enviar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "Ocorreu um erro ao enviar o ficheiro ${ formattedFilename }. Nenhum ficheiro .csv ou .vcf foi selecionado."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Ocorreu um erro ao enviar o ficheiro. Nenhum ficheiro foi selecionado."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "O ficheiro ${ formattedFilename } contém mais de ${ MAX_IMPORT_CONTACTS_STRING } contactos."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "O ficheiro ${ formattedFilename } não tem contactos para importar."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "O ficheiro ${ formattedFilename } está vazio."
+      ]
+    },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Formato errado. O componente não pode ser lido."
+      ],
+      "Calendar": [
+        "Calendário"
+      ],
+      "Component with wrong format": [
+        "Componente com formato errado"
+      ],
+      "Custom time zone": [
+        "Fuso horário personalizado"
+      ],
+      "Element": [
+        "Elemento"
+      ],
+      "Encryption failed": [
+        "Erro ao encriptar"
+      ],
+      "Event": [
+        "Evento"
+      ],
+      "Free-busy time information": [
+        "Informação de tempo livre/ocupado"
+      ],
+      "Invalid event": [
+        "O evento não é válido."
+      ],
+      "Journal entry": [
+        "Entrada de diário"
+      ],
+      "Missing start time": [
+        "Hora inicial em falta"
+      ],
+      "No UID, title or start time": [
+        "Sem UID, título ou hora de início"
+      ],
+      "Notification out of bounds": [
+        "Notificação fora dos limites"
+      ],
+      "Original recurring event could not be found": [
+        "Não foi possível encontrar o evento recorrente original."
+      ],
+      "Time zone": [
+        "Fuso horário"
+      ],
+      "Time zone component ignored": [
+        "Componente de fuso horário ignorado"
+      ],
+      "To-do entry": [
+        "Entrada de tarefas"
+      ],
+      "Unknown": [
+        "Desconhecido"
+      ],
+      "Unsupported event": [
+        "Evento não suportado"
       ]
     },
     "Error importing users": {
@@ -3534,11 +4059,65 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "O certificado ${ name } não foi encontrado ou já foi revogado."
+      ],
+      "Display name cannot be empty": [
+        "O nome a mostrar não pode estar vazio."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nenhuma imagem selecionada"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Erro inesperado"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "Não foi possível desencriptar o ficheiro ICS anexado."
+      ],
+      "Attached ICS file could not be read": [
+        "Não foi possível ler o ficheiro ICS anexado."
+      ],
+      "Invalid invitation": [
+        "O convite não é válido."
+      ],
+      "Invalid response": [
+        "A resposta não é válida."
+      ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Não foi possível adicionar o evento ao seu calendário. Nenhuma resposta foi enviada."
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Não foi possível actualizar o evento no seu calendário. Nenhuma resposta foi enviada."
+      ],
+      "Unsupported invitation": [
+        "Convite não suportado"
+      ],
+      "Unsupported response": [
+        "Resposta não suportada"
+      ],
+      "We could not cancel the event in your calendar": [
+        "Não foi possível cancelar o evento no seu calendário."
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Não foi possível obter o evento do seu calendário."
+      ],
+      "We could not update the event in your calendar": [
+        "Não é possível actualizar o evento no seu calendário"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "A sua resposta foi enviada, mas não foi possível adicionar o evento ao seu calendário."
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "A sua resposta foi enviada, mas não foi possível actualizar o evento no seu calendário."
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(sem título)"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4295,6 +4874,310 @@
         "SMS"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Fuso horário do calendário não suportado"
+      ],
+      "Edited event not supported": [
+        "O evento editado não é suportado."
+      ],
+      "End time out of bounds": [
+        "Hora final fora dos limites"
+      ],
+      "Event validation failed": [
+        "Erro ao validar o evento"
+      ],
+      "Floating times not supported": [
+        "Não são suportadas horas flutuantes"
+      ],
+      "Malformed all-day event": [
+        "Evento de dia inteiro mal formado"
+      ],
+      "Malformed end time": [
+        "Hora final mal formada"
+      ],
+      "Malformed recurring event": [
+        "Evento recorrente mal formado"
+      ],
+      "Malformed start time": [
+        "Hora inicial mal formada"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Apenas a escala do calendário gregoriano é permitida."
+      ],
+      "Recurring event has no occurrences": [
+        "O evento recorrente não tem ocorrências."
+      ],
+      "Recurring rule not supported": [
+        "A regra recorrente não é suportada."
+      ],
+      "Start time out of bounds": [
+        "Hora inicial fora dos limites"
+      ],
+      "Time zone not supported": [
+        "Fuso horário não suportado"
+      ]
+    },
+    "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } evento encriptado e adicionado ao calendário",
+        "${ totalImported }/${ totalToImport } eventos encriptados e adicionados ao calendário"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Ocorreu um erro ao encriptar e adicionar o seu evento. ${ totalImported } de ${ totalToImport } evento importado.",
+        "Ocorreu um erro ao encriptar e adicionar os seus eventos. ${ totalImported } de ${ totalToImport } eventos importados."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Ocorreu um erro ao encriptar e adicionar o evento. Nenhum evento foi importado."
+      ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Ocorreu um erro ao encriptar e adicionar os eventos. Nenhum evento foi importado."
+      ],
+      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
+        "A encriptar e adicionar contactos: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "Encriptar e adicionar eventos ao calendário: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Evento importado. Já o pode ver no seu calendário."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Eventos importados. Já os pode ver no seu calendário."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "Não feche o separador antes de o processo de importação terminar."
+      ]
+    },
+    "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } actualmente não oferece suporte para alguns tipos de eventos, detalhes e formatos."
+      ],
+      "vCard versions < 3.0": [
+        "Versões vCard < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Os convites importados aparecem em ${ CALENDAR_APP_NAME } como eventos simples sem detalhes do organizador e dos participantes. Para obter actualizações de eventos e ver os participantes, peça aos organizadores que o convidem utilizando o seu endereço de e-mail ${ BRAND_NAME }."
+      ],
+      "This file contains an event invitation:": [
+        "Este ficheiro contém um convite para um evento:",
+        "Este ficheiro contém convites para um evento:"
+      ],
+      "This file contains an invitation response:": [
+        "Este ficheiro contém uma resposta de convite:",
+        "Este ficheiro contém respostas a convites:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Este ficheiro contém alguns dados que não podemos importar:"
+      ]
+    },
+    "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } contacto encriptado e adicionado à lista de contactos",
+        "${ totalImported }/${ totalToImport } contactos encriptados e adicionados à lista de contactos"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Ocorreu um erro ao encriptar e adicionar o seu contacto. Nenhum contacto pôde ser importado."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Ocorreu um erro ao encriptar e adicionar os seus contactos. ${ totalImported } de ${ totalToImport } contactos importados."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Ocorreu um erro ao encriptar e adicionar os seus contactos. Nenhum contacto pôde ser importado."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Contacto importado. O contacto importado aparecerá agora na sua lista de contactos."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Contactos importados. Os contactos importados aparecerão agora na sua lista de contactos."
+      ]
+    },
+    "Import contact error": {
+      "Contact ${ contactId }: ": [
+        "Contacto ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } contacto",
+        "${ totalContacts } contactos"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "desconhecido"
+      ]
+    },
+    "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } não suporta ${ forNow }:"
+      ],
+      "for now": [
+        "por agora"
+      ]
+    },
+    "Import error": {
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } não consegue ligar-se à sua conta.Certifique-se de que:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } não consegue ligar-se à sua conta externa. Certifique-se de que o endereço do servidor de e-mail e o número da porta estão corretos."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } não consegue ligar-se à sua conta externa. Certifique-se de que:"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } não consegue ligar-se à sua conta Yahoo. Certifique-se de que o endereço do servidor de e-mail e o número da porta estão corretos."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } não consegue ligar-se à sua conta Yahoo. Certifique-se de que:"
+      ],
+      "2-step verification is enabled in your external account.": [
+        "A verificação em 2 passos está ativada na sua conta externa."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "A verificação em 2 passos está ativada na sua conta de e-mail externa."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "O acesso IMAP está ativado na sua conta externa."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "O acesso IMAP está ativado na sua conta Yahoo."
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Demasiados pedidos recentes. Tente novamente mais tarde."
+      ],
+      "Use your app password if:": [
+        "Utilize a palavra-passe da aplicação se:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Utilize a palavra-passe da aplicação em vez da sua palavra-passe normal se:"
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "A palavra-passe da aplicação está correta. Não utilize a sua palavra-passe normal."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "A sua conta de e-mail requer uma palavra-passe de aplicação para exportar os seus dados."
+      ],
+      "Your email account requires one to export your data.": [
+        "A sua conta de e-mail requer uma para exportar os seus dados."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "O seu endereço de e-mail e a palavra-passe da aplicação estão corretos. Não utilize a sua palavra-passe normal."
+      ],
+      "Your email address and password are correct.": [
+        "O seu endereço de e-mail e a sua palavra-passe estão corretos."
+      ],
+      "Your password is correct.": [
+        "A sua palavra-passe está correta."
+      ]
+    },
+    "Import instructions": {
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "Dependendo do seu provedor de serviços de e-mail, poderá ser necessário gerar primeiro um ${ knowledgeBaseLink } antes de poder importar para ${ BRAND_NAME }."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Expanda o menu suspenso clicando nos 3 pontos (...)."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Gere a ${ boldAppPassword } e utilize-a em substituição da sua palavra-passe regular quando solicitado por ${ BRAND_NAME }."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Aceda a ${ boldAccountInfo } no seu perfil de ${ yahooMailLink }."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "Aceda a ${ boldAccountSecurity }."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "Abra os seus contactos ${ yahooMailLink }."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Selecionar ${ boldExportCSV }."
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Para importar um calendário para ${ BRAND_NAME }, é necessário o ${ knowledgeBaseLink }. Transfira-o do Yahoo em 3 passos simples:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Para importar um calendário para ${ BRAND_NAME }, é necessário o ${ knowledgeBaseLink }. Transfira-o antes de iniciar o processo de importação."
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Para importar contactos para ${ BRAND_NAME }, é necessário um ${ knowledgeBaseLink }. Transfira-o do Yahoo em 3 passos simples:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Para importar contactos para ${ BRAND_NAME }, é necessário um ${ knowledgeBaseLink }. Transfira-o antes de iniciar o processo de importação."
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Para importar e-mails para ${ BRAND_NAME }, é necessário uma ${ appPasswordLink } do Yahoo. Obtenha-a, seguindo estes passos:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Informação da conta"
+      ],
+      "Account security": [
+        "Segurança da conta"
+      ],
+      "app password": [
+        "palavra-passe da aplicação"
+      ],
+      "Export": [
+        "Exportar"
+      ],
+      "Export to CSV file": [
+        "Exportar para ficheiro CSV"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "palavra-passe da aplicação"
+      ],
+      "app password or enable IMAP": [
+        "palavra-passe da aplicação ou ativar IMAP"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "Ficheiro CSV ou VCF (vCard)"
+      ],
+      "full calendar view": [
+        "visualização do calendário completa"
+      ],
+      "ICS file": [
+        "Ficheiro ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Aceda a ${ calendarViewLink } no Yahoo."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Coloque o rato sobre o calendário que pretende importar e abra o menu dropdown."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Selecione ${ boldExport } para exportar o calendário no formato de ficheiro ICS."
+      ]
+    },
+    "Import warning": {
+      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
+        "${ totalContactsDiscarded } de ${ totalContacts } contactos não serão importados. Clique para detalhes"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } de ${ totalEvents } evento não será importado. Expanda para detalhes.",
+        "${ totalEventsDiscarded } de ${ totalEvents } eventos não serão importados. Expanda para detalhes."
+      ],
+      "No contact can be imported. Click for details": [
+        "Nenhum contacto pode ser importado. Clique para detalhes"
+      ],
+      "No event can be imported. Expand for details.": [
+        "Nenhum evento pode ser importado. Expande para detalhes."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Parte do conteúdo do seu calendário não é suportado e não será importado."
+      ]
+    },
     "Info": {
       " and other security features.": [
         " e outras funcionalidades de segurança."
@@ -4314,6 +5197,14 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de encriptação da ${ BRAND_NAME } significa que ninguém pode aceder à sua palavra-passe - nem mesmo nós."
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } novo calendário",
+        "${ calendarsToBeCreatedCount } novos calendários"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } calendário unido",
+        "${ calendarsToBeMergedCount } calendários unidos"
       ],
       "${ countriesCount } country enabled": [
         "${ countriesCount } país ativado",
@@ -4387,6 +5278,14 @@
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "O ${ PROTON_SENTINEL_NAME } protege a sua conta com monitorização dedicada de atividades suspeitas."
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } pasta encontrada",
+        "${ providerFoldersNumLocalized } pastas encontradas"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } etiqueta encontrada no Gmail",
+        "${ providerFoldersNumLocalized } etiquetas encontradas no Gmail"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } servidor ainda está a ser configurado. Geralmente, isto demora ${ provisioningDuration }.",
         "${ provisioningCounter } servidores ainda estão a ser configurados. Geralmente, isto demora ${ provisioningDuration }."
@@ -4409,9 +5308,21 @@
         "${ resultsCount } resultado encontrado",
         "${ resultsCount } resultados encontrados"
       ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendários"
+      ],
       "${ selectedEntities.length } selected": [
         "${ selectedEntities.length } selecionado",
         "${ selectedEntities.length } selecionados"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } pasta selecionada",
+        "${ selectedFoldersCountLocalized } pastas selecionadas"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } etiqueta selecionada",
+        "${ selectedFoldersCountLocalized } etiquetas selecionadas"
       ],
       "${ storage } storage": [
         "${ storage } de armazenamento"
@@ -4541,6 +5452,14 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Assistente com tecnologia de IA para ajudá-lo a criar e-mails melhores, de forma rápida e sem esforço."
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Tudo (${ totalFoldersCount } pasta)",
+        "Tudo (${ totalFoldersCount } pastas)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Tudo (${ totalFoldersCount } etiqueta)",
+        "Tudo (${ totalFoldersCount } etiquetas)"
+      ],
       "All inactive members deleted": [
         "Todos os membros inativos foram eliminados."
       ],
@@ -4552,6 +5471,10 @@
       ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Todos os seus contactos serão importados até o limite de ${ MAX_CONTACTS_PER_USER }.",
+        "Todos os seus contactos serão importados até o limite de ${ MAX_CONTACTS_PER_USER }."
       ],
       "Allocated": [
         "Alocado"
@@ -4577,11 +5500,17 @@
       "Amount due": [
         "Montante devido"
       ],
+      "and": [
+        "e"
+      ],
       "Are you sure you want to cancel editing the group?": [
         "Tem a certeza de que deseja cancelar a edição deste grupo?"
       ],
       "Are you sure you want to discard your changes?": [
         "Tem a certeza de que deseja descartar as alterações?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Tem a certeza de que deseja descartar a importação?"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Tem a certeza de que deseja conceder os privilégios administrativos deste utilizador?"
@@ -4664,6 +5593,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorreto, clique em \"Editar\" para o corrigir."
       ],
+      "Close this screen to exit.": [
+        "Feche este ecrã para sair."
+      ],
       "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
         "Armazenamento em nuvem, integrado com o ${ DOCS_APP_NAME }"
       ],
@@ -4706,6 +5638,16 @@
       "Country code": [
         "Código de país"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Criar ${ calendarsToBeCreatedCount } calendário",
+        "Criar ${ calendarsToBeCreatedCount } calendários"
+      ],
+      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
+        "Escolha uma etiqueta para as mensagens importadas, um intervalo de tempo para a importação e as pastas que deseja importar."
+      ],
+      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
+        "Crie uma etiqueta para as mensagens importadas, um intervalo de tempo para esta importação e as etiquetas que deseja importar."
+      ],
       "Create a secure cloud for ${ value } member": [
         "Criar uma nuvem segura para ${ value } membro",
         "Criar uma nuvem segura para ${ value } membros"
@@ -4715,6 +5657,9 @@
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
         "Crie endereços de e-mail para outras pessoas, faça a gestão de ${ MAIL_APP_NAME } para uma empresa, escola ou grupo. Comece por adicionar o nome da sua organização e o domínio personalizado (por exemplo, @suaempresa.com). "
+      ],
+      "Create in": [
+        "Criar em"
       ],
       "Create your first Gateway": [
         "Criar a sua primeira porta de entrada"
@@ -4938,6 +5883,9 @@
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Introduza o código enviado para ${ email }. Se não encontrar a mensagem na sua caixa de entrada, verifique a pasta de spam."
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Introduza as credenciais da conta de e-mail da qual deseja importar."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Introduza o ID da entidade de uma organização **eduGAIN** para **${ domain.DomainName }**."
       ],
@@ -5082,11 +6030,27 @@
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Se estiver com dificuldades, estamos aqui para ajudar. ${ boldPhoneCall } ou ${ boldZoomMeeting } com um dos nossos especialistas de suporte."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importar ${ calendarCount } de ${ totalCalendarsCount } calendário",
+        "Importar ${ calendarCount } de ${ totalCalendarsCount } calendários"
+      ],
+      "Import from": [
+        "Importar de"
+      ],
+      "Import in progress": [
+        "Importação em curso"
+      ],
+      "Import mailbox": [
+        "Importar caixa de correio"
+      ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "IMPORTANTE: Se a sua consola DNS não permite que os valores de CNAME terminem com um ponto, pode remover o último ponto dos valores CNAME."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Importante: certifique-se de que dispõe dos códigos de recuperação. Senão, se perder o seu dispositivo 2FA, pode perder permanentemente o acesso à sua conta."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Importando os seus dados de ${ fromEmail } para ${ toEmail }."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "No passo seguinte, poderá efetuar um depósito utilizando um endereço Bitcoin."
@@ -5199,11 +6163,20 @@
       "JCB logo": [
         "Logótipo JCB"
       ],
+      "Just confirm your selection and we'll do the rest.": [
+        "Confirme apenas a sua seleção e faremos o resto."
+      ],
       "Keys created": [
         "Chaves criadas"
       ],
+      "Label all imported messages as": [
+        "Etiquetar todas as mensagens importadas como"
+      ],
       "Labels:": [
         "Etiquetas:"
+      ],
+      "Large imports can take several days.": [
+        "As importações grandes podem demorar vários dias."
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Saiba como iniciar sessão no ${ VPN_APP_NAME } com aplicações de VPN de terceiros."
@@ -5280,6 +6253,9 @@
       "Member": [
         "Membro"
       ],
+      "Merged": [
+        "Unido"
+      ],
       "Messages to all your email addresses will go to your inbox.": [
         "As mensagens para todos os seus endereços de e-mail irão para a sua caixa de entrada."
       ],
@@ -5303,6 +6279,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie a sua nova pasta e selecione a pasta principal onde deseja colocá-la. Se não selecionar uma pasta principal, esta nova pasta será criada como uma pasta de nível superior."
+      ],
+      "New": [
+        "Novo"
       ],
       "New activity data will stop being collected and shown.": [
         "Os dados da nova atividade deixarão de ser coletados e mostrados."
@@ -5467,6 +6446,9 @@
       "Please open the document to view it.": [
         "Abra o documento para o visualizar."
       ],
+      "Please select the folders you would like to import:": [
+        "Selecione as pastas que deseja importar:"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente utilizando um método de pagamento diferente ou contacte o seu banco."
       ],
@@ -5590,6 +6572,12 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Selecione as afiliações de utilizadores do ${ getFormattedOrganization } que deseja permitir na sua organização ${ BRAND_NAME }:"
       ],
+      "Select what you want to import.": [
+        "Selecione o que deseja importar."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Selecione os calendários a importar. Um novo calendário será criado por cada calendário importado, de acordo com o número de calendários disponível no seu plano."
+      ],
       "Self-custodial crypto wallet": [
         "Carteira de criptomoedas de autocustódia"
       ],
@@ -5703,6 +6691,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Recomendado por Tech Radar Pro com classificação de 4,2 de 5"
+      ],
+      "Temporarily unavailable. Please check back later.": [
+        "Temporariamente indisponível. Tente mais tarde."
       ],
       "Thank you": [
         "Obrigado"
@@ -5865,6 +6856,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e abusos, confirme que é um ser humano."
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "Para importar eventos, crie primeiro um calendário em ${ CALENDAR_APP_NAME }. É aqui que os eventos vão aparecer depois da importação."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Para se manter atualizado com o último desenvolvimento dos produtos ${ BRAND_NAME }, pode subscrever os nossos vários e-mails e ${ blogLink } de vez em quando."
@@ -6067,8 +7061,14 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "A página será redirecionada para um novo separador PayPal no seu navegador, para concluir a transação. Se utiliza bloqueadores de janelas, desative-os."
       ],
+      "We'll email you once import is complete.": [
+        "Enviaremos um e-mail para si assim que a importação estiver concluída."
+      ],
       "We'll get back to you shortly.": [
         "Entraremos em contacto consigo em breve."
+      ],
+      "We'll notify you when the import is done.": [
+        "Vamos avisá-lo quando a importação for concluída."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
@@ -6161,14 +7161,26 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Está a utilizar mais armazenamento do que o incluído no plano ${ downgradedPlanName }. Elimine ou remova dados para optar por um plano inferior."
       ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Também pode combinar calendários importados com calendários existentes de ${ BRAND_NAME }."
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Pode alterar isto a qualquer momento em ${ settingsLink }."
+      ],
+      "You can check the progress ${ importProgressLink }.": [
+        "Pode verificar o progresso ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "Entretanto, pode fechar o separador ou o navegador."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Pode editar isto uma vez para garantir o endereço de e-mail correto para verificação."
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Pode aplicar as regras da palavra-passe que os membros da sua organização utilizarão quando criarem ou repuserem a palavra-passe da respetiva conta da ${ BRAND_NAME }."
+      ],
+      "You can import one data type at a time.": [
+        "Pode importar um tipo de dado por vez."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova ligações de calendários partilhados e qualquer utilizador do ${ BRAND_NAME } com quem partilhou os seus calendários antes de cancelar a sua assinatura do${ MAIL_SHORT_APP_NAME }.",
@@ -6299,6 +7311,9 @@
       "Your account was successfully updated with this promotion": [
         "A sua conta foi atualizada com esta promoção"
       ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Os seus dados estão prontos para serem importados de ${ importedEmailAddressStrong } para a sua conta ${ BRAND_NAME }."
+      ],
       "Your email will only be used for this one-time verification.": [
         "O seu e-mail só será utilizado para esta verificação única."
       ],
@@ -6311,6 +7326,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "As suas informações estão seguras connosco. Só entraremos em contacto quando tal for necessário para fornecer os nossos serviços."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "A informação de início de sessão não será guardada após concluir a importação."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "A data do próximo pagamento é ${ renewalTime }."
@@ -6396,6 +7414,11 @@
         "Introduza uma nota para as faturas. Estes detalhes serão adicionados às faturas pessoais e organizacionais. Eles só aparecerão nas faturas emitidas no futuro."
       ]
     },
+    "Info on errors": {
+      "Click for details": [
+        "Clique para detalhes"
+      ]
+    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "Pode impedir a expiração reativando a subscrição."
@@ -6404,6 +7427,16 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Para evitar qualquer interrupção do serviço devido a faturas por pagar. Certifique-se de que tem pelo menos 1 método de pagamento válido guardado em qualquer altura no passado."
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } pasta selecionada",
+        "${ selectedFoldersCount } pastas selecionadas"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etiqueta selecionada",
+        "${ selectedFoldersCount } etiquetas selecionadas"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -6514,6 +7547,9 @@
         "${ UsedAddresses } de ${ MaxAddresses } endereço de e-mail",
         "${ UsedAddresses } de ${ MaxAddresses } endereços de e-mail"
       ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Temporariamente indisponível. Tente mais tarde.)"
+      ],
       "Account holder": [
         "Titular da conta"
       ],
@@ -6565,6 +7601,9 @@
       "Anderson": [
         "Ferreira"
       ],
+      "App password": [
+        "Palavra-passe da aplicação"
+      ],
       "Apply policy to": [
         "Aplica a política a"
       ],
@@ -6606,6 +7645,12 @@
       ],
       "BTC amount": [
         "Montante em BTC"
+      ],
+      "Calendar": [
+        "Calendário"
+      ],
+      "Calendars": [
+        "Calendários"
       ],
       "Card details": [
         "Detalhes do cartão"
@@ -6666,6 +7711,9 @@
       ],
       "Confirm second password": [
         "Confirmar a segunda palavra-passe"
+      ],
+      "Contacts": [
+        "Contactos"
       ],
       "Copy": [
         "Copiar"
@@ -6739,6 +7787,21 @@
       "Email or username": [
         "Email ou utilizador"
       ],
+      "Emails": [
+        "E-mails"
+      ],
+      "Emails (all messages)": [
+        "Emails (todas as mensagens)"
+      ],
+      "Emails (last 12 months)": [
+        "Emails (últimos 12 meses)"
+      ],
+      "Emails (last 3 months)": [
+        "Emails (últimos 3 meses)"
+      ],
+      "Emails (last month)": [
+        "Emails (mês passado)"
+      ],
       "Enabled": [
         "Ativado"
       ],
@@ -6765,6 +7828,9 @@
       ],
       "Folder location": [
         "Localização da pasta"
+      ],
+      "From: ${ fromEmail }": [
+        "De: ${ fromEmail }"
       ],
       "Gateway name": [
         "Nome da porta de entrada"
@@ -6796,6 +7862,15 @@
       "Import all messages": [
         "Importar todas as mensagens"
       ],
+      "Import interval": [
+        "Intervalo de importação"
+      ],
+      "Import to email address": [
+        "Importar para o endereço de e-mail"
+      ],
+      "Import to:": [
+        "Importar para:"
+      ],
       "Include application logs in bug report": [
         "Incluir os registos de aplicação no relatório de erro"
       ],
@@ -6813,6 +7888,9 @@
       ],
       "Key": [
         "Chave"
+      ],
+      "Label messages as": [
+        "Etiquetar mensagens como"
       ],
       "Last 12 months only": [
         "Últimos 12 meses"
@@ -6832,8 +7910,14 @@
       "Logo": [
         "Logótipo"
       ],
+      "Mail Server (IMAP)": [
+        "Servidor de e-mail (IMAP)"
+      ],
       "Main": [
         "Principal"
+      ],
+      "Manage categories": [
+        "Gerir categorias"
       ],
       "Maximum number of characters is ${ MAX_CHARS }": [
         "O número máximo de caracteres é ${ MAX_CHARS }"
@@ -6858,6 +7942,12 @@
       ],
       "Moderate NAT": [
         "NAT moderado"
+      ],
+      "Move to Archive": [
+        "Mover para Arquivo"
+      ],
+      "Move to Inbox": [
+        "Mover para Caixa de entrada"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Deve conter pelo menos ${ MIN_PASSWORD_LENGTH } carateres"
@@ -6967,6 +8057,9 @@
       "Policy name": [
         "Nome da política"
       ],
+      "Port": [
+        "Porta"
+      ],
       "Postal code": [
         "Código postal"
       ],
@@ -7066,6 +8159,9 @@
       ],
       "To help us improve, please explain why you are leaving.": [
         "Para nos ajudar a melhorar, explique porque nos deixa."
+      ],
+      "To: ${ toEmail }": [
+        "Para: ${ toEmail }"
       ],
       "Two-password mode": [
         "Modo palavra-passe dupla"
@@ -7222,9 +8318,28 @@
         "${ Label.Name } criada"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "De: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Para: ${ to }"
+      ]
+    },
     "Lable": {
       "Select an identity provider to start": [
         "Selecione um fornecedor de identidade para iniciar"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Para adicionar um novo calendário, remova um calendário existente."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Para adicionar um novo calendário, remova outro calendário ou actualize o seu plano ${ BRAND_NAME } para um plano pago ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Atingiu o número máximo de calendários disponível no seu plano."
       ]
     },
     "Link": {
@@ -7390,6 +8505,30 @@
         "Actualize para desbloquear o suporte por chat e outras funcionalidades premium, ou utilize o nosso formulário de suporte gratuito para comunicar o seu problema."
       ]
     },
+    "Loading info": {
+      "Almost there": [
+        "Quase lá"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Montante de calendário criado:  ${ createdCalendarCount } de ${ calendarsToBeCreated }",
+        "Montante de calendários criados: ${ createdCalendarCount } de ${ calendarsToBeCreated }"
+      ],
+      "Connecting to your email provider": [
+        "A ligar ao seu fornecedor de e-mail"
+      ],
+      "Creating new calendars": [
+        "Criação de calendários"
+      ],
+      "Gathering your data": [
+        "Recolha dos seus dados"
+      ],
+      "We're gathering your data from your provider": [
+        "Estamos a recolher os seus dados junto do seu provedor"
+      ],
+      "Your import is starting": [
+        "A sua importação está a começar"
+      ]
+    },
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Mais informação"
@@ -7492,6 +8631,24 @@
         "Ativar ${ reason }"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importar todas as mensagens da ${ itemsToImportCount } pasta e etiquetá-las como",
+        "Importar todas as mensagens das ${ itemsToImportCount } pastas e etiquetá-las como"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importar todas as mensagens de ${ itemsToImportCount } etiqueta e etiquetá-las como",
+        "Importar todas as mensagens de ${ itemsToImportCount } etiquetas e etiquetá-las como"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } da ${ itemsToImportCount } pasta e etiquetá-la como",
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } das ${ itemsToImportCount } pastas e etiquetá-las como"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiqueta e etiquetá-la como",
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetas e etiquetá-las como"
+      ]
+    },
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente de escrita ${ BRAND_NAME } Scribe"
@@ -7587,6 +8744,26 @@
       ],
       "Sign in to access your ${ appName } account": [
         "Inicie sessão para aceder à sua conta ${ appName }"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Como importar calendários de outro serviço"
+      ],
+      "How to import calendars from Yahoo": [
+        "Como importar calendários do Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Como importar contactos de outro serviço"
+      ],
+      "How to import contacts from Yahoo": [
+        "Como importar contactos do Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Como importar e-mails de outro serviço"
+      ],
+      "How to import emails from Yahoo": [
+        "Como importar e-mails do Yahoo"
       ]
     },
     "Monetary unit": {
@@ -8719,6 +9896,21 @@
         "Algumas imagens não foram enviadas devido a nomes de ficheiros duplicados na seleção atual."
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Em seguida, deverá autenticar-se na sua conta Google e conceder ${ BRAND_NAME } acesso aos seus dados."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Para que a importação funcione, deverá selecionar todos os items solicitados como é mostrado no GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Selecione o que a ${ BRAND_NAME } pode aceder: ver mensagens de e-mail e definições, consultar e transferir contactos, bem como aceder e transferir todas as agendas do Google Calendar."
+      ]
+    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "${ BRAND_NAME } Unlimited por 12 meses"
@@ -8871,11 +10063,17 @@
       ]
     },
     "Option": {
+      "Add to existing group": [
+        "Adicionar a um grupo existente"
+      ],
       "Allowed ${ defaultLabel }": [
         "${ defaultLabel } permitido"
       ],
       "Country configs": [
         "Definições do país"
+      ],
+      "Create new group": [
+        "Criar um grupo"
       ],
       "Free server configs": [
         "Definições do servidor Free"
@@ -8888,6 +10086,9 @@
       ],
       "I'd like to merge this account into another one": [
         "Quero juntar esta conta a outra"
+      ],
+      "Ignore group": [
+        "Ignorar grupo"
       ],
       "iOS": [
         "iOS"
@@ -8959,6 +10160,14 @@
       ],
       "No one": [
         "Ninguém"
+      ]
+    },
+    "Option group label": {
+      "Create new calendar": [
+        "Criar um calendário"
+      ],
+      "Merge with calendar": [
+        "Unir com o calendário"
       ]
     },
     "Organization capacity error": {
@@ -9045,6 +10254,11 @@
       ],
       "Verify your email address ${ email } to set organization identity.": [
         "Verifique o seu endereço de e-mail ${ email } para definir a identidade da organização."
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "Você"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9465,6 +10679,9 @@
       "Main street 12": [
         "Rua principal, 12"
       ],
+      "Name": [
+        "Nome"
+      ],
       "Organization name": [
         "Nome da organização"
       ],
@@ -9586,6 +10803,38 @@
     "Price": {
       "Free": [
         "Free"
+      ]
+    },
+    "Property type": {
+      "Address": [
+        "Endereço"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Home": [
+        "Casa"
+      ],
+      "Main": [
+        "Principal"
+      ],
+      "Mobile": [
+        "Telemóvel"
+      ],
+      "Other": [
+        "Outro"
+      ],
+      "Pager": [
+        "Pager"
+      ],
+      "Phone": [
+        "Telefone"
+      ],
+      "Work": [
+        "Trabalho"
       ]
     },
     "Protection type": {
@@ -11679,6 +12928,9 @@
       "Country": [
         "País"
       ],
+      "CSV field": [
+        "Campo CSV"
+      ],
       "Edit": [
         "Editar"
       ],
@@ -11696,6 +12948,9 @@
       ],
       "Event": [
         "Evento"
+      ],
+      "Import": [
+        "Importar"
       ],
       "Invitation email": [
         "E-mail de convite"
@@ -11720,6 +12975,12 @@
       ],
       "Total storage": [
         "Armazenamento total"
+      ],
+      "Values": [
+        "Valores"
+      ],
+      "vCard field": [
+        "Campo vCard"
       ]
     },
     "Themes": {
@@ -11815,6 +13076,9 @@
       ],
       "Add address": [
         "Adicionar um endereço"
+      ],
+      "Add contact group name": [
+        "Adicionar nome do grupo de contactos"
       ],
       "Add countries to \"${ policyName }\"": [
         "Adicionar países a «${ policyName }»"
@@ -11966,9 +13230,6 @@
       "Connect apps and devices": [
         "Ligar aplicações e dispositivos"
       ],
-      "Connect more Gmail addresses with ${ planName }": [
-        "Conecte mais endereços do Gmail com ${ planName }"
-      ],
       "Connect organization": [
         "Conectar a organização"
       ],
@@ -11983,6 +13244,9 @@
       ],
       "Contact us": [
         "Contacte-nos"
+      ],
+      "Continue with partial import?": [
+        "Continue com uma importação parcial?"
       ],
       "Couldn’t create accounts": [
         "Não é possível criar contas."
@@ -12030,8 +13294,17 @@
       "Customization": [
         "Personalização"
       ],
+      "Customize and confirm": [
+        "Personalize e confirme"
+      ],
+      "Customize calendar import": [
+        "Personalize a importação de calendário"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Personalize o número de endereços IP no seu plano"
+      ],
+      "Customize your mail import": [
+        "Personalize a sua importação de e-mail"
       ],
       "Data retention": [
         "Retenção de dados"
@@ -12254,8 +13527,24 @@
       "Human verification": [
         "Verificação humana"
       ],
+      "Import as simple event?": [
+        "Importar como um evento simples?",
+        "Importar com eventos simples?"
+      ],
+      "Import contacts": [
+        "Importar contactos"
+      ],
       "Import emails, calendars, contacts": [
         "Importar e-mails, calendários, contactos"
+      ],
+      "Import events": [
+        "Importar eventos"
+      ],
+      "Import failed": [
+        "Erro na importação"
+      ],
+      "Import groups": [
+        "Importar grupos"
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
@@ -12359,6 +13648,9 @@
       "Recommended": [
         "Recomendado"
       ],
+      "Reconnect your account": [
+        "Religue a sua conta"
+      ],
       "Recovery": [
         "Recuperação"
       ],
@@ -12410,6 +13702,12 @@
       "Select a plan": [
         "Selecione um plano"
       ],
+      "Select action to take on contact group": [
+        "Selecionar a acção a tomar no grupo de contactos"
+      ],
+      "Select contact group": [
+        "Seleccionar grupo de contactos"
+      ],
       "Send email reminders?": [
         "Enviar lembretes por e-mail?"
       ],
@@ -12452,6 +13750,9 @@
       "Sign in": [
         "Iniciar sessão"
       ],
+      "Sign in and grant access": [
+        "Faça login e conceda acesso"
+      ],
       "Sign in to join the Beta program": [
         "Inicie sessão para aderir ao programa Beta"
       ],
@@ -12472,6 +13773,12 @@
       ],
       "Spam, block, and allow lists": [
         "Listas de endereços permitidos, bloqueados e spam"
+      ],
+      "Start a new import": [
+        "Iniciar nova importação"
+      ],
+      "Start import process": [
+        "Iniciar o processo de importação"
       ],
       "Status": [
         "Estado"
@@ -12582,6 +13889,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Boas-vindas ao ${ BRAND_NAME } for Business"
       ],
+      "What would you like to import?": [
+        "O que gostaria de importar?"
+      ],
       "Wipe all logs?": [
         "Limpar todos os registos?"
       ],
@@ -12689,11 +13999,26 @@
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Copie e cole esse URL no campo ID da entidade do seu fornecedor de identidade."
       ],
+      "Customize import to reduce the number of folders": [
+        "Personalize a importação para reduzir o número de pastas"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Personalize a importação para reduzir o número de etiquetas"
+      ],
       "Device name and app version": [
         "Nome do dispositivo e versão da aplicação"
       ],
       "Display name for the entity in the eduGAIN database": [
         "Nome a mostrar para a entidade no banco de dados do eduGAIN"
+      ],
+      "Each imported email will have this label": [
+        "Cada e-mail importado terá esta etiqueta"
+      ],
+      "Edit folder names": [
+        "Editar nomes de pastas"
+      ],
+      "Edit label names": [
+        "Editar nomes de etiqueta"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL do endpoint do fornecedor de identidade (por exemplo, https://idp.exemplo.pt/sso/saml)"
@@ -12709,6 +14034,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "Por exemplo, **password, qwerty**, etc."
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "O Gmail categoriza automaticamente alguns e-mails como Social ou Promoções. Pode selecionar para onde importar estes e-mails."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Chave pública do fornecedor de identidade para assinar as afirmações de autenticação. Obtenha o hash do certificado do seu fornecedor de identidade."
@@ -12730,6 +14058,12 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "Especifique os utilizadores da entidade eduGAIN autorizados a autenticar com a autenticação única (SSO) SAML."
+      ],
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "As subpastas do sistema serão apresentadas como pastas separadas em ${ MAIL_APP_NAME }"
+      ],
+      "The import will start with the most recent messages.": [
+        "A importação começará com as mensagens mais recentes."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "O novo ciclo de subscrição começa em ${ formattedTime }"
@@ -13098,6 +14432,14 @@
         "Tente um nome de utilizador mais pequeno (máximo de carateres ${ n })"
       ]
     },
+    "Video control": {
+      "Click to replay the video": [
+        "Clique para reproduzir o vídeo"
+      ],
+      "Replay video": [
+        "Reproduzir o vídeo novamente"
+      ]
+    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "Encontrei outro serviço do qual gosto mais"
@@ -13285,6 +14627,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } irá fundir todas as pastas com o mesmo nome. Para evitar isto, altere os nomes antes da importação."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } irá transferir o máximo de dados possível, começando pelas mensagens mais recentes."
+      ],
       "Are you sure you want to delete the phone number?": [
         "Tem a certeza de que deseja eliminar este número de telefone?"
       ],
@@ -13306,17 +14654,29 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são encriptados de ponta a ponta. Não envie nenhuma informação sensível."
       ],
+      "Skip verification?": [
+        "Saltar verificação?"
+      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "As definições de data e hora no seu dispositivo, não estão sincronizadas. ${ learnMore }"
       ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Esta importação pode exceder a capacidade de armazenamento atualmente disponível na sua conta ${ BRAND_NAME }. Considere a possibilidade de personalizar a sua importação."
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Não estamos online de momento. Preencha o formulário abaixo para descrever o seu problema e nós iremos analisá-lo e entraremos em contacto quando estivermos novamente online."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Não é possível verificar o servidor de e-mail. Se confia nele, pode saltar esta verificação."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Detetámos um problema com a sua configuração DNS. Certifique-se de que os seus registos correspondem com as instruções abaixo. Se o problema persistir, teremos de desligar a assinatura com DKIM."
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Tem de ${ activateLink } a chave da organização antes de adicionar um endereço de email a um membro não privado."
+      ],
+      "You will lose any customization you made so far.": [
+        "Perderá qualquer personalização feita até agora."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "O seu teste gratuito termina em ${ textDate }. ${ action }"

@@ -141,6 +141,12 @@
       "Chat with us": [
         "Bizimle canlı görüşün"
       ],
+      "Check import progress": [
+        "İçe aktarma ilerlemesine bakın"
+      ],
+      "Choose a file or drag it here": [
+        "Bir dosya seçin ya da sürükleyip buraya bırakın"
+      ],
       "Choose my own password": [
         "Kendi parolamı seçeceğim"
       ],
@@ -186,6 +192,9 @@
       "Continue anyway": [
         "Yine de ilerle"
       ],
+      "Continue import": [
+        "İçe aktarmayı sürdür"
+      ],
       "Continue with this password": [
         "Bu parolayı kullanmayı sürdür"
       ],
@@ -221,6 +230,12 @@
       ],
       "Current plan": [
         "Geçerli tarife"
+      ],
+      "Customize": [
+        "Özelleştir"
+      ],
+      "Customize import": [
+        "İçe aktarmayı özelleştir"
       ],
       "Customize plan": [
         "Tarifeyi özelleştir"
@@ -332,6 +347,9 @@
       ],
       "Edit invoice note": [
         "Fatura notunu düzenle"
+      ],
+      "Edit label": [
+        "Etiketi düzenle"
       ],
       "Edit name": [
         "Adı düzenle"
@@ -459,6 +477,18 @@
       "Hide plan features": [
         "Tarife özelliklerini gizle"
       ],
+      "Import": [
+        "İçe aktar"
+      ],
+      "Import calendars": [
+        "Takvimleri içe aktar"
+      ],
+      "Import contacts": [
+        "Kişileri içe aktar"
+      ],
+      "Import emails": [
+        "E-postaları içe aktar"
+      ],
       "Import emails, calendars, contacts": [
         "E-postaları, takvimleri, kişileri içe aktarın"
       ],
@@ -507,8 +537,14 @@
       "Manage advanced account protections": [
         "Gelişmiş hesap korumalarını yönetin"
       ],
+      "Manage folders": [
+        "Klasör yönetimi"
+      ],
       "Manage groups": [
         "Grupları yönetin"
+      ],
+      "Manage labels": [
+        "Etiket yönetimi"
       ],
       "Manage subscription": [
         "Abonelik yönetimi"
@@ -588,6 +624,12 @@
       "Publish changes": [
         "Değişiklikleri yayınla"
       ],
+      "Quit": [
+        "Çıkış"
+      ],
+      "Reconnect": [
+        "Yeniden bağlan"
+      ],
       "Recover data": [
         "Verileri kurtar"
       ],
@@ -659,6 +701,9 @@
       ],
       "Reset password": [
         "Parolayı sıfırla"
+      ],
+      "Reset to default": [
+        "Varsayılana sıfırla"
       ],
       "Restore": [
         "Geri yükle"
@@ -819,11 +864,20 @@
       "Skip": [
         "Atla"
       ],
+      "Skip verification": [
+        "Doğrulamayı atla"
+      ],
       "Spam": [
         "İstenmeyenlere taşı"
       ],
+      "Start import": [
+        "İçe aktarmayı başlat"
+      ],
       "Start live chat": [
         "Canlı sohbet başlat"
+      ],
+      "Stay": [
+        "Kal"
       ],
       "Stop using single sign-on": [
         "Tek oturum açma kullanmayı bırak"
@@ -1093,6 +1147,14 @@
         "Yönetici"
       ]
     },
+    "Alert": {
+      "By leaving now, some contacts may not be imported": [
+        "Şimdi ayrılırsanız, bazı kişiler içe aktarılamayabilir"
+      ],
+      "By leaving now, some events may not be imported": [
+        "Şimdi ayrılırsanız, bazı etkinlikler içe aktarılamayabilir"
+      ]
+    },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Bu işlem bu sertifikayı kullanan tüm yöneltici ve istemcilerin bağlantısını kesecek."
@@ -1253,6 +1315,26 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "E-posta verimliliğinizi yeni bir düzeye çıkarın. E-postalarınızı yazmanız, yanıtlamanız ve düzeltmeniz için ${ BRAND_NAME } Scribe tarafından yardım alın."
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "ICS dosyası boş"
+      ],
+      "Invalid event": [
+        "Etkinlik geçersiz"
+      ],
+      "Invalid ICS file": [
+        "ICS dosyası geçersiz"
+      ],
+      "Invalid method": [
+        "Yöntem geçersiz"
+      ],
+      "Unsupported calendar component": [
+        "Takvim bileşeni desteklenmiyor"
+      ],
+      "Unsupported event": [
+        "Etkinlik desteklenmiyor"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -1435,7 +1517,7 @@
         "Reklam engelleyici ve kötü amaçlı yazılım koruması"
       ],
       "Admin panel to manage your family": [
-        "Ailenizi yönetmek için yönetici panosu"
+        "Ailenizi yönetmek için yönetim panosu"
       ],
       "Advanced account protection": [
         "Gelişmiş hesap koruması"
@@ -1447,7 +1529,7 @@
         "Yüksek hızda yayın akışı izleme"
       ],
       "One-time payment, lifetime deal": [
-        "Bir kez öde, ömür boyu kullanım fırsatı"
+        "Bir kez ödeyip ömür boyu kullanma fırsatı"
       ],
       "Online document editor": [
         "Çevrim içi belge düzenleyici"
@@ -1876,6 +1958,14 @@
         "çilek"
       ]
     },
+    "Confirm modal title": {
+      "Quit import customization?": [
+        "İçe aktarma özelleştirmesinden çıkılsın mı?"
+      ],
+      "Quit import?": [
+        "İçe aktarmadan çıkılsın mi?"
+      ]
+    },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
         "Bu ödeme yöntemini silmek istediğinize emin misiniz?"
@@ -1884,6 +1974,94 @@
     "Confirmation title": {
       "Delete payment method": [
         "Ödeme yöntemini sil"
+      ]
+    },
+    "Contact field label": {
+      "Address": [
+        "Adres"
+      ],
+      "Anniversary": [
+        "Yıl dönümü"
+      ],
+      "Birthday": [
+        "Doğum günü"
+      ],
+      "Display name": [
+        "Görüntülenecek ad"
+      ],
+      "Email": [
+        "E-posta"
+      ],
+      "First name": [
+        "Ad"
+      ],
+      "Gender": [
+        "Cinsiyet"
+      ],
+      "Language": [
+        "Dil"
+      ],
+      "Last name": [
+        "Soyad"
+      ],
+      "Logo": [
+        "Logo"
+      ],
+      "Member": [
+        "Üye"
+      ],
+      "Name": [
+        "Ad"
+      ],
+      "Note": [
+        "Not"
+      ],
+      "Organization": [
+        "Kuruluş"
+      ],
+      "Phone": [
+        "Telefon"
+      ],
+      "Photo": [
+        "Fotoğraf"
+      ],
+      "Role": [
+        "Rol"
+      ],
+      "Time zone": [
+        "Saat dilimi"
+      ],
+      "Title": [
+        "Başlık"
+      ],
+      "URL": [
+        "İnternet adresi"
+      ]
+    },
+    "Contact type label": {
+      "Fax": [
+        "Faks"
+      ],
+      "Main": [
+        "Ana"
+      ],
+      "Mobile": [
+        "Cep telefonu"
+      ],
+      "Other": [
+        "Diğer"
+      ],
+      "Pager": [
+        "Çağrı cihazı"
+      ],
+      "Personal": [
+        "Kişisel"
+      ],
+      "Work": [
+        "İş"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "CountriesStep:Info": {
@@ -2768,6 +2946,11 @@
         "/kullanıcı aylık"
       ]
     },
+    "Default display name vcard": {
+      "Unknown": [
+        "Bilinmiyor"
+      ]
+    },
     "Delete address prompt": {
       "Are you sure you want to delete this address?": [
         "Bu adresi silmek istediğinize emin misiniz?"
@@ -2857,6 +3040,9 @@
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Ek güvenlik için kuruluşunuzda iki adımlı doğrulamanın kullanılmasını sağlayın."
       ],
+      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Ekibiniz uzaktan çalışıyor veya herkese açık Wi-Fi bağlantıları kullanıyor olsa bile, kuruluş verilerine güvenli erişim sağlayın."
       ],
@@ -2881,6 +3067,9 @@
       "If disabled, only admins will have access.": [
         "Kapatıldığında yalnızca yöneticiler erişebilir."
       ],
+      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
+        "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Hayatınızın farklı bölümlerini ayrı tutun ve ek adreslerle gelen kutunuza düzen getirin."
       ],
@@ -2896,11 +3085,33 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Paylaşılan takvimler ile zamanlamayı eşitlemeyi ve planlamayı kolaylaştırın."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV ve VCF dosyası ile içe aktarma için, ${ MAX_IMPORT_FILE_SIZE_STRING } dosya boyutunu ya da ${ MAX_IMPORT_CONTACTS_STRING } kişiyi aşmadığınızdan emin olun. Dosyanız büyükse lütfen daha küçük dosyalara bölün. ${ learnMoreLink }."
+      ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Kişilerinizi Google ya da Outlook üzerinden içe aktarmak için ${ easySwitchLink }."
+      ],
       "To start, give your organization a name.": [
         "Başlamak için, kuruluşunuzun adını yazın."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Kuruluşunuzun, ${ BRAND_NAME } sektör lideri şifreleme ve gizlilik ekosisteminden hemen yararlanmasını sağlamak için bu rehberi kullanın."
+      ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısını kullanın"
+      ]
+    },
+    "Description of the purpose of the import CSV modal": {
+      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
+        "Ayrıca, CSV alanları vCard alanlarıyla otomatik olarak eşleştirildi. Bu eşleşmeyi inceleyebilir ve el ile değiştirebilirsiniz."
+      ],
+      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
+        "Yüklediğiniz CSV dosyasında aşağıdaki alanlar algılandı. İçe aktarmak istediklerinizi işaretleyin."
       ]
     },
     "Disable address prompt": {
@@ -3181,6 +3392,71 @@
         "Başka bir aygıtta oturum açtınız"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "Not: ${ eventComment }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "AÇIKLAMA:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } iptal edildi."
+      ],
+      "All events in this series were updated.": [
+        "Bu dizideki tüm etkinlikler güncellendi."
+      ],
+      "Here's what changed:": [
+        "Şu değişiklik yapıldı:"
+      ],
+      "NOTE:": [
+        "NOT:"
+      ],
+      "This event occurrence was canceled.": [
+        "Bu etkinlik yinelemesi iptal edildi."
+      ],
+      "This event occurrence was updated.": [
+        "Bu etkinlik yinelemesi güncellendi."
+      ],
+      "This event was updated.": [
+        "Bu etkinlik güncellendi."
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "ZAMAN:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "ZAMAN:\n${ formattedStart } (tüm gün)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "ZAMAN:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Kaldırıldı"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "KONUM:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress }, ${ eventTitle } etkinliği davetinizi kabul etti"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress }, ${ eventTitle } etkinliği davetinizi reddetti"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress }, ${ eventTitle } etkinliği davetinizi belirsiz olarak kabul etti"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } eklendi"
@@ -3210,6 +3486,26 @@
         "${ name } silindi"
       ]
     },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "${ formattedStart } tarihindeki bir etkinliğin iptal bilgilendirmesi"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "${ formattedStart } tarihinde başlayan bir etkinliğin iptal bilgilendirmesi"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "${ formattedStart } zamanındaki etkinlik daveti"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "${ formattedStart } zamanında başlayan etkinlik daveti"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "${ formattedStart } zamanındaki etkinlik için güncelleme"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "${ formattedStart } zamanında başlayan etkinlik için güncelleme"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Doğrulama e-postası ${ address } alıcısına gönderildi"
@@ -3235,6 +3531,12 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Kullanıcı adınız: ${ user.Name }. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
       ],
+      "A group with this name already exists": [
+        "Aynı adlı bir grup zaten var"
+      ],
+      "Address primary private key not found": [
+        "Adresin birincil kişisel anahtarı bulunamadı"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Tüm depolama alanı dağıtıldı. Lütfen diğer kullanıcılara ayrılmış depolama alanlarını azaltın."
       ],
@@ -3250,6 +3552,9 @@
       "Authentication error.": [
         "Kimlik doğrulama sorunu."
       ],
+      "Calendar limit reached": [
+        "Takvim sayısı sınırına ulaşıldı"
+      ],
       "Checkout expired, please try again": [
         "Ödemenin geçerlilik süresi dolmuş. Lütfen yeniden deneyin"
       ],
@@ -3262,6 +3567,14 @@
       "Couldn't load transactions. Please try again later.": [
         "Hesap işlemleri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "En az ${ calendarsToFixCount } takvimi kaldırın",
+        "En az ${ calendarsToFixCount } takvimi kaldırın"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "En az ${ calendarsToFixCount } takvimi kaldırın ya da",
+        "En az ${ calendarsToFixCount } takvimi kaldırın ya da"
+      ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
@@ -3273,6 +3586,9 @@
       ],
       "Email address is not available": [
         "E-posta adresi kullanılamıyor"
+      ],
+      "Email address is required": [
+        "E-posta adresinin yazılması zorunludur"
       ],
       "Email is not valid": [
         "E-posta geçersiz"
@@ -3298,8 +3614,14 @@
       "File too large. Your logo must be 30 KB or smaller.": [
         "Dosya çok büyük. Logonuzun boyutu 30 KB ya da daha küçük olmalıdır."
       ],
+      "Folder name cannot be empty.": [
+        "Klasör adı boş olamaz."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Geçerlilik süresi dolduysa, televizyonda yenile üzerine tıklayın ve kodunuzu yeniden yazın."
+      ],
+      "IMAP server is required": [
+        "IMAP sunucusunun yazılması zorunludur"
       ],
       "Impossible to create the gateway": [
         "Ağ geçidi oluşturulamıyor"
@@ -3352,6 +3674,9 @@
       "Invalid invitation link": [
         "Davet bağlantısı geçersiz"
       ],
+      "Invalid name": [
+        "Ad geçersiz"
+      ],
       "Invalid postal code": [
         "Posta kodu geçersiz"
       ],
@@ -3360,6 +3685,16 @@
       ],
       "Invalid ZIP code": [
         "Posta kodu geçersiz"
+      ],
+      "Label name cannot be empty.": [
+        "Etiket adı boş olamaz."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin",
+        "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin"
+      ],
+      "Missing key packet": [
+        "Anahtar paketi eksik"
       ],
       "Name already exists": [
         "Ad zaten var"
@@ -3379,6 +3714,9 @@
       "No image selected": [
         "Herhangi bir görsel seçilmemiş"
       ],
+      "No valid address found": [
+        "Geçerli bir adres bulunamadı"
+      ],
       "Not a valid number": [
         "Numara geçerli değil"
       ],
@@ -3390,6 +3728,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Korunmayan kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
+      ],
+      "Password is required": [
+        "Parolanın yazılması zorunludur"
       ],
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
@@ -3436,6 +3777,10 @@
       "Please enter ZIP code": [
         "Lütfen posta kodunu yazın"
       ],
+      "Please fix the highlighted conflict to proceed.": [
+        "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
+        "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
+      ],
       "Please generate keys before you try to change your password": [
         "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
       ],
@@ -3481,8 +3826,17 @@
       "Please upload only 1 file": [
         "Lütfen yalnızca 1 dosya yükleyin"
       ],
+      "Port is required": [
+        "Bağlantı noktasının yazılması zorunludur"
+      ],
       "Postal code is required": [
         "Posta kodunun yazılması zorunludur"
+      ],
+      "Primary address key is not decrypted": [
+        "Birincil adres anahtarının şifresi çözülemedi"
+      ],
+      "Primary address key is not decrypted.": [
+        "Birincil adres anahtarının şifresi çözülemedi."
       ],
       "Process aborted": [
         "İşlem iptal edildi"
@@ -3492,6 +3846,21 @@
       ],
       "Signature verification failed": [
         "İmza doğrulanamadı"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Bazı klasör adlarınız kullanılamıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Bazı klasör adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sayısı sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Bazı etiket adlarınız sistem kullanımına ayrılmış. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      ],
+      "Some of your label names are unavailable. Please customize the import to edit these names.": [
+        "Bazı etiket adlarınız kullanılamıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      ],
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sayısı sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
@@ -3517,11 +3886,26 @@
       "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
         "Dosya çok küçük. En az boyut ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Klasör adı geçersiz. Lütfen farklı bir ad seçin."
+      ],
+      "The folder name is too long. Please choose a different name.": [
+        "Klasör adı çok uzun. Lütfen farklı bir ad seçin."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Etiket adı geçersiz. Lütfen farklı bir ad seçin."
+      ],
+      "The label name is too long. Please choose a different name.": [
+        "Etiket adı çok uzun. Lütfen farklı bir ad seçin."
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Eklenebilecek en az kredi tutarı: ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "İlke adının uzunluğu 3 ile 40 karakter arasında olmalıdır."
+      ],
+      "There are too many folders in your external account. Please customize the import to delete some folders.": [
+        "Dış hesabınızda çok fazla klasör var. Lütfen bazı klasörleri silmek için içe aktarma işlemini özelleştirin."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
@@ -3531,6 +3915,12 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
+      ],
+      "This folder name is not available. Please choose a different name.": [
+        "Bu klasör adı kullanılamaz. Lütfen farklı bir ad seçin."
+      ],
+      "This label name is not available. Please choose a different name.": [
+        "Bu etiket adı kullanılamaz. Lütfen farklı bir ad seçin."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Korunmayan kullanıcı hesapları oluşturmak ve bu hesaplara erişmek için yönetici yetkilerinizi geri yüklemelisiniz."
@@ -3545,7 +3935,7 @@
         "Dosya yüklenemedi"
       ],
       "Unexpected error, we can't import the contacts": [
-        "Beklenmeyen bir sorun çıktı. Kişileri içe aktaramadık"
+        "Beklenmeyen bir sorun çıktı. Kişiler içe aktarılamadı"
       ],
       "Unknown error": [
         "Bilinmeyen sorun"
@@ -3571,6 +3961,9 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Doğrulama kodu yanlış. Lütfen doğrulama kodunu doğru bir şekilde kopyaladığınızdan emin olun ve yeniden deneyin. Değişikliklerin etkili olması 24 saati bulabilir."
       ],
+      "You have reached the maximum number of calendars.": [
+        "Eklenebilecek en fazla takvim sayısı sınırına ulaştınız."
+      ],
       "You have reached the number of contacts limit for your account": [
         "Hesabınızın kişi sayısı sınırına ulaştınız"
       ],
@@ -3580,8 +3973,14 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Tarifenizin kullanıcı sayısı sınırına ulaştınız. Yeni bir kullanıcı eklemek için lütfen tarifenizi yükseltin."
       ],
+      "You must set a name": [
+        "Bir ad belirtmelisiniz"
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Hesabınızın ya da kuruluşunuzun ödenmemiş bir faturası var. Lütfen süresi geçmiş tüm faturaları ödeyin."
+      ],
+      "Your import will not be processed.": [
+        "İçe aktarma işleminiz yapılmayacak."
       ],
       "ZIP code is required": [
         "Posta kodunun yazılması zorunludur"
@@ -3590,6 +3989,132 @@
     "error": {
       "Select users to view their activity": [
         "Etkinliklerini görüntülemek istediğiniz kullanıcıları seçin"
+      ]
+    },
+    "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya biçimi doğru değil."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "${ formattedFilename } dosyanız yüklenirken bir sorun çıktı. Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olabilir."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "${ formattedFilename } dosyanız yüklenirken bir sorun çıktı. Yalnızca ICS dosya biçimleri kullanılabilir."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Dosyanız yüklenirken bir sorun çıktı. Herhangi bir dosya seçilmemiş."
+      ],
+      "An unexpected error occurred. Import must be restarted.": [
+        "Beklenmedik bir sorun çıktı. İçe aktarma işlemi yeniden başlatılmalı."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } taneden fazla etkinlik var.",
+        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } taneden fazla etkinlik var."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "${ formattedFilename } dosyanız geçersiz bir yöntem içerdiğinden içe aktarılamıyor."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "${ formattedFilename } dosyanızda içe aktarılacak bir etkinlik yok."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "${ formattedFilename } dosyanız boş."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "${ formattedFilename } dosyanız bir takvim değil."
+      ]
+    },
+    "Error importing contact": {
+      "Encryption failed": [
+        "Şifrelenemedi"
+      ],
+      "Missing FN property": [
+        "FN özelliği eksik"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard 3.0 öncesi sürümler desteklenmiyor"
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya biçimi doğru değil."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "${ formattedFilename } dosyanız yüklenirken bir sorun çıktı. Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olabilir."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "${ formattedFilename } dosyanız yüklenirken bir sorun çıktı. Herhangi bir .csv ya da .vcf dosyası seçilmemiş"
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Dosyanız yüklenirken bir sorun çıktı. Herhangi bir dosya seçilmemiş."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_CONTACTS_STRING } kişiden daha fazla kişi var."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "${ formattedFilename } dosyanızda içe aktarılacak bir kişi yok."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "${ formattedFilename } dosyanız boş."
+      ]
+    },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Biçim bozuk. Bileşen okunamadı."
+      ],
+      "Calendar": [
+        "Takvim"
+      ],
+      "Component with wrong format": [
+        "Bileşen biçimi yanlış"
+      ],
+      "Custom time zone": [
+        "Özel saat dilimi"
+      ],
+      "Element": [
+        "Bileşen"
+      ],
+      "Encryption failed": [
+        "Şifrelenemedi"
+      ],
+      "Event": [
+        "Etkinlik"
+      ],
+      "Free-busy time information": [
+        "Serbest-meşgul zaman bilgileri"
+      ],
+      "Invalid event": [
+        "Etkinlik geçersiz"
+      ],
+      "Journal entry": [
+        "Günlük kaydı"
+      ],
+      "Missing start time": [
+        "Başlangıç zamanı eksik"
+      ],
+      "No UID, title or start time": [
+        "UID değeri, başlık ya da başlangıç zamanı yok"
+      ],
+      "Notification out of bounds": [
+        "Bildirim sınırların dışında"
+      ],
+      "Original recurring event could not be found": [
+        "Özgün yinelenen etkinlik bulunamadı"
+      ],
+      "Time zone": [
+        "Saat dilimi"
+      ],
+      "Time zone component ignored": [
+        "Saat dilimi bileşeni yok sayıldı"
+      ],
+      "To-do entry": [
+        "Yapılacak iş kaydı"
+      ],
+      "Unknown": [
+        "Bilinmiyor"
+      ],
+      "Unsupported event": [
+        "Etkinlik desteklenmiyor"
       ]
     },
     "Error importing users": {
@@ -3638,11 +4163,65 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "${ name } sertifikası bulunamadı ya da zaten geçersiz kılınmış"
+      ],
+      "Display name cannot be empty": [
+        "Görüntülenecek ad boş olamaz"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Herhangi bir görsel seçilmemiş"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Beklenmeyen bir sorun çıktı"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "Eklenmiş ICS dosyasının şifresi çözülemedi"
+      ],
+      "Attached ICS file could not be read": [
+        "Eklenmiş ICS dosyası okunamadı"
+      ],
+      "Invalid invitation": [
+        "Davet geçersiz"
+      ],
+      "Invalid response": [
+        "Yanıt geçersiz"
+      ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Etkinlik takviminizde güncellenemedi. Herhangi bir yanıt gönderilmedi"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Etkinlik takviminizde güncellenemedi. Herhangi bir yanıt gönderilmedi"
+      ],
+      "Unsupported invitation": [
+        "Davet desteklenmiyor"
+      ],
+      "Unsupported response": [
+        "Yanıt desteklenmiyor"
+      ],
+      "We could not cancel the event in your calendar": [
+        "Takviminizdeki etkinliği iptal edemedik"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Etkinliği, takviminizden alamadık"
+      ],
+      "We could not update the event in your calendar": [
+        "Takviminizdeki etkinliği güncelleyemedik"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Yanıtınız gönderildi, ancak etkinlik takviminize eklenemedi"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Yanıtınız gönderildi, ancak etkinlik takviminizde güncellenemedi"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(başlıksız)"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4405,6 +4984,310 @@
         "Kısa mesaj"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Takvimin saat dilimi desteklenmiyor"
+      ],
+      "Edited event not supported": [
+        "Etkinliklerin düzenlenmesi desteklenmiyor"
+      ],
+      "End time out of bounds": [
+        "Bitiş zamanı sınırların dışında"
+      ],
+      "Event validation failed": [
+        "Etkinlik doğrulanamadı"
+      ],
+      "Floating times not supported": [
+        "Göreli zamanlar desteklenmiyor"
+      ],
+      "Malformed all-day event": [
+        "Tüm gün etkinliği hatalı"
+      ],
+      "Malformed end time": [
+        "Bitiş zamanı hatalı"
+      ],
+      "Malformed recurring event": [
+        "Yinelenen etkinlik hatalı"
+      ],
+      "Malformed start time": [
+        "Başlangıç zamanı hatalı"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Yalnızca Gregoryen takvimi ölçeğine izin veriliyor"
+      ],
+      "Recurring event has no occurrences": [
+        "Yinelenen etkinliğin herhangi bir yinelemesi yok"
+      ],
+      "Recurring rule not supported": [
+        "Yinelenme kuralı desteklenmiyor"
+      ],
+      "Start time out of bounds": [
+        "Başlangıç zamanı sınırların dışında"
+      ],
+      "Time zone not supported": [
+        "Saat dilimi desteklenmiyor"
+      ]
+    },
+    "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi",
+        "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı.",
+        "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
+      ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
+      ],
+      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
+        "Kişiler ekleniyor ve şifreleniyor: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "Etkinlikler şifrelenip takviminze ekleniyor: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Etkinlik içe aktarıldı. İçe aktarılan etkinliği takviminizde görebilirsiniz."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Etkinlikler içe aktarıldı. İçe aktarılan etkinlikleri takviminizde görebilirsiniz."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "Lütfen içe aktarma işlemi bitmeden önce sekmeyi kapatmayın."
+      ]
+    },
+    "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } şu anda belirli etkinlik türlerini, bilgilerini ve biçimlerini desteklemiyor."
+      ],
+      "vCard versions < 3.0": [
+        "vCard 3.0 sürümü öncesi"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "İçe aktarılan davetler ${ CALENDAR_APP_NAME } içinde düzenleyici ve katılımcı bilgileri olmadan sıradan etkinlikler olarak görüntülenir. Etkinlik güncellemelerini almak ve katılımcıları görmek için düzenleyicilerden ${ BRAND_NAME } e-posta adresinizi kullanarak sizi davet etmelerini isteyin."
+      ],
+      "This file contains an event invitation:": [
+        "Bu dosyada bir etkinlik daveti bulunuyor:",
+        "Bu dosyada etkinlik davetleri bulunuyor:"
+      ],
+      "This file contains an invitation response:": [
+        "Bu dosyada bir davet yanıtı bulunuyor:",
+        "Bu dosyada davet yanıtları bulunuyor:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Bu dosyada içe aktaramayacağımız bazı veriler var:"
+      ]
+    },
+    "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi",
+        "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Kişi şifrelenirken ve eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Kişileriniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } kişi içe aktarıldı."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Kişileriniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Kişi içe aktarıldı. İçe aktarılan kişiyi kişi listenizde görebilirsiniz."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Kişiler içe aktarıldı. İçe aktarılan kişileri kişi listenizde görebilirsiniz."
+      ]
+    },
+    "Import contact error": {
+      "Contact ${ contactId }: ": [
+        "Kişi ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } kişi",
+        "${ totalContacts } kişi"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "bilinmiyor"
+      ]
+    },
+    "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } ${ forNow } desteklemiyor:"
+      ],
+      "for now": [
+        "şimdilik"
+      ]
+    },
+    "Import error": {
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME }, hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME }, dış hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME }, dış hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME }, Yahoo hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME }, Yahoo hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
+      ],
+      "2-step verification is enabled in your external account.": [
+        "Dış hesabınızda iki adımlı doğrulama açılmış."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "Dış e-posta hesabınızda iki adımlı doğrulama açılmış."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "Dış hesabınızda IMAP erişimi açılmış."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "Yahoo hesabınızda IMAP erişimi özelliği açıldı."
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Kısa sürede çok fazla istek yapıldı. Lütfen birkaç dakika sonra yeniden deneyin."
+      ],
+      "Use your app password if:": [
+        "Aşağıdaki durumlarda uygulama parolanızı kullanın:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Aşağıdaki durumlarda normal parolanız yerine uygulama parolanızı kullanın:"
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Uygulama parolanız doğru. Normal parolanızı kullanmayın."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "E-posta hesabınızdaki verilerinizi dışa aktarmak için bir uygulama parolası gerekli."
+      ],
+      "Your email account requires one to export your data.": [
+        "E-posta hesabınızın verilerini dışa aktarmak için gerekli."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "E-posta adresiniz ve uygulama parolanız doğru. Normal parolanızı kullanmayın."
+      ],
+      "Your email address and password are correct.": [
+        "E-posta adresiniz ve parolanız doğru."
+      ],
+      "Your password is correct.": [
+        "Parolanız doğru."
+      ]
+    },
+    "Import instructions": {
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "E-posta hizmeti sağlayıcınıza bağlı olarak, ${ BRAND_NAME } içine aktarmadan önce bir ${ knowledgeBaseLink } oluşturmanız gerekebilir."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "3 nokta (...) üzerine tıklayarak menüyü açın."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "${ boldAppPassword } oluşturun ve ${ BRAND_NAME } tarafından sorulduğunda normal parolanız yerine bunu yazın."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "${ yahooMailLink } üzerindeki profilinizin altından ${ boldAccountInfo } bölümüne gidin."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "${ boldAccountSecurity } bölümüne gidin."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "${ yahooMailLink } kişilerinizi açın."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "${ boldExportCSV } seçin."
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Bir takvimi ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Yahoo üzerinden indirebilirsiniz:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Bir takvimi ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin."
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Kişileri ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } işlemini yapmalısınız. 3 kolay adımda Yahoo üzerinden indirin:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Kişileri ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin."
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "E-postaları ${ BRAND_NAME } içine aktarmak için şu adımları izleyerek Yahoo üzerinden ${ appPasswordLink } almalısınız:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Hesap bilgileri"
+      ],
+      "Account security": [
+        "Hesap güvenliği"
+      ],
+      "app password": [
+        "uygulama parolası"
+      ],
+      "Export": [
+        "Dışa aktar"
+      ],
+      "Export to CSV file": [
+        "CSV olarak dışa aktar"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "uygulama parolası"
+      ],
+      "app password or enable IMAP": [
+        "uygulama parolası ya da IMAP özelliğini açın"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "CSV ya da VCF (vCard) dosyası"
+      ],
+      "full calendar view": [
+        "tam takvim görünümü"
+      ],
+      "ICS file": [
+        "ICS dosyası"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Yahoo üzerinde ${ calendarViewLink } bölümüne gidin."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "İmleci içe aktarmak istediğiniz takvim üzerine getirin ve menüyü açın."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Takvimi ICS olarak dışa aktarmak için ${ boldExport } seçin."
+      ]
+    },
+    "Import warning": {
+      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
+        "${ totalContactsDiscarded }/${ totalContacts } kişi içe aktarılmayacak. Ayrıntılı bilgi almak için tıklayın"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Bilgileri görmek için genişletin.",
+        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Bilgileri görmek için genişletin."
+      ],
+      "No contact can be imported. Click for details": [
+        "Herhangi bir kişi içe aktarılamadı. Ayrıntılı bilgi almak için tıklayın"
+      ],
+      "No event can be imported. Expand for details.": [
+        "Herhangi bir etkinlik içe aktarılamadı. Bilgi almak için genişletin."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Takvim içeriğinizin bir bölümü desteklenmiyor ve içe aktarılmayacak."
+      ]
+    },
     "Info": {
       " and other security features.": [
         " ve diğer güvenlik özellikleri."
@@ -4424,6 +5307,14 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } yeni takvim",
+        "${ calendarsToBeCreatedCount } yeni takvim"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } birleştirilmiş takvim",
+        "${ calendarsToBeMergedCount } birleştirilmiş takvim"
       ],
       "${ countriesCount } country enabled": [
         "${ countriesCount } ülke için kullanıma açıldı",
@@ -4497,6 +5388,14 @@
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } şüpheli etkinlikleri özel olarak izleyerek hesabınızı korur."
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } klasör bulundu",
+        "${ providerFoldersNumLocalized } klasör bulundu"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "Gmail üzerinde ${ providerFoldersNumLocalized } etiket bulundu",
+        "Gmail üzerinde ${ providerFoldersNumLocalized } etiket bulundu"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } sunucu henüz kuruluyor. Bu işlem genellikle ${ provisioningDuration } içinde tamamlanır.",
         "${ provisioningCounter } sunucu henüz kuruluyor. Bu işlem genellikle ${ provisioningDuration } içinde tamamlanır."
@@ -4519,9 +5418,21 @@
         "${ resultsCount } sonuç bulundu",
         "${ resultsCount } sonuç bulundu"
       ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim",
+        "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim"
+      ],
       "${ selectedEntities.length } selected": [
         "${ selectedEntities.length } seçildi",
         "${ selectedEntities.length } seçildi"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } klasör seçildi",
+        "${ selectedFoldersCountLocalized } klasör seçildi"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } etiket seçildi",
+        "${ selectedFoldersCountLocalized } etiket seçildi"
       ],
       "${ storage } storage": [
         "${ storage } depolama alanı"
@@ -4614,9 +5525,6 @@
       "add a recovery method": [
         "bir kurtarma yöntemi ekleyin"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
-        "Hesabınıza bir güvenlik katmanı daha ekleyin. Her oturum açışınızda iki adımlı yapmanız gerekecektir. İki adımlı doğrulama kodlarınızı kaydetmek için ${ protonAuthenticatorDownloadLink } kullanmanızı öneririz."
-      ],
       "Add domain": [
         "Etki alanı ekle"
       ],
@@ -4654,6 +5562,14 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Tümü (${ totalFoldersCount } klasör)",
+        "Tümü (${ totalFoldersCount } klasör)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Tümü (${ totalFoldersCount } etiket)",
+        "Tümü (${ totalFoldersCount } etiket)"
+      ],
       "All inactive members deleted": [
         "Etkin olmayan tüm üyeler silindi"
       ],
@@ -4665,6 +5581,10 @@
       ],
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "${ MAX_CONTACTS_PER_USER } kişiye kadar tüm kişileriniz içe aktarılacak",
+        "${ MAX_CONTACTS_PER_USER } kişiye kadar tüm kişileriniz içe aktarılacak"
       ],
       "Allocated": [
         "Ayrılmış"
@@ -4690,11 +5610,17 @@
       "Amount due": [
         "Ödenecek tutar"
       ],
+      "and": [
+        "ve"
+      ],
       "Are you sure you want to cancel editing the group?": [
         "Bu grubu düzenlemeyi iptal etmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to discard your changes?": [
         "Değişiklikleri silmek istediğinize emin misiniz?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "İçe aktarma işleminden vazgeçmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Bu kullanıcıya yönetici yetkileri vermek istediğinize emin misiniz?"
@@ -4777,6 +5703,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
+      "Close this screen to exit.": [
+        "Çıkmak için bu ekranı kapatın."
+      ],
       "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
         "${ DOCS_APP_NAME } ile birlikte çalışan bulut depolama alanı"
       ],
@@ -4819,6 +5748,16 @@
       "Country code": [
         "Ülke kodu"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } yeni takvim ekle",
+        "${ calendarsToBeCreatedCount } yeni takvim ekle"
+      ],
+      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
+        "İçe aktarılan iletiler için bir etiket, bu içe aktarma için bir zaman aralığı ve içe aktarmak istediğiniz klasörler oluşturun."
+      ],
+      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
+        "İçe aktarılan iletiler için bir etiket, bu içe aktarma için bir zaman aralığı ve içe aktarmak istediğiniz etiketler oluşturun."
+      ],
       "Create a secure cloud for ${ value } member": [
         "${ value } üye için güvenli bir bulut oluşturun",
         "${ value } üye için güvenli bir bulut oluşturun"
@@ -4828,6 +5767,9 @@
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
         "Diğer kişiler için e-posta adresleri ekleyin. Bir işletme, okul ya da grubu ${ MAIL_APP_NAME } üzerinden yönetin. Kuruluşunuzun adını ve özel etki alanını ekleyerek başlayın (@sirketiniz.com gibi). "
+      ],
+      "Create in": [
+        "Şuraya ekle"
       ],
       "Create your first Gateway": [
         "İlk ağ geçidinizi oluşturun"
@@ -5051,6 +5993,9 @@
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "${ email } alıcısına gönderilen doğrulama kodunu yazın. E-postayı Gelen kutunuzda bulamazsanız, İstenmeyen kutusuna bakmayı unutmayın."
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "İçe aktarmak istediğiniz e-posta hesabının kimlik doğrulama bilgilerini yazın."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "**${ domain.DomainName }** için bir **eduGAIN** kuruluşunun Entity ID değerini yazın."
       ],
@@ -5198,11 +6143,27 @@
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Sorun yaşıyorsanız, size yardımcı olmak için buradayız. ${ boldPhoneCall } yapın ya da ${ boldZoomMeeting } ile destek uzmanlarımızdan biriyle görüşün."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar",
+        "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar"
+      ],
+      "Import from": [
+        "Şuradan içe aktar"
+      ],
+      "Import in progress": [
+        "İçe aktarılıyor"
+      ],
+      "Import mailbox": [
+        "E-posta kutusunu içe aktar"
+      ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "ÖNEMLİ: DNS panonuz CNAME değerlerinin noktayla bitmesine izin vermiyorsa CNAME değerlerindeki son noktayı kaldırabilirsiniz."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Önemli: Lütfen kurtarma kodlarını kaydettiğinize emin olun. Bu kodlar olmadan, iki adımlı doğrulama aygıtınızı kaybederseniz hesabınıza asla erişemezsiniz."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "${ fromEmail } verileriniz ${ toEmail } içine aktarılıyor."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Bir sonraki adımda, bir Bitcoin adresi kullanarak ön ödemenizi yapabilirsiniz."
@@ -5315,11 +6276,20 @@
       "JCB logo": [
         "JCB logosu"
       ],
+      "Just confirm your selection and we'll do the rest.": [
+        "Yalnızca seçiminizi onaylayın, gerisini biz halledeceğiz."
+      ],
       "Keys created": [
         "Anahtarlar oluşturuldu"
       ],
+      "Label all imported messages as": [
+        "İçe aktarılan iletiler şu şekilde etiketlensin"
+      ],
       "Labels:": [
         "Etiketler:"
+      ],
+      "Large imports can take several days.": [
+        "Büyük boyutlu içe aktarımların tamamlanması birkaç gün sürebilir."
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Üçüncü taraf VPN uygulamalarında ${ VPN_APP_NAME } oturumunu nasıl açabileceğinizi öğrenin."
@@ -5396,6 +6366,9 @@
       "Member": [
         "Üye"
       ],
+      "Merged": [
+        "Birleştirilmiş"
+      ],
       "Messages to all your email addresses will go to your inbox.": [
         "Tüm e-posta adreslerinize gönderilen iletiler gelen kutunuza gelir."
       ],
@@ -5419,6 +6392,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
+      ],
+      "New": [
+        "Yeni"
       ],
       "New activity data will stop being collected and shown.": [
         "Yeni etkinlik verilerinin toplanması ve görüntülenmesi durdurulacak."
@@ -5580,6 +6556,9 @@
       "Please open the document to view it.": [
         "Görüntülemek için lütfen belgeyi açın."
       ],
+      "Please select the folders you would like to import:": [
+        "Lütfen içe aktarmak istediğiniz klasörleri seçin:"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Lütfen farklı bir ödeme yöntemi kullanarak yeniden deneyin ya da bankanızla görüşün."
       ],
@@ -5703,6 +6682,12 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "${ BRAND_NAME } kuruluşunuza izin vermek istediğiniz kullanıcı ilişkilerini ${ getFormattedOrganization } üzerinden seçin:"
       ],
+      "Select what you want to import.": [
+        "İçe aktarmak istediklerinizi seçin."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Hangi takvimlerin içe aktarılacağını seçin. İçe aktarılan her takvim için tarifenizde bulunan takvim sayısına göre yeni bir takvim oluşturulur."
+      ],
       "Self-custodial crypto wallet": [
         "Kendinden korumalı kripto cüzdanı"
       ],
@@ -5822,6 +6807,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Tech Radar Pro tarafından 5 üzerinden 4,2 puanla önerildi"
+      ],
+      "Temporarily unavailable. Please check back later.": [
+        "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
       ],
       "Thank you": [
         "Teşekkürler"
@@ -5984,6 +6972,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "Etkinlikleri içe aktarmak için önce ${ CALENDAR_APP_NAME } içinde bir takvim oluşturun. Etkinlikleriniz içe aktarma işleminden sonra bu takvimde görüntülenir."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "${ BRAND_NAME } ürünlerindeki son gelişmeleri izlemek için çeşitli e-posta gruplarımıza abone olabilir ve zaman zaman ${ blogLink } sayfamıza bakabilirsiniz."
@@ -6186,8 +7177,14 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
       ],
+      "We'll email you once import is complete.": [
+        "İçe aktarma işlemi tamamlanınca size e-posta göndereceğiz."
+      ],
       "We'll get back to you shortly.": [
         "Size en kısa sürede geri dönüş yapacağız."
+      ],
+      "We'll notify you when the import is done.": [
+        "İçe aktarım tamamlandığında sizi bilgilendireceğiz."
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
@@ -6280,8 +7277,17 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "${ downgradedPlanName } tarifesinin depolama alanından fazlasını kullanıyorsunuz. Tarifeyi düşürebilmek için lütfen bazı verileri silin ya da taşıyın."
       ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Ayrıca içe aktarılan takvimleri var olan ${ BRAND_NAME } takvimleriyle birleştirebilirsiniz."
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Bu ayarı istediğiniz zaman ${ settingsLink } bölümünden değiştirebilirsiniz."
+      ],
+      "You can check the progress ${ importProgressLink }.": [
+        "İlerlemeye bakabilirsiniz ${ importProgressLink }."
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "Bu sırada sekmeyi veya tarayıcıyı kapatabilirsiniz."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Bunu doğrulamada kullanılacak doğru e-posta adresini yazmak için bir kez düzenleyebilirsiniz."
@@ -6291,6 +7297,9 @@
       ],
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Ücretli gizlilik hizmetlerimizi bir arada yalnızca **${ priceString }/ay** ile alabilirsiniz."
+      ],
+      "You can import one data type at a time.": [
+        "Bir seferde bir veri türünü içe aktarabilirsiniz."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. Aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
@@ -6417,6 +7426,9 @@
       "Your account was successfully updated with this promotion": [
         "Hesabınız bu fırsata göre güncellendi"
       ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
+      ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
@@ -6429,6 +7441,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Bilgileriniz bizimle güvende olur. Sizinle yalnızca hizmetlerimizi sağlamak için gerekli olduğunda iletişim kuracağız."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "İçe aktarma işleminden sonra oturum açma bilgileriniz kaydedilmez."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Sonraki fatura zamanınız ${ renewalTime }."
@@ -6514,6 +7529,11 @@
         "Faturalar için bir not yazın. Bu bilgiler hem kişisel hem de kurumsal faturalara eklenir. Bunlar yalnızca gelecekte düzenlenecek faturalarda görüntülenir."
       ]
     },
+    "Info on errors": {
+      "Click for details": [
+        "Bilgiler için tıklayın"
+      ]
+    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "Aboneliği yenileyerek hizmetin sona ermesini önleyebilirsiniz"
@@ -6522,6 +7542,16 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Ödenmeyen faturalar nedeniyle herhangi bir hizmet kesintisi yaşamamak için, her zaman en az 1 geçerli ödeme yönteminiz bulunduğundan emin olun."
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } klasör seçildi",
+        "${ selectedFoldersCount } klasör seçildi"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etiket seçildi",
+        "${ selectedFoldersCount } etiket seçildi"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -6632,6 +7662,9 @@
         "${ MaxAddresses } / ${ UsedAddresses } e-posta adresi",
         "${ MaxAddresses } / ${ UsedAddresses } e-posta adresi"
       ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
+      ],
       "Account holder": [
         "Hesap sahibi"
       ],
@@ -6683,6 +7716,9 @@
       "Anderson": [
         "Kaya"
       ],
+      "App password": [
+        "Uygulama parolası"
+      ],
       "Apply policy to": [
         "İlkeyi şunlara uygula"
       ],
@@ -6724,6 +7760,12 @@
       ],
       "BTC amount": [
         "BTC tutarı"
+      ],
+      "Calendar": [
+        "Takvim"
+      ],
+      "Calendars": [
+        "Takvimler"
       ],
       "Card details": [
         "Kart bilgileri"
@@ -6784,6 +7826,9 @@
       ],
       "Confirm second password": [
         "İkinci parola onayı"
+      ],
+      "Contacts": [
+        "Kişiler"
       ],
       "Copy": [
         "Kopyala"
@@ -6857,6 +7902,21 @@
       "Email or username": [
         "E-posta adresi ya da kullanıcı adı"
       ],
+      "Emails": [
+        "E-postalar"
+      ],
+      "Emails (all messages)": [
+        "E-postalar (tüm iletiler)"
+      ],
+      "Emails (last 12 months)": [
+        "E-postalar (son 12 ay)"
+      ],
+      "Emails (last 3 months)": [
+        "E-postalar (son 3 ay)"
+      ],
+      "Emails (last month)": [
+        "E-postalar (son 1 ay)"
+      ],
       "Enabled": [
         "Kullanılıyor"
       ],
@@ -6883,6 +7943,9 @@
       ],
       "Folder location": [
         "Klasör konumu"
+      ],
+      "From: ${ fromEmail }": [
+        "Kimden: ${ fromEmail }"
       ],
       "Gateway name": [
         "Ağ geçidi adı"
@@ -6914,6 +7977,15 @@
       "Import all messages": [
         "Tüm iletileri içe aktar"
       ],
+      "Import interval": [
+        "İçe aktarma aralığı"
+      ],
+      "Import to email address": [
+        "E-posta adresi içine aktar"
+      ],
+      "Import to:": [
+        "Şunun içine aktar:"
+      ],
       "Include application logs in bug report": [
         "Uygulama günlükleri sorun bildirimine eklensin"
       ],
@@ -6931,6 +8003,9 @@
       ],
       "Key": [
         "Anahtar"
+      ],
+      "Label messages as": [
+        "İletiler şu şekilde etiketlensin"
       ],
       "Last 12 months only": [
         "Yalnızca son 12 ay"
@@ -6950,8 +8025,14 @@
       "Logo": [
         "Logo"
       ],
+      "Mail Server (IMAP)": [
+        "E-posta sunucusu (IMAP)"
+      ],
       "Main": [
         "Ana"
+      ],
+      "Manage categories": [
+        "Kategori yönetimi"
       ],
       "Maximum number of characters is ${ MAX_CHARS }": [
         "En fazla ${ MAX_CHARS } karakter uzunluğunda olmalıdır."
@@ -6976,6 +8057,12 @@
       ],
       "Moderate NAT": [
         "Ilımlı NAT"
+      ],
+      "Move to Archive": [
+        "Arşivle"
+      ],
+      "Move to Inbox": [
+        "Gelen kutusuna taşı"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "En az ${ MIN_PASSWORD_LENGTH } karakterden oluşmalıdır"
@@ -7085,6 +8172,9 @@
       "Policy name": [
         "İlke adı"
       ],
+      "Port": [
+        "Bağlantı noktası"
+      ],
       "Postal code": [
         "Posta kodu"
       ],
@@ -7184,6 +8274,9 @@
       ],
       "To help us improve, please explain why you are leaving.": [
         "Gelişmemize yardımcı olmak için, lütfen neden ayrıldığınızı açıklayın."
+      ],
+      "To: ${ toEmail }": [
+        "Kime: ${ toEmail }"
       ],
       "Two-password mode": [
         "İki parola kipi"
@@ -7343,9 +8436,28 @@
         "${ Label.Name } eklendi"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Kimden: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Nereye: ${ to }"
+      ]
+    },
     "Lable": {
       "Select an identity provider to start": [
         "Başlamak için bir kimlik hizmeti sağlayıcısı seçin"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Yeni bir takvim eklemek için var olan bir takvimi kaldırın."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Yeni bir takvim eklemek için başka bir takvimi kaldırın ya da ${ BRAND_NAME } tarifenizi ${ MAIL_SHORT_APP_NAME } ücretli tarifesine yükseltin."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Tarifenizle kullanabileceğiniz en fazla takvim sayısına ulaştınız."
       ]
     },
     "Link": {
@@ -7514,6 +8626,30 @@
         "Destek ekibi ile sohbete ve diğer ücretli özelliklere erişmek için abonelik tarifenizi yükseltin ya da sorununuzu bildirmek için ücretsiz destek formumuzu kullanın."
       ]
     },
+    "Loading info": {
+      "Almost there": [
+        "Neredeyse tamam"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Eklenen takvim sayısı: ${ createdCalendarCount } / ${ calendarsToBeCreated }",
+        "Eklenen takvim sayısı: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
+      ],
+      "Connecting to your email provider": [
+        "E-posta hizmeti sağlayıcınızla bağlantı kuruluyor"
+      ],
+      "Creating new calendars": [
+        "Yeni takvimler oluşturuluyor"
+      ],
+      "Gathering your data": [
+        "Verileriniz toplanıyor"
+      ],
+      "We're gathering your data from your provider": [
+        "Hizmet sağlayıcınızdaki verilerinizi topluyoruz"
+      ],
+      "Your import is starting": [
+        "İçe aktarma işleminize başlanıyor"
+      ]
+    },
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -7616,6 +8752,24 @@
         "${ reason } özelliğini aç"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle"
+      ]
+    },
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
@@ -7711,6 +8865,26 @@
       ],
       "Sign in to access your ${ appName } account": [
         "${ appName } hesabınıza erişmek için oturum açın"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Başka bir e-posta hizmeti sağlayıcısının takvimleri nasıl içe aktarılır"
+      ],
+      "How to import calendars from Yahoo": [
+        "Yahoo takvimleri nasıl içe aktarılır"
+      ],
+      "How to import contacts from another service": [
+        "Başka bir e-posta hizmeti sağlayıcısının kişileri nasıl içe aktarılır"
+      ],
+      "How to import contacts from Yahoo": [
+        "Yahoo kişileri nasıl içe aktarılır"
+      ],
+      "How to import emails from another service": [
+        "Başka bir e-posta hizmeti sağlayıcısının e-postaları nasıl içe aktarılır"
+      ],
+      "How to import emails from Yahoo": [
+        "Yahoo e-postaları nasıl içe aktarılır"
       ]
     },
     "Monetary unit": {
@@ -8309,7 +9483,7 @@
         "Beğenilen"
       ],
       "Protect sensitive business information and collaborate securely.": [
-        "Önemli iş bilgilerinizi koruyun ve güvende kalarak işbirliği yapın."
+        "Önemli kurumsal bilgilerinizi koruyun ve güvende kalarak iş birliği yapın."
       ],
       "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
         "Ailenizi 6 kullanıcıya kadar tüm ücretli ${ plusTitle } özellikleriyle koruyun."
@@ -8545,7 +9719,7 @@
         "Ailenizi zararlı sitelerden koruyun ve sevdiğiniz yayın akışlarını izlemek için yüksek hızlı VPN sunucularımıza erişin"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
-        "Takma adlarla (e-postaları asıl gelen kutunuza ileten, rastgele oluşturulmuş bir e-posta adresi) gerçek e-posta adresinizin açığa çıkmasını veya sızdırılmasını engelleyin."
+        "Takma adlar (e-postaları asıl gelen kutunuza ileten, rastgele oluşturulmuş bir e-posta adresi) kullanarak gerçek e-posta adresinizin açığa çıkmasını veya sızdırılmasını engelleyin."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "En yüksek düzeyde hesap güvenliği koruması ve uzman desteği sağlar"
@@ -8824,6 +9998,21 @@
         "Bazı görseller, geçerli seçimdeki yinelenen dosya adları nedeniyle yüklenmedi."
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Ardından, Google hesabınızda oturum açmanız ve verilerinize ${ BRAND_NAME } tarafından erişilmesine izin vermeniz gerekecek."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "İçe aktarma işleminin yapılabilmesi için, görseldeki gibi gerekli tüm ögeleri seçmelisiniz."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "${ BRAND_NAME } uygulamasına hangi izinleri vereceğinizi seçin: E-posta iletilerinizi ve ayarlarınızı görüntüleme, kişilerinizi görüntüleme ve indirme, Google Takvim üzerinde eriştiğiniz tüm takvimleri görüntüleme ve indirme."
+      ]
+    },
     "Offer": {
       "${ BRAND_NAME } Unlimited for 12 months": [
         "12 aylık ${ BRAND_NAME } Unlimited"
@@ -8911,7 +10100,7 @@
         "Gelişmiş tehdit koruması"
       ],
       "Collaborate with non-${ BRAND_NAME } users": [
-        "${ BRAND_NAME } dışı kullanıcılarla işbirliği yapın"
+        "${ BRAND_NAME } dışı kullanıcılarla iş birliği yapın"
       ],
       "Custom email domain": [
         "Özel e-posta etki alanı"
@@ -8994,11 +10183,17 @@
       ]
     },
     "Option": {
+      "Add to existing group": [
+        "Var olan gruba ekle"
+      ],
       "Allowed ${ defaultLabel }": [
         "İzin verilen ${ defaultLabel }"
       ],
       "Country configs": [
         "Ülke yapılandırmaları"
+      ],
+      "Create new group": [
+        "Yeni grup ekle"
       ],
       "Free server configs": [
         "Ücretsiz sunucu yapılandırmaları"
@@ -9011,6 +10206,9 @@
       ],
       "I'd like to merge this account into another one": [
         "Bu hesabı başka bir hesapla birleştirmek istiyorum"
+      ],
+      "Ignore group": [
+        "Grubu yok say"
       ],
       "It's missing a key feature that I need": [
         "İhtiyacım olan önemli bir özellik eksik"
@@ -9073,6 +10271,14 @@
       ],
       "No one": [
         "Hiç kimse"
+      ]
+    },
+    "Option group label": {
+      "Create new calendar": [
+        "Yeni takvim ekle"
+      ],
+      "Merge with calendar": [
+        "Takvim ile birleştir"
       ]
     },
     "Organization capacity error": {
@@ -9159,6 +10365,11 @@
       ],
       "Verify your email address ${ email } to set organization identity.": [
         "Kuruluş kimliğini ayarlamak için ${ email } e-posta adresinizi doğrulayın."
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "Siz"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9576,6 +10787,9 @@
       "Main street 12": [
         "12. cadde"
       ],
+      "Name": [
+        "Ad"
+      ],
       "Organization name": [
         "Kuruluş adı"
       ],
@@ -9711,6 +10925,38 @@
     "Price": {
       "Free": [
         "Free"
+      ]
+    },
+    "Property type": {
+      "Address": [
+        "Adres"
+      ],
+      "Email": [
+        "E-posta"
+      ],
+      "Fax": [
+        "Faks"
+      ],
+      "Home": [
+        "Ev"
+      ],
+      "Main": [
+        "Ana"
+      ],
+      "Mobile": [
+        "Cep telefonu"
+      ],
+      "Other": [
+        "Diğer"
+      ],
+      "Pager": [
+        "Çağrı cihazı"
+      ],
+      "Phone": [
+        "Telefon"
+      ],
+      "Work": [
+        "İş"
       ]
     },
     "Protection type": {
@@ -10397,7 +11643,7 @@
         "Parolanızı sıfırlamaya çalışan kişinin gerçekten siz olduğunuzu doğrulamak için istekleri onaylamadan önce 72 saat bekleriz. Parolanızı ${ boldTimeLeft } içinde değiştirebilirsiniz. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
-        "${ boldEmail } için bir parola sıfırlama isteğinde bulunuldu."
+        "${ boldEmail } için parola sıfırlama isteğinde bulunuldu."
       ],
       "You can change your password in ${ gracePeriodHoursRemaining } hour": [
         "Parolanizi ${ gracePeriodHoursRemaining } saat içinde değiştirebilirsiniz",
@@ -10698,7 +11944,7 @@
         "1 ay için ${ amount } olarak faturalanır"
       ],
       "Billed at ${ amount } for 12 months": [
-        "12 aylık ${ amount } olarak faturalanır"
+        "12 ay için ${ amount } olarak faturalanır"
       ],
       "Billed at ${ amount } for 15 months": [
         "15 ay için ${ amount } olarak faturalanır"
@@ -11211,7 +12457,7 @@
         "Tamam"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
-        "Apple App Store hesabınızda oturum açın, ardından ${ subscriptions } seçin."
+        "Apple App Store hesabınızda oturum açın ve ardından ${ subscriptions } seçin."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Play Store hesabınızda oturum açın, ardından ${ subscriptions } üzerine dokunun."
@@ -11891,6 +13137,9 @@
       "Country": [
         "Ülke"
       ],
+      "CSV field": [
+        "CSV alanı"
+      ],
       "Edit": [
         "Düzenle"
       ],
@@ -11908,6 +13157,9 @@
       ],
       "Event": [
         "Etkinlik"
+      ],
+      "Import": [
+        "İçe aktar"
       ],
       "Invitation email": [
         "Davet e-postası"
@@ -11932,6 +13184,12 @@
       ],
       "Total storage": [
         "Toplam depolama alanı"
+      ],
+      "Values": [
+        "Değerler"
+      ],
+      "vCard field": [
+        "vCard alanı"
       ]
     },
     "Themes": {
@@ -12030,6 +13288,9 @@
       ],
       "Add address": [
         "Adres ekle"
+      ],
+      "Add contact group name": [
+        "Kişi grubu adı ekle"
       ],
       "Add countries to \"${ policyName }\"": [
         "\"${ policyName }\" ilkesine ülkeler ekleyin"
@@ -12181,9 +13442,6 @@
       "Connect apps and devices": [
         "Uygulamaları ve aygıtları bağlayın"
       ],
-      "Connect more Gmail addresses with ${ planName }": [
-        "${ planName } ile daha fazla Gmail adresi bağlayın"
-      ],
       "Connect organization": [
         "Kuruluş ile bağlantı kur"
       ],
@@ -12198,6 +13456,9 @@
       ],
       "Contact us": [
         "Bize ulaşın"
+      ],
+      "Continue with partial import?": [
+        "Kısmi içe aktarmay ile ilerlensin mi?"
       ],
       "Couldn’t create accounts": [
         "Hesaplar eklenemedi"
@@ -12245,8 +13506,17 @@
       "Customization": [
         "Özelleştirme"
       ],
+      "Customize and confirm": [
+        "Özelleştir ve onayla"
+      ],
+      "Customize calendar import": [
+        "Takvim içe aktarma işlemini özelleştirin"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Tarifenizdeki IP adreslerinin sayısını özelleştirin"
+      ],
+      "Customize your mail import": [
+        "Posta içe aktarma işleminizi özelleştirin"
       ],
       "Data retention": [
         "Verileri tutma"
@@ -12469,8 +13739,24 @@
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
       ],
+      "Import as simple event?": [
+        "İçe basit etkinlik olarak aktarılsın mı?",
+        "İçe basit etkinlik olarak aktarılsın mı?"
+      ],
+      "Import contacts": [
+        "Kişileri içe aktar"
+      ],
       "Import emails, calendars, contacts": [
         "E-postaları, takvimleri, kişileri içe aktarın"
+      ],
+      "Import events": [
+        "Etkinlikleri içe aktar"
+      ],
+      "Import failed": [
+        "İçe aktarılamadı"
+      ],
+      "Import groups": [
+        "Grupları içe aktar"
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
@@ -12574,6 +13860,9 @@
       "Recommended": [
         "Önerilir"
       ],
+      "Reconnect your account": [
+        "Hesabınızı yeniden bağlayın"
+      ],
       "Recovery": [
         "Kurtarma"
       ],
@@ -12625,6 +13914,12 @@
       "Select a plan": [
         "Bir tarife seçin"
       ],
+      "Select action to take on contact group": [
+        "Kişi grubunda yapılacak işlemi seçin"
+      ],
+      "Select contact group": [
+        "Kişi grubunu seç"
+      ],
       "Send email reminders?": [
         "E-posta hatırlatıcıları gönderilsin mi?"
       ],
@@ -12667,6 +13962,9 @@
       "Sign in": [
         "Oturum aç"
       ],
+      "Sign in and grant access": [
+        "Oturum açın ve erişim izni verin"
+      ],
       "Sign in to join the Beta program": [
         "Beta programına katılmak için oturum açın"
       ],
@@ -12687,6 +13985,12 @@
       ],
       "Spam, block, and allow lists": [
         "Engellenen ve izin verilen adresler listesi"
+      ],
+      "Start a new import": [
+        "Yeni bir içe aktarma başlatın"
+      ],
+      "Start import process": [
+        "İçe aktarma işlemini başlatın"
       ],
       "Status": [
         "Durum"
@@ -12803,6 +14107,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business uygulamasına hoş geldiniz"
       ],
+      "What would you like to import?": [
+        "Neyi içe aktarmak istersiniz?"
+      ],
       "Wipe all logs?": [
         "Tüm günlükler silinsin mi?"
       ],
@@ -12910,11 +14217,26 @@
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Bu adresi kopyalayıp kimlik hizmeti sağlayıcınızın Entity ID alanına yapıştırın"
       ],
+      "Customize import to reduce the number of folders": [
+        "Klasör sayısını azaltmak için içe aktarmayı özelleştirin"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Etiket sayısını azaltmak için içe aktarmayı özelleştirin"
+      ],
       "Device name and app version": [
         "Aygıt adı ve uygulama sürümü"
       ],
       "Display name for the entity in the eduGAIN database": [
         "Varlığın eduGAIN veri tabanında görüntülenecek adı"
+      ],
+      "Each imported email will have this label": [
+        "İçe aktarılan her e-postaya bu etiket atanacak"
+      ],
+      "Edit folder names": [
+        "Klasör adlarını düzenle"
+      ],
+      "Edit label names": [
+        "Etiket adlarını düzenle"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Kimlik hizmeti sağlayıcınızın uç nokta adresi (örnek: https://idp.ornek.com/sso/saml)"
@@ -12930,6 +14252,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "**parola, qwerty** gibi."
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Kimlik doğrulama hizmeti sağlayıcının, kimlik doğrulama isteklerini imzalamak için kullanacağı herkese açık anahtar. Kimlik hizmeti sağlayıcınızdan sertifika karmasını alın."
@@ -12951,6 +14276,12 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "SAML tek oturum açma ile kimliklerini doğrulayabilecek eduGAIN varlığının kullanıcılarını belirtin"
+      ],
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"
+      ],
+      "The import will start with the most recent messages.": [
+        "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Yeni gönderim döngüsü ${ formattedTime } zamanında başlayacak"
@@ -13328,6 +14659,14 @@
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
       ]
     },
+    "Video control": {
+      "Click to replay the video": [
+        "Görüntüyü yeniden oynatmak için tıklayın"
+      ],
+      "Replay video": [
+        "Görüntüyü yeniden oynat"
+      ]
+    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "Daha çok sevdiğim başka bir hizmet buldum"
@@ -13516,6 +14855,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } aynı adlı tüm klasörleri birleştirecek. Bunu istemiyorsanız, içe aktarmadan önce klasör adlarını değiştirin."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
+      ],
       "Are you sure you want to delete the phone number?": [
         "Telefon numarasını silmek istediğinize emin misiniz?"
       ],
@@ -13537,17 +14882,29 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
       ],
+      "Skip verification?": [
+        "Doğrulama atlansın mı?"
+      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Aygıtınızın tarih ve saat ayarları eşit değil. ${ learnMore }"
       ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Bu içe aktarma işlemi, ${ BRAND_NAME } hesabınızla kullanılabilecek depolama alanını aşabilir. Lütfen içe aktarmanızı özelleştirmeyi değerlendirin."
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Ne yazık ki, şu anca çevrim içi değiliz. Lütfen sorununuzu aktarmak için aşağıdaki formu doldurun. Yeniden çevrim içi olduğumuzda inceleyip size geri döneceğiz."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "E-posta sunucusunu doğrulayamadık. Sunucuya güveniyorsanız, bu doğrulamayı atlayabilirsiniz."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS yapılandırmanızda bir sorun bulduk. Lütfen kayıtlarınızın aşağıdaki yönergelere uygun olduğundan emin olun. Sorun sürerse, DKIM imzalamayı kapatmamız gerekecek."
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Korunmayan bir üyeye e-posta adresi eklemeden önce kuruluş anahtarını ${ activateLink }manız gerekir."
+      ],
+      "You will lose any customization you made so far.": [
+        "Şu ana kadar yaptığınız tüm özelleştirmeler silinecek."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ücretsiz denemeniz ${ textDate } tarihinde sona erecek. ${ action }"

@@ -36,6 +36,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
+      "${ numberOfAddresses } address": [
+        "${ numberOfAddresses } διεύθυνση",
+        "${ numberOfAddresses } διευθύνσεις"
+      ],
       "A to Z": [
         "Α έως Ω"
       ],
@@ -214,6 +218,15 @@
       "Choose a file or drag it here": [
         "Επιλέξτε ένα αρχείο ή σύρετέ το εδώ"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Διεκδικήστε τη διεύθυνση ${ BRAND_NAME }"
+      ],
+      "Claim this address": [
+        "Διεκδικήστε αυτή τη διεύθυνση"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Δημιουργήστε τη δωρεάν ${ BRAND_NAME } διεύθυνσή σας"
+      ],
       "Clear": [
         "Καθαρισμός"
       ],
@@ -312,6 +325,9 @@
       ],
       "Copy alias “${ name }”": [
         "Αντιγραφή ψευδώνυμου “${ name }”"
+      ],
+      "Copy email address": [
+        "Αντιγραφή διεύθυνσης ηλεκτρονικού ταχυδρομείου"
       ],
       "Copy email to clipboard": [
         "Αντιγραφή μηνύματος στο πρόχειρο"
@@ -588,6 +604,9 @@
       "Get ${ planOrAppName }": [
         "Αποκτήστε το ${ planOrAppName }"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Αποκτήστε μια δωρεάν ${ BRAND_NAME } διεύθυνση"
+      ],
       "Get in touch": [
         "Επικοινωνήστε"
       ],
@@ -792,6 +811,9 @@
       ],
       "Make it friendly": [
         "Κάντε το φιλικό"
+      ],
+      "Manage addresses": [
+        "Διαχείριση διευθύνσεων"
       ],
       "Manage advanced account protections": [
         "Διαχείριση προηγμένων προστασιών λογαριασμού"
@@ -4030,6 +4052,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Απλοποιήστε τον συγχρονισμό και τον προγραμματισμό με τα κοινοποιημένα ημερολόγια."
       ],
+      "This view shows messages sent to the following addresses:": [
+        "Αυτή η προβολή δείχνει τα μηνύματα που στάλθηκαν στις παρακάτω διευθύνσεις:"
+      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Για να συνεχίσετε να χρησιμοποιείτε τον βοηθό γραφής, προσθέστε τον στη συνδρομή σας."
       ],
@@ -5648,6 +5673,9 @@
       "Checklist complete": [
         "Η λίστα ελέγχου ολοκληρώθηκε"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Διεκδικήστε τη ${ BRAND_NAME } διεύθυνση"
+      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Συμπληρώστε αυτήν τη λίστα ελέγχου εντός ${ daysCount } για να διπλασιάσετε τον αποθηκευτικό σας χώρο δωρεάν."
       ],
@@ -6202,6 +6230,12 @@
       ],
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "Ο διαχειριστής κωδικών πρόσβασης του ${ BRAND_NAME } σάς επιτρέπει να δημιουργείτε, να αποθηκεύετε και να συμπληρώνετε αυτόματα κωδικούς πρόσβασης, ώστε να μη χρειάζεται ποτέ να τους επαναφέρετε."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "Το ${ CALENDAR_APP_NAME } απαιτεί μια διεύθυνση ${ BRAND_NAME } για ασφαλή συγχρονισμό και κρυπτογράφηση εκδηλώσεων. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "Το ${ CALENDAR_APP_NAME } απαιτεί μια διεύθυνση ${ BRAND_NAME } για ασφαλή συγχρονισμό γεγονότων και κρυπτογράφηση. Αποκτήστε τη δωρεάν ${ MAIL_APP_NAME } διεύθυνση σας τώρα."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } νέο ημερολόγιο",
@@ -6965,6 +6999,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Απολαύστε μια ταχύτερη, εστιασμένη εμπειρία αποστολής μηνυμάτων με την εφαρμογή για υπολογιστές."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Διασφαλίστε πλήρως ιδιωτική και κρυπτογραφημένη επικοινωνία. Αποκτήστε επίσης τώρα τη δωρεάν ${ BRAND_NAME } ηλεκτρονική διεύθυνση σας."
       ],
       "Enter the code from your authenticator app": [
         "Πληκτρολογήστε τον κωδικό από την εφαρμογή ταυτοποίησης"
@@ -9493,6 +9530,9 @@
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
+      ],
+      "Username": [
+        "Όνομα Χρήστη"
       ],
       "VAT": [
         "ΦΠΑ"
@@ -14137,6 +14177,9 @@
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Δημιουργήστε τη ${ MAIL_APP_NAME } διεύθυνσή σας"
+      ],
       "Clearing data": [
         "Εκκαθάριση δεδομένων"
       ],
@@ -14360,6 +14403,9 @@
       ],
       "Forward": [
         "Προώθηση"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Αποκτήστε πλήρη πρόσβαση στο ${ CALENDAR_APP_NAME }"
       ],
       "Get more from your VPN": [
         "Αποκτήστε περισσότερα από το VPN σας."
@@ -14936,6 +14982,9 @@
       ],
       "Your account is protected": [
         "Ο λογαριασμός σας προστατεύεται"
+      ],
+      "Your addresses": [
+        "Οι διευθύνσεις σας"
       ],
       "Your changes are not synced yet": [
         "Οι αλλαγές σας δεν έχουν συγχρονιστεί ακόμα"
