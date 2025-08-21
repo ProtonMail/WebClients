@@ -84,7 +84,7 @@ export const useApplePay = (
                 ...amountAndCurrency,
                 PaymentToken,
                 v: 5,
-                chargeable: Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE,
+                chargeable: Status === PAYMENT_TOKEN_STATUS.CHARGEABLE,
                 authorized: true,
                 type: PAYMENT_METHOD_TYPES.APPLE_PAY,
             };
@@ -116,7 +116,7 @@ export const useApplePay = (
                 signal: abortSignal,
             });
 
-            if (Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE) {
+            if (Status === PAYMENT_TOKEN_STATUS.CHARGEABLE) {
                 const token = {
                     ...fetchedPaymentTokenRef.current,
                     chargeable: true as const,

@@ -3,7 +3,7 @@ import { addApiMock } from '@proton/testing/index';
 
 export function mockPostV5Token({
     token = 'token',
-    status = PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE,
+    status = PAYMENT_TOKEN_STATUS.CHARGEABLE,
     data = {
         ID: 'id',
         Status: 'inited',

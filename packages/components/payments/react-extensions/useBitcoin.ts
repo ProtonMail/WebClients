@@ -53,7 +53,7 @@ const useCheckStatus = ({
         const validate = async (token: string): Promise<TokenValidationStatus> => {
             try {
                 const { Status } = await api<any>(getTokenStatus(token, paymentsVersion));
-                if (Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE) {
+                if (Status === PAYMENT_TOKEN_STATUS.CHARGEABLE) {
                     return 'chargeable';
                 }
             } catch (err: any) {

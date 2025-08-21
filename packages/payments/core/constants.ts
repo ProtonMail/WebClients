@@ -1,11 +1,11 @@
 import type { Currency, FeatureLimitKey, PaymentMethodFlow } from './interface';
 
 export enum PAYMENT_TOKEN_STATUS {
-    STATUS_PENDING = 0,
-    STATUS_CHARGEABLE = 1,
-    STATUS_FAILED = 2,
-    STATUS_CONSUMED = 3,
-    STATUS_NOT_SUPPORTED = 4,
+    PENDING = 0,
+    CHARGEABLE = 1,
+    FAILED = 2,
+    CONSUMED = 3,
+    NOT_SUPPORTED = 4,
 }
 
 export enum PAYMENT_METHOD_TYPES {

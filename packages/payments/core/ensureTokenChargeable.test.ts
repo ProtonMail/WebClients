@@ -73,7 +73,7 @@ describe('process', () => {
     it('should resolve if Status is STATUS_CHARGEABLE', async () => {
         tab.closed = true;
         api.mockResolvedValue({
-            Status: PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE,
+            Status: PAYMENT_TOKEN_STATUS.CHARGEABLE,
         });
 
         const promise = ensureTokenChargeable({ api, ApprovalURL, ReturnHost, signal, Token }, translations);
@@ -82,10 +82,10 @@ describe('process', () => {
     });
 
     it.each([
-        PAYMENT_TOKEN_STATUS.STATUS_PENDING,
-        PAYMENT_TOKEN_STATUS.STATUS_FAILED,
-        PAYMENT_TOKEN_STATUS.STATUS_CONSUMED,
-        PAYMENT_TOKEN_STATUS.STATUS_NOT_SUPPORTED,
+        PAYMENT_TOKEN_STATUS.PENDING,
+        PAYMENT_TOKEN_STATUS.FAILED,
+        PAYMENT_TOKEN_STATUS.CONSUMED,
+        PAYMENT_TOKEN_STATUS.NOT_SUPPORTED,
     ])('should reject if Status is %s', async (Status) => {
         tab.closed = true;
         api.mockResolvedValue({
@@ -99,7 +99,7 @@ describe('process', () => {
 
     it('should re-try to confirm until the tab is closed', async () => {
         api.mockResolvedValue({
-            Status: PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE,
+            Status: PAYMENT_TOKEN_STATUS.CHARGEABLE,
         });
 
         const delayListening = 10;
