@@ -90,7 +90,6 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
                         copySuccessText={c('Notification').t`Meeting ID copied to clipboard`}
                     />
                 )}
-                {data.service === VIDEO_CONF_SERVICES.PROTON_MEET && <ProtonMeetPassword />}
                 {data.password && data.service === VIDEO_CONF_SERVICES.ZOOM && (
                     <EventDetailsRow
                         prefix={c('Zoom Meeting').t`Passcode:`}
@@ -98,6 +97,7 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
                         copySuccessText={c('Notification').t`Passcode copied to clipboard`}
                     />
                 )}
+                {data.service === VIDEO_CONF_SERVICES.PROTON_MEET && <ProtonMeetPassword />}
                 {!hasOnlyLink && (
                     <Collapsible className="mt-2" expandByDefault={isExpanded} externallyControlled>
                         <CollapsibleHeader
@@ -114,6 +114,7 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
                                 <Icon name="chevron-down" className={isExpanded ? 'rotateX-180' : ''} />
                             </button>
                         </CollapsibleHeader>
+
                         <CollapsibleContent onClick={(e) => e.stopPropagation()}>
                             <section className="mt-2">
                                 {data.meetingHost && validateEmailAddress(data.meetingHost) && (

@@ -1,12 +1,32 @@
+import { useRef, useState } from 'react';
+
+import { c } from 'ttag';
+
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { ProtonMeetRow, ZoomRow } from '@proton/calendar';
+import { Button } from '@proton/atoms';
+import { ProtonMeetRow, ZoomRow, useProtonMeetIntegration, useZoomIntegration } from '@proton/calendar';
 import { PROTON_MEET_REGEX } from '@proton/calendar/components/videoConferencing/protonMeet/protonMeetHelpers';
-import { Spotlight } from '@proton/components';
-import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import {
+    Dropdown,
+    DropdownButton,
+    DropdownMenu,
+    DropdownMenuButton,
+    Icon,
+    IconRow,
+    ProtonLogo,
+    Spotlight,
+    ZoomUpsellModal,
+} from '@proton/components';
+import { IcVideoCamera } from '@proton/icons';
+import { MEET_APP_NAME } from '@proton/shared/lib/constants';
+import { type EventModel, VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar';
 import { useFlag } from '@proton/unleash';
+import isTruthy from '@proton/utils/isTruthy';
 
 import useVideoConferenceSpotlight from '../../../hooks/useVideoConferenceSpotlight';
+
+import './RowVideoConference.scss';
 
 interface Props {
     model: EventModel;
@@ -23,12 +43,6 @@ export const RowVideoConference = ({ model, setModel, isCreateEvent, hasZoomErro
     const isProtonMeetEnabled = useFlag('NewScheduleOption');
 
     const isSettingEnabled = organization?.Settings.VideoConferencingEnabled;
-    const hasFullZoomAccess = user.hasPaidMail && isSettingEnabled;
-    const hasLimitedZoomAccess = user.hasPaidMail && !isSettingEnabled;
-    const hasAccessToZoomIntegration =
-        isZoomIntegrationEnabled &&
-        // We want to upsell free Mail users or only display the feature for mail subscribers
-        (!user.hasPaidMail || hasFullZoomAccess || hasLimitedZoomAccess);
 
     const { spotlightContent, shouldShowSotlight, onDisplayed, onClose } = useVideoConferenceSpotlight({
         isEventCreation: isCreateEvent,
@@ -37,25 +51,157 @@ export const RowVideoConference = ({ model, setModel, isCreateEvent, hasZoomErro
     const isZoomMeeting = !!model.conferenceUrl?.includes('zoom.us') && !model.isConferenceTmpDeleted;
     const isProtonMeetMeeting = !!model.conferenceUrl?.match(PROTON_MEET_REGEX) && !model.isConferenceTmpDeleted;
 
-    const noActiveMeeting = !isZoomMeeting && !isProtonMeetMeeting;
-
-    if (!hasAccessToZoomIntegration && !isProtonMeetEnabled) {
-        return null;
-    }
+    const anchorRef = useRef<HTMLButtonElement>(null);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const getAccessLevel = () => {
         if (!user.hasPaidMail) {
             return 'show-upsell';
         }
-        return hasFullZoomAccess ? 'full-access' : 'limited-access';
+        return user.hasPaidMail && isSettingEnabled ? 'full-access' : 'limited-access';
     };
+
+    const getActiveProvider = () => {
+        if (isProtonMeetMeeting) {
+            return VIDEO_CONFERENCE_PROVIDER.PROTON_MEET;
+        }
+        if (isZoomMeeting) {
+            return VIDEO_CONFERENCE_PROVIDER.ZOOM;
+        }
+        return null;
+    };
+
+    const [activeProvider, setActiveProvider] = useState<VIDEO_CONFERENCE_PROVIDER | null>(getActiveProvider());
+
+    const zoomIntegration = useZoomIntegration({
+        hasZoomError,
+        model,
+        setModel,
+        onRowClick: () => onClose(),
+        setActiveProvider,
+    });
+
+    const protonMeetIntegration = useProtonMeetIntegration({
+        model,
+        setModel,
+        isActive: isProtonMeetMeeting,
+        setActiveProvider,
+    });
+
+    const zoomAccessLevel = getAccessLevel();
+    const shouldShowZoom = isZoomIntegrationEnabled && zoomAccessLevel !== 'limited-access';
+
+    const videoConferenceProviderDetails = [
+        isProtonMeetEnabled && {
+            id: VIDEO_CONFERENCE_PROVIDER.PROTON_MEET,
+            onClick: protonMeetIntegration.createVideoConferenceMeeting,
+            buttonContent: c('meet_2025 Label').t`Add ${MEET_APP_NAME} conferencing`,
+            itemContent: (
+                <>
+                    <ProtonLogo className="mr-2" variant="glyph-only" size={4} /> {MEET_APP_NAME}
+                </>
+            ),
+        },
+        shouldShowZoom && {
+            id: VIDEO_CONFERENCE_PROVIDER.ZOOM,
+            onClick: zoomIntegration.handleClick,
+            buttonContent: (
+                <div className="flex items-center gap-2">
+                    {c('Label').t`Add Zoom meeting`}
+                    {user.hasPaidMail ? null : <Icon name="upgrade" className="color-primary" />}
+                </div>
+            ),
+            itemContent: (
+                <>
+                    <IcVideoCamera className="mr-2" size={5} /> {c('Label').t`Zoom meeting`}
+                    {user.hasPaidMail ? null : <Icon name="upgrade" className="ml-auto color-primary" />}
+                </>
+            ),
+        },
+    ].filter((item) => isTruthy(item));
+
+    const defaultVideoConferenceProvider = videoConferenceProviderDetails[0];
+
+    const shouldDisplayAddButton =
+        !activeProvider &&
+        !isZoomMeeting &&
+        !isProtonMeetMeeting &&
+        videoConferenceProviderDetails.length > 0 &&
+        !hasZoomError;
 
     return (
         <>
-            {isProtonMeetEnabled && (isProtonMeetMeeting || noActiveMeeting) && (
-                <ProtonMeetRow model={model} setModel={setModel} isActive={isProtonMeetMeeting} />
+            {shouldDisplayAddButton && (
+                <>
+                    <IconRow
+                        icon="video-camera"
+                        title={c('Label').t`Video conference`}
+                        className="flex flex-nowrap items-center justify-space-between w-full"
+                    >
+                        <Button
+                            onClick={() => {
+                                setIsDropdownOpen(false);
+                                void defaultVideoConferenceProvider.onClick();
+                            }}
+                            shape="underline"
+                            color="norm"
+                        >
+                            {defaultVideoConferenceProvider.buttonContent}
+                        </Button>
+                        {videoConferenceProviderDetails.length > 1 && (
+                            <>
+                                <DropdownButton
+                                    ref={anchorRef}
+                                    isOpen={isDropdownOpen}
+                                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                                    hasCaret
+                                    shape="outline"
+                                    size="small"
+                                    icon
+                                />
+                                <Dropdown
+                                    className="w-custom"
+                                    isOpen={isDropdownOpen}
+                                    anchorRef={anchorRef}
+                                    originalPlacement="bottom-end"
+                                    availablePlacements={['bottom-end']}
+                                    style={{ '--w-custom': '16rem' }}
+                                    onClose={() => setIsDropdownOpen(false)}
+                                    contentProps={{
+                                        className: 'video-conference-dropdown-content',
+                                    }}
+                                >
+                                    <DropdownMenu className="w-full">
+                                        {videoConferenceProviderDetails.map(({ id, onClick, itemContent }) => {
+                                            return (
+                                                <DropdownMenuButton
+                                                    key={id}
+                                                    className="text-left flex items-center gap-2 h-custom relative"
+                                                    onClick={() => {
+                                                        setIsDropdownOpen(false);
+                                                        void onClick();
+                                                    }}
+                                                    style={{
+                                                        '--h-custom': '3.125rem',
+                                                    }}
+                                                >
+                                                    <div className="w-full py-2 flex">{itemContent}</div>
+                                                    <div className="dropdown-item-hr absolute bottom-0 left-0 w-full" />
+                                                </DropdownMenuButton>
+                                            );
+                                        })}
+                                    </DropdownMenu>
+                                </Dropdown>
+                            </>
+                        )}
+                    </IconRow>
+                </>
             )}
-            {(isZoomMeeting || noActiveMeeting) && (
+            {isProtonMeetEnabled &&
+                (isProtonMeetMeeting || activeProvider === VIDEO_CONFERENCE_PROVIDER.PROTON_MEET) && (
+                    <ProtonMeetRow model={model} setModel={setModel} {...protonMeetIntegration} />
+                )}
+            {(isZoomMeeting || activeProvider === VIDEO_CONFERENCE_PROVIDER.ZOOM || hasZoomError) && (
                 <Spotlight
                     content={spotlightContent}
                     className="ml-2"
@@ -68,12 +214,16 @@ export const RowVideoConference = ({ model, setModel, isCreateEvent, hasZoomErro
                         <ZoomRow
                             model={model}
                             setModel={setModel}
-                            accessLevel={getAccessLevel()}
+                            accessLevel={zoomAccessLevel}
                             onRowClick={() => onClose()}
                             hasZoomError={hasZoomError}
+                            {...zoomIntegration}
                         />
                     </div>
                 </Spotlight>
+            )}
+            {zoomIntegration.zoomUpsellModal.render && (
+                <ZoomUpsellModal modalProps={zoomIntegration.zoomUpsellModal.modalProps} />
             )}
         </>
     );
