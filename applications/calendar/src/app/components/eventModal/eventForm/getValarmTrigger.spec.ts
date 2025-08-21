@@ -2,20 +2,17 @@ import { getValarmTrigger } from '@proton/shared/lib/calendar/alarms/getValarmTr
 import { NOTIFICATION_TYPE_API, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '@proton/shared/lib/calendar/constants';
 import { toTriggerString } from '@proton/shared/lib/calendar/vcal';
 
-const { DEVICE } = NOTIFICATION_TYPE_API;
-const { DAY, HOUR, WEEK, MINUTE } = NOTIFICATION_UNITS;
-const { BEFORE, AFTER } = NOTIFICATION_WHEN;
-
 describe('model to properties positive trigger', () => {
     test('0 minutes before', () => {
         expect(
             toTriggerString(
                 getValarmTrigger({
+                    id: '1',
                     isAllDay: false,
                     value: 0,
-                    unit: MINUTE,
-                    type: DEVICE,
-                    when: BEFORE,
+                    unit: NOTIFICATION_UNITS.MINUTE,
+                    type: NOTIFICATION_TYPE_API.DEVICE,
+                    when: NOTIFICATION_WHEN.BEFORE,
                 })
             )
         ).toEqual('PT0S');
@@ -25,11 +22,12 @@ describe('model to properties positive trigger', () => {
         expect(
             toTriggerString(
                 getValarmTrigger({
+                    id: '1',
                     isAllDay: false,
                     value: 1,
-                    unit: MINUTE,
-                    type: DEVICE,
-                    when: AFTER,
+                    unit: NOTIFICATION_UNITS.MINUTE,
+                    type: NOTIFICATION_TYPE_API.DEVICE,
+                    when: NOTIFICATION_WHEN.AFTER,
                 })
             )
         ).toEqual('PT1M');
@@ -39,11 +37,12 @@ describe('model to properties positive trigger', () => {
         expect(
             toTriggerString(
                 getValarmTrigger({
+                    id: '1',
                     isAllDay: true,
                     value: 0,
-                    unit: DAY,
-                    type: DEVICE,
-                    when: AFTER,
+                    unit: NOTIFICATION_UNITS.DAY,
+                    type: NOTIFICATION_TYPE_API.DEVICE,
+                    when: NOTIFICATION_WHEN.AFTER,
                     at: new Date(2000, 0, 1, 13, 50),
                 })
             )
@@ -54,11 +53,12 @@ describe('model to properties positive trigger', () => {
         expect(
             toTriggerString(
                 getValarmTrigger({
+                    id: '1',
                     isAllDay: true,
                     value: 1,
-                    unit: DAY,
-                    type: DEVICE,
-                    when: AFTER,
+                    unit: NOTIFICATION_UNITS.DAY,
+                    type: NOTIFICATION_TYPE_API.DEVICE,
+                    when: NOTIFICATION_WHEN.AFTER,
                     at: new Date(2000, 0, 1, 0, 0),
                 })
             )
@@ -69,11 +69,12 @@ describe('model to properties positive trigger', () => {
         expect(
             toTriggerString(
                 getValarmTrigger({
+                    id: '1',
                     isAllDay: true,
                     value: 1,
-                    unit: DAY,
-                    type: DEVICE,
-                    when: AFTER,
+                    unit: NOTIFICATION_UNITS.DAY,
+                    type: NOTIFICATION_TYPE_API.DEVICE,
+                    when: NOTIFICATION_WHEN.AFTER,
                     at: new Date(2000, 0, 1, 13, 50),
                 })
             )
@@ -84,11 +85,12 @@ describe('model to properties positive trigger', () => {
         expect(
             toTriggerString(
                 getValarmTrigger({
+                    id: '1',
                     isAllDay: true,
                     value: 1,
-                    unit: WEEK,
-                    type: DEVICE,
-                    when: AFTER,
+                    unit: NOTIFICATION_UNITS.WEEK,
+                    type: NOTIFICATION_TYPE_API.DEVICE,
+                    when: NOTIFICATION_WHEN.AFTER,
                     at: new Date(2000, 0, 1, 13, 50),
                 })
             )
@@ -101,11 +103,12 @@ describe('model to properties negative trigger', () => {
         expect(
             toTriggerString(
                 getValarmTrigger({
+                    id: '1',
                     isAllDay: true,
                     value: 1,
-                    unit: DAY,
-                    type: DEVICE,
-                    when: BEFORE,
+                    unit: NOTIFICATION_UNITS.DAY,
+                    type: NOTIFICATION_TYPE_API.DEVICE,
+                    when: NOTIFICATION_WHEN.BEFORE,
                     at: new Date(2000, 0, 1, 0, 0),
                 })
             )
@@ -116,11 +119,12 @@ describe('model to properties negative trigger', () => {
         expect(
             toTriggerString(
                 getValarmTrigger({
+                    id: '1',
                     isAllDay: true,
                     value: 1,
-                    unit: DAY,
-                    type: DEVICE,
-                    when: BEFORE,
+                    unit: NOTIFICATION_UNITS.DAY,
+                    type: NOTIFICATION_TYPE_API.DEVICE,
+                    when: NOTIFICATION_WHEN.BEFORE,
                     at: new Date(2000, 0, 1, 13, 50),
                 })
             )
@@ -131,11 +135,12 @@ describe('model to properties negative trigger', () => {
         expect(
             toTriggerString(
                 getValarmTrigger({
+                    id: '1',
                     isAllDay: true,
                     value: 2,
-                    unit: DAY,
-                    type: DEVICE,
-                    when: BEFORE,
+                    unit: NOTIFICATION_UNITS.DAY,
+                    type: NOTIFICATION_TYPE_API.DEVICE,
+                    when: NOTIFICATION_WHEN.BEFORE,
                     at: new Date(2000, 0, 1, 0, 0),
                 })
             )
@@ -146,11 +151,12 @@ describe('model to properties negative trigger', () => {
         expect(
             toTriggerString(
                 getValarmTrigger({
+                    id: '1',
                     isAllDay: true,
                     value: 2,
-                    unit: DAY,
-                    type: DEVICE,
-                    when: BEFORE,
+                    unit: NOTIFICATION_UNITS.DAY,
+                    type: NOTIFICATION_TYPE_API.DEVICE,
+                    when: NOTIFICATION_WHEN.BEFORE,
                     at: new Date(2000, 0, 1, 13, 50),
                 })
             )
@@ -161,11 +167,12 @@ describe('model to properties negative trigger', () => {
         expect(
             toTriggerString(
                 getValarmTrigger({
+                    id: '1',
                     isAllDay: true,
                     value: 0,
-                    unit: WEEK,
-                    type: DEVICE,
-                    when: BEFORE,
+                    unit: NOTIFICATION_UNITS.WEEK,
+                    type: NOTIFICATION_TYPE_API.DEVICE,
+                    when: NOTIFICATION_WHEN.BEFORE,
                     at: new Date(2000, 0, 1, 13, 50),
                 })
             )
@@ -176,11 +183,12 @@ describe('model to properties negative trigger', () => {
         expect(
             toTriggerString(
                 getValarmTrigger({
+                    id: '1',
                     isAllDay: true,
                     value: 1,
-                    unit: WEEK,
-                    type: DEVICE,
-                    when: BEFORE,
+                    unit: NOTIFICATION_UNITS.WEEK,
+                    type: NOTIFICATION_TYPE_API.DEVICE,
+                    when: NOTIFICATION_WHEN.BEFORE,
                     at: new Date(2000, 0, 1, 13, 50),
                 })
             )
@@ -191,11 +199,12 @@ describe('model to properties negative trigger', () => {
         expect(
             toTriggerString(
                 getValarmTrigger({
+                    id: '1',
                     isAllDay: true,
                     value: 2,
-                    unit: WEEK,
-                    type: DEVICE,
-                    when: BEFORE,
+                    unit: NOTIFICATION_UNITS.WEEK,
+                    type: NOTIFICATION_TYPE_API.DEVICE,
+                    when: NOTIFICATION_WHEN.BEFORE,
                     at: new Date(2000, 0, 1, 13, 50),
                 })
             )
@@ -206,11 +215,12 @@ describe('model to properties negative trigger', () => {
         expect(
             toTriggerString(
                 getValarmTrigger({
+                    id: '1',
                     isAllDay: true,
                     value: 1,
-                    unit: WEEK,
-                    type: DEVICE,
-                    when: BEFORE,
+                    unit: NOTIFICATION_UNITS.WEEK,
+                    type: NOTIFICATION_TYPE_API.DEVICE,
+                    when: NOTIFICATION_WHEN.BEFORE,
                     at: new Date(2000, 0, 1, 0, 0),
                 })
             )
@@ -221,11 +231,12 @@ describe('model to properties negative trigger', () => {
         expect(
             toTriggerString(
                 getValarmTrigger({
+                    id: '1',
                     isAllDay: true,
                     value: 2,
-                    unit: WEEK,
-                    type: DEVICE,
-                    when: BEFORE,
+                    unit: NOTIFICATION_UNITS.WEEK,
+                    type: NOTIFICATION_TYPE_API.DEVICE,
+                    when: NOTIFICATION_WHEN.BEFORE,
                     at: new Date(2000, 0, 1, 0, 0),
                 })
             )
@@ -236,11 +247,12 @@ describe('model to properties negative trigger', () => {
         expect(
             toTriggerString(
                 getValarmTrigger({
+                    id: '1',
                     isAllDay: false,
                     value: 2,
-                    unit: WEEK,
-                    type: DEVICE,
-                    when: BEFORE,
+                    unit: NOTIFICATION_UNITS.WEEK,
+                    type: NOTIFICATION_TYPE_API.DEVICE,
+                    when: NOTIFICATION_WHEN.BEFORE,
                 })
             )
         ).toEqual('-P2W');
@@ -250,11 +262,12 @@ describe('model to properties negative trigger', () => {
         expect(
             toTriggerString(
                 getValarmTrigger({
+                    id: '1',
                     isAllDay: false,
                     value: 15,
-                    unit: MINUTE,
-                    type: DEVICE,
-                    when: BEFORE,
+                    unit: NOTIFICATION_UNITS.MINUTE,
+                    type: NOTIFICATION_TYPE_API.DEVICE,
+                    when: NOTIFICATION_WHEN.BEFORE,
                 })
             )
         ).toEqual('-PT15M');
@@ -264,11 +277,12 @@ describe('model to properties negative trigger', () => {
         expect(
             toTriggerString(
                 getValarmTrigger({
+                    id: '1',
                     isAllDay: false,
                     value: 1,
-                    unit: HOUR,
-                    type: DEVICE,
-                    when: BEFORE,
+                    unit: NOTIFICATION_UNITS.HOUR,
+                    type: NOTIFICATION_TYPE_API.DEVICE,
+                    when: NOTIFICATION_WHEN.BEFORE,
                 })
             )
         ).toEqual('-PT1H');

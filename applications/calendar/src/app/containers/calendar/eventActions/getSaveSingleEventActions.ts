@@ -33,8 +33,6 @@ import { createIntermediateEvent } from './getSaveEventActionsHelpers';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
 import { getAddedAttendeesPublicKeysMap } from './inviteActions';
 
-const { SEND_INVITATION, SEND_UPDATE, CHANGE_PARTSTAT } = INVITE_ACTION_TYPES;
-
 interface SaveEventHelperArguments {
     oldEditEventData?: EventOldData;
     newEditEventData: EventNewData;
@@ -96,7 +94,7 @@ const getSaveSingleEventActions = async ({
             throw new Error('Missing event');
         }
 
-        const isSendType = [SEND_INVITATION, SEND_UPDATE].includes(inviteType);
+        const isSendType = [INVITE_ACTION_TYPES.SEND_INVITATION, INVITE_ACTION_TYPES.SEND_UPDATE].includes(inviteType);
         const method = isSendType ? ICAL_METHOD.REQUEST : undefined;
         const veventComponentWithUpdatedDtstamp = withUpdatedDtstamp(newVeventComponent, oldVeventComponent);
         const updatedVeventComponent = getInviteVeventWithUpdatedParstats(
@@ -161,7 +159,7 @@ const getSaveSingleEventActions = async ({
             throw new Error('Missing parameters to update event');
         }
 
-        if (inviteType === CHANGE_PARTSTAT) {
+        if (inviteType === INVITE_ACTION_TYPES.CHANGE_PARTSTAT) {
             // the attendee changes answer
             return getChangePartstatActions({
                 inviteActions,
@@ -188,7 +186,7 @@ const getSaveSingleEventActions = async ({
             });
         }
 
-        const isSendType = [SEND_INVITATION, SEND_UPDATE].includes(inviteType);
+        const isSendType = [INVITE_ACTION_TYPES.SEND_INVITATION, INVITE_ACTION_TYPES.SEND_UPDATE].includes(inviteType);
         const method = isSendType ? ICAL_METHOD.REQUEST : undefined;
         const veventComponentWithUpdatedDtstamp = withUpdatedDtstamp(newVeventComponent, oldVeventComponent);
         let updatedVeventComponent = getInviteVeventWithUpdatedParstats(
@@ -260,7 +258,7 @@ const getSaveSingleEventActions = async ({
     let sendPreferencesMap;
     let addedAttendeesPublicKeysMap: SimpleMap<PublicKeyReference> | undefined;
 
-    if (inviteType === SEND_INVITATION) {
+    if (inviteType === INVITE_ACTION_TYPES.SEND_INVITATION) {
         await onSaveConfirmation({
             type: SAVE_CONFIRMATION_TYPES.SINGLE,
             inviteActions,

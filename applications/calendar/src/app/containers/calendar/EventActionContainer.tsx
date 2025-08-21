@@ -19,8 +19,6 @@ import { getCalendarEventStoreRecord } from './eventStore/cache/upsertCalendarEv
 import { VIEW_URL_PARAMS_VIEWS_CONVERSION } from './getUrlHelper';
 import type { EventTargetAction } from './interface';
 
-const { VIEW } = ACTION_VIEWS;
-
 interface Props {
     addresses: Address[];
     calendars: VisualCalendar[];
@@ -39,7 +37,7 @@ const EventActionContainer = ({ tzid, drawerView, addresses, calendars, setEvent
             const action = params.get('Action');
             const possiblyDrawerView = drawerView ? `/${VIEW_URL_PARAMS_VIEWS_CONVERSION[drawerView]}` : '';
 
-            if (action === VIEW) {
+            if (action === ACTION_VIEWS.VIEW) {
                 const handleLinkError = () => {
                     createNotification({
                         type: 'error',

@@ -18,8 +18,6 @@ import type {
 import type { SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
 import { getUpdatePersonalPartOperation } from './getUpdatePersonalPartActions';
 
-const { ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
-
 export const getUpdatePartstatOperation = ({
     eventComponent,
     event,
@@ -84,8 +82,8 @@ const getAutoUpdatePersonalPartOperation = ({
 
     if (
         oldPartstat === partstat ||
-        (partstat === ACCEPTED && oldPartstat === TENTATIVE) ||
-        (partstat === TENTATIVE && oldPartstat === ACCEPTED)
+        (partstat === ICAL_ATTENDEE_STATUS.ACCEPTED && oldPartstat === ICAL_ATTENDEE_STATUS.TENTATIVE) ||
+        (partstat === ICAL_ATTENDEE_STATUS.TENTATIVE && oldPartstat === ICAL_ATTENDEE_STATUS.ACCEPTED)
     ) {
         // no need to update the notifications in such cases
         return;
