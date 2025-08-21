@@ -49,6 +49,11 @@ jest.mock('proton-mail/hooks/mailbox/usePreLoadElements', () => ({
     default: jest.fn(),
 }));
 
+jest.mock('proton-mail/hooks/drawer/useAutoOpenContactsDrawer', () => ({
+    __esModule: true,
+    default: jest.fn(),
+}));
+
 const props = {
     labelID: 'inbox',
     isSearch: false,
