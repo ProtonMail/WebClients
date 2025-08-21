@@ -256,6 +256,9 @@
       "Claim it": [
         "Beanspruchen"
       ],
+      "Claim this address": [
+        "Diese Adresse beanspruchen"
+      ],
       "Clear all formatting": [
         "Alle Formatierungen entfernen"
       ],
@@ -303,9 +306,6 @@
       ],
       "Connect to video conferencing": [
         "Mit Videokonferenzen verbinden"
-      ],
-      "Connect your Gmail address": [
-        "Verbinde deine Gmail-Adresse"
       ],
       "Connected": [
         "Verbunden"
@@ -729,6 +729,9 @@
       ],
       "Get ${ planOrAppName }": [
         "${ planOrAppName } holen"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Hole dir eine kostenlose ${ BRAND_NAME }-Adresse"
       ],
       "Get a new encrypted email address": [
         "Erhalte eine neue verschlüsselte E-Mail-Adresse"
@@ -7855,6 +7858,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s Verschlüsselungstechnologie bedeutet, dass keiner Zugriff auf dein Passwort hat - nicht einmal wir."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } braucht eine ${ BRAND_NAME }-Adresse für sichere Termin-Synchronisierung und Verschlüsselung. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } neuer Kalender",
         "${ calendarsToBeCreatedCount } neue Kalender"
@@ -8056,11 +8062,20 @@
       "**${ appName }** is not supported.": [
         "**${ appName }** wird nicht unterstützt."
       ],
+      "**Enable automatic backups** for peace of mind": [
+        "**Aktiviere automatische Sicherungen** für den Seelenfrieden"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Hol dir eine ${ BRAND_NAME }-Adresse**, um alle unsere ${ BRAND_NAME_TWO }-Dienste einschließlich ${ MAIL_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME } zu nutzen."
       ],
+      "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
+        "**Importiere deine bestehenden Codes** aus anderen 2FA-Apps, wie Google Authenticator"
+      ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Lade deine Freunde ein**: Mit deinem Empfehlungs-Link zu ${ BRAND_NAME }."
+      ],
+      "**Sync codes** to all your devices": [
+        "**Synchronisiere Codes** auf all deine Geräte"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Weiteres",
@@ -8157,8 +8172,8 @@
       "Add a recovery phone number": [
         "Telefonnummer für die Wiederherstellung hinzufügen"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
-        "Füge deinem Konto eine weitere Sicherheitsebene hinzu. Du musst dich jedes Mal mit 2FA verifizieren, wenn du dich anmeldest. Wir empfehlen die Verwendung von ${ protonAuthenticatorDownloadLink } zum Speichern deiner 2FA-Codes."
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Füge deinem Konto eine weitere Sicherheitsebene hinzu. Du musst dich jedes Mal mit Zwei-Faktor-Authentifizierung verifizieren, wenn du dich anmeldest."
       ],
       "Add domain": [
         "Domain hinzufügen"
@@ -8730,6 +8745,9 @@
       "Download recovery file": [
         "Wiederherstellungsdatei herunterladen"
       ],
+      "Download the app and import existing codes.": [
+        "Lade die App herunter und importiere bestehende Codes."
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Lade noch heute diese großartige App herunter und nimm deine Privatsphäre überall hin mit."
       ],
@@ -8843,6 +8861,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Genieße ein schnelleres, konzentriertes E-Mail-Erlebnis mit der Desktop-App."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Sorge für vollständig private und verschlüsselte Kommunikation. Sichere dir jetzt deine kostenlose ${ BRAND_NAME }-E-Mail-Adresse."
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "Gib ein Passwort ein, um dein ${ BRAND_NAME }-Konto zu finalisieren und ${ VPN_APP_NAME } auf all deinen Geräten zu nutzen."
@@ -8984,6 +9005,9 @@
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Wenn du eine neue Wiederherstellungsphrase erstellst, wird dadurch deine bisherige Phrase deaktiviert."
+      ],
+      "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
+        "Hol dir ${ AUTHENTICATOR_APP_NAME } für all deine Geräte."
       ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } holen"
@@ -9239,6 +9263,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Es dauert 10 Tage, um das Land eines Servers zu ändern, stelle also sicher, dass deine Auswahl korrekt ist."
       ],
+      "It won't be linked to your ${ BRAND_NAME } Account, so there's **no risk of getting locked out**.": [
+        "Es wird nicht mit deinem ${ BRAND_NAME }-Konto verknüpft, sodass **kein Risiko besteht, ausgesperrt zu werden**."
+      ],
       "It's better to have:": [
         "Es ist besser so:"
       ],
@@ -9421,6 +9448,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode Logo"
+      ],
+      "Maybe later": [
+        "Vielleicht später"
       ],
       "Medium Priority": [
         "Mittlere Priorität"
@@ -10186,6 +10216,9 @@
       "The most recent data update, excluding breaches.": [
         "Die jüngste Datenaktualisierung, mit Ausnahme von Datenschutzverletzungen."
       ],
+      "The most secure and private two-factor authentication app, that's free and open-source.": [
+        "Die sicherste und privateste Zwei-Faktor-Authentifizierungs-App, die kostenlos und Open-Source ist."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "Der Name wird für deine Benutzer sichtbar sein, solange sie angemeldet sind."
       ],
@@ -10743,6 +10776,9 @@
       ],
       "Why?": [
         "Warum?"
+      ],
+      "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
+        "Mit ${ AUTHENTICATOR_APP_NAME } kannst du:"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Mit einem Business- oder Enterprise-Abonnement kannst du ${ boldDedicatedServers } für dein Unternehmen kaufen und ${ boldGateways } einrichten, um zu kontrollieren, welche Benutzer darauf zugreifen können."
@@ -20459,6 +20495,9 @@
       "Choose user affiliations": [
         "Benutzerzugehörigkeit wählen"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Deine ${ MAIL_APP_NAME }-Adresse beanspruchen"
+      ],
       "Click a value in the table to use it as filter": [
         "Klicke auf einen Wert in der Tabelle, um diesen als Filter zu verwenden."
       ],
@@ -20492,8 +20531,8 @@
       "Connect apps and devices": [
         "Apps und Geräte verbinden"
       ],
-      "Connect more Gmail addresses with ${ planName }": [
-        "Verbinde mehr Gmail-Adressen mit ${ planName }"
+      "Connect more addresses": [
+        "Verbinde mehr Adressen"
       ],
       "Connect organization": [
         "Organisation verbinden"
@@ -21519,6 +21558,9 @@
       ],
       "Time zone": [
         "Zeitzone"
+      ],
+      "Try ${ AUTHENTICATOR_APP_NAME }": [
+        "${ AUTHENTICATOR_APP_NAME } ausprobieren"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Aktiviere ${ DARK_WEB_MONITORING_NAME }"
