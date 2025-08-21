@@ -4,8 +4,6 @@ import { DropdownMenu, DropdownMenuButton, SimpleDropdown, ToolbarButton } from 
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import clsx from '@proton/utils/clsx';
 
-const { DAY, WEEK, MONTH, CUSTOM } = VIEWS;
-
 interface Props {
     range: number;
     loading?: boolean;
@@ -17,9 +15,9 @@ interface Props {
 }
 const ViewSelector = ({ range, loading = false, disabled = false, view, onChange, ...rest }: Props) => {
     const options = [
-        { text: c('Calendar view').t`Day`, value: DAY, testId: 'day' },
-        { text: c('Calendar view').t`Week`, value: WEEK, testId: 'week' },
-        { text: c('Calendar view').t`Month`, value: MONTH, testId: 'month' },
+        { text: c('Calendar view').t`Day`, value: VIEWS.DAY, testId: 'day' },
+        { text: c('Calendar view').t`Week`, value: VIEWS.WEEK, testId: 'week' },
+        { text: c('Calendar view').t`Month`, value: VIEWS.MONTH, testId: 'month' },
         // { text: c('Calendar view').t`Year`, value: YEAR },
         // { text: c('Calendar view').t`Agenda`, value: AGENDA },
     ];
@@ -37,7 +35,7 @@ const ViewSelector = ({ range, loading = false, disabled = false, view, onChange
             >
                 <DropdownMenu>
                     {options.map(({ text, value, testId }) => {
-                        const v = range ? CUSTOM : value;
+                        const v = range ? VIEWS.CUSTOM : value;
                         return (
                             <DropdownMenuButton
                                 key={value}

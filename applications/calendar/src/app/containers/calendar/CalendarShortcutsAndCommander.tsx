@@ -10,8 +10,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import useCalendarHotkeys from '../../hooks/useCalendarHotkeys';
 
-const { DAY, WEEK, MONTH } = VIEWS;
-
 interface Props {
     onClickToday: () => void;
     onClickNextView: () => void;
@@ -54,13 +52,13 @@ const CalendarShortcutsAndCommander = ({
             onClickPreviousView?.();
         },
         showDayView: () => {
-            onChangeView(DAY);
+            onChangeView(VIEWS.DAY);
         },
         showWeekView: () => {
-            onChangeView(WEEK);
+            onChangeView(VIEWS.WEEK);
         },
         showMonthView: () => {
-            onChangeView(MONTH);
+            onChangeView(VIEWS.MONTH);
         },
         focusSearchBar: () => {
             onClickSearch();
@@ -96,7 +94,7 @@ const CalendarShortcutsAndCommander = ({
                     label: c('Commander action').t`Day view`,
                     value: 'show-day-view',
                     action: () => {
-                        onChangeView(DAY);
+                        onChangeView(VIEWS.DAY);
                     },
                     shortcuts: isCalendarHotkeysEnabled ? ['1'] : undefined,
                 },
@@ -105,7 +103,7 @@ const CalendarShortcutsAndCommander = ({
                     label: c('Commander action').t`Week view`,
                     value: 'show-week-view',
                     action: () => {
-                        onChangeView(WEEK);
+                        onChangeView(VIEWS.WEEK);
                     },
                     shortcuts: isCalendarHotkeysEnabled ? ['2'] : undefined,
                 },
@@ -114,7 +112,7 @@ const CalendarShortcutsAndCommander = ({
                     label: c('Commander action').t`Month view`,
                     value: 'show-month-view',
                     action: () => {
-                        onChangeView(MONTH);
+                        onChangeView(VIEWS.MONTH);
                     },
                     shortcuts: isCalendarHotkeysEnabled ? ['3'] : undefined,
                 },

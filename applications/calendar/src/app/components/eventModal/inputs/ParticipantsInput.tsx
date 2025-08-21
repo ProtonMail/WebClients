@@ -34,8 +34,6 @@ import { getParticipantsError } from '../helpers';
 import OrganizerRow from '../rows/OrganizerRow';
 import ParticipantRows from '../rows/ParticipantRows';
 
-const { REQUIRED, OPTIONAL } = ICAL_ATTENDEE_ROLE;
-
 interface Props {
     value: AttendeeModel[];
     isOwnedCalendar: boolean;
@@ -132,7 +130,13 @@ const ParticipantsInput = ({
         onChange(
             value.map((attendee) =>
                 email === attendee.email
-                    ? { ...attendee, role: attendee.role === REQUIRED ? OPTIONAL : REQUIRED }
+                    ? {
+                          ...attendee,
+                          role:
+                              attendee.role === ICAL_ATTENDEE_ROLE.REQUIRED
+                                  ? ICAL_ATTENDEE_ROLE.OPTIONAL
+                                  : ICAL_ATTENDEE_ROLE.REQUIRED,
+                      }
                     : attendee
             )
         );
