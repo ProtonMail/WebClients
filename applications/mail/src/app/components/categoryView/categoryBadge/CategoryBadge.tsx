@@ -15,8 +15,8 @@ import {
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark, IcCrossBig } from '@proton/icons';
-import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
-import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
+import { labelConversations } from '@proton/shared/lib/api/conversations';
+import { labelMessages } from '@proton/shared/lib/api/messages';
 import clsx from '@proton/utils/clsx';
 
 import { isMessage } from 'proton-mail/helpers/elements';
@@ -72,21 +72,12 @@ export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
             IDs: [element.ID],
         };
 
-        const unlabelPayload = {
-            LabelID: labelValue,
-            IDs: [element.ID],
-        };
-
-        const promises = [];
         if (isMessage(element)) {
-            promises.push(api(labelMessages(newLabelPayload)));
-            promises.push(api(unlabelMessages(unlabelPayload)));
+            await api(labelMessages(newLabelPayload));
         } else {
-            promises.push(api(labelConversations(newLabelPayload)));
-            promises.push(api(unlabelConversations(unlabelPayload)));
+            await api(labelConversations(newLabelPayload));
         }
 
-        await Promise.all(promises);
         setLabelValue(category);
 
         createNotification({
