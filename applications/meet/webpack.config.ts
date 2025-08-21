@@ -1,3 +1,4 @@
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { config as dotenvConfig } from 'dotenv';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'node:path';
@@ -64,7 +65,102 @@ const result = (env: any): webpack.Configuration => {
             new webpack.ProvidePlugin({
                 Buffer: [require.resolve('buffer'), 'Buffer'],
             }),
+            new CopyWebpackPlugin({
+                patterns: [
+                    {
+                        from: path.dirname(require.resolve('@timephy/rnnoise-wasm')) + '/NoiseSuppressorWorklet.js',
+                        to: 'assets/static/NoiseSuppressorWorklet.js',
+                        toType: 'file',
+                        transform(content) {
+                            return content
+                                .toString()
+                                .replace(
+                                    'import createRNNWasmModuleSync from "./generated/rnnoise-sync"',
+                                    'import createRNNWasmModuleSync from "./rnnoise-sync.js"'
+                                );
+                        },
+                    },
+                    {
+                        from: path.dirname(require.resolve('@timephy/rnnoise-wasm')),
+                        to: ({ absoluteFilename }) => {
+                            const fileName = path.basename(absoluteFilename || '');
+                            if (fileName === 'NoiseSuppressorWorklet.js') {
+                                return 'skip';
+                            }
+                            return `assets/static/${fileName}`;
+                        },
+                        toType: 'file',
+                        filter: (resourcePath) => {
+                            const fileName = path.basename(resourcePath);
+                            return resourcePath.endsWith('.js') && fileName !== 'NoiseSuppressorWorklet.js';
+                        },
+                    },
+                    {
+                        from: path.dirname(require.resolve('@timephy/rnnoise-wasm')) + '/generated/rnnoise-sync.js',
+                        to: 'assets/static/rnnoise-sync.js',
+                        toType: 'file',
+                    },
+                ],
+            }),
         ],
+        module: {
+            ...config.module,
+            rules: [
+                ...(config.module?.rules || []),
+                {
+                    test: /NoiseSuppressorWorklet.*\.js$/,
+                    type: 'asset/resource',
+                    parser: { parse: false },
+                    generator: {
+                        filename: 'assets/static/[name].[hash][ext]',
+                    },
+                    use: [
+                        {
+                            loader: 'string-replace-loader',
+                            options: {
+                                search: 'import createRNNWasmModuleSync from "./generated/rnnoise-sync"',
+                                replace: 'import createRNNWasmModuleSync from "./rnnoise-sync.js"',
+                            },
+                        },
+                        {
+                            loader: 'string-replace-loader',
+                            options: {
+                                search: 'import "./polyfills"',
+                                replace: 'import "./polyfills.js"',
+                            },
+                        },
+                        {
+                            loader: 'string-replace-loader',
+                            options: {
+                                search: 'import { leastCommonMultiple } from "./math"',
+                                replace: 'import { leastCommonMultiple } from "./math.js"',
+                            },
+                        },
+                        {
+                            loader: 'string-replace-loader',
+                            options: {
+                                search: 'import RnnoiseProcessor from "./RnnoiseProcessor"',
+                                replace: 'import RnnoiseProcessor from "./RnnoiseProcessor.js"',
+                            },
+                        },
+                        {
+                            loader: 'string-replace-loader',
+                            options: {
+                                search: 'NoiseSuppressorWorklet_Name',
+                                replace: '"NoiseSuppressorWorklet"',
+                            },
+                        },
+                        {
+                            loader: 'string-replace-loader',
+                            options: {
+                                search: 'import { NoiseSuppressorWorklet_Name } from "./index";',
+                                replace: '',
+                            },
+                        },
+                    ],
+                },
+            ],
+        },
     };
 };
 

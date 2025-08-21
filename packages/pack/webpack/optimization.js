@@ -63,6 +63,14 @@ module.exports = /** @type { (env: any) => import('webpack').Options.Optimizatio
              * with acceptable performance impact on build times. */
             terserOptions: { compress: { passes: 5 } },
             extractComments: false,
+            // This file from the @proton-meet/livekit-client dependencies was breaking the pipeline, this was the only solution I found to fix it
+            exclude: [
+                /NoiseSuppressorWorklet.*\.js$/,
+                /[/\\](polyfills|RnnoiseProcessor|math|rnnoise-sync|index)\.js$/,
+                /[/\\]@timephy[/\\]rnnoise-wasm[/\\]/,
+                /[/\\]assets[/\\]static[/\\].*rnnoise/i,
+                /[/\\]assets[/\\]static[/\\](polyfills|RnnoiseProcessor|index|math)/,
+            ],
         }),
         webpackOnCaffeine
             ? new EsbuildPlugin({
