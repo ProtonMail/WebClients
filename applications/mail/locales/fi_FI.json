@@ -102,6 +102,9 @@
       "Add to group": [
         "Lisää ryhmään"
       ],
+      "Adds it above your existing message": [
+        "Lisää sen olemassa olevan viestin yläpuolelle"
+      ],
       "Align center": [
         "Keskitä"
       ],
@@ -307,6 +310,9 @@
       "Copy alias “${ name }”": [
         "Kopioi alias \"${ name }\""
       ],
+      "Copy email address": [
+        "Kopioi sähköpostiosoite"
+      ],
       "Copy email to clipboard": [
         "Kopioi sähköpostiosoite leikepöydälle"
       ],
@@ -336,6 +342,9 @@
       ],
       "Create folder": [
         "Luo kansio"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Luo kansio ${ boldFolderName }"
       ],
       "Create label": [
         "Luo tunniste"
@@ -440,6 +449,9 @@
       ],
       "Download all attachments": [
         "Lataa kaikki liitteet"
+      ],
+      "Download application logs": [
+        "Lataa sovelluslokit"
       ],
       "Download logs": [
         "Lataa lokitiedot"
@@ -774,6 +786,9 @@
       ],
       "Make it friendly": [
         "Tee siitä ystävällisempi"
+      ],
+      "Manage addresses": [
+        "Hallitse osoitteita"
       ],
       "Manage advanced account protections": [
         "Hallitse edistynyttä tilisuojausta"
@@ -1219,6 +1234,9 @@
       "Send read receipt": [
         "Lähetä lukukuittaus"
       ],
+      "Send unsubscribe email": [
+        "Lähetä peruutussähköposti"
+      ],
       "Set": [
         "Aseta"
       ],
@@ -1350,6 +1368,15 @@
       ],
       "Stop generating result": [
         "Lopeta tuloksen luonti"
+      ],
+      "Stop marking as read": [
+        "Lopeta merkitsemästä luetuksi"
+      ],
+      "Stop moving to Archive": [
+        "Lopeta siirtäminen arkistoon"
+      ],
+      "Stop moving to Trash": [
+        "Lopeta siirtäminen roskakoriin"
       ],
       "Strikethrough": [
         "Yliviivaus"
@@ -1805,6 +1832,9 @@
       ]
     },
     "Assistant option": {
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Data säilytetään laitteella yksityisyytesi suojaamiseksi. Edellyttää latausta ja yhteensopivaa laitteistoa."
+      ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
         "Tiedot pysyvät laitteellasi, mutta vaativat kertalatauksen ja yhteensopivan laitteiston"
       ],
@@ -1822,6 +1852,9 @@
       ],
       "Securely run on ${ BRAND_NAME } servers": [
         "Suoritetaan turvallisesti ${ BRAND_NAME }in palvelimilla"
+      ],
+      "Securely run on device": [
+        "Suoritetaan turvallisesti laitteella"
       ]
     },
     "Assistant toggle": {
@@ -3872,6 +3905,9 @@
       "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
         "Voit siirtyä ${ BRAND_NAME }iin saumattomasti tuomalla tietosi Googlesta, Outlookista ja muualta."
       ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "Saat rajattoman pääsyn kirjoitusavustajaan ja muuhun, päivitä ${ BRAND_NAME } Duoon."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut muista palveluista."
       ],
@@ -4202,6 +4238,11 @@
         "Zero Access -salattu. Vastaanottaja on poistanut päästä päähän -salauksen käytöstä tililtään."
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Luotettu yhteyshenkilö"
+      ]
+    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "Salattujen otsakkeiden tiedostonimi"
@@ -4258,6 +4299,9 @@
       ],
       "An error occurred while saving your alias": [
         "Virhe tallennettaessa aliastasi"
+      ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Liitteet ovat enintään ${ readableAttachmentMaxSize }"
       ],
       "Authentication canceled.": [
         "Todennus peruttiin."
@@ -4466,6 +4510,9 @@
       ],
       "No address with keys available to compose a message": [
         "Viestin kirjoitukseen soveltuvaa, avaimellista osoitetta ei ole"
+      ],
+      "No address with sending permissions": [
+        "Ei osoitetta, jolla on lähetysoikeudet"
       ],
       "No calendars found to import": [
         "Tuotavia kalentereita ei löytynyt"
@@ -6047,6 +6094,9 @@
       "${ boldUnsubscribe } from them with one click.": [
         "${ boldUnsubscribe } yhdellä klikkauksella."
       ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribe auttaa sinua laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe kirjoitusavustaja"
       ],
@@ -6404,6 +6454,9 @@
       "An unknown public key has been detected for this recipient.": [
         "Tälle vastaanottajalle on havaittu tuntematon julkinen avain."
       ],
+      "An unsubscribe email will be sent on your behalf.": [
+        "Tilauksen peruutussähköposti lähetetään puolestanne."
+      ],
       "and": [
         "ja"
       ],
@@ -6707,6 +6760,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Tilin alennus katkaisee kaikki yhteydet maksullisiin ${ VPN_APP_NAME } -palvelimiin."
       ],
+      "Download application logs for troubleshooting": [
+        "Lataa sovelluslokit vianetsintään"
+      ],
       "Download on the App Store": [
         "Lataa App Storesta"
       ],
@@ -6876,6 +6932,10 @@
       ],
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Jos haluat enemmän hakutuloksia, kokeile etsiä tätä avainsanaa myös sähköpostiviestien sisällöstä"
+      ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Ilmainen kokeiltavaksi ${ ASSISTANT_TRIAL_TIME_DAYS } päivän ajan",
+        "Vapaasti kokeiltavissa ${ ASSISTANT_TRIAL_TIME_DAYS } päivän ajan"
       ],
       "From": [
         "Osoitteesta"
@@ -7057,6 +7117,9 @@
       "Learn more": [
         "Lue lisää"
       ],
+      "Learn more about the writing assistant": [
+        "Lue lisää kirjoitusavustajasta"
+      ],
       "Learn what to do ${ dataLeakedLink }": [
         "Lue, mitä tehdä, ${ dataLeakedLink }"
       ],
@@ -7186,6 +7249,9 @@
       "No action selected": [
         "Toimintoa ei valittu"
       ],
+      "No change will be made to the selected emails": [
+        "Valittuihin sähköposteihin ei tehdä muutoksia."
+      ],
       "No contacts added yet": [
         "Yhteystietoja ei ole vielä lisätty"
       ],
@@ -7209,6 +7275,9 @@
       ],
       "No links cleaned": [
         "Linkkejä ei puhdistettu"
+      ],
+      "No messages to show": [
+        "Ei viestejä näytettäväksi"
       ],
       "No more results found": [
         "Ei enempää tuloksia"
@@ -7509,6 +7578,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Valitse tuotavat kalenterit. Jokaista tuotua kalenteria kohden luodaan uusi kalenteri tilaukseesi sisältyvän kalentereimäärän puitteissa."
       ],
+      "Selection pane": [
+        "Valintapaneeli"
+      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Lähetä salattu, salasanasuojattu viesti ${ boldText } sähköpostiosoitteeseen."
       ],
@@ -7630,6 +7702,12 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Tilaus päättyy pian: uudelleenaktivoi ${ byDate } mennessä säilyttääksesi ${ planName }-etusi. ${ reactivateLink }"
       ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Tilaus päättyy: Jotta ${ planName } -etusi säilyvät, käynnistä tilauksesi uudelleen Apple App Storessa viimeistään ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Tilaus päättyy: Jotta ${ planName } -etusi säilyvät, käynnistä tilauksesi uudelleen Google Play Kaupassa viimeistään ${ byDate }. ${ reactivateLink }"
+      ],
       "Surveillance": [
         "Tarkkailu"
       ],
@@ -7702,6 +7780,9 @@
       ],
       "Themes can give your inbox a new look.": [
         "Teemoilla voit muuttaa postilaatikkosi ulkoasua."
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "Tältä lähettäjältä ei ole viestejä saapuneet-kansiossasi."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Yhteystiedon vahvistukseen käytetyssä allekirjoituksessa havaittiin virhe, joka saattaa johtua salasanan nollauksesta."
@@ -7929,6 +8010,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Avaa päivittämällä ${ plan } -tilaukseen"
       ],
       "Upgrade to add more addresses to your account.": [
         "Lisää tilillesi enemmän osoitteita päivittämällä tilauksesi."
@@ -8299,6 +8383,9 @@
       "Your files will be encrypted and then saved": [
         "Tiedostosi salataan ja tallennetaan"
       ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Ilmainen kokeilujaksosi muunnettiin onnistuneesti ${ cycle } kuukauden tilaukseksi. Uusimispäivämääräsi on ${ nextBillingDate }."
+      ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Laitteistosi ei tue kirjoitusavustajan suorittamista paikallisesti. Kokeile sen suorittamista palvelimilla."
       ],
@@ -8345,6 +8432,9 @@
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "Fyysinen sijaintisi on nähtävissä, ja sitä voidaan käyttää Internet-käyttösi rajoittamiseen."
       ],
+      "Your private writing assistant": [
+        "Yksityinen kirjoitusavustajasi"
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti ${ cycle } kuukauden välein.",
         "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti ${ cycle } kuukauden välein."
@@ -8354,6 +8444,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Tilauksesi uudistuu automaattisesti ${ renewalTime }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
@@ -8773,6 +8866,9 @@
       "CC": [
         "Kopio"
       ],
+      "Choose what to do instead": [
+        "Valitse sen sijaan, mitä tehdä"
+      ],
       "City": [
         "Kaupunki"
       ],
@@ -8892,6 +8988,9 @@
       ],
       "Extended address": [
         "Laajennettu osoite"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "Kansion ${ newFolderName } luominen epäonnistui."
       ],
       "Filter Name": [
         "Suodattimen nimi"
@@ -9022,6 +9121,9 @@
       "Moved to ${ labelName }": [
         "Sirretty sijaintiin ${ labelName }"
       ],
+      "Moved to Archive": [
+        "Siirretty arkistoon"
+      ],
       "Moved to Trash": [
         "Siirretty roskakoriin"
       ],
@@ -9036,6 +9138,9 @@
       ],
       "New password": [
         "Uusi salasana"
+      ],
+      "Newsletter entry deleted": [
+        "Uutiskirjeen tilaus poistettu"
       ],
       "Newsletters": [
         "Uutiskirjeet"
@@ -9118,6 +9223,9 @@
       "Primary": [
         "Ensisijainen"
       ],
+      "Promotions": [
+        "Kampanjat"
+      ],
       "Proration": [
         "Hyvitys"
       ],
@@ -9159,6 +9267,9 @@
       ],
       "Size:": [
         "Koko:"
+      ],
+      "Social": [
+        "Sosiaalinen"
       ],
       "Starred": [
         "Tähdellä"
@@ -9234,6 +9345,9 @@
       ],
       "Upload picture": [
         "Lataa kuva"
+      ],
+      "Username": [
+        "Käyttäjätunnus"
       ],
       "VAT": [
         "ALV"
@@ -9355,6 +9469,17 @@
       ],
       "To: ${ to }": [
         "Vastaanottaja: ${ to }"
+      ]
+    },
+    "Labels": {
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Uutiskirjeet tai postituslistat, joiden tilauksen peruutat, näkyvät täällä."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Sinulla ei ole aktiivisia uutiskirjeitä tai postituslistatilauksia."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Sinulla ei ole uutiskirjeitä tai postituslistatilauksia."
       ]
     },
     "Landmarks": {
@@ -9531,6 +9656,9 @@
       ],
       "Request an invite": [
         "Pyydä kutsu"
+      ],
+      "Resume now": [
+        "Jatka nyt"
       ],
       "Scheduled": [
         "Ajoitetut"
@@ -10987,6 +11115,9 @@
       ]
     },
     "Onboarding modal": {
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } tarkoittaa, että et koskaan näe sponsoroituja mainoksia sovelluksissamme."
+      ],
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
         "${ advancedEncryptionTitle } varmistaa, että vain sinä ja tarkoitetut vastaanottajat näkevät viestisi."
       ],
@@ -11007,6 +11138,9 @@
       ],
       "Activate selected": [
         "Aktivoi valitut"
+      ],
+      "Ad-free promise": [
+        "Mainokseton lupaus"
       ],
       "Advanced encryption": [
         "Edistynyt salaus"
@@ -11052,6 +11186,9 @@
       ],
       "Industry-leading spam protection": [
         "Alan johtava roskapostisuojaus"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "Let's get started": [
         "Aloitetaan"
@@ -12392,6 +12529,9 @@
       ]
     },
     "specialoffer: Title": {
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Pidä salasanasi turvassa ja järjestettynä useissa holveissa "
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Päivitä tilauksesi ja säästä enemmän kahden vuoden ${ planName } -tilauksella"
       ]
@@ -13163,6 +13303,9 @@
       "Conversation removed from ${ labelName }.": [
         "Keskustelulta poistettiin tunniste ${ labelName }."
       ],
+      "Conversation removed from Starred.": [
+        "Keskustelu poistettiin tähdellisistä."
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Keskustelut lähettäjiltä ${ sendersList } merkitään tunnisteilla ${ labelsList }"
       ],
@@ -13234,6 +13377,9 @@
       ],
       "Message removed from ${ labelName }.": [
         "Viestiltä poistettiin tunniste ${ labelName }."
+      ],
+      "Message removed from Starred.": [
+        "Viesti poistettiin tähdellisistä."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Viestit lähettäjiltä ${ sendersList } merkitään tunnisteilla ${ labelsList }"
@@ -13317,8 +13463,14 @@
       "${ label.Name } removed": [
         "${ label.Name } poistettiin"
       ],
+      "The filter has been disabled": [
+        "Suodatin on poistettu käytöstä"
+      ],
       "The filter has been enabled": [
         "Suodatin on otettu käyttöön"
+      ],
+      "The filter is active again": [
+        "Suodatin on jälleen aktiivinen"
       ]
     },
     "Suffix": {
@@ -13695,6 +13847,9 @@
       ],
       "Coupon": [
         "Etukoodi"
+      ],
+      "Craft better emails": [
+        "Laatia parempia sähköposteja"
       ],
       "Create contact": [
         "Luo yhteystieto"
@@ -14083,6 +14238,9 @@
       "Night theme": [
         "Yöteema"
       ],
+      "No active newsletters": [
+        "Ei aktiivisia uutiskirjeitä"
+      ],
       "No attachment found": [
         "Liitettä ei löytynyt"
       ],
@@ -14092,8 +14250,14 @@
       "No need to empty the trash": [
         "Roskia ei tarvitse tyhjentää"
       ],
+      "No newsletters found": [
+        "Uutiskirjeitä ei löytynyt"
+      ],
       "No trackers found": [
         "Seurantoja ei löytynyt"
+      ],
+      "No unsubscribed newsletters": [
+        "Ei peruutettuja uutiskirjeitä"
       ],
       "No-reply address detected": [
         "No-reply-viesti havaittu"
@@ -14359,6 +14523,9 @@
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "Perutaanko tilaus ${ subscription.Name }?"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Tilauksen peruuttaminen ei ole mahdollista tälle lähettäjälle."
       ],
       "Unsubscribe request sent": [
         "Tilauksen perumispyyntö lähetettiin"
