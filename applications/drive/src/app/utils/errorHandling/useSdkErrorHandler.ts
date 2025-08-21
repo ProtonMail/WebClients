@@ -29,6 +29,38 @@ type HandleErrorOptions = {
     showNotification?: boolean;
 };
 
+export const handleSdkError = (
+    error: Error | unknown,
+    { fallbackMessage = '', extra = {} }: HandleErrorOptions = {}
+) => {
+    const errorToHandle = error instanceof Error ? error : new Error(fallbackMessage);
+    const message = error instanceof ProtonDriveError ? errorToHandle.message : fallbackMessage;
+
+    console.error(errorToHandle);
+    if (shouldTrackError(errorToHandle)) {
+        const enrichedError = new EnrichedError(errorToHandle.message, {
+            tags: {
+                component: 'drive-sdk',
+            },
+            extra: {
+                fallbackMessage,
+                ...(error instanceof ServerError && {
+                    serverErrorCode: error.code,
+                    serverErrorStatusCode: error.statusCode,
+                }),
+                ...extra,
+            },
+        });
+        enrichedError.name = errorToHandle.name;
+        enrichedError.stack = errorToHandle.stack;
+        enrichedError.cause = errorToHandle.cause;
+
+        sendErrorReport(enrichedError);
+    }
+
+    return { errorToHandle, message };
+};
+
 export const useSdkErrorHandler = () => {
     const { createNotification } = useNotifications();
 
@@ -41,32 +73,10 @@ export const useSdkErrorHandler = () => {
                 showNotification = true,
             }: HandleErrorOptions = {}
         ) => {
-            const errorToHandle = error instanceof Error ? error : new Error(fallbackMessage);
-            const message = error instanceof ProtonDriveError ? errorToHandle.message : fallbackMessage;
+            const { errorToHandle, message } = handleSdkError(error, { fallbackMessage, extra });
+
             if (showNotification && shouldShowNotification(errorToHandle)) {
                 createNotification({ type: 'error', text: message, preWrap: true });
-            }
-
-            console.error(errorToHandle);
-            if (shouldTrackError(errorToHandle)) {
-                const enrichedError = new EnrichedError(errorToHandle.message, {
-                    tags: {
-                        component: 'drive-sdk',
-                    },
-                    extra: {
-                        fallbackMessage,
-                        ...(error instanceof ServerError && {
-                            serverErrorCode: error.code,
-                            serverErrorStatusCode: error.statusCode,
-                        }),
-                        ...extra,
-                    },
-                });
-                enrichedError.name = errorToHandle.name;
-                enrichedError.stack = errorToHandle.stack;
-                enrichedError.cause = errorToHandle.cause;
-
-                sendErrorReport(enrichedError);
             }
         },
         [createNotification]

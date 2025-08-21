@@ -238,21 +238,21 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
     )
 );
 
-getActionEventManager().subscribe(ActionEventName.DELETE_BOOKMARKS, (event) => {
+getActionEventManager().subscribe(ActionEventName.DELETE_BOOKMARKS, async (event) => {
     const store = useSharedWithMeListingStore.getState();
     event.uids.forEach((uid) => {
         store.removeSharedWithMeItem(uid);
     });
 });
 
-getActionEventManager().subscribe(ActionEventName.REJECT_INVITATIONS, (event) => {
+getActionEventManager().subscribe(ActionEventName.REJECT_INVITATIONS, async (event) => {
     const store = useSharedWithMeListingStore.getState();
     event.uids.forEach((uid) => {
         store.removeSharedWithMeItem(uid);
     });
 });
 
-getActionEventManager().subscribe(ActionEventName.ACCEPT_INVITATIONS, (event) => {
+getActionEventManager().subscribe(ActionEventName.ACCEPT_INVITATIONS, async (event) => {
     const store = useSharedWithMeListingStore.getState();
     event.items.forEach(({ node, sharedInfo }) => {
         const { volumeId, nodeId } = splitNodeUid(node.uid);
