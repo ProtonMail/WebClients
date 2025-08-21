@@ -3,25 +3,23 @@ import { format } from 'date-fns';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-const { DAY, WEEK, MONTH, YEAR, AGENDA, CUSTOM, MAIL, DRIVE, SEARCH } = VIEWS;
-
 const FORMATS = {
-    [DAY]: 'PP',
-    [WEEK]: 'PP',
-    [MONTH]: 'MMMM yyyy',
-    [YEAR]: 'yyyy',
-    [AGENDA]: 'MMMM yyyy',
-    [CUSTOM]: 'PP',
-    [MAIL]: 'PP',
-    [DRIVE]: 'PP',
-    [SEARCH]: 'PP',
+    [VIEWS.DAY]: 'PP',
+    [VIEWS.WEEK]: 'PP',
+    [VIEWS.MONTH]: 'MMMM yyyy',
+    [VIEWS.YEAR]: 'yyyy',
+    [VIEWS.AGENDA]: 'MMMM yyyy',
+    [VIEWS.CUSTOM]: 'PP',
+    [VIEWS.MAIL]: 'PP',
+    [VIEWS.DRIVE]: 'PP',
+    [VIEWS.SEARCH]: 'PP',
 };
 
 const getDateRangeText = (view: VIEWS, range: number, currentDate: Date, dateRange: Date[]) => {
     const formatOptions = { locale: dateLocale };
     const [from, to] = dateRange;
 
-    if (view === WEEK || range > 0) {
+    if (view === VIEWS.WEEK || range > 0) {
         if (from.getMonth() === to.getMonth()) {
             const rest = format(from, 'MMMM yyyy', formatOptions);
             return `${rest}`;

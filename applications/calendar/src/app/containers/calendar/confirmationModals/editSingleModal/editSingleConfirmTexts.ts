@@ -2,12 +2,10 @@ import { c } from 'ttag';
 
 import { INVITE_ACTION_TYPES, type InviteActions } from '../../../../interfaces/Invite';
 
-const { SEND_INVITATION, SEND_UPDATE } = INVITE_ACTION_TYPES;
-
 export const getTexts = ({ type, addedAttendees, removedAttendees, hasRemovedAllAttendees }: InviteActions) => {
     const hasAddedAttendees = !!addedAttendees?.length;
     const hasRemovedAttendees = !!removedAttendees?.length;
-    if (type === SEND_INVITATION) {
+    if (type === INVITE_ACTION_TYPES.SEND_INVITATION) {
         if (hasAddedAttendees && hasRemovedAttendees) {
             return {
                 title: c('Title').t`Save changes`,
@@ -35,7 +33,7 @@ export const getTexts = ({ type, addedAttendees, removedAttendees, hasRemovedAll
             alertText: c('Info').t`An invitation will be sent to added participants.`,
         };
     }
-    if (type === SEND_UPDATE) {
+    if (type === INVITE_ACTION_TYPES.SEND_UPDATE) {
         if (hasAddedAttendees && hasRemovedAttendees) {
             if (hasRemovedAllAttendees) {
                 return {

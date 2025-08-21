@@ -4,8 +4,6 @@ import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar
 import type { InviteActions } from '../interfaces/Invite';
 import { INVITE_ACTION_TYPES } from '../interfaces/Invite';
 
-const { SEND_INVITATION, SEND_UPDATE, CHANGE_PARTSTAT, DECLINE_INVITATION, CANCEL_INVITATION } = INVITE_ACTION_TYPES;
-
 export const extractInviteEmails = ({
     inviteActions,
     vevent,
@@ -25,7 +23,7 @@ export const extractInviteEmails = ({
     const organizerEmail = vevent?.organizer ? getAttendeeEmail(vevent.organizer) : undefined;
     const emails: string[] = [];
 
-    if (type === SEND_INVITATION) {
+    if (type === INVITE_ACTION_TYPES.SEND_INVITATION) {
         if (!hasAddedAttendees && !hasRemovedAttendees && invitedEmails?.length) {
             emails.push(...invitedEmails);
         } else {
@@ -36,18 +34,18 @@ export const extractInviteEmails = ({
                 emails.push(...removedEmails);
             }
         }
-    } else if (type === SEND_UPDATE) {
+    } else if (type === INVITE_ACTION_TYPES.SEND_UPDATE) {
         if (invitedEmails?.length) {
             emails.push(...invitedEmails);
         }
         if (removedEmails?.length) {
             emails.push(...removedEmails);
         }
-    } else if (type === CANCEL_INVITATION) {
+    } else if (type === INVITE_ACTION_TYPES.CANCEL_INVITATION) {
         if (cancelledEmails?.length) {
             emails.push(...cancelledEmails);
         }
-    } else if ([CHANGE_PARTSTAT, DECLINE_INVITATION].includes(type)) {
+    } else if ([INVITE_ACTION_TYPES.CHANGE_PARTSTAT, INVITE_ACTION_TYPES.DECLINE_INVITATION].includes(type)) {
         if (organizerEmail) {
             emails.push(organizerEmail);
         }
