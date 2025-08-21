@@ -99,7 +99,7 @@ describe('SavedPaymentProcessor', () => {
     it('should call verifyPayment when fetchedPaymentToken is not chargeable', async () => {
         addTokensResponse({
             ...MOCK_TOKEN_RESPONSE,
-            Status: PAYMENT_TOKEN_STATUS.STATUS_PENDING,
+            Status: PAYMENT_TOKEN_STATUS.PENDING,
             ApprovalURL: 'https://verify.proton.me',
             ReturnHost: 'https://proton.me',
         } as any);
@@ -134,7 +134,7 @@ describe('SavedPaymentProcessor', () => {
     it('should throw when verifyPaymentToken throws', async () => {
         addTokensResponse({
             ...MOCK_TOKEN_RESPONSE,
-            Status: PAYMENT_TOKEN_STATUS.STATUS_PENDING,
+            Status: PAYMENT_TOKEN_STATUS.PENDING,
             ApprovalURL: 'https://verify.proton.me',
             ReturnHost: 'https://proton.me',
         } as any);

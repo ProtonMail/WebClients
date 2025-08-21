@@ -67,7 +67,7 @@ export const formatToken = (
     type: PlainPaymentMethodType,
     amountAndCurrency?: AmountAndCurrency
 ): ChargeablePaymentToken | NonChargeablePaymentToken => {
-    const chargeable = Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE;
+    const chargeable = Status === PAYMENT_TOKEN_STATUS.CHARGEABLE;
     const paymentToken = toV5PaymentToken(Token);
 
     const base = {
@@ -345,7 +345,7 @@ export async function createPaymentTokenV5CreditCard(
         };
     }
 
-    const chargeable = Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE;
+    const chargeable = Status === PAYMENT_TOKEN_STATUS.CHARGEABLE;
 
     return {
         ...params.amountAndCurrency,
@@ -387,7 +387,7 @@ export async function createPaymentTokenV5Paypal(
         authorized: true,
     };
 
-    const chargeable = Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE;
+    const chargeable = Status === PAYMENT_TOKEN_STATUS.CHARGEABLE;
 
     return {
         ...amountAndCurrency,
@@ -405,7 +405,7 @@ export const formatTokenV5 = (
     type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
     amountAndCurrency: AmountAndCurrency
 ): ChargeableV5PaymentToken | NonChargeableV5PaymentToken => {
-    const chargeable = Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE;
+    const chargeable = Status === PAYMENT_TOKEN_STATUS.CHARGEABLE;
     const paymentToken = toV5PaymentToken(Token);
 
     const base: ChargeableV5PaymentToken | NonChargeableV5PaymentToken = {
@@ -469,7 +469,7 @@ export const createPaymentTokenForExistingChargebeePayment = async (
         };
     }
 
-    const chargeable = Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE;
+    const chargeable = Status === PAYMENT_TOKEN_STATUS.CHARGEABLE;
 
     let convertedType:
         | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
