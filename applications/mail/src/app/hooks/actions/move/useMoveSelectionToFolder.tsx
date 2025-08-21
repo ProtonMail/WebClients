@@ -38,8 +38,6 @@ import { useMailDispatch } from 'proton-mail/store/hooks';
 import { MOVE_BACK_ACTION_TYPES } from '../moveBackAction/interfaces';
 import { useMoveBackAction } from '../moveBackAction/useMoveBackAction';
 
-const { INBOX, ALMOST_ALL_MAIL: ALMOST_ALL_MAIL_ID, SNOOZED, ALL_MAIL } = MAILBOX_LABEL_IDS;
-
 interface MoveSelectionParams extends MoveParams {
     isMessage: boolean;
     authorizedToMove: Element[];
@@ -97,7 +95,11 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
 
         // Open a modal when moving a snoozed message/conversation to trash or archive to inform the user that it will be cancelled
         // We only check if we're in the ALMOST_ALL_MAIL, ALL_MAIL or SNOOZE folder since this is the only place where we have snoozed emails
-        if (sourceLabelID === ALMOST_ALL_MAIL_ID || sourceLabelID === ALL_MAIL || sourceLabelID === SNOOZED) {
+        if (
+            sourceLabelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL ||
+            sourceLabelID === MAILBOX_LABEL_IDS.ALL_MAIL ||
+            sourceLabelID === MAILBOX_LABEL_IDS.SNOOZED
+        ) {
             await searchForSnoozed(
                 destinationLabelID,
                 isMessage,
@@ -178,7 +180,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                     isMove: true,
                     unreadStatuses: [],
                     // We need to pass a "real" folder to perform optimistic on custom labels
-                    currentLabelID: isCustomLabel(sourceLabelID, labels) ? INBOX : sourceLabelID,
+                    currentLabelID: isCustomLabel(sourceLabelID, labels) ? MAILBOX_LABEL_IDS.INBOX : sourceLabelID,
                 });
 
                 [tokens] = await Promise.all([

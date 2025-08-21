@@ -26,7 +26,6 @@ import { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 import SnoozeDropdown from './snooze/containers/SnoozeDropdown';
 
 const { READ, UNREAD } = MARK_AS_STATUS;
-const { ARCHIVE, TRASH } = MAILBOX_LABEL_IDS;
 
 interface Props {
     element: Element; // Element of the current line
@@ -89,13 +88,13 @@ const ItemHoverButtons = ({
             void applyLocation({
                 type: APPLY_LOCATION_TYPES.MOVE,
                 elements: [element],
-                destinationLabelID: ARCHIVE,
+                destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
             });
         } else {
             void moveToFolder({
                 elements: [element],
                 sourceLabelID: labelID,
-                destinationLabelID: ARCHIVE,
+                destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                 folderName: c('Title').t`Archive`,
                 sourceAction: SOURCE_ACTION.HOVER_BUTTONS,
                 percentUnread: 1,
@@ -107,12 +106,16 @@ const ItemHoverButtons = ({
         event.stopPropagation();
 
         if (applyOptimisticLocationEnabled) {
-            void applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements: [element], destinationLabelID: TRASH });
+            void applyLocation({
+                type: APPLY_LOCATION_TYPES.MOVE,
+                elements: [element],
+                destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
+            });
         } else {
             void moveToFolder({
                 elements: [element],
                 sourceLabelID: labelID,
-                destinationLabelID: TRASH,
+                destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                 folderName: c('Title').t`Trash`,
                 sourceAction: SOURCE_ACTION.HOVER_BUTTONS,
                 currentFolder: displayedFolder,
@@ -180,7 +183,7 @@ const ItemHoverButtons = ({
                         <Icon name={unreadIcon} alt={unreadAlt} />
                     </Button>
                 </Tooltip>
-                {labelID === TRASH ? (
+                {labelID === MAILBOX_LABEL_IDS.TRASH ? (
                     <>
                         <Tooltip title={c('Action').t`Delete permanently`} tooltipClassName="pointer-events-none">
                             <Button
@@ -203,7 +206,7 @@ const ItemHoverButtons = ({
                             size={size}
                             className="color-inherit"
                             onClick={handleTrash}
-                            disabled={labelID === TRASH}
+                            disabled={labelID === MAILBOX_LABEL_IDS.TRASH}
                         >
                             <Icon name="trash" alt={c('Action').t`Move to trash`} />
                         </Button>
@@ -216,7 +219,7 @@ const ItemHoverButtons = ({
                         size={size}
                         className="color-inherit"
                         onClick={handleArchive}
-                        disabled={labelID === ARCHIVE}
+                        disabled={labelID === MAILBOX_LABEL_IDS.ARCHIVE}
                     >
                         <Icon name="archive-box" alt={c('Action').t`Move to archive`} />
                     </Button>

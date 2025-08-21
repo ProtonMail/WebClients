@@ -47,8 +47,6 @@ import {
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetElementByID } from '../mailbox/useElements';
 
-const { SENT, DRAFTS, ALL_DRAFTS, ALL_SENT, ALL_MAIL, ALMOST_ALL_MAIL } = MAILBOX_LABEL_IDS;
-
 const computeRollbackLabelChanges = (element: Element, changes: LabelChanges) => {
     const rollbackChange = {} as LabelChanges;
 
@@ -78,7 +76,10 @@ export const getIsElementMovingOutFromLabel = ({
     // - Current label is not defined
     // - Current label is all drafts, all sent or all mail
     const shouldStayInLocation =
-        !!currentLabelID && [ALL_DRAFTS, ALL_SENT, ALL_MAIL].includes(currentLabelID as MAILBOX_LABEL_IDS);
+        !!currentLabelID &&
+        [MAILBOX_LABEL_IDS.ALL_DRAFTS, MAILBOX_LABEL_IDS.ALL_SENT, MAILBOX_LABEL_IDS.ALL_MAIL].includes(
+            currentLabelID as MAILBOX_LABEL_IDS
+        );
     // - Current label is a custom label and not moving the item to trash or spam
     const shouldStayInCustomLabel =
         !!currentLabelID &&
@@ -88,7 +89,7 @@ export const getIsElementMovingOutFromLabel = ({
     // - Current label is almost all mail and moving the item to a location that is not TRASH or SPAN
     const shouldStayInAlmostAllMail =
         !!currentLabelID &&
-        currentLabelID === ALMOST_ALL_MAIL &&
+        currentLabelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL &&
         !Object.keys(inputChanges).includes(MAILBOX_LABEL_IDS.TRASH) &&
         !Object.keys(inputChanges).includes(MAILBOX_LABEL_IDS.SPAM);
 
@@ -155,7 +156,9 @@ export const useOptimisticApplyLabels = () => {
 
                 // No need to trigger this action during rollback since we already know where to put the element back
                 if ((isMove || isUnstarringElement) && !isRollback) {
-                    const currentFolderIDs = ([SENT, DRAFTS] as string[]).includes(currentLabelID || '')
+                    const currentFolderIDs = ([MAILBOX_LABEL_IDS.SENT, MAILBOX_LABEL_IDS.DRAFTS] as string[]).includes(
+                        currentLabelID || ''
+                    )
                         ? [currentLabelID as string]
                         : getCurrentFolderIDs(element, folders);
 

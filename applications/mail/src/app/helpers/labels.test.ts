@@ -34,8 +34,6 @@ import {
     shouldDisplayTotal,
 } from './labels';
 
-const { INBOX, TRASH, SPAM, ARCHIVE, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, SCHEDULED, ALL_MAIL } = MAILBOX_LABEL_IDS;
-
 const labelID = 'LabelID';
 
 describe('labels', () => {
@@ -143,16 +141,16 @@ describe('labels', () => {
 
     describe('shouldDisplayTotal', () => {
         it.each`
-            label         | expectedShouldDisplayTotal
-            ${SCHEDULED}  | ${true}
-            ${INBOX}      | ${false}
-            ${TRASH}      | ${false}
-            ${SPAM}       | ${false}
-            ${ARCHIVE}    | ${false}
-            ${SENT}       | ${false}
-            ${ALL_SENT}   | ${false}
-            ${DRAFTS}     | ${false}
-            ${ALL_DRAFTS} | ${false}
+            label                           | expectedShouldDisplayTotal
+            ${MAILBOX_LABEL_IDS.SCHEDULED}  | ${true}
+            ${MAILBOX_LABEL_IDS.INBOX}      | ${false}
+            ${MAILBOX_LABEL_IDS.TRASH}      | ${false}
+            ${MAILBOX_LABEL_IDS.SPAM}       | ${false}
+            ${MAILBOX_LABEL_IDS.ARCHIVE}    | ${false}
+            ${MAILBOX_LABEL_IDS.SENT}       | ${false}
+            ${MAILBOX_LABEL_IDS.ALL_SENT}   | ${false}
+            ${MAILBOX_LABEL_IDS.DRAFTS}     | ${false}
+            ${MAILBOX_LABEL_IDS.ALL_DRAFTS} | ${false}
         `(
             'should display the total: [$expectedShouldDisplayTotal] in [$label]',
             async ({ label, expectedShouldDisplayTotal }) => {
@@ -165,23 +163,28 @@ describe('labels', () => {
 
     describe('canMoveAll', () => {
         it('should not be possible to move all from some locations', () => {
-            const locations = [ALL_MAIL, SCHEDULED, ALL_DRAFTS, ALL_SENT];
+            const locations = [
+                MAILBOX_LABEL_IDS.ALL_MAIL,
+                MAILBOX_LABEL_IDS.SCHEDULED,
+                MAILBOX_LABEL_IDS.ALL_DRAFTS,
+                MAILBOX_LABEL_IDS.ALL_SENT,
+            ];
 
             locations.forEach((location) => {
-                expect(canMoveAll(location, TRASH, ['elementID'], [], false));
+                expect(canMoveAll(location, MAILBOX_LABEL_IDS.TRASH, ['elementID'], [], false));
             });
         });
 
         it('should not be possible to move all when no elements in location', () => {
-            expect(canMoveAll(SENT, TRASH, [], [], false));
+            expect(canMoveAll(MAILBOX_LABEL_IDS.SENT, MAILBOX_LABEL_IDS.TRASH, [], [], false));
         });
 
         it('should not be possible to move all when some elements are selected', () => {
-            expect(canMoveAll(SENT, TRASH, ['elementID'], ['elementID'], false));
+            expect(canMoveAll(MAILBOX_LABEL_IDS.SENT, MAILBOX_LABEL_IDS.TRASH, ['elementID'], ['elementID'], false));
         });
 
         it('should be possible to move all', () => {
-            expect(canMoveAll(SENT, TRASH, ['elementID'], [], false));
+            expect(canMoveAll(MAILBOX_LABEL_IDS.SENT, MAILBOX_LABEL_IDS.TRASH, ['elementID'], [], false));
         });
     });
 
@@ -265,8 +268,8 @@ describe('label', () => {
     describe('isSystemFolder', () => {
         it('should detect system folders', () => {
             expect(isSystemFolder(MAILBOX_LABEL_IDS.INBOX)).toBeTruthy();
-            expect(isSystemFolder(MAILBOX_LABEL_IDS.ALL_DRAFTS)).toBeFalsy();
             expect(isSystemFolder(MAILBOX_LABEL_IDS.ALL_SENT)).toBeFalsy();
+            expect(isSystemFolder(MAILBOX_LABEL_IDS.ALL_DRAFTS)).toBeFalsy();
             expect(isSystemFolder(MAILBOX_LABEL_IDS.TRASH)).toBeTruthy();
             expect(isSystemFolder(MAILBOX_LABEL_IDS.SPAM)).toBeTruthy();
             expect(isSystemFolder(MAILBOX_LABEL_IDS.ALL_MAIL)).toBeFalsy();
