@@ -1,34 +1,35 @@
+// Helper function to convert comma-separated numbers to markdown links
+function numbersToMarkdownLinks(numbersStr: string): string {
+    // Handle empty content
+    if (!numbersStr.trim()) {
+        return '';
+    }
+    // Split by comma and create links for each number
+    const numbers = numbersStr
+        .split(',')
+        .map((n: string) => n.trim())
+        .filter((n: string) => n);
+    return numbers.map((num: string) => `[${num}](#ref-${num})`).join(' ');
+}
+
 export function convertRefTokensToSpans(content: string) {
-    // Replace complete REF tags with markdown links
-    content = content.replace(/\[REF\]([^\[]*)\[\/REF\]/gi, (match, numbersStr) => {
-        // Handle empty content
-        if (!numbersStr.trim()) {
-            return '';
-        }
-        // Split by comma and create links for each number
-        const numbers = numbersStr
-            .split(',')
-            .map((n: string) => n.trim())
-            .filter((n: string) => n);
-        return numbers.map((num: string) => `[${num}](#ref-${num})`).join(' ');
+    // Replace complete REF tags with markdown links (including CJK brackets)
+    content = content.replace(/[\[【]REF[\]】]([^[\[【]*?)[\[【]\/REF[\]】]/gi, (match, numbersStr) => {
+        return numbersToMarkdownLinks(numbersStr);
+    });
+
+    // Replace dagger format [4†ref] with markdown links (including CJK brackets)
+    content = content.replace(/[\[【]([^[\[【\]】]*?)\s*†\s*[^\]】]*[\]】]/gi, (match, numbersStr) => {
+        return numbersToMarkdownLinks(numbersStr);
     });
 
     // Replace complete SPECIAL tags with markdown links
     content = content.replace(/<SPECIAL_27>([^<]*)<SPECIAL_28>/gi, (match, numbersStr) => {
-        // Handle empty content
-        if (!numbersStr.trim()) {
-            return '';
-        }
-        // Split by comma and create links for each number
-        const numbers = numbersStr
-            .split(',')
-            .map((n: string) => n.trim())
-            .filter((n: string) => n);
-        return numbers.map((num: string) => `[${num}](#ref-${num})`).join(' ');
+        return numbersToMarkdownLinks(numbersStr);
     });
 
-    // Clean up any incomplete/malformed REF tags
-    content = content.replaceAll(/\[(R(E(F(\]([^\[]*(\[(\/(R(E(F(\])?)?)?)?)?)?)?)?)?)?)?$/gi, '');
+    // Clean up any incomplete/malformed REF tags (including CJK brackets)
+    content = content.replaceAll(/[\[【](R(E(F([\]】]([^[\[【]*([\[【](\/(R(E(F([\]】])?)?)?)?)?)?)?)?)?)?)?$/gi, '');
 
     // Clean up any incomplete/malformed SPECIAL tags
     content = content.replaceAll(
@@ -40,14 +41,17 @@ export function convertRefTokensToSpans(content: string) {
 
 // Keep the original function for backward compatibility
 export function removeRefTokens(content: string) {
-    // Remove complete REF tags
-    content = content.replaceAll(/\[REF\][^\[]*\[\/REF\]/gi, '');
+    // Remove complete REF tags (including CJK brackets)
+    content = content.replaceAll(/[\[【]REF[\]】][^[\[【]*[\[【]\/REF[\]】]/gi, '');
+
+    // Remove dagger format (including CJK brackets)
+    content = content.replaceAll(/[\[【][^[\[【\]】]*?\s*†\s*(ref|REF|Ref)[\]】]/gi, '');
 
     // Remove complete SPECIAL tags
     content = content.replaceAll(/<SPECIAL_27>[^<]*<SPECIAL_28>/gi, '');
 
-    // Remove incomplete REF tags
-    content = content.replaceAll(/\[(R(E(F(\]([^\[]*(\[(\/(R(E(F(\])?)?)?)?)?)?)?)?)?)?)?$/gi, '');
+    // Remove incomplete REF tags (including CJK brackets)
+    content = content.replaceAll(/[\[【](R(E(F([\]】]([^[\[【]*([\[【](\/(R(E(F([\]】])?)?)?)?)?)?)?)?)?)?)?$/gi, '');
 
     // Remove incomplete SPECIAL tags
     content = content.replaceAll(
