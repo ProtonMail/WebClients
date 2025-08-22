@@ -730,6 +730,7 @@ export enum LUMO_UPSELL_PATHS {
     QUESTION_LIMIT_FREE = 'free-user-question-limit',
     QUESTION_LIMIT_B2B_B2C = 'paid-user-question-limit',
     LUMO_PLUS_UPGRADE_MODAL = 'lumo-plus-upgrade-modal',
+    LUMO_PLUS_UPGRADE_TOGGLE = 'lumo-plus-upgrade-toggle',
 }
 
 export enum SHARED_UPSELL_PATHS {
