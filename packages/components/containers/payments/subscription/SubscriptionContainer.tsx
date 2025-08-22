@@ -1040,6 +1040,7 @@ const SubscriptionContainerInner = ({
     const vatNumber = useVatNumber({
         selectedPlanName,
         taxCountry,
+        onVatUpdated: () => check(),
     });
 
     const backStep = BACK[model.step];

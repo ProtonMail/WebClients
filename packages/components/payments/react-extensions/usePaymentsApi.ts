@@ -41,7 +41,7 @@ const checkSubscriptionQuery = (
     version: PaymentsVersion,
     hasZipCodeValidation: boolean
 ) => {
-    let normalizedData: CheckSubscriptionData = {
+    const normalizedData: CheckSubscriptionData = {
         ...data,
     };
 
@@ -347,7 +347,6 @@ export const usePaymentsApi = (
 
         const getFullBillingAddress = async (): Promise<FullBillingAddress> => {
             const response = await api<FullBillingAddressResponse>(queryFullBillingAddress());
-
             return formatFullBillingAddress(response);
         };
 
