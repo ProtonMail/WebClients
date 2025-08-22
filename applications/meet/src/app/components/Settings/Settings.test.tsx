@@ -65,7 +65,7 @@ describe('Settings', () => {
             </Wrapper>
         );
 
-        expect(screen.getByText('Hide participant videos')).toBeInTheDocument();
+        expect(screen.getByText('Stop incoming video')).toBeInTheDocument();
     });
 
     it('should allow for toggling the disable videos', async () => {
@@ -79,8 +79,8 @@ describe('Settings', () => {
 
         const user = userEvent.setup();
 
-        const hideParticipantVideosCheckbox = screen.getByRole('checkbox', { name: 'Hide participant videos' });
-        await user.click(hideParticipantVideosCheckbox);
+        const stopIncomingVideoCheckbox = screen.getByRole('checkbox', { name: 'Stop incoming video' });
+        await user.click(stopIncomingVideoCheckbox);
 
         expect(setDisableVideos).toHaveBeenCalledWith(!mockContextValues.disableVideos);
     });
