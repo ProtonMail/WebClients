@@ -199,7 +199,7 @@ export const RowVideoConference = ({ model, setModel, isCreateEvent, hasZoomErro
             )}
             {isProtonMeetEnabled &&
                 (isProtonMeetMeeting || activeProvider === VIDEO_CONFERENCE_PROVIDER.PROTON_MEET) && (
-                    <ProtonMeetRow model={model} setModel={setModel} {...protonMeetIntegration} />
+                    <ProtonMeetRow model={model} {...protonMeetIntegration} />
                 )}
             {(isZoomMeeting || activeProvider === VIDEO_CONFERENCE_PROVIDER.ZOOM || hasZoomError) && (
                 <Spotlight
