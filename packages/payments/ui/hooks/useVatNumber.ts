@@ -17,6 +17,7 @@ interface VatNumberHookProps {
     isAuthenticated?: boolean;
     paymentsApi?: PaymentsApi;
     taxCountry: TaxCountryHook;
+    onVatUpdated?: () => unknown | Promise<unknown>;
 }
 
 export type VatNumberHook = ReturnType<typeof useVatNumber>;
@@ -65,6 +66,7 @@ export const useVatNumber = ({
     isAuthenticated: isAuthenticatedProp,
     paymentsApi: paymentsApiProp,
     taxCountry,
+    onVatUpdated,
 }: VatNumberHookProps) => {
     const store = useStore();
     const isAuthenticated = isAuthenticatedProp ?? !!selectUser(store.getState())?.value;
@@ -80,21 +82,21 @@ export const useVatNumber = ({
     const enableVatNumber = enableVatNumberPreference ?? planSuggestsVatNumber;
     const [vatNumber, setVatNumber] = useState('');
 
+    const fetchVatNumber = async () => {
+        const result = await paymentsApi.getFullBillingAddress();
+        const vatId = result.VatId;
+        setVatNumber(vatId ?? '');
+        setLoaded(true);
+
+        return vatId;
+    };
+
     useEffect(() => {
         if (!isAuthenticated || !enableVatNumber || vatNumber || loaded) {
             return;
         }
 
-        async function run() {
-            const result = await paymentsApi.getFullBillingAddress();
-            if (result.VatId) {
-                setVatNumber(result.VatId);
-            }
-
-            setLoaded(true);
-        }
-
-        withLoading(run()).catch(noop);
+        withLoading(fetchVatNumber()).catch(noop);
     }, [isAuthenticated, enableVatNumber]);
 
     const handleVatNumberChange = (value: string) => {
@@ -113,6 +115,14 @@ export const useVatNumber = ({
         [taxCountry.selectedCountryCode, isB2BPlan]
     );
 
+    const vatUpdated = async () => {
+        const vatNumber = await fetchVatNumber();
+        onChange?.(vatNumber ?? '');
+        if (isAuthenticated) {
+            await onVatUpdated?.();
+        }
+    };
+
     return {
         loading,
         vatNumber,
@@ -122,5 +132,8 @@ export const useVatNumber = ({
             setEnableVatNumberPreference(value);
         },
         renderVatNumberInput: isB2BPlan && countriesWithVatId.has(taxCountry.selectedCountryCode),
+        vatUpdated,
+        paymentsApi,
+        isAuthenticated,
     };
 };
