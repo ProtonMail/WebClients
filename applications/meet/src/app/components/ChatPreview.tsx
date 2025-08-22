@@ -6,7 +6,6 @@ import { CloseButton } from '../atoms/CloseButton/CloseButton';
 import { useMeetContext } from '../contexts/MeetContext';
 import { useUIStateContext } from '../contexts/UIStateContext';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
-import type { MeetChatMessage } from '../types';
 import { MeetingSideBars } from '../types';
 import { getParticipantDisplayColors } from '../utils/getParticipantDisplayColors';
 import { ChatItem } from './ChatItem/ChatItem';
@@ -16,7 +15,7 @@ const CHAT_MESSAGE_TIMEOUT = 8000;
 export const ChatPreview = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const { chatMessages, setChatMessages, sortedParticipants } = useMeetContext();
+    const { chatMessages, sortedParticipants } = useMeetContext();
 
     const { sideBarState } = useUIStateContext();
 
@@ -27,15 +26,6 @@ export const ChatPreview = () => {
     }, [chatMessages]);
 
     const isLargerThanMd = useIsLargerThanMd();
-
-    const toggleChatPreview = () => {
-        setChatMessages(
-            chatMessages.map((item) => ({
-                ...item,
-                seen: (item as MeetChatMessage).id === latestChatMessage?.id ? true : item.seen,
-            }))
-        );
-    };
 
     const shouldNotDisplayLastMessage = !isOpen || sideBarState[MeetingSideBars.Chat] || !latestChatMessage;
 
@@ -80,7 +70,7 @@ export const ChatPreview = () => {
                 shouldGrow={true}
             />
 
-            <CloseButton onClose={toggleChatPreview} className="ml-auto" />
+            <CloseButton onClose={() => setIsOpen(false)} className="ml-auto" />
         </div>
     );
 };
