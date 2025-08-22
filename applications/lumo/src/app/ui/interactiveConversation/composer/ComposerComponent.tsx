@@ -17,6 +17,7 @@ import { useTierErrors } from '../../../hooks/useTierErrors';
 import useTipTapEditor from '../../../hooks/useTipTapEditor';
 import { useDragArea } from '../../../providers/DragAreaProvider';
 import { useGhostChat } from '../../../providers/GhostChatProvider';
+import { useLumoPlan } from '../../../providers/LumoPlanProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectProvisionalAttachments } from '../../../redux/selectors';
 import { deleteAttachment } from '../../../redux/slices/core/attachments';
@@ -32,6 +33,7 @@ import {
 import { ContextProgressIndicator, ContextSizeWarning } from '../../components/Context';
 import { AttachmentArea, FileCard, FileContentModal } from '../../components/Files';
 import GuestDisclaimer from '../../components/GuestDisclaimer';
+import LumoPlusToggle from './LumoPlusToggle';
 import { UploadMenu } from './UploadMenu';
 
 import './ComposerComponent.scss';
@@ -117,6 +119,7 @@ export const ComposerComponent = ({
     const [showUploadMenu, setShowUploadMenu] = useState(false);
     const { isGhostChatMode } = useGhostChat();
     const { createNotification } = useNotifications();
+    const { canShowLumoUpsellFree } = useLumoPlan();
     // Get all relevant attachments for context calculations
     const allRelevantAttachments = useAllRelevantAttachments(messageChain, provisionalAttachments);
 
@@ -271,6 +274,8 @@ export const ComposerComponent = ({
         >{c('collider_2025: Characteristic Title').t`Enter`}</kbd>
     );
 
+    const canShowLumoUpsellToggle = isGuest || canShowLumoUpsellFree;
+
     return (
         <>
             <div className="w-full" ref={inputContainerRef}>
@@ -389,7 +394,8 @@ export const ComposerComponent = ({
                                         size="small"
                                     >
                                         <IcPaperClip size={6}></IcPaperClip>
-                                        <span className="text-sm mt-0.5">{c('collider_2025: Button').t`Upload`}</span>
+                                        <span className="hidden sm:block text-sm mt-0.5">{c('collider_2025: Button')
+                                            .t`Upload`}</span>
                                     </Button>
                                     <UploadMenu
                                         isOpen={showUploadMenu}
@@ -412,7 +418,7 @@ export const ComposerComponent = ({
                                         size="small"
                                     >
                                         <IcGlobe size={6}></IcGlobe>
-                                        <span className="text-sm mt-0.5">{c('collider_2025: Button')
+                                        <span className=" hidden sm:block text-sm mt-0.5">{c('collider_2025: Button')
                                             .t`Web search`}</span>
                                     </Button>
                                 )}
@@ -432,11 +438,19 @@ export const ComposerComponent = ({
                                         <IcMicrophone size={6}></IcMicrophone>
                                     </Button>
                                 </div>
-                                <div className="hidden sm:flex flex-row flex-nowrap gap-2 color-hint prompt-entry-hint">
-                                    <Icon name="arrow-left-and-down" />
-                                    <span className="text-xs">{c('collider_2025: Info')
-                                        .jt`Press ${enterBoldText} to ask`}</span>
-                                </div>
+                                {/* <div className="hidden sm:flex flex-row flex-nowrap gap-2 color-hint prompt-entry-hint"> */}
+                                {canShowLumoUpsellToggle ? (
+                                    <div className="flex flex-row">
+                                        <LumoPlusToggle />
+                                    </div>
+                                ) : (
+                                    <div className="hidden sm:flex flex-row flex-nowrap gap-2 color-hint prompt-entry-hint">
+                                        <Icon name="arrow-left-and-down" />
+                                        <span className="text-xs">{c('collider_2025: Info')
+                                            .jt`Press ${enterBoldText} to ask`}</span>
+                                    </div>
+                                )}
+                                {/* </div> */}
                             </div>
                         </div>
                     </div>
