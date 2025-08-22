@@ -10,12 +10,14 @@ import { srpGetVerify } from '@proton/shared/lib/srp';
 import { computeKeyPassword as computeBcryptHash, generateKeySalt as generateBcryptSalt } from '@proton/srp';
 import getRandomString from '@proton/utils/getRandomString';
 
+export const PASSWORD_SEPARATOR = '_';
+
 export const getCombinedPassword = (urlPassword: string, customPassword: string) => {
     if (!customPassword) {
         return urlPassword;
     }
 
-    return `${urlPassword}_${customPassword}`;
+    return `${urlPassword}${PASSWORD_SEPARATOR}${customPassword}`;
 };
 
 export const deriveEncryptionKeyFromSessionKey = async (sessionKey: Uint8Array) => {
