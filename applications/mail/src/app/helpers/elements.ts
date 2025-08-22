@@ -40,6 +40,20 @@ export interface TypeParams {
     location: Location;
 }
 
+interface ContextIdentifier {
+    labelID: string;
+    conversationMode: boolean;
+    filter?: Filter;
+    sort?: Sort;
+    from?: string;
+    to?: string;
+    address?: string;
+    begin?: number;
+    end?: number;
+    keyword?: string;
+    newsletterSubscriptionID?: string;
+}
+
 export const getCurrentType = ({ labelID, mailSettings, location }: TypeParams) =>
     isConversationMode(labelID, mailSettings, location) ? ELEMENT_TYPES.CONVERSATION : ELEMENT_TYPES.MESSAGE;
 
@@ -363,19 +377,7 @@ export const filterElementsInState = ({
     });
 };
 
-export const getElementContextIdentifier = (contextFilter: {
-    labelID: string;
-    conversationMode: boolean;
-    filter?: Filter;
-    sort?: Sort;
-    from?: string;
-    to?: string;
-    address?: string;
-    begin?: number;
-    end?: number;
-    keyword?: string;
-    newsletterSubscriptionID?: string;
-}) => {
+export const getElementContextIdentifier = (contextFilter: ContextIdentifier) => {
     // For search queries, exclude newsletterSubscriptionID from the context to avoid
     // creating separate contexts for the same search across different newsletter subscriptions
     const isSearchQuery =
@@ -391,6 +393,26 @@ export const getElementContextIdentifier = (contextFilter: {
         : contextFilter;
 
     return JSON.stringify(contextForIdentifier);
+};
+
+export const parseElementContextIdentifier = (contextIdentifier: string): ContextIdentifier | null => {
+    try {
+        return JSON.parse(contextIdentifier);
+    } catch (error) {
+        console.error('Error parsing context identifier', error);
+        return null;
+    }
+};
+
+export const getSearchParameters = (contextIdentifier: ContextIdentifier): SearchParameters => {
+    return {
+        address: contextIdentifier.address || '',
+        from: contextIdentifier.from || '',
+        to: contextIdentifier.to || '',
+        begin: contextIdentifier.begin || 0,
+        end: contextIdentifier.end || 0,
+        keyword: contextIdentifier.keyword || '',
+    };
 };
 
 export const isElementOutsideFolders = (element: Element, labels: Label[]): boolean => {
