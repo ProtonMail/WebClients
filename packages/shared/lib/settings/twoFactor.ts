@@ -1,5 +1,4 @@
 import { hasBit } from '../helpers/bitset';
-import { generateSharedSecret, getUri } from '../helpers/twofa';
 import type { UserSettings } from '../interfaces';
 import { SETTINGS_2FA_ENABLED } from '../interfaces';
 
@@ -25,8 +24,27 @@ export const getHasFIDO2SettingEnabled = (userSettings?: Pick<UserSettings, '2FA
     return getHasFIDO2Enabled(userSettings?.['2FA'].Enabled);
 };
 
-export const getTOTPData = (identifier: string) => {
-    const sharedSecret = generateSharedSecret();
+interface GetUriArguments {
+    identifier: string;
+    sharedSecret: string;
+    issuer?: string;
+    digits?: number;
+    algorithm?: string;
+    period?: number;
+}
+
+export const getUri = ({
+    identifier,
+    sharedSecret,
+    issuer = 'ProtonMail',
+    digits = 6,
+    algorithm = 'SHA1',
+    period = 30,
+}: GetUriArguments) => {
+    return `otpauth://totp/${identifier}?secret=${sharedSecret}&issuer=${issuer}&algorithm=${algorithm}&digits=${digits}&period=${period}`;
+};
+
+export const getTOTPData = (identifier: string, sharedSecret: string) => {
     const period = TWO_FA_CONFIG.PERIOD;
     const digits = TWO_FA_CONFIG.DIGITS;
     const uri = getUri({
