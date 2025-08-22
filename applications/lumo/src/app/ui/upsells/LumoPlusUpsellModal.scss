@@ -6,7 +6,134 @@
 	&-gradient {
 		background: linear-gradient(27deg, var(--promotion-background-start) 0%, var(--background-norm) 100%);
 	}
+
+	// Hide the default modal backdrop when using special backdrop
+	&.modal-two--no-backdrop {
+		.modal-two-backdrop,
+		.modal-two-backdrop--in,
+		.modal-backdrop,
+		.backdrop {
+			display: none !important;
+		}
+		
+		// Also try to hide any backdrop by class or element
+		+ .modal-two-backdrop,
+		+ .modal-two-backdrop--in,
+		+ .modal-backdrop,
+		+ .backdrop,
+		+ [class*="backdrop"] {
+			display: none !important;
+		}
+	}
 }
+
+// Special rule for hiding dark backdrop overlay
+.modal-two--no-backdrop {
+	// Target only the dark overlay backdrop, not modal structure elements
+	~ .modal-two-backdrop.modal-two-backdrop--in {
+		display: none !important;
+	}
+}
+
+// Global rule to hide modal backdrop when special backdrop is active
+.modal-two--no-backdrop ~ .modal-two-backdrop,
+.modal-two--no-backdrop ~ .modal-two-backdrop--in {
+	display: none !important;
+}
+
+// Direct targeting of backdrop elements when lumo plus modal is open
+body:has(.modal-two--upsell-lumoplus.modal-two--no-backdrop) .modal-two-backdrop,
+body:has(.modal-two--upsell-lumoplus.modal-two--no-backdrop) .modal-two-backdrop--in {
+	display: none !important;
+}
+
+// Immediately hide any backdrop when lumo overlay is present
+.lumo-plus-backdrop-overlay ~ .modal-two-backdrop,
+.lumo-plus-backdrop-overlay ~ .modal-two-backdrop--in,
+body:has(.lumo-plus-backdrop-overlay) .modal-two-backdrop,
+body:has(.lumo-plus-backdrop-overlay) .modal-two-backdrop--in {
+	display: none !important;
+	opacity: 0 !important;
+	visibility: hidden !important;
+}
+
+// Fallback for browsers that don't support :has() - only hide the dark overlay backdrop
+.modal-two-backdrop.modal-two-backdrop--in.lumo-backdrop-hidden {
+	display: none !important;
+}
+
+// Prevent any modal backdrop from ever showing when our overlay exists
+.lumo-plus-backdrop-overlay {
+	// Immediately hide any backdrop that might appear
+	+ * .modal-two-backdrop,
+	+ * .modal-two-backdrop--in {
+		display: none !important;
+		opacity: 0 !important;
+		visibility: hidden !important;
+	}
+}
+
+// More aggressive backdrop prevention
+[class*="modal-two-backdrop"] {
+	&:has(~ .lumo-plus-backdrop-overlay),
+	body:has(.lumo-plus-backdrop-overlay) & {
+		display: none !important;
+		opacity: 0 !important;
+		visibility: hidden !important;
+	}
+}
+
+// Backdrop overlay animations - using transforms for smooth GPU acceleration
+.lumo-plus-backdrop-overlay {
+	// CSS variables for dynamic positioning
+	--start-x: 0%;
+	--start-y: 100%;
+	
+	&.lumo-backdrop-hidden {
+		opacity: 0;
+		transform:4 scale(0.1);
+		border-radius: 100%;
+	}
+	
+	&.lumo-backdrop-sweeping {
+		animation: liquidFlow 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+		will-change: transform, opacity, border-radius;
+	}
+	
+	&.lumo-backdrop-visible {
+		opacity: 0.9;
+	}
+}
+
+// Smooth liquid flow starting from bottom center
+@keyframes liquidFlow {
+	0% {
+		opacity: 0;
+		clip-path: circle(0% at 50% 100%);
+	}
+	100% {
+		opacity: 0.9;
+		clip-path: circle(150% at 50% 50%);
+	}
+}
+
+// Quick, confident modal entrance for payment flow
+.lumo-modal-animated {
+	animation: modalFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes modalFadeIn {
+	0% {
+		opacity: 0;
+		// transform: scale(0.95) translateY(10px);
+	}
+	100% {
+		opacity: 1;
+		// transform: scale(1) translateY(0);
+	}
+}
+
+
 
 .feature-table-layout {
 	display: grid;
@@ -21,4 +148,20 @@
 .feature-table-item:last-child {
 	border-end-start-radius: var(--border-radius-lg);
 	border-end-end-radius: var(--border-radius-lg);
+}
+
+// Modal animation for smooth entrance after backdrop
+.lumo-modal-animated {
+	animation: modalFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes modalFadeIn {
+	0% {
+		opacity: 0;
+		transform: scale(0.95) translateY(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1) translateY(0);
+	}
 }
