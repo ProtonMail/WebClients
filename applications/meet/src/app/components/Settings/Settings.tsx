@@ -31,13 +31,13 @@ export const Settings = () => {
             <div className="flex flex-column w-full gap-6 pr-4">
                 <div className="flex items-center justify-space-between gap-2 setting-container w-full flex-nowrap">
                     <span className="setting-label color-weak text-ellipsis">{c('meet_2025 Action')
-                        .t`Hide participant videos`}</span>
+                        .t`Stop incoming video`}</span>
                     <Toggle
                         id="disable-videos"
                         checked={disableVideos}
                         onChange={() => setDisableVideos(!disableVideos)}
                         className={clsx('settings-toggle', disableVideos ? '' : 'settings-toggle-inactive')}
-                        aria-label={c('meet_2025 Alt').t`Hide participant videos`}
+                        aria-label={c('meet_2025 Alt').t`Stop incoming video`}
                     />
                 </div>
             </div>
