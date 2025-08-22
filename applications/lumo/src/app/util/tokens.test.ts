@@ -194,6 +194,37 @@ describe('removeRefTokens', () => {
         const expected = 'Text with ';
         expect(removeRefTokens(input)).toBe(expected);
     });
+
+    // Tests for CJK brackets in removeRefTokens
+    it('should remove CJK bracket REF tokens', () => {
+        const input = 'Text 【REF】reference[/REF] more text';
+        const expected = 'Text  more text';
+        expect(removeRefTokens(input)).toBe(expected);
+    });
+
+    it('should remove mixed bracket REF tokens', () => {
+        const input = 'Text [REF】reference【/REF] more text';
+        const expected = 'Text  more text';
+        expect(removeRefTokens(input)).toBe(expected);
+    });
+
+    it('should remove dagger format tokens', () => {
+        const input = 'Text [42†ref] more text';
+        const expected = 'Text  more text';
+        expect(removeRefTokens(input)).toBe(expected);
+    });
+
+    it('should remove CJK dagger format tokens', () => {
+        const input = 'Text 【42†REF】 more text';
+        const expected = 'Text  more text';
+        expect(removeRefTokens(input)).toBe(expected);
+    });
+
+    it('should remove mixed formats', () => {
+        const input = 'Normal [REF]1[/REF] and dagger [2†ref] and CJK 【REF】3【/REF】 refs';
+        const expected = 'Normal  and dagger  and CJK  refs';
+        expect(removeRefTokens(input)).toBe(expected);
+    });
 });
 
 describe('convertRefTokensToSpans', () => {
@@ -316,5 +347,171 @@ describe('convertRefTokensToSpans', () => {
         const input = 'Test <SPECIAL_27>1,,2,,<SPECIAL_28> commas';
         const expected = 'Test [1](#ref-1) [2](#ref-2) commas';
         expect(convertRefTokensToSpans(input)).toBe(expected);
+    });
+
+    // Tests for CJK square bracket format 【REF]3[/REF]
+    describe('CJK square bracket formats', () => {
+        it('should handle CJK opening bracket 【REF]3[/REF]', () => {
+            const input = 'Text 【REF]3[/REF] more text';
+            const expected = 'Text [3](#ref-3) more text';
+            expect(convertRefTokensToSpans(input)).toBe(expected);
+        });
+
+        it('should handle CJK opening bracket with normal closing 【REF]3[/ref]', () => {
+            const input = 'Text 【REF]3[/ref] more text';
+            const expected = 'Text [3](#ref-3) more text';
+            expect(convertRefTokensToSpans(input)).toBe(expected);
+        });
+
+        it('should handle normal opening with CJK closing [REF]3【/REF]', () => {
+            const input = 'Text [REF]3【/REF] more text';
+            const expected = 'Text [3](#ref-3) more text';
+            expect(convertRefTokensToSpans(input)).toBe(expected);
+        });
+
+        it('should handle both CJK brackets 【REF]3【/REF]', () => {
+            const input = 'Text 【REF]3【/REF] more text';
+            const expected = 'Text [3](#ref-3) more text';
+            expect(convertRefTokensToSpans(input)).toBe(expected);
+        });
+
+        it('should handle case variations with CJK brackets 【ref]3[/REF]', () => {
+            const input = 'Text 【ref]3[/REF] more text';
+            const expected = 'Text [3](#ref-3) more text';
+            expect(convertRefTokensToSpans(input)).toBe(expected);
+        });
+
+        it('should handle case variations with CJK brackets [REF]3【/ref]', () => {
+            const input = 'Text [REF]3【/ref] more text';
+            const expected = 'Text [3](#ref-3) more text';
+            expect(convertRefTokensToSpans(input)).toBe(expected);
+        });
+
+        it('should handle all CJK case combinations 【ref]3【/ref]', () => {
+            const input = 'Text 【ref]3【/ref] more text';
+            const expected = 'Text [3](#ref-3) more text';
+            expect(convertRefTokensToSpans(input)).toBe(expected);
+        });
+
+        it('should handle multiple numbers with CJK brackets 【REF]1,2,3[/REF]', () => {
+            const input = 'Text 【REF]1,2,3[/REF] more text';
+            const expected = 'Text [1](#ref-1) [2](#ref-2) [3](#ref-3) more text';
+            expect(convertRefTokensToSpans(input)).toBe(expected);
+        });
+
+        it('should handle multiple CJK bracket tags', () => {
+            const input = 'Start 【REF]1[/REF] middle [REF]2【/REF] end 【REF]3【/REF] text';
+            const expected = 'Start [1](#ref-1) middle [2](#ref-2) end [3](#ref-3) text';
+            expect(convertRefTokensToSpans(input)).toBe(expected);
+        });
+
+        it('should handle incomplete CJK bracket tags', () => {
+            const inputs = ['Text 【REF]1,2', 'Text 【REF', 'Text 【REF]', 'Text 【REF]1【/RE', 'Text [REF]1【/REF'];
+            const expected = 'Text ';
+            inputs.forEach((input) => {
+                expect(convertRefTokensToSpans(input)).toBe(expected);
+            });
+        });
+    });
+
+    // Tests for dagger format [4†ref] (no closing element)
+    describe('dagger format', () => {
+        it('should handle dagger format [4†ref]', () => {
+            const input = 'Text [4†ref] more text';
+            const expected = 'Text [4](#ref-4) more text';
+            expect(convertRefTokensToSpans(input)).toBe(expected);
+        });
+
+        it('should handle dagger format with CJK opening bracket 【4†ref]', () => {
+            const input = 'Text 【4†ref] more text';
+            const expected = 'Text [4](#ref-4) more text';
+            expect(convertRefTokensToSpans(input)).toBe(expected);
+        });
+
+        it('should handle dagger format case variations [4†REF]', () => {
+            const input = 'Text [4†REF] more text';
+            const expected = 'Text [4](#ref-4) more text';
+            expect(convertRefTokensToSpans(input)).toBe(expected);
+        });
+
+        it('should handle dagger format case variations [4†Ref]', () => {
+            const input = 'Text [4†Ref] more text';
+            const expected = 'Text [4](#ref-4) more text';
+            expect(convertRefTokensToSpans(input)).toBe(expected);
+        });
+
+        it('should handle dagger format with CJK bracket and case 【4†REF]', () => {
+            const input = 'Text 【4†REF] more text';
+            const expected = 'Text [4](#ref-4) more text';
+            expect(convertRefTokensToSpans(input)).toBe(expected);
+        });
+
+        it('should handle multiple dagger refs', () => {
+            const input = 'Start [1†ref] middle 【2†REF] end [3†Ref] text';
+            const expected = 'Start [1](#ref-1) middle [2](#ref-2) end [3](#ref-3) text';
+            expect(convertRefTokensToSpans(input)).toBe(expected);
+        });
+
+        it('should handle mixed dagger and normal refs', () => {
+            const input = 'Normal [REF]1[/REF] and dagger [2†ref] and CJK 【REF]3[/REF] refs';
+            const expected = 'Normal [1](#ref-1) and dagger [2](#ref-2) and CJK [3](#ref-3) refs';
+            expect(convertRefTokensToSpans(input)).toBe(expected);
+        });
+
+        it('should handle multiple numbers in dagger format (comma separated)', () => {
+            const input = 'Text [1,2,3†ref] more text';
+            const expected = 'Text [1](#ref-1) [2](#ref-2) [3](#ref-3) more text';
+            expect(convertRefTokensToSpans(input)).toBe(expected);
+        });
+
+        it('should handle dagger format with whitespace [4 †ref]', () => {
+            const input = 'Text [4 †ref] more text';
+            const expected = 'Text [4](#ref-4) more text';
+            expect(convertRefTokensToSpans(input)).toBe(expected);
+        });
+
+        it('should handle dagger format with whitespace in numbers [1, 2, 3†ref]', () => {
+            const input = 'Text [1, 2, 3†ref] more text';
+            const expected = 'Text [1](#ref-1) [2](#ref-2) [3](#ref-3) more text';
+            expect(convertRefTokensToSpans(input)).toBe(expected);
+        });
+
+        it('should handle dagger format with lines quoting [4†L2-L3]', () => {
+            const input = 'Text [4†L2-L3] more text';
+            const expected = 'Text [4](#ref-4) more text';
+            expect(convertRefTokensToSpans(input)).toBe(expected);
+        });
+
+        // Comprehensive test for all bracket/case combinations
+        it('should handle all combinations of brackets and cases', () => {
+            const openBrackets = ['[', '【'];
+            const closeBrackets = [']', '】'];
+            const refCases = ['REF', 'ref', 'Ref'];
+            const daggerCases = ['ref', 'REF', 'Ref', 'L2-L3'];
+
+            // Test standard REF format combinations
+            openBrackets.forEach((openBracket) => {
+                closeBrackets.forEach((closeBracket) => {
+                    refCases.forEach((refCase) => {
+                        refCases.forEach((closeRefCase) => {
+                            const input = `Text ${openBracket}${refCase}${closeBracket}42${openBracket}/${closeRefCase}${closeBracket} more text`;
+                            const expected = 'Text [42](#ref-42) more text';
+                            expect(convertRefTokensToSpans(input)).toBe(expected);
+                        });
+                    });
+                });
+            });
+
+            // Test dagger format combinations
+            openBrackets.forEach((openBracket) => {
+                closeBrackets.forEach((closeBracket) => {
+                    daggerCases.forEach((daggerCase) => {
+                        const input = `Text ${openBracket}42†${daggerCase}${closeBracket} more text`;
+                        const expected = 'Text [42](#ref-42) more text';
+                        expect(convertRefTokensToSpans(input)).toBe(expected);
+                    });
+                });
+            });
+        });
     });
 });
