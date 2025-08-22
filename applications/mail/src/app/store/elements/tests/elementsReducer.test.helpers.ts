@@ -21,18 +21,20 @@ export const customFolders = [
 ];
 
 export const setupConversation = ({
+    conversationID = CONVERSATION_ID,
     conversationLabels,
     numMessages,
     numUnread,
     numAttachments,
 }: {
+    conversationID?: string;
     conversationLabels: ConversationLabel[];
     numMessages: number;
     numUnread: number;
     numAttachments: number;
 }) => {
     return {
-        ID: CONVERSATION_ID,
+        ID: conversationID,
         NumMessages: numMessages,
         NumUnread: numUnread,
         NumAttachments: numAttachments,
