@@ -251,6 +251,7 @@ const AccountStepPayment = ({
         selectedPlanName: selectedPlan?.Name,
         onChange: onVatNumberChange,
         taxCountry,
+        onVatUpdated: () => handleOptimistic({}),
     });
 
     const process = (processor: PaymentProcessorHook | undefined) => {
