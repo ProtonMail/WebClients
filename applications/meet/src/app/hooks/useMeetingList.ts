@@ -7,8 +7,9 @@ import { useNotifications } from '@proton/components';
 import { type Meeting, useCreateMeeting, useGetMeetingDependencies } from '@proton/meet';
 import { MeetingType } from '@proton/meet/types/response-types';
 import { decryptMeetingName, decryptMeetingPassword } from '@proton/meet/utils/cryptoUtils';
+import { CacheType } from '@proton/redux-utilities';
 
-import { useMeetings } from '../store';
+import { useGetMeetings, useMeetings } from '../store';
 
 export const useMeetingList = (): [Meeting[] | null, Meeting | null] => {
     const [user] = useUser();
@@ -19,6 +20,8 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null] => {
     const notifications = useNotifications();
 
     const [activeMeetings] = useMeetings();
+
+    const getMeetings = useGetMeetings();
 
     const { createMeeting } = useCreateMeeting();
 
@@ -76,7 +79,11 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null] => {
     };
 
     const setupPersonalMeeting = async () => {
-        if (!meetings || meetings.find((meeting) => meeting.Type === MeetingType.PERSONAL)) {
+        if (
+            !meetings ||
+            meetings.find((meeting) => meeting.Type === MeetingType.PERSONAL) ||
+            (activeMeetings && activeMeetings.find((meeting) => meeting.Type === MeetingType.PERSONAL))
+        ) {
             return;
         }
 
@@ -91,6 +98,8 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null] => {
             setPersonalMeeting(decryptedPersonalMeeting);
 
             setMeetings((prev) => [...(prev ?? []), decryptedPersonalMeeting]);
+
+            void getMeetings({ cache: CacheType.None });
         } catch (error) {
             notifications.createNotification({
                 type: 'error',
