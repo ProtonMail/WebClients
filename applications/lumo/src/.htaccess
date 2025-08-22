@@ -40,6 +40,12 @@ ErrorDocument 404 /assets/404.html
   Header set Service-Worker "script"
 </Files>
 
+# The download service worker gets chunk hash appended to the end of the filename
+<Files ~ "^downloadSW">
+  Header set Service-Worker-Allowed "/"
+  Header set Service-Worker "script"
+</Files>
+
 <IfModule mod_deflate.c>
   AddOutputFilter INCLUDES;DEFLATE svg mjs
 </IfModule>
