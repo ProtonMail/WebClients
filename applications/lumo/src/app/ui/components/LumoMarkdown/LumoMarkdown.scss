@@ -1,0 +1,243 @@
+@import '~@proton/styles/scss/lib';
+
+.markdown-rendering {
+	font-size: 0.875rem;
+	line-height: 1.5;
+	
+	h1 {
+		font-size: 1.5rem;
+		font-weight: 700;
+		line-height: 1.3;
+		margin: 1.5rem 0 0.75rem 0;
+		
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+	
+	h2 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		line-height: 1.3;
+		margin: 1.25rem 0 0.625rem 0;
+		
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+	
+	h3 {
+		font-size: 1.125rem;
+		font-weight: 600;
+		line-height: 1.4;
+		margin: 1rem 0 0.5rem 0;
+	}
+	
+	h4 {
+		font-size: 1rem;
+		font-weight: 500;
+		line-height: 1.4;
+		margin: 0.875rem 0 0.375rem 0;
+	}
+	
+	p {
+		margin: 0 0 0.875rem 0;
+		line-height: 1.5;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+		
+		h1 + &, h2 + &, h3 + &, h4 + & {
+			margin-top: 0.5rem;
+		}
+	}
+	
+	hr {
+		border: none;
+		height: 1px;
+		background-color: var(--border-weak);
+		margin: 2rem auto;
+		width: 60%;
+		max-width: 200px;
+		opacity: 0.6;
+	}
+	
+	ul, ol {
+		margin: 0.75rem 0;
+		padding-left: 1.5rem;
+		
+		li {
+			margin: 0.125rem 0;
+			line-height: 1.5;
+			
+			&:first-child {
+				margin-top: 0;
+			}
+			
+			&:last-child {
+				margin-bottom: 0;
+			}
+			
+			ul, ol {
+				margin: 0.25rem 0;
+			}
+		}
+	}
+	
+	blockquote {
+		margin: 1.5rem 0;
+		padding: 1rem 1.5rem;
+		border-left: 4px solid var(--primary);
+		background-color: var(--background-weak);
+		font-style: italic;
+		
+		p {
+			margin: 0;
+		}
+	}
+	
+	table {
+		width: 100%;
+		min-width: 700px;
+		border-collapse: separate;
+		border-spacing: 0;
+		margin: 0;
+		background-color: var(--background-norm);
+		font-size: 0.875rem;
+		line-height: 1.5;
+		table-layout: fixed;
+		
+		@media (max-width: 768px) {
+			min-width: 600px;
+		}
+	}
+	
+	thead {
+		background-color: var(--background-weak);
+	}
+	
+	th {
+		padding: 1rem 1.25rem;
+		text-align: left;
+		font-weight: 600;
+		color: var(--text-norm);
+		border: 1px solid var(--border-weak);
+		border-bottom: 2px solid var(--border-norm);
+		white-space: normal;
+		min-width: 150px;
+		max-width: none;
+		position: relative;
+		
+		&:not(:first-child) {
+			border-left: none;
+		}
+	}
+	
+	td {
+		padding: 1rem 1.25rem;
+		border: 1px solid var(--border-weak);
+		color: var(--text-norm);
+		vertical-align: top;
+		min-width: 150px;
+		max-width: none;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		position: relative;
+		
+		&:not(:first-child) {
+			border-left: none;
+		}
+	}
+	
+	tbody tr {
+		&:hover {
+			background-color: var(--background-weak);
+		}
+		
+		&:not(:last-child) td {
+			border-bottom: 1px solid var(--border-weak);
+		}
+		
+		&:last-child td {
+			border-bottom: 1px solid var(--border-weak);
+		}
+	}
+	
+	tbody tr:nth-child(even) {
+		background-color: rgba(0, 0, 0, 0.015);
+		
+		&:hover {
+			background-color: var(--background-weak);
+		}
+	}
+	
+	@media (prefers-color-scheme: dark) {
+		table {
+			background-color: var(--background-norm);
+		}
+		
+		thead {
+			background-color: var(--background-strong);
+		}
+		
+		tbody tr:nth-child(even) {
+			background-color: rgba(255, 255, 255, 0.02);
+		}
+	}
+}
+
+.markdown-table-wrapper {
+	width: 100%;
+	overflow-x: auto;
+	margin: 1rem 0;
+	border-radius: 0.5rem;
+	border: 1px solid var(--border-weak);
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	
+	background: 
+		linear-gradient(90deg, var(--background-norm) 30%, rgba(255,255,255,0)),
+		linear-gradient(90deg, rgba(255,255,255,0), var(--background-norm) 70%) 0 100%,
+		radial-gradient(farthest-side at 0 50%, rgba(0,0,0,0.2), rgba(0,0,0,0)),
+		radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,0.2), rgba(0,0,0,0)) 0 100%;
+	background-repeat: no-repeat;
+	background-color: var(--background-norm);
+	background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+	background-attachment: local, local, scroll, scroll;
+}
+
+@media (max-width: 768px) {
+	.markdown-table-wrapper {
+		margin: 0.75rem -1rem;
+		border-radius: 0;
+		border-left: none;
+		border-right: none;
+	}
+	
+	.markdown-rendering {
+		table {
+			font-size: 0.8125rem;
+			min-width: 600px;
+		}
+		
+		th, td {
+			padding: 0.875rem 1rem;
+			min-width: 130px;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.markdown-rendering {
+		table {
+			min-width: 500px;
+			font-size: 0.8125rem;
+		}
+		
+		th, td {
+			padding: 0.75rem 0.875rem;
+			min-width: 120px;
+		}
+	}
+}

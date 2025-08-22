@@ -39,6 +39,15 @@
 	}
 }
 
+.lumo-gradient-text {
+	font-family: Syne, Inter, system-ui, sans-serif;
+	color: #8b7cf6; /* Fallback color */
+	background: linear-gradient(135deg, #FFAC2E 15.77%, #DD5DCC 38.40%, #1BA3FD 75.93%, #5325A2 99.84%);
+	background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
 .sidebar {
 	background-color: inherit;
 

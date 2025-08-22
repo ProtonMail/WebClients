@@ -5,6 +5,8 @@ import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import remarkGfm from 'remark-gfm';
 
+import './LumoMarkdown.scss';
+
 import { ButtonLike } from '@proton/atoms';
 import { Copy } from '@proton/components';
 
@@ -184,6 +186,13 @@ const LumoMarkdown = React.memo(
                 },
                 img() {
                     return null; // security
+                },
+                table(props: any) {
+                    return (
+                        <div className="markdown-table-wrapper">
+                            <table {...props} />
+                        </div>
+                    );
                 },
                 a(props: any) {
                     const { href, children } = props;

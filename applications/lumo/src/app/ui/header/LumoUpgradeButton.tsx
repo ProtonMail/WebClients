@@ -6,6 +6,7 @@ import { ButtonLike, InlineLinkButton } from '@proton/atoms';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import type { UPSELL_FEATURE } from '@proton/shared/lib/constants';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import lumoPlusLogo from '@proton/styles/assets/img/lumo/lumo-plus-logo.svg';
 
 import { LUMO_UPGRADE_TRIGGER_CLASS } from '../../constants';
 import useLumoPlusUpgradeWithTelemetry from '../../hooks/useLumoPlusUpgradeWithTelemetry';
@@ -26,7 +27,7 @@ type BasicButtonProps = BaseProps & {
 
 // Other buttons have optional customButtonProps
 type StandardButtonProps = BaseProps & {
-    buttonComponent: 'promotion-button' | 'inline-link-button' | 'settings-button';
+    buttonComponent: 'promotion-button' | 'promotion-button-simple' | 'inline-link-button' | 'settings-button';
     customButtonProps?: Record<string, any>;
 };
 
@@ -41,8 +42,6 @@ const LumoUpgradeButton = ({
     children,
 }: Props) => {
     const [user] = useUser();
-    // const [subscription] = useSubscription();
-    // const { APP_NAME } = useConfig();
 
     const { upsellRef, openModal, renderModal, modalProps } = useLumoPlusUpgradeWithTelemetry({
         feature,
@@ -52,13 +51,17 @@ const LumoUpgradeButton = ({
     // We want to have metrics from where the user has clicked on the upgrade button
     const displayUpgradeButton = user.isFree;
     const upgradeText = children || c('collider_2025: Link').t`Upgrade`;
-    const upgradeIcon = 'upgrade';
 
-    // // used to open the upgrade link in account settings if not using subscription modal
-    // const upgradePathname = useMemo(() =>
-    //     addUpsellPath(getUpgradePath({ user, subscription, app: APP_NAME }), upsellRef),
-    //     [user, subscription, APP_NAME, upsellRef]
-    // );
+    const GetLumoPlusContent = () => (
+        <span className="flex items-center gap-2">
+            <span className="text-bold" style={{ fontFamily: 'Syne, sans-serif' }}>Get</span>
+            <img
+                src={lumoPlusLogo}
+                alt="lumo+"
+                style={{ height: '12px' }}
+            />
+        </span>
+    );
 
     if (!displayUpgradeButton) {
         return null;
@@ -78,41 +81,38 @@ const LumoUpgradeButton = ({
                         {upgradeText}
                     </InlineLinkButton>
                 );
-            // case 'settings-button':
-            //     return (
-            //         <PromotionButton
-            //             as={SettingsLink}
-            //             {...buttonProps}
-            //             iconName={upgradeIcon}
-            //             iconSize={4}
-            //             size="medium"
-            //             path={upgradePathname}
-            //             responsive
-            //             className={`${LUMO_UPGRADE_TRIGGER_CLASS}`}
-            //         >
-            //             {upgradeText}
-            //         </PromotionButton>
-            //     );
+
             case 'basic-button':
                 return (
                     <ButtonLike size="medium" className={`${LUMO_UPGRADE_TRIGGER_CLASS}`} {...buttonProps}>
                         {upgradeText}
                     </ButtonLike>
                 );
-            case 'promotion-button':
-            default:
+            case 'promotion-button-simple':
                 return (
                     <PromotionButton
-                        className={`shrink-0 upsell-addon-button ${LUMO_UPGRADE_TRIGGER_CLASS}`}
+                        className={`shrink-0 upsell-addon-button button-promotion ${LUMO_UPGRADE_TRIGGER_CLASS}`}
                         buttonGradient={true}
                         as={ButtonLike}
-                        iconName={upgradeIcon}
-                        iconSize={4}
                         size="medium"
                         responsive
                         {...buttonProps}
                     >
                         {upgradeText}
+                    </PromotionButton>
+                );
+            case 'promotion-button':
+            default:
+                return (
+                    <PromotionButton
+                        className={`shrink-0 upsell-addon-button button-promotion ${LUMO_UPGRADE_TRIGGER_CLASS}`}
+                        buttonGradient={true}
+                        as={ButtonLike}
+                        size="medium"
+                        responsive
+                        {...buttonProps}
+                    >
+                        <GetLumoPlusContent />
                     </PromotionButton>
                 );
         }
@@ -121,7 +121,7 @@ const LumoUpgradeButton = ({
     return (
         <>
             {renderButton()}
-            {renderModal && <LumoPlusUpsellModal modalProps={modalProps} upsellRef={upsellRef} />}
+            {renderModal && <LumoPlusUpsellModal modalProps={modalProps} upsellRef={upsellRef} specialBackdrop />}
         </>
     );
 };
