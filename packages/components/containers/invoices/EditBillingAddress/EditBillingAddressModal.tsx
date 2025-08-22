@@ -10,18 +10,16 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalTwoPromiseHandlers } from '@proton/components/components/modalTwo/useModalTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
-import {
-    type FullBillingAddress,
-    type Invoice,
-    isCountryWithRequiredPostalCode,
-    isCountryWithStates,
-} from '@proton/payments';
+import type { PaymentsApi } from '@proton/payments';
+import { type FullBillingAddress, type Invoice, isCountryWithRequiredPostalCode } from '@proton/payments';
 import { CountryStateSelector } from '@proton/payments/ui';
+import { getEditVatNumberText, getVatNumberName } from '@proton/payments/ui';
 import { useDispatch } from '@proton/redux-shared-store';
 
 type EditExistingInvoiceProps = {
@@ -33,16 +31,24 @@ function isEditExistingInvoice(props: EditInvoiceProps): props is EditExistingIn
     return props.editExistingInvoice;
 }
 
-export type EditInvoiceProps =
+type EditInvoiceProps =
     | {
           editExistingInvoice: false;
       }
     | EditExistingInvoiceProps;
 
-type Props = ModalProps &
-    EditInvoiceProps & {
-        initialFullBillingAddress: FullBillingAddress;
-    };
+export type EditBillingAdressModalInputs = EditInvoiceProps & {
+    editVatOnly?: boolean;
+    as?: 'div';
+    paymentsApi?: PaymentsApi;
+    initialFullBillingAddress?: Partial<FullBillingAddress>;
+};
+
+export type EditBillingAddressModalFullInputs = EditBillingAdressModalInputs & {
+    initialFullBillingAddress: FullBillingAddress;
+};
+
+type Props = ModalProps & EditBillingAddressModalFullInputs & ModalTwoPromiseHandlers<void>;
 
 const zipCodeValidator = (countryCode: string, zipCode: string | null) => {
     if (isCountryWithRequiredPostalCode(countryCode) && !zipCode) {
@@ -56,10 +62,28 @@ const zipCodeValidator = (countryCode: string, zipCode: string | null) => {
     return '';
 };
 
-const EditBillingAddressModal = ({ initialFullBillingAddress, ...props }: Props) => {
+// function to avoid react warning due to passing the unknown props to the modal
+function getModalProps(props: Props): ModalProps {
+    const propsCopy: any = { ...props };
+
+    delete propsCopy.invoice;
+    delete propsCopy.editExistingInvoice;
+    delete propsCopy.editVatOnly;
+    delete propsCopy.as;
+    delete propsCopy.onReject;
+    delete propsCopy.onResolve;
+    delete propsCopy.initialFullBillingAddress;
+    delete propsCopy.paymentsApi;
+
+    return propsCopy;
+}
+
+const EditBillingAddressModal = (props: Props) => {
     const { createNotification } = useNotifications();
-    const [fullBillingAddress, setFullBillingAddress] = useState<FullBillingAddress>(initialFullBillingAddress);
-    const { paymentsApi } = usePaymentsApi();
+    const [fullBillingAddress, setFullBillingAddress] = useState<FullBillingAddress>(props.initialFullBillingAddress);
+    const { paymentsApi: defaultPaymentsApi } = usePaymentsApi();
+    const paymentsApi = props.paymentsApi ?? defaultPaymentsApi;
+
     const { validator, onFormSubmit } = useFormErrors();
     const dispatch = useDispatch();
 
@@ -75,75 +99,108 @@ const EditBillingAddressModal = ({ initialFullBillingAddress, ...props }: Props)
             );
         }
 
-        props.onClose?.();
+        props.onResolve?.();
         createNotification({ text: c('Success').t`Billing details updated` });
     };
 
-    const showCountryAndState = !props.editExistingInvoice;
-    const showPostalCode = !props.editExistingInvoice || !isCountryWithStates(fullBillingAddress.CountryCode);
+    // If user edits billing address of the existing invoice, then we can't let them change the parameters that
+    // affect taxes.
+    const hideFieldsThatAffectTaxes = props.editExistingInvoice;
+
+    const showCountryAndState = !hideFieldsThatAffectTaxes && !props.editVatOnly;
+
+    const showPostalCode =
+        (!hideFieldsThatAffectTaxes || !isCountryWithRequiredPostalCode(fullBillingAddress.CountryCode)) &&
+        !props.editVatOnly;
 
     return (
-        <ModalTwo as={Form} onSubmit={handleSubmit} {...props}>
-            <ModalTwoHeader title={c('Title').t`Edit billing address`} />
+        <ModalTwo as={props.as ?? Form} onSubmit={handleSubmit} onClose={props.onReject} {...getModalProps(props)}>
+            <ModalTwoHeader
+                title={
+                    props.editVatOnly
+                        ? getEditVatNumberText(props.initialFullBillingAddress.CountryCode)
+                        : c('Title').t`Edit billing address`
+                }
+            />
             <ModalTwoContent>
-                <p className="mb-4">
-                    {props.editExistingInvoice
-                        ? c('Edit billing address form note')
-                              .t`Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.`
-                        : c('Edit billing address form note')
-                              .t`Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.`}
-                </p>
+                {!props.editVatOnly && (
+                    <p className="mb-4">
+                        {props.editExistingInvoice
+                            ? c('Edit billing address form note')
+                                  .t`Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.`
+                            : c('Edit billing address form note')
+                                  .t`Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.`}
+                    </p>
+                )}
                 <form name="billing-address-form">
+                    {!props.editVatOnly && (
+                        <InputFieldTwo
+                            label={c('Label').t`Company`}
+                            placeholder={c('Placeholder').t`Company name`}
+                            autoFocus
+                            name="company"
+                            data-testid="billing-address-company"
+                            value={fullBillingAddress.Company ?? ''}
+                            onValue={(value: string) =>
+                                setFullBillingAddress((model) => ({ ...model, Company: value }))
+                            }
+                        />
+                    )}
                     <InputFieldTwo
-                        label={c('Label').t`Company`}
-                        placeholder={c('Placeholder').t`Company name`}
-                        autoFocus
-                        name="company"
-                        data-testid="billing-address-company"
-                        value={fullBillingAddress.Company ?? ''}
-                        onValue={(value: string) => setFullBillingAddress((model) => ({ ...model, Company: value }))}
-                    />
-                    <InputFieldTwo
-                        label={c('Label').t`VAT identification number`}
+                        label={getVatNumberName(props.initialFullBillingAddress.CountryCode)}
                         placeholder={c('Placeholder').t`VAT number`}
-                        autoFocus
+                        autoFocus={props.editVatOnly}
                         name="vat"
                         data-testid="billing-address-vat"
                         value={fullBillingAddress.VatId ?? ''}
                         onValue={(value: string) => setFullBillingAddress((model) => ({ ...model, VatId: value }))}
                     />
-                    <InputFieldTwo
-                        label={c('Label').t`First name`}
-                        placeholder={c('Placeholder').t`Thomas`}
-                        name="firstname"
-                        data-testid="billing-address-firstname"
-                        value={fullBillingAddress.FirstName ?? ''}
-                        onValue={(value: string) => setFullBillingAddress((model) => ({ ...model, FirstName: value }))}
-                    />
-                    <InputFieldTwo
-                        label={c('Label').t`Last name`}
-                        placeholder={c('Placeholder').t`Anderson`}
-                        name="lastname"
-                        data-testid="billing-address-lastname"
-                        value={fullBillingAddress.LastName ?? ''}
-                        onValue={(value: string) => setFullBillingAddress((model) => ({ ...model, LastName: value }))}
-                    />
-                    <InputFieldTwo
-                        label={c('Label').t`Street address`}
-                        placeholder={c('Placeholder').t`Main street 12`}
-                        name="address"
-                        data-testid="billing-address-address"
-                        value={fullBillingAddress.Address ?? ''}
-                        onValue={(value: string) => setFullBillingAddress((model) => ({ ...model, Address: value }))}
-                    />
-                    <InputFieldTwo
-                        label={c('Label').t`City`}
-                        placeholder={c('Placeholder').t`Anytown`}
-                        name="city"
-                        data-testid="billing-address-city"
-                        value={fullBillingAddress.City ?? ''}
-                        onValue={(value: string) => setFullBillingAddress((model) => ({ ...model, City: value }))}
-                    />
+                    {!props.editVatOnly && (
+                        <InputFieldTwo
+                            label={c('Label').t`First name`}
+                            placeholder={c('Placeholder').t`Thomas`}
+                            name="firstname"
+                            data-testid="billing-address-firstname"
+                            value={fullBillingAddress.FirstName ?? ''}
+                            onValue={(value: string) =>
+                                setFullBillingAddress((model) => ({ ...model, FirstName: value }))
+                            }
+                        />
+                    )}
+                    {!props.editVatOnly && (
+                        <InputFieldTwo
+                            label={c('Label').t`Last name`}
+                            placeholder={c('Placeholder').t`Anderson`}
+                            name="lastname"
+                            data-testid="billing-address-lastname"
+                            value={fullBillingAddress.LastName ?? ''}
+                            onValue={(value: string) =>
+                                setFullBillingAddress((model) => ({ ...model, LastName: value }))
+                            }
+                        />
+                    )}
+                    {!props.editVatOnly && (
+                        <InputFieldTwo
+                            label={c('Label').t`Street address`}
+                            placeholder={c('Placeholder').t`Main street 12`}
+                            name="address"
+                            data-testid="billing-address-address"
+                            value={fullBillingAddress.Address ?? ''}
+                            onValue={(value: string) =>
+                                setFullBillingAddress((model) => ({ ...model, Address: value }))
+                            }
+                        />
+                    )}
+                    {!props.editVatOnly && (
+                        <InputFieldTwo
+                            label={c('Label').t`City`}
+                            placeholder={c('Placeholder').t`Anytown`}
+                            name="city"
+                            data-testid="billing-address-city"
+                            value={fullBillingAddress.City ?? ''}
+                            onValue={(value: string) => setFullBillingAddress((model) => ({ ...model, City: value }))}
+                        />
+                    )}
                     {showPostalCode && (
                         <InputFieldTwo
                             label={
@@ -187,7 +244,7 @@ const EditBillingAddressModal = ({ initialFullBillingAddress, ...props }: Props)
             </ModalTwoContent>
 
             <ModalTwoFooter>
-                <Button onClick={props.onClose}>{c('Action').t`Cancel`}</Button>
+                <Button onClick={props.onReject}>{c('Action').t`Cancel`}</Button>
                 <Button
                     color="norm"
                     type="submit"
