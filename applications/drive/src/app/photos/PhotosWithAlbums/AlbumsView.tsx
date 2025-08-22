@@ -223,7 +223,7 @@ export const AlbumsView: FC = () => {
                         navigateToAlbum(shareId, linkId);
                     }}
                     onItemShare={(linkId) => {
-                        modals.linkSharing?.({ volumeId, shareId, linkId });
+                        modals.linkSharing?.({ volumeId, shareId, linkId, isAlbum: true });
                     }}
                     onItemRename={(linkId) => {
                         setRenameAlbumLinkId(linkId);

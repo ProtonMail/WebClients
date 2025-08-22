@@ -40,6 +40,8 @@ export type SharingModalProps = {
      * The reason behind this workaround is stale cache issues. See MR for more details.
      */
     registerOverriddenNameListener?: (listener: (name: string) => void) => void;
+    // Not used here but it's to match new sdk modal type
+    isAlbum?: boolean;
 };
 
 export function SharingModalDeprecated(props: SharingModalProps & ModalStateProps) {
@@ -55,7 +57,8 @@ function SharingModalInner({
     shareMemberList,
     onPublicLinkToggle,
     registerOverriddenNameListener,
-    ...modalProps
+    onExit,
+    open,
 }: SharingModalProps & ModalStateProps & { shareMemberList: ReturnType<typeof useShareMemberView> }) {
     const {
         customPassword,
@@ -322,7 +325,8 @@ function SharingModalInner({
                 disableCloseOnEscape={isSaving || isDeleting}
                 size="large"
                 fullscreenOnMobile
-                {...modalProps}
+                onExit={onExit}
+                open={open}
             >
                 {renderModalState()}
             </ModalTwo>

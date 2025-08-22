@@ -16,8 +16,8 @@ export const useSharingModal = () => {
     const [linkSharingModal, showLinkSharingModal] = useModalTwoStatic(SharingModal);
 
     const handleShowLinkSharingModal = ({ onShareChange, ...rest }: SharingModalInnerProps) => {
-        const shareChangeCallback = (item: { uid: string; isShared: boolean }) => {
-            getActionEventManager().emit({ type: ActionEventName.SHARE_CHANGED_NODES, items: [item] });
+        const shareChangeCallback = async (item: { uid: string; isShared: boolean }) => {
+            await getActionEventManager().emit({ type: ActionEventName.SHARE_CHANGED_NODES, items: [item] });
             onShareChange?.(item);
         };
         void showLinkSharingModal({ onShareChange: shareChangeCallback, ...rest });
