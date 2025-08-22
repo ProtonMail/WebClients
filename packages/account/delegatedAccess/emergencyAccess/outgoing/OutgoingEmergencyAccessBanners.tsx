@@ -18,13 +18,18 @@ import { useOutgoingController } from './OutgoingController';
 const subscriptionDaysLeftBeforeWarning = 7;
 
 const OutgoingSubscriptionExpiredBanner = () => {
-    const { notify } = useOutgoingController();
+    const {
+        notify,
+        meta: { hasUpsell },
+    } = useOutgoingController();
     const [previousSubscription] = usePreviousSubscription();
     if (!previousSubscription) {
         return null;
     }
 
     const showSubscriptionExpired =
+        /* Checking hasUpsell true for the case when a user downgrades their subscription but they still have emergency access through pass lifetime */
+        hasUpsell &&
         previousSubscription &&
         previousSubscription.hasHadSubscription &&
         isBetween(previousSubscription.previousSubscriptionEndTime * SECOND, 1, Date.now());
