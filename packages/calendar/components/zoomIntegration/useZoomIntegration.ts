@@ -140,7 +140,11 @@ export const useZoomIntegration = ({
 
         if (shouldReconnectToZoom(derivedProcessState)) {
             handleReconnect(true);
-        } else if (model.conferenceUrl && model.isConferenceTmpDeleted) {
+        } else if (
+            model.conferenceUrl &&
+            model.isConferenceTmpDeleted &&
+            model.conferenceProvider === VIDEO_CONFERENCE_PROVIDER.ZOOM
+        ) {
             setActiveProvider(VIDEO_CONFERENCE_PROVIDER.ZOOM);
             setModel({
                 ...model,

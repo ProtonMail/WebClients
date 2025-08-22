@@ -95,7 +95,6 @@ describe('ProtonMeetRow', () => {
 
     const WrappedProtonMeetRow = ({
         model,
-        setModel,
         isActive,
     }: {
         model: EventModel;
@@ -109,7 +108,7 @@ describe('ProtonMeetRow', () => {
             setActiveProvider: jest.fn(),
         });
 
-        return <ProtonMeetRow model={model} setModel={setModel} {...protonMeetIntegration} />;
+        return <ProtonMeetRow model={model} {...protonMeetIntegration} />;
     };
 
     const renderProtonMeetRow = (params?: {

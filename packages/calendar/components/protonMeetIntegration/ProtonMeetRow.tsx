@@ -24,12 +24,10 @@ const getIcon = (state?: IntegrationState) => {
 
 interface ProtonMeetRowProps {
     model: EventModel;
-    setModel: (value: EventModel) => void;
     processState?: IntegrationState;
-    resetProcessState: () => void;
     handlePassphraseSave: (passphrase: string) => Promise<void>;
     createVideoConferenceMeeting: () => Promise<void>;
-    deleteProtonMeet: (meetingId: string) => Promise<true | undefined>;
+    deleteProtonMeet: () => void;
     meetingObject: Meeting | null;
     meetingDetails: {
         id: string;
@@ -40,14 +38,11 @@ interface ProtonMeetRowProps {
 
 export const ProtonMeetRow = ({
     model,
-    setModel,
     processState,
-    resetProcessState,
     handlePassphraseSave,
     createVideoConferenceMeeting,
-    deleteProtonMeet,
-    meetingObject,
     meetingDetails,
+    deleteProtonMeet,
 }: ProtonMeetRowProps) => {
     if (processState === 'meeting-present') {
         return (
@@ -55,20 +50,7 @@ export const ProtonMeetRow = ({
                 passphrase={meetingDetails.passphrase}
                 model={model}
                 savePassphrase={handlePassphraseSave}
-                deleteMeeting={() => {
-                    setModel({
-                        ...model,
-                        conferenceId: '',
-                        conferenceUrl: '',
-                        conferenceHost: '',
-                        conferenceProvider: undefined,
-                        isConferenceTmpDeleted: true,
-                    });
-
-                    void deleteProtonMeet(meetingObject?.ID as string);
-
-                    resetProcessState();
-                }}
+                deleteMeeting={deleteProtonMeet}
             />
         );
     }

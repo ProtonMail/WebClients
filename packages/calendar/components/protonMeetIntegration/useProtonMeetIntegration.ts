@@ -53,7 +53,7 @@ export const useProtonMeetIntegration = ({
         passphrase: '',
     });
 
-    const { createProtonMeet, deleteProtonMeet, getProtonMeetByLinkName, saveProtonMeetPassword } = useProtonMeet();
+    const { createProtonMeet, getProtonMeetByLinkName, saveProtonMeetPassword } = useProtonMeet();
 
     const getMeetingDependencies = useGetMeetingDependencies();
 
@@ -65,6 +65,21 @@ export const useProtonMeetIntegration = ({
         }
 
         setActiveProvider(VIDEO_CONFERENCE_PROVIDER.PROTON_MEET);
+
+        if (
+            model.isConferenceTmpDeleted &&
+            model.conferenceUrl &&
+            model.conferenceProvider === VIDEO_CONFERENCE_PROVIDER.PROTON_MEET
+        ) {
+            setModel({
+                ...model,
+                isConferenceTmpDeleted: false,
+            });
+
+            setProcessState('meeting-present');
+
+            return;
+        }
 
         setProcessState('loading');
 
@@ -135,10 +150,6 @@ export const useProtonMeetIntegration = ({
         setMeetingObject(updatedMeeting);
     };
 
-    const resetProcessState = () => {
-        setProcessState(undefined);
-    };
-
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
 
@@ -201,10 +212,14 @@ export const useProtonMeetIntegration = ({
         meetingObject,
         meetingDetails,
         createVideoConferenceMeeting,
-        deleteProtonMeet: (id: string) => {
+        deleteProtonMeet: () => {
             setActiveProvider(null);
-            return deleteProtonMeet(id);
+            setModel({
+                ...model,
+                isConferenceTmpDeleted: true,
+            });
+
+            setProcessState(undefined);
         },
-        resetProcessState,
     };
 };
