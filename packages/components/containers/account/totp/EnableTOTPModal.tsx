@@ -1,5 +1,5 @@
 import type { FormEvent, ReactNode } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -21,11 +21,12 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { TOTP_WRONG_ERROR, setupTotp } from '@proton/shared/lib/api/settings';
+import { TOTP_WRONG_ERROR, getSetupTotpSecret, setupTotp } from '@proton/shared/lib/api/settings';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { APPS, BRAND_NAME, TWO_FA_RECOVERY_CODES_FILE_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -48,6 +49,10 @@ interface SetupTOTPResponse {
     UserSettings: UserSettings;
 }
 
+interface SetupTOTPSecretResponse {
+    Secret: string;
+}
+
 const STEPS = {
     INFO: 1,
     SCAN_CODE: 2,
@@ -61,9 +66,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
     const api = useApi();
     const dispatch = useDispatch();
     const { createNotification } = useNotifications();
-    const [{ sharedSecret, uri = '', period, digits }] = useState(() => {
-        return getTOTPData(user.Email || user.Name);
-    });
+    const [state, setState] = useState<ReturnType<typeof getTOTPData> | null>(null);
     const [step, setStep] = useState(STEPS.INFO);
     const [manualCode, setManualCode] = useState(false);
     const [recoveryCodes, setRecoveryCodes] = useState<string[]>([]);
@@ -73,8 +76,23 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
     const { validator, onFormSubmit } = useFormErrors();
 
     const handleClose = loading ? noop : onClose;
+    const handleError = useErrorHandler();
 
     const [authed, setAuthed] = useState(false);
+
+    useEffect(() => {
+        const run = async () => {
+            const { Secret: secret } = await api<SetupTOTPSecretResponse>(getSetupTotpSecret());
+            if (!secret) {
+                throw new Error('Failed to get secret from server');
+            }
+            setState(getTOTPData(user.Email || user.Name, secret));
+        };
+        run().catch((e) => {
+            handleError(e);
+            onClose?.();
+        });
+    }, []);
 
     if (!authed) {
         return (
@@ -97,11 +115,13 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
         submitButtonText,
         onSubmit,
     } = ((): ModalProperties => {
-        if (!sharedSecret) {
+        if (!state) {
             return {
                 section: <Loader />,
             };
         }
+
+        const { uri, sharedSecret, period, digits } = state;
 
         if (step === STEPS.INFO) {
             const twoFactorAuthLink =
@@ -238,7 +258,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
         if (step === STEPS.CONFIRM_CODE) {
             const handleSubmit = async () => {
                 try {
-                    const result = await api<SetupTOTPResponse>(setupTotp(sharedSecret, confirmationCode));
+                    const result = await api<SetupTOTPResponse>(setupTotp(confirmationCode));
                     dispatch(userSettingsActions.update({ UserSettings: result.UserSettings }));
                     createNotification({ text: c('Info').t`Two-factor authentication enabled` });
                     setRecoveryCodes(result.TwoFactorRecoveryCodes);
