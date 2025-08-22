@@ -17,7 +17,7 @@ export { InputWithSelectorPrefix, type InputWithSelectorPrefixProps } from './co
 export { OfferPrice, type Props as OfferPriceProps } from './components/OfferPrice';
 export { PayButton } from './components/PayButton';
 export { TaxCountrySelector } from './components/TaxCountrySelector';
-export { VatNumberInput } from './components/VatNumberInput';
+export { getEditVatNumberText, getVatNumberName, VatNumberInput } from './components/VatNumberInput';
 export { default as EditCardModal } from './containers/EditCardModal';
 export {
     getPlanToCheck,

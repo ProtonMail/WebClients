@@ -1,5 +1,7 @@
 import { useMemo, useState } from 'react';
 
+import { c } from 'ttag';
+
 import Option from '@proton/components/components/option/Option';
 import type { SearcheableSelectProps } from '@proton/components/components/selectTwo/SearchableSelect';
 import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
@@ -53,6 +55,7 @@ export const CountriesDropdown = ({ onChange, selectedCountryCode, ...rest }: Pr
 
             return defaultFilterFunction(option, keyword);
         },
+        placeholder: c('Placeholder').t`Select country`,
         children: countries.map((countryItem) => {
             const { key, value, label, disabled } = countryItem;
 

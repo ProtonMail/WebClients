@@ -25,7 +25,6 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload, onEdit 
     const { paymentsApi } = usePaymentsApi();
     const [downloadLoading, withDownloadLoading] = useLoading();
     const [viewLoading, withViewLoading] = useLoading();
-    const [editLoading, withEditLoading] = useLoading();
     const redirectToAccountApp = useRedirectToAccountApp();
 
     const list = [
@@ -81,8 +80,7 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload, onEdit 
                 text: c('Action').t`Edit billing address`,
                 'data-testid': 'editBillingAddress',
                 key: 'editBillingAddress',
-                onClick: () => withEditLoading(onEdit(invoice)),
-                loading: editLoading,
+                onClick: () => onEdit(invoice),
             },
     ].filter(isTruthy);
 

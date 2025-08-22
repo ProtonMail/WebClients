@@ -1,50 +1,76 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
-import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
+import useLoading from '@proton/hooks/useLoading';
 import { type FullBillingAddress } from '@proton/payments';
 
-import InvoiceTextNewModal, { type EditInvoiceProps } from './EditBillingAddressModal';
+import type { EditBillingAddressModalFullInputs } from './EditBillingAddressModal';
+import InvoiceTextNewModal, { type EditBillingAdressModalInputs } from './EditBillingAddressModal';
+
+export class FetchBillingAddressError extends Error {
+    constructor(message: string) {
+        super(message);
+        this.name = 'FetchBillingAddressError';
+    }
+}
 
 export const useEditBillingAddressModal = () => {
-    const [modalProps, setModalOpen, renderModal] = useModalState();
-    const [initialFullBillingAddress, setInitialFullBillingAddress] = useState<FullBillingAddress>();
-    const [editExistingInvoiceProps, setEditExistingInvoiceProps] = useState<EditInvoiceProps>({
-        editExistingInvoice: false,
-    });
-    const { paymentsApi } = usePaymentsApi();
-    const { createNotification } = useNotifications();
+    const [editBillingAddressModal, showEditBillingAddressModal] =
+        useModalTwoPromise<EditBillingAddressModalFullInputs>(() => ({
+            editExistingInvoice: false,
+            initialFullBillingAddress: {} as FullBillingAddress,
+        }));
 
-    const openBillingAddressModal = async (props: EditInvoiceProps): Promise<void> => {
+    const { paymentsApi: defaultPaymentsApi } = usePaymentsApi();
+    const { createNotification } = useNotifications();
+    const [loading, withLoading] = useLoading();
+
+    const fetchBillingAddress = async (props: EditBillingAdressModalInputs) => {
         try {
-            let fullBillingAddress: FullBillingAddress;
+            const paymentsApi = props.paymentsApi ?? defaultPaymentsApi;
+
             if (props.editExistingInvoice) {
-                fullBillingAddress = await paymentsApi.getInvoiceBillingAddress(props.invoice.ID);
+                return await paymentsApi.getInvoiceBillingAddress(props.invoice.ID);
             } else {
-                fullBillingAddress = await paymentsApi.getFullBillingAddress();
+                return await paymentsApi.getFullBillingAddress();
             }
-            setInitialFullBillingAddress(fullBillingAddress);
-            setEditExistingInvoiceProps(props);
-            setModalOpen(true);
         } catch (error) {
             createNotification({
                 type: 'error',
                 text: c('Error').t`Editing billing address is not available at the moment. Please try again later.`,
             });
+            return Promise.reject(error);
         }
     };
 
-    const editBillingAddressModal =
-        renderModal && !!initialFullBillingAddress ? (
-            <InvoiceTextNewModal
-                initialFullBillingAddress={initialFullBillingAddress}
-                {...editExistingInvoiceProps}
-                {...modalProps}
-            />
-        ) : null;
+    const openBillingAddressModal = async (props: EditBillingAdressModalInputs): Promise<void> => {
+        let fullBillingAddressBackend: FullBillingAddress;
+        try {
+            const promise = fetchBillingAddress(props);
+            withLoading(promise);
+            fullBillingAddressBackend = await promise;
+        } catch (error) {
+            return Promise.reject(error);
+        }
 
-    return { editBillingAddressModal, openBillingAddressModal };
+        const initialFullBillingAddress = {
+            ...fullBillingAddressBackend,
+            ...props.initialFullBillingAddress,
+        };
+
+        return showEditBillingAddressModal({
+            ...props,
+            initialFullBillingAddress,
+        });
+    };
+
+    return {
+        editBillingAddressModal: editBillingAddressModal((props) => {
+            return <InvoiceTextNewModal {...props} />;
+        }),
+        openBillingAddressModal,
+        loading,
+    };
 };
