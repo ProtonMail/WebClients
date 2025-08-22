@@ -2,13 +2,331 @@
 
 .lumo-settings-modal {
 	block-size: 680px;
+
+	// Mobile adjustments
+	@media (max-width: 768px) {
+		block-size: auto;
+		min-height: 100vh;
+		max-height: 100vh;
+
+		// Make modal full screen on mobile
+		.modal-two-dialog {
+			height: 100vh;
+			max-height: 100vh;
+			border-radius: 0;
+		}
+
+		.modal-two-content {
+			height: 100%;
+			max-height: 100vh;
+		}
+
+		// Reset ul styles specifically for settings modal
+		.settings-modal-panel ul,
+		.mobile-settings-section ul {
+			margin-block-start: 0 !important;
+			padding-inline-start: 0 !important;
+			list-style: none !important;
+		}
+	}
 }
 
 .settings-modal-panel {
 	background-color: #f7f5ff;
 }
 
+.lumo-plus-settings-gradient {
+	background: linear-gradient(133deg, rgba(109, 74, 255, 0) 35%, rgba(109, 74, 255, 1) 500%);
+	color: #4B5563;
+
+	// Mobile adjustments for better proportions
+	@media (max-width: 768px) {
+		min-height: 200px;
+		border-radius: 0.75rem;
+	}
+
+	// Fix features list layout on all screen sizes
+	ul {
+		li {
+			display: flex !important;
+			align-items: center !important;
+			flex-wrap: nowrap;
+			flex-wrap: nowrap !important;
+			width: 100% !important;
+
+			.shrink-0 {
+				flex-shrink: 0 !important;
+				min-width: 14px !important;
+			}
+
+			span {
+				flex: 1 !important;
+				white-space: nowrap !important;
+				overflow: hidden !important;
+				text-overflow: ellipsis !important;
+			}
+		}
+	}
+
+	.color-norm {
+		color: #4B5563 !important;
+	}
+
+	.color-weak {
+		color: rgba(255, 255, 255, 0.8) !important;
+	}
+
+	.color-success {
+		color: rgba(255, 255, 255, 0.9) !important;
+	}
+
+	.bg-weak {
+		background-color: rgba(255, 255, 255, 0.15) !important;
+		backdrop-filter: blur(10px);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+
+		.color-weak {
+			color: rgba(255, 255, 255, 0.9) !important;
+		}
+	}
+
+	.bg-success-minor {
+		background-color: rgba(46, 125, 50, 0.2) !important;
+		border: 1px solid rgba(46, 125, 50, 0.3);
+
+		.color-success {
+			color: #4caf50 !important;
+		}
+	}
+}
+
 .plan-name {
 	background-color: var(--interaction-norm-minor-2);
 	color: var(--interaction-norm);
 }
+
+.user-settings-card {
+	transition: background-color 0.2s ease;
+	border: none !important;
+	text-decoration: none !important;
+
+	&:hover {
+		background-color: var(--background-weak) !important;
+		text-decoration: none !important;
+	}
+
+	.text-bold {
+		line-height: 1.2;
+	}
+
+	.color-weak {
+		line-height: 1.3;
+	}
+
+	.avatar {
+		background-color: white !important;
+		border: 1px solid var(--border-weak) !important;
+		color: var(--text-norm) !important;
+	}
+}
+
+// Settings modal layout adjustments
+.lumo-settings-modal {
+	// Target the actual scroll containers
+	.scroll-inner,
+	.scroll-inner--contained {
+		overflow: hidden !important; // Prevent scrolling on desktop
+
+		// Allow natural scrolling on mobile
+		@media (max-width: 768px) {
+			overflow: auto !important;
+		}
+	}
+
+	// Completely override all modal content padding/margins for flush borders
+	.modal-two-content {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	// Main container with proper padding
+	.modal-main-container {
+		padding: 1rem;
+		min-height: 60vh; // Ensure minimum height for the modal
+
+		// Mobile specific adjustments
+		@media (max-width: 768px) {
+			padding: 1.5rem;
+			min-height: auto;
+		}
+	}
+
+	// Sidebar container with border that extends full height to edges
+	.sidebar-container {
+		border-right: 1px solid var(--border-norm);
+		padding-right: 2rem;
+		margin-right: 2rem;
+		// Ensure border extends to very top and bottom of modal
+		margin-top: -2rem;
+		margin-bottom: -2rem;
+		padding-top: 2.4rem;
+		padding-bottom: 1rem;
+		// Make sidebar match the height of its parent container on desktop only
+		@media (min-width: 769px) {
+			min-height: calc(60vh + 4rem);
+		}
+	}
+
+	// Close button positioning in top-right corner
+	.modal-close-button {
+		position: absolute;
+		top: 1.3rem;
+		right: 1rem;
+		z-index: 10;
+		color: var(--text-weak);
+	}
+
+	// Content container without extra padding
+	.content-container {
+		// No padding since we control it in the top bar and content areas
+	}
+
+	// Top bar with border that extends full width to edges
+	.top-bar {
+		margin-bottom: 1.5rem;
+		border-bottom: 1px solid var(--border-weak);
+		// Extend border to very edges
+		margin-left: -2rem;
+		margin-right: -2rem;
+		padding: .6rem 2rem 1.3rem;
+	}
+
+	// Mobile section styling
+	@media (max-width: 768px) {
+		.mobile-section-header {
+			border-bottom: 1px solid var(--border-weak);
+			padding-bottom: 0.75rem;
+			margin-bottom: 1rem;
+		}
+
+		.mobile-settings-section {
+			&:not(:last-child) {
+				border-bottom: 1px solid var(--border-weak);
+				padding-bottom: 2rem;
+				margin-bottom: 2rem;
+			}
+		}
+
+		// Hide Lumo cat image on mobile for the upgrade panel
+		.settings-modal-panel {
+			.flex.items-end.justify-end {
+				display: none;
+			}
+
+			// Adjust layout to single column
+			flex-direction: column;
+
+			// Make the content area full width
+			> div:first-child {
+				width: 100%;
+			}
+
+			// Mobile specific adjustments
+			padding: 1.5rem !important;
+			min-height: 200px;
+			display: flex !important;
+			flex-direction: column !important;
+
+						// Layout features vertically on mobile
+			ul {
+				display: flex !important;
+				flex-direction: column !important;
+				flex-wrap: nowrap;
+				gap: 0.5rem !important;
+				margin: 1rem 0 1.5rem 0 !important;
+				padding: 0 !important;
+				width: 100% !important;
+
+				li {
+					display: flex !important;
+					align-items: center !important;
+					gap: 0.5rem !important;
+					padding: 0 !important;
+					margin: 0 !important;
+					width: 100% !important;
+					min-height: 20px !important;
+
+					.shrink-0 {
+						width: 14px !important;
+						height: 14px !important;
+						flex-shrink: 0 !important;
+						min-width: 14px !important;
+					}
+
+					span {
+						font-size: 0.875rem !important;
+						line-height: 1.3 !important;
+						flex: 1 !important;
+						white-space: nowrap !important;
+						overflow: hidden !important;
+						text-overflow: ellipsis !important;
+					}
+				}
+			}
+
+			// Lumo+ logo sizing
+			> div:first-child {
+				margin-bottom: 0.75rem;
+				flex-shrink: 0;
+				min-height: 240px;
+
+				img {
+					height: 22px !important;
+				}
+			}
+
+			// Button area - ensure it's at the bottom
+			.mt-2 {
+				margin-top: auto !important;
+				flex-shrink: 0;
+			}
+		}
+	}
+}
+
+.is-active {
+	font-weight: bold;
+}
+
+// Lumo Plus upgrade button styling in settings gradient
+.lumo-plus-settings-gradient {
+	// Let the promotion button use its default styling (rainbow border, text color, etc.)
+	// Just ensure text is centered
+	.button-promotion {
+		text-align: center !important;
+		justify-content: center !important;
+		display: flex !important;
+		align-items: center !important;
+	}
+}
+
+.settings-section-icon {
+	background-color: white;
+	border: 1px solid var(--border-weak);
+	width: 2.5rem;
+	height: 2.5rem;
+}
+
+// Lumo Plus panel styling
+.lumo-plus-panel {
+	// Ensure manage button stays on the right
+	.flex.items-center.justify-between {
+		width: 100%;
+
+		> :last-child {
+			margin-left: auto;
+		}
+	}
+}
+
+

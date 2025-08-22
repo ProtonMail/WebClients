@@ -1,0 +1,58 @@
+@import '~@proton/styles/scss/lib';
+
+.lumo-plus-toggle {
+	.toggle-container {
+		// Purple background for the toggle track - force override
+		background-color: #e5e1f5 !important; // Light purple/lavender background
+
+		&::after {
+			//   border-color: #d4c8f0; // Slightly darker purple border
+			border: none;
+		}
+
+		// White circle toggle button with proper spacing
+		&::before {
+			background-color: white; // White toggle button
+			//   margin: 3px; // Add margin to create distance from container edges
+			margin-inline-start: 5px;
+			margin-block: auto;
+			inline-size: calc(#{em(24)} - 6px); // Reduce size to account for margin
+			block-size: calc(#{em(24)} - 6px); // Reduce size to account for margin
+		}
+
+		// Checked state (right side)
+		&.toggle-container--checked {
+			background-color: #e5e1f5 !important; // Keep same purple background
+
+			&::before {
+				background-color: white; // Keep white button
+				// Transform accounts for the margin offset
+				transform: translateX(calc(#{em(40)} - #{em(24)} - 4px));
+
+				@at-root {
+					[dir='rtl'] & {
+						transform: translateX(calc(-#{em(40)} + #{em(24)} + 4px));
+					}
+				}
+			}
+		}
+
+		// Hide default icons
+		.toggle-container-text .toggle-container-img {
+			opacity: 0;
+		}
+
+		// Hover states
+		&:not(.toggle-container--disabled):hover {
+			&::before {
+				background-color: #f8f9fa; // Slightly off-white on hover
+			}
+		}
+
+		&:not(.toggle-container--disabled).toggle-container--checked:hover {
+			&::before {
+				background-color: #f8f9fa; // Slightly off-white on hover
+			}
+		}
+	}
+}
