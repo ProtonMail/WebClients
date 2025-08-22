@@ -28,6 +28,7 @@ import {
     PLAN_NAMES,
     type PlansMap,
     type Subscription,
+    getNormalCycleFromCustomCycle,
     getPlanByName,
     getPricePerCycle,
 } from '@proton/payments';
@@ -323,7 +324,7 @@ const UnlimitedBannerGradient = ({
         });
     };
 
-    const headerUpsellCycle = subscription?.Cycle || CYCLE.MONTHLY;
+    const headerUpsellCycle = getNormalCycleFromCustomCycle(subscription?.Cycle || CYCLE.MONTHLY);
 
     const headerBottomLineCopy =
         showUpsellHeader && headerUpsellCycle ? (
