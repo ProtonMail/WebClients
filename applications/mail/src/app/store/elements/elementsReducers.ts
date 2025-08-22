@@ -12,7 +12,14 @@ import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
 import unique from '@proton/utils/unique';
 
-import { getElementContextIdentifier, parseLabelIDsInEvent, isMessage as testIsMessage } from '../../helpers/elements';
+import {
+    filterElementsInState,
+    getElementContextIdentifier,
+    getSearchParameters,
+    parseElementContextIdentifier,
+    parseLabelIDsInEvent,
+    isMessage as testIsMessage,
+} from '../../helpers/elements';
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
 import {
@@ -845,6 +852,44 @@ export const markNewsletterElementsAsReadPending = (
     });
 };
 
+const updateTotal = (state: Draft<ElementsState>) => {
+    const currentContextIdentifier = getElementContextIdentifier({
+        labelID: state.params.labelID,
+        conversationMode: state.params.conversationMode,
+        filter: state.params.filter,
+        sort: state.params.sort,
+        from: state.params.search?.from,
+        to: state.params.search?.to,
+        address: state.params.search?.address,
+        begin: state.params.search?.begin,
+        end: state.params.search?.end,
+        keyword: state.params.search?.keyword,
+    });
+    const elements = Object.values(state.elements);
+
+    Object.keys(state.total).forEach((contextIdentifier) => {
+        const context = parseElementContextIdentifier(contextIdentifier);
+
+        if (context) {
+            const filteredElements = filterElementsInState({
+                elements,
+                bypassFilter: currentContextIdentifier === contextIdentifier ? state.bypassFilter : [],
+                labelID: context.labelID,
+                filter: context.filter || {},
+                conversationMode: context.conversationMode,
+                search: getSearchParameters(context),
+                newsletterSubscriptionID: context.newsletterSubscriptionID,
+            });
+
+            if (filteredElements.length > 0) {
+                state.total[contextIdentifier] = filteredElements.length;
+            } else {
+                delete state.total[contextIdentifier];
+            }
+        }
+    });
+};
+
 export const labelMessagesPending = (
     state: Draft<ElementsState>,
     action: PayloadAction<
@@ -886,6 +931,8 @@ export const labelMessagesPending = (
         // Then update message since the mutation are done in the conversation
         applyLabelToMessage(elementState, destinationLabelID, folders, labels);
     });
+
+    updateTotal(state);
 };
 
 export const unlabelMessagesPending = (
@@ -913,6 +960,8 @@ export const unlabelMessagesPending = (
 
         removeLabelFromMessage(elementState, destinationLabelID, labels);
     });
+
+    updateTotal(state);
 };
 
 export const labelMessagesRejected = (
@@ -972,6 +1021,8 @@ export const labelConversationsPending = (
             applyLabelToMessage(messageElementState as Message, destinationLabelID, folders, labels);
         });
     });
+
+    updateTotal(state);
 };
 
 export const unlabelConversationsPending = (
@@ -1001,4 +1052,6 @@ export const unlabelConversationsPending = (
             removeLabelFromMessage(messageElementState as Message, destinationLabelID, labels);
         });
     });
+
+    updateTotal(state);
 };
