@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -38,8 +38,6 @@ export const useZoomIntegration = ({
     const [oAuthToken, oauthTokenLoading] = useOAuthToken();
     const isUserConnectedToZoom = oAuthToken?.some(({ Provider }) => Provider === OAUTH_PROVIDER.ZOOM);
 
-    const [processState, setProcessState] = useState<ZoomIntegrationState | undefined>(undefined);
-
     const { sentEventZoom } = useVideoConfTelemetry();
 
     const { loadingConfig, triggerZoomOAuth } = useZoomOAuth();
@@ -50,34 +48,39 @@ export const useZoomIntegration = ({
 
     const zoomUpsellModal = useModalStateObject();
 
-    useEffect(() => {
+    const [isLoading, setIsLoading] = useState(false);
+    const [disconnectedError, setDisconnectedError] = useState(false);
+
+    const deriveProcessState = (): ZoomIntegrationState => {
+        if (isLoading) {
+            return 'loading';
+        }
+
         if (hasZoomError) {
-            setProcessState('zoom-reconnection-error');
-            return;
+            return 'zoom-reconnection-error';
+        }
+
+        if (disconnectedError) {
+            return 'disconnected-error';
         }
 
         if (loadingConfig || oauthTokenLoading) {
-            setProcessState('loadingConfig');
-        } else if (model.conferenceUrl && !model.isConferenceTmpDeleted) {
-            setProcessState('meeting-present');
-        } else {
-            // We don't want to change the state while something is loading
-            if (processState !== 'loading') {
-                setProcessState(isUserConnectedToZoom ? 'connected' : 'disconnected');
-            }
+            return 'loadingConfig';
         }
-    }, [loadingConfig, oauthTokenLoading, hasZoomError]);
 
-    useEffect(() => {
-        if (model.conferenceUrl && !model.isConferenceTmpDeleted && processState !== 'zoom-reconnection-error') {
-            setProcessState('meeting-present');
+        if (model.conferenceUrl) {
+            // In case of removing the meeting we actually keep it, but set a flag
+            return model.isConferenceTmpDeleted ? 'meeting-deleted' : 'meeting-present';
         }
-    }, [processState]);
+
+        return isUserConnectedToZoom ? 'connected' : 'disconnected';
+    };
+
+    const derivedProcessState = deriveProcessState();
 
     const createVideoConferenceMeeting = async () => {
         try {
-            let currentProcessState = processState;
-            setProcessState('loading');
+            setIsLoading(true);
 
             const data = await silentApi<VideoConferenceMeetingCreation>(createZoomMeeting());
 
@@ -90,9 +93,7 @@ export const useZoomIntegration = ({
                 conferenceProvider: VIDEO_CONFERENCE_PROVIDER.ZOOM,
             });
 
-            if (currentProcessState !== 'zoom-reconnection-error') {
-                setProcessState('meeting-present');
-            }
+            setDisconnectedError(false);
 
             sentEventZoom(VideoConferenceZoomIntegration.create_zoom_meeting);
         } catch (e) {
@@ -100,7 +101,7 @@ export const useZoomIntegration = ({
             sentEventZoom(VideoConferenceZoomIntegration.create_zoom_meeting_failed, String(code));
 
             if (code === VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR) {
-                setProcessState('disconnected-error');
+                setDisconnectedError(true);
                 return;
             } else {
                 createNotification({
@@ -108,9 +109,8 @@ export const useZoomIntegration = ({
                     type: 'error',
                 });
             }
-
-            // In case of error, we reset the state of the button to connected
-            setProcessState('connected');
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -119,8 +119,8 @@ export const useZoomIntegration = ({
         void triggerZoomOAuth(() => {
             if (shouldCreateMeeting) {
                 void createVideoConferenceMeeting();
-                setProcessState('meeting-present');
             } else {
+                setDisconnectedError(false);
                 createNotification({
                     text: c('Error').t`You are reconnected to Zoom. You can save your event now.`,
                 });
@@ -138,7 +138,7 @@ export const useZoomIntegration = ({
             return;
         }
 
-        if (shouldReconnectToZoom(processState)) {
+        if (shouldReconnectToZoom(derivedProcessState)) {
             handleReconnect(true);
         } else if (model.conferenceUrl && model.isConferenceTmpDeleted) {
             setActiveProvider(VIDEO_CONFERENCE_PROVIDER.ZOOM);
@@ -146,7 +146,6 @@ export const useZoomIntegration = ({
                 ...model,
                 isConferenceTmpDeleted: false,
             });
-            setProcessState('meeting-present');
         } else {
             setActiveProvider(VIDEO_CONFERENCE_PROVIDER.ZOOM);
             await createVideoConferenceMeeting();
@@ -160,7 +159,6 @@ export const useZoomIntegration = ({
             ...model,
             isConferenceTmpDeleted: true,
         });
-        setProcessState('meeting-deleted');
         setActiveProvider(null);
     };
 
@@ -168,7 +166,7 @@ export const useZoomIntegration = ({
         handleDelete,
         handleClick,
         handleReconnect,
-        processState,
+        processState: derivedProcessState,
         zoomUpsellModal,
         loadingConfig,
         oauthTokenLoading,
