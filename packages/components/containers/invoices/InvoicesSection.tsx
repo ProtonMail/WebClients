@@ -13,7 +13,6 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useEventManagerV6 } from '@proton/components/containers/eventManager/EventManagerV6Provider';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import useLoading from '@proton/hooks/useLoading';
 import { INVOICE_OWNER, INVOICE_STATE, InvoiceDocument } from '@proton/payments';
 import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
@@ -40,8 +39,11 @@ const InvoicesSection = () => {
     const [owner, setOwner] = useState(INVOICE_OWNER.USER);
 
     const [invoiceModalProps, setInvoiceModalOpen, renderInvoiceModal] = useModalState();
-    const { openBillingAddressModal, editBillingAddressModal } = useEditBillingAddressModal();
-    const [loadingBillingAddressModal, withLoadingBillingAddressModal] = useLoading();
+    const {
+        openBillingAddressModal,
+        editBillingAddressModal,
+        loading: loadingBillingAddressModal,
+    } = useEditBillingAddressModal();
 
     const invoicesHook = useInvoices({ owner, Document: InvoiceDocument.Invoice });
     const creditNotesHook = useInvoices({ owner, Document: InvoiceDocument.CreditNote });
@@ -106,8 +108,7 @@ const InvoicesSection = () => {
                     text: c('Action').t`Edit billing address`,
                     'data-testid': 'editBillingAddress',
                     key: 'editBillingAddress',
-                    onClick: () =>
-                        withLoadingBillingAddressModal(openBillingAddressModal({ editExistingInvoice: false })),
+                    onClick: () => openBillingAddressModal({ editExistingInvoice: false }),
                     loading: loadingBillingAddressModal,
                 },
                 {
