@@ -8,6 +8,7 @@ import { useAppLink, useNotifications } from '@proton/components';
 import { IcPenSquare } from '@proton/icons';
 import { getMeetingLink } from '@proton/meet';
 import type { Meeting } from '@proton/meet/types/response-types';
+import { PASSWORD_SEPARATOR } from '@proton/meet/utils/cryptoUtils';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -63,7 +64,7 @@ export const MeetingRow = ({ meeting, index }: MeetingRowProps) => {
         return { month, day, startTime, endTime };
     }, []);
 
-    const meetingLink = getMeetingLink(meeting.MeetingLinkName, meeting.Password);
+    const meetingLink = getMeetingLink(meeting.MeetingLinkName, meeting.Password.split(PASSWORD_SEPARATOR)[0]);
 
     const handleJoin = () => {
         history.push(meetingLink);
