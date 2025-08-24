@@ -22,6 +22,7 @@ import type { ItemCloneLocationState } from '@proton/pass/hooks/items/useInitial
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { isAliasItem, isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
 import { cloneItemName, getBulkSelectionCount } from '@proton/pass/lib/items/item.utils';
+import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import {
     itemBulkDeleteIntent,
     itemBulkMoveIntent,
@@ -33,7 +34,12 @@ import {
     itemTrash,
     shareLeaveIntent,
 } from '@proton/pass/store/actions';
-import { selectAliasTrashAcknowledged, selectItemsByEmail } from '@proton/pass/store/selectors';
+import {
+    selectAliasTrashAcknowledged,
+    selectItemsByEmail,
+    selectMostRecentVaultShareID,
+    selectShareOrThrow,
+} from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { ItemMoveIntent } from '@proton/pass/types';
 import { type BulkSelectionDTO, type ItemRevision, type MaybeNull, ShareType } from '@proton/pass/types';
@@ -168,14 +174,28 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
 
             leave: leaveItem.prompt,
 
-            clone: (item: ItemRevision) =>
+            clone: (item: ItemRevision) => {
+                const state = store.getState();
+
+                /** Note: if the item being cloned is not from a vault share,
+                 * resolve the most recently used vault shareID. This avoids
+                 * trying to clone an item from an item share */
+                const share = selectShareOrThrow(item.shareId)(state);
+                const shareId = isVaultShare(share) ? share.shareId : selectMostRecentVaultShareID(state);
+
                 navigate<ItemCloneLocationState>(getNewItemRoute(item.data.type), {
                     state: {
                         clone: partialMerge(item, {
-                            data: { metadata: { name: cloneItemName(item.data.metadata.name) } },
+                            shareId,
+                            data: {
+                                metadata: {
+                                    name: cloneItemName(item.data.metadata.name),
+                                },
+                            },
                         }),
                     },
-                }),
+                });
+            },
         };
     }, []);
 
