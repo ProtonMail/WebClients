@@ -15,7 +15,7 @@ export const getVideoConfCopy = (service: VIDEO_CONF_SERVICES) => {
         [VIDEO_CONF_SERVICES.ZOOM]: c('Zoom').t`Join Zoom meeting`,
         [VIDEO_CONF_SERVICES.SLACK]: c('Slack').t`Join Slack huddle`,
         [VIDEO_CONF_SERVICES.TEAMS]: c('Teams').t`Join Teams meeting`,
-        [VIDEO_CONF_SERVICES.PROTON_MEET]: c('l10n_nightly Action').t`Join with ${MEET_APP_NAME}`,
+        [VIDEO_CONF_SERVICES.PROTON_MEET]: c('meet_2025 Action').t`Join with ${MEET_APP_NAME}`,
     };
 
     return labels[service];

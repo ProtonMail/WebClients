@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -51,6 +51,7 @@ export const useProtonMeetIntegration = ({
         id: '',
         passwordBase: '',
         passphrase: '',
+        failed: false,
     });
 
     const { createProtonMeet, getProtonMeetByLinkName, saveProtonMeetPassword } = useProtonMeet();
@@ -103,6 +104,7 @@ export const useProtonMeetIntegration = ({
                 id: meetingId ?? '',
                 passwordBase: urlPassword,
                 passphrase,
+                failed: false,
             });
 
             setModel({
@@ -127,7 +129,7 @@ export const useProtonMeetIntegration = ({
             notifications.createNotification({
                 key: 'proton-meet-row-create-meeting-error',
                 type: 'error',
-                text: c('l10n_nightly Error').t`Failed to create ${MEET_APP_NAME} video conference`,
+                text: c('meet_2025 Error').t`Failed to create ${MEET_APP_NAME} video conference`,
             });
 
             setProcessState(undefined);
@@ -170,8 +172,10 @@ export const useProtonMeetIntegration = ({
         }
     }, [history, location]);
 
+    const setupInProgress = useRef(false);
+
     const setup = async () => {
-        if (!model.conferenceId || !model.conferenceUrl) {
+        if (!model.conferenceId || !model.conferenceUrl || setupInProgress.current) {
             return;
         }
 
@@ -181,9 +185,24 @@ export const useProtonMeetIntegration = ({
             return;
         }
 
+        setupInProgress.current = true;
+
         const { userKeys } = await getMeetingDependencies();
 
-        const meeting = await getProtonMeetByLinkName(meetingId);
+        let meeting: Meeting;
+
+        try {
+            meeting = await getProtonMeetByLinkName(meetingId);
+        } catch {
+            setMeetingDetails((prev) => ({
+                ...prev,
+                failed: true,
+            }));
+
+            setupInProgress.current = false;
+
+            return;
+        }
 
         const passphrase = await getPassphraseFromEncryptedPassword({
             encryptedPassword: meeting?.Password as string,
@@ -195,9 +214,12 @@ export const useProtonMeetIntegration = ({
             id: meetingId ?? '',
             passwordBase: urlPassword,
             passphrase,
+            failed: false,
         });
 
         setMeetingObject(meeting as Meeting);
+
+        setupInProgress.current = false;
     };
 
     useEffect(() => {
@@ -221,5 +243,6 @@ export const useProtonMeetIntegration = ({
 
             setProcessState(undefined);
         },
+        setup,
     };
 };

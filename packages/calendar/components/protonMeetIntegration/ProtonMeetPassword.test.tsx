@@ -7,9 +7,21 @@ import { NotificationsProvider } from '@proton/components';
 import { ProtonMeetPassword } from './ProtonMeetPassword';
 import { ProtonMeetRowContext } from './ProtonMeetRowContext';
 
-const setup = (passphrase = '', savePassphrase = jest.fn()) => {
+const setup = (params?: {
+    passphrase?: string;
+    savePassphrase?: (passphrase: string) => Promise<void>;
+    fetchingDetailsFailed?: boolean;
+    refetchMeeting?: () => Promise<void>;
+}) => {
+    const {
+        passphrase = '',
+        savePassphrase = jest.fn(),
+        fetchingDetailsFailed = false,
+        refetchMeeting = jest.fn(),
+    } = params ?? {};
+
     return render(
-        <ProtonMeetRowContext.Provider value={{ passphrase, savePassphrase }}>
+        <ProtonMeetRowContext.Provider value={{ passphrase, savePassphrase, fetchingDetailsFailed, refetchMeeting }}>
             <NotificationsProvider>
                 <ProtonMeetPassword />
             </NotificationsProvider>
@@ -25,7 +37,7 @@ describe('ProtonMeetPassword', () => {
 
     it('renders existing passphrase and update button when passphrase exists', () => {
         const existingPassphrase = 'test-passphrase';
-        setup(existingPassphrase);
+        setup({ passphrase: existingPassphrase });
 
         expect(screen.getByText('Passphrase:')).toBeInTheDocument();
         expect(screen.getByText(existingPassphrase)).toBeInTheDocument();
@@ -51,7 +63,7 @@ describe('ProtonMeetPassword', () => {
     it('opens modal with existing passphrase when "Update secret passphrase" is clicked', async () => {
         const user = userEvent.setup();
         const existingPassphrase = 'test-passphrase';
-        setup(existingPassphrase);
+        setup({ passphrase: existingPassphrase });
 
         await user.click(screen.getByText('Update secret passphrase'));
 
@@ -68,7 +80,7 @@ describe('ProtonMeetPassword', () => {
     it('calls savePassphrase with new passphrase when Save is clicked', async () => {
         const user = userEvent.setup();
         const savePassphrase = jest.fn();
-        setup('', savePassphrase);
+        setup({ savePassphrase });
 
         await user.click(screen.getByText('Add secret passphrase'));
 
@@ -78,5 +90,19 @@ describe('ProtonMeetPassword', () => {
         await user.click(screen.getByText('Save'));
 
         expect(savePassphrase).toHaveBeenCalledWith(newPassphrase);
+    });
+
+    it('should allow for handling passphrase retrieval failure', async () => {
+        const user = userEvent.setup();
+
+        const refetchMeeting = jest.fn();
+        setup({ fetchingDetailsFailed: true, refetchMeeting });
+
+        expect(screen.queryByText('Add secret passphrase')).not.toBeInTheDocument();
+        expect(screen.getByText('Passphrase unavailable')).toBeInTheDocument();
+
+        await user.click(screen.getByText('Retry'));
+
+        expect(refetchMeeting).toHaveBeenCalled();
     });
 });

@@ -33,7 +33,9 @@ interface ProtonMeetRowProps {
         id: string;
         passwordBase: string;
         passphrase: string;
+        failed: boolean;
     };
+    setup: () => Promise<void>;
 }
 
 export const ProtonMeetRow = ({
@@ -43,6 +45,7 @@ export const ProtonMeetRow = ({
     createVideoConferenceMeeting,
     meetingDetails,
     deleteProtonMeet,
+    setup,
 }: ProtonMeetRowProps) => {
     if (processState === 'meeting-present') {
         return (
@@ -51,6 +54,8 @@ export const ProtonMeetRow = ({
                 model={model}
                 savePassphrase={handlePassphraseSave}
                 deleteMeeting={deleteProtonMeet}
+                refetchMeeting={setup}
+                fetchingDetailsFailed={meetingDetails.failed}
             />
         );
     }
@@ -72,7 +77,7 @@ export const ProtonMeetRow = ({
                         color="norm"
                         size="small"
                     >
-                        {c('Action').t`Join with ${MEET_APP_NAME}`}
+                        {c('meet_2025 Action').t`Join with ${MEET_APP_NAME}`}
                     </Button>
                 </div>
             )}

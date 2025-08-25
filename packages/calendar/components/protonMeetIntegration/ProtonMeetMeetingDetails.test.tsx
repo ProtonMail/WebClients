@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 
 import { NotificationsProvider } from '@proton/components';
 
+import type { ProtonMeetMeetingDetailsProps } from './ProtonMeetMeetingDetails';
 import { ProtonMeetMeetingDetails } from './ProtonMeetMeetingDetails';
 import { ProtonMeetRowContext } from './ProtonMeetRowContext';
 
@@ -18,14 +19,21 @@ describe('ProtonMeetMeetingDetails', () => {
         },
         savePassphrase: jest.fn(),
         deleteMeeting: jest.fn(),
+        fetchingDetailsFailed: false,
+        refetchMeeting: jest.fn(),
     };
 
-    const setup = (props = {}) => {
+    const setup = (props: Partial<ProtonMeetMeetingDetailsProps> = {}) => {
+        const context = {
+            passphrase: props.passphrase ?? defaultProps.passphrase,
+            savePassphrase: props.savePassphrase ?? defaultProps.savePassphrase,
+            fetchingDetailsFailed: props.fetchingDetailsFailed ?? defaultProps.fetchingDetailsFailed,
+            refetchMeeting: props.refetchMeeting ?? defaultProps.refetchMeeting,
+        };
+
         return render(
             <NotificationsProvider>
-                <ProtonMeetRowContext.Provider
-                    value={{ passphrase: defaultProps.passphrase, savePassphrase: defaultProps.savePassphrase }}
-                >
+                <ProtonMeetRowContext.Provider value={context}>
                     {/* @ts-expect-error - the model only contains the properties we need */}
                     <ProtonMeetMeetingDetails {...defaultProps} {...props} />
                 </ProtonMeetRowContext.Provider>
@@ -48,7 +56,9 @@ describe('ProtonMeetMeetingDetails', () => {
 
     it('displays existing passphrase and allows updating it', async () => {
         const user = userEvent.setup();
-        setup();
+
+        const savePassphrase = jest.fn();
+        setup({ savePassphrase });
 
         await user.click(screen.getByText('Update secret passphrase'));
 
@@ -61,22 +71,26 @@ describe('ProtonMeetMeetingDetails', () => {
 
         await user.click(screen.getByText('Save'));
 
-        expect(defaultProps.savePassphrase).toHaveBeenCalledWith(newPassphrase);
+        expect(savePassphrase).toHaveBeenCalledWith(newPassphrase);
     });
 
     it('allows deleting the meeting', async () => {
+        const deleteMeeting = jest.fn();
+        setup({ deleteMeeting });
+
         const user = userEvent.setup();
-        setup();
 
         const deleteButton = screen.getByRole('button', { name: 'Remove Zoom meeting' });
         await user.click(deleteButton);
 
-        expect(defaultProps.deleteMeeting).toHaveBeenCalled();
+        expect(deleteMeeting).toHaveBeenCalled();
     });
 
     it('renders with empty passphrase and allows adding one', async () => {
         const user = userEvent.setup();
-        setup({ passphrase: '' });
+
+        const savePassphrase = jest.fn();
+        setup({ passphrase: '', savePassphrase });
 
         const addButton = screen.getByText('Add secret passphrase');
         expect(addButton).toBeInTheDocument();
@@ -88,7 +102,7 @@ describe('ProtonMeetMeetingDetails', () => {
 
         await user.click(screen.getByText('Save'));
 
-        expect(defaultProps.savePassphrase).toHaveBeenCalledWith(newPassphrase);
+        expect(savePassphrase).toHaveBeenCalledWith(newPassphrase);
     });
 
     it('verifies video conferencing service is set to PROTON_MEET', () => {
@@ -105,10 +119,31 @@ describe('ProtonMeetMeetingDetails', () => {
             conferencePassword: undefined,
         };
 
+        // @ts-expect-error - the model only contains the properties we need
         setup({ model: incompleteModel });
 
         expect(screen.getByText(incompleteModel.conferenceUrl)).toBeInTheDocument();
 
         expect(screen.queryByText('Meeting host:')).not.toBeInTheDocument();
+    });
+
+    it('handles failure to fetch meeting details gracefully', async () => {
+        const refetchMeeting = jest.fn();
+
+        setup({ refetchMeeting, fetchingDetailsFailed: true });
+
+        const user = userEvent.setup();
+
+        const detailsButton = screen.getByText('More details');
+        await user.click(detailsButton);
+
+        expect(screen.queryByText('Add secret passphrase')).not.toBeInTheDocument();
+
+        expect(screen.getByText('Passphrase unavailable')).toBeInTheDocument();
+
+        const retryButton = screen.getByRole('button', { name: 'Retry' });
+        await user.click(retryButton);
+
+        expect(refetchMeeting).toHaveBeenCalled();
     });
 });
