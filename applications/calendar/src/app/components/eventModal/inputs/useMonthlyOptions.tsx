@@ -3,22 +3,19 @@ import { useMemo } from 'react';
 import { MONTHLY_TYPE } from '@proton/shared/lib/calendar/constants';
 import { getOnDayString } from '@proton/shared/lib/calendar/recurrence/getFrequencyString';
 import { getNegativeSetpos, getPositiveSetpos } from '@proton/shared/lib/calendar/recurrence/rrule';
-import { fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 
 // Filter out strings since TS creates an inverse mapping
 const MONTHLY_TYPE_VALUES = Object.values(MONTHLY_TYPE).filter((type): type is number => typeof type === 'number');
 
 const useMonthlyOptions = (date: Date) => {
     const options = useMemo(() => {
-        const startFakeUtcDate = toUTCDate(fromLocalDate(date));
-
         const allOptions = MONTHLY_TYPE_VALUES.map((type) => {
-            const onDayString = getOnDayString(startFakeUtcDate, type);
+            const onDayString = getOnDayString(date, type);
             return { text: onDayString || '', value: type };
         });
 
-        const isLastDay = getNegativeSetpos(startFakeUtcDate) === -1;
-        const isFifthDay = getPositiveSetpos(startFakeUtcDate) === 5;
+        const isLastDay = getNegativeSetpos(date) === -1;
+        const isFifthDay = getPositiveSetpos(date) === 5;
 
         return allOptions.filter(({ value }) => {
             if (value === MONTHLY_TYPE.ON_NTH_DAY && isFifthDay) {
