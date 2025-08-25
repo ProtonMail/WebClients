@@ -1,7 +1,5 @@
-import { Suspense } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import { LoaderPage } from '@proton/components';
 import { PaymentsContextOptimisticProvider } from '@proton/payments/ui';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 
@@ -16,14 +14,10 @@ import ReferralSignup from './flows/referral/ReferralSignup';
 const DriveSignupController = (props: BaseSignupContextProps) => (
     <Switch>
         <Route path={`${SSO_PATHS.DRIVE_SIGNUP}/pricing`}>
-            <Suspense fallback={<LoaderPage text="Loading..." />}>
-                <DrivePricing />
-            </Suspense>
+            <DrivePricing />
         </Route>
         <Route>
-            <Suspense fallback={<LoaderPage text="Loading..." />}>
-                <DriveSignup {...props} />
-            </Suspense>
+            <DriveSignup {...props} />
         </Route>
     </Switch>
 );
@@ -31,9 +25,7 @@ const DriveSignupController = (props: BaseSignupContextProps) => (
 const PassSignupController = (props: BaseSignupContextProps) => (
     <Switch>
         <Route>
-            <Suspense fallback={<LoaderPage text="Loading..." />}>
-                <PassSignup {...props} />
-            </Suspense>
+            <PassSignup {...props} />
         </Route>
     </Switch>
 );
@@ -52,9 +44,7 @@ const GenericSignupController = (props: BaseSignupContextProps) => {
     return (
         <Switch>
             <Route path={SSO_PATHS.START}>
-                <Suspense fallback={<LoaderPage text="Loading..." />}>
-                    <GenericStartSignup {...props} />
-                </Suspense>
+                <GenericStartSignup {...props} />
             </Route>
             <Route>
                 <Redirect to="/signup" />
