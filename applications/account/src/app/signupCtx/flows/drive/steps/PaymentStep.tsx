@@ -96,8 +96,6 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
             try {
                 await processor.processPaymentToken();
             } catch (error) {
-                // measurePayError(telemetryType);
-
                 const sentryError = getSentryError(error);
                 if (sentryError) {
                     const context = {
