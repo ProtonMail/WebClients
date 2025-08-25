@@ -7,6 +7,7 @@ import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/trans
 import type { ItemsByShareId } from '@proton/pass/store/reducers/items';
 import { withOptimisticItemsByShareId } from '@proton/pass/store/reducers/items';
 import { SelectorError } from '@proton/pass/store/selectors/errors';
+import { selectAllShareIds } from '@proton/pass/store/selectors/shares';
 import type { State } from '@proton/pass/store/types';
 import type {
     ItemRevision,
@@ -30,7 +31,11 @@ export const selectItemDrafts = (state: State) => state.items.drafts;
 export const selectNonFailedItems = createSelector(selectItemsState, asIfNotFailed);
 export const selectNonOptimisticItems = createSelector(selectItemsState, asIfNotOptimistic);
 export const selectItems = createSelector(selectItemsState, unwrapOptimisticState);
-export const selectAllItems = createSelector(selectItems, flattenItemsByShareId);
+// Intentionally boring name to push for using visibility filter by default
+export const selectAllIncludingHiddenItems = createSelector(selectItems, flattenItemsByShareId);
+export const selectAllItems = createSelector([selectAllIncludingHiddenItems, selectAllShareIds], (items, shareIds) =>
+    items.filter(({ shareId }) => shareIds.has(shareId))
+);
 export const selectTrashedItems = createSelector(selectAllItems, (items) => items.filter(isTrashed));
 export const selectPinnedItems = createSelector(selectAllItems, (items) => items.filter(and(isActive, isPinned)));
 export const selectLatestDraft = createSelector(selectItemDrafts, (drafts) => first(drafts));

@@ -133,5 +133,53 @@ describe('URL parsers', () => {
             expect(result.isSecure).toEqual(false);
             expect(result.protocol).toEqual(null);
         });
+
+        test('should respect custom private domains with single subdomain', () => {
+            const result = parseUrl('https://chicken.food.blog', new Set(['food.blog']));
+            expect(result.displayName).toEqual('chicken');
+            expect(result.domain).toEqual('chicken.food.blog');
+            expect(result.port).toEqual(null);
+            expect(result.subdomain).toEqual(null);
+            expect(result.isTopLevelDomain).toEqual(true);
+            expect(result.isPrivate).toEqual(true);
+            expect(result.isSecure).toEqual(true);
+            expect(result.protocol).toEqual('https:');
+        });
+
+        test('should respect custom private domains at root level', () => {
+            const result = parseUrl('https://food.blog', new Set(['food.blog']));
+            expect(result.displayName).toEqual('food');
+            expect(result.domain).toEqual('food.blog');
+            expect(result.port).toEqual(null);
+            expect(result.subdomain).toEqual(null);
+            expect(result.isTopLevelDomain).toEqual(true);
+            expect(result.isPrivate).toEqual(true);
+            expect(result.isSecure).toEqual(true);
+            expect(result.protocol).toEqual('https:');
+        });
+
+        test('should respect custom private domains with multiple subdomains', () => {
+            const result = parseUrl('https://sub.chicken.food.blog', new Set(['chicken.food.blog']));
+            expect(result.displayName).toEqual('sub');
+            expect(result.domain).toEqual('sub.chicken.food.blog');
+            expect(result.port).toEqual(null);
+            expect(result.subdomain).toEqual(null);
+            expect(result.isTopLevelDomain).toEqual(true);
+            expect(result.isPrivate).toEqual(true);
+            expect(result.isSecure).toEqual(true);
+            expect(result.protocol).toEqual('https:');
+        });
+
+        test('should respect custom private domains with nested subdomains', () => {
+            const result = parseUrl('https://sub.chicken.food.blog', new Set(['food.blog']));
+            expect(result.displayName).toEqual('chicken');
+            expect(result.domain).toEqual('chicken.food.blog');
+            expect(result.port).toEqual(null);
+            expect(result.subdomain).toEqual('sub.chicken.food.blog');
+            expect(result.isTopLevelDomain).toEqual(false);
+            expect(result.isPrivate).toEqual(true);
+            expect(result.isSecure).toEqual(true);
+            expect(result.protocol).toEqual('https:');
+        });
     });
 });

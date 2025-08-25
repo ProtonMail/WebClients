@@ -1,6 +1,7 @@
 import type { ShareItem } from '@proton/pass/store/reducers';
 import type { Share, ShareGetResponse } from '@proton/pass/types';
-import { ShareRole, ShareType } from '@proton/pass/types';
+import { ShareFlags, ShareRole, ShareType } from '@proton/pass/types';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 
 /* overload for subtypes */
 export function isVaultShare(share: ShareItem): share is ShareItem<ShareType.Vault>;
@@ -15,6 +16,7 @@ export function isItemShare(share: Share): share is Share<ShareType.Item> {
 export const isShareManageable = <T extends Share>(share: T) => share.owner || share.shareRoleId === ShareRole.MANAGER;
 export const isShareWritable = <T extends Share>({ shareRoleId }: T) => shareRoleId !== ShareRole.READ;
 export const isShareReadOnly = <T extends Share>({ shareRoleId }: T) => shareRoleId === ShareRole.READ;
+export const isShareVisible = <T extends Share>(share: T) => !hasBit(share.flags, ShareFlags.HIDDEN);
 
 /** If the `canAutofill` flag isis not present on the share item, fallback to client
  * side downgrade detection : only allow autofilling from writable shares. */

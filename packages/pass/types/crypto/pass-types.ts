@@ -47,6 +47,7 @@ type OpenedShareBase = {
     canAutofill: Maybe<boolean>;
     createTime: number;
     expireTime?: MaybeNull<number>;
+    flags: number;
     newUserInvitesReady: number;
     owner: boolean;
     permission: number;

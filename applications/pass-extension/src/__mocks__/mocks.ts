@@ -28,6 +28,7 @@ export const mockShare: ShareItem = {
     targetType: ShareType.Vault,
     vaultId: uniqueId(),
     canAutofill: true,
+    flags: 0,
 };
 
 export const getMockItemRevision = (revision: Partial<ItemRevision> = {}): ItemRevision =>
@@ -68,7 +69,7 @@ export const getMockPasskey = (): SanitizedPasskey => ({
 
 export const getMockState = (): State => {
     const mockState = rootReducer(undefined, { type: '__TEST_INIT__' });
-    mockState.shares['test-share-id'] = mockShare;
+    mockState.shares[mockShareId] = mockShare;
     mockState.items.byShareId[mockShareId] = { [mockItemId]: getMockItemRevision() };
 
     /* clone deep to avoid referential equalities

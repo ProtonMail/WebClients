@@ -1,7 +1,7 @@
 {
     "name": "Proton Pass: Password Manager",
     "description": "Fully encrypted password manager to keep your logins and passwords safe.",
-    "version": "1.32.3",
+    "version": "1.32.5",
     "manifest_version": 3,
     "browser_specific_settings": {
         "safari": {
@@ -16,8 +16,13 @@
     },
     "content_scripts": [
         {
-            "matches": ["https://*/*", "http://*/*"],
-            "js": ["orchestrator.js"],
+            "matches": [
+                "https://*/*",
+                "http://*/*"
+            ],
+            "js": [
+                "orchestrator.js"
+            ],
             "all_frames": false,
             "run_at": "document_end"
         },
@@ -29,9 +34,30 @@
                 "https://account.proton.dev/*",
                 "https://account.protontech.ch/*"
             ],
-            "js": ["fork.js"],
+            "js": [
+                "fork.js"
+            ],
             "all_frames": false,
             "run_at": "document_end"
+        },
+        {
+            "matches": [
+                "https://*/*",
+                "http://*/*"
+            ],
+            "exclude_matches": [
+                "https://pass.proton.me/*",
+                "https://pass.proton.local/*",
+                "https://pass.proton.black/*",
+                "https://pass.proton.pink/*",
+                "https://pass.protontech.ch/*"
+            ],
+            "js": [
+                "webauthn.js"
+            ],
+            "all_frames": false,
+            "run_at": "document_start",
+            "world": "MAIN"
         }
     ],
     "externally_connectable": {
@@ -43,8 +69,17 @@
             "https://*.protontech.ch/*"
         ]
     },
-    "permissions": ["activeTab", "alarms", "nativeMessaging", "scripting", "storage", "unlimitedStorage"],
-    "host_permissions": ["*://*/*"],
+    "permissions": [
+        "activeTab",
+        "alarms",
+        "nativeMessaging",
+        "scripting",
+        "storage",
+        "unlimitedStorage"
+    ],
+    "host_permissions": [
+        "*://*/*"
+    ],
     "options_ui": {
         "page": "settings.html"
     },
@@ -75,11 +110,18 @@
                 "assets/*.woff",
                 "assets/*.woff2"
             ],
-            "matches": ["https://*/*", "http://*/*"]
+            "matches": [
+                "https://*/*",
+                "http://*/*"
+            ]
         },
         {
-            "resources": ["*.wasm"],
-            "matches": ["<all_urls>"]
+            "resources": [
+                "*.wasm"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
         }
     ]
 }

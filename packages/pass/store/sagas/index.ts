@@ -65,6 +65,7 @@ import vaultDelete from './vaults/vault-delete.saga';
 import vaultEdit from './vaults/vault-edit.saga';
 import vaultMoveAllItems from './vaults/vault-move-all-items.saga';
 import vaultTransferOwner from './vaults/vault-transfer-owner.saga';
+import vaultHide from './vaults/vault-visibility.saga';
 
 const COMMON_SAGAS = [
     ...aliasContactSagas,
@@ -128,6 +129,7 @@ const COMMON_SAGAS = [
     vaultCreation,
     vaultDelete,
     vaultEdit,
+    vaultHide,
     vaultMoveAllItems,
     vaultTransferOwner,
 ];

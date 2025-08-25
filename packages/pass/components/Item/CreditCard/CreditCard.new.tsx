@@ -1,4 +1,4 @@
-import { type FC, useMemo } from 'react';
+import { type FC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -24,6 +24,7 @@ import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreate
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
+import { useInitialValues } from '@proton/pass/hooks/items/useInitialValues';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
@@ -44,20 +45,22 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const { ParentPortal, openPortal } = usePortal();
 
-    const initialValues: CreditCardItemFormValues = useMemo(() => {
+    const initialValues = useInitialValues<CreditCardItemFormValues>((options) => {
+        const clone = options?.clone.type === 'creditCard' ? options.clone : null;
+
         return {
-            shareId,
-            name: '',
-            cardholderName: '',
-            number: '',
-            expirationDate: '',
-            verificationNumber: '',
-            pin: '',
-            note: '',
+            cardholderName: clone?.content.cardholderName ?? '',
+            expirationDate: clone?.content.expirationDate ?? '',
+            extraFields: options?.clone.extraFields ?? [],
             files: filesFormInitializer(),
-            extraFields: [],
+            name: clone?.metadata.name ?? '',
+            note: clone?.metadata.note ?? '',
+            number: clone?.content.number ?? '',
+            pin: clone?.content.pin ?? '',
+            shareId: options?.shareId ?? shareId,
+            verificationNumber: clone?.content.verificationNumber ?? '',
         };
-    }, []);
+    });
 
     const form = useFormik<CreditCardItemFormValues>({
         initialValues,

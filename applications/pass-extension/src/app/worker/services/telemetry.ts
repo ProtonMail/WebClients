@@ -55,12 +55,13 @@ export const createTelemetryService = (storage: ExtensionStorage<Record<'telemet
                     if (!extra) return false;
 
                     const tab = first(await browser.tabs.query({ active: true, currentWindow: true }));
-                    const tabUrl = parseUrl(tab?.url);
+                    const url = tab?.url;
+                    const tabUrl = parseUrl(url);
                     const tabId = tab?.id;
                     const validTab = tabId && isSupportedSenderUrl(tabUrl);
 
                     const { itemUrls, extensionField } = extra;
-                    const matchedLoginCount = ctx.service.autofill.getLoginCandidates(tabUrl).length;
+                    const matchedLoginCount = ctx.service.autofill.getLoginCandidates({ url }).length;
                     const loginAutofillSettingsEnabled = selectAutofillSettings(state).login ?? false;
                     const disallowedDomains = selectDisallowedDomains(state);
                     const itemUrlsMatchTab = itemUrls.some((itemUrl) => parseUrl(itemUrl).domain === tabUrl.domain);
