@@ -19,7 +19,7 @@ import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { FlagProvider } from '@proton/unleash';
 
 import { bootstrapApp } from '../boostrap';
-import * as config from '../config';
+import config from '../config';
 import type { MeetStore } from '../store';
 
 type ExtraThunkArguments = Omit<ProtonThunkArguments, 'config'>;
