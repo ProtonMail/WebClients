@@ -76,60 +76,67 @@ export const createAutofillService = () => {
         if (identityFields && authorized) await getIdentitiesCount();
     });
 
-    const autofillLogin = (form: FormHandle, data: FormCredentials) => {
-        first(form.getFieldsFor(FieldType.USERNAME) ?? [])?.autofill(data.userIdentifier);
-        first(form.getFieldsFor(FieldType.EMAIL) ?? [])?.autofill(data.userIdentifier);
-        form.getFieldsFor(FieldType.PASSWORD_CURRENT).forEach((field) => field.autofill(data.password));
+    const autofillLogin = async (form: FormHandle, data: FormCredentials) => {
+        await first(form.getFieldsFor(FieldType.USERNAME) ?? [])?.autofill(data.userIdentifier);
+        await first(form.getFieldsFor(FieldType.EMAIL) ?? [])?.autofill(data.userIdentifier);
+        for (const field of form.getFieldsFor(FieldType.PASSWORD_CURRENT)) await field.autofill(data.password);
 
         sendContentScriptTelemetry(TelemetryEventName.AutofillTriggered, {}, { location: 'source' });
     };
 
-    const autofillPassword = withContext<(form: FormHandle, password: string) => void>((ctx, form, password) => {
-        const url = ctx?.getExtensionContext()?.url;
-        if (!url) return;
+    const autofillPassword = withContext<(form: FormHandle, password: string) => Promise<void>>(
+        async (ctx, form, password) => {
+            const url = ctx?.getExtensionContext()?.url;
+            if (!url) return;
 
-        form.getFieldsFor(FieldType.PASSWORD_NEW).forEach((field) => field.autofill(password));
+            for (const field of form.getFieldsFor(FieldType.PASSWORD_NEW)) await field.autofill(password);
 
-        void sendMessage(
-            contentScriptMessage({
-                type: WorkerMessageType.STORE_DISPATCH,
-                payload: {
-                    action: passwordSave({
-                        id: uniqueId(),
-                        value: password,
-                        origin: resolveDomain(url),
-                        createTime: getEpoch(),
-                    }),
-                },
-            })
-        );
-    });
+            void sendMessage(
+                contentScriptMessage({
+                    type: WorkerMessageType.STORE_DISPATCH,
+                    payload: {
+                        action: passwordSave({
+                            id: uniqueId(),
+                            value: password,
+                            origin: resolveDomain(url),
+                            createTime: getEpoch(),
+                        }),
+                    },
+                })
+            );
+        }
+    );
 
     /** Autofills OTP fields in a form. Uses paste method for multiple fields,
      * individual autofill for single field. Includes fallback logic for paste
      * failures in multi-field scenarios. */
-    const autofillOTP = (form: FormHandle, code: string) => {
-        const otps = form.getFieldsFor(FieldType.OTP);
-        if (otps.length === 0) return;
+    const autofillOTP = async (form: FormHandle, code: string) => {
+        const fields = form.getFieldsFor(FieldType.OTP);
+        if (fields.length === 0) return;
 
-        if (otps.length === 1) otps[0].autofill(code, { paste: false });
-        if (otps.length > 1) {
+        if (fields.length === 1) await fields[0].autofill(code, { paste: false });
+        if (fields.length > 1) {
             /* for FF : sanity check in case the paste failed */
-            otps[0].autofill(code, { paste: true });
-            otps.forEach((otp, i) => {
-                const token = code?.[i] ?? '';
-                if (!otp.element.value || otp.element.value !== token) otp.autofill(code?.[i] ?? '');
-            });
+            await fields[0].autofill(code, { paste: true });
+
+            /** Map individual field handles to the corresponding char */
+            const otpFields = fields.map((field, idx) => [field, code?.[idx] ?? ''] as const);
+
+            for (const [field, value] of otpFields) {
+                if (!field.element.value || field.element.value !== value) {
+                    await field.autofill(value ?? '');
+                }
+            }
         }
 
         sendContentScriptTelemetry(TelemetryEventName.TwoFAAutofill, {}, {});
     };
 
     /** Clears previously autofilled identity fields when called with a new identity item */
-    const autofillIdentity = (selectedField: FieldHandle, data: ItemContent<'identity'>) => {
+    const autofillIdentity = async (selectedField: FieldHandle, data: ItemContent<'identity'>) => {
         const fields = selectedField.getFormHandle().getFields();
 
-        fields.forEach((field) => {
+        for (const field of fields) {
             if (
                 field.autofilled &&
                 field.fieldType === FieldType.IDENTITY &&
@@ -137,10 +144,10 @@ export const createAutofillService = () => {
             ) {
                 /** If an identity field in the same section was
                  * previously autofilled, clear the previous value. */
-                field.autofill('');
+                await field.autofill('');
                 field.autofilled = null;
             }
-        });
+        }
 
         autofillIdentityFields(fields, selectedField, data);
     };
