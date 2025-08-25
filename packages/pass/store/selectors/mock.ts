@@ -222,7 +222,30 @@ export const getStateMock = () =>
                         ).data,
                     },
                 },
+
+                share6: {
+                    // Hidden share
+                    item1: {
+                        itemId: 'share6-item1',
+                        state: ItemState.Active,
+                        shareId: 'share6',
+                        lastUseTime: getEpoch(),
+                        data: itemBuilder('login').set('content', (content) =>
+                            content
+                                .set('itemUsername', 'username@subdomain.com')
+                                .set('urls', ['https://domain-of-hidden-share.com'])
+                        ).data,
+                    },
+                },
                 optimistic: { history: [], checkpoint: undefined },
             },
+        },
+        shares: {
+            share1: { shareId: 'share1', flags: 0 },
+            share2: { shareId: 'share2', flags: 0 },
+            share3: { shareId: 'share3', flags: 0 },
+            share4: { shareId: 'share4', flags: 0 },
+            share5: { shareId: 'share5', flags: 0 },
+            share6: { shareId: 'share6', flags: 1 },
         },
     }) as unknown as State;

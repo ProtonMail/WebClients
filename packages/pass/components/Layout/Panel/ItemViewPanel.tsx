@@ -20,7 +20,7 @@ import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { useItemLoading } from '@proton/pass/hooks/useItemLoading';
-import { isItemShared, isMonitored, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
+import { isClonableItem, isItemShared, isMonitored, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { isShareManageable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
@@ -48,6 +48,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     revision,
     share,
     type,
+    handleCloneClick,
     handleDeleteClick,
     handleDismissClick,
     handleEditClick,
@@ -98,7 +99,6 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const pinInFlight = useSelector(selectRequestInFlight(itemPinRequest(shareId, itemId)));
     const unpinInFlight = useSelector(selectRequestInFlight(itemUnpinRequest(shareId, itemId)));
     const canTogglePinned = !(pinInFlight || unpinInFlight);
-
     const accessCount = targetMembers + (revision.shareCount ?? 0);
 
     const canManage = isShareManageable(share);
@@ -108,6 +108,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const canManageAccess = shared && !readOnly;
     const canLeave = !isVault && !owner;
     const canMonitor = !EXTENSION_BUILD && !trashed && data.type === 'login' && !readOnly;
+    const canClone = canManage && isClonableItem(free)(revision);
 
     const [signal, setSignalItemSharing] = useState(false);
     const signalItemSharing = signal && !itemShared && canItemShare;
@@ -302,6 +303,15 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         onClick={handleMoveToVaultClick}
                                         label={c('Action').t`Move to another vault`}
                                         icon="folder-arrow-in"
+                                    />
+                                )}
+
+                                {canClone && (
+                                    <DropdownMenuButton
+                                        onClick={handleCloneClick}
+                                        label={c('Action').t`Clone item`}
+                                        icon="squares"
+                                        disabled={readOnly}
                                     />
                                 )}
 

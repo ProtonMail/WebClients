@@ -14,6 +14,7 @@ export const openShare = async ({ encryptedShare, ...options }: OpenShareProcess
         canAutofill: encryptedShare.CanAutoFill,
         createTime: encryptedShare.CreateTime,
         expireTime: encryptedShare.ExpireTime,
+        flags: encryptedShare.Flags,
         newUserInvitesReady: encryptedShare.NewUserInvitesReady,
         owner: encryptedShare.Owner,
         permission: encryptedShare.Permission,
