@@ -179,7 +179,8 @@ export const useMultiCheckCache = () => {
             `.codes-${data.Codes?.join(',') ?? ''}` +
             `.cc-${data.BillingAddress?.CountryCode}` +
             `.s-${data.BillingAddress?.State}` +
-            `.z-${data.BillingAddress?.ZipCode}`;
+            `.z-${data.BillingAddress?.ZipCode}` +
+            `.trial-${data.IsTrial ?? false}`;
 
         return btoa(id);
     };
