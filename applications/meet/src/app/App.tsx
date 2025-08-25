@@ -2,12 +2,11 @@ import { useEffect } from 'react';
 import { Route, useHistory, useLocation } from 'react-router-dom';
 
 import { ProtonApp } from '@proton/components';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import useFlag from '@proton/unleash/useFlag';
 
 import { ComingSoon } from './components/ComingSoon/ComingSoon';
 import { WasmUnsupportedError } from './components/WasmUnsupportedError';
-import * as config from './config';
+import config from './config';
 import { AdminContainer } from './containers/AdminContainer';
 import { DashboardContainer } from './containers/DashboardContainer';
 import { GuestContainer } from './containers/GuestContainer';
@@ -77,7 +76,7 @@ export const App = () => {
     }
 
     return (
-        <ProtonApp config={config as ProtonConfig}>
+        <ProtonApp config={config}>
             <style id="meet-dark-theme">{meetTheme.toString()}</style>
 
             {isGuest ? (

@@ -17,7 +17,7 @@ import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenti
 import { FlagProvider } from '@proton/unleash/index';
 
 import { bootstrapGuestApp } from '../boostrap';
-import * as config from '../config';
+import config from '../config';
 import type { MeetStore } from '../store/store';
 
 type ExtraThunkArguments = Omit<ProtonThunkArguments, 'config' | 'api' | 'eventManager' | 'notificationsManager'> & {
