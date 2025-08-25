@@ -6,7 +6,7 @@ import { Button, ButtonLike } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { getExtensionSupportedBrowser } from '@proton/pass/lib/extension/utils/browser';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { isSafari } from '@proton/shared/lib/helpers/browser';
+import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 import { Clients, clients } from '@proton/shared/lib/pass/constants';
 
 import { useSignup } from '../../../context/SignupContext';
@@ -18,13 +18,18 @@ export const InstallExtensionStep: FC = () => {
 
     const browser = useMemo(() => {
         const supportedBrowser = getExtensionSupportedBrowser();
-        const browser = supportedBrowser ? clients[supportedBrowser] : null;
 
-        if (browser) {
-            return browser;
+        if (supportedBrowser) {
+            return clients[supportedBrowser];
+        }
+        if (isSafari()) {
+            return clients[Clients.Safari];
+        }
+        if (isFirefox()) {
+            return clients[Clients.Firefox];
         }
 
-        return isSafari() ? clients[Clients.Safari] : null;
+        return null;
     }, []);
 
     const platforms = [
