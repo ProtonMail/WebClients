@@ -379,6 +379,9 @@ const MainContainer: FunctionComponent = () => {
                                     organizationAppRoutes={organizationAppRoutes}
                                     redirect={redirect}
                                     onOpenChat={openChat}
+                                    user={user}
+                                    organization={organization}
+                                    subscription={subscription}
                                 />
                             </Route>
                             <Route path={`${CANCEL_ROUTE}`}>
