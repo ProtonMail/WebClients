@@ -1,8 +1,8 @@
 import type { AppIntent } from '@proton/components/containers/login/interface';
-import { CYCLE, type Cycle, PLANS, type PlanIDs } from '@proton/payments';
+import { CYCLE, PLANS, type PlanIDs } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 
-import type { AvailablePlan } from '../../../context/SignupContext';
+import getAvailablePlansWithCycles from '../../../helpers/getAvailablePlansWithCycles';
 
 type ReferralSelectedPlan = {
     planIDs: PlanIDs;
@@ -58,18 +58,6 @@ export const getReferralSelectedPlan = (plan: SupportedReferralPlans | undefined
     }
 
     return referralPlanMap[plan];
-};
-
-export const getAvailablePlansWithCycles = (plans: { planIDs: PlanIDs }[], cycles: Cycle[]): AvailablePlan[] => {
-    const availablePlans: AvailablePlan[] = [];
-
-    cycles.forEach((cycle) => {
-        plans.forEach(({ planIDs }) => {
-            availablePlans.push({ planIDs, cycle });
-        });
-    });
-
-    return availablePlans;
 };
 
 export const REFERRAL_DEAFULT_CYCLE = CYCLE.YEARLY;
