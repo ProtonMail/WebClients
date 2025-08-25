@@ -257,7 +257,7 @@ export const getOrganizationAppRoutes = ({
                 available: canShowB2BActivityMonitorEvents,
                 subsections: [
                     {
-                        id: 'vpn-connection-events',
+                        id: 'activity-monitor-dashboard',
                     },
                 ],
             },
