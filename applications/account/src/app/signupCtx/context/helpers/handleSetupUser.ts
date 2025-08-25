@@ -28,7 +28,7 @@ import noop from '@proton/utils/noop';
 import generateDeferredMnemonicData from '../../../containers/recoveryPhrase/generateDeferredMnemonicData';
 import { type AccountData, SignupType } from '../../../signup/interfaces';
 
-export interface SubscriptionData2 {
+export interface SignupContextSubscriptionData {
     currency: Currency;
     cycle: Cycle;
     planIDs: PlanIDs;
@@ -36,11 +36,12 @@ export interface SubscriptionData2 {
     paymentToken: ExtendedTokenPayment | undefined;
     billingAddress: BillingAddress;
     vatNumber: string | undefined;
+    trial?: boolean;
 }
 
 const handleSubscribeUser = async (
     api: Api,
-    subscriptionData: SubscriptionData2,
+    subscriptionData: SignupContextSubscriptionData,
     productParam: ProductParam,
     hasZipCodeValidation: boolean,
     onPaymentSuccess?: () => void,
@@ -66,6 +67,7 @@ const handleSubscribeUser = async (
                     Cycle: subscriptionData.cycle,
                     BillingAddress: subscriptionData.billingAddress,
                     VatId: subscriptionData.vatNumber,
+                    ...(subscriptionData.trial ? { StartTrial: true } : {}),
                     ...{
                         Payment: subscriptionData.paymentToken,
                         Amount: subscriptionData.checkResult.AmountDue,
@@ -144,7 +146,7 @@ export const handleSetupUser = async ({
     api: Api;
     persistent: boolean;
     trusted: boolean;
-    subscriptionData: SubscriptionData2 | undefined;
+    subscriptionData: SignupContextSubscriptionData | undefined;
     productParam: ProductParam;
     keyTransparencyActivation: KeyTransparencyActivation;
     hasZipCodeValidation: boolean;
