@@ -38,12 +38,12 @@ export const getIsStandardBydayArray = (byday: (string | undefined)[]): byday is
 };
 
 export const getPositiveSetpos = (date: Date) => {
-    const dayOfMonth = date.getUTCDate();
+    const dayOfMonth = date.getDate();
     const shiftedDayOfMonth = dayOfMonth - 1;
     return Math.floor(shiftedDayOfMonth / 7) + 1;
 };
 export const getNegativeSetpos = (date: Date) => {
-    const dayOfMonth = date.getUTCDate();
+    const dayOfMonth = date.getDate();
     const daysInMonth = getDaysInMonth(date);
 
     // return -1 if it's the last occurrence in the month
