@@ -2,15 +2,19 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { config as dotenvConfig } from 'dotenv';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'node:path';
-import webpack, { DefinePlugin } from 'webpack';
+import webpack, { type Configuration, DefinePlugin } from 'webpack';
 
-import getConfig from '@proton/pack/webpack.config';
-import { addDevEntry, getIndexChunks } from '@proton/pack/webpack/entries';
+import { type WebpackEnvArguments, getWebpackOptions } from '@proton/pack/lib/config';
+import { addDevEntry, getConfig } from '@proton/pack/webpack.config';
+import { getIndexChunks } from '@proton/pack/webpack/entries';
+
+import appConfig from './appConfig';
 
 dotenvConfig({ path: path.join(__dirname, '.env') });
 
-const result = (env: any): webpack.Configuration => {
-    const config = getConfig(env);
+const result = (opts: WebpackEnvArguments): Configuration => {
+    const webpackOptions = getWebpackOptions(opts, { appConfig });
+    const config = getConfig(webpackOptions);
 
     config.plugins = config.plugins || [];
 
@@ -44,7 +48,7 @@ const result = (env: any): webpack.Configuration => {
         })
     );
 
-    if (env.appMode === 'standalone') {
+    if (webpackOptions.appMode === 'standalone') {
         addDevEntry(config);
     }
 
