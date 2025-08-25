@@ -70,7 +70,8 @@ export const useFileDetailsModalState = ({ volumeId, linkId, ...modalProps }: Us
                     : node.error.activeRevision?.ok
                       ? node.error.activeRevision.value
                       : undefined;
-                const numberOfDownloads = await getNumberOfDownloads(drive, nodeUid);
+                const numberOfDownloads =
+                    nodeEntity.directRole === MemberRole.Admin ? await getNumberOfDownloads(drive, nodeUid) : undefined;
 
                 setDetails({
                     uid: nodeEntity.uid,
