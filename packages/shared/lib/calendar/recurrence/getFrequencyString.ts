@@ -6,6 +6,7 @@ import unique from '@proton/utils/unique';
 import { format } from '../../date-fns-utc';
 import type { WeekStartsOn } from '../../date-fns-utc/interface';
 import { getShortenDayFormat } from '../../date/date';
+import { toUTCDate } from '../../date/timezone';
 import type {
     VcalDateOrDateTimeProperty,
     VcalRruleProperty,
@@ -664,7 +665,7 @@ export const getFrequencyString = (
     dtstart: VcalDateOrDateTimeProperty,
     { weekStartsOn, locale }: Pick<GetTimezonedFrequencyStringOptions, 'weekStartsOn' | 'locale'>
 ) => {
-    const date = new Date(dtstart.value.year, dtstart.value.month - 1, dtstart.value.day);
+    const startFakeUtcDate = toUTCDate(dtstart.value);
 
     if (!getIsRruleSimple(rruleValue)) {
         if (!getIsRruleCustom(rruleValue)) {
@@ -693,12 +694,12 @@ export const getFrequencyString = (
             return getCustomDailyString(rruleValue, end, locale);
         }
         if (rruleValue.freq === FREQUENCY.WEEKLY) {
-            return getCustomWeeklyString(rruleValue, end, weekStartsOn, date, locale);
+            return getCustomWeeklyString(rruleValue, end, weekStartsOn, startFakeUtcDate, locale);
         }
         if (rruleValue.freq === FREQUENCY.MONTHLY) {
             const { byday, bysetpos } = rruleValue;
             const monthType = getMonthType(byday, bysetpos);
-            return getCustomMonthlyString(rruleValue, end, monthType, date, locale);
+            return getCustomMonthlyString(rruleValue, end, monthType, startFakeUtcDate, locale);
         }
         if (rruleValue.freq === FREQUENCY.YEARLY) {
             return getCustomYearlyString(rruleValue, end, locale);
@@ -708,7 +709,7 @@ export const getFrequencyString = (
         return c('Info').t`Daily`;
     }
     if (rruleValue.freq === FREQUENCY.WEEKLY) {
-        const startDay = date.getDay();
+        const startDay = startFakeUtcDate.getDay();
         if (startDay === 0) {
             return c('Weekly recurring event, frequency').t`Weekly on Sunday`;
         }
@@ -733,6 +734,7 @@ export const getFrequencyString = (
     }
     if (rruleValue.freq === FREQUENCY.MONTHLY) {
         const { byday, bysetpos } = rruleValue;
+        const date = new Date(dtstart.value.year, dtstart.value.month - 1, dtstart.value.day);
         const onDayString = getOnDayString(date, getMonthType(byday, bysetpos));
         return c('Info').t`Monthly ${onDayString}`;
     }
