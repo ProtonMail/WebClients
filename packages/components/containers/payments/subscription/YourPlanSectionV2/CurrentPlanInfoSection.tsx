@@ -2,10 +2,8 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import Price from '@proton/components/components/price/Price';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import {
-    CYCLE,
     type Subscription,
     canModify,
     getHasPassB2BPlan,
@@ -54,20 +52,6 @@ const PlanNameSection = ({
 }) => {
     const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription);
 
-    const cycle = subscription?.Cycle ?? CYCLE.MONTHLY;
-    const amount = (subscription?.Amount ?? 0) / cycle;
-
-    const planPriceElement = (user.hasPaidMail || user.hasPaidVpn) && !isManagedExternally(subscription) && (
-        <Price
-            className="text-sm color-weak"
-            currency={subscription?.Currency}
-            suffix={subscription && amount ? c('Suffix').t`/month` : ''}
-            data-testid="plan-price"
-        >
-            {amount}
-        </Price>
-    );
-
     const billingCycleElement = subscription.Cycle && (
         <>
             <span className="color-weak mx-1">·</span>
@@ -82,13 +66,7 @@ const PlanNameSection = ({
         </>
     );
 
-    return (
-        <PlanIconName
-            logo={<PlanIcon app={app} subscription={subscription} />}
-            topLine={topLine}
-            bottomLine={planPriceElement}
-        />
-    );
+    return <PlanIconName logo={<PlanIcon app={app} subscription={subscription} />} topLine={topLine} />;
 };
 export const CurrentPlanInfoSection = ({
     app,

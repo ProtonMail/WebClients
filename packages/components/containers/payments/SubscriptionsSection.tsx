@@ -9,6 +9,7 @@ import { Tooltip } from '@proton/atoms';
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Icon from '@proton/components/components/icon/Icon';
+import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import Table from '@proton/components/components/table/Table';
@@ -119,14 +120,14 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
     const { renewAmount, renewCurrency, renewLength } = (() => {
         if (upcoming && isUpcomingSubscriptionUnpaid) {
             return {
-                renewAmount: upcoming.Amount,
+                renewAmount: upcoming.BaseRenewAmount,
                 renewCurrency: upcoming.Currency,
                 renewLength: upcoming.Cycle,
             };
         }
 
         return {
-            renewAmount: latestSubscription.RenewAmount,
+            renewAmount: latestSubscription.BaseRenewAmount ?? latestSubscription.RenewAmount,
             renewCurrency: latestSubscription.Currency,
             renewLength: latestSubscription.Cycle,
         };
@@ -178,7 +179,13 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
                 {subscriptionExpiresSoon ? (
                     <DropdownActions size="small" list={reactivateAction} />
                 ) : (
-                    renewalTextElement
+                    <div className="flex items-center">
+                        {renewalTextElement}
+                        <Info
+                            className="ml-2"
+                            title={c('Payments').t`Credits and discounts are reflected in your invoice`}
+                        />
+                    </div>
                 )}
             </TableCell>
         </TableRow>

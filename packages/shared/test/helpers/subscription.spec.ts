@@ -7,8 +7,6 @@ import {
     CYCLE,
     PLANS,
     type Plan,
-    PlanState,
-    Renew,
     type Subscription,
     type SubscriptionPlan,
     SubscriptionPlatform,
@@ -34,46 +32,9 @@ let subscription: Subscription;
 let defaultPlan: SubscriptionPlan;
 
 beforeEach(() => {
-    subscription = {
-        ID: 'id-123',
-        InvoiceID: 'invoice-id-123',
-        Cycle: CYCLE.MONTHLY,
-        PeriodStart: 123,
-        PeriodEnd: 777,
-        CreateTime: 123,
-        CouponCode: null,
-        Currency: 'EUR',
-        Amount: 123,
-        RenewAmount: 123,
-        Discount: 123,
-        RenewDiscount: 123,
-        Plans: [],
-        External: SubscriptionPlatform.Default,
-        Renew: Renew.Enabled,
-        IsTrial: false,
-    };
+    subscription = buildSubscription();
 
-    defaultPlan = {
-        ID: 'plan-id-123',
-        Type: 0,
-        Cycle: CYCLE.MONTHLY,
-        Name: PLANS.BUNDLE,
-        Title: 'Bundle',
-        Currency: 'EUR',
-        Amount: 123,
-        MaxDomains: 123,
-        MaxAddresses: 123,
-        MaxSpace: 123,
-        MaxCalendars: 123,
-        MaxMembers: 123,
-        MaxVPN: 123,
-        MaxTier: 123,
-        Services: 123,
-        Features: 123,
-        Quantity: 123,
-        State: PlanState.Available,
-        Offer: 'default',
-    };
+    defaultPlan = subscription.Plans[0];
 });
 
 describe('getPlanIDs', () => {

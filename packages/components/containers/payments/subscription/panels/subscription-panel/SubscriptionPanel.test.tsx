@@ -37,7 +37,7 @@ describe('SubscriptionPanel', () => {
         expect(screen.getByTestId('plan-name')).toHaveTextContent('Free');
     });
 
-    it('should render paid plan with price correctly', () => {
+    it('should render paid plan name correctly', () => {
         renderWithProviders(
             <SubscriptionPanel
                 {...defaultProps}
@@ -51,7 +51,6 @@ describe('SubscriptionPanel', () => {
         );
 
         expect(screen.getByTestId('plan-name')).toHaveTextContent('Mail Plus');
-        expect(screen.getByTestId('plan-price')).toHaveTextContent('4.99');
     });
 
     it('should render pass lifetime name if user has pass lifetime', () => {
