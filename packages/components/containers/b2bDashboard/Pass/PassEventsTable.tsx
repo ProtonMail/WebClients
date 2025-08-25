@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { getUnixTime, parseISO } from 'date-fns';
 import { c } from 'ttag';
 
 import { Avatar, Tooltip } from '@proton/atoms';
@@ -140,10 +141,10 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
                     const { vaultId, itemId } = eventData;
                     const key = index;
 
-                    const unixTime = new Date(time).getTime() / 1000;
                     const shareId = vaultId ? shareIds[vaultId] : undefined;
                     const hasInvalidShareId = vaultId ? invalidShareIds.has(vaultId) : false;
                     const initials = name ? getInitials(name) : email.charAt(0);
+                    const formattedTime = getUnixTime(parseISO(time));
 
                     return (
                         <TableRow
@@ -173,7 +174,7 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
                                         {eventTypeName}
                                     </div>
                                     <Time format="PPp" className="color-weak" onClick={() => onTimeClick(time)}>
-                                        {unixTime}
+                                        {formattedTime}
                                     </Time>
                                 </div>,
                                 <Description

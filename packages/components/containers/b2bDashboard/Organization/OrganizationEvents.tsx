@@ -3,38 +3,41 @@ import { useEffect, useState } from 'react';
 import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
-import Pagination from '@proton/components/components/pagination/Pagination';
-import usePaginationAsync from '@proton/components/components/pagination/usePaginationAsync';
-import PassEventsTable from '@proton/components/containers/b2bDashboard/Pass/PassEventsTable';
+import { Pagination, usePaginationAsync } from '@proton/components/components/pagination';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { getPassEventTypes, getPassLogs, getPassLogsDownload } from '@proton/shared/lib/api/b2bevents';
-import { PASS_APP_NAME, SORT_DIRECTION } from '@proton/shared/lib/constants';
+import {
+    getOrganizationEventTypes,
+    getOrganizationLogs,
+    getOrganizationLogsDownload,
+} from '@proton/shared/lib/api/b2bevents';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';
 
-import SettingsSectionWide from '../../../containers/account/SettingsSectionWide';
-import GenericError from '../../../containers/error/GenericError';
 import { toCamelCase } from '../../credentialLeak/helpers';
+import GenericError from '../../error/GenericError';
 import { FilterAndSortEventsBlock } from '../FilterAndSortEventBlock';
-import type { EventObject } from './helpers';
 import {
     ALL_EVENTS_DEFAULT,
+    type EventObject,
     PAGINATION_LIMIT,
-    downloadPassEvents,
-    getConnectionEvents,
     getLocalTimeStringFromDate,
     getSearchType,
-} from './helpers';
-import type { PassEvent } from './interface';
+} from '../Pass/helpers';
+import { downloadEvents, getConnectionEvents } from '../VPN/helpers';
+import OrganizationEventsTable from './OrganizationEventsTable';
+import type { OrganizationEvent } from './interface';
 
 export interface FilterModel {
     eventType: string;
     start: Date | undefined;
     end: Date | undefined;
 }
+
 const initialFilter = {
     eventType: ALL_EVENTS_DEFAULT,
     start: undefined,
@@ -47,30 +50,48 @@ const getQueryParams = (filter: FilterModel, searchType: 'ip' | 'email' | 'searc
     const StartTime = start ? getLocalTimeStringFromDate(start) : undefined;
     const EndTime = end ? getLocalTimeStringFromDate(endOfDay(end)) : undefined;
     const Email = searchType === 'email' ? keyword : undefined;
-    const Ip = searchType === 'ip' ? keyword : undefined;
-    return { Email, Ip, EventTypes, StartTime, EndTime };
+    const Search = searchType === 'search' ? keyword : undefined;
+    return { Email, Search, EventTypes, StartTime, EndTime };
 };
 
-export const PassEvents = () => {
+export const OrganizationEvents = () => {
     const api = useApi();
     const handleError = useErrorHandler();
+
     const { page, onNext, onPrevious, onSelect, reset } = usePaginationAsync(1);
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const [filter, setFilter] = useState<FilterModel>(initialFilter);
-    const [events, setEvents] = useState<PassEvent[]>([]);
-    const [connectionEvents, setConnectionEvents] = useState<EventObject[]>([]);
+    const [events, setEvents] = useState<OrganizationEvent[] | []>([]);
+    const [orgEvents, setOrgEvents] = useState([]);
     const [keyword, setKeyword] = useState<string>('');
     const [total, setTotal] = useState<number>(0);
     const [query, setQuery] = useState({});
     const [error, setError] = useState<string | null>(null);
     const [sortDirection, setSortDirection] = useState(SORT_DIRECTION.DESC);
+    const [reloadTrigger, setReloadTrigger] = useState(0);
 
-    const fetchPassLogs = async (params: B2BLogsQuery) => {
+    const fetchOrganizationEvents = async () => {
+        const { Items } = await api(getOrganizationEventTypes());
+        const filteredItems = Items.filter((item: EventObject) => item.EventType !== '' && item.EventTypeName !== '');
+        const sortedItems = filteredItems.sort((a: EventObject, b: EventObject) =>
+            a.EventTypeName.localeCompare(b.EventTypeName)
+        );
+        setOrgEvents(sortedItems);
+    };
+
+    useEffect(() => {
+        fetchOrganizationEvents();
+    }, []);
+
+    const fetchOrganizationLogs = async (params: B2BLogsQuery) => {
         try {
-            const { Items, Total } = await api(getPassLogs(params));
-            const passEvents = toCamelCase(Items);
-            setEvents(passEvents);
+            const { Items, Total } = await api(
+                getOrganizationLogs({ ...params, Sort: sortDirection === SORT_DIRECTION.DESC ? 'desc' : 'asc' })
+            );
+            const events = toCamelCase(Items);
+
+            setEvents(events);
             setTotal(Total | 0);
         } catch (e) {
             handleError(e);
@@ -78,34 +99,15 @@ export const PassEvents = () => {
         }
     };
 
-    const fetchPassConnectionEvents = async () => {
-        const { Items } = await api<{ Items: EventObject[] }>(getPassEventTypes());
-        const filteredItems = Items.filter((item: EventObject) => item.EventType !== '' && item.EventTypeName !== '');
-        const sortedItems = filteredItems.sort((a: EventObject, b: EventObject) =>
-            a.EventTypeName.localeCompare(b.EventTypeName)
-        );
-        setConnectionEvents(sortedItems);
-    };
-
     useEffect(() => {
-        fetchPassConnectionEvents();
-    }, []);
-
-    useEffect(() => {
-        withLoading(
-            fetchPassLogs({
-                ...query,
-                Page: page - 1,
-                Sort: sortDirection === SORT_DIRECTION.DESC ? 'desc' : 'asc',
-            }).catch(noop)
-        );
-    }, [page, query, sortDirection]);
+        withLoading(fetchOrganizationLogs({ ...query, Page: page - 1 }).catch(noop));
+    }, [page, query, sortDirection, reloadTrigger]);
 
     const handleSearchSubmit = () => {
         setError(null);
         const searchType = getSearchType(keyword);
         if (searchType === 'invalid') {
-            createNotification({ text: c('Notification').t`Invalid input. Search an email or IP address.` });
+            createNotification({ text: c('Notification').t`Invalid input. Search an email or detail.` });
             return;
         }
         const queryParams = getQueryParams(filter, searchType, keyword);
@@ -115,7 +117,7 @@ export const PassEvents = () => {
 
     const handleDownloadClick = async () => {
         const response = await api({
-            ...getPassLogsDownload({ ...query, Page: page - 1 }),
+            ...getOrganizationLogsDownload({ ...query, Page: page - 1 }),
             output: 'raw',
         });
 
@@ -130,7 +132,7 @@ export const PassEvents = () => {
             });
         }
 
-        downloadPassEvents(response);
+        downloadEvents(response);
     };
 
     const handleStartDateChange = (start: Date | undefined) => {
@@ -161,7 +163,7 @@ export const PassEvents = () => {
 
     const handleClickableEvent = (eventType: string) => {
         setFilter({ ...filter, eventType });
-        setQuery({ ...query, Event: eventType });
+        setQuery({ ...query, EventTypes: [eventType] });
         reset();
     };
 
@@ -169,19 +171,20 @@ export const PassEvents = () => {
         const date = new Date(time);
         const start = getLocalTimeStringFromDate(startOfDay(date));
         const end = getLocalTimeStringFromDate(endOfDay(date));
+
         setFilter({ ...filter, start: date, end: date });
         setQuery({ ...query, StartTime: start, EndTime: end });
         reset();
     };
 
-    const handleClickableEmailOrIP = (keyword: string) => {
+    const handleClickableEmailOrDetails = (keyword: string) => {
         const searchType = getSearchType(keyword);
 
-        if (searchType !== 'email' && searchType !== 'ip') {
+        if (searchType !== 'email' && searchType !== 'search') {
             return;
         }
 
-        const updatedQuery = { ...query, [searchType === 'email' ? 'Email' : 'Ip']: keyword };
+        const updatedQuery = { ...query, [searchType === 'email' ? 'Email' : 'Search']: keyword };
         setQuery(updatedQuery);
         setKeyword(keyword);
         reset();
@@ -199,14 +202,18 @@ export const PassEvents = () => {
         reset();
     };
 
+    const triggerReload = () => {
+        setReloadTrigger((prev) => prev + 1);
+    };
+
     return (
         <SettingsSectionWide customWidth="90em">
             <div className="flex flex-row justify-space-between items-center my-4">
                 <div className="flex *:min-size-auto flex-column gap-2 w-full">
-                    <div className="flex flex-column gap-2 p-4 rounded-lg border border-solid border-weak">
-                        <span className="text-bold">{c('Info').t`Pass usage logs`}</span>
+                    <div className="flex flex-column flex-nowrap gap-1 px-4 py-4 rounded-lg border border-solid border-weak">
+                        <span className="text-bold">{c('Info').t`Organization monitor`}</span>
                         <span className="color-weak">{c('Message')
-                            .t`View ${PASS_APP_NAME} activity across your organization.`}</span>
+                            .t`View changes to your organization and other administrator activities.`}</span>
                     </div>
                 </div>
             </div>
@@ -217,33 +224,39 @@ export const PassEvents = () => {
                 handleSetEventType={handleSetEventType}
                 handleStartDateChange={handleStartDateChange}
                 handleEndDateChange={handleEndDateChange}
-                eventTypesList={getConnectionEvents(connectionEvents) || []}
-                handleSearchSubmit={handleSearchSubmit}
                 handleDownloadClick={handleDownloadClick}
-                resetFilter={handleResetFilter}
+                eventTypesList={getConnectionEvents(orgEvents)}
+                handleSearchSubmit={handleSearchSubmit}
                 hasFilterEvents={true}
+                hasRefreshEvents={true}
+                loadingReload={loading}
+                isOrganizationEvents={true}
+                onReload={triggerReload}
+                resetFilter={handleResetFilter}
             />
             {error ? (
                 <GenericError className="text-center">{error}</GenericError>
             ) : (
-                <div className="flex justify-center">
-                    <PassEventsTable
-                        events={events}
-                        loading={loading}
-                        onEventClick={handleClickableEvent}
-                        onTimeClick={handleClickableTime}
-                        onEmailOrIpClick={handleClickableEmailOrIP}
-                        onToggleSort={handleToggleSort}
-                    />
-                    <Pagination
-                        page={page}
-                        total={total}
-                        limit={PAGINATION_LIMIT}
-                        onSelect={onSelect}
-                        onNext={onNext}
-                        onPrevious={onPrevious}
-                    />
-                </div>
+                <>
+                    <div className="flex justify-center">
+                        <OrganizationEventsTable
+                            events={events}
+                            loading={loading}
+                            onTimeClick={handleClickableTime}
+                            onEventClick={handleClickableEvent}
+                            onEmailOrDetailsClick={handleClickableEmailOrDetails}
+                            onToggleSort={handleToggleSort}
+                        />
+                        <Pagination
+                            page={page}
+                            total={total}
+                            limit={PAGINATION_LIMIT}
+                            onSelect={onSelect}
+                            onNext={onNext}
+                            onPrevious={onPrevious}
+                        />
+                    </div>
+                </>
             )}
         </SettingsSectionWide>
     );
