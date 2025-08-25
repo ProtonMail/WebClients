@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
-import { useShallow } from 'zustand/react/shallow';
 
 import { generateNodeUid } from '@proton/drive/index';
 import { NodeType } from '@proton/drive/index';
@@ -38,13 +37,6 @@ export const useLegacyLoader = () => {
     const [albums, setAlbums] = useState<DecryptedLink[]>([]);
 
     const cachedLinks = useMemoArrayNoMatterTheOrder(albums);
-
-    const { setSharedWithMeItemInStore, setLoadingLegacy } = useSharedWithMeListingStore(
-        useShallow((state) => ({
-            setSharedWithMeItemInStore: state.setSharedWithMeItem,
-            setLoadingLegacy: state.setLoadingLegacy,
-        }))
-    );
 
     const loadLegacySharedWithMeAlbums = useCallback(
         async (abortSignal: AbortSignal) => {
@@ -87,12 +79,15 @@ export const useLegacyLoader = () => {
     );
 
     const populateNodesFromLegacy = useCallback(() => {
-        if (cachedLinks.length === 0) {
+        const { setLoadingLegacyNodes, isLoadingLegacyNodes, setSharedWithMeItem, cleanupStaleItems } =
+            useSharedWithMeListingStore.getState();
+        if (cachedLinks.length === 0 || isLoadingLegacyNodes) {
             return;
         }
 
-        setLoadingLegacy(true);
+        setLoadingLegacyNodes(true);
         try {
+            const loadedUids = new Set<string>();
             const nodesToProcess = cachedLinks.map((legacyNode) => {
                 const uid = generateNodeUid(legacyNode.volumeId, legacyNode.linkId);
                 return {
@@ -122,7 +117,8 @@ export const useLegacyLoader = () => {
                             nodeType = NodeType.Folder;
                         }
 
-                        setSharedWithMeItemInStore({
+                        loadedUids.add(missingNode.uid);
+                        setSharedWithMeItem({
                             nodeUid: missingNode.uid,
                             name: missingNode.name,
                             type: nodeType,
@@ -135,6 +131,7 @@ export const useLegacyLoader = () => {
                                 sharedBy: sharedInfo.sharedBy,
                             },
                             legacy: {
+                                isFromLegacy: true,
                                 linkId: missingNode.linkId,
                                 shareId,
                                 volumeId: missingNode.volumeId,
@@ -143,21 +140,26 @@ export const useLegacyLoader = () => {
                     });
                 }
             });
+            cleanupStaleItems(ItemType.DIRECT_SHARE, loadedUids, { legacyCleanup: true });
         } catch (e) {
             handleError(e, { fallbackMessage: c('Error').t`We were not able some of your shared items` });
         } finally {
-            setLoadingLegacy(false);
+            setLoadingLegacyNodes(false);
         }
         // cachedLinks is not stable, we should ignore it
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [loadSharedInfo, setLoadingLegacy, handleError, setSharedWithMeItemInStore]);
+    }, [loadSharedInfo, handleError]);
 
     const populateInvitationsFromLegacy = useCallback(() => {
-        if (invitations.length === 0) {
+        const { setLoadingLegacyInvitations, isLoadingLegacyInvitations, setSharedWithMeItem, cleanupStaleItems } =
+            useSharedWithMeListingStore.getState();
+        if (cachedLinks.length === 0 || isLoadingLegacyInvitations) {
             return;
         }
 
+        setLoadingLegacyInvitations(true);
         try {
+            const loadedUids = new Set<string>();
             invitations.forEach((invitation) => {
                 const uid = generateNodeUid(invitation.share.volumeId, invitation.link.linkId);
                 let nodeType = NodeType.Album;
@@ -167,7 +169,8 @@ export const useLegacyLoader = () => {
                     nodeType = NodeType.Folder;
                 }
 
-                setSharedWithMeItemInStore({
+                loadedUids.add(invitation.invitation.invitationId);
+                setSharedWithMeItem({
                     nodeUid: uid,
                     name: invitation.decryptedLinkName || '',
                     type: nodeType,
@@ -180,18 +183,23 @@ export const useLegacyLoader = () => {
                         sharedBy: invitation.invitation.inviterEmail,
                     },
                     legacy: {
+                        isFromLegacy: true,
                         linkId: invitation.link.linkId,
                         shareId: invitation.share.shareId,
                         volumeId: invitation.share.volumeId,
                     },
                 });
             });
+
+            cleanupStaleItems(ItemType.INVITATION, loadedUids, { legacyCleanup: true });
         } catch (e) {
             handleError(e, { fallbackMessage: c('Error').t`We were not able some of your shared items` });
+        } finally {
+            setLoadingLegacyInvitations(false);
         }
         // invitations is not stable, we should ignore it
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [setSharedWithMeItemInStore, handleError]);
+    }, [handleError]);
 
     const loadLegacySharedWithMeAlbumsWithPopulate = useCallback(
         async (abortSignal: AbortSignal) => {

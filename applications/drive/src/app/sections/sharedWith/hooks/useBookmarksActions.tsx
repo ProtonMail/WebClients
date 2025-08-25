@@ -46,7 +46,7 @@ export const useBookmarksActions = () => {
         }
 
         if (deletedBookmarkUids.length > 0) {
-            getActionEventManager().emit({
+            await getActionEventManager().emit({
                 type: ActionEventName.DELETE_BOOKMARKS,
                 uids: deletedBookmarkUids,
             });
