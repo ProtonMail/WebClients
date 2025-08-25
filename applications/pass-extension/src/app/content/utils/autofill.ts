@@ -1,4 +1,6 @@
 import type { FieldType } from '@proton/pass/fathom';
+import { seq } from '@proton/pass/utils/fp/promises';
+import noop from '@proton/utils/noop';
 
 export type AutofillOptions = {
     paste?: boolean;
@@ -6,7 +8,16 @@ export type AutofillOptions = {
 };
 
 const isFocused = (el: HTMLElement) => el === document.activeElement;
-const dispatchEvents = (el: HTMLElement) => (events: Event[]) => events.forEach((event) => el.dispatchEvent(event));
+
+/** Dispatch events asynchronously in sequence to handle timing-sensitive websites.
+ * Some sites require time gaps between events to properly handle them, and using
+ * promises provides these gaps via the microtask queue, better mimicking natural
+ * user interactions where events don't fire instantaneously. */
+const dispatchEvents =
+    (el: HTMLElement) =>
+    async (events: Event[]): Promise<void> => {
+        await seq(events, async (event) => el.dispatchEvent(event)).catch(noop);
+    };
 
 /* Autofilling is based on chromium's autofill service
  * strategy - references can be found here :
@@ -15,17 +26,18 @@ const dispatchEvents = (el: HTMLElement) => (events: Event[]) => events.forEach(
  * Dispatched events need to bubble up as certain websites
  * attach their event listeners not directly on the input
  * elements (ie: account.google.com) */
-export const createAutofill = (input: HTMLInputElement) => (data: string, options?: AutofillOptions) => {
+export const createAutofill = (input: HTMLInputElement) => async (data: string, options?: AutofillOptions) => {
     const dispatch = dispatchEvents(input);
 
-    if (isFocused(input)) dispatch([new FocusEvent('focusin'), new FocusEvent('focus')]);
+    if (typeof input?.click === 'function') input.click();
+    if (isFocused(input)) await dispatch([new FocusEvent('focusin'), new FocusEvent('focus')]);
     else input.focus();
 
     if (options?.paste) {
         const clipboardData = new DataTransfer();
         clipboardData.setData('text/plain', data);
 
-        dispatch([
+        await dispatch([
             new ClipboardEvent('paste', {
                 bubbles: true,
                 cancelable: true,
@@ -35,7 +47,7 @@ export const createAutofill = (input: HTMLInputElement) => (data: string, option
     } else {
         input.value = data;
 
-        dispatch([
+        await dispatch([
             new KeyboardEvent('keydown', { bubbles: true }),
             /* `keypress` event for legacy websites support */
             new KeyboardEvent('keypress', { bubbles: true }),
@@ -44,9 +56,9 @@ export const createAutofill = (input: HTMLInputElement) => (data: string, option
 
         if (input.value !== data) input.value = data;
 
-        dispatch([new Event('input', { bubbles: true }), new Event('change', { bubbles: true })]);
+        await dispatch([new Event('input', { bubbles: true }), new Event('change', { bubbles: true })]);
     }
 
     if (isFocused(input)) input.blur();
-    else dispatch([new FocusEvent('focusout'), new FocusEvent('blur')]);
+    else await dispatch([new FocusEvent('focusout'), new FocusEvent('blur')]);
 };
