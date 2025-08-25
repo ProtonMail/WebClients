@@ -180,9 +180,22 @@ export const isPartialEmail = (input: string) => {
     return false;
 };
 
+export const isEmail = (input: string) => {
+    if (input.includes('@')) {
+        const [localPart, domainPart] = input.split('@');
+        if (localPart && !domainPart.includes(' ')) {
+            return true;
+        }
+    }
+    return false;
+};
+
 export const getSearchType = (input: string) => {
     if (!input) {
         return 'empty';
+    }
+    if (!isPartialIP(input) && !isEmail(input) && typeof input === 'string') {
+        return 'search';
     }
     if (isPartialIP(input)) {
         return 'ip';

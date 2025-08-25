@@ -39,7 +39,7 @@ export const getVPNEventIcon = (event: string) => {
     }
 };
 
-export const downloadVPNEvents = async (response: Response) => {
+export const downloadEvents = async (response: Response) => {
     const contentDisposition = response.headers.get('content-disposition');
     if (!contentDisposition) {
         return;

@@ -30,7 +30,7 @@ import VPNEventsTable from './VPNEventsTable';
 import type { OrganizationSettings } from './api';
 import { getMonitoringSetting, updateMonitoringSetting } from './api';
 import type { Event as EventObject } from './helpers';
-import { downloadVPNEvents, getConnectionEvents } from './helpers';
+import { downloadEvents, getConnectionEvents } from './helpers';
 import type { VPNEvent } from './interface';
 
 export interface FilterModel {
@@ -45,14 +45,14 @@ const initialFilter = {
     end: undefined,
 };
 
-const getQueryParams = (filter: FilterModel, searchType: 'ip' | 'email' | 'empty', keyword: string) => {
+const getQueryParams = (filter: FilterModel, searchType: 'ip' | 'email' | 'search' | 'empty', keyword: string) => {
     const { eventType, start, end } = filter;
-    const Event = eventType === ALL_EVENTS_DEFAULT ? undefined : eventType;
+    const EventTypes = eventType === ALL_EVENTS_DEFAULT ? undefined : [eventType];
     const StartTime = start ? getLocalTimeStringFromDate(start) : undefined;
     const EndTime = end ? getLocalTimeStringFromDate(endOfDay(end)) : undefined;
     const Email = searchType === 'email' ? keyword : undefined;
     const Ip = searchType === 'ip' ? keyword : undefined;
-    return { Email, Ip, Event, StartTime, EndTime };
+    return { Email, Ip, EventTypes, StartTime, EndTime };
 };
 
 export const VPNEvents = () => {
@@ -185,7 +185,7 @@ export const VPNEvents = () => {
             });
         }
 
-        downloadVPNEvents(response);
+        downloadEvents(response);
     };
 
     const handleStartDateChange = (start: Date | undefined) => {
@@ -302,13 +302,22 @@ export const VPNEvents = () => {
             </TimeIntl>
         );
 
-        return monitoring
+        const boldValue = <span className="text-semibold">{formattedDateAndTime}</span>;
+
+        const timeOfEvent = monitoring
             ? /** translator: formattedDateAndTime be like "25 Sep 2023, 15:37" or just "15:37" if it's on the same day */ c(
                   'Info'
-              ).jt`Enabled on ${formattedDateAndTime}`
+              ).jt`Enabled on ${boldValue}`
             : /** translator: formattedDateAndTime be like "25 Sep 2023, 15:37" or just "15:37" if it's on the same day */ c(
                   'Info'
-              ).jt`Disabled on ${formattedDateAndTime}`;
+              ).jt`Disabled on ${boldValue}`;
+
+        return (
+            <div className="flex flex-row items-center">
+                <Icon name="eye" />
+                <span className="ml-2">{timeOfEvent}</span>
+            </div>
+        );
     };
 
     const handleToggleSort = (direction: SORT_DIRECTION) => {
@@ -332,7 +341,7 @@ export const VPNEvents = () => {
                     onChange={setGatewayMonitoring}
                 />
             )}
-            <div className="mb-8 flex *:min-size-auto flex-column sm:flex-row gap-2">
+            <div className="mb-8 flex *:min-size-auto flex-column justify-space-between sm:flex-row gap-2 p-4 rounded-lg border border-solid border-weak items-center">
                 <div className="flex flex-row flex-nowrap items-center gap-2">
                     <Toggle
                         loading={togglingMonitoringLoading || togglingMonitoringInitializing}
@@ -342,11 +351,18 @@ export const VPNEvents = () => {
                         }
                         onChange={toggleMonitoring}
                     />
-                    <span>
+                    <div className="flex flex-column gap-1">
                         <span className="text-bold">{getMonitoringInfoText()}</span>
-                        <span className="block color-weak text-sm">{getMonitoringLastChangeText()}</span>
-                    </span>
+                        <span className="color-weak">{c('Info')
+                            .t`View VPN session details for your organization.`}</span>
+                    </div>
                 </div>
+                <span
+                    className="block color-weak py-0 px-1 border rounded border-weak bg-weak text-md flex items-center h-custom"
+                    style={{ '--h-custom': '2rem' }}
+                >
+                    {getMonitoringLastChangeText()}
+                </span>
             </div>
 
             <FilterAndSortEventsBlock
@@ -366,10 +382,6 @@ export const VPNEvents = () => {
                 <GenericError className="text-center">{error}</GenericError>
             ) : (
                 <>
-                    <div className="content-center my-3">
-                        <Icon name="info-circle" size={4.5} className="mr-1 mb-1" />
-                        <span>{c('Title').t`Click a value in the table to use it as filter`}</span>
-                    </div>
                     <div className="flex justify-center">
                         <VPNEventsTable
                             events={events}
