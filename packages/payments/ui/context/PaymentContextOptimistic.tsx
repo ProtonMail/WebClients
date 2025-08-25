@@ -11,6 +11,7 @@ import { type RequiredCheckResponse, getCheckout } from '../../core/checkout';
 import { CYCLE, FREE_SUBSCRIPTION } from '../../core/constants';
 import type { Currency, Cycle, PlanIDs } from '../../core/interface';
 import type { Plan } from '../../core/plan/interface';
+import { SubscriptionMode } from '../../core/subscription/constants';
 import { SelectedPlan } from '../../core/subscription/selected-plan';
 import type { InitializeProps } from './PaymentContext';
 import {
@@ -42,7 +43,7 @@ export type PaymentsContextOptimisticType = PaymentsContextType & {
     selectedPlan: SelectedPlan;
     loadingPaymentDetails: boolean;
     initializationStatus: InitializationStatus;
-    selectPlan: (options: Parameters<PaymentsContextTypeInner['selectNewPlan']>[0]) => void;
+    selectPlan: (checkOptions: Partial<OptimisticOptions>) => void;
     uiData: PaymentsContextTypeInner['uiData'];
     options: OptimisticOptions;
     vpnServersCountData: VPNServersCountData;
@@ -99,6 +100,7 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
                 State: '',
             },
             vatNumber: undefined,
+            trial: planToCheckParam?.trial,
         };
         const checkResult = paymentsContext.getOptimisticCheckResult(optimistic);
         setOptimistic({ ...optimistic, checkResult });
@@ -179,16 +181,28 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
         billingAddress: paymentsContext.billingAddress,
         checkResult: paymentsContext.checkResult,
         vatNumber: paymentsContext.vatNumber,
+        trial: paymentsContext.checkResult.SubscriptionMode === SubscriptionMode.Trial,
     };
     const options: OptimisticOptions = {
         ...subscriptionCheckOptions,
         ...optimistic,
+        checkResult: {
+            ...subscriptionCheckOptions.checkResult,
+            ...optimistic.checkResult,
+            /**
+             * TODO: super hack. But spent too long trying to figure out how to handle the subscription mode optimistically.
+             * The current b2b implementation also behaves this way
+             * https://account.proton.dev/business/signup?email=test%40test.com&orgName=asdf&fullName=test&trial=true&users=10
+             */
+            SubscriptionMode: subscriptionCheckOptions.checkResult.SubscriptionMode,
+        },
     };
 
     const handleOptimistic = (checkOptions: Partial<OptimisticOptions>) => {
         const mergedCheckOptions = {
             ...optimistic,
             ...checkOptions,
+            trial: checkOptions.trial || false, // Necessary to override trial to false if the option is not provided
         };
 
         const completeCheckOptions = {
