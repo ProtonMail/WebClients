@@ -4,7 +4,7 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { getOrgAuthLogs } from '@proton/shared/lib/api/b2bevents';
 
-import type { AuthLogsQueryParams } from './AuthenticationLogs';
+import type { AuthLogsQueryParams } from '../b2bDashboard/ActivityMonitor/helpers';
 
 export const getFormattedQueryString = (params: { [key: string]: any }) => {
     const queryParts: string[] = [];
