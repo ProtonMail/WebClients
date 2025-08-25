@@ -1,4 +1,5 @@
-import type { Share, VaultShareContent } from '@proton/pass/types';
+import { isShareVisible } from '@proton/pass/lib/shares/share.predicates';
+import type { Share, ShareVisibilityMap, VaultShareContent } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
 
 export const getShareName = (share: Share): string => {
@@ -11,3 +12,6 @@ export const getShareName = (share: Share): string => {
             return 'Not defined yet';
     }
 };
+
+export const intoShareVisibilityMap = (shares: Share[]): ShareVisibilityMap =>
+    Object.fromEntries(shares.map((share) => [share.shareId, isShareVisible(share)]));

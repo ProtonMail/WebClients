@@ -17,11 +17,11 @@ type Props = {
 };
 
 export const VaultMenuAll = memo(({ count, selected, onAction = noop }: Props) => {
-    const vaultActions = useVaultActions();
+    const { select, organize } = useVaultActions();
 
     return (
         <DropdownMenuButton
-            onClick={pipe(() => !selected && vaultActions.select('all'), onAction)}
+            onClick={pipe(() => !selected && select('all'), onAction)}
             label={
                 <div>
                     <div className="text-ellipsis">{getVaultOptionInfo('all').label}</div>
@@ -33,6 +33,14 @@ export const VaultMenuAll = memo(({ count, selected, onAction = noop }: Props) =
             parentClassName={clsx('pass-vault-submenu-vault-item w-full')}
             className={clsx(selected && 'is-selected', 'pl-2 pr-2')}
             icon={<VaultIcon className="shrink-0 mr-1" size={4} background />}
+            quickActions={[
+                <DropdownMenuButton
+                    key="vault-edit"
+                    label={c('Action').t`Organize vaults`}
+                    icon="list-bullets"
+                    onClick={organize}
+                />,
+            ]}
         />
     );
 });

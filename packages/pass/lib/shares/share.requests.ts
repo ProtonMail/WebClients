@@ -1,4 +1,8 @@
+import { c } from 'ttag';
+
 import { api } from '@proton/pass/lib/api/api';
+import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
+import type { ShareType } from '@proton/pass/types';
 import {
     type ActiveShareGetResponse,
     type ShareGetResponse,
@@ -75,3 +79,19 @@ export const editMemberAccess = async ({ shareId, userShareId, shareRoleId }: Sh
         method: 'put',
         data: { ShareRoleID: shareRoleId, ExpireTime: null },
     });
+
+export const toggleVisibility = async (shareId: string, visible: boolean) => {
+    const encryptedShare = (
+        await api({
+            url: `pass/v1/share/${shareId}/${visible ? 'unhide' : 'hide'}`,
+            method: 'put',
+        })
+    ).Share;
+
+    const shareKeys = await getAllShareKeys(shareId);
+    const share = await parseShareResponse<ShareType.Vault>(encryptedShare, { shareKeys });
+
+    if (!share) throw new Error(c('Error').t`Could not open updated vault`);
+
+    return share;
+};
