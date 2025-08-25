@@ -152,6 +152,8 @@ export enum SWIPE_ACTION {
     Star = 2,
     Archive = 3,
     MarkAsRead = 4,
+    LabelAs = 5,
+    MoveTo = 6,
 }
 
 export enum MAIL_PAGE_SIZE {
