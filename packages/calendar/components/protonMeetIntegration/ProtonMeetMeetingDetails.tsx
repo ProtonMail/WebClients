@@ -4,11 +4,13 @@ import { VideoConferencingWidget } from '../videoConferencing/VideoConferencingW
 import { VIDEO_CONF_SERVICES } from '../videoConferencing/constants';
 import { ProtonMeetRowContext } from './ProtonMeetRowContext';
 
-interface ProtonMeetMeetingDetailsProps {
+export interface ProtonMeetMeetingDetailsProps {
     passphrase: string;
     model: EventModel;
     savePassphrase: (passphrase: string) => Promise<void>;
     deleteMeeting: () => void;
+    fetchingDetailsFailed: boolean;
+    refetchMeeting: () => Promise<void>;
 }
 
 export const ProtonMeetMeetingDetails = ({
@@ -16,6 +18,8 @@ export const ProtonMeetMeetingDetails = ({
     model,
     savePassphrase,
     deleteMeeting,
+    fetchingDetailsFailed,
+    refetchMeeting,
 }: ProtonMeetMeetingDetailsProps) => {
     return (
         <div className="flex flex-nowrap justify-space-between items-start">
@@ -23,6 +27,8 @@ export const ProtonMeetMeetingDetails = ({
                 value={{
                     passphrase,
                     savePassphrase,
+                    fetchingDetailsFailed,
+                    refetchMeeting,
                 }}
             >
                 <VideoConferencingWidget

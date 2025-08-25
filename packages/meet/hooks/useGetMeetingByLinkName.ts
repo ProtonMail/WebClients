@@ -23,6 +23,7 @@ export const useGetMeetingByLinkName = () => {
                 return response.Meeting;
             } catch (error) {
                 console.error(error);
+                throw error;
             }
         },
         [api]

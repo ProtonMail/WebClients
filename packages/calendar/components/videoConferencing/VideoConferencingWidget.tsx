@@ -97,7 +97,6 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
                         copySuccessText={c('Notification').t`Passcode copied to clipboard`}
                     />
                 )}
-                {data.service === VIDEO_CONF_SERVICES.PROTON_MEET && <ProtonMeetPassword />}
                 {!hasOnlyLink && (
                     <Collapsible className="mt-2" expandByDefault={isExpanded} externallyControlled>
                         <CollapsibleHeader
@@ -137,6 +136,8 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
                                     <Href href={data.joiningInstructions}>{c('Google Meet')
                                         .t`Joining instructions`}</Href>
                                 )}
+
+                                {data.service === VIDEO_CONF_SERVICES.PROTON_MEET && <ProtonMeetPassword />}
                             </section>
                         </CollapsibleContent>
                     </Collapsible>
