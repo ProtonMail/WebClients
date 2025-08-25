@@ -88,8 +88,9 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null] => {
         }
 
         try {
+            const displayName = user?.DisplayName || user?.Name || user?.Email || '';
             const { meeting } = await createMeeting({
-                meetingName: c('meet_2025 Title').t`${user.Name}'s Personal Meeting`,
+                meetingName: c('meet_2025 Title').t`${displayName}'s Personal Meeting`,
                 type: MeetingType.PERSONAL,
             });
 

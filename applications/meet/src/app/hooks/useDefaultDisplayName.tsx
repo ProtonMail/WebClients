@@ -7,7 +7,7 @@ export function useDefaultDisplayName() {
 
     try {
         const [user] = useUser();
-        displayName = user?.Name;
+        displayName = user?.DisplayName || user?.Name || user?.Email || '';
     } catch {
         displayName = undefined;
     }
