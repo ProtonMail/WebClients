@@ -23,7 +23,8 @@ export function BaseDetailsModal<T>({
     hasError,
     details,
     DetailsComponent,
-    ...modalProps
+    open,
+    onExit,
 }: BaseDetailsModalProps<T> & ModalStateProps) {
     const renderModalState = () => {
         if (isLoading) {
@@ -43,7 +44,7 @@ export function BaseDetailsModal<T>({
     };
 
     return (
-        <ModalTwo onClose={onClose} size="large" {...modalProps}>
+        <ModalTwo onClose={onClose} size="large" open={open} onExit={onExit}>
             <ModalTwoHeader title={title} />
             {renderModalState()}
             <ModalTwoFooter>
