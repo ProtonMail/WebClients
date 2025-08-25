@@ -3,12 +3,16 @@ import { useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom-v5-compat';
 
 import { Loader } from '@proton/components';
+import { generateNodeUid } from '@proton/drive';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+import useFlag from '@proton/unleash/useFlag';
 
 import useDriveNavigation from '../hooks/drive/useNavigate';
 import { useDocumentActions } from '../store/_documents';
 import { useVolumeLinkView } from '../store/_views/useVolumeLinkView';
+import { getActionEventManager } from '../utils/ActionEventManager/ActionEventManager';
+import { ActionEventName } from '../utils/ActionEventManager/ActionEventManagerTypes';
 
 export const VolumeLinkContainer: FC = () => {
     const { volumeId, linkId } = useParams<{ volumeId: string; linkId: string }>();
@@ -16,6 +20,7 @@ export const VolumeLinkContainer: FC = () => {
     const searchParams = new URLSearchParams(search);
     const invitationId = searchParams.get('invitation');
     const externalInvitationId = searchParams.get('externalInvitationID');
+    const useSharedWithMeSdk = useFlag('DriveWebSDKSharedWithMe');
     const { handleRedirectOrAcceptInvitation, handleConvertExternalInvitation } = useVolumeLinkView();
     const { navigateToSharedWithMe, navigateToSharedByMe, navigateToLink, navigateToNoAccess, navigateToAlbum } =
         useDriveNavigation();
@@ -31,7 +36,7 @@ export const VolumeLinkContainer: FC = () => {
             volumeId,
             linkId,
         })
-            .then((linkInfo) => {
+            .then(async (linkInfo) => {
                 if (linkInfo && isProtonDocsDocument(linkInfo.mimeType)) {
                     return openDocument({
                         type: 'doc',
@@ -49,6 +54,17 @@ export const VolumeLinkContainer: FC = () => {
                 } else if (linkInfo?.type === LinkType.ALBUM) {
                     navigateToAlbum(linkInfo.shareId, linkInfo.linkId);
                 } else if (linkInfo?.shareId) {
+                    // TODO: Migrate to new accept invitation with sdk
+                    // Current issues:
+                    // - invitationId/invitationUid, we only have invitationId and sdk is waiting of invitationUid
+                    // - We don't get the mimeType so we can't switch between legacy/sdk accept invitation
+                    // - We can't do a single getInvitation on drive sdk
+                    if (useSharedWithMeSdk) {
+                        await getActionEventManager().emit({
+                            type: ActionEventName.ACCEPT_INVITATIONS,
+                            uids: [generateNodeUid(volumeId, linkId)],
+                        });
+                    }
                     navigateToLink(linkInfo.shareId, linkInfo.linkId, linkInfo.isFile, '/shared-with-me');
                 } else {
                     navigateToNoAccess();

@@ -91,6 +91,13 @@ class ActionEventManager {
         }
     >();
 
+    private driveEventSubscription:
+        | {
+              subscription: Promise<EventSubscription>;
+              contexts: Set<string>;
+          }
+        | undefined;
+
     private debugMode: boolean;
 
     // TODO: Create an helper to get the value
@@ -223,14 +230,16 @@ class ActionEventManager {
         const existing = this.treeEventSubscriptions.get(treeEventScopeId);
 
         if (existing) {
+            existing.contexts.add(context);
             if (this.debugMode) {
                 // eslint-disable-next-line no-console
-                console.debug(
-                    '[ActionEventManager] Subscribtion for given treeEventScopeId exist, adding new context and skip subscription',
-                    { treeEventScopeId, context, existingContext: Array.from(existing.contexts.values()) }
-                );
+                console.debug('[ActionEventManager] Added context to existing SDK scope subscription', {
+                    treeEventScopeId,
+                    context,
+                    totalContexts: existing.contexts.size,
+                    allContexts: Array.from(existing.contexts),
+                });
             }
-            existing.contexts.add(context);
             return;
         }
 
@@ -246,7 +255,11 @@ class ActionEventManager {
 
         if (this.debugMode) {
             // eslint-disable-next-line no-console
-            console.debug('[ActionEventManager] Subscribed to new Sdk event scope', { treeEventScopeId, context });
+            console.debug('[ActionEventManager] Subscribed to new SDK scope events', {
+                treeEventScopeId,
+                context,
+                totalScopes: this.treeEventSubscriptions.size,
+            });
         }
     }
 
@@ -273,14 +286,83 @@ class ActionEventManager {
             this.treeEventSubscriptions.delete(treeEventScopeId);
             if (this.debugMode) {
                 // eslint-disable-next-line no-console
-                console.debug(`[ActionEventManager] Unsubscribe to Sdk events`, { treeEventScopeId });
+                console.debug('[ActionEventManager] Unsubscribed from SDK scope events', {
+                    treeEventScopeId,
+                    remainingScopes: this.treeEventSubscriptions.size,
+                });
             }
         } else if (this.debugMode) {
             // eslint-disable-next-line no-console
-            console.debug(
-                `[ActionEventManager] Skipping unsubscribe as some contexts are still subscribed to this event scope`,
-                { treeEventScopeId, context, existingContext: Array.from(existing.contexts.values()) }
+            console.debug('[ActionEventManager] Removed context from SDK scope subscription', {
+                treeEventScopeId,
+                removedContext: context,
+                remainingContexts: existing.contexts.size,
+                allContexts: Array.from(existing.contexts),
+            });
+        }
+    }
+
+    /**
+     * Subscribe to general drive sdk events
+     * @param context - A unique context identifier (e.g., 'trashContainer', 'folderView')
+     */
+    async subscribeSdkDriveEvents(context: string): Promise<void> {
+        if (this.driveEventSubscription) {
+            this.driveEventSubscription.contexts.add(context);
+            if (this.debugMode) {
+                // eslint-disable-next-line no-console
+                console.debug('[ActionEventManager] Added context to existing SDK drive events subscription', {
+                    context,
+                    totalContexts: this.driveEventSubscription.contexts.size,
+                    allContexts: Array.from(this.driveEventSubscription.contexts),
+                });
+            }
+        } else {
+            const drive = getDrive();
+            const subscription = drive.subscribeToDriveEvents(async (event: DriveEvent) => {
+                await this.handleSdkEvent(event);
+            });
+            this.driveEventSubscription = {
+                subscription,
+                contexts: new Set([context]),
+            };
+            if (this.debugMode) {
+                // eslint-disable-next-line no-console
+                console.debug('[ActionEventManager] Subscribed to SDK drive events', { context });
+            }
+        }
+    }
+
+    /**
+     * Subscribe to general drive sdk events
+     * @param context - A unique context identifier (e.g., 'trashContainer', 'folderView')
+     */
+    async unsubscribeSdkDriveEvents(context: string): Promise<void> {
+        const existing = this.driveEventSubscription;
+        if (!existing) {
+            console.warn(
+                `[ActionEventManager] Trying to unsubscribe to general drive sdk event without having the treeEventScopeId for it`,
+                { context }
             );
+            return;
+        }
+
+        existing.contexts.delete(context);
+
+        if (existing.contexts.size === 0) {
+            await existing.subscription.then(({ dispose }) => dispose());
+            this.driveEventSubscription = undefined;
+            if (this.debugMode) {
+                // eslint-disable-next-line no-console
+                console.debug('[ActionEventManager] Unsubscribed from SDK drive events');
+            }
+        } else if (this.debugMode) {
+            // eslint-disable-next-line no-console
+            console.debug('[ActionEventManager] Removed context from SDK drive events subscription', {
+                removedContext: context,
+                remainingContexts: existing.contexts.size,
+                allContexts: Array.from(existing.contexts),
+            });
         }
     }
 
@@ -288,6 +370,14 @@ class ActionEventManager {
      * Handle incoming SDK events and emit corresponding ActionEvents
      */
     private async handleSdkEvent(event: DriveEvent): Promise<void> {
+        if (this.debugMode) {
+            // eslint-disable-next-line no-console
+            console.debug('[ActionEventManager] Handling SDK event', {
+                eventType: event.type,
+                nodeUid: 'nodeUid' in event ? event.nodeUid : undefined,
+            });
+        }
+
         try {
             switch (event.type) {
                 case DriveEventType.NodeCreated:

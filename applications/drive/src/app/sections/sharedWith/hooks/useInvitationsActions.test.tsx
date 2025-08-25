@@ -1,14 +1,13 @@
-import { renderHook, waitFor } from '@testing-library/react';
+import { renderHook } from '@testing-library/react';
 
 import { useNotifications } from '@proton/components';
-import { NodeType, useDrive } from '@proton/drive/index';
+import { MemberRole, type NodeEntity, NodeType, useDrive } from '@proton/drive/index';
 
 import { getActionEventManager } from '../../../utils/ActionEventManager/ActionEventManager';
 import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventManagerTypes';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
-import { useSharedInfoBatcher } from '../legacy/useLegacyDirectSharingInfo';
 import { useInvitationsActions } from './useInvitationsActions';
 
 jest.mock('@proton/components', () => ({
@@ -16,6 +15,7 @@ jest.mock('@proton/components', () => ({
 }));
 
 jest.mock('@proton/drive', () => ({
+    ...jest.requireActual('@proton/drive'),
     useDrive: jest.fn(),
     NodeType: {
         Folder: 'folder',
@@ -37,31 +37,30 @@ jest.mock('../../../utils/sdk/getNodeEntity', () => ({
     getNodeEntity: jest.fn(),
 }));
 
-jest.mock('../legacy/useLegacyDirectSharingInfo', () => ({
-    useSharedInfoBatcher: jest.fn(),
-}));
-
 const mockCreateNotification = jest.fn();
 const mockHandleError = jest.fn();
 const mockAcceptInvitation = jest.fn();
 const mockRejectInvitation = jest.fn();
 const mockGetNode = jest.fn();
 const mockEventManagerEmit = jest.fn();
-const mockLoadSharedInfo = jest.fn();
+
 const mockSetVolumeShareIds = jest.fn();
 
 const mockEventManager = {
     emit: mockEventManagerEmit,
 };
 
-const mockNode = {
+const mockNode: Partial<NodeEntity> = {
     uid: 'node-uid-1',
     deprecatedShareId: 'share-id-1',
-};
-
-const mockSharedInfo = {
-    sharedOn: 1234567890,
-    sharedBy: 'test@example.com',
+    membership: {
+        role: MemberRole.Viewer,
+        inviteTime: new Date(),
+        sharedBy: {
+            ok: true,
+            value: 'test@example.com',
+        },
+    },
 };
 
 describe('useInvitationsActions', () => {
@@ -83,10 +82,6 @@ describe('useInvitationsActions', () => {
         } as any);
 
         jest.mocked(getActionEventManager).mockReturnValue(mockEventManager as any);
-
-        jest.mocked(useSharedInfoBatcher).mockReturnValue({
-            loadSharedInfo: mockLoadSharedInfo,
-        } as any);
 
         jest.mocked(getNodeEntity).mockReturnValue({
             node: mockNode,
@@ -111,57 +106,15 @@ describe('useInvitationsActions', () => {
 
             mockAcceptInvitation.mockResolvedValue(undefined);
             mockGetNode.mockResolvedValue({});
-            mockLoadSharedInfo.mockImplementation((shareId, callback) => {
-                callback(mockSharedInfo);
-            });
 
             await result.current.acceptInvitation(uid, invitationUid);
 
             expect(mockAcceptInvitation).toHaveBeenCalledWith(invitationUid);
             expect(mockGetNode).toHaveBeenCalledWith(uid);
             expect(mockSetVolumeShareIds).toHaveBeenCalledWith('volume-id-1', ['share-id-1']);
-            expect(mockLoadSharedInfo).toHaveBeenCalledWith('share-id-1', expect.any(Function));
             expect(mockEventManagerEmit).toHaveBeenCalledWith({
                 type: ActionEventName.ACCEPT_INVITATIONS,
-                items: [{ node: mockNode, sharedInfo: mockSharedInfo }],
-            });
-            expect(mockCreateNotification).toHaveBeenCalledWith({
-                type: 'success',
-                text: 'Share invitation accepted successfully',
-            });
-        });
-
-        it('should wait for loadSharedInfo callback before resolving', async () => {
-            const { result } = renderHook(() => useInvitationsActions({ setVolumeShareIds: mockSetVolumeShareIds }));
-            const uid = 'node-uid-1';
-            const invitationUid = 'invitation-uid-1';
-            let callbackExecuted = false;
-            let storedCallback: ((sharedInfo: any) => void) | null = null;
-
-            mockAcceptInvitation.mockResolvedValue(undefined);
-            mockGetNode.mockResolvedValue({});
-            mockLoadSharedInfo.mockImplementation((shareId, callback) => {
-                storedCallback = callback;
-            });
-
-            const promise = result.current.acceptInvitation(uid, invitationUid);
-
-            await waitFor(() => {
-                expect(mockLoadSharedInfo).toHaveBeenCalled();
-            });
-
-            expect(mockCreateNotification).not.toHaveBeenCalled();
-            expect(mockEventManagerEmit).not.toHaveBeenCalled();
-
-            storedCallback!(mockSharedInfo);
-            callbackExecuted = true;
-
-            await promise;
-
-            expect(callbackExecuted).toBe(true);
-            expect(mockEventManagerEmit).toHaveBeenCalledWith({
-                type: ActionEventName.ACCEPT_INVITATIONS,
-                items: [{ node: mockNode, sharedInfo: mockSharedInfo }],
+                uids: [mockNode.uid],
             });
             expect(mockCreateNotification).toHaveBeenCalledWith({
                 type: 'success',
@@ -183,61 +136,6 @@ describe('useInvitationsActions', () => {
             await result.current.acceptInvitation(uid, invitationUid);
 
             expect(mockHandleError).toHaveBeenCalledWith(expect.any(EnrichedError), {
-                fallbackMessage: 'Failed to accept share invitation',
-            });
-        });
-
-        it('should handle missing shared info', async () => {
-            const { result } = renderHook(() => useInvitationsActions({ setVolumeShareIds: mockSetVolumeShareIds }));
-            const uid = 'node-uid-1';
-            const invitationUid = 'invitation-uid-1';
-            const consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
-
-            mockAcceptInvitation.mockResolvedValue(undefined);
-            mockGetNode.mockResolvedValue({});
-            mockLoadSharedInfo.mockImplementation((shareId, callback) => {
-                callback(null);
-            });
-
-            await result.current.acceptInvitation(uid, invitationUid);
-
-            expect(consoleWarnSpy).toHaveBeenCalledWith(
-                'The shared with me node entity is missing sharing info. It could be race condition and means it is probably not shared anymore.',
-                { uid: mockNode.uid, shareId: 'share-id-1' }
-            );
-            expect(mockEventManagerEmit).not.toHaveBeenCalled();
-            expect(mockCreateNotification).toHaveBeenCalledWith({
-                type: 'success',
-                text: 'Share invitation accepted successfully',
-            });
-
-            consoleWarnSpy.mockRestore();
-        });
-
-        it('should handle callback errors', async () => {
-            const { result } = renderHook(() => useInvitationsActions({ setVolumeShareIds: mockSetVolumeShareIds }));
-            const uid = 'node-uid-1';
-            const invitationUid = 'invitation-uid-1';
-            const callbackError = new Error('Callback error');
-
-            mockAcceptInvitation.mockResolvedValue(undefined);
-            mockGetNode.mockResolvedValue({});
-            mockLoadSharedInfo.mockImplementation((shareId, callback) => {
-                callback(mockSharedInfo);
-            });
-
-            jest.mocked(getActionEventManager).mockImplementation(
-                () =>
-                    ({
-                        emit: () => {
-                            throw callbackError;
-                        },
-                    }) as any
-            );
-
-            await result.current.acceptInvitation(uid, invitationUid);
-
-            expect(mockHandleError).toHaveBeenCalledWith(callbackError, {
                 fallbackMessage: 'Failed to accept share invitation',
             });
         });
