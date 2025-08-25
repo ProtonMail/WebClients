@@ -29,7 +29,14 @@ export interface Subscription {
     CouponCode: null | string;
     Currency: Currency;
     Amount: number;
+    /**
+     * The amount that will be charged for the next subscription. It includes all discounts. The amount is in cents.
+     */
     RenewAmount: number;
+    /**
+     * The full amount of the next subscription term. It doesn't include any discounts. The amount is in cents.
+     */
+    BaseRenewAmount: number;
     RenewDiscount: number;
     Renew: Renew;
     Discount: number;

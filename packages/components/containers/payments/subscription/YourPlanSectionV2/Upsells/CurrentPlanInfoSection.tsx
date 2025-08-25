@@ -16,22 +16,14 @@ import MailLogo from '@proton/components/components/logo/MailLogo';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import usePopper from '@proton/components/components/popper/usePopper';
-import Price from '@proton/components/components/price/Price';
 import SubscriptionEndsBannerV2 from '@proton/components/containers/topBanners/SubscriptionEndsBannerV2';
 import { IcChevronRight } from '@proton/icons';
 import type { Currency, Cycle, FreePlanDefault, FullPlansMap, PlansMap } from '@proton/payments';
-import {
-    CYCLE,
-    PLANS,
-    PLAN_NAMES,
-    type Subscription,
-    getSubscriptionPlanTitle,
-    isManagedExternally,
-} from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES, type Subscription, getSubscriptionPlanTitle } from '@proton/payments';
 import { getPlanToCheck, usePaymentsPreloaded } from '@proton/payments/ui';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS, BRAND_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { everythingInPlanOrAppNameText, selectPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
@@ -104,20 +96,6 @@ const PlanNameSection = ({
 }) => {
     const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription);
 
-    const cycle = subscription?.Cycle ?? 1; // CYCLE.MONTHLY = 1
-    const amount = (subscription?.Amount ?? 0) / cycle;
-
-    const planPriceElement = (user.hasPaidMail || user.hasPaidVpn) && !isManagedExternally(subscription) && (
-        <Price
-            className="text-sm color-weak"
-            currency={subscription?.Currency}
-            suffix={subscription && amount ? c('Suffix').t`/month` : ''}
-            data-testid="plan-price"
-        >
-            {amount}
-        </Price>
-    );
-
     const billingCycleElement = subscription?.Cycle && (
         <>
             <span className="color-weak mx-1">·</span>
@@ -136,7 +114,6 @@ const PlanNameSection = ({
         <PlanIconName
             logo={<PlanIcon app={app} subscription={subscription} size={36} />}
             topLine={topLine}
-            bottomLine={planPriceElement}
             layout="vertical"
         />
     );
