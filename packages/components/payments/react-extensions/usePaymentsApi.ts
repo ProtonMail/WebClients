@@ -246,7 +246,26 @@ export const usePaymentsApi = (
             captureWrongPlanIDs(data.Plans, { source: 'check' });
 
             if (isLifetimePlanSelected(data.Plans)) {
-                return api(checkProduct(data));
+                const result = await api(checkProduct(data));
+
+                return {
+                    ...result,
+
+                    // filling in the missing properties to match the normal check response
+                    Proration: 0,
+                    CouponDiscount: 0,
+                    Gift: 0,
+                    Credit: 0,
+                    UnusedCredit: 0,
+                    Coupon: null,
+                    SubscriptionMode: SubscriptionMode.Regular,
+                    BaseRenewAmount: null,
+                    RenewCycle: null,
+                    // Cycle: skiping cycle for now, because it doesn't make sense in the context of lifetime plans
+                    // however, if thats *really* necessary, we might put a placeholder value here e.g. CYCLE.YEARLY
+
+                    requestData: data,
+                };
             }
 
             // Patch for coupons compatibility v4 vs v5
@@ -270,6 +289,8 @@ export const usePaymentsApi = (
                 if (data.ProrationMode) {
                     result.ProrationMode = data.ProrationMode;
                 }
+
+                console.log('normal check result', result);
 
                 return {
                     ...result,
