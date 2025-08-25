@@ -157,6 +157,7 @@ export type IconName =
     | 'density-high'
     | 'desktop'
     | 'dots'
+    | 'drawer-dividers'
     | 'drive'
     | 'earth'
     | 'emoji'
@@ -217,6 +218,7 @@ export type IconName =
     | 'image'
     | 'image-stacked'
     | 'inbox'
+    | 'inbox-filled'
     | 'info-circle'
     | 'info-circle-filled'
     | 'key'
@@ -255,6 +257,7 @@ export type IconName =
     | 'map'
     | 'map-pin'
     | 'megaphone-filled'
+    | 'microphone'
     | 'minus'
     | 'minus-circle'
     | 'minus-circle-filled'
@@ -567,6 +570,7 @@ export { IcDensityLow } from './icons/IcDensityLow';
 export { IcDensityHigh } from './icons/IcDensityHigh';
 export { IcDesktop } from './icons/IcDesktop';
 export { IcDots } from './icons/IcDots';
+export { IcDrawerDividers } from './icons/IcDrawerDividers';
 export { IcDrive } from './icons/IcDrive';
 export { IcEarth } from './icons/IcEarth';
 export { IcEmoji } from './icons/IcEmoji';
@@ -627,6 +631,7 @@ export { IcHouseFilled } from './icons/IcHouseFilled';
 export { IcImage } from './icons/IcImage';
 export { IcImageStacked } from './icons/IcImageStacked';
 export { IcInbox } from './icons/IcInbox';
+export { IcInboxFilled } from './icons/IcInboxFilled';
 export { IcInfoCircle } from './icons/IcInfoCircle';
 export { IcInfoCircleFilled } from './icons/IcInfoCircleFilled';
 export { IcKey } from './icons/IcKey';
