@@ -99,7 +99,7 @@ const getSubscriptionDataFromPlanToCheck = (
         cycle,
         currency,
         coupon,
-        trial,
+        trial = false,
         billingAddress: newBillingAddress,
         ValidateZipCode,
     }: PlanToCheck & {

@@ -104,12 +104,25 @@ const TrialExplanation = () => {
 
 const PricingFooter = () => {
     const payments = usePaymentOptimistic();
-    const { uiData } = payments;
-    const { checkout } = uiData;
 
     const hasFullCheckoutDetails = payments.initializationStatus.pricingInitialized && !payments.loadingPaymentDetails;
 
-    const priceWithDiscountPerMonth = getSimplePriceString(checkout.currency, checkout.withDiscountPerMonth);
+    const planToCheck = {
+        planIDs: { [payments.selectedPlan.name]: 1 },
+        currency: payments.currency,
+        cycle: payments.selectedPlan.cycle,
+    };
+
+    const { uiData } = payments.getPriceOrFallback({
+        ...planToCheck,
+        coupon: payments.getCoupon(planToCheck),
+        /**
+         * Ensure we check renewal price by setting trial to false
+         */
+        trial: false,
+    });
+
+    const priceWithDiscountPerMonth = getSimplePriceString(uiData.currency, uiData.withDiscountPerMonth);
 
     const total = (
         <>
@@ -119,10 +132,11 @@ const PricingFooter = () => {
             </div>
             <div>
                 {hasFullCheckoutDetails ? (
-                    <p className="m-0">{c('Signup')
-                        .t`Then ${priceWithDiscountPerMonth} per month, if you subscribe.`}</p>
+                    <p className="m-0">
+                        {c('Signup').t`Then ${priceWithDiscountPerMonth} per month, if you subscribe.`}
+                    </p>
                 ) : (
-                    <SkeletonLoader width="100%" height="1.4rem" />
+                    <SkeletonLoader width="100%" height="1.25rem" />
                 )}
             </div>
         </>
