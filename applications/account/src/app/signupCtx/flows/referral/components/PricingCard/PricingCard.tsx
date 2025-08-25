@@ -4,20 +4,19 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { VerticalStep, VerticalSteps } from '@proton/atoms';
-import { AppsLogos, SkeletonLoader } from '@proton/components';
+import { SkeletonLoader } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { referralReward } from '@proton/components/containers/referral/constants';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
-import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { getReferrerName } from '../../../../helpers/signupSearchParams';
 import { getPlanIconPath } from '../../helpers/planIcons';
 import type { SupportedReferralPlans } from '../../helpers/plans';
 import { plansRequiringPaymentToken } from '../../helpers/plans';
-import { FreeFeatures } from '../Features/FreeFeatures';
 
 const LogoIconShape = ({ children, border = true }: { children: ReactNode; border?: boolean }) => {
     return (
@@ -136,65 +135,13 @@ const PricingFooter = () => {
     );
 };
 
-const Free = () => {
-    return (
-        <div className="px-4 lg:px-8 flex flex-column">
-            <h2 className="text-lg text-semibold mt-0 mb-3">{c('Signup').t`Every free account comes with:`}</h2>
-            <div className="block lg:hidden">
-                <AppsLogos
-                    fullWidth
-                    logoSize={8}
-                    apps={[
-                        APPS.PROTONMAIL,
-                        APPS.PROTONCALENDAR,
-                        APPS.PROTONVPN_SETTINGS,
-                        APPS.PROTONDRIVE,
-                        APPS.PROTONPASS,
-                        APPS.PROTONDOCS,
-                    ]}
-                />
-            </div>
-            <div className="hidden lg:block">
-                <AppsLogos
-                    fullWidth
-                    iconShape="appIcon"
-                    logoSize={8}
-                    apps={[
-                        APPS.PROTONMAIL,
-                        APPS.PROTONCALENDAR,
-                        APPS.PROTONVPN_SETTINGS,
-                        APPS.PROTONDRIVE,
-                        APPS.PROTONPASS,
-                        APPS.PROTONDOCS,
-                    ]}
-                />
-            </div>
-            <hr className="my-4 lg:my-8" />
-            <ul className="unstyled flex flex-column gap-3 m-0">
-                <FreeFeatures />
-            </ul>
-        </div>
-    );
-};
-
 export const PricingCard = () => {
-    const payments = usePaymentOptimistic();
-    const { selectedPlan } = payments;
-
-    const isPaidPlan = selectedPlan.name !== PLANS.FREE;
-
     return (
         <section className={clsx('referral-signup-pricing-card w-full flex flex-column')}>
             <div className="referral-signup-pricing-card-inner rounded-xl fade-in w-full flex flex-column shadow-raised gap-4 lg:gap-8 py-4 lg:py-8 bg-norm">
-                {isPaidPlan ? (
-                    <>
-                        <PricingHeader />
-                        <TrialExplanation />
-                        <PricingFooter />
-                    </>
-                ) : (
-                    <Free />
-                )}
+                <PricingHeader />
+                <TrialExplanation />
+                <PricingFooter />
             </div>
         </section>
     );
