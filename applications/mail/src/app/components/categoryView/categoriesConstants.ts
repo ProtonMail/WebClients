@@ -19,7 +19,7 @@ export const categoriesArray: {
 }[] = [
     {
         colorShade: CATEGORIES_COLOR_SHADES.IRIS,
-        icon: 'bolt-filled',
+        icon: 'inbox-filled',
         id: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
     },
     {
