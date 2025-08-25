@@ -32,6 +32,7 @@ const innerBuildSubscription = (value?: Partial<Subscription>): Subscription => 
         Amount: 11988,
         Discount: 0,
         RenewAmount: 11988,
+        BaseRenewAmount: 11988,
         RenewDiscount: 0,
         Renew: Renew.Enabled,
         External: SubscriptionPlatform.Default,
@@ -103,6 +104,7 @@ export const buildSubscription = (plan: SelectedPlanParam = PLANS.BUNDLE, overri
 
     return innerBuildSubscription({
         Amount: totalPrice,
+        BaseRenewAmount: totalPrice,
         RenewAmount: totalPrice,
         Currency: selectedPlan.currency,
         Cycle: selectedPlan.cycle,

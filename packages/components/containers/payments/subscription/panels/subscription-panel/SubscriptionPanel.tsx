@@ -3,15 +3,14 @@ import { c } from 'ttag';
 import { InlineLinkButton } from '@proton/atoms';
 import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Price from '@proton/components/components/price/Price';
 import Meter from '@proton/components/components/progress/Meter';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import Time from '@proton/components/components/time/Time';
 import LearnMoreModal from '@proton/components/containers/topBanners/LearnMoreModal';
-import { Renew, type Subscription, hasVPN2024 } from '@proton/payments';
 import {
-    CYCLE,
+    Renew,
+    type Subscription,
     getHasVpnB2BPlan,
     getIsB2BAudienceFromSubscription,
     getIsPassB2BPlan,
@@ -22,11 +21,11 @@ import {
     hasLumoPlan,
     hasPass,
     hasPassFamily,
+    hasVPN2024,
     hasVPNPassBundle,
     hasVisionary,
     hasVpnBusiness,
     hasWallet,
-    isManagedExternally,
     isTrial,
 } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
@@ -95,9 +94,6 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
     const isPassB2bPlan = getIsPassB2BPlan(planName);
     const isB2BTrial = useIsB2BTrial(subscription, organization);
     const [learnMoreModalProps, setLearnMoreModal, renderLearnMoreModal] = useModalState();
-
-    const cycle = subscription?.Cycle ?? CYCLE.MONTHLY;
-    const amount = (subscription?.Amount ?? 0) / cycle;
 
     const space = getSpace(user);
 
@@ -441,17 +437,6 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         );
     };
 
-    const planPriceElement = (user.hasPaidMail || user.hasPaidVpn) && !isManagedExternally(subscription) && (
-        <Price
-            className="h3 color-weak"
-            currency={subscription?.Currency}
-            suffix={subscription && amount ? c('Suffix').t`/month` : ''}
-            data-testid="plan-price"
-        >
-            {amount}
-        </Price>
-    );
-
     const planTitleElement = (
         <h2 className="h3 m-0 pt-0 pb-1">
             <strong data-testid="plan-name">{planTitle}</strong>
@@ -492,7 +477,6 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                 data-testid="current-plan"
                 titleDataTestId="plan-name"
                 titleElement={planTitleElement}
-                secondaryTitleElement={planPriceElement}
                 // If there are no action buttons, we want to reduce the bottom padding of the panel
                 // On the other hand, if there are action buttons, we want to keep the additional space
                 // after between the last button and the border
