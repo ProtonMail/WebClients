@@ -55,7 +55,7 @@ export interface FieldHandle {
     zIndex: number;
     attach: (options: FieldEffects) => void;
     attachIcon: (options: { count: number }) => Maybe<FieldIconHandle>;
-    autofill: (value: string, options?: AutofillOptions) => void;
+    autofill: (value: string, options?: AutofillOptions) => Promise<void>;
     detach: () => void;
     detachIcon: () => void;
     focus: (options?: { preventAction?: boolean }) => void;
