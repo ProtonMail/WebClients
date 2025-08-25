@@ -539,6 +539,7 @@ export const subscriptionBundlePro: Subscription = {
     Discount: 0,
     RenewDiscount: 0,
     RenewAmount: 11988,
+    BaseRenewAmount: 11988,
     Plans: [
         {
             ID: 'Zr8DfG3ogE8GI-UeHMx2NC94NyuNKRlV4Ntve1IUmbZMayrFUL1kvr0WtdFctYma-g25ObSDlXNXpl30oH-VEQ==',
