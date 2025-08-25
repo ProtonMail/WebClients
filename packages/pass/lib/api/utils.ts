@@ -1,4 +1,5 @@
-import type { ApiOptions, MaybeNull } from '@proton/pass/types';
+import type { ApiOptions, Maybe, MaybeNull } from '@proton/pass/types';
+import { msToEpoch } from '@proton/pass/utils/time/epoch';
 
 import { PassErrorCode } from './errors';
 
@@ -26,4 +27,16 @@ export const createPageIterator = <T>(options: PageIteratorConfig<T>) => {
     };
 
     return iterator;
+};
+
+/** Don't fetch if resource has not been modified since our last fetch.
+ * `lastRequestedAt` should be an Unix epoch (seconds) */
+export const fetchIfModified = async (url: string, lastRequestedAt: number): Promise<Maybe<Response>> => {
+    if (lastRequestedAt !== 0) {
+        const header = (await fetch(url, { method: 'HEAD' })).headers.get('Last-Modified');
+        const lastModified = header ? msToEpoch(new Date(header).getTime()) : 0;
+        if (lastRequestedAt >= lastModified) return;
+    }
+
+    return fetch(url);
 };

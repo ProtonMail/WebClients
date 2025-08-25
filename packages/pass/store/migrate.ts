@@ -42,6 +42,12 @@ export const migrate = (state: State, versions: { from?: string; to: string }) =
         ),
     };
 
+    /** Migration for share visibility flag */
+    for (const shareId in state.shares) {
+        const share = state.shares[shareId];
+        share.flags = 'flags' in share ? share.flags : 0;
+    }
+
     /** v1.13.0 migration */
     if ('organization' in state.user) {
         const organization = state.user.organization as MaybeNull<Organization>;

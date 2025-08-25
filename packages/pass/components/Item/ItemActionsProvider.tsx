@@ -15,10 +15,14 @@ import {
     ConfirmLeaveItem,
     ConfirmMoveItem,
 } from '@proton/pass/components/Item/Actions/ConfirmItemActions';
+import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
+import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
+import type { ItemCloneLocationState } from '@proton/pass/hooks/items/useInitialValues';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { isAliasItem, isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
-import { getBulkSelectionCount } from '@proton/pass/lib/items/item.utils';
+import { cloneItemName, getBulkSelectionCount } from '@proton/pass/lib/items/item.utils';
+import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import {
     itemBulkDeleteIntent,
     itemBulkMoveIntent,
@@ -30,30 +34,38 @@ import {
     itemTrash,
     shareLeaveIntent,
 } from '@proton/pass/store/actions';
-import { selectAliasTrashAcknowledged, selectItemsByEmail } from '@proton/pass/store/selectors';
+import {
+    selectAliasTrashAcknowledged,
+    selectItemsByEmail,
+    selectMostRecentVaultShareID,
+    selectShareOrThrow,
+} from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { ItemMoveIntent } from '@proton/pass/types';
 import { type BulkSelectionDTO, type ItemRevision, type MaybeNull, ShareType } from '@proton/pass/types';
+import { partialMerge } from '@proton/pass/utils/object/merge';
 
 /** Ongoing: move every item action definition to this
  * context object. This context should be loosely connected */
-type ItemActionsContextType = {
+interface ItemActionsContextType {
+    clone: (item: ItemRevision) => void;
     delete: (item: ItemRevision) => void;
     deleteMany: (items: BulkSelectionDTO) => void;
+    leave: (item: ItemRevision) => void;
     move: (item: ItemRevision, mode: VaultSelectMode) => void;
     moveMany: (items: BulkSelectionDTO, shareId?: string) => void;
     restore: (item: ItemRevision) => void;
     restoreMany: (items: BulkSelectionDTO) => void;
     trash: (item: ItemRevision) => void;
     trashMany: (items: BulkSelectionDTO) => void;
-    leave: (item: ItemRevision) => void;
-};
+}
 
 const ItemActionsContext = createContext<MaybeNull<ItemActionsContextType>>(null);
 
 export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
     const bulk = useBulkActions();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const store = useStore<State>();
 
     const { closeVaultSelect, openVaultSelect, modalState } = useVaultSelectModalHandles();
@@ -161,6 +173,29 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
             },
 
             leave: leaveItem.prompt,
+
+            clone: (item: ItemRevision) => {
+                const state = store.getState();
+
+                /** Note: if the item being cloned is not from a vault share,
+                 * resolve the most recently used vault shareID. This avoids
+                 * trying to clone an item from an item share */
+                const share = selectShareOrThrow(item.shareId)(state);
+                const shareId = isVaultShare(share) ? share.shareId : selectMostRecentVaultShareID(state);
+
+                navigate<ItemCloneLocationState>(getNewItemRoute(item.data.type), {
+                    state: {
+                        clone: partialMerge(item, {
+                            shareId,
+                            data: {
+                                metadata: {
+                                    name: cloneItemName(item.data.metadata.name),
+                                },
+                            },
+                        }),
+                    },
+                });
+            },
         };
     }, []);
 
