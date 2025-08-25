@@ -113,6 +113,10 @@ $field-container: rem(260) !default;
 		&::-webkit-search-cancel-button {
 			display: none;
 		}
+
+		&.field-show-clear-button::-webkit-search-cancel-button {
+			display: block;
+		}
 	}
 
 	&[type='number'] {
