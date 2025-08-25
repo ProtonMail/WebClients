@@ -17,7 +17,7 @@ import { getAppStorage } from '@proton/shared/lib/user/storage';
 
 import TopBanner from './TopBanner';
 
-const StorageBannerText = ({ type, cta }: { type: UserLockedFlags; cta: ReactNode }) => {
+const StorageBannerText = ({ type, cta, user }: { type: UserLockedFlags; cta: ReactNode; user: UserModel }) => {
     switch (type) {
         case UserLockedFlags.BASE_STORAGE_EXCEEDED:
             const mailStorage = getAppStorage(MAIL_SHORT_APP_NAME);
@@ -33,6 +33,13 @@ const StorageBannerText = ({ type, cta }: { type: UserLockedFlags; cta: ReactNod
             // Translator: Your storage is full. To continue using Proton , free up space or upgrade for more storage.
             return c('locked_state_storage_banner: info')
                 .jt`Your storage is full. To continue using ${BRAND_NAME} products, free up space or ${cta}.`;
+        case UserLockedFlags.USER_WITH_A_DOMAIN:
+            if (!user.isAdmin) {
+                return null; // Only admins should see this banner
+            }
+            // Translator: To continue using Proton, please make sure your premium features are no longer in use or upgrade your plan.
+            return c('locked_state_storage_banner: info')
+                .jt`To continue using ${BRAND_NAME}, please make sure your premium features are no longer in use or upgrade your plan.`;
         case UserLockedFlags.ORG_ISSUE_FOR_PRIMARY_ADMIN:
             // Translator: Your subscription has ended. Upgrade to restore full access and to avoid data loss.
             return c('locked_state_storage_banner: info')
@@ -99,6 +106,8 @@ const getBannerTypeFromLockedFlags = (lockedFlags: number): UserLockedFlags => {
         type = UserLockedFlags.BASE_STORAGE_EXCEEDED;
     } else if (hasBit(lockedFlags, UserLockedFlags.DRIVE_STORAGE_EXCEEDED)) {
         type = UserLockedFlags.DRIVE_STORAGE_EXCEEDED;
+    } else if (hasBit(lockedFlags, UserLockedFlags.USER_WITH_A_DOMAIN)) {
+        type = UserLockedFlags.USER_WITH_A_DOMAIN;
     }
     return type;
 };
@@ -126,7 +135,7 @@ export const LockedStateTopBanner = ({ app, user, subscription, upsellRef, locke
 
     return (
         <TopBanner className="bg-danger" data-testid="storage-banner:lock-state">
-            <StorageBannerText type={type} cta={cta} />
+            <StorageBannerText type={type} cta={cta} user={user} />
         </TopBanner>
     );
 };
