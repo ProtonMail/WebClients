@@ -2,7 +2,6 @@ import { isBefore } from 'date-fns';
 
 import { MONTHLY_TYPE, WEEKLY_TYPE } from '@proton/shared/lib/calendar/constants';
 import { getNegativeSetpos, getPositiveSetpos } from '@proton/shared/lib/calendar/recurrence/rrule';
-import { fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import type { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
 import replace from '@proton/utils/replace';
 
@@ -34,14 +33,12 @@ const getFrequencyModelChange = (
      * perspective it makes more sense to display a two-day selection WE and TH (i.e. newDays = [4, 4])
      */
 
-    const startFakeUtcDate = toUTCDate(fromLocalDate(newStart.date));
-
     // change monthly type
     const changeToNthDay =
-        frequencyModel.monthly.type === MONTHLY_TYPE.ON_MINUS_NTH_DAY && getNegativeSetpos(startFakeUtcDate) !== -1;
+        frequencyModel.monthly.type === MONTHLY_TYPE.ON_MINUS_NTH_DAY && getNegativeSetpos(newStart.date) !== -1;
 
     const changeToMinusNthDay =
-        frequencyModel.monthly.type === MONTHLY_TYPE.ON_NTH_DAY && getPositiveSetpos(startFakeUtcDate) === 5;
+        frequencyModel.monthly.type === MONTHLY_TYPE.ON_NTH_DAY && getPositiveSetpos(newStart.date) === 5;
 
     const newFrequencyModel = {
         ...frequencyModel,
