@@ -1,4 +1,4 @@
-import { useEffect, useId, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
@@ -67,7 +67,6 @@ const PassSignup = () => {
 const availablePlans = getAvailablePlansWithCycles([passPlus, unlimited, family, passLifetime], [CYCLE.YEARLY]);
 
 const PassSignupPage = (props: BaseSignupContextProps) => {
-    const id = useId();
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const theme = useTheme();
@@ -78,7 +77,7 @@ const PassSignupPage = (props: BaseSignupContextProps) => {
         <SignupContextProvider
             {...props}
             app={APPS.PROTONPASS}
-            flowId={`pass-flow-${id}`}
+            flowId="pass-generic"
             onLogin={async (session) => {
                 const url = new URL(getAppHref('/', APPS.PROTONPASS, session.localID));
                 replaceUrl(url.toString());
