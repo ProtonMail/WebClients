@@ -34,7 +34,7 @@ const PassSignup = () => {
     };
 
     return (
-        <main className="pass-signup h-full">
+        <main className="pass-signup flex min-h-full">
             {step === Step.Signup && <AccountDetailsStep onContinue={() => setStep(Step.UpgradePlan)} />}
             {step === Step.UpgradePlan && (
                 <UpgradePlanStep
