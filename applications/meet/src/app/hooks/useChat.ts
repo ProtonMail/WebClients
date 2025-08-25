@@ -23,6 +23,8 @@ export const useChat = () => {
     const isChatOpen = sideBarState[MeetingSideBars.Chat];
 
     const handleDataReceive = useCallback(
+        // This is the actual typing LiveKit uses for the payload
+        // eslint-disable-next-line @protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer
         async (payload: Uint8Array, participant?: RemoteParticipant) => {
             if (!participant || !payload) {
                 return;

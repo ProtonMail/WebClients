@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-function calculateRms(data: Uint8Array) {
+function calculateRms(data: Uint8Array<ArrayBuffer>) {
     let sum = 0;
     for (let i = 0; i < data.length; i++) {
         const val = (data[i] - 128) / 128;
