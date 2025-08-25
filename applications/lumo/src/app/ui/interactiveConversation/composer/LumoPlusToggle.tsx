@@ -8,6 +8,7 @@ import lumoPlusLogo from '@proton/styles/assets/img/lumo/lumo-plus-logo.svg';
 
 import { LUMO_UPGRADE_TRIGGER_CLASS } from '../../../constants';
 import useLumoPlusUpgradeWithTelemetry from '../../../hooks/useLumoPlusUpgradeWithTelemetry';
+import { useIsLumoSmallScreen } from '../../../hooks/useIsLumoSmallScreen';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import GuestLumoPlusUpsellModal from '../../upsells/GuestLumoPlusUpsellModal';
 import LumoPlusBackdropOverlay from '../../upsells/LumoPlusBackdropOverlay';
@@ -19,6 +20,7 @@ const LumoPlusToggle = () => {
     const [showSpotlight, setShowSpotlight] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const isGuest = useIsGuest();
+    const { isSmallScreen } = useIsLumoSmallScreen();
     const guestPlusUpsellModal = useModalStateObject();
 
     const { upsellRef, openModal, renderModal, modalProps } = useLumoPlusUpgradeWithTelemetry({
@@ -60,7 +62,7 @@ const LumoPlusToggle = () => {
     return (
         <>
             <Spotlight
-                show={showSpotlight}
+                show={showSpotlight && !isSmallScreen}
                 content={spotlightContent}
                 onClose={() => setShowSpotlight(false)}
                 originalPlacement="bottom"
@@ -69,11 +71,10 @@ const LumoPlusToggle = () => {
                 className="border-none"
             >
                 <div
-                    onMouseEnter={() => setShowSpotlight(true)}
+                    onMouseEnter={() => !isSmallScreen && setShowSpotlight(true)}
                     onMouseLeave={() => setShowSpotlight(false)}
                     className="inline-block flex flex-nowrap items-center gap-2"
                 >
-                    {/* <div className="lumo-gradient-text">lumo+</div> */}
                     <img src={lumoPlusLogo} alt="lumo+" className="h-4" />
                     <Toggle
                         id="lumo-plus-toggle"
