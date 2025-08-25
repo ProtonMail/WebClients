@@ -15,7 +15,7 @@ import {
 } from '@proton/shared/lib/constants';
 
 import { getPlanIconPath } from '../../helpers/planIcons';
-import { getReferralPlanIDsFromPlan } from '../../helpers/plans';
+import { type SupportedReferralPlans, getReferralSelectedPlan } from '../../helpers/plans';
 import { BundleFeatures } from '../Features/BundleFeatures';
 import { DriveFeatures } from '../Features/DriveFeatures';
 import { MailFeatures } from '../Features/MailFeatures';
@@ -34,15 +34,15 @@ const PlanSelector = ({ onPlanClick, onCTAClick }: Props) => {
     const payments = usePaymentOptimistic();
     const { selectedPlan } = payments;
 
-    const isSelected = (plan: PLANS) => {
+    const isSelected = (plan: SupportedReferralPlans) => {
         return selectedPlan.name === plan;
     };
 
-    const handlePlanClick = (plan: PLANS) => {
+    const handlePlanClick = (plan: SupportedReferralPlans) => {
         // Update the selected plan in the payments context
-        const planIDs = getReferralPlanIDsFromPlan(plan);
-        void payments.selectPlanIDs(planIDs);
-        onPlanClick({ planIDs });
+        const selectedPlan = getReferralSelectedPlan(plan);
+        void payments.selectPlan(selectedPlan);
+        onPlanClick({ planIDs: selectedPlan.planIDs });
     };
 
     const sharedPlanCardProps: PlanCardProps = {
@@ -108,7 +108,7 @@ const PlanSelector = ({ onPlanClick, onCTAClick }: Props) => {
 export default PlanSelector;
 
 interface PlanCardProps {
-    isSelected: (plan: PLANS) => boolean;
+    isSelected: (plan: SupportedReferralPlans) => boolean;
     onCTAClick: () => void;
 }
 

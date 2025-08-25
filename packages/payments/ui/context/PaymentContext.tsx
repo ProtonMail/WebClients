@@ -61,6 +61,7 @@ export interface PlanToCheck {
     cycle: Cycle;
     coupon?: string;
     groupId?: string;
+    trial?: boolean;
 }
 
 export function getPlanToCheck(params: PlanToCheck): PlanToCheck {
@@ -68,6 +69,7 @@ export function getPlanToCheck(params: PlanToCheck): PlanToCheck {
         coupon: params.coupon,
         planIDs: params.planIDs,
         cycle: params.cycle,
+        trial: params.trial,
     });
 
     return { ...params, coupon };
@@ -97,6 +99,7 @@ const getSubscriptionDataFromPlanToCheck = (
         cycle,
         currency,
         coupon,
+        trial,
         billingAddress: newBillingAddress,
         ValidateZipCode,
     }: PlanToCheck & {
@@ -111,6 +114,7 @@ const getSubscriptionDataFromPlanToCheck = (
     Codes: coupon ? [coupon] : [],
     BillingAddress: newBillingAddress ?? billingAddress,
     ValidateZipCode,
+    IsTrial: trial,
 });
 
 /**
@@ -348,6 +352,7 @@ export const PaymentsContextProvider = ({
             currency: autoCurrency,
             planIDs: initialPlanIDs,
             coupon: undefined,
+            trial: undefined,
         };
         const checkResult = innerGetOptimisticCheckResult({
             cycle: planToCheck.cycle,

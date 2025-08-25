@@ -16,7 +16,7 @@ import Layout from './components/Layout/Layout';
 import { Wrapper } from './components/Layout/Wrapper';
 import PlanSelector from './components/PlanSelector/PlanSelector';
 import { getReferralSignupHrefFromPlanIDs } from './helpers/path';
-import { REFERRAL_DEFAULT_PLAN, getReferralPlanIDsFromPlan } from './helpers/plans';
+import { REFERRAL_DEFAULT_PLAN, type SupportedReferralPlans, getReferralSelectedPlan } from './helpers/plans';
 
 const ReferralPlans = () => {
     const payments = usePaymentOptimistic();
@@ -35,7 +35,7 @@ const ReferralPlans = () => {
             return;
         }
 
-        void payments.selectPlanIDs(getReferralPlanIDsFromPlan(planParam));
+        void payments.selectPlan(getReferralSelectedPlan(planParam as SupportedReferralPlans));
     }, []);
 
     return (

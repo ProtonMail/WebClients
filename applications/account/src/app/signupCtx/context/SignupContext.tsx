@@ -9,6 +9,7 @@ import {
     type ExtendedTokenPayment,
     PLANS,
     type PlanIDs,
+    SubscriptionMode,
     type TokenPayment,
     isTokenPayment,
     isV5PaymentToken,
@@ -45,7 +46,7 @@ import { InvalidReferrerError, useReferralData } from './accountData/useReferral
 import { useSignupDomains } from './accountData/useSignupDomains';
 import { getClientType } from './helpers/getClientType';
 import { handleCreateUser } from './helpers/handleCreateUser';
-import { type SubscriptionData2, handleSetupUser } from './helpers/handleSetupUser';
+import { type SignupContextSubscriptionData, handleSetupUser } from './helpers/handleSetupUser';
 
 interface AccountFormDataConfig {
     /**
@@ -64,7 +65,7 @@ interface AccountFormDataConfig {
 interface SignupData {
     accountData?: AccountData;
     paymentData?: {
-        subscriptionData: SubscriptionData2;
+        subscriptionData: SignupContextSubscriptionData;
     };
 }
 
@@ -362,12 +363,22 @@ export const InnerSignupContextProvider = ({
             return;
         }
 
-        const paymentToken =
-            paymentData &&
-            isTokenPayment(paymentData.subscriptionData.paymentToken) &&
-            paymentData.subscriptionData.checkResult.AmountDue > 0
-                ? paymentData.subscriptionData.paymentToken.Details.Token
-                : undefined;
+        const paymentToken = (() => {
+            if (!paymentData) {
+                return undefined;
+            }
+
+            if (!isTokenPayment(paymentData.subscriptionData.paymentToken)) {
+                return undefined;
+            }
+
+            if (
+                paymentData.subscriptionData.checkResult.AmountDue > 0 ||
+                paymentData?.subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial
+            ) {
+                return paymentData.subscriptionData.paymentToken.Details.Token;
+            }
+        })();
 
         try {
             // Ensure crypto worker has loaded

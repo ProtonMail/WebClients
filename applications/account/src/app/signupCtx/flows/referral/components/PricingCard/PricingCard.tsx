@@ -15,6 +15,8 @@ import clsx from '@proton/utils/clsx';
 
 import { getReferrerName } from '../../../../helpers/signupSearchParams';
 import { getPlanIconPath } from '../../helpers/planIcons';
+import type { SupportedReferralPlans } from '../../helpers/plans';
+import { plansRequiringPaymentToken } from '../../helpers/plans';
 import { FreeFeatures } from '../Features/FreeFeatures';
 
 const LogoIconShape = ({ children, border = true }: { children: ReactNode; border?: boolean }) => {
@@ -73,9 +75,12 @@ const TrialExplanation = () => {
 
     const planName = PLAN_NAMES[selectedPlan.getPlanName()];
 
+    const creditCardRequired = plansRequiringPaymentToken.includes(selectedPlan.name as SupportedReferralPlans);
+
     return (
         <div className="px-4 lg:px-8">
-            <p className="mt-0 mb-2">{c('Signup').t`No credit card required:`}</p>
+            {!creditCardRequired && <p className="mt-0 mb-2">{c('Signup').t`No credit card required:`}</p>}
+
             <VerticalSteps className="vertical-steps--primary mb-0">
                 <VerticalStep
                     title={c('Signup').t`Create a ${BRAND_NAME} Account`}
