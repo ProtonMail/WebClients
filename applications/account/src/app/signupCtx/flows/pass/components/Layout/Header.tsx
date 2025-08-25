@@ -4,10 +4,8 @@ import { PassLogo } from '@proton/components';
 
 export const Header: FC = () => (
     <header
-        className="flex justify-center items-center gap-4 py-4 px-4 md:px-8 max-w-custom md:h-custom mx-auto"
+        className="flex justify-center items-center gap-4 py-4 px-4 md:px-8 mx-auto"
         style={{
-            '--max-w-custom': '90rem',
-            '--md-h-custom': '4.4rem',
             '--logo-text-proton-color': 'white',
             '--logo-text-product-color': 'white',
         }}

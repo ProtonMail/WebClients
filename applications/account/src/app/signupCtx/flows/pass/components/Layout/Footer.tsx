@@ -22,12 +22,12 @@ export const Footer = () => (
         <Href
             key="privacy"
             className="signup-link link-focus text-no-decoration"
-            href={getPrivacyPolicyURL(APPS.PROTONDRIVE)}
+            href={getPrivacyPolicyURL(APPS.PROTONPASS)}
         >{c('Link').t`Privacy policy`}</Href>
         <Href
             key="terms"
             className="signup-link link-focus text-no-decoration"
-            href={getLocaleTermsURL(APPS.PROTONDRIVE)}
+            href={getLocaleTermsURL(APPS.PROTONPASS)}
         >
             {c('Link').t`Terms`}
         </Href>
