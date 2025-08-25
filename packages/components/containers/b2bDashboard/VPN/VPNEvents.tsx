@@ -280,9 +280,7 @@ export const VPNEvents = () => {
             return c('Info').t`Unable to check gateways monitoring current status.`;
         }
 
-        return monitoring
-            ? c('Info').t`Gateways monitoring is enabled.`
-            : c('Info').t`Gateways monitoring is disabled.`;
+        return c('Info').t`Gateway monitor`;
     };
 
     const getMonitoringLastChangeText = (): ReactNode => {

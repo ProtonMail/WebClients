@@ -173,7 +173,7 @@ const ActivityMonitorEvents = () => {
                                     onChange={monitoring ? toggleMonitoring : setActivityMonitoring}
                                 />
                                 <span>
-                                    {c('Info').t`Activity monitor`}
+                                    {c('Info').t`Authentication monitor`}
                                 </span>
                             </div>
                         </div>
