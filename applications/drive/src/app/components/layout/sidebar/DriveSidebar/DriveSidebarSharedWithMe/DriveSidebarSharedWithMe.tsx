@@ -3,13 +3,9 @@ import { useEffect } from 'react';
 import { c, msgid } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { DriveEventType, useDrive } from '@proton/drive/index';
 import clsx from '@proton/utils/clsx';
 
-import { useBookmarksLoader } from '../../../../../sections/sharedWith/loaders/useBookmarksLoader';
 import { useInvitationsLoader } from '../../../../../sections/sharedWith/loaders/useInvitationsLoader';
-import { useLegacyLoader } from '../../../../../sections/sharedWith/loaders/useLegacyLoader';
-import { useSharedWithMeNodesLoader } from '../../../../../sections/sharedWith/loaders/useSharedWithMeNodesLoader';
 import { useSharedWithMeListingStore } from '../../../../../zustand/sections/sharedWithMeListing.store';
 import DriveSidebarListItem from '../DriveSidebarListItem';
 
@@ -18,15 +14,13 @@ interface DriveSidebarSharedWithMeProps {
     collapsed: boolean;
 }
 export const DriveSidebarSharedWithMe = ({ shareId, collapsed }: DriveSidebarSharedWithMeProps) => {
-    const { loadSharedWithMeNodes } = useSharedWithMeNodesLoader();
     const { loadInvitations } = useInvitationsLoader();
-    const { loadBookmarks } = useBookmarksLoader();
-    const { loadLegacySharedWithMeAlbums, loadLegacyInvitations } = useLegacyLoader();
-    const { drive } = useDrive();
 
-    const { invitationsCount } = useSharedWithMeListingStore(
+    const { subscribeToEvents, unsubscribeToEvents, invitationsCount } = useSharedWithMeListingStore(
         useShallow((state) => ({
-            invitationsCount: state.getInvitiationCount(),
+            invitationsCount: state.getInvitationCount(),
+            subscribeToEvents: state.subscribeToEvents,
+            unsubscribeToEvents: state.unsubscribeToEvents,
         }))
     );
 
@@ -38,31 +32,18 @@ export const DriveSidebarSharedWithMe = ({ shareId, collapsed }: DriveSidebarSha
         };
     }, [loadInvitations]);
 
-    // This needs to be moved inside the store, to match the new SDK Event Manager system
     useEffect(() => {
         const abortController = new AbortController();
-        const eventSubscriptionPromise = drive.subscribeToDriveEvents(async (event) => {
-            if (event.type === DriveEventType.SharedWithMeUpdated) {
-                await Promise.all([
-                    loadSharedWithMeNodes(abortController.signal),
-                    loadInvitations(abortController.signal),
-                    loadLegacySharedWithMeAlbums(abortController.signal),
-                    loadLegacyInvitations(abortController.signal),
-                ]);
-            }
+        void subscribeToEvents('driveSidebar', {
+            onRefreshSharedWithMe: async () => {
+                await loadInvitations(abortController.signal);
+            },
         });
         return () => {
             abortController.abort();
-            void eventSubscriptionPromise.then((eventSubscription) => eventSubscription.dispose());
+            void unsubscribeToEvents('driveSidebar');
         };
-    }, [
-        drive,
-        loadBookmarks,
-        loadInvitations,
-        loadLegacyInvitations,
-        loadLegacySharedWithMeAlbums,
-        loadSharedWithMeNodes,
-    ]);
+    }, [subscribeToEvents, unsubscribeToEvents, loadInvitations]);
 
     const invitationsCountTitle = c('Info').ngettext(
         msgid`${invitationsCount} pending invitation`,

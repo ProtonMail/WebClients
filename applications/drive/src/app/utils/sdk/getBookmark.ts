@@ -17,6 +17,9 @@ export const getBookmark = (maybeBookmark: MaybeBookmark): GetBookmarkType => {
         if (!maybeBookmark.error.url.ok) {
             errors.set('url', maybeBookmark.error.url.error);
         }
+        if (!maybeBookmark.error.customPassword.ok) {
+            errors.set('customPassword', maybeBookmark.error.customPassword.error);
+        }
         bookmark = {
             ...maybeBookmark.error,
             node: {
@@ -26,6 +29,9 @@ export const getBookmark = (maybeBookmark: MaybeBookmark): GetBookmarkType => {
                     : maybeBookmark.error.node.name.error.name,
             },
             url: maybeBookmark.error.url?.ok ? maybeBookmark.error.url.value : '',
+            customPassword: maybeBookmark.error.customPassword.ok
+                ? maybeBookmark.error.customPassword.value
+                : undefined,
         };
     }
 

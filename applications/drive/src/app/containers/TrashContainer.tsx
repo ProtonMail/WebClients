@@ -12,19 +12,21 @@ import { useTrashStore } from '../sections/trash/useTrash.store';
 const TrashContainer = () => {
     const shouldUseSDK = useFlag('DriveWebSDKTrash');
     const TrashComponent = shouldUseSDK ? TrashView : TrashViewDepecated;
-    const { subscribe, unsubscribe } = useTrashStore(
+    const { subscribeToEvents, unsubscribeToEvents } = useTrashStore(
         useShallow((state) => ({
-            subscribe: state.subscribe,
-            unsubscribe: state.unsubscribe,
+            subscribeToEvents: state.subscribeToEvents,
+            unsubscribeToEvents: state.unsubscribeToEvents,
         }))
     );
 
     useEffect(() => {
-        void subscribe('trashContainer');
-        return () => {
-            void unsubscribe('trashContainer');
-        };
-    }, [subscribe, unsubscribe]);
+        if (shouldUseSDK) {
+            void subscribeToEvents('trashContainer');
+            return () => {
+                void unsubscribeToEvents('trashContainer');
+            };
+        }
+    }, [shouldUseSDK, subscribeToEvents, unsubscribeToEvents]);
 
     return (
         <Routes>
