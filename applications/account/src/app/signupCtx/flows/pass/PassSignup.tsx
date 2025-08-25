@@ -10,13 +10,15 @@ import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
 import { SignupType } from '../../../signup/interfaces';
 import { type BaseSignupContextProps, SignupContextProvider, useSignup } from '../../context/SignupContext';
+import getAvailablePlansWithCycles from '../../helpers/getAvailablePlansWithCycles';
+import { family, passLifetime, passPlus, unlimited } from './plans';
 import { AccountDetailsStep } from './steps/AccountDetailsStep';
 import { InstallExtensionStep } from './steps/InstallExtensionStep';
 import { PaymentStep } from './steps/PaymentStep';
 import { RecoveryKitStep } from './steps/RecoveryKitStep';
 import { UpgradePlanStep } from './steps/UpgradePlanStep';
 
-export enum Step {
+enum Step {
     Signup = 'signup',
     RecoveryKit = 'recovery-kit',
     UpgradePlan = 'upgrade-plan',
@@ -62,6 +64,8 @@ const PassSignup = () => {
     );
 };
 
+const availablePlans = getAvailablePlansWithCycles([passPlus, unlimited, family, passLifetime], [CYCLE.YEARLY]);
+
 const PassSignupPage = (props: BaseSignupContextProps) => {
     const id = useId();
     const location = useLocation();
@@ -80,7 +84,7 @@ const PassSignupPage = (props: BaseSignupContextProps) => {
                 replaceUrl(url.toString());
             }}
             paymentsDataConfig={{
-                availablePlans: [],
+                availablePlans,
                 plan: {
                     planIDs: {}, // free only - empty planIDs means free plan
                     currency: undefined,

@@ -132,7 +132,7 @@ interface SignupContextProviderProps extends Omit<BaseSignupContextProps, 'onLog
     app: APP_NAMES | 'generic';
 
     /**
-     * Unique id for each flow.
+     * Unique id for each defined flow.
      * Can be used to run different variants of a signup.
      * Used for telemetry and to debug issues when things go wrong
      */
