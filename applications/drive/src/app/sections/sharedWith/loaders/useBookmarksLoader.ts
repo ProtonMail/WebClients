@@ -17,10 +17,11 @@ export const useBookmarksLoader = () => {
     const { createNotification } = useNotifications();
     const { handleError } = useSdkErrorHandler();
 
-    const { setSharedWithMeItemInStore, setLoadingBookmarks } = useSharedWithMeListingStore(
+    const { setSharedWithMeItemInStore, setLoadingBookmarks, cleanupStaleItems } = useSharedWithMeListingStore(
         useShallow((state) => ({
             setSharedWithMeItemInStore: state.setSharedWithMeItem,
             setLoadingBookmarks: state.setLoadingBookmarks,
+            cleanupStaleItems: state.cleanupStaleItems,
         }))
     );
 
@@ -32,10 +33,12 @@ export const useBookmarksLoader = () => {
             setLoadingBookmarks(true);
             try {
                 let showErrorNotification = false;
+                const loadedUids = new Set<string>();
 
                 for await (const maybeBookmark of drive.iterateBookmarks(abortSignal)) {
                     try {
                         const { bookmark } = getBookmark(maybeBookmark);
+                        loadedUids.add(bookmark.uid);
                         setSharedWithMeItemInStore({
                             name: bookmark.node.name,
                             type: bookmark.node.type,
@@ -68,6 +71,8 @@ export const useBookmarksLoader = () => {
                         text: c('Error').t`We were not able to load some of your bookmarks`,
                     });
                 }
+
+                cleanupStaleItems(ItemType.BOOKMARK, loadedUids);
             } catch (e) {
                 handleError(e, {
                     fallbackMessage: c('Error').t`We were not able to load some of your saved shared links`,
@@ -83,6 +88,7 @@ export const useBookmarksLoader = () => {
             setSharedWithMeItemInStore,
             handleError,
             createNotification,
+            cleanupStaleItems,
         ]
     );
 
