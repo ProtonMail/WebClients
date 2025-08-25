@@ -1,24 +1,20 @@
-import type { FC } from 'react';
+import { type FC } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import {
-    PASS_FAMILY_PRICE,
-    PASS_PLUS_LIFETIME_PRICE,
-    PASS_PLUS_PRICE,
-    PROTON_UNLIMITED_PRICE,
-} from '@proton/pass/constants';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
-import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
+import type { PlanIDs } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Layout } from '../components/Layout/Layout';
 import { OfferModal } from '../components/OfferModal/OfferModal';
 import { PlanCard, type PlanCardProps } from '../components/PlansTable/PlanCard';
+import { family, getPassPlusOfferPlan, passLifetime, passPlus, unlimited } from '../plans';
 
 type Props = {
     onContinue: (payment: boolean) => Promise<void>;
@@ -29,9 +25,24 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
 
     const offerModal = useAsyncModalHandles<boolean, object>({ getInitialModalState: () => ({}) });
 
-    const getPrice = (price: number) => getSimplePriceString(payments.currency, price);
+    const getPrice = (planIDs: PlanIDs) => {
+        const price = payments.getPriceOrFallback({
+            planIDs,
+            cycle: CYCLE.YEARLY,
+            currency: payments.currency,
+        });
 
-    const plusLifetimePrice = getPrice(PASS_PLUS_LIFETIME_PRICE);
+        return getSimplePriceString(price.uiData.currency, price.uiData.withDiscountPerMonth);
+    };
+
+    const plusLifetimePrice = (() => {
+        const price = payments.getPriceOrFallback({
+            planIDs: passLifetime.planIDs,
+            cycle: CYCLE.YEARLY,
+            currency: payments.currency,
+        });
+        return getSimplePriceString(price.uiData.currency, price.uiData.regularAmountPerCycle);
+    })();
 
     const handlePayPlan = (plan: PLANS, coupon?: string) => {
         payments.selectPlan({ planIDs: { [plan]: 1 }, cycle: CYCLE.YEARLY, currency: payments.currency, coupon });
@@ -42,12 +53,7 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
         offerModal.handler({
             onSubmit: async (upgradeTo) => {
                 if (upgradeTo) {
-                    payments.selectPlan({
-                        planIDs: { [PLANS.PASS]: 1 },
-                        cycle: CYCLE.MONTHLY,
-                        currency: payments.currency,
-                        coupon: COUPON_CODES.PASSPLUSINTRO2024,
-                    });
+                    payments.selectPlan(getPassPlusOfferPlan(payments.currency));
                     return onContinue(true);
                 }
 
@@ -61,7 +67,7 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
     const plans: PlanCardProps[] = [
         {
             title: c('Title').t`Free`,
-            price: getPrice(0),
+            price: getPrice({}),
             priceSubtitle: c('Subtitle').t`Free forever`,
             // translator: variable here is the name of the service to login to. Complete sentence: "Continue to Proton Pass"
             buttonText: c('Action').t`Continue to ${name}`,
@@ -74,7 +80,7 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
         },
         {
             title: c('Title').t`Plus`,
-            price: getPrice(PASS_PLUS_PRICE),
+            price: getPrice(passPlus.planIDs),
             priceSubtitle: c('Subtitle').t`per month, billed annually`,
             buttonText: c('Action').t`Get Pass Plus`,
             buttonShape: 'solid',
@@ -92,7 +98,7 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
         },
         {
             title: c('Title').t`Family`,
-            price: getPrice(PASS_FAMILY_PRICE),
+            price: getPrice(family.planIDs),
             priceSubtitle: c('Subtitle').t`per month, billed annually`,
             buttonText: c('Action').t`Get Pass Family`,
             buttonAction: () => handlePayPlan(PLANS.PASS_FAMILY),
@@ -106,7 +112,7 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
                     <Icon name="checkmark-circle-filled" size={5} color="var(--optional-promotion-text-weak)" />
                 </div>
             ),
-            price: getPrice(PROTON_UNLIMITED_PRICE),
+            price: getPrice(unlimited.planIDs),
             priceSubtitle: c('Subtitle').t`per month, billed annually`,
             buttonText: c('Action').t`Get the full suite`,
             buttonAction: () => handlePayPlan(PLANS.BUNDLE),
@@ -152,8 +158,7 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
             </div>
             {offerModal.state.open && (
                 <OfferModal
-                    rawPrice={PASS_FAMILY_PRICE}
-                    getPrice={getPrice}
+                    uiData={payments.getPriceOrFallback(getPassPlusOfferPlan(payments.currency)).uiData}
                     onClose={offerModal.abort}
                     onContinue={offerModal.resolver}
                     loading={offerModal.state.loading}

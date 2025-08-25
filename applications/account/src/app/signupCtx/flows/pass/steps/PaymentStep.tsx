@@ -1,6 +1,6 @@
 import { type FC, type FormEvent, useState } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Alert3ds, Icon } from '@proton/components';
@@ -9,7 +9,7 @@ import PaymentWrapper from '@proton/components/containers/payments/PaymentWrappe
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { IcShield } from '@proton/icons';
-import { CYCLE, PAYMENT_METHOD_TYPES, getPaymentsVersion, getPlanFromPlanIDs } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, PLANS, getPaymentsVersion, getPlanFromPlanIDs } from '@proton/payments';
 import { PayButton, usePaymentOptimistic, useTaxCountry, useVatNumber } from '@proton/payments/ui';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -24,16 +24,15 @@ type Props = {
     onBack: () => void;
 };
 
+const getMonths = (n: number) => c('Pass signup: info').ngettext(msgid`${n} month`, `${n} months`, n);
+
 export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
     const signup = useSignup();
     const payments = usePaymentOptimistic();
     const [loading, setLoading] = useState(false);
     const { options } = payments;
     const amountDue = getSimplePriceString(payments.currency, options.checkResult.AmountDue);
-    const monthlyPlanValue =
-        payments.checkResult.Cycle === CYCLE.YEARLY
-            ? getSimplePriceString(payments.currency, options.checkResult.AmountDue / 12)
-            : null;
+    const monthlyPrice = getSimplePriceString(payments.currency, payments.uiData.checkout.withDiscountPerMonth);
 
     const paymentFacade = usePaymentFacade({
         checkResult: options.checkResult,
@@ -113,6 +112,7 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
     const methodsAllowed: string[] = [PAYMENT_METHOD_TYPES.CARD, PAYMENT_METHOD_TYPES.CHARGEBEE_CARD];
     const showAlert3ds = methodsAllowed.includes(paymentFacade.selectedMethodType ?? '');
 
+    const months = getMonths(payments.uiData.checkout.cycle);
     return (
         <Layout>
             <section className="max-w-custom" style={{ '--max-w-custom': '25rem' }}>
@@ -123,10 +123,13 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
                     <div className="text-center">
                         <span className="text-sm color-weak">{payments.selectedPlan.getPlan().Title}</span>
                         <h3 className="text-5xl text-bold my-1">{amountDue}</h3>
-                        {monthlyPlanValue && (
+                        {payments.selectedPlan.name !== PLANS.PASS_LIFETIME && (
                             <h4 className="text-sm color-weak">
-                                {monthlyPlanValue}
-                                {c('Label').t`/month x 12 months`}
+                                {monthlyPrice}
+                                {
+                                    // translator: Full sentence "4.99 /month x 12 months"
+                                    c('Label').jt`/month x ${months}`
+                                }
                             </h4>
                         )}
                     </div>

@@ -3,13 +3,14 @@ import { useLocation } from 'react-router-dom';
 
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { CYCLE } from '@proton/payments';
+import { usePaymentOptimistic } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
 import { SignupType } from '../../../signup/interfaces';
 import { type BaseSignupContextProps, SignupContextProvider, useSignup } from '../../context/SignupContext';
 import getAvailablePlansWithCycles from '../../helpers/getAvailablePlansWithCycles';
-import { family, passLifetime, passPlus, unlimited } from './plans';
+import { family, getPassPlusOfferPlan, passLifetime, passPlus, unlimited } from './plans';
 import { AccountDetailsStep } from './steps/AccountDetailsStep';
 import { InstallExtensionStep } from './steps/InstallExtensionStep';
 import { PaymentStep } from './steps/PaymentStep';
@@ -26,12 +27,21 @@ enum Step {
 
 const PassSignup = () => {
     const signup = useSignup();
+    const payments = usePaymentOptimistic();
     const [step, setStep] = useState<Step>(Step.Signup);
 
     const accountCreation = async () => {
         await signup.createUser();
         await signup.setupUser();
     };
+
+    useEffect(() => {
+        /**
+         * A limitation of the payments context initialisation means we need to
+         * check the pricing with the coupon to ensure the UI data is available
+         */
+        payments.checkMultiplePlans([getPassPlusOfferPlan(payments.currency)]);
+    }, []);
 
     return (
         <main className="pass-signup flex min-h-full">
