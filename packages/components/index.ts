@@ -428,6 +428,7 @@ export { default as AuthenticationProvider } from './containers/authentication/P
 export { default as UnAuthenticated } from './containers/authentication/UnAuthenticated';
 export { AutoReplySection } from './containers/autoReply/AutoReplySection';
 export { default as ActivityMonitorEvents } from './containers/b2bDashboard/ActivityMonitor/ActivityMonitorEvents';
+export { default as ActivityMonitorDashboard } from './containers/b2bDashboard/ActivityMonitor/ActivityMonitorDashboard';
 export type { PassEvent } from './containers/b2bDashboard/Pass/interface';
 export { PassEvents } from './containers/b2bDashboard/Pass/PassEvents';
 export { VPNEvents } from './containers/b2bDashboard/VPN/VPNEvents';
