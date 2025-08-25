@@ -1,27 +1,25 @@
-import { type FC, useId } from 'react';
+import { type FC } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, PassLogo } from '@proton/components';
+import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { DARK_WEB_MONITORING_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import type { PaymentsCheckout } from '@proton/shared/lib/helpers/checkout';
 
 import './OfferModal.scss';
 
-const OFFER_DISCOUNT_PERCENTAGE = 80;
-
 type OfferModalProps = {
+    uiData: PaymentsCheckout;
     loading: boolean;
-    rawPrice: number;
-    getPrice: (price: number) => string;
     onClose: () => void;
     onContinue: (upgradeTo: boolean) => void;
 };
 
-export const OfferModal: FC<OfferModalProps> = ({ loading, rawPrice, getPrice, onClose, onContinue }) => {
-    const id = useId();
-    const price = getPrice(rawPrice);
-    const offerPrice = getPrice(rawPrice * (1 - OFFER_DISCOUNT_PERCENTAGE / 100));
+export const OfferModal: FC<OfferModalProps> = ({ uiData, loading, onClose, onContinue }) => {
+    const renewalPrice = getSimplePriceString(uiData.currency, uiData.renewPrice);
+    const offerPrice = getSimplePriceString(uiData.currency, uiData.withDiscountPerCycle);
 
     const features = [
         c('Label').t`Unlimited Hide-my-email aliases`,
@@ -52,9 +50,9 @@ export const OfferModal: FC<OfferModalProps> = ({ loading, rawPrice, getPrice, o
                             <h1 className="text-40 text-bold">{offerPrice}</h1>
                             <div className="flex flex-column items-center">
                                 <span className="badge rounded-full py-0.5 px-1 text-sm">
-                                    - ${OFFER_DISCOUNT_PERCENTAGE}%
+                                    - {uiData.discountPercent}%
                                 </span>
-                                <span className="text-sm color-weak text-strike">{price}</span>
+                                <span className="text-sm color-weak text-strike">{renewalPrice}</span>
                             </div>
                         </div>
                         <div className="color-weak text-sm">{c('Label').t`for your first month`}</div>
@@ -73,14 +71,15 @@ export const OfferModal: FC<OfferModalProps> = ({ loading, rawPrice, getPrice, o
                     <div className="flex flex-column gap-4 my-2">
                         <div className="text-bold">{c('Label').t`Get everything in Free, plus:`}</div>
                         {features.map((feature) => (
-                            <div key={`${id}-${feature}`}>
+                            <div key={feature}>
                                 <Icon name="checkmark" className="mr-1" />
                                 {feature}
                             </div>
                         ))}
                     </div>
-                    <div className="color-weak my-6 text-center text-sm">{c('Label')
-                        .t`Renews at ${price}, cancel anytime.`}</div>
+                    <div className="color-weak my-6 text-center text-sm">
+                        {c('Label').t`Renews at ${renewalPrice}, cancel anytime.`}
+                    </div>
                     <Button
                         shape="ghost"
                         color="norm"
