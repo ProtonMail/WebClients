@@ -5,7 +5,6 @@ import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import {
     CYCLE,
-    type Cycle,
     PLANS,
     type PlanIDs,
     getIsB2BAudienceFromPlan,
@@ -17,12 +16,8 @@ import { APPS } from '@proton/shared/lib/constants';
 
 import { usePrefetchGenerateRecoveryKit } from '../../../containers/recoveryPhrase/useRecoveryKitDownload';
 import { SignupType } from '../../../signup/interfaces';
-import {
-    type AvailablePlan,
-    type BaseSignupContextProps,
-    SignupContextProvider,
-    useSignup,
-} from '../../context/SignupContext';
+import { type BaseSignupContextProps, SignupContextProvider, useSignup } from '../../context/SignupContext';
+import getAvailablePlansWithCycles from '../../helpers/getAvailablePlansWithCycles';
 import * as signupSearchParams from '../../helpers/signupSearchParams';
 import DisplayNameStep from './steps/DisplayNameStep';
 import OrgNameStep from './steps/OrgNameStep';
@@ -68,18 +63,6 @@ export const family: { planIDs: PlanIDs } = {
 
 export const driveBiz: { planIDs: PlanIDs } = {
     planIDs: { [PLANS.DRIVE_BUSINESS]: 1 },
-};
-
-const getAvailablePlansWithCycles = (plans: { planIDs: PlanIDs }[], cycles: Cycle[]): AvailablePlan[] => {
-    const availablePlans: AvailablePlan[] = [];
-
-    cycles.forEach((cycle) => {
-        plans.forEach(({ planIDs }) => {
-            availablePlans.push({ planIDs, cycle });
-        });
-    });
-
-    return availablePlans;
 };
 
 type Step = 'account-details' | 'payment' | 'org-name' | 'recovery' | 'display-name' | 'creating-account';
