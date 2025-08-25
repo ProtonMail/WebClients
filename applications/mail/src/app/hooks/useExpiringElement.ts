@@ -20,9 +20,6 @@ export const useExpiringElement = (element: Element, labelID: string, conversati
     const expirationTime = useMemo(() => {
         if (element) {
             if (isConversationMode(element, conversationMode)) {
-                if (element.ContextExpirationTime) {
-                    return element.ContextExpirationTime;
-                }
                 const label = element.Labels?.find((label) => label.ID === labelID);
                 if (label?.ContextExpirationTime) {
                     return label.ContextExpirationTime;
@@ -56,7 +53,7 @@ export const useExpiringElement = (element: Element, labelID: string, conversati
             }
         }
         return undefined;
-    }, [element, conversationMode]);
+    }, [labelID, element, conversationMode]);
 
     return {
         expirationTime,
