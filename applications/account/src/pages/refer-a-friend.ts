@@ -7,7 +7,7 @@ const BRAND_NAME = 'Proton';
 
 const data = (): Parameters => ({
     title: c('Metadata title').t`Try ${BRAND_NAME} for free with this link`,
-    description: c('Metadata title').t`Take control of your data with end-to-end encryption. No bank card required.`,
+    description: c('Metadata title').t`Take control of your data with end-to-end encryption`,
 });
 
 export default data;
