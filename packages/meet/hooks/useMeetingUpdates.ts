@@ -38,7 +38,7 @@ export const useMeetingUpdates = () => {
                 encryptedSessionKey: meetingObject?.SessionKey as string,
                 password: previousPassword,
                 salt: meetingObject?.Salt as string,
-            })) as Uint8Array;
+            })) as Uint8Array<ArrayBuffer>;
 
             const updatedMeeting = await updateMeetingPassword({
                 meetingId: id,
@@ -63,7 +63,7 @@ export const useMeetingUpdates = () => {
                 encryptedSessionKey: meetingObject?.SessionKey as string,
                 password: decryptedPassword,
                 salt: meetingObject?.Salt as string,
-            })) as Uint8Array;
+            })) as Uint8Array<ArrayBuffer>;
 
             const encryptedConferenceName = await encryptMeetingName(newTitle, sessionKey);
 

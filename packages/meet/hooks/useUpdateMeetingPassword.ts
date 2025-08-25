@@ -32,7 +32,7 @@ export const useUpdateMeetingPassword = () => {
         }: {
             meetingId: string;
             password: string;
-            sessionKey: Uint8Array;
+            sessionKey: Uint8Array<ArrayBuffer>;
             customPassword: CustomPasswordState;
             salt?: string;
         }) => {

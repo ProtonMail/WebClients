@@ -19,7 +19,7 @@ export const useUpdateMeetingName = () => {
     const api = useApi();
 
     const updateMeetingName = useCallback(
-        async (meetingId: string, meetingName: string, sessionKey: Uint8Array) => {
+        async (meetingId: string, meetingName: string, sessionKey: Uint8Array<ArrayBuffer>) => {
             try {
                 const encryptedMeetingName = await encryptMeetingName(meetingName, sessionKey);
 

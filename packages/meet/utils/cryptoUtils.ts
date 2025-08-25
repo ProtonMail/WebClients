@@ -20,7 +20,7 @@ export const getCombinedPassword = (urlPassword: string, customPassword: string)
     return `${urlPassword}${PASSWORD_SEPARATOR}${customPassword}`;
 };
 
-export const deriveEncryptionKeyFromSessionKey = async (sessionKey: Uint8Array) => {
+export const deriveEncryptionKeyFromSessionKey = async (sessionKey: Uint8Array<ArrayBuffer>) => {
     const encryptionKey = await deriveKey(
         sessionKey,
         new Uint8Array(32),
@@ -100,7 +100,7 @@ export const decryptMeetingName = async ({
     return decryptedMeetingName;
 };
 
-export const encryptMeetingName = async (meetingName: string, sessionKey: Uint8Array) => {
+export const encryptMeetingName = async (meetingName: string, sessionKey: Uint8Array<ArrayBuffer>) => {
     const meetingNameEncryptionKey = await deriveEncryptionKeyFromSessionKey(sessionKey);
 
     const encryptedMeetingName = await encryptMetadataWithKey(meetingNameEncryptionKey, meetingName);
@@ -142,7 +142,7 @@ export const decryptMeetingPassword = async (
     return result.data;
 };
 
-export const encryptSessionKey = async (sessionKey: Uint8Array, passwordHash: string) => {
+export const encryptSessionKey = async (sessionKey: Uint8Array<ArrayBuffer>, passwordHash: string) => {
     const result = await CryptoProxy.encryptSessionKey({
         data: sessionKey,
         algorithm: 'aes256',
