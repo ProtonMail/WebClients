@@ -28,11 +28,11 @@ import {
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import AccessControlSettingsSection from '@proton/components/containers/organization/accessControl/AccessControlSettingsSection';
 import OrganizationScribeSection from '@proton/components/containers/organization/scribe/OrganizationScribeSection';
+import type { Subscription } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 
 import type { getOrganizationAppRoutes } from './routes';
-import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
-import type { Subscription } from '@proton/payments';
 
 const OrganizationSettingsRouter = ({
     app,
@@ -183,7 +183,12 @@ const OrganizationSettingsRouter = ({
             {getIsSectionAvailable(activityMonitor) && (
                 <Route path={getSectionPath(path, activityMonitor)}>
                     <PrivateMainSettingsArea config={activityMonitor}>
-                        <ActivityMonitorDashboard user={user} organization={organization} app={app} subscription={subscription} />
+                        <ActivityMonitorDashboard
+                            user={user}
+                            organization={organization}
+                            app={app}
+                            subscription={subscription}
+                        />
                     </PrivateMainSettingsArea>
                 </Route>
             )}

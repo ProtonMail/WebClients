@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import type { SectionConfig } from '@proton/components';
 import { canUseGroups } from '@proton/components';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
-import { type Subscription } from '@proton/payments';
 import {
+    type Subscription,
     getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
@@ -74,6 +74,9 @@ export const getOrganizationAppRoutes = ({
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
     const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
+
+    const canShowB2BActivityMonitorEvents = (hasOrganizationKey || hasOrganization) && isAdmin;
+
     //vpnbiz2023, bundlepro2022, bundlepro2024 have the Connection Events feature
     const hasPlanWithEventLogging =
         hasVpnBusiness(subscription) || hasBundlePro(subscription) || hasBundlePro2024(subscription);
@@ -83,8 +86,6 @@ export const getOrganizationAppRoutes = ({
         app === APPS.PROTONVPN_SETTINGS &&
         canHaveOrganization &&
         (hasOrganizationKey || hasOrganization);
-
-    const canShowB2BActivityMonitorEvents = (hasOrganizationKey || hasOrganization) && isAdmin;
 
     //Change the title of the section when managing a family and avoid weird UI jump when no subscription is present
     const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';

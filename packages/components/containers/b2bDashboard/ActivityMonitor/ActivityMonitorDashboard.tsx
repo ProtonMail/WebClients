@@ -11,6 +11,7 @@ import { VPNEvents } from "../VPN/VPNEvents";
 import { useState } from "react";
 import { PassEvents } from "../Pass/PassEvents";
 import SettingsSectionExtraWide from "../../account/SettingsSectionExtraWide";
+import { OrganizationEvents } from "../Organization/OrganizationEvents";
 
 interface Props {
     user: UserModel;
@@ -25,6 +26,15 @@ const canViewB2BActivityMonitor = (user: UserModel, organization?: OrganizationE
     const hasOrganization = hasOrganizationSetup(organization);
 
     return (hasOrganizationKey || hasOrganization) && isAdmin;
+}
+
+const useCanViewB2BOrganization = (user: UserModel, organization?: OrganizationExtended) => {
+    const isAdmin = user.isAdmin && user.isSelf;
+    const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
+    const hasOrganization = hasOrganizationSetup(organization);
+    const canDisplayB2BOrganizationEvents = useFlag('B2BOrganizationMonitor');
+
+    return canDisplayB2BOrganizationEvents && (hasOrganizationKey || hasOrganization) && isAdmin;
 }
 
 const useCanViewGatewayMonitor = (app: APP_NAMES, user: UserModel, organization?: OrganizationExtended, subscription?: Subscription) => {
@@ -69,6 +79,12 @@ const ActivityMonitorDashboard = ({ user, organization, app, subscription }: Pro
             title: c('Accounts').t`Accounts`,
             content: (
                 <ActivityMonitorEvents />
+            ),
+        },
+        useCanViewB2BOrganization(user, organization) && {
+            title: c('Organization').t`Organization`,
+            content: (
+                <OrganizationEvents />
             ),
         },
         useCanViewGatewayMonitor(app, user, organization, subscription) && {
