@@ -15,14 +15,17 @@ import ReferralPlans from './ReferralPlans';
 import {
     REFERRAL_DEAFULT_CYCLE,
     REFERRAL_DEFAULT_PLAN,
+    type SupportedReferralPlans,
     availableReferralPlans,
     getAppIntentFromReferralPlan,
-    getReferralPlanIDsFromPlan,
+    getReferralSelectedPlan,
+    plansRequiringPaymentToken,
 } from './helpers/plans';
+import PaymentStep from './steps/PaymentStep';
 import RecoveryPhraseStep from './steps/RecoveryPhraseStep';
 import AccountDetailsStep from './steps/accountDetails/AccountDetailsStep';
 
-type Step = 'account-details' | 'org-name' | 'recovery' | 'display-name' | 'creating-account';
+type Step = 'account-details' | 'payment' | 'recovery' | 'display-name' | 'creating-account';
 
 const ReferralSignupInner = () => {
     const [step, setStep] = useState<Step>('account-details');
@@ -31,6 +34,7 @@ const ReferralSignupInner = () => {
     const signup = useSignup();
 
     const notifyError = useNotifyErrorHandler();
+    const payments = usePaymentOptimistic();
 
     /**
      * We have a recovery step in this flow, so let's prefetch the recovery kit
@@ -45,6 +49,29 @@ const ReferralSignupInner = () => {
                         history.goBack();
                     }}
                     onSuccess={async () => {
+                        if (plansRequiringPaymentToken.includes(payments.selectedPlan.name as SupportedReferralPlans)) {
+                            setStep('payment');
+                            return;
+                        }
+
+                        try {
+                            await signup.createUser();
+                            setStep('creating-account');
+
+                            await signup.setupUser();
+                            setStep('recovery');
+                        } catch (error) {
+                            notifyError(error);
+                        }
+                    }}
+                />
+            )}
+            {step === 'payment' && (
+                <PaymentStep
+                    onBack={() => {
+                        setStep('account-details');
+                    }}
+                    onPaymentTokenProcessed={async () => {
                         try {
                             await signup.createUser();
                             setStep('creating-account');
@@ -108,6 +135,8 @@ const ReferralSignup = (props: BaseSignupContextProps) => {
 
     const defaultEmail = searchParams.get('email') || undefined;
 
+    const planParam = signupSearchParams.getPlan(searchParams) || REFERRAL_DEFAULT_PLAN;
+
     return (
         <SignupContextProvider
             {...props}
@@ -123,10 +152,8 @@ const ReferralSignup = (props: BaseSignupContextProps) => {
             paymentsDataConfig={{
                 availablePlans: availableReferralPlans,
                 plan: {
-                    planIDs: getReferralPlanIDsFromPlan(
-                        signupSearchParams.getPlan(searchParams) || REFERRAL_DEFAULT_PLAN
-                    ),
                     cycle: REFERRAL_DEAFULT_CYCLE,
+                    ...getReferralSelectedPlan(planParam as SupportedReferralPlans),
                 },
             }}
             accountFormDataConfig={{
