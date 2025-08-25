@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { getUnixTime } from 'date-fns';
+import { getUnixTime, parseISO } from 'date-fns';
 import { c } from 'ttag';
 
 import { Avatar } from '@proton/atoms';
@@ -79,8 +79,8 @@ const VPNEventsTable = ({
                     const { name: gatewayName, countryCode } = gateway;
                     const { location, ip, countryCode: originCountryCode } = origin;
                     const key = index;
-                    const unixTime = getUnixTime(new Date(time));
                     const initials = name ? getInitials(name) : email.charAt(0);
+                    const formattedTime = getUnixTime(parseISO(time));
 
                     return (
                         <TableRow
@@ -121,7 +121,7 @@ const VPNEventsTable = ({
                                                 className="color-weak mt-1"
                                                 onClick={() => onTimeClick(time)}
                                             >
-                                                {unixTime}
+                                                {formattedTime}
                                             </Time>
                                         </div>
                                     </div>

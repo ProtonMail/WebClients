@@ -60,3 +60,24 @@ export const deleteOrgUsersAuthLogs = () => {
         method: 'delete',
     };
 };
+
+export const getOrganizationLogs = (params: B2BLogsQuery) => ({
+    url: 'account/organization/events/organization',
+    method: 'get',
+    params,
+});
+
+export const getOrganizationEventTypes = () => ({
+    url: 'account/organization/events/organization/event-types',
+    method: 'get',
+});
+
+export const getOrganizationLogsDownload = (params: B2BLogsQuery) => ({
+    url: 'account/organization/events/export/organization',
+    method: 'get',
+    params,
+    output: 'text',
+    headers: {
+        accept: 'text/csv',
+    },
+});

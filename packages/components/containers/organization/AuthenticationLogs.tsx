@@ -22,9 +22,8 @@ import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import type { B2BAuthLog } from '@proton/shared/lib/authlog';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import type { EnhancedMember, OrganizationExtended, OrganizationSettings, Recipient } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended, OrganizationSettings, Recipient } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -33,45 +32,24 @@ import RecipientsLimitationModal from '../b2bDashboard/ActivityMonitor/Recipient
 import { updateMonitoringSetting } from '../b2bDashboard/ActivityMonitor/api';
 import { getLocalTimeStringFromDate, getSearchType } from '../b2bDashboard/Pass/helpers';
 import B2BAuthLogsTable from '../logs/B2BAuthLogsTable';
-import { convertEnhancedMembersToContactEmails, convertGroupMemberToRecipient } from './groups/NewGroupMemberInput';
+import { convertEnhancedMembersToContactEmails } from './groups/NewGroupMemberInput';
 import useAuthLogsDateFilter from './useAuthLogsFilter';
 import useOrgAuthLogs from './useOrgAuthLogs';
+import Icon from '@proton/components/components/icon/Icon';
+import { type AuthLogsQueryParams, handleDownload, mapMembersToRecipients } from '../b2bDashboard/ActivityMonitor/helpers';
 
 interface Props {
     organization?: OrganizationExtended;
     activityMonitorSection?: boolean;
     wipeLogs?: boolean;
-    reloadTrigger?: number;
     monitoring?: boolean;
-    onLogsLoaded: (logs: B2BAuthLog[]) => void;
-}
-
-export interface AuthLogsQueryParams {
-    Emails: string[];
-    StartTime?: string;
-    EndTime?: string;
-    IP?: string;
-}
-
-const mapMembersToRecipients = (members: EnhancedMember[], Emails: string[]): Recipient[] => {
-    const filteredMembers = convertEnhancedMembersToContactEmails(
-        members.filter((member) => member.Addresses?.some((address) => Emails.includes(address.Email)))
-    );
-    const uniqueMembers = Array.from(
-        new Map(filteredMembers.map((m) => [m.ContactID, m])).values()
-    );
-    const newRecipients = convertGroupMemberToRecipient(uniqueMembers);
-
-    return newRecipients;
 }
 
 const AuthenticationLogs = ({
     organization,
     activityMonitorSection = true,
     wipeLogs = false,
-    reloadTrigger = 0,
     monitoring = false,
-    onLogsLoaded,
 }: Props) => {
     const api = useApi();
     const [members] = useMembers();
@@ -85,6 +63,8 @@ const AuthenticationLogs = ({
     const addressesAutocompleteRef = useRef<HTMLInputElement>(null);
     const [detailedMonitoringLoading, withLoadingDetailedMonitoring] = useLoading();
     const [recipientsModalProps, recipientsModalOpen, recipientsModalRender] = useModalState();
+    const [loadingDownload, withLoadingDownload] = useLoading();
+    const [reloadTrigger, setReloadTrigger] = useState(0);
     const dispatch = useDispatch();
 
     const detailedMonitoring = organization?.Settings?.LogAuth === 2;
@@ -118,14 +98,6 @@ const AuthenticationLogs = ({
         } catch (e) {
             createNotification({ type: 'error', text: c('Error').t`Failed to update detailed monitoring.` });
         }
-    };
-
-    const getDetailedEventsText = (): string => {
-        if (detailedMonitoringLoading) {
-            return c('Info').t`Loading detailed events current status.`;
-        }
-
-        return detailedMonitoring ? c('Info').t`Disable detailed events` : c('Info').t`Enable detailed events`;
     };
 
     const today = new Date();
@@ -172,10 +144,6 @@ const AuthenticationLogs = ({
         withSubmitting(handleSearchSubmit(true)).catch(noop);
     }, [reloadTrigger]);
 
-    useEffect(() => {
-        onLogsLoaded(authLogs);
-    }, [authLogs]);
-
     if (!organization || !members) {
         return <Loader />;
     }
@@ -196,6 +164,10 @@ const AuthenticationLogs = ({
         
         setQuery({ Emails: [] });
         reset();
+    };
+
+    const triggerReload = () => {
+        setReloadTrigger((prev) => prev + 1);
     };
 
     const handleClickableTime = (time: string | number) => {
@@ -238,129 +210,153 @@ const AuthenticationLogs = ({
             <div className="flex flex-column">
                 <div className="flex flex-row justify-space-between mt-2">
                     <div className="w-full flex flex-row justify-space-between">
-                        <div className="flex flex-column">
+                        <div className="flex flex-column w-full">
                             <form
                                 onSubmit={handleSubmit}
-                                className="flex flex-column md:flex-row gap-2 justify-space-between *:min-size-auto max-w-custom mb-1"
-                                style={{ '--max-w-custom': '50rem' }}
+                                className="flex flex-column md:flex-row gap-2 justify-space-between"
+                                style={{ '--max-w-custom': '90rem' }}
                             >
-                                <div className="md:flex-1 flex flex-column *:min-size-auto w-full leading-10">
-                                    <Label className="text-semibold p-0 h-6 mb-1" htmlFor="search">
-                                        {c('Label').t`Search`}
-                                    </Label>
-                                    <InputField
-                                        as={AddressesInput}
-                                        ref={addressesAutocompleteRef}
-                                        inputContainerClassName=""
-                                        autocomplete={
-                                            <AddressesAutocompleteTwo
-                                                id="auth-log-autocomplete"
-                                                anchorRef={addressesAutocompleteRef}
-                                                recipients={recipients}
-                                                onAddRecipients={handleAddEmail}
-                                                contactEmails={
-                                                    members && convertEnhancedMembersToContactEmails(members)
-                                                }
-                                                inputClassName={clsx(!!recipients.length && 'p-0 rounded-none')}
-                                                validate={(email: string) => {
-                                                    if (!validateEmailAddress(email)) {
-                                                        return c('Input Error').t`Not a valid email address`;
+                                <div className="flex flex-column md:flex-row gap-2 *:min-size-auto md:flex-shrink">
+                                    <div className="md:flex-1 flex flex-column *:min-size-auto w-full leading-10 w-custom" style={{ '--w-custom': '16rem' }}>
+                                        <Label className="text-semibold p-0 h-6 mb-1" htmlFor="search">
+                                            {c('Label').t`Search`}
+                                        </Label>
+                                        <InputField
+                                            as={AddressesInput}
+                                            ref={addressesAutocompleteRef}
+                                            inputContainerClassName=""
+                                            autocomplete={
+                                                <AddressesAutocompleteTwo
+                                                    id="auth-log-autocomplete"
+                                                    anchorRef={addressesAutocompleteRef}
+                                                    recipients={recipients}
+                                                    onAddRecipients={handleAddEmail}
+                                                    contactEmails={
+                                                        members && convertEnhancedMembersToContactEmails(members)
                                                     }
-                                                }}
-                                                unstyled
-                                                placeholder={c('Label').t`Search for a name or email`}
-                                                limit={50}
-                                            />
-                                        }
+                                                    inputClassName={clsx(!!recipients.length && 'p-0 rounded-none')}
+                                                    validate={(email: string) => {
+                                                        if (!validateEmailAddress(email)) {
+                                                            return c('Input Error').t`Not a valid email address`;
+                                                        }
+                                                    }}
+                                                    unstyled
+                                                    placeholder={c('Label').t`Search for a name or email`}
+                                                    limit={50}
+                                                />
+                                            }
+                                            className={clsx([
+                                                'multi-select-container h-custom content-center',
+                                                !!recipients.length && 'px-2',
+                                            ])}
+                                            assistContainerClassName="empty:hidden"
+                                            rootStyle={{ '--h-custom': '2.25rem' }}
+                                        />
+                                    </div>
+                                    <div
                                         className={clsx([
-                                            'multi-select-container h-custom content-center',
-                                            !!recipients.length && 'px-2',
+                                            'md:flex-1 md:max-w-1/2 flex flex-column justify-space-between sm:flex-row gap-2',
+                                            viewportWidth['<=small'] && '*:min-size-auto flex-nowrap',
                                         ])}
-                                        assistContainerClassName="empty:hidden"
-                                        rootStyle={{ '--h-custom': '2.25rem' }}
-                                    />
-                                </div>
-                                <div
-                                    className={clsx([
-                                        'md:flex-1 md:max-w-1/2 flex flex-column justify-space-between sm:flex-row gap-2',
-                                        viewportWidth['<=small'] && '*:min-size-auto flex-nowrap',
-                                    ])}
-                                >
-                                    <div className="flex-1 flex flex-column *:min-size-auto leading-10">
-                                        <Label className="text-semibold p-0 h-6 mb-1" htmlFor="begin-date">
-                                            {c('Label (begin date/advanced search)').t`From`}
-                                        </Label>
-                                        <DateInput
-                                            id="start"
-                                            placeholder={c('Placeholder').t`Start date`}
-                                            value={filter.start}
-                                            onChange={handleStartDateChange}
-                                            max={today}
-                                        />
-                                    </div>
-                                    <span
-                                        className="hidden sm:flex text-bold self-end h-custom shrink-0"
-                                        style={{ '--h-custom': '2rem' }}
                                     >
-                                        -
-                                    </span>
-                                    <div className="flex-1 flex flex-column *:min-size-auto leading-10">
-                                        <Label className="text-semibold p-0 h-6 mb-1" htmlFor="end-date">
-                                            {c('Label (end date/advanced search)').t`To`}
-                                        </Label>
-                                        <DateInput
-                                            id="end"
-                                            placeholder={c('Placeholder').t`End date`}
-                                            value={filter.end}
-                                            onChange={handleEndDateChange}
-                                            max={today}
-                                        />
+                                        <div className="flex-1 flex flex-column *:min-size-auto leading-10 w-custom" style={{ '--w-custom': '8rem' }}>
+                                            <Label className="text-semibold p-0 h-6 mb-1" htmlFor="begin-date">
+                                                {c('Label (begin date/advanced search)').t`From`}
+                                            </Label>
+                                            <DateInput
+                                                id="start"
+                                                placeholder={c('Placeholder').t`Start date`}
+                                                value={filter.start}
+                                                onChange={handleStartDateChange}
+                                                max={today}
+                                            />
+                                        </div>
+                                        <span
+                                            className="hidden sm:flex text-bold self-end h-custom shrink-0"
+                                            style={{ '--h-custom': '2rem' }}
+                                        >
+                                            -
+                                        </span>
+                                        <div className="flex-1 flex flex-column *:min-size-auto leading-10 w-custom" style={{ '--w-custom': '8rem' }}>
+                                            <Label className="text-semibold p-0 h-6 mb-1" htmlFor="end-date">
+                                                {c('Label (end date/advanced search)').t`To`}
+                                            </Label>
+                                            <DateInput
+                                                id="end"
+                                                placeholder={c('Placeholder').t`End date`}
+                                                value={filter.end}
+                                                onChange={handleEndDateChange}
+                                                max={today}
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="flex lg:inline-flex flex-nowrap flex-row gap-2 shrink-0 items-end">
+                                        <div className="flex content-center">
+                                            <Button color="norm" type="submit" loading={submitting} className="self-end">
+                                                {c('Action').t`Search`}
+                                            </Button>
+                                        </div>
+                                        <div className="flex content-center">
+                                            <Button
+                                                color="norm"
+                                                shape="ghost"
+                                                type="submit"
+                                                loading={submitting}
+                                                className="self-end"
+                                                disabled={isFilterEmpty()}
+                                                onClick={resetFilter}
+                                            >
+                                                {c('Action').t`Reset`}
+                                            </Button>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="flex lg:inline-flex flex-nowrap flex-row gap-2 shrink-0 items-end">
-                                    <div className="flex content-center">
-                                        <Button color="norm" type="submit" loading={submitting} className="self-end">
-                                            {c('Action').t`Search`}
-                                        </Button>
-                                    </div>
-                                    <div className="flex content-center">
-                                        <Button
-                                            color="norm"
-                                            shape="ghost"
-                                            type="submit"
-                                            loading={submitting}
-                                            className="self-end"
-                                            disabled={isFilterEmpty()}
-                                            onClick={resetFilter}
-                                        >
-                                            {c('Action').t`Reset`}
-                                        </Button>
-                                    </div>
+                                <div className="flex flex-row gap-2 flex-shrink-0">
+                                    <Button
+                                        shape="outline"
+                                        className="self-end"
+                                        onClick={triggerReload}
+                                        loading={loadingDownload}
+                                        title={c('Action').t`Refresh`}
+                                    >
+                                        <Icon name="arrow-rotate-right" className="mr-2" />
+                                        {c('Action').t`Refresh`}
+                                    </Button>
+                                    <Button
+                                        shape="outline"
+                                        className="self-end"
+                                        onClick={() => withLoadingDownload(handleDownload(authLogs, organization))}
+                                        loading={loadingDownload}
+                                        title={c('Action').t`Export`}
+                                    >
+                                        <Icon name="arrow-down-line" className="mr-2" />
+                                        {c('Action').t`Export`}
+                                    </Button>
                                 </div>
                             </form>
                             <div className="flex mb-4">{items.slice(0, 50)}</div>
                         </div>
-                        <div>
-                            <div className="flex flex-row flex-nowrap items-center gap-2 mt-7">
-                                <Toggle
-                                    id="detailed-monitoring-toggle"
-                                    loading={detailedMonitoringLoading}
-                                    checked={detailedMonitoring}
-                                    disabled={!monitoring}
-                                    onChange={() => withLoadingDetailedMonitoring(handleSetDetailedMonitoring())}
-                                />
-                                <div className="flex items-center">
-                                    {getDetailedEventsText()}
-                                    <Info
-                                        className="ml-2 shrink-0"
-                                        title={c('Info')
-                                            .t`Include user IP address, location, and ISP (Internet Service Provider) in event logs`}
-                                    />
-                                </div>
-                            </div>
-                            <div className="h-custom" style={{ '--h-custom': '2.5rem' }}></div>
+                    </div>
+                </div>
+                <div className='flex self-end mb-4'>
+                    <div className="flex flex-row flex-nowrap items-center gap-2">
+                        <Toggle
+                            id="detailed-monitoring-toggle"
+                            loading={detailedMonitoringLoading}
+                            checked={detailedMonitoring}
+                            disabled={!monitoring}
+                            onChange={() => withLoadingDetailedMonitoring(handleSetDetailedMonitoring())}
+                        />
+                        <div className="flex items-center">
+                            {c('Info').t`Include device, location, and IP details`}
+                            <Info
+                                className="ml-2 shrink-0"
+                                title={c('Info')
+                                    .t`Allow logging of location and connection details`}
+                            />
                         </div>
                     </div>
+                    <div className="h-custom" style={{ '--h-custom': '2.5rem' }}></div>
                 </div>
             </div>
             <B2BAuthLogsTable
