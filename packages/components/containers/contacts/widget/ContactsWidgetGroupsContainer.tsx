@@ -192,6 +192,7 @@ const ContactsWidgetGroupsContainer = ({
                     onChange={setSearch}
                     id="id_contact-widget-group-search"
                     placeholder={c('Placeholder').t`Group name`}
+                    className="field-show-clear-button"
                 />
                 <span className="sr-only" aria-atomic aria-live="assertive">
                     {c('Info').ngettext(msgid`${groupCounts} group found`, `${groupCounts} groups found`, groupCounts)}
