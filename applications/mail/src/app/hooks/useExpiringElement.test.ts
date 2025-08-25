@@ -1,6 +1,7 @@
 import { fromUnixTime, getUnixTime } from 'date-fns';
 
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { renderHook } from 'proton-mail/helpers/test/render';
@@ -54,11 +55,10 @@ describe('useExpiringElement', () => {
         const element = {
             ID: conversationID,
         } as Conversation;
-        const labelID = '0';
 
         it('Should not have expiration when no `contextExpirationTime` on the Element and no `expiresIn` draftFlag in messages from store', async () => {
             const view = await renderHook({
-                useCallback: () => useExpiringElement(element, labelID, true),
+                useCallback: () => useExpiringElement(element, MAILBOX_LABEL_IDS.INBOX, true),
                 init: (store) => {
                     store.dispatch(initialize(getStoreMessage({ conversationID })));
                 },
@@ -71,7 +71,7 @@ describe('useExpiringElement', () => {
 
         it('Should not have expiration with `expirationTime` data in messages from store', async () => {
             const view = await renderHook({
-                useCallback: () => useExpiringElement(element, labelID, true),
+                useCallback: () => useExpiringElement(element, MAILBOX_LABEL_IDS.INBOX, true),
                 init: (store) => {
                     store.dispatch(
                         initialize(
@@ -89,26 +89,9 @@ describe('useExpiringElement', () => {
             expect(view.result.current.expirationTime).toBe(0);
         });
 
-        it('Should have expiration with `contextExpirationTime` on the element', async () => {
-            const view = await renderHook({
-                useCallback: () =>
-                    useExpiringElement(
-                        {
-                            ...element,
-                            ContextExpirationTime: dateTimestamp,
-                        },
-                        labelID,
-                        true
-                    ),
-            });
-
-            expect(view.result.current.hasExpiration).toBe(true);
-            expect(view.result.current.expirationTime).toBe(dateTimestamp);
-        });
-
         it('Should have expiration with `expiresIn` draftFlag in messages from store', async () => {
             const view = await renderHook({
-                useCallback: () => useExpiringElement(element, labelID, true),
+                useCallback: () => useExpiringElement(element, MAILBOX_LABEL_IDS.INBOX, true),
                 init: (store) => {
                     store.dispatch(
                         initialize(
@@ -133,12 +116,12 @@ describe('useExpiringElement', () => {
                             ...element,
                             Labels: [
                                 {
-                                    ID: labelID,
+                                    ID: MAILBOX_LABEL_IDS.INBOX,
                                     ContextExpirationTime: dateTimestamp,
                                 },
                             ],
                         },
-                        labelID,
+                        MAILBOX_LABEL_IDS.INBOX,
                         true
                     ),
             });
@@ -146,17 +129,60 @@ describe('useExpiringElement', () => {
             expect(view.result.current.hasExpiration).toBe(true);
             expect(view.result.current.expirationTime).toBe(dateTimestamp);
         });
+
+        it('should not return the ContextExpirationTime and only the value in the label', async () => {
+            const view = await renderHook({
+                useCallback: () =>
+                    useExpiringElement(
+                        {
+                            ...element,
+                            Labels: [
+                                {
+                                    ID: MAILBOX_LABEL_IDS.INBOX,
+                                    ContextExpirationTime: dateTimestamp,
+                                },
+                            ],
+                        },
+                        MAILBOX_LABEL_IDS.INBOX,
+                        true
+                    ),
+            });
+
+            expect(view.result.current.hasExpiration).toBe(true);
+            expect(view.result.current.expirationTime).toBe(dateTimestamp);
+        });
+
+        it('should not return the ContextExpirationTime if not right label ID', async () => {
+            const view = await renderHook({
+                useCallback: () =>
+                    useExpiringElement(
+                        {
+                            ...element,
+                            Labels: [
+                                {
+                                    ID: MAILBOX_LABEL_IDS.TRASH,
+                                    ContextExpirationTime: dateTimestamp,
+                                },
+                            ],
+                        },
+                        MAILBOX_LABEL_IDS.INBOX,
+                        true
+                    ),
+            });
+
+            expect(view.result.current.hasExpiration).toBe(false);
+            expect(view.result.current.expirationTime).toBe(0);
+        });
     });
 
     describe('Conversation mode OFF', () => {
         const element = {
             ID: MESSAGE_ID,
         } as Message;
-        const labelID = '0';
 
         it('Should not have expiration when no `ExpirationTime` on the Element and no `ExpirationTime` data or `expiresIn` draftFlag in message store', async () => {
             const view = await renderHook({
-                useCallback: () => useExpiringElement(element, labelID, false),
+                useCallback: () => useExpiringElement(element, MAILBOX_LABEL_IDS.INBOX, false),
                 init: (store) => {
                     store.dispatch(initialize(getStoreMessage({ types: [], expirationTime: dateTimestamp })));
                 },
@@ -174,7 +200,7 @@ describe('useExpiringElement', () => {
                             ...element,
                             ExpirationTime: dateTimestamp,
                         },
-                        labelID,
+                        MAILBOX_LABEL_IDS.INBOX,
                         false
                     ),
                 init: (store) => {
@@ -189,7 +215,7 @@ describe('useExpiringElement', () => {
 
         it('Should have expiration when `expiresIn` is set on the message store draftFlags', async () => {
             const view = await renderHook({
-                useCallback: () => useExpiringElement(element, labelID, false),
+                useCallback: () => useExpiringElement(element, MAILBOX_LABEL_IDS.INBOX, false),
                 init: (store) => {
                     store.dispatch(
                         initialize(
@@ -205,7 +231,7 @@ describe('useExpiringElement', () => {
 
         it('Should have expiration when `ExpirationTime` is set on the message store data', async () => {
             const view = await renderHook({
-                useCallback: () => useExpiringElement(element, labelID, false),
+                useCallback: () => useExpiringElement(element, MAILBOX_LABEL_IDS.INBOX, false),
                 init: (store) => {
                     store.dispatch(
                         initialize(
