@@ -1,5 +1,5 @@
-import type { PlanIDs } from '@proton/payments';
-import { PLANS } from '@proton/payments';
+import type { Currency, PlanIDs } from '@proton/payments';
+import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments';
 
 export const passPlus: { planIDs: PlanIDs } = {
     planIDs: { [PLANS.PASS]: 1 },
@@ -16,3 +16,10 @@ export const family: { planIDs: PlanIDs } = {
 export const passLifetime: { planIDs: PlanIDs } = {
     planIDs: { [PLANS.PASS_LIFETIME]: 1 },
 };
+
+export const getPassPlusOfferPlan = (currency: Currency) => ({
+    planIDs: passPlus.planIDs,
+    cycle: CYCLE.MONTHLY,
+    currency,
+    coupon: COUPON_CODES.PASSPLUSINTRO2024,
+});
