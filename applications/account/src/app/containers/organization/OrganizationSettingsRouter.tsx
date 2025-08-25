@@ -2,10 +2,9 @@ import type { ReactNode } from 'react';
 import { useRef } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import { useOrganization } from '@proton/account/organization/hooks';
 import { VideoConferenceOrganizationSection } from '@proton/calendar';
 import {
-    ActivityMonitorEvents,
+    ActivityMonitorDashboard,
     CatchAllSection,
     DomainsSection,
     GatewaysSection,
@@ -32,22 +31,29 @@ import OrganizationScribeSection from '@proton/components/containers/organizatio
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import type { getOrganizationAppRoutes } from './routes';
+import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
+import type { Subscription } from '@proton/payments';
 
 const OrganizationSettingsRouter = ({
     app,
     redirect,
     path,
     organizationAppRoutes,
+    user,
+    organization,
+    subscription,
     onOpenChat,
 }: {
     app: APP_NAMES;
     redirect: ReactNode;
     path: string;
     organizationAppRoutes: ReturnType<typeof getOrganizationAppRoutes>;
+    user: UserModel;
+    organization?: OrganizationExtended;
+    subscription?: Subscription;
     onOpenChat?: () => void;
 }) => {
     const onceRef = useRef(false);
-    const [organization] = useOrganization();
 
     const {
         routes: {
@@ -177,7 +183,7 @@ const OrganizationSettingsRouter = ({
             {getIsSectionAvailable(activityMonitor) && (
                 <Route path={getSectionPath(path, activityMonitor)}>
                     <PrivateMainSettingsArea config={activityMonitor}>
-                        <ActivityMonitorEvents />
+                        <ActivityMonitorDashboard user={user} organization={organization} app={app} subscription={subscription} />
                     </PrivateMainSettingsArea>
                 </Route>
             )}
