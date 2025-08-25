@@ -32,7 +32,7 @@ export const useChatMessage = () => {
 
                 const message: ChatMessage = {
                     id: `${room.localParticipant.identity}-${Date.now()}`,
-                    message: uint8ArrayToString(encryptedMessage as Uint8Array),
+                    message: uint8ArrayToString(encryptedMessage as Uint8Array<ArrayBuffer>),
                     timestamp: Date.now(),
                 };
 
