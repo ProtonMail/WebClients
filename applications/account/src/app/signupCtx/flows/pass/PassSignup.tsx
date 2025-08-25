@@ -3,9 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { CYCLE } from '@proton/payments';
-import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
 import { SignupType } from '../../../signup/interfaces';
@@ -79,8 +77,7 @@ const PassSignupPage = (props: BaseSignupContextProps) => {
             app={APPS.PROTONPASS}
             flowId="pass-generic"
             onLogin={async (session) => {
-                const url = new URL(getAppHref('/', APPS.PROTONPASS, session.localID));
-                replaceUrl(url.toString());
+                await props.handleLogin({ data: session, flow: 'signup', appIntent: { app: APPS.PROTONPASS } });
             }}
             paymentsDataConfig={{
                 availablePlans,
