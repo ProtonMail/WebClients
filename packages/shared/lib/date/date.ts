@@ -13,6 +13,7 @@ import {
 
 import { DAY } from '../constants';
 import type { WeekStartsOn } from '../date-fns-utc/interface';
+import { dateLocale } from '../i18n';
 
 interface FormatOptions {
     locale?: Locale;
@@ -126,7 +127,7 @@ export const isValidDate = (date: Date) => {
 };
 
 export const getShortenDayFormat = (date: Date) => {
-    return format(date, 'do');
+    return format(date, 'do', { locale: dateLocale });
 };
 
 export const getWeekday = (weekStartsOn: WeekStartsOn, offset: number = 0): number => {
