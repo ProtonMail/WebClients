@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import Pagination from '@proton/components/components/pagination/Pagination';
 import usePaginationAsync from '@proton/components/components/pagination/usePaginationAsync';
 import PassEventsTable from '@proton/components/containers/b2bDashboard/Pass/PassEventsTable';
@@ -12,7 +11,7 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { getPassEventTypes, getPassLogs, getPassLogsDownload } from '@proton/shared/lib/api/b2bevents';
-import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { PASS_APP_NAME, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';
 
@@ -42,14 +41,14 @@ const initialFilter = {
     end: undefined,
 };
 
-const getQueryParams = (filter: FilterModel, searchType: 'ip' | 'email' | 'empty', keyword: string) => {
+const getQueryParams = (filter: FilterModel, searchType: 'ip' | 'email' | 'search' | 'empty', keyword: string) => {
     const { eventType, start, end } = filter;
-    const Event = eventType === ALL_EVENTS_DEFAULT ? undefined : eventType;
+    const EventTypes = eventType === ALL_EVENTS_DEFAULT ? undefined : [eventType];
     const StartTime = start ? getLocalTimeStringFromDate(start) : undefined;
     const EndTime = end ? getLocalTimeStringFromDate(endOfDay(end)) : undefined;
     const Email = searchType === 'email' ? keyword : undefined;
     const Ip = searchType === 'ip' ? keyword : undefined;
-    return { Email, Ip, Event, StartTime, EndTime };
+    return { Email, Ip, EventTypes, StartTime, EndTime };
 };
 
 export const PassEvents = () => {
@@ -202,6 +201,15 @@ export const PassEvents = () => {
 
     return (
         <SettingsSectionWide customWidth="90em">
+            <div className="flex flex-row justify-space-between items-center my-4">
+                <div className="flex *:min-size-auto flex-column gap-2 w-full">
+                    <div className="flex flex-column gap-2 p-4 rounded-lg border border-solid border-weak">
+                        <span className="text-bold">{c('Info').t`Pass usage logs`}</span>
+                        <span className="color-weak">{c('Message')
+                            .t`View ${PASS_APP_NAME} activity across your organization.`}</span>
+                    </div>
+                </div>
+            </div>
             <FilterAndSortEventsBlock
                 filter={filter}
                 keyword={keyword}
@@ -215,10 +223,6 @@ export const PassEvents = () => {
                 resetFilter={handleResetFilter}
                 hasFilterEvents={true}
             />
-            <div className="content-center my-3">
-                <Icon name="info-circle" size={4.5} className="mr-1 mb-1" />
-                <span>{c('Title').t`Click a value in the table to use it as filter`}</span>
-            </div>
             {error ? (
                 <GenericError className="text-center">{error}</GenericError>
             ) : (
