@@ -14,10 +14,11 @@ export const useInvitationsLoader = () => {
     const { createNotification } = useNotifications();
     const { handleError } = useSdkErrorHandler();
 
-    const { setSharedWithMeItemInStore, setLoadingInvitations } = useSharedWithMeListingStore(
+    const { setSharedWithMeItemInStore, setLoadingInvitations, cleanupStaleItems } = useSharedWithMeListingStore(
         useShallow((state) => ({
             setSharedWithMeItemInStore: state.setSharedWithMeItem,
             setLoadingInvitations: state.setLoadingInvitations,
+            cleanupStaleItems: state.cleanupStaleItems,
         }))
     );
 
@@ -29,6 +30,7 @@ export const useInvitationsLoader = () => {
             setLoadingInvitations(true);
             try {
                 let showErrorNotification = false;
+                const loadedUids = new Set<string>();
 
                 for await (const invitation of drive.iterateInvitations(abortSignal)) {
                     const name = invitation.node.name.ok ? invitation.node.name.value : invitation.node.name.error.name;
@@ -41,6 +43,7 @@ export const useInvitationsLoader = () => {
                     try {
                         const { volumeId, nodeId } = splitNodeUid(invitation.node.uid);
 
+                        loadedUids.add(invitation.node.uid);
                         setSharedWithMeItemInStore({
                             nodeUid: invitation.node.uid,
                             name,
@@ -73,6 +76,8 @@ export const useInvitationsLoader = () => {
                         text: c('Error').t`We were not able to load some invitations`,
                     });
                 }
+
+                cleanupStaleItems(ItemType.INVITATION, loadedUids);
             } catch (e) {
                 handleError(e, {
                     fallbackMessage: c('Error').t`We were not able to load some of your invitation to shared items`,
@@ -81,7 +86,7 @@ export const useInvitationsLoader = () => {
                 setLoadingInvitations(false);
             }
         },
-        [drive, handleError, createNotification, setSharedWithMeItemInStore, setLoadingInvitations]
+        [drive, handleError, createNotification, setSharedWithMeItemInStore, setLoadingInvitations, cleanupStaleItems]
     );
 
     return {

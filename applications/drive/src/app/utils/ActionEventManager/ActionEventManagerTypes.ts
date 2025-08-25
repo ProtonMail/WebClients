@@ -8,7 +8,6 @@
  *      - `uids` for string array of uids
  *      - `items` for all else
  */
-import type { NodeEntity } from '@proton/drive';
 
 export type NodeEventMeta = { uid: string; parentUid: string | undefined; isTrashed?: boolean; isShared?: boolean };
 
@@ -85,10 +84,7 @@ export interface DeleteBookmarksEvent {
 
 export interface AcceptInvitationsEvent {
     type: ActionEventName.ACCEPT_INVITATIONS;
-    items: {
-        node: NodeEntity;
-        sharedInfo: { sharedOn: number; sharedBy: string };
-    }[];
+    uids: string[];
 }
 
 export interface RejectInvitationsEvent {
