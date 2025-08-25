@@ -40,7 +40,7 @@ export const IcSpeechBubblesFilled = ({
 
                 <path
                     fillRule="evenodd"
-                    d="M9.5 9a2.5 2.5 0 0 1 2.5 2.5V13l2 2H3.5A2.5 2.5 0 0 1 1 12.5v-1A2.5 2.5 0 0 1 3.5 9h6Zm1-8A2.5 2.5 0 0 1 13 3.5v2.214L15 8H3.5A2.5 2.5 0 0 1 1 5.5v-2A2.5 2.5 0 0 1 3.5 1h7Z"
+                    d="M10.5 1A2.5 2.5 0 0 1 13 3.5v2.214L15 8H3.5A2.5 2.5 0 0 1 1 5.5v-2A2.5 2.5 0 0 1 3.5 1h7Zm-2 8a2.5 2.5 0 0 1 2.5 2.5V13l2 2H3.5A2.5 2.5 0 0 1 1 12.5v-1A2.5 2.5 0 0 1 3.5 9h5Z"
                 ></path>
             </svg>
             {alt ? <span className="sr-only">{alt}</span> : null}
