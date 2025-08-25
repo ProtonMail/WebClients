@@ -161,12 +161,7 @@ describe('ActionEventManager', () => {
 
             const acceptInvitationEvent: AcceptInvitationsEvent = {
                 type: ActionEventName.ACCEPT_INVITATIONS,
-                items: [
-                    {
-                        node: mockNodeEntity,
-                        sharedInfo: { sharedOn: 1234567890, sharedBy: 'test@example.com' },
-                    },
-                ],
+                uids: [mockNodeEntity.uid],
             };
 
             const rejectInvitationEvent: RejectInvitationsEvent = {
@@ -236,12 +231,7 @@ describe('ActionEventManager', () => {
 
             const acceptInvitationEvent: AcceptInvitationsEvent = {
                 type: ActionEventName.ACCEPT_INVITATIONS,
-                items: [
-                    {
-                        node: mockNodeEntity,
-                        sharedInfo: { sharedOn: 1234567890, sharedBy: 'test@example.com' },
-                    },
-                ],
+                uids: [mockNodeEntity.uid],
             };
 
             const rejectInvitationEvent: RejectInvitationsEvent = {

@@ -17,8 +17,8 @@ interface TrashStore {
     setLoading: (value: boolean) => void;
     eventSubscriptions: (() => void)[] | null;
     activeContexts: Set<string>;
-    subscribe: (context: string) => Promise<void>;
-    unsubscribe: (context: string) => Promise<void>;
+    subscribeToEvents: (context: string) => Promise<void>;
+    unsubscribeToEvents: (context: string) => Promise<void>;
 }
 
 export const useTrashStore = create<TrashStore>((set, get) => ({
@@ -41,7 +41,7 @@ export const useTrashStore = create<TrashStore>((set, get) => ({
             return { isLoading: value };
         }),
     clearAllNodes: () => set({ trashNodes: {} }),
-    subscribe: async (context: string) => {
+    subscribeToEvents: async (context: string) => {
         const eventManager = getActionEventManager();
         await eventManager.subscribeSdkEventsMyUpdates(context);
 
@@ -111,7 +111,7 @@ export const useTrashStore = create<TrashStore>((set, get) => ({
 
         set({ eventSubscriptions: [createSubscription, updateSubscription, deleteSubscription] });
     },
-    unsubscribe: async (context: string) => {
+    unsubscribeToEvents: async (context: string) => {
         const eventManager = getActionEventManager();
         await eventManager.unsubscribeSdkEventsMyUpdates(context);
 

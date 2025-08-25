@@ -1,11 +1,13 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-import { type NodeType, splitNodeUid } from '@proton/drive';
+import { type NodeType, getDrive, splitNodeUid } from '@proton/drive';
 
 import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
 import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
-import { legacyTimestampToDate } from '../../utils/sdk/legacyTime';
+import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
+import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
+import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 
 export enum ItemType {
     BOOKMARK = 'bookmark',
@@ -20,6 +22,7 @@ type BaseSharedWithMeItem = {
     mediaType: string | undefined;
     thumbnailId: string | undefined;
     legacy: {
+        isFromLegacy?: boolean;
         linkId: string;
         shareId: string;
         volumeId: string;
@@ -64,11 +67,17 @@ type SharedWithMeListingStore = {
     isLoadingNodes: boolean;
     isLoadingInvitations: boolean;
     isLoadingBookmarks: boolean;
-    isLoadingLegacy: boolean;
+    isLoadingLegacyNodes: boolean;
+    isLoadingLegacyInvitations: boolean;
+
+    eventSubscriptions: (() => void)[] | null;
+    activeContexts: Set<string>;
+    refreshCallbacks: Map<string, () => Promise<void>>;
 
     setSharedWithMeItem: (item: SharedWithMeListingItemUI) => void;
     removeSharedWithMeItem: (uid: string) => void;
     clearAll: () => void;
+    cleanupStaleItems: (itemType: ItemType, loadedUids: Set<string>, options?: { legacyCleanup?: boolean }) => void;
 
     hasSharedWithMeItem: (uid: string) => boolean;
     getSharedWithMeItem: (uid: string) => SharedWithMeListingItemUI | undefined;
@@ -78,16 +87,20 @@ type SharedWithMeListingStore = {
     getInvitationPositionedItems: () => SharedWithMeListingItemUI[];
     getRegularItems: () => SharedWithMeListingItemUI[];
     getItemUids: () => string[];
-    getInvitiationCount: () => number;
+    getInvitationCount: () => number;
 
     clearItemsWithInvitationPosition: () => void;
 
     setLoadingNodes: (loading: boolean) => void;
     setLoadingInvitations: (loading: boolean) => void;
     setLoadingBookmarks: (loading: boolean) => void;
-    setLoadingLegacy: (loading: boolean) => void;
+    setLoadingLegacyNodes: (loading: boolean) => void;
+    setLoadingLegacyInvitations: (loading: boolean) => void;
 
     isLoading: () => boolean;
+
+    subscribeToEvents: (context: string, options?: { onRefreshSharedWithMe?: () => Promise<void> }) => Promise<void>;
+    unsubscribeToEvents: (context: string) => Promise<void>;
 };
 
 export const getKeyUid = (item: SharedWithMeListingItemUI) =>
@@ -103,7 +116,12 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
             isLoadingNodes: false,
             isLoadingInvitations: false,
             isLoadingBookmarks: false,
-            isLoadingLegacy: false,
+            isLoadingLegacyNodes: false,
+            isLoadingLegacyInvitations: false,
+
+            eventSubscriptions: null,
+            activeContexts: new Set<string>(),
+            refreshCallbacks: new Map<string, () => Promise<void>>(),
 
             setSharedWithMeItem: (item: SharedWithMeListingItemUI) => {
                 set((state) => {
@@ -181,6 +199,34 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                 });
             },
 
+            cleanupStaleItems: (itemType: ItemType, loadedUids: Set<string>, options?: { legacyCleanup?: boolean }) => {
+                set((state) => {
+                    const newSharedWithMeItems = new Map(state.sharedWithMeItems);
+                    const newItemUids = new Set(state.itemUids);
+                    const newItemsWithInvitationPosition = new Set(state.itemsWithInvitationPosition);
+
+                    // Find items of the specified type that weren't in the loaded set
+                    for (const [uid, item] of state.sharedWithMeItems) {
+                        const shouldCleanup =
+                            item.itemType === itemType &&
+                            !loadedUids.has(getKeyUid(item)) &&
+                            (options?.legacyCleanup ? !!item.legacy.isFromLegacy : !item.legacy.isFromLegacy);
+
+                        if (shouldCleanup) {
+                            newSharedWithMeItems.delete(uid);
+                            newItemUids.delete(uid);
+                            newItemsWithInvitationPosition.delete(uid);
+                        }
+                    }
+
+                    return {
+                        sharedWithMeItems: newSharedWithMeItems,
+                        itemUids: newItemUids,
+                        itemsWithInvitationPosition: newItemsWithInvitationPosition,
+                    };
+                });
+            },
+
             hasSharedWithMeItem: (uid: string) => get().sharedWithMeItems.has(uid),
             getSharedWithMeItem: (uid: string) => get().sharedWithMeItems.get(uid),
             getAllSharedWithMeItems: () => Array.from(get().sharedWithMeItems.values()),
@@ -212,7 +258,7 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                 set({ itemsWithInvitationPosition: new Set() });
             },
             getItemUids: () => Array.from(get().itemUids),
-            getInvitiationCount: () => {
+            getInvitationCount: () => {
                 const items = Array.from(get().sharedWithMeItems.values());
                 return items.filter((item) => item.itemType === ItemType.INVITATION).length;
             },
@@ -220,7 +266,8 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
             setLoadingNodes: (loading: boolean) => set({ isLoadingNodes: loading }),
             setLoadingInvitations: (loading: boolean) => set({ isLoadingInvitations: loading }),
             setLoadingBookmarks: (loading: boolean) => set({ isLoadingBookmarks: loading }),
-            setLoadingLegacy: (loading: boolean) => set({ isLoadingLegacy: loading }),
+            setLoadingLegacyNodes: (loading: boolean) => set({ isLoadingLegacyNodes: loading }),
+            setLoadingLegacyInvitations: (loading: boolean) => set({ isLoadingLegacyInvitations: loading }),
 
             isLoading: () => {
                 const state = get();
@@ -228,8 +275,153 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                     state.isLoadingNodes ||
                     state.isLoadingInvitations ||
                     state.isLoadingBookmarks ||
-                    state.isLoadingLegacy
+                    state.isLoadingLegacyNodes ||
+                    state.isLoadingLegacyInvitations
                 );
+            },
+
+            subscribeToEvents: async (context: string, options?: { onRefreshSharedWithMe?: () => Promise<void> }) => {
+                const eventManager = getActionEventManager();
+                await eventManager.subscribeSdkDriveEvents(context);
+
+                const { activeContexts, eventSubscriptions, refreshCallbacks } = get();
+
+                const newActiveContexts = new Set(activeContexts);
+                newActiveContexts.add(context);
+
+                const newRefreshCallbacks = new Map(refreshCallbacks);
+                if (options?.onRefreshSharedWithMe) {
+                    newRefreshCallbacks.set(context, options.onRefreshSharedWithMe);
+                }
+
+                set({
+                    activeContexts: newActiveContexts,
+                    refreshCallbacks: newRefreshCallbacks,
+                });
+
+                if (eventSubscriptions) {
+                    return;
+                }
+
+                const deleteBookmarksSubscription = eventManager.subscribe(
+                    ActionEventName.DELETE_BOOKMARKS,
+                    async (event) => {
+                        const store = get();
+                        event.uids.forEach((uid) => {
+                            store.removeSharedWithMeItem(uid);
+                        });
+                    }
+                );
+
+                const rejectInvitationsSubscription = eventManager.subscribe(
+                    ActionEventName.REJECT_INVITATIONS,
+                    async (event) => {
+                        const store = get();
+                        event.uids.forEach((uid) => {
+                            store.removeSharedWithMeItem(uid);
+                        });
+                    }
+                );
+
+                const acceptInvitationsSubscription = eventManager.subscribe(
+                    ActionEventName.ACCEPT_INVITATIONS,
+                    async (event) => {
+                        const store = get();
+                        for (const uid of event.uids) {
+                            const drive = getDrive();
+                            const maybeNode = await drive.getNode(uid);
+                            const { node } = getNodeEntity(maybeNode);
+                            const { volumeId, nodeId } = splitNodeUid(node.uid);
+                            if (!node.deprecatedShareId) {
+                                handleSdkError(
+                                    new EnrichedError('The shared with me node entity is missing deprecatedShareId', {
+                                        tags: { component: 'drive-sdk' },
+                                        extra: { uid: node.uid },
+                                    }),
+                                    { showNotification: false }
+                                );
+                                continue;
+                            }
+                            if (!node.membership) {
+                                handleSdkError(
+                                    new EnrichedError('Shared with me node have missing membership', {
+                                        tags: { component: 'drive-sdk' },
+                                        extra: {
+                                            uid: node.uid,
+                                            message:
+                                                'The shared with me node entity is missing membershif info. It could be race condition and means it is probably not shared anymore.',
+                                        },
+                                    }),
+                                    { showNotification: false }
+                                );
+
+                                continue;
+                            }
+                            store.setSharedWithMeItem({
+                                nodeUid: node.uid,
+                                name: node.name,
+                                type: node.type,
+                                mediaType: node.mediaType,
+                                itemType: ItemType.DIRECT_SHARE,
+                                thumbnailId: node.activeRevision?.uid || node.uid,
+                                size: node.totalStorageSize,
+                                directShare: {
+                                    sharedOn: node.membership.inviteTime,
+                                    // TODO: Add indication that we weren't able to load the sharedBy, this way we will be able to show some info in the UI
+                                    sharedBy:
+                                        (node.membership.sharedBy.ok
+                                            ? node.membership.sharedBy.value
+                                            : node.membership.sharedBy.error.claimedAuthor) || '',
+                                },
+                                legacy: {
+                                    linkId: nodeId,
+                                    shareId: node.deprecatedShareId,
+                                    volumeId: volumeId,
+                                },
+                            });
+                        }
+                    }
+                );
+
+                const refreshSharedWithMeSubscription = eventManager.subscribe(
+                    ActionEventName.REFRESH_SHARED_WITH_ME,
+                    async () => {
+                        const { refreshCallbacks } = get();
+                        const callbacks = Array.from(refreshCallbacks.values());
+                        await Promise.all(callbacks.map((callback) => callback()));
+                    }
+                );
+
+                set({
+                    eventSubscriptions: [
+                        deleteBookmarksSubscription,
+                        rejectInvitationsSubscription,
+                        acceptInvitationsSubscription,
+                        refreshSharedWithMeSubscription,
+                    ],
+                });
+            },
+
+            unsubscribeToEvents: async (context: string) => {
+                const eventManager = getActionEventManager();
+                await eventManager.unsubscribeSdkDriveEvents(context);
+
+                const { activeContexts, eventSubscriptions, refreshCallbacks } = get();
+                const newActiveContexts = new Set(activeContexts);
+                newActiveContexts.delete(context);
+
+                const newRefreshCallbacks = new Map(refreshCallbacks);
+                newRefreshCallbacks.delete(context);
+
+                set({
+                    activeContexts: newActiveContexts,
+                    refreshCallbacks: newRefreshCallbacks,
+                });
+
+                if (newActiveContexts.size === 0 && eventSubscriptions) {
+                    eventSubscriptions.forEach((unsubscribe) => unsubscribe());
+                    set({ eventSubscriptions: null });
+                }
             },
         }),
         {
@@ -237,42 +429,3 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
         }
     )
 );
-
-getActionEventManager().subscribe(ActionEventName.DELETE_BOOKMARKS, async (event) => {
-    const store = useSharedWithMeListingStore.getState();
-    event.uids.forEach((uid) => {
-        store.removeSharedWithMeItem(uid);
-    });
-});
-
-getActionEventManager().subscribe(ActionEventName.REJECT_INVITATIONS, async (event) => {
-    const store = useSharedWithMeListingStore.getState();
-    event.uids.forEach((uid) => {
-        store.removeSharedWithMeItem(uid);
-    });
-});
-
-getActionEventManager().subscribe(ActionEventName.ACCEPT_INVITATIONS, async (event) => {
-    const store = useSharedWithMeListingStore.getState();
-    event.items.forEach(({ node, sharedInfo }) => {
-        const { volumeId, nodeId } = splitNodeUid(node.uid);
-        store.setSharedWithMeItem({
-            nodeUid: node.uid,
-            name: node.name,
-            type: node.type,
-            mediaType: node.mediaType,
-            itemType: ItemType.DIRECT_SHARE,
-            thumbnailId: node.activeRevision?.uid || node.uid,
-            size: node.totalStorageSize,
-            directShare: {
-                sharedOn: legacyTimestampToDate(sharedInfo.sharedOn),
-                sharedBy: sharedInfo.sharedBy,
-            },
-            legacy: {
-                linkId: nodeId,
-                shareId: node.deprecatedShareId || '',
-                volumeId: volumeId,
-            },
-        });
-    });
-});

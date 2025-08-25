@@ -11,7 +11,6 @@ import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventMa
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
-import { useSharedInfoBatcher } from '../legacy/useLegacyDirectSharingInfo';
 
 interface UseInvitationsActions {
     setVolumeShareIds?: (volumeId: string, shareIds: string[]) => void;
@@ -21,7 +20,6 @@ export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActio
     const { drive } = useDrive();
     const { createNotification } = useNotifications();
     const { handleError } = useSdkErrorHandler();
-    const { loadSharedInfo } = useSharedInfoBatcher();
 
     const handleAcceptInvitation = async (uid: string, invitationUid: string) => {
         try {
@@ -41,30 +39,9 @@ export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActio
                 setVolumeShareIds(volumeId, [shareId]);
             }
 
-            // We want to resolve the handleAcceptInvitation if the callback is called
-            // The reason is that loadSharedInfo is not a promise but a batcher with a queue
-            await new Promise<void>((resolve, reject) => {
-                loadSharedInfo(shareId, (sharedInfo) => {
-                    try {
-                        if (!sharedInfo) {
-                            console.warn(
-                                'The shared with me node entity is missing sharing info. It could be race condition and means it is probably not shared anymore.',
-                                { uid: node.uid, shareId }
-                            );
-                            resolve();
-                            return;
-                        }
-
-                        getActionEventManager().emit({
-                            type: ActionEventName.ACCEPT_INVITATIONS,
-                            items: [{ node, sharedInfo }],
-                        });
-
-                        resolve();
-                    } catch (callbackError) {
-                        reject(callbackError);
-                    }
-                });
+            await getActionEventManager().emit({
+                type: ActionEventName.ACCEPT_INVITATIONS,
+                uids: [node.uid],
             });
 
             createNotification({
@@ -80,7 +57,7 @@ export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActio
         try {
             await drive.rejectInvitation(invitationUid);
 
-            getActionEventManager().emit({
+            await getActionEventManager().emit({
                 type: ActionEventName.REJECT_INVITATIONS,
                 uids: [uid],
             });
