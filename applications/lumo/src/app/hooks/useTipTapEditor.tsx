@@ -49,8 +49,8 @@ const useTipTapEditor = ({
             },
             handleDOMEvents: {
                 keydown: (view, e) => {
-                    const isEnter = e.key === 'Enter' && !e.shiftKey;
-                    if (!isEnter || isGenerating || isProcessingAttachment) {
+                    const isShiftEnter = e.key === 'Enter' && e.shiftKey;
+                    if (!isShiftEnter || isGenerating || isProcessingAttachment) {
                         return;
                     }
 

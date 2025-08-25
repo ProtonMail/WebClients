@@ -268,13 +268,13 @@ export const ComposerComponent = ({
     }, [isEditorEmpty, setIsEditorEmpty]);
     const canShowLegalDisclaimer = isGuest && isSmallScreen && !isEditorFocused && isEditorEmpty;
 
-    const enterBoldText = (
+    const shiftEnterBoldText = (
         <kbd
-            key={c('collider_2025: Characteristic Title').t`Enter`} // only there to prevent a react warning
-        >{c('collider_2025: Characteristic Title').t`Enter`}</kbd>
+            key={c('collider_2025: Characteristic Title').t`Shift+Enter`} // only there to prevent a react warning
+        >{c('collider_2025: Characteristic Title').t`Shift+Enter`}</kbd>
     );
 
-    const canShowLumoUpsellToggle = isGuest || canShowLumoUpsellFree;
+    const canShowLumoUpsellToggle = (isGuest || canShowLumoUpsellFree) && !isSmallScreen;
 
     return (
         <>
@@ -424,6 +424,18 @@ export const ComposerComponent = ({
                                 )}
                             </div>
                             <div className="flex flex-row flex-nowrap items-center gap-2 mr-2">
+                                {canShowLumoUpsellToggle ? (
+                                    <div className="flex flex-row">
+                                        <LumoPlusToggle />
+                                    </div>
+                                ) : (
+                                    <div className="hidden md:flex flex-row flex-nowrap gap-2 color-hint prompt-entry-hint">
+                                        <Icon name="arrow-left-and-down" />
+                                        <span className="text-xs">{c('collider_2025: Info')
+                                            .jt`Press ${shiftEnterBoldText} to ask`}</span>
+                                    </div>
+                                )}
+
                                 <div
                                     className={clsx('flex flex-row flex-nowrap gap-2 color-hint hidden')}
                                     id="voice-entry-mobile"
@@ -438,19 +450,7 @@ export const ComposerComponent = ({
                                         <IcMicrophone size={6}></IcMicrophone>
                                     </Button>
                                 </div>
-                                {/* <div className="hidden sm:flex flex-row flex-nowrap gap-2 color-hint prompt-entry-hint"> */}
-                                {canShowLumoUpsellToggle ? (
-                                    <div className="flex flex-row">
-                                        <LumoPlusToggle />
-                                    </div>
-                                ) : (
-                                    <div className="hidden sm:flex flex-row flex-nowrap gap-2 color-hint prompt-entry-hint">
-                                        <Icon name="arrow-left-and-down" />
-                                        <span className="text-xs">{c('collider_2025: Info')
-                                            .jt`Press ${enterBoldText} to ask`}</span>
-                                    </div>
-                                )}
-                                {/* </div> */}
+
                             </div>
                         </div>
                     </div>
