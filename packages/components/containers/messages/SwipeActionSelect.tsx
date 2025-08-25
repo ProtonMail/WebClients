@@ -19,6 +19,8 @@ const getSwipeOptions = () =>
         { title: c('Option').t`Star`, value: SWIPE_ACTION.Star },
         { title: c('Option').t`Archive`, value: SWIPE_ACTION.Archive },
         { title: c('Option').t`Mark as read`, value: SWIPE_ACTION.MarkAsRead },
+        { title: c('Option').t`Label as...`, value: SWIPE_ACTION.LabelAs },
+        { title: c('Option').t`Move to...`, value: SWIPE_ACTION.MoveTo },
     ]);
 
 const SwipeActionSelect = ({ onChange, ...rest }: SwipeActionSelectProps) => {
