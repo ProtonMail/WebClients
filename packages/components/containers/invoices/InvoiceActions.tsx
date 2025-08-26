@@ -5,7 +5,7 @@ import useModals from '@proton/components/hooks/useModals';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
-import { INVOICE_STATE, type Invoice, isRegularInvoice } from '@proton/payments';
+import { type Invoice, InvoiceState, isRegularInvoice } from '@proton/payments';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useRedirectToAccountApp } from '../desktop/useRedirectToAccountApp';
@@ -28,7 +28,7 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload, onEdit 
     const redirectToAccountApp = useRedirectToAccountApp();
 
     const list = [
-        invoice.State === INVOICE_STATE.UNPAID && {
+        invoice.State === InvoiceState.Unpaid && {
             text: c('Action').t`Pay`,
             'data-testid': 'payInvoice',
             key: 'payInvoice',
