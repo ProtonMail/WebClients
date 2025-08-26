@@ -16,7 +16,6 @@ import {
 import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Api } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -400,7 +399,9 @@ export const PaymentsContextProvider = ({
         selectSubscription(store.getState())?.value || FREE_SUBSCRIPTION
     );
 
-    const [billingAddress, setBillingAddress] = useState<BillingAddress>(DEFAULT_TAX_BILLING_ADDRESS);
+    const billingAddressRef = useRef<BillingAddress>(DEFAULT_TAX_BILLING_ADDRESS);
+    const [, rerender] = useState<{}>({});
+
     const [vatNumber, setVatNumberInner] = useState<string | undefined>(undefined);
 
     const plans = plansData.plans;
@@ -476,6 +477,11 @@ export const PaymentsContextProvider = ({
 
     const multiCheckGroups = useMultiCheckGroups();
 
+    const setBillingAddress = (billingAddress: BillingAddress) => {
+        billingAddressRef.current = billingAddress;
+        rerender({});
+    };
+
     const subscriptionState = subscription;
     const selectNewPlan = async (
         newPlanToCheck: PlanToCheck & { billingAddress?: BillingAddress },
@@ -500,11 +506,11 @@ export const PaymentsContextProvider = ({
 
         const subscriptionData = getSubscriptionDataFromPlanToCheck(
             { ...newPlanToCheck, ValidateZipCode: true },
-            billingAddress
+            billingAddressRef.current
         );
         const newBillingAddress = newPlanToCheck.billingAddress;
         if (newBillingAddress) {
-            setBillingAddress((old) => (isDeepEqual(old, newBillingAddress) ? old : newBillingAddress));
+            setBillingAddress(newBillingAddress);
         }
 
         try {
@@ -574,8 +580,7 @@ export const PaymentsContextProvider = ({
         });
         setAvailableCurrencies(availableCurrencies);
 
-        const billingAddress: BillingAddress = getBillingAddressFromPaymentStatus(status);
-        setBillingAddress(billingAddress);
+        setBillingAddress(getBillingAddressFromPaymentStatus(status));
 
         const paymentsApi = getPaymentsApi(api);
         paymentsApiRef.current = paymentsApi;
@@ -600,7 +605,7 @@ export const PaymentsContextProvider = ({
                             ...planToCheckParam,
                             currency: preferredCurrency,
                         }),
-                        billingAddress,
+                        billingAddress: billingAddressRef.current,
                     },
                     { subscription }
                 );
@@ -619,7 +624,7 @@ export const PaymentsContextProvider = ({
                                 ...planToCheckParam,
                                 currency: preferredCurrency,
                             }),
-                            billingAddress,
+                            billingAddress: billingAddressRef.current,
                         },
                         { subscription }
                     );
@@ -634,7 +639,7 @@ export const PaymentsContextProvider = ({
                     currency: preferredCurrency,
                     coupon: planToCheckParam?.coupon,
                 }),
-                billingAddress,
+                billingAddress: billingAddressRef.current,
             }))
             .filter((plan) => {
                 // There needs to be a coupon for it to be worth to ask the API.
@@ -652,7 +657,7 @@ export const PaymentsContextProvider = ({
                 paymentsApi,
                 subscription,
                 plansToCheck: availablePlansWithCurrencyAndAutomaticCoupon,
-                billingAddress,
+                billingAddress: billingAddressRef.current,
             }).catch(noop);
         }
 
@@ -715,7 +720,7 @@ export const PaymentsContextProvider = ({
             return getFallbackPrice(planToCheck);
         }
 
-        const subscriptionData = getSubscriptionDataFromPlanToCheck(planToCheck, billingAddress);
+        const subscriptionData = getSubscriptionDataFromPlanToCheck(planToCheck, billingAddressRef.current);
         const result = paymentsApiRef.current.getCachedCheck(subscriptionData);
 
         // Cache is missing
@@ -799,7 +804,7 @@ export const PaymentsContextProvider = ({
                 paymentsApi: paymentsApiRef.current,
                 subscription,
                 plansToCheck,
-                billingAddress,
+                billingAddress: billingAddressRef.current,
             });
         },
         plans,
@@ -813,7 +818,7 @@ export const PaymentsContextProvider = ({
         checkResult,
         zipCodeValid,
         // paymentFacade,
-        billingAddress,
+        billingAddress: billingAddressRef.current,
         uiData: {
             checkout: getCheckout({ planIDs: checkResult.requestData.Plans, plansMap, checkResult }),
         },
