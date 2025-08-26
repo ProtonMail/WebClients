@@ -4,6 +4,7 @@ const ENV = process.env.NODE_ENV || 'development';
 const BUILD_TARGET = process.env.BUILD_TARGET || 'chrome';
 const DEVELOPMENT = ENV === 'development';
 const PRODUCTION = ENV === 'production';
+const RUNTIME_RELOAD = Boolean(process.env.RUNTIME_RELOAD);
 
 const presetEnvOpts = {
     bugfixes: true,
@@ -19,7 +20,7 @@ module.exports = {
         ['@babel/preset-react', { development: !PRODUCTION, runtime: 'automatic' }],
     ],
     plugins: [
-        BUILD_TARGET !== 'safari' && DEVELOPMENT && require.resolve('react-refresh/babel'),
+        BUILD_TARGET !== 'safari' && DEVELOPMENT && !RUNTIME_RELOAD && require.resolve('react-refresh/babel'),
         PRODUCTION && [require.resolve('babel-plugin-transform-react-remove-prop-types'), { removeImport: true }],
     ].filter(Boolean),
 };
