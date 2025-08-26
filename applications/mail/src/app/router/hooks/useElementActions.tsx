@@ -42,7 +42,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
     const history = useHistory();
     const [isMessageOpening, setIsMessageOpening] = useState(false);
 
-    const { columnMode, isConversationContentView } = useMailboxLayoutProvider();
+    const { isColumnModeActive, isConversationGroupingEnabled } = useMailboxLayoutProvider();
 
     const page = useMailSelector((state) => state.elements.page);
 
@@ -74,9 +74,9 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
         conversationMode,
         activeID: elementID,
         allIDs: elementIDs,
-        rowMode: !columnMode,
+        rowMode: !isColumnModeActive,
         messageID,
-        resetDependencies: [columnMode ? elementID : undefined, labelID, page],
+        resetDependencies: [isColumnModeActive ? elementID : undefined, labelID, page],
         onCheck,
     };
 
@@ -105,7 +105,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
                         fromUndo: false,
                     });
                 }
-                if (isConversationContentView && isMessage(element)) {
+                if (isConversationGroupingEnabled && isMessage(element)) {
                     onMessageLoad();
                     history.push(
                         setParamsInLocation(history.location, {
@@ -119,14 +119,14 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
                     history.push(setParamsInLocation(history.location, { labelID, elementID: element.ID }));
                 }
                 // We preserve checkbox state when opening a new element in row mode
-                if (columnMode) {
+                if (isColumnModeActive) {
                     handleCheckAll(false);
                 }
             };
 
             void fetchElementThenCompose();
         },
-        [onCompose, isConversationContentView, labelID, history]
+        [onCompose, isConversationGroupingEnabled, labelID, history]
     );
 
     const handleMarkAs = useCallback(
