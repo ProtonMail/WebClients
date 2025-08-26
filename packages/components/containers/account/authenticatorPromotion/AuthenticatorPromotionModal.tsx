@@ -13,17 +13,19 @@ import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 
 import authenticatorLogo from './assets/authenticator-logo.svg';
 import authenticatorGraphic from './assets/authenticator.jpg';
+import type { AuthenticatorPromoFlowId} from './authenticatorTelemetry';
 import { sendAuthenticatorPromoModalClick } from './authenticatorTelemetry';
 
 interface AuthenticatorModalProps {
     open: boolean;
     onClose: () => void;
     onExit: () => void;
+    flowId: AuthenticatorPromoFlowId;
 }
 
-const AuthenticatorPromotionModal = ({ open, onClose, onExit }: AuthenticatorModalProps) => {
+const AuthenticatorPromotionModal = ({ open, onClose, onExit, flowId }: AuthenticatorModalProps) => {
     const handleModalCtaClick = () => {
-        sendAuthenticatorPromoModalClick();
+        sendAuthenticatorPromoModalClick({ flowId });
         onClose();
     };
 
