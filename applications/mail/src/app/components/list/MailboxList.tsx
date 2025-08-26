@@ -61,11 +61,11 @@ export default function MailboxList({
 
     const navigation = useRouterNavigation({ labelID });
 
-    const { columnMode, columnLayout, listContainerRef } = useMailboxLayoutProvider();
+    const { isColumnModeActive, isColumnLayoutPreferred, listContainerRef } = useMailboxLayoutProvider();
 
     const elementsLength = loading ? placeholderCount : elementsData.elements.length;
-    const showList = overrideColumnMode || columnMode || !elementID;
-    const showContentPanel = overrideColumnMode || (columnMode && !!elementsLength) || !!elementID;
+    const showList = overrideColumnMode || isColumnModeActive || !elementID;
+    const showContentPanel = overrideColumnMode || (isColumnModeActive && !!elementsLength) || !!elementID;
 
     const currentPage = pageFromUrl(location);
 
@@ -102,7 +102,7 @@ export default function MailboxList({
             >
                 {toolbar && <div className="shrink-0 sticky top-0 z-up">{toolbar}</div>}
                 <MailboxListBannersWrapper
-                    columnLayout={overrideColumnMode || columnLayout}
+                    columnLayout={overrideColumnMode || isColumnLayoutPreferred}
                     checkedIDs={checkedIDs}
                     onCheckAll={handleCheckAll}
                 />
@@ -111,7 +111,7 @@ export default function MailboxList({
                     onClick={handleElement}
                     onFocus={handleFocus}
                     onCheckOne={handleCheckOne}
-                    columnLayout={overrideColumnMode || columnLayout}
+                    columnLayout={overrideColumnMode || isColumnLayoutPreferred}
                     onBack={navigation.handleBack}
                     labels={labels}
                     noPlaceholder={noPlaceholder}
