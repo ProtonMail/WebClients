@@ -1,5 +1,5 @@
 import { MESSAGE_IMAGE_ATTRIBUTES_TO_FIND, MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD } from '@proton/mail/constants';
-import { removeLineBreaks } from '@proton/mail/helpers/string';
+import { removeEncodedAndUnencodedLineBreaks } from '@proton/mail/helpers/string';
 import type { MessageRemoteImage, MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
@@ -106,13 +106,14 @@ export const transformRemote = (
         // We don't want to display an error placeholder, so we don't add them
         if (url) {
             try {
-                // Some URLs cannot be loaded because they are encoded, and they do contain line breaks at the end of the string
-                // To prevent errors, we are decoding the url and removing potential line breaks.
-                const cleanedURL = removeLineBreaks(decodeURI(url));
+                // We need to keep this to avoid errors when decoding the URL further down in the logic.
+                // decodeURI will throw an error if the URL is not correctly encoded.
+                decodeURI(url);
 
                 remoteImages.push({
                     type: 'remote',
-                    url: cleanedURL,
+                    // We want to remove line breaks from the URL, whether the URL is encoded or not
+                    url: removeEncodedAndUnencodedLineBreaks(url),
                     original: match,
                     id,
                     tracker: undefined,

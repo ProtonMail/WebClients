@@ -67,14 +67,22 @@ export const uniqID = () => {
     return `pt${Math.random().toString(32).slice(2, 12)}-${Date.now()}`;
 };
 
-const lineBreaksRegex = /(?:\r\n|\r|\n)/g;
+// \r\n, \r, \n are regular line breaks
+const lineBreaksPattern = '\\r\\n|\\r|\\n';
+const lineBreaksRegex = new RegExp(`(?:${lineBreaksPattern})`, 'g');
 
+// %0A, %0D, %0C are encoded line breaks (LF, CR, FF)
+const encodedAndUnencodedLineBreaksRegex = new RegExp(`(?:${lineBreaksPattern}|%0A|%0D|%0C)`, 'gi');
 export const replaceLineBreaks = (content: string) => {
     return content.replace(lineBreaksRegex, '<br />');
 };
 
 export const removeLineBreaks = (content: string) => {
     return content.replace(lineBreaksRegex, '');
+};
+
+export const removeEncodedAndUnencodedLineBreaks = (content: string) => {
+    return content.replace(encodedAndUnencodedLineBreaksRegex, '');
 };
 
 /**
