@@ -24,10 +24,11 @@ const {
 } = envVars;
 
 const EXCLUDED_WEBPACK_ENTRIES = [
-    'account',
     'background',
     'client',
     'dropdown',
+    'external',
+    'fork',
     'elements',
     'notification',
     'orchestrator',
