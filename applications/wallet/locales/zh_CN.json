@@ -2200,6 +2200,14 @@
         "优先支持"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "文本字段可选。您在本表中提供的信息只会出现在今后开具的发票上，不会影响现有发票。"
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "文本字段为选填字段。您在此表单中提供的信息只会更改您选择的发票，而不会更改您未来的发票详细信息。"
+      ]
+    },
     "Error": {
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } 是您的用户名。要创建 ${ emailAddress }，请进入设置 > 身份和地址 > 短域 (pm.me)"
@@ -2221,6 +2229,9 @@
       ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "目前无法编辑帐单地址。请稍后重试。"
       ],
       "Email is not valid": [
         "无效邮箱"
@@ -2306,6 +2317,9 @@
       "Please select billing state": [
         "请选择账单省（州）"
       ],
+      "Postal code is required": [
+        "邮政编码为必填项"
+      ],
       "Process aborted": [
         "操作已中止"
       ],
@@ -2356,6 +2370,9 @@
       ],
       "Username must end with a letter or digit": [
         "用户名必须以字母或数字结尾"
+      ],
+      "ZIP code is required": [
+        "必须填写邮政编码"
       ]
     },
     "Error message": {
@@ -3151,11 +3168,17 @@
       "Category": [
         "类别"
       ],
+      "City": [
+        "城市"
+      ],
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
       ],
       "Colors": [
         "颜色"
+      ],
+      "Company": [
+        "公司"
       ],
       "Company name": [
         "公司名称"
@@ -3247,6 +3270,9 @@
       "Phone number": [
         "电话号码"
       ],
+      "Postal code": [
+        "邮编"
+      ],
       "Proration": [
         "当前等级结余"
       ],
@@ -3264,6 +3290,12 @@
       ],
       "Start date": [
         "起始日期"
+      ],
+      "State": [
+        "省份/地区"
+      ],
+      "Street address": [
+        "街道地址"
       ],
       "Subscription options": [
         "计费方式"
@@ -3288,6 +3320,9 @@
       ],
       "Your password (admin)": [
         "您的密码（管理员）"
+      ],
+      "ZIP code": [
+        "邮政编码"
       ]
     },
     "Label, credit card": {
@@ -4515,6 +4550,15 @@
       "A way to contact you": [
         "您的联系方式"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "任何城镇"
+      ],
+      "Company name": [
+        "公司名称"
+      ],
       "Confirm passphrase or leave empty": [
         "确认密码或留空"
       ],
@@ -4526,6 +4570,9 @@
       ],
       "Gift code": [
         "礼品码"
+      ],
+      "Main street 12": [
+        "主要街道 12"
       ],
       "Organization name": [
         "组织名称"
@@ -4559,6 +4606,12 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "分享你认为可以使 ${ BRAND_NAME } 变得更好的内容"
+      ],
+      "Thomas": [
+        "Thomas"
+      ],
+      "VAT number": [
+        "增值税号"
       ],
       "Your organization name": [
         "您的组织名称"
@@ -5058,6 +5111,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "账单详细信息已更新"
+      ],
       "Code sent to ${ methodTo }": [
         "验证码已发至 ${ methodTo }"
       ],
@@ -5237,6 +5293,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "下载 ${ DRIVE_APP_NAME } 应用"
+      ],
+      "Edit billing address": [
+        "编辑账单地址"
       ],
       "Edit credit/debit card": [
         "编辑信用卡/借记卡"

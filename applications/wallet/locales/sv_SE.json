@@ -2236,6 +2236,14 @@
         "Prioriterad support"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Textfält är valfria. Informationen du anger i detta formulär kommer endast att visas på fakturor som utfärdas i framtiden och kommer inte att påverka befintliga fakturor."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Informationen du anger i detta formulär kommer endast att ändra den faktura du har valt och inte dina framtida fakturadetaljer."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Betrodd kontakt"
@@ -2262,6 +2270,9 @@
       ],
       "Domain not available, try again later": [
         "Domän inte tillgänglig, försök igen senare"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Redigering av faktureringsadress är inte tillgänglig just nu. Försök igen senare."
       ],
       "Email is not valid": [
         "E-post är inte giltig"
@@ -2347,6 +2358,9 @@
       "Please select billing state": [
         "Välj delstat för fakturering"
       ],
+      "Postal code is required": [
+        "Postnummer är obligatoriskt"
+      ],
       "Process aborted": [
         "Process avbruten"
       ],
@@ -2397,6 +2411,9 @@
       ],
       "Username must end with a letter or digit": [
         "Användarnamn måste sluta med en bokstav eller siffra"
+      ],
+      "ZIP code is required": [
+        "Postnummer är obligatoriskt"
       ]
     },
     "Error message": {
@@ -3210,11 +3227,17 @@
       "Category": [
         "Kategori"
       ],
+      "City": [
+        "Ort"
+      ],
       "Code is 6 digits without spaces": [
         "Kod är 6 siffror utan mellanslag"
       ],
       "Colors": [
         "Färger"
+      ],
+      "Company": [
+        "Företag"
       ],
       "Company name": [
         "Företagsnamn"
@@ -3306,6 +3329,9 @@
       "Phone number": [
         "Telefonnummer"
       ],
+      "Postal code": [
+        "Postnummer"
+      ],
       "Proration": [
         "Proportionell beräkning"
       ],
@@ -3323,6 +3349,12 @@
       ],
       "Start date": [
         "Startdatum"
+      ],
+      "State": [
+        "Delstat"
+      ],
+      "Street address": [
+        "Gatuadress"
       ],
       "Subscription options": [
         "Prenumerationsalternativ"
@@ -3350,6 +3382,9 @@
       ],
       "Your password (trusted contact)": [
         "Ditt lösenord (betrodd kontakt)"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "Label, credit card": {
@@ -4600,6 +4635,18 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Lägg till ABN"
+      ],
+      "Add EIN": [
+        "Lägg till EIN"
+      ],
+      "Edit ABN": [
+        "Redigera ABN"
+      ],
+      "Edit EIN": [
+        "Redigera EIN"
+      ],
       "EIN": [
         "EIN"
       ],
@@ -4610,6 +4657,15 @@
     "Placeholder": {
       "A way to contact you": [
         "Ett sätt att kontakta dig"
+      ],
+      "Anderson": [
+        "Andersson"
+      ],
+      "Anytown": [
+        "Alingsås"
+      ],
+      "Company name": [
+        "Företagsnamn"
       ],
       "Confirm passphrase or leave empty": [
         "Bekräfta lösenfras eller lämna tomt"
@@ -4622,6 +4678,9 @@
       ],
       "Gift code": [
         "Presentkod"
+      ],
+      "Main street 12": [
+        "Storgatan 12"
       ],
       "Organization name": [
         "Organisationsnamn"
@@ -4650,11 +4709,20 @@
       "Select a reason": [
         "Välj en anledning"
       ],
+      "Select country": [
+        "Välj land"
+      ],
       "Select state": [
         "Välj delstat"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Dela vad du tror som skulle göra ${ BRAND_NAME } bättre"
+      ],
+      "Thomas": [
+        "Tomas"
+      ],
+      "VAT number": [
+        "Momsnummer"
       ],
       "Your organization name": [
         "Ditt organisationsnamn"
@@ -5186,6 +5254,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Faktureringsuppgifterna har uppdaterats"
+      ],
       "Code sent to ${ methodTo }": [
         "Kod skickad till ${ methodTo }"
       ],
@@ -5368,6 +5439,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Ladda ner ${ DRIVE_APP_NAME } appar"
+      ],
+      "Edit billing address": [
+        "Redigera faktureringsadress"
       ],
       "Edit credit/debit card": [
         "Redigera kredit-/betalkort"
