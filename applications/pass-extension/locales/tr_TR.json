@@ -1805,6 +1805,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+      ],
       "Moving items": [
         "Ögeler taşınıyor"
       ],
