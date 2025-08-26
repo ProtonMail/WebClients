@@ -130,6 +130,9 @@
       "Clear search": [
         "Aramayı temizle"
       ],
+      "Clone item": [
+        "Ögeyi çoğalt"
+      ],
       "Close": [
         "Kapat"
       ],
@@ -426,6 +429,9 @@
       ],
       "Open navigation": [
         "Gezinmeyi aç"
+      ],
+      "Organize vaults": [
+        "Kasaları düzenle"
       ],
       "Pass for Android": [
         "Android için Proton Pass"
@@ -1649,6 +1655,9 @@
       "Extra password successfully removed": [
         "Ek parola kaldırıldı"
       ],
+      "Failed updating your vault organization": [
+        "Kasa kuruluşunuz güncellenemedi."
+      ],
       "Fill in the CSV with your data": [
         "CSV dosyasına verilerinizi ekleyin"
       ],
@@ -1823,6 +1832,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2279,6 +2292,9 @@
       "Unverified": [
         "Doğrulanmamış"
       ],
+      "Updating vault organization...": [
+        "Kasa kuruluşu güncelleniyor..."
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Ücretli özellikleri kullanabilmek için tarifenizi yükseltin"
       ],
@@ -2305,6 +2321,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "\"${ share.content.name }\" kasası kaldırıldı"
+      ],
+      "Vault organization successfully updated": [
+        "Kasa kuruluşu güncellendi"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Kasa paylaşımı: ${ vaultMembersCount } kullanıcı",
@@ -4218,6 +4237,9 @@
       "Grant permissions": [
         "İzinleri ver"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Gizli kasalar arama ve otomatik doldurma sırasında görüntülenmez."
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email takma adları"
       ],
@@ -4321,6 +4343,9 @@
       ],
       "No shared secure links": [
         "Paylaşılan bir güvenli bağlantı yok"
+      ],
+      "Organize vaults": [
+        "Kasaları düzenle"
       ],
       "Our welcome gift to you": [
         "Karşılama hediyemiz"
@@ -4507,6 +4532,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz.",
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "kopyala"
       ]
     },
     "Today icon tooltip in mini calendar": {

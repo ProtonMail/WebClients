@@ -130,6 +130,9 @@
       "Clear search": [
         "Neteja la cerca"
       ],
+      "Clone item": [
+        "Clona l'element"
+      ],
       "Close": [
         "Tanca"
       ],
@@ -426,6 +429,9 @@
       ],
       "Open navigation": [
         "Obre la navegació"
+      ],
+      "Organize vaults": [
+        "Organitza les caixes fortes"
       ],
       "Pass for Android": [
         "Pass per a Android"
@@ -1649,6 +1655,9 @@
       "Extra password successfully removed": [
         "S'ha esborrat la contrasenya addicional."
       ],
+      "Failed updating your vault organization": [
+        "No s'ha pogut actualitzar l'organització de la vostra caixa forta"
+      ],
       "Fill in the CSV with your data": [
         "Empleneu el CSV amb les vostres dades"
       ],
@@ -1823,6 +1832,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2279,6 +2292,9 @@
       "Unverified": [
         "Sense verificar"
       ],
+      "Updating vault organization...": [
+        "S'està actualitzant l'organització de la caixa forta..."
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Milloreu el vostre pla ara per a desbloquejar característiques prèmium"
       ],
@@ -2305,6 +2321,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "S'ha esborrat la caixa forta \"${ share.content.name }\"."
+      ],
+      "Vault organization successfully updated": [
+        "S'ha actualitzat correctament l'organització de la caixa forta"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Caixes fortes compartides: ${ vaultMembersCount } membre",
@@ -4218,6 +4237,9 @@
       "Grant permissions": [
         "Concediu permisos"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Les caixes fortes ocultes no seran visibles durant la cerca i l'emplenament automàtic."
+      ],
       "Hide-my-email aliases": [
         "Àlies hide-my-email"
       ],
@@ -4321,6 +4343,9 @@
       ],
       "No shared secure links": [
         "Sense enllaços segurs compartits"
+      ],
+      "Organize vaults": [
+        "Organitza les caixes fortes"
       ],
       "Our welcome gift to you": [
         "El nostre regal de benvinguda per a vós"
@@ -4507,6 +4532,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies.",
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "copia"
       ]
     },
     "Today icon tooltip in mini calendar": {
