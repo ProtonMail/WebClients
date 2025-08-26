@@ -7,6 +7,25 @@
 	.tab-container {
 		border-width: rem(3);
 
+		// The top border is needed to reserve the space but should be transparent when the tab is active
+		&.active {
+			border-block-start: rem(3) solid transparent;
+		}
+
+		&.neighbor {
+			position: relative;
+			border-color: transparent;
+
+			&::after {
+				content: '';
+				position: absolute;
+				inset: rem(-3);
+				border: rem(1) dashed var(--border-weak);
+				border-radius: inherit;
+				pointer-events: none;
+			}
+		}
+
 		// Used to avoid jumping when the label get the semibold weight
 		.tag-label::before {
 			display: block;
