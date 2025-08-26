@@ -5275,6 +5275,9 @@
       "Add emergency contact": [
         "Contactpersoon voor noodgevallen toevoegen"
       ],
+      "Added on ${ formattedDate }": [
+        "Toegevoegd op ${ formattedDate }"
+      ],
       "Change access wait time": [
         "Wachttijd voor toegang wijzigen"
       ],
@@ -5289,6 +5292,9 @@
       ],
       "Disabled": [
         "Uitgeschakeld"
+      ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "Raak uw noodtoegang niet kwijt. Activeer vandaag automatisch vernieuwen."
       ],
       "Emergency access": [
         "Noodtoegang"
@@ -5308,6 +5314,9 @@
       "Emergency contact removed": [
         "Noodcontact verwijderd"
       ],
+      "Enable auto-renew": [
+        "Automatisch verlengen activeren"
+      ],
       "Give access now": [
         "Nu toegang geven"
       ],
@@ -5325,9 +5334,6 @@
       ],
       "None": [
         "Geen"
-      ],
-      "on ${ formattedAccessibleAt }": [
-        "op ${ formattedAccessibleAt }"
       ],
       "Only ": [
         "Slechts "
@@ -5347,6 +5353,9 @@
       "Remove trusted contact": [
         "Vertrouwd contact verwijderen"
       ],
+      "Renew to get emergency access again.": [
+        "Verleng om opnieuw noodtoegang te krijgen."
+      ],
       "Request access?": [
         "Toegang aanvragen?"
       ],
@@ -5355,6 +5364,9 @@
       ],
       "Stop being trusted contact?": [
         "Niet langer vertrouwd contact zijn?"
+      ],
+      "Subscription expired": [
+        "Abonnement is verlopen"
       ],
       "They added me as trusted contact. I can access their account in case of an emergency.": [
         "Zij hebben mij toegevoegd als vertrouwd contact. Ik kan toegang krijgen tot hun account in geval van nood."
@@ -5373,6 +5385,9 @@
       ],
       "Trusted contact": [
         "Vertrouwd contact"
+      ],
+      "Upgrade": [
+        "Upgraden"
       ],
       "Upgrade to ${ planName }": [
         "Upgraden naar ${ planName }"
@@ -8157,9 +8172,6 @@
       "active": [
         "actief"
       ],
-      "Activity monitor": [
-        "Activiteitenmonitor"
-      ],
       "Activity Monitor": [
         "Activiteitenmonitor"
       ],
@@ -8657,9 +8669,6 @@
       "Did you know?": [
         "Wist u dat?"
       ],
-      "Disable detailed events": [
-        "Gedetailleerde gebeurtenissen uitschakelen"
-      ],
       "Disable recovery by email address": [
         "Herstel via e-mailadres uitschakelen"
       ],
@@ -8668,9 +8677,6 @@
       ],
       "Disabled countries": [
         "Uitgeschakelde landen"
-      ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Uitgeschakeld op ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Het uitschakelen van tweestapsverificatie maakt uw account minder veilig. Ga alleen verder als het absoluut nodig is."
@@ -8811,9 +8817,6 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Schakel automatisch vernieuwen in om toegang tot premium functies te behouden."
       ],
-      "Enable detailed events": [
-        "Activeer gedetailleerde gebeurtenissen"
-      ],
       "Enable email notifications": [
         "E-mailmelding inschakelen"
       ],
@@ -8828,9 +8831,6 @@
       ],
       "Enabled countries": [
         "Ingeschakelde landen"
-      ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Ingeschakeld op ${ formattedDateAndTime }"
       ],
       "Enabling auto-deletion…": [
         "Activatie automatisch verwijderen"
@@ -8997,14 +8997,11 @@
       "Gain visibility across your organization": [
         "Krijg inzicht in uw organisatie"
       ],
+      "Gateway monitor": [
+        "Gateway monitor"
+      ],
       "Gateways": [
         "Gateways"
-      ],
-      "Gateways monitoring is disabled.": [
-        "Gateways monitoring is uitgeschakeld."
-      ],
-      "Gateways monitoring is enabled.": [
-        "Gateways monitoring is ingeschakeld."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Als u een nieuwe herstelzin genereert, wordt uw oude zin gedeactiveerd."
@@ -9186,9 +9183,6 @@
       ],
       "inactive": [
         "inactief"
-      ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Neem IP-adres, locatie en ISP (Internet Service Provider) van de gebruiker op in afspraaklogboeken"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inclusief ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -9412,9 +9406,6 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laden van kalender, gelieve te wachten. U wordt automatisch doorverwezen naar onze agendaplanner Calendly in een nieuw tabblad."
-      ],
-      "Loading detailed events current status.": [
-        "Huidige status van gedetailleerde afspraken worden geladen."
       ],
       "Loading eduGAIN data...": [
         "eduGAIN gegevens laden..."
@@ -12829,9 +12820,6 @@
       "VAT": [
         "BTW"
       ],
-      "VAT identification number": [
-        "BTW-identificatienummer"
-      ],
       "Verification code": [
         "Verificatiecode"
       ],
@@ -13551,9 +13539,6 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Verbind uw aangepaste domein met ${ BRAND_NAME } om aangepaste e-mailadressen in te stellen (bijv. u@uwbedrijf.com). Onze wizard leidt u door het proces."
-      ],
-      "View account-related events across your organization.": [
-        "Bekijk account-gerelateerde gebeurtenissen binnen uw organisatie."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Uw gratis proefversie is geëindigd. Toegang tot uw account wordt weldra uitgeschakeld. ${ action }"
@@ -16347,6 +16332,9 @@
       "Timeout exceeded": [
         "Time-out overschreden"
       ],
+      "VAT number": [
+        "BTW-nummer"
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Via de geselecteerde betaalmethode wordt ${ amountToCharge } in rekening gebracht."
       ],
@@ -16402,8 +16390,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "ABN toevoegen"
+      ],
+      "Add Business Number": [
+        "Ondernemingsnummer toevoegen"
+      ],
+      "Add EIN": [
+        "EIN toevoegen"
+      ],
+      "Add VAT number": [
+        "BTW-nummer toevoegen"
+      ],
       "Business Number": [
         "Ondernemingsnummer"
+      ],
+      "Edit ABN": [
+        "ABN bewerken"
+      ],
+      "Edit Business Number": [
+        "Ondernemingsnummer bewerken"
+      ],
+      "Edit EIN": [
+        "EIN bewerken"
+      ],
+      "Edit VAT number": [
+        "Wijzig BTW-nummer"
       ],
       "EIN": [
         "Rijksregisternummer"
@@ -16565,6 +16577,9 @@
       ],
       "Select a reason": [
         "Selecteer een reden"
+      ],
+      "Select country": [
+        "Selecteer land"
       ],
       "Select state": [
         "Selecteer provincie"
@@ -20384,9 +20399,6 @@
       "Add users to \"${ policyName }\"": [
         "Gebruikers toevoegen aan${ policyName }\""
       ],
-      "Added on": [
-        "Toegevoegd op"
-      ],
       "Address": [
         "Adres"
       ],
@@ -20512,9 +20524,6 @@
       ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Claim uw ${ MAIL_APP_NAME }-adres"
-      ],
-      "Click a value in the table to use it as filter": [
-        "Klik op een waarde in de tabel om deze als filter te gebruiken"
       ],
       "Close": [
         "Sluit"

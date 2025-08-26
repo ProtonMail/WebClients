@@ -1919,7 +1919,7 @@
         "Svalbard e Jan Mayen"
       ],
       "Swaziland": [
-        "Swaziland"
+        "eSwatini"
       ],
       "Sweden": [
         "Svezia"
@@ -2271,6 +2271,14 @@
         "Supporto prioritario"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "I campi di testo sono opzionali. Le informazioni inserite in questo modulo verranno mostrate solo sulle fatture future e non su quelle esistenti."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "I campi di testo sono facoltativi. Le informazioni fornite in questo modulo modificheranno solo la fattura che hai selezionato e non i dettagli della fattura futura."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Contatti sicuri"
@@ -2297,6 +2305,9 @@
       ],
       "Domain not available, try again later": [
         "Dominio non disponibile, riprovare più tardi"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "La modifica dell'indirizzo di fatturazione non è al momento disponibile. Per favore riprova più tardi."
       ],
       "Email is not valid": [
         "Indirizzo email non valido"
@@ -2382,6 +2393,9 @@
       "Please select billing state": [
         "Seleziona lo stato di fatturazione"
       ],
+      "Postal code is required": [
+        "Il codice postale è obbligatorio"
+      ],
       "Process aborted": [
         "Processo interrotto"
       ],
@@ -2432,6 +2446,9 @@
       ],
       "Username must end with a letter or digit": [
         "Il nome utente deve terminare con una lettera o un numero/"
+      ],
+      "ZIP code is required": [
+        "Il codice postale è obbligatorio"
       ]
     },
     "Error message": {
@@ -3248,11 +3265,17 @@
       "Category": [
         "Categoria"
       ],
+      "City": [
+        "Città"
+      ],
       "Code is 6 digits without spaces": [
         "Codice a 6 cifre senza spazi"
       ],
       "Colors": [
         "Colori"
+      ],
+      "Company": [
+        "Azienda"
       ],
       "Company name": [
         "Nome dell'azienda"
@@ -3344,6 +3367,9 @@
       "Phone number": [
         "Numero di telefono"
       ],
+      "Postal code": [
+        "Codice postale"
+      ],
       "Proration": [
         "Calcolo proporzionale"
       ],
@@ -3361,6 +3387,12 @@
       ],
       "Start date": [
         "Data di inizio"
+      ],
+      "State": [
+        "Stato"
+      ],
+      "Street address": [
+        "Indirizzo"
       ],
       "Subscription options": [
         "Opzioni di abbonamento"
@@ -3388,6 +3420,9 @@
       ],
       "Your password (trusted contact)": [
         "La tua password (contatto attendibile)"
+      ],
+      "ZIP code": [
+        "Codice postale"
       ]
     },
     "Label, credit card": {
@@ -4586,6 +4621,9 @@
       "Timeout exceeded": [
         "Limite di tempo superato"
       ],
+      "VAT number": [
+        "Numero partita IVA"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "La tua valuta è stata cambiata in euro (€) perché i bonifici bancari SEPA supportano solo pagamenti in euro."
       ],
@@ -4638,8 +4676,32 @@
       "ABN": [
         "Numero aziendale australiano (ABN)"
       ],
+      "Add ABN": [
+        "Aggiungi ABN"
+      ],
+      "Add Business Number": [
+        "Aggiungi numero azienda"
+      ],
+      "Add EIN": [
+        "Aggiungi EIN"
+      ],
+      "Add VAT number": [
+        "Aggiungi numero di partita IVA"
+      ],
       "Business Number": [
         "Numero azienda"
+      ],
+      "Edit ABN": [
+        "Modificare ABN"
+      ],
+      "Edit Business Number": [
+        "Modifica numero azienda"
+      ],
+      "Edit EIN": [
+        "Modificare EIN"
+      ],
+      "Edit VAT number": [
+        "Modifica il numero di partita IVA"
       ],
       "EIN": [
         "Numero d'identificazione fiscale (EIN)"
@@ -4652,6 +4714,15 @@
       "A way to contact you": [
         "Un modo per contattarti"
       ],
+      "Anderson": [
+        "Rossi"
+      ],
+      "Anytown": [
+        "Roma"
+      ],
+      "Company name": [
+        "Nome dell'azienda"
+      ],
       "Confirm passphrase or leave empty": [
         "Conferma la frase di accesso o lascia vuoto"
       ],
@@ -4663,6 +4734,9 @@
       ],
       "Gift code": [
         "Codice regalo"
+      ],
+      "Main street 12": [
+        "Via Mario Greppi 12"
       ],
       "Organization name": [
         "Nome dell'organizzazione"
@@ -4691,11 +4765,20 @@
       "Select a reason": [
         "Seleziona un motivo"
       ],
+      "Select country": [
+        "Seleziona un Paese"
+      ],
       "Select state": [
         "Seleziona Stato"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Condividere cosa pensi potrebbe migliorare ${ BRAND_NAME }"
+      ],
+      "Thomas": [
+        "Mario"
+      ],
+      "VAT number": [
+        "Numero partita IVA"
       ],
       "Your organization name": [
         "Il nome della tua organizzazione"
@@ -5227,6 +5310,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Informazioni di fatturazione aggiornati"
+      ],
       "Code sent to ${ methodTo }": [
         "Codice inviato a ${ methodTo }"
       ],
@@ -5409,6 +5495,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Scarica le app di ${ DRIVE_APP_NAME }"
+      ],
+      "Edit billing address": [
+        "Modifica indirizzo di fatturazione"
       ],
       "Edit credit/debit card": [
         "Modifica carta di credito/debito"

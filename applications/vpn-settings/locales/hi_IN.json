@@ -570,9 +570,6 @@
       "refresh the page": [
         "पृष्ठ रिफ्रेश करें"
       ],
-      "Reload": [
-        "रिलोड"
-      ],
       "Remove": [
         "हटाएं"
       ],
@@ -4871,9 +4868,6 @@
       "Did you know?": [
         "क्या आप जानते हैं?"
       ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "${ formattedDateAndTime } पर अक्षम किया गया"
-      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "दो-फैक्टर सत्यापन अक्षम करने से आपका खाता कम सुरक्षित हो जाएगा। केवल तभी आगे बढ़ें यदि यह बिल्कुल आवश्यक हो।"
       ],
@@ -4971,14 +4965,8 @@
       "Enable auto-renew to keep access to your premium features.": [
         "प्रीमियम खासियत तक एक्सेस बनाए रखने के लिए ऑटो-रिन्यू सक्षम करें।"
       ],
-      "Enable detailed events": [
-        "विस्तृत घटनाएँ सक्षम करें"
-      ],
       "Enable single sign-on to keep your organization safe": [
         "संगठन को सुरक्षित रखने के लिए सिंगल साइन-ऑन सक्षम करें"
-      ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "${ formattedDateAndTime } पर सक्षम किया गया"
       ],
       "Enabling auto-deletion…": [
         "स्वचालित हटाने को सक्षम किया जा रहा है…"
@@ -5078,12 +5066,6 @@
       ],
       "Gateways": [
         "गेटवे"
-      ],
-      "Gateways monitoring is disabled.": [
-        "गेटवे मॉनिटरिंग अक्षम है।"
-      ],
-      "Gateways monitoring is enabled.": [
-        "गेटवे मॉनिटरिंग सक्षम है।"
       ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } लें"
@@ -5991,6 +5973,9 @@
       ],
       "Vault deleted": [
         "तिजोरी मिटाई गई"
+      ],
+      "Vault either deleted or requires access permissions": [
+        "तिजोरी या तो मिटा दी गई है या पहुँच अनुमतियाँ आवश्यक हैं"
       ],
       "Vault shared with email": [
         "तिजोरी ईमेल द्वारा शेयर की गयी"
@@ -7082,9 +7067,6 @@
       "VAT": [
         "VAT"
       ],
-      "VAT identification number": [
-        "वैट पहचान संख्या"
-      ],
       "Verification code": [
         "पुष्टि संख्या"
       ],
@@ -7309,6 +7291,9 @@
       ],
       "Upgrade your plan": [
         "अपना प्लान अपग्रेड करें"
+      ],
+      "Vault": [
+        "तिजोरी"
       ],
       "View guide": [
         "गाइड देखें"
@@ -11004,9 +10989,6 @@
       "Choose user affiliations": [
         "उपयोगकर्ता संबद्धताएँ चुनें"
       ],
-      "Click a value in the table to use it as filter": [
-        "टेबल में किसी मान पर क्लिक करें ताकि उसे फिल्टर के रूप में उपयोग किया जा सके"
-      ],
       "Close": [
         "बंद करें"
       ],
@@ -11125,6 +11107,9 @@
       ],
       "Deny access to user?": [
         "क्या उपयोगकर्ता को पहुँच अस्वीकृत करें?"
+      ],
+      "Description": [
+        "विवरण"
       ],
       "Device": [
         "डिवाइस"
@@ -11310,6 +11295,9 @@
       ],
       "Invoices": [
         "रसीद"
+      ],
+      "IP": [
+        "आईपी"
       ],
       "Limit reached": [
         "सीमित पहुंच"

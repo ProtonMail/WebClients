@@ -404,10 +404,10 @@
         "Выкарыстоўваць код аднаўлення"
       ],
       "Verify": [
-        "Праверка"
+        "Спраўдзіць"
       ],
       "Verify account": [
-        "Праверыць уліковы запіс"
+        "Спраўдзіць уліковы запіс"
       ],
       "View invoice": [
         "Паглядзець рахунак"
@@ -2260,6 +2260,14 @@
         "Прыярытэтная падтрымка"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Тэкставыя палі з'яўляюцца неабавязковымі. Звесткі, якія вы падалі ў гэтай форме, з'явяцца толькі ў выстаўленых рахунках у будучым і гэта не акажа ўплыў на бягучыя рахункі."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Тэкставыя палі з'яўляюцца неабавязковымі. Звесткі, якія вы падалі ў гэтай форме, зменяць толькі выбраны рахунак і гэта не акажа ўплыў на будучыя падрабязнасці рахунка."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Давераны кантакт"
@@ -2286,6 +2294,9 @@
       ],
       "Domain not available, try again later": [
         "Дамен недаступны. Паспрабуйце яшчэ раз"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "У дадзены момант недаступна рэдагаванне адраса аплаты. Паспрабуйце яшчэ раз пазней."
       ],
       "Email is not valid": [
         "Несапраўдная электронная пошта"
@@ -2371,6 +2382,9 @@
       "Please select billing state": [
         "Выберыце штат выстаўлення рахунку"
       ],
+      "Postal code is required": [
+        "Патрабуецца ўвесці паштовы індэкс"
+      ],
       "Process aborted": [
         "Працэс перарваны"
       ],
@@ -2421,6 +2435,9 @@
       ],
       "Username must end with a letter or digit": [
         "Імя карыстальніка павінна заканчвацца літарай або лічбай"
+      ],
+      "ZIP code is required": [
+        "Патрабуецца ўвесці паштовы індэкс"
       ]
     },
     "Error message": {
@@ -2729,7 +2746,7 @@
         "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Нумар тэлефона можа быць выкарыстаны для праверкі аднаго ўліковага запісу ${ BRAND_NAME }"
+        "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Карыстальнік - гэта ўліковы запіс, звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
@@ -2849,7 +2866,7 @@
         "Увядзіце код з вашай праграмы аўтэнтыфікацыі"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Увядзіце праверачны код, які быў адпраўлены на ${ destinationText }."
+        "Увядзіце код спраўджання, які быў адпраўлены на ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Увядзіце праверачны код. Лічба ${ digit }."
@@ -3059,7 +3076,7 @@
         "Праверка можа заняць некалькі хвілін."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Праверка адкрые новую ўкладку, адключыце блакіроўку ўсплывальных вокнаў. З вас не будуць спаганяцца грашовыя сродкі. Любая сума, якая выкарыстоўваецца для праверкі вашай карткі, будзе неадкладна вернута."
+        "Спраўджанне адкрые новую ўкладку, адключыце блакіроўку ўсплывальных вокнаў. З вас не будуць спаганяцца грашовыя сродкі. Любая сума, якая выкарыстоўваецца для спраўджання вашай карткі, будзе неадкладна вернута."
       ],
       "Version number successfully copied to clipboard": [
         "Нумар версіі паспяхова скапіяваны ў буферу абмену"
@@ -3146,7 +3163,7 @@
         "Вы страціце доступ да ${ planTitle } функцыі пасля гэтай даты."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для праверкі плацяжу."
+        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяц у памеры ${ renewAmountStr }.",
@@ -3267,11 +3284,17 @@
       "Category": [
         "Катэгорыя"
       ],
+      "City": [
+        "Горад"
+      ],
       "Code is 6 digits without spaces": [
         "Код складаецца з 6 лічбаў без прабелаў"
       ],
       "Colors": [
         "Колеры"
+      ],
+      "Company": [
+        "Кампанія"
       ],
       "Company name": [
         "Назва кампаніі"
@@ -3363,6 +3386,9 @@
       "Phone number": [
         "Нумар тэлефона"
       ],
+      "Postal code": [
+        "Паштовы індэкс"
+      ],
       "Proration": [
         "Прапарцыянальнае размеркаванне"
       ],
@@ -3381,6 +3407,12 @@
       "Start date": [
         "Дата пачатку"
       ],
+      "State": [
+        "Штат"
+      ],
+      "Street address": [
+        "Вуліца"
+      ],
       "Subscription options": [
         "Параметры падпіскі"
       ],
@@ -3394,7 +3426,7 @@
         "ПДВ"
       ],
       "Verification code": [
-        "Праверачны код"
+        "Код спраўджання"
       ],
       "What happened?": [
         "Што здарылася?"
@@ -3407,6 +3439,9 @@
       ],
       "Your password (trusted contact)": [
         "Ваш пароль (давераны кантакт)"
+      ],
+      "ZIP code": [
+        "Паштовы індэкс"
       ]
     },
     "Label, credit card": {
@@ -3880,7 +3915,7 @@
         "Воблачны рэдактар дакументаў"
       ],
       "Organize items with multiple vaults": [
-        "Упарадкаванне элементаў з некалькімі сховішчамі"
+        "Упарадкаванне элементаў з дапамогай некалькіх сховішч"
       ],
       "Passkeys supported": [
         "Падтрымка ключоў доступу"
@@ -4664,6 +4699,9 @@
       "Timeout exceeded": [
         "Перавышаны час чакання"
       ],
+      "VAT number": [
+        "Нумар ПДВ"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
       ],
@@ -4716,8 +4754,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Дадаць ABN"
+      ],
+      "Add Business Number": [
+        "Дадаць нумар прадпрыемства"
+      ],
+      "Add EIN": [
+        "Рэдагаваць ІНП"
+      ],
+      "Add VAT number": [
+        "Дадаць нумар ПДВ"
+      ],
       "Business Number": [
         "Нумар прадпрыемства"
+      ],
+      "Edit ABN": [
+        "Рэдагаваць ABN"
+      ],
+      "Edit Business Number": [
+        "Рэдагаваць нумар прадпрыемства"
+      ],
+      "Edit EIN": [
+        "Рэдагаваць ІНП"
+      ],
+      "Edit VAT number": [
+        "Рэдагаваць нумар ПДВ"
       ],
       "EIN": [
         "EIN"
@@ -4730,6 +4792,15 @@
       "A way to contact you": [
         "Спосаб сувязі з вамі"
       ],
+      "Anderson": [
+        "Маўр"
+      ],
+      "Anytown": [
+        "Полацк"
+      ],
+      "Company name": [
+        "Назва кампаніі"
+      ],
       "Confirm passphrase or leave empty": [
         "Пацвердзіце парольную фразу або пакіньце поле пустым"
       ],
@@ -4741,6 +4812,9 @@
       ],
       "Gift code": [
         "Падарункавы код"
+      ],
+      "Main street 12": [
+        "вул. Цэнтральная, д. 12"
       ],
       "Organization name": [
         "Назва арганізацыі"
@@ -4769,11 +4843,20 @@
       "Select a reason": [
         "Выберыце прычыну"
       ],
+      "Select country": [
+        "Выберыце краіну"
+      ],
       "Select state": [
         "Выбраць штат"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Падзяліцеся сваімі думкамі, як зрабіць ${ BRAND_NAME } лепш"
+      ],
+      "Thomas": [
+        "Янка"
+      ],
+      "VAT number": [
+        "Нумар ПДВ"
       ],
       "Your organization name": [
         "Ваша назва арганізацыі"
@@ -5329,6 +5412,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Плацежныя падрабязнасці абноўлены"
+      ],
       "Code sent to ${ methodTo }": [
         "Код адпраўлены на ${ methodTo }"
       ],
@@ -5351,7 +5437,7 @@
         "Подпіс скапіяваны ў буфер абмену"
       ],
       "Verification successful": [
-        "Паспяхова праверана"
+        "Праверка паспяхова выканана"
       ],
       "You have successfully canceled your subscription.": [
         "Вы паспяхова скасавалі сваю падпіску."
@@ -5512,6 +5598,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Спампаваць праграмы ${ DRIVE_APP_NAME }"
       ],
+      "Edit billing address": [
+        "Рэдагаваць адрас аплаты"
+      ],
       "Edit credit/debit card": [
         "Рэдагаваць даныя банкаўскай карткі"
       ],
@@ -5624,10 +5713,10 @@
         "Збой праверкі"
       ],
       "Verifying your card...": [
-        "Праверка вашай карткі..."
+        "Спраўджанне вашай карткі..."
       ],
       "Verifying your payment...": [
-        "Праверка вашага плацяжу..."
+        "Спраўджанне вашага плацяжу..."
       ],
       "Wallet": [
         "Кашалёк"

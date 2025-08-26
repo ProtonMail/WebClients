@@ -2974,6 +2974,14 @@
         "Elsőbbségi támogatás"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "A szövegmezők nem kötelezőek. Az ebben az űrlapon megadott információk csak a jövőben kiállított számlákon jelennek meg, és nem befolyásolják a meglévő számlákat."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "A szövegmezők kitöltése nem kötelező. Az ezen az űrlapon megadott információk csak a kiválasztott számlát módosítják, a jövőbeni számlák részleteit nem."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "Megjegyzés:\n${ eventComment }"
@@ -3172,6 +3180,9 @@
       ],
       "Domain not available, try again later": [
         "A domain név nem érhető el, próbálja meg később"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "A számlázási cím szerkesztése jelenleg nem elérhető. Kérjük, próbálja meg később újra."
       ],
       "Email address is required": [
         "E-mail cím megadása szükséges"
@@ -3613,6 +3624,9 @@
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
+      ],
+      "ZIP code is required": [
+        "Irányítószám szükséges"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nem dekódolható név"
@@ -4609,6 +4623,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } legalább 1 dedikált szervert igényel ${ serverPricePerMonth } havonta."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } lejár ${ daysLeft } nap múlva.",
+        "${ planName } lejár ${ daysLeft } nap múlva."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } ma lejár."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "A ${ PROTON_SENTINEL_NAME } megvédi a felhasználói fiókját a gyanús tevékenységek figyelésével."
@@ -6672,6 +6693,9 @@
       "Comment": [
         "Hozzászólás"
       ],
+      "Company": [
+        "Cég"
+      ],
       "Company name": [
         "Cégnév"
       ],
@@ -7039,6 +7063,9 @@
       "Start date": [
         "Kezdő dátum"
       ],
+      "State": [
+        "Állam"
+      ],
       "Stolen data": [
         "Lopott adat"
       ],
@@ -7146,6 +7173,9 @@
       ],
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
+      ],
+      "ZIP code": [
+        "Irányítószám"
       ]
     },
     "Label for contact group color": {
@@ -9446,8 +9476,17 @@
       "A way to contact you": [
         "Kapcsolatfelvételi lehetőség"
       ],
+      "Anderson": [
+        "Kovács"
+      ],
+      "Anytown": [
+        "Bárholváros"
+      ],
       "Choose password": [
         "Jelszó választása"
+      ],
+      "Company name": [
+        "Cégnév"
       ],
       "E.g., ": [
         "Pl., "
@@ -9484,6 +9523,9 @@
       ],
       "Last name": [
         "Vezetéknév"
+      ],
+      "Main street 12": [
+        "Fő utca 12."
       ],
       "Message": [
         "Üzenet"
@@ -9535,6 +9577,12 @@
       ],
       "Start typing an email address": [
         "Kezdjen el írni egy e-mail címet"
+      ],
+      "Thomas": [
+        "Tamás"
+      ],
+      "VAT number": [
+        "Áfa-szám"
       ],
       "Your organization name": [
         "A szervezet neve"
@@ -10760,6 +10808,9 @@
       "Alias saved and copied": [
         "Az e-mail álnév mentve és másolva"
       ],
+      "Billing details updated": [
+        "Számlázási adatok frissítve"
+      ],
       "Canceling import": [
         "Importálás megszakítása"
       ],
@@ -11330,6 +11381,9 @@
       ],
       "Duplicate folder found": [
         "Duplikált mappa"
+      ],
+      "Edit billing address": [
+        "Számlázási cím szerkesztése"
       ],
       "Edit contact": [
         "Névjegy szerkesztése"

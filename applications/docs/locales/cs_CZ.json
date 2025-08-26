@@ -914,9 +914,9 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktu",
-        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů",
-        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktu",
-        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktu"
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktům",
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktům",
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktům"
       ]
     },
     "Actions message": {
@@ -995,7 +995,7 @@
     },
     "anniversary_2025: Offer": {
       "15 GB storage": [
-        "15 GB prostoru"
+        "15 GB úložiště"
       ],
       "200 GB storage": [
         "200 GB prostoru"
@@ -1280,7 +1280,7 @@
         "Účtováno ${ amount } jednorázově"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
-        "Obnovení po 1 měsíci za ${ regularAmount }."
+        "Obnovuje se po 1 měsíci za ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
@@ -2777,6 +2777,14 @@
         "Prioritní podpora"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Textová pole jsou nepovinná. Informace, které uvedete v tomto formuláři, se objeví pouze na fakturách vystavených v budoucnu a nebudou mít vliv na stávající faktury."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Textová pole jsou nepovinná. Informace, které uvedete v tomto formuláři, změní pouze vybranou fakturu, nikoli budoucí fakturační údaje."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "POZNÁMKA:\n${ eventComment }"
@@ -2979,6 +2987,9 @@
       "Domain not available, try again later": [
         "Doména není dostupná, zkuste to znovu později"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Úprava fakturační adresy není v tuto chvíli k dispozici. Zkuste to prosím později."
+      ],
       "Email address is required": [
         "Je vyžadována e-mailová adresa"
       ],
@@ -3008,6 +3019,9 @@
       ],
       "Failed to copy photo to album": [
         "Kopírování fotky do alba selhalo"
+      ],
+      "Failed to open to contact": [
+        "Otevření kontaktu selhalo"
       ],
       "Failed to rename document. Please try again later.": [
         "Přejmenování dokladu se nezdařilo. Zkuste to prosím znovu později."
@@ -3188,6 +3202,9 @@
       ],
       "Port is required": [
         "Port je povinná položka"
+      ],
+      "Postal code is required": [
+        "PSČ je povinné"
       ],
       "Primary address key is not decrypted": [
         "Klíč primární adresy nebyl dešifrován"
@@ -3377,6 +3394,9 @@
       ],
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
+      ],
+      "ZIP code is required": [
+        "PSČ je potřeba vyplnit"
       ]
     },
     "Error importing calendar": {
@@ -3819,7 +3839,7 @@
     },
     "Font face option": {
       "System default": [
-        "Systémový výchozí"
+        "Systémové výchozí"
       ],
       "Theme font": [
         "Písmo motivu"
@@ -3827,13 +3847,13 @@
     },
     "Font size option": {
       "Large": [
-        "Velký"
+        "Velké"
       ],
       "Medium (recommended)": [
         "Střední (doporučeno)"
       ],
       "Small": [
-        "Malý"
+        "Malé"
       ],
       "Very large": [
         "Velmi velké"
@@ -4318,6 +4338,15 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje alespoň 1 dedikovaný server ${ serverPricePerMonth }"
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } vyprší za ${ daysLeft } den.",
+        "${ planName } vyprší za ${ daysLeft } dny.",
+        "${ planName } vyprší za ${ daysLeft } dnů.",
+        "${ planName } vyprší za ${ daysLeft } dnů."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } vyprší dnes."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí dedikovaného sledování podezřelých aktivit."
       ],
@@ -4727,7 +4756,7 @@
         "Koncově šifrováno."
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "Zajistěte si plně soukromou a šifrovanou komunikaci. Získejte nyní vaši bezplatnou ${ BRAND_NAME } emailovou adresu."
+        "Zajistěte si zcela soukromou a šifrovanou komunikaci. Získejte zdarma e-mailovou adresu ${ BRAND_NAME } ještě dnes."
       ],
       "Enter password": [
         "Zadejte heslo"
@@ -4746,6 +4775,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Zadejte vlastní heslo (jako správce organizace)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Zadejte vlastní heslo (jako důvěryhodný kontakt)."
       ],
       "Error converting document: ${ errorMessage }": [
         "Chyba při převodu dokumentu: ${ errorMessage }"
@@ -5883,6 +5915,9 @@
       "Expired": [
         "Prošlý"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Zastaralý"
       ],
@@ -6010,6 +6045,9 @@
       ],
       "Colors": [
         "Barvy"
+      ],
+      "Company": [
+        "Společnost"
       ],
       "Company name": [
         "Název společnosti"
@@ -6308,6 +6346,9 @@
       "Start date": [
         "Datum zahájení"
       ],
+      "State": [
+        "Stát"
+      ],
       "Stop sharing": [
         "Zrušit sdílení"
       ],
@@ -6388,6 +6429,12 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Vaše heslo (důvěryhodný kontakt)"
+      ],
+      "ZIP code": [
+        "PSČ"
       ]
     },
     "Label for contact group color": {
@@ -6563,6 +6610,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Více informací"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Chcete-li pokračovat v používání ${ BRAND_NAME }, ujistěte se, že již nepoužíváte prémiové funkce, nebo si navyšte svůj tarif."
       ],
       "upgrade for more storage": [
         "navýšit tarif pro více prostoru"
@@ -8231,7 +8281,7 @@
         "Historie verzí souboru (více než 1 týden)"
       ],
       "Free": [
-        "Bezplatné"
+        "Free"
       ],
       "Plus": [
         "Plus"
@@ -8520,6 +8570,9 @@
       "Timeout exceeded": [
         "Byl překročen časový limit"
       ],
+      "VAT number": [
+        "DIČ"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaše měna byla změněna na euro (€), protože bankovní převody SEPA podporují pouze platby v eurech."
       ],
@@ -8549,7 +8602,7 @@
     },
     "Payments.plan_name": {
       "Free": [
-        "Bezplatné"
+        "Free"
       ]
     },
     "Payments.Saved payment method details": {
@@ -8572,8 +8625,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Přidat ABN"
+      ],
+      "Add Business Number": [
+        "Přidat firemní číslo"
+      ],
+      "Add EIN": [
+        "Přidat EIN"
+      ],
+      "Add VAT number": [
+        "Přidat DIČ"
+      ],
       "Business Number": [
         "Firemní číslo"
+      ],
+      "Edit ABN": [
+        "Upravit ABN"
+      ],
+      "Edit Business Number": [
+        "Upravit firemní číslo"
+      ],
+      "Edit EIN": [
+        "Upravit EIN"
+      ],
+      "Edit VAT number": [
+        "Upravit DIČ"
       ],
       "EIN": [
         "EIN"
@@ -8616,8 +8693,17 @@
       "A way to contact you": [
         "Způsob, jak vás kontaktovat"
       ],
+      "Anderson": [
+        "Příjmení"
+      ],
+      "Anytown": [
+        "Město"
+      ],
       "Choose password": [
         "Zvolte heslo"
+      ],
+      "Company name": [
+        "Název společnosti"
       ],
       "E.g., ": [
         "Např., "
@@ -8645,6 +8731,9 @@
       ],
       "Last name": [
         "Příjmení"
+      ],
+      "Main street 12": [
+        "Ulice a číslo popisné"
       ],
       "Message": [
         "Zpráva"
@@ -8682,6 +8771,9 @@
       "Select a reason": [
         "Vyberte důvod"
       ],
+      "Select country": [
+        "Vyberte zemi"
+      ],
       "Select state": [
         "Vyberte stav"
       ],
@@ -8693,6 +8785,12 @@
       ],
       "Start typing an email address": [
         "Začněte psát e-mailovou adresu"
+      ],
+      "Thomas": [
+        "Jméno"
+      ],
+      "VAT number": [
+        "DIČ"
       ],
       "Your organization name": [
         "Název vaší organizace"
@@ -9083,7 +9181,7 @@
         "${ gracePeriodHoursRemaining } další hodina",
         "${ gracePeriodHoursRemaining } další hodiny",
         "${ gracePeriodHoursRemaining } dalších hodin",
-        "Zbývá ${ gracePeriodHoursRemaining } hodin"
+        "${ gracePeriodHoursRemaining } dalších hodin"
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Pokud jste o obnovení hesla nepožádali, ihned zrušte tento požadavek."
@@ -9542,7 +9640,7 @@
         "Vaše úložiště je z ${ percentage } % plné. ${ cta }."
       ],
       "Your storage is full": [
-        "Váš úložný prostor je plný"
+        "Vaše úložiště je plné"
       ],
       "Your storage is full. ${ cta }.": [
         "Vaše úložiště je plné. ${ cta }."
@@ -9761,6 +9859,9 @@
       "Alias saved and copied": [
         "Alias uložen a zkopírován"
       ],
+      "Billing details updated": [
+        "Fakturační údaje aktualizovány"
+      ],
       "Canceling import": [
         "Ruším import"
       ],
@@ -9944,19 +10045,19 @@
         "${ ceilDays } dnů"
       ],
       "${ ceilHours } hour": [
-        "${ ceilHours } hodinu",
+        "${ ceilHours } hodina",
         "${ ceilHours } hodiny",
         "${ ceilHours } hodin",
         "${ ceilHours } hodin"
       ],
       "${ ceilMinutes } minute": [
-        "${ ceilMinutes } minutu",
+        "${ ceilMinutes } minuta",
         "${ ceilMinutes } minuty",
         "${ ceilMinutes } minut",
         "${ ceilMinutes } minut"
       ],
       "${ seconds } second": [
-        "${ seconds } sekundu",
+        "${ seconds } sekunda",
         "${ seconds } sekundy",
         "${ seconds } sekund",
         "${ seconds } sekund"
@@ -10085,7 +10186,7 @@
         "Změnit heslo"
       ],
       "Claim your ${ MAIL_APP_NAME } address": [
-        "Získejte vaši ${ MAIL_APP_NAME } adresu."
+        "Získejte vaši ${ MAIL_APP_NAME } adresu"
       ],
       "Clearing data": [
         "Mazání dat"
@@ -10230,6 +10331,9 @@
       ],
       "Duplicate folder found": [
         "Byl nalezena duplicitní složka"
+      ],
+      "Edit billing address": [
+        "Úprava fakturační adresy"
       ],
       "Edit contact": [
         "Upravit kontakt"

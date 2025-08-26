@@ -642,6 +642,9 @@
       "Refer a friend": [
         "Referir una amistad"
       ],
+      "Refresh": [
+        "Actualizar"
+      ],
       "Refresh status": [
         "Actualizar estado"
       ],
@@ -650,9 +653,6 @@
       ],
       "refresh the page": [
         "refresque la página"
-      ],
-      "Reload": [
-        "Recargar"
       ],
       "Remove": [
         "Eliminar"
@@ -820,7 +820,7 @@
         "Configurar el reenvío de correo electrónico"
       ],
       "Settings": [
-        "Configuración"
+        "Ajustes"
       ],
       "Share": [
         "Compartir"
@@ -1826,7 +1826,7 @@
         "Protección de cuenta avanzada"
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, y ${ CALENDAR_SHORT_APP_NAME }"
+        "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Cancelar y pasar a un plan inferior"
@@ -4299,7 +4299,7 @@
         "Los planes familiares actualmente no admiten cuentas externas. Cree una dirección de ${ BRAND_NAME } antes de unirse. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "Si acepta la invitación, lo cambiaremos del plan actual y acreditaremos la cuenta con cualquier saldo restante."
+        "Si acepta la invitación, le cambiaremos del plan actual y acreditaremos la cuenta con cualquier saldo restante."
       ],
       "Invitation from ${ invitation.OrganizationName }": [
         "Invitación de ${ invitation.OrganizationName }"
@@ -4374,10 +4374,10 @@
         "Debe configurar un dominio personalizado antes de crear un nuevo usuario."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Está invitado a vincular la cuenta de ${ BRAND_NAME } a este plan familiar y disfrutar juntos de todas las funciones premium de ${ brandOrAppName }."
+        "Se le invitó a vincular la cuenta de ${ BRAND_NAME } a este plan familiar y disfrutar juntos de todas las funciones premium de ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
-        "La cuenta tiene más direcciones de correo electrónico de las que tiene disponibles en este plan. ${ addressSettingsLink }"
+        "La cuenta tiene más direcciones de correo de las que tiene disponibles en este plan. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "La cuenta está usando ${ usedSpace } de almacenamiento, que supera los ${ inviteSpace } que tiene asignados. Elimine algunos datos o solicite al administrador del plan que aumente el almacenamiento."
@@ -5488,7 +5488,7 @@
         "**Importe sus códigos existentes** desde otras aplicaciones 2FA como Google Authenticator"
       ],
       "**Sync codes** to all your devices": [
-        "**Sincronizar códigos** en todos los dispostivos"
+        "**Sincronizar códigos** en todos los dispositivos"
       ],
       "+ ${ invisibleCount } More": [
         "+${ invisibleCount } más",
@@ -5528,14 +5528,14 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Acceso restringido a la cuenta por falta de pago. Contacte con la administración."
       ],
+      "Account monitor": [
+        "Monitoreo de la cuenta"
+      ],
       "Account successfully updated": [
         "Cuenta actualizada"
       ],
       "active": [
         "activa"
-      ],
-      "Activity monitor": [
-        "Monitor de actividades"
       ],
       "Activity Monitor": [
         "Monitor de actividades"
@@ -5610,6 +5610,9 @@
       "Allocated": [
         "Asignado"
       ],
+      "Allow logging of location and connection details": [
+        "Permitir el registro de ubicación y detalles de la conexión"
+      ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permita que los usuarios se conecten a servidores compartidos seguros desde la sección **Países** de la aplicación ${ VPN_APP_NAME }."
       ],
@@ -5641,7 +5644,7 @@
         "¿Está seguro que quiere descartar los cambios?"
       ],
       "Are you sure you want to discard your import?": [
-        "¿Está seguro de que quiere descartar su importación?"
+        "¿En verdad desea descartar su importación?"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "¿Está seguro de que quiere otorgar privilegios administrativos a este usuario?"
@@ -5851,14 +5854,11 @@
       "Did you know?": [
         "¿Lo sabía?"
       ],
-      "Disable detailed events": [
-        "Desactivar los eventos detallados"
-      ],
       "Disabled countries": [
         "Países desactivados"
       ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Desactivado el ${ formattedDateAndTime }"
+      "Disabled on ${ boldValue }": [
+        "Desactivado el ${ boldValue }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Desactivar la autenticación de dos factores hará su cuenta menos segura. Proceda solo si es absolutamente necesario."
@@ -5969,17 +5969,14 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Active la renovación automática para mantener su acceso a servidores y funciones premium."
       ],
-      "Enable detailed events": [
-        "Activar eventos detallados"
-      ],
       "Enable single sign-on to keep your organization safe": [
         "Active el inicio de sesión único para mantener segura la organización"
       ],
       "Enabled countries": [
         "Países activados"
       ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Activado el ${ formattedDateAndTime }"
+      "Enabled on ${ boldValue }": [
+        "Activado el ${ boldValue }"
       ],
       "Enabling auto-deletion…": [
         "Activando la eliminación automática…"
@@ -6086,14 +6083,11 @@
       "Gain visibility across your organization": [
         "Obtenga visibilidad en toda su organización"
       ],
+      "Gateway monitor": [
+        "Monitoreo de puertas de enlace"
+      ],
       "Gateways": [
         "Puertas de enlace"
-      ],
-      "Gateways monitoring is disabled.": [
-        "El monitoreo de puertas de enlace está desactivado."
-      ],
-      "Gateways monitoring is enabled.": [
-        "El monitoreo de puertas de enlace está activado."
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Obtenga ${ AUTHENTICATOR_APP_NAME } para todos sus dispositivos"
@@ -6201,8 +6195,8 @@
       "inactive": [
         "inactiva"
       ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Incluir la dirección IP del usuario, ubicación y proveedor de servicios de internet (proveedor de servicios de internet) en los registros de eventos."
+      "Include device, location, and IP details": [
+        "Incluir detalles de dispositivo, ubicación e IP"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Incluyendo ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -6357,9 +6351,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Cargando el calendario, espere. Se le redirigirá a nuestra plataforma de programación Calendly en una pestaña nueva."
       ],
-      "Loading detailed events current status.": [
-        "Cargando el estado actual de los eventos detallados."
-      ],
       "Loading eduGAIN data...": [
         "Cargando los datos de eduGAIN..."
       ],
@@ -6509,6 +6500,9 @@
       "Or select a particular server:": [
         "O seleccione un servidor en particular:"
       ],
+      "Organization monitor": [
+        "Monitoreo de la organización"
+      ],
       "Organization size": [
         "Tamaño de la organización"
       ],
@@ -6529,6 +6523,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - correo personalizado eliminado"
+      ],
+      "Pass usage logs": [
+        "Registros de uso de Pass"
       ],
       "password": [
         "contraseña"
@@ -7132,6 +7129,9 @@
       "Vault deleted": [
         "Bóveda eliminada"
       ],
+      "Vault either deleted or requires access permissions": [
+        "La bóveda fue eliminada o requiere permisos de acceso"
+      ],
       "Vault shared with email": [
         "Bóveda compartida por correo electrónico"
       ],
@@ -7161,6 +7161,9 @@
       ],
       "Version number successfully copied to clipboard": [
         "El número de versión fue copiado en el portapapeles."
+      ],
+      "View VPN session details for your organization.": [
+        "Ver los detalles de la sesión VPN de su organización"
       ],
       "View, download, and manage your invoices.": [
         "Vea, descargue y gestione sus facturas."
@@ -8354,9 +8357,6 @@
       "VAT": [
         "IVA"
       ],
-      "VAT identification number": [
-        "Número de identificación a efectos del IVA"
-      ],
       "Verification code": [
         "Código de verificación"
       ],
@@ -8645,6 +8645,9 @@
       "Upgrade your plan": [
         "Mejore el plan"
       ],
+      "Vault": [
+        "Bóveda"
+      ],
       "View guide": [
         "Ver guía"
       ],
@@ -8699,6 +8702,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Más información"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Para seguir usando ${ BRAND_NAME }, asegúrese de que sus funciones premium ya no estén en uso o mejore su plan."
       ],
       "upgrade for more storage": [
         "mejore para obtener más almacenamiento"
@@ -8875,8 +8881,14 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Conecte el dominio personalizado a ${ BRAND_NAME } para configurar direcciones de correo personalizadas (p. ej., usted@suempresa.com). Nuestro asistente le guiará a través del proceso."
       ],
-      "View account-related events across your organization.": [
-        "Consulte los eventos relacionados con la cuenta en toda su organización."
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "Ver la actividad de ${ PASS_APP_NAME } a través de su organización."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "Ver cambios en su organización y otras actividades de administrador."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "Ver eventos de inicio de sesión, recuperación y seguridad del usuario."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "La prueba gratuita ha terminado. El acceso a la cuenta pronto será desactivado. ${ action }"
@@ -10024,6 +10036,9 @@
       "Invalid code": [
         "Código inválido"
       ],
+      "Invalid input. Search an email or detail.": [
+        "Entrada inválida. Busque por correo electrónico o dirección IP."
+      ],
       "Invalid input. Search an email or IP address.": [
         "La entrada no es válida. Busque por correo electrónico o dirección IP."
       ],
@@ -10645,6 +10660,9 @@
       "Card number": [
         "Número de tarjeta"
       ],
+      "Credits and discounts are reflected in your invoice": [
+        "Los créditos y descuentos se reflejan en su factura"
+      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Actualmente la renovación automática de la suscripción está desactivada. Si desea cambiar la suscripción ahora, la renovación automática volverá a activarse."
       ],
@@ -10712,6 +10730,9 @@
       "Timeout exceeded": [
         "Tiempo de espera agotado"
       ],
+      "VAT number": [
+        "Número de IVA"
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Se le cobrará ${ amountToCharge } de su método de pago seleccionado."
       ],
@@ -10767,8 +10788,32 @@
       "ABN": [
         "Número de empresa australiano (ABN)"
       ],
+      "Add ABN": [
+        "Añadir ABN"
+      ],
+      "Add Business Number": [
+        "Añadir número de negocio"
+      ],
+      "Add EIN": [
+        "Añadir EIN"
+      ],
+      "Add VAT number": [
+        "Añadir número de IVA"
+      ],
       "Business Number": [
         "Número de negocio"
+      ],
+      "Edit ABN": [
+        "Editar ABN"
+      ],
+      "Edit Business Number": [
+        "Editar número de negocio"
+      ],
+      "Edit EIN": [
+        "Editar EIN"
+      ],
+      "Edit VAT number": [
+        "Editar número de IVA"
       ],
       "EIN": [
         "Número de identificación fiscal (EIN)"
@@ -10891,11 +10936,17 @@
       "Search users": [
         "Buscar usuarios"
       ],
+      "Search users or details": [
+        "Buscar usuarios o detalles"
+      ],
       "Select": [
         "Seleccionar"
       ],
       "Select a reason": [
         "Seleccione un motivo"
+      ],
+      "Select country": [
+        "Seleccionar país"
       ],
       "Select state": [
         "Seleccionar estado"
@@ -10957,7 +11008,7 @@
     },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
-        "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, y ${ PASS_SHORT_APP_NAME }."
+        "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }."
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, y ${ CALENDAR_SHORT_APP_NAME }"
@@ -11805,7 +11856,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "¿Quiere cerrar la sesión sin restablecer la contraseña?"
+        "¿Desea cerrar la sesión sin restablecer la contraseña?"
       ]
     },
     "session_recovery:status:info": {
@@ -12082,10 +12133,10 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Acceda a contenido bloqueado y navegue de forma privada. Incluye 1700 servidores en más de 60 países, la velocidad VPN más alta, 10 conexiones VPN por usuario, servicios de streaming en todo el mundo, bloqueador de malware y anuncios, y más."
+        "Acceda a contenido bloqueado y navegue de forma privada. Incluye 1700 servidores en más de 60 países, la velocidad VPN más alta, 10 conexiones VPN por usuario, servicios de streaming en todo el mundo, bloqueador de malware y anuncios y más."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Acceda a contenido bloqueado y navegue de forma privada. Incluye 1700 servidores en más de 60 países, la velocidad VPN más alta, 10 conexiones VPN, servicios de streaming en todo el mundo, bloqueador de malware y anuncios, y más."
+        "Acceda a contenido bloqueado y navegue de forma privada. Incluye 1700 servidores en más de 60 países, la velocidad VPN más alta, 10 conexiones VPN, servicios de streaming en todo el mundo, bloqueador de malware y anuncios y más."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Todos nuestros servicios premium al máximo: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de Hide-my-email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
@@ -12591,7 +12642,7 @@
         "${ planMaxSpace } de almacenamiento total"
       ],
       "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } te da acceso a todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, y ${ CALENDAR_SHORT_APP_NAME }. La privacidad está integrada para que puedas seguir adelante, sabiendo que tus datos e identidad están seguros."
+        "${ planName } le da acceso a todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }. La privacidad está integrada para que pueda seguir adelante, sabiendo que sus datos e identidad están seguros."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } le ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesita para tener control de sus datos y seguridad."
@@ -13498,9 +13549,6 @@
       "Claim your ${ MAIL_APP_NAME } address": [
         "Reclame su dirección de ${ MAIL_APP_NAME }"
       ],
-      "Click a value in the table to use it as filter": [
-        "Pulse un valor en la tabla para usarlo como filtro"
-      ],
       "Close": [
         "Cerrar"
       ],
@@ -13640,6 +13688,12 @@
       ],
       "Deny access to user?": [
         "¿Denegar acceso al usuario?"
+      ],
+      "Description": [
+        "Descripción"
+      ],
+      "Details": [
+        "Detalles"
       ],
       "Device": [
         "Dispositivo"
@@ -13849,6 +13903,9 @@
       ],
       "Invoices": [
         "Facturas"
+      ],
+      "IP": [
+        "IP"
       ],
       "Limit reached": [
         "Límite alcanzado"

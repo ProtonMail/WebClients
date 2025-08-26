@@ -2257,6 +2257,14 @@
         "Prioritná podpora"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Textové polia sú nepovinné. Informácie, ktoré uvediete v tomto formulári, sa zobrazia len na faktúrach vystavených v budúcnosti a neovplyvnia existujúce faktúry."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Textové polia sú nepovinné. Informácie, ktoré uvediete v tomto formulári, zmenia len vybranú faktúru, a nie vaše budúce fakturačné údaje."
+      ]
+    },
     "Error": {
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } je vaše používateľské meno. Pre vytvorenie ${ emailAddress } prejdite do Nastavenia > Identita a adresy > Krátka doména (pm.me)"
@@ -2278,6 +2286,9 @@
       ],
       "Domain not available, try again later": [
         "Doména nie je dostupná, skúste to znova neskôr"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Úprava fakturačnej adresy momentálne nie je k dispozícii. Skúste to neskôr, prosím."
       ],
       "Email is not valid": [
         "Emailová adresa nie je platná"
@@ -2363,6 +2374,9 @@
       "Please select billing state": [
         "Vyberte krajinu platby, prosím"
       ],
+      "Postal code is required": [
+        "Poštové smerovacie číslo je povinné"
+      ],
       "Process aborted": [
         "Proces prerušený"
       ],
@@ -2413,6 +2427,9 @@
       ],
       "Username must end with a letter or digit": [
         "Používateľské meno musí končiť písmenom alebo číslom"
+      ],
+      "ZIP code is required": [
+        "PSČ je povinné"
       ]
     },
     "Error message": {
@@ -3256,11 +3273,17 @@
       "Category": [
         "Kategória"
       ],
+      "City": [
+        "Mesto"
+      ],
       "Code is 6 digits without spaces": [
         "Kód je 6 čísiel bez medzier"
       ],
       "Colors": [
         "Farby"
+      ],
+      "Company": [
+        "Spoločnosť"
       ],
       "Company name": [
         "Názov spoločnosti"
@@ -3352,6 +3375,9 @@
       "Phone number": [
         "Telefónne číslo"
       ],
+      "Postal code": [
+        "PSČ"
+      ],
       "Proration": [
         "Pomerná časť"
       ],
@@ -3369,6 +3395,12 @@
       ],
       "Start date": [
         "Dátum začiatku"
+      ],
+      "State": [
+        "Štát"
+      ],
+      "Street address": [
+        "Ulica a č."
       ],
       "Subscription options": [
         "Možnosti predplatného"
@@ -3393,6 +3425,9 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (správca)"
+      ],
+      "ZIP code": [
+        "PSČ"
       ]
     },
     "Label, credit card": {
@@ -4716,6 +4751,15 @@
       "A way to contact you": [
         "Spôsob, ako vás kontaktovať"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "Niekdetam"
+      ],
+      "Company name": [
+        "Názov spoločnosti"
+      ],
       "Confirm passphrase or leave empty": [
         "Potvrďte heslo alebo nechajte prázdne"
       ],
@@ -4727,6 +4771,9 @@
       ],
       "Gift code": [
         "Darčekový kód"
+      ],
+      "Main street 12": [
+        "Hlavná ulica 12"
       ],
       "Organization name": [
         "Názov organizácie"
@@ -4760,6 +4807,12 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Dajte nám vedieť, čo by podľa vás mohlo vylepšiť ${ BRAND_NAME }"
+      ],
+      "Thomas": [
+        "Tomáš"
+      ],
+      "VAT number": [
+        "IČ DPH"
       ],
       "Your organization name": [
         "Názov vašej organizácie"
@@ -5301,6 +5354,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Fakturačné údaje aktualizované"
+      ],
       "Code sent to ${ methodTo }": [
         "Kód zaslaný na ${ methodTo }"
       ],
@@ -5480,6 +5536,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Stiahnuť aplikácie ${ DRIVE_APP_NAME }"
+      ],
+      "Edit billing address": [
+        "Upraviť fakturačnú adresu"
       ],
       "Edit credit/debit card": [
         "Upraviť platobnú kartu"

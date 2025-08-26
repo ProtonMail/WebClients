@@ -36,6 +36,10 @@
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
       ],
+      "${ numberOfAddresses } address": [
+        "Indirizzo ${ numberOfAddresses }",
+        "${ numberOfAddresses } indirizzi"
+      ],
       "A to Z": [
         "Dalla A alla Z"
       ],
@@ -213,6 +217,15 @@
       ],
       "Choose a file or drag it here": [
         "Scegli un file o trascinalo qui"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Ottieni un indirizzo ${ BRAND_NAME }"
+      ],
+      "Claim this address": [
+        "Ottieni questo indirizzo"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Ottieni il tuo indirizzo ${ BRAND_NAME } gratuito"
       ],
       "Clear": [
         "Cancella"
@@ -590,6 +603,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Scegli ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Ottieni un indirizzo ${ BRAND_NAME } gratuito"
       ],
       "Get in touch": [
         "Mettiti in contatto"
@@ -1205,7 +1221,7 @@
         "Seleziona ${ planOrAppName }"
       ],
       "Select All": [
-        "Seleziona Tutto"
+        "Seleziona tutto"
       ],
       "Select all": [
         "Seleziona tutti"
@@ -1434,6 +1450,10 @@
       ],
       "Trust": [
         "Considera attendibile"
+      ],
+      "Trust key": [
+        "chiave attendibile",
+        "chiavi attendibili"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -3702,7 +3722,7 @@
         "Svalbard e Jan Mayen"
       ],
       "Swaziland": [
-        "Swaziland"
+        "eSwatini"
       ],
       "Sweden": [
         "Svezia"
@@ -4064,6 +4084,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Semplifica la sincronizzazione e la pianificazione con i calendari condivisi."
       ],
+      "This view shows messages sent to the following addresses:": [
+        "Questa vista mostra i messaggi inviati ai seguenti indirizzi:"
+      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Per continuare a utilizzare l'assistente alla scrittura, aggiungilo al tuo abbonamento."
       ],
@@ -4229,6 +4252,14 @@
       ],
       "Priority support": [
         "Supporto prioritario"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "I campi di testo sono opzionali. Le informazioni inserite in questo modulo verranno mostrate solo sulle fatture future e non su quelle esistenti."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "I campi di testo sono facoltativi. Le informazioni fornite in questo modulo modificheranno solo la fattura che hai selezionato e non i dettagli della fattura futura."
       ]
     },
     "Email body for comment (comment part)": {
@@ -4494,6 +4525,9 @@
       "Due to an error, text generation couldn't be canceled": [
         "A causa di un errore, non è possibile annullare la generazione del testo"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "La modifica dell'indirizzo di fatturazione non è al momento disponibile. Per favore riprova più tardi."
+      ],
       "Email address disabled": [
         "Indirizzo email disabilitato"
       ],
@@ -4532,6 +4566,9 @@
       ],
       "Failed to load the STL preview": [
         "Impossibile caricare l'anteprima STL"
+      ],
+      "Failed to open to contact": [
+        "Impossibile aprire il contatto"
       ],
       "Filter with this name already exists": [
         "Esiste già un filtro con questo nome"
@@ -4728,6 +4765,9 @@
       ],
       "Port is required": [
         "La porta è obbligatoria"
+      ],
+      "Postal code is required": [
+        "Il codice postale è obbligatorio"
       ],
       "Primary address key is not decrypted": [
         "Chiave dell'indirizzo principale non decriptata"
@@ -4963,6 +5003,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La tua ricerca ha restituito troppi risultati. Limita la ricerca e riprova."
+      ],
+      "ZIP code is required": [
+        "Il codice postale è obbligatorio"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5445,7 +5488,7 @@
     },
     "Filter Actions": {
       "Archive": [
-        "Sposta nell'archivio"
+        "Archivio"
       ],
       "Do not move": [
         "Non spostare"
@@ -5460,7 +5503,7 @@
         "Seleziona una cartella"
       ],
       "Spam": [
-        "Sposta in spam"
+        "Spam"
       ],
       "Trash": [
         "Elimina"
@@ -5681,6 +5724,9 @@
       ],
       "Checklist complete": [
         "Checklist completata"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Ottieni un indirizzo ${ BRAND_NAME }"
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Completa questo elenco di controllo entro ${ daysCount } per raddoppiare gratuitamente il tuo spazio di archiviazione."
@@ -6237,6 +6283,12 @@
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "Il gestore password di ${ BRAND_NAME } ti consente di creare, memorizzare e compilare automaticamente le password, così non dovrai mai reimpostarle."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } richiede un indirizzo ${ BRAND_NAME } per la sincronizzazione sicura degli eventi e la crittografia. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } richiede un indirizzo ${ BRAND_NAME } per la sincronizzazione sicura degli eventi e la crittografia. Richiedi ora il tuo indirizzo ${ MAIL_APP_NAME } gratuito."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nuovo calendario",
         "${ calendarsToBeCreatedCount } nuovi calendari"
@@ -6370,6 +6422,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } richiede almeno 1 server dedicato ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } scade tra ${ daysLeft } giorno",
+        "${ planName } scade tra ${ daysLeft } giorni"
+      ],
+      "${ planName } expires today.": [
+        "${ planName } scade oggi."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } protegge il tuo account con uno scrupoloso monitoraggio delle attività sospette."
@@ -7000,6 +7059,9 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Goditi un'esperienza di ricezione di email più veloci e mirate con l'app desktop."
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Garantisci comunicazioni completamente private e crittografate. Richiedi ora il tuo indirizzo email ${ BRAND_NAME } gratuito."
+      ],
       "Enter the code from your authenticator app": [
         "Inserisci il codice dalla tua app di autenticazione."
       ],
@@ -7206,8 +7268,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -7854,6 +7915,12 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Termine dell'abbonamento: riattivalo entro ${ byDate } per mantenere i vantaggi del tuo piano ${ planName }. ${ reactivateLink }"
       ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abbonamento in scadenza: Per mantenere i vantaggi del tuo ${ planName }, riavvia il tuo abbonamento nell'Apple App Store entro il ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abbonamento in scadenza: Per mantenere i vantaggi del tuo abbonamento ${ planName }, riavvia il tuo abbonamento nel Google Play Store entro il ${ byDate }. ${ reactivateLink }"
+      ],
       "Surveillance": [
         "Sorveglianza"
       ],
@@ -8191,7 +8258,7 @@
         "Effettua l'upgrade per supportare un Internet che dia priorità alla privacy."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        "Effettua l'upgrade per supportare la nostra missione della privacy per tutti."
+        "Effettua l'upgrade per supportare la nostra missione di privacy per tutti."
       ],
       "Upgrade to support privacy and get more features.": [
         "Effettua l'upgrade per supportare la privacy e ottenere più funzionalità."
@@ -8458,6 +8525,10 @@
       "You selected **${ count } conversation** with this label": [
         "Hai selezionato **${ count } conversazione** con questa etichetta",
         "Hai selezionato **${ count } conversazioni** con questa etichetta"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "Hai selezionato **${ count } messaggio** da questa cartella",
+        "Hai selezionato **${ count } messaggi** da questa cartella"
       ],
       "You selected **${ count } message** with this label": [
         "Hai selezionato **${ count } messaggio** con questa etichetta",
@@ -9050,6 +9121,9 @@
       "Colors": [
         "Colori"
       ],
+      "Company": [
+        "Azienda"
+      ],
       "Company name": [
         "Nome dell'azienda"
       ],
@@ -9297,7 +9371,7 @@
         "Spostato nell’archivio"
       ],
       "Moved to Trash": [
-        "Spostato nel cestino"
+        "Spostata nel cestino"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Deve contenere almeno ${ MIN_PASSWORD_LENGTH } caratteri"
@@ -9449,6 +9523,9 @@
       "Start date": [
         "Data di inizio"
       ],
+      "State": [
+        "Stato"
+      ],
       "Statement": [
         "Istruzione"
       ],
@@ -9571,6 +9648,9 @@
       ],
       "Your password (trusted contact)": [
         "La tua password (contatto attendibile)"
+      ],
+      "ZIP code": [
+        "Codice postale"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9689,7 +9769,7 @@
         "Tutta la posta"
       ],
       "Archive": [
-        "Sposta nell'archivio"
+        "Archivio"
       ],
       "clearing your browser cache": [
         "cancellare la cache del browser"
@@ -9812,7 +9892,7 @@
         "O puoi eliminare uno dei tuoi calendari e crearne uno nuovo collegato a un indirizzo email attivo."
       ],
       "Outbox": [
-        "In Uscita"
+        "In uscita"
       ],
       "Pay invoice": [
         "Pagamento della fattura"
@@ -9831,6 +9911,9 @@
       ],
       "Request an invite": [
         "Richiedi un invito"
+      ],
+      "Resume now": [
+        "Riprendi ora"
       ],
       "Scheduled": [
         "Programmata"
@@ -9851,7 +9934,7 @@
         "Posticipato"
       ],
       "Spam": [
-        "Sposta in spam"
+        "Spam"
       ],
       "Starred": [
         "Importante"
@@ -9940,6 +10023,9 @@
       "Learn more": [
         "Approfondimenti"
       ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Per continuare a utilizzare ${ BRAND_NAME }, assicurati di non avere più in uso le funzionalità premium oppure esegui l’upgrade del tuo piano"
+      ],
       "upgrade for more storage": [
         "effettua l'upgrade per ottenere più spazio di archiviazione"
       ],
@@ -10001,13 +10087,13 @@
     },
     "Mailbox": {
       "Archive": [
-        "Sposta nell'archivio"
+        "Archivio"
       ],
       "Inbox": [
         "Posta in arrivo"
       ],
       "Spam": [
-        "Sposta in spam"
+        "Spam"
       ],
       "Trash": [
         "Elimina"
@@ -11800,6 +11886,9 @@
       "Timeout exceeded": [
         "Limite di tempo superato"
       ],
+      "VAT number": [
+        "Numero partita IVA"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "La tua valuta è stata cambiata in euro (€) perché i bonifici bancari SEPA supportano solo pagamenti in euro."
       ],
@@ -11852,8 +11941,32 @@
       "ABN": [
         "Numero aziendale australiano (ABN)"
       ],
+      "Add ABN": [
+        "Aggiungi ABN"
+      ],
+      "Add Business Number": [
+        "Aggiungi numero azienda"
+      ],
+      "Add EIN": [
+        "Aggiungi EIN"
+      ],
+      "Add VAT number": [
+        "Aggiungi numero di partita IVA"
+      ],
       "Business Number": [
         "Numero azienda"
+      ],
+      "Edit ABN": [
+        "Modificare ABN"
+      ],
+      "Edit Business Number": [
+        "Modifica numero azienda"
+      ],
+      "Edit EIN": [
+        "Modificare EIN"
+      ],
+      "Edit VAT number": [
+        "Modifica il numero di partita IVA"
       ],
       "EIN": [
         "Numero d'identificazione fiscale (EIN)"
@@ -11895,6 +12008,15 @@
     "Placeholder": {
       "A way to contact you": [
         "Un modo per contattarti"
+      ],
+      "Anderson": [
+        "Rossi"
+      ],
+      "Anytown": [
+        "Roma"
+      ],
+      "Company name": [
+        "Nome dell'azienda"
       ],
       "Describe what to change": [
         "Descrivi cosa cambiare"
@@ -11943,6 +12065,9 @@
       ],
       "Link": [
         "Collegamento"
+      ],
+      "Main street 12": [
+        "Via Mario Greppi 12"
       ],
       "Name": [
         "Nome"
@@ -11995,6 +12120,9 @@
       "Select a reason": [
         "Seleziona un motivo"
       ],
+      "Select country": [
+        "Seleziona un Paese"
+      ],
       "Select state": [
         "Seleziona Stato"
       ],
@@ -12031,11 +12159,17 @@
       "Text": [
         "di testo"
       ],
+      "Thomas": [
+        "Mario"
+      ],
       "To": [
         "Al"
       ],
       "Type text or keyword": [
         "Inserisci testo o parola chiave"
+      ],
+      "VAT number": [
+        "Numero partita IVA"
       ],
       "Your organization name": [
         "Il nome della tua organizzazione"
@@ -13615,6 +13749,9 @@
       "Alias saved and copied": [
         "Alias salvato e copiato"
       ],
+      "Billing details updated": [
+        "Informazioni di fatturazione aggiornati"
+      ],
       "Canceling import": [
         "Annullamento dell'importazione"
       ],
@@ -14109,7 +14246,7 @@
         "Applica codice regalo"
       ],
       "Archive": [
-        "Sposta nell'archivio"
+        "Archivio"
       ],
       "Archive all messages?": [
         "Archiviare tutti i messaggi?"
@@ -14170,6 +14307,9 @@
       ],
       "Change password": [
         "Modifica la password"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Richiedi il tuo indirizzo ${ MAIL_APP_NAME }"
       ],
       "Clearing data": [
         "Cancellazione dati"
@@ -14323,6 +14463,9 @@
       "Download the app": [
         "Scarica l'app"
       ],
+      "Edit billing address": [
+        "Modifica indirizzo di fatturazione"
+      ],
       "Edit contact": [
         "Modifica contatto"
       ],
@@ -14394,6 +14537,9 @@
       ],
       "Forward": [
         "Inoltra"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Ottieni accesso completo a ${ CALENDAR_APP_NAME }"
       ],
       "Get more from your VPN": [
         "Ottieni di più dalla tua VPN"
@@ -14970,6 +15116,9 @@
       ],
       "Your account is protected": [
         "Il tuo account è protetto"
+      ],
+      "Your addresses": [
+        "I tuoi indirizzi"
       ],
       "Your changes are not synced yet": [
         "Le tue modifiche non sono ancora sincronizzate"

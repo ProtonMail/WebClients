@@ -1451,9 +1451,6 @@
       "Trust": [
         "Vertrouwen"
       ],
-      "Trust key": [
-        "Vertrouwde sleutel"
-      ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
       ],
@@ -2539,7 +2536,7 @@
         "Deze reactie is verouderd. De afspraak bestaat niet meer in uw agenda."
       ],
       "This response is out of date. You have no calendars.": [
-        "Deze reactie is verouderd. U hebt geen agenda."
+        "Deze reactie is verouderd. U heeft geen agenda."
       ],
       "You already accepted this invitation.": [
         "U hebt deze uitnodiging al geaccepteerd."
@@ -4253,6 +4250,14 @@
         "Prioriteitsondersteuning"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstvelden zijn optioneel. De informatie die u in dit formulier verstrekt zal alleen verschijnen op in de toekomst uitgegeven facturen en zal geen invloed hebben op bestaande facturen."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Tekstvelden zijn optioneel. De informatie die u in dit formulier opgeeft, zal alleen de door u geselecteerde factuur wijzigen en niet uw toekomstige factuurgegevens."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "LET OP:\n${ eventComment }"
@@ -4516,6 +4521,9 @@
       "Due to an error, text generation couldn't be canceled": [
         "Vanwege een fout kon de tekstgeneratie niet worden geannuleerd."
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Factuuradres bewerken is op dit moment niet beschikbaar. Probeer het later opnieuw."
+      ],
       "Email address disabled": [
         "E-mailadres uitgeschakeld"
       ],
@@ -4554,6 +4562,9 @@
       ],
       "Failed to load the STL preview": [
         "Fout bij het laden van de STL-preview"
+      ],
+      "Failed to open to contact": [
+        "Contact maken mislukt"
       ],
       "Filter with this name already exists": [
         "Filter met deze naam bestaat reeds"
@@ -4750,6 +4761,9 @@
       ],
       "Port is required": [
         "Poort is vereist"
+      ],
+      "Postal code is required": [
+        "Postcode is vereist"
       ],
       "Primary address key is not decrypted": [
         "Primaire adressleutel is niet ontsleuteld"
@@ -4985,6 +4999,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Uw zoekopdracht leverde te veel resultaten op. Verfijn uw zoekopdracht en probeer het opnieuw."
+      ],
+      "ZIP code is required": [
+        "Postcode is vereist"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6336,12 +6353,12 @@
         "${ elementsCount } berichten worden gemarkeerd als gelezen."
       ],
       "${ elementsCount } message will be moved": [
-        "${ elementsCount }gesprek wordt verplaatst",
+        "${ elementsCount } bericht wordt verplaatst",
         "${ elementsCount }berichten worden verplaatst"
       ],
       "${ elementsCount } message will be unlabelled from:": [
-        "${ elementsCount }bericht wordt ongelabeld van:",
-        "${ elementsCount }berichten wordt ongelabeld van:"
+        "${ elementsCount } bericht wordt ongelabeld van:",
+        "${ elementsCount } berichten wordt ongelabeld van:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } ingesloten afbeelding",
@@ -6401,6 +6418,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } vervalt binnen ${ daysLeft } dag.",
+        "${ planName } vervalt binnen ${ daysLeft } dagen."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } verloopt vandaag."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met toegewijde monitoring van verdachte activiteiten."
@@ -7240,8 +7264,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -7277,7 +7300,7 @@
         "Bevestig uw keuze en wij doen de rest."
       ],
       "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
-        "Houd uw inlog- en creditcardgegevens veilig, maar altijd bij de hand door ze toe te voegen aan ${ PASS_APP_NAME }. Het is gratis, en inbegrepen bij uw ${ BRAND_NAME } account."
+        "Houd uw inlog- en creditcardgegevens veilig, maar altijd bij de hand door ze toe te voegen aan ${ PASS_APP_NAME }. Het is gratis, en inbegrepen bij uw ${ BRAND_NAME }-account."
       ],
       "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
         "Houd uw mailbox netjes door de prullenbak en spam die ruim 30 dagen bestaat automatisch te wissen."
@@ -8446,13 +8469,13 @@
         "U kunt niet antwoorden vanaf het uitgenodigde adres."
       ],
       "You do not have any messages here": [
-        "U hebt hier geen berichten"
+        "U heeft hier geen berichten"
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "U krijgt een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
       ],
       "You have ${ unread } in your inbox.": [
-        "U hebt ${ unread } in uw inbox."
+        "U heeft ${ unread } in uw inbox."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "U heeft **${ count } gesprek** uit deze map opgeslagen",
@@ -8508,16 +8531,16 @@
         "U heeft **${ count } berichten** geselecteerd met dit label"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
-        "Selecteer**${ elementsCount } gesprek **in ${ location }",
-        "Selecteer**${ elementsCount } gesprekken **in ${ location }"
+        "U selecteerde **${ elementsCount } gesprek **in ${ location }",
+        "U selecteerde **${ elementsCount } gesprekken **in ${ location }"
       ],
       "You selected **${ elementsCount } conversation**.": [
         "U selecteerde **${ elementsCount } gesprek**.",
         "U selecteerde **${ elementsCount } gesprekken**."
       ],
       "You selected **${ elementsCount } message** in ${ location }": [
-        "U selecteert** ${ elementsCount }bericht**in${ location }",
-        "U selecteert**${ elementsCount }berichten**in${ location }"
+        "U selecteerde ** ${ elementsCount }bericht**in${ location }",
+        "U selecteerde **${ elementsCount }berichten**in${ location }"
       ],
       "You selected **${ elementsCount } message**.": [
         "U selecteerde **${ elementsCount } gesprek**.",
@@ -9094,6 +9117,9 @@
       "Colors": [
         "Kleuren"
       ],
+      "Company": [
+        "Bedrijf"
+      ],
       "Company name": [
         "Bedrijfsnaam"
       ],
@@ -9493,6 +9519,9 @@
       "Start date": [
         "Begindatum"
       ],
+      "State": [
+        "Staat"
+      ],
       "Statement": [
         "Verklaring"
       ],
@@ -9615,6 +9644,9 @@
       ],
       "Your password (trusted contact)": [
         "Uw wachtwoord (vertrouwd contact)"
+      ],
+      "ZIP code": [
+        "Postcode"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11842,6 +11874,9 @@
       "Timeout exceeded": [
         "Time-out overschreden"
       ],
+      "VAT number": [
+        "BTW-nummer"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Uw valuta is gewijzigd naar euro (€) omdat SEPA-bankoverschrijvingen alleen betalingen in euro ondersteunen."
       ],
@@ -11894,8 +11929,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "ABN toevoegen"
+      ],
+      "Add Business Number": [
+        "Ondernemingsnummer toevoegen"
+      ],
+      "Add EIN": [
+        "EIN toevoegen"
+      ],
+      "Add VAT number": [
+        "BTW-nummer toevoegen"
+      ],
       "Business Number": [
         "Ondernemingsnummer"
+      ],
+      "Edit ABN": [
+        "ABN bewerken"
+      ],
+      "Edit Business Number": [
+        "Ondernemingsnummer bewerken"
+      ],
+      "Edit EIN": [
+        "EIN bewerken"
+      ],
+      "Edit VAT number": [
+        "Wijzig BTW-nummer"
       ],
       "EIN": [
         "Rijksregisternummer"
@@ -11937,6 +11996,15 @@
     "Placeholder": {
       "A way to contact you": [
         "Een manier om u te contacteren"
+      ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "Willekeurige stad"
+      ],
+      "Company name": [
+        "Bedrijfsnaam"
       ],
       "Describe what to change": [
         "Beschrijf wat u wilt wijzigen"
@@ -11985,6 +12053,9 @@
       ],
       "Link": [
         "Koppeling"
+      ],
+      "Main street 12": [
+        "Hoofdstraat 12"
       ],
       "Name": [
         "Naam"
@@ -12037,6 +12108,9 @@
       "Select a reason": [
         "Selecteer een reden"
       ],
+      "Select country": [
+        "Selecteer land"
+      ],
       "Select state": [
         "Selecteer provincie"
       ],
@@ -12073,11 +12147,17 @@
       "Text": [
         "Tekst"
       ],
+      "Thomas": [
+        "Thomas"
+      ],
       "To": [
         "Naar"
       ],
       "Type text or keyword": [
         "Voer tekst of trefwoord in"
+      ],
+      "VAT number": [
+        "BTW-nummer"
       ],
       "Your organization name": [
         "Uw organisatienaam"
@@ -13657,6 +13737,9 @@
       "Alias saved and copied": [
         "Alias opgeslagen en gekopieerd"
       ],
+      "Billing details updated": [
+        "Factuurgegevens bijgewerkt"
+      ],
       "Canceling import": [
         "Importeren annuleren"
       ],
@@ -14367,6 +14450,9 @@
       ],
       "Download the app": [
         "Download de app"
+      ],
+      "Edit billing address": [
+        "Factuuradres bewerken"
       ],
       "Edit contact": [
         "Contactpersoon bewerken"

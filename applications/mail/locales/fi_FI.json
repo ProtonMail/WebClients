@@ -1426,6 +1426,10 @@
       "Trust": [
         "Luota"
       ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
+      ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
       ],
@@ -4375,6 +4379,9 @@
       "Due to an error, text generation couldn't be canceled": [
         "Tekstin luontia ei voitu virheen vuoksi perua"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Laskutusosoitteen muokkaus ei ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen."
+      ],
       "Email address disabled": [
         "Sähköpostiosoite ei ole käytössä"
       ],
@@ -4600,6 +4607,9 @@
       ],
       "Port is required": [
         "Portti vaaditaan"
+      ],
+      "Postal code is required": [
+        "Postinumero vaaditaan"
       ],
       "Primary address key is not decrypted": [
         "Ensisijaisen osoitteen avaimen salausta ei ole purettu"
@@ -4835,6 +4845,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Haullasi löytyi liikaa tuloksia. Rajoita hakua ja yritä uudelleen."
+      ],
+      "ZIP code is required": [
+        "Postinumero vaaditaan"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6240,6 +6253,13 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } erääntyy ${ daysLeft } päivän kuluttua.",
+        "${ planName } erääntyy ${ daysLeft } päivän kuluttua."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } erääntyy tänään."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } suojelee tiliäsi valvomalla epäilyttävää toimintaa."
       ],
@@ -7057,8 +7077,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -8881,6 +8900,9 @@
       "Colors": [
         "Värit"
       ],
+      "Company": [
+        "Yritys"
+      ],
       "Company name": [
         "Yrityksen nimi"
       ],
@@ -9277,6 +9299,9 @@
       "Start date": [
         "Aloituspäivä"
       ],
+      "State": [
+        "Osavaltio"
+      ],
       "Statement": [
         "Ehto"
       ],
@@ -9396,6 +9421,9 @@
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
+      ],
+      "ZIP code": [
+        "Postinumero"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11600,6 +11628,15 @@
       "A way to contact you": [
         "Tapa, jolla tavoitamme sinut"
       ],
+      "Anderson": [
+        "Andersson"
+      ],
+      "Anytown": [
+        "Jokukaupunki"
+      ],
+      "Company name": [
+        "Yrityksen nimi"
+      ],
       "Describe what to change": [
         "Kuvaile, mitä tulisi muuttaa"
       ],
@@ -11647,6 +11684,9 @@
       ],
       "Link": [
         "Linkki"
+      ],
+      "Main street 12": [
+        "Pääkatu 12"
       ],
       "Name": [
         "Nimi"
@@ -11735,11 +11775,17 @@
       "Text": [
         "Tekstitiedosto"
       ],
+      "Thomas": [
+        "Tuomas"
+      ],
       "To": [
         "Osoitteeseen"
       ],
       "Type text or keyword": [
         "Syötä teksti tai avainsana"
+      ],
+      "VAT number": [
+        "ALV-numero"
       ],
       "Your organization name": [
         "Organisaatiosi nimi"
@@ -13253,6 +13299,9 @@
       "Alias saved and copied": [
         "Alias tallennettiin ja kopioitiin"
       ],
+      "Billing details updated": [
+        "Laskutustiedot päivitetty"
+      ],
       "Canceling import": [
         "Perutaan tuontia"
       ],
@@ -13957,6 +14006,9 @@
       ],
       "Download the app": [
         "Lataa sovellus"
+      ],
+      "Edit billing address": [
+        "Muokkaa laskutusosoitetta"
       ],
       "Edit contact": [
         "Muokkaa yhteystietoa"
