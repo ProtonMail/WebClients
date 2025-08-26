@@ -170,6 +170,9 @@
       "Let's talk": [
         "Porozmawiajmy"
       ],
+      "Manage": [
+        "Zarządzaj"
+      ],
       "Manage advanced account protections": [
         "Zarządzaj zaawansowanymi zabezpieczeniami konta"
       ],
@@ -237,7 +240,7 @@
         "Szukaj krajów"
       ],
       "Select ${ planOrAppName }": [
-        "Wybierz plan ${ planOrAppName }"
+        "Wybierz ${ planOrAppName }"
       ],
       "Select billing cycle ${ billingText }": [
         "Wybierz cykl rozliczeniowy ${ billingText }"
@@ -833,26 +836,17 @@
       ],
       "Submit": [
         "Prześlij"
-      ],
-      "Use ${ LUMO_SHORT_APP_NAME } Free instead": [
-        "Zamiast tego użyj ${ LUMO_SHORT_APP_NAME } Free"
       ]
     },
     "collider_2025: Button": {
       "Close": [
         "Zamknij"
       ],
-      "Explore ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Odkryj ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
       "Join waitlist": [
         "Dołącz do listy oczekujących"
       ],
       "Learn more": [
         "Dowiedz się więcej"
-      ],
-      "Manage account": [
-        "Zarządzaj kontem"
       ],
       "Open Link": [
         "Otwórz link"
@@ -903,9 +897,6 @@
       ]
     },
     "collider_2025: Characteristic Title": {
-      "Enter": [
-        "Wpisz"
-      ],
       "Only you have access": [
         "Tylko Ty masz dostęp"
       ],
@@ -929,35 +920,11 @@
       ]
     },
     "collider_2025: Description": {
-      "Add ${ LUMO_SHORT_APP_NAME } Plus to unlock more benefits": [
-        "Dodaj ${ LUMO_SHORT_APP_NAME } Plus, aby odblokować więcej korzyści"
-      ],
-      "Boost your productivity": [
-        "Zwiększ swoją produktywność"
-      ],
       "Last updated on ${ DATE_VERSION }": [
         "Ostatnia aktualizacja: ${ DATE_VERSION }"
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Zaloguj się, aby uzyskać dostęp do konta i odblokować więcej funkcji. Nie masz konta? ${ createLink }"
-      ],
-      "Talk to your admin for plan details": [
-        "Porozmawiaj ze swoim administratorem o szczegółach planu"
-      ],
-      "Talk to your admin to add ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Porozmawiaj ze swoim administratorem, aby dodać ${ LUMO_SHORT_APP_NAME } Plus."
-      ],
-      "To delete your account and more, go to account settings.": [
-        "Aby usunąć swoje konto i inne, przejdź do ustawień konta."
-      ],
-      "Unlock advanced models and premium features with ${ LUMO_APP_NAME } Plus.": [
-        "Odblokuj zaawansowane modele i funkcje premium dzięki ${ LUMO_APP_NAME } Plus."
-      ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Ulepsz plan do wersji ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
-      "Your plan includes ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Twój plan obejmuje ${ LUMO_SHORT_APP_NAME } Plus."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1024,40 +991,8 @@
       "Advanced models": [
         "Zaawansowane modele"
       ],
-      "Chat history": [
-        "Historia czatów"
-      ],
-      "Favorite chats": [
-        "Ulubione czaty"
-      ],
-      "File uploads": [
-        "Przesyłanie plików"
-      ],
       "Web search": [
         "Wyszukaj w Internecie"
-      ],
-      "Weekly chats": [
-        "Tygodniowe czaty"
-      ]
-    },
-    "collider_2025: Feature detail": {
-      "Large files": [
-        "Duże pliki"
-      ],
-      "Limited": [
-        "Ograniczenie"
-      ],
-      "No": [
-        "Nie"
-      ],
-      "Small files": [
-        "Małe pliki"
-      ],
-      "Unlimited": [
-        "Nieograniczone"
-      ],
-      "Yes": [
-        "Tak"
       ]
     },
     "collider_2025: Guest Upsell": {
@@ -1154,9 +1089,6 @@
       ],
       "Please wait for files to finish processing": [
         "Poczekaj, aż pliki zakończą przetwarzanie."
-      ],
-      "Press ${ enterBoldText } to ask": [
-        "Naciśnij ${ enterBoldText }, aby zapytać"
       ],
       "Processed content": [
         "Przetworzona treść"
@@ -1326,12 +1258,6 @@
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Wybierz plan ${ LUMO_SHORT_APP_NAME } Plus"
       ],
-      "Manage": [
-        "Zarządzaj"
-      ],
-      "Manage plan": [
-        "Zarządzaj planem"
-      ],
       "New chat": [
         "Nowy czat"
       ],
@@ -1384,20 +1310,11 @@
       "Don't lose the thread": [
         "Nie strać wątku"
       ],
-      "Elevate your AI experience": [
-        "Podnieś poziom swojego doświadczenia z AI"
-      ],
       "Guest": [
         "Gość"
       ],
       "Invalid Link": [
         "Niepoprawny link"
-      ],
-      "Manage account": [
-        "Zarządzaj kontem"
-      ],
-      "Manage your account and preferences": [
-        "Zarządzaj swoim kontem i preferencjami"
       ],
       "Opening External Link": [
         "Otwieranie linku zewnętrznego"
@@ -1408,9 +1325,6 @@
       "Secure your spot": [
         "Zabezpiecz swoje miejsce"
       ],
-      "Settings": [
-        "Ustawienia"
-      ],
       "Upload files": [
         "Prześlij pliki"
       ],
@@ -1419,9 +1333,6 @@
       ],
       "You're on the waitlist": [
         "Jesteś na liście oczekujących"
-      ],
-      "Your plan": [
-        "Twój plan"
       ]
     },
     "collider_2025: Tooltip": {
@@ -2660,6 +2571,14 @@
         "Priorytetowe wsparcie"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Pola tekstowe są opcjonalne. Te informacje pojawią się tylko na przyszłych fakturach i nie będą miały wpływu na obecne faktury."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Pola tekstowe są opcjonalne. Podane informacje zmienią tylko wybraną fakturę, a nie dane przyszłej faktury."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Zaufany kontakt"
@@ -2680,6 +2599,9 @@
       ],
       "Domain not available, try again later": [
         "Domena nie jest dostępna. Spróbuj ponownie później"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Edytowanie adresu rozliczeniowego nie jest obecnie dostępne. Spróbuj ponownie później."
       ],
       "Email is not valid": [
         "Adres e-mail nie jest prawidłowy"
@@ -2762,6 +2684,9 @@
       "Please select billing state": [
         "Wybierz stan rozliczeniowy"
       ],
+      "Postal code is required": [
+        "Kod pocztowy jest wymagany"
+      ],
       "Process aborted": [
         "Proces został przerwany"
       ],
@@ -2809,6 +2734,9 @@
       ],
       "Username must end with a letter or digit": [
         "Nazwa użytkownika musi kończyć się literą lub cyfrą"
+      ],
+      "ZIP code is required": [
+        "Kod pocztowy jest wymagany"
       ]
     },
     "Error message": {
@@ -3206,7 +3134,7 @@
         "Wpisz swoje hasło (jako zaufany kontakt)."
       ],
       "Everything in ${ planOrAppName }": [
-        "Wszystko w planie ${ planOrAppName }"
+        "Wszystko w ${ planOrAppName }"
       ],
       "Expired": [
         "Wygasła"
@@ -3603,11 +3531,17 @@
       "Category": [
         "Kategoria"
       ],
+      "City": [
+        "Miasto"
+      ],
       "Code is 6 digits without spaces": [
         "Kod to 6 cyfr bez spacji"
       ],
       "Colors": [
         "Kolory"
+      ],
+      "Company": [
+        "Firma"
       ],
       "Company name": [
         "Nazwa firmy"
@@ -3696,6 +3630,9 @@
       "Phone number": [
         "Numer telefonu"
       ],
+      "Postal code": [
+        "Kod pocztowy"
+      ],
       "Proration": [
         "Dzielenie proporcjonalne"
       ],
@@ -3707,6 +3644,12 @@
       ],
       "Start date": [
         "Data rozpoczęcia"
+      ],
+      "State": [
+        "Stan"
+      ],
+      "Street address": [
+        "Ulica"
       ],
       "Subscription options": [
         "Opcje subskrypcji"
@@ -3734,6 +3677,9 @@
       ],
       "Your password (trusted contact)": [
         "Twoje hasło (zaufany kontakt)"
+      ],
+      "ZIP code": [
+        "Kod pocztowy"
       ]
     },
     "Label, credit card": {
@@ -4763,14 +4709,6 @@
         "Niektóre obrazy nie zostały przesłane z powodu powtarzających się nazw zaznaczonych plików."
       ]
     },
-    "Offer feature": {
-      "Free": [
-        "Free"
-      ],
-      "Plus": [
-        "Plus"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " odwiedź nasze ${ helpCenterLink } lub ${ contactSupportLink }."
@@ -4983,6 +4921,9 @@
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
       ],
+      "VAT number": [
+        "Numer VAT"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Twoja waluta została zmieniona na euro (€), ponieważ przelewy bankowe SEPA obsługują tylko płatności w euro."
       ],
@@ -5035,8 +4976,29 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Dodaj ABN"
+      ],
+      "Add Business Number": [
+        "Dodaj NIP"
+      ],
+      "Add EIN": [
+        "Dodaj EIN"
+      ],
+      "Add VAT number": [
+        "Dodaj numer VAT"
+      ],
       "Business Number": [
         "NIP"
+      ],
+      "Edit ABN": [
+        "Edytuj ABN"
+      ],
+      "Edit EIN": [
+        "Edytuj EIN"
+      ],
+      "Edit VAT number": [
+        "Edytuj numer VAT"
       ],
       "EIN": [
         "EIN"
@@ -5049,8 +5011,20 @@
       "A way to contact you": [
         "Preferowana metoda kontaktu"
       ],
+      "Anderson": [
+        "Nowak"
+      ],
+      "Anytown": [
+        "Kraków"
+      ],
+      "Company name": [
+        "Nazwa firmy"
+      ],
       "Gift code": [
         "Kod podarunkowy"
+      ],
+      "Main street 12": [
+        "Główna 12"
       ],
       "Organization name": [
         "Nazwa organizacji"
@@ -5073,11 +5047,20 @@
       "Select a reason": [
         "Wybierz przyczynę"
       ],
+      "Select country": [
+        "Wybierz kraj"
+      ],
       "Select state": [
         "Wybierz stan"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Napisz, jak możemy ulepszyć usługi ${ BRAND_NAME }"
+      ],
+      "Thomas": [
+        "Jan"
+      ],
+      "VAT number": [
+        "Numer VAT"
       ],
       "Your organization name": [
         "Twoja nazwa organizacji"
@@ -5549,6 +5532,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Szczegóły płatności zostały zaktualizowane"
+      ],
       "Code sent to ${ methodTo }": [
         "Kod został wysłany na ${ methodTo }"
       ],
@@ -5690,6 +5676,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Pobierz aplikacje ${ DRIVE_APP_NAME }"
+      ],
+      "Edit billing address": [
+        "Edytuj adres rozliczeniowy"
       ],
       "Edit credit/debit card": [
         "Edytuj kartę płatniczą"

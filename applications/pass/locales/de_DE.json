@@ -130,6 +130,9 @@
       "Clear search": [
         "Suche löschen"
       ],
+      "Clone item": [
+        "Eintrag duplizieren"
+      ],
       "Close": [
         "Schließen"
       ],
@@ -426,6 +429,9 @@
       ],
       "Open navigation": [
         "Navigation öffnen"
+      ],
+      "Organize vaults": [
+        "Tresore organisieren"
       ],
       "Pass for Android": [
         "Pass für Android"
@@ -1649,6 +1655,9 @@
       "Extra password successfully removed": [
         "Zusätzliches Passwort entfernt"
       ],
+      "Failed updating your vault organization": [
+        "Fehler beim Aktualisieren deiner Tresor-Organisation"
+      ],
       "Fill in the CSV with your data": [
         "Fülle die CSV-Datei mit deinen Daten aus."
       ],
@@ -1823,6 +1832,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
@@ -2279,6 +2292,9 @@
       "Unverified": [
         "Nicht verifiziert"
       ],
+      "Updating vault organization...": [
+        "Tresor-Organisation wird aktualisiert..."
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Upgrade jetzt zum Freischalten von Premiumfunktionen"
       ],
@@ -2305,6 +2321,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Tresor \"${ share.content.name }\" wurde entfernt."
+      ],
+      "Vault organization successfully updated": [
+        "Tresor-Organisation erfolgreich aktualisiert"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Tresore teilen: ${ vaultMembersCount } Mitglied",
@@ -4218,6 +4237,9 @@
       "Grant permissions": [
         "Berechtigungen erteilen"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Versteckte Tresore sind bei der Suche und beim automatischen Ausfüllen nicht sichtbar."
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-Aliasse"
       ],
@@ -4321,6 +4343,9 @@
       ],
       "No shared secure links": [
         "Keine geteilten sicheren Links"
+      ],
+      "Organize vaults": [
+        "Tresore organisieren"
       ],
       "Our welcome gift to you": [
         "Unser Willkommensgeschenk an dich"
@@ -4507,6 +4532,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du bist dabei, ${ aliasCount } Alias dauerhaft zu löschen.",
         "Du bist dabei, ${ aliasCount } Aliasse dauerhaft zu löschen."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "Kopieren"
       ]
     },
     "Today icon tooltip in mini calendar": {

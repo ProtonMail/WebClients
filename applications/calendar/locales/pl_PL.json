@@ -140,6 +140,9 @@
       "Choose a file or drag it here": [
         "Wybierz plik lub przeciągnij go tutaj"
       ],
+      "Claim this address": [
+        "Uzyskaj ten adres"
+      ],
       "Clear": [
         "Wyczyść"
       ],
@@ -370,6 +373,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Uzyskaj ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Uzyskaj darmowy adres ${ BRAND_NAME }"
       ],
       "Get in touch": [
         "Skontaktuj się z nami"
@@ -705,7 +711,7 @@
         "Zobacz funkcje planu"
       ],
       "Select ${ planOrAppName }": [
-        "Wybierz plan ${ planOrAppName }"
+        "Wybierz ${ planOrAppName }"
       ],
       "Select all": [
         "Zaznacz wszystkie"
@@ -3260,6 +3266,14 @@
         "90 minut"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Pola tekstowe są opcjonalne. Te informacje pojawią się tylko na przyszłych fakturach i nie będą miały wpływu na obecne faktury."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Pola tekstowe są opcjonalne. Podane informacje zmienią tylko wybraną fakturę, a nie dane przyszłej faktury."
+      ]
+    },
     "Edit event button tooltip": {
       "Edit event": [
         "Edytuj wydarzenie"
@@ -3491,6 +3505,9 @@
       "Domain not available, try again later": [
         "Domena nie jest dostępna. Spróbuj ponownie później"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Edytowanie adresu rozliczeniowego nie jest obecnie dostępne. Spróbuj ponownie później."
+      ],
       "Email address disabled": [
         "Adres e-mail został wyłączony"
       ],
@@ -3532,6 +3549,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Nie udało się załadować okna OAuth."
+      ],
+      "Failed to open to contact": [
+        "Nie udało się otworzyć kontaktu"
       ],
       "First name is too long": [
         "Imię jest zbyt długie"
@@ -3728,6 +3748,9 @@
       "Port is required": [
         "Port jest wymagany"
       ],
+      "Postal code is required": [
+        "Kod pocztowy jest wymagany"
+      ],
       "Primary address key is not decrypted": [
         "Główny klucz adresu nie został odszyfrowany"
       ],
@@ -3898,6 +3921,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Połączenie z Zoom wygasło. Połącz się ponownie, aby kontynuować."
+      ],
+      "ZIP code is required": [
+        "Kod pocztowy jest wymagany"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4882,6 +4908,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Technologia szyfrowania ${ BRAND_NAME } oznacza, że nikt nie ma dostępu do Twojego hasła — nawet my."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "Aplikacja ${ CALENDAR_APP_NAME } wymaga adresu ${ BRAND_NAME } w celu zapewnienia bezpiecznej synchronizacji wydarzeń i szyfrowania. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nowy kalendarz",
         "${ calendarsToBeCreatedCount } nowe kalendarze",
@@ -4941,6 +4970,15 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "Plan ${ plan.Title } wymaga co najmniej 1 dedykowanego serwera ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "Plan ${ planName } wygaśnie za ${ daysLeft } dzień.",
+        "Plan ${ planName } wygaśnie za ${ daysLeft } dni.",
+        "Plan ${ planName } wygaśnie za ${ daysLeft } dni.",
+        "Plan ${ planName } wygaśnie za ${ daysLeft } dnia."
+      ],
+      "${ planName } expires today.": [
+        "Plan ${ planName } wygaśnie dzisiaj."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } chroni Twoje konto dzięki dedykowanemu monitorowaniu podejrzanej aktywności."
@@ -5338,6 +5376,9 @@
       "Enabling auto-deletion…": [
         "Włączanie automatycznego usuwania…"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Zapewnij sobie prywatną i szyfrowaną komunikację. Uzyskaj darmowy adres ${ BRAND_NAME }."
+      ],
       "Enter the code from your authenticator app": [
         "Wpisz kod z aplikacji uwierzytelniającej"
       ],
@@ -5369,7 +5410,7 @@
         "Szacowanie pozostałego czasu..."
       ],
       "Everything in ${ planOrAppName }": [
-        "Wszystko w planie ${ planOrAppName }"
+        "Wszystko w ${ planOrAppName }"
       ],
       "Existent and added participants will be notified.": [
         "Obecni i dodani uczestnicy zostaną powiadomieni."
@@ -5799,6 +5840,12 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Subskrypcja wkrótce się zakończy. Reaktywuj ją do ${ byDate }, aby zachować bonusy planu ${ planName }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Subskrypcja zakończyła się. Aby zachować korzyści planu ${ planName }, wznów subskrypcję w sklepie App Store do dnia ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Subskrypcja zakończyła się. Aby zachować korzyści planu ${ planName }, wznów subskrypcję w sklepie Google Play do dnia ${ byDate }. ${ reactivateLink }"
       ],
       "Surveillance": [
         "Inwigilacja"
@@ -6372,6 +6419,9 @@
       "Expired": [
         "Wygasł"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Przestarzały"
       ],
@@ -6533,6 +6583,9 @@
       "Colors": [
         "Kolory"
       ],
+      "Company": [
+        "Firma"
+      ],
       "Company name": [
         "Nazwa firmy"
       ],
@@ -6669,7 +6722,7 @@
         "Zintegrowana aplikacja uwierzytelniająca 2FA"
       ],
       "Keyboard shortcut: ${ shortcut }": [
-        "Skrót klawiszowy: ${ shortcut }"
+        "Skróty klawiszowe: ${ shortcut }"
       ],
       "Keyboard shortcuts": [
         "Skróty klawiszowe"
@@ -6824,6 +6877,9 @@
       "Start date": [
         "Data rozpoczęcia"
       ],
+      "State": [
+        "Stan"
+      ],
       "Street address": [
         "Ulica"
       ],
@@ -6913,6 +6969,9 @@
       ],
       "Your password (trusted contact)": [
         "Twoje hasło (zaufany kontakt)"
+      ],
+      "ZIP code": [
+        "Kod pocztowy"
       ]
     },
     "Label for contact group color": {
@@ -7054,6 +7113,9 @@
       ],
       "Request an invite": [
         "Poproś o zaproszenie"
+      ],
+      "Resume now": [
+        "Wznów teraz"
       ],
       "settings": [
         "ustawieniach"
@@ -9103,6 +9165,9 @@
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
       ],
+      "VAT number": [
+        "Numer VAT"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Twoja waluta została zmieniona na euro (€), ponieważ przelewy bankowe SEPA obsługują tylko płatności w euro."
       ],
@@ -9155,8 +9220,29 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Dodaj ABN"
+      ],
+      "Add Business Number": [
+        "Dodaj NIP"
+      ],
+      "Add EIN": [
+        "Dodaj EIN"
+      ],
+      "Add VAT number": [
+        "Dodaj numer VAT"
+      ],
       "Business Number": [
         "NIP"
+      ],
+      "Edit ABN": [
+        "Edytuj ABN"
+      ],
+      "Edit EIN": [
+        "Edytuj EIN"
+      ],
+      "Edit VAT number": [
+        "Edytuj numer VAT"
       ],
       "EIN": [
         "EIN"
@@ -9217,6 +9303,15 @@
       "Add title": [
         "Dodaj tytuł"
       ],
+      "Anderson": [
+        "Nowak"
+      ],
+      "Anytown": [
+        "Kraków"
+      ],
+      "Company name": [
+        "Nazwa firmy"
+      ],
       "E.g., ": [
         "Np. "
       ],
@@ -9246,6 +9341,9 @@
       ],
       "Leave a note for all participants": [
         "Zostaw wiadomość dla wszystkich uczestników"
+      ],
+      "Main street 12": [
+        "Główna 12"
       ],
       "Name": [
         "Nazwa"
@@ -9286,6 +9384,9 @@
       "Select a reason": [
         "Wybierz przyczynę"
       ],
+      "Select country": [
+        "Wybierz kraj"
+      ],
       "Select state": [
         "Wybierz stan"
       ],
@@ -9294,6 +9395,12 @@
       ],
       "Start typing an email address": [
         "Wpisz adres e-mail"
+      ],
+      "Thomas": [
+        "Jan"
+      ],
+      "VAT number": [
+        "Numer VAT"
       ],
       "Your organization name": [
         "Twoja nazwa organizacji"
@@ -10639,6 +10746,9 @@
       "Answer sent and event deleted": [
         "Odpowiedź została wysłana. Wydarzenie zostało usunięte"
       ],
+      "Billing details updated": [
+        "Szczegóły płatności zostały zaktualizowane"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalendarz został dodany. Synchronizacja może potrwać kilka minut."
       ],
@@ -11080,6 +11190,9 @@
       "Choose how often this event repeats": [
         "Wybierz, jak często to wydarzenie będzie się powtarzać"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Uzyskaj adres ${ MAIL_APP_NAME }"
+      ],
       "Clearing data": [
         "Usuwanie danych"
       ],
@@ -11190,6 +11303,9 @@
       ],
       "Drop to upload": [
         "Upuść, aby przesłać"
+      ],
+      "Edit billing address": [
+        "Edytuj adres rozliczeniowy"
       ],
       "Edit contact": [
         "Edytuj kontakt"

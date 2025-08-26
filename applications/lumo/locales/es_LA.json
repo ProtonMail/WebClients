@@ -170,6 +170,9 @@
       "Let's talk": [
         "Hablemos"
       ],
+      "Manage": [
+        "Gestionar"
+      ],
       "Manage advanced account protections": [
         "Gestionar protecciones avanzadas de la cuenta"
       ],
@@ -258,7 +261,7 @@
         "Configurar el reenvío de correo electrónico"
       ],
       "Settings": [
-        "Configuración"
+        "Ajustes"
       ],
       "Share your calendar with your team": [
         "Compartir su calendario con su equipo"
@@ -706,7 +709,7 @@
         "Protección de cuenta avanzada"
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, y ${ CALENDAR_SHORT_APP_NAME }"
+        "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Cancelar y pasar a un plan inferior"
@@ -813,26 +816,17 @@
       ],
       "Submit": [
         "Enviar"
-      ],
-      "Use ${ LUMO_SHORT_APP_NAME } Free instead": [
-        "Use ${ LUMO_SHORT_APP_NAME } gratis en su lugar."
       ]
     },
     "collider_2025: Button": {
       "Close": [
         "Cerrar"
       ],
-      "Explore ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Explorar ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
       "Join waitlist": [
         "Unirse a la lista de espera"
       ],
       "Learn more": [
         "Más información"
-      ],
-      "Manage account": [
-        "Gestionar cuenta"
       ],
       "Open Link": [
         "Abrir enlace"
@@ -883,9 +877,6 @@
       ]
     },
     "collider_2025: Characteristic Title": {
-      "Enter": [
-        "Ingresar"
-      ],
       "Only you have access": [
         "Solo usted tiene acceso"
       ],
@@ -909,35 +900,11 @@
       ]
     },
     "collider_2025: Description": {
-      "Add ${ LUMO_SHORT_APP_NAME } Plus to unlock more benefits": [
-        "Agregue ${ LUMO_SHORT_APP_NAME } Plus para desbloquear más beneficios."
-      ],
-      "Boost your productivity": [
-        "Aumente su productividad"
-      ],
       "Last updated on ${ DATE_VERSION }": [
         "Última actualización el ${ DATE_VERSION }"
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Inicie sesión para acceder a su cuenta y desbloquear más funciones. ¿No tiene una? ${ createLink }"
-      ],
-      "Talk to your admin for plan details": [
-        "Hable con su administrador para conocer los detalles del plan."
-      ],
-      "Talk to your admin to add ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Hable con su administrador para agregar ${ LUMO_SHORT_APP_NAME } Plus."
-      ],
-      "To delete your account and more, go to account settings.": [
-        "Para eliminar su cuenta y más, vaya a los ajustes de cuenta."
-      ],
-      "Unlock advanced models and premium features with ${ LUMO_APP_NAME } Plus.": [
-        "Desbloquee modelos avanzados y funciones premium con ${ LUMO_APP_NAME } Plus."
-      ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Actualiar a ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
-      "Your plan includes ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Su plan incluye ${ LUMO_SHORT_APP_NAME } Plus."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1004,40 +971,8 @@
       "Advanced models": [
         "Modelos avanzados"
       ],
-      "Chat history": [
-        "Historial de chat"
-      ],
-      "Favorite chats": [
-        "Chats favoritos"
-      ],
-      "File uploads": [
-        "Cargas de archivos"
-      ],
       "Web search": [
         "Búsqueda web"
-      ],
-      "Weekly chats": [
-        "Chats semanales"
-      ]
-    },
-    "collider_2025: Feature detail": {
-      "Large files": [
-        "Archivos grandes"
-      ],
-      "Limited": [
-        "Limitados"
-      ],
-      "No": [
-        "No"
-      ],
-      "Small files": [
-        "Archivos pequeños"
-      ],
-      "Unlimited": [
-        "Ilimitados"
-      ],
-      "Yes": [
-        "Sí"
       ]
     },
     "collider_2025: Guest Upsell": {
@@ -1134,9 +1069,6 @@
       ],
       "Please wait for files to finish processing": [
         "Espere a que los archivos terminen de procesarse."
-      ],
-      "Press ${ enterBoldText } to ask": [
-        "Presione ${ enterBoldText } para preguntar."
       ],
       "Processed content": [
         "Contenido procesado"
@@ -1306,12 +1238,6 @@
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Obtener ${ LUMO_SHORT_APP_NAME } Plus"
       ],
-      "Manage": [
-        "Gestionar"
-      ],
-      "Manage plan": [
-        "Gestionar plan"
-      ],
       "New chat": [
         "Nuevo chat"
       ],
@@ -1364,20 +1290,11 @@
       "Don't lose the thread": [
         "No pierda el hilo"
       ],
-      "Elevate your AI experience": [
-        "Eleve su experiencia de IA"
-      ],
       "Guest": [
         "Invitado"
       ],
       "Invalid Link": [
         "Enlace no válido"
-      ],
-      "Manage account": [
-        "Gestionar cuenta"
-      ],
-      "Manage your account and preferences": [
-        "Gestione su cuenta y preferencias"
       ],
       "Opening External Link": [
         "Abriendo enlace externo"
@@ -1388,9 +1305,6 @@
       "Secure your spot": [
         "Asegure su lugar"
       ],
-      "Settings": [
-        "Ajustes"
-      ],
       "Upload files": [
         "Cargar archivos"
       ],
@@ -1399,9 +1313,6 @@
       ],
       "You're on the waitlist": [
         "Está en la lista de espera."
-      ],
-      "Your plan": [
-        "Su plan"
       ]
     },
     "collider_2025: Tooltip": {
@@ -2638,6 +2549,14 @@
         "Soporte prioritario"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Los campos de texto son opcionales. La información que proporciones en este formulario solo aparecerá en las facturas emitidas en el futuro y no afectará a las facturas existentes."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Los campos de texto son opcionales. La información que proporciona en este formulario solo cambiará la factura que ha seleccionado y no los detalles de la futura factura."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Contacto de confianza"
@@ -2658,6 +2577,9 @@
       ],
       "Domain not available, try again later": [
         "Dominio no disponible, inténtelo más tarde"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "La edición de la dirección de facturación no está disponible en este momento. Inténtelo de nuevo más tarde."
       ],
       "Email is not valid": [
         "Correo no válido"
@@ -2740,6 +2662,9 @@
       "Please select billing state": [
         "Seleccione el estado de facturación"
       ],
+      "Postal code is required": [
+        "Se requiere el código postal"
+      ],
       "Process aborted": [
         "Proceso abortado"
       ],
@@ -2787,6 +2712,9 @@
       ],
       "Username must end with a letter or digit": [
         "El nombre de usuario debe terminar con una letra o dígito"
+      ],
+      "ZIP code is required": [
+        "Se requiere el código postal."
       ]
     },
     "Error message": {
@@ -3553,11 +3481,17 @@
       "Category": [
         "Categoría"
       ],
+      "City": [
+        "Ciudad"
+      ],
       "Code is 6 digits without spaces": [
         "El código es de 6 dígitos sin espacios"
       ],
       "Colors": [
         "Colores"
+      ],
+      "Company": [
+        "Compañía"
       ],
       "Company name": [
         "Nombre de la empresa"
@@ -3646,6 +3580,9 @@
       "Phone number": [
         "Número telefónico"
       ],
+      "Postal code": [
+        "Código postal"
+      ],
       "Proration": [
         "Prorrateo"
       ],
@@ -3657,6 +3594,12 @@
       ],
       "Start date": [
         "Fecha inicial"
+      ],
+      "State": [
+        "Estado"
+      ],
+      "Street address": [
+        "Dirección de calle"
       ],
       "Subscription options": [
         "Opciones de suscripción"
@@ -3684,6 +3627,9 @@
       ],
       "Your password (trusted contact)": [
         "Su contraseña (contacto de confianza)"
+      ],
+      "ZIP code": [
+        "Código postal"
       ]
     },
     "Label, credit card": {
@@ -4659,14 +4605,6 @@
         "Algunas imágenes no se cargaron debido a archivos duplicados en la selección actual."
       ]
     },
-    "Offer feature": {
-      "Free": [
-        "Free"
-      ],
-      "Plus": [
-        "Plus"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visite nuestro ${ helpCenterLink } o contacte a nuestro ${ contactSupportLink }."
@@ -4869,6 +4807,9 @@
       "Timeout exceeded": [
         "Tiempo de espera agotado"
       ],
+      "VAT number": [
+        "Número de IVA"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Su moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo admiten pagos en euros."
       ],
@@ -4921,8 +4862,32 @@
       "ABN": [
         "Número de empresa australiano (ABN)"
       ],
+      "Add ABN": [
+        "Añadir ABN"
+      ],
+      "Add Business Number": [
+        "Añadir número de negocio"
+      ],
+      "Add EIN": [
+        "Añadir EIN"
+      ],
+      "Add VAT number": [
+        "Añadir número de IVA"
+      ],
       "Business Number": [
         "Número de negocio"
+      ],
+      "Edit ABN": [
+        "Editar ABN"
+      ],
+      "Edit Business Number": [
+        "Editar número de negocio"
+      ],
+      "Edit EIN": [
+        "Editar EIN"
+      ],
+      "Edit VAT number": [
+        "Editar número de IVA"
       ],
       "EIN": [
         "Número de identificación fiscal (EIN)"
@@ -4935,8 +4900,20 @@
       "A way to contact you": [
         "Una forma de contactarle"
       ],
+      "Anderson": [
+        "García"
+      ],
+      "Anytown": [
+        "Puertoalto"
+      ],
+      "Company name": [
+        "Nombre de la empresa"
+      ],
       "Gift code": [
         "Código de regalo"
+      ],
+      "Main street 12": [
+        "Calle del Sol, 12"
       ],
       "Organization name": [
         "Nombre de la organización"
@@ -4959,11 +4936,20 @@
       "Select a reason": [
         "Seleccione un motivo"
       ],
+      "Select country": [
+        "Seleccionar país"
+      ],
       "Select state": [
         "Seleccionar estado"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Comparta lo que cree que podría mejorar ${ BRAND_NAME }"
+      ],
+      "Thomas": [
+        "Andrea"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ],
       "Your organization name": [
         "El nombre de su organización"
@@ -4979,7 +4965,7 @@
     },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
-        "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, y ${ PASS_SHORT_APP_NAME }."
+        "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }."
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, y ${ CALENDAR_SHORT_APP_NAME }"
@@ -5057,7 +5043,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "¿Quiere cerrar la sesión sin restablecer la contraseña?"
+        "¿Desea cerrar la sesión sin restablecer la contraseña?"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -5179,10 +5165,10 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Acceda a contenido bloqueado y navegue de forma privada. Incluye 1700 servidores en más de 60 países, la velocidad VPN más alta, 10 conexiones VPN por usuario, servicios de streaming en todo el mundo, bloqueador de malware y anuncios, y más."
+        "Acceda a contenido bloqueado y navegue de forma privada. Incluye 1700 servidores en más de 60 países, la velocidad VPN más alta, 10 conexiones VPN por usuario, servicios de streaming en todo el mundo, bloqueador de malware y anuncios y más."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Acceda a contenido bloqueado y navegue de forma privada. Incluye 1700 servidores en más de 60 países, la velocidad VPN más alta, 10 conexiones VPN, servicios de streaming en todo el mundo, bloqueador de malware y anuncios, y más."
+        "Acceda a contenido bloqueado y navegue de forma privada. Incluye 1700 servidores en más de 60 países, la velocidad VPN más alta, 10 conexiones VPN, servicios de streaming en todo el mundo, bloqueador de malware y anuncios y más."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Todos nuestros servicios premium al máximo: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de Hide-my-email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
@@ -5411,6 +5397,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Detalles de facturación actualizados"
+      ],
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"
       ],
@@ -5555,6 +5544,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descargue las aplicaciones de ${ DRIVE_APP_NAME }"
+      ],
+      "Edit billing address": [
+        "Editar la dirección de la factura"
       ],
       "Edit credit/debit card": [
         "Editar tarjeta de crédito/débito"

@@ -150,6 +150,9 @@
       "Choose my own password": [
         "Kendi parolamı seçeceğim"
       ],
+      "Claim this address": [
+        "Bu adresi al"
+      ],
       "Close": [
         "Kapat"
       ],
@@ -420,6 +423,9 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName } edinin"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Ücretsiz bir ${ BRAND_NAME } adresi alın"
+      ],
       "Get a new encrypted email address": [
         "Yeni bir şifrelenmiş e-posta adresi edinin"
       ],
@@ -644,9 +650,6 @@
       ],
       "refresh the page": [
         "sayfayı yenile"
-      ],
-      "Reload": [
-        "Yenile"
       ],
       "Remove": [
         "Kaldır"
@@ -5308,6 +5311,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } etkinlikleri güvenli olarak eşitlemek ve şifrelemek için bir ${ BRAND_NAME } adresine gerek duyar. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } yeni takvim",
         "${ calendarsToBeCreatedCount } yeni takvim"
@@ -5469,8 +5475,17 @@
       "(default)": [
         "(varsayılan)"
       ],
+      "**Enable automatic backups** for peace of mind": [
+        "Rahat etmek için **otomatik yedeklemeyi açın**"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } gibi tüm ${ BRAND_NAME_TWO } hizmetlerini kullanabilmek için **bir ${ BRAND_NAME } adresi edinin**."
+      ],
+      "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
+        "Google Authenticator gibi diğer iki adımlı doğrulama uygulamalarında **var olan kodlarınızı içe aktarın**."
+      ],
+      "**Sync codes** to all your devices": [
+        "Tüm aygıtlarınızda **kodları eşitleyin**"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } diğer",
@@ -5516,14 +5531,14 @@
       "active": [
         "etkin"
       ],
-      "Activity monitor": [
-        "Etkinlik izleyici"
-      ],
       "Activity Monitor": [
         "Etkinlik izleyici"
       ],
       "add a recovery method": [
         "bir kurtarma yöntemi ekleyin"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Hesabınıza bir güvenlik katmanı daha ekleyin. Her oturum açtığınızda iki adımlı doğrulama ile kimliğinizi doğrulamanız gerekir."
       ],
       "Add domain": [
         "Etki alanı ekle"
@@ -5830,14 +5845,8 @@
       "Did you know?": [
         "Biliyor muydunuz?"
       ],
-      "Disable detailed events": [
-        "Ayrıntılı etkinlikleri kapat"
-      ],
       "Disabled countries": [
         "Devre dışı bırakılan ülkeler"
-      ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "${ formattedDateAndTime } zamanında kapatıldı"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "İki adımlı doğrulamayı kapatmak hesabınızın güvenliğini azaltacak. Bu işlemi yalnızca gerçekten gerekliyse yapın."
@@ -5903,6 +5912,9 @@
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "CSV dosyası kalıbımızı indirin, kullanıcı bilgilerini yazın ve bu kullanıcı hesaplarını eklemek için CSV dosyasını yükleyin."
       ],
+      "Download the app and import existing codes.": [
+        "Uygulamayı indirin ve var olan kodları içe aktarın."
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Kullanmak istediğiniz uygulamayı indirin ve gizliliğinizi gittiğiniz her yere götürün."
       ],
@@ -5945,17 +5957,11 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Ücretli özelliklere erişiminizi sürdürmek için otomatik yenilemeyi açın."
       ],
-      "Enable detailed events": [
-        "Ayrıntılı etkinlikler özelliğini aç"
-      ],
       "Enable single sign-on to keep your organization safe": [
         "Kuruluşunuzu güvende tutmak için tek oturum açmayı etkinleştirin"
       ],
       "Enabled countries": [
         "Etkinleştirilen ülkeler"
-      ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "${ formattedDateAndTime } zamanında açıldı"
       ],
       "Enabling auto-deletion…": [
         "Otomatik silme özelliği açılıyor…"
@@ -5977,6 +5983,9 @@
       ],
       "Enhance your network security": [
         "Ağ güvenliğinizi artırın"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Tümüyle güvenli ve şifrelenmiş iletişim sağlayın. Ücretsiz ${ BRAND_NAME } e-posta adresinizi şimdi alın."
       ],
       "Enter key manually instead": [
         "Bunun yerine anahtarı el ile yazın"
@@ -6059,14 +6068,14 @@
       "Gain visibility across your organization": [
         "Kuruluşunuzun genel görünümüne ulaşın"
       ],
+      "Gateway monitor": [
+        "Ağ geçidi izleyici"
+      ],
       "Gateways": [
         "Ağ geçitleri"
       ],
-      "Gateways monitoring is disabled.": [
-        "Ağ geçitleri izlemesi kapalı."
-      ],
-      "Gateways monitoring is enabled.": [
-        "Ağ geçitleri izlemesi açık."
+      "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
+        "Tüm aygıtlarınız için ${ AUTHENTICATOR_APP_NAME } uygulamasını edinin."
       ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } tarifesini edinin"
@@ -6171,9 +6180,6 @@
       "inactive": [
         "etkin değil"
       ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Kullanıcı IP adresi, konum ve İSS (İnternet hizmeti sağlayıcı) etkinlik günlüklerine eklensin"
-      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "%${ formattedTaxRate } ${ taxName } dahil: ${ price }"
       ],
@@ -6221,6 +6227,9 @@
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Bir sunucunun ülkesini değiştirmek 10 gün sürer. Bu yüzden seçiminizin doğru olduğundan emin olun."
+      ],
+      "It won't be linked to your ${ BRAND_NAME } Account, so there's **no risk of getting locked out**.": [
+        "${ BRAND_NAME } hesabınıza bağlanmayacağı için, **kilitlenme riskiniz yoktur**."
       ],
       "It's better to have:": [
         "Şöyle olması daha iyidir:"
@@ -6324,9 +6333,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanlama platformumuz Calendly açılacak."
       ],
-      "Loading detailed events current status.": [
-        "Ayrıntılı etkinliklerin güncel durumu yükleniyor."
-      ],
       "Loading eduGAIN data...": [
         "eduGAIN verileri yükleniyor..."
       ],
@@ -6359,6 +6365,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
+      ],
+      "Maybe later": [
+        "Belki daha sonra"
       ],
       "Medium Priority": [
         "Orta öncelik"
@@ -6847,6 +6856,9 @@
       "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
         "Gruplar özelliği geçerli tarifenizde bulunmuyor. Daha önce oluşturulmuş gruplar kullanılamaz ve yalnızca silinebilir."
       ],
+      "The most secure and private two-factor authentication app, that's free and open-source.": [
+        "En güvenli ve gizli iki adımlı doğrulama uygulaması, ücretsiz ve açık kaynaklı."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "Oturum açtıklarında kullanıcılarınıza görüntülenecek ad."
       ],
@@ -7093,6 +7105,9 @@
       "Vault deleted": [
         "Kasa silindi"
       ],
+      "Vault either deleted or requires access permissions": [
+        "Kasa silinmiş ya da erişim izni gerektiriyor"
+      ],
       "Vault shared with email": [
         "Kasa e-posta ile paylaşıldı"
       ],
@@ -7227,6 +7242,9 @@
       ],
       "Why?": [
         "Neden?"
+      ],
+      "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
+        "${ AUTHENTICATOR_APP_NAME } ile şunları yapabilirsiniz:"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Bir Business ya da Enterprise tarifesi ile kuruluşunuz için ${ boldDedicatedServers } satın alabilir ve bunlara hangi kullanıcıların erişebileceğini kontrol etmek için ${ boldGateways } ayarlayabilirsiniz."
@@ -8308,9 +8326,6 @@
       "VAT": [
         "KDV"
       ],
-      "VAT identification number": [
-        "Vergi kimlik numarası"
-      ],
       "Verification code": [
         "Doğrulama kodu"
       ],
@@ -8599,6 +8614,9 @@
       "Upgrade your plan": [
         "Tarifenizi yükseltin"
       ],
+      "Vault": [
+        "Kasa"
+      ],
       "View guide": [
         "Rehberi görüntüle"
       ],
@@ -8828,9 +8846,6 @@
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Özel e-posta adresleri (siz@sirketiniz.com gibi) oluşturmak için özel etki alanınızı ${ BRAND_NAME } ile ilişkilendirin. Süreç boyunca yardımcımız size yol gösterecek."
-      ],
-      "View account-related events across your organization.": [
-        "Kuruluşunuz genelindeki hesapla etkinliklerini görüntüleyin."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ücretsiz deneme süreniz doldu. Hesabınıza erişim yakında kapatılacak. ${ action }"
@@ -10644,6 +10659,9 @@
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
       ],
+      "VAT number": [
+        "KDV numarası"
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Seçilmiş ödeme yönteminizden ${ amountToCharge } ödeme alınacak."
       ],
@@ -10699,8 +10717,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "ABN kodu ekle"
+      ],
+      "Add Business Number": [
+        "İş numarası ekle"
+      ],
+      "Add EIN": [
+        "EIN kodu ekle"
+      ],
+      "Add VAT number": [
+        "KDV numarası ekle"
+      ],
       "Business Number": [
         "İş numarası"
+      ],
+      "Edit ABN": [
+        "ABN kodunu düzenle"
+      ],
+      "Edit Business Number": [
+        "İş numarasını düzenle"
+      ],
+      "Edit EIN": [
+        "EIN kodunu düzenle"
+      ],
+      "Edit VAT number": [
+        "KDV numarasını düzenle"
       ],
       "EIN": [
         "EIN"
@@ -10828,6 +10870,9 @@
       ],
       "Select a reason": [
         "Bir neden seçin"
+      ],
+      "Select country": [
+        "Ülke seçin"
       ],
       "Select state": [
         "İl seçin"
@@ -13415,8 +13460,8 @@
       "Choose user affiliations": [
         "Kullanıcı ilişkilerini seçin"
       ],
-      "Click a value in the table to use it as filter": [
-        "Tablodan süzmek istediğiniz değere tıklayın"
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } adresinizi alın"
       ],
       "Close": [
         "Kapat"
@@ -13441,6 +13486,9 @@
       ],
       "Connect apps and devices": [
         "Uygulamaları ve aygıtları bağlayın"
+      ],
+      "Connect more addresses": [
+        "Başka adresler bağlayın"
       ],
       "Connect organization": [
         "Kuruluş ile bağlantı kur"
@@ -13554,6 +13602,9 @@
       ],
       "Deny access to user?": [
         "Kullanıcının erişme izni reddedilsin mi?"
+      ],
+      "Description": [
+        "Açıklama"
       ],
       "Device": [
         "Aygıt"
@@ -13763,6 +13814,9 @@
       ],
       "Invoices": [
         "Faturalar"
+      ],
+      "IP": [
+        "IP"
       ],
       "Limit reached": [
         "Sınıra ulaşıldı"
@@ -14019,6 +14073,9 @@
       ],
       "There are no groups": [
         "Herhangi bir grup yok"
+      ],
+      "Try ${ AUTHENTICATOR_APP_NAME }": [
+        "${ AUTHENTICATOR_APP_NAME } uygulamasını deneyin"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"

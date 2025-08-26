@@ -3130,6 +3130,14 @@
         "90 分钟"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "文本字段可选。您在本表中提供的信息只会出现在今后开具的发票上，不会影响现有发票。"
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "文本字段为选填字段。您在此表单中提供的信息只会更改您选择的发票，而不会更改您未来的发票详细信息。"
+      ]
+    },
     "Edit event button tooltip": {
       "Edit event": [
         "编辑事件"
@@ -3337,6 +3345,9 @@
       ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "目前无法编辑帐单地址。请稍后重试。"
       ],
       "Email address disabled": [
         "邮箱地址已停用"
@@ -3563,6 +3574,9 @@
       "Port is required": [
         "端口号必须填写"
       ],
+      "Postal code is required": [
+        "邮政编码为必填项"
+      ],
       "Primary address key is not decrypted": [
         "主密钥尚未解密"
       ],
@@ -3727,6 +3741,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "您的 Zoom 连接已过期，请重新连接以继续。"
+      ],
+      "ZIP code is required": [
+        "必须填写邮政编码"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4692,6 +4709,12 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } 至少需要1台专用服务器 ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } 在 ${ daysLeft } 天后到期。"
+      ],
+      "${ planName } expires today.": [
+        "${ planName } 今天到期。"
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } 通过对可疑活动进行专门监测来保护您的账户。"
@@ -6194,6 +6217,9 @@
       "Colors": [
         "颜色"
       ],
+      "Company": [
+        "公司"
+      ],
       "Company name": [
         "公司名称"
       ],
@@ -6485,6 +6511,9 @@
       "Start date": [
         "起始日期"
       ],
+      "State": [
+        "省份/地区"
+      ],
       "Street address": [
         "街道地址"
       ],
@@ -6571,6 +6600,9 @@
       ],
       "Your password (admin)": [
         "您的密码（管理员）"
+      ],
+      "ZIP code": [
+        "邮政编码"
       ]
     },
     "Label for contact group color": {
@@ -8662,6 +8694,15 @@
       "Add title": [
         "添加标题"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "任何城镇"
+      ],
+      "Company name": [
+        "公司名称"
+      ],
       "E.g., ": [
         "例如："
       ],
@@ -8691,6 +8732,9 @@
       ],
       "Leave a note for all participants": [
         "给所有参与者留言"
+      ],
+      "Main street 12": [
+        "主要街道 12"
       ],
       "Name": [
         "名称"
@@ -8739,6 +8783,12 @@
       ],
       "Start typing an email address": [
         "请输入邮箱地址"
+      ],
+      "Thomas": [
+        "Thomas"
+      ],
+      "VAT number": [
+        "增值税号"
       ],
       "Your organization name": [
         "您的组织名称"
@@ -9982,6 +10032,9 @@
       "Answer sent and event deleted": [
         "答复已发送且日程已删除"
       ],
+      "Billing details updated": [
+        "账单详细信息已更新"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "已新增日历，可能需要几分钟才能同步"
       ],
@@ -10485,6 +10538,9 @@
       ],
       "Drop to upload": [
         "拖拽文件并上传"
+      ],
+      "Edit billing address": [
+        "编辑账单地址"
       ],
       "Edit contact": [
         "编辑联系人"

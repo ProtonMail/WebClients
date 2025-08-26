@@ -1069,6 +1069,9 @@
       "Refer a friend": [
         "Запрасіць сябра"
       ],
+      "Refresh": [
+        "Абнавіць"
+      ],
       "Refresh status": [
         "Абнавіць статус"
       ],
@@ -1550,22 +1553,22 @@
         "Карыстальнік"
       ],
       "Verify": [
-        "Праверка"
+        "Спраўдзіць"
       ],
       "Verify account": [
-        "Праверыць уліковы запіс"
+        "Спраўдзіць уліковы запіс"
       ],
       "Verify code": [
-        "Праверыць код"
+        "Спраўдзіць код"
       ],
       "Verify code again": [
-        "Праверыць код яшчэ раз"
+        "Спраўдзіць код яшчэ раз"
       ],
       "Verify domain": [
-        "Праверыць дамен"
+        "Спраўдзіць дамен"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
-        "Праверыць дамен ${ unverifiedSSODomain.DomainName }"
+        "Спраўдзіць дамен ${ unverifiedSSODomain.DomainName }"
       ],
       "View": [
         "Прагледзець"
@@ -4754,10 +4757,10 @@
     },
     "Email": {
       "Email verified": [
-        "Электронная пошта праверана"
+        "Электронная пошта спраўджана"
       ],
       "Thank you for verifying your email address.": [
-        "Дзякуй, што праверылі свой адрас электроннай пошты"
+        "Дзякуй, што спраўдзілі свой адрас электроннай пошты"
       ],
       "You can safely close this tab.": [
         "Вы можаце бяспечна закрыць гэту ўкладку."
@@ -4819,13 +4822,13 @@
     },
     "Email body for response to invitation": {
       "${ emailAddress } accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } прыняў(-ла) ваша запрашэнне на ${ eventTitle }"
+        "${ emailAddress } прыняў ваша запрашэнне на ${ eventTitle }"
       ],
       "${ emailAddress } declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } адхіліў(-ла) ваша запрашэнне на ${ eventTitle }"
+        "${ emailAddress } адхіліў ваша запрашэнне на ${ eventTitle }"
       ],
       "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } умоўна прыняў(-ла) ваша запрашэнне на ${ eventTitle }"
+        "${ emailAddress } умоўна прыняў ваша запрашэнне на ${ eventTitle }"
       ]
     },
     "Email spam notification": {
@@ -4920,7 +4923,7 @@
     },
     "Email verification": {
       "Verification email sent to ${ address }": [
-        "Праверачны ліст адпраўлены на ${ address }"
+        "Ліст са спраўджаннем адпраўлены на ${ address }"
       ]
     },
     "email_forwarding_2023: Action": {
@@ -5264,6 +5267,9 @@
       "Add emergency contact": [
         "Дадаць экстранны кантакт"
       ],
+      "Added on ${ formattedDate }": [
+        "Дададзена ${ formattedDate }"
+      ],
       "Change access wait time": [
         "Змяніць час чакання доступу"
       ],
@@ -5278,6 +5284,9 @@
       ],
       "Disabled": [
         "Адключана"
+      ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "Уключыце аўтаматычнае падаўжэнне сваёй падпіскі, каб не страціць экстранны доступ."
       ],
       "Emergency access": [
         "Экстранны доступ"
@@ -5297,6 +5306,9 @@
       "Emergency contact removed": [
         "Экстранны кантакт выдалены"
       ],
+      "Enable auto-renew": [
+        "Уключыць аўтаматычнае падаўжэнне"
+      ],
       "Give access now": [
         "Даць доступ"
       ],
@@ -5315,9 +5327,6 @@
       "None": [
         "Няма"
       ],
-      "on ${ formattedAccessibleAt }": [
-        "${ formattedAccessibleAt }"
-      ],
       "Only ": [
         "Толькі "
       ],
@@ -5330,8 +5339,14 @@
       "People who trust me": [
         "Людзі, якія давяраюць мне"
       ],
+      "Protect your legacy with emergency access": [
+        "Абараніце свае даныя з дапамогай экстраннага доступу"
+      ],
       "Remove trusted contact": [
         "Выдаліць давераны кантакт"
+      ],
+      "Renew to get emergency access again.": [
+        "Падоўжыце сваю падпіску, каб зноў атрымаць функцыю экстраннага доступу."
       ],
       "Request access?": [
         "Запытаць доступ?"
@@ -5341,6 +5356,9 @@
       ],
       "Stop being trusted contact?": [
         "Перастаць быць давераным кантактам?"
+      ],
+      "Subscription expired": [
+        "Падпіска пратэрмінавана"
       ],
       "They added me as trusted contact. I can access their account in case of an emergency.": [
         "Яны дадалі мяне ў якасці давераганага кантакту і я магу атрымліваць доступ да іх улікогвага запісу ў выпадку экстраннай сітуацыі."
@@ -5359,6 +5377,9 @@
       ],
       "Trusted contact": [
         "Давераны кантакт"
+      ],
+      "Upgrade": [
+        "Палепшыць"
       ],
       "Upgrade to ${ planName }": [
         "Палепшыць да ${ planName }"
@@ -5986,10 +6007,10 @@
         "Невядомы статус плацежнага токена"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        "Запампаваны файл з'яўляецца несапраўдным прыватным ключом. Праверце яго і паспрабуйце яшчэ раз."
+        "Запампаваны файл з'яўляецца несапраўдным прыватным ключом. Спраўдзіце яго і паспрабуйце яшчэ раз."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
-        "Запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Праверце іх і паспрабуйце яшчэ раз."
+        "Запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз."
       ],
       "Username must begin with a letter or digit": [
         "Імя карыстальніка павінна пачынацца з літары або лічбы"
@@ -6253,19 +6274,19 @@
         "Звязацца з ${ BRAND_NAME }"
       ],
       "Please ${ signIn } to resend a recovery email verification request.": [
-        "${ signIn }, каб паўторна адправіць запыт на праверку электроннай пошты для аднаўлення доступу."
+        "${ signIn }, каб паўторна адправіць запыт на спраўджанне электроннай пошты для аднаўлення доступу."
       ],
       "sign in": [
         "увайсці"
       ],
       "Sign in to verify": [
-        "Увайдзіце, каб пацвердзіць"
+        "Увайдзіце, каб спраўдзіць"
       ],
       "There was a problem removing your email address.": [
         "Узнікла праблема пры выдаленні вашага адраса электроннай пошты."
       ],
       "There was a problem verifying your email address.": [
-        "Узнікла праблема з праверкай вашага адраса электроннай пошты."
+        "Узнікла праблема са спраўджаннем вашага адраса электроннай пошты."
       ]
     },
     "Error message, unsubscribe": {
@@ -6863,7 +6884,7 @@
         "Для ўключэння 2ФА праз ключ бяспекі, вы павінны актываваць 2ФА праз праграму аўтэнтыфікацыі"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
-        "Пацвердзіце сваю ідэнтычнасць пры дапамозе фізічнага ключа бяспекі U2F або FIDO2"
+        "Спраўдзіце сваю ідэнтычнасць пры дапамозе фізічнага ключа бяспекі U2F або FIDO2"
       ],
       "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
         "Вы дасягнулі максімальнай колькасці ў ${ maxSecurityKeyLength } ключ бяспекі.",
@@ -8008,10 +8029,10 @@
         "${ number } серверы"
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
-        "${ numberOfNonPrivateKeys } запампаваны файл з'яўляецца несапраўдным прыватным ключом. Праверце яго і паспрабуйце яшчэ раз.",
-        "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Праверце іх і паспрабуйце яшчэ раз.",
-        "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Праверце іх і паспрабуйце яшчэ раз.",
-        "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Праверце іх і паспрабуйце яшчэ раз."
+        "${ numberOfNonPrivateKeys } запампаваны файл з'яўляецца несапраўдным прыватным ключом. Спраўдзіце яго/іх і паспрабуйце яшчэ раз.",
+        "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз.",
+        "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз.",
+        "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз."
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
         "${ PASS_APP_NAME } дазваляе вам захоўваць паролі, нататкі і іншыя канфідэнцыяльныя звесткі з дапамогай скразнога шыфравання. Праграмы даступны для ${ ios }, ${ android } і ў вашым браўзеры ${ browser }."
@@ -8163,11 +8184,20 @@
       "**${ appName }** is not supported.": [
         "**${ appName }** не падтрымліваецца."
       ],
+      "**Enable automatic backups** for peace of mind": [
+        "**Уключыць аўтаматычнае рэзерваванне** для душэўнага спакою"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Атрымайце адрас ${ BRAND_NAME }**, каб карыстацца ўсімі сэрвісамі ${ BRAND_NAME_TWO }, уключаючы ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }."
       ],
+      "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
+        "**Імпартуйце свае існуючыя коды** з іншых 2ФА праграм, такіх як Google Authenticator"
+      ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Запрашайце сваіх сяброў** у ${ BRAND_NAME } са сваёй рэферальнай спасылкай."
+      ],
+      "**Sync codes** to all your devices": [
+        "**Сінхранізуйце коды** з усімі вашымі прыладамі"
       ],
       "+ ${ invisibleCount } More": [
         "+ яшчэ ${ invisibleCount }",
@@ -8212,7 +8242,7 @@
         "Назва, якая дапаможа вам вызначыць, дзе вы яго выкарыстоўваеце, каб вы маглі лёгка адклікаць яго або падоўжыць яго пазней."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Нумар тэлефона можа быць выкарыстаны для праверкі аднаго ўліковага запісу ${ BRAND_NAME }"
+        "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
       "A recovery file lets you unlock and view your data after account recovery": [
         "Файл аднаўлення дазваляе разблакіраваць і прагледзець вашы даныя пасля аднаўлення ўліковага запісу"
@@ -8232,6 +8262,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ да ўліковага запісу абмежаваны з прычыны неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
       ],
+      "Account monitor": [
+        "Назіранне за ўліковым запісам"
+      ],
       "account recovery and data recovery method": [
         "аднаўленне ўліковага запісу і спосаб аднаўлення даных"
       ],
@@ -8250,9 +8283,6 @@
       "active": [
         "актыўна"
       ],
-      "Activity monitor": [
-        "Манітор актыўнасці"
-      ],
       "Activity Monitor": [
         "Манітор актыўнасці"
       ],
@@ -8267,6 +8297,9 @@
       ],
       "Add a recovery phone number": [
         "Дадаць нумар тэлефона для аднаўлення"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Дадайце яшчэ адзін слой абароны ў свой уліковы запіс. Вам неабходна будзе спраўдзіць сваю асобу з дапамогай 2ФА пры кожным уваходзе."
       ],
       "Add domain": [
         "Дадаць дамен"
@@ -8360,6 +8393,9 @@
       ],
       "Allocated": [
         "Вылучана"
+      ],
+      "Allow logging of location and connection details": [
+        "Дазволіць журналяванне месцазнаходжання і падрабязнасці падключэння"
       ],
       "Allow recovery by email": [
         "Дазволіць аднаўленне доступу па электроннай пошце"
@@ -8769,9 +8805,6 @@
       "Did you know?": [
         "Ці ведалі вы што?"
       ],
-      "Disable detailed events": [
-        "Адключыць падрабязныя падзеі"
-      ],
       "Disable recovery by email address": [
         "Адключыць аднаўленне доступу па адрасе электроннай пошты"
       ],
@@ -8781,8 +8814,8 @@
       "Disabled countries": [
         "Адключаныя краіны"
       ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Адключана ${ formattedDateAndTime }"
+      "Disabled on ${ boldValue }": [
+        "Адключана ў ${ boldValue }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Адключэнне двухфактарнай аўтэнтыфікацыі зробіць ваш уліковы запіс менш бяспечным. Працягвайце толькі ў тым выпадку, калі гэта сапраўды неабходна."
@@ -8862,6 +8895,9 @@
       "Download recovery file": [
         "Спампаваць файл аднаўлення"
       ],
+      "Download the app and import existing codes.": [
+        "Спампаваць праграму і імпартаваць існуючыя коды."
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Спампуйце вашу абраную праграму сёння і прыватнасць застанецца з вамі ў любым месцы."
       ],
@@ -8922,9 +8958,6 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Уключыце аўтаматычнае падаўжэнне для захавання доступу да вашых прэміяльных функцый."
       ],
-      "Enable detailed events": [
-        "Уключыць падрабязныя падзеі"
-      ],
       "Enable email notifications": [
         "Уключыць апавяшчэнні па электроннай пошце"
       ],
@@ -8940,8 +8973,8 @@
       "Enabled countries": [
         "Уключаныя краіны"
       ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Уключана ${ formattedDateAndTime }"
+      "Enabled on ${ boldValue }": [
+        "Уключана ў ${ boldValue }"
       ],
       "Enabling auto-deletion…": [
         "Уключэнне аўтавыдалення…"
@@ -9007,7 +9040,7 @@
         "Увядзіце пароль арганізацыі для аднаўлення правоў адміністратара. ${ learnMore }"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Увядзіце праверачны код, які быў адпраўлены на ${ destinationText }."
+        "Увядзіце код спраўджання, які быў адпраўлены на ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Увядзіце праверачны код. Лічба ${ digit }."
@@ -9108,17 +9141,17 @@
       "Gain visibility across your organization": [
         "Станьце больш заўважным у сваёй арганізацыі"
       ],
+      "Gateway monitor": [
+        "Назіранне за шлюзом"
+      ],
       "Gateways": [
         "Шлюзы"
       ],
-      "Gateways monitoring is disabled.": [
-        "Назіранне за шлюзамі выключана."
-      ],
-      "Gateways monitoring is enabled.": [
-        "Назіранне за шлюзамі ўключана."
-      ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Генерацыя новай фразы аднаўлення прывядзе да дэактывацыі папярэдняй."
+      ],
+      "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
+        "Атрымайце ${ AUTHENTICATOR_APP_NAME } для ўсіх сваіх прылад."
       ],
       "Get ${ upsellPlanName }": [
         "Атрымайце ${ upsellPlanName }"
@@ -9297,14 +9330,14 @@
       "inactive": [
         "неактыўна"
       ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Уключыць IP-адрас карыстальніка, месцазнаходжанне і ISP (пастаўшчыка паслуг інтэрнэту) у журналы падзей"
+      "Include device, location, and IP details": [
+        "Уключыць падрабязнасці аб прыладзе, месцазнаходжанні і IP"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Уключае ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
-        "Павялічце бяспеку свайго ўліковага запісу з дапамогай праверкі адраса электроннай пошты."
+        "Павялічце бяспеку свайго ўліковага запісу з дапамогай спраўджання адраса электроннай пошты."
       ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
@@ -9377,6 +9410,9 @@
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Пераключэнне краіны сервера зойме 10 дзён і таму, вам варта пераканацца ў правільнасці выбару сервера."
+      ],
+      "It won't be linked to your ${ BRAND_NAME } Account, so there's **no risk of getting locked out**.": [
+        "Не будзе звязана з вашым уліковым запісам ${ BRAND_NAME }, таму **адсутнічае рызыка блакіроўкі**."
       ],
       "It's better to have:": [
         "Лепш за ўсё, каб у вас было:"
@@ -9522,9 +9558,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Пачакайце, адбываецца загрузка календара. Вы будзеце перанакіраваны на нашу платформу планавання Calendly, якая адкрыецца ў новай укладцы."
       ],
-      "Loading detailed events current status.": [
-        "Бягучы статус загрузкі падрабязных падзей."
-      ],
       "Loading eduGAIN data...": [
         "Загрузка даных eduGAIN..."
       ],
@@ -9560,6 +9593,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Лагатып Mastercard SecureCode"
+      ],
+      "Maybe later": [
+        "Магчыма пазней"
       ],
       "Medium Priority": [
         "Сярэдні прыярытэт"
@@ -9744,6 +9780,9 @@
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Удзельнікам арганізацыі неабходна разблакіраваць ${ PASS_APP_NAME } з дапамогай свайго пароля або PIN-кода і г.д."
       ],
+      "Organization monitor": [
+        "Назіранне за арганізацыяй"
+      ],
       "Organization size": [
         "Памер арганізацыі"
       ],
@@ -9794,6 +9833,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - карыстальніцкая электронная пошта выдалена"
+      ],
+      "Pass usage logs": [
+        "Журналы выкарыстання Pass"
       ],
       "password": [
         "пароль"
@@ -9895,7 +9937,7 @@
         "Скарыстайцеся іншым браўзерам або спампуйце файл."
       ],
       "Please verify payment at the new tab which was opened.": [
-        "Праверце плацеж у новай адкрытай укладцы."
+        "Спраўдзіце плацеж у новай адкрытай укладцы."
       ],
       "Please wait till your changes are synced with the server.": [
         "Пачакайце, пакуль вашы змены сінхранізуюцца з серверам."
@@ -10162,7 +10204,7 @@
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
-        "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў."
+        "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для вашых карыстальніцкіх адрасоў дамена."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў. Каб запытаць доступ, ${ createTicket } з апісаннем вашых варыянтаў выкарыстання, якія карыстальніцкія дамены вы б хацелі выкарыстоўваць, а таксама чаканыя штогадзінныя і штодзённыя аб'ёмы лістоў"
@@ -10347,6 +10389,9 @@
       "The most recent data update, excluding breaches.": [
         "Апошняе абнаўленне даных без уліку парушэнняў."
       ],
+      "The most secure and private two-factor authentication app, that's free and open-source.": [
+        "Адна з самых бяспечных і прыватных праграм двухфактарнай аўтэнтыфікацыі. Распаўсюджваецца бясплатна і мае адкрыты зыходны код."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "Гэта імя ўбачаць вашы карыстальнікі, калі яны ўвойдуць у сістэму."
       ],
@@ -10423,7 +10468,7 @@
         "Гэта спасылка вядзе на вэб-сайт, на якім могуць паспрабаваць скрасці вашы даныя: паролі або інфармацыю аб крэдытных картках."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Гэта спасылка можа быць гамаграфічнай атакай. Праверце спасылку, якую вы хочаце наведаць або не пераходзьце па ёй."
+        "Гэта спасылка можа быць гамаграфічнай атакай. Спраўдзіце спасылку, якую вы хочаце наведаць або не пераходзьце па ёй."
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Гэта паведамленне не трапіць у службу падтрымкі, калі ў вас праблемы з нашым сэрвісам або неабходны нейкія дзеянні з нашага боку ${ supportLink }"
@@ -10510,7 +10555,7 @@
         "у ${ product } Business"
       ],
       "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Каб дазволіць дамену **${ domainName }** выкарыстоўваць SAML SSO, вы павінны праверыць яго ўладальніка дадаўшы наступны запіс DNS TXT у свой дамен у вашым пастаўшчыку DNS."
+        "Каб дазволіць дамену **${ domainName }** выкарыстоўваць SAML SSO, вы павінны спраўдзіць яго ўладальніка дадаўшы наступны запіс DNS TXT у свой дамен у вашым пастаўшчыку DNS."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Каб не страціць даныя, выдаляйце іх толькі пасля экспартавання копіі або калі цалкам упэўнены ў сваіх дзеяннях."
@@ -10555,10 +10600,10 @@
         "Каб быць у курсе апошніх распрацовак прадуктаў ${ BRAND_NAME }, вы можаце падпісацца на нашу рассылку, а таксама час ад часу ${ blogLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
-        "Для працягу, выберыце спосаб аднаўлення ўліковага запісу, каб мы маглі праверыць запыт."
+        "Для працягу, выберыце спосаб аднаўлення ўліковага запісу, каб мы маглі спраўдзіць запыт."
       ],
       "To proceed, we must verify the request.": [
-        "Для працягу, неабходна праверыць запыт."
+        "Для працягу, неабходна спраўдзіць запыт."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Для абароны вашага падключэння да інтэрнэту, вам неабходна спампаваць і ўсталяваць праграму ${ VPN_APP_NAME } для вашай прылады і падключыцца да сервера."
@@ -10612,7 +10657,7 @@
         "Немагчыма праверыць бягучы статус назірання за шлюзамі."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
-        "Немагчыма праверыць файл аднаўлення подпісу. Звярніцеся ў службу падтрымкі."
+        "Немагчыма спраўдзіць файл аднаўлення подпісу. Звярніцеся ў службу падтрымкі."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "На жаль, для гэтага ўліковага запісу адсутнічаюць спосабы аднаўлення."
@@ -10672,7 +10717,7 @@
         "Запампуйце лагатып сваёй арганізацыі, каб павысіць ідэнтычнасць вашага брэнда і стварыць персаналізаваны досвед для вашых карыстальнікаў."
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        "Запампаваны файл з'яўляецца несапраўдным прыватным ключом. Праверце яго і паспрабуйце яшчэ раз."
+        "Запампаваны файл з'яўляецца несапраўдным прыватным ключом. Спраўдзіце яго і паспрабуйце яшчэ раз."
       ],
       "Uppercase and lowercase letters": [
         "Маленькія і вялікія літары"
@@ -10735,22 +10780,22 @@
         "Праверка можа заняць некалькі хвілін."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Праверка адкрые новую ўкладку, адключыце блакіроўку ўсплывальных вокнаў. З вас не будуць спаганяцца грашовыя сродкі. Любая сума, якая выкарыстоўваецца для праверкі вашай карткі, будзе неадкладна вернута."
+        "Спраўджанне адкрые новую ўкладку, адключыце блакіроўку ўсплывальных вокнаў. З вас не будуць спаганяцца грашовыя сродкі. Любая сума, якая выкарыстоўваецца для спраўджання вашай карткі, будзе неадкладна вернута."
       ],
       "Verify domain": [
-        "Праверыць дамен"
+        "Спраўдзіць дамен"
       ],
       "Verify email address": [
-        "Пацвярджэнне адраса электроннай пошты"
+        "Спраўджанне адраса электроннай пошты"
       ],
       "Verify phone number": [
-        "Пацвярджэнне нумара тэлефона"
+        "Спраўджанне нумара тэлефона"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
-        "Пацвердзіце сваю ідэнтычнасць пры дапамозе аднаразовага пароля з абмежаваным тэрмінам дзеяння, які атрыманы ад праграмы аўтэнтыфікацыі"
+        "Спраўдзіце сваю ідэнтычнасць пры дапамозе аднаразовага пароля з абмежаваным тэрмінам дзеяння, які атрыманы ад праграмы аўтэнтыфікацыі"
       ],
       "Verifying your payment": [
-        "Праверка вашага плацяжу"
+        "Спраўджанне вашага плацяжу"
       ],
       "Version ${ version }": [
         "Версія ${ version }"
@@ -10763,6 +10808,9 @@
       ],
       "View and manage your groups.": [
         "Прагляд і кіраванне вашай групай."
+      ],
+      "View VPN session details for your organization.": [
+        "Паглядзець падрабязнасці сеанса VPN для вашай арганізацыі."
       ],
       "View, download, and manage your invoices.": [
         "Прагляд, спампоўванне і кіраванне вашымі рахункамі."
@@ -10867,10 +10915,10 @@
         "Калі адключана, то гэта не дазволіць загружаць відарысы на вашу прыладу без вашай згоды.\t"
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
-        "Калі адключана, гэта прадухіляе загрузку аддаленых відарысаў без вашага ведама."
+        "Калі адключана, то гэта прадухіліць загрузку аддаленых відарысаў без вашага ведама."
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Пры ўключанай функцыі будзе адбывацца праверка, ці з'яўляецца ${ MAIL_APP_NAME } вашай прадвызначанай паштовай праграмай і калі гэта не так, то вы атрымаеце апавяшчэнне аб гэтым."
+        "Калі ўключана, то будзе адбывацца праверка, ці з'яўляецца ${ MAIL_APP_NAME } вашай прадвызначанай паштовай праграмай і калі гэта не так, то вы атрымаеце апавяшчэнне аб гэтым."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Пры ўключэнні SAML для ${ appName } у вашым пастаўшчыку пасведчанняў, вам магчыма будзе прапанавана скарыстацца зваротным выклікам URL (ACS) і ідэнтыфікатарам эмітэнта. Проста скапіюйце даныя знізу, а потым устаўце іх у палі вашага пастаўшчыка пасведчанняў."
@@ -10904,6 +10952,9 @@
       ],
       "Why?": [
         "Чаму?"
+      ],
+      "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
+        "З ${ AUTHENTICATOR_APP_NAME } вы зможаце:"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "З тарыфнымі планамі Business або Enterprise, вы можаце купіць ${ boldDedicatedServers } для вашай арганізацыі і наладзіць ${ boldGateways } правы доступу карыстальнікаў да яго."
@@ -11143,7 +11194,7 @@
         "Вы НЕ зможаце расшыфраваць ніякія паведамленні, файлы або іншыя даныя, якія былі зашыфраваны гэтым ключом. Усе даныя, падпісаныя гэтым ключом, больш не будуць правярацца праграмамі ${ BRAND_NAME }."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для праверкі плацяжу."
+        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "З вас не будзе спаганяцца плата, калі вы скасуеце да ${ trialEndsOnFormatted }."
@@ -11263,7 +11314,7 @@
         "Ваша арганізацыя выкарыстоўвае адзіны ўваход (SSO). Націсніце кнопку \"Увайсці\", каб працягнуць уваход з вашым пастаўшчыком SSO."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
-        "Лісты вашай арганізацыі абаронены скразным шыфраваннем з выкарыстаннем ключа арганізацыі. Гэты адбітак можна выкарыстоўваць для праверкі таго, што ўсе адміністратары вашага ўліковага запісу маюць аднолькавы ключ."
+        "Лісты вашай арганізацыі абаронены скразным шыфраваннем з выкарыстаннем ключа арганізацыі. Гэты адбітак можна выкарыстоўваць для спраўджання таго, што ўсе адміністратары вашага ўліковага запісу маюць аднолькавы ключ."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Вашы рэквізіты плацяжу абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
@@ -11352,7 +11403,7 @@
         "Дадайце новага карыстальніка ў вашу арганізацыю і стварыце для яго адрас."
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
-        "У мэтах бяспекі нам трэба праверыць, што вы з'яўляецеся ўладальнікам ${ domainName }. Калі ласка, дадайце наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен). Вы можаце знайсці прыклад і некалькі карысных парад вось ${ kbLink }."
+        "У мэтах бяспекі нам трэба спраўдзіць, што вы з'яўляецеся ўладальнікам ${ domainName }. Дадайце наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен). Вы можаце знайсці прыклад і некалькі карысных парад вось ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -12995,14 +13046,11 @@
       "VAT": [
         "ПДВ"
       ],
-      "VAT identification number": [
-        "Ідэнтыфікацыйны нумар ПДВ"
-      ],
       "Verification code": [
-        "Праверачны код"
+        "Код спраўджання"
       ],
       "Verify keys with Key Transparency": [
-        "Праверка ключоў пры дапамозе Key Transparency"
+        "Спраўджанне ключоў пры дапамозе Key Transparency"
       ],
       "Video conferencing with Zoom": [
         "Відэаканферэнцыя з Zoom"
@@ -13122,7 +13170,7 @@
         "Дамен"
       ],
       "Verify": [
-        "Праверка"
+        "Спраўджанне"
       ]
     },
     "Label on payment method": {
@@ -13466,6 +13514,9 @@
       "Learn more": [
         "Даведацца больш"
       ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Пераканайцеся, што вашы прэміяльныя функцыі больш не выкарыстоўваюцца або палепшыце свой тарыфны план, каб працягваць выкарыстоўваць ${ BRAND_NAME }."
+      ],
       "upgrade for more storage": [
         "палепшыце тарыфны план, каб атрымаць больш сховішча"
       ],
@@ -13732,8 +13783,14 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Падключыце свой карыстальніцкі дамен да ${ BRAND_NAME }, каб наладзіць адрасы электроннай пошты (напрыклад, vy@vashacampaniya.by). Наш майстар дапаможа вам з працэсам наладжвання."
       ],
-      "View account-related events across your organization.": [
-        "Паглядзець падзеі, якія звязаны з уліковым запісам ва ўсёй арганізацыі."
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "Паглядзець дзейнасць ${ PASS_APP_NAME } па ўсёй вашай арганізацыі."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "Паглядзець змяненні ў вашай арганізацыі і іншыя дзеянні адміністратара."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "Паглядзець падзеі ўваходу, аднаўлення і бяспекі карыстальніка."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваш бясплатны пробны перыяд завяршыўся. Доступ да вашых уліковых запісаў будзе неўзабаве адключаны. ${ action }"
@@ -14432,7 +14489,7 @@
         "Воблачны рэдактар дакументаў"
       ],
       "Organize items with multiple vaults": [
-        "Упарадкаванне элементаў з некалькімі сховішчамі"
+        "Упарадкаванне элементаў з дапамогай некалькіх сховішч"
       ],
       "Passkeys supported": [
         "Падтрымка ключоў доступу"
@@ -15270,6 +15327,9 @@
       "Invalid code": [
         "Памылковы код"
       ],
+      "Invalid input. Search an email or detail.": [
+        "Памылкова ўведзеныя даныя. Шукайце электронную пошту або падрабязнасці."
+      ],
       "Invalid input. Search an email or IP address.": [
         "Памылкова ўведзеныя даныя. Шукайце электронную пошту або IP-адрас."
       ],
@@ -15747,11 +15807,17 @@
       "It's too expensive": [
         "Занадта дорага"
       ],
+      "Label as...": [
+        "Пазначыць як..."
+      ],
       "Left to Right": [
         "Злева направа"
       ],
       "Mark as read": [
         "Пазначыць як прачытанае"
+      ],
+      "Move to...": [
+        "Перамясціць у..."
       ],
       "My reason isn't listed": [
         "Нічога з пералічанага"
@@ -15979,7 +16045,7 @@
         "Ідэнтычнасць арганізацыі абноўлена"
       ],
       "Verify your email address ${ email } to set organization identity.": [
-        "Праверце свой адрас электроннай пошты ${ email }, каб задаць ідэнтычнасць арганізацыі."
+        "Спраўдзіце свой адрас электроннай пошты ${ email }, каб задаць ідэнтычнасць арганізацыі."
       ]
     },
     "OS compatibility": {
@@ -16310,7 +16376,7 @@
         "Абнаўленне вашага ўліковага запісу"
       ],
       "Verifying your payment": [
-        "Праверка вашага плацяжу"
+        "Спраўджанне вашага плацяжу"
       ],
       "Welcome to ${ plan }": [
         "Вітаем у ${ plan }"
@@ -16487,10 +16553,10 @@
         "Скарыстайце спосабам аднаўлення даных, звяжыцеся з іншым адміністратарам або скіньце ключ арганізацыі, каб аднавіць прывілеі адміністратара."
       ],
       "We couldn't verify the authenticity of this identity.": [
-        "Мы не можам праверыць аўтэнтыфікацыю гэтай ідэнтычнасці."
+        "Немагчыма спраўдзіць аўтэнтыфікацыю гэтай ідэнтычнасці."
       ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
-        "Мы не можам праверыць, ці з'яўляецца бяспечным адрасны ключ гэтага адпраўніка. Здараецца так, што ўзнікае затрымка пры абнаўленні звестак адпраўніка. Паспрабуйце яшчэ раз пазней. Калі вы сумняваецеся ў сапраўднасці гэтага запрашэння або адпраўніка, звярніцеся ў службу падтрымкі кліентаў ${ BRAND_NAME }."
+        "Мы не можам спраўдзіць, ці з'яўляецца бяспечным адрасны ключ гэтага адпраўніка. Здараецца так, што ўзнікае затрымка пры абнаўленні звестак адпраўніка. Паспрабуйце яшчэ раз пазней. Калі вы сумняваецеся ў сапраўднасці гэтага запрашэння або адпраўніка, звярніцеся ў службу падтрымкі кліентаў ${ BRAND_NAME }."
       ],
       "We have verified the authenticity of this identity.": [
         "Мы праверылі аўтэнтыфікацыю гэтай ідэнтычнасці."
@@ -16539,6 +16605,9 @@
       ],
       "Card number": [
         "Нумар карткі"
+      ],
+      "Credits and discounts are reflected in your invoice": [
+        "Крэдыты і скідкі адлюстроўваюцца ў вашым рахунку"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "У цяперашні час аўтаматычнае падаўжэнне падпіскі адключана. Калі змяніць падпіску цяпер, то аўтаматычнае падаўжэнне будзе ўключана паўторна."
@@ -16615,6 +16684,9 @@
       "Timeout exceeded": [
         "Перавышаны час чакання"
       ],
+      "VAT number": [
+        "Нумар ПДВ"
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "З вас будзе спагнана сума ў памеры ${ amountToCharge } са спосабу аплаты, які вы выбралі."
       ],
@@ -16670,8 +16742,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Дадаць ABN"
+      ],
+      "Add Business Number": [
+        "Дадаць нумар прадпрыемства"
+      ],
+      "Add EIN": [
+        "Рэдагаваць ІНП"
+      ],
+      "Add VAT number": [
+        "Дадаць нумар ПДВ"
+      ],
       "Business Number": [
         "Нумар прадпрыемства"
+      ],
+      "Edit ABN": [
+        "Рэдагаваць ABN"
+      ],
+      "Edit Business Number": [
+        "Рэдагаваць нумар прадпрыемства"
+      ],
+      "Edit EIN": [
+        "Рэдагаваць ІНП"
+      ],
+      "Edit VAT number": [
+        "Рэдагаваць нумар ПДВ"
       ],
       "EIN": [
         "EIN"
@@ -16828,11 +16924,17 @@
       "Search users": [
         "Пошук карыстальнікаў"
       ],
+      "Search users or details": [
+        "Пошук карыстальнікаў або падрабязнасцей"
+      ],
       "Select": [
         "Выбраць"
       ],
       "Select a reason": [
         "Выберыце прычыну"
+      ],
+      "Select country": [
+        "Выберыце краіну"
       ],
       "Select state": [
         "Выбраць штат"
@@ -16974,7 +17076,7 @@
     },
     "PQC adress key generation": {
       "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Постквантавая абарона была ўключана ў вашым уліковым запісе, але некаторыя аперацыі не былі паспяхова выкананы: адбыўся збой пры генерацыі постквантавых ключоў адраса для аднаго ці некалькіх адрасоў. Вы можаце ўручную згенераваць гэтыя ключы ў наладах ${ encryptionAndKeysSettingsTitle }."
+        "Постквантавая абарона была ўключана ў вашым уліковым запісе, але некаторыя аперацыі не былі паспяхова выкананы: адбыўся збой пры генерацыі постквантавых ключоў для аднаго або некалькі адрасоў. Вы можаце ўручную згенерыраваць гэтыя ключы ў наладах ${ encryptionAndKeysSettingsTitle }."
       ]
     },
     "PQC compatibility warning": {
@@ -16984,7 +17086,7 @@
     },
     "PQC key generation": {
       "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
-        "Гэта створыць новы ключ уліковага запісу і новы ключ шыфравання электроннай пошты для кожнага адраса; яны будуць выкарыстоўвацца для шыфравання і расшыфравання будучых электронных лістоў і іншых даных."
+        "Гэта дзеянне прывядзе да генерацыі новага ключа уліковага запісу і новага ключа шыфравання электроннай пошты для кожнага адраса; яны будуць выкарыстоўвацца для шыфравання і расшыфравання будучых электронных лістоў і іншых даных."
       ]
     },
     "PQC optin": {
@@ -17107,19 +17209,19 @@
         "ўваходу"
       ],
       "Verify now": [
-        "Праверыць зараз"
+        "Спраўдзіць"
       ],
       "Verify now this recovery email address: ${ email.Value }": [
-        "Праверыць гэты адрас электроннай пошты для аднаўлення доступу: ${ email.Value }"
+        "Спраўдзіце гэты адрас электроннай пошты для аднаўлення доступу: ${ email.Value }"
       ],
       "Verify recovery email?": [
-        "Праверыць электронную пошту для аднаўлення доступу?"
+        "Спраўдзіць электронную пошту для аднаўлення доступу?"
       ],
       "Verify with email": [
-        "Праверыць з дапамогай электроннай пошты"
+        "Спраўдзіць з дапамогай электроннай пошты"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
-        "Праверка вашага адрасу электроннай пошты павялічыць бяспеку вашага ўліковага запісу і дазволіць пашырыць параметры для аднаўлення."
+        "Спраўджанне вашага адрасу электроннай пошты павялічыць бяспеку вашага ўліковага запісу і дазволіць пашырыць параметры для аднаўлення."
       ],
       "Your recovery email has been successfully removed.": [
         "Ваша электронная пошта для аднаўлення доступу была паспяхова выдалена."
@@ -17150,16 +17252,16 @@
         "Праверыць з дапамогай SMS"
       ],
       "Verify now": [
-        "Праверыць зараз"
+        "Спраўдзіць"
       ],
       "Verify recovery phone?": [
-        "Праверыць нумар тэлефона для аднаўлення доступу?"
+        "Спраўдзіць нумар тэлефона для аднаўлення доступу?"
       ],
       "Verify this recovery phone number now: ${ phone.Value }": [
-        "Праверыць гэты нумар тэлефона для аднаўлення: ${ phone.Value }"
+        "Спраўдзіць гэты нумар тэлефона для аднаўлення: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
-        "Праверка вашага нумару тэлефона павялічыць бяспеку вашага ўліковага запісу і дазволіць пашырыць параметры для аднаўлення."
+        "Спраўджанне вашага нумару тэлефона павялічыць бяспеку вашага ўліковага запісу і дазволіць пашырыць параметры для аднаўлення."
       ]
     },
     "RecoveryPhrase: Action": {
@@ -17579,7 +17681,7 @@
         "Абараніць уліковы запіс"
       ],
       "Safeguard your account": [
-        "Абараніць свой уліковы запіс"
+        "Абараніце свой уліковы запіс"
       ],
       "Safeguard your account further": [
         "Узмацніце бяспеку свайго ўліковага запісу"
@@ -17600,19 +17702,19 @@
         "Адбылася памылка генерацыі вашага камплекта аднаўлення"
       ],
       "There was an error verifying your recovery email": [
-        "Адбылася памылка праверкі вашай электроннай пошты для аднаўлення"
+        "Адбылася памылка спраўджання вашай электроннай пошты для аднаўлення"
       ],
       "There was an error verifying your recovery phone": [
-        "Адбылася памылка праверкі вашага нумара тэлефона"
+        "Адбылася памылка спраўджання вашага нумара тэлефона"
       ],
       "to automatically recover your data when you log into a trusted device": [
         "для аўтаматычнага аднаўлення вашых даных пры ўваходзе ў давераную прыладу"
       ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
-        "Увядзіце праверачны код адпраўлены на электронную пошту ${ boldEmail } для пацвярджэння таго, што яна належыць менавіта вам."
+        "Увядзіце код спраўджання адпраўлены на электронную пошту ${ boldEmail } спраўдзіць, што яна належыць менавіта вам."
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
-        "Увядзіце праверачны код адпраўлены на ваш нумар тэлефона ${ boldPhoneNumber } для пацвярджэння таго, што ён належыць менавіта вам."
+        "Увядзіце код спраўджання адпраўлены на ваш нумар тэлефона ${ boldPhoneNumber } для пацвярджэння таго, што ён належыць менавіта вам."
       ],
       "to recover your account and data if you're ever locked out": [
         "для аднаўлення вашага ўліковага запісу і даных пры магчымай блакіроўцы"
@@ -17627,22 +17729,22 @@
         "Абнавіць ваш камплект аднаўлення?"
       ],
       "Verify": [
-        "Праверка"
+        "Спраўджанне"
       ],
       "Verify your recovery email address": [
-        "Праверыць ваш адрас электроннай пошты для аднаўлення"
+        "Спраўдзіць ваш адрас электроннай пошты для аднаўлення"
       ],
       "Verify your recovery phone number": [
-        "Праверыць нумар тэлефона для аднаўлення"
+        "Спраўдзіць нумар тэлефона для аднаўлення"
       ],
       "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
         "Мы сутыкнуліся з памылкай падчас генерацыі вашага камплекта аднаўлення. Паспрабуйце яшчэ раз пазней або звярніцеся ў нашу падтрымку, калі праблема застанецца."
       ],
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
-        "Мы сутыкнуліся з памылкай падчас праверкі вашай электроннай пошты для аднаўлення. Паспрабуйце яшчэ раз пазней або звярніцеся ў нашу падтрымку, калі праблема застанецца."
+        "Мы сутыкнуліся з памылкай падчас спраўджання вашай электроннай пошты для аднаўлення. Паспрабуйце яшчэ раз пазней або звярніцеся ў нашу падтрымку, калі праблема застанецца."
       ],
       "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
-        "Мы сутыкнуліся з памылкай падчас праверкі вашага нумара тэлефона для аднаўлення. Паспрабуйце яшчэ раз пазней або звярніцеся ў нашу падтрымку, калі праблема застанецца."
+        "Мы сутыкнуліся з памылкай падчас спраўджання вашага нумара тэлефона для аднаўлення. Паспрабуйце яшчэ раз пазней або звярніцеся ў нашу падтрымку, калі праблема застанецца."
       ],
       "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
         "Калі вы ўключыце аднаўленне на падставе прылады, то ${ BRAND_NAME } захавае зашыфраваную рэзервовую копію звязкі ключоў як файл у сховішчы вашага вэб-браўзера."
@@ -17806,7 +17908,7 @@
         "**Абавязковая ўмова:** аўтэнтыфікацыя SAML павінна быць сканфігуравана для ўключэння падрыхтоўкі SCIM."
       ],
       "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
-        "**Абавязковая ўмова:** вам неабходна праверыць права ўласнасці на дамен **${ domainName }** для ўключэння падрыхтоўкі SCIM. Гэта праверка можа заняць да адной гадзіны."
+        "**Абавязковая ўмова:** вам неабходна спраўдзіць права ўласнасці на дамен **${ domainName }** для ўключэння падрыхтоўкі SCIM. Гэта спраўджанне можа заняць да адной гадзіны."
       ],
       "Enter the token into your identity provider": [
         "Увядзіце токен у свайго пастаўшчыка пасведчанняў"
@@ -18395,7 +18497,7 @@
         "Памылка праверкі подпісу"
       ],
       "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
-        "Вы ўключылі праверку адраса для ${ boldSenderEmail }. Мы не можам праверыць сапраўднасць гэтага запрашэння календара. Магчыма, што гэта здарылася з прычыны змянення ключоў шыфравання гэтага кантакту. Праверце яго пашыраныя налады PGP або папрасіце ${ boldSenderEmail } адправіць новае запрашэнне."
+        "Вы ўключылі спраўджанне адраса для ${ boldSenderEmail }. Мы не можам спраўдзіць сапраўднасць гэтага запрашэння календара. Магчыма, што гэта здарылася з прычыны змянення ключоў шыфравання гэтага кантакту. Праверце яго пашыраныя налады PGP або папрасіце ${ boldSenderEmail } адправіць новае запрашэнне."
       ]
     },
     "Signup": {
@@ -20351,10 +20453,10 @@
         "Значэнне скапіявана ў буфер абмену"
       ],
       "Verification code copied to clipboard": [
-        "Праверачны код скапіяваны ў буфер абмену"
+        "Код спраўджання скапіяваны ў буфер абмену"
       ],
       "Verification successful": [
-        "Паспяхова праверана"
+        "Праверка паспяхова выканана"
       ],
       "Writing assistant disabled": [
         "Памочнік у напісанні адключаны"
@@ -20809,9 +20911,6 @@
       "Add users to \"${ policyName }\"": [
         "Дадаць карыстальнікаў у \"${ policyName }\""
       ],
-      "Added on": [
-        "Дададзена"
-      ],
       "Address": [
         "Адрас"
       ],
@@ -20937,9 +21036,6 @@
       ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Атрымайце адрас ${ MAIL_APP_NAME }"
-      ],
-      "Click a value in the table to use it as filter": [
-        "Націсніце значэнне ў табліцы, каб выкарыстоўваць яго ў якасці фільтра."
       ],
       "Close": [
         "Закрыць"
@@ -21150,6 +21246,9 @@
       ],
       "Desktop": [
         "Для камп'ютара"
+      ],
+      "Details": [
+        "Падрабязнасці"
       ],
       "Device": [
         "Прылада"
@@ -22009,6 +22108,9 @@
       "Time zone": [
         "Часавы пояс"
       ],
+      "Try ${ AUTHENTICATOR_APP_NAME }": [
+        "Паспрабуйце ${ AUTHENTICATOR_APP_NAME }"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Уключэнне ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -22088,13 +22190,13 @@
         "Збой праверкі"
       ],
       "Verify email address": [
-        "Праверыць адрас электроннай пошты"
+        "Спраўдзіць адрас электроннай пошты"
       ],
       "Verifying your card...": [
-        "Праверка вашай карткі..."
+        "Спраўджанне вашай карткі..."
       ],
       "Verifying your payment...": [
-        "Праверка вашага плацяжу..."
+        "Спраўджанне вашага плацяжу..."
       ],
       "Version history": [
         "Гісторыя версій"
@@ -22566,7 +22668,7 @@
     },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Аўтаматычна дадае ваш публічны ключ да кожнага адпраўленага паведамлення. Атрымальнікі могуць выкарыстоўваць яго, каб правяраць сапраўднасць вашых паведамленняў і адпраўляць вам зашыфраваныя паведамленні."
+        "Аўтаматычна дадае ваш публічны ключ да кожнага адпраўленага паведамлення. Атрымальнікі могуць выкарыстоўваць яго, каб спраўдзіць сапраўднасць вашых паведамленняў і адпраўляць вам зашыфраваныя паведамленні."
       ]
     },
     "Tooltip default pgp scheme": {
@@ -22581,7 +22683,7 @@
     },
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Аўтаматычна падпісвайце ўсе свае выходныя паведамленні, каб карыстальнікі маглі праверыць іх сапраўднасць. Гэта дзеянне звязана з прадвызначанымі наладамі PGP, якія вы можаце сканфігурыраваць пазней."
+        "Аўтаматычна падпісвайце ўсе свае выходныя паведамленні, каб карыстальнікі маглі спраўдзіць іх сапраўднасць. Гэта дзеянне звязана з прадвызначанымі наладамі PGP, якія вы можаце сканфігурыраваць пазней."
       ]
     },
     "Tooltip: PM signature locked": {
@@ -23080,10 +23182,10 @@
         "Аўтавыбар з ${ numberOfCountries } краін"
       ],
       "Select from ${ numberOfCountries }+ country": [
-        "Выбірайце з ${ numberOfCountries }+ краіны",
-        "Выбірайце з ${ numberOfCountries } краін",
-        "Выбірайце з ${ numberOfCountries } краін",
-        "Выбірайце з ${ numberOfCountries } краін"
+        "Выбірайце ў больш чым ${ numberOfCountries } краіне",
+        "Выбірайце ў больш чым ${ numberOfCountries } краінах",
+        "Выбірайце ў больш чым ${ numberOfCountries } краінах",
+        "Выбірайце ў больш чым ${ numberOfCountries } краінах"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Серверы ў больш, чым ${ numberOfCountries } краіне",
@@ -23336,7 +23438,7 @@
         "На жаль, у дадзены момант наша каманда падтрымкі знаходзіцца па-за сеткай. Запоўніце форму ніжэй з апісаннем вашай праблемы і мы абавязкова разгледзім яе пасля таго, як станем зноў даступнымі."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Мы не змаглі праверыць паштовы сервер. Калі вы давяраеце яму, то можаце прапусціць гэту праверку."
+        "Мы не змаглі спраўдзіць паштовы сервер. Калі вы давяраеце яму, то можаце прапусціць гэту праверку."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Мы выявілі праблему з канфігурацыяй вашага DNS. Пераканайцеся, што вашы запісы адпавядаюць інструкцыям ніжэй. Калі праблема застанецца, то нам давядзецца адключыць падпісанне DKIM."
@@ -23362,7 +23464,7 @@
     },
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Пасля паспяховай праверкі не выдаляйце гэты запіс TXT, бо ён неабходны для пацвярджэння таго, што вы з'яўляецеся ўладальнікам дамена."
+        "Пасля паспяховага спраўджання не выдаляйце гэты запіс TXT, бо ён неабходны для пацвярджэння таго, што вы з'яўляецеся ўладальнікам дамена."
       ]
     },
     "Weak personal key warning": {

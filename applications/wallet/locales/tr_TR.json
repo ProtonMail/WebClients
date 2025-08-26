@@ -2271,6 +2271,14 @@
         "Öncelikli destek"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca gelecekte düzenlenecek faturalarda görüntülenecek ve var olan faturaları etkilemeyecek."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca seçtiğiniz faturayı değiştirir. Gelecekteki fatura bilgilerinizi değiştirmez."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Güvenilir kişi"
@@ -2297,6 +2305,9 @@
       ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Fatura adresi şu anda düzenlenemiyor. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Email is not valid": [
         "E-posta geçersiz"
@@ -2382,6 +2393,9 @@
       "Please select billing state": [
         "Lütfen faturalama durumunu seçin"
       ],
+      "Postal code is required": [
+        "Posta kodunun yazılması zorunludur"
+      ],
       "Process aborted": [
         "İşlem iptal edildi"
       ],
@@ -2432,6 +2446,9 @@
       ],
       "Username must end with a letter or digit": [
         "Kullanıcı adı bir harf ya da rakam ile bitmeli"
+      ],
+      "ZIP code is required": [
+        "Posta kodunun yazılması zorunludur"
       ]
     },
     "Error message": {
@@ -3248,11 +3265,17 @@
       "Category": [
         "Kategori"
       ],
+      "City": [
+        "İl"
+      ],
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
       ],
       "Colors": [
         "Renkler"
+      ],
+      "Company": [
+        "Kuruluş"
       ],
       "Company name": [
         "Kuruluş adı"
@@ -3344,6 +3367,9 @@
       "Phone number": [
         "Telefon numarası"
       ],
+      "Postal code": [
+        "Posta kodu"
+      ],
       "Proration": [
         "Hesap bakiyesi"
       ],
@@ -3361,6 +3387,12 @@
       ],
       "Start date": [
         "Başlangıç tarihi"
+      ],
+      "State": [
+        "İl"
+      ],
+      "Street address": [
+        "Sokak adresi"
       ],
       "Subscription options": [
         "Abonelik seçenekleri"
@@ -3388,6 +3420,9 @@
       ],
       "Your password (trusted contact)": [
         "Parolanız (güvenilen kişi)"
+      ],
+      "ZIP code": [
+        "Posta kodu"
       ]
     },
     "Label, credit card": {
@@ -4581,6 +4616,9 @@
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
       ],
+      "VAT number": [
+        "KDV numarası"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
       ],
@@ -4633,8 +4671,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "ABN kodu ekle"
+      ],
+      "Add Business Number": [
+        "İş numarası ekle"
+      ],
+      "Add EIN": [
+        "EIN kodu ekle"
+      ],
+      "Add VAT number": [
+        "KDV numarası ekle"
+      ],
       "Business Number": [
         "İş numarası"
+      ],
+      "Edit ABN": [
+        "ABN kodunu düzenle"
+      ],
+      "Edit Business Number": [
+        "İş numarasını düzenle"
+      ],
+      "Edit EIN": [
+        "EIN kodunu düzenle"
+      ],
+      "Edit VAT number": [
+        "KDV numarasını düzenle"
       ],
       "EIN": [
         "EIN"
@@ -4647,6 +4709,15 @@
       "A way to contact you": [
         "Sizinle iletişim kurmak için bir yol"
       ],
+      "Anderson": [
+        "Kaya"
+      ],
+      "Anytown": [
+        "İl"
+      ],
+      "Company name": [
+        "Kuruluş adı"
+      ],
       "Confirm passphrase or leave empty": [
         "Parola ifadesini onaylayın veya boş bırakın"
       ],
@@ -4658,6 +4729,9 @@
       ],
       "Gift code": [
         "Hediye kodu"
+      ],
+      "Main street 12": [
+        "12. cadde"
       ],
       "Organization name": [
         "Kuruluş adı"
@@ -4686,11 +4760,20 @@
       "Select a reason": [
         "Bir neden seçin"
       ],
+      "Select country": [
+        "Ülke seçin"
+      ],
       "Select state": [
         "İl seçin"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "${ BRAND_NAME } uygulamasını iyileştirmek için bir düşünceniz varsa paylaşın"
+      ],
+      "Thomas": [
+        "Ali"
+      ],
+      "VAT number": [
+        "KDV numarası"
       ],
       "Your organization name": [
         "Kuruluşunuzun adı"
@@ -5222,6 +5305,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Fatura bilgileri güncellendi"
+      ],
       "Code sent to ${ methodTo }": [
         "Kod ${ methodTo } alıcısına gönderildi"
       ],
@@ -5404,6 +5490,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } uygulamalarını indirin"
+      ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
       ],
       "Edit credit/debit card": [
         "Kredi ya da banka kartını düzenle"

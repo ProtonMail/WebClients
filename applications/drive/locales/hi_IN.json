@@ -2367,6 +2367,14 @@
         "प्राथमिक सहायता"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "टेक्स्ट फील्ड वैकल्पिक हैं। इस फॉर्म में प्रदान की गई जानकारी केवल भविष्य में जारी की जाने वाली इनवॉइस में दिखाई देगी और मौजूदा इनवॉइस को प्रभावित नहीं करेगी।"
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "टेक्स्ट फील्ड वैकल्पिक हैं। इस फॉर्म में दी गई जानकारी केवल आपके द्वारा चयनित इनवॉइस को बदलेगी और आपके भविष्य के इनवॉइस विवरण को प्रभावित नहीं करेगी।"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "विवरण:\n${ eventDescription }"
@@ -2507,6 +2515,9 @@
       ],
       "Domain not available, try again later": [
         "डोमेन मौजूद नहीं, बाद में वापिस कोशिश करें"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "वर्तमान में बिलिंग पता संपादित करना उपलब्ध नहीं है। कृपया बाद में पुनः प्रयास करें।"
       ],
       "Email address is required": [
         "ईमेल पता चाहिए"
@@ -2840,6 +2851,9 @@
       ],
       "Your import will not be processed.": [
         "आपका आयात संसाधित नहीं किया जाएगा।"
+      ],
+      "ZIP code is required": [
+        "ज़िप कोड आवश्यक है"
       ]
     },
     "Error importing calendar": {
@@ -3712,6 +3726,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } को कम से कम 1 विशेष सर्वर ${ serverPricePerMonth } की आवश्यकता है"
+      ],
+      "${ planName } expires today.": [
+        "${ planName } आज समाप्त हो रहा है।"
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } संदिग्ध गतिविधि की समर्पित निगरानी के साथ आपके खाते की रक्षा करता है।"
@@ -5398,6 +5415,9 @@
       "Comment": [
         "टिप्पणी"
       ],
+      "Company": [
+        "कंपनी"
+      ],
       "Confirm password": [
         "पासवर्ड की पुष्टि करें"
       ],
@@ -5747,6 +5767,9 @@
       "Start date": [
         "आरंभ करने की तिथि"
       ],
+      "State": [
+        "राज्य"
+      ],
       "Stolen data": [
         "चोरी किया डाटा"
       ],
@@ -5839,6 +5862,9 @@
       ],
       "Your password (admin)": [
         "आपका पासवर्ड (व्यवस्थापक)"
+      ],
+      "ZIP code": [
+        "ज़िप कोड"
       ]
     },
     "Label for contact group color": {
@@ -7558,8 +7584,17 @@
       "A way to contact you": [
         "आपसे संपर्क करने का एक तरीका"
       ],
+      "Anderson": [
+        "उदा. विकास"
+      ],
+      "Anytown": [
+        "कोई भी शहर"
+      ],
       "Choose password": [
         "पासवर्ड चुनें"
+      ],
+      "Company name": [
+        "कंपनी का नाम"
       ],
       "E.g., ": [
         "जैसे, "
@@ -7596,6 +7631,9 @@
       ],
       "Last name": [
         "अंतिम नाम"
+      ],
+      "Main street 12": [
+        "मुख्य सड़क 12"
       ],
       "Message": [
         "संदेश"
@@ -7638,6 +7676,12 @@
       ],
       "Start typing an email address": [
         "ईमेल पता लिखना शुरू करें"
+      ],
+      "Thomas": [
+        "उदा. अर्जुन"
+      ],
+      "VAT number": [
+        "वैट नंबर"
       ],
       "ZIP code": [
         "ज़िप कोड"
@@ -8412,6 +8456,9 @@
       "Alias copied to clipboard": [
         "नकली-नाम क्लिपबोर्ड पर कॉपी किया गया"
       ],
+      "Billing details updated": [
+        "बिलिंग विवरण अपडेट हुआ"
+      ],
       "Canceling import": [
         "आयात रद्द कर रहे"
       ],
@@ -8888,6 +8935,9 @@
       ],
       "Duplicate folder found": [
         "एक जैसे फोल्डर मिले"
+      ],
+      "Edit billing address": [
+        "बिलिंग पता संपादित करें"
       ],
       "Edit contact": [
         "संपादित संपर्क"

@@ -3163,6 +3163,14 @@
         "90 menit"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Kolom teks bersifat opsional. Informasi yang Anda sediakan pada kolom ini hanya akan terlihat pada faktur yang diterbitkan ke depannya tanpa memengaruhi faktur yang telah ada."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Kolom teks bersifat opsional. Informasi yang Anda sediakan dalam formulir ini hanya akan mengubah isi faktur yang Anda pilih tanpa memengaruhi rincian faktur yang akan datang."
+      ]
+    },
     "Edit event button tooltip": {
       "Edit event": [
         "Sunting acara"
@@ -3375,6 +3383,9 @@
       ],
       "Domain not available, try again later": [
         "Domain tidak tersedia, coba lagi nanti"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Penyuntingan alamat tagihan saat ini tidak tersedia. Silakan coba lagi nanti."
       ],
       "Email address disabled": [
         "Alamat email dinonaktifkan"
@@ -3601,6 +3612,9 @@
       "Port is required": [
         "Nomor port diperlukan"
       ],
+      "Postal code is required": [
+        "Kode pos dibutuhkan"
+      ],
       "Primary address key is not decrypted": [
         "Kunci alamat utama tidak didekripsi"
       ],
@@ -3765,6 +3779,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Koneksi Zoom Anda telah kedaluwarsa. Silakan hubungkan ulang untuk melanjutkan."
+      ],
+      "ZIP code is required": [
+        "Kode pos diperlukan"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4733,6 +4750,12 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } memerlukan setidaknya 1 server khusus ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } akan kedaluwarsa dalam ${ daysLeft } hari."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } akan kedaluwarsa hari ini."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pengawasan yang telaten terhadap aktivitas yang mencurigakan."
@@ -6247,6 +6270,9 @@
       "Colors": [
         "Warna"
       ],
+      "Company": [
+        "Perusahaan"
+      ],
       "Company name": [
         "Nama perusahaan"
       ],
@@ -6538,6 +6564,9 @@
       "Start date": [
         "Tanggal mulai"
       ],
+      "State": [
+        "Keadaan"
+      ],
       "Street address": [
         "Alamat jalan"
       ],
@@ -6627,6 +6656,9 @@
       ],
       "Your password (trusted contact)": [
         "Kata sandi Anda (kontak terpercaya)"
+      ],
+      "ZIP code": [
+        "Kode pos"
       ]
     },
     "Label for contact group color": {
@@ -8739,6 +8771,15 @@
       "Add title": [
         "Tambah judul"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "Kota A"
+      ],
+      "Company name": [
+        "Nama perusahaan"
+      ],
       "E.g., ": [
         "Misalnya "
       ],
@@ -8768,6 +8809,9 @@
       ],
       "Leave a note for all participants": [
         "Tinggalkan catatan bagi seluruh peserta"
+      ],
+      "Main street 12": [
+        "Jalan Utama No. 12"
       ],
       "Name": [
         "Nama"
@@ -8816,6 +8860,12 @@
       ],
       "Start typing an email address": [
         "Mulai ketik alamat email"
+      ],
+      "Thomas": [
+        "Thomas"
+      ],
+      "VAT number": [
+        "Nomor PPN"
       ],
       "Your organization name": [
         "Nama organisasi Anda"
@@ -10082,6 +10132,9 @@
       "Answer sent and event deleted": [
         "Jawaban terkirim dan acara dihapus"
       ],
+      "Billing details updated": [
+        "Rincian penagihan diperbarui"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalender ditambahkan. Proses sinkronisasi dapat memakan waktu hingga beberapa menit."
       ],
@@ -10588,6 +10641,9 @@
       ],
       "Drop to upload": [
         "Letakkan untuk mengunggah"
+      ],
+      "Edit billing address": [
+        "Sunting alamat penagihan"
       ],
       "Edit contact": [
         "Sunting kontak"
