@@ -2668,15 +2668,6 @@ const plans: Plan[] = deepFreeze([
     },
 ]);
 
-export function getTestPlansMap() {
-    return plans.reduce((acc, plan) => {
-        acc[plan.Name] = plan;
-        return acc;
-    }, {} as PlansMap);
-}
-
-export const PLANS_MAP: PlansMap = deepFreeze(getTestPlansMap());
-
 function multiplyPricing(pricing: Pricing, factor: number): Pricing {
     return Object.keys(pricing).reduce((acc, key) => {
         acc[+key as CYCLE] = (pricing[+key as CYCLE] ?? 0) * factor;
@@ -2705,3 +2696,12 @@ export function getTestPlans(currency?: Currency): Plan[] {
 export function getLongTestPlans(currency: Currency = 'BRL'): Plan[] {
     return [...getTestPlans('USD'), ...getTestPlans('CHF'), ...getTestPlans('EUR'), ...getTestPlans(currency)];
 }
+
+export function getTestPlansMap(currency: Currency = 'CHF'): PlansMap {
+    return getTestPlans(currency).reduce((acc, plan) => {
+        acc[plan.Name] = plan;
+        return acc;
+    }, {} as PlansMap);
+}
+
+export const PLANS_MAP: PlansMap = deepFreeze(getTestPlansMap());

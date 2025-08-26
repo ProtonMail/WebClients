@@ -189,12 +189,6 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
         checkResult: {
             ...subscriptionCheckOptions.checkResult,
             ...optimistic.checkResult,
-            /**
-             * TODO: super hack. But spent too long trying to figure out how to handle the subscription mode optimistically.
-             * The current b2b implementation also behaves this way
-             * https://account.proton.dev/business/signup?email=test%40test.com&orgName=asdf&fullName=test&trial=true&users=10
-             */
-            SubscriptionMode: subscriptionCheckOptions.checkResult.SubscriptionMode,
         },
     };
 
