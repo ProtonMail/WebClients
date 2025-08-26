@@ -72,6 +72,26 @@ export const listIncomingDelegatedAccess = (options?: {
     };
 };
 
+const resetDelegatedAccess = (id: string) => ({
+    url: `account/v1/access/${id}/reset`,
+    method: 'put',
+});
+
+export const resetDelegatedAccessThunk = ({
+    id,
+}: {
+    id: string;
+}): ThunkAction<Promise<IncomingDelegatedAccessOutput>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, _, extra) => {
+        const api = getSilentApi(extra.api);
+        const { IncomingDelegatedAccess } = await api<{
+            IncomingDelegatedAccess: IncomingDelegatedAccessOutput;
+        }>(resetDelegatedAccess(id));
+        dispatch(delegatedAccessActions.upsertIncomingItem(IncomingDelegatedAccess));
+        return IncomingDelegatedAccess;
+    };
+};
+
 const deleteDelegatedAccess = (id: string) => ({
     url: `account/v1/access/${id}/delete`,
     method: 'put',
