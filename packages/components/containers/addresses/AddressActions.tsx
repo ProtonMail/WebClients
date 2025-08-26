@@ -3,6 +3,8 @@ import { c } from 'ttag';
 import { disableAllowAddressDeletion } from '@proton/account';
 import { deleteAddress, disableAddress, enableAddress } from '@proton/account/addresses/actions';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
+import { ApiSyncState } from '@proton/activation/src/api/api.interface';
+import useReconnectSync from '@proton/activation/src/hooks/useReconnectSync';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -62,6 +64,7 @@ const useAddressFlagsActionsList = (address: Address, user: UserModel, member: M
         actions.push({
             // translator: this is in a small space, so the string should be short, max 25 characters
             text: c('Address action').t`Disable E2EE mail`,
+            key: 'address-flag-action-disable-e2ee-mail',
             onClick: () =>
                 handleSetAddressFlags({
                     encryptionDisabled: true,
@@ -74,6 +77,7 @@ const useAddressFlagsActionsList = (address: Address, user: UserModel, member: M
         actions.push({
             // translator: this is in a small space, so the string should be short, max 25 characters
             text: c('Address action').t`Enable E2EE mail`,
+            key: 'address-flag-action-enable-e2ee-mail',
             onClick: () =>
                 handleSetAddressFlags({
                     encryptionDisabled: false,
@@ -86,6 +90,7 @@ const useAddressFlagsActionsList = (address: Address, user: UserModel, member: M
         actions.push({
             // translator: this is in a small space, so the string should be short, max 25 characters
             text: c('Address action').t`Allow unsigned mail`,
+            key: 'address-flag-action-allow-unsigned-mail',
             onClick: () =>
                 handleSetAddressFlags({
                     encryptionDisabled: isEncryptionDisabled,
@@ -98,6 +103,7 @@ const useAddressFlagsActionsList = (address: Address, user: UserModel, member: M
         actions.push({
             // translator: this is in a small space, so the string should be short, max 25 characters
             text: c('Address action').t`Disallow unsigned mail`,
+            key: 'address-flag-action-disallow-unsigned-mail',
             onClick: () =>
                 handleSetAddressFlags({
                     encryptionDisabled: isEncryptionDisabled,
@@ -126,6 +132,7 @@ const AddressActions = ({
     const [organizationKey] = useOrganizationKey();
     const emailAddress = address.Email;
     const handleError = useErrorHandler();
+    const { sync, handleReconnect, loadingConfig } = useReconnectSync(address);
 
     const [missingKeysProps, setMissingKeysAddressModalOpen, renderMissingKeysModal] = useModalState();
     const [deleteAddressPromptProps, setDeleteAddressPromptOpen, renderDeleteAddressPrompt] = useModalState();
@@ -178,37 +185,44 @@ const AddressActions = ({
             : [
                   permissions.canGenerate && {
                       text: c('Address action').t`Generate missing keys`,
+                      key: 'address-action-generate-missing-key',
                       onClick: () => setMissingKeysAddressModalOpen(true),
                       'aria-label': c('Address action').t`Generate missing keys for address “${emailAddress}”`,
                   },
                   permissions.canEditInternalAddress && {
                       text: c('Address action').t`Edit`,
+                      key: 'address-action-edit',
                       onClick: () => setEditInternalAddressOpen(true),
                       'aria-label': c('Address action').t`Edit address “${emailAddress}”`,
                   },
                   permissions.canEditExternalAddress && {
                       text: c('Address action').t`Edit address`,
+                      key: 'address-action-edit-address',
                       onClick: () => setEditExternalAddressOpen(true),
                   },
                   permissions.canMakeDefault &&
                       onSetDefault && {
                           text: c('Address action').t`Set as default`,
+                          key: 'address-action-set-as-default',
                           onClick: () => onSetDefault(),
                           'aria-label': c('Address action').t`Set “${emailAddress}” as default address`,
                       },
                   permissions.canEnable && {
                       text: c('Address action').t`Enable`,
+                      key: 'address-action-enable-address',
                       onClick: () => withLoading(handleEnable()),
                       'aria-label': c('Address action').t`Enable address “${emailAddress}”`,
                   },
                   permissions.canDisable && {
                       text: c('Address action').t`Disable`,
+                      key: 'address-action-disable-address',
                       onClick: () => setDisableAddressModalOpen(true),
                       'aria-label': c('Address action').t`Disable address “${emailAddress}”`,
                   },
                   permissions.canDeleteAddress &&
                       ({
                           text: c('Address action').t`Delete address`,
+                          key: 'address-action-delete-address',
                           actionType: 'delete',
                           onClick: () => setDeleteAddressModalOpen(true),
                           'aria-label': c('Address action').t`Delete address “${emailAddress}”`,
@@ -217,6 +231,7 @@ const AddressActions = ({
                       !mustActivateOrganizationKey &&
                       ({
                           text: c('Address action').t`Delete address`,
+                          key: 'address-action-enable-address-once-per-year',
                           actionType: 'delete',
                           'aria-label': c('Address action').t`Delete address “${emailAddress}”`,
                           onClick: () => setDeleteAddressPromptOpen(true),
@@ -226,6 +241,15 @@ const AddressActions = ({
                                     .t`You've reached the limit of address deletions for this user.`,
                           disabled: !allowAddressDeletion,
                       } as const),
+                  permissions.canReconnectBYOE &&
+                      sync &&
+                      sync.state !== ApiSyncState.ACTIVE && {
+                          text: c('Address action').t`Reconnect`,
+                          key: 'address-action-reconnect-byoe',
+                          onClick: () => handleReconnect(withLoading),
+                          disabled: loadingConfig,
+                          'aria-label': c('Address action').t`Reconnect address “${emailAddress}”`,
+                      },
                   ...addressFlagsActionsList,
               ].filter(isTruthy);
 
