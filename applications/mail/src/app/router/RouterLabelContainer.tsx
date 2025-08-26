@@ -72,8 +72,13 @@ export const RouterLabelContainer = ({
     const listRef = useRef<HTMLDivElement>(null);
     const location = useLocation();
 
-    const { columnMode, columnLayout, labelDropdownToggleRef, resizeAreaRef, moveDropdownToggleRef } =
-        useMailboxLayoutProvider();
+    const {
+        isColumnModeActive,
+        isColumnLayoutPreferred,
+        labelDropdownToggleRef,
+        resizeAreaRef,
+        moveDropdownToggleRef,
+    } = useMailboxLayoutProvider();
 
     const composersCount = useMailSelector(selectComposersCount);
     const breakpoints = useActiveBreakpoint();
@@ -84,13 +89,13 @@ export const RouterLabelContainer = ({
     const [folders] = useFolders();
     const getElementsFromIDs = useGetElementsFromIDs();
 
-    const showList = columnMode || !elementID;
+    const showList = isColumnModeActive || !elementID;
     const elementsLength = loading ? placeholderCount : elements.length;
-    const showContentPanel = (columnMode && !!elementsLength) || !!elementID;
+    const showContentPanel = (isColumnModeActive && !!elementsLength) || !!elementID;
     const showContentView = showContentPanel && !!elementID;
     const isComposerOpened = composersCount > 0;
     const showPlaceholder =
-        !breakpoints.viewportWidth['<=small'] && (!elementID || (!!checkedIDs.length && columnMode));
+        !breakpoints.viewportWidth['<=small'] && (!elementID || (!!checkedIDs.length && isColumnModeActive));
 
     const { commanderList } = useMailCommander();
     const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
@@ -127,7 +132,7 @@ export const RouterLabelContainer = ({
             checkedIDs,
             selectedIDs,
             focusID,
-            columnLayout,
+            columnLayout: isColumnLayoutPreferred,
             isMessageOpening,
             location,
             labelDropdownToggleRefProps: labelDropdownToggleRef,

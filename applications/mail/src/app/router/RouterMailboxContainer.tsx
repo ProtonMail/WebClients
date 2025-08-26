@@ -41,14 +41,14 @@ export const RouterMailboxContainer = () => {
     const elementsData = useElements(elementsParams);
     const actions = useElementActions({ params, navigation, elementsData });
 
-    const { columnMode, messageContainerRef, mainAreaRef, listContainerRef } = useMailboxLayoutProvider();
+    const { isColumnModeActive, messageContainerRef, mainAreaRef, listContainerRef } = useMailboxLayoutProvider();
 
     const { labelID, elementID } = params;
     const { selectedIDs } = actions;
     const { drawerSidebarButtons, showDrawerSidebar } = useMailDrawer();
 
     const canShowDrawer = drawerSidebarButtons.length > 0;
-    const hasRowMode = !columnMode;
+    const hasRowMode = !isColumnModeActive;
 
     const [isResizing, setIsResizing] = useState(false);
 
@@ -106,7 +106,7 @@ export const RouterMailboxContainer = () => {
                 settingsButton={<InboxQuickSettingsAppButton />}
                 toolbar={
                     // Show toolbar in header when in row layout and an email is selected
-                    (!columnMode && elementID) || viewPortIsNarrow ? (
+                    (!isColumnModeActive && elementID) || viewPortIsNarrow ? (
                         <MailboxToolbar
                             inHeader
                             params={params}
@@ -120,8 +120,8 @@ export const RouterMailboxContainer = () => {
             <PrivateMainArea
                 className={clsx([
                     'flex',
-                    !columnMode && elementID && 'row-layout-email-view full-width-email',
-                    columnMode && 'column-layout-view',
+                    !isColumnModeActive && elementID && 'row-layout-email-view full-width-email',
+                    isColumnModeActive && 'column-layout-view',
                 ])}
                 hasToolbar
                 hasRowMode={hasRowMode}
