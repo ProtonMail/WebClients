@@ -5,11 +5,13 @@ import {
     ADDRESS_PERMISSIONS,
     ADDRESS_PERMISSION_TYPE,
     ADDRESS_RECEIVE,
+    ADDRESS_SEND,
     ADDRESS_STATUS,
     ADDRESS_TYPE,
     MEMBER_PRIVATE,
     MEMBER_TYPE,
 } from '@proton/shared/lib/constants';
+import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type {
     Address,
@@ -29,7 +31,7 @@ import { getOrganizationDenomination } from '@proton/shared/lib/organization/hel
 const { TYPE_ORIGINAL, TYPE_CUSTOM_DOMAIN, TYPE_PREMIUM } = ADDRESS_TYPE;
 
 export const getStatus = (address: Address, i: number) => {
-    const { Type, Status, Receive, DomainID, HasKeys, Flags } = address;
+    const { Type, Status, Receive, DomainID, HasKeys, Flags, Send } = address;
 
     const isActive = Status === ADDRESS_STATUS.STATUS_ENABLED && Receive === ADDRESS_RECEIVE.RECEIVE_YES;
     const isDisabled = Status === ADDRESS_STATUS.STATUS_DISABLED;
@@ -38,16 +40,19 @@ export const getStatus = (address: Address, i: number) => {
     const isMissingKeys = !HasKeys;
     const isNotEncrypted = hasBit(Flags, ADDRESS_FLAGS.FLAG_DISABLE_E2EE);
     const isSignatureNotExpected = hasBit(Flags, ADDRESS_FLAGS.FLAG_DISABLE_EXPECTED_SIGNED);
+    const isBYOE = Type === ADDRESS_TYPE.TYPE_EXTERNAL && getIsBYOEAddress(address);
+    const isBYOEDisconnected = isBYOE && Send === ADDRESS_SEND.SEND_NO;
 
     return {
         isDefault: i === 0,
-        isActive,
+        isActive: isBYOE ? !isBYOEDisconnected : isActive,
         isExternal,
         isDisabled,
         isOrphan,
         isMissingKeys,
         isNotEncrypted,
         isSignatureNotExpected,
+        isBYOEDisconnected,
     };
 };
 
@@ -75,6 +80,7 @@ export const getPermissions = ({
     const isDefault = addressIndex === 0;
     const isEnabled = Status === ADDRESS_STATUS.STATUS_ENABLED;
     const isExternal = Type === ADDRESS_TYPE.TYPE_EXTERNAL;
+    const isBYOE = Type === ADDRESS_TYPE.TYPE_EXTERNAL && getIsBYOEAddress(address);
 
     const canMakeDefault = !isDefault && !getIsNonDefault(address);
 
@@ -125,6 +131,7 @@ export const getPermissions = ({
         canDeleteAddress: adminCanDeleteCustom,
         canDeleteAddressOncePerYear: !adminCanDeleteCustom && isAdmin && !isSpecialAddress && !isExternal && !isDefault,
         canEdit: isSelf,
+        canReconnectBYOE: isBYOE,
     };
 };
 
