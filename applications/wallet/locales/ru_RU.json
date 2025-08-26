@@ -2252,6 +2252,14 @@
         "Приоритетная поддержка"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Текстовые поля являются необязательными. Информация, которую вы предоставите в этой форме, будет отображаться только в счетах, выставляемых в будущем, и не повлияет на существующие счета."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Текстовые поля являются необязательными. Информация, которую вы предоставите в этой форме, изменит только выбранный вами счет-фактуру, но не ваши будущие данные о счете-фактуре."
+      ]
+    },
     "Error": {
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } - это ваше имя пользователя. Чтобы создать ${ emailAddress }, перейдите в Настройки > Идентификация и адреса > Короткий домен (pm.me)"
@@ -2273,6 +2281,9 @@
       ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Изменение платежного адреса в данный момент недоступно. Повторите попытку позже."
       ],
       "Email is not valid": [
         "Эл. почта недействительна"
@@ -2393,6 +2404,9 @@
       ],
       "Username must end with a letter or digit": [
         "Имя пользователя должно заканчиваться буквой или цифрой"
+      ],
+      "ZIP code is required": [
+        "Необходимо указать почтовый индекс"
       ]
     },
     "Error message": {
@@ -3221,11 +3235,17 @@
       "Category": [
         "Категория"
       ],
+      "City": [
+        "Город"
+      ],
       "Code is 6 digits without spaces": [
         "Код состоит из 6 цифр без пробелов"
       ],
       "Colors": [
         "Цвета"
+      ],
+      "Company": [
+        "Компания"
       ],
       "Company name": [
         "Название компании"
@@ -3314,6 +3334,9 @@
       "Phone number": [
         "Номер телефона"
       ],
+      "Postal code": [
+        "Почтовый индекс"
+      ],
       "Proration": [
         "Пропорциональное распределение"
       ],
@@ -3331,6 +3354,12 @@
       ],
       "Start date": [
         "Дата начала"
+      ],
+      "State": [
+        "Состояние"
+      ],
+      "Street address": [
+        "Адрес"
       ],
       "Subscription options": [
         "Параметры подписки"
@@ -3355,6 +3384,9 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "ZIP code": [
+        "Почтовый индекс"
       ]
     },
     "Label, credit card": {
@@ -4616,6 +4648,15 @@
       "A way to contact you": [
         "Способ связаться с вами"
       ],
+      "Anderson": [
+        "Андерсон"
+      ],
+      "Anytown": [
+        "Любой город"
+      ],
+      "Company name": [
+        "Название компании"
+      ],
       "Confirm passphrase or leave empty": [
         "Подтвердите кодовую фразу или оставьте пустым"
       ],
@@ -4627,6 +4668,9 @@
       ],
       "Gift code": [
         "Подарочный код"
+      ],
+      "Main street 12": [
+        "Мейн стрит 12"
       ],
       "Organization name": [
         "Название организации"
@@ -4660,6 +4704,12 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Поделитесь тем, что, по вашему мнению, могло бы сделать ${ BRAND_NAME } лучше."
+      ],
+      "Thomas": [
+        "Томас"
+      ],
+      "VAT number": [
+        "Номер плательщика НДС"
       ],
       "Your organization name": [
         "Название вашей организации"
@@ -5192,6 +5242,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Информация о платеже обновлена"
+      ],
       "Code sent to ${ methodTo }": [
         "Код отправлен на ${ methodTo }"
       ],
@@ -5365,6 +5418,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Скачать приложения ${ DRIVE_APP_NAME }"
+      ],
+      "Edit billing address": [
+        "Изменить платежный адрес"
       ],
       "Edit credit/debit card": [
         "Изменить кредитную/дебетовую карту"
