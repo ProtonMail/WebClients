@@ -13,6 +13,7 @@ import {
     getPricingFromPlanIDs,
     getTotalFromPricing,
     hasPlanIDs,
+    planIDsPositiveDifference,
     setQuantity,
     switchPlan,
 } from './planIDs';
@@ -1844,5 +1845,36 @@ describe('getPlanFromIDs', () => {
 
         const result = getPlanFromIDs(planIDs, {});
         expect(result).toBeUndefined();
+    });
+});
+
+describe('planIDsPositiveDifference', () => {
+    it('should return empty object if plans are undefined', () => {
+        expect(planIDsPositiveDifference(null as any, null as any)).toEqual({});
+        expect(planIDsPositiveDifference(null as any, {})).toEqual({});
+        expect(planIDsPositiveDifference({}, null as any)).toEqual({});
+
+        expect(planIDsPositiveDifference(undefined as any, undefined as any)).toEqual({});
+        expect(planIDsPositiveDifference(undefined as any, {})).toEqual({});
+        expect(planIDsPositiveDifference({}, undefined as any)).toEqual({});
+    });
+
+    it('should return empty object if plans are the same', () => {
+        const planIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 1 };
+        expect(planIDsPositiveDifference(planIDs, planIDs)).toEqual({});
+    });
+
+    it('should return difference if it is positive', () => {
+        const planIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 1 };
+        const newPlanIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 2 };
+        expect(planIDsPositiveDifference(planIDs, newPlanIDs)).toEqual({
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 1,
+        });
+    });
+
+    it('should NOT return difference if it is negative', () => {
+        const planIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 2 };
+        const newPlanIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 1 };
+        expect(planIDsPositiveDifference(planIDs, newPlanIDs)).toEqual({});
     });
 });
