@@ -150,6 +150,9 @@
       "Choose a file or drag it here": [
         "파일을 선택하거나 드래그하세요"
       ],
+      "Claim this address": [
+        "주소 얻기"
+      ],
       "Clear data": [
         "데이터 지우기"
       ],
@@ -375,6 +378,9 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName } 받기"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "무료 ${ BRAND_NAME } 주소 받기"
+      ],
       "Get in touch": [
         "연락하기"
       ],
@@ -391,7 +397,7 @@
         "뒤로 가기"
       ],
       "Go to ${ planOrAppName }": [
-        "${ planOrAppName }으로 이동하세요"
+        "${ planOrAppName }(으)로 이동"
       ],
       "Go to label": [
         "라벨로 이동"
@@ -2726,6 +2732,14 @@
         "우선 지원"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "입력란은 선택 사항입니다. 이 양식에 작성되는 정보는 향후 발행되는 청구서에만 표시되며 기존 청구서에는 영향을 미치지 않습니다."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "텍스트 입력란은 선택 사항입니다. 이 양식에 제공된 정보는 선택한 송장에 한해 변경되며 향후 송장 세부 사항은 변경되지 않습니다."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "참고:\n${ eventComment }"
@@ -2922,6 +2936,9 @@
       "Domain not available, try again later": [
         "도메인을 사용할 수 없습니다. 나중에 다시 시도해주세요."
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "청구서 주소 수정이 현재 사용할 수 없습니다.\n나중에 다시 시도하시기 바랍니다."
+      ],
       "Email address is required": [
         "이메일 주소가 필요함"
       ],
@@ -2951,6 +2968,9 @@
       ],
       "Failed to copy photo to album": [
         "사진을 앨범에 복사하지 못했습니다."
+      ],
+      "Failed to open to contact": [
+        "연락처 열기 실패"
       ],
       "Failed to rename document. Please try again later.": [
         "문서 이름 변경 실패. 다시 시도하세요."
@@ -3119,6 +3139,9 @@
       ],
       "Port is required": [
         "포트가 필요함"
+      ],
+      "Postal code is required": [
+        "우편 번호가 필요합니다"
       ],
       "Primary address key is not decrypted": [
         "기본 주소 키가 복호화되지 않았습니다"
@@ -3302,6 +3325,9 @@
       ],
       "Your import will not be processed.": [
         "가져오기가 처리되지 않았습니다."
+      ],
+      "ZIP code is required": [
+        "우편번호가 필요합니다"
       ]
     },
     "Error importing calendar": {
@@ -4126,6 +4152,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }의 암호화 기술은 당사를 포함한 그 누구도 회원님의 비밀번호에 접근할 수 없음을 뜻합니다."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME }은(는) 안전한 이벤트 동기화 및 암호화를 위해 ${ BRAND_NAME } 주소가 필요합니다. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount }개 새 달력"
       ],
@@ -4170,6 +4199,12 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }은 최소 1개 이상 전용 서버가 필요합니다 ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName }이(가) ${ daysLeft }일 내로 만료됩니다."
+      ],
+      "${ planName } expires today.": [
+        "${ planName }이(가) 오늘 만료됩니다."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME }이 의심스러운 활동에 대한 전담 모니터링으로 계정을 보호합니다."
@@ -4534,6 +4569,9 @@
       "End-to-end encrypted.": [
         "종단간 암호화됨."
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "완전히 개인적이고 암호화된 통신을 보장합니다. 지금 귀하의 무료 ${ BRAND_NAME } 이메일 주소를 확보하세요."
+      ],
       "Enter password": [
         "비밀번호 입력"
       ],
@@ -4551,6 +4589,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "자신의 비밀번호 입력 (조직 관리자와 같음)"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "사용자 고유의 비밀번호 입력 (신뢰할 수 있는 연락처로서)"
       ],
       "Error converting document: ${ errorMessage }": [
         "문서 변환 오류: ${ errorMessage }"
@@ -5658,6 +5699,9 @@
       "Expired": [
         "만료됨"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "만료된"
       ],
@@ -5782,6 +5826,9 @@
       ],
       "Colors": [
         "색상"
+      ],
+      "Company": [
+        "회사"
       ],
       "Company name": [
         "법인 이름"
@@ -6080,6 +6127,9 @@
       "Start date": [
         "시작일"
       ],
+      "State": [
+        "시/도"
+      ],
       "Stop sharing": [
         "공유 중지"
       ],
@@ -6160,6 +6210,12 @@
       ],
       "Your password (admin)": [
         "사용자의 비밀번호 (관리자)"
+      ],
+      "Your password (trusted contact)": [
+        "사용자 비밀번호 (신뢰할 수 있는 연락처)"
+      ],
+      "ZIP code": [
+        "우편번호"
       ]
     },
     "Label for contact group color": {
@@ -7017,7 +7073,7 @@
         "최대 2명 지원"
       ],
       "Sync and backup all your files across devices": [
-        "기기를 넘나들며 파일을 동기화 및 백업하세요"
+        "기기를 넘나들며 파일 동기화 및 백업"
       ],
       "Tor over VPN": [
         "Tor over VPN"
@@ -8133,6 +8189,9 @@
       "Timeout exceeded": [
         "응답 시간 초과"
       ],
+      "VAT number": [
+        "부가가치세 번호"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA 은행 송금이 유로화 결제만 지원하여 사용자의 통화가 유로화(€)로 변경되었습니다."
       ],
@@ -8185,8 +8244,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "ABN 추가"
+      ],
+      "Add Business Number": [
+        "사업자등록번호 추가"
+      ],
+      "Add EIN": [
+        "EIN 추가"
+      ],
+      "Add VAT number": [
+        "부가가치세 번호 추가"
+      ],
       "Business Number": [
         "사업자등록번호"
+      ],
+      "Edit ABN": [
+        "ABN 수정"
+      ],
+      "Edit Business Number": [
+        "사업자등록번호 수정"
+      ],
+      "Edit EIN": [
+        "EIN 수정"
+      ],
+      "Edit VAT number": [
+        "VAT 번호 수정"
       ],
       "EIN": [
         "EIN"
@@ -8229,8 +8312,17 @@
       "A way to contact you": [
         "사용자에게 연락할 방법"
       ],
+      "Anderson": [
+        "길동"
+      ],
+      "Anytown": [
+        "서울특별시 낙원구"
+      ],
       "Choose password": [
         "비밀번호 선택"
+      ],
+      "Company name": [
+        "법인 이름"
       ],
       "E.g., ": [
         "예, "
@@ -8258,6 +8350,9 @@
       ],
       "Last name": [
         "성"
+      ],
+      "Main street 12": [
+        "행복로 12"
       ],
       "Message": [
         "메시지"
@@ -8295,6 +8390,9 @@
       "Select a reason": [
         "사유 선택"
       ],
+      "Select country": [
+        "국가 선택"
+      ],
       "Select state": [
         "시・도 선택"
       ],
@@ -8306,6 +8404,12 @@
       ],
       "Start typing an email address": [
         "이메일 주소 입력을 시작하세요"
+      ],
+      "Thomas": [
+        "홍"
+      ],
+      "VAT number": [
+        "부가가치세 번호"
       ],
       "Your organization name": [
         "조직 이름"
@@ -9284,6 +9388,9 @@
       "Alias saved and copied": [
         "별칭이 저장 및 복사되었습니다"
       ],
+      "Billing details updated": [
+        "청구 상세 정보가 업데이트되었습니다."
+      ],
       "Canceling import": [
         "가져오기 취소 중"
       ],
@@ -9502,6 +9609,9 @@
       "Account security": [
         "계정 보안"
       ],
+      "Account temporarily locked": [
+        "계정 일시 잠김"
+      ],
       "Add contact group name": [
         "연락처 그룹 이름 추가"
       ],
@@ -9561,6 +9671,9 @@
       ],
       "Change password": [
         "비밀번호 변경"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } 주소를 받으세요"
       ],
       "Clearing data": [
         "데이터 지우기"
@@ -9699,6 +9812,9 @@
       ],
       "Duplicate folder found": [
         "중복 폴더 발견됨"
+      ],
+      "Edit billing address": [
+        "청구 주소 수정"
       ],
       "Edit contact": [
         "연락처 편집"

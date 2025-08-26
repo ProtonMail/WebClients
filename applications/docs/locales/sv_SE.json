@@ -2740,6 +2740,14 @@
         "Prioriterad support"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Textfält är valfria. Informationen du anger i detta formulär kommer endast att visas på fakturor som utfärdas i framtiden och kommer inte att påverka befintliga fakturor."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Informationen du anger i detta formulär kommer endast att ändra den faktura du har valt och inte dina framtida fakturadetaljer."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "OBS:\n${ eventComment }"
@@ -2938,6 +2946,9 @@
       "Domain not available, try again later": [
         "Domän inte tillgänglig, försök igen senare"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Redigering av faktureringsadress är inte tillgänglig just nu. Försök igen senare."
+      ],
       "Email address is required": [
         "E-postadress är obligatoriskt"
       ],
@@ -2967,6 +2978,9 @@
       ],
       "Failed to copy photo to album": [
         "Misslyckades att kopiera foto till album"
+      ],
+      "Failed to open to contact": [
+        "Misslyckades att öppna kontakt"
       ],
       "Failed to rename document. Please try again later.": [
         "Misslyckades att byta namn på dokument. Försök igen senare."
@@ -3139,6 +3153,9 @@
       ],
       "Port is required": [
         "Port är obligatoriskt"
+      ],
+      "Postal code is required": [
+        "Postnummer är obligatoriskt"
       ],
       "Primary address key is not decrypted": [
         "Primär adressnyckel är inte avkrypterad"
@@ -3321,6 +3338,9 @@
       ],
       "Your import will not be processed.": [
         "Din import kommer inte att bearbetas."
+      ],
+      "ZIP code is required": [
+        "Postnummer är obligatoriskt"
       ]
     },
     "Error importing calendar": {
@@ -4212,6 +4232,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } löper ut om ${ daysLeft } dag.",
+        "${ planName } löper ut om ${ daysLeft } dagar."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } löper ut idag."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } skyddar ditt konto med dedikerad övervakning av misstänkt aktivitet."
@@ -5842,6 +5869,9 @@
       "Colors": [
         "Färger"
       ],
+      "Company": [
+        "Företag"
+      ],
       "Company name": [
         "Företagsnamn"
       ],
@@ -6139,6 +6169,9 @@
       "Start date": [
         "Startdatum"
       ],
+      "State": [
+        "Delstat"
+      ],
       "Stop sharing": [
         "Sluta dela"
       ],
@@ -6222,6 +6255,9 @@
       ],
       "Your password (trusted contact)": [
         "Ditt lösenord (betrodd kontakt)"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "Label for contact group color": {
@@ -8359,6 +8395,18 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Lägg till ABN"
+      ],
+      "Add EIN": [
+        "Lägg till EIN"
+      ],
+      "Edit ABN": [
+        "Redigera ABN"
+      ],
+      "Edit EIN": [
+        "Redigera EIN"
+      ],
       "EIN": [
         "EIN"
       ],
@@ -8400,8 +8448,17 @@
       "A way to contact you": [
         "Ett sätt att kontakta dig"
       ],
+      "Anderson": [
+        "Andersson"
+      ],
+      "Anytown": [
+        "Alingsås"
+      ],
       "Choose password": [
         "Välj lösenord"
+      ],
+      "Company name": [
+        "Företagsnamn"
       ],
       "E.g., ": [
         "T.ex., "
@@ -8429,6 +8486,9 @@
       ],
       "Last name": [
         "Efternamn"
+      ],
+      "Main street 12": [
+        "Storgatan 12"
       ],
       "Message": [
         "Meddelande"
@@ -8466,6 +8526,9 @@
       "Select a reason": [
         "Välj en anledning"
       ],
+      "Select country": [
+        "Välj land"
+      ],
       "Select state": [
         "Välj delstat"
       ],
@@ -8477,6 +8540,12 @@
       ],
       "Start typing an email address": [
         "Börja skriva en e-postadress"
+      ],
+      "Thomas": [
+        "Tomas"
+      ],
+      "VAT number": [
+        "Momsnummer"
       ],
       "Your organization name": [
         "Ditt organisationsnamn"
@@ -9485,6 +9554,9 @@
       "Alias saved and copied": [
         "Alias sparat och kopierat"
       ],
+      "Billing details updated": [
+        "Faktureringsuppgifterna har uppdaterats"
+      ],
       "Canceling import": [
         "Avbryter import"
       ],
@@ -9922,6 +9994,9 @@
       ],
       "Duplicate folder found": [
         "Dubblettmapp hittades"
+      ],
+      "Edit billing address": [
+        "Redigera faktureringsadress"
       ],
       "Edit contact": [
         "Redigera kontakt"
