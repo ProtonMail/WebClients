@@ -232,7 +232,6 @@ export const hasDriveBusiness = (subscription: MaybeFreeSubscription) =>
 export const hasPass = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.PASS);
 export const hasWallet = (subscription: MaybeFreeSubscription) => hasSomeAddonOrPlan(subscription, PLANS.WALLET);
 export const hasLumoPlan = (subscription: MaybeFreeSubscription) => hasSomeAddonOrPlan(subscription, PLANS.LUMO);
-export const hasEnterprise = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.ENTERPRISE);
 export const hasBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.BUNDLE);
 export const hasBundlePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.BUNDLE_PRO);
 export const hasBundlePro2024 = (subscription: MaybeFreeSubscription) =>
