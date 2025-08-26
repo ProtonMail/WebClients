@@ -39,33 +39,34 @@ export enum MethodStorage {
     EXTERNAL = 1,
 }
 
-export enum INVOICE_TYPE {
-    OTHER = 0,
-    SUBSCRIPTION = 1,
-    CANCELLATION = 2,
-    CREDIT = 3,
-    DONATION = 4,
-    CHARGEBACK = 5,
-    RENEWAL = 6,
-    REFUND = 7,
-    MODIFICATION = 8,
-    ADDITION = 9,
-    CURRENCY_CONVERSION = 10,
+export enum InvoiceType {
+    Other = 0,
+    Subscription = 1,
+    Cancellation = 2,
+    Credit = 3,
+    Donation = 4,
+    Chargeback = 5,
+    Renewal = 6,
+    Refund = 7,
+    Modification = 8,
+    Addition = 9,
+    CurrencyConversion = 10,
     // Type 11 is an internal invoice type used for the migration. It's not supposed to be used by the frontend.
-    PRODUCT = 12,
+    Product = 12,
+    Manual = 13,
 }
 
-export enum INVOICE_STATE {
-    UNPAID = 0,
-    PAID = 1,
-    VOID = 2,
-    BILLED = 3,
-    WRITEOFF = 4,
+export enum InvoiceState {
+    Unpaid = 0,
+    Paid = 1,
+    Void = 2,
+    Billed = 3,
+    Writeoff = 4,
 }
 
-export enum INVOICE_OWNER {
-    USER = 0,
-    ORGANIZATION = 1,
+export enum InvoiceOwner {
+    User = 0,
+    Organization = 1,
 }
 
 export enum TransactionState {

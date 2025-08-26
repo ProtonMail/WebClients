@@ -1,13 +1,13 @@
 import Price from '@proton/components/components/price/Price';
 import type { Invoice } from '@proton/payments';
-import { INVOICE_STATE } from '@proton/payments';
+import { InvoiceState } from '@proton/payments';
 
 interface Props {
     invoice: Invoice;
 }
 
 const format = ({ State, AmountCharged = 0, AmountDue = 0 }: Invoice) => {
-    return State === INVOICE_STATE.UNPAID || State === INVOICE_STATE.BILLED ? AmountDue : AmountCharged;
+    return State === InvoiceState.Unpaid || State === InvoiceState.Billed ? AmountDue : AmountCharged;
 };
 
 const InvoiceAmount = ({ invoice }: Props) => {
