@@ -2271,6 +2271,14 @@
         "Prioriteitsondersteuning"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstvelden zijn optioneel. De informatie die u in dit formulier verstrekt zal alleen verschijnen op in de toekomst uitgegeven facturen en zal geen invloed hebben op bestaande facturen."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Tekstvelden zijn optioneel. De informatie die u in dit formulier opgeeft, zal alleen de door u geselecteerde factuur wijzigen en niet uw toekomstige factuurgegevens."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Vertrouwd contact"
@@ -2297,6 +2305,9 @@
       ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Factuuradres bewerken is op dit moment niet beschikbaar. Probeer het later opnieuw."
       ],
       "Email is not valid": [
         "E-mailadres is ongeldig"
@@ -2382,6 +2393,9 @@
       "Please select billing state": [
         "Selecteer factureringsstaat"
       ],
+      "Postal code is required": [
+        "Postcode is vereist"
+      ],
       "Process aborted": [
         "Proces afgebroken"
       ],
@@ -2432,6 +2446,9 @@
       ],
       "Username must end with a letter or digit": [
         "Gebruikersnaam moet met een letter of cijfer eindigen"
+      ],
+      "ZIP code is required": [
+        "Postcode is vereist"
       ]
     },
     "Error message": {
@@ -3248,11 +3265,17 @@
       "Category": [
         "Categorie"
       ],
+      "City": [
+        "Stad"
+      ],
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
       ],
       "Colors": [
         "Kleuren"
+      ],
+      "Company": [
+        "Bedrijf"
       ],
       "Company name": [
         "Bedrijfsnaam"
@@ -3344,6 +3367,9 @@
       "Phone number": [
         "Telefoonnummer"
       ],
+      "Postal code": [
+        "Postcode"
+      ],
       "Proration": [
         "Verrekening"
       ],
@@ -3361,6 +3387,12 @@
       ],
       "Start date": [
         "Begindatum"
+      ],
+      "State": [
+        "Staat"
+      ],
+      "Street address": [
+        "Adres"
       ],
       "Subscription options": [
         "Abonnementsopties"
@@ -3388,6 +3420,9 @@
       ],
       "Your password (trusted contact)": [
         "Uw wachtwoord (vertrouwd contact)"
+      ],
+      "ZIP code": [
+        "Postcode"
       ]
     },
     "Label, credit card": {
@@ -4581,6 +4616,9 @@
       "Timeout exceeded": [
         "Time-out overschreden"
       ],
+      "VAT number": [
+        "BTW-nummer"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Uw valuta is gewijzigd naar euro (€) omdat SEPA-bankoverschrijvingen alleen betalingen in euro ondersteunen."
       ],
@@ -4633,8 +4671,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "ABN toevoegen"
+      ],
+      "Add Business Number": [
+        "Ondernemingsnummer toevoegen"
+      ],
+      "Add EIN": [
+        "EIN toevoegen"
+      ],
+      "Add VAT number": [
+        "BTW-nummer toevoegen"
+      ],
       "Business Number": [
         "Ondernemingsnummer"
+      ],
+      "Edit ABN": [
+        "ABN bewerken"
+      ],
+      "Edit Business Number": [
+        "Ondernemingsnummer bewerken"
+      ],
+      "Edit EIN": [
+        "EIN bewerken"
+      ],
+      "Edit VAT number": [
+        "Wijzig BTW-nummer"
       ],
       "EIN": [
         "Rijksregisternummer"
@@ -4647,6 +4709,15 @@
       "A way to contact you": [
         "Een manier om u te contacteren"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "Willekeurige stad"
+      ],
+      "Company name": [
+        "Bedrijfsnaam"
+      ],
       "Confirm passphrase or leave empty": [
         "Bevestig wachtwoordzin of laat leeg"
       ],
@@ -4658,6 +4729,9 @@
       ],
       "Gift code": [
         "Geschenkcode"
+      ],
+      "Main street 12": [
+        "Hoofdstraat 12"
       ],
       "Organization name": [
         "Organisatienaam"
@@ -4686,11 +4760,20 @@
       "Select a reason": [
         "Selecteer een reden"
       ],
+      "Select country": [
+        "Selecteer land"
+      ],
       "Select state": [
         "Selecteer provincie"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Deel wat volgens u ${ BRAND_NAME } beter zou kunnen maken"
+      ],
+      "Thomas": [
+        "Thomas"
+      ],
+      "VAT number": [
+        "BTW-nummer"
       ],
       "Your organization name": [
         "Uw organisatienaam"
@@ -5222,6 +5305,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Factuurgegevens bijgewerkt"
+      ],
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
       ],
@@ -5404,6 +5490,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Download ${ DRIVE_APP_NAME } apps"
+      ],
+      "Edit billing address": [
+        "Factuuradres bewerken"
       ],
       "Edit credit/debit card": [
         "Krediet/debietkaart bewerken"

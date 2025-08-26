@@ -2184,6 +2184,14 @@
         "Elsőbbségi támogatás"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "A szövegmezők nem kötelezőek. Az ebben az űrlapon megadott információk csak a jövőben kiállított számlákon jelennek meg, és nem befolyásolják a meglévő számlákat."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "A szövegmezők kitöltése nem kötelező. Az ezen az űrlapon megadott információk csak a kiválasztott számlát módosítják, a jövőbeni számlák részleteit nem."
+      ]
+    },
     "Error": {
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } az Ön felhasználói neve. E-mail cím ${ emailAddress } létrehozásához kövesse az alábbi lépéseket: beállítások, személyazonosság és cím, rövid domain név (pm.me)"
@@ -2205,6 +2213,9 @@
       ],
       "Domain not available, try again later": [
         "A domain név nem érhető el, próbálja meg később"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "A számlázási cím szerkesztése jelenleg nem elérhető. Kérjük, próbálja meg később újra."
       ],
       "Email is not valid": [
         "Érvénytelen e-mail cím"
@@ -2325,6 +2336,9 @@
       ],
       "Username must end with a letter or digit": [
         "Felhasználónévnek betűvel vagy számmal kell végződnie"
+      ],
+      "ZIP code is required": [
+        "Irányítószám szükséges"
       ]
     },
     "Error message": {
@@ -3120,11 +3134,17 @@
       "Category": [
         "Kategória"
       ],
+      "City": [
+        "Település"
+      ],
       "Code is 6 digits without spaces": [
         "A kód hatjegyű, szóközök nélkül"
       ],
       "Colors": [
         "Színek"
+      ],
+      "Company": [
+        "Cég"
       ],
       "Company name": [
         "Cégnév"
@@ -3213,6 +3233,9 @@
       "Phone number": [
         "Telefonszám"
       ],
+      "Postal code": [
+        "Irányítószám"
+      ],
       "Proration": [
         "Arányosítás"
       ],
@@ -3230,6 +3253,12 @@
       ],
       "Start date": [
         "Kezdő dátum"
+      ],
+      "State": [
+        "Állam"
+      ],
+      "Street address": [
+        "Utca, házszám"
       ],
       "Subscription options": [
         "Előfizetés lehetőségei"
@@ -3254,6 +3283,9 @@
       ],
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
+      ],
+      "ZIP code": [
+        "Irányítószám"
       ]
     },
     "Label, credit card": {
@@ -4478,6 +4510,15 @@
       "A way to contact you": [
         "Kapcsolatfelvételi lehetőség"
       ],
+      "Anderson": [
+        "Kovács"
+      ],
+      "Anytown": [
+        "Bárholváros"
+      ],
+      "Company name": [
+        "Cégnév"
+      ],
       "Confirm passphrase or leave empty": [
         "Erősítse meg a kulcsszöveget vagy hagyja üresen"
       ],
@@ -4489,6 +4530,9 @@
       ],
       "Gift code": [
         "Ajándék kód"
+      ],
+      "Main street 12": [
+        "Fő utca 12."
       ],
       "Organization name": [
         "Szervezet neve"
@@ -4522,6 +4566,12 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Ossza meg velünk, hogy Ön szerint mitől lenne jobb ${ BRAND_NAME }"
+      ],
+      "Thomas": [
+        "Tamás"
+      ],
+      "VAT number": [
+        "Áfa-szám"
       ],
       "Your organization name": [
         "A szervezet neve"
@@ -5036,6 +5086,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Számlázási adatok frissítve"
+      ],
       "Code sent to ${ methodTo }": [
         "Kód elküldve: ${ methodTo }"
       ],
@@ -5209,6 +5262,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } alkalmazások letöltése"
+      ],
+      "Edit billing address": [
+        "Számlázási cím szerkesztése"
       ],
       "Edit credit/debit card": [
         "Bankkártya szerkesztése"

@@ -2201,6 +2201,14 @@
         "Apoio ao cliente prioritário"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Os campos de texto são opcionais. As informações fornecidas neste formulário só aparecerão nas faturas emitidas no futuro e não afetarão as faturas existentes."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Os campos de texto são opcionais. As informações fornecidas neste formulário só irão alterar a fatura que selecionou e não os detalhes da futura fatura."
+      ]
+    },
     "Error": {
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } é o seu nome de utilizador. Para criar ${ emailAddress }, aceda a Definições > Identidade e endereços > Domínio curto (pm.me)."
@@ -2222,6 +2230,9 @@
       ],
       "Domain not available, try again later": [
         "Domínio indisponível, tente novamente mais tarde"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "A edição do endereço de faturação não está disponível no momento. Tente novamente mais tarde."
       ],
       "Email is not valid": [
         "O e-mail não é válido."
@@ -2307,6 +2318,9 @@
       "Please select billing state": [
         "Selecionar o estado de faturação"
       ],
+      "Postal code is required": [
+        "O código postal é obrigatório"
+      ],
       "Process aborted": [
         "Processo abortado"
       ],
@@ -2357,6 +2371,9 @@
       ],
       "Username must end with a letter or digit": [
         "O nome de utilizador deve acabar com uma letra ou algarismo"
+      ],
+      "ZIP code is required": [
+        "O código postal é necessário."
       ]
     },
     "Error message": {
@@ -3170,11 +3187,17 @@
       "Category": [
         "Categoria"
       ],
+      "City": [
+        "Cidade"
+      ],
       "Code is 6 digits without spaces": [
         "O código tem 6 dígitos sem espaços"
       ],
       "Colors": [
         "Cores"
+      ],
+      "Company": [
+        "Empresa"
       ],
       "Company name": [
         "Nome da empresa"
@@ -3266,6 +3289,9 @@
       "Phone number": [
         "Número de telefone"
       ],
+      "Postal code": [
+        "Código postal"
+      ],
       "Proration": [
         "Repartição"
       ],
@@ -3283,6 +3309,12 @@
       ],
       "Start date": [
         "Data inicial"
+      ],
+      "State": [
+        "Estado"
+      ],
+      "Street address": [
+        "Endereço postal"
       ],
       "Subscription options": [
         "Opções da subscrição"
@@ -3307,6 +3339,9 @@
       ],
       "Your password (admin)": [
         "A sua palavra-passe (admin)"
+      ],
+      "ZIP code": [
+        "Código postal"
       ]
     },
     "Label, credit card": {
@@ -4566,6 +4601,15 @@
       "A way to contact you": [
         "Uma forma de o contactar"
       ],
+      "Anderson": [
+        "Ferreira"
+      ],
+      "Anytown": [
+        "Porto Verde"
+      ],
+      "Company name": [
+        "Nome da empresa"
+      ],
       "Confirm passphrase or leave empty": [
         "Confirmar a frase secreta ou deixá-la vazia"
       ],
@@ -4577,6 +4621,9 @@
       ],
       "Gift code": [
         "Código de oferta"
+      ],
+      "Main street 12": [
+        "Rua principal, 12"
       ],
       "Organization name": [
         "Nome da organização"
@@ -4610,6 +4657,12 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Partilhe o que pensa que poderia tornar a ${ BRAND_NAME } melhor"
+      ],
+      "Thomas": [
+        "Andrea"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ],
       "Your organization name": [
         "O nome da sua organização"
@@ -5127,6 +5180,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Os detalhes de faturação forem atualizados."
+      ],
       "Code sent to ${ methodTo }": [
         "Código enviado para ${ methodTo }"
       ],
@@ -5306,6 +5362,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Transferir as aplicações do ${ DRIVE_APP_NAME }"
+      ],
+      "Edit billing address": [
+        "Editar o endereço da fatura"
       ],
       "Edit credit/debit card": [
         "Editar cartão de crédito/débito"

@@ -296,7 +296,7 @@
         "Zabezpiecz portfel"
       ],
       "Select ${ planOrAppName }": [
-        "Wybierz plan ${ planOrAppName }"
+        "Wybierz ${ planOrAppName }"
       ],
       "Select billing cycle ${ billingText }": [
         "Wybierz cykl rozliczeniowy ${ billingText }"
@@ -2291,6 +2291,14 @@
         "Priorytetowe wsparcie"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Pola tekstowe są opcjonalne. Te informacje pojawią się tylko na przyszłych fakturach i nie będą miały wpływu na obecne faktury."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Pola tekstowe są opcjonalne. Podane informacje zmienią tylko wybraną fakturę, a nie dane przyszłej faktury."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Zaufany kontakt"
@@ -2317,6 +2325,9 @@
       ],
       "Domain not available, try again later": [
         "Domena nie jest dostępna. Spróbuj ponownie później"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Edytowanie adresu rozliczeniowego nie jest obecnie dostępne. Spróbuj ponownie później."
       ],
       "Email is not valid": [
         "Adres e-mail nie jest prawidłowy"
@@ -2402,6 +2413,9 @@
       "Please select billing state": [
         "Wybierz stan rozliczeniowy"
       ],
+      "Postal code is required": [
+        "Kod pocztowy jest wymagany"
+      ],
       "Process aborted": [
         "Proces został przerwany"
       ],
@@ -2452,6 +2466,9 @@
       ],
       "Username must end with a letter or digit": [
         "Nazwa użytkownika musi kończyć się literą lub cyfrą"
+      ],
+      "ZIP code is required": [
+        "Kod pocztowy jest wymagany"
       ]
     },
     "Error message": {
@@ -2892,7 +2909,7 @@
         "Wpisz swoje hasło (jako zaufany kontakt)."
       ],
       "Everything in ${ planOrAppName }": [
-        "Wszystko w planie ${ planOrAppName }"
+        "Wszystko w ${ planOrAppName }"
       ],
       "Expired": [
         "Wygasła"
@@ -3298,11 +3315,17 @@
       "Category": [
         "Kategoria"
       ],
+      "City": [
+        "Miasto"
+      ],
       "Code is 6 digits without spaces": [
         "Kod to 6 cyfr bez spacji"
       ],
       "Colors": [
         "Kolory"
+      ],
+      "Company": [
+        "Firma"
       ],
       "Company name": [
         "Nazwa firmy"
@@ -3394,6 +3417,9 @@
       "Phone number": [
         "Numer telefonu"
       ],
+      "Postal code": [
+        "Kod pocztowy"
+      ],
       "Proration": [
         "Dzielenie proporcjonalne"
       ],
@@ -3411,6 +3437,12 @@
       ],
       "Start date": [
         "Data rozpoczęcia"
+      ],
+      "State": [
+        "Stan"
+      ],
+      "Street address": [
+        "Ulica"
       ],
       "Subscription options": [
         "Opcje subskrypcji"
@@ -3438,6 +3470,9 @@
       ],
       "Your password (trusted contact)": [
         "Twoje hasło (zaufany kontakt)"
+      ],
+      "ZIP code": [
+        "Kod pocztowy"
       ]
     },
     "Label, credit card": {
@@ -4695,6 +4730,9 @@
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
       ],
+      "VAT number": [
+        "Numer VAT"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Twoja waluta została zmieniona na euro (€), ponieważ przelewy bankowe SEPA obsługują tylko płatności w euro."
       ],
@@ -4747,8 +4785,29 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Dodaj ABN"
+      ],
+      "Add Business Number": [
+        "Dodaj NIP"
+      ],
+      "Add EIN": [
+        "Dodaj EIN"
+      ],
+      "Add VAT number": [
+        "Dodaj numer VAT"
+      ],
       "Business Number": [
         "NIP"
+      ],
+      "Edit ABN": [
+        "Edytuj ABN"
+      ],
+      "Edit EIN": [
+        "Edytuj EIN"
+      ],
+      "Edit VAT number": [
+        "Edytuj numer VAT"
       ],
       "EIN": [
         "EIN"
@@ -4761,6 +4820,15 @@
       "A way to contact you": [
         "Preferowana metoda kontaktu"
       ],
+      "Anderson": [
+        "Nowak"
+      ],
+      "Anytown": [
+        "Kraków"
+      ],
+      "Company name": [
+        "Nazwa firmy"
+      ],
       "Confirm passphrase or leave empty": [
         "Potwierdź hasło lub pozostaw pole puste"
       ],
@@ -4772,6 +4840,9 @@
       ],
       "Gift code": [
         "Kod podarunkowy"
+      ],
+      "Main street 12": [
+        "Główna 12"
       ],
       "Organization name": [
         "Nazwa organizacji"
@@ -4800,11 +4871,20 @@
       "Select a reason": [
         "Wybierz przyczynę"
       ],
+      "Select country": [
+        "Wybierz kraj"
+      ],
       "Select state": [
         "Wybierz stan"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Napisz, jak możemy ulepszyć usługi ${ BRAND_NAME }"
+      ],
+      "Thomas": [
+        "Jan"
+      ],
+      "VAT number": [
+        "Numer VAT"
       ],
       "Your organization name": [
         "Twoja nazwa organizacji"
@@ -5360,6 +5440,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Szczegóły płatności zostały zaktualizowane"
+      ],
       "Code sent to ${ methodTo }": [
         "Kod został wysłany na ${ methodTo }"
       ],
@@ -5539,6 +5622,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Pobierz aplikacje ${ DRIVE_APP_NAME }"
+      ],
+      "Edit billing address": [
+        "Edytuj adres rozliczeniowy"
       ],
       "Edit credit/debit card": [
         "Edytuj kartę płatniczą"

@@ -2271,6 +2271,14 @@
         "Suporte prioritário"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Os campos de texto são opcionais. As informações que você fornecer neste formulário aparecerão somente em faturas emitidas no futuro e não afetarão as faturas existentes."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Os campos de texto são opcionais. As informações fornecidas neste formulário alterarão apenas a fatura selecionada, e não os detalhes das faturas futuras."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Contato de confiança"
@@ -2297,6 +2305,9 @@
       ],
       "Domain not available, try again later": [
         "Domínio indisponível. Tente novamente mais tarde."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "A edição do endereço de cobrança não está disponível no momento. Tente novamente mais tarde."
       ],
       "Email is not valid": [
         "O e-mail não é válido."
@@ -2382,6 +2393,9 @@
       "Please select billing state": [
         "Selecione estado de cobrança"
       ],
+      "Postal code is required": [
+        "Código postal é obrigatório"
+      ],
       "Process aborted": [
         "Processo abortado"
       ],
@@ -2432,6 +2446,9 @@
       ],
       "Username must end with a letter or digit": [
         "O nome de usuário deve terminar com uma letra ou dígito"
+      ],
+      "ZIP code is required": [
+        "O CEP é obrigatório."
       ]
     },
     "Error message": {
@@ -3248,11 +3265,17 @@
       "Category": [
         "Categoria"
       ],
+      "City": [
+        "Cidade"
+      ],
       "Code is 6 digits without spaces": [
         "O código é de 6 dígitos sem espaços"
       ],
       "Colors": [
         "Cores"
+      ],
+      "Company": [
+        "Empresa"
       ],
       "Company name": [
         "Nome da empresa"
@@ -3344,6 +3367,9 @@
       "Phone number": [
         "Número do telefone"
       ],
+      "Postal code": [
+        "Código postal"
+      ],
       "Proration": [
         "Cálculo proporcional"
       ],
@@ -3361,6 +3387,12 @@
       ],
       "Start date": [
         "Data de início"
+      ],
+      "State": [
+        "Estado"
+      ],
+      "Street address": [
+        "Endereço"
       ],
       "Subscription options": [
         "Opções de assinatura"
@@ -3388,6 +3420,9 @@
       ],
       "Your password (trusted contact)": [
         "Sua senha (contato de confiança)"
+      ],
+      "ZIP code": [
+        "CEP"
       ]
     },
     "Label, credit card": {
@@ -4643,6 +4678,12 @@
       "Business Number": [
         "Número comercial"
       ],
+      "Edit ABN": [
+        "Editar ABN"
+      ],
+      "Edit EIN": [
+        "Editar EIN"
+      ],
       "EIN": [
         "Número de identificação tributária (EIN)"
       ],
@@ -4653,6 +4694,15 @@
     "Placeholder": {
       "A way to contact you": [
         "Uma maneira de entrar em contato com você"
+      ],
+      "Anderson": [
+        "Braga"
+      ],
+      "Anytown": [
+        "Nova Esperança"
+      ],
+      "Company name": [
+        "Nome da empresa"
       ],
       "Confirm passphrase or leave empty": [
         "Confirme a frase secreta ou deixe vazio"
@@ -4665,6 +4715,9 @@
       ],
       "Gift code": [
         "Código de vale-presente"
+      ],
+      "Main street 12": [
+        "Rua Principal, 12"
       ],
       "Organization name": [
         "Nome da organização"
@@ -4698,6 +4751,12 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Compartilhe o que você acha que poderia melhorar na ${ BRAND_NAME }"
+      ],
+      "Thomas": [
+        "Andrea"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ],
       "Your organization name": [
         "Seu nome da organização"
@@ -5229,6 +5288,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Os detalhes de faturamento forem atualizados"
+      ],
       "Code sent to ${ methodTo }": [
         "Código enviado para ${ methodTo }"
       ],
@@ -5408,6 +5470,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Baixar os aplicativos do ${ DRIVE_APP_NAME }"
+      ],
+      "Edit billing address": [
+        "Editar o endereço de cobrança"
       ],
       "Edit credit/debit card": [
         "Editar cartão de crédito/débito"
