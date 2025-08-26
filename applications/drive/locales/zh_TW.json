@@ -156,6 +156,9 @@
       "Choose a file or drag it here": [
         "選擇檔案或拖曳到此處"
       ],
+      "Claim this address": [
+        "獲取這個電郵位址"
+      ],
       "Clear": [
         "清除"
       ],
@@ -206,6 +209,9 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "確認開啟連結 ${ linkToShow }"
+      ],
+      "Connect to video conferencing": [
+        "連接視訊會議"
       ],
       "Contact group": [
         "聯絡人群組"
@@ -999,6 +1005,9 @@
       "Upload": [
         "上傳"
       ],
+      "Upload and share files": [
+        "上傳並共享檔案"
+      ],
       "Upload anyway": [
         "仍要上載"
       ],
@@ -1161,6 +1170,9 @@
       "Stream your favorite content": [
         "暢遊影音串流平台"
       ],
+      "thanks to you": [
+        "感謝您"
+      ],
       "Unlimited folders, labels and filters": [
         "資料夾、標籤與篩選器無上限"
       ],
@@ -1288,11 +1300,17 @@
       "6 users": [
         "6 位使用者"
       ],
+      "8500+ servers across 110+ countries": [
+        "超過 8500 臺伺服器，遍布於 110 個以上的國家"
+      ],
       "Ad-blocker and malware protection": [
         "廣告攔截器及惡意軟體防護"
       ],
       "Advanced account protection": [
         "進階的帳號保護"
+      ],
+      "Easily add or remove users": [
+        "輕鬆新增或移除使用者"
       ],
       "High speed streaming": [
         "高速串流"
@@ -1302,6 +1320,9 @@
       ],
       "Online document editor": [
         "線上文件編輯器"
+      ],
+      "Password health alerts": [
+        "密碼堅固性警示"
       ],
       "Private photo backup": [
         "私人照片備份"
@@ -2941,6 +2962,9 @@
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "目前不可編輯付款地址。請稍後再試。"
+      ],
       "Email address is required": [
         "電郵位址為必填"
       ],
@@ -3139,6 +3163,9 @@
       "Port is required": [
         "通訊埠為必填"
       ],
+      "Postal code is required": [
+        "郵遞區號為必填"
+      ],
       "Primary address key is not decrypted": [
         "主要位址金鑰並未被解密"
       ],
@@ -3318,6 +3345,9 @@
       ],
       "Your import will not be processed.": [
         "將不會處理您的匯入。"
+      ],
+      "ZIP code is required": [
+        "郵遞區號為必要項目"
       ]
     },
     "Error importing calendar": {
@@ -4569,6 +4599,9 @@
       "Dedicated servers": [
         "專用伺服器"
       ],
+      "Dedicated VPN servers": [
+        "專用 VPN 伺服器"
+      ],
       "default email address": [
         "預設電子信箱地址"
       ],
@@ -5361,6 +5394,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "訂購授權即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
       ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "訂購授權即將到期，請於${ byDate }前至Play 商店重新訂購以保留您的${ planName }權益。${ reactivateLink }"
+      ],
       "Symbols (#$&)": [
         "符號(#$&)"
       ],
@@ -5829,6 +5865,9 @@
       "Your files will be encrypted and then saved.": [
         "您的檔案將經加密後儲存。"
       ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "您的免費試用已成功轉換為每月訂購授權。您的續訂日期為 ${ nextBillingDate }。"
+      ],
       "Your information was found on ${ displayedDate }": [
         "您的資料在 ${ displayedDate } 被發現。"
       ],
@@ -6081,6 +6120,9 @@
       ],
       "Comment": [
         "評論"
+      ],
+      "Company": [
+        "公司"
       ],
       "Company name": [
         "公司名稱"
@@ -6442,6 +6484,9 @@
       "Start date": [
         "開始日期"
       ],
+      "State": [
+        "州"
+      ],
       "Stolen data": [
         "失竊資料"
       ],
@@ -6549,6 +6594,9 @@
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
+      ],
+      "ZIP code": [
+        "郵遞區號"
       ]
     },
     "Label for contact group color": {
@@ -6621,6 +6669,9 @@
       ],
       "clearing your browser cache": [
         "清除瀏覽器快取"
+      ],
+      "How to add users": [
+        "如何新增使用者"
       ],
       "How to pay with Bitcoin?": [
         "如何以比特幣繳款？"
@@ -8116,6 +8167,9 @@
       ]
     },
     "Offer": {
+      "${ planName } for 12 months": [
+        "為期 12 個月的 ${ planName }"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }優惠今日過期!"
       ],
@@ -8346,6 +8400,9 @@
       ],
       "help center": [
         "說明中心"
+      ],
+      "Once your full subscription starts...": [
+        "您的正式訂購授權一旦開始..."
       ]
     },
     "Option": {
@@ -8525,6 +8582,9 @@
       "Timeout exceeded": [
         "已經逾時"
       ],
+      "VAT number": [
+        "增值稅編號（VAT）"
+      ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
       ]
@@ -8566,8 +8626,20 @@
       "ABN": [
         "商業號碼（ABN）"
       ],
+      "Add Business Number": [
+        "新增營業人統一編號"
+      ],
+      "Add VAT number": [
+        "新增增值稅編號（VAT）"
+      ],
       "Business Number": [
         "營業人統一編號"
+      ],
+      "Edit Business Number": [
+        "編輯營業人統一編號"
+      ],
+      "Edit VAT number": [
+        "編輯增值稅編號（VAT）"
       ],
       "EIN": [
         "僱主身份識別號碼（EIN）"
@@ -8610,8 +8682,14 @@
       "A way to contact you": [
         "您的聯絡方式"
       ],
+      "Anderson": [
+        "安德松"
+      ],
       "Choose password": [
         "設定密碼"
+      ],
+      "Company name": [
+        "公司名稱"
       ],
       "E.g., ": [
         "例如： "
@@ -8688,6 +8766,9 @@
       "Select a reason": [
         "選取理由"
       ],
+      "Select country": [
+        "選擇國家"
+      ],
       "Select state": [
         "請選州"
       ],
@@ -8699,6 +8780,12 @@
       ],
       "Start typing an email address": [
         "在此輸入一個電郵位址"
+      ],
+      "Thomas": [
+        "湯姆斯"
+      ],
+      "VAT number": [
+        "增值稅編號（VAT）"
       ],
       "ZIP code": [
         "郵遞區號"
@@ -9135,6 +9222,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "特別優惠適用於最初的兩年。"
+      ],
       "Your subscription will renew at the same rate every year.": [
         "您的訂閱每年將以同費率更新"
       ]
@@ -9145,6 +9235,9 @@
       ],
       "Go to subscription plans": [
         "查看訂購授權"
+      ],
+      "Guard against threats": [
+        "防範威脅"
       ],
       "Increase your storage": [
         "增加您的儲存"
@@ -9789,6 +9882,9 @@
       "Alias saved and copied": [
         "已成功儲存及複製別名"
       ],
+      "Billing details updated": [
+        "帳單詳情已更新"
+      ],
       "Canceling import": [
         "正在取消匯入"
       ],
@@ -10282,6 +10378,9 @@
       "Duplicate folder found": [
         "發現重複資料夾"
       ],
+      "Edit billing address": [
+        "編輯帳單地址"
+      ],
       "Edit contact": [
         "編輯聯絡人"
       ],
@@ -10341,6 +10440,9 @@
       ],
       "Found ${ searchView.numberOfResults } result": [
         "找到 ${ searchView.numberOfResults } 個結果"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "獲得 ${ CALENDAR_APP_NAME }的完整功能"
       ],
       "Get more from your VPN": [
         "從您的VPN取得更多"
@@ -10608,6 +10710,9 @@
       ],
       "Share ${ name }": [
         "與 ${ name } 共享"
+      ],
+      "Share your calendar with your team": [
+        "與團隊共享行事曆"
       ],
       "Shared": [
         "已分享"

@@ -2962,6 +2962,14 @@
         "Приоритетная поддержка"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Текстовые поля являются необязательными. Информация, которую вы предоставите в этой форме, будет отображаться только в счетах, выставляемых в будущем, и не повлияет на существующие счета."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Текстовые поля являются необязательными. Информация, которую вы предоставите в этой форме, изменит только выбранный вами счет-фактуру, но не ваши будущие данные о счете-фактуре."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "ПРИМЕЧАНИЕ:\n${ eventComment }"
@@ -3161,6 +3169,9 @@
       ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Изменение платежного адреса в данный момент недоступно. Повторите попытку позже."
       ],
       "Email address is required": [
         "Нужно указать адрес электронной почты"
@@ -3557,6 +3568,9 @@
       ],
       "Your import will not be processed.": [
         "Импорт не будет обработан."
+      ],
+      "ZIP code is required": [
+        "Необходимо указать почтовый индекс"
       ]
     },
     "Error importing calendar": {
@@ -4621,6 +4635,15 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } требует минимум 1 выделенный сервер ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "Срок действия ${ planName } истекает через ${ daysLeft } день.",
+        "Срок действия ${ planName } истекает через ${ daysLeft } дня.",
+        "Срок действия ${ planName } истекает через ${ daysLeft } дней.",
+        "Срок действия ${ planName } истекает через ${ daysLeft } дней."
+      ],
+      "${ planName } expires today.": [
+        "Срок действия ${ planName } истекает сегодня."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } защищает вашу учётную запись посредством специального наблюдения за подозрительной активностью."
@@ -6699,6 +6722,9 @@
       "Comment": [
         "Комментарий"
       ],
+      "Company": [
+        "Компания"
+      ],
       "Company name": [
         "Название компании"
       ],
@@ -7068,6 +7094,9 @@
       "Start date": [
         "Дата начала"
       ],
+      "State": [
+        "Состояние"
+      ],
       "Stolen data": [
         "Украденные данные"
       ],
@@ -7175,6 +7204,9 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "ZIP code": [
+        "Почтовый индекс"
       ]
     },
     "Label for contact group color": {
@@ -9464,8 +9496,17 @@
       "A way to contact you": [
         "Способ связаться с вами"
       ],
+      "Anderson": [
+        "Андерсон"
+      ],
+      "Anytown": [
+        "Любой город"
+      ],
       "Choose password": [
         "Выбрать пароль"
+      ],
+      "Company name": [
+        "Название компании"
       ],
       "E.g., ": [
         "Например, "
@@ -9502,6 +9543,9 @@
       ],
       "Last name": [
         "Фамилия"
+      ],
+      "Main street 12": [
+        "Мейн стрит 12"
       ],
       "Message": [
         "Сообщение"
@@ -9553,6 +9597,12 @@
       ],
       "Start typing an email address": [
         "Начните вводить адрес эл. почты"
+      ],
+      "Thomas": [
+        "Томас"
+      ],
+      "VAT number": [
+        "Номер плательщика НДС"
       ],
       "Your organization name": [
         "Название вашей организации"
@@ -10814,6 +10864,9 @@
       "Alias saved and copied": [
         "Псевдоним сохранён и скопирован"
       ],
+      "Billing details updated": [
+        "Информация о платеже обновлена"
+      ],
       "Canceling import": [
         "Отмена импорта"
       ],
@@ -11393,6 +11446,9 @@
       ],
       "Duplicate folder found": [
         "Найден дубликат папки"
+      ],
+      "Edit billing address": [
+        "Изменить платежный адрес"
       ],
       "Edit contact": [
         "Изменение контакта"

@@ -165,6 +165,9 @@
       "Choose a file or drag it here": [
         "Alegeți un fișier sau trageți-l aici"
       ],
+      "Claim this address": [
+        "Revendicați această adresă"
+      ],
       "Clear": [
         "Eliminare"
       ],
@@ -474,6 +477,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Luați ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Obțineți o adresă gratuită ${ BRAND_NAME }"
       ],
       "Get in touch": [
         "Contactați-ne"
@@ -3054,6 +3060,14 @@
         "Asistență prioritară"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Câmpurile text sunt opționale. Informațiile furnizate în acest formular vor apărea doar pe facturile emise în viitor și nu vor afecta facturile deja emise."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Câmpurile de text sunt opționale. Informațiile pe care le furnizați în acest formular vor modifica doar factura pe care ați selectat-o ​​și nu detaliile viitoarei facturi."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "NOTĂ:\n${ eventComment }"
@@ -3193,6 +3207,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Suma este sub minimul acceptat (${ minimumAmount })."
       ],
+      "An error occurred": [
+        "A apărut o eroare."
+      ],
       "An error occurred while loading alias options": [
         "A apărut o eroare în timpul încărcării opțiunilor aliasurilor."
       ],
@@ -3260,6 +3277,9 @@
       "Domain not available, try again later": [
         "Domeniul nu este disponibil. Reîncercați mai târziu."
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Editarea adresei de facturare nu este disponibilă momentan. Reîncercați mai târziu."
+      ],
       "Email address is required": [
         "Adresa de e-mail este obligatorie"
       ],
@@ -3307,6 +3327,9 @@
       ],
       "Failed to load the STL preview": [
         "Nu s-a putut încărca examinarea STL."
+      ],
+      "Failed to open to contact": [
+        "Nu s-a putut deschide contactul."
       ],
       "Failed to resend invitation": [
         "Eșuare retrimitere invitație."
@@ -3502,6 +3525,9 @@
       "Port is required": [
         "Portul este obligatoriu"
       ],
+      "Postal code is required": [
+        "Codul poștal este obligatoriu."
+      ],
       "Primary address key is not decrypted": [
         "Cheia primară a adresei nu este decriptată."
       ],
@@ -3660,6 +3686,9 @@
       "Unknown location": [
         "Loc necunoscut"
       ],
+      "Unknown number of downloads": [
+        "Număr necunoscut de descărcări"
+      ],
       "Unknown payment token status": [
         "Stare necunoscută cod plată generat."
       ],
@@ -3721,6 +3750,9 @@
       ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
+      ],
+      "ZIP code is required": [
+        "Codul poștal este obligatoriu."
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nume nedecriptabil."
@@ -4650,6 +4682,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Tehnologia de criptare ${ BRAND_NAME } semnifică faptul că nimeni nu vă poate accesa parola - nici măcar noi."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } necesită o adresă ${ BRAND_NAME } pentru sincronizarea și criptarea securizată a evenimentelor. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } necesită o adresă ${ BRAND_NAME } pentru sincronizarea și criptarea securizată a evenimentelor. Revendicați-vă acum adresa gratuită ${ MAIL_APP_NAME }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "Calendare noi: ${ calendarsToBeCreatedCount }",
         "Calendare noi: ${ calendarsToBeCreatedCount }",
@@ -4757,6 +4795,14 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }.",
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }.",
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } expiră astăzi."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } vă protejează contul prin monitorizarea activității suspicioase."
@@ -5246,6 +5292,9 @@
       ],
       "End-to-end encrypted": [
         "Criptat bilateral"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Asigurați o comunicare complet privată și criptată. Revendicați-vă acum adresa gratuită de e-mail ${ BRAND_NAME }."
       ],
       "Enter password": [
         "Introduceți parola"
@@ -6883,6 +6932,9 @@
       "Comment": [
         "Comentariu"
       ],
+      "Company": [
+        "Compania"
+      ],
       "Company name": [
         "Nume companie"
       ],
@@ -7254,6 +7306,9 @@
       "Start date": [
         "Dată început"
       ],
+      "State": [
+        "Județ/Stat"
+      ],
       "Stolen data": [
         "Date furate"
       ],
@@ -7364,6 +7419,9 @@
       ],
       "Your password (trusted contact)": [
         "Parola dvs. (contact aprobat)"
+      ],
+      "ZIP code": [
+        "Cod poștal"
       ]
     },
     "Label for contact group color": {
@@ -7558,6 +7616,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Detalii"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Pentru a continua să utilizați ${ BRAND_NAME }, asigurați-vă că funcțiile premium nu mai sunt utilizate sau să modernizați-vă planul."
       ],
       "upgrade for more storage": [
         "treceți la un plan cu plată pentru mai mult spațiu"
@@ -9686,6 +9747,9 @@
       "Timeout exceeded": [
         "Limită de timp depășită"
       ],
+      "VAT number": [
+        "Valoare TVA"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Moneda a fost schimbată în euro (€) deoarece transferurile bancare SEPA acceptă doar plăți în euro."
       ],
@@ -9738,8 +9802,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Adăugare ABN"
+      ],
+      "Add Business Number": [
+        "Adăugare cod unic de înregistrare"
+      ],
+      "Add EIN": [
+        "Adăugare EIN"
+      ],
+      "Add VAT number": [
+        "Adăugare TVA"
+      ],
       "Business Number": [
         "Cod unic de înregistrare"
+      ],
+      "Edit ABN": [
+        "Editare ABN"
+      ],
+      "Edit Business Number": [
+        "Editare cod unic de înregistrare"
+      ],
+      "Edit EIN": [
+        "Editare EIN"
+      ],
+      "Edit VAT number": [
+        "Editare TVA"
       ],
       "EIN": [
         "EIN"
@@ -9782,8 +9870,17 @@
       "A way to contact you": [
         "Modalitate de contactare"
       ],
+      "Anderson": [
+        "Andrei"
+      ],
+      "Anytown": [
+        "București"
+      ],
       "Choose password": [
         "Alegere parolă"
+      ],
+      "Company name": [
+        "Nume companie"
       ],
       "E.g., ": [
         "Ex.: "
@@ -9820,6 +9917,9 @@
       ],
       "Last name": [
         "Nume de familie"
+      ],
+      "Main street 12": [
+        "Strada Principală nr. 12"
       ],
       "Message": [
         "Mesaj"
@@ -9860,6 +9960,9 @@
       "Select a reason": [
         "Selectați un motiv"
       ],
+      "Select country": [
+        "Selectare țară"
+      ],
       "Select state": [
         "Selectare țară"
       ],
@@ -9871,6 +9974,12 @@
       ],
       "Start typing an email address": [
         "Introduceți o adresă de e-mail"
+      ],
+      "Thomas": [
+        "Toma"
+      ],
+      "VAT number": [
+        "Valoare TVA"
       ],
       "Your organization name": [
         "Numele organizației"
@@ -10690,9 +10799,9 @@
     },
     "Subscription attribute": {
       "${ n } free VPN connection per user": [
-        "${ n } conexiune VPN gratuită per utilizator",
-        "${ n } conexiuni VPN gratuite per utilizator",
-        "${ n } de conexiuni VPN gratuite per utilizator"
+        "Conexiuni VPN gratuite per utilizator: ${ n }",
+        "Conexiuni VPN gratuite per utilizator: ${ n }",
+        "Conexiuni VPN gratuite per utilizator: ${ n }"
       ],
       "${ n } high-speed VPN connection": [
         "O conexiune VPN de mare viteză",
@@ -11157,6 +11266,9 @@
       "Alias saved and copied": [
         "Alias salvat și copiat"
       ],
+      "Billing details updated": [
+        "Detaliile de facturare s-au actualizat"
+      ],
       "Canceling import": [
         "Se anulează importarea"
       ],
@@ -11557,6 +11669,9 @@
       "Check for malicious files": [
         "Verificare fișiere malițioase"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Revendicați-vă adresa ${ MAIL_APP_NAME }"
+      ],
       "Clearing data": [
         "Ştergere date"
       ],
@@ -11752,6 +11867,9 @@
       "Duplicate folder found": [
         "S-au găsit foldere duplicate"
       ],
+      "Edit billing address": [
+        "Editare adresă de facturare"
+      ],
       "Edit contact": [
         "Editare contact"
       ],
@@ -11819,6 +11937,9 @@
         "S-a găsit un rezultat",
         "S-au găsit ${ searchView.numberOfResults } rezultate",
         "S-au găsit ${ searchView.numberOfResults } de rezultate"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Obțineți acces complet la ${ CALENDAR_APP_NAME }"
       ],
       "Get more from your VPN": [
         "Obțineți mai mult de la VPN"
@@ -11992,6 +12113,9 @@
       ],
       "Notes": [
         "Note"
+      ],
+      "Number of downloads": [
+        "Nr. de descărcări"
       ],
       "Number of items": [
         "Număr de articole"
