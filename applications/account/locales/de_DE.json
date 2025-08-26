@@ -1069,6 +1069,9 @@
       "Refer a friend": [
         "Wirb einen Freund"
       ],
+      "Refresh": [
+        "Aktualisieren"
+      ],
       "Refresh status": [
         "Status aktualisieren"
       ],
@@ -2776,6 +2779,9 @@
       ],
       "Advanced account protection": [
         "Erweiterter Kontoschutz"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle Premium-Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Abbrechen und Herabstufen"
@@ -5272,6 +5278,9 @@
       "Add emergency contact": [
         "Notfallkontakt hinzufügen"
       ],
+      "Added on ${ formattedDate }": [
+        "Hinzugefügt am ${ formattedDate }"
+      ],
       "Change access wait time": [
         "Zugriffswartezeit ändern"
       ],
@@ -5286,6 +5295,9 @@
       ],
       "Disabled": [
         "Deaktiviert"
+      ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "Verliere nicht den Notfallzugriff. Aktiviere die automatische Verlängerung heute."
       ],
       "Emergency access": [
         "Notfallzugriff"
@@ -5305,6 +5317,9 @@
       "Emergency contact removed": [
         "Notfallkontakt entfernt"
       ],
+      "Enable auto-renew": [
+        "Automatische Verlängerung aktivieren"
+      ],
       "Give access now": [
         "Jetzt Zugriff gewähren"
       ],
@@ -5322,9 +5337,6 @@
       ],
       "None": [
         "Keine"
-      ],
-      "on ${ formattedAccessibleAt }": [
-        "Am ${ formattedAccessibleAt }"
       ],
       "Only ": [
         "Nur "
@@ -5344,6 +5356,9 @@
       "Remove trusted contact": [
         "Vertrauenswürdigen Kontakt entfernen"
       ],
+      "Renew to get emergency access again.": [
+        "Erneuere, um wieder Notfallzugriff zu erhalten."
+      ],
       "Request access?": [
         "Zugriff anfordern?"
       ],
@@ -5352,6 +5367,9 @@
       ],
       "Stop being trusted contact?": [
         "Kein vertrauenswürdiger Kontakt mehr?"
+      ],
+      "Subscription expired": [
+        "Abonnement abgelaufen"
       ],
       "They added me as trusted contact. I can access their account in case of an emergency.": [
         "Sie haben mich als vertrauenswürdigen Kontakt hinzugefügt. Ich kann im Notfall auf ihr Konto zugreifen."
@@ -5370,6 +5388,9 @@
       ],
       "Trusted contact": [
         "Vertrauenswürdiger Kontakt"
+      ],
+      "Upgrade": [
+        "Upgraden"
       ],
       "Upgrade to ${ planName }": [
         "Auf ${ planName } upgraden"
@@ -8136,6 +8157,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Der Zugriff auf dein Konto wurde aufgrund noch offener Rechnungen eingeschränkt. Bitte wende dich an deinen Administrator."
       ],
+      "Account monitor": [
+        "Kontoüberwachung"
+      ],
       "account recovery and data recovery method": [
         "Konten- und Datenwiederherstellungsmethode"
       ],
@@ -8153,9 +8177,6 @@
       ],
       "active": [
         "aktiv"
-      ],
-      "Activity monitor": [
-        "Aktivitätsüberwachung"
       ],
       "Activity Monitor": [
         "Aktivitätsüberwachung"
@@ -8253,6 +8274,9 @@
       ],
       "Allocated": [
         "Zugewiesen"
+      ],
+      "Allow logging of location and connection details": [
+        "Protokollierung von Standort- und Verbindungsdetails zulassen"
       ],
       "Allow recovery by email": [
         "Wiederherstellung per E-Mail zulassen"
@@ -8654,9 +8678,6 @@
       "Did you know?": [
         "Schon gewusst?"
       ],
-      "Disable detailed events": [
-        "Detaillierte Ereignisse deaktivieren"
-      ],
       "Disable recovery by email address": [
         "Wiederherstellung mittels E-Mail Adresse deaktivieren"
       ],
@@ -8666,8 +8687,8 @@
       "Disabled countries": [
         "Deaktivierte Länder"
       ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Deaktiviert am ${ formattedDateAndTime }"
+      "Disabled on ${ boldValue }": [
+        "Deaktiviert am ${ boldValue }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Wenn du die Zwei-Faktor-Authentifizierung deaktivierst, wird dein Konto weniger sicher. Fahre nur fort, wenn es unbedingt notwendig ist."
@@ -8808,9 +8829,6 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Aktiviere die automatische Erneuerung, um den Zugang zu deinen Premium-Funktionen zu behalten."
       ],
-      "Enable detailed events": [
-        "Detaillierte Ereignisse aktivieren"
-      ],
       "Enable email notifications": [
         "E-Mail-Benachrichtigungen aktivieren"
       ],
@@ -8826,8 +8844,8 @@
       "Enabled countries": [
         "Aktivierte Länder"
       ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Aktiviert am ${ formattedDateAndTime }"
+      "Enabled on ${ boldValue }": [
+        "Aktiviert am ${ boldValue }"
       ],
       "Enabling auto-deletion…": [
         "Automatisches Löschen wird aktiviert…"
@@ -8994,14 +9012,11 @@
       "Gain visibility across your organization": [
         "Verschaffe dir einen Überblick über dein Unternehmen"
       ],
+      "Gateway monitor": [
+        "Gateway-Überwachung"
+      ],
       "Gateways": [
         "Gateways"
-      ],
-      "Gateways monitoring is disabled.": [
-        "Die Gateway-Überwachung ist deaktiviert."
-      ],
-      "Gateways monitoring is enabled.": [
-        "Die Gateway-Überwachung ist aktiviert."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Wenn du eine neue Wiederherstellungsphrase erstellst, wird dadurch deine bisherige Phrase deaktiviert."
@@ -9184,8 +9199,8 @@
       "inactive": [
         "inaktiv"
       ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "IP-Adresse des Benutzers, Standort und ISP (Internet Service Provider) in die Ereignisprotokolle aufnehmen"
+      "Include device, location, and IP details": [
+        "Geräte-, Standort- und IP-Details einschließen"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Einschließlich ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -9410,9 +9425,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Kalender wird geladen, bitte warte. Du wirst in einer neuen Registerkarte zu unserer Terminplanungsplattform Calendly weitergeleitet."
       ],
-      "Loading detailed events current status.": [
-        "Aktuelle Status der detaillierten Ereignisse wird geladen."
-      ],
       "Loading eduGAIN data...": [
         "Laden der eduGAIN-Daten..."
       ],
@@ -9631,6 +9643,9 @@
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Mitglieder der Organisation müssen ${ PASS_APP_NAME } mit ihrem Passwort oder ihrer PIN usw. entsperren."
       ],
+      "Organization monitor": [
+        "Organisationsüberwachung"
+      ],
       "Organization size": [
         "Organisationsgröße"
       ],
@@ -9679,6 +9694,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - Benutzerdefinierte E-Mail-Adresse gelöscht"
+      ],
+      "Pass usage logs": [
+        "Pass-Nutzungsprotokolle"
       ],
       "password": [
         "Passwort"
@@ -10635,6 +10653,9 @@
       ],
       "View and manage your groups.": [
         "Anzeigen und Verwalten deiner Gruppen."
+      ],
+      "View VPN session details for your organization.": [
+        "Zeig die Details der VPN-Sitzung für deine Organisation an."
       ],
       "View, download, and manage your invoices.": [
         "Rechnungen anzeigen, herunterladen und verwalten."
@@ -12826,9 +12847,6 @@
       "VAT": [
         "MwSt."
       ],
-      "VAT identification number": [
-        "Umsatzsteuer-Identifikationsnummer"
-      ],
       "Verification code": [
         "Verifizierungscode"
       ],
@@ -13295,6 +13313,9 @@
       "Learn more": [
         "Erfahre mehr"
       ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Um ${ BRAND_NAME } weiterhin nutzen zu können, stelle bitte sicher, dass deine Premium-Funktionen nicht mehr verwendet werden oder upgrade dein Abonnement."
+      ],
       "upgrade for more storage": [
         "führe ein Upgrade durch für zusätzlichen Speicherplatz."
       ],
@@ -13549,8 +13570,14 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Verbinde deine eigene Domain mit ${ BRAND_NAME }, um eigene E-Mail-Adressen einzurichten (z. B. du@deinefirma.de). Unser Assistent wird dich durch den Prozess führen."
       ],
-      "View account-related events across your organization.": [
-        "Kontenbezogene Ereignisse in deiner Organisation anzeigen."
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "Sieh dir die ${ PASS_APP_NAME }-Aktivität in deiner Organisation an."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "Änderungen an deiner Organisation und andere Administratoraktivitäten anzeigen."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "Anmelde-, Wiederherstellungs- und Sicherheitsereignisse des Benutzers anzeigen."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Deine kostenlose Testversion ist beendet. Der Zugriff auf dein Konto wird in Kürze deaktiviert. ${ action }"
@@ -15025,6 +15052,9 @@
       "Invalid code": [
         "Ungültiger Code"
       ],
+      "Invalid input. Search an email or detail.": [
+        "Ungültige Eingabe. Suche eine E-Mail-Adresse oder Details."
+      ],
       "Invalid input. Search an email or IP address.": [
         "Ungültige Eingabe. Suche eine E-Mail- oder IP-Adresse."
       ],
@@ -15492,11 +15522,17 @@
       "It's too expensive": [
         "Es ist mir zu teuer"
       ],
+      "Label as...": [
+        "Kategorisieren als …"
+      ],
       "Left to Right": [
         "Von links nach rechts"
       ],
       "Mark as read": [
         "Als gelesen markieren"
+      ],
+      "Move to...": [
+        "Verschieben nach…"
       ],
       "My reason isn't listed": [
         "Mein Grund ist nicht aufgeführt"
@@ -16277,6 +16313,9 @@
       "Card number": [
         "Kartennummer"
       ],
+      "Credits and discounts are reflected in your invoice": [
+        "Guthaben und Rabatte findest du auf deiner Rechnung"
+      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Aktuell ist die automatische Abonnement-Verlängerung deaktiviert. Falls du dein Abonnement jetzt änderst, wird die automatische Verlängerung wieder aktiviert."
       ],
@@ -16344,6 +16383,9 @@
       "Timeout exceeded": [
         "Zeitlimit überschritten"
       ],
+      "VAT number": [
+        "Umsatzsteuernummer"
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Du wirst mit ${ amountToCharge } von der von dir gewählten Zahlungsmethode belastet."
       ],
@@ -16399,8 +16441,32 @@
       "ABN": [
         "Unternehmens-Identifikationsnummer (ABN)"
       ],
+      "Add ABN": [
+        "ABN hinzufügen"
+      ],
+      "Add Business Number": [
+        "Unternehmensnummer hinzufügen"
+      ],
+      "Add EIN": [
+        "EIN hinzufügen"
+      ],
+      "Add VAT number": [
+        "Umsatzsteuernummer hinzufügen"
+      ],
       "Business Number": [
         "Unternehmensnummer"
+      ],
+      "Edit ABN": [
+        "ABN bearbeiten"
+      ],
+      "Edit Business Number": [
+        "Unternehmensnummer bearbeiten"
+      ],
+      "Edit EIN": [
+        "EIN bearbeiten"
+      ],
+      "Edit VAT number": [
+        "Umsatzsteuernummer bearbeiten"
       ],
       "EIN": [
         "Arbeitgeber-Identifikationsnummer (EIN)"
@@ -16557,11 +16623,17 @@
       "Search users": [
         "Benutzer suchen"
       ],
+      "Search users or details": [
+        "Benutzer oder Details suchen"
+      ],
       "Select": [
         "Auswählen"
       ],
       "Select a reason": [
         "Grund auswählen"
+      ],
+      "Select country": [
+        "Land wählen"
       ],
       "Select state": [
         "Bundesland wählen"
@@ -16634,6 +16706,12 @@
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Alle Premium-Produkte von ${ BRAND_NAME } sind in Duo enthalten."
       ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Alle Premium-Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle Premium-Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Best if you need ${ maxSpace } of storage and for couples.": [
         "Ideal, wenn du ${ maxSpace } Speicherplatz brauchst und für Paare."
       ],
@@ -16673,6 +16751,9 @@
       ]
     },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Als Abonnent von **${ currentPlanTitle }** kannst du **${ unlockPlanTitle }** und weitere Dienste von ${ BRAND_NAME } freischalten, indem du einen Wechsel zu **${ upsellPlanTitle }** vornimmst."
+      ],
       "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
         "Weitere ${ BRAND_NAME }-Dienste.${ br }Ein einfaches Abonnement."
       ],
@@ -19372,6 +19453,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } Speicherplatz insgesamt"
       ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "Mit ${ planName } erhältst du Zugriff auf alle Premium-Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }. Der Datenschutz ist integriert, sodass du dich darauf verlassen kannst, dass deine Daten und deine Identität geschützt sind."
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "Mit ${ planName } erhältst du alle Anwendungen, alle Funktionen, frühen Zugriff auf neue Versionen und alles, was du brauchst, um die Kontrolle über deine Daten und deren Sicherheit zu behalten."
       ],
@@ -20369,9 +20453,6 @@
       "Add users to \"${ policyName }\"": [
         "Benutzer hinzufügen zu ${ policyName }"
       ],
-      "Added on": [
-        "Hinzugefügt am"
-      ],
       "Address": [
         "Adresse"
       ],
@@ -20497,9 +20578,6 @@
       ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Deine ${ MAIL_APP_NAME }-Adresse beanspruchen"
-      ],
-      "Click a value in the table to use it as filter": [
-        "Klicke auf einen Wert in der Tabelle, um diesen als Filter zu verwenden."
       ],
       "Close": [
         "Schließen"
@@ -20706,6 +20784,9 @@
       ],
       "Desktop": [
         "Desktop"
+      ],
+      "Details": [
+        "Details"
       ],
       "Device": [
         "Gerät"
@@ -22722,6 +22803,9 @@
       "Bitcoin via Email": [
         "Bitcoin via E-Mail"
       ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Verschlüsselte und sichere E-Mail-Adresse von ${ MAIL_APP_NAME }. Du kannst ganz einfach Bitcoin an jeden senden, nur mit dessen ${ BRAND_NAME }-Namen."
+      ],
       "Encrypted cloud storage for photos and documents": [
         "Verschlüsselter Cloud-Speicher für Fotos und Dokumente"
       ],
@@ -22754,6 +22838,11 @@
       ],
       "You're Invited.": [
         "Du bist eingeladen."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Eine sicherere Methode, Bitcoin zu verwahren"
       ]
     },
     "wallet_signup_2024:Bug category": {

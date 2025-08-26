@@ -5173,6 +5173,9 @@
       "${ user } will be able to use your account and change your data.": [
         "${ user } kommer att kunna använda ditt konto och ändra dina data."
       ],
+      "${ user } will no longer be able to request access to your account in case of emergency.": [
+        "${ user } kommer inte längre att kunna begära åtkomst till ditt konto i händelse av en nödsituation."
+      ],
       "Access granted": [
         "Åtkomst beviljad"
       ],
@@ -5191,11 +5194,17 @@
       "Add emergency contact": [
         "Lägg till nödkontakt"
       ],
+      "Added on ${ formattedDate }": [
+        "Tillagd den ${ formattedDate }"
+      ],
       "Change the time that ${ user } will have to wait before automatically giving them access.": [
         "Ändra tiden som ${ user } måste vänta innan du automatiskt ger dem åtkomst."
       ],
       "Change wait time": [
         "Ändra väntetid"
+      ],
+      "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
+        "Välj någon du litar på med dina data. De måste redan ha ett ${ BRAND_NAME }-konto."
       ],
       "Disabled": [
         "Inaktiverat"
@@ -5218,6 +5227,9 @@
       "Emergency contact removed": [
         "Nödkontakt borttagen"
       ],
+      "Enable auto-renew": [
+        "Aktivera automatisk förnyelse"
+      ],
       "Give access now": [
         "Ge åtkomst nu"
       ],
@@ -5236,9 +5248,6 @@
       "None": [
         "Ingen"
       ],
-      "on ${ formattedAccessibleAt }": [
-        "på ${ formattedAccessibleAt }"
-      ],
       "Only ": [
         "Endast "
       ],
@@ -5254,6 +5263,9 @@
       "Remove trusted contact": [
         "Ta bort betrodd kontakt"
       ],
+      "Renew to get emergency access again.": [
+        "Förnya för att skaffa nödlägesåtkomst igen."
+      ],
       "Request access?": [
         "Begär åtkomst?"
       ],
@@ -5263,14 +5275,29 @@
       "Stop being trusted contact?": [
         "Sluta vara betrodd kontakt?"
       ],
+      "Subscription expired": [
+        "Prenumeration löpt ut"
+      ],
       "They added me as trusted contact. I can access their account in case of an emergency.": [
         "De har lagt till mig som betrodd kontakt. Jag kan komma åt deras konto i händelse av en nödsituation."
+      ],
+      "They may ask to access my account in case of an emergency.": [
+        "De kan komma att be om åtkomst till mitt konto i händelse av en nödsituation."
       ],
       "This will take effect immediately.": [
         "Detta kommer träda i kraft omedelbart."
       ],
+      "Time required before automatically giving access": [
+        "Tid som krävs innan åtkomst beviljas automatiskt"
+      ],
+      "Time required before automatically granting them access": [
+        "Tid som krävs innan de automatiskt beviljas åtkomst"
+      ],
       "Trusted contact": [
         "Betrodd kontakt"
+      ],
+      "Upgrade": [
+        "Uppgradera"
       ],
       "Upgrade to ${ planName }": [
         "Uppgradera till ${ planName }"
@@ -5308,6 +5335,9 @@
       ],
       "You will be notified when someone requests emergency access.": [
         "Du kommer bli aviserad när någon begär nödåtkomst."
+      ],
+      "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
+        "Du kommer inte längre att kunna begära åtkomst till kontot för ${ user } i händelse av en nödsituation."
       ],
       "You'll receive access to their account immediately.": [
         "Du kommer få åtkomst till deras konto omedelbart."
@@ -8024,6 +8054,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontoåtkomst begränsad på grund av obetalda fakturor. Kontakta din administratör."
       ],
+      "Account monitor": [
+        "Kontoövervakning"
+      ],
       "account recovery and data recovery method": [
         "kontoåterställning och metod för återställning av data"
       ],
@@ -8041,9 +8074,6 @@
       ],
       "active": [
         "aktiv"
-      ],
-      "Activity monitor": [
-        "Aktivitetsövervakare"
       ],
       "Activity Monitor": [
         "Aktivitetsövervakare"
@@ -8539,9 +8569,6 @@
       "Did you know?": [
         "Visste du att?"
       ],
-      "Disable detailed events": [
-        "Inaktivera detaljerade händelser"
-      ],
       "Disable recovery by email address": [
         "Inaktivera e-postadress för återställning"
       ],
@@ -8550,9 +8577,6 @@
       ],
       "Disabled countries": [
         "Inaktiverade länder"
-      ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Inaktiverad den ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Inaktivering av tvåfaktorsautentisering kommer göra ditt konto mindre säkert. Fortsätt endast om det är absolut nödvändigt."
@@ -8630,6 +8654,9 @@
       "Download recovery file": [
         "Ladda ner återställningsfil"
       ],
+      "Download the app and import existing codes.": [
+        "Ladda ner appen och importera befintliga koder."
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Ladda ner din favoritapp idag och ta integritet med dig var du än går."
       ],
@@ -8690,9 +8717,6 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Aktivera automatisk förnyelse för att behålla åtkomst till dina premiumfunktioner."
       ],
-      "Enable detailed events": [
-        "Aktivera detaljerade händelser"
-      ],
       "Enable email notifications": [
         "Aktivera e-postaviseringar"
       ],
@@ -8707,9 +8731,6 @@
       ],
       "Enabled countries": [
         "Aktiverade länder"
-      ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Aktiverad den ${ formattedDateAndTime }"
       ],
       "Enabling auto-deletion…": [
         "Aktiverar automatisk borttagning…"
@@ -8870,17 +8891,17 @@
       "free up space by deleting older messages or other data": [
         "frigör utrymme genom att radera äldre meddelanden eller annan data"
       ],
+      "Gateway monitor": [
+        "Övervakning av gateway"
+      ],
       "Gateways": [
         "Gateways"
       ],
-      "Gateways monitoring is disabled.": [
-        "Övervakning av gateways är inaktiverat."
-      ],
-      "Gateways monitoring is enabled.": [
-        "Övervakning av gateways är aktiverat."
-      ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Att generera en ny återställningsfras kommer inaktivera din gamla."
+      ],
+      "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
+        "Skaffa ${ AUTHENTICATOR_APP_NAME } för alla dina enheter."
       ],
       "Get ${ upsellPlanName }": [
         "Skaffa ${ upsellPlanName }"
@@ -9056,9 +9077,6 @@
       ],
       "inactive": [
         "inaktiv"
-      ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Inkludera användarens IP-adress, plats och internetleverantör (ISP) i händelseloggar"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inklusive ${ formattedTaxRate } % ${ taxName }: ${ price }"
@@ -9279,9 +9297,6 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Läser in kalender, vänta. Du kommer att omdirigeras till vår schemaläggningsplattform Calendly i en ny flik."
-      ],
-      "Loading detailed events current status.": [
-        "Laddar nuvarande status för detaljerade händelser."
       ],
       "Loading eduGAIN data...": [
         "Laddar eduGAIN-data …"
@@ -10628,6 +10643,9 @@
       ],
       "Why?": [
         "Varför?"
+      ],
+      "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
+        "Med ${ AUTHENTICATOR_APP_NAME } kan du:"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Med ett Business- eller Enterprise-paket kan du köpa ${ boldDedicatedServers } för din organisation och ställa in ${ boldGateways } för att kontrollera vilka användare som kan komma åt dem."
@@ -12656,9 +12674,6 @@
       "VAT": [
         "VAT"
       ],
-      "VAT identification number": [
-        "Momsregistreringsnummer"
-      ],
       "Verification code": [
         "Verifieringskod"
       ],
@@ -13376,8 +13391,8 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Anslut din anpassade domän till ${ BRAND_NAME } för att ställa in anpassade e-postadresser (t.ex. du@dittföretag.se). Vår guide kommer guida dig genom processen."
       ],
-      "View account-related events across your organization.": [
-        "Visa kontorelaterade händelser i hela din organisation."
+      "View changes to your organization and other administrator activities.": [
+        "Visa ändringar i din organisation och andra administratörsaktiviteter."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Din gratis provperiod har avslutats. Åtkomst till ditt konto kommer snart att inaktiveras. ${ action }"
@@ -14858,6 +14873,9 @@
       "Invalid code": [
         "Ogiltig kod"
       ],
+      "Invalid input. Search an email or detail.": [
+        "Ogiltig inmatning. Sök efter en e-post eller detalj."
+      ],
       "Invalid input. Search an email or IP address.": [
         "Ogiltig inmatning. Sök efter en e-post- eller en IP-adress."
       ],
@@ -15328,6 +15346,9 @@
       "It's too expensive": [
         "Det är för dyrt"
       ],
+      "Label as...": [
+        "Märk som …"
+      ],
       "Left to Right": [
         "Vänster till höger"
       ],
@@ -15336,6 +15357,9 @@
       ],
       "Mark as read": [
         "Markera som läst"
+      ],
+      "Move to...": [
+        "Flytta till …"
       ],
       "My reason isn't listed": [
         "Min anledning är inte listad"
@@ -16245,6 +16269,18 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Lägg till ABN"
+      ],
+      "Add EIN": [
+        "Lägg till EIN"
+      ],
+      "Edit ABN": [
+        "Redigera ABN"
+      ],
+      "Edit EIN": [
+        "Redigera EIN"
+      ],
       "EIN": [
         "EIN"
       ],
@@ -16400,11 +16436,17 @@
       "Search users": [
         "Sök användare"
       ],
+      "Search users or details": [
+        "Sök användare eller detaljer"
+      ],
       "Select": [
         "Välj"
       ],
       "Select a reason": [
         "Välj en anledning"
+      ],
+      "Select country": [
+        "Välj land"
       ],
       "Select state": [
         "Välj delstat"
@@ -18045,6 +18087,9 @@
       ],
       "Secure file sharing": [
         "Säker fildelning"
+      ],
+      "Securely share files, photos and documents": [
+        "Dela filer, foton och dokument säkert"
       ],
       "Select ${ title }": [
         "Välj ${ title }"
@@ -20232,9 +20277,6 @@
       "Claim your ${ MAIL_APP_NAME } address": [
         "Gör anspråk på din ${ MAIL_APP_NAME }-adress"
       ],
-      "Click a value in the table to use it as filter": [
-        "Klicka ett värde i tabellen för att använda det som filter"
-      ],
       "Close": [
         "Stäng"
       ],
@@ -20437,6 +20479,9 @@
       ],
       "Desktop": [
         "Stationär dator"
+      ],
+      "Details": [
+        "Detaljer"
       ],
       "Device": [
         "Enhet"
@@ -21292,6 +21337,9 @@
       ],
       "Time zone": [
         "Tidszon"
+      ],
+      "Try ${ AUTHENTICATOR_APP_NAME }": [
+        "Prova ${ AUTHENTICATOR_APP_NAME }"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
