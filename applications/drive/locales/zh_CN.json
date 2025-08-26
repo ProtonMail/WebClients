@@ -2965,6 +2965,14 @@
         "优先支持"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "文本字段可选。您在本表中提供的信息只会出现在今后开具的发票上，不会影响现有发票。"
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "文本字段为选填字段。您在此表单中提供的信息只会更改您选择的发票，而不会更改您未来的发票详细信息。"
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "注意：\n${ eventComment }"
@@ -3158,6 +3166,9 @@
       ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "目前无法编辑帐单地址。请稍后重试。"
       ],
       "Email address is required": [
         "邮箱地址必须填写"
@@ -3390,6 +3401,9 @@
       "Port is required": [
         "端口号必须填写"
       ],
+      "Postal code is required": [
+        "邮政编码为必填项"
+      ],
       "Primary address key is not decrypted": [
         "主密钥尚未解密"
       ],
@@ -3575,6 +3589,9 @@
       ],
       "Your import will not be processed.": [
         "此次导入将不会进行。"
+      ],
+      "ZIP code is required": [
+        "必须填写邮政编码"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 无法解密的名称"
@@ -4534,6 +4551,12 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } 至少需要1台专用服务器 ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } 在 ${ daysLeft } 天后到期。"
+      ],
+      "${ planName } expires today.": [
+        "${ planName } 今天到期。"
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } 通过对可疑活动进行专门监测来保护您的账户。"
@@ -6558,6 +6581,9 @@
       "Comment": [
         "评论"
       ],
+      "Company": [
+        "公司"
+      ],
       "Company name": [
         "公司名称"
       ],
@@ -6927,6 +6953,9 @@
       "Start date": [
         "起始日期"
       ],
+      "State": [
+        "省份/地区"
+      ],
       "Stolen data": [
         "偷窃"
       ],
@@ -7034,6 +7063,9 @@
       ],
       "Your password (admin)": [
         "您的密码（管理员）"
+      ],
+      "ZIP code": [
+        "邮政编码"
       ]
     },
     "Label for contact group color": {
@@ -9292,8 +9324,17 @@
       "A way to contact you": [
         "您的联系方式"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "任何城镇"
+      ],
       "Choose password": [
         "输入密码"
+      ],
+      "Company name": [
+        "公司名称"
       ],
       "E.g., ": [
         "例如："
@@ -9330,6 +9371,9 @@
       ],
       "Last name": [
         "姓"
+      ],
+      "Main street 12": [
+        "主要街道 12"
       ],
       "Message": [
         "邮件"
@@ -9381,6 +9425,12 @@
       ],
       "Start typing an email address": [
         "请输入邮箱地址"
+      ],
+      "Thomas": [
+        "Thomas"
+      ],
+      "VAT number": [
+        "增值税号"
       ],
       "Your organization name": [
         "您的组织名称"
@@ -10574,6 +10624,9 @@
       "Alias saved and copied": [
         "别名已保存并复制"
       ],
+      "Billing details updated": [
+        "账单详细信息已更新"
+      ],
       "Canceling import": [
         "正在取消导入"
       ],
@@ -11090,6 +11143,9 @@
       ],
       "Duplicate folder found": [
         "发现重复文件夹"
+      ],
+      "Edit billing address": [
+        "编辑账单地址"
       ],
       "Edit contact": [
         "编辑联系人"

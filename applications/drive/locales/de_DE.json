@@ -1754,6 +1754,9 @@
       "Advanced account protection": [
         "Erweiterter Kontoschutz"
       ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle Premium-Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Cancel and downgrade": [
         "Abbrechen und Herabstufen"
       ],
@@ -3072,6 +3075,14 @@
         "Priorisierter Support"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Die Textfelder sind optional. Die Informationen, die du in diesem Formular angibst, erscheinen nur auf zukünftigen Rechnungen und haben keinen Einfluss auf bestehende Rechnungen."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Textfelder sind optional. Die Informationen, die du in diesem Formular eingibst, ändern nur die von dir ausgewählte Rechnung und nicht deine zukünftigen Rechnungsdetails."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "HINWEIS:\n${ eventComment }"
@@ -3279,6 +3290,9 @@
       "Domain not available, try again later": [
         "Domain nicht verfügbar. Bitte versuche es später noch einmal."
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Die Bearbeitung der Rechnungsadresse ist im Moment nicht möglich. Bitte versuche es später noch einmal."
+      ],
       "Email address is required": [
         "E-Mail-Adresse ist erforderlich"
       ],
@@ -3326,6 +3340,9 @@
       ],
       "Failed to load the STL preview": [
         "Das Laden der STL-Vorschau ist fehlgeschlagen"
+      ],
+      "Failed to open to contact": [
+        "Fehler beim Öffnen des Kontakts"
       ],
       "Failed to resend invitation": [
         "Fehler beim erneuten Senden der Einladung"
@@ -3517,6 +3534,9 @@
       "Port is required": [
         "Port ist erforderlich"
       ],
+      "Postal code is required": [
+        "Postleitzahl ist erforderlich"
+      ],
       "Primary address key is not decrypted": [
         "Der Schlüssel der primären Adresse ist nicht entschlüsselt."
       ],
@@ -3692,6 +3712,9 @@
       "Validation error": [
         "Überprüfungsfehler"
       ],
+      "We were not able some of your shared items": [
+        "Einige Ihrer freigegebenen Elemente konnten nicht angezeigt werden."
+      ],
       "We were not able to load some invitations": [
         "Wir konnten einige deiner Einladungen nicht laden."
       ],
@@ -3734,6 +3757,9 @@
       ],
       "Your import will not be processed.": [
         "Dein Import wird nicht verarbeitet."
+      ],
+      "ZIP code is required": [
+        "Eine Postleitzahl ist erforderlich"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nicht entschlüsselbarer Name"
@@ -4739,6 +4765,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } läuft in ${ daysLeft } Tag aus.",
+        "${ planName } läuft in ${ daysLeft } Tagen aus."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } läuft heute aus."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } schützt dein Konto durch gezielte Überwachung verdächtiger Aktivitäten."
@@ -6677,6 +6710,9 @@
       "Expired": [
         "Abgelaufen"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Veraltet"
       ],
@@ -6828,6 +6864,9 @@
       ],
       "Comment": [
         "Kommentar"
+      ],
+      "Company": [
+        "Unternehmen"
       ],
       "Company name": [
         "Firmenname"
@@ -7199,6 +7238,9 @@
       "Start date": [
         "Anfangsdatum"
       ],
+      "State": [
+        "Bundesland"
+      ],
       "Stolen data": [
         "Gestohlene Daten"
       ],
@@ -7309,6 +7351,9 @@
       ],
       "Your password (trusted contact)": [
         "Dein Passwort (vertrauenswürdiger Kontakt)"
+      ],
+      "ZIP code": [
+        "Postleitzahl"
       ]
     },
     "Label for contact group color": {
@@ -7502,6 +7547,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Erfahre mehr"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Um ${ BRAND_NAME } weiterhin nutzen zu können, stelle bitte sicher, dass deine Premium-Funktionen nicht mehr verwendet werden oder upgrade dein Abonnement."
       ],
       "upgrade for more storage": [
         "führe ein Upgrade durch für zusätzlichen Speicherplatz."
@@ -9629,6 +9677,9 @@
       "Timeout exceeded": [
         "Zeitlimit überschritten"
       ],
+      "VAT number": [
+        "Umsatzsteuernummer"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Deine Währung wurde zu Euro (€) geändert, da SEPA-Banküberweisungen Zahlungen nur in Euro unterstützen."
       ],
@@ -9681,8 +9732,32 @@
       "ABN": [
         "Unternehmens-Identifikationsnummer (ABN)"
       ],
+      "Add ABN": [
+        "ABN hinzufügen"
+      ],
+      "Add Business Number": [
+        "Unternehmensnummer hinzufügen"
+      ],
+      "Add EIN": [
+        "EIN hinzufügen"
+      ],
+      "Add VAT number": [
+        "Umsatzsteuernummer hinzufügen"
+      ],
       "Business Number": [
         "Unternehmensnummer"
+      ],
+      "Edit ABN": [
+        "ABN bearbeiten"
+      ],
+      "Edit Business Number": [
+        "Unternehmensnummer bearbeiten"
+      ],
+      "Edit EIN": [
+        "EIN bearbeiten"
+      ],
+      "Edit VAT number": [
+        "Umsatzsteuernummer bearbeiten"
       ],
       "EIN": [
         "Arbeitgeber-Identifikationsnummer (EIN)"
@@ -9725,8 +9800,17 @@
       "A way to contact you": [
         "Eine Möglichkeit, dich zu kontaktieren"
       ],
+      "Anderson": [
+        "Mustermann"
+      ],
+      "Anytown": [
+        "Berlin"
+      ],
       "Choose password": [
         "Passwort wählen"
+      ],
+      "Company name": [
+        "Unternehmensname"
       ],
       "E.g., ": [
         "Z. B. "
@@ -9763,6 +9847,9 @@
       ],
       "Last name": [
         "Nachname"
+      ],
+      "Main street 12": [
+        "Hauptstraße 12"
       ],
       "Message": [
         "Nachricht"
@@ -9803,6 +9890,9 @@
       "Select a reason": [
         "Grund auswählen"
       ],
+      "Select country": [
+        "Land wählen"
+      ],
       "Select state": [
         "Bundesland wählen"
       ],
@@ -9814,6 +9904,12 @@
       ],
       "Start typing an email address": [
         "E-Mail-Adresse eingeben"
+      ],
+      "Thomas": [
+        "Max"
+      ],
+      "VAT number": [
+        "Umsatzsteuernummer"
       ],
       "Your organization name": [
         "Name deiner Organisation"
@@ -9832,7 +9928,18 @@
         "kontaktiere"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Alle Premium-Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle Premium-Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Als Abonnent von **${ currentPlanTitle }** kannst du **${ unlockPlanTitle }** und weitere Dienste von ${ BRAND_NAME } freischalten, indem du einen Wechsel zu **${ upsellPlanTitle }** vornimmst."
+      ],
       "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
         "Weitere ${ BRAND_NAME }-Dienste.${ br }Ein einfaches Abonnement."
       ],
@@ -10691,6 +10798,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } Speicherplatz insgesamt"
       ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "Mit ${ planName } erhältst du Zugriff auf alle Premium-Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }. Der Datenschutz ist integriert, sodass du dich darauf verlassen kannst, dass deine Daten und deine Identität geschützt sind."
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "Mit ${ planName } erhältst du alle Anwendungen, alle Funktionen, frühen Zugriff auf neue Versionen und alles, was du brauchst, um die Kontrolle über deine Daten und deren Sicherheit zu behalten."
       ],
@@ -11058,6 +11168,9 @@
       ],
       "Alias saved and copied": [
         "Alias gespeichert und kopiert"
+      ],
+      "Billing details updated": [
+        "Rechnungsdetails aktualisiert"
       ],
       "Canceling import": [
         "Import wird abgebrochen"
@@ -11635,6 +11748,9 @@
       ],
       "Duplicate folder found": [
         "Doppelten Ordner gefunden"
+      ],
+      "Edit billing address": [
+        "Rechnungsadresse bearbeiten"
       ],
       "Edit contact": [
         "Kontakt bearbeiten"
@@ -12481,8 +12597,16 @@
       "Bitcoin via Email": [
         "Bitcoin via E-Mail"
       ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Verschlüsselte und sichere E-Mail-Adresse von ${ MAIL_APP_NAME }. Du kannst ganz einfach Bitcoin an jeden senden, nur mit dessen ${ BRAND_NAME }-Namen."
+      ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Tausche Bitcoin sicher per E-Mail aus statt komplexe, 26-stellige Bitcoin-Adressen zu verwenden, die anfällig für Fehler sind"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Eine sicherere Methode, Bitcoin zu verwahren"
       ]
     },
     "wallet_signup_2024:Bug category": {

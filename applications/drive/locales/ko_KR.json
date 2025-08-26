@@ -159,6 +159,9 @@
       "Choose a file or drag it here": [
         "파일을 선택하거나 드래그하세요"
       ],
+      "Claim this address": [
+        "주소 얻기"
+      ],
       "Clear": [
         "비우기"
       ],
@@ -227,6 +230,9 @@
       ],
       "Continue import": [
         "사용자 지정 설정값으로 계속하기"
+      ],
+      "Continue on web": [
+        "웹에서 계속"
       ],
       "Continue transfers": [
         "이동 계속"
@@ -339,6 +345,9 @@
       "Details": [
         "세부사항"
       ],
+      "Diagnostics": [
+        "진단"
+      ],
       "Discard": [
         "저장 안함"
       ],
@@ -372,11 +381,20 @@
       "Download anyway": [
         "무시하고 다운로드"
       ],
+      "Download app": [
+        "앱 다운로드"
+      ],
       "Download apps": [
         "앱 다운로드"
       ],
+      "Download info": [
+        "정보 다운로드"
+      ],
       "Download logs": [
         "다운로드 로그"
+      ],
+      "Download results": [
+        "결과 다운로드"
       ],
       "Drive Locked": [
         "Drive 잠김"
@@ -450,6 +468,9 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName } 받기"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "무료 ${ BRAND_NAME } 주소 받기"
+      ],
       "Get in touch": [
         "연락하기"
       ],
@@ -478,7 +499,7 @@
         "앨범 \"${ albumName }\"(으)로 돌아가기"
       ],
       "Go to ${ planOrAppName }": [
-        "${ planOrAppName }으로 이동하세요"
+        "${ planOrAppName }(으)로 이동"
       ],
       "Go to label": [
         "라벨로 이동"
@@ -854,6 +875,9 @@
       ],
       "Retry": [
         "재시도"
+      ],
+      "Run diagnostics": [
+        "진단 실행"
       ],
       "Save": [
         "저장"
@@ -3004,6 +3028,14 @@
         "우선 지원"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "입력란은 선택 사항입니다. 이 양식에 작성되는 정보는 향후 발행되는 청구서에만 표시되며 기존 청구서에는 영향을 미치지 않습니다."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "텍스트 입력란은 선택 사항입니다. 이 양식에 제공된 정보는 선택한 송장에 한해 변경되며 향후 송장 세부 사항은 변경되지 않습니다."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "참고:\n${ eventComment }"
@@ -3143,6 +3175,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "최소 금액 (${ minimumAmount })미만입니다."
       ],
+      "An error occurred": [
+        "오류 발생"
+      ],
       "An error occurred while loading alias options": [
         "별칭 옵션 로드 중 오류가 발생했습니다."
       ],
@@ -3200,8 +3235,14 @@
       "Device name does not match": [
         "디바이스 이름이 맞지 않습니다"
       ],
+      "Diagnostics failed": [
+        "진단 실패"
+      ],
       "Domain not available, try again later": [
         "도메인을 사용할 수 없습니다. 나중에 다시 시도해주세요."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "청구서 주소 수정이 현재 사용할 수 없습니다.\n나중에 다시 시도하시기 바랍니다."
       ],
       "Email address is required": [
         "이메일 주소가 필요함"
@@ -3250,6 +3291,9 @@
       ],
       "Failed to load the STL preview": [
         "STL 미리보기 불러오기 실패"
+      ],
+      "Failed to open to contact": [
+        "연락처 열기 실패"
       ],
       "Failed to resend invitation": [
         "초대장 재전송 실패"
@@ -3437,6 +3481,9 @@
       "Port is required": [
         "포트가 필요함"
       ],
+      "Postal code is required": [
+        "우편 번호가 필요합니다"
+      ],
       "Primary address key is not decrypted": [
         "기본 주소 키가 복호화되지 않았습니다"
       ],
@@ -3593,6 +3640,9 @@
       "Unknown location": [
         "알 수 없는 위치"
       ],
+      "Unknown number of downloads": [
+        "알 수 없는 다운로드 수"
+      ],
       "Unknown payment token status": [
         "알 수 없는 결제 토큰 상태"
       ],
@@ -3608,11 +3658,32 @@
       "Validation error": [
         "검증 오류"
       ],
+      "We were not able some of your shared items": [
+        "공유된 항목 중 일부를 가져올 수 없습니다"
+      ],
+      "We were not able to load some invitations": [
+        "초대 중 일부를 불러올 수 없었습니다"
+      ],
+      "We were not able to load some items shared with you": [
+        "사용자와 공유된 항목 중 일부를 가져올 수 없습니다"
+      ],
+      "We were not able to load some of your bookmarks": [
+        "북마크 중 일부를 불러올 수 없었습니다"
+      ],
+      "We were not able to load some of your invitation to shared items": [
+        "공유된 항목에 대한 초대 일부를 가져올 수 없습니다"
+      ],
+      "We were not able to load some of your saved shared links": [
+        "저장된 링크 일부를 불러올 수 없었습니다"
+      ],
       "We were not able to load some of your shared items": [
         "공유된 항목 중 일부를 가져올 수 없습니다"
       ],
       "We were not able to load some of your shared items details": [
         "공유된 항목들 중 일부의 세부사항을 불러올 수 없습니다."
+      ],
+      "We were not able to load some of your shared items info": [
+        "공유된 정보 중 일부를 가져올 수 없습니다"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }명 이상의 수신자에게 메일을 보낼 수 없습니다."
@@ -3631,6 +3702,9 @@
       ],
       "Your import will not be processed.": [
         "가져오기가 처리되지 않았습니다."
+      ],
+      "ZIP code is required": [
+        "우편번호가 필요합니다"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 복호화할 수 없는 이름"
@@ -4516,6 +4590,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }의 암호화 기술은 당사를 포함한 그 누구도 회원님의 비밀번호에 접근할 수 없음을 뜻합니다."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME }은(는) 안전한 이벤트 동기화 및 암호화를 위해 ${ BRAND_NAME } 주소가 필요합니다. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME }은(는) 안전한 이벤트 동기화 및 암호화를 위해 ${ BRAND_NAME } 주소가 필요합니다. 지금 무료 ${ MAIL_APP_NAME } 주소를 신청하세요."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount }개 새 달력"
       ],
@@ -4593,6 +4673,12 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }은 최소 1개 이상 전용 서버가 필요합니다 ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName }이(가) ${ daysLeft }일 내로 만료됩니다."
+      ],
+      "${ planName } expires today.": [
+        "${ planName }이(가) 오늘 만료됩니다."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME }이 의심스러운 활동에 대한 전담 모니터링으로 계정을 보호합니다."
@@ -5047,6 +5133,9 @@
       "End-to-end encrypted": [
         "종단간 암호화됨"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "완전히 개인적이고 암호화된 통신을 보장합니다. 지금 귀하의 무료 ${ BRAND_NAME } 이메일 주소를 확보하세요."
+      ],
       "Enter password": [
         "비밀번호 입력"
       ],
@@ -5064,6 +5153,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "사용자의 비밀번호 입력 (조직 관리자와 같음)"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "사용자 고유의 비밀번호 입력 (신뢰할 수 있는 연락처로서)"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "남은 예상 시간: ${ estimatedMinutes }분"
@@ -5145,6 +5237,9 @@
       ],
       "Geoblocking": [
         "차단된 콘텐츠"
+      ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "기술 지원 및 문제 해결을 위한 로그 및 기타 정보 가져오기"
       ],
       "Get the app to backup photos from your phone or upload them here.": [
         "사진 백업을 위해 회원님의 휴대폰에서 앱을 다운로드하거나 여기서 직접 업로드하세요."
@@ -5236,6 +5331,9 @@
       "Initializing": [
         "초기화 중"
       ],
+      "Integrity issues found": [
+        "무결성 문제 발견"
+      ],
       "Internet connection lost": [
         "인터넷 연결 없음"
       ],
@@ -5247,6 +5345,9 @@
       ],
       "Invite link copied": [
         "초대 링크를 복사했습니다"
+      ],
+      "Issues found": [
+        "문제점 발견"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "최근에 ${ uploadName } 을(를) 업로드하려고 시도한 것 같습니다. 업로드가 실패하면, ${ replaceFile } 주세요. 업로드가 아직 진행 중이라면, 교체하면 진행 중인 업로드가 취소됩니다."
@@ -5403,6 +5504,9 @@
       ],
       "No group found": [
         "찾은 그룹 없음"
+      ],
+      "No issue found": [
+        "발견된 문제 없음"
       ],
       "No payment is required at this time.": [
         "현재는 결제가 필요없습니다."
@@ -5667,6 +5771,9 @@
       ],
       "Restoring Photos... Please keep the tab open": [
         "사진 복구 중... 탭을 닫지 마십시오"
+      ],
+      "Running diagnostics...": [
+        "진단 중..."
       ],
       "Saving...": [
         "저장 중..."
@@ -6313,6 +6420,9 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "회원님의 계정에 적어도 하나의 연체된 결제가 있습니다. 회원님의 계정이 제한된 상태입니다. 지속적인 미지불이 이메일과 공유 링크를 차단시킬 수 있습니다. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
+        "현재 사용중인 브라우저는 대용량 파일/복수의 파일 다운로드를 지원하지 않습니다. 매끄러운 업로드 및 다운로드를 위해 데스크톱 앱을 내려받으세요."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "${ importedEmailAddressStrong }(에)서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 완료되었습니다."
       ],
@@ -6474,6 +6584,9 @@
       "Expired": [
         "만료됨"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "만료된"
       ],
@@ -6622,6 +6735,9 @@
       ],
       "Comment": [
         "댓글"
+      ],
+      "Company": [
+        "회사"
       ],
       "Company name": [
         "법인 이름"
@@ -6992,6 +7108,9 @@
       "Start date": [
         "시작일"
       ],
+      "State": [
+        "시/도"
+      ],
       "Stolen data": [
         "데이터 유실됨"
       ],
@@ -7099,6 +7218,12 @@
       ],
       "Your password (admin)": [
         "사용자의 비밀번호 (관리자)"
+      ],
+      "Your password (trusted contact)": [
+        "사용자 비밀번호 (신뢰할 수 있는 연락처)"
+      ],
+      "ZIP code": [
+        "우편번호"
       ]
     },
     "Label for contact group color": {
@@ -7976,7 +8101,7 @@
         "최대 2명 지원"
       ],
       "Sync and backup all your files across devices": [
-        "기기를 넘나들며 파일을 동기화 및 백업하세요"
+        "기기를 넘나들며 파일 동기화 및 백업"
       ],
       "Tor over VPN": [
         "Tor over VPN"
@@ -8587,6 +8712,9 @@
       "Album renamed successfully": [
         "앨범의 이름이 성공적으로 변경되었습니다"
       ],
+      "All items deleted permanently from trash": [
+        "모든 항목이 휴지통에서 영구적으로 삭제되었습니다"
+      ],
       "An invitation has been sent": [
         "초대를 전송했습니다."
       ],
@@ -8697,6 +8825,12 @@
       ],
       "Root folder failed to be loaded": [
         "루트 폴더 불러오는 중 문제 발생"
+      ],
+      "Selected item was not removed from your list": [
+        "선택된 항목이 목록에서 삭제되지 않았습니다."
+      ],
+      "Selected items were successfully removed from your list": [
+        "선택된 항목이 목록에서 성공적으로 삭제되었습니다"
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "선택한 사진이 이미 “${ albumName }”에 존재합니다."
@@ -9099,6 +9233,18 @@
       ],
       "No parent folder": [
         "상위 폴더 없음"
+      ],
+      "Only current location": [
+        "현재 위치만"
+      ],
+      "Only current location: ${ name }": [
+        "현재 위치만: ${ name }"
+      ],
+      "Verify content": [
+        "내용 확인"
+      ],
+      "Verify thumbnails": [
+        "섬네일 확인"
       ]
     },
     "Option group label": {
@@ -9282,6 +9428,9 @@
       "Timeout exceeded": [
         "응답 시간 초과"
       ],
+      "VAT number": [
+        "부가가치세 번호"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA 은행 송금이 유로화 결제만 지원하여 사용자의 통화가 유로화(€)로 변경되었습니다."
       ],
@@ -9334,8 +9483,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "ABN 추가"
+      ],
+      "Add Business Number": [
+        "사업자등록번호 추가"
+      ],
+      "Add EIN": [
+        "EIN 추가"
+      ],
+      "Add VAT number": [
+        "부가가치세 번호 추가"
+      ],
       "Business Number": [
         "사업자등록번호"
+      ],
+      "Edit ABN": [
+        "ABN 수정"
+      ],
+      "Edit Business Number": [
+        "사업자등록번호 수정"
+      ],
+      "Edit EIN": [
+        "EIN 수정"
+      ],
+      "Edit VAT number": [
+        "VAT 번호 수정"
       ],
       "EIN": [
         "EIN"
@@ -9378,8 +9551,17 @@
       "A way to contact you": [
         "사용자에게 연락할 방법"
       ],
+      "Anderson": [
+        "길동"
+      ],
+      "Anytown": [
+        "서울특별시 낙원구"
+      ],
       "Choose password": [
         "비밀번호 선택"
+      ],
+      "Company name": [
+        "법인 이름"
       ],
       "E.g., ": [
         "예, "
@@ -9416,6 +9598,9 @@
       ],
       "Last name": [
         "성"
+      ],
+      "Main street 12": [
+        "행복로 12"
       ],
       "Message": [
         "메시지"
@@ -9456,6 +9641,9 @@
       "Select a reason": [
         "사유 선택"
       ],
+      "Select country": [
+        "국가 선택"
+      ],
       "Select state": [
         "시・도 선택"
       ],
@@ -9467,6 +9655,12 @@
       ],
       "Start typing an email address": [
         "이메일 주소 입력을 시작하세요"
+      ],
+      "Thomas": [
+        "홍"
+      ],
+      "VAT number": [
+        "부가가치세 번호"
       ],
       "Your organization name": [
         "조직 이름"
@@ -10683,6 +10877,9 @@
       "Alias saved and copied": [
         "별칭이 저장 및 복사되었습니다"
       ],
+      "Billing details updated": [
+        "청구 상세 정보가 업데이트되었습니다."
+      ],
       "Canceling import": [
         "가져오기 취소 중"
       ],
@@ -10945,6 +11142,9 @@
       "Account security": [
         "계정 보안"
       ],
+      "Account temporarily locked": [
+        "계정 일시 잠김"
+      ],
       "Active": [
         "활성"
       ],
@@ -11043,6 +11243,9 @@
       ],
       "Check for malicious files": [
         "악성 파일 확인"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } 주소를 받으세요"
       ],
       "Clearing data": [
         "데이터 지우기"
@@ -11164,6 +11367,9 @@
       "Devices": [
         "기기"
       ],
+      "Diagnostics": [
+        "진단"
+      ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "디지털 서명이 부분적으로 인증되었습니다. 이 폴더는 ${ BRAND_NAME } 계정이 없는 사용자가 공개적으로 접근할 수 있는 공유 링크를 사용하여 생성했기 때문에 신원을 확인할 수 없습니다."
       ],
@@ -11230,6 +11436,9 @@
       "Duplicate folder found": [
         "중복 폴더 발견됨"
       ],
+      "Edit billing address": [
+        "청구 주소 수정"
+      ],
       "Edit contact": [
         "연락처 편집"
       ],
@@ -11295,6 +11504,9 @@
       ],
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults }개 결과 찾음"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME }의 모든 기능 이용하기"
       ],
       "Get more from your VPN": [
         "VPN에 대해 더 알아보기"
@@ -11466,6 +11678,9 @@
       ],
       "Notes": [
         "메모"
+      ],
+      "Number of downloads": [
+        "다운로드 횟수"
       ],
       "Number of items": [
         "항목 수"
