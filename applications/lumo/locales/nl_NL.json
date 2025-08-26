@@ -170,6 +170,9 @@
       "Let's talk": [
         "Laten we praten!"
       ],
+      "Manage": [
+        "Beheer"
+      ],
       "Manage advanced account protections": [
         "Geavanceerde accountbeveiligingen beheren"
       ],
@@ -813,26 +816,17 @@
       ],
       "Submit": [
         "Versturen"
-      ],
-      "Use ${ LUMO_SHORT_APP_NAME } Free instead": [
-        "Gebruik in plaats daarvan ${ LUMO_SHORT_APP_NAME } Free"
       ]
     },
     "collider_2025: Button": {
       "Close": [
         "Sluiten"
       ],
-      "Explore ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Ontdek ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
       "Join waitlist": [
         "Meld u aan voor de wachtlijst"
       ],
       "Learn more": [
         "Meer informatie"
-      ],
-      "Manage account": [
-        "Account beheren"
       ],
       "Open Link": [
         "Link openen"
@@ -883,9 +877,6 @@
       ]
     },
     "collider_2025: Characteristic Title": {
-      "Enter": [
-        "Invoeren"
-      ],
       "Only you have access": [
         "Alleen u hebt toegang"
       ],
@@ -909,35 +900,11 @@
       ]
     },
     "collider_2025: Description": {
-      "Add ${ LUMO_SHORT_APP_NAME } Plus to unlock more benefits": [
-        "Voeg ${ LUMO_SHORT_APP_NAME } Plus toe om meer voordelen te ontgrendelen"
-      ],
-      "Boost your productivity": [
-        "Verhoog uw productiviteit"
-      ],
       "Last updated on ${ DATE_VERSION }": [
         "Laatst bijgewerkt op ${ DATE_VERSION }"
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Meld u aan om toegang te krijgen tot uw account en meer functies te ontgrendelen. Hebt u er geen? ${ createLink }"
-      ],
-      "Talk to your admin for plan details": [
-        "Neem contact op met uw beheerder voor abonnementsgegevens"
-      ],
-      "Talk to your admin to add ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Neem contact op met uw beheerder om ${ LUMO_SHORT_APP_NAME } Plus toe te voegen"
-      ],
-      "To delete your account and more, go to account settings.": [
-        "Om uw account en meer te verwijderen, gaat u naar accountinstellingen."
-      ],
-      "Unlock advanced models and premium features with ${ LUMO_APP_NAME } Plus.": [
-        "Ontgrendel geavanceerde modellen en premiumfuncties met ${ LUMO_APP_NAME } Plus."
-      ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Upgrade naar ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
-      "Your plan includes ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Uw abonnement omvat ${ LUMO_SHORT_APP_NAME } Plus"
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1004,40 +971,8 @@
       "Advanced models": [
         "Geavanceerde modellen"
       ],
-      "Chat history": [
-        "Gespreksgeschiedenis"
-      ],
-      "Favorite chats": [
-        "Favoriete gesprekken"
-      ],
-      "File uploads": [
-        "Bestandsuploads"
-      ],
       "Web search": [
         "Zoeken op het web"
-      ],
-      "Weekly chats": [
-        "Wekelijkse gesprekken"
-      ]
-    },
-    "collider_2025: Feature detail": {
-      "Large files": [
-        "Grote bestanden"
-      ],
-      "Limited": [
-        "Beperkt"
-      ],
-      "No": [
-        "Nee"
-      ],
-      "Small files": [
-        "Kleine bestanden"
-      ],
-      "Unlimited": [
-        "Onbeperkt"
-      ],
-      "Yes": [
-        "Ja"
       ]
     },
     "collider_2025: Guest Upsell": {
@@ -1134,9 +1069,6 @@
       ],
       "Please wait for files to finish processing": [
         "Wacht alstublieft tot de bestanden klaar zijn met verwerken"
-      ],
-      "Press ${ enterBoldText } to ask": [
-        "Druk op ${ enterBoldText } om te vragen"
       ],
       "Processed content": [
         "Verwerkte inhoud"
@@ -1306,12 +1238,6 @@
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Krijg ${ LUMO_SHORT_APP_NAME } Plus"
       ],
-      "Manage": [
-        "Beheren"
-      ],
-      "Manage plan": [
-        "Abonnement beheren"
-      ],
       "New chat": [
         "Nieuwe chat"
       ],
@@ -1364,20 +1290,11 @@
       "Don't lose the thread": [
         "Raak de draad niet kwijt"
       ],
-      "Elevate your AI experience": [
-        "Verbeter uw AI-ervaring"
-      ],
       "Guest": [
         "Gast"
       ],
       "Invalid Link": [
         "Ongeldige link"
-      ],
-      "Manage account": [
-        "Account beheren"
-      ],
-      "Manage your account and preferences": [
-        "Beheer uw account en voorkeuren"
       ],
       "Opening External Link": [
         "Externe link openen"
@@ -1388,9 +1305,6 @@
       "Secure your spot": [
         "Beveilig uw plek"
       ],
-      "Settings": [
-        "Instellingen"
-      ],
       "Upload files": [
         "Bestanden uploaden"
       ],
@@ -1399,9 +1313,6 @@
       ],
       "You're on the waitlist": [
         "U staat op de wachtlijst"
-      ],
-      "Your plan": [
-        "Uw abonnement"
       ]
     },
     "collider_2025: Tooltip": {
@@ -2638,6 +2549,14 @@
         "Prioriteitsondersteuning"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstvelden zijn optioneel. De informatie die u in dit formulier verstrekt zal alleen verschijnen op in de toekomst uitgegeven facturen en zal geen invloed hebben op bestaande facturen."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Tekstvelden zijn optioneel. De informatie die u in dit formulier opgeeft, zal alleen de door u geselecteerde factuur wijzigen en niet uw toekomstige factuurgegevens."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Vertrouwd contact"
@@ -2658,6 +2577,9 @@
       ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Factuuradres bewerken is op dit moment niet beschikbaar. Probeer het later opnieuw."
       ],
       "Email is not valid": [
         "E-mailadres is ongeldig"
@@ -2740,6 +2662,9 @@
       "Please select billing state": [
         "Selecteer factureringsstaat"
       ],
+      "Postal code is required": [
+        "Postcode is vereist"
+      ],
       "Process aborted": [
         "Proces afgebroken"
       ],
@@ -2787,6 +2712,9 @@
       ],
       "Username must end with a letter or digit": [
         "Gebruikersnaam moet met een letter of cijfer eindigen"
+      ],
+      "ZIP code is required": [
+        "Postcode is vereist"
       ]
     },
     "Error message": {
@@ -3553,11 +3481,17 @@
       "Category": [
         "Categorie"
       ],
+      "City": [
+        "Stad"
+      ],
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
       ],
       "Colors": [
         "Kleuren"
+      ],
+      "Company": [
+        "Bedrijf"
       ],
       "Company name": [
         "Bedrijfsnaam"
@@ -3646,6 +3580,9 @@
       "Phone number": [
         "Telefoonnummer"
       ],
+      "Postal code": [
+        "Postcode"
+      ],
       "Proration": [
         "Verrekening"
       ],
@@ -3657,6 +3594,12 @@
       ],
       "Start date": [
         "Begindatum"
+      ],
+      "State": [
+        "Staat"
+      ],
+      "Street address": [
+        "Adres"
       ],
       "Subscription options": [
         "Abonnementsopties"
@@ -3684,6 +3627,9 @@
       ],
       "Your password (trusted contact)": [
         "Uw wachtwoord (vertrouwd contact)"
+      ],
+      "ZIP code": [
+        "Postcode"
       ]
     },
     "Label, credit card": {
@@ -4659,14 +4605,6 @@
         "Sommige afbeeldingen zijn niet geüpload vanwege dubbele bestandsnamen in de huidige selectie."
       ]
     },
-    "Offer feature": {
-      "Free": [
-        "Free"
-      ],
-      "Plus": [
-        "Plus"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " bezoek ons ${ helpCenterLink } of ${ contactSupportLink }."
@@ -4869,6 +4807,9 @@
       "Timeout exceeded": [
         "Time-out overschreden"
       ],
+      "VAT number": [
+        "BTW-nummer"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Uw valuta is gewijzigd naar euro (€) omdat SEPA-bankoverschrijvingen alleen betalingen in euro ondersteunen."
       ],
@@ -4921,8 +4862,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "ABN toevoegen"
+      ],
+      "Add Business Number": [
+        "Ondernemingsnummer toevoegen"
+      ],
+      "Add EIN": [
+        "EIN toevoegen"
+      ],
+      "Add VAT number": [
+        "BTW-nummer toevoegen"
+      ],
       "Business Number": [
         "Ondernemingsnummer"
+      ],
+      "Edit ABN": [
+        "ABN bewerken"
+      ],
+      "Edit Business Number": [
+        "Ondernemingsnummer bewerken"
+      ],
+      "Edit EIN": [
+        "EIN bewerken"
+      ],
+      "Edit VAT number": [
+        "Wijzig BTW-nummer"
       ],
       "EIN": [
         "Rijksregisternummer"
@@ -4935,8 +4900,20 @@
       "A way to contact you": [
         "Een manier om u te contacteren"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "Willekeurige stad"
+      ],
+      "Company name": [
+        "Bedrijfsnaam"
+      ],
       "Gift code": [
         "Geschenkcode"
+      ],
+      "Main street 12": [
+        "Hoofdstraat 12"
       ],
       "Organization name": [
         "Organisatienaam"
@@ -4959,11 +4936,20 @@
       "Select a reason": [
         "Selecteer een reden"
       ],
+      "Select country": [
+        "Selecteer land"
+      ],
       "Select state": [
         "Selecteer provincie"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Deel wat volgens u ${ BRAND_NAME } beter zou kunnen maken"
+      ],
+      "Thomas": [
+        "Thomas"
+      ],
+      "VAT number": [
+        "BTW-nummer"
       ],
       "Your organization name": [
         "Uw organisatienaam"
@@ -5411,6 +5397,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Factuurgegevens bijgewerkt"
+      ],
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
       ],
@@ -5555,6 +5544,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Download ${ DRIVE_APP_NAME } apps"
+      ],
+      "Edit billing address": [
+        "Factuuradres bewerken"
       ],
       "Edit credit/debit card": [
         "Krediet/debietkaart bewerken"

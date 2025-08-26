@@ -803,26 +803,17 @@
       ],
       "Submit": [
         "Отправить"
-      ],
-      "Use ${ LUMO_SHORT_APP_NAME } Free instead": [
-        "Используйте ${ LUMO_SHORT_APP_NAME } Free вместо этого"
       ]
     },
     "collider_2025: Button": {
       "Close": [
         "Закрыть"
       ],
-      "Explore ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Изучите ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
       "Join waitlist": [
         "Присоединиться к списку ожидания"
       ],
       "Learn more": [
         "Подробнее"
-      ],
-      "Manage account": [
-        "Управление аккаунтом"
       ],
       "Open Link": [
         "Открыть ссылку"
@@ -873,9 +864,6 @@
       ]
     },
     "collider_2025: Characteristic Title": {
-      "Enter": [
-        "Ввод"
-      ],
       "Only you have access": [
         "Доступ есть только у вас"
       ],
@@ -899,35 +887,11 @@
       ]
     },
     "collider_2025: Description": {
-      "Add ${ LUMO_SHORT_APP_NAME } Plus to unlock more benefits": [
-        "Добавьте ${ LUMO_SHORT_APP_NAME } Plus, чтобы получить больше преимуществ"
-      ],
-      "Boost your productivity": [
-        "Повысьте свою производительность"
-      ],
       "Last updated on ${ DATE_VERSION }": [
         "Последнее обновление ${ DATE_VERSION }"
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Войдите, чтобы получить доступ к аккаунту и разблокировать больше функций. Ещё нет аккаунта? ${ createLink }"
-      ],
-      "Talk to your admin for plan details": [
-        "Обратитесь к администратору за информацией о тарифах"
-      ],
-      "Talk to your admin to add ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Обратитесь к администратору, чтобы добавить ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
-      "To delete your account and more, go to account settings.": [
-        "Чтобы удалить аккаунт или сделать что-то другое, перейдите в настройки."
-      ],
-      "Unlock advanced models and premium features with ${ LUMO_APP_NAME } Plus.": [
-        "Разблокируйте расширенные модели и премиум-функции с ${ LUMO_APP_NAME } Plus."
-      ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Улучшить до ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
-      "Your plan includes ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Ваш план включает ${ LUMO_SHORT_APP_NAME } Plus"
       ]
     },
     "collider_2025: Disclaimer": {
@@ -994,40 +958,8 @@
       "Advanced models": [
         "Расширенные модели"
       ],
-      "Chat history": [
-        "История чата"
-      ],
-      "Favorite chats": [
-        "Избранные чаты"
-      ],
-      "File uploads": [
-        "Загрузка файлов"
-      ],
       "Web search": [
         "Поиск в Интернете"
-      ],
-      "Weekly chats": [
-        "Еженедельные чаты"
-      ]
-    },
-    "collider_2025: Feature detail": {
-      "Large files": [
-        "Большие файлы"
-      ],
-      "Limited": [
-        "Ограничено"
-      ],
-      "No": [
-        "Нет"
-      ],
-      "Small files": [
-        "Маленькие файлы"
-      ],
-      "Unlimited": [
-        "Не ограничено"
-      ],
-      "Yes": [
-        "Да"
       ]
     },
     "collider_2025: Guest Upsell": {
@@ -1124,9 +1056,6 @@
       ],
       "Please wait for files to finish processing": [
         "Дождитесь завершения обработки файлов"
-      ],
-      "Press ${ enterBoldText } to ask": [
-        "Нажмите ${ enterBoldText }, чтобы спросить"
       ],
       "Processed content": [
         "Обработанное содержимое"
@@ -1296,12 +1225,6 @@
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Получить ${ LUMO_SHORT_APP_NAME } Plus"
       ],
-      "Manage": [
-        "Управлять"
-      ],
-      "Manage plan": [
-        "Управление планом"
-      ],
       "New chat": [
         "Новый чат"
       ],
@@ -1354,20 +1277,11 @@
       "Don't lose the thread": [
         "Не теряйте нить разговора"
       ],
-      "Elevate your AI experience": [
-        "Повысьте свой опыт использования ИИ"
-      ],
       "Guest": [
         "Гость"
       ],
       "Invalid Link": [
         "Недействительная ссылка"
-      ],
-      "Manage account": [
-        "Управление аккаунтом"
-      ],
-      "Manage your account and preferences": [
-        "Управление аккаунтом и настройками"
       ],
       "Opening External Link": [
         "Открытие внешней ссылки"
@@ -1378,9 +1292,6 @@
       "Secure your spot": [
         "Зарезервируйте свое место"
       ],
-      "Settings": [
-        "Настройки"
-      ],
       "Upload files": [
         "Загрузить файлы"
       ],
@@ -1389,9 +1300,6 @@
       ],
       "You're on the waitlist": [
         "Вы в списке ожидания"
-      ],
-      "Your plan": [
-        "Ваш тариф"
       ]
     },
     "collider_2025: Tooltip": {
@@ -2630,6 +2538,14 @@
         "Приоритетная поддержка"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Текстовые поля являются необязательными. Информация, которую вы предоставите в этой форме, будет отображаться только в счетах, выставляемых в будущем, и не повлияет на существующие счета."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Текстовые поля являются необязательными. Информация, которую вы предоставите в этой форме, изменит только выбранный вами счет-фактуру, но не ваши будущие данные о счете-фактуре."
+      ]
+    },
     "Error": {
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } - это ваше имя пользователя. Чтобы создать ${ emailAddress }, перейдите в Настройки > Идентификация и адреса > Короткий домен (pm.me)"
@@ -2645,6 +2561,9 @@
       ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Изменение платежного адреса в данный момент недоступно. Повторите попытку позже."
       ],
       "Email is not valid": [
         "Эл. почта недействительна"
@@ -2759,6 +2678,9 @@
       ],
       "Username must end with a letter or digit": [
         "Имя пользователя должно заканчиваться буквой или цифрой"
+      ],
+      "ZIP code is required": [
+        "Необходимо указать почтовый индекс"
       ]
     },
     "Error message": {
@@ -3535,11 +3457,17 @@
       "Category": [
         "Категория"
       ],
+      "City": [
+        "Город"
+      ],
       "Code is 6 digits without spaces": [
         "Код состоит из 6 цифр без пробелов"
       ],
       "Colors": [
         "Цвета"
+      ],
+      "Company": [
+        "Компания"
       ],
       "Company name": [
         "Название компании"
@@ -3625,6 +3553,9 @@
       "Phone number": [
         "Номер телефона"
       ],
+      "Postal code": [
+        "Почтовый индекс"
+      ],
       "Proration": [
         "Пропорциональное распределение"
       ],
@@ -3636,6 +3567,12 @@
       ],
       "Start date": [
         "Дата начала"
+      ],
+      "State": [
+        "Состояние"
+      ],
+      "Street address": [
+        "Адрес"
       ],
       "Subscription options": [
         "Параметры подписки"
@@ -3660,6 +3597,9 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "ZIP code": [
+        "Почтовый индекс"
       ]
     },
     "Label, credit card": {
@@ -4680,14 +4620,6 @@
         "Некоторые изображения не были загружены из-за дублирования имён файлов в текущей выборке."
       ]
     },
-    "Offer feature": {
-      "Free": [
-        "Free"
-      ],
-      "Plus": [
-        "Plus"
-      ]
-    },
     "Onboarding Trial": {
       "Continue": [
         "Продолжить"
@@ -4913,8 +4845,20 @@
       "A way to contact you": [
         "Способ связаться с вами"
       ],
+      "Anderson": [
+        "Андерсон"
+      ],
+      "Anytown": [
+        "Любой город"
+      ],
+      "Company name": [
+        "Название компании"
+      ],
       "Gift code": [
         "Подарочный код"
+      ],
+      "Main street 12": [
+        "Мейн стрит 12"
       ],
       "Organization name": [
         "Название организации"
@@ -4942,6 +4886,12 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Поделитесь тем, что, по вашему мнению, могло бы сделать ${ BRAND_NAME } лучше."
+      ],
+      "Thomas": [
+        "Томас"
+      ],
+      "VAT number": [
+        "Номер плательщика НДС"
       ],
       "Your organization name": [
         "Название вашей организации"
@@ -5390,6 +5340,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Информация о платеже обновлена"
+      ],
       "Code sent to ${ methodTo }": [
         "Код отправлен на ${ methodTo }"
       ],
@@ -5531,6 +5484,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Скачать приложения ${ DRIVE_APP_NAME }"
+      ],
+      "Edit billing address": [
+        "Изменить платежный адрес"
       ],
       "Edit credit/debit card": [
         "Изменить кредитную/дебетовую карту"
