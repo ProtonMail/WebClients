@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { CATEGORY_LABEL_IDS_SET, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
@@ -170,6 +170,14 @@ export const getNotificationTextLabelAdded = ({
 }) => {
     if (destinationLabelID === MAILBOX_LABEL_IDS.STARRED) {
         return getNotificationTextStarred({ isMessage, elementsCount });
+    }
+
+    if (CATEGORY_LABEL_IDS_SET.has(destinationLabelID as MAILBOX_LABEL_IDS)) {
+        return c('Success').ngettext(
+            msgid`Recategorized ${elementsCount} message.`,
+            `Recategorized ${elementsCount} messages.`,
+            elementsCount
+        );
     }
 
     if (destinationLabelID === MAILBOX_LABEL_IDS.SPAM) {
