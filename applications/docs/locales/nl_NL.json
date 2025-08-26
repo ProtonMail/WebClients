@@ -2778,6 +2778,14 @@
         "Prioriteitsondersteuning"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstvelden zijn optioneel. De informatie die u in dit formulier verstrekt zal alleen verschijnen op in de toekomst uitgegeven facturen en zal geen invloed hebben op bestaande facturen."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Tekstvelden zijn optioneel. De informatie die u in dit formulier opgeeft, zal alleen de door u geselecteerde factuur wijzigen en niet uw toekomstige factuurgegevens."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "LET OP:\n${ eventComment }"
@@ -2976,6 +2984,9 @@
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Factuuradres bewerken is op dit moment niet beschikbaar. Probeer het later opnieuw."
+      ],
       "Email address is required": [
         "E-mailadres is vereist"
       ],
@@ -3005,6 +3016,9 @@
       ],
       "Failed to copy photo to album": [
         "Kopiëren van foto naar album is mislukt."
+      ],
+      "Failed to open to contact": [
+        "Contact maken mislukt"
       ],
       "Failed to rename document. Please try again later.": [
         "Hernoemen van document mislukt. Probeer het later opnieuw."
@@ -3177,6 +3191,9 @@
       ],
       "Port is required": [
         "Poort is vereist"
+      ],
+      "Postal code is required": [
+        "Postcode is vereist"
       ],
       "Primary address key is not decrypted": [
         "Primaire adressleutel is niet ontsleuteld"
@@ -3362,6 +3379,9 @@
       ],
       "Your import will not be processed.": [
         "Uw import zal niet worden verwerkt."
+      ],
+      "ZIP code is required": [
+        "Postcode is vereist"
       ]
     },
     "Error importing calendar": {
@@ -4256,6 +4276,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } vervalt binnen ${ daysLeft } dag.",
+        "${ planName } vervalt binnen ${ daysLeft } dagen."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } verloopt vandaag."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met toegewijde monitoring van verdachte activiteiten."
@@ -5904,6 +5931,9 @@
       "Colors": [
         "Kleuren"
       ],
+      "Company": [
+        "Bedrijf"
+      ],
       "Company name": [
         "Bedrijfsnaam"
       ],
@@ -6201,6 +6231,9 @@
       "Start date": [
         "Begindatum"
       ],
+      "State": [
+        "Staat"
+      ],
       "Stop sharing": [
         "Delen stoppen"
       ],
@@ -6284,6 +6317,9 @@
       ],
       "Your password (trusted contact)": [
         "Uw wachtwoord (vertrouwd contact)"
+      ],
+      "ZIP code": [
+        "Postcode"
       ]
     },
     "Label for contact group color": {
@@ -8310,6 +8346,9 @@
       "Timeout exceeded": [
         "Time-out overschreden"
       ],
+      "VAT number": [
+        "BTW-nummer"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Uw valuta is gewijzigd naar euro (€) omdat SEPA-bankoverschrijvingen alleen betalingen in euro ondersteunen."
       ],
@@ -8362,8 +8401,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "ABN toevoegen"
+      ],
+      "Add Business Number": [
+        "Ondernemingsnummer toevoegen"
+      ],
+      "Add EIN": [
+        "EIN toevoegen"
+      ],
+      "Add VAT number": [
+        "BTW-nummer toevoegen"
+      ],
       "Business Number": [
         "Ondernemingsnummer"
+      ],
+      "Edit ABN": [
+        "ABN bewerken"
+      ],
+      "Edit Business Number": [
+        "Ondernemingsnummer bewerken"
+      ],
+      "Edit EIN": [
+        "EIN bewerken"
+      ],
+      "Edit VAT number": [
+        "Wijzig BTW-nummer"
       ],
       "EIN": [
         "Rijksregisternummer"
@@ -8406,8 +8469,17 @@
       "A way to contact you": [
         "Een manier om u te contacteren"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "Willekeurige stad"
+      ],
       "Choose password": [
         "Kies wachtwoord"
+      ],
+      "Company name": [
+        "Bedrijfsnaam"
       ],
       "E.g., ": [
         "Bijv., "
@@ -8435,6 +8507,9 @@
       ],
       "Last name": [
         "Achternaam"
+      ],
+      "Main street 12": [
+        "Hoofdstraat 12"
       ],
       "Message": [
         "Bericht"
@@ -8472,6 +8547,9 @@
       "Select a reason": [
         "Selecteer een reden"
       ],
+      "Select country": [
+        "Selecteer land"
+      ],
       "Select state": [
         "Selecteer provincie"
       ],
@@ -8483,6 +8561,12 @@
       ],
       "Start typing an email address": [
         "Voer een e-mailadres in"
+      ],
+      "Thomas": [
+        "Thomas"
+      ],
+      "VAT number": [
+        "BTW-nummer"
       ],
       "Your organization name": [
         "Uw organisatienaam"
@@ -9547,6 +9631,9 @@
       "Alias saved and copied": [
         "Alias opgeslagen en gekopieerd"
       ],
+      "Billing details updated": [
+        "Factuurgegevens bijgewerkt"
+      ],
       "Canceling import": [
         "Importeren annuleren"
       ],
@@ -9984,6 +10071,9 @@
       ],
       "Duplicate folder found": [
         "Duplicate map gevonden"
+      ],
+      "Edit billing address": [
+        "Factuuradres bewerken"
       ],
       "Edit contact": [
         "Contactpersoon bewerken"

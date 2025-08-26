@@ -2699,6 +2699,14 @@
         "Apoio ao cliente prioritário"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Os campos de texto são opcionais. As informações fornecidas neste formulário só aparecerão nas faturas emitidas no futuro e não afetarão as faturas existentes."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Os campos de texto são opcionais. As informações fornecidas neste formulário só irão alterar a fatura que selecionou e não os detalhes da futura fatura."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "NOTA:\n${ eventComment }"
@@ -2891,6 +2899,9 @@
       ],
       "Domain not available, try again later": [
         "Domínio indisponível, tente novamente mais tarde"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "A edição do endereço de faturação não está disponível no momento. Tente novamente mais tarde."
       ],
       "Email address is required": [
         "O endereço de e-mail é obrigatório."
@@ -3094,6 +3105,9 @@
       "Port is required": [
         "A porta é obrigatória."
       ],
+      "Postal code is required": [
+        "O código postal é obrigatório"
+      ],
       "Primary address key is not decrypted": [
         "A chave de endereço principal não está desencriptada."
       ],
@@ -3278,6 +3292,9 @@
       ],
       "Your import will not be processed.": [
         "A sua importação não será processada."
+      ],
+      "ZIP code is required": [
+        "O código postal é necessário."
       ]
     },
     "Error importing calendar": {
@@ -4169,6 +4186,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer no mínimo 1 servidor dedicado ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "O ${ planName } expira em ${ daysLeft } dia.",
+        "O ${ planName } expira em ${ daysLeft } dias."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } expira hoje."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "O ${ PROTON_SENTINEL_NAME } protege a sua conta com monitorização dedicada de atividades suspeitas."
@@ -5802,6 +5826,9 @@
       "Colors": [
         "Cores"
       ],
+      "Company": [
+        "Empresa"
+      ],
       "Company name": [
         "Nome da empresa"
       ],
@@ -6099,6 +6126,9 @@
       "Start date": [
         "Data inicial"
       ],
+      "State": [
+        "Estado"
+      ],
       "Stop sharing": [
         "Parar a partilha"
       ],
@@ -6179,6 +6209,9 @@
       ],
       "Your password (admin)": [
         "A sua palavra-passe (admin)"
+      ],
+      "ZIP code": [
+        "Código postal"
       ]
     },
     "Label for contact group color": {
@@ -8280,8 +8313,17 @@
       "A way to contact you": [
         "Uma forma de o contactar"
       ],
+      "Anderson": [
+        "Ferreira"
+      ],
+      "Anytown": [
+        "Porto Verde"
+      ],
       "Choose password": [
         "Definir palavra-passe"
+      ],
+      "Company name": [
+        "Nome da empresa"
       ],
       "E.g., ": [
         "Ex., "
@@ -8309,6 +8351,9 @@
       ],
       "Last name": [
         "Apelido"
+      ],
+      "Main street 12": [
+        "Rua principal, 12"
       ],
       "Message": [
         "Mensagem"
@@ -8357,6 +8402,12 @@
       ],
       "Start typing an email address": [
         "Comece a escrever um endereço de e-mail"
+      ],
+      "Thomas": [
+        "Andrea"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ],
       "Your organization name": [
         "O nome da sua organização"
@@ -9351,6 +9402,9 @@
       "Alias saved and copied": [
         "Alias guardado e copiado"
       ],
+      "Billing details updated": [
+        "Os detalhes de faturação forem atualizados."
+      ],
       "Canceling import": [
         "A cancelar importação"
       ],
@@ -9782,6 +9836,9 @@
       ],
       "Duplicate folder found": [
         "Encontrada pasta duplicada"
+      ],
+      "Edit billing address": [
+        "Editar o endereço da fatura"
       ],
       "Edit contact": [
         "Editar contacto"

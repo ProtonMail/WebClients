@@ -880,10 +880,10 @@
         "Выкарыстоўваць код аднаўлення"
       ],
       "Verify": [
-        "Праверка"
+        "Спраўдзіць"
       ],
       "Verify account": [
-        "Праверыць уліковы запіс"
+        "Спраўдзіць уліковы запіс"
       ],
       "View": [
         "Прагледзець"
@@ -2780,6 +2780,14 @@
         "Прыярытэтная падтрымка"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Тэкставыя палі з'яўляюцца неабавязковымі. Звесткі, якія вы падалі ў гэтай форме, з'явяцца толькі ў выстаўленых рахунках у будучым і гэта не акажа ўплыў на бягучыя рахункі."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Тэкставыя палі з'яўляюцца неабавязковымі. Звесткі, якія вы падалі ў гэтай форме, зменяць толькі выбраны рахунак і гэта не акажа ўплыў на будучыя падрабязнасці рахунка."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "НАТАТКА:\n${ eventComment }"
@@ -2836,13 +2844,13 @@
     },
     "Email body for response to invitation": {
       "${ emailAddress } accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } прыняў(-ла) ваша запрашэнне на ${ eventTitle }"
+        "${ emailAddress } прыняў ваша запрашэнне на ${ eventTitle }"
       ],
       "${ emailAddress } declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } адхіліў(-ла) ваша запрашэнне на ${ eventTitle }"
+        "${ emailAddress } адхіліў ваша запрашэнне на ${ eventTitle }"
       ],
       "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } умоўна прыняў(-ла) ваша запрашэнне на ${ eventTitle }"
+        "${ emailAddress } умоўна прыняў ваша запрашэнне на ${ eventTitle }"
       ]
     },
     "Email subject": {
@@ -2982,6 +2990,9 @@
       "Domain not available, try again later": [
         "Дамен недаступны. Паспрабуйце яшчэ раз"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "У дадзены момант недаступна рэдагаванне адраса аплаты. Паспрабуйце яшчэ раз пазней."
+      ],
       "Email address is required": [
         "Патрабуецца ўвесці адрас электроннай пошты"
       ],
@@ -3011,6 +3022,9 @@
       ],
       "Failed to copy photo to album": [
         "Не ўдалося скапіяваць фатаграфію ў альбом"
+      ],
+      "Failed to open to contact": [
+        "Не ўдалося адкрыць кантакт"
       ],
       "Failed to rename document. Please try again later.": [
         "Не ўдалося перайменаваць дакумент. Паспрабуйце яшчэ раз пазней."
@@ -3191,6 +3205,9 @@
       ],
       "Port is required": [
         "Патрабуецца ўвесці порт"
+      ],
+      "Postal code is required": [
+        "Патрабуецца ўвесці паштовы індэкс"
       ],
       "Primary address key is not decrypted": [
         "Ключ асноўнага адраса не расшыфраваны"
@@ -3380,6 +3397,9 @@
       ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
+      ],
+      "ZIP code is required": [
+        "Патрабуецца ўвесці паштовы індэкс"
       ]
     },
     "Error importing calendar": {
@@ -4321,6 +4341,15 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } міне праз ${ daysLeft } дзень.",
+        "${ planName } міне праз ${ daysLeft } дні.",
+        "${ planName } міне праз ${ daysLeft } дзён.",
+        "${ planName } міне праз ${ daysLeft } дзён."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } міне сёння."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс па сродках адмысловага назірання падазронай актыўнасці."
       ],
@@ -4415,7 +4444,7 @@
         "Да назвы папкі будзе дададзены нумар"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Нумар тэлефона можа быць выкарыстаны для праверкі аднаго ўліковага запісу ${ BRAND_NAME }"
+        "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Бяспечнае падключэнне вельмі важна пры аддаленай працы. VPN абараняе даныя кампаніі ад кіберпагроз і захоўвае прыватнасць вашай працы."
@@ -4742,7 +4771,7 @@
         "Увядзіце ўліковыя даныя ад электроннай пошты з якой вы хочаце імпартаваць даныя."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Увядзіце праверачны код, які быў адпраўлены на ${ destinationText }."
+        "Увядзіце код спраўджання, які быў адпраўлены на ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Увядзіце праверачны код. Лічба ${ digit }."
@@ -4790,10 +4819,10 @@
         "Файл \"${ name }\" быў выдалены падчас спампоўвання"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Файл не мае подпісу. Мы не можам праверыць, што ${ emailAddress } запампаваў ${ fileName }."
+        "Файл не мае подпісу. Мы не можам спраўдзіць, што ${ emailAddress } запампаваў ${ fileName }."
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Файл не мае подпісу. Мы не можам праверыць хто запампаваў ${ fileName }."
+        "Файл не мае подпісу. Мы не можам спраўдзіць хто запампаваў ${ fileName }."
       ],
       "File will not be updated": [
         "Файл не будзе абноўлены"
@@ -4805,10 +4834,10 @@
         "Папка \"${ link.name }\" была выдалена падчас спампоўвання"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Папка не мае подпісу. Мы не можам праверыць, што ${ emailAddress } запампаваў ${ fileName }."
+        "Папка не мае подпісу. Мы не можам спраўдзіць, што ${ emailAddress } запампаваў ${ fileName }."
       ],
       "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Папка не мае подпісу. Немагчыма праверыць хто запампаваў ${ fileName }."
+        "Папка не мае подпісу. Немагчыма спраўдзіць хто запампаваў ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Папка не будзе запампавана"
@@ -5390,7 +5419,7 @@
         "Гэта спасылка вядзе на вэб-сайт, на якім могуць паспрабаваць скрасці вашы даныя: паролі або інфармацыю аб крэдытных картках."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Гэта спасылка можа быць гамаграфічнай атакай. Праверце спасылку, якую вы хочаце наведаць або не пераходзьце па ёй."
+        "Гэта спасылка можа быць гамаграфічнай атакай. Спраўдзіце спасылку, якую вы хочаце наведаць або не пераходзьце па ёй."
       ],
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Спасылка створана ў папярэдняй версіі Drive, таму яе немагчыма змяніць. Для змянення налад, выдаліце гэту спасылку і стварыце новую."
@@ -5513,7 +5542,7 @@
         "Праверка можа заняць некалькі хвілін."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Праверка адкрые новую ўкладку, адключыце блакіроўку ўсплывальных вокнаў. З вас не будуць спаганяцца грашовыя сродкі. Любая сума, якая выкарыстоўваецца для праверкі вашай карткі, будзе неадкладна вернута."
+        "Спраўджанне адкрые новую ўкладку, адключыце блакіроўку ўсплывальных вокнаў. З вас не будуць спаганяцца грашовыя сродкі. Любая сума, якая выкарыстоўваецца для спраўджання вашай карткі, будзе неадкладна вернута."
       ],
       "Version number successfully copied to clipboard": [
         "Нумар версіі паспяхова скапіяваны ў буферу абмену"
@@ -5534,10 +5563,10 @@
         "Мы не можам апрацаваць ваш плацеж."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Мы не можам праверыць, што ${ emailAddress } запампаваў ${ fileName }."
+        "Мы не можам спраўдзіць, што ${ emailAddress } запампаваў ${ fileName }."
       ],
       "We couldn’t verify who uploaded ${ fileName }.": [
-        "Мы не можам праверыць хто запампаваў ${ fileName }."
+        "Мы не можам спраўдзіць хто запампаваў ${ fileName }."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Нам неабходна аўтэнтыфікаваць спосаб плацяжу з дапамогай вашага банка."
@@ -5681,7 +5710,7 @@
         "Вы страціце ўсе незахаваныя змены."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для праверкі плацяжу."
+        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "З вас не будзе спаганяцца плата, калі вы скасуеце да ${ trialEndsOnFormatted }."
@@ -6020,6 +6049,9 @@
       "Colors": [
         "Колеры"
       ],
+      "Company": [
+        "Кампанія"
+      ],
       "Company name": [
         "Назва кампаніі"
       ],
@@ -6317,6 +6349,9 @@
       "Start date": [
         "Дата пачатку"
       ],
+      "State": [
+        "Штат"
+      ],
       "Stop sharing": [
         "Спыніць абагульванне"
       ],
@@ -6360,7 +6395,7 @@
         "ПДВ"
       ],
       "Verification code": [
-        "Праверачны код"
+        "Код спраўджання"
       ],
       "Viewer": [
         "Праглядальнік"
@@ -6400,6 +6435,9 @@
       ],
       "Your password (trusted contact)": [
         "Ваш пароль (давераны кантакт)"
+      ],
+      "ZIP code": [
+        "Паштовы індэкс"
       ]
     },
     "Label for contact group color": {
@@ -6575,6 +6613,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Даведацца больш"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Пераканайцеся, што вашы прэміяльныя функцыі больш не выкарыстоўваюцца або палепшыце свой тарыфны план, каб працягваць выкарыстоўваць ${ BRAND_NAME }."
       ],
       "upgrade for more storage": [
         "палепшыце тарыфны план, каб атрымаць больш сховішча"
@@ -7284,7 +7325,7 @@
         "Воблачны рэдактар дакументаў"
       ],
       "Organize items with multiple vaults": [
-        "Упарадкаванне элементаў з некалькімі сховішчамі"
+        "Упарадкаванне элементаў з дапамогай некалькіх сховішч"
       ],
       "Passkeys supported": [
         "Падтрымка ключоў доступу"
@@ -8583,6 +8624,9 @@
       "Timeout exceeded": [
         "Перавышаны час чакання"
       ],
+      "VAT number": [
+        "Нумар ПДВ"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
       ],
@@ -8635,8 +8679,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Дадаць ABN"
+      ],
+      "Add Business Number": [
+        "Дадаць нумар прадпрыемства"
+      ],
+      "Add EIN": [
+        "Рэдагаваць ІНП"
+      ],
+      "Add VAT number": [
+        "Дадаць нумар ПДВ"
+      ],
       "Business Number": [
         "Нумар прадпрыемства"
+      ],
+      "Edit ABN": [
+        "Рэдагаваць ABN"
+      ],
+      "Edit Business Number": [
+        "Рэдагаваць нумар прадпрыемства"
+      ],
+      "Edit EIN": [
+        "Рэдагаваць ІНП"
+      ],
+      "Edit VAT number": [
+        "Рэдагаваць нумар ПДВ"
       ],
       "EIN": [
         "EIN"
@@ -8679,8 +8747,17 @@
       "A way to contact you": [
         "Спосаб сувязі з вамі"
       ],
+      "Anderson": [
+        "Маўр"
+      ],
+      "Anytown": [
+        "Полацк"
+      ],
       "Choose password": [
         "Выберыце пароль"
+      ],
+      "Company name": [
+        "Назва кампаніі"
       ],
       "E.g., ": [
         "Напрыклад, "
@@ -8708,6 +8785,9 @@
       ],
       "Last name": [
         "Прозвішча"
+      ],
+      "Main street 12": [
+        "вул. Цэнтральная, д. 12"
       ],
       "Message": [
         "Паведамленне"
@@ -8745,6 +8825,9 @@
       "Select a reason": [
         "Выберыце прычыну"
       ],
+      "Select country": [
+        "Выберыце краіну"
+      ],
       "Select state": [
         "Выбраць штат"
       ],
@@ -8756,6 +8839,12 @@
       ],
       "Start typing an email address": [
         "Пачніце ўводзіць адрас электроннай пошты"
+      ],
+      "Thomas": [
+        "Янка"
+      ],
+      "VAT number": [
+        "Нумар ПДВ"
       ],
       "Your organization name": [
         "Ваша назва арганізацыі"
@@ -9824,6 +9913,9 @@
       "Alias saved and copied": [
         "Псеўданімы захаваны і скапіяваны"
       ],
+      "Billing details updated": [
+        "Плацежныя падрабязнасці абноўлены"
+      ],
       "Canceling import": [
         "Скасаванне імпартавання"
       ],
@@ -9891,7 +9983,7 @@
         "Выконваецца адрабленне"
       ],
       "Verification successful": [
-        "Паспяхова праверана"
+        "Праверка паспяхова выканана"
       ],
       "You have successfully canceled your subscription.": [
         "Вы паспяхова скасавалі сваю падпіску."
@@ -10294,6 +10386,9 @@
       "Duplicate folder found": [
         "Знойдзены дублікат папкі"
       ],
+      "Edit billing address": [
+        "Рэдагаваць адрас аплаты"
+      ],
       "Edit contact": [
         "Рэдагаваць кантакт"
       ],
@@ -10634,10 +10729,10 @@
         "Збой праверкі"
       ],
       "Verifying your card...": [
-        "Праверка вашай карткі..."
+        "Спраўджанне вашай карткі..."
       ],
       "Verifying your payment...": [
-        "Праверка вашага плацяжу..."
+        "Спраўджанне вашага плацяжу..."
       ],
       "VPN explained": [
         "Тлумачэнне VPN"
@@ -10997,7 +11092,7 @@
         "На жаль, у дадзены момант наша каманда падтрымкі знаходзіцца па-за сеткай. Запоўніце форму ніжэй з апісаннем вашай праблемы і мы абавязкова разгледзім яе пасля таго, як станем зноў даступнымі."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Мы не змаглі праверыць паштовы сервер. Калі вы давяраеце яму, то можаце прапусціць гэту праверку."
+        "Мы не змаглі спраўдзіць паштовы сервер. Калі вы давяраеце яму, то можаце прапусціць гэту праверку."
       ],
       "You will lose any customization you made so far.": [
         "Вы страціце любыя наладжванні, якія былі зроблены да гэтага."

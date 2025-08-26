@@ -739,7 +739,7 @@
         "Configurar el reenvío de correo electrónico"
       ],
       "Settings": [
-        "Configuración"
+        "Ajustes"
       ],
       "Share": [
         "Compartir"
@@ -1469,7 +1469,7 @@
         "Protección de cuenta avanzada"
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, y ${ CALENDAR_SHORT_APP_NAME }"
+        "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Cancelar y pasar a un plan inferior"
@@ -2781,6 +2781,14 @@
         "Soporte prioritario"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Los campos de texto son opcionales. La información que proporciones en este formulario solo aparecerá en las facturas emitidas en el futuro y no afectará a las facturas existentes."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Los campos de texto son opcionales. La información que proporciona en este formulario solo cambiará la factura que ha seleccionado y no los detalles de la futura factura."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "NOTA:\n${ eventComment }"
@@ -2978,6 +2986,9 @@
       ],
       "Domain not available, try again later": [
         "Dominio no disponible, inténtelo más tarde"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "La edición de la dirección de facturación no está disponible en este momento. Inténtelo de nuevo más tarde."
       ],
       "Email address is required": [
         "Dirección de correo requerida"
@@ -3181,6 +3192,9 @@
       "Port is required": [
         "Puerto requerido"
       ],
+      "Postal code is required": [
+        "Se requiere el código postal"
+      ],
       "Primary address key is not decrypted": [
         "La clave principal no está descifrada"
       ],
@@ -3365,6 +3379,9 @@
       ],
       "Your import will not be processed.": [
         "No se procesará la importación."
+      ],
+      "ZIP code is required": [
+        "Se requiere el código postal."
       ]
     },
     "Error importing calendar": {
@@ -3637,7 +3654,7 @@
         "Los planes familiares actualmente no admiten cuentas externas. Cree una dirección de ${ BRAND_NAME } antes de unirse. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "Si acepta la invitación, lo cambiaremos del plan actual y acreditaremos la cuenta con cualquier saldo restante."
+        "Si acepta la invitación, le cambiaremos del plan actual y acreditaremos la cuenta con cualquier saldo restante."
       ],
       "Invited by: ${ inviteEmail }": [
         "Invitado por: ${ inviteEmail }"
@@ -3679,10 +3696,10 @@
         "Tiene facturas sin pagar. Por favor, páguelas antes de unirse a un plan familiar."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Está invitado a vincular la cuenta de ${ BRAND_NAME } a este plan familiar y disfrutar juntos de todas las funciones premium de ${ brandOrAppName }."
+        "Se le invitó a vincular la cuenta de ${ BRAND_NAME } a este plan familiar y disfrutar juntos de todas las funciones premium de ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
-        "La cuenta tiene más direcciones de correo electrónico de las que tiene disponibles en este plan. ${ addressSettingsLink }"
+        "La cuenta tiene más direcciones de correo de las que tiene disponibles en este plan. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "La cuenta está usando ${ usedSpace } de almacenamiento, que supera los ${ inviteSpace } que tiene asignados. Elimine algunos datos o solicite al administrador del plan que aumente el almacenamiento."
@@ -4260,6 +4277,13 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } expira en ${ daysLeft } día.",
+        "${ planName } expira en ${ daysLeft } días."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } expira hoy."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } protege su cuenta con monitoreo dedicado de actividades sospechosas."
       ],
@@ -4409,7 +4433,7 @@
         "Cualquiera que tenga este enlace puede acceder a la carpeta."
       ],
       "Are you sure you want to discard your import?": [
-        "¿Está seguro de que quiere descartar su importación?"
+        "¿En verdad desea descartar su importación?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "¿Está seguro de que quiere vaciar la papelera y eliminar permanentemente todos los elementos?"
@@ -5657,7 +5681,7 @@
         "Los datos fueron encontrados en ${ displayedDate }"
       ],
       "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
-        "Su proveedor de servicios de internet puede monitorear y, en ocasiones, vender us datos, o incluso restringir a qué sitios web puede acceder."
+        "Su proveedor de servicios de internet puede monitorear y, en ocasiones, vender sus datos, o incluso restringir a qué sitios web puede acceder."
       ],
       "Your IP": [
         "Su IP"
@@ -5906,6 +5930,9 @@
       ],
       "Colors": [
         "Colores"
+      ],
+      "Company": [
+        "Compañía"
       ],
       "Company name": [
         "Nombre de la empresa"
@@ -6204,6 +6231,9 @@
       "Start date": [
         "Fecha inicial"
       ],
+      "State": [
+        "Estado"
+      ],
       "Stop sharing": [
         "Dejar de compartir"
       ],
@@ -6287,6 +6317,9 @@
       ],
       "Your password (trusted contact)": [
         "Su contraseña (contacto de confianza)"
+      ],
+      "ZIP code": [
+        "Código postal"
       ]
     },
     "Label for contact group color": {
@@ -6460,6 +6493,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Más información"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Para seguir usando ${ BRAND_NAME }, asegúrese de que sus funciones premium ya no estén en uso o mejore su plan."
       ],
       "upgrade for more storage": [
         "mejore para obtener más almacenamiento"
@@ -8370,6 +8406,9 @@
       "Timeout exceeded": [
         "Tiempo de espera agotado"
       ],
+      "VAT number": [
+        "Número de IVA"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Su moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo admiten pagos en euros."
       ],
@@ -8422,8 +8461,32 @@
       "ABN": [
         "Número de empresa australiano (ABN)"
       ],
+      "Add ABN": [
+        "Añadir ABN"
+      ],
+      "Add Business Number": [
+        "Añadir número de negocio"
+      ],
+      "Add EIN": [
+        "Añadir EIN"
+      ],
+      "Add VAT number": [
+        "Añadir número de IVA"
+      ],
       "Business Number": [
         "Número de negocio"
+      ],
+      "Edit ABN": [
+        "Editar ABN"
+      ],
+      "Edit Business Number": [
+        "Editar número de negocio"
+      ],
+      "Edit EIN": [
+        "Editar EIN"
+      ],
+      "Edit VAT number": [
+        "Editar número de IVA"
       ],
       "EIN": [
         "Número de identificación fiscal (EIN)"
@@ -8466,8 +8529,17 @@
       "A way to contact you": [
         "Una forma de contactarle"
       ],
+      "Anderson": [
+        "García"
+      ],
+      "Anytown": [
+        "Puertoalto"
+      ],
       "Choose password": [
         "Elegir una contraseña"
+      ],
+      "Company name": [
+        "Nombre de la empresa"
       ],
       "E.g., ": [
         "Ej., "
@@ -8495,6 +8567,9 @@
       ],
       "Last name": [
         "Apellido"
+      ],
+      "Main street 12": [
+        "Calle del Sol, 12"
       ],
       "Message": [
         "Mensaje"
@@ -8532,6 +8607,9 @@
       "Select a reason": [
         "Seleccione un motivo"
       ],
+      "Select country": [
+        "Seleccionar país"
+      ],
       "Select state": [
         "Seleccionar estado"
       ],
@@ -8543,6 +8621,12 @@
       ],
       "Start typing an email address": [
         "Comience a escribir una dirección de correo"
+      ],
+      "Thomas": [
+        "Andrea"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ],
       "Your organization name": [
         "El nombre de su organización"
@@ -8563,7 +8647,7 @@
     },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
-        "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, y ${ PASS_SHORT_APP_NAME }."
+        "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }."
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, y ${ CALENDAR_SHORT_APP_NAME }"
@@ -8968,7 +9052,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "¿Quiere cerrar la sesión sin restablecer la contraseña?"
+        "¿Desea cerrar la sesión sin restablecer la contraseña?"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -9272,10 +9356,10 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Acceda a contenido bloqueado y navegue de forma privada. Incluye 1700 servidores en más de 60 países, la velocidad VPN más alta, 10 conexiones VPN por usuario, servicios de streaming en todo el mundo, bloqueador de malware y anuncios, y más."
+        "Acceda a contenido bloqueado y navegue de forma privada. Incluye 1700 servidores en más de 60 países, la velocidad VPN más alta, 10 conexiones VPN por usuario, servicios de streaming en todo el mundo, bloqueador de malware y anuncios y más."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Acceda a contenido bloqueado y navegue de forma privada. Incluye 1700 servidores en más de 60 países, la velocidad VPN más alta, 10 conexiones VPN, servicios de streaming en todo el mundo, bloqueador de malware y anuncios, y más."
+        "Acceda a contenido bloqueado y navegue de forma privada. Incluye 1700 servidores en más de 60 países, la velocidad VPN más alta, 10 conexiones VPN, servicios de streaming en todo el mundo, bloqueador de malware y anuncios y más."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Todos nuestros servicios premium al máximo: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de Hide-my-email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
@@ -9607,6 +9691,9 @@
       "Alias saved and copied": [
         "Alias guardado y copiado"
       ],
+      "Billing details updated": [
+        "Detalles de facturación actualizados"
+      ],
       "Canceling import": [
         "Cancelando la importación"
       ],
@@ -9879,7 +9966,7 @@
         "Ciclo de facturación"
       ],
       "Birthday": [
-        "Cumpleaño"
+        "Cumpleaños"
       ],
       "Browser might run out of memory": [
         "El navegador podría quedarse sin memoria"
@@ -10044,6 +10131,9 @@
       ],
       "Duplicate folder found": [
         "Carpeta duplicada encontrada"
+      ],
+      "Edit billing address": [
+        "Editar la dirección de la factura"
       ],
       "Edit contact": [
         "Editar contacto"
@@ -10668,7 +10758,7 @@
         "¿Está seguro de que quiere eliminar permanentemente ${ count } contactos?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
-        "¿Está seguro de que quiere eliminar permanentemente estos grupos de contactos?"
+        "¿En verdad desea eliminar permanentemente estos grupos de contactos?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "¿Está seguro de que quiere eliminar permanentemente este grupo de contactos?"
