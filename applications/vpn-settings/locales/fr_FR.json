@@ -642,6 +642,9 @@
       "Refer a friend": [
         "Parrainer un ami"
       ],
+      "Refresh": [
+        "Actualiser"
+      ],
       "Refresh status": [
         "Actualiser le statut"
       ],
@@ -650,9 +653,6 @@
       ],
       "refresh the page": [
         "actualiser la page"
-      ],
-      "Reload": [
-        "Recharger"
       ],
       "Remove": [
         "Retirer"
@@ -4578,6 +4578,9 @@
       ],
       "Secure streaming": [
         "Streaming sécurisé"
+      ],
+      "Stream from Netflix, HBO, and more": [
+        "Streamer Netflix, HBO et plus encore"
       ]
     },
     "Features: Tooltip": {
@@ -5317,6 +5320,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Avec la technologie de chiffrement de ${ BRAND_NAME }, personne ne peut accéder à votre mot de passe, pas même nous."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } nécessite une adresse ${ BRAND_NAME } pour une synchronisation d'événements et un chiffrement sécurisés. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nouveau calendrier",
         "${ calendarsToBeCreatedCount } nouveaux calendriers"
@@ -5485,7 +5491,7 @@
         "**Obtenez une adresse ${ BRAND_NAME }** pour utiliser tous les services ${ BRAND_NAME_TWO }, dont ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
-        "**Importez vos codes existants** depuis d'autres applications 2FA, telles que Google Authenticator"
+        "**Importez vos codes existants** depuis d'autres applications A2F, telles que Google Authenticator"
       ],
       "**Sync codes** to all your devices": [
         "**Synchronisez les codes** sur tous vos appareils"
@@ -5528,20 +5534,23 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "L'accès au compte est restreint en raison de factures en retard. Veuillez contacter votre administrateur."
       ],
+      "Account monitor": [
+        "Surveillance des comptes"
+      ],
       "Account successfully updated": [
         "Le compte a été mis à jour."
       ],
       "active": [
         "active"
       ],
-      "Activity monitor": [
-        "Surveillance des activités"
-      ],
       "Activity Monitor": [
         "Surveillance des activités"
       ],
       "add a recovery method": [
         "ajouter une méthode de récupération"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Ajoutez une sécurité supplémentaire à votre compte avec une A2F chaque fois que vous vous connecterez."
       ],
       "Add domain": [
         "Ajouter un domaine"
@@ -5606,6 +5615,9 @@
       ],
       "Allocated": [
         "Alloué"
+      ],
+      "Allow logging of location and connection details": [
+        "Autoriser l'enregistrement des informations d'emplacement et de connexion"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Autorisez les utilisateurs à se connecter à des serveurs partagés sécurisés depuis la section **Pays** de l'application ${ VPN_APP_NAME }."
@@ -5848,14 +5860,11 @@
       "Did you know?": [
         "Le saviez-vous ?"
       ],
-      "Disable detailed events": [
-        "Désactiver les événements avancés"
-      ],
       "Disabled countries": [
         "Pays désactivés"
       ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Désactivation le ${ formattedDateAndTime }"
+      "Disabled on ${ boldValue }": [
+        "Désactivé le ${ boldValue }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "La désactivation de l'authentification à deux facteurs rendra votre compte moins sécurisé. Ne procédez que si c'est absolument nécessaire."
@@ -5966,17 +5975,14 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Activez le renouvellement automatique pour conserver l'accès à vos fonctionnalités premium."
       ],
-      "Enable detailed events": [
-        "Activer les événements avancés"
-      ],
       "Enable single sign-on to keep your organization safe": [
         "Activez l'authentification unique afin d'assurer la sécurité de votre organisation."
       ],
       "Enabled countries": [
         "Pays activés"
       ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Activation le ${ formattedDateAndTime }"
+      "Enabled on ${ boldValue }": [
+        "Activé le ${ boldValue }"
       ],
       "Enabling auto-deletion…": [
         "Activation de la suppression automatique…"
@@ -5998,6 +6004,9 @@
       ],
       "Enhance your network security": [
         "Améliorez la sécurité de votre réseau."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Assurez une communication entièrement privée et chiffrée. Obtenez dès maintenant votre adresse e-mail ${ BRAND_NAME } gratuite."
       ],
       "Enter key manually instead": [
         "Saisir plutôt la clé manuellement"
@@ -6080,14 +6089,11 @@
       "Gain visibility across your organization": [
         "Gagnez en visibilité au sein de votre organisation"
       ],
+      "Gateway monitor": [
+        "Surveillance des passerelles"
+      ],
       "Gateways": [
         "Passerelles"
-      ],
-      "Gateways monitoring is disabled.": [
-        "La surveillance de la passerelle a été désactivée."
-      ],
-      "Gateways monitoring is enabled.": [
-        "La surveillance de la passerelle a été activée."
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Obtenez ${ AUTHENTICATOR_APP_NAME } pour tous vos appareils."
@@ -6195,8 +6201,8 @@
       "inactive": [
         "inactive"
       ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Ajoutez l'adresse IP, l'emplacement et le FAI (Fournisseur d'accès internet) de l'utilisateur dans les journaux d'événements"
+      "Include device, location, and IP details": [
+        "Inclure les informations sur l'appareil, l'emplacement et l'adresse IP"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Comprenant ${ formattedTaxRate } % de ${ taxName } : ${ price }"
@@ -6351,9 +6357,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Veuillez patienter : le calendrier est en cours de chargement. Vous serez redirigé vers notre plateforme de programmation Calendly dans un nouvel onglet."
       ],
-      "Loading detailed events current status.": [
-        "L'état actuel des événements détaillés est en cours de chargement."
-      ],
       "Loading eduGAIN data...": [
         "Chargement des données eduGAIN..."
       ],
@@ -6503,6 +6506,9 @@
       "Or select a particular server:": [
         "Ou sélectionnez un serveur spécifique :"
       ],
+      "Organization monitor": [
+        "Surveillance des organisations"
+      ],
       "Organization size": [
         "Taille de l’organisation"
       ],
@@ -6523,6 +6529,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - l'e-mail personnalisé a été supprimé."
+      ],
+      "Pass usage logs": [
+        "Journaux d'utilisation de Pass"
       ],
       "password": [
         "mot de passe"
@@ -7126,6 +7135,9 @@
       "Vault deleted": [
         "Le coffre-fort a été supprimé."
       ],
+      "Vault either deleted or requires access permissions": [
+        "Le coffre-fort est supprimé ou nécessite des autorisations d'accès."
+      ],
       "Vault shared with email": [
         "Coffre-fort partagé par e-mail"
       ],
@@ -7155,6 +7167,9 @@
       ],
       "Version number successfully copied to clipboard": [
         "Le numéro de version a été copié dans le presse-papiers."
+      ],
+      "View VPN session details for your organization.": [
+        "Affichez les informations de la session VPN pour votre organisation."
       ],
       "View, download, and manage your invoices.": [
         "Consultez, téléchargez et gérez vos factures."
@@ -8348,9 +8363,6 @@
       "VAT": [
         "TVA"
       ],
-      "VAT identification number": [
-        "Numéro d’identification TVA"
-      ],
       "Verification code": [
         "Code de vérification"
       ],
@@ -8639,6 +8651,9 @@
       "Upgrade your plan": [
         "Changez d'abonnement"
       ],
+      "Vault": [
+        "Coffre-fort"
+      ],
       "View guide": [
         "Voir le guide"
       ],
@@ -8693,6 +8708,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "En savoir plus"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Pour continuer à utiliser ${ BRAND_NAME }, veuillez vous assurer de ne plus utiliser vos fonctionnalités premium ou changer d'abonnement."
       ],
       "upgrade for more storage": [
         "changer d'abonnement pour augmenter votre espace de stockage"
@@ -8869,8 +8887,14 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Connectez votre domaine personnalisé à ${ BRAND_NAME } pour configurer des adresses e-mail personnalisées (par exemple, vous@votreentreprise.fr). Notre assistant vous guidera tout au long du processus."
       ],
-      "View account-related events across your organization.": [
-        "Affichez les événements liés au compte au sein de votre organisation."
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "Voir l'activité de ${ PASS_APP_NAME } au sein de votre organisation."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "Afficher les modifications apportées à votre organisation et les autres activités de l'administrateur."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "Afficher les événements de connexion, de récupération et de sécurité de l'utilisateur."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Votre essai gratuit est terminé. L'accès à votre compte sera bientôt désactivé. ${ action }"
@@ -10018,6 +10042,9 @@
       "Invalid code": [
         "Le code n’est pas valide."
       ],
+      "Invalid input. Search an email or detail.": [
+        "La saisie n'est pas valide. Veuillez rechercher une adresse e-mail ou des informations."
+      ],
       "Invalid input. Search an email or IP address.": [
         "La saisie n'est pas valide. Veuillez rechercher une adresse e-mail ou IP."
       ],
@@ -10639,6 +10666,9 @@
       "Card number": [
         "Numéro de carte"
       ],
+      "Credits and discounts are reflected in your invoice": [
+        "Les crédits et les réductions figurent sur votre facture"
+      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Le renouvellement automatique de l'abonnement est actuellement désactivé. Si vous modifiez l'abonnement maintenant, le renouvellement automatique sera réactivé."
       ],
@@ -10706,6 +10736,9 @@
       "Timeout exceeded": [
         "Le délai est dépassé."
       ],
+      "VAT number": [
+        "Numéro de TVA"
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Un montant de ${ amountToCharge } sera débité selon votre méthode de paiement sélectionnée."
       ],
@@ -10761,8 +10794,32 @@
       "ABN": [
         "Numéro d’entreprise australien (ABN)"
       ],
+      "Add ABN": [
+        "Ajouter un ABN"
+      ],
+      "Add Business Number": [
+        "Ajouter un numéro d'entreprise"
+      ],
+      "Add EIN": [
+        "Ajouter un EIN"
+      ],
+      "Add VAT number": [
+        "Ajouter un numéro de TVA"
+      ],
       "Business Number": [
         "Numéro d'entreprise"
+      ],
+      "Edit ABN": [
+        "Modifier ABN"
+      ],
+      "Edit Business Number": [
+        "Modifier le numéro d'entreprise"
+      ],
+      "Edit EIN": [
+        "Modifier EIN"
+      ],
+      "Edit VAT number": [
+        "Modifier le numéro de TVA"
       ],
       "EIN": [
         "Numéro d'identification fiscale (EIN)"
@@ -10885,11 +10942,17 @@
       "Search users": [
         "Recherchez des utilisateurs."
       ],
+      "Search users or details": [
+        "Rechercher des utilisateurs ou des informations"
+      ],
       "Select": [
         "Sélectionnez"
       ],
       "Select a reason": [
         "Sélectionnez une raison."
+      ],
+      "Select country": [
+        "Sélectionner le pays"
       ],
       "Select state": [
         "Sélectionner l'état"
@@ -13492,9 +13555,6 @@
       "Claim your ${ MAIL_APP_NAME } address": [
         "Revendiquez votre adresse ${ MAIL_APP_NAME }"
       ],
-      "Click a value in the table to use it as filter": [
-        "Cliquez sur une valeur dans le tableau pour l'utiliser comme filtre."
-      ],
       "Close": [
         "Fermer"
       ],
@@ -13518,6 +13578,9 @@
       ],
       "Connect apps and devices": [
         "Connecter les applications et les appareils"
+      ],
+      "Connect more addresses": [
+        "Connecter plus d'adresses"
       ],
       "Connect organization": [
         "Connecter l'organisation"
@@ -13631,6 +13694,12 @@
       ],
       "Deny access to user?": [
         "Voulez-vous refuser l'accès à l'utilisateur ?"
+      ],
+      "Description": [
+        "Description"
+      ],
+      "Details": [
+        "Informations"
       ],
       "Device": [
         "Appareil"
@@ -13840,6 +13909,9 @@
       ],
       "Invoices": [
         "Factures"
+      ],
+      "IP": [
+        "IP"
       ],
       "Limit reached": [
         "La limite est atteinte."
@@ -14585,6 +14657,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Économisez jusqu'à ${ priceString }** avec un abonnement plus long. Les mêmes fonctionnalités premium à un prix réduit."
       ],
+      "Advanced security for your company?": [
+        "Une sécurité avancée pour votre entreprise ?"
+      ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Tous les services premium de ${ BRAND_NAME }. À partir de seulement ${ fallBackString } par mois"
       ],
@@ -14596,6 +14671,9 @@
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Protégez votre organisation des fuites de données avec ${ VPN_APP_NAME } for Business."
+      ],
+      "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
+        "Respect de la vie privée illimité pour vous et un proche. À partir de seulement ${ priceString }/mois."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Vous pouvez protéger jusqu'à ${ FAMILY_MAX_USERS } personnes avec ${ PLAN_NAMES[plan] }. À partir de seulement ${ priceString }/mois par compte."
