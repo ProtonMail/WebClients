@@ -9,7 +9,6 @@ export const isUserEligibleForBusySlots = (organization: Organization): boolean 
         PLANS.VISIONARY, // Visionary
         PLANS.FAMILY, // Family
         PLANS.DUO, // Duo
-        PLANS.ENTERPRISE, // Enterprise
         PLANS.MAIL_PRO, // Mail Essentials
         PLANS.MAIL_BUSINESS, // Mail Business
     ].includes(organization.PlanName);

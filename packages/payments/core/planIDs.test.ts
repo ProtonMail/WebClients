@@ -231,7 +231,7 @@ describe('switchPlan', () => {
     });
 
     it('should transfer addons based on organization usage', () => {
-        const currentPlanIDs = { [PLANS.ENTERPRISE]: 1 };
+        const currentPlanIDs = { [PLANS.MAIL_PRO]: 1 };
         const organization = { UsedAddresses: 16, UsedDomains: 11 } as Organization;
         const newPlan = PLANS.BUNDLE_PRO;
         expect(
