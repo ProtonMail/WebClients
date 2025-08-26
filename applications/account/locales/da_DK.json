@@ -244,6 +244,9 @@
       "Claim it": [
         "Gør krav på den"
       ],
+      "Claim this address": [
+        "Gør krav på denne adresse"
+      ],
       "Clear all formatting": [
         "Ryd al formatering"
       ],
@@ -687,6 +690,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Få ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Få en gratis ${ BRAND_NAME }-adresse"
       ],
       "Get a new encrypted email address": [
         "Få en ny krypteret e-mailadresse"
@@ -4893,6 +4899,9 @@
       "Add": [
         "Tilføj"
       ],
+      "Added on ${ formattedDate }": [
+        "Tilføjet den ${ formattedDate }"
+      ],
       "Disabled": [
         "Deaktiveret"
       ],
@@ -4901,6 +4910,9 @@
       ],
       "Only ": [
         "Kun "
+      ],
+      "Trusted contact": [
+        "Betroet kontakt"
       ],
       "Upgrade to ${ planName }": [
         "Opgradér til ${ planName }"
@@ -7247,6 +7259,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } kræver en ${ BRAND_NAME } adresse til sikker begivenhedssynkronisering og kryptering. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
         "${ calendarsToBeCreatedCount } nye kalendere"
@@ -7502,9 +7517,6 @@
       ],
       "active": [
         "aktiv"
-      ],
-      "Activity monitor": [
-        "Aktivitetsovervågning"
       ],
       "Activity Monitor": [
         "Aktivitetsovervågning"
@@ -7949,9 +7961,6 @@
       "Did you know?": [
         "Vidste du det?"
       ],
-      "Disable detailed events": [
-        "Deaktiver detaljerede begivenheder"
-      ],
       "Disable recovery by email address": [
         "Deaktiver gendannelse via e-mailadresse"
       ],
@@ -7960,9 +7969,6 @@
       ],
       "Disabled countries": [
         "Deaktiverede lande"
-      ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Deaktiveret den ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Hvis du deaktiverer totrins-godkendelse, bliver din konto mindre sikker. Gør kun dette med det største forbehold."
@@ -8094,9 +8100,6 @@
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Aktivér auto-fornyelse for fortsat at have adgang til Plus-servere og -funktioner."
       ],
-      "Enable detailed events": [
-        "Aktiver detaljerede begivenheder"
-      ],
       "Enable email notifications": [
         "Aktivér e-mailnotifikationer"
       ],
@@ -8111,9 +8114,6 @@
       ],
       "Enabled countries": [
         "Aktiverede lande"
-      ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Aktiveret den ${ formattedDateAndTime }"
       ],
       "Enabling auto-deletion…": [
         "Aktivering af automatisk sletning…"
@@ -8141,6 +8141,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Få en hurtigere og mere fokuseret e-mailoplevelse med desktop-appen."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Sørg for privat og krypteret kommunikation. Gør krav på din gratis ${ BRAND_NAME } e-mailadresse nu."
       ],
       "Enter key manually instead": [
         "Indtast nøgle manuelt i stedet"
@@ -8255,12 +8258,6 @@
       ],
       "Gateways": [
         "Gateways"
-      ],
-      "Gateways monitoring is disabled.": [
-        "Portalovervågning er deaktiveret."
-      ],
-      "Gateways monitoring is enabled.": [
-        "Portalovervågning er aktiveret."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Oprettelse af en ny gendannelsessætning vil deaktivere din gamle."
@@ -9261,6 +9258,12 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnement er ved at udløbe: Genaktiver inden ${ byDate } for at beholde dine ${ planName }-fordele. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnement udløber: For at beholde dine ${ planName } fordele, skal du fornye din abonnement i Apple App Store inden ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnement udløber: For at beholde dine ${ planName } fordele, skal du fornye din abonnement i Apple App Store inden ${ byDate }. ${ reactivateLink }"
       ],
       "Summary": [
         "Sammenfatning"
@@ -12169,6 +12172,9 @@
       ],
       "Request an invite": [
         "Anmod om invitation"
+      ],
+      "Resume now": [
+        "Genoptag nu"
       ],
       "Set email address": [
         "Indstil e-mailadresse"
@@ -18778,8 +18784,8 @@
       "Choose an account": [
         "Vælg en konto"
       ],
-      "Click a value in the table to use it as filter": [
-        "Klik på en værdi i tabellen for at bruge den som filter"
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Gør krav på din gratis ${ MAIL_APP_NAME } addresse"
       ],
       "Close": [
         "Luk"
