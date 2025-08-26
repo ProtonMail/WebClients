@@ -19,7 +19,7 @@ const exposeCanvasGrid = (instance: CanvasGridMethods | null, state: ProtonSheet
   const shouldExpose = typeof window !== 'undefined' && instance && isDevOrBlack()
 
   if (shouldExpose) {
-    ; (window as any).spreadsheet = {
+    ;(window as any).spreadsheet = {
       ...instance,
       getCellDataWithValues: (coords: { rowIndex: number; columnIndex: number }) => {
         // Build a proper CellData object using the available state methods
@@ -39,7 +39,7 @@ const exposeCanvasGrid = (instance: CanvasGridMethods | null, state: ProtonSheet
           return result
         } catch (e) {
           // Store debug info even on error
-          ; (window as any).lastCellQuery = {
+          ;(window as any).lastCellQuery = {
             coords,
             activeSheetId: state.activeSheetId,
             error: e instanceof Error ? e.message : 'Unknown error',
@@ -172,6 +172,7 @@ export function LegacyGrid({ state, isReadonly, users, userName }: LegacyGridPro
         />
       )}
       readonly={isReadonly}
+      getEffectiveFormat={state.getEffectiveFormat}
     />
   )
 }

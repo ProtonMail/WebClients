@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo } from 'react'
 
-import type { SheetData, UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
+import type { CellXfs, SheetData, UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
 import { useSearch, useSpreadsheetState as useSpreadsheetStateOriginal } from '@rowsncolumns/spreadsheet-state'
 import type {
   CellData,
@@ -38,6 +38,7 @@ type LocalState = {
   dataValidations: DataValidationRuleRecord[]
   charts: EmbeddedChart[]
   protectedRanges: ProtectedRange[]
+  cellXfs: CellXfs | null | undefined
   scale: number
 
   onChangeSheets: SetState<Sheet[]>
@@ -50,6 +51,7 @@ type LocalState = {
   onChangeDataValidations: SetState<DataValidationRuleRecord[]>
   onChangeCharts: SetState<EmbeddedChart[]>
   onChangeProtectedRanges: SetState<ProtectedRange[]>
+  onChangeCellXfs: SetState<CellXfs | null | undefined>
   onChangeScale: SetState<number>
 }
 function getValueFromUpdateAction<T>(updateAction: UpdateAction<T>, prevValue: T): T {
@@ -66,6 +68,7 @@ const useLocalSpreadsheetState = create<LocalState>()((set) => ({
   dataValidations: [],
   charts: [],
   protectedRanges: [],
+  cellXfs: new Map(),
   scale: 1,
 
   onChangeSheets: (sheets) => set((state) => ({ sheets: getValueFromUpdateAction(sheets, state.sheets) })),
@@ -89,6 +92,7 @@ const useLocalSpreadsheetState = create<LocalState>()((set) => ({
     set((state) => ({
       protectedRanges: getValueFromUpdateAction(protectedRanges, state.protectedRanges),
     })),
+  onChangeCellXfs: (cellXfs) => set((state) => ({ cellXfs: getValueFromUpdateAction(cellXfs, state.cellXfs) })),
   onChangeScale: (scale) => set((state) => ({ scale: getValueFromUpdateAction(scale, state.scale) })),
 }))
 
