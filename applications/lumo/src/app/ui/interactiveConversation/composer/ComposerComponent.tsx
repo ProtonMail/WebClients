@@ -270,8 +270,8 @@ export const ComposerComponent = ({
 
     const shiftEnterBoldText = (
         <kbd
-            key={c('collider_2025: Characteristic Title').t`Shift+Enter`} // only there to prevent a react warning
-        >{c('collider_2025: Characteristic Title').t`Shift+Enter`}</kbd>
+            key={c('collider_2025: Characteristic Title').t`Enter`} // only there to prevent a react warning
+        >{c('collider_2025: Characteristic Title').t`Enter`}</kbd>
     );
 
     const canShowLumoUpsellToggle = (isGuest || canShowLumoUpsellFree) && !isSmallScreen;
