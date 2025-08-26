@@ -1461,6 +1461,12 @@
       "Trust": [
         "Давяраць"
       ],
+      "Trust key": [
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
+      ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
       ],
@@ -1573,10 +1579,10 @@
         "Выкарыстоўвайце мышку, каб змяніць памер акна прагляду. Калі выкарыстоўваеце клавіятуру, то можаце змяняць памер стрэлкамі ўлева/управа."
       ],
       "Verify": [
-        "Праверка"
+        "Спраўдзіць"
       ],
       "Verify account": [
-        "Праверыць уліковы запіс"
+        "Спраўдзіць уліковы запіс"
       ],
       "View": [
         "Прагледзець"
@@ -2316,187 +2322,187 @@
     },
     "Calendar invite info": {
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } прыняў(-ла) запрашэнне і прапанаваў(-ла) новы час для аднаго паўтарэння гэтай падзеі."
+        "${ participantName } прыняў запрашэнне і прапанаваў новы час для аднаго паўтарэння гэтай падзеі."
       ],
       "${ participantName } accepted an invitation and proposed a new time for this event.": [
-        "${ participantName } прыняў(-ла) запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі."
+        "${ participantName } прыняў запрашэнне і прапанаваў новы час для гэтай падзеі."
       ],
       "${ participantName } accepted an invitation to one occurrence of the event.": [
-        "${ participantName } прыняў(-ла) запрашэнне на адно паўтарэнне падзеі."
+        "${ participantName } прыняў запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } accepted an invitation to this event.": [
-        "${ participantName } прыняў(-ла) запрашэнне на гэту падзею."
+        "${ participantName } прыняў запрашэнне на гэту падзею."
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } прыняў(-ла) ваша запрашэнне і прапанаваў(-ла) новы час для аднаго паўтарэння гэтай падзеі."
+        "${ participantName } прыняў ваша запрашэнне і прапанаваў новы час для аднаго паўтарэння гэтай падзеі."
       ],
       "${ participantName } accepted your invitation and proposed a new time for this event.": [
-        "${ participantName } прыняў(-ла) ваша запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі."
+        "${ participantName } прыняў ваша запрашэнне і прапанаваў новы час для гэтай падзеі."
       ],
       "${ participantName } accepted your invitation to one occurrence of the event.": [
-        "${ participantName } прыняў(-ла) ваша запрашэнне на адно паўтарэнне падзеі."
+        "${ participantName } прыняў ваша запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } accepted your invitation.": [
-        "${ participantName } прыняў(-ла) ваша запрашэнне."
+        "${ participantName } прыняў ваша запрашэнне."
       ],
       "${ participantName } asked for the latest event updates.": [
-        "${ participantName } спытаў(-ла) аб апошніх абнаўленнях для гэтай падзеі."
+        "${ participantName } спытаў аб апошніх абнаўленнях для гэтай падзеі."
       ],
       "${ participantName } asked for the latest updates to an event which does not exist anymore. You have no calendars.": [
-        "${ participantName } спытаў(-ла) пра апошнія абнаўленні для падзеі, якой больш не існуе. У вас няма календароў."
+        "${ participantName } спытаў пра апошнія абнаўленні для падзеі, якой больш не існуе. У вас няма календароў."
       ],
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
-        "${ participantName } спытаў(-ла) аб апошніх абнаўленнях для падзеі, якой больш не існуе ў вашым календары."
+        "${ participantName } спытаў аб апошніх абнаўленнях для падзеі, якой больш не існуе ў вашым календары."
       ],
       "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "${ participantName } спытаў(-ла) аб апошніх абнаўленнях для падзеі, якая не супадае з падрабязнасцямі вашага запрашэння. Праверце падрабязнасці запрашэння ў вашым календары."
+        "${ participantName } спытаў аб апошніх абнаўленнях для падзеі, якая не супадае з падрабязнасцямі вашага запрашэння. Спраўдзіце падрабязнасці запрашэння ў вашым календары."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } адхіліў(-ла) запрашэнне і прапанаваў(-ла) новы час для аднаго паўтарэння гэтай падзеі."
+        "${ participantName } адхіліў запрашэнне і прапанаваў новы час для аднаго паўтарэння гэтай падзеі."
       ],
       "${ participantName } declined an invitation and proposed a new time for this event.": [
-        "${ participantName } адхіліў(-ла) запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі."
+        "${ participantName } адхіліў запрашэнне і прапанаваў новы час для гэтай падзеі."
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
-        "${ participantName } адхіліў(-ла) запрашэнне на адно паўтарэнне падзеі."
+        "${ participantName } адхіліў запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } declined an invitation to this event.": [
-        "${ participantName } адхіліў(-ла) запрашэнне на гэту падзею."
+        "${ participantName } адхіліў запрашэнне на гэту падзею."
       ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } адхіліў(-ла) ваша запрашэнне і прапанаваў(-ла) новы час для аднаго паўтарэння гэтай падзеі."
+        "${ participantName } адхіліў ваша запрашэнне і прапанаваў новы час для аднаго паўтарэння гэтай падзеі."
       ],
       "${ participantName } declined your invitation and proposed a new time for this event.": [
-        "${ participantName } адхіліў(-ла) ваша запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі."
+        "${ participantName } адхіліў ваша запрашэнне і прапанаваў новы час для гэтай падзеі."
       ],
       "${ participantName } declined your invitation to one occurrence of the event.": [
-        "${ participantName } адхіліў(-ла) ваша запрашэнне на адно паўтарэнне падзеі."
+        "${ participantName } адхіліў ваша запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } declined your invitation.": [
-        "${ participantName } адхіліў(-ла) ваша запрашэнне."
+        "${ participantName } адхіліў ваша запрашэнне."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } ужо прымаў(-ла) ваша запрашэнне і прапанаваў(-ла) новы час для аднаго паўтарэння гэтай падзеі. Адказ і прапанова састарэлі."
+        "${ participantName } ужо прымаў ваша запрашэнне і прапанаваў новы час для аднаго паўтарэння гэтай падзеі. Адказ і прапанова састарэлі."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } ужо прымаў(-ла) запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі. Адказ і прапанова састарэлі."
+        "${ participantName } ужо прымаў запрашэнне і прапанаваў новы час для гэтай падзеі. Адказ і прапанова састарэлі."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        "${ participantName } ужо прымаў(-ла) запрашэнне на адно паўтарэнне падзеі."
+        "${ participantName } ужо прымаў запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } had accepted an invitation to this event.": [
-        "${ participantName } ужо прымаў(-ла) запрашэнне на гэту падзею."
+        "${ participantName } ужо прымаў запрашэнне на гэту падзею."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } ужо прымаў(-ла) ваша запрашэнне і прапанаваў(-ла) новы час для аднаго паўтарэння гэтай падзеі. Адказ і прапанова састарэлі."
+        "${ participantName } ужо прымаў ваша запрашэнне і прапанаваў новы час для аднаго паўтарэння гэтай падзеі. Адказ і прапанова састарэлі."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } ужо прымаў(-ла) ваша запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі. Адказ і прапанова састарэлі."
+        "${ participantName } ужо прымаў ваша запрашэнне і прапанаваў новы час для гэтай падзеі. Адказ і прапанова састарэлі."
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } ужо адхіляў(-ла) запрашэнне і прапанаваў(-ла) новы час для аднаго паўтарэння гэтай падзеі. Адказ і прапанова састарэлі."
+        "${ participantName } ужо адхіляў запрашэнне і прапанаваў новы час для аднаго паўтарэння гэтай падзеі. Адказ і прапанова састарэлі."
       ],
       "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } ужо адхіляў(-ла) запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі. Адказ і прапанова састарэлі."
+        "${ participantName } ужо адхіляў запрашэнне і прапанаваў новы час для гэтай падзеі. Адказ і прапанова састарэлі."
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        "${ participantName } ужо адхіляў(-ла) запрашэнне на адно паўтарэнне падзеі."
+        "${ participantName } ужо адхіляў запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } had declined an invitation to this event.": [
-        "${ participantName } ужо адхіляў(-ла) запрашэнне на гэту падзею."
+        "${ participantName } ужо адхіляў запрашэнне на гэту падзею."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } ужо адхіляў(-ла) ваша запрашэнне і прапанаваў(-ла) новы час для аднаго паўтарэння гэтай падзеі. Адказ і прапанова састарэлі."
+        "${ participantName } ужо адхіляў ваша запрашэнне і прапанаваў новы час для аднаго паўтарэння гэтай падзеі. Адказ і прапанова састарэлі."
       ],
       "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } ужо адхіляў(-ла) ваша запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі. Адказ і прапанова састарэлі."
+        "${ participantName } ужо адхіляў ваша запрашэнне і прапанаваў новы час для гэтай падзеі. Адказ і прапанова састарэлі."
       ],
       "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
-        "${ participantName } ужо прымаў(-ла) раней ваша запрашэнне на адно паўтарэнне падзеі."
+        "${ participantName } ужо прымаў раней ваша запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } had previously accepted your invitation.": [
-        "${ participantName } ужо прымаў(-ла) раней ваша запрашэнне."
+        "${ participantName } ужо прымаў раней ваша запрашэнне."
       ],
       "${ participantName } had previously declined your invitation to one occurrence of the event.": [
-        "${ participantName } ужо адхіляў(-ла) раней ваша запрашэнне на адно паўтарэнне падзеі."
+        "${ participantName } ужо адхіляў раней ваша запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } had previously declined your invitation.": [
-        "${ participantName } ужо адхіляў(-ла) раней ваша запрашэнне."
+        "${ participantName } ужо адхіляў раней ваша запрашэнне."
       ],
       "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName } умоўна ўжо прымаў(-ла) раней ваша запрашэнне на адно паўтарэнне падзеі."
+        "${ participantName } умоўна ўжо прымаў раней ваша запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } had previously tentatively accepted your invitation.": [
-        "${ participantName } умоўна ўжо прымаў(-ла) раней ваша запрашэнне."
+        "${ participantName } умоўна ўжо прымаў раней ваша запрашэнне."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date.": [
-        "${ participantName } ужо прапаноўваў(-ла) новы час для аднаго паўтарэння гэтай падзеі. Гэта прапанова састарэла."
+        "${ participantName } ужо прапаноўваў новы час для аднаго паўтарэння гэтай падзеі. Гэта прапанова састарэла."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
-        "${ participantName } ужо прапаноўваў(-ла) новы час для аднаго паўтарэння гэтай падзеі. Гэта прапанова састарэла, а падзея больш не існуе ў вашым календары."
+        "${ participantName } ужо прапаноўваў новы час для аднаго паўтарэння гэтай падзеі. Гэта прапанова састарэла, а падзея больш не існуе ў вашым календары."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. You have no calendars.": [
-        "${ participantName } ужо прапаноўваў(-ла) новы час для аднаго паўтарэння гэтай падзеі. Гэта прапанова састарэла. У вас няма календароў."
+        "${ participantName } ужо прапаноўваў новы час для аднаго паўтарэння гэтай падзеі. Гэта прапанова састарэла. У вас няма календароў."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date.": [
-        "${ participantName } ужо прапаноўваў(-ла) новы час для гэтай падзеі. Гэта прапанова састарэла."
+        "${ participantName } ужо прапаноўваў новы час для гэтай падзеі. Гэта прапанова састарэла."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
-        "${ participantName } ужо прапанаваў(-ла) новы час для гэтай падзеі. Гэта прапанова састарэла, а падзея больш не існуе ў вашым календары."
+        "${ participantName } ужо прапанаваў новы час для гэтай падзеі. Гэта прапанова састарэла, а падзея больш не існуе ў вашым календары."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
-        "${ participantName } ужо прапаноўваў(-ла) новы час для гэтай падзеі. Гэта прапанова састарэла. У вас няма календароў."
+        "${ participantName } ужо прапаноўваў новы час для гэтай падзеі. Гэта прапанова састарэла. У вас няма календароў."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } ужо ўмоўна прымаў(-ла) ваша запрашэнне і прапанаваў(-ла) новы час для аднаго паўтарэння гэтай падзеі. Адказ і прапанова састарэлі."
+        "${ participantName } ужо ўмоўна прымаў ваша запрашэнне і прапанаваў новы час для аднаго паўтарэння гэтай падзеі. Адказ і прапанова састарэлі."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } ужо ўмоўна прымаў(-ла) запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі. Адказ і прапанова састарэлі."
+        "${ participantName } ужо ўмоўна прымаў запрашэнне і прапанаваў новы час для гэтай падзеі. Адказ і прапанова састарэлі."
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        "${ participantName } умоўна ўжо прымаў(-ла) запрашэнне на адно паўтарэнне падзеі."
+        "${ participantName } умоўна ўжо прымаў запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
-        "${ participantName } умоўна ўжо прымаў(-ла) запрашэнне на гэту падзею."
+        "${ participantName } умоўна ўжо прымаў запрашэнне на гэту падзею."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } ужо ўмоўна прымаў(-ла) ваша запрашэнне і прапанаваў(-ла) новы час для аднаго паўтарэння гэтай падзеі. Адказ і прапанова састарэлі."
+        "${ participantName } ужо ўмоўна прымаў ваша запрашэнне і прапанаваў новы час для аднаго паўтарэння гэтай падзеі. Адказ і прапанова састарэлі."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } ужо ўмоўна прымаў(-ла) ваша запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі. Адказ і прапанова састарэлі."
+        "${ participantName } ужо ўмоўна прымаў ваша запрашэнне і прапанаваў новы час для гэтай падзеі. Адказ і прапанова састарэлі."
       ],
       "${ participantName } is not in the participants list.": [
         "${ participantName } няма ў спісе ўдзельнікаў."
       ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
-        "${ participantName } прапанаваў(-ла) новы час для аднаго паўтарэння гэтай падзеі."
+        "${ participantName } прапанаваў новы час для аднаго паўтарэння гэтай падзеі."
       ],
       "${ participantName } proposed a new time for this event.": [
-        "${ participantName } прапанаваў(-ла) новы час для гэтай падзеі."
+        "${ participantName } прапанаваў новы час для гэтай падзеі."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } умоўна прыняў(-ла) ваша запрашэнне і прапанаваў(-ла) новы час для аднаго паўтарэння гэтай падзеі."
+        "${ participantName } умоўна прыняў ваша запрашэнне і прапанаваў новы час для аднаго паўтарэння гэтай падзеі."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
-        "${ participantName } умоўна прыняў(-ла) запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі."
+        "${ participantName } умоўна прыняў запрашэнне і прапанаваў новы час для гэтай падзеі."
       ],
       "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
-        "${ participantName } умоўна прыняў(-ла) запрашэнне на адно паўтарэнне падзеі."
+        "${ participantName } умоўна прыняў запрашэнне на адно паўтарэнне падзеі."
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
-        "${ participantName } умоўна прыняў(-ла) запрашэнне на гэту падзею."
+        "${ participantName } умоўна прыняў запрашэнне на гэту падзею."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } умоўна прыняў(-ла) ваша запрашэнне і прапанаваў(-ла) новы час для аднаго паўтарэння гэтай падзеі."
+        "${ participantName } умоўна прыняў ваша запрашэнне і прапанаваў новы час для аднаго паўтарэння гэтай падзеі."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for this event.": [
-        "${ participantName } умоўна прыняў(-ла) ваша запрашэнне і прапанаваў(-ла) новы час для гэтай падзеі."
+        "${ participantName } умоўна прыняў ваша запрашэнне і прапанаваў новы час для гэтай падзеі."
       ],
       "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName } умоўна прыняў(-ла) ваша запрашэнне на адно паўтарэнне гэтай падзеі."
+        "${ participantName } умоўна прыняў ваша запрашэнне на адно паўтарэнне гэтай падзеі."
       ],
       "${ participantName } tentatively accepted your invitation.": [
-        "${ participantName } умоўна прыняў(-ла) ваша запрашэнне."
+        "${ participantName } умоўна прыняў ваша запрашэнне."
       ],
       "(Attendance optional)": [
         "(Удзельнічаць неабавязкова)"
@@ -2529,10 +2535,10 @@
         "Запрашэнне састарэла. Падзея была абноўлена."
       ],
       "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "Гэта прапанова новага часу не супадае з падрабязнасцямі вашага запрашэння. Праверце падрабязнасці запрашэння ў вашым календары."
+        "Гэта прапанова новага часу не супадае з падрабязнасцямі вашага запрашэння. Спраўдзіце падрабязнасці запрашэння ў вашым календары."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "Гэты адказ не супадае з падрабязнасцямі вашага запрашэння. Праверце падрабязнасці запрашэння ў вашым календары."
+        "Гэты адказ не супадае з падрабязнасцямі вашага запрашэння. Спраўдзіце падрабязнасці запрашэння ў вашым календары."
       ],
       "This response is out of date.": [
         "Гэты адказ састарэў."
@@ -4263,6 +4269,14 @@
         "Прыярытэтная падтрымка"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Тэкставыя палі з'яўляюцца неабавязковымі. Звесткі, якія вы падалі ў гэтай форме, з'явяцца толькі ў выстаўленых рахунках у будучым і гэта не акажа ўплыў на бягучыя рахункі."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Тэкставыя палі з'яўляюцца неабавязковымі. Звесткі, якія вы падалі ў гэтай форме, зменяць толькі выбраны рахунак і гэта не акажа ўплыў на будучыя падрабязнасці рахунка."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "НАТАТКА:\n${ eventComment }"
@@ -4319,13 +4333,13 @@
     },
     "Email body for response to invitation": {
       "${ emailAddress } accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } прыняў(-ла) ваша запрашэнне на ${ eventTitle }"
+        "${ emailAddress } прыняў ваша запрашэнне на ${ eventTitle }"
       ],
       "${ emailAddress } declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } адхіліў(-ла) ваша запрашэнне на ${ eventTitle }"
+        "${ emailAddress } адхіліў ваша запрашэнне на ${ eventTitle }"
       ],
       "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } умоўна прыняў(-ла) ваша запрашэнне на ${ eventTitle }"
+        "${ emailAddress } умоўна прыняў ваша запрашэнне на ${ eventTitle }"
       ]
     },
     "Email reminder banner": {
@@ -4534,6 +4548,9 @@
       "Due to an error, text generation couldn't be canceled": [
         "З прычыны памылкі немагчыма скасаваць генерацыю тэксту"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "У дадзены момант недаступна рэдагаванне адраса аплаты. Паспрабуйце яшчэ раз пазней."
+      ],
       "Email address disabled": [
         "Адрас электроннай пошты адключаны"
       ],
@@ -4572,6 +4589,9 @@
       ],
       "Failed to load the STL preview": [
         "Не ўдалося загрузіць папярэдні прагляд STL"
+      ],
+      "Failed to open to contact": [
+        "Не ўдалося адкрыць кантакт"
       ],
       "Filter with this name already exists": [
         "Фільтр з такой назвай ужо існуе"
@@ -4776,6 +4796,9 @@
       ],
       "Port is required": [
         "Патрабуецца ўвесці порт"
+      ],
+      "Postal code is required": [
+        "Патрабуецца ўвесці паштовы індэкс"
       ],
       "Primary address key is not decrypted": [
         "Ключ асноўнага адраса не расшыфраваны"
@@ -5019,6 +5042,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш пошук вярнуў занадта шмат вынікаў. Абмяжуйце вобласць пошуку і паспрабуйце яшчэ раз."
+      ],
+      "ZIP code is required": [
+        "Патрабуецца ўвесці паштовы індэкс"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5037,7 +5063,7 @@
         "Чарнавікі не могуць быць перамешчаны ў Спам"
       ],
       "Sent messages cannot be moved to Inbox": [
-        "Адпраўленыя паведамленні не могуць быць перамешчаны ва Уваходныя"
+        "Адпраўленыя паведамленні не могуць быць перамешчаны ў папку Уваходныя"
       ],
       "Sent messages cannot be moved to Spam": [
         "Адпраўленыя паведамленні не могуць быць перамешчаны ў Спам"
@@ -6400,16 +6426,16 @@
         "${ elementsCount } размоў будзе пазначана як:"
       ],
       "${ elementsCount } conversation will be marked as read.": [
-        "Будзе пазначана як прачытанае ${ elementsCount } размова",
-        "Будзе пазначана як прачытанае ${ elementsCount } размовы",
-        "Будзе пазначана як прачытанае ${ elementsCount } размоў",
-        "Будзе пазначана як прачытанае ${ elementsCount } размоў"
+        "Будзе пазначана як прачытаная ${ elementsCount } размова",
+        "Будзе пазначана як прачытаная ${ elementsCount } размовы",
+        "Будзе пазначана як прачытаная ${ elementsCount } размоў",
+        "Будзе пазначана як прачытаная ${ elementsCount } размоў"
       ],
       "${ elementsCount } conversation will be marked as unread.": [
-        "Будзе пазначана як непрачытанае ${ elementsCount } размова",
-        "Будзе пазначана як непрачытанае ${ elementsCount } размовы",
-        "Будзе пазначана як непрачытанае ${ elementsCount } размоў",
-        "Будзе пазначана як непрачытанае ${ elementsCount } размоў"
+        "Будзе пазначана як непрачытаная ${ elementsCount } размова",
+        "Будзе пазначана як непрачытаная ${ elementsCount } размовы",
+        "Будзе пазначана як непрачытаная ${ elementsCount } размоў",
+        "Будзе пазначана як непрачытаная ${ elementsCount } размоў"
       ],
       "${ elementsCount } conversation will be moved": [
         "Будзе перамешчана ${ elementsCount } размова",
@@ -6426,8 +6452,8 @@
       "${ elementsCount } message will be labelled as:": [
         "${ elementsCount } паведамленне будзе пазначана як:",
         "${ elementsCount } паведамленні будуць пазначаны як:",
-        "${ elementsCount } паведамленняў будзе пазначана як:",
-        "${ elementsCount } паведамленняў будзе пазначана як:"
+        "${ elementsCount } паведамленняў будуць пазначаны як:",
+        "${ elementsCount } паведамленняў будуць пазначаны як:"
       ],
       "${ elementsCount } message will be marked as read.": [
         "Будзе пазначана як прачытанае ${ elementsCount } паведамленне.",
@@ -6527,6 +6553,15 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } міне праз ${ daysLeft } дзень.",
+        "${ planName } міне праз ${ daysLeft } дні.",
+        "${ planName } міне праз ${ daysLeft } дзён.",
+        "${ planName } міне праз ${ daysLeft } дзён."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } міне сёння."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс па сродках адмысловага назірання падазронай актыўнасці."
@@ -6676,7 +6711,7 @@
         "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Нумар тэлефона можа быць выкарыстаны для праверкі аднаго ўліковага запісу ${ BRAND_NAME }"
+        "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Запыт на скасаванне падпіскі на гэты спіс рассылкі будзе адпраўлены адпраўніку рассылкі і апрацаваны аўтаматычна."
@@ -7090,7 +7125,7 @@
         "Вы сапраўды хочаце спампаваць гэтыя далучэнні?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
-        "Вы сапраўды хочаце паўторна падпісаць кантактныя звесткі і працэсе падпісання давяраць ключам з наступнымі адбіткамі?"
+        "Вы сапраўды хочаце паўторна падпісаць кантактныя звесткі і ў працэсе падпісання давяраць ключам з наступнымі адбіткамі?"
       ],
       "Do you want to re-sign the contact details?": [
         "Вы сапраўды хочаце паўторна падпісаць кантактныя звесткі?"
@@ -7159,7 +7194,7 @@
         "Кожны код можа выкарыстоўвацца толькі адзін раз"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
-        "Без намаганняў кіруйце і адпісвайцеся ад інфармацыйнай рассылкі, а таксама спіса рассылкі."
+        "Без намаганняў кіруйце і скасоўвайце падпіску ад інфармацыйнай рассылкі, а таксама спіса рассылкі."
       ],
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
@@ -7225,7 +7260,7 @@
         "Увядзіце ўліковыя даныя ад электроннай пошты з якой вы хочаце імпартаваць даныя."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Увядзіце праверачны код, які быў адпраўлены на ${ destinationText }."
+        "Увядзіце код спраўджання, які быў адпраўлены на ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Увядзіце праверачны код. Лічба ${ digit }."
@@ -7438,10 +7473,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -7681,7 +7713,7 @@
         "Ніводны з запампаваных ключоў несапраўдны для шыфравання. Для адпраўкі паведамленняў на гэты адрас, запампуйце сапраўдны ключ або адключыце функцыю \"Шыфраваць лісты\"."
       ],
       "Normal": [
-        "Нармальная"
+        "Звычайна"
       ],
       "Not a valid URL": [
         "Несапраўдны URL-адрас"
@@ -8182,7 +8214,7 @@
         "Няма паведамленняў ад гэтага адпраўніка ў вашай паштовай скрыні."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
-        "Адбылася памылка подпісу, якая выкарыстоўваецца для праверкі кантактных звестак, што можа быць выклікана скіданнем пароля."
+        "Адбылася памылка подпісу, якая выкарыстоўваецца для спраўджання кантактных звестак, што можа быць выклікана скіданнем пароля."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Яны больш не змогуць адпраўляць вам лісты са спамам, калі не будуць ведаць ваш адрас электроннай пошты. Абараніце сваю паштовую скрыню з функцыяй Hide-my-email."
@@ -8233,7 +8265,7 @@
         "Гэта спасылка вядзе на вэб-сайт, на якім могуць паспрабаваць скрасці вашы даныя: паролі або інфармацыю аб крэдытных картках."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Гэта спасылка можа быць гамаграфічнай атакай. Праверце спасылку, якую вы хочаце наведаць або не пераходзьце па ёй."
+        "Гэта спасылка можа быць гамаграфічнай атакай. Спраўдзіце спасылку, якую вы хочаце наведаць або не пераходзьце па ёй."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Гэта азначае, што ваш пастаўшчык паслуг інтэрнэту і вэб-сайты не змогуць атрымліваць асабістыя звесткі з вашай актыўнасцю ў інтэрнэце."
@@ -8488,7 +8520,7 @@
         "Праверка можа заняць некалькі хвілін."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Праверка адкрые новую ўкладку, адключыце блакіроўку ўсплывальных вокнаў. З вас не будуць спаганяцца грашовыя сродкі. Любая сума, якая выкарыстоўваецца для праверкі вашай карткі, будзе неадкладна вернута."
+        "Спраўджанне адкрые новую ўкладку, адключыце блакіроўку ўсплывальных вокнаў. З вас не будуць спаганяцца грашовыя сродкі. Любая сума, якая выкарыстоўваецца для спраўджання вашай карткі, будзе неадкладна вернута."
       ],
       "Version ${ appVersion }": [
         "Версія ${ appVersion }"
@@ -8515,7 +8547,7 @@
         "Немагчыма ўключыць пошук па змесціве паведамленняў у гэтым браўзеры."
       ],
       "We could not verify the sender's trusted keys.": [
-        "Не ўдалося праверыць давераныя ключы адпраўніка."
+        "Не ўдалося спраўдзіць давераныя ключы адпраўніка."
       ],
       "We couldn’t process your payment.": [
         "Мы не можам апрацаваць ваш плацеж."
@@ -8767,7 +8799,7 @@
         "Вы страціце доступ да ${ planTitle } функцыі пасля гэтай даты."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для праверкі плацяжу."
+        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "З вас не будзе спаганяцца плата, калі вы скасуеце да ${ trialEndsOnFormatted }."
@@ -9352,6 +9384,9 @@
       "Colors": [
         "Колеры"
       ],
+      "Company": [
+        "Кампанія"
+      ],
       "Company name": [
         "Назва кампаніі"
       ],
@@ -9751,6 +9786,9 @@
       "Start date": [
         "Дата пачатку"
       ],
+      "State": [
+        "Штат"
+      ],
       "Statement": [
         "Умова"
       ],
@@ -9827,7 +9865,7 @@
         "ПДВ"
       ],
       "Verification code": [
-        "Праверачны код"
+        "Код спраўджання"
       ],
       "Vulnerable": [
         "Уразлівы"
@@ -9873,6 +9911,9 @@
       ],
       "Your password (trusted contact)": [
         "Ваш пароль (давераны кантакт)"
+      ],
+      "ZIP code": [
+        "Паштовы індэкс"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10246,6 +10287,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Даведацца больш"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Пераканайцеся, што вашы прэміяльныя функцыі больш не выкарыстоўваюцца або палепшыце свой тарыфны план, каб працягваць выкарыстоўваць ${ BRAND_NAME }."
       ],
       "upgrade for more storage": [
         "палепшыце тарыфны план, каб атрымаць больш сховішча"
@@ -10901,7 +10945,7 @@
         "Воблачны рэдактар дакументаў"
       ],
       "Organize items with multiple vaults": [
-        "Упарадкаванне элементаў з некалькімі сховішчамі"
+        "Упарадкаванне элементаў з дапамогай некалькіх сховішч"
       ],
       "Passkeys supported": [
         "Падтрымка ключоў доступу"
@@ -12180,6 +12224,9 @@
       "Timeout exceeded": [
         "Перавышаны час чакання"
       ],
+      "VAT number": [
+        "Нумар ПДВ"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
       ],
@@ -12232,8 +12279,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Дадаць ABN"
+      ],
+      "Add Business Number": [
+        "Дадаць нумар прадпрыемства"
+      ],
+      "Add EIN": [
+        "Рэдагаваць ІНП"
+      ],
+      "Add VAT number": [
+        "Дадаць нумар ПДВ"
+      ],
       "Business Number": [
         "Нумар прадпрыемства"
+      ],
+      "Edit ABN": [
+        "Рэдагаваць ABN"
+      ],
+      "Edit Business Number": [
+        "Рэдагаваць нумар прадпрыемства"
+      ],
+      "Edit EIN": [
+        "Рэдагаваць ІНП"
+      ],
+      "Edit VAT number": [
+        "Рэдагаваць нумар ПДВ"
       ],
       "EIN": [
         "EIN"
@@ -12275,6 +12346,15 @@
     "Placeholder": {
       "A way to contact you": [
         "Спосаб сувязі з вамі"
+      ],
+      "Anderson": [
+        "Маўр"
+      ],
+      "Anytown": [
+        "Полацк"
+      ],
+      "Company name": [
+        "Назва кампаніі"
       ],
       "Describe what to change": [
         "Апішыце, што змяніць"
@@ -12323,6 +12403,9 @@
       ],
       "Link": [
         "Спасылка"
+      ],
+      "Main street 12": [
+        "вул. Цэнтральная, д. 12"
       ],
       "Name": [
         "Назва"
@@ -12375,6 +12458,9 @@
       "Select a reason": [
         "Выберыце прычыну"
       ],
+      "Select country": [
+        "Выберыце краіну"
+      ],
       "Select state": [
         "Выбраць штат"
       ],
@@ -12411,11 +12497,17 @@
       "Text": [
         "з тэкстам"
       ],
+      "Thomas": [
+        "Янка"
+      ],
       "To": [
         "Каму"
       ],
       "Type text or keyword": [
         "Увядзіце тэкст або ключавое слова"
+      ],
+      "VAT number": [
+        "Нумар ПДВ"
       ],
       "Your organization name": [
         "Ваша назва арганізацыі"
@@ -13398,7 +13490,7 @@
     },
     "Step": {
       "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
-        "Увядзіце свой адрас ${ MAIL_APP_NAME } у якасці новага, а потым захавайце, пацвердзіце або праверце змяненне"
+        "Увядзіце свой адрас ${ MAIL_APP_NAME } у якасці новага, а потым захавайце, пацвердзіце або спраўдзіце змяненне"
       ],
       "In the account settings, look for the option to edit or change your email address ": [
         "У наладах уліковага запісу знайдзіце параметр рэдагавання або змянення адраса электроннай пошты "
@@ -14053,8 +14145,8 @@
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } паведамленне дададзена да ${ labelName }.",
         "${ elementsCount } паведамленні дададзена да ${ labelName }.",
-        "${ elementsCount } паведамленні дададзена да ${ labelName }.",
-        "${ elementsCount } паведамленняў дададзены да ${ labelName }."
+        "${ elementsCount } паведамленняў дададзена да ${ labelName }.",
+        "${ elementsCount } паведамленняў дададзена да ${ labelName }."
       ],
       "${ elementsCount } message marked as read.": [
         "Пазначана як прачытанае ${ elementsCount } паведамленне.",
@@ -14115,6 +14207,9 @@
       ],
       "Alias saved and copied": [
         "Псеўданімы захаваны і скапіяваны"
+      ],
+      "Billing details updated": [
+        "Плацежныя падрабязнасці абноўлены"
       ],
       "Canceling import": [
         "Скасаванне імпартавання"
@@ -14309,7 +14404,7 @@
         "Выконваецца адрабленне"
       ],
       "Verification successful": [
-        "Паспяхова праверана"
+        "Праверка паспяхова выканана"
       ],
       "Writing assistant disabled": [
         "Памочнік у напісанні адключаны"
@@ -14872,6 +14967,9 @@
       ],
       "Download the app": [
         "Спампаваць праграму"
+      ],
+      "Edit billing address": [
+        "Рэдагаваць адрас аплаты"
       ],
       "Edit contact": [
         "Рэдагаваць кантакт"
@@ -15477,10 +15575,10 @@
         "Збой праверкі"
       ],
       "Verifying your card...": [
-        "Праверка вашай карткі..."
+        "Спраўджанне вашай карткі..."
       ],
       "Verifying your payment...": [
-        "Праверка вашага плацяжу..."
+        "Спраўджанне вашага плацяжу..."
       ],
       "VPN explained": [
         "Тлумачэнне VPN"
@@ -15878,7 +15976,7 @@
         "На жаль, у дадзены момант наша каманда падтрымкі знаходзіцца па-за сеткай. Запоўніце форму ніжэй з апісаннем вашай праблемы і мы абавязкова разгледзім яе пасля таго, як станем зноў даступнымі."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Мы не змаглі праверыць паштовы сервер. Калі вы давяраеце яму, то можаце прапусціць гэту праверку."
+        "Мы не змаглі спраўдзіць паштовы сервер. Калі вы давяраеце яму, то можаце прапусціць гэту праверку."
       ],
       "You will lose any customization you made so far.": [
         "Вы страціце любыя наладжванні, якія былі зроблены да гэтага."

@@ -1431,9 +1431,6 @@
       "Trust": [
         "信任"
       ],
-      "Trust key": [
-        "信任密钥"
-      ],
       "Trust public key": [
         "信任公钥"
       ],
@@ -4149,6 +4146,14 @@
         "优先支持"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "文本字段可选。您在本表中提供的信息只会出现在今后开具的发票上，不会影响现有发票。"
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "文本字段为选填字段。您在此表单中提供的信息只会更改您选择的发票，而不会更改您未来的发票详细信息。"
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "注意：\n${ eventComment }"
@@ -4397,6 +4402,9 @@
       "Due to an error, text generation couldn't be canceled": [
         "由于发生错误，无法取消文本生成"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "目前无法编辑帐单地址。请稍后重试。"
+      ],
       "Email address disabled": [
         "邮箱地址已停用"
       ],
@@ -4628,6 +4636,9 @@
       "Port is required": [
         "端口号必须填写"
       ],
+      "Postal code is required": [
+        "邮政编码为必填项"
+      ],
       "Primary address key is not decrypted": [
         "主密钥尚未解密"
       ],
@@ -4858,6 +4869,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜索结果过多，请缩小搜索范围后再试。"
+      ],
+      "ZIP code is required": [
+        "必须填写邮政编码"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6217,6 +6231,12 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } 至少需要1台专用服务器 ${ serverPricePerMonth }"
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } 在 ${ daysLeft } 天后到期。"
+      ],
+      "${ planName } expires today.": [
+        "${ planName } 今天到期。"
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } 通过对可疑活动进行专门监测来保护您的账户。"
       ],
@@ -7010,7 +7030,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图像"
+        "插入图片"
       ],
       "Insert link": [
         "插入链接"
@@ -8816,6 +8836,9 @@
       "Colors": [
         "颜色"
       ],
+      "Company": [
+        "公司"
+      ],
       "Company name": [
         "公司名称"
       ],
@@ -9215,6 +9238,9 @@
       "Start date": [
         "起始日期"
       ],
+      "State": [
+        "省份/地区"
+      ],
       "Statement": [
         "要求"
       ],
@@ -9334,6 +9360,9 @@
       ],
       "Your password (admin)": [
         "您的密码（管理员）"
+      ],
+      "ZIP code": [
+        "邮政编码"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11593,6 +11622,15 @@
       "A way to contact you": [
         "您的联系方式"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "任何城镇"
+      ],
+      "Company name": [
+        "公司名称"
+      ],
       "Describe what to change": [
         "描述需要改进的内容"
       ],
@@ -11640,6 +11678,9 @@
       ],
       "Link": [
         "链接"
+      ],
+      "Main street 12": [
+        "主要街道 12"
       ],
       "Name": [
         "名称"
@@ -11728,11 +11769,17 @@
       "Text": [
         "文本"
       ],
+      "Thomas": [
+        "Thomas"
+      ],
       "To": [
         "收件人"
       ],
       "Type text or keyword": [
         "输入文本或关键词"
+      ],
+      "VAT number": [
+        "增值税号"
       ],
       "Your organization name": [
         "您的组织名称"
@@ -13215,6 +13262,9 @@
       "Alias saved and copied": [
         "别名已保存并复制"
       ],
+      "Billing details updated": [
+        "账单详细信息已更新"
+      ],
       "Canceling import": [
         "正在取消导入"
       ],
@@ -13890,6 +13940,9 @@
       ],
       "Download the app": [
         "下载 APP"
+      ],
+      "Edit billing address": [
+        "编辑账单地址"
       ],
       "Edit contact": [
         "编辑联系人"
