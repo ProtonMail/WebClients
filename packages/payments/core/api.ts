@@ -8,7 +8,7 @@ import {
     type BillingAddressProperty,
     normalizeBillingAddress,
 } from './billing-address/billing-address';
-import type { Autopay, INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE, PAYMENT_TOKEN_STATUS } from './constants';
+import type { Autopay, InvoiceOwner, InvoiceState, InvoiceType, PAYMENT_TOKEN_STATUS } from './constants';
 import { PAYMENT_METHOD_TYPES, PLANS, PLAN_TYPES } from './constants';
 import type {
     AmountAndCurrency,
@@ -282,9 +282,9 @@ export interface QueryInvoicesParams {
      */
     Page: number;
     PageSize: number;
-    Owner: INVOICE_OWNER;
-    State?: INVOICE_STATE;
-    Type?: INVOICE_TYPE;
+    Owner: InvoiceOwner;
+    State?: InvoiceState;
+    Type?: InvoiceType;
     Document?: InvoiceDocument;
 }
 
@@ -578,7 +578,7 @@ export type GetPaymentMethodsResponse = {
 export interface QueryTransactionsParams {
     Page: number;
     PageSize: number;
-    Owner: INVOICE_OWNER;
+    Owner: InvoiceOwner;
 }
 
 export const queryTransactions = (params: QueryTransactionsParams) => ({

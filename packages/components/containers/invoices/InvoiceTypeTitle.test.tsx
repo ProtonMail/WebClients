@@ -1,14 +1,14 @@
 import { render, screen } from '@testing-library/react';
 
-import { INVOICE_STATE, INVOICE_TYPE, type Invoice } from '@proton/payments';
+import { type Invoice, InvoiceState, InvoiceType } from '@proton/payments';
 
-import InvoiceType from './InvoiceType';
+import InvoiceTypeTitle from './InvoiceTypeTitle';
 
 it('should render', () => {
     const invoice: Invoice = {
         ID: '1',
-        Type: INVOICE_TYPE.SUBSCRIPTION,
-        State: INVOICE_STATE.PAID,
+        Type: InvoiceType.Subscription,
+        State: InvoiceState.Paid,
         Currency: 'EUR',
         AmountDue: 0,
         AmountCharged: 999,
@@ -19,15 +19,15 @@ it('should render', () => {
         IsExternal: false,
     };
 
-    const { container } = render(<InvoiceType invoice={invoice} />);
+    const { container } = render(<InvoiceTypeTitle invoice={invoice} />);
     expect(container).not.toBeEmptyDOMElement();
 });
 
 it('should return Currency Conversion type', () => {
     const invoice: Invoice = {
         ID: '1',
-        Type: INVOICE_TYPE.CURRENCY_CONVERSION,
-        State: INVOICE_STATE.PAID,
+        Type: InvoiceType.CurrencyConversion,
+        State: InvoiceState.Paid,
         Currency: 'EUR',
         AmountDue: 0,
         AmountCharged: 999,
@@ -38,7 +38,7 @@ it('should return Currency Conversion type', () => {
         IsExternal: false,
     };
 
-    render(<InvoiceType invoice={invoice} />);
+    render(<InvoiceTypeTitle invoice={invoice} />);
     expect(screen.getByText('Currency conversion')).toBeInTheDocument();
 });
 
@@ -47,8 +47,8 @@ it('should return "Credit" type', () => {
 
     const invoice: Invoice = {
         ID: regularInvoiceId,
-        Type: INVOICE_TYPE.CREDIT,
-        State: INVOICE_STATE.PAID,
+        Type: InvoiceType.Credit,
+        State: InvoiceState.Paid,
         Currency: 'EUR',
         AmountDue: 0,
         AmountCharged: 999,
@@ -59,7 +59,7 @@ it('should return "Credit" type', () => {
         IsExternal: false,
     };
 
-    render(<InvoiceType invoice={invoice} />);
+    render(<InvoiceTypeTitle invoice={invoice} />);
     expect(screen.getByText('Credit')).toBeInTheDocument();
     expect(screen.queryByText('Credit note')).not.toBeInTheDocument();
 });
@@ -69,8 +69,8 @@ it('should return "Credit note" type', () => {
 
     const invoice: Invoice = {
         ID: creditNoteId,
-        Type: INVOICE_TYPE.CREDIT,
-        State: INVOICE_STATE.PAID,
+        Type: InvoiceType.Credit,
+        State: InvoiceState.Paid,
         Currency: 'EUR',
         AmountDue: 0,
         AmountCharged: 999,
@@ -81,7 +81,7 @@ it('should return "Credit note" type', () => {
         IsExternal: false,
     };
 
-    render(<InvoiceType invoice={invoice} />);
+    render(<InvoiceTypeTitle invoice={invoice} />);
     expect(screen.getByText('Credit note')).toBeInTheDocument();
     expect(screen.queryByText('Credit')).not.toBeInTheDocument();
 });
