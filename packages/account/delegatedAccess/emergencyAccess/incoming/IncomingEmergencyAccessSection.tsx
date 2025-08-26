@@ -175,7 +175,7 @@ const IncomingTable = ({
     const headerLabels = headerCells.map((cell) => cell.title);
 
     return (
-        <Table hasActions responsive="cards">
+        <Table hasActions responsive="cards" data-testid="incoming-emergency-access-table">
             <TableHeader>
                 <TableRow>
                     {headerCells.map(({ title, info, className }) => (
