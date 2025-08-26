@@ -8,7 +8,6 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
 import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 import { DARK_WEB_MONITORING_STATE } from '@proton/shared/lib/interfaces';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
 import illustration from '@proton/styles/assets/img/illustrations/check.svg';
 
 import { SUBSCRIPTION_STEPS } from '../../constants';
@@ -33,8 +32,18 @@ const DarkWebMonitoringPostSubscriptionModal = (props: PostSubscriptionModalComp
         if (step === SUBSCRIPTION_STEPS.THANKS && !isSetupActionDoneRef.current) {
             const setupAction = async () => {
                 if (!isPremiumFeatureEnabled) {
-                    const { UserSettings } = await api<{ UserSettings: UserSettings }>(enableBreachAlert());
-                    dispatch(userSettingsActions.update({ UserSettings }));
+                    await api(enableBreachAlert());
+                    dispatch(
+                        userSettingsActions.update({
+                            UserSettings: {
+                                ...userSettings,
+                                BreachAlerts: {
+                                    ...userSettings.BreachAlerts,
+                                    Value: DARK_WEB_MONITORING_STATE.ENABLED,
+                                },
+                            },
+                        })
+                    );
                 } else {
                     return Promise.resolve();
                 }

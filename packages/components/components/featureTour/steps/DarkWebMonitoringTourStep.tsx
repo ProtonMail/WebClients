@@ -8,7 +8,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
 import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 import { SentryMailInitiatives, traceError } from '@proton/shared/lib/helpers/sentry';
-import { DARK_WEB_MONITORING_STATE, type UserSettings } from '@proton/shared/lib/interfaces';
+import { DARK_WEB_MONITORING_STATE } from '@proton/shared/lib/interfaces';
 import darkWebMonitoringIllustration from '@proton/styles/assets/img/illustrations/dwm-upsell-shield.svg';
 
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
@@ -31,8 +31,19 @@ const DarkWebMonitoringTourStep = (props: FeatureTourStepProps) => {
     const handleEnableFeature = async () => {
         if (isToggleChecked && !isFeatureEnabled) {
             try {
-                const { UserSettings } = await api<{ UserSettings: UserSettings }>(enableBreachAlert());
-                dispatch(userSettingsActions.update({ UserSettings }));
+                await api(enableBreachAlert());
+                dispatch(
+                    userSettingsActions.update({
+                        UserSettings: {
+                            ...userSettings,
+                            BreachAlerts: {
+                                ...userSettings.BreachAlerts,
+                                Value: DARK_WEB_MONITORING_STATE.ENABLED,
+                            },
+                        },
+                    })
+                );
+
                 dispatch(featureTourActions.activateFeature({ feature: 'dark-web-monitoring' }));
             } catch (error) {
                 traceError(error, { tags: { initiative: SentryMailInitiatives.MAIL_ONBOARDING } });
