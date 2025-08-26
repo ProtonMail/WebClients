@@ -1,5 +1,5 @@
 import {
-    type INVOICE_OWNER,
+    type InvoiceOwner,
     type Transaction,
     type TransactionResponse,
     displayTransactionState,
@@ -18,7 +18,7 @@ export type TransactionsHook = DocumentHook & {
     transactions: Transaction[];
 };
 
-const useTransactions = ({ owner }: { owner: INVOICE_OWNER }): TransactionsHook => {
+const useTransactions = ({ owner }: { owner: InvoiceOwner }): TransactionsHook => {
     const pagination = usePaginationAsync(1);
     const { page } = pagination;
 
