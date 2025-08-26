@@ -13,10 +13,19 @@ export interface RequestAccessActionPayload {
     value: EnrichedIncomingDelegatedAccess;
 }
 
+export interface CancelRequestAccessActionPayload {
+    type: 'cancel-request-access';
+    value: EnrichedIncomingDelegatedAccess;
+}
+
 export interface AccessActionPayload {
     type: 'access';
     value: EnrichedIncomingDelegatedAccess;
 }
 
-export type ActionPayload = RequestAccessActionPayload | DeleteActionPayload | AccessActionPayload;
+export type ActionPayload =
+    | RequestAccessActionPayload
+    | CancelRequestAccessActionPayload
+    | DeleteActionPayload
+    | AccessActionPayload;
 export type ActionListener = (payload: ActionPayload) => undefined;
