@@ -11,7 +11,7 @@ import OrderableTable from '@proton/components/components/orderableTable/Orderab
 import useAddressFlags from '@proton/components/hooks/useAddressFlags';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
+import { ADDRESS_FLAGS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { mockUseFeatureBarrel } from '@proton/testing/lib/mockUseFeatureBarrel';
 import useFlag from '@proton/unleash/useFlag';
@@ -73,13 +73,33 @@ jest.mock('@proton/components/components/link/SettingsLink', () => 'string');
 
 jest.mock('@proton/redux-shared-store');
 
+jest.mock('@proton/activation/src/hooks/useReconnectSync', () => ({
+    __esModule: true,
+    default: () => {
+        return {
+            sync: undefined,
+            loadingConfig: false,
+            handleReconnect: jest.fn(),
+        };
+    },
+}));
+
 describe('addresses with user', () => {
     const user = { ID: 'abc' } as UserModel;
 
     const addresses = [
         { ID: '1', Email: 'a@proton.me', Type: ADDRESS_TYPE.TYPE_ORIGINAL, Status: 1, Receive: 1, Send: 1, HasKeys: 1 },
         { ID: '2', Email: 'a@foo.bar', Type: ADDRESS_TYPE.TYPE_EXTERNAL, Status: 1, Receive: 0, Send: 0, HasKeys: 1 },
-        { ID: '3', Email: 'a1@proton.me', Type: ADDRESS_TYPE.TYPE_ALIAS, Status: 1, Receive: 1, Send: 1, HasKeys: 1 },
+        {
+            ID: '3',
+            Email: 'a1@proton.me',
+            Type: ADDRESS_TYPE.TYPE_ALIAS,
+            Status: 1,
+            Receive: 1,
+            Send: 1,
+            HasKeys: 1,
+            Flags: ADDRESS_FLAGS.BYOE,
+        },
         { ID: '4', Email: 'a2@pm.me', Type: ADDRESS_TYPE.TYPE_PREMIUM, Status: 0, Receive: 0, Send: 0, HasKeys: 1 },
     ] as Address[];
 

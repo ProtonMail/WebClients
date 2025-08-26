@@ -16,6 +16,7 @@ const AddressStatus = ({
     isExternal,
     isNotEncrypted,
     isSignatureNotExpected,
+    isBYOEDisconnected,
 }: Partial<AddressStatuses>) => {
     const list = [
         isDefault &&
@@ -36,6 +37,13 @@ const AddressStatus = ({
         isDisabled &&
             ({
                 text: c('Address status').t`Disabled`,
+                type: 'light',
+            } as const),
+        isBYOEDisconnected &&
+            ({
+                text: c('Address status').t`Disconnected`,
+                tooltip: c('Tooltip')
+                    .t`The address has been disconnected. Message sending is paused. Reconnect to enable this address again.`,
                 type: 'light',
             } as const),
         isOrphan &&
