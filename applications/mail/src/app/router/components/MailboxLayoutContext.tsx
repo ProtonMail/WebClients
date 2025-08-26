@@ -13,10 +13,9 @@ export interface MailboxProviderProps {
     resizeAreaRef: RefObject<HTMLButtonElement>;
     listContainerRef: RefObject<HTMLDivElement>;
     messageContainerRef: RefObject<HTMLElement>;
-    columnModeSetting: boolean;
-    columnMode: boolean;
-    columnLayout: boolean;
-    isConversationContentView: boolean;
+    isColumnModeActive: boolean;
+    isColumnLayoutPreferred: boolean;
+    isConversationGroupingEnabled: boolean;
 }
 
 const MailboxLayoutContext = createContext<MailboxProviderProps | undefined>(undefined);
@@ -41,7 +40,6 @@ export const MailboxLayoutProvider = ({ children }: PropsWithChildren) => {
     const [mailSettings] = useMailSettings();
     const breakpoints = useActiveBreakpoint();
 
-    const columnModeSetting = isColumnMode(mailSettings);
     const forceRowMode =
         breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium || breakpoints.viewportWidth.large;
 
@@ -54,10 +52,9 @@ export const MailboxLayoutProvider = ({ children }: PropsWithChildren) => {
                 mainAreaRef,
                 resizeAreaRef,
                 listContainerRef,
-                columnModeSetting,
-                columnMode: columnModeSetting && !forceRowMode,
-                columnLayout: columnModeSetting || forceRowMode,
-                isConversationContentView: mailSettings?.ViewMode === VIEW_MODE.GROUP,
+                isColumnModeActive: isColumnMode(mailSettings) && !forceRowMode,
+                isColumnLayoutPreferred: isColumnMode(mailSettings) || forceRowMode,
+                isConversationGroupingEnabled: mailSettings?.ViewMode === VIEW_MODE.GROUP,
             }}
         >
             {children}
