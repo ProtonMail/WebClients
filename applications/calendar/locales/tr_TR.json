@@ -138,6 +138,9 @@
       "Choose a file or drag it here": [
         "Bir dosya seçin ya da sürükleyip buraya bırakın"
       ],
+      "Claim this address": [
+        "Bu adresi al"
+      ],
       "Clear": [
         "Temizle"
       ],
@@ -364,6 +367,9 @@
       ],
       "Get ${ planOrAppName }": [
         "${ planOrAppName } edinin"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Ücretsiz bir ${ BRAND_NAME } adresi alın"
       ],
       "Get in touch": [
         "Bizimle görüşün"
@@ -3216,6 +3222,14 @@
         "90 dakika"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca gelecekte düzenlenecek faturalarda görüntülenecek ve var olan faturaları etkilemeyecek."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca seçtiğiniz faturayı değiştirir. Gelecekteki fatura bilgilerinizi değiştirmez."
+      ]
+    },
     "Edit event button tooltip": {
       "Edit event": [
         "Etkinlik ekle"
@@ -3435,6 +3449,9 @@
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Fatura adresi şu anda düzenlenemiyor. Lütfen bir süre sonra yeniden deneyin."
+      ],
       "Email address disabled": [
         "E-posta adresi kullanımdan kaldırılmış"
       ],
@@ -3476,6 +3493,9 @@
       ],
       "Failed to load OAuth modal.": [
         "OAuth penceresi yüklenemedi."
+      ],
+      "Failed to open to contact": [
+        "Kişiye açılamadı"
       ],
       "First name is too long": [
         "Ad çok uzun"
@@ -3664,6 +3684,9 @@
       "Port is required": [
         "Bağlantı noktasının yazılması zorunludur"
       ],
+      "Postal code is required": [
+        "Posta kodunun yazılması zorunludur"
+      ],
       "Primary address key is not decrypted": [
         "Birincil adres anahtarının şifresi çözülemedi"
       ],
@@ -3830,6 +3853,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom bağlantınızın geçerlilik süresi dolmuş. İlerlemek için lütfen yeniden bağlantı kurun."
+      ],
+      "ZIP code is required": [
+        "Posta kodunun yazılması zorunludur"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4778,6 +4804,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } etkinlikleri güvenli olarak eşitlemek ve şifrelemek için bir ${ BRAND_NAME } adresine gerek duyar. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } yeni takvim",
         "${ calendarsToBeCreatedCount } yeni takvim"
@@ -4823,6 +4852,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } tarifesi ${ daysLeft } gün içinde sona eriyor.",
+        "${ planName } tarifesi ${ daysLeft } gün içinde sona eriyor."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } bugün sona eriyor."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } şüpheli etkinlikleri özel olarak izleyerek hesabınızı korur."
@@ -5189,6 +5225,9 @@
       ],
       "Enabling auto-deletion…": [
         "Otomatik silme özelliği açılıyor…"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Tümüyle güvenli ve şifrelenmiş iletişim sağlayın. Ücretsiz ${ BRAND_NAME } e-posta adresinizi şimdi alın."
       ],
       "Enter the code from your authenticator app": [
         "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
@@ -6366,6 +6405,9 @@
       "Colors": [
         "Renkler"
       ],
+      "Company": [
+        "Kuruluş"
+      ],
       "Company name": [
         "Kuruluş adı"
       ],
@@ -6658,6 +6700,9 @@
       "Start date": [
         "Başlangıç tarihi"
       ],
+      "State": [
+        "İl"
+      ],
       "Street address": [
         "Sokak adresi"
       ],
@@ -6747,6 +6792,9 @@
       ],
       "Your password (trusted contact)": [
         "Parolanız (güvenilen kişi)"
+      ],
+      "ZIP code": [
+        "Posta kodu"
       ]
     },
     "Label for contact group color": {
@@ -8810,6 +8858,9 @@
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
       ],
+      "VAT number": [
+        "KDV numarası"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
       ],
@@ -8862,8 +8913,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "ABN kodu ekle"
+      ],
+      "Add Business Number": [
+        "İş numarası ekle"
+      ],
+      "Add EIN": [
+        "EIN kodu ekle"
+      ],
+      "Add VAT number": [
+        "KDV numarası ekle"
+      ],
       "Business Number": [
         "İş numarası"
+      ],
+      "Edit ABN": [
+        "ABN kodunu düzenle"
+      ],
+      "Edit Business Number": [
+        "İş numarasını düzenle"
+      ],
+      "Edit EIN": [
+        "EIN kodunu düzenle"
+      ],
+      "Edit VAT number": [
+        "KDV numarasını düzenle"
       ],
       "EIN": [
         "EIN"
@@ -8924,6 +8999,15 @@
       "Add title": [
         "Başlık ekle"
       ],
+      "Anderson": [
+        "Kaya"
+      ],
+      "Anytown": [
+        "İl"
+      ],
+      "Company name": [
+        "Kuruluş adı"
+      ],
       "E.g., ": [
         "Örneğin, "
       ],
@@ -8953,6 +9037,9 @@
       ],
       "Leave a note for all participants": [
         "Tüm katılımcılar için bir not bırakın"
+      ],
+      "Main street 12": [
+        "12. cadde"
       ],
       "Name": [
         "Ad"
@@ -8993,6 +9080,9 @@
       "Select a reason": [
         "Bir neden seçin"
       ],
+      "Select country": [
+        "Ülke seçin"
+      ],
       "Select state": [
         "İl seçin"
       ],
@@ -9001,6 +9091,12 @@
       ],
       "Start typing an email address": [
         "Bir e-posta adresi yazmaya başlayın"
+      ],
+      "Thomas": [
+        "Ali"
+      ],
+      "VAT number": [
+        "KDV numarası"
       ],
       "Your organization name": [
         "Kuruluşunuzun adı"
@@ -10302,6 +10398,9 @@
       "Answer sent and event deleted": [
         "Yanıt gönderildi ve etkinlik silindi"
       ],
+      "Billing details updated": [
+        "Fatura bilgileri güncellendi"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Takvim eklendi. Eşitlenmesi birkaç dakika sürebilir."
       ],
@@ -10718,6 +10817,9 @@
       "Choose how often this event repeats": [
         "Bu etkinliğin yinelenme sıklığını seçin"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } adresinizi alın"
+      ],
       "Clearing data": [
         "Veriler temizleniyor"
       ],
@@ -10824,6 +10926,9 @@
       ],
       "Drop to upload": [
         "Yüklemek için bırakın"
+      ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
       ],
       "Edit contact": [
         "Kişiyi düzenle"
