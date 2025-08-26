@@ -7899,14 +7899,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@playwright/test@npm:^1.54.1":
-  version: 1.54.1
-  resolution: "@playwright/test@npm:1.54.1"
+"@playwright/test@npm:^1.55.0":
+  version: 1.55.0
+  resolution: "@playwright/test@npm:1.55.0"
   dependencies:
-    playwright: "npm:1.54.1"
+    playwright: "npm:1.55.0"
   bin:
     playwright: cli.js
-  checksum: 10c0/1b414356bc1049927d7b9efc14d5b3bf000ef6483313926bb795b4f27fe3707e8e0acf0db59063a452bb4f7e34559758d17640401b6f3e2f5290f299a8d8d02f
+  checksum: 10c0/e68b59cd8271f1b57c0649fc0562ab2d5f6bba8c3653dd7bd52ca1338dc380fde34588d0254e3cd3f0f2b20af04a80dfb080419ceb7475990bb2fc4d8c474984
   languageName: node
   linkType: hard
 
@@ -8153,7 +8153,7 @@ __metadata:
     "@babel/core": "npm:^7.28.3"
     "@babel/preset-react": "npm:^7.27.1"
     "@babel/preset-typescript": "npm:^7.27.1"
-    "@playwright/test": "npm:^1.54.1"
+    "@playwright/test": "npm:^1.55.0"
     "@proton/colors": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/hooks": "workspace:^"
@@ -8419,7 +8419,7 @@ __metadata:
     karma-jasmine: "npm:^5.1.0"
     karma-webkit-launcher: "npm:^2.6.0"
     karma-webpack: "npm:^5.0.1"
-    playwright: "npm:^1.54.1"
+    playwright: "npm:^1.55.0"
     pmcrypto: "npm:@protontech/pmcrypto@^8.7.0"
     prettier: "npm:^3.6.2"
     ts-loader: "npm:^9.5.2"
@@ -8624,7 +8624,7 @@ __metadata:
     karma-jasmine: "npm:^5.1.0"
     karma-spec-reporter: "npm:^0.0.36"
     karma-webpack: "npm:^5.0.1"
-    playwright: "npm:^1.54.1"
+    playwright: "npm:^1.55.0"
     react: "npm:^18.3.1"
     ts-loader: "npm:^9.5.2"
     ttag: "npm:^1.8.12"
@@ -8752,7 +8752,7 @@ __metadata:
     karma-jasmine: "npm:^5.1.0"
     karma-webpack: "npm:^5.0.1"
     pkijs: "npm:^3.2.5"
-    playwright: "npm:^1.54.1"
+    playwright: "npm:^1.55.0"
     ts-loader: "npm:^9.5.2"
     typescript: "npm:^5.9.2"
     webpack: "npm:^5.101.3"
@@ -9151,7 +9151,7 @@ __metadata:
     lodash: "npm:^4.17.21"
     loglevel: "npm:^1.9.2"
     papaparse: "npm:^5.5.3"
-    playwright: "npm:^1.54.1"
+    playwright: "npm:^1.55.0"
     prettier: "npm:^3.6.2"
     ts-loader: "npm:^9.5.2"
     ttag: "npm:^1.8.12"
@@ -36325,27 +36325,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:1.54.1":
-  version: 1.54.1
-  resolution: "playwright-core@npm:1.54.1"
+"playwright-core@npm:1.55.0":
+  version: 1.55.0
+  resolution: "playwright-core@npm:1.55.0"
   bin:
     playwright-core: cli.js
-  checksum: 10c0/b821262b024d7753b1bfa71eb2bc99f2dda12a869d175b2e1bc6ac2764bd661baf36d9d42f45caf622854ad7e4a6077b9b57014c74bb5a78fe339c9edf1c9019
+  checksum: 10c0/c39d6aa30e7a4e73965942ca5e13405ae05c9cb49f755a35f04248c864c0b24cf662d9767f1797b3ec48d1cf4e54774dce4a19c16534bd5cfd2aa3da81c9dc3a
   languageName: node
   linkType: hard
 
-"playwright@npm:1.54.1, playwright@npm:^1.54.1":
-  version: 1.54.1
-  resolution: "playwright@npm:1.54.1"
+"playwright@npm:1.55.0, playwright@npm:^1.55.0":
+  version: 1.55.0
+  resolution: "playwright@npm:1.55.0"
   dependencies:
     fsevents: "npm:2.3.2"
-    playwright-core: "npm:1.54.1"
+    playwright-core: "npm:1.55.0"
   dependenciesMeta:
     fsevents:
       optional: true
   bin:
     playwright: cli.js
-  checksum: 10c0/c5fedae31a03a1f4c4846569aef3ffb98da23000a4d255abfc8c2ede15b43cc7cd87b80f6fa078666c030373de8103787cf77ef7653ae9458aabbbd4320c2599
+  checksum: 10c0/51605b7e57a5650e57972c5fdfc09d7a9934cca1cbee5beacca716fa801e25cb5bb7c1663de90c22b300fde884e5545a2b13a0505a93270b660687791c478304
   languageName: node
   linkType: hard
 
@@ -38045,7 +38045,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-e2e@workspace:tests"
   dependencies:
-    "@playwright/test": "npm:^1.54.1"
+    "@playwright/test": "npm:^1.55.0"
     "@proton/colors": "workspace:^"
     "@proton/crypto": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
@@ -38231,7 +38231,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-mail-renderer@workspace:tests/mail-renderer"
   dependencies:
-    "@playwright/test": "npm:^1.54.1"
+    "@playwright/test": "npm:^1.55.0"
     "@proton/atoms": "workspace:^"
     "@proton/colors": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
