@@ -1,5 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-
+import React, { useEffect, useRef } from 'react';
 import type { HandleEditMessage, HandleRegenerateMessage } from '../../../hooks/useLumoActions';
 import type { SiblingInfo } from '../../../hooks/usePreferredSiblings';
 import { type Message } from '../../../types';
@@ -24,81 +23,81 @@ const useAutoScroll = (
     messageChain: Message[],
     isGenerating?: boolean
 ) => {
-    const [userHasScrolledUp, setUserHasScrolledUp] = useState(false);
-    const generationScrollIntervalRef = useRef<NodeJS.Timeout>();
+    // const [userHasScrolledUp, setUserHasScrolledUp] = useState(false);
+    // const generationScrollIntervalRef = useRef<NodeJS.Timeout>();
 
-    const isNearBottom = useCallback(() => {
-        if (!messageChainRef.current) return true;
+    // const isNearBottom = useCallback(() => {
+    //     if (!messageChainRef.current) return true;
 
-        const container = messageChainRef.current;
-        const threshold = 100; // pixels from bottom to consider "near bottom"
-        const distanceFromBottom = container.scrollHeight - container.scrollTop - container.clientHeight;
+    //     const container = messageChainRef.current;
+    //     const threshold = 100; // pixels from bottom to consider "near bottom"
+    //     const distanceFromBottom = container.scrollHeight - container.scrollTop - container.clientHeight;
 
-        return distanceFromBottom <= threshold;
-    }, [messageChainRef]);
+    //     return distanceFromBottom <= threshold;
+    // }, [messageChainRef]);
 
-    const handleScroll = useCallback(() => {
-        if (!messageChainRef.current) return;
+    // const handleScroll = useCallback(() => {
+    //     if (!messageChainRef.current) return;
 
-        const nearBottom = isNearBottom();
+    //     const nearBottom = isNearBottom();
 
-        if (!nearBottom) {
-            setUserHasScrolledUp(true);
-            // Clear the generation scroll interval if user manually scrolls
-            if (generationScrollIntervalRef.current) {
-                clearInterval(generationScrollIntervalRef.current);
-                generationScrollIntervalRef.current = undefined;
-            }
-        }
+    //     if (!nearBottom) {
+    //         setUserHasScrolledUp(true);
+    //         // Clear the generation scroll interval if user manually scrolls
+    //         if (generationScrollIntervalRef.current) {
+    //             clearInterval(generationScrollIntervalRef.current);
+    //             generationScrollIntervalRef.current = undefined;
+    //         }
+    //     }
 
-        if (nearBottom && userHasScrolledUp) {
-            setUserHasScrolledUp(false);
-        }
-    }, [isNearBottom, userHasScrolledUp]);
+    //     if (nearBottom && userHasScrolledUp) {
+    //         setUserHasScrolledUp(false);
+    //     }
+    // }, [isNearBottom, userHasScrolledUp]);
 
-    const scrollToBottom = useCallback(() => {
-        if (!messageChainRef.current || userHasScrolledUp) return;
+    // const scrollToBottom = useCallback(() => {
+    //     if (!messageChainRef.current || userHasScrolledUp) return;
 
-        const container = messageChainRef.current;
-        container.scrollTo({
-            top: container.scrollHeight,
-            behavior: 'smooth',
-        });
-    }, [messageChainRef, userHasScrolledUp]);
+    //     const container = messageChainRef.current;
+    //     container.scrollTo({
+    //         top: container.scrollHeight,
+    //         behavior: 'smooth',
+    //     });
+    // }, [messageChainRef, userHasScrolledUp]);
 
-    useEffect(() => {
-        const container = messageChainRef.current;
-        if (!container) return;
+    // useEffect(() => {
+    //     const container = messageChainRef.current;
+    //     if (!container) return;
 
-        container.addEventListener('scroll', handleScroll, { passive: true });
+    //     container.addEventListener('scroll', handleScroll, { passive: true });
 
-        return () => {
-            container.removeEventListener('scroll', handleScroll);
-        };
-    }, [handleScroll]);
+    //     return () => {
+    //         container.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, [handleScroll]);
 
     // Continuous scroll during generation
-    useEffect(() => {
-        if (isGenerating && !userHasScrolledUp) {
-            // Start continuous scrolling during generation
-            generationScrollIntervalRef.current = setInterval(() => {
-                scrollToBottom();
-            }, 200);
-        } else {
-            // Clear interval when not generating or user has scrolled up
-            if (generationScrollIntervalRef.current) {
-                clearInterval(generationScrollIntervalRef.current);
-                generationScrollIntervalRef.current = undefined;
-            }
-        }
+    // useEffect(() => {
+        // if (isGenerating && !userHasScrolledUp) {
+        //     // Start continuous scrolling during generation
+        //     generationScrollIntervalRef.current = setInterval(() => {
+        //         scrollToBottom();
+        //     }, 200);
+        // } else {
+        //     // Clear interval when not generating or user has scrolled up
+        //     if (generationScrollIntervalRef.current) {
+        //         clearInterval(generationScrollIntervalRef.current);
+        //         generationScrollIntervalRef.current = undefined;
+        //     }
+        // }
 
         // Cleanup on unmount
-        return () => {
-            if (generationScrollIntervalRef.current) {
-                clearInterval(generationScrollIntervalRef.current);
-            }
-        };
-    }, [isGenerating, userHasScrolledUp, scrollToBottom]);
+    //     return () => {
+    //         if (generationScrollIntervalRef.current) {
+    //             clearInterval(generationScrollIntervalRef.current);
+    //         }
+    //     };
+    // }, [isGenerating, userHasScrolledUp]);
 
     // Initial scroll to bottom on mount and when messages first load
     useEffect(() => {
@@ -115,7 +114,7 @@ const useAutoScroll = (
         }
     }, [messageChainRef.current]);
 
-    return { userHasScrolledUp };
+    // return { userHasScrolledUp };
 };
 
 export const MessageChainComponent = ({
