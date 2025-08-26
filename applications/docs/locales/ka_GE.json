@@ -151,6 +151,9 @@
       "Choose a file or drag it here": [
         "აირჩიეთ ფაილი ან გადმოათრიეთ აქ"
       ],
+      "Claim this address": [
+        "ამ მისამართის გამოთხოვა"
+      ],
       "Clear data": [
         "მონაცემების გასუფთავება"
       ],
@@ -2906,6 +2909,9 @@
       "Domain not available, try again later": [
         "დომენი ხელმიუწვდომელია. თავიდან სცადეთ"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "გადახდის მისამართის ჩასწორება, ამჟამად, ხელმისაწვდომი არაა. მოგვიანებით სცადეთ."
+      ],
       "Email address is required": [
         "ელფოსტის მისამართი აუცილებელია"
       ],
@@ -2935,6 +2941,9 @@
       ],
       "Failed to copy photo to album": [
         "სურათის ალბომში კოპირება ჩავარდა"
+      ],
+      "Failed to open to contact": [
+        "კონტაქტისთვის გახსნა ჩავარდა"
       ],
       "Failed to rename document. Please try again later.": [
         "დოკუმენტის სახელის გადარქმევა ჩავარდა. მოგვიანებით სცადეთ."
@@ -3107,6 +3116,9 @@
       ],
       "Port is required": [
         "პორტი აუცილებელია"
+      ],
+      "Postal code is required": [
+        "საფოსტო კოდი აუცილებელია"
       ],
       "Primary address key is not decrypted": [
         "ძირითადი მისამართის გასაღები გაშიფრული არაა"
@@ -3289,6 +3301,9 @@
       ],
       "Your import will not be processed.": [
         "თქვენი შემოტანა არ დამუშავდება."
+      ],
+      "ZIP code is required": [
+        "საფოსტო კოდი აუცილებელია"
       ]
     },
     "Error importing calendar": {
@@ -4174,6 +4189,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }-ს სულ ცოტა 1 გამოყოფილი სერვერი ესაჭიროება ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName }-ის ვადა იწურება ${ daysLeft } დღეში.",
+        "${ planName }-ის ვადა იწურება ${ daysLeft } დღეში."
+      ],
+      "${ planName } expires today.": [
+        "${ planName }-ის ვადა დღეს იწურება."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } იცავს თქვენს ანგარიშს საეჭვო აქტივობების გამოყოფილი მონიტორინგით."
@@ -5741,6 +5763,9 @@
       "Colors": [
         "ფერები"
       ],
+      "Company": [
+        "კომპანია"
+      ],
       "Company name": [
         "კომპანიის სახელი"
       ],
@@ -6038,6 +6063,9 @@
       "Start date": [
         "საწყისი თარიღი"
       ],
+      "State": [
+        "მდგომარეობა"
+      ],
       "Stop sharing": [
         "გაზიარების შეწყვეტა"
       ],
@@ -6121,6 +6149,9 @@
       ],
       "Your password (trusted contact)": [
         "თქვენი პაროლი (სანდო კონტაქტი)"
+      ],
+      "ZIP code": [
+        "საფოსტო კოდი"
       ]
     },
     "Label for contact group color": {
@@ -8092,6 +8123,9 @@
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
       ],
+      "VAT number": [
+        "დღგ ნომერი"
+      ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
       ]
@@ -8138,8 +8172,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "ABN-ის დამატება"
+      ],
+      "Add Business Number": [
+        "ბიზნესის ნომრის დამატება"
+      ],
+      "Add EIN": [
+        "EIN-ის დამატება"
+      ],
+      "Add VAT number": [
+        "დღგ ნომრის დამატება"
+      ],
       "Business Number": [
         "ბიზნესის ნომერი"
+      ],
+      "Edit ABN": [
+        "ABN-ის რედაქტირება"
+      ],
+      "Edit Business Number": [
+        "ბიზნესის ნომრის ჩასწორება"
+      ],
+      "Edit EIN": [
+        "EIN-ის ჩასწორება"
+      ],
+      "Edit VAT number": [
+        "დღგ ნომრის ჩასწორება"
       ],
       "EIN": [
         "EIN"
@@ -8182,8 +8240,17 @@
       "A way to contact you": [
         "თქვენთან დაკავშირების საშუალება"
       ],
+      "Anderson": [
+        "ღობეგლეჯიაშვილი"
+      ],
+      "Anytown": [
+        "თბილისი"
+      ],
       "Choose password": [
         "აირჩიეთ პაროლი"
+      ],
+      "Company name": [
+        "კომპანიის სახელი"
       ],
       "E.g., ": [
         "მაგ. "
@@ -8211,6 +8278,9 @@
       ],
       "Last name": [
         "გვარი"
+      ],
+      "Main street 12": [
+        "ევას შესახვევი 13"
       ],
       "Message": [
         "შეტყობინება"
@@ -8248,6 +8318,9 @@
       "Select a reason": [
         "აირჩიეთ მიზეზი"
       ],
+      "Select country": [
+        "აირჩიეთ ქვეყანა"
+      ],
       "Select state": [
         "აირჩიეთ შტატი"
       ],
@@ -8259,6 +8332,12 @@
       ],
       "Start typing an email address": [
         "დაიწყეთ ელფოსტის მისამართის აკრეფა"
+      ],
+      "Thomas": [
+        "მზევინარ"
+      ],
+      "VAT number": [
+        "დღგ ნომერი"
       ],
       "Your organization name": [
         "თქვენი ორგანიზაციის სახელი"
@@ -9253,6 +9332,9 @@
       "Alias saved and copied": [
         "ფსევდონიმი შენახული და კოპირებულია"
       ],
+      "Billing details updated": [
+        "გადახდის დეტალები განახლდა"
+      ],
       "Canceling import": [
         "შემოტანის გაუქმება"
       ],
@@ -9687,6 +9769,9 @@
       ],
       "Duplicate folder found": [
         "ნაპოვნია საქაღალდის ასლი"
+      ],
+      "Edit billing address": [
+        "გადახდის მისამართის ჩასწორება"
       ],
       "Edit contact": [
         "კონტაქტის ჩასწორება"
