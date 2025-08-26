@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { INVOICE_OWNER, TransactionState, TransactionType, queryTransactions } from '@proton/payments';
+import { InvoiceOwner, TransactionState, TransactionType, queryTransactions } from '@proton/payments';
 import { addApiMock, hookWrapper, withApi } from '@proton/testing';
 
 import useTransactions from './useTransactions';
@@ -47,11 +47,11 @@ describe('useTransactions', () => {
 
     beforeEach(() => {
         jest.clearAllMocks();
-        addApiMock(queryTransactions({ Page: 0, PageSize: 10, Owner: INVOICE_OWNER.USER }).url, () => mockApiResponse);
+        addApiMock(queryTransactions({ Page: 0, PageSize: 10, Owner: InvoiceOwner.User }).url, () => mockApiResponse);
     });
 
     it('should filter out transactions with hidden states or types', async () => {
-        const { result, waitForNextUpdate } = renderHook(() => useTransactions({ owner: INVOICE_OWNER.USER }), {
+        const { result, waitForNextUpdate } = renderHook(() => useTransactions({ owner: InvoiceOwner.User }), {
             wrapper,
         });
 
@@ -80,7 +80,7 @@ describe('useTransactions', () => {
     });
 
     it('should maintain the total count from the API response', async () => {
-        const { result, waitForNextUpdate } = renderHook(() => useTransactions({ owner: INVOICE_OWNER.USER }), {
+        const { result, waitForNextUpdate } = renderHook(() => useTransactions({ owner: InvoiceOwner.User }), {
             wrapper,
         });
 
@@ -91,7 +91,7 @@ describe('useTransactions', () => {
     });
 
     it('should handle pagination', async () => {
-        const { result, waitForNextUpdate } = renderHook(() => useTransactions({ owner: INVOICE_OWNER.USER }), {
+        const { result, waitForNextUpdate } = renderHook(() => useTransactions({ owner: InvoiceOwner.User }), {
             wrapper,
         });
 
@@ -99,7 +99,7 @@ describe('useTransactions', () => {
         await waitForNextUpdate();
 
         // Mock API response for page 2
-        addApiMock(queryTransactions({ Page: 1, PageSize: 10, Owner: INVOICE_OWNER.USER }).url, () => ({
+        addApiMock(queryTransactions({ Page: 1, PageSize: 10, Owner: InvoiceOwner.User }).url, () => ({
             Transactions: [mockTransactions[0]], // Just one transaction for page 2
             Total: mockTransactions.length,
         }));

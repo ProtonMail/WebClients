@@ -1,18 +1,18 @@
 import { c } from 'ttag';
 
-import { INVOICE_TYPE, type Invoice, isCreditNoteInvoice } from '@proton/payments';
+import { type Invoice, InvoiceType, isCreditNoteInvoice } from '@proton/payments';
 
 const getType = (invoice: Invoice) => {
-    const type: INVOICE_TYPE = invoice.Type;
+    const type: InvoiceType = invoice.Type;
 
     switch (type) {
-        case INVOICE_TYPE.OTHER:
+        case InvoiceType.Other:
             return c('Invoice type display as badge').t`Other`;
-        case INVOICE_TYPE.SUBSCRIPTION:
+        case InvoiceType.Subscription:
             return c('Invoice type display as badge').t`Subscription`;
-        case INVOICE_TYPE.CANCELLATION:
+        case InvoiceType.Cancellation:
             return c('Invoice type display as badge').t`Cancellation`;
-        case INVOICE_TYPE.CREDIT:
+        case InvoiceType.Credit:
             if (isCreditNoteInvoice(invoice)) {
                 // Credit Note is a system generated note that might occur as a middle step e.g. in currency conversion
                 return c('Invoice type display as badge').t`Credit note`;
@@ -20,22 +20,24 @@ const getType = (invoice: Invoice) => {
 
             // "Credit" is when user buys credit explicitly, e.g. with Top Up
             return c('Invoice type display as badge').t`Credit`;
-        case INVOICE_TYPE.DONATION:
+        case InvoiceType.Donation:
             return c('Invoice type display as badge').t`Donation`;
-        case INVOICE_TYPE.CHARGEBACK:
+        case InvoiceType.Chargeback:
             return c('Invoice type display as badge').t`Chargeback`;
-        case INVOICE_TYPE.RENEWAL:
+        case InvoiceType.Renewal:
             return c('Invoice type display as badge').t`Renewal`;
-        case INVOICE_TYPE.REFUND:
+        case InvoiceType.Refund:
             return c('Invoice type display as badge').t`Refund`;
-        case INVOICE_TYPE.MODIFICATION:
+        case InvoiceType.Modification:
             return c('Invoice type display as badge').t`Modification`;
-        case INVOICE_TYPE.ADDITION:
+        case InvoiceType.Addition:
             return c('Invoice type display as badge').t`Addition`;
-        case INVOICE_TYPE.CURRENCY_CONVERSION:
+        case InvoiceType.CurrencyConversion:
             return c('Invoice type display as badge').t`Currency conversion`;
-        case INVOICE_TYPE.PRODUCT:
+        case InvoiceType.Product:
             return c('Invoice type display as badge').t`Product`;
+        case InvoiceType.Manual:
+            return c('Invoice type display as badge').t`Manual`;
         default:
             return '';
     }
@@ -45,8 +47,8 @@ interface Props {
     invoice: Invoice;
 }
 
-const InvoiceType = ({ invoice }: Props) => {
+const InvoiceTypeTitle = ({ invoice }: Props) => {
     return <>{getType(invoice)}</>;
 };
 
-export default InvoiceType;
+export default InvoiceTypeTitle;

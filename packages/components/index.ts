@@ -593,9 +593,9 @@ export { default as ImportExportAppSection } from './containers/importExportApp/
 export { default as InvoiceActions } from './containers/invoices/InvoiceActions';
 export { default as InvoiceAmount } from './containers/invoices/InvoiceAmount';
 export { default as InvoicesSection } from './containers/invoices/InvoicesSection';
-export { default as InvoiceState } from './containers/invoices/InvoiceState';
+export { default as InvoiceStateBadge } from './containers/invoices/InvoiceStateBadge';
 export { default as InvoiceTextModal } from './containers/invoices/InvoiceTextModal';
-export { default as InvoiceType } from './containers/invoices/InvoiceType';
+export { default as InvoiceTypeTitle } from './containers/invoices/InvoiceTypeTitle';
 export { default as PayInvoiceModal } from './containers/invoices/PayInvoiceModal';
 export { default as ItemCheckbox } from './containers/items/ItemCheckbox';
 export { default as useItemsDraggable } from './containers/items/useItemsDraggable';
