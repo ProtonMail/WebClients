@@ -3226,6 +3226,14 @@
         "90 minút"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Textové polia sú nepovinné. Informácie, ktoré uvediete v tomto formulári, sa zobrazia len na faktúrach vystavených v budúcnosti a neovplyvnia existujúce faktúry."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Textové polia sú nepovinné. Informácie, ktoré uvediete v tomto formulári, zmenia len vybranú faktúru, a nie vaše budúce fakturačné údaje."
+      ]
+    },
     "Edit event button tooltip": {
       "Edit event": [
         "Upraviť udalosť"
@@ -3451,6 +3459,9 @@
       ],
       "Domain not available, try again later": [
         "Doména nie je dostupná, skúste to znova neskôr"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Úprava fakturačnej adresy momentálne nie je k dispozícii. Skúste to neskôr, prosím."
       ],
       "Email address disabled": [
         "Emailová adresa je deaktivovaná"
@@ -3689,6 +3700,9 @@
       "Port is required": [
         "Port je požadovaný"
       ],
+      "Postal code is required": [
+        "Poštové smerovacie číslo je povinné"
+      ],
       "Primary address key is not decrypted": [
         "Kľúč primárnej adresy nebol dešifrovaný"
       ],
@@ -3859,6 +3873,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Vaše pripojenie k Zoom vypršalo. Pripojte sa znova pre pokračovanie, prosím."
+      ],
+      "ZIP code is required": [
+        "PSČ je povinné"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4902,6 +4919,15 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje aspoň 1 dedikovaný server ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } skončí o ${ daysLeft } deň.",
+        "${ planName } skončí o ${ daysLeft } dni.",
+        "${ planName } skončí o ${ daysLeft } dní.",
+        "${ planName } skončí o ${ daysLeft } dní."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } skončí dnes."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou špeciálneho monitorovania podozrivých aktivít."
@@ -6491,6 +6517,9 @@
       "Colors": [
         "Farby"
       ],
+      "Company": [
+        "Spoločnosť"
+      ],
       "Company name": [
         "Názov spoločnosti"
       ],
@@ -6785,6 +6814,9 @@
       "Start date": [
         "Dátum začiatku"
       ],
+      "State": [
+        "Štát"
+      ],
       "Street address": [
         "Ulica a č."
       ],
@@ -6871,6 +6903,9 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (správca)"
+      ],
+      "ZIP code": [
+        "PSČ"
       ]
     },
     "Label for contact group color": {
@@ -9175,6 +9210,15 @@
       "Add title": [
         "Pridať názov"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "Niekdetam"
+      ],
+      "Company name": [
+        "Názov spoločnosti"
+      ],
       "E.g., ": [
         "Napr., "
       ],
@@ -9204,6 +9248,9 @@
       ],
       "Leave a note for all participants": [
         "Nechajte odkaz pre všetkých účastníkov"
+      ],
+      "Main street 12": [
+        "Hlavná ulica 12"
       ],
       "Name": [
         "Meno"
@@ -9252,6 +9299,12 @@
       ],
       "Start typing an email address": [
         "Začnite písať emailovú adresu"
+      ],
+      "Thomas": [
+        "Tomáš"
+      ],
+      "VAT number": [
+        "IČ DPH"
       ],
       "Your organization name": [
         "Názov vašej organizácie"
@@ -10606,6 +10659,9 @@
       "Answer sent and event deleted": [
         "Odpoveď bola odoslaná a udalosť bola vymazaná"
       ],
+      "Billing details updated": [
+        "Fakturačné údaje aktualizované"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalendár je pridaný. Synchronizácia zaberie pár minút."
       ],
@@ -11157,6 +11213,9 @@
       ],
       "Drop to upload": [
         "Pretiahnuť a nahrať"
+      ],
+      "Edit billing address": [
+        "Upraviť fakturačnú adresu"
       ],
       "Edit contact": [
         "Upraviť kontakt"

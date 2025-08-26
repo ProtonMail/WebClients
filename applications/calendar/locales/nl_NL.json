@@ -3222,6 +3222,14 @@
         "90 minuten"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstvelden zijn optioneel. De informatie die u in dit formulier verstrekt zal alleen verschijnen op in de toekomst uitgegeven facturen en zal geen invloed hebben op bestaande facturen."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Tekstvelden zijn optioneel. De informatie die u in dit formulier opgeeft, zal alleen de door u geselecteerde factuur wijzigen en niet uw toekomstige factuurgegevens."
+      ]
+    },
     "Edit event button tooltip": {
       "Edit event": [
         "Afspraak bewerken"
@@ -3441,6 +3449,9 @@
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Factuuradres bewerken is op dit moment niet beschikbaar. Probeer het later opnieuw."
+      ],
       "Email address disabled": [
         "E-mailadres uitgeschakeld"
       ],
@@ -3482,6 +3493,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Fout bij het laden van OAuth modal."
+      ],
+      "Failed to open to contact": [
+        "Contact maken mislukt"
       ],
       "First name is too long": [
         "Voornaam is te lang"
@@ -3670,6 +3684,9 @@
       "Port is required": [
         "Poort is vereist"
       ],
+      "Postal code is required": [
+        "Postcode is vereist"
+      ],
       "Primary address key is not decrypted": [
         "Primaire adressleutel is niet ontsleuteld"
       ],
@@ -3836,6 +3853,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Uw Zoom-verbinding is verlopen. Verbind alstublieft opnieuw om door te gaan."
+      ],
+      "ZIP code is required": [
+        "Postcode is vereist"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4832,6 +4852,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } vervalt binnen ${ daysLeft } dag.",
+        "${ planName } vervalt binnen ${ daysLeft } dagen."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } verloopt vandaag."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met toegewijde monitoring van verdachte activiteiten."
@@ -6378,6 +6405,9 @@
       "Colors": [
         "Kleuren"
       ],
+      "Company": [
+        "Bedrijf"
+      ],
       "Company name": [
         "Bedrijfsnaam"
       ],
@@ -6670,6 +6700,9 @@
       "Start date": [
         "Begindatum"
       ],
+      "State": [
+        "Staat"
+      ],
       "Street address": [
         "Adres"
       ],
@@ -6759,6 +6792,9 @@
       ],
       "Your password (trusted contact)": [
         "Uw wachtwoord (vertrouwd contact)"
+      ],
+      "ZIP code": [
+        "Postcode"
       ]
     },
     "Label for contact group color": {
@@ -8822,6 +8858,9 @@
       "Timeout exceeded": [
         "Time-out overschreden"
       ],
+      "VAT number": [
+        "BTW-nummer"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Uw valuta is gewijzigd naar euro (€) omdat SEPA-bankoverschrijvingen alleen betalingen in euro ondersteunen."
       ],
@@ -8874,8 +8913,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "ABN toevoegen"
+      ],
+      "Add Business Number": [
+        "Ondernemingsnummer toevoegen"
+      ],
+      "Add EIN": [
+        "EIN toevoegen"
+      ],
+      "Add VAT number": [
+        "BTW-nummer toevoegen"
+      ],
       "Business Number": [
         "Ondernemingsnummer"
+      ],
+      "Edit ABN": [
+        "ABN bewerken"
+      ],
+      "Edit Business Number": [
+        "Ondernemingsnummer bewerken"
+      ],
+      "Edit EIN": [
+        "EIN bewerken"
+      ],
+      "Edit VAT number": [
+        "Wijzig BTW-nummer"
       ],
       "EIN": [
         "Rijksregisternummer"
@@ -8936,6 +8999,15 @@
       "Add title": [
         "Titel toevoegen"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "Willekeurige stad"
+      ],
+      "Company name": [
+        "Bedrijfsnaam"
+      ],
       "E.g., ": [
         "Bijv., "
       ],
@@ -8965,6 +9037,9 @@
       ],
       "Leave a note for all participants": [
         "Laat een notitie achter voor alle deelnemers"
+      ],
+      "Main street 12": [
+        "Hoofdstraat 12"
       ],
       "Name": [
         "Naam"
@@ -9005,6 +9080,9 @@
       "Select a reason": [
         "Selecteer een reden"
       ],
+      "Select country": [
+        "Selecteer land"
+      ],
       "Select state": [
         "Selecteer provincie"
       ],
@@ -9013,6 +9091,12 @@
       ],
       "Start typing an email address": [
         "Voer een e-mailadres in"
+      ],
+      "Thomas": [
+        "Thomas"
+      ],
+      "VAT number": [
+        "BTW-nummer"
       ],
       "Your organization name": [
         "Uw organisatienaam"
@@ -10314,6 +10398,9 @@
       "Answer sent and event deleted": [
         "Antwoord verzonden en afspraak verwijderd"
       ],
+      "Billing details updated": [
+        "Factuurgegevens bijgewerkt"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Agenda toegevoegd. Het kan een paar minuten duren om te synchroniseren."
       ],
@@ -10839,6 +10926,9 @@
       ],
       "Drop to upload": [
         "Sleep hier om te uploaden"
+      ],
+      "Edit billing address": [
+        "Factuuradres bewerken"
       ],
       "Edit contact": [
         "Contactpersoon bewerken"
