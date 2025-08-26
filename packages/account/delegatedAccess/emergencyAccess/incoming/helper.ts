@@ -59,6 +59,7 @@ export const getMetaIncomingDelegatedAccess = ({
         hasRequestedAccess,
         canLogin: !isDisabled && canLogin,
         canRequestAccess: !isDisabled && canRequestAccess,
+        canCancelRequestAccess: !isDisabled && hasRequestedAccess,
         canDelete: true,
     };
 };

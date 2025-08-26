@@ -4,6 +4,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import createListeners, { type Listeners } from '@proton/shared/lib/helpers/listeners';
 
 import { AccessIncomingEmergencyContactAction } from './AccessIncomingEmergencyContactAction';
+import { CancelRequestAccessIncomingEmergencyContactAction } from './CancelRequestAccessIncomingEmergencyContactAction';
 import { DeleteIncomingEmergencyContactAction } from './DeleteIncomingEmergencyContactAction';
 import { RequestAccessIncomingEmergencyContactAction } from './RequestAccessIncomingEmergencyContactAction';
 import type { ActionListener, ActionPayload } from './interface';
@@ -40,6 +41,7 @@ export const IncomingControllerProvider = ({ app, children }: { app: APP_NAMES; 
         <IncomingControllerContext.Provider value={incomingController}>
             <DeleteIncomingEmergencyContactAction />
             <RequestAccessIncomingEmergencyContactAction />
+            <CancelRequestAccessIncomingEmergencyContactAction />
             <AccessIncomingEmergencyContactAction app={app} />
             {children}
         </IncomingControllerContext.Provider>
