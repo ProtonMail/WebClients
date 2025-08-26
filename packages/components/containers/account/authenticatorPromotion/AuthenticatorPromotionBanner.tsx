@@ -9,23 +9,34 @@ import { AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';
 import { PromotionBanner } from '../../banner/PromotionBanner';
 import AuthenticatorPromotionModal from './AuthenticatorPromotionModal';
 import authenticatorLogo from './assets/authenticator-logo.svg';
-import { sendAuthenticatorPromoBannerClick, sendAuthenticatorPromoLoad } from './authenticatorTelemetry';
+import type {
+    AuthenticatorPromoFlowId} from './authenticatorTelemetry';
+import {
+    sendAuthenticatorPromoBannerClick,
+    sendAuthenticatorPromoLoad,
+} from './authenticatorTelemetry';
 
-const AuthenticatorPromotionBanner = ({ className }: { className?: string }) => {
+const AuthenticatorPromotionBanner = ({
+    flowId,
+    className,
+}: {
+    flowId: AuthenticatorPromoFlowId;
+    className?: string;
+}) => {
     const [authenticatorModal, setAuthenticatorModal, renderAuthenticatorModal] = useModalState();
 
     useEffect(() => {
-        sendAuthenticatorPromoLoad();
+        sendAuthenticatorPromoLoad({ flowId });
     }, []);
 
     const handleBannerCtaClick = () => {
-        sendAuthenticatorPromoBannerClick();
+        sendAuthenticatorPromoBannerClick({ flowId });
         setAuthenticatorModal(true);
     };
 
     return (
         <>
-            {renderAuthenticatorModal && <AuthenticatorPromotionModal {...authenticatorModal} />}
+            {renderAuthenticatorModal && <AuthenticatorPromotionModal flowId={flowId} {...authenticatorModal} />}
             <PromotionBanner
                 rounded="xl"
                 mode="banner"

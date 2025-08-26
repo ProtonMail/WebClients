@@ -1,28 +1,39 @@
 import { telemetry } from '@proton/shared/lib/telemetry';
 
-export const sendAuthenticatorPromoLoad = () => {
+export type AuthenticatorPromoFlowId = '2fa-settings';
+
+export const sendAuthenticatorPromoLoad = ({ flowId }: { flowId: AuthenticatorPromoFlowId }) => {
     telemetry.sendCustomEvent(
         /**
          * Event type version should be updated when the data structure changes
          */
-        'authenticator_promo_2fa_page_load_v1'
+        'authenticator_promo_load_v1',
+        {
+            flowId,
+        }
     );
 };
 
-export const sendAuthenticatorPromoBannerClick = () => {
+export const sendAuthenticatorPromoBannerClick = ({ flowId }: { flowId: AuthenticatorPromoFlowId }) => {
     telemetry.sendCustomEvent(
         /**
          * Event type version should be updated when the data structure changes
          */
-        'authenticator_promo_banner_2fa_page_click_v1'
+        'authenticator_promo_banner_click_v1',
+        {
+            flowId,
+        }
     );
 };
 
-export const sendAuthenticatorPromoModalClick = () => {
+export const sendAuthenticatorPromoModalClick = ({ flowId }: { flowId: AuthenticatorPromoFlowId }) => {
     telemetry.sendCustomEvent(
         /**
          * Event type version should be updated when the data structure changes
          */
-        'authenticator_promo_modal_2fa_page_click_v1'
+        'authenticator_promo_modal_click_v1',
+        {
+            flowId,
+        }
     );
 };
