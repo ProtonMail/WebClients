@@ -174,7 +174,7 @@ const OutgoingTable = ({
     const labels = headerCells.map((column) => column.title);
 
     return (
-        <Table hasActions responsive="cards">
+        <Table hasActions responsive="cards" data-testid="outgoing-emergency-access-table">
             <TableHeader>
                 <TableRow>
                     {headerCells.map(({ title, info, className }) => (
