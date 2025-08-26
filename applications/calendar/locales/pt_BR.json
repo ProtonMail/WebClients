@@ -138,6 +138,9 @@
       "Choose a file or drag it here": [
         "Escolha um arquivo ou arraste-o aqui"
       ],
+      "Claim this address": [
+        "Confirmar este endereço"
+      ],
       "Clear": [
         "Limpar"
       ],
@@ -3216,6 +3219,14 @@
         "90 minutos"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Os campos de texto são opcionais. As informações que você fornecer neste formulário aparecerão somente em faturas emitidas no futuro e não afetarão as faturas existentes."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Os campos de texto são opcionais. As informações fornecidas neste formulário alterarão apenas a fatura selecionada, e não os detalhes das faturas futuras."
+      ]
+    },
     "Edit event button tooltip": {
       "Edit event": [
         "Editar evento"
@@ -3435,6 +3446,9 @@
       "Domain not available, try again later": [
         "Domínio indisponível. Tente novamente mais tarde."
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "A edição do endereço de cobrança não está disponível no momento. Tente novamente mais tarde."
+      ],
       "Email address disabled": [
         "Endereço de e-mail desativado"
       ],
@@ -3476,6 +3490,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Falha ao carregar o modal OAuth."
+      ],
+      "Failed to open to contact": [
+        "Não foi possível abrir o contato."
       ],
       "First name is too long": [
         "Primeiro nome é muito longo"
@@ -3664,6 +3681,9 @@
       "Port is required": [
         "Porta é necessária"
       ],
+      "Postal code is required": [
+        "Código postal é obrigatório"
+      ],
       "Primary address key is not decrypted": [
         "A chave do endereço principal não está descriptografada"
       ],
@@ -3830,6 +3850,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Sua conexão do Zoom expirou. Reconecte-se para continuar."
+      ],
+      "ZIP code is required": [
+        "O CEP é obrigatório."
       ]
     },
     "Error accepting calendar invitation": {
@@ -4823,6 +4846,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } expira em ${ daysLeft } dia.",
+        "${ planName } expira em ${ daysLeft } dias."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } expira hoje."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "O ${ PROTON_SENTINEL_NAME } protege sua conta com monitoramento dedicado de atividades suspeitas."
@@ -6366,6 +6396,9 @@
       "Colors": [
         "Cores"
       ],
+      "Company": [
+        "Empresa"
+      ],
       "Company name": [
         "Nome da empresa"
       ],
@@ -6658,6 +6691,9 @@
       "Start date": [
         "Data de início"
       ],
+      "State": [
+        "Estado"
+      ],
       "Street address": [
         "Endereço"
       ],
@@ -6747,6 +6783,9 @@
       ],
       "Your password (trusted contact)": [
         "Sua senha (contato de confiança)"
+      ],
+      "ZIP code": [
+        "CEP"
       ]
     },
     "Label for contact group color": {
@@ -8872,6 +8911,12 @@
       "Business Number": [
         "Número comercial"
       ],
+      "Edit ABN": [
+        "Editar ABN"
+      ],
+      "Edit EIN": [
+        "Editar EIN"
+      ],
       "EIN": [
         "Número de identificação tributária (EIN)"
       ],
@@ -8931,6 +8976,15 @@
       "Add title": [
         "Adicionar título"
       ],
+      "Anderson": [
+        "Braga"
+      ],
+      "Anytown": [
+        "Nova Esperança"
+      ],
+      "Company name": [
+        "Nome da empresa"
+      ],
       "E.g., ": [
         "Ex., "
       ],
@@ -8960,6 +9014,9 @@
       ],
       "Leave a note for all participants": [
         "Deixe uma nota para todos os participantes"
+      ],
+      "Main street 12": [
+        "Rua Principal, 12"
       ],
       "Name": [
         "Nome"
@@ -9008,6 +9065,12 @@
       ],
       "Start typing an email address": [
         "Comece a digitar um endereço de e-mail"
+      ],
+      "Thomas": [
+        "Andrea"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ],
       "Your organization name": [
         "Seu nome da organização"
@@ -10309,6 +10372,9 @@
       "Answer sent and event deleted": [
         "Resposta enviada e evento excluído"
       ],
+      "Billing details updated": [
+        "Os detalhes de faturamento forem atualizados"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendário adicionado. Pode levar alguns minutos para sincronizar."
       ],
@@ -10828,6 +10894,9 @@
       ],
       "Drop to upload": [
         "Solte para enviar"
+      ],
+      "Edit billing address": [
+        "Editar o endereço de cobrança"
       ],
       "Edit contact": [
         "Editar contato"
