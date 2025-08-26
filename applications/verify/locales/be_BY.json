@@ -66,10 +66,10 @@
         "Выкарыстоўваць код аднаўлення"
       ],
       "Verify": [
-        "Праверка"
+        "Спраўдзіць"
       ],
       "Verify account": [
-        "Праверыць уліковы запіс"
+        "Спраўдзіць уліковы запіс"
       ],
       "View invoice": [
         "Паглядзець рахунак"
@@ -1038,7 +1038,7 @@
     },
     "Info": {
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Нумар тэлефона можа быць выкарыстаны для праверкі аднаго ўліковага запісу ${ BRAND_NAME }"
+        "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна ўказаны адрас ${ strong }."
@@ -1062,7 +1062,7 @@
         "Увядзіце код з вашай праграмы аўтэнтыфікацыі"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Увядзіце праверачны код, які быў адпраўлены на ${ destinationText }."
+        "Увядзіце код спраўджання, які быў адпраўлены на ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Увядзіце праверачны код. Лічба ${ digit }."
@@ -1163,7 +1163,7 @@
         "Паказаць пароль"
       ],
       "Verification code": [
-        "Праверачны код"
+        "Код спраўджання"
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
@@ -1575,7 +1575,7 @@
         "Код адпраўлены на ${ methodTo }"
       ],
       "Verification successful": [
-        "Паспяхова праверана"
+        "Праверка паспяхова выканана"
       ]
     },
     "Title": {

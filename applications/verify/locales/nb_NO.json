@@ -1058,6 +1058,9 @@
       "Enter your own password (as organization admin).": [
         "Skriv inn ditt eget passord (som organisasjonsadministrator)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Skriv inn ditt eget passord (som betrodd kontakt)."
+      ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "For ytterligere informasjon og for å fjerne restriksjoner, logg inn på ${ mailLink }."
       ],
@@ -1152,6 +1155,9 @@
       ],
       "Your password (admin)": [
         "Ditt passord (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Passordet ditt (betrodd kontakt)"
       ]
     },
     "Link": {
@@ -1216,7 +1222,7 @@
       ],
       "${ options }-day file version history": [
         "${ options }-dag filversjonshistorikk",
-        "${ options }-dager filversjonshistorikk"
+        "${ options }-dagers filversjonshistorikk"
       ],
       "${ size } attachment size": [
         "${ size } vedleggsstørrelse"
@@ -1497,7 +1503,7 @@
     },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premium funksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+        "Alle premiumfunksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "saml: Error": {
