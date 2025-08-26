@@ -2848,6 +2848,9 @@
       "Domain not available, try again later": [
         "Verkkotunnusta ei tavoiteta. Yritä myöhemmin uudelleen"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Laskutusosoitteen muokkaus ei ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen."
+      ],
       "Email address is required": [
         "Sähköpostiosoite vaaditaan"
       ],
@@ -3044,6 +3047,9 @@
       "Port is required": [
         "Portti vaaditaan"
       ],
+      "Postal code is required": [
+        "Postinumero vaaditaan"
+      ],
       "Primary address key is not decrypted": [
         "Ensisijaisen osoitteen avaimen salausta ei ole purettu"
       ],
@@ -3228,6 +3234,9 @@
       ],
       "Your import will not be processed.": [
         "Tuontiasi ei käsitellä."
+      ],
+      "ZIP code is required": [
+        "Postinumero vaaditaan"
       ]
     },
     "Error importing calendar": {
@@ -4114,6 +4123,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } erääntyy ${ daysLeft } päivän kuluttua.",
+        "${ planName } erääntyy ${ daysLeft } päivän kuluttua."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } erääntyy tänään."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } suojelee tiliäsi valvomalla epäilyttävää toimintaa."
@@ -5720,6 +5736,9 @@
       "Colors": [
         "Värit"
       ],
+      "Company": [
+        "Yritys"
+      ],
       "Company name": [
         "Yrityksen nimi"
       ],
@@ -6014,6 +6033,9 @@
       "Start date": [
         "Aloituspäivä"
       ],
+      "State": [
+        "Osavaltio"
+      ],
       "Stop sharing": [
         "Lopeta jakaminen"
       ],
@@ -6094,6 +6116,9 @@
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
+      ],
+      "ZIP code": [
+        "Postinumero"
       ]
     },
     "Label for contact group color": {
@@ -8094,8 +8119,17 @@
       "A way to contact you": [
         "Tapa, jolla tavoitamme sinut"
       ],
+      "Anderson": [
+        "Andersson"
+      ],
+      "Anytown": [
+        "Jokukaupunki"
+      ],
       "Choose password": [
         "Valitse salasana"
+      ],
+      "Company name": [
+        "Yrityksen nimi"
       ],
       "E.g., ": [
         "Esim. "
@@ -8123,6 +8157,9 @@
       ],
       "Last name": [
         "Sukunimi"
+      ],
+      "Main street 12": [
+        "Pääkatu 12"
       ],
       "Message": [
         "Viesti"
@@ -8171,6 +8208,12 @@
       ],
       "Start typing an email address": [
         "Aloita sähköpostiosoitteen kirjoitus"
+      ],
+      "Thomas": [
+        "Tuomas"
+      ],
+      "VAT number": [
+        "ALV-numero"
       ],
       "Your organization name": [
         "Organisaatiosi nimi"
@@ -9129,6 +9172,9 @@
       "Alias saved and copied": [
         "Alias tallennettiin ja kopioitiin"
       ],
+      "Billing details updated": [
+        "Laskutustiedot päivitetty"
+      ],
       "Canceling import": [
         "Perutaan tuontia"
       ],
@@ -9560,6 +9606,9 @@
       ],
       "Duplicate folder found": [
         "Löydettiin kansion kaksoiskappale"
+      ],
+      "Edit billing address": [
+        "Muokkaa laskutusosoitetta"
       ],
       "Edit contact": [
         "Muokkaa yhteystietoa"
