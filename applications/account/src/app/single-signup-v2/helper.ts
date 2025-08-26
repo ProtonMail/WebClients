@@ -60,7 +60,7 @@ import {
 
 import { getSubscriptionPrices } from '../signup/helper';
 import type { SessionData, SignupCacheResult, SubscriptionData } from '../signup/interfaces';
-import type { PlanCard } from './PlanCardSelector';
+import { type PlanCard, isRegularPlanCard } from './PlanCardSelector';
 import type { Options, PlanParameters, SignupConfiguration, SignupParameters2, Upsell } from './interface';
 import { UpsellTypes } from './interface';
 
@@ -425,7 +425,6 @@ const hasAccess = ({
                 PLANS.FAMILY,
                 PLANS.BUNDLE_PRO,
                 PLANS.BUNDLE_PRO_2024,
-                PLANS.ENTERPRISE,
             ].includes(currentPlan?.Name as any);
         }
         return hasPaidPass(user);
@@ -813,9 +812,8 @@ export const getPlanCardSubscriptionData = async ({
                     const currency = plansMap[plansToCheck[0]]?.Currency ?? DEFAULT_CURRENCY;
 
                     // If there's no coupon we can optimistically calculate the price.
-                    // Also always exclude Enterprise (price never shown).
                     // In addition, if the selected plan doesn't exist, then we don't do the live check call.
-                    if (!coupon || planIDs[PLANS.ENTERPRISE] || !plansExist) {
+                    if (!coupon || !plansExist) {
                         return getOptimisticPlanCardSubscriptionData({
                             billingAddress,
                             planIDs,
@@ -929,7 +927,9 @@ export const getSubscriptionDataCycleMapping = async ({
 }) => {
     const [b2c, b2b] = await Promise.all(
         ([Audience.B2C, Audience.B2B] as const).map((audienceToFetch) => {
-            const planIDs = signupConfiguration.planCards[audienceToFetch].map(({ plan }) => ({ [plan]: 1 }));
+            const planIDs = signupConfiguration.planCards[audienceToFetch]
+                .filter(isRegularPlanCard)
+                .map(({ plan }) => ({ [plan]: 1 }));
             return getPlanCardSubscriptionData({
                 planIDs,
                 plansMap,
