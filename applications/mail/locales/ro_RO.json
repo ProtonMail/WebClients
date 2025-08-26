@@ -36,6 +36,11 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
+      "${ numberOfAddresses } address": [
+        "Adrese: ${ numberOfAddresses }",
+        "Adrese: ${ numberOfAddresses }",
+        "Adrese: ${ numberOfAddresses }"
+      ],
       "A to Z": [
         "De la A la Z"
       ],
@@ -214,6 +219,15 @@
       ],
       "Choose a file or drag it here": [
         "Alegeți un fișier sau trageți-l aici"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Revendicați adresa ${ BRAND_NAME }"
+      ],
+      "Claim this address": [
+        "Revendicați această adresă"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Revendicați adresa gratuită ${ BRAND_NAME }"
       ],
       "Clear": [
         "Eliminare"
@@ -593,6 +607,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Luați ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Obțineți o adresă gratuită ${ BRAND_NAME }"
       ],
       "Get in touch": [
         "Contactați-ne"
@@ -1438,6 +1455,11 @@
       ],
       "Trust": [
         "Aprobare"
+      ],
+      "Trust key": [
+        "Cheie de încredere",
+        "Cheie de încredere",
+        "Chei de încredere"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -4053,6 +4075,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplificați sincronizarea și programarea cu calendare partajate."
       ],
+      "This view shows messages sent to the following addresses:": [
+        "Această vizualizare afișează mesaje trimise către următoarele adrese:"
+      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Pentru a continua să utilizați asistentul de scriere, adăugați-l la abonament."
       ],
@@ -4219,6 +4244,14 @@
       ],
       "Priority support": [
         "Asistență prioritară"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Câmpurile text sunt opționale. Informațiile furnizate în acest formular vor apărea doar pe facturile emise în viitor și nu vor afecta facturile deja emise."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Câmpurile de text sunt opționale. Informațiile pe care le furnizați în acest formular vor modifica doar factura pe care ați selectat-o ​​și nu detaliile viitoarei facturi."
       ]
     },
     "Email body for comment (comment part)": {
@@ -4488,6 +4521,9 @@
       "Due to an error, text generation couldn't be canceled": [
         "Din cauza unei erori, generarea textului nu a putut fi anulată."
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Editarea adresei de facturare nu este disponibilă momentan. Reîncercați mai târziu."
+      ],
       "Email address disabled": [
         "Adresă de e-mail dezactivată"
       ],
@@ -4526,6 +4562,9 @@
       ],
       "Failed to load the STL preview": [
         "Nu s-a putut încărca examinarea STL."
+      ],
+      "Failed to open to contact": [
+        "Nu s-a putut deschide contactul."
       ],
       "Filter with this name already exists": [
         "Filtrul cu acest nume există deja."
@@ -4726,6 +4765,9 @@
       ],
       "Port is required": [
         "Portul este obligatoriu"
+      ],
+      "Postal code is required": [
+        "Codul poștal este obligatoriu."
       ],
       "Primary address key is not decrypted": [
         "Cheia primară a adresei nu este decriptată."
@@ -4965,6 +5007,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Vă rugăm să limitați căutarea și să reîncercați."
+      ],
+      "ZIP code is required": [
+        "Codul poștal este obligatoriu."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5694,6 +5739,9 @@
       "Checklist complete": [
         "Listă completată"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Revendicați adresa ${ BRAND_NAME }"
+      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Executați sarcinile din această listă în termen de ${ daysCount } pentru a vă dubla spațiul de stocare gratuit."
       ],
@@ -6259,6 +6307,12 @@
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "Managerul de parole ${ BRAND_NAME } vă permite să creați, să stocați și să autocompletați parolele, astfel încât nu va mai trebui să le resetați."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } necesită o adresă ${ BRAND_NAME } pentru sincronizarea și criptarea securizată a evenimentelor. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } necesită o adresă ${ BRAND_NAME } pentru sincronizarea și criptarea securizată a evenimentelor. Revendicați-vă acum adresa gratuită ${ MAIL_APP_NAME }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "Calendare noi: ${ calendarsToBeCreatedCount }",
         "Calendare noi: ${ calendarsToBeCreatedCount }",
@@ -6418,6 +6472,14 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }.",
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }.",
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } expiră astăzi."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } vă protejează contul prin monitorizarea activității suspicioase."
@@ -7077,6 +7139,9 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Bucurați-vă de o experiență de e-mail mai rapidă și fără distrageri cu aplicația pentru desktop."
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Asigurați o comunicare complet privată și criptată. Revendicați-vă acum adresa gratuită de e-mail ${ BRAND_NAME }."
+      ],
       "Enter the code from your authenticator app": [
         "Introduceți codul din aplicația Authenticator."
       ],
@@ -7290,9 +7355,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -9174,6 +9237,9 @@
       "Colors": [
         "Culori"
       ],
+      "Company": [
+        "Compania"
+      ],
       "Company name": [
         "Nume companie"
       ],
@@ -9573,6 +9639,9 @@
       "Start date": [
         "Dată început"
       ],
+      "State": [
+        "Județ/Stat"
+      ],
       "Statement": [
         "Declaraţie"
       ],
@@ -9695,6 +9764,9 @@
       ],
       "Your password (trusted contact)": [
         "Parola dvs. (contact aprobat)"
+      ],
+      "ZIP code": [
+        "Cod poștal"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10067,6 +10139,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Detalii"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Pentru a continua să utilizați ${ BRAND_NAME }, asigurați-vă că funcțiile premium nu mai sunt utilizate sau să modernizați-vă planul."
       ],
       "upgrade for more storage": [
         "treceți la un plan cu plată pentru mai mult spațiu"
@@ -11962,6 +12037,9 @@
       "Timeout exceeded": [
         "Limită de timp depășită"
       ],
+      "VAT number": [
+        "Valoare TVA"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Moneda a fost schimbată în euro (€) deoarece transferurile bancare SEPA acceptă doar plăți în euro."
       ],
@@ -12014,8 +12092,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Adăugare ABN"
+      ],
+      "Add Business Number": [
+        "Adăugare cod unic de înregistrare"
+      ],
+      "Add EIN": [
+        "Adăugare EIN"
+      ],
+      "Add VAT number": [
+        "Adăugare TVA"
+      ],
       "Business Number": [
         "Cod unic de înregistrare"
+      ],
+      "Edit ABN": [
+        "Editare ABN"
+      ],
+      "Edit Business Number": [
+        "Editare cod unic de înregistrare"
+      ],
+      "Edit EIN": [
+        "Editare EIN"
+      ],
+      "Edit VAT number": [
+        "Editare TVA"
       ],
       "EIN": [
         "EIN"
@@ -12057,6 +12159,15 @@
     "Placeholder": {
       "A way to contact you": [
         "Modalitate de contactare"
+      ],
+      "Anderson": [
+        "Andrei"
+      ],
+      "Anytown": [
+        "București"
+      ],
+      "Company name": [
+        "Nume companie"
       ],
       "Describe what to change": [
         "Descrieți ce să se schimbe"
@@ -12105,6 +12216,9 @@
       ],
       "Link": [
         "Legătură web"
+      ],
+      "Main street 12": [
+        "Strada Principală nr. 12"
       ],
       "Name": [
         "Nume"
@@ -12157,6 +12271,9 @@
       "Select a reason": [
         "Selectați un motiv"
       ],
+      "Select country": [
+        "Selectare țară"
+      ],
       "Select state": [
         "Selectare țară"
       ],
@@ -12193,11 +12310,17 @@
       "Text": [
         "text"
       ],
+      "Thomas": [
+        "Toma"
+      ],
       "To": [
         "Către"
       ],
       "Type text or keyword": [
         "Scrieți un text sau cuvânt cheie"
+      ],
+      "VAT number": [
+        "Valoare TVA"
       ],
       "Your organization name": [
         "Numele organizației"
@@ -13296,9 +13419,9 @@
     },
     "Subscription attribute": {
       "${ n } free VPN connection per user": [
-        "${ n } conexiune VPN gratuită per utilizator",
-        "${ n } conexiuni VPN gratuite per utilizator",
-        "${ n } de conexiuni VPN gratuite per utilizator"
+        "Conexiuni VPN gratuite per utilizator: ${ n }",
+        "Conexiuni VPN gratuite per utilizator: ${ n }",
+        "Conexiuni VPN gratuite per utilizator: ${ n }"
       ],
       "${ n } high-speed VPN connection": [
         "O conexiune VPN de mare viteză",
@@ -13834,6 +13957,9 @@
       ],
       "Alias saved and copied": [
         "Alias salvat și copiat"
+      ],
+      "Billing details updated": [
+        "Detaliile de facturare s-au actualizat"
       ],
       "Canceling import": [
         "Se anulează importarea"
@@ -14409,6 +14535,9 @@
       "Change password": [
         "Schimbare parolă"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Revendicați-vă adresa ${ MAIL_APP_NAME }"
+      ],
       "Clearing data": [
         "Ştergere date"
       ],
@@ -14566,6 +14695,9 @@
       "Download the app": [
         "Descărcați aplicația"
       ],
+      "Edit billing address": [
+        "Editare adresă de facturare"
+      ],
       "Edit contact": [
         "Editare contact"
       ],
@@ -14637,6 +14769,9 @@
       ],
       "Forward": [
         "Redirecționare"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Obțineți acces complet la ${ CALENDAR_APP_NAME }"
       ],
       "Get more from your VPN": [
         "Obțineți mai mult de la VPN"
@@ -15216,6 +15351,9 @@
       ],
       "Your account is protected": [
         "Contul este protejat"
+      ],
+      "Your addresses": [
+        "Adresele mele"
       ],
       "Your changes are not synced yet": [
         "Modificările nu sunt încă sincronizate"

@@ -1176,6 +1176,10 @@
       "Trust": [
         "भरोसा करें"
       ],
+      "Trust key": [
+        "ट्रस्ट की",
+        "ट्रस्ट कीज़"
+      ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
       ],
@@ -3372,6 +3376,14 @@
         "प्राथमिक सहायता"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "टेक्स्ट फील्ड वैकल्पिक हैं। इस फॉर्म में प्रदान की गई जानकारी केवल भविष्य में जारी की जाने वाली इनवॉइस में दिखाई देगी और मौजूदा इनवॉइस को प्रभावित नहीं करेगी।"
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "टेक्स्ट फील्ड वैकल्पिक हैं। इस फॉर्म में दी गई जानकारी केवल आपके द्वारा चयनित इनवॉइस को बदलेगी और आपके भविष्य के इनवॉइस विवरण को प्रभावित नहीं करेगी।"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "विवरण:\n${ eventDescription }"
@@ -3559,6 +3571,9 @@
       ],
       "Draft could not be saved. Try again.": [
         "ड्राफ्ट को सहेजा नहीं जा सका। पुनः प्रयास करें।"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "वर्तमान में बिलिंग पता संपादित करना उपलब्ध नहीं है। कृपया बाद में पुनः प्रयास करें।"
       ],
       "Email address disabled": [
         "ईमेल पता अक्षम किया गया"
@@ -3918,6 +3933,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "आपकी खोज का मिलान बहुत अधिक परिणामों से हुआ. कृपया अपनी खोज सीमित करें और पुन: प्रयास करें।"
+      ],
+      "ZIP code is required": [
+        "ज़िप कोड आवश्यक है"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5056,6 +5074,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } को कम से कम 1 विशेष सर्वर ${ serverPricePerMonth } की आवश्यकता है"
       ],
+      "${ planName } expires today.": [
+        "${ planName } आज समाप्त हो रहा है।"
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } संदिग्ध गतिविधि की समर्पित निगरानी के साथ आपके खाते की रक्षा करता है।"
       ],
@@ -5617,6 +5638,9 @@
       ],
       "Inherited from parent folder": [
         "मूल फ़ोल्डर से इनहेरिट की गई"
+      ],
+      "Insert image": [
+        "तस्वीर डालें"
       ],
       "Insert link": [
         "लिंक डालें"
@@ -6983,6 +7007,9 @@
       "Colors": [
         "रंग"
       ],
+      "Company": [
+        "कंपनी"
+      ],
       "Composer": [
         "रचना जगह"
       ],
@@ -7304,6 +7331,9 @@
       "Start date": [
         "आरंभ करने की तिथि"
       ],
+      "State": [
+        "राज्य"
+      ],
       "Statement": [
         "बयान"
       ],
@@ -7396,6 +7426,9 @@
       ],
       "Your password (admin)": [
         "आपका पासवर्ड (व्यवस्थापक)"
+      ],
+      "ZIP code": [
+        "ज़िप कोड"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8970,6 +9003,15 @@
       "A way to contact you": [
         "आपसे संपर्क करने का एक तरीका"
       ],
+      "Anderson": [
+        "उदा. विकास"
+      ],
+      "Anytown": [
+        "कोई भी शहर"
+      ],
+      "Company name": [
+        "कंपनी का नाम"
+      ],
       "E.g., ": [
         "जैसे, "
       ],
@@ -9008,6 +9050,9 @@
       ],
       "Link": [
         "लिंक"
+      ],
+      "Main street 12": [
+        "मुख्य सड़क 12"
       ],
       "Name": [
         "नाम"
@@ -9066,11 +9111,17 @@
       "Text": [
         "पाठ"
       ],
+      "Thomas": [
+        "उदा. अर्जुन"
+      ],
       "To": [
         "को"
       ],
       "Type text or keyword": [
         "टेक्स्ट या कीवर्ड टाइप करें"
+      ],
+      "VAT number": [
+        "वैट नंबर"
       ],
       "ZIP code": [
         "ज़िप कोड"
@@ -10132,6 +10183,9 @@
       "Alias copied to clipboard": [
         "नकली-नाम क्लिपबोर्ड पर कॉपी किया गया"
       ],
+      "Billing details updated": [
+        "बिलिंग विवरण अपडेट हुआ"
+      ],
       "Canceling import": [
         "आयात रद्द कर रहे"
       ],
@@ -10705,6 +10759,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "${ downgradedPlanName } पे डाउनग्रेड करें?"
+      ],
+      "Edit billing address": [
+        "बिलिंग पता संपादित करें"
       ],
       "Edit contact": [
         "संपादित संपर्क"

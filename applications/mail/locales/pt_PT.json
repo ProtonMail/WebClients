@@ -1435,9 +1435,6 @@
       "Trust": [
         "Confiar"
       ],
-      "Trust key": [
-        "Confiar na chave"
-      ],
       "Trust public key": [
         "Confiar na chave pública"
       ],
@@ -4158,6 +4155,14 @@
         "Apoio ao cliente prioritário"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Os campos de texto são opcionais. As informações fornecidas neste formulário só aparecerão nas faturas emitidas no futuro e não afetarão as faturas existentes."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Os campos de texto são opcionais. As informações fornecidas neste formulário só irão alterar a fatura que selecionou e não os detalhes da futura fatura."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "NOTA:\n${ eventComment }"
@@ -4413,6 +4418,9 @@
       "Due to an error, text generation couldn't be canceled": [
         "Devido a um erro, a geração de texto não pôde ser cancelada"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "A edição do endereço de faturação não está disponível no momento. Tente novamente mais tarde."
+      ],
       "Email address disabled": [
         "Endereço de e-mail desativado"
       ],
@@ -4648,6 +4656,9 @@
       "Port is required": [
         "A porta é obrigatória."
       ],
+      "Postal code is required": [
+        "O código postal é obrigatório"
+      ],
       "Primary address key is not decrypted": [
         "A chave de endereço principal não está desencriptada."
       ],
@@ -4882,6 +4893,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa obteve muitas correspondências. Limite a pesquisa e tente novamente."
+      ],
+      "ZIP code is required": [
+        "O código postal é necessário."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6290,6 +6304,13 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer no mínimo 1 servidor dedicado ${ serverPricePerMonth }"
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "O ${ planName } expira em ${ daysLeft } dia.",
+        "O ${ planName } expira em ${ daysLeft } dias."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } expira hoje."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "O ${ PROTON_SENTINEL_NAME } protege a sua conta com monitorização dedicada de atividades suspeitas."
       ],
@@ -7122,8 +7143,7 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir uma imagem"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -8964,6 +8984,9 @@
       "Colors": [
         "Cores"
       ],
+      "Company": [
+        "Empresa"
+      ],
       "Company name": [
         "Nome da empresa"
       ],
@@ -9363,6 +9386,9 @@
       "Start date": [
         "Data inicial"
       ],
+      "State": [
+        "Estado"
+      ],
       "Statement": [
         "Declaração"
       ],
@@ -9482,6 +9508,9 @@
       ],
       "Your password (admin)": [
         "A sua palavra-passe (admin)"
+      ],
+      "ZIP code": [
+        "Código postal"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11784,6 +11813,15 @@
       "A way to contact you": [
         "Uma forma de o contactar"
       ],
+      "Anderson": [
+        "Ferreira"
+      ],
+      "Anytown": [
+        "Porto Verde"
+      ],
+      "Company name": [
+        "Nome da empresa"
+      ],
       "Describe what to change": [
         "Descreva o que deve ser alterado"
       ],
@@ -11831,6 +11869,9 @@
       ],
       "Link": [
         "Ligação"
+      ],
+      "Main street 12": [
+        "Rua principal, 12"
       ],
       "Name": [
         "Nome"
@@ -11919,11 +11960,17 @@
       "Text": [
         "Texto"
       ],
+      "Thomas": [
+        "Andrea"
+      ],
       "To": [
         "Para"
       ],
       "Type text or keyword": [
         "Introduza o texto ou palavra-chave"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ],
       "Your organization name": [
         "O nome da sua organização"
@@ -13473,6 +13520,9 @@
       "Alias saved and copied": [
         "Alias guardado e copiado"
       ],
+      "Billing details updated": [
+        "Os detalhes de faturação forem atualizados."
+      ],
       "Canceling import": [
         "A cancelar importação"
       ],
@@ -14171,6 +14221,9 @@
       ],
       "Download the app": [
         "Transfira a aplicação"
+      ],
+      "Edit billing address": [
+        "Editar o endereço da fatura"
       ],
       "Edit contact": [
         "Editar contacto"

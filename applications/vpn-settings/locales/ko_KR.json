@@ -150,6 +150,9 @@
       "Choose my own password": [
         "나만의 비밀번호 선택"
       ],
+      "Claim this address": [
+        "주소 얻기"
+      ],
       "Close": [
         "닫기"
       ],
@@ -384,6 +387,9 @@
       "Explore ${ target }": [
         "${ target } 알아보기"
       ],
+      "Explore business plans": [
+        "비즈니스 요금제 살펴보기"
+      ],
       "Explore group plans": [
         "그룹 플랜 알아보기"
       ],
@@ -417,6 +423,9 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName } 받기"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "무료 ${ BRAND_NAME } 주소 받기"
+      ],
       "Get a new encrypted email address": [
         "새로운 암호화된 이메일 주소를 얻으세요"
       ],
@@ -448,7 +457,7 @@
         "인증코드 전송"
       ],
       "Go to ${ planOrAppName }": [
-        "${ planOrAppName }으로 이동하세요"
+        "${ planOrAppName }(으)로 이동"
       ],
       "Go to label": [
         "라벨로 이동"
@@ -641,9 +650,6 @@
       ],
       "refresh the page": [
         "페이지 새로고침"
-      ],
-      "Reload": [
-        "새로고침"
       ],
       "Remove": [
         "삭제"
@@ -4465,6 +4471,9 @@
       "Ad-blocker and malware protection": [
         "광고 차단기 및 멀웨어 보호"
       ],
+      "All premium ${ BRAND_NAME } services": [
+        "모든 ${ BRAND_NAME } 프리미엄 서비스"
+      ],
       "and more premium features...": [
         "그리고 더 많은 프리미엄 기능들..."
       ],
@@ -4474,11 +4483,17 @@
       "Lightning-fast speeds": [
         "초고속 속도"
       ],
+      "Lightning-fast VPN speeds": [
+        "초고속 VPN"
+      ],
       "NetShield Ad-blocker": [
         "NetShield 광고 차단기"
       ],
       "Secure streaming": [
         "안전한 영상 스트리밍"
+      ],
+      "Stream from Netflix, HBO, and more": [
+        "Netflix, HBO 등에서 스트리밍하세요"
       ]
     },
     "Features: Tooltip": {
@@ -5201,6 +5216,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }의 암호화 기술은 그 누구도 회원님의 비밀번호에 접근할 수 없음을 뜻합니다 - 심지어 우리도요."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME }은(는) 안전한 이벤트 동기화 및 암호화를 위해 ${ BRAND_NAME } 주소가 필요합니다. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount }개 새 달력"
       ],
@@ -5339,8 +5357,17 @@
       "(default)": [
         "(기본값)"
       ],
+      "**Enable automatic backups** for peace of mind": [
+        "**자동 백업을 활성화하여** 안심할 수 있어요"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "${ MAIL_SHORT_APP_NAME } 과 ${ CALENDAR_SHORT_APP_NAME } 를 포함하는 모든 ${ BRAND_NAME_TWO } 서비스를 사용하려면** ${ BRAND_NAME } 주소를 받으세요.**"
+      ],
+      "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
+        "Google Authenticator과 같은 다른 2단계 인증 앱으로부터 **기존 코드를 불러올 수 있어요**"
+      ],
+      "**Sync codes** to all your devices": [
+        "가지고 계신 모든 기기와 **코드를 동기화할 수 있어요**"
       ],
       "+ ${ invisibleCount } More": [
         "외 ${ invisibleCount }명"
@@ -5384,14 +5411,14 @@
       "active": [
         "활성화"
       ],
-      "Activity monitor": [
-        "활동 모니터링"
-      ],
       "Activity Monitor": [
         "활동 모니터링"
       ],
       "add a recovery method": [
         "복구 수단 추가"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "계정에 또 다른 보안 계층을 추가하세요. 로그인할 때마다 2단계 인증으로 본인 확인해야 합니다."
       ],
       "Add domain": [
         "도메인 추가"
@@ -5687,14 +5714,8 @@
       "Did you know?": [
         "알고 계셨나요?"
       ],
-      "Disable detailed events": [
-        "상세 이벤트 비활성화"
-      ],
       "Disabled countries": [
         "비활성화된 국가"
-      ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "${ formattedDateAndTime }에 비활성화됨"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "2단계 인증을 비활성화하면 계정의 보안이 약해집니다. 꼭 필요한 경우에만 진행하세요."
@@ -5759,6 +5780,9 @@
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "CSV 예제를 다운로드하려면, 사용자 세부 정보를 입력한 다음, 완성된 CSV 파일을 업로드하여 사용자를 위한 계정을 만드세요."
       ],
+      "Download the app and import existing codes.": [
+        "앱을 다운로드한 뒤 기존 코드를 불러오세요."
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "당신이 가장 좋아하는 앱을 다운받고 어디서나 보안을 유지하세요."
       ],
@@ -5801,17 +5825,11 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Plus 서버와 기능에 계속 접근하기 위해 자동 갱신을 활성화하세요"
       ],
-      "Enable detailed events": [
-        "보안 상세 이벤트 활성화"
-      ],
       "Enable single sign-on to keep your organization safe": [
         "회원님의 조직을 보호하기 위해 통합 인증을 활성화하세요"
       ],
       "Enabled countries": [
         "활성화된 국가"
-      ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "${ formattedDateAndTime }에 활성화됨"
       ],
       "Enabling auto-deletion…": [
         "자동 삭제 활성화 중…"
@@ -5833,6 +5851,9 @@
       ],
       "Enhance your network security": [
         "네트워크 보안을 향상시키기"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "완전히 개인적이고 암호화된 통신을 보장합니다. 지금 귀하의 무료 ${ BRAND_NAME } 이메일 주소를 확보하세요."
       ],
       "Enter key manually instead": [
         "수동으로 키 입력"
@@ -5872,6 +5893,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "사용자의 비밀번호 입력 (조직 관리자와 같음)"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "사용자 고유의 비밀번호 입력 (신뢰할 수 있는 연락처로서)"
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "복구 이메일 주소를 입력하면 사용자 이름 또는 이메일 주소를 보내드립니다."
@@ -5915,11 +5939,8 @@
       "Gateways": [
         "게이트웨이"
       ],
-      "Gateways monitoring is disabled.": [
-        "게이트웨이 모니터링 비활성화됨."
-      ],
-      "Gateways monitoring is enabled.": [
-        "게이트웨이 모니터링 활성화됨."
+      "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
+        "${ AUTHENTICATOR_APP_NAME }를 회원님의 모든 기기에서 사용하세요."
       ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } 받기"
@@ -6023,9 +6044,6 @@
       "inactive": [
         "비활성화"
       ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "사용자 IP 주소, 위치 및 ISP(인터넷 서비스 제공업체)를 이벤트 로그에 포함"
-      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "${ formattedTaxRate }% ${ taxName } 포함: ${ price }"
       ],
@@ -6073,6 +6091,9 @@
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "서버의 국가를 변경하는데 10일이 소요됩니다. 결정 사항이 옳은지 반드시 확인하십시오."
+      ],
+      "It won't be linked to your ${ BRAND_NAME } Account, so there's **no risk of getting locked out**.": [
+        "${ BRAND_NAME } 계정과 연동되지 않으므로 **계정이 잠길 위험이 없어 안심하고 사용할 수 있어요**."
       ],
       "It's better to have:": [
         "포함되면 더 좋습니다:"
@@ -6176,9 +6197,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "캘린더를 불러오는 중, 새로운 탭에서 일정 플랫폼 Calendly로 리디렉션됩니다."
       ],
-      "Loading detailed events current status.": [
-        "상세한 이벤트의 현재 상태 불러오는 중"
-      ],
       "Loading eduGAIN data...": [
         "EduGAIN 데이터 로드 중..."
       ],
@@ -6211,6 +6229,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 로고"
+      ],
+      "Maybe later": [
+        "나중에"
       ],
       "Medium Priority": [
         "중요도 보통"
@@ -6692,6 +6713,9 @@
       "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
         "그룹 기능은 현재 구독에서 지원하지 않습니다. 최근에 생성된 그룹이 비활성화 되었으며 삭제만 가능합니다."
       ],
+      "The most secure and private two-factor authentication app, that's free and open-source.": [
+        "가장 안전하고 개인화된 무료 오픈소스 2단계 인증 앱."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "구성원이 로그인하고 있을 경우 이름을 확인할 수 있습니다."
       ],
@@ -6938,6 +6962,9 @@
       "Vault deleted": [
         "금고를 삭제했습니다"
       ],
+      "Vault either deleted or requires access permissions": [
+        "삭제되었거나 접근 권한이 필요한 금고입니다"
+      ],
       "Vault shared with email": [
         "이메일로 공유한 금고"
       ],
@@ -7072,6 +7099,9 @@
       ],
       "Why?": [
         "왜 그럴까요?"
+      ],
+      "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
+        "${ AUTHENTICATOR_APP_NAME }로:"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Business 및 Enterprise 요금제에서는 조직을 위한 ${ boldDedicatedServers }를 구매 및 ${ boldGateways } 설정으로 조직의 사용자가 접근을 관리하도록 할 수 있습니다."
@@ -8138,9 +8168,6 @@
       "VAT": [
         "부가세"
       ],
-      "VAT identification number": [
-        "부가가치세(VAT) 식별 번호"
-      ],
       "Verification code": [
         "인증 코드"
       ],
@@ -8183,6 +8210,9 @@
       "Your password (admin)": [
         "사용자의 비밀번호 (관리자)"
       ],
+      "Your password (trusted contact)": [
+        "사용자 비밀번호 (신뢰할 수 있는 연락처)"
+      ],
       "ZIP code": [
         "우편번호"
       ]
@@ -8194,12 +8224,12 @@
     },
     "Label (begin date/advanced search)": {
       "From": [
-        "출금처:"
+        "발신"
       ]
     },
     "Label (end date/advanced search)": {
       "To": [
-        "입금자:"
+        "수신"
       ]
     },
     "Label for adding a new custom domain": {
@@ -8429,6 +8459,9 @@
       "Upgrade your plan": [
         "요금제 업그레이드"
       ],
+      "Vault": [
+        "금고"
+      ],
       "View guide": [
         "가이드 보기"
       ],
@@ -8653,9 +8686,6 @@
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "커스텀 이메일 주소 (예: you@yourcompany.com)을 설정하려면 ${ BRAND_NAME }에 사용자의 지정 도메인을 연결하세요. 마법사가 이 과정을 가이드해 드립니다."
-      ],
-      "View account-related events across your organization.": [
-        "조직 전반 걸친 계정 관련 이벤트를 확인해 보세요."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "무료 체험이 종료되었습니다. 계정 접근이 곧 비활성화 됩니다. ${ action }"
@@ -9143,7 +9173,7 @@
         "엄격한 노로그 정책"
       ],
       "Sync and backup all your files across devices": [
-        "기기를 넘나들며 파일을 동기화 및 백업하세요"
+        "기기를 넘나들며 파일 동기화 및 백업"
       ],
       "Tor over VPN": [
         "Tor over VPN"
@@ -10470,6 +10500,9 @@
       "Timeout exceeded": [
         "응답 시간 초과"
       ],
+      "VAT number": [
+        "부가가치세 번호"
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "선택된 결제 수단에서 ${ amountToCharge }이 청구됩니다."
       ],
@@ -10525,8 +10558,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "ABN 추가"
+      ],
+      "Add Business Number": [
+        "사업자등록번호 추가"
+      ],
+      "Add EIN": [
+        "EIN 추가"
+      ],
+      "Add VAT number": [
+        "부가가치세 번호 추가"
+      ],
       "Business Number": [
         "사업자등록번호"
+      ],
+      "Edit ABN": [
+        "ABN 수정"
+      ],
+      "Edit Business Number": [
+        "사업자등록번호 수정"
+      ],
+      "Edit EIN": [
+        "EIN 수정"
+      ],
+      "Edit VAT number": [
+        "VAT 번호 수정"
       ],
       "EIN": [
         "EIN"
@@ -10654,6 +10711,9 @@
       ],
       "Select a reason": [
         "사유 선택"
+      ],
+      "Select country": [
+        "국가 선택"
       ],
       "Select state": [
         "시・도 선택"
@@ -13036,6 +13096,9 @@
       "Account suspended": [
         "계정이 정지되었습니다."
       ],
+      "Account temporarily locked": [
+        "계정 일시 잠김"
+      ],
       "Action": [
         "동작"
       ],
@@ -13183,8 +13246,8 @@
       "Choose user affiliations": [
         "사용자 소속 선택"
       ],
-      "Click a value in the table to use it as filter": [
-        "표의 값을 클릭하여 필터로 사용하세요"
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } 주소를 받으세요"
       ],
       "Close": [
         "닫기"
@@ -13209,6 +13272,9 @@
       ],
       "Connect apps and devices": [
         "앱 및 장치 연결하기"
+      ],
+      "Connect more addresses": [
+        "더 많은 주소 연결"
       ],
       "Connect organization": [
         "조직에 연결"
@@ -13320,6 +13386,9 @@
       ],
       "Deny access to user?": [
         "사용자에게 접근을 거부할까요?"
+      ],
+      "Description": [
+        "설명"
       ],
       "Device": [
         "기기"
@@ -13527,6 +13596,9 @@
       ],
       "Invoices": [
         "청구서"
+      ],
+      "IP": [
+        "IP"
       ],
       "Limit reached": [
         "제한 도달"
@@ -13782,6 +13854,9 @@
       ],
       "There are no groups": [
         "그룹이 존재하지 않습니다."
+      ],
+      "Try ${ AUTHENTICATOR_APP_NAME }": [
+        "${ AUTHENTICATOR_APP_NAME } 체험하기"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 켜기"
@@ -14267,6 +14342,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "장기 구독 옵션으로 **최대 ${ priceString } 절약하세요**. 같은 프리미엄 기능이지만 더 저렴하게 누릴 수 있어요."
       ],
+      "Advanced security for your company?": [
+        "귀사를 위한 고급 보안이 필요하신가요?"
+      ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "매달 ${ fallBackString }의 가격으로 모든 프리미엄 ${ BRAND_NAME } 서비스를"
       ],
@@ -14275,6 +14353,12 @@
       ],
       "Did you know?": [
         "알고 계셨나요?"
+      ],
+      "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
+        "비즈니스용 ${ VPN_APP_NAME }을(를) 사용하여 데이터 유출로부터 조직을 보호하세요."
+      ],
+      "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
+        "나와 소중한 사람을 위한 무제한 개인정보 보호. 단 매월 ${ priceString }부터."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "매월 계정 당 ${ priceString }에 불과한 ${ PLAN_NAMES[plan] }(으)로 최대 ${ FAMILY_MAX_USERS }명의 사용자를 동시에 보호할 수 있습니다."
@@ -14478,6 +14562,9 @@
       ],
       "Auto-selects from ${ numberOfCountries } country": [
         "${ numberOfCountries }개 국가에서 자동 선택됨"
+      ],
+      "Select from ${ numberOfCountries }+ country": [
+        "${ numberOfCountries }개 국가 중 선택"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "${ numberOfCountries }개 이상 국가 내 서버"

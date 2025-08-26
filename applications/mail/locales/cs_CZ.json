@@ -36,6 +36,12 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
+      "${ numberOfAddresses } address": [
+        "${ numberOfAddresses } adresa",
+        "${ numberOfAddresses } adresy",
+        "${ numberOfAddresses } adres",
+        "${ numberOfAddresses } adres"
+      ],
       "A to Z": [
         "Od A do Z"
       ],
@@ -229,7 +235,7 @@
         "Smazat"
       ],
       "Clear all formatting": [
-        "Vymazat veškeré formátování"
+        "Odebrat veškeré formátování"
       ],
       "Clear application data": [
         "Vyčistit data aplikace"
@@ -688,7 +694,7 @@
         "Hide-my-email"
       ],
       "hide-my-email aliases": [
-        "aliasy Hide-my-email"
+        "aliasy hide-my-email"
       ],
       "I like this response": [
         "Odpověď se mi líbí"
@@ -1282,7 +1288,7 @@
         "Nastavit šifrování"
       ],
       "Set expiration time": [
-        "Nastavit dobu platnosti"
+        "Nastavit čas vypršení platnosti"
       ],
       "Set recovery methods": [
         "Nastavit metody obnovení"
@@ -1396,7 +1402,7 @@
         "Zastavit stahování asistenta"
       ],
       "Stop generating result": [
-        "Zastavit generování výsledku"
+        "Ukončit generování výsledku"
       ],
       "Stop marking as read": [
         "Ukončit označování jako přečtené"
@@ -1456,7 +1462,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -1622,9 +1631,9 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktu",
-        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů",
-        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktu",
-        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktu"
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktům",
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktům",
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktům"
       ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
         "Bezplatná zkušební verze desktopové aplikace končí za 2 dny. ${ upgradeButton }"
@@ -1793,7 +1802,7 @@
     },
     "anniversary_2025: Offer": {
       "15 GB storage": [
-        "15 GB prostoru"
+        "15 GB úložiště"
       ],
       "200 GB storage": [
         "200 GB prostoru"
@@ -2117,7 +2126,7 @@
         "Účtováno ${ amount } jednorázově"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
-        "Obnovení po 1 měsíci za ${ regularAmount }."
+        "Obnovuje se po 1 měsíci za ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
@@ -2340,7 +2349,7 @@
         "${ participantName } požádal(a) o nejnovější aktualizaci události."
       ],
       "${ participantName } asked for the latest updates to an event which does not exist anymore. You have no calendars.": [
-        "${ participantName } požádal/a o nejnovější aktualizaci události, která již neexistuje. Nemáte žádné kalendáře."
+        "${ participantName } požádal(a) o nejnovější aktualizaci události, která již neexistuje. Nemáte žádné kalendáře."
       ],
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } požádal(a) o nejnovější aktualizaci události, která již neexistuje ve vašem kalendáři."
@@ -2433,13 +2442,13 @@
         "${ participantName } navrhl/a nový čas pro jeden výskyt této události. Tento návrh je zastaralý. Událost již neexistuje ve vašem kalendáři."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. You have no calendars.": [
-        "${ participantName } navrhl/a nový čas pro jeden výskyt této události. Tento návrh je zastaralý. Nemáte žádné kalendáře."
+        "${ participantName } navrhl(a) nový čas pro jeden výskyt této události. Tento návrh je zastaralý. Nemáte žádné kalendáře."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date.": [
         "${ participantName } navrhl(a) nový čas pro tuto událost. Tento návrh je zastaralý."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
-        "${ participantName } navrhl/a nový čas pro tuto událost. Tento návrh je zastaralý. Událost již neexistuje ve vašem kalendáři."
+        "${ participantName } navrhl(a) nový čas pro tuto událost. Tento návrh je zastaralý. Událost již neexistuje ve vašem kalendáři."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } navrhl(a) nový čas pro tuto událost. Tento návrh je zastaralý. Nemáte žádné kalendáře."
@@ -2466,7 +2475,7 @@
         "${ participantName } není v seznamu účastníků."
       ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
-        "${ participantName } navrhl/a nový čas pro jeden výskyt této události."
+        "${ participantName } navrhl(a) nový čas pro jeden výskyt této události."
       ],
       "${ participantName } proposed a new time for this event.": [
         "${ participantName } navrhl(a) nový čas pro tuto událost."
@@ -2529,7 +2538,7 @@
         "Nově navržený čas neodpovídá údajům ve vaší pozvánce. Zkontrolujte prosím detaily pozvánky ve vašem kalendáři."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "Tato odpověď neodpovídá Vašim údajům o pozvánce. Zkontrolujte prosím detaily pozvánky ve Vašem kalendáři."
+        "Tato odpověď neodpovídá údajům ve vaší pozvánce. Zkontrolujte prosím detaily pozvánky ve vašem kalendáři."
       ],
       "This response is out of date.": [
         "Tato odpověď je zastaralá."
@@ -2566,10 +2575,10 @@
     },
     "Cancel expiration of the message": {
       "Cancel": [
-        "Zpět"
+        "Zrušit"
       ],
       "Cancel expiration": [
-        "Zrušit expiraci"
+        "Zrušit vypršení platnosti"
       ]
     },
     "Cancellation reminder": {
@@ -2862,13 +2871,13 @@
         "Koncově šifrováno"
       ],
       "End-to-end encrypted to verified recipient": [
-        "Zašifrováno end-to-end ověřenému příjemci"
+        "Koncově šifrováno ověřenému příjemci"
       ],
       "End-to-end encrypted. ${ warningsText }": [
         "Koncově šifrováno. ${ warningsText }"
       ],
       "PGP-encrypted": [
-        "Šifrované pomocí PGP"
+        "PGP-šifrováno"
       ],
       "PGP-encrypted to verified recipient": [
         "PGP-šifrováno ověřenému příjemci"
@@ -2877,7 +2886,7 @@
         "PGP-šifrováno. ${ warningsText }"
       ],
       "PGP-signed": [
-        "PGP-podepsané"
+        "Podepsané pomocí PGP"
       ],
       "The address might be misspelled": [
         "Adresa může obsahovat překlep"
@@ -4260,6 +4269,14 @@
         "Prioritní podpora"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Textová pole jsou nepovinná. Informace, které uvedete v tomto formuláři, se objeví pouze na fakturách vystavených v budoucnu a nebudou mít vliv na stávající faktury."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Textová pole jsou nepovinná. Informace, které uvedete v tomto formuláři, změní pouze vybranou fakturu, nikoli budoucí fakturační údaje."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "POZNÁMKA:\n${ eventComment }"
@@ -4531,6 +4548,9 @@
       "Due to an error, text generation couldn't be canceled": [
         "Kvůli chybě nemohlo být zrušeno generování textu"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Úprava fakturační adresy není v tuto chvíli k dispozici. Zkuste to prosím později."
+      ],
       "Email address disabled": [
         "E-mailová adresa je deaktivovaná"
       ],
@@ -4565,10 +4585,13 @@
         "Chyba při nahrávání přílohy. Zpráva nebyla odeslána."
       ],
       "Failed to encrypt attachment. Please try again.": [
-        "Selhalo šifrování přílohy. Zkuste to znovu."
+        "Šifrování přílohy selhalo. Zkuste to prosím znovu."
       ],
       "Failed to load the STL preview": [
         "Načtení náhledu STL selhalo"
+      ],
+      "Failed to open to contact": [
+        "Otevření kontaktu selhalo"
       ],
       "Filter with this name already exists": [
         "Filtr s tímto názvem již existuje"
@@ -4774,6 +4797,9 @@
       "Port is required": [
         "Port je povinná položka"
       ],
+      "Postal code is required": [
+        "PSČ je povinné"
+      ],
       "Primary address key is not decrypted": [
         "Klíč primární adresy nebyl dešifrován"
       ],
@@ -4790,7 +4816,7 @@
         "Problém se stažením asistenta psaní. Pokud používáte soukromý režim, zkuste použít normální režim prohlížení nebo spusťte asistenta psaní na serverech."
       ],
       "Problem downloading the writing assistant. Please try again.": [
-        "Problém se stažením asistenta psaní. Zkuste to prosím znovu."
+        "Problém při stahování asistenta psaní. Zkuste to prosím znovu."
       ],
       "Problem loading the writing assistant to your device. Please try again.": [
         "Problém při načítání asistenta psaní do vašeho zařízení. Zkuste to prosím znovu."
@@ -5016,6 +5042,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhledávání našlo příliš mnoho výsledků. Upřesněte hledání a zkuste to prosím znovu."
+      ],
+      "ZIP code is required": [
+        "PSČ je potřeba vyplnit"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5633,7 +5662,7 @@
     },
     "Font face option": {
       "System default": [
-        "Systémový výchozí"
+        "Systémové výchozí"
       ],
       "Theme font": [
         "Písmo motivu"
@@ -5646,13 +5675,13 @@
     },
     "Font size option": {
       "Large": [
-        "Velký"
+        "Velké"
       ],
       "Medium (recommended)": [
         "Střední (doporučeno)"
       ],
       "Small": [
-        "Malý"
+        "Malé"
       ],
       "Very large": [
         "Velmi velké"
@@ -5685,7 +5714,7 @@
         "${ MAIL_APP_NAME } desktopová aplikace"
       ],
       "14-day desktop app trial.": [
-        "14-denní zkušební verze desktopové aplikace"
+        "14denní zkušební verze desktopové aplikace"
       ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Užívejte si rychlý, bezpečný přístup k doručené poště a kalendáři bez rozptylování."
@@ -6525,6 +6554,15 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje alespoň 1 dedikovaný server ${ serverPricePerMonth }"
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } vyprší za ${ daysLeft } den.",
+        "${ planName } vyprší za ${ daysLeft } dny.",
+        "${ planName } vyprší za ${ daysLeft } dnů.",
+        "${ planName } vyprší za ${ daysLeft } dnů."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } vyprší dnes."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí dedikovaného sledování podezřelých aktivit."
       ],
@@ -6643,7 +6681,7 @@
         "(Filtrování pokud jsou splněny všechny následující podmínky)"
       ],
       "(Filter if ANY of the following conditions are met)": [
-        "(Filtrování pokud je splněna jakákoliv z následujících podmínek)"
+        "(Filtrovat, pokud je splněna jakákoliv z následujících podmínek)"
       ],
       "(No Recipient)": [
         "(Žádný příjemce)"
@@ -6829,7 +6867,7 @@
         "Jste si jistí, že chcete zahodit váš import?"
       ],
       "Are you sure you want to move all messages in this location to archive?": [
-        "Jste si jisti, že chcete přesunout všechny zprávy odtud do archivu?"
+        "Jste si jisti, že chcete přesunout všechny zprávy odtud do Archivu?"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
         "Opravdu chcete všechny zprávy v tomto umístění přesunout do koše?"
@@ -7213,7 +7251,7 @@
         "Dopřejte si rychlejší a soustředěnější správu e-mailů pomocí desktopové aplikace."
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "Zajistěte si plně soukromou a šifrovanou komunikaci. Získejte nyní vaši bezplatnou ${ BRAND_NAME } emailovou adresu."
+        "Zajistěte si zcela soukromou a šifrovanou komunikaci. Získejte zdarma e-mailovou adresu ${ BRAND_NAME } ještě dnes."
       ],
       "Enter the code from your authenticator app": [
         "Zadejte kód z vaší ověřovací aplikace"
@@ -7229,6 +7267,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Zadejte vlastní heslo (jako správce organizace)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Zadejte vlastní heslo (jako důvěryhodný kontakt)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Předpokládaný zbývající čas: ${ estimatedMinutes } minuta",
@@ -7432,10 +7473,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -7495,7 +7533,7 @@
         "Zjistěte více"
       ],
       "Learn more about the writing assistant": [
-        "Zjistit více o asistentovi psaní"
+        "Více informací o asistentovi psaní"
       ],
       "Learn what to do ${ dataLeakedLink }": [
         "Zjistěte, co dělat, ${ dataLeakedLink }"
@@ -7771,7 +7809,7 @@
         "Vyplňte prosím všechna povinná pole."
       ],
       "Please fill out this field.": [
-        "Prosíme vyplňte toto pole."
+        "Vyplňte prosím toto pole."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Upozorňujeme, že adresy přiřazené k těmto skupinám NEBUDOU smazány."
@@ -8284,7 +8322,7 @@
         "Tato zpráva vyprší ${ formattedDate }"
       ],
       "This message will expire on ${ value }": [
-        "Platnost této zprávy vyprší v(ve) ${ value }"
+        "Platnost této zprávy vyprší v(e) ${ value }"
       ],
       "This message will expire today at ${ value }": [
         "Platnost této zprávy vyprší dnes v(e) ${ value }"
@@ -8955,6 +8993,9 @@
       "Expired": [
         "Prošlý"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Zastaralý"
       ],
@@ -9342,6 +9383,9 @@
       ],
       "Colors": [
         "Barvy"
+      ],
+      "Company": [
+        "Společnost"
       ],
       "Company name": [
         "Název společnosti"
@@ -9742,6 +9786,9 @@
       "Start date": [
         "Datum zahájení"
       ],
+      "State": [
+        "Stát"
+      ],
       "Statement": [
         "Prohlášení"
       ],
@@ -9861,6 +9908,12 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (správce)"
+      ],
+      "Your password (trusted contact)": [
+        "Vaše heslo (důvěryhodný kontakt)"
+      ],
+      "ZIP code": [
+        "PSČ"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10234,6 +10287,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Více informací"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Chcete-li pokračovat v používání ${ BRAND_NAME }, ujistěte se, že již nepoužíváte prémiové funkce, nebo si navyšte svůj tarif."
       ],
       "upgrade for more storage": [
         "navýšit tarif pro více prostoru"
@@ -11674,7 +11730,7 @@
         "Historie verzí souboru (více než 1 týden)"
       ],
       "Free": [
-        "Bezplatné"
+        "Free"
       ],
       "Plus": [
         "Plus"
@@ -12168,6 +12224,9 @@
       "Timeout exceeded": [
         "Byl překročen časový limit"
       ],
+      "VAT number": [
+        "DIČ"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaše měna byla změněna na euro (€), protože bankovní převody SEPA podporují pouze platby v eurech."
       ],
@@ -12197,7 +12256,7 @@
     },
     "Payments.plan_name": {
       "Free": [
-        "Bezplatné"
+        "Free"
       ]
     },
     "Payments.Saved payment method details": {
@@ -12220,8 +12279,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Přidat ABN"
+      ],
+      "Add Business Number": [
+        "Přidat firemní číslo"
+      ],
+      "Add EIN": [
+        "Přidat EIN"
+      ],
+      "Add VAT number": [
+        "Přidat DIČ"
+      ],
       "Business Number": [
         "Firemní číslo"
+      ],
+      "Edit ABN": [
+        "Upravit ABN"
+      ],
+      "Edit Business Number": [
+        "Upravit firemní číslo"
+      ],
+      "Edit EIN": [
+        "Upravit EIN"
+      ],
+      "Edit VAT number": [
+        "Upravit DIČ"
       ],
       "EIN": [
         "EIN"
@@ -12263,6 +12346,15 @@
     "Placeholder": {
       "A way to contact you": [
         "Způsob, jak vás kontaktovat"
+      ],
+      "Anderson": [
+        "Příjmení"
+      ],
+      "Anytown": [
+        "Město"
+      ],
+      "Company name": [
+        "Název společnosti"
       ],
       "Describe what to change": [
         "Popište, co by mělo být změněno"
@@ -12311,6 +12403,9 @@
       ],
       "Link": [
         "Odkaz"
+      ],
+      "Main street 12": [
+        "Ulice a číslo popisné"
       ],
       "Name": [
         "Jméno"
@@ -12363,6 +12458,9 @@
       "Select a reason": [
         "Vyberte důvod"
       ],
+      "Select country": [
+        "Vyberte zemi"
+      ],
       "Select state": [
         "Vyberte stav"
       ],
@@ -12399,11 +12497,17 @@
       "Text": [
         "Text"
       ],
+      "Thomas": [
+        "Jméno"
+      ],
       "To": [
         "Komu"
       ],
       "Type text or keyword": [
         "Zadejte text nebo klíčové slovo"
+      ],
+      "VAT number": [
+        "DIČ"
       ],
       "Your organization name": [
         "Název vaší organizace"
@@ -12699,7 +12803,7 @@
     },
     "Send email with changed preferences": {
       "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
-        "Kontakty pro následující adresy byly odstraněny, a proto byly odpovídajícím způsobem aktualizovány příslušné předvolby šifrování:"
+        "Kontakty pro následující adresy byly smazány, odpovídající volby šifrování byly tedy aktualizovány:"
       ]
     },
     "Send email with encryption disabled": {
@@ -12760,7 +12864,7 @@
         "Koncově šifrováno"
       ],
       "End-to-end encrypted to PGP recipient": [
-        "Koncové šifrování a pro PGP příjemce"
+        "Koncově šifrováno PGP příjemci"
       ],
       "End-to-end encrypted to verified PGP recipient": [
         "Koncové šifrování, pro ověřeného PGP příjemce"
@@ -12769,7 +12873,7 @@
         "Zpráva ověřenému příjemci s koncovým šifrováním"
       ],
       "PGP-signed": [
-        "PGP-podepsané"
+        "Podepsané pomocí PGP"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Odesláno pomocí ${ MAIL_APP_NAME } se šifrováním s nulovým přístupem"
@@ -12935,7 +13039,7 @@
         "${ gracePeriodHoursRemaining } další hodina",
         "${ gracePeriodHoursRemaining } další hodiny",
         "${ gracePeriodHoursRemaining } dalších hodin",
-        "Zbývá ${ gracePeriodHoursRemaining } hodin"
+        "${ gracePeriodHoursRemaining } dalších hodin"
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Pokud jste o obnovení hesla nepožádali, ihned zrušte tento požadavek."
@@ -13498,7 +13602,7 @@
         "Vaše úložiště je z ${ percentage } % plné. ${ cta }."
       ],
       "Your storage is full": [
-        "Váš úložný prostor je plný"
+        "Vaše úložiště je plné"
       ],
       "Your storage is full. ${ cta }.": [
         "Vaše úložiště je plné. ${ cta }."
@@ -14104,6 +14208,9 @@
       "Alias saved and copied": [
         "Alias uložen a zkopírován"
       ],
+      "Billing details updated": [
+        "Fakturační údaje aktualizovány"
+      ],
       "Canceling import": [
         "Ruším import"
       ],
@@ -14282,7 +14389,7 @@
         "Veřejný klíč nastavený jako důvěryhodný"
       ],
       "Read receipt sent": [
-        "Potvrzení o přečtení bylo odesláno"
+        "Potvrzení o přečtení odesláno"
       ],
       "Self-destruction removed": [
         "Samozničení odebráno"
@@ -14320,7 +14427,7 @@
         " je nyní aktivní"
       ],
       "${ label.Name } removed": [
-        "${ label.Name } byl odstraněn"
+        "${ label.Name } byl odebrán"
       ],
       "The filter has been disabled": [
         "Filtr byl deaktivován"
@@ -14449,19 +14556,19 @@
         "${ ceilDays } dnů"
       ],
       "${ ceilHours } hour": [
-        "${ ceilHours } hodinu",
+        "${ ceilHours } hodina",
         "${ ceilHours } hodiny",
         "${ ceilHours } hodin",
         "${ ceilHours } hodin"
       ],
       "${ ceilMinutes } minute": [
-        "${ ceilMinutes } minutu",
+        "${ ceilMinutes } minuta",
         "${ ceilMinutes } minuty",
         "${ ceilMinutes } minut",
         "${ ceilMinutes } minut"
       ],
       "${ seconds } second": [
-        "${ seconds } sekundu",
+        "${ seconds } sekunda",
         "${ seconds } sekundy",
         "${ seconds } sekund",
         "${ seconds } sekund"
@@ -14697,7 +14804,7 @@
         "Změnit heslo"
       ],
       "Claim your ${ MAIL_APP_NAME } address": [
-        "Získejte vaši ${ MAIL_APP_NAME } adresu."
+        "Získejte vaši ${ MAIL_APP_NAME } adresu"
       ],
       "Clearing data": [
         "Mazání dat"
@@ -14860,6 +14967,9 @@
       ],
       "Download the app": [
         "Stáhněte si aplikaci"
+      ],
+      "Edit billing address": [
+        "Úprava fakturační adresy"
       ],
       "Edit contact": [
         "Upravit kontakt"
@@ -15102,7 +15212,7 @@
         "Přesunout do"
       ],
       "Move to inbox": [
-        "Přesunout do složky Doručená pošta"
+        "Přesunout do Doručené pošty"
       ],
       "Move to inbox (not spam)": [
         "Přesunout do Doručené pošty (není spam)"
@@ -16025,7 +16135,7 @@
         "Každých ${ interval } týdnů ve středu, ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Týdně v(ve) ${ multipleDaysString }, ${ timesString }"
+        "Týdně v(e) ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on all days, ${ timesString }": [
         "Týdně všechny dny, ${ timesString }"
@@ -16055,7 +16165,7 @@
     "Weekly recurring event, frequency (until)": {
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
         "Každý ${ interval } týden v ${ multipleDaysString }, ${ untilString }",
-        "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ untilString }",
+        "Každé ${ interval } týdny v ${ multipleDaysString }, ${ untilString }",
         "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ untilString }",
         "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ untilString }"
       ],

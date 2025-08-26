@@ -147,6 +147,9 @@
       "Choose my own password": [
         "Vælg min egen adgangskode"
       ],
+      "Claim this address": [
+        "Gør krav på denne adresse"
+      ],
       "Close": [
         "Luk"
       ],
@@ -414,6 +417,9 @@
       "Get ${ planOrAppName }": [
         "Få ${ planOrAppName }"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Få en gratis ${ BRAND_NAME }-adresse"
+      ],
       "Get a new encrypted email address": [
         "Få en ny krypteret e-mailadresse"
       ],
@@ -638,9 +644,6 @@
       ],
       "refresh the page": [
         "opdater siden"
-      ],
-      "Reload": [
-        "Genindlæs"
       ],
       "Remove": [
         "Fjern"
@@ -3298,6 +3301,11 @@
         "Bekræftelses e-mail afsendt til ${ address }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Betroet kontakt"
+      ]
+    },
     "Empty group name": {
       "Unnamed": [
         "Unavngiven"
@@ -5021,6 +5029,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } kræver en ${ BRAND_NAME } adresse til sikker begivenhedssynkronisering og kryptering. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
         "${ calendarsToBeCreatedCount } nye kalendere"
@@ -5208,9 +5219,6 @@
       ],
       "active": [
         "aktiv"
-      ],
-      "Activity monitor": [
-        "Aktivitetsovervågning"
       ],
       "Activity Monitor": [
         "Aktivitetsovervågning"
@@ -5490,14 +5498,8 @@
       "Did you know?": [
         "Vidste du det?"
       ],
-      "Disable detailed events": [
-        "Deaktiver detaljerede begivenheder"
-      ],
       "Disabled countries": [
         "Deaktiverede lande"
-      ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Deaktiveret den ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Hvis du deaktiverer totrins-godkendelse, bliver din konto mindre sikker. Gør kun dette med det største forbehold."
@@ -5599,17 +5601,11 @@
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Aktivér auto-fornyelse for fortsat at have adgang til Plus-servere og -funktioner."
       ],
-      "Enable detailed events": [
-        "Aktiver detaljerede begivenheder"
-      ],
       "Enable single sign-on to keep your organization safe": [
         "Aktivér single sign-on for at holde din organisation sikker"
       ],
       "Enabled countries": [
         "Aktiverede lande"
-      ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Aktiveret den ${ formattedDateAndTime }"
       ],
       "Enabling auto-deletion…": [
         "Aktivering af automatisk sletning…"
@@ -5625,6 +5621,9 @@
       ],
       "Enhance your network security": [
         "Styrk din netværkssikkerhed"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Sørg for privat og krypteret kommunikation. Gør krav på din gratis ${ BRAND_NAME } e-mailadresse nu."
       ],
       "Enter key manually instead": [
         "Indtast nøgle manuelt i stedet"
@@ -5700,12 +5699,6 @@
       ],
       "Gateways": [
         "Gateways"
-      ],
-      "Gateways monitoring is disabled.": [
-        "Portalovervågning er deaktiveret."
-      ],
-      "Gateways monitoring is enabled.": [
-        "Portalovervågning er aktiveret."
       ],
       "Get ${ upsellPlanName }": [
         "Få ${ upsellPlanName }"
@@ -6378,6 +6371,12 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnement er ved at udløbe: Genaktiver inden ${ byDate } for at beholde dine ${ planName }-fordele. ${ reactivateLink }"
       ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnement udløber: For at beholde dine ${ planName } fordele, skal du fornye din abonnement i Apple App Store inden ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnement udløber: For at beholde dine ${ planName } fordele, skal du fornye din abonnement i Apple App Store inden ${ byDate }. ${ reactivateLink }"
+      ],
       "Summary": [
         "Sammenfatning"
       ],
@@ -6644,6 +6643,9 @@
       ],
       "Vault deleted": [
         "Boks slettet"
+      ],
+      "Vault either deleted or requires access permissions": [
+        "Boks enten slettet eller kræver adgangstilladelser"
       ],
       "Vault shared with email": [
         "Boks delt med e-mail"
@@ -8069,6 +8071,9 @@
       "Request an invite": [
         "Anmod om invitation"
       ],
+      "Resume now": [
+        "Genoptag nu"
+      ],
       "settings": [
         "indstillinger"
       ],
@@ -8086,6 +8091,9 @@
       ],
       "Upgrade your plan": [
         "Opgradér abonnement"
+      ],
+      "Vault": [
+        "Boks"
       ],
       "View guide": [
         "Se guide"
@@ -12593,8 +12601,8 @@
       "Change second password": [
         "Ændr anden adgangskode"
       ],
-      "Click a value in the table to use it as filter": [
-        "Klik på en værdi i tabellen for at bruge den som filter"
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Gør krav på din gratis ${ MAIL_APP_NAME } addresse"
       ],
       "Close": [
         "Luk"
@@ -12723,6 +12731,9 @@
       ],
       "Deny access to user?": [
         "Nægt bruger adgang?"
+      ],
+      "Description": [
+        "Beskrivelse"
       ],
       "Device": [
         "Enhed"
@@ -12914,6 +12925,9 @@
       ],
       "Invoices": [
         "Fakturaer"
+      ],
+      "IP": [
+        "IP"
       ],
       "Limit reached": [
         "Grænse nået"

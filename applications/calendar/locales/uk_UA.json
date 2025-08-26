@@ -3375,6 +3375,9 @@
       "Port is required": [
         "Порт обов'язковий"
       ],
+      "Postal code is required": [
+        "Необхідно вказати поштовий індекс"
+      ],
       "Primary address key is not decrypted": [
         "Ключ основної адреси не розшифрований"
       ],
@@ -4561,6 +4564,12 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } вимагає щонайменше 1 виділений сервер вартістю ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } завершиться за ${ daysLeft } день.",
+        "${ planName } завершиться за ${ daysLeft } дні.",
+        "${ planName } завершиться за ${ daysLeft } днів.",
+        "${ planName } завершиться за ${ daysLeft } дня(ів)."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знайдено ${ providerFoldersNumLocalized } теку",
@@ -5914,6 +5923,9 @@
       "Colors": [
         "Кольори"
       ],
+      "Company": [
+        "Компанія"
+      ],
       "Company name": [
         "Назва компанії"
       ],
@@ -6187,6 +6199,9 @@
       "Start date": [
         "Дата початку"
       ],
+      "State": [
+        "Стан"
+      ],
       "Street address": [
         "Вулиця"
       ],
@@ -6264,6 +6279,9 @@
       ],
       "Your password (admin)": [
         "Новий пароль (адмін)"
+      ],
+      "ZIP code": [
+        "Поштовий індекс"
       ]
     },
     "Label for contact group color": {
@@ -8296,6 +8314,12 @@
       "Add title": [
         "Додати заголовок"
       ],
+      "Anderson": [
+        "Андерсон"
+      ],
+      "Company name": [
+        "Назва компанії"
+      ],
       "E.g., ": [
         "Наприклад, "
       ],
@@ -8367,6 +8391,12 @@
       ],
       "Start typing an email address": [
         "Почніть вводити адресу е-пошти"
+      ],
+      "Thomas": [
+        "Томас"
+      ],
+      "VAT number": [
+        "Номер платника ПДВ"
       ],
       "ZIP code": [
         "Поштовий індекс"
