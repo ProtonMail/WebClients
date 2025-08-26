@@ -105,7 +105,7 @@ const TwoFactorSection = () => {
                 {c('Info')
                     .jt`Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.`}
 
-                <AuthenticatorPromotionBanner className="mt-4" />
+                <AuthenticatorPromotionBanner className="mt-4" flowId="2fa-settings" />
             </SettingsParagraph>
             {hasTOTPEnabled && hasRecoveryMethod && (
                 <SettingsParagraph>
