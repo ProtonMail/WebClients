@@ -5,7 +5,7 @@ import { type AddressesState, type ModelState } from '@proton/account';
 import { getInitialModelState } from '@proton/account/initialModelState';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType, createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
-import { getCalendar, queryCalendars } from '@proton/shared/lib/api/calendars';
+import { getCalendar, queryCalendars, queryMembers } from '@proton/shared/lib/api/calendars';
 import type { CalendarEventV6Response } from '@proton/shared/lib/api/events';
 import { CALENDAR_DISPLAY } from '@proton/shared/lib/calendar/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -15,6 +15,8 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import {
     CALENDAR_ORDER_BY,
     CALENDAR_RETURN_FLAGS,
+    type Calendar,
+    type CalendarMember,
     type CalendarWithOwnMembers,
 } from '@proton/shared/lib/interfaces/calendar';
 
@@ -30,10 +32,19 @@ export const selectCalendars = (state: CalendarsState) => state[name];
 
 export const selectCalendarsWithMembers = (state: CalendarsState) => state[name].value;
 
-const fetchCalendar = (api: Api, calendarID: string) =>
-    api(getCalendar(calendarID)).then((result) => {
-        return result;
-    });
+const fetchCalendarWithOwnMembers = async ({
+    api,
+    calendarID,
+}: {
+    api: Api;
+    calendarID: string;
+}): Promise<CalendarWithOwnMembers> => {
+    const [{ Calendar }, { Members }] = await Promise.all([
+        api<{ Calendar: Calendar & { Owner: CalendarWithOwnMembers['Owner'] } }>(getCalendar(calendarID)),
+        api<{ Members: CalendarMember[] }>(queryMembers(calendarID)),
+    ]);
+    return { ...Calendar, Members };
+};
 
 const modelThunk = createAsyncModelThunk<Model, CalendarsState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: ({ extraArgument }) => {
@@ -126,7 +137,7 @@ export const calendarsEventLoopV6Thunk = ({
     return async (dispatch) => {
         await updateCollectionAsyncV6({
             events: event.Calendars,
-            get: (ID) => fetchCalendar(api, ID),
+            get: (calendarID) => fetchCalendarWithOwnMembers({ api, calendarID }),
             refetch: () => dispatch(calendarsThunk({ cache: CacheType.None })),
             update: (result) => dispatch(calendarsActions.eventLoopV6(result)),
         });
