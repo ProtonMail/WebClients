@@ -645,9 +645,6 @@
       "refresh the page": [
         "muat ulang halaman"
       ],
-      "Reload": [
-        "Muat ulang"
-      ],
       "Remove": [
         "Hapus"
       ],
@@ -5396,9 +5393,6 @@
       "active": [
         "aktif"
       ],
-      "Activity monitor": [
-        "Monitor aktivitas"
-      ],
       "Activity Monitor": [
         "Monitor Aktivitas"
       ],
@@ -5699,14 +5693,8 @@
       "Did you know?": [
         "Tahukah Anda?"
       ],
-      "Disable detailed events": [
-        "Nonaktifkan rekaman peristiwa terperinci"
-      ],
       "Disabled countries": [
         "Negara yang dinonaktifkan"
-      ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Dinonaktifkan pada ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Menonaktifkan autentikasi dua faktor akan membuat akun Anda kurang aman. Hanya lanjutkan jika benar-benar diperlukan."
@@ -5813,17 +5801,11 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Aktifkan pembaruan otomatis untuk mempertahankan akses ke fitur premium Anda."
       ],
-      "Enable detailed events": [
-        "Aktifkan rekaman peristiwa terperinci"
-      ],
       "Enable single sign-on to keep your organization safe": [
         "Aktifkan single sign-on untuk menjaga organisasi Anda tetap aman"
       ],
       "Enabled countries": [
         "Negara yang diaktifkan"
-      ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Diaktifkan pada ${ formattedDateAndTime }"
       ],
       "Enabling auto-deletion…": [
         "Mengaktifkan penghapusan otomatis…"
@@ -5930,12 +5912,6 @@
       "Gateways": [
         "Gateway"
       ],
-      "Gateways monitoring is disabled.": [
-        "Pemantauan gateway dinonaktifkan."
-      ],
-      "Gateways monitoring is enabled.": [
-        "Pemantauan gateway diaktifkan."
-      ],
       "Get ${ upsellPlanName }": [
         "Dapatkan ${ upsellPlanName }"
       ],
@@ -6037,9 +6013,6 @@
       ],
       "inactive": [
         "tidak aktif"
-      ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Sertakan alamat IP pengguna, lokasi, dan ISP (Internet Service Provider) dalam log peristiwa"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Meliputi ${ taxName } ${ formattedTaxRate }%: ${ price }"
@@ -6190,9 +6163,6 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Memuat kalender, mohon tunggu. Anda akan diarahkan menuju platform penjadwalan Calendly kami pada tab baru."
-      ],
-      "Loading detailed events current status.": [
-        "Memuat status peristiwa terperinci saat ini."
       ],
       "Loading eduGAIN data...": [
         "Memuat data eduGAIN..."
@@ -6949,6 +6919,9 @@
       ],
       "Vault deleted": [
         "Brankas dihapus"
+      ],
+      "Vault either deleted or requires access permissions": [
+        "Brankas telah dihapus atau memerlukan izin akses"
       ],
       "Vault shared with email": [
         "Brankas dibagikan dengan email"
@@ -8150,9 +8123,6 @@
       "VAT": [
         "PPN"
       ],
-      "VAT identification number": [
-        "Nomor identifikasi PPN"
-      ],
       "Verification code": [
         "Kode verifikasi"
       ],
@@ -8438,6 +8408,9 @@
       "Upgrade your plan": [
         "Tingkatkan paket Anda"
       ],
+      "Vault": [
+        "Brankas"
+      ],
       "View guide": [
         "Lihat panduan"
       ],
@@ -8662,9 +8635,6 @@
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Hubungkan domain khusus Anda ke ${ BRAND_NAME } untuk mengatur alamat email khusus (cth. anda@perusahaananda.com). Wisaya kami akan memandu Anda dalam prosesnya."
-      ],
-      "View account-related events across your organization.": [
-        "Lihat aktivitas terkait akun dari seluruh organisasi Anda."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Masa uji coba gratis Anda telah berakhir. Akses menuju akun Anda akan segera dinonaktifkan. ${ action }"
@@ -13180,9 +13150,6 @@
       "Choose user affiliations": [
         "Pilih afiliasi pengguna"
       ],
-      "Click a value in the table to use it as filter": [
-        "Klik nilai di tabel untuk menggunakannya sebagai penyaring"
-      ],
       "Close": [
         "Tutup"
       ],
@@ -13206,6 +13173,9 @@
       ],
       "Connect apps and devices": [
         "Hubungkan aplkasi dan perangkat"
+      ],
+      "Connect more addresses": [
+        "Hubungkan lebih banyak alamat"
       ],
       "Connect organization": [
         "Sambungkan organisasi"
@@ -13317,6 +13287,9 @@
       ],
       "Deny access to user?": [
         "Tolak akses pengguna?"
+      ],
+      "Description": [
+        "Deskripsi"
       ],
       "Device": [
         "Perangkat"
@@ -13524,6 +13497,9 @@
       ],
       "Invoices": [
         "Faktur"
+      ],
+      "IP": [
+        "IP"
       ],
       "Limit reached": [
         "Batas tercapai"

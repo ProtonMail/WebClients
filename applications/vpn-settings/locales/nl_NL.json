@@ -651,9 +651,6 @@
       "refresh the page": [
         "pagina vernieuwen"
       ],
-      "Reload": [
-        "Opnieuw laden"
-      ],
       "Remove": [
         "Verwijderen"
       ],
@@ -5534,9 +5531,6 @@
       "active": [
         "actief"
       ],
-      "Activity monitor": [
-        "Activiteitenmonitor"
-      ],
       "Activity Monitor": [
         "Activiteitenmonitor"
       ],
@@ -5851,14 +5845,8 @@
       "Did you know?": [
         "Wist u dat?"
       ],
-      "Disable detailed events": [
-        "Gedetailleerde gebeurtenissen uitschakelen"
-      ],
       "Disabled countries": [
         "Uitgeschakelde landen"
-      ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Uitgeschakeld op ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Het uitschakelen van tweestapsverificatie maakt uw account minder veilig. Ga alleen verder als het absoluut nodig is."
@@ -5969,17 +5957,11 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Schakel automatisch vernieuwen in om toegang tot premium functies te behouden."
       ],
-      "Enable detailed events": [
-        "Activeer gedetailleerde gebeurtenissen"
-      ],
       "Enable single sign-on to keep your organization safe": [
         "Schakel eenmalig inloggen in om uw organisatie veilig te houden"
       ],
       "Enabled countries": [
         "Ingeschakelde landen"
-      ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Ingeschakeld op ${ formattedDateAndTime }"
       ],
       "Enabling auto-deletion…": [
         "Activatie automatisch verwijderen"
@@ -6086,14 +6068,11 @@
       "Gain visibility across your organization": [
         "Krijg inzicht in uw organisatie"
       ],
+      "Gateway monitor": [
+        "Gateway monitor"
+      ],
       "Gateways": [
         "Gateways"
-      ],
-      "Gateways monitoring is disabled.": [
-        "Gateways monitoring is uitgeschakeld."
-      ],
-      "Gateways monitoring is enabled.": [
-        "Gateways monitoring is ingeschakeld."
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Verkrijg ${ AUTHENTICATOR_APP_NAME } voor al uw apparaten."
@@ -6200,9 +6179,6 @@
       ],
       "inactive": [
         "inactief"
-      ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Neem IP-adres, locatie en ISP (Internet Service Provider) van de gebruiker op in afspraaklogboeken"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inclusief ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -6356,9 +6332,6 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laden van kalender, gelieve te wachten. U wordt automatisch doorverwezen naar onze agendaplanner Calendly in een nieuw tabblad."
-      ],
-      "Loading detailed events current status.": [
-        "Huidige status van gedetailleerde afspraken worden geladen."
       ],
       "Loading eduGAIN data...": [
         "eduGAIN gegevens laden..."
@@ -7131,6 +7104,9 @@
       ],
       "Vault deleted": [
         "Kluis verwijderd"
+      ],
+      "Vault either deleted or requires access permissions": [
+        "Kluis is verwijderd of vereist toegangsrechten"
       ],
       "Vault shared with email": [
         "Kluis gedeeld met e-mailadres"
@@ -8354,9 +8330,6 @@
       "VAT": [
         "BTW"
       ],
-      "VAT identification number": [
-        "BTW-identificatienummer"
-      ],
       "Verification code": [
         "Verificatiecode"
       ],
@@ -8645,6 +8618,9 @@
       "Upgrade your plan": [
         "Upgrade uw abonnement"
       ],
+      "Vault": [
+        "Kluis"
+      ],
       "View guide": [
         "Bekijk gids"
       ],
@@ -8874,9 +8850,6 @@
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Verbind uw aangepaste domein met ${ BRAND_NAME } om aangepaste e-mailadressen in te stellen (bijv. u@uwbedrijf.com). Onze wizard leidt u door het proces."
-      ],
-      "View account-related events across your organization.": [
-        "Bekijk account-gerelateerde gebeurtenissen binnen uw organisatie."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Uw gratis proefversie is geëindigd. Toegang tot uw account wordt weldra uitgeschakeld. ${ action }"
@@ -10686,6 +10659,9 @@
       "Timeout exceeded": [
         "Time-out overschreden"
       ],
+      "VAT number": [
+        "BTW-nummer"
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Via de geselecteerde betaalmethode wordt ${ amountToCharge } in rekening gebracht."
       ],
@@ -10741,8 +10717,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "ABN toevoegen"
+      ],
+      "Add Business Number": [
+        "Ondernemingsnummer toevoegen"
+      ],
+      "Add EIN": [
+        "EIN toevoegen"
+      ],
+      "Add VAT number": [
+        "BTW-nummer toevoegen"
+      ],
       "Business Number": [
         "Ondernemingsnummer"
+      ],
+      "Edit ABN": [
+        "ABN bewerken"
+      ],
+      "Edit Business Number": [
+        "Ondernemingsnummer bewerken"
+      ],
+      "Edit EIN": [
+        "EIN bewerken"
+      ],
+      "Edit VAT number": [
+        "Wijzig BTW-nummer"
       ],
       "EIN": [
         "Rijksregisternummer"
@@ -10870,6 +10870,9 @@
       ],
       "Select a reason": [
         "Selecteer een reden"
+      ],
+      "Select country": [
+        "Selecteer land"
       ],
       "Select state": [
         "Selecteer provincie"
@@ -13460,9 +13463,6 @@
       "Claim your ${ MAIL_APP_NAME } address": [
         "Claim uw ${ MAIL_APP_NAME }-adres"
       ],
-      "Click a value in the table to use it as filter": [
-        "Klik op een waarde in de tabel om deze als filter te gebruiken"
-      ],
       "Close": [
         "Sluit"
       ],
@@ -13602,6 +13602,9 @@
       ],
       "Deny access to user?": [
         "Gebruiker de toegang weigeren?"
+      ],
+      "Description": [
+        "Beschrijving"
       ],
       "Device": [
         "Apparaat"
@@ -13811,6 +13814,9 @@
       ],
       "Invoices": [
         "Facturen"
+      ],
+      "IP": [
+        "IP"
       ],
       "Limit reached": [
         "Limiet bereikt"
