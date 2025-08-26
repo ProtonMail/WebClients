@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
       ],
+      "${ numberOfAddresses } address": [
+        "주소 ${ numberOfAddresses }개"
+      ],
       "A to Z": [
         "오름차순"
       ],
@@ -212,6 +215,15 @@
       ],
       "Choose a file or drag it here": [
         "파일을 선택하거나 드래그하세요"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "${ BRAND_NAME }주소 얻기"
+      ],
+      "Claim this address": [
+        "주소 얻기"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "무료 ${ BRAND_NAME } 주소를 받으세요"
       ],
       "Clear": [
         "비우기"
@@ -588,6 +600,9 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName } 받기"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "무료 ${ BRAND_NAME } 주소 받기"
+      ],
       "Get in touch": [
         "연락하기"
       ],
@@ -610,7 +625,7 @@
         "인증코드 전송"
       ],
       "Go to ${ planOrAppName }": [
-        "${ planOrAppName }으로 이동하세요"
+        "${ planOrAppName }(으)로 이동"
       ],
       "Go to label": [
         "라벨로 이동"
@@ -1430,9 +1445,6 @@
       ],
       "Trust": [
         "신뢰"
-      ],
-      "Trust key": [
-        "키 신뢰"
       ],
       "Trust public key": [
         "공개 키 신뢰하기"
@@ -4016,6 +4028,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "공유 캘린더로 동기화 및 일정 예약을 간소화하세요."
       ],
+      "This view shows messages sent to the following addresses:": [
+        "다음 주소로 보낸 메시지를 보여줍니다:"
+      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "글쓰기 도우미를 계속 사용하기 위해, 구독에 추가해 주세요."
       ],
@@ -4180,6 +4195,14 @@
       ],
       "Priority support": [
         "우선 지원"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "입력란은 선택 사항입니다. 이 양식에 작성되는 정보는 향후 발행되는 청구서에만 표시되며 기존 청구서에는 영향을 미치지 않습니다."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "텍스트 입력란은 선택 사항입니다. 이 양식에 제공된 정보는 선택한 송장에 한해 변경되며 향후 송장 세부 사항은 변경되지 않습니다."
       ]
     },
     "Email body for comment (comment part)": {
@@ -4441,6 +4464,9 @@
       "Due to an error, text generation couldn't be canceled": [
         "오류로 인해 문장 생성을 취소하지 못했습니다."
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "청구서 주소 수정이 현재 사용할 수 없습니다.\n나중에 다시 시도하시기 바랍니다."
+      ],
       "Email address disabled": [
         "이메일 주소가 유효하지 않습니다."
       ],
@@ -4479,6 +4505,9 @@
       ],
       "Failed to load the STL preview": [
         "STL 미리보기 불러오기 실패"
+      ],
+      "Failed to open to contact": [
+        "연락처 열기 실패"
       ],
       "Filter with this name already exists": [
         "이 이름의 필터가 이미 있습니다"
@@ -4671,6 +4700,9 @@
       ],
       "Port is required": [
         "포트가 필요함"
+      ],
+      "Postal code is required": [
+        "우편 번호가 필요합니다"
       ],
       "Primary address key is not decrypted": [
         "기본 주소 키가 복호화되지 않았습니다"
@@ -4902,6 +4934,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "검색 결과가 너무 많습니다. 검색을 제한하고 다시 시도해주세요."
+      ],
+      "ZIP code is required": [
+        "우편번호가 필요합니다"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5611,6 +5646,9 @@
       "Checklist complete": [
         "체크 리스트 완료"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "${ BRAND_NAME } 주소 얻기"
+      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "스토리지를 두 배로 늘리려면 ${ daysCount }일 내에 이 체크리스트를 완료하세요."
       ],
@@ -6156,6 +6194,12 @@
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "${ BRAND_NAME }의 비밀번호 관리자를 사용하면 암호가 생성, 저장 및 자동 완성되기 때문에 재설정할 필요가 없습니다."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME }은(는) 안전한 이벤트 동기화 및 암호화를 위해 ${ BRAND_NAME } 주소가 필요합니다. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME }은(는) 안전한 이벤트 동기화 및 암호화를 위해 ${ BRAND_NAME } 주소가 필요합니다. 지금 무료 ${ MAIL_APP_NAME } 주소를 신청하세요."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount }개 새 달력"
       ],
@@ -6263,6 +6307,12 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }은 최소 1개 이상 전용 서버가 필요합니다 ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName }이(가) ${ daysLeft }일 내로 만료됩니다."
+      ],
+      "${ planName } expires today.": [
+        "${ planName }이(가) 오늘 만료됩니다."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME }이 의심스러운 활동에 대한 전담 모니터링으로 계정을 보호합니다."
@@ -6864,6 +6914,9 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "데스크톱 앱으로 더 빠르고 집중된 이메일 경험을 즐겨보세요."
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "완전히 개인적이고 암호화된 통신을 보장합니다. 지금 귀하의 무료 ${ BRAND_NAME } 이메일 주소를 확보하세요."
+      ],
       "Enter the code from your authenticator app": [
         "인증 앱에서 코드를 입력하세요."
       ],
@@ -6878,6 +6931,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "사용자의 비밀번호 입력 (조직 관리자와 같음)"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "사용자 고유의 비밀번호 입력 (신뢰할 수 있는 연락처로서)"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "남은 예상 시간: ${ estimatedMinutes }분"
@@ -6940,7 +6996,7 @@
         "무료로 ${ ASSISTANT_TRIAL_TIME_DAYS }일 동안 사용해 보세요"
       ],
       "From": [
-        "출금처:"
+        "발신"
       ],
       "Generate text": [
         "텍스트 생성"
@@ -8502,6 +8558,9 @@
       "Expired": [
         "만료됨"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "만료된"
       ],
@@ -8880,6 +8939,9 @@
       ],
       "Colors": [
         "색상"
+      ],
+      "Company": [
+        "회사"
       ],
       "Company name": [
         "법인 이름"
@@ -9280,6 +9342,9 @@
       "Start date": [
         "시작일"
       ],
+      "State": [
+        "시/도"
+      ],
       "Statement": [
         "상태"
       ],
@@ -9399,16 +9464,22 @@
       ],
       "Your password (admin)": [
         "사용자의 비밀번호 (관리자)"
+      ],
+      "Your password (trusted contact)": [
+        "사용자 비밀번호 (신뢰할 수 있는 연락처)"
+      ],
+      "ZIP code": [
+        "우편번호"
       ]
     },
     "Label (begin date/advanced search)": {
       "From": [
-        "출금처:"
+        "발신"
       ]
     },
     "Label (end date/advanced search)": {
       "To": [
-        "입금자:"
+        "수신"
       ]
     },
     "Label attach to date input to select a date": {
@@ -9433,7 +9504,7 @@
     },
     "Label Recipient": {
       "From": [
-        "출금처:"
+        "발신"
       ],
       "To": [
         "수신자:"
@@ -9667,7 +9738,7 @@
         "예약됨"
       ],
       "Sent": [
-        "송금됨"
+        "보낸 편지함"
       ],
       "settings": [
         "설정"
@@ -10442,7 +10513,7 @@
         "최대 2명 지원"
       ],
       "Sync and backup all your files across devices": [
-        "기기를 넘나들며 파일을 동기화 및 백업하세요"
+        "기기를 넘나들며 파일 동기화 및 백업"
       ],
       "Tor over VPN": [
         "Tor over VPN"
@@ -11586,6 +11657,9 @@
       "Timeout exceeded": [
         "응답 시간 초과"
       ],
+      "VAT number": [
+        "부가가치세 번호"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA 은행 송금이 유로화 결제만 지원하여 사용자의 통화가 유로화(€)로 변경되었습니다."
       ],
@@ -11638,8 +11712,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "ABN 추가"
+      ],
+      "Add Business Number": [
+        "사업자등록번호 추가"
+      ],
+      "Add EIN": [
+        "EIN 추가"
+      ],
+      "Add VAT number": [
+        "부가가치세 번호 추가"
+      ],
       "Business Number": [
         "사업자등록번호"
+      ],
+      "Edit ABN": [
+        "ABN 수정"
+      ],
+      "Edit Business Number": [
+        "사업자등록번호 수정"
+      ],
+      "Edit EIN": [
+        "EIN 수정"
+      ],
+      "Edit VAT number": [
+        "VAT 번호 수정"
       ],
       "EIN": [
         "EIN"
@@ -11681,6 +11779,15 @@
     "Placeholder": {
       "A way to contact you": [
         "사용자에게 연락할 방법"
+      ],
+      "Anderson": [
+        "길동"
+      ],
+      "Anytown": [
+        "서울특별시 낙원구"
+      ],
+      "Company name": [
+        "법인 이름"
       ],
       "Describe what to change": [
         "변경되고자 할 사항을 설명해 주세요"
@@ -11729,6 +11836,9 @@
       ],
       "Link": [
         "링크"
+      ],
+      "Main street 12": [
+        "행복로 12"
       ],
       "Name": [
         "이름"
@@ -11781,6 +11891,9 @@
       "Select a reason": [
         "사유 선택"
       ],
+      "Select country": [
+        "국가 선택"
+      ],
       "Select state": [
         "시・도 선택"
       ],
@@ -11817,11 +11930,17 @@
       "Text": [
         "텍스트"
       ],
+      "Thomas": [
+        "홍"
+      ],
       "To": [
         "수신자:"
       ],
       "Type text or keyword": [
         "텍스트 및 키워드 입력"
+      ],
+      "VAT number": [
+        "부가가치세 번호"
       ],
       "Your organization name": [
         "조직 이름"
@@ -13333,6 +13452,9 @@
       "Alias saved and copied": [
         "별칭이 저장 및 복사되었습니다"
       ],
+      "Billing details updated": [
+        "청구 상세 정보가 업데이트되었습니다."
+      ],
       "Canceling import": [
         "가져오기 취소 중"
       ],
@@ -13763,6 +13885,9 @@
       "Account security": [
         "계정 보안"
       ],
+      "Account temporarily locked": [
+        "계정 일시 잠김"
+      ],
       "Action all conversations": [
         "전체 대화 조치"
       ],
@@ -13867,6 +13992,9 @@
       ],
       "Change password": [
         "비밀번호 변경"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } 주소를 받으세요"
       ],
       "Clearing data": [
         "데이터 지우기"
@@ -14015,6 +14143,9 @@
       "Download the app": [
         "앱 다운로드"
       ],
+      "Edit billing address": [
+        "청구 주소 수정"
+      ],
       "Edit contact": [
         "연락처 편집"
       ],
@@ -14086,6 +14217,9 @@
       ],
       "Forward": [
         "앞으로"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME }의 모든 기능 이용하기"
       ],
       "Get more from your VPN": [
         "VPN에 대해 더 알아보기"
@@ -14553,7 +14687,7 @@
         "이 입력란은 공백 포함이 불가합니다."
       ],
       "To": [
-        "입금자:"
+        "수신"
       ],
       "Trash": [
         "휴지통"
@@ -14659,6 +14793,9 @@
       ],
       "Your account is protected": [
         "계정이 보호됩니다."
+      ],
+      "Your addresses": [
+        "사용자 주소"
       ],
       "Your changes are not synced yet": [
         "변경 사항이 동기화되지 않았습니다."
