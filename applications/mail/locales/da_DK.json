@@ -106,6 +106,9 @@
       "Add to group": [
         "Føj til gruppe"
       ],
+      "Adds it above your existing message": [
+        "Tilføjer det over din eksisterende besked"
+      ],
       "Align center": [
         "Centrer"
       ],
@@ -214,6 +217,15 @@
       ],
       "Choose a file or drag it here": [
         "Vælg en fil eller træk den hertil"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Få ${ BRAND_NAME }-adresse"
+      ],
+      "Claim this address": [
+        "Gør krav på denne adresse"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Gør krav på din gratis ${ BRAND_NAME } address"
       ],
       "Clear": [
         "Ryd"
@@ -591,6 +603,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Få ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Få en gratis ${ BRAND_NAME }-adresse"
       ],
       "Get in touch": [
         "Kontakt os"
@@ -1436,9 +1451,6 @@
       "Trust": [
         "Hav tillid til"
       ],
-      "Trust key": [
-        "Stol på nøgle"
-      ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
       ],
@@ -1898,11 +1910,17 @@
       ]
     },
     "Assistant option": {
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Data forbliver på enhed for at beskytte dit privatliv. Kræver download og kompatibel hardware."
+      ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
         "Data forbliver på din enhed, men kræver en engangsoverførsel og kompatibel hardware"
       ],
       "Fast and secure. No logs are kept.": [
         "Hurtig og sikker. Ingen logføring."
+      ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "Der føres ingen logfiler for at beskytte Deres privatliv. Hurtigere behandling."
       ],
       "Run on ${ BRAND_NAME } servers": [
         "Kør på ${ BRAND_NAME }-servere"
@@ -3979,6 +3997,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Forenkl synkronisering og planlægning med delte kalendere."
       ],
+      "This view shows messages sent to the following addresses:": [
+        "Denne visning viser beskeder sendt til følgende adresser:"
+      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Du kan fortsætte med at bruge skriveassistenten ved at tilføje den til dit abonnement."
       ],
@@ -4146,6 +4167,14 @@
         "Prioriteret support"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstfelter er valgfrie. De oplysninger, du angiver i denne formular, vil kun blive vist på fakturaer, der udstedes i fremtiden, og vil ikke påvirke eksisterende fakturaer."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Tekstfelter er valgfrie. De oplysninger, du angiver i denne formular, vil kun ændre den faktura, du har valgt, og ikke dine fremtidige fakturadetaljer."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "NOTE:\n${ eventComment }"
@@ -4270,6 +4299,11 @@
     "email_forwarding_2023: Composer email icon": {
       "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
         "Nuladgangs-krypteret. Modtageren har deaktiveret end-to-end kryptering på deres konto."
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Betroet kontakt"
       ]
     },
     "Encrypted Headers": {
@@ -4439,6 +4473,9 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Kryptering af vedhæftning mislykkedes. Forsøg igen."
+      ],
+      "Failed to open to contact": [
+        "Kunne ikke oprette kontakten"
       ],
       "Filter with this name already exists": [
         "Et filter med dette navn findes allerede"
@@ -4870,6 +4907,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din søgning gav for mange resultater. Begræns din søgning, og forsøg igen."
+      ],
+      "ZIP code is required": [
+        "Postnummer er påkrævet"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5589,6 +5629,9 @@
       "Checklist complete": [
         "Tjeklisten er færdig"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Gør krav på ${ BRAND_NAME } address"
+      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Fuldfør denne tjekliste indenfor ${ daysCount } for at fordoble din lagerplads gratis."
       ],
@@ -6132,6 +6175,9 @@
       "${ boldUnsubscribe } from them with one click.": [
         "${ boldUnsubscribe } fra dem med et klik."
       ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Skriveassistent hjælper dig med at udarbejde bedre e-mails hurtigt og ubesværet."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-skriveassistent"
       ],
@@ -6140,6 +6186,12 @@
       ],
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "${ BRAND_NAME }'s adgangskodeadministrator gør det muligt for dig at oprette, gemme og automatisk udfylde adgangskoder, så du aldrig behøver at nulstille dem."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } kræver en ${ BRAND_NAME } adresse til sikker begivenhedssynkronisering og kryptering. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } kræver en ${ BRAND_NAME } adresse til sikker begivenhedssynkronisering og kryptering. Gør krav på din gratis ${ MAIL_APP_NAME } adresse nu."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
@@ -6274,6 +6326,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } udløber om ${ daysLeft } dag.",
+        "${ planName } udløber om ${ daysLeft } dage."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } udløber i dag."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } beskytter din konto med dedikeret overvågning af mistænkelig aktivitet."
@@ -6904,6 +6963,9 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Få en hurtigere og mere fokuseret e-mailoplevelse med desktop-appen."
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Sørg for privat og krypteret kommunikation. Gør krav på din gratis ${ BRAND_NAME } e-mailadresse nu."
+      ],
       "Enter the code from your authenticator app": [
         "Indtast koden fra din godkendelsesapp"
       ],
@@ -7107,8 +7169,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -7298,6 +7359,9 @@
       ],
       "No action selected": [
         "Ingen handling valgt"
+      ],
+      "No change will be made to the selected emails": [
+        "Der vil ikke blive foretaget nogen ændring af de valgte e-mails"
       ],
       "No contacts added yet": [
         "Ingen kontakter tilføjet endnu"
@@ -7751,6 +7815,12 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnement er ved at udløbe: Genaktiver inden ${ byDate } for at beholde dine ${ planName }-fordele. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnement udløber: For at beholde dine ${ planName } fordele, skal du fornye din abonnement i Apple App Store inden ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnement udløber: For at beholde dine ${ planName } fordele, skal du fornye din abonnement i Apple App Store inden ${ byDate }. ${ reactivateLink }"
       ],
       "Surveillance": [
         "Overvågning"
@@ -8491,6 +8561,9 @@
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "Din fysiske placering er synlig og kan bruges til at begrænse din adgang til internettet."
       ],
+      "Your private writing assistant": [
+        "Din private skriveassistent"
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Dit planlagte abonnement starter ${ renewalTime } og fornyes automatisk hver ${ cycle } måned.",
         "Dit planlagte abonnement starter ${ renewalTime } og fornyes automatisk hver ${ cycle } måned."
@@ -8946,6 +9019,9 @@
       "Colors": [
         "Farver"
       ],
+      "Company": [
+        "Selskab"
+      ],
       "Company name": [
         "Firmanavn"
       ],
@@ -9345,6 +9421,9 @@
       "Start date": [
         "Startdato"
       ],
+      "State": [
+        "Stat/Region"
+      ],
       "Statement": [
         "Udsagn"
       ],
@@ -9464,6 +9543,9 @@
       ],
       "Your password (admin)": [
         "Din adgangskode (admin)"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9724,6 +9806,9 @@
       ],
       "Request an invite": [
         "Anmod om invitation"
+      ],
+      "Resume now": [
+        "Genoptag nu"
       ],
       "Scheduled": [
         "Planlagt"
@@ -11267,6 +11352,9 @@
       "browser": [
         "browser"
       ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Tøm slettede og spam e-mails efter 30 dage"
+      ],
       "Continue": [
         "Forsæt"
       ],
@@ -11763,6 +11851,15 @@
       "A way to contact you": [
         "En måde at kontakte dig på"
       ],
+      "Anderson": [
+        "Andersen"
+      ],
+      "Anytown": [
+        "Skovhavn"
+      ],
+      "Company name": [
+        "Firmanavn"
+      ],
       "Describe what to change": [
         "Beskriv, hvad der skal ændres"
       ],
@@ -11810,6 +11907,9 @@
       ],
       "Link": [
         "Link"
+      ],
+      "Main street 12": [
+        "Hovedgaden 12"
       ],
       "Name": [
         "Navn"
@@ -11898,11 +11998,17 @@
       "Text": [
         "Tekst"
       ],
+      "Thomas": [
+        "Kim"
+      ],
       "To": [
         "Til"
       ],
       "Type text or keyword": [
         "Indtast tekst eller nøgleord"
+      ],
+      "VAT number": [
+        "Momsnummer"
       ],
       "Your organization name": [
         "Dit organisationsnavn"
@@ -13460,6 +13566,9 @@
       "Alias saved and copied": [
         "Alias gemt og kopieret"
       ],
+      "Billing details updated": [
+        "Faktureringsoplysninger opdateret"
+      ],
       "Canceling import": [
         "Annullerer import"
       ],
@@ -14013,6 +14122,9 @@
       "Change password": [
         "Skift adgangskode"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Gør krav på din gratis ${ MAIL_APP_NAME } addresse"
+      ],
       "Clearing data": [
         "Rydder data"
       ],
@@ -14054,6 +14166,9 @@
       ],
       "Coupon": [
         "Kupon"
+      ],
+      "Craft better emails": [
+        "Skriv bedre e-mails"
       ],
       "Create contact": [
         "Opret kontakt"
@@ -14162,6 +14277,9 @@
       "Download the app": [
         "Download appen"
       ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
+      ],
       "Edit contact": [
         "Rediger kontakt"
       ],
@@ -14233,6 +14351,9 @@
       ],
       "Forward": [
         "Videresend"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Få fuld adgang til ${ CALENDAR_APP_NAME }"
       ],
       "Get more from your VPN": [
         "Få mere ud af deres VPN"
@@ -14809,6 +14930,9 @@
       ],
       "Your account is protected": [
         "Din konto er beskyttet"
+      ],
+      "Your addresses": [
+        "Dine adresser"
       ],
       "Your changes are not synced yet": [
         "Dine ændringer er endnu ikke synkroniseret"
