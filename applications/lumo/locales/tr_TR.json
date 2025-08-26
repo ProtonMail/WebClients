@@ -170,6 +170,9 @@
       "Let's talk": [
         "Hadi konuşalım!"
       ],
+      "Manage": [
+        "Yönetim"
+      ],
       "Manage advanced account protections": [
         "Gelişmiş hesap korumalarını yönetin"
       ],
@@ -813,26 +816,17 @@
       ],
       "Submit": [
         "Gönder"
-      ],
-      "Use ${ LUMO_SHORT_APP_NAME } Free instead": [
-        "Bunun yerine ${ LUMO_SHORT_APP_NAME } Ücretsiz'i kullanın"
       ]
     },
     "collider_2025: Button": {
       "Close": [
         "Kapat"
       ],
-      "Explore ${ LUMO_SHORT_APP_NAME } Plus": [
-        "${ LUMO_SHORT_APP_NAME } Plus'ı Keşfedin"
-      ],
       "Join waitlist": [
         "Bekleme listesine katılın"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
-      ],
-      "Manage account": [
-        "Hesap yönetimi"
       ],
       "Open Link": [
         "Bağlantıyı Aç"
@@ -883,9 +877,6 @@
       ]
     },
     "collider_2025: Characteristic Title": {
-      "Enter": [
-        "Giriş"
-      ],
       "Only you have access": [
         "Yalnızca sizin erişiminiz var"
       ],
@@ -909,35 +900,11 @@
       ]
     },
     "collider_2025: Description": {
-      "Add ${ LUMO_SHORT_APP_NAME } Plus to unlock more benefits": [
-        "Daha fazla avantajın kilidini açmak için ${ LUMO_SHORT_APP_NAME } Plus ekleyin"
-      ],
-      "Boost your productivity": [
-        "Verimliliğinizi artırın"
-      ],
       "Last updated on ${ DATE_VERSION }": [
         "Son güncelleme ${ DATE_VERSION } tarihinde"
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Hesabınıza erişmek ve daha fazla özelliğin kilidini açmak için oturum açın. Bir hesabınız yok mu? ${ createLink }"
-      ],
-      "Talk to your admin for plan details": [
-        "Plan detayları için yöneticinizle konuşun"
-      ],
-      "Talk to your admin to add ${ LUMO_SHORT_APP_NAME } Plus": [
-        "${ LUMO_SHORT_APP_NAME } Plus'ı eklemek için yöneticinizle konuşun"
-      ],
-      "To delete your account and more, go to account settings.": [
-        "Hesabınızı silmek ve daha fazlası için hesap ayarlarına gidin."
-      ],
-      "Unlock advanced models and premium features with ${ LUMO_APP_NAME } Plus.": [
-        "Gelişmiş modellerin ve premium özelliklerin kilidini ${ LUMO_APP_NAME } Plus ile açın."
-      ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
-        "${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin"
-      ],
-      "Your plan includes ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Planınız ${ LUMO_SHORT_APP_NAME } Plus içerir"
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1004,40 +971,8 @@
       "Advanced models": [
         "Gelişmiş modeller"
       ],
-      "Chat history": [
-        "Yazışma geçmişi"
-      ],
-      "Favorite chats": [
-        "Favori yazışmalar"
-      ],
-      "File uploads": [
-        "Dosya yüklemeleri"
-      ],
       "Web search": [
         "Web araması"
-      ],
-      "Weekly chats": [
-        "Haftalık yazışmalar"
-      ]
-    },
-    "collider_2025: Feature detail": {
-      "Large files": [
-        "Büyük dosyalar"
-      ],
-      "Limited": [
-        "Sınırlı"
-      ],
-      "No": [
-        "Hayır"
-      ],
-      "Small files": [
-        "Küçük dosyalar"
-      ],
-      "Unlimited": [
-        "Sınırsız"
-      ],
-      "Yes": [
-        "Evet"
       ]
     },
     "collider_2025: Guest Upsell": {
@@ -1134,9 +1069,6 @@
       ],
       "Please wait for files to finish processing": [
         "Dosyaların işlenmesi bitene kadar lütfen bekleyin"
-      ],
-      "Press ${ enterBoldText } to ask": [
-        "Sormak için ${ enterBoldText } tuşuna basın"
       ],
       "Processed content": [
         "İşlenmiş içerik"
@@ -1306,12 +1238,6 @@
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "${ LUMO_SHORT_APP_NAME } Plus edinin"
       ],
-      "Manage": [
-        "Yönet"
-      ],
-      "Manage plan": [
-        "Planı yönet"
-      ],
       "New chat": [
         "Yeni yazışma"
       ],
@@ -1364,20 +1290,11 @@
       "Don't lose the thread": [
         "Konuyu kaybetmeyin"
       ],
-      "Elevate your AI experience": [
-        "Yapay zeka deneyiminizi yükseltin"
-      ],
       "Guest": [
         "Misafir"
       ],
       "Invalid Link": [
         "Geçersiz Bağlantı"
-      ],
-      "Manage account": [
-        "Hesap yönetimi"
-      ],
-      "Manage your account and preferences": [
-        "Hesabınızı ve tercihlerinizi yönetin"
       ],
       "Opening External Link": [
         "Harici Bağlantı Açılıyor"
@@ -1388,9 +1305,6 @@
       "Secure your spot": [
         "Yerinizi güvenceye alın"
       ],
-      "Settings": [
-        "Ayarlar"
-      ],
       "Upload files": [
         "Dosya yükle"
       ],
@@ -1399,9 +1313,6 @@
       ],
       "You're on the waitlist": [
         "Bekleme listesindesiniz"
-      ],
-      "Your plan": [
-        "Tarifeniz"
       ]
     },
     "collider_2025: Tooltip": {
@@ -2638,6 +2549,14 @@
         "Öncelikli destek"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca gelecekte düzenlenecek faturalarda görüntülenecek ve var olan faturaları etkilemeyecek."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca seçtiğiniz faturayı değiştirir. Gelecekteki fatura bilgilerinizi değiştirmez."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Güvenilir kişi"
@@ -2658,6 +2577,9 @@
       ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Fatura adresi şu anda düzenlenemiyor. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Email is not valid": [
         "E-posta geçersiz"
@@ -2740,6 +2662,9 @@
       "Please select billing state": [
         "Lütfen faturalama durumunu seçin"
       ],
+      "Postal code is required": [
+        "Posta kodunun yazılması zorunludur"
+      ],
       "Process aborted": [
         "İşlem iptal edildi"
       ],
@@ -2787,6 +2712,9 @@
       ],
       "Username must end with a letter or digit": [
         "Kullanıcı adı bir harf ya da rakam ile bitmeli"
+      ],
+      "ZIP code is required": [
+        "Posta kodunun yazılması zorunludur"
       ]
     },
     "Error message": {
@@ -3553,11 +3481,17 @@
       "Category": [
         "Kategori"
       ],
+      "City": [
+        "İl"
+      ],
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
       ],
       "Colors": [
         "Renkler"
+      ],
+      "Company": [
+        "Kuruluş"
       ],
       "Company name": [
         "Kuruluş adı"
@@ -3646,6 +3580,9 @@
       "Phone number": [
         "Telefon numarası"
       ],
+      "Postal code": [
+        "Posta kodu"
+      ],
       "Proration": [
         "Hesap bakiyesi"
       ],
@@ -3657,6 +3594,12 @@
       ],
       "Start date": [
         "Başlangıç tarihi"
+      ],
+      "State": [
+        "İl"
+      ],
+      "Street address": [
+        "Sokak adresi"
       ],
       "Subscription options": [
         "Abonelik seçenekleri"
@@ -3684,6 +3627,9 @@
       ],
       "Your password (trusted contact)": [
         "Parolanız (güvenilen kişi)"
+      ],
+      "ZIP code": [
+        "Posta kodu"
       ]
     },
     "Label, credit card": {
@@ -4659,14 +4605,6 @@
         "Bazı görseller, geçerli seçimdeki yinelenen dosya adları nedeniyle yüklenmedi."
       ]
     },
-    "Offer feature": {
-      "Free": [
-        "Free"
-      ],
-      "Plus": [
-        "Plus"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " ${ helpCenterLink } veya ${ contactSupportLink } adresine gidin."
@@ -4869,6 +4807,9 @@
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
       ],
+      "VAT number": [
+        "KDV numarası"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
       ],
@@ -4921,8 +4862,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "ABN kodu ekle"
+      ],
+      "Add Business Number": [
+        "İş numarası ekle"
+      ],
+      "Add EIN": [
+        "EIN kodu ekle"
+      ],
+      "Add VAT number": [
+        "KDV numarası ekle"
+      ],
       "Business Number": [
         "İş numarası"
+      ],
+      "Edit ABN": [
+        "ABN kodunu düzenle"
+      ],
+      "Edit Business Number": [
+        "İş numarasını düzenle"
+      ],
+      "Edit EIN": [
+        "EIN kodunu düzenle"
+      ],
+      "Edit VAT number": [
+        "KDV numarasını düzenle"
       ],
       "EIN": [
         "EIN"
@@ -4935,8 +4900,20 @@
       "A way to contact you": [
         "Sizinle iletişim kurmak için bir yol"
       ],
+      "Anderson": [
+        "Kaya"
+      ],
+      "Anytown": [
+        "İl"
+      ],
+      "Company name": [
+        "Kuruluş adı"
+      ],
       "Gift code": [
         "Hediye kodu"
+      ],
+      "Main street 12": [
+        "12. cadde"
       ],
       "Organization name": [
         "Kuruluş adı"
@@ -4959,11 +4936,20 @@
       "Select a reason": [
         "Bir neden seçin"
       ],
+      "Select country": [
+        "Ülke seçin"
+      ],
       "Select state": [
         "İl seçin"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "${ BRAND_NAME } uygulamasını iyileştirmek için bir düşünceniz varsa paylaşın"
+      ],
+      "Thomas": [
+        "Ali"
+      ],
+      "VAT number": [
+        "KDV numarası"
       ],
       "Your organization name": [
         "Kuruluşunuzun adı"
@@ -5411,6 +5397,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Fatura bilgileri güncellendi"
+      ],
       "Code sent to ${ methodTo }": [
         "Kod ${ methodTo } alıcısına gönderildi"
       ],
@@ -5555,6 +5544,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } uygulamalarını indirin"
+      ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
       ],
       "Edit credit/debit card": [
         "Kredi ya da banka kartını düzenle"
