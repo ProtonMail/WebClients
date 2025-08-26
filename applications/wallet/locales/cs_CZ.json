@@ -654,7 +654,7 @@
         "Účtováno ${ amount } jednorázově"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
-        "Obnovení po 1 měsíci za ${ regularAmount }."
+        "Obnovuje se po 1 měsíci za ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
@@ -2260,6 +2260,14 @@
         "Prioritní podpora"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Textová pole jsou nepovinná. Informace, které uvedete v tomto formuláři, se objeví pouze na fakturách vystavených v budoucnu a nebudou mít vliv na stávající faktury."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Textová pole jsou nepovinná. Informace, které uvedete v tomto formuláři, změní pouze vybranou fakturu, nikoli budoucí fakturační údaje."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Důvěryhodný kontakt"
@@ -2286,6 +2294,9 @@
       ],
       "Domain not available, try again later": [
         "Doména není dostupná, zkuste to znovu později"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Úprava fakturační adresy není v tuto chvíli k dispozici. Zkuste to prosím později."
       ],
       "Email is not valid": [
         "E-mailová adresa není platná"
@@ -2371,6 +2382,9 @@
       "Please select billing state": [
         "Vyberte prosím stát platby"
       ],
+      "Postal code is required": [
+        "PSČ je povinné"
+      ],
       "Process aborted": [
         "Proces přerušen"
       ],
@@ -2421,6 +2435,9 @@
       ],
       "Username must end with a letter or digit": [
         "Uživatelské jméno musí končit písmenem nebo číslicí"
+      ],
+      "ZIP code is required": [
+        "PSČ je potřeba vyplnit"
       ]
     },
     "Error message": {
@@ -2599,7 +2616,7 @@
     },
     "Font face option": {
       "System default": [
-        "Systémový výchozí"
+        "Systémové výchozí"
       ],
       "Theme font": [
         "Písmo motivu"
@@ -2607,13 +2624,13 @@
     },
     "Font size option": {
       "Large": [
-        "Velký"
+        "Velké"
       ],
       "Medium (recommended)": [
         "Střední (doporučeno)"
       ],
       "Small": [
-        "Malý"
+        "Malé"
       ],
       "Very large": [
         "Velmi velké"
@@ -2856,6 +2873,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Zadejte vlastní heslo (jako správce organizace)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Zadejte vlastní heslo (jako důvěryhodný kontakt)."
       ],
       "Everything in ${ planOrAppName }": [
         "Vše v ${ planOrAppName }"
@@ -3264,11 +3284,17 @@
       "Category": [
         "Kategorie"
       ],
+      "City": [
+        "Město"
+      ],
       "Code is 6 digits without spaces": [
         "Kód má 6 číslic bez mezer"
       ],
       "Colors": [
         "Barvy"
+      ],
+      "Company": [
+        "Společnost"
       ],
       "Company name": [
         "Název společnosti"
@@ -3360,6 +3386,9 @@
       "Phone number": [
         "Telefonní číslo"
       ],
+      "Postal code": [
+        "PSČ"
+      ],
       "Proration": [
         "Prorace"
       ],
@@ -3377,6 +3406,12 @@
       ],
       "Start date": [
         "Datum zahájení"
+      ],
+      "State": [
+        "Stát"
+      ],
+      "Street address": [
+        "Ulice a č. p."
       ],
       "Subscription options": [
         "Možnosti předplatného"
@@ -3401,6 +3436,12 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (správce)"
+      ],
+      "Your password (trusted contact)": [
+        "Vaše heslo (důvěryhodný kontakt)"
+      ],
+      "ZIP code": [
+        "PSČ"
       ]
     },
     "Label, credit card": {
@@ -4658,6 +4699,9 @@
       "Timeout exceeded": [
         "Byl překročen časový limit"
       ],
+      "VAT number": [
+        "DIČ"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaše měna byla změněna na euro (€), protože bankovní převody SEPA podporují pouze platby v eurech."
       ],
@@ -4687,7 +4731,7 @@
     },
     "Payments.plan_name": {
       "Free": [
-        "Bezplatné"
+        "Free"
       ]
     },
     "Payments.Saved payment method details": {
@@ -4710,8 +4754,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Přidat ABN"
+      ],
+      "Add Business Number": [
+        "Přidat firemní číslo"
+      ],
+      "Add EIN": [
+        "Přidat EIN"
+      ],
+      "Add VAT number": [
+        "Přidat DIČ"
+      ],
       "Business Number": [
         "Firemní číslo"
+      ],
+      "Edit ABN": [
+        "Upravit ABN"
+      ],
+      "Edit Business Number": [
+        "Upravit firemní číslo"
+      ],
+      "Edit EIN": [
+        "Upravit EIN"
+      ],
+      "Edit VAT number": [
+        "Upravit DIČ"
       ],
       "EIN": [
         "EIN"
@@ -4724,6 +4792,15 @@
       "A way to contact you": [
         "Způsob, jak vás kontaktovat"
       ],
+      "Anderson": [
+        "Příjmení"
+      ],
+      "Anytown": [
+        "Město"
+      ],
+      "Company name": [
+        "Název společnosti"
+      ],
       "Confirm passphrase or leave empty": [
         "Potvrďte heslo nebo nechte prázdné"
       ],
@@ -4735,6 +4812,9 @@
       ],
       "Gift code": [
         "Dárkový kód"
+      ],
+      "Main street 12": [
+        "Ulice a číslo popisné"
       ],
       "Organization name": [
         "Název organizace"
@@ -4763,11 +4843,20 @@
       "Select a reason": [
         "Vyberte důvod"
       ],
+      "Select country": [
+        "Vyberte zemi"
+      ],
       "Select state": [
         "Vyberte stav"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Dejte nám vědět, co si myslíte, že by mohlo vylepšit ${ BRAND_NAME }"
+      ],
+      "Thomas": [
+        "Jméno"
+      ],
+      "VAT number": [
+        "DIČ"
       ],
       "Your organization name": [
         "Název vaší organizace"
@@ -5163,7 +5252,7 @@
         "Vaše ${ appStorage } je plné"
       ],
       "Your storage is full": [
-        "Váš úložný prostor je plný"
+        "Vaše úložiště je plné"
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Ztratíte přístup k ${ gb } úložiště a prioritní podporu."
@@ -5323,6 +5412,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Fakturační údaje aktualizovány"
+      ],
       "Code sent to ${ methodTo }": [
         "Kód zaslán na ${ methodTo }"
       ],
@@ -5505,6 +5597,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Stáhnout aplikace ${ DRIVE_APP_NAME }"
+      ],
+      "Edit billing address": [
+        "Úprava fakturační adresy"
       ],
       "Edit credit/debit card": [
         "Editovat kreditní/debetní kartu"

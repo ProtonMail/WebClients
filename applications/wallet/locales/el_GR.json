@@ -2240,6 +2240,14 @@
         "Υποστήριξη κατά προτεραιότητα"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Τα πεδία κειμένου είναι προαιρετικά. Οι πληροφορίες που παρέχετε σε αυτή τη φόρμα θα εμφανίζονται σε μελλοντικά τιμολόγια και δεν θα επηρεάσουν τα τιμολόγια που ήδη έχουν εκδοθεί."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Τα πεδία κειμένου είναι προαιρετικά. Οι πληροφορίες που παρέχετε σε αυτήν τη φόρμα θα αλλάξουν μόνο το τιμολόγιο που έχετε επιλέξει και όχι τα μελλοντικά στοιχεία του τιμολογίου σας."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Αξιόπιστη επαφή"
@@ -2266,6 +2274,9 @@
       ],
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Η επεξεργασία της διεύθυνσης χρέωσης δεν είναι διαθέσιμη προς το παρόν. Παρακαλούμε προσπαθήστε ξανά αργότερα."
       ],
       "Email is not valid": [
         "Η διεύθυνση email δεν είναι έγκυρη"
@@ -2351,6 +2362,9 @@
       "Please select billing state": [
         "Παρακαλούμε επιλέξτε τον νομό χρέωσης"
       ],
+      "Postal code is required": [
+        "Απαιτείται ταχυδρομικός κώδικας"
+      ],
       "Process aborted": [
         "Η διαδικασία ματαιώθηκε"
       ],
@@ -2401,6 +2415,9 @@
       ],
       "Username must end with a letter or digit": [
         "Το όνομα χρήστη πρέπει να τελειώνει με γράμμα ή ψηφίο"
+      ],
+      "ZIP code is required": [
+        "Απαιτείται ταχυδρομικός κώδικας"
       ]
     },
     "Error message": {
@@ -3217,11 +3234,17 @@
       "Category": [
         "Κατηγορία"
       ],
+      "City": [
+        "Πόλη"
+      ],
       "Code is 6 digits without spaces": [
         "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
       ],
       "Colors": [
         "Χρώματα"
+      ],
+      "Company": [
+        "Εταιρεια"
       ],
       "Company name": [
         "Όνομα εταιρείας"
@@ -3313,6 +3336,9 @@
       "Phone number": [
         "Αριθμός τηλεφώνου"
       ],
+      "Postal code": [
+        "Ταχυδρομικός κώδικας"
+      ],
       "Proration": [
         "Προμήθεια"
       ],
@@ -3330,6 +3356,12 @@
       ],
       "Start date": [
         "Ημερομηνία Έναρξης"
+      ],
+      "State": [
+        "Πολιτεία"
+      ],
+      "Street address": [
+        "Οδός"
       ],
       "Subscription options": [
         "Επιλογές συνδρομής"
@@ -3357,6 +3389,9 @@
       ],
       "Your password (trusted contact)": [
         "Ο κωδικός πρόσβασής σας (έμπιστη επαφή)"
+      ],
+      "ZIP code": [
+        "Τ.Κ."
       ]
     },
     "Label, credit card": {
@@ -4550,6 +4585,9 @@
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
       ],
+      "VAT number": [
+        "Αριθμός ΑΦΜ"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Το νόμισμά σας άλλαξε σε ευρώ (€) επειδή οι τραπεζικές μεταφορές SEPA υποστηρίζουν μόνο πληρωμές σε ευρώ."
       ],
@@ -4602,8 +4640,32 @@
       "ABN": [
         "ΑΦΜ"
       ],
+      "Add ABN": [
+        "Προσθήκη ABN"
+      ],
+      "Add Business Number": [
+        "Προσθήκη Αριθμού ΦΠΑ Επιχείρησης"
+      ],
+      "Add EIN": [
+        "Προσθήκη ΑΦΜ"
+      ],
+      "Add VAT number": [
+        "Προσθήκη Αριθμού ΦΠΑ"
+      ],
       "Business Number": [
         "Αριθμός Επιχείρησης"
+      ],
+      "Edit ABN": [
+        "Επεξεργασία ABN"
+      ],
+      "Edit Business Number": [
+        "Επεξεργασία Αριθμού ΦΠΑ Επιχείρησης"
+      ],
+      "Edit EIN": [
+        "Επεξεργασία ΑΦΜ"
+      ],
+      "Edit VAT number": [
+        "Επεξεργασία Αριθμού ΦΠΑ"
       ],
       "EIN": [
         "ΑΦΜ"
@@ -4616,6 +4678,15 @@
       "A way to contact you": [
         "Ένας τρόπος να επικοινωνήσουμε μαζί σας"
       ],
+      "Anderson": [
+        "Καρανικολής"
+      ],
+      "Anytown": [
+        "Αθήνα"
+      ],
+      "Company name": [
+        "Όνομα εταιρείας"
+      ],
       "Confirm passphrase or leave empty": [
         "Εισάγετε συνθηματικό ή αφήστε το κενό"
       ],
@@ -4627,6 +4698,9 @@
       ],
       "Gift code": [
         "Κωδικός δώρου"
+      ],
+      "Main street 12": [
+        "Ονησίμου 12"
       ],
       "Organization name": [
         "Όνομα οργανισμού"
@@ -4655,11 +4729,20 @@
       "Select a reason": [
         "Επιλογή αιτιολογίας"
       ],
+      "Select country": [
+        "Επιλογή χώρας"
+      ],
       "Select state": [
         "Επιλέξτε νομό/περιοχή"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Μοιραστείτε αυτό που πιστεύετε ότι θα μπορούσε να κάνει το ${ BRAND_NAME } καλύτερο"
+      ],
+      "Thomas": [
+        "Θωμάς"
+      ],
+      "VAT number": [
+        "Α.Φ.Μ."
       ],
       "Your organization name": [
         "Το όνομα του οργανισμού σας"
@@ -5191,6 +5274,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Τα στοιχεία χρέωσης ενημερώθηκαν"
+      ],
       "Code sent to ${ methodTo }": [
         "Ο κωδικός στάλθηκε στο ${ methodTo }"
       ],
@@ -5373,6 +5459,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Λήψη εφαρμογών ${ DRIVE_APP_NAME }"
+      ],
+      "Edit billing address": [
+        "Επεξεργασία διεύθυνσης χρέωσης"
       ],
       "Edit credit/debit card": [
         "Επεξεργασία πιστωτικής/χρεωστικής κάρτας"
