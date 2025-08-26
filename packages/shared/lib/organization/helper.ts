@@ -47,7 +47,6 @@ export const isOrganizationB2B = (organization?: Organization) => {
         PLANS.VPN_BUSINESS,
         PLANS.BUNDLE_PRO,
         PLANS.BUNDLE_PRO_2024,
-        PLANS.ENTERPRISE,
     ].includes(organization?.PlanName as PLANS);
 };
 
@@ -58,7 +57,6 @@ export const getIsSMPTEligible = (organization?: Organization) => {
         PLANS.DRIVE_PRO,
         PLANS.BUNDLE_PRO,
         PLANS.BUNDLE_PRO_2024,
-        PLANS.ENTERPRISE,
         PLANS.FAMILY,
         PLANS.PASS_FAMILY,
         PLANS.DUO,
