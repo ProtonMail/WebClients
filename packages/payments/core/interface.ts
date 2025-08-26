@@ -28,8 +28,8 @@ import type {
     CURRENCIES,
     CYCLE,
     FREE_SUBSCRIPTION,
-    INVOICE_STATE,
-    INVOICE_TYPE,
+    InvoiceState,
+    InvoiceType,
     MethodStorage,
     PAYMENT_METHOD_TYPES,
     PAYMENT_TOKEN_STATUS,
@@ -427,8 +427,8 @@ export interface WrappedCryptoPayment {
 
 export interface Invoice {
     ID: string;
-    Type: INVOICE_TYPE;
-    State: INVOICE_STATE;
+    Type: InvoiceType;
+    State: InvoiceState;
     Currency: Currency;
     AmountDue: number;
     AmountCharged: number;

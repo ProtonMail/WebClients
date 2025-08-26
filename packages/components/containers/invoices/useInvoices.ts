@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from 'react';
 
-import type { INVOICE_OWNER, Invoice, InvoiceResponse } from '@proton/payments';
+import type { Invoice, InvoiceOwner, InvoiceResponse } from '@proton/payments';
 import { type InvoiceDocument, queryInvoices } from '@proton/payments';
 
 import { usePaginationAsync } from '../../components/pagination';
@@ -15,7 +15,7 @@ export type InvoicesHook = DocumentHook & {
     invoices: Invoice[];
 };
 
-const useInvoices = ({ owner, Document }: { owner: INVOICE_OWNER; Document: InvoiceDocument }): InvoicesHook => {
+const useInvoices = ({ owner, Document }: { owner: InvoiceOwner; Document: InvoiceDocument }): InvoicesHook => {
     const pagination = usePaginationAsync(1);
     const { page } = pagination;
 

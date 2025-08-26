@@ -16,8 +16,8 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 import InvoiceActions from './InvoiceActions';
 import InvoiceAmount from './InvoiceAmount';
-import InvoiceState from './InvoiceState';
-import InvoiceType from './InvoiceType';
+import InvoiceStateBadge from './InvoiceStateBadge';
+import InvoiceTypeTitle from './InvoiceTypeTitle';
 import type { PdfPreviewControls } from './PaymentsPdfPreview';
 import PaymentsPdfPreview from './PaymentsPdfPreview';
 import { getInvoicePaymentsVersion } from './helpers';
@@ -78,8 +78,8 @@ const InvoiceGroup = ({ invoices, loading, error, page, request, onEdit }: Props
                                         cells={[
                                             invoice.ID,
                                             <InvoiceAmount key={key} invoice={invoice} />,
-                                            <InvoiceType key={key} invoice={invoice} />,
-                                            <InvoiceState key={key} invoice={invoice} />,
+                                            <InvoiceTypeTitle key={key} invoice={invoice} />,
+                                            <InvoiceStateBadge key={key} invoice={invoice} />,
                                             <Time key={key} sameDayFormat={false}>
                                                 {invoice.CreateTime}
                                             </Time>,

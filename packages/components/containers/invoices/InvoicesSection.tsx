@@ -13,7 +13,7 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useEventManagerV6 } from '@proton/components/containers/eventManager/EventManagerV6Provider';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { INVOICE_OWNER, INVOICE_STATE, InvoiceDocument } from '@proton/payments';
+import { InvoiceDocument, InvoiceOwner, InvoiceState } from '@proton/payments';
 import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -36,7 +36,7 @@ const InvoicesSection = () => {
 
     const [user] = useUser();
 
-    const [owner, setOwner] = useState(INVOICE_OWNER.USER);
+    const [owner, setOwner] = useState(InvoiceOwner.User);
 
     const [invoiceModalProps, setInvoiceModalOpen, renderInvoiceModal] = useModalState();
     const {
@@ -60,14 +60,14 @@ const InvoicesSection = () => {
     }[document];
 
     const handleOwner =
-        (own = INVOICE_OWNER.USER) =>
+        (own = InvoiceOwner.User) =>
         () => {
             setOwner(own);
             invoicesHook.onSelect(1);
             setDocument(DocumentType.Invoice);
         };
 
-    const hasUnpaid = invoicesHook.invoices.find(({ State }) => State === INVOICE_STATE.UNPAID);
+    const hasUnpaid = invoicesHook.invoices.find(({ State }) => State === InvoiceState.Unpaid);
 
     const { subscribe } = useEventManager();
     const { coreEventV6Manager } = useEventManagerV6();
@@ -134,15 +134,15 @@ const InvoicesSection = () => {
                 {user.isPaid ? (
                     <ButtonGroup className="mr-4 mb-2">
                         <Button
-                            className={owner === INVOICE_OWNER.USER ? 'is-selected' : ''}
-                            onClick={handleOwner(INVOICE_OWNER.USER)}
+                            className={owner === InvoiceOwner.User ? 'is-selected' : ''}
+                            onClick={handleOwner(InvoiceOwner.User)}
                         >
                             {c('Action').t`User`}
                         </Button>
                         {user.isAdmin && (
                             <Button
-                                className={owner === INVOICE_OWNER.ORGANIZATION ? 'is-selected' : ''}
-                                onClick={handleOwner(INVOICE_OWNER.ORGANIZATION)}
+                                className={owner === InvoiceOwner.Organization ? 'is-selected' : ''}
+                                onClick={handleOwner(InvoiceOwner.Organization)}
                             >
                                 {c('Action').t`Organization`}
                             </Button>
