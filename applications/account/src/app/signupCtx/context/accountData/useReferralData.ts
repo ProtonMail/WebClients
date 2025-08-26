@@ -4,6 +4,7 @@ import metrics, { observeApiError } from '@proton/metrics/index';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api, ReferralData } from '@proton/shared/lib/interfaces';
 
 export class InvalidReferrerError extends Error {
@@ -33,9 +34,12 @@ export const useReferralData = () => {
                     status: 'success',
                 });
             } catch (error) {
-                const { status } = getApiError(error);
+                const { status, code } = getApiError(error);
 
-                if (status === HTTP_STATUS_CODE.NOT_FOUND) {
+                if (
+                    status === HTTP_STATUS_CODE.NOT_FOUND ||
+                    (status === HTTP_STATUS_CODE.UNPROCESSABLE_ENTITY && code === API_CUSTOM_ERROR_CODES.NOT_FOUND)
+                ) {
                     metrics.core_referral_identifier_initialization_total.increment({
                         status: 'referral-code-no-found',
                     });
