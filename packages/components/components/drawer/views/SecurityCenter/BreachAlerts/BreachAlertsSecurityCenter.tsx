@@ -34,7 +34,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
 import { APP_UPSELL_REF_PATH, DARK_WEB_MONITORING_NAME, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
+import { DARK_WEB_MONITORING_STATE } from '@proton/shared/lib/interfaces';
 import ProtonSentinelPlusLogo from '@proton/styles/assets/img/illustrations/sentinel-shield-bolt-breach-alert.svg';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
@@ -63,7 +63,7 @@ const BreachAlertsSecurityCenter = () => {
     const [error, setError] = useState<{ message: string } | null>(null);
     const api = useApi();
     const [selectedBreachID, setSelectedBreachID] = useState<string | null>(null);
-    const hasAlertsEnabled = userSettings.BreachAlerts.Value === 1;
+    const hasAlertsEnabled = userSettings.BreachAlerts.Value === DARK_WEB_MONITORING_STATE.ENABLED;
     const [sample, setSample] = useState<SampleBreach | null>(null);
     // upsellCount is the Count returned from reponse that represents the number of breaches a free user has
     const [upsellCount, setUpsellCount] = useState<number | null>(null);
@@ -124,8 +124,18 @@ const BreachAlertsSecurityCenter = () => {
     const enableBreachAlerts = () => {
         const run = async () => {
             try {
-                const { UserSettings } = await api<{ UserSettings: UserSettings }>(enableBreachAlert());
-                dispatch(userSettingsActions.update({ UserSettings }));
+                await withToggleLoading(api(enableBreachAlert()));
+                dispatch(
+                    userSettingsActions.update({
+                        UserSettings: {
+                            ...userSettings,
+                            BreachAlerts: {
+                                ...userSettings.BreachAlerts,
+                                Value: DARK_WEB_MONITORING_STATE.ENABLED,
+                            },
+                        },
+                    })
+                );
                 createNotification({ text: getEnabledString(DARK_WEB_MONITORING_NAME) });
             } catch (e) {
                 handleError(e);
