@@ -185,11 +185,6 @@ export function getSupportedB2BAddons(planIDs: PlanIDs): SupportedAddons {
         supported[ADDON_NAMES.LUMO_BUNDLE_PRO_2024] = true;
     }
 
-    if (planIDs[PLANS.ENTERPRISE]) {
-        supported[ADDON_NAMES.MEMBER_ENTERPRISE] = true;
-        supported[ADDON_NAMES.DOMAIN_ENTERPRISE] = true;
-    }
-
     if (planIDs[PLANS.VPN_PRO]) {
         supported[ADDON_NAMES.MEMBER_VPN_PRO] = true;
         supported[ADDON_NAMES.LUMO_VPN_PRO] = true;

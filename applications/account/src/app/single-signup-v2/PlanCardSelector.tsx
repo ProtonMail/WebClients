@@ -11,6 +11,7 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import {
     CYCLE,
     type Currency,
+    ENTERPRISE_PLAN_TITLE,
     FREE_PLAN,
     type FreePlanDefault,
     PLANS,
@@ -52,13 +53,32 @@ export const planCardFeatureProps = {
     itemClassName: 'color-weak',
 } as const;
 
-export interface PlanCard {
+interface RegularPlanCard {
     plan: PLANS;
     subsection: ReactNode;
     type: 'best' | 'standard';
     guarantee: boolean;
-    interactive?: false;
     subline?: string;
+    interactive?: never;
+}
+
+interface NonInteractivePlanCard {
+    plan?: never;
+    subsection: ReactNode;
+    type: 'best' | 'standard';
+    guarantee: boolean;
+    subline?: string;
+    interactive: false;
+}
+
+export type PlanCard = RegularPlanCard | NonInteractivePlanCard;
+
+export function isRegularPlanCard(planCard: PlanCard): planCard is RegularPlanCard {
+    return 'plan' in planCard;
+}
+
+export function isNonInteractivePlanCard(planCard: PlanCard): planCard is NonInteractivePlanCard {
+    return planCard.interactive === false;
 }
 
 const getLimitedTimeOfferText = () => {
@@ -341,6 +361,36 @@ export const PlanCardSelector = ({
     return (
         <div className="plan-card-selector-container mx-auto" data-plan-count={planCount}>
             {planCards.map((planCard) => {
+                const shouldDisplayTrialText = audience === Audience.B2B && signupParameters?.trial;
+
+                const subsection = !shouldDisplayTrialText ? (
+                    planCard.subsection
+                ) : (
+                    <>
+                        <span className="color-success text-left text-sm text-bold mb-3">
+                            {c('b2b_trials_2025_Info').t`Try it free for 14 days`}
+                        </span>
+                        {planCard.subsection}
+                    </>
+                );
+
+                if (isNonInteractivePlanCard(planCard)) {
+                    return (
+                        <PlanCardViewSlot
+                            id="enterprise"
+                            price={getLetsTalk()}
+                            billedText={c('pass_signup_2023: Info').t`Get in touch with our sales team`}
+                            text={ENTERPRISE_PLAN_TITLE}
+                            subline={planCard.subline}
+                            key={planCard.plan}
+                            dark={dark}
+                            subsection={subsection}
+                            interactive={planCard.interactive}
+                            maxWidth={planCount > 2}
+                        />
+                    );
+                }
+
                 const isFreePlan = planCard.plan === PLANS.FREE;
                 const planIDs = isFreePlan ? {} : { [planCard.plan]: 1 };
                 const pricing = getPricingFromPlanIDs(planIDs, plansMap);
@@ -361,37 +411,6 @@ export const PlanCardSelector = ({
 
                 const offer = getPlanOffer(planFromCard);
                 const highlight = planCard.type === 'best' || offer.valid;
-
-                const shouldDisplayTrialText =
-                    audience === Audience.B2B && signupParameters?.trial && planCard.plan !== PLANS.ENTERPRISE;
-
-                const subsection = !shouldDisplayTrialText ? (
-                    planCard.subsection
-                ) : (
-                    <>
-                        <span className="color-success text-left text-sm text-bold mb-3">
-                            {c('b2b_trials_2025_Info').t`Try it free for 14 days`}
-                        </span>
-                        {planCard.subsection}
-                    </>
-                );
-
-                if (planCard.interactive === false) {
-                    return (
-                        <PlanCardViewSlot
-                            id={planCard.plan}
-                            price={getLetsTalk()}
-                            billedText={c('pass_signup_2023: Info').t`Get in touch with our sales team`}
-                            text={planFromCard.Title}
-                            subline={planCard.subline}
-                            key={planCard.plan}
-                            dark={dark}
-                            subsection={subsection}
-                            interactive={planCard.interactive}
-                            maxWidth={planCount > 2}
-                        />
-                    );
-                }
 
                 const totals = getTotalFromPricing(pricing, cycle);
                 const priceToDisplay = {

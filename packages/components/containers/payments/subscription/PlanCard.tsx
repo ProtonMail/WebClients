@@ -46,7 +46,6 @@ const getCycleUnit = (planName: PLANS) => {
         case PLANS.DRIVE_PRO:
         case PLANS.BUNDLE_PRO:
         case PLANS.BUNDLE_PRO_2024:
-        case PLANS.ENTERPRISE:
         case PLANS.PASS_PRO:
         case PLANS.PASS_BUSINESS:
         case PLANS.VPN_PRO:
