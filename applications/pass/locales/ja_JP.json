@@ -130,6 +130,9 @@
       "Clear search": [
         "検索をクリア"
       ],
+      "Clone item": [
+        "アイテムを複製"
+      ],
       "Close": [
         "閉じる"
       ],
@@ -1798,6 +1801,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -4167,6 +4173,9 @@
       "Grant permissions": [
         "権限を付与する"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "非表示の保管庫は、検索および自動入力中は表示されません。"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email エイリアス"
       ],
@@ -4451,6 +4460,11 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount }個のエイリアスを完全に削除しようとしています。"
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "コピー"
       ]
     },
     "Today icon tooltip in mini calendar": {

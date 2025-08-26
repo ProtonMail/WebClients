@@ -130,6 +130,9 @@
       "Clear search": [
         "Borrar la búsqueda"
       ],
+      "Clone item": [
+        "Clonar elemento"
+      ],
       "Close": [
         "Cerrar"
       ],
@@ -426,6 +429,9 @@
       ],
       "Open navigation": [
         "Abrir la navegación"
+      ],
+      "Organize vaults": [
+        "Organizar cajas fuertes"
       ],
       "Pass for Android": [
         "Pass para Android"
@@ -1825,7 +1831,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte borrará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
+        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -4221,6 +4228,9 @@
       "Grant permissions": [
         "Conceder permisos"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Las cajas fuertes ocultas no serán visibles durante la búsqueda y el relleno automático."
+      ],
       "Hide-my-email aliases": [
         "Alias de hide-my-email"
       ],
@@ -4324,6 +4334,9 @@
       ],
       "No shared secure links": [
         "No hay enlaces seguros compartidos."
+      ],
+      "Organize vaults": [
+        "Organizar cajas fuertes"
       ],
       "Our welcome gift to you": [
         "Nuestro regalo de bienvenida para ti"
@@ -4510,6 +4523,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Estás a punto de eliminar definitivamente ${ aliasCount } alias.",
         "Estás a punto de eliminar definitivamente ${ aliasCount } alias."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "copiar"
       ]
     },
     "Today icon tooltip in mini calendar": {
