@@ -24,10 +24,11 @@ const {
 } = envVars;
 
 const EXCLUDED_WEBPACK_ENTRIES = [
-    'account',
     'background',
     'client',
     'dropdown',
+    'external',
+    'fork',
     'elements',
     'notification',
     'orchestrator',
@@ -36,51 +37,54 @@ const EXCLUDED_WEBPACK_ENTRIES = [
 
 const sanitizeWebpackConfig = (config: Configuration) => {
     const alias = config.resolve!.alias as Record<string, string>;
-    /** In `@pmmmwh/react-refresh-webpack-plugin/client/ReactRefreshEntry.js`, the import of
-     * `core-js-pure` introduces corejs polyfills which we aim to exclude when injecting into
-     * content-scripts. Therefore, we are aliasing the import to prevent this behavior. */
-    alias['core-js-pure/features/global-this'] = path.resolve(__dirname, './global-this.js');
 
-    /* Only allow hot reloading capabilities for the pop-up
-     * app while maintaining a "stale watch mode" for other
-     * parts of the extension. */
-    Object.keys(config.entry!).forEach((entryName) => {
-        if (!EXCLUDED_WEBPACK_ENTRIES.includes(entryName)) {
-            const entryObj = config.entry! as EntryObject;
-            const entry = entryObj[entryName];
+    if (!RUNTIME_RELOAD) {
+        /** In `@pmmmwh/react-refresh-webpack-plugin/client/ReactRefreshEntry.js`, the import of
+         * `core-js-pure` introduces corejs polyfills which we aim to exclude when injecting into
+         * content-scripts. Therefore, we are aliasing the import to prevent this behavior. */
+        alias['core-js-pure/features/global-this'] = path.resolve(__dirname, './global-this.js');
 
-            if (typeof entry === 'string' || Array.isArray(entry)) {
-                entryObj[entryName] = [
-                    /* runtime code for hotmodule replacement */
-                    'webpack/hot/dev-server',
-                    /* dev-server client for web socket transport */
-                    `webpack-dev-server/client?hot=true&hostname=localhost&port=${WEBPACK_DEV_PORT}&protocol=ws:`,
-                    entry,
-                ].flat();
-            } else {
-                const entryImport = entry.import;
-                if (typeof entryImport === 'string' || Array.isArray(entryImport)) {
-                    entry.import = [
+        /* Only allow hot reloading capabilities for the pop-up
+         * app while maintaining a "stale watch mode" for other
+         * parts of the extension. */
+        Object.keys(config.entry!).forEach((entryName) => {
+            if (!EXCLUDED_WEBPACK_ENTRIES.includes(entryName)) {
+                const entryObj = config.entry! as EntryObject;
+                const entry = entryObj[entryName];
+
+                if (typeof entry === 'string' || Array.isArray(entry)) {
+                    entryObj[entryName] = [
                         /* runtime code for hotmodule replacement */
                         'webpack/hot/dev-server',
                         /* dev-server client for web socket transport */
                         `webpack-dev-server/client?hot=true&hostname=localhost&port=${WEBPACK_DEV_PORT}&protocol=ws:`,
-                        entryImport,
+                        entry,
                     ].flat();
+                } else {
+                    const entryImport = entry.import;
+                    if (typeof entryImport === 'string' || Array.isArray(entryImport)) {
+                        entry.import = [
+                            /* runtime code for hotmodule replacement */
+                            'webpack/hot/dev-server',
+                            /* dev-server client for web socket transport */
+                            `webpack-dev-server/client?hot=true&hostname=localhost&port=${WEBPACK_DEV_PORT}&protocol=ws:`,
+                            entryImport,
+                        ].flat();
+                    }
                 }
             }
-        }
-    });
+        });
 
-    config.plugins = [new ReactRefreshWebpackPlugin({ overlay: false }), ...(config.plugins ?? [])];
+        config.plugins = [new ReactRefreshWebpackPlugin({ overlay: false }), ...(config.plugins ?? [])];
+    }
+
     return config;
 };
 
 const devConfig = sanitizeWebpackConfig(config);
 const compiler = webpack(devConfig);
-if (!compiler) {
-    throw new Error('webpack compiler is missing');
-}
+
+if (!compiler) throw new Error('webpack compiler is missing');
 
 const server = new WebpackDevServer(
     {
