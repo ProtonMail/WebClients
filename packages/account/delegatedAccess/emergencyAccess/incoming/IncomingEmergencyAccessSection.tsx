@@ -86,7 +86,7 @@ const IncomingDelegatedAccessCell = ({
 
 const IncomingDelegatedAccessActions = ({
     value,
-    meta: { canRequestAccess, canLogin, canDelete },
+    meta: { canRequestAccess, canCancelRequestAccess, canLogin, canDelete },
     notify,
 }: Pick<IncomingItemProps, 'value' | 'meta' | 'notify'>) => {
     return (
@@ -96,6 +96,10 @@ const IncomingDelegatedAccessActions = ({
                     canRequestAccess && {
                         text: c('Action').t`Request access`,
                         onClick: () => notify({ type: 'request-access', value }),
+                    },
+                    canCancelRequestAccess && {
+                        text: c('Action').t`Cancel request`,
+                        onClick: () => notify({ type: 'cancel-request-access', value }),
                     },
                     canLogin && {
                         loading: value.loading.access,
