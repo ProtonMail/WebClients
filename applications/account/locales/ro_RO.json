@@ -70,6 +70,9 @@
       "Accept": [
         "Acceptare"
       ],
+      "Access account": [
+        "Accesare cont"
+      ],
       "activate": [
         "activare"
       ],
@@ -252,6 +255,9 @@
       ],
       "Claim it": [
         "Revendicați"
+      ],
+      "Claim this address": [
+        "Revendicați această adresă"
       ],
       "Clear all formatting": [
         "Eliminare formatări"
@@ -724,6 +730,9 @@
       "Get ${ planOrAppName }": [
         "Luați ${ planOrAppName }"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Obțineți o adresă gratuită ${ BRAND_NAME }"
+      ],
       "Get a new encrypted email address": [
         "Obțineți o adresă de e-mail criptată"
       ],
@@ -774,6 +783,9 @@
       ],
       "Get verification code": [
         "Obținere cod de verificare"
+      ],
+      "Give access now": [
+        "Acordare acces acum"
       ],
       "Go back": [
         "Înapoi"
@@ -1003,6 +1015,9 @@
       "Open navigation": [
         "Deschidere navigare"
       ],
+      "Opt out": [
+        "Renunțare"
+      ],
       "Or": [
         "Sau"
       ],
@@ -1053,6 +1068,9 @@
       ],
       "Refer a friend": [
         "Recomandați pe cineva"
+      ],
+      "Refresh": [
+        "Împrospătare"
       ],
       "Refresh status": [
         "Actualizare stare"
@@ -1116,6 +1134,9 @@
       ],
       "Request a feature": [
         "Solicitare funcție"
+      ],
+      "Request access": [
+        "Solicitare acces"
       ],
       "Request new code": [
         "Solicitare cod nou"
@@ -1386,6 +1407,9 @@
       ],
       "Stay": [
         "Nu închide"
+      ],
+      "Stop being trusted contact": [
+        "Încetați să mai fiți un contact de încredere"
       ],
       "Stop using single sign-on": [
         "Oprire utilizare conectare unică"
@@ -5182,6 +5206,9 @@
       ]
     },
     "emergency_access": {
+      "${ BRAND_NAME } Account email": [
+        "E-mail cont ${ BRAND_NAME }"
+      ],
       "${ n } day": [
         "${ n } zi",
         "${ n } zile",
@@ -5192,26 +5219,143 @@
         "Zile rămase: ${ n }",
         "Zile rămase: ${ n }"
       ],
+      "${ user } will be able to use your account and change your data.": [
+        "Utilizatorul ${ user } vă va putea folosi contul și schimba datele."
+      ],
+      "${ user } will no longer be able to request access to your account in case of emergency.": [
+        "Utilizatorul ${ user } nu vă va mai putea solicita acces la cont în caz de urgență."
+      ],
       "Access granted": [
         "Acces acordat"
+      ],
+      "Access granted on ${ formattedAccessibleAt }": [
+        "Acces acordat lui ${ formattedAccessibleAt }"
+      ],
+      "Access requested": [
+        "Accesul a fost solicitat"
+      ],
+      "Access will be granted on ${ formattedAccessibleAt }": [
+        "Accesul va fi acordat la data de ${ formattedAccessibleAt }"
       ],
       "Add": [
         "Adăugare"
       ],
+      "Add emergency contact": [
+        "Adăugați o persoană de contact în caz de urgență"
+      ],
+      "Added on ${ formattedDate }": [
+        "Adăugat la ${ formattedDate }"
+      ],
+      "Change access wait time": [
+        "Modificare timp de așteptare pentru accesare"
+      ],
+      "Change the time that ${ user } will have to wait before automatically giving them access.": [
+        "Modificați timpul de așteptare pentru ${ user } înainte de a-i oferi automat acces."
+      ],
+      "Change wait time": [
+        "Modificare timp de așteptare"
+      ],
+      "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
+        "Alegeți pe cineva de încredere pentru datele personale. Această persoană trebuie să aibă deja un cont ${ BRAND_NAME }."
+      ],
       "Disabled": [
         "Dezactivat"
+      ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "Nu pierdeți accesul de urgență. Activați reînnoirea automată astăzi."
+      ],
+      "Emergency access": [
+        "Acces de urgență"
+      ],
+      "Emergency access for ${ user } removed": [
+        "S-a eliminat accesul de urgență pentru ${ user }."
+      ],
+      "Emergency access granted": [
+        "Acces de urgență acordat"
+      ],
+      "Emergency access requested": [
+        "Acces de urgență solicitat"
+      ],
+      "Emergency contact added": [
+        "Contact de urgență adăugat"
+      ],
+      "Emergency contact removed": [
+        "Contact de urgență eliminat"
+      ],
+      "Enable auto-renew": [
+        "Activare reînnoire automată"
+      ],
+      "Give access now": [
+        "Acordare acces acum"
+      ],
+      "Give immediate access?": [
+        "Acordați acces imediat?"
+      ],
+      "Immediate": [
+        "Imediat"
+      ],
+      "Included with ${ planName }": [
+        "Inclus cu ${ planName }"
+      ],
+      "Less than a day": [
+        "Mai puțin de o zi"
       ],
       "None": [
         "Niciuna"
       ],
-      "on ${ formattedAccessibleAt }": [
-        "la ${ formattedAccessibleAt }"
-      ],
       "Only ": [
         "Doar "
       ],
+      "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
+        "Solicitați acces de urgență doar atunci când există o **situație validă** care vă cere să gestionați contul unui alt utilizator."
+      ],
+      "People I trust": [
+        "Persoane în care am încredere"
+      ],
+      "People who trust me": [
+        "Persoane care au încredere în mine"
+      ],
+      "Protect your legacy with emergency access": [
+        "Protejați-vă moștenirea cu accesul de urgență"
+      ],
+      "Remove trusted contact": [
+        "Eliminare contact aprobat"
+      ],
+      "Renew to get emergency access again.": [
+        "Reînnoiți pentru a obține din nou acces de urgență."
+      ],
+      "Request access?": [
+        "Solicitați acces?"
+      ],
+      "Requesting access": [
+        "Solicitare acces"
+      ],
+      "Stop being trusted contact?": [
+        "Încetați să mai fiți un contact de încredere?"
+      ],
+      "Subscription expired": [
+        "Abonamentul a expirat"
+      ],
+      "They added me as trusted contact. I can access their account in case of an emergency.": [
+        "M-au adăugat ca persoană de contact de încredere. Le pot accesa contul în caz de urgență."
+      ],
+      "They may ask to access my account in case of an emergency.": [
+        "S-ar putea să vă solicite să vă acceseze contul în caz de urgență."
+      ],
+      "This will take effect immediately.": [
+        "Acest lucru va intra în vigoare imediat."
+      ],
+      "Time required before automatically giving access": [
+        "Timp necesar înainte de a acorda automat accesul"
+      ],
+      "Time required before automatically granting them access": [
+        "Timp necesar înainte de a le acorda automat accesul."
+      ],
       "Trusted contact": [
         "Contact aprobat"
+      ],
+      "Upgrade": [
+        "Modernizare"
       ],
       "Upgrade to ${ planName }": [
         "Treceți la ${ planName }"
@@ -5219,8 +5363,51 @@
       "View request": [
         "Afișare solicitare"
       ],
+      "Wait time": [
+        "Timp de așteptare"
+      ],
+      "Wait time for access": [
+        "Timp de așteptare pentru acces"
+      ],
+      "Wait time saved": [
+        "Timp de așteptare salvat"
+      ],
+      "We’ll notify **${ user }** that you requested emergency access.": [
+        "Utilizatorul **${ user }** va fi notificat că ați solicitat acces de urgență."
+      ],
       "You are signed in to the account ${ account }.": [
         "Este conectat contul ${ account }."
+      ],
+      "You can now access and manage their account.": [
+        "Acum le puteți accesa și gestiona contul."
+      ],
+      "You can remove their access at any time to regain exclusive control of your account.": [
+        "Le puteți elimina accesul în orice moment pentru a vă recâștiga controlul exclusiv al contului."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Încă nu v-a desemnat nimeni ca persoană de contact de urgență."
+      ],
+      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
+        "Ați atins maximul de contacte aprobate: ${ controller.meta.count }.",
+        "Ați atins maximul de contacte aprobate: ${ controller.meta.count }.",
+        "Ați atins maximul de contacte aprobate: ${ controller.meta.count }."
+      ],
+      "You will be notified when someone requests emergency access.": [
+        "Veți primi o notificare când cineva vă solicită acces de urgență."
+      ],
+      "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
+        "Nu veți mai putea solicita acces la contul lui ${ user } în caz de urgență."
+      ],
+      "You'll receive access to their account immediately.": [
+        "Veți primi acces la contul lor imediat."
+      ],
+      "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
+        "Veți primi acces la contul acestora peste **${ days } zi** sau când vă vor aproba solicitarea.",
+        "Veți primi acces la contul acestora peste **${ days } zile** sau când vă vor aproba solicitarea.",
+        "Veți primi acces la contul acestora peste **${ days } de zile** sau când vă vor aproba solicitarea."
+      ],
+      "Your emergency contact ${ name } is requesting access to your account.": [
+        "Contactul de urgență ${ name } vă solicită acces la cont."
       ]
     },
     "Empty group name": {
@@ -5249,6 +5436,9 @@
       ],
       "Add at least one condition": [
         "Adăugați cel puțin o condiție."
+      ],
+      "Address cannot be yours": [
+        "Nu poate fi adresa proprie."
       ],
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
@@ -7686,6 +7876,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Tehnologia de criptare ${ BRAND_NAME } semnifică faptul că nimeni nu vă poate accesa parola - nici măcar noi."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } necesită o adresă ${ BRAND_NAME } pentru sincronizarea și criptarea securizată a evenimentelor. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "Calendare noi: ${ calendarsToBeCreatedCount }",
         "Calendare noi: ${ calendarsToBeCreatedCount }",
@@ -7911,11 +8104,20 @@
       "**${ appName }** is not supported.": [
         "Aplicația **${ appName }** nu este compatibilă."
       ],
+      "**Enable automatic backups** for peace of mind": [
+        "**Activați conservările automate** pentru liniștea personală."
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obțineți o adresă ${ BRAND_NAME }** pentru a utiliza toate serviciile ${ BRAND_NAME_TWO }, inclusiv ${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }."
       ],
+      "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
+        "**Importați-vă codurile existente** din alte aplicații de A2F, precum Google Authenticator."
+      ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Invitați persoane** la ${ BRAND_NAME } cu legătura web personală de recomandare."
+      ],
+      "**Sync codes** to all your devices": [
+        "**Vă sincronizați codurile** pe toate dispozitivele"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Mai multe",
@@ -7978,6 +8180,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Accesul la cont a fost restricționat din cauza facturilor neplătite. Contactați-vă administratorul."
       ],
+      "Account monitor": [
+        "Monitorizare cont"
+      ],
       "account recovery and data recovery method": [
         "metodă de recuperare a contului cât şi a datelor"
       ],
@@ -7996,9 +8201,6 @@
       "active": [
         "activă"
       ],
-      "Activity monitor": [
-        "Monitorizare activitate"
-      ],
       "Activity Monitor": [
         "Monitorizare activitate"
       ],
@@ -8013,6 +8215,9 @@
       ],
       "Add a recovery phone number": [
         "Adăugați un număr de telefon de recuperare"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Aceasta adaugă un nivel suplimentar de protecție contului. Va trebui să folosiți autentificarea cu doi factori de fiecare dată când vă conectați."
       ],
       "Add domain": [
         "Adăugare domeniu"
@@ -8099,6 +8304,9 @@
       ],
       "Allocated": [
         "Alocat"
+      ],
+      "Allow logging of location and connection details": [
+        "Permiteți înregistrarea detaliilor locului și conexiunii"
       ],
       "Allow recovery by email": [
         "Permitere recuperare prin e-mail"
@@ -8504,9 +8712,6 @@
       "Did you know?": [
         "Știați că?"
       ],
-      "Disable detailed events": [
-        "Dezactivare evenimente detaliate."
-      ],
       "Disable recovery by email address": [
         "Dezactivare recuperare cu adresă de e-mail"
       ],
@@ -8516,8 +8721,8 @@
       "Disabled countries": [
         "Țări dezactivate"
       ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Dezactivat de la ${ formattedDateAndTime }"
+      "Disabled on ${ boldValue }": [
+        "Dezactivat de la ${ boldValue }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Dezactivarea autentificării cu doi factori vă va face contul mai puțin sigur. Continuați doar dacă este absolut necesar."
@@ -8596,6 +8801,9 @@
       "Download recovery file": [
         "Descărcare fișier de recuperare"
       ],
+      "Download the app and import existing codes.": [
+        "Descărcați aplicația și importați codurile existente."
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descărcați aplicația favorită astăzi și păstrați-vă intimitatea oriunde mergeți."
       ],
@@ -8656,9 +8864,6 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Activați reînnoirea automată pentru a vă păstra accesul funcțiile premium."
       ],
-      "Enable detailed events": [
-        "Activare evenimente detaliate"
-      ],
       "Enable email notifications": [
         "Activare notificări pe e-mail"
       ],
@@ -8674,8 +8879,8 @@
       "Enabled countries": [
         "Țări activate"
       ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Activat de la ${ formattedDateAndTime }"
+      "Enabled on ${ boldValue }": [
+        "Activat de la ${ boldValue }"
       ],
       "Enabling auto-deletion…": [
         "Se activează ștergerea automată…"
@@ -8709,6 +8914,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Bucurați-vă de o experiență de e-mail mai rapidă și fără distrageri cu aplicația pentru desktop."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Asigurați o comunicare complet privată și criptată. Revendicați-vă acum adresa gratuită de e-mail ${ BRAND_NAME }."
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "Introduceți o parolă pentru a finaliza contul ${ BRAND_NAME } și să puteți utiliza ${ VPN_APP_NAME } pe toate dispozitivele!"
@@ -8839,17 +9047,17 @@
       "Gain visibility across your organization": [
         "Câștigați vizibilitate în întreaga organizație"
       ],
+      "Gateway monitor": [
+        "Monitorizare porți de acces"
+      ],
       "Gateways": [
         "Porți de acces"
       ],
-      "Gateways monitoring is disabled.": [
-        "Monitorizarea porților de acces este dezactivată."
-      ],
-      "Gateways monitoring is enabled.": [
-        "Monitorizarea porților de acces este activată."
-      ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Generarea unei fraze de recuperare o va dezactiva pe cea veche."
+      ],
+      "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
+        "Obțineți ${ AUTHENTICATOR_APP_NAME } pentru toate dispozitivele personale."
       ],
       "Get ${ upsellPlanName }": [
         "Luați ${ upsellPlanName }"
@@ -9027,8 +9235,8 @@
       "inactive": [
         "inactivă"
       ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Includere adresă IP utilizator, loc și ISP (furnizorul de internet) în jurnalul de evenimente."
+      "Include device, location, and IP details": [
+        "Includere dispozitiv, loc și detalii IP"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inclusiv ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -9106,6 +9314,9 @@
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Durează 10 zile pentru a schimba serverul unei țări, așa că asigurați-vă că l-ați ales pe cel potrivit."
+      ],
+      "It won't be linked to your ${ BRAND_NAME } Account, so there's **no risk of getting locked out**.": [
+        "Nu va fi legat de contul personal ${ BRAND_NAME }, astfel încât **nu există riscul să nu vă puteți conecta**."
       ],
       "It's better to have:": [
         "Este bine să aveți:"
@@ -9251,9 +9462,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Calendarul se încarcă, așteptați. Pagina se va redirecționa către platforma noastră de programări Calendly într-o filă nouă."
       ],
-      "Loading detailed events current status.": [
-        "Se încarcă starea actuală detaliată a evenimentelor."
-      ],
       "Loading eduGAIN data...": [
         "Se încarcă datele eduGain..."
       ],
@@ -9289,6 +9497,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
+      ],
+      "Maybe later": [
+        "Poate mai târziu"
       ],
       "Medium Priority": [
         "Prioritate medie"
@@ -9471,6 +9682,9 @@
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Membrii organizației vor trebui să deblocheze ${ PASS_APP_NAME } cu parola proprie, codul PIN etc."
       ],
+      "Organization monitor": [
+        "Monitorizare organizație"
+      ],
       "Organization size": [
         "Mărime organizație"
       ],
@@ -9523,6 +9737,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - e-mail personal șters"
+      ],
+      "Pass usage logs": [
+        "Jurnal de utilizare Pass"
       ],
       "password": [
         "parola"
@@ -9887,6 +10104,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
+        "Trimiterea prin SMTP permite serviciilor sau dispozitivelor terțe să trimită mesaje prin ${ MAIL_APP_NAME } pentru adresele de domeniu personale."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Trimiterea SMTP permite serviciilor sau dispozitivelor terțe să trimită mesaje prin ${ MAIL_APP_NAME } pentru adresele de domeniu personale. Pentru a solicita acces, trebuie să ${ createTicket } care vă descrie cazul de utilizare, ce domenii personale doriți să utilizați și volumul de mesaje orar și zilnic preconizat."
       ],
@@ -10064,6 +10284,9 @@
       ],
       "The most recent data update, excluding breaches.": [
         "Cele mai recente actualizări, exclusiv breșele."
+      ],
+      "The most secure and private two-factor authentication app, that's free and open-source.": [
+        "Cea mai sigură și privată aplicație de autentificare cu doi factori, care este gratuită și cu sursa publică."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Numele va fi vizibil utilizatorilor când sunt conectați."
@@ -10482,6 +10705,9 @@
       "View and manage your groups.": [
         "Afișare și gestionare grupuri personale."
       ],
+      "View VPN session details for your organization.": [
+        "Vizualizați detaliile sesiunii VPN pentru organizație."
+      ],
       "View, download, and manage your invoices.": [
         "Examinați, descărcați și gestionați facturile personale."
       ],
@@ -10584,6 +10810,9 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Când este dezactivat, acest lucru împiedică încărcarea imaginilor pe dispozitiv fără acordul dvs."
       ],
+      "When disabled, this prevents remote images from loading without your knowledge.": [
+        "Când este dezactivată, aceasta împiedică încărcarea imaginilor de la distanță fără a le aproba."
+      ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
         "Când e activată, se va verifica dacă ${ MAIL_APP_NAME } este aplicația de e-mail implicită și vă va notifica dacă nu e."
       ],
@@ -10619,6 +10848,9 @@
       ],
       "Why?": [
         "De ce?"
+      ],
+      "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
+        "Cu ${ AUTHENTICATOR_APP_NAME }, puteți:"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Cu un plan Business sau Enterprise, puteți achiziționa ${ boldDedicatedServers } pentru organizația proprie și puteți configura ${ boldGateways } pentru a controla ce utilizatori le pot accesa."
@@ -11942,6 +12174,9 @@
       "Days of the week": [
         "Ziua săptămânii"
       ],
+      "Default email address": [
+        "Adresa de e-mail implicită"
+      ],
       "Default language": [
         "Limba implicită"
       ],
@@ -12685,9 +12920,6 @@
       "VAT": [
         "TVA"
       ],
-      "VAT identification number": [
-        "Cod unic de înregistrare"
-      ],
       "Verification code": [
         "Cod de verificare"
       ],
@@ -13158,6 +13390,9 @@
       "Learn more": [
         "Detalii"
       ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Pentru a continua să utilizați ${ BRAND_NAME }, asigurați-vă că funcțiile premium nu mai sunt utilizate sau să modernizați-vă planul."
+      ],
       "upgrade for more storage": [
         "treceți la un plan cu plată pentru mai mult spațiu"
       ],
@@ -13418,8 +13653,14 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Conectați domeniul personal la ${ BRAND_NAME } pentru a configura adrese de e-mail personale (de ex. eu@companiamea.com). Asistentul nostru automat vă va ghida în acest proces."
       ],
-      "View account-related events across your organization.": [
-        "Vizualizați evenimentele legate de cont din cadrul organizației."
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "Vizualizați activitatea ${ PASS_APP_NAME } în cadrul organizației proprii."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "Vizualizați modificările la organizația proprii și alte activități de administrator."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "Vizualizați evenimentele de conectare, recuperare și securitate ale utilizatorului."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Perioada de probare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
@@ -14925,6 +15166,9 @@
       "Invalid code": [
         "Cod nevalid"
       ],
+      "Invalid input. Search an email or detail.": [
+        "Date de intrare incorecte. Căutați o adresă de e-mail sau detalii."
+      ],
       "Invalid input. Search an email or IP address.": [
         "Date de intrare incorecte. Căutați o adresă de e-mai sau IP."
       ],
@@ -15406,6 +15650,9 @@
       "It's too expensive": [
         "Este prea scump"
       ],
+      "Label as...": [
+        "Etichetare cu..."
+      ],
       "Left to Right": [
         "De la stânga la dreapta"
       ],
@@ -15414,6 +15661,9 @@
       ],
       "Mark as read": [
         "Marcare ca citit"
+      ],
+      "Move to...": [
+        "Mutare în..."
       ],
       "My reason isn't listed": [
         "Motivul meu nu este afișat"
@@ -16207,6 +16457,9 @@
       "Card number": [
         "Număr card"
       ],
+      "Credits and discounts are reflected in your invoice": [
+        "Creditele și reducerile se regăsesc în factură"
+      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "În prezent, reînnoirea automată a abonamentului este dezactivată. Dacă schimbați abonamentul acum, atunci reînnoirea automată va fi reactivată."
       ],
@@ -16278,6 +16531,9 @@
       "Timeout exceeded": [
         "Limită de timp depășită"
       ],
+      "VAT number": [
+        "Valoare TVA"
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Vi se va retrage suma de ${ amountToCharge } folosind metoda de plată selectată."
       ],
@@ -16333,8 +16589,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Adăugare ABN"
+      ],
+      "Add Business Number": [
+        "Adăugare cod unic de înregistrare"
+      ],
+      "Add EIN": [
+        "Adăugare EIN"
+      ],
+      "Add VAT number": [
+        "Adăugare TVA"
+      ],
       "Business Number": [
         "Cod unic de înregistrare"
+      ],
+      "Edit ABN": [
+        "Editare ABN"
+      ],
+      "Edit Business Number": [
+        "Editare cod unic de înregistrare"
+      ],
+      "Edit EIN": [
+        "Editare EIN"
+      ],
+      "Edit VAT number": [
+        "Editare TVA"
       ],
       "EIN": [
         "EIN"
@@ -16491,11 +16771,17 @@
       "Search users": [
         "Căutare utilizatori"
       ],
+      "Search users or details": [
+        "Căutare utilizatori sau detalii"
+      ],
       "Select": [
         "Selectare"
       ],
       "Select a reason": [
         "Selectați un motiv"
+      ],
+      "Select country": [
+        "Selectare țară"
       ],
       "Select state": [
         "Selectare țară"
@@ -19241,9 +19527,9 @@
         "${ n } de calendare per utilizator"
       ],
       "${ n } free VPN connection per user": [
-        "${ n } conexiune VPN gratuită per utilizator",
-        "${ n } conexiuni VPN gratuite per utilizator",
-        "${ n } de conexiuni VPN gratuite per utilizator"
+        "Conexiuni VPN gratuite per utilizator: ${ n }",
+        "Conexiuni VPN gratuite per utilizator: ${ n }",
+        "Conexiuni VPN gratuite per utilizator: ${ n }"
       ],
       "${ n } high-speed VPN connection": [
         "O conexiune VPN de mare viteză",
@@ -20514,8 +20800,8 @@
       "Choose user affiliations": [
         "Alegeți afilierea utilizatorilor"
       ],
-      "Click a value in the table to use it as filter": [
-        "Faceți clic pe o valoare din tabel pentru a o folosi ca filtru"
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Revendicați-vă adresa ${ MAIL_APP_NAME }"
       ],
       "Close": [
         "Închidere"
@@ -20546,6 +20832,9 @@
       ],
       "Connect apps and devices": [
         "Conectați aplicații și dispozitive"
+      ],
+      "Connect more addresses": [
+        "Conectați mai multe adrese"
       ],
       "Connect organization": [
         "Conectare organizație"
@@ -20722,6 +21011,9 @@
       "Desktop": [
         "Desktop"
       ],
+      "Details": [
+        "Detalii"
+      ],
       "Device": [
         "Dispozitiv"
       ],
@@ -20844,6 +21136,9 @@
       ],
       "Email privacy": [
         "Confidențialitate mesaje"
+      ],
+      "Emergency access": [
+        "Acces de urgență"
       ],
       "Enable advanced account protection": [
         "Activare protecție avansată cont"
@@ -21473,6 +21768,9 @@
       "Signed in successfully!": [
         "Autentificare reușită!"
       ],
+      "Signed in to another account": [
+        "Conectat la un alt cont"
+      ],
       "Signed in to member account": [
         "Conectat în cont de membru"
       ],
@@ -21570,6 +21868,9 @@
       ],
       "Time zone": [
         "Fus orar"
+      ],
+      "Try ${ AUTHENTICATOR_APP_NAME }": [
+        "Încercați ${ AUTHENTICATOR_APP_NAME }"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activare ${ DARK_WEB_MONITORING_NAME }"

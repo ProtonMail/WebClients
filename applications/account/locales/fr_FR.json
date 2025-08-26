@@ -1015,6 +1015,9 @@
       "Open navigation": [
         "Ouvrir la navigation"
       ],
+      "Opt out": [
+        "Renoncer"
+      ],
       "Or": [
         "Ou"
       ],
@@ -1065,6 +1068,9 @@
       ],
       "Refer a friend": [
         "Parrainer un ami"
+      ],
+      "Refresh": [
+        "Actualiser"
       ],
       "Refresh status": [
         "Actualiser le statut"
@@ -5254,11 +5260,23 @@
         "${ n } jour restant",
         "${ n } jours restants"
       ],
+      "${ user } will be able to use your account and change your data.": [
+        "${ user } pourra utiliser votre compte et modifier vos données."
+      ],
+      "${ user } will no longer be able to request access to your account in case of emergency.": [
+        "${ user } ne pourra plus demander l'accès à votre compte en cas d'urgence."
+      ],
       "Access granted": [
         "L'accès a été autorisé."
       ],
+      "Access granted on ${ formattedAccessibleAt }": [
+        "L'accès a été accordé le ${ formattedAccessibleAt }."
+      ],
       "Access requested": [
         "L'accès a été demandé."
+      ],
+      "Access will be granted on ${ formattedAccessibleAt }": [
+        "L'accès sera accordé le ${ formattedAccessibleAt }"
       ],
       "Add": [
         "Ajouter"
@@ -5266,17 +5284,32 @@
       "Add emergency contact": [
         "Ajouter un contact d'urgence"
       ],
+      "Added on ${ formattedDate }": [
+        "Ajouté le ${ formattedDate }"
+      ],
       "Change access wait time": [
         "Modifier le temps d'attente pour accéder"
+      ],
+      "Change the time that ${ user } will have to wait before automatically giving them access.": [
+        "Modifier le délai que ${ user } devra attendre avant de leur donner automatiquement accès."
       ],
       "Change wait time": [
         "Modifier le temps d'attente"
       ],
+      "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
+        "Choisissez quelqu'un à qui vous faites confiance avec vos données. Cette personne doit déjà posséder un compte ${ BRAND_NAME }."
+      ],
       "Disabled": [
         "Désactivé"
       ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "Ne perdez pas l'accès d'urgence. Activez le renouvellement automatique dès aujourd'hui."
+      ],
       "Emergency access": [
         "Accès d’urgence"
+      ],
+      "Emergency access for ${ user } removed": [
+        "L'accès d'urgence pour ${ user } a été retiré."
       ],
       "Emergency access granted": [
         "L'accès d'urgence est accordé."
@@ -5284,14 +5317,26 @@
       "Emergency access requested": [
         "L'accès d'urgence a été demandé."
       ],
+      "Emergency contact added": [
+        "Le contact d'urgence a été ajouté."
+      ],
       "Emergency contact removed": [
         "Le contact d'urgence a été retiré."
+      ],
+      "Enable auto-renew": [
+        "Activer le renouvellement automatique"
       ],
       "Give access now": [
         "Accorder l'accès maintenant"
       ],
+      "Give immediate access?": [
+        "Donner un accès immédiat ?"
+      ],
       "Immediate": [
         "Immédiat"
+      ],
+      "Included with ${ planName }": [
+        "Inclus avec ${ planName }"
       ],
       "Less than a day": [
         "Moins d’un jour"
@@ -5299,11 +5344,11 @@
       "None": [
         "Aucun"
       ],
-      "on ${ formattedAccessibleAt }": [
-        "le ${ formattedAccessibleAt }"
-      ],
       "Only ": [
         "Seulement "
+      ],
+      "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
+        "Ne demandez l'accès d'urgence que lorsqu'il y a une situation **valide** vous obligeant à gérer le compte d'un autre utilisateur."
       ],
       "People I trust": [
         "Les personnes que j'approuve"
@@ -5311,17 +5356,47 @@
       "People who trust me": [
         "Les personnes qui m'ont approuvé"
       ],
+      "Protect your legacy with emergency access": [
+        "Protégez vos données existantes avec l'accès d'urgence"
+      ],
       "Remove trusted contact": [
         "Retirer le contact de confiance"
+      ],
+      "Renew to get emergency access again.": [
+        "Renouvelez pour obtenir à nouveau un accès d'urgence."
       ],
       "Request access?": [
         "Demander l'accès?"
       ],
+      "Requesting access": [
+        "Demande d'accès"
+      ],
       "Stop being trusted contact?": [
         "Cesser d'être un contact approuvé?"
       ],
+      "Subscription expired": [
+        "L'abonnement est arrivé à expiration."
+      ],
+      "They added me as trusted contact. I can access their account in case of an emergency.": [
+        "Ils m'ont ajouté en tant que contact approuvé. Je peux accéder à leur compte en cas d'urgence."
+      ],
+      "They may ask to access my account in case of an emergency.": [
+        "Ils peuvent demander à accéder à mon compte en cas d'urgence."
+      ],
+      "This will take effect immediately.": [
+        "Cela prendra effet immédiatement."
+      ],
+      "Time required before automatically giving access": [
+        "Temps d’attente avant d'accès automatique"
+      ],
+      "Time required before automatically granting them access": [
+        "Temps d’attente avant de leur accorder automatiquement l’accès"
+      ],
       "Trusted contact": [
         "Contacts de confiance"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
       ],
       "Upgrade to ${ planName }": [
         "Mise à niveau vers ${ planName }"
@@ -5338,11 +5413,40 @@
       "Wait time saved": [
         "Temps d'attente enregistré"
       ],
+      "We’ll notify **${ user }** that you requested emergency access.": [
+        "Nous informerons **${ user }** que vous avez demandé l'accès d'urgence."
+      ],
       "You are signed in to the account ${ account }.": [
         "Vous êtes connecté au compte ${ account }."
       ],
+      "You can now access and manage their account.": [
+        "Vous pouvez maintenant accéder à leur compte et le gérer."
+      ],
+      "You can remove their access at any time to regain exclusive control of your account.": [
+        "Vous pouvez retirer leur accès à tout moment pour récupérer le contrôle exclusif de votre compte."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Vous n'avez pas encore été désigné comme contact d'urgence pour qui que ce soit."
+      ],
+      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
+        "Vous avez atteint le maximum d'${ controller.meta.count } contact approuvé.",
+        "Vous avez atteint le maximum de ${ controller.meta.count } contacts approuvés."
+      ],
+      "You will be notified when someone requests emergency access.": [
+        "Vous recevrez une notification lorsque quelqu'un demandera un accès d'urgence."
+      ],
+      "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
+        "Vous ne pourrez plus demander l'accès au compte de ${ user } en cas d'urgence."
+      ],
       "You'll receive access to their account immediately.": [
         "Vous recevrez un accès à leur compte immédiatement."
+      ],
+      "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
+        "Vous aurez accès à leur compte dans **${ days } jour** ou lorsqu'ils approuveront votre demande.",
+        "Vous aurez accès à leur compte dans **${ days } jours** ou lorsqu'ils approuveront votre demande."
+      ],
+      "Your emergency contact ${ name } is requesting access to your account.": [
+        "Votre contact d'urgence ${ name } demande d'accéder à votre compte."
       ]
     },
     "Empty group name": {
@@ -6697,6 +6801,9 @@
       ],
       "Secure streaming": [
         "Streaming sécurisé"
+      ],
+      "Stream from Netflix, HBO, and more": [
+        "Streamer Netflix, HBO et plus encore"
       ]
     },
     "Features: Tooltip": {
@@ -7781,6 +7888,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Avec la technologie de chiffrement de ${ BRAND_NAME }, personne ne peut accéder à votre mot de passe, pas même nous."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } nécessite une adresse ${ BRAND_NAME } pour une synchronisation d'événements et un chiffrement sécurisés. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nouveau calendrier",
         "${ calendarsToBeCreatedCount } nouveaux calendriers"
@@ -7989,7 +8099,7 @@
         "**Obtenez une adresse ${ BRAND_NAME }** pour utiliser tous les services ${ BRAND_NAME_TWO }, dont ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
-        "**Importez vos codes existants** depuis d'autres applications 2FA, telles que Google Authenticator"
+        "**Importez vos codes existants** depuis d'autres applications A2F, telles que Google Authenticator"
       ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Invitez vos amis** sur ${ BRAND_NAME } avec votre lien de parrainage."
@@ -8056,6 +8166,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "L'accès au compte est restreint en raison de factures en retard. Veuillez contacter votre administrateur."
       ],
+      "Account monitor": [
+        "Surveillance des comptes"
+      ],
       "account recovery and data recovery method": [
         "une méthode de récupération de compte et de récupération de données"
       ],
@@ -8074,9 +8187,6 @@
       "active": [
         "active"
       ],
-      "Activity monitor": [
-        "Surveillance des activités"
-      ],
       "Activity Monitor": [
         "Surveillance des activités"
       ],
@@ -8091,6 +8201,9 @@
       ],
       "Add a recovery phone number": [
         "Ajouter un numéro de téléphone de récupération"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Ajoutez une sécurité supplémentaire à votre compte avec une A2F chaque fois que vous vous connecterez."
       ],
       "Add domain": [
         "Ajouter un domaine"
@@ -8170,6 +8283,9 @@
       ],
       "Allocated": [
         "Alloué"
+      ],
+      "Allow logging of location and connection details": [
+        "Autoriser l'enregistrement des informations d'emplacement et de connexion"
       ],
       "Allow recovery by email": [
         "Autoriser la récupération par e-mail"
@@ -8571,9 +8687,6 @@
       "Did you know?": [
         "Le saviez-vous ?"
       ],
-      "Disable detailed events": [
-        "Désactiver les événements avancés"
-      ],
       "Disable recovery by email address": [
         "Désactiver la récupération par adresse e-mail"
       ],
@@ -8583,8 +8696,8 @@
       "Disabled countries": [
         "Pays désactivés"
       ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Désactivation le ${ formattedDateAndTime }"
+      "Disabled on ${ boldValue }": [
+        "Désactivé le ${ boldValue }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "La désactivation de l'authentification à deux facteurs rendra votre compte moins sécurisé. Ne procédez que si c'est absolument nécessaire."
@@ -8725,9 +8838,6 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Activez le renouvellement automatique pour conserver l'accès à vos fonctionnalités premium."
       ],
-      "Enable detailed events": [
-        "Activer les événements avancés"
-      ],
       "Enable email notifications": [
         "Activer les notifications par e-mail"
       ],
@@ -8743,8 +8853,8 @@
       "Enabled countries": [
         "Pays activés"
       ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Activation le ${ formattedDateAndTime }"
+      "Enabled on ${ boldValue }": [
+        "Activé le ${ boldValue }"
       ],
       "Enabling auto-deletion…": [
         "Activation de la suppression automatique…"
@@ -8778,6 +8888,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Profitez d'une expérience de messagerie plus rapide et focalisée grâce à l'application de bureau."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Assurez une communication entièrement privée et chiffrée. Obtenez dès maintenant votre adresse e-mail ${ BRAND_NAME } gratuite."
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "Saisissez un mot de passe pour finaliser votre compte ${ BRAND_NAME } et commencez à utiliser ${ VPN_APP_NAME } sur tous vos appareils !"
@@ -8908,14 +9021,11 @@
       "Gain visibility across your organization": [
         "Gagnez en visibilité au sein de votre organisation"
       ],
+      "Gateway monitor": [
+        "Surveillance des passerelles"
+      ],
       "Gateways": [
         "Passerelles"
-      ],
-      "Gateways monitoring is disabled.": [
-        "La surveillance de la passerelle a été désactivée."
-      ],
-      "Gateways monitoring is enabled.": [
-        "La surveillance de la passerelle a été activée."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "La génération d’une nouvelle phrase de récupération désactivera l’ancienne."
@@ -9098,8 +9208,8 @@
       "inactive": [
         "inactive"
       ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Ajoutez l'adresse IP, l'emplacement et le FAI (Fournisseur d'accès internet) de l'utilisateur dans les journaux d'événements"
+      "Include device, location, and IP details": [
+        "Inclure les informations sur l'appareil, l'emplacement et l'adresse IP"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Comprenant ${ formattedTaxRate } % de ${ taxName } : ${ price }"
@@ -9324,9 +9434,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Veuillez patienter : le calendrier est en cours de chargement. Vous serez redirigé vers notre plateforme de programmation Calendly dans un nouvel onglet."
       ],
-      "Loading detailed events current status.": [
-        "L'état actuel des événements détaillés est en cours de chargement."
-      ],
       "Loading eduGAIN data...": [
         "Chargement des données eduGAIN..."
       ],
@@ -9545,6 +9652,9 @@
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Les membres de l'organisation devront déverrouiller ${ PASS_APP_NAME } avec leur mot de passe ou leur code PIN, etc."
       ],
+      "Organization monitor": [
+        "Surveillance des organisations"
+      ],
       "Organization size": [
         "Taille de l’organisation"
       ],
@@ -9593,6 +9703,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - l'e-mail personnalisé a été supprimé."
+      ],
+      "Pass usage logs": [
+        "Journaux d'utilisation de Pass"
       ],
       "password": [
         "mot de passe"
@@ -10549,6 +10662,9 @@
       ],
       "View and manage your groups.": [
         "Affichez et gérez vos groupes."
+      ],
+      "View VPN session details for your organization.": [
+        "Affichez les informations de la session VPN pour votre organisation."
       ],
       "View, download, and manage your invoices.": [
         "Consultez, téléchargez et gérez vos factures."
@@ -12740,9 +12856,6 @@
       "VAT": [
         "TVA"
       ],
-      "VAT identification number": [
-        "Numéro d’identification TVA"
-      ],
       "Verification code": [
         "Code de vérification"
       ],
@@ -13209,6 +13322,9 @@
       "Learn more": [
         "En savoir plus"
       ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Pour continuer à utiliser ${ BRAND_NAME }, veuillez vous assurer de ne plus utiliser vos fonctionnalités premium ou changer d'abonnement."
+      ],
       "upgrade for more storage": [
         "changer d'abonnement pour augmenter votre espace de stockage"
       ],
@@ -13463,8 +13579,14 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Connectez votre domaine personnalisé à ${ BRAND_NAME } pour configurer des adresses e-mail personnalisées (par exemple, vous@votreentreprise.fr). Notre assistant vous guidera tout au long du processus."
       ],
-      "View account-related events across your organization.": [
-        "Affichez les événements liés au compte au sein de votre organisation."
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "Voir l'activité de ${ PASS_APP_NAME } au sein de votre organisation."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "Afficher les modifications apportées à votre organisation et les autres activités de l'administrateur."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "Afficher les événements de connexion, de récupération et de sécurité de l'utilisateur."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Votre essai gratuit est terminé. L'accès à votre compte sera bientôt désactivé. ${ action }"
@@ -14939,6 +15061,9 @@
       "Invalid code": [
         "Le code n’est pas valide."
       ],
+      "Invalid input. Search an email or detail.": [
+        "La saisie n'est pas valide. Veuillez rechercher une adresse e-mail ou des informations."
+      ],
       "Invalid input. Search an email or IP address.": [
         "La saisie n'est pas valide. Veuillez rechercher une adresse e-mail ou IP."
       ],
@@ -15406,11 +15531,17 @@
       "It's too expensive": [
         "C'est trop cher."
       ],
+      "Label as...": [
+        "Labelliser comme..."
+      ],
       "Left to Right": [
         "De gauche à droite"
       ],
       "Mark as read": [
         "Marquer comme lu"
+      ],
+      "Move to...": [
+        "Déplacer vers..."
       ],
       "My reason isn't listed": [
         "Ma raison n'est pas proposée ici."
@@ -16191,6 +16322,9 @@
       "Card number": [
         "Numéro de la carte"
       ],
+      "Credits and discounts are reflected in your invoice": [
+        "Les crédits et les réductions figurent sur votre facture"
+      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Le renouvellement automatique de l'abonnement est actuellement désactivé. Si vous modifiez l'abonnement maintenant, le renouvellement automatique sera réactivé."
       ],
@@ -16258,6 +16392,9 @@
       "Timeout exceeded": [
         "Le délai est dépassé."
       ],
+      "VAT number": [
+        "Numéro de TVA"
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Un montant de ${ amountToCharge } sera débité selon votre méthode de paiement sélectionnée."
       ],
@@ -16313,8 +16450,32 @@
       "ABN": [
         "Numéro d’entreprise australien (ABN)"
       ],
+      "Add ABN": [
+        "Ajouter un ABN"
+      ],
+      "Add Business Number": [
+        "Ajouter un numéro d'entreprise"
+      ],
+      "Add EIN": [
+        "Ajouter un EIN"
+      ],
+      "Add VAT number": [
+        "Ajouter un numéro de TVA"
+      ],
       "Business Number": [
         "Numéro d'entreprise"
+      ],
+      "Edit ABN": [
+        "Modifier ABN"
+      ],
+      "Edit Business Number": [
+        "Modifier le numéro d'entreprise"
+      ],
+      "Edit EIN": [
+        "Modifier EIN"
+      ],
+      "Edit VAT number": [
+        "Modifier le numéro de TVA"
       ],
       "EIN": [
         "Numéro d'identification fiscale (EIN)"
@@ -16471,11 +16632,17 @@
       "Search users": [
         "Recherchez des utilisateurs."
       ],
+      "Search users or details": [
+        "Rechercher des utilisateurs ou des informations"
+      ],
       "Select": [
         "Sélectionnez"
       ],
       "Select a reason": [
         "Sélectionnez une raison."
+      ],
+      "Select country": [
+        "Sélectionner le pays"
       ],
       "Select state": [
         "Sélectionner l'état"
@@ -20298,9 +20465,6 @@
       "Add users to \"${ policyName }\"": [
         "Ajouter des utilisateurs à « ${ policyName } »"
       ],
-      "Added on": [
-        "Ajoutée le"
-      ],
       "Address": [
         "Adresse"
       ],
@@ -20427,9 +20591,6 @@
       "Claim your ${ MAIL_APP_NAME } address": [
         "Revendiquez votre adresse ${ MAIL_APP_NAME }"
       ],
-      "Click a value in the table to use it as filter": [
-        "Cliquez sur une valeur dans le tableau pour l'utiliser comme filtre."
-      ],
       "Close": [
         "Fermer"
       ],
@@ -20459,6 +20620,9 @@
       ],
       "Connect apps and devices": [
         "Connecter les applications et les appareils"
+      ],
+      "Connect more addresses": [
+        "Connecter plus d'adresses"
       ],
       "Connect organization": [
         "Connecter l'organisation"
@@ -20632,6 +20796,9 @@
       ],
       "Desktop": [
         "Bureau"
+      ],
+      "Details": [
+        "Informations"
       ],
       "Device": [
         "Appareil"
@@ -21384,6 +21551,9 @@
       ],
       "Signed in successfully!": [
         "La connexion est réussie."
+      ],
+      "Signed in to another account": [
+        "Connecté à un autre compte"
       ],
       "Signed in to member account": [
         "Connecté au compte membre"
@@ -22293,6 +22463,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Économisez jusqu'à ${ priceString }** avec un abonnement plus long. Les mêmes fonctionnalités premium à un prix réduit."
       ],
+      "Advanced security for your company?": [
+        "Une sécurité avancée pour votre entreprise ?"
+      ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Tous les services premium de ${ BRAND_NAME }. À partir de seulement ${ fallBackString } par mois"
       ],
@@ -22304,6 +22477,9 @@
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Protégez votre organisation des fuites de données avec ${ VPN_APP_NAME } for Business."
+      ],
+      "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
+        "Respect de la vie privée illimité pour vous et un proche. À partir de seulement ${ priceString }/mois."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Vous pouvez protéger jusqu'à ${ FAMILY_MAX_USERS } personnes avec ${ PLAN_NAMES[plan] }. À partir de seulement ${ priceString }/mois par compte."
