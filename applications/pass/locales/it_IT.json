@@ -130,6 +130,9 @@
       "Clear search": [
         "Cancella ricerca"
       ],
+      "Clone item": [
+        "Clona elemento"
+      ],
       "Close": [
         "Chiudi"
       ],
@@ -426,6 +429,9 @@
       ],
       "Open navigation": [
         "Apri navigazione"
+      ],
+      "Organize vaults": [
+        "Gestisci i vault"
       ],
       "Pass for Android": [
         "Pass per Android"
@@ -1649,6 +1655,9 @@
       "Extra password successfully removed": [
         "Password aggiuntiva rimossa"
       ],
+      "Failed updating your vault organization": [
+        "Aggiornamento dell’organizzazione del vault non riuscito"
+      ],
       "Fill in the CSV with your data": [
         "Compila il file CSV con i tuoi dati"
       ],
@@ -1823,6 +1832,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -2279,6 +2292,9 @@
       "Unverified": [
         "Non verificato"
       ],
+      "Updating vault organization...": [
+        "Aggiornamento dell’organizzazione del vault in corso..."
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Effettua ora l'upgrade per sbloccare le funzionalità premium"
       ],
@@ -2305,6 +2321,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "La cassaforte \"${ share.content.name }\" è stata rimossa"
+      ],
+      "Vault organization successfully updated": [
+        "Organizzazione del vault aggiornata con successo"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Condivisione casseforti: ${ vaultMembersCount } membro",
@@ -4218,6 +4237,9 @@
       "Grant permissions": [
         "Concedi autorizzazioni"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "I vault nascosti non saranno visibili durante la ricerca e la compilazione automatica."
+      ],
       "Hide-my-email aliases": [
         "Alias Hide-my-email"
       ],
@@ -4321,6 +4343,9 @@
       ],
       "No shared secure links": [
         "Nessun link sicuro condiviso"
+      ],
+      "Organize vaults": [
+        "Gestisci i vault"
       ],
       "Our welcome gift to you": [
         "Il nostro regalo di benvenuto per te"
@@ -4507,6 +4532,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Stai per eliminare definitivamente ${ aliasCount } alias.",
         "Stai per eliminare definitivamente ${ aliasCount } alias."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "copia"
       ]
     },
     "Today icon tooltip in mini calendar": {

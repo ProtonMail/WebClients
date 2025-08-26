@@ -130,6 +130,9 @@
       "Clear search": [
         "Vyčistit vyhledávání"
       ],
+      "Clone item": [
+        "Klonovat položku"
+      ],
       "Close": [
         "Zavřít"
       ],
@@ -426,6 +429,9 @@
       ],
       "Open navigation": [
         "Otevřít menu"
+      ],
+      "Organize vaults": [
+        "Organizovat trezory"
       ],
       "Pass for Android": [
         "Proton Pass pro Android"
@@ -1691,6 +1697,9 @@
       "Extra password successfully removed": [
         "Dodatečné heslo úspěšně odebráno"
       ],
+      "Failed updating your vault organization": [
+        "Selhala aktualizace vaší organizace trezorů."
+      ],
       "Fill in the CSV with your data": [
         "Vyplňte CSV vašimi daty"
       ],
@@ -1875,7 +1884,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2336,6 +2348,9 @@
       "Unverified": [
         "Neověřený"
       ],
+      "Updating vault organization...": [
+        "Aktualizovat organizaci trezorů"
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Přejděte nyní na vyšší tarif pro odemčení prémiových funkcí"
       ],
@@ -2362,6 +2377,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Trezor \"${ share.content.name }\" byl odebrán"
+      ],
+      "Vault organization successfully updated": [
+        "Organizace trezorů úspěšně aktualizována"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Sdílení trezoru: ${ vaultMembersCount } člen",
@@ -4323,6 +4341,9 @@
       "Grant permissions": [
         "Udělit oprávnění"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Skryté trezory nebudou viditelné během vyhledávání a automatického vyplňování."
+      ],
       "Hide-my-email aliases": [
         "Aliasy Hide-my-email"
       ],
@@ -4430,6 +4451,9 @@
       ],
       "No shared secure links": [
         "Žádné sdílené bezpečné odkazy"
+      ],
+      "Organize vaults": [
+        "Organizovat trezory"
       ],
       "Our welcome gift to you": [
         "Náš dárek na přivítanou pro vás"
@@ -4622,6 +4646,11 @@
         "Chystáte se trvale smazat ${ aliasCount } aliasy.",
         "Chystáte se trvale smazat ${ aliasCount } aliasů.",
         "Chystáte se trvale smazat ${ aliasCount } aliasů."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "Kopírovat"
       ]
     },
     "Today icon tooltip in mini calendar": {
