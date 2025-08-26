@@ -46,7 +46,7 @@ export const MailboxToolbar = ({
 
     const categoryViewControl = useCategoryViewAccess();
 
-    const { labelDropdownToggleRef, moveDropdownToggleRef, columnMode } = useMailboxLayoutProvider();
+    const { labelDropdownToggleRef, moveDropdownToggleRef, isColumnModeActive } = useMailboxLayoutProvider();
 
     const [mailSettings] = useMailSettings();
 
@@ -59,7 +59,7 @@ export const MailboxToolbar = ({
                 selectedIDs={selectedIDs}
                 checkedIDs={checkedIDs}
                 elementIDs={elementIDs}
-                columnMode={overrideColumnMode ?? columnMode}
+                columnMode={overrideColumnMode ?? isColumnModeActive}
                 conversationMode={conversationMode}
                 onCheck={handleCheck}
                 page={page}

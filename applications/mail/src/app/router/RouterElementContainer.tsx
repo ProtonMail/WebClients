@@ -30,10 +30,10 @@ export const RouterElementContainer = ({ params, navigation, elementsData, actio
     const [mailSettings] = useMailSettings();
 
     const {
-        columnLayout,
-        isConversationContentView: immediateIsConversationContentView,
+        isColumnLayoutPreferred,
+        isConversationGroupingEnabled: immediateIsConversationContentView,
         messageContainerRef,
-        columnMode,
+        isColumnModeActive,
     } = useMailboxLayoutProvider();
 
     // Defer view mode change until navigation completes to prevent API errors
@@ -47,10 +47,10 @@ export const RouterElementContainer = ({ params, navigation, elementsData, actio
 
     const isComposerOpened = composersCount > 0;
     const elementsLength = loading ? placeholderCount : elements.length;
-    const showContentPanel = (columnMode && !!elementsLength) || !!elementID;
+    const showContentPanel = (isColumnModeActive && !!elementsLength) || !!elementID;
     const showContentView = showContentPanel && !!elementID;
     const showPlaceholder =
-        !breakpoints.viewportWidth['<=small'] && (!elementID || (!!checkedIDs.length && columnMode));
+        !breakpoints.viewportWidth['<=small'] && (!elementID || (!!checkedIDs.length && isColumnModeActive));
 
     return (
         <ErrorBoundary>
@@ -64,7 +64,7 @@ export const RouterElementContainer = ({ params, navigation, elementsData, actio
                         conversationID={elementID as string}
                         onBack={handleBack}
                         onMessageReady={onMessageReady}
-                        columnLayout={columnLayout}
+                        columnLayout={isColumnLayoutPreferred}
                         isComposerOpened={isComposerOpened}
                         containerRef={messageContainerRef}
                     />
@@ -76,7 +76,7 @@ export const RouterElementContainer = ({ params, navigation, elementsData, actio
                         messageID={elementID as string}
                         onBack={handleBack}
                         onMessageReady={onMessageReady}
-                        columnLayout={columnLayout}
+                        columnLayout={isColumnLayoutPreferred}
                         isComposerOpened={isComposerOpened}
                     />
                 ))}
