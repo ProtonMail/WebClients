@@ -310,7 +310,6 @@ export const getDriveConfiguration = ({
                 guarantee: true,
             },
             {
-                plan: PLANS.ENTERPRISE,
                 subsection: <LetsTalkGenericSubSection app="drive" signupParameters={signupParameters} />,
                 type: 'standard' as const,
                 guarantee: true,

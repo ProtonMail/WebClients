@@ -92,6 +92,7 @@ import type { MetaTags } from '../useMetaTags';
 import { useMetaTags } from '../useMetaTags';
 import Layout from './Layout';
 import LoginModal from './LoginModal';
+import { isRegularPlanCard } from './PlanCardSelector';
 import type { Step1Rref } from './Step1';
 import Step1 from './Step1';
 import Step2 from './Step2';
@@ -746,7 +747,9 @@ const SingleSignupContainerV2 = ({
                 if (
                     !reset &&
                     Object.keys(previousPlanIDs).length <= 1 &&
-                    planCards[audience].some((planCard) => (previousPlanIDs[planCard.plan] ?? 0) > 0)
+                    planCards[audience]
+                        .filter(isRegularPlanCard)
+                        .some((planCard) => (previousPlanIDs[planCard.plan] ?? 0) > 0)
                 ) {
                     return previousPlanIDs;
                 }

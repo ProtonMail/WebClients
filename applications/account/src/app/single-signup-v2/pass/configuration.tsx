@@ -547,7 +547,6 @@ export const getPassConfiguration = ({
                 guarantee: true,
             },
             {
-                plan: PLANS.ENTERPRISE,
                 subsection: (
                     <LetsTalkSubsection vpnServersCountData={vpnServersCountData} signupParameters={signupParameters} />
                 ),

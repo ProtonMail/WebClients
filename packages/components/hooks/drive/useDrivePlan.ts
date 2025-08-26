@@ -11,8 +11,6 @@ export const useDrivePlan = () => {
     const plan = organization?.PlanName || PLANS.FREE;
 
     // B2B plans
-    // Note: Enterprise plan is currently *NOT* implemented anywhere,
-    //       so it should not be handled.
     const isDriveProfessional = plan === PLANS.DRIVE_BUSINESS;
     const isProtonBusinessSuite = plan === PLANS.BUNDLE_PRO || plan === PLANS.BUNDLE_PRO_2024;
 

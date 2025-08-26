@@ -16,7 +16,6 @@ const getHasAccess = (organization: Organization | undefined) => {
         PLANS.DRIVE_BUSINESS,
         PLANS.PASS_BUSINESS,
         PLANS.VPN_BUSINESS,
-        PLANS.ENTERPRISE,
         PLANS.VISIONARY,
     ].includes(organization?.PlanName as any);
 };

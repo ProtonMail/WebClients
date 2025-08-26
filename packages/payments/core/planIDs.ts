@@ -247,8 +247,7 @@ export const switchPlan = (options: SwitchPlanOptions): PlanIDs => {
             if (domainAddon) {
                 newPlanIDs[addon] = Math.max(
                     diffDomains > 0 && domainAddon.MaxDomains ? Math.ceil(diffDomains / domainAddon.MaxDomains) : 0,
-                    (currentPlanIDs[ADDON_NAMES.DOMAIN_ENTERPRISE] || 0) +
-                        (currentPlanIDs[ADDON_NAMES.DOMAIN_BUNDLE_PRO] || 0)
+                    currentPlanIDs[ADDON_NAMES.DOMAIN_BUNDLE_PRO] || 0
                 );
             }
         }
