@@ -1314,9 +1314,6 @@
       "Trust": [
         "Довіряти"
       ],
-      "Trust key": [
-        "Довіряти ключу"
-      ],
       "Trust public key": [
         "Довіряти відкритому ключу"
       ],
@@ -4391,6 +4388,9 @@
       "Port is required": [
         "Порт обов'язковий"
       ],
+      "Postal code is required": [
+        "Необхідно вказати поштовий індекс"
+      ],
       "Primary address key is not decrypted": [
         "Ключ основної адреси не розшифрований"
       ],
@@ -6100,6 +6100,12 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } вимагає щонайменше 1 виділений сервер вартістю ${ serverPricePerMonth }"
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } завершиться за ${ daysLeft } день.",
+        "${ planName } завершиться за ${ daysLeft } дні.",
+        "${ planName } завершиться за ${ daysLeft } днів.",
+        "${ planName } завершиться за ${ daysLeft } дня(ів)."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знайдено ${ providerFoldersNumLocalized } теку",
         "Знайдено ${ providerFoldersNumLocalized } теки",
@@ -6878,9 +6884,6 @@
         "Ініціалізація…"
       ],
       "Insert image": [
-        "Вставити зображення",
-        "Вставити зображення",
-        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [
@@ -8556,6 +8559,9 @@
       "Colors": [
         "Кольори"
       ],
+      "Company": [
+        "Компанія"
+      ],
       "Company name": [
         "Назва компанії"
       ],
@@ -8907,6 +8913,9 @@
       "Start date": [
         "Дата початку"
       ],
+      "State": [
+        "Стан"
+      ],
       "Statement": [
         "Відомість"
       ],
@@ -9011,6 +9020,9 @@
       ],
       "Your password (admin)": [
         "Новий пароль (адмін)"
+      ],
+      "ZIP code": [
+        "Поштовий індекс"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11113,6 +11125,12 @@
       "A way to contact you": [
         "Спосіб зв'язку з вами"
       ],
+      "Anderson": [
+        "Андерсон"
+      ],
+      "Company name": [
+        "Назва компанії"
+      ],
       "Describe what to change": [
         "Опишіть, що потрібно змінити"
       ],
@@ -11245,11 +11263,17 @@
       "Text": [
         "Текст"
       ],
+      "Thomas": [
+        "Томас"
+      ],
       "To": [
         "До"
       ],
       "Type text or keyword": [
         "Введіть текст чи ключове слово"
+      ],
+      "VAT number": [
+        "Номер платника ПДВ"
       ],
       "ZIP code": [
         "Поштовий індекс"
