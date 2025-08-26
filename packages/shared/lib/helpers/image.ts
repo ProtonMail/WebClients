@@ -7,7 +7,16 @@ import { toBase64 } from './file';
  * Use to encode Image URI when loading images
  */
 export const encodeImageUri = (url: string) => {
-    return encodeURI(url.trim());
+    const trimmed = url.trim();
+    const [base, query] = trimmed.split('?');
+
+    // Decode any existing encodings, so that we don’t double encode which would prevent the image from being loaded
+    const decodedBase = decodeURI(base);
+
+    // Now, we can safely encode reserved characters like `{}` or spaces
+    const safeBase = encodeURI(decodedBase);
+
+    return query ? `${safeBase}?${query}` : safeBase;
 };
 
 /**
