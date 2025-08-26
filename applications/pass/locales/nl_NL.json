@@ -130,6 +130,9 @@
       "Clear search": [
         "Zoekveld leegmaken"
       ],
+      "Clone item": [
+        "Item klonen"
+      ],
       "Close": [
         "Sluiten"
       ],
@@ -426,6 +429,9 @@
       ],
       "Open navigation": [
         "Navigatie openen"
+      ],
+      "Organize vaults": [
+        "Kluizen organiseren"
       ],
       "Pass for Android": [
         "Proton Pass voor Android"
@@ -1649,6 +1655,9 @@
       "Extra password successfully removed": [
         "Extra wachtwoord succesvol verwijderd"
       ],
+      "Failed updating your vault organization": [
+        "Het updaten van uw kluisorganisatie is mislukt."
+      ],
       "Fill in the CSV with your data": [
         "Vul de CSV in met uw gegevens"
       ],
@@ -1823,6 +1832,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2279,6 +2292,9 @@
       "Unverified": [
         "Niet geverifieerd"
       ],
+      "Updating vault organization...": [
+        "Kluisorganisatie updaten..."
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Upgrade nu om premiumfuncties te ontgrendelen"
       ],
@@ -2305,6 +2321,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Kluis \"${ share.content.name }\" werd verwijderd"
+      ],
+      "Vault organization successfully updated": [
+        "Kluisorganisatie succesvol bijgewerkt"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Kluis delen: ${ vaultMembersCount } lid",
@@ -4218,6 +4237,9 @@
       "Grant permissions": [
         "Toestemmingen verlenen"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Verborgen kluizen zullen niet zichtbaar zijn tijdens zoeken en automatisch aanvullen."
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliassen"
       ],
@@ -4321,6 +4343,9 @@
       ],
       "No shared secure links": [
         "Geen gedeelde beveiligde links"
+      ],
+      "Organize vaults": [
+        "Kluizen organiseren"
       ],
       "Our welcome gift to you": [
         "Ons welkomstgeschenk voor u"
@@ -4507,6 +4532,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "U staat op het punt ${ aliasCount } alias permanent te verwijderen.",
         "U staat op het punt ${ aliasCount } aliassen permanent te verwijderen."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "kopieer"
       ]
     },
     "Today icon tooltip in mini calendar": {
