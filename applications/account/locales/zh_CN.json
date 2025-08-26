@@ -5128,6 +5128,9 @@
       ],
       "You are signed in to the account ${ account }.": [
         "您已登录账户 ${ account }。"
+      ],
+      "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
+        "您将在**${ days } 天**内获得其账户访问权限，或在他们批准您的请求时。"
       ]
     },
     "Empty group name": {
@@ -7765,9 +7768,6 @@
       "active": [
         "启用"
       ],
-      "Activity monitor": [
-        "活动监视器"
-      ],
       "Activity Monitor": [
         "活动监视器"
       ],
@@ -8239,9 +8239,6 @@
       "Did you know?": [
         "您知道吗？"
       ],
-      "Disable detailed events": [
-        "禁用详细活动"
-      ],
       "Disable recovery by email address": [
         "禁用通过密保邮箱恢复"
       ],
@@ -8250,9 +8247,6 @@
       ],
       "Disabled countries": [
         "已禁用国家/地区"
-      ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "已在${ formattedDateAndTime }禁用"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "禁用双因素身份验证会降低账户的安全性。只有在绝对必要的情况下才进行操作。"
@@ -8389,9 +8383,6 @@
       "Enable auto-renew to keep access to your premium features.": [
         "启用自动续订功能，即可继续使用高级功能。"
       ],
-      "Enable detailed events": [
-        "启用详细活动"
-      ],
       "Enable email notifications": [
         "启用电子邮件通知"
       ],
@@ -8406,9 +8397,6 @@
       ],
       "Enabled countries": [
         "已启用的国家/地区"
-      ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "已在${ formattedDateAndTime }启用"
       ],
       "Enabling auto-deletion…": [
         "正在启用自动删除…"
@@ -8568,12 +8556,6 @@
       ],
       "Gateways": [
         "网关"
-      ],
-      "Gateways monitoring is disabled.": [
-        "网关监控已禁用。"
-      ],
-      "Gateways monitoring is enabled.": [
-        "网关监控已启用。"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "新生成的恢复密语将取代旧的。"
@@ -8751,9 +8733,6 @@
       ],
       "inactive": [
         "未启用"
-      ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "在事件日志中包含用户 IP 地址、位置以及 ISP（互联网服务提供商）"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "包含 ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -8973,9 +8952,6 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "正在加载日历，请稍候。您将在新选项卡中重定向到我们的日程安排平台 Calendly。"
-      ],
-      "Loading detailed events current status.": [
-        "加载详细事件的当前状态。"
       ],
       "Loading eduGAIN data...": [
         "正在加载 eduGAIN 数据..."
@@ -12279,9 +12255,6 @@
       "VAT": [
         "增值税"
       ],
-      "VAT identification number": [
-        "增值税识别号"
-      ],
       "Verification code": [
         "验证码"
       ],
@@ -12988,9 +12961,6 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "将域名与 ${ BRAND_NAME } 关联即可使用您自己的域名设立邮箱地址（如 you@yourcompany.com）。我们将全程指导您完成设置。"
-      ],
-      "View account-related events across your organization.": [
-        "查看您组织中的账户相关事件。"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免费体验期已结束，账户即将停用。${ action }"
@@ -16289,6 +16259,16 @@
         "保存更改"
       ]
     },
+    "retention_policy_2025_Confirmation": {
+      "After ${ lifetime } day all messages will be deleted": [
+        "在 ${ lifetime } 天后，所有消息将被删除"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } day": [
+        "有效期必须大于 ${ MIN_LIFETIME } 天"
+      ]
+    },
     "retention_policy_2025_Info": {
       "${ n } day": [
         "${ n }天"
@@ -17294,6 +17274,9 @@
       ],
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS } 高速的VPN连接"
+      ],
+      "${ vpnServersCountData.paid.countries }+ country": [
+        "${ vpnServersCountData.paid.countries }+ 国家"
       ],
       "${ vpnServersCountData.paid.servers }+ server across": [
         "${ vpnServersCountData.paid.servers }+ 跨区域服务器"
@@ -18368,6 +18351,9 @@
       ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } 台专用服务器"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } 适用于 ${ maxLumo } 用户"
       ],
       "${ n } calendar per user": [
         "每位用户 ${ n } 份日历"
@@ -19581,9 +19567,6 @@
       ],
       "Choose user affiliations": [
         "选择用户从属关系"
-      ],
-      "Click a value in the table to use it as filter": [
-        "单击表格中的一个值以将其用作筛选条件。"
       ],
       "Close": [
         "关闭"
@@ -21647,6 +21630,9 @@
       ],
       "Auto-selects from ${ numberOfCountries } country": [
         "从 ${ numberOfCountries } 个地域中自动选择"
+      ],
+      "Select from ${ numberOfCountries }+ country": [
+        "从 ${ numberOfCountries }+ 个国家中选择"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "${ numberOfCountries } 个国家/地区的服务器"

@@ -256,6 +256,9 @@
       "Claim it": [
         "Revindicar"
       ],
+      "Claim this address": [
+        "Confirmar este endereço"
+      ],
       "Clear all formatting": [
         "Limpar toda a formatação"
       ],
@@ -5320,9 +5323,6 @@
       "None": [
         "Nenhum"
       ],
-      "on ${ formattedAccessibleAt }": [
-        "em ${ formattedAccessibleAt }"
-      ],
       "Only ": [
         "Somente "
       ],
@@ -8136,9 +8136,6 @@
       "active": [
         "ativo"
       ],
-      "Activity monitor": [
-        "Monitor de atividade"
-      ],
       "Activity Monitor": [
         "Monitor de atividades"
       ],
@@ -8633,9 +8630,6 @@
       "Did you know?": [
         "Você sabia?"
       ],
-      "Disable detailed events": [
-        "Desativar evento detalhados"
-      ],
       "Disable recovery by email address": [
         "Desativar recuperação por endereço de e-mail"
       ],
@@ -8644,9 +8638,6 @@
       ],
       "Disabled countries": [
         "Países desativados"
-      ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Desativado em ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Desabilitar a autenticação de dois fatores tornará sua conta menos segura. Só prossiga se for absolutamente necessário."
@@ -8784,9 +8775,6 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Ative a renovação automática para manter o acesso aos seus recursos premium."
       ],
-      "Enable detailed events": [
-        "Ativar evento detalhados"
-      ],
       "Enable email notifications": [
         "Ativar notificações por e-mail"
       ],
@@ -8801,9 +8789,6 @@
       ],
       "Enabled countries": [
         "Países ativados"
-      ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Ativado em ${ formattedDateAndTime }"
       ],
       "Enabling auto-deletion…": [
         "Ativando a exclusão automática…"
@@ -8969,12 +8954,6 @@
       ],
       "Gateways": [
         "Gateways"
-      ],
-      "Gateways monitoring is disabled.": [
-        "Monitoramento de gateways está desativado."
-      ],
-      "Gateways monitoring is enabled.": [
-        "Monitoramento de gateways está ativado."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Gerar uma nova frase de recuperação desativará a antiga."
@@ -9153,9 +9132,6 @@
       ],
       "inactive": [
         "inativo"
-      ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Inclua endereço IP do usuário, localização e ISP (provedor de serviços de internet) em registros de evento"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Incluindo ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -9376,9 +9352,6 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Carregando o calendário, aguarde. Você será redirecionado à nossa plataforma de agendamento Calendly numa nova guia."
-      ],
-      "Loading detailed events current status.": [
-        "Carregando o estado atual de eventos detalhados."
       ],
       "Loading eduGAIN data...": [
         "Carregando os dados do eduGAIN..."
@@ -12778,9 +12751,6 @@
       "VAT": [
         "IVA"
       ],
-      "VAT identification number": [
-        "Número de identificação de IVA"
-      ],
       "Verification code": [
         "Código de verificação"
       ],
@@ -13503,9 +13473,6 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Conecte seu domínio personalizado ao ${ BRAND_NAME } para criar endereços de e-mail personalizados (por exemplo, você@sua-empresa.com). Nosso assistente guiará você no processo."
-      ],
-      "View account-related events across your organization.": [
-        "Consulte eventos relacionados à conta em toda a sua organização."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Sua avaliação gratuita terminou. O acesso a sua será desativada em breve. ${ action }"
@@ -16373,6 +16340,12 @@
       ],
       "Business Number": [
         "Número comercial"
+      ],
+      "Edit ABN": [
+        "Editar ABN"
+      ],
+      "Edit EIN": [
+        "Editar EIN"
       ],
       "EIN": [
         "Número de identificação tributária (EIN)"
@@ -20316,9 +20289,6 @@
       "Add users to \"${ policyName }\"": [
         "Adicionar usuários a «${ policyName }»"
       ],
-      "Added on": [
-        "Adicionada em"
-      ],
       "Address": [
         "Endereço"
       ],
@@ -20441,9 +20411,6 @@
       ],
       "Choose user affiliations": [
         "Escolher as afiliações de usuário"
-      ],
-      "Click a value in the table to use it as filter": [
-        "Clique em um valor na tabela para usá-lo como filtro"
       ],
       "Close": [
         "Fechar"

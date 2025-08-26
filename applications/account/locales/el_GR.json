@@ -1069,6 +1069,9 @@
       "Refer a friend": [
         "Συστήστε ένα φίλο"
       ],
+      "Refresh": [
+        "Ανανέωση"
+      ],
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
@@ -5216,6 +5219,9 @@
       "Add emergency contact": [
         "Προσθήκη επαφής έκτακτης ανάγκης"
       ],
+      "Added on ${ formattedDate }": [
+        "Προστέθηκε στις ${ formattedDate }"
+      ],
       "Change access wait time": [
         "Αλλαγή χρόνου αναμονής πρόσβασης"
       ],
@@ -5230,6 +5236,9 @@
       ],
       "Disabled": [
         "Απενεργοποιημένο"
+      ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "Μη χάσετε την πρόσβαση έκτακτης ανάγκης. Ενεργοποιήστε σήμερα την αυτόματη ανανέωση."
       ],
       "Emergency access": [
         "Πρόσβαση έκτακτης ανάγκης"
@@ -5249,6 +5258,9 @@
       "Emergency contact removed": [
         "Επαφή έκτακτης ανάγκης αφαιρέθηκε"
       ],
+      "Enable auto-renew": [
+        "Ενεργοποίηση αυτόματης ανανέωσης"
+      ],
       "Give access now": [
         "Δώστε πρόσβαση τώρα"
       ],
@@ -5266,9 +5278,6 @@
       ],
       "None": [
         "Κανένας"
-      ],
-      "on ${ formattedAccessibleAt }": [
-        "στις ${ formattedAccessibleAt }"
       ],
       "Only ": [
         "Μόνο "
@@ -5288,6 +5297,9 @@
       "Remove trusted contact": [
         "Αφαίρεση αξιόπιστης επαφής"
       ],
+      "Renew to get emergency access again.": [
+        "Ανανεώστε το για να αποκτήσετε ξανά πρόσβαση έκτακτης ανάγκης."
+      ],
       "Request access?": [
         "Αίτηση πρόσβασης;"
       ],
@@ -5296,6 +5308,9 @@
       ],
       "Stop being trusted contact?": [
         "Διακοπή ως αξιόπιστη επαφή;"
+      ],
+      "Subscription expired": [
+        "Η συνδρομή έληξε"
       ],
       "They added me as trusted contact. I can access their account in case of an emergency.": [
         "Με πρόσθεσαν ως αξιόπιστη επαφή. Μπορώ να αποκτήσω πρόσβαση στον λογαριασμό τους σε περίπτωση έκτακτης ανάγκης."
@@ -5314,6 +5329,9 @@
       ],
       "Trusted contact": [
         "Αξιόπιστη επαφή"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
       ],
       "Upgrade to ${ planName }": [
         "Αναβάθμιση σε ${ planName }"
@@ -8080,6 +8098,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Η πρόσβαση σε λογαριασμό περιορίζεται λόγω απλήρωτων τιμολογίων. Επικοινωνήστε με το διαχειριστή σας."
       ],
+      "Account monitor": [
+        "Παρακολούθηση λογαριασμού"
+      ],
       "account recovery and data recovery method": [
         "μέθοδος ανάκτησης λογαριασμού και δεδομένων"
       ],
@@ -8097,9 +8118,6 @@
       ],
       "active": [
         "ενεργό"
-      ],
-      "Activity monitor": [
-        "Παρακολούθηση δραστηριότητας"
       ],
       "Activity Monitor": [
         "Παρακολούθηση Δραστηριότητας"
@@ -8197,6 +8215,9 @@
       ],
       "Allocated": [
         "Κατανεμημένος"
+      ],
+      "Allow logging of location and connection details": [
+        "Να επιτρέπεται η καταγραφή λεπτομερειών τοποθεσίας και σύνδεσης"
       ],
       "Allow recovery by email": [
         "Άδεια ανάκτησης μέσω ηλεκτρονικού ταχυδρομείου"
@@ -8598,9 +8619,6 @@
       "Did you know?": [
         "Το γνωρίζατε;"
       ],
-      "Disable detailed events": [
-        "Απενεργοποίηση λεπτομερών συμβάντων"
-      ],
       "Disable recovery by email address": [
         "Απενεργοποιήστε την ανάκτηση μέσω διεύθυνσης ηλεκτρονικού ταχυδρομείου"
       ],
@@ -8610,8 +8628,8 @@
       "Disabled countries": [
         "Απενεργοποιημένες χώρες"
       ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Απενεργοποιήθηκε στις ${ formattedDateAndTime }"
+      "Disabled on ${ boldValue }": [
+        "Απενεργοποιημένη στις ${ boldValue }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Η απενεργοποίηση του ελέγχου ταυτότητας δύο παραγόντων θα κάνει τον λογαριασμό σας λιγότερο ασφαλή. Προχωρήστε μόνο εάν είναι απολύτως απαραίτητο."
@@ -8752,9 +8770,6 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Ενεργοποιήστε την αυτόματη ανανέωση για να διατηρήσετε την πρόσβαση στις προηγμένες δυνατότητες."
       ],
-      "Enable detailed events": [
-        "Ενεργοποίηση λεπτομερών συμβάντων"
-      ],
       "Enable email notifications": [
         "Ενεργοποίηση ειδοποιήσεων email"
       ],
@@ -8770,8 +8785,8 @@
       "Enabled countries": [
         "Ενεργοποιημένες χώρες"
       ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Ενεργοποιήθηκε στις ${ formattedDateAndTime }"
+      "Enabled on ${ boldValue }": [
+        "Ενεργοποιημένη στις ${ boldValue }"
       ],
       "Enabling auto-deletion…": [
         "Ενεργοποίηση αυτόματης διαγραφής…"
@@ -8938,14 +8953,11 @@
       "Gain visibility across your organization": [
         "Αποκτήστε ορατότητα σε όλο τον οργανισμό σας"
       ],
+      "Gateway monitor": [
+        "Παρακολούθηση πυλών"
+      ],
       "Gateways": [
         "Πύλες"
-      ],
-      "Gateways monitoring is disabled.": [
-        "Η παρακολούθηση πυλών είναι απενεργοποιημένη."
-      ],
-      "Gateways monitoring is enabled.": [
-        "Η παρακολούθηση πυλών είναι ενεργοποιημένη."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Η παραγωγή μιας νέας φράσης ανάκτησης θα απενεργοποιήσει την παλιά σας."
@@ -9128,8 +9140,8 @@
       "inactive": [
         "ανενεργό"
       ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Περιλάβετε τη διεύθυνση IP χρήστη, την τοποθεσία και τον ISP (Πάροχο υπηρεσιών διαδικτύου) στα αρχεία καταγραφής εκδηλώσεων"
+      "Include device, location, and IP details": [
+        "Περίληψη στοιχεία συσκευής, τοποθεσίας και IP"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Συμπεριλαμβανομένου ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -9354,9 +9366,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Φόρτωση ημερολογίου, παρακαλούμε περιμένετε. Θα μεταφερθείτε στην πλατφόρμα προγραμματισμού Calendly σε μια νέα καρτέλα."
       ],
-      "Loading detailed events current status.": [
-        "Φόρτωση λεπτομερών εκδηλώσεων της τρέχουσας κατάστασης."
-      ],
       "Loading eduGAIN data...": [
         "Φόρτωση δεδομένων eduGAIN..."
       ],
@@ -9575,6 +9584,9 @@
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Τα μέλη του οργανισμού θα πρέπει να ξεκλειδώσουν ${ PASS_APP_NAME } με τον κωδικό πρόσβασης ή το PIN τους κλπ."
       ],
+      "Organization monitor": [
+        "Παρακολούθηση οργανισμού"
+      ],
       "Organization size": [
         "Μέγεθος οργανισμού"
       ],
@@ -9623,6 +9635,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - διαγράφηκε προσαρμοσμένο email"
+      ],
+      "Pass usage logs": [
+        "Καταγραφές χρήσης Pass"
       ],
       "password": [
         "κωδικός πρόσβασης"
@@ -10579,6 +10594,9 @@
       ],
       "View and manage your groups.": [
         "Προβολή και διαχείριση των ομάδων σας."
+      ],
+      "View VPN session details for your organization.": [
+        "Δείτε τις λεπτομέρειες της περιόδου λειτουργίας VPN για τον οργανισμό σας."
       ],
       "View, download, and manage your invoices.": [
         "Προβολή, λήψη και διαχείριση των τιμολογίων σας."
@@ -12770,9 +12788,6 @@
       "VAT": [
         "ΦΠΑ"
       ],
-      "VAT identification number": [
-        "ΑΦΜ"
-      ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
       ],
@@ -13239,6 +13254,9 @@
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Για να συνεχίσετε να χρησιμοποιείτε το ${ BRAND_NAME }, παρακαλούμε βεβαιωθείτε ότι οι premium δυνατότητές σας δε χρησιμοποιούνται πλέον ή αναβαθμίστε το πλάνο σας."
+      ],
       "upgrade for more storage": [
         "αναβαθμίστε για περισσότερο χώρο αποθήκευσης"
       ],
@@ -13493,8 +13511,14 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Συνδέστε τον προσαρμοσμένο τομέα σας στο ${ BRAND_NAME } για να ρυθμίσετε προσαρμοσμένες διευθύνσεις email (π.χ. you@yourcompany.com). Ο οδηγός μας θα σας καθοδηγήσει στη διαδικασία."
       ],
-      "View account-related events across your organization.": [
-        "Προβολή συμβάντων σχετικών με τον λογαριασμό σε όλο τον οργανισμό σας."
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "Δείτε τη δραστηριότητα του ${ PASS_APP_NAME } σε όλο τον οργανισμό σας."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "Δείτε τις αλλαγές στην οργάνωσή σας και δραστηριότητες άλλων διαχειριστών."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "Προβολή εκδηλώσεων σύνδεσης, ανάκτησης και ασφαλείας χρήστη."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Η δωρεάν δοκιμή σας έληξε. Η πρόσβαση στον λογαριασμό σας θα απενεργοποιηθεί σύντομα. ${ action }"
@@ -14969,6 +14993,9 @@
       "Invalid code": [
         "Μη έγκυρος κωδικός"
       ],
+      "Invalid input. Search an email or detail.": [
+        "Μη έγκυρη εισαγωγή. Αναζητήστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου ή λεπτομέρεια."
+      ],
       "Invalid input. Search an email or IP address.": [
         "Μη έγκυρη εισαγωγή. Αναζητήστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου ή μια διεύθυνση IP."
       ],
@@ -15436,11 +15463,17 @@
       "It's too expensive": [
         "Είναι πολύ ακριβό"
       ],
+      "Label as...": [
+        "Ορίστε ετικέτα..."
+      ],
       "Left to Right": [
         "Αριστερά προς Δεξιά"
       ],
       "Mark as read": [
         "Σήμανση ως διαβασμένο"
+      ],
+      "Move to...": [
+        "Μετακίνηση σε..."
       ],
       "My reason isn't listed": [
         "Ο λόγος δεν συμπεριλαμβάνεται στη λίστα"
@@ -16221,6 +16254,9 @@
       "Card number": [
         "Αριθμός κάρτας"
       ],
+      "Credits and discounts are reflected in your invoice": [
+        "Οι πιστώσεις και οι εκπτώσεις αντικατοπτρίζονται στην τιμολόγησή σας."
+      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Προς το παρόν, η αυτόματη ανανέωση της συνδρομής είναι απενεργοποιημένη. Εάν αλλάξετε τη συνδρομή τώρα, τότε η αυτόματη ανανέωση θα ενεργοποιηθεί ξανά."
       ],
@@ -16288,6 +16324,9 @@
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
       ],
+      "VAT number": [
+        "Αριθμός ΑΦΜ"
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Θα χρεωθείτε ${ amountToCharge } από τον επιλεγμένο τρόπο πληρωμής."
       ],
@@ -16343,8 +16382,32 @@
       "ABN": [
         "ΑΦΜ"
       ],
+      "Add ABN": [
+        "Προσθήκη ABN"
+      ],
+      "Add Business Number": [
+        "Προσθήκη Αριθμού ΦΠΑ Επιχείρησης"
+      ],
+      "Add EIN": [
+        "Προσθήκη ΑΦΜ"
+      ],
+      "Add VAT number": [
+        "Προσθήκη Αριθμού ΦΠΑ"
+      ],
       "Business Number": [
         "Αριθμός Επιχείρησης"
+      ],
+      "Edit ABN": [
+        "Επεξεργασία ABN"
+      ],
+      "Edit Business Number": [
+        "Επεξεργασία Αριθμού ΦΠΑ Επιχείρησης"
+      ],
+      "Edit EIN": [
+        "Επεξεργασία ΑΦΜ"
+      ],
+      "Edit VAT number": [
+        "Επεξεργασία Αριθμού ΦΠΑ"
       ],
       "EIN": [
         "ΑΦΜ"
@@ -16501,11 +16564,17 @@
       "Search users": [
         "Αναζήτηση χρηστών"
       ],
+      "Search users or details": [
+        "Αναζήτηση χρηστών ή λεπτομερειών"
+      ],
       "Select": [
         "Επιλογή"
       ],
       "Select a reason": [
         "Επιλογή αιτιολογίας"
+      ],
+      "Select country": [
+        "Επιλογή χώρας"
       ],
       "Select state": [
         "Επιλέξτε νομό/περιοχή"
@@ -20320,9 +20389,6 @@
       "Add users to \"${ policyName }\"": [
         "Προσθήκη χρηστών στο \"${ policyName }\""
       ],
-      "Added on": [
-        "Προστέθηκε"
-      ],
       "Address": [
         "Διεύθυνση"
       ],
@@ -20448,9 +20514,6 @@
       ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Δημιουργήστε τη ${ MAIL_APP_NAME } διεύθυνσή σας"
-      ],
-      "Click a value in the table to use it as filter": [
-        "Κάντε κλικ σε μια τιμή στον πίνακα για να τη χρησιμοποιήσετε σαν φίλτρο"
       ],
       "Close": [
         "Κλείσιμο"
@@ -20657,6 +20720,9 @@
       ],
       "Desktop": [
         "Υπολογιστής"
+      ],
+      "Details": [
+        "Λεπτομέρειες"
       ],
       "Device": [
         "Συσκευή"
