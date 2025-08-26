@@ -303,7 +303,6 @@ export const getMailConfiguration = ({
                 guarantee: true,
             },
             {
-                plan: PLANS.ENTERPRISE,
                 subsection: <LetsTalkGenericSubSection app="mail" signupParameters={signupParameters} />,
                 type: 'standard' as const,
                 guarantee: true,

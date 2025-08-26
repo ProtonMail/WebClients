@@ -15,16 +15,6 @@ describe('isUserEligibleForBusySlots', () => {
         expect(result).toBe(true);
     });
 
-    it('should return true if the user has an enterprise organisation', () => {
-        const organisation = {
-            PlanName: PLANS.ENTERPRISE,
-        } as Organization;
-
-        const result = isUserEligibleForBusySlots(organisation);
-
-        expect(result).toBe(true);
-    });
-
     it('should return true if the user has a family organisation', () => {
         const organisation = {
             PlanName: PLANS.FAMILY,
