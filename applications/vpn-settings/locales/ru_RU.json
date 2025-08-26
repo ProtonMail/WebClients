@@ -630,9 +630,6 @@
       "refresh the page": [
         "обновить страницу"
       ],
-      "Reload": [
-        "Перезагрузить"
-      ],
       "Remove": [
         "Удалить"
       ],
@@ -5449,9 +5446,6 @@
       "active": [
         "активный"
       ],
-      "Activity monitor": [
-        "Монитор активности"
-      ],
       "Activity Monitor": [
         "Монитор Активности"
       ],
@@ -5782,9 +5776,6 @@
       "Disabled countries": [
         "Выключенные страны"
       ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Отключено на ${ formattedDateAndTime }"
-      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Отключение двухфакторной аутентификации сделает вашу учетную запись менее защищенной. Продолжайте только при крайней необходимости."
       ],
@@ -5890,17 +5881,11 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Включите автообновление для сохранения доступа к вашим платным функциям."
       ],
-      "Enable detailed events": [
-        "Включить подробные события"
-      ],
       "Enable single sign-on to keep your organization safe": [
         "Включите единый вход для обеспечения безопасности вашей организации"
       ],
       "Enabled countries": [
         "Включенные страны"
-      ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Включено на ${ formattedDateAndTime }"
       ],
       "Enabling auto-deletion…": [
         "Включение автоудаления…"
@@ -6000,12 +5985,6 @@
       ],
       "Gateways": [
         "Шлюзы"
-      ],
-      "Gateways monitoring is disabled.": [
-        "Отслеживание шлюзов выключено"
-      ],
-      "Gateways monitoring is enabled.": [
-        "Отслеживание шлюзов включено"
       ],
       "Get ${ upsellPlanName }": [
         "Получить ${ upsellPlanName }"
@@ -7017,6 +6996,9 @@
       ],
       "Vault deleted": [
         "Хранилище удалено"
+      ],
+      "Vault either deleted or requires access permissions": [
+        "Хранилище удалено или требует разрешения на доступ"
       ],
       "Vault shared with email": [
         "Общий доступ к хранилищу с помощью электронной почты"
@@ -8242,9 +8224,6 @@
       "VAT": [
         "НДС"
       ],
-      "VAT identification number": [
-        "Идентификационный номер плательщика НДС"
-      ],
       "Verification code": [
         "Код подтверждения"
       ],
@@ -8526,6 +8505,9 @@
       ],
       "Upgrade your plan": [
         "Улучшить тариф"
+      ],
+      "Vault": [
+        "Хранилище"
       ],
       "View guide": [
         "Посмотреть руководство"
@@ -13203,9 +13185,6 @@
       "Choose user affiliations": [
         "Выберите принадлежности пользователей"
       ],
-      "Click a value in the table to use it as filter": [
-        "Нажмите значение в таблице, чтобы использовать его в качестве фильтра"
-      ],
       "Close": [
         "Закрыть"
       ],
@@ -13343,6 +13322,9 @@
       ],
       "Deny access to user?": [
         "Отказать пользователю в доступе?"
+      ],
+      "Description": [
+        "Описание"
       ],
       "Device": [
         "Устройство"
@@ -13553,6 +13535,9 @@
       ],
       "Invoices": [
         "Счета"
+      ],
+      "IP": [
+        "IP"
       ],
       "Limit reached": [
         "Достигнут предел"

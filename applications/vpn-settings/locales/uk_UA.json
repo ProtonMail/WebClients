@@ -564,9 +564,6 @@
       "refresh the page": [
         "оновити сторінку"
       ],
-      "Reload": [
-        "Перезавантажити"
-      ],
       "Remove": [
         "Вилучити"
       ],
@@ -5280,9 +5277,6 @@
         "Видалення ${ deletedServerCount } шлюзових серверів",
         "Видалення ${ deletedServerCount } шлюзових серверів"
       ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Вимкнено на ${ formattedDateAndTime }"
-      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Вимкнення двофакторної автентифікації зробить ваш обліковий запис менш захищеним. Вмикайте її лише в разі крайньої потреби."
       ],
@@ -5370,14 +5364,8 @@
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Увімкніть автоматичне поновлення, щоб і надалі користуватися серверами Plus і додатковими функціями."
       ],
-      "Enable detailed events": [
-        "Увімкнути детальні події"
-      ],
       "Enable single sign-on to keep your organization safe": [
         "Увімкніть єдиний вхід, щоб гарантувати безпеку вашої організації"
-      ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Увімкнено на ${ formattedDateAndTime }"
       ],
       "End date": [
         "Дата завершення"
@@ -5474,12 +5462,6 @@
       ],
       "Gateways": [
         "Мережеві шлюзи"
-      ],
-      "Gateways monitoring is disabled.": [
-        "Моніторинг шлюзів вимкнено."
-      ],
-      "Gateways monitoring is enabled.": [
-        "Моніторинг шлюзів увімкнено."
       ],
       "Get ${ upsellPlanName }": [
         "Отримати ${ upsellPlanName }"
@@ -6401,6 +6383,9 @@
       ],
       "Vault deleted": [
         "Сховище видалено"
+      ],
+      "Vault either deleted or requires access permissions": [
+        "Сховище або видалено, або вимагає дозволу на доступ"
       ],
       "Vault shared with email": [
         "Сховище поширено за допомогою електронної пошти"
@@ -7762,6 +7747,9 @@
       ],
       "Upgrade your plan": [
         "Покращити тарифний план"
+      ],
+      "Vault": [
+        "Сховище"
       ],
       "View guide": [
         "Переглянути посібник"
@@ -12191,9 +12179,6 @@
       "Choose user affiliations": [
         "Виберіть приналежність користувачів"
       ],
-      "Click a value in the table to use it as filter": [
-        "Клацніть на значення в таблиці, щоб використовувати його як фільтр"
-      ],
       "Close": [
         "Закрити"
       ],
@@ -12316,6 +12301,9 @@
       ],
       "Deny access to user?": [
         "Заборонити доступ користувачу?"
+      ],
+      "Description": [
+        "Опис"
       ],
       "Device": [
         "Пристрій"
@@ -12493,6 +12481,9 @@
       ],
       "Invoices": [
         "Рахунки"
+      ],
+      "IP": [
+        "IP-адреса"
       ],
       "Limit reached": [
         "Досягнуто обмеження"

@@ -651,9 +651,6 @@
       "refresh the page": [
         "uppdatera sidan"
       ],
-      "Reload": [
-        "Ladda om"
-      ],
       "Remove": [
         "Ta bort"
       ],
@@ -5461,14 +5458,14 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontoåtkomst begränsad på grund av obetalda fakturor. Kontakta din administratör."
       ],
+      "Account monitor": [
+        "Kontoövervakning"
+      ],
       "Account successfully updated": [
         "Kontot har uppdaterats"
       ],
       "active": [
         "aktiv"
-      ],
-      "Activity monitor": [
-        "Aktivitetsövervakare"
       ],
       "Activity Monitor": [
         "Aktivitetsövervakare"
@@ -5784,14 +5781,8 @@
       "Did you know?": [
         "Visste du att?"
       ],
-      "Disable detailed events": [
-        "Inaktivera detaljerade händelser"
-      ],
       "Disabled countries": [
         "Inaktiverade länder"
-      ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Inaktiverad den ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Inaktivering av tvåfaktorsautentisering kommer göra ditt konto mindre säkert. Fortsätt endast om det är absolut nödvändigt."
@@ -5857,6 +5848,9 @@
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Ladda ner vår CSV-mall, fyll i användaruppgifterna och ladda sedan upp din färdiga CSV-fil för att skapa konton för dessa användare."
       ],
+      "Download the app and import existing codes.": [
+        "Ladda ner appen och importera befintliga koder."
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Ladda ner din favoritapp idag och ta integritet med dig var du än går."
       ],
@@ -5899,17 +5893,11 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Aktivera automatisk förnyelse för att behålla åtkomst till dina premiumfunktioner."
       ],
-      "Enable detailed events": [
-        "Aktivera detaljerade händelser"
-      ],
       "Enable single sign-on to keep your organization safe": [
         "Aktivera enkel inloggning för att hålla din organisation säker"
       ],
       "Enabled countries": [
         "Aktiverade länder"
-      ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Aktiverad den ${ formattedDateAndTime }"
       ],
       "Enabling auto-deletion…": [
         "Aktiverar automatisk borttagning…"
@@ -6013,14 +6001,14 @@
       "Free forever": [
         "Gratis för alltid"
       ],
+      "Gateway monitor": [
+        "Övervakning av gateway"
+      ],
       "Gateways": [
         "Gateways"
       ],
-      "Gateways monitoring is disabled.": [
-        "Övervakning av gateways är inaktiverat."
-      ],
-      "Gateways monitoring is enabled.": [
-        "Övervakning av gateways är aktiverat."
+      "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
+        "Skaffa ${ AUTHENTICATOR_APP_NAME } för alla dina enheter."
       ],
       "Get ${ upsellPlanName }": [
         "Skaffa ${ upsellPlanName }"
@@ -6124,9 +6112,6 @@
       ],
       "inactive": [
         "inaktiv"
-      ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Inkludera användarens IP-adress, plats och internetleverantör (ISP) i händelseloggar"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inklusive ${ formattedTaxRate } % ${ taxName }: ${ price }"
@@ -6277,9 +6262,6 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Läser in kalender, vänta. Du kommer att omdirigeras till vår schemaläggningsplattform Calendly i en ny flik."
-      ],
-      "Loading detailed events current status.": [
-        "Laddar nuvarande status för detaljerade händelser."
       ],
       "Loading eduGAIN data...": [
         "Laddar eduGAIN-data …"
@@ -7047,6 +7029,9 @@
       "Vault deleted": [
         "Valv borttaget"
       ],
+      "Vault either deleted or requires access permissions": [
+        "Valv antingen borttaget eller kräver åtkomstbehörigheter"
+      ],
       "Vault shared with email": [
         "Valv delad med e-post"
       ],
@@ -7181,6 +7166,9 @@
       ],
       "Why?": [
         "Varför?"
+      ],
+      "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
+        "Med ${ AUTHENTICATOR_APP_NAME } kan du:"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Med ett Business- eller Enterprise-paket kan du köpa ${ boldDedicatedServers } för din organisation och ställa in ${ boldGateways } för att kontrollera vilka användare som kan komma åt dem."
@@ -8256,9 +8244,6 @@
       "VAT": [
         "VAT"
       ],
-      "VAT identification number": [
-        "Momsregistreringsnummer"
-      ],
       "Verification code": [
         "Verifieringskod"
       ],
@@ -8550,6 +8535,9 @@
       "Upgrade your plan": [
         "Uppgradera ditt paket"
       ],
+      "Vault": [
+        "Valv"
+      ],
       "View guide": [
         "Visa guide"
       ],
@@ -8774,8 +8762,8 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Anslut din anpassade domän till ${ BRAND_NAME } för att ställa in anpassade e-postadresser (t.ex. du@dittföretag.se). Vår guide kommer guida dig genom processen."
       ],
-      "View account-related events across your organization.": [
-        "Visa kontorelaterade händelser i hela din organisation."
+      "View changes to your organization and other administrator activities.": [
+        "Visa ändringar i din organisation och andra administratörsaktiviteter."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Din gratis provperiod har avslutats. Åtkomst till ditt konto kommer snart att inaktiveras. ${ action }"
@@ -9919,6 +9907,9 @@
       "Invalid code": [
         "Ogiltig kod"
       ],
+      "Invalid input. Search an email or detail.": [
+        "Ogiltig inmatning. Sök efter en e-post eller detalj."
+      ],
       "Invalid input. Search an email or IP address.": [
         "Ogiltig inmatning. Sök efter en e-post- eller en IP-adress."
       ],
@@ -10674,6 +10665,18 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Lägg till ABN"
+      ],
+      "Add EIN": [
+        "Lägg till EIN"
+      ],
+      "Edit ABN": [
+        "Redigera ABN"
+      ],
+      "Edit EIN": [
+        "Redigera EIN"
+      ],
       "EIN": [
         "EIN"
       ],
@@ -10795,11 +10798,17 @@
       "Search users": [
         "Sök användare"
       ],
+      "Search users or details": [
+        "Sök användare eller detaljer"
+      ],
       "Select": [
         "Välj"
       ],
       "Select a reason": [
         "Välj en anledning"
+      ],
+      "Select country": [
+        "Välj land"
       ],
       "Select state": [
         "Välj delstat"
@@ -13342,9 +13351,6 @@
       "Claim your ${ MAIL_APP_NAME } address": [
         "Gör anspråk på din ${ MAIL_APP_NAME }-adress"
       ],
-      "Click a value in the table to use it as filter": [
-        "Klicka ett värde i tabellen för att använda det som filter"
-      ],
       "Close": [
         "Stäng"
       ],
@@ -13481,6 +13487,12 @@
       ],
       "Deny access to user?": [
         "Neka åtkomst till användare?"
+      ],
+      "Description": [
+        "Beskrivning"
+      ],
+      "Details": [
+        "Detaljer"
       ],
       "Device": [
         "Enhet"
@@ -13690,6 +13702,9 @@
       ],
       "Invoices": [
         "Fakturor"
+      ],
+      "IP": [
+        "IP"
       ],
       "Limit reached": [
         "Gräns uppnådd"
@@ -13946,6 +13961,9 @@
       ],
       "There are no groups": [
         "Det finns inga grupper"
+      ],
+      "Try ${ AUTHENTICATOR_APP_NAME }": [
+        "Prova ${ AUTHENTICATOR_APP_NAME }"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
