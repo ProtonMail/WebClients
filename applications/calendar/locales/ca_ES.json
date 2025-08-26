@@ -3191,6 +3191,14 @@
         "90 minuts"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Els camps de text són opcionals. La informació que proporcioneu en aquest formulari només apareixerà en les factures emeses en el futur i no afectarà les factures existents."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Els camps de text són opcionals. La informació que proporcioneu en aquest formulari només canviarà la factura que heu seleccionat i no els detalls de les factures futures."
+      ]
+    },
     "Edit event button tooltip": {
       "Edit event": [
         "Edita l'esdeveniment"
@@ -3410,6 +3418,9 @@
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "L'edició de l'adreça de facturació no està disponible en aquests moments. Torneu a provar més tard."
+      ],
       "Email address disabled": [
         "Correu electrònic desactivat"
       ],
@@ -3451,6 +3462,9 @@
       ],
       "Failed to load OAuth modal.": [
         "No s'ha pogut carregar la finestra OAuth."
+      ],
+      "Failed to open to contact": [
+        "No s'ha pogut obrir el contacte"
       ],
       "First name is too long": [
         "El nom és massa llarg."
@@ -3639,6 +3653,9 @@
       "Port is required": [
         "Es requereix el port"
       ],
+      "Postal code is required": [
+        "Cal un codi postal"
+      ],
       "Primary address key is not decrypted": [
         "La clau de l'adreça primària no està desxifrada."
       ],
@@ -3805,6 +3822,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "La vostra connexió de Zoom ha caducat. Torneu a connectar-vos per continuar."
+      ],
+      "ZIP code is required": [
+        "Es requereix el codi postal."
       ]
     },
     "Error accepting calendar invitation": {
@@ -4801,6 +4821,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requereix almenys un servidor dedicat ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } caduca en ${ daysLeft } dia.",
+        "${ planName } caduca en ${ daysLeft } dies."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } caduca avui."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb un seguiment dedicat de l'activitat sospitosa."
@@ -6347,6 +6374,9 @@
       "Colors": [
         "Colors"
       ],
+      "Company": [
+        "Empresa"
+      ],
       "Company name": [
         "Nom de l'empresa"
       ],
@@ -6639,6 +6669,9 @@
       "Start date": [
         "Data d'inici"
       ],
+      "State": [
+        "Estat"
+      ],
       "Street address": [
         "Adreça de carrer"
       ],
@@ -6728,6 +6761,9 @@
       ],
       "Your password (trusted contact)": [
         "La vostra contrasenya (contacte de confiança)"
+      ],
+      "ZIP code": [
+        "Codi postal"
       ]
     },
     "Label for contact group color": {
@@ -6925,6 +6961,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Per saber-ne més"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Per continuar utilitzant ${ BRAND_NAME }, assegureu-vos que les vostres característiques prèmium ja no s'utilitzen o milloreu el vostre pla."
       ],
       "upgrade for more storage": [
         "milloreu per a obtenir més emmagatzematge"
@@ -8791,6 +8830,9 @@
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
       ],
+      "VAT number": [
+        "Número d'IVA"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "La moneda s'ha canviat a euros (€) perquè les transferències bancàries SEPA només admeten pagaments en euros."
       ],
@@ -8843,8 +8885,32 @@
       "ABN": [
         "Número d'empresa australià (ABN)"
       ],
+      "Add ABN": [
+        "Afegiu ABN"
+      ],
+      "Add Business Number": [
+        "Afegiu el Número d'Empresa"
+      ],
+      "Add EIN": [
+        "Afegeix l'EIN"
+      ],
+      "Add VAT number": [
+        "Afegeix un número d'IVA"
+      ],
       "Business Number": [
         "Número d'empresa"
+      ],
+      "Edit ABN": [
+        "Edita l'ABN"
+      ],
+      "Edit Business Number": [
+        "Editeu el Número d'Empresa"
+      ],
+      "Edit EIN": [
+        "Edita l'EIN"
+      ],
+      "Edit VAT number": [
+        "Edita el número d'IVA"
       ],
       "EIN": [
         "Número d’identificació fiscal (EIN)"
@@ -8905,6 +8971,15 @@
       "Add title": [
         "Afegeix un títol"
       ],
+      "Anderson": [
+        "Pujol"
+      ],
+      "Anytown": [
+        "Castellvent"
+      ],
+      "Company name": [
+        "Nom de l'empresa"
+      ],
       "E.g., ": [
         "Ex., "
       ],
@@ -8934,6 +9009,9 @@
       ],
       "Leave a note for all participants": [
         "Deixa una nota per a tots els assistents"
+      ],
+      "Main street 12": [
+        "Plaça dels Estels, 12"
       ],
       "Name": [
         "Nom"
@@ -8974,6 +9052,9 @@
       "Select a reason": [
         "Seleccioneu un motiu"
       ],
+      "Select country": [
+        "Seleccioneu el país"
+      ],
       "Select state": [
         "Seleccioneu l'estat"
       ],
@@ -8982,6 +9063,12 @@
       ],
       "Start typing an email address": [
         "Comenceu a escriure una adreça de correu electrònic"
+      ],
+      "Thomas": [
+        "Adrià"
+      ],
+      "VAT number": [
+        "Núm. IVA"
       ],
       "Your organization name": [
         "El nom de la vostra organització"
@@ -10283,6 +10370,9 @@
       "Answer sent and event deleted": [
         "S'ha enviat la resposta i s'ha eliminat l'esdeveniment"
       ],
+      "Billing details updated": [
+        "S'han actualitzat els detalls de facturació."
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendari afegit. Pot trigar uns minuts a sincronitzar-se."
       ],
@@ -10808,6 +10898,9 @@
       ],
       "Drop to upload": [
         "Arrossegueu per a carregar"
+      ],
+      "Edit billing address": [
+        "Edita l'adreça de la factura"
       ],
       "Edit contact": [
         "Editar contacte"

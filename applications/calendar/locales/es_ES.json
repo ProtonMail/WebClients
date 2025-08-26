@@ -138,6 +138,9 @@
       "Choose a file or drag it here": [
         "Elige un archivo o arrástralo aquí"
       ],
+      "Claim this address": [
+        "Obtén esta dirección"
+      ],
       "Clear": [
         "Borrar"
       ],
@@ -364,6 +367,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Obtén ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Obtén una dirección gratuita de ${ BRAND_NAME }"
       ],
       "Get in touch": [
         "Ponte en contacto"
@@ -1741,6 +1747,9 @@
       ],
       "Advanced account protection": [
         "Protección de cuenta avanzada"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Cancelar y pasar a un plan inferior"
@@ -3213,6 +3222,14 @@
         "90 minutos"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Los campos de texto son opcionales. La información que proporciones en este formulario solo aparecerá en las facturas emitidas en el futuro y no afectará a las facturas existentes."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Los campos de texto son opcionales. La información que proporcionas en este formulario solo cambiará la factura que has seleccionado y no los detalles de la futura factura."
+      ]
+    },
     "Edit event button tooltip": {
       "Edit event": [
         "Editar evento"
@@ -3432,6 +3449,9 @@
       "Domain not available, try again later": [
         "Dominio no disponible. Inténtalo de nuevo más tarde."
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "La edición de la dirección de facturación no está disponible en este momento. Inténtalo de nuevo más tarde."
+      ],
       "Email address disabled": [
         "Dirección de correo electrónico desactivada"
       ],
@@ -3473,6 +3493,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Error al cargar la ventana OAuth"
+      ],
+      "Failed to open to contact": [
+        "Error al abrir el contacto"
       ],
       "First name is too long": [
         "El nombre es demasiado largo."
@@ -3661,6 +3684,9 @@
       "Port is required": [
         "Puerto requerido"
       ],
+      "Postal code is required": [
+        "El código postal es requerido"
+      ],
       "Primary address key is not decrypted": [
         "La clave principal no está descifrada."
       ],
@@ -3827,6 +3853,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Tu conexión de Zoom ha expirado. Vuelve a conectarte para continuar."
+      ],
+      "ZIP code is required": [
+        "Se requiere el código postal."
       ]
     },
     "Error accepting calendar invitation": {
@@ -4775,6 +4804,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnología de cifrado de ${ BRAND_NAME } conlleva que nadie tiene acceso a tu contraseña - ni siquiera nosotros."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } requiere una dirección de ${ BRAND_NAME } para la sincronización segura de eventos y el cifrado. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } calendario nuevo",
         "${ calendarsToBeCreatedCount } calendarios nuevos"
@@ -4820,6 +4852,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } expira en ${ daysLeft } día.",
+        "${ planName } expira en ${ daysLeft } días."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } expira hoy."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado de actividades sospechosas."
@@ -5186,6 +5225,9 @@
       ],
       "Enabling auto-deletion…": [
         "Activando la eliminación automática…"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Asegura una comunicación totalmente privada y cifrada. Reclama tu dirección de correo electrónico ${ BRAND_NAME } gratis ahora."
       ],
       "Enter the code from your authenticator app": [
         "Ingresa el código de la aplicación de autenticación."
@@ -6363,6 +6405,9 @@
       "Colors": [
         "Colores"
       ],
+      "Company": [
+        "Empresa"
+      ],
       "Company name": [
         "Nombre de la empresa"
       ],
@@ -6655,6 +6700,9 @@
       "Start date": [
         "Fecha de inicio"
       ],
+      "State": [
+        "Estado"
+      ],
       "Street address": [
         "Nombre de la calle"
       ],
@@ -6744,6 +6792,9 @@
       ],
       "Your password (trusted contact)": [
         "Tu contraseña (contacto de confianza)"
+      ],
+      "ZIP code": [
+        "Código postal"
       ]
     },
     "Label for contact group color": {
@@ -6941,6 +6992,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Más info"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Para seguir usando ${ BRAND_NAME }, asegúrate de que tus funciones prémium ya no estén en uso o mejora tu plan."
       ],
       "upgrade for more storage": [
         "mejora para obtener más almacenamiento"
@@ -8807,6 +8861,9 @@
       "Timeout exceeded": [
         "Se ha agotado el tiempo de espera."
       ],
+      "VAT number": [
+        "Número de IVA"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Tu moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo soportan pagos en euros."
       ],
@@ -8859,8 +8916,32 @@
       "ABN": [
         "Número de empresa australiano (ABN)"
       ],
+      "Add ABN": [
+        "Añadir ABN"
+      ],
+      "Add Business Number": [
+        "Añadir el número empresarial"
+      ],
+      "Add EIN": [
+        "Añadir EIN"
+      ],
+      "Add VAT number": [
+        "Añadir un número de IVA"
+      ],
       "Business Number": [
         "Número empresarial"
+      ],
+      "Edit ABN": [
+        "Editar ABN"
+      ],
+      "Edit Business Number": [
+        "Editar el número empresarial"
+      ],
+      "Edit EIN": [
+        "Editar EIN"
+      ],
+      "Edit VAT number": [
+        "Editar el número de IVA"
       ],
       "EIN": [
         "Número de identificación fiscal (EIN)"
@@ -8921,6 +9002,15 @@
       "Add title": [
         "Añadir título"
       ],
+      "Anderson": [
+        "García"
+      ],
+      "Anytown": [
+        "Valclaro"
+      ],
+      "Company name": [
+        "Nombre de la empresa"
+      ],
       "E.g., ": [
         "P. ej., "
       ],
@@ -8950,6 +9040,9 @@
       ],
       "Leave a note for all participants": [
         "Dejar una nota para todos los participantes"
+      ],
+      "Main street 12": [
+        "Calle del Sol, 12"
       ],
       "Name": [
         "Nombre"
@@ -8990,6 +9083,9 @@
       "Select a reason": [
         "Selecciona un motivo"
       ],
+      "Select country": [
+        "Seleccionar un país"
+      ],
       "Select state": [
         "Seleccionar el estado"
       ],
@@ -8998,6 +9094,12 @@
       ],
       "Start typing an email address": [
         "Comienza a escribir una dirección de correo electrónico."
+      ],
+      "Thomas": [
+        "Andrea"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ],
       "Your organization name": [
         "El nombre de tu organización"
@@ -9021,7 +9123,21 @@
         "contactar"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Como suscriptor de **${ currentPlanTitle }**, puedes desbloquear **${ unlockPlanTitle }** y más servicios de ${ BRAND_NAME } al mejorar tu plan a **${ upsellPlanTitle }**."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Más servicios de ${ BRAND_NAME }.${ br }Una suscripción sencilla."
+      ],
       "Stay on ${ currentPlanTitle }": [
         "Permanecer en ${ currentPlanTitle }"
       ],
@@ -9941,6 +10057,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } de almacenamiento total"
       ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } te da acceso a todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }. La privacidad está integrada para que puedas seguir adelante, sabiendo que tus datos e identidad están seguros."
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } te ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesitas para tener control de tus datos y seguridad."
       ],
@@ -10281,6 +10400,9 @@
       ],
       "Answer sent and event deleted": [
         "Respuesta enviada y evento eliminado"
+      ],
+      "Billing details updated": [
+        "Se han actualizado los datos de facturación."
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendario añadido. La sincronización puede tardar unos minutos."
@@ -10698,6 +10820,9 @@
       "Choose how often this event repeats": [
         "Elige con qué frecuencia se repite este evento."
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Obtén tu dirección de ${ MAIL_APP_NAME }"
+      ],
       "Clearing data": [
         "Limpiando datos"
       ],
@@ -10804,6 +10929,9 @@
       ],
       "Drop to upload": [
         "Soltar para cargar"
+      ],
+      "Edit billing address": [
+        "Editar la dirección de la factura"
       ],
       "Edit contact": [
         "Editar contacto"

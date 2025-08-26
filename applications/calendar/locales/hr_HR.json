@@ -2346,6 +2346,11 @@
         "90 minuta"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstualna polja su neobavezna. Informacije koje date u ovom obrascu će se prikazivati isključivo na računima izdanima u budućnosti i neće utjecati na postojeće račune."
+      ]
+    },
     "Edit event button tooltip": {
       "Edit event": [
         "Uredi događaj"
@@ -2446,6 +2451,9 @@
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Pogreška pri dešifriranju: Dešifriranje sadržaja ovog događaja nije uspjelo."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Uređivanje adrese za naplatu trenutno nije dostupno. Molimo pokušajte ponovno kasnije."
       ],
       "Email address disabled": [
         "Adresa e-pošte je onemogućena"
@@ -2580,6 +2588,9 @@
       "Please select a country": [
         "Molimo odaberite državu"
       ],
+      "Postal code is required": [
+        "Poštanski kôd je obvezan"
+      ],
       "Process aborted": [
         "Proces je prekinut"
       ],
@@ -2683,6 +2694,9 @@
       ],
       "Your import will not be processed.": [
         "Vaš uvoz nije moguće obraditi."
+      ],
+      "ZIP code is required": [
+        "Poštanski broj je obavezan"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4221,6 +4235,9 @@
       "Colors": [
         "Boje"
       ],
+      "Company": [
+        "Tvrtka"
+      ],
       "Company name": [
         "Naziv tvrtke"
       ],
@@ -4448,6 +4465,9 @@
       "Start date": [
         "Početni datum"
       ],
+      "State": [
+        "Država"
+      ],
       "Street address": [
         "Adresa"
       ],
@@ -4507,6 +4527,9 @@
       ],
       "Your password (admin)": [
         "Vaša lozinka (administrator)"
+      ],
+      "ZIP code": [
+        "Poštanski broj"
       ]
     },
     "Label for contact group color": {
@@ -5720,6 +5743,15 @@
       "Add title": [
         "Dodaj naslov"
       ],
+      "Anderson": [
+        "Andrić"
+      ],
+      "Anytown": [
+        "Grad"
+      ],
+      "Company name": [
+        "Naziv tvrtke"
+      ],
       "E.g., ": [
         "Npr. "
       ],
@@ -5743,6 +5775,9 @@
       ],
       "Last name": [
         "Prezime"
+      ],
+      "Main street 12": [
+        "Zagrebačka ulica 12"
       ],
       "Name": [
         "Naziv"
@@ -5779,6 +5814,12 @@
       ],
       "Start typing an email address": [
         "Započnite pisati adresu e-pošte"
+      ],
+      "Thomas": [
+        "Toma"
+      ],
+      "VAT number": [
+        "PDV broj"
       ],
       "ZIP code": [
         "Poštanski broj"
@@ -6839,6 +6880,9 @@
       ],
       "Drop to upload": [
         "Ispustite za prijenos"
+      ],
+      "Edit billing address": [
+        "Uredite adresu naplate"
       ],
       "Edit contact": [
         "Uredi kontakt"
