@@ -138,6 +138,9 @@
       "Choose a file or drag it here": [
         "Vælg en fil eller træk den hertil"
       ],
+      "Claim this address": [
+        "Gør krav på denne adresse"
+      ],
       "Clear": [
         "Ryd"
       ],
@@ -364,6 +367,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Få ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Få en gratis ${ BRAND_NAME }-adresse"
       ],
       "Get in touch": [
         "Kontakt os"
@@ -3133,6 +3139,14 @@
         "90 minutter"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstfelter er valgfrie. De oplysninger, du angiver i denne formular, vil kun blive vist på fakturaer, der udstedes i fremtiden, og vil ikke påvirke eksisterende fakturaer."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Tekstfelter er valgfrie. De oplysninger, du angiver i denne formular, vil kun ændre den faktura, du har valgt, og ikke dine fremtidige fakturadetaljer."
+      ]
+    },
     "Edit event button tooltip": {
       "Edit event": [
         "Redigér begivenhed"
@@ -3221,6 +3235,11 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Opdatering til en begivenhed med start den ${ formattedStart }"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Betroet kontakt"
       ]
     },
     "Error": {
@@ -3388,6 +3407,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Kunne ikke indlæse OAuth modal."
+      ],
+      "Failed to open to contact": [
+        "Kunne ikke oprette kontakten"
       ],
       "First name is too long": [
         "Fornavn er for langt"
@@ -3742,6 +3764,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Din Zoom-forbindelse er udløbet. Tilslut igen for at fortsætte."
+      ],
+      "ZIP code is required": [
+        "Postnummer er påkrævet"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4690,6 +4715,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } kræver en ${ BRAND_NAME } adresse til sikker begivenhedssynkronisering og kryptering. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
         "${ calendarsToBeCreatedCount } nye kalendere"
@@ -4735,6 +4763,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } udløber om ${ daysLeft } dag.",
+        "${ planName } udløber om ${ daysLeft } dage."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } udløber i dag."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } beskytter din konto med dedikeret overvågning af mistænkelig aktivitet."
@@ -5101,6 +5136,9 @@
       ],
       "Enabling auto-deletion…": [
         "Aktivering af automatisk sletning…"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Sørg for privat og krypteret kommunikation. Gør krav på din gratis ${ BRAND_NAME } e-mailadresse nu."
       ],
       "Enter the code from your authenticator app": [
         "Indtast koden fra din godkendelsesapp"
@@ -5550,6 +5588,12 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnement er ved at udløbe: Genaktiver inden ${ byDate } for at beholde dine ${ planName }-fordele. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnement udløber: For at beholde dine ${ planName } fordele, skal du fornye din abonnement i Apple App Store inden ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnement udløber: For at beholde dine ${ planName } fordele, skal du fornye din abonnement i Apple App Store inden ${ byDate }. ${ reactivateLink }"
       ],
       "Surveillance": [
         "Overvågning"
@@ -6266,6 +6310,9 @@
       "Colors": [
         "Farver"
       ],
+      "Company": [
+        "Selskab"
+      ],
       "Company name": [
         "Firmanavn"
       ],
@@ -6558,6 +6605,9 @@
       "Start date": [
         "Startdato"
       ],
+      "State": [
+        "Stat/Region"
+      ],
       "Street address": [
         "Adresse"
       ],
@@ -6644,6 +6694,9 @@
       ],
       "Your password (admin)": [
         "Din adgangskode (admin)"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "Label for contact group color": {
@@ -6785,6 +6838,9 @@
       ],
       "Request an invite": [
         "Anmod om invitation"
+      ],
+      "Resume now": [
+        "Genoptag nu"
       ],
       "settings": [
         "indstillinger"
@@ -8800,6 +8856,15 @@
       "Add title": [
         "Tilføj titel"
       ],
+      "Anderson": [
+        "Andersen"
+      ],
+      "Anytown": [
+        "Skovhavn"
+      ],
+      "Company name": [
+        "Firmanavn"
+      ],
       "E.g., ": [
         "F.eks., "
       ],
@@ -8829,6 +8894,9 @@
       ],
       "Leave a note for all participants": [
         "Skriv en note til alle deltagere"
+      ],
+      "Main street 12": [
+        "Hovedgaden 12"
       ],
       "Name": [
         "Navn"
@@ -8877,6 +8945,12 @@
       ],
       "Start typing an email address": [
         "Begynd at indtaste en e-mailadresse"
+      ],
+      "Thomas": [
+        "Kim"
+      ],
+      "VAT number": [
+        "Momsnummer"
       ],
       "Your organization name": [
         "Dit organisationsnavn"
@@ -10161,6 +10235,9 @@
       "Answer sent and event deleted": [
         "Svar sendt og begivenhed slettet"
       ],
+      "Billing details updated": [
+        "Faktureringsoplysninger opdateret"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalender oprettet. Det kan tage et par minutter at synkronisere."
       ],
@@ -10574,6 +10651,9 @@
       "Choose how often this event repeats": [
         "Vælg hvor ofte denne begivenhed gentages"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Gør krav på din gratis ${ MAIL_APP_NAME } addresse"
+      ],
       "Clearing data": [
         "Rydder data"
       ],
@@ -10680,6 +10760,9 @@
       ],
       "Drop to upload": [
         "Slip for at uploade"
+      ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
       ],
       "Edit contact": [
         "Rediger kontakt"

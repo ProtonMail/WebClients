@@ -1052,6 +1052,9 @@
       "Enter your own password (as organization admin).": [
         "사용자의 비밀번호 입력 (조직 관리자와 같음)"
       ],
+      "Enter your own password (as trusted contact).": [
+        "사용자 고유의 비밀번호 입력 (신뢰할 수 있는 연락처로서)"
+      ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "추가적인 정보와 제한을 없애기 위해 ${ mailLink }(에)서 로그인 해주세요."
       ],
@@ -1146,6 +1149,9 @@
       ],
       "Your password (admin)": [
         "사용자의 비밀번호 (관리자)"
+      ],
+      "Your password (trusted contact)": [
+        "사용자 비밀번호 (신뢰할 수 있는 연락처)"
       ]
     },
     "Link": {
@@ -1336,7 +1342,7 @@
         "최대 2명 지원"
       ],
       "Sync and backup all your files across devices": [
-        "기기를 넘나들며 파일을 동기화 및 백업하세요"
+        "기기를 넘나들며 파일 동기화 및 백업"
       ],
       "Unlimited filters": [
         "무제한 필터"
@@ -1527,6 +1533,9 @@
     "Title": {
       "Account restricted": [
         "계정 제한됨"
+      ],
+      "Account temporarily locked": [
+        "계정 일시 잠김"
       ],
       "Enter 2FA code": [
         "2단계 인증 코드 입력"

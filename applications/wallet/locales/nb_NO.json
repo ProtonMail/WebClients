@@ -598,7 +598,7 @@
         "Avansert kontobeskyttelse"
       ],
       "Easily add or remove users": [
-        "Legg til eller fjern brukere enkelt"
+        "Enkelt legg til eller fjern brukere"
       ],
       "High speed streaming": [
         "Strømming med høy hastighet"
@@ -1086,7 +1086,7 @@
         "Avansert kontobeskyttelse"
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premium funksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+        "Alle premiumfunksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Avbryt og nedgrader"
@@ -2189,7 +2189,7 @@
         "Jeg har ikke klart å koble til"
       ],
       "I only needed a VPN short-term": [
-        "Jeg trengte bare en VPN kortsiktig"
+        "Jeg trengte bare et VPN i en kort periode"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Jeg bruker en annen ${ BRAND_NAME }-konto"
@@ -2240,6 +2240,14 @@
         "Prioritert brukerstøtte"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstfelt er valgfrie. Informasjonen du oppgir i dette skjemaet vil bare vises på fakturaer som utstedes i fremtiden og vil ikke påvirke eksisterende fakturaer."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Tekstfelt er valgfrie. Informasjonen du oppgir i dette skjemaet, vil bare endre fakturaen du har valgt, og ikke dine fremtidige fakturadetaljer."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Betrodd kontakt"
@@ -2266,6 +2274,9 @@
       ],
       "Domain not available, try again later": [
         "Domenet er ikke tilgjengelig. Prøv igjen senere."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Redigering av faktureringsadresse er ikke tilgjengelig for øyeblikket. Prøv igjen senere."
       ],
       "Email is not valid": [
         "E-post er ikke gyldig"
@@ -2351,6 +2362,9 @@
       "Please select billing state": [
         "Velg faktureringsstat"
       ],
+      "Postal code is required": [
+        "Postnummer er påkrevd"
+      ],
       "Process aborted": [
         "Prosessen ble avbrutt"
       ],
@@ -2401,6 +2415,9 @@
       ],
       "Username must end with a letter or digit": [
         "Brukernavn må ende med en bokstav eller ett tall"
+      ],
+      "ZIP code is required": [
+        "Postnummer kreves"
       ]
     },
     "Error message": {
@@ -2819,6 +2836,9 @@
       "Enter your own password (as organization admin).": [
         "Skriv inn ditt eget passord (som organisasjonsadministrator)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Skriv inn ditt eget passord (som betrodd kontakt)."
+      ],
       "Everything in ${ planOrAppName }": [
         "Alt i ${ planOrAppName }"
       ],
@@ -3127,11 +3147,11 @@
         "Telefonnummeret ditt vil kun bli brukt til denne engangsbekreftelsen."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Den planlagte planen starter den ${ renewalTime } og fornyes automatisk hver ${ cycle } måned.",
-        "Den planlagte planen starter den ${ renewalTime } og fornyes automatisk hver ${ cycle } måned."
+        "Den planlagte planen starter på ${ renewalTime } og fornyes automatisk hver ${ cycle } måned.",
+        "Den planlagte planen starter på ${ renewalTime } og fornyes automatisk hver ${ cycle } måned."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
-        "Den planlagte planen starter den ${ renewalTime } og fornyes automatisk hver måned."
+        "Den planlagte planen starter på ${ renewalTime } og fornyes automatisk hver måned."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Abonnementet ditt fornyes automatisk ${ renewalTime }."
@@ -3142,7 +3162,7 @@
     },
     "info": {
       "Optional": [
-        "Valgfri"
+        "Valgfritt"
       ],
       "Selected color:": [
         "Valgt farge:"
@@ -3214,11 +3234,17 @@
       "Category": [
         "Kategori"
       ],
+      "City": [
+        "Poststed"
+      ],
       "Code is 6 digits without spaces": [
         "Koden består av 6 sifre uten mellomrom"
       ],
       "Colors": [
         "Farger"
+      ],
+      "Company": [
+        "Firma"
       ],
       "Company name": [
         "Foretaksnavn"
@@ -3310,6 +3336,9 @@
       "Phone number": [
         "Telefonnummer"
       ],
+      "Postal code": [
+        "Postnummer"
+      ],
       "Proration": [
         "Proporsjonal fakturering"
       ],
@@ -3327,6 +3356,12 @@
       ],
       "Start date": [
         "Startdato"
+      ],
+      "State": [
+        "Stat"
+      ],
+      "Street address": [
+        "Gateadresse"
       ],
       "Subscription options": [
         "Abonnementalternativer"
@@ -3351,6 +3386,12 @@
       ],
       "Your password (admin)": [
         "Ditt passord (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Passordet ditt (betrodd kontakt)"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "Label, credit card": {
@@ -3481,7 +3522,7 @@
         "${ BRAND_NAME } Scribe skriveassistent"
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
-        "Legg til ${ BRAND_NAME } Scribe skriveassistent"
+        "Legg til ${ BRAND_NAME } Scribe-skriveassistent"
       ],
       "Add-on with free trial": [
         "Tillegg med gratis prøveperiode"
@@ -3609,7 +3650,7 @@
       ],
       "${ options }-day file version history": [
         "${ options }-dag filversjonshistorikk",
-        "${ options }-dager filversjonshistorikk"
+        "${ options }-dagers filversjonshistorikk"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin livstid"
@@ -3968,7 +4009,7 @@
         "${ brand } slutter på ${ last4 }"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "1 TB med skylagring som lar deg lagre, synkronisere og dele filer lett. Sikret med ende-til-ende-kryptering."
+        "1 TB med skylagring som lett lar deg lagre, synkronisere og dele filer. Sikret med ende-til-ende-kryptering."
       ],
       "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "200 GB med skylagring som lar deg lagre, synkronisere og dele filer lett. Sikret med ende-til-ende-kryptering."
@@ -3983,7 +4024,7 @@
         "Alle ${ BRAND_NAME }s apper og deres premium funksjoner"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
-        "Alle ${ BRAND_NAME } forretningsapper og premiumfunksjoner for å beskytte hele virksomheten din."
+        "Alle ${ BRAND_NAME }-forretningsapper og premiumfunksjoner for å beskytte hele virksomheten din."
       ],
       "Early access to new apps and features": [
         "Tidlig tilgang til nye apper og funksjoner"
@@ -4159,7 +4200,7 @@
         "Etiketter er enkle merker du kan legge til i meldinger for å gjøre dem enklere å finne eller bruke filtre på."
       ],
       "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
-        "Livstids tilgang til ${ PASS_APP_NAME } + SimpleLogin premium-funksjoner."
+        "Livstidstilgang til ${ PASS_APP_NAME } + SimpleLogin premiumfunksjoner."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "På samme måte som en mappe, er et hvelv en praktisk måte å organisere elementene dine på."
@@ -4532,8 +4573,8 @@
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Da blir den automatisk fornyet til ${ renewPriceStr } hver måned. Du kan avbryte når som helst."
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
-        "Da vil den automatisk bli fornyet på ${ renewPriceStr } for ${ renewalLength } måned. Du kan si opp når som helst.",
-        "Da vil den automatisk bli fornyet på ${ renewPriceStr } for ${ renewalLength } måneder. Du kan si opp når som helst."
+        "Da vil den automatisk bli fornyet til ${ renewPriceStr } for ${ renewalLength } måned. Du kan si opp når som helst.",
+        "Da vil den automatisk bli fornyet til ${ renewPriceStr } for ${ renewalLength } måneder. Du kan si opp når som helst."
       ],
       "This number will be shown on all future invoices": [
         "Dette nummeret vil bli vist på alle fremtidige fakturaer"
@@ -4543,6 +4584,9 @@
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
+      ],
+      "VAT number": [
+        "MVA-nummer"
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta har blitt endret til euro (€) fordi SEPA-bankoverføringer bare støtter betalinger i euro."
@@ -4596,8 +4640,32 @@
       "ABN": [
         "Australsk bedriftsnummer (ABN)"
       ],
+      "Add ABN": [
+        "Legg til ABN"
+      ],
+      "Add Business Number": [
+        "Legg til bedriftsnummer"
+      ],
+      "Add EIN": [
+        "Legg til EIN"
+      ],
+      "Add VAT number": [
+        "Legg til MVA-nummer"
+      ],
       "Business Number": [
         "Bedriftsnummer"
+      ],
+      "Edit ABN": [
+        "Rediger ABN"
+      ],
+      "Edit Business Number": [
+        "Rediger bedriftsnummer"
+      ],
+      "Edit EIN": [
+        "Rediger EIN"
+      ],
+      "Edit VAT number": [
+        "Rediger MVA-nummer"
       ],
       "EIN": [
         "EIN"
@@ -4610,6 +4678,15 @@
       "A way to contact you": [
         "En måte å kontakte deg på"
       ],
+      "Anderson": [
+        "Andersen"
+      ],
+      "Anytown": [
+        "By"
+      ],
+      "Company name": [
+        "Foretaksnavn"
+      ],
       "Confirm passphrase or leave empty": [
         "Bekreft passfrasen eller la stå tom"
       ],
@@ -4621,6 +4698,9 @@
       ],
       "Gift code": [
         "Gavekode"
+      ],
+      "Main street 12": [
+        "Gatenavn 12"
       ],
       "Organization name": [
         "Organisasjonsnavn"
@@ -4649,11 +4729,20 @@
       "Select a reason": [
         "Velg en årsak"
       ],
+      "Select country": [
+        "Velg land"
+      ],
       "Select state": [
         "Velg stat"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Del det du tror kan gjøre ${ BRAND_NAME } bedre"
+      ],
+      "Thomas": [
+        "Thomas"
+      ],
+      "VAT number": [
+        "MVA-nummer"
       ],
       "Your organization name": [
         "Organisasjonsnavnet ditt"
@@ -4672,7 +4761,7 @@
         "Alle premiumfunksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME }."
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premium funksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+        "Alle premiumfunksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "plus_block": {
@@ -4757,7 +4846,7 @@
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "Logg ut"
+        "Logg av"
       ],
       "Stay signed in": [
         "Forbli pålogget"
@@ -4951,7 +5040,7 @@
         "Få tilgang til blokkert innhold og surf privat. Inkluderer 1700 tjenere i 60+ land, høyeste VPN-hastighet, 10 VPN-forbindelser, verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Alle våre premium-tjenester med sine høyeste grenser: 100 e-postadresser, støtte for 10 tilpassede domener, ubegrensede hide-my-email-aliaser, kalenderdeling, kryptert skylagring + fildeling og mer."
+        "Alle våre premiumtjenester med sine høyeste grenser: 100 e-postadresser, støtte for 10 tilpassede domener, ubegrensede hide-my-email-aliaser, kalenderdeling, kryptert skylagring + fildeling og mer."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer støtte for 3 egendefinerte e-postdomener, 15 e-postadresser, ubegrensede hide-my-email-aliaser, kalenderdeling og mer."
@@ -5185,6 +5274,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Faktureringsinformasjon oppdatert"
+      ],
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"
       ],
@@ -5367,6 +5459,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Last ned ${ DRIVE_APP_NAME }-appen"
+      ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
       ],
       "Edit credit/debit card": [
         "Rediger kreditt-/debetkort"
@@ -6687,13 +6782,13 @@
         "${ n } lommebøker"
       ],
       "A safer way to hold your Bitcoin": [
-        "En tryggere måte å bevare Bitcoin på"
+        "En tryggere måte å oppbevare bitcoinene dine på"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-post"
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
-        "Kryptert og sikker ${ MAIL_APP_NAME } e-postadresse. Du kan enkelt sende Bitcoin til hvem som helst med bare deres ${ BRAND_NAME } navn."
+        "Kryptert og sikker ${ MAIL_APP_NAME } e-postadresse. Du kan enkelt sende Bitcoin til hvem som helst med bare deres ${ BRAND_NAME }-navn."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Utveksle Bitcoin trygt via e-post i stedet for komplekse, 26-tegns Bitcoin-adresser som er utsatt for feil"
@@ -6701,7 +6796,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "En tryggere måte å bevare Bitcoin på"
+        "En tryggere måte å oppbevare Bitcoin på"
       ]
     },
     "wallet_signup_2024:Bug category": {

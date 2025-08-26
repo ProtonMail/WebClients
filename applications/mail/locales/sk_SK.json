@@ -1443,9 +1443,6 @@
       "Trust": [
         "Dôverovať"
       ],
-      "Trust key": [
-        "Dôveryhodný kľúč"
-      ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
       ],
@@ -4242,6 +4239,14 @@
         "Prioritná podpora"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Textové polia sú nepovinné. Informácie, ktoré uvediete v tomto formulári, sa zobrazia len na faktúrach vystavených v budúcnosti a neovplyvnia existujúce faktúry."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Textové polia sú nepovinné. Informácie, ktoré uvediete v tomto formulári, zmenia len vybranú faktúru, a nie vaše budúce fakturačné údaje."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "POZNÁMKA:\n${ eventComment }"
@@ -4505,6 +4510,9 @@
       "Due to an error, text generation couldn't be canceled": [
         "Z dôvodu chyby nebolo možné zrušiť generovanie textu"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Úprava fakturačnej adresy momentálne nie je k dispozícii. Skúste to neskôr, prosím."
+      ],
       "Email address disabled": [
         "Emailová adresa je deaktivovaná"
       ],
@@ -4748,6 +4756,9 @@
       "Port is required": [
         "Port je požadovaný"
       ],
+      "Postal code is required": [
+        "Poštové smerovacie číslo je povinné"
+      ],
       "Primary address key is not decrypted": [
         "Kľúč primárnej adresy nebol dešifrovaný"
       ],
@@ -4990,6 +5001,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhľadávanie našlo príliš veľa výsledkov. Upresnite hľadanie a skúste to prosím znova."
+      ],
+      "ZIP code is required": [
+        "PSČ je povinné"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6490,6 +6504,15 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje aspoň 1 dedikovaný server ${ serverPricePerMonth }"
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } skončí o ${ daysLeft } deň.",
+        "${ planName } skončí o ${ daysLeft } dni.",
+        "${ planName } skončí o ${ daysLeft } dní.",
+        "${ planName } skončí o ${ daysLeft } dní."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } skončí dnes."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou špeciálneho monitorovania podozrivých aktivít."
       ],
@@ -7394,10 +7417,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -9296,6 +9316,9 @@
       "Colors": [
         "Farby"
       ],
+      "Company": [
+        "Spoločnosť"
+      ],
       "Company name": [
         "Názov spoločnosti"
       ],
@@ -9695,6 +9718,9 @@
       "Start date": [
         "Dátum začiatku"
       ],
+      "State": [
+        "Štát"
+      ],
       "Statement": [
         "Podmienka"
       ],
@@ -9814,6 +9840,9 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (správca)"
+      ],
+      "ZIP code": [
+        "PSČ"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12211,6 +12240,15 @@
       "A way to contact you": [
         "Spôsob, ako vás kontaktovať"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "Niekdetam"
+      ],
+      "Company name": [
+        "Názov spoločnosti"
+      ],
       "Describe what to change": [
         "Popíšte, čo zmeniť"
       ],
@@ -12258,6 +12296,9 @@
       ],
       "Link": [
         "Odkaz"
+      ],
+      "Main street 12": [
+        "Hlavná ulica 12"
       ],
       "Name": [
         "Meno"
@@ -12346,11 +12387,17 @@
       "Text": [
         "Text"
       ],
+      "Thomas": [
+        "Tomáš"
+      ],
       "To": [
         "Pre"
       ],
       "Type text or keyword": [
         "Zadajte text alebo kľúčové slovo"
+      ],
+      "VAT number": [
+        "IČ DPH"
       ],
       "Your organization name": [
         "Názov vašej organizácie"
@@ -14034,6 +14081,9 @@
       "Alias saved and copied": [
         "Alias ​​uložený a skopírovaný"
       ],
+      "Billing details updated": [
+        "Fakturačné údaje aktualizované"
+      ],
       "Canceling import": [
         "Prebieha zrušenie importu"
       ],
@@ -14784,6 +14834,9 @@
       ],
       "Download the app": [
         "Stiahnuť aplikáciu"
+      ],
+      "Edit billing address": [
+        "Upraviť fakturačnú adresu"
       ],
       "Edit contact": [
         "Upraviť kontakt"

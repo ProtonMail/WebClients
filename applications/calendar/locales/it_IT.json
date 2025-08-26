@@ -138,6 +138,9 @@
       "Choose a file or drag it here": [
         "Scegli un file o trascinalo qui"
       ],
+      "Claim this address": [
+        "Ottieni questo indirizzo"
+      ],
       "Clear": [
         "Cancella"
       ],
@@ -364,6 +367,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Scegli ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Ottieni un indirizzo ${ BRAND_NAME } gratuito"
       ],
       "Get in touch": [
         "Mettiti in contatto"
@@ -2688,7 +2694,7 @@
         "Svalbard e Jan Mayen"
       ],
       "Swaziland": [
-        "Swaziland"
+        "eSwatini"
       ],
       "Sweden": [
         "Svezia"
@@ -3216,6 +3222,14 @@
         "90 minuti"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "I campi di testo sono opzionali. Le informazioni inserite in questo modulo verranno mostrate solo sulle fatture future e non su quelle esistenti."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "I campi di testo sono facoltativi. Le informazioni fornite in questo modulo modificheranno solo la fattura che hai selezionato e non i dettagli della fattura futura."
+      ]
+    },
     "Edit event button tooltip": {
       "Edit event": [
         "Modifica evento"
@@ -3435,6 +3449,9 @@
       "Domain not available, try again later": [
         "Dominio non disponibile, riprovare più tardi"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "La modifica dell'indirizzo di fatturazione non è al momento disponibile. Per favore riprova più tardi."
+      ],
       "Email address disabled": [
         "Indirizzo email disabilitato"
       ],
@@ -3476,6 +3493,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Impossibile caricare la modalità OAuth."
+      ],
+      "Failed to open to contact": [
+        "Impossibile aprire il contatto"
       ],
       "First name is too long": [
         "Il nome è troppo lungo"
@@ -3664,6 +3684,9 @@
       "Port is required": [
         "La porta è obbligatoria"
       ],
+      "Postal code is required": [
+        "Il codice postale è obbligatorio"
+      ],
       "Primary address key is not decrypted": [
         "Chiave dell'indirizzo principale non decriptata"
       ],
@@ -3830,6 +3853,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "La tua connessione a Zoom è scaduta. Riconnettiti per continuare."
+      ],
+      "ZIP code is required": [
+        "Il codice postale è obbligatorio"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4778,6 +4804,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnologia di crittografia di ${ BRAND_NAME } implica che nessuno può accedere alla tua password - nemmeno noi."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } richiede un indirizzo ${ BRAND_NAME } per la sincronizzazione sicura degli eventi e la crittografia. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nuovo calendario",
         "${ calendarsToBeCreatedCount } nuovi calendari"
@@ -4823,6 +4852,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } richiede almeno 1 server dedicato ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } scade tra ${ daysLeft } giorno",
+        "${ planName } scade tra ${ daysLeft } giorni"
+      ],
+      "${ planName } expires today.": [
+        "${ planName } scade oggi."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } protegge il tuo account con uno scrupoloso monitoraggio delle attività sospette."
@@ -5189,6 +5225,9 @@
       ],
       "Enabling auto-deletion…": [
         "Attivazione dell'eliminazione automatica…"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Garantisci comunicazioni completamente private e crittografate. Richiedi ora il tuo indirizzo email ${ BRAND_NAME } gratuito."
       ],
       "Enter the code from your authenticator app": [
         "Inserisci il codice dalla tua app di autenticazione."
@@ -5641,6 +5680,12 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Termine dell'abbonamento: riattivalo entro ${ byDate } per mantenere i vantaggi del tuo piano ${ planName }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abbonamento in scadenza: Per mantenere i vantaggi del tuo ${ planName }, riavvia il tuo abbonamento nell'Apple App Store entro il ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abbonamento in scadenza: Per mantenere i vantaggi del tuo abbonamento ${ planName }, riavvia il tuo abbonamento nel Google Play Store entro il ${ byDate }. ${ reactivateLink }"
       ],
       "Surveillance": [
         "Sorveglianza"
@@ -6360,6 +6405,9 @@
       "Colors": [
         "Colori"
       ],
+      "Company": [
+        "Azienda"
+      ],
       "Company name": [
         "Nome dell'azienda"
       ],
@@ -6652,6 +6700,9 @@
       "Start date": [
         "Data di inizio"
       ],
+      "State": [
+        "Stato"
+      ],
       "Street address": [
         "Indirizzo"
       ],
@@ -6741,6 +6792,9 @@
       ],
       "Your password (trusted contact)": [
         "La tua password (contatto attendibile)"
+      ],
+      "ZIP code": [
+        "Codice postale"
       ]
     },
     "Label for contact group color": {
@@ -6883,6 +6937,9 @@
       "Request an invite": [
         "Richiedi un invito"
       ],
+      "Resume now": [
+        "Riprendi ora"
+      ],
       "settings": [
         "impostazioni"
       ],
@@ -6935,6 +6992,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Approfondimenti"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Per continuare a utilizzare ${ BRAND_NAME }, assicurati di non avere più in uso le funzionalità premium oppure esegui l’upgrade del tuo piano"
       ],
       "upgrade for more storage": [
         "effettua l'upgrade per ottenere più spazio di archiviazione"
@@ -8806,6 +8866,9 @@
       "Timeout exceeded": [
         "Limite di tempo superato"
       ],
+      "VAT number": [
+        "Numero partita IVA"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "La tua valuta è stata cambiata in euro (€) perché i bonifici bancari SEPA supportano solo pagamenti in euro."
       ],
@@ -8858,8 +8921,32 @@
       "ABN": [
         "Numero aziendale australiano (ABN)"
       ],
+      "Add ABN": [
+        "Aggiungi ABN"
+      ],
+      "Add Business Number": [
+        "Aggiungi numero azienda"
+      ],
+      "Add EIN": [
+        "Aggiungi EIN"
+      ],
+      "Add VAT number": [
+        "Aggiungi numero di partita IVA"
+      ],
       "Business Number": [
         "Numero azienda"
+      ],
+      "Edit ABN": [
+        "Modificare ABN"
+      ],
+      "Edit Business Number": [
+        "Modifica numero azienda"
+      ],
+      "Edit EIN": [
+        "Modificare EIN"
+      ],
+      "Edit VAT number": [
+        "Modifica il numero di partita IVA"
       ],
       "EIN": [
         "Numero d'identificazione fiscale (EIN)"
@@ -8920,6 +9007,15 @@
       "Add title": [
         "Aggiungi titolo"
       ],
+      "Anderson": [
+        "Rossi"
+      ],
+      "Anytown": [
+        "Roma"
+      ],
+      "Company name": [
+        "Nome dell'azienda"
+      ],
       "E.g., ": [
         "Ad es "
       ],
@@ -8949,6 +9045,9 @@
       ],
       "Leave a note for all participants": [
         "Lascia una nota per tutti i partecipanti"
+      ],
+      "Main street 12": [
+        "Via Mario Greppi 12"
       ],
       "Name": [
         "Nome"
@@ -8989,6 +9088,9 @@
       "Select a reason": [
         "Seleziona un motivo"
       ],
+      "Select country": [
+        "Seleziona un Paese"
+      ],
       "Select state": [
         "Seleziona Stato"
       ],
@@ -8997,6 +9099,12 @@
       ],
       "Start typing an email address": [
         "Inizia a digitare un indirizzo email"
+      ],
+      "Thomas": [
+        "Mario"
+      ],
+      "VAT number": [
+        "Numero partita IVA"
       ],
       "Your organization name": [
         "Il nome della tua organizzazione"
@@ -10298,6 +10406,9 @@
       "Answer sent and event deleted": [
         "Risposta inviata e evento eliminato"
       ],
+      "Billing details updated": [
+        "Informazioni di fatturazione aggiornati"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendario aggiunto. Potrebbe volerci qualche minuto per sincronizzarlo."
       ],
@@ -10714,6 +10825,9 @@
       "Choose how often this event repeats": [
         "Scegli ogni quanto questo evento di ripete"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Richiedi il tuo indirizzo ${ MAIL_APP_NAME }"
+      ],
       "Clearing data": [
         "Cancellazione dati"
       ],
@@ -10820,6 +10934,9 @@
       ],
       "Drop to upload": [
         "Trascina per caricare"
+      ],
+      "Edit billing address": [
+        "Modifica indirizzo di fatturazione"
       ],
       "Edit contact": [
         "Modifica contatto"

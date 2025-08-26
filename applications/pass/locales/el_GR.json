@@ -130,6 +130,9 @@
       "Clear search": [
         "Εκκαθάριση αναζήτησης"
       ],
+      "Clone item": [
+        "Κλώνος Αντικειμένου"
+      ],
       "Close": [
         "Κλείσιμο"
       ],
@@ -426,6 +429,9 @@
       ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
+      ],
+      "Organize vaults": [
+        "Οργάνωση κρυπτών"
       ],
       "Pass for Android": [
         "Έγκριση για το Android"
@@ -1649,6 +1655,9 @@
       "Extra password successfully removed": [
         "Ο επιπλέον κωδικός πρόσβασης καταργήθηκε με επιτυχία"
       ],
+      "Failed updating your vault organization": [
+        "Αποτυχία ενημέρωσης της οργάνωσης της κρύπτης σας"
+      ],
       "Fill in the CSV with your data": [
         "Συμπληρώστε το CSV με τα δεδομένα σας"
       ],
@@ -1823,6 +1832,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -2279,6 +2292,9 @@
       "Unverified": [
         "Μη επαληθευμένος"
       ],
+      "Updating vault organization...": [
+        "Ενημερώνεται η οργάνωση της κρύπτης..."
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Αναβαθμίστε τώρα για να ξεκλειδώσετε Premium δυνατότητες"
       ],
@@ -2305,6 +2321,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Η κρύπτη \"${ share.content.name }\" καταργήθηκε"
+      ],
+      "Vault organization successfully updated": [
+        "Η οργάνωση της κρύπτης ενημερώθηκε με επιτυχία"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Κοινή χρήση κρυπτών: ${ vaultMembersCount } μέλος",
@@ -4218,6 +4237,9 @@
       "Grant permissions": [
         "Απαιτούμενα δικαιώματα"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Οι κρυφές κρύπτες δεν είναι ορατές κατά την αναζήτηση και την αυτόματη συμπλήρωση"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email ψευδώνυμα"
       ],
@@ -4321,6 +4343,9 @@
       ],
       "No shared secure links": [
         "Δεν υπάρχουν κοινόχρηστοι ασφαλείς σύνδεσμοι"
+      ],
+      "Organize vaults": [
+        "Οργάνωση κρυπτών"
       ],
       "Our welcome gift to you": [
         "Το δώρο καλωσορίσματος σας"
@@ -4507,6 +4532,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμο.",
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμα."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "αντιγραφή"
       ]
     },
     "Today icon tooltip in mini calendar": {

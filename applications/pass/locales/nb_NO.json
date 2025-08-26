@@ -1824,6 +1824,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2600,7 +2604,7 @@
         "Banknavn"
       ],
       "Beta Access": [
-        "Testversjon-tilgang"
+        "Beta-tilgang"
       ],
       "Biometrics": [
         "Biometri"
@@ -4516,7 +4520,7 @@
     },
     "Tooltip": {
       "Not all information listed here was exposed for all users.": [
-        "Ikke all informasjon som er oppført her, ble eksponert for alle brukere."
+        "Ikke all informasjon som er oppført her ble eksponert for alle brukere."
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Med mindre de blir dechiffrert, forblir krypterte passord sikre selv om de blir eksponert."

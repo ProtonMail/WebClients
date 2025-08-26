@@ -784,6 +784,9 @@
       "Get verification code": [
         "Obtenir codi de verificació"
       ],
+      "Give access now": [
+        "Dona accés ara"
+      ],
       "Go back": [
         "Torna enrere"
       ],
@@ -1065,6 +1068,9 @@
       ],
       "Refer a friend": [
         "Recomana a un amic"
+      ],
+      "Refresh": [
+        "Actualitza"
       ],
       "Refresh status": [
         "Refresca l'estat"
@@ -1401,6 +1407,9 @@
       ],
       "Stay": [
         "Mantenir"
+      ],
+      "Stop being trusted contact": [
+        "Deixa de ser un contacte de confiança."
       ],
       "Stop using single sign-on": [
         "Deixa d'utilitzar l'inici de sessió únic"
@@ -5189,11 +5198,17 @@
       "${ user } will be able to use your account and change your data.": [
         "${ user } podrà utilitzar el vostre compte i canviar les vostres dades."
       ],
+      "${ user } will no longer be able to request access to your account in case of emergency.": [
+        "${ user } ja no podrà sol·licitar accés al teu compte en cas d'emergència."
+      ],
       "Access granted": [
         "S'ha concedit l'accés."
       ],
       "Access granted on ${ formattedAccessibleAt }": [
         "S'ha concedit accés el ${ formattedAccessibleAt }"
+      ],
+      "Access requested": [
+        "Accés sol·licitat"
       ],
       "Access will be granted on ${ formattedAccessibleAt }": [
         "Es concedirà accés el ${ formattedAccessibleAt }"
@@ -5204,6 +5219,9 @@
       "Add emergency contact": [
         "Afegir contacte d'emergència"
       ],
+      "Added on ${ formattedDate }": [
+        "S'ha afegit el ${ formattedDate }"
+      ],
       "Change access wait time": [
         "Canvieu el temps d'espera d'accés"
       ],
@@ -5213,8 +5231,14 @@
       "Change wait time": [
         "Canvieu el temps d'espera"
       ],
+      "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
+        "Tria algú en qui confiïs amb les teves dades. Han de tenir ja un compte de ${ BRAND_NAME }."
+      ],
       "Disabled": [
         "Desactivada"
+      ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "No perdeu l'accés d'emergència. Activeu la renovació automàtica avui mateix."
       ],
       "Emergency access": [
         "Accés d\"emergència"
@@ -5234,6 +5258,12 @@
       "Emergency contact removed": [
         "S'ha eliminat el contacte d'emergència"
       ],
+      "Enable auto-renew": [
+        "Habiliteu la renovació automàtica"
+      ],
+      "Give access now": [
+        "Dona accés ara"
+      ],
       "Give immediate access?": [
         "Voleu concedir accés immediat?"
       ],
@@ -5249,14 +5279,14 @@
       "None": [
         "Cap"
       ],
-      "on ${ formattedAccessibleAt }": [
-        "el ${ formattedAccessibleAt }"
-      ],
       "Only ": [
         "Només "
       ],
       "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
         "Sol·liciteu accés d'emergència només quan hi hagi una **situació vàlida** que us requereixi gestionar el compte d'un altre usuari."
+      ],
+      "People I trust": [
+        "Persones de confiança"
       ],
       "People who trust me": [
         "Persones que confien en mi"
@@ -5267,6 +5297,9 @@
       "Remove trusted contact": [
         "Esborrar contacte de confiança"
       ],
+      "Renew to get emergency access again.": [
+        "Renoveu per tornar a tenir accés d'emergència."
+      ],
       "Request access?": [
         "Sol·licitar accés?"
       ],
@@ -5275,6 +5308,9 @@
       ],
       "Stop being trusted contact?": [
         "Deixar de ser contacte de confiança?"
+      ],
+      "Subscription expired": [
+        "La subscripció ha caducat"
       ],
       "They added me as trusted contact. I can access their account in case of an emergency.": [
         "M'han afegit com a contacte de confiança. Puc accedir al seu compte en cas d'emergència."
@@ -5285,17 +5321,29 @@
       "This will take effect immediately.": [
         "Això tindrà efecte immediat."
       ],
+      "Time required before automatically giving access": [
+        "Temps necessari abans de proporcionar accés automàticament."
+      ],
       "Time required before automatically granting them access": [
         "Temps necessari abans de concedir-los accés automàticament"
       ],
       "Trusted contact": [
         "Contacte de confiança"
       ],
+      "Upgrade": [
+        "Millora"
+      ],
       "Upgrade to ${ planName }": [
         "Milloreu el pla a ${ planName }"
       ],
       "View request": [
         "Mostra la sol·licitud"
+      ],
+      "Wait time": [
+        "Temps d'espera"
+      ],
+      "Wait time for access": [
+        "Temps d'espera per obtenir accés"
       ],
       "Wait time saved": [
         "El temps d'espera s'ha desat"
@@ -5324,6 +5372,9 @@
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Ja no podreu sol·licitar accés al compte de ${ user } en cas d'emergència."
+      ],
+      "You'll receive access to their account immediately.": [
+        "Obtindràs accés al seu compte de manera immediata."
       ],
       "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
         "Rebreu accés al seu compte en **${ days } dia**, o quan aprovin la vostra sol·licitud.",
@@ -5359,6 +5410,9 @@
       ],
       "Add at least one condition": [
         "Afegiu almenys una condició"
+      ],
+      "Address cannot be yours": [
+        "L'adreça no pot ser teva"
       ],
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
@@ -8044,6 +8098,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "L'accés al compte està restringit a causa de factures impagades. Contacteu amb el vostre administrador."
       ],
+      "Account monitor": [
+        "Monitor del compte"
+      ],
       "account recovery and data recovery method": [
         "mètode de recuperació del compte i de les dades"
       ],
@@ -8061,9 +8118,6 @@
       ],
       "active": [
         "activa"
-      ],
-      "Activity monitor": [
-        "Monitor d'activitats"
       ],
       "Activity Monitor": [
         "Monitor d'activitats"
@@ -8161,6 +8215,9 @@
       ],
       "Allocated": [
         "Assignat"
+      ],
+      "Allow logging of location and connection details": [
+        "Permetre el registre d'ubicació i detalls de connexió"
       ],
       "Allow recovery by email": [
         "Permet la recuperació per correu electrònic"
@@ -8562,9 +8619,6 @@
       "Did you know?": [
         "Ho sabíeu?"
       ],
-      "Disable detailed events": [
-        "Desactiveu els esdeveniments detallats"
-      ],
       "Disable recovery by email address": [
         "Desactiva la recuperació per adreça de correu electrònic"
       ],
@@ -8574,8 +8628,8 @@
       "Disabled countries": [
         "Països desactivats"
       ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Desactivació el ${ formattedDateAndTime }"
+      "Disabled on ${ boldValue }": [
+        "Desactivat el ${ boldValue }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Si desactiveu l'autenticació de doble factor, el vostre compte serà menys segur. Només procediu si és absolutament necessari."
@@ -8716,9 +8770,6 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Activeu la renovació automàtica per mantenir l'accés a les característiques prèmium."
       ],
-      "Enable detailed events": [
-        "Activeu els esdeveniments detallats"
-      ],
       "Enable email notifications": [
         "Activa les notificacions per correu electrònic"
       ],
@@ -8734,8 +8785,8 @@
       "Enabled countries": [
         "Països activats"
       ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Activació el ${ formattedDateAndTime }"
+      "Enabled on ${ boldValue }": [
+        "Activat el ${ boldValue }"
       ],
       "Enabling auto-deletion…": [
         "S'està activant la supressió automàtica…"
@@ -8902,14 +8953,11 @@
       "Gain visibility across your organization": [
         "Guanyeu visibilitat a tota la vostra organització"
       ],
+      "Gateway monitor": [
+        "Monitor de passarel·la"
+      ],
       "Gateways": [
         "Passarel·les"
-      ],
-      "Gateways monitoring is disabled.": [
-        "El monitoratge de passarel·les està desactivat."
-      ],
-      "Gateways monitoring is enabled.": [
-        "El monitoratge de passarel·les està activat."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "La generació d’una nova frase de recuperació desactivarà l'antiga."
@@ -9092,8 +9140,8 @@
       "inactive": [
         "inactiva"
       ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Incloeu l'adreça IP de l'usuari, la ubicació i l'ISP (proveïdor de serveis d'internet) als registres d'esdeveniments."
+      "Include device, location, and IP details": [
+        "Inclou detalls del dispositiu, la ubicació i l'IP"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Incloent ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -9318,9 +9366,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "S'està carregant el calendari, espereu. Se us redirigirà a la nostra plataforma de planificació Calendly en una pestanya nova."
       ],
-      "Loading detailed events current status.": [
-        "S'està carregant l'estat actual dels esdeveniments detallats."
-      ],
       "Loading eduGAIN data...": [
         "S'estan carregant les dades d'eduGAIN..."
       ],
@@ -9538,6 +9583,9 @@
       ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Els membres de l'organització necessitaran desbloquejar ${ PASS_APP_NAME } amb la seva contrasenya, PIN, etc."
+      ],
+      "Organization monitor": [
+        "Monitor d'organització"
       ],
       "Organization size": [
         "Mida de l'organització"
@@ -10543,6 +10591,9 @@
       ],
       "View and manage your groups.": [
         "Visualitzeu i gestioneu els vostres grups."
+      ],
+      "View VPN session details for your organization.": [
+        "Veieu els detalls de la sessió VPN de la vostra organització."
       ],
       "View, download, and manage your invoices.": [
         "Veieu, descarregueu i gestioneu les factures."
@@ -12734,9 +12785,6 @@
       "VAT": [
         "IVA"
       ],
-      "VAT identification number": [
-        "Número d’identificació de l’IVA"
-      ],
       "Verification code": [
         "Codi de verificació"
       ],
@@ -13203,6 +13251,9 @@
       "Learn more": [
         "Per saber-ne més"
       ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Per continuar utilitzant ${ BRAND_NAME }, assegureu-vos que les vostres característiques prèmium ja no s'utilitzen o milloreu el vostre pla."
+      ],
       "upgrade for more storage": [
         "milloreu per a obtenir més emmagatzematge"
       ],
@@ -13457,8 +13508,14 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Connecteu el vostre domini personalitzat a ${ BRAND_NAME } per a configurar adreces de correu electrònic personalitzades (p. ex., vos@lavostraempresa.com). El nostre assistent us guiarà a través del procés."
       ],
-      "View account-related events across your organization.": [
-        "Consulteu els esdeveniments relacionats amb el compte a tota la vostra organització."
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "Visualitzar l'activitat de ${ PASS_APP_NAME } a través de la vostra organització."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "Visualitzeu canvis a la vostra organització i altres activitats de l'administració."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "Visualitzeu els esdeveniments d'inici de sessió, recuperació i seguretat de l'usuari."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "S'ha acabat la prova gratuïta. L'accés al compte es desactivarà prompte. ${ action }"
@@ -14933,6 +14990,9 @@
       "Invalid code": [
         "El codi no és vàlid."
       ],
+      "Invalid input. Search an email or detail.": [
+        "Entrada incorrecta. Cerqueu un correu o un detall."
+      ],
       "Invalid input. Search an email or IP address.": [
         "Entrada incorrecta. Cerqueu un correu electrònic o una adreça IP."
       ],
@@ -15400,11 +15460,17 @@
       "It's too expensive": [
         "Es massa car"
       ],
+      "Label as...": [
+        "Etiqueta com a…"
+      ],
       "Left to Right": [
         "Esquerra a dreta"
       ],
       "Mark as read": [
         "Marca com a llegit"
+      ],
+      "Move to...": [
+        "Mou a..."
       ],
       "My reason isn't listed": [
         "La meva raó no apareix"
@@ -16185,6 +16251,9 @@
       "Card number": [
         "Número de la targeta"
       ],
+      "Credits and discounts are reflected in your invoice": [
+        "Els crèdits i descomptes es reflecteixen a la factura"
+      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Actualment, la renovació automàtica de la subscripció està desactivada. Si canvieu la subscripció ara, es tornarà a activar la renovació automàtica."
       ],
@@ -16252,6 +16321,9 @@
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
       ],
+      "VAT number": [
+        "Número d'IVA"
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Se us cobrarà ${ amountToCharge } al vostre mètode de pagament seleccionat."
       ],
@@ -16307,8 +16379,32 @@
       "ABN": [
         "Número d'empresa australià (ABN)"
       ],
+      "Add ABN": [
+        "Afegiu ABN"
+      ],
+      "Add Business Number": [
+        "Afegiu el Número d'Empresa"
+      ],
+      "Add EIN": [
+        "Afegeix l'EIN"
+      ],
+      "Add VAT number": [
+        "Afegeix un número d'IVA"
+      ],
       "Business Number": [
         "Número d'empresa"
+      ],
+      "Edit ABN": [
+        "Edita l'ABN"
+      ],
+      "Edit Business Number": [
+        "Editeu el Número d'Empresa"
+      ],
+      "Edit EIN": [
+        "Edita l'EIN"
+      ],
+      "Edit VAT number": [
+        "Edita el número d'IVA"
       ],
       "EIN": [
         "Número d’identificació fiscal (EIN)"
@@ -16465,11 +16561,17 @@
       "Search users": [
         "Cercar usuaris"
       ],
+      "Search users or details": [
+        "Cerca usuaris o detalls"
+      ],
       "Select": [
         "Seleccionar"
       ],
       "Select a reason": [
         "Seleccioneu un motiu"
+      ],
+      "Select country": [
+        "Seleccioneu el país"
       ],
       "Select state": [
         "Seleccioneu l'estat"
@@ -20287,9 +20389,6 @@
       "Add users to \"${ policyName }\"": [
         "Afegeix usuaris a «${ policyName }»"
       ],
-      "Added on": [
-        "Afegit el"
-      ],
       "Address": [
         "Adreça"
       ],
@@ -20415,9 +20514,6 @@
       ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Aconseguiu la vostra adreça de ${ MAIL_APP_NAME }"
-      ],
-      "Click a value in the table to use it as filter": [
-        "Feu clic a un valor de la taula per utilitzar-lo com a filtre."
       ],
       "Close": [
         "Tanca"
@@ -20624,6 +20720,9 @@
       ],
       "Desktop": [
         "Escriptori"
+      ],
+      "Details": [
+        "Detalls"
       ],
       "Device": [
         "Dispositiu"

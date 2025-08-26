@@ -642,9 +642,6 @@
       "refresh the page": [
         "obnoviť stránku"
       ],
-      "Reload": [
-        "Obnoviť"
-      ],
       "Remove": [
         "Vymazať"
       ],
@@ -5586,9 +5583,6 @@
       "active": [
         "aktívne"
       ],
-      "Activity monitor": [
-        "Monitor aktivity"
-      ],
       "Activity Monitor": [
         "Monitor aktivity"
       ],
@@ -5922,14 +5916,8 @@
       "Did you know?": [
         "Vedeli ste?"
       ],
-      "Disable detailed events": [
-        "Deaktivovať podrobné udalosti"
-      ],
       "Disabled countries": [
         "Zakázané krajiny"
-      ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Deaktivované ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Vypnutím dvojstupňového overenia bude váš účet menej bezpečný. Vypnite toto overovanie iba ak je to nevyhnutné."
@@ -6039,17 +6027,11 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Ak si chcete zachovať prístup k prémiovým funkciám, povoľte automatické obnovovanie."
       ],
-      "Enable detailed events": [
-        "Povoliť podrobné udalosti"
-      ],
       "Enable single sign-on to keep your organization safe": [
         "Povoľte jednotné prihlásenie, aby bola vaša organizácia v bezpečí"
       ],
       "Enabled countries": [
         "Povolené krajiny"
-      ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Aktivované ${ formattedDateAndTime }"
       ],
       "Enabling auto-deletion…": [
         "Zapínanie automatického mazania…"
@@ -6152,12 +6134,6 @@
       ],
       "Gateways": [
         "Brány"
-      ],
-      "Gateways monitoring is disabled.": [
-        "Monitorovanie brán je vypnuté."
-      ],
-      "Gateways monitoring is enabled.": [
-        "Monitorovanie brán je zapnuté."
       ],
       "Get ${ upsellPlanName }": [
         "Získať ${ upsellPlanName }"
@@ -6263,9 +6239,6 @@
       ],
       "inactive": [
         "neaktívne"
-      ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Zahrnúť IP adresu používateľa, polohu a ISP (poskytovateľa internetových služieb) do záznamov udalostí"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Vrátane ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -6416,9 +6389,6 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Načítanie kalendára, počkajte, prosím. V novej karte budete presmerovaní na našu plánovaciu platformu Calendly."
-      ],
-      "Loading detailed events current status.": [
-        "Načítanie podrobného aktuálneho stavu udalostí."
       ],
       "Loading eduGAIN data...": [
         "Načítanie údajov eduGAIN..."
@@ -7199,6 +7169,9 @@
       ],
       "Vault deleted": [
         "Trezor bol vymazaný"
+      ],
+      "Vault either deleted or requires access permissions": [
+        "Trezor bol buď vymazaný, alebo si vyžaduje prístupové oprávnenia"
       ],
       "Vault shared with email": [
         "Trezor zdieľaný emailom"
@@ -8454,9 +8427,6 @@
       "VAT": [
         "DPH"
       ],
-      "VAT identification number": [
-        "DIČ"
-      ],
       "Verification code": [
         "Overovací kód"
       ],
@@ -8739,6 +8709,9 @@
       "Upgrade your plan": [
         "Prejsť na vyšší plán"
       ],
+      "Vault": [
+        "Trezor"
+      ],
       "View guide": [
         "Zobraziť sprievodcu"
       ],
@@ -8978,9 +8951,6 @@
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Prepojte vašu vlastnú doménu s ${ BRAND_NAME }, aby ste vytvorili vlastné emailové adresy (napr. vy@vasafirma.com). Náš sprievodca vás prevedie celým postupom."
-      ],
-      "View account-related events across your organization.": [
-        "Zobraziť udalosti súvisiace s účtom v rámci vašej organizácie."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Vaša bezplatná skúšobná verzia sa skončila. Prístup k vášmu účtu bude čoskoro deaktivovaný. ${ action }"
@@ -13734,9 +13704,6 @@
       "Choose user affiliations": [
         "Vyberte príslušnosť používateľa"
       ],
-      "Click a value in the table to use it as filter": [
-        "Kliknutím na hodnotu v tabuľke ju použijete ako filter."
-      ],
       "Close": [
         "Zatvoriť"
       ],
@@ -13877,6 +13844,9 @@
       ],
       "Deny access to user?": [
         "Zamietnuť prístup užívateľovi?"
+      ],
+      "Description": [
+        "Popis"
       ],
       "Device": [
         "Zariadenie"
@@ -14090,6 +14060,9 @@
       ],
       "Invoices": [
         "Faktúry"
+      ],
+      "IP": [
+        "IP"
       ],
       "Limit reached": [
         "Limit dosiahnutý"

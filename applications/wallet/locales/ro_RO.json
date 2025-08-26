@@ -2250,6 +2250,14 @@
         "Asistență prioritară"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Câmpurile text sunt opționale. Informațiile furnizate în acest formular vor apărea doar pe facturile emise în viitor și nu vor afecta facturile deja emise."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Câmpurile de text sunt opționale. Informațiile pe care le furnizați în acest formular vor modifica doar factura pe care ați selectat-o ​​și nu detaliile viitoarei facturi."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Contact aprobat"
@@ -2276,6 +2284,9 @@
       ],
       "Domain not available, try again later": [
         "Domeniul nu este disponibil. Reîncercați mai târziu."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Editarea adresei de facturare nu este disponibilă momentan. Reîncercați mai târziu."
       ],
       "Email is not valid": [
         "E-mailul nu este valid"
@@ -2361,6 +2372,9 @@
       "Please select billing state": [
         "Selectați statul pentru facturare"
       ],
+      "Postal code is required": [
+        "Codul poștal este obligatoriu."
+      ],
       "Process aborted": [
         "Proces abandonat"
       ],
@@ -2411,6 +2425,9 @@
       ],
       "Username must end with a letter or digit": [
         "Numele de utilizator trebuie să se termine cu o literă sau cifră."
+      ],
+      "ZIP code is required": [
+        "Codul poștal este obligatoriu."
       ]
     },
     "Error message": {
@@ -3242,11 +3259,17 @@
       "Category": [
         "Categoria"
       ],
+      "City": [
+        "Oraş"
+      ],
       "Code is 6 digits without spaces": [
         "Codul este format din 6 cifre fără spații"
       ],
       "Colors": [
         "Culori"
+      ],
+      "Company": [
+        "Compania"
       ],
       "Company name": [
         "Nume companie"
@@ -3338,6 +3361,9 @@
       "Phone number": [
         "Număr de telefon"
       ],
+      "Postal code": [
+        "Cod poștal"
+      ],
       "Proration": [
         "Taxe zilnice"
       ],
@@ -3355,6 +3381,12 @@
       ],
       "Start date": [
         "Dată început"
+      ],
+      "State": [
+        "Județ/Stat"
+      ],
+      "Street address": [
+        "Strada"
       ],
       "Subscription options": [
         "Opțiuni abonament"
@@ -3382,6 +3414,9 @@
       ],
       "Your password (trusted contact)": [
         "Parola dvs. (contact aprobat)"
+      ],
+      "ZIP code": [
+        "Cod poștal"
       ]
     },
     "Label, credit card": {
@@ -4607,6 +4642,9 @@
       "Timeout exceeded": [
         "Limită de timp depășită"
       ],
+      "VAT number": [
+        "Valoare TVA"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Moneda a fost schimbată în euro (€) deoarece transferurile bancare SEPA acceptă doar plăți în euro."
       ],
@@ -4659,8 +4697,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Adăugare ABN"
+      ],
+      "Add Business Number": [
+        "Adăugare cod unic de înregistrare"
+      ],
+      "Add EIN": [
+        "Adăugare EIN"
+      ],
+      "Add VAT number": [
+        "Adăugare TVA"
+      ],
       "Business Number": [
         "Cod unic de înregistrare"
+      ],
+      "Edit ABN": [
+        "Editare ABN"
+      ],
+      "Edit Business Number": [
+        "Editare cod unic de înregistrare"
+      ],
+      "Edit EIN": [
+        "Editare EIN"
+      ],
+      "Edit VAT number": [
+        "Editare TVA"
       ],
       "EIN": [
         "EIN"
@@ -4673,6 +4735,15 @@
       "A way to contact you": [
         "Modalitate de contactare"
       ],
+      "Anderson": [
+        "Andrei"
+      ],
+      "Anytown": [
+        "București"
+      ],
+      "Company name": [
+        "Nume companie"
+      ],
       "Confirm passphrase or leave empty": [
         "Confirmați fraza de acces sau lăsați necompletat"
       ],
@@ -4684,6 +4755,9 @@
       ],
       "Gift code": [
         "Cod cadou"
+      ],
+      "Main street 12": [
+        "Strada Principală nr. 12"
       ],
       "Organization name": [
         "Nume organizație"
@@ -4712,11 +4786,20 @@
       "Select a reason": [
         "Selectați un motiv"
       ],
+      "Select country": [
+        "Selectare țară"
+      ],
       "Select state": [
         "Selectare țară"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Spuneți-ne ce credeți că ar face să fie mai bun ${ BRAND_NAME }"
+      ],
+      "Thomas": [
+        "Toma"
+      ],
+      "VAT number": [
+        "Valoare TVA"
       ],
       "Your organization name": [
         "Numele organizației"
@@ -5136,9 +5219,9 @@
     },
     "Subscription attribute": {
       "${ n } free VPN connection per user": [
-        "${ n } conexiune VPN gratuită per utilizator",
-        "${ n } conexiuni VPN gratuite per utilizator",
-        "${ n } de conexiuni VPN gratuite per utilizator"
+        "Conexiuni VPN gratuite per utilizator: ${ n }",
+        "Conexiuni VPN gratuite per utilizator: ${ n }",
+        "Conexiuni VPN gratuite per utilizator: ${ n }"
       ],
       "${ n } high-speed VPN connection": [
         "O conexiune VPN de mare viteză",
@@ -5260,6 +5343,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Detaliile de facturare s-au actualizat"
+      ],
       "Code sent to ${ methodTo }": [
         "Cod trimis la ${ methodTo }"
       ],
@@ -5442,6 +5528,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
+      ],
+      "Edit billing address": [
+        "Editare adresă de facturare"
       ],
       "Edit credit/debit card": [
         "Editare card de credit/debit"

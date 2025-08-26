@@ -2230,6 +2230,14 @@
         "Dukungan prioritas"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Kolom teks bersifat opsional. Informasi yang Anda sediakan pada kolom ini hanya akan terlihat pada faktur yang diterbitkan ke depannya tanpa memengaruhi faktur yang telah ada."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Kolom teks bersifat opsional. Informasi yang Anda sediakan dalam formulir ini hanya akan mengubah isi faktur yang Anda pilih tanpa memengaruhi rincian faktur yang akan datang."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Kontak terpercaya"
@@ -2256,6 +2264,9 @@
       ],
       "Domain not available, try again later": [
         "Domain tidak tersedia, coba lagi nanti"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Penyuntingan alamat tagihan saat ini tidak tersedia. Silakan coba lagi nanti."
       ],
       "Email is not valid": [
         "Email tidak valid"
@@ -2341,6 +2352,9 @@
       "Please select billing state": [
         "Silakan pilih negara bagian penagihan"
       ],
+      "Postal code is required": [
+        "Kode pos dibutuhkan"
+      ],
       "Process aborted": [
         "Proses dibatalkan"
       ],
@@ -2391,6 +2405,9 @@
       ],
       "Username must end with a letter or digit": [
         "Nama pengguna harus diakhiri dengan huruf atau angka"
+      ],
+      "ZIP code is required": [
+        "Kode pos diperlukan"
       ]
     },
     "Error message": {
@@ -3192,11 +3209,17 @@
       "Category": [
         "Kategori"
       ],
+      "City": [
+        "Kota"
+      ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
       ],
       "Colors": [
         "Warna"
+      ],
+      "Company": [
+        "Perusahaan"
       ],
       "Company name": [
         "Nama perusahaan"
@@ -3288,6 +3311,9 @@
       "Phone number": [
         "Nomor telepon"
       ],
+      "Postal code": [
+        "Kode pos"
+      ],
       "Proration": [
         "Prorasi"
       ],
@@ -3305,6 +3331,12 @@
       ],
       "Start date": [
         "Tanggal mulai"
+      ],
+      "State": [
+        "Keadaan"
+      ],
+      "Street address": [
+        "Alamat jalan"
       ],
       "Subscription options": [
         "Pilihan langganan"
@@ -3332,6 +3364,9 @@
       ],
       "Your password (trusted contact)": [
         "Kata sandi Anda (kontak terpercaya)"
+      ],
+      "ZIP code": [
+        "Kode pos"
       ]
     },
     "Label, credit card": {
@@ -4559,6 +4594,15 @@
       "A way to contact you": [
         "Cara untuk menghubungi Anda"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "Kota A"
+      ],
+      "Company name": [
+        "Nama perusahaan"
+      ],
       "Confirm passphrase or leave empty": [
         "Konfirmasi frasa sandi atau biarkan kosong"
       ],
@@ -4570,6 +4614,9 @@
       ],
       "Gift code": [
         "Kode hadiah"
+      ],
+      "Main street 12": [
+        "Jalan Utama No. 12"
       ],
       "Organization name": [
         "Nama organisasi"
@@ -4603,6 +4650,12 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Berikan pendapatmu tentang apa yang bisa membuat ${ BRAND_NAME } menjadi lebih baik"
+      ],
+      "Thomas": [
+        "Thomas"
+      ],
+      "VAT number": [
+        "Nomor PPN"
       ],
       "Your organization name": [
         "Nama organisasi Anda"
@@ -5122,6 +5175,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Rincian penagihan diperbarui"
+      ],
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"
       ],
@@ -5304,6 +5360,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Unduh aplikasi ${ DRIVE_APP_NAME }"
+      ],
+      "Edit billing address": [
+        "Sunting alamat penagihan"
       ],
       "Edit credit/debit card": [
         "Sunting rincian kartu kredit/debit"

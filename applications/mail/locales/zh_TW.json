@@ -216,6 +216,9 @@
       "Claim ${ BRAND_NAME } address": [
         "獲取 ${ BRAND_NAME } 電郵位址"
       ],
+      "Claim this address": [
+        "獲取這個電郵位址"
+      ],
       "Clear": [
         "清除"
       ],
@@ -281,6 +284,9 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "確認開啟連結 ${ linkToShow }"
+      ],
+      "Connect to video conferencing": [
+        "連接視訊會議"
       ],
       "Contact group": [
         "聯絡人群組"
@@ -434,6 +440,9 @@
       ],
       "Download ${ attachmentName }": [
         "下載 ${ attachmentName }"
+      ],
+      "Download all attachments": [
+        "下載所有附件"
       ],
       "Download application logs": [
         "下載應用程式日誌"
@@ -1434,6 +1443,9 @@
       "Upgrade now": [
         "立即升級"
       ],
+      "Upload and share files": [
+        "上傳並共享檔案"
+      ],
       "Upload picture": [
         "上載圖像"
       ],
@@ -1699,6 +1711,9 @@
       "Stream your favorite content": [
         "暢遊影音串流平台"
       ],
+      "thanks to you": [
+        "感謝您"
+      ],
       "Unlimited folders, labels and filters": [
         "資料夾、標籤與篩選器無上限"
       ],
@@ -1860,11 +1875,17 @@
       "6 users": [
         "6 位使用者"
       ],
+      "8500+ servers across 110+ countries": [
+        "超過 8500 臺伺服器，遍布於 110 個以上的國家"
+      ],
       "Ad-blocker and malware protection": [
         "廣告攔截器及惡意軟體防護"
       ],
       "Advanced account protection": [
         "進階的帳號保護"
+      ],
+      "Easily add or remove users": [
+        "輕鬆新增或移除使用者"
       ],
       "High speed streaming": [
         "高速串流"
@@ -1874,6 +1895,9 @@
       ],
       "Online document editor": [
         "線上文件編輯器"
+      ],
+      "Password health alerts": [
+        "密碼堅固性警示"
       ],
       "Private photo backup": [
         "私人照片備份"
@@ -4182,6 +4206,9 @@
       "Due to an error, text generation couldn't be canceled": [
         "因為一個錯誤，沒辦法停止文字生成"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "目前不可編輯付款地址。請稍後再試。"
+      ],
       "Email address disabled": [
         "電郵位址已停用"
       ],
@@ -4403,6 +4430,9 @@
       ],
       "Port is required": [
         "通訊埠為必填"
+      ],
+      "Postal code is required": [
+        "郵遞區號為必填"
       ],
       "Primary address key is not decrypted": [
         "主要位址金鑰並未被解密"
@@ -4631,6 +4661,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜尋結果過多。請縮小您的搜尋範圍並重新試試。"
+      ],
+      "ZIP code is required": [
+        "郵遞區號為必要項目"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6110,6 +6143,9 @@
       "All (${ totalFoldersCount } label)": [
         "全部 (${ totalFoldersCount } 個標籤)"
       ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "此郵寄清單的所有訊息都將被移至垃圾桶。"
+      ],
       "All messages stored in this folder will be permanently deleted.": [
         "所有儲存於此資料夾的訊息都將被永久刪除。"
       ],
@@ -6148,6 +6184,9 @@
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "所有附屬資料夾會被刪除。但儲存在 ${ nameDeleted } 資料夾的電子郵件不會被刪除，你可以在所有郵件中找回郵件。"
+      ],
+      "Apply to future messages": [
+        "套用至今後的訊息"
       ],
       "Applying actions to conversations": [
         "於對話內容套用程序"
@@ -6241,6 +6280,9 @@
       ],
       "Browser not supported": [
         "瀏覽器不支援"
+      ],
+      "Bulk delete": [
+        "整批刪除"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "一旦降級至免費方案，您將永久失去這些優惠，即便您日後再次升級也是如此。"
@@ -6367,6 +6409,9 @@
       ],
       "Dedicated servers": [
         "專用伺服器"
+      ],
+      "Dedicated VPN servers": [
+        "專用 VPN 伺服器"
       ],
       "default email address": [
         "預設電子信箱地址"
@@ -6696,7 +6741,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖片"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -6871,6 +6916,9 @@
       ],
       "No action selected": [
         "未選取任何動作"
+      ],
+      "No change will be made to the selected emails": [
+        "選取的郵件將不會有任何變更"
       ],
       "No contacts added yet": [
         "仍未加入任何通訊錄"
@@ -7285,6 +7333,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "訂購授權即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "訂購授權即將到期，請於${ byDate }前至Play 商店重新訂購以保留您的${ planName }權益。${ reactivateLink }"
       ],
       "Symbols (#$&)": [
         "符號(#$&)"
@@ -7916,6 +7967,9 @@
       "Your files will be encrypted and then saved": [
         "你的檔案將加密後再儲存"
       ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "您的免費試用已成功轉換為每月訂購授權。您的續訂日期為 ${ nextBillingDate }。"
+      ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "您的硬體無法在本地運行寫作助手。嘗試在伺服器執行。"
       ],
@@ -8232,6 +8286,9 @@
       " and ${ l }": [
         " 且 ${ l }"
       ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } 將所有訊息移至 ${ boldFolderName }"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 使用者名稱"
       ],
@@ -8301,6 +8358,9 @@
       "Apply filter to existing emails": [
         "將篩選器套用至現有的電郵"
       ],
+      "Apply to future messages": [
+        "套用至今後的訊息"
+      ],
       "Attach screenshot(s)": [
         "附加螢幕截圖"
       ],
@@ -8369,6 +8429,9 @@
       ],
       "Colors": [
         "色彩"
+      ],
+      "Company": [
+        "公司"
       ],
       "Company name": [
         "公司名稱"
@@ -8748,6 +8811,9 @@
       "Start date": [
         "開始日期"
       ],
+      "State": [
+        "州"
+      ],
       "Statement": [
         "陳述式"
       ],
@@ -8805,6 +8871,9 @@
       "Unsafe or problematic": [
         "不安全或有問題的"
       ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "已取消訂閱 ${ truncatedName }。"
+      ],
       "Updates": [
         "更新"
       ],
@@ -8861,6 +8930,9 @@
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
+      ],
+      "ZIP code": [
+        "郵遞區號"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9013,6 +9085,9 @@
       ],
       "Folders": [
         "資料夾"
+      ],
+      "How to add users": [
+        "如何新增使用者"
       ],
       "How to pay with Bitcoin?": [
         "如何以比特幣繳款？"
@@ -10378,6 +10453,9 @@
       ]
     },
     "Offer": {
+      "${ planName } for 12 months": [
+        "為期 12 個月的 ${ planName }"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }優惠今日過期!"
       ],
@@ -10476,6 +10554,9 @@
       ]
     },
     "Onboarding modal": {
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } 代表您永遠不會在我們的應用程式中看到贊助廣告。"
+      ],
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
         "${ advancedEncryptionTitle } 可以確保僅由您與預期中的收件人可以看到您的電子郵件。"
       ],
@@ -10626,6 +10707,9 @@
       ],
       "help center": [
         "說明中心"
+      ],
+      "Once your full subscription starts...": [
+        "您的正式訂購授權一旦開始..."
       ]
     },
     "Online accounts": {
@@ -10853,6 +10937,9 @@
       "Timeout exceeded": [
         "已經逾時"
       ],
+      "VAT number": [
+        "增值稅編號（VAT）"
+      ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
       ]
@@ -10894,8 +10981,20 @@
       "ABN": [
         "商業號碼（ABN）"
       ],
+      "Add Business Number": [
+        "新增營業人統一編號"
+      ],
+      "Add VAT number": [
+        "新增增值稅編號（VAT）"
+      ],
       "Business Number": [
         "營業人統一編號"
+      ],
+      "Edit Business Number": [
+        "編輯營業人統一編號"
+      ],
+      "Edit VAT number": [
+        "編輯增值稅編號（VAT）"
       ],
       "EIN": [
         "僱主身份識別號碼（EIN）"
@@ -10937,6 +11036,12 @@
     "Placeholder": {
       "A way to contact you": [
         "您的聯絡方式"
+      ],
+      "Anderson": [
+        "安德松"
+      ],
+      "Company name": [
+        "公司名稱"
       ],
       "Describe what to change": [
         "說明須修正的什麼"
@@ -11037,6 +11142,9 @@
       "Select a reason": [
         "選取理由"
       ],
+      "Select country": [
+        "選擇國家"
+      ],
       "Select state": [
         "請選州"
       ],
@@ -11073,11 +11181,17 @@
       "Text": [
         "文字"
       ],
+      "Thomas": [
+        "湯姆斯"
+      ],
       "To": [
         "收件者"
       ],
       "Type text or keyword": [
         "鍵入文字或關鍵詞"
+      ],
+      "VAT number": [
+        "增值稅編號（VAT）"
       ],
       "ZIP code": [
         "郵遞區號"
@@ -11735,6 +11849,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "特別優惠適用於最初的兩年。"
+      ],
       "Your subscription will renew at the same rate every year.": [
         "您的訂閱每年將以同費率更新"
       ]
@@ -11745,6 +11862,9 @@
       ],
       "Go to subscription plans": [
         "查看訂購授權"
+      ],
+      "Guard against threats": [
+        "防範威脅"
       ],
       "Increase your storage": [
         "增加您的儲存"
@@ -12493,6 +12613,9 @@
       "Alias saved and copied": [
         "已成功儲存及複製別名"
       ],
+      "Billing details updated": [
+        "帳單詳情已更新"
+      ],
       "Canceling import": [
         "正在取消匯入"
       ],
@@ -12540,6 +12663,9 @@
       ],
       "Conversation removed from ${ labelName }.": [
         "已移除往來對話的 ${ labelName }。"
+      ],
+      "Conversation removed from Starred.": [
+        "已移除對話的星號。"
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "與 ${ sendersList } 的往來對話將會被標示為 ${ labelsList }"
@@ -13145,6 +13271,9 @@
       "Download the app": [
         "下載應用程式"
       ],
+      "Edit billing address": [
+        "編輯帳單地址"
+      ],
       "Edit contact": [
         "編輯聯絡人"
       ],
@@ -13211,6 +13340,9 @@
       "Forward": [
         "轉寄"
       ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "獲得 ${ CALENDAR_APP_NAME }的完整功能"
+      ],
       "Get more from your VPN": [
         "從您的VPN取得更多"
       ],
@@ -13261,6 +13393,9 @@
       ],
       "Import groups": [
         "匯入群組"
+      ],
+      "Increase security with ${ VPN_APP_NAME }": [
+        "使用 ${ VPN_APP_NAME } 來提升安全性"
       ],
       "Increase your privacy with more addresses": [
         "使用更多位址增加您的隱私"
@@ -13411,6 +13546,9 @@
       ],
       "No trackers found": [
         "未發現追蹤程式"
+      ],
+      "No unsubscribed newsletters": [
+        "沒有任何退訂的電子報"
       ],
       "No-reply address detected": [
         "不要回復的地址偵測"
@@ -13589,6 +13727,9 @@
       "Settings": [
         "設定"
       ],
+      "Share your calendar with your team": [
+        "與團隊共享行事曆"
+      ],
       "Sign in and grant access": [
         "登入並授予存取權"
       ],
@@ -13658,6 +13799,12 @@
       "Unsubscribe": [
         "取消訂閱"
       ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "從 ${ subscription.Name } 取消訂閱？"
+      ],
+      "Unsubscribe not available for this sender": [
+        "取消訂閱不適用於此寄件者"
+      ],
       "Unsubscribe request sent": [
         "已傳送取消訂購需求"
       ],
@@ -13723,6 +13870,9 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Your subscriptions in one place": [
+        "集中管理您的訂閱"
       ]
     },
     "Today icon tooltip in mini calendar": {

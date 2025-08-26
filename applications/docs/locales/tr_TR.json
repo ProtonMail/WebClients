@@ -151,6 +151,9 @@
       "Choose a file or drag it here": [
         "Bir dosya seçin ya da sürükleyip buraya bırakın"
       ],
+      "Claim this address": [
+        "Bu adresi al"
+      ],
       "Clear data": [
         "Veriyi temizle"
       ],
@@ -377,6 +380,9 @@
       ],
       "Get ${ planOrAppName }": [
         "${ planOrAppName } edinin"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Ücretsiz bir ${ BRAND_NAME } adresi alın"
       ],
       "Get in touch": [
         "Bizimle görüşün"
@@ -2772,6 +2778,14 @@
         "Öncelikli destek"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca gelecekte düzenlenecek faturalarda görüntülenecek ve var olan faturaları etkilemeyecek."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca seçtiğiniz faturayı değiştirir. Gelecekteki fatura bilgilerinizi değiştirmez."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "Not: ${ eventComment }"
@@ -2970,6 +2984,9 @@
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Fatura adresi şu anda düzenlenemiyor. Lütfen bir süre sonra yeniden deneyin."
+      ],
       "Email address is required": [
         "E-posta adresinin yazılması zorunludur"
       ],
@@ -2999,6 +3016,9 @@
       ],
       "Failed to copy photo to album": [
         "Fotoğraf albüme kopyalanamadı"
+      ],
+      "Failed to open to contact": [
+        "Kişiye açılamadı"
       ],
       "Failed to rename document. Please try again later.": [
         "Belge yeniden adlandırılamadı. Lütfen bir süre sonra yeniden deneyin."
@@ -3171,6 +3191,9 @@
       ],
       "Port is required": [
         "Bağlantı noktasının yazılması zorunludur"
+      ],
+      "Postal code is required": [
+        "Posta kodunun yazılması zorunludur"
       ],
       "Primary address key is not decrypted": [
         "Birincil adres anahtarının şifresi çözülemedi"
@@ -3356,6 +3379,9 @@
       ],
       "Your import will not be processed.": [
         "İçe aktarma işleminiz yapılmayacak."
+      ],
+      "ZIP code is required": [
+        "Posta kodunun yazılması zorunludur"
       ]
     },
     "Error importing calendar": {
@@ -4196,6 +4222,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } etkinlikleri güvenli olarak eşitlemek ve şifrelemek için bir ${ BRAND_NAME } adresine gerek duyar. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } yeni takvim",
         "${ calendarsToBeCreatedCount } yeni takvim"
@@ -4247,6 +4276,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } tarifesi ${ daysLeft } gün içinde sona eriyor.",
+        "${ planName } tarifesi ${ daysLeft } gün içinde sona eriyor."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } bugün sona eriyor."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } şüpheli etkinlikleri özel olarak izleyerek hesabınızı korur."
@@ -4625,6 +4661,9 @@
       ],
       "End-to-end encrypted.": [
         "Uçtan uca şifrelenmiş."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Tümüyle güvenli ve şifrelenmiş iletişim sağlayın. Ücretsiz ${ BRAND_NAME } e-posta adresinizi şimdi alın."
       ],
       "Enter password": [
         "Parolayı yazın"
@@ -5892,6 +5931,9 @@
       "Colors": [
         "Renkler"
       ],
+      "Company": [
+        "Kuruluş"
+      ],
       "Company name": [
         "Kuruluş adı"
       ],
@@ -6189,6 +6231,9 @@
       "Start date": [
         "Başlangıç tarihi"
       ],
+      "State": [
+        "İl"
+      ],
       "Stop sharing": [
         "Paylaşmayı durdur"
       ],
@@ -6272,6 +6317,9 @@
       ],
       "Your password (trusted contact)": [
         "Parolanız (güvenilen kişi)"
+      ],
+      "ZIP code": [
+        "Posta kodu"
       ]
     },
     "Label for contact group color": {
@@ -8298,6 +8346,9 @@
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
       ],
+      "VAT number": [
+        "KDV numarası"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
       ],
@@ -8350,8 +8401,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "ABN kodu ekle"
+      ],
+      "Add Business Number": [
+        "İş numarası ekle"
+      ],
+      "Add EIN": [
+        "EIN kodu ekle"
+      ],
+      "Add VAT number": [
+        "KDV numarası ekle"
+      ],
       "Business Number": [
         "İş numarası"
+      ],
+      "Edit ABN": [
+        "ABN kodunu düzenle"
+      ],
+      "Edit Business Number": [
+        "İş numarasını düzenle"
+      ],
+      "Edit EIN": [
+        "EIN kodunu düzenle"
+      ],
+      "Edit VAT number": [
+        "KDV numarasını düzenle"
       ],
       "EIN": [
         "EIN"
@@ -8394,8 +8469,17 @@
       "A way to contact you": [
         "Sizinle iletişim kurmak için bir yol"
       ],
+      "Anderson": [
+        "Kaya"
+      ],
+      "Anytown": [
+        "İl"
+      ],
       "Choose password": [
         "Parola seçin"
+      ],
+      "Company name": [
+        "Kuruluş adı"
       ],
       "E.g., ": [
         "Örneğin, "
@@ -8423,6 +8507,9 @@
       ],
       "Last name": [
         "Soyad"
+      ],
+      "Main street 12": [
+        "12. cadde"
       ],
       "Message": [
         "İleti"
@@ -8460,6 +8547,9 @@
       "Select a reason": [
         "Bir neden seçin"
       ],
+      "Select country": [
+        "Ülke seçin"
+      ],
       "Select state": [
         "İl seçin"
       ],
@@ -8471,6 +8561,12 @@
       ],
       "Start typing an email address": [
         "Bir e-posta adresi yazmaya başlayın"
+      ],
+      "Thomas": [
+        "Ali"
+      ],
+      "VAT number": [
+        "KDV numarası"
       ],
       "Your organization name": [
         "Kuruluşunuzun adı"
@@ -9535,6 +9631,9 @@
       "Alias saved and copied": [
         "Takma ad kaydedildi ve kopyalandı"
       ],
+      "Billing details updated": [
+        "Fatura bilgileri güncellendi"
+      ],
       "Canceling import": [
         "İçe aktarma iptal ediliyor"
       ],
@@ -9830,6 +9929,9 @@
       "Change password": [
         "Parolayı değiştir"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } adresinizi alın"
+      ],
       "Clearing data": [
         "Veriler temizleniyor"
       ],
@@ -9969,6 +10071,9 @@
       ],
       "Duplicate folder found": [
         "Çift klasör bulundu"
+      ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
       ],
       "Edit contact": [
         "Kişiyi düzenle"

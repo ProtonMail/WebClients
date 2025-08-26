@@ -1431,6 +1431,9 @@
       "Trust": [
         "Percayai"
       ],
+      "Trust key": [
+        "Percayai kunci"
+      ],
       "Trust public key": [
         "Percayai kunci publik"
       ],
@@ -4179,6 +4182,14 @@
         "Dukungan prioritas"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Kolom teks bersifat opsional. Informasi yang Anda sediakan pada kolom ini hanya akan terlihat pada faktur yang diterbitkan ke depannya tanpa memengaruhi faktur yang telah ada."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Kolom teks bersifat opsional. Informasi yang Anda sediakan dalam formulir ini hanya akan mengubah isi faktur yang Anda pilih tanpa memengaruhi rincian faktur yang akan datang."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "CATATAN:\n${ eventComment }"
@@ -4438,6 +4449,9 @@
       "Due to an error, text generation couldn't be canceled": [
         "Karena suatu kesalahan, pembuatan teks tidak dapat dibatalkan"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Penyuntingan alamat tagihan saat ini tidak tersedia. Silakan coba lagi nanti."
+      ],
       "Email address disabled": [
         "Alamat email dinonaktifkan"
       ],
@@ -4669,6 +4683,9 @@
       "Port is required": [
         "Nomor port diperlukan"
       ],
+      "Postal code is required": [
+        "Kode pos dibutuhkan"
+      ],
       "Primary address key is not decrypted": [
         "Kunci alamat utama tidak didekripsi"
       ],
@@ -4899,6 +4916,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Pencarian Anda membuahkan terlalu banyak hasil. Silakan persempit kriteria pencarian Anda dan coba lagi."
+      ],
+      "ZIP code is required": [
+        "Kode pos diperlukan"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6260,6 +6280,12 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } memerlukan setidaknya 1 server khusus ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } akan kedaluwarsa dalam ${ daysLeft } hari."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } akan kedaluwarsa hari ini."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pengawasan yang telaten terhadap aktivitas yang mencurigakan."
@@ -8884,6 +8910,9 @@
       "Colors": [
         "Warna"
       ],
+      "Company": [
+        "Perusahaan"
+      ],
       "Company name": [
         "Nama perusahaan"
       ],
@@ -9283,6 +9312,9 @@
       "Start date": [
         "Tanggal mulai"
       ],
+      "State": [
+        "Keadaan"
+      ],
       "Statement": [
         "Pernyataan"
       ],
@@ -9405,6 +9437,9 @@
       ],
       "Your password (trusted contact)": [
         "Kata sandi Anda (kontak terpercaya)"
+      ],
+      "ZIP code": [
+        "Kode pos"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11688,6 +11723,15 @@
       "A way to contact you": [
         "Cara untuk menghubungi Anda"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "Kota A"
+      ],
+      "Company name": [
+        "Nama perusahaan"
+      ],
       "Describe what to change": [
         "Jelaskan apa yang perlu diubah"
       ],
@@ -11735,6 +11779,9 @@
       ],
       "Link": [
         "Tautkan"
+      ],
+      "Main street 12": [
+        "Jalan Utama No. 12"
       ],
       "Name": [
         "Nama"
@@ -11823,11 +11870,17 @@
       "Text": [
         "Teks"
       ],
+      "Thomas": [
+        "Thomas"
+      ],
       "To": [
         "Kepada"
       ],
       "Type text or keyword": [
         "Masukkan teks atau kata kunci"
+      ],
+      "VAT number": [
+        "Nomor PPN"
       ],
       "Your organization name": [
         "Nama organisasi Anda"
@@ -13339,6 +13392,9 @@
       "Alias saved and copied": [
         "Alias disimpan dan disalin"
       ],
+      "Billing details updated": [
+        "Rincian penagihan diperbarui"
+      ],
       "Canceling import": [
         "Membatalkan impor"
       ],
@@ -14023,6 +14079,9 @@
       ],
       "Download the app": [
         "Unduh aplikasinya"
+      ],
+      "Edit billing address": [
+        "Sunting alamat penagihan"
       ],
       "Edit contact": [
         "Sunting kontak"

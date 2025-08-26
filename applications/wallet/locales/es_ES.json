@@ -1108,6 +1108,9 @@
       "Advanced account protection": [
         "Protección de cuenta avanzada"
       ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Cancel and downgrade": [
         "Cancelar y pasar a un plan inferior"
       ],
@@ -2268,6 +2271,14 @@
         "Soporte prioritario"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Los campos de texto son opcionales. La información que proporciones en este formulario solo aparecerá en las facturas emitidas en el futuro y no afectará a las facturas existentes."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Los campos de texto son opcionales. La información que proporcionas en este formulario solo cambiará la factura que has seleccionado y no los detalles de la futura factura."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Contacto de confianza"
@@ -2294,6 +2305,9 @@
       ],
       "Domain not available, try again later": [
         "Dominio no disponible. Inténtalo de nuevo más tarde."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "La edición de la dirección de facturación no está disponible en este momento. Inténtalo de nuevo más tarde."
       ],
       "Email is not valid": [
         "El correo no es válido."
@@ -2379,6 +2393,9 @@
       "Please select billing state": [
         "Selecciona el estado de facturación"
       ],
+      "Postal code is required": [
+        "El código postal es requerido"
+      ],
       "Process aborted": [
         "Proceso anulado"
       ],
@@ -2429,6 +2446,9 @@
       ],
       "Username must end with a letter or digit": [
         "El nombre de usuario debe terminar con una letra o un número."
+      ],
+      "ZIP code is required": [
+        "Se requiere el código postal."
       ]
     },
     "Error message": {
@@ -3245,11 +3265,17 @@
       "Category": [
         "Categoría"
       ],
+      "City": [
+        "Ciudad"
+      ],
       "Code is 6 digits without spaces": [
         "El código es de 6 dígitos sin espacios."
       ],
       "Colors": [
         "Colores"
+      ],
+      "Company": [
+        "Empresa"
       ],
       "Company name": [
         "Nombre de la empresa"
@@ -3341,6 +3367,9 @@
       "Phone number": [
         "Número de teléfono"
       ],
+      "Postal code": [
+        "Código postal"
+      ],
       "Proration": [
         "Prorrateo"
       ],
@@ -3358,6 +3387,12 @@
       ],
       "Start date": [
         "Fecha de inicio"
+      ],
+      "State": [
+        "Estado"
+      ],
+      "Street address": [
+        "Nombre de la calle"
       ],
       "Subscription options": [
         "Opciones de suscripción"
@@ -3385,6 +3420,9 @@
       ],
       "Your password (trusted contact)": [
         "Tu contraseña (contacto de confianza)"
+      ],
+      "ZIP code": [
+        "Código postal"
       ]
     },
     "Label, credit card": {
@@ -4578,6 +4616,9 @@
       "Timeout exceeded": [
         "Se ha agotado el tiempo de espera."
       ],
+      "VAT number": [
+        "Número de IVA"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Tu moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo soportan pagos en euros."
       ],
@@ -4630,8 +4671,32 @@
       "ABN": [
         "Número de empresa australiano (ABN)"
       ],
+      "Add ABN": [
+        "Añadir ABN"
+      ],
+      "Add Business Number": [
+        "Añadir el número empresarial"
+      ],
+      "Add EIN": [
+        "Añadir EIN"
+      ],
+      "Add VAT number": [
+        "Añadir un número de IVA"
+      ],
       "Business Number": [
         "Número empresarial"
+      ],
+      "Edit ABN": [
+        "Editar ABN"
+      ],
+      "Edit Business Number": [
+        "Editar el número empresarial"
+      ],
+      "Edit EIN": [
+        "Editar EIN"
+      ],
+      "Edit VAT number": [
+        "Editar el número de IVA"
       ],
       "EIN": [
         "Número de identificación fiscal (EIN)"
@@ -4644,6 +4709,15 @@
       "A way to contact you": [
         "Una forma de contactarte"
       ],
+      "Anderson": [
+        "García"
+      ],
+      "Anytown": [
+        "Valclaro"
+      ],
+      "Company name": [
+        "Nombre de la empresa"
+      ],
       "Confirm passphrase or leave empty": [
         "Confirma la frase de contraseña o déjala vacía"
       ],
@@ -4655,6 +4729,9 @@
       ],
       "Gift code": [
         "Código promocional"
+      ],
+      "Main street 12": [
+        "Calle del Sol, 12"
       ],
       "Organization name": [
         "Nombre de la organización"
@@ -4683,11 +4760,20 @@
       "Select a reason": [
         "Selecciona un motivo"
       ],
+      "Select country": [
+        "Seleccionar un país"
+      ],
       "Select state": [
         "Seleccionar el estado"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Comparte lo que crees que podría mejorar ${ BRAND_NAME }"
+      ],
+      "Thomas": [
+        "Andrea"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ],
       "Your organization name": [
         "El nombre de tu organización"
@@ -4701,7 +4787,21 @@
         "contactar"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Como suscriptor de **${ currentPlanTitle }**, puedes desbloquear **${ unlockPlanTitle }** y más servicios de ${ BRAND_NAME } al mejorar tu plan a **${ upsellPlanTitle }**."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Más servicios de ${ BRAND_NAME }.${ br }Una suscripción sencilla."
+      ],
       "Stay on ${ currentPlanTitle }": [
         "Permanecer en ${ currentPlanTitle }"
       ],
@@ -5205,6 +5305,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Se han actualizado los datos de facturación."
+      ],
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"
       ],
@@ -5387,6 +5490,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descarga las aplicaciones de ${ DRIVE_APP_NAME }"
+      ],
+      "Edit billing address": [
+        "Editar la dirección de la factura"
       ],
       "Edit credit/debit card": [
         "Editar tarjeta de crédito/débito"

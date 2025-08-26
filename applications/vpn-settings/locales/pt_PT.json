@@ -642,9 +642,6 @@
       "refresh the page": [
         "actualizar a página"
       ],
-      "Reload": [
-        "Recarregar"
-      ],
       "Remove": [
         "Remover"
       ],
@@ -5406,9 +5403,6 @@
       "active": [
         "ativa"
       ],
-      "Activity monitor": [
-        "Monitor de atividade"
-      ],
       "Activity Monitor": [
         "Monitor de atividades"
       ],
@@ -5720,14 +5714,8 @@
       "Did you know?": [
         "Sabia?"
       ],
-      "Disable detailed events": [
-        "Desativar os eventos detalhados"
-      ],
       "Disabled countries": [
         "Países desativados"
-      ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Desativado em ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "A desativação da autenticação de dois fatores tornará a sua conta menos segura. Só continue se for absolutamente necessário."
@@ -5835,17 +5823,11 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Ative a renovação automática para manter o acesso às suas funcionalidades premium."
       ],
-      "Enable detailed events": [
-        "Ativar os eventos detalhados"
-      ],
       "Enable single sign-on to keep your organization safe": [
         "Ative a autenticação única para proteger a sua organização"
       ],
       "Enabled countries": [
         "Países ativados"
-      ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Ativado em ${ formattedDateAndTime }"
       ],
       "Enabling auto-deletion…": [
         "A ativar a eliminação automática…"
@@ -5949,12 +5931,6 @@
       "Gateways": [
         "Portas de entrada"
       ],
-      "Gateways monitoring is disabled.": [
-        "A monitorização de portas de entrada foi desativada."
-      ],
-      "Gateways monitoring is enabled.": [
-        "A monitorização de portas de entrada foi ativada."
-      ],
       "Get ${ upsellPlanName }": [
         "Obtenha o ${ upsellPlanName }"
       ],
@@ -6057,9 +6033,6 @@
       ],
       "inactive": [
         "inativa"
-      ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Inclua endereço IP do utilizador, localização e ISP (provedor de serviços de internet) em registos de eventos."
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Incluindo ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -6210,9 +6183,6 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "A carregar o calendário. Aguarde e será redirecionado para a nossa plataforma de agendamento Calendly num novo separador."
-      ],
-      "Loading detailed events current status.": [
-        "A carregar o estado atual dos eventos detalhados."
       ],
       "Loading eduGAIN data...": [
         "A carregar dados do eduGAIN..."
@@ -6976,6 +6946,9 @@
       ],
       "Vault deleted": [
         "O cofre foi eliminado."
+      ],
+      "Vault either deleted or requires access permissions": [
+        "O cofre foi eliminado ou necessita de permissões de acesso"
       ],
       "Vault shared with email": [
         "Cofre partilhado com o e-mail"
@@ -8193,9 +8166,6 @@
       "VAT": [
         "IVA"
       ],
-      "VAT identification number": [
-        "Número de identificação IVA"
-      ],
       "Verification code": [
         "Código de verificação"
       ],
@@ -8478,6 +8448,9 @@
       "Upgrade your plan": [
         "Atualize o seu plano"
       ],
+      "Vault": [
+        "Cofre"
+      ],
       "View guide": [
         "Ver guia"
       ],
@@ -8707,9 +8680,6 @@
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Ligue o seu domínio personalizado ao ${ BRAND_NAME } para criar endereços de e-mail personalizados (por exemplo, você@asua-empresa.com). O nosso assistente irá guiá-lo ao longo do processo."
-      ],
-      "View account-related events across your organization.": [
-        "Consulte os eventos relacionados com a conta na sua organização."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "O seu teste gratuito terminou. O acesso à sua conta será desativado em breve. ${ action }"
@@ -13203,9 +13173,6 @@
       "Choose user affiliations": [
         "Escolher as afiliações do utilizador"
       ],
-      "Click a value in the table to use it as filter": [
-        "Clique num valor da tabela para utilizá-lo como filtro"
-      ],
       "Close": [
         "Fechar"
       ],
@@ -13342,6 +13309,9 @@
       ],
       "Deny access to user?": [
         "Recusar o acesso ao utilizador?"
+      ],
+      "Description": [
+        "Descrição"
       ],
       "Device": [
         "Dispositivo"
@@ -13551,6 +13521,9 @@
       ],
       "Invoices": [
         "Faturas"
+      ],
+      "IP": [
+        "IP"
       ],
       "Limit reached": [
         "Limite atingido"

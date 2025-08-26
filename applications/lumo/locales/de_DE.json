@@ -170,6 +170,9 @@
       "Let's talk": [
         "Lass uns reden"
       ],
+      "Manage": [
+        "Verwalten"
+      ],
       "Manage advanced account protections": [
         "Erweiterte Konto-Sicherheitsmaßnahmen verwalten"
       ],
@@ -705,6 +708,9 @@
       "Advanced account protection": [
         "Erweiterter Kontoschutz"
       ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle Premium-Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Cancel and downgrade": [
         "Abbrechen und Herabstufen"
       ],
@@ -810,26 +816,17 @@
       ],
       "Submit": [
         "Absenden"
-      ],
-      "Use ${ LUMO_SHORT_APP_NAME } Free instead": [
-        "Verwende stattdessen ${ LUMO_SHORT_APP_NAME } Free"
       ]
     },
     "collider_2025: Button": {
       "Close": [
         "Schließen"
       ],
-      "Explore ${ LUMO_SHORT_APP_NAME } Plus": [
-        "${ LUMO_SHORT_APP_NAME } Plus entdecken"
-      ],
       "Join waitlist": [
         "Warteliste beitreten"
       ],
       "Learn more": [
         "Mehr erfahren"
-      ],
-      "Manage account": [
-        "Konto verwalten"
       ],
       "Open Link": [
         "Link öffnen"
@@ -880,9 +877,6 @@
       ]
     },
     "collider_2025: Characteristic Title": {
-      "Enter": [
-        "Eingeben"
-      ],
       "Only you have access": [
         "Nur du hast Zugriff"
       ],
@@ -906,35 +900,11 @@
       ]
     },
     "collider_2025: Description": {
-      "Add ${ LUMO_SHORT_APP_NAME } Plus to unlock more benefits": [
-        "${ LUMO_SHORT_APP_NAME } Plus hinzufügen, um weitere Vorteile freizuschalten"
-      ],
-      "Boost your productivity": [
-        "Steigere deine Produktivität"
-      ],
       "Last updated on ${ DATE_VERSION }": [
         "Zuletzt aktualisiert am ${ DATE_VERSION }"
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Melde dich an, um auf dein Konto zuzugreifen und weitere Funktionen freizuschalten. Hast du keins? ${ createLink }"
-      ],
-      "Talk to your admin for plan details": [
-        "Sprich mit deinem Admin für Details zum Abonnement"
-      ],
-      "Talk to your admin to add ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Sprich mit deinem Admin, um ${ LUMO_SHORT_APP_NAME } Plus hinzuzufügen"
-      ],
-      "To delete your account and more, go to account settings.": [
-        "Um dein Konto und mehr zu löschen, gehe zu den Kontoeinstellungen."
-      ],
-      "Unlock advanced models and premium features with ${ LUMO_APP_NAME } Plus.": [
-        "Schalte erweiterte Modelle und Premium-Funktionen mit ${ LUMO_APP_NAME } Plus frei."
-      ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Upgrade auf ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
-      "Your plan includes ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Dein Abonnement beinhaltet ${ LUMO_SHORT_APP_NAME } Plus"
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1001,40 +971,8 @@
       "Advanced models": [
         "Erweiterte Modelle"
       ],
-      "Chat history": [
-        "Chatverlauf"
-      ],
-      "Favorite chats": [
-        "Lieblings-Chats"
-      ],
-      "File uploads": [
-        "Dateiuploads"
-      ],
       "Web search": [
         "Websuche"
-      ],
-      "Weekly chats": [
-        "Wöchentliche Chats"
-      ]
-    },
-    "collider_2025: Feature detail": {
-      "Large files": [
-        "Große Dateien"
-      ],
-      "Limited": [
-        "Begrenzt"
-      ],
-      "No": [
-        "Nein"
-      ],
-      "Small files": [
-        "Kleine Dateien"
-      ],
-      "Unlimited": [
-        "Unbegrenzt"
-      ],
-      "Yes": [
-        "Ja"
       ]
     },
     "collider_2025: Guest Upsell": {
@@ -1131,9 +1069,6 @@
       ],
       "Please wait for files to finish processing": [
         "Bitte warte, bis die Dateien fertig verarbeitet sind"
-      ],
-      "Press ${ enterBoldText } to ask": [
-        "${ enterBoldText } drücken, um zu fragen"
       ],
       "Processed content": [
         "Verarbeiteter Inhalt"
@@ -1303,12 +1238,6 @@
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Hol dir ${ LUMO_SHORT_APP_NAME } Plus"
       ],
-      "Manage": [
-        "Verwalten"
-      ],
-      "Manage plan": [
-        "Plan verwalten"
-      ],
       "New chat": [
         "Neuer Chat"
       ],
@@ -1361,20 +1290,11 @@
       "Don't lose the thread": [
         "Verliere nicht den Faden"
       ],
-      "Elevate your AI experience": [
-        "Verbessere dein KI-Erlebnis"
-      ],
       "Guest": [
         "Gast"
       ],
       "Invalid Link": [
         "Ungültiger Link"
-      ],
-      "Manage account": [
-        "Konto verwalten"
-      ],
-      "Manage your account and preferences": [
-        "Verwalte dein Konto und deine Einstellungen"
       ],
       "Opening External Link": [
         "Externen Link öffnen"
@@ -1385,9 +1305,6 @@
       "Secure your spot": [
         "Sichere dir deinen Platz"
       ],
-      "Settings": [
-        "Einstellungen"
-      ],
       "Upload files": [
         "Dateien hochladen"
       ],
@@ -1396,9 +1313,6 @@
       ],
       "You're on the waitlist": [
         "Du stehst auf der Warteliste"
-      ],
-      "Your plan": [
-        "Dein Abonnement"
       ]
     },
     "collider_2025: Tooltip": {
@@ -2635,6 +2549,14 @@
         "Priorisierter Support"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Die Textfelder sind optional. Die Informationen, die du in diesem Formular angibst, erscheinen nur auf zukünftigen Rechnungen und haben keinen Einfluss auf bestehende Rechnungen."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Textfelder sind optional. Die Informationen, die du in diesem Formular eingibst, ändern nur die von dir ausgewählte Rechnung und nicht deine zukünftigen Rechnungsdetails."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Vertrauenswürdiger Kontakt"
@@ -2655,6 +2577,9 @@
       ],
       "Domain not available, try again later": [
         "Domain nicht verfügbar. Bitte versuche es später noch einmal."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Die Bearbeitung der Rechnungsadresse ist im Moment nicht möglich. Bitte versuche es später noch einmal."
       ],
       "Email is not valid": [
         "E-Mail-Adresse ungültig"
@@ -2737,6 +2662,9 @@
       "Please select billing state": [
         "Bitte wähle den Rechnungsstaat aus"
       ],
+      "Postal code is required": [
+        "Postleitzahl ist erforderlich"
+      ],
       "Process aborted": [
         "Prozess abgebrochen"
       ],
@@ -2784,6 +2712,9 @@
       ],
       "Username must end with a letter or digit": [
         "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden."
+      ],
+      "ZIP code is required": [
+        "Eine Postleitzahl ist erforderlich"
       ]
     },
     "Error message": {
@@ -3550,11 +3481,17 @@
       "Category": [
         "Kategorie"
       ],
+      "City": [
+        "Stadt"
+      ],
       "Code is 6 digits without spaces": [
         "Der Code ist 6-stellig ohne Leerzeichen"
       ],
       "Colors": [
         "Farben"
+      ],
+      "Company": [
+        "Unternehmen"
       ],
       "Company name": [
         "Firmenname"
@@ -3643,6 +3580,9 @@
       "Phone number": [
         "Telefonnummer"
       ],
+      "Postal code": [
+        "Postleitzahl"
+      ],
       "Proration": [
         "Anteilsmäßige Verrechnung"
       ],
@@ -3654,6 +3594,12 @@
       ],
       "Start date": [
         "Anfangsdatum"
+      ],
+      "State": [
+        "Bundesland"
+      ],
+      "Street address": [
+        "Straße und Hausnummer"
       ],
       "Subscription options": [
         "Abonnement-Optionen"
@@ -3681,6 +3627,9 @@
       ],
       "Your password (trusted contact)": [
         "Dein Passwort (vertrauenswürdiger Kontakt)"
+      ],
+      "ZIP code": [
+        "Postleitzahl"
       ]
     },
     "Label, credit card": {
@@ -4656,14 +4605,6 @@
         "Einige Bilder wurden wegen doppelter Dateinamen in der aktuellen Auswahl nicht hochgeladen."
       ]
     },
-    "Offer feature": {
-      "Free": [
-        "Free"
-      ],
-      "Plus": [
-        "Plus"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " besuche ${ helpCenterLink } oder ${ contactSupportLink }"
@@ -4866,6 +4807,9 @@
       "Timeout exceeded": [
         "Zeitlimit überschritten"
       ],
+      "VAT number": [
+        "Umsatzsteuernummer"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Deine Währung wurde zu Euro (€) geändert, da SEPA-Banküberweisungen Zahlungen nur in Euro unterstützen."
       ],
@@ -4918,8 +4862,32 @@
       "ABN": [
         "Unternehmens-Identifikationsnummer (ABN)"
       ],
+      "Add ABN": [
+        "ABN hinzufügen"
+      ],
+      "Add Business Number": [
+        "Unternehmensnummer hinzufügen"
+      ],
+      "Add EIN": [
+        "EIN hinzufügen"
+      ],
+      "Add VAT number": [
+        "Umsatzsteuernummer hinzufügen"
+      ],
       "Business Number": [
         "Unternehmensnummer"
+      ],
+      "Edit ABN": [
+        "ABN bearbeiten"
+      ],
+      "Edit Business Number": [
+        "Unternehmensnummer bearbeiten"
+      ],
+      "Edit EIN": [
+        "EIN bearbeiten"
+      ],
+      "Edit VAT number": [
+        "Umsatzsteuernummer bearbeiten"
       ],
       "EIN": [
         "Arbeitgeber-Identifikationsnummer (EIN)"
@@ -4932,8 +4900,20 @@
       "A way to contact you": [
         "Eine Möglichkeit, dich zu kontaktieren"
       ],
+      "Anderson": [
+        "Mustermann"
+      ],
+      "Anytown": [
+        "Berlin"
+      ],
+      "Company name": [
+        "Unternehmensname"
+      ],
       "Gift code": [
         "Gutscheincode"
+      ],
+      "Main street 12": [
+        "Hauptstraße 12"
       ],
       "Organization name": [
         "Name der Organisation"
@@ -4956,11 +4936,20 @@
       "Select a reason": [
         "Grund auswählen"
       ],
+      "Select country": [
+        "Land wählen"
+      ],
       "Select state": [
         "Bundesland wählen"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Teile uns mit, was deiner Meinung nach ${ BRAND_NAME } besser machen könnte"
+      ],
+      "Thomas": [
+        "Max"
+      ],
+      "VAT number": [
+        "Umsatzsteuernummer"
       ],
       "Your organization name": [
         "Name deiner Organisation"
@@ -4974,7 +4963,18 @@
         "kontaktiere"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Alle Premium-Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle Premium-Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Als Abonnent von **${ currentPlanTitle }** kannst du **${ unlockPlanTitle }** und weitere Dienste von ${ BRAND_NAME } freischalten, indem du einen Wechsel zu **${ upsellPlanTitle }** vornimmst."
+      ],
       "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
         "Weitere ${ BRAND_NAME }-Dienste.${ br }Ein einfaches Abonnement."
       ],
@@ -5397,6 +5397,9 @@
       ]
     },
     "Success": {
+      "Billing details updated": [
+        "Rechnungsdetails aktualisiert"
+      ],
       "Code sent to ${ methodTo }": [
         "Code gesendet an ${ methodTo }"
       ],
@@ -5541,6 +5544,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME }-Apps herunterladen"
+      ],
+      "Edit billing address": [
+        "Rechnungsadresse bearbeiten"
       ],
       "Edit credit/debit card": [
         "Kredit-/Debitkarte bearbeiten"
@@ -5760,8 +5766,16 @@
       "Bitcoin via Email": [
         "Bitcoin via E-Mail"
       ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Verschlüsselte und sichere E-Mail-Adresse von ${ MAIL_APP_NAME }. Du kannst ganz einfach Bitcoin an jeden senden, nur mit dessen ${ BRAND_NAME }-Namen."
+      ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Tausche Bitcoin sicher per E-Mail aus statt komplexe, 26-stellige Bitcoin-Adressen zu verwenden, die anfällig für Fehler sind"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Eine sicherere Methode, Bitcoin zu verwahren"
       ]
     },
     "wallet_signup_2024:Bug category": {

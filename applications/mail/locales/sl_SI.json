@@ -1434,9 +1434,6 @@
       "Trust": [
         "Zaupaj"
       ],
-      "Trust key": [
-        "Zaupaj ključu"
-      ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
       ],
@@ -4379,6 +4376,9 @@
       "Due to an error, text generation couldn't be canceled": [
         "Zaradi napake ni bilo mogoče preklicati ustvarjanja besedila."
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Urejanje naslova za izstavitev računa trenutno ni na voljo. Poskusite znova pozneje."
+      ],
       "Email address disabled": [
         "E-poštni naslov je onemogočen"
       ],
@@ -7190,10 +7190,7 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko",
-        "Vstavi sliki",
-        "Vstavi slike",
-        "Vstavi slik"
+        "Vstavi sliko"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -9032,6 +9029,9 @@
       "Colors": [
         "Barve"
       ],
+      "Company": [
+        "Podjetje"
+      ],
       "Company name": [
         "Ime podjetja"
       ],
@@ -9422,6 +9422,9 @@
       "Start date": [
         "Začetni datum"
       ],
+      "State": [
+        "Država"
+      ],
       "Statement": [
         "Izjava"
       ],
@@ -9538,6 +9541,9 @@
       ],
       "Your password (admin)": [
         "Vaše geslo (admin)"
+      ],
+      "ZIP code": [
+        "Poštna številka"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11819,6 +11825,15 @@
       "A way to contact you": [
         "Način za stik z vami"
       ],
+      "Anderson": [
+        "Novak"
+      ],
+      "Anytown": [
+        "Mesto"
+      ],
+      "Company name": [
+        "Ime podjetja"
+      ],
       "Describe what to change": [
         "Opišite, kaj naj se spremeni"
       ],
@@ -11866,6 +11881,9 @@
       ],
       "Link": [
         "Povezava"
+      ],
+      "Main street 12": [
+        "Glavna ulica 12"
       ],
       "Name": [
         "Ime"
@@ -11954,11 +11972,17 @@
       "Text": [
         "Besedilo"
       ],
+      "Thomas": [
+        "Janez"
+      ],
       "To": [
         "Do"
       ],
       "Type text or keyword": [
         "Vpišite besedilo ali ključno besedo"
+      ],
+      "VAT number": [
+        "ID za DDV"
       ],
       "Your organization name": [
         "Ime vaše organizacije"
@@ -14300,6 +14324,9 @@
       ],
       "Download the app": [
         "Prenesi aplikacijo"
+      ],
+      "Edit billing address": [
+        "Uredi naslov za izstavitev računa"
       ],
       "Edit contact": [
         "Uredi stik"

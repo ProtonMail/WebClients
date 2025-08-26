@@ -162,6 +162,9 @@
       "Choose a file or drag it here": [
         "Elige un archivo o arrástralo aquí"
       ],
+      "Claim this address": [
+        "Obtén esta dirección"
+      ],
       "Clear": [
         "Borrar"
       ],
@@ -230,6 +233,9 @@
       ],
       "Continue import": [
         "Continuar la importación"
+      ],
+      "Continue on web": [
+        "Continuar en la web"
       ],
       "Continue transfers": [
         "Continuar transferencias"
@@ -380,6 +386,9 @@
       "Download anyway": [
         "Descargar de todos modos"
       ],
+      "Download app": [
+        "Descargar aplicación"
+      ],
       "Download apps": [
         "Descargar aplicaciones"
       ],
@@ -463,6 +472,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Obtén ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Obtén una dirección gratuita de ${ BRAND_NAME }"
       ],
       "Get in touch": [
         "Ponte en contacto"
@@ -1741,6 +1753,9 @@
       ],
       "Advanced account protection": [
         "Protección de cuenta avanzada"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Cancelar y pasar a un plan inferior"
@@ -3060,6 +3075,14 @@
         "Soporte prioritario"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Los campos de texto son opcionales. La información que proporciones en este formulario solo aparecerá en las facturas emitidas en el futuro y no afectará a las facturas existentes."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Los campos de texto son opcionales. La información que proporcionas en este formulario solo cambiará la factura que has seleccionado y no los detalles de la futura factura."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "NOTA:\n${ eventComment }"
@@ -3199,6 +3222,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Cantidad inferior al mínimo (${ minimumAmount })."
       ],
+      "An error occurred": [
+        "Se ha producido un error"
+      ],
       "An error occurred while loading alias options": [
         "Ha ocurrido un error al cargar las opciones de alias."
       ],
@@ -3264,6 +3290,9 @@
       "Domain not available, try again later": [
         "Dominio no disponible. Inténtalo de nuevo más tarde."
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "La edición de la dirección de facturación no está disponible en este momento. Inténtalo de nuevo más tarde."
+      ],
       "Email address is required": [
         "Dirección de correo electrónico requerida"
       ],
@@ -3311,6 +3340,9 @@
       ],
       "Failed to load the STL preview": [
         "Error al cargar la vista previa STL"
+      ],
+      "Failed to open to contact": [
+        "Error al abrir el contacto"
       ],
       "Failed to resend invitation": [
         "No se pudo reenviar la invitación"
@@ -3502,6 +3534,9 @@
       "Port is required": [
         "Puerto requerido"
       ],
+      "Postal code is required": [
+        "El código postal es requerido"
+      ],
       "Primary address key is not decrypted": [
         "La clave principal no está descifrada."
       ],
@@ -3677,11 +3712,32 @@
       "Validation error": [
         "Error de validación"
       ],
+      "We were not able some of your shared items": [
+        "No pudimos cargar algunos de tus elementos compartidos"
+      ],
+      "We were not able to load some invitations": [
+        "No pudimos cargar algunas invitaciones"
+      ],
+      "We were not able to load some items shared with you": [
+        "No pudimos cargar algunos elementos compartidos contigo"
+      ],
+      "We were not able to load some of your bookmarks": [
+        "No pudimos cargar algunos de tus marcadores"
+      ],
+      "We were not able to load some of your invitation to shared items": [
+        "No pudimos cargar algunas de tus invitaciones a elementos compartidos"
+      ],
+      "We were not able to load some of your saved shared links": [
+        "No pudimos cargar algunos de tus enlaces compartidos guardados"
+      ],
       "We were not able to load some of your shared items": [
         "No pudimos cargar algunos de tus elementos compartidos"
       ],
       "We were not able to load some of your shared items details": [
         "No pudimos cargar algunos de los detalles de tus elementos compartidos"
+      ],
+      "We were not able to load some of your shared items info": [
+        "No pudimos cargar la información de algunos de tus elementos compartidos"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "No puedes enviar un correo a más de ${ maxContacts } destinatario.",
@@ -3701,6 +3757,9 @@
       ],
       "Your import will not be processed.": [
         "No se procesará tu importación."
+      ],
+      "ZIP code is required": [
+        "Se requiere el código postal."
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
@@ -4608,6 +4667,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnología de cifrado de ${ BRAND_NAME } conlleva que nadie tiene acceso a tu contraseña - ni siquiera nosotros."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } requiere una dirección de ${ BRAND_NAME } para la sincronización segura de eventos y el cifrado. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } requiere una dirección de ${ BRAND_NAME } para la sincronización segura de eventos y el cifrado. Reclama tu dirección gratuita de ${ MAIL_APP_NAME } ahora."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } calendario nuevo",
         "${ calendarsToBeCreatedCount } calendarios nuevos"
@@ -4700,6 +4765,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } expira en ${ daysLeft } día.",
+        "${ planName } expira en ${ daysLeft } días."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } expira hoy."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado de actividades sospechosas."
@@ -5171,6 +5243,9 @@
       ],
       "End-to-end encrypted": [
         "Cifrado de extremo a extremo"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Asegura una comunicación totalmente privada y cifrada. Reclama tu dirección de correo electrónico ${ BRAND_NAME } gratis ahora."
       ],
       "Enter password": [
         "Introduce la contraseña"
@@ -6468,6 +6543,9 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Tu cuenta tiene al menos una factura vencida. Tu cuenta está restringida. Las faltas de pago continuadas implicarán el bloqueo de tus correos y enlaces compartidos. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
+        "Tu navegador actual no admite la descarga de archivos grandes/múltiples archivos. Descarga la aplicación de escritorio para cargas y descargas sin interrupciones."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tus datos están listos para ser importados desde ${ importedEmailAddressStrong } a tu cuenta ${ BRAND_NAME }."
       ],
@@ -6789,6 +6867,9 @@
       ],
       "Comment": [
         "Comentario"
+      ],
+      "Company": [
+        "Empresa"
       ],
       "Company name": [
         "Nombre de la empresa"
@@ -7160,6 +7241,9 @@
       "Start date": [
         "Fecha de inicio"
       ],
+      "State": [
+        "Estado"
+      ],
       "Stolen data": [
         "Datos robados"
       ],
@@ -7270,6 +7354,9 @@
       ],
       "Your password (trusted contact)": [
         "Tu contraseña (contacto de confianza)"
+      ],
+      "ZIP code": [
+        "Código postal"
       ]
     },
     "Label for contact group color": {
@@ -7463,6 +7550,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Más info"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Para seguir usando ${ BRAND_NAME }, asegúrate de que tus funciones prémium ya no estén en uso o mejora tu plan."
       ],
       "upgrade for more storage": [
         "mejora para obtener más almacenamiento"
@@ -8862,6 +8952,9 @@
       "Album renamed successfully": [
         "Se ha cambiado el nombre del álbum."
       ],
+      "All items deleted permanently from trash": [
+        "Todos los elementos han sido eliminados permanentemente de la papelera"
+      ],
       "An invitation has been sent": [
         "Se ha enviado una invitación."
       ],
@@ -8976,6 +9069,14 @@
       ],
       "Root folder failed to be loaded": [
         "Error al cargar la carpeta raíz"
+      ],
+      "Selected item was not removed from your list": [
+        "No se ha eliminado el elemento seleccionado de tu lista.",
+        "No se han eliminado los elementos seleccionados de tu lista"
+      ],
+      "Selected items were successfully removed from your list": [
+        "Se han eliminado correctamente los elementos seleccionados de tu lista.",
+        "Se han eliminado correctamente los elementos seleccionados de tu lista."
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Las fotos seleccionadas ya están en «${ albumName }»."
@@ -9579,6 +9680,9 @@
       "Timeout exceeded": [
         "Se ha agotado el tiempo de espera."
       ],
+      "VAT number": [
+        "Número de IVA"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Tu moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo soportan pagos en euros."
       ],
@@ -9631,8 +9735,32 @@
       "ABN": [
         "Número de empresa australiano (ABN)"
       ],
+      "Add ABN": [
+        "Añadir ABN"
+      ],
+      "Add Business Number": [
+        "Añadir el número empresarial"
+      ],
+      "Add EIN": [
+        "Añadir EIN"
+      ],
+      "Add VAT number": [
+        "Añadir un número de IVA"
+      ],
       "Business Number": [
         "Número empresarial"
+      ],
+      "Edit ABN": [
+        "Editar ABN"
+      ],
+      "Edit Business Number": [
+        "Editar el número empresarial"
+      ],
+      "Edit EIN": [
+        "Editar EIN"
+      ],
+      "Edit VAT number": [
+        "Editar el número de IVA"
       ],
       "EIN": [
         "Número de identificación fiscal (EIN)"
@@ -9675,8 +9803,17 @@
       "A way to contact you": [
         "Una forma de contactarte"
       ],
+      "Anderson": [
+        "García"
+      ],
+      "Anytown": [
+        "Valclaro"
+      ],
       "Choose password": [
         "Elegir una contraseña"
+      ],
+      "Company name": [
+        "Nombre de la empresa"
       ],
       "E.g., ": [
         "P. ej., "
@@ -9713,6 +9850,9 @@
       ],
       "Last name": [
         "Apellido"
+      ],
+      "Main street 12": [
+        "Calle del Sol, 12"
       ],
       "Message": [
         "Mensaje"
@@ -9753,6 +9893,9 @@
       "Select a reason": [
         "Selecciona un motivo"
       ],
+      "Select country": [
+        "Seleccionar un país"
+      ],
       "Select state": [
         "Seleccionar el estado"
       ],
@@ -9764,6 +9907,12 @@
       ],
       "Start typing an email address": [
         "Comienza a escribir una dirección de correo electrónico."
+      ],
+      "Thomas": [
+        "Andrea"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ],
       "Your organization name": [
         "El nombre de tu organización"
@@ -9782,7 +9931,21 @@
         "contactar"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Como suscriptor de **${ currentPlanTitle }**, puedes desbloquear **${ unlockPlanTitle }** y más servicios de ${ BRAND_NAME } al mejorar tu plan a **${ upsellPlanTitle }**."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Más servicios de ${ BRAND_NAME }.${ br }Una suscripción sencilla."
+      ],
       "Stay on ${ currentPlanTitle }": [
         "Permanecer en ${ currentPlanTitle }"
       ],
@@ -10638,6 +10801,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } de almacenamiento total"
       ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } te da acceso a todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }. La privacidad está integrada para que puedas seguir adelante, sabiendo que tus datos e identidad están seguros."
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } te ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesitas para tener control de tus datos y seguridad."
       ],
@@ -11005,6 +11171,9 @@
       ],
       "Alias saved and copied": [
         "Se ha guardado y copiado el alias."
+      ],
+      "Billing details updated": [
+        "Se han actualizado los datos de facturación."
       ],
       "Canceling import": [
         "Cancelando la importación"
@@ -11388,6 +11557,9 @@
       "Check for malicious files": [
         "Buscar archivos maliciosos"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Obtén tu dirección de ${ MAIL_APP_NAME }"
+      ],
       "Clearing data": [
         "Limpiando datos"
       ],
@@ -11580,6 +11752,9 @@
       "Duplicate folder found": [
         "Carpeta duplicada encontrada"
       ],
+      "Edit billing address": [
+        "Editar la dirección de la factura"
+      ],
       "Edit contact": [
         "Editar contacto"
       ],
@@ -11646,6 +11821,9 @@
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults } resultado encontrado",
         "${ searchView.numberOfResults } resultados encontrados"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Obtén acceso completo a ${ CALENDAR_APP_NAME }"
       ],
       "Get more from your VPN": [
         "Obtén más de tu VPN"

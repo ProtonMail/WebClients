@@ -996,7 +996,7 @@
     },
     "Font face option": {
       "System default": [
-        "Systémový výchozí"
+        "Systémové výchozí"
       ],
       "Theme font": [
         "Písmo motivu"
@@ -1004,13 +1004,13 @@
     },
     "Font size option": {
       "Large": [
-        "Velký"
+        "Velké"
       ],
       "Medium (recommended)": [
         "Střední (doporučeno)"
       ],
       "Small": [
-        "Malý"
+        "Malé"
       ],
       "Very large": [
         "Velmi velké"
@@ -1069,6 +1069,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Zadejte vlastní heslo (jako správce organizace)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Zadejte vlastní heslo (jako důvěryhodný kontakt)."
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "Chcete-li získat další informace a odstranit omezení, přihlaste se na ${ mailLink }."
@@ -1164,6 +1167,9 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (správce)"
+      ],
+      "Your password (trusted contact)": [
+        "Vaše heslo (důvěryhodný kontakt)"
       ]
     },
     "Link": {

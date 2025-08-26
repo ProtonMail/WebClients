@@ -250,6 +250,9 @@
       "Claim it": [
         "就是它了"
       ],
+      "Claim this address": [
+        "獲取這個電郵位址"
+      ],
       "Clear all formatting": [
         "清除所有格式"
       ],
@@ -291,6 +294,9 @@
       ],
       "Connect": [
         "連線"
+      ],
+      "Connect to video conferencing": [
+        "連接視訊會議"
       ],
       "Connected": [
         "已連線"
@@ -973,6 +979,9 @@
       "Refer a friend": [
         "推薦好友"
       ],
+      "Refresh": [
+        "重新整理"
+      ],
       "Refresh status": [
         "重新整理狀態"
       ],
@@ -1384,6 +1393,9 @@
       "Upload": [
         "上傳"
       ],
+      "Upload and share files": [
+        "上傳並共享檔案"
+      ],
       "Upload logo": [
         "上傳標誌圖片"
       ],
@@ -1695,6 +1707,9 @@
       "Stream your favorite content": [
         "暢遊影音串流平台"
       ],
+      "thanks to you": [
+        "感謝您"
+      ],
       "Unlimited folders, labels and filters": [
         "資料夾、標籤與篩選器無上限"
       ],
@@ -1929,11 +1944,17 @@
       "6 users": [
         "6 位使用者"
       ],
+      "8500+ servers across 110+ countries": [
+        "超過 8500 臺伺服器，遍布於 110 個以上的國家"
+      ],
       "Ad-blocker and malware protection": [
         "廣告攔截器及惡意軟體防護"
       ],
       "Advanced account protection": [
         "進階的帳號保護"
+      ],
+      "Easily add or remove users": [
+        "輕鬆新增或移除使用者"
       ],
       "High speed streaming": [
         "高速串流"
@@ -1943,6 +1964,9 @@
       ],
       "Online document editor": [
         "線上文件編輯器"
+      ],
+      "Password health alerts": [
+        "密碼堅固性警示"
       ],
       "Private photo backup": [
         "私人照片備份"
@@ -7020,6 +7044,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "由於有帳單仍未繳付，因此帳號存取已受限制。請聯絡您的系統管理員。"
       ],
+      "Account monitor": [
+        "帳號監控"
+      ],
       "account recovery and data recovery method": [
         "復原帳號與資料的手段"
       ],
@@ -7452,6 +7479,9 @@
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "具有專用多組 IP 位址的專用伺服器可以新增至私有閘道器，以啟用可微調的存取控制。"
       ],
+      "Dedicated VPN servers": [
+        "專用 VPN 伺服器"
+      ],
       "default email address": [
         "預設電子信箱地址"
       ],
@@ -7478,9 +7508,6 @@
       ],
       "Disable recovery by phone number": [
         "停用備援電話號碼復原"
-      ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "於${ formattedDateAndTime }寧用"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "關閉雙重驗證將使帳號降低安全。只有在必要時再關閉。"
@@ -7620,8 +7647,8 @@
       "Enabled countries": [
         "已啟用的國家"
       ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "於${ formattedDateAndTime }啟用"
+      "Enabled on ${ boldValue }": [
+        "於${ boldValue }啟用"
       ],
       "Enabling auto-deletion…": [
         "啟用自動刪除…"
@@ -7749,14 +7776,11 @@
       "free up space by deleting older messages or other data": [
         "刪除較舊的郵件或其它資料，以釋出空間"
       ],
+      "Gateway monitor": [
+        "閘道監控"
+      ],
       "Gateways": [
         "閘道器"
-      ],
-      "Gateways monitoring is disabled.": [
-        "閘道器監控已關閉。"
-      ],
-      "Gateways monitoring is enabled.": [
-        "閘道器監控已啟用。"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "產生新的復原短語並廢棄舊的。"
@@ -8319,6 +8343,9 @@
       "Or select a particular server:": [
         "或挑選特定的伺服器："
       ],
+      "Organization monitor": [
+        "組織機構監控"
+      ],
       "Organization size": [
         "組織規模"
       ],
@@ -8759,6 +8786,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "訂購授權即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "訂購授權即將到期，請於${ byDate }前至Play 商店重新訂購以保留您的${ planName }權益。${ reactivateLink }"
       ],
       "Summary": [
         "摘要"
@@ -9623,6 +9653,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "你的檔案將加密後再儲存"
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "您的免費試用已成功轉換為每月訂購授權。您的續訂日期為 ${ nextBillingDate }。"
       ],
       "Your friends get **2 weeks for free** on their chosen plan.": [
         "您推薦的朋友所選擇的方案，將可獲得**免費使用兩星期**"
@@ -11497,6 +11530,9 @@
       "How does monitoring work?": [
         "監控如何運作？"
       ],
+      "How to add users": [
+        "如何新增使用者"
+      ],
       "How to pay with Bitcoin?": [
         "如何以比特幣繳款？"
       ],
@@ -13328,6 +13364,9 @@
       ]
     },
     "Offer": {
+      "${ planName } for 12 months": [
+        "為期 12 個月的 ${ planName }"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }優惠今日過期!"
       ],
@@ -13430,6 +13469,9 @@
       ],
       "help center": [
         "說明中心"
+      ],
+      "Once your full subscription starts...": [
+        "您的正式訂購授權一旦開始..."
       ]
     },
     "Option": {
@@ -13571,11 +13613,17 @@
       "It's too expensive": [
         "價格太貴了"
       ],
+      "Label as...": [
+        "標籤為..."
+      ],
       "Left to Right": [
         "由左至右"
       ],
       "Mark as read": [
         "標示為已讀取"
+      ],
+      "Move to...": [
+        "移動至..."
       ],
       "My reason isn't listed": [
         "其實我的理由，你沒有懂"
@@ -14261,6 +14309,9 @@
       "Timeout exceeded": [
         "已經逾時"
       ],
+      "VAT number": [
+        "增值稅編號（VAT）"
+      ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
       ]
@@ -14302,8 +14353,20 @@
       "ABN": [
         "商業號碼（ABN）"
       ],
+      "Add Business Number": [
+        "新增營業人統一編號"
+      ],
+      "Add VAT number": [
+        "新增增值稅編號（VAT）"
+      ],
       "Business Number": [
         "營業人統一編號"
+      ],
+      "Edit Business Number": [
+        "編輯營業人統一編號"
+      ],
+      "Edit VAT number": [
+        "編輯增值稅編號（VAT）"
       ],
       "EIN": [
         "僱主身份識別號碼（EIN）"
@@ -14459,6 +14522,9 @@
       ],
       "Select a reason": [
         "選取理由"
+      ],
+      "Select country": [
+        "選擇國家"
       ],
       "Select state": [
         "請選州"
@@ -15826,6 +15892,9 @@
       ]
     },
     "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "特別優惠適用於最初的兩年。"
+      ],
       "Your subscription will renew at the same rate every year.": [
         "您的訂閱每年將以同費率更新"
       ]
@@ -15836,6 +15905,9 @@
       ],
       "Go to subscription plans": [
         "查看訂購授權"
+      ],
+      "Guard against threats": [
+        "防範威脅"
       ],
       "Increase your storage": [
         "增加您的儲存"
@@ -17499,9 +17571,6 @@
       "Choose an account": [
         "選擇一個帳號"
       ],
-      "Click a value in the table to use it as filter": [
-        "點及於表格中的任何值以當作過濾器"
-      ],
       "Close": [
         "關閉"
       ],
@@ -17687,6 +17756,9 @@
       ],
       "Desktop": [
         "電腦版應用程式"
+      ],
+      "Details": [
+        "詳細資訊"
       ],
       "Device": [
         "裝置"
@@ -18291,6 +18363,9 @@
       "SAML authentication": [
         "SAML 驗證"
       ],
+      "Schedule meetings in one click": [
+        "一鍵安排會議"
+      ],
       "Schedule send:": [
         "排程送出:"
       ],
@@ -18374,6 +18449,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "升級至企業以設定獨立伺服器"
+      ],
+      "Share your calendar with your team": [
+        "與團隊共享行事曆"
       ],
       "Shared servers": [
         "共享伺服器"

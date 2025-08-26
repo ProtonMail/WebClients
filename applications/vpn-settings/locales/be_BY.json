@@ -642,6 +642,9 @@
       "Refer a friend": [
         "Запрасіць сябра"
       ],
+      "Refresh": [
+        "Абнавіць"
+      ],
       "Refresh status": [
         "Абнавіць статус"
       ],
@@ -650,9 +653,6 @@
       ],
       "refresh the page": [
         "абнавіць старонку"
-      ],
-      "Reload": [
-        "Перазагрузіць"
       ],
       "Remove": [
         "Выдаліць"
@@ -988,16 +988,16 @@
         "Карыстальнік"
       ],
       "Verify": [
-        "Праверка"
+        "Спраўдзіць"
       ],
       "Verify account": [
-        "Праверыць уліковы запіс"
+        "Спраўдзіць уліковы запіс"
       ],
       "Verify code": [
-        "Праверыць код"
+        "Спраўдзіць код"
       ],
       "Verify code again": [
-        "Праверыць код яшчэ раз"
+        "Спраўдзіць код яшчэ раз"
       ],
       "Verify domain": [
         "Праверыць дамен"
@@ -3435,13 +3435,13 @@
     },
     "Email body for response to invitation": {
       "${ emailAddress } accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } прыняў(-ла) ваша запрашэнне на ${ eventTitle }"
+        "${ emailAddress } прыняў ваша запрашэнне на ${ eventTitle }"
       ],
       "${ emailAddress } declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } адхіліў(-ла) ваша запрашэнне на ${ eventTitle }"
+        "${ emailAddress } адхіліў ваша запрашэнне на ${ eventTitle }"
       ],
       "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } умоўна прыняў(-ла) ваша запрашэнне на ${ eventTitle }"
+        "${ emailAddress } умоўна прыняў ваша запрашэнне на ${ eventTitle }"
       ]
     },
     "Email spam notification": {
@@ -5561,8 +5561,17 @@
       "(default)": [
         "(прадвызначана)"
       ],
+      "**Enable automatic backups** for peace of mind": [
+        "**Уключыць аўтаматычнае рэзерваванне** для душэўнага спакою"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Атрымайце адрас ${ BRAND_NAME }**, каб карыстацца ўсімі сэрвісамі ${ BRAND_NAME_TWO }, уключаючы ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
+        "**Імпартуйце свае існуючыя коды** з іншых 2ФА праграм, такіх як Google Authenticator"
+      ],
+      "**Sync codes** to all your devices": [
+        "**Сінхранізуйце коды** з усімі вашымі прыладамі"
       ],
       "+ ${ invisibleCount } More": [
         "+ яшчэ ${ invisibleCount }",
@@ -5598,7 +5607,7 @@
         "Назва, якая дапаможа вам вызначыць, дзе вы яго выкарыстоўваеце, каб вы маглі лёгка адклікаць яго або падоўжыць яго пазней."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Нумар тэлефона можа быць выкарыстаны для праверкі аднаго ўліковага запісу ${ BRAND_NAME }"
+        "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Карыстальнік - гэта ўліковы запіс, які звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
@@ -5606,20 +5615,23 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ да ўліковага запісу абмежаваны з прычыны неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
       ],
+      "Account monitor": [
+        "Назіранне за ўліковым запісам"
+      ],
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
       ],
       "active": [
         "актыўна"
       ],
-      "Activity monitor": [
-        "Манітор актыўнасці"
-      ],
       "Activity Monitor": [
         "Манітор актыўнасці"
       ],
       "add a recovery method": [
         "дададзены спосаб аднаўлення"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Дадайце яшчэ адзін слой абароны ў свой уліковы запіс. Вам неабходна будзе спраўдзіць сваю асобу з дапамогай 2ФА пры кожным уваходзе."
       ],
       "Add domain": [
         "Дадаць дамен"
@@ -5698,6 +5710,9 @@
       ],
       "Allocated": [
         "Вылучана"
+      ],
+      "Allow logging of location and connection details": [
+        "Дазволіць журналяванне месцазнаходжання і падрабязнасці падключэння"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Дазволіць карыстальнікам падключацца да бяспечна абагуленых сервераў з раздзела **Краіны** праграмы ${ VPN_APP_NAME }."
@@ -5948,14 +5963,11 @@
       "Did you know?": [
         "Ці ведалі вы што?"
       ],
-      "Disable detailed events": [
-        "Адключыць падрабязныя падзеі"
-      ],
       "Disabled countries": [
         "Адключаныя краіны"
       ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "Адключана ${ formattedDateAndTime }"
+      "Disabled on ${ boldValue }": [
+        "Адключана ў ${ boldValue }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Адключэнне двухфактарнай аўтэнтыфікацыі зробіць ваш уліковы запіс менш бяспечным. Працягвайце толькі ў тым выпадку, калі гэта сапраўды неабходна."
@@ -6023,6 +6035,9 @@
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Спампуйце наш шаблон CSV, запоўніце падрабязнасці пра карыстальніка і запампуйце ваш запоўнены файл CSV для стварэння ўліковага запісу для гэтых карыстальнікаў."
       ],
+      "Download the app and import existing codes.": [
+        "Спампаваць праграму і імпартаваць існуючыя коды."
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Спампуйце вашу абраную праграму сёння і прыватнасць застанецца з вамі ў любым месцы."
       ],
@@ -6065,17 +6080,14 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Уключыце аўтаматычнае падаўжэнне для захавання доступу да вашых прэміяльных функцый."
       ],
-      "Enable detailed events": [
-        "Уключыць падрабязныя падзеі"
-      ],
       "Enable single sign-on to keep your organization safe": [
         "Уключыць адзіны ўваход, каб абараніць вашу арганізацыю"
       ],
       "Enabled countries": [
         "Уключаныя краіны"
       ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "Уключана ${ formattedDateAndTime }"
+      "Enabled on ${ boldValue }": [
+        "Уключана ў ${ boldValue }"
       ],
       "Enabling auto-deletion…": [
         "Уключэнне аўтавыдалення…"
@@ -6126,7 +6138,7 @@
         "Увядзіце пароль арганізацыі для аднаўлення правоў адміністратара. ${ learnMore }"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Увядзіце праверачны код, які быў адпраўлены на ${ destinationText }."
+        "Увядзіце код спраўджання, які быў адпраўлены на ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Увядзіце праверачны код. Лічба ${ digit }."
@@ -6182,14 +6194,14 @@
       "Gain visibility across your organization": [
         "Станьце больш заўважным у сваёй арганізацыі"
       ],
+      "Gateway monitor": [
+        "Назіранне за шлюзом"
+      ],
       "Gateways": [
         "Шлюзы"
       ],
-      "Gateways monitoring is disabled.": [
-        "Назіранне за шлюзамі выключана."
-      ],
-      "Gateways monitoring is enabled.": [
-        "Назіранне за шлюзамі ўключана."
+      "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
+        "Атрымайце ${ AUTHENTICATOR_APP_NAME } для ўсіх сваіх прылад."
       ],
       "Get ${ upsellPlanName }": [
         "Атрымаць тарыфны план ${ upsellPlanName }"
@@ -6296,8 +6308,8 @@
       "inactive": [
         "неактыўна"
       ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Уключыць IP-адрас карыстальніка, месцазнаходжанне і ISP (пастаўшчыка паслуг інтэрнэту) у журналы падзей"
+      "Include device, location, and IP details": [
+        "Уключыць падрабязнасці аб прыладзе, месцазнаходжанні і IP"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Уключае ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -6346,6 +6358,9 @@
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Пераключэнне краіны сервера зойме 10 дзён і таму, вам варта пераканацца ў правільнасці выбару сервера."
+      ],
+      "It won't be linked to your ${ BRAND_NAME } Account, so there's **no risk of getting locked out**.": [
+        "Не будзе звязана з вашым уліковым запісам ${ BRAND_NAME }, таму **адсутнічае рызыка блакіроўкі**."
       ],
       "It's better to have:": [
         "Лепш за ўсё, каб у вас было:"
@@ -6449,9 +6464,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Пачакайце, адбываецца загрузка календара. Вы будзеце перанакіраваны на нашу платформу планавання Calendly, якая адкрыецца ў новай укладцы."
       ],
-      "Loading detailed events current status.": [
-        "Бягучы статус загрузкі падрабязных падзей."
-      ],
       "Loading eduGAIN data...": [
         "Загрузка даных eduGAIN..."
       ],
@@ -6484,6 +6496,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Лагатып Mastercard SecureCode"
+      ],
+      "Maybe later": [
+        "Магчыма пазней"
       ],
       "Medium Priority": [
         "Сярэдні прыярытэт"
@@ -6602,6 +6617,9 @@
       "Or select a particular server:": [
         "Або выберыце пэўны сервер:"
       ],
+      "Organization monitor": [
+        "Назіранне за арганізацыяй"
+      ],
       "Organization size": [
         "Памер арганізацыі"
       ],
@@ -6622,6 +6640,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - карыстальніцкая электронная пошта выдалена"
+      ],
+      "Pass usage logs": [
+        "Журналы выкарыстання Pass"
       ],
       "password": [
         "пароль"
@@ -6992,6 +7013,9 @@
       "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
         "Функцыя груп не падтрымліваюцца вашай бягучай падпіскай. Папярэдне створаныя групы адключаны і іх можна толькі выдалены."
       ],
+      "The most secure and private two-factor authentication app, that's free and open-source.": [
+        "Адна з самых бяспечных і прыватных праграм двухфактарнай аўтэнтыфікацыі. Распаўсюджваецца бясплатна і мае адкрыты зыходны код."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "Гэта імя ўбачаць вашы карыстальнікі, калі яны ўвойдуць у сістэму."
       ],
@@ -7128,7 +7152,7 @@
         "Для працягу, выберыце спосаб аднаўлення ўліковага запісу, каб мы маглі праверыць запыт."
       ],
       "To proceed, we must verify the request.": [
-        "Для працягу, неабходна праверыць запыт."
+        "Для працягу, неабходна спраўдзіць запыт."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Для абароны вашага падключэння да інтэрнэту, вам неабходна спампаваць і ўсталяваць праграму ${ VPN_APP_NAME } для вашай прылады і падключыцца да сервера."
@@ -7238,6 +7262,9 @@
       "Vault deleted": [
         "Сховішча выдалена"
       ],
+      "Vault either deleted or requires access permissions": [
+        "Сховішча выдалена або патрабуе правы доступу"
+      ],
       "Vault shared with email": [
         "Сховішча абагулена з дапамогай электроннай поштай"
       ],
@@ -7254,7 +7281,7 @@
         "Праверка адкрые новую ўкладку, адключыце блакіроўку ўсплывальных вокнаў. З вас не будуць спаганяцца грашовыя сродкі. Любая сума, якая выкарыстоўваецца для праверкі вашай карткі, будзе неадкладна вернута."
       ],
       "Verify domain": [
-        "Праверыць дамен"
+        "Спраўдзіць дамен"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Пацвердзіце сваю ідэнтычнасць пры дапамозе аднаразовага пароля з абмежаваным тэрмінам дзеяння, які атрыманы ад праграмы аўтэнтыфікацыі"
@@ -7267,6 +7294,9 @@
       ],
       "Version number successfully copied to clipboard": [
         "Нумар версіі паспяхова скапіяваны ў буферу абмену"
+      ],
+      "View VPN session details for your organization.": [
+        "Паглядзець падрабязнасці сеанса VPN для вашай арганізацыі."
       ],
       "View, download, and manage your invoices.": [
         "Прагляд, спампоўванне і кіраванне вашымі рахункамі."
@@ -7372,6 +7402,9 @@
       ],
       "Why?": [
         "Чаму?"
+      ],
+      "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
+        "З ${ AUTHENTICATOR_APP_NAME } вы зможаце:"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "З тарыфнымі планамі Business або Enterprise, вы можаце купіць ${ boldDedicatedServers } для вашай арганізацыі і наладзіць ${ boldGateways } правы доступу карыстальнікаў да яго."
@@ -8489,11 +8522,8 @@
       "VAT": [
         "ПДВ"
       ],
-      "VAT identification number": [
-        "Ідэнтыфікацыйны нумар ПДВ"
-      ],
       "Verification code": [
-        "Праверачны код"
+        "Код спраўджання"
       ],
       "Video conferencing with Zoom": [
         "Відэаканферэнцыя з Zoom"
@@ -8780,6 +8810,9 @@
       "Upgrade your plan": [
         "Палепшыць тарыфны план"
       ],
+      "Vault": [
+        "Сховішча"
+      ],
       "View guide": [
         "Паглядзець дапаможнік"
       ],
@@ -8836,6 +8869,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Даведацца больш"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Пераканайцеся, што вашы прэміяльныя функцыі больш не выкарыстоўваюцца або палепшыце свой тарыфны план, каб працягваць выкарыстоўваць ${ BRAND_NAME }."
       ],
       "upgrade for more storage": [
         "палепшыце тарыфны план, каб атрымаць больш сховішча"
@@ -9020,8 +9056,14 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Падключыце свой карыстальніцкі дамен да ${ BRAND_NAME }, каб наладзіць адрасы электроннай пошты (напрыклад, vy@vashacampaniya.by). Наш майстар дапаможа вам з працэсам наладжвання."
       ],
-      "View account-related events across your organization.": [
-        "Паглядзець падзеі, якія звязаны з уліковым запісам ва ўсёй арганізацыі."
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "Паглядзець дзейнасць ${ PASS_APP_NAME } па ўсёй вашай арганізацыі."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "Паглядзець змяненні ў вашай арганізацыі і іншыя дзеянні адміністратара."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "Паглядзець падзеі ўваходу, аднаўлення і бяспекі карыстальніка."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваш бясплатны пробны перыяд завяршыўся. Доступ да вашых уліковых запісаў будзе неўзабаве адключаны. ${ action }"
@@ -10210,6 +10252,9 @@
       "Invalid code": [
         "Памылковы код"
       ],
+      "Invalid input. Search an email or detail.": [
+        "Памылкова ўведзеныя даныя. Шукайце электронную пошту або падрабязнасці."
+      ],
       "Invalid input. Search an email or IP address.": [
         "Памылкова ўведзеныя даныя. Шукайце электронную пошту або IP-адрас."
       ],
@@ -10839,6 +10884,9 @@
       "Card number": [
         "Нумар карткі"
       ],
+      "Credits and discounts are reflected in your invoice": [
+        "Крэдыты і скідкі адлюстроўваюцца ў вашым рахунку"
+      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "У цяперашні час аўтаматычнае падаўжэнне падпіскі адключана. Калі змяніць падпіску цяпер, то аўтаматычнае падаўжэнне будзе ўключана паўторна."
       ],
@@ -10914,6 +10962,9 @@
       "Timeout exceeded": [
         "Перавышаны час чакання"
       ],
+      "VAT number": [
+        "Нумар ПДВ"
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "З вас будзе спагнана сума ў памеры ${ amountToCharge } са спосабу аплаты, які вы выбралі."
       ],
@@ -10969,8 +11020,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Дадаць ABN"
+      ],
+      "Add Business Number": [
+        "Дадаць нумар прадпрыемства"
+      ],
+      "Add EIN": [
+        "Рэдагаваць ІНП"
+      ],
+      "Add VAT number": [
+        "Дадаць нумар ПДВ"
+      ],
       "Business Number": [
         "Нумар прадпрыемства"
+      ],
+      "Edit ABN": [
+        "Рэдагаваць ABN"
+      ],
+      "Edit Business Number": [
+        "Рэдагаваць нумар прадпрыемства"
+      ],
+      "Edit EIN": [
+        "Рэдагаваць ІНП"
+      ],
+      "Edit VAT number": [
+        "Рэдагаваць нумар ПДВ"
       ],
       "EIN": [
         "EIN"
@@ -11093,11 +11168,17 @@
       "Search users": [
         "Пошук карыстальнікаў"
       ],
+      "Search users or details": [
+        "Пошук карыстальнікаў або падрабязнасцей"
+      ],
       "Select": [
         "Выбраць"
       ],
       "Select a reason": [
         "Выберыце прычыну"
+      ],
+      "Select country": [
+        "Выберыце краіну"
       ],
       "Select state": [
         "Выбраць штат"
@@ -13399,7 +13480,7 @@
         "Праверачны код скапіяваны ў буфер абмену"
       ],
       "Verification successful": [
-        "Паспяхова праверана"
+        "Праверка паспяхова выканана"
       ],
       "You have successfully canceled your subscription.": [
         "Вы паспяхова скасавалі сваю падпіску."
@@ -13813,9 +13894,6 @@
       "Claim your ${ MAIL_APP_NAME } address": [
         "Атрымайце адрас ${ MAIL_APP_NAME }"
       ],
-      "Click a value in the table to use it as filter": [
-        "Націсніце значэнне ў табліцы, каб выкарыстоўваць яго ў якасці фільтра."
-      ],
       "Close": [
         "Закрыць"
       ],
@@ -13959,6 +14037,12 @@
       ],
       "Deny access to user?": [
         "Адмовіць у доступе карыстальніку?"
+      ],
+      "Description": [
+        "Апісанне"
+      ],
+      "Details": [
+        "Падрабязнасці"
       ],
       "Device": [
         "Прылада"
@@ -14172,6 +14256,9 @@
       ],
       "Invoices": [
         "Рахункі"
+      ],
+      "IP": [
+        "IP"
       ],
       "Limit reached": [
         "Дасягнута абмежаванне"
@@ -14431,6 +14518,9 @@
       "There are no groups": [
         "Няма ніводнай групы"
       ],
+      "Try ${ AUTHENTICATOR_APP_NAME }": [
+        "Паспрабуйце ${ AUTHENTICATOR_APP_NAME }"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Уключэнне ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -14498,10 +14588,10 @@
         "Збой праверкі"
       ],
       "Verifying your card...": [
-        "Праверка вашай карткі..."
+        "Спраўджанне вашай карткі..."
       ],
       "Verifying your payment...": [
-        "Праверка вашага плацяжу..."
+        "Спраўджанне вашага плацяжу..."
       ],
       "Video conferencing": [
         "Відэаканферэнцыя"
@@ -15167,10 +15257,10 @@
         "Аўтавыбар з ${ numberOfCountries } краін"
       ],
       "Select from ${ numberOfCountries }+ country": [
-        "Выбірайце з ${ numberOfCountries }+ краіны",
-        "Выбірайце з ${ numberOfCountries } краін",
-        "Выбірайце з ${ numberOfCountries } краін",
-        "Выбірайце з ${ numberOfCountries } краін"
+        "Выбірайце ў больш чым ${ numberOfCountries } краіне",
+        "Выбірайце ў больш чым ${ numberOfCountries } краінах",
+        "Выбірайце ў больш чым ${ numberOfCountries } краінах",
+        "Выбірайце ў больш чым ${ numberOfCountries } краінах"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Серверы ў больш, чым ${ numberOfCountries } краіне",
@@ -15344,7 +15434,7 @@
         "На жаль, у дадзены момант наша каманда падтрымкі знаходзіцца па-за сеткай. Запоўніце форму ніжэй з апісаннем вашай праблемы і мы абавязкова разгледзім яе пасля таго, як станем зноў даступнымі."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Мы не змаглі праверыць паштовы сервер. Калі вы давяраеце яму, то можаце прапусціць гэту праверку."
+        "Мы не змаглі спраўдзіць паштовы сервер. Калі вы давяраеце яму, то можаце прапусціць гэту праверку."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Мы выявілі праблему з канфігурацыяй вашага DNS. Пераканайцеся, што вашы запісы адпавядаюць інструкцыям ніжэй. Калі праблема застанецца, то нам давядзецца адключыць падпісанне DKIM."

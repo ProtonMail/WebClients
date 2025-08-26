@@ -3151,6 +3151,14 @@
         "90 минут"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Текстовые поля являются необязательными. Информация, которую вы предоставите в этой форме, будет отображаться только в счетах, выставляемых в будущем, и не повлияет на существующие счета."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Текстовые поля являются необязательными. Информация, которую вы предоставите в этой форме, изменит только выбранный вами счет-фактуру, но не ваши будущие данные о счете-фактуре."
+      ]
+    },
     "Edit event button tooltip": {
       "Edit event": [
         "Редактировать событие"
@@ -3376,6 +3384,9 @@
       ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Изменение платежного адреса в данный момент недоступно. Повторите попытку позже."
       ],
       "Email address disabled": [
         "Адрес электронной почты отключен"
@@ -3763,6 +3774,9 @@
       ],
       "Your import will not be processed.": [
         "Импорт не будет обработан."
+      ],
+      "ZIP code is required": [
+        "Необходимо указать почтовый индекс"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4800,6 +4814,15 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } требует минимум 1 выделенный сервер ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "Срок действия ${ planName } истекает через ${ daysLeft } день.",
+        "Срок действия ${ planName } истекает через ${ daysLeft } дня.",
+        "Срок действия ${ planName } истекает через ${ daysLeft } дней.",
+        "Срок действия ${ planName } истекает через ${ daysLeft } дней."
+      ],
+      "${ planName } expires today.": [
+        "Срок действия ${ planName } истекает сегодня."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } защищает вашу учётную запись посредством специального наблюдения за подозрительной активностью."
@@ -6350,6 +6373,9 @@
       "Colors": [
         "Цвета"
       ],
+      "Company": [
+        "Компания"
+      ],
       "Company name": [
         "Название компании"
       ],
@@ -6641,6 +6667,9 @@
       "Start date": [
         "Дата начала"
       ],
+      "State": [
+        "Состояние"
+      ],
       "Street address": [
         "Адрес"
       ],
@@ -6727,6 +6756,9 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "ZIP code": [
+        "Почтовый индекс"
       ]
     },
     "Label for contact group color": {
@@ -8909,6 +8941,15 @@
       "Add title": [
         "Добавьте название"
       ],
+      "Anderson": [
+        "Андерсон"
+      ],
+      "Anytown": [
+        "Любой город"
+      ],
+      "Company name": [
+        "Название компании"
+      ],
       "E.g., ": [
         "Например, "
       ],
@@ -8938,6 +8979,9 @@
       ],
       "Leave a note for all participants": [
         "Оставить заметку для всех участников"
+      ],
+      "Main street 12": [
+        "Мейн стрит 12"
       ],
       "Name": [
         "Название"
@@ -8986,6 +9030,12 @@
       ],
       "Start typing an email address": [
         "Начните вводить адрес эл. почты"
+      ],
+      "Thomas": [
+        "Томас"
+      ],
+      "VAT number": [
+        "Номер плательщика НДС"
       ],
       "Your organization name": [
         "Название вашей организации"
@@ -10292,6 +10342,9 @@
       "Answer sent and event deleted": [
         "Ответ отправлен и событие удалено"
       ],
+      "Billing details updated": [
+        "Информация о платеже обновлена"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Календарь добавлен. Синхронизация может занять несколько минут."
       ],
@@ -10843,6 +10896,9 @@
       ],
       "Drop to upload": [
         "Перетащите для выгрузки"
+      ],
+      "Edit billing address": [
+        "Изменить платежный адрес"
       ],
       "Edit contact": [
         "Изменение контакта"

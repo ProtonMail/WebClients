@@ -1451,9 +1451,6 @@
       "Trust": [
         "Faire confiance"
       ],
-      "Trust key": [
-        "La clé est fiable"
-      ],
       "Trust public key": [
         "Approuver la clé publique"
       ],
@@ -4253,6 +4250,14 @@
         "Assistance prioritaire"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Les champs de texte sont facultatifs. Les informations fournies dans ce formulaire apparaîtront uniquement sur les factures émises à l’avenir et n’affecteront pas les factures existantes."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Les champs de texte sont facultatifs. Les informations que vous fournissez dans ce formulaire ne modifieront que la facture que vous avez sélectionnée et non les détails de votre future facture."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "NOTE :\n${ eventComment }"
@@ -4324,6 +4329,10 @@
       ],
       "Event starting now": [
         "L'événement commence maintenant."
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "L'événement commence dans ${ minutesUntilEvent } minute.",
+        "L'événement commence dans ${ minutesUntilEvent } minutes."
       ],
       "Event starts tomorrow": [
         "L'événement commence demain."
@@ -4512,6 +4521,9 @@
       "Due to an error, text generation couldn't be canceled": [
         "En raison d'une erreur, la génération du texte n'a pas pu être annulée."
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "La modification de l'adresse de facturation n'est pas disponible pour le moment. Veuillez réessayer ultérieurement."
+      ],
       "Email address disabled": [
         "L'adresse e-mail est désactivée."
       ],
@@ -4550,6 +4562,9 @@
       ],
       "Failed to load the STL preview": [
         "Le chargement de l’aperçu STL n'a pas abouti."
+      ],
+      "Failed to open to contact": [
+        "Le contact n'a pas pu être ouvert."
       ],
       "Filter with this name already exists": [
         "Un filtre avec ce nom existe déjà."
@@ -4746,6 +4761,9 @@
       ],
       "Port is required": [
         "Le port est nécessaire."
+      ],
+      "Postal code is required": [
+        "Le code postal est requis."
       ],
       "Primary address key is not decrypted": [
         "La clé d'adresse principale n'est pas déchiffrée."
@@ -4981,6 +4999,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
+      ],
+      "ZIP code is required": [
+        "Le code postal est nécessaire."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6258,6 +6279,9 @@
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "Le gestionnaire de mots de passe de ${ BRAND_NAME } vous permet de créer, de stocker et de remplir automatiquement les mots de passe, afin que vous n'ayez jamais à les réinitialiser."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } nécessite une adresse ${ BRAND_NAME } pour une synchronisation d'événements et un chiffrement sécurisés. ${ claimAddressButton }."
+      ],
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
         "${ CALENDAR_APP_NAME } nécessite une adresse ${ BRAND_NAME } pour une synchronisation d'événements sécurisée et le chiffrement. Obtenez votre adresse ${ MAIL_APP_NAME } gratuite dès maintenant."
       ],
@@ -6332,6 +6356,10 @@
         "${ elementsCount } message sera déplacé.",
         "${ elementsCount } messages seront déplacés."
       ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } message n'aura plus ce label :",
+        "${ elementsCount } messages n'auront plus ce label :"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } image intégrée",
         "${ embeddedAttachmentsCount } images intégrées"
@@ -6391,6 +6419,13 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } nécessite au moins un serveur dédié ${ serverPricePerMonth }."
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } arrive à expiration dans ${ daysLeft } jour.",
+        "${ planName } arrive à expiration dans ${ daysLeft } jours."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } arrive à expiration aujourd'hui."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } protège votre compte grâce à une surveillance dédiée des activités suspectes."
       ],
@@ -6432,6 +6467,10 @@
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } non lu",
         "${ subscription.UnreadMessageCount } non lu"
+      ],
+      "${ total } conversation": [
+        "${ total } conversation",
+        "${ total } conversations"
       ],
       "${ total } message": [
         "${ total } de message",
@@ -7016,6 +7055,9 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Profitez d'une expérience de messagerie plus rapide et focalisée grâce à l'application de bureau."
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Assurez une communication entièrement privée et chiffrée. Obtenez dès maintenant votre adresse e-mail ${ BRAND_NAME } gratuite."
+      ],
       "Enter the code from your authenticator app": [
         "Saisissez le code de votre application d'authentification."
       ],
@@ -7222,8 +7264,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images."
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -9076,6 +9117,9 @@
       "Colors": [
         "Couleurs"
       ],
+      "Company": [
+        "Entreprise"
+      ],
       "Company name": [
         "Nom de l'entreprise"
       ],
@@ -9475,6 +9519,9 @@
       "Start date": [
         "Date de début"
       ],
+      "State": [
+        "État"
+      ],
       "Statement": [
         "Requête"
       ],
@@ -9597,6 +9644,9 @@
       ],
       "Your password (trusted contact)": [
         "Votre mot de passe (contacts de confiance)"
+      ],
+      "ZIP code": [
+        "Code postal"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9968,6 +10018,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "En savoir plus"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Pour continuer à utiliser ${ BRAND_NAME }, veuillez vous assurer de ne plus utiliser vos fonctionnalités premium ou changer d'abonnement."
       ],
       "upgrade for more storage": [
         "changer d'abonnement pour augmenter votre espace de stockage"
@@ -11824,6 +11877,9 @@
       "Timeout exceeded": [
         "Le délai est dépassé."
       ],
+      "VAT number": [
+        "Numéro de TVA"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Votre devise a été changée en euros (€) car les virements bancaires SEPA prennent uniquement en charge les paiements en euros."
       ],
@@ -11876,8 +11932,32 @@
       "ABN": [
         "Numéro d’entreprise australien (ABN)"
       ],
+      "Add ABN": [
+        "Ajouter un ABN"
+      ],
+      "Add Business Number": [
+        "Ajouter un numéro d'entreprise"
+      ],
+      "Add EIN": [
+        "Ajouter un EIN"
+      ],
+      "Add VAT number": [
+        "Ajouter un numéro de TVA"
+      ],
       "Business Number": [
         "Numéro d'entreprise"
+      ],
+      "Edit ABN": [
+        "Modifier ABN"
+      ],
+      "Edit Business Number": [
+        "Modifier le numéro d'entreprise"
+      ],
+      "Edit EIN": [
+        "Modifier EIN"
+      ],
+      "Edit VAT number": [
+        "Modifier le numéro de TVA"
       ],
       "EIN": [
         "Numéro d'identification fiscale (EIN)"
@@ -11919,6 +11999,15 @@
     "Placeholder": {
       "A way to contact you": [
         "Un moyen de vous contacter"
+      ],
+      "Anderson": [
+        "Durant"
+      ],
+      "Anytown": [
+        "Boisclair"
+      ],
+      "Company name": [
+        "Nom de l'entreprise"
       ],
       "Describe what to change": [
         "Décrivez les modifications à apporter"
@@ -11967,6 +12056,9 @@
       ],
       "Link": [
         "Lien"
+      ],
+      "Main street 12": [
+        "12, boulevard de la liberté"
       ],
       "Name": [
         "Nom"
@@ -12019,6 +12111,9 @@
       "Select a reason": [
         "Sélectionnez une raison."
       ],
+      "Select country": [
+        "Sélectionner le pays"
+      ],
       "Select state": [
         "Sélectionner l'état"
       ],
@@ -12055,11 +12150,17 @@
       "Text": [
         "Texte"
       ],
+      "Thomas": [
+        "Camille"
+      ],
       "To": [
         "Pour"
       ],
       "Type text or keyword": [
         "Saisissez un texte ou un mot-clé."
+      ],
+      "VAT number": [
+        "Numéro de TVA"
       ],
       "Your organization name": [
         "Nom de votre organisation"
@@ -13639,6 +13740,9 @@
       "Alias saved and copied": [
         "L'alias a été enregistré et copié."
       ],
+      "Billing details updated": [
+        "Les informations de facturation ont été mises à jour."
+      ],
       "Canceling import": [
         "Annulation de l'importation"
       ],
@@ -14133,7 +14237,7 @@
         "Appliquer un code-cadeau"
       ],
       "Archive": [
-        "Déplacer vers les archives"
+        "Archives"
       ],
       "Archive all messages?": [
         "Archiver tous les messages ?"
@@ -14349,6 +14453,9 @@
       ],
       "Download the app": [
         "Télécharger l'application"
+      ],
+      "Edit billing address": [
+        "Modifier l'adresse de facturation"
       ],
       "Edit contact": [
         "Modifier le contact"

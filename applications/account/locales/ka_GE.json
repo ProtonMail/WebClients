@@ -70,6 +70,9 @@
       "Accept": [
         "დასტური"
       ],
+      "Access account": [
+        "წვდომა ანგარიშზე"
+      ],
       "activate": [
         "აქტივაცია"
       ],
@@ -252,6 +255,9 @@
       ],
       "Claim it": [
         "გამოთხოვა"
+      ],
+      "Claim this address": [
+        "ამ მისამართის გამოთხოვა"
       ],
       "Clear all formatting": [
         "ფორმატირების სრულად მოცილება"
@@ -775,6 +781,9 @@
       "Get verification code": [
         "შემოწმების კოდის მიღება"
       ],
+      "Give access now": [
+        "წვდომის მინიჭება ახლავე"
+      ],
       "Go back": [
         "უკან დაბრუნება"
       ],
@@ -1003,6 +1012,9 @@
       "Open navigation": [
         "ნავიგაციის გახსნა"
       ],
+      "Opt out": [
+        "უარის თქმა"
+      ],
       "Or": [
         "ან"
       ],
@@ -1116,6 +1128,9 @@
       ],
       "Request a feature": [
         "თვისების მოთხოვნა"
+      ],
+      "Request access": [
+        "წვდომის მოთხოვნა"
       ],
       "Request new code": [
         "ახალი კოდის გამოთხოვა"
@@ -1386,6 +1401,9 @@
       ],
       "Stay": [
         "დარჩენა"
+      ],
+      "Stop being trusted contact": [
+        "სანდო კონტაქტად ყოფნის შეწყვეტა"
       ],
       "Stop using single sign-on": [
         "SSO-ის გამოყენების შეწყვეტა"
@@ -5100,29 +5118,98 @@
       "Access granted": [
         "წვდომა მონიჭებულია"
       ],
+      "Access requested": [
+        "წვდომა მოთხოვნილია"
+      ],
       "Add": [
         "დამატება"
+      ],
+      "Add emergency contact": [
+        "სასწრაფო კონტაქტის დამატება"
+      ],
+      "Change access wait time": [
+        "წვდომის მოლოდინის დროის შეცვლა"
+      ],
+      "Change wait time": [
+        "მოლოდინის დროის შეცვლა"
       ],
       "Disabled": [
         "გათიშული"
       ],
+      "Emergency access": [
+        "სასწრაფო წვდომა"
+      ],
+      "Emergency access granted": [
+        "სასწრაფო წვდომა მინიჭებულია"
+      ],
+      "Emergency access requested": [
+        "სასწრაფო წვდომა მოთხოვნილია"
+      ],
+      "Emergency contact added": [
+        "სასწრაფო კონტაქტი დამატებულია"
+      ],
+      "Emergency contact removed": [
+        "სასწრაფო კონტაქტი წაიშალა"
+      ],
+      "Enable auto-renew": [
+        "ავტოგანახლების ჩართვა"
+      ],
+      "Give access now": [
+        "წვდომის მინიჭება ახლავე"
+      ],
+      "Give immediate access?": [
+        "მივცე წვდომა დაუყოვნებლივ?"
+      ],
+      "Immediate": [
+        "დაუყონებლივ"
+      ],
+      "Less than a day": [
+        "დღეზე ნაკლები"
+      ],
       "None": [
         "არცერთი"
-      ],
-      "on ${ formattedAccessibleAt }": [
-        "${ formattedAccessibleAt }"
       ],
       "Only ": [
         "მხოლოდ "
       ],
+      "People I trust": [
+        "ხალხი, რომელსაც ვენდობი"
+      ],
+      "People who trust me": [
+        "ხალხი, რომელიც მენდობა"
+      ],
+      "Remove trusted contact": [
+        "სანდო კონტაქტის წაშლა"
+      ],
+      "Request access?": [
+        "მოვითხოვო წვდომა?"
+      ],
+      "Requesting access": [
+        "მიმდინარეობს წვდომის მოთხოვნა"
+      ],
+      "Subscription expired": [
+        "გამოწერას ვადა ამოიწურა"
+      ],
       "Trusted contact": [
         "სანდო კონტაქტი"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
       ],
       "Upgrade to ${ planName }": [
         "სატარიფო გეგმის განახლება: ${ planName }"
       ],
       "View request": [
         "მოთხოვნის ნახვა"
+      ],
+      "Wait time": [
+        "მოლოდინის დრო"
+      ],
+      "Wait time for access": [
+        "მოლოდინის დრო წვდომისთვის"
+      ],
+      "Wait time saved": [
+        "მოლოდინის დრო შენახულია"
       ],
       "You are signed in to the account ${ account }.": [
         "შესული ბრძანდებით ანგარიშში ${ account }."
@@ -5151,6 +5238,9 @@
       ],
       "Add at least one condition": [
         "დაამატეთ, სულ ცოტა, ერთი პირობა"
+      ],
+      "Address cannot be yours": [
+        "მისამართი თქვენი ვერ იქნება"
       ],
       "Address primary private key not found": [
         "მისამართის ძირითადი პირადი გასაღები ნაპოვნი არაა"
@@ -7821,9 +7911,6 @@
       "active": [
         "აქტიური"
       ],
-      "Activity monitor": [
-        "აქტივობების მონიტორი"
-      ],
       "Activity Monitor": [
         "აქტივობების მონიტორი"
       ],
@@ -8312,9 +8399,6 @@
       "Did you know?": [
         "იცოდით?"
       ],
-      "Disable detailed events": [
-        "დეტალური მოვლენების გამორთვა"
-      ],
       "Disable recovery by email address": [
         "ელფოსტის მისამართით აღდგენის გამორთვა"
       ],
@@ -8323,9 +8407,6 @@
       ],
       "Disabled countries": [
         "გამორთული ქვეყნები"
-      ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "გათიშვის თარიღი ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "2FA-ის გათიშვა თქვენს ანგარიშს ნაკლებად დაცულს გახდის. გააგრძელეთ, თუ ზუსტად იცით, რას აკეთებთ."
@@ -8463,9 +8544,6 @@
       "Enable auto-renew to keep access to your premium features.": [
         "ჩართეთ ავტომატური განახლება, რომ შეინარჩუნოთ წვდომა თქვენს ფასიან ფუნქციებთან."
       ],
-      "Enable detailed events": [
-        "დეტალური მოვლენების ჩართვა"
-      ],
       "Enable email notifications": [
         "ელფოსტის გაფრთხილებების ჩართვა"
       ],
@@ -8480,9 +8558,6 @@
       ],
       "Enabled countries": [
         "ჩართული ქვეყნები"
-      ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "ჩართვის თარიღი ${ formattedDateAndTime }"
       ],
       "Enabling auto-deletion…": [
         "ავტოამოცნობის ჩართვა…"
@@ -8645,12 +8720,6 @@
       ],
       "Gateways": [
         "რაუტერები"
-      ],
-      "Gateways monitoring is disabled.": [
-        "კარიბჭეების მონიტორინგი ჩართულია."
-      ],
-      "Gateways monitoring is enabled.": [
-        "კარიბჭეების მონიტორინგი ჩართულია."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "აღდგენის ახალი ფრაზის გენერაცია ძველ ფრაზას გათიშავს."
@@ -8823,9 +8892,6 @@
       ],
       "inactive": [
         "არააქტიური"
-      ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "მომხმარებლის IP მისამართის, მდებარეობის და ინტერნეტროვაიდერის ჩასმა მოვლენის ჟურნალში"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "${ formattedTaxRate }%-ის ჩათვლით ${ taxName }: ${ price }"
@@ -9047,9 +9113,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "მიმდინარეობს კალენდრის ჩატვირთვა. მოითმინეთ. გადაგამისამართებთ ჩვენს დაგეგმვის პლატფორმაზე Calendly ახალ ჩანართში."
       ],
-      "Loading detailed events current status.": [
-        "იტვირთება დეტალური მოვლენების მიმდინარე სტატუსი."
-      ],
       "Loading eduGAIN data...": [
         "მიმდინარეობს eduGAIN-ის მონაცემების ჩატვირთვა..."
       ],
@@ -9082,6 +9145,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode-ის ლოგო"
+      ],
+      "Maybe later": [
+        "შესაძლოა მოგვიანებით"
       ],
       "Medium Priority": [
         "საშუალო პრიორიტეტი"
@@ -11637,6 +11703,9 @@
       "Days of the week": [
         "დღე კვირაში"
       ],
+      "Default email address": [
+        "ნაგულისხმევი ელფოსტის მისამართი"
+      ],
       "Default language": [
         "ნაგულისხმები ენა"
       ],
@@ -12376,9 +12445,6 @@
       "VAT": [
         "დღგ"
       ],
-      "VAT identification number": [
-        "დღგ იდენტიფიკატორი ნომერი"
-      ],
       "Verification code": [
         "შემოწმების კოდი"
       ],
@@ -13095,9 +13161,6 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "მიუერთეთ თქვენი დომენი ${ BRAND_NAME }-ს და იქონიეთ ელფოსტის თქვენი მისამართები (მაგ: you@yourcompany.com). ჩვენი დამხმარე მთელს პროცესს გაგატარებთ."
-      ],
-      "View account-related events across your organization.": [
-        "ნახეთ ანგარიშთან დაკავშირებული მოვლენები თქვენს ორგანიზაციაში."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "თქვენს უფასო სატესტო ვერსიას ვადა გაუვიდა. მალე ანგარიშთან წვდომა გაგეთიშებათ. ${ action }"
@@ -15834,6 +15897,9 @@
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
       ],
+      "VAT number": [
+        "დღგ ნომერი"
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "გადაიხდით ${ amountToCharge }-ს თქვენი არჩეული გადახდის მეთოდით."
       ],
@@ -15883,8 +15949,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "ABN-ის დამატება"
+      ],
+      "Add Business Number": [
+        "ბიზნესის ნომრის დამატება"
+      ],
+      "Add EIN": [
+        "EIN-ის დამატება"
+      ],
+      "Add VAT number": [
+        "დღგ ნომრის დამატება"
+      ],
       "Business Number": [
         "ბიზნესის ნომერი"
+      ],
+      "Edit ABN": [
+        "ABN-ის რედაქტირება"
+      ],
+      "Edit Business Number": [
+        "ბიზნესის ნომრის ჩასწორება"
+      ],
+      "Edit EIN": [
+        "EIN-ის ჩასწორება"
+      ],
+      "Edit VAT number": [
+        "დღგ ნომრის ჩასწორება"
       ],
       "EIN": [
         "EIN"
@@ -16046,6 +16136,9 @@
       ],
       "Select a reason": [
         "აირჩიეთ მიზეზი"
+      ],
+      "Select country": [
+        "აირჩიეთ ქვეყანა"
       ],
       "Select state": [
         "აირჩიეთ შტატი"
@@ -19916,9 +20009,6 @@
       "Choose user affiliations": [
         "აირჩიეთ მომხმარებლის წევრობა"
       ],
-      "Click a value in the table to use it as filter": [
-        "დააწკაპუნეთ მნიშვნელობაზე ცხრილში, მისი ფილტრის სახით გამოსაყენებლად"
-      ],
       "Close": [
         "დახურვა"
       ],
@@ -19948,6 +20038,9 @@
       ],
       "Connect apps and devices": [
         "აპებისა და მოწყობილობების დაკავშირება"
+      ],
+      "Connect more addresses": [
+        "მეტი მისამართის დაკავშირება"
       ],
       "Connect organization": [
         "ორგანიზაციასთან მიერთება"
@@ -20244,6 +20337,9 @@
       ],
       "Email privacy": [
         "ელფოსტის კონფიდენციალობა"
+      ],
+      "Emergency access": [
+        "სასწრაფო წვდომა"
       ],
       "Enable advanced account protection": [
         "ანგარიშის დამატებითი დაცვის ჩართვა"

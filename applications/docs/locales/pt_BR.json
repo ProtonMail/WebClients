@@ -151,6 +151,9 @@
       "Choose a file or drag it here": [
         "Escolha um arquivo ou arraste-o aqui"
       ],
+      "Claim this address": [
+        "Confirmar este endereço"
+      ],
       "Clear data": [
         "Limpar dados"
       ],
@@ -2775,6 +2778,14 @@
         "Suporte prioritário"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Os campos de texto são opcionais. As informações que você fornecer neste formulário aparecerão somente em faturas emitidas no futuro e não afetarão as faturas existentes."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Os campos de texto são opcionais. As informações fornecidas neste formulário alterarão apenas a fatura selecionada, e não os detalhes das faturas futuras."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "NOTA:\n${ eventComment }"
@@ -2973,6 +2984,9 @@
       "Domain not available, try again later": [
         "Domínio indisponível. Tente novamente mais tarde."
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "A edição do endereço de cobrança não está disponível no momento. Tente novamente mais tarde."
+      ],
       "Email address is required": [
         "O endereço de e-mail é obrigatório"
       ],
@@ -3002,6 +3016,9 @@
       ],
       "Failed to copy photo to album": [
         "Erro ao copiar a foto para o álbum"
+      ],
+      "Failed to open to contact": [
+        "Não foi possível abrir o contato."
       ],
       "Failed to rename document. Please try again later.": [
         "A renomeação do documento falhou, tente novamente mais tarde"
@@ -3174,6 +3191,9 @@
       ],
       "Port is required": [
         "Porta é necessária"
+      ],
+      "Postal code is required": [
+        "Código postal é obrigatório"
       ],
       "Primary address key is not decrypted": [
         "A chave do endereço principal não está descriptografada"
@@ -3359,6 +3379,9 @@
       ],
       "Your import will not be processed.": [
         "Sua importação não será processada."
+      ],
+      "ZIP code is required": [
+        "O CEP é obrigatório."
       ]
     },
     "Error importing calendar": {
@@ -4250,6 +4273,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } expira em ${ daysLeft } dia.",
+        "${ planName } expira em ${ daysLeft } dias."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } expira hoje."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "O ${ PROTON_SENTINEL_NAME } protege sua conta com monitoramento dedicado de atividades suspeitas."
@@ -5895,6 +5925,9 @@
       "Colors": [
         "Cores"
       ],
+      "Company": [
+        "Empresa"
+      ],
       "Company name": [
         "Nome da empresa"
       ],
@@ -6192,6 +6225,9 @@
       "Start date": [
         "Data de início"
       ],
+      "State": [
+        "Estado"
+      ],
       "Stop sharing": [
         "Parar de compartilhar"
       ],
@@ -6275,6 +6311,9 @@
       ],
       "Your password (trusted contact)": [
         "Sua senha (contato de confiança)"
+      ],
+      "ZIP code": [
+        "CEP"
       ]
     },
     "Label for contact group color": {
@@ -8414,6 +8453,12 @@
       "Business Number": [
         "Número comercial"
       ],
+      "Edit ABN": [
+        "Editar ABN"
+      ],
+      "Edit EIN": [
+        "Editar EIN"
+      ],
       "EIN": [
         "Número de identificação tributária (EIN)"
       ],
@@ -8455,8 +8500,17 @@
       "A way to contact you": [
         "Uma maneira de entrar em contato com você"
       ],
+      "Anderson": [
+        "Braga"
+      ],
+      "Anytown": [
+        "Nova Esperança"
+      ],
       "Choose password": [
         "Escolher senha"
+      ],
+      "Company name": [
+        "Nome da empresa"
       ],
       "E.g., ": [
         "Ex., "
@@ -8484,6 +8538,9 @@
       ],
       "Last name": [
         "Sobrenome"
+      ],
+      "Main street 12": [
+        "Rua Principal, 12"
       ],
       "Message": [
         "Mensagem"
@@ -8532,6 +8589,12 @@
       ],
       "Start typing an email address": [
         "Comece a digitar um endereço de e-mail"
+      ],
+      "Thomas": [
+        "Andrea"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ],
       "Your organization name": [
         "Seu nome da organização"
@@ -9596,6 +9659,9 @@
       "Alias saved and copied": [
         "Alias salvo e copiado"
       ],
+      "Billing details updated": [
+        "Os detalhes de faturamento forem atualizados"
+      ],
       "Canceling import": [
         "Cancelando a importação"
       ],
@@ -10027,6 +10093,9 @@
       ],
       "Duplicate folder found": [
         "Pasta duplicada encontrada"
+      ],
+      "Edit billing address": [
+        "Editar o endereço de cobrança"
       ],
       "Edit contact": [
         "Editar contato"

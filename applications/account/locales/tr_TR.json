@@ -256,6 +256,9 @@
       "Claim it": [
         "İstek yapın"
       ],
+      "Claim this address": [
+        "Bu adresi al"
+      ],
       "Clear all formatting": [
         "Tüm biçimlendirmeyi temizle"
       ],
@@ -726,6 +729,9 @@
       ],
       "Get ${ planOrAppName }": [
         "${ planOrAppName } edinin"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Ücretsiz bir ${ BRAND_NAME } adresi alın"
       ],
       "Get a new encrypted email address": [
         "Yeni bir şifrelenmiş e-posta adresi edinin"
@@ -5269,6 +5275,9 @@
       "Add emergency contact": [
         "Acil durum kişisi ekle"
       ],
+      "Added on ${ formattedDate }": [
+        "${ formattedDate } tarihinde eklendi"
+      ],
       "Change access wait time": [
         "Erişim bekleme süresini değiştir"
       ],
@@ -5283,6 +5292,9 @@
       ],
       "Disabled": [
         "Kullanımdan kaldırılmış"
+      ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "Acil durum erişiminizi kaybetmeyin. Otomatik yenilemeyi bugün açın."
       ],
       "Emergency access": [
         "Acil durum erişimi"
@@ -5302,6 +5314,9 @@
       "Emergency contact removed": [
         "Acil durum kişisi kaldırıldı"
       ],
+      "Enable auto-renew": [
+        "Otomatik yenilemeyi aç"
+      ],
       "Give access now": [
         "Erişim izni ver"
       ],
@@ -5319,9 +5334,6 @@
       ],
       "None": [
         "Yok"
-      ],
-      "on ${ formattedAccessibleAt }": [
-        "${ formattedAccessibleAt } zamanında"
       ],
       "Only ": [
         "Yalnızca "
@@ -5341,6 +5353,9 @@
       "Remove trusted contact": [
         "Güvenilir kişiyi kaldır"
       ],
+      "Renew to get emergency access again.": [
+        "Acil erişimi yeniden kazanmak için yenileyin."
+      ],
       "Request access?": [
         "Erişim istensin mi?"
       ],
@@ -5349,6 +5364,9 @@
       ],
       "Stop being trusted contact?": [
         "Güvenilir kişi olmayı bırakmak istiyor musunuz?"
+      ],
+      "Subscription expired": [
+        "Aboneliğin geçerlilik süresi dolmuş"
       ],
       "They added me as trusted contact. I can access their account in case of an emergency.": [
         "Beni güvenilir kişi olarak ekledi. Acil bir durumda hesabına erişebilirim."
@@ -5367,6 +5385,9 @@
       ],
       "Trusted contact": [
         "Güvenilir kişi"
+      ],
+      "Upgrade": [
+        "Yükselt"
       ],
       "Upgrade to ${ planName }": [
         "${ planName } tarifesine yükseltin"
@@ -7855,6 +7876,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } etkinlikleri güvenli olarak eşitlemek ve şifrelemek için bir ${ BRAND_NAME } adresine gerek duyar. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } yeni takvim",
         "${ calendarsToBeCreatedCount } yeni takvim"
@@ -8056,11 +8080,20 @@
       "**${ appName }** is not supported.": [
         "**${ appName }** desteklenmiyor."
       ],
+      "**Enable automatic backups** for peace of mind": [
+        "Rahat etmek için **otomatik yedeklemeyi açın**"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } gibi tüm ${ BRAND_NAME_TWO } hizmetlerini kullanabilmek için **bir ${ BRAND_NAME } adresi edinin**."
       ],
+      "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
+        "Google Authenticator gibi diğer iki adımlı doğrulama uygulamalarında **var olan kodlarınızı içe aktarın**."
+      ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Arkadaşlarınızı** öneri bağlantınızla ${ BRAND_NAME } kullanmaya davet edin."
+      ],
+      "**Sync codes** to all your devices": [
+        "Tüm aygıtlarınızda **kodları eşitleyin**"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } diğer",
@@ -8139,9 +8172,6 @@
       "active": [
         "etkin"
       ],
-      "Activity monitor": [
-        "Etkinlik izleyici"
-      ],
       "Activity Monitor": [
         "Etkinlik izleyici"
       ],
@@ -8156,6 +8186,9 @@
       ],
       "Add a recovery phone number": [
         "Bir kurtarma telefonu numarası ekle"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Hesabınıza bir güvenlik katmanı daha ekleyin. Her oturum açtığınızda iki adımlı doğrulama ile kimliğinizi doğrulamanız gerekir."
       ],
       "Add domain": [
         "Etki alanı ekle"
@@ -8636,9 +8669,6 @@
       "Did you know?": [
         "Biliyor muydunuz?"
       ],
-      "Disable detailed events": [
-        "Ayrıntılı etkinlikleri kapat"
-      ],
       "Disable recovery by email address": [
         "E-posta ile kurtarmayı kapat"
       ],
@@ -8647,9 +8677,6 @@
       ],
       "Disabled countries": [
         "Devre dışı bırakılan ülkeler"
-      ],
-      "Disabled on ${ formattedDateAndTime }": [
-        "${ formattedDateAndTime } zamanında kapatıldı"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "İki adımlı doğrulamayı kapatmak hesabınızın güvenliğini azaltacak. Bu işlemi yalnızca gerçekten gerekliyse yapın."
@@ -8727,6 +8754,9 @@
       "Download recovery file": [
         "Kurtarma dosyasını indir"
       ],
+      "Download the app and import existing codes.": [
+        "Uygulamayı indirin ve var olan kodları içe aktarın."
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Kullanmak istediğiniz uygulamayı indirin ve gizliliğinizi gittiğiniz her yere götürün."
       ],
@@ -8787,9 +8817,6 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Ücretli özelliklere erişiminizi sürdürmek için otomatik yenilemeyi açın."
       ],
-      "Enable detailed events": [
-        "Ayrıntılı etkinlikler özelliğini aç"
-      ],
       "Enable email notifications": [
         "E-posta bildirimlerini aç"
       ],
@@ -8804,9 +8831,6 @@
       ],
       "Enabled countries": [
         "Etkinleştirilen ülkeler"
-      ],
-      "Enabled on ${ formattedDateAndTime }": [
-        "${ formattedDateAndTime } zamanında açıldı"
       ],
       "Enabling auto-deletion…": [
         "Otomatik silme özelliği açılıyor…"
@@ -8840,6 +8864,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Bilgisayar uygulamasıyla daha hızlı, odaklanmış bir e-posta deneyiminin tadını çıkarın."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Tümüyle güvenli ve şifrelenmiş iletişim sağlayın. Ücretsiz ${ BRAND_NAME } e-posta adresinizi şimdi alın."
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "${ BRAND_NAME } hesabınızı açmayı tamamlamak ve ${ VPN_APP_NAME } uygulamasını tüm aygıtlarınızda kullanmak için bir parola yazın."
@@ -8970,17 +8997,17 @@
       "Gain visibility across your organization": [
         "Kuruluşunuzun genel görünümüne ulaşın"
       ],
+      "Gateway monitor": [
+        "Ağ geçidi izleyici"
+      ],
       "Gateways": [
         "Ağ geçitleri"
       ],
-      "Gateways monitoring is disabled.": [
-        "Ağ geçitleri izlemesi kapalı."
-      ],
-      "Gateways monitoring is enabled.": [
-        "Ağ geçitleri izlemesi açık."
-      ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Yeni bir kurtarma ifadesi oluşturmak, önceki ifadeyi kullanımdan kaldırır."
+      ],
+      "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
+        "Tüm aygıtlarınız için ${ AUTHENTICATOR_APP_NAME } uygulamasını edinin."
       ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } tarifesini edinin"
@@ -9157,9 +9184,6 @@
       "inactive": [
         "etkin değil"
       ],
-      "Include user IP address, location, and ISP (Internet Service Provider) in event logs": [
-        "Kullanıcı IP adresi, konum ve İSS (İnternet hizmeti sağlayıcı) etkinlik günlüklerine eklensin"
-      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "%${ formattedTaxRate } ${ taxName } dahil: ${ price }"
       ],
@@ -9235,6 +9259,9 @@
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Bir sunucunun ülkesini değiştirmek 10 gün sürer. Bu yüzden seçiminizin doğru olduğundan emin olun."
+      ],
+      "It won't be linked to your ${ BRAND_NAME } Account, so there's **no risk of getting locked out**.": [
+        "${ BRAND_NAME } hesabınıza bağlanmayacağı için, **kilitlenme riskiniz yoktur**."
       ],
       "It's better to have:": [
         "Şöyle olması daha iyidir:"
@@ -9380,9 +9407,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanlama platformumuz Calendly açılacak."
       ],
-      "Loading detailed events current status.": [
-        "Ayrıntılı etkinliklerin güncel durumu yükleniyor."
-      ],
       "Loading eduGAIN data...": [
         "eduGAIN verileri yükleniyor..."
       ],
@@ -9418,6 +9442,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
+      ],
+      "Maybe later": [
+        "Belki daha sonra"
       ],
       "Medium Priority": [
         "Orta öncelik"
@@ -10183,6 +10210,9 @@
       "The most recent data update, excluding breaches.": [
         "Veri sızıntıları dışında son veri güncellemesi."
       ],
+      "The most secure and private two-factor authentication app, that's free and open-source.": [
+        "En güvenli ve gizli iki adımlı doğrulama uygulaması, ücretsiz ve açık kaynaklı."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "Oturum açtıklarında kullanıcılarınıza görüntülenecek ad."
       ],
@@ -10740,6 +10770,9 @@
       ],
       "Why?": [
         "Neden?"
+      ],
+      "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
+        "${ AUTHENTICATOR_APP_NAME } ile şunları yapabilirsiniz:"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Bir Business ya da Enterprise tarifesi ile kuruluşunuz için ${ boldDedicatedServers } satın alabilir ve bunlara hangi kullanıcıların erişebileceğini kontrol etmek için ${ boldGateways } ayarlayabilirsiniz."
@@ -12787,9 +12820,6 @@
       "VAT": [
         "KDV"
       ],
-      "VAT identification number": [
-        "Vergi kimlik numarası"
-      ],
       "Verification code": [
         "Doğrulama kodu"
       ],
@@ -13509,9 +13539,6 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Özel e-posta adresleri (siz@sirketiniz.com gibi) oluşturmak için özel etki alanınızı ${ BRAND_NAME } ile ilişkilendirin. Süreç boyunca yardımcımız size yol gösterecek."
-      ],
-      "View account-related events across your organization.": [
-        "Kuruluşunuz genelindeki hesapla etkinliklerini görüntüleyin."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ücretsiz deneme süreniz doldu. Hesabınıza erişim yakında kapatılacak. ${ action }"
@@ -16305,6 +16332,9 @@
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
       ],
+      "VAT number": [
+        "KDV numarası"
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Seçilmiş ödeme yönteminizden ${ amountToCharge } ödeme alınacak."
       ],
@@ -16360,8 +16390,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "ABN kodu ekle"
+      ],
+      "Add Business Number": [
+        "İş numarası ekle"
+      ],
+      "Add EIN": [
+        "EIN kodu ekle"
+      ],
+      "Add VAT number": [
+        "KDV numarası ekle"
+      ],
       "Business Number": [
         "İş numarası"
+      ],
+      "Edit ABN": [
+        "ABN kodunu düzenle"
+      ],
+      "Edit Business Number": [
+        "İş numarasını düzenle"
+      ],
+      "Edit EIN": [
+        "EIN kodunu düzenle"
+      ],
+      "Edit VAT number": [
+        "KDV numarasını düzenle"
       ],
       "EIN": [
         "EIN"
@@ -16523,6 +16577,9 @@
       ],
       "Select a reason": [
         "Bir neden seçin"
+      ],
+      "Select country": [
+        "Ülke seçin"
       ],
       "Select state": [
         "İl seçin"
@@ -20342,9 +20399,6 @@
       "Add users to \"${ policyName }\"": [
         "\"${ policyName }\" ilkesine kullanıcılar ekleyin"
       ],
-      "Added on": [
-        "Eklenme zamanı"
-      ],
       "Address": [
         "Adres"
       ],
@@ -20468,8 +20522,8 @@
       "Choose user affiliations": [
         "Kullanıcı ilişkilerini seçin"
       ],
-      "Click a value in the table to use it as filter": [
-        "Tablodan süzmek istediğiniz değere tıklayın"
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } adresinizi alın"
       ],
       "Close": [
         "Kapat"
@@ -20500,6 +20554,9 @@
       ],
       "Connect apps and devices": [
         "Uygulamaları ve aygıtları bağlayın"
+      ],
+      "Connect more addresses": [
+        "Başka adresler bağlayın"
       ],
       "Connect organization": [
         "Kuruluş ile bağlantı kur"
@@ -21525,6 +21582,9 @@
       ],
       "Time zone": [
         "Saat dilimi"
+      ],
+      "Try ${ AUTHENTICATOR_APP_NAME }": [
+        "${ AUTHENTICATOR_APP_NAME } uygulamasını deneyin"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"
