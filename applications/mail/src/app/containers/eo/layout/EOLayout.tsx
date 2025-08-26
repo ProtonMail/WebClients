@@ -12,17 +12,20 @@ import {
     PassLogo,
     PublicTopBanners,
     VpnLogo,
+    WalletLogo,
     getAppVersion,
     useConfig,
 } from '@proton/components';
-import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import {
+    APPS,
+    type APP_NAMES,
     BRAND_NAME,
     CALENDAR_APP_NAME,
     DRIVE_APP_NAME,
     MAIL_APP_NAME,
     PASS_APP_NAME,
     VPN_APP_NAME,
+    WALLET_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { getPrivacyPolicyURL, getStaticURL, getTermsURL } from '@proton/shared/lib/helpers/url';
 import { locales } from '@proton/shared/lib/i18n/locales';
@@ -47,7 +50,7 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
     );
 
     const appVersion = getAppVersion(APP_VERSION);
-    const size = 12;
+    const size = 10;
 
     return (
         <div className="flex *:min-size-auto flex-nowrap flex-column h-full eo-layout-bg overflow-auto">
@@ -67,7 +70,7 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
             </header>
             <div className="eo-layout-container sm:mx-7 flex-1 flex flex-nowrap flex-column">
                 <div>{children}</div>
-                <div className="mx-auto mt-8">
+                <div className="mx-auto mt-8 text-center">
                     <Href
                         href={getStaticURL('/mail')}
                         className="inline-block m-0 md:mx-2 w-1/5 sm:w-auto"
@@ -102,6 +105,13 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                         title={PASS_APP_NAME}
                     >
                         <PassLogo variant="glyph-only" size={size} />
+                    </Href>
+                    <Href
+                        href={getStaticURL('/wallet')}
+                        className="inline-block m-0 md:mx-2 w-1/5 sm:w-auto"
+                        title={WALLET_APP_NAME}
+                    >
+                        <WalletLogo variant="glyph-only" size={size} />
                     </Href>
                 </div>
             </div>
