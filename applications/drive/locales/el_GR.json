@@ -3044,6 +3044,14 @@
         "Υποστήριξη κατά προτεραιότητα"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Τα πεδία κειμένου είναι προαιρετικά. Οι πληροφορίες που παρέχετε σε αυτή τη φόρμα θα εμφανίζονται σε μελλοντικά τιμολόγια και δεν θα επηρεάσουν τα τιμολόγια που ήδη έχουν εκδοθεί."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Τα πεδία κειμένου είναι προαιρετικά. Οι πληροφορίες που παρέχετε σε αυτήν τη φόρμα θα αλλάξουν μόνο το τιμολόγιο που έχετε επιλέξει και όχι τα μελλοντικά στοιχεία του τιμολογίου σας."
+      ]
+    },
     "Email body for comment (comment part)": {
       "NOTE:\n${ eventComment }": [
         "ΣΗΜΕΙΩΣΗ:\n${ eventComment }"
@@ -3251,6 +3259,9 @@
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Η επεξεργασία της διεύθυνσης χρέωσης δεν είναι διαθέσιμη προς το παρόν. Παρακαλούμε προσπαθήστε ξανά αργότερα."
+      ],
       "Email address is required": [
         "Η διεύθυνση email είναι υποχρεωτική"
       ],
@@ -3298,6 +3309,9 @@
       ],
       "Failed to load the STL preview": [
         "Αποτυχία φόρτωσης της προεπισκόπησης STL"
+      ],
+      "Failed to open to contact": [
+        "Αποτυχία ανοίγματος επαφής"
       ],
       "Failed to resend invitation": [
         "Αποτυχία επαναποστολής πρόσκλησης"
@@ -3488,6 +3502,9 @@
       ],
       "Port is required": [
         "Απαιτείται θύρα"
+      ],
+      "Postal code is required": [
+        "Απαιτείται ταχυδρομικός κώδικας"
       ],
       "Primary address key is not decrypted": [
         "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
@@ -3709,6 +3726,9 @@
       ],
       "Your import will not be processed.": [
         "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
+      ],
+      "ZIP code is required": [
+        "Απαιτείται ταχυδρομικός κώδικας"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Μη αποκρυπτογραφήσιμο όνομα"
@@ -4714,6 +4734,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } απαιτεί τουλάχιστον 1 αποκλειστικό διακομιστή ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "Το ${ planName } λήγει σε ${ daysLeft } ημέρα.",
+        "Το ${ planName } λήγει σε ${ daysLeft } ημέρες."
+      ],
+      "${ planName } expires today.": [
+        "Το ${ planName } λήγει σήμερα."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "Το ${ PROTON_SENTINEL_NAME } προστατεύει τον λογαριασμό σας με αποκλειστική παρακολούθηση ύποπτης δραστηριότητας."
@@ -6807,6 +6834,9 @@
       "Comment": [
         "Σχόλιο"
       ],
+      "Company": [
+        "Εταιρεια"
+      ],
       "Company name": [
         "Όνομα εταιρείας"
       ],
@@ -7177,6 +7207,9 @@
       "Start date": [
         "Ημερομηνία Έναρξης"
       ],
+      "State": [
+        "Πολιτεία"
+      ],
       "Stolen data": [
         "Κλεμμένα δεδομένα"
       ],
@@ -7287,6 +7320,9 @@
       ],
       "Your password (trusted contact)": [
         "Ο κωδικός πρόσβασής σας (έμπιστη επαφή)"
+      ],
+      "ZIP code": [
+        "Τ.Κ."
       ]
     },
     "Label for contact group color": {
@@ -7480,6 +7516,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Μάθετε περισσότερα"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Για να συνεχίσετε να χρησιμοποιείτε το ${ BRAND_NAME }, παρακαλούμε βεβαιωθείτε ότι οι premium δυνατότητές σας δε χρησιμοποιούνται πλέον ή αναβαθμίστε το πλάνο σας."
       ],
       "upgrade for more storage": [
         "αναβαθμίστε για περισσότερο χώρο αποθήκευσης"
@@ -9550,6 +9589,9 @@
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
       ],
+      "VAT number": [
+        "Αριθμός ΑΦΜ"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Το νόμισμά σας άλλαξε σε ευρώ (€) επειδή οι τραπεζικές μεταφορές SEPA υποστηρίζουν μόνο πληρωμές σε ευρώ."
       ],
@@ -9602,8 +9644,32 @@
       "ABN": [
         "ΑΦΜ"
       ],
+      "Add ABN": [
+        "Προσθήκη ABN"
+      ],
+      "Add Business Number": [
+        "Προσθήκη Αριθμού ΦΠΑ Επιχείρησης"
+      ],
+      "Add EIN": [
+        "Προσθήκη ΑΦΜ"
+      ],
+      "Add VAT number": [
+        "Προσθήκη Αριθμού ΦΠΑ"
+      ],
       "Business Number": [
         "Αριθμός Επιχείρησης"
+      ],
+      "Edit ABN": [
+        "Επεξεργασία ABN"
+      ],
+      "Edit Business Number": [
+        "Επεξεργασία Αριθμού ΦΠΑ Επιχείρησης"
+      ],
+      "Edit EIN": [
+        "Επεξεργασία ΑΦΜ"
+      ],
+      "Edit VAT number": [
+        "Επεξεργασία Αριθμού ΦΠΑ"
       ],
       "EIN": [
         "ΑΦΜ"
@@ -9646,8 +9712,17 @@
       "A way to contact you": [
         "Ένας τρόπος να επικοινωνήσουμε μαζί σας"
       ],
+      "Anderson": [
+        "Καρανικολής"
+      ],
+      "Anytown": [
+        "Αθήνα"
+      ],
       "Choose password": [
         "Επιλογή κωδικού πρόσβασης"
+      ],
+      "Company name": [
+        "Όνομα εταιρείας"
       ],
       "E.g., ": [
         "Για παράδειγμα, "
@@ -9684,6 +9759,9 @@
       ],
       "Last name": [
         "Επώνυμο"
+      ],
+      "Main street 12": [
+        "Ονησίμου 12"
       ],
       "Message": [
         "Μήνυμα"
@@ -9724,6 +9802,9 @@
       "Select a reason": [
         "Επιλογή αιτιολογίας"
       ],
+      "Select country": [
+        "Επιλογή χώρας"
+      ],
       "Select state": [
         "Επιλέξτε νομό/περιοχή"
       ],
@@ -9735,6 +9816,12 @@
       ],
       "Start typing an email address": [
         "Έναρξη πληκτρολόγησης διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Thomas": [
+        "Θωμάς"
+      ],
+      "VAT number": [
+        "Α.Φ.Μ."
       ],
       "Your organization name": [
         "Το όνομα του οργανισμού σας"
@@ -10986,6 +11073,9 @@
       "Alias saved and copied": [
         "Το ψευδώνυμο αποθηκεύτηκε και αντιγράφηκε"
       ],
+      "Billing details updated": [
+        "Τα στοιχεία χρέωσης ενημερώθηκαν"
+      ],
       "Canceling import": [
         "Ακύρωση εισαγωγής"
       ],
@@ -11562,6 +11652,9 @@
       ],
       "Duplicate folder found": [
         "Βρέθηκε ομώνυμος φάκελος"
+      ],
+      "Edit billing address": [
+        "Επεξεργασία διεύθυνσης χρέωσης"
       ],
       "Edit contact": [
         "Επεξεργασία επαφής"
