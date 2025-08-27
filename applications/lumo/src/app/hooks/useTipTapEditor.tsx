@@ -2,7 +2,7 @@ import React from 'react';
 
 import Placeholder from '@tiptap/extension-placeholder';
 import type {Editor} from '@tiptap/react';
-import {isDesktop} from '@proton/shared/lib/helpers/browser';
+import {isMobile} from '@proton/shared/lib/helpers/browser';
 import {useEditor} from '@tiptap/react';
 import {StarterKit} from '@tiptap/starter-kit';
 import {Markdown as TipTapMarkdown} from 'tiptap-markdown';
@@ -57,16 +57,27 @@ const useTipTapEditor = ({
                         return;
                     }
                     const isEnter = e.key === 'Enter';
-                    if (!isDesktop) {
-                        // Mobile behavior: Enter creates new line, no submit on keyboard
-                        // Submit is handled via button tap only
+                    if (isMobile()) {
+                        // Mobile behavior: Enter creates single line break, no submit on keyboard
+                        if (isEnter) {
+                            e.preventDefault();
+                            // Insert hard break instead of new paragraph to avoid double spacing
+                            editor?.commands.setHardBreak();
+                            return true;
+                        }
                         return;
                     } else {
-                        // Desktop behavior: Enter submits, Shift+Enter creates new line
-                        if (isEnter && !e.shiftKey) {
-                            // Plain Enter on desktop should submit
+                        // Desktop behavior: Enter submits, Shift+Enter creates single line break
+                        if (isEnter && e.shiftKey) {
+                            // Shift+Enter creates single line break
+                            e.preventDefault();
+                            editor?.commands.setHardBreak();
+                            return true;
+                        } else if (isEnter && !e.shiftKey) {
+                            // Enter on desktop should submit
                             onSubmitCallback(editor);
                             e.preventDefault();
+                            return true;
                         }
                     }
                 },
@@ -106,7 +117,6 @@ const useTipTapEditor = ({
     }, [editor, isProcessingAttachment]);
 
     const handleSubmit = () => {
-        // Additional check before submission
         if (isProcessingAttachment) {
             return;
         }

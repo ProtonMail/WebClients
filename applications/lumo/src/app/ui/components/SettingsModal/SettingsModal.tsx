@@ -147,11 +147,6 @@ const LumoSettingsUpgradePanel = ({ isGuest = false }: { isGuest?: boolean }) =>
                 {/* Header */}
                 <div className="flex items-center gap-2">
                     <img src={lumoPlusLogo} alt="lumo+" style={{ height: '20px' }} />
-                    {hasLumoPlus && isVisionary && (
-                        <span className="inline-flex items-center py-1 px-2 text-xs rounded-full plan-name">
-                            Visionary
-                        </span>
-                    )}
                 </div>
 
                 {/* Subscription status message */}
