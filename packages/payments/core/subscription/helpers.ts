@@ -464,6 +464,7 @@ export const getHasPlusPlan = (planName?: PLANS | ADDON_NAMES) => {
         planName &&
         [
             PLANS.MAIL,
+            PLANS.VPN,
             PLANS.VPN2024,
             PLANS.PASS,
             PLANS.DRIVE,
