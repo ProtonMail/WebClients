@@ -6,7 +6,7 @@
     "scripts": {
         "check-types": "tsc",
         "i18n:validate": "proton-i18n validate lint-functions",
-        "lint": "eslint . src --ext .js,.ts,.tsx --quiet",
+        "lint": "eslint --quiet",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "test": "jest ",
         "test:ci": "jest --runInBand --ci",
@@ -41,7 +41,7 @@
         "@testing-library/react-hooks": "^8.0.1",
         "babel-jest": "^29.7.0",
         "babel-plugin-transform-require-context": "^0.1.1",
-        "eslint": "^8.57.1",
+        "eslint": "^9.33.0",
         "jest": "^29.7.0",
         "jest-junit": "^16.0.0",
         "msw": "^2.10.5",

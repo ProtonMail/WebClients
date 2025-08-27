@@ -7,7 +7,7 @@
     "scripts": {
         "build": "cross-env NODE_ENV=production ./bin/build.mjs",
         "check-types": "tsc",
-        "lint": "eslint src --ext .ts",
+        "lint": "eslint --quiet",
         "pretty": "prettier --write  $(find src -type f -name '*.ts')",
         "test": "echo No tests yet",
         "test:ci": "echo No tests yet"
@@ -20,7 +20,7 @@
         "browserslist-to-esbuild": "^2.1.1",
         "cross-env": "^7.0.3",
         "esbuild": "^0.25.9",
-        "eslint": "^8.57.1",
+        "eslint": "^9.33.0",
         "prettier": "^3.6.2",
         "typescript": "^5.9.2"
     }
