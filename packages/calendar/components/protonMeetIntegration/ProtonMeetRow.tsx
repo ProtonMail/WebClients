@@ -57,7 +57,7 @@ export const ProtonMeetRow = ({
                 deleteMeeting={deleteProtonMeet}
                 refetchMeeting={setup}
                 fetchingDetailsFailed={meetingDetails.failed}
-                hidePassphrase={meetingDetails.hidePassphrase}
+                hidePassphrase={meetingDetails.hidePassphrase || !meetingDetails.id}
             />
         );
     }
