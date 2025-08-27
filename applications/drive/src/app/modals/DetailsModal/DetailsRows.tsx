@@ -1,10 +1,12 @@
-import { FileNameDisplay, Row, TimeIntl } from '@proton/components';
+import { Row, TimeIntl } from '@proton/components';
 import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
+
+import { FileName } from '../../components/FileName';
 
 export function FileNameRow({ label, name }: { label: string; name: string }) {
     return (
         <DetailsRow label={label}>
-            <FileNameDisplay text={name} />
+            <FileName text={name} />
         </DetailsRow>
     );
 }

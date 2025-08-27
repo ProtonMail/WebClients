@@ -1,6 +1,7 @@
-import { FileIcon, FileNameDisplay, Loader, SidebarListItem, SidebarListItemContent } from '@proton/components';
+import { FileIcon, Loader, SidebarListItem, SidebarListItemContent } from '@proton/components';
 
 import type { TreeItem } from '../../../../../store';
+import { FileName } from '../../../../FileName';
 import SidebarListItemLink from '../../SidebarListItemLink';
 import { generateSidebarItemStyle } from '../utils';
 import ExpandButton from './DriveExpandButton';
@@ -49,7 +50,7 @@ export default function DriveSidebarSubfolder({ shareId, folder, level, toggleEx
                         ) : (
                             <FileIcon className="self-center my-auto drive-sidebar--icon" mimeType="Folder" />
                         )}
-                        <FileNameDisplay text={folder.link.name} />
+                        <FileName text={folder.link.name} />
                     </div>
                 </SidebarListItemContent>
             </SidebarListItemLink>
