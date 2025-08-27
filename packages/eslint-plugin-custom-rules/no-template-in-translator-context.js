@@ -4,7 +4,7 @@ const isValidTranslatorNode = (node) => {
     return node.callee && node.callee.type === 'Identifier' && node.callee.name === 'c' && node.arguments.length === 1;
 };
 
-module.exports = {
+export default {
     meta: {
         type: 'problem',
         fixable: 'code',

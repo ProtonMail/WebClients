@@ -15,7 +15,7 @@ const isFormatCall = (node) => {
     return node.callee && node.callee.type === 'Identifier' && node.callee.name === 'format';
 };
 
-module.exports = {
+export default {
     meta: {
         type: 'suggestion',
         docs: {
