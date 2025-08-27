@@ -373,6 +373,7 @@ const getCanAccessDuoPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.DRIVE_1TB,
     PLANS.PASS,
     PLANS.PASS_FAMILY,
+    PLANS.VPN,
     PLANS.VPN2024,
     PLANS.LUMO,
     PLANS.BUNDLE,
