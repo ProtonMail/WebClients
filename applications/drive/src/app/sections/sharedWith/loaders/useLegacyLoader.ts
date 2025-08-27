@@ -2,9 +2,9 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/components';
 import { generateNodeUid } from '@proton/drive/index';
 import { NodeType } from '@proton/drive/index';
-import { useLoading } from '@proton/hooks';
 import { querySharedWithMeAlbums } from '@proton/shared/lib/api/drive/photos';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { ShareTargetType } from '@proton/shared/lib/interfaces/drive/sharing';
@@ -14,18 +14,16 @@ import { useDebouncedRequest } from '../../../store/_api';
 import { useInvitationsListing } from '../../../store/_invitations';
 import { type DecryptedLink, useLink } from '../../../store/_links';
 import { useMemoArrayNoMatterTheOrder } from '../../../store/_views/utils';
-import { sendErrorReport } from '../../../utils/errorHandling';
-import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
+import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
+import { useLegacyErrorHandler } from '../../../utils/errorHandling/useLegacyErrorHandler';
 import { ItemType, useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
 import { useSharedInfoBatcher } from '../legacy/useLegacyDirectSharingInfo';
 
 export const useLegacyLoader = () => {
-    const { handleError } = useSdkErrorHandler();
+    const { handleError } = useLegacyErrorHandler();
     const { loadSharedInfo } = useSharedInfoBatcher();
+    const { createNotification } = useNotifications();
 
-    // Moved from useLegacySharedWithMeNodes
-    const [isLoading, withLoading] = useLoading(true);
-    const [isInvitationsLoading, withInvitationsLoading] = useLoading(true);
     const request = useDebouncedRequest();
     const { getLink } = useLink();
 
@@ -53,6 +51,7 @@ export const useLegacyLoader = () => {
                     abortSignal
                 );
                 if (Code === 1000) {
+                    let showErrorNotification = false;
                     await Promise.all(
                         Albums.map(async (album) => {
                             try {
@@ -63,10 +62,21 @@ export const useLegacyLoader = () => {
                                 const link = await getLink(abortSignal, album.ShareID, album.LinkID);
                                 setAlbums((prevAlbums) => [...prevAlbums, link]);
                             } catch (e) {
-                                sendErrorReport(e);
+                                handleError(e, {
+                                    showNotification: false,
+                                    extra: { volumeId: album.VolumeID, shareId: album.ShareID, linkId: album.LinkID },
+                                });
+                                showErrorNotification = true;
                             }
                         })
                     );
+
+                    if (showErrorNotification) {
+                        createNotification({
+                            type: 'error',
+                            text: c('Error').t`We were not able to load some items shared with you`,
+                        });
+                    }
 
                     if (More) {
                         void sharedWithMeCall(AnchorID);
@@ -75,93 +85,106 @@ export const useLegacyLoader = () => {
             };
             return sharedWithMeCall();
         },
-        [getLink, request]
+        [request, getLink, handleError, createNotification]
     );
 
-    const populateNodesFromLegacy = useCallback(() => {
-        const { setLoadingLegacyNodes, isLoadingLegacyNodes, setSharedWithMeItem, cleanupStaleItems } =
-            useSharedWithMeListingStore.getState();
-        if (cachedLinks.length === 0 || isLoadingLegacyNodes) {
-            return;
-        }
+    const populateNodesFromLegacy = useCallback(async () => {
+        const { setSharedWithMeItem, cleanupStaleItems } = useSharedWithMeListingStore.getState();
+        const loadedUids = new Set<string>();
+        let showErrorNotification = false;
+        const nodesToProcess = cachedLinks.map((legacyNode) => {
+            const uid = generateNodeUid(legacyNode.volumeId, legacyNode.linkId);
+            return {
+                ...legacyNode,
+                id: uid,
+                uid,
+                isLegacy: true,
+                thumbnailId: legacyNode.activeRevision?.id || uid,
+            };
+        });
 
-        setLoadingLegacyNodes(true);
-        try {
-            const loadedUids = new Set<string>();
-            const nodesToProcess = cachedLinks.map((legacyNode) => {
-                const uid = generateNodeUid(legacyNode.volumeId, legacyNode.linkId);
-                return {
-                    ...legacyNode,
-                    id: uid,
-                    uid,
-                    isLegacy: true,
-                    thumbnailId: legacyNode.activeRevision?.id || uid,
-                };
-            });
+        const loadSharedInfoPromises = nodesToProcess.map((missingNode) => {
+            const shareId = missingNode.shareId || missingNode.rootShareId;
+            if (!shareId) {
+                handleError(new EnrichedError("The node to process don't have shareId or rootShareId"), {
+                    showNotification: false,
+                });
+                return Promise.resolve();
+            }
 
-            nodesToProcess.forEach((missingNode) => {
-                const shareId = missingNode.shareId || missingNode.rootShareId;
-                if (shareId) {
+            return new Promise<void>((resolve) => {
+                try {
                     loadSharedInfo(shareId, (sharedInfo) => {
-                        if (!sharedInfo) {
-                            console.warn(
-                                'The shared with me node entity is missing sharing info. It could be race condition and means it is probably not shared anymore.',
-                                { uid: missingNode.uid, shareId }
-                            );
-                            return;
-                        }
-                        let nodeType = NodeType.Album;
-                        if (missingNode.type === LinkType.FILE) {
-                            nodeType = NodeType.File;
-                        } else if (missingNode.type === LinkType.FOLDER) {
-                            nodeType = NodeType.Folder;
-                        }
+                        try {
+                            if (!sharedInfo) {
+                                console.warn(
+                                    'The shared with me node entity is missing sharing info. It could be race condition and means it is probably not shared anymore.',
+                                    { uid: missingNode.uid, shareId }
+                                );
+                                return;
+                            }
+                            let nodeType = NodeType.Album;
+                            if (missingNode.type === LinkType.FILE) {
+                                nodeType = NodeType.File;
+                            } else if (missingNode.type === LinkType.FOLDER) {
+                                nodeType = NodeType.Folder;
+                            }
 
-                        loadedUids.add(missingNode.uid);
-                        setSharedWithMeItem({
-                            nodeUid: missingNode.uid,
-                            name: missingNode.name,
-                            type: nodeType,
-                            mediaType: missingNode.mimeType,
-                            itemType: ItemType.DIRECT_SHARE,
-                            thumbnailId: missingNode.thumbnailId,
-                            size: missingNode.size,
-                            directShare: {
-                                sharedOn: new Date(sharedInfo.sharedOn * 1000),
-                                sharedBy: sharedInfo.sharedBy,
-                            },
-                            legacy: {
-                                isFromLegacy: true,
-                                linkId: missingNode.linkId,
-                                shareId,
-                                volumeId: missingNode.volumeId,
-                            },
-                        });
+                            loadedUids.add(missingNode.uid);
+                            setSharedWithMeItem({
+                                nodeUid: missingNode.uid,
+                                name: missingNode.name,
+                                type: nodeType,
+                                mediaType: missingNode.mimeType,
+                                itemType: ItemType.DIRECT_SHARE,
+                                thumbnailId: missingNode.thumbnailId,
+                                size: missingNode.size,
+                                directShare: {
+                                    sharedOn: new Date(sharedInfo.sharedOn * 1000),
+                                    sharedBy: sharedInfo.sharedBy,
+                                },
+                                legacy: {
+                                    isFromLegacy: true,
+                                    linkId: missingNode.linkId,
+                                    shareId,
+                                    volumeId: missingNode.volumeId,
+                                },
+                            });
+                        } catch (e) {
+                            handleError(e, { showNotification: false });
+                            showErrorNotification = true;
+                        } finally {
+                            resolve();
+                        }
                     });
+                } catch (e) {
+                    handleError(e, { showNotification: false });
+                    showErrorNotification = true;
+                    resolve();
                 }
             });
-            cleanupStaleItems(ItemType.DIRECT_SHARE, loadedUids, { legacyCleanup: true });
-        } catch (e) {
-            handleError(e, { fallbackMessage: c('Error').t`We were not able some of your shared items` });
-        } finally {
-            setLoadingLegacyNodes(false);
+        });
+
+        await Promise.all(loadSharedInfoPromises);
+        cleanupStaleItems(ItemType.DIRECT_SHARE, loadedUids, { legacyCleanup: true });
+
+        if (showErrorNotification) {
+            createNotification({
+                type: 'error',
+                text: c('Error').t`We were not able to load some of your invitations`,
+            });
         }
-        // cachedLinks is not stable, we should ignore it
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [loadSharedInfo, handleError]);
+    }, [cachedLinks, loadSharedInfo, handleError, createNotification]);
 
     const populateInvitationsFromLegacy = useCallback(() => {
-        const { setLoadingLegacyInvitations, isLoadingLegacyInvitations, setSharedWithMeItem, cleanupStaleItems } =
-            useSharedWithMeListingStore.getState();
-        if (cachedLinks.length === 0 || isLoadingLegacyInvitations) {
-            return;
-        }
+        const { setSharedWithMeItem, cleanupStaleItems } = useSharedWithMeListingStore.getState();
+        const loadedUids = new Set<string>();
+        let showErrorNotification = false;
 
-        setLoadingLegacyInvitations(true);
-        try {
-            const loadedUids = new Set<string>();
-            invitations.forEach((invitation) => {
+        invitations.forEach((invitation) => {
+            try {
                 const uid = generateNodeUid(invitation.share.volumeId, invitation.link.linkId);
+                const invitationUid = generateNodeUid(invitation.share.shareId, invitation.invitation.invitationId);
                 let nodeType = NodeType.Album;
                 if (invitation.link.type === LinkType.FILE) {
                     nodeType = NodeType.File;
@@ -169,7 +192,7 @@ export const useLegacyLoader = () => {
                     nodeType = NodeType.Folder;
                 }
 
-                loadedUids.add(invitation.invitation.invitationId);
+                loadedUids.add(uid);
                 setSharedWithMeItem({
                     nodeUid: uid,
                     name: invitation.decryptedLinkName || '',
@@ -179,7 +202,7 @@ export const useLegacyLoader = () => {
                     thumbnailId: undefined,
                     size: undefined,
                     invitation: {
-                        uid: invitation.invitation.invitationId,
+                        uid: invitationUid,
                         sharedBy: invitation.invitation.inviterEmail,
                     },
                     legacy: {
@@ -189,66 +212,84 @@ export const useLegacyLoader = () => {
                         volumeId: invitation.share.volumeId,
                     },
                 });
+            } catch (e) {
+                handleError(e, { showNotification: false });
+                showErrorNotification = true;
+            }
+        });
+
+        cleanupStaleItems(ItemType.INVITATION, loadedUids, { legacyCleanup: true });
+
+        if (showErrorNotification) {
+            createNotification({
+                type: 'error',
+                text: c('Error').t`We were not able to load some of your invitations`,
             });
-
-            cleanupStaleItems(ItemType.INVITATION, loadedUids, { legacyCleanup: true });
-        } catch (e) {
-            handleError(e, { fallbackMessage: c('Error').t`We were not able some of your shared items` });
-        } finally {
-            setLoadingLegacyInvitations(false);
         }
-        // invitations is not stable, we should ignore it
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [handleError]);
+    }, [invitations, handleError, createNotification]);
 
-    const loadLegacySharedWithMeAlbumsWithPopulate = useCallback(
+    useEffect(() => {
+        const { isPopulatingLegacyNodes, setPopulatingLegacyNodes } = useSharedWithMeListingStore.getState();
+
+        if (cachedLinks.length === 0 || isPopulatingLegacyNodes) {
+            return;
+        }
+
+        const runPopulate = async () => {
+            setPopulatingLegacyNodes(true);
+            await populateNodesFromLegacy();
+            setPopulatingLegacyNodes(false);
+        };
+
+        void runPopulate();
+    }, [populateNodesFromLegacy, cachedLinks]);
+
+    useEffect(() => {
+        const { isPopulatingLegacyInvitations, setPopulatingLegacyInvitations } =
+            useSharedWithMeListingStore.getState();
+
+        if (invitations.length === 0 || isPopulatingLegacyInvitations) {
+            return;
+        }
+
+        setPopulatingLegacyInvitations(true);
+        populateInvitationsFromLegacy();
+        setPopulatingLegacyInvitations(false);
+    }, [populateInvitationsFromLegacy, invitations]);
+
+    const handleLoadLegacySharedWithMeAlbums = useCallback(
         async (abortSignal: AbortSignal) => {
+            const { isLoadingLegacyNodes, setLoadingLegacyNodes } = useSharedWithMeListingStore.getState();
+            if (isLoadingLegacyNodes) {
+                return;
+            }
+            setLoadingLegacyNodes(true);
             await loadLegacySharedWithMeAlbums(abortSignal);
-            populateNodesFromLegacy();
+            setLoadingLegacyNodes(false);
         },
-        // loadLegacySharedWithMeAlbums and populateNodesFromLegacy are not stable, we should ignore them
+        // loadLegacySharedWithMeAlbums is not stable, we should ignore them
         // eslint-disable-next-line react-hooks/exhaustive-deps
         []
     );
 
-    const loadLegacyInvitationsWithPopulate = useCallback(
+    const loadLegacyInvitations = useCallback(
         async (abortSignal: AbortSignal) => {
-            try {
-                await loadInvitations(abortSignal, ShareTargetType.Album);
-                populateInvitationsFromLegacy();
-            } catch (e) {
-                handleError(e, { fallbackMessage: c('Error').t`We were not able some of your shared items` });
+            const { isLoadingLegacyInvitations, setLoadingLegacyInvitations } = useSharedWithMeListingStore.getState();
+            if (isLoadingLegacyInvitations) {
+                return;
             }
+            setLoadingLegacyInvitations(true);
+            await loadInvitations(abortSignal, ShareTargetType.Album);
+            setLoadingLegacyInvitations(false);
         },
-        // loadInvitations and populateInvitationsFromLegacy are not stable, we should ignore them
+        // loadInvitations is not stable, we should ignore them
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        [handleError]
+        []
     );
 
-    useEffect(() => {
-        const ac = new AbortController();
-        void withLoading(loadLegacySharedWithMeAlbumsWithPopulate(ac.signal).catch(sendErrorReport));
-        return () => {
-            ac.abort();
-        };
-        // loadLegacySharedWithMeAlbumsWithPopulate and withLoading are not stable, we should ignore them
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
-    useEffect(() => {
-        const ac = new AbortController();
-        void withInvitationsLoading(loadLegacyInvitationsWithPopulate(ac.signal).catch(sendErrorReport));
-        return () => {
-            ac.abort();
-        };
-        // loadLegacyInvitationsWithPopulate and withInvitationsLoading are not stable, we should ignore them
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
     return {
-        isLegacyLoading: isLoading || isInvitationsLoading,
-        loadLegacySharedWithMeAlbums: loadLegacySharedWithMeAlbumsWithPopulate,
-        loadLegacyInvitations: loadLegacyInvitationsWithPopulate,
+        loadLegacySharedWithMeAlbums: handleLoadLegacySharedWithMeAlbums,
+        loadLegacyInvitations: loadLegacyInvitations,
         populateNodesFromLegacy,
         populateInvitationsFromLegacy,
     };
