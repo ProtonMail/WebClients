@@ -1,12 +1,21 @@
-module.exports = {
+import dateFormattingLocale from './date-formatting-locale.js';
+import deprecateClasses from './deprecate-classes.js';
+import deprecateResponsiveUtilityClasses from './deprecate-responsive-utility-classes.js';
+import deprecateSizingClasses from './deprecate-sizing-classes.js';
+import deprecateSpacingUtilityClasses from './deprecate-spacing-utility-classes.js';
+import noPlaywrightStringTag from './no-playwright-string-tag.js';
+import noTemplateInTranslatorContext from './no-template-in-translator-context.js';
+import validateTtag from './validate-ttag.js';
+
+export default {
     rules: {
-        'date-formatting-locale': require('./date-formatting-locale'),
-        'deprecate-classes': require('./deprecate-classes'),
-        'deprecate-responsive-utility-classes': require('./deprecate-responsive-utility-classes'),
-        'deprecate-sizing-classes': require('./deprecate-sizing-classes'),
-        'deprecate-spacing-utility-classes': require('./deprecate-spacing-utility-classes'),
-        'no-playwright-string-tag': require('./no-playwright-string-tag'),
-        'no-template-in-translator-context': require('./no-template-in-translator-context'),
-        'validate-ttag': require('./validate-ttag'),
+        'date-formatting-locale': dateFormattingLocale,
+        'deprecate-classes': deprecateClasses,
+        'deprecate-responsive-utility-classes': deprecateResponsiveUtilityClasses,
+        'deprecate-sizing-classes': deprecateSizingClasses,
+        'deprecate-spacing-utility-classes': deprecateSpacingUtilityClasses,
+        'no-playwright-string-tag': noPlaywrightStringTag,
+        'no-template-in-translator-context': noTemplateInTranslatorContext,
+        'validate-ttag': validateTtag,
     },
 };

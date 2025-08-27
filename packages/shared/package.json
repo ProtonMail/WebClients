@@ -7,7 +7,7 @@
     "scripts": {
         "check-types": "tsc",
         "i18n:validate": "proton-i18n validate lint-functions lib",
-        "lint": "eslint lib test --ext .js,.ts,tsx --quiet",
+        "lint": "eslint --quiet",
         "pretty": "prettier --write $(find lib -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "test": "NODE_ENV=test karma start test/karma.conf.js",
         "test:ci": "yarn test",
@@ -53,7 +53,7 @@
         "@types/karma-junit-reporter": "^2.0.4",
         "@types/loglevel": "^1.6.3",
         "@webgpu/types": "^0.1.64",
-        "eslint": "^8.57.1",
+        "eslint": "^9.33.0",
         "eslint-plugin-jasmine": "^4.2.2",
         "jasmine": "^5.9.0",
         "jasmine-core": "^5.9.0",

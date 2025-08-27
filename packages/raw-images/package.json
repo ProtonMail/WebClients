@@ -17,9 +17,9 @@
     ],
     "scripts": {
         "build": "bash ./build-dcraw.sh && bash ./build-cr3.sh",
-        "lint": "eslint . --ext .js,.ts --quiet"
+        "lint": "eslint --quiet"
     },
     "devDependencies": {
-        "eslint": "^8.57.1"
+        "eslint": "^9.33.0"
     }
 }

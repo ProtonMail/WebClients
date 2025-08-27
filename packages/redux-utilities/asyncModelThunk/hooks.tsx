@@ -13,7 +13,7 @@ import {
 import type { ReducerValue } from './interface';
 
 const createQueue = <T,>() => {
-    let queue: T[] = [];
+    const queue: T[] = [];
     const enqueue = (value: T) => {
         return queue.push(value);
     };
@@ -116,7 +116,7 @@ export const createHooks = <State, Extra, Returned, ThunkArg = void>(
         return useCallback((arg?: ThunkArg) => dispatch(thunk(arg)), []);
     };
 
-    let queueRef: { state: boolean; queue: Queue | null; id: null | any; once: boolean } = {
+    const queueRef: { state: boolean; queue: Queue | null; id: null | any; once: boolean } = {
         state: false,
         queue: null,
         id: null,

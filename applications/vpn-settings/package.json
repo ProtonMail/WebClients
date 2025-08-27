@@ -12,7 +12,7 @@
         "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin --verbose",
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context:web": "proton-i18n validate",
-        "lint": "eslint src --ext .js,.ts,.tsx --quiet",
+        "lint": "eslint --quiet",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --logical --webpackOnCaffeine",
         "test": "echo No test yet",
@@ -47,7 +47,7 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
-        "eslint": "^8.57.1",
+        "eslint": "^9.33.0",
         "prettier": "^3.6.2",
         "typescript": "^5.9.2"
     }
