@@ -11,7 +11,7 @@ import useListTelemetry, {
 import useIsEncryptedSearch from 'proton-mail/hooks/useIsEncryptedSearch';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
-import { isMessage as testIsMessage } from '../../helpers/elements';
+import { isElementMessage } from '../../helpers/elements';
 import type { Element } from '../../models/element';
 import { backendActionFinished, backendActionStarted } from '../../store/elements/elementsActions';
 import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';
@@ -33,7 +33,7 @@ export const useStar = () => {
             return;
         }
 
-        const isMessage = testIsMessage(elements[0]);
+        const isMessage = isElementMessage(elements[0]);
         const labelAction = isMessage ? labelMessages : labelConversations;
         const unlabelAction = isMessage ? unlabelMessages : unlabelConversations;
         const action = value ? labelAction : unlabelAction;

@@ -10,7 +10,7 @@ import type { Conversation } from 'proton-mail/models/conversation';
 import type { Element } from 'proton-mail/models/element';
 import { applyLabelToMessage, removeLabelFromMessage } from 'proton-mail/store/mailbox/locationHelpers';
 
-import { isMessage } from '../../../helpers/elements';
+import { isElementMessage } from '../../../helpers/elements';
 import type { QueryParams, QueryResults, TaskRunningInfo } from '../../elements/elementsTypes';
 import type { MailState } from '../../store';
 import { localID as localIDSelector, messageByID, messagesByConversationID } from '../messagesSelectors';
@@ -56,7 +56,7 @@ export const updateFromElements = (
 
     if (Elements && Elements.length) {
         Elements.forEach((element) => {
-            if (isMessage(element)) {
+            if (isElementMessage(element)) {
                 const messageState = getMessage(state, element.ID);
 
                 if (messageState) {
