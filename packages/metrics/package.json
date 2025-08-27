@@ -6,7 +6,7 @@
         "check-types": "tsc",
         "generate-metrics": "ts-node -P scripts/tsconfig.metrics-scripts.json ./scripts/generate-metrics.ts",
         "generate-schema-types": "bash scripts/generate-schema-types.sh",
-        "lint": "eslint . --ext .ts --quiet",
+        "lint": "eslint --quiet",
         "test": "jest",
         "test:ci": "jest --coverage --runInBand --ci",
         "test:watch": "jest --watch",
@@ -19,7 +19,7 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "@types/node": "^22.17.2",
-        "eslint": "^8.57.1",
+        "eslint": "^9.33.0",
         "jest": "^29.7.0",
         "jest-fetch-mock": "^3.0.3",
         "rimraf": "^5.0.10",

@@ -1,102 +1,102 @@
 {
-  "name": "@proton/lumo-api-client",
-  "version": "2.0.0",
-  "description": "Modular LLM API client for Lumo products with clean separation of concerns",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "files": [
-    "index.js",
-    "index.d.ts",
-    "core/",
-    "integrations/",
-    "utils.js",
-    "utils.d.ts",
-    "examples.js",
-    "examples.d.ts",
-    "README.md"
-  ],
-  "keywords": [
-    "lumo",
-    "llm",
-    "api",
-    "proton",
-    "chat",
-    "ai",
-    "modular",
-    "react",
-    "redux"
-  ],
-  "author": "Proton Technologies AG",
-  "license": "GPL-3.0",
-  "dependencies": {
-    "@proton/crypto": "^6.0.0",
-    "@proton/shared": "^6.0.0",
-    "uuid": "^9.0.1"
-  },
-  "peerDependencies": {
-    "@proton/atoms": "^6.0.0",
-    "@proton/components": "^6.0.0",
-    "@reduxjs/toolkit": "^2.8.2",
-    "react": "^18.3.1"
-  },
-  "engines": {
-    "node": ">=16.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "http://gitlab.protontech.ch/web/clients/",
-    "directory": "applications/lumo/src/app/lib/lumo-api-client"
-  },
-  "bugs": {
-    "url": "https://protonag.atlassian.net/jira/software/c/projects/LUMO/issues"
-  },
-  "homepage": "https://protonag.atlassian.net/jira/software/c/projects/LUMO/issues",
-  "exports": {
-    ".": {
-      "import": "./index.js",
-      "require": "./index.js",
-      "types": "./index.d.ts"
+    "name": "@proton/lumo-api-client",
+    "version": "2.0.0",
+    "description": "Modular LLM API client for Lumo products with clean separation of concerns",
+    "keywords": [
+        "lumo",
+        "llm",
+        "api",
+        "proton",
+        "chat",
+        "ai",
+        "modular",
+        "react",
+        "redux"
+    ],
+    "homepage": "https://protonag.atlassian.net/jira/software/c/projects/LUMO/issues",
+    "bugs": {
+        "url": "https://protonag.atlassian.net/jira/software/c/projects/LUMO/issues"
     },
-    "./core/client": {
-      "import": "./core/client.js",
-      "require": "./core/client.js",
-      "types": "./core/client.d.ts"
+    "repository": {
+        "type": "git",
+        "url": "http://gitlab.protontech.ch/web/clients/",
+        "directory": "applications/lumo/src/app/lib/lumo-api-client"
     },
-    "./core/request-builder": {
-      "import": "./core/request-builder.js",
-      "require": "./core/request-builder.js",
-      "types": "./core/request-builder.d.ts"
+    "license": "GPL-3.0",
+    "author": "Proton Technologies AG",
+    "exports": {
+        ".": {
+            "import": "./index.js",
+            "require": "./index.js",
+            "types": "./index.d.ts"
+        },
+        "./core/client": {
+            "import": "./core/client.js",
+            "require": "./core/client.js",
+            "types": "./core/client.d.ts"
+        },
+        "./core/request-builder": {
+            "import": "./core/request-builder.js",
+            "require": "./core/request-builder.js",
+            "types": "./core/request-builder.d.ts"
+        },
+        "./core/types": {
+            "import": "./core/types.js",
+            "require": "./core/types.js",
+            "types": "./core/types.d.ts"
+        },
+        "./integrations/react": {
+            "import": "./integrations/react.js",
+            "require": "./integrations/react.js",
+            "types": "./integrations/react.d.ts"
+        },
+        "./integrations/redux": {
+            "import": "./integrations/redux.js",
+            "require": "./integrations/redux.js",
+            "types": "./integrations/redux.d.ts"
+        },
+        "./utils": {
+            "import": "./utils.js",
+            "require": "./utils.js",
+            "types": "./utils.d.ts"
+        },
+        "./examples": {
+            "import": "./examples.js",
+            "require": "./examples.js",
+            "types": "./examples.d.ts"
+        }
     },
-    "./core/types": {
-      "import": "./core/types.js",
-      "require": "./core/types.js",
-      "types": "./core/types.d.ts"
+    "main": "index.js",
+    "types": "index.d.ts",
+    "files": [
+        "index.js",
+        "index.d.ts",
+        "core/",
+        "integrations/",
+        "utils.js",
+        "utils.d.ts",
+        "examples.js",
+        "examples.d.ts",
+        "README.md"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "lint": "eslint --quiet",
+        "test": "jest",
+        "type-check": "tsc --noEmit"
     },
-    "./integrations/react": {
-      "import": "./integrations/react.js",
-      "require": "./integrations/react.js",
-      "types": "./integrations/react.d.ts"
+    "dependencies": {
+        "@proton/crypto": "^6.0.0",
+        "@proton/shared": "^6.0.0",
+        "uuid": "^9.0.1"
     },
-    "./integrations/redux": {
-      "import": "./integrations/redux.js",
-      "require": "./integrations/redux.js",
-      "types": "./integrations/redux.d.ts"
+    "peerDependencies": {
+        "@proton/atoms": "^6.0.0",
+        "@proton/components": "^6.0.0",
+        "@reduxjs/toolkit": "^2.8.2",
+        "react": "^18.3.1"
     },
-    "./utils": {
-      "import": "./utils.js",
-      "require": "./utils.js",
-      "types": "./utils.d.ts"
-    },
-    "./examples": {
-      "import": "./examples.js",
-      "require": "./examples.js",
-      "types": "./examples.d.ts"
+    "engines": {
+        "node": ">=16.0.0"
     }
-  },
-  "scripts": {
-    "build": "tsc",
-    "test": "jest",
-    "lint": "eslint .",
-    "type-check": "tsc --noEmit"
-  }
-} 
+}

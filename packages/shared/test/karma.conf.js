@@ -1,17 +1,18 @@
-const karmaJasmine = require('karma-jasmine');
-const karmaWebpack = require('karma-webpack');
-const karmaSpecReporter = require('karma-spec-reporter');
-const karmaChromeLauncher = require('karma-chrome-launcher');
-const karmaJunitReporter = require('karma-junit-reporter');
-const { chromium } = require('playwright');
-const { existsSync } = require('node:fs');
+import karmaChromeLauncher from 'karma-chrome-launcher';
+import karmaJasmine from 'karma-jasmine';
+import karmaJunitReporter from 'karma-junit-reporter';
+import karmaSpecReporter from 'karma-spec-reporter';
+import karmaWebpack from 'karma-webpack';
+import { existsSync } from 'node:fs';
+import { chromium } from 'playwright';
+
 process.env.CHROME_BIN = chromium.executablePath();
 
 if (!existsSync(process.env.CHROME_BIN)) {
     throw new Error('Chromium executable not found. Run `npx playwright install chromium`');
 }
 
-module.exports = (config) => {
+export default (config) => {
     config.set({
         basePath: '..',
         frameworks: ['jasmine', 'webpack'],
@@ -24,7 +25,7 @@ module.exports = (config) => {
         webpack: {
             mode: 'development',
             resolve: {
-                extensions: ['.js', '.ts', '.tsx'],
+                extensions: ['.ts', '.tsx', '.mjs', '.js', '.json'],
                 fallback: {
                     crypto: false,
                     buffer: false,
@@ -33,6 +34,10 @@ module.exports = (config) => {
             },
             module: {
                 rules: [
+                    {
+                        test: /\.m?js$/,
+                        resolve: { fullySpecified: false },
+                    },
                     {
                         test: /\.tsx?$/,
                         use: [
@@ -44,7 +49,7 @@ module.exports = (config) => {
                         exclude: /node_modules\/(?!.*(bip39|pmcrypto))/,
                     },
                     {
-                        test: /\.(jpg|jpeg|png|gif)$/i,
+                        test: /\.(jpg|jpeg|png|gif|svg)$/i,
                         use: [
                             {
                                 loader: 'url-loader',

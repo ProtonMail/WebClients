@@ -7,7 +7,7 @@
     "main": "./lib/index.ts",
     "scripts": {
         "check-types": "tsc",
-        "lint": "eslint lib test --ext .js,.ts,tsx --quiet",
+        "lint": "eslint --quiet",
         "pretty": "prettier --write $(find lib -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "test": "karma start test/karma.conf.js",
         "test:ci": "yarn test"
@@ -22,7 +22,7 @@
         "@types/chai-as-promised": "^7.1.8",
         "chai": "^5.3.1",
         "chai-as-promised": "^7.1.2",
-        "eslint": "^8.57.1",
+        "eslint": "^9.33.0",
         "eslint-plugin-chai-friendly": "^0.8.0",
         "eslint-plugin-jasmine": "^4.2.2",
         "karma": "^6.4.4",

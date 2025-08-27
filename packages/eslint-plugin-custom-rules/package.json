@@ -1,6 +1,10 @@
 {
     "name": "eslint-plugin-custom-rules",
     "version": "1.0.0",
+    "type": "module",
+    "exports": {
+        ".": "./index.js"
+    },
     "main": "index.js",
     "scripts": {
         "test": "jest"

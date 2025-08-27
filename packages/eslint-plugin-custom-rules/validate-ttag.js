@@ -32,7 +32,7 @@ const start = c('Info').ngettext(
     cycle
 )
 
-// ✅ Correct 
+// ✅ Correct
 c('Context').ngettext(
     msgid`Hello ${n}`,
     `Hello ${n}`,
@@ -147,7 +147,7 @@ const ensureVariablesAreNotUsedTwiceNgettext = (node, context, singularArg, plur
     });
 };
 
-module.exports = {
+export default {
     meta: {
         type: 'problem',
         docs: {

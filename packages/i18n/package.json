@@ -10,7 +10,7 @@
     },
     "scripts": {
         "build": "./scripts/build.sh",
-        "lint": "eslint lib --ext .js,.ts,tsx --quiet",
+        "lint": "eslint --quiet",
         "pretty": "prettier --write  $(find lib/ index.js -type f -name '*.js')",
         "test": "./test/test-linter.sh* && ./test/test-validator.sh",
         "test:ci": "yarn test"
@@ -24,7 +24,7 @@
     },
     "devDependencies": {
         "cross-env": "^7.0.3",
-        "eslint": "^8.57.1",
+        "eslint": "^9.33.0",
         "prettier": "^3.6.2"
     },
     "engines": {
