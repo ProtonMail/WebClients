@@ -1,4 +1,4 @@
-import { Parameters } from '../src/pages/interface';
+import type { Parameters } from '../src/pages/interface';
 
 export interface HrefLang {
     hreflang: string;
