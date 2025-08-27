@@ -3696,6 +3696,15 @@
       ],
       "Your import will not be processed.": [
         "Tuontiasi ei käsitellä."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Laskutusosoitteen muokkaus ei ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen."
+      ],
+      "Postal code is required": [
+        "Postinumero vaaditaan"
+      ],
+      "ZIP code is required": [
+        "Postinumero vaaditaan"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5922,6 +5931,13 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } erääntyy ${ daysLeft } päivän kuluttua.",
+        "${ planName } erääntyy ${ daysLeft } päivän kuluttua."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } erääntyy tänään."
       ]
     },
     "info": {
@@ -6562,6 +6578,15 @@
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
+      ],
+      "Company": [
+        "Yritys"
+      ],
+      "State": [
+        "Osavaltio"
+      ],
+      "ZIP code": [
+        "Postinumero"
       ]
     },
     "Label for contact group color": {
@@ -8703,6 +8728,24 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Anderson": [
+        "Andersson"
+      ],
+      "Anytown": [
+        "Jokukaupunki"
+      ],
+      "Company name": [
+        "Yrityksen nimi"
+      ],
+      "Main street 12": [
+        "Pääkatu 12"
+      ],
+      "Thomas": [
+        "Tuomas"
+      ],
+      "VAT number": [
+        "ALV-numero"
       ]
     },
     "Placeholder for contact group name": {
@@ -10093,6 +10136,9 @@
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"
+      ],
+      "Billing details updated": [
+        "Laskutustiedot päivitetty"
       ]
     },
     "Suffix": {
@@ -10891,6 +10937,9 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Edit billing address": [
+        "Muokkaa laskutusosoitetta"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

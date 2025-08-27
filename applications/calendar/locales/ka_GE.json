@@ -920,6 +920,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსიის დასრულების დროა ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Claim this address": [
+        "ამ მისამართის გამოთხოვა"
       ]
     },
     "action": {
@@ -3766,6 +3769,18 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "თქვენი Zoom-ის კავშირის ვადა ამოიწურა. გასაგრძელებლად, დაუკავშირდით თავიდან."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "გადახდის მისამართის ჩასწორება, ამჟამად, ხელმისაწვდომი არაა. მოგვიანებით სცადეთ."
+      ],
+      "Failed to open to contact": [
+        "კონტაქტისთვის გახსნა ჩავარდა"
+      ],
+      "Postal code is required": [
+        "საფოსტო კოდი აუცილებელია"
+      ],
+      "ZIP code is required": [
+        "საფოსტო კოდი აუცილებელია"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5962,6 +5977,13 @@
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "დაკარგავთ წვდომას ${ boldPlanTitle }-სთან. თარიღი: ${ boldEndDate }."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName }-ის ვადა იწურება ${ daysLeft } დღეში.",
+        "${ planName }-ის ვადა იწურება ${ daysLeft } დღეში."
+      ],
+      "${ planName } expires today.": [
+        "${ planName }-ის ვადა დღეს იწურება."
       ]
     },
     "info": {
@@ -6611,6 +6633,15 @@
       ],
       "Your password (trusted contact)": [
         "თქვენი პაროლი (სანდო კონტაქტი)"
+      ],
+      "Company": [
+        "კომპანია"
+      ],
+      "State": [
+        "მდგომარეობა"
+      ],
+      "ZIP code": [
+        "საფოსტო კოდი"
       ]
     },
     "Label for contact group color": {
@@ -8621,6 +8652,9 @@
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
+      ],
+      "VAT number": [
+        "დღგ ნომერი"
       ]
     },
     "Payments.Error": {
@@ -8673,6 +8707,30 @@
       ],
       "VAT number": [
         "დღგ ნომერი"
+      ],
+      "Add ABN": [
+        "ABN-ის დამატება"
+      ],
+      "Add Business Number": [
+        "ბიზნესის ნომრის დამატება"
+      ],
+      "Add EIN": [
+        "EIN-ის დამატება"
+      ],
+      "Add VAT number": [
+        "დღგ ნომრის დამატება"
+      ],
+      "Edit ABN": [
+        "ABN-ის რედაქტირება"
+      ],
+      "Edit Business Number": [
+        "ბიზნესის ნომრის ჩასწორება"
+      ],
+      "Edit EIN": [
+        "EIN-ის ჩასწორება"
+      ],
+      "Edit VAT number": [
+        "დღგ ნომრის ჩასწორება"
       ]
     },
     "PGP key encryption warning": {
@@ -8810,6 +8868,27 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Anderson": [
+        "ღობეგლეჯიაშვილი"
+      ],
+      "Anytown": [
+        "თბილისი"
+      ],
+      "Company name": [
+        "კომპანიის სახელი"
+      ],
+      "Main street 12": [
+        "ევას შესახვევი 13"
+      ],
+      "Select country": [
+        "აირჩიეთ ქვეყანა"
+      ],
+      "Thomas": [
+        "მზევინარ"
+      ],
+      "VAT number": [
+        "დღგ ნომერი"
       ]
     },
     "Placeholder for contact group name": {
@@ -10233,6 +10312,9 @@
       ],
       "You have successfully unsubscribed": [
         "გამოწერა წარმატებით გაუქმდა"
+      ],
+      "Billing details updated": [
+        "გადახდის დეტალები განახლდა"
       ]
     },
     "Suffix": {
@@ -11037,6 +11119,9 @@
       ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"
+      ],
+      "Edit billing address": [
+        "გადახდის მისამართის ჩასწორება"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

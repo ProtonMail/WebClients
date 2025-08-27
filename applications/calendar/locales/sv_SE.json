@@ -3798,6 +3798,18 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Din Zoom-anslutning har löpt ut. Återanslut för att fortsätta."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Redigering av faktureringsadress är inte tillgänglig just nu. Försök igen senare."
+      ],
+      "Failed to open to contact": [
+        "Misslyckades att öppna kontakt"
+      ],
+      "Postal code is required": [
+        "Postnummer är obligatoriskt"
+      ],
+      "ZIP code is required": [
+        "Postnummer är obligatoriskt"
       ]
     },
     "Error accepting calendar invitation": {
@@ -6060,6 +6072,13 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } löper ut om ${ daysLeft } dag.",
+        "${ planName } löper ut om ${ daysLeft } dagar."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } löper ut idag."
       ]
     },
     "info": {
@@ -6709,6 +6728,15 @@
       ],
       "Your password (trusted contact)": [
         "Ditt lösenord (betrodd kontakt)"
+      ],
+      "Company": [
+        "Företag"
+      ],
+      "State": [
+        "Delstat"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "Label for contact group color": {
@@ -6927,6 +6955,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Din prenumeration har upphört. ${ cta } och för att undvika dataförlust."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "För att fortsätta använda ${ BRAND_NAME }, se till att dina premiumfunktioner inte längre används eller uppgradera ditt paket."
       ]
     },
     "Log preference": {
@@ -8831,6 +8862,18 @@
       ],
       "VAT number": [
         "Momsnummer"
+      ],
+      "Add ABN": [
+        "Lägg till ABN"
+      ],
+      "Add EIN": [
+        "Lägg till EIN"
+      ],
+      "Edit ABN": [
+        "Redigera ABN"
+      ],
+      "Edit EIN": [
+        "Redigera EIN"
       ]
     },
     "PGP key encryption warning": {
@@ -8968,6 +9011,27 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Anderson": [
+        "Andersson"
+      ],
+      "Anytown": [
+        "Alingsås"
+      ],
+      "Company name": [
+        "Företagsnamn"
+      ],
+      "Main street 12": [
+        "Storgatan 12"
+      ],
+      "Select country": [
+        "Välj land"
+      ],
+      "Thomas": [
+        "Tomas"
+      ],
+      "VAT number": [
+        "Momsnummer"
       ]
     },
     "Placeholder for contact group name": {
@@ -10408,6 +10472,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avslutat din prenumeration"
+      ],
+      "Billing details updated": [
+        "Faktureringsuppgifterna har uppdaterats"
       ]
     },
     "Suffix": {
@@ -11221,6 +11288,9 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "Edit billing address": [
+        "Redigera faktureringsadress"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11788,6 +11858,14 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Textfält är valfria. Informationen du anger i detta formulär kommer endast att visas på fakturor som utfärdas i framtiden och kommer inte att påverka befintliga fakturor."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Informationen du anger i detta formulär kommer endast att ändra den faktura du har valt och inte dina framtida fakturadetaljer."
       ]
     }
   }

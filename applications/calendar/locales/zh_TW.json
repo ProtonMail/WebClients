@@ -868,6 +868,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Claim this address": [
+        "獲取這個電郵位址"
+      ],
+      "Connect to video conferencing": [
+        "連接視訊會議"
+      ],
+      "Upload and share files": [
+        "上傳並共享檔案"
       ]
     },
     "action": {
@@ -1030,6 +1039,9 @@
       ],
       "years": [
         "年"
+      ],
+      "thanks to you": [
+        "感謝您"
       ]
     },
     "anniversary_2025: Offers": {
@@ -1183,6 +1195,15 @@
       ],
       "VPN Accelerator": [
         "VPN 加速器"
+      ],
+      "8500+ servers across 110+ countries": [
+        "超過 8500 臺伺服器，遍布於 110 個以上的國家"
+      ],
+      "Easily add or remove users": [
+        "輕鬆新增或移除使用者"
+      ],
+      "Password health alerts": [
+        "密碼堅固性警示"
       ]
     },
     "BF2024: Offers": {
@@ -3536,6 +3557,15 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "您 Zoom 連接階段已逾期，請重新連接以繼續。"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "目前不可編輯付款地址。請稍後再試。"
+      ],
+      "Postal code is required": [
+        "郵遞區號為必填"
+      ],
+      "ZIP code is required": [
+        "郵遞區號為必要項目"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5596,6 +5626,15 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "您的系統時區似乎已更改為 ${ timezone }。您要更新您的時區喜好設定嗎？"
+      ],
+      "Dedicated VPN servers": [
+        "專用 VPN 伺服器"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "訂購授權即將到期，請於${ byDate }前至Play 商店重新訂購以保留您的${ planName }權益。${ reactivateLink }"
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "您的免費試用已成功轉換為每月訂購授權。您的續訂日期為 ${ nextBillingDate }。"
       ]
     },
     "info": {
@@ -6215,6 +6254,15 @@
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
+      ],
+      "Company": [
+        "公司"
+      ],
+      "State": [
+        "州"
+      ],
+      "ZIP code": [
+        "郵遞區號"
       ]
     },
     "Label for contact group color": {
@@ -6317,6 +6365,9 @@
       ],
       "What’s this?": [
         "這是什麼？"
+      ],
+      "How to add users": [
+        "如何新增使用者"
       ]
     },
     "Link label (optional)": {
@@ -7724,6 +7775,9 @@
       ],
       "Your subscription renews soon": [
         "您的訂閱即將重新續約"
+      ],
+      "${ planName } for 12 months": [
+        "為期 12 個月的 ${ planName }"
       ]
     },
     "Offer fearue": {
@@ -7799,6 +7853,9 @@
       ],
       "help center": [
         "說明中心"
+      ],
+      "Once your full subscription starts...": [
+        "您的正式訂購授權一旦開始..."
       ]
     },
     "Option": {
@@ -8038,6 +8095,9 @@
       ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
+      ],
+      "VAT number": [
+        "增值稅編號（VAT）"
       ]
     },
     "Payments.Error": {
@@ -8085,6 +8145,18 @@
       ],
       "VAT number": [
         "增值稅編號（VAT）"
+      ],
+      "Add Business Number": [
+        "新增營業人統一編號"
+      ],
+      "Add VAT number": [
+        "新增增值稅編號（VAT）"
+      ],
+      "Edit Business Number": [
+        "編輯營業人統一編號"
+      ],
+      "Edit VAT number": [
+        "編輯增值稅編號（VAT）"
       ]
     },
     "PGP key encryption warning": {
@@ -8216,6 +8288,21 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Anderson": [
+        "安德松"
+      ],
+      "Company name": [
+        "公司名稱"
+      ],
+      "Select country": [
+        "選擇國家"
+      ],
+      "Thomas": [
+        "湯姆斯"
+      ],
+      "VAT number": [
+        "增值稅編號（VAT）"
       ]
     },
     "Placeholder for contact group name": {
@@ -8311,6 +8398,9 @@
     "RSVP Note": {
       "Remove note": [
         "移除備註"
+      ],
+      "Edit note": [
+        "編輯備註"
       ]
     },
     "Safety review": {
@@ -8725,6 +8815,9 @@
     "specialoffer: Footer": {
       "Your subscription will renew at the same rate every year.": [
         "您的訂閱每年將以同費率更新"
+      ],
+      "The special offer is valid for the first 2 years.": [
+        "特別優惠適用於最初的兩年。"
       ]
     },
     "specialoffer: Link": {
@@ -8748,6 +8841,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "升級至${ pricingTitle }"
+      ],
+      "Guard against threats": [
+        "防範威脅"
       ]
     },
     "specialoffer: Offers": {
@@ -9532,6 +9628,9 @@
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"
+      ],
+      "Billing details updated": [
+        "帳單詳情已更新"
       ]
     },
     "Suffix": {
@@ -10246,6 +10345,15 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Edit billing address": [
+        "編輯帳單地址"
+      ],
+      "Schedule meetings in one click": [
+        "一鍵安排會議"
+      ],
+      "Share your calendar with your team": [
+        "與團隊共享行事曆"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

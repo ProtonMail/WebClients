@@ -654,7 +654,7 @@
         "この参加者を削除"
       ],
       "Remove Zoom meeting": [
-        "Zoom会議を削除"
+        "Zoomミーティングを削除"
       ],
       "Reply with a note": [
         "メモを付けて返信"
@@ -916,6 +916,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
+      ],
+      "Claim this address": [
+        "このアドレスを取得"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "無料の${ BRAND_NAME }アドレスを入手"
       ]
     },
     "action": {
@@ -1056,7 +1062,7 @@
         "無制限のクレジットカードを追加する"
       ],
       "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "${ BRAND_NAME } Mail、Pass、VPN、Drive、カレンダーの全てのプレミアム機能"
+        "${ BRAND_NAME } Mail、Pass、VPN、Drive、Claendarの全てのプレミアム機能"
       ],
       "Block ads, trackers, and malware": [
         "広告、トラッカー、マルウェアをブロック"
@@ -1336,7 +1342,7 @@
         "一度に${ amount }が請求されます"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
-        "Renews after 1 month at ${ regularAmount }."
+        "${ regularAmount }で1ヶ月後に自動更新されます。"
       ]
     },
     "BF2024: Tooltip": {
@@ -3101,7 +3107,7 @@
         "一時的な理由で、将来的に再度使用する予定"
       ],
       "The VPN is too slow": [
-        "VPN の通信速度が遅かった"
+        "VPN の通信速度が遅すぎます"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3114,7 +3120,7 @@
         "${ PASS_APP_NAME } 特別割引の喪失を確認"
       ],
       "Remove discount": [
-        "割引が削除"
+        "割引を削除"
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "${ PLAN_NAMES[PLANS.PASS] } のサブスクリプションは、年間 ${ price } の特別価格でご利用いただけます。無料プランにダウングレードすると、将来再度アップグレードした場合でも、割引は永久に失われます。"
@@ -3521,7 +3527,7 @@
         "インポートするメールがありません - アカウントに受信箱がありません"
       ],
       "No external key retrieved for user is valid for sending": [
-        "送信に有効なキーが取得されませんでした。"
+        "送信に有効なキーが取得されませんでした"
       ],
       "No valid address found": [
         "有効なアドレスが見つかりません"
@@ -3765,6 +3771,18 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoomの接続が期限切れになりました。続けるには再接続してください。"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "現在、請求先住所の編集はご利用いただけません。しばらくしてからもう一度お試しください。"
+      ],
+      "Failed to open to contact": [
+        "連絡先を開けませんでした"
+      ],
+      "Postal code is required": [
+        "郵便番号は必須です"
+      ],
+      "ZIP code is required": [
+        "郵便番号は必須です"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5413,7 +5431,7 @@
         "アドレス帳のサイズによっては、この処理に時間がかかる場合がありますのでご注意ください。"
       ],
       "Please provide a name and an email address for creating a group.": [
-        "グループ作成のため、名前とメールアドレスをご記入ください。"
+        "グループ作成のため、名前とメールアドレスをご入力ください。"
       ],
       "Please remove the duplicates and try again.": [
         "重複を削除して再度お試しください。"
@@ -5782,7 +5800,7 @@
         "別のタブで下記リンクを開こうとしています:"
       ],
       "You are about to open your default browser and visit:": [
-        "既定のブラウザーが次のページにアクセスしようとしています"
+        "既定のブラウザーで次のページにアクセスしようとしています"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "現在 ${ user.Name } (${ user.Email }) でサインインしています。"
@@ -5984,6 +6002,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "お客様ご自身のアカウントデータは引き続き表示できますが、すべてのユーザーアカウントがお客様の組織から削除されます。"
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } は、安全な予定同期と暗号化のために ${ BRAND_NAME }アドレスを必要とします。${ claimAddressButton }。"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } は ${ daysLeft } 日後に期限切れになります。"
+      ],
+      "${ planName } expires today.": [
+        "${ planName } の有効期限は本日です。"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "完全にプライベートで暗号化済みの通信を確保します。無料の${ BRAND_NAME }メールアドレスを今すぐ取得してください。"
       ]
     },
     "info": {
@@ -6004,7 +6034,7 @@
     },
     "Info for cash payment method": {
       "How to send a cash payment?": [
-        "現金支払いを送る方法は?"
+        "現金での支払いを送る方法は?"
       ],
       "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
         "記事の手順を見つけてください： ${ howToSendCashArticleUrl }"
@@ -6100,6 +6130,9 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "KOO": [
+        "KOO"
       ]
     },
     "Keyboard shortcut name": {
@@ -6624,6 +6657,15 @@
       ],
       "Your password (trusted contact)": [
         "パスワード (信頼済みの連絡先)"
+      ],
+      "Company": [
+        "会社"
+      ],
+      "State": [
+        "州"
+      ],
+      "ZIP code": [
+        "郵便番号"
       ]
     },
     "Label for contact group color": {
@@ -6841,6 +6883,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "サブスクリプションが終了しました。${ cta }そしてデータの喪失を防ぎましょう。"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "${ BRAND_NAME }を継続してご利用いただくには、プレミアムサーバーの機能が使用中でないことをご確認ください。またはプランをアップグレードしてください。"
       ]
     },
     "Log preference": {
@@ -8268,7 +8313,7 @@
         "ファイルバージョン履歴(1週間以上)"
       ],
       "Free": [
-        "Free"
+        "無料"
       ],
       "Plus": [
         "Plus"
@@ -8627,6 +8672,9 @@
       ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"
+      ],
+      "VAT number": [
+        "VAT番号"
       ]
     },
     "Payments.Error": {
@@ -8682,6 +8730,30 @@
       ],
       "VAT number": [
         "VAT 番号"
+      ],
+      "Add ABN": [
+        "ABNを追加する"
+      ],
+      "Add Business Number": [
+        "事業番号を追加する"
+      ],
+      "Add EIN": [
+        "EINを追加する"
+      ],
+      "Add VAT number": [
+        "VAT番号を追加してください。"
+      ],
+      "Edit ABN": [
+        "ABNを編集する"
+      ],
+      "Edit Business Number": [
+        "事業番号を編集する"
+      ],
+      "Edit EIN": [
+        "EIN を編集する"
+      ],
+      "Edit VAT number": [
+        "VAT番号を編集する"
       ]
     },
     "PGP key encryption warning": {
@@ -8819,6 +8891,27 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Anderson": [
+        "アンダーソン"
+      ],
+      "Anytown": [
+        "どこにでもある都市"
+      ],
+      "Company name": [
+        "会社名"
+      ],
+      "Main street 12": [
+        "メインストリート12"
+      ],
+      "Select country": [
+        "国を選択してください"
+      ],
+      "Thomas": [
+        "トーマス"
+      ],
+      "VAT number": [
+        "VAT 番号"
       ]
     },
     "Placeholder for contact group name": {
@@ -8838,7 +8931,7 @@
     },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
-        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } のすべてのプレミアム機能."
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } のすべてのプレミアム機能。"
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } のすべてのプレミアム機能"
@@ -8853,6 +8946,9 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "${ upsellPlanTitle }にアップグレード"
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "**${ currentPlanTitle }**の登録者として、**${ upsellPlanTitle }**にアップグレードすることで、**${ unlockPlanTitle }**とさらに多くの${ BRAND_NAME }サービスがアンロックできます。"
       ]
     },
     "Price": {
@@ -9334,7 +9430,7 @@
         "${ appName1 } プレミアム"
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
-        "${ appName1 } と ${ appName2 } プレミアム"
+        "プレミアム ${ appName1 } と ${ appName2 }"
       ],
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "プレミアム${ appName1 } & ${ appName2 } & ${ appName3 }"
@@ -9503,7 +9599,7 @@
         "ファミリーや小規模なチームに最適で、各自が受信トレイとエイリアスを持ちます。カスタムドメインが必要です。"
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "私たちが今後リリースする全ての有償プライバシーサービスの機能/製品および早期アクセスを追加コストなしで利用できます。"
+        "私たちが今後リリースする全ての有料プライバシーサービスの機能/製品および早期アクセスを追加コストなしで利用できます。"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
@@ -9586,7 +9682,7 @@
         "すべての ${ BRAND_NAME } サービス向け"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
-        "${ BRAND_NAME }製品を引き続きご利用いただくには、容量を空けるか、${ upgrade }ください。"
+        "${ BRAND_NAME }製品を引き続きご利用いただくには、容量を空けるか、${ upgrade }。"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
         "メールを送受信するには、容量を空けるか${ upgrade }"
@@ -9968,6 +10064,9 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } をご利用いただくと、${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、および ${ CALENDAR_SHORT_APP_NAME } のすべてのプレミアム機能をご利用いただけます。プライバシーが組み込まれているため、お客様のデータとユーザー情報が安全に保護されていることを知った上で、安心してご利用いただけます。"
       ]
     },
     "subscription reminder": {
@@ -10219,6 +10318,9 @@
       ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"
+      ],
+      "Billing details updated": [
+        "請求の詳細が更新されました"
       ]
     },
     "Suffix": {
@@ -10980,7 +11082,7 @@
         "VPNは何からお客様を保護できるのでしょうか？"
       ],
       "What is a VPN?": [
-        "VPNのご説明"
+        "VPNとは？"
       ],
       "What would you like to import?": [
         "何をインポートしたいですか?"
@@ -11014,6 +11116,12 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME }アドレスを取得"
+      ],
+      "Edit billing address": [
+        "請求先住所を編集"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11225,7 +11333,7 @@
         "暗号化済みで安全な${ MAIL_APP_NAME }メールアドレス。お客様は、相手の${ BRAND_NAME }名だけで簡単にBitcoinを送信できます。"
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
-        "エラーが発生しやすい複雑な 26 文字のBitcoinアドレスの代わりにメールでBitcoinを安全に交換します"
+        "エラーが発生しやすい複雑な 26 文字のBitcoinアドレスの代わりにメールでBitcoinで安全に交換します"
       ]
     },
     "wallet_signup_2024:app-switcher": {
@@ -11540,6 +11648,14 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "テキストフィールドは任意です。 このフォームに入力した情報は、将来発行された請求書にのみ表示され、既存の請求書には影響しません。"
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "テキスト フィールドはオプションです。このフォームで入力した情報は、選択した請求書のみを変更し、将来の請求書の詳細は変更しません。"
       ]
     }
   }

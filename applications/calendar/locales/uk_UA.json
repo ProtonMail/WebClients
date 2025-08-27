@@ -3536,6 +3536,9 @@
       ],
       "Your import will not be processed.": [
         "Ваш імпорт не буде оброблений."
+      ],
+      "Postal code is required": [
+        "Необхідно вказати поштовий індекс"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5671,6 +5674,12 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Схоже, системний часовий пояс змінено на ${ timezone }. Хочете оновити налаштування часового поясу?"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } завершиться за ${ daysLeft } день.",
+        "${ planName } завершиться за ${ daysLeft } дні.",
+        "${ planName } завершиться за ${ daysLeft } днів.",
+        "${ planName } завершиться за ${ daysLeft } дня(ів)."
       ]
     },
     "info": {
@@ -6264,6 +6273,15 @@
       ],
       "Your password (admin)": [
         "Новий пароль (адмін)"
+      ],
+      "Company": [
+        "Компанія"
+      ],
+      "State": [
+        "Стан"
+      ],
+      "ZIP code": [
+        "Поштовий індекс"
       ]
     },
     "Label for contact group color": {
@@ -8370,6 +8388,18 @@
       ],
       "ZIP code": [
         "Поштовий індекс"
+      ],
+      "Anderson": [
+        "Андерсон"
+      ],
+      "Company name": [
+        "Назва компанії"
+      ],
+      "Thomas": [
+        "Томас"
+      ],
+      "VAT number": [
+        "Номер платника ПДВ"
       ]
     },
     "Placeholder for contact group name": {
