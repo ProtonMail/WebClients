@@ -3706,6 +3706,12 @@
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "A számlázási cím szerkesztése jelenleg nem elérhető. Kérjük, próbálja meg később újra."
+      ],
+      "ZIP code is required": [
+        "Irányítószám szükséges"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5947,6 +5953,13 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Továbbra is megtekintheti saját fiókadatait, de az összes felhasználói fiók eltávolításra kerül a szervezetéből."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } lejár ${ daysLeft } nap múlva.",
+        "${ planName } lejár ${ daysLeft } nap múlva."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } ma lejár."
       ]
     },
     "info": {
@@ -6587,6 +6600,15 @@
       ],
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
+      ],
+      "Company": [
+        "Cég"
+      ],
+      "State": [
+        "Állam"
+      ],
+      "ZIP code": [
+        "Irányítószám"
       ]
     },
     "Label for contact group color": {
@@ -8788,6 +8810,24 @@
       ],
       "ZIP code": [
         "Irányítószám"
+      ],
+      "Anderson": [
+        "Kovács"
+      ],
+      "Anytown": [
+        "Bárholváros"
+      ],
+      "Company name": [
+        "Cégnév"
+      ],
+      "Main street 12": [
+        "Fő utca 12."
+      ],
+      "Thomas": [
+        "Tamás"
+      ],
+      "VAT number": [
+        "Áfa-szám"
       ]
     },
     "Placeholder for contact group name": {
@@ -10205,6 +10245,9 @@
       ],
       "You have successfully unsubscribed": [
         "Sikeresen leiratkozott"
+      ],
+      "Billing details updated": [
+        "Számlázási adatok frissítve"
       ]
     },
     "Suffix": {
@@ -11006,6 +11049,9 @@
       ],
       "Your shorter address is now ready": [
         "A rövidebb címe elkészült"
+      ],
+      "Edit billing address": [
+        "Számlázási cím szerkesztése"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11568,6 +11614,14 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "A szövegmezők nem kötelezőek. Az ebben az űrlapon megadott információk csak a jövőben kiállított számlákon jelennek meg, és nem befolyásolják a meglévő számlákat."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "A szövegmezők kitöltése nem kötelező. Az ezen az űrlapon megadott információk csak a kiválasztott számlát módosítják, a jövőbeni számlák részleteit nem."
       ]
     }
   }

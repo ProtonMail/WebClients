@@ -378,7 +378,7 @@
         "인증코드 전송"
       ],
       "Go to ${ planOrAppName }": [
-        "${ planOrAppName }으로 이동하세요"
+        "${ planOrAppName }(으)로 이동"
       ],
       "Go to label": [
         "라벨로 이동"
@@ -916,6 +916,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Claim this address": [
+        "주소 얻기"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "무료 ${ BRAND_NAME } 주소 받기"
       ]
     },
     "action": {
@@ -3765,6 +3771,18 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom 연결이 만료되었습니다. 계속하려면 재연결하십시오."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "청구서 주소 수정이 현재 사용할 수 없습니다.\n나중에 다시 시도하시기 바랍니다."
+      ],
+      "Failed to open to contact": [
+        "연락처 열기 실패"
+      ],
+      "Postal code is required": [
+        "우편 번호가 필요합니다"
+      ],
+      "ZIP code is required": [
+        "우편번호가 필요합니다"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5981,6 +5999,21 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME }은(는) 안전한 이벤트 동기화 및 암호화를 위해 ${ BRAND_NAME } 주소가 필요합니다. ${ claimAddressButton }."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName }이(가) ${ daysLeft }일 내로 만료됩니다."
+      ],
+      "${ planName } expires today.": [
+        "${ planName }이(가) 오늘 만료됩니다."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "완전히 개인적이고 암호화된 통신을 보장합니다. 지금 귀하의 무료 ${ BRAND_NAME } 이메일 주소를 확보하세요."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "사용자 고유의 비밀번호 입력 (신뢰할 수 있는 연락처로서)"
       ]
     },
     "info": {
@@ -6097,6 +6130,9 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "KOO": [
+        "KOO"
       ]
     },
     "Keyboard shortcut name": {
@@ -6618,6 +6654,18 @@
       ],
       "Your password (admin)": [
         "사용자의 비밀번호 (관리자)"
+      ],
+      "Company": [
+        "회사"
+      ],
+      "State": [
+        "시/도"
+      ],
+      "Your password (trusted contact)": [
+        "사용자 비밀번호 (신뢰할 수 있는 연락처)"
+      ],
+      "ZIP code": [
+        "우편번호"
       ]
     },
     "Label for contact group color": {
@@ -6835,6 +6883,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "구독이 종료되었습니다. 데이터 접근 권한 상실 방지를 위해 ${ cta }."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "${ BRAND_NAME }을 계속 사용하려면 프리미엄 기능을 더 이상 사용하지 않는지 확인하거나 플랜을 업그레이드해주세요."
       ]
     },
     "Log preference": {
@@ -7492,7 +7543,7 @@
         "최대 2명 지원"
       ],
       "Sync and backup all your files across devices": [
-        "기기를 넘나들며 파일을 동기화 및 백업하세요"
+        "기기를 넘나들며 파일 동기화 및 백업"
       ],
       "Tor over VPN": [
         "Tor over VPN"
@@ -8621,6 +8672,9 @@
       ],
       "Your payment is still being processed": [
         "회원님의 결제가 아직 처리 중입니다"
+      ],
+      "VAT number": [
+        "부가가치세 번호"
       ]
     },
     "Payments.Error": {
@@ -8676,6 +8730,30 @@
       ],
       "VAT number": [
         "부가가치세 번호"
+      ],
+      "Add ABN": [
+        "ABN 추가"
+      ],
+      "Add Business Number": [
+        "사업자등록번호 추가"
+      ],
+      "Add EIN": [
+        "EIN 추가"
+      ],
+      "Add VAT number": [
+        "부가가치세 번호 추가"
+      ],
+      "Edit ABN": [
+        "ABN 수정"
+      ],
+      "Edit Business Number": [
+        "사업자등록번호 수정"
+      ],
+      "Edit EIN": [
+        "EIN 수정"
+      ],
+      "Edit VAT number": [
+        "VAT 번호 수정"
       ]
     },
     "PGP key encryption warning": {
@@ -8813,6 +8891,27 @@
       ],
       "ZIP code": [
         "우편 번호"
+      ],
+      "Anderson": [
+        "길동"
+      ],
+      "Anytown": [
+        "서울특별시 낙원구"
+      ],
+      "Company name": [
+        "법인 이름"
+      ],
+      "Main street 12": [
+        "행복로 12"
+      ],
+      "Select country": [
+        "국가 선택"
+      ],
+      "Thomas": [
+        "홍"
+      ],
+      "VAT number": [
+        "부가가치세 번호"
       ]
     },
     "Placeholder for contact group name": {
@@ -10219,6 +10318,9 @@
       ],
       "You have successfully unsubscribed": [
         "성공적으로 구독 취소했습니다."
+      ],
+      "Billing details updated": [
+        "청구 상세 정보가 업데이트되었습니다."
       ]
     },
     "Suffix": {
@@ -11011,6 +11113,15 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "Account temporarily locked": [
+        "계정 일시 잠김"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } 주소를 받으세요"
+      ],
+      "Edit billing address": [
+        "청구 주소 수정"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11537,6 +11648,14 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "입력란은 선택 사항입니다. 이 양식에 작성되는 정보는 향후 발행되는 청구서에만 표시되며 기존 청구서에는 영향을 미치지 않습니다."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "텍스트 입력란은 선택 사항입니다. 이 양식에 제공된 정보는 선택한 송장에 한해 변경되며 향후 송장 세부 사항은 변경되지 않습니다."
       ]
     }
   }

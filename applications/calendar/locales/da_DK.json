@@ -920,6 +920,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
+      ],
+      "Claim this address": [
+        "Gør krav på denne adresse"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Få en gratis ${ BRAND_NAME }-adresse"
       ]
     },
     "action": {
@@ -3742,6 +3748,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Din Zoom-forbindelse er udløbet. Tilslut igen for at fortsætte."
+      ],
+      "Failed to open to contact": [
+        "Kunne ikke oprette kontakten"
+      ],
+      "ZIP code is required": [
+        "Postnummer er påkrævet"
       ]
     },
     "Error accepting calendar invitation": {
@@ -6001,6 +6013,25 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } kræver en ${ BRAND_NAME } adresse til sikker begivenhedssynkronisering og kryptering. ${ claimAddressButton }."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } udløber om ${ daysLeft } dag.",
+        "${ planName } udløber om ${ daysLeft } dage."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } udløber i dag."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Sørg for privat og krypteret kommunikation. Gør krav på din gratis ${ BRAND_NAME } e-mailadresse nu."
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnement udløber: For at beholde dine ${ planName } fordele, skal du fornye din abonnement i Apple App Store inden ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnement udløber: For at beholde dine ${ planName } fordele, skal du fornye din abonnement i Apple App Store inden ${ byDate }. ${ reactivateLink }"
       ]
     },
     "info": {
@@ -6644,6 +6675,15 @@
       ],
       "Your password (admin)": [
         "Din adgangskode (admin)"
+      ],
+      "Company": [
+        "Selskab"
+      ],
+      "State": [
+        "Stat/Region"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "Label for contact group color": {
@@ -6794,6 +6834,9 @@
       ],
       "What’s this?": [
         "Hvad er dette?"
+      ],
+      "Resume now": [
+        "Genoptag nu"
       ]
     },
     "Link label (optional)": {
@@ -8883,6 +8926,24 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Anderson": [
+        "Andersen"
+      ],
+      "Anytown": [
+        "Skovhavn"
+      ],
+      "Company name": [
+        "Firmanavn"
+      ],
+      "Main street 12": [
+        "Hovedgaden 12"
+      ],
+      "Thomas": [
+        "Kim"
+      ],
+      "VAT number": [
+        "Momsnummer"
       ]
     },
     "Placeholder for contact group name": {
@@ -10309,6 +10370,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du har afmeldt dig"
+      ],
+      "Billing details updated": [
+        "Faktureringsoplysninger opdateret"
       ]
     },
     "Suffix": {
@@ -11116,6 +11180,12 @@
       ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Gør krav på din gratis ${ MAIL_APP_NAME } addresse"
+      ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11675,6 +11745,19 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstfelter er valgfrie. De oplysninger, du angiver i denne formular, vil kun blive vist på fakturaer, der udstedes i fremtiden, og vil ikke påvirke eksisterende fakturaer."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Tekstfelter er valgfrie. De oplysninger, du angiver i denne formular, vil kun ændre den faktura, du har valgt, og ikke dine fremtidige fakturadetaljer."
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Betroet kontakt"
       ]
     }
   }

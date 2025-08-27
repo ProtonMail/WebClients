@@ -3765,6 +3765,15 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Koneksi Zoom Anda telah kedaluwarsa. Silakan hubungkan ulang untuk melanjutkan."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Penyuntingan alamat tagihan saat ini tidak tersedia. Silakan coba lagi nanti."
+      ],
+      "Postal code is required": [
+        "Kode pos dibutuhkan"
+      ],
+      "ZIP code is required": [
+        "Kode pos diperlukan"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5984,6 +5993,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Anda akan tetap dapat melihat data milik akun Anda, namun seluruh akun pengguna akan dihapus dari organisasi Anda."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } akan kedaluwarsa dalam ${ daysLeft } hari."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } akan kedaluwarsa hari ini."
       ]
     },
     "info": {
@@ -6627,6 +6642,15 @@
       ],
       "Your password (trusted contact)": [
         "Kata sandi Anda (kontak terpercaya)"
+      ],
+      "Company": [
+        "Perusahaan"
+      ],
+      "State": [
+        "Keadaan"
+      ],
+      "ZIP code": [
+        "Kode pos"
       ]
     },
     "Label for contact group color": {
@@ -8822,6 +8846,24 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "Kota A"
+      ],
+      "Company name": [
+        "Nama perusahaan"
+      ],
+      "Main street 12": [
+        "Jalan Utama No. 12"
+      ],
+      "Thomas": [
+        "Thomas"
+      ],
+      "VAT number": [
+        "Nomor PPN"
       ]
     },
     "Placeholder for contact group name": {
@@ -10228,6 +10270,9 @@
       ],
       "You have successfully unsubscribed": [
         "Anda berhasil berhenti berlangganan"
+      ],
+      "Billing details updated": [
+        "Rincian penagihan diperbarui"
       ]
     },
     "Suffix": {
@@ -11023,6 +11068,9 @@
       ],
       "Your shorter address is now ready": [
         "Alamat lebih pendek Anda sudah siap"
+      ],
+      "Edit billing address": [
+        "Sunting alamat penagihan"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11549,6 +11597,14 @@
       ],
       "Passcode:": [
         "Kode sandi:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Kolom teks bersifat opsional. Informasi yang Anda sediakan pada kolom ini hanya akan terlihat pada faktur yang diterbitkan ke depannya tanpa memengaruhi faktur yang telah ada."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Kolom teks bersifat opsional. Informasi yang Anda sediakan dalam formulir ini hanya akan mengubah isi faktur yang Anda pilih tanpa memengaruhi rincian faktur yang akan datang."
       ]
     }
   }

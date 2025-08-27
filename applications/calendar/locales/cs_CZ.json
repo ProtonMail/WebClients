@@ -922,9 +922,9 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktu",
-        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů",
-        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktu",
-        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktu"
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktům",
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktům",
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktům"
       ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
         "Bezplatná zkušební verze desktopové aplikace končí za 2 dny. ${ upgradeButton }"
@@ -1077,7 +1077,7 @@
     },
     "anniversary_2025: Offer": {
       "15 GB storage": [
-        "15 GB prostoru"
+        "15 GB úložiště"
       ],
       "200 GB storage": [
         "200 GB prostoru"
@@ -1372,7 +1372,7 @@
         "Účtováno ${ amount } jednorázově"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
-        "Obnovení po 1 měsíci za ${ regularAmount }."
+        "Obnovuje se po 1 měsíci za ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
@@ -3873,6 +3873,18 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Platnost vašeho připojení k Zoomu vypršela. Pro pokračování se prosím znovu připojte."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Úprava fakturační adresy není v tuto chvíli k dispozici. Zkuste to prosím později."
+      ],
+      "Failed to open to contact": [
+        "Otevření kontaktu selhalo"
+      ],
+      "Postal code is required": [
+        "PSČ je povinné"
+      ],
+      "ZIP code is required": [
+        "PSČ je potřeba vyplnit"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4398,7 +4410,7 @@
     },
     "Font face option": {
       "System default": [
-        "Systémový výchozí"
+        "Systémové výchozí"
       ],
       "Theme font": [
         "Písmo motivu"
@@ -4406,13 +4418,13 @@
     },
     "Font size option": {
       "Large": [
-        "Velký"
+        "Velké"
       ],
       "Medium (recommended)": [
         "Střední (doporučeno)"
       ],
       "Small": [
-        "Malý"
+        "Malé"
       ],
       "Very large": [
         "Velmi velké"
@@ -5317,7 +5329,7 @@
         "Povolování automatického mazání..."
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "Zajistěte si plně soukromou a šifrovanou komunikaci. Získejte nyní vaši bezplatnou ${ BRAND_NAME } emailovou adresu."
+        "Zajistěte si zcela soukromou a šifrovanou komunikaci. Získejte zdarma e-mailovou adresu ${ BRAND_NAME } ještě dnes."
       ],
       "Enter the code from your authenticator app": [
         "Zadejte kód z vaší ověřovací aplikace"
@@ -6242,6 +6254,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále budete moci prohlížet data vlastního účtu, ale všechny uživatelské účty budou z vaší organizace odebrány."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } vyprší za ${ daysLeft } den.",
+        "${ planName } vyprší za ${ daysLeft } dny.",
+        "${ planName } vyprší za ${ daysLeft } dnů.",
+        "${ planName } vyprší za ${ daysLeft } dnů."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } vyprší dnes."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Zadejte vlastní heslo (jako důvěryhodný kontakt)."
       ]
     },
     "info": {
@@ -6370,6 +6394,9 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "KOO": [
+        "KOO"
       ]
     },
     "Keyboard shortcut name": {
@@ -6897,6 +6924,18 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (správce)"
+      ],
+      "Company": [
+        "Společnost"
+      ],
+      "State": [
+        "Stát"
+      ],
+      "Your password (trusted contact)": [
+        "Vaše heslo (důvěryhodný kontakt)"
+      ],
+      "ZIP code": [
+        "PSČ"
       ]
     },
     "Label for contact group color": {
@@ -7117,6 +7156,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Vaše předplatné skončilo. ${ cta } pro předejití ztrátě dat."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Chcete-li pokračovat v používání ${ BRAND_NAME }, ujistěte se, že již nepoužíváte prémiové funkce, nebo si navyšte svůj tarif."
       ]
     },
     "Log preference": {
@@ -8709,7 +8751,7 @@
         "Historie verzí souboru (více než 1 týden)"
       ],
       "Free": [
-        "Bezplatné"
+        "Free"
       ],
       "Plus": [
         "Plus"
@@ -9095,6 +9137,9 @@
       ],
       "Your payment is still being processed": [
         "Vaše platba se stále zpracovává"
+      ],
+      "VAT number": [
+        "DIČ"
       ]
     },
     "Payments.Error": {
@@ -9119,7 +9164,7 @@
     },
     "Payments.plan_name": {
       "Free": [
-        "Bezplatné"
+        "Free"
       ]
     },
     "Payments.Saved payment method details": {
@@ -9150,6 +9195,30 @@
       ],
       "VAT number": [
         "DIČ"
+      ],
+      "Add ABN": [
+        "Přidat ABN"
+      ],
+      "Add Business Number": [
+        "Přidat firemní číslo"
+      ],
+      "Add EIN": [
+        "Přidat EIN"
+      ],
+      "Add VAT number": [
+        "Přidat DIČ"
+      ],
+      "Edit ABN": [
+        "Upravit ABN"
+      ],
+      "Edit Business Number": [
+        "Upravit firemní číslo"
+      ],
+      "Edit EIN": [
+        "Upravit EIN"
+      ],
+      "Edit VAT number": [
+        "Upravit DIČ"
       ]
     },
     "PGP key encryption warning": {
@@ -9287,6 +9356,27 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Anderson": [
+        "Příjmení"
+      ],
+      "Anytown": [
+        "Město"
+      ],
+      "Company name": [
+        "Název společnosti"
+      ],
+      "Main street 12": [
+        "Ulice a číslo popisné"
+      ],
+      "Select country": [
+        "Vyberte zemi"
+      ],
+      "Thomas": [
+        "Jméno"
+      ],
+      "VAT number": [
+        "DIČ"
       ]
     },
     "Placeholder for contact group name": {
@@ -9654,7 +9744,7 @@
         "${ gracePeriodHoursRemaining } další hodina",
         "${ gracePeriodHoursRemaining } další hodiny",
         "${ gracePeriodHoursRemaining } dalších hodin",
-        "Zbývá ${ gracePeriodHoursRemaining } hodin"
+        "${ gracePeriodHoursRemaining } dalších hodin"
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Pokud jste o obnovení hesla nepožádali, ihned zrušte tento požadavek."
@@ -10156,7 +10246,7 @@
         "Vaše úložiště je z ${ percentage } % plné. ${ cta }."
       ],
       "Your storage is full": [
-        "Váš úložný prostor je plný"
+        "Vaše úložiště je plné"
       ],
       "Your storage is full. ${ cta }.": [
         "Vaše úložiště je plné. ${ cta }."
@@ -10804,6 +10894,9 @@
       ],
       "You have successfully unsubscribed": [
         "Předplatné bylo úspěšně zrušeno"
+      ],
+      "Billing details updated": [
+        "Fakturační údaje aktualizovány"
       ]
     },
     "Suffix": {
@@ -10918,19 +11011,19 @@
         "${ ceilDays } dnů"
       ],
       "${ ceilHours } hour": [
-        "${ ceilHours } hodinu",
+        "${ ceilHours } hodina",
         "${ ceilHours } hodiny",
         "${ ceilHours } hodin",
         "${ ceilHours } hodin"
       ],
       "${ ceilMinutes } minute": [
-        "${ ceilMinutes } minutu",
+        "${ ceilMinutes } minuta",
         "${ ceilMinutes } minuty",
         "${ ceilMinutes } minut",
         "${ ceilMinutes } minut"
       ],
       "${ seconds } second": [
-        "${ seconds } sekundu",
+        "${ seconds } sekunda",
         "${ seconds } sekundy",
         "${ seconds } sekund",
         "${ seconds } sekund"
@@ -11097,7 +11190,7 @@
         "Vyberte jak často se tato událost opakuje"
       ],
       "Claim your ${ MAIL_APP_NAME } address": [
-        "Získejte vaši ${ MAIL_APP_NAME } adresu."
+        "Získejte vaši ${ MAIL_APP_NAME } adresu"
       ],
       "Clearing data": [
         "Mazání dat"
@@ -11647,6 +11740,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaše kratší adresa je nyní připravena"
+      ],
+      "Edit billing address": [
+        "Úprava fakturační adresy"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12128,7 +12224,7 @@
         "Každých ${ interval } týdnů ve středu, ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Týdně v(ve) ${ multipleDaysString }, ${ timesString }"
+        "Týdně v(e) ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on all days, ${ timesString }": [
         "Týdně všechny dny, ${ timesString }"
@@ -12158,7 +12254,7 @@
     "Weekly recurring event, frequency (until)": {
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
         "Každý ${ interval } týden v ${ multipleDaysString }, ${ untilString }",
-        "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ untilString }",
+        "Každé ${ interval } týdny v ${ multipleDaysString }, ${ untilString }",
         "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ untilString }",
         "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ untilString }"
       ],
@@ -12305,6 +12401,14 @@
       ],
       "Passcode:": [
         "Přístupový kód:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Textová pole jsou nepovinná. Informace, které uvedete v tomto formuláři, se objeví pouze na fakturách vystavených v budoucnu a nebudou mít vliv na stávající faktury."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Textová pole jsou nepovinná. Informace, které uvedete v tomto formuláři, změní pouze vybranou fakturu, nikoli budoucí fakturační údaje."
       ]
     }
   }

@@ -924,6 +924,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Claim this address": [
+        "Revendicați această adresă"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Obțineți o adresă gratuită ${ BRAND_NAME }"
       ]
     },
     "action": {
@@ -3833,6 +3839,18 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Conexiunea la Zoom a expirat. Reconectați-vă pentru a continua."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Editarea adresei de facturare nu este disponibilă momentan. Reîncercați mai târziu."
+      ],
+      "Failed to open to contact": [
+        "Nu s-a putut deschide contactul."
+      ],
+      "Postal code is required": [
+        "Codul poștal este obligatoriu."
+      ],
+      "ZIP code is required": [
+        "Codul poștal este obligatoriu."
       ]
     },
     "Error accepting calendar invitation": {
@@ -5021,7 +5039,7 @@
         "Oricine are această legătură web poate vedea dacă aveți sau nu timp liber în calendar. Nu pot vedea detaliile evenimentului, cum ar fi titlul, locul sau participanții."
       ],
       "Are you sure you want to discard your import?": [
-        "Sigur doriți să anulați importarea?"
+        "Anulați importarea?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Cel puțin ${ BETTER_PASSWORD_LENGTH } caractere"
@@ -6150,6 +6168,20 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } necesită o adresă ${ BRAND_NAME } pentru sincronizarea și criptarea securizată a evenimentelor. ${ claimAddressButton }."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }.",
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }.",
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } expiră astăzi."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Asigurați o comunicare complet privată și criptată. Revendicați-vă acum adresa gratuită de e-mail ${ BRAND_NAME }."
       ]
     },
     "info": {
@@ -6805,6 +6837,15 @@
       ],
       "Your password (trusted contact)": [
         "Parola dvs. (contact aprobat)"
+      ],
+      "Company": [
+        "Compania"
+      ],
+      "State": [
+        "Județ/Stat"
+      ],
+      "ZIP code": [
+        "Cod poștal"
       ]
     },
     "Label for contact group color": {
@@ -7024,6 +7065,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Abonamentul s-a încheiat. ${ cta } și pentru a evita pierderea datelor."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Pentru a continua să utilizați ${ BRAND_NAME }, asigurați-vă că funcțiile premium nu mai sunt utilizate sau să modernizați-vă planul."
       ]
     },
     "Log preference": {
@@ -8938,6 +8982,9 @@
       ],
       "Your payment is still being processed": [
         "Plata este încă în curs de procesare."
+      ],
+      "VAT number": [
+        "Valoare TVA"
       ]
     },
     "Payments.Error": {
@@ -8993,6 +9040,30 @@
       ],
       "VAT number": [
         "Număr de TVA"
+      ],
+      "Add ABN": [
+        "Adăugare ABN"
+      ],
+      "Add Business Number": [
+        "Adăugare cod unic de înregistrare"
+      ],
+      "Add EIN": [
+        "Adăugare EIN"
+      ],
+      "Add VAT number": [
+        "Adăugare TVA"
+      ],
+      "Edit ABN": [
+        "Editare ABN"
+      ],
+      "Edit Business Number": [
+        "Editare cod unic de înregistrare"
+      ],
+      "Edit EIN": [
+        "Editare EIN"
+      ],
+      "Edit VAT number": [
+        "Editare TVA"
       ]
     },
     "PGP key encryption warning": {
@@ -9130,6 +9201,27 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Anderson": [
+        "Andrei"
+      ],
+      "Anytown": [
+        "București"
+      ],
+      "Company name": [
+        "Nume companie"
+      ],
+      "Main street 12": [
+        "Strada Principală nr. 12"
+      ],
+      "Select country": [
+        "Selectare țară"
+      ],
+      "Thomas": [
+        "Toma"
+      ],
+      "VAT number": [
+        "Valoare TVA"
       ]
     },
     "Placeholder for contact group name": {
@@ -9933,7 +10025,7 @@
         "${ storage } - ${ percentage }% ocupat"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Prin retrogradare veți pierde următoarele beneficii. Sigur doriți să continuați?"
+        "Prin retrogradare veți pierde următoarele beneficii. Continuați?"
       ],
       "contact your administrator": [
         "contactați-vă administratorul"
@@ -10021,9 +10113,9 @@
     },
     "Subscription attribute": {
       "${ n } free VPN connection per user": [
-        "${ n } conexiune VPN gratuită per utilizator",
-        "${ n } conexiuni VPN gratuite per utilizator",
-        "${ n } de conexiuni VPN gratuite per utilizator"
+        "Conexiuni VPN gratuite per utilizator: ${ n }",
+        "Conexiuni VPN gratuite per utilizator: ${ n }",
+        "Conexiuni VPN gratuite per utilizator: ${ n }"
       ],
       "${ n } high-speed VPN connection": [
         "O conexiune VPN de mare viteză",
@@ -10610,6 +10702,9 @@
       ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"
+      ],
+      "Billing details updated": [
+        "Detaliile de facturare s-au actualizat"
       ]
     },
     "Suffix": {
@@ -11435,6 +11530,12 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Revendicați-vă adresa ${ MAIL_APP_NAME }"
+      ],
+      "Edit billing address": [
+        "Editare adresă de facturare"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11693,18 +11794,18 @@
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
-        "Sigur doriți să ștergeți definitiv un contact?",
-        "Sigur doriți să ștergeți definitiv ${ count } contacte?",
-        "Sigur doriți să ștergeți definitiv ${ count } de contacte?"
+        "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?",
+        "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?",
+        "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
-        "Sigur doriți să ștergeți definitiv acest grupuri de contacte?"
+        "Ștergeți definitiv aceste grupuri de contacte?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
-        "Sigur doriți să ștergeți definitiv acest grup de contacte?"
+        "Ștergeți definitiv acest grup de contacte?"
       ],
       "Are you sure you want to permanently delete this contact?": [
-        "Sigur doriți să ștergeți definitiv acest contact?"
+        "Ștergeți definitiv acest contact?"
       ],
       "Contacts could not be merged": [
         "Contactele nu au putut fi îmbinate"
@@ -12049,6 +12150,14 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Câmpurile text sunt opționale. Informațiile furnizate în acest formular vor apărea doar pe facturile emise în viitor și nu vor afecta facturile deja emise."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Câmpurile de text sunt opționale. Informațiile pe care le furnizați în acest formular vor modifica doar factura pe care ați selectat-o ​​și nu detaliile viitoarei facturi."
       ]
     }
   }

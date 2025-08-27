@@ -3805,6 +3805,18 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Η σύνδεσή σας στο Zoom έχει λήξει. Παρακαλούμε επανασυνδεθείτε για να συνεχίσετε."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Η επεξεργασία της διεύθυνσης χρέωσης δεν είναι διαθέσιμη προς το παρόν. Παρακαλούμε προσπαθήστε ξανά αργότερα."
+      ],
+      "Failed to open to contact": [
+        "Αποτυχία ανοίγματος επαφής"
+      ],
+      "Postal code is required": [
+        "Απαιτείται ταχυδρομικός κώδικας"
+      ],
+      "ZIP code is required": [
+        "Απαιτείται ταχυδρομικός κώδικας"
       ]
     },
     "Error accepting calendar invitation": {
@@ -6079,6 +6091,13 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Θα εξακολουθείτε να μπορείτε να βλέπετε τα δικά σας δεδομένα λογαριασμού, αλλά όλοι οι λογαριασμοί χρηστών θα καταργηθούν από τον οργανισμό σας."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "Το ${ planName } λήγει σε ${ daysLeft } ημέρα.",
+        "Το ${ planName } λήγει σε ${ daysLeft } ημέρες."
+      ],
+      "${ planName } expires today.": [
+        "Το ${ planName } λήγει σήμερα."
       ]
     },
     "info": {
@@ -6728,6 +6747,15 @@
       ],
       "Your password (trusted contact)": [
         "Ο κωδικός πρόσβασής σας (έμπιστη επαφή)"
+      ],
+      "Company": [
+        "Εταιρεια"
+      ],
+      "State": [
+        "Πολιτεία"
+      ],
+      "ZIP code": [
+        "Τ.Κ."
       ]
     },
     "Label for contact group color": {
@@ -6946,6 +6974,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Η συνδρομή σας έχει λήξει. ${ cta } και για την αποφυγή απώλειας δεδομένων."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Για να συνεχίσετε να χρησιμοποιείτε το ${ BRAND_NAME }, παρακαλούμε βεβαιωθείτε ότι οι premium δυνατότητές σας δε χρησιμοποιούνται πλέον ή αναβαθμίστε το πλάνο σας."
       ]
     },
     "Log preference": {
@@ -8796,6 +8827,9 @@
       ],
       "Your payment is still being processed": [
         "Η πληρωμή σας βρίσκεται ακόμα υπό επεξεργασία"
+      ],
+      "VAT number": [
+        "Αριθμός ΑΦΜ"
       ]
     },
     "Payments.Error": {
@@ -8851,6 +8885,30 @@
       ],
       "VAT number": [
         "Αριθμός ΑΦΜ"
+      ],
+      "Add ABN": [
+        "Προσθήκη ABN"
+      ],
+      "Add Business Number": [
+        "Προσθήκη Αριθμού ΦΠΑ Επιχείρησης"
+      ],
+      "Add EIN": [
+        "Προσθήκη ΑΦΜ"
+      ],
+      "Add VAT number": [
+        "Προσθήκη Αριθμού ΦΠΑ"
+      ],
+      "Edit ABN": [
+        "Επεξεργασία ABN"
+      ],
+      "Edit Business Number": [
+        "Επεξεργασία Αριθμού ΦΠΑ Επιχείρησης"
+      ],
+      "Edit EIN": [
+        "Επεξεργασία ΑΦΜ"
+      ],
+      "Edit VAT number": [
+        "Επεξεργασία Αριθμού ΦΠΑ"
       ]
     },
     "PGP key encryption warning": {
@@ -8988,6 +9046,27 @@
       ],
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
+      ],
+      "Anderson": [
+        "Καρανικολής"
+      ],
+      "Anytown": [
+        "Αθήνα"
+      ],
+      "Company name": [
+        "Όνομα εταιρείας"
+      ],
+      "Main street 12": [
+        "Ονησίμου 12"
+      ],
+      "Select country": [
+        "Επιλογή χώρας"
+      ],
+      "Thomas": [
+        "Θωμάς"
+      ],
+      "VAT number": [
+        "Α.Φ.Μ."
       ]
     },
     "Placeholder for contact group name": {
@@ -10431,6 +10510,9 @@
       ],
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"
+      ],
+      "Billing details updated": [
+        "Τα στοιχεία χρέωσης ενημερώθηκαν"
       ]
     },
     "Suffix": {
@@ -11244,6 +11326,9 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Edit billing address": [
+        "Επεξεργασία διεύθυνσης χρέωσης"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11814,6 +11899,14 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Τα πεδία κειμένου είναι προαιρετικά. Οι πληροφορίες που παρέχετε σε αυτή τη φόρμα θα εμφανίζονται σε μελλοντικά τιμολόγια και δεν θα επηρεάσουν τα τιμολόγια που ήδη έχουν εκδοθεί."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Τα πεδία κειμένου είναι προαιρετικά. Οι πληροφορίες που παρέχετε σε αυτήν τη φόρμα θα αλλάξουν μόνο το τιμολόγιο που έχετε επιλέξει και όχι τα μελλοντικά στοιχεία του τιμολογίου σας."
       ]
     }
   }

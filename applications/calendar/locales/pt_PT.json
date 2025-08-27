@@ -3752,6 +3752,15 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "A sua ligação ao Zoom expirou. Volte a ligar-se para continuar."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "A edição do endereço de faturação não está disponível no momento. Tente novamente mais tarde."
+      ],
+      "Postal code is required": [
+        "O código postal é obrigatório"
+      ],
+      "ZIP code is required": [
+        "O código postal é necessário."
       ]
     },
     "Error accepting calendar invitation": {
@@ -6011,6 +6020,13 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Ainda poderá ver os seus dados de conta, mas todas as contas de utilizador serão removidas da sua organização."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "O ${ planName } expira em ${ daysLeft } dia.",
+        "O ${ planName } expira em ${ daysLeft } dias."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } expira hoje."
       ]
     },
     "info": {
@@ -6654,6 +6670,15 @@
       ],
       "Your password (admin)": [
         "A sua palavra-passe (admin)"
+      ],
+      "Company": [
+        "Empresa"
+      ],
+      "State": [
+        "Estado"
+      ],
+      "ZIP code": [
+        "Código postal"
       ]
     },
     "Label for contact group color": {
@@ -8893,6 +8918,24 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Anderson": [
+        "Ferreira"
+      ],
+      "Anytown": [
+        "Porto Verde"
+      ],
+      "Company name": [
+        "Nome da empresa"
+      ],
+      "Main street 12": [
+        "Rua principal, 12"
+      ],
+      "Thomas": [
+        "Andrea"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ]
     },
     "Placeholder for contact group name": {
@@ -10319,6 +10362,9 @@
       ],
       "You have successfully unsubscribed": [
         "A sua subscrição foi cancelada."
+      ],
+      "Billing details updated": [
+        "Os detalhes de faturação forem atualizados."
       ]
     },
     "Suffix": {
@@ -11120,6 +11166,9 @@
       ],
       "Your shorter address is now ready": [
         "O seu endereço mais curto já está pronto"
+      ],
+      "Edit billing address": [
+        "Editar o endereço da fatura"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11684,6 +11733,14 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Os campos de texto são opcionais. As informações fornecidas neste formulário só aparecerão nas faturas emitidas no futuro e não afetarão as faturas existentes."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Os campos de texto são opcionais. As informações fornecidas neste formulário só irão alterar a fatura que selecionou e não os detalhes da futura fatura."
       ]
     }
   }

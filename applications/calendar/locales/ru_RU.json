@@ -3763,6 +3763,12 @@
       ],
       "Your import will not be processed.": [
         "Импорт не будет обработан."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Изменение платежного адреса в данный момент недоступно. Повторите попытку позже."
+      ],
+      "ZIP code is required": [
+        "Необходимо указать почтовый индекс"
       ]
     },
     "Error accepting calendar invitation": {
@@ -6078,6 +6084,15 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Похоже, что ваш часовой пояс изменился на ${ timezone }. Вы хотите обновить настройки часового пояса?"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "Срок действия ${ planName } истекает через ${ daysLeft } день.",
+        "Срок действия ${ planName } истекает через ${ daysLeft } дня.",
+        "Срок действия ${ planName } истекает через ${ daysLeft } дней.",
+        "Срок действия ${ planName } истекает через ${ daysLeft } дней."
+      ],
+      "${ planName } expires today.": [
+        "Срок действия ${ planName } истекает сегодня."
       ]
     },
     "info": {
@@ -6727,6 +6742,15 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "Company": [
+        "Компания"
+      ],
+      "State": [
+        "Состояние"
+      ],
+      "ZIP code": [
+        "Почтовый индекс"
       ]
     },
     "Label for contact group color": {
@@ -8992,6 +9016,24 @@
       ],
       "ZIP code": [
         "Почтовый индекс"
+      ],
+      "Anderson": [
+        "Андерсон"
+      ],
+      "Anytown": [
+        "Любой город"
+      ],
+      "Company name": [
+        "Название компании"
+      ],
+      "Main street 12": [
+        "Мейн стрит 12"
+      ],
+      "Thomas": [
+        "Томас"
+      ],
+      "VAT number": [
+        "Номер плательщика НДС"
       ]
     },
     "Placeholder for contact group name": {
@@ -10444,6 +10486,9 @@
       ],
       "You have successfully unsubscribed": [
         "Подписка отменена"
+      ],
+      "Billing details updated": [
+        "Информация о платеже обновлена"
       ]
     },
     "Suffix": {
@@ -11272,6 +11317,9 @@
       ],
       "Your shorter address is now ready": [
         "Ваш укороченный адрес готов"
+      ],
+      "Edit billing address": [
+        "Изменить платежный адрес"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11924,6 +11972,14 @@
       ],
       "Passcode:": [
         "Код доступа:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Текстовые поля являются необязательными. Информация, которую вы предоставите в этой форме, будет отображаться только в счетах, выставляемых в будущем, и не повлияет на существующие счета."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Текстовые поля являются необязательными. Информация, которую вы предоставите в этой форме, изменит только выбранный вами счет-фактуру, но не ваши будущие данные о счете-фактуре."
       ]
     }
   }

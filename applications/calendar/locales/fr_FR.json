@@ -3836,6 +3836,18 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Votre connexion Zoom a expiré. Veuillez vous reconnecter pour continuer."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "La modification de l'adresse de facturation n'est pas disponible pour le moment. Veuillez réessayer ultérieurement."
+      ],
+      "Failed to open to contact": [
+        "Le contact n'a pas pu être ouvert."
+      ],
+      "Postal code is required": [
+        "Le code postal est requis."
+      ],
+      "ZIP code is required": [
+        "Le code postal est nécessaire."
       ]
     },
     "Error accepting calendar invitation": {
@@ -6104,6 +6116,19 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Vous pourrez toujours consulter les données de votre propre compte, mais tous les comptes utilisateur seront retirés de votre organisation."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } nécessite une adresse ${ BRAND_NAME } pour une synchronisation d'événements et un chiffrement sécurisés. ${ claimAddressButton }."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } arrive à expiration dans ${ daysLeft } jour.",
+        "${ planName } arrive à expiration dans ${ daysLeft } jours."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } arrive à expiration aujourd'hui."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Assurez une communication entièrement privée et chiffrée. Obtenez dès maintenant votre adresse e-mail ${ BRAND_NAME } gratuite."
       ]
     },
     "info": {
@@ -6753,6 +6778,15 @@
       ],
       "Your password (trusted contact)": [
         "Votre mot de passe (contacts de confiance)"
+      ],
+      "Company": [
+        "Entreprise"
+      ],
+      "State": [
+        "État"
+      ],
+      "ZIP code": [
+        "Code postal"
       ]
     },
     "Label for contact group color": {
@@ -6971,6 +7005,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Votre abonnement est terminé. ${ cta } et pour éviter de perdre des données."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Pour continuer à utiliser ${ BRAND_NAME }, veuillez vous assurer de ne plus utiliser vos fonctionnalités premium ou changer d'abonnement."
       ]
     },
     "Log preference": {
@@ -8821,6 +8858,9 @@
       ],
       "Your payment is still being processed": [
         "Votre paiement est en cours de traitement."
+      ],
+      "VAT number": [
+        "Numéro de TVA"
       ]
     },
     "Payments.Error": {
@@ -8876,6 +8916,30 @@
       ],
       "VAT number": [
         "Numéro de TVA"
+      ],
+      "Add ABN": [
+        "Ajouter un ABN"
+      ],
+      "Add Business Number": [
+        "Ajouter un numéro d'entreprise"
+      ],
+      "Add EIN": [
+        "Ajouter un EIN"
+      ],
+      "Add VAT number": [
+        "Ajouter un numéro de TVA"
+      ],
+      "Edit ABN": [
+        "Modifier ABN"
+      ],
+      "Edit Business Number": [
+        "Modifier le numéro d'entreprise"
+      ],
+      "Edit EIN": [
+        "Modifier EIN"
+      ],
+      "Edit VAT number": [
+        "Modifier le numéro de TVA"
       ]
     },
     "PGP key encryption warning": {
@@ -9013,6 +9077,27 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Anderson": [
+        "Durant"
+      ],
+      "Anytown": [
+        "Boisclair"
+      ],
+      "Company name": [
+        "Nom de l'entreprise"
+      ],
+      "Main street 12": [
+        "12, boulevard de la liberté"
+      ],
+      "Select country": [
+        "Sélectionner le pays"
+      ],
+      "Thomas": [
+        "Camille"
+      ],
+      "VAT number": [
+        "Numéro de TVA"
       ]
     },
     "Placeholder for contact group name": {
@@ -10456,6 +10541,9 @@
       ],
       "You have successfully unsubscribed": [
         "La désinscription a été effectuée."
+      ],
+      "Billing details updated": [
+        "Les informations de facturation ont été mises à jour."
       ]
     },
     "Suffix": {
@@ -11269,6 +11357,9 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Edit billing address": [
+        "Modifier l'adresse de facturation"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11839,6 +11930,14 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Les champs de texte sont facultatifs. Les informations fournies dans ce formulaire apparaîtront uniquement sur les factures émises à l’avenir et n’affecteront pas les factures existantes."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Les champs de texte sont facultatifs. Les informations que vous fournissez dans ce formulaire ne modifieront que la facture que vous avez sélectionnée et non les détails de votre future facture."
       ]
     }
   }

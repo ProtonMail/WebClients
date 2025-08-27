@@ -920,6 +920,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bilgisayar uygulamasını ücretsiz deneme süreniz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
+      ],
+      "Claim this address": [
+        "Bu adresi al"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Ücretsiz bir ${ BRAND_NAME } adresi alın"
       ]
     },
     "action": {
@@ -3830,6 +3836,18 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom bağlantınızın geçerlilik süresi dolmuş. İlerlemek için lütfen yeniden bağlantı kurun."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Fatura adresi şu anda düzenlenemiyor. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "Failed to open to contact": [
+        "Kişiye açılamadı"
+      ],
+      "Postal code is required": [
+        "Posta kodunun yazılması zorunludur"
+      ],
+      "ZIP code is required": [
+        "Posta kodunun yazılması zorunludur"
       ]
     },
     "Error accepting calendar invitation": {
@@ -6098,6 +6116,19 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } etkinlikleri güvenli olarak eşitlemek ve şifrelemek için bir ${ BRAND_NAME } adresine gerek duyar. ${ claimAddressButton }."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } tarifesi ${ daysLeft } gün içinde sona eriyor.",
+        "${ planName } tarifesi ${ daysLeft } gün içinde sona eriyor."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } bugün sona eriyor."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Tümüyle güvenli ve şifrelenmiş iletişim sağlayın. Ücretsiz ${ BRAND_NAME } e-posta adresinizi şimdi alın."
       ]
     },
     "info": {
@@ -6747,6 +6778,15 @@
       ],
       "Your password (trusted contact)": [
         "Parolanız (güvenilen kişi)"
+      ],
+      "Company": [
+        "Kuruluş"
+      ],
+      "State": [
+        "İl"
+      ],
+      "ZIP code": [
+        "Posta kodu"
       ]
     },
     "Label for contact group color": {
@@ -6965,6 +7005,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Aboneliğinizin süresi dolmuş. Verilerinizin kaybolmasını önlemek için ${ cta }."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "${ BRAND_NAME } kullanmayı sürdürmek için, lütfen ücretli özellikleri artık kullanmadığınızdan emin olun ya da tarifenizi yükseltin."
       ]
     },
     "Log preference": {
@@ -8815,6 +8858,9 @@
       ],
       "Your payment is still being processed": [
         "Ödeme işleminiz sürüyor"
+      ],
+      "VAT number": [
+        "KDV numarası"
       ]
     },
     "Payments.Error": {
@@ -8870,6 +8916,30 @@
       ],
       "VAT number": [
         "Vergi numarası"
+      ],
+      "Add ABN": [
+        "ABN kodu ekle"
+      ],
+      "Add Business Number": [
+        "İş numarası ekle"
+      ],
+      "Add EIN": [
+        "EIN kodu ekle"
+      ],
+      "Add VAT number": [
+        "KDV numarası ekle"
+      ],
+      "Edit ABN": [
+        "ABN kodunu düzenle"
+      ],
+      "Edit Business Number": [
+        "İş numarasını düzenle"
+      ],
+      "Edit EIN": [
+        "EIN kodunu düzenle"
+      ],
+      "Edit VAT number": [
+        "KDV numarasını düzenle"
       ]
     },
     "PGP key encryption warning": {
@@ -9007,6 +9077,27 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Anderson": [
+        "Kaya"
+      ],
+      "Anytown": [
+        "İl"
+      ],
+      "Company name": [
+        "Kuruluş adı"
+      ],
+      "Main street 12": [
+        "12. cadde"
+      ],
+      "Select country": [
+        "Ülke seçin"
+      ],
+      "Thomas": [
+        "Ali"
+      ],
+      "VAT number": [
+        "KDV numarası"
       ]
     },
     "Placeholder for contact group name": {
@@ -10450,6 +10541,9 @@
       ],
       "You have successfully unsubscribed": [
         "Aboneliği sonlandırdınız"
+      ],
+      "Billing details updated": [
+        "Fatura bilgileri güncellendi"
       ]
     },
     "Suffix": {
@@ -11260,6 +11354,12 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } adresinizi alın"
+      ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11830,6 +11930,14 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca gelecekte düzenlenecek faturalarda görüntülenecek ve var olan faturaları etkilemeyecek."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca seçtiğiniz faturayı değiştirir. Gelecekteki fatura bilgilerinizi değiştirmez."
       ]
     }
   }

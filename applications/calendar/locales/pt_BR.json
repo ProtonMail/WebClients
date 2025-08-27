@@ -920,6 +920,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Claim this address": [
+        "Confirmar este endereço"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Crie um endereço gratuito da ${ BRAND_NAME }"
       ]
     },
     "action": {
@@ -3830,6 +3836,18 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Sua conexão do Zoom expirou. Reconecte-se para continuar."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "A edição do endereço de cobrança não está disponível no momento. Tente novamente mais tarde."
+      ],
+      "Failed to open to contact": [
+        "Não foi possível abrir o contato."
+      ],
+      "Postal code is required": [
+        "Código postal é obrigatório"
+      ],
+      "ZIP code is required": [
+        "O CEP é obrigatório."
       ]
     },
     "Error accepting calendar invitation": {
@@ -6098,6 +6116,13 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Você ainda poderá visualizar os dados da sua própria conta, mas todas as contas de usuário serão removidas da sua organização."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } expira em ${ daysLeft } dia.",
+        "${ planName } expira em ${ daysLeft } dias."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } expira hoje."
       ]
     },
     "info": {
@@ -6747,6 +6772,15 @@
       ],
       "Your password (trusted contact)": [
         "Sua senha (contato de confiança)"
+      ],
+      "Company": [
+        "Empresa"
+      ],
+      "State": [
+        "Estado"
+      ],
+      "ZIP code": [
+        "CEP"
       ]
     },
     "Label for contact group color": {
@@ -8822,6 +8856,9 @@
       ],
       "Your payment is still being processed": [
         "Seu pagamento ainda está sendo processado"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ]
     },
     "Payments.Error": {
@@ -8877,6 +8914,30 @@
       ],
       "VAT number": [
         "Número de IVA"
+      ],
+      "Add ABN": [
+        "Adicionar ABN"
+      ],
+      "Add Business Number": [
+        "Adicionar número comercial"
+      ],
+      "Add EIN": [
+        "Adicionar EIN"
+      ],
+      "Add VAT number": [
+        "Adicionar número de IVA"
+      ],
+      "Edit ABN": [
+        "Editar ABN"
+      ],
+      "Edit Business Number": [
+        "Editar número comercial"
+      ],
+      "Edit EIN": [
+        "Editar EIN"
+      ],
+      "Edit VAT number": [
+        "Editar número de IVA"
       ]
     },
     "PGP key encryption warning": {
@@ -9014,6 +9075,27 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Anderson": [
+        "Braga"
+      ],
+      "Anytown": [
+        "Nova Esperança"
+      ],
+      "Company name": [
+        "Nome da empresa"
+      ],
+      "Main street 12": [
+        "Rua Principal, 12"
+      ],
+      "Select country": [
+        "Selecionar país"
+      ],
+      "Thomas": [
+        "Andrea"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ]
     },
     "Placeholder for contact group name": {
@@ -10457,6 +10539,9 @@
       ],
       "You have successfully unsubscribed": [
         "Você cancelou a inscrição"
+      ],
+      "Billing details updated": [
+        "Os detalhes de faturamento forem atualizados"
       ]
     },
     "Suffix": {
@@ -11264,6 +11349,15 @@
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
+      ],
+      "Account temporarily locked": [
+        "Conta temporariamente bloqueada"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Confirmar seu endereço de ${ MAIL_APP_NAME }"
+      ],
+      "Edit billing address": [
+        "Editar o endereço de cobrança"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11834,6 +11928,14 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Os campos de texto são opcionais. As informações que você fornecer neste formulário aparecerão somente em faturas emitidas no futuro e não afetarão as faturas existentes."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Os campos de texto são opcionais. As informações fornecidas neste formulário alterarão apenas a fatura selecionada, e não os detalhes das faturas futuras."
       ]
     }
   }
