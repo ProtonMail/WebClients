@@ -48,7 +48,7 @@ import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
 import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton/shared/lib/keys/memberHelper';
-import { useFlag } from '@proton/unleash/index';
+import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import Addresses from '../addresses/Addresses';

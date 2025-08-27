@@ -4,7 +4,7 @@ import Loader from '@proton/components/components/loader/Loader';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
-import { useFlag } from '@proton/unleash/index';
+import { useFlag } from '@proton/unleash';
 
 import Addresses from './Addresses';
 
