@@ -10,7 +10,9 @@ import { AddOutgoingEmergencyContactAction } from './AddOutgoingEmergencyContact
 import { DeleteOutgoingEmergencyContactAction } from './DeleteOutgoingEmergencyContactAction';
 import { EditOutgoingEmergencyContactAction } from './EditOutgoingEmergencyContactAction';
 import { GrantAccessOutgoingEmergencyContactAction } from './GrantAccessOutgoingEmergencyContactAction';
+import { ResetAccessOutgoingEmergencyContactAction } from './ResetAccessOutgoingEmergencyContactAction';
 import { UpsellOutgoingEmergencyContactAction } from './UpsellOutgoingEmergencyContactAction';
+import { ViewAccessOutgoingEmergencyContactAction } from './ViewAccessOutgoingEmergencyContactAction';
 import type { ActionListener, ActionPayload } from './interface';
 import { useOutgoingItems } from './useOutgoingItems';
 
@@ -65,7 +67,9 @@ export const OutgoingControllerProvider = ({ app, children }: { app: APP_NAMES; 
             <AddOutgoingEmergencyContactAction />
             <EditOutgoingEmergencyContactAction />
             <DeleteOutgoingEmergencyContactAction />
+            <ViewAccessOutgoingEmergencyContactAction />
             <GrantAccessOutgoingEmergencyContactAction />
+            <ResetAccessOutgoingEmergencyContactAction />
             {children}
         </OutgoingControllerContext.Provider>
     );

@@ -6,7 +6,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 
-import { editDelegatedAccessThunk } from '../../outgoingActions';
+import { grantDelegatedAccessThunk } from '../../outgoingActions';
 import { useDispatch } from '../../useDispatch';
 import { GrantAccessOutgoingEmergencyContactModal } from './GrantAccessOutgoingEmergencyContactModal';
 import { useOutgoingController } from './OutgoingController';
@@ -28,13 +28,7 @@ export const GrantAccessOutgoingEmergencyContactAction = () => {
     const action = useCallback(async (payload: EnrichedOutgoingDelegatedAccess) => {
         try {
             setLoading(true);
-            await dispatch(
-                editDelegatedAccessThunk({
-                    outgoingDelegatedAccess: payload.outgoingDelegatedAccess,
-                    types: payload.outgoingDelegatedAccess.Types,
-                    triggerDelay: 0,
-                })
-            );
+            await dispatch(grantDelegatedAccessThunk(payload.outgoingDelegatedAccess));
             createNotification({ text: c('emergency_access').t`Emergency access granted` });
             modal.onClose?.();
         } catch (e) {

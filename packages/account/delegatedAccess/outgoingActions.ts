@@ -219,6 +219,20 @@ export const editDelegatedAccessThunk = ({
     };
 };
 
+export const grantDelegatedAccessThunk = (
+    outgoingDelegatedAccess: OutgoingDelegatedAccessOutput
+): ThunkAction<Promise<OutgoingDelegatedAccessOutput>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        return dispatch(
+            editDelegatedAccessThunk({
+                outgoingDelegatedAccess,
+                triggerDelay: 0,
+                types: outgoingDelegatedAccess.Types,
+            })
+        );
+    };
+};
+
 const deleteDelegatedAccess = (id: string) => ({
     url: `account/v1/access/${id}/delete`,
     method: 'put',
@@ -233,5 +247,25 @@ export const deleteDelegatedAccessThunk = ({
         const api = getSilentApi(extra.api);
         await api(deleteDelegatedAccess(id));
         dispatch(delegatedAccessActions.deleteOutgoingItem({ DelegatedAccessID: id }));
+    };
+};
+
+const resetDelegatedAccess = (id: string) => ({
+    url: `account/v1/access/${id}/reset`,
+    method: 'put',
+});
+
+export const resetDelegatedAccessThunk = ({
+    id,
+}: {
+    id: string;
+}): ThunkAction<Promise<OutgoingDelegatedAccessOutput>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, _, extra) => {
+        const api = getSilentApi(extra.api);
+        const { OutgoingDelegatedAccess } = await api<{
+            OutgoingDelegatedAccess: OutgoingDelegatedAccessOutput;
+        }>(resetDelegatedAccess(id));
+        dispatch(delegatedAccessActions.upsertOutgoingItem(OutgoingDelegatedAccess));
+        return OutgoingDelegatedAccess;
     };
 };

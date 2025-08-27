@@ -102,7 +102,7 @@ const OutgoingItem = ({
         parsedOutgoingDelegatedAccess: { contact, createdAtDate, accessibleTriggerDelayMs },
     },
     meta,
-    meta: { canGrantAccess, canDelete, canChangeWaitTime },
+    meta: { canGrantAccess, canRevokeAccess, canRefuseAccess, canDelete, canChangeWaitTime },
 }: OutgoingItemProps) => {
     return (
         <TableRow labels={labels}>
@@ -119,13 +119,21 @@ const OutgoingItem = ({
                 <div className="inline-flex">
                     <DropdownActions
                         list={[
-                            canDelete && {
-                                text: c('Action').t`Remove`,
-                                onClick: () => notify({ type: 'delete', value }),
+                            canRevokeAccess && {
+                                text: c('emergency_access').t`Revoke access`,
+                                onClick: () => notify({ type: 'revoke-access', value }),
+                            },
+                            canRefuseAccess && {
+                                text: c('emergency_access').t`Refuse access`,
+                                onClick: () => notify({ type: 'refuse-access', value }),
                             },
                             canGrantAccess && {
                                 text: c('emergency_access').t`Give access now`,
                                 onClick: () => notify({ type: 'grant-access', value }),
+                            },
+                            canDelete && {
+                                text: c('Action').t`Remove`,
+                                onClick: () => notify({ type: 'delete', value }),
                             },
                             canChangeWaitTime && {
                                 text: c('emergency_access').t`Change wait time`,
