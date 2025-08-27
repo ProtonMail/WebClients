@@ -38,6 +38,10 @@ jest.mock('@proton/account/user/hooks', () => ({
     ]),
 }));
 
+jest.mock('@proton/unleash', () => ({
+    useFlag: jest.fn().mockReturnValue(true),
+}));
+
 jest.mock('@proton/meet/hooks/useGetMeetingDependencies', () => ({
     useGetMeetingDependencies: jest.fn().mockReturnValue(
         jest.fn().mockResolvedValue({

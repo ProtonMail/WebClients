@@ -12,16 +12,20 @@ const setup = (params?: {
     savePassphrase?: (passphrase: string) => Promise<void>;
     fetchingDetailsFailed?: boolean;
     refetchMeeting?: () => Promise<void>;
+    hidePassphrase?: boolean;
 }) => {
     const {
         passphrase = '',
         savePassphrase = jest.fn(),
         fetchingDetailsFailed = false,
         refetchMeeting = jest.fn(),
+        hidePassphrase = false,
     } = params ?? {};
 
     return render(
-        <ProtonMeetRowContext.Provider value={{ passphrase, savePassphrase, fetchingDetailsFailed, refetchMeeting }}>
+        <ProtonMeetRowContext.Provider
+            value={{ passphrase, savePassphrase, fetchingDetailsFailed, refetchMeeting, hidePassphrase }}
+        >
             <NotificationsProvider>
                 <ProtonMeetPassword />
             </NotificationsProvider>
@@ -104,5 +108,11 @@ describe('ProtonMeetPassword', () => {
         await user.click(screen.getByText('Retry'));
 
         expect(refetchMeeting).toHaveBeenCalled();
+    });
+
+    it('does not render the passphrase input if hidePassphrase is true', () => {
+        setup({ hidePassphrase: true });
+
+        expect(screen.queryByText('Passphrase')).not.toBeInTheDocument();
     });
 });

@@ -21,6 +21,7 @@ describe('ProtonMeetMeetingDetails', () => {
         deleteMeeting: jest.fn(),
         fetchingDetailsFailed: false,
         refetchMeeting: jest.fn(),
+        hidePassphrase: false,
     };
 
     const setup = (props: Partial<ProtonMeetMeetingDetailsProps> = {}) => {
@@ -29,6 +30,7 @@ describe('ProtonMeetMeetingDetails', () => {
             savePassphrase: props.savePassphrase ?? defaultProps.savePassphrase,
             fetchingDetailsFailed: props.fetchingDetailsFailed ?? defaultProps.fetchingDetailsFailed,
             refetchMeeting: props.refetchMeeting ?? defaultProps.refetchMeeting,
+            hidePassphrase: props.hidePassphrase ?? defaultProps.hidePassphrase,
         };
 
         return render(
@@ -145,5 +147,11 @@ describe('ProtonMeetMeetingDetails', () => {
         await user.click(retryButton);
 
         expect(refetchMeeting).toHaveBeenCalled();
+    });
+
+    it('does not render the passphrase input if hidePassphrase is true', () => {
+        setup({ hidePassphrase: true });
+
+        expect(screen.queryByText('Passphrase')).not.toBeInTheDocument();
     });
 });

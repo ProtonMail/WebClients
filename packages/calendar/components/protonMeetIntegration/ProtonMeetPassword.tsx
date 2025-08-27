@@ -21,7 +21,8 @@ import { useProtonMeetRowContext } from './ProtonMeetRowContext';
 export const ProtonMeetPassword = () => {
     const notifications = useNotifications();
 
-    const { passphrase, savePassphrase, fetchingDetailsFailed, refetchMeeting } = useProtonMeetRowContext();
+    const { passphrase, savePassphrase, fetchingDetailsFailed, refetchMeeting, hidePassphrase } =
+        useProtonMeetRowContext();
 
     const [modalProps, handleSetOpen, render] = useModalState();
 
@@ -64,6 +65,10 @@ export const ProtonMeetPassword = () => {
 
     const trimmedPassword = password.trim();
     const isValid = (password.length === 0 && passphrase) || trimmedPassword.length > 0;
+
+    if (hidePassphrase) {
+        return null;
+    }
 
     return (
         <>

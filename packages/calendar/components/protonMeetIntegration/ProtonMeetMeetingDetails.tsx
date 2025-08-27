@@ -11,6 +11,7 @@ export interface ProtonMeetMeetingDetailsProps {
     deleteMeeting: () => void;
     fetchingDetailsFailed: boolean;
     refetchMeeting: () => Promise<void>;
+    hidePassphrase: boolean;
 }
 
 export const ProtonMeetMeetingDetails = ({
@@ -20,6 +21,7 @@ export const ProtonMeetMeetingDetails = ({
     deleteMeeting,
     fetchingDetailsFailed,
     refetchMeeting,
+    hidePassphrase,
 }: ProtonMeetMeetingDetailsProps) => {
     return (
         <div className="flex flex-nowrap justify-space-between items-start">
@@ -29,6 +31,7 @@ export const ProtonMeetMeetingDetails = ({
                     savePassphrase,
                     fetchingDetailsFailed,
                     refetchMeeting,
+                    hidePassphrase,
                 }}
             >
                 <VideoConferencingWidget

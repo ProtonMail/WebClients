@@ -5,11 +5,13 @@ export const ProtonMeetRowContext = createContext<{
     savePassphrase?: (passphrase: string) => Promise<void>;
     fetchingDetailsFailed: boolean;
     refetchMeeting?: () => Promise<void>;
+    hidePassphrase: boolean;
 }>({
     passphrase: undefined,
     savePassphrase: undefined,
     fetchingDetailsFailed: false,
     refetchMeeting: undefined,
+    hidePassphrase: false,
 });
 
 export const useProtonMeetRowContext = () => {

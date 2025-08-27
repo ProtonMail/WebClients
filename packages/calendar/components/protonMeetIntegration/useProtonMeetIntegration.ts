@@ -13,6 +13,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar/Api';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
+import { useFlag } from '@proton/unleash';
 
 import { calendarUrlQueryParams } from '../../constants';
 import {
@@ -37,6 +38,8 @@ export const useProtonMeetIntegration = ({
     const history = useHistory();
     const location = useLocation();
 
+    const isProtonMeetEnabled = useFlag('NewScheduleOption');
+
     const [user] = useUser();
 
     const notifications = useNotifications();
@@ -52,6 +55,7 @@ export const useProtonMeetIntegration = ({
         passwordBase: '',
         passphrase: '',
         failed: false,
+        hidePassphrase: !isProtonMeetEnabled,
     });
 
     const { createProtonMeet, getProtonMeetByLinkName, saveProtonMeetPassword } = useProtonMeet();
@@ -105,6 +109,7 @@ export const useProtonMeetIntegration = ({
                 passwordBase: urlPassword,
                 passphrase,
                 failed: false,
+                hidePassphrase: false,
             });
 
             setModel({
@@ -175,7 +180,7 @@ export const useProtonMeetIntegration = ({
     const setupInProgress = useRef(false);
 
     const setup = async () => {
-        if (!model.conferenceId || !model.conferenceUrl || setupInProgress.current) {
+        if (!model.conferenceId || !model.conferenceUrl || setupInProgress.current || !isProtonMeetEnabled) {
             return;
         }
 
@@ -215,6 +220,7 @@ export const useProtonMeetIntegration = ({
             passwordBase: urlPassword,
             passphrase,
             failed: false,
+            hidePassphrase: false,
         });
 
         setMeetingObject(meeting as Meeting);
