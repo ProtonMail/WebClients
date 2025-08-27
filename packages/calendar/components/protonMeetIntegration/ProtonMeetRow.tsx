@@ -34,6 +34,7 @@ interface ProtonMeetRowProps {
         passwordBase: string;
         passphrase: string;
         failed: boolean;
+        hidePassphrase: boolean;
     };
     setup: () => Promise<void>;
 }
@@ -56,6 +57,7 @@ export const ProtonMeetRow = ({
                 deleteMeeting={deleteProtonMeet}
                 refetchMeeting={setup}
                 fetchingDetailsFailed={meetingDetails.failed}
+                hidePassphrase={meetingDetails.hidePassphrase}
             />
         );
     }
