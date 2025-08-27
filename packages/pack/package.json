@@ -22,14 +22,14 @@
         "@babel/runtime": "^7.28.3",
         "@pmmmwh/react-refresh-webpack-plugin": "^0.6.1",
         "@sentry/webpack-plugin": "^1.21.0",
-        "@swc/core": "^1.13.3",
+        "@swc/core": "^1.13.5",
         "autoprefixer": "^10.4.21",
         "babel-loader": "^10.0.0",
         "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
         "chalk": "4.1.2",
         "commander": "^12.1.0",
         "copy-webpack-plugin": "^13.0.1",
-        "core-js": "^3.45.0",
+        "core-js": "^3.45.1",
         "cross-env": "^7.0.3",
         "css-loader": "^7.1.2",
         "css-minimizer-webpack-plugin": "^7.0.2",
@@ -61,7 +61,7 @@
         "webpack-subresource-integrity": "^5.1.0"
     },
     "devDependencies": {
-        "eslint": "^9.33.0",
+        "eslint": "^9.34.0",
         "prettier": "^3.6.2",
         "webpack-bundle-analyzer": "^4.10.2"
     },
