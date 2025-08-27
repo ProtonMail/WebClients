@@ -4,7 +4,7 @@
   "description": "Docs RTS messaging types",
   "main": "index.ts",
   "scripts": {
-    "lint": "eslint . --ext ts --quiet",
+    "lint": "eslint --quiet",
     "sync": "./scripts/sync.sh ."
   },
   "dependencies": {
