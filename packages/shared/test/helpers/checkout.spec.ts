@@ -143,6 +143,7 @@ describe('should get checkout result', () => {
             renewPrice: 999,
             renewCycleOverriden: false,
             renewPriceOverriden: false,
+            amountDue: 999,
         });
     });
 
@@ -209,6 +210,7 @@ describe('should get checkout result', () => {
             renewPrice: 1199,
             renewCycleOverriden: false,
             renewPriceOverriden: false,
+            amountDue: 1199,
         });
     });
 
@@ -260,6 +262,7 @@ describe('should get checkout result', () => {
             renewPrice: 47976,
             renewCycleOverriden: false,
             renewPriceOverriden: false,
+            amountDue: 47976,
         });
     });
 
@@ -312,6 +315,7 @@ describe('should get checkout result', () => {
             renewPrice: 29970,
             renewCycleOverriden: false,
             renewPriceOverriden: false,
+            amountDue: 29970,
         };
 
         // Use toBeCloseTo for the floating point value
@@ -393,6 +397,7 @@ describe('should get checkout result', () => {
             renewPrice: 81288,
             renewCycleOverriden: false,
             renewPriceOverriden: false,
+            amountDue: 81288,
         });
     });
 
@@ -451,6 +456,7 @@ describe('should get checkout result', () => {
             renewPrice: twoYearPrice3Members,
             renewCycleOverriden: false,
             renewPriceOverriden: false,
+            amountDue: twoYearPrice3Members,
         });
     });
 
@@ -517,6 +523,7 @@ describe('should get checkout result', () => {
             renewPrice: twoYearPrice3Members,
             renewCycleOverriden: false,
             renewPriceOverriden: false,
+            amountDue: twoYearPrice3Members,
         });
     });
 
@@ -570,6 +577,7 @@ describe('should get checkout result', () => {
             renewPrice: 47976,
             renewCycleOverriden: false,
             renewPriceOverriden: false,
+            amountDue: 0,
         });
     });
 

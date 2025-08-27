@@ -293,6 +293,7 @@ export const getCheckout = ({
         renewPrice,
         renewCycleOverriden,
         renewPriceOverriden,
+        amountDue: checkResult.AmountDue,
     };
 };
 
