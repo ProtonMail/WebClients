@@ -1,14 +1,19 @@
-import { getCurrencySymbol, type CellFormat } from '@rowsncolumns/spreadsheet'
+import { type CellFormat, getCurrencySymbol } from '@rowsncolumns/spreadsheet'
 import { getDefaultDateFormat, getLongDateFormat } from '@rowsncolumns/utils'
 
-export const DEFAULT_CURRENCY = 'USD'
-export const DEFAULT_LOCALE = 'en-US'
+export const CURRENCY_DEFAULT = 'USD'
+export const LOCALE_DEFAULT = 'en-US'
 
 // TODO: both of these should be dynamic
-export const CURRENCY = DEFAULT_CURRENCY
-export const LOCALE = DEFAULT_LOCALE
+export const CURRENCY = CURRENCY_DEFAULT
+export const LOCALE = LOCALE_DEFAULT
 
-export const AVAILABLE_FONTS = [
+export const ZOOM_SUGGESTIONS = [0.5, 0.75, 0.9, 1, 1.25, 1.5, 2] // scale
+export const ZOOM_DEFAULT = 1 // scale
+export const ZOOM_MIN = 0.5 // scale
+export const ZOOM_MAX = 2 // scale
+
+export const FONTS = [
   { value: 'arial', label: 'Arial' },
   { value: 'calibri', label: 'Calibri' },
   { value: 'cambria', label: 'Cambria' },
@@ -40,37 +45,38 @@ export const AVAILABLE_FONTS = [
   { value: 'ubuntu', label: 'Ubuntu' },
   { value: 'verdana', label: 'Verdana' },
 ] as const
-export type FontValue = (typeof AVAILABLE_FONTS)[number]['value']
-export const FONT_LABEL_BY_VALUE = Object.fromEntries(
-  AVAILABLE_FONTS.map(({ value, label }) => [value, label]),
-) as Record<FontValue, string>
+export type FontValue = (typeof FONTS)[number]['value']
+export const FONT_LABEL_BY_VALUE = Object.fromEntries(FONTS.map(({ value, label }) => [value, label])) as Record<
+  FontValue,
+  string
+>
 // TODO: make sure this is synced with SpreadsheetTheme.primaryFontFamily
-export const DEFAULT_FONT_FAMILY = 'arial' satisfies FontValue
-export const DEFAULT_FONT_SIZE = 10 // pt
-export const FONT_SIZE_SUGGESTIONS = [6, 7, 8, 9, 10, 11, 12, 14, 18, 24, 36]
-export const FONT_SIZE_MIN_VALUE = 1
-export const FONT_SIZE_MAX_VALUE = 400
+export const FONT_FAMILY_DEFAULT = 'arial' satisfies FontValue
+export const FONT_SIZE_SUGGESTIONS = [6, 7, 8, 9, 10, 11, 12, 14, 18, 24, 36] // pt
+export const FONT_SIZE_DEFAULT = 10 // pt
+export const FONT_SIZE_MIN = 1 // pt
+export const FONT_SIZE_MAX = 400 // pt
 
 export type PatternSpec = {
   type: NonNullable<CellFormat['numberFormat']>['type']
   pattern: string
 }
-export function DEFAULT_CURRENCY_PATTERN(symbol: string) {
+export function CURRENCY_PATTERN_DEFAULT(symbol: string) {
   return `"${symbol}"#,##0.00`
 }
-export function DEFAULT_CURRENCY_ROUNDED_PATTERN(symbol: string) {
+export function CURRENCY_ROUNDED_PATTERN_DEFAULT(symbol: string) {
   return `"${symbol}"#,##0`
 }
 type CurrencySymbolOptions = { locale: string; currency: string }
 export function CURRENCY_SYMBOL({ locale, currency }: CurrencySymbolOptions) {
-  return getCurrencySymbol(locale, currency) ?? DEFAULT_CURRENCY
+  return getCurrencySymbol(locale, currency) ?? CURRENCY_DEFAULT
 }
 type CurrencyPatternOptions = { locale: string; currency: string }
 export function CURRENCY_PATTERN({ locale, currency }: CurrencyPatternOptions) {
-  return DEFAULT_CURRENCY_PATTERN(CURRENCY_SYMBOL({ locale, currency }))
+  return CURRENCY_PATTERN_DEFAULT(CURRENCY_SYMBOL({ locale, currency }))
 }
 export function CURRENCY_ROUNDED_PATTERN({ locale, currency }: CurrencyPatternOptions) {
-  return DEFAULT_CURRENCY_ROUNDED_PATTERN(CURRENCY_SYMBOL({ locale, currency }))
+  return CURRENCY_ROUNDED_PATTERN_DEFAULT(CURRENCY_SYMBOL({ locale, currency }))
 }
 
 type PatternSpecsOptions = { locale: string; currency: string }
@@ -102,6 +108,6 @@ export function PATTERN_SPECS({ locale, currency }: PatternSpecsOptions) {
     DURATION: { type: 'TIME', pattern: `[$-${locale}][h]:mm:ss` },
   } satisfies Record<string, PatternSpec>
 }
-export const EXAMPLE_NUMBER = 1000.12
-export const EXAMPLE_PERCENT = 0.1012
-export const EXAMPLE_DATE = new Date('2008-09-26T15:59:00')
+export const NUMBER_PATTERN_EXAMPLE_VALUE = 1000.12
+export const PERCENT_PATTERN_EXAMPLE_VALUE = 0.1012
+export const DATE_PATTERN_EXAMPLE_VALUE = new Date('2008-09-26T15:59:00')

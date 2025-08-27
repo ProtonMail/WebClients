@@ -1,11 +1,12 @@
+import * as Ariakit from '@ariakit/react'
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import type { ReactElement } from 'react'
+import { c } from 'ttag'
 import { useStringifier } from '../../../stringifier'
 import type { ProtonSheetsUIState } from '../../../ui-state'
 import * as UI from '../../ui'
-import { c } from 'ttag'
-import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 
-export interface FileMenuProps extends UI.MenuProviderProps {
+export interface FileMenuProps extends Ariakit.MenuProviderProps {
   ui: ProtonSheetsUIState
   renderMenuButton: ReactElement
 }
@@ -13,8 +14,8 @@ export interface FileMenuProps extends UI.MenuProviderProps {
 export function FileMenu({ ui, renderMenuButton, ...props }: FileMenuProps) {
   const s = useStrings()
   return (
-    <UI.MenuProvider {...props}>
-      <UI.MenuButton render={renderMenuButton} />
+    <Ariakit.MenuProvider {...props}>
+      <Ariakit.MenuButton render={renderMenuButton} />
       <UI.Menu>
         {/* TODO: basically all actions */}
         {/* TODO: which icon do we want here? */}
@@ -29,7 +30,7 @@ export function FileMenu({ ui, renderMenuButton, ...props }: FileMenuProps) {
         <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="trash" />}>{s('Move to trash')}</UI.MenuItem>
         <UI.MenuSeparator />
         <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="printer" />}>{s('Print')}</UI.MenuItem>
-        <UI.MenuProvider>
+        <Ariakit.MenuProvider>
           <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="arrow-down-to-square" />}>
             {s('Download')}
           </UI.SubMenuButton>
@@ -38,7 +39,7 @@ export function FileMenu({ ui, renderMenuButton, ...props }: FileMenuProps) {
             <UI.MenuItem>{s('Comma Separated Values (.csv)')}</UI.MenuItem>
             <UI.MenuItem>{s('Tab Separated Values (.tsv)')}</UI.MenuItem>
           </UI.SubMenu>
-        </UI.MenuProvider>
+        </Ariakit.MenuProvider>
         <UI.MenuSeparator />
         <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="info-circle" />}>{s('Help')}</UI.MenuItem>
         <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="brand-proton-sheets" />}>
@@ -49,7 +50,7 @@ export function FileMenu({ ui, renderMenuButton, ...props }: FileMenuProps) {
         </UI.MenuItem>
         {/* TODO: add download logs option */}
       </UI.Menu>
-    </UI.MenuProvider>
+    </Ariakit.MenuProvider>
   )
 }
 
