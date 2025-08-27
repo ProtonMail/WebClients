@@ -81,6 +81,7 @@ export const useInvitationsLoader = () => {
             } catch (e) {
                 handleError(e, {
                     fallbackMessage: c('Error').t`We were not able to load some of your invitation to shared items`,
+                    showNotification: false,
                 });
             } finally {
                 setLoadingInvitations(false);
