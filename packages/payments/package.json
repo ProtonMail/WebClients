@@ -6,7 +6,7 @@
     "main": "index.ts",
     "scripts": {
         "check-types": "tsc",
-        "lint": "eslint index.ts core --ext .js,.ts,.tsx --quiet",
+        "lint": "eslint --quiet",
         "test": "jest",
         "test:ci": "jest --runInBand",
         "test:watch": "jest --watch"

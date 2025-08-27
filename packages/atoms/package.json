@@ -11,7 +11,7 @@
         "docker:build": "docker build -f Dockerfile -t storybook-atoms ../../",
         "docker:run": "docker run -it -p 3000:3000 -v .:/clients/packages/atoms --name storybook-atoms storybook-atoms:latest",
         "i18n:validate": "proton-i18n validate lint-functions",
-        "lint": "eslint . --ext .js,.ts,.tsx --quiet",
+        "lint": "eslint --quiet",
         "playwright:test": "playwright test --config=playwright.config.ts",
         "playwright:test:update": "yarn run playwright:test -u",
         "pretty": "prettier --write $(find . -path ./node_modules -prune -o -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",

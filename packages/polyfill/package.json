@@ -3,7 +3,7 @@
     "main": "index.js",
     "module": "index.js",
     "scripts": {
-        "lint": "eslint . --ext .js,.ts,.tsx --quiet"
+        "lint": "eslint --quiet"
     },
     "dependencies": {
         "@proton/eslint-config-proton": "workspace:^",
