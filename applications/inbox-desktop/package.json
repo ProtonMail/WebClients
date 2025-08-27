@@ -12,7 +12,7 @@
     "scripts": {
         "check": "yarn run check:format && yarn run check:lint && yarn run check:types",
         "check:format": "prettier . --check",
-        "check:lint": "eslint --ext .ts,.tsx .",
+        "check:lint": "eslint --quiet",
         "check:negativity": "electronegativity -i ./src",
         "check:types": "tsc --noEmit",
         "create-uninstaller": "appify ./src/macos/uninstall.sh './src/macos/Proton Mail Uninstaller.app' ./assets/icons/uninstaller.png",

@@ -23,9 +23,9 @@ describe('transformStyleAttributes', () => {
                 </div>
             `;
 
-            let a = document.getElementById('a');
-            let b = document.getElementById('b');
-            let c = document.getElementById('c');
+            const a = document.getElementById('a');
+            const b = document.getElementById('b');
+            const c = document.getElementById('c');
 
             expect(a?.style.height).toBe('100vh');
             expect(a?.style.width).toBe('100vh');
@@ -74,7 +74,7 @@ describe('transformStyleAttributes', () => {
 
             transformStyleAttributes(document.body as unknown as Element);
 
-            let a = document.getElementById('a');
+            const a = document.getElementById('a');
             expect(a?.style.height).toBe('auto');
             expect(a?.style.width).toBe('auto');
         });
@@ -133,7 +133,7 @@ describe('transformStyleAttributes', () => {
             `;
             transformStyleAttributes(document.body as unknown as Element);
 
-            let a = document.getElementById('a');
+            const a = document.getElementById('a');
             expect(a?.style.whiteSpace).toBe('pre-wrap');
         });
 

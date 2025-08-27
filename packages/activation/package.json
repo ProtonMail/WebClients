@@ -6,7 +6,7 @@
     "scripts": {
         "check-types": "tsc",
         "i18n:validate": "proton-i18n validate lint-functions",
-        "lint": "eslint . src --ext .js,.ts,.tsx --quiet",
+        "lint": "eslint --quiet",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "test": "jest ",
         "test:ci": "jest --runInBand --ci",
