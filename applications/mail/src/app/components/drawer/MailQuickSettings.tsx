@@ -55,7 +55,7 @@ import {
 } from '@proton/shared/lib/interfaces';
 import { loggerManager } from '@proton/shared/lib/logger';
 import { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
-import { useFlag } from '@proton/unleash/index';
+import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useCanReplayOnboarding } from 'proton-mail/hooks/useCanReplayOnboarding';
