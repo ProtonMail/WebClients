@@ -1,12 +1,14 @@
-import { type ComponentPropsWithRef } from 'react'
+import type { ComponentPropsWithRef } from 'react'
 import { c } from 'ttag'
-import * as T from './primitives'
-import { FontSelect } from './FontSelect'
 import { useStringifier } from '../../stringifier'
 import type { ProtonSheetsUIState } from '../../ui-state'
+import * as Atoms from '../atoms'
 import * as Icons from '../icons'
+import { FontSelect } from './FontSelect'
+import { FontSizeControls } from './FontSizeControls'
 import { MoreFormatsMenu } from './MoreFormatsMenu'
-import { FontSizeInput } from './FontSizeInput'
+import { ZoomCombobox } from './ZoomCombobox'
+import * as T from './primitives'
 
 export interface ToolbarProps extends ComponentPropsWithRef<'div'> {
   ui: ProtonSheetsUIState
@@ -16,7 +18,17 @@ export function Toolbar({ ui, ...props }: ToolbarProps) {
   const s = useStrings()
   return (
     <T.Container {...props}>
-      <T.Item legacyIconName="arrow-up-and-left" onClick={ui.history.undo} disabled={ui.history.undoDisabled}>
+      <T.Item
+        legacyIconName="arrow-up-and-left"
+        onClick={ui.history.undo}
+        disabled={ui.history.undoDisabled}
+        shortcut={
+          <Atoms.KbdShortcut>
+            <Atoms.Kbd>⌘</Atoms.Kbd>
+            <Atoms.Kbd>Z</Atoms.Kbd>
+          </Atoms.KbdShortcut>
+        }
+      >
         {s('Undo')}
       </T.Item>
       <T.Item
@@ -25,10 +37,16 @@ export function Toolbar({ ui, ...props }: ToolbarProps) {
         className="[&_svg]:-scale-x-100"
         onClick={ui.history.redo}
         disabled={ui.history.redoDisabled}
+        shortcut={
+          <Atoms.KbdShortcut>
+            <Atoms.Kbd>⌘</Atoms.Kbd>
+            <Atoms.Kbd>Y</Atoms.Kbd>
+          </Atoms.KbdShortcut>
+        }
       >
         {s('Redo')}
       </T.Item>
-      {/* TODO: zoom */}
+      <ZoomCombobox ui={ui} />
       <T.Item legacyIconName="magnifier" onClick={ui.search.open}>
         {s('Search')}
       </T.Item>
@@ -50,8 +68,11 @@ export function Toolbar({ ui, ...props }: ToolbarProps) {
       </T.Item>
       <MoreFormatsMenu ui={ui} renderMenuButton={<T.Item icon={Icons.numbers}>{s('More formats')}</T.Item>} />
       <T.Separator />
-      <FontSelect ui={ui} renderSelect={<T.Item variant="label" dropdownIndicator className="w-[8rem]" />} />
-      <FontSizeInput ui={ui} />
+      <FontSelect
+        ui={ui}
+        renderSelect={<T.Item variant="label" dropdownIndicator className="w-[8rem]" accessibilityLabel={s('Font')} />}
+      />
+      <FontSizeControls ui={ui} />
       <T.Separator />
       <T.Item legacyIconName="text-bold" pressed={ui.format.text.bold.active} onClick={ui.format.text.bold.toggle}>
         {s('Bold')}
@@ -112,5 +133,6 @@ function useStrings() {
     'Decrease decimal places': c('sheets_2025:Spreadsheet editor toolbar').t`Decrease decimal places`,
     'Increase decimal places': c('sheets_2025:Spreadsheet editor toolbar').t`Increase decimal places`,
     'More formats': c('sheets_2025:Spreadsheet editor toolbar').t`More formats`,
+    Font: c('sheets_2025:Spreadsheet editor toolbar').t`Font`,
   }))
 }
