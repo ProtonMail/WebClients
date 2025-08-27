@@ -4,7 +4,7 @@ import { type Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { isMessage } from 'proton-mail/helpers/elements';
+import { isElementMessage } from 'proton-mail/helpers/elements';
 import { useGetConversation } from 'proton-mail/hooks/conversation/useConversation';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useRouterNavigation } from 'proton-mail/router/hooks/useRouterNavigation';
@@ -78,7 +78,7 @@ export const useMoveBackAction = () => {
         }
 
         // Selection contains messages only
-        if (isMessage(props.elements[0])) {
+        if (isElementMessage(props.elements[0])) {
             // in message mode
             if (!conversationMode) {
                 executeCallback({ sourceLabelID, props, handleBack: navigation.handleBack, labels, folders });

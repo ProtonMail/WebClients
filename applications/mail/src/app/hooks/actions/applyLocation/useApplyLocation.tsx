@@ -11,7 +11,7 @@ import unique from '@proton/utils/unique';
 
 import { useMailGlobalModals } from 'proton-mail/containers/globalModals/GlobalModalProvider';
 import { ModalType } from 'proton-mail/containers/globalModals/inteface';
-import { isConversation as testIsConversation, isMessage as testIsMessage } from 'proton-mail/helpers/elements';
+import { isElementConversation, isElementMessage } from 'proton-mail/helpers/elements';
 import { useMoveEngine } from 'proton-mail/helpers/location/MoveEngine/useMoveEngine';
 import {
     shouldOpenConfirmationModalForConverversation,
@@ -186,8 +186,8 @@ export const useApplyLocation = () => {
         }
 
         const [firstElement] = elements;
-        const isMessage = testIsMessage(firstElement);
-        const isConversation = testIsConversation(firstElement);
+        const isMessage = isElementMessage(firstElement);
+        const isConversation = isElementConversation(firstElement);
 
         if (isConversation) {
             const result = conversationMoveEngine.validateMove(destinationLabelID, elements as Message[], removeLabel);

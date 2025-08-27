@@ -15,7 +15,7 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
 import { updateCountersForMarkAs } from '../../helpers/counter';
-import { isUnread, isMessage as testIsMessage } from '../../helpers/elements';
+import { isElementMessage, isUnread } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { applyMarkAsChangesOnMessage } from '../../helpers/message/messages';
 import { isElementReminded } from '../../helpers/snooze';
@@ -135,7 +135,7 @@ export const useOptimisticMarkAs = () => {
                 const changes = isRollback ? inputChanges[index] : inputChanges;
                 rollbackChanges.push({ element, changes: computeRollbackMarkAsChanges(element, labelID, changes) });
 
-                if (testIsMessage(element)) {
+                if (isElementMessage(element)) {
                     dispatch(optimisticMarkAsMessageAction({ ID: element.ID, changes }));
 
                     // Update in conversation cache
