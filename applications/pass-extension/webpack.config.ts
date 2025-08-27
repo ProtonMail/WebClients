@@ -288,9 +288,8 @@ const config: Configuration = {
                 : webpack.DefinePlugin.runtimeValue(getAppVersion, true),
         }),
         new ESLintPlugin({
-            configType: 'eslintrc',
             extensions: ['js', 'ts'],
-            overrideConfigFile: path.resolve(__dirname, '.eslintrc.js'),
+            overrideConfigFile: path.resolve(__dirname, 'eslint.config.mjs'),
             failOnError: false,
             failOnWarning: false,
         }),
