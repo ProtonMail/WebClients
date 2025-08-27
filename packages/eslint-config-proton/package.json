@@ -22,9 +22,9 @@
     },
     "dependencies": {
         "@eslint/eslintrc": "^3.3.1",
-        "@eslint/js": "^9.33.0",
+        "@eslint/js": "^9.34.0",
         "@protontech/eslint-plugin-enforce-uint8array-arraybuffer": "^1.0.0",
-        "eslint": "^9.33.0",
+        "eslint": "^9.34.0",
         "eslint-config-prettier": "^10.1.8",
         "eslint-import-resolver-alias": "^1.1.2",
         "eslint-import-resolver-typescript": "4.4.4",
@@ -37,7 +37,7 @@
         "eslint-plugin-react": "^7.37.5",
         "eslint-plugin-react-hooks": "^5.2.0",
         "eslint-plugin-testing-library": "^7.6.6",
-        "typescript-eslint": "^8.40.0"
+        "typescript-eslint": "^8.41.0"
     },
     "peerDependencies": {
         "prettier": "3.6.2",
