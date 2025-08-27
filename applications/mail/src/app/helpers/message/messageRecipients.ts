@@ -15,7 +15,7 @@ import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
 import type { ContactGroupsMap, ContactsMap } from '../../store/contacts/contactsTypes';
 import { isSelfAddress } from '../addresses';
-import { isMessage, isConversation as testIsConversation } from '../elements';
+import { isElementConversation, isElementMessage } from '../elements';
 
 /**
  * Return the matching ContactEmail in the map taking care of email normalization
@@ -150,7 +150,7 @@ export const findSender = (
 export const getNumParticipants = (element: Element) => {
     let recipients: Recipient[];
 
-    if (isMessage(element)) {
+    if (isElementMessage(element)) {
         const { ToList = [], CCList = [], BCCList = [], Sender = {} } = element;
         recipients = [...ToList, ...CCList, ...BCCList, Sender as Recipient];
     } else {
@@ -170,7 +170,7 @@ export const getSendersToBlock = (
 
     // Get all senders without duplicates
     elements.forEach((element) => {
-        if (testIsConversation(element)) {
+        if (isElementConversation(element)) {
             element?.Senders?.map((sender) => {
                 if (sender && allSenders.every((s) => s.Address !== sender.Address)) {
                     allSenders.push(sender);

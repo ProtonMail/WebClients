@@ -12,7 +12,7 @@ import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/in
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { isMessage, isStarred as testIsStarred } from '../../helpers/elements';
+import { isElementMessage, isStarred as testIsStarred } from '../../helpers/elements';
 import { useStar } from '../../hooks/actions/useStar';
 import type { Element } from '../../models/element';
 import type { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
@@ -32,7 +32,7 @@ const ItemStar = ({ element, size, labelID, sourceAction }: Props) => {
 
     const isStarred = testIsStarred(element || ({} as Element));
 
-    const title = isMessage(element)
+    const title = isElementMessage(element)
         ? isStarred
             ? c('Alt').t`Unstar message`
             : c('Alt').t`Star message`
@@ -40,7 +40,7 @@ const ItemStar = ({ element, size, labelID, sourceAction }: Props) => {
           ? c('Alt').t`Unstar conversation`
           : c('Alt').t`Star conversation`;
 
-    const buttonTxt = isMessage(element) ? c('Alt').t`Star message` : c('Alt').t`Star conversation`;
+    const buttonTxt = isElementMessage(element) ? c('Alt').t`Star message` : c('Alt').t`Star conversation`;
 
     const handleClick = async (event: MouseEvent) => {
         event.stopPropagation();

@@ -3,7 +3,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { hasLabel, isMessage } from 'proton-mail/helpers/elements';
+import { hasLabel, isElementMessage } from 'proton-mail/helpers/elements';
 import type { Conversation } from 'proton-mail/models/conversation';
 import type { ConversationState } from 'proton-mail/store/conversations/conversationsTypes';
 
@@ -149,7 +149,7 @@ export const moveOutApplyLabelAction = (
 // Check if one of the updated element is opened (if not no need to move out)
 export const getOpenedElementUpdated = (elements: Element[], conversationMode: boolean, openedElementID: string) => {
     if (conversationMode) {
-        if (isMessage(elements[0])) {
+        if (isElementMessage(elements[0])) {
             // Check if a message.ConversationID is opened conversation (Check params)
             return elements.find((element) => {
                 return (element as Message).ConversationID === openedElementID;

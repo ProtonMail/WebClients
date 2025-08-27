@@ -7,7 +7,7 @@ import useListTelemetry, {
     SELECTED_RANGE,
     type SOURCE_ACTION,
 } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
-import { isMessage as testIsMessage } from 'proton-mail/helpers/elements';
+import { isElementMessage } from 'proton-mail/helpers/elements';
 import { getCleanedFolderID, sendSelectAllTelemetryReport } from 'proton-mail/helpers/moveToFolder';
 import { getSelectAllNotificationText } from 'proton-mail/helpers/selectAll';
 import { useEmptyLabel } from 'proton-mail/hooks/actions/useEmptyLabel';
@@ -29,7 +29,7 @@ export const usePermanentDeleteAll = (labelID: string) => {
 
     const handleDeleteAll = async (selectedIDs: string[], sourceAction: SOURCE_ACTION) => {
         const elements = getElementsFromIDs(selectedIDs);
-        const isMessage = testIsMessage(elements[0]);
+        const isMessage = isElementMessage(elements[0]);
         // Send Telemetry
         const cleanedSourceLabelID = getCleanedFolderID(labelID, folders);
         void sendSelectAllTelemetryReport({
