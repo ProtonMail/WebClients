@@ -7,7 +7,7 @@
     "main": "index.ts",
     "scripts": {
         "check-types": "tsc",
-        "lint": "eslint src fixtures --ext .ts --quiet",
+        "lint": "eslint --quiet",
         "pretty": "prettier --write $(find src fixtures -type f -name '*.ts')",
         "test": "jest",
         "test:ci": "yarn test",

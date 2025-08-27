@@ -1,11 +1,12 @@
-const karmaJasmine = require('karma-jasmine');
-const karmaWebpack = require('karma-webpack');
-const karmaSpecReporter = require('karma-spec-reporter');
-const karmaChromeLauncher = require('karma-chrome-launcher');
-const { chromium } = require('playwright');
+import karmaChromeLauncher from 'karma-chrome-launcher';
+import karmaJasmine from 'karma-jasmine';
+import karmaSpecReporter from 'karma-spec-reporter';
+import karmaWebpack from 'karma-webpack';
+import { chromium } from 'playwright';
+
 process.env.CHROME_BIN = chromium.executablePath();
 
-module.exports = (config) => {
+export default (config) => {
     config.set({
         basePath: '..',
         frameworks: ['jasmine', 'webpack'],
@@ -26,6 +27,10 @@ module.exports = (config) => {
             },
             module: {
                 rules: [
+                    {
+                        test: /\.m?js$/,
+                        resolve: { fullySpecified: false },
+                    },
                     {
                         test: /\.tsx?$/,
                         use: [

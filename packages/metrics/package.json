@@ -6,7 +6,7 @@
         "check-types": "tsc",
         "generate-metrics": "ts-node -P scripts/tsconfig.metrics-scripts.json ./scripts/generate-metrics.ts",
         "generate-schema-types": "bash scripts/generate-schema-types.sh",
-        "lint": "eslint . --ext .ts --quiet",
+        "lint": "eslint --quiet",
         "test": "jest",
         "test:ci": "jest --coverage --runInBand --ci",
         "test:watch": "jest --watch",
