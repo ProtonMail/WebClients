@@ -19,7 +19,7 @@ import { labelConversations } from '@proton/shared/lib/api/conversations';
 import { labelMessages } from '@proton/shared/lib/api/messages';
 import clsx from '@proton/utils/clsx';
 
-import { isMessage } from 'proton-mail/helpers/elements';
+import { isElementMessage } from 'proton-mail/helpers/elements';
 import type { Element } from 'proton-mail/models/element';
 
 import { categoryBadgeMapping } from './categoryViewConstants';
@@ -72,7 +72,7 @@ export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
             IDs: [element.ID],
         };
 
-        if (isMessage(element)) {
+        if (isElementMessage(element)) {
             await api(labelMessages(newLabelPayload));
         } else {
             await api(labelConversations(newLabelPayload));

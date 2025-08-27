@@ -17,7 +17,7 @@ import useListTelemetry, {
 } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import MoveAllModal from 'proton-mail/components/list/select-all/modals/MoveAllModal';
 import SelectAllMoveModal from 'proton-mail/components/list/select-all/modals/SelectAllMoveModal';
-import { isMessage as testIsMessage } from 'proton-mail/helpers/elements';
+import { isElementMessage } from 'proton-mail/helpers/elements';
 import {
     getCleanedFolderID,
     getNotificationTextUnauthorized,
@@ -92,7 +92,7 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
 
         const state = store.getState();
         const elements = Object.values(elementsMapSelector(state));
-        const isMessage = testIsMessage(elements[0]);
+        const isMessage = isElementMessage(elements[0]);
 
         const labels = (await getLabels()) || [];
 
