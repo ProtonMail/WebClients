@@ -43,7 +43,7 @@ const AddressStatus = ({
             ({
                 text: c('Address status').t`Disconnected`,
                 tooltip: c('Tooltip')
-                    .t`The address has been disconnected. Message sending is paused. Reconnect to enable this address again.`,
+                    .t`The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.`,
                 type: 'light',
             } as const),
         isOrphan &&
