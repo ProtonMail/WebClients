@@ -7,7 +7,7 @@ import { useItemsDraggable } from '@proton/components';
 import { getCanDisplaySelectAllBanner } from 'proton-mail/helpers/selectAll';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
-import { isMessage as testIsMessage } from '../../helpers/elements';
+import { isElementMessage } from '../../helpers/elements';
 import type { Element } from '../../models/element';
 import { pageSize as pageSizeSelector } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
@@ -66,7 +66,7 @@ export const useListSelection = ({
         checkedIDs,
         onCheck,
         (draggedIDs: string[]) => {
-            const isMessage = elements.length && testIsMessage(elements[0]);
+            const isMessage = elements.length && isElementMessage(elements[0]);
             const selectionCount = selectAll ? locationCount : draggedIDs.length;
             return isMessage
                 ? c('Success').ngettext(

@@ -25,7 +25,7 @@ import {
     markMessagesAsUnread,
 } from 'proton-mail/store/mailbox/mailboxActions';
 
-import { isMessage as testIsMessage } from '../../../helpers/elements';
+import { isElementMessage } from '../../../helpers/elements';
 import type { Element } from '../../../models/element';
 
 export interface MarkAsParams {
@@ -53,7 +53,7 @@ export const useMarkAs = () => {
                 return;
             }
 
-            const isMessage = testIsMessage(elements[0]); // All elements are of the same type
+            const isMessage = isElementMessage(elements[0]); // All elements are of the same type
             const isRead = status === MARK_AS_STATUS.READ;
 
             if (selectAll) {
