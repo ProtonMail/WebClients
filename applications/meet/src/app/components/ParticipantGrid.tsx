@@ -82,7 +82,7 @@ export const ParticipantGrid = () => {
                         <ParticipantTile
                             key={participant.identity}
                             participant={participant}
-                            smallView={pagedParticipants.length > 6}
+                            viewSize={pagedParticipants.length > 6 ? 'medium' : 'large'}
                         />
                     );
                 })}

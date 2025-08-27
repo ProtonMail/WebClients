@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { IcMeetScreenShare } from '@proton/icons';
+
+import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 
 import './ScreenShareHeading.scss';
 
@@ -15,20 +16,21 @@ export const ScreenShareHeading = ({ name, isLocalUser, onStopScreenShare }: Scr
     return (
         <div
             className="screen-share-heading flex flex-nowrap items-center w-full h-custom rounded-lg px-4 py-0 justify-space-between"
-            style={{ '--h-custom': '3rem' }}
+            style={{ '--h-custom': '2.625rem' }}
         >
             <div className="flex flex-nowrap items-center gap-2">
-                <IcMeetScreenShare size={6} />
-                {!isLocalUser && (
-                    <div>
-                        {name} {c('meet_2025 Info').t`is presenting`}
-                    </div>
-                )}
-                {isLocalUser && <div>{c('meet_2025 Info').t`You are presenting`}</div>}
+                <SecurityShield
+                    title={c('meet_2025 Info').t`End-to-end encryption is active for screen share`}
+                    size={4}
+                    tooltipPlacement="bottom-start"
+                />
+                <div>
+                    {name} {isLocalUser ? c('meet_2025 Info').t`(You)` : ''} {c('meet_2025 Info').t`is presenting`}
+                </div>
             </div>
             {isLocalUser && (
                 <div>
-                    <Button className="color-invert rounded-full" onClick={onStopScreenShare} color="norm">
+                    <Button onClick={onStopScreenShare} color="norm" shape="ghost">
                         {c('meet_2025 Action').t`Stop presenting`}
                     </Button>
                 </div>

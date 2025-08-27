@@ -5,15 +5,16 @@ import { SpeakerIndicator } from '../components/SpeakerIndicator/SpeakerIndicato
 interface SpeakingIndicatorProps {
     size: number;
     participant: Participant;
+    indicatorSize?: number;
 }
 
-export const SpeakingIndicator = ({ size, participant }: SpeakingIndicatorProps) => {
+export const SpeakingIndicator = ({ size, participant, indicatorSize = 24 }: SpeakingIndicatorProps) => {
     return (
         <div
             className="color-success bg-weak border-weak border-radius-full size-12 flex items-center justify-center rounded-full"
             style={{ width: size, height: size }}
         >
-            <SpeakerIndicator size={24} participant={participant} />
+            <SpeakerIndicator size={indicatorSize} participant={participant} />
         </div>
     );
 };

@@ -2,11 +2,9 @@ import { useState } from 'react';
 
 import { RoomAudioRenderer } from '@livekit/components-react';
 import type { LocalVideoTrack } from '@proton-meet/livekit-client';
-import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
-import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useCurrentScreenShare } from '../../hooks/useCurrentScreenShare';
@@ -90,14 +88,6 @@ export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyPro
                             background: '#000',
                         }}
                     >
-                        <div
-                            className="absolute bottom-custom left-custom z-up"
-                            style={{ '--bottom-custom': '1rem', '--left-custom': '1rem' }}
-                        >
-                            <SecurityShield
-                                title={c('meet_2025 Info').t`End-to-end encryption is active for screen share`}
-                            />
-                        </div>
                         <video
                             className="screen-share-video w-full h-full block object-contain"
                             ref={screenShareVideoRef}

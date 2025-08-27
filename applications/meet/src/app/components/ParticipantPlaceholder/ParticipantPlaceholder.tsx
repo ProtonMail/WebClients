@@ -10,13 +10,20 @@ interface ParticipantPlaceholderProps {
     smallView?: boolean;
     backgroundColor?: string;
     profileColor?: string;
+    viewSize?: 'small' | 'medium' | 'large';
 }
+
+const sizeByViewSize = {
+    small: 2,
+    medium: 3,
+    large: 5,
+};
 
 export const ParticipantPlaceholder = ({
     participantName,
-    smallView = false,
     backgroundColor,
     profileColor,
+    viewSize = 'large',
 }: ParticipantPlaceholderProps) => {
     return (
         <div
@@ -30,12 +37,12 @@ export const ParticipantPlaceholder = ({
                 className={clsx(
                     'text-center align-middle rounded-50 flex items-center justify-center color-invert text-semibold w-custom h-custom',
                     profileColor,
-                    smallView ? 'text-lg' : 'text-3xl',
-                    smallView ? 'radius-small' : 'radius-normal'
+                    viewSize === 'large' ? 'text-3xl' : 'text-lg',
+                    viewSize === 'large' ? 'radius-normal' : 'radius-small'
                 )}
                 style={{
-                    '--w-custom': smallView ? '3rem' : '5rem',
-                    '--h-custom': smallView ? '3rem' : '5rem',
+                    '--w-custom': `${sizeByViewSize[viewSize]}rem`,
+                    '--h-custom': `${sizeByViewSize[viewSize]}rem`,
                 }}
             >
                 {participantName ? (

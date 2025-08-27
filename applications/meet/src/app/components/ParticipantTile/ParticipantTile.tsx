@@ -8,6 +8,7 @@ import clsx from '@proton/utils/clsx';
 import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
 import { useMeetContext } from '../../contexts/MeetContext';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useDebouncedSpeakingStatus } from '../../hooks/useDebouncedSpeakingStatus';
 import { getParticipantDisplayColors } from '../../utils/getParticipantDisplayColors';
 import { ParticipantPlaceholder } from '../ParticipantPlaceholder/ParticipantPlaceholder';
@@ -16,7 +17,7 @@ import './ParticipantTile.scss';
 
 interface ParticipantTileProps {
     participant: Participant;
-    smallView?: boolean;
+    viewSize?: 'small' | 'medium' | 'large';
 }
 
 const getCameraVideoPublication = (participant: Participant) => {
@@ -25,10 +26,29 @@ const getCameraVideoPublication = (participant: Participant) => {
     );
 };
 
-export const ParticipantTile = ({ participant, smallView = false }: ParticipantTileProps) => {
+const audioIconSize = {
+    small: '1rem',
+    medium: '1.5rem',
+    large: '2rem',
+};
+
+const positionBySize = {
+    small: 0.375,
+    medium: 0.5,
+    large: 1,
+};
+
+const indicatorSizeBySize = {
+    small: 16,
+    medium: 24,
+    large: 32,
+};
+
+export const ParticipantTile = ({ participant, viewSize = 'large' }: ParticipantTileProps) => {
     const { localParticipant } = useLocalParticipant();
     const { participantNameMap, disableVideos, participantsWithDisabledVideos, displayName } = useMeetContext();
     const cameraVideoPublication = getCameraVideoPublication(participant);
+
     const audioPublication = Array.from(participant.trackPublications.values()).find(
         (pub) => pub.kind === Track.Kind.Audio && pub.track
     );
@@ -45,7 +65,8 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
     const { borderColor, backgroundColor, profileColor } = getParticipantDisplayColors(participant);
 
     const speakingIndicatorClassName =
-        (shouldShowVideo ? getParticipantDisplayColors({}).borderColor : borderColor) + (smallView ? '-small' : '');
+        (shouldShowVideo ? getParticipantDisplayColors({}).borderColor : borderColor) +
+        (viewSize === 'large' ? '' : '-small');
 
     const isLocalParticipant = participant.identity === localParticipant.identity;
 
@@ -59,27 +80,44 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
             className={clsx(
                 'participant-tile-body',
                 'relative w-full h-full flex flex-nowrap items-center justify-center',
-                smallView ? 'radius-small' : 'radius-normal'
+                viewSize === 'large' ? 'radius-normal' : 'radius-small'
             )}
         >
             <div
                 className="absolute top-custom right-custom flex items-center justify-center gap-2"
                 style={{
-                    '--top-custom': smallView ? '0.5rem' : '1rem',
-                    '--right-custom': smallView ? '0.5rem' : '1rem',
+                    '--top-custom': `${positionBySize[viewSize]}rem`,
+                    '--right-custom': `${positionBySize[viewSize]}rem`,
                 }}
             >
-                {isSpeaking && audioIsOn && <SpeakingIndicator size={32} participant={participant} />}
+                {isSpeaking && audioIsOn && (
+                    <SpeakingIndicator
+                        size={indicatorSizeBySize[viewSize]}
+                        participant={participant}
+                        indicatorSize={(2 / 3) * indicatorSizeBySize[viewSize]}
+                    />
+                )}
                 {!audioIsOn && (
                     <div
                         className="user-select-none flex items-center justify-center w-custom h-custom bg-weak rounded-full"
                         style={{
-                            '--w-custom': '2rem',
-                            '--h-custom': '2rem',
+                            '--w-custom': audioIconSize[viewSize],
+                            '--h-custom': audioIconSize[viewSize],
                             opacity: 0.8,
                         }}
                     >
-                        <IcMeetMicrophoneOff size={4} />
+                        <IcMeetMicrophoneOff
+                            size={viewSize === 'large' ? 4 : 3}
+                            className={viewSize === 'small' ? 'w-custom h-custom' : ''}
+                            style={
+                                viewSize === 'small'
+                                    ? {
+                                          '--w-custom': '0.5rem',
+                                          '--h-custom': '0.5rem',
+                                      }
+                                    : undefined
+                            }
+                        />
                     </div>
                 )}
             </div>
@@ -89,7 +127,7 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
                     className={clsx(
                         'speaker-border absolute top-0 left-0 w-full h-full',
                         speakingIndicatorClassName,
-                        smallView ? 'radius-small' : 'radius-normal'
+                        viewSize === 'large' ? 'radius-normal' : 'radius-small'
                     )}
                 />
             )}
@@ -111,21 +149,27 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
             ) : (
                 <ParticipantPlaceholder
                     participantName={participantName}
-                    smallView={smallView}
+                    viewSize={viewSize}
                     backgroundColor={backgroundColor}
                     profileColor={profileColor}
                 />
             )}
             <div
-                className="color-norm absolute left-custom bottom-custom participant-tile-name text-ellipsis max-w-custom"
+                className={clsx(
+                    'color-norm absolute left-custom bottom-custom participant-tile-name text-ellipsis max-w-custom',
+                    viewSize !== 'large' && 'text-sm'
+                )}
                 style={{
-                    '--left-custom': smallView ? '1rem' : '1.25rem',
-                    '--bottom-custom': smallView ? '0.5rem' : '1rem',
+                    '--left-custom': `${1.25 * positionBySize[viewSize]}rem`,
+                    '--bottom-custom': `${positionBySize[viewSize]}rem`,
                     '--max-w-custom': '85%',
                 }}
                 title={participantName}
             >
-                <SecurityShield title={c('meet_2025 Info').t`End-to-end encryption is active for audio and video.`} />
+                <SecurityShield
+                    title={c('meet_2025 Info').t`End-to-end encryption is active for audio and video.`}
+                    smallIcon={viewSize === 'small'}
+                />
                 {participantName}
             </div>
         </div>
