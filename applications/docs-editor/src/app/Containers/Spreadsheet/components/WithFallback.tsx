@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const LOCAL_STORAGE_KEY = 'new-ui-enabled'
 const EVENT_NAME = 'konami-time'
@@ -43,19 +43,16 @@ const KONAMI_SEQUENCE_JOINED = KONAMI_SEQUENCE.join(',')
  * Use the konami code to toggle between the new UI and a fallback. Stored in localStorage.
  */
 export function useSetupWithFallback() {
-  const [, setInput] = useState<string[]>([])
+  const inputRef = useRef<string[]>([])
 
   useEffect(() => {
     const handleKeydown = (event: KeyboardEvent) => {
-      setInput((prev) => {
-        const next = [...prev, event.key].slice(-KONAMI_SEQUENCE.length)
-        if (next.join(',') === KONAMI_SEQUENCE_JOINED) {
-          localStorage.setItem(LOCAL_STORAGE_KEY, String(!isEnabled()))
-          window.dispatchEvent(new Event('konami-time'))
-          return []
-        }
-        return next
-      })
+      inputRef.current = [...inputRef.current, event.key].slice(-KONAMI_SEQUENCE.length)
+      if (inputRef.current.join(',') === KONAMI_SEQUENCE_JOINED) {
+        localStorage.setItem(LOCAL_STORAGE_KEY, String(!isEnabled()))
+        window.dispatchEvent(new Event('konami-time'))
+        inputRef.current = []
+      }
     }
 
     window.addEventListener('keydown', handleKeydown)

@@ -1,10 +1,11 @@
+import * as Ariakit from '@ariakit/react'
 import type { ReactElement } from 'react'
+import { c } from 'ttag'
 import { useStringifier } from '../../../stringifier'
 import type { ProtonSheetsUIState } from '../../../ui-state'
 import * as UI from '../../ui'
-import { c } from 'ttag'
 
-export interface InsertMenuProps extends UI.MenuProviderProps {
+export interface InsertMenuProps extends Ariakit.MenuProviderProps {
   ui: ProtonSheetsUIState
   renderMenuButton: ReactElement
 }
@@ -12,37 +13,37 @@ export interface InsertMenuProps extends UI.MenuProviderProps {
 export function InsertMenu({ ui, renderMenuButton, ...props }: InsertMenuProps) {
   const s = useStrings()
   return (
-    <UI.MenuProvider {...props}>
-      <UI.MenuButton render={renderMenuButton} />
+    <Ariakit.MenuProvider {...props}>
+      <Ariakit.MenuButton render={renderMenuButton} />
       <UI.Menu>
-        <UI.MenuProvider>
+        <Ariakit.MenuProvider>
           <UI.SubMenuButton>{s('Cells')}</UI.SubMenuButton>
           <UI.SubMenu>
             <UI.MenuItem onClick={ui.insert.cellsShiftRight}>{s('Insert cells and shift right')}</UI.MenuItem>
             <UI.MenuItem onClick={ui.insert.cellsShiftDown}>{s('Insert cells and shift down')}</UI.MenuItem>
           </UI.SubMenu>
-        </UI.MenuProvider>
-        <UI.MenuProvider>
+        </Ariakit.MenuProvider>
+        <Ariakit.MenuProvider>
           <UI.SubMenuButton>{s('Rows')}</UI.SubMenuButton>
           <UI.SubMenu>
             <UI.MenuItem onClick={ui.insert.rowAbove}>{s('Insert 1 row above')}</UI.MenuItem>
             <UI.MenuItem onClick={ui.insert.rowBelow}>{s('Insert 1 row below')}</UI.MenuItem>
           </UI.SubMenu>
-        </UI.MenuProvider>
-        <UI.MenuProvider>
+        </Ariakit.MenuProvider>
+        <Ariakit.MenuProvider>
           <UI.SubMenuButton>{s('Columns')}</UI.SubMenuButton>
           <UI.SubMenu>
             <UI.MenuItem onClick={ui.insert.columnLeft}>{s('Insert 1 column left')}</UI.MenuItem>
             <UI.MenuItem onClick={ui.insert.columnRight}>{s('Insert 1 column right')}</UI.MenuItem>
           </UI.SubMenu>
-        </UI.MenuProvider>
+        </Ariakit.MenuProvider>
         <UI.MenuItem onClick={ui.insert.sheet}>{s('Sheet')}</UI.MenuItem>
         <UI.MenuSeparator />
         <UI.MenuItem onClick={ui.insert.chart}>{s('Chart')}</UI.MenuItem>
         <UI.MenuSeparator />
         <UI.MenuItem onClick={ui.insert.note}>{s('Note')}</UI.MenuItem>
       </UI.Menu>
-    </UI.MenuProvider>
+    </Ariakit.MenuProvider>
   )
 }
 
