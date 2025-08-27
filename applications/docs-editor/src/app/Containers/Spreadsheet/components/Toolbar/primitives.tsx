@@ -1,8 +1,9 @@
-import { type ComponentPropsWithoutRef, forwardRef, type ReactNode } from 'react'
 import * as Ariakit from '@ariakit/react'
 import type { IconName } from '@proton/icons'
 import clsx from '@proton/utils/clsx'
+import { type ComponentPropsWithoutRef, type ReactNode, forwardRef } from 'react'
 import { Icon, type IconData } from '../ui'
+import * as UI from '../ui'
 
 export interface ContainerProps extends ComponentPropsWithoutRef<'div'> {
   formulaBarSlot?: ReactNode
@@ -32,38 +33,52 @@ export interface ItemProps extends Ariakit.ToolbarItemProps {
   pressed?: boolean
   dropdownIndicator?: boolean
   children?: string
+  /** If not provided, `children` will be used. */
+  accessibilityLabel?: string
+  shortcut?: ReactNode
 }
 
 export const Item = forwardRef<HTMLButtonElement, ItemProps>(function Item(
-  { variant = 'icon', icon, legacyIconName, showLabel, pressed, dropdownIndicator, children, ...props }: ItemProps,
+  {
+    variant = 'icon',
+    icon,
+    legacyIconName,
+    showLabel,
+    pressed,
+    dropdownIndicator,
+    children,
+    accessibilityLabel = children,
+    shortcut,
+    ...props
+  }: ItemProps,
   ref,
 ) {
   const displayLabel = Boolean(variant === 'label' || showLabel)
-  return (
+  let pressedValue: 'true' | 'false' | undefined = undefined
+  if (pressed != null) {
+    pressedValue = pressed ? 'true' : 'false'
+  }
+  const content = (
     <Ariakit.ToolbarItem
-      aria-label={!displayLabel ? children : undefined}
+      aria-label={!displayLabel ? accessibilityLabel : undefined}
+      aria-pressed={pressedValue}
       ref={ref}
+      accessibleWhenDisabled
       {...props}
       className={clsx(
-        'flex shrink-0 items-center justify-center gap-[.375rem] rounded-[.5rem] text-[#0C0C14] focus:outline-none [&[disabled]]:text-[#8F8D8A]',
+        'flex shrink-0 items-center justify-center gap-[.375rem] rounded-[.5rem] text-[#0C0C14] focus:outline-none aria-disabled:text-[#8F8D8A]',
         'aria-expanded:bg-[#C2C1C0]/20',
         variant === 'icon' && 'p-[.625rem]',
         variant === 'icon-small' && 'p-[.375rem]',
         variant === 'label' && 'p-2',
-        !pressed
-          ? [
-              'bg-[white]',
-              // TODO: "hocus" type tw variant
-              'hover:bg-[#C2C1C0]/20 focus-visible:bg-[#C2C1C0]/20 data-[focus-visible]:bg-[#C2C1C0]/20',
-              // TODO: "active" tw variant
-              'active:bg-[#C2C0BE]/35 data-[active]:bg-[#C2C0BE]/35',
-            ]
-          : [
-              'TODO:',
-              'bg-[red]',
-              'hover:bg-[yellow] focus-visible:bg-[yellow] data-[focus-visible]:bg-[yellow]',
-              'active:bg-[green] data-[active]:bg-[green]',
-            ],
+        'bg-[white]',
+        // TODO: "hocus" type tw variant
+        'hover:bg-[#C2C1C0]/20 focus-visible:bg-[#C2C1C0]/20 data-[focus-visible]:bg-[#C2C1C0]/20',
+        // TODO: "active" tw variant
+        // TODO: see hack for specificity, otherwise active styles are overridden by data-[focus-visible] :(
+        'active:active:bg-[#C2C0BE]/35 data-[active]:bg-[#C2C0BE]/35',
+        'aria-pressed:aria-pressed:bg-[#C2C0BE]/35',
+
         props.className,
       )}
     >
@@ -71,6 +86,17 @@ export const Item = forwardRef<HTMLButtonElement, ItemProps>(function Item(
       {displayLabel && <span className="grow truncate text-start text-[.875rem]">{children}</span>}
       {dropdownIndicator && <Icon className="shrink-0" legacyName="chevron-down-filled" />}
     </Ariakit.ToolbarItem>
+  )
+
+  const showTooltip = !showLabel || Boolean(shortcut)
+  if (!showTooltip) {
+    return content
+  }
+  return (
+    <Ariakit.TooltipProvider placement="bottom">
+      <Ariakit.TooltipAnchor render={content} />
+      <UI.Tooltip trailingSlot={shortcut ? shortcut : undefined}>{accessibilityLabel}</UI.Tooltip>
+    </Ariakit.TooltipProvider>
   )
 })
 

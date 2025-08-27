@@ -1,148 +1,169 @@
+import * as Ariakit from '@ariakit/react'
 import type { ReactElement, ReactNode } from 'react'
-import * as UI from '../ui'
 import { c } from 'ttag'
-import type { ProtonSheetsUIState } from '../../ui-state'
-import { useStringifier } from '../../stringifier'
 import { CURRENCY } from '../../constants'
-import { useFocusSheet } from '@rowsncolumns/spreadsheet'
+import { useStringifier } from '../../stringifier'
+import type { ProtonSheetsUIState } from '../../ui-state'
+import * as UI from '../ui'
 
-export interface MoreFormatsMenuProps extends UI.MenuProviderProps {
+export interface MoreFormatsMenuProps extends Ariakit.MenuProviderProps {
   ui: ProtonSheetsUIState
   renderMenuButton: ReactElement
 }
 
 export function MoreFormatsMenu({ ui, renderMenuButton, ...props }: MoreFormatsMenuProps) {
-  const s = useStrings()
   const values = { pattern: ui.format.pattern.current ? [ui.format.pattern.current] : [] }
-  function getCurrencyItemValue(name: string) {
-    return CURRENCY === name ? 'CURRENCY' : name
-  }
-  const focusSheet = useFocusSheet()
-  function withFocusSheet(fn: () => void) {
-    return () => {
-      fn()
-      focusSheet?.()
-    }
-  }
+  const menu = Ariakit.useMenuStore({ values, focusLoop: true })
+  const mounted = Ariakit.useStoreState(menu, 'mounted')
   return (
-    <UI.MenuProvider values={values} focusLoop {...props}>
-      <UI.MenuButton render={renderMenuButton} />
-      <UI.Menu>
-        <UI.MenuItemCheckbox name="pattern" value="GENERAL" onClick={withFocusSheet(ui.format.pattern.general.set)}>
-          {s('General')}
-        </UI.MenuItemCheckbox>
-        <UI.MenuItemCheckbox
-          name="pattern"
-          value="PLAIN_TEXT"
-          onClick={withFocusSheet(ui.format.pattern.plainText.set)}
-        >
-          {s('Plain text')}
-        </UI.MenuItemCheckbox>
-        <UI.MenuSeparator />
-        <UI.MenuItemCheckbox name="pattern" value="NUMBER" onClick={withFocusSheet(ui.format.pattern.number.set)}>
-          <WithExample example={ui.format.pattern.number.example}>{s('Number')}</WithExample>
-        </UI.MenuItemCheckbox>
-        <UI.MenuItemCheckbox name="pattern" value="PERCENT" onClick={withFocusSheet(ui.format.pattern.percent.set)}>
-          <WithExample example={ui.format.pattern.percent.example}>{s('Percent')}</WithExample>
-        </UI.MenuItemCheckbox>
-        <UI.MenuItemCheckbox
-          name="pattern"
-          value="SCIENTIFIC"
-          onClick={withFocusSheet(ui.format.pattern.scientific.set)}
-        >
-          <WithExample example={ui.format.pattern.scientific.example}>{s('Scientific')}</WithExample>
-        </UI.MenuItemCheckbox>
-        <UI.MenuSeparator />
-        <UI.MenuItemCheckbox
-          name="pattern"
-          value="ACCOUNTING"
-          onClick={withFocusSheet(ui.format.pattern.accounting.set)}
-        >
-          <WithExample example={ui.format.pattern.accounting.example}>{s('Accounting')}</WithExample>
-        </UI.MenuItemCheckbox>
-        <UI.MenuItemCheckbox name="pattern" value="FINANCIAL" onClick={withFocusSheet(ui.format.pattern.financial.set)}>
-          <WithExample example={ui.format.pattern.financial.example}>{s('Financial')}</WithExample>
-        </UI.MenuItemCheckbox>
-        <UI.MenuItemCheckbox
-          name="pattern"
-          value="CURRENCY"
-          onClick={withFocusSheet(ui.format.pattern.currency.default.set)}
-        >
-          <WithExample example={ui.format.pattern.currency.default.example}>{s('Currency')}</WithExample>
-        </UI.MenuItemCheckbox>
-        <UI.MenuItemCheckbox
-          name="pattern"
-          value="CURRENCY_ROUNDED"
-          onClick={withFocusSheet(ui.format.pattern.currency.defaultRounded.set)}
-        >
-          <WithExample example={ui.format.pattern.currency.defaultRounded.example}>{s('Currency rounded')}</WithExample>
-        </UI.MenuItemCheckbox>
-        <UI.MenuProvider values={values} focusLoop>
-          <UI.SubMenuButton leadingIndent>{s('More currency')}</UI.SubMenuButton>
-          <UI.SubMenu>
-            <UI.MenuItemCheckbox
-              name="pattern"
-              value={getCurrencyItemValue('USD')}
-              onClick={withFocusSheet(ui.format.pattern.currency.usd.set)}
-            >
-              {s('$ US Dollar')}
-            </UI.MenuItemCheckbox>
-            <UI.MenuItemCheckbox
-              name="pattern"
-              value={getCurrencyItemValue('EUR')}
-              onClick={withFocusSheet(ui.format.pattern.currency.eur.set)}
-            >
-              {s('€ Euro')}
-            </UI.MenuItemCheckbox>
-            <UI.MenuItemCheckbox
-              name="pattern"
-              value={getCurrencyItemValue('GBP')}
-              onClick={withFocusSheet(ui.format.pattern.currency.gbp.set)}
-            >
-              {s('£ Pound')}
-            </UI.MenuItemCheckbox>
-            <UI.MenuItemCheckbox
-              name="pattern"
-              value={getCurrencyItemValue('JPY')}
-              onClick={withFocusSheet(ui.format.pattern.currency.jpy.set)}
-            >
-              {s('¥ Yen')}
-            </UI.MenuItemCheckbox>
-            <UI.MenuItemCheckbox
-              name="pattern"
-              value={getCurrencyItemValue('CNY')}
-              onClick={withFocusSheet(ui.format.pattern.currency.cny.set)}
-            >
-              {s('CN¥ Chinese Yuan')}
-            </UI.MenuItemCheckbox>
-            <UI.MenuItemCheckbox
-              name="pattern"
-              value={getCurrencyItemValue('INR')}
-              onClick={withFocusSheet(ui.format.pattern.currency.inr.set)}
-            >
-              {s('₹ Rupee')}
-            </UI.MenuItemCheckbox>
-          </UI.SubMenu>
-        </UI.MenuProvider>
-        <UI.MenuSeparator />
-        <UI.MenuItemCheckbox name="pattern" value="DATE" onClick={withFocusSheet(ui.format.pattern.date.set)}>
-          <WithExample example={ui.format.pattern.date.example}>{s('Date')}</WithExample>
-        </UI.MenuItemCheckbox>
-        <UI.MenuItemCheckbox name="pattern" value="LONG_DATE" onClick={withFocusSheet(ui.format.pattern.longDate.set)}>
-          <WithExample example={ui.format.pattern.longDate.example}>{s('Long date')}</WithExample>
-        </UI.MenuItemCheckbox>
-        <UI.MenuItemCheckbox name="pattern" value="TIME" onClick={withFocusSheet(ui.format.pattern.time.set)}>
-          <WithExample example={ui.format.pattern.time.example}>{s('Time')}</WithExample>
-        </UI.MenuItemCheckbox>
-        <UI.MenuItemCheckbox name="pattern" value="DATE_TIME" onClick={withFocusSheet(ui.format.pattern.dateTime.set)}>
-          <WithExample example={ui.format.pattern.dateTime.example}>{s('Date time')}</WithExample>
-        </UI.MenuItemCheckbox>
-        <UI.MenuItemCheckbox name="pattern" value="DURATION" onClick={withFocusSheet(ui.format.pattern.duration.set)}>
-          <WithExample example={ui.format.pattern.duration.example}>{s('Duration')}</WithExample>
-        </UI.MenuItemCheckbox>
-      </UI.Menu>
-    </UI.MenuProvider>
+    <Ariakit.MenuProvider store={menu} {...props}>
+      <Ariakit.MenuButton render={renderMenuButton} />
+      {mounted && <Menu ui={ui} />}
+    </Ariakit.MenuProvider>
   )
+}
+
+type MenuProps = {
+  ui: ProtonSheetsUIState
+}
+
+function Menu({ ui }: MenuProps) {
+  const s = useStrings()
+  const menu = Ariakit.useMenuContext()
+  const values = Ariakit.useStoreState(menu, 'values')
+  const currencySubMenu = Ariakit.useMenuStore({ values, focusLoop: true })
+  const currencyMounted = Ariakit.useStoreState(currencySubMenu, 'mounted')
+  return (
+    <UI.Menu>
+      <UI.MenuItemCheckbox name="pattern" value="GENERAL" onClick={ui.withFocusGrid(ui.format.pattern.general.set)}>
+        {s('General')}
+      </UI.MenuItemCheckbox>
+      <UI.MenuItemCheckbox
+        name="pattern"
+        value="PLAIN_TEXT"
+        onClick={ui.withFocusGrid(ui.format.pattern.plainText.set)}
+      >
+        {s('Plain text')}
+      </UI.MenuItemCheckbox>
+      <UI.MenuSeparator />
+      <UI.MenuItemCheckbox name="pattern" value="NUMBER" onClick={ui.withFocusGrid(ui.format.pattern.number.set)}>
+        <WithExample example={ui.format.pattern.number.example}>{s('Number')}</WithExample>
+      </UI.MenuItemCheckbox>
+      <UI.MenuItemCheckbox name="pattern" value="PERCENT" onClick={ui.withFocusGrid(ui.format.pattern.percent.set)}>
+        <WithExample example={ui.format.pattern.percent.example}>{s('Percent')}</WithExample>
+      </UI.MenuItemCheckbox>
+      <UI.MenuItemCheckbox
+        name="pattern"
+        value="SCIENTIFIC"
+        onClick={ui.withFocusGrid(ui.format.pattern.scientific.set)}
+      >
+        <WithExample example={ui.format.pattern.scientific.example}>{s('Scientific')}</WithExample>
+      </UI.MenuItemCheckbox>
+      <UI.MenuSeparator />
+      <UI.MenuItemCheckbox
+        name="pattern"
+        value="ACCOUNTING"
+        onClick={ui.withFocusGrid(ui.format.pattern.accounting.set)}
+      >
+        <WithExample example={ui.format.pattern.accounting.example}>{s('Accounting')}</WithExample>
+      </UI.MenuItemCheckbox>
+      <UI.MenuItemCheckbox name="pattern" value="FINANCIAL" onClick={ui.withFocusGrid(ui.format.pattern.financial.set)}>
+        <WithExample example={ui.format.pattern.financial.example}>{s('Financial')}</WithExample>
+      </UI.MenuItemCheckbox>
+      <UI.MenuItemCheckbox
+        name="pattern"
+        value="CURRENCY"
+        onClick={ui.withFocusGrid(ui.format.pattern.currency.default.set)}
+      >
+        <WithExample example={ui.format.pattern.currency.default.example}>{s('Currency')}</WithExample>
+      </UI.MenuItemCheckbox>
+      <UI.MenuItemCheckbox
+        name="pattern"
+        value="CURRENCY_ROUNDED"
+        onClick={ui.withFocusGrid(ui.format.pattern.currency.defaultRounded.set)}
+      >
+        <WithExample example={ui.format.pattern.currency.defaultRounded.example}>{s('Currency rounded')}</WithExample>
+      </UI.MenuItemCheckbox>
+      <Ariakit.MenuProvider values={values} focusLoop>
+        <UI.SubMenuButton leadingIndent>{s('More currency')}</UI.SubMenuButton>
+        {currencyMounted && <CurrencySubMenu ui={ui} />}
+      </Ariakit.MenuProvider>
+      <UI.MenuSeparator />
+      <UI.MenuItemCheckbox name="pattern" value="DATE" onClick={ui.withFocusGrid(ui.format.pattern.date.set)}>
+        <WithExample example={ui.format.pattern.date.example}>{s('Date')}</WithExample>
+      </UI.MenuItemCheckbox>
+      <UI.MenuItemCheckbox name="pattern" value="LONG_DATE" onClick={ui.withFocusGrid(ui.format.pattern.longDate.set)}>
+        <WithExample example={ui.format.pattern.longDate.example}>{s('Long date')}</WithExample>
+      </UI.MenuItemCheckbox>
+      <UI.MenuItemCheckbox name="pattern" value="TIME" onClick={ui.withFocusGrid(ui.format.pattern.time.set)}>
+        <WithExample example={ui.format.pattern.time.example}>{s('Time')}</WithExample>
+      </UI.MenuItemCheckbox>
+      <UI.MenuItemCheckbox name="pattern" value="DATE_TIME" onClick={ui.withFocusGrid(ui.format.pattern.dateTime.set)}>
+        <WithExample example={ui.format.pattern.dateTime.example}>{s('Date time')}</WithExample>
+      </UI.MenuItemCheckbox>
+      <UI.MenuItemCheckbox name="pattern" value="DURATION" onClick={ui.withFocusGrid(ui.format.pattern.duration.set)}>
+        <WithExample example={ui.format.pattern.duration.example}>{s('Duration')}</WithExample>
+      </UI.MenuItemCheckbox>
+    </UI.Menu>
+  )
+}
+
+type CurrencySubMenuProps = {
+  ui: ProtonSheetsUIState
+}
+
+function CurrencySubMenu({ ui }: CurrencySubMenuProps) {
+  const s = useStrings()
+  return (
+    <UI.SubMenu>
+      <UI.MenuItemCheckbox
+        name="pattern"
+        value={getCurrencyItemValue('USD')}
+        onClick={ui.withFocusGrid(ui.format.pattern.currency.usd.set)}
+      >
+        {s('$ US Dollar')}
+      </UI.MenuItemCheckbox>
+      <UI.MenuItemCheckbox
+        name="pattern"
+        value={getCurrencyItemValue('EUR')}
+        onClick={ui.withFocusGrid(ui.format.pattern.currency.eur.set)}
+      >
+        {s('€ Euro')}
+      </UI.MenuItemCheckbox>
+      <UI.MenuItemCheckbox
+        name="pattern"
+        value={getCurrencyItemValue('GBP')}
+        onClick={ui.withFocusGrid(ui.format.pattern.currency.gbp.set)}
+      >
+        {s('£ Pound')}
+      </UI.MenuItemCheckbox>
+      <UI.MenuItemCheckbox
+        name="pattern"
+        value={getCurrencyItemValue('JPY')}
+        onClick={ui.withFocusGrid(ui.format.pattern.currency.jpy.set)}
+      >
+        {s('¥ Yen')}
+      </UI.MenuItemCheckbox>
+      <UI.MenuItemCheckbox
+        name="pattern"
+        value={getCurrencyItemValue('CNY')}
+        onClick={ui.withFocusGrid(ui.format.pattern.currency.cny.set)}
+      >
+        {s('CN¥ Chinese Yuan')}
+      </UI.MenuItemCheckbox>
+      <UI.MenuItemCheckbox
+        name="pattern"
+        value={getCurrencyItemValue('INR')}
+        onClick={ui.withFocusGrid(ui.format.pattern.currency.inr.set)}
+      >
+        {s('₹ Rupee')}
+      </UI.MenuItemCheckbox>
+    </UI.SubMenu>
+  )
+}
+
+function getCurrencyItemValue(name: string) {
+  return CURRENCY === name ? 'CURRENCY' : name
 }
 
 type WithExampleProps = { children?: ReactNode; example: string }
