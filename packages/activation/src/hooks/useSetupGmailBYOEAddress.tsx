@@ -13,7 +13,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { findUserAddress } from '@proton/shared/lib/helpers/address';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
-import { useFlag } from '@proton/unleash/index';
+import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 const useSetupGmailBYOEAddress = () => {
