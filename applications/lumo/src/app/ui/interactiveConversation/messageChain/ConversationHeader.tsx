@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -26,11 +26,14 @@ interface Props {
     onOpenFiles: (message?: Message) => void;
 }
 
-export const ConversationHeader = ({ conversation, messageChain, onOpenFiles }: Props) => {
+const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }: Props) => {
     const { id, title, spaceId } = conversation;
     const dispatch = useLumoDispatch();
     const [conversationTitle, setConversationTitle] = useState(title);
-    const [isEditing, setIsEditing] = useState(false); // const isGenerating = status === ConversationStatus.GENERATING;
+    const [isEditing, setIsEditing] = useState(false);
+    const inputRef = useRef<HTMLInputElement>(null);
+    
+
     const { isGhostChatMode } = useGhostChat();
     const { handleStarToggle, showFavoritesUpsellModal, favoritesUpsellModalProps, isStarred } = useConversationStar({
         conversation,
@@ -49,21 +52,30 @@ export const ConversationHeader = ({ conversation, messageChain, onOpenFiles }: 
     }, [onOpenFiles]);
 
     useEffect(() => {
-        setConversationTitle(title);
-    }, [title]);
+        // Only update local state if user is not currently editing
+        // This prevents cursor jumping when Redux state updates during editing
+        if (!isEditing) {
+            setConversationTitle(title);
+        }
+    }, [title, isEditing]);
 
     const startEditing = useCallback(() => setIsEditing(true), []);
 
     const handleTitleChange = useCallback(
-        (e: React.ChangeEvent<HTMLInputElement>) => setConversationTitle(e.target.value),
+        (e: React.ChangeEvent<HTMLInputElement>) => {
+            // Don't update React state during editing to prevent re-renders
+            // The input value is managed by the DOM directly
+        },
         []
     );
 
     const saveTitleChange = useCallback(() => {
-        if (title !== conversationTitle) {
+        const currentValue = inputRef.current?.value || title;
+        
+        if (title !== currentValue) {
             dispatch(
                 changeConversationTitle({
-                    title: conversationTitle,
+                    title: currentValue,
                     id: id,
                     persist: true,
                     spaceId,
@@ -72,13 +84,15 @@ export const ConversationHeader = ({ conversation, messageChain, onOpenFiles }: 
             dispatch(pushConversationRequest({ id }));
         }
 
+        setConversationTitle(currentValue);
         sendConversationEditTitleEvent('header');
         setIsEditing(false);
-    }, [title, conversationTitle, spaceId]);
+    }, [title, spaceId, id, dispatch]);
 
     const cancelTitleChange = useCallback(() => {
+        setConversationTitle(title); // Reset to original title
         setIsEditing(false);
-    }, [title, conversationTitle]);
+    }, [title]);
 
     const handleKeyEvent = useCallback(
         (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -88,7 +102,7 @@ export const ConversationHeader = ({ conversation, messageChain, onOpenFiles }: 
                 cancelTitleChange();
             }
         },
-        [conversationTitle, title]
+        [saveTitleChange, cancelTitleChange]
     );
 
     const handleFocusEvent = useCallback(
@@ -97,7 +111,7 @@ export const ConversationHeader = ({ conversation, messageChain, onOpenFiles }: 
                 saveTitleChange();
             }
         },
-        [conversationTitle, title]
+        [saveTitleChange]
     );
 
     const handleStarClick = () => {
@@ -156,9 +170,10 @@ export const ConversationHeader = ({ conversation, messageChain, onOpenFiles }: 
         if (isEditing) {
             return (
                 <InputFieldTwo
+                    key={`title-edit-${id}`}
                     type="text"
                     dense
-                    value={conversationTitle}
+                    defaultValue={conversationTitle}
                     onChange={handleTitleChange}
                     onBlur={handleFocusEvent} // Save on blur
                     onKeyDown={handleKeyEvent} // Save on Enter key, discard on Escape
@@ -166,6 +181,7 @@ export const ConversationHeader = ({ conversation, messageChain, onOpenFiles }: 
                     aria-label={c('collider_2025:Label').t`Edit conversation title`}
                     inputContainerClassName="conversation-title"
                     autoFocus
+                    ref={inputRef}
                 />
             );
         }
@@ -228,3 +244,25 @@ export const ConversationHeader = ({ conversation, messageChain, onOpenFiles }: 
         </div>
     );
 };
+
+export const ConversationHeader = React.memo(ConversationHeaderComponent, (prevProps, nextProps) => {
+
+    const conversationChanged = 
+        prevProps.conversation.id !== nextProps.conversation.id ||
+        prevProps.conversation.title !== nextProps.conversation.title ||
+        prevProps.conversation.spaceId !== nextProps.conversation.spaceId ||
+        prevProps.conversation.starred !== nextProps.conversation.starred;
+    
+    // Check if total file count has changed (this is what the component uses from messageChain)
+    const prevTotalFiles = prevProps.messageChain.reduce((count, message) => {
+        return count + (message.attachments?.length || 0);
+    }, 0);
+    const nextTotalFiles = nextProps.messageChain.reduce((count, message) => {
+        return count + (message.attachments?.length || 0);
+    }, 0);
+    
+    const totalFilesChanged = prevTotalFiles !== nextTotalFiles;
+    
+    // Only re-render if conversation changed, total files changed, or onOpenFiles changed
+    return !conversationChanged && !totalFilesChanged && prevProps.onOpenFiles === nextProps.onOpenFiles;
+});
