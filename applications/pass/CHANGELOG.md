@@ -1,3 +1,7 @@
+### Version 1.32.5
+
+- Patch WebKit Linux native X25519 crypto bug
+
 ### Version 1.32.3
 
 - Fix search query resets during vault switch
