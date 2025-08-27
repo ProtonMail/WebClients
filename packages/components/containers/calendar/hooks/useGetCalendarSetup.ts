@@ -7,7 +7,7 @@ import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
+import { getActiveAddresses, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import type { CalendarViewModelFull, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { getCalendarModel } from '../calendarModal/personalCalendarModal/calendarModalState';
@@ -28,16 +28,18 @@ const useGetCalendarSetup = ({ calendar: initialCalendar, setModel }: Props) => 
 
     useEffect(() => {
         const initializeEmptyCalendar = async () => {
-            const activeAdresses = getActiveAddresses(await getAddresses());
-            if (!activeAdresses.length) {
+            const activeAddresses = getActiveAddresses(await getAddresses()).filter(
+                (address) => !getIsBYOEAddress(address)
+            );
+            if (!activeAddresses.length) {
                 setError(true);
                 return createNotification({ text: c('Error').t`No valid address found`, type: 'error' });
             }
 
             setModel((prev) => ({
                 ...prev,
-                addressID: activeAdresses[0].ID,
-                addressOptions: activeAdresses.map(({ ID, Email = '' }) => ({ value: ID, text: Email })),
+                addressID: activeAddresses[0].ID,
+                addressOptions: activeAddresses.map(({ ID, Email = '' }) => ({ value: ID, text: Email })),
             }));
         };
 
