@@ -22,7 +22,7 @@ import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
-import { FlagProvider } from '@proton/unleash/index';
+import { FlagProvider } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import config from './config';
