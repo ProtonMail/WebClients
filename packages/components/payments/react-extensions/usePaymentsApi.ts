@@ -290,8 +290,6 @@ export const usePaymentsApi = (
                     result.ProrationMode = data.ProrationMode;
                 }
 
-                console.log('normal check result', result);
-
                 return {
                     ...result,
                     requestData: data,

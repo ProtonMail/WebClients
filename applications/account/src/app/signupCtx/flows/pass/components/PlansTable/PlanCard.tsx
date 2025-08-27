@@ -3,10 +3,8 @@ import { type FC, type ReactNode, useId } from 'react';
 import { c } from 'ttag';
 
 import { Button, type ButtonLikeShape } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { AppsLogos, Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
-
-import { PlanProducts } from './PlanProducts';
 
 import './PlanCard.scss';
 
@@ -50,21 +48,21 @@ export const PlanCard: FC<PlanCardProps> = ({
                 shape={buttonShape}
                 fullWidth
                 pill
-                className={`mt-6 py-2 ${!recommended && 'text-md'}`}
+                className={clsx('mt-6 py-2', !recommended && 'text-md')}
                 onClick={buttonAction}
             >
                 {buttonText}
             </Button>
-            {showProducts && <PlanProducts />}
-            <div className="mt-8">
+            {showProducts && <AppsLogos fullWidth className="mt-6" />}
+            <ul className="mt-8 unstyled">
                 {featuresTitle && <div className="mb-4">{featuresTitle}</div>}
                 {features.map((feature) => (
-                    <div key={`${id}-${feature}`} className="mb-4">
+                    <li key={`${id}-${feature}`} className="mb-4">
                         <Icon name="checkmark" className="mr-1" />
                         {feature}
-                    </div>
+                    </li>
                 ))}
-            </div>
+            </ul>
             {recommended && (
                 <div
                     className="pass-plan-card-recommended-banner absolute flex items-center justify-center text-bold py-2 bg-primary top-custom left-custom"

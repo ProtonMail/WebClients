@@ -40,7 +40,7 @@ const PassSignup = () => {
          * A limitation of the payments context initialisation means we need to
          * check the pricing with the coupon to ensure the UI data is available
          */
-        payments.checkMultiplePlans([getPassPlusOfferPlan(payments.currency)]);
+        void payments.checkMultiplePlans([getPassPlusOfferPlan(payments.currency)]);
     }, []);
 
     return (
