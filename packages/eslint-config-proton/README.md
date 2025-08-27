@@ -13,13 +13,7 @@ Add the following to the `package.json` dev dependencies.
 Then, use the following `.eslintrc` config.
 
 ```js
-module.exports = {
-    extends: ['@proton/eslint-config-proton'],
-    parser: '@typescript-eslint/parser',
-    parserOptions: {
-        tsconfigRootDir: __dirname,
-        project: './tsconfig.json',
-    },
-    ignorePatterns: ['.eslintrc.js'],
-};
+import defaultConfig from '@proton/eslint-config-proton/all';
+
+export default defaultConfig;
 ```

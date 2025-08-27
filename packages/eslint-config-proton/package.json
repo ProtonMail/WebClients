@@ -14,23 +14,30 @@
     ],
     "license": "GPL-3.0",
     "author": "Proton AG",
+    "type": "module",
+    "exports": {
+        "./all": "./all.js",
+        "./base": "./base.js",
+        "./react": "./react.js"
+    },
     "dependencies": {
+        "@eslint/eslintrc": "^3.3.1",
+        "@eslint/js": "^9.33.0",
         "@protontech/eslint-plugin-enforce-uint8array-arraybuffer": "^1.0.0",
-        "@typescript-eslint/eslint-plugin": "^8.40.0",
-        "@typescript-eslint/parser": "^8.40.0",
-        "eslint": "^8.57.1",
+        "eslint": "^9.33.0",
         "eslint-config-prettier": "^10.1.8",
         "eslint-import-resolver-alias": "^1.1.2",
         "eslint-import-resolver-typescript": "4.4.4",
         "eslint-plugin-custom-rules": "workspace:^",
-        "eslint-plugin-es": "^4.1.0",
         "eslint-plugin-import": "^2.32.0",
         "eslint-plugin-jsx-a11y": "^6.10.2",
         "eslint-plugin-lodash": "^8.0.0",
         "eslint-plugin-monorepo-cop": "^1.0.2",
         "eslint-plugin-no-only-tests": "^3.3.0",
         "eslint-plugin-react": "^7.37.5",
-        "eslint-plugin-react-hooks": "^4.6.2"
+        "eslint-plugin-react-hooks": "^5.2.0",
+        "eslint-plugin-testing-library": "^7.6.6",
+        "typescript-eslint": "^8.40.0"
     },
     "peerDependencies": {
         "prettier": "3.6.2",

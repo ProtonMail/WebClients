@@ -5,13 +5,13 @@
     "main": "index.ts",
     "scripts": {
         "check-types": "tsc",
-        "lint": "eslint index.ts lib --ext .js,.ts,.tsx --quiet",
+        "lint": "eslint --quiet",
         "pretty": "prettier --write $(find . -path ./node_modules -prune -o -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')"
     },
     "devDependencies": {
         "@jackfranklin/test-data-bot": "^2.1.0",
         "cross-fetch": "^4.1.0",
-        "eslint": "^8.57.1",
+        "eslint": "^9.33.0",
         "msw": "^2.10.5",
         "typescript": "^5.9.2"
     }
