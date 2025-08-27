@@ -64,5 +64,6 @@
             "proton-pass-desktop/*": ["./applications/pass-desktop/src/*"]
         }
     },
+    "include": ["${configDir}/"],
     "exclude": ["**/node_modules/*", "**/dist/*", "**/.*/", "dangerfile.ts"]
 }
