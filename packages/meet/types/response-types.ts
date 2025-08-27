@@ -53,7 +53,7 @@ export interface Meeting {
     TimeZone: string;
     State: MeetingState;
     Type: MeetingType;
-    EventID?: string;
+    CalendarEventID?: string;
     CalendarID?: string;
 }
 
