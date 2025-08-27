@@ -1,3 +1,11 @@
+### Version 1.32.5
+
+- Patch WebKit Linux native X25519 crypto bug
+
+### Version 1.32.4
+
+- Fix argon2 wasm inlining [chrome extension only]
+
 ### Version 1.32.3
 
 - Add support for website-rules v2
