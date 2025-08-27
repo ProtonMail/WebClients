@@ -196,6 +196,6 @@ export const useSharedWithMeItemsWithSelection = () => {
         handleRenderItem,
         handleSorting,
         selectionControls,
-        isEmpty: !mapLegacyItems.length && !isLoading,
+        isEmpty: !regularItems.length && !invitationPositionedItems.length && !isLoading,
     };
 };
