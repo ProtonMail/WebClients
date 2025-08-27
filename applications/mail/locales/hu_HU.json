@@ -4830,6 +4830,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A keresés túl sok találatot eredményezett. Korlátozza a keresést majd próbálja meg újra."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "A számlázási cím szerkesztése jelenleg nem elérhető. Kérjük, próbálja meg később újra."
+      ],
+      "ZIP code is required": [
+        "Irányítószám szükséges"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8451,6 +8457,13 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Már csak néhány kattintás választja el a rendetlenség-mentes postaládától"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } lejár ${ daysLeft } nap múlva.",
+        "${ planName } lejár ${ daysLeft } nap múlva."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } ma lejár."
       ]
     },
     "info": {
@@ -9376,6 +9389,15 @@
       ],
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
+      ],
+      "Company": [
+        "Cég"
+      ],
+      "State": [
+        "Állam"
+      ],
+      "ZIP code": [
+        "Irányítószám"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11760,6 +11782,24 @@
       ],
       "ZIP code": [
         "Irányítószám"
+      ],
+      "Anderson": [
+        "Kovács"
+      ],
+      "Anytown": [
+        "Bárholváros"
+      ],
+      "Company name": [
+        "Cégnév"
+      ],
+      "Main street 12": [
+        "Fő utca 12."
+      ],
+      "Thomas": [
+        "Tamás"
+      ],
+      "VAT number": [
+        "Áfa-szám"
       ]
     },
     "Placeholder for contact group name": {
@@ -13263,8 +13303,8 @@
         "${ elementsCount } üzenet csillaggal megjelölve."
       ],
       "${ elementsCount } message marked as unread.": [
-        "${ elementsCount } üzenet olvasatlannak megjelölve.",
-        "${ elementsCount } üzenet olvasatlannak megjelölve."
+        "${ elementsCount } üzenet olvasatlannak jelölve.",
+        "${ elementsCount } üzenet olvasatlannak jelölve."
       ],
       "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
         "${ elementsCount } üzenet átkerült a ${ labelName } mappába, a feladó pedig bekerült a nem levélszemét listába.",
@@ -13489,6 +13529,9 @@
       ],
       "You have successfully unsubscribed": [
         "Sikeresen leiratkozott"
+      ],
+      "Billing details updated": [
+        "Számlázási adatok frissítve"
       ]
     },
     "Success notification": {
@@ -13939,7 +13982,7 @@
       ],
       "Delete ${ count } draft": [
         "${ count } piszkozat törlése",
-        "${ count } névjegy törlése"
+        "${ count } piszkozat törlése"
       ],
       "Delete ${ count } message": [
         "${ count } üzenet törlése",
@@ -14643,6 +14686,9 @@
       ],
       "Your subscriptions in one place": [
         "Az előfizetései egy helyen"
+      ],
+      "Edit billing address": [
+        "Számlázási cím szerkesztése"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15209,6 +15255,14 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "A szövegmezők nem kötelezőek. Az ebben az űrlapon megadott információk csak a jövőben kiállított számlákon jelennek meg, és nem befolyásolják a meglévő számlákat."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "A szövegmezők kitöltése nem kötelező. Az ezen az űrlapon megadott információk csak a kiválasztott számlát módosítják, a jövőbeni számlák részleteit nem."
       ]
     }
   }

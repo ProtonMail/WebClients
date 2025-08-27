@@ -3918,6 +3918,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "आपकी खोज का मिलान बहुत अधिक परिणामों से हुआ. कृपया अपनी खोज सीमित करें और पुन: प्रयास करें।"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "वर्तमान में बिलिंग पता संपादित करना उपलब्ध नहीं है। कृपया बाद में पुनः प्रयास करें।"
+      ],
+      "ZIP code is required": [
+        "ज़िप कोड आवश्यक है"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6590,6 +6596,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "आपके फ़ोन नंबर का उपयोग केवल इस एक बार के सत्यापन के लिए किया जाएगा।"
+      ],
+      "${ planName } expires today.": [
+        "${ planName } आज समाप्त हो रहा है।"
       ]
     },
     "info": {
@@ -7396,6 +7405,15 @@
       ],
       "Your password (admin)": [
         "आपका पासवर्ड (व्यवस्थापक)"
+      ],
+      "Company": [
+        "कंपनी"
+      ],
+      "State": [
+        "राज्य"
+      ],
+      "ZIP code": [
+        "ज़िप कोड"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9074,6 +9092,24 @@
       ],
       "ZIP code": [
         "ज़िप कोड"
+      ],
+      "Anderson": [
+        "उदा. विकास"
+      ],
+      "Anytown": [
+        "कोई भी शहर"
+      ],
+      "Company name": [
+        "कंपनी का नाम"
+      ],
+      "Main street 12": [
+        "मुख्य सड़क 12"
+      ],
+      "Thomas": [
+        "उदा. अर्जुन"
+      ],
+      "VAT number": [
+        "वैट नंबर"
       ]
     },
     "Placeholder for contact group name": {
@@ -10306,6 +10342,9 @@
       ],
       "You have successfully unsubscribed": [
         "आपने अपनी सदस्यता सफलतापूर्वक समाप्त किया"
+      ],
+      "Billing details updated": [
+        "बिलिंग विवरण अपडेट हुआ"
       ]
     },
     "Success notification": {
@@ -11161,6 +11200,9 @@
       ],
       "Your shorter address is now ready": [
         "आपका छोटा पता अब तैयार है"
+      ],
+      "Edit billing address": [
+        "बिलिंग पता संपादित करें"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -11662,6 +11704,14 @@
     "Zoom Meeting": {
       "Passcode:": [
         "पासकोड:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "टेक्स्ट फील्ड वैकल्पिक हैं। इस फॉर्म में प्रदान की गई जानकारी केवल भविष्य में जारी की जाने वाली इनवॉइस में दिखाई देगी और मौजूदा इनवॉइस को प्रभावित नहीं करेगी।"
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "टेक्स्ट फील्ड वैकल्पिक हैं। इस फॉर्म में दी गई जानकारी केवल आपके द्वारा चयनित इनवॉइस को बदलेगी और आपके भविष्य के इनवॉइस विवरण को प्रभावित नहीं करेगी।"
       ]
     }
   }

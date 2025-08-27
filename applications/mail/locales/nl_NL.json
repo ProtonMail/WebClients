@@ -2539,7 +2539,7 @@
         "Deze reactie is verouderd. De afspraak bestaat niet meer in uw agenda."
       ],
       "This response is out of date. You have no calendars.": [
-        "Deze reactie is verouderd. U hebt geen agenda."
+        "Deze reactie is verouderd. U heeft geen agenda."
       ],
       "You already accepted this invitation.": [
         "U hebt deze uitnodiging al geaccepteerd."
@@ -4985,6 +4985,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Uw zoekopdracht leverde te veel resultaten op. Verfijn uw zoekopdracht en probeer het opnieuw."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Factuuradres bewerken is op dit moment niet beschikbaar. Probeer het later opnieuw."
+      ],
+      "Failed to open to contact": [
+        "Contact maken mislukt"
+      ],
+      "Postal code is required": [
+        "Postcode is vereist"
+      ],
+      "ZIP code is required": [
+        "Postcode is vereist"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6336,12 +6348,12 @@
         "${ elementsCount } berichten worden gemarkeerd als gelezen."
       ],
       "${ elementsCount } message will be moved": [
-        "${ elementsCount }gesprek wordt verplaatst",
+        "${ elementsCount } bericht wordt verplaatst",
         "${ elementsCount }berichten worden verplaatst"
       ],
       "${ elementsCount } message will be unlabelled from:": [
-        "${ elementsCount }bericht wordt ongelabeld van:",
-        "${ elementsCount }berichten wordt ongelabeld van:"
+        "${ elementsCount } bericht wordt ongelabeld van:",
+        "${ elementsCount } berichten wordt ongelabeld van:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } ingesloten afbeelding",
@@ -7277,7 +7289,7 @@
         "Bevestig uw keuze en wij doen de rest."
       ],
       "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
-        "Houd uw inlog- en creditcardgegevens veilig, maar altijd bij de hand door ze toe te voegen aan ${ PASS_APP_NAME }. Het is gratis, en inbegrepen bij uw ${ BRAND_NAME } account."
+        "Houd uw inlog- en creditcardgegevens veilig, maar altijd bij de hand door ze toe te voegen aan ${ PASS_APP_NAME }. Het is gratis, en inbegrepen bij uw ${ BRAND_NAME }-account."
       ],
       "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
         "Houd uw mailbox netjes door de prullenbak en spam die ruim 30 dagen bestaat automatisch te wissen."
@@ -8446,13 +8458,13 @@
         "U kunt niet antwoorden vanaf het uitgenodigde adres."
       ],
       "You do not have any messages here": [
-        "U hebt hier geen berichten"
+        "U heeft hier geen berichten"
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "U krijgt een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
       ],
       "You have ${ unread } in your inbox.": [
-        "U hebt ${ unread } in uw inbox."
+        "U heeft ${ unread } in uw inbox."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "U heeft **${ count } gesprek** uit deze map opgeslagen",
@@ -8508,16 +8520,16 @@
         "U heeft **${ count } berichten** geselecteerd met dit label"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
-        "Selecteer**${ elementsCount } gesprek **in ${ location }",
-        "Selecteer**${ elementsCount } gesprekken **in ${ location }"
+        "U selecteerde **${ elementsCount } gesprek **in ${ location }",
+        "U selecteerde **${ elementsCount } gesprekken **in ${ location }"
       ],
       "You selected **${ elementsCount } conversation**.": [
         "U selecteerde **${ elementsCount } gesprek**.",
         "U selecteerde **${ elementsCount } gesprekken**."
       ],
       "You selected **${ elementsCount } message** in ${ location }": [
-        "U selecteert** ${ elementsCount }bericht**in${ location }",
-        "U selecteert**${ elementsCount }berichten**in${ location }"
+        "U selecteerde ** ${ elementsCount }bericht**in${ location }",
+        "U selecteerde **${ elementsCount }berichten**in${ location }"
       ],
       "You selected **${ elementsCount } message**.": [
         "U selecteerde **${ elementsCount } gesprek**.",
@@ -8660,6 +8672,13 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } vervalt binnen ${ daysLeft } dag.",
+        "${ planName } vervalt binnen ${ daysLeft } dagen."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } verloopt vandaag."
       ]
     },
     "info": {
@@ -9615,6 +9634,15 @@
       ],
       "Your password (trusted contact)": [
         "Uw wachtwoord (vertrouwd contact)"
+      ],
+      "Company": [
+        "Bedrijf"
+      ],
+      "State": [
+        "Staat"
+      ],
+      "ZIP code": [
+        "Postcode"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10007,6 +10035,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Uw abonnement is afgelopen. ${ cta } en om het verlies van gegevens te voorkomen."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Om ${ BRAND_NAME } te blijven gebruiken, moet u ervoor zorgen dat uw premium functies niet meer in gebruik zijn of uw abonnement upgraden."
       ]
     },
     "Log preference": {
@@ -11847,6 +11878,9 @@
       ],
       "Your payment is still being processed": [
         "Uw betaling wordt nog verwerkt"
+      ],
+      "VAT number": [
+        "BTW-nummer"
       ]
     },
     "Payments.Error": {
@@ -11902,6 +11936,30 @@
       ],
       "VAT number": [
         "BTW-nummer"
+      ],
+      "Add ABN": [
+        "ABN toevoegen"
+      ],
+      "Add Business Number": [
+        "Ondernemingsnummer toevoegen"
+      ],
+      "Add EIN": [
+        "EIN toevoegen"
+      ],
+      "Add VAT number": [
+        "BTW-nummer toevoegen"
+      ],
+      "Edit ABN": [
+        "ABN bewerken"
+      ],
+      "Edit Business Number": [
+        "Ondernemingsnummer bewerken"
+      ],
+      "Edit EIN": [
+        "EIN bewerken"
+      ],
+      "Edit VAT number": [
+        "Wijzig BTW-nummer"
       ]
     },
     "PGP key encryption warning": {
@@ -12084,6 +12142,27 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "Willekeurige stad"
+      ],
+      "Company name": [
+        "Bedrijfsnaam"
+      ],
+      "Main street 12": [
+        "Hoofdstraat 12"
+      ],
+      "Select country": [
+        "Selecteer land"
+      ],
+      "Thomas": [
+        "Thomas"
+      ],
+      "VAT number": [
+        "BTW-nummer"
       ]
     },
     "Placeholder for contact group name": {
@@ -13858,6 +13937,13 @@
       ],
       "You have successfully unsubscribed": [
         "U bent succesvol afgemeld"
+      ],
+      "Billing details updated": [
+        "Factuurgegevens bijgewerkt"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Gecategoriseerd ${ elementsCount } bericht.",
+        "Opnieuw Gecategoriseerde ${ elementsCount } berichten."
       ]
     },
     "Success notification": {
@@ -15039,6 +15125,9 @@
       ],
       "Your subscriptions in one place": [
         "Uw abonnementen op één plek"
+      ],
+      "Edit billing address": [
+        "Factuuradres bewerken"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15613,6 +15702,14 @@
       ],
       "Passcode:": [
         "Toegangscode:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstvelden zijn optioneel. De informatie die u in dit formulier verstrekt zal alleen verschijnen op in de toekomst uitgegeven facturen en zal geen invloed hebben op bestaande facturen."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Tekstvelden zijn optioneel. De informatie die u in dit formulier opgeeft, zal alleen de door u geselecteerde factuur wijzigen en niet uw toekomstige factuurgegevens."
       ]
     }
   }

@@ -4954,6 +4954,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La vostra cerca coincideix amb massa resultats. Limiteu-la i torneu-ho a provar."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "L'edició de l'adreça de facturació no està disponible en aquests moments. Torneu a provar més tard."
+      ],
+      "Failed to open to contact": [
+        "No s'ha pogut obrir el contacte"
+      ],
+      "Postal code is required": [
+        "Cal un codi postal"
+      ],
+      "ZIP code is required": [
+        "Es requereix el codi postal."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8629,6 +8641,13 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sou tot just a uns quants clics d'una safata d'entrada ordenada"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } caduca en ${ daysLeft } dia.",
+        "${ planName } caduca en ${ daysLeft } dies."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } caduca avui."
       ]
     },
     "info": {
@@ -9584,6 +9603,15 @@
       ],
       "Your password (trusted contact)": [
         "La vostra contrasenya (contacte de confiança)"
+      ],
+      "Company": [
+        "Empresa"
+      ],
+      "State": [
+        "Estat"
+      ],
+      "ZIP code": [
+        "Codi postal"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9976,6 +10004,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "La vostra subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Per continuar utilitzant ${ BRAND_NAME }, assegureu-vos que les vostres característiques prèmium ja no s'utilitzen o milloreu el pla."
       ]
     },
     "Log preference": {
@@ -11816,6 +11847,9 @@
       ],
       "Your payment is still being processed": [
         "Encara s'està processant el vostre pagament."
+      ],
+      "VAT number": [
+        "Número d'IVA"
       ]
     },
     "Payments.Error": {
@@ -11871,6 +11905,30 @@
       ],
       "VAT number": [
         "NIF"
+      ],
+      "Add ABN": [
+        "Afegiu ABN"
+      ],
+      "Add Business Number": [
+        "Afegiu el Número d'Empresa"
+      ],
+      "Add EIN": [
+        "Afegeix l'EIN"
+      ],
+      "Add VAT number": [
+        "Afegeix un número d'IVA"
+      ],
+      "Edit ABN": [
+        "Edita l'ABN"
+      ],
+      "Edit Business Number": [
+        "Editeu el Número d'Empresa"
+      ],
+      "Edit EIN": [
+        "Edita l'EIN"
+      ],
+      "Edit VAT number": [
+        "Edita el número d'IVA"
       ]
     },
     "PGP key encryption warning": {
@@ -12053,6 +12111,27 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Anderson": [
+        "Pujol"
+      ],
+      "Anytown": [
+        "Castellvent"
+      ],
+      "Company name": [
+        "Nom de l'empresa"
+      ],
+      "Main street 12": [
+        "Plaça dels Estels, 12"
+      ],
+      "Select country": [
+        "Seleccioneu el país"
+      ],
+      "Thomas": [
+        "Adrià"
+      ],
+      "VAT number": [
+        "Núm. IVA"
       ]
     },
     "Placeholder for contact group name": {
@@ -13822,6 +13901,13 @@
       ],
       "You have successfully unsubscribed": [
         "Heu anul·lat la subscripció amb èxit"
+      ],
+      "Billing details updated": [
+        "S'han actualitzat els detalls de facturació."
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "S'ha canviat de categoria ${ elementsCount } missatge.",
+        "S'han canviat de categoria ${ elementsCount } missatges."
       ]
     },
     "Success notification": {
@@ -15003,6 +15089,9 @@
       ],
       "Your subscriptions in one place": [
         "Les vostres subscripcions en un sol lloc"
+      ],
+      "Edit billing address": [
+        "Edita l'adreça de la factura"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15577,6 +15666,14 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Els camps de text són opcionals. La informació que proporcioneu en aquest formulari només apareixerà en les factures emeses en el futur i no afectarà les factures existents."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Els camps de text són opcionals. La informació que proporcioneu en aquest formulari només canviarà la factura que heu seleccionat i no els detalls de les factures futures."
       ]
     }
   }

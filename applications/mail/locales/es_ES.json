@@ -1618,6 +1618,22 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "${ numberOfAddresses } address": [
+        "${ numberOfAddresses } dirección",
+        "${ numberOfAddresses } direcciones"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Obtener tu dirección ${ BRAND_NAME }"
+      ],
+      "Claim this address": [
+        "Obtén esta dirección"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Obtén tu dirección gratuita de ${ BRAND_NAME }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Obtén una dirección gratuita de ${ BRAND_NAME }"
       ]
     },
     "action": {
@@ -2607,6 +2623,9 @@
       ],
       "Ultra fast and private VPN": [
         "VPN ultrarrápida y privada"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Checkout row": {
@@ -4120,6 +4139,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
+      ],
+      "This view shows messages sent to the following addresses:": [
+        "Esta vista muestra mensajes enviados a las siguientes direcciones:"
       ]
     },
     "description": {
@@ -4957,6 +4979,21 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Tu búsqueda ha coincidido con muchos resultados. Limita tu búsqueda e inténtalo de nuevo."
+      ],
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } para <${ email }>. Puedes añadir otra clave o desactivar el cifrado para este contacto para resolver el problema."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "La edición de la dirección de facturación no está disponible en este momento. Inténtalo de nuevo más tarde."
+      ],
+      "Failed to open to contact": [
+        "Error al abrir el contacto"
+      ],
+      "Postal code is required": [
+        "El código postal es requerido"
+      ],
+      "ZIP code is required": [
+        "Se requiere el código postal."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5750,6 +5787,9 @@
       ],
       "You've unlocked 1 GB": [
         "Has desbloqueado 1 GB"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Obtener tu dirección ${ BRAND_NAME }"
       ]
     },
     "Gmail forwarding": {
@@ -8617,6 +8657,25 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Estás a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } requiere una dirección de ${ BRAND_NAME } para la sincronización segura de eventos y el cifrado. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } requiere una dirección de ${ BRAND_NAME } para la sincronización segura de eventos y el cifrado. Reclama tu dirección gratuita de ${ MAIL_APP_NAME } ahora."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } expira en ${ daysLeft } día.",
+        "${ planName } expira en ${ daysLeft } días."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } expira hoy."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Asegura una comunicación totalmente privada y cifrada. Reclama tu dirección de correo electrónico ${ BRAND_NAME } gratis ahora."
+      ],
+      "No change will be made to the selected emails": [
+        "No se hará ningún cambio a los correos electrónicos seleccionados"
       ]
     },
     "info": {
@@ -9572,6 +9631,15 @@
       ],
       "Your password (trusted contact)": [
         "Tu contraseña (contacto de confianza)"
+      ],
+      "Company": [
+        "Empresa"
+      ],
+      "State": [
+        "Estado"
+      ],
+      "ZIP code": [
+        "Código postal"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9964,6 +10032,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Tu suscripción ha finalizado. ${ cta } y para evitar la pérdida de datos."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Para seguir usando ${ BRAND_NAME }, asegúrate de que tus funciones prémium ya no estén en uso o mejora tu plan."
       ]
     },
     "Log preference": {
@@ -11804,6 +11875,9 @@
       ],
       "Your payment is still being processed": [
         "Tu pago aún está siendo procesado."
+      ],
+      "VAT number": [
+        "Número de IVA"
       ]
     },
     "Payments.Error": {
@@ -11859,6 +11933,30 @@
       ],
       "VAT number": [
         "Número de IVA"
+      ],
+      "Add ABN": [
+        "Añadir ABN"
+      ],
+      "Add Business Number": [
+        "Añadir el número empresarial"
+      ],
+      "Add EIN": [
+        "Añadir EIN"
+      ],
+      "Add VAT number": [
+        "Añadir un número de IVA"
+      ],
+      "Edit ABN": [
+        "Editar ABN"
+      ],
+      "Edit Business Number": [
+        "Editar el número empresarial"
+      ],
+      "Edit EIN": [
+        "Editar EIN"
+      ],
+      "Edit VAT number": [
+        "Editar el número de IVA"
       ]
     },
     "PGP key encryption warning": {
@@ -12041,6 +12139,27 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Anderson": [
+        "García"
+      ],
+      "Anytown": [
+        "Valclaro"
+      ],
+      "Company name": [
+        "Nombre de la empresa"
+      ],
+      "Main street 12": [
+        "Calle del Sol, 12"
+      ],
+      "Select country": [
+        "Seleccionar un país"
+      ],
+      "Thomas": [
+        "Andrea"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ]
     },
     "Placeholder for contact group name": {
@@ -12059,6 +12178,12 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Mejorar a ${ upsellPlanTitle }"
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Como suscriptor de **${ currentPlanTitle }**, puedes desbloquear **${ unlockPlanTitle }** y más servicios de ${ BRAND_NAME } al mejorar tu plan a **${ upsellPlanTitle }**."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Más servicios de ${ BRAND_NAME }.${ br }Una suscripción sencilla."
       ]
     },
     "Price": {
@@ -12446,15 +12571,15 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Tienes ${ timeRemaining.inHours } hora para restablecer tu contraseña.",
-        "Tienes ${ timeRemaining.inHours } horas para restablecer tu contraseña."
+        " Tienes ${ timeRemaining.inHours } horas para restablecer tu contraseña."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Tienes ${ timeRemaining.inMinutes } minuto para restablecer tu contraseña.",
-        "Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
+        " Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Tienes ${ timeRemaining.inSeconds } segundo para restablecer tu contraseña.",
-        "Tienes ${ timeRemaining.inSeconds } segundos para restablecer tu contraseña."
+        " Tienes ${ timeRemaining.inSeconds } segundos para restablecer tu contraseña."
       ]
     },
     "session_recovery:available:link": {
@@ -13414,6 +13539,9 @@
       ],
       "Your own short @pm.me email alias": [
         "Tu alias de correo electrónico @pm.me"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } te da acceso a todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }. La privacidad está integrada para que puedas seguir adelante, sabiendo que tus datos e identidad están seguros."
       ]
     },
     "subscription reminder": {
@@ -13798,6 +13926,9 @@
       ],
       "You have successfully unsubscribed": [
         "Has cancelado la suscripción."
+      ],
+      "Billing details updated": [
+        "Se han actualizado los datos de facturación."
       ]
     },
     "Success notification": {
@@ -14970,6 +15101,18 @@
       ],
       "Your subscriptions in one place": [
         "Tus suscripciones en un solo lugar"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Obtén tu dirección de ${ MAIL_APP_NAME }"
+      ],
+      "Edit billing address": [
+        "Editar la dirección de la factura"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Obtén acceso completo a ${ CALENDAR_APP_NAME }"
+      ],
+      "Your addresses": [
+        "Tus direcciones"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15544,6 +15687,22 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Los campos de texto son opcionales. La información que proporciones en este formulario solo aparecerá en las facturas emitidas en el futuro y no afectará a las facturas existentes."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Los campos de texto son opcionales. La información que proporcionas en este formulario solo cambiará la factura que has seleccionado y no los detalles de la futura factura."
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
       ]
     }
   }

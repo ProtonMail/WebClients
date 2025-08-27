@@ -1535,6 +1535,18 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Claim this address": [
+        "獲取這個電郵位址"
+      ],
+      "Connect to video conferencing": [
+        "連接視訊會議"
+      ],
+      "Download all attachments": [
+        "下載所有附件"
+      ],
+      "Upload and share files": [
+        "上傳並共享檔案"
       ]
     },
     "action": {
@@ -1704,6 +1716,9 @@
       ],
       "years": [
         "年"
+      ],
+      "thanks to you": [
+        "感謝您"
       ]
     },
     "anniversary_2025: Offers": {
@@ -1886,6 +1901,15 @@
       ],
       "VPN Accelerator": [
         "VPN 加速器"
+      ],
+      "8500+ servers across 110+ countries": [
+        "超過 8500 臺伺服器，遍布於 110 個以上的國家"
+      ],
+      "Easily add or remove users": [
+        "輕鬆新增或移除使用者"
+      ],
+      "Password health alerts": [
+        "密碼堅固性警示"
       ]
     },
     "BF2024: Offers": {
@@ -4631,6 +4655,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜尋結果過多。請縮小您的搜尋範圍並重新試試。"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "目前不可編輯付款地址。請稍後再試。"
+      ],
+      "Postal code is required": [
+        "郵遞區號為必填"
+      ],
+      "ZIP code is required": [
+        "郵遞區號為必要項目"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7960,6 +7993,27 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "您的訂購授權將於 ${ renewalTime } 自動更新。"
+      ],
+      "All messages from this mailing list will be moved to Trash.": [
+        "此郵寄清單的所有訊息都將被移至垃圾桶。"
+      ],
+      "Apply to future messages": [
+        "套用至今後的訊息"
+      ],
+      "Bulk delete": [
+        "整批刪除"
+      ],
+      "Dedicated VPN servers": [
+        "專用 VPN 伺服器"
+      ],
+      "No change will be made to the selected emails": [
+        "選取的郵件將不會有任何變更"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "訂購授權即將到期，請於${ byDate }前至Play 商店重新訂購以保留您的${ planName }權益。${ reactivateLink }"
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "您的免費試用已成功轉換為每月訂購授權。您的續訂日期為 ${ nextBillingDate }。"
       ]
     },
     "info": {
@@ -8861,6 +8915,24 @@
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } 將所有訊息移至 ${ boldFolderName }"
+      ],
+      "Apply to future messages": [
+        "套用至今後的訊息"
+      ],
+      "Company": [
+        "公司"
+      ],
+      "State": [
+        "州"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "已取消訂閱 ${ truncatedName }。"
+      ],
+      "ZIP code": [
+        "郵遞區號"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9133,6 +9205,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "您需要先重新啟用您的金鑰，才可查看已更新的邀請"
+      ],
+      "How to add users": [
+        "如何新增使用者"
       ]
     },
     "Link to calendar event": {
@@ -10425,6 +10500,9 @@
       ],
       "Your subscription renews soon": [
         "您的訂閱即將重新續約"
+      ],
+      "${ planName } for 12 months": [
+        "為期 12 個月的 ${ planName }"
       ]
     },
     "Offer fearue": {
@@ -10586,6 +10664,9 @@
       ],
       "Your domain and subscription are ready to use.": [
         "您的網域和訂閱已就緒。"
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } 代表您永遠不會在我們的應用程式中看到贊助廣告。"
       ]
     },
     "Onboarding Proton": {
@@ -10626,6 +10707,9 @@
       ],
       "help center": [
         "說明中心"
+      ],
+      "Once your full subscription starts...": [
+        "您的正式訂購授權一旦開始..."
       ]
     },
     "Online accounts": {
@@ -10855,6 +10939,9 @@
       ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
+      ],
+      "VAT number": [
+        "增值稅編號（VAT）"
       ]
     },
     "Payments.Error": {
@@ -10902,6 +10989,18 @@
       ],
       "VAT number": [
         "增值稅編號（VAT）"
+      ],
+      "Add Business Number": [
+        "新增營業人統一編號"
+      ],
+      "Add VAT number": [
+        "新增增值稅編號（VAT）"
+      ],
+      "Edit Business Number": [
+        "編輯營業人統一編號"
+      ],
+      "Edit VAT number": [
+        "編輯增值稅編號（VAT）"
       ]
     },
     "PGP key encryption warning": {
@@ -11081,6 +11180,21 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Anderson": [
+        "安德松"
+      ],
+      "Company name": [
+        "公司名稱"
+      ],
+      "Select country": [
+        "選擇國家"
+      ],
+      "Thomas": [
+        "湯姆斯"
+      ],
+      "VAT number": [
+        "增值稅編號（VAT）"
       ]
     },
     "Placeholder for contact group name": {
@@ -11737,6 +11851,9 @@
     "specialoffer: Footer": {
       "Your subscription will renew at the same rate every year.": [
         "您的訂閱每年將以同費率更新"
+      ],
+      "The special offer is valid for the first 2 years.": [
+        "特別優惠適用於最初的兩年。"
       ]
     },
     "specialoffer: Link": {
@@ -11760,6 +11877,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "升級至${ pricingTitle }"
+      ],
+      "Guard against threats": [
+        "防範威脅"
       ]
     },
     "specialoffer: Offers": {
@@ -12684,6 +12804,12 @@
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"
+      ],
+      "Billing details updated": [
+        "帳單詳情已更新"
+      ],
+      "Conversation removed from Starred.": [
+        "已移除對話的星號。"
       ]
     },
     "Success notification": {
@@ -13723,6 +13849,30 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Edit billing address": [
+        "編輯帳單地址"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "獲得 ${ CALENDAR_APP_NAME }的完整功能"
+      ],
+      "Increase security with ${ VPN_APP_NAME }": [
+        "使用 ${ VPN_APP_NAME } 來提升安全性"
+      ],
+      "No unsubscribed newsletters": [
+        "沒有任何退訂的電子報"
+      ],
+      "Share your calendar with your team": [
+        "與團隊共享行事曆"
+      ],
+      "Unsubscribe from ${ subscription.Name }?": [
+        "從 ${ subscription.Name } 取消訂閱？"
+      ],
+      "Unsubscribe not available for this sender": [
+        "取消訂閱不適用於此寄件者"
+      ],
+      "Your subscriptions in one place": [
+        "集中管理您的訂閱"
       ]
     },
     "Today icon tooltip in mini calendar": {

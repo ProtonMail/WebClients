@@ -1296,7 +1296,7 @@
         "Configurar el reenvío de correo electrónico"
       ],
       "Settings": [
-        "Configuración"
+        "Ajustes"
       ],
       "Share": [
         "Compartir"
@@ -1663,7 +1663,7 @@
     },
     "Add participant to calendar event": {
       "Failed to add participant": [
-        "Error al agregar participante"
+        "Error al añadir participante"
       ],
       "Invitation sent and participant added": [
         "Invitación enviada y participante agregado"
@@ -2284,7 +2284,7 @@
         "Descubra y configure las funcionalidades"
       ],
       "Got it": [
-        "Entiendo"
+        "Entendido"
       ],
       "Maybe later": [
         "Quizás más tarde"
@@ -2595,7 +2595,7 @@
         "Protección de cuenta avanzada"
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, y ${ CALENDAR_SHORT_APP_NAME }"
+        "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Cancelar y pasar a un plan inferior"
@@ -4123,7 +4123,7 @@
         "No encontramos ningún rastreador o URL de rastreo conocidos en este correo."
       ],
       "When do you want your message to be sent?": [
-        "¿Cuándo quiere que se envíe el mensaje?"
+        "¿Cuándo desea que se envíe el mensaje?"
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Con los grupos de contactos, puede enviar correos electrónicos a todos los miembros del grupo con un clic."
@@ -4985,6 +4985,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La búsqueda coincidió con muchos resultados. Limite la búsqueda e inténtelo de nuevo."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "La edición de la dirección de facturación no está disponible en este momento. Inténtelo de nuevo más tarde."
+      ],
+      "Failed to open to contact": [
+        "Error al abrir el contacto"
+      ],
+      "Postal code is required": [
+        "Se requiere el código postal"
+      ],
+      "ZIP code is required": [
+        "Se requiere el código postal."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5150,7 +5162,7 @@
         "No se encontraron resultados."
       ],
       "No results found for \"${ query }\"": [
-        "No se encontraron resultados para \"${ query }\""
+        "No se encontraron resultados para «${ query }»"
       ],
       "Oops, something went wrong": [
         "Hubo un problema"
@@ -5297,7 +5309,7 @@
         "Los planes familiares actualmente no admiten cuentas externas. Cree una dirección de ${ BRAND_NAME } antes de unirse. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "Si acepta la invitación, lo cambiaremos del plan actual y acreditaremos la cuenta con cualquier saldo restante."
+        "Si acepta la invitación, le cambiaremos del plan actual y acreditaremos la cuenta con cualquier saldo restante."
       ],
       "Invited by: ${ inviteEmail }": [
         "Invitado por: ${ inviteEmail }"
@@ -5339,10 +5351,10 @@
         "Tiene facturas sin pagar. Por favor, páguelas antes de unirse a un plan familiar."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Está invitado a vincular la cuenta de ${ BRAND_NAME } a este plan familiar y disfrutar juntos de todas las funciones premium de ${ brandOrAppName }."
+        "Se le invitó a vincular la cuenta de ${ BRAND_NAME } a este plan familiar y disfrutar juntos de todas las funciones premium de ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
-        "La cuenta tiene más direcciones de correo electrónico de las que tiene disponibles en este plan. ${ addressSettingsLink }"
+        "La cuenta tiene más direcciones de correo de las que tiene disponibles en este plan. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "La cuenta está usando ${ usedSpace } de almacenamiento, que supera los ${ inviteSpace } que tiene asignados. Elimine algunos datos o solicite al administrador del plan que aumente el almacenamiento."
@@ -6644,28 +6656,28 @@
         "Archivar los mensajes existentes"
       ],
       "Are you sure you want to delete all messages in this folder?": [
-        "¿Está seguro de que quiere eliminar todos los mensajes en esta carpeta?"
+        "¿En verdad desea eliminar todos los mensajes en esta carpeta?"
       ],
       "Are you sure you want to delete all messages with this label?": [
-        "¿Está seguro de que quiere eliminar todos los mensajes con esta etiqueta?"
+        "¿En verdad desea eliminar todos los mensajes con esta etiqueta?"
       ],
       "Are you sure you want to delete this folder?": [
-        "¿En verdad eliminar esta carpeta?"
+        "¿En verdad desea eliminar esta carpeta?"
       ],
       "Are you sure you want to delete this label?": [
-        "¿Está seguro de que quiere eliminar esta etiqueta?"
+        "¿En verdad desea eliminar esta etiqueta?"
       ],
       "Are you sure you want to discard your changes?": [
         "¿Está seguro que quiere descartar los cambios?"
       ],
       "Are you sure you want to discard your import?": [
-        "¿Está seguro de que quiere descartar su importación?"
+        "¿En verdad desea descartar su importación?"
       ],
       "Are you sure you want to move all messages in this location to archive?": [
-        "¿Está seguro de que quiere mover todos los mensajes de esta ubicación al Archivo?"
+        "¿En verdad desea mover todos los mensajes de esta ubicación al Archivo?"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
-        "¿Está seguro de que quiere mover todos los mensajes de esta ubicación a la papelera?"
+        "¿En verdad desea mover todos los mensajes de esta ubicación a la papelera?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "¿En verdad desea eliminar permanentemente ${ count } conversación?",
@@ -6683,7 +6695,7 @@
         "¿En verdad desea eliminar permanentemente esta conversación?"
       ],
       "Are you sure you want to permanently delete this draft?": [
-        "¿Está seguro de que quiere eliminar permanentemente este borrador?"
+        "¿En verdad desea eliminar permanentemente este borrador?"
       ],
       "Are you sure you want to permanently delete this message?": [
         "¿En verdad desea eliminar permanentemente este mensaje?"
@@ -6911,7 +6923,7 @@
         "¿Desea volver a firmar los datos del contacto y en el proceso confiar en las claves con las siguientes huellas digitales?"
       ],
       "Do you want to re-sign the contact details?": [
-        "¿Quiere volver a firmar los datos del contacto?"
+        "¿Desea volver a firmar los datos del contacto?"
       ],
       "Don't forget to share the password with the recipient": [
         "No olvide compartir la contraseña con el destinatario"
@@ -7928,7 +7940,7 @@
         "El recuento de descargas incluye las descargas reales y las instancias en las que se obtiene una vista previa de los archivos."
       ],
       "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
-        "La dirección de correo ${ boldNoReplyEmail } no parece aceptar respuestas. ¿Está seguro de que quiere enviar su mensaje?"
+        "La dirección de correo ${ boldNoReplyEmail } no parece aceptar respuestas. ¿En verdad desea enviar su mensaje?"
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Los datos cifrados son un poco más grandes debido a la sobrecarga del cifrado y las firmas que garantizan la seguridad de los datos."
@@ -8294,7 +8306,7 @@
         "Advertencia"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
-        "Lo sentimos. Esto podría haber sido un error de nuestra parte. ¿Podría confirmar que quiere marcar este correo electrónico como uno legítimo?"
+        "Lo sentimos. Esto podría haber sido un error de nuestra parte. ¿Podría confirmar que desea marcar este correo electrónico como uno legítimo?"
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Hemos bloqueado los siguientes anunciantes y organizaciones de saber cuándo abre este correo, cuál dispositivo está usando y dónde está ubicado."
@@ -8342,7 +8354,7 @@
         "Semana"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
-        "¿Cuándo quiere que el mensaje se elimine automáticamente del buzón del destinatario y de la carpeta de enviados?"
+        "¿Cuándo desea que el mensaje se elimine automáticamente del buzón del destinatario y de la carpeta de enviados?"
       ],
       "When do you want your message to self-destruct?": [
         "¿Cuándo desea que el mensaje se autodestruya?"
@@ -8366,7 +8378,7 @@
         "Cuando se registra en un boletín, use un alias en lugar de su dirección de correo. Su identidad se mantiene oculta y podrá desactivar el alias en cualquier momento."
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
-        "Cuando viaje o use WiFi público, conéctese a ${ VPN_APP_NAME } para que nadie rastree su actividad en línea o robe sus datos. Es gratuito."
+        "Cuando viaje o use Wi-Fi público, conéctese a ${ VPN_APP_NAME } para que nadie rastree su actividad en línea o robe sus datos. Es gratuita."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Quiere recibir un código de verificación nuevo o usar un método de verificación alternativo?"
@@ -8533,7 +8545,7 @@
         "No se le cobrará si cancela antes del ${ trialEndsOnFormatted }."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
-        "Escribió \"${ attachmentsFoundKeyword }\", pero no se agregó ningún adjunto. ¿Quiere enviar el mensaje de todos modos?"
+        "Escribió «${ attachmentsFoundKeyword }», pero no se agregó ningún adjunto. ¿Desea enviar el mensaje de todos modos?"
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Después se le facturará cada ${ renewCycle } mes por ${ renewAmountStr }.",
@@ -8594,7 +8606,7 @@
         "Los datos fueron encontrados en ${ displayedDate }"
       ],
       "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
-        "Su proveedor de servicios de internet puede monitorear y, en ocasiones, vender us datos, o incluso restringir a qué sitios web puede acceder."
+        "Su proveedor de servicios de internet puede monitorear y, en ocasiones, vender sus datos, o incluso restringir a qué sitios web puede acceder."
       ],
       "Your IP": [
         "Su IP"
@@ -8660,6 +8672,13 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } expira en ${ daysLeft } día.",
+        "${ planName } expira en ${ daysLeft } días."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } expira hoy."
       ]
     },
     "info": {
@@ -9551,7 +9570,7 @@
         "Desconocido"
       ],
       "Unsafe or problematic": [
-        "No seguro o problemático"
+        "Inseguro o problemático"
       ],
       "Unsubscribed from ${ truncatedName }.": [
         "Se canceló la suscripción de ${ truncatedName }."
@@ -9615,6 +9634,15 @@
       ],
       "Your password (trusted contact)": [
         "Su contraseña (contacto de confianza)"
+      ],
+      "Company": [
+        "Compañía"
+      ],
+      "State": [
+        "Estado"
+      ],
+      "ZIP code": [
+        "Código postal"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10007,6 +10035,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "La suscripción ha finalizado. ${ cta } y para evitar la pérdida de datos."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Para seguir usando ${ BRAND_NAME }, asegúrese de que sus funciones premium ya no estén en uso o mejore su plan."
       ]
     },
     "Log preference": {
@@ -11847,6 +11878,9 @@
       ],
       "Your payment is still being processed": [
         "Su pago aún está siendo procesado"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ]
     },
     "Payments.Error": {
@@ -11902,6 +11936,30 @@
       ],
       "VAT number": [
         "Número de IGV"
+      ],
+      "Add ABN": [
+        "Añadir ABN"
+      ],
+      "Add Business Number": [
+        "Añadir número de negocio"
+      ],
+      "Add EIN": [
+        "Añadir EIN"
+      ],
+      "Add VAT number": [
+        "Añadir número de IVA"
+      ],
+      "Edit ABN": [
+        "Editar ABN"
+      ],
+      "Edit Business Number": [
+        "Editar número de negocio"
+      ],
+      "Edit EIN": [
+        "Editar EIN"
+      ],
+      "Edit VAT number": [
+        "Editar número de IVA"
       ]
     },
     "PGP key encryption warning": {
@@ -12084,6 +12142,27 @@
       ],
       "ZIP code": [
         "Código ZIP"
+      ],
+      "Anderson": [
+        "García"
+      ],
+      "Anytown": [
+        "Puertoalto"
+      ],
+      "Company name": [
+        "Nombre de la empresa"
+      ],
+      "Main street 12": [
+        "Calle del Sol, 12"
+      ],
+      "Select country": [
+        "Seleccionar país"
+      ],
+      "Thomas": [
+        "Andrea"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ]
     },
     "Placeholder for contact group name": {
@@ -12098,7 +12177,7 @@
     },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
-        "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, y ${ PASS_SHORT_APP_NAME }."
+        "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }."
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, y ${ CALENDAR_SHORT_APP_NAME }"
@@ -12375,7 +12454,7 @@
     },
     "Send email with errors": {
       "Do you want to send the email anyway?": [
-        "¿Quiere enviar el correo de todos modos?"
+        "¿Desea enviar el correo de todos modos?"
       ],
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
         "Hemos detectado errores. El correo no puede ser enviado a la dirección de correo ingresada por el siguiente motivo:",
@@ -12387,7 +12466,7 @@
     },
     "Send email with warnings": {
       "Do you want to send the email anyway?": [
-        "¿Quiere enviar el correo de todos modos?"
+        "¿Desea enviar el correo de todos modos?"
       ],
       "The following address is not valid: ${ invalidAddresses }": [
         "La siguiente dirección no es válida: ${ invalidAddresses }",
@@ -12632,7 +12711,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "¿Quiere cerrar la sesión sin restablecer la contraseña?"
+        "¿Desea cerrar la sesión sin restablecer la contraseña?"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -12931,10 +13010,10 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Acceda a contenido bloqueado y navegue de forma privada. Incluye 1700 servidores en más de 60 países, la velocidad VPN más alta, 10 conexiones VPN por usuario, servicios de streaming en todo el mundo, bloqueador de malware y anuncios, y más."
+        "Acceda a contenido bloqueado y navegue de forma privada. Incluye 1700 servidores en más de 60 países, la velocidad VPN más alta, 10 conexiones VPN por usuario, servicios de streaming en todo el mundo, bloqueador de malware y anuncios y más."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Acceda a contenido bloqueado y navegue de forma privada. Incluye 1700 servidores en más de 60 países, la velocidad VPN más alta, 10 conexiones VPN, servicios de streaming en todo el mundo, bloqueador de malware y anuncios, y más."
+        "Acceda a contenido bloqueado y navegue de forma privada. Incluye 1700 servidores en más de 60 países, la velocidad VPN más alta, 10 conexiones VPN, servicios de streaming en todo el mundo, bloqueador de malware y anuncios y más."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Todos nuestros servicios premium al máximo: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de Hide-my-email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
@@ -13237,7 +13316,7 @@
         "${ planMaxSpace } de almacenamiento total"
       ],
       "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } te da acceso a todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, y ${ CALENDAR_SHORT_APP_NAME }. La privacidad está integrada para que puedas seguir adelante, sabiendo que tus datos e identidad están seguros."
+        "${ planName } le da acceso a todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }. La privacidad está integrada para que pueda seguir adelante, sabiendo que sus datos e identidad están seguros."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } le ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesita para tener control de sus datos y seguridad."
@@ -13858,6 +13937,13 @@
       ],
       "You have successfully unsubscribed": [
         "Se ha desuscrito satisfactoriamente"
+      ],
+      "Billing details updated": [
+        "Detalles de facturación actualizados"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Se recategorizó ${ elementsCount } mensaje.",
+        "Se recategorizaron ${ elementsCount } mensajes."
       ]
     },
     "Success notification": {
@@ -14160,7 +14246,7 @@
         "¿Está seguro de que quiere cerrar la vista previa?"
       ],
       "Are you sure you want to close?": [
-        "¿Está seguro de que quiere cerrar?"
+        "¿En verdad desea cerrar?"
       ],
       "Are you sure?": [
         "¿Está seguro?"
@@ -14181,7 +14267,7 @@
         "Ciclo de facturación"
       ],
       "Birthday": [
-        "Cumpleaño"
+        "Cumpleaños"
       ],
       "Blind Carbon Copy": [
         "Con copia oculta"
@@ -15039,6 +15125,9 @@
       ],
       "Your subscriptions in one place": [
         "Sus suscripciones en un solo lugar"
+      ],
+      "Edit billing address": [
+        "Editar la dirección de la factura"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15285,7 +15374,7 @@
         "¿Está seguro de que quiere eliminar permanentemente ${ count } contactos?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
-        "¿Está seguro de que quiere eliminar permanentemente estos grupos de contactos?"
+        "¿En verdad desea eliminar permanentemente estos grupos de contactos?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "¿Está seguro de que quiere eliminar permanentemente este grupo de contactos?"
@@ -15613,6 +15702,14 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Los campos de texto son opcionales. La información que proporciones en este formulario solo aparecerá en las facturas emitidas en el futuro y no afectará a las facturas existentes."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Los campos de texto son opcionales. La información que proporciona en este formulario solo cambiará la factura que ha seleccionado y no los detalles de la futura factura."
       ]
     }
   }

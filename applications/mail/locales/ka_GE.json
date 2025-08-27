@@ -1618,6 +1618,9 @@
       ],
       "Zoom out": [
         "დაპატარავება"
+      ],
+      "Claim this address": [
+        "ამ მისამართის გამოთხოვა"
       ]
     },
     "action": {
@@ -4899,6 +4902,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "თქვენმა ძებნამ მეტისმეტად ბევრი შედეგი მოიტანა. დაადეთ უფრო მეტი ლიმიტი და თავიდან სცადეთ."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "გადახდის მისამართის ჩასწორება, ამჟამად, ხელმისაწვდომი არაა. მოგვიანებით სცადეთ."
+      ],
+      "Failed to open to contact": [
+        "კონტაქტისთვის გახსნა ჩავარდა"
+      ],
+      "Postal code is required": [
+        "საფოსტო კოდი აუცილებელია"
+      ],
+      "ZIP code is required": [
+        "საფოსტო კოდი აუცილებელია"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8475,6 +8490,13 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "გაჭედვისგან თავისუფალი საფოსტო ყუთისგან რამდენიმე წკაპი გაშორებთ"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName }-ის ვადა იწურება ${ daysLeft } დღეში.",
+        "${ planName }-ის ვადა იწურება ${ daysLeft } დღეში."
+      ],
+      "${ planName } expires today.": [
+        "${ planName }-ის ვადა დღეს იწურება."
       ]
     },
     "info": {
@@ -9430,6 +9452,15 @@
       ],
       "Your password (trusted contact)": [
         "თქვენი პაროლი (სანდო კონტაქტი)"
+      ],
+      "Company": [
+        "კომპანია"
+      ],
+      "State": [
+        "მდგომარეობა"
+      ],
+      "ZIP code": [
+        "საფოსტო კოდი"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11601,6 +11632,9 @@
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
+      ],
+      "VAT number": [
+        "დღგ ნომერი"
       ]
     },
     "Payments.Error": {
@@ -11653,6 +11687,30 @@
       ],
       "VAT number": [
         "დღგ ნომერი"
+      ],
+      "Add ABN": [
+        "ABN-ის დამატება"
+      ],
+      "Add Business Number": [
+        "ბიზნესის ნომრის დამატება"
+      ],
+      "Add EIN": [
+        "EIN-ის დამატება"
+      ],
+      "Add VAT number": [
+        "დღგ ნომრის დამატება"
+      ],
+      "Edit ABN": [
+        "ABN-ის რედაქტირება"
+      ],
+      "Edit Business Number": [
+        "ბიზნესის ნომრის ჩასწორება"
+      ],
+      "Edit EIN": [
+        "EIN-ის ჩასწორება"
+      ],
+      "Edit VAT number": [
+        "დღგ ნომრის ჩასწორება"
       ]
     },
     "PGP key encryption warning": {
@@ -11835,6 +11893,27 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Anderson": [
+        "ღობეგლეჯიაშვილი"
+      ],
+      "Anytown": [
+        "თბილისი"
+      ],
+      "Company name": [
+        "კომპანიის სახელი"
+      ],
+      "Main street 12": [
+        "ევას შესახვევი 13"
+      ],
+      "Select country": [
+        "აირჩიეთ ქვეყანა"
+      ],
+      "Thomas": [
+        "მზევინარ"
+      ],
+      "VAT number": [
+        "დღგ ნომერი"
       ]
     },
     "Placeholder for contact group name": {
@@ -13584,6 +13663,9 @@
       ],
       "You have successfully unsubscribed": [
         "გამოწერა წარმატებით გაუქმდა"
+      ],
+      "Billing details updated": [
+        "გადახდის დეტალები განახლდა"
       ]
     },
     "Success notification": {
@@ -14750,6 +14832,12 @@
       ],
       "Your subscriptions in one place": [
         "თქვენი გამოწერები ერთ ადგილას"
+      ],
+      "Edit billing address": [
+        "გადახდის მისამართის ჩასწორება"
+      ],
+      "Your addresses": [
+        "თქვენი მისამართები"
       ]
     },
     "Today icon tooltip in mini calendar": {

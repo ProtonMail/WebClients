@@ -3340,6 +3340,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vaša pretraga je pronašla previše rezultata. Ograničite pretragu i pokušajte ponovno."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Uređivanje adrese za naplatu trenutno nije dostupno. Molimo pokušajte ponovno kasnije."
+      ],
+      "Postal code is required": [
+        "Poštanski kôd je obvezan"
+      ],
+      "ZIP code is required": [
+        "Poštanski broj je obavezan"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -5912,6 +5921,15 @@
       ],
       "Your password (admin)": [
         "Vaša lozinka (administrator)"
+      ],
+      "Company": [
+        "Tvrtka"
+      ],
+      "State": [
+        "Država"
+      ],
+      "ZIP code": [
+        "Poštanski broj"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -7201,6 +7219,24 @@
       ],
       "ZIP code": [
         "Poštanski broj"
+      ],
+      "Anderson": [
+        "Andrić"
+      ],
+      "Anytown": [
+        "Grad"
+      ],
+      "Company name": [
+        "Naziv tvrtke"
+      ],
+      "Main street 12": [
+        "Zagrebačka ulica 12"
+      ],
+      "Thomas": [
+        "Toma"
+      ],
+      "VAT number": [
+        "PDV broj"
       ]
     },
     "Placeholder for contact group name": {
@@ -8902,6 +8938,9 @@
       ],
       "Your plan": [
         "Vaš plan"
+      ],
+      "Edit billing address": [
+        "Uredite adresu naplate"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9348,6 +9387,11 @@
     "Zoom Meeting": {
       "Meeting ID:": [
         "ID sastanka:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstualna polja su neobavezna. Informacije koje date u ovom obrascu će se prikazivati isključivo na računima izdanima u budućnosti i neće utjecati na postojeće račune."
       ]
     }
   }
