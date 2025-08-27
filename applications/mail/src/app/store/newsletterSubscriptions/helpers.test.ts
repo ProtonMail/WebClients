@@ -135,8 +135,13 @@ describe('newsletterSubscriptions helpers', () => {
             expect(result).toEqual('Sort[LastReceivedTime]=DESC');
         });
 
-        it('should return undefined for unhandled sort option', () => {
-            const result = getSortParams('most-frequent' as any);
+        it('should return most-frequent sort parameters', () => {
+            const result = getSortParams(SortSubscriptionsValue.MostFrequent);
+            expect(result).toEqual('Sort[MostFrequent]=DESC');
+        });
+
+        it('should return undefined when no sort option is provided', () => {
+            const result = getSortParams();
             expect(result).toBeUndefined();
         });
     });
