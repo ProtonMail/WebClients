@@ -202,7 +202,7 @@ const PricingFooter = ({ step }: { step: PricingStep }) => {
                                     )
                                 }
                             >
-                                {checkout.withDiscountPerCycle}
+                                {checkout.amountDue}
                             </Price>
                         ) : (
                             <SkeletonLoader width="6.5rem" height="1.4rem" />
