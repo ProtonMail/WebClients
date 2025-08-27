@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import TopBanner from '@proton/components/containers/topBanners/TopBanner';
 
-import { getTrustedContactRoute } from '../../available';
+import { getViewTrustedContactRoute } from '../../available';
 import { getMetaOutgoingDelegatedAccess } from './helper';
 import { useOutgoingItems } from './useOutgoingItems';
 
@@ -29,7 +29,10 @@ const OutgoingEmergencyAccessTopBanner = () => {
     return (
         <TopBanner className="bg-warning">
             {c('emergency_access').t`Your emergency contact ${name} is requesting access to your account.`}{' '}
-            <SettingsLink path={getTrustedContactRoute()} className="color-inherit">
+            <SettingsLink
+                path={getViewTrustedContactRoute(firstAccessRequested.item.outgoingDelegatedAccess.DelegatedAccessID)}
+                className="color-inherit"
+            >
                 {c('emergency_access').t`View request`}
             </SettingsLink>
         </TopBanner>
