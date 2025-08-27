@@ -7,7 +7,6 @@ import { Button, Tooltip } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components';
 import {
     Alert,
-    FileNameDisplay,
     Icon,
     ModalTwo,
     ModalTwoContent,
@@ -32,6 +31,7 @@ import { type DecryptedLink, useLinksListing, usePublicLinksListing } from '../.
 import { useLinkPathPublic } from '../../store/_views/useLinkPath';
 import { formatAccessCount } from '../../utils/formatters';
 import { Cells } from '../FileBrowser';
+import { FileName } from '../FileName';
 import SignatureAlert from '../SignatureAlert';
 import ModalContentLoader from './ModalContentLoader';
 
@@ -201,11 +201,11 @@ const DetailsModalContent = ({
                 />
             )}
             <DetailsRow label={c('Title').t`Name`}>
-                <FileNameDisplay text={name} />
+                <FileName text={name} />
             </DetailsRow>
             {isSharedWithMeLink && (
                 <DetailsRow label={c('Title').t`Location`}>
-                    <FileNameDisplay
+                    <FileName
                         text={mimeType === 'Album' ? `/${c('Info').t`Photos`}` : `/${c('Info').t`Shared with me`}`}
                     />
                 </DetailsRow>

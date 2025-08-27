@@ -24,6 +24,11 @@ interface Props extends HTMLProps<HTMLSpanElement> {
      * leave this value to ltr, otherwise you can update it
      */
     direction?: string;
+    /**
+     * By default text without ellipsis is also split in two parts.
+     * Set this to true to get a single DOM element when no ellipsis is needed.
+     */
+    splitOnlyTooLong?: boolean;
 }
 
 const MiddleEllipsis = ({
@@ -33,8 +38,12 @@ const MiddleEllipsis = ({
     displayTooltip = false,
     charsToDisplayEnd = 6,
     direction = 'ltr',
+    splitOnlyTooLong = false,
     ...rest
 }: Props) => {
+    const ref = useRef<HTMLSpanElement>(null);
+    const textIsTooLong = ref.current ? ref.current.offsetWidth < ref.current.scrollWidth : false;
+
     const [start, end] = useMemo(() => {
         // Split text per characters and not bytes. For example, 👋🌍😊🐶 with
         // charsToDisplayEnd=3 would end up being 👋🌍� and �🐶 with simple
@@ -42,16 +51,17 @@ const MiddleEllipsis = ({
         // characters), the results is as expected 👋 and 🌍😊🐶.
         // Note this doesn't work with all unicodes. For example, flags have
         // six bytes and even that is not handled properly by string iterator.
+        if (charsToDisplayEnd === 0 || (splitOnlyTooLong && textIsTooLong === false)) {
+            return [text, null];
+        }
         return [[...text].slice(0, -charsToDisplayEnd).join(''), [...text].slice(-charsToDisplayEnd).join('')];
-    }, [text]);
+    }, [text, textIsTooLong]);
 
-    const ref = useRef<HTMLSpanElement>(null);
     const [tooltipTitle, setTooltipTitle] = useState<string | null>(null);
     useEffect(() => {
         if (!displayTooltip || !ref.current) {
             return;
         }
-        const textIsTooLong = ref.current.offsetWidth < ref.current.scrollWidth;
         if (textIsTooLong) {
             setTooltipTitle(text);
         } else {
@@ -68,15 +78,15 @@ const MiddleEllipsis = ({
                 dir={direction}
                 {...rest}
             >
-                {start && (
-                    <span ref={ref} className="text-ellipsis text-pre" aria-hidden="true">
-                        {start}
+                <span ref={ref} className="text-ellipsis text-pre" aria-hidden="true">
+                    {start}
+                </span>
+
+                {end && (
+                    <span className="shrink-0 text-pre" aria-hidden="true">
+                        {end}
                     </span>
                 )}
-
-                <span className="shrink-0 text-pre" aria-hidden="true">
-                    {end}
-                </span>
             </span>
         </Tooltip>
     );
