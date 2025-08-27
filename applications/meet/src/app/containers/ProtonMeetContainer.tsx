@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { RoomContext } from '@livekit/components-react';
 import type { ExternalE2EEKeyProvider, Room } from '@proton-meet/livekit-client';
 import type { GroupKeyInfo } from '@proton-meet/proton-meet-core';
-import init, { App } from '@proton-meet/proton-meet-core';
+import init, { App, ConnectionStateInfo } from '@proton-meet/proton-meet-core';
 import { c } from 'ttag';
 
 import { useAuthentication, useNotifications } from '@proton/components';
@@ -15,6 +15,7 @@ import { getPersistedSession } from '@proton/shared/lib/authentication/persisted
 import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
 import useFlag from '@proton/unleash/useFlag';
 
+import { ConnectionLostModal } from '../components/ConnectionLostModal/ConnectionLostModal';
 import { PasswordPrompt } from '../components/PasswordPrompt/PasswordPrompt';
 import { DevicePermissionsContext } from '../contexts/DevicePermissionsContext';
 import { MLSContext } from '../contexts/MLSContext';
@@ -86,6 +87,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         meetingPassword: urlPassword,
         meetingName: '',
     });
+
+    const [connectionLost, setConnectionLost] = useState(false);
 
     const { getParticipants, participantNameMap, participantsMap, resetParticipantNameMap } = useParticipantNameMap();
 
@@ -191,23 +194,38 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
     }, []);
 
     useEffect(() => {
-        const intervalId = setInterval(async () => {
-            if (wasmAppRef.current && wasmAppRef.current.getWsState && startHealthCheck.current) {
+        let timeout: NodeJS.Timeout | null = null;
+
+        const checkConnection = async () => {
+            if (wasmAppRef.current?.getWsState && startHealthCheck.current) {
                 try {
                     const connectionStatus = await wasmAppRef.current.getWsState();
-                    if (connectionStatus !== 2) {
-                        console.error('ws disconnection');
-                        if (confirm('Connection lost, please join meeting again')) {
-                            window.location.reload();
+
+                    if (connectionStatus !== ConnectionStateInfo.Reconnecting) {
+                        const isMlsUpToDate = await wasmAppRef.current.isMlsUpToDate();
+
+                        if (!isMlsUpToDate) {
+                            setConnectionLost(true);
                         }
+                    } else {
+                        setConnectionLost(false);
+                        console.log('Websocket is reconnecting');
                     }
                 } catch (error) {
                     console.error('Failed to get connection status:', error);
                 }
             }
-        }, 3000);
 
-        return () => clearInterval(intervalId);
+            timeout = setTimeout(checkConnection, 3000);
+        };
+
+        void checkConnection();
+
+        return () => {
+            if (timeout) {
+                clearTimeout(timeout);
+            }
+        };
     }, []);
 
     useEffect(() => {
@@ -573,6 +591,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                             participantNameMap={participantNameMap}
                         />
                     )}
+                    {connectionLost && <ConnectionLostModal onClose={() => setConnectionLost(false)} />}
                 </div>
             </MLSContext.Provider>
         </DevicePermissionsContext.Provider>
