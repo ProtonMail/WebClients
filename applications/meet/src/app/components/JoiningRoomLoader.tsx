@@ -13,7 +13,7 @@ interface JoiningRoomLoaderProps {
 export const JoiningRoomLoader = ({ participantCount, participantsLoaded }: JoiningRoomLoaderProps) => {
     const participantCountRef = useRef(0);
 
-    const joingingRoomTitles: { heading: (participantCount?: number) => string; description: string }[] = [
+    const joiningRoomTitles: { heading: (participantCount?: number) => string; description: string }[] = [
         {
             heading: () => c('meet_2025 Title').t`Securing meeting...`,
             description: c('meet_2025 Description').t`Setting up group end-to-end encryption with MLS.`,
@@ -46,10 +46,10 @@ export const JoiningRoomLoader = ({ participantCount, participantsLoaded }: Join
             className="flex flex-column flex-nowrap items-center justify-center md:justify-start  md:h-custom md:w-custom pt-6"
             style={{ '--md-w-custom': '22.625rem', '--md-h-custom': '24rem' }}
         >
-            <div className="text-4xl mt-6 mb-4 text-center">
-                {joingingRoomTitles[titleIndex].heading(participantCountRef.current)}
-            </div>
-            <div className="color-weak mb-8 text-center">{joingingRoomTitles[titleIndex].description}</div>
+            <h2 className="mt-6 mb-4 text-center text-semibold">
+                {joiningRoomTitles[titleIndex].heading(participantCountRef.current)}
+            </h2>
+            <div className="color-weak mb-8 text-center">{joiningRoomTitles[titleIndex].description}</div>
             <CircleLoader
                 className="color-primary w-custom h-custom"
                 style={{ '--w-custom': '5.3rem', '--h-custom': '5.3rem', '--stroke-width': 1.3 }}

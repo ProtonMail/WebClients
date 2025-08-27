@@ -47,7 +47,7 @@ export const PreJoinDetails = ({
             className="flex flex-nowrap flex-column mt-4 lg:mt-0 gap-2 lg:gap-4 w-full md:w-custom"
             style={{ '--md-w-custom': '22.625rem' }}
         >
-            <h1 className="h2 text-center hidden md:block">{title}</h1>
+            <h2 className="text-semibold text-center hidden md:block">{title}</h2>
             <div className="text-center color-weak hidden md:block">{subtitle}</div>
             <InputFieldStackedGroup classname="md:mt-0 lg:mt-4 lg:mb-4 w-full">
                 {!instantMeeting && (

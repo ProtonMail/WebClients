@@ -31,8 +31,8 @@ export const ComingSoon = () => {
                 >
                     <img src={logo} alt="" />
                 </div>
-                <h2 className="h2 font-semibold">{c('meet_2025 Title').t`Talk confidentially`}</h2>
-                <div className="coming-soon-subtitle text-lg font-semibold">{c('meet_2025 Info').t`Coming soon`}</div>
+                <h2 className="text-semibold">{c('meet_2025 Title').t`Talk confidentially`}</h2>
+                <div className="coming-soon-subtitle text-lg text-semibold">{c('meet_2025 Info').t`Coming soon`}</div>
             </div>
         </>
     );
