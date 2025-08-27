@@ -16,7 +16,7 @@
         "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin -u --verbose",
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context:desktop": "proton-i18n validate",
-        "lint": "eslint src native --ext .js,.ts,.tsx",
+        "lint": "eslint --quiet",
         "make": "electron-forge make --skip-package",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "cross-env-shell NODE_ENV=development API_ENV=proton.black 'electron-forge start'",

@@ -10,7 +10,7 @@
         "generate:rule-types": "./lib/extension/rules/generate.sh",
         "i18n:validate": "proton-i18n validate lint-functions",
         "install:additional-tools": "npm i @redux-devtools/cli@latest -g",
-        "lint": "eslint . --ext .js,.ts,.tsx --quiet",
+        "lint": "eslint --quiet",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "proton-pack dev-server --appMode=standalone",
         "sync:fathom": "scripts/sync-fathom.sh",
