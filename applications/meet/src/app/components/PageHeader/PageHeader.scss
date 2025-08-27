@@ -12,9 +12,19 @@
 	.user-dropdown-button {
 		font-size: 0.875rem !important;
 		border-width: 0 !important;
+		inline-size: fit-content;
+		padding: 0;
+
+		.user-dropdown-text {
+			text-align: end !important;
+		}
 
 		& > svg:first-child,
 		.user-dropdown-text {
+			display: none !important;
+		}
+
+		&::after {
 			display: none !important;
 		}
 
@@ -25,6 +35,13 @@
 			.user-dropdown-text {
 				display: block !important;
 			}
+
+			&::after {
+				display: initial !important;
+			}
+
+			inline-size: initial;
+			padding: initial;
 		}
 
 		.user-initials-active,

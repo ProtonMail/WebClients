@@ -64,13 +64,13 @@ export const ParticipantSidebar = ({
                                 className="w-custom h-custom"
                                 style={{
                                     '--w-custom': '100%',
-                                    '--h-custom': '33.33%',
+                                    '--h-custom': '16.66%',
                                     boxSizing: 'border-box',
-                                    padding: '0.3125rem',
+                                    padding: '0.125rem',
                                     breakInside: 'avoid',
                                 }}
                             >
-                                <ParticipantTile participant={participant} smallView={true} />
+                                <ParticipantTile participant={participant} viewSize="small" />
                             </div>
                         );
                     })}

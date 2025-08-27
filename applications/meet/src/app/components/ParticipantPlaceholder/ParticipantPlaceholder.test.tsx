@@ -53,14 +53,14 @@ describe('ParticipantPlaceholder', () => {
                 participantName={participantName}
                 backgroundColor={backgroundColor}
                 profileColor={profileColor}
-                smallView={true}
+                viewSize="small"
             />
         );
 
         const initialsContainer = screen.getByText('JD').closest('div');
         expect(initialsContainer).toHaveClass('text-lg');
         expect(initialsContainer).toHaveClass('radius-small');
-        expect(initialsContainer).toHaveStyle({ '--w-custom': '3rem', '--h-custom': '3rem' });
+        expect(initialsContainer).toHaveStyle({ '--w-custom': '2rem', '--h-custom': '2rem' });
     });
 
     it('renders with correct placeholder container classes', () => {

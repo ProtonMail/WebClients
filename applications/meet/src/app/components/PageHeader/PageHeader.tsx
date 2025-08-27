@@ -39,30 +39,32 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeader
             },
         });
 
+    const buttons = (
+        <div className="flex flex-nowrap gap-2 items-center w-custom" style={{ '--w-custom': 'fit-content' }}>
+            {guestMode ? <UnAuthenticatedAppsDropdown app={APPS.PROTONMEET} /> : <AppsDropdown app={APPS.PROTONMEET} />}
+
+            <DropdownButton
+                as="button"
+                className="apps-dropdown-button shrink-0"
+                onClick={() => setBugReportModal(true)}
+                hasCaret={false}
+            >
+                <IcBug size={6} className="apps-dropdown-button-icon shrink-0 no-print" />
+            </DropdownButton>
+        </div>
+    );
+
     return (
         <div className="meet-page-header w-full px-4 py-2 md:py-4 flex items-center justify-space-between shrink-0">
             <div className="flex gap-4 items-center">
                 <img className="logo cursor-pointer" src={logo} alt="" onClick={() => history.push('/dashboard')} />
 
-                <div className="flex gap-2 items-center">
-                    {guestMode ? (
-                        <UnAuthenticatedAppsDropdown app={APPS.PROTONMEET} />
-                    ) : (
-                        <AppsDropdown app={APPS.PROTONMEET} />
-                    )}
-
-                    <DropdownButton
-                        as="button"
-                        className="apps-dropdown-button shrink-0"
-                        onClick={() => setBugReportModal(true)}
-                        hasCaret={false}
-                    >
-                        <IcBug size={6} className="apps-dropdown-button-icon shrink-0 no-print" />
-                    </DropdownButton>
+                <div className="hidden md:inline-block w-custom" style={{ '--w-custom': 'fit-content' }}>
+                    {buttons}
                 </div>
             </div>
 
-            <div className="flex gap-4 items-center">
+            <div className="flex flex-nowrap gap-2 items-center">
                 {isScheduleInAdvanceEnabled && (
                     <Button
                         className="action-button rounded-full border-none hidden md:block"
@@ -72,6 +74,9 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeader
                         {c('meet_2025 Action').t`Schedule meeting`}
                     </Button>
                 )}
+                <div className="md:hidden w-custom" style={{ '--w-custom': 'fit-content' }}>
+                    {buttons}
+                </div>
                 {guestMode ? (
                     <Button
                         className="action-button rounded-full border-none"
