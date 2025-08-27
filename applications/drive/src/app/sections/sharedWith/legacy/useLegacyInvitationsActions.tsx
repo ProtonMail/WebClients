@@ -15,42 +15,48 @@ export const useLegacyInvitationsActions = () => {
 
     const handleLegacyAcceptInvitation = async (uid: string, invitationUid: string) => {
         const { invitationId } = splitInvitationUid(invitationUid);
-        await legacyAcceptInvitation(new AbortController().signal, invitationId, true, (result) => {
-            const {
-                getSharedWithMeItem: getSharedWithMeItemFromStore,
-                setSharedWithMeItem: setSharedWithMeItemToStore,
-            } = useSharedWithMeListingStore.getState();
-            const sharedWithMeItem = getSharedWithMeItemFromStore(uid);
-            if (sharedWithMeItem?.itemType === ItemType.INVITATION) {
-                const { nodeId, volumeId } = splitNodeUid(uid);
-                loadSharedInfo(result.shareId, (sharedInfo) => {
-                    if (!sharedInfo) {
-                        console.warn(
-                            'The shared with me node entity is missing sharing info. It could be race condition and means it is probably not shared anymore.',
-                            { uid, shareId: result.shareId }
-                        );
-                        return;
-                    }
-                    setSharedWithMeItemToStore({
-                        nodeUid: uid,
-                        name: sharedWithMeItem.name,
-                        type: sharedWithMeItem.type,
-                        mediaType: sharedWithMeItem.mediaType,
-                        itemType: ItemType.DIRECT_SHARE,
-                        thumbnailId: sharedWithMeItem.thumbnailId,
-                        size: sharedWithMeItem.size,
-                        directShare: {
-                            sharedOn: legacyTimestampToDate(sharedInfo.sharedOn),
-                            sharedBy: sharedInfo.sharedBy,
-                        },
-                        legacy: {
-                            linkId: nodeId,
-                            shareId: result.shareId,
-                            volumeId: volumeId,
-                        },
+        return new Promise<void>((resolve, reject) => {
+            legacyAcceptInvitation(new AbortController().signal, invitationId, true, (result) => {
+                const {
+                    getSharedWithMeItem: getSharedWithMeItemFromStore,
+                    setSharedWithMeItem: setSharedWithMeItemToStore,
+                } = useSharedWithMeListingStore.getState();
+                const sharedWithMeItem = getSharedWithMeItemFromStore(uid);
+                if (sharedWithMeItem?.itemType === ItemType.INVITATION) {
+                    const { nodeId, volumeId } = splitNodeUid(uid);
+                    loadSharedInfo(result.shareId, (sharedInfo) => {
+                        if (!sharedInfo) {
+                            console.warn(
+                                'The shared with me node entity is missing sharing info. It could be race condition and means it is probably not shared anymore.',
+                                { uid, shareId: result.shareId }
+                            );
+                            resolve();
+                            return;
+                        }
+                        setSharedWithMeItemToStore({
+                            nodeUid: uid,
+                            name: sharedWithMeItem.name,
+                            type: sharedWithMeItem.type,
+                            mediaType: sharedWithMeItem.mediaType,
+                            itemType: ItemType.DIRECT_SHARE,
+                            thumbnailId: sharedWithMeItem.thumbnailId,
+                            size: sharedWithMeItem.size,
+                            directShare: {
+                                sharedOn: legacyTimestampToDate(sharedInfo.sharedOn),
+                                sharedBy: sharedInfo.sharedBy,
+                            },
+                            legacy: {
+                                linkId: nodeId,
+                                shareId: result.shareId,
+                                volumeId: volumeId,
+                            },
+                        });
+                        resolve();
                     });
-                });
-            }
+                } else {
+                    resolve();
+                }
+            }).catch(reject);
         });
     };
 
@@ -69,7 +75,7 @@ export const useLegacyInvitationsActions = () => {
             showConfirmModal,
             invitationId,
             onSuccess: () => {
-                getActionEventManager().emit({
+                void getActionEventManager().emit({
                     type: ActionEventName.REJECT_INVITATIONS,
                     uids: [uid],
                 });

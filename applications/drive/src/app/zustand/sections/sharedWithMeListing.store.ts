@@ -69,6 +69,8 @@ type SharedWithMeListingStore = {
     isLoadingBookmarks: boolean;
     isLoadingLegacyNodes: boolean;
     isLoadingLegacyInvitations: boolean;
+    isPopulatingLegacyNodes: boolean;
+    isPopulatingLegacyInvitations: boolean;
 
     eventSubscriptions: (() => void)[] | null;
     activeContexts: Set<string>;
@@ -96,6 +98,8 @@ type SharedWithMeListingStore = {
     setLoadingBookmarks: (loading: boolean) => void;
     setLoadingLegacyNodes: (loading: boolean) => void;
     setLoadingLegacyInvitations: (loading: boolean) => void;
+    setPopulatingLegacyNodes: (loading: boolean) => void;
+    setPopulatingLegacyInvitations: (loading: boolean) => void;
 
     isLoading: () => boolean;
 
@@ -118,6 +122,8 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
             isLoadingBookmarks: false,
             isLoadingLegacyNodes: false,
             isLoadingLegacyInvitations: false,
+            isPopulatingLegacyNodes: false,
+            isPopulatingLegacyInvitations: false,
 
             eventSubscriptions: null,
             activeContexts: new Set<string>(),
@@ -268,6 +274,8 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
             setLoadingBookmarks: (loading: boolean) => set({ isLoadingBookmarks: loading }),
             setLoadingLegacyNodes: (loading: boolean) => set({ isLoadingLegacyNodes: loading }),
             setLoadingLegacyInvitations: (loading: boolean) => set({ isLoadingLegacyInvitations: loading }),
+            setPopulatingLegacyNodes: (loading: boolean) => set({ isPopulatingLegacyNodes: loading }),
+            setPopulatingLegacyInvitations: (loading: boolean) => set({ isPopulatingLegacyInvitations: loading }),
 
             isLoading: () => {
                 const state = get();
@@ -276,7 +284,9 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                     state.isLoadingInvitations ||
                     state.isLoadingBookmarks ||
                     state.isLoadingLegacyNodes ||
-                    state.isLoadingLegacyInvitations
+                    state.isLoadingLegacyInvitations ||
+                    state.isPopulatingLegacyNodes ||
+                    state.isPopulatingLegacyInvitations
                 );
             },
 
