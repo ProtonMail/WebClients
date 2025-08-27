@@ -7,7 +7,7 @@ import clsx from '@proton/utils/clsx';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { isAllowedAutoDeleteLabelID } from '../../../helpers/autoDelete';
-import { isConversation, isMessage } from '../../../helpers/elements';
+import { isElementConversation, isElementMessage } from '../../../helpers/elements';
 import type { Element } from '../../../models/element';
 import useItemExpiration from './useItemExpiration';
 
@@ -31,8 +31,8 @@ const ItemExpiration = ({ className, expirationTime, element, labelID }: Props) 
     const iconName: Extract<IconName, 'hourglass' | 'trash-clock'> = (() => {
         if (
             isAllowedAutoDeleteLabelID(labelID) &&
-            ((isMessage(element) && !isFrozenExpiration(element)) ||
-                (isConversation(element) && mailSettings.AutoDeleteSpamAndTrashDays !== null))
+            ((isElementMessage(element) && !isFrozenExpiration(element)) ||
+                (isElementConversation(element) && mailSettings.AutoDeleteSpamAndTrashDays !== null))
         ) {
             return 'trash-clock';
         }

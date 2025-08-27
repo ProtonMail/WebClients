@@ -14,7 +14,7 @@ import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/in
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import { isMessage, isStarred as testIsStarred, isUnread as testIsUnread } from '../../helpers/elements';
+import { isElementMessage, isStarred as testIsStarred, isUnread as testIsUnread } from '../../helpers/elements';
 import { usePermanentDelete } from '../../hooks/actions/delete/usePermanentDelete';
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
@@ -66,7 +66,7 @@ const ItemHoverButtons = ({
         if (element.ID === elementID && !isUnread) {
             onBack();
         }
-        if (isMessage(element) && element.ConversationID === elementID && !isUnread) {
+        if (isElementMessage(element) && element.ConversationID === elementID && !isUnread) {
             onBack();
         }
 
@@ -155,7 +155,7 @@ const ItemHoverButtons = ({
     const unreadAlt = isUnread ? c('Title').t`Mark as read` : c('Title').t`Mark as unread`;
 
     const starIcon = isStarred ? 'star-filled' : 'star';
-    const starAlt = isMessage(element)
+    const starAlt = isElementMessage(element)
         ? isStarred
             ? c('Alt').t`Unstar message`
             : c('Alt').t`Star message`
@@ -163,7 +163,7 @@ const ItemHoverButtons = ({
           ? c('Alt').t`Unstar conversation`
           : c('Alt').t`Star conversation`;
 
-    const buttonTxt = isMessage(element) ? c('Alt').t`Star message` : c('Alt').t`Star conversation`;
+    const buttonTxt = isElementMessage(element) ? c('Alt').t`Star message` : c('Alt').t`Star conversation`;
 
     return (
         <>

@@ -1,13 +1,13 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isDraft, isReceived, isScheduled, isSent } from '@proton/shared/lib/mail/messages';
 
-import { hasLabel, isMessage } from 'proton-mail/helpers/elements';
+import { hasLabel, isElementMessage } from 'proton-mail/helpers/elements';
 
 import { ERROR_ELEMENT_NOT_MESSAGE, type MoveEngineRule, MoveEngineRuleResult } from './moveEngineInterface';
 
 // Sent, drafts and scheduled messages cannot move to INBOX
 export const messageInboxRules: MoveEngineRule = ({ element }) => {
-    if (!isMessage(element)) {
+    if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
@@ -24,7 +24,7 @@ export const messageInboxRules: MoveEngineRule = ({ element }) => {
 
 // Sent, scheduled, and received messages cannot move to ALL_DRAFTS
 export const messageAllDraftRules: MoveEngineRule = ({ element }) => {
-    if (!isMessage(element)) {
+    if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
@@ -41,7 +41,7 @@ export const messageAllDraftRules: MoveEngineRule = ({ element }) => {
 
 // Drafts and received messages cannot move to ALL_SENT
 export const messageAllSentRules: MoveEngineRule = ({ element }) => {
-    if (!isMessage(element)) {
+    if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
@@ -58,7 +58,7 @@ export const messageAllSentRules: MoveEngineRule = ({ element }) => {
 
 // Any message can move to TRASH
 export const messageTrashRules: MoveEngineRule = ({ element }) => {
-    if (!isMessage(element)) {
+    if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
@@ -71,7 +71,7 @@ export const messageTrashRules: MoveEngineRule = ({ element }) => {
 
 // scheduled messages cannot move to SPAM
 export const messageSpamRules: MoveEngineRule = ({ element }) => {
-    if (!isMessage(element)) {
+    if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
@@ -98,7 +98,7 @@ export const messageAllMailRules: MoveEngineRule = () => {
 
 // Any message can move to STARRED
 export const messageStarredRules: MoveEngineRule = ({ element }) => {
-    if (!isMessage(element)) {
+    if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
@@ -111,7 +111,7 @@ export const messageStarredRules: MoveEngineRule = ({ element }) => {
 
 // Except SCHEDULED messages, any message can move to ARCHIVE
 export const messageArchiveRules: MoveEngineRule = ({ element }) => {
-    if (!isMessage(element)) {
+    if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
@@ -128,7 +128,7 @@ export const messageArchiveRules: MoveEngineRule = ({ element }) => {
 
 // Draft and received messages cannot move to SENT
 export const messageSentRules: MoveEngineRule = ({ element }) => {
-    if (!isMessage(element)) {
+    if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
@@ -145,7 +145,7 @@ export const messageSentRules: MoveEngineRule = ({ element }) => {
 
 // Sent, scheduled, and received messages cannot move to drafts
 export const messageDraftRules: MoveEngineRule = ({ element }) => {
-    if (!isMessage(element)) {
+    if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
@@ -178,7 +178,7 @@ export const messageOutboxRules: MoveEngineRule = ({}) => {
  * @returns DENIED
  */
 export const messageScheduleRules: MoveEngineRule = ({ element }) => {
-    if (!isMessage(element)) {
+    if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
@@ -201,7 +201,7 @@ export const messageAlmostAllMailRules: MoveEngineRule = () => {
  * @returns DENIED
  */
 export const messageSnoozedRules: MoveEngineRule = ({ element }) => {
-    if (!isMessage(element)) {
+    if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
@@ -210,7 +210,7 @@ export const messageSnoozedRules: MoveEngineRule = ({ element }) => {
 
 // Sent, drafts and scheduled messages cannot move to a category (which should be a "children of INBOX)
 export const messageCategoryRules: MoveEngineRule = ({ element, destinationLabelID }) => {
-    if (!isMessage(element)) {
+    if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
@@ -227,7 +227,7 @@ export const messageCategoryRules: MoveEngineRule = ({ element, destinationLabel
 
 // Any message can move to a custom folder
 export const messageCustomFolderRules: MoveEngineRule = ({ element, destinationLabelID }) => {
-    if (!isMessage(element)) {
+    if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
@@ -240,7 +240,7 @@ export const messageCustomFolderRules: MoveEngineRule = ({ element, destinationL
 
 // Any message can move to a custom label
 export const messageCustomLabelRules: MoveEngineRule = ({ element, destinationLabelID }) => {
-    if (!isMessage(element)) {
+    if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 

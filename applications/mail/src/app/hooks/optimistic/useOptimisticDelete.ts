@@ -12,7 +12,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
 import { replaceCounter } from '../../helpers/counter';
-import { isConversation, isUnread } from '../../helpers/elements';
+import { isElementConversation, isUnread } from '../../helpers/elements';
 import type { Element } from '../../models/element';
 import {
     optimisticDelete as optimisticDeleteConversationAction,
@@ -41,7 +41,7 @@ const useOptimisticDelete = () => {
 
     return useHandler((elements: Element[], labelID: string) => {
         const elementIDs = elements.map(({ ID }) => ID || '');
-        const conversationMode = isConversation(elements[0]);
+        const conversationMode = isElementConversation(elements[0]);
         const total = elementIDs.length;
         const totalUnread = elements.filter((element) => isUnread(element, labelID)).length;
         const rollbackMessages = [] as MessageState[];

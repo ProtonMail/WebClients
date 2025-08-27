@@ -12,9 +12,9 @@ import {
     getCounterMap,
     getDate,
     getLocationElementsCount,
-    isConversation,
+    isElementConversation,
+    isElementMessage,
     isElementOutsideFolders,
-    isMessage,
     isUnread,
     matchAddressID,
     matchBegin,
@@ -74,14 +74,14 @@ describe('elements', () => {
     describe('isConversation / isMessage', () => {
         it('should return conversation when there is no conversationID in message', () => {
             const element: Conversation = { ID: 'conversationID' };
-            expect(isConversation(element)).toBe(true);
-            expect(isMessage(element)).toBe(false);
+            expect(isElementConversation(element)).toBe(true);
+            expect(isElementMessage(element)).toBe(false);
         });
 
         it('should return message when there is a conversationID in message', () => {
             const element = { ConversationID: 'something' } as Message;
-            expect(isConversation(element)).toBe(false);
-            expect(isMessage(element)).toBe(true);
+            expect(isElementConversation(element)).toBe(false);
+            expect(isElementMessage(element)).toBe(true);
         });
     });
 

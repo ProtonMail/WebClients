@@ -1,14 +1,14 @@
 import { getContextNumMessages } from '@proton/mail/helpers/conversation';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { isConversation } from 'proton-mail/helpers/elements';
+import { isElementConversation } from 'proton-mail/helpers/elements';
 
 import { ERROR_ELEMENT_NOT_CONVERSATION, type MoveEngineRule, MoveEngineRuleResult } from './moveEngineInterface';
 
 // Any conversation can move to INBOX
 // Sent or drafts messages cannot move to INBOX, but they will be moved to SENT or DRAFTS if they are not already there
 export const conversationInboxRules: MoveEngineRule = ({ element }) => {
-    if (!isConversation(element)) {
+    if (!isElementConversation(element)) {
         throw new Error(ERROR_ELEMENT_NOT_CONVERSATION);
     }
 
@@ -18,7 +18,7 @@ export const conversationInboxRules: MoveEngineRule = ({ element }) => {
 // Any conversation can move to ALL_DRAFTS
 // Sent or received messages cannot move to ALL_DRAFTS, but they will be moved to SENT or INBOX if they are not already there
 export const conversationAllDraftRules: MoveEngineRule = ({ element }) => {
-    if (!isConversation(element)) {
+    if (!isElementConversation(element)) {
         throw new Error(ERROR_ELEMENT_NOT_CONVERSATION);
     }
 
@@ -33,7 +33,7 @@ export const conversationAllDraftRules: MoveEngineRule = ({ element }) => {
 // Any conversation can move to ALL_SENT
 // Received or drafts messages cannot move to ALL_SENT, but they will be moved to INBOX or DRAFTS if they are not already there
 export const conversationAllSentRules: MoveEngineRule = ({ element }) => {
-    if (!isConversation(element)) {
+    if (!isElementConversation(element)) {
         throw new Error(ERROR_ELEMENT_NOT_CONVERSATION);
     }
 
@@ -42,7 +42,7 @@ export const conversationAllSentRules: MoveEngineRule = ({ element }) => {
 
 // Any conversation can move to TRASH. If all messages are already in TRASH, do nothing.
 export const conversationTrashRules: MoveEngineRule = ({ element }) => {
-    if (!isConversation(element)) {
+    if (!isElementConversation(element)) {
         throw new Error(ERROR_ELEMENT_NOT_CONVERSATION);
     }
 
@@ -61,7 +61,7 @@ export const conversationTrashRules: MoveEngineRule = ({ element }) => {
 
 // Any conversation can move to SPAM. If all messages are already in SPAM, do nothing.
 export const conversationSpamRules: MoveEngineRule = ({ element }) => {
-    if (!isConversation(element)) {
+    if (!isElementConversation(element)) {
         throw new Error(ERROR_ELEMENT_NOT_CONVERSATION);
     }
 
@@ -90,7 +90,7 @@ export const conversationAllMailRules: MoveEngineRule = () => {
 
 // Any conversation can move to STARRED. If all messages are already in STARRED, do nothing.
 export const conversationStarredRules: MoveEngineRule = ({ element }) => {
-    if (!isConversation(element)) {
+    if (!isElementConversation(element)) {
         throw new Error(ERROR_ELEMENT_NOT_CONVERSATION);
     }
 
@@ -109,7 +109,7 @@ export const conversationStarredRules: MoveEngineRule = ({ element }) => {
 
 // Any conversation can move to ARCHIVE. If all messages are already in ARCHIVE, do nothing.
 export const conversationArchiveRules: MoveEngineRule = ({ element }) => {
-    if (!isConversation(element)) {
+    if (!isElementConversation(element)) {
         throw new Error(ERROR_ELEMENT_NOT_CONVERSATION);
     }
 
@@ -133,7 +133,7 @@ export const conversationArchiveRules: MoveEngineRule = ({ element }) => {
 // Any conversation can move to SENT
 // Received or drafts messages cannot move to SENT, but they will be moved to INBOX or DRAFTS if they are not already there
 export const conversationSentRules: MoveEngineRule = ({ element }) => {
-    if (!isConversation(element)) {
+    if (!isElementConversation(element)) {
         throw new Error(ERROR_ELEMENT_NOT_CONVERSATION);
     }
 
@@ -143,7 +143,7 @@ export const conversationSentRules: MoveEngineRule = ({ element }) => {
 // Any conversation can move to DRAFTS except schedule
 // Sent or received messages cannot move to DRAFTS, but they will be moved to SENT or INBOX if they are not already there
 export const conversationDraftRules: MoveEngineRule = ({ element }) => {
-    if (!isConversation(element)) {
+    if (!isElementConversation(element)) {
         throw new Error(ERROR_ELEMENT_NOT_CONVERSATION);
     }
 
@@ -171,7 +171,7 @@ export const conversationOutboxRules: MoveEngineRule = ({}) => {
  * @returns DENIED
  */
 export const conversationScheduleRules: MoveEngineRule = ({ element }) => {
-    if (!isConversation(element)) {
+    if (!isElementConversation(element)) {
         throw new Error(ERROR_ELEMENT_NOT_CONVERSATION);
     }
 
@@ -194,7 +194,7 @@ export const conversationAlmostAllMailRules: MoveEngineRule = () => {
  * @returns DENIED
  */
 export const conversationSnoozedRules: MoveEngineRule = ({ element }) => {
-    if (!isConversation(element)) {
+    if (!isElementConversation(element)) {
         throw new Error(ERROR_ELEMENT_NOT_CONVERSATION);
     }
 
@@ -203,7 +203,7 @@ export const conversationSnoozedRules: MoveEngineRule = ({ element }) => {
 
 // Any conversation can move to a category. If all messages are already in the category, do nothing.
 export const conversationCategoryRules: MoveEngineRule = ({ element, destinationLabelID }) => {
-    if (!isConversation(element)) {
+    if (!isElementConversation(element)) {
         throw new Error(ERROR_ELEMENT_NOT_CONVERSATION);
     }
 
@@ -222,7 +222,7 @@ export const conversationCategoryRules: MoveEngineRule = ({ element, destination
 
 // Any conversation can move to a custom folder. If all messages are already in the custom folder, do nothing.
 export const conversationCustomFolderRules: MoveEngineRule = ({ element, destinationLabelID }) => {
-    if (!isConversation(element)) {
+    if (!isElementConversation(element)) {
         throw new Error(ERROR_ELEMENT_NOT_CONVERSATION);
     }
 
@@ -241,7 +241,7 @@ export const conversationCustomFolderRules: MoveEngineRule = ({ element, destina
 
 // Any conversation can move to a custom label. If all messages are already in the custom label, do nothing.
 export const conversationCustomLabelRules: MoveEngineRule = ({ element, destinationLabelID }) => {
-    if (!isConversation(element)) {
+    if (!isElementConversation(element)) {
         throw new Error(ERROR_ELEMENT_NOT_CONVERSATION);
     }
 

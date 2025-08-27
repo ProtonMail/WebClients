@@ -18,7 +18,7 @@ import { runParallelChunkedActions } from 'proton-mail/helpers/chunk';
 import useIsEncryptedSearch from 'proton-mail/hooks/useIsEncryptedSearch';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
-import { isConversation } from '../../../helpers/elements';
+import { isElementConversation } from '../../../helpers/elements';
 import type { Element } from '../../../models/element';
 import { backendActionFinished, backendActionStarted } from '../../../store/elements/elementsActions';
 import { useGetElementsFromIDs } from '../../mailbox/useElements';
@@ -175,7 +175,7 @@ export const usePermanentDeleteSelection = (labelID: string) => {
             return total + (('ContextNumMessages' in element && element.ContextNumMessages) || 0);
         }, 0);
     }, [elements]);
-    const conversationMode = isConversation(elements[0]);
+    const conversationMode = isElementConversation(elements[0]);
 
     const handleSubmit = async () => {
         deleteModalProps.onClose();

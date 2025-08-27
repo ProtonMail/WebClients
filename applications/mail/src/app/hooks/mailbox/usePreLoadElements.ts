@@ -5,7 +5,7 @@ import { unwrapResult } from '@reduxjs/toolkit';
 import { FeatureCode, useFeature } from '@proton/features';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
-import { isConversation } from 'proton-mail/helpers/elements';
+import { isElementConversation } from 'proton-mail/helpers/elements';
 import type { Element } from 'proton-mail/models/element';
 import { allConversations } from 'proton-mail/store/conversations/conversationsSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
@@ -34,7 +34,7 @@ const usePreLoadElements = ({ elements, labelID, loading }: Props) => {
     const firstElements = elements.slice(0, numberOfPreloadedConversations);
     const conversations = useMailSelector(allConversations);
 
-    const isAllConversation = elements.every((element) => isConversation(element));
+    const isAllConversation = elements.every((element) => isElementConversation(element));
 
     useEffect(() => {
         const conversationsIDs = conversations.map((item) => item?.Conversation.ID);

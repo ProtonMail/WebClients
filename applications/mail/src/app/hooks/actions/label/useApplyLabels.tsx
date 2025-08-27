@@ -1,7 +1,7 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { useCallback } from 'react';
 
-import { isMessage as testIsMessage } from '../../../helpers/elements';
+import { isElementMessage } from '../../../helpers/elements';
 import type { ApplyLabelsParams } from './interface';
 import { useApplyLabelsToAll } from './useApplyLabelsToAll';
 import { useApplyLabelsToSelection } from './useApplyLabelsToSelection';
@@ -25,7 +25,7 @@ export const useApplyLabels = (setContainFocus?: Dispatch<SetStateAction<boolean
                 return;
             }
 
-            const isMessage = testIsMessage(elements[0]);
+            const isMessage = isElementMessage(elements[0]);
 
             if (selectAll) {
                 await applyLabelsToAll({

@@ -21,8 +21,8 @@ import {
     getCurrentFolderIDs,
     getLabelIDs,
     hasLabel,
+    isElementMessage,
     isElementOutsideFolders,
-    isMessage as testIsMessage,
 } from '../../helpers/elements';
 import type { LabelChanges, UnreadStatus } from '../../helpers/labels';
 import {
@@ -141,7 +141,7 @@ export const useOptimisticApplyLabels = () => {
             const rollbackChanges = [] as { element: Element; changes: LabelChanges }[];
             const updatedElements = [] as Element[];
             const elementsUnreadStatuses = [] as UnreadStatus[];
-            const isMessage = testIsMessage(elements[0]);
+            const isMessage = isElementMessage(elements[0]);
             let { value: messageCounters = [] } = selectMessageCounts(store.getState());
             let { value: conversationCounters = [] } = selectConversationCounts(store.getState());
 

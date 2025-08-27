@@ -7,7 +7,7 @@ import useInterval from '@proton/hooks/useInterval';
 import { MINUTE } from '@proton/shared/lib/constants';
 
 import { formatFullDate } from '../../../helpers/date';
-import { isConversation } from '../../../helpers/elements';
+import { isElementConversation } from '../../../helpers/elements';
 import type { Element } from '../../../models/element';
 
 const EVERY_MINUTE = MINUTE;
@@ -39,7 +39,7 @@ const useItemExpiration = (element: Element, expirationTime?: number) => {
     const formattedDate = formatFullDate(expirationDate);
     const expiresInLessThan24Hours = differenceInHours(expirationDate, now) < 24;
 
-    const isConversationWithSeveralMessages = isConversation(element) && (element?.NumMessages || 0) > 1;
+    const isConversationWithSeveralMessages = isElementConversation(element) && (element?.NumMessages || 0) > 1;
 
     useInterval(() => setNow(new Date()), EVERY_MINUTE);
 

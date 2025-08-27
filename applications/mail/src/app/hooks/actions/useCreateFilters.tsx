@@ -22,7 +22,7 @@ import diff from '@proton/utils/diff';
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
-import { getSenders, isMessage as testIsMessage } from '../../helpers/elements';
+import { getSenders, isElementMessage } from '../../helpers/elements';
 import { getFolderName } from '../../helpers/labels';
 import type { Element } from '../../models/element';
 
@@ -134,7 +134,7 @@ export const useCreateFilters = () => {
             }
             createdFilters = results.map((result) => result.Filter);
 
-            const isMessage = testIsMessage(elements[0]);
+            const isMessage = isElementMessage(elements[0]);
             const notificationText = isFolder
                 ? getNotificationTextFolder(isMessage, senders, appliedLabels[0].Name)
                 : getNotificationTextLabels(

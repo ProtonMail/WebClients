@@ -57,9 +57,10 @@ interface ContextIdentifier {
 export const getCurrentType = ({ labelID, mailSettings, location }: TypeParams) =>
     isConversationMode(labelID, mailSettings, location) ? ELEMENT_TYPES.CONVERSATION : ELEMENT_TYPES.MESSAGE;
 
-export const isMessage = (element: Element | undefined): element is Message =>
+export const isElementMessage = (element: Element | undefined): element is Message =>
     typeof (element as Message)?.ConversationID === 'string';
-export const isConversation = (element: Element | undefined): element is Conversation => !isMessage(element);
+export const isElementConversation = (element: Element | undefined): element is Conversation =>
+    !isElementMessage(element);
 
 /**
  * Get the date of an element.
@@ -71,7 +72,7 @@ export const getDate = (element: Element | undefined, labelID: string | undefine
         return new Date();
     }
 
-    const time = isMessage(element) ? element.Time : conversationGetTime(element, labelID);
+    const time = isElementMessage(element) ? element.Time : conversationGetTime(element, labelID);
 
     return new Date((time || 0) * 1000);
 };
@@ -94,7 +95,7 @@ export const isUnread = (element: Element | undefined, labelID: string | undefin
         return false;
     }
 
-    if (isMessage(element)) {
+    if (isElementMessage(element)) {
         return element.Unread !== 0;
     }
 
@@ -104,7 +105,7 @@ export const isUnread = (element: Element | undefined, labelID: string | undefin
 export const isUnreadMessage = (message: Message) => isUnread(message, undefined);
 
 export const getLabelIDs = (element: Element | undefined, contextLabelID: string | undefined) =>
-    isMessage(element)
+    isElementMessage(element)
         ? element?.LabelIDs?.reduce<{ [labelID: string]: boolean | undefined }>((acc, labelID) => {
               acc[labelID] = true;
               return acc;
@@ -155,17 +156,17 @@ export const getCounterMap = (
 };
 
 export const hasAttachments = (element: Element) =>
-    isMessage(element) ? messageHasAttachments(element) : conversationHasAttachments(element);
+    isElementMessage(element) ? messageHasAttachments(element) : conversationHasAttachments(element);
 
 export const getNumAttachments = (element: Element) =>
-    isMessage(element) ? element?.NumAttachments || 0 : conversationNumAttachments(element);
+    isElementMessage(element) ? element?.NumAttachments || 0 : conversationNumAttachments(element);
 
 /**
  * Starting from the element LabelIDs list, add and remove labels from an event manager event
  */
 export const parseLabelIDsInEvent = <T extends Element>(element: T, changes: T & LabelIDsChanges): T => {
     const omitted = omit(changes, ['LabelIDsRemoved', 'LabelIDsAdded']);
-    if (isMessage(element)) {
+    if (isElementMessage(element)) {
         if (omitted?.LabelIDs) {
             return { ...element, ...omitted };
         }
@@ -212,21 +213,21 @@ export const getCurrentFolderIDs = (element: Element | undefined, customFoldersL
 };
 
 export const getSenders = (element: Element) => {
-    if (isMessage(element)) {
+    if (isElementMessage(element)) {
         return [getSender(element)];
     }
     return conversationGetSenders(element as Conversation);
 };
 
 export const getRecipients = (element: Element) => {
-    if (isMessage(element)) {
+    if (isElementMessage(element)) {
         return messageGetRecipients(element);
     }
     return (element as Conversation).Recipients || [];
 };
 
 export const getAddressID = (element: Element) => {
-    if (isMessage(element)) {
+    if (isElementMessage(element)) {
         return element.AddressID;
     }
     // Default to empty string for conversations
@@ -334,13 +335,13 @@ export const filterElementsInState = ({
             return false;
         }
 
-        if (conversationMode ? !isConversation(element) : !isMessage(element)) {
+        if (conversationMode ? !isElementConversation(element) : !isElementMessage(element)) {
             return false;
         }
 
         if (
             labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS &&
-            isMessage(element) &&
+            isElementMessage(element) &&
             // Note: This only filters messages. We don't expect conversations but if there are Conversations in newsletter context (if any exist)
             // would not be filtered by subscription ID here.
             (newsletterSubscriptionID !== (element as Message).NewsletterSubscriptionID ||

@@ -16,7 +16,7 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
-import { isMessage, isUnread } from '../../helpers/elements';
+import { isElementMessage, isUnread } from '../../helpers/elements';
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 import type { Element } from '../../models/element';
 import type { ESMessage } from '../../models/encryptedSearch';
@@ -102,7 +102,7 @@ const Item = ({
     const { getRecipientLabel, getRecipientsOrGroups, getRecipientsOrGroupsLabels } = useRecipientLabel();
     const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
     const isSelected =
-        isConversationContentView && isMessage(element)
+        isConversationContentView && isElementMessage(element)
             ? elementID === element.ConversationID
             : elementID === element.ID;
     const showIcon = labelsWithIcons.includes(labelID) || isCustomLabel(labelID, labels);

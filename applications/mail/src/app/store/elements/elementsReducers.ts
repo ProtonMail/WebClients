@@ -16,9 +16,9 @@ import {
     filterElementsInState,
     getElementContextIdentifier,
     getSearchParameters,
+    isElementMessage,
     parseElementContextIdentifier,
     parseLabelIDsInEvent,
-    isMessage as testIsMessage,
 } from '../../helpers/elements';
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
@@ -293,7 +293,7 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
         );
 
         elementsToBypass.forEach((element) => {
-            const isMessage = testIsMessage(element);
+            const isMessage = isElementMessage(element);
             const id = (isMessage && conversationMode ? element.ConversationID : element.ID) || '';
             if (!state.bypassFilter.includes(id)) {
                 state.bypassFilter.push(id);
@@ -321,7 +321,7 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
         // If we are not in a case where we need to bypass filter,
         // we need to remove elements if they are already in the array
         const toRemoveIDs = elementsToRemove.map((element) => {
-            const isMessage = testIsMessage(element);
+            const isMessage = isElementMessage(element);
             return (isMessage && conversationMode ? element.ConversationID : element.ID) || '';
         });
 
@@ -550,7 +550,7 @@ const handleBypassFilter = (
         // If we are not in a case where we need to bypass filter,
         // we need to remove elements if they are already in the array
         const toRemoveIDs = elementsToRemove.map((element) => {
-            const isMessage = testIsMessage(element);
+            const isMessage = isElementMessage(element);
             return (isMessage && state.params.conversationMode ? element.ConversationID : element.ID) || '';
         });
 
@@ -846,7 +846,7 @@ export const markNewsletterElementsAsReadPending = (
     }
 
     Object.values(state.elements).forEach((element) => {
-        if (testIsMessage(element) && element.NewsletterSubscriptionID === payload.subscription.ID) {
+        if (isElementMessage(element) && element.NewsletterSubscriptionID === payload.subscription.ID) {
             element.Unread = 0;
         }
     });
