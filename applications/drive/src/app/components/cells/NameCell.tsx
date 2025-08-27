@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { FileIcon, FileNameDisplay, TableCell } from '@proton/components';
+import { FileIcon, TableCell } from '@proton/components';
 import { NodeType } from '@proton/drive/index';
 
+import { FileName } from '../FileName';
 import { getLinkIconText } from '../sections/FileBrowser/utils';
 
 interface NameCellProps {
@@ -56,7 +57,7 @@ export const NameCell = ({ name, mediaType, type, thumbnailUrl, isInvitation }: 
                 haveParentAccess={!!item.parentLinkId}
             /> */}
             <div className="flex mr-4" data-testid="name-cell">
-                <FileNameDisplay text={name} />
+                <FileName text={name} />
             </div>
         </TableCell>
     );
