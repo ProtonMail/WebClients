@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { FileIcon, FileNameDisplay, Loader } from '@proton/components';
+import { FileIcon, Loader } from '@proton/components';
 import humanSize, { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 import clsx from '@proton/utils/clsx';
 
@@ -14,6 +14,7 @@ import {
     isTransferProgress,
     isTransferSkipped,
 } from '../../utils/transfer';
+import { FileName } from '../FileName';
 import ProgressBar from './ProgressBar';
 import TransferControls from './TransferControls';
 import TransferStateIndicator from './TransferStateIndicator';
@@ -61,7 +62,7 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, on
                     {isInitializing ? <Loader size="small" /> : <FileIcon mimeType={transfer.meta.mimeType} />}
                 </span>
                 <span className={clsx(['flex', isNameUnresolved && 'color-weak'])} data-testid="transfer-item-name">
-                    <FileNameDisplay text={transfer.meta.filename} />
+                    <FileName text={transfer.meta.filename} />
                 </span>
             </div>
 

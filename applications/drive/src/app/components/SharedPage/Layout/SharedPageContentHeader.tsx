@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
-import { FileNameDisplay } from '@proton/components';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
@@ -9,6 +8,7 @@ import clsx from '@proton/utils/clsx';
 import { type useBookmarksPublicView } from '../../../store';
 import { usePublicShareStore } from '../../../zustand/public/public-share.store';
 import { useSelection } from '../../FileBrowser';
+import { FileName } from '../../FileName';
 import { getSelectedItems } from '../../sections/helpers';
 import { SaveForLaterButton } from '../Bookmarks/SaveForLaterButton';
 import DetailsButton from '../DetailsButton';
@@ -73,7 +73,7 @@ export function SharedPageContentHeader({
                             className="shared-folder-header-breadcrumbs"
                         />
                     ) : (
-                        <FileNameDisplay className="text-4xl text-bold" text={name} />
+                        <FileName className="text-4xl text-bold" text={name} />
                     )}
                     {!viewOnly && <DetailsButton className="shrink-0 " linkId={linkId} />}
                 </div>
