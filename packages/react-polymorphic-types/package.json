@@ -19,10 +19,10 @@
         "check-types": "tsc"
     },
     "devDependencies": {
-        "@types/react": "^18.3.23",
+        "@types/react": "^18.3.24",
         "typescript": "^5.9.2"
     },
     "peerDependencies": {
-        "@types/react": ">=18.3.23"
+        "@types/react": ">=18.3.24"
     }
 }
