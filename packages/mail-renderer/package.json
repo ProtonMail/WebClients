@@ -7,7 +7,7 @@
     "main": "index.ts",
     "scripts": {
         "check-types": "tsc",
-        "lint": "true",
+        "lint": "eslint --quiet",
         "test": "jest --logHeapUsage --forceExit",
         "test:ci": "jest --coverage --runInBand --ci --forceExit",
         "test:coverage": "jest --collectCoverage",
