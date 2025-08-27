@@ -80,9 +80,9 @@ export const MeetingRow = ({ meeting, index }: MeetingRowProps) => {
     };
 
     const handleEditMeeting = () => {
-        if (meeting.EventID && meeting.CalendarID) {
+        if (meeting.CalendarEventID && meeting.CalendarID) {
             goToApp(
-                `/?action=edit&eventId=${meeting.EventID}&calendarId=${meeting.CalendarID}`,
+                `/?action=edit&eventId=${meeting.CalendarEventID}&calendarId=${meeting.CalendarID}`,
                 APPS.PROTONCALENDAR,
                 true
             );
