@@ -8,7 +8,7 @@ import { type SNOOZE_DURATION } from 'proton-mail/components/list/snooze/constan
 
 import type { Conversation } from '../models/conversation';
 import type { Element } from '../models/element';
-import { getDate, isConversation, isMessage } from './elements';
+import { getDate, isElementConversation, isElementMessage } from './elements';
 
 export const getSnoozeUnixTime = (duration: SNOOZE_DURATION, snoozeTime?: Date) => {
     const today = new Date();
@@ -55,7 +55,7 @@ export const getSnoozeTimeFromSnoozeLabel = (element?: Element) => {
         return undefined;
     }
 
-    if (isMessage(element)) {
+    if (isElementMessage(element)) {
         return element.SnoozeTime;
     }
 
@@ -69,7 +69,7 @@ export const getSnoozeTimeFromElement = (element?: Element, labelID?: string) =>
         return undefined;
     }
 
-    if (isMessage(element)) {
+    if (isElementMessage(element)) {
         return element.SnoozeTime;
     }
 
@@ -112,7 +112,7 @@ export const isElementSnoozed = (element: Element | undefined, conversationMode:
 };
 
 export const isElementReminded = (element: Element | undefined) => {
-    const isElementOrConversation = isMessage(element) || isConversation(element);
+    const isElementOrConversation = isElementMessage(element) || isElementConversation(element);
     return element && isElementOrConversation
         ? ((element as Message | Conversation).DisplaySnoozedReminder ?? false)
         : false;

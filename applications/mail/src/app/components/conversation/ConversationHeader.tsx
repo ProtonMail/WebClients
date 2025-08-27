@@ -7,7 +7,7 @@ import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { isConversation as testIsConversation } from '../../helpers/elements';
+import { isElementConversation } from '../../helpers/elements';
 import type { Element } from '../../models/element';
 import NumMessages from './NumMessages';
 
@@ -23,7 +23,7 @@ const ConversationHeader = ({ className, loading, element, showBackButton = fals
     const { highlightMetadata, shouldHighlight } = useEncryptedSearchContext();
     const highlightSubject = shouldHighlight();
 
-    const isConversation = testIsConversation(element);
+    const isConversation = isElementConversation(element);
     const subjectElement = useMemo(
         () =>
             !!element?.Subject && highlightSubject ? (

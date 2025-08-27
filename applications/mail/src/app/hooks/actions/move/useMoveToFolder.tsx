@@ -14,7 +14,7 @@ import useListTelemetry, {
 import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 import { useMoveSelectionToFolder } from 'proton-mail/hooks/actions/move/useMoveSelectionToFolder';
 
-import { isMessage as testIsMessage } from '../../../helpers/elements';
+import { isElementMessage } from '../../../helpers/elements';
 import { getMessagesAuthorizedToMove } from '../../../helpers/message/messages';
 import type { Element } from '../../../models/element';
 
@@ -59,7 +59,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                 return;
             }
 
-            const isMessage = testIsMessage(elements[0]);
+            const isMessage = isElementMessage(elements[0]);
 
             const authorizedToMove = isMessage
                 ? getMessagesAuthorizedToMove(elements as Message[], destinationLabelID)
