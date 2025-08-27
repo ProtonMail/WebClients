@@ -489,6 +489,13 @@ describe('getAvailableActions', () => {
 describe('forbidden plan transitions', () => {
     const plansMap = PLANS_MAP;
 
+    it('should be forbidden going from legacy vpn to mail', () => {
+        const subscription = buildSubscription(PLANS.VPN);
+        const planIDs: PlanIDs = { [PLANS.MAIL]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, planIDs, plansMap });
+        expect(result).toEqual({ type: 'plus-to-plus', newPlanName: PLANS.MAIL });
+    });
+
     it('should be forbidden going from vpn to mail', () => {
         const subscription = buildSubscription(PLANS.VPN2024);
         const planIDs: PlanIDs = { [PLANS.MAIL]: 1 };
