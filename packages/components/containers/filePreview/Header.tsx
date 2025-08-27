@@ -100,7 +100,7 @@ const Header = ({
             <div className="flex-1">
                 <div className="file-preview-filename flex items-center flex-nowrap" data-testid="preview:file-name">
                     {mimeType && <FileIcon mimeType={mimeType} className="mr-2" />}
-                    <FileNameDisplay text={name} className="user-select" data-testid="file-preview:file-name" />
+                    <FileNameDisplay text={name} className="user-select" testId="file-preview:file-name" />
                     {signatureStatus}
                 </div>
                 {date && (

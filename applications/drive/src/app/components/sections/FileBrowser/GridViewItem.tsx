@@ -1,12 +1,13 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Badge, Checkbox, FileNameDisplay, Icon } from '@proton/components';
+import { Badge, Checkbox, Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { stopPropagation } from '../../../utils/stopPropagation';
 import { useCheckbox, useItemContextMenu, useSelection } from '../../FileBrowser';
 import { SelectionState } from '../../FileBrowser/hooks/useSelectionControls';
+import { FileName } from '../../FileName';
 import type { DeviceItem } from '../Devices/Devices';
 import type { DriveItem } from '../Drive/Drive';
 import type { SharedLinkItem } from '../SharedLinks/SharedLinks';
@@ -84,7 +85,7 @@ const GridViewItemBase = ({
                 )}
             >
                 {SignatureIconComponent ? SignatureIconComponent : null}
-                <FileNameDisplay text={item.name} className="mx-auto" data-testid="grid-item-name" />
+                <FileName text={item.name} className="mx-auto" testId="grid-item-name" />
                 <Button
                     shape="ghost"
                     size="small"

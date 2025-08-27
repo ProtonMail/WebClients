@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { FileIcon, FileNameDisplay } from '@proton/components';
+import { FileIcon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { Cells } from '../../FileBrowser';
+import { FileName } from '../../FileName';
 import type { LinkInfo } from './types';
 
 interface Props {
@@ -19,7 +20,7 @@ export const FileCard = ({ linkInfo, className }: Props) => {
             </div>
             <div className="flex flex-column flex-nowrap">
                 <div className="text-bold flex w-full">
-                    <FileNameDisplay text={linkInfo.name} />
+                    <FileName text={linkInfo.name} />
                 </div>
                 {linkInfo.mimeType !== 'Folder' && <Cells.SizeCell size={linkInfo.size} />}
             </div>
