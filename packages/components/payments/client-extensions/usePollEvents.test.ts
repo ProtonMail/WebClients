@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { EventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
+import type { EventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
 import { hookWrapper, mockEventManager, withEventManager } from '@proton/testing';
 
 import { interval, maxPollingSteps, usePollEvents } from './usePollEvents';

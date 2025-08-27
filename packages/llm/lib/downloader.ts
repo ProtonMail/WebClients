@@ -112,7 +112,9 @@ async function downloadFilesSequentially(
     let filesDownloaded = 0;
     const totalFilesToDownload = files.length - filesToIgnore.length;
     for (let i = 0; i < files.length; i++) {
-        if (abortController.signal.aborted) return;
+        if (abortController.signal.aborted) {
+            return;
+        }
 
         const { downloadUrl, cacheUrl, cacheId } = files[i];
 

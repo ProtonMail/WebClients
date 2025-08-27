@@ -1,12 +1,13 @@
-const path = require('path');
-const os = require('os');
-const { firefox, chromium, webkit } = require('playwright');
-const karmaJasmine = require('karma-jasmine');
-const karmaWebpack = require('karma-webpack');
-const karmaChromeLauncher = require('karma-chrome-launcher');
-const karmaFirefoxLauncher = require('karma-firefox-launcher');
-const karmaWebkitLauncher = require('karma-webkit-launcher');
-const karmaSpecReporter = require('karma-spec-reporter');
+import karmaChromeLauncher from 'karma-chrome-launcher';
+import karmaFirefoxLauncher from 'karma-firefox-launcher';
+import karmaJasmine from 'karma-jasmine';
+import karmaSpecReporter from 'karma-spec-reporter';
+import karmaWebkitLauncher from 'karma-webkit-launcher';
+import karmaWebpack from 'karma-webpack';
+import os from 'os';
+import path from 'path';
+import { chromium, firefox, webkit } from 'playwright';
+
 process.env.CHROME_BIN = chromium.executablePath();
 process.env.FIREFOX_BIN = firefox.executablePath();
 process.env.WEBKIT_HEADLESS_BIN = webkit.executablePath();
@@ -18,7 +19,7 @@ process.env.WEBKIT_HEADLESS_BIN = webkit.executablePath();
  */
 const karmaWebpackOutputPath = path.join(os.tmpdir(), '_karma_webpack_') + Math.floor(Math.random() * 1000000);
 
-module.exports = function (config) {
+export default function (config) {
     config.set({
         // base path that will be used to resolve all patterns (eg. files, exclude)
         basePath: '..',
@@ -130,4 +131,4 @@ module.exports = function (config) {
             },
         },
     });
-};
+}

@@ -9,7 +9,7 @@
         "proton-pack": "./bin/protonPack.js"
     },
     "scripts": {
-        "lint": "eslint . --ext .js,.ts,.tsx --quiet",
+        "lint": "eslint --quiet",
         "pretty": "prettier --write  cli bin"
     },
     "dependencies": {

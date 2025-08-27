@@ -7,7 +7,7 @@
         "build:watch": "tsc && NODE_ENV='development' vite build --watch",
         "check-types": "tsc",
         "dev": "vite",
-        "lint": "eslint . --ext .js,.ts,.tsx --quiet",
+        "lint": "eslint --quiet",
         "preview": "vite preview",
         "serve": "serve dist -p 5173",
         "start": "concurrently \"npm run build:watch\" \"npm run serve\"",

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { differenceInDays, getUnixTime } from 'date-fns';
 
-import { useApi } from '@proton/components';
+import useApi from '@proton/components/hooks/useApi';
 
 import type { IPCInboxHostUpdateListenerRemover } from './desktopTypes';
 import { addIPCHostUpdateListener, emptyListener, hasInboxDesktopFeature } from './ipcHelpers';

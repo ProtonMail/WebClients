@@ -3,7 +3,7 @@
     "description": "Generic business use-case agnostic helper hooks",
     "scripts": {
         "check-types": "tsc",
-        "lint": "eslint . --ext ts --quiet",
+        "lint": "eslint --quiet",
         "test": "jest",
         "test:ci": "jest --coverage --runInBand --ci",
         "test:watch": "jest --watch"
