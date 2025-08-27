@@ -1,35 +1,35 @@
 /* eslint-disable monorepo-cop/no-relative-import-outside-package */
 
-import type { ForwardedRef } from 'react'
-import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef } from 'react'
-import { functions } from '@rowsncolumns/functions'
-import { createCSVFromSheetData, createExcelFile } from '@rowsncolumns/toolkit'
+import type { EditorControllerInterface } from '@proton/docs-core'
 import type {
-  EditorInitializationConfig,
-  DocStateInterface,
-  SheetImportData,
   DataTypesThatDocumentCanBeExportedAs,
+  DocStateInterface,
+  EditorInitializationConfig,
+  SheetImportData,
 } from '@proton/docs-shared'
 import { EditorSystemMode, SheetImportDestination, SheetImportEvent, TranslatedResult } from '@proton/docs-shared'
-import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
 import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'
-import { useApplication } from '../ApplicationProvider'
-import { downloadLogsAsJSON } from '../../../../../docs/src/app/utils/downloadLogs'
-import type { EditorControllerInterface } from '@proton/docs-core'
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import { splitExtension } from '@proton/shared/lib/helpers/file'
-import { useLogState, useProtonSheetsState } from './state'
+import { functions } from '@rowsncolumns/functions'
+import { createCSVFromSheetData, createExcelFile } from '@rowsncolumns/toolkit'
+import type { ForwardedRef } from 'react'
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef } from 'react'
+import { downloadLogsAsJSON } from '../../../../../docs/src/app/utils/downloadLogs'
+import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
+import { useApplication } from '../ApplicationProvider'
 import { LOCALE } from './constants'
+import { useLogState, useProtonSheetsState } from './state'
 
 import '@rowsncolumns/spreadsheet/dist/spreadsheet.min.css'
-import { LegacyGrid } from './components/legacy/LegacyGrid'
-import { LegacyDialogs } from './components/legacy/LegacyDialogs'
-import { LegacyBottomBar } from './components/legacy/LegacyBottomBar'
-import { useProtonSheetsUIState } from './ui-state'
-import { useSetupWithFallback, WithFallback } from './components/WithFallback'
-import { LegacyToolbar } from './components/legacy/LegacyToolbar'
-import { Toolbar } from './components/Toolbar/Toolbar'
 import { Menubar } from './components/Menubar/Menubar'
+import { Toolbar } from './components/Toolbar/Toolbar'
+import { WithFallback, useSetupWithFallback } from './components/WithFallback'
+import { LegacyBottomBar } from './components/legacy/LegacyBottomBar'
+import { LegacyDialogs } from './components/legacy/LegacyDialogs'
+import { LegacyGrid } from './components/legacy/LegacyGrid'
+import { LegacyToolbar } from './components/legacy/LegacyToolbar'
+import { useProtonSheetsUIState } from './ui-state'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
@@ -71,19 +71,22 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const exportData = async (format: DataTypesThatDocumentCanBeExportedAs) => {
     if (format === 'yjs') {
       return docState.getDocState()
-    } else if (format === 'xlsx') {
+    }
+    if (format === 'xlsx') {
       const buffer = await createExcelFile(state)
       return new Uint8Array(buffer)
-    } else if (format === 'csv') {
+    }
+    if (format === 'csv') {
       const csv = createCSVFromSheetData(state.sheetData[state.activeSheetId])
       return stringToUint8Array(csv)
-    } else if (format === 'tsv') {
+    }
+    if (format === 'tsv') {
       const tsv = createCSVFromSheetData(state.sheetData[state.activeSheetId], {
         delimiter: '\t',
       })
       return stringToUint8Array(tsv)
     }
-    throw new Error(`Spreadsheet cannot be export to format ${format}`)
+    throw new Error(`Spreadsheet cannot be exported to format ${format}`)
   }
   useImperativeHandle(ref, () => ({ exportData }))
 
