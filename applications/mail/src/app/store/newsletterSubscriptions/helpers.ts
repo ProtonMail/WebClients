@@ -4,7 +4,7 @@ import type {
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { DEFAULT_SORTING } from './constants';
-import type { NewsletterSubscriptionsTabState, SortSubscriptionsValue } from './interface';
+import { type NewsletterSubscriptionsTabState, SortSubscriptionsValue } from './interface';
 
 export const normalizeSubscriptions = (subscriptions: NewsletterSubscription[]) => {
     const byId: Record<string, NewsletterSubscription> = {};
@@ -37,13 +37,17 @@ export const getSortParams = (sortOption?: SortSubscriptionsValue) => {
     }
 
     switch (sortOption) {
-        case 'last-read':
+        case SortSubscriptionsValue.LastRead:
             return 'Sort[UnreadMessageCount]=ASC';
-        case 'most-read':
+        case SortSubscriptionsValue.MostRead:
             return 'Sort[UnreadMessageCount]=DESC';
-        case 'alphabetical':
+        case SortSubscriptionsValue.Alphabetical:
             return 'Sort[Name]=ASC';
-        case 'recently-received':
+        case SortSubscriptionsValue.RecentlyReceived:
+            return 'Sort[LastReceivedTime]=DESC';
+        case SortSubscriptionsValue.MostFrequent:
+            return 'Sort[MostFrequent]=DESC';
+        case SortSubscriptionsValue.RecentlyRead:
             return 'Sort[LastReceivedTime]=DESC';
         default:
             return undefined;
