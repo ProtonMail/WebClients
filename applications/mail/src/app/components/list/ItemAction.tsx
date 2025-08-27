@@ -4,7 +4,7 @@ import { Tooltip } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { isMessage } from '../../helpers/elements';
+import { isElementMessage } from '../../helpers/elements';
 import type { Element } from '../../models/element';
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
 }
 
 const ItemAction = ({ element, className }: Props) => {
-    if (!isMessage(element)) {
+    if (!isElementMessage(element)) {
         return null;
     }
 

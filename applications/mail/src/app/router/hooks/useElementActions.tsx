@@ -8,7 +8,7 @@ import { isDraft } from '@proton/shared/lib/mail/messages';
 
 import { type SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { useOnCompose } from 'proton-mail/containers/ComposeProvider';
-import { isMessage } from 'proton-mail/helpers/elements';
+import { isElementMessage } from 'proton-mail/helpers/elements';
 import { setParamsInLocation } from 'proton-mail/helpers/mailboxUrl';
 import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
@@ -98,14 +98,14 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
                 // Using the getter to prevent having elements in dependency of the callback
                 const [element] = getElementsFromIDs([elementID || '']);
 
-                if (isMessage(element) && isDraft(element) && !preventComposer) {
+                if (isElementMessage(element) && isDraft(element) && !preventComposer) {
                     void onCompose({
                         type: ComposeTypes.existingDraft,
                         existingDraft: { localID: element.ID as string, data: element },
                         fromUndo: false,
                     });
                 }
-                if (isConversationGroupingEnabled && isMessage(element)) {
+                if (isConversationGroupingEnabled && isElementMessage(element)) {
                     onMessageLoad();
                     history.push(
                         setParamsInLocation(history.location, {

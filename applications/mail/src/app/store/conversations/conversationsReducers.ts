@@ -9,7 +9,7 @@ import { isDraft } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { mergeConversations } from '../../helpers/conversation';
-import { isConversation, parseLabelIDsInEvent } from '../../helpers/elements';
+import { isElementConversation, parseLabelIDsInEvent } from '../../helpers/elements';
 import { isNetworkError } from '../../helpers/errors';
 import type { LabelChanges, UnreadStatus } from '../../helpers/labels';
 import { applyLabelChangesOnConversation, applyLabelChangesOnMessage } from '../../helpers/labels';
@@ -305,7 +305,7 @@ export const updateFromElements = (
 
     if (Elements && Elements.length) {
         Elements.forEach((element) => {
-            if (isConversation(element)) {
+            if (isElementConversation(element)) {
                 const conversationState = getConversation(state, element.ID);
 
                 if (conversationState) {
@@ -322,7 +322,7 @@ export const updateFromLoadElements = (
     action: PayloadAction<(Element | undefined)[], string, { arg: EventUpdates }>
 ) => {
     action.payload.filter(isTruthy).forEach((element) => {
-        if (isConversation(element)) {
+        if (isElementConversation(element)) {
             const conversationState = getConversation(state, element.ID);
 
             if (conversationState) {

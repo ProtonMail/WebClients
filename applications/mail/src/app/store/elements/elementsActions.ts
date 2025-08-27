@@ -12,7 +12,7 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
 
-import { isMessage } from 'proton-mail/helpers/elements';
+import { isElementMessage } from 'proton-mail/helpers/elements';
 
 import type { Element } from '../../models/element';
 import type { MailState, MailThunkExtra } from '../store';
@@ -150,7 +150,7 @@ export const eventUpdates = createAsyncThunk<(Element | undefined)[], EventUpdat
         return Promise.all(
             toLoad.map(async (element) =>
                 // We tried to use the isMessage instead of converation mode to avoid relying on current labelID settings
-                queryElement(thunkApi.extra.api, isMessage(element), element.ID).catch(() => element)
+                queryElement(thunkApi.extra.api, isElementMessage(element), element.ID).catch(() => element)
             )
         );
     }

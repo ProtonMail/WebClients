@@ -35,7 +35,7 @@ import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApp
 import type { FolderItem } from 'proton-mail/hooks/useMailTreeView/interface';
 import { useMailFolderTreeView } from 'proton-mail/hooks/useMailTreeView/useMailFolderTreeView';
 
-import { isMessage as testIsMessage } from '../../helpers/elements';
+import { isElementMessage } from '../../helpers/elements';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
 import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
@@ -100,7 +100,7 @@ const MoveDropdown = ({
      *     So in that case, we are getting the "real" Message object if found, else the element.
      */
     const elements = inputIsMessage ? getMessagesOrElements(selectedIDs) : getElementsFromIDs(selectedIDs);
-    const isMessage = testIsMessage(elements[0]);
+    const isMessage = isElementMessage(elements[0]);
     const canMoveToInbox = isMessage
         ? !!getMessagesAuthorizedToMove(elements as Message[], MAILBOX_LABEL_IDS.INBOX).length
         : true;
