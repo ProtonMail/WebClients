@@ -9,9 +9,9 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
-        "@pdfme/common": "^5.3.1",
-        "@pdfme/generator": "^5.3.1",
-        "@pdfme/schemas": "^5.3.1",
+        "@pdfme/common": "^5.4.2",
+        "@pdfme/generator": "^5.4.2",
+        "@pdfme/schemas": "^5.4.2",
         "@proton/utils": "workspace:^"
     },
     "devDependencies": {
