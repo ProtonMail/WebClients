@@ -17,22 +17,11 @@ const getUserType = (isGuest: boolean, hasLumoSeat: boolean, hasLumoPlusAddon: b
     if (isGuest) {
         return LUMO_USER_TYPE.GUEST;
     }
-    // User is PAID if they have any form of Lumo Plus access:
-    // - Direct Lumo seats (hasLumoSeat)
-    // - Lumo Plus addon (hasLumoPlusAddon) 
-    // - Visionary subscription (isVisionary)
     return (hasLumoSeat || hasLumoPlusAddon || isVisionary) ? LUMO_USER_TYPE.PAID : LUMO_USER_TYPE.FREE;
 };
 
-const LumoCommonProvider = ({ children, user }: LumoCommonProps) => {
-    const isGuest = useIsGuest();
-    const [subscription] = useSubscription();
-    
-    const hasLumoSeat = user ? !!user.NumLumo : false;
-    const hasLumoPlusAddon = subscription ? hasLumoAddon(subscription) : false;
-    const isVisionary = subscription ? hasVisionary(subscription) : false;
-    
-    const lumoUserType = getUserType(isGuest, hasLumoSeat, hasLumoPlusAddon, isVisionary);
+const GuestLumoCommonProvider = ({ children }: { children: ReactNode }) => {
+    const lumoUserType = LUMO_USER_TYPE.GUEST;
 
     return (
         <LumoCommonContext.Provider
@@ -43,6 +32,36 @@ const LumoCommonProvider = ({ children, user }: LumoCommonProps) => {
             {children}
         </LumoCommonContext.Provider>
     );
+};
+
+const AuthenticatedLumoCommonProvider = ({ children, user }: LumoCommonProps) => {
+    const [subscription] = useSubscription();
+
+    const hasLumoSeat = user ? !!user.NumLumo : false;
+    const hasLumoPlusAddon = subscription ? hasLumoAddon(subscription) : false;
+    const isVisionary = subscription ? hasVisionary(subscription) : false;
+
+    const lumoUserType = getUserType(false, hasLumoSeat, hasLumoPlusAddon, isVisionary);
+
+    return (
+        <LumoCommonContext.Provider
+            value={{
+                lumoUserType,
+            }}
+        >
+            {children}
+        </LumoCommonContext.Provider>
+    );
+};
+
+const LumoCommonProvider = ({ children, user }: LumoCommonProps) => {
+    const isGuest = useIsGuest();
+
+    if (isGuest) {
+        return <GuestLumoCommonProvider>{children}</GuestLumoCommonProvider>;
+    }
+
+    return <AuthenticatedLumoCommonProvider user={user}>{children}</AuthenticatedLumoCommonProvider>;
 };
 
 export default LumoCommonProvider;
