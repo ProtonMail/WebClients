@@ -62,26 +62,24 @@ const SortingDropdownMenu = () => {
             onClick: () => handleSortChange(SortSubscriptionsValue.MostRead),
             active: selectedSort === SortSubscriptionsValue.MostRead,
         },
-        // Not supported for the moment
-        // {
-        //     text: c('Action').t`Most frequent`,
-        //     icon: 'arrow-right-arrow-left',
-        //     onClick: () => handleSortChange(SortSubscriptionsValue.MostFrequent),
-        //     active: selectedSort === SortSubscriptionsValue.MostFrequent,
-        // },
+        {
+            text: c('Action').t`Most frequent`,
+            icon: 'arrow-right-arrow-left',
+            onClick: () => handleSortChange(SortSubscriptionsValue.MostFrequent),
+            active: selectedSort === SortSubscriptionsValue.MostFrequent,
+        },
         {
             text: c('Action').t`A to Z`,
             icon: 'sort-alphabetically',
             onClick: () => handleSortChange(SortSubscriptionsValue.Alphabetical),
             active: selectedSort === SortSubscriptionsValue.Alphabetical,
         },
-        // Not supported for the moment
-        // {
-        //     text: c('Action').t`Recently read`,
-        //     icon: 'envelope-open',
-        //     onClick: () => handleSortChange(SortSubscriptionsValue.RecentlyRead),
-        //     active: selectedSort === SortSubscriptionsValue.RecentlyRead,
-        // },
+        {
+            text: c('Action').t`Recently read`,
+            icon: 'envelope-open',
+            onClick: () => handleSortChange(SortSubscriptionsValue.RecentlyRead),
+            active: selectedSort === SortSubscriptionsValue.RecentlyRead,
+        },
         {
             text: c('Action').t`Recently received`,
             icon: 'inbox',
