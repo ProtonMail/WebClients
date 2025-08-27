@@ -17,7 +17,7 @@ export const transformAnchors = (inputDocument: Element) => {
         if (hasChildAnchors) {
             const span = document.createElement('span');
 
-            for (let attr of anchor.attributes) {
+            for (const attr of anchor.attributes) {
                 span.setAttribute(attr.name, attr.value);
             }
 
