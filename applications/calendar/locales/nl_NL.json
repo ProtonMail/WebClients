@@ -753,6 +753,182 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "De gratis proefperiode van uw desktop programma loopt af op ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add another account": [
+        "Voeg een account toe"
+      ],
+      "Add birthday": [
+        "Verjaardag toevoegen"
+      ],
+      "Add note": [
+        "Notitie toevoegen"
+      ],
+      "Add Zoom meeting": [
+        "Zoomvergadering toevoegen"
+      ],
+      "Adding conferencing details": [
+        "Conferentiedetails worden toegevoegd"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Ten hoogste ${ maxContacts } contact is toegelaten per contactgroep",
+        "Ten hoogste ${ maxContacts } contacten zijn toegelaten per contactgroep"
+      ],
+      "Cancel trial and pay": [
+        "Annuleer proefversie en betaal"
+      ],
+      "Claim this address": [
+        "Claim dit adres"
+      ],
+      "Clear search": [
+        "Zoekveld leegmaken"
+      ],
+      "Collapse navigation bar": [
+        "Navigatiebalk inklappen"
+      ],
+      "Continue with Outlook": [
+        "Ga verder met Outlook"
+      ],
+      "Copy address": [
+        "Adres kopiëren"
+      ],
+      "Copy version number to clipboard": [
+        "Kopieer versienummer naar klembord"
+      ],
+      "Create and copy alias": [
+        "Maak en kopieer alias"
+      ],
+      "Create folder": [
+        "Maak map"
+      ],
+      "Create new contact": [
+        "Nieuwe contactpersoon aanmaken"
+      ],
+      "Display navigation bar": [
+        "Navigatiebalk weergeven"
+      ],
+      "Expand video conferencing widget": [
+        "Videoconferentie widget uitbreiden"
+      ],
+      "Export selection as .vcf": [
+        "Exporteer selectie als .vcf"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Neem ${ planName } voor ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "Neem ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Krijg een gratis ${ BRAND_NAME }-adres"
+      ],
+      "Get the writing assistant": [
+        "Verkrijg de schrijfassistent"
+      ],
+      "Go to ${ planOrAppName }": [
+        "Ga naar ${ planOrAppName }"
+      ],
+      "Go to settings": [
+        "Ga naar instellingen"
+      ],
+      "Help and feedback": [
+        "Hulp en feedback"
+      ],
+      "Help and resources": [
+        "Hulp en bronnen"
+      ],
+      "Hide more benefits": [
+        "Verberg meer voordelen"
+      ],
+      "Image could not be loaded with tracker protection.": [
+        "Afbeelding kan niet worden geladen met trackerbeveiliging."
+      ],
+      "Image will be loaded without a proxy": [
+        "Afbeelding wordt geladen zonder een proxy"
+      ],
+      "Import from Google": [
+        "Importeer uit Google"
+      ],
+      "Import from Outlook": [
+        "Importeer uit Outlook"
+      ],
+      "Keep my subscription": [
+        "Mijn abonnement behouden"
+      ],
+      "Later": [
+        "Later"
+      ],
+      "Load": [
+        "Laden"
+      ],
+      "Loading Zoom configuration": [
+        "Zoomconfiguratie laden"
+      ],
+      "More actions": [
+        "Meer acties"
+      ],
+      "More benefits": [
+        "Meer voordelen"
+      ],
+      "More options for accounts": [
+        "Meer opties voor accounts"
+      ],
+      "New message": [
+        "Nieuw bericht"
+      ],
+      "Reconnect to Zoom": [
+        "Opnieuw verbinden met Zoom"
+      ],
+      "Remove button": [
+        "Knop verwijderen"
+      ],
+      "Remove Zoom meeting": [
+        "Zoom-vergadering verwijderen"
+      ],
+      "See how": [
+        "Zie hoe"
+      ],
+      "Select ${ planOrAppName }": [
+        "Selecteer ${ planOrAppName }"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Selecteer factureringscyclus ${ billingText }"
+      ],
+      "Select country": [
+        "Selecteer land"
+      ],
+      "Settings": [
+        "Instellingen"
+      ],
+      "Show more benefits": [
+        "Toon meer voordelen"
+      ],
+      "Show navigation bar": [
+        "Navigatiebalk tonen"
+      ],
+      "Show side panel": [
+        "Toon zijpaneel"
+      ],
+      "Switch or add account": [
+        "Account toevoegen of wisselen"
+      ],
+      "Toggle Contacts app": [
+        "Contact app kiezen"
+      ],
+      "Toggle settings": [
+        "Instellingen openen/sluiten"
+      ],
+      "Upgrade for 200GB": [
+        "Upgraden voor 200GB"
+      ],
+      "View all reports": [
+        "Bekijk alle rapporten"
+      ],
+      "View contact details": [
+        "Contactdetails bekijken"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden",
+        "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden"
       ]
     },
     "Action subline": {
@@ -805,6 +981,21 @@
       "${ users } user": [
         "${ users } gebruiker",
         "${ users } gebruikers"
+      ],
+      "${ domains } additional custom domain": [
+        "${ domains } extra aangepast domein",
+        "${ domains } extra aangepaste domeinen"
+      ],
+      "${ price } per seat": [
+        "${ price } per zitplaats"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } zitplaats",
+        "${ seats } ${ LUMO_APP_NAME } zitplaatsen"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } plaats voor schrijfassistent",
+        "${ seats } plaatsen voor schrijfassistent"
       ]
     },
     "Alarm notification": {
@@ -935,6 +1126,9 @@
       ],
       "Two-year": [
         "Tweejaarlijks"
+      ],
+      "Lifetime": [
+        "Levenslang"
       ]
     },
     "Bug category": {
@@ -1009,6 +1203,12 @@
       ],
       "Website access problem": [
         "Probleem met toegang tot website"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } probleem"
+      ],
+      "Docs problem": [
+        "Probleem met Docs"
       ]
     },
     "Button": {
@@ -1035,6 +1235,12 @@
       ],
       "Take a tour": [
         "Volg een rondleiding"
+      ],
+      "Close": [
+        "Sluiten"
+      ],
+      "Maybe later": [
+        "Misschien later"
       ]
     },
     "Calendar access select label": {
@@ -1223,6 +1429,9 @@
       "Total for ${ n } month": [
         "Totaal voor ${ n } maand",
         "Totaal voor ${ n } maanden"
+      ],
+      "Total": [
+        "Totaal"
       ]
     },
     "Collapsible tooltip": {
@@ -1393,6 +1602,18 @@
       ],
       "URL": [
         "Website"
+      ],
+      "Display name": [
+        "Weergavenaam"
+      ],
+      "Enter a display name or nickname": [
+        "Voer een weergavenaam of bijnaam in"
+      ],
+      "First name": [
+        "Voornaam"
+      ],
+      "Last name": [
+        "Achternaam"
       ]
     },
     "Contact type label": {
@@ -2186,6 +2407,42 @@
       ],
       "Åland Islands": [
         "Aland Eilanden"
+      ],
+      "British Virgin Islands": [
+        "Britse Maagdeneilanden"
+      ],
+      "Congo (The Democratic Republic of the)": [
+        "Congo (Democratische Republiek)"
+      ],
+      "East Timor": [
+        "Oost-Timor"
+      ],
+      "Falkland Islands (Malvinas)": [
+        "Falkland Eilanden (Malvinas)"
+      ],
+      "Islamic Republic of Iran": [
+        "Islamitische Republiek Iran"
+      ],
+      "Korea (Democratic People's Republic of)": [
+        "Korea (Democratische Volksrepubliek van)"
+      ],
+      "Korea (Republic of)": [
+        "Korea (Republiek van)"
+      ],
+      "Lao People's Democratic Republic": [
+        "Lao Democratische Volksrepubliek"
+      ],
+      "Libyan Arab Jamahiriya": [
+        "Libië"
+      ],
+      "Swaziland": [
+        "Swaziland"
+      ],
+      "Syrian Arab Republic": [
+        "Syrische Arabische Republiek"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzania, Verenigde Republiek van"
       ]
     },
     "Country select label": {
@@ -2376,6 +2633,45 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "U kunt contactpersonen markeren die u niet wilt samenvoegen of behouden. Ze worden pas verwijderd na het klikken op 'samenvoegen'"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } beschermt uw account met 24/7 monitoring van verdachte activiteiten - inclusief escalatie naar beveiligingsspecialisten."
+      ],
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "2FA voegt een extra beveiligingslaag toe, waardoor onbevoegde toegang wordt voorkomen."
+      ],
+      "Also included": [
+        "Ook inbegrepen"
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Ontvang een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
+      ],
+      "Set a data recovery method to prevent data loss.": [
+        "Stel een methode voor gegevensherstel in om gegevensverlies te voorkomen."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Stel een herstelmethode in om te voorkomen dat u de toegang tot uw account verliest."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Stel een herstelzin in om de hoogst mogelijke beveiliging van uw account te waarborgen."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Voor importeren via CSV- en VCF-bestand, zorg ervoor dat het bestand niet ${ MAX_IMPORT_FILE_SIZE_STRING } of ${ MAX_IMPORT_CONTACTS_STRING } contacten overschrijdt. Als uw bestand groter is, splits het dan in kleinere bestanden. ${ learnMoreLink }."
+      ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Importeer uw contacten uit Google of Outlook, ${ easySwitchLink }."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Met contactgroepen kunt u met één klik e-mails verzenden naar iedereen in de groep."
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "Uw account en dataherstelmethoden zijn ingesteld en 2FA is ingeschakeld."
+      ],
+      "Your account and data recovery methods are set.": [
+        "Uw account en dataherstelmethodes zijn ingesteld."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2424,6 +2720,30 @@
       ],
       "Temporary need, may come back in the future": [
         "Tijdelijke behoefte, kan in de toekomst terugkomen"
+      ],
+      "I do not wish to share": [
+        "Ik wens dit niet te delen"
+      ],
+      "I found a cheaper VPN": [
+        "Ik vond een goedkopere VPN"
+      ],
+      "I found a VPN with better features": [
+        "Ik heb een VPN gevonden met betere functies"
+      ],
+      "I have not managed to connect": [
+        "Ik kon niet verbinden"
+      ],
+      "I only needed a VPN short-term": [
+        "Ik had enkel een VPN nodig voor korte termijn"
+      ],
+      "It doesn't do what I need": [
+        "Het doet niet wat ik nodig heb"
+      ],
+      "Other reason (please comment)": [
+        "Andere reden (graag verduidelijken)"
+      ],
+      "The VPN is too slow": [
+        "De VPN is te traag"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2885,6 +3205,127 @@
       ],
       "Your import will not be processed.": [
         "Uw import zal niet worden verwerkt."
+      ],
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } kan geen verbinding maken met uw externe account"
+      ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } is uw gebruikersnaam. Om ${ emailAddress } aan te maken gaat u naar Instellingen > Identiteit en adressen > Kort domein (pm.me)"
+      ],
+      "Alias is not valid": [
+        "Alias is ongeldig."
+      ],
+      "Alias is required": [
+        "Alias is vereist."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Bedrag onder minimum (${ minimumAmount })."
+      ],
+      "An error occurred while loading alias options": [
+        "Er is een fout opgetreden tijdens het laden van de alias opties"
+      ],
+      "An error occurred while saving your alias": [
+        "Er is een fout opgetreden tijdens het opslaan van uw alias"
+      ],
+      "Cannot export this contact": [
+        "Kan dit contact niet exporteren"
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "Zoeken naar inhoud kan niet worden ingeschakeld. Herstart de applicatie of wis de gegevens."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Factuuradres bewerken is op dit moment niet beschikbaar. Probeer het later opnieuw."
+      ],
+      "Failed to open to contact": [
+        "Contact maken mislukt"
+      ],
+      "First name is too long": [
+        "Voornaam is te lang"
+      ],
+      "Forward address is required": [
+        "Doorstuuradres is vereist"
+      ],
+      "Invalid IBAN": [
+        "Ongeldige IBAN"
+      ],
+      "Invalid ZIP code": [
+        "Ongeldige postcode"
+      ],
+      "Last name is too long": [
+        "Achternaam is te lang"
+      ],
+      "Name is required": [
+        "Naam is verplicht"
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "Geen externe sleutel opgehaald voor gebruiker is geldig voor verzenden"
+      ],
+      "Please enter a valid postal code": [
+        "Voer een geldige postcode in."
+      ],
+      "Please enter a valid ZIP code": [
+        "Voer een geldige postcode in."
+      ],
+      "Please enter postal code": [
+        "Voer de postcode in."
+      ],
+      "Please enter ZIP code": [
+        "Voer de postcode in."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Bied ofwel een voornaam, een achternaam of een weergavenaam aan"
+      ],
+      "Please select a country": [
+        "Selecteer een land"
+      ],
+      "Please select a state": [
+        "Selecteer een staat"
+      ],
+      "Please select billing country": [
+        "Selecteer land van facturering"
+      ],
+      "Please select billing state": [
+        "Selecteer factureringsstaat"
+      ],
+      "Postal code is required": [
+        "Postcode is vereist"
+      ],
+      "Something went wrong. Please try again.": [
+        "Er is iets fout gegaan. Probeer het later nog eens."
+      ],
+      "status page": [
+        "statuspagina"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Het verschuldigde bedrag is gewijzigd. Probeer het opnieuw."
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Kan VPN dashboard niet laden. Controleer uw verbinding en probeer het opnieuw."
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Onverwachte fout, we kunnen de contacten niet importeren"
+      ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "U bent opnieuw verbonden met Zoom. U kunt uw afspraak nu opslaan."
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
+        "U kunt geen e-mail verzenden naar meer dan ${ maxContacts } ontvangers"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "U hebt het maximum aantal agenda's bereikt."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "U heeft de limiet van het aantal contacten bereikt voor dit account"
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "Uw Zoom-verbinding is verlopen. Verbind alstublieft opnieuw om door te gaan."
+      ],
+      "ZIP code is required": [
+        "Postcode is vereist"
       ]
     },
     "Error accepting calendar invitation": {
@@ -3018,6 +3459,9 @@
       ],
       "Unsupported event": [
         "Niet-ondersteunde afspraak"
+      ],
+      "Time zone component ignored": [
+        "Tijdzone component genegeerd"
       ]
     },
     "Error message": {
@@ -3041,6 +3485,18 @@
       ],
       "You need an active personal calendar to import events": [
         "U heeft een actieve persoonlijke agenda nodig om uw afspraken te importeren"
+      ],
+      "App currently unavailable": [
+        "App momenteel niet beschikbaar"
+      ],
+      "Open in browser": [
+        "Openen in de browser"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Om ${ MAIL_APP_NAME } of ${ CALENDAR_APP_NAME } te gebruiken, wissel naar de webversie."
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "We konden deze pagina niet laden. Ververs de pagina of controleer uw internetverbinding."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3214,6 +3670,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -3232,6 +3691,10 @@
       "Megabyte": [
         "Megabyt",
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Filter notification": {
@@ -3242,6 +3705,9 @@
     "Font face option": {
       "Theme font": [
         "Thema lettertype"
+      ],
+      "System default": [
+        "Systeem standaard"
       ]
     },
     "Group": {
@@ -3270,11 +3736,24 @@
       ],
       "Repeat event": [
         "Gebeurtenis herhalen"
+      ],
+      "Drawer": [
+        "Zijpaneel"
+      ],
+      "Search": [
+        "Zoeken"
+      ],
+      "Security Center": [
+        "Beveiligingscentrum"
       ]
     },
     "Hint": {
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Gebruik omhoog- en omlaagknoppen om suggesties te openen en te bladeren na invoer. Druk op Enter om uw keuze te bevestigen, of op Escape om het suggestievak te sluiten."
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } suggestie gevonden, gebruik het toetsenbord om te navigeren.",
+        "${ itemsCount } suggesties gevonden, gebruik het toetsenbord om te navigeren."
       ]
     },
     "Human verification method": {
@@ -3442,6 +3921,12 @@
       ],
       "Your password is correct.": [
         "Uw wachtwoord is juist."
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Uw app-wachtwoord is juist. Gebruik uw gebruikelijke wachtwoord niet."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Uw e-mailadres en app-wachtwoord zijn juist. Gebruik niet uw gebruikelijke wachtwoord."
       ]
     },
     "Import instructions": {
@@ -3533,6 +4018,18 @@
     "Import provider": {
       "Import from ${ provider }": [
         "Importeer uit ${ provider }"
+      ],
+      "Import from Google": [
+        "Importeer uit Google"
+      ],
+      "Import from other": [
+        "Importeer uit andere"
+      ],
+      "Import from Outlook": [
+        "Importeer uit Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importeer uit Yahoo"
       ]
     },
     "Import warning": {
@@ -4589,6 +5086,341 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Uw systeemtijdzone lijkt te zijn veranderd naar ${ timezone }. Wilt u uw voorkeur voor uw tijdzone bijwerken?"
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } vereist een ${ BRAND_NAME } adres voor veilige afspraak synchronisatie en versleuteling. ${ claimAddressButton }."
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contact",
+        "${ contactsLength } contacten"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslang toegang tot ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }. De verlengingsprijs en de datum van uw ${ planTitle } abonnement blijven ongewijzigd."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } vervalt binnen ${ daysLeft } dag.",
+        "${ planName } vervalt binnen ${ daysLeft } dagen."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } verloopt vandaag."
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contact geselecteerd",
+        "${ selectedContactsLength }/${ contactsLength } contacten geselecteerd"
+      ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } maskeert uw IP-adres, zodat websites u niet kunnen identificeren."
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/maand)"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Automatisch Verbinden**: Opent en verbindt met VPN zodra u uw apparaat aan zet."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill switch**: Stop datalekken door uw internet te blokkeren als uw VPN-verbinding onverwachts stopt."
+      ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Een veilige verbinding is essentieel bij het werken op afstand. Een VPN beschermt bedrijfsgegevens tegen cyberbedreigingen en houdt uw werk privé."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "Een VPN versleutelt uw verbinding en verbergt uw IP-adres, waardoor het voor iedereen veel moeilijker is om browsen te volgen of te volgen."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "Een VPN verbergt uw IP-adres en versleutelt uw browseractiviteit, waardoor het moeilijker wordt voor websites, adverteerders en internet service providers om u over een bepaalde periode te volgen."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "Een VPN is een veilige tunnel tussen uw apparaat en het internet. Het verbergt uw locatie en activiteit van uw internetserviceprovider (ISP) en de websites die u bezoekt."
+      ],
+      "Ad targeting": [
+        "Advertentie doelwit"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Adverteerders volgen uw internetgedrag om gerichte advertenties te tonen. ${ VPN_APP_NAME } blokkeert trackers en advertenties, maakt uw verbinding sneller en verbetert uw online ervaring."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }",
+        "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Weet u zeker dat u uw import wilt verwijderen?"
+      ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Aan het einde van uw proefversie ${ boldCancelDate } wordt u gedowngraded naar ${ boldProtonFree }. Alle gebruikersaccounts worden verwijderd uit uw organisatie."
+      ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "Boost de merkidentiteit van uw organisatie en creëer een consistentere online ervaring voor uw gebruikers."
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Breng uw berichten, contacten en agenda's naar ${ BRAND_NAME }."
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Verbind met ${ VPN_APP_NAME } om privé te browsen"
+      ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Contact toegekend aan groep ${ contactGroupName }"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Contact verwijderd uit groep ${ contactGroupName }"
+      ],
+      "Copy the link to clipboard": [
+        "Link kopiëren naar klembord"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Maak een beveiligde cloud voor ${ value } lid",
+        "Maak een beveiligde cloud voor ${ value } leden"
+      ],
+      "Dedicated VPN servers": [
+        "Dedicated VPN-servers"
+      ],
+      "Download current logs": [
+        "Huidige logboeken downloaden"
+      ],
+      "Drop file here to upload": [
+        "Sleep bestand hier om te uploaden"
+      ],
+      "Drop to import": [
+        "Neerzetten om te importeren"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Zorg voor volledig privé en versleutelde communicatie. Vraag nu uw gratis ${ BRAND_NAME }-e-mailadres aan."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Voer uw eigen wachtwoord in (als vertrouwd contact)."
+      ],
+      "Everything in ${ planOrAppName }": [
+        "Alles van ${ planOrAppName }"
+      ],
+      "Geoblocking": [
+        "Geoblocking"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Regeringen en ISP's kunnen uw online activiteiten controleren. Door uw echte IP te verbergen en uw activiteit te versleutelen, wordt uw internetgedrag privé."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Als u van gedachten verandert, kunt u op elk moment opnieuw abonneren. Jammer dat u vertrekt!"
+      ],
+      "Important note": [
+        "Belangrijke opmerking"
+      ],
+      "In restrictive countries": [
+        "In restrictieve landen"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Het is het beste om op elk moment een VPN te gebruiken. Maar hier is wanneer cyberbeveiligingsbedreigingen het grootst kunnen zijn:"
+      ],
+      "JCB logo": [
+        "JCB-logo"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Leer wat te doen ${ dataLeakedLink }"
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "De meeste openbare wifi-netwerken zijn veilig, maar sommige zijn onveilig, waardoor u wordt blootgesteld aan cyberbedreigingen. Een VPN versleutelt uw verkeer en houdt u beschermd."
+      ],
+      "Not connected": [
+        "Niet verbonden"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Aantal gereserveerde VPN-servers in uw organisatie"
+      ],
+      "On public WiFi networks": [
+        "Op openbare wifinetwerken"
+      ],
+      "One time import": [
+        "Eenmalige import"
+      ],
+      "Open shortcut cheat sheet": [
+        "Open de shortcut voor cheat sheet"
+      ],
+      "Open the guide for recommended actions and helpful links.": [
+        "Open de handleiding voor aanbevolen acties en nuttige koppelingen."
+      ],
+      "Other accounts": [
+        "Andere accounts"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Onze waarschuwingen geven prioriteit aan veiligheid. Als u de geschonden informatie niet herkent, kunt u dit rapport gerust negeren."
+      ],
+      "Password must have:": [
+        "Het wachtwoord moet:"
+      ],
+      "Please fill in all required fields.": [
+        "Vul alle verplichte velden in."
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Houd er rekening mee dat de adressen die aan deze groepen zijn toegewezen NIET zullen worden verwijderd."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Voorzie een naam en een e-mailadres voor het aanmaken van een groep"
+      ],
+      "Please try again in a few moments": [
+        "Probeer het opnieuw in enkele ogenblikken"
+      ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Privé browsen (of \"incognito\" modus) is alleen handig om uw activiteit verborgen te houden op uw apparaat. Het stopt je browser om geschiedenis en cookies op te slaan, maar het maakt je niet onzichtbaar. Uw ISP, netwerkbeheerder en de websites die u bezoekt kunnen nog steeds zien wat u online doet."
+      ],
+      "Registering your subscription…": [
+        "Uw abonnement registreren…"
+      ],
+      "Scan the QR code with your mobile device": [
+        "Scan de QR-code met uw mobiele apparaat"
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-betalingen zijn momenteel niet beschikbaar. Probeer het later nogmaals."
+      ],
+      "Set up your organization": [
+        "Stel uw organisatie in"
+      ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Sommige regeringen blokkeren of beperken de toegang tot bepaalde websites. Een VPN helpt censuur te omzeilen en uw activiteit en identiteit privé te houden."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Sommige websites en streaming services blokkeren de inhoud per regio. Een VPN stelt u in staat om deze beperkingen te omzeilen en toegang tot het internet te krijgen."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Blijf moeiteloos verbonden door de volgende VPN-instellingen in te schakelen:"
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Abonnement vernieuwt automatisch elke ${ cycle } maand.",
+        "Abonnement vernieuwt automatisch elke ${ cycle } maanden."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Het abonnement loopt af: Heractiveer het voor ${ byDate } om de voordelen van uw ${ planName } te behouden. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnement eindigt: Om uw ${ planName }-voordelen te behouden, herstart uw abonnement in de Apple App Store vóór ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnement eindigt: Om uw ${ planName }-voordelen te behouden, kunt u uw abonnement herstarten in de Google Play Store vóór ${ byDate }. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Surveillance"
+      ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "Bedankt om te kiezen voor ${ BRAND_NAME } om uw organisatie te beschermen."
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "Bedankt voor uw abonnement. Veilig browsen begint nu."
+      ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "De eigenaar van dit adres heeft end-to-end versleuteling uitgeschakeld. Om versleutelde berichten naar dit adres te sturen moet de eigenaar end-to-end versleuteling weer inschakelen."
+      ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Dit betekent dat uw internetprovider en de websites die u bezoekt, uw persoonlijke gegevens niet kunnen koppelen aan uw online activiteiten."
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Deze unieke code kan worden gebruikt door websites en ISP's (internet service providers) om uw locatie en browsegeschiedenis te koppelen aan uw apparaat"
+      ],
+      "Tracking": [
+        "Tracking"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
+      ],
+      "Version number successfully copied to clipboard": [
+        "Versienummer succesvol gekopieerd naar klembord"
+      ],
+      "VPN IP": [
+        "VPN IP-adres"
+      ],
+      "Warning": [
+        "Waarschuwing"
+      ],
+      "We'll email you once import is complete.": [
+        "We sturen u een e-mail zodra de import voltooid is."
+      ],
+      "When working remotely": [
+        "Bij werken op afstand"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Wanneer u verbinding maakt met VPN, gebruikt het versleutelingstechnologie om uw IP-adres te verbergen (een unieke code toegewezen aan uw apparaat)."
+      ],
+      "Writing assistant": [
+        "Schrijfassistent"
+      ],
+      "You are about to open your default browser and visit:": [
+        "U staat op het punt uw standaardbrowser te openen om te bezoeken:"
+      ],
+      "You can close the tab or browser in the meantime.": [
+        "In de tussentijd kunt u de tab of browser sluiten."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "U verliest toegang tot ${ planTitle } functies op deze datum."
+      ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "U wordt niets in rekening gebracht als u annuleert voor ${ trialEndsOnFormatted }."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
+        "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd."
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "U heeft het maximaal aantal adressen bereikt in de contactgroep(en):"
+      ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "U heeft het maximaal aantal adressen bereikt in de contactgroep."
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Uw ${ plan }-abonnement zal worden vervangen door ${ PASS_SHORT_APP_NAME } Lifetime. Het resterende saldo van uw abonnement zal aan uw account worden toegevoegd. ${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Uw bestanden worden versleuteld en vervolgens opgeslagen"
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Uw gratis proefversie werd succesvol omgezet naar een ${ cycle }-maands abonnement. Uw verlengingsdatum is ${ nextBillingDate }."
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Uw gratis proefversie werd succesvol omgezet naar een maandelijks abonnement. Uw verlengingsdatum is ${ nextBillingDate }."
+      ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Uw internet service provider kan uw gegevens monitoren en soms verkopen, of zelfs beperken welke websites u kunt bezoeken."
+      ],
+      "Your IP": [
+        "Uw IP-adres"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Uw IP-adres is zichtbaar en kan worden gebruikt om uw online activiteit te volgen."
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Uw volgende factuurdatum is ${ renewalTime }. Neem contact op met support als u een onmiddellijke abonnementswijziging nodig heeft."
+      ],
+      "Your online activity is protected": [
+        "Uw online activiteiten zijn beschermd"
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Uw fysieke locatie is zichtbaar en kan worden gebruikt om uw toegang tot het internet te beperken."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maand automatisch vernieuwd.",
+        "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maanden automatisch vernieuwd."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Uw geplande abonnement begint op ${ renewalTime } en wordt elke maand automatisch vernieuwd."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Uw abonnement wordt automatisch verlengd op ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Uw proefperiode eindigt over ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "U verliest ook toegang tot ${ boldPlanTitle } functies:"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "U verliest toegang tot ${ boldPlanTitle } op ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "U kunt nog steeds uw eigen accountgegevens bekijken, maar alle gebruikersaccounts worden verwijderd uit uw organisatie."
       ]
     },
     "Info calendar search": {
@@ -4679,6 +5511,9 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "KOO": [
+        "KOO"
       ]
     },
     "Keyboard shortcut name": {
@@ -4708,11 +5543,17 @@
       ],
       "Week view": [
         "Weekweergave"
+      ],
+      "Open this modal": [
+        "Open dit hulpvenster"
       ]
     },
     "Keyboard shortcut section name": {
       "View options": [
         "Weergaveopties"
+      ],
+      "Basic actions": [
+        "Basisacties"
       ]
     },
     "Knowledge base link label": {
@@ -5130,6 +5971,87 @@
       ],
       "Your password (admin)": [
         "Uw wachtwoord (beheerder)"
+      ],
+      "Account holder": [
+        "Rekeninghouder"
+      ],
+      "Alias title": [
+        "Alias titel"
+      ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Beta Access": [
+        "Bèta-toegang"
+      ],
+      "Company": [
+        "Bedrijf"
+      ],
+      "Company name": [
+        "Bedrijfsnaam"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "bv. Amazon, eBay, Etsy"
+      ],
+      "Enable desktop notifications": [
+        "Schakel bureaubladmeldingen in"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Include application logs in bug report": [
+        "Applicatie logs toevoegen aan het foutenrapport"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Toetsenbordsneltoets: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Sneltoetsen"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "Notificaties zijn uitgeschakeld, wijzig de browserinstellingen om ze in te schakelen."
+      ],
+      "Password strength": [
+        "Wachtwoordsterkte"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
+      ],
+      "State": [
+        "Staat"
+      ],
+      "Sync with system": [
+        "Synchroniseren met systeem"
+      ],
+      "Theme": [
+        "Thema"
+      ],
+      "Thomas": [
+        "Thomas"
+      ],
+      "Username": [
+        "Gebruikersnaam"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "Wat is uw belangrijkste reden om te annuleren of te downgraden?"
+      ],
+      "Your alias": [
+        "Uw alias"
+      ],
+      "Your IP": [
+        "Uw IP-adres"
+      ],
+      "Your ISP": [
+        "Uw internet service provider"
+      ],
+      "Your location": [
+        "Uw locatie"
+      ],
+      "Your password (trusted contact)": [
+        "Uw wachtwoord (vertrouwd contact)"
+      ],
+      "ZIP code": [
+        "Postcode"
       ]
     },
     "Label for contact group color": {
@@ -5144,6 +6066,9 @@
     },
     "Label, credit card": {
       "ZIP code": [
+        "Postcode"
+      ],
+      "Postal code": [
         "Postcode"
       ]
     },
@@ -5263,6 +6188,15 @@
       ],
       "What’s this?": [
         "Wat is dit?"
+      ],
+      "if your data is leaked": [
+        "als uw gegevens zijn gelekt"
+      ],
+      "Reactivate now": [
+        "Heractiveren"
+      ],
+      "Resume now": [
+        "Nu hervatten"
       ]
     },
     "Link label (optional)": {
@@ -5325,6 +6259,15 @@
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
+      ],
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Voeg ${ BRAND_NAME } Scribe schrijfassistent toe"
+      ],
+      "Add-on with free trial": [
+        "Add-on met gratis proefversie"
+      ],
+      "for ${ price }": [
+        "voor ${ price }"
       ]
     },
     "Message": {
@@ -5532,6 +6475,9 @@
       ],
       "on the third Wednesday": [
         "op de derde woensdag"
+      ],
+      "on the ${ shortenedDay }": [
+        "op ${ shortenedDay }"
       ]
     },
     "New Label form": {
@@ -5868,11 +6814,178 @@
       "Vault sharing (up to ${ n } person)": [
         "Kluis delen (tot ${ n } persoon)",
         "Kluis delen (tot ${ n } personen)"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Schrijfassistent"
+      ],
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } en ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } heeft een ${ PASS_SHORT_APP_NAME } kluis gedeeld per gebruiker",
+        "${ n } heeft ${ PASS_SHORT_APP_NAME } kluizen gedeeld per gebruiker"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } gebruikers",
+        "Tot ${ numberOfUsers } gebruikers"
+      ],
+      "${ options }-day file version history": [
+        "Bestandsversiegeschiedenis van ${ options } dag",
+        "Bestandsversiegeschiedenis van ${ options } dag"
+      ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + levenslang SimpleLogin"
+      ],
+      "${ size } of secure storage per user": [
+        "${ size } veilige opslag per gebruiker"
+      ],
+      "${ size } storage per user": [
+        "${ size } opslagruimte per gebruiker"
+      ],
+      "1 TB secure storage": [
+        "1 TB veilige opslag"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-mailadressen/aliassen"
+      ],
+      "10 more premium features": [
+        "10 meer premium functies"
+      ],
+      "10-year file version history": [
+        "10-jarige bestandsversiegeschiedenis"
+      ],
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "200 GB of storage": [
+        "200 GB opslagruimte"
+      ],
+      "Advanced account protection": [
+        "Geavanceerde accountbeveiliging"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Geavanceerde alias functies (mogelijk gemaakt door SimpleLogin)"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Alle ${ BRAND_NAME } producten en functies"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alle basisdiensten van ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Collaborate and share large files": [
+        "Samenwerken en grote bestanden delen"
+      ],
+      "Custom and secure business email": [
+        "Aangepaste en veilige zakelijke e-mail"
+      ],
+      "Custom workspace branding": [
+        "Aangepaste workspace branding"
+      ],
+      "Dedicated servers optimized for streaming": [
+        "Gereserveerde servers geoptimaliseerd voor streamen"
+      ],
+      "Email groups": [
+        "E-mailgroepen"
+      ],
+      "Generate emails with a prompt": [
+        "Genereer e-mails met een prompt"
+      ],
+      "Manage user permissions and access": [
+        "Beheer gebruikersrechten en toegang"
+      ],
+      "Online document editor": [
+        "Online document editor"
+      ],
+      "Passkeys supported": [
+        "Passkeys worden ondersteund"
+      ],
+      "Password health": [
+        "Wachtwoordgezondheid"
+      ],
+      "Password manager": [
+        "Wachtwoordbeheer"
+      ],
+      "Password manager to secure credentials": [
+        "Wachtwoordbeheer om de inloggegevens te beveiligen"
+      ],
+      "Phone support (20+ users)": [
+        "Telefonische ondersteuning (20+ gebruikers)"
+      ],
+      "Private photo backup": [
+        "Privé foto back-up"
+      ],
+      "Proofread and refine your emails": [
+        "Controleer en verfijn uw e-mails"
+      ],
+      "Quickly craft replies": [
+        "Snel antwoorden opstellen"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Regelmatige controle van uw accountbeveiliging. We waarschuwen u als uw zwakke of hergebruikte wachtwoorden hebt die moeten worden bijgewerkt."
+      ],
+      "Save time emailing": [
+        "Bespaar tijd op e-mailen"
+      ],
+      "Secure file storage and sharing": [
+        "Veilig bestanden opslaan en delen"
+      ],
+      "Secure link sharing": [
+        "Veilig delen van links"
+      ],
+      "See team's availability": [
+        "Bekijk beschikbaarheid van het team"
+      ],
+      "Share files with no size limit": [
+        "Deel bestanden zonder maximale grootte"
+      ],
+      "SSO integration": [
+        "SSO-integratie"
+      ],
+      "Support for up to 2 users": [
+        "Ondersteuning voor maximaal 2 gebruikers"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synchroniseer en back-up al uw bestanden op alle apparaten"
+      ],
+      "Tor over VPN": [
+        "Tor via VPN"
+      ],
+      "Unlimited logins and notes": [
+        "Onbeperkt aantal logins en notities"
+      ],
+      "Unlimited logins, notes and credit cards": [
+        "Onbeperkt aantal logins, notities en creditcards"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Onbeperkte gedeelde ${ PASS_SHORT_APP_NAME } kluizen per gebruiker"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Tot ${ n } gebruiker (${ adminsText }, ${ usersText })",
+        "Tot ${ n } gebruikers (${ adminsText }, ${ usersText })"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Gebruik tot maximaal ${ n } apparaat tegelijk",
+        "Gebruik tot maximaal ${ n } apparaten tegelijk"
+      ],
+      "User storage management": [
+        "Beheer gebruikersopslag"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
       ]
     },
     "new_plans: feature info": {
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
+      ],
+      "1 custom email domain": [
+        "1 eigen e-maildomein"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Maak meerdere e-mailadressen aan voor uw online-identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain2 } voor nieuwsabonnementen"
       ]
     },
     "new_plans: heading": {
@@ -5943,6 +7056,33 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd met end-to-end versleuteling."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd door end-to-end versleuteling."
+      ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Alle ${ BRAND_NAME } zakelijke apps en premiumfuncties om uw hele bedrijf te beschermen."
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Versleutelde e-mail en agenda's om mee aan de slag te gaan."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Verbeterde beveiligings- en premiumfuncties voor teams."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Eenmaal betalen, beveilig uw wachtwoorden en identiteit voor altijd."
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Bescherm gevoelige bedrijfsinformatie en werk veilig samen."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Bescherm uw familie met alle premium-functies van ${ plusTitle } voor 6 gebruikers."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Onbeperkte privacy en meer opslagruimte voor maximaal 2 personen."
       ]
     },
     "new_plans: title": {
@@ -5957,6 +7097,9 @@
       ],
       "Switch plans?": [
         "Van abonnement wisselen?"
+      ],
+      "Review subscription": [
+        "Abonnement controleren"
       ]
     },
     "new_plans: tooltip": {
@@ -6137,6 +7280,45 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "U kunt meerdere beheerders hebben. Alle beheerders kunnen gebruikers toevoegen en beheren, maar alleen de primaire beheerder kan de facturatie beheren."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Beveilig uw bestanden met versleutelde cloud-opslag. Inclusief automatisch synchroniseren, versleutelde bestandsdeling en meer."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Aangepaste domeinen voor aliassen, extra postbussen, de mogelijkheid om e-mails met aliassen te versturen en meer"
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Toegewijde servers met toegewijde IP-adressen kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken"
+      ],
+      "Email everyone in a group with a single email address": [
+        "E-mail iedereen in een groep met één e-mailadres"
+      ],
+      "Increase or reallocate storage for a user": [
+        "Opslag voor een gebruiker vergroten of opnieuw toewijzen"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Levenslang toegang tot ${ PASS_APP_NAME } + SimpleLogin premium functies."
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisatiebeheertool waarmee beheerders gebruikers kunnen toevoegen en verwijderen, hun toegang tot ${ BRAND_NAME }-diensten kunnen beheren en andere taken kunnen uitvoeren."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Telefonische ondersteuning is beschikbaar van de ${ BRAND_NAME } klantenondersteuning tijdens Europese kantoortijden voor klanten met 20 of meer gebruikers."
+      ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Bescherm uw echte e-mailadres tegen openbaarmaking of lekken met aliassen (een willekeurig gegenereerd e-mailadres dat e-mails naar uw hoofdinbox stuurt)."
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Routeer uw internetverkeer door het Tor-netwerk met een enkele klik"
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Veilig delen van individuele items met wie u wilt (zelfs als ze geen ${ PASS_APP_NAME } gebruiken)."
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Zie de beschikbaarheid van de deelnemers aan de vergadering en bespaar tijd bij het plannen van vergaderingen"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Upload uw bedrijfslogo om uw teamervaring aan te passen aan de ${ BRAND_NAME } webapps"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -6191,6 +7373,10 @@
       ],
       "Require 2FA": [
         "2FA vereist"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Ondersteuning voor ${ n } aangepast e-maildomein",
+        "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
       ]
     },
     "Note": {
@@ -6204,6 +7390,24 @@
       ],
       "Contact group updated": [
         "Contactgroep bijgewerkt"
+      ],
+      "${ reason } has been disabled": [
+        "${ reason } is uitgezet"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } is aangezet"
+      ],
+      "Link copied to clipboard": [
+        "Link gekopieerd naar klembord"
+      ],
+      "Meeting host copied to clipboard": [
+        "Vergaderhost gekopieerd naar klembord"
+      ],
+      "Meeting ID copied to clipboard": [
+        "Vergadering ID gekopieerd naar klembord"
+      ],
+      "Passcode copied to clipboard": [
+        "Passcode gekopieerd naar klembord"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -6383,6 +7587,15 @@
       ],
       "Set up your organization": [
         "Stel uw organisatie in"
+      ],
+      "Pick a theme": [
+        "Thema selecteren"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Gebruik de app-kiezer linksboven voor de toegang tot alle ${ BRAND_NAME }-diensten: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "U kunt uw thema altijd wijzigen in uw instellingen."
       ]
     },
     "Option": {
@@ -6480,6 +7693,12 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "Veilig delen van kluis"
+      ],
+      "Secure vault, item and link sharing": [
+        "Veilig delen van kluizen, items en links"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Onbeperkt aantal logins, notities, creditcards, en meer"
       ]
     },
     "pass_signup_2023: Title": {
@@ -6490,6 +7709,19 @@
     "pass_signup_2024: Info": {
       "Advanced account protection": [
         "Geavanceerde accountbeveiliging"
+      ],
+      "${ n } user account": [
+        "${ n } gebruikersaccount",
+        "${ n } gebruikersaccounts"
+      ],
+      "Activity log": [
+        "Activiteitenlog"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Beheerpaneel om gebruikers en abonnement te beheren"
+      ],
+      "Team policies": [
+        "Team beleid"
       ]
     },
     "passwordless": {
@@ -6527,6 +7759,12 @@
       ],
       "New credit/debit card": [
         "Nieuwe krediet-/bankkaart"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
+      ],
+      "Bank transfer": [
+        "Bankoverschrijving"
       ]
     },
     "Payments": {
@@ -6541,6 +7779,70 @@
       ],
       "Timeout exceeded": [
         "Time-out overschreden"
+      ],
+      "Billing Country": [
+        "Land van facturering"
+      ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Momenteel is de automatische verlenging van het abonnement uitgeschakeld. Als u het abonnement nu wijzigt, wordt de automatische verlenging opnieuw ingeschakeld."
+      ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Gedurende deze periode kunt u uw abonnement niet wijzigen of annuleren. Wacht tot uw betaling is voltooid voordat u wijzigingen aanbrengt. Bedankt voor uw geduld."
+      ],
+      "Got it": [
+        "Begrepen"
+      ],
+      "I'm purchasing as a business": [
+        "Ik koop dit voor mijn bedrijf."
+      ],
+      "More plans are available in other currencies": [
+        "Er zijn meer abonnementen beschikbaar in andere valuta"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."
+      ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Bij vernieuwing zijn prijswijziging volgen volgende ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Wordt verlengd voor ${ renewPriceStr }, altijd opzegbaar."
+      ],
+      "terms & conditions": [
+        "algemene voorwaarden"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "De kortingscode is geldig voor ${ couponRedemptions } verlenging.",
+        "De kortingscode is geldig voor ${ couponRedemptions } verlengingen."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maand.",
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maanden."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwing. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } per maand. U kunt op elke moment annuleren"
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Dan wordt het automatisch verlengd op ${ renewPriceStr } voor ${ renewalLength } maand. U kunt op elk moment annuleren.",
+        "Dan wordt het automatisch vernieuwd op ${ renewPriceStr } voor ${ renewalLength } maanden. U kunt op elk moment annuleren."
+      ],
+      "This number will be shown on all future invoices": [
+        "Dit nummer zal op alle toekomstige facturen worden getoond."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Deze betaalmethode wordt uw nieuwe standaard voor alle toekomstige verlengingen."
+      ],
+      "VAT number": [
+        "BTW-nummer"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Uw valuta is gewijzigd naar euro (€) omdat SEPA-bankoverschrijvingen alleen betalingen in euro ondersteunen."
+      ],
+      "Your payment is still being processed": [
+        "Uw betaling wordt nog verwerkt"
       ]
     },
     "Payments.Error": {
@@ -6577,6 +7879,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "We adviseren u deze sleutel niet meer te vertrouwen."
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Externe sleutel automatisch opgehaald uit keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Externe sleutel wordt automatisch opgehaald via WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Deze sleutel wordt gebruikt om berichten naar deze contactpersoon te versleutelen"
       ]
     },
     "PGP key warning": {
@@ -6665,6 +7976,51 @@
       ],
       "Your organization name": [
         "Uw organisatienaam"
+      ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "Willekeurige stad"
+      ],
+      "Company name": [
+        "Bedrijfsnaam"
+      ],
+      "Filter quick actions": [
+        "Snelle acties filteren"
+      ],
+      "First name": [
+        "Voornaam"
+      ],
+      "Last name": [
+        "Achternaam"
+      ],
+      "Main street 12": [
+        "Hoofdstraat 12"
+      ],
+      "Postal code": [
+        "Postcode"
+      ],
+      "Search parent folder": [
+        "Zoek in bovenliggende map"
+      ],
+      "Select country": [
+        "Selecteer land"
+      ],
+      "Select state": [
+        "Selecteer provincie"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Deel wat volgens u ${ BRAND_NAME } beter zou kunnen maken"
+      ],
+      "Thomas": [
+        "Thomas"
+      ],
+      "VAT number": [
+        "BTW-nummer"
+      ],
+      "ZIP code": [
+        "Postcode"
       ]
     },
     "Placeholder for contact group name": {
@@ -6792,6 +8148,15 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Probeer ${ PASS_APP_NAME }"
+      ],
+      "Create alias": [
+        "Alias aanmaken"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Gebruikt in Amazon voor winkelen enz."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Wanneer uw e-mailadres gevraagd wordt, geef dan deze alias op. Aliassen worden geleverd door ${ passLink }."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -6802,6 +8167,24 @@
     "Security Center - Info": {
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Ontvang een melding als uw wachtwoord of andere gegevens zijn gelekt van een externe dienst. ${ learnMoreLink }"
+      ],
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } en ${ remainingCount } ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } en 1 ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Een potentieel ${ name } lek werd gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Onze geavanceerde AI-gedreven beveiligingsoplossing ontworpen voor gebruikers die verhoogde bescherming zoeken voor hun accounts. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel is **actief** en beschermt uw account."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Uw informatie is in ten minste één datalek gevonden. Shakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
       ]
     },
     "Select files": {
@@ -6922,6 +8305,18 @@
       ],
       "Support online privacy": [
         "Ondersteun online privacy"
+      ],
+      "1 user": [
+        "1 gebruiker"
+      ],
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } en ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ]
     },
     "specialoffer: Link": {
@@ -6930,11 +8325,53 @@
       ],
       "Upgrade": [
         "Upgraden"
+      ],
+      "Browse securely": [
+        "Veilig surfen"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Haal meer uit ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Krijg onbeperkt aliassen"
+      ],
+      "Guard against threats": [
+        "Beveilig u tegen bedreigingen"
+      ],
+      "Increase your storage": [
+        "Verhoog uw opslagruimte"
+      ],
+      "Keep passwords safe": [
+        "Wachtwoorden veilig houden"
+      ],
+      "Unblock streaming content": [
+        "Deblokkeer streaming content"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Upgraden naar ${ pricingTitle }"
       ]
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Bekijk geblokkeerde inhoud en surf privé. Met 1700 servers in meer dan 60 landen, de hoogste VPN-snelheid, 10 VPN-verbindingen, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Bekijk geblokkeerde inhoud en surf privé. Met 1700 servers in meer dan 60 landen, de hoogste VPN-snelheid, 10 VPN-verbindingen per gebruiker, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Al onze premium diensten met hun hoogste limieten: 100 e-mailadressen, ondersteuning voor 10 aangepaste domeinen, onbeperkt Hide-my-email-aliassen, gedeelde agenda's, versleutelde cloudopslag, versleuteld bestanden delen en meer."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 3 aangepaste e-maildomeinen, 15 e-mailadressen, onbeperkt Hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Perfect voor gezinnen of kleine teams, met voor iedereen een eigen inbox en aliassen. Vereist een aangepast domein."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Ontvang kostenloos de betaalde versies van alle nieuwe privacyservices die we in de toekomst uitbrengen en krijg vroege toegang tot alle toekomstige kenmerken en producten."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
       ]
     },
     "Spotlight": {
@@ -7017,6 +8454,48 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "U verliest de toegang tot onbeperkte logins en notities, onbeperkte hide-my-email aliassen, 20 kluizen, en prioritaire ondersteuning."
+      ],
+      "${ app } storage": [
+        "${ app } opslagruimte"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% vol"
+      ],
+      "contact your administrator": [
+        "neem contact op met uw beheerder"
+      ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "Om ${ BRAND_NAME } producten te blijven gebruiken, maak ruimte vrij of voer een ${ upgrade } uit"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Maak ruimte vrij of ${ upgrade } om e-mail te verzenden of te ontvangen"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Maak ruimte vrij of ${ upgrade } om bestanden te uploaden of te synchroniseren"
+      ],
+      "upgrade for more storage": [
+        "upgrade voor meer opslag"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Uw ${ appStorage } is bijna vol"
+      ],
+      "Your ${ appStorage } is full": [
+        "Uw ${ appStorage } is vol"
+      ],
+      "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
+        "Uw ${ productString } zit ${ percentage }% vol. ${ cta }."
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "Uw ${ productString } zit vol. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Uw opslag is ${ percentage }% vol. ${ cta }."
+      ],
+      "Your storage is full": [
+        "Uw opslag is vol"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Uw opslag is vol. ${ cta }."
       ]
     },
     "Subscribe to calendar modal": {
@@ -7063,6 +8542,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-verbinding per gebruiker",
         "${ n } VPN-verbindingen per gebruiker"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN verbinding voor ${ n } apparaat per gebruiker",
+        "VPN verbinding voor ${ n } apparaten per gebruiker"
       ]
     },
     "Subscription change warning": {
@@ -7083,6 +8566,9 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Uw abonnement was gekocht met een iOS-app. Om wijzigingen te maken of uw betaalgegevens bij te werken, moet u naar de Apple App Store gaan."
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Log in op uw Apple App Store account, selecteer dan op ${ subscriptions }."
       ]
     },
     "Subscription reminder": {
@@ -7175,6 +8661,174 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } dag over",
+        "${ dayDiff } dagen over"
+      ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "${ MAIL_APP_NAME } houdt uw bedrijfsgegevens veilig en laat u versleutelde e-mails verzenden naar iedereen."
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } opslagruimte per gebruiker"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } geeft u toegang tot alle premium functies van ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, en ${ CALENDAR_SHORT_APP_NAME }. Privacy is ingebouwd, zodat u verder kunt, wetende dat uw gegevens en identiteit veilig zijn."
+      ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } geeft u onbeperkte privacy en meer opslagruimte voor tot wel 2 personen."
+      ],
+      "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
+        "${ planName } geeft uw team wat ze nodig hebben om productiever en georganiseerder te zijn in hun werk, met toegang tot alle ${ BRAND_NAME }-apps en hun premium-functies."
+      ],
+      "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
+        "${ planName } geeft uw team wat ze nodig hebben om productiever en beter georganiseerd te zijn, om controle te hebben over hun inbox, planning en meer."
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
+        "${ planName } helpt u verzekeren dat al uw gezinsleden - en hun gegevens - altijd beveiligd zijn wanneer ze online zijn."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName } biedt ${ planMaxSpace } opslag per gebruiker voor e-mails, bijlagen, gebeurtenissen, en bestanden. U komt ook in aanmerking voor jaarlijkse opslagbonussen."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
+        "${ planName } biedt ${ planMaxSpace } aan opslag per gebruiker voor e-mails, bijlagen, gebeurtenissen, en wachtwoorden. U komt ook in aanmerking voor jaarlijkse opslagbonussen."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } agenda per gebruiker",
+        "${ planNumberOfCalendars } agenda's per gebruiker"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigen e-maildomein",
+        "${ planNumberOfDomains } eigen e-maildomeinen"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailadres",
+        "${ planNumberOfEmails } e-mailadressen"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } e-mailadres per gebruiker",
+        "${ planNumberOfEmails } e-mailadressen per gebruiker"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } gebruiker",
+        "${ planNumberOfUsers } gebruikers"
+      ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "${ PROTON_SENTINEL_NAME } geavanceerde accountbeveiliging"
+      ],
+      "2 users": [
+        "2 gebruikers"
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Nadat uw ${ planName }abonnement is verlopen, wordt u gedowngraded naar ${ BRAND_NAME } Free, dat slechts 1 GB aan Mailopslag en maximaal 5 GB aan Drive opslagruimte biedt. U verliest ook alle eerder toegekende opslagbonussen."
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Nadat uw ${ planName }-abonnement verloopt, wordt u gedowngraded naar ${ BRAND_NAME } Free, dat tot slechts 1 GB aan Mail-opslag en 5 GB aan Drive-opslag biedt. Uw team zal onderbrekingen ondervinden in hun werk, aangezien extra gebruikers niet ondersteund worden binnen het gratis abonnement."
+      ],
+      "All you need for your business": [
+        "Alles wat u nodig heeft voor uw bedrijf"
+      ],
+      "Any custom email domains will be disabled": [
+        "Eigen e-maildomeinen worden uitgeschakeld"
+      ],
+      "Automatic email forwarding": [
+        "Automatisch e-mail doorsturen"
+      ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "Bouw vertrouwen en merkherkenning op met professionele e-mailadressen met uw eigen domeinnaam."
+      ],
+      "Catch-all email address": [
+        "Catch-all e-mailadres"
+      ],
+      "Desktop app and email client support (via IMAP)": [
+        "Desktopapp en e-mailclientondersteuning (via IMAP)"
+      ],
+      "Email productivity features": [
+        "E-mailproductiviteitsfuncties"
+      ],
+      "Extra storage and users": [
+        "Extra opslag en gebruikers"
+      ],
+      "Folders, labels and filters": [
+        "Mappen, labels en aangepaste filters"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mappen, labels en aangepaste filters"
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "Hoe we terugvochten toen ${ BRAND_NAME } werd geblokkeerd in een agressieve campagne."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "Hoe we lokale activisten hebben ondersteund toen hun privacy en vrijheid van meningsuiting werd bedreigd."
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "Als u de limiet van het gratis abonnement overschrijdt, kunt u niet of geen:"
+      ],
+      "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Als uw gebruik de limieten van het gratis abonnement overschrijdt, kunt u beperkte toegang tot productfuncties en uw gegevens ervaren."
+      ],
+      "Invited members will be removed from your organization": [
+        "Uitgenodigde leden zullen uit uw organisatie worden verwijderd"
+      ],
+      "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
+        "Houd uw team veilig onderweg met onze apps voor web, iOS, Android, Windows, Mac en Linux."
+      ],
+      "Learn more": [
+        "Meer info"
+      ],
+      "Limitations of the free plan:": [
+        "Beperkingen van het gratis abonnement:"
+      ],
+      "Make your business stand out": [
+        "Laat uw bedrijf opvallen"
+      ],
+      "Productivity features": [
+        "Productiviteitsfuncties"
+      ],
+      "See your colleagues’ availability": [
+        "Bekijk de beschikbaarheid van uw collega's"
+      ],
+      "Stay secure and connected anywhere": [
+        "Blijf overal veilig en verbonden"
+      ],
+      "Support your compliance objectives": [
+        "Ondersteun uw compliancedoelstellingen"
+      ],
+      "Unlimited privacy for two": [
+        "Onbeperkte privacy voor twee"
+      ],
+      "Upload any new files": [
+        "Nieuwe bestanden toevoegen"
+      ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "Gebruikersabonnementen zijn de enige inkomsten van ${ BRAND_NAME }. Uw steun houdt ons onafhankelijk, ondersteunt onze missie voor online privacy en helpt activisten en organisaties die strijden voor vrijheid."
+      ],
+      "Users won’t be able to manage their calendars": [
+        "Gebruikers zullen hun agenda's niet kunnen beheren"
+      ],
+      "Users won’t be able to send emails": [
+        "Gebruikers zullen geen e-mails kunnen verzenden"
+      ],
+      "Users won’t be able to upload files on their devices": [
+        "Gebruikers zullen geen bestanden kunnen uploaden op hun toestellen"
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "Wanneer u ${ planName } annuleert, wordt u gedowngraded naar ${ BRAND_NAME } Free, die slechts 1 GB aan Mailopslag en maximaal 5 GB aan Drive opslagruimte biedt. U verliest ook alle eerder toegekende opslagbonussen."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Wanneer u ${ planName } annuleert, wordt u gedowngraded naar ${ BRAND_NAME } Free, dat tot slechts 1 GB aan Mail-opslag en 5 GB aan Drive-opslag biedt. Uw team zal onderbrekingen ondervinden in hun werk, aangezien extra gebruikers niet ondersteund worden binnen het gratis abonnement."
+      ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Wanneer uw ${ planName } abonnement op ${ expiryDate } eindigt, wordt u gedegradeerd tot het ${ BRAND_NAME } Gratis abonnement."
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "U hebt nog ${ expiryDate } te gaan op uw ${ planName }-abonnement. We zullen het tegoed voor de resterende tijd toevoegen aan uw ${ BRAND_NAME } Account. Zorg ervoor dat u de limieten van het gratis abonnement niet overschrijdt voordat u deze annuleert. ${ learnMoreLink }"
+      ],
+      "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
+        "Uw ${ planName }abonnement houdt niet alleen uw bedrijfsgegevens en communicatie veilig. Het ondersteunt uw compliancedoelstellingen, zorgt ervoor dat uw bedrijf erbovenuit springt en het houdt uw team verbonden."
       ]
     },
     "Subscription renewal state": {
@@ -7368,6 +9022,24 @@
       ],
       "You have successfully unsubscribed": [
         "U bent succesvol afgemeld"
+      ],
+      "Alias saved and copied": [
+        "Alias opgeslagen en gekopieerd"
+      ],
+      "Billing details updated": [
+        "Factuurgegevens bijgewerkt"
+      ],
+      "Invitation rejected": [
+        "Uitnodiging afgewezen"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Sneltoetsvoorkeuren bijgewerkt"
+      ],
+      "Problem reported": [
+        "Probleem gerapporteerd"
+      ],
+      "You have successfully canceled your subscription.": [
+        "U heeft uw abonnement succesvol geannuleerd."
       ]
     },
     "Suffix": {
@@ -7381,6 +9053,9 @@
     "Suffix for price": {
       "per month": [
         "per maand"
+      ],
+      "per user per month": [
+        "per gebruiker per maand"
       ]
     },
     "Tab subscription modal": {
@@ -7441,6 +9116,15 @@
       ],
       "vCard field": [
         "vCard-veld"
+      ],
+      "Display name": [
+        "Weergavenaam"
+      ],
+      "First name": [
+        "Voornaam"
+      ],
+      "Last name": [
+        "Achternaam"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -8005,6 +9689,136 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "${ appName } keyboard shortcuts": [
+        "${ appName } sneltoetsen"
+      ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } e-mailadres",
+        "${ emailsCount } e-mailadressen"
+      ],
+      "Account security": [
+        "Accountbeveiliging"
+      ],
+      "Account temporarily locked": [
+        "Account tijdelijk geblokkeerd"
+      ],
+      "Add a custom logo": [
+        "Voeg een aangepast logo toe"
+      ],
+      "All settings": [
+        "Alle instellingen"
+      ],
+      "Birthday": [
+        "Geboortedatum"
+      ],
+      "Cannot add more addresses": [
+        "Kan geen extra adressen toevoegen"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Claim uw ${ MAIL_APP_NAME }-adres"
+      ],
+      "Coupon": [
+        "Kortingscode"
+      ],
+      "Day theme": [
+        "Dag thema"
+      ],
+      "Download the app": [
+        "Download de app"
+      ],
+      "Edit billing address": [
+        "Factuuradres bewerken"
+      ],
+      "Enable 2FA": [
+        "2FA inschakelen"
+      ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Download de ${ appName[APP_NAME] }-apps"
+      ],
+      "Help and feedback": [
+        "Hulp en feedback"
+      ],
+      "Help center": [
+        "Helpcentrum"
+      ],
+      "High security for your account": [
+        "Hoge beveiliging voor uw account"
+      ],
+      "How does it all work?": [
+        "Hoe werkt het?"
+      ],
+      "Import groups": [
+        "Importeer groepen"
+      ],
+      "Information exposed in breach": [
+        "Informatie die is blootgesteld bij datalek"
+      ],
+      "Make a secure connection your default": [
+        "Maak een beveiligde verbinding uw standaard"
+      ],
+      "Need more aliases?": [
+        "Meer aliassen nodig?"
+      ],
+      "Night theme": [
+        "Nacht thema"
+      ],
+      "No breaches detected": [
+        "Geen inbreuken gedetecteerd"
+      ],
+      "Notes": [
+        "Notities"
+      ],
+      "One email, many recipients": [
+        "Één e-mail, veel ontvangers"
+      ],
+      "Org setup": [
+        "Org instelling"
+      ],
+      "Organization setup": [
+        "Organisatie configuratie"
+      ],
+      "Private browsing vs VPN": [
+        "Privé browsen versus VPN"
+      ],
+      "Security center": [
+        "Beveiligingscentrum"
+      ],
+      "Set recovery phrase": [
+        "Herstelzin instellen"
+      ],
+      "Subscription canceled": [
+        "Abonnement opgezegd"
+      ],
+      "Upgrade to ${ planName }": [
+        "Upgraden naar ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Upgrade uw productiviteit voor ${ formattedPrice } met ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Upgrade uw opslag voor ${ formattedPrice } met ${ planName }"
+      ],
+      "VPN explained": [
+        "VPN uitgelegd"
+      ],
+      "What can a VPN protect you from?": [
+        "Waartegen kan een VPN u beschermen?"
+      ],
+      "What is a VPN?": [
+        "Wat is een VPN?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Wanneer is het erg belangrijk om een VPN te gebruiken?"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Uw ${ planName } gratis proefperiode eindigt op ${ textDate }"
+      ],
+      "Your ${ planName } subscription has started": [
+        "Uw ${ planName }-abonnement is nu gestart."
+      ],
+      "Your account is protected": [
+        "Uw account is beschermd"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -8081,6 +9895,30 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"
+      ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "Automatisch wisselen tussen uw favoriete thema's voor dag en nacht met de dag- en nachtmodus van uw systeem"
+      ],
+      "Hide side panel": [
+        "Verberg zijpaneel"
+      ],
+      "Load image": [
+        "Laad foto"
+      ],
+      "Not all information listed here was exposed for all users.": [
+        "Niet alle hier vermelde informatie werd voor alle gebruikers blootgesteld."
+      ],
+      "Show side panel": [
+        "Toon zijpaneel"
+      ],
+      "The image could not be loaded": [
+        "De afbeelding kan niet worden geladen"
+      ],
+      "The image could not be loaded using proxy": [
+        "De afbeelding kan niet worden geladen via een proxy"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Tenzij ze worden ontcijferd, blijven versleutelde wachtwoorden veilig, zelfs als ze worden blootgesteld."
       ]
     },
     "tooltip": {
@@ -8143,6 +9981,22 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } land",
         "${ numberOfServers } in ${ numberOfCountries } landen"
+      ],
+      "${ n } device": [
+        "${ n } apparaat",
+        "${ n } apparaten"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } land",
+        "${ numberOfCountries } landen"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Selecteert automatisch uit ${ numberOfCountries } land",
+        "Selecteert automatisch uit ${ numberOfCountries } landen"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servers in ${ numberOfCountries }+ land",
+        "Servers in ${ numberOfCountries }+ landen"
       ]
     },
     "vpn_2step: feature": {
@@ -8217,6 +10071,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Uw gratis proefversie eindigt op ${ textDate }. ${ action }"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Weet u zeker dat u deze contactgroepen permanent wilt verwijderen?"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
@@ -8334,6 +10191,1786 @@
       ],
       "Yearly": [
         "Jaarlijks"
+      ]
+    },
+    "action": {
+      "Search messages": [
+        "Doorzoek berichten"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Kies deze deal"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "200 GB storage": [
+        "200 GB opslagruimte"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB versleutelde opslagruimte"
+      ],
+      "Add unlimited credit cards": [
+        "Onbeperkt aantal kredietkaarten toevoegen"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Alle premium functies van ${ BRAND_NAME } Mail, Pass, VPN, Drive, en Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokkeer advertenties, trackers en malware"
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Kortingen zijn gebaseerd op de standaard maandelijkse prijs. Aan het einde van de factureringscyclus wordt uw abonnement verlengd tegen het standaard jaarlijkse tarief."
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Verdubbel uw versleutelde opslag – krijg 1 TB voor al uw gegevens"
+      ],
+      "Encrypted password manager": [
+        "Versleutelde wachtwoordbeheerder"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Hier is een exclusief geschenk om onze reis samen te vieren."
+      ],
+      "High speed streaming with VPN": [
+        "Streamen aan hoge snelheid met VPN"
+      ],
+      "of privacy": [
+        "van privacy"
+      ],
+      "Online document editor": [
+        "Online document editor"
+      ],
+      "Online privacy for up to 2 people": [
+        "Online privacy voor maximaal 2 personen"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Online privacy voor het hele gezin (tot 6 gebruikers)"
+      ],
+      "Protect up to 10 devices": [
+        "Bescherm tot 10 apparaten"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Bespaar veel op premium Drive functies met een tijdelijke korting."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Bespaar veel op premium Mail functies met een tijdelijke korting."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Bespaar veel op premium Pass functies met een tijdelijke korting."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Bespaar veel op premium VPN functies met een tijdelijke korting."
+      ],
+      "Save time with built-in 2FA": [
+        "Bespaar tijd met ingebouwde 2FA"
+      ],
+      "Secure email with unlimited aliases": [
+        "Beveiligde e-mail met onbeperkt aantal aliassen"
+      ],
+      "Select any server": [
+        "Selecteer een willekeurige server"
+      ],
+      "Share passwords easily": [
+        "Eenvoudig wachtwoorden delen"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me adres"
+      ],
+      "Stream your favorite content": [
+        "Stream uw favoriete inhoud"
+      ],
+      "thanks to you": [
+        "dankzij u"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Verdrievoudig uw versleutelde opslag – krijg 3 TB voor al uw gegevens"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Onbeperkt aantal mappen, labels en filters"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ],
+      "years": [
+        "jaren"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubileumaanbieding"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
+      "/ month": [
+        "/ maand"
+      ],
+      "12 months": [
+        "12 maanden"
+      ],
+      "15 months": [
+        "15 maanden"
+      ],
+      "24 months": [
+        "24 maanden"
+      ],
+      "30 months": [
+        "30 maanden"
+      ],
+      "for ${ durationDeal }": [
+        "voor ${ durationDeal }"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Til e-mailproductiviteit naar een hoger niveau. Laat ${ BRAND_NAME } Scribe u helpen bij het schrijven, beantwoorden en proeflezen van uw e-mails."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Abonnement opzeggen"
+      ],
+      "Keep subscription": [
+        "Abonnement behouden"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Uw gratis proefversie eindigt over ${ timeRemaining }"
+      ]
+    },
+    "bf2023: Deal details": {
+      "1 user": [
+        "1 gebruiker"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 gebruikers"
+      ],
+      "Premium Password Manager": [
+        "Premium wachtwoordmanager"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 dagen geld-terug-garantie"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 hide-my-email-aliassen, gedeelde agenda's en meer."
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-desktopapp"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } en ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } opslagruimte"
+      ],
+      "1 TB total": [
+        "1 TB totaal"
+      ],
+      "1 user": [
+        "1 gebruiker"
+      ],
+      "1 user account": [
+        "1 gebruikersaccount"
+      ],
+      "10 email addresses": [
+        "10 e-mailadressen"
+      ],
+      "2 users": [
+        "2 gebruikers"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 gebruikersaccounts"
+      ],
+      "6 users": [
+        "6 gebruikers"
+      ],
+      "8500+ servers across 110+ countries": [
+        "Meer dan 8.500 servers in meer dan 110 landen"
+      ],
+      "Ad-blocker and malware protection": [
+        "Advertentieblokkering en bescherming tegen malware"
+      ],
+      "Admin panel to manage your family": [
+        "Beheerderpaneel om uw gezin te beheren"
+      ],
+      "Advanced account protection": [
+        "Geavanceerde accountbeveiliging"
+      ],
+      "Easily add or remove users": [
+        "Eenvoudig gebruikers toevoegen of verwijderen"
+      ],
+      "High speed streaming": [
+        "Streamen met hoge snelheid"
+      ],
+      "One-time payment, lifetime deal": [
+        "Eenmalige betaling, levenslange deal"
+      ],
+      "Online document editor": [
+        "Online document editor"
+      ],
+      "Password health alerts": [
+        "Wachtwoordgezondheidswaarschuwingen"
+      ],
+      "Private photo backup": [
+        "Privé foto back-up"
+      ],
+      "Protect 10 devices at a time": [
+        "Bescherm 10 apparaten tegelijkertijd"
+      ],
+      "Secure file storage & sharing": [
+        "Veilig bestanden opslaan en delen"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Onbeperkt aantal mappen, labels en filters"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Onbeperkt inloggen, kredietkaarten, hide-my-email aliassen en meer"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ],
+      "Version history": [
+        "Versiegeschiedenis"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ]
+    },
+    "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "U betaalt ${ amount } eenmaal"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Verlenging na 1 maand voor ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Bekijk geblokkeerde inhoud en surf privé. Met meer dan 8.500 servers in meer dan 110 landen, 10 apparaten, high-speed streaming, advertentieblokkering en malwarebescherming, VPN Accelerator en meer."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Bekijk content van streamingdiensten, waaronder Netflix, Disney+, Prime Video, en meer, waar u maar wilt."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde hide-my-email aliassen, delen, geïntegreerde 2FA, ${ DARK_WEB_MONITORING_NAME } en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer.",
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer.",
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief online documenteditor, foto back-up, versiegeschiedenis, versleuteld bestanden delen en meer."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Het speciaal ontworpen NetShield beschermt uw apparaten en versnelt uw browsen door advertenties, trackers en malware te blokkeren."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Opslagruimte wordt gedeeld binnen alle ${ BRAND_NAME }-diensten."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } desktop-app"
+      ]
+    },
+    "Cancellation reminder": {
+      "Reactivate by ${ formattedEndDate } to keep these features:": [
+        "Heractiveer voor ${ formattedEndDate } om de volgende functies te behouden:"
+      ],
+      "Reactivate subscription": [
+        "Heractiveer abonnement"
+      ],
+      "Your subscription is ending soon": [
+        "Uw abonnement verloopt binnenkort"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } opslagruimte"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } e-mailopslag"
+      ],
+      "Advanced account protection": [
+        "Geavanceerde accountbeveiliging"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium functies van ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Cancel and downgrade": [
+        "Annuleren en downgraden"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Cloud opslag en het delen van grote bestanden"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Versleutelde cloudopslag voor foto's en documenten"
+      ],
+      "Encrypted password manager": [
+        "Versleutelde wachtwoordbeheerder"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Ons standaard, gratis plan met end-to-end versleutelde email en opslag. Geen premium functies inbegrepen."
+      ],
+      "Save ${ upsellSavings }": [
+        "Bespaar ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Bespaar geld met ${ upsellPlanName }"
+      ],
+      "Secure personal and shared calendar": [
+        "Veilige persoonlijke en gedeelde agenda"
+      ],
+      "Try ${ planName }": [
+        "Probeer ${ planName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "Probeer ${ upsellPlanName } en behoud toegang tot alle premium email- en kalenderfuncties."
+      ],
+      "Ultra fast and private VPN": [
+        "Ultrasnelle en private VPN"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Contact foto"
+      ]
+    },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Voor alle ${ BRAND_NAME }-diensten"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Voor ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Voor ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Voor ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Voor ${ VPN_APP_NAME }"
+      ]
+    },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Dagelijks, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Elke ${ interval } dag, ${ timesString }",
+        "Elke ${ interval } dagen, ${ timesString }"
+      ]
+    },
+    "Daily recurring event, frequency (until)": {
+      "Daily, ${ untilString }": [
+        "Dagelijks, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Elke ${ interval } dag, ${ untilString }",
+        "Elke ${ interval } dagen, ${ untilString }"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Help ons verbeteren"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Bevestig het verlies van ${ PASS_APP_NAME } speciale korting"
+      ],
+      "Remove discount": [
+        "Korting verwijderen"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Uw ${ PLAN_NAMES[PLANS.PASS] }-abonnement heeft een speciale prijs van ${ price } per jaar. Als u downgrade naar een Free abonnement, zult u permanent uw korting verliezen, zelfs als u in de toekomst opnieuw upgrade."
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Downloaden voor Linux"
+      ],
+      "Download for macOS": [
+        "Download voor macOS"
+      ],
+      "Download for Windows": [
+        "Download voor Windows"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Uitgebreide versiegeschiedenis bekijken"
+      ],
+      "Priority support": [
+        "Prioriteitsondersteuning"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstvelden zijn optioneel. De informatie die u in dit formulier verstrekt zal alleen verschijnen op in de toekomst uitgegeven facturen en zal geen invloed hebben op bestaande facturen."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Tekstvelden zijn optioneel. De informatie die u in dit formulier opgeeft, zal alleen de door u geselecteerde factuur wijzigen en niet uw toekomstige factuurgegevens."
+      ]
+    },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "LET OP:\n${ eventComment }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "BESCHRIJVING:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } werd geannuleerd."
+      ],
+      "All events in this series were updated.": [
+        "Alle gebeurtenissen in deze serie zijn bijgewerkt."
+      ],
+      "Here's what changed:": [
+        "Dit is wat er is veranderd:"
+      ],
+      "NOTE:": [
+        "LET OP:"
+      ],
+      "This event occurrence was canceled.": [
+        "Deze afspraakgebeurtenis werd geannuleerd."
+      ],
+      "This event occurrence was updated.": [
+        "Deze afspraakgebeurtenis werd bijgewerkt."
+      ],
+      "This event was updated.": [
+        "Deze afspraak werd bijgewerkt."
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "TIJD:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "TIJD:\n${ formattedStart } (hele dag)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "TIJD:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Verwijderd"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "LOCATIE:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } heeft uw uitnodiging voor ${ eventTitle } geaccepteerd"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } heeft uw uitnodiging voor ${ eventTitle } afgewezen"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } heeft voorlopig uw uitnodiging voor ${ eventTitle } geaccepteerd"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Vertrouwd contact"
+      ]
+    },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "Weergavenaam kan niet leeg zijn"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Onverwachte fout"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB opslagruimte"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Opslagruimte wordt gedeeld tussen familieleden op ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Uitnodiging afwijzen"
+      ],
+      "Got it": [
+        "Begrepen"
+      ],
+      "Switch plans": [
+        "Van abonnement wisselen"
+      ],
+      "View the invitation": [
+        "Bekijk de uitnodiging"
+      ],
+      "View the invitations": [
+        "Bekijk de uitnodigingen"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "Tot 6 gebruikers"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "${ BRAND_NAME } groups": [
+        "${ BRAND_NAME }-groepen"
+      ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Accounts met een eigen domein kunnen zich niet aansluiten bij een Family-abonnement."
+      ],
+      "customer support": [
+        "klantondersteuning"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Family-abonnementen bieden op dit moment geen ondersteuning voor externe accounts. Maak een ${ BRAND_NAME }-adres aan voor u zich hierbij aansluit. ${ addressSettingsLink }"
+      ],
+      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
+        "Als u de uitnodiging accepteert, zetten we uw huidige abonnement om en wordt een eventueel resterend saldo teruggestort."
+      ],
+      "Invited by: ${ inviteEmail }": [
+        "Uitgenodigd door: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Levenslange accounts kunnen niet deelnemen aan een Family-abonnement."
+      ],
+      "Manage addresses": [
+        "Adressen beheren"
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Eigenaren van een abonnement met leden kunnen zich niet aansluiten bij een ander Family-abonnement."
+      ],
+      "Sorry, you can't switch plans at this time.": [
+        "U kunt op dit moment niet van abonnement wisselen."
+      ],
+      "Storage assigned to you: ${ assignedStorage }": [
+        "Aan u toegewezen opslagruimte: ${ assignedStorage }"
+      ],
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Het abonnement zal worden gefactureerd aan de primaire beheerder van dit abonnement."
+      ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "U bent uitgenodigd u aan te sluiten bij ${ invite.OrganizationName }"
+      ],
+      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
+        "U kunt slechts 3 uitnodigingen accepteren in een periode van 6 maanden. Neem contact op met ${ supportLink } als hierop een uitzondering moet worden gemaakt."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "U kunt deze uitnodiging niet accepteren met uw huidige abonnement."
+      ],
+      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
+        "U bent uitgenodigd u aan te sluiten bij ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have successfully joined the family group": [
+        "U hebt zich succesvol aangesloten bij de familiegroep"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "U heeft onbetaalde facturen. Betaal deze voordat u zich aansluit bij een Family-abonnement"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "U bent uitgenodigd om uw ${ BRAND_NAME } account te linken aan dit familieplan en samen te genieten van de premium functies van ${ brandOrAppName }."
+      ],
+      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
+        "Uw account heeft meer e-mailadressen dan is toegestaan in dit abonnement. ${ addressSettingsLink }"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "Uw account gebruikt ${ usedSpace } aan opslagruimte. Dat is meer dan de ${ inviteSpace } die aan u is toegewezen. Verwijder gegevens of vraag de abonnementsbeheerder uw opslagruimte uit te breiden."
+      ]
+    },
+    "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "Configureer uw gezinsaccount en nodig gebruikers uit"
+      ],
+      "Set up your family": [
+        "Uw gezin configureren"
+      ],
+      "Set up your family account": [
+        "Stel je familie account in"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Met 2700 servers in meer dan 65 landen, verbinding met maximaal 10 apparaten, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Ondersteuning voor 3 aangepaste e-maildomeinen, 90 e-mailadressen, onbeperkt Hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Groot"
+      ],
+      "Medium (recommended)": [
+        "Gemiddeld (aanbevolen)"
+      ],
+      "Small": [
+        "Klein"
+      ],
+      "Very large": [
+        "Zeer groot"
+      ],
+      "Very small": [
+        "Zeer klein"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Deelnemen aan Google Meet"
+      ],
+      "Joining instructions": [
+        "Instructies om deel te nemen"
+      ],
+      "Less details": [
+        "Minder details"
+      ],
+      "Meeting host:": [
+        "Gastheer van de bijeenkomst:"
+      ],
+      "Meeting link:": [
+        "Meeting link:"
+      ],
+      "More details": [
+        "Meer details"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Agenda-tijdzone niet ondersteund"
+      ],
+      "Edited event not supported": [
+        "Bewerkte afspraak niet ondersteund"
+      ],
+      "End time out of bounds": [
+        "Eindtijd valt buiten de grenzen"
+      ],
+      "Event validation failed": [
+        "Validatie van afspraak mislukt"
+      ],
+      "Floating times not supported": [
+        "Zwevende tijden niet ondersteund"
+      ],
+      "Malformed all-day event": [
+        "Misvormde afspraak gedurende de hele dag"
+      ],
+      "Malformed end time": [
+        "Misvormde eindtijd"
+      ],
+      "Malformed recurring event": [
+        "Misvormde periodieke afspraak"
+      ],
+      "Malformed start time": [
+        "Misvormde begintijd"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Alleen de Gregoriaanse agendaschaal is toegestaan"
+      ],
+      "Recurring event has no occurrences": [
+        "Terugkerende afspraak heeft geen voorvallen"
+      ],
+      "Recurring rule not supported": [
+        "Herhalingsvoorwaarde niet ondersteund"
+      ],
+      "Start time out of bounds": [
+        "Begintijd valt buiten de grenzen"
+      ],
+      "Time zone not supported": [
+        "Tijdzone niet ondersteund"
+      ]
+    },
+    "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } opdracht gevonden.",
+        "${ filteredList.length } opdrachten gevonden."
+      ],
+      "Optional": [
+        "Optioneel"
+      ],
+      "Selected color:": [
+        "Geselecteerde kleur:"
+      ]
+    },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Hoe een contante betaling versturen?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Instructies kan u vinden in het artikel: ${ howToSendCashArticleUrl }"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } map geselecteerd",
+        "${ selectedFoldersCount } mappen geselecteerd"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } label geselecteerd",
+        "${ selectedFoldersCount } labels geselecteerd"
+      ]
+    },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Van: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Aan: ${ to }"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Meer info"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Om ${ BRAND_NAME } te blijven gebruiken, moet u ervoor zorgen dat uw premium functies niet meer in gebruik zijn of uw abonnement upgraden."
+      ],
+      "upgrade for more storage": [
+        "upgrade voor meer opslag"
+      ],
+      "Upgrade to restore full access": [
+        "Upgrade om volledige toegang te herstellen"
+      ],
+      "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
+        "Uw ${ driveStorage } is vol. Voor het verzenden of ontvangen van e-mails, maak ruimte vrij of ${ cta }."
+      ],
+      "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
+        "Uw ${ mailStorage } is vol. Voor het verzenden of ontvangen van e-mails, maak ruimte vrij of ${ cta }."
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Uw account loopt het risico om te worden verwijderd. Om het verlies van gegevens te voorkomen vraag uw beheerder om te upgraden. ${ cta }"
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Uw opslag is vol. Om ${ BRAND_NAME } producten te kunnen blijven gebruiken, maakt u ruimte vrij of voert u een ${ cta } uit."
+      ],
+      "Your subscription has ended. ${ cta } and to avoid data loss.": [
+        "Uw abonnement is afgelopen. ${ cta } en om het verlies van gegevens te voorkomen."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } inschakelen"
+      ]
+    },
+    "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Elke ${ interval } maand ${ onDayString }, ${ timesString }",
+        "Elke ${ interval } maanden ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Maandelijks ${ onDayString }, ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Elke ${ interval } maand ${ onDayString }, ${ untilString }",
+        "Elke ${ interval } maanden ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Maandelijks ${ onDayString }, ${ untilString }"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } beheerder",
+        "${ admins } beheerders"
+      ],
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
+      ]
+    },
+    "new_plans: Subtext": {
+      "Starting from ${ priceLine }": [
+        "Vanaf ${ priceLine }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "De gereduceerde prijs van ${ priceCoupon } is geldig voor de eerste maand. Hierna wordt uw abonnement automatisch verlengd voor ${ priceLine }. U kunt op ieder moment annuleren."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Ontgrendel alle ${ BRAND_NAME } premium producten en functies voor ${ priceLine }. U kunt op ieder moment annuleren."
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Sommige afbeeldingen zijn niet geüpload vanwege dubbele bestandsnamen in de huidige selectie."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Selecteer waar ${ BRAND_NAME } toegang toe heeft: uw e-mailberichten en -instellingen bekijken, uw contacten bekijken en downloaden, al uw agenda's bekijken en downloaden die u gebruikt vanuit Google Calendar."
+      ]
+    },
+    "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Onbeperkt voor 12 maanden"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } voor 12 maanden"
+      ],
+      "${ pricingTitle } offer expires today!": [
+        "${ pricingTitle } aanbieding verloopt vandaag!"
+      ],
+      "Don’t show this again": [
+        "Toon dit niet opnieuw"
+      ],
+      "Don’t show this offer again": [
+        "Toon deze aanbieding niet opnieuw"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Krijg ${ BRAND_NAME } Unlimited"
+      ],
+      "Get the deal": [
+        "Pak deze deal"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Laatste kans om 80% korting te krijgen op uw eerste maand ${ plan }."
+      ],
+      "Last day to save": [
+        "Laatste dag om op te besparen"
+      ],
+      "Limited-time offer": [
+        "Tijdelijke aanbieding"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Tijdelijke aanbieding, geldig voor uw eerste maand"
+      ],
+      "Maybe later": [
+        "Misschien later"
+      ],
+      "Offer expires ${ formattedDate }.": [
+        "Aanbieding vervalt op ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Betaal jaarlijks om te genieten van ons beste aanbod"
+      ],
+      "Save": [
+        "Opslaan"
+      ],
+      "Save big when you pay annually": [
+        "Bespaar veel wanneer u jaarlijks betaalt"
+      ],
+      "Special offer": [
+        "Speciale aanbieding"
+      ],
+      "This offer won't be shown again.": [
+        "Deze aanbieding wordt niet meer getoond."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Upgrade uw productiviteit voor slechts ${ pricingTitle } met ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Upgrade uw opslag voor slechts ${ pricingTitle } met ${ planName }"
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Wanneer u overschakelt van een maandelijks naar jaarabonnement."
+      ],
+      "You currently pay": [
+        "U betaalt momenteel"
+      ],
+      "Your subscription renews soon": [
+        "Uw abonnement vernieuwt binnenkort"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Versleutelde wachtwoordbeheerder"
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 meer premium functies"
+      ],
+      "500 GB secure storage": [
+        "500 GB veilige opslag"
+      ],
+      "Advanced threat protection": [
+        "Geavanceerde bedreigingsbeveiliging"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Samenwerken met niet-${ BRAND_NAME }-gebruikers"
+      ],
+      "Custom email domain": [
+        "Aangepast e-maildomein"
+      ],
+      "Edit docs online": [
+        "Bewerk documenten online"
+      ],
+      "Email addresses": [
+        "E-mailadressen"
+      ],
+      "File version history (over 1 week)": [
+        "Versiegeschiedenis (meer dan 1 week)"
+      ],
+      "Free": [
+        "Free"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Opslag"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultrasnelle VPN-servers in 110+ landen"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Onbeperkt aliassen om uw identiteit te beschermen"
+      ]
+    },
+    "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " bezoek ons ${ helpCenterLink } of ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "U kunt op elk moment annuleren vóór ${ cancelDate }."
+      ],
+      "Cancel anytime before then.": [
+        "U kunt op elk moment ervoor annuleren."
+      ],
+      "contact our support team": [
+        "neem contact op met ons support team"
+      ],
+      "Continue": [
+        "Ga verder"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Profiteer tot ${ trialEndsOnFormatted } van gratis beveiligingsfuncties voor bedrijven."
+      ],
+      "help center": [
+        "helpcentrum"
+      ],
+      "If you need help,": [
+        "Als u hulp nodig heeft,"
+      ],
+      "Once your full subscription starts...": [
+        "Zodra uw volledig abonnement ingaat..."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Kunt u nog steeds annuleren binnen 30 dagen en pro-rata terugbetaling krijgen."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "U kunt nog steeds annuleren binnen 30 dagen en een pro-rata restitutie krijgen."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "U kunt ${ planTitle } gebruiken totdat de proefversie eindigt en u wordt niets in rekening gebracht."
+      ],
+      "Your free trial has started": [
+        "Uw gratis proefversie is gestart"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Uw volledige ${ planTitle } abonnement begint op ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "U kunt kosteloos gebruikmaken van ${ planTitle } totdat de proefversie eindigt."
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Alle premium functionaliteiten. 6 gebruikers. 1 eenvoudig abonnement."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Jaarlijks gefactureerd aan ${ yearlyPrice }. Spaar ${ yearlySavedPrice } met ${ passFamilyPlanName } (in plaats van 6 individuele ${ passPlusPlanName } abonnementen)"
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Exclusieve aanbieding alleen beschikbaar voor ${ PASS_APP_NAME } vroege supporters."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Neem het voor ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Ontdek ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Tijdelijk aanbieding."
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Bedrijfsnaam gebruiken"
+      ],
+      "Use personal name": [
+        "Gebruik persoonlijke naam"
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kaart eindigend op ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Bankoverschrijving - ${ details }"
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsserviceprovider, om uw bank opdracht te geven om uw factuur naar behoren in rekening te brengen. U kunt een restitutie ontvangen binnen 8 weken van de betaaldatum, onder de voorwaarden van uw overeenkomst met uw bank."
+      ],
+      "Street address, postal code, and city": [
+        "Straatnaam, postcode en plaats"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Add ABN": [
+        "ABN toevoegen"
+      ],
+      "Add Business Number": [
+        "Ondernemingsnummer toevoegen"
+      ],
+      "Add EIN": [
+        "EIN toevoegen"
+      ],
+      "Add VAT number": [
+        "BTW-nummer toevoegen"
+      ],
+      "Business Number": [
+        "Ondernemingsnummer"
+      ],
+      "Edit ABN": [
+        "ABN bewerken"
+      ],
+      "Edit Business Number": [
+        "Ondernemingsnummer bewerken"
+      ],
+      "Edit EIN": [
+        "EIN bewerken"
+      ],
+      "Edit VAT number": [
+        "Wijzig BTW-nummer"
+      ],
+      "EIN": [
+        "Rijksregisternummer"
+      ],
+      "VAT number": [
+        "BTW-nummer"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Alle premium functies van ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } en ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium functies van ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Als een **${ currentPlanTitle }** abonnee, kunt u **${ unlockPlanTitle }** en meer ${ BRAND_NAME }-diensten ontgrendelen door te upgraden naar **${ upsellPlanTitle }**."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Meer ${ BRAND_NAME }-diensten.${ br }Eén eenvoudig abonnement."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Blijf op ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Upgraden naar ${ upsellPlanTitle }"
+      ]
+    },
+    "protonbadge": {
+      "Official": [
+        "Officieel"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Officiële e-mail van ${ BRAND_NAME }"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Controleer de veiligheid van uw account"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Bekijk gebeurtenissen"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Reset annuleren"
+      ],
+      "Reset password": [
+        "Wachtwoord opnieuw instellen"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Accountherstel niet beschikbaar voor verouderde adressleutels"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Genereer sleutels voordat u uw wachtwoord probeert te wijzigen"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dag",
+        "${ timeRemaining.inDays } dagen"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } uur",
+        "${ timeRemaining.inHours } uren"
+      ],
+      "Password reset request approved (${ user.Email }).": [
+        "Wachtwoord reset aanvraag goedgekeurd (${ user.Email })."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "\"Ga naar het ingelogde apparaat (in de sessie waarin de aanvraag is gestart) om uw wachtwoord te wijzigen.\""
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Deze toestemming verloopt binnen ${ timeRemaining.inDays } dag",
+        "Deze toestemming verloopt binnen ${ timeRemaining.inDays } dagen"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uur",
+        "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uren"
+      ],
+      "This permission expires soon": [
+        "vervalt binnenkort"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "U kan uw wachtwoord vrijelijk wijzigen voor de account ${ boldEmail } gedurende ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "U kunt nu uw wachtwoord voor het account ${ boldEmail } wijzigen."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "U heeft ${ timeRemaining.inDays } dag om uw wachtwoord te resetten.",
+        "U heeft ${ timeRemaining.inDays } dagen om uw wachtwoord te resetten."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "U heeft ${ timeRemaining.inHours } uur om uw wachtwoord te resetten.",
+        " U heeft ${ timeRemaining.inHours } uren om uw wachtwoord te resetten."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "U heeft ${ timeRemaining.inMinutes } minuut om uw wachtwoord te resetten.",
+        " U heeft ${ timeRemaining.inMinutes } minuten om uw wachtwoord te resetten."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "U heeft ${ timeRemaining.inSeconds } seconde om uw wachtwoord te resetten.",
+        " U heeft ${ timeRemaining.inSeconds } seconden om uw wachtwoord te resetten."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Zie hoe"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Wachtwoord opgeslagen"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Uw wachtwoord opnieuw instellen"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Wachtwoord reset annuleren"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Vul uw huidig wachtwoord in om het resetten van uw wachtwoord te annuleren. Er zullen geen veranderingen plaatsvinden."
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Wachtwoordherstel annuleren?"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "wijzig uw wachtwoord nu"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Aanvraag annuleren"
+      ],
+      "Got it": [
+        "Begrepen"
+      ],
+      "Learn more": [
+        "Meer info"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } uur",
+        "${ gracePeriodHoursRemaining } uren"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Indien u geen wachtwoord reset hebt aangevraagd, annuleer deze aanvraag dan nu."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Wachtwoord reset aangevraagd (${ user.Email }). Uw wachtwoord kan gewijzigd worden in ${ hoursRemaining } uur.",
+        "Wachtwoord reset aangevraagd (${ user.Email }). Uw wachtwoord kan gewijzigd worden in ${ hoursRemaining } uren."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Om er zeker van te zijn dat u het bent die probeert uw wachtwoord te resetten, wachten we 72 uur voordat we verzoeken goedkeuren. U kan uw wachtwoord wijzigen in ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "We ontvingen een wachtwoord reset aanvraag voor ${ boldEmail }."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Aanvraag bekijken"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Wachtwoord reset aangevraagd"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Afmelden"
+      ],
+      "Stay signed in": [
+        "Blijf ingelogd"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } uur",
+        "${ gracePeriodHoursRemaining } uren"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } is nu beschikbaar"
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Als u uitlogt voordat u uw wachtwoord reset, kan u de toegang tot uw account verliezen."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Als u uitlogt zonder uw wachtwoord te resetten, kan u de toegang tot uw account verliezen."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "U kan uw wachtwoord resetten in ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Wachtwoordreset"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Uitloggen zonder wachtwoord reset?"
+      ]
+    },
+    "Slack": {
+      "Join Slack huddle": [
+        "Deelnemen aan Slack huddle"
+      ]
+    },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Sneller in de app"
+      ],
+      "Private, fast, and organized": [
+        "Privé, snel en georganiseerd"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Kies Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dagen"
+      ],
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uren"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuut",
+        "${ minutes } minuten"
+      ],
+      "${ seconds } second": [
+        "${ seconds } seconde",
+        "${ seconds } seconden"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } maand GRATIS",
+        "${ n } maanden GRATIS"
+      ]
+    },
+    "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "De speciale aanbieding is geldig voor de eerste 2 jaar."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Uw abonnement zal elk jaar met hetzelfde tarief worden verlengd."
+      ]
+    },
+    "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
+      "/ month": [
+        "/ maand"
+      ],
+      "/month": [
+        "/maandelijks"
+      ],
+      "1 year": [
+        "1 jaar"
+      ],
+      "15 months": [
+        "15 maanden"
+      ],
+      "2 years": [
+        "2 jaar"
+      ],
+      "30 months": [
+        "30 maanden"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "U betaalt ${ amount } voor 1 maand"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "U betaalt ${ amount } voor 12 maanden"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "U betaalt ${ amount } voor 15 maanden"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "U betaalt ${ amount } voor 24 maanden"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "U betaalt ${ amount } voor 30 maanden"
+      ],
+      "Get the deal": [
+        "Kies deze deal"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Wordt na 1 jaar verlengd tegen de gereduceerde prijs van ${ discountedAmount } in plaats van ${ regularAmount } (${ discount }% korting)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Wordt na 2 jaar verlengd tegen de gereduceerde prijs van ${ discountedAmount } in plaats van ${ regularAmount } (${ discount }% korting)"
+      ],
+      "Save ${ discount }%": [
+        "Bespaar ${ discount }%"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Standaardprijs ${ amount } voor 1 maand"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Standaardprijs ${ amount } voor 12 maanden"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Standaardprijs ${ amount } voor 15 maanden"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Standaardprijs ${ amount } voor 24 maanden"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Standaardprijs ${ amount } voor 30 maanden"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "De speciale aanbieding is geldig voor de eerste 2 jaar"
+      ]
+    },
+    "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Wereldwijde toegang tot content op streamingdiensten"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Krijg 500 GB om al uw bestanden en foto's veilig op te slaan"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Krijg toegang tot ultrasnelle VPN-servers in 110+ landen"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Krijg één abonnement dat alles omvat, krijg ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Krijg onbeperkt aliassen om uw identiteit te beschermen en spam te verminderen"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Bewaar uw wachtwoorden veilig en georganiseerd in meerdere kluizen "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Bescherm uw account tegen bedreigingen met Sentinel"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Upgrade en bespaar meer met 2 jaar ${ planName }"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Uw abonnement wordt geannuleerd, even geduld"
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Het abonnement zal worden gedowngradet aan het einde van de factureringscyclus."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Levenslang"
+      ]
+    },
+    "Subscription price": {
+      "For ${ totalPrice }": [
+        "Voor ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "Bespaar ${ priceString }"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Maak veilige inloggegevens op al uw apparaten. Inclusief onbeperkte aliassen, 20 kluizen, geïntegreerde 2FA, automatisch invullen van creditcardgegevens en meer."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Met 2950 servers in meer dan 65 landen, verbinding met maximaal 10 apparaten, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief versiegeschiedenis, versleuteld bestanden delen en meer."
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "Deelnemen aan Teams vergadering"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dag",
+        "${ ceilDays } dagen"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } uur",
+        "${ ceilHours } uren"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuut",
+        "${ ceilMinutes } minuten"
+      ],
+      "${ seconds } second": [
+        "${ seconds } seconde",
+        "${ seconds } seconden"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/maand"
+      ],
+      "Only": [
+        "Slechts"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, en meer."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-mailadres",
+        "${ n } ${ BRAND_NAME } e-mailadressen"
+      ],
+      "${ n } account per wallet": [
+        "${ n } account per portemonnee",
+        "${ n } accounts per portemonnee"
+      ],
+      "${ n } wallet": [
+        "${ n } portemonnee",
+        "${ n } portemonnees"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Een veiligere manier om uw Bitcoin vast te houden"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin via e-mail"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Versleuteld en veilig ${ MAIL_APP_NAME } e-mailadres. U kunt gemakkelijk Bitcoin verzenden naar iedereen met alleen hun ${ BRAND_NAME } naam."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Wissel Bitcoin veilig uit via e-mail in plaats van complexe, 26 tekens lange, Bitcoin adressen die vatbaar zijn voor fouten"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Een veiligere manier om uw Bitcoin vast te houden"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Probleem met Wallet"
+      ]
+    },
+    "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Elke ${ interval } week op ${ multipleDaysString }, ${ timesString }",
+        "Elke ${ interval } weken op ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Elk ${ interval } week op alle dagen, ${ timesString }",
+        "Elke ${ interval } weken op alle dagen, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Elke ${ interval } week op vrijdag, ${ timesString }",
+        "Elke ${ interval } weken op vrijdag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Elke ${ interval } week op zaterdag, ${ timesString }",
+        "Elke ${ interval } weken op zaterdag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Elke ${ interval } week op donderdag, ${ timesString }",
+        "Elke ${ interval } weken op donderdag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Elke ${ interval } week op woensdag, ${ timesString }",
+        "Elke ${ interval } weken op woensdag, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Wekelijks op ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Wekelijks op alle dagen, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Wekelijks op vrijdag ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Wekelijks op maandag, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Wekelijks op zaterdag ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Wekelijks op zondag ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Wekelijks op donderdag ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Wekelijks op dinsdag ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Wekelijks op woensdag ${ timesString }"
+      ]
+    },
+    "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Elke ${ interval } week op ${ multipleDaysString }, ${ untilString }",
+        "Elke ${ interval } weken op ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Elke ${ interval } week op alle dagen, ${ untilString }",
+        "Elke ${ interval } weken op alle dagen, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Elke ${ interval } week op vrijdag, ${ untilString }",
+        "Elke ${ interval } week op vrijdag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Elke ${ interval } week op maandag, ${ untilString }",
+        "Elke ${ interval } weken op maandag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Elke ${ interval } week op zaterdag, ${ untilString }",
+        "Elke ${ interval } weken op zaterdag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Elke ${ interval } week op zondag, ${ untilString }",
+        "Elke ${ interval } weken op zondag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Elke ${ interval } week op donderdag, ${ untilString }",
+        "Elke ${ interval } weken op donderdag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Elke ${ interval } week op dinsdag, ${ untilString }",
+        "Elke ${ interval } weken op dinsdag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Elke ${ interval } week op woensdag, ${ untilString }",
+        "Elke ${ interval } week op woensdag, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Wekelijks op ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Wekelijks op alle dagen, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Wekelijks op vrijdag ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Wekelijks op maandag, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Wekelijks op zaterdag ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Wekelijks op zondag ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Wekelijks op donderdag ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Wekelijks op dinsdag ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Wekelijks op woensdag ${ untilString }"
+      ]
+    },
+    "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "Elk ${ interval } jaar, ${ timesString }",
+        "Elke ${ interval } jaar, ${ timesString }"
+      ],
+      "Yearly, ${ timesString }": [
+        "Jaarlijks ${ timesString }"
+      ]
+    },
+    "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "Elk ${ interval } jaar, ${ untilString }",
+        "Elke ${ interval } jaar, ${ untilString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Jaarlijks ${ untilString }"
+      ]
+    },
+    "Zoom": {
+      "Join Zoom meeting": [
+        "Deelnemen aan Zoom vergadering"
+      ]
+    },
+    "Zoom Meeting": {
+      "Meeting ID:": [
+        "Meeting ID:"
+      ],
+      "Passcode:": [
+        "Toegangscode:"
       ]
     }
   }
