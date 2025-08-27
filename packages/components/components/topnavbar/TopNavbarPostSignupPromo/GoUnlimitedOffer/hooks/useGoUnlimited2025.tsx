@@ -4,7 +4,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
-import { useFlag } from '@proton/unleash/index';
+import { useFlag } from '@proton/unleash';
 
 import { type OfferHookReturnValue } from '../../common/interface';
 import { getIsEligible } from '../helpers/eligibility';

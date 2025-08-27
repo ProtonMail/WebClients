@@ -5,7 +5,7 @@ import { useUser } from '@proton/account/user/hooks';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { getIsB2BAudienceFromPlan } from '@proton/payments';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
-import { useFlag } from '@proton/unleash/index';
+import { useFlag } from '@proton/unleash';
 
 import MailB2COnboardingModal from 'proton-mail/components/onboarding/modal/MailB2COnboardingModal';
 

@@ -23,7 +23,7 @@ import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
-import { FlagProvider } from '@proton/unleash/index';
+import { FlagProvider } from '@proton/unleash';
 
 import { bootstrapApp } from '../../bootstrap';
 import LumoLoader from '../../components/LumoLoader';

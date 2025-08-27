@@ -7,7 +7,7 @@ import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { useModalState } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
-import { useFlag } from '@proton/unleash/index';
+import { useFlag } from '@proton/unleash';
 
 import AccountsLoginModal from './modals/AccountsLoginModal';
 import MobileAppModal from './modals/MobileAppModal';

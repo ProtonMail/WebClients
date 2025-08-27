@@ -27,7 +27,7 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { canShowB2BOnboardingButton } from '@proton/shared/lib/onboarding/helpers';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 import buildingImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-buildings.svg';
-import { useFlag } from '@proton/unleash/index';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import './TopNavbarB2BOnboardingButton.scss';
