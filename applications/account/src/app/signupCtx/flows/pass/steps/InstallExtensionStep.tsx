@@ -45,15 +45,7 @@ export const InstallExtensionStep: FC = () => {
             <img src={browserImage} alt="Browser icon" />
             <h2 className="text-4xl text-bold my-5 text-center">{c('Title').t`Secure your passwords. Everywhere.`}</h2>
             {browser && (
-                <ButtonLike
-                    as="a"
-                    target="_blank"
-                    size="large"
-                    color="norm"
-                    pill
-                    href={browser.link}
-                    onClick={signup.login}
-                >
+                <ButtonLike as="a" target="_blank" size="large" color="norm" pill href={browser.link}>
                     {c('Action').t`Get the extension for ${browser.title}`}
                 </ButtonLike>
             )}
