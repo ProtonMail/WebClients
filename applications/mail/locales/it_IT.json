@@ -1205,7 +1205,7 @@
         "Seleziona ${ planOrAppName }"
       ],
       "Select All": [
-        "Seleziona Tutto"
+        "Seleziona tutto"
       ],
       "Select all": [
         "Seleziona tutti"
@@ -1618,6 +1618,22 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "${ numberOfAddresses } address": [
+        "Indirizzo ${ numberOfAddresses }",
+        "${ numberOfAddresses } indirizzi"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Ottieni un indirizzo ${ BRAND_NAME }"
+      ],
+      "Claim this address": [
+        "Ottieni questo indirizzo"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Ottieni il tuo indirizzo ${ BRAND_NAME } gratuito"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Ottieni un indirizzo ${ BRAND_NAME } gratuito"
       ]
     },
     "action": {
@@ -3702,7 +3718,7 @@
         "Svalbard e Jan Mayen"
       ],
       "Swaziland": [
-        "Swaziland"
+        "eSwatini"
       ],
       "Sweden": [
         "Svezia"
@@ -4123,6 +4139,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
+      ],
+      "This view shows messages sent to the following addresses:": [
+        "Questa vista mostra i messaggi inviati ai seguenti indirizzi:"
       ]
     },
     "description": {
@@ -4963,6 +4982,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La tua ricerca ha restituito troppi risultati. Limita la ricerca e riprova."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "La modifica dell'indirizzo di fatturazione non è al momento disponibile. Per favore riprova più tardi."
+      ],
+      "Failed to open to contact": [
+        "Impossibile aprire il contatto"
+      ],
+      "Postal code is required": [
+        "Il codice postale è obbligatorio"
+      ],
+      "ZIP code is required": [
+        "Il codice postale è obbligatorio"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5445,7 +5476,7 @@
     },
     "Filter Actions": {
       "Archive": [
-        "Sposta nell'archivio"
+        "Archivio"
       ],
       "Do not move": [
         "Non spostare"
@@ -5460,7 +5491,7 @@
         "Seleziona una cartella"
       ],
       "Spam": [
-        "Sposta in spam"
+        "Spam"
       ],
       "Trash": [
         "Elimina"
@@ -5756,6 +5787,9 @@
       ],
       "You've unlocked 1 GB": [
         "Hai sbloccato 1 GB"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Ottieni un indirizzo ${ BRAND_NAME }"
       ]
     },
     "Gmail forwarding": {
@@ -8191,7 +8225,7 @@
         "Effettua l'upgrade per supportare un Internet che dia priorità alla privacy."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        "Effettua l'upgrade per supportare la nostra missione della privacy per tutti."
+        "Effettua l'upgrade per supportare la nostra missione di privacy per tutti."
       ],
       "Upgrade to support privacy and get more features.": [
         "Effettua l'upgrade per supportare la privacy e ottenere più funzionalità."
@@ -8616,6 +8650,32 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } richiede un indirizzo ${ BRAND_NAME } per la sincronizzazione sicura degli eventi e la crittografia. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } richiede un indirizzo ${ BRAND_NAME } per la sincronizzazione sicura degli eventi e la crittografia. Richiedi ora il tuo indirizzo ${ MAIL_APP_NAME } gratuito."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } scade tra ${ daysLeft } giorno",
+        "${ planName } scade tra ${ daysLeft } giorni"
+      ],
+      "${ planName } expires today.": [
+        "${ planName } scade oggi."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Garantisci comunicazioni completamente private e crittografate. Richiedi ora il tuo indirizzo email ${ BRAND_NAME } gratuito."
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abbonamento in scadenza: Per mantenere i vantaggi del tuo ${ planName }, riavvia il tuo abbonamento nell'Apple App Store entro il ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abbonamento in scadenza: Per mantenere i vantaggi del tuo abbonamento ${ planName }, riavvia il tuo abbonamento nel Google Play Store entro il ${ byDate }. ${ reactivateLink }"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "Hai selezionato **${ count } messaggio** da questa cartella",
+        "Hai selezionato **${ count } messaggi** da questa cartella"
       ]
     },
     "info": {
@@ -9297,7 +9357,7 @@
         "Spostato nell’archivio"
       ],
       "Moved to Trash": [
-        "Spostato nel cestino"
+        "Spostata nel cestino"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Deve contenere almeno ${ MIN_PASSWORD_LENGTH } caratteri"
@@ -9571,6 +9631,15 @@
       ],
       "Your password (trusted contact)": [
         "La tua password (contatto attendibile)"
+      ],
+      "Company": [
+        "Azienda"
+      ],
+      "State": [
+        "Stato"
+      ],
+      "ZIP code": [
+        "Codice postale"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9689,7 +9758,7 @@
         "Tutta la posta"
       ],
       "Archive": [
-        "Sposta nell'archivio"
+        "Archivio"
       ],
       "clearing your browser cache": [
         "cancellare la cache del browser"
@@ -9812,7 +9881,7 @@
         "O puoi eliminare uno dei tuoi calendari e crearne uno nuovo collegato a un indirizzo email attivo."
       ],
       "Outbox": [
-        "In Uscita"
+        "In uscita"
       ],
       "Pay invoice": [
         "Pagamento della fattura"
@@ -9851,7 +9920,7 @@
         "Posticipato"
       ],
       "Spam": [
-        "Sposta in spam"
+        "Spam"
       ],
       "Starred": [
         "Importante"
@@ -9900,6 +9969,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Devi riattivare le tue chiavi per visualizzare l'invito aggiornato"
+      ],
+      "Resume now": [
+        "Riprendi ora"
       ]
     },
     "Link to calendar event": {
@@ -9960,6 +10032,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Il tuo abbonamento è terminato. ${ cta } ed evitare la perdita di dati."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Per continuare a utilizzare ${ BRAND_NAME }, assicurati di non avere più in uso le funzionalità premium oppure esegui l’upgrade del tuo piano"
       ]
     },
     "Log preference": {
@@ -10001,13 +10076,13 @@
     },
     "Mailbox": {
       "Archive": [
-        "Sposta nell'archivio"
+        "Archivio"
       ],
       "Inbox": [
         "Posta in arrivo"
       ],
       "Spam": [
-        "Sposta in spam"
+        "Spam"
       ],
       "Trash": [
         "Elimina"
@@ -11805,6 +11880,9 @@
       ],
       "Your payment is still being processed": [
         "Il tuo pagamento è ancora in fase di elaborazione."
+      ],
+      "VAT number": [
+        "Numero partita IVA"
       ]
     },
     "Payments.Error": {
@@ -11860,6 +11938,30 @@
       ],
       "VAT number": [
         "Numero partita IVA"
+      ],
+      "Add ABN": [
+        "Aggiungi ABN"
+      ],
+      "Add Business Number": [
+        "Aggiungi numero azienda"
+      ],
+      "Add EIN": [
+        "Aggiungi EIN"
+      ],
+      "Add VAT number": [
+        "Aggiungi numero di partita IVA"
+      ],
+      "Edit ABN": [
+        "Modificare ABN"
+      ],
+      "Edit Business Number": [
+        "Modifica numero azienda"
+      ],
+      "Edit EIN": [
+        "Modificare EIN"
+      ],
+      "Edit VAT number": [
+        "Modifica il numero di partita IVA"
       ]
     },
     "PGP key encryption warning": {
@@ -12042,6 +12144,27 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Anderson": [
+        "Rossi"
+      ],
+      "Anytown": [
+        "Roma"
+      ],
+      "Company name": [
+        "Nome dell'azienda"
+      ],
+      "Main street 12": [
+        "Via Mario Greppi 12"
+      ],
+      "Select country": [
+        "Seleziona un Paese"
+      ],
+      "Thomas": [
+        "Mario"
+      ],
+      "VAT number": [
+        "Numero partita IVA"
       ]
     },
     "Placeholder for contact group name": {
@@ -13816,6 +13939,9 @@
       ],
       "You have successfully unsubscribed": [
         "Abbonamento annullato con successo"
+      ],
+      "Billing details updated": [
+        "Informazioni di fatturazione aggiornati"
       ]
     },
     "Success notification": {
@@ -14109,7 +14235,7 @@
         "Applica codice regalo"
       ],
       "Archive": [
-        "Sposta nell'archivio"
+        "Archivio"
       ],
       "Archive all messages?": [
         "Archiviare tutti i messaggi?"
@@ -14988,6 +15114,18 @@
       ],
       "Your subscriptions in one place": [
         "I tuoi abbonamenti in un unico posto"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Richiedi il tuo indirizzo ${ MAIL_APP_NAME }"
+      ],
+      "Edit billing address": [
+        "Modifica indirizzo di fatturazione"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Ottieni accesso completo a ${ CALENDAR_APP_NAME }"
+      ],
+      "Your addresses": [
+        "I tuoi indirizzi"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15562,6 +15700,14 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "I campi di testo sono opzionali. Le informazioni inserite in questo modulo verranno mostrate solo sulle fatture future e non su quelle esistenti."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "I campi di testo sono facoltativi. Le informazioni fornite in questo modulo modificheranno solo la fattura che hai selezionato e non i dettagli della fattura futura."
       ]
     }
   }

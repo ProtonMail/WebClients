@@ -2623,6 +2623,9 @@
       ],
       "Ultra fast and private VPN": [
         "Ultraschnelles und privates VPN"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle Premium-Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Checkout row": {
@@ -4979,6 +4982,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Deine Suche ergab zu viele Treffer. Schränke deine Suche ein und versuche es erneut."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Die Bearbeitung der Rechnungsadresse ist im Moment nicht möglich. Bitte versuche es später noch einmal."
+      ],
+      "Failed to open to contact": [
+        "Fehler beim Öffnen des Kontakts"
+      ],
+      "Postal code is required": [
+        "Postleitzahl ist erforderlich"
+      ],
+      "ZIP code is required": [
+        "Eine Postleitzahl ist erforderlich"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8651,6 +8666,16 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } läuft in ${ daysLeft } Tag aus.",
+        "${ planName } läuft in ${ daysLeft } Tagen aus."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } läuft heute aus."
+      ],
+      "No change will be made to the selected emails": [
+        "Es werden keine Änderungen an den ausgewählten E-Mails durchgeführt."
       ]
     },
     "info": {
@@ -8714,6 +8739,9 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "KOO": [
+        "KOO"
       ]
     },
     "Key pinning": {
@@ -9603,6 +9631,15 @@
       ],
       "Your password (trusted contact)": [
         "Dein Passwort (vertrauenswürdiger Kontakt)"
+      ],
+      "Company": [
+        "Unternehmen"
+      ],
+      "State": [
+        "Bundesland"
+      ],
+      "ZIP code": [
+        "Postleitzahl"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9995,6 +10032,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Dein Abonnement ist beendet. ${ cta } und um Datenverlust zu vermeiden."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Um ${ BRAND_NAME } weiterhin nutzen zu können, stelle bitte sicher, dass deine Premium-Funktionen nicht mehr verwendet werden oder upgrade dein Abonnement."
       ]
     },
     "Log preference": {
@@ -11835,6 +11875,9 @@
       ],
       "Your payment is still being processed": [
         "Deine Zahlung ist noch in Bearbeitung."
+      ],
+      "VAT number": [
+        "Umsatzsteuernummer"
       ]
     },
     "Payments.Error": {
@@ -11890,6 +11933,30 @@
       ],
       "VAT number": [
         "Umsatzsteuernummer"
+      ],
+      "Add ABN": [
+        "ABN hinzufügen"
+      ],
+      "Add Business Number": [
+        "Unternehmensnummer hinzufügen"
+      ],
+      "Add EIN": [
+        "EIN hinzufügen"
+      ],
+      "Add VAT number": [
+        "Umsatzsteuernummer hinzufügen"
+      ],
+      "Edit ABN": [
+        "ABN bearbeiten"
+      ],
+      "Edit Business Number": [
+        "Unternehmensnummer bearbeiten"
+      ],
+      "Edit EIN": [
+        "EIN bearbeiten"
+      ],
+      "Edit VAT number": [
+        "Umsatzsteuernummer bearbeiten"
       ]
     },
     "PGP key encryption warning": {
@@ -12072,6 +12139,27 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Anderson": [
+        "Mustermann"
+      ],
+      "Anytown": [
+        "Berlin"
+      ],
+      "Company name": [
+        "Unternehmensname"
+      ],
+      "Main street 12": [
+        "Hauptstraße 12"
+      ],
+      "Select country": [
+        "Land wählen"
+      ],
+      "Thomas": [
+        "Max"
+      ],
+      "VAT number": [
+        "Umsatzsteuernummer"
       ]
     },
     "Placeholder for contact group name": {
@@ -12093,6 +12181,9 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Auf ${ upsellPlanTitle } upgraden"
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Als Abonnent von **${ currentPlanTitle }** kannst du **${ unlockPlanTitle }** und weitere Dienste von ${ BRAND_NAME } freischalten, indem du einen Wechsel zu **${ upsellPlanTitle }** vornimmst."
       ]
     },
     "Price": {
@@ -13448,6 +13539,9 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "Mit ${ planName } erhältst du Zugriff auf alle Premium-Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }. Der Datenschutz ist integriert, sodass du dich darauf verlassen kannst, dass deine Daten und deine Identität geschützt sind."
       ]
     },
     "subscription reminder": {
@@ -13828,6 +13922,17 @@
       ],
       "You have successfully unsubscribed": [
         "Du hast das Abonnement erfolgreich gekündigt."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } Unterhaltung nach „${ labelName }“ verschoben.",
+        "${ elementsCount } Unterhaltungen nach „${ labelName }“ verschoben."
+      ],
+      "Billing details updated": [
+        "Rechnungsdetails aktualisiert"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "${ elementsCount } Nachricht neu kategorisiert.",
+        "${ elementsCount } Nachrichten neu kategorisiert."
       ]
     },
     "Success notification": {
@@ -15009,6 +15114,9 @@
       ],
       "Your subscriptions in one place": [
         "Deine Abonnemente an einem Ort"
+      ],
+      "Edit billing address": [
+        "Rechnungsadresse bearbeiten"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15228,6 +15336,9 @@
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Tausche Bitcoin sicher per E-Mail aus statt komplexe, 26-stellige Bitcoin-Adressen zu verwenden, die anfällig für Fehler sind"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Verschlüsselte und sichere E-Mail-Adresse von ${ MAIL_APP_NAME }. Du kannst ganz einfach Bitcoin an jeden senden, nur mit dessen ${ BRAND_NAME }-Namen."
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -15575,6 +15686,27 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Die Textfelder sind optional. Die Informationen, die du in diesem Formular angibst, erscheinen nur auf zukünftigen Rechnungen und haben keinen Einfluss auf bestehende Rechnungen."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Textfelder sind optional. Die Informationen, die du in diesem Formular eingibst, ändern nur die von dir ausgewählte Rechnung und nicht deine zukünftigen Rechnungsdetails."
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Alle Premium-Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle Premium-Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Eine sicherere Methode, Bitcoin zu verwahren"
       ]
     }
   }

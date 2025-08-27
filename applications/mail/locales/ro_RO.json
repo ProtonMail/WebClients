@@ -1623,6 +1623,23 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "${ numberOfAddresses } address": [
+        "Adrese: ${ numberOfAddresses }",
+        "Adrese: ${ numberOfAddresses }",
+        "Adrese: ${ numberOfAddresses }"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Revendicați adresa ${ BRAND_NAME }"
+      ],
+      "Claim this address": [
+        "Revendicați această adresă"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Revendicați adresa gratuită ${ BRAND_NAME }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Obțineți o adresă gratuită ${ BRAND_NAME }"
       ]
     },
     "action": {
@@ -4112,6 +4129,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
+      ],
+      "This view shows messages sent to the following addresses:": [
+        "Această vizualizare afișează mesaje trimise către următoarele adrese:"
       ]
     },
     "description": {
@@ -4965,6 +4985,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Vă rugăm să limitați căutarea și să reîncercați."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Editarea adresei de facturare nu este disponibilă momentan. Reîncercați mai târziu."
+      ],
+      "Failed to open to contact": [
+        "Nu s-a putut deschide contactul."
+      ],
+      "Postal code is required": [
+        "Codul poștal este obligatoriu."
+      ],
+      "ZIP code is required": [
+        "Codul poștal este obligatoriu."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5768,6 +5800,9 @@
       ],
       "You've unlocked 1 GB": [
         "Ați deblocat 1 GiB de spațiu"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Revendicați adresa ${ BRAND_NAME }"
       ]
     },
     "Gmail forwarding": {
@@ -6683,28 +6718,28 @@
         "Arhivare mesaje existente"
       ],
       "Are you sure you want to delete all messages in this folder?": [
-        "Sigur doriți să ștergeți toate mesajele din acest folder?"
+        "Ștergeți toate mesajele din acest folder?"
       ],
       "Are you sure you want to delete all messages with this label?": [
-        "Sigur doriți să ștergeți toate mesajele cu această etichetă?"
+        "Ștergeți toate mesajele cu această etichetă?"
       ],
       "Are you sure you want to delete this folder?": [
-        "Sigur doriți să ștergeți acest folder?"
+        "Ștergeți acest folder?"
       ],
       "Are you sure you want to delete this label?": [
-        "Sigur doriți să ștergeți această etichetă?"
+        "Ștergeți această etichetă?"
       ],
       "Are you sure you want to discard your changes?": [
-        "Sigur doriți să renunțați la modificări?"
+        "Renunțați la modificări?"
       ],
       "Are you sure you want to discard your import?": [
-        "Sigur doriți să anulați importarea?"
+        "Anulați importarea?"
       ],
       "Are you sure you want to move all messages in this location to archive?": [
-        "Sigur doriți să mutați toate mesajele de aici în „Arhivă”?"
+        "Mutați toate mesajele de aici în „Arhivă”?"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
-        "Sigur doriți să mutați toate mesajele de aici în „Gunoi”?"
+        "Mutați toate mesajele de aici în „Gunoi”?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Conversații care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?",
@@ -6722,13 +6757,13 @@
         "Mesaje care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
-        "Sigur doriți să ștergeți definitiv această conversație?"
+        "Ștergeți definitiv conversația?"
       ],
       "Are you sure you want to permanently delete this draft?": [
-        "Sigur doriți să ștergeți definitiv această ciornă?"
+        "Ștergeți definitiv ciorna?"
       ],
       "Are you sure you want to permanently delete this message?": [
-        "Sigur doriți să ștergeți definitiv acest mesaj?"
+        "Ștergeți definitiv mesajul?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Cel puțin ${ BETTER_PASSWORD_LENGTH } caractere"
@@ -7982,7 +8017,7 @@
         "Numărul de descărcări include atât descărcările reale, cât și cazuri când fișierele sunt examinate."
       ],
       "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
-        "Adresa de e-mail ${ boldNoReplyEmail } nu pare să accepte răspunsuri. Sigur doriți să trimiteți mesajul?"
+        "Adresa de e-mail ${ boldNoReplyEmail } nu pare să accepte răspunsuri. Trimiteți mesajului?"
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Datele criptate ocupă puțin mai mult spațiu datorită criptării și a semnăturilor, ceea ce asigură securitatea acestora."
@@ -8734,6 +8769,23 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } necesită o adresă ${ BRAND_NAME } pentru sincronizarea și criptarea securizată a evenimentelor. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } necesită o adresă ${ BRAND_NAME } pentru sincronizarea și criptarea securizată a evenimentelor. Revendicați-vă acum adresa gratuită ${ MAIL_APP_NAME }."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }.",
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }.",
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } expiră astăzi."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Asigurați o comunicare complet privată și criptată. Revendicați-vă acum adresa gratuită de e-mail ${ BRAND_NAME }."
       ]
     },
     "info": {
@@ -9695,6 +9747,15 @@
       ],
       "Your password (trusted contact)": [
         "Parola dvs. (contact aprobat)"
+      ],
+      "Company": [
+        "Compania"
+      ],
+      "State": [
+        "Județ/Stat"
+      ],
+      "ZIP code": [
+        "Cod poștal"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10088,6 +10149,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Abonamentul s-a încheiat. ${ cta } și pentru a evita pierderea datelor."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Pentru a continua să utilizați ${ BRAND_NAME }, asigurați-vă că funcțiile premium nu mai sunt utilizate sau să modernizați-vă planul."
       ]
     },
     "Log preference": {
@@ -11967,6 +12031,9 @@
       ],
       "Your payment is still being processed": [
         "Plata este încă în curs de procesare."
+      ],
+      "VAT number": [
+        "Valoare TVA"
       ]
     },
     "Payments.Error": {
@@ -12022,6 +12089,30 @@
       ],
       "VAT number": [
         "Număr de TVA"
+      ],
+      "Add ABN": [
+        "Adăugare ABN"
+      ],
+      "Add Business Number": [
+        "Adăugare cod unic de înregistrare"
+      ],
+      "Add EIN": [
+        "Adăugare EIN"
+      ],
+      "Add VAT number": [
+        "Adăugare TVA"
+      ],
+      "Edit ABN": [
+        "Editare ABN"
+      ],
+      "Edit Business Number": [
+        "Editare cod unic de înregistrare"
+      ],
+      "Edit EIN": [
+        "Editare EIN"
+      ],
+      "Edit VAT number": [
+        "Editare TVA"
       ]
     },
     "PGP key encryption warning": {
@@ -12204,6 +12295,27 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Anderson": [
+        "Andrei"
+      ],
+      "Anytown": [
+        "București"
+      ],
+      "Company name": [
+        "Nume companie"
+      ],
+      "Main street 12": [
+        "Strada Principală nr. 12"
+      ],
+      "Select country": [
+        "Selectare țară"
+      ],
+      "Thomas": [
+        "Toma"
+      ],
+      "VAT number": [
+        "Valoare TVA"
       ]
     },
     "Placeholder for contact group name": {
@@ -13215,7 +13327,7 @@
         "${ storage } - ${ percentage }% ocupat"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Prin retrogradare veți pierde următoarele beneficii. Sigur doriți să continuați?"
+        "Prin retrogradare veți pierde următoarele beneficii. Continuați?"
       ],
       "contact your administrator": [
         "contactați-vă administratorul"
@@ -13296,9 +13408,9 @@
     },
     "Subscription attribute": {
       "${ n } free VPN connection per user": [
-        "${ n } conexiune VPN gratuită per utilizator",
-        "${ n } conexiuni VPN gratuite per utilizator",
-        "${ n } de conexiuni VPN gratuite per utilizator"
+        "Conexiuni VPN gratuite per utilizator: ${ n }",
+        "Conexiuni VPN gratuite per utilizator: ${ n }",
+        "Conexiuni VPN gratuite per utilizator: ${ n }"
       ],
       "${ n } high-speed VPN connection": [
         "O conexiune VPN de mare viteză",
@@ -14040,6 +14152,9 @@
       ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"
+      ],
+      "Billing details updated": [
+        "Detaliile de facturare s-au actualizat"
       ]
     },
     "Success notification": {
@@ -14353,10 +14468,10 @@
         "Arhivați toate mesajele?"
       ],
       "Are you sure you want to close the preview?": [
-        "Sigur doriți să închideți examinarea?"
+        "Închideți examinarea?"
       ],
       "Are you sure you want to close?": [
-        "Sigur doriți să închideți?"
+        "Închideți?"
       ],
       "Are you sure?": [
         "Confirmați?"
@@ -15234,6 +15349,18 @@
       ],
       "Your subscriptions in one place": [
         "Abonamentele personale într-un singur loc"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Revendicați-vă adresa ${ MAIL_APP_NAME }"
+      ],
+      "Edit billing address": [
+        "Editare adresă de facturare"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Obțineți acces complet la ${ CALENDAR_APP_NAME }"
+      ],
+      "Your addresses": [
+        "Adresele mele"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15489,18 +15616,18 @@
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
-        "Sigur doriți să ștergeți definitiv un contact?",
-        "Sigur doriți să ștergeți definitiv ${ count } contacte?",
-        "Sigur doriți să ștergeți definitiv ${ count } de contacte?"
+        "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?",
+        "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?",
+        "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
-        "Sigur doriți să ștergeți definitiv acest grupuri de contacte?"
+        "Ștergeți definitiv aceste grupuri de contacte?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
-        "Sigur doriți să ștergeți definitiv acest grup de contacte?"
+        "Ștergeți definitiv acest grup de contacte?"
       ],
       "Are you sure you want to permanently delete this contact?": [
-        "Sigur doriți să ștergeți definitiv acest contact?"
+        "Ștergeți definitiv acest contact?"
       ],
       "Contacts could not be merged": [
         "Contactele nu au putut fi îmbinate"
@@ -15853,6 +15980,14 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Câmpurile text sunt opționale. Informațiile furnizate în acest formular vor apărea doar pe facturile emise în viitor și nu vor afecta facturile deja emise."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Câmpurile de text sunt opționale. Informațiile pe care le furnizați în acest formular vor modifica doar factura pe care ați selectat-o ​​și nu detaliile viitoarei facturi."
       ]
     }
   }

@@ -1621,6 +1621,22 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "${ numberOfAddresses } address": [
+        "${ numberOfAddresses } adres",
+        "${ numberOfAddresses } adres"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "${ BRAND_NAME } adresini al"
+      ],
+      "Claim this address": [
+        "Bu adresi al"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Ücretsiz ${ BRAND_NAME } adresinizi alın"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Ücretsiz bir ${ BRAND_NAME } adresi alın"
       ]
     },
     "action": {
@@ -4126,6 +4142,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ],
+      "This view shows messages sent to the following addresses:": [
+        "Bu görünüm, şu adreslere gönderilen iletileri görüntüler:"
       ]
     },
     "description": {
@@ -4966,6 +4985,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Fatura adresi şu anda düzenlenemiyor. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "Failed to open to contact": [
+        "Kişiye açılamadı"
+      ],
+      "Postal code is required": [
+        "Posta kodunun yazılması zorunludur"
+      ],
+      "ZIP code is required": [
+        "Posta kodunun yazılması zorunludur"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5759,6 +5790,9 @@
       ],
       "You've unlocked 1 GB": [
         "Depolama alanınızı 1 GB boyutuna çıkardınız"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "${ BRAND_NAME } adresini al"
       ]
     },
     "Gmail forwarding": {
@@ -8629,6 +8663,22 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } etkinlikleri güvenli olarak eşitlemek ve şifrelemek için bir ${ BRAND_NAME } adresine gerek duyar. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } etkinlikleri güvenli olarak eşitlemek ve şifrelemek için bir ${ BRAND_NAME } adresine gerek duyar. Ücretsiz ${ MAIL_APP_NAME } adresinizi şimdi alın."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } tarifesi ${ daysLeft } gün içinde sona eriyor.",
+        "${ planName } tarifesi ${ daysLeft } gün içinde sona eriyor."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } bugün sona eriyor."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Tümüyle güvenli ve şifrelenmiş iletişim sağlayın. Ücretsiz ${ BRAND_NAME } e-posta adresinizi şimdi alın."
       ]
     },
     "info": {
@@ -9584,6 +9634,15 @@
       ],
       "Your password (trusted contact)": [
         "Parolanız (güvenilen kişi)"
+      ],
+      "Company": [
+        "Kuruluş"
+      ],
+      "State": [
+        "İl"
+      ],
+      "ZIP code": [
+        "Posta kodu"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9976,6 +10035,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Aboneliğinizin süresi dolmuş. Verilerinizin kaybolmasını önlemek için ${ cta }."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "${ BRAND_NAME } kullanmayı sürdürmek için, lütfen ücretli özellikleri artık kullanmadığınızdan emin olun ya da tarifenizi yükseltin."
       ]
     },
     "Log preference": {
@@ -11816,6 +11878,9 @@
       ],
       "Your payment is still being processed": [
         "Ödeme işleminiz sürüyor"
+      ],
+      "VAT number": [
+        "KDV numarası"
       ]
     },
     "Payments.Error": {
@@ -11871,6 +11936,30 @@
       ],
       "VAT number": [
         "Vergi numarası"
+      ],
+      "Add ABN": [
+        "ABN kodu ekle"
+      ],
+      "Add Business Number": [
+        "İş numarası ekle"
+      ],
+      "Add EIN": [
+        "EIN kodu ekle"
+      ],
+      "Add VAT number": [
+        "KDV numarası ekle"
+      ],
+      "Edit ABN": [
+        "ABN kodunu düzenle"
+      ],
+      "Edit Business Number": [
+        "İş numarasını düzenle"
+      ],
+      "Edit EIN": [
+        "EIN kodunu düzenle"
+      ],
+      "Edit VAT number": [
+        "KDV numarasını düzenle"
       ]
     },
     "PGP key encryption warning": {
@@ -12053,6 +12142,27 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Anderson": [
+        "Kaya"
+      ],
+      "Anytown": [
+        "İl"
+      ],
+      "Company name": [
+        "Kuruluş adı"
+      ],
+      "Main street 12": [
+        "12. cadde"
+      ],
+      "Select country": [
+        "Ülke seçin"
+      ],
+      "Thomas": [
+        "Ali"
+      ],
+      "VAT number": [
+        "KDV numarası"
       ]
     },
     "Placeholder for contact group name": {
@@ -13827,6 +13937,9 @@
       ],
       "You have successfully unsubscribed": [
         "Aboneliği sonlandırdınız"
+      ],
+      "Billing details updated": [
+        "Fatura bilgileri güncellendi"
       ]
     },
     "Success notification": {
@@ -14999,6 +15112,18 @@
       ],
       "Your subscriptions in one place": [
         "Abonelikleriniz tek bir yerde"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } adresinizi alın"
+      ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } uygulamasına tam erişim edinin"
+      ],
+      "Your addresses": [
+        "Adresleriniz"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15573,6 +15698,14 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca gelecekte düzenlenecek faturalarda görüntülenecek ve var olan faturaları etkilemeyecek."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca seçtiğiniz faturayı değiştirir. Gelecekteki fatura bilgilerinizi değiştirmez."
       ]
     }
   }

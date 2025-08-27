@@ -46,7 +46,7 @@
         "Aktywuj odzyskiwanie"
       ],
       "Active": [
-        "Włączony"
+        "Aktywne"
       ],
       "Add": [
         "Dodaj"
@@ -1210,7 +1210,7 @@
         "Zobacz funkcje planu"
       ],
       "Select ${ planOrAppName }": [
-        "Wybierz plan ${ planOrAppName }"
+        "Wybierz ${ planOrAppName }"
       ],
       "Select All": [
         "Zaznacz wszystko"
@@ -1631,6 +1631,24 @@
       ],
       "Zoom out": [
         "Pomniejsz"
+      ],
+      "${ numberOfAddresses } address": [
+        "${ numberOfAddresses } adres",
+        "${ numberOfAddresses } adresy",
+        "${ numberOfAddresses } adresów",
+        "${ numberOfAddresses } adresów"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Uzyskaj adres ${ BRAND_NAME }"
+      ],
+      "Claim this address": [
+        "Uzyskaj ten adres"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Uzyskaj darmowy adres ${ BRAND_NAME }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Uzyskaj darmowy adres ${ BRAND_NAME }"
       ]
     },
     "action": {
@@ -4166,6 +4184,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
+      ],
+      "This view shows messages sent to the following addresses:": [
+        "Ten widok pokazuje wiadomości wysłane na następujące adresy:"
       ]
     },
     "description": {
@@ -5026,6 +5047,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Wyszukiwanie pasuje do zbyt wielu wyników. Sprecyzuj wyszukiwanie i spróbuj ponownie."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Edytowanie adresu rozliczeniowego nie jest obecnie dostępne. Spróbuj ponownie później."
+      ],
+      "Failed to open to contact": [
+        "Nie udało się otworzyć kontaktu"
+      ],
+      "Postal code is required": [
+        "Kod pocztowy jest wymagany"
+      ],
+      "ZIP code is required": [
+        "Kod pocztowy jest wymagany"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5530,19 +5563,19 @@
         "Nie przenoś"
       ],
       "Inbox": [
-        "Skrzynka odbiorcza"
+        "Odebrane"
       ],
       "Inbox - Default": [
-        "Odebrane (domyślny)"
+        "Odebrane (domyślne)"
       ],
       "Select a folder": [
         "Wybierz folder"
       ],
       "Spam": [
-        "Przenieś do spamu"
+        "Spam"
       ],
       "Trash": [
-        "Przenieś do kosza"
+        "Kosz"
       ]
     },
     "Filter modal operators": {
@@ -5839,6 +5872,9 @@
       ],
       "You've unlocked 1 GB": [
         "Odblokowano 1 GB"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Uzyskaj adres ${ BRAND_NAME }"
       ]
     },
     "Gmail forwarding": {
@@ -7244,7 +7280,7 @@
         "Szacowanie pozostałego czasu..."
       ],
       "Everything in ${ planOrAppName }": [
-        "Wszystko w planie ${ planOrAppName }"
+        "Wszystko w ${ planOrAppName }"
       ],
       "Expand selection": [
         "Rozwiń zaznaczenie"
@@ -8883,6 +8919,30 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od uporządkowanej skrzynki odbiorczej dzieli Cię kilka kliknięć"
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "Aplikacja ${ CALENDAR_APP_NAME } wymaga adresu ${ BRAND_NAME } w celu zapewnienia bezpiecznej synchronizacji wydarzeń i szyfrowania. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "Aplikacja ${ CALENDAR_APP_NAME } wymaga adresu ${ BRAND_NAME } w celu zapewnienia bezpiecznej synchronizacji wydarzeń i szyfrowania. Uzyskaj darmowy adres ${ MAIL_APP_NAME }."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "Plan ${ planName } wygaśnie za ${ daysLeft } dzień.",
+        "Plan ${ planName } wygaśnie za ${ daysLeft } dni.",
+        "Plan ${ planName } wygaśnie za ${ daysLeft } dni.",
+        "Plan ${ planName } wygaśnie za ${ daysLeft } dnia."
+      ],
+      "${ planName } expires today.": [
+        "Plan ${ planName } wygaśnie dzisiaj."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Zapewnij sobie prywatną i szyfrowaną komunikację. Uzyskaj darmowy adres ${ BRAND_NAME }."
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Subskrypcja zakończyła się. Aby zachować korzyści planu ${ planName }, wznów subskrypcję w sklepie App Store do dnia ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Subskrypcja zakończyła się. Aby zachować korzyści planu ${ planName }, wznów subskrypcję w sklepie Google Play do dnia ${ byDate }. ${ reactivateLink }"
       ]
     },
     "info": {
@@ -8952,6 +9012,9 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "KOO": [
+        "KOO"
       ]
     },
     "Key pinning": {
@@ -9498,7 +9561,7 @@
         "Zintegrowana aplikacja uwierzytelniająca 2FA"
       ],
       "Keyboard shortcut: ${ shortcut }": [
-        "Skrót klawiszowy: ${ shortcut }"
+        "Skróty klawiszowe: ${ shortcut }"
       ],
       "Keyboard shortcuts": [
         "Skróty klawiszowe"
@@ -9847,6 +9910,15 @@
       ],
       "Your password (trusted contact)": [
         "Twoje hasło (zaufany kontakt)"
+      ],
+      "Company": [
+        "Firma"
+      ],
+      "State": [
+        "Stan"
+      ],
+      "ZIP code": [
+        "Kod pocztowy"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10058,7 +10130,7 @@
         "w przypadku wycieku danych"
       ],
       "Inbox": [
-        "Skrzynka odbiorcza"
+        "Odebrane"
       ],
       "Labels": [
         "Etykiety"
@@ -10112,7 +10184,7 @@
         "Zaplanowane"
       ],
       "Sent": [
-        "Wysłano"
+        "Wysłane"
       ],
       "settings": [
         "ustawieniach"
@@ -10127,7 +10199,7 @@
         "Odłożone"
       ],
       "Spam": [
-        "Przenieś do spamu"
+        "Spam"
       ],
       "Starred": [
         "Wyróżnione"
@@ -10176,6 +10248,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Musisz reaktywować klucze, aby zobaczyć zaktualizowane zaproszenie"
+      ],
+      "Resume now": [
+        "Wznów teraz"
       ]
     },
     "Link to calendar event": {
@@ -10290,10 +10365,10 @@
         "Archiwum"
       ],
       "Inbox": [
-        "Skrzynka odbiorcza"
+        "Odebrane"
       ],
       "Spam": [
-        "Przenieś do spamu"
+        "Spam"
       ],
       "Trash": [
         "Przenieś do kosza"
@@ -11809,6 +11884,9 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Twoja domena i subskrypcja są gotowe do użycia."
+      ],
+      "iOS": [
+        "iOS"
       ]
     },
     "Onboarding Proton": {
@@ -12153,6 +12231,9 @@
       ],
       "Your payment is still being processed": [
         "Twoja płatność jest wciąż przetwarzana"
+      ],
+      "VAT number": [
+        "Numer VAT"
       ]
     },
     "Payments.Error": {
@@ -12208,6 +12289,27 @@
       ],
       "VAT number": [
         "Numer VAT"
+      ],
+      "Add ABN": [
+        "Dodaj ABN"
+      ],
+      "Add Business Number": [
+        "Dodaj NIP"
+      ],
+      "Add EIN": [
+        "Dodaj EIN"
+      ],
+      "Add VAT number": [
+        "Dodaj numer VAT"
+      ],
+      "Edit ABN": [
+        "Edytuj ABN"
+      ],
+      "Edit EIN": [
+        "Edytuj EIN"
+      ],
+      "Edit VAT number": [
+        "Edytuj numer VAT"
       ]
     },
     "PGP key encryption warning": {
@@ -12390,6 +12492,27 @@
       ],
       "ZIP code": [
         "Kod pocztowy"
+      ],
+      "Anderson": [
+        "Nowak"
+      ],
+      "Anytown": [
+        "Kraków"
+      ],
+      "Company name": [
+        "Nazwa firmy"
+      ],
+      "Main street 12": [
+        "Główna 12"
+      ],
+      "Select country": [
+        "Wybierz kraj"
+      ],
+      "Thomas": [
+        "Jan"
+      ],
+      "VAT number": [
+        "Numer VAT"
       ]
     },
     "Placeholder for contact group name": {
@@ -14188,6 +14311,15 @@
       ],
       "You have successfully unsubscribed": [
         "Subskrypcja została anulowana"
+      ],
+      "Billing details updated": [
+        "Szczegóły płatności zostały zaktualizowane"
+      ],
+      "Move ${ selectionCount } message": [
+        "Przenieś ${ selectionCount } wiadomość",
+        "Przenieś ${ selectionCount } wiadomości",
+        "Przenieś ${ selectionCount } wiadomości",
+        "Przenieś ${ selectionCount } wiadomości"
       ]
     },
     "Success notification": {
@@ -14195,7 +14327,7 @@
         " jest aktywny"
       ],
       "${ label.Name } removed": [
-        "Utworzono \"${ label.Name }\""
+        "Etykieta ${ label.Name } została usunięta"
       ],
       "The filter has been disabled": [
         "Filtr został wyłączony"
@@ -15139,7 +15271,7 @@
         "Poproś o nowy kod"
       ],
       "Same inbox, shorter email address": [
-        "Ta sama skrzynka odbiorcza, krótszy adres e-mail"
+        "Ta sama skrzynka, krótszy adres e-mail"
       ],
       "Schedule now, send later": [
         "Zaplanuj teraz, wyślij później"
@@ -15401,6 +15533,18 @@
       ],
       "Your subscriptions in one place": [
         "Twoje subskrypcje w jednym miejscu"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Uzyskaj adres ${ MAIL_APP_NAME }"
+      ],
+      "Edit billing address": [
+        "Edytuj adres rozliczeniowy"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Uzyskaj pełny dostęp do ${ CALENDAR_APP_NAME }"
+      ],
+      "Your addresses": [
+        "Twoje adresy"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16065,6 +16209,14 @@
       ],
       "Passcode:": [
         "Kod dostępu:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Pola tekstowe są opcjonalne. Te informacje pojawią się tylko na przyszłych fakturach i nie będą miały wpływu na obecne faktury."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Pola tekstowe są opcjonalne. Podane informacje zmienią tylko wybraną fakturę, a nie dane przyszłej faktury."
       ]
     }
   }

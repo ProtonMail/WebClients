@@ -4858,6 +4858,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш поиск дал слишком много результатов. Пожалуйста, ограничьте поиск и повторите попытку."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Изменение платежного адреса в данный момент недоступно. Повторите попытку позже."
+      ],
+      "ZIP code is required": [
+        "Необходимо указать почтовый индекс"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8640,6 +8646,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вы всего в нескольких нажатиях от почтового ящика, свободного от хлама"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "Срок действия ${ planName } истекает через ${ daysLeft } день.",
+        "Срок действия ${ planName } истекает через ${ daysLeft } дня.",
+        "Срок действия ${ planName } истекает через ${ daysLeft } дней.",
+        "Срок действия ${ planName } истекает через ${ daysLeft } дней."
+      ],
+      "${ planName } expires today.": [
+        "Срок действия ${ planName } истекает сегодня."
       ]
     },
     "info": {
@@ -9565,6 +9580,15 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "Company": [
+        "Компания"
+      ],
+      "State": [
+        "Состояние"
+      ],
+      "ZIP code": [
+        "Почтовый индекс"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11969,6 +11993,24 @@
       ],
       "ZIP code": [
         "Почтовый индекс"
+      ],
+      "Anderson": [
+        "Андерсон"
+      ],
+      "Anytown": [
+        "Любой город"
+      ],
+      "Company name": [
+        "Название компании"
+      ],
+      "Main street 12": [
+        "Мейн стрит 12"
+      ],
+      "Thomas": [
+        "Томас"
+      ],
+      "VAT number": [
+        "Номер плательщика НДС"
       ]
     },
     "Placeholder for contact group name": {
@@ -13794,6 +13836,9 @@
       ],
       "You have successfully unsubscribed": [
         "Подписка отменена"
+      ],
+      "Billing details updated": [
+        "Информация о платеже обновлена"
       ]
     },
     "Success notification": {
@@ -14977,6 +15022,9 @@
       ],
       "Your subscriptions in one place": [
         "Ваши подписки в одном месте"
+      ],
+      "Edit billing address": [
+        "Изменить платежный адрес"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15635,6 +15683,14 @@
       ],
       "Passcode:": [
         "Код доступа:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Текстовые поля являются необязательными. Информация, которую вы предоставите в этой форме, будет отображаться только в счетах, выставляемых в будущем, и не повлияет на существующие счета."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Текстовые поля являются необязательными. Информация, которую вы предоставите в этой форме, изменит только выбранный вами счет-фактуру, но не ваши будущие данные о счете-фактуре."
       ]
     }
   }

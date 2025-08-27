@@ -1622,6 +1622,21 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Adds it above your existing message": [
+        "Tilføjer det over din eksisterende besked"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Få ${ BRAND_NAME }-adresse"
+      ],
+      "Claim this address": [
+        "Gør krav på denne adresse"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Gør krav på din gratis ${ BRAND_NAME } address"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Få en gratis ${ BRAND_NAME }-adresse"
       ]
     },
     "action": {
@@ -1915,6 +1930,12 @@
       ],
       "Securely run on device": [
         "Kør sikkert på enheden"
+      ],
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Data forbliver på enhed for at beskytte dit privatliv. Kræver download og kompatibel hardware."
+      ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "Der føres ingen logfiler for at beskytte Deres privatliv. Hurtigere behandling."
       ]
     },
     "Assistant toggle": {
@@ -4038,6 +4059,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
+      ],
+      "This view shows messages sent to the following addresses:": [
+        "Denne visning viser beskeder sendt til følgende adresser:"
       ]
     },
     "description": {
@@ -4870,6 +4894,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din søgning gav for mange resultater. Begræns din søgning, og forsøg igen."
+      ],
+      "Failed to open to contact": [
+        "Kunne ikke oprette kontakten"
+      ],
+      "ZIP code is required": [
+        "Postnummer er påkrævet"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5663,6 +5693,9 @@
       ],
       "You've unlocked 1 GB": [
         "Du har låst op for 1 GB"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Gør krav på ${ BRAND_NAME } address"
       ]
     },
     "Gmail forwarding": {
@@ -8515,6 +8548,37 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
+      ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Skriveassistent hjælper dig med at udarbejde bedre e-mails hurtigt og ubesværet."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } kræver en ${ BRAND_NAME } adresse til sikker begivenhedssynkronisering og kryptering. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } kræver en ${ BRAND_NAME } adresse til sikker begivenhedssynkronisering og kryptering. Gør krav på din gratis ${ MAIL_APP_NAME } adresse nu."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } udløber om ${ daysLeft } dag.",
+        "${ planName } udløber om ${ daysLeft } dage."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } udløber i dag."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Sørg for privat og krypteret kommunikation. Gør krav på din gratis ${ BRAND_NAME } e-mailadresse nu."
+      ],
+      "No change will be made to the selected emails": [
+        "Der vil ikke blive foretaget nogen ændring af de valgte e-mails"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnement udløber: For at beholde dine ${ planName } fordele, skal du fornye din abonnement i Apple App Store inden ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Abonnement udløber: For at beholde dine ${ planName } fordele, skal du fornye din abonnement i Apple App Store inden ${ byDate }. ${ reactivateLink }"
+      ],
+      "Your private writing assistant": [
+        "Din private skriveassistent"
       ]
     },
     "info": {
@@ -9464,6 +9528,15 @@
       ],
       "Your password (admin)": [
         "Din adgangskode (admin)"
+      ],
+      "Company": [
+        "Selskab"
+      ],
+      "State": [
+        "Stat/Region"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9793,6 +9866,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du skal genaktivere dine nøgler for at se den opdateret invitation"
+      ],
+      "Resume now": [
+        "Genoptag nu"
       ]
     },
     "Link to calendar event": {
@@ -11341,6 +11417,9 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Dit domæne og abonnement er klar til brug."
+      ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Tøm slettede og spam e-mails efter 30 dage"
       ]
     },
     "Onboarding Proton": {
@@ -11909,6 +11988,24 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Anderson": [
+        "Andersen"
+      ],
+      "Anytown": [
+        "Skovhavn"
+      ],
+      "Company name": [
+        "Firmanavn"
+      ],
+      "Main street 12": [
+        "Hovedgaden 12"
+      ],
+      "Thomas": [
+        "Kim"
+      ],
+      "VAT number": [
+        "Momsnummer"
       ]
     },
     "Placeholder for contact group name": {
@@ -13661,6 +13758,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du har afmeldt dig"
+      ],
+      "Billing details updated": [
+        "Faktureringsoplysninger opdateret"
       ]
     },
     "Success notification": {
@@ -14827,6 +14927,21 @@
       ],
       "Your subscriptions in one place": [
         "Dine abonnementer ét sted"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Gør krav på din gratis ${ MAIL_APP_NAME } addresse"
+      ],
+      "Craft better emails": [
+        "Skriv bedre e-mails"
+      ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Få fuld adgang til ${ CALENDAR_APP_NAME }"
+      ],
+      "Your addresses": [
+        "Dine adresser"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15390,6 +15505,19 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstfelter er valgfrie. De oplysninger, du angiver i denne formular, vil kun blive vist på fakturaer, der udstedes i fremtiden, og vil ikke påvirke eksisterende fakturaer."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Tekstfelter er valgfrie. De oplysninger, du angiver i denne formular, vil kun ændre den faktura, du har valgt, og ikke dine fremtidige fakturadetaljer."
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Betroet kontakt"
       ]
     }
   }

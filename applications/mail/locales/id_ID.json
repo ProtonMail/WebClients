@@ -4899,6 +4899,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Pencarian Anda membuahkan terlalu banyak hasil. Silakan persempit kriteria pencarian Anda dan coba lagi."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Penyuntingan alamat tagihan saat ini tidak tersedia. Silakan coba lagi nanti."
+      ],
+      "Postal code is required": [
+        "Kode pos dibutuhkan"
+      ],
+      "ZIP code is required": [
+        "Kode pos diperlukan"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8456,6 +8465,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Anda hanya berjarak beberapa klik dari kotak masuk yang rapi"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } akan kedaluwarsa dalam ${ daysLeft } hari."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } akan kedaluwarsa hari ini."
       ]
     },
     "info": {
@@ -9405,6 +9420,15 @@
       ],
       "Your password (trusted contact)": [
         "Kata sandi Anda (kontak terpercaya)"
+      ],
+      "Company": [
+        "Perusahaan"
+      ],
+      "State": [
+        "Keadaan"
+      ],
+      "ZIP code": [
+        "Kode pos"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11834,6 +11858,24 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "Kota A"
+      ],
+      "Company name": [
+        "Nama perusahaan"
+      ],
+      "Main street 12": [
+        "Jalan Utama No. 12"
+      ],
+      "Thomas": [
+        "Thomas"
+      ],
+      "VAT number": [
+        "Nomor PPN"
       ]
     },
     "Placeholder for contact group name": {
@@ -13536,6 +13578,9 @@
       ],
       "You have successfully unsubscribed": [
         "Anda berhasil berhenti berlangganan"
+      ],
+      "Billing details updated": [
+        "Rincian penagihan diperbarui"
       ]
     },
     "Success notification": {
@@ -14686,6 +14731,9 @@
       ],
       "Your subscriptions in one place": [
         "Seluruh langganan Anda dalam satu tempat"
+      ],
+      "Edit billing address": [
+        "Sunting alamat penagihan"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15215,6 +15263,14 @@
       ],
       "Passcode:": [
         "Kode sandi:"
+      ]
+    },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Kolom teks bersifat opsional. Informasi yang Anda sediakan pada kolom ini hanya akan terlihat pada faktur yang diterbitkan ke depannya tanpa memengaruhi faktur yang telah ada."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Kolom teks bersifat opsional. Informasi yang Anda sediakan dalam formulir ini hanya akan mengubah isi faktur yang Anda pilih tanpa memengaruhi rincian faktur yang akan datang."
       ]
     }
   }

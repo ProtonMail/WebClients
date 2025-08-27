@@ -4630,6 +4630,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "За вашим пошуковим запитом знайдено надто багато результатів. Обмежте пошуковий запит і спробуйте знову."
+      ],
+      "Postal code is required": [
+        "Необхідно вказати поштовий індекс"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8139,6 +8142,12 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися щомісяця."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } завершиться за ${ daysLeft } день.",
+        "${ planName } завершиться за ${ daysLeft } дні.",
+        "${ planName } завершиться за ${ daysLeft } днів.",
+        "${ planName } завершиться за ${ daysLeft } дня(ів)."
       ]
     },
     "info": {
@@ -9011,6 +9020,15 @@
       ],
       "Your password (admin)": [
         "Новий пароль (адмін)"
+      ],
+      "Company": [
+        "Компанія"
+      ],
+      "State": [
+        "Стан"
+      ],
+      "ZIP code": [
+        "Поштовий індекс"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11253,6 +11271,18 @@
       ],
       "ZIP code": [
         "Поштовий індекс"
+      ],
+      "Anderson": [
+        "Андерсон"
+      ],
+      "Company name": [
+        "Назва компанії"
+      ],
+      "Thomas": [
+        "Томас"
+      ],
+      "VAT number": [
+        "Номер платника ПДВ"
       ]
     },
     "Placeholder for contact group name": {
