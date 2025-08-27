@@ -206,6 +206,10 @@ module.exports = {
                         group: ['@proton/components/index'],
                         message: 'You should import from `@proton/components` instead.',
                     },
+                    {
+                        group: ['@proton/unleash/index'],
+                        message: 'You should import from `@proton/unleash` instead.',
+                    },
                 ],
             },
         ],

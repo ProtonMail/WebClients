@@ -21,7 +21,7 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
-import { FlagProvider } from '@proton/unleash/index';
+import { FlagProvider } from '@proton/unleash';
 
 import NotificationManagerInjector from './components/notification/NotificationManagerInjector';
 import config from './config';

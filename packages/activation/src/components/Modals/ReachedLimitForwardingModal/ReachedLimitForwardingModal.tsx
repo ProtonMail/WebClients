@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { Prompt } from '@proton/components';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
-import { useFlag } from '@proton/unleash/index';
+import { useFlag } from '@proton/unleash';
 
 const getModalText = (hasAccessToBYOE: boolean) => {
     if (hasAccessToBYOE) {

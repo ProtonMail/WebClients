@@ -9,7 +9,7 @@ import {
     Icon,
     useModalState,
 } from '@proton/components';
-import { useFlag } from '@proton/unleash/index';
+import { useFlag } from '@proton/unleash';
 
 import { Button } from '../../../atoms';
 import { ImportPaperWalletModal } from '../../../components/ImportPaperWalletModal';

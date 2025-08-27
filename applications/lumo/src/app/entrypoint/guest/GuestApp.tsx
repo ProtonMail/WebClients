@@ -21,7 +21,7 @@ import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronC
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
-import { FlagProvider } from '@proton/unleash/index';
+import { FlagProvider } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import LumoLoader from '../../components/LumoLoader';

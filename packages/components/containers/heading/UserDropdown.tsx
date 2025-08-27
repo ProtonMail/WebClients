@@ -31,7 +31,7 @@ import { getShouldProcessLinkClick } from '@proton/shared/lib/helpers/dom';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { SessionRecoveryState } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash/index';
+import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
 import HelpModal from '../support/HelpModal';

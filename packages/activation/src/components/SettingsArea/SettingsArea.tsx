@@ -6,7 +6,7 @@ import PrivateMainSettingsArea from '@proton/components/containers/layout/Privat
 import { FeatureCode, useFeature } from '@proton/features';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
-import { useFlag } from '@proton/unleash/index';
+import { useFlag } from '@proton/unleash';
 
 import type { EasySwitchFeatureFlag } from '../../interface';
 import EasySwitchStoreProvider from '../../logic/StoreProvider';

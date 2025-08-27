@@ -20,7 +20,7 @@ import { Icon, useModalState } from '@proton/components';
 import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks/index';
-import { useVariant } from '@proton/unleash/index';
+import { useVariant } from '@proton/unleash';
 
 interface Props {
     provider?: ImportProvider | OAUTH_PROVIDER;

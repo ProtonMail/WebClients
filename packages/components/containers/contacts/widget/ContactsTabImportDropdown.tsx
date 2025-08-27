@@ -11,7 +11,7 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { FeatureCode, useFeature } from '@proton/features/index';
-import { useFlag } from '@proton/unleash/index';
+import { useFlag } from '@proton/unleash';
 
 interface Props {
     onImport: () => void;
