@@ -124,12 +124,13 @@ export const useSharedWithMeNodesLoader = () => {
             }
         },
         [
+            /* setVolumeShareIds is unstable, ignore it */
+            // setVolumeShareIds,
             drive,
             handleError,
             createNotification,
             setSharedWithMeItemInStore,
             setLoadingNodes,
-            setVolumeShareIds,
             cleanupStaleItems,
         ]
     );
