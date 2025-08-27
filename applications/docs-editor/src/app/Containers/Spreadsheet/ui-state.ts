@@ -1,11 +1,22 @@
-import { getCurrencySymbol, type CellFormat, type TextFormat } from '@rowsncolumns/spreadsheet'
+import { type CellFormat, type TextFormat, getCurrencySymbol, useFocusSheet } from '@rowsncolumns/spreadsheet'
 import { ssfFormat } from '@rowsncolumns/utils'
+import {
+  CURRENCY,
+  DATE_PATTERN_EXAMPLE_VALUE,
+  LOCALE,
+  NUMBER_PATTERN_EXAMPLE_VALUE,
+  PATTERN_SPECS,
+  PERCENT_PATTERN_EXAMPLE_VALUE,
+} from './constants'
 import type { ProtonSheetsState } from './state'
-import { CURRENCY, EXAMPLE_DATE, EXAMPLE_NUMBER, EXAMPLE_PERCENT, LOCALE, PATTERN_SPECS } from './constants'
 
 type PatternSpec = {
   type: NonNullable<CellFormat['numberFormat']>['type']
   pattern: string
+}
+
+function focusGridWarningFallback() {
+  console.warn('Attempted to use focusGrid, but no focusSheet function is available.')
 }
 
 export function useProtonSheetsUIState(state: ProtonSheetsState) {
@@ -15,12 +26,27 @@ export function useProtonSheetsUIState(state: ProtonSheetsState) {
     throw new Error('Currency symbol not found.')
   }
 
+  // focus grid utilities
+  const focusGrid = useFocusSheet() ?? focusGridWarningFallback
+  function withFocusGrid(fn: () => void) {
+    return () => {
+      fn()
+      focusGrid()
+    }
+  }
+
   // history
   const history = {
     undo: state.onUndo,
     undoDisabled: !state.canUndo,
     redo: state.onRedo,
     redoDisabled: !state.canRedo,
+  }
+
+  // zoom
+  const zoom = {
+    value: state.scale,
+    set: (scale: number) => state.onChangeScale(scale),
   }
 
   // search
@@ -67,14 +93,17 @@ export function useProtonSheetsUIState(state: ProtonSheetsState) {
       current: formatUtils.getCurrentPattern(),
       general: formatUtils.createNumberPatternEntry(patternSpecs.GENERAL),
       plainText: formatUtils.createNumberPatternEntry(patternSpecs.PLAIN_TEXT),
-      number: formatUtils.createNumberPatternEntry(patternSpecs.NUMBER, EXAMPLE_NUMBER),
-      percent: formatUtils.createNumberPatternEntry(patternSpecs.PERCENT, EXAMPLE_PERCENT),
-      scientific: formatUtils.createNumberPatternEntry(patternSpecs.SCIENTIFIC, EXAMPLE_NUMBER),
-      accounting: formatUtils.createNumberPatternEntry(patternSpecs.ACCOUNTING, -EXAMPLE_NUMBER),
-      financial: formatUtils.createNumberPatternEntry(patternSpecs.FINANCIAL, -EXAMPLE_NUMBER),
+      number: formatUtils.createNumberPatternEntry(patternSpecs.NUMBER, NUMBER_PATTERN_EXAMPLE_VALUE),
+      percent: formatUtils.createNumberPatternEntry(patternSpecs.PERCENT, PERCENT_PATTERN_EXAMPLE_VALUE),
+      scientific: formatUtils.createNumberPatternEntry(patternSpecs.SCIENTIFIC, NUMBER_PATTERN_EXAMPLE_VALUE),
+      accounting: formatUtils.createNumberPatternEntry(patternSpecs.ACCOUNTING, -NUMBER_PATTERN_EXAMPLE_VALUE),
+      financial: formatUtils.createNumberPatternEntry(patternSpecs.FINANCIAL, -NUMBER_PATTERN_EXAMPLE_VALUE),
       currency: {
-        default: formatUtils.createNumberPatternEntry(patternSpecs.CURRENCY, EXAMPLE_NUMBER),
-        defaultRounded: formatUtils.createNumberPatternEntry(patternSpecs.CURRENCY_ROUNDED, EXAMPLE_NUMBER),
+        default: formatUtils.createNumberPatternEntry(patternSpecs.CURRENCY, NUMBER_PATTERN_EXAMPLE_VALUE),
+        defaultRounded: formatUtils.createNumberPatternEntry(
+          patternSpecs.CURRENCY_ROUNDED,
+          NUMBER_PATTERN_EXAMPLE_VALUE,
+        ),
         usd: formatUtils.createNumberPatternEntry(patternSpecs.USD),
         eur: formatUtils.createNumberPatternEntry(patternSpecs.EUR),
         gbp: formatUtils.createNumberPatternEntry(patternSpecs.GBP),
@@ -82,11 +111,11 @@ export function useProtonSheetsUIState(state: ProtonSheetsState) {
         cny: formatUtils.createNumberPatternEntry(patternSpecs.CNY),
         inr: formatUtils.createNumberPatternEntry(patternSpecs.INR),
       },
-      date: formatUtils.createNumberPatternEntry(patternSpecs.DATE, EXAMPLE_DATE),
-      longDate: formatUtils.createNumberPatternEntry(patternSpecs.LONG_DATE, EXAMPLE_DATE),
-      time: formatUtils.createNumberPatternEntry(patternSpecs.TIME, EXAMPLE_DATE),
-      dateTime: formatUtils.createNumberPatternEntry(patternSpecs.DATE_TIME, EXAMPLE_DATE),
-      duration: formatUtils.createNumberPatternEntry(patternSpecs.DURATION, EXAMPLE_DATE),
+      date: formatUtils.createNumberPatternEntry(patternSpecs.DATE, DATE_PATTERN_EXAMPLE_VALUE),
+      longDate: formatUtils.createNumberPatternEntry(patternSpecs.LONG_DATE, DATE_PATTERN_EXAMPLE_VALUE),
+      time: formatUtils.createNumberPatternEntry(patternSpecs.TIME, DATE_PATTERN_EXAMPLE_VALUE),
+      dateTime: formatUtils.createNumberPatternEntry(patternSpecs.DATE_TIME, DATE_PATTERN_EXAMPLE_VALUE),
+      duration: formatUtils.createNumberPatternEntry(patternSpecs.DURATION, DATE_PATTERN_EXAMPLE_VALUE),
     },
     decreaseDecimalPlaces: () =>
       state.onChangeDecimals(state.activeSheetId, state.activeCell, state.selections, 'decrement'),
@@ -107,7 +136,7 @@ export function useProtonSheetsUIState(state: ProtonSheetsState) {
     note: () => state.onInsertNote?.(state.activeSheetId, state.activeCell, state.selections),
   }
 
-  return { history, search, format, insert }
+  return { focusGrid, withFocusGrid, history, zoom, search, format, insert }
 }
 
 export type ProtonSheetsUIState = ReturnType<typeof useProtonSheetsUIState>
