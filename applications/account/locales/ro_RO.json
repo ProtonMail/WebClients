@@ -3034,7 +3034,7 @@
     },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
-        "Sigur doriți să ștergeți această metodă de plată?"
+        "Ștergeți această metodă de plată?"
       ]
     },
     "Confirmation title": {
@@ -4092,7 +4092,7 @@
     },
     "Delete address prompt": {
       "Are you sure you want to delete this address?": [
-        "Sigur doriți ștergerea acestei adrese?"
+        "Ștergeți această adresă?"
       ],
       "Delete address": [
         "Ștergere adresă"
@@ -4131,7 +4131,7 @@
     },
     "Delete domain prompt": {
       "Are you sure you want to delete this domain?": [
-        "Sigur doriți să ștergeți acest domeniu?"
+        "Ștergeți acest domeniu?"
       ],
       "Delete": [
         "Ștergere"
@@ -4145,7 +4145,7 @@
     },
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
-        "Sigur doriți să ștergeți acest grup?"
+        "Ștergeți acest grup?"
       ],
       "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
         "Rețineți că, dacă ștergeți grupul ${ displayGroupName } (cu adresa ${ displayGroupAddressEmail }), nu veți mai putea primi mesaje folosind adresa acestuia."
@@ -4360,7 +4360,7 @@
     },
     "Disable address prompt": {
       "Are you sure you want to disable this address?": [
-        "Sigur doriți să dezactivați această adresă?"
+        "Dezactivați această adresă?"
       ],
       "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
         "Prin dezactivarea adresei ${ address }, nu veți mai putea trimite sau primi mesaje folosind această adresă și toate produsele ${ BRAND_NAME } conectate la aceasta vor fi dezactivate."
@@ -4379,7 +4379,7 @@
     },
     "Domain modal": {
       "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
-        "Subdomeniile 'www' nu sunt folosite de obicei pentru e-mail. Sigur doriți să folosiți această valoare ca domeniu?"
+        "Subdomeniile 'www' nu sunt folosite de obicei pentru e-mail. Folosiți aceasta ca domeniu?"
       ]
     },
     "Domain spam notification": {
@@ -6821,7 +6821,7 @@
         "Permite înregistrarea cheilor integrate (cum ar fi Windows Hello, Face ID, Touch ID sau TPM intern)."
       ],
       "Are you sure you want to delete security key ${ name }?": [
-        "Sigur ștergeți cheia de securitate ${ name }?"
+        "Ștergeți cheia de securitate ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inserați cheia de securitate legată la contul ${ BRAND_NAME }."
@@ -7742,7 +7742,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "Sigur doriți să importați o cheie privată? Importarea unei chei private generate în mod nesigur sau care a fost compromisă poate afecta securitatea mesajelor.\n\nÎn plus, cheia publică corespunzătoare acestei chei private va fi disponibilă public pe serverul nostru de chei. Dacă cheia conține detalii personale (cum ar fi numele complet) pe care nu doriți să le publicați, vă recomandăm să editați cheia înainte de a o importa."
+        "Importați o cheie privată? Importarea unei chei private generate în mod nesigur sau care a fost compromisă poate afecta securitatea mesajelor.\n\nÎn plus, cheia publică corespunzătoare acestei chei private va fi disponibilă public pe serverul nostru de chei. Dacă cheia conține detalii personale (cum ar fi numele complet) pe care nu doriți să le publicați, vă recomandăm să editați cheia înainte de a o importa."
       ]
     },
     "Import provider": {
@@ -8357,58 +8357,58 @@
         "Oricine cu această legătură web nu va putea sincroniza sau obține actualizări viitoare pentru calendar. Dacă doriți să le oferiți acces din nou, va trebui să creați o legătură web nouă."
       ],
       "Are you sure you want to cancel editing the group?": [
-        "Sigur doriți să anulați editarea grupului?"
+        "Anulați editarea grupului?"
       ],
       "Are you sure you want to delete this calendar?": [
-        "Sigur doriți să ștergeți acest calendar?"
+        "Ștergeți acest calendar?"
       ],
       "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "Sigur doriți să ștergeți acest calendar? Toate adresele cu care ați partajat acest calendar vor pierde accesul la acesta."
+        "Ștergeți acest calendar? Toate adresele cu care ați partajat acest calendar vor pierde accesul la acesta."
       ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
-        "Sigur doriți să ștergeți acest calendar? Toate evenimentele din el vor fi șterse."
+        "Ștergeți acest calendar? Se vor șterge toate evenimentele din el."
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "Sigur doriți să ștergeți acest calendar? Puteți adăuga calendarul sărbătorilor mai târziu."
+        "Ștergeți acest calendar? Puteți adăuga calendarul sărbătorilor mai târziu."
       ],
       "Are you sure you want to delete this filter?": [
-        "Sigur doriți ștergerea acestui filtru?"
+        "Ștergeți acest filtru?"
       ],
       "Are you sure you want to delete this folder?": [
-        "Sigur doriți să ștergeți acest folder?"
+        "Ștergeți acest folder?"
       ],
       "Are you sure you want to delete this label?": [
-        "Sigur doriți să ștergeți această etichetă?"
+        "Ștergeți această etichetă?"
       ],
       "Are you sure you want to discard your changes?": [
-        "Sigur doriți să renunțați la modificări?"
+        "Renunțați la modificări?"
       ],
       "Are you sure you want to discard your import?": [
-        "Sigur doriți să anulați importarea?"
+        "Anulați importarea?"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
-        "Sigur doriți să oferiți drepturi administrative acestui utilizator?"
+        "Oferiți drepturi administrative acestui utilizator?"
       ],
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
-        "Sigur părăsiți acest grup? Dacă îl părăsiți, va trebui să primiți o reinvitare de la administratorul grupului pentru a vă realătura grupului."
+        "Părăsiți acest grup? Dacă îl părăsiți, va trebui să primiți o reinvitare de la administratorul grupului pentru a vă realătura."
       ],
       "Are you sure you want to permanently delete all your logs?": [
-        "Sigur doriți să ștergeți definitiv toate jurnalele?"
+        "Ștergeți definitiv toate jurnalele?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
-        "Sigur doriți să eliminați drepturile administrative ale acestui utilizator?"
+        "Eliminați drepturile administrative ale acestui utilizator?"
       ],
       "Are you sure you want to remove all members from this group?": [
-        "Sigur doriți să eliminați toți membrii acestui grup?"
+        "Eliminați toți membrii acestui grup?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
-        "Sigur doriți să eliminați domeniul ${ boldDomain }?"
+        "Eliminați domeniul ${ boldDomain }?"
       ],
       "Are you sure you want to sort your folders alphabetically?": [
-        "Sigur doriți să sortați folderele alfabetic?"
+        "Sortați folderele alfabetic?"
       ],
       "Are you sure you want to sort your labels alphabetically?": [
-        "Sigur doriți să sortați etichetele alfabetic?"
+        "Sortați etichetele alfabetic?"
       ],
       "Ask your organization admin to setup Gateways.": [
         "Solicitați administratorului organizației să seteze porțile de acces."
@@ -8504,7 +8504,7 @@
         "Prin crearea unui cont ${ PASS_APP_NAME } cu adresa de e-mail SimpleLogin, vă puteți gestiona aliasurile direct din ${ PASS_APP_NAME }."
       ],
       "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Prin dezactivarea monitorizării evenimentelor de securitate, vă veți șterge și întregul istoric. Sigur doriți dezactivarea?"
+        "Prin dezactivarea monitorizării evenimentelor de securitate, vă veți șterge și întregul istoric. O dezactivați?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
@@ -8743,7 +8743,7 @@
         "DKIM permite ca ${ BRAND_NAME } să vă semneze criptografic mesajele și să împiedice atacatorii să vă modifice conținutul acestora. Asigurați-vă că adăugați următoarele trei înregistrări CNAME în consola DNS (situată pe platforma de unde ați achiziționat domeniul personal)."
       ],
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
-        "DMARC verifică dacă înregistrările SPF și DKIM ale expeditorului provin din domeniul dvs. Acest lucru poate împiedica atacatorii să folosească SPF și DKIM ale altui domeniu pentru a vă compromite identitatea domeniului. „p=\" (politica) din această înregistrare indică modul în care doriți ca platformele destinatare să gestioneze e-mailurile neautorizate. Vă recomandăm să utilizați politica „p=quarantine” pentru majoritatea domeniilor. Asigurați-vă că adăugați următoarea înregistrare TXT în consola DNS (situată pe platforma de unde ați achiziționat domeniul personal)."
+        "DMARC verifică dacă înregistrările SPF și DKIM ale expeditorului provin din domeniul dvs. Acest lucru poate împiedica atacatorii să folosească SPF și DKIM ale altui domeniu pentru a vă compromite identitatea domeniului. „p=\" (politica) din această înregistrare indică modul în care doriți ca platformele destinatare să gestioneze mesajele neautorizate. Vă recomandăm să utilizați politica „p=quarantine” pentru majoritatea domeniilor. Asigurați-vă că adăugați următoarea înregistrare TXT în consola DNS (situată pe platforma de unde ați achiziționat domeniul personal)."
       ],
       "DNS TXT record": [
         "Înregistrare DNS TXT"
@@ -10391,7 +10391,7 @@
         "Aceasta va șterge toate versiunile anterioare ale fișierelor."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
-        "Acest lucru va refuza accesul la **${ email }**. Sigur doriți să continuați?"
+        "Aceasta va refuza accesul la **${ email }**. Continuați?"
       ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Aceasta va dezactiva autentificarea cu doi factori, incluzând atât aplicația de autentificare, cât și metodele cu chei de securitate."
@@ -13657,7 +13657,7 @@
         "Vizualizați activitatea ${ PASS_APP_NAME } în cadrul organizației proprii."
       ],
       "View changes to your organization and other administrator activities.": [
-        "Vizualizați modificările la organizația proprii și alte activități de administrator."
+        "Vizualizați modificările organizației proprii și alte activități de administrator."
       ],
       "View user sign-in, recovery and security events.": [
         "Vizualizați evenimentele de conectare, recuperare și securitate ale utilizatorului."
@@ -16344,7 +16344,7 @@
         "Toți administratorii vor primi acces la cheie."
       ],
       "Are you sure you want to change your organization key?": [
-        "Sigur doriți să modificați cheia organizației?"
+        "Modificați cheia organizației?"
       ],
       "Change organization key": [
         "Modificare cheie organizație"
@@ -19399,7 +19399,7 @@
         "**${ humanUsedSpace }** din ${ humanMaxSpace }"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Prin retrogradare veți pierde următoarele beneficii. Sigur doriți să continuați?"
+        "Prin retrogradare veți pierde următoarele beneficii. Continuați?"
       ],
       "Consider upgrading your plan to continue to use your account without interruptions.": [
         "Luați în considerare modificarea planului pentru a continua să vă folosiți contul fără întreruperi."
@@ -20714,10 +20714,10 @@
         "Aplicare cod cadou"
       ],
       "Are you sure you want to close the preview?": [
-        "Sigur doriți să închideți examinarea?"
+        "Închideți examinarea?"
       ],
       "Are you sure you want to close?": [
-        "Sigur doriți să închideți?"
+        "Închideți?"
       ],
       "Are you sure?": [
         "Confirmați?"
@@ -23144,10 +23144,10 @@
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
       ],
       "Are you sure you want to delete the phone number?": [
-        "Sigur doriți ștergerea acestui număr de telefon?"
+        "Ștergeți acest număr de telefon?"
       ],
       "Are you sure you want to delete this address?": [
-        "Sigur doriți ștergerea acestei adrese?"
+        "Ștergeți aceste adrese?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Ștergând această adresă, nu veți mai putea primi notificările zilnice."
