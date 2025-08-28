@@ -1,6 +1,6 @@
-/* eslint-disable class-methods-use-this */
-/* eslint-disable max-classes-per-file */
-/* eslint-disable no-underscore-dangle */
+ 
+ 
+ 
 import {
     SHA256,
     SHA512,
@@ -447,21 +447,10 @@ class KeyManagementApi {
 export class Api extends KeyManagementApi {
     /**
      * Init pmcrypto and set the underlying global OpenPGP config.
-     * The `pluggableGrammarErrorReporter` needs to be passed outside of the InitOptions
-     * to have it handled properly by Comlik's default transfer handlers.
-     *
-     * If we need to pass other functions as part of the config in the future,
-     * we should write custom transfer handlers
-     * (see original handler: https://github.com/GoogleChromeLabs/comlink/blob/60737ad76e8e4d5d8abe2c0c5809f11c72edcbe7/src/comlink.ts#L48-L62)
      */
-    static init(
-        { enforceOpenpgpGrammar }: InitOptions,
-        pluggableGrammarErrorReporter: ((errorMessage: string) => any) | null = null
-    ) {
+    static init({ enforceOpenpgpGrammar }: InitOptions) {
         initPmcrypto();
-        // if false, errors are still logged to `pluggableGrammarErrorReporter`
         config.enforceGrammar = enforceOpenpgpGrammar;
-        config.pluggableGrammarErrorReporter = pluggableGrammarErrorReporter;
     }
 
     /**

@@ -1,8 +1,6 @@
 import { CryptoProxy } from '@proton/crypto';
 import type { WorkerPoolInitOptions as CryptoWorkerOptions } from '@proton/crypto/lib/worker/workerPool';
-import { getPluggableOpenPGPGrammarErrorReporter } from '@proton/crypto/lib/utils';
 import { CryptoWorkerPool } from '@proton/crypto/lib/worker/workerPool';
-import { captureMessage } from './sentry';
 
 import { hasModulesSupport } from './browser';
 
@@ -25,14 +23,10 @@ const init = async (options?: CryptoWorkerOptions) => {
         const openpgpConfigOptions = {
             enforceOpenpgpGrammar: false,
             ...options?.openpgpConfigOptions,
-        }
-        CryptoApi.init(
-            openpgpConfigOptions,
-            getPluggableOpenPGPGrammarErrorReporter(captureMessage)
-        );
+        };
+        CryptoApi.init(openpgpConfigOptions);
         CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
     } else {
-        // the pluggableOpenPGPGrammarErrorReporter is set internally by the CryptoWorkerPool
         await CryptoWorkerPool.init(options);
         CryptoProxy.setEndpoint(CryptoWorkerPool, (endpoint) => endpoint.destroy());
     }
