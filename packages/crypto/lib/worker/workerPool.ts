@@ -46,7 +46,6 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
     let workerPool: Remote<CryptoApi>[] | null = null;
     let i = -1;
 
-     
     const initWorker = async (openpgpConfigOptions: WorkerInitOptions) => {
         // Webpack static analyser is not especially powerful at detecting web workers that require bundling,
         // see: https://github.com/webpack/webpack.js.org/issues/4898#issuecomment-823073304.
@@ -98,10 +97,7 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
     };
 
     return {
-        init: async ({
-            poolSize = navigator.hardwareConcurrency || 1,
-            openpgpConfigOptions = { enforceOpenpgpGrammar: false },
-        } = {}) => {
+        init: async ({ poolSize = navigator.hardwareConcurrency || 1, openpgpConfigOptions = {} } = {}) => {
             if (workerPool !== null) {
                 throw new Error('worker pool already initialised');
             }
