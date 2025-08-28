@@ -73,7 +73,7 @@ interface Props {
     childOverride?: ReactNode;
 }
 
-const plusPlans = [PLANS.VPN2024, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.VPN_PASS_BUNDLE, PLANS.WALLET, PLANS.LUMO];
+const plusPlans = [PLANS.VPN2024, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.VPN_PASS_BUNDLE, PLANS.LUMO];
 
 export const SubscribeAccountHeader = ({
     title,

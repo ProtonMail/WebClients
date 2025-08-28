@@ -230,7 +230,6 @@ export const hasDrivePro = (subscription: MaybeFreeSubscription) => hasSomePlan(
 export const hasDriveBusiness = (subscription: MaybeFreeSubscription) =>
     hasSomePlan(subscription, PLANS.DRIVE_BUSINESS);
 export const hasPass = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.PASS);
-export const hasWallet = (subscription: MaybeFreeSubscription) => hasSomeAddonOrPlan(subscription, PLANS.WALLET);
 export const hasLumoPlan = (subscription: MaybeFreeSubscription) => hasSomeAddonOrPlan(subscription, PLANS.LUMO);
 export const hasBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.BUNDLE);
 export const hasBundlePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.BUNDLE_PRO);
@@ -273,8 +272,6 @@ export const getUpgradedPlan = (subscription: Subscription | undefined, app: Pro
                 return PLANS.DRIVE;
             case APPS.PROTONVPN_SETTINGS:
                 return PLANS.VPN2024;
-            case APPS.PROTONWALLET:
-                return PLANS.WALLET;
             default:
             case APPS.PROTONMAIL:
                 return PLANS.MAIL;
@@ -300,7 +297,6 @@ export const canCheckItemPaidChecklist = (subscription: Subscription | undefined
 const canCheckItemGetStartedCondition: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.VPN,
     PLANS.VPN2024,
-    PLANS.WALLET,
     PLANS.PASS,
     PLANS.VPN_PASS_BUNDLE,
 ]);
@@ -471,7 +467,6 @@ export const getHasPlusPlan = (planName?: PLANS | ADDON_NAMES) => {
             PLANS.DRIVE,
             PLANS.DRIVE_1TB,
             PLANS.VPN_PASS_BUNDLE,
-            PLANS.WALLET,
             PLANS.PASS_LIFETIME,
             PLANS.LUMO,
         ].some((otherPlanName) => otherPlanName === planName)

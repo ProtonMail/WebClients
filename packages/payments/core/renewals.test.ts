@@ -18,7 +18,7 @@ describe('getRenewCycle', () => {
         }
     );
 
-    it.each([PLANS.FREE, PLANS.DRIVE, PLANS.DRIVE_PRO, PLANS.PASS, PLANS.WALLET])(
+    it.each([PLANS.FREE, PLANS.DRIVE, PLANS.DRIVE_PRO, PLANS.PASS])(
         'should keep TWO_YEARS cycle for %s plan',
         (plan) => {
             const result = getRenewCycle(plan, CYCLE.TWO_YEARS);
