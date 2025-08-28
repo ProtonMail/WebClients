@@ -9,6 +9,7 @@ import OutgoingEmergencyAccessTopBanner from '@proton/account/delegatedAccess/em
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import { useGroups } from '@proton/account/groups/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import AuthDevicesTopBanner from '@proton/account/sso/AuthDevicesTopBanner';
 import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -168,6 +169,8 @@ const MainContainer = () => {
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
+    const [referralInfo] = useReferralInfo();
+
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
     const recoveryNotification = useRecoveryNotification(false, false, canDisplayNewSentinelSettings);
@@ -228,6 +231,7 @@ const MainContainer = () => {
         isReferralExpansionEnabled,
         isRetentionPoliciesEnabled,
         isSsoForPbsEnabled,
+        referralInfo: referralInfo.uiData,
     });
 
     useEffect(() => {
