@@ -1,6 +1,6 @@
 import { type BaseMeetingUrls, VIDEO_CONF_SERVICES } from '../constants';
 
-export const PROTON_MEET_REGEX = /https:\/\/meet(?:\.\w+)?\.proton[^\s]+\/join\/id-(\w+)#pwd-([^\s#]+)/;
+export const PROTON_MEET_REGEX = /https?:\/\/meet(?:\.\w+)?\..+\/join\/id-(\w+)#pwd-([^\s#]+)/;
 
 export const getProtonMeetData = (text: string): BaseMeetingUrls => {
     const match = text.match(PROTON_MEET_REGEX);
