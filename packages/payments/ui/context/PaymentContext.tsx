@@ -16,13 +16,6 @@ import {
 import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
-import {
-    type EnrichedCheckResponse,
-    type PaymentsCheckout,
-    type RequiredCheckResponse,
-    getCheckout,
-    getOptimisticCheckResult as innerGetOptimisticCheckResult,
-} from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Api } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -31,6 +24,12 @@ import noop from '@proton/utils/noop';
 import { type CheckSubscriptionData } from '../../core/api';
 import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS } from '../../core/billing-address/billing-address';
 import { getBillingAddressFromPaymentStatus } from '../../core/billing-address/billing-address-from-payments-status';
+import {
+    type PaymentsCheckout,
+    type RequiredCheckResponse,
+    getCheckout,
+    getOptimisticCheckResult as innerGetOptimisticCheckResult,
+} from '../../core/checkout';
 import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '../../core/constants';
 import { type getAvailableCurrencies, type getPreferredCurrency, mainCurrencies } from '../../core/helpers';
 import type {
@@ -48,6 +47,7 @@ import { hasFreePlanIDs } from '../../core/planIDs';
 import { FREE_PLAN } from '../../core/subscription/freePlans';
 import { isCheckForbidden } from '../../core/subscription/helpers';
 import {
+    type EnrichedCheckResponse,
     type FullPlansMap,
     type Subscription,
     type SubscriptionCheckResponse,

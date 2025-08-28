@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { type ModalProps, ModalTwoFooter } from '@proton/components';
-import { ModalTwo, ModalTwoContent } from '@proton/components';
+import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature, getStorageFeature } from '@proton/components/containers/payments/features/drive';
 import { getUsersFeature } from '@proton/components/containers/payments/features/highlights';
@@ -13,8 +12,14 @@ import { getVPNAppFeature } from '@proton/components/containers/payments/feature
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { getNormalizedPlanTitles } from '@proton/components/containers/payments/subscription/plusToPlusHelper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { type FreePlanDefault, PLANS, type Plan, type PlansMap, type SubscriptionPlan } from '@proton/payments';
-import { getCheckout } from '@proton/shared/lib/helpers/checkout';
+import {
+    type FreePlanDefault,
+    PLANS,
+    type Plan,
+    type PlansMap,
+    type SubscriptionPlan,
+    getCheckout,
+} from '@proton/payments';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 import type { SubscriptionData } from '../../signup/interfaces';

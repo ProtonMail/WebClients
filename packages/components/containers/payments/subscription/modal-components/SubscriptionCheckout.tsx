@@ -11,7 +11,7 @@ import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader'
 import useConfig from '@proton/components/hooks/useConfig';
 import { type PaymentFacade, useCurrencies } from '@proton/components/payments/client-extensions';
 import { type MethodsHook } from '@proton/components/payments/react-extensions';
-import type { CheckoutModifiers } from '@proton/payments';
+import type { CheckoutModifiers, RequiredCheckResponse } from '@proton/payments';
 import {
     type Currency,
     type Cycle,
@@ -21,14 +21,13 @@ import {
     type Plan,
     type PlanIDs,
     type Subscription,
+    getCheckout,
     getPlanFromPlanIDs,
     hasPlanIDs,
     isLifetimePlanSelected,
 } from '@proton/payments';
 import { type TaxCountryHook } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
-import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
-import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 

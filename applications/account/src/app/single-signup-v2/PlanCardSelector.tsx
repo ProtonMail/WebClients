@@ -8,6 +8,7 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import { getShortPlan } from '@proton/components/containers/payments/features/plan';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { type PaymentsCheckout } from '@proton/payments';
 import {
     CYCLE,
     type Currency,
@@ -20,6 +21,8 @@ import {
     type PlansMap,
     type Subscription,
     type SubscriptionPlan,
+    getCheckResultFromSubscription,
+    getCheckout,
     getHasPlusPlan,
     getPlanFromPlanIDs,
     getPlanIDs,
@@ -29,8 +32,6 @@ import {
     getTotalFromPricing,
 } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
-import { getCheckResultFromSubscription, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -494,7 +495,7 @@ export const UpsellCardSelector = ({
     vpnServersCountData,
 }: {
     audience?: Audience;
-    checkout: SubscriptionCheckoutData;
+    checkout: PaymentsCheckout;
     relativePrice: string | undefined;
     plan: Plan;
     currentPlan: SubscriptionPlan | undefined;
