@@ -921,6 +921,10 @@ export function isTaxInclusive(checkResponse?: Pick<SubscriptionCheckResponse, '
     return checkResponse?.TaxInclusive === TaxInclusive.INCLUSIVE;
 }
 
+export function isTaxExclusive(checkResponse?: Pick<SubscriptionCheckResponse, 'TaxInclusive'>): boolean {
+    return checkResponse?.TaxInclusive === TaxInclusive.EXCLUSIVE;
+}
+
 export const PASS_LAUNCH_OFFER = 'passlaunch';
 
 export function hasPassLaunchOffer(subscription: Subscription | FreeSubscription | undefined): boolean {

@@ -1074,7 +1074,6 @@ const Step1B = ({
             options={options}
             actualCheckout={actualCheckout}
             loadingPaymentDetails={disablePayButton}
-            paymentFacade={paymentFacade}
             isB2bPlan={isB2bPlan}
             upsellToggle={getUpsellToggle()}
             planInformation={(() => {

@@ -1455,7 +1455,6 @@ const Step1 = ({
                                             options={options}
                                             actualCheckout={actualCheckout}
                                             loadingPaymentDetails={ghostPayments}
-                                            paymentFacade={paymentFacade}
                                             isB2bPlan={isB2bPlan}
                                             upsellToggle={getUpsellToggle()}
                                             planInformation={(() => {

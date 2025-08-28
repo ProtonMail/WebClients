@@ -12,12 +12,13 @@ import {
     type Plan,
     SubscriptionMode,
     TRIAL_DURATION_DAYS,
+    TaxInclusive,
+    formatTax,
     getCheckout,
     getHas2024OfferCoupon,
     getIsB2BAudienceFromPlan,
     getPricingFromPlanIDs,
     getTotalFromPricing,
-    isTaxInclusive,
 } from '@proton/payments';
 import { InclusiveVatText } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -84,7 +85,6 @@ interface Props {
     vpnServersCountData: VPNServersCountData;
     loadingPaymentDetails: boolean;
     showRenewalNotice: boolean;
-    showInclusiveTax: boolean;
     app: APP_NAMES;
 }
 
@@ -95,7 +95,6 @@ const AccountStepPaymentSummary = ({
     vpnServersCountData,
     loadingPaymentDetails,
     showRenewalNotice,
-    showInclusiveTax,
     app,
 }: Props) => {
     const summaryPlan = getSummaryPlan({
@@ -134,17 +133,19 @@ const AccountStepPaymentSummary = ({
     const hideDiscount = isPorkbun || !!couponConfig?.hidden;
 
     const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
-    const showAmountDue = proration !== 0 || credits !== 0 || couponDiscount !== 0 || hideDiscount || isTrial;
+
+    const tax = formatTax(options.checkResult);
+    const showAmountDue =
+        proration !== 0 ||
+        credits !== 0 ||
+        couponDiscount !== 0 ||
+        hideDiscount ||
+        isTrial ||
+        tax?.inclusive === TaxInclusive.EXCLUSIVE;
 
     const isB2BPlan = getIsB2BAudienceFromPlan(selectedPlan.Name);
 
-    const taxInclusiveText = (
-        <InclusiveVatText
-            tax={options.checkResult?.Taxes?.[0]}
-            currency={subscriptionData.currency}
-            className="text-sm color-weak"
-        />
-    );
+    const taxInclusiveText = <InclusiveVatText checkResult={options.checkResult} className="text-sm color-weak" />;
 
     const initialLoading = model.loadingDependencies;
     const loading = loadingPaymentDetails || initialLoading;
@@ -213,9 +214,24 @@ const AccountStepPaymentSummary = ({
                 bold: false,
             },
             !showAmountDue &&
-                showInclusiveTax && {
+                tax?.inclusive === TaxInclusive.INCLUSIVE &&
+                tax.amount > 0 && {
                     id: 'vat',
                     left: taxInclusiveText,
+                },
+            tax?.inclusive === TaxInclusive.EXCLUSIVE &&
+                tax?.amount > 0 && {
+                    id: 'vat-exclusive',
+                    left: (
+                        <span>
+                            {tax.taxesQuantity > 1 ? c('Payments').t`Taxes` : tax.taxName} {tax.rate}%
+                        </span>
+                    ),
+                    right: (
+                        <Price key="price" currency={tax.currency} data-testid="taxAmount">
+                            {tax.amount}
+                        </Price>
+                    ),
                 },
         ]
             .filter(isTruthy)
@@ -315,7 +331,7 @@ const AccountStepPaymentSummary = ({
                                     )}
                                 </span>
                             </div>
-                            {isTaxInclusive(options.checkResult) && taxInclusiveText}
+                            {taxInclusiveText}
                         </>
                     )}
                     {isTrial && (

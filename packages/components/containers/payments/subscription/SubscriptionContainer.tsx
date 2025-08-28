@@ -1100,13 +1100,7 @@ const SubscriptionContainerInner = ({
                 taxCountry={taxCountry}
                 paymentFacade={paymentFacade}
             />
-            {paymentFacade.showInclusiveTax && (
-                <InclusiveVatText
-                    tax={checkResult?.Taxes?.[0]}
-                    currency={selectedPlanCurrency}
-                    className="text-sm color-weak text-center mt-1"
-                />
-            )}
+            <InclusiveVatText checkResult={checkResult} className="text-sm color-weak text-center mt-1" />
         </>
     );
 
