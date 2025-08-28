@@ -162,7 +162,6 @@ export enum PLANS {
      */
     VPN = 'vpn2022',
     VPN2024 = 'vpn2024',
-    WALLET = 'wallet2024',
     BUNDLE = 'bundle2022',
     /**
      * @deprecated.
@@ -307,7 +306,6 @@ export const PLAN_NAMES: { [key in PLANS]: string } = {
     [PLANS.MAIL]: 'Mail Plus',
     [PLANS.MAIL_PRO]: 'Mail Essentials',
     [PLANS.MAIL_BUSINESS]: 'Mail Professional',
-    [PLANS.WALLET]: 'Wallet Plus',
     [PLANS.LUMO]: 'Lumo Plus',
     [PLANS.BUNDLE]: 'Proton Unlimited',
     [PLANS.BUNDLE_PRO]: 'Proton Business Suite',

@@ -432,7 +432,6 @@ export {
     hasVpnBusiness,
     hasVPNPassBundle,
     hasVpnPro,
-    hasWallet,
     isAnyManagedExternally,
     isCancellableOnlyViaSupport,
     isCheckForbidden,
