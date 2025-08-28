@@ -1655,6 +1655,9 @@
       "Extra password successfully removed": [
         "Se ha eliminado la contraseña adicional."
       ],
+      "Failed updating your vault organization": [
+        "No se pudo actualizar la organización de tu caja fuerte"
+      ],
       "Fill in the CSV with your data": [
         "Rellenar el CSV con tus datos"
       ],
@@ -1831,8 +1834,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
-        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte borrará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -2289,6 +2291,9 @@
       "Unverified": [
         "Sin verificar"
       ],
+      "Updating vault organization...": [
+        "Actualizando organización de caja fuerte..."
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Mejora ahora para desbloquear funciones premium"
       ],
@@ -2315,6 +2320,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Se ha eliminado la caja fuerte «${ share.content.name }»."
+      ],
+      "Vault organization successfully updated": [
+        "Se ha actualizado correctamente la organización de la caja fuerte."
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Cajas fuertes compartidas: ${ vaultMembersCount } miembro",
