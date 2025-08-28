@@ -66,6 +66,9 @@ const CreateEventModal = ({
     const isBusySlotsAvailable = useBusySlotsAvailable();
     const dispatch = useCalendarDispatch();
     const [participantError, setParticipantError] = useState(false);
+
+    const [isVideoConferenceLoading, setIsVideoConferenceLoading] = useState(false);
+
     const errors = { ...validateEventModel(model), participantError };
     const { isSubmitted, loadingAction, handleDelete, handleSubmit, lastAction } = useForm({
         containerEl: document.body, // Annoying to get a ref, mostly fine to use this
@@ -113,7 +116,7 @@ const CreateEventModal = ({
             color="norm"
             data-testid="create-event-modal:save"
             loading={loadingAction && lastAction === ACTION.SUBMIT}
-            disabled={loadingAction || cannotSave}
+            disabled={loadingAction || cannotSave || isVideoConferenceLoading}
             type="submit"
             className={isCreateEvent ? 'w-full sm:w-auto' : ''}
         >
@@ -215,6 +218,7 @@ const CreateEventModal = ({
                 onDisplayBusySlots={onDisplayBusySlots}
                 hasZoomError={hasZoomError}
                 view={view}
+                setIsVideoConferenceLoading={setIsVideoConferenceLoading}
             />
         </BasicModal>
     );

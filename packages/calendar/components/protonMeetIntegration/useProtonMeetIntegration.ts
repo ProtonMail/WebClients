@@ -27,6 +27,7 @@ interface UseProtonMeetIntegrationParameters {
     setModel: (value: EventModel) => void;
     isActive: boolean;
     setActiveProvider: (provider: VIDEO_CONFERENCE_PROVIDER | null) => void;
+    setIsVideoConferenceLoading: (value: boolean) => void;
 }
 
 export const useProtonMeetIntegration = ({
@@ -34,6 +35,7 @@ export const useProtonMeetIntegration = ({
     setModel,
     isActive,
     setActiveProvider,
+    setIsVideoConferenceLoading,
 }: UseProtonMeetIntegrationParameters) => {
     const history = useHistory();
     const location = useLocation();
@@ -58,6 +60,10 @@ export const useProtonMeetIntegration = ({
         hidePassphrase: !isProtonMeetEnabled,
     });
 
+    const modelRef = useRef(model);
+
+    modelRef.current = model;
+
     const { createProtonMeet, getProtonMeetByLinkName, saveProtonMeetPassword } = useProtonMeet();
 
     const getMeetingDependencies = useGetMeetingDependencies();
@@ -68,6 +74,8 @@ export const useProtonMeetIntegration = ({
         if (processState === 'loading' || processState === 'meeting-present') {
             return;
         }
+
+        setIsVideoConferenceLoading(true);
 
         setActiveProvider(VIDEO_CONFERENCE_PROVIDER.PROTON_MEET);
 
@@ -113,7 +121,7 @@ export const useProtonMeetIntegration = ({
             });
 
             setModel({
-                ...model,
+                ...modelRef.current,
                 conferenceId: id,
                 conferenceUrl: getAppHref(meetingLink, APPS.PROTONMEET),
                 conferenceHost: user.Email,
@@ -138,6 +146,8 @@ export const useProtonMeetIntegration = ({
             });
 
             setProcessState(undefined);
+        } finally {
+            setIsVideoConferenceLoading(false);
         }
     };
 

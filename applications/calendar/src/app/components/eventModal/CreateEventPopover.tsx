@@ -96,6 +96,7 @@ const CreateEventPopover = ({
         selfAddress: model.selfAddress,
     };
 
+    const [isVideoConferenceLoading, setIsVideoConferenceLoading] = useState(false);
     const [isDragging, setIsDragging] = useState(false);
     const [offset, setOffset] = useState({ x: 0, y: 0 });
     const [initialPosition, setInitialPosition] = useState({ clientX: 0, clientY: 0 });
@@ -215,6 +216,7 @@ const CreateEventPopover = ({
                     isDrawerApp={isDrawerApp}
                     view={view}
                     hasZoomError={hasZoomError}
+                    setIsVideoConferenceLoading={setIsVideoConferenceLoading}
                 />
                 <PopoverFooter className="justify-end flex-nowrap flex-column-reverse sm:flex-row gap-2">
                     <Button
@@ -229,7 +231,7 @@ const CreateEventPopover = ({
                         type="submit"
                         className={isDrawerApp ? 'w-full' : undefined}
                         loading={loadingAction && lastAction === ACTION.SUBMIT}
-                        disabled={loadingAction || cannotSave}
+                        disabled={loadingAction || cannotSave || isVideoConferenceLoading}
                     >
                         {c('Action').t`Save`}
                     </Button>
