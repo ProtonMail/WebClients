@@ -1,10 +1,11 @@
 import { differenceInDays, fromUnixTime } from 'date-fns';
 
+import { AccessType } from '../authentication/accessType';
 import { getAccessType } from '../authentication/getAccessType';
 import { PRODUCT_BIT, USER_ROLES } from '../constants';
 import { hasBit } from '../helpers/bitset';
 import { decodeBase64URL } from '../helpers/encoding';
-import type { User, UserInfo } from '../interfaces';
+import type { User, UserInfo, UserModel } from '../interfaces';
 import { UNPAID_STATE } from '../interfaces';
 
 const { ADMIN_ROLE, MEMBER_ROLE, FREE_ROLE } = USER_ROLES;
@@ -21,6 +22,7 @@ export const isPaid = (user: User) => !!user.Subscribed;
 export const isPrivate = (user: User) => user.Private === 1;
 export const isFree = (user: User) => !isPaid(user);
 export const isAdmin = (user: User) => user.Role === ADMIN_ROLE;
+export const isAdminOrLoginAsAdmin = (user: UserModel) => user.isAdmin || user.accessType === AccessType.AdminAccess;
 export const isMember = (user: User) => user.Role === MEMBER_ROLE;
 export const isSelf = (user: User) => !user.OrganizationPrivateKey && !user.Flags?.['delegated-access'];
 export const isDelinquent = (user: User) => !!user.Delinquent;

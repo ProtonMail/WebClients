@@ -95,6 +95,11 @@ export const getStandardFolders = (): FolderMap => ({
         name: c('Link').t`All mail`,
         to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL]}`,
     },
+    [MAILBOX_LABEL_IDS.SOFT_DELETED]: {
+        icon: 'trash-clock',
+        name: c('Link').t`Deleted`,
+        to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SOFT_DELETED]}`,
+    },
 });
 
 export const getCurrentFolders = (

@@ -4,9 +4,12 @@ import { useEffect, useRef, useState } from 'react';
 import type { Location } from 'history';
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { SimpleSidebarListItemHeader } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import { type MailSettings } from '@proton/shared/lib/interfaces';
+import { isAdminOrLoginAsAdmin } from '@proton/shared/lib/user/helpers';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import type { ApplyLabelsParams } from 'proton-mail/hooks/actions/label/interface';
@@ -66,11 +69,15 @@ const MailSidebarSystemFolders = ({
     applyLabels,
 }: Props) => {
     const { ShowMoved, AlmostAllMail } = mailSettings;
+    const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
+    const [user] = useUser();
+
     const [sidebarElements, moveSidebarElement] = useMoveSystemFolders({
         showMoved: ShowMoved,
         showScheduled,
         showSnoozed,
         showAlmostAllMail: AlmostAllMail,
+        showSoftDeletedFolder: isRetentionPoliciesEnabled && isAdminOrLoginAsAdmin(user),
     });
     const isConversation = isConversationMode(currentLabelID, mailSettings, location);
 
