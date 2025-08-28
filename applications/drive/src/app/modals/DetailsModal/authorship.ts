@@ -143,11 +143,15 @@ function getAuthorshipMessage({
 
 function getAuthorshipDetails(node: MaybeNode): string[] {
     const nodeEntity = node.ok ? node.value : node.error;
-    const activeRevision = node.ok
-        ? node.value.activeRevision
-        : node.error.activeRevision?.ok
-          ? node.error.activeRevision.value
-          : undefined;
+
+    let activeRevision;
+    if (node.ok) {
+        activeRevision = node.value.activeRevision;
+    } else if (node.error.activeRevision?.ok) {
+        activeRevision = node.error.activeRevision.value;
+    } else {
+        activeRevision = undefined;
+    }
 
     const details = [];
 
