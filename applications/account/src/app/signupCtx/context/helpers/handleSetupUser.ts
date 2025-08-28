@@ -6,6 +6,7 @@ import {
     type ExtendedTokenPayment,
     type PaymentsVersion,
     type PlanIDs,
+    type RequiredCheckResponse,
     type Subscription,
     createSubscription,
     hasFreePlanIDs,
@@ -18,7 +19,6 @@ import { type ProductParam } from '@proton/shared/lib/apps/product';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { type AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { type RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { Api, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper, handleSetupKeys } from '@proton/shared/lib/keys';

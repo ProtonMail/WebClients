@@ -4,8 +4,7 @@ import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
-import { CYCLE, type CheckSubscriptionData, PLANS } from '@proton/payments';
-import { type EnrichedCheckResponse } from '@proton/shared/lib/helpers/checkout';
+import { CYCLE, type CheckSubscriptionData, type EnrichedCheckResponse, PLANS } from '@proton/payments';
 
 import { usePublicSessionUser } from '../../store';
 

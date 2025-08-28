@@ -8,10 +8,9 @@ import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import PlusUnlimitedComparison from '@proton/components/containers/payments/subscription/PlusUnlimitedComparison';
 import { getNormalizedPlanTitles } from '@proton/components/containers/payments/subscription/plusToPlusHelper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { type Plan, type PlansMap, type SubscriptionPlan } from '@proton/payments';
+import { type Plan, type PlansMap, type SubscriptionPlan, getCheckout } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 
 import type { SubscriptionData } from '../../signup/interfaces';
 

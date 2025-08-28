@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import { type Currency, type Tax } from '@proton/payments';
 import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
+
+import { type Currency } from '../../core/interface';
+import { type Tax } from '../../core/subscription/interface';
 
 interface Props {
     tax: Tax;
