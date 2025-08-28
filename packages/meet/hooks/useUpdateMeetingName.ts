@@ -6,6 +6,7 @@ import { useApi } from '@proton/components';
 
 import type { CreateMeetingResponse } from '../types/response-types';
 import { encryptMeetingName } from '../utils/cryptoUtils';
+import { useMeetErrorReporting } from './useMeetErrorReporting';
 
 const updateMeetingNameCall = (meetingId: string) => {
     return {
@@ -17,6 +18,8 @@ const updateMeetingNameCall = (meetingId: string) => {
 
 export const useUpdateMeetingName = () => {
     const api = useApi();
+
+    const reportMeetError = useMeetErrorReporting();
 
     const updateMeetingName = useCallback(
         async (meetingId: string, meetingName: string, sessionKey: Uint8Array<ArrayBuffer>) => {
@@ -32,6 +35,8 @@ export const useUpdateMeetingName = () => {
 
                 return Meeting;
             } catch (error) {
+                reportMeetError('Error updating meeting name', error);
+
                 throw new Error(c('meet_2025 Info').t`Failed to update meeting name`);
             }
         },

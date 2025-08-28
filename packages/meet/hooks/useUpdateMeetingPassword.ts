@@ -8,6 +8,7 @@ import { srpGetVerify } from '@proton/shared/lib/srp';
 import type { CreateMeetingResponse, CustomPasswordState } from '../types/response-types';
 import { encryptMeetingPassword, encryptSessionKey, hashPasswordWithSalt } from '../utils/cryptoUtils';
 import { useGetMeetingDependencies } from './useGetMeetingDependencies';
+import { useMeetErrorReporting } from './useMeetErrorReporting';
 
 const updateMeetingPasswordCall = (meetingId: string) => {
     return {
@@ -21,6 +22,8 @@ export const useUpdateMeetingPassword = () => {
     const api = useApi();
 
     const getMeetingDependencies = useGetMeetingDependencies();
+
+    const reportMeetError = useMeetErrorReporting();
 
     const updateMeetingPassword = useCallback(
         async ({
@@ -63,7 +66,7 @@ export const useUpdateMeetingPassword = () => {
 
                 return Meeting;
             } catch (error) {
-                console.error(error);
+                reportMeetError('Error updating meeting password', error);
 
                 throw new Error(c('meet_2025 Info').t`Failed to update meeting password`);
             }

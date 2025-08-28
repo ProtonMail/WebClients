@@ -2,6 +2,8 @@ import { useCallback } from 'react';
 
 import { useApi } from '@proton/components';
 
+import { useMeetErrorReporting } from './useMeetErrorReporting';
+
 const deleteMeetingCall = (meetingId: string) => {
     return {
         method: 'delete',
@@ -13,6 +15,8 @@ const deleteMeetingCall = (meetingId: string) => {
 export const useDeleteMeeting = () => {
     const api = useApi();
 
+    const reportMeetError = useMeetErrorReporting();
+
     const deleteMeeting = useCallback(
         async (meetingId: string) => {
             try {
@@ -20,7 +24,9 @@ export const useDeleteMeeting = () => {
 
                 return true;
             } catch (error) {
-                console.error(error);
+                reportMeetError('Error deleting meeting', error);
+
+                throw error;
             }
         },
         [api]

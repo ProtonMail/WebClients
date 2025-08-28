@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 import { useApi } from '@proton/components';
 
 import type { Meeting } from '../types/response-types';
+import { useMeetErrorReporting } from './useMeetErrorReporting';
 
 const getMeetingByLinkNameCall = (meetingId: string) => {
     return {
@@ -15,6 +16,8 @@ const getMeetingByLinkNameCall = (meetingId: string) => {
 export const useGetMeetingByLinkName = () => {
     const api = useApi();
 
+    const reportMeetError = useMeetErrorReporting();
+
     const getMeetingByLinkName = useCallback(
         async (meetingId: string) => {
             try {
@@ -22,7 +25,8 @@ export const useGetMeetingByLinkName = () => {
 
                 return response.Meeting;
             } catch (error) {
-                console.error(error);
+                reportMeetError('Error getting meeting by link name', error);
+
                 throw error;
             }
         },

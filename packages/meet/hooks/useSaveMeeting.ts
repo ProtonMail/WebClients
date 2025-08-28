@@ -6,6 +6,7 @@ import type { PrivateKeyReference } from '@proton/crypto';
 import type { CreateMeetingParams, CreateMeetingResponse } from '../types/response-types';
 import { CustomPasswordState } from '../types/response-types';
 import { prepareMeetingCryptoData } from '../utils/cryptoUtils';
+import { useMeetErrorReporting } from './useMeetErrorReporting';
 
 export const createMeetingCall = () => {
     return {
@@ -17,6 +18,8 @@ export const createMeetingCall = () => {
 
 export const useSaveMeeting = () => {
     const api = useApi();
+
+    const reportMeetError = useMeetErrorReporting();
 
     const saveMeeting = useCallback(
         async ({
@@ -47,32 +50,38 @@ export const useSaveMeeting = () => {
                 noEncryptedPasswordReturn: noPasswordSave,
             });
 
-            const response = await api<CreateMeetingResponse>({
-                ...createMeetingCall(),
-                data: {
-                    Name: encryptedMeetingName,
-                    Password: encryptedPassword,
-                    Salt: salt,
-                    SessionKey: encryptedSessionKey,
-                    SRPModulusID: srpModulusID,
-                    SRPSalt: urlPasswordSalt,
-                    SRPVerifier: srpVerifier,
-                    AddressID: addressId,
-                    StartTime: startTime,
-                    EndTime: endTime,
-                    RRule: recurrence,
-                    Timezone: timeZone,
-                    CustomPassword: !!customPassword
-                        ? CustomPasswordState.PASSWORD_SET
-                        : CustomPasswordState.NO_PASSWORD,
-                    Type: type,
-                },
-            });
+            try {
+                const response = await api<CreateMeetingResponse>({
+                    ...createMeetingCall(),
+                    data: {
+                        Name: encryptedMeetingName,
+                        Password: encryptedPassword,
+                        Salt: salt,
+                        SessionKey: encryptedSessionKey,
+                        SRPModulusID: srpModulusID,
+                        SRPSalt: urlPasswordSalt,
+                        SRPVerifier: srpVerifier,
+                        AddressID: addressId,
+                        StartTime: startTime,
+                        EndTime: endTime,
+                        RRule: recurrence,
+                        Timezone: timeZone,
+                        CustomPassword: !!customPassword
+                            ? CustomPasswordState.PASSWORD_SET
+                            : CustomPasswordState.NO_PASSWORD,
+                        Type: type,
+                    },
+                });
 
-            return {
-                response,
-                passwordBase,
-            };
+                return {
+                    response,
+                    passwordBase,
+                };
+            } catch (error) {
+                reportMeetError('Error saving meeting', error);
+
+                throw error;
+            }
         },
         [api]
     );

@@ -215,6 +215,7 @@ enum MeetFeatureFlag {
     MeetEarlyAccess = 'MeetEarlyAccess',
     MeetEarlyAccessPublic = 'MeetEarlyAccessPublic',
     EnableE2EE = 'EnableE2EE',
+    MeetErrorReporting = 'MeetErrorReporting',
 }
 
 export type FeatureFlag =

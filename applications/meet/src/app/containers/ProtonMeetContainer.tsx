@@ -9,6 +9,7 @@ import meetCorePkg from '@proton-meet/proton-meet-core/package.json';
 import { c } from 'ttag';
 
 import { useAuthentication, useNotifications } from '@proton/components';
+import { useMeetErrorReporting } from '@proton/meet';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import { CustomPasswordState } from '@proton/meet/types/response-types';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
@@ -49,6 +50,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
     useDependencySetup(guestMode);
 
     const { createNotification } = useNotifications();
+
+    const reportMeetError = useMeetErrorReporting();
 
     const history = useHistory();
     const createInstantMeeting = useCreateInstantMeeting();
@@ -132,7 +135,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
             currentKeyRef.current = newGroupKeyInfo.key;
             return { key: newGroupKeyInfo.key, epoch: newGroupKeyInfo.epoch };
         } catch (err: any) {
-            console.error('Error while calling getGroupKeyInfo');
+            reportMeetError('Error while calling getGroupKeyInfo', err);
             throw err;
         }
     };
@@ -142,7 +145,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         try {
             await keyProviderRef.current?.setKey(key, epoch);
         } catch (err) {
-            console.error('Could not set new encryption key');
+            reportMeetError('Could not set new encryption key', err);
         }
     };
 
@@ -211,7 +214,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                                 setConnectionLost(true);
                             }
                         } catch (error) {
-                            console.error('Failed to check MLS status:', error);
+                            reportMeetError('Failed to check MLS status', error);
                             setConnectionLost(true);
                         }
                     } else {
@@ -219,7 +222,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                         console.log('Websocket is reconnecting');
                     }
                 } catch (error) {
-                    console.error('Failed to get connection status:', error);
+                    reportMeetError('Failed to get connection status', error);
                 }
             }
 
@@ -248,7 +251,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                         currentKeyRef.current = groupKeyData.key;
                     }
                 } catch (error) {
-                    console.error('Failed to check groupKey:', error);
+                    reportMeetError('Failed to check groupKey', error);
                 }
             }
         }, 3000);
@@ -359,6 +362,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                 setJoinedRoom(true);
                 setJoiningInProgress(false);
             } catch (error: any) {
+                reportMeetError('Failed to join meeting', error);
+
                 createNotification({
                     type: 'error',
                     text: error.message ?? c('meet_2025 Error').t`Failed to join meeting. Please try again later`,
@@ -502,7 +507,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                 setInitialisedParticipantNameMap(false);
                 setJoinedRoom(false);
             })
-            .catch(() => {
+            .catch((err) => {
+                reportMeetError('Unable to end meeting for all', err);
                 throw new Error('Unable to end meeting for all');
             });
     }, [resetParticipantNameMap]);
@@ -512,7 +518,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
             try {
                 void wasmAppRef.current?.leaveMeeting();
             } catch (error) {
-                console.error('leave meeting error', error);
+                reportMeetError('Error leaving meeting', error);
             }
         };
 
@@ -571,7 +577,10 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                                     setParticipantSettings({ ...participantSettings, videoDeviceId: deviceId })
                                 }
                                 setAudioOutputDeviceId={(deviceId) =>
-                                    setParticipantSettings({ ...participantSettings, audioOutputDeviceId: deviceId })
+                                    setParticipantSettings({
+                                        ...participantSettings,
+                                        audioOutputDeviceId: deviceId,
+                                    })
                                 }
                                 handleLeave={handleLeave}
                                 handleEndMeeting={handleEndMeeting}

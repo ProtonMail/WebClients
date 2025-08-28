@@ -14,6 +14,7 @@ import {
     StandardPrivateApp,
     useNotifications,
 } from '@proton/components';
+import { useMeetErrorReporting } from '@proton/meet';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { FlagProvider } from '@proton/unleash';
@@ -30,6 +31,8 @@ export const ProviderContainer = ({ children }: { children: ReactNode }) => {
     const [error, setError] = useState<string | null>(null);
 
     const notificationsManager = useNotifications();
+
+    const reportMeetError = useMeetErrorReporting();
 
     const storeRef = useRef<MeetStore>();
 
@@ -54,6 +57,7 @@ export const ProviderContainer = ({ children }: { children: ReactNode }) => {
 
             setInitialised(true);
         } catch (error) {
+            reportMeetError('Error initializing provider services and store', error);
             setError(getNonEmptyErrorMessage(error));
         }
     };
