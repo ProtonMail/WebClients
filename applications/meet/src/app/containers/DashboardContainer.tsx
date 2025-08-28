@@ -71,7 +71,7 @@ export const DashboardContainer = () => {
     const personalMeetingLink = personalMeeting ? `${window.location.origin}${personalMeetingLinkPath}` : null;
 
     return (
-        <div className="w-full h-full overflow-y-auto lg:overflow-y-hidden flex flex-column flex-nowrap">
+        <div className="w-full h-full overflow-y-auto lg:overflow-y-hidden flex flex-column flex-nowrap bg-weak">
             {isPersonalMeetingModalOpen && personalMeetingLink && (
                 <PersonalMeetingModal
                     onClose={() => setIsPersonalMeetingModalOpen(false)}
