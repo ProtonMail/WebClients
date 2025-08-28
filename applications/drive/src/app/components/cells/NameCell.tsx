@@ -4,6 +4,7 @@ import { FileIcon, TableCell } from '@proton/components';
 import { NodeType } from '@proton/drive/index';
 
 import { FileName } from '../FileName';
+import { SignatureIcon } from '../SignatureIcon';
 import { getLinkIconText } from '../sections/FileBrowser/utils';
 
 interface NameCellProps {
@@ -12,9 +13,10 @@ interface NameCellProps {
     type: NodeType;
     thumbnailUrl?: string;
     isInvitation?: boolean;
+    haveSignatureIssues: boolean | undefined;
 }
 
-export const NameCell = ({ name, mediaType, type, thumbnailUrl, isInvitation }: NameCellProps) => {
+export const NameCell = ({ name, mediaType, type, thumbnailUrl, isInvitation, haveSignatureIssues }: NameCellProps) => {
     const isAlbum = type === NodeType.Album;
     const isFile = type === NodeType.File;
     //TODO: Move that out of sections with FileBrowser refactor
@@ -47,15 +49,9 @@ export const NameCell = ({ name, mediaType, type, thumbnailUrl, isInvitation }: 
                     style={isInvitation ? { filter: 'grayscale(100%)' } : undefined}
                 />
             )}
-            {/* TODO: Add SignatureIcon handling */}
-            {/* <SignatureIcon
-                signatureIssues={item.signatureIssues}
-                isAnonymous={item.isAnonymous}
-                isFile={item.isFile}
-                mimeType={item.mimeType}
-                className="mr-2 shrink-0"
-                haveParentAccess={!!item.parentLinkId}
-            /> */}
+            {haveSignatureIssues !== undefined && (
+                <SignatureIcon haveSignatureIssues={haveSignatureIssues} isFile={isFile} className="mr-2 shrink-0" />
+            )}
             <div className="flex mr-4" data-testid="name-cell">
                 <FileName text={name} />
             </div>
