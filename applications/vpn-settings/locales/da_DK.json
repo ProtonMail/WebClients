@@ -1009,6 +1009,11 @@
         "Zoom ud"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Genoptager videresendelse"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "Genaktiver"
@@ -3741,6 +3746,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Din konto eller organisation har en forfalden faktura. Betal venligst alle udestående fakturaer."
+      ],
+      "Your forward will not be processed.": [
+        "Din videresendelse vil ikke blive behandlet."
       ],
       "Your import will not be processed.": [
         "Din import vil ikke blive behandlet."
@@ -9861,11 +9869,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Behold dette abonnement"
+      ],
       "Start using ${ appName }": [
         "Begynd at bruge ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Opgradér mit abonnement"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Lad os snakke"
+      ],
+      "Limited time offer": [
+        "Tidsbegrænset tilbud"
+      ],
+      "Recommended": [
+        "Anbefalet"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } pr. måned"
+      ],
+      "/month /user": [
+        "/måned /bruger"
+      ],
+      "/month /user, billed annually": [
+        "/måned /bruger, faktureres årligt"
+      ],
+      "/month /user, billed biennially": [
+        "/måned /bruger, faktureres hvert andet år"
+      ],
+      "Current plan": [
+        "Nuværende abonnent"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "For kun **${ relativePrice } pr. måned** mere, får du adgang til ${ BRAND_NAME }'s førsteklasses adgangskodeadministrator!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "For kun **${ relativePrice } pr. måned** mere, får du adgang til ${ BRAND_NAME }'s førsteklasses VPN-tjeneste!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "For kun **${ relativePrice } pr. måned** mere, får du adgang til alle premium ${ BRAND_NAME }-tjenester!"
+      ],
+      "Free forever": [
+        "Gratis for evigt"
+      ],
+      "Get in touch with our sales team": [
+        "Kontakt vores salgsteam"
+      ],
+      "Includes:": [
+        "Inkluderer:"
+      ],
+      "per month": [
+        "pr. måned"
+      ],
+      "per month, billed annually": [
+        "pr. måned, faktureres årligt"
+      ],
+      "per month, billed every month": [
+        "pr. måned, faktureres hver måned"
+      ],
+      "per month, billed every two years": [
+        "pr. måned, faktureres hver andet år"
+      ],
       "Secure vault sharing": [
         "Sikker deling af boks"
       ],

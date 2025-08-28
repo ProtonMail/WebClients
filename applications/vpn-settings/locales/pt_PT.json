@@ -1012,6 +1012,11 @@
         "Reduzir"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Continuar o encaminhamento"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "Reativar"
@@ -3871,6 +3876,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "A sua conta ou organização tem uma fatura em atraso. Regularize a situação."
+      ],
+      "Your forward will not be processed.": [
+        "O seu encaminhamento não será processado."
       ],
       "Your import will not be processed.": [
         "A sua importação não será processada."
@@ -10246,11 +10254,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Manter este plano"
+      ],
       "Start using ${ appName }": [
         "Começar a utilizar o ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Atualize o meu plano"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Vamos conversar"
+      ],
+      "Limited time offer": [
+        "Oferta por tempo limitado"
+      ],
+      "Recommended": [
+        "Recomendado"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } por mês"
+      ],
+      "/month /user": [
+        "/mês /utilizador"
+      ],
+      "/month /user, billed annually": [
+        "por mês e por utilizador, faturação anual."
+      ],
+      "/month /user, billed biennially": [
+        "Por mês e por utilizador, faturação a cada 2 anos."
+      ],
+      "Current plan": [
+        "Plano atual"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Por apenas **${ relativePrice } por mês** a mais, ganha acesso ao gestor de palavras-passe premium da ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Por apenas **${ relativePrice } por mês** a mais, ganha acesso ao serviço premium de VPN da ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Por apenas **${ relativePrice } adicionais por mês**, tem acesso a todos os serviços premium da ${ BRAND_NAME }"
+      ],
+      "Free forever": [
+        "Gratuito para sempre"
+      ],
+      "Get in touch with our sales team": [
+        "Entre em contato com a nossa equipa de vendas"
+      ],
+      "Includes:": [
+        "Incluí:"
+      ],
+      "per month": [
+        "por mês"
+      ],
+      "per month, billed annually": [
+        "por mês, faturado anualmente"
+      ],
+      "per month, billed every month": [
+        "por mês, faturado a cada mês"
+      ],
+      "per month, billed every two years": [
+        "por mês, faturado a cada dois anos"
+      ],
       "Secure vault sharing": [
         "Partilha segura de cofre"
       ],

@@ -1027,6 +1027,11 @@
         "Zoom arrière"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Reprise du transfert"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "Réactiver"
@@ -1112,6 +1117,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Générer les clés manquantes pour l'adresse « ${ emailAddress } »"
       ],
+      "Reconnect": [
+        "Se reconnecter"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Reconnecter l'adresse « ${ emailAddress } »"
+      ],
       "Saving": [
         "Enregistrement"
       ],
@@ -1134,6 +1145,9 @@
       ],
       "Disabled": [
         "Désactivée"
+      ],
+      "Disconnected": [
+        "Déconnecté"
       ],
       "External": [
         "Externe"
@@ -1364,6 +1378,9 @@
       ],
       "Try ${ selected } ${ freeForNDays }": [
         "Essayez ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for 14 days": [
+        "Essayez gratuitement pendant 14 jours"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Lorsque vous annulez, votre essai gratuit ne sera pas converti en abonnement payant, mais vous pourrez toujours profiter des avantages de l'abonnement jusqu'à la fin de la période d'essai. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free."
@@ -3990,6 +4007,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Votre compte ou organisation a une facture en retard. Nous vous invitons à régler les factures impayées."
+      ],
+      "Your forward will not be processed.": [
+        "Votre transfert ne sera pas traité."
       ],
       "Your import will not be processed.": [
         "Votre importation ne sera pas traitée."
@@ -7672,6 +7692,9 @@
       "Donation": [
         "Don"
       ],
+      "Manual": [
+        "Manuel"
+      ],
       "Modification": [
         "Modification"
       ],
@@ -10473,11 +10496,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Conserver cet abonnement"
+      ],
       "Start using ${ appName }": [
         "Commencer à utiliser ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Changer d'abonnement"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Parlons-nous"
+      ],
+      "Limited time offer": [
+        "Offre à durée limitée"
+      ],
+      "Recommended": [
+        "Recommandé"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } par mois"
+      ],
+      "/month /user": [
+        "/mois /utilisateur"
+      ],
+      "/month /user, billed annually": [
+        "par mois et par utilisateur, facturation annuelle"
+      ],
+      "/month /user, billed biennially": [
+        "par mois et par utilisateur, facturation tous les 2 ans"
+      ],
+      "Current plan": [
+        "Abonnement actuel"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Accédez au gestionnaire de mot de passe premium de ${ BRAND_NAME } pour seulement **${ relativePrice } de plus par mois** !"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Accédez au VPN premium de ${ BRAND_NAME } pour seulement **${ relativePrice } de plus par mois** !"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Pour seulement **${ relativePrice } par mois** de plus, vous bénéficiez de tous les services premium de ${ BRAND_NAME } !"
+      ],
+      "Free forever": [
+        "Gratuit pour toujours"
+      ],
+      "Get in touch with our sales team": [
+        "Contactez notre équipe commerciale"
+      ],
+      "Includes:": [
+        "Comprend :"
+      ],
+      "per month": [
+        "par mois"
+      ],
+      "per month, billed annually": [
+        "par mois (facturation annuelle)"
+      ],
+      "per month, billed every month": [
+        "par mois (facturation mensuelle)"
+      ],
+      "per month, billed every two years": [
+        "par mois (facturation tous les deux ans)"
+      ],
       "Secure vault sharing": [
         "Partage sécurisé de coffre-fort"
       ],
@@ -14431,6 +14516,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les sous-dossiers système apparaîtront sous la forme de dossiers séparés dans ${ MAIL_APP_NAME }."
+      ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "L'adresse a été déconnectée. L'envoi de messages est suspendu. Reconnectez-vous pour activer cette adresse à nouveau."
       ],
       "The import will start with the most recent messages.": [
         "L'importation commencera par les messages les plus récents."

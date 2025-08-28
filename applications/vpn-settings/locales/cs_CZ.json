@@ -1027,6 +1027,11 @@
         "Oddálit"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Obnovení přeposílání"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "Opětovně aktivovat"
@@ -1122,6 +1127,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Generovat chybějící klíče pro adresu “${ emailAddress }”"
       ],
+      "Reconnect": [
+        "Znovu připojit"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Znovu připojit adresu “${ emailAddress }”"
+      ],
       "Saving": [
         "Ukládání"
       ],
@@ -1144,6 +1155,9 @@
       ],
       "Disabled": [
         "Neaktivní"
+      ],
+      "Disconnected": [
+        "Odpojeno"
       ],
       "External": [
         "Externí"
@@ -3974,6 +3988,9 @@
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "U Vašeho účtu nebo organizace jsou vedeny faktury po splatnosti. Zaplaťte prosím všechny neuhrazené faktury."
       ],
+      "Your forward will not be processed.": [
+        "Vaše přeposílání nebude zpracováno."
+      ],
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
       ],
@@ -5615,6 +5632,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce vašeho účtu."
       ],
+      "Account monitor": [
+        "Monitor účtu"
+      ],
       "Account successfully updated": [
         "Účet byl úspěšně aktualizován"
       ],
@@ -5709,7 +5729,7 @@
         "Přiděleno"
       ],
       "Allow logging of location and connection details": [
-        "Povolit protokolování polohy a detailů připojení"
+        "Povolit ligování polohy a detailů připojení"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Umožňuje uživatelům připojit se k bezpečným sdíleným serverům ze sekce **Země** v aplikaci ${ VPN_APP_NAME }."
@@ -6082,6 +6102,9 @@
       ],
       "Enabled countries": [
         "Povolené země"
+      ],
+      "Enabled on ${ boldValue }": [
+        "Povoleno ${ boldValue }"
       ],
       "Enabling auto-deletion…": [
         "Povolování automatického mazání..."
@@ -6612,7 +6635,7 @@
         "Nebo vyberte konkrétní server:"
       ],
       "Organization monitor": [
-        "Monitor organizace"
+        "Monitorování organizace"
       ],
       "Organization size": [
         "Velikost organizace"
@@ -6639,7 +6662,7 @@
         "Pass Monitor - smazán vlastní e-mail"
       ],
       "Pass usage logs": [
-        "Předat protokoly o použití"
+        "Předat logy o používání"
       ],
       "password": [
         "heslo"
@@ -7823,6 +7846,9 @@
       ],
       "Donation": [
         "Finanční příspěvky"
+      ],
+      "Manual": [
+        "Manuálně"
       ],
       "Modification": [
         "Změna"
@@ -10698,11 +10724,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Ponechat tento tarif"
+      ],
       "Start using ${ appName }": [
         "Začněte používat ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Přejít na vyšší tarif"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Promluvme si"
+      ],
+      "Limited time offer": [
+        "Časově omezená nabídka"
+      ],
+      "Recommended": [
+        "Doporučeno"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } za měsíc"
+      ],
+      "/month /user": [
+        "/měsíc /uživatel"
+      ],
+      "/month /user, billed annually": [
+        "/měsíc /uživatel, účtováno ročně"
+      ],
+      "/month /user, billed biennially": [
+        "/měsíc /uživatel, účtováno jednou za dva roky"
+      ],
+      "Current plan": [
+        "Aktuální tarif"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Za pouhých **${ relativePrice } měsíčně** navíc získáte přístup k prémiovému správci hesel od ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Za pouhých **${ relativePrice } měsíčně** navíc získáte přístup ke službě VPN Premium od ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Za pouhých **${ relativePrice } měsíčně** navíc získáte přístup ke všem prémiovým službám ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Navždy zdarma"
+      ],
+      "Get in touch with our sales team": [
+        "Kontaktujte náš obchodní tým"
+      ],
+      "Includes:": [
+        "Zahrnuje:"
+      ],
+      "per month": [
+        "za měsíc"
+      ],
+      "per month, billed annually": [
+        "za měsíc, účtováno ročně"
+      ],
+      "per month, billed every month": [
+        "za měsíc, účtováno kažký měsíc"
+      ],
+      "per month, billed every two years": [
+        "za měsíc, účtováno kažké dva roky"
+      ],
       "Secure vault sharing": [
         "Zabezpečené sdílení trezorů"
       ],
@@ -11176,6 +11264,9 @@
       ],
       "Search users": [
         "Vyhledat uživatele"
+      ],
+      "Search users or details": [
+        "Hledat uživatele nebo detaily"
       ],
       "Select": [
         "Vybrat"
@@ -14786,6 +14877,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systémové podsložky se v ${ MAIL_APP_NAME } zobrazí jako samostatné složky"
+      ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "Adresa byla odpojena. Odesílání zpráv je pozastaveno. Znovu se připojte, abyste tuto adresu znovu aktivovali."
       ],
       "The import will start with the most recent messages.": [
         "Import začne nejnovějšími zprávami."
