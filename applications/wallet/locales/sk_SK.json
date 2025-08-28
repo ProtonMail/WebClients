@@ -1101,6 +1101,9 @@
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
       ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všetky prémiové funkcie z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Cancel and downgrade": [
         "Zrušiť a znížiť"
       ],
@@ -2265,6 +2268,11 @@
         "Textové polia sú nepovinné. Informácie, ktoré uvediete v tomto formulári, zmenia len vybranú faktúru, a nie vaše budúce fakturačné údaje."
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Dôveryhodný kontakt"
+      ]
+    },
     "Error": {
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } je vaše používateľské meno. Pre vytvorenie ${ emailAddress } prejdite do Nastavenia > Identita a adresy > Krátka doména (pm.me)"
@@ -2866,6 +2874,9 @@
       "Enter your own password (as organization admin).": [
         "Zadajte vlastné heslo (ako správca organizácie)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Zadajte vlastné heslo (ako dôveryhodný kontakt)."
+      ],
       "Everything in ${ planOrAppName }": [
         "Všetko v ${ planOrAppName }"
       ],
@@ -3425,6 +3436,9 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (správca)"
+      ],
+      "Your password (trusted contact)": [
+        "Vaše heslo (dôveryhodný kontakt)"
       ],
       "ZIP code": [
         "PSČ"
@@ -4685,6 +4699,9 @@
       "Timeout exceeded": [
         "Prekročený časový limit"
       ],
+      "VAT number": [
+        "DIČ"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaša mena bola zmenená na eurá (€), pretože SEPA bankové prevody podporujú platby len v eurách."
       ],
@@ -4737,8 +4754,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Pridať ABN"
+      ],
+      "Add Business Number": [
+        "Pridať daňové identifikačné číslo"
+      ],
+      "Add EIN": [
+        "Pridať EIN"
+      ],
+      "Add VAT number": [
+        "Pridať DIČ"
+      ],
       "Business Number": [
         "Daňové identifikačné číslo"
+      ],
+      "Edit ABN": [
+        "Upraviť ABN"
+      ],
+      "Edit Business Number": [
+        "Upraviť Daňové identifikačné číslo"
+      ],
+      "Edit EIN": [
+        "Upraviť EIN"
+      ],
+      "Edit VAT number": [
+        "Upraviť DIČ"
       ],
       "EIN": [
         "Identifikačné číslo zamestnávateľa"
@@ -4802,6 +4843,9 @@
       "Select a reason": [
         "Vyberte dôvod"
       ],
+      "Select country": [
+        "Vyberte krajinu"
+      ],
       "Select state": [
         "Vybrať stav"
       ],
@@ -4826,7 +4870,21 @@
         "kontaktujte"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Všetky prémiové funkcie z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všetky prémiové funkcie z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Ako predplatiteľ **${ currentPlanTitle }** si môžete odomknúť **${ unlockPlanTitle }** a ďalšie služby ${ BRAND_NAME } zvýšením úrovne na **${ upsellPlanTitle }**."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Viac služieb ${ BRAND_NAME }.${ br }Jedno jednoduché predplatné."
+      ],
       "Stay on ${ currentPlanTitle }": [
         "Pokračovať s ${ currentPlanTitle }"
       ],
@@ -5470,6 +5528,9 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } je teraz aktívna"
+      ],
+      "Account temporarily locked": [
+        "Účet dočasne zablokovaný"
       ],
       "Add credit/debit card": [
         "Pridať platobnú kartu"

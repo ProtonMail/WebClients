@@ -3989,6 +3989,10 @@
         "Até ${ n } usuário",
         "Até ${ n } usuários"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Até ${ n } usuário (${ adminsText }, ${ usersText })",
+        "Até ${ n } usuários (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Até ${ totalStorageSize } de armazenamento"
       ],
@@ -4623,6 +4627,9 @@
       "Timeout exceeded": [
         "Tempo limite excedido"
       ],
+      "VAT number": [
+        "Número de IVA"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Sua moeda foi alterada para euros (€) porque transferências bancárias SEPA apenas suportam pagamentos em euros."
       ],
@@ -4675,14 +4682,32 @@
       "ABN": [
         "Número de empresa australiano (ABN)"
       ],
+      "Add ABN": [
+        "Adicionar ABN"
+      ],
+      "Add Business Number": [
+        "Adicionar número comercial"
+      ],
+      "Add EIN": [
+        "Adicionar EIN"
+      ],
+      "Add VAT number": [
+        "Adicionar número de IVA"
+      ],
       "Business Number": [
         "Número comercial"
       ],
       "Edit ABN": [
         "Editar ABN"
       ],
+      "Edit Business Number": [
+        "Editar número comercial"
+      ],
       "Edit EIN": [
         "Editar EIN"
+      ],
+      "Edit VAT number": [
+        "Editar número de IVA"
       ],
       "EIN": [
         "Número de identificação tributária (EIN)"
@@ -4745,6 +4770,9 @@
       ],
       "Select a reason": [
         "Selecione um motivo"
+      ],
+      "Select country": [
+        "Selecionar país"
       ],
       "Select state": [
         "Selecionar estado"
@@ -5404,6 +5432,9 @@
     "Title": {
       "${ feature } is now active": [
         "O recurso ${ feature } agora está ativo."
+      ],
+      "Account temporarily locked": [
+        "Conta temporariamente bloqueada"
       ],
       "Add credit/debit card": [
         "Adicionar cartão de crédito/débito"
