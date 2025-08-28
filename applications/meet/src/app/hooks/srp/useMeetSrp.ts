@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { useApi, useAuthentication } from '@proton/components';
+import { useMeetErrorReporting } from '@proton/meet';
 import type { AccessTokenResponse, MeetingInfoResponse } from '@proton/meet/types/response-types';
 import { getUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { srpAuth } from '@proton/shared/lib/srp';
@@ -56,6 +57,8 @@ export const useMeetSrp = () => {
     const api = useApi();
     const auth = useAuthentication();
 
+    const reportMeetError = useMeetErrorReporting();
+
     const initHandshake = useCallback(
         async (token: string) => {
             try {
@@ -63,6 +66,7 @@ export const useMeetSrp = () => {
 
                 return response;
             } catch (error) {
+                reportMeetError('Error initializing handshake', error);
                 throw new Error(c('meet_2025 Error').t`Failed to initialize handshake`);
             }
         },

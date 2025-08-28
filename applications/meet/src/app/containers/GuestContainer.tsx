@@ -11,6 +11,7 @@ import {
     StandardLoadErrorPage,
     UnauthenticatedApiProvider,
 } from '@proton/components';
+import { useMeetErrorReporting } from '@proton/meet';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/index';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
@@ -36,6 +37,8 @@ export const GuestContainer = ({ children }: GuestContainerProps) => {
 
     const extraThunkArgumentsRef = useRef<ExtraThunkArguments>();
 
+    const reportMeetError = useMeetErrorReporting();
+
     const initialiseServicesAndStore = async () => {
         try {
             const { store, authentication, unleashClient, unauthenticatedApi, history } =
@@ -52,6 +55,7 @@ export const GuestContainer = ({ children }: GuestContainerProps) => {
 
             setInitialised(true);
         } catch (error) {
+            reportMeetError('Error initializing guest services and store', error);
             setError(getNonEmptyErrorMessage(error));
         }
     };

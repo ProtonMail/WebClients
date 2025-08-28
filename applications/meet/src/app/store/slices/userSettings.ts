@@ -4,6 +4,7 @@ import { type ModelState, getInitialModelState } from '@proton/account';
 import type { UserSettings } from '@proton/meet/types/response-types';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 const name = 'meet_user_settings' as const;
 
@@ -30,6 +31,7 @@ const modelThunk = createAsyncModelThunk<Model, UserSettingsState, ProtonThunkAr
             .api<{ UserSettings: UserSettings }>(getUserSettings)
             .then(({ UserSettings }) => UserSettings)
             .catch((err) => {
+                captureMessage('Error getting user settings', { level: 'error', extra: { error: err } });
                 throw err;
             }),
     previous: previousSelector(selectUserSettings),
