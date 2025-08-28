@@ -220,6 +220,9 @@
       "Cancel": [
         "Avbryt"
       ],
+      "Cancel request": [
+        "Avbryt begäran"
+      ],
       "Cancel subscription": [
         "Avsluta prenumeration"
       ],
@@ -1066,6 +1069,9 @@
       "Refer a friend": [
         "Hänvisa en vän"
       ],
+      "Refresh": [
+        "Uppdatera"
+      ],
       "Refresh status": [
         "Uppdatera status"
       ],
@@ -1185,6 +1191,9 @@
       ],
       "Revoke ${ name }": [
         "Återkalla ${ name }"
+      ],
+      "Revoke access": [
+        "Återkalla åtkomst"
       ],
       "Revoke all other sessions": [
         "Återkalla alla andra sessioner"
@@ -1723,6 +1732,9 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Generera saknade nycklar för adress “${ emailAddress }“"
       ],
+      "Reconnect": [
+        "Anslut igen"
+      ],
       "Saving": [
         "Sparar"
       ],
@@ -1745,6 +1757,9 @@
       ],
       "Disabled": [
         "Inaktiverad"
+      ],
+      "Disconnected": [
+        "Frånkopplad"
       ],
       "External": [
         "Extern"
@@ -5170,6 +5185,9 @@
         "${ n } dag kvar",
         "${ n } dagar kvar"
       ],
+      "${ user } is requesting emergency access to your account": [
+        "${ user } begär nödåtkomst till ditt konto"
+      ],
       "${ user } will be able to use your account and change your data.": [
         "${ user } kommer att kunna använda ditt konto och ändra dina data."
       ],
@@ -5197,6 +5215,9 @@
       "Added on ${ formattedDate }": [
         "Tillagd den ${ formattedDate }"
       ],
+      "Cancel request?": [
+        "Avbryt begäran?"
+      ],
       "Change the time that ${ user } will have to wait before automatically giving them access.": [
         "Ändra tiden som ${ user } måste vänta innan du automatiskt ger dem åtkomst."
       ],
@@ -5208,6 +5229,9 @@
       ],
       "Disabled": [
         "Inaktiverat"
+      ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "Förlora inte nödåtkomst. Aktivera automatisk förnyelse idag."
       ],
       "Emergency access": [
         "Nödåtkomst"
@@ -5251,6 +5275,9 @@
       "Only ": [
         "Endast "
       ],
+      "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
+        "Begär endast nödfallsåtkomst när det finns en **giltig situation** som kräver att du hanterar en annan användares konto."
+      ],
       "People I trust": [
         "Personer jag betror"
       ],
@@ -5271,6 +5298,12 @@
       ],
       "Requesting access": [
         "Begär åtkomst"
+      ],
+      "Revoke access": [
+        "Återkalla åtkomst"
+      ],
+      "Revoke access?": [
+        "Återkalla åtkomst?"
       ],
       "Stop being trusted contact?": [
         "Sluta vara betrodd kontakt?"
@@ -8172,6 +8205,9 @@
       "Allocated": [
         "Tilldelad"
       ],
+      "Allow logging of location and connection details": [
+        "Tillåt loggning av plats och anslutningsdetaljer"
+      ],
       "Allow recovery by email": [
         "Tillåt återställning via e-post"
       ],
@@ -9078,6 +9114,9 @@
       "inactive": [
         "inaktiv"
       ],
+      "Include device, location, and IP details": [
+        "Inkludera enhet, plats och IP-detaljer"
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inklusive ${ formattedTaxRate } % ${ taxName }: ${ price }"
       ],
@@ -9513,6 +9552,9 @@
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Organisationsmedlemmar kommer behöva låsa upp ${ PASS_APP_NAME } med deras lösenord eller PIN etc."
       ],
+      "Organization monitor": [
+        "Organisationsövervakning"
+      ],
       "Organization size": [
         "Organisationens storlek"
       ],
@@ -9564,6 +9606,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - anpassad e-post borttagen"
+      ],
+      "Pass usage logs": [
+        "Användningsloggar för Pass"
       ],
       "password": [
         "lösenord"
@@ -10505,6 +10550,9 @@
       ],
       "View and manage your groups.": [
         "Visa och hantera dina grupper."
+      ],
+      "View VPN session details for your organization.": [
+        "Visa VPN-sessionsdetaljer för din organisation."
       ],
       "View, download, and manage your invoices.": [
         "Visa, ladda ner och hantera dina fakturor."
@@ -13142,6 +13190,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Lär dig mer"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "För att fortsätta använda ${ BRAND_NAME }, se till att dina premiumfunktioner inte längre används eller uppgradera ditt paket."
       ],
       "upgrade for more storage": [
         "uppgradera för mer lagringsutrymme"
@@ -16149,6 +16200,9 @@
       ],
       "Card number": [
         "Kortnummer"
+      ],
+      "Credits and discounts are reflected in your invoice": [
+        "Krediter och rabatter återspeglas på din faktura"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "För närvarande är den automatiska förnyelsen av prenumerationen inaktiverad. Om du ändrar prenumerationen nu kommer den automatiska förnyelsen att återaktiveras."

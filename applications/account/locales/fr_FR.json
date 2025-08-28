@@ -220,6 +220,9 @@
       "Cancel": [
         "Annuler"
       ],
+      "Cancel request": [
+        "Annuler la demande"
+      ],
       "Cancel subscription": [
         "Annuler l'abonnement"
       ],
@@ -1192,6 +1195,9 @@
       "Revoke ${ name }": [
         "Révoquer ${ name }"
       ],
+      "Revoke access": [
+        "Révoquer l'accès"
+      ],
       "Revoke all other sessions": [
         "Révoquer toutes les autres sessions"
       ],
@@ -1729,6 +1735,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Générer les clés manquantes pour l'adresse « ${ emailAddress } »"
       ],
+      "Reconnect": [
+        "Se reconnecter"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Reconnecter l'adresse « ${ emailAddress } »"
+      ],
       "Saving": [
         "Enregistrement"
       ],
@@ -1751,6 +1763,9 @@
       ],
       "Disabled": [
         "Désactivée"
+      ],
+      "Disconnected": [
+        "Déconnecté"
       ],
       "External": [
         "Externe"
@@ -5272,6 +5287,9 @@
       "Access granted on ${ formattedAccessibleAt }": [
         "L'accès a été accordé le ${ formattedAccessibleAt }."
       ],
+      "Access request canceled": [
+        "Demande d'accès annulée"
+      ],
       "Access requested": [
         "L'accès a été demandé."
       ],
@@ -5286,6 +5304,9 @@
       ],
       "Added on ${ formattedDate }": [
         "Ajouté le ${ formattedDate }"
+      ],
+      "Cancel request?": [
+        "Annuler la demande ?"
       ],
       "Change access wait time": [
         "Modifier le temps d'attente pour accéder"
@@ -5371,6 +5392,12 @@
       "Requesting access": [
         "Demande d'accès"
       ],
+      "Revoke access": [
+        "Révoquer l'accès"
+      ],
+      "Revoke access?": [
+        "Révoquer l'accès ?"
+      ],
       "Stop being trusted contact?": [
         "Cesser d'être un contact approuvé?"
       ],
@@ -5437,6 +5464,9 @@
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Vous ne pourrez plus demander l'accès au compte de ${ user } en cas d'urgence."
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "Vous pourrez toujours demander l'accès au compte de ${ user } plus tard."
       ],
       "You'll receive access to their account immediately.": [
         "Vous recevrez un accès à leur compte immédiatement."
@@ -11339,6 +11369,9 @@
       ],
       "Donation": [
         "Don"
+      ],
+      "Manual": [
+        "Manuel"
       ],
       "Modification": [
         "Modification"
@@ -22089,6 +22122,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les sous-dossiers système apparaîtront sous la forme de dossiers séparés dans ${ MAIL_APP_NAME }."
+      ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "L'adresse a été déconnectée. L'envoi de messages est suspendu. Reconnectez-vous pour activer cette adresse à nouveau."
       ],
       "The import will start with the most recent messages.": [
         "L'importation commencera par les messages les plus récents."

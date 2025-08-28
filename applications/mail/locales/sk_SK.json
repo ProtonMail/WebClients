@@ -36,6 +36,12 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
+      "${ numberOfAddresses } address": [
+        "${ numberOfAddresses } adresa",
+        "${ numberOfAddresses } adresy",
+        "${ numberOfAddresses } adries",
+        "${ numberOfAddresses } adries"
+      ],
       "A to Z": [
         "od A po Z"
       ],
@@ -215,6 +221,15 @@
       ],
       "Choose a file or drag it here": [
         "Vyberte súbor alebo ho sem pretiahnite"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Nárokovať si ${ BRAND_NAME } adresu"
+      ],
+      "Claim this address": [
+        "Nárokovať si túto adresu"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Získajte vašu bezplatnú ${ BRAND_NAME } adresu"
       ],
       "Clear": [
         "Vyčistiť"
@@ -596,6 +611,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Získajte ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Získajte bezplatnú ${ BRAND_NAME } adresu"
       ],
       "Get in touch": [
         "Skontaktovať sa"
@@ -1442,6 +1460,9 @@
       ],
       "Trust": [
         "Dôverovať"
+      ],
+      "Trust key": [
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -2577,6 +2598,9 @@
       ],
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všetky prémiové funkcie z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Zrušiť a znížiť"
@@ -4070,6 +4094,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Zjednodušte si synchronizáciu a plánovanie pomocou zdieľaných kalendárov."
       ],
+      "This view shows messages sent to the following addresses:": [
+        "Toto zobrazenie ukazuje správy odoslané na nasledujúce adresy:"
+      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Ak chcete naďalej používať asistenta písania, pridajte si ho k predplatnému."
       ],
@@ -4375,6 +4402,11 @@
         "Šifrované s nulovým prístupom. Príjemca má na svojom účte vypnuté end-to-end šifrovanie."
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Dôveryhodný kontakt"
+      ]
+    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "Názov súboru šifrovaných hlavičiek"
@@ -4431,6 +4463,9 @@
       ],
       "An error occurred while saving your alias": [
         "Pri ukladaní vášho aliasu došlo k chybe."
+      ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Prílohy sú obmedzené na ${ readableAttachmentMaxSize }"
       ],
       "Authentication canceled.": [
         "Prihlásenie zrušené."
@@ -4551,6 +4586,9 @@
       ],
       "Failed to load the STL preview": [
         "Načítanie STL náhľadu zlyhalo"
+      ],
+      "Failed to open to contact": [
+        "Nepodarilo sa otvoriť kontakt"
       ],
       "Filter with this name already exists": [
         "Filter s týmto názvom už existuje"
@@ -5743,6 +5781,9 @@
       "Checklist complete": [
         "Kontrolný zoznam je dokončený"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Nárokovať si ${ BRAND_NAME } adresu"
+      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Pre zdvojnásobenie svojho úložného priestoru dokončite tento kontrolný zoznam počas ${ daysCount }."
       ],
@@ -6317,6 +6358,12 @@
       ],
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "Správca hesiel ${ BRAND_NAME } vám umožňuje vytvárať, ukladať a automaticky vypĺňať heslá, takže ich už nikdy nebudete musieť obnovovať."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } vyžaduje ${ BRAND_NAME } adresu pre bezpečnú synchronizáciu udalostí a šifrovanie. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } vyžaduje ${ BRAND_NAME } adresu pre bezpečnú synchronizáciu udalostí a šifrovanie. Získajte svoju bezplatnú ${ MAIL_APP_NAME } adresu teraz."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nový kalendár",
@@ -7200,6 +7247,9 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Vychutnajte si rýchlejšie a cielené odosielanie emailov pomocou aplikácie pre počítače."
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Zabezpečte úplne súkromnú a šifrovanú komunikáciu. Vyžiadajte si teraz bezplatnú emailovú ${ BRAND_NAME } adresu."
+      ],
       "Enter the code from your authenticator app": [
         "Zadajte kód z vašej overovacej aplikácie"
       ],
@@ -7214,6 +7264,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Zadajte vlastné heslo (ako správca organizácie)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Zadajte vlastné heslo (ako dôveryhodný kontakt)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Odhadovaný čas do konca: ${ estimatedMinutes } minúta",
@@ -7417,7 +7470,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -7607,6 +7663,9 @@
       ],
       "No action selected": [
         "Nie je vybratá žiadna akcia"
+      ],
+      "No change will be made to the selected emails": [
+        "Vybrané emaily nebudú nijak zmenené."
       ],
       "No contacts added yet": [
         "Zatiaľ neboli pridané žiadne kontakty"
@@ -8066,6 +8125,12 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Koniec predplatného: Znova aktivujte do ${ byDate }, aby ste si ponechali výhody ${ planName }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Predplatné sa končí: Ak si chcete ponechať výhody svojho predplatného ${ planName }, reštartujte svoje predplatné v Apple App Store do ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Predplatné sa končí: Ak si chcete ponechať výhody predplatného ${ planName }, reštartujte si predplatné v Obchode Google Play do ${ byDate }. ${ reactivateLink }"
       ],
       "Surveillance": [
         "Monitorovanie"
@@ -8927,6 +8992,9 @@
       ],
       "Expired": [
         "Vypršaný"
+      ],
+      "KOO": [
+        "KOO"
       ],
       "Obsolete": [
         "Zastaraný"
@@ -9841,6 +9909,9 @@
       "Your password (admin)": [
         "Vaše heslo (správca)"
       ],
+      "Your password (trusted contact)": [
+        "Vaše heslo (dôveryhodný kontakt)"
+      ],
       "ZIP code": [
         "PSČ"
       ]
@@ -10104,6 +10175,9 @@
       "Request an invite": [
         "Požiadať o pozvánku"
       ],
+      "Resume now": [
+        "Pokračovať teraz"
+      ],
       "Scheduled": [
         "Naplánované"
       ],
@@ -10213,6 +10287,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Zistiť viac"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Ak chcete naďalej používať ${ BRAND_NAME }, uistite sa, prosím, že vaše prémiové funkcie už nepoužívate, alebo si zvýšte úroveň svojho plánu."
       ],
       "upgrade for more storage": [
         "upgrajdujte pre väčšie úložisko"
@@ -11761,6 +11838,9 @@
       "Industry-leading spam protection": [
         "Špičková ochrana proti spamu"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "Let's get started": [
         "Poďme na to"
       ],
@@ -12144,6 +12224,9 @@
       "Timeout exceeded": [
         "Prekročený časový limit"
       ],
+      "VAT number": [
+        "DIČ"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaša mena bola zmenená na eurá (€), pretože SEPA bankové prevody podporujú platby len v eurách."
       ],
@@ -12196,8 +12279,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Pridať ABN"
+      ],
+      "Add Business Number": [
+        "Pridať daňové identifikačné číslo"
+      ],
+      "Add EIN": [
+        "Pridať EIN"
+      ],
+      "Add VAT number": [
+        "Pridať DIČ"
+      ],
       "Business Number": [
         "Daňové identifikačné číslo"
+      ],
+      "Edit ABN": [
+        "Upraviť ABN"
+      ],
+      "Edit Business Number": [
+        "Upraviť Daňové identifikačné číslo"
+      ],
+      "Edit EIN": [
+        "Upraviť EIN"
+      ],
+      "Edit VAT number": [
+        "Upraviť DIČ"
       ],
       "EIN": [
         "Identifikačné číslo zamestnávateľa"
@@ -12351,6 +12458,9 @@
       "Select a reason": [
         "Vyberte dôvod"
       ],
+      "Select country": [
+        "Vyberte krajinu"
+      ],
       "Select state": [
         "Vybrať stav"
       ],
@@ -12416,7 +12526,21 @@
         "kontaktujte"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Všetky prémiové funkcie z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všetky prémiové funkcie z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Ako predplatiteľ **${ currentPlanTitle }** si môžete odomknúť **${ unlockPlanTitle }** a ďalšie služby ${ BRAND_NAME } zvýšením úrovne na **${ upsellPlanTitle }**."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Viac služieb ${ BRAND_NAME }.${ br }Jedno jednoduché predplatné."
+      ],
       "Stay on ${ currentPlanTitle }": [
         "Pokračovať s ${ currentPlanTitle }"
       ],
@@ -13605,6 +13729,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } úložného priestoru"
       ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } vám poskytuje prístup ku všetkým prémiovým funkciám od ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }. Súkromie je integrované, takže môžete fungovať s vedomím, že vaše údaje a identita sú v bezpečí."
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vám poskytne všetky aplikácie, všetky funkcie, predbežný prístup k novým verziám a všetko, čo potrebujete, aby ste mali svoje dáta a ich zabezpečenie pod kontrolou."
       ],
@@ -14264,6 +14391,12 @@
       "Read receipt sent": [
         "Potvrdenie o prečítaní bolo odoslané"
       ],
+      "Recategorized ${ elementsCount } message.": [
+        "${ elementsCount } prekategorizovaná správa.",
+        "${ elementsCount } prekategorizované správy.",
+        "${ elementsCount } prekategorizovaných správ.",
+        "${ elementsCount } prekategorizovaných správ."
+      ],
       "Self-destruction removed": [
         "Samodeštrukcia odstránená"
       ],
@@ -14565,6 +14698,9 @@
       "Account security": [
         "Zabezpečenie účtu"
       ],
+      "Account temporarily locked": [
+        "Účet dočasne zablokovaný"
+      ],
       "Action all conversations": [
         "Akcia všetkých konverzácií"
       ],
@@ -14672,6 +14808,9 @@
       ],
       "Change password": [
         "Zmeniť heslo"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Získajte vašu ${ MAIL_APP_NAME } adresu"
       ],
       "Clearing data": [
         "Vymazanie dát"
@@ -14909,6 +15048,9 @@
       ],
       "Forward": [
         "Preposlať"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Získajte plný prístup k ${ CALENDAR_APP_NAME }"
       ],
       "Get more from your VPN": [
         "Získajte zo svojej VPN viac"
@@ -15491,6 +15633,9 @@
       ],
       "Your account is protected": [
         "Váš účet je chránený"
+      ],
+      "Your addresses": [
+        "Vaše adresy"
       ],
       "Your changes are not synced yet": [
         "Vaše zmeny zatiaľ nie sú synchronizované"

@@ -130,6 +130,9 @@
       "Clear search": [
         "Limpar pesquisa"
       ],
+      "Clone item": [
+        "Clonar item"
+      ],
       "Close": [
         "Fechar"
       ],
@@ -426,6 +429,9 @@
       ],
       "Open navigation": [
         "Abrir navegação"
+      ],
+      "Organize vaults": [
+        "Organizar cofres"
       ],
       "Pass for Android": [
         "Pass para Android"
@@ -1825,8 +1831,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outra pasta apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2282,6 +2287,9 @@
       ],
       "Unverified": [
         "Não verificado"
+      ],
+      "Updating vault organization...": [
+        "Atualizando o cofre da organização..."
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Faça upgrade agora para desbloquear recursos premium"
@@ -4326,6 +4334,9 @@
       "No shared secure links": [
         "Nenhum link seguro compartilhado"
       ],
+      "Organize vaults": [
+        "Organizar cofres"
+      ],
       "Our welcome gift to you": [
         "Nosso presente de boas-vindas para você"
       ],
@@ -4511,6 +4522,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Você está prestes a excluir permanentemente ${ aliasCount } alias.",
         "Você está prestes a excluir permanentemente ${ aliasCount } aliases."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "copiar"
       ]
     },
     "Today icon tooltip in mini calendar": {
