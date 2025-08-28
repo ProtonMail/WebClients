@@ -78,25 +78,19 @@ export const RouterMailboxContainer = () => {
     useScrollToTop(listContainerRef as RefObject<HTMLElement>, [urlPage, labelID, sort, filter, elementsParams.search]);
     const breakpoints = useActiveBreakpoint();
 
-    if (!labelID || (categoryViewControl.categoryViewAccess && labelID === MAILBOX_LABEL_IDS.INBOX)) {
-        return (
-            <Redirect
-                to={`/${
-                    LABEL_IDS_TO_HUMAN[
-                        categoryViewControl.categoryViewAccess
-                            ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
-                            : MAILBOX_LABEL_IDS.INBOX
-                    ]
-                }`}
-            />
-        );
+    if (!labelID) {
+        const destination = categoryViewControl.categoryViewAccess
+            ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
+            : MAILBOX_LABEL_IDS.INBOX;
+
+        return <Redirect to={`/${LABEL_IDS_TO_HUMAN[destination]}`} />;
     } else if (!categoryViewControl.categoryViewAccess && CATEGORY_LABEL_IDS_SET.has(labelID as MAILBOX_LABEL_IDS)) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
     // Prevent non-admin users from accessing the Deleted folder via URL
     if (labelID === MAILBOX_LABEL_IDS.SOFT_DELETED && !isAdminOrLoginAsAdmin(user)) {
-        return <Redirect to="/inbox" />;
+        return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
     const viewPortIsNarrow = breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium;
