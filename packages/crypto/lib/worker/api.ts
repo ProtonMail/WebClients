@@ -1,6 +1,3 @@
- 
- 
- 
 import {
     SHA256,
     SHA512,
@@ -40,7 +37,7 @@ import {
     verifyMessage,
 } from 'pmcrypto';
 import type { Argon2Options, Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
-import { type UserID, config, enums } from 'pmcrypto/lib/openpgp';
+import { type UserID, enums } from 'pmcrypto/lib/openpgp';
 
 import { ARGON2_PARAMS, KeyCompatibilityLevel } from '../constants';
 import { arrayToHexString } from '../utils';
@@ -448,9 +445,8 @@ export class Api extends KeyManagementApi {
     /**
      * Init pmcrypto and set the underlying global OpenPGP config.
      */
-    static init({ enforceOpenpgpGrammar }: InitOptions) {
+    static init({}: InitOptions) {
         initPmcrypto();
-        config.enforceGrammar = enforceOpenpgpGrammar;
     }
 
     /**
@@ -992,8 +988,8 @@ export class Api extends KeyManagementApi {
         }
 
         targetKey.users = sourceKey.users.map((sourceUser) => {
-            // @ts-ignore missing .clone() definition
             const destUser = sourceUser.clone();
+            // @ts-ignore as `mainKey` is supposed to be read-only
             destUser.mainKey = targetKey;
             return destUser;
         });
@@ -1031,8 +1027,8 @@ export class Api extends KeyManagementApi {
 
         // same process as `updateUserIDs`
         updatedKey.users = temporaryKeyWithNewUsers.users.map((newUser) => {
-            // @ts-ignore missing .clone() definition
             const destUser = newUser.clone();
+            // @ts-ignore as `mainKey` is supposed to be read-only
             destUser.mainKey = updatedKey;
             return destUser;
         });
