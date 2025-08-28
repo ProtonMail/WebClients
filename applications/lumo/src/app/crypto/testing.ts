@@ -4,7 +4,7 @@ import { CryptoProxy } from '@proton/crypto';
  * Dynamic import to avoid loading the library unless required */
 export async function setupCryptoProxyForTesting() {
     const { Api: CryptoApi } = await import('@proton/crypto/lib/worker/api');
-    CryptoApi.init({ enforceOpenpgpGrammar: true });
+    CryptoApi.init({});
     CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
 }
 

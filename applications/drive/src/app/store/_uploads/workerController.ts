@@ -261,9 +261,7 @@ export class UploadWorker {
 
                         const { Api: CryptoApi } = module;
 
-                        // The data being uploaded is client generated, so we avoid binding
-                        // the UploadWorker logic to the enforceGrammar feature flag.
-                        CryptoApi.init({ enforceOpenpgpGrammar: false });
+                        CryptoApi.init({});
                         CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
 
                         // align serverTime in worker with the main thread (received from API)
