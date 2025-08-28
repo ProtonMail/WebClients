@@ -1456,11 +1456,6 @@
       "Trust": [
         "Aprobare"
       ],
-      "Trust key": [
-        "Cheie de încredere",
-        "Cheie de încredere",
-        "Chei de încredere"
-      ],
       "Trust public key": [
         "Aprobare cheie publică"
       ],
@@ -6745,28 +6740,28 @@
         "Arhivare mesaje existente"
       ],
       "Are you sure you want to delete all messages in this folder?": [
-        "Sigur doriți să ștergeți toate mesajele din acest folder?"
+        "Ștergeți toate mesajele din acest folder?"
       ],
       "Are you sure you want to delete all messages with this label?": [
-        "Sigur doriți să ștergeți toate mesajele cu această etichetă?"
+        "Ștergeți toate mesajele cu această etichetă?"
       ],
       "Are you sure you want to delete this folder?": [
-        "Sigur doriți să ștergeți acest folder?"
+        "Ștergeți acest folder?"
       ],
       "Are you sure you want to delete this label?": [
-        "Sigur doriți să ștergeți această etichetă?"
+        "Ștergeți această etichetă?"
       ],
       "Are you sure you want to discard your changes?": [
-        "Sigur doriți să renunțați la modificări?"
+        "Renunțați la modificări?"
       ],
       "Are you sure you want to discard your import?": [
-        "Sigur doriți să anulați importarea?"
+        "Anulați importarea?"
       ],
       "Are you sure you want to move all messages in this location to archive?": [
-        "Sigur doriți să mutați toate mesajele de aici în „Arhivă”?"
+        "Mutați toate mesajele de aici în „Arhivă”?"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
-        "Sigur doriți să mutați toate mesajele de aici în „Gunoi”?"
+        "Mutați toate mesajele de aici în „Gunoi”?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Conversații care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?",
@@ -6784,13 +6779,13 @@
         "Mesaje care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
-        "Sigur doriți să ștergeți definitiv această conversație?"
+        "Ștergeți definitiv conversația?"
       ],
       "Are you sure you want to permanently delete this draft?": [
-        "Sigur doriți să ștergeți definitiv această ciornă?"
+        "Ștergeți definitiv ciorna?"
       ],
       "Are you sure you want to permanently delete this message?": [
-        "Sigur doriți să ștergeți definitiv acest mesaj?"
+        "Ștergeți definitiv mesajul?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Cel puțin ${ BETTER_PASSWORD_LENGTH } caractere"
@@ -7355,7 +7350,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8045,7 +8042,7 @@
         "Numărul de descărcări include atât descărcările reale, cât și cazuri când fișierele sunt examinate."
       ],
       "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
-        "Adresa de e-mail ${ boldNoReplyEmail } nu pare să accepte răspunsuri. Sigur doriți să trimiteți mesajul?"
+        "Adresa de e-mail ${ boldNoReplyEmail } nu pare să accepte răspunsuri. Trimiteți mesajului?"
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Datele criptate ocupă puțin mai mult spațiu datorită criptării și a semnăturilor, ceea ce asigură securitatea acestora."
@@ -13338,7 +13335,7 @@
         "${ storage } - ${ percentage }% ocupat"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Prin retrogradare veți pierde următoarele beneficii. Sigur doriți să continuați?"
+        "Prin retrogradare veți pierde următoarele beneficii. Continuați?"
       ],
       "contact your administrator": [
         "contactați-vă administratorul"
@@ -14479,10 +14476,10 @@
         "Arhivați toate mesajele?"
       ],
       "Are you sure you want to close the preview?": [
-        "Sigur doriți să închideți examinarea?"
+        "Închideți examinarea?"
       ],
       "Are you sure you want to close?": [
-        "Sigur doriți să închideți?"
+        "Închideți?"
       ],
       "Are you sure?": [
         "Confirmați?"
@@ -15627,18 +15624,18 @@
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
-        "Sigur doriți să ștergeți definitiv un contact?",
-        "Sigur doriți să ștergeți definitiv ${ count } contacte?",
-        "Sigur doriți să ștergeți definitiv ${ count } de contacte?"
+        "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?",
+        "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?",
+        "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
-        "Sigur doriți să ștergeți definitiv acest grupuri de contacte?"
+        "Ștergeți definitiv aceste grupuri de contacte?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
-        "Sigur doriți să ștergeți definitiv acest grup de contacte?"
+        "Ștergeți definitiv acest grup de contacte?"
       ],
       "Are you sure you want to permanently delete this contact?": [
-        "Sigur doriți să ștergeți definitiv acest contact?"
+        "Ștergeți definitiv acest contact?"
       ],
       "Contacts could not be merged": [
         "Contactele nu au putut fi îmbinate"
