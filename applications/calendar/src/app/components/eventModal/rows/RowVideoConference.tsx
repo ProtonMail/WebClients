@@ -33,9 +33,16 @@ interface Props {
     isCreateEvent: boolean;
     setModel: (value: EventModel) => void;
     hasZoomError: boolean;
+    setIsVideoConferenceLoading: (value: boolean) => void;
 }
 
-export const RowVideoConference = ({ model, setModel, isCreateEvent, hasZoomError }: Props) => {
+export const RowVideoConference = ({
+    model,
+    setModel,
+    isCreateEvent,
+    hasZoomError,
+    setIsVideoConferenceLoading,
+}: Props) => {
     const [user] = useUser();
     const [organization] = useOrganization();
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
@@ -86,6 +93,7 @@ export const RowVideoConference = ({ model, setModel, isCreateEvent, hasZoomErro
         setModel,
         isActive: isProtonMeetMeeting,
         setActiveProvider,
+        setIsVideoConferenceLoading,
     });
 
     const zoomAccessLevel = getAccessLevel();

@@ -110,6 +110,7 @@ describe('ProtonMeetRow', () => {
             setModel: jest.fn(),
             isActive,
             setActiveProvider: jest.fn(),
+            setIsVideoConferenceLoading: jest.fn(),
         });
 
         return <ProtonMeetRow model={model} {...protonMeetIntegration} />;
