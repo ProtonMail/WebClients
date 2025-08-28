@@ -204,9 +204,14 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                     const connectionStatus = await wasmAppRef.current.getWsState();
 
                     if (connectionStatus !== ConnectionStateInfo.Reconnecting) {
-                        const isMlsUpToDate = await wasmAppRef.current.isMlsUpToDate();
+                        try {
+                            const isMlsUpToDate = await wasmAppRef.current.isMlsUpToDate();
 
-                        if (!isMlsUpToDate) {
+                            if (!isMlsUpToDate) {
+                                setConnectionLost(true);
+                            }
+                        } catch (error) {
+                            console.error('Failed to check MLS status:', error);
                             setConnectionLost(true);
                         }
                     } else {
@@ -218,7 +223,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                 }
             }
 
-            timeout = setTimeout(checkConnection, 3000);
+            timeout = setTimeout(checkConnection, 5000);
         };
 
         void checkConnection();
