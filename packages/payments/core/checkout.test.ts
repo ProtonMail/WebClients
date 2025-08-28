@@ -1,6 +1,9 @@
-import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES, type Plan, SubscriptionMode } from '@proton/payments';
-import { getCheckout, getUsersAndAddons } from '@proton/shared/lib/helpers/checkout';
 import { PLANS_MAP } from '@proton/testing/data';
+
+import { getCheckout, getUsersAndAddons } from './checkout';
+import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from './constants';
+import { type Plan } from './plan/interface';
+import { SubscriptionMode } from './subscription/constants';
 
 const getPlan = (data: Partial<Plan>) => {
     return { ...data, Type: PLAN_TYPES.PLAN } as Plan;

@@ -17,7 +17,6 @@ import type {
     SetPaypalPaymentIntentPayload,
     ThreeDsChallengePayload,
 } from '@proton/chargebee/lib';
-import { type EnrichedCheckResponse } from '@proton/shared/lib/helpers/checkout';
 
 import type { PaymentsVersion } from './api';
 import { type CheckSubscriptionData } from './api';
@@ -38,6 +37,7 @@ import type {
     TransactionType,
 } from './constants';
 import type { PaymentProcessorType } from './payment-processors/interface';
+import type { EnrichedCheckResponse } from './subscription/interface';
 
 export interface CreateCardDetailsBackend {
     Number: string;

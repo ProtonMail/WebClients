@@ -13,6 +13,7 @@ export {
 } from './components/ChargebeeWrapper';
 export { CountriesDropdown } from './components/CountriesDropdown';
 export { CountryStateSelector } from './components/CountryStateSelector';
+export { default as InclusiveVatText } from './components/InclusiveVatText';
 export { InputWithSelectorPrefix, type InputWithSelectorPrefixProps } from './components/InputWithSelectorPrefix';
 export { OfferPrice, type Props as OfferPriceProps } from './components/OfferPrice';
 export { PayButton } from './components/PayButton';

@@ -8,12 +8,12 @@ import {
     type PaymentsApi,
     type Plan,
 } from '@proton/payments';
-import * as checkoutModule from '@proton/shared/lib/helpers/checkout';
+import * as paymentsModule from '@proton/payments';
 
 import type { UpsellModalConfigParams } from '../interface';
 import { ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE, getUpsellModalFreeUserConfig } from './getUpsellModalFreeUserConfig';
 
-jest.mock('@proton/shared/lib/helpers/checkout');
+jest.mock('@proton/payments/core/checkout');
 jest.mock('@proton/payments/core/subscription/selected-plan', () => ({
     SelectedPlan: { createFromSubscription: jest.fn() },
 }));
@@ -34,7 +34,7 @@ async function setupTest(currency: Currency) {
     });
 
     // @ts-expect-error - mock of checkout call
-    jest.spyOn(checkoutModule, 'getCheckout').mockReturnValue({
+    jest.spyOn(paymentsModule, 'getCheckout').mockReturnValue({
         withDiscountPerCycle: NON_MAIN_CURRENCY_MOCK_AMOUNT,
         withoutDiscountPerCycle: NON_MAIN_CURRENCY_MOCK_AMOUNT_WITHOUT_DISCOUNT,
     });

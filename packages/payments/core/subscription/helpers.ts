@@ -598,7 +598,7 @@ export const getValidAudience = (audience: string | undefined | null): Audience 
     return getValidAudienceCondition.find((realAudience) => realAudience === audience);
 };
 
-export const getIsCustomCycle = (subscription?: Subscription) => {
+export const hasCustomCycle = (subscription?: Subscription) => {
     if (!subscription) {
         return false;
     }

@@ -17,6 +17,7 @@ import type {
     PaymentsVersion,
     PlainPaymentMethodType,
     PlanIDs,
+    RequiredCheckResponse,
     SavedPaymentMethod,
 } from '@proton/payments';
 import {
@@ -29,7 +30,6 @@ import {
     isTaxInclusive,
 } from '@proton/payments';
 import { useCbIframe } from '@proton/payments/ui';
-import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { type Api, type ChargebeeEnabled, type ChargebeeUserExists, type User } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';

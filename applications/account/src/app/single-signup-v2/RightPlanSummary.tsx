@@ -5,8 +5,7 @@ import { c } from 'ttag';
 import { getDealDurationText } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import type { CYCLE, Currency, Cycle } from '@proton/payments';
-import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
+import type { CYCLE, Currency, Cycle, PaymentsCheckout } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -23,7 +22,7 @@ interface Props {
     discount: number;
     free?: boolean;
     className?: string;
-    checkout?: SubscriptionCheckoutData;
+    checkout?: PaymentsCheckout;
     mode?: 'addons';
     isTrial?: boolean;
 }
@@ -135,7 +134,7 @@ export const RightPlanSummaryAddons = ({
 }: {
     cycle: Cycle;
     currency: Currency;
-    checkout: SubscriptionCheckoutData;
+    checkout: PaymentsCheckout;
     displayMembersWithDiscount: boolean;
 }) => {
     return [

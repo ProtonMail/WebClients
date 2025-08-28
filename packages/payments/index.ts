@@ -65,6 +65,15 @@ export {
 } from './core/billing-address/billing-address';
 export { getBillingAddressFromPaymentStatus } from './core/billing-address/billing-address-from-payments-status';
 export { getErrors, isExpired, type CardModel } from './core/cardDetails';
+export {
+    getCheckout,
+    getCheckResultFromSubscription,
+    getIsCustomCycle,
+    getOptimisticCheckResult,
+    type AddonDescription,
+    type PaymentsCheckout,
+    type RequiredCheckResponse,
+} from './core/checkout';
 export { getCheckoutModifiers, type CheckoutModifiers } from './core/checkout-modifiers';
 export {
     ADDON_NAMES,
@@ -350,7 +359,6 @@ export {
     getIsB2BAudienceFromSubscription,
     getIsConsumerPassPlan,
     getIsConsumerVpnPlan,
-    getIsCustomCycle,
     getIsPassB2BPlan,
     getIsPassPlan,
     getIsPlanTransitionForbidden,
@@ -392,6 +400,7 @@ export {
     hasBundlePro,
     hasBundlePro2024,
     hasCancellablePlan,
+    hasCustomCycle,
     hasDeprecatedVPN,
     hasDrive,
     hasDrive1TB,
@@ -445,6 +454,7 @@ export {
 } from './core/subscription/helpers';
 export {
     type Coupon,
+    type EnrichedCheckResponse,
     type FullPlansMap,
     type Subscription,
     type SubscriptionCheckResponse,

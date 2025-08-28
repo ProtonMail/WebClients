@@ -1,13 +1,13 @@
 import { type ReactNode, createContext, useContext, useRef, useState } from 'react';
 
 import useHandler from '@proton/components/hooks/useHandler';
-import { type RequiredCheckResponse, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { defaultVPNServersCountData, getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import type { BillingAddress } from '../../core/billing-address/billing-address';
+import { type RequiredCheckResponse, getCheckout } from '../../core/checkout';
 import { CYCLE, FREE_SUBSCRIPTION } from '../../core/constants';
 import type { Currency, Cycle, PlanIDs } from '../../core/interface';
 import type { Plan } from '../../core/plan/interface';

@@ -29,6 +29,7 @@ import {
     getIsB2BAudienceFromPlan,
     getIsPlanTransitionForbidden,
     getNormalCycleFromCustomCycle,
+    getOptimisticCheckResult,
     getPaymentMethods,
     getPlan,
     getPlanFromPlanIDs,
@@ -43,7 +44,6 @@ import { partnerWhitelist } from '@proton/shared/lib/api/partner';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Api, Organization, User } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';

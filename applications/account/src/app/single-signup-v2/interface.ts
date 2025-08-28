@@ -4,9 +4,10 @@ import type { LocationDescriptor } from 'history';
 
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import type { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
-import type { BillingAddress, PaymentStatus } from '@proton/payments';
+import type { BillingAddress, PaymentStatus, RequiredCheckResponse } from '@proton/payments';
 import {
     type CYCLE,
+    type Currency,
     type FreePlanDefault,
     type PLANS,
     type Plan,
@@ -14,10 +15,8 @@ import {
     type PlansMap,
     type SubscriptionPlan,
 } from '@proton/payments';
-import { type Currency } from '@proton/payments';
 import type { ExtensionApp } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import type { Audience, HumanVerificationMethodType, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 import type {

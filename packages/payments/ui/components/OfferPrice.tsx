@@ -4,9 +4,9 @@ import Price, { type Props as PriceProps } from '@proton/components/components/p
 import SkeletonLoader, {
     type Props as SkeletonLoaderProps,
 } from '@proton/components/components/skeletonLoader/SkeletonLoader';
-import { type PaymentsCheckout } from '@proton/shared/lib/helpers/checkout';
 import noop from '@proton/utils/noop';
 
+import type { PaymentsCheckout } from '../../core/checkout';
 import { getPlanNameFromIDs, isLifetimePlanSelected } from '../../core/plan/helpers';
 import { type PlanToCheck, getPlanToCheck, usePaymentsPreloaded } from '../context/PaymentContext';
 
