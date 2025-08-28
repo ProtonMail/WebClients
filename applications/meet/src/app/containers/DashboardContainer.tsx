@@ -98,7 +98,7 @@ export const DashboardContainer = () => {
                         className="w-full md:w-1/3"
                         title={c('meet_2025 Title').t`Schedule meeting`}
                         description={c('meet_2025 Description')
-                            .t`Use ${CALENDAR_APP_NAME} to organize meetings and send invites.`}
+                            .t`Plan meetings and send invites with ${CALENDAR_APP_NAME}.`}
                         icon={<IcCalendarToday size={5} />}
                         circleColor="var(--ui-blue-interaction-minor-3)"
                         iconColor="var(--ui-blue-interaction-minor-1)"
@@ -108,7 +108,7 @@ export const DashboardContainer = () => {
                         className="w-full md:w-1/3"
                         title={c('meet_2025 Title').t`Personal meeting link`}
                         description={c('meet_2025 Description')
-                            .t`An always available meeting room for people you trust`}
+                            .t`An always available meeting room for people you trust.`}
                         icon={<IcUser size={5} />}
                         circleColor="var(--ui-purple-interaction-minor-3)"
                         iconColor="var(--ui-purple-interaction-minor-1)"
