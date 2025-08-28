@@ -172,10 +172,10 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
                     selectAll,
                     sourceAction: sourceAction,
                 });
-            }
 
-            if (selectedIDs.includes(elementID || '')) {
-                handleBack();
+                if (selectedIDs.includes(elementID || '')) {
+                    handleBack();
+                }
             }
         },
         [selectedIDs, elementID, labelID, folders, handleBack, selectAll]
