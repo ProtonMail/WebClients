@@ -167,7 +167,6 @@ const MainContainer = () => {
     const isReferralExpansionEnabled = useFlag('ReferralExpansion');
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
-    const isEmergencyAccessAvailable = useFlag('EmergencyAccess');
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -228,7 +227,6 @@ const MainContainer = () => {
         isB2BTrial,
         isReferralExpansionEnabled,
         isRetentionPoliciesEnabled,
-        isEmergencyAccessAvailable,
         isSsoForPbsEnabled,
     });
 
