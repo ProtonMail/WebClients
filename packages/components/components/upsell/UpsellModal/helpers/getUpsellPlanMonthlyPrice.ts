@@ -5,12 +5,12 @@ import {
     type PaymentsApi,
     type Plan,
     type PlanIDs,
+    getCheckout,
     getPlanByName,
     getPlansMap,
     getPricePerCycle,
     isMainCurrency,
 } from '@proton/payments';
-import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 
 interface UpsellPlanMonthlyPriceParams {
     currency: Currency;
