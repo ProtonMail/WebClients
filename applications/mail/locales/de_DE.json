@@ -1451,10 +1451,6 @@
       "Trust": [
         "Vertrauen"
       ],
-      "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
-      ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
       ],
@@ -7268,7 +7264,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -13918,6 +13915,10 @@
       ],
       "Read receipt sent": [
         "Lesebestätigung gesendet"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "${ elementsCount } Nachricht neu kategorisiert.",
+        "${ elementsCount } Nachrichten neu kategorisiert."
       ],
       "Self-destruction removed": [
         "Selbstzerstörung entfernt"
