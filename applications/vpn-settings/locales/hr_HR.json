@@ -2745,6 +2745,9 @@
       "You must set a name": [
         "Morate postaviti naziv"
       ],
+      "Your forward will not be processed.": [
+        "Vaše prosljeđivanje neće biti obrađeno."
+      ],
       "Your import will not be processed.": [
         "Vaš uvoz nije moguće obraditi."
       ],
@@ -6398,11 +6401,49 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Zadržite ovaj plan"
+      ],
       "Start using ${ appName }": [
         "Započnite koristiti ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Nadogradi moj plan"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Recommended": [
+        "Preporučeno"
       ]
     },
     "pass_signup_2023: Info": {
+      "/month /user": [
+        "/mjesec /korisnik"
+      ],
+      "Current plan": [
+        "Trenutni plan"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Za samo još **${ relativePrice } mjesečno** dobivate pristup ${ BRAND_NAME }ovoj premium VPN usluzi!"
+      ],
+      "Free forever": [
+        "Besplatno zauvijek"
+      ],
+      "Includes:": [
+        "Uključuje:"
+      ],
+      "per month": [
+        "mjesečno"
+      ],
+      "per month, billed annually": [
+        "mjesečno, naplaćuje se godišnje"
+      ],
+      "per month, billed every month": [
+        "mjesečno, naplaćuje se svaki mjesec"
+      ],
+      "per month, billed every two years": [
+        "mjesečno, naplaćuje se svake dvije godine"
+      ],
       "Secure vault sharing": [
         "Sigurno dijeljenje trezora"
       ]

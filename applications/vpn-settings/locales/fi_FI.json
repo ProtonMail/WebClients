@@ -1006,6 +1006,11 @@
         "Loitonna"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Jatketaan välitystä"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "Uudelleenaktivoi"
@@ -3792,6 +3797,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Tililläsi tai organisaatiollasi on erääntynyt lasku. Maksa kaikki maksamattomat laskut."
+      ],
+      "Your forward will not be processed.": [
+        "Ohjaustasi ei käsitellä."
       ],
       "Your import will not be processed.": [
         "Tuontiasi ei käsitellä."
@@ -9983,11 +9991,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Pidä tämä tilaus"
+      ],
       "Start using ${ appName }": [
         "Aloita ${ appName } -sovelluksen käyttö"
+      ],
+      "Upgrade my plan": [
+        "Päivitä tilaukseni"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Keskustellaan"
+      ],
+      "Limited time offer": [
+        "Vain rajoitetun ajan"
+      ],
+      "Recommended": [
+        "Suositus"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } kuukaudessa"
+      ],
+      "/month /user": [
+        "/kuukausi /käyttäjä"
+      ],
+      "/month /user, billed annually": [
+        "/kuukausi /käyttäjä, laskutetaan vuosittain"
+      ],
+      "/month /user, billed biennially": [
+        "/kuukausi /käyttäjä, laskutetaan joka toinen vuosi"
+      ],
+      "Current plan": [
+        "Nykyinen tilaus"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Vain **${ relativePrice } kuukausikorotuksella** saat käyttöösi ${ BRAND_NAME }in premium-salsanahallinnan!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Vain **${ relativePrice } kuukausikorotuksella** saat käyttöösi ${ BRAND_NAME }in premium-VPN:n!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Saat kaikki ${ BRAND_NAME } premium-palvelut käyttöösi vain **${ relativePrice } kuukausikorotuksella**!"
+      ],
+      "Free forever": [
+        "Pysyvästi ilmainen"
+      ],
+      "Get in touch with our sales team": [
+        "Ota yhteyttä myyntiimme"
+      ],
+      "Includes:": [
+        "Sisältää:"
+      ],
+      "per month": [
+        "kuukaudessa"
+      ],
+      "per month, billed annually": [
+        "kuukaudessa, laskutetaan vuosittain"
+      ],
+      "per month, billed every month": [
+        "kuukaudessa, laskutetaan kuukausittain"
+      ],
+      "per month, billed every two years": [
+        "kuukaudessa, laskutetaan kahden vuoden välein"
+      ],
       "Secure vault sharing": [
         "Suojattu holvien jako"
       ],

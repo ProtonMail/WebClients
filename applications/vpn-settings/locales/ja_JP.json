@@ -642,6 +642,9 @@
       "Refer a friend": [
         "友達を招待"
       ],
+      "Refresh": [
+        "再読み込み"
+      ],
       "Refresh status": [
         "状態を更新"
       ],
@@ -1022,6 +1025,11 @@
       ],
       "Zoom out": [
         "縮小"
+      ]
+    },
+    "action": {
+      "Resuming forward": [
+        "転送再開"
       ]
     },
     "Action subscription": {
@@ -3911,6 +3919,9 @@
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "あなたのアカウントあるいは組織には未払いの請求があります。すべての未払いの請求をお支払いください。"
       ],
+      "Your forward will not be processed.": [
+        "転送は処理されません。"
+      ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
       ],
@@ -5405,6 +5416,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "未払いの請求があるためアクセスが制限されています。管理者に問い合わせてください。"
       ],
+      "Account monitor": [
+        "アカウントモニター"
+      ],
       "Account successfully updated": [
         "アカウントが正常に更新されました。"
       ],
@@ -5476,6 +5490,9 @@
       ],
       "Allocated": [
         "割り当て"
+      ],
+      "Allow logging of location and connection details": [
+        "位置情報と接続詳細の記録を許可する"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "ユーザーが${ VPN_APP_NAME }アプリの**国**セクションから安全な共有サーバーに接続することを許可します。"
@@ -5717,6 +5734,9 @@
       "Disabled countries": [
         "無効な国"
       ],
+      "Disabled on ${ boldValue }": [
+        "${ boldValue }に無効"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "2段階認証を無効にすると、アカウントの安全性が低下します。必要に応じてのみ続行してください。"
       ],
@@ -5831,6 +5851,9 @@
       "Enabled countries": [
         "有効な国"
       ],
+      "Enabled on ${ boldValue }": [
+        "${ boldValue }に有効"
+      ],
       "Enabling auto-deletion…": [
         "自動消去を有効にしています…"
       ],
@@ -5935,6 +5958,9 @@
       ],
       "Gain visibility across your organization": [
         "組織全体での可視性を確保する"
+      ],
+      "Gateway monitor": [
+        "ゲートウェイモニター"
       ],
       "Gateways": [
         "ゲートウェイ"
@@ -6043,6 +6069,9 @@
       ],
       "inactive": [
         "非アクティブ"
+      ],
+      "Include device, location, and IP details": [
+        "デバイス、位置情報、IPの詳細を含める"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "${ formattedTaxRate }% ${ taxName }: ${ price } を含む"
@@ -6344,6 +6373,9 @@
       "Or select a particular server:": [
         "または特定のサーバーを選択:"
       ],
+      "Organization monitor": [
+        "組織モニター"
+      ],
       "Organization size": [
         "組織規模"
       ],
@@ -6364,6 +6396,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - カスタムメールが削除されました"
+      ],
+      "Pass usage logs": [
+        "Pass 使用ログ"
       ],
       "password": [
         "パスワード"
@@ -6991,6 +7026,9 @@
       ],
       "Version number successfully copied to clipboard": [
         "バージョン番号がクリップボードにコピーされました"
+      ],
+      "View VPN session details for your organization.": [
+        "組織のVPNセッションの詳細を閲覧"
       ],
       "View, download, and manage your invoices.": [
         "請求書を表示、ダウンロード、管理します。"
@@ -8510,6 +8548,9 @@
       "Learn more": [
         "もっと詳しく"
       ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "${ BRAND_NAME }を継続してご利用いただくには、プレミアムサーバーの機能が使用中でないことをご確認ください。またはプランをアップグレードしてください。"
+      ],
       "upgrade for more storage": [
         "より大きなストレージへアップグレード"
       ],
@@ -8680,6 +8721,15 @@
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "${ BRAND_NAME } に独自ドメインを接続し、独自メールアドレス (例: you@yourcompany.com) をセットアップします。ウィザードの指示に従って操作してください。"
+      ],
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "組織全体で${ PASS_APP_NAME }のアクティビティを表示します。"
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "お客様の組織に対する変更や、その他の管理者アクティビティを表示します。"
+      ],
+      "View user sign-in, recovery and security events.": [
+        "ユーザーのサインイン、回復、セキュリティイベントを閲覧"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "無料トライアルは終了しました。アカウントへのアクセスはまもなく無効になります。${ action }"
@@ -9796,6 +9846,9 @@
       "Invalid code": [
         "無効なコード"
       ],
+      "Invalid input. Search an email or detail.": [
+        "無効な入力です。メールもしくは詳細で検索してください。"
+      ],
       "Invalid input. Search an email or IP address.": [
         "無効な入力です。メールもしくはIPアドレスで検索してください。"
       ],
@@ -10221,11 +10274,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "このプランを続ける"
+      ],
       "Start using ${ appName }": [
         "${ appName } の使用を開始する"
+      ],
+      "Upgrade my plan": [
+        "プランをアップグレード"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "話しましょう"
+      ],
+      "Limited time offer": [
+        "期間限定オファー"
+      ],
+      "Recommended": [
+        "おすすめ"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice }/月あたり"
+      ],
+      "/month /user": [
+        "/月 /ユーザー"
+      ],
+      "/month /user, billed annually": [
+        "/月 /ユーザー、毎年請求されます"
+      ],
+      "/month /user, billed biennially": [
+        "/月 /ユーザー、隔年請求"
+      ],
+      "Current plan": [
+        "現在のプラン"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "月額わずか **${ relativePrice }** を追加するだけで、${ BRAND_NAME } のプレミアム パスワード マネージャーにアクセスできるようになります。"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "月額わずか **${ relativePrice }** を追加するだけで、${ BRAND_NAME } のプレミアム VPN サービスにアクセスできます。"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "**月額わずか ${ relativePrice }** を追加するだけで、すべてのプレミアム ${ BRAND_NAME } サービスにアクセスできるようになります。"
+      ],
+      "Free forever": [
+        "永久無料"
+      ],
+      "Get in touch with our sales team": [
+        "当社の営業チームにお問い合わせください"
+      ],
+      "Includes:": [
+        "含まれるもの:"
+      ],
+      "per month": [
+        "月あたり"
+      ],
+      "per month, billed annually": [
+        "月払い、年払い"
+      ],
+      "per month, billed every month": [
+        "月額、毎月請求"
+      ],
+      "per month, billed every two years": [
+        "月額、2年ごとに請求"
+      ],
       "Secure vault sharing": [
         "安全な保管庫共有"
       ],
@@ -10409,6 +10524,9 @@
       ],
       "Card number": [
         "カード番号"
+      ],
+      "Credits and discounts are reflected in your invoice": [
+        "クレジットおよび割引は、お客様の請求書に反映されます。"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "現在、サブスクリプションの自動更新は無効になっています。今すぐサブスクリプションを変更すると、自動更新が再び有効になります。"
@@ -10678,6 +10796,9 @@
       ],
       "Search users": [
         "ユーザーを検索"
+      ],
+      "Search users or details": [
+        "ユーザーまたは詳細を検索"
       ],
       "Select": [
         "選択してください"
@@ -13362,6 +13483,9 @@
       ],
       "Description": [
         "説明"
+      ],
+      "Details": [
+        "詳細"
       ],
       "Device": [
         "デバイス"
