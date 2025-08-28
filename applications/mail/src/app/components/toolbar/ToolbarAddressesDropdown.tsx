@@ -3,34 +3,35 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modals/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
 import { ButtonLike, InlineLinkButton, Tooltip } from '@proton/atoms';
-import { Dropdown, DropdownMenuButton, Icon, useModalState, usePopperAnchor } from '@proton/components';
+import { Dropdown, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { ADDRESS_TYPE, APPS, BRAND_NAME, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { ADDRESS_TYPE, APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getIsAddressActive, getIsBYOEAddress, getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import type { Address } from '@proton/shared/lib/interfaces';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 import generateUID from '@proton/utils/generateUID';
 
+import ClaimProtonAddressToolbarButton from './ClaimProtonAddressToolbarButton';
+
 interface Props {
     labelID: string;
     selectedIDs: string[];
 }
 
+/**
+ * This component is not used for now, it will be added back when addresses filtering will be available
+ */
 const ToolbarAddressesDropdown = ({ labelID, selectedIDs }: Props) => {
     const [addresses] = useAddresses();
     const { createNotification } = useNotifications();
     const [uid] = useState(generateUID('dropdown'));
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-
-    const [claimProtonAddressModalProps, setClaimProtonAddressModalProps, renderClaimProtonAddressModal] =
-        useModalState();
 
     const internalAndBYOEAddresses = useMemo(() => {
         const filteredAddresses =
@@ -71,9 +72,7 @@ const ToolbarAddressesDropdown = ({ labelID, selectedIDs }: Props) => {
     return (
         <>
             {isPureBYOE ? (
-                <InlineLinkButton className="color-weak" onClick={() => setClaimProtonAddressModalProps(true)}>
-                    {c('Action').t`Claim ${BRAND_NAME} address`}
-                </InlineLinkButton>
+                <ClaimProtonAddressToolbarButton />
             ) : (
                 <>
                     <InlineLinkButton className="color-weak" onClick={toggle} ref={anchorRef}>
@@ -134,10 +133,6 @@ const ToolbarAddressesDropdown = ({ labelID, selectedIDs }: Props) => {
                         </div>
                     </Dropdown>
                 </>
-            )}
-
-            {renderClaimProtonAddressModal && (
-                <BYOEClaimProtonAddressModal toApp={APPS.PROTONMAIL} {...claimProtonAddressModalProps} />
             )}
         </>
     );
