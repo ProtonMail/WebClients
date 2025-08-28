@@ -1,6 +1,6 @@
 import type { Nullable } from '@proton/shared/lib/interfaces';
 
-import { type ProrationMode } from '../api';
+import { type CheckSubscriptionData, type ProrationMode } from '../api';
 import type { Currency, Cycle } from '../interface';
 import type { BasePlansMap, Plan, SubscriptionPlan } from '../plan/interface';
 import type { BillingPlatform, Renew, SubscriptionMode, SubscriptionPlatform, TaxInclusive } from './constants';
@@ -126,6 +126,10 @@ export interface SubscriptionCheckResponse {
      */
     RenewCycle: Cycle | null;
 }
+
+export type EnrichedCheckResponse = SubscriptionCheckResponse & {
+    requestData: CheckSubscriptionData;
+};
 
 export interface Tax {
     Name: string;

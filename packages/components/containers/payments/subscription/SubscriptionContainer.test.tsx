@@ -16,14 +16,21 @@ import {
     type SubscriptionCheckResponse,
     createSubscription,
     createTokenV4,
+    getOptimisticCheckResult,
     getPlansMap,
 } from '@proton/payments';
-import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { Audience, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
-import { renderWithProviders, withPaymentContext } from '@proton/testing';
-import { addApiMock, apiMock, applyHOCs, withDeprecatedModals, withReduxStore } from '@proton/testing';
+import {
+    addApiMock,
+    apiMock,
+    applyHOCs,
+    renderWithProviders,
+    withDeprecatedModals,
+    withPaymentContext,
+    withReduxStore,
+} from '@proton/testing';
 import { buildUser } from '@proton/testing/builders';
 import { getLongTestPlans } from '@proton/testing/data';
 import { type FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';

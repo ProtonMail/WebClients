@@ -32,6 +32,7 @@ import {
     type Cycle,
     DEFAULT_CURRENCY,
     DisplayablePaymentError,
+    type EnrichedCheckResponse,
     type FreePlanDefault,
     PAYMENT_METHOD_TYPES,
     PLANS,
@@ -54,8 +55,10 @@ import {
     getHas2024OfferCoupon,
     getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
+    getIsCustomCycle,
     getIsPlanTransitionForbidden,
     getMaximumCycleForApp,
+    getOptimisticCheckResult,
     getPaymentsVersion,
     getPlanCurrencyFromPlanIDs,
     getPlanFromPlanIDs,
@@ -71,16 +74,17 @@ import {
     shouldPassIsTrial as shouldPassIsTrialPayments,
     switchPlan,
 } from '@proton/payments';
-import { PaymentsContextProvider, useIsB2BTrial, useTaxCountry, useVatNumber } from '@proton/payments/ui';
+import {
+    InclusiveVatText,
+    PaymentsContextProvider,
+    useIsB2BTrial,
+    useTaxCountry,
+    useVatNumber,
+} from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { APPS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import {
-    type EnrichedCheckResponse,
-    getIsCustomCycle,
-    getOptimisticCheckResult,
-} from '@proton/shared/lib/helpers/checkout';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
@@ -95,7 +99,6 @@ import { usePaymentsApi } from '../../../../components/payments/react-extensions
 import { useModalTwoPromise } from '../../../components/modalTwo/useModalTwo';
 import GenericError from '../../error/GenericError';
 import { changeDefaultPaymentMethodBeforePayment } from '../DefaultPaymentMethodMessage';
-import InclusiveVatText from '../InclusiveVatText';
 import PaymentGiftCode from '../PaymentGiftCode';
 import PaymentWrapper from '../PaymentWrapper';
 import { ProtonPlanCustomizer } from '../planCustomizer/ProtonPlanCustomizer';

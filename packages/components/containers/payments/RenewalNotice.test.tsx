@@ -7,13 +7,14 @@ import {
     PLAN_TYPES,
     type PlanIDs,
     type PlansMap,
+    type RequiredCheckResponse,
     type Subscription,
     SubscriptionMode,
+    getCheckout,
     getFreeCheckResult,
     getPrice,
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { type RequiredCheckResponse, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getTermsURL } from '@proton/shared/lib/helpers/url';
 import { buildSubscription } from '@proton/testing/builders';

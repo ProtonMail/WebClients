@@ -8,8 +8,8 @@ import {
     canModify,
     getHasPassB2BPlan,
     getIsB2BAudienceFromSubscription,
-    getIsCustomCycle,
     getSubscriptionPlanTitle,
+    hasCustomCycle,
     hasVPNPassBundle,
     isManagedExternally,
 } from '@proton/payments';
@@ -94,7 +94,7 @@ export const CurrentPlanInfoSection = ({
         user.isPaid &&
         user.canPay &&
         !getHasPassB2BPlan(subscription) &&
-        !getIsCustomCycle(subscription) &&
+        !hasCustomCycle(subscription) &&
         !hasVPNPassBundle(subscription) &&
         !showCustomizePlan &&
         editBillingCycle &&

@@ -7,19 +7,19 @@ import { Time } from '@proton/components';
 import Price from '@proton/components/components/price/Price';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
-import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import { type PaymentFacade } from '@proton/components/payments/client-extensions';
 import {
     ADDON_NAMES,
+    type PaymentsCheckout,
     type Plan,
     SubscriptionMode,
     TRIAL_DURATION_DAYS,
     getPricingFromPlanIDs,
     getTotalFromPricing,
 } from '@proton/payments';
-import type { getCheckout } from '@proton/shared/lib/helpers/checkout';
+import { InclusiveVatText } from '@proton/payments/ui';
 import clsx from '@proton/utils/clsx';
 
 import type { OptimisticOptions } from '../single-signup-v2/interface';
@@ -58,7 +58,7 @@ interface Props {
     model: VPNSignupModel;
     options: OptimisticOptions & { plan: Plan };
     loadingPaymentDetails: boolean;
-    actualCheckout: ReturnType<typeof getCheckout>;
+    actualCheckout: PaymentsCheckout;
     isB2bPlan: boolean;
     giftCode: ReactNode;
     planInformation: ReturnType<typeof getPlanInformation>;
