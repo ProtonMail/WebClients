@@ -1451,10 +1451,6 @@
       "Trust": [
         "Confiar"
       ],
-      "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
-      ],
       "Trust public key": [
         "Confiar en la clave pública"
       ],
@@ -7268,7 +7264,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar una imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -12590,15 +12587,15 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Tienes ${ timeRemaining.inHours } hora para restablecer tu contraseña.",
-        "Tienes ${ timeRemaining.inHours } horas para restablecer tu contraseña."
+        " Tienes ${ timeRemaining.inHours } horas para restablecer tu contraseña."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Tienes ${ timeRemaining.inMinutes } minuto para restablecer tu contraseña.",
-        "Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
+        " Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Tienes ${ timeRemaining.inSeconds } segundo para restablecer tu contraseña.",
-        "Tienes ${ timeRemaining.inSeconds } segundos para restablecer tu contraseña."
+        " Tienes ${ timeRemaining.inSeconds } segundos para restablecer tu contraseña."
       ]
     },
     "session_recovery:available:link": {
