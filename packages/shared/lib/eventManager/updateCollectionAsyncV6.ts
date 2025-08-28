@@ -13,6 +13,23 @@ export type UpdateCollectionAsyncV6<T> =
           payload: UpdateCollectionV6<T>;
       };
 
+/**
+ * Handles the fetching and processing of an update collection asynchronously based on a provided event list.
+ * It categorizes the updates as `refetch`, `ignore`, or `update`, depending on the number and type of events.
+ *
+ * @param {Object} params - The parameters needed to process the update collection.
+ * @param {(ID: string) => Promise<T>} params.get - A function to fetch an item by its ID.
+ * @param {EventV6Response} params.events - A list of events containing details about actions to process.
+ * @param {number} [params.n=6] - The threshold for determining whether to process all events as a complete refetch. Defaults to 6.
+ *
+ * @returns {Promise<UpdateCollectionAsyncV6<T>>} A promise that resolves to an object describing the outcome:
+ * - When no events are provided, resolves as `type: 'ignore'`.
+ * - When more than `n` events are present, resolves as `type: 'refetch'`.
+ * - Otherwise, resolves as `type: 'update'`, containing the `delete` and `upsert` payloads.
+ *
+ * @throws Will rethrow errors encountered during retrieval unless the error has a client-side status (4xx),
+ *         in which case the error is ignored for the specific entity.
+ */
 const getUpdateCollectionAsyncV6Result = async <T>({
     get,
     events,
