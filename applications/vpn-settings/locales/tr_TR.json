@@ -642,6 +642,9 @@
       "Refer a friend": [
         "Arkadaşınıza önerin"
       ],
+      "Refresh": [
+        "Yenile"
+      ],
       "Refresh status": [
         "Durumu yenile"
       ],
@@ -1024,6 +1027,11 @@
         "Uzaklaştır"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "İletme sürdürülüyor"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "Yenile"
@@ -1355,6 +1363,9 @@
       ],
       "on ${ formattedDate }": [
         "${ formattedDate } tarihinde"
+      ],
+      "Try it free for 14 days": [
+        "14 gün boyunca ücretsiz deneyin"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "İptal ettiğinizde, ücretsiz denemeniz ücretli aboneliğe dönüştürülmez, ancak deneme süresi sonuna kadar plan avantajlarından yararlanmaya devam edebilirsiniz. Bundan sonra, ${ BRAND_NAME } Ücretsiz planına düşürüleceksiniz."
@@ -3982,6 +3993,9 @@
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Hesabınızın ya da kuruluşunuzun ödenmemiş bir faturası var. Lütfen süresi geçmiş tüm faturaları ödeyin."
       ],
+      "Your forward will not be processed.": [
+        "İletmeniz işlenmeyecek."
+      ],
       "Your import will not be processed.": [
         "İçe aktarma işleminiz yapılmayacak."
       ],
@@ -5525,6 +5539,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Ödenmemiş faturalar nedeniyle hesap erişimi kısıtlandı. Lütfen yöneticinizle görüşün."
       ],
+      "Account monitor": [
+        "Hesap izleyici"
+      ],
       "Account successfully updated": [
         "Hesap güncellendi"
       ],
@@ -5603,6 +5620,9 @@
       ],
       "Allocated": [
         "Ayrılmış"
+      ],
+      "Allow logging of location and connection details": [
+        "Konum ve bağlantı ayrıntılarının kaydedilmesine izin ver"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Kullanıcıların güvenli paylaşılan sunuculara bağlanabilmesi için ${ VPN_APP_NAME } uygulamasının **Ülkeler** bölümünden izin verin."
@@ -5848,6 +5868,9 @@
       "Disabled countries": [
         "Devre dışı bırakılan ülkeler"
       ],
+      "Disabled on ${ boldValue }": [
+        "${ boldValue } zamanında kapatıldı"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "İki adımlı doğrulamayı kapatmak hesabınızın güvenliğini azaltacak. Bu işlemi yalnızca gerçekten gerekliyse yapın."
       ],
@@ -5962,6 +5985,9 @@
       ],
       "Enabled countries": [
         "Etkinleştirilen ülkeler"
+      ],
+      "Enabled on ${ boldValue }": [
+        "${ boldValue } zamanında açıldı"
       ],
       "Enabling auto-deletion…": [
         "Otomatik silme özelliği açılıyor…"
@@ -6179,6 +6205,9 @@
       ],
       "inactive": [
         "etkin değil"
+      ],
+      "Include device, location, and IP details": [
+        "Aygıt, konum ve IP adresi ayrıntıları katılsın"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "%${ formattedTaxRate } ${ taxName } dahil: ${ price }"
@@ -6482,6 +6511,9 @@
       "Or select a particular server:": [
         "Ya da belirli bir sunucuyu seçin:"
       ],
+      "Organization monitor": [
+        "Kuruluş izleyici"
+      ],
       "Organization size": [
         "Kuruluş boyutu"
       ],
@@ -6502,6 +6534,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - Özel e-posta adresi silindi"
+      ],
+      "Pass usage logs": [
+        "Pass kullanım günlüğü kayıtları"
       ],
       "password": [
         "parola"
@@ -7137,6 +7172,9 @@
       ],
       "Version number successfully copied to clipboard": [
         "Sürüm numarası kopyalandı"
+      ],
+      "View VPN session details for your organization.": [
+        "Kuruluşunuzun VPN oturumu ayrıntılarını görüntüleyin."
       ],
       "View, download, and manage your invoices.": [
         "Faturalarınızı görüntüleyin, indirin ve yönetin."
@@ -8672,6 +8710,9 @@
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "${ BRAND_NAME } kullanmayı sürdürmek için, lütfen ücretli özellikleri artık kullanmadığınızdan emin olun ya da tarifenizi yükseltin."
+      ],
       "upgrade for more storage": [
         "daha fazla depolama alanı edinmek için tarifenizi yükseltin"
       ],
@@ -8846,6 +8887,15 @@
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Özel e-posta adresleri (siz@sirketiniz.com gibi) oluşturmak için özel etki alanınızı ${ BRAND_NAME } ile ilişkilendirin. Süreç boyunca yardımcımız size yol gösterecek."
+      ],
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "Kuruluşunuz genelindeki ${ PASS_APP_NAME } etkinliğini görüntüleyin."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "Kuruluşunuzdaki değişiklikleri ve diğer yönetici etkinliklerini görüntüleyin."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "Kullanıcı oturum açma, kurtarma ve güvenlik etkinliklerini görüntüleyin."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ücretsiz deneme süreniz doldu. Hesabınıza erişim yakında kapatılacak. ${ action }"
@@ -9974,6 +10024,9 @@
       "Invalid code": [
         "Kod geçersiz"
       ],
+      "Invalid input. Search an email or detail.": [
+        "Giriş geçersiz. Bir e-posta ya da ayrıntı arayın."
+      ],
       "Invalid input. Search an email or IP address.": [
         "Giriş geçersiz. Bir e-posta ya da IP adresi arayın."
       ],
@@ -10402,11 +10455,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Bu tarifede kal"
+      ],
       "Start using ${ appName }": [
         "${ appName } ile başla"
+      ],
+      "Upgrade my plan": [
+        "Tarifemi yükselt"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Hadi konuşalım."
+      ],
+      "Limited time offer": [
+        "Sınırlı süreli teklif"
+      ],
+      "Recommended": [
+        "Önerilen"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } aylık"
+      ],
+      "/month /user": [
+        "/ay /kullanıcı"
+      ],
+      "/month /user, billed annually": [
+        "/ay /kullanıcı, yıllık faturalanır"
+      ],
+      "/month /user, billed biennially": [
+        "/ay /kullanıcı, iki yılda bir faturalanır"
+      ],
+      "Current plan": [
+        "Geçerli tarife"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Ayda yalnızca **${ relativePrice } daha fazla** ödeyerek ücretli ${ BRAND_NAME } parola yöneticisine erişebilirsiniz!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Ayda yalnızca **${ relativePrice } daha fazla** ödeyerek ücretli ${ BRAND_NAME } hizmetlerine erişebilirsiniz!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Ayda yalnızca **${ relativePrice }** daha ödeyerek tüm ücretli ${ BRAND_NAME } hizmetlerine erişebilirsiniz!"
+      ],
+      "Free forever": [
+        "Sonsuza kadar ücretsiz"
+      ],
+      "Get in touch with our sales team": [
+        "Satış ekibimizle görüşün"
+      ],
+      "Includes:": [
+        "İçindekiler:"
+      ],
+      "per month": [
+        "aylık"
+      ],
+      "per month, billed annually": [
+        "aylık, yılda bir faturalanır"
+      ],
+      "per month, billed every month": [
+        "aylık, ayda bir faturalanır"
+      ],
+      "per month, billed every two years": [
+        "aylık, iki yılda bir faturalanır"
+      ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
       ],
@@ -10591,6 +10706,9 @@
       ],
       "Card number": [
         "Kart numarası"
+      ],
+      "Credits and discounts are reflected in your invoice": [
+        "Krediler ve indirimler faturanızda yansıtılır."
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Şu anda otomatik abonelik yenilemesi kapalı. Aboneliği değiştirirseniz, otomatik yenileme yeniden açılır."
@@ -10864,6 +10982,9 @@
       ],
       "Search users": [
         "Kullanıcı arama"
+      ],
+      "Search users or details": [
+        "Kullanıcıları veya ayrıntıları ara"
       ],
       "Select": [
         "Seçin"
@@ -13605,6 +13726,9 @@
       ],
       "Description": [
         "Açıklama"
+      ],
+      "Details": [
+        "Ayrıntılar"
       ],
       "Device": [
         "Aygıt"

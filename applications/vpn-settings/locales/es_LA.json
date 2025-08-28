@@ -1027,6 +1027,11 @@
         "Alejar"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Reanudar reenvío"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "Reactivar"
@@ -1112,6 +1117,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Generar claves faltantes para la dirección “${ emailAddress }”"
       ],
+      "Reconnect": [
+        "Reconectar"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Reconectar la dirección «${ emailAddress }»"
+      ],
       "Saving": [
         "Guardando"
       ],
@@ -1134,6 +1145,9 @@
       ],
       "Disabled": [
         "Desactivada"
+      ],
+      "Disconnected": [
+        "Desconectada"
       ],
       "External": [
         "Externa"
@@ -1358,6 +1372,9 @@
       ],
       "on ${ formattedDate }": [
         "el ${ formattedDate }"
+      ],
+      "Try it free for 14 days": [
+        "Pruébelo gratis durante 14 días."
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Cuando cancele, su prueba gratuita no se convertirá en una suscripción de pago, pero aún podrá disfrutar de los beneficios del plan hasta el final del período de prueba. Después de eso, será degradado al plan ${ BRAND_NAME } Free."
@@ -3984,6 +4001,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "La cuenta u organización tiene una factura vencida. Pague todas las facturas pendientes."
+      ],
+      "Your forward will not be processed.": [
+        "Su reenvío no será procesado."
       ],
       "Your import will not be processed.": [
         "No se procesará la importación."
@@ -7666,6 +7686,9 @@
       "Donation": [
         "Donación"
       ],
+      "Manual": [
+        "Manual"
+      ],
       "Modification": [
         "Modificación"
       ],
@@ -10467,11 +10490,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Mantener este plan"
+      ],
       "Start using ${ appName }": [
         "Comenzar a usar ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Mejorar mi plan"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Hablemos"
+      ],
+      "Limited time offer": [
+        "Oferta por tiempo limitado"
+      ],
+      "Recommended": [
+        "Recomendado"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } por mes"
+      ],
+      "/month /user": [
+        "/mes /usuario"
+      ],
+      "/month /user, billed annually": [
+        "/mes /usuario, facturación anual"
+      ],
+      "/month /user, billed biennially": [
+        "/mes /usuario, facturación bienal"
+      ],
+      "Current plan": [
+        "Plan actual"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "¡Por solo **${ relativePrice } más al mes**, podrá acceder al servicio premium de gestor de contraseñas de ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "¡Por solo **${ relativePrice } más al mes**, podrá acceder al servicio VPN premium de ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "¡Por solo **${ relativePrice } más al mes**, usted podrá acceder a todos los servicios ${ BRAND_NAME } premium!"
+      ],
+      "Free forever": [
+        "Gratis para siempre"
+      ],
+      "Get in touch with our sales team": [
+        "Póngase en contacto con nuestro equipo de ventas"
+      ],
+      "Includes:": [
+        "Incluye:"
+      ],
+      "per month": [
+        "al mes"
+      ],
+      "per month, billed annually": [
+        "al mes con facturación anual"
+      ],
+      "per month, billed every month": [
+        "al mes con facturación mensual"
+      ],
+      "per month, billed every two years": [
+        "al mes con facturación cada dos años"
+      ],
       "Secure vault sharing": [
         "Uso compartido seguro de bóvedas"
       ],
@@ -14425,6 +14510,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Las subcarpetas del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }"
+      ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "La dirección ha sido desconectada. El envío de mensajes está pausado. Vuelva a conectarse para activar esta dirección de nuevo."
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."

@@ -994,6 +994,11 @@
         "Уменьшить масштаб"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Пересылка возобновляется"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "Возобновить"
@@ -1248,6 +1253,9 @@
       ],
       "on ${ formattedDate }": [
         "в ${ formattedDate }"
+      ],
+      "Try it free for 14 days": [
+        "Попробуйте бесплатно в течение 14 дней"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "После отмены ваша бесплатная пробная версия не будет преобразована в платную подписку, но вы все равно сможете пользоваться преимуществами плана до конца пробного периода. После этого вы будете переведены на бесплатный план ${ BRAND_NAME }."
@@ -3839,6 +3847,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ваш аккаунт или организация имеет просроченный счет. Пожалуйста, оплатите все неоплаченные счета."
+      ],
+      "Your forward will not be processed.": [
+        "Пересылка не будет обработана."
       ],
       "Your import will not be processed.": [
         "Импорт не будет обработан."
@@ -10283,11 +10294,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Сохранить этот тариф"
+      ],
       "Start using ${ appName }": [
         "Начните использовать ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Улучшить мой план"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Свяжитесь с нами"
+      ],
+      "Limited time offer": [
+        "Ограниченное предложение"
+      ],
+      "Recommended": [
+        "Рекомендовано"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } в месяц"
+      ],
+      "/month /user": [
+        "в месяц за пользователя"
+      ],
+      "/month /user, billed annually": [
+        "в месяц за пользователя в год"
+      ],
+      "/month /user, billed biennially": [
+        "в месяц за пользователя раз в два года"
+      ],
+      "Current plan": [
+        "Текущий тариф"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Всего за **${ relativePrice } в месяц** вы получаете доступ к платному менеджеру паролей от ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Всего за на **${ relativePrice } в месяц** больше вы получаете доступ к платной службе ${ BRAND_NAME } VPN!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Всего дополнительно за **${ relativePrice } в месяц**, вы получаете доступ ко всем премиальным сервисам ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Бесплатно навсегда"
+      ],
+      "Get in touch with our sales team": [
+        "Свяжитесь с нашим отделом продаж"
+      ],
+      "Includes:": [
+        "Включает:"
+      ],
+      "per month": [
+        "в месяц"
+      ],
+      "per month, billed annually": [
+        "в месяц, оплата за год"
+      ],
+      "per month, billed every month": [
+        "в месяц, оплачивается ежемесячно"
+      ],
+      "per month, billed every two years": [
+        "в месяц, оплачивается каждые два года"
+      ],
       "Secure vault sharing": [
         "Защищенный общий доступ к хранилищу"
       ],

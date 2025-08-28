@@ -892,6 +892,11 @@
         "Зменшити"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Відновлення пересилання"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "Повторна активація"
@@ -3412,6 +3417,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "У вашому обліковому записі чи вашій організації є прострочений рахунок. Будь ласка, сплатіть усі рахунки."
+      ],
+      "Your forward will not be processed.": [
+        "Ваше пересилання не буде оброблено."
       ],
       "Your import will not be processed.": [
         "Ваш імпорт не буде оброблений."
@@ -9405,11 +9413,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Залишити цей план"
+      ],
       "Start using ${ appName }": [
         "Почати використовувати ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Покращити тарифний план"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Поговорімо"
+      ],
+      "Limited time offer": [
+        "Обмежена пропозиція"
+      ],
+      "Recommended": [
+        "Рекомендовано"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } на місяць"
+      ],
+      "/month /user": [
+        "/місяць /користувач"
+      ],
+      "/month /user, billed annually": [
+        "/місяць /користувач, сплачується щороку"
+      ],
+      "/month /user, billed biennially": [
+        "/місяць /користувач, сплачується кожні два роки"
+      ],
+      "Current plan": [
+        "Поточний план"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Лише за **${ relativePrice } на місяць** ви отримуєте доступ до преміального менеджера паролів ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Лише за **${ relativePrice } на місяць** ви отримуєте доступ до преміального сервісу VPN від ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Лише за **${ relativePrice } на місяць** ви отримуєте доступ до всіх преміумсервісів ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Безплатно назавжди"
+      ],
+      "Get in touch with our sales team": [
+        "Зв'яжіться з нашим відділом продажів"
+      ],
+      "Includes:": [
+        "Включає:"
+      ],
+      "per month": [
+        "на місяць"
+      ],
+      "per month, billed annually": [
+        "на місяць, оплачується щороку"
+      ],
+      "per month, billed every month": [
+        "на місяць, рахунок виставляється щомісяця"
+      ],
+      "per month, billed every two years": [
+        "на місяць, рахунок виставляється кожні два роки"
+      ],
       "Secure vault sharing": [
         "Безпечний спільний доступ до сховища"
       ]

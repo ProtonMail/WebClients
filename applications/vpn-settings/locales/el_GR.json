@@ -1027,6 +1027,11 @@
         "Σμίκρυνση"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Συνέχιση προώθησης"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "Επανενεργοποίηση"
@@ -1112,6 +1117,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Δημιουργία κλειδιών που λείπουν για τη διεύθυνση “${ emailAddress }”"
       ],
+      "Reconnect": [
+        "Επανασύνδεση"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Επανασύνδεση διεύθυνσης “${ emailAddress }”"
+      ],
       "Saving": [
         "Αποθήκευση"
       ],
@@ -1134,6 +1145,9 @@
       ],
       "Disabled": [
         "Απενεργοποιημένο"
+      ],
+      "Disconnected": [
+        "Αποσυνδεδεμένο"
       ],
       "External": [
         "Εξωτερική"
@@ -3933,6 +3947,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ο λογαριασμός ή ο οργανισμός σας έχει μια εκπρόθεσμη οικονομική εκκρεμότητα. Παρακαλούμε πληρώστε όλες τις εκκρεμότητες."
+      ],
+      "Your forward will not be processed.": [
+        "Η προώθησή σας δε θα υποβληθεί σε επεξεργασία."
       ],
       "Your import will not be processed.": [
         "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
@@ -7615,6 +7632,9 @@
       "Donation": [
         "Δωρεά"
       ],
+      "Manual": [
+        "Χειροκίνητα"
+      ],
       "Modification": [
         "Τροποποίηση"
       ],
@@ -10409,11 +10429,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Διατηρήστε αυτό το πλάνο"
+      ],
       "Start using ${ appName }": [
         "Έναρξη χρήσης του ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Αναβαθμίστε το πλάνο μου"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Ας μιλήσουμε"
+      ],
+      "Limited time offer": [
+        "Προσφορά περιορισμένου χρόνου"
+      ],
+      "Recommended": [
+        "Προτεινόμενο"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } ανά μήνα"
+      ],
+      "/month /user": [
+        "/μήνα /χρήστη"
+      ],
+      "/month /user, billed annually": [
+        "/μήνας /χρήστης, χρεώνεται ετησίως"
+      ],
+      "/month /user, billed biennially": [
+        "/μήνας /χρήστης, χρεώνεται ανά διετία"
+      ],
+      "Current plan": [
+        "Τρέχον πλάνο"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Μόνο για **${ relativePrice } ανά μήνα** περισσότερο, έχετε πρόσβαση στον premium διαχειριστή κωδικών πρόσβασης του ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Για μόλις **${ relativePrice } ανά μήνα** περισσότερο, έχετε πρόσβαση στην premium υπηρεσία VPN του ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Με μόνο **${ relativePrice } ανά μήνα** παραπάνω, θα έχετε πρόσβαση σε όλες τις premium υπηρεσίες του ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Δωρεάν για πάντα"
+      ],
+      "Get in touch with our sales team": [
+        "Επικοινωνήστε με την ομάδα πωλήσεών μας"
+      ],
+      "Includes:": [
+        "Περιλαμβάνει:"
+      ],
+      "per month": [
+        "ανά μήνα"
+      ],
+      "per month, billed annually": [
+        "ανά μήνα, χρεώνεται ετησίως"
+      ],
+      "per month, billed every month": [
+        "ανά μήνα, χρεώνεται κάθε μήνα"
+      ],
+      "per month, billed every two years": [
+        "ανά μήνα, χρεώνεται κάθε δύο χρόνια"
+      ],
       "Secure vault sharing": [
         "Ασφαλής κοινή χρήση κρύπτης"
       ],
@@ -14359,6 +14441,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Οι υποφάκελοι συστήματος θα εμφανιστούν στο ${ MAIL_APP_NAME } ως χωριστοί φάκελοι"
+      ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "Η διεύθυνση έχει αποσυνδεθεί. Η αποστολή μηνυμάτων έχει τεθεί σε παύση. Επανασυνδεθείτε για να ενεργοποιήσετε ξανά αυτή τη διεύθυνση."
       ],
       "The import will start with the most recent messages.": [
         "Η εισαγωγή θα ξεκινήσει με τα πιο πρόσφατα μηνύματα."

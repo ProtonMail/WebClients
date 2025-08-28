@@ -642,6 +642,9 @@
       "Refer a friend": [
         "친구 초대"
       ],
+      "Refresh": [
+        "새로고침"
+      ],
       "Refresh status": [
         "상태 새로고침"
       ],
@@ -1024,6 +1027,11 @@
         "축소"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "전달 재개 중"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "재활성화"
@@ -1104,6 +1112,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "주소 “${ emailAddress }”에 대한 누락된 키 생성"
       ],
+      "Reconnect": [
+        "재연결"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "주소 \"${ emailAddress }\" 재연결"
+      ],
       "Saving": [
         "저장 중"
       ],
@@ -1126,6 +1140,9 @@
       ],
       "Disabled": [
         "비활성화됨"
+      ],
+      "Disconnected": [
+        "연결 해제됨"
       ],
       "External": [
         "외부"
@@ -3911,6 +3928,9 @@
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "사용자의 계정 및 조직에 연체된 요금이 존재합니다. 연체된 요금을 지불해 주세요."
       ],
+      "Your forward will not be processed.": [
+        "포워딩이 처리되지 않았습니다."
+      ],
       "Your import will not be processed.": [
         "가져오기가 처리되지 않았습니다."
       ],
@@ -5405,6 +5425,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "요금 미납으로 인해 계정 액세스가 제한되었습니다. 관리자에게 문의하세요."
       ],
+      "Account monitor": [
+        "계정 모니터링"
+      ],
       "Account successfully updated": [
         "계정을 성공적으로 업그레이드 했습니다."
       ],
@@ -5476,6 +5499,9 @@
       ],
       "Allocated": [
         "할당 됨"
+      ],
+      "Allow logging of location and connection details": [
+        "위치 및 연결 세부사항 로깅 허용"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "구성원이 ${ VPN_APP_NAME } 앱의 **국가** 섹션에서 보안 공유 서버에 연결할 수 있도록 허용합니다."
@@ -5717,6 +5743,9 @@
       "Disabled countries": [
         "비활성화된 국가"
       ],
+      "Disabled on ${ boldValue }": [
+        "${ boldValue }에 비활성화됨"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "2단계 인증을 비활성화하면 계정의 보안이 약해집니다. 꼭 필요한 경우에만 진행하세요."
       ],
@@ -5831,6 +5860,9 @@
       "Enabled countries": [
         "활성화된 국가"
       ],
+      "Enabled on ${ boldValue }": [
+        "${ boldValue }에 활성화됨"
+      ],
       "Enabling auto-deletion…": [
         "자동 삭제 활성화 중…"
       ],
@@ -5935,6 +5967,9 @@
       ],
       "Gain visibility across your organization": [
         "회원님의 조직 전체에 걸쳐 가시성을 확보하세요"
+      ],
+      "Gateway monitor": [
+        "게이트웨이 감시"
       ],
       "Gateways": [
         "게이트웨이"
@@ -6043,6 +6078,9 @@
       ],
       "inactive": [
         "비활성화"
+      ],
+      "Include device, location, and IP details": [
+        "기기, 위치 및 IP 정보 포함"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "${ formattedTaxRate }% ${ taxName } 포함: ${ price }"
@@ -6344,6 +6382,9 @@
       "Or select a particular server:": [
         "또는 특정 서버 선택:"
       ],
+      "Organization monitor": [
+        "조직 모니터링"
+      ],
       "Organization size": [
         "조직 크기"
       ],
@@ -6367,6 +6408,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - 커스텀 이메일 주소 삭제됨"
+      ],
+      "Pass usage logs": [
+        "Pass 사용 로그"
       ],
       "password": [
         "비밀번호"
@@ -6995,6 +7039,9 @@
       "Version number successfully copied to clipboard": [
         "버전 넘버를 클립보드에 복사했습니다"
       ],
+      "View VPN session details for your organization.": [
+        "조직의 VPN 세션 상세 사항을 확인하세요."
+      ],
       "View, download, and manage your invoices.": [
         "청구서를 확인, 다운로드 및 관리하세요."
       ],
@@ -7481,6 +7528,9 @@
       ],
       "Donation": [
         "기부"
+      ],
+      "Manual": [
+        "매뉴얼"
       ],
       "Modification": [
         "수정"
@@ -8516,6 +8566,9 @@
       "Learn more": [
         "더 알아보기"
       ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "${ BRAND_NAME }을 계속 사용하려면 프리미엄 기능을 더 이상 사용하지 않는지 확인하거나 플랜을 업그레이드해주세요."
+      ],
       "upgrade for more storage": [
         "추가 저장 공간을 위해 업그레이드 하세요."
       ],
@@ -8686,6 +8739,15 @@
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "커스텀 이메일 주소 (예: you@yourcompany.com)을 설정하려면 ${ BRAND_NAME }에 사용자의 지정 도메인을 연결하세요. 마법사가 이 과정을 가이드해 드립니다."
+      ],
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "조직 전체에 걸친 ${ PASS_APP_NAME } 활동을 확인하세요."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "조직의 변경 사항 및 기타 관리자 활동을 확인하세요."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "로그인, 복구 및 보안 이벤트를 조회하세요."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "무료 체험이 종료되었습니다. 계정 접근이 곧 비활성화 됩니다. ${ action }"
@@ -9802,6 +9864,9 @@
       "Invalid code": [
         "잘못된 코드입니다."
       ],
+      "Invalid input. Search an email or detail.": [
+        "유효하지 않은 입력입니다. 이메일 또는 세부사항으로 검색하세요."
+      ],
       "Invalid input. Search an email or IP address.": [
         "유효하지 않은 입력입니다. 이메일 및 IP 주소를 검색해 보세요."
       ],
@@ -10248,11 +10313,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "이 플랜 유지"
+      ],
       "Start using ${ appName }": [
         "${ appName } 사용 시작"
+      ],
+      "Upgrade my plan": [
+        "내 플랜 업그레이드"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "상담 및 계약 필요"
+      ],
+      "Limited time offer": [
+        "기간 한정 세일"
+      ],
+      "Recommended": [
+        "권장"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice }/월간"
+      ],
+      "/month /user": [
+        "/월 /사용자"
+      ],
+      "/month /user, billed annually": [
+        "/월간 /사용자 당, 연간 결제됨"
+      ],
+      "/month /user, billed biennially": [
+        "/월 /사용자, 매년 결제됨"
+      ],
+      "Current plan": [
+        "현재 플랜"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 비밀번호 관리자를 사용하실 수 있습니다!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 VPN 서비스를 사용하실 수 있습니다!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 서비스를 사용하실 수 있습니다!"
+      ],
+      "Free forever": [
+        "영원히 무료"
+      ],
+      "Get in touch with our sales team": [
+        "자사 세일즈 팀에 문의하세요."
+      ],
+      "Includes:": [
+        "포함:"
+      ],
+      "per month": [
+        "매월"
+      ],
+      "per month, billed annually": [
+        "월 기준, 매년마다 납부됨"
+      ],
+      "per month, billed every month": [
+        "월 기준, 개월마다 납부됨"
+      ],
+      "per month, billed every two years": [
+        "월 기준, 2년마다 납부됨"
+      ],
       "Secure vault sharing": [
         "안전한 금고 공유"
       ],
@@ -10436,6 +10563,9 @@
       ],
       "Card number": [
         "카드 번호"
+      ],
+      "Credits and discounts are reflected in your invoice": [
+        "크레딧 및 할인이 청구서에 반영됩니다"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "현재 자동 구독 갱신이 비활성화되었습니다. 구독을 지금 변경하면, 자동 갱신이 다시 활성화됩니다."
@@ -10705,6 +10835,9 @@
       ],
       "Search users": [
         "사용자 검색"
+      ],
+      "Search users or details": [
+        "사용자 또는 세부사항 검색"
       ],
       "Select": [
         "선택"
@@ -13390,6 +13523,9 @@
       "Description": [
         "설명"
       ],
+      "Details": [
+        "세부 사항"
+      ],
       "Device": [
         "기기"
       ],
@@ -14117,6 +14253,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }의 시스템 하위폴더가 별도로 폴더를 표시합니다"
+      ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "주소가 연결 해제되었습니다. 메시지 전송이 일시 중지되었습니다. 다시 연결하여 주소를 다시 활성화하십시오."
       ],
       "The import will start with the most recent messages.": [
         "최근의 주된 메시지 불러오기가 곧 시작됩니다."

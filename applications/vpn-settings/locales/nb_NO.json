@@ -642,6 +642,9 @@
       "Refer a friend": [
         "Verv en venn"
       ],
+      "Refresh": [
+        "Oppdater"
+      ],
       "Refresh status": [
         "Oppdater status"
       ],
@@ -1024,6 +1027,11 @@
         "Zoom ut"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Gjenopptar videresending"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "Aktiver på nytt"
@@ -1109,6 +1117,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Generer manglende nøkler for adresse “${ emailAddress }”"
       ],
+      "Reconnect": [
+        "Koble til på nytt"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Koble til på nytt adresse “${ emailAddress }”"
+      ],
       "Saving": [
         "Lagrer"
       ],
@@ -1131,6 +1145,9 @@
       ],
       "Disabled": [
         "Deaktivert"
+      ],
+      "Disconnected": [
+        "Frakoblet"
       ],
       "External": [
         "Ekstern"
@@ -3931,6 +3948,9 @@
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Din konto eller organisasjon har en forfalt faktura. Betal alle ubetalte fakturaer."
       ],
+      "Your forward will not be processed.": [
+        "Videresendingen din blir ikke behandlet."
+      ],
       "Your import will not be processed.": [
         "Importen din blir ikke behandlet."
       ],
@@ -5474,6 +5494,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontotilgang begrenset på grunn av ubetalte fakturaer. Kontakt systemansvarlig."
       ],
+      "Account monitor": [
+        "Kontoovervåking"
+      ],
       "Account successfully updated": [
         "Konto oppdatert"
       ],
@@ -5552,6 +5575,9 @@
       ],
       "Allocated": [
         "Tildelt"
+      ],
+      "Allow logging of location and connection details": [
+        "Tillat logging av plassering og tilkoblingsdetaljer"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Tillat brukere å koble til sikre delte tjenere fra **Land**-delen av ${ VPN_APP_NAME }-appen."
@@ -5797,6 +5823,9 @@
       "Disabled countries": [
         "Deaktiverte land"
       ],
+      "Disabled on ${ boldValue }": [
+        "Deaktivert på ${ boldValue }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Deaktivering av tofaktorautentisering vil gjøre kontoen din mindre sikker. Fortsett bare hvis det er absolutt nødvendig."
       ],
@@ -5912,6 +5941,9 @@
       "Enabled countries": [
         "Aktiverte land"
       ],
+      "Enabled on ${ boldValue }": [
+        "Aktivert på ${ boldValue }"
+      ],
       "Enabling auto-deletion…": [
         "Aktiverer automatisk sletting…"
       ],
@@ -6016,6 +6048,9 @@
       ],
       "Gain visibility across your organization": [
         "Få synlighet på tvers av organisasjonen"
+      ],
+      "Gateway monitor": [
+        "Overvåking av porttjener"
       ],
       "Gateways": [
         "Porttjenere"
@@ -6125,6 +6160,9 @@
       ],
       "inactive": [
         "inaktiv"
+      ],
+      "Include device, location, and IP details": [
+        "Inkluder enhet, plassering og IP-detaljer"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inkludert ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -6428,6 +6466,9 @@
       "Or select a particular server:": [
         "Eller velg en spesiell tjener:"
       ],
+      "Organization monitor": [
+        "Organisasjonsovervåking"
+      ],
       "Organization size": [
         "Organisasjonsstørrelse"
       ],
@@ -6451,6 +6492,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - tilpasset e-post slettet"
+      ],
+      "Pass usage logs": [
+        "Pass-brukslogger"
       ],
       "password": [
         "passord"
@@ -7087,6 +7131,9 @@
       "Version number successfully copied to clipboard": [
         "Versjonsnummeret ble kopiert til utklippstavlen"
       ],
+      "View VPN session details for your organization.": [
+        "Vis VPN-øktdetaljer for organisasjonen din."
+      ],
       "View, download, and manage your invoices.": [
         "Se, last ned og behandle fakturaene dine."
       ],
@@ -7587,6 +7634,9 @@
       ],
       "Donation": [
         "Donasjon"
+      ],
+      "Manual": [
+        "Manuell"
       ],
       "Modification": [
         "Modifisering"
@@ -8628,6 +8678,9 @@
       "Learn more": [
         "Lær mer"
       ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "For å fortsette å bruke ${ BRAND_NAME }, må du sørge for at premiumfunksjonene dine ikke lenger er i bruk, eller oppgradere abonnementsplanen din."
+      ],
       "upgrade for more storage": [
         "oppgrader for mer lagringsplass"
       ],
@@ -8802,6 +8855,15 @@
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Koble ditt egendefinerte domene til ${ BRAND_NAME } for å sette opp tilpassede e-postadresser (eks., du@dittfirma.no). Vår veileder vil rettlede deg gjennom prosessen."
+      ],
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "Vis ${ PASS_APP_NAME }-aktivitet på tvers av organisasjonen din."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "Se endringer i organisasjonen din og andre administratoraktiviteter."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "Vis brukerpålogging, gjenoppretting og sikkerhetshendelser."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Prøveperioden er avsluttet. Tilgang til kontoen din vil snart bli deaktivert. ${ action }"
@@ -9934,6 +9996,9 @@
       "Invalid code": [
         "Ugyldig kode"
       ],
+      "Invalid input. Search an email or detail.": [
+        "Ugyldig inndata. Søk etter en e-post eller detalj."
+      ],
       "Invalid input. Search an email or IP address.": [
         "Ugyldige inndata. Søk i en e-post eller IP-adresse."
       ],
@@ -10383,11 +10448,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Behold denne planen"
+      ],
       "Start using ${ appName }": [
         "Begynn å bruke ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Oppgrader min plan"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "La oss snakke"
+      ],
+      "Limited time offer": [
+        "Tidsbegrenset tilbud"
+      ],
+      "Recommended": [
+        "Anbefalt"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } per måned"
+      ],
+      "/month /user": [
+        "/måned /bruker"
+      ],
+      "/month /user, billed annually": [
+        "/måned /bruker, faktureres årlig"
+      ],
+      "/month /user, billed biennially": [
+        "/måned /bruker, faktureres annethvert år"
+      ],
+      "Current plan": [
+        "Gjeldende plan"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "For bare **${ relativePrice } mer per måned**, får du tilgang til ${ BRAND_NAME }s premium passordbehandler!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "For bare **${ relativePrice } mer per måned**, får du tilgang til ${ BRAND_NAME }s premium VPN-tjeneste!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "For bare **${ relativePrice } mer per måned**, får du tilgang til alle ${ BRAND_NAME }-premium tjenester!"
+      ],
+      "Free forever": [
+        "Gratis for alltid"
+      ],
+      "Get in touch with our sales team": [
+        "Kom i kontakt med salgsavdelingen"
+      ],
+      "Includes:": [
+        "Inkluderer:"
+      ],
+      "per month": [
+        "per måned"
+      ],
+      "per month, billed annually": [
+        "per måned, faktureres årlig"
+      ],
+      "per month, billed every month": [
+        "per måned, faktureres hver måned"
+      ],
+      "per month, billed every two years": [
+        "per måned, faktureres hvert 2. år"
+      ],
       "Secure vault sharing": [
         "Sikker hvelvdeling"
       ],
@@ -10572,6 +10699,9 @@
       ],
       "Card number": [
         "Kortnummer"
+      ],
+      "Credits and discounts are reflected in your invoice": [
+        "Kreditter og rabatter vises på fakturaen din"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "For øyeblikket er automatisk fornyelse av abonnementet deaktivert. Hvis du endrer abonnementet nå, aktiveres den automatiske fornyelsen på nytt."
@@ -10845,6 +10975,9 @@
       ],
       "Search users": [
         "Søk brukere"
+      ],
+      "Search users or details": [
+        "Søk etter brukere eller detaljer"
       ],
       "Select": [
         "Velg"
@@ -13590,6 +13723,9 @@
       "Description": [
         "Beskrivelse"
       ],
+      "Details": [
+        "Detaljer"
+      ],
       "Device": [
         "Enhet"
       ],
@@ -14320,6 +14456,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }."
+      ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "Adressen er koblet fra. Sending av meldinger er satt på pause. Koble til på nytt for å aktivere denne adressen igjen."
       ],
       "The import will start with the most recent messages.": [
         "Importen starter med de nyeste meldingene."

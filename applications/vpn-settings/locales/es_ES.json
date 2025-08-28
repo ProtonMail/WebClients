@@ -1027,6 +1027,11 @@
         "Alejar"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Reanudar el reenvío"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "Reactivar"
@@ -1112,6 +1117,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Generar claves faltantes para la dirección “${ emailAddress }”"
       ],
+      "Reconnect": [
+        "Reconectar"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Reconectar la dirección “${ emailAddress }”"
+      ],
       "Saving": [
         "Guardando"
       ],
@@ -1134,6 +1145,9 @@
       ],
       "Disabled": [
         "Desactivada"
+      ],
+      "Disconnected": [
+        "Sin conexión"
       ],
       "External": [
         "Externa"
@@ -1358,6 +1372,9 @@
       ],
       "on ${ formattedDate }": [
         "el ${ formattedDate }"
+      ],
+      "Try it free for 14 days": [
+        "Pruébalo gratis durante 14 días"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Cuando canceles, tu prueba gratuita no se convertirá en una suscripción de pago, pero podrás seguir disfrutando de los beneficios del plan hasta el final del periodo de prueba. Después de eso, pasarás al plan ${ BRAND_NAME } Free."
@@ -3985,6 +4002,9 @@
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Tu cuenta u organización tiene una factura vencida. Tienes que pagar todas las facturas impagadas."
       ],
+      "Your forward will not be processed.": [
+        "No se procesará tu reenvío."
+      ],
       "Your import will not be processed.": [
         "No se procesará tu importación."
       ],
@@ -5528,6 +5548,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "El acceso a la cuenta ha sido restringido debido a facturas impagadas. Contacta con tu administrador."
       ],
+      "Account monitor": [
+        "Monitor de cuenta"
+      ],
       "Account successfully updated": [
         "Cuenta actualizada"
       ],
@@ -5972,6 +5995,9 @@
       "Enabled countries": [
         "Países activados"
       ],
+      "Enabled on ${ boldValue }": [
+        "Activado el ${ boldValue }"
+      ],
       "Enabling auto-deletion…": [
         "Activando la eliminación automática…"
       ],
@@ -6076,6 +6102,9 @@
       ],
       "Gain visibility across your organization": [
         "Obtén visibilidad en toda tu organización"
+      ],
+      "Gateway monitor": [
+        "Monitoreo de puertas de enlace"
       ],
       "Gateways": [
         "Puertas de enlace"
@@ -6490,6 +6519,9 @@
       ],
       "Or select a particular server:": [
         "O selecciona un servidor en particular:"
+      ],
+      "Organization monitor": [
+        "Monitor de organización"
       ],
       "Organization size": [
         "Tamaño de la organización"
@@ -7653,6 +7685,9 @@
       ],
       "Donation": [
         "Donación"
+      ],
+      "Manual": [
+        "Manual"
       ],
       "Modification": [
         "Modificación"
@@ -10024,6 +10059,9 @@
       "Invalid code": [
         "Código no válido"
       ],
+      "Invalid input. Search an email or detail.": [
+        "La entrada no es válida. Busca un correo electrónico o un detalle."
+      ],
       "Invalid input. Search an email or IP address.": [
         "La entrada no es válida. Busca por correo electrónico dirección IP."
       ],
@@ -10452,11 +10490,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Mantener este plan"
+      ],
       "Start using ${ appName }": [
         "Comienza a utilizar ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Mejorar mi plan"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Habla con nosotros"
+      ],
+      "Limited time offer": [
+        "Oferta por tiempo limitado"
+      ],
+      "Recommended": [
+        "Recomendado"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+${ relativePrice } por mes"
+      ],
+      "/month /user": [
+        "/mes /usuario"
+      ],
+      "/month /user, billed annually": [
+        "/mes /usuario, facturación anual"
+      ],
+      "/month /user, billed biennially": [
+        "/mes /usuario, facturación bienal"
+      ],
+      "Current plan": [
+        "Plan actual"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "¡Por solo **${ relativePrice } más al mes**, podrás acceder al servicio premium de gestor de contraseñas de ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "¡Por solo **${ relativePrice } más al mes**, podrás acceder al servicio VPN premium de ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "¡Por solo **${ relativePrice } más al mes**, podrás acceder a todos los servicios de ${ BRAND_NAME } premium!"
+      ],
+      "Free forever": [
+        "Gratis para siempre"
+      ],
+      "Get in touch with our sales team": [
+        "Ponte en contacto con nuestro equipo de ventas"
+      ],
+      "Includes:": [
+        "Incluye:"
+      ],
+      "per month": [
+        "por mes"
+      ],
+      "per month, billed annually": [
+        "al mes con facturación anual"
+      ],
+      "per month, billed every month": [
+        "al mes con facturación mensual"
+      ],
+      "per month, billed every two years": [
+        "al mes con facturación cada dos años"
+      ],
       "Secure vault sharing": [
         "Compartición segura de cajas fuertes"
       ],
@@ -11652,15 +11752,15 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Tienes ${ timeRemaining.inHours } hora para restablecer tu contraseña.",
-        "Tienes ${ timeRemaining.inHours } horas para restablecer tu contraseña."
+        " Tienes ${ timeRemaining.inHours } horas para restablecer tu contraseña."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Tienes ${ timeRemaining.inMinutes } minuto para restablecer tu contraseña.",
-        "Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
+        " Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Tienes ${ timeRemaining.inSeconds } segundo para restablecer tu contraseña.",
-        "Tienes ${ timeRemaining.inSeconds } segundos para restablecer tu contraseña."
+        " Tienes ${ timeRemaining.inSeconds } segundos para restablecer tu contraseña."
       ]
     },
     "session_recovery:available:link": {
@@ -14410,6 +14510,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Las carpetas secundarias del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }."
+      ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "La dirección ha sido desconectada. El envío de mensajes está pausado. Vuelve a conectarte para activar esta dirección de nuevo."
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."

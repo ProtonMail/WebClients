@@ -642,6 +642,9 @@
       "Refer a friend": [
         "Hänvisa en vän"
       ],
+      "Refresh": [
+        "Uppdatera"
+      ],
       "Refresh status": [
         "Uppdatera status"
       ],
@@ -1024,6 +1027,11 @@
         "Zooma ut"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Återupptar vidarebefordran"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "Återaktivera"
@@ -1109,6 +1117,9 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Generera saknade nycklar för adress “${ emailAddress }“"
       ],
+      "Reconnect": [
+        "Anslut igen"
+      ],
       "Saving": [
         "Sparar"
       ],
@@ -1131,6 +1142,9 @@
       ],
       "Disabled": [
         "Inaktiverad"
+      ],
+      "Disconnected": [
+        "Frånkopplad"
       ],
       "External": [
         "Extern"
@@ -3924,6 +3938,9 @@
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ditt konto eller organisation har en förfallen faktura. Vänligen betala alla obetalda fakturor."
       ],
+      "Your forward will not be processed.": [
+        "Din vidarebefordran kommer inte att behandlas."
+      ],
       "Your import will not be processed.": [
         "Din import kommer inte att bearbetas."
       ],
@@ -5540,6 +5557,9 @@
       "Allocated": [
         "Tilldelad"
       ],
+      "Allow logging of location and connection details": [
+        "Tillåt loggning av plats och anslutningsdetaljer"
+      ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Tillåt användare att ansluta till säkra delade servrar från sektionen **Länder** i appen ${ VPN_APP_NAME }."
       ],
@@ -6113,6 +6133,9 @@
       "inactive": [
         "inaktiv"
       ],
+      "Include device, location, and IP details": [
+        "Inkludera enhet, plats och IP-detaljer"
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inklusive ${ formattedTaxRate } % ${ taxName }: ${ price }"
       ],
@@ -6412,6 +6435,9 @@
       "Or select a particular server:": [
         "Eller välj en specifik server:"
       ],
+      "Organization monitor": [
+        "Organisationsövervakning"
+      ],
       "Organization size": [
         "Organisationens storlek"
       ],
@@ -6435,6 +6461,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - anpassad e-post borttagen"
+      ],
+      "Pass usage logs": [
+        "Användningsloggar för Pass"
       ],
       "password": [
         "lösenord"
@@ -7061,6 +7090,9 @@
       ],
       "Version number successfully copied to clipboard": [
         "Versionsnummer kopierat till urklipp"
+      ],
+      "View VPN session details for your organization.": [
+        "Visa VPN-sessionsdetaljer för din organisation."
       ],
       "View, download, and manage your invoices.": [
         "Visa, ladda ner och hantera dina fakturor."
@@ -8592,6 +8624,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Lär dig mer"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "För att fortsätta använda ${ BRAND_NAME }, se till att dina premiumfunktioner inte längre används eller uppgradera ditt paket."
       ],
       "upgrade for more storage": [
         "uppgradera för mer lagringsutrymme"
@@ -10353,11 +10388,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Behåll detta paket"
+      ],
       "Start using ${ appName }": [
         "Börja använda ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Uppgradera mitt paket"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Låt oss prata"
+      ],
+      "Limited time offer": [
+        "Tidsbegränsat erbjudande"
+      ],
+      "Recommended": [
+        "Rekommenderad"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } per månad"
+      ],
+      "/month /user": [
+        "/månad/användare"
+      ],
+      "/month /user, billed annually": [
+        "/månad/användare, faktureras årligen"
+      ],
+      "/month /user, billed biennially": [
+        "/månad/användare, faktureras vartannat år"
+      ],
+      "Current plan": [
+        "Nuvarande paket"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "För bara **${ relativePrice } mer per månad** får du åtkomst till premium lösenordshanterare för ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "För bara **${ relativePrice } mer per månad** får du åtkomst till premium VPN-tjänster för ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "För endast **${ relativePrice } per månad** mer får du åtkomst till alla premiumtjänster för ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Gratis för alltid"
+      ],
+      "Get in touch with our sales team": [
+        "Ta kontakt med vårt säljteam"
+      ],
+      "Includes:": [
+        "Inkluderar:"
+      ],
+      "per month": [
+        "per månad"
+      ],
+      "per month, billed annually": [
+        "per månad, faktureras årligen"
+      ],
+      "per month, billed every month": [
+        "per månad, faktureras varje månad"
+      ],
+      "per month, billed every two years": [
+        "per månad, faktureras vartannat år"
+      ],
       "Secure vault sharing": [
         "Säker valvdelning"
       ],
@@ -10545,6 +10642,9 @@
       ],
       "Card number": [
         "Kortnummer"
+      ],
+      "Credits and discounts are reflected in your invoice": [
+        "Krediter och rabatter återspeglas på din faktura"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "För närvarande är den automatiska förnyelsen av prenumerationen inaktiverad. Om du ändrar prenumerationen nu kommer den automatiska förnyelsen att återaktiveras."

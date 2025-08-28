@@ -1018,6 +1018,11 @@
         "Perkecil"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Melanjutkan penerusan email"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "Aktifkan kembali"
@@ -3904,6 +3909,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Akun atau organisasi Anda memiliki tagihan yang tertunggak. Mohon lunasi seluruh tagihan yang belum dibayar."
+      ],
+      "Your forward will not be processed.": [
+        "Penerusan email Anda tidak akan diproses."
       ],
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
@@ -7437,6 +7445,9 @@
       "Donation": [
         "Donasi"
       ],
+      "Manual": [
+        "Manual"
+      ],
       "Modification": [
         "Penyesuaian"
       ],
@@ -10179,11 +10190,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Pertahankan paket ini"
+      ],
       "Start using ${ appName }": [
         "Mulai gunakan ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Tingkatkan paket saya"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Mari berbincang"
+      ],
+      "Limited time offer": [
+        "Penawaran waktu terbatas"
+      ],
+      "Recommended": [
+        "Direkomendasikan"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } per bulan"
+      ],
+      "/month /user": [
+        "/bulan /pengguna"
+      ],
+      "/month /user, billed annually": [
+        "/bulan /pengguna, ditagihkan tahunan"
+      ],
+      "/month /user, billed biennially": [
+        "/bulan /pengguna, ditagihkan per dua tahun"
+      ],
+      "Current plan": [
+        "Paket saat ini"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Hanya dengan menambah **${ relativePrice } per bulan**, Anda akan memperoleh akses ke pengelola kata sandi premium ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Hanya dengan menambah **${ relativePrice } per bulan**, Anda akan memperoleh akses ke layanan VPN premium ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Hanya dengan menambah **${ relativePrice } per bulan**, Anda akan memperoleh akses ke seluruh layanan premium ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Gratis untuk selamanya"
+      ],
+      "Get in touch with our sales team": [
+        "Hubungi tim pemasaran kami"
+      ],
+      "Includes:": [
+        "Meliputi:"
+      ],
+      "per month": [
+        "per bulan"
+      ],
+      "per month, billed annually": [
+        "per bulan, ditagihkan tahunan"
+      ],
+      "per month, billed every month": [
+        "per bulan, ditagihkan setiap bulan"
+      ],
+      "per month, billed every two years": [
+        "per bulan, ditagihkan setiap dua tahun"
+      ],
       "Secure vault sharing": [
         "Pembagian brankas yang aman"
       ],
@@ -13755,6 +13828,9 @@
       ],
       "There are no groups": [
         "Tidak ada grup"
+      ],
+      "Try ${ AUTHENTICATOR_APP_NAME }": [
+        "Coba ${ AUTHENTICATOR_APP_NAME }"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Aktifkan ${ DARK_WEB_MONITORING_NAME }"
