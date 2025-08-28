@@ -170,9 +170,10 @@ export const RouterLabelContainer = ({
                     selectAll,
                     sourceAction: sourceAction,
                 });
-            }
-            if (selectedIDs.includes(elementID || '')) {
-                handleBack();
+
+                if (selectedIDs.includes(elementID || '')) {
+                    handleBack();
+                }
             }
         },
         [selectedIDs, elementID, labelID, folders, handleBack, selectAll]
