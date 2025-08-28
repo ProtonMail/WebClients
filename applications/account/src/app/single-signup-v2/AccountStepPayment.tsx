@@ -494,7 +494,6 @@ const AccountStepPayment = ({
                 vpnServersCountData={vpnServersCountData}
                 loadingPaymentDetails={loadingPaymentDetails}
                 showRenewalNotice={showRenewalNotice}
-                showInclusiveTax={paymentFacade.showInclusiveTax}
                 app={app}
             />
         </div>
