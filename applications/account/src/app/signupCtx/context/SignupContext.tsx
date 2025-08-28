@@ -18,7 +18,6 @@ import {
 import { type PaymentsContextOptimisticType, type PlanToCheck } from '@proton/payments/ui';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
-import { postReferralRegistration } from '@proton/shared/lib/api/core/referrals';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { type ProductParam } from '@proton/shared/lib/apps/product';
 import { type ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -31,8 +30,7 @@ import noop from '@proton/utils/noop';
 
 import sendRecoveryPhrasePayloadHelper from '../../containers/recoveryPhrase/sendRecoveryPhrasePayload';
 import type { DeferredMnemonicData } from '../../containers/recoveryPhrase/types';
-import type { SignupType } from '../../signup/interfaces';
-import { type AccountData } from '../../signup/interfaces';
+import type { AccountData, SignupType } from '../../signup/interfaces';
 import { handleSetupOrg } from '../../signup/signupActions';
 import {
     sendSignupAccountCreationTelemetry,
@@ -461,6 +459,17 @@ export const InnerSignupContextProvider = ({
              */
             metrics.stopBatchingProcess();
 
+            const referralRegistrationPlan = (() => {
+                if (paymentsContext.selectedPlan.getPlanName() === PLANS.FREE) {
+                    return;
+                }
+
+                return {
+                    name: paymentsContext.selectedPlan.getPlanName(),
+                    cycle: paymentsContext.selectedPlan.cycle,
+                };
+            })();
+
             const setupUserResponse = await handleSetupUser({
                 accountData,
                 persistent,
@@ -471,30 +480,12 @@ export const InnerSignupContextProvider = ({
                 productParam: app,
                 hasZipCodeValidation,
                 traceSignupSentryError: traceSentryError,
+                referralData,
+                referralRegistrationPlan,
             });
 
             setupUserResponseRef.current = setupUserResponse;
             setRecoveryPhraseData(setupUserResponse.recoveryPhraseData);
-
-            if (referralData) {
-                const plan = (() => {
-                    if (paymentsContext.selectedPlan.getPlanName() === PLANS.FREE) {
-                        return;
-                    }
-
-                    return {
-                        name: paymentsContext.selectedPlan.getPlanName(),
-                        cycle: paymentsContext.selectedPlan.cycle,
-                    };
-                })();
-
-                await api(
-                    postReferralRegistration({
-                        plan,
-                        referralData,
-                    })
-                );
-            }
 
             stageRef.current = 'userSetup';
 

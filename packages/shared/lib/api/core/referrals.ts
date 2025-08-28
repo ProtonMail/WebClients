@@ -52,12 +52,12 @@ export const checkReferrer = (identifier: string) => ({
     url: `core/v4/referrals/identifiers/${identifier}`,
 });
 
-interface Plan {
+export interface ReferralRegistrationPlan {
     name: PLANS;
     cycle: CYCLE;
 }
 
-const getPlanData = (plan: Plan | undefined) => {
+const getPlanData = (plan: ReferralRegistrationPlan | undefined) => {
     if (!plan) {
         return {};
     }
@@ -68,7 +68,13 @@ const getPlanData = (plan: Plan | undefined) => {
     };
 };
 
-export const postReferralRegistration = ({ plan, referralData }: { plan?: Plan; referralData: ReferralData }) => ({
+export const postReferralRegistration = ({
+    plan,
+    referralData,
+}: {
+    plan: ReferralRegistrationPlan | undefined;
+    referralData: ReferralData;
+}) => ({
     method: 'post',
     url: `core/v4/referrals/register`,
     data: {
