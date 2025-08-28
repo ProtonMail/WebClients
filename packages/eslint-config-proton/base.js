@@ -8,7 +8,11 @@ import testingLibrary from 'eslint-plugin-testing-library';
 import { globalIgnores } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 
-//import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+const typeScriptExtensions = ['.ts', '.cts', '.mts', '.tsx'];
+const allExtensions = [...typeScriptExtensions, '.js', '.jsx', '.mjs', '.cjs'];
+
+const typescriptGlobs = typeScriptExtensions.map((ext) => `**/*${ext}`);
+const allGlobs = allExtensions.map((ext) => `**/*${ext}`);
 
 export default tseslint.config(
     {
@@ -37,22 +41,12 @@ export default tseslint.config(
     // base config
     {
         name: 'base-config',
-        files: [
-            /* JS also needed so that we can lint JS files in the monorepo*/
-            '**/*.js',
-            '**/*.mjs',
-            '**/*.jsx',
-            '**/*.ts',
-            '**/*.tsx',
-            '**/*.mts',
-            '**/*.cts',
-        ],
+        files: allGlobs,
         languageOptions: {
             parser: tseslint.parser,
             sourceType: 'module',
             parserOptions: {
                 projectService: true, // auto-detect nearest tsconfig
-                tsconfigRootDir: import.meta.dirname,
             },
         },
         rules: {
@@ -152,20 +146,6 @@ export default tseslint.config(
             'consistent-return': 'off',
             curly: ['error', 'all'],
 
-            'import/export': 2,
-            'import/named': 'off',
-            'import/default': 'off',
-            'import/namespace': 'off',
-            'import/order': 'off',
-            'import/no-extraneous-dependencies': 'off',
-            'import/no-named-as-default': 'off',
-            'import/no-named-as-default-member': 'off',
-            'import/no-mutable-exports': 'off',
-
-            'import/no-unresolved': [2, { amd: true, commonjs: true }],
-
-            'import/prefer-default-export': 'off',
-
             'no-redeclare': 'off',
 
             'no-await-in-loop': 'off',
@@ -175,47 +155,6 @@ export default tseslint.config(
             'no-nested-ternary': 'warn',
             'no-param-reassign': 'off',
             'no-plusplus': 'off',
-
-            'no-restricted-imports': [
-                'error',
-                {
-                    paths: [
-                        {
-                            name: 'reselect',
-                            importNames: ['createSelector'],
-                            message: 'Please use createSelector from @redux/toolkit instead.',
-                        },
-                    ],
-                    patterns: [
-                        {
-                            group: ['pmcrypto'],
-                            message:
-                                'You should probably import from `@proton/crypto` instead: using `pmcrypto` directly is only needed for crypto-specific use cases.',
-                        },
-                        {
-                            group: ['@proton/payments/index'],
-                            message: 'You should import from `@proton/payments` instead.',
-                        },
-                        {
-                            group: ['@proton/payments/core/*'],
-                            message: 'You should import from `@proton/payments` instead.',
-                        },
-                        {
-                            group: ['@proton/payments/ui/*'],
-                            message: 'You should import from `@proton/payments/ui` instead.',
-                        },
-                        { group: ['@proton/atoms/*'], message: 'You should import from `@proton/atoms` instead.' },
-                        {
-                            group: ['@proton/components/index'],
-                            message: 'You should import from `@proton/components` instead.',
-                        },
-                        {
-                            group: ['@proton/unleash/index'],
-                            message: 'You should import from `@proton/unleash` instead.',
-                        },
-                    ],
-                },
-            ],
 
             'no-restricted-syntax': [
                 'error',
@@ -277,19 +216,87 @@ export default tseslint.config(
 
             '@protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer': 'error',
         },
-        settings: {
-            'import/extensions': ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts'],
+    },
+    {
+        name: 'global-import-rules',
+        files: allGlobs,
+        rules: {
+            'import/no-unresolved': 'error',
+            'import/named': 'error',
+            'import/namespace': 'error',
+            'import/default': 'error',
+            'import/export': 'error',
 
-            'import/resolver': {
-                typescript: {},
-                node: {
-                    extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
+            'import/no-named-as-default': 'warn',
+            'import/no-named-as-default-member': 'warn',
+            'import/no-duplicates': 'warn',
+
+            'no-restricted-imports': [
+                'error',
+                {
+                    paths: [
+                        {
+                            name: 'reselect',
+                            importNames: ['createSelector'],
+                            message: 'Please use createSelector from @redux/toolkit instead.',
+                        },
+                    ],
+                    patterns: [
+                        {
+                            group: ['pmcrypto'],
+                            message:
+                                'You should probably import from `@proton/crypto` instead: using `pmcrypto` directly is only needed for crypto-specific use cases.',
+                        },
+                        {
+                            group: ['@proton/payments/index'],
+                            message: 'You should import from `@proton/payments` instead.',
+                        },
+                        {
+                            group: ['@proton/payments/core/*'],
+                            message: 'You should import from `@proton/payments` instead.',
+                        },
+                        {
+                            group: ['@proton/payments/ui/*'],
+                            message: 'You should import from `@proton/payments/ui` instead.',
+                        },
+                        { group: ['@proton/atoms/*'], message: 'You should import from `@proton/atoms` instead.' },
+                        {
+                            group: ['@proton/components/index'],
+                            message: 'You should import from `@proton/components` instead.',
+                        },
+                        {
+                            group: ['@proton/unleash/index'],
+                            message: 'You should import from `@proton/unleash` instead.',
+                        },
+                    ],
                 },
+            ],
+        },
+        settings: {
+            'import/extensions': allExtensions,
+            'import/external-module-folders': ['node_modules', 'node_modules/@types'],
+            'import/parsers': {
+                '@typescript-eslint/parser': typeScriptExtensions,
             },
-
-            react: {
-                version: 'detect',
+            'import/resolver': {
+                node: {
+                    extensions: allExtensions,
+                },
+                typescript: true,
             },
+        },
+    },
+    {
+        name: 'typescript-import-rules',
+        files: typescriptGlobs,
+        rules: {
+            // TypeScript provides the same checks as part of standard type checking:
+            'import/named': 'off',
+            'import/namespace': 'off',
+            'import/default': 'off',
+            'import/order': 'off',
+            'import/no-named-as-default-member': 'off',
+            'import/no-unresolved': 'off',
         },
     },
     {
@@ -297,5 +304,14 @@ export default tseslint.config(
         files: ['**/*.js'],
         extends: [tseslint.configs.disableTypeChecked],
     },
-    globalIgnores(['dist', 'public/assets', 'eslint.config.mjs'])
+    globalIgnores([
+        '.yarn/',
+        '**/node_modules/**',
+        '**/dist/**',
+        '**/.*/',
+        '**/public/assets/**',
+        '**/coverage/**',
+        '**/__snapshots__/**',
+        'eslint.config.mjs',
+    ])
 );
