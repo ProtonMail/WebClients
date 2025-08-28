@@ -1,6 +1,7 @@
 import { type RefObject, useMemo, useState } from 'react';
 import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 
+import { useUser } from '@proton/account/user/hooks';
 import {
     DrawerSidebar,
     DrawerVisibilityButton,
@@ -12,6 +13,7 @@ import { CATEGORY_LABEL_IDS_SET, MAILBOX_LABEL_IDS } from '@proton/shared/lib/co
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
+import { isAdminOrLoginAsAdmin } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 
 import { useCategoryViewAccess } from 'proton-mail/components/categoryView/useCategoryViewAccess';
@@ -41,6 +43,7 @@ export const RouterMailboxContainer = () => {
     const elementsData = useElements(elementsParams);
     const actions = useElementActions({ params, navigation, elementsData });
 
+    const [user] = useUser();
     const { isColumnModeActive, messageContainerRef, mainAreaRef, listContainerRef } = useMailboxLayoutProvider();
 
     const { labelID, elementID } = params;
@@ -89,6 +92,11 @@ export const RouterMailboxContainer = () => {
         );
     } else if (!categoryViewControl.categoryViewAccess && CATEGORY_LABEL_IDS_SET.has(labelID as MAILBOX_LABEL_IDS)) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
+    }
+
+    // Prevent non-admin users from accessing the Deleted folder via URL
+    if (labelID === MAILBOX_LABEL_IDS.SOFT_DELETED && !isAdminOrLoginAsAdmin(user)) {
+        return <Redirect to="/inbox" />;
     }
 
     const viewPortIsNarrow = breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium;
