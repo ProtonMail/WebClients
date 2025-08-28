@@ -146,10 +146,10 @@ export const useMailboxHotkeys = (
                 onCheckAll: handleCheckAll,
                 sourceAction: SOURCE_ACTION.SHORTCUTS,
             });
-        }
 
-        if (elementIDForList) {
-            handleBack();
+            if (elementIDForList) {
+                handleBack();
+            }
         }
     };
 
