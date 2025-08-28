@@ -1,6 +1,7 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities';
+import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import { removeById } from '@proton/utils/removeById';
 import { upsertById } from '@proton/utils/upsertById';
@@ -128,6 +129,28 @@ const slice = createSlice({
             state.incomingDelegatedAccess.value = sort(
                 removeById(state.incomingDelegatedAccess.value, action.payload, 'DelegatedAccessID')
             );
+        },
+        incomingEventLoopV6: (state, action: PayloadAction<UpdateCollectionV6<IncomingDelegatedAccessOutput>>) => {
+            if (state.incomingDelegatedAccess.value) {
+                state.incomingDelegatedAccess.value = updateCollectionV6(
+                    state.incomingDelegatedAccess.value,
+                    action.payload,
+                    {
+                        idKey: 'DelegatedAccessID',
+                    }
+                );
+            }
+        },
+        outgoingEventLoopV6: (state, action: PayloadAction<UpdateCollectionV6<OutgoingDelegatedAccessOutput>>) => {
+            if (state.outgoingDelegatedAccess.value) {
+                state.outgoingDelegatedAccess.value = updateCollectionV6(
+                    state.outgoingDelegatedAccess.value,
+                    action.payload,
+                    {
+                        idKey: 'DelegatedAccessID',
+                    }
+                );
+            }
         },
     },
     extraReducers: (builder) => {
