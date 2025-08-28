@@ -48,7 +48,6 @@ export const getRoutes = ({
     isCryptoPostQuantumOptInEnabled,
     isPasswordPolicyEnabled,
     isB2BTrial,
-    isEmergencyAccessAvailable,
     isReferralExpansionEnabled,
     isSsoForPbsEnabled,
     isRetentionPoliciesEnabled,
@@ -73,7 +72,6 @@ export const getRoutes = ({
             memberships,
             isZoomIntegrationEnabled,
             isB2BTrial,
-            isEmergencyAccessAvailable,
             isReferralExpansionEnabled,
         }),
         mail: getMailAppRoutes({
