@@ -51,7 +51,7 @@ export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyPro
     const isSideBarOpen = Object.values(sideBarState).some((value) => value);
 
     const getParticipantSideBarColumns = () => {
-        return participantSideBarOpen ? '1fr' : '0px';
+        return participantSideBarOpen ? 'max-content' : '0px';
     };
 
     const defaultColumns = isLargerThanMd ? `8fr${isSideBarOpen ? ' minmax(0, 3fr)' : ''}` : '1fr';
@@ -60,7 +60,12 @@ export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyPro
         : '1fr';
 
     return (
-        <div className={clsx('w-full h-full flex flex-column flex-nowrap gap-4 overflow-hidden pl-4 pr-4 pb-0 pt-4')}>
+        <div
+            className={clsx(
+                'w-full h-full flex flex-column flex-nowrap overflow-hidden pl-4 pr-4 pb-0 pt-4',
+                !!videoTrack ? 'gap-0' : 'gap-4'
+            )}
+        >
             {!isNarrowHeight && (
                 <div className="flex lg:hidden flex-nowrap gap-2">
                     <div className="flex-1 justify-start h3 text-ellipsis overflow-hidden">{roomName}</div>

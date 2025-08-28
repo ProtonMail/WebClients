@@ -56,14 +56,15 @@ export const ParticipantSidebar = ({
                 </Button>
             )}
             {participantSideBarOpen && (
-                <div className="w-full h-full flex items-start flex-column">
+                <div className="h-full flex items-start flex-column">
                     {pagedParticipants.map((participant) => {
                         return (
                             <div
                                 key={participant.identity}
                                 className="w-custom h-custom"
                                 style={{
-                                    '--w-custom': '100%',
+                                    aspectRatio: '16/9',
+                                    width: 'auto',
                                     '--h-custom': '16.66%',
                                     boxSizing: 'border-box',
                                     padding: '0.125rem',

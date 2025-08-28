@@ -14,7 +14,7 @@ interface ParticipantPlaceholderProps {
 }
 
 const sizeByViewSize = {
-    small: 2,
+    small: 2.5,
     medium: 3,
     large: 5,
 };

@@ -15,17 +15,17 @@ interface ScreenShareHeadingProps {
 export const ScreenShareHeading = ({ name, isLocalUser, onStopScreenShare }: ScreenShareHeadingProps) => {
     return (
         <div
-            className="screen-share-heading flex flex-nowrap items-center w-full h-custom rounded-lg px-4 py-0 justify-space-between"
+            className="screen-share-heading flex flex-nowrap items-center w-full h-custom rounded-lg px-4 py-0 mb-4 justify-space-between rounded-full"
             style={{ '--h-custom': '2.625rem' }}
         >
-            <div className="flex flex-nowrap items-center gap-2">
+            <div className="flex flex-nowrap items-center">
                 <SecurityShield
                     title={c('meet_2025 Info').t`End-to-end encryption is active for screen share`}
-                    size={4}
+                    size={3}
                     tooltipPlacement="bottom-start"
                 />
-                <div>
-                    {name} {isLocalUser ? c('meet_2025 Info').t`(You)` : ''} {c('meet_2025 Info').t`is presenting`}
+                <div className="text-semibold text-sm">
+                    {name} {isLocalUser ? c('meet_2025 Info').t`(you)` : ''} {c('meet_2025 Info').t`is presenting`}
                 </div>
             </div>
             {isLocalUser && (
