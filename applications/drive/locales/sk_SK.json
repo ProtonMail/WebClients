@@ -168,6 +168,9 @@
       "Choose a file or drag it here": [
         "Vyberte súbor alebo ho sem pretiahnite"
       ],
+      "Claim this address": [
+        "Nárokovať si túto adresu"
+      ],
       "Clear": [
         "Vyčistiť"
       ],
@@ -236,6 +239,9 @@
       ],
       "Continue import": [
         "Pokračovať v importe"
+      ],
+      "Continue on web": [
+        "Pokračovať na webe"
       ],
       "Continue transfers": [
         "Pokračovať v prenosoch"
@@ -354,6 +360,9 @@
       "Details": [
         "Detaily"
       ],
+      "Diagnostics": [
+        "Diagnostika"
+      ],
       "Discard": [
         "Zahodiť"
       ],
@@ -387,11 +396,20 @@
       "Download anyway": [
         "Napriek tomu stiahnuť"
       ],
+      "Download app": [
+        "Stiahnuť aplikáciu"
+      ],
       "Download apps": [
         "Stiahnuť aplikácie"
       ],
+      "Download info": [
+        "Stiahnuť informácie"
+      ],
       "Download logs": [
         "Záznamy sťahovania"
+      ],
+      "Download results": [
+        "Stiahnuť výsledky"
       ],
       "Drive Locked": [
         "Disk uzamknutý"
@@ -464,6 +482,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Získajte ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Získajte bezplatnú ${ BRAND_NAME } adresu"
       ],
       "Get in touch": [
         "Skontaktovať sa"
@@ -869,6 +890,9 @@
       ],
       "Retry": [
         "Opakovať"
+      ],
+      "Run diagnostics": [
+        "Spustiť diagnostiku"
       ],
       "Save": [
         "Uložiť"
@@ -1734,6 +1758,9 @@
       ],
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všetky prémiové funkcie z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Zrušiť a znížiť"
@@ -3142,6 +3169,11 @@
         "Aktualizácia pre udalosť začínajúcu na ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Dôveryhodný kontakt"
+      ]
+    },
     "Error": {
       "\"${ sanitizedName }\" already exists": [
         "„${ sanitizedName }“ už existuje"
@@ -3190,6 +3222,9 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Suma nižšia ako minimum (${ minimumAmount })."
+      ],
+      "An error occurred": [
+        "Došlo k chybe"
       ],
       "An error occurred while loading alias options": [
         "Došlo k chybe pri načítaní možností aliasu"
@@ -3254,6 +3289,9 @@
       "Device name does not match": [
         "Názov zariadenia sa nezhoduje"
       ],
+      "Diagnostics failed": [
+        "Diagnostika zlyhala"
+      ],
       "Domain not available, try again later": [
         "Doména nie je dostupná, skúste to znova neskôr"
       ],
@@ -3307,6 +3345,9 @@
       ],
       "Failed to load the STL preview": [
         "Načítanie STL náhľadu zlyhalo"
+      ],
+      "Failed to open to contact": [
+        "Nepodarilo sa otvoriť kontakt"
       ],
       "Failed to resend invitation": [
         "Opätovné odoslanie pozvánky zlyhalo"
@@ -3668,6 +3709,9 @@
       "Unknown location": [
         "Neznáma poloha"
       ],
+      "Unknown number of downloads": [
+        "Neznámy počet stiahnutí"
+      ],
       "Unknown payment token status": [
         "Neznámy stav platobného tokenu"
       ],
@@ -3682,6 +3726,30 @@
       ],
       "Validation error": [
         "Chyba overenia"
+      ],
+      "We were not able to load some invitations": [
+        "Neboli sme schopní načítať niektoré pozvánky"
+      ],
+      "We were not able to load some items shared with you": [
+        "Neboli sme schopní načítať niektoré položky zdieľané s vami"
+      ],
+      "We were not able to load some of your bookmarks": [
+        "Neboli sme schopní načítať niektoré z vašich záložiek"
+      ],
+      "We were not able to load some of your invitation to shared items": [
+        "Niektoré z vašich pozvánok na zdieľané položky sa nám nepodarilo načítať."
+      ],
+      "We were not able to load some of your saved shared links": [
+        "Neboli sme schopní načítať niektoré z vašich uložených zdieľaných odkazov"
+      ],
+      "We were not able to load some of your shared items": [
+        "Neboli sme schopní načítať niektoré z vašich zdieľaných položiek"
+      ],
+      "We were not able to load some of your shared items details": [
+        "Neboli sme schopní načítať podrobnosti niektorých vašich zdieľaných položiek"
+      ],
+      "We were not able to load some of your shared items info": [
+        "Neboli sme schopní načítať informácie o niektorých vašich zdieľaných položkách"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Email nemôžete odoslať viac ako ${ maxContacts } príjemcovi",
@@ -4657,6 +4725,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Šifrovacia technológia ${ BRAND_NAME } znamená, že nikto nemá prístup k vášmu heslu – dokonca ani my."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } vyžaduje ${ BRAND_NAME } adresu pre bezpečnú synchronizáciu udalostí a šifrovanie. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } vyžaduje ${ BRAND_NAME } adresu pre bezpečnú synchronizáciu udalostí a šifrovanie. Získajte svoju bezplatnú ${ MAIL_APP_NAME } adresu teraz."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nový kalendár",
         "${ calendarsToBeCreatedCount } nové kalendáre",
@@ -5296,6 +5370,9 @@
       "End-to-end encrypted": [
         "End-to-end šifrované"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Zabezpečte úplne súkromnú a šifrovanú komunikáciu. Vyžiadajte si teraz bezplatnú emailovú ${ BRAND_NAME } adresu."
+      ],
       "Enter password": [
         "Zadajte heslo"
       ],
@@ -5313,6 +5390,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Zadajte vlastné heslo (ako správca organizácie)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Zadajte vlastné heslo (ako dôveryhodný kontakt)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Odhadovaný čas do konca: ${ estimatedMinutes } minúta",
@@ -5397,6 +5477,9 @@
       ],
       "Geoblocking": [
         "Geoblokácia"
+      ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "Získajte záznamy a ďalšie informácie pre technickú podporu a riešenie problémov"
       ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Na zálohovanie fotografií z telefónu si stiahnite aplikáciu alebo ich sem nahrajte."
@@ -5491,6 +5574,9 @@
       "Initializing": [
         "Inicializácia"
       ],
+      "Integrity issues found": [
+        "Nájdené problémy integrity"
+      ],
       "Internet connection lost": [
         "Strata internetového pripojenia"
       ],
@@ -5502,6 +5588,9 @@
       ],
       "Invite link copied": [
         "Pozývací odkaz skopírovaný"
+      ],
+      "Issues found": [
+        "Nájdené problémy"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Vyzerá to, že ste sa nedávno pokúsili načítať ${ uploadName }. Ak načítanie zlyhalo, prosím, ${ replaceFile }. Ak načítanie stále prebieha, jeho nahradenie zruší prebiehajúce načítanie."
@@ -5661,6 +5750,9 @@
       ],
       "No group found": [
         "Nebola nájdená žiadna skupina"
+      ],
+      "No issue found": [
+        "Žiadny problém sa nenašiel"
       ],
       "No payment is required at this time.": [
         "Momentálne nie je nutná žiadna platba."
@@ -5929,6 +6021,9 @@
       "Restoring Photos... Please keep the tab open": [
         "Obnovovanie fotografií... Ponechajte prosím kartu otvorenú"
       ],
+      "Running diagnostics...": [
+        "Prebieha diagnostika..."
+      ],
       "Saving...": [
         "Ukladanie..."
       ],
@@ -6072,6 +6167,12 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Koniec predplatného: Znova aktivujte do ${ byDate }, aby ste si ponechali výhody ${ planName }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Predplatné sa končí: Ak si chcete ponechať výhody svojho predplatného ${ planName }, reštartujte svoje predplatné v Apple App Store do ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Predplatné sa končí: Ak si chcete ponechať výhody predplatného ${ planName }, reštartujte si predplatné v Obchode Google Play do ${ byDate }. ${ reactivateLink }"
       ],
       "Surveillance": [
         "Monitorovanie"
@@ -6592,6 +6693,9 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Váš účet má aspoň jednu faktúru po splatnosti. Váš účet je obmedzený. Pokračujúce neplatenie zablokuje vaše emaily a odkazy na zdieľanie. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
+        "Váš aktuálny prehliadač nepodporuje sťahovanie veľkých súborov/viacerých súborov. Stiahnite si desktopovú aplikáciu pre bezproblémové nahrávanie a sťahovanie."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše údaje sú pripravené na import z ${ importedEmailAddressStrong } do vášho účtu ${ BRAND_NAME }."
       ],
@@ -6761,6 +6865,9 @@
       ],
       "Expired": [
         "Vypršaný"
+      ],
+      "KOO": [
+        "KOO"
       ],
       "Obsolete": [
         "Zastaraný"
@@ -7406,6 +7513,9 @@
       "Your password (admin)": [
         "Vaše heslo (správca)"
       ],
+      "Your password (trusted contact)": [
+        "Vaše heslo (dôveryhodný kontakt)"
+      ],
       "ZIP code": [
         "PSČ"
       ]
@@ -7547,6 +7657,9 @@
       "Request an invite": [
         "Požiadať o pozvánku"
       ],
+      "Resume now": [
+        "Pokračovať teraz"
+      ],
       "settings": [
         "nastavenia"
       ],
@@ -7600,6 +7713,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Zistiť viac"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Ak chcete naďalej používať ${ BRAND_NAME }, uistite sa, prosím, že vaše prémiové funkcie už nepoužívate, alebo si zvýšte úroveň svojho plánu."
       ],
       "upgrade for more storage": [
         "upgrajdujte pre väčšie úložisko"
@@ -9034,6 +9150,9 @@
       "Album renamed successfully": [
         "Album bol úspešne premenovaný"
       ],
+      "All items deleted permanently from trash": [
+        "Všetky položky natrvalo odstránené z koša"
+      ],
       "An invitation has been sent": [
         "Pozvánka bola odoslaná"
       ],
@@ -9156,6 +9275,18 @@
       ],
       "Root folder failed to be loaded": [
         "Nepodarilo sa načítať koreňový priečinok"
+      ],
+      "Selected item was not removed from your list": [
+        "Vybraná položka nebola z vášho zoznamu odstránená.",
+        "Vybrané položky neboli z vášho zoznamu odstránené",
+        "Vybrané položky neboli z vášho zoznamu odstránené",
+        "Vybrané položky neboli z vášho zoznamu odstránené"
+      ],
+      "Selected items were successfully removed from your list": [
+        "Vybraná položka bola z vášho zoznamu úspešne odstránená",
+        "Vybrané položky boli z vášho zoznamu úspešne odstránené",
+        "Vybrané položky boli z vášho zoznamu úspešne odstránené",
+        "Vybrané položky boli z vášho zoznamu úspešne odstránené"
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Vybrané fotografie sa už nachádzajú v \"${ albumName }\""
@@ -9561,6 +9692,18 @@
       ],
       "No parent folder": [
         "Žiadny nadradený priečinok"
+      ],
+      "Only current location": [
+        "Iba aktuálna poloha"
+      ],
+      "Only current location: ${ name }": [
+        "Iba aktuálna poloha: ${ name }"
+      ],
+      "Verify content": [
+        "Overiť obsah"
+      ],
+      "Verify thumbnails": [
+        "Overiť miniatúry"
       ]
     },
     "Option group label": {
@@ -9759,6 +9902,9 @@
       "Timeout exceeded": [
         "Prekročený časový limit"
       ],
+      "VAT number": [
+        "DIČ"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaša mena bola zmenená na eurá (€), pretože SEPA bankové prevody podporujú platby len v eurách."
       ],
@@ -9811,8 +9957,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Pridať ABN"
+      ],
+      "Add Business Number": [
+        "Pridať daňové identifikačné číslo"
+      ],
+      "Add EIN": [
+        "Pridať EIN"
+      ],
+      "Add VAT number": [
+        "Pridať DIČ"
+      ],
       "Business Number": [
         "Daňové identifikačné číslo"
+      ],
+      "Edit ABN": [
+        "Upraviť ABN"
+      ],
+      "Edit Business Number": [
+        "Upraviť Daňové identifikačné číslo"
+      ],
+      "Edit EIN": [
+        "Upraviť EIN"
+      ],
+      "Edit VAT number": [
+        "Upraviť DIČ"
       ],
       "EIN": [
         "Identifikačné číslo zamestnávateľa"
@@ -9945,6 +10115,9 @@
       "Select a reason": [
         "Vyberte dôvod"
       ],
+      "Select country": [
+        "Vyberte krajinu"
+      ],
       "Select state": [
         "Vybrať stav"
       ],
@@ -9980,7 +10153,21 @@
         "kontaktujte"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Všetky prémiové funkcie z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všetky prémiové funkcie z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Ako predplatiteľ **${ currentPlanTitle }** si môžete odomknúť **${ unlockPlanTitle }** a ďalšie služby ${ BRAND_NAME } zvýšením úrovne na **${ upsellPlanTitle }**."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Viac služieb ${ BRAND_NAME }.${ br }Jedno jednoduché predplatné."
+      ],
       "Stay on ${ currentPlanTitle }": [
         "Pokračovať s ${ currentPlanTitle }"
       ],
@@ -10884,6 +11071,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } úložného priestoru"
       ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } vám poskytuje prístup ku všetkým prémiovým funkciám od ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }. Súkromie je integrované, takže môžete fungovať s vedomím, že vaše údaje a identita sú v bezpečí."
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vám poskytne všetky aplikácie, všetky funkcie, predbežný prístup k novým verziám a všetko, čo potrebujete, aby ste mali svoje dáta a ich zabezpečenie pod kontrolou."
       ],
@@ -11579,6 +11769,9 @@
       "Account security": [
         "Zabezpečenie účtu"
       ],
+      "Account temporarily locked": [
+        "Účet dočasne zablokovaný"
+      ],
       "Active": [
         "Aktívny"
       ],
@@ -11683,6 +11876,9 @@
       ],
       "Check for malicious files": [
         "Skontrolovať na prítomnosť škodlivých súborov"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Získajte vašu ${ MAIL_APP_NAME } adresu"
       ],
       "Clearing data": [
         "Vymazanie dát"
@@ -11812,6 +12008,9 @@
       ],
       "Devices": [
         "Zariadenia"
+      ],
+      "Diagnostics": [
+        "Diagnostika"
       ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Elektronický podpis bol čiastočne overený. Tento súbor bol vytvorený pomocou verejne prístupného zdieľaného odkazu používateľom bez účtu ${ BRAND_NAME }, takže jeho identita nemôže byť overená."
@@ -11950,6 +12149,9 @@
         "Nájdené ${ searchView.numberOfResults } výsledky",
         "Nájdených ${ searchView.numberOfResults } výsledkov",
         "Nájdených ${ searchView.numberOfResults } výsledkov"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Získajte plný prístup k ${ CALENDAR_APP_NAME }"
       ],
       "Get more from your VPN": [
         "Získajte zo svojej VPN viac"
@@ -12124,6 +12326,9 @@
       ],
       "Notes": [
         "Poznámky"
+      ],
+      "Number of downloads": [
+        "Počet stiahnutí"
       ],
       "Number of items": [
         "Počet položiek"

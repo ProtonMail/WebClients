@@ -395,6 +395,9 @@
       "Download logs": [
         "Registros de downloads"
       ],
+      "Download results": [
+        "Baixar resultados"
+      ],
       "Drive Locked": [
         "Unidade bloqueada"
       ],
@@ -466,6 +469,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Obtenha o ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Crie um endereço gratuito da ${ BRAND_NAME }"
       ],
       "Get in touch": [
         "Entre em contato"
@@ -3213,6 +3219,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Valor abaixo do mínimo (${ minimumAmount })."
       ],
+      "An error occurred": [
+        "Ocorreu um erro"
+      ],
       "An error occurred while loading alias options": [
         "Ocorreu um erro no carregamento de opções de alias"
       ],
@@ -3693,6 +3702,9 @@
       ],
       "Validation error": [
         "Erro de validação"
+      ],
+      "We were not able to load some of your bookmarks": [
+        "Não foi possível carregar alguns dos seus marcadores"
       ],
       "We were not able to load some of your shared items": [
         "Não foi possível carregar alguns dos seus itens compartilhados"
@@ -5565,6 +5577,9 @@
       "No group found": [
         "Nenhum grupo encontrado"
       ],
+      "No issue found": [
+        "Nenhum problema encontrado"
+      ],
       "No payment is required at this time.": [
         "Neste momento, não é necessário pagamento."
       ],
@@ -5829,6 +5844,9 @@
       ],
       "Restoring Photos... Please keep the tab open": [
         "Restaurando fotos... Mantenha a guia aberta"
+      ],
+      "Running diagnostics...": [
+        "Executando diagnósticos..."
       ],
       "Saving...": [
         "Salvando..."
@@ -8302,6 +8320,10 @@
         "Até ${ n } usuário",
         "Até ${ n } usuários"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Até ${ n } usuário (${ adminsText }, ${ usersText })",
+        "Até ${ n } usuários (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Até ${ totalStorageSize } de armazenamento"
       ],
@@ -9404,6 +9426,12 @@
       ],
       "No parent folder": [
         "Nenhuma pasta acima"
+      ],
+      "Verify content": [
+        "Verificar conteúdo"
+      ],
+      "Verify thumbnails": [
+        "Verificar miniaturas"
       ]
     },
     "Option group label": {
@@ -9598,6 +9626,9 @@
       "Timeout exceeded": [
         "Tempo limite excedido"
       ],
+      "VAT number": [
+        "Número de IVA"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Sua moeda foi alterada para euros (€) porque transferências bancárias SEPA apenas suportam pagamentos em euros."
       ],
@@ -9650,14 +9681,32 @@
       "ABN": [
         "Número de empresa australiano (ABN)"
       ],
+      "Add ABN": [
+        "Adicionar ABN"
+      ],
+      "Add Business Number": [
+        "Adicionar número comercial"
+      ],
+      "Add EIN": [
+        "Adicionar EIN"
+      ],
+      "Add VAT number": [
+        "Adicionar número de IVA"
+      ],
       "Business Number": [
         "Número comercial"
       ],
       "Edit ABN": [
         "Editar ABN"
       ],
+      "Edit Business Number": [
+        "Editar número comercial"
+      ],
       "Edit EIN": [
         "Editar EIN"
+      ],
+      "Edit VAT number": [
+        "Editar número de IVA"
       ],
       "EIN": [
         "Número de identificação tributária (EIN)"
@@ -9789,6 +9838,9 @@
       ],
       "Select a reason": [
         "Selecione um motivo"
+      ],
+      "Select country": [
+        "Selecionar país"
       ],
       "Select state": [
         "Selecionar estado"
@@ -11347,6 +11399,9 @@
       "Account security": [
         "Segurança da conta"
       ],
+      "Account temporarily locked": [
+        "Conta temporariamente bloqueada"
+      ],
       "Active": [
         "Ativo"
       ],
@@ -11447,6 +11502,9 @@
       ],
       "Check for malicious files": [
         "Verificar a existência de arquivos maliciosos"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Confirmar seu endereço de ${ MAIL_APP_NAME }"
       ],
       "Clearing data": [
         "Limpando dados"
@@ -11884,6 +11942,9 @@
       ],
       "Notes": [
         "Notas"
+      ],
+      "Number of downloads": [
+        "Numero de downloads"
       ],
       "Number of items": [
         "Número de itens"
