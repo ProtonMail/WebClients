@@ -14,7 +14,7 @@ export async function setupCryptoProxyForTesting() {
     const { Api: CryptoApi } = await import(
         /* webpackChunkName: "crypto-worker-api" */ '@proton/crypto/lib/worker/api'
     );
-    CryptoApi.init({ enforceOpenpgpGrammar: true });
+    CryptoApi.init({});
     CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
 }
 
