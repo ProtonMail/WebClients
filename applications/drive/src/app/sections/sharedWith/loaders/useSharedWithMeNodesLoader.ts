@@ -9,7 +9,9 @@ import { splitNodeUid, useDrive } from '@proton/drive/index';
 import useVolumesState from '../../../store/_volumes/useVolumesState';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { handleSdkError, useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
+import { getIsAnonymousUser } from '../../../utils/sdk/getIsAnonymousUser';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
+import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 import { ItemType, useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
 
 export const useSharedWithMeNodesLoader = () => {
@@ -40,6 +42,8 @@ export const useSharedWithMeNodesLoader = () => {
                 for await (const sharedWithMeMaybeNode of drive.iterateSharedNodesWithMe(abortSignal)) {
                     try {
                         const { node } = getNodeEntity(sharedWithMeMaybeNode);
+                        const signatureResult = getSignatureIssues(sharedWithMeMaybeNode);
+                        const isAnonymousUser = getIsAnonymousUser(sharedWithMeMaybeNode);
                         if (!node.deprecatedShareId) {
                             handleSdkError(
                                 new EnrichedError('The shared with me node entity is missing deprecatedShareId', {
@@ -91,6 +95,7 @@ export const useSharedWithMeNodesLoader = () => {
                                         ? node.membership.sharedBy.value
                                         : node.membership.sharedBy.error.claimedAuthor) || '',
                             },
+                            haveSignatureIssues: !isAnonymousUser && !signatureResult.ok,
                             legacy: {
                                 linkId: nodeId,
                                 shareId: node.deprecatedShareId,
