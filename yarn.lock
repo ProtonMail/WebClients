@@ -44643,11 +44643,15 @@ __metadata:
     "@manypkg/find-root": "npm:^3.1.0"
     "@manypkg/get-packages": "npm:^3.1.0"
     "@proton/eslint-config-proton": "workspace:^"
+    "@types/jest": "npm:^29.5.14"
     "@types/prompts": "npm:^2.4.9"
     chalk: "npm:^5.6.0"
     commander: "npm:^12.1.0"
     execa: "npm:^5.1.1"
+    jest: "npm:^29.7.0"
     prompts: "npm:^2.4.2"
+    ts-jest: "npm:^29.4.1"
+    ts-node: "npm:^10.9.2"
     tsx: "npm:^4.20.5"
   languageName: unknown
   linkType: soft
