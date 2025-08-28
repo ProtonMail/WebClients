@@ -2,23 +2,26 @@ import type { ComponentPropsWithoutRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { Href, VerticalStep, VerticalSteps } from '@proton/atoms';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
-import { referralReward } from '../../constants';
 import bannerReferralIntro from './banner-referral-intro.svg';
 
 interface Props extends Pick<ComponentPropsWithoutRef<'div'>, 'className' | 'style'> {}
 
 const HowItWorks = ({ className, style }: Props) => {
+    const [referralInfo] = useReferralInfo();
+    const { refereeRewardAmount, referrerRewardAmount } = referralInfo.uiData;
+
     return (
         <div className={clsx(className, 'max-w-custom ')} style={{ '--max-w-custom': '19rem', ...style }}>
             <h3 className="h4 text-bold mb-4 text-center">{
                 // translator: Full sentence 'Give US$20 and 2 weeks for free. Get US$20 credits.'
-                c('Title').t`Give ${referralReward} and 2 weeks for free. Get ${referralReward} credits.`
+                c('Title').t`Give ${refereeRewardAmount} and 2 weeks for free. Get ${referrerRewardAmount} credits.`
             }</h3>
 
             <div className="flex justify-center">
@@ -41,8 +44,8 @@ const HowItWorks = ({ className, style }: Props) => {
                 <VerticalStep titleCentered titleBold={false} icon={<span className="m-auto">2</span>}>
                     <div>
                         {getBoldFormattedText(
-                            // translator: Full sentence `Get and give US$20 credits for every friend that subscribes.`
-                            c('Info').t`Get and give **${referralReward} credits** for every friend that subscribes.`
+                            // translator: Full sentence `Get US$20 credits for every friend that subscribes.`
+                            c('Info').t`Get **${referrerRewardAmount} credits** for every friend that subscribes.`
                         )}
                     </div>
                 </VerticalStep>
