@@ -20,11 +20,7 @@ const init = async (options?: CryptoWorkerOptions) => {
         const { Api: CryptoApi } = await import(
             /* webpackChunkName: "crypto-worker-api" */ '@proton/crypto/lib/worker/api'
         );
-        const openpgpConfigOptions = {
-            enforceOpenpgpGrammar: false,
-            ...options?.openpgpConfigOptions,
-        };
-        CryptoApi.init(openpgpConfigOptions);
+        CryptoApi.init(options?.openpgpConfigOptions || {});
         CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
     } else {
         await CryptoWorkerPool.init(options);

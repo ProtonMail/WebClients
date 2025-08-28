@@ -5,6 +5,7 @@ import type { CompressedDataPacket } from 'pmcrypto/lib/openpgp';
 import {
     SymEncryptedIntegrityProtectedDataPacket,
     enums,
+    config as openpgp_config,
     decryptKey as openpgp_decryptKey,
     encryptKey as openpgp_encryptKey,
     readKey as openpgp_readKey,
@@ -43,6 +44,25 @@ import {
 chaiUse(chaiAsPromised);
 
 export const runApiTests = (CryptoApiImplementation: CryptoApiInterface) => {
+    it('OpenPGP grammar is enforced', async () => {
+        expect(openpgp_config.enforceGrammar).to.be.true;
+
+        const skeskPlusLiteralData = `-----BEGIN PGP MESSAGE-----
+
+wy4ECQMIjvrInhvTxJwAbkqXp+KWFdBcjoPn03jCdyspVi9qXBDbyGaP1lrM
+habAyxd1AGKaNp1wbGFpbnRleHQgbWVzc2FnZQ==
+=XoUx
+-----END PGP MESSAGE-----
+        `;
+
+        await expect(
+            CryptoApiImplementation.decryptMessage({
+                armoredMessage: skeskPlusLiteralData,
+                passwords: 'wrong but unused',
+            })
+        ).to.be.rejectedWith(/Unexpected packet 11/);
+    });
+
     it('decryptMessage - should decrypt message with correct password', async () => {
         const armoredMessage = `-----BEGIN PGP MESSAGE-----
 
@@ -506,7 +526,9 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
         expect(decryptionResultWithEncryptedSignature.data).to.deep.equal(plaintext);
         expect(decryptionResultWithEncryptedSignature.signatures).to.have.length(1);
         expect(decryptionResultWithEncryptedSignature.verificationErrors).to.not.exist;
-        expect(decryptionResultWithEncryptedSignature.verificationStatus).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(decryptionResultWithEncryptedSignature.verificationStatus).to.equal(
+            VERIFICATION_STATUS.SIGNED_AND_VALID
+        );
     });
 
     it('should encrypt/sign and decrypt/verify with context', async () => {
