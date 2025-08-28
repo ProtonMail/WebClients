@@ -1027,6 +1027,11 @@
         "Micșorare"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Reluare redirecționare"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "Reactivare"
@@ -3954,6 +3959,9 @@
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Contul sau organizația are o factură restantă. Vă rugăm să plătiți toate facturile neplătite."
       ],
+      "Your forward will not be processed.": [
+        "Redirecționarea nu va fi procesată."
+      ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
       ],
@@ -5666,10 +5674,10 @@
         "Sigur doriți să anulați editarea grupului?"
       ],
       "Are you sure you want to discard your changes?": [
-        "Sigur doriți să renunțați la modificări?"
+        "Renunțați la modificări?"
       ],
       "Are you sure you want to discard your import?": [
-        "Sigur doriți să anulați importarea?"
+        "Anulați importarea?"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Sigur doriți să oferiți drepturi administrative acestui utilizator?"
@@ -5681,7 +5689,7 @@
         "Sigur doriți să eliminați toți membrii acestui grup?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
-        "Sigur doriți să eliminați domeniul ${ boldDomain }?"
+        "Eliminați domeniul ${ boldDomain }?"
       ],
       "Ask your organization admin to setup Gateways.": [
         "Solicitați administratorului organizației să seteze porțile de acces."
@@ -8956,7 +8964,7 @@
         "Vizualizați activitatea ${ PASS_APP_NAME } în cadrul organizației proprii."
       ],
       "View changes to your organization and other administrator activities.": [
-        "Vizualizați modificările la organizația proprii și alte activități de administrator."
+        "Vizualizați modificările organizației proprii și alte activități de administrator."
       ],
       "View user sign-in, recovery and security events.": [
         "Vizualizați evenimentele de conectare, recuperare și securitate ale utilizatorului."
@@ -10562,11 +10570,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Păstrez planul"
+      ],
       "Start using ${ appName }": [
         "Începeți să utilizați ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Modificare plan"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Să discutăm"
+      ],
+      "Limited time offer": [
+        "Ofertă limitată"
+      ],
+      "Recommended": [
+        "Recomandat"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } pe lună"
+      ],
+      "/month /user": [
+        "/lună /utilizator"
+      ],
+      "/month /user, billed annually": [
+        "/lună /utizator, facturat anual"
+      ],
+      "/month /user, billed biennially": [
+        "/lună /utizator, facturat la doi ani"
+      ],
+      "Current plan": [
+        "Plan actual"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Pentru doar **${ relativePrice } pe lună** în plus, aveți acces la managerul de parole premium al lui ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Pentru doar **${ relativePrice } pe lună** în plus, aveți acces la serviciul VPN premium al ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Pentru doar încă **${ relativePrice } pe lună**, veți avea acces la toate serviciile premium ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Gratuit întotdeauna"
+      ],
+      "Get in touch with our sales team": [
+        "Luați legătura cu echipa noastră de vânzări"
+      ],
+      "Includes:": [
+        "Include:"
+      ],
+      "per month": [
+        "pe lună"
+      ],
+      "per month, billed annually": [
+        "pe lună, facturat anual"
+      ],
+      "per month, billed every month": [
+        "pe lună, facturat în fiecare lună"
+      ],
+      "per month, billed every two years": [
+        "pe lună, facturat la fiecare doi ani"
+      ],
       "Secure vault sharing": [
         "Partajare sigură a seifurilor"
       ],
@@ -12556,7 +12626,7 @@
         "${ storage } - ${ percentage }% ocupat"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Prin retrogradare veți pierde următoarele beneficii. Sigur doriți să continuați?"
+        "Prin retrogradare veți pierde următoarele beneficii. Continuați?"
       ],
       "contact your administrator": [
         "contactați-vă administratorul"
@@ -13634,7 +13704,7 @@
         "Aplicare cod cadou"
       ],
       "Are you sure you want to close the preview?": [
-        "Sigur doriți să închideți examinarea?"
+        "Închideți examinarea?"
       ],
       "Are you sure?": [
         "Confirmați?"
@@ -15191,7 +15261,7 @@
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
       ],
       "Are you sure you want to delete the phone number?": [
-        "Sigur doriți ștergerea acestui număr de telefon?"
+        "Ștergeți acest număr de telefon?"
       ],
       "Are you sure you want to delete this address?": [
         "Sigur doriți ștergerea acestei adrese?"
