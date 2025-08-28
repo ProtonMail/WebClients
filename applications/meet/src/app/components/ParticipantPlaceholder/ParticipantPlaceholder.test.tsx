@@ -60,7 +60,7 @@ describe('ParticipantPlaceholder', () => {
         const initialsContainer = screen.getByText('JD').closest('div');
         expect(initialsContainer).toHaveClass('text-lg');
         expect(initialsContainer).toHaveClass('radius-small');
-        expect(initialsContainer).toHaveStyle({ '--w-custom': '2rem', '--h-custom': '2rem' });
+        expect(initialsContainer).toHaveStyle({ '--w-custom': '2.5rem', '--h-custom': '2.5rem' });
     });
 
     it('renders with correct placeholder container classes', () => {

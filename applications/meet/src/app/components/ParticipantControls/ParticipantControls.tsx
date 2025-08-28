@@ -141,7 +141,7 @@ export const ParticipantControls = () => {
                     isNarrowHeight ? 'justify-space-between' : 'justify-center',
                     'flex flex-nowrap items-center gap-2 h-custom w-full'
                 )}
-                style={{ '--h-custom': '5.5rem' }}
+                style={{ '--h-custom': '5rem' }}
             >
                 <div
                     className={clsx(

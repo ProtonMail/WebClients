@@ -11,7 +11,7 @@ describe('ScreenShareHeading', () => {
 
         const user = userEvent.setup();
 
-        expect(screen.getByText('test (You) is presenting')).toBeInTheDocument();
+        expect(screen.getByText('test (you) is presenting')).toBeInTheDocument();
 
         const stopButton = screen.getByText('Stop presenting');
 

@@ -27,7 +27,7 @@ const getCameraVideoPublication = (participant: Participant) => {
 };
 
 const audioIconSize = {
-    small: '1rem',
+    small: '1.5rem',
     medium: '1.5rem',
     large: '2rem',
 };
@@ -39,7 +39,7 @@ const positionBySize = {
 };
 
 const indicatorSizeBySize = {
-    small: 16,
+    small: 24,
     medium: 24,
     large: 32,
 };
@@ -106,18 +106,7 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
                             opacity: 0.8,
                         }}
                     >
-                        <IcMeetMicrophoneOff
-                            size={viewSize === 'large' ? 4 : 3}
-                            className={viewSize === 'small' ? 'w-custom h-custom' : ''}
-                            style={
-                                viewSize === 'small'
-                                    ? {
-                                          '--w-custom': '0.5rem',
-                                          '--h-custom': '0.5rem',
-                                      }
-                                    : undefined
-                            }
-                        />
+                        <IcMeetMicrophoneOff size={viewSize === 'large' ? 4 : 3} />
                     </div>
                 )}
             </div>
