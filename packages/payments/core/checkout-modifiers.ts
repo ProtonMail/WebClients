@@ -1,5 +1,4 @@
-import { type RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
-
+import type { RequiredCheckResponse } from './checkout';
 import { SubscriptionMode } from './subscription/constants';
 
 export interface CheckoutModifiers {
