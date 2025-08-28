@@ -134,12 +134,12 @@ describe('notHigherThanAvailableOnBackend', () => {
             expected: CYCLE.YEARLY,
         },
         {
-            plan: PLANS.WALLET,
+            plan: PLANS.DRIVE_1TB,
             cycle: CYCLE.TWO_YEARS,
             expected: CYCLE.YEARLY,
         },
         {
-            plan: PLANS.WALLET,
+            plan: PLANS.DRIVE_1TB,
             cycle: CYCLE.YEARLY,
             expected: CYCLE.YEARLY,
         },

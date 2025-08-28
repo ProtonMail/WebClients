@@ -451,7 +451,7 @@ export const AmountStep = ({ onConfirm, country: inputCountry, preselectedQuote,
                     selectedQuote={selectedQuote}
                     amountToPay={amount}
                     btcAmountToReceive={Number(selectedQuote?.BitcoinAmount ?? 0)}
-                    hasWalletPaidPlans={currentPlan === PLANS.VISIONARY || currentPlan === PLANS.WALLET}
+                    hasWalletPaidPlans={currentPlan === PLANS.VISIONARY}
                     user={user}
                     openSubscriptionModal={openSubscriptionModal}
                     resetQuoteByProvider={resetQuoteByProvider}

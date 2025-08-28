@@ -304,7 +304,7 @@ describe('hasCancellablePlan', () => {
             PLANS.VISIONARY,
             PLANS.VPN_BUSINESS,
             PLANS.VPN_PRO,
-            PLANS.WALLET,
+            PLANS.DRIVE_1TB,
         ];
 
         const subscription = buildSubscription(undefined, { BillingPlatform: BillingPlatform.Proton });
@@ -347,7 +347,7 @@ describe('hasCancellablePlan', () => {
             PLANS.VISIONARY,
             PLANS.VPN_BUSINESS,
             PLANS.VPN_PRO,
-            PLANS.WALLET,
+            PLANS.DRIVE_1TB,
         ];
 
         const subscription = buildSubscription(undefined, { BillingPlatform: BillingPlatform.Proton });
@@ -379,7 +379,7 @@ describe('hasCancellablePlan', () => {
             PLANS.PASS_BUSINESS,
             PLANS.PASS_PRO,
             PLANS.VISIONARY,
-            PLANS.WALLET,
+            PLANS.DRIVE_1TB,
         ];
 
         const subscription = buildSubscription(undefined, { BillingPlatform: BillingPlatform.Chargebee });
@@ -411,7 +411,7 @@ describe('hasCancellablePlan', () => {
             PLANS.PASS_BUSINESS,
             PLANS.PASS_PRO,
             PLANS.VISIONARY,
-            PLANS.WALLET,
+            PLANS.DRIVE_1TB,
         ];
 
         const subscription = buildSubscription(undefined, { BillingPlatform: BillingPlatform.Proton });
