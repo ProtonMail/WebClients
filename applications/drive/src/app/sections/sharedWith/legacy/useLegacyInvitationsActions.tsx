@@ -2,6 +2,7 @@ import type { useConfirmActionModal } from '@proton/components';
 import { splitInvitationUid, splitNodeUid } from '@proton/drive/index';
 
 import { useInvitationsActions } from '../../../store/_actions/useInvitationsActions';
+import { useLink } from '../../../store/_links';
 import { getActionEventManager } from '../../../utils/ActionEventManager/ActionEventManager';
 import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventManagerTypes';
 import { legacyTimestampToDate } from '../../../utils/sdk/legacyTime';
@@ -12,11 +13,13 @@ export const useLegacyInvitationsActions = () => {
     const { loadSharedInfo } = useSharedInfoBatcher();
     const { acceptInvitation: legacyAcceptInvitation, rejectInvitation: legacyRejectInvitation } =
         useInvitationsActions();
+    const { getLink } = useLink();
 
     const handleLegacyAcceptInvitation = async (uid: string, invitationUid: string) => {
         const { invitationId } = splitInvitationUid(invitationUid);
         return new Promise<void>((resolve, reject) => {
-            legacyAcceptInvitation(new AbortController().signal, invitationId, true, (result) => {
+            const abortSignal = new AbortController().signal;
+            legacyAcceptInvitation(abortSignal, invitationId, true, async (result) => {
                 const {
                     getSharedWithMeItem: getSharedWithMeItemFromStore,
                     setSharedWithMeItem: setSharedWithMeItemToStore,
@@ -24,6 +27,7 @@ export const useLegacyInvitationsActions = () => {
                 const sharedWithMeItem = getSharedWithMeItemFromStore(uid);
                 if (sharedWithMeItem?.itemType === ItemType.INVITATION) {
                     const { nodeId, volumeId } = splitNodeUid(uid);
+                    const link = await getLink(abortSignal, result.linkId, result.shareId);
                     loadSharedInfo(result.shareId, (sharedInfo) => {
                         if (!sharedInfo) {
                             console.warn(
@@ -45,6 +49,9 @@ export const useLegacyInvitationsActions = () => {
                                 sharedOn: legacyTimestampToDate(sharedInfo.sharedOn),
                                 sharedBy: sharedInfo.sharedBy,
                             },
+                            haveSignatureIssues:
+                                !link.isAnonymous &&
+                                Boolean(link.signatureIssues && Object.values(link.signatureIssues).some(Boolean)),
                             legacy: {
                                 linkId: nodeId,
                                 shareId: result.shareId,

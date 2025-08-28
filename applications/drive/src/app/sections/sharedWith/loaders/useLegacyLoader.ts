@@ -143,6 +143,12 @@ export const useLegacyLoader = () => {
                                     sharedOn: new Date(sharedInfo.sharedOn * 1000),
                                     sharedBy: sharedInfo.sharedBy,
                                 },
+                                haveSignatureIssues:
+                                    !missingNode.isAnonymous &&
+                                    Boolean(
+                                        missingNode.signatureIssues &&
+                                            Object.values(missingNode.signatureIssues).some(Boolean)
+                                ),
                                 legacy: {
                                     isFromLegacy: true,
                                     linkId: missingNode.linkId,

@@ -32,6 +32,7 @@ export type SharedWithMeRowData = {
     sharedOn: Date | undefined;
     invitationUid: string | undefined;
     bookmarkUrl: string | undefined;
+    haveSignatureIssues: boolean | undefined;
     legacy: {
         linkId: string;
         shareId: string;
@@ -66,12 +67,14 @@ const NameCellWithThumbnail = ({
     type,
     thumbnailId,
     isInvitation,
+    haveSignatureIssues,
 }: {
     name: string;
     mediaType: string | undefined;
     type: NodeType;
     thumbnailId: string | undefined;
     isInvitation?: boolean;
+    haveSignatureIssues: boolean | undefined;
 }) => {
     const thumbnail = useThumbnailStore((state) => (thumbnailId ? state.thumbnails[thumbnailId] : undefined));
 
@@ -82,6 +85,7 @@ const NameCellWithThumbnail = ({
             type={type}
             thumbnailUrl={thumbnail?.sdUrl}
             isInvitation={isInvitation}
+            haveSignatureIssues={haveSignatureIssues}
         />
     );
 };
@@ -178,6 +182,8 @@ const SharedWithMeRow = memo(
                     sharedOn: getSharedOn(storeItem),
                     invitationUid: storeItem.itemType === ItemType.INVITATION ? storeItem.invitation.uid : undefined,
                     bookmarkUrl: storeItem.itemType === ItemType.BOOKMARK ? storeItem.bookmark.url : undefined,
+                    haveSignatureIssues:
+                        storeItem.itemType === ItemType.DIRECT_SHARE ? storeItem.haveSignatureIssues : undefined,
                     legacy: storeItem.legacy,
                 };
             })
@@ -209,6 +215,7 @@ const largeScreenCellComponents: React.FC<{ item: MappedLegacyItem; rowData: Sha
             type={rowData.type}
             thumbnailId={rowData.thumbnailId}
             isInvitation={rowData.itemType === ItemType.INVITATION}
+            haveSignatureIssues={rowData.haveSignatureIssues}
         />
     ),
     ({ rowData }) => <SharedByCellWithInfo sharedBy={rowData.sharedBy} itemType={rowData.itemType} />,
@@ -235,6 +242,7 @@ const smallScreenCellComponents: React.FC<{ item: MappedLegacyItem; rowData: Sha
             type={rowData.type}
             thumbnailId={rowData.thumbnailId}
             isInvitation={rowData.itemType === ItemType.INVITATION}
+            haveSignatureIssues={rowData.haveSignatureIssues}
         />
     ),
     ({ rowData }) =>

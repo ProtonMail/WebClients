@@ -7,7 +7,9 @@ import { getActionEventManager } from '../../utils/ActionEventManager/ActionEven
 import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
+import { getIsAnonymousUser } from '../../utils/sdk/getIsAnonymousUser';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
+import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 
 export enum ItemType {
     BOOKMARK = 'bookmark',
@@ -42,6 +44,7 @@ export type BookmarkItem = BaseSharedWithMeItem & {
 export type DirectShareItem = BaseSharedWithMeItem & {
     nodeUid: string;
     itemType: ItemType.DIRECT_SHARE;
+    haveSignatureIssues: boolean | undefined;
     directShare: {
         sharedOn: Date;
         sharedBy: string;
@@ -341,6 +344,8 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                             const drive = getDrive();
                             const maybeNode = await drive.getNode(uid);
                             const { node } = getNodeEntity(maybeNode);
+                            const signatureResult = getSignatureIssues(maybeNode);
+                            const isAnonymousUser = getIsAnonymousUser(maybeNode);
                             const { volumeId, nodeId } = splitNodeUid(node.uid);
                             if (!node.deprecatedShareId) {
                                 handleSdkError(
@@ -383,6 +388,7 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                                             ? node.membership.sharedBy.value
                                             : node.membership.sharedBy.error.claimedAuthor) || '',
                                 },
+                                haveSignatureIssues: !isAnonymousUser && !signatureResult.ok,
                                 legacy: {
                                     linkId: nodeId,
                                     shareId: node.deprecatedShareId,

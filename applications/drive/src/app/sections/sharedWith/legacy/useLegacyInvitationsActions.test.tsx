@@ -3,6 +3,7 @@ import { renderHook } from '@testing-library/react';
 import { splitInvitationUid, splitNodeUid } from '@proton/drive/index';
 
 import { useInvitationsActions } from '../../../store/_actions/useInvitationsActions';
+import { useLink } from '../../../store/_links';
 import { getActionEventManager } from '../../../utils/ActionEventManager/ActionEventManager';
 import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventManagerTypes';
 import { legacyTimestampToDate } from '../../../utils/sdk/legacyTime';
@@ -17,6 +18,10 @@ jest.mock('@proton/drive/index', () => ({
 
 jest.mock('../../../store/_actions/useInvitationsActions', () => ({
     useInvitationsActions: jest.fn(),
+}));
+
+jest.mock('../../../store/_links', () => ({
+    useLink: jest.fn(),
 }));
 
 jest.mock('../../../utils/ActionEventManager/ActionEventManager', () => ({
@@ -47,6 +52,7 @@ const mockEventManagerEmit = jest.fn();
 const mockLoadSharedInfo = jest.fn();
 const mockGetSharedWithMeItem = jest.fn();
 const mockSetSharedWithMeItem = jest.fn();
+const mockGetLink = jest.fn();
 
 const mockEventManager = {
     emit: mockEventManagerEmit,
@@ -79,6 +85,10 @@ describe('useLegacyInvitationsActions', () => {
             loadSharedInfo: mockLoadSharedInfo,
         } as any);
 
+        jest.mocked(useLink).mockReturnValue({
+            getLink: mockGetLink,
+        } as any);
+
         jest.mocked(useSharedWithMeListingStore.getState).mockReturnValue({
             getSharedWithMeItem: mockGetSharedWithMeItem,
             setSharedWithMeItem: mockSetSharedWithMeItem,
@@ -95,6 +105,11 @@ describe('useLegacyInvitationsActions', () => {
         });
 
         jest.mocked(legacyTimestampToDate).mockReturnValue(new Date('2023-01-01'));
+
+        mockGetLink.mockResolvedValue({
+            isAnonymous: false,
+            signatureIssues: {},
+        });
     });
 
     afterEach(() => {
@@ -131,6 +146,7 @@ describe('useLegacyInvitationsActions', () => {
                 expect.any(Function)
             );
             expect(mockGetSharedWithMeItem).toHaveBeenCalledWith(uid);
+            expect(mockGetLink).toHaveBeenCalledWith(expect.any(AbortSignal), 'link-id-1', 'share-id-1');
             expect(mockLoadSharedInfo).toHaveBeenCalledWith('share-id-1', expect.any(Function));
             expect(mockSetSharedWithMeItem).toHaveBeenCalledWith({
                 nodeUid: uid,
@@ -144,6 +160,7 @@ describe('useLegacyInvitationsActions', () => {
                     sharedOn: new Date('2023-01-01'),
                     sharedBy: mockSharedInfo.sharedBy,
                 },
+                haveSignatureIssues: false,
                 legacy: {
                     linkId: 'node-id-1',
                     shareId: 'share-id-1',
