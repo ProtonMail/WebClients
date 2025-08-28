@@ -5,6 +5,7 @@ import { RoomContext } from '@livekit/components-react';
 import type { ExternalE2EEKeyProvider, Room } from '@proton-meet/livekit-client';
 import type { GroupKeyInfo } from '@proton-meet/proton-meet-core';
 import init, { App, ConnectionStateInfo } from '@proton-meet/proton-meet-core';
+import meetCorePkg from '@proton-meet/proton-meet-core/package.json';
 import { c } from 'ttag';
 
 import { useAuthentication, useNotifications } from '@proton/components';
@@ -161,7 +162,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                 await init();
 
                 setupMounStorage();
-
+                console.log('proton-meet-core:', meetCorePkg.version);
+                console.log('appVersion:', appVersion);
                 wasmAppRef.current = await new App(env, appVersion, userAgent, dbPath, wsHost, userID ?? '', uid ?? '');
 
                 mlsSetupDone.current = true;
