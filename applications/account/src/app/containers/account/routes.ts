@@ -8,14 +8,17 @@ import type { ThemeColor } from '@proton/colors';
 import type { SectionConfig } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { referralReward } from '@proton/components/containers/referral/constants';
-import { DEFAULT_CURRENCY, hasLumoPlan, isManagedExternally } from '@proton/payments';
-import { Renew, type Subscription } from '@proton/payments';
 import {
+    DEFAULT_CURRENCY,
+    Renew,
+    type Subscription,
     getHasExternalMemberCapableB2BPlan,
     getHasVpnB2BPlan,
     getIsConsumerPassPlan,
     hasCancellablePlan,
+    hasLumoPlan,
     isCancellableOnlyViaSupport,
+    isManagedExternally,
 } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
@@ -59,7 +62,6 @@ export const getAccountAppRoutes = ({
     memberships,
     isZoomIntegrationEnabled,
     isB2BTrial,
-    isEmergencyAccessAvailable: isEmergencyAccessFeatureAvailable,
     isReferralExpansionEnabled,
 }: {
     app: APP_NAMES;
@@ -80,7 +82,6 @@ export const getAccountAppRoutes = ({
     memberships: GroupMembershipReturn[] | undefined;
     isZoomIntegrationEnabled: boolean;
     isB2BTrial: boolean;
-    isEmergencyAccessAvailable: boolean;
     isReferralExpansionEnabled: boolean;
 }) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type, hasPaidMail } = user;
@@ -124,9 +125,8 @@ export const getAccountAppRoutes = ({
         (organization?.Settings.VideoConferencingEnabled || !hasPaidMail);
 
     const isAccountRecoveryAvailable = getIsAccountRecoveryAvailable(user);
-    const isEmergencyAccessAvailable = isEmergencyAccessFeatureAvailable && getIsOutgoingDelegatedAccessAvailable(user);
-    const isNonPrivateEmergencyAccessAvailable =
-        isEmergencyAccessFeatureAvailable && !user.isPrivate && getIsIncomingDelegatedAccessAvailable(user);
+    const isEmergencyAccessAvailable = getIsOutgoingDelegatedAccessAvailable(user);
+    const isNonPrivateEmergencyAccessAvailable = !user.isPrivate && getIsIncomingDelegatedAccessAvailable(user);
 
     const paymentsSectionAvailable =
         user.isSelf &&
