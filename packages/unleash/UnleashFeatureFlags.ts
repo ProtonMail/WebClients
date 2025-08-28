@@ -80,7 +80,6 @@ enum AccountFlag {
     DeleteAccountMergeReason = 'DeleteAccountMergeReason',
     VPNDashboard = 'VPNDashboard',
     PasswordPolicy = 'PasswordPolicy',
-    EmergencyAccess = 'EmergencyAccess',
     SsoForPbs = 'SsoForPbs',
     DataRetentionPolicy = 'DataRetentionPolicy',
 }
