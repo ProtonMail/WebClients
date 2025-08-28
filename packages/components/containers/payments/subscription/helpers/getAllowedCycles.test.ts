@@ -671,9 +671,9 @@ describe('getAllowedCycles', () => {
             minimumCycle: CYCLE.MONTHLY,
             maximumCycle: CYCLE.TWO_YEARS,
             planIDs: {
-                [PLANS.WALLET]: 1,
+                [PLANS.DRIVE_1TB]: 1,
             } as any,
-            // this test assumes that wallet2024 does not have 24 cycle in PLANS_MAP
+            // this test assumes that drive1tb2025 does not have 24 cycle in PLANS_MAP
             plansMap: PLANS_MAP,
             currency: DEFAULT_CURRENCY,
         });
@@ -826,7 +826,7 @@ describe('getAllowedCycles', () => {
 
     it.each(
         [CYCLE.MONTHLY, CYCLE.YEARLY].flatMap((fromCycle) =>
-            [PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.WALLET, PLANS.LUMO].map((sourcePlan) => ({
+            [PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.LUMO].map((sourcePlan) => ({
                 fromCycle,
                 sourcePlan,
             }))
@@ -854,7 +854,7 @@ describe('getAllowedCycles', () => {
     );
 
     // when user tries to switch between non-VPN plans and they have 1m or 12m cycle then they should see 1m, 12m
-    const nonVpnPlusPlans = [PLANS.DRIVE, PLANS.PASS, PLANS.WALLET];
+    const nonVpnPlusPlans = [PLANS.DRIVE, PLANS.PASS];
     it.each(
         nonVpnPlusPlans
             .flatMap((sourcePlan) =>
@@ -925,7 +925,7 @@ describe('getAllowedCycles', () => {
     );
 
     // when user on 24m non-VPN plus plan tries to switch to VPN then they should see 1m, 12m, 24m
-    it.each([PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.WALLET])(
+    it.each([PLANS.MAIL, PLANS.DRIVE, PLANS.PASS])(
         'should show 1m, 12m, 24m cycles when user is on $sourcePlan with 24m cycle and selects VPN',
         (sourcePlan) => {
             const subscription = buildSubscription();
@@ -949,7 +949,7 @@ describe('getAllowedCycles', () => {
 
     // when user on 24m non-VPN plus plan tries to switch to B2C bundle plans then they should see 1m, 12m, 24m
     it.each(
-        [PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.WALLET].flatMap((sourcePlan) =>
+        [PLANS.MAIL, PLANS.DRIVE, PLANS.PASS].flatMap((sourcePlan) =>
             b2cBundlePlans.map((targetPlan) => ({
                 sourcePlan,
                 targetPlan,
@@ -979,7 +979,7 @@ describe('getAllowedCycles', () => {
 
     // when user on 24m plan tries to switch to non-VPN plus plan then they should see 1m, 12m
 
-    const b2cPlusPlans = [PLANS.VPN2024, PLANS.WALLET, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS];
+    const b2cPlusPlans = [PLANS.VPN2024, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS];
 
     it.each(
         b2cPlusPlans
