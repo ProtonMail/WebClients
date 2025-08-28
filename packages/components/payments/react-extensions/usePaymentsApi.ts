@@ -8,6 +8,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import {
     type CheckSubscriptionData,
+    type EnrichedCheckResponse,
     type FullBillingAddress,
     type MultiCheckOptions,
     PAYMENTS_API_ERROR_CODES,
@@ -26,7 +27,6 @@ import {
     normalizeBillingAddress,
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { type EnrichedCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { type Api } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';

@@ -33,7 +33,14 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
-import type { BillingAddress, ExtendedTokenPayment, PaymentProcessorHook, TokenPayment } from '@proton/payments';
+import type {
+    BillingAddress,
+    ExtendedTokenPayment,
+    PaymentProcessorHook,
+    PaymentsCheckout,
+    RequiredCheckResponse,
+    TokenPayment,
+} from '@proton/payments';
 import {
     CYCLE,
     type Currency,
@@ -47,7 +54,9 @@ import {
     type StrictPlan,
     SubscriptionMode,
     TRIAL_DURATION_DAYS,
+    getCheckout,
     getHas2024OfferCoupon,
+    getOptimisticCheckResult,
     getPaymentsVersion,
     getPlanFromPlanIDs,
     isV5PaymentToken,
@@ -63,8 +72,6 @@ import {
     VPN_CONNECTIONS,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
-import type { RequiredCheckResponse, SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
-import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';
@@ -629,7 +636,7 @@ const Step1 = ({
         });
     };
 
-    const checkoutMappingPlanIDs = ((): CycleMapping<SubscriptionCheckoutData> | undefined => {
+    const checkoutMappingPlanIDs = ((): CycleMapping<PaymentsCheckout> | undefined => {
         if (mode === 'vpn-pass-promotion') {
             const vpnPassBundlePlanIDs = { [PLANS.VPN_PASS_BUNDLE]: 1 };
             const vpnPassBundleSubscriptionMapping = getSubscriptionMapping({

@@ -6,7 +6,7 @@ import {
     type Subscription,
     getHasPassB2BPlan,
     getIsB2BAudienceFromSubscription,
-    getIsCustomCycle,
+    hasCustomCycle,
     hasVPNPassBundle,
     isManagedExternally,
 } from '@proton/payments';
@@ -67,7 +67,7 @@ export const ActionButtons = ({
         user.isPaid &&
         user.canPay &&
         !hasPassB2B &&
-        !getIsCustomCycle(subscription) &&
+        !hasCustomCycle(subscription) &&
         !hasVPNPassBundle(subscription) &&
         !showCustomizePlan &&
         !isManagedExternally(subscription);
