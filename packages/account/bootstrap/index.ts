@@ -359,16 +359,13 @@ export const eventManager = ({
 
 export const loadCrypto = ({
     appName,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     unleashClient,
 }: {
     appName: APP_NAMES;
     unleashClient: UnleashClient | undefined;
 }) => {
-    return loadCryptoWorker(
-        getCryptoWorkerOptions(appName, {
-            enforceOpenpgpGrammar: !!unleashClient?.isEnabled('CryptoEnforceOpenpgpGrammar'),
-        })
-    );
+    return loadCryptoWorker(getCryptoWorkerOptions(appName, {}));
 };
 
 export const coreEventManagerV6 = ({ api }: { api: Api }) => {

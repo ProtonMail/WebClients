@@ -1,6 +1,4 @@
 // This module should be kept free of functions that require 'openpgp'
-import type { captureMessage as sentryCaptureMessage } from '@sentry/browser';
-
 const ifDefined =
     <T, R>(cb: (input: T) => R) =>
     <U extends T | undefined>(input: U) => {
@@ -100,17 +98,3 @@ export function utf8ArrayToString(utf8: Uint8Array<ArrayBuffer>): string {
 
     return decoder.decode(utf8);
 }
-
-type SentryLogger = (...args: Parameters<typeof sentryCaptureMessage>) => string | void;
-export const getPluggableOpenPGPGrammarErrorReporter =
-    (sentryReporter: SentryLogger) => (errorMessage: string /** Comlink.proxy does not handle Error args */) => {
-        if (errorMessage.toLowerCase().includes('data does not respect openpgp grammar')) {
-            const [, messageTags] = errorMessage.split('[');
-            // report different error for each set of messageTags for now, since
-            // we expect a minimal number of reports, if any.
-            sentryReporter(`OpenGPG grammar error: [${messageTags}`, {
-                level: 'info',
-            });
-            console.warn(`OpenGPG grammar error: [${messageTags}`);
-        }
-    };
