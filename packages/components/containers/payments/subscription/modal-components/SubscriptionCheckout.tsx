@@ -21,6 +21,8 @@ import {
     type Plan,
     type PlanIDs,
     type Subscription,
+    TaxInclusive,
+    formatTax,
     getCheckout,
     getPlanFromPlanIDs,
     hasPlanIDs,
@@ -175,6 +177,8 @@ const SubscriptionCheckout = ({
         </Badge>
     );
 
+    const tax = formatTax(checkResult);
+
     return (
         <Checkout
             currency={currency}
@@ -318,6 +322,17 @@ const SubscriptionCheckout = ({
                 />
             )}
             {giftValue > 0 && <CheckoutRow title={c('Title').t`Gift`} amount={-giftValue} currency={currency} />}
+            {tax?.inclusive === TaxInclusive.EXCLUSIVE && tax?.amount > 0 && (
+                <CheckoutRow
+                    title={
+                        <span>
+                            {tax.taxesQuantity > 1 ? c('Payments').t`Taxes` : tax.taxName} {tax.rate}%
+                        </span>
+                    }
+                    amount={tax.amount}
+                    currency={tax.currency}
+                />
+            )}
             {checkoutModifiers.isScheduled && <StartDateCheckoutRow nextSubscriptionStart={subscription.PeriodEnd} />}
             <hr />
             <CheckoutRow

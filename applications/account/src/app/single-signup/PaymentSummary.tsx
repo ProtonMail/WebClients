@@ -9,13 +9,14 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
-import { type PaymentFacade } from '@proton/components/payments/client-extensions';
 import {
     ADDON_NAMES,
     type PaymentsCheckout,
     type Plan,
     SubscriptionMode,
     TRIAL_DURATION_DAYS,
+    TaxInclusive,
+    formatTax,
     getPricingFromPlanIDs,
     getTotalFromPricing,
 } from '@proton/payments';
@@ -64,7 +65,6 @@ interface Props {
     planInformation: ReturnType<typeof getPlanInformation>;
     upsellToggle: ReactNode;
     hasSelectedFree: boolean;
-    paymentFacade: PaymentFacade;
 }
 
 const PaymentSummary = ({
@@ -77,7 +77,6 @@ const PaymentSummary = ({
     planInformation,
     upsellToggle,
     hasSelectedFree,
-    paymentFacade,
 }: Props) => {
     const initialLoading = model.loadingDependencies;
     const loading = loadingPaymentDetails || initialLoading;
@@ -106,6 +105,8 @@ const PaymentSummary = ({
         const totals = getTotalFromPricing(pricing, options.cycle);
         return totals.discountPercentage;
     })();
+
+    const tax = formatTax(options.checkResult);
 
     return (
         <div className="flex flex-column gap-3">
@@ -244,6 +245,19 @@ const PaymentSummary = ({
                 </>
             )}
 
+            {tax?.inclusive === TaxInclusive.EXCLUSIVE && (
+                <div className="mx-3 flex justify-space-between gap-2">
+                    <span>
+                        {tax.taxesQuantity > 1 ? c('Payments').t`Taxes` : tax.taxName} {tax.rate}%
+                    </span>
+                    <span>
+                        <Price key="price" currency={tax.currency} data-testid="taxAmount">
+                            {tax.amount}
+                        </Price>
+                    </span>
+                </div>
+            )}
+
             <div className="mx-3 flex flex-column gap-2">
                 <div className={clsx('text-bold', 'flex justify-space-between text-rg gap-2')}>
                     <span>
@@ -263,14 +277,7 @@ const PaymentSummary = ({
                         )}
                     </span>
                 </div>
-
-                {paymentFacade.showInclusiveTax && (
-                    <InclusiveVatText
-                        tax={options.checkResult?.Taxes?.[0]}
-                        currency={options.currency}
-                        className="text-sm color-weak"
-                    />
-                )}
+                <InclusiveVatText checkResult={options.checkResult} className="text-sm color-weak" />
             </div>
             {isTrial && <TrialSummary loading={loading} options={options} />}
         </div>

@@ -4,17 +4,16 @@ import { c, msgid } from 'ttag';
 
 import { DriveLogo, Price, SkeletonLoader, getCheckoutRenewNoticeTextFromCheckResult } from '@proton/components';
 import { IcBagPercentFilled } from '@proton/icons';
-import type { Currency, Tax } from '@proton/payments';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
-import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
 
 import { getDriveMaxSpaceMap } from '../../helpers/getMaxSpaceMap';
 import { getSecureStoragePerUserString, getSecureStorageString } from '../../helpers/i18n';
 import FeatureItem from '../FeatureItem/FeatureItem';
 import { SaveBadge } from '../SaveBadge/SaveBadge';
+import { TaxRow } from './TaxRow';
 import planFreeLogo from './plan-drive-free.svg';
 
 import './PricingCard.scss';
@@ -47,35 +46,6 @@ const getCycleText = (cycle: CYCLE) => {
         return c('Billing cycle option').t`Yearly`;
     }
     return c('Plans').ngettext(msgid`${cycle} month`, `${cycle} months`, cycle);
-};
-
-interface TaxRowProps {
-    tax: Tax;
-    currency: Currency;
-}
-
-const TaxRow = ({ tax, currency }: Partial<TaxRowProps>) => {
-    if (!tax || !currency) {
-        return null;
-    }
-
-    const formattedTaxRate = withDecimalPrecision(tax.Rate, 4);
-    const price = (
-        <Price key="price" currency={currency} data-testid="taxAmount">
-            {tax.Amount}
-        </Price>
-    );
-    const taxName = tax.Name ?? c('Label').t`VAT`;
-
-    return (
-        <div className="flex justify-space-between gap-2" data-testid="tax">
-            <span>
-                {taxName} {formattedTaxRate}
-                {'%'}
-            </span>
-            <span>{price}</span>
-        </div>
-    );
 };
 
 const PricingFeatures = () => {
@@ -152,9 +122,7 @@ const PricingFooter = ({ step }: { step: PricingStep }) => {
     const hasFullCheckoutDetails = payments.initializationStatus.pricingInitialized && !payments.loadingPaymentDetails;
 
     const showTaxRow = step === 'payment';
-    const taxRow = showTaxRow && (
-        <TaxRow tax={payments.checkResult?.Taxes?.[0]} currency={payments.checkResult?.Currency} />
-    );
+    const taxRow = showTaxRow && <TaxRow checkResult={payments.checkResult} />;
 
     const showBillingCycle = (isPaidPlan && checkout.cycle !== CYCLE.MONTHLY) || step === 'payment';
     const billingCycle = showBillingCycle && (

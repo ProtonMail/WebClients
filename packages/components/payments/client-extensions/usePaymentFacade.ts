@@ -27,7 +27,6 @@ import {
     type Subscription,
     SubscriptionMode,
     canUseChargebee,
-    isTaxInclusive,
 } from '@proton/payments';
 import { useCbIframe } from '@proton/payments/ui';
 import { type Api, type ChargebeeEnabled, type ChargebeeUserExists, type User } from '@proton/shared/lib/interfaces';
@@ -373,15 +372,12 @@ export const usePaymentFacade = ({
         return showTaxCountry;
     };
 
-    const showInclusiveTax = getShowTaxCountry() && isTaxInclusive(checkResult);
-
     const helpers = {
         selectedMethodValue: methods.selectedMethod?.value,
         selectedMethodType: methods.selectedMethod?.type,
         showTaxCountry: getShowTaxCountry(),
         taxCountryLoading,
         paymentStatus: methods.status,
-        showInclusiveTax,
     };
 
     return {

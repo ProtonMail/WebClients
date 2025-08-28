@@ -39,6 +39,7 @@ import {
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
 import {
+    ExclusiveVatText,
     InclusiveVatText,
     type OnBillingAddressChange,
     PayButton,
@@ -244,13 +245,9 @@ const PaymentStep = ({
         taxCountry,
     });
 
-    const taxNote = paymentFacade.showInclusiveTax ? (
-        <InclusiveVatText
-            tax={subscriptionData.checkResult?.Taxes?.[0]}
-            currency={subscriptionData.currency}
-            className="text-sm text-center color-weak mt-1"
-        />
-    ) : null;
+    const taxNote = (
+        <InclusiveVatText checkResult={subscriptionData.checkResult} className="text-sm text-center color-weak mt-1" />
+    );
 
     return (
         <div className="sign-layout-mobile-columns w-full flex items-start justify-center gap-7">
@@ -291,7 +288,11 @@ const PaymentStep = ({
                             allowedCycles={allowedCycles}
                         />
                     )}
-                    <div className="text-sm color-weak">
+                    <ExclusiveVatText
+                        checkResult={subscriptionData.checkResult}
+                        className="text-sm text-center color-weak my-1"
+                    />
+                    <div className="text-sm text-center color-weak">
                         {getCheckoutRenewNoticeTextFromCheckResult({
                             checkResult: subscriptionData.checkResult,
                             plansMap,
