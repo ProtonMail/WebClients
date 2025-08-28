@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
 
+import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { usePaymentOptimistic, usePaymentsInner } from '@proton/payments/ui';
@@ -127,6 +128,11 @@ const ReferralSignupRouter = () => {
 };
 
 const ReferralSignup = (props: BaseSignupContextProps) => {
+    /**
+     * Ensure redux has initialized referral info
+     */
+    useReferralInfo();
+
     const payments = usePaymentsInner();
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);

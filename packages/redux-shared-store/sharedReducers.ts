@@ -19,6 +19,7 @@ import {
     plansReducer,
     previousSubscriptionReducer,
     protonDomainsReducer,
+    referralInfoReducer,
     scheduleCallReducer,
     securityCheckupSlice,
     subscriptionReducer,
@@ -73,6 +74,7 @@ export const sharedReducers = {
     ...groupMembersReducer,
     ...groupMembershipsReducer,
     ...featureTourReducer,
+    ...referralInfoReducer,
     kt: ktSlice.reducer,
     securityCheckup: securityCheckupSlice.reducer,
     features: featuresReducer.reducer,
@@ -95,5 +97,6 @@ export const sharedPersistReducer: Partial<{ [key in keyof typeof sharedReducers
     protonDomains: selectPersistModel,
     domains: selectPersistModel,
     previousSubscription: selectPersistModel,
+    referralInfo: selectPersistModel,
     features: (state: any) => state,
 };

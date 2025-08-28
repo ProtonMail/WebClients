@@ -21,6 +21,14 @@ export const getReferralsStatus = () => ({
     url: 'core/v4/referrals/status',
 });
 
+/**
+ * Get referral info
+ */
+export const getReferralInfo = () => ({
+    method: 'get',
+    url: 'core/v4/referrals/info',
+});
+
 interface SendEmailInvationProps {
     emails: string[];
 }

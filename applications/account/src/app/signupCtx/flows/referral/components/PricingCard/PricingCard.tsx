@@ -3,11 +3,11 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { VerticalStep, VerticalSteps } from '@proton/atoms';
 import { SkeletonLoader } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getTrialRenewalNoticeText } from '@proton/components/containers/payments/RenewalNotice';
-import { referralReward } from '@proton/components/containers/referral/constants';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { PLANS, PLAN_NAMES, TRIAL_DURATION_DAYS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
@@ -77,6 +77,8 @@ const TrialExplanation = () => {
 
     const creditCardRequired = plansRequiringPaymentToken.includes(selectedPlan.name as SupportedReferralPlans);
 
+    const [referralInfo, loadingReferralInfo] = useReferralInfo();
+
     return (
         <div className="px-4 lg:px-8">
             {!creditCardRequired && <p className="mt-0 mb-2">{c('Signup').t`No credit card required:`}</p>}
@@ -92,12 +94,16 @@ const TrialExplanation = () => {
                     description={c('Signup').t`We’ll email you before your trial ends.`}
                     icon={<span className="m-auto">2</span>}
                 />
-                <VerticalStep
-                    title={c('Signup').t`Get ${referralReward} in credits`}
-                    description={c('Signup').t`To redeem on your next paid subscription.`}
-                    icon={<span className="m-auto">3</span>}
-                    className="pb-0"
-                />
+                {loadingReferralInfo ? (
+                    <SkeletonLoader width="100%" height="2.2rem" />
+                ) : (
+                    <VerticalStep
+                        title={c('Signup').t`Get ${referralInfo.uiData.refereeRewardAmount} in credits`}
+                        description={c('Signup').t`To redeem on your next paid subscription.`}
+                        icon={<span className="m-auto">3</span>}
+                        className="pb-0"
+                    />
+                )}
             </VerticalSteps>
         </div>
     );

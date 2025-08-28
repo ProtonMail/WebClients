@@ -2,8 +2,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { Button, InlineLinkButton } from '@proton/atoms';
-import { referralReward } from '@proton/components/containers/referral/constants';
+import { SkeletonLoader } from '@proton/components';
 import { IcShield2CheckFilled } from '@proton/icons';
 import { PLANS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
@@ -70,6 +71,8 @@ const SwitchSignupType = () => {
 const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) => {
     const [step, setStep] = useState<Step>('email');
     const signup = useSignup();
+    const [referralInfo, loadingReferralInfo] = useReferralInfo();
+
     const [submitting, setSubmitting] = useState(false);
 
     const payments = usePaymentOptimistic();
@@ -143,8 +146,16 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
             </h1>
 
             {isPaidPlan && (
-                <p className="mt-0 mb-6 text-lg">{c('Signup')
-                    .t`And get ${referralReward} in credits, if you subscribe.`}</p>
+                <div className="mt-0 mb-6">
+                    {loadingReferralInfo ? (
+                        <SkeletonLoader width="70%" height="1.4rem" />
+                    ) : (
+                        <p className="m-0 text-lg">
+                            {c('Signup')
+                                .t`And get ${referralInfo.uiData.refereeRewardAmount} in credits, if you subscribe.`}
+                        </p>
+                    )}
+                </div>
             )}
 
             <SwitchSignupType />
