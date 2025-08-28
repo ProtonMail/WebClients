@@ -3,15 +3,17 @@ import type { ThunkAction } from 'redux-thunk';
 
 import { getOrganizationTokenThunk } from '@proton/account/organizationKey/actions';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { type CacheType, cacheHelper, createPromiseStore, previousSelector } from '@proton/redux-utilities';
+import { CacheType, cacheHelper, createPromiseStore, previousSelector } from '@proton/redux-utilities';
 import { revoke } from '@proton/shared/lib/api/auth';
+import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
-import type { User } from '@proton/shared/lib/interfaces';
+import type { Api, User } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import { isSelf } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
@@ -69,6 +71,35 @@ export const listIncomingDelegatedAccess = (options?: {
             }
         };
         return cacheHelper({ store: promiseStore, select, cb, cache: options?.cache });
+    };
+};
+
+const getIncomingDelegatedAccess = async (api: Api, id: string) => {
+    const { DelegatedAccess } = await api<{ DelegatedAccess: IncomingDelegatedAccessOutput }>({
+        url: `account/v1/access/incoming/${id}`,
+        method: 'get',
+    });
+    return DelegatedAccess;
+};
+
+export const incomingEventLoopV6Thunk = ({
+    event,
+    api,
+}: {
+    event: CoreEventV6Response;
+    api: Api;
+}): ThunkAction<Promise<void>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        const user = await dispatch(userThunk());
+        if (!canFetch(user)) {
+            return;
+        }
+        await updateCollectionAsyncV6({
+            events: event.IncomingDelegatedAccess,
+            get: (ID) => getIncomingDelegatedAccess(api, ID),
+            refetch: () => dispatch(listIncomingDelegatedAccess({ cache: CacheType.None })),
+            update: (result) => dispatch(delegatedAccessActions.incomingEventLoopV6(result)),
+        });
     };
 };
 

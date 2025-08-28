@@ -3,6 +3,7 @@ import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import type { AddressesState } from '../addresses';
+import type { DelegatedAccessState } from '../delegatedAccess';
 import type { DomainsState } from '../domains';
 import type { GroupMembersState } from '../groupMembers';
 import type { GroupsState } from '../groups';
@@ -26,7 +27,8 @@ export type CoreEventLoopV6RequiredState = UserState &
     UserInvitationsState &
     SamlState &
     GroupsState &
-    GroupMembersState;
+    GroupMembersState &
+    DelegatedAccessState;
 
 export type CoreEventLoopV6Callback = ({
     event,
