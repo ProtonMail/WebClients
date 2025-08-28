@@ -5171,7 +5171,7 @@
         "${ storage } - ${ percentage }% ocupat"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Prin retrogradare veți pierde următoarele beneficii. Sigur doriți să continuați?"
+        "Prin retrogradare veți pierde următoarele beneficii. Continuați?"
       ],
       "For all ${ BRAND_NAME } services": [
         "Pentru toate serviciile ${ BRAND_NAME }"
@@ -5918,10 +5918,10 @@
     },
     "Wallet deletion": {
       "Are you sure you want to delete \"${ wallet.Wallet.Name }\"": [
-        "Sigur doriți să ștergeți „${ wallet.Wallet.Name }”?"
+        "Ștergeți „${ wallet.Wallet.Name }”?"
       ],
       "Are you sure you want to delete this wallet": [
-        "Sigur doriți să ștergeți acest portofel?"
+        "Ștergeți acest portofel?"
       ]
     },
     "Wallet discover": {

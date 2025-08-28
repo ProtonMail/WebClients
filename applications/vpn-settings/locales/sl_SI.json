@@ -979,6 +979,11 @@
         "Pomanjšaj"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Nadaljujem s posredovanjem pošte"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "Ponovno aktiviraj"
@@ -3604,6 +3609,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Vaš račun ali organizacija ima neporavnan račun. Prosimo, poravnajte vse neplačane račune."
+      ],
+      "Your forward will not be processed.": [
+        "Vaš vnos ne bo obdelan."
       ],
       "Your import will not be processed.": [
         "Vaš uvoz ne bo obdelan."
@@ -9531,11 +9539,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Obdržite ta paket"
+      ],
       "Start using ${ appName }": [
         "Začnite uporabljati ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Nadgradite trenutni paket"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Pogovorimo se!"
+      ],
+      "Limited time offer": [
+        "Časovno omejena ponudba"
+      ],
+      "Recommended": [
+        "Priporočeno"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } na mesec"
+      ],
+      "/month /user": [
+        "na mesec na uporabnika"
+      ],
+      "/month /user, billed annually": [
+        "na mesec na uporabnika, zaračunano letno"
+      ],
+      "/month /user, billed biennially": [
+        "na mesec na uporabnika, zaračunano na dve leti"
+      ],
+      "Current plan": [
+        "Trenutni paket"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Za samo **${ relativePrice } na mesec** več dobite dostop do vrhunskega upravitelja gesel ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Za samo **${ relativePrice } na mesec** več dobite dostop do vrhunskega VPN ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Za le **${ relativePrice } na mesec** več dobite dostop do vseh premijskih storitev ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Brezplačno za vedno."
+      ],
+      "Get in touch with our sales team": [
+        "Stopite v stik z našo prodajno ekipo"
+      ],
+      "Includes:": [
+        "Vključuje:"
+      ],
+      "per month": [
+        "na mesec"
+      ],
+      "per month, billed annually": [
+        "na mesec, zaračunano letno"
+      ],
+      "per month, billed every month": [
+        "na mesec, zaračunano vsak mesec"
+      ],
+      "per month, billed every two years": [
+        "na mesec, zaračunano vsaki dve leti"
+      ],
       "Secure vault sharing": [
         "Varna in zanesljiva skupna raba"
       ],

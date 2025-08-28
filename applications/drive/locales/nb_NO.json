@@ -3681,9 +3681,6 @@
       "Validation error": [
         "Valideringsfeil"
       ],
-      "We were not able some of your shared items": [
-        "Vi kunne ikke laste inn enkelte av dine delte elementer"
-      ],
       "We were not able to load some invitations": [
         "Vi kunne ikke laste inn enkelte invitasjoner"
       ],
@@ -3695,6 +3692,9 @@
       ],
       "We were not able to load some of your invitation to shared items": [
         "Vi kunne ikke laste inn enkelte av invitasjonene dine til delte elementer."
+      ],
+      "We were not able to load some of your invitations": [
+        "Vi kunne ikke laste inn enkelte av invitasjonene dine."
       ],
       "We were not able to load some of your saved shared links": [
         "Enkelte av dine lagrede delte koblinger kunne ikke lastes inn"
@@ -7516,6 +7516,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Lær mer"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "For å fortsette å bruke ${ BRAND_NAME }, må du sørge for at premiumfunksjonene dine ikke lenger er i bruk, eller oppgradere abonnementsplanen din."
       ],
       "upgrade for more storage": [
         "oppgrader for mer lagringsplass"

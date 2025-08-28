@@ -642,6 +642,9 @@
       "Refer a friend": [
         "Verwijs een vriend door"
       ],
+      "Refresh": [
+        "Vernieuwen"
+      ],
       "Refresh status": [
         "Status vernieuwen"
       ],
@@ -1024,6 +1027,11 @@
         "Zoom uit"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Doorsturen hervatten"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "Opnieuw activeren"
@@ -1109,6 +1117,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Genereer ontbrekende sleutels voor adres \"${ emailAddress }\""
       ],
+      "Reconnect": [
+        "Opnieuw verbinden"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Adres \"${ emailAddress }\" opnieuw verbinden"
+      ],
       "Saving": [
         "Bezig met opslaan"
       ],
@@ -1131,6 +1145,9 @@
       ],
       "Disabled": [
         "Uitgeschakeld"
+      ],
+      "Disconnected": [
+        "Verbinding verbroken"
       ],
       "External": [
         "Extern"
@@ -1355,6 +1372,9 @@
       ],
       "on ${ formattedDate }": [
         "op ${ formattedDate }"
+      ],
+      "Try it free for 14 days": [
+        "Probeer het 14 dagen gratis uit"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wanneer u opzegt, wordt uw gratis proefabonnement niet omgezet in een betaald abonnement, maar kunt u nog steeds van de voordelen van het abonnement genieten tot het einde van de proefperiode. Daarna wordt u gedowngraded naar het ${ BRAND_NAME } gratis abonnement."
@@ -3982,6 +4002,9 @@
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Uw account of organisatie heeft een openstaande factuur. Betaal alle openstaande facturen."
       ],
+      "Your forward will not be processed.": [
+        "Uw doorsturen zal niet worden verwerkt."
+      ],
       "Your import will not be processed.": [
         "Uw import zal niet worden verwerkt."
       ],
@@ -5525,6 +5548,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Toegang tot dit account is beperkt vanwege onbetaalde facturen. Neem contact op met uw beheerder."
       ],
+      "Account monitor": [
+        "Accountactiviteitenmonitor"
+      ],
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
       ],
@@ -5603,6 +5629,9 @@
       ],
       "Allocated": [
         "Toegewezen"
+      ],
+      "Allow logging of location and connection details": [
+        "Logboekregistratie van locatie- en verbindingsgegevens toestaan"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Sta gebruikers toe om verbinding te maken met beveiligde gedeelde servers van de **Landen** sectie van de ${ VPN_APP_NAME }-app."
@@ -5848,6 +5877,9 @@
       "Disabled countries": [
         "Uitgeschakelde landen"
       ],
+      "Disabled on ${ boldValue }": [
+        "Uitgeschakeld op ${ boldValue }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Het uitschakelen van tweestapsverificatie maakt uw account minder veilig. Ga alleen verder als het absoluut nodig is."
       ],
@@ -5962,6 +5994,9 @@
       ],
       "Enabled countries": [
         "Ingeschakelde landen"
+      ],
+      "Enabled on ${ boldValue }": [
+        "Ingeschakeld op ${ boldValue }"
       ],
       "Enabling auto-deletion…": [
         "Activatie automatisch verwijderen"
@@ -6179,6 +6214,9 @@
       ],
       "inactive": [
         "inactief"
+      ],
+      "Include device, location, and IP details": [
+        "Inclusief apparaat-, locatie- en IP-gegevens"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inclusief ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -6482,6 +6520,9 @@
       "Or select a particular server:": [
         "Of selecteer een specifieke server:"
       ],
+      "Organization monitor": [
+        "Organisatiemonitor"
+      ],
       "Organization size": [
         "Grootte van de organisatie"
       ],
@@ -6502,6 +6543,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - aangepaste e-mail verwijderd"
+      ],
+      "Pass usage logs": [
+        "Pass-gebruikslogboeken"
       ],
       "password": [
         "wachtwoord"
@@ -7138,6 +7182,9 @@
       "Version number successfully copied to clipboard": [
         "Versienummer succesvol gekopieerd naar klembord"
       ],
+      "View VPN session details for your organization.": [
+        "Bekijk VPN-sessiedetails voor uw organisatie."
+      ],
       "View, download, and manage your invoices.": [
         "Bekijk, download, en beheer uw facturen."
       ],
@@ -7638,6 +7685,9 @@
       ],
       "Donation": [
         "Donatie"
+      ],
+      "Manual": [
+        "Handmatig"
       ],
       "Modification": [
         "Wijziging"
@@ -8676,6 +8726,9 @@
       "Learn more": [
         "Meer info"
       ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Om ${ BRAND_NAME } te blijven gebruiken, moet u ervoor zorgen dat uw premium functies niet meer in gebruik zijn of uw abonnement upgraden."
+      ],
       "upgrade for more storage": [
         "upgrade voor meer opslag"
       ],
@@ -8850,6 +8903,15 @@
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Verbind uw aangepaste domein met ${ BRAND_NAME } om aangepaste e-mailadressen in te stellen (bijv. u@uwbedrijf.com). Onze wizard leidt u door het proces."
+      ],
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "Bekijk de activiteit van ${ PASS_APP_NAME } binnen uw organisatie."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "Bekijk wijzigingen in uw organisatie en andere beheerdersactiviteiten."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "Bekijk de aanmeldings-, herstel- en beveiligingsafspraken van de gebruiker."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Uw gratis proefversie is geëindigd. Toegang tot uw account wordt weldra uitgeschakeld. ${ action }"
@@ -9974,6 +10036,9 @@
       "Invalid code": [
         "Ongeldige code"
       ],
+      "Invalid input. Search an email or detail.": [
+        "Ongeldige invoer. Zoek een e-mailadres of gegevens."
+      ],
       "Invalid input. Search an email or IP address.": [
         "Ongeldige invoer. Zoek een e-mailadres of IP-adres."
       ],
@@ -10402,11 +10467,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Dit abonnement behouden"
+      ],
       "Start using ${ appName }": [
         "Begin met ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Mijn abonnement upgraden"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Laten we praten!"
+      ],
+      "Limited time offer": [
+        "Tijdelijke aanbieding"
+      ],
+      "Recommended": [
+        "Aanbevolen"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } per maand"
+      ],
+      "/month /user": [
+        "/maand /gebruiker"
+      ],
+      "/month /user, billed annually": [
+        "/maand /gebruiker, jaarlijks gefactureerd"
+      ],
+      "/month /user, billed biennially": [
+        "/maand /gebruiker, tweejaarlijks gefactureerd"
+      ],
+      "Current plan": [
+        "Huidig abonnement"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Voor slechts **${ relativePrice } per maand** extra krijgt u toegang tot ${ BRAND_NAME }'s premium wachtwoord manager!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Voor slechts **${ relativePrice } per maand** extra krijgt u toegang tot ${ BRAND_NAME }'s premium VPN service!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Voor slechts **${ relativePrice } per maand** extra, krijgt u toegang tot alle premium ${ BRAND_NAME }-diensten!"
+      ],
+      "Free forever": [
+        "Voor altijd gratis"
+      ],
+      "Get in touch with our sales team": [
+        "Neem contact op met ons verkoopteam"
+      ],
+      "Includes:": [
+        "Omvat:"
+      ],
+      "per month": [
+        "maandelijks"
+      ],
+      "per month, billed annually": [
+        "per maand, jaarlijks gefactureerd"
+      ],
+      "per month, billed every month": [
+        "per maand, maandelijks gefactureerd"
+      ],
+      "per month, billed every two years": [
+        "per maand, tweejaarlijks gefactureerd"
+      ],
       "Secure vault sharing": [
         "Veilig delen van kluis"
       ],
@@ -10591,6 +10718,9 @@
       ],
       "Card number": [
         "Kaartnummer"
+      ],
+      "Credits and discounts are reflected in your invoice": [
+        "Tegoeden en kortingen worden weergegeven op uw factuur"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Momenteel is de automatische verlenging van het abonnement uitgeschakeld. Als u het abonnement nu wijzigt, wordt de automatische verlenging opnieuw ingeschakeld."
@@ -10864,6 +10994,9 @@
       ],
       "Search users": [
         "Zoek gebruikers"
+      ],
+      "Search users or details": [
+        "Zoek gebruikers of gegevens"
       ],
       "Select": [
         "Selecteer"
@@ -13606,6 +13739,9 @@
       "Description": [
         "Beschrijving"
       ],
+      "Details": [
+        "Gegevens"
+      ],
       "Device": [
         "Apparaat"
       ],
@@ -14336,6 +14472,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
+      ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "Het adres is losgekoppeld. Berichten verzenden is gepauzeerd. Maak opnieuw verbinding om dit adres opnieuw in te schakelen."
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."

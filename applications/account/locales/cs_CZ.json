@@ -220,6 +220,9 @@
       "Cancel": [
         "Zrušit"
       ],
+      "Cancel request": [
+        "Zrušit žádost"
+      ],
       "Cancel subscription": [
         "Zrušit předplatné"
       ],
@@ -1081,6 +1084,9 @@
       "refresh the page": [
         "obnovit stránku"
       ],
+      "Refuse access": [
+        "Odmítnout přístup"
+      ],
       "Reject": [
         "Odmítnout"
       ],
@@ -1191,6 +1197,9 @@
       ],
       "Revoke ${ name }": [
         "Zrušit ${ name }"
+      ],
+      "Revoke access": [
+        "Zrušit přístup"
       ],
       "Revoke all other sessions": [
         "Odhlásit ze všech ostatních relací"
@@ -1407,6 +1416,9 @@
       ],
       "Stay": [
         "Zůstat"
+      ],
+      "Stop being trusted contact": [
+        "Odebrat důvěryhodný kontakt"
       ],
       "Stop using single sign-on": [
         "Přestat využívat jednotné přihlášení"
@@ -1736,6 +1748,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Generovat chybějící klíče pro adresu “${ emailAddress }”"
       ],
+      "Reconnect": [
+        "Znovu připojit"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Znovu připojit adresu “${ emailAddress }”"
+      ],
       "Saving": [
         "Ukládání"
       ],
@@ -1758,6 +1776,9 @@
       ],
       "Disabled": [
         "Neaktivní"
+      ],
+      "Disconnected": [
+        "Odpojeno"
       ],
       "External": [
         "Externí"
@@ -5243,6 +5264,9 @@
       "${ user } will be able to use your account and change your data.": [
         "${ user } bude moci používat váš účet a měnit vaše data."
       ],
+      "${ user } will no longer be able to request access to your account in case of emergency.": [
+        "${ user } již nebude moci požádat o přístup k vašemu účtu v případě nouze."
+      ],
       "Access granted": [
         "Přístup povolen"
       ],
@@ -5260,6 +5284,12 @@
       ],
       "Add emergency contact": [
         "Přidat nouzový kontakt"
+      ],
+      "Added on ${ formattedDate }": [
+        "Přidáno ${ formattedDate }"
+      ],
+      "Cancel request?": [
+        "Zrušit žádost?"
       ],
       "Change access wait time": [
         "Změnit dobu čekání na přístup"
@@ -5288,8 +5318,17 @@
       "Emergency access granted": [
         "Nouzový přístup udělen"
       ],
+      "Emergency access refused": [
+        "Nouzový přístup odmítnut"
+      ],
+      "Emergency access request": [
+        "Nouzový přístup vyžádán"
+      ],
       "Emergency access requested": [
         "Vyžádán nouzový přístup"
+      ],
+      "Emergency access revoked": [
+        "Nouzový přístup zrušen"
       ],
       "Emergency contact added": [
         "Nouzový kontakt přidán"
@@ -5333,6 +5372,12 @@
       "Protect your legacy with emergency access": [
         "Chraňte své dědictví pomocí nouzového přístupu"
       ],
+      "Refuse access": [
+        "Odmítnout přístup"
+      ],
+      "Refuse access?": [
+        "Odmítnout přístup?"
+      ],
       "Remove trusted contact": [
         "Odebrat důvěryhodný kontakt"
       ],
@@ -5344,6 +5389,12 @@
       ],
       "Requesting access": [
         "Vyžádání přístupu"
+      ],
+      "Revoke access": [
+        "Zrušit přístup"
+      ],
+      "Revoke access?": [
+        "Zrušit přístup?"
       ],
       "Stop being trusted contact?": [
         "Odebrat důvěryhodný kontakt?"
@@ -5359,6 +5410,9 @@
       ],
       "This will take effect immediately.": [
         "Tato změna se projeví okamžitě."
+      ],
+      "Time required before automatically giving access": [
+        "Doba potřebná před automatickým udělením přístupu"
       ],
       "Time required before automatically granting them access": [
         "Doba potřebná před automatickým udělením přístupu"
@@ -5404,6 +5458,9 @@
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "V případě nouze již nebudete moci požádat o přístup k účtu uživatele ${ user }."
+      ],
+      "You'll receive access to their account immediately.": [
+        "Okamžitě získáte přístup k jejich účtu."
       ],
       "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
         "Získáte přístup k jejich účtu za **${ days } den**, nebo když schválí váš požadavek.",
@@ -8241,6 +8298,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce vašeho účtu."
       ],
+      "Account monitor": [
+        "Monitor účtu"
+      ],
       "account recovery and data recovery method": [
         "metodu obnovení účtu a obnovení dat"
       ],
@@ -8371,7 +8431,7 @@
         "Přiděleno"
       ],
       "Allow logging of location and connection details": [
-        "Povolit protokolování polohy a detailů připojení"
+        "Povolit ligování polohy a detailů připojení"
       ],
       "Allow recovery by email": [
         "Povolit obnovení e-mailem"
@@ -8948,6 +9008,9 @@
       ],
       "Enabled countries": [
         "Povolené země"
+      ],
+      "Enabled on ${ boldValue }": [
+        "Povoleno ${ boldValue }"
       ],
       "Enabling auto-deletion…": [
         "Povolování automatického mazání..."
@@ -9754,7 +9817,7 @@
         "Členové organizace budou muset odemknout ${ PASS_APP_NAME } pomocí svého hesla nebo kódu PIN atd."
       ],
       "Organization monitor": [
-        "Monitor organizace"
+        "Monitorování organizace"
       ],
       "Organization size": [
         "Velikost organizace"
@@ -9811,7 +9874,7 @@
         "Pass Monitor - smazán vlastní e-mail"
       ],
       "Pass usage logs": [
-        "Předat protokoly o použití"
+        "Předat logy o používání"
       ],
       "password": [
         "heslo"
@@ -11490,6 +11553,9 @@
       ],
       "Donation": [
         "Finanční příspěvky"
+      ],
+      "Manual": [
+        "Manuálně"
       ],
       "Modification": [
         "Změna"
@@ -16921,6 +16987,9 @@
       "Search users": [
         "Vyhledat uživatele"
       ],
+      "Search users or details": [
+        "Hledat uživatele nebo detaily"
+      ],
       "Select": [
         "Vybrat"
       ],
@@ -22001,7 +22070,7 @@
         "Přihlášení proběhlo úspěšně!"
       ],
       "Signed in to another account": [
-        "Přihlášen k jinému účtu"
+        "Přihlášen(a) k jinému účtu"
       ],
       "Signed in to member account": [
         "Přihlášeno k členskému účtu"
@@ -22539,6 +22608,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systémové podsložky se v ${ MAIL_APP_NAME } zobrazí jako samostatné složky"
+      ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "Adresa byla odpojena. Odesílání zpráv je pozastaveno. Znovu se připojte, abyste tuto adresu znovu aktivovali."
       ],
       "The import will start with the most recent messages.": [
         "Import začne nejnovějšími zprávami."

@@ -1024,6 +1024,11 @@
         "Pomniejsz"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Wznawianie przekierowania"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "Reaktywuj"
@@ -1367,6 +1372,9 @@
       ],
       "on ${ formattedDate }": [
         "dnia ${ formattedDate }"
+      ],
+      "Try it free for 14 days": [
+        "Wypróbuj za darmo przez 14 dni"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kiedy anulujesz, Twoja bezpłatna wersja próbna nie zostanie przekształcona w płatną subskrypcję, ale nadal możesz korzystać z funkcji planu do końca okresu próbnego. Następnie zostaniesz przeniesiony(-a) do planu ${ BRAND_NAME } Free."
@@ -4021,6 +4029,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Twoje konto lub organizacja posiada obecnie zaległe faktury. Ureguluj wszystkie zobowiązania."
+      ],
+      "Your forward will not be processed.": [
+        "Przekierowanie nie zostanie przetworzone."
       ],
       "Your import will not be processed.": [
         "Twój import nie zostanie przetworzony."
@@ -7845,6 +7856,9 @@
       "Donation": [
         "Darowizna"
       ],
+      "Manual": [
+        "Ręcznie"
+      ],
       "Modification": [
         "Korekta"
       ],
@@ -10668,11 +10682,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Zachowaj plan"
+      ],
       "Start using ${ appName }": [
         "Zacznij korzystać z ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Ulepsz plan"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Porozmawiajmy"
+      ],
+      "Limited time offer": [
+        "Oferta ograniczona czasowo"
+      ],
+      "Recommended": [
+        "Zalecany"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } miesięcznie"
+      ],
+      "/month /user": [
+        "/ użytkownika miesięcznie"
+      ],
+      "/month /user, billed annually": [
+        "/ użytkownika miesięcznie, płatne rocznie"
+      ],
+      "/month /user, billed biennially": [
+        "/ użytkownika miesięcznie, płatne co 2 lata"
+      ],
+      "Current plan": [
+        "Obecny plan"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Za jedyne **${ relativePrice } miesięcznie** więcej, otrzymasz dostęp do menadżera haseł ${ BRAND_NAME } w wersji premium!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Za jedyne **${ relativePrice } miesięcznie** więcej, otrzymasz dostęp do usługi ${ BRAND_NAME } VPN w wersji premium!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Za **${ relativePrice } miesięcznie** więcej uzyskasz dostęp do wszystkich funkcji premium usług ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Darmowy na zawsze"
+      ],
+      "Get in touch with our sales team": [
+        "Skontaktuj się z naszym zespołem sprzedaży"
+      ],
+      "Includes:": [
+        "Zawiera:"
+      ],
+      "per month": [
+        "miesięcznie"
+      ],
+      "per month, billed annually": [
+        "miesięcznie, płatne rocznie"
+      ],
+      "per month, billed every month": [
+        "miesięcznie, płatne co miesiąc"
+      ],
+      "per month, billed every two years": [
+        "miesięcznie, płatne co 2 lata"
+      ],
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
       ],

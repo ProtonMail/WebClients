@@ -220,6 +220,9 @@
       "Cancel": [
         "Avbryt"
       ],
+      "Cancel request": [
+        "Avbryt forespørsel"
+      ],
       "Cancel subscription": [
         "Avbryt abonnement"
       ],
@@ -1069,6 +1072,9 @@
       "Refer a friend": [
         "Verv en venn"
       ],
+      "Refresh": [
+        "Oppdater"
+      ],
       "Refresh status": [
         "Oppdater status"
       ],
@@ -1077,6 +1083,9 @@
       ],
       "refresh the page": [
         "oppdater siden"
+      ],
+      "Refuse access": [
+        "Nekt tilgang"
       ],
       "Reject": [
         "Avvis"
@@ -1188,6 +1197,9 @@
       ],
       "Revoke ${ name }": [
         "Tilbakekall ${ name }"
+      ],
+      "Revoke access": [
+        "Opphev tilgang"
       ],
       "Revoke all other sessions": [
         "Opphev alle andre økter"
@@ -1726,6 +1738,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Generer manglende nøkler for adresse “${ emailAddress }”"
       ],
+      "Reconnect": [
+        "Koble til på nytt"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Koble til på nytt adresse “${ emailAddress }”"
+      ],
       "Saving": [
         "Lagrer"
       ],
@@ -1748,6 +1766,9 @@
       ],
       "Disabled": [
         "Deaktivert"
+      ],
+      "Disconnected": [
+        "Frakoblet"
       ],
       "External": [
         "Ekstern"
@@ -5192,17 +5213,29 @@
         "${ n } dag igjen",
         "${ n } dager igjen"
       ],
+      "${ user } is requesting emergency access to your account": [
+        "${ user } ber om nødtilgang til kontoen din"
+      ],
       "${ user } will be able to use your account and change your data.": [
         "${ user } vil kunne bruke kontoen din og endre dataene dine."
       ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user } vil bli logget av kontoen din, og vil ikke kunne få tilgang til den igjen før neste nødtilgang."
+      ],
       "${ user } will no longer be able to request access to your account in case of emergency.": [
         "${ user } vil ikke lenger kunne be om tilgang til kontoen din i en nødsituasjon."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } vil ikke kunne få tilgang til kontoen din før neste nødtilgang."
       ],
       "Access granted": [
         "Tilgang gitt"
       ],
       "Access granted on ${ formattedAccessibleAt }": [
         "Tilgang innvilget på ${ formattedAccessibleAt }"
+      ],
+      "Access request canceled": [
+        "Tilgangsforespørsel avbrutt"
       ],
       "Access requested": [
         "Tilgang forespurt"
@@ -5218,6 +5251,9 @@
       ],
       "Added on ${ formattedDate }": [
         "Lagt til på ${ formattedDate }"
+      ],
+      "Cancel request?": [
+        "Avbryte forespørsel?"
       ],
       "Change access wait time": [
         "Endre ventetid for tilgang"
@@ -5246,8 +5282,17 @@
       "Emergency access granted": [
         "Nødtilgang innvilget"
       ],
+      "Emergency access refused": [
+        "Nødtilgang nektet"
+      ],
+      "Emergency access request": [
+        "Forespørsel om nødtilgang"
+      ],
       "Emergency access requested": [
         "Nødtilgang forespurt"
+      ],
+      "Emergency access revoked": [
+        "Nødtilgang opphevet"
       ],
       "Emergency contact added": [
         "Nødkontakt lagt til"
@@ -5291,6 +5336,12 @@
       "Protect your legacy with emergency access": [
         "Beskytt eksisterende data med nødtilgang"
       ],
+      "Refuse access": [
+        "Nekt tilgang"
+      ],
+      "Refuse access?": [
+        "Nekte tilgang?"
+      ],
       "Remove trusted contact": [
         "Fjern betrodd kontakt"
       ],
@@ -5303,6 +5354,12 @@
       "Requesting access": [
         "Ber om tilgang"
       ],
+      "Revoke access": [
+        "Opphev tilgang"
+      ],
+      "Revoke access?": [
+        "Oppheve tilgang?"
+      ],
       "Stop being trusted contact?": [
         "Slutte å være en betrodd kontakt?"
       ],
@@ -5314,6 +5371,10 @@
       ],
       "They may ask to access my account in case of an emergency.": [
         "De kan be om tilgang til min konto i nødstilfeller."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "De vil automatisk motta tilgang om **${ days } dag**, på **${ formattedAccessibleAt }**, du kan avslå forespørselen deres eller gi dem tilgang umiddelbart når som helst.",
+        "De får automatisk tilgang om **${ days } dager**, på **${ formattedAccessibleAt }**, du kan avvise forespørselen deres eller gi dem tilgang umiddelbart når som helst."
       ],
       "This will take effect immediately.": [
         "Dette trer i kraft umiddelbart."
@@ -5369,6 +5430,9 @@
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Du vil ikke lenger kunne be om tilgang til kontoen til ${ user } i en nødsituasjon."
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "Du vil fortsatt kunne be om tilgang til kontoen til ${ user } på et senere tidspunkt."
       ],
       "You'll receive access to their account immediately.": [
         "Du får tilgang til kontoen deres umiddelbart."
@@ -8095,6 +8159,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontotilgang begrenset på grunn av ubetalte fakturaer. Kontakt systemansvarlig."
       ],
+      "Account monitor": [
+        "Kontoovervåking"
+      ],
       "account recovery and data recovery method": [
         "kontogjenoppretting og datagjenopprettingsmetode"
       ],
@@ -8209,6 +8276,9 @@
       ],
       "Allocated": [
         "Tildelt"
+      ],
+      "Allow logging of location and connection details": [
+        "Tillat logging av plassering og tilkoblingsdetaljer"
       ],
       "Allow recovery by email": [
         "Tillat gjenoppretting ved e-post"
@@ -8619,6 +8689,9 @@
       "Disabled countries": [
         "Deaktiverte land"
       ],
+      "Disabled on ${ boldValue }": [
+        "Deaktivert på ${ boldValue }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Deaktivering av tofaktorautentisering vil gjøre kontoen din mindre sikker. Fortsett bare hvis det er absolutt nødvendig."
       ],
@@ -8772,6 +8845,9 @@
       ],
       "Enabled countries": [
         "Aktiverte land"
+      ],
+      "Enabled on ${ boldValue }": [
+        "Aktivert på ${ boldValue }"
       ],
       "Enabling auto-deletion…": [
         "Aktiverer automatisk sletting…"
@@ -8937,6 +9013,9 @@
       ],
       "Gain visibility across your organization": [
         "Få synlighet på tvers av organisasjonen"
+      ],
+      "Gateway monitor": [
+        "Overvåking av porttjener"
       ],
       "Gateways": [
         "Porttjenere"
@@ -9121,6 +9200,9 @@
       ],
       "inactive": [
         "inaktiv"
+      ],
+      "Include device, location, and IP details": [
+        "Inkluder enhet, plassering og IP-detaljer"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inkludert ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -9563,6 +9645,9 @@
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Organisasjonsmedlemmer må låse opp ${ PASS_APP_NAME } med passord eller PIN-kode osv."
       ],
+      "Organization monitor": [
+        "Organisasjonsovervåking"
+      ],
       "Organization size": [
         "Organisasjonsstørrelse"
       ],
@@ -9614,6 +9699,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - tilpasset e-post slettet"
+      ],
+      "Pass usage logs": [
+        "Pass-brukslogger"
       ],
       "password": [
         "passord"
@@ -10571,6 +10659,9 @@
       "View and manage your groups.": [
         "Se og administrer gruppene dine."
       ],
+      "View VPN session details for your organization.": [
+        "Vis VPN-øktdetaljer for organisasjonen din."
+      ],
       "View, download, and manage your invoices.": [
         "Se, last ned og behandle fakturaene dine."
       ],
@@ -11244,6 +11335,9 @@
       ],
       "Donation": [
         "Donasjon"
+      ],
+      "Manual": [
+        "Manuell"
       ],
       "Modification": [
         "Modifisering"
@@ -13230,6 +13324,9 @@
       "Learn more": [
         "Lær mer"
       ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "For å fortsette å bruke ${ BRAND_NAME }, må du sørge for at premiumfunksjonene dine ikke lenger er i bruk, eller oppgradere abonnementsplanen din."
+      ],
       "upgrade for more storage": [
         "oppgrader for mer lagringsplass"
       ],
@@ -13483,6 +13580,15 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Koble ditt egendefinerte domene til ${ BRAND_NAME } for å sette opp tilpassede e-postadresser (eks., du@dittfirma.no). Vår veileder vil rettlede deg gjennom prosessen."
+      ],
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "Vis ${ PASS_APP_NAME }-aktivitet på tvers av organisasjonen din."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "Se endringer i organisasjonen din og andre administratoraktiviteter."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "Vis brukerpålogging, gjenoppretting og sikkerhetshendelser."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Prøveperioden er avsluttet. Tilgang til kontoen din vil snart bli deaktivert. ${ action }"
@@ -14957,6 +15063,9 @@
       "Invalid code": [
         "Ugyldig kode"
       ],
+      "Invalid input. Search an email or detail.": [
+        "Ugyldig inndata. Søk etter en e-post eller detalj."
+      ],
       "Invalid input. Search an email or IP address.": [
         "Ugyldige inndata. Søk i en e-post eller IP-adresse."
       ],
@@ -15433,6 +15542,9 @@
       "It's too expensive": [
         "Det er for dyrt"
       ],
+      "Label as...": [
+        "Merk som..."
+      ],
       "Left to Right": [
         "Venstre til høyre"
       ],
@@ -15441,6 +15553,9 @@
       ],
       "Mark as read": [
         "Merk som lest"
+      ],
+      "Move to...": [
+        "Flytt til..."
       ],
       "My reason isn't listed": [
         "Min årsak er ikke listet"
@@ -16230,6 +16345,9 @@
       "Card number": [
         "Kortnummer"
       ],
+      "Credits and discounts are reflected in your invoice": [
+        "Kreditter og rabatter vises på fakturaen din"
+      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "For øyeblikket er automatisk fornyelse av abonnementet deaktivert. Hvis du endrer abonnementet nå, aktiveres den automatiske fornyelsen på nytt."
       ],
@@ -16536,6 +16654,9 @@
       ],
       "Search users": [
         "Søk brukere"
+      ],
+      "Search users or details": [
+        "Søk etter brukere eller detaljer"
       ],
       "Select": [
         "Velg"
@@ -20691,6 +20812,9 @@
       "Desktop": [
         "Skrivebord"
       ],
+      "Details": [
+        "Detaljer"
+      ],
       "Device": [
         "Enhet"
       ],
@@ -21980,6 +22104,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }."
+      ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "Adressen er koblet fra. Sending av meldinger er satt på pause. Koble til på nytt for å aktivere denne adressen igjen."
       ],
       "The import will start with the most recent messages.": [
         "Importen starter med de nyeste meldingene."

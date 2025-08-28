@@ -1447,7 +1447,7 @@
         "Пераключыць праграму цэнтра бяспекі"
       ],
       "Toggle settings": [
-        "Пераключэнне наладаў"
+        "Пераключэнне налад"
       ],
       "Toggle VPN dashboard": [
         "Пераключыць панэль кіравання VPN"
@@ -1460,12 +1460,6 @@
       ],
       "Trust": [
         "Давяраць"
-      ],
-      "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -1967,7 +1961,7 @@
     },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
-        "Выведзіце прадукцыйнасць электроннай пошты на новы ўзровень. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
+        "Выведзіце прадукцыйнасць электроннай пошты на новыя ўзроўні. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
       ]
     },
     "Attached ics file error": {
@@ -4462,10 +4456,10 @@
         "Сума ніжэй за мінімум (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
-        "Падчас загрузкі параметраў псеўданіма адбылася памылка"
+        "Пры загрузцы параметраў псеўданіма адбылася памылка"
       ],
       "An error occurred while saving your alias": [
-        "Падчас захавання вашага псеўданіма адбылася памылка"
+        "Пры захаванни вашага псеўданіма адбылася памылка"
       ],
       "Attachments are limited to ${ readableAttachmentMaxSize }": [
         "Далучэнні абмежаваныя да ${ readableAttachmentMaxSize }"
@@ -5364,7 +5358,7 @@
         "Калі вы прыміце запрашэнне, то ваш тарыфны план будзе зменены. Рэшта балансу вашай падпіскі вернецца на ваш рахунак."
       ],
       "Invited by: ${ inviteEmail }": [
-        "Запрашэнне адпраўлена: ${ inviteEmail }"
+        "Запрашэнне ад: ${ inviteEmail }"
       ],
       "Lifetime accounts cannot join a family plan.": [
         "Пажыццёвыя ўліковыя запісы нельга далучыць да сямейнага тарыфнага плана."
@@ -7473,7 +7467,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8796,7 +8793,7 @@
         "Вы выбралі **${ elementsCount } паведамленняў**."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
-        "Вы страціце доступ да ${ planTitle } функцыі пасля гэтай даты."
+        "Вы страціце доступ да функцый тарыфнага плана ${ planTitle } пасля гэтай даты."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
@@ -12162,7 +12159,7 @@
         "CVC"
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
-        "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змены. Дзякуй за ваша цярпенне."
+        "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змяненні. Дзякуй за ваша цярпенне."
       ],
       "Got it": [
         "Зразумела"
@@ -12770,10 +12767,10 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Выяўлены ${ name } і ${ remainingCount } іншыя(х) патэнцыяльныя(х) ўцечкі(ак). Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+        "Выяўлены іншыя патэнцыяльныя ўцечкі ${ name } і ${ remainingCount }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Выяўлены ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+        "Выяўлена ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
@@ -13089,7 +13086,7 @@
         "Калі вы выйдзеце з сістэмы да скідання пароля, вы можаце страціць доступ да вашага ўліковага запісу."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "Калі вы выйдзеце з сістэмы без скідання пароля, вы можаце страціць доступ да вашага ўліковага запісу."
+        "Вы можаце страціць доступ да вашага ўліковага запісу, калі выйсці з сістэмы без скідання пароля."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "Вы зможаце скінуць свой пароль праз ${ boldTimeLeft }."
@@ -13548,7 +13545,7 @@
         "сховішча ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } ${ percentage }% запоўнена"
+        "${ storage } запоўнена на ${ percentage }%"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Панізіўшы тарыфны план, вы страціце наступныя перавагі. Вы сапраўды хочаце працягнуць?"
@@ -13940,7 +13937,7 @@
         "Падпіскі карыстальнікаў з'яўляюцца адзінай крыніцай прыбытку ${ BRAND_NAME }. Ваша падтрымка забяспечвае нам незалежнасць, спрыяе нашай місіі захавання прыватнасці ў інтэрнэце і дапамагае актывістам і арганізацыям, якія змагаюцца за свабоду."
       ],
       "Users won’t be able to manage their calendars": [
-        "У карыстальнікаў не будзе магчымасці кіраваць іх календарамі"
+        "У карыстальнікаў не будзе магчымасці кіраваць сваімі календарамі"
       ],
       "Users won’t be able to send emails": [
         "У карыстальнікаў не будзе магчымасці адпраўляць электронныя лісты"
@@ -14390,6 +14387,12 @@
       ],
       "Read receipt sent": [
         "Апавяшчэнне аб прачытанні адпраўлена"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Перакласіфікавана ${ elementsCount } паведамленне.",
+        "Перакласіфікавана ${ elementsCount } паведамленні.",
+        "Перакласіфікавана ${ elementsCount } паведамленняў.",
+        "Перакласіфікавана ${ elementsCount } паведамленняў."
       ],
       "Self-destruction removed": [
         "Самазнішчэнне выдалена"
@@ -15895,7 +15898,7 @@
         "Зашыфраваны і бяспечны адрас электроннай пошты ${ MAIL_APP_NAME }. Вы можаце лёгка адправіць Bitcoin любому карыстальніку, выкарыстоўваючы толькі яго імя ${ BRAND_NAME }."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
-        "Бяспечна абменьвайцеся Bitcoin праз электронную пошту замест складаных, 26-значных адрасоў Bitcoin, у якіх лёгка памыліцца пры ўводзе"
+        "Бяспечна абменьвайцеся Bitcoin праз электронную пошту замест складаных 26-значных адрасоў Bitcoin, у якіх лёгка памыліцца пры ўводзе"
       ]
     },
     "wallet_signup_2024:app-switcher": {
@@ -15922,7 +15925,7 @@
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантактаў?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
-        "Вы ўпэўнены, што хочаце незваротна выдаліць гэтыя групы кантактаў?"
+        "Вы сапраўды хочаце незваротна выдаліць гэтыя групы кантактаў?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Вы сапраўды хочаце незваротна выдаліць гэту групу кантактаў?"

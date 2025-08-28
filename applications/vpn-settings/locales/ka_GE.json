@@ -1021,6 +1021,11 @@
         "დაპატარავება"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "წინ გაგრძელება"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "რეაქტივაცია"
@@ -3868,6 +3873,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "ანგარიშს ან ორგანიზაციას გადაცილებული ინვოისი აქვს. საჭიროა ყველა ინვოისის გადახდა."
+      ],
+      "Your forward will not be processed.": [
+        "თქვენი გადაგზავნა არ დამუშავდება."
       ],
       "Your import will not be processed.": [
         "თქვენი შემოტანა არ დამუშავდება."
@@ -10161,11 +10169,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "ამ გეგმის დატოვება"
+      ],
       "Start using ${ appName }": [
         "${ appName }-ის გამოყენების დაწყება"
+      ],
+      "Upgrade my plan": [
+        "ტარიფის გაუმჯობესება"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "ვისაუბროთ"
+      ],
+      "Limited time offer": [
+        "დროში შეზღუდული შეთავაზება"
+      ],
+      "Recommended": [
+        "რეკომენდებულია"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } თვეში"
+      ],
+      "/month /user": [
+        "/თვე /მომხმარებელი"
+      ],
+      "/month /user, billed annually": [
+        "/თვე /მომხმარებელი, გადახდით წელიწადში ერთხელ"
+      ],
+      "/month /user, billed biennially": [
+        "/თვე /მომხმარებელი, გადახდით ორ წელიწადში ერთხელ"
+      ],
+      "Current plan": [
+        "მიმდინარე ტარიფი"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "დაამატეთ, მხოლოდ, **${ relativePrice } თვეში** და მიიღეთ წვდომა ${ BRAND_NAME }-ის ფასიან პაროლების მმართველთან!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "დაამატეთ, მხოლოდ, **${ relativePrice } თვეში** და მიიღეთ წვდომა ${ BRAND_NAME }-ის ფასიან VPN სერვისთან!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "დაამატეთ, მხოლოდ, **${ relativePrice } თვეში** და მიიღეთ ${ BRAND_NAME }-ის ყველა ფასიანი სერვისი!"
+      ],
+      "Free forever": [
+        "სამუდამოდ უფასო"
+      ],
+      "Get in touch with our sales team": [
+        "დაუკავშირდით ჩვენი გაყიდვების გუნდს"
+      ],
+      "Includes:": [
+        "შეიცავს:"
+      ],
+      "per month": [
+        "თვეში"
+      ],
+      "per month, billed annually": [
+        "თვეში, გადახდა წლიურად"
+      ],
+      "per month, billed every month": [
+        "თვეში, გადაიხდით ყოველ-თვე"
+      ],
+      "per month, billed every two years": [
+        "ყოველთვე, გადაიხდით 2 წელიწადში ერთხელ"
+      ],
       "Secure vault sharing": [
         "დაცული საცავის გაზიარება"
       ],

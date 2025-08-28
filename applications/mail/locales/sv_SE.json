@@ -1451,6 +1451,9 @@
       "Trust": [
         "Lita på"
       ],
+      "Trust key": [
+        "Lita på nyckel"
+      ],
       "Trust public key": [
         "Lita på offentlig nyckel"
       ],
@@ -7220,7 +7223,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9959,6 +9963,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Lär dig mer"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "För att fortsätta använda ${ BRAND_NAME }, se till att dina premiumfunktioner inte längre används eller uppgradera ditt paket."
       ],
       "upgrade for more storage": [
         "uppgradera för mer lagringsutrymme"
@@ -13825,6 +13832,10 @@
       ],
       "Read receipt sent": [
         "Läskvitto skickat"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Omkategoriserade ${ elementsCount } meddelande.",
+        "Omkategoriserade ${ elementsCount } meddelanden."
       ],
       "Self-destruction removed": [
         "Självförstörelse borttagen"

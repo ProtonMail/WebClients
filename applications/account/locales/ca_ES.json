@@ -220,6 +220,9 @@
       "Cancel": [
         "Cancel·la"
       ],
+      "Cancel request": [
+        "Cancel·leu la sol·licitud"
+      ],
       "Cancel subscription": [
         "Cancel·la la subscripció"
       ],
@@ -1081,6 +1084,9 @@
       "refresh the page": [
         "refresca la pàgina"
       ],
+      "Refuse access": [
+        "S'ha denegat l'accés"
+      ],
       "Reject": [
         "Rebutja"
       ],
@@ -1191,6 +1197,9 @@
       ],
       "Revoke ${ name }": [
         "Revoca ${ name }"
+      ],
+      "Revoke access": [
+        "Revocar l'accés"
       ],
       "Revoke all other sessions": [
         "Revoca totes les altres sessions"
@@ -1729,6 +1738,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Genera les claus que falten per a l'adreça «${ emailAddress }»"
       ],
+      "Reconnect": [
+        "Torneu a connectar-vos"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Reconnecteu l'adreça «${ emailAddress }»"
+      ],
       "Saving": [
         "S'està desant"
       ],
@@ -1751,6 +1766,9 @@
       ],
       "Disabled": [
         "Desactivat"
+      ],
+      "Disconnected": [
+        "Desconnectat"
       ],
       "External": [
         "Externa"
@@ -5195,17 +5213,29 @@
         "Queda ${ n } dia.",
         "Queden ${ n } dies."
       ],
+      "${ user } is requesting emergency access to your account": [
+        "${ user } sol·licita accés d'emergència al seu compte"
+      ],
       "${ user } will be able to use your account and change your data.": [
         "${ user } podrà utilitzar el vostre compte i canviar les vostres dades."
       ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user } tancarà la sessió del vostre compte i no hi podrà accedir de nou fins al següent accés d'emergència."
+      ],
       "${ user } will no longer be able to request access to your account in case of emergency.": [
         "${ user } ja no podrà sol·licitar accés al teu compte en cas d'emergència."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } no podrà accedir al seu compte fins al següent accés d'emergència."
       ],
       "Access granted": [
         "S'ha concedit l'accés."
       ],
       "Access granted on ${ formattedAccessibleAt }": [
         "S'ha concedit accés el ${ formattedAccessibleAt }"
+      ],
+      "Access request canceled": [
+        "La sol·licitud d'accés s'ha cancel·lat"
       ],
       "Access requested": [
         "Accés sol·licitat"
@@ -5221,6 +5251,9 @@
       ],
       "Added on ${ formattedDate }": [
         "S'ha afegit el ${ formattedDate }"
+      ],
+      "Cancel request?": [
+        "Voleu cancel·lar la sol·licitud?"
       ],
       "Change access wait time": [
         "Canvieu el temps d'espera d'accés"
@@ -5249,8 +5282,17 @@
       "Emergency access granted": [
         "S\"ha concedit l\"accés d\"emergència"
       ],
+      "Emergency access refused": [
+        "S'ha denegat l'accés d'emergència"
+      ],
+      "Emergency access request": [
+        "Sol·licitud d'accés d'emergència"
+      ],
       "Emergency access requested": [
         "S'ha sol·licitat l'accés d'emergència"
+      ],
+      "Emergency access revoked": [
+        "S'ha revocat l'accés d'emergència"
       ],
       "Emergency contact added": [
         "S'ha afegit el contacte d'emergència"
@@ -5294,6 +5336,12 @@
       "Protect your legacy with emergency access": [
         "Protegiu el vostre llegat amb l'accés d'emergència"
       ],
+      "Refuse access": [
+        "Denegar l'accés"
+      ],
+      "Refuse access?": [
+        "Voleu denegar-ne l'accés?"
+      ],
       "Remove trusted contact": [
         "Esborrar contacte de confiança"
       ],
@@ -5306,6 +5354,12 @@
       "Requesting access": [
         "S'està sol·licitant accés"
       ],
+      "Revoke access": [
+        "Revoca l'accés"
+      ],
+      "Revoke access?": [
+        "Voleu revocar-li l'accés?"
+      ],
       "Stop being trusted contact?": [
         "Deixar de ser contacte de confiança?"
       ],
@@ -5317,6 +5371,10 @@
       ],
       "They may ask to access my account in case of an emergency.": [
         "Podrien demanar d'accedir al meu compte en cas d'emergència."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "Rebran accés automàticament en **${ days } dia**, el **${ formattedAccessibleAt }**, podreu rebutjar la seva sol·licitud o donar-los accés immediat en qualsevol moment.",
+        "Rebran accés automàticament en **${ days } dies**, el **${ formattedAccessibleAt }**, podreu rebutjar la seva sol·licitud o donar-los accés immediat en qualsevol moment."
       ],
       "This will take effect immediately.": [
         "Això tindrà efecte immediat."
@@ -5372,6 +5430,9 @@
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Ja no podreu sol·licitar accés al compte de ${ user } en cas d'emergència."
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "Encara podreu sol·licitar accés al compte de ${ user } més endavant."
       ],
       "You'll receive access to their account immediately.": [
         "Obtindràs accés al seu compte de manera immediata."
@@ -8217,7 +8278,7 @@
         "Assignat"
       ],
       "Allow logging of location and connection details": [
-        "Permetre el registre d'ubicació i detalls de connexió"
+        "Permeteu el registre de la ubicació i els detalls de connexió"
       ],
       "Allow recovery by email": [
         "Permet la recuperació per correu electrònic"
@@ -8629,7 +8690,7 @@
         "Països desactivats"
       ],
       "Disabled on ${ boldValue }": [
-        "Desactivat el ${ boldValue }"
+        "S'ha desactivat el ${ boldValue }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Si desactiveu l'autenticació de doble factor, el vostre compte serà menys segur. Només procediu si és absolutament necessari."
@@ -8786,7 +8847,7 @@
         "Països activats"
       ],
       "Enabled on ${ boldValue }": [
-        "Activat el ${ boldValue }"
+        "S'ha activat el ${ boldValue }"
       ],
       "Enabling auto-deletion…": [
         "S'està activant la supressió automàtica…"
@@ -9635,6 +9696,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - S'ha eliminat el correu electrònic personalitzat."
+      ],
+      "Pass usage logs": [
+        "Registres d'ús de Pass"
       ],
       "password": [
         "contrasenya"
@@ -10593,7 +10657,7 @@
         "Visualitzeu i gestioneu els vostres grups."
       ],
       "View VPN session details for your organization.": [
-        "Veieu els detalls de la sessió VPN de la vostra organització."
+        "Visualitzeu els detalls de la sessió VPN de la vostra organització."
       ],
       "View, download, and manage your invoices.": [
         "Veieu, descarregueu i gestioneu les factures."
@@ -11268,6 +11332,9 @@
       ],
       "Donation": [
         "Donatiu"
+      ],
+      "Manual": [
+        "Manual"
       ],
       "Modification": [
         "Modificació"
@@ -13252,7 +13319,7 @@
         "Per saber-ne més"
       ],
       "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
-        "Per continuar utilitzant ${ BRAND_NAME }, assegureu-vos que les vostres característiques prèmium ja no s'utilitzen o milloreu el vostre pla."
+        "Per continuar utilitzant ${ BRAND_NAME }, assegureu-vos que les vostres característiques prèmium ja no s'utilitzen o milloreu el pla."
       ],
       "upgrade for more storage": [
         "milloreu per a obtenir més emmagatzematge"
@@ -13509,10 +13576,10 @@
         "Connecteu el vostre domini personalitzat a ${ BRAND_NAME } per a configurar adreces de correu electrònic personalitzades (p. ex., vos@lavostraempresa.com). El nostre assistent us guiarà a través del procés."
       ],
       "View ${ PASS_APP_NAME } activity across your organization.": [
-        "Visualitzar l'activitat de ${ PASS_APP_NAME } a través de la vostra organització."
+        "Visualitzeu l'activitat de ${ PASS_APP_NAME } a través de la vostra organització."
       ],
       "View changes to your organization and other administrator activities.": [
-        "Visualitzeu canvis a la vostra organització i altres activitats de l'administració."
+        "Visualitzeu els canvis a la vostra organització i altres activitats de l'administració."
       ],
       "View user sign-in, recovery and security events.": [
         "Visualitzeu els esdeveniments d'inici de sessió, recuperació i seguretat de l'usuari."
@@ -22013,6 +22080,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les subcarpetes del sistema es mostraran com a carpetes independents a ${ MAIL_APP_NAME }"
+      ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "Aquesta adreça s'ha desconnectat. L'enviament de missatges està pausat. Torneu a connectar-vos per habilitar l'adreça de nou."
       ],
       "The import will start with the most recent messages.": [
         "La importació començarà amb els missatges més recents."

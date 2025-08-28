@@ -1027,6 +1027,11 @@
         "Allunyar"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "S'està reprenent el reenviament"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "Reactiva"
@@ -1112,6 +1117,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Genera les claus que falten per a l'adreça «${ emailAddress }»"
       ],
+      "Reconnect": [
+        "Torneu a connectar-vos"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Reconnecteu l'adreça «${ emailAddress }»"
+      ],
       "Saving": [
         "S'està desant"
       ],
@@ -1134,6 +1145,9 @@
       ],
       "Disabled": [
         "Desactivat"
+      ],
+      "Disconnected": [
+        "Desconnectat"
       ],
       "External": [
         "Externa"
@@ -3934,6 +3948,9 @@
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "El vostre compte o organització té una factura vençuda. Pagueu totes les factures pendents."
       ],
+      "Your forward will not be processed.": [
+        "No es processarà el vostre reenviament."
+      ],
       "Your import will not be processed.": [
         "La vostra importació no es processarà."
       ],
@@ -5560,7 +5577,7 @@
         "Assignat"
       ],
       "Allow logging of location and connection details": [
-        "Permetre el registre d'ubicació i detalls de connexió"
+        "Permeteu el registre de la ubicació i els detalls de connexió"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permeteu als usuaris connectar-se a servidors compartits segurs des de la secció **Països** de l'aplicació ${ VPN_APP_NAME }."
@@ -5807,7 +5824,7 @@
         "Països desactivats"
       ],
       "Disabled on ${ boldValue }": [
-        "Desactivat el ${ boldValue }"
+        "S'ha desactivat el ${ boldValue }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Si desactiveu l'autenticació de doble factor, el vostre compte serà menys segur. Només procediu si és absolutament necessari."
@@ -5925,7 +5942,7 @@
         "Països activats"
       ],
       "Enabled on ${ boldValue }": [
-        "Activat el ${ boldValue }"
+        "S'ha activat el ${ boldValue }"
       ],
       "Enabling auto-deletion…": [
         "S'està activant la supressió automàtica…"
@@ -6472,6 +6489,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - S'ha eliminat el correu electrònic personalitzat."
+      ],
+      "Pass usage logs": [
+        "Registres d'ús de Pass"
       ],
       "password": [
         "contrasenya"
@@ -7109,7 +7129,7 @@
         "El número de versió s'ha copiat al porta-retalls."
       ],
       "View VPN session details for your organization.": [
-        "Veieu els detalls de la sessió VPN de la vostra organització."
+        "Visualitzeu els detalls de la sessió VPN de la vostra organització."
       ],
       "View, download, and manage your invoices.": [
         "Veieu, descarregueu i gestioneu les factures."
@@ -7611,6 +7631,9 @@
       ],
       "Donation": [
         "Donatiu"
+      ],
+      "Manual": [
+        "Manual"
       ],
       "Modification": [
         "Modificació"
@@ -8650,7 +8673,7 @@
         "Per saber-ne més"
       ],
       "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
-        "Per continuar utilitzant ${ BRAND_NAME }, assegureu-vos que les vostres característiques prèmium ja no s'utilitzen o milloreu el vostre pla."
+        "Per continuar utilitzant ${ BRAND_NAME }, assegureu-vos que les vostres característiques prèmium ja no s'utilitzen o milloreu el pla."
       ],
       "upgrade for more storage": [
         "milloreu per a obtenir més emmagatzematge"
@@ -8828,10 +8851,10 @@
         "Connecteu el vostre domini personalitzat a ${ BRAND_NAME } per a configurar adreces de correu electrònic personalitzades (p. ex., vos@lavostraempresa.com). El nostre assistent us guiarà a través del procés."
       ],
       "View ${ PASS_APP_NAME } activity across your organization.": [
-        "Visualitzar l'activitat de ${ PASS_APP_NAME } a través de la vostra organització."
+        "Visualitzeu l'activitat de ${ PASS_APP_NAME } a través de la vostra organització."
       ],
       "View changes to your organization and other administrator activities.": [
-        "Visualitzeu canvis a la vostra organització i altres activitats de l'administració."
+        "Visualitzeu els canvis a la vostra organització i altres activitats de l'administració."
       ],
       "View user sign-in, recovery and security events.": [
         "Visualitzeu els esdeveniments d'inici de sessió, recuperació i seguretat de l'usuari."
@@ -10413,11 +10436,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Mantén aquest pla"
+      ],
       "Start using ${ appName }": [
         "Comenceu a utilitzar ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Millora el meu pla"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Parlem-ne"
+      ],
+      "Limited time offer": [
+        "Oferta per temps limitat"
+      ],
+      "Recommended": [
+        "Recomanat"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } al mes"
+      ],
+      "/month /user": [
+        "/mes /usuari"
+      ],
+      "/month /user, billed annually": [
+        "/mes /usuari, facturat anualment"
+      ],
+      "/month /user, billed biennially": [
+        "/mes /usuari, facturat biennalment"
+      ],
+      "Current plan": [
+        "Pla actual"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Per només **${ relativePrice } mensuals** més, tindreu accés al gestor de contrasenyes prèmium de ${ BRAND_NAME }."
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Per només **${ relativePrice } al mes** més, tindreu accés al servei VPN prèmium de ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Per només **${ relativePrice } més al mes**, obteniu accés a tots els serveis prèmium de ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Gratuït per sempre"
+      ],
+      "Get in touch with our sales team": [
+        "Poseu-vos en contacte amb el nostre equip comercial"
+      ],
+      "Includes:": [
+        "Inclou:"
+      ],
+      "per month": [
+        "per mes"
+      ],
+      "per month, billed annually": [
+        "al mes amb facturació anual"
+      ],
+      "per month, billed every month": [
+        "al mes amb facturació mensual"
+      ],
+      "per month, billed every two years": [
+        "al mes amb facturació cada dos anys"
+      ],
       "Secure vault sharing": [
         "Compartició segura de caixes fortes"
       ],
@@ -14366,6 +14451,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les subcarpetes del sistema es mostraran com a carpetes independents a ${ MAIL_APP_NAME }"
+      ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "Aquesta adreça s'ha desconnectat. L'enviament de missatges està pausat. Torneu a connectar-vos per habilitar l'adreça de nou."
       ],
       "The import will start with the most recent messages.": [
         "La importació començarà amb els missatges més recents."

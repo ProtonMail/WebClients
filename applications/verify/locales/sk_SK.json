@@ -1070,6 +1070,9 @@
       "Enter your own password (as organization admin).": [
         "Zadajte vlastné heslo (ako správca organizácie)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Zadajte vlastné heslo (ako dôveryhodný kontakt)."
+      ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "Ak chcete získať ďalšie informácie a odstrániť obmedzenia, prihláste sa na adrese ${ mailLink }."
       ],
@@ -1164,6 +1167,9 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (správca)"
+      ],
+      "Your password (trusted contact)": [
+        "Vaše heslo (dôveryhodný kontakt)"
       ]
     },
     "Link": {
@@ -1527,6 +1533,11 @@
         "Heslo"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všetky prémiové funkcie z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Registrácia nebola úspešne dokončená."
@@ -1570,6 +1581,9 @@
     "Title": {
       "Account restricted": [
         "Obmedzený účet"
+      ],
+      "Account temporarily locked": [
+        "Účet dočasne zablokovaný"
       ],
       "Enter 2FA code": [
         "Zadajte 2FA kód"

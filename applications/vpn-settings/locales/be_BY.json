@@ -1027,6 +1027,11 @@
         "Паменшыць"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Перасылка ўзнаўляецца"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "Актываваць паўторна"
@@ -1122,6 +1127,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Згенерыраваць прапушчаныя ключы для адраса “${ emailAddress }”"
       ],
+      "Reconnect": [
+        "Перападключыцца"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Перападключыць адрас \"${ emailAddress }\""
+      ],
       "Saving": [
         "Захаванне"
       ],
@@ -1143,6 +1154,9 @@
         "Прадвызначаны"
       ],
       "Disabled": [
+        "Адключана"
+      ],
+      "Disconnected": [
         "Адключана"
       ],
       "External": [
@@ -1332,7 +1346,7 @@
     },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
-        "Выведзіце прадукцыйнасць электроннай пошты на новы ўзровень. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
+        "Выведзіце прадукцыйнасць электроннай пошты на новыя ўзроўні. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
       ]
     },
     "Attached ics file error": {
@@ -3974,6 +3988,9 @@
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ваш уліковы запіс або арганізацыя мае пратэрмінаваны рахунак. Аплаціце ўсе неаплачаныя рахункі."
       ],
+      "Your forward will not be processed.": [
+        "Ваша перасылка не будзе апрацавана."
+      ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
       ],
@@ -4296,7 +4313,7 @@
         "Запрашэнне ад ${ invitation.OrganizationName }"
       ],
       "Invited by: ${ inviteEmail }": [
-        "Запрашэнне адпраўлена: ${ inviteEmail }"
+        "Запрашэнне ад: ${ inviteEmail }"
       ],
       "Lifetime accounts cannot join a family plan.": [
         "Пажыццёвыя ўліковыя запісы нельга далучыць да сямейнага тарыфнага плана."
@@ -7563,7 +7580,7 @@
         "Вы захаваеце пажыццёвы доступ да прэміяльных функцый ${ PASS_APP_NAME } + SimpleLogin, калі скасуеце сваю падпіску."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
-        "Вы страціце доступ да ${ planTitle } функцыі пасля гэтай даты."
+        "Вы страціце доступ да функцый тарыфнага плана ${ planTitle } пасля гэтай даты."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Вам будзе неабходны адрас ${ BRAND_NAME } для выкарыстання ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
@@ -7820,6 +7837,9 @@
       ],
       "Donation": [
         "Ахвяраванне"
+      ],
+      "Manual": [
+        "Уручную"
       ],
       "Modification": [
         "Змяненне"
@@ -10689,11 +10709,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Пакінуць гэты тарыфны план"
+      ],
       "Start using ${ appName }": [
         "Пачаць выкарыстоўваць ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Палепшыць мой тарыфны план"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Звяжыцеся з намі"
+      ],
+      "Limited time offer": [
+        "Прапанова абмежаваная па часе"
+      ],
+      "Recommended": [
+        "Рэкамендавана"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } у месяц"
+      ],
+      "/month /user": [
+        "/месяц /карыстальнік"
+      ],
+      "/month /user, billed annually": [
+        "/месяц /карыстальнік, аплата адзін раз у год"
+      ],
+      "/month /user, billed biennially": [
+        "/месяц /карыстальнік, аплата адзін раз у два гады"
+      ],
+      "Current plan": [
+        "Бягучы тарыфны план"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Усяго за **${ relativePrice } дадатковай платы ў месяц** вы атрымаеце доступ да прэміяльнага менеджара пароляў ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Усяго за **${ relativePrice } дадатковай платы ў месяц** вы атрымаеце доступ да прэміяльнага сэрвісу VPN ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Усяго за **${ relativePrice } у месяц** вы атрымаеце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Бясплатна назаўсёды"
+      ],
+      "Get in touch with our sales team": [
+        "Сувязь з нашай камандай па продажам"
+      ],
+      "Includes:": [
+        "Уключае:"
+      ],
+      "per month": [
+        "у месяц"
+      ],
+      "per month, billed annually": [
+        "у месяц (аплачваецца адзін раз у год)"
+      ],
+      "per month, billed every month": [
+        "у месяц (аплачваецца адзін раз у месяц)"
+      ],
+      "per month, billed every two years": [
+        "у месяц (аплачваецца кожныя два гады)"
+      ],
       "Secure vault sharing": [
         "Бяспечнае абагульванне сховішча"
       ],
@@ -10894,7 +10976,7 @@
         "CVC"
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
-        "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змены. Дзякуй за ваша цярпенне."
+        "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змяненні. Дзякуй за ваша цярпенне."
       ],
       "Got it": [
         "Зразумела"
@@ -11791,10 +11873,10 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Выяўлены ${ name } і ${ remainingCount } іншыя(х) патэнцыяльныя(х) ўцечкі(ак). Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+        "Выяўлены іншыя патэнцыяльныя ўцечкі ${ name } і ${ remainingCount }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Выяўлены ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+        "Выяўлена ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
@@ -12115,7 +12197,7 @@
         "Калі вы выйдзеце з сістэмы да скідання пароля, вы можаце страціць доступ да вашага ўліковага запісу."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "Калі вы выйдзеце з сістэмы без скідання пароля, вы можаце страціць доступ да вашага ўліковага запісу."
+        "Вы можаце страціць доступ да вашага ўліковага запісу, калі выйсці з сістэмы без скідання пароля."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "Вы зможаце скінуць свой пароль праз ${ boldTimeLeft }."
@@ -12722,7 +12804,7 @@
         "сховішча ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } ${ percentage }% запоўнена"
+        "${ storage } запоўнена на ${ percentage }%"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Панізіўшы тарыфны план, вы страціце наступныя перавагі. Вы сапраўды хочаце працягнуць?"
@@ -13204,7 +13286,7 @@
         "Падпіскі карыстальнікаў з'яўляюцца адзінай крыніцай прыбытку ${ BRAND_NAME }. Ваша падтрымка забяспечвае нам незалежнасць, спрыяе нашай місіі захавання прыватнасці ў інтэрнэце і дапамагае актывістам і арганізацыям, якія змагаюцца за свабоду."
       ],
       "Users won’t be able to manage their calendars": [
-        "У карыстальнікаў не будзе магчымасці кіраваць іх календарамі"
+        "У карыстальнікаў не будзе магчымасці кіраваць сваімі календарамі"
       ],
       "Users won’t be able to send emails": [
         "У карыстальнікаў не будзе магчымасці адпраўляць электронныя лісты"
@@ -14781,6 +14863,9 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Сістэмныя падпапкі будуць адлюстроўвацца ў якасці асобных папак у ${ MAIL_APP_NAME }"
       ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "Адрас адключаны. Адпраўка паведамленняў прыпынена. Перападключыцеся, каб уключыць гэты адрас яшчэ раз."
+      ],
       "The import will start with the most recent messages.": [
         "Імпартаванне пачнецца з самых апошніх паведамленняў."
       ],
@@ -15380,7 +15465,7 @@
         "Зашыфраваны і бяспечны адрас электроннай пошты ${ MAIL_APP_NAME }. Вы можаце лёгка адправіць Bitcoin любому карыстальніку, выкарыстоўваючы толькі яго імя ${ BRAND_NAME }."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
-        "Бяспечна абменьвайцеся Bitcoin праз электронную пошту замест складаных, 26-значных адрасоў Bitcoin, у якіх лёгка памыліцца пры ўводзе"
+        "Бяспечна абменьвайцеся Bitcoin праз электронную пошту замест складаных 26-значных адрасоў Bitcoin, у якіх лёгка памыліцца пры ўводзе"
       ]
     },
     "wallet_signup_2024:app-switcher": {
