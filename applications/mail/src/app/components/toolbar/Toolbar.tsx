@@ -6,11 +6,10 @@ import { pick } from '@proton/shared/lib/helpers/object';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
-import ToolbarAddressesDropdown from 'proton-mail/components/toolbar/ToolbarAddressesDropdown';
-
 import { isLabelIDNewsletterSubscription } from '../../helpers/labels';
 import type { Props as ListSettingsProps } from '../list/ListSettings';
 import type { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
+import ClaimProtonAddressToolbarButton from './ClaimProtonAddressToolbarButton';
 import SelectAll from './SelectAll';
 import ToolbarColumnWide from './ToolbarColumnWide';
 import ToolbarHeaderMessageNarrow from './ToolbarHeaderMessageNarrow';
@@ -88,7 +87,7 @@ const Toolbar = (props: Props) => {
         // Base css class
         classname,
         selectAll: <SelectAll {...selectAllProps} />,
-        addressesDropdown: <ToolbarAddressesDropdown labelID={props.labelID} selectedIDs={selectedIDs} />,
+        addressesDropdown: <ClaimProtonAddressToolbarButton />,
     };
 
     switch (variant) {
