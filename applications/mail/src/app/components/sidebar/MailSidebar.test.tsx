@@ -7,11 +7,14 @@ import { getModelState } from '@proton/account/test';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { conversationCountsActions } from '@proton/mail';
+import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { ChecklistKey, type Label } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import { buildUser } from '@proton/testing/builders';
+import { useFlag } from '@proton/unleash';
 import range from '@proton/utils/range';
 
 import type { OnboardingChecklistContext } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
@@ -26,6 +29,8 @@ jest.mock('@proton/account/userSettings/hooks');
 const mockedUserSettings = useUserSettings as jest.MockedFunction<any>;
 
 loudRejection();
+
+const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
 
 const labelID = 'labelID';
 
@@ -70,6 +75,14 @@ const systemFolders = [
         Type: LABEL_TYPE.SYSTEM_FOLDER,
         Order: 5,
         Display: SYSTEM_FOLDER_SECTION.MAIN,
+    },
+    {
+        ID: MAILBOX_LABEL_IDS.SOFT_DELETED,
+        Name: 'deleted',
+        Path: 'deleted',
+        Type: LABEL_TYPE.SYSTEM_FOLDER,
+        Order: 10,
+        Display: SYSTEM_FOLDER_SECTION.MORE,
     },
     {
         ID: MAILBOX_LABEL_IDS.ALL_MAIL,
@@ -146,6 +159,70 @@ describe('MailSidebar', () => {
         getAllByText(dropdown, 'Proton Calendar');
         getAllByText(dropdown, 'Proton Drive');
         getAllByText(dropdown, 'Proton VPN');
+    });
+
+    it('should show Deleted folder for admin user', async () => {
+        mockUseFlag.mockImplementation((flag) => {
+            if (flag === 'DataRetentionPolicy') {
+                return true;
+            }
+            return false;
+        });
+
+        setupTest();
+
+        await mailTestRender(<MailSidebar {...props} />, {
+            preloadedState: {
+                user: getModelState(buildUser({ ID: undefined, isAdmin: true })),
+                categories: getModelState(systemFolders),
+            },
+        });
+
+        const deletedFolder = screen.getByTestId('navigation-link:deleted');
+        expect(deletedFolder).toBeInTheDocument();
+        expect(deletedFolder.textContent).toBe('Deleted');
+    });
+
+    it('should show Deleted folder for signed in as admin user', async () => {
+        mockUseFlag.mockImplementation((flag) => {
+            if (flag === 'DataRetentionPolicy') {
+                return true;
+            }
+            return false;
+        });
+
+        setupTest();
+        await mailTestRender(<MailSidebar {...props} />, {
+            preloadedState: {
+                user: getModelState(buildUser({ ID: undefined, isAdmin: false, accessType: AccessType.AdminAccess })),
+                categories: getModelState(systemFolders),
+            },
+        });
+
+        const deletedFolder = screen.getByTestId('navigation-link:deleted');
+        expect(deletedFolder).toBeInTheDocument();
+        expect(deletedFolder.textContent).toBe('Deleted');
+    });
+
+    it('should not show Deleted folder for non-admin user', async () => {
+        mockUseFlag.mockImplementation((flag) => {
+            if (flag === 'DataRetentionPolicy') {
+                return true;
+            }
+            return false;
+        });
+
+        setupTest();
+
+        await mailTestRender(<MailSidebar {...props} />, {
+            preloadedState: {
+                user: getModelState(buildUser({ ID: undefined, isAdmin: false })),
+                categories: getModelState(systemFolders),
+            },
+        });
+
+        const deletedFolder = screen.queryByTestId('navigation-link:deleted');
+        expect(deletedFolder).toBeNull();
     });
 
     it('should show folder tree', async () => {
@@ -377,6 +454,7 @@ describe('MailSidebar', () => {
             assertFocus(Drafts);
             range(0, 3).forEach(down);
             assertFocus(More);
+            down();
             down();
             assertFocus(Folders);
             down();

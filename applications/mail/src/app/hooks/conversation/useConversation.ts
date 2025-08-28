@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { useEventManager } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import { isAlwaysMessageLabels } from '@proton/mail/helpers/location';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -62,6 +63,7 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
     const isMounted = useIsMounted();
     const { call } = useEventManager();
     const conversationState = useMailSelector((state) => conversationByID(state, { ID: inputConversationID }));
+    const currentLabelID = useMailSelector((state) => state.elements.params.labelID);
 
     const init = (conversationID: string): ConversationStateOptional | undefined => {
         if (conversationState) {
@@ -100,6 +102,11 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
     const [conversation, setConversation] = useState<ConversationStateOptional | undefined>(() => init(conversationID));
 
     const load = async (conversationID: string, messageID: string | undefined) => {
+        // Don't load conversation data in message-only folders like deleted, drafts, sent, etc.
+        if (currentLabelID && isAlwaysMessageLabels(currentLabelID)) {
+            return;
+        }
+
         const existingConversation = getConversation(conversationID);
         if ((existingConversation?.loadRetry || 0) > LOAD_RETRY_COUNT) {
             // Max retries reach, aborting

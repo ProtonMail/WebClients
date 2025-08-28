@@ -14,6 +14,7 @@ export interface UseMoveSystemFoldersProps {
     showScheduled: boolean;
     showSnoozed: boolean;
     showAlmostAllMail: MailSettings['AlmostAllMail'];
+    showSoftDeletedFolder: boolean;
 }
 
 export enum SYSTEM_FOLDER_SECTION {
@@ -61,6 +62,7 @@ const useMoveSystemFolders = ({
     showScheduled,
     showSnoozed,
     showAlmostAllMail,
+    showSoftDeletedFolder,
 }: UseMoveSystemFoldersProps): UseSidebarElementsResponse => {
     const api = useApi();
     const abortUpdateOrderCallRef = useRef<AbortController>(new AbortController());
@@ -130,13 +132,14 @@ const useMoveSystemFolders = ({
                 showScheduled,
                 showSnoozed,
                 showAlmostAllMail,
+                showSoftDeletedFolder,
                 formattedLabels
             );
 
             setSystemFolders(orderedSystemFolders);
             setUnexpectedSystemFolderIDs(unexpectedFolderIDs);
         }
-    }, [systemFoldersFromApi, showMoved, showSnoozed, showScheduled, showAlmostAllMail]);
+    }, [systemFoldersFromApi, showMoved, showSnoozed, showScheduled, showAlmostAllMail, showSoftDeletedFolder]);
 
     return [visibleSystemFolders, moveItem, loading];
 };

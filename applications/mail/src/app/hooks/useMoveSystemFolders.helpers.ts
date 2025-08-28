@@ -164,7 +164,8 @@ export const getDefaultSystemFolders = (
     showMoved: UseMoveSystemFoldersProps['showMoved'],
     showScheduled: UseMoveSystemFoldersProps['showScheduled'],
     showSnoozed: UseMoveSystemFoldersProps['showSnoozed'],
-    showAlmostAllMail: UseMoveSystemFoldersProps['showAlmostAllMail']
+    showAlmostAllMail: UseMoveSystemFoldersProps['showAlmostAllMail'],
+    showSoftDeletedFolder: UseMoveSystemFoldersProps['showSoftDeletedFolder']
 ): BaseSystemFolder[] => [
     {
         labelID: MAILBOX_LABEL_IDS.INBOX,
@@ -275,13 +276,22 @@ export const getDefaultSystemFolders = (
         display: SYSTEM_FOLDER_SECTION.MORE,
     },
     {
+        labelID: MAILBOX_LABEL_IDS.SOFT_DELETED,
+        icon: 'trash-clock',
+        text: c('Link').t`Deleted`,
+        ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SOFT_DELETED],
+        visible: showSoftDeletedFolder,
+        order: 12,
+        display: SYSTEM_FOLDER_SECTION.MORE,
+    },
+    {
         labelID: MAILBOX_LABEL_IDS.ALL_MAIL,
         icon: 'envelopes',
         text: c('Link').t`All mail`,
         shortcutText: '[G] [M]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_MAIL],
         visible: !showAlmostAllMail,
-        order: 12,
+        order: 13,
         display: SYSTEM_FOLDER_SECTION.MORE,
     },
     {
@@ -290,7 +300,7 @@ export const getDefaultSystemFolders = (
         icon: 'arrow-right',
         text: c('Link').t`Outbox`,
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.OUTBOX],
-        order: 13,
+        order: 14,
         visible: false,
         display: SYSTEM_FOLDER_SECTION.MORE,
     },
@@ -301,7 +311,7 @@ export const getDefaultSystemFolders = (
         shortcutText: '[G] [M]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
         visible: !!showAlmostAllMail,
-        order: 14,
+        order: 15,
         display: SYSTEM_FOLDER_SECTION.MORE,
     },
 ];
@@ -311,10 +321,17 @@ export const getSidebarNavItems = (
     showScheduled: UseMoveSystemFoldersProps['showScheduled'],
     showSnoozed: UseMoveSystemFoldersProps['showSnoozed'],
     showAlmostAllMail: UseMoveSystemFoldersProps['showAlmostAllMail'],
+    showSoftDeletedFolder: UseMoveSystemFoldersProps['showSoftDeletedFolder'],
     apiSystemFolders: SystemFolderPayload[]
 ): { orderedSystemFolders: SystemFolder[]; unexpectedFolderIDs: MAILBOX_LABEL_IDS[] } => {
     /** Harcoded system folders, used to complete missing infos in API fetched ones */
-    const defaultSystemFolders = getDefaultSystemFolders(showMoved, showScheduled, showSnoozed, showAlmostAllMail);
+    const defaultSystemFolders = getDefaultSystemFolders(
+        showMoved,
+        showScheduled,
+        showSnoozed,
+        showAlmostAllMail,
+        showSoftDeletedFolder
+    );
 
     /**
      * 1 - Fill the needed data from API

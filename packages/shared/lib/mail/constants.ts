@@ -100,6 +100,7 @@ export const LABEL_IDS_TO_HUMAN = {
     [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS]: 'transactions',
     [MAILBOX_LABEL_IDS.CATEGORY_UPDATES]: 'updates',
     [MAILBOX_LABEL_IDS.CATEGORY_FORUMS]: 'forums',
+    [MAILBOX_LABEL_IDS.SOFT_DELETED]: 'deleted',
 };
 
 export const HUMAN_TO_LABEL_IDS = Object.entries(LABEL_IDS_TO_HUMAN).reduce((acc, [key, value]) => {
@@ -115,6 +116,7 @@ export const LABELS_UNMODIFIABLE_BY_USER = [
     MAILBOX_LABEL_IDS.OUTBOX,
     MAILBOX_LABEL_IDS.SCHEDULED,
     MAILBOX_LABEL_IDS.SNOOZED,
+    MAILBOX_LABEL_IDS.SOFT_DELETED,
 ];
 
 // Built-in system folders
