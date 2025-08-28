@@ -4,7 +4,6 @@ import { c } from 'ttag';
 import { Info, Price, Time } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
-import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/components/containers/payments/RenewalNotice';
 import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
@@ -13,14 +12,15 @@ import {
     type Plan,
     SubscriptionMode,
     TRIAL_DURATION_DAYS,
+    getCheckout,
     getHas2024OfferCoupon,
     getIsB2BAudienceFromPlan,
     getPricingFromPlanIDs,
     getTotalFromPricing,
     isTaxInclusive,
 } from '@proton/payments';
+import { InclusiveVatText } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';

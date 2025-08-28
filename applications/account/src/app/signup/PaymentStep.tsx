@@ -14,7 +14,6 @@ import {
     useHandler,
 } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
-import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { getAllowedCycles } from '@proton/components/containers/payments/subscription/helpers';
@@ -32,14 +31,20 @@ import {
     type PlanIDs,
     getIsB2BAudienceFromPlan,
     getIsConsumerVpnPlan,
+    getIsCustomCycle,
     getPaymentsVersion,
     getPlanNameFromIDs,
     getPlansMap,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
-import { type OnBillingAddressChange, PayButton, useTaxCountry, useVatNumber } from '@proton/payments/ui';
-import { getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';
+import {
+    InclusiveVatText,
+    type OnBillingAddressChange,
+    PayButton,
+    useTaxCountry,
+    useVatNumber,
+} from '@proton/payments/ui';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
