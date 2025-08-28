@@ -34,7 +34,6 @@ import {
     hasVPNPassBundle,
     hasVpnBusiness,
     hasVpnPro,
-    hasWallet,
     isTrial,
 } from '@proton/payments';
 import { type PreloadedPaymentsContextType, getPlanToCheck, usePaymentsPreloaded } from '@proton/payments/ui';
@@ -725,7 +724,6 @@ const hasOnePlusSubscription = (subscription: Subscription) => {
         hasMail(subscription) ||
         hasDrive(subscription) ||
         hasPass(subscription) ||
-        hasWallet(subscription) ||
         hasDeprecatedVPN(subscription) ||
         hasVPNPassBundle(subscription) ||
         hasVPN2024(subscription)
