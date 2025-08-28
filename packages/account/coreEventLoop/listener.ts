@@ -3,6 +3,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 
 import { addressesLoop } from '../addresses/eventLoopV6';
 import type { CoreEventLoopV6Callback, CoreEventLoopV6RequiredState } from '../coreEventLoop/interface';
+import { delegatedAccessLoop } from '../delegatedAccess/eventLoopV6';
 import { domainsLoop } from '../domains/eventLoopV6';
 import { groupMembersLoop } from '../groupMembers/eventLoopV6';
 import { groupsLoop } from '../groups/eventLoopV6';
@@ -30,6 +31,7 @@ const loops: CoreEventLoopV6Callback[] = [
     userInvitationsLoops,
     samlSSOLoop,
     groupsLoop,
+    delegatedAccessLoop,
 ];
 Object.freeze(loops);
 

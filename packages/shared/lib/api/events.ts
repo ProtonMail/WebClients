@@ -92,6 +92,8 @@ export interface CoreEventV6Response extends EventV6Defaults {
     ImportReports: EventV6Response;
     ImporterSyncs: EventV6Response;
     Invoices: EventV6Response;
+    OutgoingDelegatedAccess: EventV6Response;
+    IncomingDelegatedAccess: EventV6Response;
 }
 
 export interface MailEventV6Response extends EventV6Defaults {
