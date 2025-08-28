@@ -220,6 +220,9 @@
       "Cancel": [
         "Скасаваць"
       ],
+      "Cancel request": [
+        "Скасаваць запыт"
+      ],
       "Cancel subscription": [
         "Скасаваць падпіску"
       ],
@@ -1081,6 +1084,9 @@
       "refresh the page": [
         "абнавіць старонку"
       ],
+      "Refuse access": [
+        "Адмовіць у доступе"
+      ],
       "Reject": [
         "Адхіліць"
       ],
@@ -1191,6 +1197,9 @@
       ],
       "Revoke ${ name }": [
         "Адклікаць ${ name }"
+      ],
+      "Revoke access": [
+        "Адклікаць доступ"
       ],
       "Revoke all other sessions": [
         "Адклікаць усе іншыя сеансы"
@@ -1739,6 +1748,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Згенерыраваць прапушчаныя ключы для адраса “${ emailAddress }”"
       ],
+      "Reconnect": [
+        "Перападключыцца"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Перападключыць адрас \"${ emailAddress }\""
+      ],
       "Saving": [
         "Захаванне"
       ],
@@ -1760,6 +1775,9 @@
         "Прадвызначаны"
       ],
       "Disabled": [
+        "Адключана"
+      ],
+      "Disconnected": [
         "Адключана"
       ],
       "External": [
@@ -2002,7 +2020,7 @@
         "Купіць"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
-        "Выведзіце прадукцыйнасць электроннай пошты на новы ўзровень. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
+        "Выведзіце прадукцыйнасць электроннай пошты на новыя ўзроўні. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
       ],
       "Trial expires on ${ formattedDate }": [
         "Пробны перыяд міне ${ formattedDate }"
@@ -5243,17 +5261,29 @@
         "Засталося ${ n } дзён",
         "Засталося ${ n } дзён"
       ],
+      "${ user } is requesting emergency access to your account": [
+        "${ user } запытвае экстраны доступ да вашага ўліковага запісу"
+      ],
       "${ user } will be able to use your account and change your data.": [
         "У ${ user } будзе магчымасць выкарыстоўваць ваш уліковы запіс і змяняць вашы даныя."
       ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user } выйдзе са свайго ўліковага запісу і ў яго не не будзе магчымасці атрымаць доступ да яго яшчэ раз пакуль не наступіць чарговы экстранны доступ."
+      ],
       "${ user } will no longer be able to request access to your account in case of emergency.": [
         "${ user } больш не зможа запытваць доступ да вашага ўліковага запісу ў выпадку экстраннай сітуацыі."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } не зможа атрымаць доступ да вашага ўліковага запісу пакуль не наступіць чарговы экстранны доступ."
       ],
       "Access granted": [
         "Доступ дазволены"
       ],
       "Access granted on ${ formattedAccessibleAt }": [
         "Доступ прадастаўлены ў ${ formattedAccessibleAt }"
+      ],
+      "Access request canceled": [
+        "Запыт на доступ скасаваны"
       ],
       "Access requested": [
         "Доступ запытаны"
@@ -5269,6 +5299,9 @@
       ],
       "Added on ${ formattedDate }": [
         "Дададзена ${ formattedDate }"
+      ],
+      "Cancel request?": [
+        "Скасаваць запыт?"
       ],
       "Change access wait time": [
         "Змяніць час чакання доступу"
@@ -5297,8 +5330,17 @@
       "Emergency access granted": [
         "Экстранны доступ прадастаўлены"
       ],
+      "Emergency access refused": [
+        "У экстраным доступе адмоўлена"
+      ],
+      "Emergency access request": [
+        "Запыт экстранага доступу"
+      ],
       "Emergency access requested": [
         "Экстраны доступ запытаны"
+      ],
+      "Emergency access revoked": [
+        "Экстраны доступ адкліканы"
       ],
       "Emergency contact added": [
         "Экстранны кантакт дададзены"
@@ -5342,6 +5384,12 @@
       "Protect your legacy with emergency access": [
         "Абараніце свае даныя з дапамогай экстраннага доступу"
       ],
+      "Refuse access": [
+        "Адмовіць у доступе"
+      ],
+      "Refuse access?": [
+        "Адмовіць у доступе?"
+      ],
       "Remove trusted contact": [
         "Выдаліць давераны кантакт"
       ],
@@ -5354,6 +5402,12 @@
       "Requesting access": [
         "Запыт доступу"
       ],
+      "Revoke access": [
+        "Адклікаць доступ"
+      ],
+      "Revoke access?": [
+        "Адклікаць доступ?"
+      ],
       "Stop being trusted contact?": [
         "Перастаць быць давераным кантактам?"
       ],
@@ -5365,6 +5419,12 @@
       ],
       "They may ask to access my account in case of an emergency.": [
         "Яны могуць папрасіць доступ да майго ўліковага запісу ў выпадку экстраннай сітуацыі."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "Яны атрымаюць доступ аўтаматычна праз **${ days } дзень** у **${ formattedAccessibleAt }**. Вы можаце адхіліць іх запыт або даць ім доступ неадкладна ў любы час.",
+        "Яны атрымаюць доступ аўтаматычна праз **${ days } дні** ў **${ formattedAccessibleAt }**. Вы можаце адхіліць іх запыт або даць ім доступ неадкладна ў любы час.",
+        "Яны атрымаюць доступ аўтаматычна праз **${ days } дзён** у **${ formattedAccessibleAt }**. Вы можаце адхіліць іх запыт або даць ім доступ неадкладна ў любы час.",
+        "Яны атрымаюць доступ аўтаматычна праз **${ days } дзён** у **${ formattedAccessibleAt }**. Вы можаце адхіліць іх запыт або даць ім доступ неадкладна ў любы час."
       ],
       "This will take effect immediately.": [
         "Гэта дзеянне ўступіць у сілу неадкладна."
@@ -5422,6 +5482,9 @@
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Вы больш не зможаце запытваць доступ да ўліковага запісу ${ user } у выпадку экстраннай сітуацыі."
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "Вы ўсё яшчэ зможаце запытаць доступ да ўліковага запісу ${ user } праз некаторы час."
       ],
       "You'll receive access to their account immediately.": [
         "Vous recevrez un accès à leur compte immédiatement."
@@ -6508,7 +6571,7 @@
         "Запрашэнне ад ${ invitation.OrganizationName }"
       ],
       "Invited by: ${ inviteEmail }": [
-        "Запрашэнне адпраўлена: ${ inviteEmail }"
+        "Запрашэнне ад: ${ inviteEmail }"
       ],
       "Leave ${ PASS_SHORT_APP_NAME } Family plan": [
         "Выйсці з тарыфнага плана ${ PASS_SHORT_APP_NAME }"
@@ -9241,7 +9304,7 @@
         "У вас будзе магчымасць ${ signedInPasswordResetLink }, калі вы ўвайшлі на якой-небудзь іншай прыладзе."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Калі вы ўпэўнены, што гэта памылка, напішыце нам на адрас ${ contactLink }."
+        "Калі вы ўпэўнены, што гэта памылка, звяжыцеся з намі ${ contactLink }."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Калі вы скасуеце, ваша падпіска ${ planTitle } не будзе падоўжана пасля завяршэння тэрміну яе дзеяння ${ expiryDate }."
@@ -11185,7 +11248,7 @@
         "Вы захаваеце пажыццёвы доступ да прэміяльных функцый ${ PASS_APP_NAME } + SimpleLogin, калі скасуеце сваю падпіску."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
-        "Вы страціце доступ да ${ planTitle } функцыі пасля гэтай даты."
+        "Вы страціце доступ да функцый тарыфнага плана ${ planTitle } пасля гэтай даты."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Вам будзе неабходны адрас ${ BRAND_NAME } для выкарыстання ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
@@ -11517,6 +11580,9 @@
       ],
       "Donation": [
         "Ахвяраванне"
+      ],
+      "Manual": [
+        "Уручную"
       ],
       "Modification": [
         "Змяненне"
@@ -16616,7 +16682,7 @@
         "CVC"
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
-        "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змены. Дзякуй за ваша цярпенне."
+        "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змяненні. Дзякуй за ваша цярпенне."
       ],
       "Got it": [
         "Зразумела"
@@ -17987,10 +18053,10 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Выяўлены ${ name } і ${ remainingCount } іншыя(х) патэнцыяльныя(х) ўцечкі(ак). Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+        "Выяўлены іншыя патэнцыяльныя ўцечкі ${ name } і ${ remainingCount }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Выяўлены ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+        "Выяўлена ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
@@ -18364,7 +18430,7 @@
         "Калі вы выйдзеце з сістэмы да скідання пароля, вы можаце страціць доступ да вашага ўліковага запісу."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "Калі вы выйдзеце з сістэмы без скідання пароля, вы можаце страціць доступ да вашага ўліковага запісу."
+        "Вы можаце страціць доступ да вашага ўліковага запісу, калі выйсці з сістэмы без скідання пароля."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "Вы зможаце скінуць свой пароль праз ${ boldTimeLeft }."
@@ -19593,7 +19659,7 @@
         "сховішча ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } ${ percentage }% запоўнена"
+        "${ storage } запоўнена на ${ percentage }%"
       ],
       "**${ humanUsedSpace }** of ${ humanMaxSpace }": [
         "**${ humanUsedSpace }** з ${ humanMaxSpace }"
@@ -20117,7 +20183,7 @@
         "Падпіскі карыстальнікаў з'яўляюцца адзінай крыніцай прыбытку ${ BRAND_NAME }. Ваша падтрымка забяспечвае нам незалежнасць, спрыяе нашай місіі захавання прыватнасці ў інтэрнэце і дапамагае актывістам і арганізацыям, якія змагаюцца за свабоду."
       ],
       "Users won’t be able to manage their calendars": [
-        "У карыстальнікаў не будзе магчымасці кіраваць іх календарамі"
+        "У карыстальнікаў не будзе магчымасці кіраваць сваімі календарамі"
       ],
       "Users won’t be able to send emails": [
         "У карыстальнікаў не будзе магчымасці адпраўляць электронныя лісты"
@@ -22546,6 +22612,9 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Сістэмныя падпапкі будуць адлюстроўвацца ў якасці асобных папак у ${ MAIL_APP_NAME }"
       ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "Адрас адключаны. Адпраўка паведамленняў прыпынена. Перападключыцеся, каб уключыць гэты адрас яшчэ раз."
+      ],
       "The import will start with the most recent messages.": [
         "Імпартаванне пачнецца з самых апошніх паведамленняў."
       ],
@@ -23326,7 +23395,7 @@
         "Наш самы эксклюзіўны тарыфны план. Атрымайце ранні доступ да новых функцый і ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
-        "Бяспечна абменьвайцеся Bitcoin праз электронную пошту замест складаных, 26-значных адрасоў Bitcoin, у якіх лёгка памыліцца пры ўводзе"
+        "Бяспечна абменьвайцеся Bitcoin праз электронную пошту замест складаных 26-значных адрасоў Bitcoin, у якіх лёгка памыліцца пры ўводзе"
       ],
       "Securely hold and transact Bitcoin for free.": [
         "Бяспечна захоўвайце і здзяйсняйце трансакцыі з Bitcoin бясплатна."

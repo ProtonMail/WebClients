@@ -220,6 +220,9 @@
       "Cancel": [
         "Abbrechen"
       ],
+      "Cancel request": [
+        "Anfrage abbrechen"
+      ],
       "Cancel subscription": [
         "Abonnement kündigen"
       ],
@@ -1081,6 +1084,9 @@
       "refresh the page": [
         "aktualisiere die Seite"
       ],
+      "Refuse access": [
+        "Zugriff verweigern"
+      ],
       "Reject": [
         "Ablehnen"
       ],
@@ -1191,6 +1197,9 @@
       ],
       "Revoke ${ name }": [
         "${ name } widerrufen"
+      ],
+      "Revoke access": [
+        "Zugriff widerrufen"
       ],
       "Revoke all other sessions": [
         "Alle anderen Sitzungen widerrufen"
@@ -1729,6 +1738,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Fehlende Schlüssel generieren für E-Mail-Adresse “${ emailAddress }”"
       ],
+      "Reconnect": [
+        "Erneut verbinden"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "E-Mail-Adresse „${ emailAddress }“ neu verbinden"
+      ],
       "Saving": [
         "Wird gespeichert"
       ],
@@ -1751,6 +1766,9 @@
       ],
       "Disabled": [
         "Deaktiviert"
+      ],
+      "Disconnected": [
+        "Getrennt"
       ],
       "External": [
         "Extern"
@@ -5254,17 +5272,29 @@
         "${ n } verbleibender Tag",
         "${ n } verbleibende Tage"
       ],
+      "${ user } is requesting emergency access to your account": [
+        "${ user } fordert Notfallzugang auf dein Konto an."
+      ],
       "${ user } will be able to use your account and change your data.": [
         "${ user } wird dein Konto nutzen und deine Daten ändern können."
       ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user } wird von deinem Konto abgemeldet und kann bis zum nächsten Notfallzugang nicht wieder darauf zugreifen."
+      ],
       "${ user } will no longer be able to request access to your account in case of emergency.": [
         "${ user } kann im Notfall keinen Zugriff mehr auf dein Konto anfordern."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } wird erst beim nächsten Notfallzugang auf dein Konto zugreifen können."
       ],
       "Access granted": [
         "Zugriff gewährt"
       ],
       "Access granted on ${ formattedAccessibleAt }": [
         "Zugriff gewährt am ${ formattedAccessibleAt }"
+      ],
+      "Access request canceled": [
+        "Zugriffsanfrage abgebrochen"
       ],
       "Access requested": [
         "Zugriff angefordert"
@@ -5280,6 +5310,9 @@
       ],
       "Added on ${ formattedDate }": [
         "Hinzugefügt am ${ formattedDate }"
+      ],
+      "Cancel request?": [
+        "Anfrage abbrechen?"
       ],
       "Change access wait time": [
         "Zugriffswartezeit ändern"
@@ -5308,8 +5341,17 @@
       "Emergency access granted": [
         "Notfallzugang gewährt"
       ],
+      "Emergency access refused": [
+        "Notfallzugang abgelehnt"
+      ],
+      "Emergency access request": [
+        "Notfallzugang beantragt"
+      ],
       "Emergency access requested": [
         "Notfallzugang beantragt"
+      ],
+      "Emergency access revoked": [
+        "Notfallzugang widerrufen"
       ],
       "Emergency contact added": [
         "Notfallkontakt hinzugefügt"
@@ -5353,6 +5395,12 @@
       "Protect your legacy with emergency access": [
         "Schütze dein Erbe mit einem Notfallzugriff"
       ],
+      "Refuse access": [
+        "Zugriff verweigern"
+      ],
+      "Refuse access?": [
+        "Zugriff verweigern?"
+      ],
       "Remove trusted contact": [
         "Vertrauenswürdigen Kontakt entfernen"
       ],
@@ -5365,6 +5413,12 @@
       "Requesting access": [
         "Zugriff wird angefordert"
       ],
+      "Revoke access": [
+        "Zugriff widerrufen"
+      ],
+      "Revoke access?": [
+        "Zugriff widerrufen?"
+      ],
       "Stop being trusted contact?": [
         "Kein vertrauenswürdiger Kontakt mehr?"
       ],
@@ -5376,6 +5430,10 @@
       ],
       "They may ask to access my account in case of an emergency.": [
         "Sie könnten im Notfall den Zugriff auf mein Konto anfragen."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "Sie erhalten automatisch Zugang in **${ days } Tag**, am **${ formattedAccessibleAt }**. Du kannst ihre Anfrage ablehnen oder ihnen jederzeit sofort Zugang gewähren.",
+        "Sie erhalten automatisch Zugriff in **${ days } Tagen**, am **${ formattedAccessibleAt }**. Du kannst ihre Anfrage jederzeit ablehnen oder ihnen sofort Zugriff gewähren."
       ],
       "This will take effect immediately.": [
         "Das wird sofort wirksam."
@@ -5431,6 +5489,9 @@
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Du kannst im Notfall keinen Zugriff mehr auf das Konto von ${ user } anfordern."
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "Du kannst immer noch später Zugriff auf das Konto von ${ user } anfordern."
       ],
       "You'll receive access to their account immediately.": [
         "Du erhältst sofort Zugriff auf deren Konto."
@@ -11330,6 +11391,9 @@
       ],
       "Donation": [
         "Spende"
+      ],
+      "Manual": [
+        "Manuell"
       ],
       "Modification": [
         "Änderung"
@@ -22077,6 +22141,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemunterordner werden in ${ MAIL_APP_NAME } als separate Ordner angezeigt"
+      ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "Die E-Mail-Adresse wurde getrennt. Das Senden von Nachrichten ist pausiert. Verbinde dich wieder, um diese E-Mail-Adresse wieder zu aktivieren."
       ],
       "The import will start with the most recent messages.": [
         "Der Import beginnt mit den neuesten Nachrichten."

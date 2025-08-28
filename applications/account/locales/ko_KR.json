@@ -1069,6 +1069,9 @@
       "Refer a friend": [
         "친구 초대"
       ],
+      "Refresh": [
+        "새로고침"
+      ],
       "Refresh status": [
         "상태 새로고침"
       ],
@@ -1721,6 +1724,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "주소 “${ emailAddress }”에 대한 누락된 키 생성"
       ],
+      "Reconnect": [
+        "재연결"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "주소 \"${ emailAddress }\" 재연결"
+      ],
       "Saving": [
         "저장 중"
       ],
@@ -1743,6 +1752,9 @@
       ],
       "Disabled": [
         "비활성화됨"
+      ],
+      "Disconnected": [
+        "연결 해제됨"
       ],
       "External": [
         "외부"
@@ -8010,6 +8022,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "요금 미납으로 인해 계정 액세스가 제한되었습니다. 관리자에게 문의하세요."
       ],
+      "Account monitor": [
+        "계정 모니터링"
+      ],
       "account recovery and data recovery method": [
         "계정 복구 및 데이터 복구 방법"
       ],
@@ -8117,6 +8132,9 @@
       ],
       "Allocated": [
         "할당 됨"
+      ],
+      "Allow logging of location and connection details": [
+        "위치 및 연결 세부사항 로깅 허용"
       ],
       "Allow recovery by email": [
         "이메일을 통한 복구 허용"
@@ -8523,6 +8541,9 @@
       "Disabled countries": [
         "비활성화된 국가"
       ],
+      "Disabled on ${ boldValue }": [
+        "${ boldValue }에 비활성화됨"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "2단계 인증을 비활성화하면 계정의 보안이 약해집니다. 꼭 필요한 경우에만 진행하세요."
       ],
@@ -8675,6 +8696,9 @@
       ],
       "Enabled countries": [
         "활성화된 국가"
+      ],
+      "Enabled on ${ boldValue }": [
+        "${ boldValue }에 활성화됨"
       ],
       "Enabling auto-deletion…": [
         "자동 삭제 활성화 중…"
@@ -8840,6 +8864,9 @@
       ],
       "Gain visibility across your organization": [
         "회원님의 조직 전체에 걸쳐 가시성을 확보하세요"
+      ],
+      "Gateway monitor": [
+        "게이트웨이 감시"
       ],
       "Gateways": [
         "게이트웨이"
@@ -9023,6 +9050,9 @@
       ],
       "inactive": [
         "비활성화"
+      ],
+      "Include device, location, and IP details": [
+        "기기, 위치 및 IP 정보 포함"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "${ formattedTaxRate }% ${ taxName } 포함: ${ price }"
@@ -9462,6 +9492,9 @@
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "조직 구성원이 비밀번호나 PIN 비밀번호 등으로 ${ PASS_APP_NAME } 잠금을 해제해야 합니다."
       ],
+      "Organization monitor": [
+        "조직 모니터링"
+      ],
       "Organization size": [
         "조직 크기"
       ],
@@ -9512,6 +9545,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - 커스텀 이메일 주소 삭제됨"
+      ],
+      "Pass usage logs": [
+        "Pass 사용 로그"
       ],
       "password": [
         "비밀번호"
@@ -10461,6 +10497,9 @@
       "View and manage your groups.": [
         "그룹을 확인 및 관리하세요."
       ],
+      "View VPN session details for your organization.": [
+        "조직의 VPN 세션 상세 사항을 확인하세요."
+      ],
       "View, download, and manage your invoices.": [
         "청구서를 확인, 다운로드 및 관리하세요."
       ],
@@ -11118,6 +11157,9 @@
       ],
       "Donation": [
         "기부"
+      ],
+      "Manual": [
+        "매뉴얼"
       ],
       "Modification": [
         "수정"
@@ -13097,6 +13139,9 @@
       "Learn more": [
         "더 알아보기"
       ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "${ BRAND_NAME }을 계속 사용하려면 프리미엄 기능을 더 이상 사용하지 않는지 확인하거나 플랜을 업그레이드해주세요."
+      ],
       "upgrade for more storage": [
         "추가 저장 공간을 위해 업그레이드 하세요."
       ],
@@ -13344,6 +13389,15 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "커스텀 이메일 주소 (예: you@yourcompany.com)을 설정하려면 ${ BRAND_NAME }에 사용자의 지정 도메인을 연결하세요. 마법사가 이 과정을 가이드해 드립니다."
+      ],
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "조직 전체에 걸친 ${ PASS_APP_NAME } 활동을 확인하세요."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "조직의 변경 사항 및 기타 관리자 활동을 확인하세요."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "로그인, 복구 및 보안 이벤트를 조회하세요."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "무료 체험이 종료되었습니다. 계정 접근이 곧 비활성화 됩니다. ${ action }"
@@ -14787,6 +14841,9 @@
       "Invalid code": [
         "잘못된 코드입니다."
       ],
+      "Invalid input. Search an email or detail.": [
+        "유효하지 않은 입력입니다. 이메일 또는 세부사항으로 검색하세요."
+      ],
       "Invalid input. Search an email or IP address.": [
         "유효하지 않은 입력입니다. 이메일 및 IP 주소를 검색해 보세요."
       ],
@@ -15258,6 +15315,9 @@
       "It's too expensive": [
         "너무 비쌉니다"
       ],
+      "Label as...": [
+        "다음에 라벨 추가..."
+      ],
       "Left to Right": [
         "왼쪽에서 오른쪽으로"
       ],
@@ -15266,6 +15326,9 @@
       ],
       "Mark as read": [
         "읽음으로 표시"
+      ],
+      "Move to...": [
+        "다음으로 이동..."
       ],
       "My reason isn't listed": [
         "기타 사유"
@@ -16051,6 +16114,9 @@
       "Card number": [
         "카드 번호"
       ],
+      "Credits and discounts are reflected in your invoice": [
+        "크레딧 및 할인이 청구서에 반영됩니다"
+      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "현재 자동 구독 갱신이 비활성화되었습니다. 구독을 지금 변경하면, 자동 갱신이 다시 활성화됩니다."
       ],
@@ -16353,6 +16419,9 @@
       ],
       "Search users": [
         "사용자 검색"
+      ],
+      "Search users or details": [
+        "사용자 또는 세부사항 검색"
       ],
       "Select": [
         "선택"
@@ -16711,6 +16780,9 @@
       ],
       "It’s the only way to recover everything—store it safely.": [
         "모든 데이터를 복구할 수 있는 유일한 방법입니다. 안전하게 저장하십시오."
+      ],
+      "Or ${ copyRecoverySwitchButton } as text.": [
+        "또는 텍스트로 ${ copyRecoverySwitchButton }."
       ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "또는 대신 ${ downloadRecoveryKitSwitchButton }."
@@ -20416,6 +20488,9 @@
       "Desktop": [
         "데스크톱"
       ],
+      "Details": [
+        "세부 사항"
+      ],
       "Device": [
         "기기"
       ],
@@ -21702,6 +21777,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }의 시스템 하위폴더가 별도로 폴더를 표시합니다"
+      ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "주소가 연결 해제되었습니다. 메시지 전송이 일시 중지되었습니다. 다시 연결하여 주소를 다시 활성화하십시오."
       ],
       "The import will start with the most recent messages.": [
         "최근의 주된 메시지 불러오기가 곧 시작됩니다."

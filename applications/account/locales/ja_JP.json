@@ -1069,6 +1069,9 @@
       "Refer a friend": [
         "友達を招待"
       ],
+      "Refresh": [
+        "再読み込み"
+      ],
       "Refresh status": [
         "状態を更新"
       ],
@@ -8013,6 +8016,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "未払いの請求があるためアクセスが制限されています。管理者に問い合わせてください。"
       ],
+      "Account monitor": [
+        "アカウントモニター"
+      ],
       "account recovery and data recovery method": [
         "アカウント回復とデータの回復手段"
       ],
@@ -8120,6 +8126,9 @@
       ],
       "Allocated": [
         "割り当て"
+      ],
+      "Allow logging of location and connection details": [
+        "位置情報と接続詳細の記録を許可する"
       ],
       "Allow recovery by email": [
         "メールアドレスでの回復を許可"
@@ -8526,6 +8535,9 @@
       "Disabled countries": [
         "無効な国"
       ],
+      "Disabled on ${ boldValue }": [
+        "${ boldValue }に無効"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "2段階認証を無効にすると、アカウントの安全性が低下します。必要に応じてのみ続行してください。"
       ],
@@ -8678,6 +8690,9 @@
       ],
       "Enabled countries": [
         "有効な国"
+      ],
+      "Enabled on ${ boldValue }": [
+        "${ boldValue }に有効"
       ],
       "Enabling auto-deletion…": [
         "自動消去を有効にしています…"
@@ -8843,6 +8858,9 @@
       ],
       "Gain visibility across your organization": [
         "組織全体での可視性を確保する"
+      ],
+      "Gateway monitor": [
+        "ゲートウェイモニター"
       ],
       "Gateways": [
         "ゲートウェイ"
@@ -9026,6 +9044,9 @@
       ],
       "inactive": [
         "非アクティブ"
+      ],
+      "Include device, location, and IP details": [
+        "デバイス、位置情報、IPの詳細を含める"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "${ formattedTaxRate }% ${ taxName }: ${ price } を含む"
@@ -9465,6 +9486,9 @@
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "組織メンバーはパスワードやPINなどで${ PASS_APP_NAME }のロックを解除しなくてはならなくなります。"
       ],
+      "Organization monitor": [
+        "組織モニター"
+      ],
       "Organization size": [
         "組織の規模"
       ],
@@ -9512,6 +9536,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - カスタムメールが削除されました"
+      ],
+      "Pass usage logs": [
+        "Pass 使用ログ"
       ],
       "password": [
         "パスワード"
@@ -10460,6 +10487,9 @@
       ],
       "View and manage your groups.": [
         "グループの表示と管理"
+      ],
+      "View VPN session details for your organization.": [
+        "組織のVPNセッションの詳細を閲覧"
       ],
       "View, download, and manage your invoices.": [
         "請求書を表示、ダウンロード、管理します。"
@@ -13094,6 +13124,9 @@
       "Learn more": [
         "もっと詳しく"
       ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "${ BRAND_NAME }を継続してご利用いただくには、プレミアムサーバーの機能が使用中でないことをご確認ください。またはプランをアップグレードしてください。"
+      ],
       "upgrade for more storage": [
         "より大きなストレージへアップグレード"
       ],
@@ -13341,6 +13374,15 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "${ BRAND_NAME } に独自ドメインを接続し、独自メールアドレス (例: you@yourcompany.com) をセットアップします。ウィザードの指示に従って操作してください。"
+      ],
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "組織全体で${ PASS_APP_NAME }のアクティビティを表示します。"
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "お客様の組織に対する変更や、その他の管理者アクティビティを表示します。"
+      ],
+      "View user sign-in, recovery and security events.": [
+        "ユーザーのサインイン、回復、セキュリティイベントを閲覧"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "無料トライアルは終了しました。アカウントへのアクセスはまもなく無効になります。${ action }"
@@ -14784,6 +14826,9 @@
       "Invalid code": [
         "無効なコード"
       ],
+      "Invalid input. Search an email or detail.": [
+        "無効な入力です。メールもしくは詳細で検索してください。"
+      ],
       "Invalid input. Search an email or IP address.": [
         "無効な入力です。メールもしくはIPアドレスで検索してください。"
       ],
@@ -15246,11 +15291,17 @@
       "It's too expensive": [
         "料金が高過ぎる"
       ],
+      "Label as...": [
+        "ラベル付け"
+      ],
       "Left to Right": [
         "左から右へ"
       ],
       "Mark as read": [
         "既読にする"
+      ],
+      "Move to...": [
+        "移動先..."
       ],
       "My reason isn't listed": [
         "それ以外の理由"
@@ -16027,6 +16078,9 @@
       "Card number": [
         "カード番号"
       ],
+      "Credits and discounts are reflected in your invoice": [
+        "クレジットおよび割引は、お客様の請求書に反映されます。"
+      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "現在、サブスクリプションの自動更新は無効になっています。今すぐサブスクリプションを変更すると、自動更新が再び有効になります。"
       ],
@@ -16329,6 +16383,9 @@
       ],
       "Search users": [
         "ユーザーを検索"
+      ],
+      "Search users or details": [
+        "ユーザーまたは詳細を検索"
       ],
       "Select": [
         "選択してください"
@@ -20400,6 +20457,9 @@
       ],
       "Desktop": [
         "デスクトップ"
+      ],
+      "Details": [
+        "詳細"
       ],
       "Device": [
         "デバイス"

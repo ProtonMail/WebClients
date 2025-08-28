@@ -1069,6 +1069,9 @@
       "Refer a friend": [
         "Verwijs een vriend door"
       ],
+      "Refresh": [
+        "Vernieuwen"
+      ],
       "Refresh status": [
         "Status vernieuwen"
       ],
@@ -1077,6 +1080,9 @@
       ],
       "refresh the page": [
         "pagina vernieuwen"
+      ],
+      "Refuse access": [
+        "Toegang weigeren"
       ],
       "Reject": [
         "Afwijzen"
@@ -1188,6 +1194,9 @@
       ],
       "Revoke ${ name }": [
         "${ name } intrekken"
+      ],
+      "Revoke access": [
+        "Toegang intrekken"
       ],
       "Revoke all other sessions": [
         "Alle andere sessies beëindigen"
@@ -1726,6 +1735,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Genereer ontbrekende sleutels voor adres \"${ emailAddress }\""
       ],
+      "Reconnect": [
+        "Opnieuw verbinden"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Adres \"${ emailAddress }\" opnieuw verbinden"
+      ],
       "Saving": [
         "Bezig met opslaan"
       ],
@@ -1748,6 +1763,9 @@
       ],
       "Disabled": [
         "Uitgeschakeld"
+      ],
+      "Disconnected": [
+        "Verbinding verbroken"
       ],
       "External": [
         "Extern"
@@ -5251,11 +5269,20 @@
         "${ n } dag resterend",
         "${ n } dagen resterend"
       ],
+      "${ user } is requesting emergency access to your account": [
+        "${ user } vraagt om noodtoegang tot uw account"
+      ],
       "${ user } will be able to use your account and change your data.": [
         "${ user } kan uw account gebruiken en uw gegevens wijzigen."
       ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user } zal worden uitgelogd van uw account en zal er geen toegang meer toe kunnen krijgen tot de volgende noodtoegang."
+      ],
       "${ user } will no longer be able to request access to your account in case of emergency.": [
         "${ user } zal niet langer toegang kunnen aanvragen tot uw account in geval van een noodgeval."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } zal geen toegang kunnen krijgen tot uw account tot de volgende noodtoegang."
       ],
       "Access granted": [
         "Toegang verleend"
@@ -5305,8 +5332,17 @@
       "Emergency access granted": [
         "Noodtoegang verleend"
       ],
+      "Emergency access refused": [
+        "Noodtoegang geweigerd"
+      ],
+      "Emergency access request": [
+        "Noodtoegang aangevraagd"
+      ],
       "Emergency access requested": [
         "Noodtoegang aangevraagd"
+      ],
+      "Emergency access revoked": [
+        "Noodtoegang ingetrokken"
       ],
       "Emergency contact added": [
         "Noodcontact toegevoegd"
@@ -5350,6 +5386,12 @@
       "Protect your legacy with emergency access": [
         "Bescherm uw legacy met noodtoegang"
       ],
+      "Refuse access": [
+        "Toegang weigeren"
+      ],
+      "Refuse access?": [
+        "Toegang weigeren?"
+      ],
       "Remove trusted contact": [
         "Vertrouwd contact verwijderen"
       ],
@@ -5362,6 +5404,12 @@
       "Requesting access": [
         "Toegang aanvragen"
       ],
+      "Revoke access": [
+        "Toegang intrekken"
+      ],
+      "Revoke access?": [
+        "Toegang intrekken?"
+      ],
       "Stop being trusted contact?": [
         "Niet langer vertrouwd contact zijn?"
       ],
@@ -5373,6 +5421,10 @@
       ],
       "They may ask to access my account in case of an emergency.": [
         "Zij kunnen vragen om toegang tot mijn account te krijgen in geval van nood."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "Zij ontvangen automatisch toegang binnen **${ days } dag**, op **${ formattedAccessibleAt }**. U kunt hun verzoek afwijzen of hen op elk moment onmiddellijk toegang geven.",
+        "Zij ontvangen automatisch toegang binnen **${ days } dagen**, op **${ formattedAccessibleAt }**. U kunt hun verzoek afwijzen of hen op elk moment onmiddellijk toegang geven."
       ],
       "This will take effect immediately.": [
         "Dit gaat onmiddellijk in."
@@ -8154,6 +8206,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Toegang tot dit account is beperkt vanwege onbetaalde facturen. Neem contact op met uw beheerder."
       ],
+      "Account monitor": [
+        "Accountactiviteitenmonitor"
+      ],
       "account recovery and data recovery method": [
         "accountherstel en data herstelmethode"
       ],
@@ -8268,6 +8323,9 @@
       ],
       "Allocated": [
         "Toegewezen"
+      ],
+      "Allow logging of location and connection details": [
+        "Logboekregistratie van locatie- en verbindingsgegevens toestaan"
       ],
       "Allow recovery by email": [
         "Herstellen via e-mail toestaan"
@@ -8678,6 +8736,9 @@
       "Disabled countries": [
         "Uitgeschakelde landen"
       ],
+      "Disabled on ${ boldValue }": [
+        "Uitgeschakeld op ${ boldValue }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Het uitschakelen van tweestapsverificatie maakt uw account minder veilig. Ga alleen verder als het absoluut nodig is."
       ],
@@ -8831,6 +8892,9 @@
       ],
       "Enabled countries": [
         "Ingeschakelde landen"
+      ],
+      "Enabled on ${ boldValue }": [
+        "Ingeschakeld op ${ boldValue }"
       ],
       "Enabling auto-deletion…": [
         "Activatie automatisch verwijderen"
@@ -9183,6 +9247,9 @@
       ],
       "inactive": [
         "inactief"
+      ],
+      "Include device, location, and IP details": [
+        "Inclusief apparaat-, locatie- en IP-gegevens"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inclusief ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -9625,6 +9692,9 @@
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Organisatieleden moeten ${ PASS_APP_NAME } ontgrendelen met hun wachtwoord of pincode etc."
       ],
+      "Organization monitor": [
+        "Organisatiemonitor"
+      ],
       "Organization size": [
         "Grootte van de organisatie"
       ],
@@ -9673,6 +9743,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - aangepaste e-mail verwijderd"
+      ],
+      "Pass usage logs": [
+        "Pass-gebruikslogboeken"
       ],
       "password": [
         "wachtwoord"
@@ -10630,6 +10703,9 @@
       "View and manage your groups.": [
         "Bekijk en beheer uw groepen."
       ],
+      "View VPN session details for your organization.": [
+        "Bekijk VPN-sessiedetails voor uw organisatie."
+      ],
       "View, download, and manage your invoices.": [
         "Bekijk, download, en beheer uw facturen."
       ],
@@ -11303,6 +11379,9 @@
       ],
       "Donation": [
         "Donatie"
+      ],
+      "Manual": [
+        "Handmatig"
       ],
       "Modification": [
         "Wijziging"
@@ -13286,6 +13365,9 @@
       "Learn more": [
         "Meer info"
       ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Om ${ BRAND_NAME } te blijven gebruiken, moet u ervoor zorgen dat uw premium functies niet meer in gebruik zijn of uw abonnement upgraden."
+      ],
       "upgrade for more storage": [
         "upgrade voor meer opslag"
       ],
@@ -13539,6 +13621,15 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Verbind uw aangepaste domein met ${ BRAND_NAME } om aangepaste e-mailadressen in te stellen (bijv. u@uwbedrijf.com). Onze wizard leidt u door het proces."
+      ],
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "Bekijk de activiteit van ${ PASS_APP_NAME } binnen uw organisatie."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "Bekijk wijzigingen in uw organisatie en andere beheerdersactiviteiten."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "Bekijk de aanmeldings-, herstel- en beveiligingsafspraken van de gebruiker."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Uw gratis proefversie is geëindigd. Toegang tot uw account wordt weldra uitgeschakeld. ${ action }"
@@ -15013,6 +15104,9 @@
       "Invalid code": [
         "Ongeldige code"
       ],
+      "Invalid input. Search an email or detail.": [
+        "Ongeldige invoer. Zoek een e-mailadres of gegevens."
+      ],
       "Invalid input. Search an email or IP address.": [
         "Ongeldige invoer. Zoek een e-mailadres of IP-adres."
       ],
@@ -15480,11 +15574,17 @@
       "It's too expensive": [
         "Het is te duur"
       ],
+      "Label as...": [
+        "Label als..."
+      ],
       "Left to Right": [
         "Links naar rechts"
       ],
       "Mark as read": [
         "Markeer als gelezen"
+      ],
+      "Move to...": [
+        "Verplaatsen naar..."
       ],
       "My reason isn't listed": [
         "Mijn reden wordt niet vermeld"
@@ -16265,6 +16365,9 @@
       "Card number": [
         "Kaartnummer"
       ],
+      "Credits and discounts are reflected in your invoice": [
+        "Tegoeden en kortingen worden weergegeven op uw factuur"
+      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Momenteel is de automatische verlenging van het abonnement uitgeschakeld. Als u het abonnement nu wijzigt, wordt de automatische verlenging opnieuw ingeschakeld."
       ],
@@ -16571,6 +16674,9 @@
       ],
       "Search users": [
         "Zoek gebruikers"
+      ],
+      "Search users or details": [
+        "Zoek gebruikers of gegevens"
       ],
       "Select": [
         "Selecteer"
@@ -20731,6 +20837,9 @@
       "Desktop": [
         "Desktop"
       ],
+      "Details": [
+        "Gegevens"
+      ],
       "Device": [
         "Apparaat"
       ],
@@ -22020,6 +22129,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
+      ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "Het adres is losgekoppeld. Berichten verzenden is gepauzeerd. Maak opnieuw verbinding om dit adres opnieuw in te schakelen."
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."

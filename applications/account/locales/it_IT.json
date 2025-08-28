@@ -1729,6 +1729,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Genera le chiavi mancanti per l'indirizzo “${ emailAddress }”"
       ],
+      "Reconnect": [
+        "Riconnetti"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Ricollega l'indirizzo “${ emailAddress }”"
+      ],
       "Saving": [
         "Salvataggio"
       ],
@@ -1751,6 +1757,9 @@
       ],
       "Disabled": [
         "Disabilitato"
+      ],
+      "Disconnected": [
+        "Disconnesso"
       ],
       "External": [
         "Esterno"
@@ -22107,6 +22116,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ${ MAIL_APP_NAME }"
+      ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "L'indirizzo è stato disconnesso. L'invio dei messaggi è stato sospeso. Ricollegarsi per riattivare l'indirizzo."
       ],
       "The import will start with the most recent messages.": [
         "L'importazione inizierà con i messaggi più recenti."

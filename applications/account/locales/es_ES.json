@@ -220,6 +220,9 @@
       "Cancel": [
         "Cancelar"
       ],
+      "Cancel request": [
+        "Cancelar la solicitud"
+      ],
       "Cancel subscription": [
         "Cancelar tu suscripción"
       ],
@@ -1081,6 +1084,9 @@
       "refresh the page": [
         "actualizar la página"
       ],
+      "Refuse access": [
+        "Denegar acceso"
+      ],
       "Reject": [
         "Rechazar"
       ],
@@ -1191,6 +1197,9 @@
       ],
       "Revoke ${ name }": [
         "Revocar ${ name }"
+      ],
+      "Revoke access": [
+        "Quitar el acceso"
       ],
       "Revoke all other sessions": [
         "Revocar todas las demás sesiones"
@@ -1729,6 +1738,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Generar claves faltantes para la dirección “${ emailAddress }”"
       ],
+      "Reconnect": [
+        "Reconectar"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Reconectar la dirección “${ emailAddress }”"
+      ],
       "Saving": [
         "Guardando"
       ],
@@ -1751,6 +1766,9 @@
       ],
       "Disabled": [
         "Desactivada"
+      ],
+      "Disconnected": [
+        "Sin conexión"
       ],
       "External": [
         "Externa"
@@ -5254,17 +5272,29 @@
         "${ n } día restante",
         "${ n } días restantes"
       ],
+      "${ user } is requesting emergency access to your account": [
+        "${ user } está solicitando acceso de emergencia a tu cuenta"
+      ],
       "${ user } will be able to use your account and change your data.": [
         "${ user } podrá usar tu cuenta y cambiar tus datos."
       ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user } cerrará sesión en tu cuenta y no podrá acceder a ella de nuevo hasta el próximo acceso de emergencia."
+      ],
       "${ user } will no longer be able to request access to your account in case of emergency.": [
         "${ user } ya no podrá solicitar acceso a tu cuenta en caso de emergencia."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } no podrá acceder a tu cuenta hasta el próximo acceso de emergencia."
       ],
       "Access granted": [
         "Acceso concedido"
       ],
       "Access granted on ${ formattedAccessibleAt }": [
         "Acceso concedido el ${ formattedAccessibleAt }"
+      ],
+      "Access request canceled": [
+        "Solicitud de acceso cancelada"
       ],
       "Access requested": [
         "Acceso solicitado"
@@ -5280,6 +5310,9 @@
       ],
       "Added on ${ formattedDate }": [
         "Añadido el ${ formattedDate }"
+      ],
+      "Cancel request?": [
+        "¿Cancelar la solicitud?"
       ],
       "Change access wait time": [
         "Cambiar el tiempo de espera del acceso"
@@ -5308,8 +5341,17 @@
       "Emergency access granted": [
         "Acceso de emergencia concedido"
       ],
+      "Emergency access refused": [
+        "Acceso de emergencia denegado"
+      ],
+      "Emergency access request": [
+        "Solicitud de acceso de emergencia"
+      ],
       "Emergency access requested": [
         "Acceso de emergencia solicitado"
+      ],
+      "Emergency access revoked": [
+        "Acceso de emergencia revocado"
       ],
       "Emergency contact added": [
         "Contacto de emergencia añadido"
@@ -5353,6 +5395,12 @@
       "Protect your legacy with emergency access": [
         "Protege tu legado con acceso de emergencia"
       ],
+      "Refuse access": [
+        "Denegar acceso"
+      ],
+      "Refuse access?": [
+        "¿Denegar acceso?"
+      ],
       "Remove trusted contact": [
         "Eliminar contacto de confianza"
       ],
@@ -5365,6 +5413,12 @@
       "Requesting access": [
         "Solicitando acceso"
       ],
+      "Revoke access": [
+        "Quitar el acceso"
+      ],
+      "Revoke access?": [
+        "¿Quitar el acceso?"
+      ],
       "Stop being trusted contact?": [
         "Dejar de ser contacto de confianza?"
       ],
@@ -5376,6 +5430,10 @@
       ],
       "They may ask to access my account in case of an emergency.": [
         "Pueden pedir acceder a mi cuenta en caso de emergencia."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "El acceso se recibirá automáticamente en **${ days } día**, el **${ formattedAccessibleAt }**, puedes rechazar su solicitud o concederla inmediatamente en cualquier momento.",
+        "El acceso se recibirá automáticamente en **${ days } día**, el **${ formattedAccessibleAt }**, puedes rechazar su solicitud o concederla inmediatamente en cualquier momento."
       ],
       "This will take effect immediately.": [
         "Esto surtirá efecto inmediatamente."
@@ -5431,6 +5489,9 @@
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Ya no podrás solicitar acceso a la cuenta de ${ user } en caso de emergencia."
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "Aún podrás solicitar acceso a la cuenta de ${ user } en otro momento."
       ],
       "You'll receive access to their account immediately.": [
         "Recibirás acceso a su cuenta inmediatamente."
@@ -8160,6 +8221,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "El acceso a la cuenta ha sido restringido debido a facturas impagadas. Contacta con tu administrador."
       ],
+      "Account monitor": [
+        "Monitor de cuenta"
+      ],
       "account recovery and data recovery method": [
         "método de recuperación de la cuenta y de los datos"
       ],
@@ -8844,6 +8908,9 @@
       "Enabled countries": [
         "Países activados"
       ],
+      "Enabled on ${ boldValue }": [
+        "Activado el ${ boldValue }"
+      ],
       "Enabling auto-deletion…": [
         "Activando la eliminación automática…"
       ],
@@ -9008,6 +9075,9 @@
       ],
       "Gain visibility across your organization": [
         "Obtén visibilidad en toda tu organización"
+      ],
+      "Gateway monitor": [
+        "Monitoreo de puertas de enlace"
       ],
       "Gateways": [
         "Puertas de enlace"
@@ -9636,6 +9706,9 @@
       ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Los miembros de la organización necesitarán desbloquear ${ PASS_APP_NAME } con su contraseña o código PIN, etc."
+      ],
+      "Organization monitor": [
+        "Monitor de organización"
       ],
       "Organization size": [
         "Tamaño de la organización"
@@ -11321,6 +11394,9 @@
       ],
       "Donation": [
         "Donación"
+      ],
+      "Manual": [
+        "Manual"
       ],
       "Modification": [
         "Modificación"
@@ -15043,6 +15119,9 @@
       "Invalid code": [
         "Código no válido"
       ],
+      "Invalid input. Search an email or detail.": [
+        "La entrada no es válida. Busca un correo electrónico o un detalle."
+      ],
       "Invalid input. Search an email or IP address.": [
         "La entrada no es válida. Busca por correo electrónico dirección IP."
       ],
@@ -17804,15 +17883,15 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Tienes ${ timeRemaining.inHours } hora para restablecer tu contraseña.",
-        "Tienes ${ timeRemaining.inHours } horas para restablecer tu contraseña."
+        " Tienes ${ timeRemaining.inHours } horas para restablecer tu contraseña."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Tienes ${ timeRemaining.inMinutes } minuto para restablecer tu contraseña.",
-        "Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
+        " Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Tienes ${ timeRemaining.inSeconds } segundo para restablecer tu contraseña.",
-        "Tienes ${ timeRemaining.inSeconds } segundos para restablecer tu contraseña."
+        " Tienes ${ timeRemaining.inSeconds } segundos para restablecer tu contraseña."
       ]
     },
     "session_recovery:available:link": {
@@ -22068,6 +22147,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Las carpetas secundarias del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }."
+      ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "La dirección ha sido desconectada. El envío de mensajes está pausado. Vuelve a conectarte para activar esta dirección de nuevo."
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."

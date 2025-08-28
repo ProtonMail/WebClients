@@ -220,6 +220,9 @@
       "Cancel": [
         "Cancelar"
       ],
+      "Cancel request": [
+        "Cancelar solicitação"
+      ],
       "Cancel subscription": [
         "Cancelar assinatura"
       ],
@@ -730,6 +733,9 @@
       "Get ${ planOrAppName }": [
         "Obtenha o ${ planOrAppName }"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Crie um endereço gratuito da ${ BRAND_NAME }"
+      ],
       "Get a new encrypted email address": [
         "Obter um novo endereço de e-mail criptografado"
       ],
@@ -1066,6 +1072,9 @@
       "Refer a friend": [
         "Indicar um amigo"
       ],
+      "Refresh": [
+        "Recarregar"
+      ],
       "Refresh status": [
         "Atualizar status"
       ],
@@ -1074,6 +1083,9 @@
       ],
       "refresh the page": [
         "atualizar a página"
+      ],
+      "Refuse access": [
+        "Recusar acesso"
       ],
       "Reject": [
         "Rejeitar"
@@ -1185,6 +1197,9 @@
       ],
       "Revoke ${ name }": [
         "Revogar ${ name }"
+      ],
+      "Revoke access": [
+        "Revogar acesso"
       ],
       "Revoke all other sessions": [
         "Revogar todas as outras sessões"
@@ -1723,6 +1738,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Gerar chaves ausentes para o endereço “${ emailAddress }”"
       ],
+      "Reconnect": [
+        "Reconectar"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Reconectar endereço “${ emailAddress }”"
+      ],
       "Saving": [
         "Salvando"
       ],
@@ -1745,6 +1766,9 @@
       ],
       "Disabled": [
         "Desativado"
+      ],
+      "Disconnected": [
+        "Desconectado"
       ],
       "External": [
         "Externo"
@@ -5272,6 +5296,12 @@
       "Add emergency contact": [
         "Adicionar contato de emergência"
       ],
+      "Added on ${ formattedDate }": [
+        "Adicionado em ${ formattedDate }"
+      ],
+      "Cancel request?": [
+        "Cancelar solicitação?"
+      ],
       "Change access wait time": [
         "Mudar tempo de espera de acesso"
       ],
@@ -5296,14 +5326,26 @@
       "Emergency access granted": [
         "Acesso de emergência garantido"
       ],
+      "Emergency access refused": [
+        "Acesso de emergência recusado"
+      ],
+      "Emergency access request": [
+        "Solicitação de acesso de emergência"
+      ],
       "Emergency access requested": [
         "Acesso de emergência solicitado"
+      ],
+      "Emergency access revoked": [
+        "Acesso de emergência revogado"
       ],
       "Emergency contact added": [
         "Contato de emergência adicionado"
       ],
       "Emergency contact removed": [
         "Contato de emergência removido"
+      ],
+      "Enable auto-renew": [
+        "Ativar renovação automática"
       ],
       "Give access now": [
         "Permitir acesso"
@@ -5338,6 +5380,12 @@
       "Protect your legacy with emergency access": [
         "Proteja o seu legado com acesso de emergência"
       ],
+      "Refuse access": [
+        "Recusar acesso"
+      ],
+      "Refuse access?": [
+        "Recusar acesso?"
+      ],
       "Remove trusted contact": [
         "Remover contato de confiança"
       ],
@@ -5347,8 +5395,17 @@
       "Requesting access": [
         "Solicitar acesso"
       ],
+      "Revoke access": [
+        "Revogar acesso"
+      ],
+      "Revoke access?": [
+        "Revogar acesso?"
+      ],
       "Stop being trusted contact?": [
         "Deixar de ser um contato de confiança?"
+      ],
+      "Subscription expired": [
+        "Assinatura expirada"
       ],
       "They added me as trusted contact. I can access their account in case of an emergency.": [
         "Eles me adicionaram como contato de confiança. Consigo acessar a conta deles em caso de emergência."
@@ -5367,6 +5424,9 @@
       ],
       "Trusted contact": [
         "Contato de confiança"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
       ],
       "Upgrade to ${ planName }": [
         "Faça upgrade para ${ planName }"
@@ -6763,6 +6823,9 @@
       "Lightning-fast speeds": [
         "Velocidade ultrarrápida"
       ],
+      "Lightning-fast VPN speeds": [
+        "Velocidade ultrarrápida de VPN"
+      ],
       "NetShield Ad-blocker": [
         "Bloqueador de anúncios NetShield"
       ],
@@ -8053,11 +8116,20 @@
       "**${ appName }** is not supported.": [
         "**${ appName }** não é suportado."
       ],
+      "**Enable automatic backups** for peace of mind": [
+        "**Ative backups automáticos** para sua tranquilidade"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obtenha um endereço da ${ BRAND_NAME }** para usar todos os serviços da ${ BRAND_NAME_TWO } incluindo ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
       ],
+      "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
+        "**Importe seus códigos existentes** de outros aplicativos de A2F, como o Google Autenticador"
+      ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Convide seus amigos** para ${ BRAND_NAME } com seu link de indicação."
+      ],
+      "**Sync codes** to all your devices": [
+        "**Sincronizar códigos** para todos os seus dispositivos"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } mais",
@@ -8118,6 +8190,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "O acesso à conta foi restringido devido a faturas não pagas. Entre em contato com o seu administrador."
       ],
+      "Account monitor": [
+        "Monitor da conta"
+      ],
       "account recovery and data recovery method": [
         "método para recuperação de conta e dados"
       ],
@@ -8150,6 +8225,9 @@
       ],
       "Add a recovery phone number": [
         "Adicionar um número de telefone de recuperação"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Adicione outra camada de segurança na sua conta. Você pode verificar com A2F a cada vez que iniciar sessão."
       ],
       "Add domain": [
         "Adicionar domínio"
@@ -8639,6 +8717,9 @@
       "Disabled countries": [
         "Países desativados"
       ],
+      "Disabled on ${ boldValue }": [
+        "Desativado em ${ boldValue }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Desabilitar a autenticação de dois fatores tornará sua conta menos segura. Só prossiga se for absolutamente necessário."
       ],
@@ -8715,6 +8796,9 @@
       "Download recovery file": [
         "Baixar o arquivo de recuperação"
       ],
+      "Download the app and import existing codes.": [
+        "Baixe o aplicativo e importe os códigos existentes."
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Faça o download do seu aplicativo favorito hoje e leve a privacidade com você para onde quer que você vá."
       ],
@@ -8789,6 +8873,9 @@
       ],
       "Enabled countries": [
         "Países ativados"
+      ],
+      "Enabled on ${ boldValue }": [
+        "Ativado em ${ boldValue }"
       ],
       "Enabling auto-deletion…": [
         "Ativando a exclusão automática…"
@@ -8952,11 +9039,17 @@
       "Gain visibility across your organization": [
         "Obtenha visibilidade em toda a sua organização"
       ],
+      "Gateway monitor": [
+        "Monitoramento de gateway"
+      ],
       "Gateways": [
         "Gateways"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Gerar uma nova frase de recuperação desativará a antiga."
+      ],
+      "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
+        "Obtenha ${ AUTHENTICATOR_APP_NAME } para todos os seus dispositivos."
       ],
       "Get ${ upsellPlanName }": [
         "Obter ${ upsellPlanName }"
@@ -9209,6 +9302,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "São necessários 10 dias para alterar o país de um servidor, portanto, certifique-se de que sua seleção esteja correta."
       ],
+      "It won't be linked to your ${ BRAND_NAME } Account, so there's **no risk of getting locked out**.": [
+        "Não estará vinculado à sua conta na ${ BRAND_NAME }, então não há **risco de ficar bloqueado**"
+      ],
       "It's better to have:": [
         "É melhor ter:"
       ],
@@ -9389,6 +9485,9 @@
       "Mastercard SecureCode logo": [
         "Logotipo do MasterCard SecureCode"
       ],
+      "Maybe later": [
+        "Talvez mais tarde"
+      ],
       "Medium Priority": [
         "Média prioridade"
       ],
@@ -9567,6 +9666,9 @@
       ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Os membros da organização precisarão desbloquear o ${ PASS_APP_NAME } com sua senha ou PIN."
+      ],
+      "Organization monitor": [
+        "Monitor da organização"
       ],
       "Organization size": [
         "Tamanho da organização"
@@ -9980,6 +10082,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
+        "O envio SMTP permite que serviços ou dispositivos de terceiros enviem correio e-mail através do ${ MAIL_APP_NAME } para os seus endereços de domínio personalizado."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "O envio SMTP permite que serviços ou dispositivos de terceiros enviem correio e-mail através do ${ MAIL_APP_NAME } para os seus endereços de domínio personalizado. Para solicitar acesso, ${ createTicket } e descreva os seus casos de uso, os domínios personalizados que gostaria de usar e os números de e-mail previstos por hora e por dia."
       ],
@@ -10152,6 +10257,9 @@
       ],
       "The most recent data update, excluding breaches.": [
         "A atualização de dados mais recente, excluindo violações."
+      ],
+      "The most secure and private two-factor authentication app, that's free and open-source.": [
+        "O aplicativo de autenticação de dois fatores mais seguro e privado, gratuito e de código aberto."
       ],
       "The name will be visible to your users while they are signed in.": [
         "O nome será visível aos seus usuários enquanto eles estiverem conectados."
@@ -10672,6 +10780,9 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Quando desativado, isso impede que arquivos de imagem sejam carregados no seu dispositivo sem seu conhecimento."
       ],
+      "When disabled, this prevents remote images from loading without your knowledge.": [
+        "Quando desativado, isso impede que imagens remoras sejam carregados sem seu conhecimento."
+      ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
         "Quando ativado, verificaremos se o ${ MAIL_APP_NAME } é seu aplicativo de e-mail padrão e o notificaremo caso não seja."
       ],
@@ -10707,6 +10818,9 @@
       ],
       "Why?": [
         "Por quê?"
+      ],
+      "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
+        "Com o ${ AUTHENTICATOR_APP_NAME }, você pode:"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Com um plano Business ou Enterprise, você pode comprar ${ boldDedicatedServers } para sua organização e configurar ${ boldGateways } para controlar quais usuários podem acessá-los."
@@ -11237,6 +11351,9 @@
       ],
       "Donation": [
         "Doação"
+      ],
+      "Manual": [
+        "Manual"
       ],
       "Modification": [
         "Modificação"
@@ -12008,6 +12125,9 @@
       ],
       "Days of the week": [
         "Dias da semana"
+      ],
+      "Default email address": [
+        "Endereço de e-mail padrão"
       ],
       "Default language": [
         "Idioma padrão"
@@ -14292,6 +14412,10 @@
         "Até ${ n } usuário",
         "Até ${ n } usuários"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Até ${ n } usuário (${ adminsText }, ${ usersText })",
+        "Até ${ n } usuários (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Até ${ totalStorageSize } de armazenamento"
       ],
@@ -14949,6 +15073,9 @@
       "Invalid code": [
         "Código inválido"
       ],
+      "Invalid input. Search an email or detail.": [
+        "Entrada inválida. Pesquise um e-mail ou detalhes."
+      ],
       "Invalid input. Search an email or IP address.": [
         "Entrada inválida. Pesquise um e-mail ou endereço IP."
       ],
@@ -15419,11 +15546,17 @@
       "It's too expensive": [
         "É muito caro"
       ],
+      "Label as...": [
+        "Rotular como..."
+      ],
       "Left to Right": [
         "Esquerda para direita"
       ],
       "Mark as read": [
         "Marcar como lido"
+      ],
+      "Move to...": [
+        "Mover para..."
       ],
       "My reason isn't listed": [
         "Meu motivo não está listado"
@@ -16283,6 +16416,9 @@
       "Timeout exceeded": [
         "Tempo limite excedido"
       ],
+      "VAT number": [
+        "Número de IVA"
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Você será cobrado em ${ amountToCharge } no método de pagamento selecionado."
       ],
@@ -16338,14 +16474,32 @@
       "ABN": [
         "Número de empresa australiano (ABN)"
       ],
+      "Add ABN": [
+        "Adicionar ABN"
+      ],
+      "Add Business Number": [
+        "Adicionar número comercial"
+      ],
+      "Add EIN": [
+        "Adicionar EIN"
+      ],
+      "Add VAT number": [
+        "Adicionar número de IVA"
+      ],
       "Business Number": [
         "Número comercial"
       ],
       "Edit ABN": [
         "Editar ABN"
       ],
+      "Edit Business Number": [
+        "Editar número comercial"
+      ],
       "Edit EIN": [
         "Editar EIN"
+      ],
+      "Edit VAT number": [
+        "Editar número de IVA"
       ],
       "EIN": [
         "Número de identificação tributária (EIN)"
@@ -16502,11 +16656,17 @@
       "Search users": [
         "Pesquisar usuários"
       ],
+      "Search users or details": [
+        "Pesquisar usuário ou detalhes"
+      ],
       "Select": [
         "Selecionar"
       ],
       "Select a reason": [
         "Selecione um motivo"
+      ],
+      "Select country": [
+        "Selecionar país"
       ],
       "Select state": [
         "Selecionar estado"
@@ -16841,6 +17001,28 @@
       ],
       "Show": [
         "Mostrar"
+      ]
+    },
+    "RecoveryPhrase: Info": {
+      "copy recovery phrase": [
+        "copiar frase de recuperação"
+      ],
+      "Download PDF": [
+        "Baixar PDF"
+      ],
+      "download PDF": [
+        "baixar PDF"
+      ],
+      "Or ${ downloadRecoveryKitSwitchButton } instead.": [
+        "Ou ${ downloadRecoveryKitSwitchButton } em vez disso."
+      ]
+    },
+    "RecoveryPhrase: Title": {
+      "Save your Recovery Kit": [
+        "Guarde seu kit de recuperação"
+      ],
+      "Save your recovery phrase": [
+        "Guarde sua frase de recuperação"
       ]
     },
     "Remark about a key type option": {
@@ -18276,6 +18458,9 @@
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Então ${ priceWithDiscountPerMonth } por mês, se você se inscrever."
+      ],
+      "To redeem on your next paid subscription.": [
+        "Para resgatar na sua próxima assinatura paga."
       ],
       "Total": [
         "Total"
@@ -20207,6 +20392,9 @@
       "Account suspended": [
         "Conta suspensa"
       ],
+      "Account temporarily locked": [
+        "Conta temporariamente bloqueada"
+      ],
       "Action": [
         "Ação"
       ],
@@ -20412,6 +20600,9 @@
       "Choose user affiliations": [
         "Escolher as afiliações de usuário"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Confirmar seu endereço de ${ MAIL_APP_NAME }"
+      ],
       "Close": [
         "Fechar"
       ],
@@ -20614,6 +20805,9 @@
       ],
       "Desktop": [
         "Área de trabalho"
+      ],
+      "Details": [
+        "Detalhes"
       ],
       "Device": [
         "Dispositivo"
@@ -21473,6 +21667,9 @@
       "Time zone": [
         "Fuso horário"
       ],
+      "Try ${ AUTHENTICATOR_APP_NAME }": [
+        "Experimente ${ AUTHENTICATOR_APP_NAME }"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ativar ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -21910,6 +22107,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "As subpastas do sistema aparecerão como pastas separadas no ${ MAIL_APP_NAME }"
+      ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "O endereço foi desconectado. O envio de mensagens está pausado. Reconecte-se para ativar este endereço novamente."
       ],
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."
