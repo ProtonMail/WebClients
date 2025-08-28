@@ -368,6 +368,9 @@
       "Get ${ planOrAppName }": [
         "Obtenha o ${ planOrAppName }"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Crie um endereço gratuito da ${ BRAND_NAME }"
+      ],
       "Get in touch": [
         "Entre em contato"
       ],
@@ -7740,6 +7743,10 @@
         "Até ${ n } usuário",
         "Até ${ n } usuários"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Até ${ n } usuário (${ adminsText }, ${ usersText })",
+        "Até ${ n } usuários (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Até ${ totalStorageSize } de armazenamento"
       ],
@@ -8856,6 +8863,9 @@
       "Timeout exceeded": [
         "Tempo limite excedido"
       ],
+      "VAT number": [
+        "Número de IVA"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Sua moeda foi alterada para euros (€) porque transferências bancárias SEPA apenas suportam pagamentos em euros."
       ],
@@ -8908,14 +8918,32 @@
       "ABN": [
         "Número de empresa australiano (ABN)"
       ],
+      "Add ABN": [
+        "Adicionar ABN"
+      ],
+      "Add Business Number": [
+        "Adicionar número comercial"
+      ],
+      "Add EIN": [
+        "Adicionar EIN"
+      ],
+      "Add VAT number": [
+        "Adicionar número de IVA"
+      ],
       "Business Number": [
         "Número comercial"
       ],
       "Edit ABN": [
         "Editar ABN"
       ],
+      "Edit Business Number": [
+        "Editar número comercial"
+      ],
       "Edit EIN": [
         "Editar EIN"
+      ],
+      "Edit VAT number": [
+        "Editar número de IVA"
       ],
       "EIN": [
         "Número de identificação tributária (EIN)"
@@ -9056,6 +9084,9 @@
       ],
       "Select a reason": [
         "Selecione um motivo"
+      ],
+      "Select country": [
+        "Selecionar país"
       ],
       "Select state": [
         "Selecionar estado"
@@ -10697,6 +10728,9 @@
       "Account security": [
         "Segurança da conta"
       ],
+      "Account temporarily locked": [
+        "Conta temporariamente bloqueada"
+      ],
       "Add a custom logo": [
         "Adicionar um logotipo personalizado"
       ],
@@ -10787,6 +10821,9 @@
       ],
       "Choose how often this event repeats": [
         "Escolha com que frequência este evento se repete"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Confirmar seu endereço de ${ MAIL_APP_NAME }"
       ],
       "Clearing data": [
         "Limpando dados"

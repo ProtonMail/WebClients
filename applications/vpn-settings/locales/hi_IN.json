@@ -898,6 +898,11 @@
         "ज़ूम कम करें"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "फॉरवर्ड जारी हो रहा"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "पुनः सक्रिय करें"
@@ -3190,6 +3195,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "आपके खाते या संगठन की रसीद लंबित है। कृपया सभी बकाया रसीदों का भुगतान करें।"
+      ],
+      "Your forward will not be processed.": [
+        "आपका फॉरवर्ड प्रॉसेस नहीं किया जाएगा।"
       ],
       "Your import will not be processed.": [
         "आपका आयात संसाधित नहीं किया जाएगा।"
@@ -8724,11 +8732,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "यह योजना रखें"
+      ],
       "Start using ${ appName }": [
         "${ appName } का उपयोग प्रारंभ करें"
+      ],
+      "Upgrade my plan": [
+        "मेरी योजना को अपग्रेड करें"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "चलिए बात करते हैं"
+      ],
+      "Limited time offer": [
+        "सीमित समय ऑफर"
+      ],
+      "Recommended": [
+        "सलाह"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } प्रति माह"
+      ],
+      "/month /user": [
+        "/महीना /उपयोगकर्ता"
+      ],
+      "/month /user, billed annually": [
+        "/महीना /उपयोगकर्ता, वार्षिक बिल किया जाता है"
+      ],
+      "/month /user, billed biennially": [
+        "/महीना /उपयोगकर्ता, दो वर्षीय बिलिंग"
+      ],
+      "Current plan": [
+        "चालू प्लान"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "सिर्फ **${ relativePrice } प्रति माह** अधिक का भुगतान करके, आपको ${ BRAND_NAME } के प्रीमियम पासवर्ड प्रबंधक का एक्सेस मिलेगा!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "सिर्फ **${ relativePrice } प्रति माह** अधिक का भुगतान करके, आपको ${ BRAND_NAME } की प्रीमियम VPN सेवा का एक्सेस मिलेगा!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "सिर्फ **${ relativePrice } प्रति माह** अतिरिक्त में, आपको सभी ${ BRAND_NAME } प्रीमियम सेवाओं तक पहुंच मिलती है!"
+      ],
+      "Free forever": [
+        "हमेशा मुफ्त"
+      ],
+      "Get in touch with our sales team": [
+        "हमारी सेल्स टीम से संपर्क करें"
+      ],
+      "Includes:": [
+        "शामिल:"
+      ],
+      "per month": [
+        "हर महीने"
+      ],
+      "per month, billed annually": [
+        "प्रति माह, वार्षिक बिल किया गया"
+      ],
+      "per month, billed every month": [
+        "प्रति माह, हर महीने पर बिल किया गया"
+      ],
+      "per month, billed every two years": [
+        "प्रति माह, हर दो साल में बिल किया गया"
+      ],
       "Secure vault sharing": [
         "सुरक्षित वॉल्ट साझाकरण"
       ]

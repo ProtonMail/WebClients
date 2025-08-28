@@ -1452,8 +1452,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -7237,7 +7236,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -9993,7 +9993,7 @@
         "Per saber-ne més"
       ],
       "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
-        "Per continuar utilitzant ${ BRAND_NAME }, assegureu-vos que les vostres característiques prèmium ja no s'utilitzen o milloreu el vostre pla."
+        "Per continuar utilitzant ${ BRAND_NAME }, assegureu-vos que les vostres característiques prèmium ja no s'utilitzen o milloreu el pla."
       ],
       "upgrade for more storage": [
         "milloreu per a obtenir més emmagatzematge"
@@ -13882,6 +13882,10 @@
       ],
       "Read receipt sent": [
         "S\"ha enviat la confirmació de lectura."
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "S'ha canviat de categoria ${ elementsCount } missatge.",
+        "S'han canviat de categoria ${ elementsCount } missatges."
       ],
       "Self-destruction removed": [
         "S'ha suprimit la destrucció automàtica"

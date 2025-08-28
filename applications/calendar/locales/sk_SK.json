@@ -140,6 +140,9 @@
       "Choose a file or drag it here": [
         "Vyberte súbor alebo ho sem pretiahnite"
       ],
+      "Claim this address": [
+        "Nárokovať si túto adresu"
+      ],
       "Clear": [
         "Vyčistiť"
       ],
@@ -370,6 +373,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Získajte ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Získajte bezplatnú ${ BRAND_NAME } adresu"
       ],
       "Get in touch": [
         "Skontaktovať sa"
@@ -1748,6 +1754,9 @@
       ],
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všetky prémiové funkcie z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Zrušiť a znížiť"
@@ -3324,6 +3333,11 @@
         "Aktualizácia pre udalosť začínajúcu na ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Dôveryhodný kontakt"
+      ]
+    },
     "Error": {
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } sa nedokáže pripojiť k vášmu externému účtu."
@@ -3504,6 +3518,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Nepodarilo sa načítať OAuth modal."
+      ],
+      "Failed to open to contact": [
+        "Nepodarilo sa otvoriť kontakt"
       ],
       "First name is too long": [
         "Meno je príliš dlhé"
@@ -4860,6 +4877,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Šifrovacia technológia ${ BRAND_NAME } znamená, že nikto nemá prístup k vášmu heslu – dokonca ani my."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } vyžaduje ${ BRAND_NAME } adresu pre bezpečnú synchronizáciu udalostí a šifrovanie. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nový kalendár",
         "${ calendarsToBeCreatedCount } nové kalendáre",
@@ -5325,6 +5345,9 @@
       "Enabling auto-deletion…": [
         "Zapínanie automatického mazania…"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Zabezpečte úplne súkromnú a šifrovanú komunikáciu. Vyžiadajte si teraz bezplatnú emailovú ${ BRAND_NAME } adresu."
+      ],
       "Enter the code from your authenticator app": [
         "Zadajte kód z vašej overovacej aplikácie"
       ],
@@ -5339,6 +5362,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Zadajte vlastné heslo (ako správca organizácie)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Zadajte vlastné heslo (ako dôveryhodný kontakt)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Odhadovaný čas do konca: ${ estimatedMinutes } minúta",
@@ -5783,6 +5809,12 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Koniec predplatného: Znova aktivujte do ${ byDate }, aby ste si ponechali výhody ${ planName }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "Predplatné sa končí: Ak si chcete ponechať výhody svojho predplatného ${ planName }, reštartujte svoje predplatné v Apple App Store do ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "Predplatné sa končí: Ak si chcete ponechať výhody predplatného ${ planName }, reštartujte si predplatné v Obchode Google Play do ${ byDate }. ${ reactivateLink }"
       ],
       "Surveillance": [
         "Monitorovanie"
@@ -6356,6 +6388,9 @@
       "Expired": [
         "Vypršaný"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Zastaraný"
       ],
@@ -6904,6 +6939,9 @@
       "Your password (admin)": [
         "Vaše heslo (správca)"
       ],
+      "Your password (trusted contact)": [
+        "Vaše heslo (dôveryhodný kontakt)"
+      ],
       "ZIP code": [
         "PSČ"
       ]
@@ -7048,6 +7086,9 @@
       "Request an invite": [
         "Požiadať o pozvánku"
       ],
+      "Resume now": [
+        "Pokračovať teraz"
+      ],
       "settings": [
         "nastavenia"
       ],
@@ -7102,6 +7143,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Zistiť viac"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Ak chcete naďalej používať ${ BRAND_NAME }, uistite sa, prosím, že vaše prémiové funkcie už nepoužívate, alebo si zvýšte úroveň svojho plánu."
       ],
       "upgrade for more storage": [
         "upgrajdujte pre väčšie úložisko"
@@ -9096,6 +9140,9 @@
       "Timeout exceeded": [
         "Prekročený časový limit"
       ],
+      "VAT number": [
+        "DIČ"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaša mena bola zmenená na eurá (€), pretože SEPA bankové prevody podporujú platby len v eurách."
       ],
@@ -9148,8 +9195,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Pridať ABN"
+      ],
+      "Add Business Number": [
+        "Pridať daňové identifikačné číslo"
+      ],
+      "Add EIN": [
+        "Pridať EIN"
+      ],
+      "Add VAT number": [
+        "Pridať DIČ"
+      ],
       "Business Number": [
         "Daňové identifikačné číslo"
+      ],
+      "Edit ABN": [
+        "Upraviť ABN"
+      ],
+      "Edit Business Number": [
+        "Upraviť Daňové identifikačné číslo"
+      ],
+      "Edit EIN": [
+        "Upraviť EIN"
+      ],
+      "Edit VAT number": [
+        "Upraviť DIČ"
       ],
       "EIN": [
         "Identifikačné číslo zamestnávateľa"
@@ -9291,6 +9362,9 @@
       "Select a reason": [
         "Vyberte dôvod"
       ],
+      "Select country": [
+        "Vyberte krajinu"
+      ],
       "Select state": [
         "Vybrať stav"
       ],
@@ -9328,7 +9402,21 @@
         "kontaktujte"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Všetky prémiové funkcie z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všetky prémiové funkcie z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Ako predplatiteľ **${ currentPlanTitle }** si môžete odomknúť **${ unlockPlanTitle }** a ďalšie služby ${ BRAND_NAME } zvýšením úrovne na **${ upsellPlanTitle }**."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Viac služieb ${ BRAND_NAME }.${ br }Jedno jednoduché predplatné."
+      ],
       "Stay on ${ currentPlanTitle }": [
         "Pokračovať s ${ currentPlanTitle }"
       ],
@@ -10306,6 +10394,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } úložného priestoru"
       ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } vám poskytuje prístup ku všetkým prémiovým funkciám od ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }. Súkromie je integrované, takže môžete fungovať s vedomím, že vaše údaje a identita sú v bezpečí."
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vám poskytne všetky aplikácie, všetky funkcie, predbežný prístup k novým verziám a všetko, čo potrebujete, aby ste mali svoje dáta a ich zabezpečenie pod kontrolou."
       ],
@@ -11010,6 +11101,9 @@
       "Account security": [
         "Zabezpečenie účtu"
       ],
+      "Account temporarily locked": [
+        "Účet dočasne zablokovaný"
+      ],
       "Add a custom logo": [
         "Pridať vlastné logo"
       ],
@@ -11102,6 +11196,9 @@
       ],
       "Choose how often this event repeats": [
         "Vyberte ako často sa táto udalosť opakuje"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Získajte vašu ${ MAIL_APP_NAME } adresu"
       ],
       "Clearing data": [
         "Vymazanie dát"

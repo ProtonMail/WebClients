@@ -3712,9 +3712,6 @@
       "Validation error": [
         "Error de validación"
       ],
-      "We were not able some of your shared items": [
-        "No pudimos cargar algunos de tus elementos compartidos"
-      ],
       "We were not able to load some invitations": [
         "No pudimos cargar algunas invitaciones"
       ],
@@ -3726,6 +3723,9 @@
       ],
       "We were not able to load some of your invitation to shared items": [
         "No pudimos cargar algunas de tus invitaciones a elementos compartidos"
+      ],
+      "We were not able to load some of your invitations": [
+        "No pudimos cargar algunas de tus invitaciones"
       ],
       "We were not able to load some of your saved shared links": [
         "No pudimos cargar algunos de tus enlaces compartidos guardados"
@@ -10171,15 +10171,15 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Tienes ${ timeRemaining.inHours } hora para restablecer tu contraseña.",
-        "Tienes ${ timeRemaining.inHours } horas para restablecer tu contraseña."
+        " Tienes ${ timeRemaining.inHours } horas para restablecer tu contraseña."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Tienes ${ timeRemaining.inMinutes } minuto para restablecer tu contraseña.",
-        "Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
+        " Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Tienes ${ timeRemaining.inSeconds } segundo para restablecer tu contraseña.",
-        "Tienes ${ timeRemaining.inSeconds } segundos para restablecer tu contraseña."
+        " Tienes ${ timeRemaining.inSeconds } segundos para restablecer tu contraseña."
       ]
     },
     "session_recovery:available:link": {
