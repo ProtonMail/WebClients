@@ -1,6 +1,7 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { type UserInvitationsState, userInvitationsThunk } from '@proton/account/userInvitations';
 import { createKTVerifier, createPreAuthKTVerifier } from '@proton/key-transparency';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
@@ -59,7 +60,8 @@ type RequiredState = KtState &
     AddressesState &
     UserKeysState &
     ProtonDomainsState &
-    UserSettingsState;
+    UserSettingsState &
+    UserInvitationsState;
 
 export const orderAddresses = ({
     member,
@@ -488,6 +490,8 @@ export const setupExternalUserForProton = ({
 
             await preAuthKTCommit(user.ID, api);
         }
+
+        dispatch(userInvitationsThunk({ cache: CacheType.None })).catch(noop);
 
         await Promise.all([
             dispatch(userThunk({ cache: CacheType.None })),
