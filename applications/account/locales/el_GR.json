@@ -220,6 +220,9 @@
       "Cancel": [
         "Ακύρωση"
       ],
+      "Cancel request": [
+        "Ακύρωση αιτήματος"
+      ],
       "Cancel subscription": [
         "Ακύρωση συνδρομής"
       ],
@@ -1081,6 +1084,9 @@
       "refresh the page": [
         "ανανέωσε τη σελίδα"
       ],
+      "Refuse access": [
+        "Απόρριψη πρόσβασης"
+      ],
       "Reject": [
         "Απόρριψη"
       ],
@@ -1191,6 +1197,9 @@
       ],
       "Revoke ${ name }": [
         "Ανάκληση ${ name }"
+      ],
+      "Revoke access": [
+        "Ανάκληση πρόσβασης"
       ],
       "Revoke all other sessions": [
         "Αποσυνδεθείτε από όλες τις άλλες συνεδρίες"
@@ -1729,6 +1738,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Δημιουργία κλειδιών που λείπουν για τη διεύθυνση “${ emailAddress }”"
       ],
+      "Reconnect": [
+        "Επανασύνδεση"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Επανασύνδεση διεύθυνσης “${ emailAddress }”"
+      ],
       "Saving": [
         "Αποθήκευση"
       ],
@@ -1751,6 +1766,9 @@
       ],
       "Disabled": [
         "Απενεργοποιημένο"
+      ],
+      "Disconnected": [
+        "Αποσυνδεδεμένο"
       ],
       "External": [
         "Εξωτερική"
@@ -5195,17 +5213,29 @@
         "${ n } ημέρα απομένει",
         "${ n } ημέρες απομένουν"
       ],
+      "${ user } is requesting emergency access to your account": [
+        "${ user } ζητάει επείγουσα πρόσβαση στον λογαριασμό σας"
+      ],
       "${ user } will be able to use your account and change your data.": [
         "${ user } θα μπορεί να χρησιμοποιήσει τον λογαριασμό σας και να αλλάξει τα δεδομένα σας."
       ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user } θα αποσυνδεθεί από τον λογαριασμό σας και δε θα μπορεί να έχει πρόσβαση σε αυτόν ξανά μέχρι την επόμενη έκτακτη πρόσβαση."
+      ],
       "${ user } will no longer be able to request access to your account in case of emergency.": [
         "${ user } δεν θα μπορεί πλέον να ζητήσει πρόσβαση στον λογαριασμό σας σε περίπτωση έκτακτης ανάγκης."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } δεν θα μπορεί να αποκτήσει πρόσβαση στον λογαριασμό σας μέχρι την επόμενη πρόσβαση έκτακτης ανάγκης."
       ],
       "Access granted": [
         "Πρόσβαση επετράπη"
       ],
       "Access granted on ${ formattedAccessibleAt }": [
         "Η πρόσβαση παραχωρήθηκε στις ${ formattedAccessibleAt }"
+      ],
+      "Access request canceled": [
+        "Ακυρώθηκε το αίτημα πρόσβασης"
       ],
       "Access requested": [
         "Ζητήθηκε πρόσβαση"
@@ -5221,6 +5251,9 @@
       ],
       "Added on ${ formattedDate }": [
         "Προστέθηκε στις ${ formattedDate }"
+      ],
+      "Cancel request?": [
+        "Ακύρωση αιτήματος;"
       ],
       "Change access wait time": [
         "Αλλαγή χρόνου αναμονής πρόσβασης"
@@ -5249,8 +5282,17 @@
       "Emergency access granted": [
         "Παραχωρήθηκε πρόσβαση έκτακτης ανάγκης"
       ],
+      "Emergency access refused": [
+        "Απόρριψη πρόσβασης έκτακτης ανάγκης"
+      ],
+      "Emergency access request": [
+        "Αίτημα πρόσβασης έκτακτης ανάγκης"
+      ],
       "Emergency access requested": [
         "Ζητήθηκε πρόσβαση έκτακτης ανάγκης"
+      ],
+      "Emergency access revoked": [
+        "Η πρόσβαση έκτακτης ανάγκης έχει ανακληθεί"
       ],
       "Emergency contact added": [
         "Προστέθηκε επαφή έκτακτης ανάγκης"
@@ -5294,6 +5336,12 @@
       "Protect your legacy with emergency access": [
         "Προστατέψτε την κληρονομιά σας με πρόσβαση έκτακτης ανάγκης"
       ],
+      "Refuse access": [
+        "Απόρριψη πρόσβασης"
+      ],
+      "Refuse access?": [
+        "Απόρριψη πρόσβασης;"
+      ],
       "Remove trusted contact": [
         "Αφαίρεση αξιόπιστης επαφής"
       ],
@@ -5306,6 +5354,12 @@
       "Requesting access": [
         "Ζητείται πρόσβαση"
       ],
+      "Revoke access": [
+        "Ανάκληση πρόσβασης"
+      ],
+      "Revoke access?": [
+        "Ανάκληση πρόσβασης;"
+      ],
       "Stop being trusted contact?": [
         "Διακοπή ως αξιόπιστη επαφή;"
       ],
@@ -5317,6 +5371,10 @@
       ],
       "They may ask to access my account in case of an emergency.": [
         "Μπορεί να ζητήσουν πρόσβαση στον λογαριασμό μου σε περίπτωση έκτακτης ανάγκης."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "Θα αποκτήσουν αυτόματα πρόσβαση σε **${ days } ημέρα**, στις **${ formattedAccessibleAt }**, μπορείτε να απορρίψετε το αίτημά τους ή να τους δώσετε πρόσβαση άμεσα ανά πάσα στιγμή.",
+        "Θα αποκτήσουν αυτόματα πρόσβαση σε **${ days } ημέρες**, στις **${ formattedAccessibleAt }**, μπορείτε να απορρίψετε το αίτημά τους ή να τους δώσετε πρόσβαση άμεσα ανά πάσα στιγμή."
       ],
       "This will take effect immediately.": [
         "Αυτό θα τεθεί σε ισχύ άμεσα."
@@ -5372,6 +5430,9 @@
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Δεν θα μπορείτε πλέον να ζητήσετε πρόσβαση στον λογαριασμό του ${ user } σε περίπτωση έκτακτης ανάγκης."
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "Θα μπορείτε ακόμα να ζητήσετε πρόσβαση στον λογαριασμό του ${ user } αργότερα."
       ],
       "You'll receive access to their account immediately.": [
         "Θα λάβετε πρόσβαση στον λογαριασμό τους αμέσως."
@@ -11271,6 +11332,9 @@
       ],
       "Donation": [
         "Δωρεά"
+      ],
+      "Manual": [
+        "Χειροκίνητα"
       ],
       "Modification": [
         "Τροποποίηση"
@@ -22013,6 +22077,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Οι υποφάκελοι συστήματος θα εμφανιστούν στο ${ MAIL_APP_NAME } ως χωριστοί φάκελοι"
+      ],
+      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
+        "Η διεύθυνση έχει αποσυνδεθεί. Η αποστολή μηνυμάτων έχει τεθεί σε παύση. Επανασυνδεθείτε για να ενεργοποιήσετε ξανά αυτή τη διεύθυνση."
       ],
       "The import will start with the most recent messages.": [
         "Η εισαγωγή θα ξεκινήσει με τα πιο πρόσφατα μηνύματα."
