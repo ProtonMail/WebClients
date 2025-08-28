@@ -52,12 +52,14 @@ export const useProtonMeetIntegration = ({
 
     const [meetingObject, setMeetingObject] = useState<Meeting | null>(null);
 
+    const isCurrentUserMeetingHost = user.Email === model.conferenceHost;
+
     const [meetingDetails, setMeetingDetails] = useState({
         id: '',
         passwordBase: '',
         passphrase: '',
         failed: false,
-        hidePassphrase: !isProtonMeetEnabled,
+        hidePassphrase: !isProtonMeetEnabled || !isCurrentUserMeetingHost,
     });
 
     const modelRef = useRef(model);
@@ -190,7 +192,13 @@ export const useProtonMeetIntegration = ({
     const setupInProgress = useRef(false);
 
     const setup = async () => {
-        if (!model.conferenceId || !model.conferenceUrl || setupInProgress.current || !isProtonMeetEnabled) {
+        if (
+            !model.conferenceId ||
+            !model.conferenceUrl ||
+            setupInProgress.current ||
+            !isProtonMeetEnabled ||
+            !isCurrentUserMeetingHost
+        ) {
             return;
         }
 
