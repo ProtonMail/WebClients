@@ -1012,6 +1012,11 @@
         "缩小"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "恢复转发中"
+      ]
+    },
     "Action subscription": {
       "Reactivate": [
         "重新激活"
@@ -3860,6 +3865,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "您的账户或机构有逾期未付的账单，请前往未付。"
+      ],
+      "Your forward will not be processed.": [
+        "您的转发将不会被处理。"
       ],
       "Your import will not be processed.": [
         "此次导入将不会进行。"
@@ -10087,11 +10095,73 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "保持此计划"
+      ],
       "Start using ${ appName }": [
         "开始使用 ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "升级账户"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Let's talk": [
+        "让我们聊聊"
+      ],
+      "Limited time offer": [
+        "限时优惠"
+      ],
+      "Recommended": [
+        "推荐"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ 每月 ${ relativePrice }"
+      ],
+      "/month /user": [
+        "/月/用户"
+      ],
+      "/month /user, billed annually": [
+        "/月/用户，每年计费"
+      ],
+      "/month /user, billed biennially": [
+        "/月/用户，每两年计费"
+      ],
+      "Current plan": [
+        "当前方案"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "仅需**每月 ${ relativePrice }**，您便可以访问所有 ${ BRAND_NAME } 的高级密码管理器！"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "仅需**每月 ${ relativePrice }**，您便可以访问所有 ${ BRAND_NAME } 的高级 VPN 服务！"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "仅需**每月 ${ relativePrice }**，您便可以访问所有高级 ${ BRAND_NAME } 服务！"
+      ],
+      "Free forever": [
+        "永久免费"
+      ],
+      "Get in touch with our sales team": [
+        "联系我们的销售团队"
+      ],
+      "Includes:": [
+        "包含:"
+      ],
+      "per month": [
+        "每月"
+      ],
+      "per month, billed annually": [
+        "每月，每年计费"
+      ],
+      "per month, billed every month": [
+        "每月，每 个月计费一次"
+      ],
+      "per month, billed every two years": [
+        "每月，每两年结算一次"
+      ],
       "Secure vault sharing": [
         "安全保险库共享"
       ],

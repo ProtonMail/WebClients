@@ -1452,8 +1452,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -4567,6 +4566,9 @@
       "Failed to load the STL preview": [
         "Error al cargar la vista previa de STL"
       ],
+      "Failed to open to contact": [
+        "Error al abrir el contacto"
+      ],
       "Filter with this name already exists": [
         "Ya existe un filtro con este nombre"
       ],
@@ -7265,7 +7267,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -13915,6 +13918,10 @@
       ],
       "Read receipt sent": [
         "Acuse de recibo enviado"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Se recategorizó ${ elementsCount } mensaje.",
+        "Se recategorizaron ${ elementsCount } mensajes."
       ],
       "Self-destruction removed": [
         "Se eliminó la destrucción automática."
