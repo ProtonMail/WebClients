@@ -34,7 +34,6 @@ const defaultRules: PlanCapRule[] = [
     { plan: PLANS.MAIL, cycle: CYCLE.TWO_YEARS },
     { plan: PLANS.VPN2024, cycle: CYCLE.TWO_YEARS },
     { plan: PLANS.DRIVE, cycle: CYCLE.YEARLY },
-    { plan: PLANS.WALLET, cycle: CYCLE.YEARLY },
     { plan: PLANS.LUMO, cycle: CYCLE.YEARLY },
     { plan: PLANS.PASS, cycle: CYCLE.YEARLY },
     { plan: PLANS.PASS_FAMILY, cycle: CYCLE.YEARLY },

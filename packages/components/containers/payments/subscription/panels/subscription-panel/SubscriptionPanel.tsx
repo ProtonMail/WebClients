@@ -25,7 +25,6 @@ import {
     hasVPNPassBundle,
     hasVisionary,
     hasVpnBusiness,
-    hasWallet,
     isTrial,
 } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
@@ -61,15 +60,6 @@ import {
     getVaults,
 } from '../../../features/pass';
 import { getVPNConnectionsFeature } from '../../../features/vpn';
-import {
-    WALLET_PLUS_WALLETS,
-    WALLET_PLUS_WALLET_ACCOUNTS,
-    WALLET_PLUS_WALLET_EMAIL,
-    getBitcoinViaEmail,
-    getWalletAccounts,
-    getWalletEmailAddresses,
-    getWallets,
-} from '../../../features/wallet';
 import type { Upsell } from '../../../subscription/helpers';
 import SubscriptionPanelManageUserButton from '../../SubscriptionPanelManageUserButton';
 import { getSubscriptionPanelText } from '../../helpers/subscriptionPanelHelpers';
@@ -285,22 +275,6 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         );
     };
 
-    const getWalletAppWalletPlus = () => {
-        const items: Item[] = [
-            getWallets(WALLET_PLUS_WALLETS),
-            getWalletAccounts(WALLET_PLUS_WALLET_ACCOUNTS),
-            getWalletEmailAddresses(WALLET_PLUS_WALLET_EMAIL),
-            getBitcoinViaEmail(),
-        ];
-
-        return (
-            <StripedList alternate={alternate}>
-                {storageItem}
-                <SubscriptionItems user={user} items={items} />
-            </StripedList>
-        );
-    };
-
     const getLumoFree = () => {
         return (
             <StripedList alternate={alternate}>
@@ -504,9 +478,6 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                     }
                     if (getHasVpnB2BPlan(subscription)) {
                         return getVpnB2B();
-                    }
-                    if (hasWallet(subscription)) {
-                        return getWalletAppWalletPlus();
                     }
                     if (hasLumoPlan(subscription)) {
                         return getLumoPlus();
