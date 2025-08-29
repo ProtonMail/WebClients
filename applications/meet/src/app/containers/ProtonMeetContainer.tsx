@@ -202,8 +202,10 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         let timeout: NodeJS.Timeout | null = null;
 
         const checkConnection = async () => {
+            let isWebsocketHasReconnected = false;
             if (wasmAppRef.current?.getWsState && startHealthCheck.current) {
                 try {
+                    isWebsocketHasReconnected = await wasmAppRef.current.isWebsocketHasReconnected();
                     const connectionStatus = await wasmAppRef.current.getWsState();
 
                     if (connectionStatus !== ConnectionStateInfo.Reconnecting) {
@@ -226,7 +228,9 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                 }
             }
 
-            timeout = setTimeout(checkConnection, 5000);
+            // If the websocket has reconnected, check the connection every 5 seconds.
+            // Otherwise, check the connection every 30 seconds to avoid overwhelming the server.
+            timeout = setTimeout(checkConnection, isWebsocketHasReconnected ? 5_000 : 30_000);
         };
 
         void checkConnection();
