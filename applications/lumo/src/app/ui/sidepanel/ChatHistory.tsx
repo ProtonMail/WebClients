@@ -65,7 +65,8 @@ export const ChatHistory = ({ refInputSearch, onItemClick, searchInput = '' }: P
         const conversations = getVisibleConversations(conversationMap, isGuest, isGhostChatMode, conversationId);
 
         const sortedConversations = conversations.sort(sortByDate('desc'));
-        const favorites = sortedConversations.filter((conversation) => conversation.starred === true);
+        const allFavorites = sortedConversations.filter((conversation) => conversation.starred === true);
+        const favorites = searchConversations(allFavorites, searchInput); // Apply search filter to favorites
         const filteredConversations = searchConversations(sortedConversations, searchInput);
         const categorizedConversations = categorizeConversations(filteredConversations);
 
@@ -85,8 +86,8 @@ export const ChatHistory = ({ refInputSearch, onItemClick, searchInput = '' }: P
 
     return (
         <div className="h-full w-full flex flex-column flex-nowrap gap-2">
-            {/* Show Favorites section when not searching */}
-            {!searchInput && favorites.length > 0 && (
+            {/* Show Favorites section - include starred conversations in search results */}
+            {favorites.length > 0 && (
                 <>
                     <div className="sidebar-section-header">
                         <Icon name="star" size={4} />
@@ -103,8 +104,8 @@ export const ChatHistory = ({ refInputSearch, onItemClick, searchInput = '' }: P
             )}
             
             <Scroll className="flex-1">
-                {/* History section header - hide for mobile guests to keep UI clean */}
-                {!searchInput && !(isSmallScreen && isGuest) && (
+                {/* History section header - hide for mobile guests to keep UI clean, but show when searching */}
+                {(searchInput || !(isSmallScreen && isGuest)) && (
                     <div className="sidebar-section-header">
                         <Icon name="clock-rotate-left" size={4} />
                         <span>{c('collider_2025:Title').t`History`}</span>

@@ -100,10 +100,20 @@
 
 	&::placeholder {
 		color: var(--text-weak);
+		transition: opacity 0.6s ease; // Smooth transition for rotating text
 	}
 
 	&[readonly] {
 		pointer-events: none;
+	}
+
+	&:disabled {
+		color: var(--text-weak);
+		cursor: not-allowed;
+
+		&::placeholder {
+			color: var(--text-hint);
+		}
 	}
 }
 
