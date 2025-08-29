@@ -1,0 +1,165 @@
+import { useCallback, useMemo } from 'react';
+
+import { useShallow } from 'zustand/react/shallow';
+
+import { splitNodeUid } from '@proton/drive/index';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
+
+import type { BrowserItemId } from '../../../components/FileBrowser';
+import { useDocumentActions } from '../../../hooks/docs/useDocumentActions';
+import { useBatchThumbnailLoader } from '../../../hooks/drive/useBatchThumbnailLoader';
+import useDriveNavigation from '../../../hooks/drive/useNavigate';
+import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
+import type { SortField } from '../../../hooks/util/useSorting';
+import { useSortingWithDefault } from '../../../hooks/util/useSorting';
+import { useUserSettings } from '../../../store';
+import { useSharingInfoStore } from '../../../zustand/share/sharingInfo.store';
+import type { MappedLegacyItem } from '../SharedByMeCells';
+import { useSharedByMeStore } from '../useSharedByMe.store';
+
+const DEFAULT_SORT = {
+    sortField: 'name' as SortField,
+    sortOrder: SORT_DIRECTION.ASC,
+};
+
+export const useSharedByMeItemsWithSelection = () => {
+    const { layout } = useUserSettings();
+    const { openDocument } = useDocumentActions();
+    const { navigateToAlbum, navigateToLink } = useDriveNavigation();
+    const { loadThumbnail } = useBatchThumbnailLoader();
+
+    const { sharedByMeItems, isLoading } = useSharedByMeStore(
+        useShallow((state) => ({
+            sharedByMeItems: state.getAllSharedByMeItems(),
+            isLoading: state.isLoading(),
+        }))
+    );
+
+    const { skipSharingInfoLoading } = useSharingInfoStore(
+        useShallow((state) => ({
+            skipSharingInfoLoading: (uid: string) =>
+                state.isLoading(uid) || state.isEmptyOrFailed(uid) || state.hasSharingInfo(uid),
+        }))
+    );
+
+    // TODO: Cleanup mappedItems as we probably don't need all of this
+    const mappedItems = useMemo((): MappedLegacyItem[] => {
+        return sharedByMeItems.map((item) => {
+            const { volumeId, nodeId } = splitNodeUid(item.nodeUid);
+            return {
+                id: item.nodeUid,
+                uid: item.nodeUid,
+                trashed: null,
+                volumeId,
+                parentLinkId: '',
+                rootShareId: item.shareId,
+                mimeType: item.mediaType || '',
+                linkId: nodeId,
+                isFile: item.type === 'file',
+                name: item.name,
+                size: 0,
+                metaDataModifyTime: item.creationTime ? item.creationTime.getTime() : 0,
+                fileModifyTime: item.creationTime ? item.creationTime.getTime() : 0,
+                shareUrl: item.publicLink
+                    ? {
+                          id: '',
+                          token: '',
+                          isExpired: false,
+                          createTime: item.creationTime ? item.creationTime.getTime() : 0,
+                          expireTime: item.publicLink.expirationTime ? item.publicLink.expirationTime.getTime() : null,
+                          numAccesses: item.publicLink.numberOfInitializedDownloads || 0,
+                      }
+                    : undefined,
+                sharedOn: item.creationTime ? item.creationTime.getTime() : undefined,
+                sharedBy: undefined,
+                signatureEmail: undefined,
+            };
+        });
+    }, [sharedByMeItems]);
+
+    const { sortedList, sortParams, setSorting } = useSortingWithDefault(mappedItems, DEFAULT_SORT);
+    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, isLoading);
+
+    const isEmpty = !isLoading && mappedItems.length === 0;
+
+    const handleOpenItem = useCallback(
+        (uid: BrowserItemId) => {
+            const storeItem = sharedByMeItems.find((item) => item.nodeUid === uid);
+            if (!storeItem) {
+                return;
+            }
+
+            document.getSelection()?.removeAllRanges();
+
+            const { nodeId } = splitNodeUid(storeItem.nodeUid);
+            if (storeItem.mediaType && isProtonDocsDocument(storeItem.mediaType)) {
+                return openDocument({
+                    type: 'doc',
+                    uid: nodeId,
+                    openBehavior: 'tab',
+                });
+            }
+
+            if (storeItem.mediaType && isProtonDocsSpreadsheet(storeItem.mediaType)) {
+                return openDocument({
+                    type: 'sheet',
+                    uid: nodeId,
+                    openBehavior: 'tab',
+                });
+            }
+
+            if (storeItem.mediaType === 'Album') {
+                navigateToAlbum(storeItem.shareId, nodeId);
+                return;
+            }
+
+            navigateToLink(storeItem.shareId, nodeId, storeItem.type === 'file');
+        },
+        [sharedByMeItems, openDocument, navigateToAlbum, navigateToLink]
+    );
+
+    const handleRenderItem = useCallback(
+        (uid: string) => {
+            const storeItem = sharedByMeItems.find((item) => item.nodeUid === uid);
+            if (!storeItem) {
+                return;
+            }
+
+            incrementItemRenderedCounter();
+
+            loadThumbnail({
+                uid: storeItem.nodeUid,
+                thumbnailId: storeItem.thumbnailId || storeItem.nodeUid,
+                hasThumbnail: !!storeItem.thumbnailId,
+                cachedThumbnailUrl: undefined,
+            });
+
+            // Load sharing info if needed
+            if (!skipSharingInfoLoading(storeItem.nodeUid)) {
+                // This would need to be implemented when the sharing info loading is available
+                // Similar to what's done in the original useSharedByMeNodes
+            }
+        },
+        [sharedByMeItems, incrementItemRenderedCounter, loadThumbnail, skipSharingInfoLoading]
+    );
+
+    const handleSorting = useCallback(
+        async (sortParams: { sortField: SortField; sortOrder: SORT_DIRECTION }) => {
+            setSorting(sortParams);
+        },
+        [setSorting]
+    );
+
+    return {
+        items: sortedList,
+        selectedItems: [], // TODO: Implement selection when needed
+        isLoading,
+        layout,
+        sortParams,
+        handleOpenItem,
+        handleRenderItem,
+        handleSorting,
+        isEmpty,
+    };
+};

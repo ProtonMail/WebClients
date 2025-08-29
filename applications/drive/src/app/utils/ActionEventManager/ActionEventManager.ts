@@ -230,6 +230,17 @@ class ActionEventManager {
         const existing = this.treeEventSubscriptions.get(treeEventScopeId);
 
         if (existing) {
+            if (existing.contexts.has(context)) {
+                if (this.debugMode) {
+                    // eslint-disable-next-line no-console
+                    console.debug('[ActionEventManager] Given context already exist for SDK scope subscription', {
+                        context,
+                        totalContexts: existing.contexts.size,
+                        allContexts: Array.from(existing.contexts),
+                    });
+                }
+                return;
+            }
             existing.contexts.add(context);
             if (this.debugMode) {
                 // eslint-disable-next-line no-console
@@ -308,6 +319,20 @@ class ActionEventManager {
      */
     async subscribeSdkDriveEvents(context: string): Promise<void> {
         if (this.driveEventSubscription) {
+            if (this.driveEventSubscription.contexts.has(context)) {
+                if (this.debugMode) {
+                    // eslint-disable-next-line no-console
+                    console.debug(
+                        '[ActionEventManager] Given context already exist for SDK drive events subscription',
+                        {
+                            context,
+                            totalContexts: this.driveEventSubscription.contexts.size,
+                            allContexts: Array.from(this.driveEventSubscription.contexts),
+                        }
+                    );
+                }
+                return;
+            }
             this.driveEventSubscription.contexts.add(context);
             if (this.debugMode) {
                 // eslint-disable-next-line no-console

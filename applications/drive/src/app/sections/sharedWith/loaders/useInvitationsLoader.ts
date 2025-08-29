@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useNotifications } from '@proton/components';
-import { splitInvitationUid, splitNodeUid, useDrive } from '@proton/drive/index';
+import { splitInvitationUid, useDrive } from '@proton/drive/index';
 
 import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
 import { ItemType, useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
@@ -41,8 +41,6 @@ export const useInvitationsLoader = () => {
                     const { shareId } = splitInvitationUid(invitation.uid);
 
                     try {
-                        const { volumeId, nodeId } = splitNodeUid(invitation.node.uid);
-
                         loadedUids.add(invitation.node.uid);
                         setSharedWithMeItemInStore({
                             nodeUid: invitation.node.uid,
@@ -56,11 +54,7 @@ export const useInvitationsLoader = () => {
                                 uid: invitation.uid,
                                 sharedBy,
                             },
-                            legacy: {
-                                linkId: nodeId,
-                                shareId: shareId,
-                                volumeId: volumeId,
-                            },
+                            shareId,
                         });
                     } catch (e) {
                         handleError(e, {

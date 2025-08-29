@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { NodeType } from '@proton/drive/index';
+import { NodeType, splitNodeUid } from '@proton/drive/index';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
@@ -117,18 +117,39 @@ export const useSharedWithMeItemsWithSelection = () => {
             const keyUid = 'uid' in item ? item.uid : getKeyUid(item);
             const storeItem = getSharedWithMeStoreItem(keyUid);
             if (storeItem) {
-                mappedItems.push({
-                    id: keyUid,
-                    trashed: null,
-                    volumeId: storeItem.legacy.volumeId,
-                    parentLinkId: '',
-                    rootShareId: storeItem.legacy.shareId,
-                    mimeType: storeItem.mediaType || '',
-                    linkId: storeItem.legacy.linkId,
-                    isFile: storeItem.type === NodeType.File,
-                    name: storeItem.name,
-                    size: storeItem.size || 0,
-                });
+                if (storeItem?.itemType === ItemType.BOOKMARK) {
+                    mappedItems.push({
+                        id: keyUid,
+                        trashed: null,
+                        volumeId: '',
+                        parentLinkId: '',
+                        rootShareId: '',
+                        mimeType: storeItem.mediaType || '',
+                        linkId: '',
+                        isFile: storeItem.type === NodeType.File,
+                        name: storeItem.name,
+                        size: storeItem.size || 0,
+                        isInvitation: false,
+                        isBookmark: true,
+                        albumProperties: {},
+                    });
+                } else {
+                    const { volumeId, nodeId } = splitNodeUid(keyUid);
+                    mappedItems.push({
+                        id: keyUid,
+                        trashed: null,
+                        volumeId,
+                        parentLinkId: '', // parentLinkId is never defined in sharedWithMe section
+                        rootShareId: storeItem.shareId,
+                        mimeType: storeItem.mediaType || '',
+                        linkId: nodeId,
+                        isFile: storeItem.type === NodeType.File,
+                        name: storeItem.name,
+                        size: storeItem.size || 0,
+                        isInvitation: storeItem.itemType === ItemType.INVITATION,
+                        albumProperties: {},
+                    });
+                }
             }
         }
         return mappedItems;
@@ -155,12 +176,13 @@ export const useSharedWithMeItemsWithSelection = () => {
             }
             document.getSelection()?.removeAllRanges();
 
+            const { nodeId } = splitNodeUid(item.nodeUid);
             if (item.mediaType && isProtonDocsDocument(item.mediaType)) {
                 if (isDocsEnabled) {
                     return openDocument({
                         type: 'doc',
-                        linkId: item.legacy.linkId,
-                        shareId: item.legacy.shareId,
+                        linkId: nodeId,
+                        shareId: item.shareId,
                         openBehavior: 'tab',
                     });
                 }
@@ -169,8 +191,8 @@ export const useSharedWithMeItemsWithSelection = () => {
                 if (isDocsEnabled) {
                     return openDocument({
                         type: 'sheet',
-                        linkId: item.legacy.linkId,
-                        shareId: item.legacy.shareId,
+                        linkId: nodeId,
+                        shareId: item.shareId,
                         openBehavior: 'tab',
                     });
                 }
@@ -178,10 +200,10 @@ export const useSharedWithMeItemsWithSelection = () => {
             }
 
             if (item.type === NodeType.Album) {
-                navigateToAlbum(item.legacy.shareId, item.legacy.linkId);
+                navigateToAlbum(item.shareId, nodeId);
                 return;
             }
-            navigateToLink(item.legacy.shareId, item.legacy.linkId, item.type === NodeType.File);
+            navigateToLink(item.shareId, nodeId, item.type === NodeType.File);
         },
         [navigateToLink, openBookmark, isDocsEnabled, openDocument, navigateToAlbum, getSharedWithMeStoreItem]
     );
