@@ -33,7 +33,6 @@ import { getSentryError } from '@proton/shared/lib/keys';
 import { useGetFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useChargebeeContext } from '../client-extensions/useChargebeeContext';
 import { InvalidZipCodeError } from './errors';
 
 const checkSubscriptionQuery = (
@@ -124,7 +123,6 @@ export const useReportRoutingError = () => {
         'This operation is not supported for users on a legacy subscription',
     ];
 
-    const chargebeeContext = useChargebeeContext();
     const { APP_NAME } = useConfig();
 
     const [alreadyReported, setAlreadyReported] = useState(false);
@@ -142,7 +140,6 @@ export const useReportRoutingError = () => {
         const context = {
             app: APP_NAME,
             paymentsVersion: getPaymentsVersion(),
-            chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
             ...additionalContext,
         };
 

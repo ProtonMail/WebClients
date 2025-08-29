@@ -7,9 +7,6 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { type ChargebeeEnabledString, chargebeeEnabledToString } from './helpers';
-import { type CalledKillSwitchString, useChargebeeContext } from './useChargebeeContext';
-
 interface Overrides {
     plan?: PLANS | undefined;
     flow?: TelemetryPaymentFlow;
@@ -64,8 +61,8 @@ function mapFlows(flow: TelemetryPaymentFlow): DimensionFlows {
 type Dimensions = {
     flow: TelemetryPaymentFlow;
     plan: PLANS | ADDON_NAMES | 'n/a';
-    calledKillSwitch: CalledKillSwitchString;
-    chargebeeEnabled: ChargebeeEnabledString;
+    calledKillSwitch: 'not-called';
+    chargebeeEnabled: 'chargebee-forced';
     system?: 'chargebee' | 'inhouse' | 'n/a';
     method?: PaymentProcessorType | 'n/a';
     /**
@@ -94,7 +91,6 @@ export const usePaymentsTelemetry = ({
     const defaultApi = useApi();
     const api = apiOverride ?? defaultApi;
 
-    const chargebeeContext = useChargebeeContext();
     const formatDimensions = (
         method: PaymentProcessorType | 'n/a' | undefined,
         { flow: flowOverride, plan: planOverride, cycle: cycleOverride }: Overrides = {}
@@ -105,8 +101,8 @@ export const usePaymentsTelemetry = ({
         return {
             flow: mapFlows(flowOverride ?? flow),
             plan: planOverride ?? plan ?? 'n/a',
-            calledKillSwitch: chargebeeContext.calledKillSwitch,
-            chargebeeEnabled: chargebeeEnabledToString(chargebeeContext.enableChargebeeRef.current),
+            calledKillSwitch: 'not-called',
+            chargebeeEnabled: 'chargebee-forced',
             system: getSystemByHookType(method),
             method,
             cycle: formattedCycle,
