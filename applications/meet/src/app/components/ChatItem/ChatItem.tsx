@@ -21,6 +21,7 @@ interface ChatItemProps {
     };
     displayDate?: boolean;
     shouldGrow?: boolean;
+    ellipsisOverflow?: boolean;
 }
 
 const isMeetChatMessage = (item: MeetingRoomUpdate): item is MeetChatMessage => {
@@ -31,13 +32,23 @@ const isParticipantEventRecord = (item: MeetingRoomUpdate): item is ParticipantE
     return item.type === 'event';
 };
 
-export const ChatItem = ({ roomName, item, colors, displayDate = true, shouldGrow = false }: ChatItemProps) => {
+export const ChatItem = ({
+    roomName,
+    item,
+    colors,
+    displayDate = true,
+    shouldGrow = false,
+    ellipsisOverflow = false,
+}: ChatItemProps) => {
     const { type, name, timestamp } = item;
 
     return (
         <div
             key={`${type}-${name}-${timestamp}`}
-            className={clsx('flex gap-2 height-custom flex-nowrap shrink-0', shouldGrow && 'flex-1')}
+            className={clsx(
+                'flex gap-2 height-custom flex-nowrap shrink-0',
+                (shouldGrow || ellipsisOverflow) && 'flex-1'
+            )}
             style={{ '--height-custom': 'fit-content' }}
         >
             <div className="flex flex-nowrap items-start shrink-0">
@@ -69,7 +80,12 @@ export const ChatItem = ({ roomName, item, colors, displayDate = true, shouldGro
                     )}
                 </div>
                 {isMeetChatMessage(item) && (
-                    <div className={clsx('flex justify-start items-start color-weak text-semibold', 'chat-message')}>
+                    <div
+                        className={clsx(
+                            'color-weak text-semibold chat-message',
+                            ellipsisOverflow && 'text-ellipsis chat-message-one-line'
+                        )}
+                    >
                         <ChatMessageContent message={item.message} />
                     </div>
                 )}

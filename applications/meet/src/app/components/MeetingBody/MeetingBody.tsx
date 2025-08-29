@@ -24,7 +24,6 @@ import { Participants } from '../Participants/Participants';
 import { PermissionRequest } from '../PermissionRequest/PermissionRequest';
 import { ScreenShareHeading } from '../ScreenShareHeading/ScreenShareHeading';
 import { Settings } from '../Settings/Settings';
-import { ToastMessages } from '../ToastMessages/ToastMessages';
 
 import './MeetingBody.scss';
 
@@ -121,7 +120,6 @@ export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyPro
             </div>
             <ParticipantControls />
             <RoomAudioRenderer />
-            <ToastMessages />
             <NoDeviceDetectedInfo />
             <NoDeviceDetectedModal />
             <NoPermissionInfo />

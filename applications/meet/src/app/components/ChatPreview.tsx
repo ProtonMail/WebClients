@@ -6,24 +6,37 @@ import { CloseButton } from '../atoms/CloseButton/CloseButton';
 import { useMeetContext } from '../contexts/MeetContext';
 import { useUIStateContext } from '../contexts/UIStateContext';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
+import { useMeetingRoomUpdates } from '../hooks/useMeetingRoomUpdates';
 import { MeetingSideBars } from '../types';
 import { getParticipantDisplayColors } from '../utils/getParticipantDisplayColors';
 import { ChatItem } from './ChatItem/ChatItem';
 
 const CHAT_MESSAGE_TIMEOUT = 8000;
 
+const PARTICIPANT_COUNT_THRESHOLD = 5;
+
 export const ChatPreview = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const { chatMessages, sortedParticipants } = useMeetContext();
+    const { sortedParticipants, roomName } = useMeetContext();
+
+    const meetingRoomUpdates = useMeetingRoomUpdates();
 
     const { sideBarState } = useUIStateContext();
 
-    const latestChatMessage = useMemo(() => {
-        const item = chatMessages.sort((a, b) => b.timestamp - a.timestamp)[0];
+    const participantCountBiggerThanThreshold = sortedParticipants.length > PARTICIPANT_COUNT_THRESHOLD;
 
-        return item ? { ...item, type: 'message' as const } : null;
-    }, [chatMessages]);
+    const latestChatMessage = useMemo(() => {
+        const now = Date.now();
+
+        return meetingRoomUpdates
+            .filter(
+                (item) =>
+                    (item.type === 'message' || !participantCountBiggerThanThreshold) &&
+                    now - item.timestamp < CHAT_MESSAGE_TIMEOUT
+            )
+            .sort((a, b) => b.timestamp - a.timestamp)[0];
+    }, [meetingRoomUpdates, participantCountBiggerThanThreshold]);
 
     const isLargerThanMd = useIsLargerThanMd();
 
@@ -49,7 +62,7 @@ export const ChatPreview = () => {
 
     return (
         <div
-            className="absolute bottom-custom left-custom z-up bg-norm border border-norm rounded-xl p-4 w-custom max-w-custom max-h-custom flex flex-nowrap justify-space-between items-center overflow-y-auto"
+            className="absolute bottom-custom left-custom z-up bg-norm border border-norm rounded-xl p-4 w-custom max-w-custom max-h-custom flex flex-nowrap justify-space-between items-center overflow-hidden"
             style={{
                 '--bottom-custom': '4.5rem',
                 '--left-custom': '50%',
@@ -67,7 +80,9 @@ export const ChatPreview = () => {
                         | LocalParticipant
                 )}
                 displayDate={false}
-                shouldGrow={true}
+                shouldGrow={false}
+                roomName={roomName}
+                ellipsisOverflow={true}
             />
 
             <CloseButton onClose={() => setIsOpen(false)} className="ml-auto" />
