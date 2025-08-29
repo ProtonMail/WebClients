@@ -4,7 +4,6 @@ import { Switch } from 'react-router-dom';
 import type { getMeetAppRoutes } from './routes';
 
 const MeetSettingsRouter = ({
-    // meetAppRoutes,
     redirect,
 }: {
     meetAppRoutes: ReturnType<typeof getMeetAppRoutes>;
