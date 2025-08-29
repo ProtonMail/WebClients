@@ -111,6 +111,11 @@ export const useSharedWithMeItemsWithSelection = () => {
         [clearItemsWithInvitationPosition, setSorting]
     );
 
+    /*
+     * This is intended to not adapt all the properties to the mappedItem.
+     * All values for the UI will be fetched throught the store using the id/uid
+     * This is here to adapt with the FileBrowser typing
+     * */
     const getMapLegacyItems = useCallback(() => {
         const mappedItems = [];
         for (const item of items) {
@@ -131,7 +136,6 @@ export const useSharedWithMeItemsWithSelection = () => {
                         size: storeItem.size || 0,
                         isInvitation: false,
                         isBookmark: true,
-                        albumProperties: {},
                     });
                 } else {
                     const { volumeId, nodeId } = splitNodeUid(keyUid);
@@ -147,7 +151,7 @@ export const useSharedWithMeItemsWithSelection = () => {
                         name: storeItem.name,
                         size: storeItem.size || 0,
                         isInvitation: storeItem.itemType === ItemType.INVITATION,
-                        albumProperties: {},
+                        isAlbum: storeItem.type === NodeType.Album,
                     });
                 }
             }
