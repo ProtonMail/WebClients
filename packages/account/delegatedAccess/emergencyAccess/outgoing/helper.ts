@@ -51,6 +51,7 @@ export const getMetaOutgoingDelegatedAccess = ({
     const canRejectAccess = accessibleAtTimeDiff !== null && accessibleAtTimeDiff <= 0;
 
     return {
+        accessibleAt,
         accessibleAtTimeDiff,
         hasRequestedAccess,
         canLogin: !isDisabled && canLogin,
