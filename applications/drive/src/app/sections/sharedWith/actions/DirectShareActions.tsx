@@ -1,7 +1,7 @@
 import { Vr } from '@proton/atoms';
 import { ContextSeparator } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components';
-import { NodeType } from '@proton/drive/index';
+import { NodeType, splitNodeUid } from '@proton/drive';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import {
@@ -54,10 +54,10 @@ export const DirectShareActions = ({
     const openInDocs = useOpenInDocs(
         singleItem
             ? {
-                  linkId: singleItem.legacy.linkId,
+                  linkId: splitNodeUid(singleItem.nodeUid).nodeId,
                   mimeType: singleItem.mediaType || '',
                   parentLinkId: '', // No parentLinkId on shared with me item
-                  rootShareId: singleItem.legacy.shareId,
+                  rootShareId: singleItem.shareId,
               }
             : undefined
     );
@@ -81,7 +81,7 @@ export const DirectShareActions = ({
                         <Vr />
                         <RemoveMeButton
                             nodeUid={singleItem.nodeUid}
-                            shareId={singleItem.legacy.shareId}
+                            shareId={singleItem.shareId}
                             isAlbum={singleItem.type === NodeType.Album}
                             showConfirmModal={showConfirmModal}
                             buttonType="toolbar"
@@ -96,8 +96,8 @@ export const DirectShareActions = ({
         <>
             {hasPreviewAvailable && (
                 <ContextPreviewButton
-                    shareId={singleItem.legacy.shareId}
-                    linkId={singleItem.legacy.linkId}
+                    shareId={singleItem.shareId}
+                    linkId={splitNodeUid(singleItem.nodeUid).nodeId}
                     close={close}
                 />
             )}
@@ -120,7 +120,7 @@ export const DirectShareActions = ({
                     <ContextSeparator />
                     <RemoveMeButton
                         nodeUid={singleItem.nodeUid}
-                        shareId={singleItem.legacy.shareId}
+                        shareId={singleItem.shareId}
                         isAlbum={singleItem.type === NodeType.Album}
                         showConfirmModal={showConfirmModal}
                         close={close}
