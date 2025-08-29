@@ -170,7 +170,7 @@ const IncomingTable = ({
         { title: c('Title').t`Name`, className: 'w-1/3' },
         {
             title: c('emergency_access').t`Wait time`,
-            info: c('emergency_access').t`Time required before automatically granting them access`,
+            info: c('emergency_access').t`Time required before automatically giving you access`,
         },
         { title: c('Title').t`Status`, className: 'w-1/3' },
         { title: '' },
