@@ -3,7 +3,7 @@ import type { Nullable } from '@proton/shared/lib/interfaces';
 import { type CheckSubscriptionData, type ProrationMode } from '../api';
 import type { Currency, Cycle } from '../interface';
 import type { BasePlansMap, Plan, SubscriptionPlan } from '../plan/interface';
-import type { BillingPlatform, Renew, SubscriptionMode, SubscriptionPlatform, TaxInclusive } from './constants';
+import type { Renew, SubscriptionMode, SubscriptionPlatform, TaxInclusive } from './constants';
 
 export type FullPlansMap = BasePlansMap<Plan>;
 
@@ -44,7 +44,6 @@ export interface Subscription {
     External: SubscriptionPlatform;
     UpcomingSubscription?: Subscription | null;
     IsTrial: boolean;
-    BillingPlatform?: BillingPlatform;
     /**
      * Contains additional subscriptions if user has multiple subscriptions.
      */

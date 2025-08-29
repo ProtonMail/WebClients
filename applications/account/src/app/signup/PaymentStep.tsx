@@ -18,7 +18,6 @@ import PaymentWrapper from '@proton/components/containers/payments/PaymentWrappe
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { getAllowedCycles } from '@proton/components/containers/payments/subscription/helpers';
 import { useCurrencies, usePaymentFacade } from '@proton/components/payments/client-extensions';
-import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import type { ExtendedTokenPayment, PaymentProcessorHook, PaymentStatus, TokenPayment } from '@proton/payments';
@@ -94,8 +93,6 @@ const PaymentStep = ({
 
     const plansMap = getPlansMap(plans, subscriptionData.currency, false);
     const hasGuarantee = getIsConsumerVpnPlan(plan?.Name);
-
-    const chargebeeContext = useChargebeeContext();
 
     const paymentFacade = usePaymentFacade({
         checkResult: subscriptionData.checkResult,
@@ -176,7 +173,6 @@ const PaymentStep = ({
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
                         paymentsVersion: getPaymentsVersion(),
-                        chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
                     };
 
                     captureMessage('Payments: failed to handle classic signup', {

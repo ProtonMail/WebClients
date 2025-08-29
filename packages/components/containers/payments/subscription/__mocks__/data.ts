@@ -565,7 +565,6 @@ export const subscriptionBundlePro: Subscription = {
     ],
     Renew: 1,
     External: 0,
-    BillingPlatform: 1,
     IsTrial: false,
 };
 

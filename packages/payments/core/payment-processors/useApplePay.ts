@@ -14,7 +14,6 @@ import type {
     ChargebeeFetchedPaymentToken,
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
-    ForceEnableChargebee,
     RemoveEventListener,
 } from '../interface';
 import type { PaymentProcessorHook } from './interface';
@@ -35,7 +34,6 @@ export interface Dependencies {
     api: Api;
     events: ChargebeeIframeEvents;
     handles: ChargebeeIframeHandles;
-    forceEnableChargebee: ForceEnableChargebee;
     applePayModalHandles: ApplePayModalHandles | undefined;
 }
 
@@ -52,7 +50,7 @@ export type ApplePayProcessorHook = Omit<PaymentProcessorHook, keyof Overrides> 
 
 export const useApplePay = (
     { amountAndCurrency, onChargeable }: Props,
-    { api, handles, events, applePayModalHandles, forceEnableChargebee }: Dependencies
+    { api, handles, events, applePayModalHandles }: Dependencies
 ): ApplePayProcessorHook => {
     const fetchedPaymentTokenRef = useRef<ChargebeeFetchedPaymentToken | null>(null);
     const paymentIntentRef = useRef<PaymentIntent | null>(null);
@@ -76,7 +74,6 @@ export const useApplePay = (
             };
 
             const { Token: PaymentToken, Status, Data: bePaymentIntentData } = await fetchPaymentIntentV5(api, payload);
-            forceEnableChargebee();
 
             const paymentIntent = convertPaymentIntentData(bePaymentIntentData);
 

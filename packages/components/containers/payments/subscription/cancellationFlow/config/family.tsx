@@ -26,7 +26,7 @@ import {
 } from './b2cCommonConfig';
 import type { ConfigProps } from './types';
 
-export const getFamilyConfig = ({ plan, subscription, user }: ConfigProps): PlanConfig => {
+export const getFamilyConfig = ({ plan, subscription }: ConfigProps): PlanConfig => {
     const currentPlan = PLANS.FAMILY;
     const planName = PLAN_NAMES[currentPlan];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'TB', fraction: 0 });
@@ -94,7 +94,7 @@ export const getFamilyConfig = ({ plan, subscription, user }: ConfigProps): Plan
         ],
     };
 
-    const cancellablePlan = hasCancellablePlan(subscription, user);
+    const cancellablePlan = hasCancellablePlan(subscription);
     const storage: PlanConfigStorage = getDefaultTBStorageWarning(planName, planMaxSpace, cancellablePlan);
     const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName, cancellablePlan);
 

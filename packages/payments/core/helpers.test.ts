@@ -1,4 +1,4 @@
-import { ChargebeeEnabled, type User, type UserModel } from '@proton/shared/lib/interfaces';
+import { type User, type UserModel } from '@proton/shared/lib/interfaces';
 import { getTestPlans } from '@proton/testing/data';
 
 import { ADDON_NAMES, DEFAULT_CURRENCY, FREE_SUBSCRIPTION, PLANS } from './constants';
@@ -365,25 +365,6 @@ describe('payments core helpers', () => {
                     enableNewBatchCurrencies: true,
                 })
             ).toEqual('JPY');
-        });
-
-        it('should not show regional currencies to inhouse forced users', () => {
-            const status: PaymentStatus = {
-                CountryCode: 'BR',
-                VendorStates: {} as any,
-            };
-
-            expect(
-                getPreferredCurrency({
-                    paymentStatus: status,
-                    user: {
-                        Currency: 'USD',
-                        ChargebeeUser: ChargebeeEnabled.INHOUSE_FORCED,
-                        isPaid: true,
-                    } as UserModel,
-                    enableNewBatchCurrencies: true,
-                })
-            ).toEqual('USD');
         });
 
         it('should use fallback currency if plan param does not support the currency', () => {
@@ -823,24 +804,6 @@ describe('payments core helpers', () => {
     });
 
     describe('getSupportedRegionalCurrencies', () => {
-        it('should return empty arre if user inhouse forced', () => {
-            const status: PaymentStatus = {
-                CountryCode: 'BR',
-                VendorStates: {} as any,
-            };
-
-            expect(
-                getSupportedRegionalCurrencies({
-                    paymentStatus: status,
-                    user: {
-                        Currency: 'ARS' as any,
-                        ChargebeeUser: ChargebeeEnabled.INHOUSE_FORCED,
-                    } as User,
-                    enableNewBatchCurrencies: true,
-                })
-            ).toEqual([]);
-        });
-
         it('should return regional currency if regional currencies', () => {
             const status: PaymentStatus = {
                 CountryCode: 'BR',

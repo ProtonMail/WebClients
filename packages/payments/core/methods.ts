@@ -1,6 +1,5 @@
 import { isSafari } from '@proton/shared/lib/helpers/browser';
-import type { Api, ChargebeeUserExists, User } from '@proton/shared/lib/interfaces';
-import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import type { Api, User } from '@proton/shared/lib/interfaces';
 import { isDelinquent } from '@proton/shared/lib/user/helpers';
 import orderBy from '@proton/utils/orderBy';
 
@@ -12,7 +11,6 @@ import {
     MIN_APPLE_PAY_AMOUNT,
     MIN_BITCOIN_AMOUNT,
     MIN_PAYPAL_AMOUNT_CHARGEBEE,
-    MIN_PAYPAL_AMOUNT_INHOUSE,
     MethodStorage,
     PAYMENT_METHOD_TYPES,
     PLANS,
@@ -33,11 +31,9 @@ import type {
     SavedPaymentMethodExternal,
 } from './interface';
 import { getIsB2BAudienceFromPlan } from './plan/helpers';
-import { type BillingPlatform } from './subscription/constants';
 import { getHas2024OfferCoupon } from './subscription/helpers';
 import { type Subscription } from './subscription/interface';
 import { isFreeSubscription } from './type-guards';
-import { isOnSessionMigration, isSplittedUser } from './utils';
 
 // SEPA helper. Can be removed if the API consistently returns the type of save SEPA in both cases: GET events and GET methods
 
@@ -93,14 +89,11 @@ export function formatPaymentMethods(paymentMethods: SavedPaymentMethod[]): Save
 export interface PaymentMethodsParameters {
     paymentStatus: PaymentStatus;
     paymentMethods: SavedPaymentMethod[];
-    chargebeeEnabled: ChargebeeEnabled;
     amount: number;
     currency: Currency;
     coupon: string;
     flow: PaymentMethodFlow;
     selectedPlanName: PLANS | ADDON_NAMES | undefined;
-    billingPlatform?: BillingPlatform;
-    chargebeeUserExists?: ChargebeeUserExists;
     billingAddress?: BillingAddress;
     enableSepa?: boolean;
     enableSepaB2C?: boolean;
@@ -197,8 +190,6 @@ export class PaymentMethods {
 
     public paymentMethods: SavedPaymentMethod[];
 
-    public chargebeeEnabled: ChargebeeEnabled;
-
     private _amount: number;
 
     public currency: Currency;
@@ -208,10 +199,6 @@ export class PaymentMethods {
     private _flow: PaymentMethodFlow;
 
     private _selectedPlanName: PLANS | ADDON_NAMES | undefined;
-
-    public billingPlatform: BillingPlatform | undefined;
-
-    public chargebeeUserExists: ChargebeeUserExists | undefined;
 
     public billingAddress: BillingAddress | undefined;
 
@@ -243,14 +230,11 @@ export class PaymentMethods {
     constructor({
         paymentStatus,
         paymentMethods,
-        chargebeeEnabled,
         amount,
         currency,
         coupon,
         flow,
         selectedPlanName,
-        billingPlatform,
-        chargebeeUserExists,
         billingAddress,
         enableSepa,
         enableSepaB2C,
@@ -263,14 +247,11 @@ export class PaymentMethods {
         this._paymentStatus = paymentStatus;
 
         this.paymentMethods = paymentMethods;
-        this.chargebeeEnabled = chargebeeEnabled;
         this._amount = amount;
         this.currency = currency;
         this._coupon = coupon;
         this._flow = flow;
         this._selectedPlanName = selectedPlanName;
-        this.billingPlatform = billingPlatform;
-        this.chargebeeUserExists = chargebeeUserExists;
         this.billingAddress = billingAddress;
         this.enableSepa = !!enableSepa;
         this.enableSepaB2C = !!enableSepaB2C;
@@ -453,12 +434,9 @@ export class PaymentMethods {
             ? sepaCountries.has(this.billingAddress.CountryCode)
             : false;
 
-        const cbUser = this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED;
-
         return (
             flowSupportsDirectDebit &&
             billingCountrySupportsSEPA &&
-            cbUser &&
             !this.isBF2024Offer() &&
             // separate flag for B2C plans
             (this.isB2BPlan() || this.enableSepaB2C) &&
@@ -467,15 +445,11 @@ export class PaymentMethods {
     }
 
     private isBitcoinAvailable(): boolean {
-        return this.commonBtcConditions() && !this.isChargebeeBitcoinAvailable();
+        return false;
     }
 
     private isChargebeeBitcoinAvailable(): boolean {
-        if (this.chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED || this.chargebeeMethodsDisabled()) {
-            return false;
-        }
-
-        return this.commonBtcConditions() && this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED;
+        return this.commonBtcConditions();
     }
 
     private commonBtcConditions() {
@@ -510,51 +484,19 @@ export class PaymentMethods {
     }
 
     private isCardAvailable(): boolean {
-        if (!this.paymentStatus.VendorStates.Card) {
-            return false;
-        }
-
-        return !this.isChargebeeCardAvailable();
+        return false;
     }
 
     private isChargebeeCardAvailable(): boolean {
-        if (this.chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED || this.chargebeeMethodsDisabled()) {
-            return false;
-        }
-
         const cardAvailable = this.paymentStatus.VendorStates.Card;
-        if (this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED) {
-            return cardAvailable;
-        }
-
-        const isAddCard = this.flow === 'add-card';
-        const isSubscription = this.flow === 'subscription';
-        const isCredit = this.flow === 'credit';
-        const isAllowedFlow = isSignupFlow(this.flow) || isAddCard || isSubscription || isCredit;
-
-        return cardAvailable && isAllowedFlow;
+        return cardAvailable;
     }
 
     private isPaypalAvailable(): boolean {
-        const alreadyHasPayPal = this.paymentMethods.some(
-            ({ Type }) => Type === PAYMENT_METHOD_TYPES.PAYPAL || Type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
-        );
-        const isPaypalAmountValid = this.amount >= MIN_PAYPAL_AMOUNT_INHOUSE;
-        const isInvoice = this.flow === 'invoice';
-
-        return (
-            this.paymentStatus.VendorStates.Paypal &&
-            !alreadyHasPayPal &&
-            (isPaypalAmountValid || isInvoice) &&
-            !this.isChargebeePaypalAvailable()
-        );
+        return false;
     }
 
     private isChargebeePaypalAvailable(): boolean {
-        if (this.chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED || this.chargebeeMethodsDisabled()) {
-            return false;
-        }
-
         const alreadyHasPayPal = this.paymentMethods.some(
             ({ Type }) => Type === PAYMENT_METHOD_TYPES.PAYPAL || Type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
         );
@@ -564,15 +506,7 @@ export class PaymentMethods {
 
         const paypalAvailable =
             this.paymentStatus.VendorStates.Paypal && !alreadyHasPayPal && (isPaypalAmountValid || isInvoice);
-        if (this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED) {
-            return paypalAvailable;
-        }
-
-        const isSubscription = this.flow === 'subscription';
-        const isCredit = this.flow === 'credit';
-        const isAllowedFlow = isSubscription || isSignupFlow(this.flow) || isCredit;
-
-        return paypalAvailable && isAllowedFlow;
+        return paypalAvailable;
     }
 
     private isApplePayAvailable(): boolean {
@@ -603,20 +537,6 @@ export class PaymentMethods {
         return this.selectedPlanName ? getIsB2BAudienceFromPlan(this.selectedPlanName) : false;
     }
 
-    private isOnSessionMigration() {
-        return isOnSessionMigration(this.chargebeeEnabled, this.billingPlatform);
-    }
-
-    private isSplittedUser() {
-        return isSplittedUser(this.chargebeeEnabled, this.chargebeeUserExists, this.billingPlatform);
-    }
-
-    private chargebeeMethodsDisabled() {
-        const isAddCard = this.flow === 'add-card';
-        const isCredit = this.flow === 'credit';
-        return (isAddCard || isCredit) && this.isOnSessionMigration() && !this.isSplittedUser();
-    }
-
     private buysPassLifetime() {
         return !!this.planIDs?.[PLANS.PASS_LIFETIME];
     }
@@ -645,11 +565,8 @@ export async function initializePaymentMethods({
     currency: Currency;
     coupon: string;
     flow: PaymentMethodFlow;
-    chargebeeEnabled: ChargebeeEnabled;
     paymentsApi: PaymentsApi;
     selectedPlanName: PLANS | ADDON_NAMES | undefined;
-    billingPlatform?: BillingPlatform;
-    chargebeeUserExists?: ChargebeeUserExists;
     billingAddress?: BillingAddress;
     enableSepa?: boolean;
     enableSepaB2C?: boolean;

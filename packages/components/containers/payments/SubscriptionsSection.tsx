@@ -4,7 +4,6 @@ import { c, msgid } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms';
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
@@ -32,7 +31,6 @@ import {
     getRenewalTime,
     isFreeSubscription,
     isManagedExternally,
-    onSessionMigrationPaymentsVersion,
 } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import isTruthy from '@proton/utils/isTruthy';
@@ -51,7 +49,6 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
     const [reactivating, withReactivating] = useLoading();
     const api = useApi();
     const { sendDashboardReactivateReport } = useCancellationTelemetry();
-    const [user] = useUser();
     const eventManager = useEventManager();
     const upcoming = subscription?.UpcomingSubscription ?? undefined;
     const [organization] = useOrganization();
@@ -103,7 +100,7 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
                             {
                                 RenewalState: Renew.Enabled,
                             },
-                            onSessionMigrationPaymentsVersion(user, subscription)
+                            'v5'
                         )
                     );
 

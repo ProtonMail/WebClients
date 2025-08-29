@@ -3,33 +3,29 @@ import { useEffect, useRef } from 'react';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useModals from '@proton/components/hooks/useModals';
-import type {
-    ADDON_NAMES,
-    BillingAddress,
-    ChargeablePaymentParameters,
-    ChargebeeIframeEvents,
-    ChargebeeIframeHandles,
-    PLANS,
-    PaymentMethodFlow,
-    PaymentMethodType,
-    PaymentProcessorType,
-    PaymentStatus,
-    PaymentsVersion,
-    PlainPaymentMethodType,
-    PlanIDs,
-    RequiredCheckResponse,
-    SavedPaymentMethod,
-} from '@proton/payments';
 import {
-    type BillingPlatform,
+    type ADDON_NAMES,
+    type BillingAddress,
+    type ChargeablePaymentParameters,
+    type ChargebeeIframeEvents,
+    type ChargebeeIframeHandles,
     type Currency,
     PAYMENT_METHOD_TYPES,
+    type PLANS,
+    type PaymentMethodFlow,
+    type PaymentMethodType,
+    type PaymentProcessorType,
+    type PaymentStatus,
+    type PaymentsVersion,
+    type PlainPaymentMethodType,
+    type PlanIDs,
+    type RequiredCheckResponse,
+    type SavedPaymentMethod,
     type Subscription,
     SubscriptionMode,
-    canUseChargebee,
 } from '@proton/payments';
 import { useCbIframe } from '@proton/payments/ui';
-import { type Api, type ChargebeeEnabled, type ChargebeeUserExists, type User } from '@proton/shared/lib/interfaces';
+import { type Api, type User } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
@@ -37,8 +33,6 @@ import type { OnMethodChangedHandler, Operations, OperationsData } from '../reac
 import { usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';
 import type { ThemeCode, ThemeLike } from './helpers';
 import { getThemeCode } from './helpers';
-import { useChargebeeEnabledCache } from './useChargebeeContext';
-import { useChargebeeKillSwitch } from './useChargebeeKillSwitch';
 import { wrapMethods } from './useMethods';
 import { type TelemetryPaymentFlow, usePaymentsTelemetry } from './usePaymentsTelemetry';
 import {
@@ -95,18 +89,12 @@ type PaymentFacadeProps = {
      */
     api?: Api;
     /**
-     * Optional override for the chargebeeEnabled flag. Can be helpful for auth/unauth flows.
-     */
-    chargebeeEnabled?: ChargebeeEnabled;
-    /**
      * The selected plan will impact the displayed payment methods.
      */
     selectedPlanName?: PLANS | ADDON_NAMES;
     checkResult?: RequiredCheckResponse;
     theme?: ThemeLike;
     billingAddress?: BillingAddress;
-    billingPlatform?: BillingPlatform;
-    chargebeeUserExists?: ChargebeeUserExists;
     user?: User;
     subscription?: Subscription;
     onBeforeSepaPayment?: () => Promise<boolean>;
@@ -133,12 +121,9 @@ export const usePaymentFacade = ({
     paymentStatus,
     api: apiOverride,
     selectedPlanName,
-    chargebeeEnabled: chargebeeEnabledOverride,
     checkResult,
     theme,
     billingAddress,
-    billingPlatform,
-    chargebeeUserExists,
     user,
     subscription,
     onBeforeSepaPayment,
@@ -159,11 +144,6 @@ export const usePaymentFacade = ({
     const iframeHandles = useCbIframe();
     const chargebeeHandles: ChargebeeIframeHandles = iframeHandles.handles;
     const chargebeeEvents: ChargebeeIframeEvents = iframeHandles.events;
-
-    const chargebeeEnabledCache = useChargebeeEnabledCache();
-    const isChargebeeEnabled: () => ChargebeeEnabled = () => chargebeeEnabledOverride ?? chargebeeEnabledCache();
-
-    const { chargebeeKillSwitch, forceEnableChargebee } = useChargebeeKillSwitch();
 
     const telemetry = usePaymentsTelemetry({
         apiOverride: api,
@@ -196,9 +176,6 @@ export const usePaymentFacade = ({
             onMethodChanged,
             paymentMethods,
             paymentStatus,
-            isChargebeeEnabled,
-            chargebeeKillSwitch,
-            forceEnableChargebee,
             selectedPlanName,
             onProcessPaymentToken: reportPaymentAttempt,
             billingAddress,
@@ -214,8 +191,6 @@ export const usePaymentFacade = ({
                     throw error;
                 }
             },
-            billingPlatform,
-            chargebeeUserExists,
             user,
             subscription,
             enableSepa,
@@ -360,9 +335,7 @@ export const usePaymentFacade = ({
             PAYMENT_METHOD_TYPES.PAYPAL,
         ];
 
-        const isSavedInternalMethod =
-            migratableMethods.includes(methods.savedInternalSelectedMethod?.Type) &&
-            canUseChargebee(isChargebeeEnabled());
+        const isSavedInternalMethod = migratableMethods.includes(methods.savedInternalSelectedMethod?.Type);
 
         const isMethodTaxCountry = isNewMethod || isSavedExternalMethod || isSavedInternalMethod;
 
@@ -388,7 +361,6 @@ export const usePaymentFacade = ({
         userCanTrigger,
         userCanTriggerSelected,
         iframeHandles,
-        isChargebeeEnabled,
         selectedPlanName,
         paymentComponentLoaded: reportPaymentLoad,
         telemetry,

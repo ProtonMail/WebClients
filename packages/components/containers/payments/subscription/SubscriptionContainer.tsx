@@ -92,7 +92,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { usePaymentFacade } from '../../../../components/payments/client-extensions';
-import { useChargebeeContext } from '../../../../components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '../../../../components/payments/client-extensions/usePollEvents';
 import type { Operations, OperationsSubscriptionData } from '../../../../components/payments/react-extensions';
 import { usePaymentsApi } from '../../../../components/payments/react-extensions/usePaymentsApi';
@@ -275,7 +274,6 @@ const SubscriptionContainerInner = ({
     const [blockAccountSizeSelector, withBlockAccountSizeSelector] = useLoading();
     const [loadingGift, withLoadingGift] = useLoading();
     const [additionalCheckResults, setAdditionalCheckResults] = useState<SubscriptionCheckResponse[]>();
-    const chargebeeContext = useChargebeeContext();
     const scribeEnabled = useAssistantFeatureEnabled();
     const [upsellModal, setUpsellModal, renderUpsellModal] = useModalState();
     const [plusToPlusUpsell, setPlusToPlusUpsell] = useState<{ unlockPlan: Plan | undefined } | null>(null);
@@ -545,8 +543,6 @@ const SubscriptionContainerInner = ({
         currency: selectedPlanCurrency,
         selectedPlanName,
         billingAddress: model.taxBillingAddress,
-        billingPlatform: subscription?.BillingPlatform,
-        chargebeeUserExists: user.ChargebeeUserExists,
         paymentStatus,
         onChargeable: (operations, { paymentProcessorType, source }) => {
             const context: SubscriptionContext = {
@@ -982,7 +978,6 @@ const SubscriptionContainerInner = ({
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
                         paymentsVersion: getPaymentsVersion(),
-                        chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
                         tokenDidntHaveEmail,
                     };
                     captureMessage('Payments: failed to handle subscription', {

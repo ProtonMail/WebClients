@@ -11,7 +11,6 @@ import type {
     ChargebeeFetchedPaymentToken,
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
-    ForceEnableChargebee,
     RemoveEventListener,
 } from '../interface';
 import { PaymentProcessor } from './paymentProcessor';
@@ -40,7 +39,6 @@ export class ChargebeePaypalPaymentProcessor extends PaymentProcessor<ChargebeeP
         amountAndCurrency: AmountAndCurrency,
         private handles: ChargebeeIframeHandles,
         private events: ChargebeeIframeEvents,
-        private forceEnableChargebee: ForceEnableChargebee,
         public paypalModalHandles: ChargebeePaypalModalHandles | undefined,
         public onTokenIsChargeable?: (data: ChargeableV5PaymentParameters) => Promise<unknown>
     ) {
@@ -63,7 +61,6 @@ export class ChargebeePaypalPaymentProcessor extends PaymentProcessor<ChargebeeP
                     api: this.api,
                     handles: this.handles,
                     events: this.events,
-                    forceEnableChargebee: this.forceEnableChargebee,
                 }
             );
 
