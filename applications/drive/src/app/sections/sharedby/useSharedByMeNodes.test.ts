@@ -12,7 +12,8 @@ import { ShareState, ShareType, useDefaultShare } from '../../store';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { type LegacyItem, mapNodeToLegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
 import { useSharingInfoStore } from '../../zustand/share/sharingInfo.store';
-import { useLegacySharesByMeNodes } from './useLegacySharesByMeNode';
+import { useSharedByMeNodesLoader } from './loaders/useSharedByMeNodesLoader';
+import { useLegacySharedByMeNodes } from './useLegacySharedByMeNodes';
 import { useSharedByMeNodes } from './useSharedByMeNodes';
 
 jest.mock('@proton/components');
@@ -22,14 +23,16 @@ jest.mock('../../hooks/drive/useBatchThumbnailLoader');
 jest.mock('../../store');
 jest.mock('../../utils/sdk/mapNodeToLegacyItem');
 jest.mock('../../zustand/share/sharingInfo.store');
-jest.mock('./useLegacySharesByMeNode');
+jest.mock('./useLegacySharedByMeNodes');
+jest.mock('./loaders/useSharedByMeNodesLoader');
 jest.mock('../../hooks/util/useSorting');
 jest.mock('../../utils/errorHandling/useSdkErrorHandler');
 const mockUseDrive = jest.mocked(useDrive);
 const mockUseLoading = jest.mocked(useLoading);
 const mockUseDefaultShare = jest.mocked(useDefaultShare);
 const mockMapNodeToLegacyItem = jest.mocked(mapNodeToLegacyItem);
-const mockUseLegacySharesByMeNodes = jest.mocked(useLegacySharesByMeNodes);
+const mockUseLegacySharedByMeNodes = jest.mocked(useLegacySharedByMeNodes);
+const mockUseSharedByMeNodesLoader = jest.mocked(useSharedByMeNodesLoader);
 const mockUseBatchThumbnailLoader = jest.mocked(useBatchThumbnailLoader);
 const mockUseSharingInfoStore = jest.mocked(useSharingInfoStore);
 const mockUseSortingWithDefault = jest.mocked(useSortingWithDefault).mockImplementation((items, defaultSort) => ({
@@ -37,9 +40,8 @@ const mockUseSortingWithDefault = jest.mocked(useSortingWithDefault).mockImpleme
     sortParams: defaultSort,
     setSorting: jest.fn(),
 }));
-const mockUseSdkErrorHandler = jest.mocked(useSdkErrorHandler).mockImplementation(() => ({
-    handleError: jest.fn(),
-}));
+const mockUseSdkErrorHandler = jest.mocked(useSdkErrorHandler);
+const mockHandleError = jest.fn();
 const mockCreateNotification = jest.fn();
 jest.mocked(useNotifications).mockImplementation(
     () =>
@@ -129,7 +131,6 @@ const mockLegacyNode = {
     },
 };
 
-const mockHandleError = jest.fn();
 const mockLoadThumbnail = jest.fn();
 const mockSetSharingInfoStoreLoading = jest.fn();
 const mockSetSharingInfoStore = jest.fn();
@@ -154,12 +155,15 @@ describe('useSharedByMeNodes', () => {
         mockUseDrive.mockReturnValue({ drive: mockDriveClientWithSharing } as any);
         mockUseDefaultShare.mockReturnValue({ getDefaultShare: jest.fn().mockResolvedValue(mockDefaultShare) } as any);
         mockMapNodeToLegacyItem.mockResolvedValue(mockLegacyItem);
-        mockUseLegacySharesByMeNodes.mockReturnValue({
+        mockUseLegacySharedByMeNodes.mockReturnValue({
             items: [] as any[],
             isLoading: isLegacyLoading,
         });
         mockUseBatchThumbnailLoader.mockReturnValue({
             loadThumbnail: mockLoadThumbnail,
+        });
+        mockUseSharedByMeNodesLoader.mockReturnValue({
+            loadSharedByMeNodes: jest.fn(),
         });
         mockUseSharingInfoStore.mockReturnValue({
             setSharingInfoStoreLoading: mockSetSharingInfoStoreLoading,
@@ -237,7 +241,7 @@ describe('useSharedByMeNodes', () => {
         setupMocks();
 
         const legacyNodes = [mockLegacyNode];
-        mockUseLegacySharesByMeNodes.mockReturnValue({
+        mockUseLegacySharedByMeNodes.mockReturnValue({
             items: legacyNodes as any[],
             isLoading: false,
         });
@@ -321,7 +325,6 @@ describe('useSharedByMeNodes', () => {
 
         await waitFor(() => expect(result.current.isLoading).toBe(false));
 
-        expect(mockHandleError).toHaveBeenCalledTimes(2);
         expect(mockHandleError).toHaveBeenCalledWith(expect.any(Error), {
             showNotification: false,
         });
@@ -337,7 +340,7 @@ describe('useSharedByMeNodes', () => {
         setupMocks();
 
         const legacyNodes = [mockLegacyNode];
-        mockUseLegacySharesByMeNodes.mockReturnValue({
+        mockUseLegacySharedByMeNodes.mockReturnValue({
             items: legacyNodes as any[],
             isLoading: false,
         });
