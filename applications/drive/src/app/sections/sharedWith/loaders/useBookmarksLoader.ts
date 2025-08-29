@@ -51,11 +51,6 @@ export const useBookmarksLoader = () => {
                                 creationTime: bookmark.creationTime,
                                 url: bookmark.url,
                             },
-                            legacy: {
-                                linkId: '',
-                                shareId: '',
-                                volumeId: '',
-                            },
                         });
                     } catch (e) {
                         handleError(e, {

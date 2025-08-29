@@ -1,5 +1,5 @@
 import type { useConfirmActionModal } from '@proton/components';
-import { splitInvitationUid, splitNodeUid } from '@proton/drive/index';
+import { splitInvitationUid } from '@proton/drive/index';
 
 import { useInvitationsActions } from '../../../store/_actions/useInvitationsActions';
 import { useLink } from '../../../store/_links';
@@ -26,7 +26,6 @@ export const useLegacyInvitationsActions = () => {
                 } = useSharedWithMeListingStore.getState();
                 const sharedWithMeItem = getSharedWithMeItemFromStore(uid);
                 if (sharedWithMeItem?.itemType === ItemType.INVITATION) {
-                    const { nodeId, volumeId } = splitNodeUid(uid);
                     const link = await getLink(abortSignal, result.linkId, result.shareId);
                     loadSharedInfo(result.shareId, (sharedInfo) => {
                         if (!sharedInfo) {
@@ -52,11 +51,9 @@ export const useLegacyInvitationsActions = () => {
                             haveSignatureIssues:
                                 !link.isAnonymous &&
                                 Boolean(link.signatureIssues && Object.values(link.signatureIssues).some(Boolean)),
-                            legacy: {
-                                linkId: nodeId,
-                                shareId: result.shareId,
-                                volumeId: volumeId,
-                            },
+                            shareId: result.shareId,
+                            isFromLegacy: true,
+                            isLocked: link.isLocked,
                         });
                         resolve();
                     });

@@ -1,4 +1,4 @@
-import { NodeType } from '@proton/drive/index';
+import { NodeType, splitNodeUid } from '@proton/drive';
 
 import { ItemType, type SharedWithMeListingItemUI } from '../../../zustand/sections/sharedWithMeListing.store';
 
@@ -100,14 +100,31 @@ export const createItemChecker = (items: SharedWithMeListingItemUI[]): ItemTypeC
 };
 
 export const mapToLegacyFormat = (items: SharedWithMeListingItemUI[]) => {
-    return items.map((item) => ({
-        rootShareId: item.legacy.shareId,
-        mimeType: item.mediaType || '',
-        linkId: item.legacy.linkId,
-        isFile: item.type === NodeType.File,
-        name: item.name,
-        size: item.size || 0,
-        parentLinkId: '', // No parentLinkId on shared with me items
-        volumeId: item.legacy.volumeId,
-    }));
+    return items.map((item) => {
+        if (item.itemType === ItemType.BOOKMARK) {
+            // Bookmark doesn't have any info about the node
+            return {
+                rootShareId: '',
+                mimeType: item.mediaType || '',
+                linkId: '',
+                isFile: item.type === NodeType.File,
+                name: item.name,
+                size: item.size || 0,
+                parentLinkId: '', // No parentLinkId on shared with me items
+                volumeId: '',
+            };
+        }
+
+        const { volumeId, nodeId } = splitNodeUid(item.nodeUid);
+        return {
+            rootShareId: item.shareId,
+            mimeType: item.mediaType || '',
+            linkId: nodeId,
+            isFile: item.type === NodeType.File,
+            name: item.name,
+            size: item.size || 0,
+            parentLinkId: '', // No parentLinkId on shared with me items
+            volumeId: volumeId,
+        };
+    });
 };
