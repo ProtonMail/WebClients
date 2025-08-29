@@ -127,7 +127,7 @@ export const useFileDetailsModalState = ({ volumeId, linkId, ...modalProps }: Us
             }
         };
         void withLoading(fetchFileDetails());
-    }, [volumeId, linkId, drive]);
+    }, [volumeId, linkId, drive, withLoading, handleError]);
 
     return {
         ...modalProps,
