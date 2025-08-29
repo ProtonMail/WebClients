@@ -172,7 +172,6 @@ const MainContainer = () => {
     const isReferralExpansionEnabled = useFlag('ReferralExpansion');
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
-    const isEmergencyAccessAvailable = useFlag('EmergencyAccess');
     const isMeetAvailable = useFlag('PMVC2025');
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
