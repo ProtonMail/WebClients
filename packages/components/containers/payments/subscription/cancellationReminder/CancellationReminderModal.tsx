@@ -2,7 +2,6 @@ import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -23,12 +22,11 @@ import type { ReminderFlag } from './cancellationReminderHelper';
 import { markRemindersAsSeen } from './cancellationReminderHelper';
 
 const CancellationReminderModal = (props: ModalProps) => {
-    const [user] = useUser();
     const [subscription, subscriptionLoading] = useSubscription();
 
     const { feature, update } = useFeature<ReminderFlag>(FeatureCode.AutoDowngradeReminder);
 
-    const config = getReminderPageConfig({ subscription, user });
+    const config = getReminderPageConfig({ subscription });
 
     const markAsSeen = () => {
         if (!feature?.Value || Array.isArray(feature.Value)) {

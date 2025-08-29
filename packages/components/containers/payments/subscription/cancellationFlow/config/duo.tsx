@@ -27,7 +27,7 @@ import {
 } from './b2cCommonConfig';
 import type { ConfigProps, UpsellPlans } from './types';
 
-export const getDuoConfig = ({ app, plan, subscription, user }: ConfigProps): PlanConfig => {
+export const getDuoConfig = ({ app, plan, subscription }: ConfigProps): PlanConfig => {
     const currentPlan = PLANS.DUO;
     const planName = PLAN_NAMES[currentPlan];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'TB', fraction: 0 });
@@ -94,7 +94,7 @@ export const getDuoConfig = ({ app, plan, subscription, user }: ConfigProps): Pl
         ],
     };
 
-    const cancellablePlan = hasCancellablePlan(subscription, user);
+    const cancellablePlan = hasCancellablePlan(subscription);
     const storage: PlanConfigStorage = getDefaultTBStorageWarning(planName, planMaxSpace, cancellablePlan);
     const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName, cancellablePlan);
 

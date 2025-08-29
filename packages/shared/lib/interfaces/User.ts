@@ -32,14 +32,6 @@ export enum SessionRecoveryReason {
     AUTHENTICATION = 2,
 }
 
-export enum ChargebeeEnabled {
-    INHOUSE_FORCED = 0,
-    CHARGEBEE_ALLOWED = 1,
-    CHARGEBEE_FORCED = 2,
-}
-
-export type ChargebeeUserExists = number;
-
 export enum UserLockedFlags {
     BASE_STORAGE_EXCEEDED = 1,
     DRIVE_STORAGE_EXCEEDED = 2,
@@ -115,10 +107,8 @@ export interface User {
         Reason: SessionRecoveryReason | null;
         UID: string;
     } | null;
-    ChargebeeUser: ChargebeeEnabled;
     LockedFlags?: number;
     Billed?: boolean;
-    ChargebeeUserExists?: ChargebeeUserExists;
     HasMultipleSubscriptions: boolean;
 }
 
