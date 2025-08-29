@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { FileIcon, Icon } from '@proton/components';
+import { FileIcon } from '@proton/components';
 import { isCompatibleCBZ } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 
@@ -19,12 +19,20 @@ export function GridViewItem({ item }: { item: DriveItem | TrashItem | SharedLin
         linkName: item.name,
     });
 
+    const isAlbum = Boolean(item.isAlbum || item.albumProperties);
+
     const IconComponent = (
         <>
-            {item.albumProperties && (
-                <Icon name="album-folder" alt={c('Label').t`Album`} className="file-browser-grid-item--icon mr-2" />
+            {isAlbum && (
+                <FileIcon
+                    mimeType="Album"
+                    alt={c('Label').t`Album`}
+                    size={12}
+                    className="file-browser-grid-item--icon"
+                    style={item.isInvitation ? { filter: 'grayscale(100%)' } : undefined}
+                />
             )}
-            {item.cachedThumbnailUrl && !item.albumProperties && (
+            {item.cachedThumbnailUrl && !isAlbum && (
                 <img
                     src={item.cachedThumbnailUrl}
                     className={clsx(
@@ -36,12 +44,13 @@ export function GridViewItem({ item }: { item: DriveItem | TrashItem | SharedLin
                     alt={iconText}
                 />
             )}
-            {!item.cachedThumbnailUrl && !item.albumProperties && (
+            {!item.cachedThumbnailUrl && !isAlbum && (
                 <FileIcon
                     mimeType={item.isFile ? item.mimeType : 'Folder'}
                     alt={iconText}
                     className="file-browser-grid-item--icon"
                     size={12}
+                    style={item.isInvitation ? { filter: 'grayscale(100%)' } : undefined}
                 />
             )}
         </>
