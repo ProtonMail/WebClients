@@ -15,7 +15,7 @@ import { useMeetErrorReporting } from '@proton/meet';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/index';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
-import { FlagProvider } from '@proton/unleash/index';
+import { FlagProvider } from '@proton/unleash';
 
 import { bootstrapGuestApp } from '../boostrap';
 import config from '../config';

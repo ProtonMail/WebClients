@@ -1,5 +1,5 @@
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { useFlag } from '@proton/unleash/index';
+import { useFlag } from '@proton/unleash';
 
 export const useMeetErrorReporting = () => {
     const shouldReportError = useFlag('MeetErrorReporting');
