@@ -13,12 +13,10 @@ import {
     type CardModel,
     PAYMENT_METHOD_TYPES,
     type PaymentMethodCardDetails,
-    type PaymentsVersion,
     type SavedPaymentMethod,
     deletePaymentMethod,
     isExpired,
     markPaymentMethodAsDefault,
-    paymentMethodPaymentsVersion,
 } from '@proton/payments';
 import { EditCardModal } from '@proton/payments/ui';
 
@@ -43,10 +41,9 @@ const PaymentMethodActions = ({ method, methods }: Props) => {
     const { createModal } = useModals();
     const api = useApi();
     const { call } = useEventManager();
-    const apiVersion: PaymentsVersion = paymentMethodPaymentsVersion(method);
 
     const deleteMethod = async () => {
-        await api(deletePaymentMethod(method.ID, apiVersion));
+        await api(deletePaymentMethod(method.ID, 'v5'));
         await call();
         createNotification({ text: c('Success').t`Payment method deleted` });
     };

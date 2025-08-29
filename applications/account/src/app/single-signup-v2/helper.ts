@@ -1,5 +1,4 @@
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
-import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
 import type { SubscriptionCheckResponse } from '@proton/payments';
 import {
     type ADDON_NAMES,
@@ -569,14 +568,12 @@ export const getUserInfo = async ({
         access: false,
     };
 
-    const forcePaymentsVersion = getMaybeForcePaymentsVersion(user);
-
     const [paymentMethods, subscription, organization] = await Promise.all([
-        state.payable ? getPaymentMethods(api, forcePaymentsVersion) : [],
+        state.payable ? getPaymentMethods(api) : [],
         state.payable && state.admin && state.subscribed
-            ? api<{ Subscription: Subscription; UpcomingSubscription: Subscription }>(
-                  getSubscription(forcePaymentsVersion)
-              ).then(({ Subscription, UpcomingSubscription }) => UpcomingSubscription ?? Subscription)
+            ? api<{ Subscription: Subscription; UpcomingSubscription: Subscription }>(getSubscription()).then(
+                  ({ Subscription, UpcomingSubscription }) => UpcomingSubscription ?? Subscription
+              )
             : (FREE_SUBSCRIPTION as unknown as Subscription),
         state.subscribed ? getOrganization({ api }) : undefined,
     ]);

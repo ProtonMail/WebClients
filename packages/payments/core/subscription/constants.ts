@@ -9,11 +9,6 @@ export enum SubscriptionPlatform {
     Android = 2,
 }
 
-export enum BillingPlatform {
-    Proton = 0,
-    Chargebee = 1,
-}
-
 export enum TaxInclusive {
     EXCLUSIVE = 0,
     INCLUSIVE = 1,

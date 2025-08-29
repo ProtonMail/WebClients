@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Field from '@proton/components/components/container/Field';
@@ -14,7 +13,6 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
-import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { useLoading } from '@proton/hooks';
 import type { Invoice, PaymentProcessorHook } from '@proton/payments';
 import { type Currency, PAYMENT_METHOD_TYPES, checkInvoice, getPaymentsVersion } from '@proton/payments';
@@ -52,7 +50,6 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
         () => checkInvoice(invoice.ID, invoicePaymentsVersion),
         []
     );
-    const [subscription] = useSubscription();
     const [user] = useUser();
 
     const { AmountDue, Amount, Currency, Credit } = result ?? {};
@@ -60,13 +57,9 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
     const amountDue = AmountDue ?? 0;
     const currency = Currency as Currency;
 
-    const chargebeeContext = useChargebeeContext();
-
     const paymentFacade = usePaymentFacade({
         amount: amountDue,
         currency,
-        billingPlatform: subscription?.BillingPlatform,
-        chargebeeUserExists: user.ChargebeeUserExists,
         onChargeable: (operations) => {
             return withLoading(async () => {
                 await operations.payInvoice(invoice.ID, invoicePaymentsVersion);
@@ -122,7 +115,6 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
                         paymentsVersion: getPaymentsVersion(),
-                        chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
                     };
 
                     captureMessage('Payments: failed to pay invoice', {

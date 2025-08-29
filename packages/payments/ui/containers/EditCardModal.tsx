@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -16,7 +15,6 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
-import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { useLoading } from '@proton/hooks';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';
@@ -27,7 +25,7 @@ import type { CardModel } from '../../core/cardDetails';
 import { Autopay, PAYMENT_METHOD_TYPES } from '../../core/constants';
 import type { PaymentMethodCardDetails } from '../../core/interface';
 import { isV5PaymentToken } from '../../core/type-guards';
-import { paymentMethodPaymentsVersion, v5PaymentTokenToLegacyPaymentToken } from '../../core/utils';
+import { v5PaymentTokenToLegacyPaymentToken } from '../../core/utils';
 import { ChargebeeCreditCardWrapper } from '../components/ChargebeeWrapper';
 
 interface Props extends Omit<ModalProps<'form'>, 'as' | 'children' | 'size'> {
@@ -48,7 +46,6 @@ const EditCardModal = ({
 }: Props) => {
     const api = useApi();
     const [user] = useUser();
-    const [subscription] = useSubscription();
 
     const { call } = useEventManager();
     const [processing, withProcessing] = useLoading();
@@ -63,14 +60,10 @@ const EditCardModal = ({
         ...renewToggleProps
     } = useRenewToggle({ initialRenewState: renewState });
 
-    const chargebeeContext = useChargebeeContext();
-
     const paymentFacade = usePaymentFacade({
         amount: 0,
         currency: user.Currency,
         flow: 'add-card',
-        billingPlatform: subscription?.BillingPlatform,
-        chargebeeUserExists: user.ChargebeeUserExists,
         onChargeable: async (_, { chargeablePaymentParameters, sourceType }) => {
             withProcessing(async () => {
                 if (!isV5PaymentToken(chargeablePaymentParameters)) {
@@ -121,7 +114,6 @@ const EditCardModal = ({
                     paymentMethodId,
                     processorType: paymentFacade.selectedProcessor?.meta.type,
                     paymentsVersion: getPaymentsVersion(),
-                    chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
                 };
 
                 captureMessage('Payments: failed to add card', {
@@ -184,7 +176,7 @@ const EditCardModal = ({
                                         {
                                             Autopay: result,
                                         },
-                                        paymentMethodPaymentsVersion(paymentMethod)
+                                        'v5'
                                     )
                                 );
 

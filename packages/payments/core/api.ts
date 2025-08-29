@@ -588,13 +588,13 @@ export const queryTransactions = (params: QueryTransactionsParams) => ({
 });
 
 // Do not export this function. Use getPaymentMethods instead.
-const queryPaymentMethods = (forceVersion?: PaymentsVersion) => ({
-    url: `payments/${forceVersion ?? paymentsVersion}/methods`,
+const queryPaymentMethods = () => ({
+    url: `payments/v5/methods`,
     method: 'get',
 });
 
-export async function getPaymentMethods(api: Api, forceVersion?: PaymentsVersion): Promise<SavedPaymentMethod[]> {
-    const response = await api<{ PaymentMethods: SavedPaymentMethod[] }>(queryPaymentMethods(forceVersion));
+export async function getPaymentMethods(api: Api): Promise<SavedPaymentMethod[]> {
+    const response = await api<{ PaymentMethods: SavedPaymentMethod[] }>(queryPaymentMethods());
     return formatPaymentMethods(response.PaymentMethods ?? []);
 }
 

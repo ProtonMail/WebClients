@@ -1,11 +1,5 @@
-import { ChargebeeEnabled, type ChargebeeUserExists, type User } from '@proton/shared/lib/interfaces';
-
-import { type PaymentsVersion } from './api';
 import { PAYMENT_METHOD_TYPES } from './constants';
-import { MethodStorage } from './constants';
-import { type SavedPaymentMethod, type TokenPaymentMethod, type V5PaymentToken } from './interface';
-import { BillingPlatform } from './subscription/constants';
-import { type Subscription } from './subscription/interface';
+import { type TokenPaymentMethod, type V5PaymentToken } from './interface';
 
 export const toV5PaymentToken = (PaymentToken: string): V5PaymentToken => {
     return {
@@ -32,43 +26,4 @@ export function v5PaymentTokenToLegacyPaymentToken(data: V5PaymentToken): TokenP
             },
         },
     };
-}
-
-export function canUseChargebee(chargebeeEnabled: ChargebeeEnabled): boolean {
-    return (
-        chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_ALLOWED ||
-        chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED
-    );
-}
-
-export function isOnSessionMigration(
-    chargebeeUser: ChargebeeEnabled,
-    billingPlatform: BillingPlatform | undefined
-): boolean {
-    return chargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED && billingPlatform === BillingPlatform.Proton;
-}
-
-export function isSplittedUser(
-    chargebeeUser: ChargebeeEnabled,
-    chargebeeUserExists: ChargebeeUserExists | undefined,
-    billingPlatform: BillingPlatform | undefined
-): boolean {
-    return isOnSessionMigration(chargebeeUser, billingPlatform) && !!chargebeeUserExists;
-}
-
-export function onSessionMigrationChargebeeStatus(
-    user: User,
-    subscription: Subscription | undefined
-): ChargebeeEnabled {
-    return isOnSessionMigration(user.ChargebeeUser, subscription?.BillingPlatform)
-        ? ChargebeeEnabled.INHOUSE_FORCED
-        : user.ChargebeeUser;
-}
-
-export function onSessionMigrationPaymentsVersion(user: User, subscription: Subscription | undefined): PaymentsVersion {
-    return onSessionMigrationChargebeeStatus(user, subscription) === ChargebeeEnabled.INHOUSE_FORCED ? 'v4' : 'v5';
-}
-
-export function paymentMethodPaymentsVersion(method?: SavedPaymentMethod): PaymentsVersion {
-    return method?.External === MethodStorage.EXTERNAL ? 'v5' : 'v4';
 }

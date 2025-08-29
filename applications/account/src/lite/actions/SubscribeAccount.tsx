@@ -19,7 +19,6 @@ import {
     SUBSCRIPTION_STEPS,
     VpnLogo,
 } from '@proton/components';
-import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';
 import { InAppText } from '@proton/components/containers/payments/subscription/InAppPurchaseModal';
 import SubscriptionContainer from '@proton/components/containers/payments/subscription/SubscriptionContainer';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
@@ -475,11 +474,7 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOv
 };
 
 const SubscribeAccountWithProviders = (props: Props) => {
-    return (
-        <PaymentSwitcher>
-            <SubscribeAccount {...props} />
-        </PaymentSwitcher>
-    );
+    return <SubscribeAccount {...props} />;
 };
 
 export default SubscribeAccountWithProviders;

@@ -7,7 +7,6 @@ import useModals from '@proton/components/hooks/useModals';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { SavedPaymentMethod } from '@proton/payments';
 import { Autopay, PAYMENT_METHOD_TYPES, deletePaymentMethod, orderPaymentMethods } from '@proton/payments';
-import { mockOnSessionMigration } from '@proton/testing/lib/mockOnSessionMigration';
 import { mockUseSubscription } from '@proton/testing/lib/mockUseSubscription';
 import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
@@ -52,7 +51,6 @@ jest.mock('../../../components/modal/Confirm', () =>
 beforeEach(() => {
     mockUseUser();
     mockUseSubscription();
-    mockOnSessionMigration();
 });
 
 describe('PaymentMethodActions', () => {
@@ -245,7 +243,7 @@ describe('PaymentMethodActions', () => {
             const method: SavedPaymentMethod = {
                 Order: 1,
                 ID: 'id-123',
-                Type: PAYMENT_METHOD_TYPES.CARD,
+                Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                 Details: {
                     Name: 'John Smith',
                     ExpMonth: '01',
@@ -271,14 +269,14 @@ describe('PaymentMethodActions', () => {
 
             const { findByTestId } = render(<PaymentMethodActions method={method} methods={[method]} />);
 
-            fireEvent.click(await findByTestId('actionIndex-2'));
+            fireEvent.click(await findByTestId('actionIndex-1'));
 
             expect(createModal).toHaveBeenCalled();
 
             const onDelete = (createModal as jest.Mock).mock.lastCall[0].props.onConfirm;
             await onDelete();
             await waitFor(async () => {
-                expect(api).toHaveBeenCalledWith(deletePaymentMethod('id-123', 'v4'));
+                expect(api).toHaveBeenCalledWith(deletePaymentMethod('id-123', 'v5'));
             });
             await waitFor(async () => {
                 expect(call).toHaveBeenCalled();
