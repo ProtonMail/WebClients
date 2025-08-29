@@ -1,7 +1,7 @@
-import { categoryBadgeMapping } from './categoryViewConstants';
+import { type CategoryBadgeMapping, getCategoriesBadgeMapping } from './categoryViewConstants';
 
-export const isLabelIDCaregoryKey = (labelID: string): labelID is keyof typeof categoryBadgeMapping => {
-    return Object.keys(categoryBadgeMapping).includes(labelID);
+export const isLabelIDCaregoryKey = (labelID: string): labelID is keyof CategoryBadgeMapping => {
+    return Object.keys(getCategoriesBadgeMapping()).includes(labelID);
 };
 
 export const hasCategoryLabel = (labelIDs?: string[]) => {
