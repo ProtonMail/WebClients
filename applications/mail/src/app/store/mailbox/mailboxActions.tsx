@@ -51,9 +51,11 @@ const runAction = async ({
     elements: Element[];
     action: (chunk: Element[]) => any;
     onUndo?: () => void;
-}) => {
+}): Promise<PromiseSettledResult<string | undefined>[]> => {
     const promise = new Promise<PromiseSettledResult<string | undefined>[]>(async (resolve, reject) => {
         let result: PromiseSettledResult<string | undefined>[] = [];
+        let notificationID: number | undefined;
+        let timeout: NodeJS.Timeout | undefined;
 
         try {
             extra.eventManager.stop();
@@ -65,11 +67,14 @@ const runAction = async ({
             });
 
             if (notificationText) {
-                extra.notificationManager.createNotification({
+                notificationID = extra.notificationManager.createNotification({
                     text: (
                         <UndoActionNotification
+                            closeOnUndo={false}
                             onUndo={() => {
                                 const undo = async () => {
+                                    // Clear the timeout to prevent the notification from being removed
+                                    clearTimeout(timeout);
                                     const tokens = await promise;
                                     const filteredTokens = getFilteredUndoTokens(tokens);
                                     await Promise.all(
@@ -78,18 +83,30 @@ const runAction = async ({
                                         )
                                     );
                                     await extra.eventManager.call();
+                                    // Remove the notification once the undo process is complete
+                                    if (notificationID) {
+                                        extra.notificationManager.removeNotification(notificationID);
+                                    }
                                 };
-                                void undo();
+
                                 onUndo?.();
                                 // Reject the promise to undo the action optimistically (AsyncThunk: reject)
                                 reject(new Error('Undo action'));
+                                return undo();
                             }}
                         >
                             {notificationText}
                         </UndoActionNotification>
                     ),
-                    expiration: SUCCESS_NOTIFICATION_EXPIRATION,
+                    expiration: -1, // Make the notification persistent
                 });
+
+                // Remove the notification after the expiration time
+                timeout = setTimeout(() => {
+                    if (notificationID) {
+                        extra.notificationManager.removeNotification(notificationID);
+                    }
+                }, SUCCESS_NOTIFICATION_EXPIRATION);
             }
 
             result = await promise;
