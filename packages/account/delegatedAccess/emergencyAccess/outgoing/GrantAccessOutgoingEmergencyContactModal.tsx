@@ -30,7 +30,7 @@ export const GrantAccessOutgoingEmergencyContactModal = ({ loading, value, onGra
                         onGrant(value);
                     }}
                 >
-                    {c('Action').t`Give access now`}
+                    {c('emergency_access').t`Give access now`}
                 </Button>,
                 <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
