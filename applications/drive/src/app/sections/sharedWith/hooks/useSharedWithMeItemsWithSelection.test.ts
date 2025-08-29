@@ -92,7 +92,7 @@ jest.mock('../../../zustand/sections/sharedWithMeListing.store', () => ({
         BOOKMARK: 'bookmark',
         DIRECT_SHARE: 'directShare',
     },
-    getKeyUid: (item: any) => item.id || 'test-uid',
+    getKeyUid: (item: any) => item.nodeUid || item.bookmark?.uid || 'volume-123~node-456',
 }));
 
 describe('useSharedWithMeItemsWithSelection', () => {
@@ -137,7 +137,7 @@ describe('useSharedWithMeItemsWithSelection', () => {
         const mockItem = {
             thumbnailId: 'test-thumbnail',
             itemType: ItemType.DIRECT_SHARE,
-            nodeUid: 'test-node-uid',
+            nodeUid: 'volume-123~node-456',
         };
 
         mockSharedWithMeStore.getSharedWithMeItem.mockReturnValue(mockItem);
@@ -145,10 +145,10 @@ describe('useSharedWithMeItemsWithSelection', () => {
         const { result } = renderHook(() => useSharedWithMeItemsWithSelection());
 
         act(() => {
-            result.current.handleRenderItem('test-uid');
+            result.current.handleRenderItem('volume-123~node-456');
         });
 
-        expect(mockSharedWithMeStore.getSharedWithMeItem).toHaveBeenCalledWith('test-uid');
+        expect(mockSharedWithMeStore.getSharedWithMeItem).toHaveBeenCalledWith('volume-123~node-456');
     });
 
     it('should handle click on bookmark item', () => {
@@ -156,6 +156,7 @@ describe('useSharedWithMeItemsWithSelection', () => {
             itemType: ItemType.BOOKMARK,
             bookmark: {
                 url: 'https://example.com',
+                uid: 'bookmark-123',
             },
         };
 
@@ -164,27 +165,25 @@ describe('useSharedWithMeItemsWithSelection', () => {
         const { result } = renderHook(() => useSharedWithMeItemsWithSelection());
 
         act(() => {
-            void result.current.handleOpenItem('test-uid');
+            void result.current.handleOpenItem('bookmark-123');
         });
 
-        expect(mockSharedWithMeStore.getSharedWithMeItem).toHaveBeenCalledWith('test-uid');
+        expect(mockSharedWithMeStore.getSharedWithMeItem).toHaveBeenCalledWith('bookmark-123');
     });
 
     it('should map legacy items correctly', () => {
         const mockItem = {
-            id: 'test-id',
+            nodeUid: 'volume-1~node-1',
             type: NodeType.File,
             name: 'test-file.txt',
             mediaType: 'text/plain',
             size: 1024,
-            legacy: {
-                volumeId: 'volume-1',
-                shareId: 'share-1',
-                linkId: 'link-1',
-            },
+            itemType: ItemType.DIRECT_SHARE,
+            shareId: 'share-1',
         };
 
         const mockRegularItem = {
+            nodeUid: 'volume-1~node-1',
             name: 'test-file.txt',
             type: NodeType.File,
             mediaType: 'text/plain',
@@ -203,7 +202,7 @@ describe('useSharedWithMeItemsWithSelection', () => {
         expect(result.current.items).toHaveLength(1);
         expect(result.current.items[0]).toEqual(
             expect.objectContaining({
-                id: expect.any(String),
+                id: 'volume-1~node-1',
                 name: 'test-file.txt',
                 isFile: true,
                 mimeType: 'text/plain',

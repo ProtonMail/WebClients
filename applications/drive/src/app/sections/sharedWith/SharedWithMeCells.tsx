@@ -15,31 +15,14 @@ import { SharedByCell } from '../../components/cells/SharedByCell';
 import { TimeCell } from '../../components/cells/TimeCell';
 import useVolumesState from '../../store/_volumes/useVolumesState';
 import { dateToLegacyTimestamp } from '../../utils/sdk/legacyTime';
-import { ItemType, useSharedWithMeListingStore } from '../../zustand/sections/sharedWithMeListing.store';
+import {
+    ItemType,
+    type SharedWithMeListingItemUI,
+    useSharedWithMeListingStore,
+} from '../../zustand/sections/sharedWithMeListing.store';
 import { useThumbnailStore } from '../../zustand/thumbnail/thumbnail.store';
 import { useInvitationsActions } from './hooks/useInvitationsActions';
 import { useLegacyInvitationsActions } from './legacy/useLegacyInvitationsActions';
-
-export type SharedWithMeRowData = {
-    uid: string;
-    name: string;
-    type: NodeType;
-    mediaType: string | undefined;
-    thumbnailId: string | undefined;
-    size: number | undefined;
-    itemType: ItemType;
-    sharedBy: string;
-    sharedOn: Date | undefined;
-    invitationUid: string | undefined;
-    bookmarkUrl: string | undefined;
-    haveSignatureIssues: boolean | undefined;
-    legacy: {
-        linkId: string;
-        shareId: string;
-        volumeId: string;
-        isLocked?: boolean;
-    };
-};
 
 const getSharedBy = (item: any): string => {
     if (item.itemType === ItemType.DIRECT_SHARE) {
@@ -161,33 +144,9 @@ const SharedWithMeRow = memo(
         cells,
     }: {
         item: MappedLegacyItem;
-        cells: React.FC<{ item: MappedLegacyItem; rowData: SharedWithMeRowData }>[];
+        cells: React.FC<{ item: MappedLegacyItem; rowData: SharedWithMeListingItemUI }>[];
     }) => {
-        const rowData = useSharedWithMeListingStore(
-            useShallow((state) => {
-                const storeItem = state.getSharedWithMeItem(item.id);
-                if (!storeItem) {
-                    return null;
-                }
-
-                return {
-                    uid: storeItem.itemType === ItemType.BOOKMARK ? storeItem.bookmark.uid : storeItem.nodeUid,
-                    name: storeItem.name,
-                    type: storeItem.type,
-                    mediaType: storeItem.mediaType,
-                    thumbnailId: storeItem.thumbnailId,
-                    size: storeItem.size,
-                    itemType: storeItem.itemType,
-                    sharedBy: getSharedBy(storeItem),
-                    sharedOn: getSharedOn(storeItem),
-                    invitationUid: storeItem.itemType === ItemType.INVITATION ? storeItem.invitation.uid : undefined,
-                    bookmarkUrl: storeItem.itemType === ItemType.BOOKMARK ? storeItem.bookmark.url : undefined,
-                    haveSignatureIssues:
-                        storeItem.itemType === ItemType.DIRECT_SHARE ? storeItem.haveSignatureIssues : undefined,
-                    legacy: storeItem.legacy,
-                };
-            })
-        );
+        const rowData = useSharedWithMeListingStore(useShallow((state) => state.getSharedWithMeItem(item.id)));
 
         // If no data available, don't render the row
         if (!rowData) {
@@ -206,7 +165,7 @@ const SharedWithMeRow = memo(
 
 SharedWithMeRow.displayName = 'SharedWithMeRow';
 
-const largeScreenCellComponents: React.FC<{ item: MappedLegacyItem; rowData: SharedWithMeRowData }>[] = [
+const largeScreenCellComponents: React.FC<{ item: MappedLegacyItem; rowData: SharedWithMeListingItemUI }>[] = [
     ({ item }) => <CheckboxCell uid={item.id} isLocked={false} />,
     ({ rowData }) => (
         <NameCellWithThumbnail
@@ -215,25 +174,25 @@ const largeScreenCellComponents: React.FC<{ item: MappedLegacyItem; rowData: Sha
             type={rowData.type}
             thumbnailId={rowData.thumbnailId}
             isInvitation={rowData.itemType === ItemType.INVITATION}
-            haveSignatureIssues={rowData.haveSignatureIssues}
+            haveSignatureIssues={rowData.itemType === ItemType.DIRECT_SHARE ? rowData.haveSignatureIssues : undefined}
         />
     ),
-    ({ rowData }) => <SharedByCellWithInfo sharedBy={rowData.sharedBy} itemType={rowData.itemType} />,
+    ({ rowData }) => <SharedByCellWithInfo sharedBy={getSharedBy(rowData)} itemType={rowData.itemType} />,
     ({ rowData }) =>
-        rowData.itemType === ItemType.INVITATION && rowData.invitationUid ? (
+        rowData.itemType === ItemType.INVITATION && rowData.invitation.uid ? (
             <AcceptOrRejectCellComponent
-                uid={rowData.uid}
-                invitationUid={rowData.invitationUid}
+                uid={rowData.nodeUid}
+                invitationUid={rowData.invitation.uid}
                 type={rowData.type}
                 name={rowData.name}
             />
         ) : (
-            <SharedOnCellWithInfo sharedOn={rowData.sharedOn} />
+            <SharedOnCellWithInfo sharedOn={getSharedOn(rowData)} />
         ),
     ({ item }) => <ContextMenuCell uid={item.id} />,
 ];
 
-const smallScreenCellComponents: React.FC<{ item: MappedLegacyItem; rowData: SharedWithMeRowData }>[] = [
+const smallScreenCellComponents: React.FC<{ item: MappedLegacyItem; rowData: SharedWithMeListingItemUI }>[] = [
     ({ item }) => <CheckboxCell uid={item.id} isLocked={false} />,
     ({ rowData }) => (
         <NameCellWithThumbnail
@@ -242,14 +201,14 @@ const smallScreenCellComponents: React.FC<{ item: MappedLegacyItem; rowData: Sha
             type={rowData.type}
             thumbnailId={rowData.thumbnailId}
             isInvitation={rowData.itemType === ItemType.INVITATION}
-            haveSignatureIssues={rowData.haveSignatureIssues}
+            haveSignatureIssues={rowData.itemType === ItemType.DIRECT_SHARE ? rowData.haveSignatureIssues : undefined}
         />
     ),
     ({ rowData }) =>
-        rowData.itemType === ItemType.INVITATION && rowData.invitationUid ? (
+        rowData.itemType === ItemType.INVITATION && rowData.invitation.uid ? (
             <AcceptOrRejectCellComponent
-                uid={rowData.uid}
-                invitationUid={rowData.invitationUid}
+                uid={rowData.nodeUid}
+                invitationUid={rowData.invitation.uid}
                 type={rowData.type}
                 name={rowData.name}
             />

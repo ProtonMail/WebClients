@@ -19,7 +19,7 @@ import { useSharedWithMeNodesLoader } from './loaders/useSharedWithMeNodesLoader
 
 export const SharedWithMeView = () => {
     useAppTitle(c('Title').t`Shared with me`);
-    const { activeShareId, setDefaultRoot } = useActiveShare();
+    const { setDefaultRoot } = useActiveShare();
 
     const { loadSharedWithMeNodes } = useSharedWithMeNodesLoader();
     const { loadInvitations } = useInvitationsLoader();
@@ -53,7 +53,7 @@ export const SharedWithMeView = () => {
         <FileBrowserStateProvider itemIds={itemUids}>
             <ToolbarRow
                 titleArea={<span className="text-strong pl-1">{c('Info').t`Shared with me`}</span>}
-                toolbar={<SharedWithMeToolbar shareId={activeShareId} uids={itemUids} />}
+                toolbar={<SharedWithMeToolbar uids={itemUids} />}
             />
             <SharedWithMe />
         </FileBrowserStateProvider>
