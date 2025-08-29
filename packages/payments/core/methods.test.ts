@@ -1,4 +1,4 @@
-import { ChargebeeEnabled, UNPAID_STATE } from '@proton/shared/lib/interfaces';
+import { UNPAID_STATE } from '@proton/shared/lib/interfaces';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
 
 import {
@@ -15,7 +15,6 @@ import {
 } from './constants';
 import { type PaymentMethodFlow, type PaymentStatus, type PaymentsApi, type SavedPaymentMethod } from './interface';
 import { PaymentMethods, initializePaymentMethods } from './methods';
-import { BillingPlatform } from './subscription/constants';
 
 const TEST_CURRENCY = 'USD' as const;
 
@@ -39,19 +38,16 @@ describe('getNewMethods()', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: 'subscription',
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
 
-        expect(methods.getNewMethods().some((method) => method.type === 'card')).toBe(true);
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(true);
     });
 
     it('should not include card when card is not available', () => {
@@ -60,14 +56,11 @@ describe('getNewMethods()', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: 'subscription',
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -80,33 +73,27 @@ describe('getNewMethods()', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: 'subscription',
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
 
-        expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(true);
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(true);
     });
 
     it('should not include PayPal when PayPal is not available due to amount less than minimum', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 50,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: 'subscription',
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -130,14 +117,11 @@ describe('getNewMethods()', () => {
                     External: MethodStorage.INTERNAL,
                 },
             ],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: 'subscription',
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -149,19 +133,16 @@ describe('getNewMethods()', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: 'subscription',
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
 
-        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
     });
 
     it.each(['signup'] as PaymentMethodFlow[])(
@@ -170,19 +151,16 @@ describe('getNewMethods()', () => {
             const methods = new PaymentMethods({
                 paymentStatus: status,
                 paymentMethods: [],
-                chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
                 amount: 500,
                 currency: TEST_CURRENCY,
                 coupon: '',
                 flow: flow,
                 selectedPlanName: undefined,
-                billingPlatform: undefined,
-                chargebeeUserExists: undefined,
                 billingAddress: undefined,
                 enableSepa: true,
             });
 
-            expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
+            expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
         }
     );
 
@@ -190,33 +168,27 @@ describe('getNewMethods()', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 50,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: 'subscription',
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
 
-        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
     });
 
     it('should include Cash when Cash is available', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: 'subscription',
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -230,14 +202,11 @@ describe('getNewMethods()', () => {
             const methods = new PaymentMethods({
                 paymentStatus: status,
                 paymentMethods: [],
-                chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
                 amount: 500,
                 currency: TEST_CURRENCY,
                 coupon: '',
                 flow: flow,
                 selectedPlanName: undefined,
-                billingPlatform: undefined,
-                chargebeeUserExists: undefined,
                 billingAddress: undefined,
                 enableSepa: true,
             });
@@ -250,14 +219,11 @@ describe('getNewMethods()', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: 'subscription',
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -267,30 +233,6 @@ describe('getNewMethods()', () => {
         );
         expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL)).toBe(
             true
-        );
-    });
-
-    it('should not return chargebee methods when they are disabled', () => {
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: 'subscription',
-            selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)).toBe(
-            false
-        );
-        expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL)).toBe(
-            false
         );
     });
 });
@@ -345,14 +287,11 @@ describe('getUsedMethods()', () => {
                     External: MethodStorage.INTERNAL,
                 },
             ],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: 'subscription',
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -372,18 +311,18 @@ describe('getAvailablePaymentMethods()', () => {
             paymentMethods: [
                 {
                     ID: '1',
-                    Type: PAYMENT_METHOD_TYPES.PAYPAL,
+                    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
                     Order: 500,
                     Details: {
                         BillingAgreementID: 'BA-123',
                         PayerID: '123',
                         Payer: '123',
                     },
-                    External: MethodStorage.INTERNAL,
+                    External: MethodStorage.EXTERNAL,
                 },
                 {
                     ID: '2',
-                    Type: PAYMENT_METHOD_TYPES.CARD,
+                    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                     Order: 501,
                     Autopay: Autopay.ENABLE,
                     Details: {
@@ -395,12 +334,12 @@ describe('getAvailablePaymentMethods()', () => {
                         Last4: '1234',
                         Brand: 'Visa',
                     },
-                    External: MethodStorage.INTERNAL,
+                    External: MethodStorage.EXTERNAL,
                 },
                 // one more card
                 {
                     ID: '3',
-                    Type: PAYMENT_METHOD_TYPES.CARD,
+                    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                     Order: 502,
                     Autopay: Autopay.ENABLE,
                     Details: {
@@ -412,32 +351,29 @@ describe('getAvailablePaymentMethods()', () => {
                         Last4: '4242',
                         Brand: 'Visa',
                     },
-                    External: MethodStorage.INTERNAL,
+                    External: MethodStorage.EXTERNAL,
                 },
             ],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: 'subscription',
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
 
         const availableMethods = methods.getAvailablePaymentMethods();
 
-        expect(availableMethods.usedMethods.some((method) => method.type === 'paypal')).toBe(true);
+        expect(availableMethods.usedMethods.some((method) => method.type === 'chargebee-paypal')).toBe(true);
         expect(availableMethods.usedMethods.some((method) => method.value === '1')).toBe(true);
-        expect(availableMethods.usedMethods.filter((method) => method.type === 'card').length).toBe(2);
+        expect(availableMethods.usedMethods.filter((method) => method.type === 'chargebee-card').length).toBe(2);
         expect(availableMethods.usedMethods.some((method) => method.value === '2')).toBe(true);
         expect(availableMethods.usedMethods.some((method) => method.value === '3')).toBe(true);
 
         // if paypal already saved, it can't be a new method too
-        expect(availableMethods.methods.some((method) => method.type === 'paypal')).toBe(false);
-        expect(availableMethods.methods.some((method) => method.type === 'card')).toBe(true);
+        expect(availableMethods.methods.some((method) => method.type === 'chargebee-paypal')).toBe(false);
+        expect(availableMethods.methods.some((method) => method.type === 'chargebee-card')).toBe(true);
     });
 });
 
@@ -491,14 +427,11 @@ describe('getLastUsedMethod()', () => {
                     External: MethodStorage.INTERNAL,
                 },
             ],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: 'subscription',
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -583,14 +516,11 @@ describe('getSavedMethodById()', () => {
                     External: MethodStorage.EXTERNAL,
                 },
             ],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: 'subscription',
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -696,13 +626,10 @@ describe('initializePaymentMethods()', () => {
             currency: TEST_CURRENCY,
             coupon: 'coupon',
             flow: 'subscription' as PaymentMethodFlow,
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             paymentsApi: {
                 paymentStatus: () => paymentMethodStatus,
             } as any as PaymentsApi,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: false,
         });
@@ -746,13 +673,10 @@ describe('initializePaymentMethods()', () => {
             currency: TEST_CURRENCY,
             coupon: 'coupon',
             flow: 'subscription' as PaymentMethodFlow,
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             paymentsApi: {
                 paymentStatus: () => paymentMethodStatus,
             } as any as PaymentsApi,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: false,
         });
@@ -772,14 +696,11 @@ describe('Cash', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -794,14 +715,11 @@ describe('Cash', () => {
         const methods = new PaymentMethods({
             paymentStatus: st,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -813,14 +731,11 @@ describe('Cash', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -834,14 +749,11 @@ describe('Cash', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
             planIDs: {
@@ -858,14 +770,11 @@ describe('Cash', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
             planIDs: {
@@ -882,14 +791,11 @@ describe('Cash', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: 'coupon',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -905,14 +811,11 @@ describe('Chargebee Bitcoin', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -927,14 +830,11 @@ describe('Chargebee Bitcoin', () => {
         const methods = new PaymentMethods({
             paymentStatus: st,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -954,14 +854,11 @@ describe('Chargebee Bitcoin', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -975,14 +872,11 @@ describe('Chargebee Bitcoin', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: MIN_BITCOIN_AMOUNT - 1,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -998,14 +892,11 @@ describe('Chargebee Bitcoin', () => {
             const methods = new PaymentMethods({
                 paymentStatus: status,
                 paymentMethods: [],
-                chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
                 amount: 500,
                 currency: TEST_CURRENCY,
                 coupon: '',
                 flow: flow,
                 selectedPlanName: plan,
-                billingPlatform: undefined,
-                chargebeeUserExists: undefined,
                 billingAddress: undefined,
                 enableSepa: true,
             });
@@ -1014,89 +905,17 @@ describe('Chargebee Bitcoin', () => {
         }
     );
 
-    it('should return false if INHOUSE_FORCED', () => {
-        const flow: PaymentMethodFlow = 'subscription';
-
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: flow,
-            selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
-    });
-
-    it('should return false in the migration condition', () => {
-        // chargebeeEnabled === CHARGEBEE_FORCED, BillingPlatform.Proton, chargebeeUserExists === false
-        const flow: PaymentMethodFlow = 'credit';
-
-        const chargebeeUserExists = 0;
-
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: flow,
-            selectedPlanName: undefined,
-            billingPlatform: BillingPlatform.Proton,
-            chargebeeUserExists: chargebeeUserExists,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
-    });
-
-    it('should return true for splitted users', () => {
-        // chargebeeEnabled === CHARGEBEE_FORCED, BillingPlatform.Proton, chargebeeUserExists === true
-        const flow: PaymentMethodFlow = 'credit';
-
-        const chargebeeUserExists = 1;
-
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: flow,
-            selectedPlanName: undefined,
-            billingPlatform: BillingPlatform.Proton,
-            chargebeeUserExists: chargebeeUserExists,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
-    });
-
     it('should disable bitcoin if user buys Pass Lifetime and has positive credit balance', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
             user: buildUser({
@@ -1116,14 +935,11 @@ describe('Chargebee Bitcoin', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
             user: buildUser(),
@@ -1141,14 +957,11 @@ describe('Chargebee Bitcoin', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: 'EUR',
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
             user: buildUser(),
@@ -1171,14 +984,11 @@ describe('Chargebee Bitcoin', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
             user: buildUser(),
@@ -1201,14 +1011,11 @@ describe('Chargebee Bitcoin', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
             user: buildUser(),
@@ -1227,14 +1034,11 @@ describe('Chargebee Bitcoin', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
             user: buildUser(),
@@ -1255,44 +1059,17 @@ describe('Chargebee Bitcoin', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: 'subscription',
             user,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
-    });
-
-    it('should display bitcoin if user is not delinquent', () => {
-        const user = buildUser({
-            Delinquent: UNPAID_STATE.NOT_UNPAID,
-        });
-
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: 'subscription',
-            user,
-            selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
     });
 
     it('should display bitcoin if user is delinquent and the flow is credit', () => {
@@ -1305,14 +1082,11 @@ describe('Chargebee Bitcoin', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
             user,
@@ -1327,64 +1101,17 @@ describe('Bitcoin', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: 'subscription',
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
-    });
-
-    it('should be available when INHOUSE_FORCED', () => {
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: 'subscription',
-            selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
-    });
-
-    it('should return true in the migration condition', () => {
-        // chargebeeEnabled === CHARGEBEE_FORCED, BillingPlatform.Proton, chargebeeUserExists === false
-
-        const flow: PaymentMethodFlow = 'credit';
-
-        const chargebeeUserExists = 0;
-
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: flow,
-            selectedPlanName: undefined,
-            billingPlatform: BillingPlatform.Proton,
-            chargebeeUserExists: chargebeeUserExists,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
     });
 
     it('should not display bitcoin if status is false', () => {
@@ -1394,14 +1121,11 @@ describe('Bitcoin', () => {
         const methods = new PaymentMethods({
             paymentStatus: st,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1421,14 +1145,11 @@ describe('Bitcoin', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1442,14 +1163,11 @@ describe('Bitcoin', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: MIN_BITCOIN_AMOUNT - 1,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1465,14 +1183,11 @@ describe('Bitcoin', () => {
             const methods = new PaymentMethods({
                 paymentStatus: status,
                 paymentMethods: [],
-                chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
                 amount: 500,
                 currency: TEST_CURRENCY,
                 coupon: '',
                 flow: flow,
                 selectedPlanName: plan,
-                billingPlatform: undefined,
-                chargebeeUserExists: undefined,
                 billingAddress: undefined,
                 enableSepa: true,
             });
@@ -1489,15 +1204,12 @@ describe('Bitcoin', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: 'subscription',
             user,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1513,20 +1225,17 @@ describe('Bitcoin', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: 'subscription',
             user,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
 
-        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
     });
 
     it('should not display bitcoin if user has unpaid invoices', () => {
@@ -1537,44 +1246,17 @@ describe('Bitcoin', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: 'subscription',
             user,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
 
-        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
-    });
-
-    it('should display bitcoin if user is not delinquent', () => {
-        const user = buildUser({
-            Delinquent: UNPAID_STATE.NOT_UNPAID,
-        });
-
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: 'subscription',
-            user,
-            selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
     });
 });
 
@@ -1610,14 +1292,11 @@ describe('Apple Pay', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: MIN_APPLE_PAY_AMOUNT,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
             canUseApplePay: true,
@@ -1632,14 +1311,11 @@ describe('Apple Pay', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: MIN_APPLE_PAY_AMOUNT,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
             canUseApplePay: false,
@@ -1655,14 +1331,11 @@ describe('Apple Pay', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: MIN_APPLE_PAY_AMOUNT,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
             canUseApplePay: true,
@@ -1677,14 +1350,11 @@ describe('Apple Pay', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: MIN_APPLE_PAY_AMOUNT - 1,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
             canUseApplePay: true,
@@ -1706,14 +1376,11 @@ describe('Apple Pay', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: MIN_APPLE_PAY_AMOUNT,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
             canUseApplePay: true,
@@ -1728,14 +1395,11 @@ describe('Apple Pay', () => {
             const methods = new PaymentMethods({
                 paymentStatus: status,
                 paymentMethods: [],
-                chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
                 amount: MIN_APPLE_PAY_AMOUNT,
                 currency: TEST_CURRENCY,
                 coupon: '',
                 flow: flow,
                 selectedPlanName: undefined,
-                billingPlatform: undefined,
-                chargebeeUserExists: undefined,
                 billingAddress: undefined,
                 enableSepa: true,
                 canUseApplePay: true,
@@ -1753,14 +1417,11 @@ describe('Apple Pay', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: MIN_APPLE_PAY_AMOUNT,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
             canUseApplePay: true,
@@ -1775,14 +1436,11 @@ describe('Apple Pay', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: MIN_APPLE_PAY_AMOUNT,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
 
@@ -1798,14 +1456,11 @@ describe('Apple Pay', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: MIN_APPLE_PAY_AMOUNT * 10, // Much higher than minimum
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
             canUseApplePay: true,
@@ -1822,89 +1477,16 @@ describe('Chargebee card', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(true);
-    });
-
-    it('should disable CB card if INHOUSE_FORCED', () => {
-        const flow: PaymentMethodFlow = 'subscription';
-
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: flow,
-            selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(false);
-        expect(methods.getNewMethods().some((method) => method.type === 'card')).toBe(true);
-    });
-
-    it.each(['credit', 'add-card'])('should disable CB card for on-session migration users', (flow) => {
-        // chargebeeEnabled === CHARGEBEE_FORCED, BillingPlatform.Proton, chargebeeUserExists === false
-
-        const chargebeeUserExists = 0;
-
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: flow as PaymentMethodFlow,
-            selectedPlanName: undefined,
-            billingPlatform: BillingPlatform.Proton,
-            chargebeeUserExists: chargebeeUserExists,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(false);
-        expect(methods.getNewMethods().some((method) => method.type === 'card')).toBe(true);
-    });
-
-    it.each(['credit', 'add-card'])('should enable CB card for splitted users', (flow) => {
-        // chargebeeEnabled === CHARGEBEE_FORCED, BillingPlatform.Proton, chargebeeUserExists === true
-
-        const chargebeeUserExists = 1;
-
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: flow as PaymentMethodFlow,
-            selectedPlanName: undefined,
-            billingPlatform: BillingPlatform.Proton,
-            chargebeeUserExists: chargebeeUserExists,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(true);
-        expect(methods.getNewMethods().some((method) => method.type === 'card')).toBe(false);
     });
 
     it('should not display chargebee card if status is false', () => {
@@ -1914,14 +1496,11 @@ describe('Chargebee card', () => {
         const methods = new PaymentMethods({
             paymentStatus: st,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1935,14 +1514,11 @@ describe('Chargebee card', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1956,14 +1532,11 @@ describe('Chargebee card', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -1979,91 +1552,16 @@ describe('Chargebee PayPal', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(true);
-    });
-
-    it('should disable CB paypal if INHOUSE_FORCED', () => {
-        const flow: PaymentMethodFlow = 'subscription';
-
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: flow,
-            selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(false);
-        expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(true);
-    });
-
-    it('should disable CB paypal for on-session migration users', () => {
-        // chargebeeEnabled === CHARGEBEE_FORCED, BillingPlatform.Proton, chargebeeUserExists === false
-
-        const flow = 'credit';
-
-        const chargebeeUserExists = 0;
-
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: flow as PaymentMethodFlow,
-            selectedPlanName: undefined,
-            billingPlatform: BillingPlatform.Proton,
-            chargebeeUserExists: chargebeeUserExists,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(false);
-        expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(true);
-    });
-
-    it.each(['credit', 'add-paypal'])('should enable CB paypal for splitted users', (flow) => {
-        // chargebeeEnabled === CHARGEBEE_FORCED, BillingPlatform.Proton, chargebeeUserExists === true
-
-        const chargebeeUserExists = 1;
-
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: flow as PaymentMethodFlow,
-            selectedPlanName: undefined,
-            billingPlatform: BillingPlatform.Proton,
-            chargebeeUserExists: chargebeeUserExists,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
-
-        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(true);
-        expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(false);
     });
 
     it('should not render paypal if there is already one saved', () => {
@@ -2083,14 +1581,11 @@ describe('Chargebee PayPal', () => {
                     },
                 },
             ],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: BillingPlatform.Chargebee,
-            chargebeeUserExists: 1,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -2104,14 +1599,11 @@ describe('Chargebee PayPal', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: MIN_PAYPAL_AMOUNT_CHARGEBEE - 1,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -2125,14 +1617,11 @@ describe('Chargebee PayPal', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: MIN_PAYPAL_AMOUNT_CHARGEBEE - 1,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -2147,14 +1636,11 @@ describe('Chargebee PayPal', () => {
         const methods = new PaymentMethods({
             paymentStatus: st,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: undefined,
             enableSepa: true,
         });
@@ -2164,43 +1650,17 @@ describe('Chargebee PayPal', () => {
 });
 
 describe('SEPA', () => {
-    it('should not display SEPA for inhouse forced users', () => {
-        const flow: PaymentMethodFlow = 'subscription';
-
-        const methods = new PaymentMethods({
-            paymentStatus: status,
-            paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: flow,
-            selectedPlanName: PLANS.MAIL_PRO,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
-            billingAddress: { CountryCode: 'CH' },
-            enableSepa: true,
-        });
-
-        expect(
-            methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT)
-        ).toBe(false);
-    });
-
     it('should display SEPA', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: PLANS.MAIL_PRO,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: { CountryCode: 'CH' },
             enableSepa: true,
         });
@@ -2222,14 +1682,11 @@ describe('SEPA', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: PLANS.MAIL_PRO,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: { CountryCode: 'CH' },
             enableSepa: true,
         });
@@ -2245,14 +1702,11 @@ describe('SEPA', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: PLANS.MAIL_PRO,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: { CountryCode: 'US' },
             enableSepa: true,
         });
@@ -2270,14 +1724,11 @@ describe('SEPA', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: PLANS.MAIL_PRO,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: { CountryCode: 'CH' },
             enableSepa: enableSepaFalse,
         });
@@ -2293,14 +1744,11 @@ describe('SEPA', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: PLANS.MAIL,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: { CountryCode: 'CH' },
             enableSepa: true,
         });
@@ -2316,14 +1764,11 @@ describe('SEPA', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
             selectedPlanName: undefined,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: { CountryCode: 'CH' },
             enableSepa: true,
         });
@@ -2339,14 +1784,11 @@ describe('SEPA', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow,
             selectedPlanName: PLANS.BUNDLE_PRO_2024,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: { CountryCode: 'DE', State: '' },
             enableSepa: true,
             enableSepaB2C: true,
@@ -2364,14 +1806,11 @@ describe('SEPA', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
             flow,
             selectedPlanName: PLANS.BUNDLE_PRO_2024,
-            billingPlatform: undefined,
-            chargebeeUserExists: undefined,
             billingAddress: { CountryCode: 'DE', State: '' },
             enableSepa: true,
             enableSepaB2C: true,

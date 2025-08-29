@@ -26,7 +26,7 @@ const upsellPlans: UpsellPlans = {
     [APPS.PROTONMAIL]: PLANS.FAMILY,
 };
 
-export const getVisionaryConfig = ({ app, plan, subscription, user }: ConfigProps): PlanConfig => {
+export const getVisionaryConfig = ({ app, plan, subscription }: ConfigProps): PlanConfig => {
     const currentPlan = PLANS.VISIONARY;
     const planName = PLAN_NAMES[currentPlan];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'TB', fraction: 0 });
@@ -94,7 +94,7 @@ export const getVisionaryConfig = ({ app, plan, subscription, user }: ConfigProp
         ],
     };
 
-    const cancellablePlan = hasCancellablePlan(subscription, user);
+    const cancellablePlan = hasCancellablePlan(subscription);
     const storage: PlanConfigStorage = getDefaultTBStorageWarning(planName, planMaxSpace, cancellablePlan);
 
     const confirmationModal = getDefaultConfirmationModal(subscription, planName, cancellablePlan);

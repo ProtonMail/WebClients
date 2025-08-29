@@ -16,7 +16,6 @@ import {
 import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { renderWithProviders } from '@proton/testing';
 import { buildSubscription } from '@proton/testing/builders';
 import { PLANS_MAP } from '@proton/testing/data';
@@ -65,7 +64,7 @@ describe('cancel subscription', () => {
         const { hookRef } = setup({
             preloadedState: {
                 subscription: getSubscriptionState(FREE_SUBSCRIPTION as unknown as Subscription),
-                user: getModelState({ ...userModel, ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
+                user: getModelState({ ...userModel }),
                 organization: getOrganizationState(organization),
             },
         });
@@ -79,7 +78,7 @@ describe('cancel subscription', () => {
         const { hookRef } = setup({
             preloadedState: {
                 subscription: getSubscriptionState(vpnSubscription),
-                user: getModelState({ ...userModel, ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
+                user: getModelState({ ...userModel }),
                 organization: getOrganizationState(organization),
             },
         });
@@ -98,7 +97,7 @@ describe('cancel subscription', () => {
         const { hookRef } = setup({
             preloadedState: {
                 subscription: getSubscriptionState(vpnSubscription),
-                user: getModelState({ ...userModel, ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
+                user: getModelState({ ...userModel }),
                 organization: getOrganizationState(organization),
             },
         });
@@ -135,7 +134,7 @@ describe('cancel subscription', () => {
             } = setup({
                 preloadedState: {
                     subscription: getSubscriptionState(subscription),
-                    user: getModelState({ ...userModel, ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
+                    user: getModelState({ ...userModel }),
                     organization: getOrganizationState(organization),
                 },
             });
@@ -191,7 +190,9 @@ describe('downgrade subscription', () => {
             },
         });
 
-        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription({});
+        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription({
+            forceDeleteSubscription: true,
+        });
 
         await screen.findByTestId('highlight-downgrade-to-free');
         await userEvent.click(screen.getByTestId('highlight-downgrade-to-free'));

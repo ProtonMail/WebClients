@@ -1,8 +1,7 @@
 import { PLANS, getPlan } from '@proton/payments';
-import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { user as mockUser, subscriptionBundlePro } from '../__mocks__/data';
+import { subscriptionBundlePro } from '../__mocks__/data';
 import { getReminderPageConfig } from './reminderPageConfig';
 
 jest.mock('@proton/payments', () => ({
@@ -20,25 +19,6 @@ const setMockPlan = (planName: PLANS) => {
         MaxSpace: 536870912000,
         Name: planName,
     });
-};
-
-const user = {
-    ...mockUser,
-    canPay: true,
-    hasNonDelinquentScope: true,
-    hasPaidDrive: false,
-    hasPaidMail: true,
-    hasPaidPass: false,
-    hasPaidVpn: false,
-    isAdmin: false,
-    isDelinquent: false,
-    isFree: false,
-    isMember: true,
-    isPaid: true,
-    isPrivate: false,
-    isSelf: true,
-    hasPassLifetime: false,
-    accessType: AccessType.Self,
 };
 
 describe('getReminderPageConfig', () => {
@@ -61,7 +41,7 @@ describe('getReminderPageConfig', () => {
         'given app is Mail and plan name is %s, should return the correct upsell plan, if any',
         (planName: PLANS, upsellPlanName: PLANS | undefined) => {
             setMockPlan(planName);
-            const config = getReminderPageConfig({ app: APPS.PROTONMAIL, subscription: subscriptionBundlePro, user });
+            const config = getReminderPageConfig({ app: APPS.PROTONMAIL, subscription: subscriptionBundlePro });
 
             expect(config?.upsellPlan).toEqual(upsellPlanName);
         }

@@ -12,9 +12,7 @@ import ConfigProvider from '@proton/components/containers/config/Provider';
 import EventManagerContext from '@proton/components/containers/eventManager/context';
 import ModalsContext from '@proton/components/containers/modals/modalsContext';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
-import { PaymentSwitcherContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
-import { type Plan } from '@proton/payments';
-import { FREE_PLAN } from '@proton/payments';
+import { FREE_PLAN, type Plan } from '@proton/payments';
 import { PaymentsContextProvider } from '@proton/payments/ui';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { CLIENT_TYPES } from '@proton/shared/lib/constants';
@@ -24,7 +22,6 @@ import type {
     ProtonConfig,
     UserModel,
 } from '@proton/shared/lib/interfaces';
-import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { defaultVPNServersCountData as mockDefaultVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import { buildUser } from '@proton/testing/builders';
 
@@ -124,25 +121,6 @@ export const withAuthentication =
                 <AuthenticationProvider store={store}>
                     <Component {...props} />
                 </AuthenticationProvider>
-            );
-        };
-
-export const withPaymentSwitcherContext =
-    (enableChargebee: ChargebeeEnabled = ChargebeeEnabled.INHOUSE_FORCED) =>
-    <T extends {}>(Component: ComponentType<T>) =>
-        function PaymentSwitcherContextHOC(props: T & JSX.IntrinsicAttributes) {
-            return (
-                <PaymentSwitcherContext.Provider
-                    value={{
-                        enableChargebeeRef: {
-                            current: enableChargebee,
-                        },
-                        calledKillSwitch: 'not-called',
-                        setCalledKillSwitch: () => {},
-                    }}
-                >
-                    <Component {...props} />
-                </PaymentSwitcherContext.Provider>
             );
         };
 
