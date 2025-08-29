@@ -2,11 +2,15 @@
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
         "sourceMap": true,
-        "module": "commonjs",
         "outDir": "dist",
-        "moduleResolution": "node",
         "lib": ["WebWorker", "DOM", "DOM.Iterable", "ESNext"],
         "types": ["webpack-env", "jest"]
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "commonjs",
+            "moduleResolution": "node"
+        }
     },
     "include": ["src/**/*"],
     "exclude": ["src/**/*.test.ts", "src/**/*.spec.ts"]
