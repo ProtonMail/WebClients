@@ -8,7 +8,6 @@ import { getActionEventManager } from '../../utils/ActionEventManager/ActionEven
 import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
-import { getIsAnonymousUser } from '../../utils/sdk/getIsAnonymousUser';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getNodeLocation } from '../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
@@ -202,7 +201,6 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
                             if (item.isShared && !getSharedByMeItem(item.uid)) {
                                 const sharedByMeMaybeNode = await drive.getNode(item.uid);
                                 const signatureResult = getSignatureIssues(sharedByMeMaybeNode);
-                                const isAnonymousUser = getIsAnonymousUser(sharedByMeMaybeNode);
                                 const { node } = getNodeEntity(sharedByMeMaybeNode);
                                 if (!node.deprecatedShareId) {
                                     handleSdkError(
@@ -237,7 +235,7 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
                                           }
                                         : undefined,
                                     shareId: node.deprecatedShareId,
-                                    haveSignatureIssues: !isAnonymousUser && !signatureResult.ok,
+                                    haveSignatureIssues: !signatureResult.ok,
                                 });
                             }
                         } catch (error) {
@@ -255,7 +253,6 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
                             } else if (item.isTrashed) {
                                 const sharedByMeMaybeNode = await drive.getNode(item.uid);
                                 const signatureResult = getSignatureIssues(sharedByMeMaybeNode);
-                                const isAnonymousUser = getIsAnonymousUser(sharedByMeMaybeNode);
                                 const { node } = getNodeEntity(sharedByMeMaybeNode);
                                 if (!node.deprecatedShareId) {
                                     handleSdkError(
@@ -290,7 +287,7 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
                                           }
                                         : undefined,
                                     shareId: node.deprecatedShareId,
-                                    haveSignatureIssues: !isAnonymousUser && !signatureResult.ok,
+                                    haveSignatureIssues: !signatureResult.ok,
                                 });
                             }
                         } catch (error) {
