@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { c } from 'ttag';
+
 import { Button, CircleLoader } from '@proton/atoms';
 import {
     Badge,
@@ -17,12 +19,14 @@ import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark, IcCrossBig } from '@proton/icons';
 import { labelConversations } from '@proton/shared/lib/api/conversations';
 import { labelMessages } from '@proton/shared/lib/api/messages';
+import { getItem } from '@proton/shared/lib/helpers/storage';
 import clsx from '@proton/utils/clsx';
 
 import { isElementMessage } from 'proton-mail/helpers/elements';
 import type { Element } from 'proton-mail/models/element';
 
-import { categoryBadgeMapping } from './categoryViewConstants';
+import { CategoryBadgeInfo } from './CategoryBadgeInfo';
+import { DISABLED_BADGE, getCategoriesBadgeMapping } from './categoryViewConstants';
 import { isLabelIDCaregoryKey } from './categoryViewHelpers';
 import { useCategoryViewExperiment } from './useCategoryViewExperiment';
 
@@ -47,11 +51,15 @@ export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
     const { createNotification } = useNotifications();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
+    if (getItem(DISABLED_BADGE)) {
+        return null;
+    }
+
     if (!labelValue || !canSeeCategoryLabel) {
         return null;
     }
 
-    const data = categoryBadgeMapping[labelValue];
+    const data = getCategoriesBadgeMapping()[labelValue];
     if (!data) {
         return null;
     }
@@ -81,7 +89,7 @@ export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
         setLabelValue(category);
 
         createNotification({
-            text: 'The category has been updated, thanks for your feedback!',
+            text: c('Label').t`The category has been updated, thanks for your feedback!`,
         });
 
         await call();
@@ -117,7 +125,7 @@ export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
                 <DropdownMenu className="p-3">
                     <div className="flex justify-between items-center flex-nowrap mb-2 gap-2">
                         <p className="p-0 pl-4 text-sm color-weak">
-                            Which category should this be recategorized under?
+                            {c('Label').t`Which category should this be recategorized under?`}
                         </p>
                         <Button
                             icon
@@ -132,7 +140,7 @@ export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
                             <IcCrossBig />
                         </Button>
                     </div>
-                    {Object.entries(categoryBadgeMapping).map(([key, value]) => {
+                    {Object.entries(getCategoriesBadgeMapping()).map(([key, value]) => {
                         const icon =
                             key === labelValue ? (
                                 <>
@@ -167,6 +175,8 @@ export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
                             </DropdownMenuButton>
                         );
                     })}
+
+                    <CategoryBadgeInfo className="ml-4 mt-2" />
                 </DropdownMenu>
             </Dropdown>
         </>

@@ -1,9 +1,12 @@
 import { type MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { getItem } from '@proton/shared/lib/helpers/storage';
 
 import RecipientType from 'proton-mail/components/message/recipients/RecipientType';
 import type { Element } from 'proton-mail/models/element';
 
 import { CategoryBadge } from './CategoryBadge';
+import { CategoryBadgeInfo } from './CategoryBadgeInfo';
+import { DISABLED_BADGE } from './categoryViewConstants';
 import { hasCategoryLabel } from './categoryViewHelpers';
 
 import './ExtraMessageCategory.scss';
@@ -18,10 +21,15 @@ export const ExtraMessageCategory = ({ message, element }: Props) => {
         return null;
     }
 
+    if (getItem(DISABLED_BADGE)) {
+        return null;
+    }
+
     return (
         <div className="category-badge-container">
             <RecipientType label="Category">
                 <CategoryBadge labelIDs={message.data?.LabelIDs} element={element} />
+                <CategoryBadgeInfo className="mt-1" />
             </RecipientType>
         </div>
     );
