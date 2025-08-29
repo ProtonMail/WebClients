@@ -27,6 +27,9 @@ import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
+import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
+import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
+
 import { getLabelIDs } from '../../helpers/elements';
 import { getStandardFolders } from '../../helpers/labels';
 import { useApplyLabels } from '../../hooks/actions/label/useApplyLabels';
@@ -145,6 +148,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
     const { applyLabels, applyLabelsToAllModal } = useApplyLabels(setContainFocus);
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
     const { getSendersToFilter } = useCreateFilters();
+    const { applyMultipleLocations, applyLocation, applyOptimisticLocationEnabled } = useApplyLocation();
 
     const breakpoints = useActiveBreakpoint();
 
@@ -237,36 +241,48 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
 
     const actualApplyLabels = async (changes: { [p: string]: boolean }) => {
         const elements = getElementsFromIDs(selectedIDs);
-
         const promises = [];
 
-        promises.push(
-            applyLabels({
-                elements,
-                changes,
-                createFilters: always,
-                selectedLabelIDs: checkedIDs,
-                labelID,
-                selectAll,
-                onCheckAll,
-            })
-        );
-
-        if (alsoArchive) {
-            const folderName = getStandardFolders()[MAILBOX_LABEL_IDS.ARCHIVE].name;
+        if (applyOptimisticLocationEnabled) {
+            promises.push(applyMultipleLocations({ elements, changes }));
+        } else {
             promises.push(
-                moveToFolder({
+                applyLabels({
                     elements,
-                    sourceLabelID: labelID,
-                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                    folderName,
-                    sourceAction: SOURCE_ACTION.LABEL_DROPDOWN,
-                    currentFolder: folderLocation(labelID, labels, folders),
+                    changes,
+                    createFilters: always,
+                    selectedLabelIDs: checkedIDs,
+                    labelID,
+                    selectAll,
+                    onCheckAll,
                 })
             );
         }
 
-        await Promise.all(promises);
+        if (alsoArchive) {
+            if (applyOptimisticLocationEnabled) {
+                promises.push(
+                    applyLocation({
+                        elements,
+                        destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                        type: APPLY_LOCATION_TYPES.MOVE,
+                    })
+                );
+            } else {
+                const folderName = getStandardFolders()[MAILBOX_LABEL_IDS.ARCHIVE].name;
+                promises.push(
+                    moveToFolder({
+                        elements,
+                        sourceLabelID: labelID,
+                        destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                        folderName,
+                        sourceAction: SOURCE_ACTION.LABEL_DROPDOWN,
+                        currentFolder: folderLocation(labelID, labels, folders),
+                    })
+                );
+            }
+        }
+
         onClose();
     };
 
