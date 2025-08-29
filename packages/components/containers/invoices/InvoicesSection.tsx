@@ -104,7 +104,7 @@ const InvoicesSection = () => {
         <DropdownActions
             size="medium"
             list={[
-                !!user.ChargebeeUserExists && {
+                {
                     text: c('Action').t`Edit billing address`,
                     'data-testid': 'editBillingAddress',
                     key: 'editBillingAddress',

@@ -49,7 +49,6 @@ const TestComponent = () => {
             handles: {
                 submitDirectDebit: jest.fn(),
             } as any,
-            forceEnableChargebee: () => true,
             verifyPayment: jest.fn(),
         }
     );
@@ -240,7 +239,6 @@ describe('SepaDirectDebit', () => {
                     handles: {
                         submitDirectDebit: jest.fn(),
                     } as any,
-                    forceEnableChargebee: () => true,
                     verifyPayment: jest.fn(),
                 }
             );

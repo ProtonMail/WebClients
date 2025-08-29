@@ -18,7 +18,7 @@ interface Arguments {
 
 export const getRoutes = ({ user, subscription, showVPNDashboard, showVPNDashboardVariant, isB2BTrial }: Arguments) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
-    const cancellablePlan = hasCancellablePlan(subscription, user);
+    const cancellablePlan = hasCancellablePlan(subscription);
     const cancellableOnlyViaSupport = isCancellableOnlyViaSupport(subscription);
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
     const planIsManagedExternally = isManagedExternally(subscription);

@@ -19,7 +19,7 @@ import {
 } from './b2bCommonConfig';
 import type { ConfigProps } from './types';
 
-export const getMailEssentialConfig = ({ plan, subscription, user }: ConfigProps): PlanConfig => {
+export const getMailEssentialConfig = ({ plan, subscription }: ConfigProps): PlanConfig => {
     const currentPlan = PLANS.MAIL_PRO;
     const planName = PLAN_NAMES[currentPlan];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'GB', fraction: 0 });
@@ -90,7 +90,7 @@ export const getMailEssentialConfig = ({ plan, subscription, user }: ConfigProps
         ],
     };
 
-    const cancellablePlan = hasCancellablePlan(subscription, user);
+    const cancellablePlan = hasCancellablePlan(subscription);
     const storage: PlanConfigStorage = getDefaultGBStorageWarning(planName, planMaxSpace, cancellablePlan);
     const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName, cancellablePlan);
 
