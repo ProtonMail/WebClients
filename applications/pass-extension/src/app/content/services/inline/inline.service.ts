@@ -9,14 +9,17 @@ import type { FrameMessageHandler } from 'proton-pass-extension/app/content/util
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientNeedsSession, clientSessionLocked } from '@proton/pass/lib/client';
+import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import noop from '@proton/utils/noop';
 
-/** NOTE: This should only be spawned in the top-layer */
 export const createInlineService = ({
     elements,
     controller,
 }: ContentScriptContextFactoryOptions): AbstractInlineService => {
+    /** NOTE: This should only be spawned in the top-frame */
+    if (!isMainFrame()) throw new Error('InlineService should only be created in top-frame');
+
     const { transport } = controller;
     const iframes = createIFrameService(elements);
     const activeListeners = createListenerStore();

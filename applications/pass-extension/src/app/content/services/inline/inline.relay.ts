@@ -9,12 +9,16 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { MaybeNull } from '@proton/pass/types';
 import { createStyleParser, getComputedHeight, getComputedWidth } from '@proton/pass/utils/dom/computed-styles';
+import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
 import { createAsyncQueue } from '@proton/pass/utils/fp/promises';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { resolveDomain } from '@proton/pass/utils/url/utils';
 import noop from '@proton/utils/noop';
 
 export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOptions): AbstractInlineService => {
+    /** NOTE: This should only be spawned in sub-frames */
+    if (isMainFrame()) throw new Error('InlineRelay should only be created in sub-frames');
+
     /** NOTE: an async queue is used to process field events in a predictable
      * order. As some events are processed asynchronously via messaging, this
      * ensures the the top and sub-frame states remain in sync */
