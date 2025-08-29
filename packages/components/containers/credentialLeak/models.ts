@@ -6,6 +6,19 @@ export enum BREACH_STATE {
     RESOLVED,
 }
 
+export interface ExposedData {
+    code: string;
+    name: string;
+    values?: string[];
+}
+
+export interface BreachedCombo {
+    id: string;
+    domain: string;
+    username: string;
+    passwordLastChars: string;
+}
+
 export interface FetchedBreaches {
     id: string;
     name: string;
@@ -15,11 +28,7 @@ export interface FetchedBreaches {
     publishedAt: string;
     size: number;
     passwordLastChars: string | null;
-    exposedData: {
-        code: string;
-        name: string;
-        values?: string[];
-    }[];
+    exposedData: ExposedData[];
     actions:
         | {
               code: string;
@@ -42,6 +51,7 @@ export interface FetchedBreaches {
         };
     };
     resolvedState: number;
+    breachedCombos?: BreachedCombo[];
 }
 
 export interface SampleBreach {
