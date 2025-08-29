@@ -67,13 +67,15 @@ export const ViewAccessOutgoingEmergencyContactModal = ({
             <ModalTwoFooter>
                 <Button
                     loading={loading && loadingType === 'grant'}
+                    fullWidth
                     onClick={() => {
                         setLoadingType('grant');
                         onAction({ type: 'grant', value });
                     }}
-                >{c('Action').t`Give access now`}</Button>
+                >{c('emergency_access').t`Give access now`}</Button>
                 <Button
                     color="danger"
+                    fullWidth
                     loading={loading && loadingType === 'refuse'}
                     onClick={() => {
                         setLoadingType('refuse');
