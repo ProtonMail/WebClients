@@ -18,7 +18,7 @@ export const ChatMessageContent = ({ message }: ChatMessageContentProps) => {
         <>
             {parts.map((part, i) => {
                 if (i === parts.length - 1) {
-                    return <span key={`text-${i}`}>{part}</span>;
+                    return part;
                 }
 
                 const url = matches[i];
@@ -26,7 +26,7 @@ export const ChatMessageContent = ({ message }: ChatMessageContentProps) => {
 
                 return (
                     <>
-                        <span key={`text-${i}`}>{part}</span>
+                        {part}
                         {valid && sanitizedUrl ? (
                             <a
                                 key={`link-${i}`}
@@ -38,7 +38,7 @@ export const ChatMessageContent = ({ message }: ChatMessageContentProps) => {
                                 {sanitizedUrl}
                             </a>
                         ) : (
-                            <span key={`invalid-${i}`}>{c('meet_2025 Info').t`<Removed dangerous URL>`}</span>
+                            <>{c('meet_2025 Info').t`<Removed dangerous URL>`}</>
                         )}
                     </>
                 );
