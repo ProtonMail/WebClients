@@ -8,7 +8,6 @@ import type { RefreshFn } from '../forceRefresh/context';
 import DensityInjector from '../layouts/DensityInjector';
 import ModalsChildren from '../modals/Children';
 import NotificationsChildren from '../notifications/Children';
-import PaymentSwitcher from '../payments/PaymentSwitcher';
 import { ThemeInjector } from '../themes/ThemeInjector';
 import ElectronBlockedContainer from './ElectronBlockedContainer';
 import StorageListener from './StorageListener';
@@ -30,17 +29,15 @@ const StandardPrivateApp = ({ children, noModals }: Props) => {
     }
 
     return (
-        <PaymentSwitcher>
-            <SessionRecoveryLocalStorageManager>
-                <ThemeInjector />
-                <DensityInjector />
-                <NotificationsChildren />
-                <LocaleInjector onRerender={refresh} />
-                {!noModals && <ModalsChildren />}
-                <StorageListener />
-                <ForceRefreshProvider ref={refreshRef}>{children}</ForceRefreshProvider>
-            </SessionRecoveryLocalStorageManager>
-        </PaymentSwitcher>
+        <SessionRecoveryLocalStorageManager>
+            <ThemeInjector />
+            <DensityInjector />
+            <NotificationsChildren />
+            <LocaleInjector onRerender={refresh} />
+            {!noModals && <ModalsChildren />}
+            <StorageListener />
+            <ForceRefreshProvider ref={refreshRef}>{children}</ForceRefreshProvider>
+        </SessionRecoveryLocalStorageManager>
     );
 };
 

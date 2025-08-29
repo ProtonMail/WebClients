@@ -9,7 +9,6 @@ import PaymentWrapper from '@proton/components/containers/payments/PaymentWrappe
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
-import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import type { WithLoading } from '@proton/hooks/useLoading';
 import type {
     ExtendedTokenPayment,
@@ -21,12 +20,12 @@ import type {
 import {
     PAYMENT_METHOD_TYPES,
     type Plan,
+    SubscriptionMode,
     getIsB2BAudienceFromPlan,
     getPaymentsVersion,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
-import { SubscriptionMode } from '@proton/payments';
 import { type OnBillingAddressChange, PayButton, useTaxCountry, useVatNumber } from '@proton/payments/ui';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -142,8 +141,6 @@ const AccountStepPayment = ({
         return true;
     };
 
-    const chargebeeContext = useChargebeeContext();
-
     const isAuthenticated = !!model.session?.resumedSessionResult.UID;
 
     const flow: PaymentMethodFlow = (() => {
@@ -172,7 +169,6 @@ const AccountStepPayment = ({
         paymentMethods: model.session?.paymentMethods,
         paymentStatus: model.paymentStatus,
         api: normalApi,
-        chargebeeEnabled: user?.ChargebeeUser,
         theme: publicTheme,
         billingAddress,
         user,
@@ -300,7 +296,6 @@ const AccountStepPayment = ({
                         plan: selectedPlan,
                         planName: selectedPlan.Name,
                         paymentsVersion: getPaymentsVersion(),
-                        chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
                     };
 
                     captureMessage('Payments: Failed to handle single-signup-v2', {

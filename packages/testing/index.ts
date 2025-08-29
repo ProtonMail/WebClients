@@ -11,7 +11,6 @@ export * from './lib/initialReduxState';
 export * from './lib/mockApiWithServer';
 export * from './lib/mockModals';
 export * from './lib/mockNotifications';
-export * from './lib/mockOnSessionMigration';
 export * from './lib/mockRandomValues';
 export * from './lib/mockSpotlight';
 export * from './lib/mockUseActiveBreakpoint';

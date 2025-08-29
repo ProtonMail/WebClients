@@ -3,8 +3,6 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
@@ -14,7 +12,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { onSessionMigrationPaymentsVersion, buyCredit, validateCredit } from '@proton/payments';
+import { buyCredit, validateCredit } from '@proton/payments';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 const GiftCodeSection = () => {
@@ -24,18 +22,14 @@ const GiftCodeSection = () => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const [user] = useUser();
-    const [subscription] = useSubscription();
 
     const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
         setValue(target.value.replace(/\s|\t/g, '').toUpperCase());
     };
 
     const submit = async () => {
-        const paymentsVersion = onSessionMigrationPaymentsVersion(user, subscription);
-
-        await api(validateCredit({ GiftCode: value }, paymentsVersion));
-        await api(buyCredit({ GiftCode: value, Amount: 0 }, paymentsVersion));
+        await api(validateCredit({ GiftCode: value }, 'v5'));
+        await api(buyCredit({ GiftCode: value, Amount: 0 }, 'v5'));
         await call();
         setValue('');
         reset();

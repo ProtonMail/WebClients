@@ -24,7 +24,6 @@ import {
 } from '@proton/components';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import { AuthType } from '@proton/components/containers/login/interface';
-import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';
 import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicAppSetup';
 import useInstance from '@proton/hooks/useInstance';
 import { getToAppName } from '@proton/shared/lib/authentication/apps';
@@ -92,7 +91,7 @@ const handlePreload = () => {
     if (!cryptoWorkerPromise) {
         cryptoWorkerPromise = loadCrypto({
             appName: APPS.PROTONACCOUNT,
-            unleashClient: undefined
+            unleashClient: undefined,
         });
     }
 };
@@ -142,108 +141,106 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
                     <PublicAppSetup>
                         <ForceRefreshContext.Provider value={refresh}>
                             <UnAuthenticated>
-                                <PaymentSwitcher>
-                                    <Switch location={location}>
-                                        <Route path={publicRoutes.reset}>
-                                            <AccountResetPasswordContainer
-                                                metaTags={resetPasswordPage()}
-                                                loginUrl={paths.login}
-                                                setupVPN={false}
-                                                toApp={APPS.PROTONVPN_SETTINGS}
-                                                productParam={APPS.PROTONVPN_SETTINGS}
-                                                onPreSubmit={handlePreSubmit}
-                                                onStartAuth={handleStartAuth}
-                                                onLogin={async (data) => {
-                                                    handleLoginWithDefaultPath(data);
-                                                    return completeResult;
-                                                }}
-                                            />
-                                        </Route>
-                                        <Route path={publicRoutes.forgotUsername}>
-                                            <AccountForgotUsernameContainer
-                                                toApp={APPS.PROTONVPN_SETTINGS}
-                                                metaTags={forgotUsernamePage()}
-                                                loginUrl={paths.login}
-                                                onStartAuth={handleStartAuth}
-                                            />
-                                        </Route>
-                                        <Route path="/pre-invite/:selector/:token">
-                                            <AccountSignupInviteContainer
-                                                loader={loader}
-                                                clientType={CLIENT_TYPES.VPN}
-                                                onValid={(inviteData) =>
-                                                    history.replace({
-                                                        pathname: paths.signup,
-                                                        state: { invite: inviteData },
-                                                    })
-                                                }
-                                                onInvalid={() => history.push(paths.signup)}
-                                            />
-                                        </Route>
-                                        <Route path={[publicRoutes.pricing, publicRoutes.signup]}>
-                                            <AccountSingleSignupContainer
-                                                metaTags={signupPage()}
-                                                toApp={APPS.PROTONVPN_SETTINGS}
-                                                toAppName={getToAppName(APPS.PROTONVPN_SETTINGS)}
-                                                loader={loader}
-                                                productParam={APPS.PROTONVPN_SETTINGS}
-                                                clientType={CLIENT_TYPES.VPN}
-                                                onPreSubmit={handlePreSubmit}
-                                                onLogin={async (args) => {
-                                                    onLogin({
-                                                        ...args,
-                                                        path: '/downloads?prompt',
-                                                    });
-                                                    return completeResult;
-                                                }}
-                                                onStartAuth={handleStartAuth}
-                                            />
-                                        </Route>
-                                        <Route path={[publicRoutes.sso, publicRoutes.ssoReauth]}>
-                                            <UnAuthenticated>
-                                                <ExternalSSOConsumer
-                                                    onOAuthLogin={noop}
-                                                    onLogin={({ username, token, flow }) => {
-                                                        const state: LoginContainerState = {
-                                                            authTypeData: { type: AuthType.ExternalSSO },
-                                                            externalSSO: {
-                                                                token,
-                                                                flow,
-                                                            },
-                                                            username,
-                                                        };
+                                <Switch location={location}>
+                                    <Route path={publicRoutes.reset}>
+                                        <AccountResetPasswordContainer
+                                            metaTags={resetPasswordPage()}
+                                            loginUrl={paths.login}
+                                            setupVPN={false}
+                                            toApp={APPS.PROTONVPN_SETTINGS}
+                                            productParam={APPS.PROTONVPN_SETTINGS}
+                                            onPreSubmit={handlePreSubmit}
+                                            onStartAuth={handleStartAuth}
+                                            onLogin={async (data) => {
+                                                handleLoginWithDefaultPath(data);
+                                                return completeResult;
+                                            }}
+                                        />
+                                    </Route>
+                                    <Route path={publicRoutes.forgotUsername}>
+                                        <AccountForgotUsernameContainer
+                                            toApp={APPS.PROTONVPN_SETTINGS}
+                                            metaTags={forgotUsernamePage()}
+                                            loginUrl={paths.login}
+                                            onStartAuth={handleStartAuth}
+                                        />
+                                    </Route>
+                                    <Route path="/pre-invite/:selector/:token">
+                                        <AccountSignupInviteContainer
+                                            loader={loader}
+                                            clientType={CLIENT_TYPES.VPN}
+                                            onValid={(inviteData) =>
+                                                history.replace({
+                                                    pathname: paths.signup,
+                                                    state: { invite: inviteData },
+                                                })
+                                            }
+                                            onInvalid={() => history.push(paths.signup)}
+                                        />
+                                    </Route>
+                                    <Route path={[publicRoutes.pricing, publicRoutes.signup]}>
+                                        <AccountSingleSignupContainer
+                                            metaTags={signupPage()}
+                                            toApp={APPS.PROTONVPN_SETTINGS}
+                                            toAppName={getToAppName(APPS.PROTONVPN_SETTINGS)}
+                                            loader={loader}
+                                            productParam={APPS.PROTONVPN_SETTINGS}
+                                            clientType={CLIENT_TYPES.VPN}
+                                            onPreSubmit={handlePreSubmit}
+                                            onLogin={async (args) => {
+                                                onLogin({
+                                                    ...args,
+                                                    path: '/downloads?prompt',
+                                                });
+                                                return completeResult;
+                                            }}
+                                            onStartAuth={handleStartAuth}
+                                        />
+                                    </Route>
+                                    <Route path={[publicRoutes.sso, publicRoutes.ssoReauth]}>
+                                        <UnAuthenticated>
+                                            <ExternalSSOConsumer
+                                                onOAuthLogin={noop}
+                                                onLogin={({ username, token, flow }) => {
+                                                    const state: LoginContainerState = {
+                                                        authTypeData: { type: AuthType.ExternalSSO },
+                                                        externalSSO: {
+                                                            token,
+                                                            flow,
+                                                        },
+                                                        username,
+                                                    };
 
-                                                        history.replace(SSO_PATHS.LOGIN, state);
-                                                    }}
-                                                >
-                                                    {loader}
-                                                </ExternalSSOConsumer>
-                                            </UnAuthenticated>
-                                        </Route>
-                                        <Route path={publicRoutes.login}>
-                                            <LoginContainer
-                                                initialLocation={initialLocation}
-                                                metaTags={loginPage()}
-                                                onLogin={async (args) => {
-                                                    handleLoginWithDefaultPath(args);
-                                                    return completeResult;
-                                                }}
-                                                onPreSubmit={handlePreSubmit}
-                                                paths={paths}
-                                                onStartAuth={handleStartAuth}
-                                            />
-                                        </Route>
-                                        <Route path="*">
-                                            <Effect
-                                                onEffect={() => {
-                                                    setInitialLocation(location);
+                                                    history.replace(SSO_PATHS.LOGIN, state);
                                                 }}
                                             >
-                                                <Redirect to={paths.login} />
-                                            </Effect>
-                                        </Route>
-                                    </Switch>
-                                </PaymentSwitcher>
+                                                {loader}
+                                            </ExternalSSOConsumer>
+                                        </UnAuthenticated>
+                                    </Route>
+                                    <Route path={publicRoutes.login}>
+                                        <LoginContainer
+                                            initialLocation={initialLocation}
+                                            metaTags={loginPage()}
+                                            onLogin={async (args) => {
+                                                handleLoginWithDefaultPath(args);
+                                                return completeResult;
+                                            }}
+                                            onPreSubmit={handlePreSubmit}
+                                            paths={paths}
+                                            onStartAuth={handleStartAuth}
+                                        />
+                                    </Route>
+                                    <Route path="*">
+                                        <Effect
+                                            onEffect={() => {
+                                                setInitialLocation(location);
+                                            }}
+                                        >
+                                            <Redirect to={paths.login} />
+                                        </Effect>
+                                    </Route>
+                                </Switch>
                             </UnAuthenticated>
                         </ForceRefreshContext.Provider>
                     </PublicAppSetup>

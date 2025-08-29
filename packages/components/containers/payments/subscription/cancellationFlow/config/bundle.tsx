@@ -34,7 +34,7 @@ const upsellPlans: UpsellPlans = {
     [APPS.PROTONMAIL]: PLANS.MAIL,
 };
 
-export const getBundleConfig = ({ app, plan, subscription, user }: ConfigProps): PlanConfig => {
+export const getBundleConfig = ({ app, plan, subscription }: ConfigProps): PlanConfig => {
     const currentPlan = PLANS.BUNDLE;
     const planName = PLAN_NAMES[currentPlan];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'GB', fraction: 0 });
@@ -97,7 +97,7 @@ export const getBundleConfig = ({ app, plan, subscription, user }: ConfigProps):
         ],
     };
 
-    const cancellablePlan = hasCancellablePlan(subscription, user);
+    const cancellablePlan = hasCancellablePlan(subscription);
     const storage: PlanConfigStorage = getDefaultGBStorageWarning(planName, planMaxSpace, cancellablePlan);
     const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName, cancellablePlan);
 

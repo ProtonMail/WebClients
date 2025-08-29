@@ -53,8 +53,6 @@ const user: User = {
         'has-a-byoe-address': false,
         'delegated-access': false,
     },
-    ChargebeeUser: 0,
-    ChargebeeUserExists: 0,
     DriveEarlyAccess: 0,
     Idle: 0,
     HasMultipleSubscriptions: false,

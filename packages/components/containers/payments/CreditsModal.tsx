@@ -18,7 +18,6 @@ import useConfig from '@proton/components/hooks/useConfig';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useAutomaticCurrency, usePaymentFacade } from '@proton/components/payments/client-extensions';
-import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
 import { useLoading } from '@proton/hooks';
 import {
@@ -37,7 +36,6 @@ import { ChargebeePaypalButton } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
@@ -82,15 +80,12 @@ const CreditsModal = ({ paymentStatus, ...props }: Props) => {
     const i18n = getCurrenciesI18N();
     const i18nCurrency = i18n[currency];
     const pollEventsMultipleTimes = usePollEvents();
-    const chargebeeContext = useChargebeeContext();
     const [subscription, loadingSubscription] = useSubscription();
     const [user, loadingUser] = useUser();
 
     const paymentFacade = usePaymentFacade({
         amount: debouncedAmount,
         currency,
-        billingPlatform: subscription?.BillingPlatform,
-        chargebeeUserExists: user.ChargebeeUserExists,
         paymentStatus,
         onChargeable: (operations, data) => {
             const run = async () => {
@@ -219,7 +214,6 @@ const CreditsModal = ({ paymentStatus, ...props }: Props) => {
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
                         paymentsVersion: getPaymentsVersion(),
-                        chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
                     };
 
                     captureMessage('Payments: failed to handle credits', {
@@ -230,9 +224,7 @@ const CreditsModal = ({ paymentStatus, ...props }: Props) => {
             }
         });
 
-    const disableCurrencySelector =
-        chargebeeContext.enableChargebeeRef.current !== ChargebeeEnabled.INHOUSE_FORCED &&
-        !isFreeSubscription(subscription);
+    const disableCurrencySelector = !isFreeSubscription(subscription);
 
     const amountToCharge =
         amountLoading || nonChargeableMethods.has(paymentFacade.selectedMethodType) ? null : (

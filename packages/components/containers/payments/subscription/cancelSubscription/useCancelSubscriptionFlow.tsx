@@ -16,7 +16,6 @@ import {
     FREE_PLAN,
     type FeedbackDowngradeData,
     type PLANS,
-    type PaymentsVersion,
     Renew,
     type Subscription,
     changeRenewState,
@@ -28,8 +27,6 @@ import {
     hasMigrationDiscount,
     hasPassLaunchOffer,
     isFreeSubscription,
-    isSplittedUser,
-    onSessionMigrationPaymentsVersion,
 } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -211,10 +208,11 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
 
     interface CancellationProps {
         feedback?: FeedbackDowngradeData;
-        paymentsVersionOverride: PaymentsVersion | undefined;
     }
 
-    const finaliseCancellation = async (cancellationProps: CancellationProps): Promise<CancelSubscriptionResult> => {
+    const finaliseCancellation = async (
+        cancellationProps: CancellationProps = {}
+    ): Promise<CancelSubscriptionResult> => {
         let cancelNotificationId;
 
         try {
@@ -241,7 +239,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
                         RenewalState: Renew.Disabled,
                         CancellationFeedback: feedback,
                     },
-                    cancellationProps.paymentsVersionOverride ?? onSessionMigrationPaymentsVersion(user, subscription)
+                    'v5'
                 )
             );
             await eventManager.call();
@@ -263,13 +261,11 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     };
 
     interface CancelWithUpsellProps {
-        paymentsVersionOverride: PaymentsVersion | undefined;
         subscription: Subscription;
         upsellPlanId: PLANS | undefined;
     }
 
     const cancelWithUpsell = async ({
-        paymentsVersionOverride,
         subscription,
         upsellPlanId,
     }: CancelWithUpsellProps): Promise<CancelSubscriptionResult> => {
@@ -291,13 +287,12 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         }
 
         if (resolution.status === SUBSCRIPTION_CANCELLED.status) {
-            return finaliseCancellation({ paymentsVersionOverride });
+            return finaliseCancellation();
         }
         return SUBSCRIPTION_UPSOLD;
     };
 
     interface CancelRenewProps {
-        paymentsVersionOverride: PaymentsVersion | undefined;
         skipUpsell?: boolean;
         subscription: Subscription;
         subscriptionReminderFlow: boolean | undefined;
@@ -305,7 +300,6 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     }
 
     const cancelRenew = async ({
-        paymentsVersionOverride,
         skipUpsell,
         subscription,
         subscriptionReminderFlow,
@@ -321,7 +315,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
 
         if (!isB2BTrial && !subscriptionReminderFlow) {
             if (canUseUpsellFlow && !skipUpsell) {
-                return cancelWithUpsell({ paymentsVersionOverride, subscription, upsellPlanId });
+                return cancelWithUpsell({ subscription, upsellPlanId });
             } else {
                 const result = await showCancelSubscriptionModal();
 
@@ -376,13 +370,13 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             return SUBSCRIPTION_KEPT;
         }
 
-        return finaliseCancellation({ feedback, paymentsVersionOverride });
+        return finaliseCancellation({ feedback });
     };
 
     const handleFinalizeUnsubscribe = async (data: FeedbackDowngradeData) => {
         try {
             showCancellationLoadingModal(true);
-            await api(deleteSubscription(data, onSessionMigrationPaymentsVersion(user, subscription)));
+            await api(deleteSubscription(data, 'v5'));
             await eventManager.call();
             createNotification({ text: c('Success').t`You have successfully unsubscribed` });
             return SUBSCRIPTION_DOWNGRADED;
@@ -458,10 +452,12 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         subscriptionReminderFlow,
         upsellPlanId,
         skipUpsell,
+        forceDeleteSubscription,
     }: {
         subscriptionReminderFlow?: boolean;
         upsellPlanId?: PLANS;
         skipUpsell?: boolean;
+        forceDeleteSubscription?: boolean;
     }): Promise<CancelSubscriptionResult> => {
         const [subscription, user] = await Promise.all([getSubscription(), getUser()]);
         if (user.isFree || isFreeSubscription(subscription)) {
@@ -475,21 +471,12 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             return SUBSCRIPTION_KEPT;
         }
 
-        if (isB2BTrial || hasCancellablePlan(subscription, user)) {
+        if ((isB2BTrial || hasCancellablePlan(subscription)) && !forceDeleteSubscription) {
             if (subscription.Renew === Renew.Disabled) {
                 return SUBSCRIPTION_KEPT;
             }
 
-            const paymentsVersionOverride: PaymentsVersion | undefined = isSplittedUser(
-                user.ChargebeeUser,
-                user.ChargebeeUserExists,
-                subscription?.BillingPlatform
-            )
-                ? 'v4'
-                : undefined;
-
             return cancelRenew({
-                paymentsVersionOverride,
                 skipUpsell,
                 subscription,
                 subscriptionReminderFlow,

@@ -16,7 +16,6 @@ import {
     type CreatePaymentIntentDirectDebitData,
     DisplayablePaymentError,
     type ExtendedExtractIBANResult,
-    type ForceEnableChargebee,
     PAYMENT_METHOD_TYPES,
     PAYMENT_TOKEN_STATUS,
     type PLANS,
@@ -58,7 +57,6 @@ export interface Dependencies {
     api: Api;
     events: ChargebeeIframeEvents;
     handles: ChargebeeIframeHandles;
-    forceEnableChargebee: ForceEnableChargebee;
     verifyPayment: PaymentVerificatorV5;
 }
 
@@ -90,7 +88,7 @@ type DirectDebitCustomerWithoutEmail = Omit<DirectDebitCustomer, 'email'>;
 
 export const useSepaDirectDebit = (
     { amountAndCurrency, onChargeable, selectedPlanName, onBeforeSepaPayment }: Props,
-    { api, forceEnableChargebee, handles, verifyPayment, events }: Dependencies
+    { api, handles, verifyPayment, events }: Dependencies
 ): ChargebeeDirectDebitProcessorHook => {
     const fetchedPaymentTokenRef = useRef<ChargebeeFetchedPaymentToken | null>(null);
     const onChargeableRef = useRef(onChargeable);
@@ -177,7 +175,6 @@ export const useSepaDirectDebit = (
             };
 
             const { Token: PaymentToken, Status, Data: bePaymentIntentData } = await fetchPaymentIntentV5(api, payload);
-            forceEnableChargebee();
 
             const paymentIntent = convertPaymentIntentData(bePaymentIntentData);
             const sepaEmail = bePaymentIntentData?.Email;

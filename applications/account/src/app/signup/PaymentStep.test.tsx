@@ -52,10 +52,6 @@ jest.mock('@proton/components/payments/client-extensions/data-utils', () => ({
     useCachedUser: jest.fn().mockReturnValue(buildUser()),
 }));
 
-jest.mock('@proton/components/payments/client-extensions/useChargebeeKillSwitch', () => ({
-    useChargebeeKillSwitch: jest.fn().mockReturnValue({ chargebeeKillSwitch: jest.fn().mockReturnValue(false) }),
-}));
-
 let props: Props;
 
 beforeEach(() => {

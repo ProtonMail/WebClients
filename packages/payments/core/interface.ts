@@ -352,14 +352,6 @@ export interface PaymentsApi {
     getCachedCheckByPlans: (plans: CheckSubscriptionData['Plans']) => EnrichedCheckResponse[];
 }
 
-export type ChargebeeKillSwitchData = {
-    reason: string;
-    data?: any;
-    error?: any;
-};
-export type ChargebeeKillSwitch = (data?: ChargebeeKillSwitchData) => boolean;
-export type ForceEnableChargebee = () => void;
-
 export type RemoveEventListener = () => void;
 
 export type InitializeCreditCardOptions = {

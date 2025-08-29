@@ -2,16 +2,7 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { type CheckSubscriptionData, PLANS } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
-import {
-    addApiMock,
-    apiMock,
-    defaultProtonConfig,
-    hookWrapper,
-    withApi,
-    withConfig,
-    withPaymentSwitcherContext,
-} from '@proton/testing';
+import { addApiMock, apiMock, defaultProtonConfig, hookWrapper, withApi, withConfig } from '@proton/testing';
 
 import { usePaymentsApi } from './usePaymentsApi';
 
@@ -20,8 +11,7 @@ jest.mock('@proton/account/plans/hooks', () => ({
     useGetPlans: jest.fn(),
 }));
 
-const getWrapper = (chargebeeEnabled?: ChargebeeEnabled) =>
-    hookWrapper(withApi(), withConfig(), withPaymentSwitcherContext(chargebeeEnabled));
+const getWrapper = () => hookWrapper(withApi(), withConfig());
 
 beforeEach(() => {
     jest.clearAllMocks();
@@ -51,19 +41,7 @@ describe('usePaymentsApi', () => {
 
     it('should call v5 status when user is chargebee forced', () => {
         const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_FORCED),
-        });
-
-        void result.current.paymentsApi.paymentStatus();
-        expect(apiMock).toHaveBeenCalledWith({
-            url: `payments/v5/status`,
-            method: 'get',
-        });
-    });
-
-    it('should call v5 status when user is chargebee allowed', () => {
-        const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_ALLOWED),
+            wrapper: getWrapper(),
         });
 
         void result.current.paymentsApi.paymentStatus();
@@ -87,22 +65,7 @@ describe('usePaymentsApi', () => {
 
     it('should call v5 check when user is chargebee forced', () => {
         const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_FORCED),
-        });
-
-        const data = getCheckSubscriptionData();
-        void result.current.paymentsApi.checkSubscription(data);
-        expect(apiMock).toHaveBeenCalledWith({
-            url: `payments/v5/subscription/check`,
-            method: 'post',
-            data,
-            silence: false,
-        });
-    });
-
-    it('should call v5 check when user is chargebee allowed', () => {
-        const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_ALLOWED),
+            wrapper: getWrapper(),
         });
 
         const data = getCheckSubscriptionData();
@@ -131,8 +94,7 @@ describe('usePaymentsApi', () => {
                 withConfig({
                     ...defaultProtonConfig,
                     APP_NAME: appName,
-                }),
-                withPaymentSwitcherContext(ChargebeeEnabled.CHARGEBEE_ALLOWED)
+                })
             ),
         });
 

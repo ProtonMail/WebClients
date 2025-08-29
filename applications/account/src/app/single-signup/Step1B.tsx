@@ -25,7 +25,6 @@ import {
     getStreaming,
 } from '@proton/components/containers/payments/features/vpn';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
-import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
@@ -518,8 +517,6 @@ const Step1B = ({
         return true;
     };
 
-    const chargebeeContext = useChargebeeContext();
-
     const paymentFacade = usePaymentFacade({
         checkResult: options.checkResult,
         amount: options.checkResult.AmountDue,
@@ -904,7 +901,6 @@ const Step1B = ({
                         paymentMethodValue: paymentFacade.selectedMethodValue,
                         subscriptionDataType: model.subscriptionData.type,
                         paymentsVersion: getPaymentsVersion(),
-                        chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
                     };
 
                     captureMessage('Payments: Failed to handle single-signup-v1', {

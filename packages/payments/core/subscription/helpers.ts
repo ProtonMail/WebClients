@@ -4,7 +4,7 @@ import { type ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { Audience, ChargebeeEnabled, type Organization, type UserModel } from '@proton/shared/lib/interfaces';
+import { Audience, type Organization, type UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import {
@@ -31,7 +31,6 @@ import type { Plan, PlansMap, SubscriptionPlan } from '../plan/interface';
 import { clearPlanIDs } from '../planIDs';
 import { getPricePerCycle, getPricePerMember, isMultiUserPersonalPlan } from '../price-helpers';
 import { isFreeSubscription } from '../type-guards';
-import { isSplittedUser, onSessionMigrationChargebeeStatus } from '../utils';
 import { SubscriptionPlatform, TaxInclusive } from './constants';
 import { FREE_PLAN } from './freePlans';
 import { type Subscription, type SubscriptionCheckResponse } from './interface';
@@ -815,23 +814,8 @@ export function isCancellableOnlyViaSupport(subscription: Subscription | undefin
  * immediately. Note that B2B subscriptions also have "Cancel subscription" button, but it behaves differently, so
  * we don't consider B2B subscriptions cancellable for the purpose of this function.
  */
-export const hasCancellablePlan = (subscription: Subscription | undefined, user: UserModel) => {
-    if (isCancellableOnlyViaSupport(subscription)) {
-        return false;
-    }
-
-    // These plans are can be cancelled inhouse too
-    const cancellablePlan = getHasConsumerVpnPlan(subscription) || hasPass(subscription);
-
-    // In Chargebee, all plans are cancellable
-    const chargebeeForced = onSessionMigrationChargebeeStatus(user, subscription) === ChargebeeEnabled.CHARGEBEE_FORCED;
-
-    // Splitted users should go to PUT v4 renew because they still have an active subscription in inhouse system
-    // And we force them to do the renew cancellation instead of subscription deletion because this case is much
-    // simpler to handle
-    const splittedUser = isSplittedUser(user.ChargebeeUser, user.ChargebeeUserExists, subscription?.BillingPlatform);
-
-    return cancellablePlan || chargebeeForced || splittedUser;
+export const hasCancellablePlan = (subscription: Subscription | undefined) => {
+    return !isCancellableOnlyViaSupport(subscription);
 };
 
 export function hasMaximumCycle(subscription?: Subscription | FreeSubscription): boolean {

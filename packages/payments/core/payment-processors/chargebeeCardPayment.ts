@@ -20,7 +20,6 @@ import type {
     AmountAndCurrency,
     ChargeableV5PaymentParameters,
     ChargebeeFetchedPaymentToken,
-    ForceEnableChargebee,
     PaymentStatus,
     V5PaymentToken,
 } from '../interface';
@@ -65,7 +64,6 @@ export class ChargebeeCardPaymentProcessor extends PaymentProcessor<ChargebeeCar
         private handles: ChargebeeIframeHandles,
         private events: ChargebeeIframeEvents,
         public verifyOnly: boolean,
-        private forceEnableChargebee: ForceEnableChargebee,
         paymentStatus: PaymentStatus | undefined,
         public onTokenIsChargeable?: (data: ChargeableV5PaymentParameters) => Promise<unknown>
     ) {
@@ -101,7 +99,6 @@ export class ChargebeeCardPaymentProcessor extends PaymentProcessor<ChargebeeCar
                 api: this.api,
                 handles: this.handles,
                 events: this.events,
-                forceEnableChargebee: this.forceEnableChargebee,
             });
         } catch (error: any) {
             // if that's not a form validation error, then we have something unexpected,
