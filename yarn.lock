@@ -13333,6 +13333,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/async-retry@npm:^1.4.9":
+  version: 1.4.9
+  resolution: "@types/async-retry@npm:1.4.9"
+  dependencies:
+    "@types/retry": "npm:*"
+  checksum: 10c0/3365db78b03bbe9382c853db385794b2549ae146f3283bf9f03c8e8c3e3b3054fc21c24f596857f657a785a018ee6cb4ab47513f86ef5781b8cfb8d73c61cd24
+  languageName: node
+  linkType: hard
+
 "@types/babel__core@npm:^7.1.14, @types/babel__core@npm:^7.18.0, @types/babel__core@npm:^7.20.5":
   version: 7.20.5
   resolution: "@types/babel__core@npm:7.20.5"
@@ -14348,6 +14357,13 @@ __metadata:
   dependencies:
     "@types/node": "npm:*"
   checksum: 10c0/a58ba341cb9e7d74f71810a88862da7b2a6fa42e2a1fc0ce40498f6ea1d44382f0640117057da779f74c47039f7166bf48fad02dc876f94e005c7afa50f5e129
+  languageName: node
+  linkType: hard
+
+"@types/retry@npm:*":
+  version: 0.12.5
+  resolution: "@types/retry@npm:0.12.5"
+  checksum: 10c0/eaaca483cc62f2f02c0b8486847ee70986ca7f97afd7363037247dbe3e98df8bd56a5b50d58b1e96768a5a1be0307010d86e9991bd458d72e8df88be471bd720
   languageName: node
   linkType: hard
 
@@ -16809,6 +16825,15 @@ __metadata:
   dependencies:
     retry: "npm:0.12.0"
   checksum: 10c0/ab460b431f53aa1b066c571a779776f10f9f2759d2764a1ab4f4dc6246b22f8cef15b26cbe2b5b9222149031b6f0a63fa32dfa2c9359069c7be3391528ddf961
+  languageName: node
+  linkType: hard
+
+"async-retry@npm:^1.3.3":
+  version: 1.3.3
+  resolution: "async-retry@npm:1.3.3"
+  dependencies:
+    retry: "npm:0.13.1"
+  checksum: 10c0/cabced4fb46f8737b95cc88dc9c0ff42656c62dc83ce0650864e891b6c155a063af08d62c446269b51256f6fbcb69a6563b80e76d0ea4a5117b0c0377b6b19d8
   languageName: node
   linkType: hard
 
@@ -39612,7 +39637,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"retry@npm:^0.13.1":
+"retry@npm:0.13.1, retry@npm:^0.13.1":
   version: 0.13.1
   resolution: "retry@npm:0.13.1"
   checksum: 10c0/9ae822ee19db2163497e074ea919780b1efa00431d197c7afdb950e42bf109196774b92a49fc9821f0b8b328a98eea6017410bfc5e8a0fc19c85c6d11adb3772
@@ -44642,9 +44667,12 @@ __metadata:
   dependencies:
     "@manypkg/find-root": "npm:^3.1.0"
     "@manypkg/get-packages": "npm:^3.1.0"
+    "@proton/ci-tools": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
+    "@types/async-retry": "npm:^1.4.9"
     "@types/jest": "npm:^29.5.14"
     "@types/prompts": "npm:^2.4.9"
+    async-retry: "npm:^1.3.3"
     chalk: "npm:^5.6.0"
     commander: "npm:^12.1.0"
     execa: "npm:^5.1.1"
