@@ -68,7 +68,6 @@ export const ChatHistoryGuestUserUpsell = () => {
                     className="button-small w-full mt-1 mb-2">
                     <span>{c('collider_2025: Link').t`Sign in`}</span>
                 </ButtonLike>
-
             </div>
         </div>
     );
