@@ -21,13 +21,13 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreSignupBackButtonTotal } from '@proton/metrics/types/web_core_signup_backButton_total_v1.schema';
-import type { PaymentProcessorType } from '@proton/payments';
 import {
     type BillingAddress,
     type Currency,
     type Cycle,
     DEFAULT_CYCLE,
     PLANS,
+    type PaymentProcessorType,
     type PlanIDs,
     getBillingAddressFromPaymentStatus,
     getIsB2BAudienceFromPlan,

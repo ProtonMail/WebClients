@@ -13,9 +13,11 @@ import {
     type ChargebeeSubmitEventPayload,
     type ChargebeeVerifySavedCardEventPayload,
     type GetCanMakePaymentsWithActiveCardResponse,
+    type GooglePayAuthorizedPayload,
     type PaymentIntent,
     type PaypalAuthorizedPayload,
     type SetApplePayPaymentIntentPayload,
+    type SetGooglePayPaymentIntentPayload,
     type SetPaypalPaymentIntentPayload,
     type ThreeDsChallengePayload,
     type UpdateFieldsPayload,
@@ -24,6 +26,10 @@ import {
     isApplePayCancelledMessage,
     isApplePayClickedMessage,
     isApplePayFailedMessage,
+    isGooglePayAuthorizedMessage,
+    isGooglePayCancelledMessage,
+    isGooglePayClickedMessage,
+    isGooglePayFailedMessage,
     isPaypalCancelledMessage,
     isPaypalClickedMessage,
     isPaypalFailedMessage,
@@ -38,6 +44,7 @@ import {
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { ThemeCode } from '@proton/components/payments/client-extensions';
@@ -47,6 +54,7 @@ import type { ChargebeeDirectDebitProcessorHook } from '@proton/components/payme
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { getSentryError } from '@proton/shared/lib/keys';
+import { ColorScheme } from '@proton/shared/lib/themes/constants';
 
 import { type GetChargebeeConfigurationResponse, getChargebeeConfiguration, getPaymentsVersion } from '../../core/api';
 import type {
@@ -56,6 +64,7 @@ import type {
     RemoveEventListener,
 } from '../../core/interface';
 import type { ApplePayProcessorHook } from '../../core/payment-processors/useApplePay';
+import type { GooglePayProcessorHook } from '../../core/payment-processors/useGooglePay';
 
 /**
  * Small helper to identify the messages sent to iframe.
@@ -256,12 +265,13 @@ export function getChargebeeErrorMessage(error: any) {
 }
 
 type ChargebeeIframeProps = React.IframeHTMLAttributes<HTMLIFrameElement> & {
-    type: 'card' | 'paypal' | 'saved-card' | 'direct-debit' | 'apple-pay';
+    type: 'card' | 'paypal' | 'saved-card' | 'direct-debit' | 'apple-pay' | 'google-pay';
     iframeHandles: CbIframeHandles;
     chargebeeCard?: ChargebeeCardProcessorHook;
     chargebeePaypal?: ChargebeePaypalProcessorHook;
     directDebit?: ChargebeeDirectDebitProcessorHook;
     applePay?: ApplePayProcessorHook;
+    googlePay?: GooglePayProcessorHook;
     onInitialized?: () => void;
     isNarrow?: boolean;
     themeCode?: ThemeCode;
@@ -285,6 +295,8 @@ export function useChargebeeHandles(
     const chargebeeConfigurationRef = useRef<ChargebeeConfiguration | null>(null);
     const api = useApi();
     const { createNotification } = useNotifications();
+    const theme = useTheme();
+    const themeType = theme.information.colorScheme === ColorScheme.Dark ? 'dark' : 'light';
 
     const chargebeeConfigurationAbortControllerRef = useRef<AbortController>(new AbortController());
     const abortedRef = useRef(false);
@@ -399,6 +411,7 @@ export function useChargebeeHandles(
                 renderMode: isNarrow ? 'two-line' : 'one-line',
                 cssVariables: getCssVariables(),
                 translations: getChargebeeCardTranslations(),
+                themeType,
                 ...chargebeeInstanceConfig,
             };
 
@@ -408,6 +421,7 @@ export function useChargebeeHandles(
             const chargebeeInstanceConfig = await getConfig();
             const config: CbIframeConfig = {
                 paymentMethodType: 'saved-card',
+                themeType,
                 ...chargebeeInstanceConfig,
             };
 
@@ -434,6 +448,7 @@ export function useChargebeeHandles(
 
             const config: CbIframeConfig = {
                 paymentMethodType: 'paypal',
+                themeType,
                 ...chargebeeInstanceConfig,
             };
 
@@ -478,6 +493,7 @@ export function useChargebeeHandles(
 
             const config: CbIframeConfig = {
                 paymentMethodType: 'direct-debit',
+                themeType,
                 ...chargebeeInstanceConfig,
             };
 
@@ -525,6 +541,7 @@ export function useChargebeeHandles(
 
             const config: CbIframeConfig = {
                 paymentMethodType: 'apple-pay',
+                themeType,
                 ...chargebeeInstanceConfig,
             };
 
@@ -545,6 +562,39 @@ export function useChargebeeHandles(
                 signal
             );
             return result.data.canMakePaymentsWithActiveCard;
+        },
+        setGooglePayPaymentIntent: async (payload: SetGooglePayPaymentIntentPayload, abortSignal?: AbortSignal) => {
+            const setGooglePayPaymentIntentActionType = 'set-google-pay-payment-intent';
+            try {
+                return await iframeAction(
+                    setGooglePayPaymentIntentActionType,
+                    payload,
+                    iframeRef,
+                    targetOrigin,
+                    abortSignal
+                );
+            } catch (error: any) {
+                // make sure that only the latest error is handled, and all others are ignored
+                if (error.correlationId === getLatestCorrelationIdByType(setGooglePayPaymentIntentActionType)) {
+                    const errorMessage = getChargebeeErrorMessage(error);
+                    createNotification({
+                        type: 'error',
+                        text: errorMessage,
+                    });
+                }
+                throw error;
+            }
+        },
+        initializeGooglePay: async () => {
+            const chargebeeInstanceConfig = await getConfig();
+
+            const config: CbIframeConfig = {
+                paymentMethodType: 'google-pay',
+                themeType,
+                ...chargebeeInstanceConfig,
+            };
+
+            return iframeAction('set-configuration', config, iframeRef, targetOrigin, signal);
         },
     };
 
@@ -630,13 +680,6 @@ export const useCbIframe = (): CbIframeHandles => {
                     callback(payload.error);
                 }
             }),
-        onCardVeririfcation3dsChallenge: (callback: (payload: ThreeDsChallengePayload) => any) =>
-            listenToIframeEvents(iframeRef, (e) => {
-                const payload = parseEvent(e.data);
-                if (isThreeDsChallengeMessage(payload)) {
-                    callback(payload.data);
-                }
-            }),
         onCardVeririfcationSuccess: (callback: (payload: ChargebeeSavedCardAuthorizationSuccess) => any) =>
             listenToIframeEvents(iframeRef, (e) => {
                 const payload = parseEvent(e.data);
@@ -687,6 +730,34 @@ export const useCbIframe = (): CbIframeHandles => {
             listenToIframeEvents(iframeRef, (e) => {
                 const payload = parseEvent(e.data);
                 if (isApplePayCancelledMessage(payload)) {
+                    callback();
+                }
+            }),
+        onGooglePayAuthorized: (callback: (payload: GooglePayAuthorizedPayload) => any) =>
+            listenToIframeEvents(iframeRef, (e) => {
+                const payload = parseEvent(e.data);
+                if (isGooglePayAuthorizedMessage(payload)) {
+                    callback(payload.data);
+                }
+            }),
+        onGooglePayFailure: (callback: (error: any) => any) =>
+            listenToIframeEvents(iframeRef, (e) => {
+                const payload = parseEvent(e.data);
+                if (isGooglePayFailedMessage(payload)) {
+                    callback(payload.error);
+                }
+            }),
+        onGooglePayClicked: (callback: () => any) =>
+            listenToIframeEvents(iframeRef, (e) => {
+                const payload = parseEvent(e.data);
+                if (isGooglePayClickedMessage(payload)) {
+                    callback();
+                }
+            }),
+        onGooglePayCancelled: (callback: () => any) =>
+            listenToIframeEvents(iframeRef, (e) => {
+                const payload = parseEvent(e.data);
+                if (isGooglePayCancelledMessage(payload)) {
                     callback();
                 }
             }),
@@ -789,6 +860,7 @@ function getInitialStyles(type: ChargebeeIframeProps['type']): {
         card: { initialHeight: 300, initialWidth: '100%' },
         'apple-pay': { initialHeight: 52, initialWidth: '100%' },
         'direct-debit': { initialHeight: 0, initialWidth: '100%' },
+        'google-pay': { initialHeight: 56, initialWidth: '100%' },
     };
 
     return styles[type] ?? styles.card;
@@ -801,6 +873,7 @@ export const ChargebeeIframe = ({
     chargebeePaypal,
     directDebit,
     applePay,
+    googlePay,
     onInitialized,
     isNarrow,
     themeCode,
@@ -809,6 +882,7 @@ export const ChargebeeIframe = ({
     const [initialized, setInitialized] = useState(false);
     const paypalAbortRef = useRef<AbortController | null>(null);
     const applePayAbortRef = useRef<AbortController | null>(null);
+    const googlePayAbortRef = useRef<AbortController | null>(null);
     const loadingTimeoutRef = useRef<any>(null);
 
     useEffect(() => {
@@ -817,6 +891,8 @@ export const ChargebeeIframe = ({
                 chargebeePaypal.paypalIframeLoadedRef.current = false;
             } else if (type === 'apple-pay' && applePay) {
                 applePay.applePayIframeLoadedRef.current = false;
+            } else if (type === 'google-pay' && googlePay) {
+                googlePay.googlePayIframeLoadedRef.current = false;
             }
         };
     }, []);
@@ -873,6 +949,10 @@ export const ChargebeeIframe = ({
             applePay.applePayIframeLoadedRef.current = true;
             applePayAbortRef.current = new AbortController();
             await applePay.initialize(applePayAbortRef.current.signal);
+        } else if (type === 'google-pay' && googlePay) {
+            googlePay.googlePayIframeLoadedRef.current = true;
+            googlePayAbortRef.current = new AbortController();
+            await googlePay.initialize(googlePayAbortRef.current.signal);
         }
 
         if (!iframeRef.current) {
@@ -904,10 +984,15 @@ export const ChargebeeIframe = ({
         () => () => {
             paypalAbortRef.current?.abort();
             paypalAbortRef.current = null;
+            applePayAbortRef.current?.abort();
+            applePayAbortRef.current = null;
+            googlePayAbortRef.current?.abort();
+            googlePayAbortRef.current = null;
             chargebeeCard?.reset();
             chargebeePaypal?.reset();
             directDebit?.reset();
             applePay?.reset();
+            googlePay?.reset();
             iframeHandles.notifyIframeUnloaded();
         },
         []

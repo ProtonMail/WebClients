@@ -24,6 +24,7 @@ beforeEach(() => {
             Apple: true,
             Cash: true,
             Bitcoin: true,
+            Google: true,
         },
     };
 

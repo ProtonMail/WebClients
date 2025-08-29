@@ -44,15 +44,21 @@ export interface ChargebeePaypalButtonProps extends ChargebeeWrapperProps {
     disabled?: boolean;
     className?: string;
     formInvalid?: boolean;
+    loading?: boolean;
 }
 
-export const ChargebeePaypalButton = ({ formInvalid, width: widthProp, ...props }: ChargebeePaypalButtonProps) => {
+export const ChargebeePaypalButton = ({
+    formInvalid,
+    width: widthProp,
+    loading,
+    ...props
+}: ChargebeePaypalButtonProps) => {
     const initializing = props.chargebeePaypal.initializing;
     const disabled = props.disabled;
 
     const width = getPaypalButtonWidth(widthProp);
 
-    const renderFakeButton = initializing || disabled || formInvalid;
+    const renderFakeButton = initializing || disabled || formInvalid || loading;
     const fakePaypalButton = useMemo(() => {
         const fakeButtonProps = {
             width,
@@ -61,7 +67,7 @@ export const ChargebeePaypalButton = ({ formInvalid, width: widthProp, ...props 
         let button: ReactNode;
         if (disabled) {
             button = <FakeChargebeeButton {...fakeButtonProps} disabled={true} />;
-        } else if (initializing) {
+        } else if (initializing || loading) {
             button = <FakeChargebeeButton {...fakeButtonProps} loading={true} />;
         } else {
             button = <FakeChargebeeButton {...fakeButtonProps} />;

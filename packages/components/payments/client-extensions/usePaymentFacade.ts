@@ -41,6 +41,7 @@ import {
     useApplePayDependencies,
     useChargebeeCardVerifyPayment,
     useChargebeePaypalHandles,
+    useGooglePayDependencies,
 } from './validators/validators';
 
 /**
@@ -169,6 +170,11 @@ export const usePaymentFacade = ({
         onPaymentFailure: reportPaymentFailure,
     });
 
+    const { canUseGooglePay, googlePayModalHandles } = useGooglePayDependencies(chargebeeHandles, {
+        onPaymentAttempt: reportPaymentAttempt,
+        onPaymentFailure: reportPaymentFailure,
+    });
+
     const hook = useInnerPaymentFacade(
         {
             amount,
@@ -201,6 +207,7 @@ export const usePaymentFacade = ({
             planIDs,
             isTrial,
             canUseApplePay,
+            canUseGooglePay,
         },
         {
             api,
@@ -212,6 +219,7 @@ export const usePaymentFacade = ({
             chargebeeEvents,
             chargebeePaypalModalHandles,
             applePayModalHandles,
+            googlePayModalHandles,
         }
     );
 
@@ -229,6 +237,7 @@ export const usePaymentFacade = ({
         [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN]: false,
         [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: true,
         [PAYMENT_METHOD_TYPES.APPLE_PAY]: true,
+        [PAYMENT_METHOD_TYPES.GOOGLE_PAY]: true,
     };
 
     const userCanTriggerSelected = methods.selectedMethod?.type ? userCanTrigger[methods.selectedMethod.type] : false;
@@ -314,6 +323,33 @@ export const usePaymentFacade = ({
         return abort;
     }, [hook.methods.isNewApplePay, amount, currency]);
 
+    const googlePayAbortRef = useRef<AbortController | null>(null);
+    useEffect(() => {
+        const abort = () => {
+            googlePayAbortRef.current?.abort();
+            googlePayAbortRef.current = null;
+        };
+
+        async function run() {
+            if (!hook.methods.isNewGooglePay) {
+                return;
+            }
+
+            googlePayAbortRef.current = new AbortController();
+            hook.googlePay.reset();
+
+            try {
+                await hook.googlePay.initialize(googlePayAbortRef.current.signal);
+            } catch {
+                abort();
+            }
+        }
+
+        void run();
+
+        return abort;
+    }, [hook.methods.isNewGooglePay, amount, currency]);
+
     const taxCountryLoading = methods.loading;
     const getShowTaxCountry = (): boolean => {
         if (taxCountryLoading) {
@@ -326,6 +362,7 @@ export const usePaymentFacade = ({
             PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
             PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
             PAYMENT_METHOD_TYPES.APPLE_PAY,
+            PAYMENT_METHOD_TYPES.GOOGLE_PAY,
         ];
 
         const isNewMethod = methodsWithTaxCountry.includes(methods.selectedMethod?.type);

@@ -82,6 +82,7 @@ it('should listen to set configuration event', () => {
             invalidCardCvcMessage: 'Invalid card cvc',
         },
         renderMode: 'one-line',
+        themeType: 'light',
     };
 
     fireEvent(

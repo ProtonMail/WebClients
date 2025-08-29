@@ -20,21 +20,20 @@ import type {
     OnDirectDebitSubmitHandler,
     OnGetBinHandler,
     OnSetApplePayPaymentIntentHandler,
+    OnSetGooglePayPaymentIntentHandler,
     OnSetPaypalPaymentIntentHandler,
     OnUpdateFieldsHandler,
     OnValidateFormHandler,
     OnVerifySavedCardHandler,
     SetApplePayPaymentIntentEvent,
+    SetGooglePayPaymentIntentEvent,
     SetPaypalPaymentIntentEvent,
 } from './message-bus';
 import { createMessageBus, getMessageBus } from './message-bus';
-// eslint-disable-next-line import/no-unresolved
 import applePayTemplateString from './templates/apple-pay.html?raw';
-// eslint-disable-next-line import/no-unresolved
 import cardTemplateString from './templates/card.html?raw';
-// eslint-disable-next-line import/no-unresolved
+import googlePayTemplateString from './templates/google-pay.html?raw';
 import paypalTemplateString from './templates/paypal.html?raw';
-// eslint-disable-next-line import/no-unresolved
 import warningIcon from './templates/warningicon.html?raw';
 import { trackFocus } from './ui-utils';
 
@@ -588,9 +587,6 @@ async function renderDirectDebit() {
         };
 
         directDebitHandler.handlePayment(payload, {
-            challenge: () => {
-                addCheckpoint('direct_debit_3ds_challenge');
-            },
             success: (data: AuthorizedPaymentIntent) => {
                 addCheckpoint('direct_debit_success');
                 sendResponseToParent({
@@ -685,6 +681,81 @@ async function renderApplePay() {
     getMessageBus().onSetApplePayPaymentIntent = onSetApplePayPaymentIntent;
 }
 
+async function renderGooglePay() {
+    setTemplate(googlePayTemplateString);
+
+    const googlePayHandler = await getChargebeeInstance().load('google-pay');
+    addCheckpoint('google_pay_loaded');
+
+    const handleGooglePayPayment = () => {
+        googlePayHandler
+            .handlePayment({
+                success: (result: AuthorizedPaymentIntent) => {
+                    addCheckpoint('google_pay_payment_success');
+                    getMessageBus().sendGooglePayAuthorizedMessage({
+                        paymentIntent: result,
+                    });
+                },
+                error: (_: PaymentIntent, error: any) => {
+                    addCheckpoint('google_pay_payment_failed');
+                    getMessageBus().sendGooglePayFailedMessage(error);
+                },
+                click: () => {
+                    addCheckpoint('google_pay_clicked');
+                    getMessageBus().sendGooglePayClickedMessage();
+                },
+                cancel: () => {
+                    addCheckpoint('google_pay_cancelled');
+                    getMessageBus().sendGooglePayCancelledMessage();
+                },
+                challenge: (url: string) => {
+                    addCheckpoint('google_pay_3ds_challenge');
+                    getMessageBus().send3dsChallengeMessage({ url });
+                },
+            })
+            .catch(() => {});
+    };
+
+    const handleSetGooglePayPaymentIntent = async (
+        event: SetGooglePayPaymentIntentEvent
+    ): Promise<MessageBusResponse<void>> => {
+        try {
+            const { paymentIntent } = event;
+            googlePayHandler.setPaymentIntent(paymentIntent);
+            addCheckpoint('google_pay_set_payment_intent');
+
+            /**
+             * https://developers.google.com/pay/api/web/guides/resources/customize
+             */
+            const options = {
+                buttonColor: 'black', // todo: make it computed depending on light/dark mode
+                buttonRadius: 8,
+                buttonSizeMode: 'fill',
+            };
+            await googlePayHandler.mountPaymentButton('#google-pay-button', options);
+
+            void handleGooglePayPayment();
+
+            return {
+                status: 'success',
+                data: undefined,
+            };
+        } catch (error) {
+            return {
+                status: 'failure',
+                error,
+            };
+        }
+    };
+
+    const onSetGooglePayPaymentIntent: OnSetGooglePayPaymentIntentHandler = async (event, sendResponseToParent) => {
+        const response = await handleSetGooglePayPaymentIntent(event);
+        sendResponseToParent(response);
+    };
+
+    getMessageBus().onSetGooglePayPaymentIntent = onSetGooglePayPaymentIntent;
+}
+
 async function cbInit() {
     if (getConfiguration().paymentMethodType === 'card') {
         addCheckpoint('rendering_card');
@@ -701,6 +772,9 @@ async function cbInit() {
     } else if (getConfiguration().paymentMethodType === 'apple-pay') {
         addCheckpoint('rendering_apple_pay');
         await renderApplePay();
+    } else if (getConfiguration().paymentMethodType === 'google-pay') {
+        addCheckpoint('rendering_google_pay');
+        await renderGooglePay();
     }
 
     addCheckpoint('rendered');

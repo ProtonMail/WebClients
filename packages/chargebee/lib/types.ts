@@ -46,12 +46,16 @@ export type Translations = {
     invalidCardCvcMessage: string;
 };
 
+type SharedConfig = {
+    themeType: 'light' | 'dark';
+} & ChargebeeInstanceConfiguration;
+
 export type CbCardConfig = {
     paymentMethodType: 'card';
     renderMode: CardFormRenderMode;
     cssVariables: CssVariables;
     translations: Translations;
-} & ChargebeeInstanceConfiguration;
+} & SharedConfig;
 
 export type ChargebeeCssVariable = keyof CssVariables;
 export const chargebeeCssVariables: ChargebeeCssVariable[] = [
@@ -72,21 +76,31 @@ export const chargebeeCssVariables: ChargebeeCssVariable[] = [
 
 export type CbPaypalConfig = {
     paymentMethodType: 'paypal';
-} & ChargebeeInstanceConfiguration;
+} & SharedConfig;
 
 export type CbSavedCardConfig = {
     paymentMethodType: 'saved-card';
-} & ChargebeeInstanceConfiguration;
+} & SharedConfig;
 
 export type CbDirectDebitConfig = {
     paymentMethodType: 'direct-debit';
-} & ChargebeeInstanceConfiguration;
+} & SharedConfig;
 
 export type CbApplePayConfig = {
     paymentMethodType: 'apple-pay';
-} & ChargebeeInstanceConfiguration;
+} & SharedConfig;
 
-export type CbIframeConfig = CbCardConfig | CbPaypalConfig | CbSavedCardConfig | CbDirectDebitConfig | CbApplePayConfig;
+export type CbGooglePayConfig = {
+    paymentMethodType: 'google-pay';
+} & SharedConfig;
+
+export type CbIframeConfig =
+    | CbCardConfig
+    | CbPaypalConfig
+    | CbSavedCardConfig
+    | CbDirectDebitConfig
+    | CbApplePayConfig
+    | CbGooglePayConfig;
 
 export type PaymentIntent = {
     id: string;
@@ -103,7 +117,7 @@ export type PaymentIntent = {
     gateway: string;
     customer_id: string | null;
     // todo: add SEPA
-    payment_method_type: 'card' | 'paypal' | 'apple_pay';
+    payment_method_type: 'card' | 'paypal' | 'apple_pay' | 'google_pay';
     // Present only for saved payment methods
     reference_id?: string | null;
     email?: string;
@@ -115,7 +129,7 @@ export interface AuthorizedPaymentIntent extends PaymentIntent {
         id: string;
         status: 'authorized';
         // todo: add SEPA
-        payment_method_type: 'card' | 'paypal' | 'apple_pay';
+        payment_method_type: 'card' | 'paypal' | 'apple_pay' | 'google_pay';
         id_at_gateway: string;
         created_at: number;
         modified_at: number;
@@ -371,3 +385,44 @@ export type GetCanMakePaymentsWithActiveCardResponsePayload = {
 
 export type GetCanMakePaymentsWithActiveCardResponse =
     MessageBusResponseSuccess<GetCanMakePaymentsWithActiveCardResponsePayload>;
+
+export const googlePayAuthorizedMessageType = 'google-pay-authorized';
+export type GooglePayAuthorizedPayload = {
+    paymentIntent: AuthorizedPaymentIntent;
+};
+
+export type GooglePayAuthorizedMessage = {
+    type: typeof googlePayAuthorizedMessageType;
+} & MessageBusResponseSuccess<GooglePayAuthorizedPayload>;
+
+export function isGooglePayAuthorizedMessage(obj: any): obj is GooglePayAuthorizedMessage {
+    return obj && obj.type === googlePayAuthorizedMessageType;
+}
+
+export const googlePayFailedMessageType = 'google-pay-failed';
+export type GooglePayFailedMessage = MessageBusResponseFailure & {
+    type: typeof googlePayFailedMessageType;
+};
+export function isGooglePayFailedMessage(obj: any): obj is GooglePayFailedMessage {
+    return obj && obj.type === googlePayFailedMessageType;
+}
+
+export type SetGooglePayPaymentIntentPayload = {
+    paymentIntent: PaymentIntent;
+};
+
+export const googlePayClickedMessageType = 'google-pay-clicked';
+export type GooglePayClickedMessage = MessageBusResponseSuccess<{}> & {
+    type: typeof googlePayClickedMessageType;
+};
+export function isGooglePayClickedMessage(obj: any): obj is GooglePayClickedMessage {
+    return obj && obj.type === googlePayClickedMessageType;
+}
+
+export const googlePayCancelledMessageType = 'google-pay-cancelled';
+export type GooglePayCancelledMessage = MessageBusResponseSuccess<{}> & {
+    type: typeof googlePayCancelledMessageType;
+};
+export function isGooglePayCancelledMessage(obj: any): obj is GooglePayCancelledMessage {
+    return obj && obj.type === googlePayCancelledMessageType;
+}

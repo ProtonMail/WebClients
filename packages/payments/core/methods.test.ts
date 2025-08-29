@@ -29,6 +29,7 @@ beforeEach(() => {
             Apple: true,
             Cash: true,
             Bitcoin: true,
+            Google: true,
         },
     };
 });
@@ -576,6 +577,7 @@ describe('initializePaymentMethods()', () => {
                 Apple: true,
                 Cash: true,
                 Bitcoin: true,
+                Google: true,
             },
         };
 
@@ -652,6 +654,7 @@ describe('initializePaymentMethods()', () => {
                 Apple: true,
                 Cash: true,
                 Bitcoin: true,
+                Google: true,
             },
         };
 
@@ -1928,4 +1931,23 @@ describe('SEPA', () => {
             methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT)
         ).toBe(true);
     });
+});
+
+it('should not display Google Pay when in trial mode', () => {
+    const flow: PaymentMethodFlow = 'signup-v2';
+
+    const methods = new PaymentMethods({
+        paymentStatus: status,
+        paymentMethods: [],
+        amount: 500,
+        currency: TEST_CURRENCY,
+        coupon: '',
+        flow,
+        selectedPlanName: PLANS.BUNDLE_PRO_2024,
+        billingAddress: { CountryCode: 'DE', State: '' },
+        enableSepa: true,
+        isTrial: true,
+    });
+
+    expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.GOOGLE_PAY)).toBe(false);
 });

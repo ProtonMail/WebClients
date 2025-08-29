@@ -9,11 +9,13 @@ import type {
     ChargebeeVerifySavedCardEventPayload,
     FormValidationErrors,
     GetHeightResponse,
+    GooglePayAuthorizedPayload,
     MessageBusResponse,
     MessageBusResponseSuccess,
     PaymentIntent,
     PaypalAuthorizedPayload,
     SetApplePayPaymentIntentPayload,
+    SetGooglePayPaymentIntentPayload,
     SetPaypalPaymentIntentPayload,
     ThreeDsChallengePayload,
 } from '@proton/chargebee/lib';
@@ -116,7 +118,8 @@ export type ChargeablePaymentParameters = Partial<V5PaymentToken> &
             | PAYMENT_METHOD_TYPES.BITCOIN
             | PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN
             | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-            | PAYMENT_METHOD_TYPES.APPLE_PAY;
+            | PAYMENT_METHOD_TYPES.APPLE_PAY
+            | PAYMENT_METHOD_TYPES.GOOGLE_PAY;
         chargeable: true;
     };
 
@@ -128,7 +131,8 @@ export type ChargeablePaymentToken = V5PaymentToken &
             | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
             | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
             | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-            | PAYMENT_METHOD_TYPES.APPLE_PAY;
+            | PAYMENT_METHOD_TYPES.APPLE_PAY
+            | PAYMENT_METHOD_TYPES.GOOGLE_PAY;
         chargeable: true;
     };
 
@@ -145,6 +149,7 @@ interface PaymentVendorStates {
     Apple: boolean;
     Cash: boolean;
     Bitcoin: boolean;
+    Google: boolean;
 }
 
 export interface PaymentStatus extends BillingAddress {
@@ -236,13 +241,27 @@ export type PaymentMethodApplePay = {
     IsDefault?: boolean;
 };
 
+export type PaymentMethodGooglePay = {
+    ID: string;
+    Type: PAYMENT_METHOD_TYPES.GOOGLE_PAY;
+    Order: number;
+    Autopay: Autopay;
+    External?: MethodStorage.EXTERNAL;
+    Details: SavedCardDetails;
+    IsDefault?: boolean;
+};
+
 export type SavedPaymentMethod =
     | PaymentMethodPaypal
     | PaymentMethodCardDetails
     | PaymentMethodSepa
-    | PaymentMethodApplePay;
+    | PaymentMethodApplePay
+    | PaymentMethodGooglePay;
 export type SavedPaymentMethodInternal = PaymentMethodPaypalInternal | PaymentMethodCardDetailsInternal;
-export type SavedPaymentMethodExternal = PaymentMethodPaypalExternal | PaymentMethodCardDetailsExternal;
+export type SavedPaymentMethodExternal =
+    | PaymentMethodPaypalExternal
+    | PaymentMethodCardDetailsExternal
+    | PaymentMethodGooglePay;
 
 export interface LatestSubscription {
     LastSubscriptionEnd: number;
@@ -292,7 +311,8 @@ export type ChargeableV5PaymentToken = ChargeablePaymentToken & {
         | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
         | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
         | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-        | PAYMENT_METHOD_TYPES.APPLE_PAY;
+        | PAYMENT_METHOD_TYPES.APPLE_PAY
+        | PAYMENT_METHOD_TYPES.GOOGLE_PAY;
 };
 
 export type NonChargeableV5PaymentToken = Omit<ChargeableV5PaymentToken, 'chargeable'> & {
@@ -314,7 +334,8 @@ export type ChargeableV5PaymentParameters = ChargeablePaymentParameters & {
         | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
         | PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN
         | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-        | PAYMENT_METHOD_TYPES.APPLE_PAY;
+        | PAYMENT_METHOD_TYPES.APPLE_PAY
+        | PAYMENT_METHOD_TYPES.GOOGLE_PAY;
 };
 
 export type ChargebeeFetchedPaymentToken = (ChargeableV5PaymentToken | NonChargeableV5PaymentToken) &
@@ -389,6 +410,8 @@ export type ChargebeeIframeHandles = {
     setApplePayPaymentIntent: (payload: SetApplePayPaymentIntentPayload, abortSignal: AbortSignal) => Promise<any>;
     initializeApplePay: () => Promise<any>;
     getCanMakePaymentsWithActiveCard: () => Promise<boolean>;
+    setGooglePayPaymentIntent: (payload: SetGooglePayPaymentIntentPayload, abortSignal?: AbortSignal) => Promise<any>;
+    initializeGooglePay: () => Promise<any>;
 };
 
 export type ChargebeeIframeEvents = {
@@ -399,7 +422,6 @@ export type ChargebeeIframeEvents = {
     onThreeDsChallenge: (callback: (payload: ThreeDsChallengePayload) => any) => RemoveEventListener;
     onThreeDsSuccess: (callback: (payload: PaymentIntent) => any) => RemoveEventListener;
     onThreeDsFailure: (callback: (error: any) => any) => RemoveEventListener;
-    onCardVeririfcation3dsChallenge: (callback: (payload: ThreeDsChallengePayload) => any) => RemoveEventListener;
     onCardVeririfcationSuccess: (
         callback: (payload: ChargebeeSavedCardAuthorizationSuccess) => any
     ) => RemoveEventListener;
@@ -412,6 +434,11 @@ export type ChargebeeIframeEvents = {
     onApplePayFailure: (callback: (error: any) => any) => RemoveEventListener;
     onApplePayClicked: (callback: () => any) => RemoveEventListener;
     onApplePayCancelled: (callback: () => any) => RemoveEventListener;
+
+    onGooglePayAuthorized: (callback: (payload: GooglePayAuthorizedPayload) => any) => RemoveEventListener;
+    onGooglePayFailure: (callback: (error: any) => any) => RemoveEventListener;
+    onGooglePayClicked: (callback: () => any) => RemoveEventListener;
+    onGooglePayCancelled: (callback: () => any) => RemoveEventListener;
 };
 
 export type CryptocurrencyType = 'bitcoin';

@@ -27,10 +27,11 @@ import {
     type SavedPaymentMethodExternal,
     type SavedPaymentMethodInternal,
     type Subscription,
+    savedMethodRequires3DS,
     type useSepaCurrencyOverride,
 } from '@proton/payments';
-import type { CbIframeHandles } from '@proton/payments/ui';
 import {
+    type CbIframeHandles,
     type ChargebeeCardWrapperProps,
     ChargebeeCreditCardWrapper,
     type ChargebeePaypalButtonProps,
@@ -50,6 +51,7 @@ import Alert3DS from './Alert3ds';
 import { ApplePayView } from './ApplePayView';
 import Cash from './Cash';
 import DefaultPaymentMethodMessage from './DefaultPaymentMethodMessage';
+import { GooglePayView } from './GooglePayView';
 import PayPalView from './PayPalView';
 import Bitcoin from './bitcoin/Bitcoin';
 import BitcoinInfoMessage from './bitcoin/BitcoinInfoMessage';
@@ -207,8 +209,6 @@ export const PaymentsNoApi = ({
     const isPaypalMethod = method === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
     const showPaypalView = isPaypalMethod && !isSingleSignup;
 
-    const renderSavedChargebeeIframe = savedMethod?.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
-
     const showVatInput = showTaxCountry; // basically the same condition as showTaxCountry for now. Can be changed later.
 
     const vatInput = enableVatIdFeature && showVatInput && taxCountry && vatNumber && (
@@ -291,6 +291,15 @@ export const PaymentsNoApi = ({
                                 </div>
                             </>
                         )}
+                        {method === PAYMENT_METHOD_TYPES.GOOGLE_PAY && (
+                            <>
+                                <GooglePayView />
+                                <div className="mt-2">
+                                    {billingCountryInput}
+                                    {vatInput}
+                                </div>
+                            </>
+                        )}
                         {method === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT && (
                             <>
                                 <SepaDirectDebit {...sharedCbProps} />
@@ -353,7 +362,9 @@ export const PaymentsNoApi = ({
                                 {savedMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD && showAlert3ds && (
                                     <Alert3DS />
                                 )}
-                                {renderSavedChargebeeIframe && <ChargebeeSavedCardWrapper {...sharedCbProps} />}
+                                {savedMethodRequires3DS(savedMethod.Type) && (
+                                    <ChargebeeSavedCardWrapper {...sharedCbProps} />
+                                )}
                             </>
                         )}
                         {infoMessages}

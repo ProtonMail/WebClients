@@ -132,6 +132,7 @@ export {
 } from './core/countries';
 export {
     convertPaymentIntentData,
+    savedMethodRequires3DS,
     type PaymentVerificator,
     type PaymentVerificatorV5,
     type PaymentVerificatorV5Params,
@@ -248,6 +249,11 @@ export {
     type ApplePayModalHandles,
     type ApplePayProcessorHook,
 } from './core/payment-processors/useApplePay';
+export {
+    useGooglePay,
+    type GooglePayModalHandles,
+    type GooglePayProcessorHook,
+} from './core/payment-processors/useGooglePay';
 export { normalizePaymentMethodStatus } from './core/payment-status';
 export {
     getAddonType,
@@ -456,6 +462,7 @@ export {
     isSavedCardDetails,
     isSavedPaymentMethodApplePay,
     isSavedPaymentMethodExternal,
+    isSavedPaymentMethodGooglePay,
     isSavedPaymentMethodInternal,
     isSavedPaymentMethodSepa,
     isSepaDetails,

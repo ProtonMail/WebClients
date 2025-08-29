@@ -19,6 +19,7 @@ export function isSavablePaymentMethod(type: PAYMENT_METHOD_TYPES): boolean {
         [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: true,
         [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: true,
         [PAYMENT_METHOD_TYPES.APPLE_PAY]: true,
+        [PAYMENT_METHOD_TYPES.GOOGLE_PAY]: true,
     };
 
     return config[type] ?? false;

@@ -50,7 +50,7 @@ const setupHook = (props: Partial<Props> = {}, dependenciesProps: Partial<Depend
     const dependencies: Dependencies = {
         api: apiMock,
         events: {
-            onCardVeririfcation3dsChallenge: jest.fn().mockReturnValue(jest.fn()),
+            onThreeDsChallenge: jest.fn().mockReturnValue(jest.fn()),
         } as unknown as ChargebeeIframeEvents,
         handles,
         verifyPayment: jest.fn(),

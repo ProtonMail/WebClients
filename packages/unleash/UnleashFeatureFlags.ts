@@ -101,6 +101,7 @@ enum PaymentsFlag {
     VatId = 'VatId',
     PaymentsZipCodeValidation = 'PaymentsZipCodeValidation',
     LumoB2B = 'LumoB2B',
+    GooglePay = 'GooglePay',
 }
 
 enum CalendarFeatureFlag {

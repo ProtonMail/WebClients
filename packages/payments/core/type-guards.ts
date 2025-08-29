@@ -8,6 +8,7 @@ import type {
     FreeSubscription,
     PayPalDetails,
     PaymentMethodApplePay,
+    PaymentMethodGooglePay,
     PaymentMethodSepa,
     PaymentMethodType,
     PaypalPayment,
@@ -71,6 +72,10 @@ export function isSavedPaymentMethodSepa(obj: SavedPaymentMethod | undefined): o
 
 export function isSavedPaymentMethodApplePay(obj: SavedPaymentMethod | undefined): obj is PaymentMethodApplePay {
     return !!obj && obj.Type === PAYMENT_METHOD_TYPES.APPLE_PAY && !!obj.Details;
+}
+
+export function isSavedPaymentMethodGooglePay(obj: SavedPaymentMethod | undefined): obj is PaymentMethodGooglePay {
+    return !!obj && obj.Type === PAYMENT_METHOD_TYPES.GOOGLE_PAY && !!obj.Details;
 }
 
 export function isSavedPaymentMethodInternal(

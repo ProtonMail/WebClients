@@ -11,6 +11,7 @@ import type {
     ChargebeePaypalModalHandles,
     Currency,
     Cycle,
+    GooglePayModalHandles,
     PLANS,
     PaymentMethodFlow,
     PaymentMethodType,
@@ -32,6 +33,7 @@ import {
     payInvoice,
     setPaymentMethodV5,
     useApplePay,
+    useGooglePay,
     useSepaCurrencyOverride,
 } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -199,6 +201,7 @@ export const usePaymentFacade = (
         subscription,
         isTrial,
         canUseApplePay,
+        canUseGooglePay,
     }: {
         amount: number;
         currency: Currency;
@@ -230,6 +233,7 @@ export const usePaymentFacade = (
         subscription?: Subscription;
         isTrial?: boolean;
         canUseApplePay?: boolean;
+        canUseGooglePay?: boolean;
     },
     {
         api,
@@ -241,6 +245,7 @@ export const usePaymentFacade = (
         chargebeeEvents,
         chargebeePaypalModalHandles,
         applePayModalHandles,
+        googlePayModalHandles,
     }: {
         api: Api;
         isAuthenticated: boolean;
@@ -251,6 +256,7 @@ export const usePaymentFacade = (
         chargebeeEvents: ChargebeeIframeEvents;
         chargebeePaypalModalHandles?: ChargebeePaypalModalHandles;
         applePayModalHandles?: ApplePayModalHandles;
+        googlePayModalHandles?: GooglePayModalHandles;
     }
 ) => {
     const amountAndCurrency: AmountAndCurrency = useMemo(
@@ -282,6 +288,7 @@ export const usePaymentFacade = (
             planIDs,
             subscription,
             canUseApplePay,
+            canUseGooglePay,
             isTrial,
         },
         {
@@ -512,6 +519,28 @@ export const usePaymentFacade = (
         }
     );
 
+    const googlePay = useGooglePay(
+        {
+            amountAndCurrency,
+            onChargeable: (params) =>
+                onChargeable(getOperations(api, params, paymentContext.getOperationsData(), 'v5'), {
+                    chargeablePaymentParameters: params,
+                    source: PAYMENT_METHOD_TYPES.GOOGLE_PAY,
+                    sourceType: params.type,
+                    context: paymentContext.getOperationsData(),
+                    paymentsVersion: 'v5',
+                    paymentProcessorType: googlePay.meta.type,
+                }),
+        },
+        {
+            api,
+            handles: chargebeeHandles,
+            events: chargebeeEvents,
+            googlePayModalHandles,
+            verifyPayment: verifyPaymentChargebeeCard,
+        }
+    );
+
     const paymentMethodType: PlainPaymentMethodType | undefined = methods.selectedMethod?.type;
     const selectedProcessor = useMemo(() => {
         if (isExistingPaymentMethod(paymentMethodValue)) {
@@ -519,6 +548,7 @@ export const usePaymentFacade = (
                 paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ||
                 paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL ||
                 paymentMethodType === PAYMENT_METHOD_TYPES.APPLE_PAY ||
+                paymentMethodType === PAYMENT_METHOD_TYPES.GOOGLE_PAY ||
                 paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
             ) {
                 return savedChargebeeMethod;
@@ -556,6 +586,10 @@ export const usePaymentFacade = (
         if (paymentMethodValue === PAYMENT_METHOD_TYPES.APPLE_PAY) {
             return applePay;
         }
+
+        if (paymentMethodValue === PAYMENT_METHOD_TYPES.GOOGLE_PAY) {
+            return googlePay;
+        }
     }, [
         paymentMethodValue,
         paymentMethodType,
@@ -566,6 +600,7 @@ export const usePaymentFacade = (
         chargebeeCard,
         chargebeePaypal,
         applePay,
+        googlePay,
     ]);
 
     const initialized = !methods.loading;
@@ -581,6 +616,8 @@ export const usePaymentFacade = (
             bitcoinInhouse,
             bitcoinChargebee,
             directDebit,
+            applePay,
+            googlePay,
         ].forEach((paymentProcessor) => paymentProcessor.reset());
     };
 
@@ -598,6 +635,7 @@ export const usePaymentFacade = (
         chargebeeCard,
         chargebeePaypal,
         applePay,
+        googlePay,
         bitcoinInhouse,
         bitcoinChargebee,
         selectedProcessor,

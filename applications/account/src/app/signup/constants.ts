@@ -37,6 +37,7 @@ export const DEFAULT_SIGNUP_MODEL: SignupModel = {
             Bitcoin: false,
             Apple: false,
             Cash: false,
+            Google: false,
         },
     },
 };
