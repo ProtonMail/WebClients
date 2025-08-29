@@ -174,7 +174,7 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
                                     checked={understoodForceUpgrade}
                                     onChange={() => setUnderstoodForceUpgrade(!understoodForceUpgrade)}
                                 />
-                                <Label htmlFor="understood-recovery-necessity" className="flex-1">
+                                <Label htmlFor="understood-pqc-force-upgrade" className="flex-1">
                                     {c('Force upgrade safety review')
                                         .t`I understand that I will no longer be able to sign in from older versions of ${BRAND_NAME} mobile apps.`}
                                 </Label>
