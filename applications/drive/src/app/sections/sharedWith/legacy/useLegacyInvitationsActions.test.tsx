@@ -109,6 +109,7 @@ describe('useLegacyInvitationsActions', () => {
         mockGetLink.mockResolvedValue({
             isAnonymous: false,
             signatureIssues: {},
+            isLocked: undefined,
         });
     });
 
@@ -161,11 +162,9 @@ describe('useLegacyInvitationsActions', () => {
                     sharedBy: mockSharedInfo.sharedBy,
                 },
                 haveSignatureIssues: false,
-                legacy: {
-                    linkId: 'node-id-1',
-                    shareId: 'share-id-1',
-                    volumeId: 'volume-id-1',
-                },
+                shareId: 'share-id-1',
+                isFromLegacy: true,
+                isLocked: undefined,
             });
         });
 

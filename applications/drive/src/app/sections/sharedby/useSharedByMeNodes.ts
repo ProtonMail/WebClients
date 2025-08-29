@@ -14,7 +14,8 @@ import { useDefaultShare } from '../../store';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { type LegacyItem, mapNodeToLegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
 import { mapShareResultToSharingInfo, useSharingInfoStore } from '../../zustand/share/sharingInfo.store';
-import { useLegacySharesByMeNodes } from './useLegacySharesByMeNode';
+import { useSharedByMeNodesLoader } from './loaders/useSharedByMeNodesLoader';
+import { useLegacySharedByMeNodes } from './useLegacySharedByMeNodes';
 
 const DEFAULT_SORT = {
     sortField: 'name' as SortField,
@@ -25,7 +26,7 @@ export const useSharedByMeNodes = () => {
     const [isLoading, withLoading] = useLoading(true);
     const [sharedByMeNodes, setSharedByMeNodes] = useState<Record<string, LegacyItem>>({});
     const { getDefaultShare } = useDefaultShare();
-    const { items: legacyNodes, isLoading: isLegacyLoading } = useLegacySharesByMeNodes();
+    const { items: legacyNodes, isLoading: isLegacyLoading } = useLegacySharedByMeNodes();
     const { drive } = useDrive();
     const { createNotification } = useNotifications();
 
@@ -46,6 +47,7 @@ export const useSharedByMeNodes = () => {
                 state.isLoading(uid) || state.isEmptyOrFailed(uid) || state.hasSharingInfo(uid),
         }))
     );
+    const { loadSharedByMeNodes: loadSharedByMeNodesNew } = useSharedByMeNodesLoader();
     const { loadThumbnail } = useBatchThumbnailLoader();
 
     const populateNodesFromLegacy = useCallback(async () => {
@@ -151,6 +153,8 @@ export const useSharedByMeNodes = () => {
         void withLoading(loadSharedByMeNodes(abortController.signal)).catch((e) =>
             handleError(e, { fallbackMessage: c('Error').t`We were not able to load some of your shared items` })
         );
+        loadSharedByMeNodesNew(abortController.signal);
+
         return () => {
             abortController.abort();
         };
