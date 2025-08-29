@@ -1,0 +1,56 @@
+@keyframes rotating {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.location-refresh-rotate {
+	animation: rotating 0.5s linear infinite;
+}
+
+.drive-sidebar--icon {
+	inline-size: rem(16);
+}
+
+.drive-sidebar--button-expand {
+	&#{&} {
+		// Specificity -_-v
+		// In this case we want to have background change only on hover.
+
+		color: var(--text-weak);
+		margin-inline: calc(var(--space-1) * -1) calc(var(--space-1) * -1);
+
+		&:first-child {
+			margin-inline-start: calc(var(--space-2) * -1);
+		}
+
+		&[aria-expanded='true'] {
+			color: var(--text-weak);
+		}
+
+		&:focus,
+		&[aria-expanded='true'] {
+			background-color: initial;
+		}
+
+		&:hover,
+		&[aria-expanded='true']:hover,
+		&:focus-visible {
+			background-color: var(--interaction-default-hover);
+			color: var(--text-norm);
+		}
+	}
+}
+
+.navigation > .navigation-list:last-child,
+.navigation > div > .navigation-list:last-child {
+	padding-block-end: 0;
+}
+
+.sidebar-collapse-button-container--not-collapsed-no-storage {
+	margin-block-end: var(--space-12);
+}
