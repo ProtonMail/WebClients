@@ -34,6 +34,7 @@ export const getPaymentStatusState = (
             Apple: true,
             Cash: true,
             Bitcoin: true,
+            Google: true,
         },
         ...DEFAULT_TAX_BILLING_ADDRESS,
     }

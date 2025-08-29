@@ -49,6 +49,7 @@ export const MOCK_PAYMENT_STATUS: PaymentStatus = {
         Apple: true,
         Cash: true,
         Bitcoin: true,
+        Google: true,
     },
 };
 

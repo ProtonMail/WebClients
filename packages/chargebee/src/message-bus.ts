@@ -16,6 +16,10 @@ import type {
     ChargebeeVerifySavedCardEventPayload,
     FormValidationErrors,
     GetHeightResponsePayload,
+    GooglePayAuthorizedPayload,
+    GooglePayCancelledMessage,
+    GooglePayClickedMessage,
+    GooglePayFailedMessage,
     MessageBusResponse,
     PaypalAuthorizedPayload,
     PaypalCancelledMessage,
@@ -35,6 +39,10 @@ import {
     applePayCancelledMessageType,
     applePayClickedMessageType,
     applePayFailedMessageType,
+    googlePayAuthorizedMessageType,
+    googlePayCancelledMessageType,
+    googlePayClickedMessageType,
+    googlePayFailedMessageType,
     paypalAuthorizedMessageType,
     paypalCancelledMessageType,
     paypalClickedMessageType,
@@ -236,6 +244,23 @@ export type OnGetCanMakePaymentsWithActiveCardHandler = (
     sendResponseToParent: SendResponseToParent<GetCanMakePaymentsWithActiveCardResponse>
 ) => void;
 
+export const setGooglePayPaymentIntentMessageType = 'set-google-pay-payment-intent';
+
+export type SetGooglePayPaymentIntentEvent = {
+    type: typeof setGooglePayPaymentIntentMessageType;
+    correlationId: string;
+    googlePayButtonHeight?: number;
+} & ChargebeeSubmitEventPayload;
+
+export function isSetGooglePayPaymentIntentEvent(event: any): event is SetGooglePayPaymentIntentEvent {
+    return event?.type === setGooglePayPaymentIntentMessageType;
+}
+
+export type OnSetGooglePayPaymentIntentHandler = (
+    event: SetGooglePayPaymentIntentEvent,
+    sendResponseToParent: SendResponseToParent<void>
+) => void;
+
 export interface ParentMessagesProps {
     onSetConfiguration?: (event: SetConfigurationEvent, sendResponseToParent: SendResponseToParent<{}>) => void;
     onSubmit?: OnSubmitHandler;
@@ -249,6 +274,7 @@ export interface ParentMessagesProps {
     onDirectDebitSubmit?: OnDirectDebitSubmitHandler;
     onSetApplePayPaymentIntent?: OnSetApplePayPaymentIntentHandler;
     onGetCanMakePaymentsWithActiveCard?: OnGetCanMakePaymentsWithActiveCardHandler;
+    onSetGooglePayPaymentIntent?: OnSetGooglePayPaymentIntentHandler;
 }
 
 // the event handler function must be async to make sure that we catch all errors, sync and async
@@ -359,6 +385,14 @@ const getEventListener = (messageBus: MessageBus) => async (e: MessageEvent) => 
                     ...result,
                 });
             });
+        } else if (isSetGooglePayPaymentIntentEvent(event)) {
+            await messageBus.onSetGooglePayPaymentIntent(event, (result) => {
+                messageBus.sendMessage({
+                    type: `${setGooglePayPaymentIntentMessageType}-response`,
+                    correlationId: event.correlationId,
+                    ...result,
+                });
+            });
         } else if (isGetCanMakePaymentsWithActiveCardEvent(event)) {
             await messageBus.onGetCanMakePaymentsWithActiveCard(event, (result) => {
                 messageBus.sendMessage({
@@ -403,6 +437,8 @@ export class MessageBus {
 
     public onGetCanMakePaymentsWithActiveCard;
 
+    public onSetGooglePayPaymentIntent;
+
     private eventListener: ((e: MessageEvent) => void) | null = null;
 
     constructor({
@@ -418,6 +454,7 @@ export class MessageBus {
         onDirectDebitSubmit,
         onSetApplePayPaymentIntent,
         onGetCanMakePaymentsWithActiveCard,
+        onSetGooglePayPaymentIntent,
     }: ParentMessagesProps) {
         this.onSetConfiguration = onSetConfiguration ?? noop;
         this.onSubmit = onSubmit ?? noop;
@@ -431,6 +468,7 @@ export class MessageBus {
         this.onDirectDebitSubmit = onDirectDebitSubmit ?? noop;
         this.onSetApplePayPaymentIntent = onSetApplePayPaymentIntent ?? noop;
         this.onGetCanMakePaymentsWithActiveCard = onGetCanMakePaymentsWithActiveCard ?? noop;
+        this.onSetGooglePayPaymentIntent = onSetGooglePayPaymentIntent ?? noop;
     }
 
     initialize() {
@@ -612,6 +650,48 @@ export class MessageBus {
     sendApplePayCancelledMessage() {
         const message: ApplePayCancelledMessage = {
             type: applePayCancelledMessageType,
+            status: 'success',
+            data: {},
+        };
+
+        this.sendMessage(message);
+    }
+
+    sendGooglePayAuthorizedMessage(data: GooglePayAuthorizedPayload) {
+        const message: MessageBusResponse<GooglePayAuthorizedPayload> = {
+            status: 'success',
+            data,
+        };
+
+        this.sendMessage({
+            type: googlePayAuthorizedMessageType,
+            ...message,
+        });
+    }
+
+    sendGooglePayFailedMessage(error: any) {
+        const message: GooglePayFailedMessage = {
+            type: googlePayFailedMessageType,
+            status: 'failure',
+            error,
+        };
+
+        this.sendMessage(message);
+    }
+
+    sendGooglePayClickedMessage() {
+        const message: GooglePayClickedMessage = {
+            type: googlePayClickedMessageType,
+            status: 'success',
+            data: {},
+        };
+
+        this.sendMessage(message);
+    }
+
+    sendGooglePayCancelledMessage() {
+        const message: GooglePayCancelledMessage = {
+            type: googlePayCancelledMessageType,
             status: 'success',
             data: {},
         };

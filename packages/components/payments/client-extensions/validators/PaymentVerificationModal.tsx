@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import Loader from '@proton/components/components/loader/Loader';
 import PaymentVerificationImage from '@proton/components/containers/payments/PaymentVerificationImage';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { type CardPayment, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import errorSvg from '@proton/styles/assets/img/errors/error-generic.svg';
 
@@ -32,7 +31,7 @@ export interface PromiseWithController {
 export interface Props {
     open?: boolean;
     onSubmit: () => void;
-    onClose: () => void;
+    onClose: (reason: 'succeeded' | 'cancelled') => void;
     payment?: CardPayment;
     isAddCard?: boolean;
     type?: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.CARD;
@@ -71,13 +70,12 @@ const PaymentVerificationModal = ({
 
     const [step, setStep] = useState(() => STEPS.REDIRECT);
     const [error, setError] = useState<{ tryAgain?: boolean }>({});
-    const { createNotification } = useNotifications();
     const abortRef = useRef<AbortController>();
     const timeoutRef = useRef<number>();
 
     const handleCancel = () => {
         abortRef.current?.abort();
-        rest.onClose();
+        rest.onClose('cancelled');
     };
 
     const handleSubmit = async ({ abort, promise }: PromiseWithController) => {
@@ -89,21 +87,17 @@ const PaymentVerificationModal = ({
             abortRef.current = abort;
             await promise;
             onSubmit();
-            rest.onClose();
+            rest.onClose('succeeded');
         } catch (error: any) {
             window.clearTimeout(timeoutRef.current);
             setStep(STEPS.FAIL);
             setError(error);
-            // if not coming from API error
-            if (error && error.message && !error.config) {
-                createNotification({ text: error.message, type: 'error' });
-            }
         }
     };
 
     useEffect(() => {
         if (initialProcess) {
-            handleSubmit(initialProcess);
+            void handleSubmit(initialProcess);
         }
     }, []);
 
@@ -112,13 +106,19 @@ const PaymentVerificationModal = ({
     }, []);
 
     return (
-        <ModalTwo as={Form} onSubmit={() => handleSubmit(onProcess())} size="small" {...rest}>
+        <ModalTwo
+            as={Form}
+            size="small"
+            onSubmit={() => handleSubmit(onProcess())}
+            {...rest}
+            onClose={() => rest.onClose('cancelled')}
+        >
             <ModalTwoHeader hasClose={false} title={TITLES[step]} />
             <ModalTwoContent>
                 {{
                     [STEPS.REDIRECT]: () => (
                         <>
-                            <p>
+                            <p className="text-center">
                                 {isAddCard
                                     ? c('Info').t`We need to authenticate your payment method with your bank.`
                                     : c('Info').t`We need to authenticate your payment with your bank.`}
@@ -137,15 +137,14 @@ const PaymentVerificationModal = ({
                     ),
                     [STEPS.REDIRECTING]: () => (
                         <>
-                            <p>
+                            <p className="text-center">
                                 {isPayPal
                                     ? c('Info').t`You will soon be redirected to PayPal to verify your payment.`
                                     : c('Info').t`You may be redirected to your bank’s website.`}
                             </p>
                             <Loader />
-                            <div className="mb-4" data-testid="redirecting-message">
-                                {c('Info').t`Don’t see anything? Remember to turn off pop-up blockers.`}
-                            </div>
+                            <div className="mb-4" data-testid="redirecting-message">{c('Info')
+                                .t`Don’t see anything? Remember to turn off pop-up blockers.`}</div>
                         </>
                     ),
                     [STEPS.REDIRECTED]: () => (

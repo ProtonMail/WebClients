@@ -132,7 +132,8 @@ export const createPaymentTokenForExistingPayment = async (
         | PAYMENT_METHOD_TYPES.CARD
         | PAYMENT_METHOD_TYPES.PAYPAL
         | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-        | PAYMENT_METHOD_TYPES.APPLE_PAY,
+        | PAYMENT_METHOD_TYPES.APPLE_PAY
+        | PAYMENT_METHOD_TYPES.GOOGLE_PAY,
     api: Api,
     amountAndCurrency: AmountAndCurrency
 ): Promise<ChargeablePaymentToken | NonChargeablePaymentToken> => {
@@ -160,6 +161,9 @@ export type PaymentVerificatorV5Params = {
     v: 5;
     events: ChargebeeIframeEvents;
     addCardMode?: boolean;
+    abortController?: AbortController;
+    onCancelled?: () => void;
+    onError?: (error: any) => void;
 };
 
 export type PaymentVerificatorV5 = (params: PaymentVerificatorV5Params) => Promise<V5PaymentToken>;
@@ -223,12 +227,12 @@ function submitSavedChargebeeCard(
         authorized: false;
         approvalUrl: string;
     }>((resolve) => {
-        const listener = events.onCardVeririfcation3dsChallenge((data) => {
+        const listener = events.onThreeDsChallenge((data) =>
             resolve({
                 authorized: false,
                 approvalUrl: data.url,
-            });
-        });
+            })
+        );
         removeEventListeners.push(listener);
     });
 
@@ -414,6 +418,15 @@ export const formatTokenV5 = (
     return base;
 };
 
+export function savedMethodRequires3DS(type: PAYMENT_METHOD_TYPES): boolean {
+    return (
+        type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ||
+        // saved GOOGLE_PAY behaves like a card: it also sometimes needs 3DS; and even
+        // if 3DS isn't required then the payment intent must be authorized by chargebee.js
+        type === PAYMENT_METHOD_TYPES.GOOGLE_PAY
+    );
+}
+
 export const createPaymentTokenForExistingChargebeePayment = async (
     PaymentMethodID: ExistingPaymentMethod,
     type:
@@ -422,7 +435,8 @@ export const createPaymentTokenForExistingChargebeePayment = async (
         | PAYMENT_METHOD_TYPES.CARD
         | PAYMENT_METHOD_TYPES.PAYPAL
         | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-        | PAYMENT_METHOD_TYPES.APPLE_PAY,
+        | PAYMENT_METHOD_TYPES.APPLE_PAY
+        | PAYMENT_METHOD_TYPES.GOOGLE_PAY,
     api: Api,
     handles: ChargebeeIframeHandles,
     events: ChargebeeIframeEvents,
@@ -443,8 +457,7 @@ export const createPaymentTokenForExistingChargebeePayment = async (
     const paymentIntent = convertPaymentIntentData(paymentIntentBackend);
     let authorizedStatus: AuthorizedV5PaymentToken | NonAuthorizedV5PaymentToken;
 
-    // CARD is allowed for v4-v5 migration
-    if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD || type === PAYMENT_METHOD_TYPES.CARD) {
+    if (savedMethodRequires3DS(type)) {
         const result = await submitSavedChargebeeCard(handles, events, {
             paymentIntent: paymentIntent as PaymentIntent,
         });
@@ -471,7 +484,8 @@ export const createPaymentTokenForExistingChargebeePayment = async (
         | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
         | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
         | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-        | PAYMENT_METHOD_TYPES.APPLE_PAY;
+        | PAYMENT_METHOD_TYPES.APPLE_PAY
+        | PAYMENT_METHOD_TYPES.GOOGLE_PAY;
 
     if (type === PAYMENT_METHOD_TYPES.CARD) {
         convertedType = PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
