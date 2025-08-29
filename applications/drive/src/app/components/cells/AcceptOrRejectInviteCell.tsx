@@ -11,7 +11,10 @@ interface AcceptOrRejectInviteCellProps {
 export const AcceptOrRejectInviteCell = ({ onAccept, onReject }: AcceptOrRejectInviteCellProps) => {
     const [isAccepting, withAccepting] = useLoading();
     return (
-        <TableCell className="flex flex-nowrap items-center m-0 w-1/6" data-testid="column-share-accept-reject">
+        <TableCell
+            className="flex flex-nowrap items-center m-0 w-1/6 file-browser-list-item--accept-decline-cell"
+            data-testid="column-share-accept-reject"
+        >
             <div className="flex flex-nowrap">
                 <Button
                     loading={isAccepting}

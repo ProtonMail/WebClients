@@ -65,7 +65,8 @@ const SharedWithMe = () => {
                     />
                 );
             },
-        [sortParams.sortField, sortParams.sortOrder, isLoading, handleSorting, items.length]
+        // Handle sorting is not stable, ignoring it for now as it prevent opening the GridHeader dropdown
+        [/* handleSorting */ sortParams.sortField, sortParams.sortOrder, isLoading, items.length]
     );
 
     if (isEmpty) {

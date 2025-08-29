@@ -44,6 +44,8 @@ export interface FileBrowserBaseItem {
     isAnonymous?: boolean;
     albumProperties?: AlbumProperties;
     photoProperties?: PhotoProperties;
+    // Added to adapt to sdk view
+    isAlbum?: boolean;
 }
 
 export enum HeaderCellsPresets {
