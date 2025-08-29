@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import {c} from 'ttag';
 
 import {
@@ -19,6 +20,26 @@ import LumoPlusUpsellModal from '../upsells/LumoPlusUpsellModal';
 
 import './LumoPlusUpsellSidebarButton.scss';
 
+// Hook to manage delayed rendering for smooth animations
+const useDelayedCollapsedState = (collapsed: boolean) => {
+    const [delayedCollapsed, setDelayedCollapsed] = useState(collapsed);
+
+    useEffect(() => {
+        if (collapsed) {
+            // Immediately show collapsed state (icon only)
+            setDelayedCollapsed(true);
+        } else {
+            // Delay showing expanded state to allow animation to complete
+            const timer = setTimeout(() => {
+                setDelayedCollapsed(false);
+            }, 320); // Match the sidebar animation timing
+            return () => clearTimeout(timer);
+        }
+    }, [collapsed]);
+
+    return delayedCollapsed;
+};
+
 const getLumoPlusLabel = () => {
     return c('collider_2025:Button').t`Get ${LUMO_SHORT_APP_NAME} Plus`;
 };
@@ -28,7 +49,7 @@ const LumoPlusSidebarContent = ({collapsed}: { collapsed: boolean }) => {
         // When collapsed, show the custom plus icon
         return (
             <SidebarListItemContent
-                className="color-primary p-3"
+                className="color-primary"
                 left={
                     <CustomPlusIcon
                         size={16}
@@ -67,7 +88,7 @@ interface SidebarButtonWrapperProps {
 }
 
 const SidebarButtonWrapper = ({ collapsed, children }: SidebarButtonWrapperProps) => (
-    <div className="mt-6 mx-2">
+    <div className="pl-1">
         <SidebarListItem className={LUMO_UPGRADE_TRIGGER_CLASS}>
             {children}
         </SidebarListItem>
@@ -75,11 +96,12 @@ const SidebarButtonWrapper = ({ collapsed, children }: SidebarButtonWrapperProps
 );
 
 const getButtonClasses = (collapsed: boolean, includePadding = true) => {
-    const padding = includePadding ? 'px-3' : '';
+    const padding = includePadding ? '' : '';
     return `w-full ${padding} ${!collapsed ? 'bg-white rounded-lg p-4 lumo-plus-button-shadow' : ''}`.trim();
 };
 
 const LumoPlusSidebarButtonAuthenticated = ({collapsed}: { collapsed: boolean }) => {
+    const delayedCollapsed = useDelayedCollapsedState(collapsed);
     const {upsellRef, openModal, renderModal, modalProps} = useLumoPlusUpgradeWithTelemetry({
         feature: LUMO_UPSELL_PATHS.SIDEBAR_BUTTON,
         buttonType: 'collapsible-sidebar-button',
@@ -93,8 +115,8 @@ const LumoPlusSidebarButtonAuthenticated = ({collapsed}: { collapsed: boolean })
     if (canShowLumoUpsellB2BOrB2C) {
         return (
             <SidebarButtonWrapper collapsed={collapsed}>
-                <SidebarListItemSettingsLink path={LUMO_PLUS_UPGRADE_PATH} className={getButtonClasses(collapsed, false)}>
-                    <LumoPlusSidebarContent collapsed={collapsed}/>
+                <SidebarListItemSettingsLink path={LUMO_PLUS_UPGRADE_PATH} className={getButtonClasses(delayedCollapsed, false)}>
+                    <LumoPlusSidebarContent collapsed={delayedCollapsed}/>
                 </SidebarListItemSettingsLink>
             </SidebarButtonWrapper>
         );
@@ -103,8 +125,8 @@ const LumoPlusSidebarButtonAuthenticated = ({collapsed}: { collapsed: boolean })
     return (
         <>
             <SidebarButtonWrapper collapsed={collapsed}>
-                <SidebarListItemButton onClick={openModal} className={getButtonClasses(collapsed)}>
-                    <LumoPlusSidebarContent collapsed={collapsed}/>
+                <SidebarListItemButton onClick={openModal} className={getButtonClasses(delayedCollapsed)}>
+                    <LumoPlusSidebarContent collapsed={delayedCollapsed}/>
                 </SidebarListItemButton>
             </SidebarButtonWrapper>
             {renderModal && <LumoPlusUpsellModal modalProps={modalProps} upsellRef={upsellRef} specialBackdrop />}
@@ -112,13 +134,16 @@ const LumoPlusSidebarButtonAuthenticated = ({collapsed}: { collapsed: boolean })
     );
 };
 
-const LumoPlusSidebarButtonGuest = ({collapsed}: { collapsed: boolean }) => (
-    <SidebarButtonWrapper collapsed={collapsed}>
-        <SidebarListItemSettingsLink path="/signup" className={getButtonClasses(collapsed)}>
-            <LumoPlusSidebarContent collapsed={collapsed}/>
-        </SidebarListItemSettingsLink>
-    </SidebarButtonWrapper>
-);
+const LumoPlusSidebarButtonGuest = ({collapsed}: { collapsed: boolean }) => {
+    const delayedCollapsed = useDelayedCollapsedState(collapsed);
+    return (
+        <SidebarButtonWrapper collapsed={collapsed}>
+            <SidebarListItemSettingsLink path="/signup" className={getButtonClasses(delayedCollapsed)}>
+                <LumoPlusSidebarContent collapsed={delayedCollapsed}/>
+            </SidebarListItemSettingsLink>
+        </SidebarButtonWrapper>
+    );
+};
 
 const LumoPlusUpsellSidebarButton = ({collapsed}: { collapsed: boolean }) => {
     const isGuest = useIsGuest();
