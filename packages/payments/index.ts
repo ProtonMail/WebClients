@@ -179,8 +179,6 @@ export type {
     ChargebeeFetchedPaymentToken,
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
-    ChargebeeKillSwitch,
-    ChargebeeKillSwitchData,
     Currency,
     Cycle,
     CycleMapping,
@@ -188,7 +186,6 @@ export type {
     ExistingPaymentMethod,
     ExtendedTokenPayment,
     FeatureLimitKey,
-    ForceEnableChargebee,
     FreeSubscription,
     InitializeCreditCardOptions,
     Invoice,
@@ -321,14 +318,7 @@ export {
 } from './core/price-helpers';
 export { getRenewCycle } from './core/renewals';
 export { extractIBAN, type ExtendedExtractIBANResult } from './core/sepa';
-export {
-    Audience,
-    BillingPlatform,
-    Renew,
-    SubscriptionMode,
-    SubscriptionPlatform,
-    TaxInclusive,
-} from './core/subscription/constants';
+export { Audience, Renew, SubscriptionMode, SubscriptionPlatform, TaxInclusive } from './core/subscription/constants';
 export { FREE_PLAN, getFreeCheckResult, getFreeTitle } from './core/subscription/freePlans';
 export {
     allCycles,
@@ -493,15 +483,6 @@ export {
     isValidPlanName,
     methodMatches,
 } from './core/type-guards';
-export {
-    canUseChargebee,
-    isOnSessionMigration,
-    isSplittedUser,
-    onSessionMigrationChargebeeStatus,
-    onSessionMigrationPaymentsVersion,
-    paymentMethodPaymentsVersion,
-    toV5PaymentToken,
-    v5PaymentTokenToLegacyPaymentToken,
-} from './core/utils';
+export { toV5PaymentToken, v5PaymentTokenToLegacyPaymentToken } from './core/utils';
 export { getDefaultPostalCodeByStateCode } from './postal-codes/default-postal-codes';
 export { isPostalCodeValid as validateZipCode } from './postal-codes/postal-codes-validation';

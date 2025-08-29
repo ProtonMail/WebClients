@@ -1,5 +1,5 @@
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { ChargebeeEnabled, type User, type UserModel } from '@proton/shared/lib/interfaces';
+import { type User, type UserModel } from '@proton/shared/lib/interfaces';
 import { type FeatureFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -105,10 +105,6 @@ export function getSupportedRegionalCurrencies({
     subscription?: Subscription | FreeSubscription;
     enableNewBatchCurrencies: boolean;
 }): Currency[] {
-    if (user?.ChargebeeUser === ChargebeeEnabled.INHOUSE_FORCED) {
-        return [];
-    }
-
     const statusCurrency = !!paymentStatus
         ? mapCountryToRegionalCurrency(paymentStatus.CountryCode, enableNewBatchCurrencies)
         : undefined;
@@ -153,10 +149,9 @@ export function getPreferredCurrency({
     subscription?: Subscription | FreeSubscription | null;
     enableNewBatchCurrencies: boolean;
 }): Currency {
-    const statusCurrency =
-        paymentStatus && user?.ChargebeeUser !== ChargebeeEnabled.INHOUSE_FORCED
-            ? mapCountryToRegionalCurrency(paymentStatus.CountryCode, enableNewBatchCurrencies)
-            : undefined;
+    const statusCurrency = paymentStatus
+        ? mapCountryToRegionalCurrency(paymentStatus.CountryCode, enableNewBatchCurrencies)
+        : undefined;
 
     const userCurrency =
         !!user && (isRegionalCurrency(user?.Currency) || !!user?.isPaid || user?.Credit !== 0)
