@@ -7,7 +7,6 @@ import { getActionEventManager } from '../../utils/ActionEventManager/ActionEven
 import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
-import { getIsAnonymousUser } from '../../utils/sdk/getIsAnonymousUser';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 
@@ -347,7 +346,6 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                             const maybeNode = await drive.getNode(uid);
                             const { node } = getNodeEntity(maybeNode);
                             const signatureResult = getSignatureIssues(maybeNode);
-                            const isAnonymousUser = getIsAnonymousUser(maybeNode);
                             if (!node.deprecatedShareId) {
                                 handleSdkError(
                                     new EnrichedError('The shared with me node entity is missing deprecatedShareId', {
@@ -387,7 +385,7 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                                             ? node.membership.sharedBy.value
                                             : node.membership.sharedBy.error.claimedAuthor) || '',
                                 },
-                                haveSignatureIssues: !isAnonymousUser && !signatureResult.ok,
+                                haveSignatureIssues: !signatureResult.ok,
                                 shareId: node.deprecatedShareId,
                             });
                         }
