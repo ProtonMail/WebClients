@@ -7,7 +7,6 @@ import { useDrive } from '@proton/drive';
 
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
-import { getIsAnonymousUser } from '../../../utils/sdk/getIsAnonymousUser';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getNodeLocation } from '../../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
@@ -34,7 +33,6 @@ export const useSharedByMeNodesLoader = () => {
                     try {
                         const { node } = getNodeEntity(sharedByMeMaybeNode);
                         const signatureResult = getSignatureIssues(sharedByMeMaybeNode);
-                        const isAnonymousUser = getIsAnonymousUser(sharedByMeMaybeNode);
                         if (!node.deprecatedShareId) {
                             handleError(
                                 new EnrichedError('The shared with me node entity is missing deprecatedShareId', {
@@ -82,7 +80,7 @@ export const useSharedByMeNodesLoader = () => {
                             mediaType: node.mediaType,
                             thumbnailId: node.activeRevision?.uid || node.uid,
                             shareId: node.deprecatedShareId,
-                            haveSignatureIssues: !isAnonymousUser && !signatureResult.ok,
+                            haveSignatureIssues: !signatureResult.ok,
                         });
                     } catch (e) {
                         handleError(e, {

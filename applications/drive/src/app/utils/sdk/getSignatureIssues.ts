@@ -1,12 +1,9 @@
 import { type MaybeNode } from '@proton/drive';
 
-import { getIsAnonymousUser } from './getIsAnonymousUser';
-
 export type SignatureIssuesResult =
-    | { ok: true; isAnonymousUser: boolean }
+    | { ok: true }
     | {
           ok: false;
-          isAnonymousUser: boolean;
           issues: {
               keyAuthor: boolean;
               nameAuthor: boolean;
@@ -30,15 +27,6 @@ export function getSignatureIssues(node: MaybeNode): SignatureIssuesResult {
         activeRevision = undefined;
     }
 
-    const isAnonymousUser = getIsAnonymousUser(node);
-
-    if (isAnonymousUser) {
-        return {
-            ok: true,
-            isAnonymousUser,
-        };
-    }
-
     const hasKeyIssues = !nodeEntity.keyAuthor.ok;
     const hasNameIssues = !nodeEntity.nameAuthor.ok;
     const hasContentIssues = Boolean(activeRevision && !activeRevision.contentAuthor.ok);
@@ -48,7 +36,6 @@ export function getSignatureIssues(node: MaybeNode): SignatureIssuesResult {
     if (hasAnyIssues) {
         return {
             ok: false,
-            isAnonymousUser,
             issues: {
                 keyAuthor: hasKeyIssues,
                 nameAuthor: hasNameIssues,
@@ -59,6 +46,5 @@ export function getSignatureIssues(node: MaybeNode): SignatureIssuesResult {
 
     return {
         ok: true,
-        isAnonymousUser,
     };
 }
