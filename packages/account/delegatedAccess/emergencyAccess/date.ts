@@ -8,7 +8,7 @@ export const getFormattedAccessibleAtDate = (date: Date | null) => {
     if (date === null) {
         return null;
     }
-    return format(date, 'PP', { locale: dateLocale });
+    return format(date, 'PPp', { locale: dateLocale });
 };
 
 export const getFormattedCreateTime = (date: Date | null) => {
