@@ -31,7 +31,7 @@ type HandleErrorOptions = {
 
 export const handleSdkError = (
     error: Error | unknown,
-    { fallbackMessage = '', extra = {} }: HandleErrorOptions = {}
+    { fallbackMessage = '', extra = {} }: Omit<HandleErrorOptions, 'showNotification'> = {}
 ) => {
     const errorToHandle = error instanceof Error ? error : new Error(fallbackMessage);
     const message = error instanceof ProtonDriveError ? errorToHandle.message : fallbackMessage;

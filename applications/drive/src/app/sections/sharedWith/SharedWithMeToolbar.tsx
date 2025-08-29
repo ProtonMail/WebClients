@@ -12,7 +12,6 @@ import { useSharedWithMeListingStore } from '../../zustand/sections/sharedWithMe
 import { SharedWithMeActions } from './actions/SharedWithMeActions';
 
 interface SharedWithMeToolbarProps {
-    shareId: string;
     uids: string[];
 }
 

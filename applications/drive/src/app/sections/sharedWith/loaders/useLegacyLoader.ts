@@ -3,8 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
-import { generateNodeUid } from '@proton/drive/index';
-import { NodeType } from '@proton/drive/index';
+import { generateNodeUid , NodeType } from '@proton/drive/index';
 import { querySharedWithMeAlbums } from '@proton/shared/lib/api/drive/photos';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { ShareTargetType } from '@proton/shared/lib/interfaces/drive/sharing';
@@ -148,13 +147,10 @@ export const useLegacyLoader = () => {
                                     Boolean(
                                         missingNode.signatureIssues &&
                                             Object.values(missingNode.signatureIssues).some(Boolean)
-                                ),
-                                legacy: {
-                                    isFromLegacy: true,
-                                    linkId: missingNode.linkId,
-                                    shareId,
-                                    volumeId: missingNode.volumeId,
-                                },
+                                    ),
+                                isFromLegacy: true,
+                                shareId,
+                                isLocked: missingNode.isLocked,
                             });
                         } catch (e) {
                             handleError(e, { showNotification: false });
@@ -211,12 +207,8 @@ export const useLegacyLoader = () => {
                         uid: invitationUid,
                         sharedBy: invitation.invitation.inviterEmail,
                     },
-                    legacy: {
-                        isFromLegacy: true,
-                        linkId: invitation.link.linkId,
-                        shareId: invitation.share.shareId,
-                        volumeId: invitation.share.volumeId,
-                    },
+                    isFromLegacy: true,
+                    shareId: invitation.share.shareId,
                 });
             } catch (e) {
                 handleError(e, { showNotification: false });
@@ -274,7 +266,7 @@ export const useLegacyLoader = () => {
             setLoadingLegacyNodes(false);
         },
         // loadLegacySharedWithMeAlbums is not stable, we should ignore them
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+         
         []
     );
 
@@ -289,7 +281,7 @@ export const useLegacyLoader = () => {
             setLoadingLegacyInvitations(false);
         },
         // loadInvitations is not stable, we should ignore them
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+         
         []
     );
 
