@@ -77,8 +77,6 @@ export const useProtonMeetIntegration = ({
             return;
         }
 
-        setIsVideoConferenceLoading(true);
-
         setActiveProvider(VIDEO_CONFERENCE_PROVIDER.PROTON_MEET);
 
         if (
@@ -95,6 +93,8 @@ export const useProtonMeetIntegration = ({
 
             return;
         }
+
+        setIsVideoConferenceLoading(true);
 
         setProcessState('loading');
 
