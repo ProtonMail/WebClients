@@ -134,10 +134,13 @@ const ChatHistorySection = ({ searchValue }: { searchValue: string }) => {
     );
 };
 
+
 // Search Section with Input Field - keeps icon position stable
 const SearchSection = ({ showText, onSearchChange }: { showText: boolean; onSearchChange: (value: string) => void }) => {
     const { isCollapsed, toggle } = useSidebar();
+    const isGuest = useIsGuest();
     const [searchValue, setSearchValue] = useState('');
+    const placeholder = isGuest ? c('collider_2025:Placeholder').t`Sign in required` : c('collider_2025:Placeholder').t`Search chats`;
 
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
@@ -172,11 +175,12 @@ const SearchSection = ({ showText, onSearchChange }: { showText: boolean; onSear
                         <input
                             type="text"
                             className="sidebar-search-input"
-                            placeholder={c('collider_2025:Placeholder').t`Search chats`}
+                            placeholder={placeholder}
                             value={searchValue}
                             onChange={handleSearchChange}
-                            readOnly={isCollapsed}
-                            tabIndex={isCollapsed ? -1 : 0}
+                            readOnly={isCollapsed || isGuest} // Disable for guests
+                            tabIndex={isCollapsed || isGuest ? -1 : 0}
+                            disabled={isGuest}
                         />
                     </div>
                     {/* Always render label - visibility controlled by delayed showText state */}
