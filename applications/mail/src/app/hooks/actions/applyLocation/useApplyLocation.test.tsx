@@ -8,6 +8,7 @@ import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import { mockUseFolders, mockUseLabels } from '@proton/testing';
 import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 
+import { SUCCESS_NOTIFICATION_EXPIRATION } from 'proton-mail/constants';
 import { GlobalModalContext } from 'proton-mail/containers/globalModals/GlobalModalProvider';
 import { ModalType } from 'proton-mail/containers/globalModals/inteface';
 import { labelMessages, unlabelMessages } from 'proton-mail/store/mailbox/mailboxActions';
@@ -35,8 +36,9 @@ jest.mock('proton-mail/hooks/mailbox/useElements', () => ({
     useGetElementByID: () => mockUseGetElementByID,
 }));
 
+const mockDispatch = jest.fn();
 jest.mock('proton-mail/store/hooks', () => ({
-    useMailDispatch: jest.fn().mockReturnValue(jest.fn()),
+    useMailDispatch: jest.fn(() => mockDispatch),
     useMailSelector: jest.fn().mockReturnValue(jest.fn()),
 }));
 
@@ -55,10 +57,23 @@ jest.mock('proton-mail/hooks/actions/useCreateFilters', () => ({
 }));
 
 const mockedCreateNotification = jest.fn();
+const mockedRemoveNotification = jest.fn();
+const mockedUseApi = jest.fn();
+const mockedCall = jest.fn();
+
 jest.mock('@proton/components', () => {
     return {
-        useNotifications: jest.fn(() => ({ createNotification: mockedCreateNotification })),
+        useNotifications: jest.fn(() => ({
+            createNotification: mockedCreateNotification,
+            removeNotification: mockedRemoveNotification,
+        })),
+        useApi: jest.fn(() => mockedUseApi),
+        useEventManager: jest.fn(() => ({ call: mockedCall })),
     };
+});
+
+jest.mock('@proton/hooks/useLoading', () => {
+    return jest.fn(() => [false, jest.fn()]);
 });
 
 const notifyMock = jest.fn();
@@ -75,6 +90,8 @@ describe('useApplyLocation', () => {
         mockUseFolders();
         mockUseLabels();
         mockUseMailSettings();
+        mockDispatch.mockClear();
+        mockDispatch.mockResolvedValue({ payload: [] });
     });
 
     afterEach(() => {
@@ -82,30 +99,30 @@ describe('useApplyLocation', () => {
     });
 
     describe('safety net', () => {
-        it('should throw if element is undefined', () => {
+        it('should throw if element is undefined', async () => {
             const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
-            expect(() =>
+            await expect(
                 result.current.applyLocation({
                     type: APPLY_LOCATION_TYPES.MOVE,
                     // @ts-ignore
                     elements: undefined,
                     destinationLabelID: '10',
                 })
-            ).toThrow('Elements are required');
+            ).rejects.toThrow('Elements are required');
         });
 
-        it('should not throw is element is empty array', () => {
+        it('should not throw is element is empty array', async () => {
             const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
-            expect(() =>
+            await expect(
                 result.current.applyLocation({
                     type: APPLY_LOCATION_TYPES.MOVE,
                     // @ts-ignore
                     elements: [],
                     destinationLabelID: '10',
                 })
-            ).not.toThrow();
+            ).resolves.not.toThrow();
         });
     });
 
@@ -700,5 +717,151 @@ describe('useApplyLocation', () => {
 
         // TODO
         describe('dispatch tests', () => {});
+    });
+
+    describe('multiple changes tests (applyMultipleLocations)', () => {
+        it('should throw if elements is undefined or empty', () => {
+            const { result } = renderHook(() => useApplyLocation(), { wrapper });
+
+            expect(() =>
+                result.current.applyMultipleLocations({
+                    elements: [],
+                    changes: { [MAILBOX_LABEL_IDS.ARCHIVE]: true },
+                })
+            ).toThrow('Elements are required');
+
+            expect(() =>
+                result.current.applyMultipleLocations({
+                    // @ts-ignore
+                    elements: undefined,
+                    changes: { [MAILBOX_LABEL_IDS.ARCHIVE]: true },
+                })
+            ).toThrow('Elements are required');
+        });
+
+        it('should throw if changes is empty', () => {
+            const { result } = renderHook(() => useApplyLocation(), { wrapper });
+
+            expect(() =>
+                result.current.applyMultipleLocations({
+                    elements: [{ ID: '1', ConversationID: '123' }],
+                    changes: {},
+                })
+            ).toThrow('Changes are required');
+        });
+
+        it('should apply selected labels to elements', async () => {
+            const { result } = renderHook(() => useApplyLocation(), { wrapper });
+
+            const elements = [
+                { ID: '1', ConversationID: '123', LabelIDs: [] },
+                { ID: '2', ConversationID: '124', LabelIDs: [] },
+            ];
+
+            const changes = {
+                [MAILBOX_LABEL_IDS.ARCHIVE]: true,
+            };
+
+            const promises = result.current.applyMultipleLocations({
+                elements,
+                changes,
+            });
+
+            // applyMultipleLocations returns Promise.all(promises)
+            const results = await promises;
+
+            // Should have one array result for one change
+            expect(Array.isArray(results)).toBe(true);
+            // Should call dispatch for the change
+            expect(mockDispatch).toHaveBeenCalled();
+        });
+
+        it('should show a notification when the action is applied with an undo action', () => {
+            const { result } = renderHook(() => useApplyLocation(), { wrapper });
+
+            const elements = [{ ID: '1', ConversationID: '123', LabelIDs: [] }];
+
+            const changes = {
+                [MAILBOX_LABEL_IDS.ARCHIVE]: true,
+            };
+
+            void result.current.applyMultipleLocations({
+                elements,
+                changes,
+            });
+
+            // Should create a notification with undo functionality
+            expect(mockedCreateNotification).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    text: expect.any(Object), // React element
+                    expiration: -1,
+                })
+            );
+        });
+
+        it('should create notification with correct text for messages', () => {
+            const { result } = renderHook(() => useApplyLocation(), { wrapper });
+
+            const elements = [
+                { ID: '1', ConversationID: '123', LabelIDs: [] },
+                { ID: '2', ConversationID: '124', LabelIDs: [] },
+            ];
+
+            const changes = { [MAILBOX_LABEL_IDS.ARCHIVE]: true };
+
+            void result.current.applyMultipleLocations({
+                elements,
+                changes,
+            });
+
+            // Should show "Messages updated" text for multiple messages
+            expect(mockedCreateNotification).toHaveBeenCalled();
+            const notificationCall = mockedCreateNotification.mock.calls[0][0];
+            expect(notificationCall.text).toBeDefined();
+        });
+
+        it('should create notification with correct text for conversations', () => {
+            const { result } = renderHook(() => useApplyLocation(), { wrapper });
+
+            const elements = [
+                {
+                    ID: '1',
+                    NumMessages: 5,
+                    Labels: [{ ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 5 }],
+                },
+            ];
+
+            const changes = { [MAILBOX_LABEL_IDS.ARCHIVE]: true };
+
+            void result.current.applyMultipleLocations({
+                elements,
+                changes,
+            });
+
+            // Should show "Conversation updated" text for single conversation
+            expect(mockedCreateNotification).toHaveBeenCalled();
+        });
+
+        it('should set up automatic notification removal timeout', () => {
+            jest.useFakeTimers();
+            const { result } = renderHook(() => useApplyLocation(), { wrapper });
+
+            const elements = [{ ID: '1', ConversationID: '123', LabelIDs: [] }];
+            const changes = { [MAILBOX_LABEL_IDS.ARCHIVE]: true };
+
+            void result.current.applyMultipleLocations({
+                elements,
+                changes,
+            });
+
+            expect(mockedCreateNotification).toHaveBeenCalled();
+
+            // Fast forward time to trigger timeout
+            jest.advanceTimersByTime(SUCCESS_NOTIFICATION_EXPIRATION);
+
+            expect(mockedRemoveNotification).toHaveBeenCalled();
+
+            jest.useRealTimers();
+        });
     });
 });
