@@ -1,5 +1,4 @@
-import type { VersionHistoryUpdate } from './VersionHistoryBatch'
-import type { VersionHistoryBatch } from './VersionHistoryBatch'
+import type { VersionHistoryUpdate, VersionHistoryBatch } from './VersionHistoryBatch'
 import { Result } from '@proton/docs-shared'
 import type { SyncUseCaseInterface } from '../Domain/UseCase/SyncUseCaseInterface'
 
