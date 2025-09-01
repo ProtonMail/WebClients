@@ -1,17 +1,64 @@
+import { useMemo } from 'react';
+
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { IcMeetCopy } from '@proton/icons';
+import { Table, TableBody, TableCell, TableRow } from '@proton/components';
+import type { Meeting } from '@proton/meet/types/response-types';
+import { parseMeetingLink } from '@proton/meet/utils/parseMeetingLink';
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
+import { useCopyTextToClipboard } from '../../hooks/useCopyTextToClipboard';
+import { useMeetingList } from '../../hooks/useMeetingList';
 import { MeetingSideBars } from '../../types';
 
+import './MeetingDetails.scss';
+
 export const MeetingDetails = () => {
-    const { meetingLink, roomName } = useMeetContext();
+    const copyTextToClipboard = useCopyTextToClipboard();
+
+    const { meetingLink, roomName, passphrase } = useMeetContext();
 
     const { sideBarState, toggleSideBarState } = useUIStateContext();
+
+    const { meetingId } = parseMeetingLink(meetingLink);
+
+    const [meetings] = useMeetingList();
+
+    const currentMeeting = useMemo(() => {
+        return ((meetings ?? []) as Meeting[]).find((meeting) => meeting.MeetingLinkName === meetingId);
+    }, [meetings, meetingId]);
+
+    const timeZone = currentMeeting?.TimeZone ?? Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+    const startDate = currentMeeting?.StartTime ? new Date(1000 * Number(currentMeeting.StartTime)) : null;
+
+    const formattedStartDate = startDate
+        ? new Intl.DateTimeFormat(dateLocale.code, {
+              weekday: 'long',
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric',
+          }).format(startDate)
+        : null;
+
+    const startTime = startDate?.toLocaleTimeString(undefined, {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+        timeZone: timeZone,
+    });
+
+    const endTime = currentMeeting?.EndTime
+        ? new Date(1000 * Number(currentMeeting.EndTime)).toLocaleTimeString(undefined, {
+              hour: '2-digit',
+              minute: '2-digit',
+              hour12: false,
+              timeZone: timeZone,
+          })
+        : null;
 
     if (!sideBarState[MeetingSideBars.MeetingDetails]) {
         return null;
@@ -22,25 +69,64 @@ export const MeetingDetails = () => {
             onClose={() => toggleSideBarState(MeetingSideBars.MeetingDetails)}
             header={
                 <div className="text-semibold flex items-center">
-                    <div className="text-3xl">{c('meet_2025 Title').t`Meeting details`}</div>
+                    <div className="text-3xl">{c('meet_2025 Title').t`Info`}</div>
                 </div>
             }
         >
-            <h2 className="h3 mb-4">{roomName}</h2>
-            <div className="flex flex-column">
-                <div className="bold mb-2">{c('meet_2025 Title').t`Joining info`}</div>
-                <div className="color-weak text-sm items-center text-break-all mb-2">
-                    {meetingLink}
-                    <Button
-                        className="mb-1 inline-block"
-                        size="small"
-                        shape="ghost"
-                        onClick={() => navigator.clipboard.writeText(meetingLink)}
-                        aria-label={c('meet_2025 Alt').t`Copy meeting link`}
-                    >
-                        <IcMeetCopy size={3} />
-                    </Button>
-                </div>
+            <div className="meeting-info-wrapper meet-radius overflow-hidden p-4">
+                <div className="text-semibold pl-2 mb-4">{c('meet_2025 Title').t`Meeting details`}</div>
+                <Table>
+                    <TableBody>
+                        <TableRow>
+                            <TableCell className="align-top color-weak" colSpan={1}>{c('meet_2025 Title')
+                                .t`Title`}</TableCell>
+                            <TableCell className="text-ellipsis" colSpan={2}>
+                                {roomName}
+                            </TableCell>
+                        </TableRow>
+                        {formattedStartDate && (
+                            <TableRow>
+                                <TableCell className="color-weak" colSpan={1}>{c('meet_2025 Title').t`Date`}</TableCell>
+                                <TableCell colSpan={2}>{formattedStartDate}</TableCell>
+                            </TableRow>
+                        )}
+                        {startTime && (
+                            <TableRow>
+                                <TableCell className="color-weak" colSpan={1}>{c('meet_2025 Title').t`Time`}</TableCell>
+                                <TableCell colSpan={2} className="time-cell">
+                                    {startTime} {endTime ? `- ${endTime}` : ''} ({timeZone})
+                                </TableCell>
+                            </TableRow>
+                        )}
+                        <TableRow>
+                            <TableCell className="align-top color-weak" colSpan={1}>{c('meet_2025 Title')
+                                .t`Invite link`}</TableCell>
+                            <TableCell colSpan={2} className="text-break-all overflow-hidden">
+                                <div
+                                    className="w-full color-primary cursor-pointer"
+                                    onClick={() => copyTextToClipboard(meetingLink)}
+                                >
+                                    {meetingLink}
+                                </div>
+                            </TableCell>
+                        </TableRow>
+                        {passphrase && (
+                            <TableRow>
+                                <TableCell className="color-weak" colSpan={1}>
+                                    {c('meet_2025 Title').t`Passphrase`}
+                                </TableCell>
+                                <TableCell colSpan={2}>
+                                    <div
+                                        className="w-full color-primary cursor-pointer"
+                                        onClick={() => copyTextToClipboard(passphrase)}
+                                    >
+                                        {passphrase}
+                                    </div>
+                                </TableCell>
+                            </TableRow>
+                        )}
+                    </TableBody>
+                </Table>
             </div>
         </SideBar>
     );

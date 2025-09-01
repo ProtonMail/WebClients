@@ -44,6 +44,7 @@ export interface MeetContextValues {
     sortedParticipants: (RemoteParticipant | LocalParticipant)[];
     pagedParticipants: (RemoteParticipant | LocalParticipant)[];
     pageCount: number;
+    passphrase: string;
 }
 
 export const MeetContext = createContext<MeetContextValues>({
@@ -84,6 +85,7 @@ export const MeetContext = createContext<MeetContextValues>({
     sortedParticipants: [],
     pagedParticipants: [],
     pageCount: 0,
+    passphrase: '',
 });
 
 export const useMeetContext = () => {
