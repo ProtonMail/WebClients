@@ -1,4 +1,4 @@
-import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
 
 import type { IOtpRenderer } from '@proton/pass/components/Otp/types';
 import type { MaybeNull } from '@proton/pass/types';
@@ -32,22 +32,6 @@ export const OTPDonut = forwardRef<IOtpRenderer, Props>(
         const canvasRef = useRef<HTMLCanvasElement>(null);
         const colorsRef = useRef<OTPDonutColorConfig<string>>();
 
-        const getColors = useCallback(
-            (canvas: HTMLCanvasElement): OTPDonutColorConfig<string> => {
-                if (colorsRef.current) return colorsRef.current;
-                const computedStyle = window.getComputedStyle(canvas);
-
-                colorsRef.current = {
-                    empty: computedStyle.getPropertyValue(colors.empty),
-                    filled: computedStyle.getPropertyValue(colors.filled),
-                    warning: computedStyle.getPropertyValue(colors.warning),
-                    danger: computedStyle.getPropertyValue(colors.danger),
-                };
-
-                return colorsRef.current;
-            },
-            [colors]
-        );
         useImperativeHandle<IOtpRenderer, IOtpRenderer>(ref, () => {
             const setupCanvas = (countdown: number): MaybeNull<CanvasRenderingContext2D> => {
                 const canvas = canvasRef.current;
@@ -70,11 +54,12 @@ export const OTPDonut = forwardRef<IOtpRenderer, Props>(
                     const ctx = setupCanvas(countDown);
                     if (!ctx) return;
 
-                    const computedColors = getColors(canvasRef.current!);
+                    const computedStyle = window.getComputedStyle(canvasRef.current!);
+
                     const fillColor = (() => {
-                        if (countDown <= 5) return computedColors.danger;
-                        if (countDown <= 10) return computedColors.warning;
-                        return computedColors.filled;
+                        if (countDown <= 5) return computedStyle.getPropertyValue(colors.danger);
+                        if (countDown <= 10) return computedStyle.getPropertyValue(colors.warning);
+                        return computedStyle.getPropertyValue(colors.filled);
                     })();
 
                     const center = size / 2;
@@ -88,7 +73,7 @@ export const OTPDonut = forwardRef<IOtpRenderer, Props>(
                     ctx.arc(center, center, radius, endAngle, startAngle);
                     ctx.stroke();
 
-                    ctx.strokeStyle = computedColors.empty;
+                    ctx.strokeStyle = computedStyle.getPropertyValue(colors.empty);
                     ctx.lineWidth = thickness;
                     ctx.beginPath();
                     ctx.arc(center, center, radius, startAngle, endAngle);
@@ -102,7 +87,7 @@ export const OTPDonut = forwardRef<IOtpRenderer, Props>(
 
                 getCanvas: () => canvasRef.current ?? null,
             };
-        }, [getColors]);
+        }, []);
 
         useEffect(() => (colorsRef.current = undefined), [colors]);
 
