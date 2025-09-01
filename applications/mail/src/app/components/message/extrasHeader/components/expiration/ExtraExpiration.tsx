@@ -2,7 +2,8 @@ import React from 'react';
 
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { isFrozenExpiration } from '@proton/shared/lib/mail/messages';
+import { isExpiringByRetentionRule, isFrozenExpiration } from '@proton/shared/lib/mail/messages';
+import { useFlag } from '@proton/unleash';
 
 import { getMessageHasData } from 'proton-mail/helpers/message/messages';
 
@@ -14,6 +15,8 @@ interface Props {
 }
 
 const ExtraExpiration = ({ message }: Props) => {
+    const dataRetentionPolicyEnabled = useFlag('DataRetentionPolicy');
+
     if (!getMessageHasData(message)) {
         return null;
     }
@@ -24,6 +27,10 @@ const ExtraExpiration = ({ message }: Props) => {
     const hasSpamOrTrash =
         message.data?.LabelIDs?.includes(MAILBOX_LABEL_IDS.TRASH) ||
         message.data?.LabelIDs?.includes(MAILBOX_LABEL_IDS.SPAM);
+
+    if (dataRetentionPolicyEnabled && isExpiringByRetentionRule(message.data)) {
+        return null;
+    }
 
     return (
         <>
