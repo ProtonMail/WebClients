@@ -35,6 +35,7 @@ const updatedFields = {
 };
 
 const isLabelMapping = true;
+
 function getBaseFields(labels?: ApiMailImporterFolder[]) {
     return {
         mapping: new MailImportFoldersParser(labels ?? providerLabels, isLabelMapping).folders,
@@ -131,9 +132,9 @@ describe('Step prepare helpers tests', () => {
                 password: 'password',
             };
 
-            expect(() =>
-                formatPrepareStepPayload({ isLabelMapping, data: faultyData, fields, updatedFields })
-            ).toThrowError('Importer ID should be defined');
+            expect(() => formatPrepareStepPayload({ isLabelMapping, data: faultyData, fields, updatedFields })).toThrow(
+                'Importer ID should be defined'
+            );
         });
 
         it('Should not submit unchecked folders', () => {

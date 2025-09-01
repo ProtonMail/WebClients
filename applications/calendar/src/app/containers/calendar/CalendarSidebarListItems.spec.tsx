@@ -284,14 +284,14 @@ describe('CalendarSidebarListItems', () => {
                     {
                         ...mockCalendar,
                         Display: 0,
+                        ID: 'id3333',
                     },
                 ],
             })
         );
 
-        expect(container.querySelector('.checkbox-fakecheck')).toHaveStyle('background-color: transparent');
+        expect(container.querySelector('.checkbox-fakecheck')).toHaveStyle('background-color: rgba(0, 0, 0, 0)');
     });
-
     it('grays and shows additional text for not synced and disabled calendars', () => {
         const getHasWeakColour = () =>
             screen.getAllByTestId('calendar-sidebar:user-calendars')[0].classList.contains('color-weak');

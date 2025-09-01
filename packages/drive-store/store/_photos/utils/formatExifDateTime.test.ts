@@ -7,7 +7,7 @@ describe('formatExifDateTime()', () => {
     });
     it("should throw an error if exif's DateTime format is incorrect", () => {
         const exifDateTime = '2023-07:21-22:12:01';
-        expect(() => formatExifDateTime(exifDateTime)).toThrowError(
+        expect(() => formatExifDateTime(exifDateTime)).toThrow(
             `The DateTime passed is not in the right format (received: ${exifDateTime}, expected: YYYY:MM:DD HH:MM:SS)`
         );
     });
