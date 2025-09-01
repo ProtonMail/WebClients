@@ -1,6 +1,7 @@
 import { type ReactNode, useEffect, useRef, useState } from 'react';
 import { Router } from 'react-router-dom';
 
+import type { App } from '@proton-meet/proton-meet-core';
 import type { ProtonThunkArguments } from 'packages/redux-shared-store-types';
 
 import {
@@ -19,8 +20,9 @@ import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { FlagProvider } from '@proton/unleash';
 
-import { bootstrapApp } from '../boostrap';
+import { bootstrapApp } from '../bootstrap';
 import config from '../config';
+import { WasmContext } from '../contexts/WasmContext';
 import type { MeetStore } from '../store';
 
 type ExtraThunkArguments = Omit<ProtonThunkArguments, 'config'>;
@@ -35,10 +37,11 @@ export const ProviderContainer = ({ children }: { children: ReactNode }) => {
     const storeRef = useRef<MeetStore>();
 
     const extraThunkArgumentsRef = useRef<ExtraThunkArguments>();
+    const wasmAppRef = useRef<App | null>(null);
 
     const initialiseServicesAndStore = async () => {
         try {
-            const { store, authentication, unleashClient, eventManager, api, history } = await bootstrapApp({
+            const { store, authentication, unleashClient, eventManager, api, history, wasmApp } = await bootstrapApp({
                 notificationsManager,
                 config,
             });
@@ -52,6 +55,8 @@ export const ProviderContainer = ({ children }: { children: ReactNode }) => {
                 api,
                 history,
             };
+
+            wasmAppRef.current = wasmApp;
 
             setInitialised(true);
         } catch (error) {
@@ -84,9 +89,11 @@ export const ProviderContainer = ({ children }: { children: ReactNode }) => {
                     <EventManagerProvider eventManager={eventManager}>
                         <Router history={history}>
                             <ApiProvider api={api}>
-                                <ErrorBoundary big component={<StandardErrorPage big />}>
-                                    <StandardPrivateApp>{children}</StandardPrivateApp>
-                                </ErrorBoundary>
+                                <WasmContext.Provider value={{ wasmApp: wasmAppRef.current }}>
+                                    <ErrorBoundary big component={<StandardErrorPage big />}>
+                                        <StandardPrivateApp>{children}</StandardPrivateApp>
+                                    </ErrorBoundary>
+                                </WasmContext.Provider>
                             </ApiProvider>
                         </Router>
                     </EventManagerProvider>
