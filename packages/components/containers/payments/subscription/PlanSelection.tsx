@@ -561,8 +561,18 @@ const PlanSelection = (props: Props) => {
         const cycle = notHigherThanAvailableOnBackend({ [plan.Name]: 1 }, plansMap, restrictedCycle);
 
         const planTitle = shortPlan.title;
-        const selectedPlanLabel = isFree ? c('Action').t`Current plan` : c('Action').t`Edit subscription`;
-        const action = isCurrentPlan ? selectedPlanLabel : selectPlanOrAppNameText(planTitle);
+        const trial = isTrial(subscription);
+
+        const action = (() => {
+            if (isCurrentPlan && !trial) {
+                if (isFree) {
+                    return c('Action').t`Current plan`;
+                }
+                return c('Action').t`Edit subscription`;
+            }
+
+            return selectPlanOrAppNameText(planTitle);
+        })();
         const actionLabel =
             plan.Name === PLANS.VPN_BUSINESS ? (
                 <ActionLabel plan={plan} currency={plan.Currency} cycle={cycle} />
