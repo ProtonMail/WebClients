@@ -31,14 +31,7 @@ export const QuickSettingsRemoveCategoriesBadge = () => {
                 labelProps={{ htmlFor: 'toggle-category-badge' }}
                 label={c('Label').t`Categories badge`}
                 labelInfo={<Info title={c('Label').t`Help us improve the upcoming mail categorization`} />}
-                action={
-                    <Toggle
-                        id="toggle-category-badge"
-                        checked={isEnabled}
-                        onChange={toggleBadge}
-                        data-testid="drawer-quick-settings:beta-access-toggle"
-                    />
-                }
+                action={<Toggle id="toggle-category-badge" checked={isEnabled} onChange={toggleBadge} />}
             />
         </DrawerAppSection>
     );
