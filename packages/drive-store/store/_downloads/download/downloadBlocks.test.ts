@@ -193,7 +193,7 @@ describe('initDownload', () => {
             downloadControls.start();
             downloadControls.cancel();
         });
-        await expect(promise).rejects.toThrowError(TransferCancel);
+        await expect(promise).rejects.toThrow(TransferCancel);
     });
 
     it('should reuse already downloaded data after recovering from network error', async () => {
@@ -371,7 +371,7 @@ describe('initDownload', () => {
         const stream = downloadControls.start();
         const bufferPromise = streamToBuffer(stream);
 
-        await expect(bufferPromise).rejects.toThrowError();
+        await expect(bufferPromise).rejects.toThrow();
         // 1 initial request + 3 retries
         expect(mockDownloadBlock.mock.calls.length).toBe(4);
     });

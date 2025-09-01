@@ -8,7 +8,18 @@ import '@proton/testing/lib/mockUnleash';
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
 
-global.OffscreenCanvas = Object;
+global.OffscreenCanvas = jest.fn().mockImplementation((width, height) => ({
+    width,
+    height,
+    oncontextlost: jest.fn(),
+    oncontextrestored: jest.fn(),
+    getContext: jest.fn(() => undefined),
+    convertToBlob: jest.fn(),
+    transferToImageBitmap: jest.fn(),
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn(),
+}));
 
 // JSDom does not include a full implementation of webcrypto
 const crypto = require('crypto').webcrypto;

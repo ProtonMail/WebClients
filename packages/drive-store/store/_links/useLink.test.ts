@@ -123,8 +123,8 @@ describe('useLink', () => {
             const link = hook.current.getLink(abortSignal, 'shareId', 'linkId');
             await expect(link).resolves.toMatchObject(item);
         });
-        expect(mockLinksState.getLink).toBeCalledWith('shareId', 'linkId');
-        expect(mockFetchLink).not.toBeCalled();
+        expect(mockLinksState.getLink).toHaveBeenCalledWith('shareId', 'linkId');
+        expect(mockFetchLink).not.toHaveBeenCalled();
     });
 
     it('decrypts when missing decrypted version in the cache', async () => {
@@ -138,8 +138,8 @@ describe('useLink', () => {
                 name: 'dec:name',
             });
         });
-        expect(mockLinksState.getLink).toBeCalledWith('shareId', 'linkId');
-        expect(mockFetchLink).not.toBeCalled();
+        expect(mockLinksState.getLink).toHaveBeenCalledWith('shareId', 'linkId');
+        expect(mockFetchLink).not.toHaveBeenCalled();
     });
 
     it('decrypts link with parent link', async () => {
@@ -167,7 +167,7 @@ describe('useLink', () => {
             });
         });
 
-        expect(mockFetchLink).not.toBeCalled();
+        expect(mockFetchLink).not.toHaveBeenCalled();
         expect(mockLinksState.getLink.mock.calls.map(([, linkId]) => linkId)).toMatchObject([
             'link', // Called by getLink.
             'link', // Called by getEncryptedLink.
@@ -236,8 +236,8 @@ describe('useLink', () => {
                 name: 'dec:name',
             });
         });
-        expect(mockLinksState.getLink).toBeCalledWith('shareId', 'linkId');
-        expect(mockFetchLink).toBeCalledTimes(1);
+        expect(mockLinksState.getLink).toHaveBeenCalledWith('shareId', 'linkId');
+        expect(mockFetchLink).toHaveBeenCalledTimes(1);
     });
 
     it('skips failing fetch if already attempted before', async () => {
@@ -250,8 +250,8 @@ describe('useLink', () => {
         const link3 = hook.current.getLink(abortSignal, 'shareId', 'linkId2');
         await expect(link3).rejects.toMatchObject(err);
 
-        expect(mockLinksState.getLink).toBeCalledWith('shareId', 'linkId');
-        expect(mockFetchLink).toBeCalledTimes(2); // linkId once and linkId2
+        expect(mockLinksState.getLink).toHaveBeenCalledWith('shareId', 'linkId');
+        expect(mockFetchLink).toHaveBeenCalledTimes(2); // linkId once and linkId2
     });
 
     it('skips load of already cached thumbnail', async () => {
@@ -265,9 +265,9 @@ describe('useLink', () => {
         await act(async () => {
             await hook.current.loadLinkThumbnail(abortSignal, 'shareId', 'linkId', downloadCallbackMock);
         });
-        expect(mockRequest).not.toBeCalled();
-        expect(downloadCallbackMock).not.toBeCalled();
-        expect(mockLinksState.setCachedThumbnail).not.toBeCalled();
+        expect(mockRequest).not.toHaveBeenCalled();
+        expect(downloadCallbackMock).not.toHaveBeenCalled();
+        expect(mockLinksState.setCachedThumbnail).not.toHaveBeenCalled();
     });
 
     it('loads link thumbnail using cached link thumbnail info', async () => {
@@ -292,9 +292,9 @@ describe('useLink', () => {
         await act(async () => {
             await hook.current.loadLinkThumbnail(abortSignal, 'shareId', 'linkId', downloadCallbackMock);
         });
-        expect(downloadCallbackMock).toBeCalledWith('bareUrl', 'token');
-        expect(mockLinksState.setCachedThumbnail).toBeCalledWith('shareId', 'linkId', expect.any(String));
-        expect(mockRequest).not.toBeCalled();
+        expect(downloadCallbackMock).toHaveBeenCalledWith('bareUrl', 'token');
+        expect(mockLinksState.setCachedThumbnail).toHaveBeenCalledWith('shareId', 'linkId', expect.any(String));
+        expect(mockRequest).not.toHaveBeenCalled();
     });
 
     it('loads link thumbnail with expired cached link thumbnail info', async () => {
@@ -325,10 +325,10 @@ describe('useLink', () => {
         await act(async () => {
             await hook.current.loadLinkThumbnail(abortSignal, 'shareId', 'linkId', downloadCallbackMock);
         });
-        expect(downloadCallbackMock).toBeCalledWith('bareUrl', 'token'); // First attempted with expired token.
-        expect(mockRequest).toBeCalledTimes(1); // Then requested the new token.
-        expect(downloadCallbackMock).toBeCalledWith('bareUrl', 'token2'); // And the new one used for final download.
-        expect(mockLinksState.setCachedThumbnail).toBeCalledWith('shareId', 'linkId', expect.any(String));
+        expect(downloadCallbackMock).toHaveBeenCalledWith('bareUrl', 'token'); // First attempted with expired token.
+        expect(mockRequest).toHaveBeenCalledTimes(1); // Then requested the new token.
+        expect(downloadCallbackMock).toHaveBeenCalledWith('bareUrl', 'token2'); // And the new one used for final download.
+        expect(mockLinksState.setCachedThumbnail).toHaveBeenCalledWith('shareId', 'linkId', expect.any(String));
     });
 
     it('loads link thumbnail with its url on API', async () => {
@@ -354,9 +354,9 @@ describe('useLink', () => {
         await act(async () => {
             await hook.current.loadLinkThumbnail(abortSignal, 'shareId', 'linkId', downloadCallbackMock);
         });
-        expect(mockRequest).toBeCalledTimes(1);
-        expect(downloadCallbackMock).toBeCalledWith('bareUrl', 'token');
-        expect(mockLinksState.setCachedThumbnail).toBeCalledWith('shareId', 'linkId', expect.any(String));
+        expect(mockRequest).toHaveBeenCalledTimes(1);
+        expect(downloadCallbackMock).toHaveBeenCalledWith('bareUrl', 'token');
+        expect(mockLinksState.setCachedThumbnail).toHaveBeenCalledWith('shareId', 'linkId', expect.any(String));
     });
 
     it('decrypts badly signed thumbnail block', async () => {
@@ -393,7 +393,7 @@ describe('useLink', () => {
         await act(async () => {
             await hook.current.loadLinkThumbnail(abortSignal, 'shareId', 'link', downloadCallbackMock);
         });
-        expect(mockLinksState.setLinks).toBeCalledWith('shareId', [
+        expect(mockLinksState.setLinks).toHaveBeenCalledWith('shareId', [
             expect.objectContaining({
                 encrypted: expect.objectContaining({
                     linkId: 'link',
@@ -446,7 +446,7 @@ describe('useLink', () => {
                 await hook.current.getLink(abortSignal, 'shareId', 'link');
             });
             ['root', 'parent'].forEach((linkId) => {
-                expect(mockLinksState.setLinks).toBeCalledWith('shareId', [
+                expect(mockLinksState.setLinks).toHaveBeenCalledWith('shareId', [
                     expect.objectContaining({
                         encrypted: expect.objectContaining({
                             linkId,
@@ -505,7 +505,7 @@ describe('useLink', () => {
             await act(async () => {
                 await hook.current.getLinkHashKey(abortSignal, 'shareId', 'parent');
             });
-            expect(mockLinksState.setLinks).toBeCalledWith('shareId', [
+            expect(mockLinksState.setLinks).toHaveBeenCalledWith('shareId', [
                 expect.objectContaining({
                     encrypted: expect.objectContaining({
                         linkId: 'parent',
@@ -536,7 +536,7 @@ describe('useLink', () => {
             await act(async () => {
                 await hook.current.getLink(abortSignal, 'shareId', 'link');
             });
-            expect(mockLinksState.setLinks).toBeCalledWith('shareId', [
+            expect(mockLinksState.setLinks).toHaveBeenCalledWith('shareId', [
                 expect.objectContaining({
                     decrypted: expect.objectContaining({
                         linkId: 'link',

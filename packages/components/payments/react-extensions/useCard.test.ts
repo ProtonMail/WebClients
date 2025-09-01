@@ -114,7 +114,7 @@ it('should throw an error if there are no card details and user wants to fetch t
         }
     );
 
-    await expect(result.current.fetchPaymentToken()).rejects.toThrowError(InvalidCardDataError);
+    await expect(result.current.fetchPaymentToken()).rejects.toThrow(InvalidCardDataError);
 });
 
 it('should fetch payment token when the card is provided initially', async () => {

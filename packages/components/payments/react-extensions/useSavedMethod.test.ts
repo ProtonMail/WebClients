@@ -114,7 +114,7 @@ it('should destroy paymentProcessor', async () => {
 
     unmount();
 
-    expect(result.current.paymentProcessor!.destroy).toBeCalled();
+    expect(result.current.paymentProcessor!.destroy).toHaveBeenCalled();
 });
 
 it('should fetch token', async () => {
@@ -214,7 +214,7 @@ it('should throw during verification if there is no saved method', async () => {
         )
     );
 
-    await expect(() => result.current.verifyPaymentToken()).rejects.toThrowError('There is no saved method to verify');
+    await expect(() => result.current.verifyPaymentToken()).rejects.toThrow('There is no saved method to verify');
 });
 
 it('should reset token if verification failed', async () => {
@@ -240,7 +240,7 @@ it('should reset token if verification failed', async () => {
         )
     );
 
-    await expect(result.current.processPaymentToken()).rejects.toThrowError('Verification failed');
+    await expect(result.current.processPaymentToken()).rejects.toThrow('Verification failed');
     expect(result.current.verifyingToken).toBe(false);
     expect(result.current.paymentProcessor?.fetchedPaymentToken).toEqual(null);
 });
