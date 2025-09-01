@@ -27,6 +27,7 @@ export const MESSAGE_FLAGS = {
     FLAG_SUSPICIOUS: BigInt(Math.pow(2, 33)), // System flagged this message as a suspicious email
     FLAG_AUTO_FORWARDER: BigInt(Math.pow(2, 34)), // Message is auto-forwarded
     FLAG_AUTO_FORWARDEE: BigInt(Math.pow(2, 35)), // Message is auto-forwarded
+    FLAG_EXPIRE_BY_RETENTION_RULE: BigInt(Math.pow(2, 38)), // Message is expiring by retention rule
 };
 
 export enum MAIL_VERIFICATION_STATUS {
