@@ -15,17 +15,13 @@ import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { handleLogoutFromURL } from '@proton/shared/lib/authentication/handleLogoutFromURL';
-import {
-    getPersistedSession,
-    registerSessionRemovalListener,
-} from '@proton/shared/lib/authentication/persistedSessionStorage';
+import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { type APP_NAMES } from '@proton/shared/lib/constants';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { type ProtonConfig } from '@proton/shared/lib/interfaces';
 import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
-import { clearSettings } from '@proton/wallet';
 
 import locales from './locales';
 import { type MeetDispatch, type MeetStore, setupStore } from './store';
@@ -204,10 +200,6 @@ export const executeBootstrapSteps = async ({
         store,
         config,
         sessionResult,
-    });
-
-    registerSessionRemovalListener(async () => {
-        clearSettings();
     });
 
     return {
