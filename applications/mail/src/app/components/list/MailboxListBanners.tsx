@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { useUserSettings } from '@proton/account';
 import { DENSITY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { isAllowedAutoDeleteLabelID } from 'proton-mail/helpers/autoDelete';
@@ -13,6 +14,7 @@ import {
     AutoDeleteBanner,
     EsSlowBanner,
     MailUpsellBanner,
+    RetentionPolicyBanner,
     TaskRunningBanner,
     useAutoDeleteBanner,
 } from './banners';
@@ -28,7 +30,7 @@ interface Props {
     canDisplayTaskRunningBanner: boolean;
 }
 
-type BannerId = 'es-slow' | 'almost-all-mail' | 'mail-upsell' | 'task-running' | 'auto-delete';
+type BannerId = 'es-slow' | 'almost-all-mail' | 'mail-upsell' | 'task-running' | 'auto-delete' | 'retention-policy';
 
 interface Banner {
     id: BannerId;
@@ -51,6 +53,7 @@ const MailboxListBanners = ({
     const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldOverrideCompactness;
 
     const bannerType = useAutoDeleteBanner(labelID);
+    const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
     const { canDisplayUpsellBanner, needToShowUpsellBanner, handleDismissBanner } = useShowUpsellBanner(labelID);
 
@@ -108,6 +111,11 @@ const MailboxListBanners = ({
                 />
             ),
             condition: () => isAllowedAutoDeleteLabelID(labelID) && !['hide', 'disabled'].includes(bannerType),
+        },
+        {
+            id: 'retention-policy',
+            banner: () => <RetentionPolicyBanner key="retention-policy" />,
+            condition: () => isRetentionPoliciesEnabled && labelID === MAILBOX_LABEL_IDS.SOFT_DELETED,
         },
     ];
 

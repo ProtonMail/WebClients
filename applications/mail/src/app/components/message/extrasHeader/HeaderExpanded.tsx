@@ -12,7 +12,14 @@ import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-import { getHasOnlyIcsAttachments, getRecipients, isInternal, isScheduled } from '@proton/shared/lib/mail/messages';
+import {
+    getHasOnlyIcsAttachments,
+    getRecipients,
+    isExpiringByRetentionRule,
+    isInternal,
+    isScheduled,
+} from '@proton/shared/lib/mail/messages';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import { useCategoryViewExperiment } from 'proton-mail/components/categoryView/categoryBadge/useCategoryViewExperiment';
@@ -22,6 +29,7 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
 import { isSelfAddress } from '../../../helpers/addresses';
 import type { MessageViewIcons } from '../../../helpers/message/icon';
+import { getExpiresOnMessage, getMessageExpirationDate } from '../../../helpers/message/messageExpirationTime';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
@@ -85,6 +93,7 @@ const HeaderExpanded = ({
 }: Props) => {
     const [addresses = []] = useAddresses();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
+    const dataRetentionPolicyEnabled = useFlag('DataRetentionPolicy');
 
     const { canSeeCategoryLabel } = useCategoryViewExperiment();
 
@@ -92,6 +101,8 @@ const HeaderExpanded = ({
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data?.AttachmentInfo);
 
     const isScheduledMessage = isScheduled(message.data);
+    const isMessageExpiringByRetentionRule = dataRetentionPolicyEnabled && isExpiringByRetentionRule(message.data);
+    const expirationDate = getMessageExpirationDate(message);
 
     const { Shortcuts } = useMailModel('MailSettings');
 
@@ -292,6 +303,14 @@ const HeaderExpanded = ({
                 <div className="mb-2 flex flex-nowrap color-weak">
                     <span className="self-center mr-2 text-ellipsis">
                         <ItemDate element={message.data} labelID={labelID} mode="full" useTooltip />
+                    </span>
+                </div>
+            )}
+            {showDetails && isMessageExpiringByRetentionRule && expirationDate && (
+                <div className="mb-2 flex flex-nowrap color-weak">
+                    <span className="self-center mr-2 text-ellipsis">
+                        <Icon name="trash-clock" className="mr-2" />
+                        {getExpiresOnMessage(expirationDate)}
                     </span>
                 </div>
             )}
