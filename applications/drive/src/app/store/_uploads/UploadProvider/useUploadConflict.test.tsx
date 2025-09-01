@@ -67,7 +67,7 @@ describe('useUploadConflict', () => {
                 ['file1', 'conflict', { originalIsFolder: undefined }],
             ]);
             abortController.abort();
-            await expect(promise).rejects.toThrowError('Upload was canceled');
+            await expect(promise).rejects.toThrow('Upload was canceled');
         });
     });
 
@@ -82,7 +82,7 @@ describe('useUploadConflict', () => {
                 ['file1', 'conflict', { originalIsDraft, originalIsFolder }],
             ]);
             abortController.abort();
-            await expect(promise).rejects.toThrowError('Upload was canceled');
+            await expect(promise).rejects.toThrow('Upload was canceled');
         });
     });
 

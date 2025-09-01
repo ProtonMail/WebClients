@@ -95,7 +95,7 @@ describe('NewFeatureTag component', () => {
                 isActiveInEnvironment={environmentDontRender}
             ></NewFeatureTag>
         );
-        expect(() => resultNotRendered.getByTestId(NEW_FEATURE_TAG_ID)).toThrowError(
+        expect(() => resultNotRendered.getByTestId(NEW_FEATURE_TAG_ID)).toThrow(
             'Unable to find an element by: [data-testid="this-is-a-test-instance-of-new-feature-tag"]'
         );
         const environmentRender: IsActiveInEnvironmentContainer = {

@@ -23,6 +23,6 @@ describe('download block', () => {
         global.fetch = mockFetch;
 
         await downloadBlock(new AbortController(), 'url', 'token');
-        expect(mockFetch).toBeCalledTimes(2);
+        expect(mockFetch).toHaveBeenCalledTimes(2);
     });
 });

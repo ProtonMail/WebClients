@@ -138,7 +138,7 @@ describe('Extra pin key banner displayed', () => {
                 fireEvent.click(disableAutopromtButton);
                 await tick();
 
-                expect(updateSpy).toBeCalled();
+                expect(updateSpy).toHaveBeenCalled();
             } else {
                 // Open trust public key modal and trust the key
                 await openTrustKeyModal();

@@ -109,7 +109,7 @@ describe('CardPaymentProcessor', () => {
 
     it('should throw error when method is card but the data is not valid', async () => {
         paymentProcessor.updateState({ card: getDefaultCard() });
-        await expect(paymentProcessor.fetchPaymentToken()).rejects.toThrowError();
+        await expect(paymentProcessor.fetchPaymentToken()).rejects.toThrow();
     });
 
     it('should call onTokenIsChargeable when amount is 0 upon returing the token', async () => {
@@ -144,7 +144,7 @@ describe('CardPaymentProcessor', () => {
 
         const error = new Error('error');
         reject(error);
-        await expect(promise).rejects.toThrowError(error);
+        await expect(promise).rejects.toThrow(error);
     });
 
     it('should call mockVerifyPayment', async () => {
@@ -203,7 +203,7 @@ describe('CardPaymentProcessor', () => {
     });
 
     it('should throw when verifyPaymentToken is called before fetchPaymentToken', async () => {
-        await expect(paymentProcessor.verifyPaymentToken()).rejects.toThrowError();
+        await expect(paymentProcessor.verifyPaymentToken()).rejects.toThrow();
     });
 
     it('should throw when verification failed', async () => {
@@ -218,7 +218,7 @@ describe('CardPaymentProcessor', () => {
         mockVerifyPayment.mockRejectedValue(error);
 
         await paymentProcessor.fetchPaymentToken();
-        await expect(paymentProcessor.verifyPaymentToken()).rejects.toThrowError(error);
+        await expect(paymentProcessor.verifyPaymentToken()).rejects.toThrow(error);
     });
 
     it('should remove the payment token', async () => {

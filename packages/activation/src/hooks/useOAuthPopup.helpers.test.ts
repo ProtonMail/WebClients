@@ -16,11 +16,11 @@ const redirectUri = 'https://redirect-uri.com';
 
 describe('OAuth url generation', () => {
     it('Should throw an error when unsupported provider (getProviderNumber)', () => {
-        expect(() => getProviderNumber(ImportProvider.DEFAULT)).toThrowError('Provider does not exist');
+        expect(() => getProviderNumber(ImportProvider.DEFAULT)).toThrow('Provider does not exist');
     });
 
     it('Should throw an error when unsupported provider (getOAuthRedirectURL)', () => {
-        expect(() => getOAuthRedirectURL(ImportProvider.DEFAULT)).toThrowError('Provider does not exist');
+        expect(() => getOAuthRedirectURL(ImportProvider.DEFAULT)).toThrow('Provider does not exist');
     });
 
     it('Should throw an error when unsupported provider (getOAuthAuthorizationUrl)', () => {
@@ -32,7 +32,7 @@ describe('OAuth url generation', () => {
 
         expect(() =>
             getOAuthAuthorizationUrl({ provider: ImportProvider.DEFAULT, scope: '', config, consentExperiment: false })
-        ).toThrowError('Provider does not exist');
+        ).toThrow('Provider does not exist');
     });
 
     it('Should return appropriate number for each supported providers', () => {

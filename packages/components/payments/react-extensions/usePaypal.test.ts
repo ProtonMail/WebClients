@@ -133,7 +133,7 @@ it('should update verificationError when token fetching fails', async () => {
     expect(result.current.verificationError).toBe(null);
 
     const tokenPromise = result.current.fetchPaymentToken();
-    await expect(tokenPromise).rejects.toThrowError(new Error());
+    await expect(tokenPromise).rejects.toThrow(new Error());
     expect(result.current.verificationError).toEqual(new Error());
 });
 
@@ -162,7 +162,7 @@ it('should update verificationError when token verification fails', async () => 
 
     await result.current.fetchPaymentToken();
     const tokenPromise = result.current.verifyPaymentToken();
-    await expect(tokenPromise).rejects.toThrowError(new Error('From the endpoint'));
+    await expect(tokenPromise).rejects.toThrow(new Error('From the endpoint'));
     expect(result.current.verificationError).toEqual(new Error('Paypal payment verification failed'));
 });
 
@@ -191,7 +191,7 @@ it('should remove pre-fetched token if verification fails', async () => {
     expect(result.current.tokenFetched).toBe(true);
 
     const tokenPromise = result.current.processPaymentToken();
-    await expect(tokenPromise).rejects.toThrowError(new Error('From the endpoint'));
+    await expect(tokenPromise).rejects.toThrow(new Error('From the endpoint'));
     expect(result.current.tokenFetched).toBe(false);
 });
 

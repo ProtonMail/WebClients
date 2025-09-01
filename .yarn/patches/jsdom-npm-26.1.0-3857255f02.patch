@@ -1,0 +1,19 @@
+diff --git a/lib/jsdom/browser/Window.js b/lib/jsdom/browser/Window.js
+index 52d011cae61c3688ec64baa5cec411d55edbda9d..f62f6d6ca1887923b5374a8cf3cee71f3c7710a5 100644
+--- a/lib/jsdom/browser/Window.js
++++ b/lib/jsdom/browser/Window.js
+@@ -505,10 +505,10 @@ function installOwnProperties(window, options) {
+     event: makeReplaceablePropertyDescriptor("event", window),
+ 
+     // [LegacyUnforgeable]:
+-    window: { configurable: false },
+-    document: { configurable: false },
+-    location: { configurable: false },
+-    top: { configurable: false }
++    window: { configurable: true },
++    document: { configurable: true },
++    location: { configurable: true },
++    top: { configurable: true }
+   });
+ 
+ 

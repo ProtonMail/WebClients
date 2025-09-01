@@ -6,7 +6,7 @@ describe('z-index utilities', () => {
     describe('stacking context detection', () => {
         test('should return true when reaching root node', () => {
             const el = document.createElement('div');
-            el.style.position = 'absolute';
+            el.style.setProperty('position', 'absolute');
             expect(isStackingContext(el)).toEqual([true, 0]);
         });
 
@@ -15,41 +15,49 @@ describe('z-index utilities', () => {
             const el = document.createElement('div');
             parent.appendChild(el);
 
-            el.style.position = 'static';
-            el.style.zIndex = '10';
+            el.style.setProperty('position', 'static');
+            el.style.setProperty('z-index', '10');
             expect(isStackingContext(el)).toEqual([false, null]);
         });
 
         test('should return true if position is not static', () => {
             const el = document.createElement('div');
 
-            el.style.position = 'relative';
-            el.style.zIndex = '10';
+            el.style.setProperty('position', 'relative');
+            el.style.setProperty('z-index', '10');
             expect(isStackingContext(el)).toEqual([true, 10]);
 
-            el.style.position = 'absolute';
-            el.style.zIndex = '100';
-            expect(isStackingContext(el)).toEqual([true, 100]);
+            const el2 = document.createElement('div');
 
-            el.style.position = 'fixed';
-            el.style.zIndex = '1000';
-            expect(isStackingContext(el)).toEqual([true, 1_000]);
+            el2.style.setProperty('position', 'absolute');
+            el2.style.setProperty('z-index', '100');
+            expect(isStackingContext(el2)).toEqual([true, 100]);
 
-            el.style.position = 'sticky';
-            el.style.zIndex = '10000';
-            expect(isStackingContext(el)).toEqual([true, 10_000]);
+            const el3 = document.createElement('div');
+
+            el3.style.setProperty('position', 'fixed');
+            el3.style.setProperty('z-index', '1000');
+            expect(isStackingContext(el3)).toEqual([true, 1_000]);
+
+            const el4 = document.createElement('div');
+
+            el4.style.setProperty('position', 'sticky');
+            el4.style.setProperty('z-index', '10000');
+            expect(isStackingContext(el4)).toEqual([true, 10_000]);
         });
 
         test('should return true for container-type stacking contexts', () => {
             const el = document.createElement('div');
 
-            el.style.containerType = 'size';
-            el.style.zIndex = '10';
+            el.style.setProperty('containerType', 'size');
+            el.style.setProperty('z-index', '10');
             expect(isStackingContext(el)).toEqual([true, 10]);
 
-            el.style.containerType = 'inline-size';
-            el.style.zIndex = '100';
-            expect(isStackingContext(el)).toEqual([true, 100]);
+            const el2 = document.createElement('div');
+
+            el2.style.setProperty('containerType', 'inline-size');
+            el2.style.setProperty('z-index', '100');
+            expect(isStackingContext(el2)).toEqual([true, 100]);
         });
 
         test('should return true is stack created by parent', () => {
@@ -57,13 +65,15 @@ describe('z-index utilities', () => {
             const parent = document.createElement('div');
             parent.appendChild(el);
 
-            el.style.zIndex = '10';
+            el.style.setProperty('z-index', '10');
             parent.style.display = 'flex';
             expect(isStackingContext(el)).toEqual([true, 10]);
 
-            el.style.zIndex = '100';
+            const el2 = document.createElement('div');
+
+            el2.style.setProperty('z-index', '100');
             parent.style.display = 'grid';
-            expect(isStackingContext(el)).toEqual([true, 100]);
+            expect(isStackingContext(el2)).toEqual([true, 100]);
         });
     });
 

@@ -79,7 +79,7 @@ describe('useDriveEventManager', () => {
             hook.current.eventHandlers.register(handler);
             await hook.current.pollEvents.volumes([VOLUME_ID_1]);
 
-            expect(handler).toBeCalledTimes(1);
+            expect(handler).toHaveBeenCalledTimes(1);
         });
     });
 
@@ -93,8 +93,8 @@ describe('useDriveEventManager', () => {
             hook.current.eventHandlers.register(handler2);
             await hook.current.pollEvents.volumes([VOLUME_ID_1]);
 
-            expect(handler).toBeCalledTimes(1);
-            expect(handler2).toBeCalledTimes(1);
+            expect(handler).toHaveBeenCalledTimes(1);
+            expect(handler2).toHaveBeenCalledTimes(1);
         });
     });
 
@@ -108,7 +108,7 @@ describe('useDriveEventManager', () => {
             await hook.current.pollEvents.volumes(VOLUME_ID_1);
             await hook.current.pollEvents.volumes(VOLUME_ID_2);
 
-            expect(handler).toBeCalledTimes(2);
+            expect(handler).toHaveBeenCalledTimes(2);
         });
     });
 
@@ -123,8 +123,8 @@ describe('useDriveEventManager', () => {
             hook.current.eventHandlers.unregister(handlerId);
             await hook.current.pollEvents.volumes(VOLUME_ID_1);
 
-            expect(handler).toBeCalledTimes(1);
-            expect(handler2).toBeCalledTimes(0);
+            expect(handler).toHaveBeenCalledTimes(1);
+            expect(handler2).toHaveBeenCalledTimes(0);
         });
     });
 
@@ -133,7 +133,7 @@ describe('useDriveEventManager', () => {
             await hook.current.volumes.startSubscription(VOLUME_ID_1, VolumeTypeForEvents.main);
             await hook.current.pollEvents.volumes(VOLUME_ID_1);
 
-            expect(apiMock).toBeCalledTimes(2); // fetching events + poll itself
+            expect(apiMock).toHaveBeenCalledTimes(2); // fetching events + poll itself
         });
     });
 
@@ -144,13 +144,13 @@ describe('useDriveEventManager', () => {
             await hook.current.volumes.startSubscription(VOLUME_ID_2, VolumeTypeForEvents.main);
             hook.current.eventHandlers.register(handler);
             await hook.current.pollEvents.driveEvents();
-            expect(handler).toBeCalledTimes(2);
-            expect(handler).toBeCalledWith(
+            expect(handler).toHaveBeenCalledTimes(2);
+            expect(handler).toHaveBeenCalledWith(
                 VOLUME_ID_1,
                 driveEventsResultToDriveEvents(EVENT_PAYLOAD),
                 expect.any(Function)
             );
-            expect(handler).toBeCalledWith(
+            expect(handler).toHaveBeenCalledWith(
                 VOLUME_ID_2,
                 driveEventsResultToDriveEvents(EVENT_PAYLOAD),
                 expect.any(Function)

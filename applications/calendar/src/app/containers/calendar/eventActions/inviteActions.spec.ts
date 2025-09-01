@@ -171,7 +171,7 @@ describe('getSendIcsAction', () => {
 
             await expect(
                 getSendIcsAction({ ...inviteParams, inviteActions: omit(inviteParams.inviteActions, ['selfAddress']) })
-            ).rejects.toThrowError('Cannot reply without a self address');
+            ).rejects.toThrow('Cannot reply without a self address');
         });
     });
 
@@ -187,7 +187,7 @@ describe('getSendIcsAction', () => {
                         selfAddress: omit(inviteParams.inviteActions.selfAddress, ['Send']),
                     },
                 })
-            ).rejects.toThrowError('Cannot send from an inactive address');
+            ).rejects.toThrow('Cannot send from an inactive address');
         });
     });
 

@@ -32,6 +32,7 @@ describe('upload jobs', () => {
     it('calls upload for each block', async () => {
         const blocksCount = 10;
         const expectedLinks: string[] = [];
+
         async function* generator(): AsyncGenerator<UploadingBlockControl> {
             for (let idx = 0; idx < blocksCount; idx++) {
                 const block = createUploadingBlockControl(
@@ -54,10 +55,10 @@ describe('upload jobs', () => {
             mockUploadBlockCallback
         );
 
-        expect(mockUploadBlockCallback).toBeCalledTimes(blocksCount);
+        expect(mockUploadBlockCallback).toHaveBeenCalledTimes(blocksCount);
         expect(mockUploadBlockCallback.mock.calls.map((call) => call[0])).toMatchObject(expectedLinks);
-        expect(mockUploadBlockFinishCallback).toBeCalledTimes(blocksCount);
-        expect(mockUploadBlockExpiredCallback).not.toBeCalled();
+        expect(mockUploadBlockFinishCallback).toHaveBeenCalledTimes(blocksCount);
+        expect(mockUploadBlockExpiredCallback).not.toHaveBeenCalled();
     });
 
     it('retries the same block when paused', async () => {
@@ -82,11 +83,11 @@ describe('upload jobs', () => {
             mockUploadBlockCallback
         );
         expect(pauser.isPaused).toBe(false);
-        expect(mockUploadBlockCallback).toBeCalledTimes(2); // First call and after resume.
+        expect(mockUploadBlockCallback).toHaveBeenCalledTimes(2); // First call and after resume.
         // @ts-ignore
         expect(mockUploadBlockCallback.mock.calls.map((call) => call[0])).toMatchObject(['link1', 'link1']);
-        expect(mockUploadBlockFinishCallback).toBeCalledTimes(1); // Only one generated block.
-        expect(mockUploadBlockExpiredCallback).not.toBeCalled();
+        expect(mockUploadBlockFinishCallback).toHaveBeenCalledTimes(1); // Only one generated block.
+        expect(mockUploadBlockExpiredCallback).not.toHaveBeenCalled();
     });
 
     it('retries the same block number times before giving up when error happens', async () => {
@@ -107,9 +108,9 @@ describe('upload jobs', () => {
             mockUploadBlockCallback
         );
         await expect(promise).rejects.toBe(err);
-        expect(mockUploadBlockCallback).toBeCalledTimes(1 + MAX_RETRIES_BEFORE_FAIL); // First call + retries.
-        expect(mockUploadBlockFinishCallback).not.toBeCalled();
-        expect(mockUploadBlockExpiredCallback).not.toBeCalled();
+        expect(mockUploadBlockCallback).toHaveBeenCalledTimes(1 + MAX_RETRIES_BEFORE_FAIL); // First call + retries.
+        expect(mockUploadBlockFinishCallback).not.toHaveBeenCalled();
+        expect(mockUploadBlockExpiredCallback).not.toHaveBeenCalled();
     });
 
     it('automatically retries after network error once', async () => {
@@ -135,10 +136,10 @@ describe('upload jobs', () => {
             mockUploadBlockCallback
         );
         // First call + automatic retry.
-        expect(mockUploadBlockCallback).toBeCalledTimes(2);
-        expect(mockNetworkErrorCallback).toBeCalledTimes(0);
-        expect(mockUploadBlockFinishCallback).toBeCalledTimes(1); // Only one generated block.
-        expect(mockUploadBlockExpiredCallback).not.toBeCalled();
+        expect(mockUploadBlockCallback).toHaveBeenCalledTimes(2);
+        expect(mockNetworkErrorCallback).toHaveBeenCalledTimes(0);
+        expect(mockUploadBlockFinishCallback).toHaveBeenCalledTimes(1); // Only one generated block.
+        expect(mockUploadBlockExpiredCallback).not.toHaveBeenCalled();
     });
 
     it('pauses and notifies about network error', async () => {
@@ -166,11 +167,11 @@ describe('upload jobs', () => {
             mockUploadBlockCallback
         );
         // First call + automatic retry + after resume.
-        expect(mockUploadBlockCallback).toBeCalledTimes(3);
-        expect(mockNetworkErrorCallback).toBeCalledTimes(1);
+        expect(mockUploadBlockCallback).toHaveBeenCalledTimes(3);
+        expect(mockNetworkErrorCallback).toHaveBeenCalledTimes(1);
         expect(mockNetworkErrorCallback).toHaveBeenCalledWith(new Error('network error'));
-        expect(mockUploadBlockFinishCallback).toBeCalledTimes(1); // Only one generated block.
-        expect(mockUploadBlockExpiredCallback).not.toBeCalled();
+        expect(mockUploadBlockFinishCallback).toHaveBeenCalledTimes(1); // Only one generated block.
+        expect(mockUploadBlockExpiredCallback).not.toHaveBeenCalled();
     });
 
     it('calls retry when token expires', async () => {
@@ -190,9 +191,9 @@ describe('upload jobs', () => {
             mockLogCallback,
             mockUploadBlockCallback
         );
-        expect(mockUploadBlockCallback).toBeCalledTimes(1);
-        expect(mockUploadBlockFinishCallback).not.toBeCalled();
-        expect(mockUploadBlockExpiredCallback).toBeCalledTimes(1);
+        expect(mockUploadBlockCallback).toHaveBeenCalledTimes(1);
+        expect(mockUploadBlockFinishCallback).not.toHaveBeenCalled();
+        expect(mockUploadBlockExpiredCallback).toHaveBeenCalledTimes(1);
     });
 
     it('waits specified time when rate limited', async () => {
@@ -218,8 +219,8 @@ describe('upload jobs', () => {
             mockLogCallback,
             mockUploadBlockCallback
         );
-        expect(mockUploadBlockCallback).toBeCalledTimes(2);
-        expect(mockUploadBlockFinishCallback).toBeCalled();
-        expect(mockUploadBlockExpiredCallback).not.toBeCalled();
+        expect(mockUploadBlockCallback).toHaveBeenCalledTimes(2);
+        expect(mockUploadBlockFinishCallback).toHaveBeenCalled();
+        expect(mockUploadBlockExpiredCallback).not.toHaveBeenCalled();
     });
 });
