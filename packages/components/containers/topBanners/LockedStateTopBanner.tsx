@@ -91,25 +91,29 @@ const StorageBannerCTA = ({
     );
 };
 
-const getBannerTypeFromLockedFlags = (lockedFlags: number): UserLockedFlags => {
-    let type = UserLockedFlags.STORAGE_EXCEEDED;
+const getBannerTypeFromLockedFlags = (lockedFlags: number): UserLockedFlags | null => {
     if (hasBit(lockedFlags, UserLockedFlags.ORG_ISSUE_FOR_PRIMARY_ADMIN)) {
-        type = UserLockedFlags.ORG_ISSUE_FOR_PRIMARY_ADMIN;
-    } else if (hasBit(lockedFlags, UserLockedFlags.ORG_ISSUE_FOR_MEMBER)) {
-        type = UserLockedFlags.ORG_ISSUE_FOR_MEMBER;
-    } else if (
+        return UserLockedFlags.ORG_ISSUE_FOR_PRIMARY_ADMIN;
+    }
+    if (hasBit(lockedFlags, UserLockedFlags.ORG_ISSUE_FOR_MEMBER)) {
+        return UserLockedFlags.ORG_ISSUE_FOR_MEMBER;
+    }
+    if (
         hasBit(lockedFlags, UserLockedFlags.BASE_STORAGE_EXCEEDED) &&
         hasBit(lockedFlags, UserLockedFlags.DRIVE_STORAGE_EXCEEDED)
     ) {
-        type = UserLockedFlags.STORAGE_EXCEEDED;
-    } else if (hasBit(lockedFlags, UserLockedFlags.BASE_STORAGE_EXCEEDED)) {
-        type = UserLockedFlags.BASE_STORAGE_EXCEEDED;
-    } else if (hasBit(lockedFlags, UserLockedFlags.DRIVE_STORAGE_EXCEEDED)) {
-        type = UserLockedFlags.DRIVE_STORAGE_EXCEEDED;
-    } else if (hasBit(lockedFlags, UserLockedFlags.USER_WITH_A_DOMAIN)) {
-        type = UserLockedFlags.USER_WITH_A_DOMAIN;
+        return UserLockedFlags.STORAGE_EXCEEDED;
     }
-    return type;
+    if (hasBit(lockedFlags, UserLockedFlags.BASE_STORAGE_EXCEEDED)) {
+        return UserLockedFlags.BASE_STORAGE_EXCEEDED;
+    }
+    if (hasBit(lockedFlags, UserLockedFlags.DRIVE_STORAGE_EXCEEDED)) {
+        return UserLockedFlags.DRIVE_STORAGE_EXCEEDED;
+    }
+    if (hasBit(lockedFlags, UserLockedFlags.USER_WITH_A_DOMAIN)) {
+        return UserLockedFlags.USER_WITH_A_DOMAIN;
+    }
+    return null;
 };
 
 interface Props {
@@ -128,6 +132,11 @@ export const LockedStateTopBanner = ({ app, user, subscription, upsellRef, locke
     }
 
     const type = getBannerTypeFromLockedFlags(lockedFlags);
+
+    if (type === null) {
+        // Unknown flag, don't show banner
+        return null;
+    }
 
     const cta = (
         <StorageBannerCTA user={user} subscription={subscription} upsellRef={upsellRef} plan={plan} type={type} />
