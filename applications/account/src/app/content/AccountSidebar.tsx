@@ -14,7 +14,7 @@ import {
 } from '@proton/components';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { MEET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import { APPS, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 
 import SidebarListWrapper from '../containers/SidebarListWrapper';
 import CalendarSettingsSidebar from '../containers/calendar/CalendarSettingsSidebar';
