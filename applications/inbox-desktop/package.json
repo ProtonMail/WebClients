@@ -11,6 +11,7 @@
     "main": ".webpack/main",
     "scripts": {
         "check": "yarn run check:format && yarn run check:lint && yarn run check:types",
+        "check-types": "yarn run check:types",
         "check:format": "prettier . --check",
         "check:lint": "eslint --quiet",
         "check:negativity": "electronegativity -i ./src",
@@ -20,6 +21,7 @@
         "i18n:extract:web": "node tasks/extract-translations.mjs",
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context:web": "proton-i18n validate",
+        "lint": "yarn run check:lint",
         "make": "electron-forge make",
         "make:beta": "cross-env RELEASE=beta electron-forge make",
         "negativity": "electronegativity -i ./src",
