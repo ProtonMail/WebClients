@@ -11,6 +11,7 @@ type ReferralSelectedPlan = {
 
 export const unlimited: ReferralSelectedPlan = {
     planIDs: { [PLANS.BUNDLE]: 1 },
+    trial: true,
 };
 
 const mailPlus: ReferralSelectedPlan = {
@@ -25,7 +26,7 @@ const passPlus: ReferralSelectedPlan = {
     planIDs: { [PLANS.PASS]: 1 },
 };
 
-const vpnPlusTrial: ReferralSelectedPlan = {
+const vpnPlus: ReferralSelectedPlan = {
     planIDs: { [PLANS.VPN2024]: 1 },
     trial: true,
 };
@@ -37,7 +38,7 @@ const referralPlanMap: Record<SupportedReferralPlans, ReferralSelectedPlan> = {
     [PLANS.MAIL]: mailPlus,
     [PLANS.DRIVE]: drivePlus,
     [PLANS.PASS]: passPlus,
-    [PLANS.VPN2024]: vpnPlusTrial,
+    [PLANS.VPN2024]: vpnPlus,
 };
 
 /**
@@ -71,7 +72,7 @@ export const REFERRAL_DEAFULT_CYCLE = CYCLE.YEARLY;
 export const REFERRAL_DEFAULT_PLAN = PLANS.BUNDLE;
 
 export const availableReferralPlans = getAvailablePlansWithCycles(
-    [unlimited, mailPlus, drivePlus, passPlus, vpnPlusTrial],
+    [unlimited, mailPlus, drivePlus, passPlus, vpnPlus],
     [REFERRAL_DEAFULT_CYCLE]
 );
 
