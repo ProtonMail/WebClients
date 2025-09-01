@@ -7,7 +7,11 @@ import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/components';
 import { type Meeting, useGetMeetingDependencies, useProtonMeet } from '@proton/meet';
 import { MeetingType } from '@proton/meet/types/response-types';
-import { getPassphraseFromEncryptedPassword } from '@proton/meet/utils/cryptoUtils';
+import {
+    decryptSessionKey,
+    encryptMeetingName,
+    getPassphraseFromEncryptedPassword,
+} from '@proton/meet/utils/cryptoUtils';
 import { parseMeetingLink } from '@proton/meet/utils/parseMeetingLink';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, MEET_APP_NAME } from '@proton/shared/lib/constants';
@@ -66,6 +70,8 @@ export const useProtonMeetIntegration = ({
 
     modelRef.current = model;
 
+    const [sessionKey, setSessionKey] = useState<Uint8Array<ArrayBuffer> | null>(null);
+
     const { createProtonMeet, getProtonMeetByLinkName, saveProtonMeetPassword } = useProtonMeet();
 
     const getMeetingDependencies = useGetMeetingDependencies();
@@ -108,11 +114,19 @@ export const useProtonMeetIntegration = ({
 
             const { userKeys } = await getMeetingDependencies();
 
-            const passphrase = await getPassphraseFromEncryptedPassword({
+            const { passphrase, password } = await getPassphraseFromEncryptedPassword({
                 encryptedPassword: meeting?.Password as string,
                 basePassword: urlPassword,
                 userKeys,
             });
+
+            const decryptedSessionKey = await decryptSessionKey({
+                encryptedSessionKey: meeting?.SessionKey as string,
+                password,
+                salt: meeting?.Salt as string,
+            });
+
+            setSessionKey(decryptedSessionKey as Uint8Array<ArrayBuffer>);
 
             setMeetingDetails({
                 id: meetingId ?? '',
@@ -154,6 +168,10 @@ export const useProtonMeetIntegration = ({
     };
 
     const handlePassphraseSave = async (passphrase: string) => {
+        if (!sessionKey) {
+            return;
+        }
+
         const updatedMeeting = await saveProtonMeetPassword({
             passphrase,
             id: meetingObject?.ID as string,
@@ -161,10 +179,17 @@ export const useProtonMeetIntegration = ({
             meetingObject: meetingObject as Meeting,
         });
 
+        const encryptedTitle = await encryptMeetingName(model.title, sessionKey);
+
         setMeetingDetails((prev) => ({
             ...prev,
             passphrase,
         }));
+
+        setModel({
+            ...model,
+            encryptedTitle,
+        });
 
         setMeetingObject(updatedMeeting);
     };
@@ -227,11 +252,19 @@ export const useProtonMeetIntegration = ({
             return;
         }
 
-        const passphrase = await getPassphraseFromEncryptedPassword({
+        const { passphrase, password } = await getPassphraseFromEncryptedPassword({
             encryptedPassword: meeting?.Password as string,
             basePassword: urlPassword,
             userKeys,
         });
+
+        const decryptedSessionKey = await decryptSessionKey({
+            encryptedSessionKey: meeting?.SessionKey as string,
+            password,
+            salt: meeting?.Salt as string,
+        });
+
+        setSessionKey(decryptedSessionKey as Uint8Array<ArrayBuffer>);
 
         setMeetingDetails({
             id: meetingId ?? '',
@@ -251,6 +284,31 @@ export const useProtonMeetIntegration = ({
             void setup();
         }
     }, []);
+
+    const prevTitle = useRef(model.title);
+
+    useEffect(() => {
+        if (prevTitle.current === model.title) {
+            return;
+        }
+
+        prevTitle.current = model.title;
+
+        const timeout = setTimeout(async () => {
+            if (!sessionKey) {
+                return;
+            }
+
+            const newModel = {
+                ...model,
+                encryptedTitle: await encryptMeetingName(model.title, sessionKey),
+            };
+
+            setModel(newModel);
+        }, 100);
+
+        return () => clearTimeout(timeout);
+    }, [model.title]);
 
     return {
         handlePassphraseSave,

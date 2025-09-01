@@ -206,6 +206,7 @@ export interface EventModelView {
     conferenceHost?: string;
     conferenceProvider?: VIDEO_CONFERENCE_PROVIDER;
     isConferenceTmpDeleted?: boolean;
+    encryptedTitle?: string;
     rest?: any;
 }
 
