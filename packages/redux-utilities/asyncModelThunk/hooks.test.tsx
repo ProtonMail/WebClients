@@ -104,8 +104,8 @@ describe('hooks', () => {
         );
 
         const div = getByTestId('result');
-        expect(div).toHaveTextContent('undefined, true');
-        await waitFor(() => expect(div).toHaveTextContent('42, false'));
+        expect(div.textContent).toContain('undefined, true');
+        await waitFor(() => expect(div.textContent).toContain('42, false'));
     });
 
     test('only dispatches on undefined values', async () => {
@@ -127,9 +127,9 @@ describe('hooks', () => {
 
         expect(spy).toHaveBeenCalledTimes(0);
         const div = getByTestId('result');
-        expect(div).toHaveTextContent('undefined, true');
+        expect(div.textContent).toContain('undefined, true');
 
-        await waitFor(() => expect(div).toHaveTextContent('42, false'));
+        await waitFor(() => expect(div.textContent).toContain('42, false'));
 
         expect(spy).toHaveBeenCalledTimes(1);
 
@@ -162,8 +162,8 @@ describe('hooks', () => {
         expect(spy).toHaveBeenCalledTimes(0);
 
         const div = getByTestId('result');
-        expect(div).toHaveTextContent('undefined, true');
-        await waitFor(() => expect(div).toHaveTextContent('42, false'));
+        expect(div.textContent).toContain('undefined, true');
+        await waitFor(() => expect(div.textContent).toContain('42, false'));
 
         expect(spy).toHaveBeenCalledTimes(1);
 
@@ -186,8 +186,8 @@ describe('hooks', () => {
         );
 
         expect(spy).toHaveBeenCalledTimes(1);
-        expect(div).toHaveTextContent('undefined, true');
-        await waitFor(() => expect(div).toHaveTextContent('42, false'));
+        expect(div.textContent).toContain('undefined, true');
+        await waitFor(() => expect(div.textContent).toContain('42, false'));
 
         expect(spy).toHaveBeenCalledTimes(2);
 

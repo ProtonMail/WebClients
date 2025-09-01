@@ -31,6 +31,6 @@ describe('StepProductsRowItem', () => {
         const label = screen.getByTestId('StepProductsRowItem:label');
         fireEvent.click(label);
 
-        expect(setValue).toBeCalledTimes(1);
+        expect(setValue).toHaveBeenCalledTimes(1);
     });
 });

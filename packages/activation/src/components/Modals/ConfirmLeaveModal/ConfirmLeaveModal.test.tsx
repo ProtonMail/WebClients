@@ -15,7 +15,7 @@ describe('Test confirm leave modal', () => {
 
         fireEvent.click(cancel);
 
-        expect(handleClose).toBeCalledTimes(1);
+        expect(handleClose).toHaveBeenCalledTimes(1);
     });
 
     it('Should trigger continue events', () => {
@@ -28,6 +28,6 @@ describe('Test confirm leave modal', () => {
 
         fireEvent.click(submit);
 
-        expect(handleContinue).toBeCalledTimes(1);
+        expect(handleContinue).toHaveBeenCalledTimes(1);
     });
 });

@@ -108,7 +108,7 @@ describe('ManageFoldersRowInput', () => {
         const input = await screen.getByDisplayValue('Testing');
         fireEvent.keyDown(input, { key: 'Enter', code: 'Enter', charCode: 13 });
 
-        expect(handleSave).toBeCalledTimes(1);
+        expect(handleSave).toHaveBeenCalledTimes(1);
     });
 
     it('Should not run save method when enter is pressed and component has error', async () => {
@@ -130,6 +130,6 @@ describe('ManageFoldersRowInput', () => {
         const input = await screen.getByDisplayValue('Testing');
         fireEvent.keyDown(input, { key: 'Enter', code: 'Enter', charCode: 13 });
 
-        expect(handleSave).toBeCalledTimes(0);
+        expect(handleSave).toHaveBeenCalledTimes(0);
     });
 });
