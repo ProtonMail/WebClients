@@ -69,6 +69,8 @@ jest.mock('@proton/meet/hooks/useGetMeetingByLinkName', () => ({
 
 jest.mock('@proton/meet/utils/cryptoUtils', () => ({
     getPassphraseFromEncryptedPassword: jest.fn(),
+    decryptSessionKey: jest.fn().mockResolvedValue('session-key'),
+    encryptMeetingName: jest.fn().mockResolvedValue('encrypted-title'),
 }));
 
 const mockModel = {
@@ -100,6 +102,7 @@ describe('ProtonMeetRow', () => {
     const WrappedProtonMeetRow = ({
         model,
         isActive,
+        setModel = jest.fn(),
     }: {
         model: EventModel;
         setModel: (model: EventModel) => void;
@@ -107,7 +110,7 @@ describe('ProtonMeetRow', () => {
     }) => {
         const protonMeetIntegration = useProtonMeetIntegration({
             model,
-            setModel: jest.fn(),
+            setModel,
             isActive,
             setActiveProvider: jest.fn(),
             setIsVideoConferenceLoading: jest.fn(),
@@ -118,10 +121,11 @@ describe('ProtonMeetRow', () => {
 
     const renderProtonMeetRow = (params?: {
         model?: Partial<EventModel>;
+        setModel?: (model: EventModel) => void;
         location?: Partial<Location>;
         isActive?: boolean;
     }) => {
-        const { model = mockModel, location = {}, isActive = false } = params ?? {};
+        const { model = mockModel, location = {}, isActive = false, setModel = jest.fn() } = params ?? {};
 
         const history = createBrowserHistory();
 
@@ -133,7 +137,7 @@ describe('ProtonMeetRow', () => {
             <NotificationsProvider>
                 <Router history={history}>
                     {/* @ts-expect-error - partial mock */}
-                    <WrappedProtonMeetRow model={model} setModel={jest.fn()} isActive={isActive} />
+                    <WrappedProtonMeetRow model={model} setModel={setModel} isActive={isActive} />
                 </Router>
             </NotificationsProvider>
         );
@@ -150,7 +154,7 @@ describe('ProtonMeetRow', () => {
             getMeetingByLinkName: jest.fn().mockResolvedValue(mockMeeting),
         });
 
-        (getPassphraseFromEncryptedPassword as jest.Mock).mockReturnValue('');
+        (getPassphraseFromEncryptedPassword as jest.Mock).mockReturnValue({ passphrase: '' });
 
         renderProtonMeetRow({ model: modelWithMeeting, isActive: true });
 
@@ -166,10 +170,13 @@ describe('ProtonMeetRow', () => {
         expect(screen.getByText(modelWithMeeting.conferenceUrl)).toBeInTheDocument();
     });
 
-    it('should allow for updating the passphrase', async () => {
+    it.only('should allow for updating the passphrase', async () => {
         const saveMeetingPassword = jest.fn();
 
         const passphrase = 'passphrase';
+
+        const setModel = jest.fn();
+
         (useMeetingUpdates as jest.Mock).mockReturnValue({
             saveMeetingPassword,
         });
@@ -178,9 +185,9 @@ describe('ProtonMeetRow', () => {
             getMeetingByLinkName: jest.fn().mockResolvedValue(mockMeeting),
         });
 
-        (getPassphraseFromEncryptedPassword as jest.Mock).mockReturnValue('');
+        (getPassphraseFromEncryptedPassword as jest.Mock).mockReturnValue({ passphrase: '' });
 
-        renderProtonMeetRow({ model: modelWithMeeting, isActive: true });
+        renderProtonMeetRow({ model: modelWithMeeting, isActive: true, setModel });
 
         const user = userEvent.setup();
 
@@ -197,6 +204,12 @@ describe('ProtonMeetRow', () => {
                 id: mockMeeting.ID,
                 passwordBase: password,
                 passphrase,
+            })
+        );
+
+        expect(setModel).toHaveBeenCalledWith(
+            expect.objectContaining({
+                encryptedTitle: 'encrypted-title',
             })
         );
     });

@@ -12,6 +12,7 @@ export const getVideoConferencingData = (model: EventModelReadView | VcalVeventC
     // The model is a VcalVeventComponent if it has a 'component' property
     if (isVcalEvent(model)) {
         const provider = model?.['x-pm-conference-id']?.parameters?.['x-pm-provider'];
+        const encryptedTitle = model?.['x-pm-conference-id']?.parameters?.['x-pm-encrypted-title'];
 
         return {
             description: model.description?.value.trim(),
@@ -25,6 +26,7 @@ export const getVideoConferencingData = (model: EventModelReadView | VcalVeventC
                 model?.['x-pm-conference-url']?.parameters?.['x-pm-host'] ||
                 model?.['x-pm-conference-url']?.parameters?.host,
             meetingProvider: provider ? (Number(provider) as VIDEO_CONFERENCE_PROVIDER) : undefined,
+            encryptedTitle: encryptedTitle,
         };
     }
 

@@ -176,11 +176,11 @@ export const getPassphraseFromEncryptedPassword = async ({
     const passphrase = password.slice(basePassword.length);
 
     if (!passphrase) {
-        return passphrase;
+        return { password, passphrase };
     }
 
     // Removing the underscore from the passphrase, as the password is just the base password + _ + the passphrase
-    return passphrase.slice(1);
+    return { password, passphrase: passphrase.slice(1) };
 };
 
 interface PrepareMeetingCryptoDataParams {
