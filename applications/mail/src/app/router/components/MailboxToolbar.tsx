@@ -1,7 +1,5 @@
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
-import { CategoriesTabs } from 'proton-mail/components/categoryView/categoriesTabs/CategoriesTabs';
-import { useCategoryViewAccess } from 'proton-mail/components/categoryView/useCategoryViewAccess';
 import Toolbar from 'proton-mail/components/toolbar/Toolbar';
 import { type ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
 import { type ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
@@ -44,8 +42,6 @@ export const MailboxToolbar = ({
         handleCheck,
     } = actions;
 
-    const categoryViewControl = useCategoryViewAccess();
-
     const { labelDropdownToggleRef, moveDropdownToggleRef, isColumnModeActive } = useMailboxLayoutProvider();
 
     const [mailSettings] = useMailSettings();
@@ -83,7 +79,6 @@ export const MailboxToolbar = ({
                 loading={loading}
                 onCheckAll={handleCheckAll}
             />
-            {categoryViewControl.shouldShowTabs && <CategoriesTabs labelID={labelID} />}
         </>
     );
 };
