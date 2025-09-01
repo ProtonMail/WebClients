@@ -33,6 +33,7 @@ const {
     FLAG_SUSPICIOUS,
     FLAG_AUTO_FORWARDEE,
     FLAG_AUTO_FORWARDER,
+    FLAG_EXPIRE_BY_RETENTION_RULE,
 } = MESSAGE_FLAGS;
 const AUTOREPLY_HEADERS = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', 'X-Mail-Autoreply'];
 const LIST_HEADERS = [
@@ -101,6 +102,7 @@ export const isSuspicious = hasBigFlag(FLAG_SUSPICIOUS);
 export const isManualFlaggedHam = hasFlag(FLAG_HAM_MANUAL);
 export const isAutoForwarder = hasBigFlag(FLAG_AUTO_FORWARDER);
 export const isAutoForwardee = hasBigFlag(FLAG_AUTO_FORWARDEE);
+export const isExpiringByRetentionRule = hasBigFlag(FLAG_EXPIRE_BY_RETENTION_RULE);
 
 export const isExternalEncrypted = (message: Message) => isE2E(message) && !isInternal(message);
 export const isPGPEncrypted = (message: Message) => isExternal(message) && isReceived(message) && isE2E(message);
