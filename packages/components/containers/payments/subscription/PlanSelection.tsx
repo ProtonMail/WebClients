@@ -50,7 +50,8 @@ import {
     isAnyManagedExternally,
     isFreeSubscription,
     isRegionalCurrency,
-    isSubscriptionCheckForbidden,
+    isSubcriptionCheckForbidden,
+    isTrial,
     mainCurrencies,
     switchPlan,
 } from '@proton/payments';
@@ -480,7 +481,7 @@ const PlanSelection = (props: Props) => {
     // After some changes the subscription/check is no longer triggered at the stage of plan selection, but I want to be
     // extra carefull and keep it limited to the pass app only for now. If that's ok then renderCycleSelector can be set
     // to always true.
-    const renderCycleSelector = isFreeSubscription || props.app === APPS.PROTONPASS;
+    const renderCycleSelector = isFreeSubscription || isTrial(subscription) || app === APPS.PROTONPASS;
 
     const { b2bAccess, b2cAccess, redirectToCancellationFlow } = useCancellationFlow();
     const { sendStartCancellationPricingReport } = useCancellationTelemetry();
