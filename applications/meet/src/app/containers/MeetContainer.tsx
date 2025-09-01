@@ -26,6 +26,7 @@ interface MeetContainerProps {
     participantNameMap: Record<string, string>;
     getParticipants: () => Promise<void>;
     instantMeeting: boolean;
+    passphrase: string;
 }
 
 export const MeetContainer = ({
@@ -50,6 +51,7 @@ export const MeetContainer = ({
     participantNameMap,
     getParticipants,
     instantMeeting,
+    passphrase,
 }: MeetContainerProps) => {
     const [quality, setQuality] = useState<VideoQuality>(VideoQuality.HIGH);
     const [page, setPage] = useState(0);
@@ -125,6 +127,7 @@ export const MeetContainer = ({
                     sortedParticipants,
                     pagedParticipants,
                     pageCount,
+                    passphrase,
                 }}
             >
                 <UIStateProvider instantMeeting={instantMeeting}>

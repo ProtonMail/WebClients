@@ -1,29 +1,48 @@
 import { render, screen } from '@testing-library/react';
 
+import NotificationsProvider from '@proton/components/containers/notifications/Provider';
+
 import { MeetContext } from '../../contexts/MeetContext';
 import { UIStateContext } from '../../contexts/UIStateContext';
 import { MeetingSideBars } from '../../types';
 import { MeetingDetails } from './MeetingDetails';
 
 const mockMeetingName = 'Mock Meeting Name';
-const mockLink = 'https://mock-link.com';
+
+const meetingLinkName = '1234567890';
+const mockLink = `https://example.com/join/${meetingLinkName}`;
+
+vi.mock('../../hooks/useMeetingList', () => ({
+    useMeetingList: () => [
+        [
+            {
+                MeetingLinkName: meetingLinkName,
+                StartTime: '1756492800',
+                EndTime: '1756496400',
+                TimeZone: 'CET',
+            },
+        ],
+    ],
+}));
 
 describe('MeetingDetails', () => {
     it('should return null if not open', () => {
         render(<MeetingDetails />, {
             wrapper: ({ children }) => (
-                <MeetContext.Provider
-                    // @ts-expect-error - mock data
-                    value={{
-                        meetingLink: mockLink,
-                        roomName: mockMeetingName,
-                    }}
-                >
-                    {/* @ts-expect-error - mock data */}
-                    <UIStateContext.Provider value={{ sideBarState: { [MeetingSideBars.MeetingDetails]: false } }}>
-                        {children}
-                    </UIStateContext.Provider>
-                </MeetContext.Provider>
+                <NotificationsProvider>
+                    <MeetContext.Provider
+                        // @ts-expect-error - mock data
+                        value={{
+                            meetingLink: mockLink,
+                            roomName: mockMeetingName,
+                        }}
+                    >
+                        {/* @ts-expect-error - mock data */}
+                        <UIStateContext.Provider value={{ sideBarState: { [MeetingSideBars.MeetingDetails]: false } }}>
+                            {children}
+                        </UIStateContext.Provider>
+                    </MeetContext.Provider>
+                </NotificationsProvider>
             ),
         });
 
@@ -33,24 +52,54 @@ describe('MeetingDetails', () => {
     it('should display the meeting name and the meeting link', () => {
         render(<MeetingDetails />, {
             wrapper: ({ children }) => (
-                <MeetContext.Provider
-                    // @ts-expect-error\
-                    value={{
-                        meetingLink: mockLink,
-                        roomName: mockMeetingName,
-                    }}
-                >
-                    <UIStateContext.Provider
-                        // @ts-expect-error - mock data
-                        value={{ sideBarState: { [MeetingSideBars.MeetingDetails]: true } }}
+                <NotificationsProvider>
+                    <MeetContext.Provider
+                        // @ts-expect-error\
+                        value={{
+                            meetingLink: mockLink,
+                            roomName: mockMeetingName,
+                        }}
                     >
-                        {children}
-                    </UIStateContext.Provider>
-                </MeetContext.Provider>
+                        <UIStateContext.Provider
+                            // @ts-expect-error - mock data
+                            value={{ sideBarState: { [MeetingSideBars.MeetingDetails]: true } }}
+                        >
+                            {children}
+                        </UIStateContext.Provider>
+                    </MeetContext.Provider>
+                </NotificationsProvider>
             ),
         });
 
         expect(screen.getByText(mockMeetingName)).toBeInTheDocument();
         expect(screen.getByText(mockLink)).toBeInTheDocument();
+    });
+
+    it('should display the meeting details', () => {
+        render(<MeetingDetails />, {
+            wrapper: ({ children }) => (
+                <NotificationsProvider>
+                    <MeetContext.Provider
+                        // @ts-expect-error - mock data
+                        value={{ meetingLink: mockLink, roomName: mockMeetingName, passphrase: '123' }}
+                    >
+                        <UIStateContext.Provider
+                            // @ts-expect-error - mock data
+                            value={{ sideBarState: { [MeetingSideBars.MeetingDetails]: true } }}
+                        >
+                            {children}
+                        </UIStateContext.Provider>
+                    </MeetContext.Provider>
+                </NotificationsProvider>
+            ),
+        });
+
+        expect(screen.getByText('Info')).toBeInTheDocument();
+        expect(screen.getByText('Meeting details')).toBeInTheDocument();
+        expect(screen.getByText(mockMeetingName)).toBeInTheDocument();
+        expect(screen.getByText('Friday, August 29, 2025')).toBeInTheDocument();
+        expect(screen.getByText(mockLink)).toBeInTheDocument();
+        expect(screen.getByText('20:40 - 21:40 (CET)')).toBeInTheDocument();
+        expect(screen.getByText('123')).toBeInTheDocument();
     });
 });
