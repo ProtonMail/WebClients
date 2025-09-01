@@ -4,7 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { PLANS, SelectedPlan } from '@proton/payments';
+import { PLANS, SelectedPlan, TRIAL_DURATION_DAYS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 
@@ -48,13 +48,19 @@ const ReferralPlans = () => {
                     style={{ '--max-w-custom': '44rem' }}
                 >
                     <h1 className="font-arizona text-semibold text-8xl text-center mb-4">
-                        {c('Signup').t`Try ${BRAND_NAME} for 14 days free`}
+                        {
+                            // translator: full sentence "Try Proton Drive for 14 days free"
+                            c('Signup').t`Try ${BRAND_NAME} for ${TRIAL_DURATION_DAYS} days free`
+                        }
                     </h1>
 
                     <p className="mt-0 mb-10 text-center">
                         {referrerName && c('Signup').t`${referrerName} is inviting you to try ${BRAND_NAME}.`}{' '}
-                        {c('Signup')
-                            .t`Select a service and enjoy the premium version for 14 days free. No credit card required.`}
+                        {
+                            // translator: full sentence "Select a service and enjoy the premium version for 14 days free. No credit card required."
+                            c('Signup')
+                                .t`Select a service and enjoy the premium version for ${TRIAL_DURATION_DAYS} days free. No credit card required.`
+                        }
                     </p>
 
                     <PlanSelector
