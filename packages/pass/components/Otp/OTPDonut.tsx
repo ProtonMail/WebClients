@@ -1,5 +1,6 @@
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef } from 'react';
 
+import { matchDarkTheme } from '@proton/pass/components/Layout/Theme/utils';
 import type { IOtpRenderer } from '@proton/pass/components/Otp/types';
 import type { MaybeNull } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
@@ -48,6 +49,7 @@ export const OTPDonut = forwardRef<IOtpRenderer, Props>(
             },
             [colors]
         );
+
         useImperativeHandle<IOtpRenderer, IOtpRenderer>(ref, () => {
             const setupCanvas = (countdown: number): MaybeNull<CanvasRenderingContext2D> => {
                 const canvas = canvasRef.current;
@@ -104,7 +106,15 @@ export const OTPDonut = forwardRef<IOtpRenderer, Props>(
             };
         }, [getColors]);
 
-        useEffect(() => (colorsRef.current = undefined), [colors]);
+        useEffect(() => {
+            const media = matchDarkTheme();
+            const listener = () => (colorsRef.current = undefined);
+
+            listener();
+            media.addEventListener('change', listener);
+
+            return () => media.removeEventListener('change', listener);
+        }, [colors]);
 
         return (
             <div ref={wrapperRef} className={clsx('pass-otp--donut pointer-events-none anime-fade-in')}>
