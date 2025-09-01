@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { useEventManager } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';
-import { isAlwaysMessageLabels } from '@proton/mail/helpers/location';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -102,8 +102,7 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
     const [conversation, setConversation] = useState<ConversationStateOptional | undefined>(() => init(conversationID));
 
     const load = async (conversationID: string, messageID: string | undefined) => {
-        // Don't load conversation data in message-only folders like deleted, drafts, sent, etc.
-        if (currentLabelID && isAlwaysMessageLabels(currentLabelID)) {
+        if (currentLabelID === MAILBOX_LABEL_IDS.SOFT_DELETED) {
             return;
         }
 
