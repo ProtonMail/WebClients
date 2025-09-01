@@ -84,6 +84,7 @@ export const AutofillOTP: FC<Props> = ({ item }) => {
                             controller.close();
                         }
                     }}
+                    disabled={!otpToken}
                 >
                     <span className="text-ellipsis">{c('Action').t`Fill in`}</span>
                 </Button>
