@@ -25,10 +25,6 @@ const passPlus: ReferralSelectedPlan = {
     planIDs: { [PLANS.PASS]: 1 },
 };
 
-const vpnPlusNoTrial: ReferralSelectedPlan = {
-    planIDs: { [PLANS.VPN2024]: 1 },
-};
-
 const vpnPlusTrial: ReferralSelectedPlan = {
     planIDs: { [PLANS.VPN2024]: 1 },
     trial: true,
@@ -75,18 +71,7 @@ export const REFERRAL_DEAFULT_CYCLE = CYCLE.YEARLY;
 export const REFERRAL_DEFAULT_PLAN = PLANS.BUNDLE;
 
 export const availableReferralPlans = getAvailablePlansWithCycles(
-    [
-        unlimited,
-        mailPlus,
-        drivePlus,
-        passPlus,
-        vpnPlusTrial,
-        /**
-         * Ensure vpn plus no trial is loaded into the cache
-         * This gives us the renewal pricing
-         */
-        vpnPlusNoTrial,
-    ],
+    [unlimited, mailPlus, drivePlus, passPlus, vpnPlusTrial],
     [REFERRAL_DEAFULT_CYCLE]
 );
 
