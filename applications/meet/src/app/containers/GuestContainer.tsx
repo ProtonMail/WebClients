@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Router } from 'react-router-dom';
 
+import type { App } from '@proton-meet/proton-meet-core';
 import type { ProtonThunkArguments } from 'packages/redux-shared-store-types';
 
 import {
@@ -17,8 +18,9 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { FlagProvider } from '@proton/unleash';
 
-import { bootstrapGuestApp } from '../boostrap';
+import { bootstrapGuestApp } from '../bootstrap';
 import config from '../config';
+import { WasmContext } from '../contexts/WasmContext';
 import type { MeetStore } from '../store/store';
 
 type ExtraThunkArguments = Omit<ProtonThunkArguments, 'config' | 'api' | 'eventManager' | 'notificationsManager'> & {
@@ -36,10 +38,11 @@ export const GuestContainer = ({ children }: GuestContainerProps) => {
     const storeRef = useRef<MeetStore>();
 
     const extraThunkArgumentsRef = useRef<ExtraThunkArguments>();
+    const wasmAppRef = useRef<App | null>(null);
 
     const initialiseServicesAndStore = async () => {
         try {
-            const { store, authentication, unleashClient, unauthenticatedApi, history } =
+            const { store, authentication, unleashClient, unauthenticatedApi, history, wasmApp } =
                 await bootstrapGuestApp(config);
 
             storeRef.current = store;
@@ -50,6 +53,8 @@ export const GuestContainer = ({ children }: GuestContainerProps) => {
                 unauthenticatedApi,
                 history,
             };
+
+            wasmAppRef.current = wasmApp;
 
             setInitialised(true);
         } catch (error) {
@@ -79,9 +84,11 @@ export const GuestContainer = ({ children }: GuestContainerProps) => {
                 <Router history={history}>
                     <FlagProvider unleashClient={unleashClient} startClient={false}>
                         <UnauthenticatedApiProvider unauthenticatedApi={unauthenticatedApi}>
-                            <ErrorBoundary big component={<StandardErrorPage big />}>
-                                {children}
-                            </ErrorBoundary>
+                            <WasmContext.Provider value={{ wasmApp: wasmAppRef.current }}>
+                                <ErrorBoundary big component={<StandardErrorPage big />}>
+                                    {children}
+                                </ErrorBoundary>
+                            </WasmContext.Provider>
                         </UnauthenticatedApiProvider>
                     </FlagProvider>
                 </Router>

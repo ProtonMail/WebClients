@@ -3,17 +3,14 @@ import { useHistory } from 'react-router-dom';
 
 import { RoomContext } from '@livekit/components-react';
 import type { ExternalE2EEKeyProvider, Room } from '@proton-meet/livekit-client';
-import type { GroupKeyInfo } from '@proton-meet/proton-meet-core';
-import init, { App, ConnectionStateInfo } from '@proton-meet/proton-meet-core';
-import meetCorePkg from '@proton-meet/proton-meet-core/package.json';
+import { ConnectionStateInfo, type GroupKeyInfo } from '@proton-meet/proton-meet-core';
 import { c } from 'ttag';
 
-import { useAuthentication, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/components';
 import { useMeetErrorReporting } from '@proton/meet';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import { CustomPasswordState } from '@proton/meet/types/response-types';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
-import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
 import useFlag from '@proton/unleash/useFlag';
 
@@ -21,6 +18,7 @@ import { ConnectionLostModal } from '../components/ConnectionLostModal/Connectio
 import { PasswordPrompt } from '../components/PasswordPrompt/PasswordPrompt';
 import { DevicePermissionsContext } from '../contexts/DevicePermissionsContext';
 import { MLSContext } from '../contexts/MLSContext';
+import { useWasmApp } from '../contexts/WasmContext';
 import type { SRPHandshakeInfo } from '../hooks/srp/useMeetSrp';
 import { useMeetingSetup } from '../hooks/srp/useMeetingSetup';
 import { useDependencySetup } from '../hooks/useDependencySetup';
@@ -111,17 +109,11 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     const loadingStartTimeRef = useRef(0);
 
-    const wasmAppRef = useRef<App | null>(null);
-
     const keyProviderRef = useRef<ExternalE2EEKeyProvider | null>(null);
 
+    const wasmApp = useWasmApp();
+
     useDevicePermissionChangeListener(handleDevicePermissionChange);
-
-    const authentication = useAuthentication();
-
-    const persistedSession = getPersistedSession(authentication.localID);
-    const userID = persistedSession?.UserID ?? '';
-    const uid = authentication.UID;
 
     const mlsEnabled = useFlag('EnableE2EE');
     const mlsSetupDone = useRef(false);
@@ -131,7 +123,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     const getGroupKeyInfo = async () => {
         try {
-            const newGroupKeyInfo = (await wasmAppRef.current?.getGroupKey()) as GroupKeyInfo;
+            const newGroupKeyInfo = (await wasmApp?.getGroupKey()) as GroupKeyInfo;
             currentKeyRef.current = newGroupKeyInfo.key;
             return { key: newGroupKeyInfo.key, epoch: newGroupKeyInfo.epoch };
         } catch (err: any) {
@@ -151,38 +143,23 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     const handleMlsSetup = useCallback(
         async (meetingLinkName: string, accessToken: string) => {
-            const baseHostName = window.location.hostname.split('.').slice(1).join('.');
-
-            const mlsSubdomain = baseHostName.includes('proton.me') ? 'meet-mls' : 'mls';
-
-            const env = `${window.location.origin}/api`;
-            const appVersion = 'web-meet@0.0.1';
-            const userAgent = navigator.userAgent;
-            const dbPath = '';
-            const wsHost = `${mlsSubdomain}.${baseHostName}`;
-
             if (!mlsSetupDone.current) {
-                await init();
-
                 setupMounStorage();
-                console.log('proton-meet-core:', meetCorePkg.version);
-                console.log('appVersion:', appVersion);
-                wasmAppRef.current = await new App(env, appVersion, userAgent, dbPath, wsHost, userID ?? '', uid ?? '');
 
                 mlsSetupDone.current = true;
 
                 setupWasmDependencies({ getGroupKeyInfo, onNewGroupKeyInfo });
             }
 
-            if (!wasmAppRef.current) {
+            if (!wasmApp) {
                 return;
             }
 
-            await wasmAppRef.current.joinMeetingWithAccessToken(accessToken, meetingLinkName);
+            await wasmApp.joinMeetingWithAccessToken(accessToken, meetingLinkName);
 
-            await wasmAppRef.current.setMlsGroupUpdateHandler();
+            await wasmApp.setMlsGroupUpdateHandler();
 
-            const groupKeyData = await wasmAppRef.current.getGroupKey();
+            const groupKeyData = await wasmApp.getGroupKey();
 
             currentKeyRef.current = groupKeyData.key;
 
@@ -203,14 +180,14 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
         const checkConnection = async () => {
             let isWebsocketHasReconnected = false;
-            if (wasmAppRef.current?.getWsState && startHealthCheck.current) {
+            if (wasmApp?.getWsState && startHealthCheck.current) {
                 try {
-                    isWebsocketHasReconnected = await wasmAppRef.current.isWebsocketHasReconnected();
-                    const connectionStatus = await wasmAppRef.current.getWsState();
+                    isWebsocketHasReconnected = await wasmApp.isWebsocketHasReconnected();
+                    const connectionStatus = await wasmApp.getWsState();
 
                     if (connectionStatus !== ConnectionStateInfo.Reconnecting) {
                         try {
-                            const isMlsUpToDate = await wasmAppRef.current.isMlsUpToDate();
+                            const isMlsUpToDate = await wasmApp.isMlsUpToDate();
 
                             if (!isMlsUpToDate) {
                                 setConnectionLost(true);
@@ -244,9 +221,9 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     useEffect(() => {
         const intervalId = setInterval(async () => {
-            if (wasmAppRef.current && startHealthCheck.current) {
+            if (wasmApp && startHealthCheck.current) {
                 try {
-                    const groupKeyData = await wasmAppRef.current.getGroupKey();
+                    const groupKeyData = await wasmApp.getGroupKey();
                     const isKeyChanged = groupKeyData.key !== currentKeyRef.current;
                     if (isKeyChanged) {
                         console.info('MLSgroup updated, update to align the latest status.');
@@ -493,7 +470,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         instantMeetingRef.current = false;
         void roomRef.current?.disconnect();
         resetParticipantNameMap();
-        void wasmAppRef.current?.leaveMeeting();
+        void wasmApp?.leaveMeeting();
         mlsSetupDone.current = false; // need to set mls again after leave meeting
         startHealthCheck.current = false;
 
@@ -502,25 +479,28 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
     }, [resetParticipantNameMap]);
 
     const handleEndMeeting = useCallback(async () => {
-        await wasmAppRef.current
-            ?.endMeeting()
-            .then(() => {
-                instantMeetingRef.current = false;
-                resetParticipantNameMap();
-                mlsSetupDone.current = false; // need to set mls again after leave meeting
-                setInitialisedParticipantNameMap(false);
-                setJoinedRoom(false);
-            })
-            .catch((err) => {
-                reportMeetError('Unable to end meeting for all', err);
-                throw new Error('Unable to end meeting for all');
-            });
-    }, [resetParticipantNameMap]);
+        if (!wasmApp) {
+            return;
+        }
+
+        try {
+            await wasmApp.endMeeting();
+        } catch (err) {
+            reportMeetError('Unable to end meeting for all', err);
+        }
+
+        // Always perform cleanup regardless of endMeeting success/failure
+        instantMeetingRef.current = false;
+        resetParticipantNameMap();
+        mlsSetupDone.current = false; // need to set mls again after leave meeting
+        setInitialisedParticipantNameMap(false);
+        setJoinedRoom(false);
+    }, [resetParticipantNameMap, wasmApp, reportMeetError]);
 
     useEffect(() => {
         const handleUnload = () => {
             try {
-                void wasmAppRef.current?.leaveMeeting();
+                void wasmApp?.leaveMeeting();
             } catch (error) {
                 reportMeetError('Error leaving meeting', error);
             }
@@ -560,7 +540,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         <DevicePermissionsContext.Provider
             value={{ devicePermissions, setDevicePermissions: handleDevicePermissionChange }}
         >
-            <MLSContext.Provider value={{ mls: wasmAppRef.current }}>
+            <MLSContext.Provider value={{ mls: wasmApp }}>
                 <div className="h-full w-full">
                     {decryptionReadinessStatus === MeetingDecryptionReadinessStatus.INITIALIZED && (
                         <PasswordPrompt

@@ -1,3 +1,4 @@
+import init, { App } from '@proton-meet/proton-meet-core';
 import { createBrowserHistory } from 'history';
 import type { ProtonThunkArguments } from 'packages/redux-shared-store-types';
 
@@ -14,7 +15,10 @@ import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { handleLogoutFromURL } from '@proton/shared/lib/authentication/handleLogoutFromURL';
-import { registerSessionRemovalListener } from '@proton/shared/lib/authentication/persistedSessionStorage';
+import {
+    getPersistedSession,
+    registerSessionRemovalListener,
+} from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { type APP_NAMES } from '@proton/shared/lib/constants';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { type ProtonConfig } from '@proton/shared/lib/interfaces';
@@ -25,6 +29,26 @@ import { clearSettings } from '@proton/wallet';
 
 import locales from './locales';
 import { type MeetDispatch, type MeetStore, setupStore } from './store';
+
+const initializeWasmApp = async (authentication: ProtonThunkArguments['authentication']): Promise<App> => {
+    await init();
+
+    const persistedSession = getPersistedSession(authentication.localID);
+    const userID = persistedSession?.UserID ?? '';
+    const uid = authentication.UID ?? '';
+
+    const baseHostName = window.location.hostname.split('.').slice(1).join('.');
+    const mlsSubdomain = baseHostName.includes('proton.me') ? 'meet-mls' : 'mls';
+    const env = `${window.location.origin}/api`;
+    const appVersion = 'web-meet@0.0.1';
+    const userAgent = navigator.userAgent;
+    const dbPath = '';
+    const wsHost = `${mlsSubdomain}.${baseHostName}`;
+
+    const appResult = await new App(env, appVersion, userAgent, dbPath, wsHost, userID ?? '', uid ?? '');
+
+    return appResult;
+};
 
 const getApis = (config: ProtonConfig) => {
     const api = createApi({ config });
@@ -129,8 +153,9 @@ const completeAppBootstrap = async ({
         dispatch(initEvent({ User: sessionResult.session.User }));
     }
 
-    const [userData] = await Promise.all([
+    const [userData, wasmApp] = await Promise.all([
         loadUserData(dispatch, config.APP_NAME),
+        initializeWasmApp(authentication),
         bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient }),
         bootstrap.unleashReady({ unleashClient }).catch(noop),
     ]);
@@ -142,7 +167,7 @@ const completeAppBootstrap = async ({
 
     dispatch(bootstrapEvent({ type: 'complete' }));
 
-    return userData;
+    return { userData, wasmApp };
 };
 
 interface BootstrapParameters {
@@ -171,7 +196,7 @@ export const executeBootstrapSteps = async ({
         config,
     });
 
-    const userData = await completeAppBootstrap({
+    const { userData, wasmApp } = await completeAppBootstrap({
         ...restServices,
         authentication,
         notificationsManager,
@@ -190,6 +215,7 @@ export const executeBootstrapSteps = async ({
         ...userData,
         store,
         authentication,
+        wasmApp,
     };
 };
 
@@ -214,7 +240,10 @@ export const bootstrapGuestApp = async (config: ProtonConfig) => {
     const unauthenticatedApi = createUnauthenticatedApi(api);
     const unleashClient = bootstrap.createUnleash({ api: unauthenticatedApi.apiCallback });
 
-    await bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient });
+    const [wasmApp] = await Promise.all([
+        initializeWasmApp(authentication),
+        bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient }),
+    ]);
 
     const history = createBrowserHistory({ basename: '/guest' });
 
@@ -237,5 +266,6 @@ export const bootstrapGuestApp = async (config: ProtonConfig) => {
         unauthenticatedApi,
         history,
         unleashClient,
+        wasmApp,
     };
 };
