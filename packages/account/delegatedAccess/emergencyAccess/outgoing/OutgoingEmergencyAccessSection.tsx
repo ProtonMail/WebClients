@@ -18,7 +18,8 @@ import { SECOND } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ContactCell } from '../ContactCell';
-import { getFormattedAccessibleAtDate, getFormattedRemainingDays, getFormattedTriggerDelay } from '../date';
+import { DateCountdown } from '../DateCountdown';
+import { getFormattedAccessibleAtDate, getFormattedTriggerDelay } from '../date';
 import { type OutgoingController, useOutgoingController } from './OutgoingController';
 import OutgoingEmergencyAccessBanners from './OutgoingEmergencyAccessBanners';
 import { getMetaOutgoingDelegatedAccess } from './helper';
@@ -37,7 +38,7 @@ const OutgoingDelegatedAccessCell = ({
     value: {
         parsedOutgoingDelegatedAccess: { accessibleAtDate, isDisabled },
     },
-    meta: { hasRequestedAccess, accessibleAtTimeDiff, canRejectAccess },
+    meta: { hasRequestedAccess, canRejectAccess },
 }: Pick<OutgoingItemProps, 'value' | 'meta'>) => {
     if (isDisabled) {
         return (
@@ -62,10 +63,10 @@ const OutgoingDelegatedAccessCell = ({
                         className="text-semibold mr-1 text-center"
                     >{c('emergency_access').t`Requesting access`}</Pill>
                 </Tooltip>
-                {tooltip && (
+                {tooltip && accessibleAtDate !== null && (
                     <span title={tooltip} className="inline-flex items-center">
                         <IcHourglass className="color-weak shrink-0 mr-1" />
-                        {getFormattedRemainingDays(accessibleAtTimeDiff)}
+                        <DateCountdown date={accessibleAtDate} />
                     </span>
                 )}
             </div>

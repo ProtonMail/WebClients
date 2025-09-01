@@ -26,10 +26,6 @@ export const getDaysLabel = (n: number) => {
     return c('emergency_access').ngettext(msgid`${n} day`, `${n} days`, n);
 };
 
-export const getDaysLeftLabel = (n: number) => {
-    return c('emergency_access').ngettext(msgid`${n} day left`, `${n} days left`, n);
-};
-
 export const getDaysFromMilliseconds = (value: number) => {
     return Math.round(value / DAY);
 };
