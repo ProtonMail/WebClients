@@ -93,7 +93,7 @@ export const DashboardContainer = () => {
             )}
             <PageHeader isScheduleInAdvanceEnabled={false} guestMode={false} />
             <div className="flex gap-4 p-4 flex-nowrap w-full shrink-0">
-                <div className="flex flex-column md:flex-row flex-nowrap gap-4">
+                <div className="flex flex-column md:flex-row flex-nowrap gap-1 md:gap-4 w-full">
                     <CardButton
                         className="w-full md:w-1/3"
                         title={c('meet_2025 Title').t`Schedule meeting`}
