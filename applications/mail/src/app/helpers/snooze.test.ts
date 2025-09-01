@@ -33,7 +33,7 @@ describe('snooze helpers - getSnoozeUnixTime', () => {
     });
 
     it('Should throw an error when no snooze time for custom duration', () => {
-        expect(() => getSnoozeUnixTime('custom')).toThrowError('Snooze time is required for custom snooze');
+        expect(() => getSnoozeUnixTime('custom')).toThrow('Snooze time is required for custom snooze');
     });
 
     it('Should return unix time of custom time', () => {

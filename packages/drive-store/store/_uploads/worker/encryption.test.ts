@@ -136,8 +136,8 @@ describe('block generator', () => {
         const blocks = asyncGeneratorToArray(generator);
 
         await expect(blocks).rejects.toThrow();
-        expect(encryptSpy).toBeCalled();
-        expect(notifySentry).toBeCalled();
+        expect(encryptSpy).toHaveBeenCalled();
+        expect(notifySentry).toHaveBeenCalled();
 
         encryptSpy.mockRestore();
     });
@@ -152,7 +152,7 @@ describe('block generator', () => {
             // Remove the mock after the first call
             encryptSpy.mockRestore();
 
-            // Since we restore the mock, we can't use .toBeCalled()
+            // Since we restore the mock, we can't use .toHaveBeenCalled()
             mockCalled = true;
 
             // Return some garbage data which will fail validation
@@ -191,7 +191,7 @@ describe('block generator', () => {
 
         // Make sure we logged the error
         expect(mockCalled).toBe(true);
-        expect(notifySentry).toBeCalled();
+        expect(notifySentry).toHaveBeenCalled();
     });
 
     it('should call the hasher correctly', async () => {
@@ -280,7 +280,7 @@ describe('block generator', () => {
             const blocks = asyncGeneratorToArray(generator);
 
             await expect(blocks).rejects.toThrow();
-            expect(notifySentry).toBeCalled();
+            expect(notifySentry).toHaveBeenCalled();
         });
     });
 });
