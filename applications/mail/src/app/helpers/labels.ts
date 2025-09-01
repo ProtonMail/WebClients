@@ -133,6 +133,10 @@ export const getCurrentFolders = (
             ) {
                 return false;
             }
+            // We don't want to show "Trash" folder if it is soft-deleted
+            if ([MAILBOX_LABEL_IDS.SOFT_DELETED, MAILBOX_LABEL_IDS.TRASH].includes(labelID as MAILBOX_LABEL_IDS)) {
+                return MAILBOX_LABEL_IDS.SOFT_DELETED === labelID;
+            }
 
             // We don't wait to show both the starred and empty start folder
             if (labelID === MAILBOX_LABEL_IDS.STARRED) {
