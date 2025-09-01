@@ -58,21 +58,21 @@ describe('useDownloadQueue', () => {
     it('adding same file transfer fails', async () => {
         await act(async () => {
             const promise = hook.current.add([makeDownloadLink('file.txt')]);
-            await expect(promise).rejects.toThrowError('File "file.txt" is already downloading');
+            await expect(promise).rejects.toThrow('File "file.txt" is already downloading');
         });
     });
 
     it('adding same folder transfer fails', async () => {
         await act(async () => {
             const promise = hook.current.add([makeDownloadLink('folder', false)]);
-            await expect(promise).rejects.toThrowError('Folder "folder" is already downloading');
+            await expect(promise).rejects.toThrow('Folder "folder" is already downloading');
         });
     });
 
     it('adding same files transfer fails', async () => {
         await act(async () => {
             const promise = hook.current.add([makeDownloadLink('file.txt'), makeDownloadLink('folder', false)]);
-            await expect(promise).rejects.toThrowError('File selection is already downloading');
+            await expect(promise).rejects.toThrow('File selection is already downloading');
         });
     });
 

@@ -169,7 +169,7 @@ describe('useLinksListing', () => {
             await hook.current.fetchChildrenNextPage(abortSignal, 'shareId', 'parentLinkId');
         });
         // Check fetch calls - first call fetched all, no need to call the second.
-        expect(mockRequest).toBeCalledTimes(1);
+        expect(mockRequest).toHaveBeenCalledTimes(1);
         expect(hook.current.getCachedChildren(abortSignal, 'shareId', 'parentLinkId')).toMatchObject({
             links,
             isDecrypting: false,
@@ -211,7 +211,7 @@ describe('useLinksListing', () => {
         await act(async () => {
             await hook.current.fetchChildrenNextPage(abortSignal, 'shareId', 'parentLinkId');
         });
-        expect(mockRequest).toBeCalledTimes(1);
+        expect(mockRequest).toHaveBeenCalledTimes(1);
         expect(hook.current.getCachedChildrenCount('shareId', 'parentLinkId')).toBe(PAGE_LENGTH);
     });
 });
