@@ -121,7 +121,7 @@ describe('useSharedLinksListing LEGACY', () => {
 
         expect(queryVolumeSharedLinksMock).toHaveBeenCalledWith(volumeId, { Page: page + 1, PageSize: PAGE_SIZE });
         // verify that the script terminates successfully
-        expect(queryVolumeSharedLinksMock).toBeCalledTimes(2);
+        expect(queryVolumeSharedLinksMock).toHaveBeenCalledTimes(2);
     });
 });
 
@@ -201,6 +201,6 @@ describe('useSharedLinksListing', () => {
 
         expect(querySharedByMeLinksMock).toHaveBeenCalledWith(volumeId, { AnchorID: 'linkID' });
         // verify that the script terminates successfully
-        expect(querySharedByMeLinksMock).toBeCalledTimes(2);
+        expect(querySharedByMeLinksMock).toHaveBeenCalledTimes(2);
     });
 });

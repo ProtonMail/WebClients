@@ -59,7 +59,7 @@ describe('SavedPaymentProcessor', () => {
     });
 
     it('should throw error when verifyPaymentToken is called before fetchPaymentToken', async () => {
-        await expect(savedPaymentProcessor.verifyPaymentToken()).rejects.toThrowError(
+        await expect(savedPaymentProcessor.verifyPaymentToken()).rejects.toThrow(
             'Payment token was not fetched. Please call fetchPaymentToken() first.'
         );
     });
@@ -142,7 +142,7 @@ describe('SavedPaymentProcessor', () => {
         mockVerifyPayment.mockRejectedValue(new Error('error'));
 
         await savedPaymentProcessor.fetchPaymentToken();
-        await expect(savedPaymentProcessor.verifyPaymentToken()).rejects.toThrowError('error');
+        await expect(savedPaymentProcessor.verifyPaymentToken()).rejects.toThrow('error');
     });
 
     it('should reset payment token', async () => {

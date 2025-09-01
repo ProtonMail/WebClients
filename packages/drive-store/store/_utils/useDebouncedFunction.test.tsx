@@ -59,7 +59,7 @@ describe('useDebouncedFunction', () => {
         ac1.abort();
         // Wait first for the call not aborted so the request finishes.
         await expect(call2).resolves.toMatchObject({ test: 'test' });
-        await expect(call1).rejects.toThrowError('Aborted');
+        await expect(call1).rejects.toThrow('Aborted');
     });
 
     it('should abort when all signals are aborted', async () => {
@@ -69,8 +69,8 @@ describe('useDebouncedFunction', () => {
         const call2 = debouncedFunction(mockCallback, { test: 'test' }, ac2.signal);
         ac1.abort();
         ac2.abort();
-        await expect(call1).rejects.toThrowError('Aborted');
-        await expect(call2).rejects.toThrowError('Aborted');
+        await expect(call1).rejects.toThrow('Aborted');
+        await expect(call2).rejects.toThrow('Aborted');
     });
 
     it('should return original error', async () => {
@@ -81,8 +81,8 @@ describe('useDebouncedFunction', () => {
         const call1 = debouncedFunction(mock, { test: 'test' }, ac1.signal);
         const ac2 = new AbortController();
         const call2 = debouncedFunction(mock, { test: 'test' }, ac2.signal);
-        await expect(call1).rejects.toThrowError('failed');
-        await expect(call2).rejects.toThrowError('failed');
+        await expect(call1).rejects.toThrow('failed');
+        await expect(call2).rejects.toThrow('failed');
     });
 
     it('should return original error when aborted', async () => {
@@ -92,6 +92,6 @@ describe('useDebouncedFunction', () => {
         const ac1 = new AbortController();
         const call1 = debouncedFunction(mock, { test: 'test' }, ac1.signal);
         ac1.abort();
-        await expect(call1).rejects.toThrowError('failed');
+        await expect(call1).rejects.toThrow('failed');
     });
 });

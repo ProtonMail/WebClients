@@ -98,6 +98,6 @@ describe('useTrashedLinksListing', () => {
 
         expect(queryVolumeTrashMock).toHaveBeenCalledWith(volumeId, { Page: page + 1, PageSize: PAGE_SIZE });
         // verify that the script terminates successfully
-        expect(queryVolumeTrashMock).toBeCalledTimes(2);
+        expect(queryVolumeTrashMock).toHaveBeenCalledTimes(2);
     });
 });

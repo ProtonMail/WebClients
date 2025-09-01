@@ -45,8 +45,8 @@ describe('ConcurrentIterator', () => {
         await wait(500); // 500ms should be enough to generate first batch.
         c.cancel();
 
-        expect(mockDownloadLinkFile).toBeCalledTimes(1);
-        expect(mockStart).toBeCalledTimes(1);
-        expect(mockCancel).toBeCalledTimes(1);
+        expect(mockDownloadLinkFile).toHaveBeenCalledTimes(1);
+        expect(mockStart).toHaveBeenCalledTimes(1);
+        expect(mockCancel).toHaveBeenCalledTimes(1);
     });
 });

@@ -291,7 +291,7 @@ describe('SelectTwo component', () => {
         expect(output.getByText('three')).not.toHaveClass('dropdown-item--is-selected');
 
         fireEvent.click(output.getByText('three'));
-        expect(onChangeSpy).toBeCalledWith({ selectedIndex: 2, value: ['one', 'two', 'three'] });
+        expect(onChangeSpy).toHaveBeenCalledWith({ selectedIndex: 2, value: ['one', 'two', 'three'] });
     });
 
     it('supports multiple selection mode with complex values', () => {
@@ -317,6 +317,6 @@ describe('SelectTwo component', () => {
         expect(output.getByText('three', { selector: 'button' })).not.toHaveClass('dropdown-item--is-selected');
 
         fireEvent.click(output.getByText('three'));
-        expect(onChangeSpy).toBeCalledWith({ selectedIndex: 2, value: [options[0], options[2]] });
+        expect(onChangeSpy).toHaveBeenCalledWith({ selectedIndex: 2, value: [options[0], options[2]] });
     });
 });

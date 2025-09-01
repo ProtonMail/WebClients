@@ -30,7 +30,7 @@ describe('retryOnError', () => {
             maxRetriesNumber: 1000,
         })();
 
-        expect(runFunction).toBeCalledTimes(1);
+        expect(runFunction).toHaveBeenCalledTimes(1);
     });
 
     it('retries run function n times', async () => {
@@ -41,7 +41,7 @@ describe('retryOnError', () => {
         })();
 
         await expect(promise).rejects.toThrow();
-        expect(throwingFunction).toBeCalledTimes(2);
+        expect(throwingFunction).toHaveBeenCalledTimes(2);
         expect(retryOnError).toThrow();
     });
 
@@ -54,7 +54,7 @@ describe('retryOnError', () => {
             maxRetriesNumber: 1,
         })();
         await expect(promise).rejects.toThrow();
-        expect(throwingFunction).toBeCalledTimes(2);
+        expect(throwingFunction).toHaveBeenCalledTimes(2);
 
         const promise2 = retryOnError<unknown>({
             fn: throwingFunction2,
@@ -63,7 +63,7 @@ describe('retryOnError', () => {
             },
             maxRetriesNumber: 1,
         })();
-        expect(throwingFunction2).toBeCalledTimes(1);
+        expect(throwingFunction2).toHaveBeenCalledTimes(1);
         await expect(promise2).rejects.toThrow();
     });
 
@@ -77,7 +77,7 @@ describe('retryOnError', () => {
             beforeRetryCallback: preparationFunction,
             maxRetriesNumber: 1,
         })();
-        expect(preparationFunction).toBeCalledTimes(1);
+        expect(preparationFunction).toHaveBeenCalledTimes(1);
         await expect(promise).rejects.toThrow();
     });
 

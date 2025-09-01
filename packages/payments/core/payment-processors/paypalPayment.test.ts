@@ -108,7 +108,7 @@ describe('PaypalPaymentProcessor', () => {
 
         const error = new Error('error');
         reject(error);
-        await expect(promise).rejects.toThrowError(error);
+        await expect(promise).rejects.toThrow(error);
     });
 
     it('should call mockVerifyPayment', async () => {
@@ -157,7 +157,7 @@ describe('PaypalPaymentProcessor', () => {
     });
 
     it('should throw error when verifyPaymentToken is called without token', async () => {
-        await expect(paymentProcessor.verifyPaymentToken()).rejects.toThrowError('Payment token is not fetched');
+        await expect(paymentProcessor.verifyPaymentToken()).rejects.toThrow('Payment token is not fetched');
     });
 
     it('should save the error and re-trhrow it', async () => {
@@ -171,7 +171,7 @@ describe('PaypalPaymentProcessor', () => {
         mockVerifyPayment.mockRejectedValue(new Error('some error'));
 
         await paymentProcessor.fetchPaymentToken();
-        await expect(paymentProcessor.verifyPaymentToken()).rejects.toThrowError('some error');
+        await expect(paymentProcessor.verifyPaymentToken()).rejects.toThrow('some error');
         expect(paymentProcessor.verificationError).toEqual(new Error('Paypal payment verification failed'));
     });
 
@@ -219,7 +219,7 @@ describe('PaypalPaymentProcessor', () => {
             Currency: 'USD',
         });
 
-        await expect(() => paymentProcessor.fetchPaymentToken()).rejects.toThrowError(PaypalWrongAmountError);
+        await expect(() => paymentProcessor.fetchPaymentToken()).rejects.toThrow(PaypalWrongAmountError);
 
         resetPaymentProcessor();
         paymentProcessor.setAmountAndCurrency({
@@ -227,7 +227,7 @@ describe('PaypalPaymentProcessor', () => {
             Currency: 'USD',
         });
 
-        await expect(() => paymentProcessor.fetchPaymentToken()).rejects.toThrowError(PaypalWrongAmountError);
+        await expect(() => paymentProcessor.fetchPaymentToken()).rejects.toThrow(PaypalWrongAmountError);
 
         resetPaymentProcessor();
         paymentProcessor.setAmountAndCurrency({
@@ -245,14 +245,14 @@ describe('PaypalPaymentProcessor', () => {
             Currency: 'USD',
         });
 
-        await expect(() => paymentProcessor.fetchPaymentToken()).rejects.toThrowError(PaypalWrongAmountError);
+        await expect(() => paymentProcessor.fetchPaymentToken()).rejects.toThrow(PaypalWrongAmountError);
 
         paymentProcessor.setAmountAndCurrency({
             Amount: MAX_CREDIT_AMOUNT + 1,
             Currency: 'USD',
         });
 
-        await expect(() => paymentProcessor.fetchPaymentToken()).rejects.toThrowError(PaypalWrongAmountError);
+        await expect(() => paymentProcessor.fetchPaymentToken()).rejects.toThrow(PaypalWrongAmountError);
 
         paymentProcessor.setAmountAndCurrency({
             Amount: MIN_PAYPAL_AMOUNT_INHOUSE,
