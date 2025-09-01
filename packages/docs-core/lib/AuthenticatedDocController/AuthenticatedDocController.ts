@@ -3,18 +3,17 @@ import type { SquashDocument } from '../UseCase/SquashDocument'
 import type { DuplicateDocument } from '../UseCase/DuplicateDocument'
 import type { CreateNewDocument } from '../UseCase/CreateNewDocument'
 import type { DriveCompat } from '@proton/drive-store'
-import type { InternalEventBusInterface, YjsState } from '@proton/docs-shared'
+import type { InternalEventBusInterface, YjsState, Result } from '@proton/docs-shared'
 import type { AuthenticatedDocControllerInterface } from './AuthenticatedDocControllerInterface'
 import type { SeedInitialCommit } from '../UseCase/SeedInitialCommit'
 import type { VersionHistoryUpdate } from '../VersionHistory'
-import { NativeVersionHistory } from '../VersionHistory'
+import { getVersionHistoryUpdatesFromCommit, NativeVersionHistory } from '../VersionHistory'
 import { DocControllerEvent } from './AuthenticatedDocControllerEvent'
 
 import type { DocsClientSquashVerificationObjectionMadePayload } from '../Application/ApplicationEvent'
 import { ApplicationEvent, PostApplicationError } from '../Application/ApplicationEvent'
 import type { SquashVerificationObjectionCallback } from '../Types/SquashVerificationObjection'
 import { TranslatedResult } from '@proton/docs-shared'
-import type { Result } from '@proton/docs-shared'
 import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName'
 import { MAX_DOC_SIZE } from '../Models/Constants'
 import type { GetNode } from '../UseCase/GetNode'
@@ -99,7 +98,8 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
   }
 
   public getVersionHistory(): NativeVersionHistory | undefined {
-    const updates = [...(this.documentState.getProperty('baseCommit')?.messages ?? []), ...this.receivedOrSentDUs]
+    const baseCommit = this.documentState.getProperty('baseCommit')
+    const updates = [...(baseCommit ? getVersionHistoryUpdatesFromCommit(baseCommit) : []), ...this.receivedOrSentDUs]
 
     return updates.length > 0 ? new NativeVersionHistory(updates) : undefined
   }
