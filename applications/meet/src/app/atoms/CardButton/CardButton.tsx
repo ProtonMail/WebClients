@@ -27,7 +27,10 @@ export const CardButton = ({
 }: CardButtonProps) => {
     return (
         <Button
-            className={clsx('card-button border flex flex-nowrap items-center gap-6 p-4 lg:p-8', className)}
+            className={clsx(
+                'card-button border flex flex-nowrap items-center gap-4 md:gap-2 lg:gap-4 xl:gap-6 p-4 md:p-2 lg:p-4 xl:p-6 w-full md:w-auto',
+                className
+            )}
             onClick={onClick}
             disabled={disabled}
         >
@@ -37,11 +40,11 @@ export const CardButton = ({
             >
                 {icon}
             </div>
-            <div className="flex flex-column gap-2 text-left">
-                <div className="text-lg color-norm text-semibold">{title}</div>
-                <div className="color-weak">{description}</div>
+            <div className="flex flex-column gap-2 text-left flex-1">
+                <div className="md:text-sm lg:text-rg xl:text-lg color-norm text-semibold text-ellipsis">{title}</div>
+                <div className="color-weak hidden md:block md:text-xs lg:text-rg">{description}</div>
             </div>
-            <div className="ml-4">
+            <div className="ml-4 shrink-0">
                 <IcChevronRight size={5} />
             </div>
         </Button>
