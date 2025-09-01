@@ -8,7 +8,6 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import { getShortPlan } from '@proton/components/containers/payments/features/plan';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { type PaymentsCheckout } from '@proton/payments';
 import {
     CYCLE,
     type Currency,
@@ -16,11 +15,13 @@ import {
     FREE_PLAN,
     type FreePlanDefault,
     PLANS,
+    type PaymentsCheckout,
     type Plan,
     type PlanIDs,
     type PlansMap,
     type Subscription,
     type SubscriptionPlan,
+    TRIAL_DURATION_DAYS,
     getCheckResultFromSubscription,
     getCheckout,
     getHasPlusPlan,
@@ -369,7 +370,10 @@ export const PlanCardSelector = ({
                 ) : (
                     <>
                         <span className="color-success text-left text-sm text-bold mb-3">
-                            {c('b2b_trials_2025_Info').t`Try it free for 14 days`}
+                            {
+                                // translator: full sentence "Try it free for 14 days"
+                                c('b2b_trials_2025_Info').t`Try it free for ${TRIAL_DURATION_DAYS} days`
+                            }
                         </span>
                         {planCard.subsection}
                     </>

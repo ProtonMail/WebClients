@@ -8,7 +8,7 @@ import { SkeletonLoader } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { referralReward } from '@proton/components/containers/referral/constants';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES, TRIAL_DURATION_DAYS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -128,7 +128,10 @@ const PricingFooter = () => {
         <>
             <div className="flex justify-space-between gap-2 text-lg">
                 <span className="text-semibold">{c('Signup').t`Total`}</span>
-                <span className="text-semibold">{c('Signup').t`Free for 14 days`}</span>
+                <span className="text-semibold">{
+                    // translator: full sentence "Free for 14 days"
+                    c('Signup').t`Free for ${TRIAL_DURATION_DAYS} days`
+                }</span>
             </div>
             <div>
                 {hasFullCheckoutDetails ? (
