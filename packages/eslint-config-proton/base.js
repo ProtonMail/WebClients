@@ -230,7 +230,32 @@ export default tseslint.config(
 
             'import/no-named-as-default': 'warn',
             'import/no-named-as-default-member': 'warn',
-            'import/no-duplicates': 'warn',
+
+            /**
+             * NOTE: We use `no-duplicate-imports` with `allowSeparateTypeImports: true`
+             * instead of `import/no-duplicates` because the import plugin's fixer is
+             * broken in certain cases.
+             *
+             * With `prefer-inline: true`, it transforms valid code like:
+             *   import type { Compiler, WebpackPluginInstance } from 'webpack';
+             *   import webpack from 'webpack';
+             *
+             * Into invalid syntax:
+             *   import webpack, type { Compiler, WebpackPluginInstance } from 'webpack';
+             *
+             * With `prefer-inline: false`, it also breaks by transforming:
+             *   import type { Foo, Bar } from 'module';
+             *   import { Baz, Qux } from 'module';
+             *
+             * Into invalid syntax:
+             *   import type { Foo, Bar, type Baz, type Qux } from 'module';
+             *
+             * WORKAROUND: Using `no-duplicate-imports` allows separate type and value
+             * imports to coexist without broken auto-fixing, but we lose auto-fixing
+             * capabilities. Waiting for https://github.com/import-js/eslint-plugin-import/pull/3194
+             * to be merged into `import/no-duplicates`, which should fix this.
+             */
+            'no-duplicate-imports': ['warn', { allowSeparateTypeImports: true }],
 
             'no-restricted-imports': [
                 'error',
