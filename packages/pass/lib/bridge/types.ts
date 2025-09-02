@@ -6,6 +6,8 @@ import type {
     MemberMonitorReportList,
     OrganizationGetResponse,
     OrganizationUpdatePasswordPolicyRequest,
+    OrganizationUrlPauseEntryDto,
+    ResponseCodeSuccess,
     Share,
     ShareType,
 } from '@proton/pass/types';
@@ -14,7 +16,7 @@ import type { MaxAgeMemoizedFn } from '@proton/pass/utils/fp/memo';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import type { Address, User } from '@proton/shared/lib/interfaces';
 
-import type { OrganizationReportDTO } from '../organization/types';
+import type { OrganizationReportDTO, PauseListEntryAddDTO, PauseListEntryUpdateDTO } from '../organization/types';
 
 export type PassBridgeInitOptions = {
     addresses: Address[];
@@ -74,6 +76,12 @@ export interface PassBridge {
         };
         reports: {
             get: (params: OrganizationReportDTO) => Promise<MemberMonitorReportList>;
+        };
+        pauseList: {
+            get: () => Promise<OrganizationUrlPauseEntryDto[]>;
+            add: (data: PauseListEntryAddDTO) => Promise<OrganizationUrlPauseEntryDto>;
+            update: (data: PauseListEntryUpdateDTO) => Promise<{ Code: ResponseCodeSuccess }>;
+            delete: (id: string) => Promise<{ Code: ResponseCodeSuccess }>;
         };
     };
 }
