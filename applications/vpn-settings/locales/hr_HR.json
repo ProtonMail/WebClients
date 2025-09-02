@@ -467,6 +467,9 @@
       "Refer a friend": [
         "Uputi prijatelja"
       ],
+      "Refresh": [
+        "Osvježi"
+      ],
       "Refresh status": [
         "Osvježi status"
       ],
@@ -795,6 +798,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Generiraj nedostajuće ključeve za adresu \"${ emailAddress }\""
       ],
+      "Reconnect": [
+        "Ponovno povezivanje"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Ponovno poveži adresu \"${ emailAddress }\""
+      ],
       "Saving": [
         "Spremanje"
       ],
@@ -814,6 +823,9 @@
       ],
       "Disabled": [
         "Onemogućeno"
+      ],
+      "Disconnected": [
+        "Odspojeno"
       ],
       "Inactive": [
         "Neaktivano"
@@ -2955,6 +2967,9 @@
       "customer support": [
         "korisnička podrška"
       ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Obiteljski planovi pretplate trenutačno ne podržavaju vanjske korisničke račune. Izradite ${ BRAND_NAME } adresu prije pridraživanja. ${ link }"
+      ],
       "Invitation from ${ invitation.OrganizationName }": [
         "Pozivnica od ${ invitation.OrganizationName }"
       ],
@@ -3714,6 +3729,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Pristup računu je ograničen zbog neplaćenih faktura. Molimo kontaktirajte vašeg administratora."
       ],
+      "Account monitor": [
+        "Nadzor korisničkog računa"
+      ],
       "Account successfully updated": [
         "Račun je uspješno ažuriran"
       ],
@@ -3746,6 +3764,9 @@
       ],
       "Allocated": [
         "Dodijeljeno"
+      ],
+      "Allow logging of location and connection details": [
+        "Omogući bilježenje pojedinosti lokacije i veze"
       ],
       "Already used": [
         "Već iskorišteno"
@@ -3861,6 +3882,9 @@
       "Did you know?": [
         "Jeste li znali?"
       ],
+      "Disabled on ${ boldValue }": [
+        "Onemogućeno ${ boldValue }"
+      ],
       "Discover ProtectBuy logo": [
         "Otkrij ProtectBuy logotip"
       ],
@@ -3907,6 +3931,9 @@
       ],
       "Emailing preference saved": [
         "Spremljena je postavka e-pošte"
+      ],
+      "Enabled on ${ boldValue }": [
+        "Omogućeno ${ boldValue }"
       ],
       "End date": [
         "Datum završetka"
@@ -3961,6 +3988,9 @@
       ],
       "Free forever": [
         "Besplatno zauvijek"
+      ],
+      "Gateway monitor": [
+        "Nadzor pristupnika"
       ],
       "Gateways": [
         "Pristupnici"
@@ -4033,6 +4063,9 @@
       ],
       "inactive": [
         "neaktivano"
+      ],
+      "Include device, location, and IP details": [
+        "Uključi detalje o uređaju, lokaciji i IP-u"
       ],
       "Inherited from parent folder": [
         "Nasljedno iz roditeljske mape"
@@ -4184,6 +4217,9 @@
       "Open source": [
         "Otvoreni kôd"
       ],
+      "Organization monitor": [
+        "Nadzor organizacije"
+      ],
       "Organization size": [
         "Veličina organizacije"
       ],
@@ -4219,9 +4255,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Pokušajte ponovo, koristite drugi način plaćanja ili kontaktirajte PayPal za pomoć."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Potvrdite naplatu u novootvorenoj kartici vašeg preglednika."
       ],
       "Plus or Visionary subscription required": [
         "Plus ili Visionary pretplata je potrebna"
@@ -4489,9 +4522,6 @@
       "Vault updated": [
         "Ažuriran trezor"
       ],
-      "Verification can take a few minutes.": [
-        "Potvrda može potrajati nekoliko minuta."
-      ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Proces potvrde otvorit će se u novoj kartici preglednika, stoga onemogućite sve blokade skočnih prozora. Neće vam biti naplaćeno. Bilo koji iznos korišten za potvrdu kartice bit će vraćen odmah."
       ],
@@ -4506,6 +4536,9 @@
       ],
       "Version ${ version }": [
         "Verzija ${ version }"
+      ],
+      "View VPN session details for your organization.": [
+        "Prikaz detalja VPN sesije za vašu organizaciju."
       ],
       "View, download, and manage your invoices.": [
         "Pregledajte, preuzmite i upravljajte fakturama."
@@ -4733,6 +4766,9 @@
       ],
       "Donation": [
         "Donacija"
+      ],
+      "Manual": [
+        "Upute"
       ],
       "Modification": [
         "Izmjena"
@@ -5272,9 +5308,6 @@
       "Value": [
         "Vrijednost"
       ],
-      "VAT": [
-        "PDV"
-      ],
       "Verification code": [
         "Kôd za provjeru"
       ],
@@ -5489,6 +5522,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Više informacija"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Za nastavak korištenja ${ BRAND_NAME }, provjerite da vaše premium značajke više nisu u upotrebi ili nadogradite svoj plan."
       ]
     },
     "Log event": {
@@ -5601,6 +5637,15 @@
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Povežite svoju prilagođenu domenu s ${ BRAND_NAME } da biste postavili prilagođene adrese e-pošte (npr. vi@vašatvrtka.hr). Naš čarobnjak će vas voditi kroz ovaj proces."
+      ],
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "Pregledajte aktivnost ${ PASS_APP_NAME } u vašoj cijeloj organizaciji."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "Pregledajte promjene u vašoj organizaciji i druge administratorske aktivnosti."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "Pregledaj prijave, oporavke i sigurnosne događaje korisnika."
       ]
     },
     "Message display when a new app version is available": {
@@ -6212,6 +6257,9 @@
       "Invalid code": [
         "Nevažeći kôd"
       ],
+      "Invalid input. Search an email or detail.": [
+        "Neispravan unos. Pretražite adresu e-pošte ili pojedinost."
+      ],
       "Invalid input. Search an email or IP address.": [
         "Neispravan unos. Pretražite adresu e-pošte ili IP adresu."
       ],
@@ -6526,11 +6574,26 @@
       "Card number": [
         "Broj kartice"
       ],
+      "Credits and discounts are reflected in your invoice": [
+        "Krediti i popusti su prikazani na vašem računu"
+      ],
       "CVC": [
         "CVC"
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Bez ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Bez ${ taxRate }% poreza: ${ taxAmount }"
+      ],
       "Got it": [
         "Razumijem"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Uključujući ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Uključujući ${ taxRate }% poreza: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/GG"
@@ -6538,11 +6601,17 @@
       "Processing payment": [
         "Obrada plaćanja"
       ],
+      "Taxes": [
+        "Porezi"
+      ],
       "terms & conditions": [
         "uvjeti i odredbe"
       ],
       "Timeout exceeded": [
         "Prekoračeno je vremensko ograničenje"
+      ],
+      "VAT": [
+        "Porez"
       ]
     },
     "Payments.Error": {
@@ -6672,6 +6741,9 @@
       ],
       "Search users": [
         "Pretraživanje korisnika"
+      ],
+      "Search users or details": [
+        "Pretraga korisnika ili pojedinosti"
       ],
       "Select": [
         "Odaberi"
@@ -8287,6 +8359,9 @@
       "Description": [
         "Opis"
       ],
+      "Details": [
+        "Pojedinosti"
+      ],
       "Device": [
         "Uređaj"
       ],
@@ -8779,6 +8854,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Podmape sustava prikazat će se kao zasebne mape u ${ MAIL_APP_NAME }u"
+      ],
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Adresa je odspojena. Slanje i primanje poruka je zaustavljeno. Ponovno se povežite kako biste ponovno omogućili ovu adresu."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Otkrili smo problem s vašim DNS postavkama. Pobrinite se da se vaši zapisi podudaraju s uputama u nastavku. Ako se problem nastavi, morat ćemo isključiti potpisivanje DKIM-a."

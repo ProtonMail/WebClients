@@ -153,6 +153,9 @@
       "Claim this address": [
         "Nárokovať si túto adresu"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Získajte vašu bezplatnú ${ BRAND_NAME } adresu"
+      ],
       "Close": [
         "Zatvoriť"
       ],
@@ -4303,8 +4306,8 @@
       "customer support": [
         "zákaznícka podpora"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Rodinné plány v súčasnosti nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Rodinné plány v súčasnosti nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Ak pozvánku prijmete, zameníme váš aktuálny plán a zostávajúcu čiastku pripíšeme k vášmu účtu ako kredit."
@@ -6328,9 +6331,6 @@
       "Include device, location, and IP details": [
         "Zahrnúť podrobnosti o zariadení, polohe a IP adrese"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Vrátane ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Zvýšte bezpečnosť svojho účtu overením svojej emailovej adresy."
       ],
@@ -6738,9 +6738,6 @@
       ],
       "Please use another browser or download the file.": [
         "Použite iný prehliadač alebo si súbor stiahnite, prosím."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Skontrolujte prosím platbu na novej karte, ktorá sa otvorila."
       ],
       "Please wait till your changes are synced with the server.": [
         "Počkajte prosím, kým sa vaše zmeny nesynchronizujú so serverom."
@@ -7287,9 +7284,6 @@
       ],
       "Vault updated": [
         "Trezor bol aktualizovaný"
-      ],
-      "Verification can take a few minutes.": [
-        "Overovanie môže trvať niekoľko minút."
       ],
       "Verification may take a few minutes.": [
         "Overenie môže trvať niekoľko minút."
@@ -8544,9 +8538,6 @@
       ],
       "Value": [
         "Hodnota"
-      ],
-      "VAT": [
-        "DPH"
       ],
       "Verification code": [
         "Overovací kód"
@@ -10969,11 +10960,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Počas tohto obdobia nebudete môcť upraviť ani zrušiť svoje predplatné. Pred pokusom o akékoľvek zmeny počkajte, kým bude vaša platba dokončená. Ďakujeme vám za vašu trpezlivosť."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "S výnimkou ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Bez zahrnutia ${ taxRate }% daní: ${ taxAmount }"
+      ],
       "Got it": [
         "Rozumiem"
       ],
       "I'm purchasing as a business": [
         "Nakupujem ako firma"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Vrátane ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Vrátane ${ taxRate }% daní: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/YY"
@@ -10992,6 +10995,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje sa za ${ renewPriceStr }, zrušiť môžete kedykoľvek."
+      ],
+      "Taxes": [
+        "Dane"
       ],
       "terms & conditions": [
         "podmienky používania"
@@ -11034,6 +11040,9 @@
       ],
       "Timeout exceeded": [
         "Prekročený časový limit"
+      ],
+      "VAT": [
+        "DPH"
       ],
       "VAT number": [
         "DIČ"
@@ -14860,8 +14869,8 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systémové podpriečinky sa v aplikácii ${ MAIL_APP_NAME } zobrazia ako samostatné priečinky"
       ],
-      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
-        "Adresa bola odpojená. Odosielanie správ je pozastavené. Znova pripojte, aby ste túto adresu znova povolili."
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Adresa bola odpojená. Odosielanie a prijímanie správ je pozastavené. Opätovným pripojením túto adresu opäť aktivujete."
       ],
       "The import will start with the most recent messages.": [
         "Import začne najnovšími správami."
@@ -15445,9 +15454,6 @@
         "${ n } peňaženky",
         "${ n } peňaženiek",
         "${ n } peňaženiek"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bezpečnejší spôsob vlastnenia Bitcoinu"
       ],
       "Bitcoin via Email": [
         "Bitcoin cez email"
