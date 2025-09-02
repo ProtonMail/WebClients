@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 
-import { MemberRole } from '@proton/drive/index';
-import { useDrive } from '@proton/drive/index';
+import { MemberRole, useDrive } from '@proton/drive/index';
 
 import { useActiveShare } from '../../hooks/drive/useActiveShare';
+import useDriveNavigation from '../../hooks/drive/useNavigate';
 import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../store/_documents';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
@@ -29,9 +29,9 @@ export function useFolder() {
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const isSheetsEnabled = useIsSheetsEnabled();
     const { devices } = useDeviceStore();
-    // const { navigateToRoot, navigateToLink } = useDriveNavigation();
+    const { navigateToRoot } = useDriveNavigation();
 
-    const handleNodeError = useCallback(
+    const handleFolderError = useCallback(
         (error?: Error) => {
             if (!error) {
                 return;
@@ -46,18 +46,9 @@ export function useFolder() {
                 extra: { originalError: error },
             });
 
+            handleError(error);
             setError(enrichedError);
-
-            if (error) {
-                // TODO:WIP check if the error codes are the same
-                // if (error.name === RESPONSE_CODE.INVALID_LINK_TYPE) {
-                //     navigateToLink(activeFolder.shareId, activeFolder.linkId, true);
-                // } else if (code === RESPONSE_CODE.NOT_FOUND || code === RESPONSE_CODE.INVALID_ID) {
-                //     navigateToRoot();
-                // } else {
-                //     handleError(error);
-                // }
-            }
+            navigateToRoot();
         },
         [setError]
     );
@@ -69,7 +60,7 @@ export function useFolder() {
             try {
                 const { node, errors } = getNodeEntity(await drive.getNode(folderNodeUid));
                 const error = Array.from(errors.values()).at(0);
-                handleNodeError(error as Error);
+                handleFolderError(error as Error);
                 const legacyNode = await mapNodeToLegacyItem(node, activeFolder.shareId, drive);
                 const isDeviceRoot = !node.parentUid && devices.has(folderNodeUid);
                 const isDeviceFolder = isDeviceRoot || (legacyNode.rootUid && devices.has(legacyNode.rootUid));
@@ -100,23 +91,19 @@ export function useFolder() {
                         setItem(legacyItem);
                     }
                     if (!maybeNode.ok) {
-                        /**
-                         * TODO:WIP
-                         * are we interested in tracking every single node erroring?
-                         */
-                        handleError(maybeNode.error);
+                        // error on loading a single node inside the folder should not show notification
+                        handleError(maybeNode.error, { showNotification: false });
                     }
                 }
             } catch (e) {
-                handleError(e);
-                handleNodeError(e as Error);
+                handleFolderError(e as Error);
             }
             setIsLoading(false);
         },
         [
             drive,
             handleError,
-            handleNodeError,
+            handleFolderError,
             isDocsEnabled,
             isSheetsEnabled,
             reset,
