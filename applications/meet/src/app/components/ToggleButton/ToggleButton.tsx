@@ -2,7 +2,7 @@ import type { RefObject } from 'react';
 import { useRef } from 'react';
 
 import { Button, Tooltip } from '@proton/atoms';
-import type { IconProps } from '@proton/components';
+import type { IconProps } from '@proton/components/components/icon/Icon';
 import { IcChevronDown, IcChevronUp } from '@proton/icons';
 import { dropdownRootClassName } from '@proton/shared/lib/busy';
 import clsx from '@proton/utils/clsx';

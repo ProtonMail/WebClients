@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { CreateMeetingParams } from '@proton/meet';
 import { BRAND_NAME, MEET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { isSameDay } from '@proton/shared/lib/date-fns-utc';

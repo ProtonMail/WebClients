@@ -1,8 +1,8 @@
 import type { RefObject } from 'react';
 import React, { useRef } from 'react';
 
-import type { IconName } from '@proton/components';
-import { Icon } from '@proton/components';
+import type { IconName } from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
 import SelectButton from '@proton/components/components/selectTwo/SelectButton';
 import { dropdownRootClassName } from '@proton/shared/lib/busy';
 import { isSafari } from '@proton/shared/lib/helpers/browser';

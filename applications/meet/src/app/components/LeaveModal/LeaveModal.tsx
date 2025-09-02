@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ModalTwo, ModalTwoContent, useModalState } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useLoading from '@proton/hooks/useLoading';
 import { IcPhone } from '@proton/icons';
 import clsx from '@proton/utils/clsx';

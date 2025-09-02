@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ModalTwo, ModalTwoContent } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 
 import './ConnectionLostModal.scss';
 

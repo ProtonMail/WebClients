@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { useNotifications } from '@proton/components';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { type Meeting, useCreateMeeting, useGetMeetingDependencies } from '@proton/meet';
 import { MeetingType } from '@proton/meet/types/response-types';
 import { decryptMeetingName, decryptMeetingPassword } from '@proton/meet/utils/cryptoUtils';

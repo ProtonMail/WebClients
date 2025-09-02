@@ -6,7 +6,6 @@ import { MeetingBody } from '../components/MeetingBody/MeetingBody';
 import { PAGE_SIZE, SMALL_SCREEN_PAGE_SIZE } from '../constants';
 import { MeetContext } from '../contexts/MeetContext';
 import { UIStateProvider } from '../contexts/UIStateContext';
-import { useFaceTrackingSetup } from '../hooks/useFaceTrackingSetup';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../hooks/useIsNarrowHeight';
 import { useSortedParticipants } from '../hooks/useSortedParticipants';
@@ -66,8 +65,6 @@ export const MeetContainer = ({
     const [participantEvents, setParticipantEvents] = useState<ParticipantEventRecord[]>([]);
 
     const [disableVideos, setDisableVideos] = useState(false);
-
-    const faceTrack = useFaceTrackingSetup({ isFaceTrackingEnabled, videoDeviceId });
 
     const [participantsWithDisabledVideos, setParticipantsWithDisabledVideos] = useState<string[]>([]);
 
@@ -131,7 +128,7 @@ export const MeetContainer = ({
                 }}
             >
                 <UIStateProvider instantMeeting={instantMeeting}>
-                    <MeetingBody isFaceTrackingEnabled={isFaceTrackingEnabled} faceTrack={faceTrack} />
+                    <MeetingBody />
                 </UIStateProvider>
             </MeetContext.Provider>
         </div>

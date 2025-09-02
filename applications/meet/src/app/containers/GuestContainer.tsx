@@ -4,14 +4,12 @@ import { Router } from 'react-router-dom';
 import type { App } from '@proton-meet/proton-meet-core';
 import type { ProtonThunkArguments } from 'packages/redux-shared-store-types';
 
-import {
-    AuthenticationProvider,
-    ErrorBoundary,
-    LoaderPage,
-    StandardErrorPage,
-    StandardLoadErrorPage,
-    UnauthenticatedApiProvider,
-} from '@proton/components';
+import UnauthenticatedApiProvider from '@proton/components/containers/api/UnauthenticatedApiProvider';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import LoaderPage from '@proton/components/containers/app/LoaderPage';
+import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
+import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
+import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/index';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';

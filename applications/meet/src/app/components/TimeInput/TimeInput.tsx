@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
 import type { Input } from '@proton/atoms';
-import { InputFieldTwo } from '@proton/components';
-import { Dropdown } from '@proton/components';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import clsx from '@proton/utils/clsx';
 

@@ -3,7 +3,7 @@ import { Track } from '@proton-meet/livekit-client';
 import { renderHook } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
-import { useNotifications } from '@proton/components';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { useCurrentScreenShare } from './useCurrentScreenShare';
@@ -36,13 +36,11 @@ vi.mock('@proton/shared/lib/helpers/browser', () => {
     };
 });
 
-vi.mock('@proton/components', () => {
-    return {
-        useNotifications: vi.fn().mockReturnValue({
-            createNotification: vi.fn(),
-        }),
-    };
-});
+vi.mock('@proton/components/hooks/useNotifications', () => ({
+    default: vi.fn().mockReturnValue({
+        createNotification: vi.fn(),
+    }),
+}));
 
 const originalMediaDevices = global.navigator.mediaDevices;
 const mockMediaStreamTrack = {

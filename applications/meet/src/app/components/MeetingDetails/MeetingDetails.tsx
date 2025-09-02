@@ -2,7 +2,10 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Table, TableBody, TableCell, TableRow } from '@proton/components';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableRow from '@proton/components/components/table/TableRow';
 import type { Meeting } from '@proton/meet/types/response-types';
 import { parseMeetingLink } from '@proton/meet/utils/parseMeetingLink';
 import { dateLocale } from '@proton/shared/lib/i18n';

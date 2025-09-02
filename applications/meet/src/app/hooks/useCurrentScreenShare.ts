@@ -4,7 +4,7 @@ import { useLocalParticipant, useParticipants } from '@livekit/components-react'
 import { type Track as LiveKitTrack, LocalVideoTrack, Track } from '@proton-meet/livekit-client';
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { useScreenshareResolution } from './useScreenshareResolution';

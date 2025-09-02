@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import { RoomAudioRenderer } from '@livekit/components-react';
-import type { LocalVideoTrack } from '@proton-meet/livekit-client';
 
 import clsx from '@proton/utils/clsx';
 
@@ -10,7 +9,6 @@ import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useCurrentScreenShare } from '../../hooks/useCurrentScreenShare';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
-import { useMeetingInitialisation } from '../../hooks/useMeetingInitialisation';
 import { Chat } from '../Chat/Chat';
 import { MeetingDetails } from '../MeetingDetails/MeetingDetails';
 import { MeetingReadyPopup } from '../MeetingReadyPopup/MeetingReadyPopup';
@@ -27,14 +25,7 @@ import { Settings } from '../Settings/Settings';
 
 import './MeetingBody.scss';
 
-interface MeetingBodyProps {
-    isFaceTrackingEnabled: boolean;
-    faceTrack: LocalVideoTrack | null;
-}
-
-export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyProps) => {
-    useMeetingInitialisation({ faceTrack, isFaceTrackingEnabled });
-
+export const MeetingBody = () => {
     const { videoTrack, participant, isLocal, stopScreenShare, screenShareVideoRef } = useCurrentScreenShare();
 
     const isLargerThanMd = useIsLargerThanMd();

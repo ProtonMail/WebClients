@@ -4,17 +4,15 @@ import { Router } from 'react-router-dom';
 import type { App } from '@proton-meet/proton-meet-core';
 import type { ProtonThunkArguments } from 'packages/redux-shared-store-types';
 
-import {
-    ApiProvider,
-    AuthenticationProvider,
-    ErrorBoundary,
-    EventManagerProvider,
-    LoaderPage,
-    StandardErrorPage,
-    StandardLoadErrorPage,
-    StandardPrivateApp,
-    useNotifications,
-} from '@proton/components';
+import ApiProvider from '@proton/components/containers/api/ApiProvider';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import LoaderPage from '@proton/components/containers/app/LoaderPage';
+import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
+import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
+import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
+import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';

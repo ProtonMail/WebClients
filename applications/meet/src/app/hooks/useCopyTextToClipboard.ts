@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import useNotifications from '@proton/components/hooks/useNotifications';
 
 export const useCopyTextToClipboard = () => {
     const { createNotification } = useNotifications();

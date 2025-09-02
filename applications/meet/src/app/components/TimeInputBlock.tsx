@@ -1,4 +1,6 @@
-import { DateInputTwo, Option, SearchableSelect } from '@proton/components';
+import Option from '@proton/components/components/option/Option';
+import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
+import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
 import { IcClock } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
