@@ -141,6 +141,9 @@
       "Claim this address": [
         "Obtén esta dirección"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Obtén tu dirección gratuita de ${ BRAND_NAME }"
+      ],
       "Clear": [
         "Borrar"
       ],
@@ -4192,8 +4195,8 @@
       "customer support": [
         "atención al cliente"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Los planes familiares actualmente no admiten cuentas externas. Crea una dirección de ${ BRAND_NAME } antes de unirte. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Los planes familiares actualmente no admiten cuentas externas. Crea una dirección de ${ BRAND_NAME } antes de unirte. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si aceptas la invitación, te cambiaremos de plan y abonaremos en tu cuenta el saldo que quede restante."
@@ -5338,9 +5341,6 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "En el siguiente paso, podrás enviar un depósito con una dirección Bitcoin."
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incluyendo ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Indexing events: ${ current }/${ total }": [
         "Indexando eventos: ${ current }/${ total }"
@@ -6744,9 +6744,6 @@
       ],
       "Username": [
         "Nombre de usuario"
-      ],
-      "VAT": [
-        "IVA"
       ],
       "Verification code": [
         "Código de verificación"
@@ -8809,11 +8806,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante este tiempo no podrás modificar o cancelar tu suscripción. Espera hasta que tu pago se complete antes de intentar cualquier cambio. Gracias por tu paciencia."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
+      ],
       "Got it": [
         "Entiendo"
       ],
       "I'm purchasing as a business": [
         "Estoy comprando como empresa"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -8829,6 +8838,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Se renueva por ${ renewPriceStr } y cancela cuando quieras."
+      ],
+      "Taxes": [
+        "Impuestos"
       ],
       "terms & conditions": [
         "los términos y condiciones"
@@ -8860,6 +8872,9 @@
       ],
       "Timeout exceeded": [
         "Se ha agotado el tiempo de espera."
+      ],
+      "VAT": [
+        "IVA"
       ],
       "VAT number": [
         "Número de IVA"
@@ -11581,9 +11596,6 @@
       "${ n } wallet": [
         "${ n } cartera",
         "${ n } carteras"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Una forma más segura de mantener tu Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin vía correo electrónico"
