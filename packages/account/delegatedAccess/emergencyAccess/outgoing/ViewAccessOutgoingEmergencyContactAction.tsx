@@ -47,7 +47,7 @@ export const ViewAccessOutgoingEmergencyContactAction = () => {
             try {
                 setLoading(true);
                 await dispatch(grantDelegatedAccessThunk(value.outgoingDelegatedAccess));
-                createNotification({ text: c('emergency_access').t`Emergency access refused` });
+                createNotification({ text: c('emergency_access').t`Emergency access granted` });
                 modal.onClose?.();
             } catch (e) {
                 handleError(e);
