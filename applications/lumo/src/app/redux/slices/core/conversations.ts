@@ -4,12 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import type { Priority } from '../../../remote/scheduler';
 import type { GetConversationRemote, IdMapEntry, RemoteConversation } from '../../../remote/types';
 import type { SerializedConversation } from '../../../types';
-import {
-    type Conversation,
-    type ConversationId,
-    type EditConversation,
-    type UpdateConversationStatusAction,
-} from '../../../types';
+import type { Conversation, ConversationId, EditConversation, UpdateConversationStatusAction } from '../../../types';
 
 export type PushConversationRequest = {
     id: ConversationId;

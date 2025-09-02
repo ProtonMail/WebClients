@@ -1,4 +1,4 @@
-import { type ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
@@ -55,7 +55,7 @@ import { getSpace } from '@proton/shared/lib/user/storage';
 import ProductLink from '../../app/ProductLink';
 import { PromotionBanner } from '../../banner/PromotionBanner';
 import { getDocumentEditor, getStorageFeature, getVersionHistory } from '../../payments/features/drive';
-import { type PlanCardFeatureDefinition } from '../../payments/features/interface';
+import type { PlanCardFeatureDefinition } from '../../payments/features/interface';
 import { getDarkWebMonitoringFeature, getNAddressesFeature, getNDomainsFeature } from '../../payments/features/mail';
 import {
     PASS_PLUS_VAULT_SHARING,

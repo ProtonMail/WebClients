@@ -10,7 +10,7 @@ import { DashboardCard, DashboardCardContent, DashboardGrid, DashboardGridSectio
 import Loader from '@proton/components/components/loader/Loader';
 import SubscriptionEndsBannerV2 from '@proton/components/containers/topBanners/SubscriptionEndsBannerV2';
 import useLoad from '@proton/components/hooks/useLoad';
-import { type APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { CurrentPlanInfoSection } from './CurrentPlanInfoSection';
 

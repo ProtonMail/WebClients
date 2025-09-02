@@ -1,5 +1,5 @@
 // Redux sagas for handling async operations and side effects
-import { type Saga, type SagaIterator } from 'redux-saga';
+import type { Saga, SagaIterator } from 'redux-saga';
 import { all, call, cancel, delay, getContext, put, spawn, take, takeEvery, takeLeading } from 'redux-saga/effects';
 
 import type { AesGcmCryptoKey } from '../../crypto/types';

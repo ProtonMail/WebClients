@@ -8,7 +8,7 @@ import {
     isSavablePaymentMethod,
     markPaymentMethodAsDefault,
 } from '@proton/payments';
-import { type Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 export function backendWillChangeDefaultPaymentMethod(selectedPaymentMethod: PaymentMethodType): boolean {
     return !isExistingPaymentMethod(selectedPaymentMethod) && isSavablePaymentMethod(selectedPaymentMethod);

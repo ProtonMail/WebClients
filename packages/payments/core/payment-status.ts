@@ -1,5 +1,5 @@
 import { getBillingAddressFromPaymentStatus } from './billing-address/billing-address-from-payments-status';
-import { type PaymentStatus } from './interface';
+import type { PaymentStatus } from './interface';
 
 export function normalizePaymentMethodStatus(status: PaymentStatus): PaymentStatus {
     const normalized = getBillingAddressFromPaymentStatus(status) as PaymentStatus;

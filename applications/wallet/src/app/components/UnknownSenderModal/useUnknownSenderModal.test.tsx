@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react';
 import { act } from '@testing-library/react-hooks';
 
 import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
-import { type DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { mockUseNotifications, mockUseUserKeys } from '@proton/testing/lib/vitest';
 import { type DecryptedTransactionData, decryptPgp } from '@proton/wallet';
 import { getUserKeys } from '@proton/wallet/tests';

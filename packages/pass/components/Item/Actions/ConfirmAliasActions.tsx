@@ -6,13 +6,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Alert, Checkbox, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
-import { type ConfirmationPromptHandles } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
+import type { ConfirmationPromptHandles } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { isAliasItem, isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
 import { aliasSyncStatusToggle, settingsEditIntent } from '@proton/pass/store/actions';
 import { selectAliasTrashAcknowledged, selectItemsByEmail } from '@proton/pass/store/selectors';
-import { type ItemRevision } from '@proton/pass/types';
+import type { ItemRevision } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 type Props = {

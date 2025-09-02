@@ -1,9 +1,9 @@
 import { Children, type FC, type ReactElement, type ReactNode, cloneElement } from 'react';
 
-import { type FieldProps } from 'formik';
+import type { FieldProps } from 'formik';
 
 import { Icon, type IconName, InputButton, InputFieldTwo } from '@proton/components';
-import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
+import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import type { MaybeArray } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 

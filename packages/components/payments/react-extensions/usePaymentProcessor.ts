@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import { type PaymentProcessor } from '@proton/payments';
+import type { PaymentProcessor } from '@proton/payments';
 
 /**
  * An internal helper to avoid re-initialization of the payment processor on every render.

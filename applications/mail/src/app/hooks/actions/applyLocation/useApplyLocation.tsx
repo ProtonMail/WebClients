@@ -5,7 +5,7 @@ import { isCustomFolder, isSystemFolder } from '@proton/mail/helpers/location';
 import { useFolders, useLabels } from '@proton/mail/index';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { type SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
+import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';

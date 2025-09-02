@@ -1,4 +1,4 @@
-import { type Currency } from '@proton/payments';
+import type { Currency } from '@proton/payments';
 
 import type { Deal, Offer } from '../interface';
 

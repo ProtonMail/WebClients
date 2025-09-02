@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button, Tooltip } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { Icon, ModalTwo, ModalTwoContent } from '@proton/components';
-import { type IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/components/components/icon/Icon';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/components/containers/payments/RenewalNotice';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
@@ -22,7 +22,7 @@ import {
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 
 import SaveLabel from '../SaveLabel';
-import { type SignupUpsellTelemetryHook } from './useMailSignupUpsellTelemetry';
+import type { SignupUpsellTelemetryHook } from './useMailSignupUpsellTelemetry';
 
 export type CheckTrialPriceResult = Awaited<ReturnType<typeof checkTrialPriceCommon>>;
 

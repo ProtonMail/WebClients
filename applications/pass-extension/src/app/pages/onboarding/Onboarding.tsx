@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
 import { Localized } from '@proton/pass/components/Core/Localized';

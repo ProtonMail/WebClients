@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 export const LAST_REMINDER_DAY = 29;
 export const EXTENDED_REMINDER_DAY = 25;

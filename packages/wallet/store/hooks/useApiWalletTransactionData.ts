@@ -9,10 +9,7 @@ import isEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { pick } from '@proton/shared/lib/helpers/object';
 
 import { apiWalletTransactionDataThunk, selectApiWalletTransactionData } from '../slices';
-import {
-    type WalletTransactionByHashedTxId,
-    type WalletTransactionsThunkArg,
-} from '../slices/apiWalletTransactionData';
+import type { WalletTransactionByHashedTxId, WalletTransactionsThunkArg } from '../slices/apiWalletTransactionData';
 
 const hooks = createHooks(apiWalletTransactionDataThunk, selectApiWalletTransactionData);
 

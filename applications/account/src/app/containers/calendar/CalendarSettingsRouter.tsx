@@ -26,7 +26,7 @@ import {
     useSubscribedCalendars,
 } from '@proton/components';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
-import { type Subscription } from '@proton/payments';
+import type { Subscription } from '@proton/payments';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getDefaultCalendar,

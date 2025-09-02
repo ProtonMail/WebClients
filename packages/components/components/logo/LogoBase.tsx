@@ -1,4 +1,4 @@
-import { type ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 
 import type { IconSize } from '@proton/icons';
 import clsx from '@proton/utils/clsx';

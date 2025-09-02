@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { type AvailablePaymentMethod, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { buildUser } from '@proton/testing/builders';
 
-import { type MethodsHook } from '../../payments/react-extensions';
+import type { MethodsHook } from '../../payments/react-extensions';
 import Checkout, { type Props } from './Checkout';
 
 let props: Props;

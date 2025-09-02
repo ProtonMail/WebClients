@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import useConfig from '@proton/components/hooks/useConfig';
-import { type PaymentFacade } from '@proton/components/payments/client-extensions';
+import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import {
     type Currency,
     PAYMENT_METHOD_TYPES,

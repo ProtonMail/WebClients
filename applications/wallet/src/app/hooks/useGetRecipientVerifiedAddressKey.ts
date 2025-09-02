@@ -5,7 +5,7 @@ import useApi from '@proton/components/hooks/useApi';
 import { CryptoProxy, type PublicKeyReference } from '@proton/crypto/lib';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
-import { type ProcessedApiKey } from '@proton/shared/lib/interfaces';
+import type { ProcessedApiKey } from '@proton/shared/lib/interfaces';
 import { getKeyHasFlagsToVerify } from '@proton/shared/lib/keys';
 import { verifySignedData } from '@proton/wallet';
 

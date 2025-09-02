@@ -1,6 +1,6 @@
 import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
 
-import { type ProductParam } from '@proton/shared/lib/apps/product';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -33,7 +33,7 @@ import { getPricePerCycle, getPricePerMember, isMultiUserPersonalPlan } from '..
 import { isFreeSubscription } from '../type-guards';
 import { SubscriptionPlatform, TaxInclusive } from './constants';
 import { FREE_PLAN } from './freePlans';
-import { type Subscription, type SubscriptionCheckResponse } from './interface';
+import type { Subscription, SubscriptionCheckResponse } from './interface';
 import { SelectedPlan } from './selected-plan';
 
 export function getAddonNameByPlan(addonPrefix: ADDON_PREFIXES, planName: PLANS) {

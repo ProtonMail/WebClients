@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import Price from '@proton/components/components/price/Price';

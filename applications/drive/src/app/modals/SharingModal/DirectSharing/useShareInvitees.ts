@@ -10,7 +10,7 @@ import { useFlagsDriveDirectSharing } from '../../../flags/useFlagsDriveDirectSh
 // TODO: Prevent using it when we will be able to manage with sdk.
 import { useGetPublicKeysForEmail } from '../../../store';
 import { ShareInviteeValidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
-import { type ShareInvitee } from './interfaces';
+import type { ShareInvitee } from './interfaces';
 
 /**
  * useShareInvitees hook is used to manage a list of user that we want to add to a drive share.

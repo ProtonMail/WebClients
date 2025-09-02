@@ -1,4 +1,4 @@
-import { type FieldProps } from 'formik';
+import type { FieldProps } from 'formik';
 
 import { Toggle } from '@proton/components';
 import type { ToggleProps } from '@proton/components/components/toggle/Toggle';

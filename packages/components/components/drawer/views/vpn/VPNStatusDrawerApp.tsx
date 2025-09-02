@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import { getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
-import { type ConnectionInformationResult } from '@proton/shared/lib/api/core/connection-information';
+import type { ConnectionInformationResult } from '@proton/shared/lib/api/core/connection-information';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 

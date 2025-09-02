@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { MAX_BATCH_PER_IMPORT_REQUEST } from '@proton/pass/constants';
 import { type ImportReport, formatIgnoredItem } from '@proton/pass/lib/import/helpers/report';
-import { type ImportVault } from '@proton/pass/lib/import/types';
+import type { ImportVault } from '@proton/pass/lib/import/types';
 import { importItemsBatch } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';

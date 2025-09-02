@@ -1,4 +1,4 @@
-import type { RunSagaOptions} from 'redux-saga';
+import type { RunSagaOptions } from 'redux-saga';
 import { channel, eventChannel, runSaga } from 'redux-saga';
 
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
@@ -7,15 +7,8 @@ import * as shareParser from '@proton/pass/lib/shares/share.parser';
 import { sharesEventNew } from '@proton/pass/store/actions';
 import type { EventChannel } from '@proton/pass/store/sagas/events/types';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type {
-    SharesGetResponse} from '@proton/pass/types';
-import {
-    type Api,
-    type IndexedByShareIdAndItemId,
-    type ItemRevision,
-    type Share,
-    type ShareGetResponse
-} from '@proton/pass/types';
+import type { SharesGetResponse } from '@proton/pass/types';
+import type { Api, IndexedByShareIdAndItemId, ItemRevision, Share, ShareGetResponse } from '@proton/pass/types';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';

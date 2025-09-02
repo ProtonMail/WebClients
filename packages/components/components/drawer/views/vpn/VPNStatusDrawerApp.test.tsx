@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { type UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
 
 import VPNStatusDrawerApp from './VPNStatusDrawerApp';
 

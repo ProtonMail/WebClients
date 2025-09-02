@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { type WasmApiWalletAccount } from '@proton/andromeda';
+import type { WasmApiWalletAccount } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms';
 import QRCode from '@proton/components/components/image/QRCode';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';

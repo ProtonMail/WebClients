@@ -139,6 +139,7 @@ export default tseslint.config(
             '@typescript-eslint/return-await': 'error',
 
             '@typescript-eslint/consistent-type-imports': 'error',
+            '@typescript-eslint/no-import-type-side-effects': 'error',
 
             'prefer-const': ['error', { ignoreReadBeforeAssign: true, destructuring: 'all' }],
 

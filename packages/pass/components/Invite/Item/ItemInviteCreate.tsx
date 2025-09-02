@@ -1,4 +1,4 @@
-import { type FC, type ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import { Form, FormikProvider } from 'formik';
 import { c } from 'ttag';
@@ -11,7 +11,7 @@ import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useInviteForm } from '@proton/pass/hooks/invite/useInviteForm';
 import { AccessTarget } from '@proton/pass/lib/access/types';
-import { type ItemInviteFormValues, type SelectedItem } from '@proton/pass/types';
+import type { ItemInviteFormValues, SelectedItem } from '@proton/pass/types';
 
 import { FORM_ID, ItemInviteForm } from './ItemInviteForm';
 

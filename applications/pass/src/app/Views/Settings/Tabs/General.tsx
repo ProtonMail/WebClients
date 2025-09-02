@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { ApplicationLogs } from '@proton/pass/components/Settings/ApplicationLogs';
 import { Beta } from '@proton/pass/components/Settings/Beta';

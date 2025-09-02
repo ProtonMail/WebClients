@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import type { BaseTextFieldProps } from './TextField';
 import { BaseTextField, TextField, type TextFieldProps } from './TextField';

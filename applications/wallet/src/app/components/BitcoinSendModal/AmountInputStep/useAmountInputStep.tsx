@@ -5,15 +5,15 @@ import { c } from 'ttag';
 import type { WasmApiExchangeRate, WasmApiWalletAccount, WasmTxBuilder } from '@proton/andromeda';
 import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import { type SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import { COMPUTE_BITCOIN_UNIT, MIN_FEE_RATE, PriorityTargetBlock } from '@proton/wallet';
 import { useExchangeRate, useUserWalletSettings } from '@proton/wallet/store';
 
 import { Price } from '../../../atoms/Price';
 import { useFeesInput } from '../../../hooks/useFeesInput';
 import { usePsbt } from '../../../hooks/usePsbt';
-import { type TxBuilderHelper } from '../../../hooks/useTxBuilder';
-import { type AccountWithChainData } from '../../../types';
+import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
+import type { AccountWithChainData } from '../../../types';
 import { convertAmount, getAccountBalance, getExchangeRateFromBitcoinUnit } from '../../../utils';
 
 const DEFAULT_MINIMUM_SATS_AMOUNT = 1000;
@@ -105,7 +105,6 @@ export const useAmountInputStep = ({
         );
 
         // We only want to set the map on component mount
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const totalSentAmount = Object.values(recipientAmounts).reduce((acc: number, amount) => {

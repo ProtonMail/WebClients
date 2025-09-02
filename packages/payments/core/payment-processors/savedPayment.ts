@@ -1,4 +1,4 @@
-import { type Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 import { PAYMENT_METHOD_TYPES } from '../constants';
 import { type PaymentVerificator, createPaymentTokenForExistingPayment } from '../createPaymentToken';

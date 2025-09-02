@@ -1,5 +1,5 @@
 import { type PaymentIntent, chargebeeValidationErrorName, isMessageBusResponseFailure } from '@proton/chargebee/lib';
-import { type Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 import { getTokenStatusV5 } from '../api';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';

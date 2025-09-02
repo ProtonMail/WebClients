@@ -5,11 +5,11 @@ import { deleteGroupMember } from '@proton/shared/lib/api/groups';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { GroupMembership } from '@proton/shared/lib/interfaces';
 
-import { type AddressesState } from '../addresses';
+import type { AddressesState } from '../addresses';
 import { declineOrLeaveMembership } from '../groupMemberships';
 import type { KtState } from '../kt';
-import { type OrganizationKeyState } from '../organizationKey';
-import { type UserKeysState } from '../userKeys';
+import type { OrganizationKeyState } from '../organizationKey';
+import type { UserKeysState } from '../userKeys';
 
 type RequiredState = AddressesState & UserKeysState & OrganizationKeyState & KtState;
 

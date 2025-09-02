@@ -1,7 +1,7 @@
 import type { HumanVerificationResult } from '@proton/components';
 import { queryCreateUser, queryCreateUserExternal } from '@proton/shared/lib/api/user';
-import { type ProductParam } from '@proton/shared/lib/apps/product';
-import { type CLIENT_TYPES } from '@proton/shared/lib/constants';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import type { CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import { srpVerify } from '@proton/shared/lib/srp';

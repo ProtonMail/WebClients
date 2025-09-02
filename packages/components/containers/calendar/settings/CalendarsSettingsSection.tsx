@@ -4,7 +4,7 @@ import PrivateMainAreaLoading from '@proton/components/containers/layout/Private
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import type { SectionConfig } from '@proton/components/containers/layout/interface';
 import useCalendarShareInvitations from '@proton/components/hooks/useCalendarShareInvitations';
-import { type Subscription } from '@proton/payments';
+import type { Subscription } from '@proton/payments';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import {
     filterOutExpiredInvitations,

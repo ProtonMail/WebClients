@@ -11,7 +11,7 @@ import {
     shareRemoveMemberAccessSuccess,
     vaultTransferOwnershipSuccess,
 } from '@proton/pass/store/actions';
-import { type Maybe } from '@proton/pass/types/utils';
+import type { Maybe } from '@proton/pass/types/utils';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 
 export type AccessState = { [accessKey: string]: Maybe<AccessItem> };

@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
-import { type FeatureProps } from '../interface';
+import type { FeatureProps } from '../interface';
 
 import './PostSignupOneDollarTable.scss';
 

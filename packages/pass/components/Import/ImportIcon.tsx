@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import onepassword from '@proton/pass/assets/import/1password-icon-48.png';
 import applePasswords from '@proton/pass/assets/import/apple-passwords-icon-48.png';

@@ -14,11 +14,11 @@ import {
     isScribeAddon,
 } from '../plan/addons';
 import { getIsB2BAudienceFromPlan, getPlanNameFromIDs } from '../plan/helpers';
-import { type Plan, type PlansMap } from '../plan/interface';
+import type { Plan, PlansMap } from '../plan/interface';
 import { FREE_PLAN } from './freePlans';
 import { getPlanFeatureLimit, getPlanIDs } from './helpers';
 import { getLumoAddonNameByPlan, getScribeAddonNameByPlan } from './helpers';
-import { type Subscription } from './interface';
+import type { Subscription } from './interface';
 import { getPlansMap } from './plans-map-wrapper';
 
 export class SelectedPlan {

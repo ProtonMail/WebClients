@@ -1,17 +1,17 @@
 import { forwardRef, useMemo } from 'react';
 
-import { type FormikContextType } from 'formik';
+import type { FormikContextType } from 'formik';
 import { c } from 'ttag';
 
 import { InviteStepMembers } from '@proton/pass/components/Invite/Steps/InviteStepMembers';
 import { InviteStepPermissions } from '@proton/pass/components/Invite/Steps/InviteStepPermissions';
 import { InviteStepReview } from '@proton/pass/components/Invite/Steps/InviteStepReview';
-import { type InviteAddressValidator } from '@proton/pass/hooks/invite/useAddressValidator';
+import type { InviteAddressValidator } from '@proton/pass/hooks/invite/useAddressValidator';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { type AccessKeys, AccessTarget } from '@proton/pass/lib/access/types';
 import { selectAccessMembers } from '@proton/pass/store/selectors';
 import type { InviteFormMemberItem, InviteFormStep, MaybeNull } from '@proton/pass/types';
-import { type VaultInviteFormValues } from '@proton/pass/types';
+import type { VaultInviteFormValues } from '@proton/pass/types';
 
 import { VaultHeading } from './VaultHeading';
 

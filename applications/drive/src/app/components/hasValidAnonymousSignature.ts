@@ -1,7 +1,7 @@
 import { VERIFICATION_STATUS } from '@proton/crypto/lib/constants';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import { type SignatureIssues } from '../store';
+import type { SignatureIssues } from '../store';
 
 export const hasValidAnonymousSignature = (
     signatureIssues: SignatureIssues | undefined,

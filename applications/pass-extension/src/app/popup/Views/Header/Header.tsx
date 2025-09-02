@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { usePopupContext } from 'proton-pass-extension/app/popup/PopupProvider';
 import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';

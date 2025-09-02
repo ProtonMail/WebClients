@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { Icon } from '@proton/components';
 
-import { type useLinkPath } from '../../../../store';
+import type { useLinkPath } from '../../../../store';
 
 interface Props {
     shareId: string;

@@ -13,7 +13,7 @@ import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
 import { useSearchShortcut } from '@proton/pass/hooks/useSearchShortcut';
 import { selectShare } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
-import { type ShareType } from '@proton/pass/types';
+import type { ShareType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 

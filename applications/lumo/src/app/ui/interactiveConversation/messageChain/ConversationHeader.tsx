@@ -11,7 +11,7 @@ import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { useSidebar } from '../../../providers/SidebarProvider';
 import { useLumoDispatch } from '../../../redux/hooks';
 import { changeConversationTitle, pushConversationRequest } from '../../../redux/slices/core/conversations';
-import { type Conversation, type Message } from '../../../types';
+import type { Conversation, Message } from '../../../types';
 import { sendConversationEditTitleEvent } from '../../../util/telemetry';
 import FavoritesUpsellPrompt from '../../components/FavoritesUpsellPrompt';
 import LumoButton from '../../components/LumoButton';
@@ -32,7 +32,6 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
     const [conversationTitle, setConversationTitle] = useState(title);
     const [isEditing, setIsEditing] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
-    
 
     const { isGhostChatMode } = useGhostChat();
     const { handleStarToggle, showFavoritesUpsellModal, favoritesUpsellModalProps, isStarred } = useConversationStar({
@@ -61,17 +60,14 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
 
     const startEditing = useCallback(() => setIsEditing(true), []);
 
-    const handleTitleChange = useCallback(
-        (e: React.ChangeEvent<HTMLInputElement>) => {
-            // Don't update React state during editing to prevent re-renders
-            // The input value is managed by the DOM directly
-        },
-        []
-    );
+    const handleTitleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+        // Don't update React state during editing to prevent re-renders
+        // The input value is managed by the DOM directly
+    }, []);
 
     const saveTitleChange = useCallback(() => {
         const currentValue = inputRef.current?.value || title;
-        
+
         if (title !== currentValue) {
             dispatch(
                 changeConversationTitle({
@@ -246,13 +242,12 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
 };
 
 export const ConversationHeader = React.memo(ConversationHeaderComponent, (prevProps, nextProps) => {
-
-    const conversationChanged = 
+    const conversationChanged =
         prevProps.conversation.id !== nextProps.conversation.id ||
         prevProps.conversation.title !== nextProps.conversation.title ||
         prevProps.conversation.spaceId !== nextProps.conversation.spaceId ||
         prevProps.conversation.starred !== nextProps.conversation.starred;
-    
+
     // Check if total file count has changed (this is what the component uses from messageChain)
     const prevTotalFiles = prevProps.messageChain.reduce((count, message) => {
         return count + (message.attachments?.length || 0);
@@ -260,9 +255,9 @@ export const ConversationHeader = React.memo(ConversationHeaderComponent, (prevP
     const nextTotalFiles = nextProps.messageChain.reduce((count, message) => {
         return count + (message.attachments?.length || 0);
     }, 0);
-    
+
     const totalFilesChanged = prevTotalFiles !== nextTotalFiles;
-    
+
     // Only re-render if conversation changed, total files changed, or onOpenFiles changed
     return !conversationChanged && !totalFilesChanged && prevProps.onOpenFiles === nextProps.onOpenFiles;
 });

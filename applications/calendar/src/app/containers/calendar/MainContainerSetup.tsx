@@ -4,7 +4,7 @@ import { Redirect, Route, Switch } from 'react-router';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { ContactEmailsProvider, useCalendarsInfoListener } from '@proton/components';
-import { type Subscription } from '@proton/payments';
+import type { Subscription } from '@proton/payments';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getPreferredActiveWritableCalendar,

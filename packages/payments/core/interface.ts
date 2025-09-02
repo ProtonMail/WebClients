@@ -19,8 +19,8 @@ import type {
 } from '@proton/chargebee/lib';
 
 import type { PaymentsVersion } from './api';
-import { type CheckSubscriptionData } from './api';
-import { type BillingAddress, type FullBillingAddress } from './billing-address/billing-address';
+import type { CheckSubscriptionData } from './api';
+import type { BillingAddress, FullBillingAddress } from './billing-address/billing-address';
 import type {
     ADDON_NAMES,
     Autopay,

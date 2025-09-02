@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 import { Route } from 'react-router-dom';
 
 import { subPath } from '@proton/pass/components/Navigation/routing';

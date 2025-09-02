@@ -1,4 +1,4 @@
-import { type Currency } from '@proton/payments';
+import type { Currency } from '@proton/payments';
 
 import { getDiscountPrice } from './getDiscountPrice';
 

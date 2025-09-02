@@ -11,7 +11,7 @@ import {
 } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { type AddressKeysState } from '../addressKeys/index';
+import type { AddressKeysState } from '../addressKeys/index';
 import { addressesThunk } from '../addresses';
 import type { KtState } from '../kt';
 import { getKTActivation } from '../kt/actions';

@@ -1,4 +1,4 @@
-import { type PaymentStatus } from '@proton/payments';
+import type { PaymentStatus } from '@proton/payments';
 import { addApiMock } from '@proton/testing/index';
 
 export const statusDefaultResponse: PaymentStatus = {

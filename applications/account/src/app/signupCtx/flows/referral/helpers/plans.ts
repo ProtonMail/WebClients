@@ -1,8 +1,8 @@
-import { type AppIntent } from '@proton/components/containers/login/interface';
+import type { AppIntent } from '@proton/components/containers/login/interface';
 import { CYCLE, type Cycle, PLANS, type PlanIDs } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { type AvailablePlan } from '../../../context/SignupContext';
+import type { AvailablePlan } from '../../../context/SignupContext';
 
 type ReferralSelectedPlan = {
     planIDs: PlanIDs;

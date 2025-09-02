@@ -3,7 +3,7 @@ import { createContext, useCallback, useEffect } from 'react';
 import { matchPath, useHistory } from 'react-router-dom';
 
 import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/ServiceWorkerProvider';
-import { type ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
+import type { ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
 import { createAuthService } from 'proton-pass-web/lib/auth';
 
 import { useNotifications } from '@proton/components';
@@ -21,7 +21,7 @@ import { getConsumeForkParameters, getStateKey } from '@proton/pass/lib/auth/for
 import { AppStatusFromLockMode, LockMode, type UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import { authStore } from '@proton/pass/lib/auth/store';
-import { type MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { logger } from '@proton/pass/utils/logger';

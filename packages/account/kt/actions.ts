@@ -1,11 +1,11 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { type KTUserContext, type KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import type { KTUserContext, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import { type UserState, userThunk } from '../user';
 import { type UserKeysState, userKeysThunk } from '../userKeys';
-import { type KtState } from './index';
+import type { KtState } from './index';
 
 export const getKTActivation = (): ThunkAction<
     KeyTransparencyActivation,

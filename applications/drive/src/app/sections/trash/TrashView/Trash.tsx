@@ -19,7 +19,7 @@ import { useUserSettings } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
 import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
-import { type LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
+import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
 import { useThumbnailStore } from '../../../zustand/thumbnails/thumbnails.store';
 import { TrashItemContextMenu } from '../menus/TrashItemContextMenu';
 import type { useTrashNodes } from '../useTrashNodes';
@@ -96,7 +96,9 @@ export function Trash({ shareId, trashView }: Props) {
         try {
             for await (const thumbResult of drive.iterateThumbnails([item.uid], ThumbnailType.Type1)) {
                 if (thumbResult.ok) {
-                    const url = URL.createObjectURL(new Blob([thumbResult.thumbnail as Uint8Array<ArrayBuffer>], { type: 'image/jpeg' }));
+                    const url = URL.createObjectURL(
+                        new Blob([thumbResult.thumbnail as Uint8Array<ArrayBuffer>], { type: 'image/jpeg' })
+                    );
                     setThumbnail(item.thumbnailId, { sdUrl: url });
                 } else {
                     setThumbnail(item.thumbnailId, {});

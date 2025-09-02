@@ -1,5 +1,5 @@
 import { RELEASE_CATEGORIES } from '@proton/shared/lib/constants';
-import { type DesktopVersion } from '@proton/shared/lib/desktop/DesktopVersion';
+import type { DesktopVersion } from '@proton/shared/lib/desktop/DesktopVersion';
 
 import { getLatestRelease } from '../../lib/desktop/getLatestRelease';
 

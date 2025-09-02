@@ -1,11 +1,11 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { Form, type FormikErrors, FormikProvider, useFormik } from 'formik';
 
 import { Button } from '@proton/atoms';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
-import { type PasswordCredentials } from '@proton/pass/lib/auth/password';
+import type { PasswordCredentials } from '@proton/pass/lib/auth/password';
 
 type Props = {
     autosavable?: boolean;

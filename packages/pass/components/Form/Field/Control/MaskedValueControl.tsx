@@ -1,6 +1,6 @@
 import type { ElementType } from 'react';
 
-import { type FactoryArg } from 'imask/esm/masked/factory';
+import type { FactoryArg } from 'imask/esm/masked/factory';
 import { pipe } from 'imask/esm/masked/pipe';
 
 import { ValueControl, type ValueControlProps } from './ValueControl';

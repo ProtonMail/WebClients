@@ -1,4 +1,4 @@
-import { type KeyMetadata } from '@proton/account/addressKeys/getKeyMetadata';
+import type { KeyMetadata } from '@proton/account/addressKeys/getKeyMetadata';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { Address, Key, SignedKeyListItem, UserModel } from '@proton/shared/lib/interfaces';

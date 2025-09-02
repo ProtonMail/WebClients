@@ -2,7 +2,7 @@ import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { type Location } from 'history';
+import type { Location } from 'history';
 
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import type { ItemFilters, MaybeNull } from '@proton/pass/types';

@@ -12,7 +12,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import AuthModal from '@proton/components/containers/password/AuthModal';
-import { type AuthModalResult } from '@proton/components/containers/password/interface';
+import type { AuthModalResult } from '@proton/components/containers/password/interface';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

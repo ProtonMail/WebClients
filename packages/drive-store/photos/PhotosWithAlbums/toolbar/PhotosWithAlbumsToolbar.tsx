@@ -20,11 +20,11 @@ import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
-import {
-    type OnFileSkippedSuccessCallbackData,
-    type OnFileUploadSuccessCallbackData,
-    type PhotoGridItem,
-    type PhotoLink,
+import type {
+    OnFileSkippedSuccessCallbackData,
+    OnFileUploadSuccessCallbackData,
+    PhotoGridItem,
+    PhotoLink,
 } from '../../../store';
 import { isPhotoGroup } from '../../../store/_photos';
 import { AlbumsPageTypes } from '../../../zustand/photos/layout.store';

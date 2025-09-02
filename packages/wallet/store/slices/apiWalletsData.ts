@@ -10,7 +10,7 @@ import {
     userKeysThunk,
 } from '@proton/account';
 import type { WasmApiWalletAccount, WasmApiWalletSettings } from '@proton/andromeda';
-import { type ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 
 import type { IWasmApiWalletData } from '../../types';

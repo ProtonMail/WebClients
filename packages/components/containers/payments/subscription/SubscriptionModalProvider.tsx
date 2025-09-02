@@ -8,7 +8,7 @@ import { useRedirectToAccountApp } from '../../desktop/useRedirectToAccountApp';
 import type { SubscriptionContainerProps } from './SubscriptionContainer';
 import type { SubscriptionModalFowardedRefProps } from './SubscriptionModal';
 import SubscriptionModal from './SubscriptionModal';
-import { type SUBSCRIPTION_STEPS } from './constants';
+import type { SUBSCRIPTION_STEPS } from './constants';
 
 export type SubscriptionOverridableStep = SUBSCRIPTION_STEPS.UPGRADE | SUBSCRIPTION_STEPS.THANKS;
 

@@ -12,7 +12,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { clientNeedsSession, clientSessionLocked } from '@proton/pass/lib/client';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { type AppState } from '@proton/pass/types';
+import type { AppState } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { TopLayerManager } from '@proton/pass/utils/dom/popover';
 import { asyncLock } from '@proton/pass/utils/fp/promises';

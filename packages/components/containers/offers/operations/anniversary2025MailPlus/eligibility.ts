@@ -8,7 +8,7 @@ import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 import isCheckAllowed from '../../helpers/isCheckAllowed';
 import { FREE_DOWNGRADER_LIMIT } from '../../helpers/offerPeriods';
 import OfferSubscription from '../../helpers/offerSubscription';
-import { type OfferConfig } from '../../interface';
+import type { OfferConfig } from '../../interface';
 
 interface Props {
     protonConfig: ProtonConfig;

@@ -1,6 +1,6 @@
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getHostname } from '@proton/shared/lib/helpers/url';
-import { type Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 import { getTokenStatusV4, getTokenStatusV5 } from './api';
 import { PAYMENT_TOKEN_STATUS } from './constants';

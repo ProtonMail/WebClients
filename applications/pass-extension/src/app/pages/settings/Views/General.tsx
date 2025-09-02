@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { Behaviors } from 'proton-pass-extension/lib/components/Settings/Behaviors';
 

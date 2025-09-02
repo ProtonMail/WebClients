@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { type ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import illustration from '@proton/styles/assets/img/illustrations/upsell-composer-assistant.svg';

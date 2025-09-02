@@ -13,7 +13,7 @@ import {
     ShareLinkButton,
 } from '../../components/sections/ToolbarButtons';
 import { useActions } from '../../store';
-import { type LegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
+import type { LegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
 import { getSelectedItems } from './SharedByMe';
 import { StopSharingButton } from './ToolbarButtons';
 

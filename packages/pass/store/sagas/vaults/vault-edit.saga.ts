@@ -3,7 +3,7 @@ import { put, takeEvery } from 'redux-saga/effects';
 import { editVault } from '@proton/pass/lib/vaults/vault.requests';
 import { vaultEditFailure, vaultEditIntent, vaultEditSuccess } from '@proton/pass/store/actions';
 import type { ShareType } from '@proton/pass/types';
-import { type Share } from '@proton/pass/types';
+import type { Share } from '@proton/pass/types';
 
 function* editVaultWorker({ payload, meta }: ReturnType<typeof vaultEditIntent>) {
     try {

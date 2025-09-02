@@ -1,4 +1,4 @@
-import { type BrowserWindow } from 'electron';
+import type { BrowserWindow } from 'electron';
 
 import type { MaybeNull } from '@proton/pass/types';
 

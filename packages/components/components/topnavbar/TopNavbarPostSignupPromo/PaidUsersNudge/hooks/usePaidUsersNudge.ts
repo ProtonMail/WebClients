@@ -2,7 +2,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import useFeature from '@proton/features/useFeature';
 import { domIsBusy } from '@proton/shared/lib/busy';
 
-import { type OfferHookReturnValue } from '../../common/interface';
+import type { OfferHookReturnValue } from '../../common/interface';
 import type { SupportedPlans } from '../helpers/interface';
 import { shouldOpenReminder } from '../helpers/paidUserNudgeHelper';
 import { paidConfig } from '../montlyPaidUserNudgeConfig';

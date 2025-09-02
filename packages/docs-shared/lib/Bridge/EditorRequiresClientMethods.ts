@@ -1,4 +1,4 @@
-import { type ErrorInfo } from 'react'
+import type { ErrorInfo } from 'react'
 import type { CommentInterface } from '../CommentInterface'
 import type { CommentThreadInterface } from '../CommentThreadInterface'
 import type { RtsMessagePayload } from '../Doc/RtsMessagePayload'

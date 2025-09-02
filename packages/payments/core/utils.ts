@@ -1,5 +1,5 @@
 import { PAYMENT_METHOD_TYPES } from './constants';
-import { type TokenPaymentMethod, type V5PaymentToken } from './interface';
+import type { TokenPaymentMethod, V5PaymentToken } from './interface';
 
 export const toV5PaymentToken = (PaymentToken: string): V5PaymentToken => {
     return {

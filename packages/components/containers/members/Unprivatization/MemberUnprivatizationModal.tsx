@@ -17,7 +17,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import type { Member } from '@proton/shared/lib/interfaces';
-import { type ParsedUnprivatizationData } from '@proton/shared/lib/keys';
+import type { ParsedUnprivatizationData } from '@proton/shared/lib/keys';
 
 interface Props extends Omit<ModalProps<'div'>, 'children' | 'buttons'> {
     onChange: () => void;

@@ -1,4 +1,4 @@
-import { type PLANS } from '@proton/payments';
+import type { PLANS } from '@proton/payments';
 import type { Product } from '@proton/shared/lib/ProductEnum';
 import type { ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 

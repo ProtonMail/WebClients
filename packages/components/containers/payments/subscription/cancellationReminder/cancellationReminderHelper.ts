@@ -1,5 +1,5 @@
 import type { Feature } from '@proton/features/interface';
-import { type Subscription } from '@proton/payments';
+import type { Subscription } from '@proton/payments';
 
 export type ReminderFlag = Record<string, number>;
 

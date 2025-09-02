@@ -2,12 +2,12 @@ import type { ForwardRefRenderFunction } from 'react';
 import { forwardRef, useMemo } from 'react';
 
 import { type Locale, parse } from 'date-fns';
-import { type FieldProps } from 'formik';
+import type { FieldProps } from 'formik';
 
-import { type Input } from '@proton/atoms';
+import type { Input } from '@proton/atoms';
 import { DateInputTwo, InputFieldTwo } from '@proton/components';
-import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
-import { type Maybe } from '@proton/pass/types/utils';
+import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
+import type { Maybe } from '@proton/pass/types/utils';
 import { dateFromYYYYMMDD, formatISODate, formatPlaceholder } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
 

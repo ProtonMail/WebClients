@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import {
     useIFrameAppController,
@@ -12,7 +12,7 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { MODEL_VERSION } from '@proton/pass/constants';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import { type CriteriaMasks } from '@proton/pass/types/worker/settings';
+import type { CriteriaMasks } from '@proton/pass/types/worker/settings';
 
 type Props = {
     criteria: CriteriaMasks;

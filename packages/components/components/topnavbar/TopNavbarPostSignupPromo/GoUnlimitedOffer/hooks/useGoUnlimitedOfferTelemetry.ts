@@ -6,7 +6,7 @@ import type { TelemetryUnlimitedOffer2025 } from '@proton/shared/lib/api/telemet
 import { type TelemetryEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
-import { type SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
 
 import type { MessageType } from '../helpers/interface';
 

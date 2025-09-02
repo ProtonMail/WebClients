@@ -7,7 +7,7 @@ import { PassThemeProvider } from '@proton/pass/components/Layout/Theme/ThemePro
 import type { PassThemeService } from '@proton/pass/components/Layout/Theme/ThemeService';
 import type { UsePeriodOtpCodeOptions } from '@proton/pass/hooks/useOTPCode';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
-import { type AuthStore } from '@proton/pass/lib/auth/store';
+import type { AuthStore } from '@proton/pass/lib/auth/store';
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import { preloadPassUI } from '@proton/pass/lib/core/ui.proxy';
 import type { I18nService } from '@proton/pass/lib/i18n/service';

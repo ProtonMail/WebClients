@@ -22,7 +22,7 @@ import SnoozeUpsellModal from '../list/snooze/components/SnoozeUpsellModal';
 import SnoozeToolbarDropdownStepWrapper, {
     SnoozeToolbarDropdownStepWrapperProps,
 } from '../list/snooze/containers/SnoozeToolbarDropdownStepWrapper';
-import { type DropdownRender } from '../message/extrasHeader/HeaderDropdown';
+import type { DropdownRender } from '../message/extrasHeader/HeaderDropdown';
 import ToolbarDropdown from './ToolbarDropdown';
 
 const canEmpty = (labelID: string, elementIDs: string[], selectedIDs: string[], isSearch: boolean) => {

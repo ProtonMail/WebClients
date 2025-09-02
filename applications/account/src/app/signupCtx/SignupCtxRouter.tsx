@@ -4,7 +4,7 @@ import { PaymentsContextOptimisticProvider } from '@proton/payments/ui';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 
 import { cachedPlans } from '../defaultPlans';
-import { type BaseSignupContextProps } from './context/SignupContext';
+import type { BaseSignupContextProps } from './context/SignupContext';
 import DrivePricing from './flows/drive/DrivePricing';
 import DriveSignup from './flows/drive/DriveSignup';
 import GenericStartSignup from './flows/genericStart/GenericStartSignup';

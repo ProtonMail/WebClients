@@ -1,4 +1,4 @@
-import { type ElementType, type ReactNode } from 'react';
+import type { ElementType, ReactNode } from 'react';
 
 import { DashboardCard } from '@proton/atoms';
 import type { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';

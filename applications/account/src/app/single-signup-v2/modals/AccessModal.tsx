@@ -17,7 +17,7 @@ import {
     WALLET_APP_NAME,
     WALLET_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
-import { type User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 
 import driveAccess from '../drive/access.svg';

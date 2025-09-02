@@ -18,9 +18,9 @@ import {
     ensureTokenChargeableV5,
     toV5PaymentToken,
 } from '@proton/payments';
-import { type ApplePayModalHandles, type ChargebeeIframeHandles } from '@proton/payments';
+import type { ApplePayModalHandles, ChargebeeIframeHandles } from '@proton/payments';
 import { getChargebeeErrorMessage } from '@proton/payments/ui';
-import { type Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 import { defaultTranslations, ensureTokenChargeable } from '../ensureTokenChargeable';
 import PaymentVerificationModal from './PaymentVerificationModal';

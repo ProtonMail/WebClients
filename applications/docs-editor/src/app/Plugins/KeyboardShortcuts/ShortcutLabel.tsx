@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { CustomKeyboardShortcuts } from './CustomKeyboardShortcuts'
 import { DefaultKeyboardShortcuts } from './DefaultKeyboardShortcuts'
-import { type KeyboardShortcutID } from './Types'
+import type { KeyboardShortcutID } from './Types'
 import { ModifierKbd, ShortcutKbd } from './ShortcutKbd'
 import { isMac } from '@proton/shared/lib/helpers/browser'
 import { ShortcutLabelContainer } from './ShortcutLabelContainer'

@@ -1,8 +1,8 @@
 import { type ADDON_NAMES, PLANS, PLAN_TYPES } from '../constants';
-import { type Currency, type PlanIDs } from '../interface';
+import type { Currency, PlanIDs } from '../interface';
 import { isLifetimePlan } from '../subscription/helpers';
 import { PlanState } from './constants';
-import { type Plan, type PlansMap, type StrictPlan } from './interface';
+import type { Plan, PlansMap, StrictPlan } from './interface';
 
 export function isPlanEnabled(plan: Plan): boolean {
     return plan.State === PlanState.Available;

@@ -1,5 +1,5 @@
 import { archivePath } from '@proton/pass/lib/export/archive';
-import { type ExportData, type ExportedItem } from '@proton/pass/lib/export/types';
+import type { ExportData, ExportedItem } from '@proton/pass/lib/export/types';
 import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
 import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';

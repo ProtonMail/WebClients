@@ -1,5 +1,5 @@
 import type { FileBuffer } from '@proton/pass/lib/file-storage/types';
-import { type FileStorage } from '@proton/pass/lib/file-storage/types';
+import type { FileStorage } from '@proton/pass/lib/file-storage/types';
 import type { AnyStorage, Maybe, StorageData } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logId, logger } from '@proton/pass/utils/logger';

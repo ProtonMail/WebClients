@@ -19,7 +19,7 @@ import { SOURCE_ACTION } from '../../list-telemetry/useListTelemetry';
 import SnoozeCustomTime from '../components/SnoozeCustomTime';
 import SnoozeDurationSelection from '../components/SnoozeDurationSelection';
 import SnoozeUpsellModal from '../components/SnoozeUpsellModal';
-import { type SNOOZE_DURATION } from '../constant';
+import type { SNOOZE_DURATION } from '../constant';
 import { sendSnoozeReport } from '../helpers/snoozeTelemetry';
 
 interface Props {

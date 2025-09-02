@@ -18,7 +18,7 @@ import FolderTree from '../../components/FolderTree/FolderTree';
 import ModalContentLoader from '../../components/modals/ModalContentLoader';
 import { selectMessageForItemList } from '../../components/sections/helpers';
 import type { TreeItem } from '../../store';
-import { type DecryptedLink } from '../../store';
+import type { DecryptedLink } from '../../store';
 import { getMovedFiles } from '../../utils/moveTexts';
 import { EmptyFileTreePlaceholder } from './EmptyFileTreePlaceholder';
 import type { MoveItemsModalStateItem } from './useMoveItemsModalState';

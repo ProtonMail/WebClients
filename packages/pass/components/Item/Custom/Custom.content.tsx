@@ -10,7 +10,7 @@ import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaRe
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useDeobfuscatedItem, usePartialDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import type { ItemRevision } from '@proton/pass/types';
-import { type ItemCustomType } from '@proton/pass/types';
+import type { ItemCustomType } from '@proton/pass/types';
 
 import { wifiSecurityLabel } from './Custom.utils';
 

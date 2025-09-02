@@ -1,7 +1,7 @@
-import { type Draft } from '@reduxjs/toolkit';
+import type { Draft } from '@reduxjs/toolkit';
 
-import { type ModelState } from '@proton/account';
-import { type LabelCount } from '@proton/shared/lib/interfaces';
+import type { ModelState } from '@proton/account';
+import type { LabelCount } from '@proton/shared/lib/interfaces';
 
 import {
     markConversationsAsRead,

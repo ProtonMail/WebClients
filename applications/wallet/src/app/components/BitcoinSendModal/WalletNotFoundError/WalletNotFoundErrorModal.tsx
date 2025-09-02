@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { type WasmInviteNotificationType } from '@proton/andromeda';
+import type { WasmInviteNotificationType } from '@proton/andromeda';
 import type { ModalOwnProps } from '@proton/components';
 import { Prompt } from '@proton/components';
 import walletUserDark from '@proton/styles/assets/img/wallet/wallet-user-dark.jpg';

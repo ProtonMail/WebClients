@@ -48,7 +48,7 @@ import { getMember } from '../members/getMember';
 import { organizationThunk } from '../organization';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
 import { type ProtonDomainsState, protonDomainsThunk } from '../protonDomains';
-import { type UserState } from '../user';
+import type { UserState } from '../user';
 import { userThunk } from '../user';
 import { type UserKeysState, userKeysThunk } from '../userKeys';
 import { type UserSettingsState, userSettingsThunk } from '../userSettings';

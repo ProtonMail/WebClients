@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { CircleLoader, UserAvatar } from '@proton/atoms';
 import { useSortedList } from '@proton/components';
-import { type MemberRole } from '@proton/drive/index';
+import type { MemberRole } from '@proton/drive/index';
 import useLoading from '@proton/hooks/useLoading';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';

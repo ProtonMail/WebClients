@@ -9,7 +9,7 @@ import {
     splitNodeUid,
 } from '@proton/drive';
 
-import { type FileBrowserBaseItem } from '../../components/FileBrowser';
+import type { FileBrowserBaseItem } from '../../components/FileBrowser';
 import type { EncryptedLink, LinkShareUrl, SignatureIssues } from '../../store';
 import { getNodeEntity } from './getNodeEntity';
 import { dateToLegacyTimestamp, getLegacyModifiedTime, getLegacyTrashedTime } from './legacyTime';

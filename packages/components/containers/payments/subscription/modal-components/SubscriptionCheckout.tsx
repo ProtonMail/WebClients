@@ -10,7 +10,7 @@ import Info from '@proton/components/components/link/Info';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import useConfig from '@proton/components/hooks/useConfig';
 import { type PaymentFacade, useCurrencies } from '@proton/components/payments/client-extensions';
-import { type MethodsHook } from '@proton/components/payments/react-extensions';
+import type { MethodsHook } from '@proton/components/payments/react-extensions';
 import type { CheckoutModifiers, RequiredCheckResponse } from '@proton/payments';
 import {
     type Currency,
@@ -28,7 +28,7 @@ import {
     hasPlanIDs,
     isLifetimePlanSelected,
 } from '@proton/payments';
-import { type TaxCountryHook } from '@proton/payments/ui';
+import type { TaxCountryHook } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
@@ -36,7 +36,7 @@ import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfac
 import Checkout from '../../Checkout';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '../../RenewalNotice';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
-import { type CouponConfigRendered } from '../coupon-config/useCouponConfig';
+import type { CouponConfigRendered } from '../coupon-config/useCouponConfig';
 import { getTotalBillingText } from '../helpers';
 import { AddonTooltip } from './helpers/AddonTooltip';
 import { BilledCycleText } from './helpers/BilledCycleText';

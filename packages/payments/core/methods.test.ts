@@ -13,7 +13,7 @@ import {
     PLANS,
     signupFlows,
 } from './constants';
-import { type PaymentMethodFlow, type PaymentStatus, type PaymentsApi, type SavedPaymentMethod } from './interface';
+import type { PaymentMethodFlow, PaymentStatus, PaymentsApi, SavedPaymentMethod } from './interface';
 import { PaymentMethods, initializePaymentMethods } from './methods';
 
 const TEST_CURRENCY = 'USD' as const;

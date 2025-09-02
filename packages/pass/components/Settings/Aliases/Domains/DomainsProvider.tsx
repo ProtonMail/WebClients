@@ -13,7 +13,7 @@ import type {
     UserAliasDomainOutput,
     UserAliasSettingsGetOutput,
 } from '@proton/pass/types';
-import { type CustomDomainOutput, type MaybeNull } from '@proton/pass/types';
+import type { CustomDomainOutput, MaybeNull } from '@proton/pass/types';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
 import { toMap } from '@proton/shared/lib/helpers/object';

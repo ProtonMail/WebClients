@@ -6,9 +6,9 @@ import { Banner, BannerVariants, Button } from '@proton/atoms';
 import Label from '@proton/components/components/label/Label';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { ChargebeeIframe, CountriesDropdown } from '@proton/payments/ui';
-import { type ChargebeeWrapperProps } from '@proton/payments/ui';
+import type { ChargebeeWrapperProps } from '@proton/payments/ui';
 
-import { type ChargebeeDirectDebitProcessorHook } from '../react-extensions/useSepaDirectDebit';
+import type { ChargebeeDirectDebitProcessorHook } from '../react-extensions/useSepaDirectDebit';
 import { SepaAuthorizationText } from './SepaAuthorizationText';
 
 export interface DirectDebitProps extends ChargebeeWrapperProps {

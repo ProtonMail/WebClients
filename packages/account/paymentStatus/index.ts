@@ -8,7 +8,7 @@ import {
 } from '@reduxjs/toolkit';
 
 import { type PaymentStatus, getPaymentMethodStatus } from '@proton/payments';
-import { type ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
     cacheHelper,
     createPromiseStore,
@@ -17,10 +17,10 @@ import {
     previousSelector,
 } from '@proton/redux-utilities';
 import { MINUTE } from '@proton/shared/lib/constants';
-import { type Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 import { getInitialModelState } from '../initialModelState';
-import { type ModelState } from '../interface';
+import type { ModelState } from '../interface';
 
 const name = 'paymentStatus' as const;
 

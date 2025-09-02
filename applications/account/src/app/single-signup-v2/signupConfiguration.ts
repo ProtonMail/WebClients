@@ -3,7 +3,7 @@ import { getIsLumoApp, getIsPassApp } from '@proton/shared/lib/authentication/ap
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Audience } from '@proton/shared/lib/interfaces';
-import { type VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 import type { PublicTheme } from '../containers/PublicThemeProvider';
 import { getAuthenticatorConfiguration } from './authenticator/configuration';

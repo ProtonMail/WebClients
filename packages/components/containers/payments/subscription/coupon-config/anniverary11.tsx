@@ -1,7 +1,7 @@
 import Price from '@proton/components/components/price/Price';
 import { COUPON_CODES, CYCLE, getCheckout } from '@proton/payments';
 
-import { type CouponConfig } from './interface';
+import type { CouponConfig } from './interface';
 
 export const anniversary11Config: CouponConfig = {
     coupons: [COUPON_CODES.PROTONBDAYSALE25, COUPON_CODES.PROTONBDAYSALEB25, COUPON_CODES.COMMUNITYSPECIALDEAL25],

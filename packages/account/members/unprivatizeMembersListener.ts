@@ -1,7 +1,7 @@
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import noop from '@proton/utils/noop';
 
-import { type DomainsState } from '../domains';
+import type { DomainsState } from '../domains';
 import type { KtState } from '../kt';
 import { type MembersState, selectMembers } from '../members';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';

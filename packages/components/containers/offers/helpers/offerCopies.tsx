@@ -2,7 +2,7 @@ import type { ReactElement } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { type IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/components/components/icon/Icon';
 import { getDesktopAppText, getOwnDomainText } from '@proton/components/containers/payments/features/mail';
 import { CYCLE, PLANS, PLAN_NAMES, type PlanIDs } from '@proton/payments';
 import { getRenewCycle } from '@proton/payments';

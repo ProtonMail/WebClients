@@ -3,7 +3,7 @@ import { useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { AddressesAutocompleteTwo, AddressesInput, InputFieldTwo } from '@proton/components';
-import { type MemberRole } from '@proton/drive/index';
+import type { MemberRole } from '@proton/drive/index';
 import { useContactGroups } from '@proton/mail';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import clsx from '@proton/utils/clsx';

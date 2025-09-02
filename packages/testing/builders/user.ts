@@ -1,5 +1,5 @@
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
-import { type Key, type UserModel } from '@proton/shared/lib/interfaces';
+import type { Key, UserModel } from '@proton/shared/lib/interfaces';
 
 import { privateKeyA } from '../data';
 

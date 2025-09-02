@@ -1,4 +1,4 @@
-import { type FormikErrors } from 'formik';
+import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
 import type { SanitizedAliasOptions } from '@proton/pass/hooks/useAliasOptions';

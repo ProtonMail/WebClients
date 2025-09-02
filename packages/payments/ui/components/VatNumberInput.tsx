@@ -6,8 +6,8 @@ import SkeletonLoader from '@proton/components/components/skeletonLoader/Skeleto
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { useEditBillingAddressModal } from '@proton/components/containers/invoices/EditBillingAddress/useEditBillingAddressModal';
 
-import { type TaxCountryHook } from '../hooks/useTaxCountry';
-import { type VatNumberHook } from '../hooks/useVatNumber';
+import type { TaxCountryHook } from '../hooks/useTaxCountry';
+import type { VatNumberHook } from '../hooks/useVatNumber';
 
 function getVatPlaceholder(countryCode: string) {
     const placeholders: Record<string, string> = {
