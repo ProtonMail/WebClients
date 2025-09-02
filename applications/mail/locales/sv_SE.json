@@ -36,10 +36,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "${ numberOfAddresses } address": [
-        "${ numberOfAddresses } adress",
-        "${ numberOfAddresses } adresser"
-      ],
       "A to Z": [
         "A till Ö"
       ],
@@ -325,9 +321,6 @@
       ],
       "Copy alias “${ name }”": [
         "Kopiera alias “${ name }“"
-      ],
-      "Copy email address": [
-        "Kopiera e-postadress"
       ],
       "Copy email to clipboard": [
         "Kopiera e-post till urklipp"
@@ -812,9 +805,6 @@
       "Make it friendly": [
         "Gör det vänligt"
       ],
-      "Manage addresses": [
-        "Hantera adresser"
-      ],
       "Manage advanced account protections": [
         "Hantera avancerade kontoskydd"
       ],
@@ -910,6 +900,9 @@
       ],
       "More search options": [
         "Fler sökalternativ"
+      ],
+      "Most frequent": [
+        "Mest frekvent"
       ],
       "Most read": [
         "Mest läst"
@@ -1072,6 +1065,9 @@
       ],
       "Read receipt sent": [
         "Läskvitto skickat"
+      ],
+      "Recently read": [
+        "Nyligen läst"
       ],
       "Recently received": [
         "Nyligen mottaget"
@@ -4045,9 +4041,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Förenkla synkronisering och schemaläggning med delade kalendrar."
       ],
-      "This view shows messages sent to the following addresses:": [
-        "Denna vy visar meddelanden som skickats till följande adresser:"
-      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "För att fortsätta använda skrivassistenten, lägg till den i din prenumeration."
       ],
@@ -5275,8 +5268,8 @@
       "customer support": [
         "kundsupport"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Familjepaket stöder för närvarande inte externa konton. Skapa en ${ BRAND_NAME }-adress innan du går med. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Familjepaket stöder för närvarande inte externa konton. Skapa en ${ BRAND_NAME }-adress innan du går med. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Om du accepterar inbjudan kommer vi att byta från ditt nuvarande paket och kreditera ditt konto med eventuellt återstående saldo."
@@ -7213,9 +7206,6 @@
       "Included for free with your plan": [
         "Inkluderat gratis med ditt paket"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inklusive ${ formattedTaxRate } % ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Ärvd från överordnad mapp"
       ],
@@ -9041,6 +9031,9 @@
       "Cash": [
         "Kontant"
       ],
+      "Categories badge": [
+        "Kategorimärke"
+      ],
       "Category": [
         "Kategori"
       ],
@@ -9491,6 +9484,9 @@
       "System information": [
         "Systeminformation"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "Kategorin har uppdaterats, tack för din feedback!"
+      ],
       "The filter is disabled. ${ enableButton }": [
         "Filtret är inaktiverat. ${ enableButton }"
       ],
@@ -9539,9 +9535,6 @@
       "Username": [
         "Användarnamn"
       ],
-      "VAT": [
-        "VAT"
-      ],
       "Verification code": [
         "Verifieringskod"
       ],
@@ -9557,11 +9550,17 @@
       "Weak password": [
         "Svagt lösenord"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Vi förbättrar hur e-post kategoriseras. Din feedback hjälper till att göra det smartare och mer exakt."
+      ],
       "What happened?": [
         "Vad hände?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "Vad är din främsta anledning till att du avbryter eller nedgraderar?"
+      ],
+      "Why am I seeing this?": [
+        "Varför ser jag detta?"
       ],
       "With attachment": [
         "Med bilaga"
@@ -9729,6 +9728,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Skapa en ny kalender för att hantera dina inbjudningar"
+      ],
+      "Deleted": [
+        "Borttagen"
       ],
       "Drafts": [
         "Utkast"
@@ -11400,6 +11402,9 @@
       "Activate selected": [
         "Aktivera valda"
       ],
+      "Ad-free promise": [
+        "Annonsfritt löfte"
+      ],
       "Advanced encryption": [
         "Avancerad kryptering"
       ],
@@ -11772,11 +11777,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denna tid kommer du inte att kunna ändra eller säga upp din prenumeration. Vänta tills din betalning är slutförd innan du försöker göra några ändringar. Tack för ditt tålamod."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Exklusive ${ taxRate } % moms: ${ taxAmount }"
+      ],
       "Got it": [
         "Jag förstår"
       ],
       "I'm purchasing as a business": [
         "Jag köper som ett företag"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inklusive ${ taxRate } % moms: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -11792,6 +11809,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Förnyas med ${ renewPriceStr }, avbryt när som helst."
+      ],
+      "Taxes": [
+        "Moms"
       ],
       "terms & conditions": [
         "användarvillkor"
@@ -13240,6 +13260,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } totalt lagringsutrymme"
       ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } ger dig åtkomst till alla premiumfunktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }. Integritet är inbyggd så att du kan fortsätta använda den i vetskapen om att dina data och din identitet är säkra."
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
       ],
@@ -13714,6 +13737,10 @@
       "Conversation removed from Starred.": [
         "Konversation borttagen från stjärnmärkt."
       ],
+      "Conversation updated": [
+        "Konversation uppdaterad",
+        "Konversationer uppdaterade"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Konversationer från ${ sendersList } kommer att märkas som ${ labelsList }"
       ],
@@ -13788,6 +13815,10 @@
       ],
       "Message removed from Starred.": [
         "Meddelande borttaget från stjärnmärkt."
+      ],
+      "Message updated": [
+        "Meddelande uppdaterat",
+        "Meddelanden uppdaterade"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Meddelanden från ${ sendersList } kommer att märkas som ${ labelsList }"
@@ -15027,9 +15058,6 @@
       "Your account is protected": [
         "Ditt konto är skyddat"
       ],
-      "Your addresses": [
-        "Dina adresser"
-      ],
       "Your changes are not synced yet": [
         "Dina ändringar är inte synkroniserade än"
       ],
@@ -15257,9 +15285,6 @@
       "${ n } wallet": [
         "${ n } plånbok",
         "${ n } plånböcker"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Ett säkrare sätt att hålla din Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-post"

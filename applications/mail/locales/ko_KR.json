@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
       ],
-      "${ numberOfAddresses } address": [
-        "주소 ${ numberOfAddresses }개"
-      ],
       "A to Z": [
         "오름차순"
       ],
@@ -323,9 +320,6 @@
       ],
       "Copy alias “${ name }”": [
         "별칭 \"${ name }\" 복사"
-      ],
-      "Copy email address": [
-        "이메일 주소 복사"
       ],
       "Copy email to clipboard": [
         "클립보드에 이메일 복사"
@@ -807,9 +801,6 @@
       "Make it friendly": [
         "친근하게 만들기"
       ],
-      "Manage addresses": [
-        "주소 관리"
-      ],
       "Manage advanced account protections": [
         "향상된 계정 보호 관리"
       ],
@@ -905,6 +896,9 @@
       ],
       "More search options": [
         "검색 옵션 더보기"
+      ],
+      "Most frequent": [
+        "빈도순"
       ],
       "Most read": [
         "가장 많이 읽음"
@@ -1067,6 +1061,9 @@
       ],
       "Read receipt sent": [
         "수신 확인 전송"
+      ],
+      "Recently read": [
+        "최근에 읽은순"
       ],
       "Recently received": [
         "최근 받은 항목"
@@ -4031,9 +4028,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "공유 캘린더로 동기화 및 일정 예약을 간소화하세요."
       ],
-      "This view shows messages sent to the following addresses:": [
-        "다음 주소로 보낸 메시지를 보여줍니다:"
-      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "글쓰기 도우미를 계속 사용하기 위해, 구독에 추가해 주세요."
       ],
@@ -5246,8 +5240,8 @@
       "customer support": [
         "고객 지원"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "현재 가족 요금제는 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "현재 가족 플랜이 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "초대를 수락하면, 현재 요금제에서 전환되고 남은 잔액이 사용자의 계좌로 환불됩니다."
@@ -7109,9 +7103,6 @@
       "Included for free with your plan": [
         "플랜에 무료로 포함됨"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }% ${ taxName } 포함: ${ price }"
-      ],
       "Inherited from parent folder": [
         "상위폴더에 상속되어 있습니다"
       ],
@@ -7849,6 +7840,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "연락처 상세 정보를 인증하는데 쓰인 서명에 오류가 발생했습니다. 이는 비밀번호 변경으로 발생했을 수 있습니다."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "대화가 사용자의 조직 데이터 보존 정책에 근거하여 여기에 보관됩니다."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "그들이 당신의 진짜 이메일 주소를 모른다면 스팸 메일을 보낼 수 없습니다. Hide-my-email 별칭으로 편지함을 보호하세요."
@@ -8922,6 +8916,9 @@
       "Cash": [
         "현금"
       ],
+      "Categories badge": [
+        "카테고리 배지"
+      ],
       "Category": [
         "카테고리"
       ],
@@ -9083,6 +9080,9 @@
       ],
       "From: ${ fromEmail }": [
         "보낸 사람: ${ fromEmail }"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "향후 메일의 분류를 개선하는데 도와주세요"
       ],
       "Hide password": [
         "비밀번호 숨기기"
@@ -9372,6 +9372,9 @@
       "System information": [
         "시스템 정보"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "카테고리가 업데이트되었습니다. 피드백 주셔서 감사합니다!"
+      ],
       "The filter is disabled. ${ enableButton }": [
         "필터가 비활성화된 상태입니다. ${ enableButton }"
       ],
@@ -9420,9 +9423,6 @@
       "Username": [
         "사용자 이름"
       ],
-      "VAT": [
-        "부가세"
-      ],
       "Verification code": [
         "인증 코드"
       ],
@@ -9438,11 +9438,20 @@
       "Weak password": [
         "약한 비밀번호"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "이메일 분류 방식이 개선 중입니다. 회원님의 피드백은 이 기능을 더욱 지능적이고 정확하게 만드는데 있어서 큰 도움이 됩니다."
+      ],
       "What happened?": [
         "무슨 일인가요?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "취소하거나 다운그레이드 하는 주요한 이유가 무엇이신가요?"
+      ],
+      "Which category should this be recategorized under?": [
+        "어떤 카테고리로 재분류되어야 한다고 생각하시나요?"
+      ],
+      "Why am I seeing this?": [
+        "왜 이 화면이 표시되나요?"
       ],
       "With attachment": [
         "첨부 파일 있음"
@@ -9610,6 +9619,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "초대장을 관리할 새 캘린더 만들기"
+      ],
+      "Deleted": [
+        "삭제됨"
       ],
       "Drafts": [
         "임시 보관함"
@@ -11615,11 +11627,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "이 기간 동안 구독을 수정하거나 취소할 수 없습니다. 변경을 시도하기 전에 결제가 완료될 때까지 기다려 주세요. 기다려 주셔서 감사합니다."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName } 제외: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% 세금 제외: ${ taxAmount }"
+      ],
       "Got it": [
         "확인했습니다"
       ],
       "I'm purchasing as a business": [
         "사업체 용도로 구매합니다"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName } 포함: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% 세금 포함: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/YY (월/년)"
@@ -11635,6 +11659,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }에 갱신되며 언제나 취소할 수 있습니다."
+      ],
+      "Taxes": [
+        "세금"
       ],
       "terms & conditions": [
         "이용 약관"
@@ -11662,6 +11689,9 @@
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
+      ],
+      "VAT": [
+        "부가세"
       ],
       "VAT number": [
         "부가가치세 번호"
@@ -13512,6 +13542,9 @@
       "Conversation removed from Starred.": [
         "대화가 별표 표시됨에서 삭제되었습니다."
       ],
+      "Conversation updated": [
+        "대화가 업데이트되었습니다"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList } 로 부터 전송된 대화가 ${ labelsList } 로 라벨 표시됩니다"
       ],
@@ -13586,6 +13619,9 @@
       ],
       "Message removed from Starred.": [
         "메시지가 별표 표시됨에서 삭제되었습니다."
+      ],
+      "Message updated": [
+        "메시지가 업데이트되었습니다"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList } 로 부터 전송된 메시지가 ${ labelsList } 로 라벨됩니다."
@@ -14803,9 +14839,6 @@
       "Your account is protected": [
         "계정이 보호됩니다."
       ],
-      "Your addresses": [
-        "사용자 주소"
-      ],
       "Your changes are not synced yet": [
         "변경 사항이 동기화되지 않았습니다."
       ],
@@ -15020,9 +15053,6 @@
       ],
       "${ n } wallet": [
         "${ n }개 지갑"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bitcoin을 보관하는 가장 안전한 방법"
       ],
       "Bitcoin via Email": [
         "Email을 통한 Bitcoin"

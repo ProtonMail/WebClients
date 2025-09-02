@@ -36,10 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
-      "${ numberOfAddresses } address": [
-        "${ numberOfAddresses } endereço",
-        "${ numberOfAddresses } endereços"
-      ],
       "A to Z": [
         "A a Z"
       ],
@@ -325,9 +321,6 @@
       ],
       "Copy alias “${ name }”": [
         "Copiar o alias \"${ name }\""
-      ],
-      "Copy email address": [
-        "Copiar endereço de email"
       ],
       "Copy email to clipboard": [
         "Copiar e-mail para a área de transferência"
@@ -812,9 +805,6 @@
       "Make it friendly": [
         "Mais amigável"
       ],
-      "Manage addresses": [
-        "Gerenciar endereços"
-      ],
       "Manage advanced account protections": [
         "Gerenciar proteções avançada de conta"
       ],
@@ -910,6 +900,9 @@
       ],
       "More search options": [
         "Mais opções de pesquisa"
+      ],
+      "Most frequent": [
+        "Mais frequentes"
       ],
       "Most read": [
         "Mais lido"
@@ -1072,6 +1065,9 @@
       ],
       "Read receipt sent": [
         "Confirmação de leitura enviada"
+      ],
+      "Recently read": [
+        "Lido recentemente"
       ],
       "Recently received": [
         "Recebido recentemente"
@@ -5310,8 +5306,8 @@
       "customer support": [
         "suporte ao cliente"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Os planos de família não oferecem suporte a contas externas no momento. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Os planos familiares não suportam contas externas no momento. Crie um endereço para ${ BRAND_NAME } antes de participar.${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, seu plano atual será alterado e você receberá um crédito em sua conta com o saldo restante, se houver."
@@ -6279,6 +6275,12 @@
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "O gerenciador de senhas da ${ BRAND_NAME } permite que você crie, armazene e preencha automaticamente senhas, para que você nunca precise redefini-las."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "O ${ CALENDAR_APP_NAME } exige um endereço ${ BRAND_NAME } para sincronização segura de eventos e criptografia. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "O ${ CALENDAR_APP_NAME } exige um endereço ${ BRAND_NAME } para sincronização segura de eventos e para a criptografia. Resgate seu endereço ${ MAIL_APP_NAME } gratuito agora."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } novo calendário",
         "${ calendarsToBeCreatedCount } novos calendários"
@@ -7049,6 +7051,9 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Curta uma experiência de e-mail mais rápida e focada com o aplicativo para desktop."
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Garanta uma comunicação totalmente privada e criptografada. Resgate seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
+      ],
       "Enter the code from your authenticator app": [
         "Insira o código do seu aplicativo de autenticação."
       ],
@@ -7244,9 +7249,6 @@
       ],
       "Included for free with your plan": [
         "Incluído gratuitamente no seu plano"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incluindo ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Inherited from parent folder": [
         "Herdado da pasta acima"
@@ -7990,6 +7992,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Houve um erro com a assinatura usada para verificar os detalhes do contato, o que pode ser o resultado de uma redefinição da senha."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Essas conversas são mantidas de acordo com a política de retenção de dados da sua organização."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Eles não podem enviar spam para você se não souberem seu endereço de e-mail. Proteja sua caixa de entrada com aliases do Hide-my-email."
@@ -9088,6 +9093,9 @@
       "Cash": [
         "Dinheiro"
       ],
+      "Categories badge": [
+        "Etiqueta de categorias"
+      ],
       "Category": [
         "Categoria"
       ],
@@ -9249,6 +9257,9 @@
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Ajude-nos a melhorar a futura categorização de e-mails."
       ],
       "Hide password": [
         "Ocultar senha"
@@ -9538,6 +9549,9 @@
       "System information": [
         "Informações do sistema"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "A categoria foi atualizada, agradecemos por seu feedback."
+      ],
       "The filter is disabled. ${ enableButton }": [
         "O filtro está desativado. ${ enableButton }"
       ],
@@ -9586,9 +9600,6 @@
       "Username": [
         "Nome de usuário"
       ],
-      "VAT": [
-        "IVA"
-      ],
       "Verification code": [
         "Código de verificação"
       ],
@@ -9604,11 +9615,20 @@
       "Weak password": [
         "Senha fraca"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Estamos melhorando como os e-mails são categorizados. Seu feedback ajuda a torná-lo mais inteligente e preciso."
+      ],
       "What happened?": [
         "O que aconteceu?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "Qual é o seu motivo principal do cancelamento ou downgrade?"
+      ],
+      "Which category should this be recategorized under?": [
+        "Em qual categoria isso deveria ser recategorizado?"
+      ],
+      "Why am I seeing this?": [
+        "Porque estou vendo isso?"
       ],
       "With attachment": [
         "Com anexo"
@@ -9776,6 +9796,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Crie um calendário para gerenciar seus convites"
+      ],
+      "Deleted": [
+        "Excluído"
       ],
       "Drafts": [
         "Rascunhos"
@@ -10010,6 +10033,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Saiba mais"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Para continuar usando ${ BRAND_NAME }, certifique-se de que seus recursos do plano premium não estão mais em uso ou faça um upgrade no seu plano."
       ],
       "upgrade for more storage": [
         "faça upgrade para mais armazenamento"
@@ -11825,11 +11851,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante esse período, você não poderá modificar ou cancelar sua assinatura. Aguarde até que seu pagamento seja concluído antes de tentar qualquer alteração. Obrigado pela sua paciência."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excluindo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluindo ${ taxRate }% de impostos: ${ taxAmount }"
+      ],
       "Got it": [
         "Entendi"
       ],
       "I'm purchasing as a business": [
         "Estou comprando como empresa"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluindo ${ taxRate }${ taxName }${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluindo ${ taxRate }% de impostos: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -11845,6 +11883,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renova por ${ renewPriceStr }, cancele a qualquer momento."
+      ],
+      "Taxes": [
+        "Impostos"
       ],
       "terms & conditions": [
         "termos e condições"
@@ -11876,6 +11917,9 @@
       ],
       "Timeout exceeded": [
         "Tempo limite excedido"
+      ],
+      "VAT": [
+        "IVA"
       ],
       "VAT number": [
         "Número de IVA"
@@ -13796,6 +13840,10 @@
       "Conversation removed from Starred.": [
         "Conversa removida com estrela."
       ],
+      "Conversation updated": [
+        "Conversa atualizada",
+        "Conversas atualizadas"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "As conversas de ${ sendersList } serão marcadas como ${ labelsList }"
       ],
@@ -13870,6 +13918,10 @@
       ],
       "Message removed from Starred.": [
         "Mensagem removida com estrela."
+      ],
+      "Message updated": [
+        "Mensagem atualizada",
+        "Mensagens atualizadas"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "As mensagens de ${ sendersList } serão marcadas como ${ labelsList }"
@@ -15112,9 +15164,6 @@
       "Your account is protected": [
         "Sua conta está protegida"
       ],
-      "Your addresses": [
-        "Seus endereços"
-      ],
       "Your changes are not synced yet": [
         "Sua alteração não foram sintonizadas ainda"
       ],
@@ -15342,9 +15391,6 @@
       "${ n } wallet": [
         "${ n } carteira",
         "${ n } carteiras"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Uma maneira mais segura de guardar seu Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"

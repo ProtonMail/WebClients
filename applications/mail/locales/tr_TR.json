@@ -36,10 +36,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "${ numberOfAddresses } address": [
-        "${ numberOfAddresses } adres",
-        "${ numberOfAddresses } adres"
-      ],
       "A to Z": [
         "A-Z"
       ],
@@ -325,9 +321,6 @@
       ],
       "Copy alias “${ name }”": [
         "“${ name }” takma adını kopyala"
-      ],
-      "Copy email address": [
-        "E-posta adresini kopyala"
       ],
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
@@ -812,9 +805,6 @@
       "Make it friendly": [
         "Samimileştir"
       ],
-      "Manage addresses": [
-        "Adres yönetimi"
-      ],
       "Manage advanced account protections": [
         "Gelişmiş hesap korumalarını yönetin"
       ],
@@ -910,6 +900,9 @@
       ],
       "More search options": [
         "Diğer arama seçenekleri"
+      ],
+      "Most frequent": [
+        "En sık"
       ],
       "Most read": [
         "En çok okunan"
@@ -1072,6 +1065,9 @@
       ],
       "Read receipt sent": [
         "Okundu bilgisi gönderildi"
+      ],
+      "Recently read": [
+        "Son okunanlar"
       ],
       "Recently received": [
         "Son alınanlar"
@@ -4083,9 +4079,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Paylaşılan takvimler ile zamanlamayı eşitlemeyi ve planlamayı kolaylaştırın."
       ],
-      "This view shows messages sent to the following addresses:": [
-        "Bu görünüm, şu adreslere gönderilen iletileri görüntüler:"
-      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Yazma yardımcısını kullanmayı sürdürmek için aboneliğinize ekleyin."
       ],
@@ -5313,8 +5306,8 @@
       "customer support": [
         "müşteri desteği"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi oluşturun. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi alın. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Daveti kabul ederseniz, sizi geçerli tarifenizde çıkarırız ve kalan tutarı hesabınıza yatırırız."
@@ -7257,9 +7250,6 @@
       "Included for free with your plan": [
         "Tarifenizde ücretsiz olarak bulunur"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "%${ formattedTaxRate } ${ taxName } dahil: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Üst klasörden devralındı"
       ],
@@ -8002,6 +7992,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Kişi bilgilerini doğrulamak için kullanılan imza ile ilgili bir sorun çıktı. Bu durum parola sıfırlama işleminden kaynaklanıyor olabilir."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Bu konuşmalar, kuruluşunuzun veri saklama politikasına göre burada saklanır."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "E-posta adresinizi bilmiyorlarsa size istenmeyen e-posta gönderemezler. hide-my-email takma adları ile e-posta kutunuzu koruyun."
@@ -9100,6 +9093,9 @@
       "Cash": [
         "Nakit"
       ],
+      "Categories badge": [
+        "Kategoriler etiketi"
+      ],
       "Category": [
         "Kategori"
       ],
@@ -9261,6 +9257,9 @@
       ],
       "From: ${ fromEmail }": [
         "Kimden: ${ fromEmail }"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Yakında kullanılacak e-posta kategorilere ayırma özelliğini geliştirmemize yardımcı olun."
       ],
       "Hide password": [
         "Parolayı gizle"
@@ -9550,6 +9549,9 @@
       "System information": [
         "Sistem bilgileri"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "Kategori güncellendi. Geri bildiriminiz için teşekkür ederiz!"
+      ],
       "The filter is disabled. ${ enableButton }": [
         "Süzgeç kapalı. ${ enableButton }"
       ],
@@ -9598,9 +9600,6 @@
       "Username": [
         "Kullanıcı adı"
       ],
-      "VAT": [
-        "KDV"
-      ],
       "Verification code": [
         "Doğrulama kodu"
       ],
@@ -9616,11 +9615,20 @@
       "Weak password": [
         "Zayıf parola"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "E-postaların kategorilere ayrılma şeklini geliştiriyoruz. Geri bildiriminiz, bunu daha akıllı ve daha doğru yapmamıza yardımcı olacak."
+      ],
       "What happened?": [
         "Ne oldu?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "İptal etmenizin ya da tarifenizi düşürmenizin temel nedeni nedir?"
+      ],
+      "Which category should this be recategorized under?": [
+        "Bu e-posta hangi kategori altına taşınmalı?"
+      ],
+      "Why am I seeing this?": [
+        "Bunu neden görüyorsunuz?"
       ],
       "With attachment": [
         "Ek dosyası olan"
@@ -9788,6 +9796,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Davetlerinizi yönetmek için yeni bir takvim ekleyin"
+      ],
+      "Deleted": [
+        "Silinmiş"
       ],
       "Drafts": [
         "Taslaklar"
@@ -11829,11 +11840,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "%${ taxRate } ${ taxName } hariç: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "%${ taxRate } vergi hariç: ${ taxAmount }"
+      ],
       "Got it": [
         "Anladım"
       ],
       "I'm purchasing as a business": [
         "Kurumsal olarak satın alıyorum"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "%${ taxRate } ${ taxName } dahil: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "%${ taxRate } vergi dahil: ${ taxAmount }"
       ],
       "MM/YY": [
         "AA/YY"
@@ -11849,6 +11872,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Taxes": [
+        "Vergiler"
       ],
       "terms & conditions": [
         "hükümler ve koşullar"
@@ -11880,6 +11906,9 @@
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
+      ],
+      "VAT": [
+        "KDV"
       ],
       "VAT number": [
         "KDV numarası"
@@ -13800,6 +13829,10 @@
       "Conversation removed from Starred.": [
         "Yazışmanın yıldızı kaldırıldı."
       ],
+      "Conversation updated": [
+        "Yazışma güncellendi",
+        "Yazışmalar güncellendi"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList } tarafından gönderilen yazışmalar ${ labelsList } olarak etiketlenecek"
       ],
@@ -13875,6 +13908,10 @@
       "Message removed from Starred.": [
         "İletinin yıldızı kaldırıldı."
       ],
+      "Message updated": [
+        "İleti güncellendi",
+        "İletiler güncellendi"
+      ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList } tarafından gönderilen iletiler ${ labelsList } olarak etiketlenecek"
       ],
@@ -13918,6 +13955,10 @@
       ],
       "Read receipt sent": [
         "Okundu bilgisi gönderildi"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "${ elementsCount } ileti yeniden düzenlendi.",
+        "${ elementsCount } ileti yeniden düzenlendi."
       ],
       "Self-destruction removed": [
         "Kendini yok etme kaldırıldı"
@@ -15112,9 +15153,6 @@
       "Your account is protected": [
         "Hesabınız korunuyor"
       ],
-      "Your addresses": [
-        "Adresleriniz"
-      ],
       "Your changes are not synced yet": [
         "Değişiklikleriniz henüz eşitlenmedi"
       ],
@@ -15342,9 +15380,6 @@
       "${ n } wallet": [
         "${ n } cüzdan",
         "${ n } cüzdan"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bitcoin birikimlerinizi saklamanın daha güvenli bir yolu"
       ],
       "Bitcoin via Email": [
         "E-posta ile Bitcoin"
