@@ -3,26 +3,26 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Alert3ds } from '@proton/components';
+import { Alert3ds, SkeletonLoader } from '@proton/components';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
-import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
+import { referralReward } from '@proton/components/containers/referral/constants';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import useLoading from '@proton/hooks/useLoading';
-import { IcArrowLeft, IcShield } from '@proton/icons';
+import { IcArrowLeft } from '@proton/icons';
 import {
     PAYMENT_METHOD_TYPES,
     type PaymentProcessorHook,
-    getIsB2BAudienceFromPlan,
+    SubscriptionMode,
+    TRIAL_DURATION_DAYS,
     getPaymentsVersion,
     getPlanFromPlanIDs,
 } from '@proton/payments';
 import { PayButton, usePaymentOptimistic, useTaxCountry, useVatNumber } from '@proton/payments/ui';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { Audience } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import Terms from '../../../components/Terms';
 import { useSignup } from '../../../context/SignupContext';
 import { Aside } from '../components/Layout/Aside';
 import { Footer } from '../components/Layout/Footer';
@@ -48,6 +48,8 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
     const [submitting, withSubmitting] = useLoading();
 
     const { options } = payments;
+
+    const startTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
 
     const paymentFacade = usePaymentFacade({
         checkResult: options.checkResult,
@@ -131,9 +133,6 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
 
     const showAlert3ds = selectedMethodCard;
 
-    const planName = payments.selectedPlan.getPlanName();
-    const isB2BPlan = getIsB2BAudienceFromPlan(planName);
-
     const paymentsForm = (
         <>
             <form
@@ -146,28 +145,22 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                 method="post"
                 className="w-full"
             >
-                {(() => {
-                    const planIDs = payments.options.planIDs;
-
-                    if (!getHasPlanCustomizer(planIDs)) {
-                        return null;
+                <h1 className="font-arizona text-semibold text-8xl">
+                    {
+                        // translator: full sentence "Try Proton for 14 days free"
+                        c('Signup').t`Try ${BRAND_NAME} for ${TRIAL_DURATION_DAYS} days free`
                     }
-                    return (
-                        <ProtonPlanCustomizer
-                            separator
-                            mode="signup"
-                            loading={false}
-                            currency={payments.options.currency}
-                            cycle={payments.options.cycle}
-                            plansMap={payments.plansMap}
-                            selectedPlanIDs={planIDs}
-                            onChangePlanIDs={(planIDs) => payments.selectPlanIDs(planIDs)}
-                            audience={isB2BPlan ? Audience.B2B : Audience.B2C}
-                            scribeAddonEnabled
-                            showUsersTooltip
-                        />
-                    );
-                })()}
+                </h1>
+
+                <div className="mt-0 mb-6">
+                    {signup.loading?.init ? (
+                        <SkeletonLoader width="70%" height="1.4rem" />
+                    ) : (
+                        <p className="m-0 text-lg">
+                            {c('Signup').t`And get ${referralReward} in credits, if you subscribe.`}
+                        </p>
+                    )}
+                </div>
 
                 <PaymentWrapper
                     {...paymentFacade}
@@ -176,6 +169,7 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                     onCurrencyChange={payments.selectCurrency}
                     taxCountry={taxCountry}
                     vatNumber={vatNumber}
+                    startTrial={startTrial}
                 />
 
                 <PayButton
@@ -190,15 +184,14 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                     className="py-4 text-semibold"
                     paypalClassName=""
                     suffix={
-                        <div className="text-center mt-8">
-                            <span className="color-success">
-                                <IcShield className="align-text-bottom mr-1" />
-                                <span>{c('Info').t`30-day money-back guarantee`}</span>
+                        <div className="text-center mt-4">
+                            <span className="color-success text-semibold">
+                                <span>{c('Info').t`Zero charge today`}</span>
                             </span>
                         </div>
                     }
                 >
-                    {c('Action').t`Confirm purchase`}
+                    {c('Action').t`Start free trial`}
                 </PayButton>
                 {showAlert3ds && <Alert3ds />}
             </form>
@@ -222,15 +215,11 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                         <IcArrowLeft className="shrink-0" />
                         {c('Action').t`Go back`}
                     </Button>
-                    <h1 className="font-arizona text-semibold text-8xl mb-4">
-                        {c('Signup').t`Confirm payment, access your Drive`}
-                    </h1>
-                    {paymentsForm}
 
-                    <Terms className="mt-4" />
+                    {paymentsForm}
                 </Main>
                 <Aside>
-                    <PricingCard step="payment" />
+                    <PricingCard />
                 </Aside>
             </Wrapper>
             <Footer />
