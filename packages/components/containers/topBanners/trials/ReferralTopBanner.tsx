@@ -3,14 +3,25 @@ import { type ReactNode, useState } from 'react';
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { usePlans } from '@proton/account/plans/hooks';
+import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button, ButtonLike, type ButtonProps, InlineLinkButton } from '@proton/atoms';
+import Logo from '@proton/components/components/logo/Logo';
+import StripedItem from '@proton/components/components/stripedList/StripedItem';
+import { StripedList } from '@proton/components/components/stripedList/StripedList';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { FeatureCode, useFeature } from '@proton/features';
+import { IcCheckmark } from '@proton/icons';
 import {
     CYCLE,
+    FREE_PLAN,
+    PLANS,
     Renew,
+    getPlan,
     getPlanIDs,
+    getPlanName,
     getPlanTitle,
     hasTrialExpiredLessThan4Weeks,
     isTrial,
@@ -30,9 +41,18 @@ import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import useModalState from '../../../components/modalTwo/useModalState';
 import useConfig from '../../../hooks/useConfig';
-import { type SubscriptionContainerProps } from '../../payments/subscription/SubscriptionContainer';
+import { getDocumentEditor, getStorageFeature, getVersionHistory } from '../../payments/features/drive';
+import { getNAddressesFeature, getNDomainsFeature } from '../../payments/features/mail';
+import {
+    get2FAAuthenticator,
+    getDarkWebMonitoring,
+    getHideMyEmailAliases,
+    getSecureVaultSharing,
+} from '../../payments/features/pass';
+import type { SubscriptionContainerProps } from '../../payments/subscription/SubscriptionContainer';
 import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
+import type { UpsellFeature } from '../../payments/subscription/helpers/dashboard-upsells';
 import TopBanner from '../TopBanner';
 
 interface ModalActionProps extends Pick<ButtonProps, 'color' | 'shape'> {
@@ -128,18 +148,120 @@ const ManageSubscriptionButton = ({ app, target, closeModal, children, ...rest }
     );
 };
 
+const getAppFromPlan = (plan: PLANS | undefined) => {
+    if (plan === PLANS.MAIL) {
+        return APPS.PROTONMAIL;
+    } else if (plan === PLANS.DRIVE) {
+        return APPS.PROTONDRIVE;
+    } else if (plan === PLANS.PASS) {
+        return APPS.PROTONPASS;
+    }
+    return null;
+};
+
 const ContinueSubscriptionActionButton = ({ app }: { app: APP_NAMES }) => {
     const [subscription] = useSubscription();
     const [modalProps, setModalOpen, renderModal] = useModalState();
+    const [referralInfo] = useReferralInfo();
+
+    const [plansResult] = usePlans();
+    const freePlan = plansResult?.freePlan || FREE_PLAN;
 
     const planTitle = getPlanTitle(subscription);
+    const planName = getPlanName(subscription);
+    const appName = getAppFromPlan(planName);
+
+    const appLogo = (() => {
+        if (!appName) {
+            return null;
+        }
+
+        return (
+            <span className="flex justify-center">
+                <Logo appName={appName} variant="glyph-only" size={12} />
+            </span>
+        );
+    })();
 
     const modalTitle = (() => {
         if (!planTitle) {
             return c('Title').t`Upgrade to keep your premium benefits.`;
         }
 
-        return c('Title').t`Upgrade to keep your ${planTitle} benefits.`;
+        return getBoldFormattedText(
+            c('Title').t`Get **${referralInfo.uiData.refereeRewardAmount}** in credits with ${planTitle}`,
+            'color-primary'
+        );
+    })();
+
+    const featuresList = (() => {
+        const plan = getPlan(subscription);
+
+        if (!appName || !plan) {
+            return null;
+        }
+
+        const getMorePremiumFeatures = () => {
+            return {
+                text: c('Feature').t`More premium features`,
+            };
+        };
+
+        const MailFeatures: UpsellFeature[] = [
+            getStorageFeature(plan?.MaxSpace ?? 16106127360, { freePlan }),
+            getNAddressesFeature({ n: 10 }),
+            getNDomainsFeature({ n: 1 }),
+            getDarkWebMonitoring(),
+            getMorePremiumFeatures(),
+        ];
+
+        const DriveFeatures: UpsellFeature[] = [
+            getStorageFeature(plan?.MaxSpace ?? 214748364800, { freePlan }),
+            {
+                text: c('Feature').t`Encrypted cloud storage for files, photos and documents`,
+            },
+            getDocumentEditor(),
+            getVersionHistory(),
+        ];
+
+        const PassFeatures: UpsellFeature[] = [
+            getHideMyEmailAliases('unlimited'),
+            get2FAAuthenticator(true),
+            getSecureVaultSharing(true),
+            getDarkWebMonitoring(),
+            getMorePremiumFeatures(),
+        ];
+
+        const features = (() => {
+            if (plan.Name === PLANS.MAIL) {
+                return MailFeatures;
+            }
+            if (plan.Name === PLANS.DRIVE) {
+                return DriveFeatures;
+            }
+            if (plan.Name === PLANS.PASS) {
+                return PassFeatures;
+            }
+            return [];
+        })();
+
+        if (features.length === 0) {
+            return null;
+        }
+
+        return (
+            <StripedList alternate="odd">
+                {features.map(({ icon, text }) => {
+                    const key = typeof text === 'string' ? text : `${icon}-${text}`;
+
+                    return (
+                        <StripedItem key={key} left={<IcCheckmark className="color-primary" size={5} />}>
+                            {text}
+                        </StripedItem>
+                    );
+                })}
+            </StripedList>
+        );
     })();
 
     const ctaText = (() => {
@@ -158,11 +280,16 @@ const ContinueSubscriptionActionButton = ({ app }: { app: APP_NAMES }) => {
         <>
             {renderModal && (
                 <ModalTwo {...modalProps} size="small">
-                    <ModalTwoHeader title={modalTitle} />
+                    <ModalTwoHeader />
                     <ModalTwoContent>
-                        {planTitle
-                            ? c('Info').t`Continue with ${planTitle} or explore other available plans.`
-                            : c('Info').t`Choose a plan that works best for you.`}
+                        <div className="text-center">
+                            {appLogo}
+                            <h1 className="text-xl mb-2 mt-0 text-bold px-16">{modalTitle}</h1>
+                            {planTitle
+                                ? c('Info').t`Upgrade to keep your ${planTitle} benefits.`
+                                : c('Info').t`Choose a plan that works best for you.`}
+                        </div>
+                        {featuresList}
                     </ModalTwoContent>
                     <ModalTwoFooter className="flex flex-column">
                         <ManageSubscriptionButton color="norm" app={app} target="checkout" closeModal={closeModal}>
