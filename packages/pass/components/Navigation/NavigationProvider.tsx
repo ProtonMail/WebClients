@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { NavigationItem } from '@proton/pass/components/Navigation/NavigationItem';
 

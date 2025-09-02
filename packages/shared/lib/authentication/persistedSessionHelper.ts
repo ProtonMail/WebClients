@@ -7,7 +7,7 @@ import { getIs401Error } from '../api/helpers/apiErrorHelper';
 import { getUIDApi } from '../api/helpers/customConfig';
 import { InactiveSessionError } from '../api/helpers/errors';
 import { getUser } from '../api/user';
-import { type AccessType } from '../authentication/accessType';
+import type { AccessType } from '../authentication/accessType';
 import { getAccessType } from '../authentication/getAccessType';
 import { withUIDHeaders } from '../fetch/headers';
 import { wait } from '../helpers/promise';

@@ -16,7 +16,7 @@ import clsx from '@proton/utils/clsx';
 
 import OfferModal from '../../containers/offers/components/OfferModal';
 import useOfferModal from '../../containers/offers/hooks/useOfferModal';
-import { type OfferConfig } from '../../containers/offers/interface';
+import type { OfferConfig } from '../../containers/offers/interface';
 import { subscriptionModalClassName } from '../../containers/payments/subscription/constants';
 import { PromotionButton } from '../button/PromotionButton';
 import TopNavbarListItem from './TopNavbarListItem';

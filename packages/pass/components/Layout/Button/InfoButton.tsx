@@ -1,4 +1,4 @@
-import { type MouseEventHandler } from 'react';
+import type { MouseEventHandler } from 'react';
 
 import { c } from 'ttag';
 

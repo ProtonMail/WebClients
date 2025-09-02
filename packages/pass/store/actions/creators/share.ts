@@ -7,7 +7,7 @@ import { withNotification } from '@proton/pass/store/actions/enhancers/notificat
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
 import type { ShareId, ShareType, ShareVisibilityMap } from '@proton/pass/types';
-import { type Share, type ShareSyncKeys } from '@proton/pass/types';
+import type { Share, ShareSyncKeys } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const shareEventUpdate = createAction('share::event::update', (payload: Share) => withCache({ payload }));

@@ -15,7 +15,7 @@ import {
 } from '@proton/andromeda';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { SECOND } from '@proton/shared/lib/constants';
-import { type DecryptedAddressKey, type SimpleMap } from '@proton/shared/lib/interfaces';
+import type { DecryptedAddressKey, SimpleMap } from '@proton/shared/lib/interfaces';
 import {
     type AccountWithChainData,
     type ApiWalletWithPassphraseInput,

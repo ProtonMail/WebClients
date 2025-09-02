@@ -8,7 +8,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
-import { type Paths } from '../content/helper';
+import type { Paths } from '../content/helper';
 
 interface Props {
     paths: Paths;

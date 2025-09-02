@@ -14,7 +14,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { type Subscription } from '@proton/payments';
+import type { Subscription } from '@proton/payments';
 import { removeCalendar } from '@proton/shared/lib/api/calendars';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';

@@ -1,4 +1,4 @@
-import { type MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
 import RecipientType from 'proton-mail/components/message/recipients/RecipientType';

@@ -4,7 +4,7 @@ import { Icon, ToolbarButton, useModalTwoStatic } from '@proton/components';
 
 import { isMultiSelect } from '../../../../components/sections/ToolbarButtons/utils';
 import { RemoveDeviceModal } from '../../../../modals/RemoveDeviceModal';
-import { type StoreDevice } from '../../devices.store';
+import type { StoreDevice } from '../../devices.store';
 
 interface Props {
     selectedDevices: StoreDevice[];

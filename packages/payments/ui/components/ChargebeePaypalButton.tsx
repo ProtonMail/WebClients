@@ -1,12 +1,12 @@
 import { type ReactNode, useMemo } from 'react';
 
 import { ButtonLike } from '@proton/atoms';
-import { type ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
+import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import paypalSvg from '@proton/styles/assets/img/bank-icons/paypal-color.svg';
 import clsx from '@proton/utils/clsx';
 
 import { ChargebeeIframe, getPaypalButtonWidth } from './ChargebeeIframe';
-import { type ChargebeeWrapperProps } from './ChargebeeWrapper';
+import type { ChargebeeWrapperProps } from './ChargebeeWrapper';
 
 import '@proton/components/containers/payments/StyledPayPalButton.scss';
 

@@ -1,5 +1,5 @@
 import type { TableRowNode } from '@lexical/table'
-import { type TableNode } from '@lexical/table'
+import type { TableNode } from '@lexical/table'
 import { $selectRow } from './selectRow'
 import type { LexicalEditor } from 'lexical'
 import { INSERT_TABLE_ROW_COMMAND } from '../Commands'

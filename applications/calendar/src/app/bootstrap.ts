@@ -35,7 +35,7 @@ import noop from '@proton/utils/noop';
 
 import { embeddedDrawerAppInfos } from './helpers/drawer';
 import locales from './locales';
-import { type CalendarState } from './store/rootReducer';
+import type { CalendarState } from './store/rootReducer';
 import { extendStore, setupStore } from './store/store';
 
 const getAppContainer = () =>

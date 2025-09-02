@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import type { ModelState } from '@proton/account';
 import { getInitialModelState } from '@proton/account';
-import { type WasmApiWalletBitcoinAddress } from '@proton/andromeda';
+import type { WasmApiWalletBitcoinAddress } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities';
 import { SECOND } from '@proton/shared/lib/constants';
 

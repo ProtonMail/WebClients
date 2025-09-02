@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import type { DropdownProps, IconName } from '@proton/components';
 import { Dropdown, DropdownButton, DropdownMenu, Icon, usePopperAnchor } from '@proton/components';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { type ItemSortFilter } from '@proton/pass/types';
+import type { ItemSortFilter } from '@proton/pass/types';
 
 type Props = {
     value: ItemSortFilter;

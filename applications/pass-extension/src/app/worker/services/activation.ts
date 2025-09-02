@@ -8,7 +8,7 @@ import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
 import { isVivaldiBrowser } from 'proton-pass-extension/lib/utils/vivaldi';
 import type { ClientInitMessage, WorkerMessageWithSender } from 'proton-pass-extension/types/messages';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-import { type Runtime } from 'webextension-polyfill';
+import type { Runtime } from 'webextension-polyfill';
 
 import { MIN_CACHE_VERSION, RUNTIME_RELOAD_THROTTLE } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';

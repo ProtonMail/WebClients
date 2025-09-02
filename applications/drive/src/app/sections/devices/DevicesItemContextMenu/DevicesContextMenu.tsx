@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useModalTwoStatic } from '@proton/components';
 import { type Device, useDrive } from '@proton/drive';
 
-import { type ContextMenuProps } from '../../../components/FileBrowser';
+import type { ContextMenuProps } from '../../../components/FileBrowser';
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import { ItemContextMenu } from '../../../components/sections/ContextMenu/ItemContextMenu';
 import { RemoveDeviceModal } from '../../../modals/RemoveDeviceModal';

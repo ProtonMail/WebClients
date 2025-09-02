@@ -1,4 +1,4 @@
-import { type PLANS } from '@proton/payments';
+import type { PLANS } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Subscription, SubscriptionPlan } from '@proton/shared/lib/interfaces';
 

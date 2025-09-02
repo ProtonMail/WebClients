@@ -6,7 +6,7 @@ import { type InvoiceDocument, queryInvoices } from '@proton/payments';
 import { usePaginationAsync } from '../../components/pagination';
 import useApiResult from '../../hooks/useApiResult';
 import { useReportRoutingError } from '../../payments/react-extensions/usePaymentsApi';
-import { type DocumentHook } from './types';
+import type { DocumentHook } from './types';
 
 export const ELEMENTS_PER_PAGE = 10;
 

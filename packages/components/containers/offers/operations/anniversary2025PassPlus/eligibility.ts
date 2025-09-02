@@ -9,7 +9,7 @@ import { hasPassLifetime, hasPassViaSimpleLogin } from '@proton/shared/lib/user/
 import isCheckAllowed from '../../helpers/isCheckAllowed';
 import { FREE_DOWNGRADER_LIMIT } from '../../helpers/offerPeriods';
 import OfferSubscription from '../../helpers/offerSubscription';
-import { type OfferConfig } from '../../interface';
+import type { OfferConfig } from '../../interface';
 
 interface Props {
     protonConfig: ProtonConfig;

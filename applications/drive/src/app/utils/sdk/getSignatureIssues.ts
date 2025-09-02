@@ -1,4 +1,4 @@
-import { type MaybeNode } from '@proton/drive';
+import type { MaybeNode } from '@proton/drive';
 
 export type SignatureIssuesResult =
     | { ok: true }

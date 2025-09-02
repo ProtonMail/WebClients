@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import type { FormikTouched } from 'formik';
-import { type FormikContextType } from 'formik';
+import type { FormikContextType } from 'formik';
 
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { draftDiscard, draftSave } from '@proton/pass/store/actions';

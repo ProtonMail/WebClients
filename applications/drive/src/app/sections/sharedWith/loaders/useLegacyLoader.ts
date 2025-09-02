@@ -3,12 +3,12 @@ import { useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
-import { generateNodeUid , NodeType } from '@proton/drive/index';
+import { NodeType, generateNodeUid } from '@proton/drive/index';
 import { querySharedWithMeAlbums } from '@proton/shared/lib/api/drive/photos';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { ShareTargetType } from '@proton/shared/lib/interfaces/drive/sharing';
 
-import { type Album } from '../../../photos/PhotosStore/PhotosWithAlbumsProvider';
+import type { Album } from '../../../photos/PhotosStore/PhotosWithAlbumsProvider';
 import { useDebouncedRequest } from '../../../store/_api';
 import { useInvitationsListing } from '../../../store/_invitations';
 import { type DecryptedLink, useLink } from '../../../store/_links';
@@ -266,7 +266,7 @@ export const useLegacyLoader = () => {
             setLoadingLegacyNodes(false);
         },
         // loadLegacySharedWithMeAlbums is not stable, we should ignore them
-         
+
         []
     );
 
@@ -281,7 +281,7 @@ export const useLegacyLoader = () => {
             setLoadingLegacyInvitations(false);
         },
         // loadInvitations is not stable, we should ignore them
-         
+
         []
     );
 

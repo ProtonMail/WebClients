@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { ButtonLike, type ButtonLikeProps } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';

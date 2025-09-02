@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { type FieldProps } from 'formik';
+import type { FieldProps } from 'formik';
 
 import { InputFieldTwo, Radio } from '@proton/components';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';

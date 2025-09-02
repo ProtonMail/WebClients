@@ -9,7 +9,7 @@ import { fetchControllerFactory } from '@proton/pass/lib/api/fetch-controller';
 import { createImageProxyHandler, imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { authStore } from '@proton/pass/lib/auth/store';
 import browser from '@proton/pass/lib/globals/browser';
-import { type Api } from '@proton/pass/types';
+import type { Api } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
 export type APIProxyOptions = {

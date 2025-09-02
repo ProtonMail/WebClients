@@ -1,4 +1,4 @@
-import { type PrepareAction } from '@reduxjs/toolkit';
+import type { PrepareAction } from '@reduxjs/toolkit';
 import type { Action } from 'redux';
 
 import { withMetaFactory } from '@proton/pass/store/actions/enhancers/meta';

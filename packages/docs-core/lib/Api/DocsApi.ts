@@ -5,8 +5,8 @@ import { forgeImageURL } from '@proton/shared/lib/helpers/image'
 import { getErrorString } from '../Util/GetErrorString'
 import { isPublicNodeMeta } from '@proton/drive-store'
 import { Result } from '@proton/docs-shared'
-import { type ApiAddCommentToThread } from './Requests/ApiAddCommentToThread'
-import { type SuggestionThreadStateAction } from '@proton/docs-shared'
+import type { ApiAddCommentToThread } from './Requests/ApiAddCommentToThread'
+import type { SuggestionThreadStateAction } from '@proton/docs-shared'
 import type { AddCommentToThreadDTO } from './Requests/ApiAddCommentToThread'
 import type { AddCommentToThreadResponse } from './Types/AddCommentToThreadResponse'
 import type { ApiCreateThread, CreateThreadDTO } from './Requests/ApiCreateThread'
@@ -80,7 +80,10 @@ export class DocsApi {
     return this.routeExecutor.execute(route)
   }
 
-  async getCommitData(lookup: NodeMeta | PublicNodeMeta, commitId: string): Promise<ApiResult<Uint8Array<ArrayBuffer>>> {
+  async getCommitData(
+    lookup: NodeMeta | PublicNodeMeta,
+    commitId: string,
+  ): Promise<ApiResult<Uint8Array<ArrayBuffer>>> {
     if (isPublicNodeMeta(lookup) && !this.publicContextHeaders) {
       throw new Error('Public context headers not set')
     }
@@ -125,7 +128,11 @@ export class DocsApi {
     return this.routeExecutor.execute(route)
   }
 
-  async squashCommit(nodeMeta: NodeMeta, commitId: string, squash: SquashCommit): Promise<ApiResult<Uint8Array<ArrayBuffer>>> {
+  async squashCommit(
+    nodeMeta: NodeMeta,
+    commitId: string,
+    squash: SquashCommit,
+  ): Promise<ApiResult<Uint8Array<ArrayBuffer>>> {
     const route = new DocsApiPrivateRouteBuilder({
       volumeId: nodeMeta.volumeId,
       linkId: nodeMeta.linkId,

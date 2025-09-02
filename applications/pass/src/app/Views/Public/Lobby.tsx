@@ -14,7 +14,7 @@ import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useConnectivityBar } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
-import { type AuthRouteState } from '@proton/pass/components/Navigation/routing';
+import type { AuthRouteState } from '@proton/pass/components/Navigation/routing';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { clientBusy, clientErrored } from '@proton/pass/lib/client';
 import { AppStatus, type MaybeNull } from '@proton/pass/types';

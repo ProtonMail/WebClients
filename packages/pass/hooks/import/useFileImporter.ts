@@ -14,7 +14,7 @@ import type { ImportFileReader } from '@proton/pass/lib/import/types';
 import { fileLinkPending } from '@proton/pass/store/actions';
 import { selectUserStorageMaxFileSize } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
-import { type IndexedByShareIdAndItemId } from '@proton/pass/types';
+import type { IndexedByShareIdAndItemId } from '@proton/pass/types';
 import { eq, not } from '@proton/pass/utils/fp/predicates';
 import { abortableSequence } from '@proton/pass/utils/fp/promises';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
