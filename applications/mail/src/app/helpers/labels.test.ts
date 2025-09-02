@@ -23,6 +23,7 @@ import {
     applyLabelChangesOnMessage,
     applyLabelChangesOnOneMessageOfAConversation,
     canMoveAll,
+    convertCategoryLabelToCategoryAndInbox,
     convertCustomViewLabelsToAlmostAllMail,
     getCustomViewFromRoute,
     getFolderName,
@@ -396,6 +397,23 @@ describe('label', () => {
         it('should return the original label for non-custom view labels', () => {
             expect(convertCustomViewLabelsToAlmostAllMail('customlabel1')).toEqual('customlabel1');
             expect(convertCustomViewLabelsToAlmostAllMail(MAILBOX_LABEL_IDS.INBOX)).toEqual(MAILBOX_LABEL_IDS.INBOX);
+        });
+    });
+
+    describe('convertCategoryLabelToCategoryAndInbox', () => {
+        it('should return an array with inbox and the category', () => {
+            expect(convertCategoryLabelToCategoryAndInbox(MAILBOX_LABEL_IDS.CATEGORY_FORUMS)).toEqual([
+                MAILBOX_LABEL_IDS.INBOX,
+                MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+            ]);
+        });
+
+        it('should return the spam label ID if fetching from there', () => {
+            expect(convertCategoryLabelToCategoryAndInbox(MAILBOX_LABEL_IDS.SPAM)).toEqual(MAILBOX_LABEL_IDS.SPAM);
+        });
+
+        it('should return the custom labelID if fetching from there', () => {
+            expect(convertCategoryLabelToCategoryAndInbox('customlabel1')).toEqual('customlabel1');
         });
     });
 

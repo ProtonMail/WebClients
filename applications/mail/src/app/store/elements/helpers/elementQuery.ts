@@ -7,7 +7,10 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import range from '@proton/utils/range';
 
-import { convertCustomViewLabelsToAlmostAllMail } from '../../../helpers/labels';
+import {
+    convertCategoryLabelToCategoryAndInbox,
+    convertCustomViewLabelsToAlmostAllMail,
+} from '../../../helpers/labels';
 import type { Element } from '../../../models/element';
 import type { MailState } from '../../store';
 import { pollTaskRunning } from '../elementsActions';
@@ -25,7 +28,10 @@ const getQueryElementsParameters = ({
     params: ElementsStateParams;
 }): MailboxItemsQueryParams => {
     // Use ALMOST_ALL_MAIL as the LabelID when we're viewing a custom view like a newsletter subscription
-    const effectiveLabelID = convertCustomViewLabelsToAlmostAllMail(labelID);
+    let effectiveLabelID: string | string[] = convertCustomViewLabelsToAlmostAllMail(labelID);
+
+    // Use [INBOX, CATEGORY_ID] when we're viewing a category to only show elements in both INBOX and CATEGORY_ID
+    effectiveLabelID = convertCategoryLabelToCategoryAndInbox(effectiveLabelID);
 
     // Only send NewsletterSubscriptionID when we're actually in the newsletter subscriptions view
     const shouldIncludeNewsletterSubscriptionID = labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS;
