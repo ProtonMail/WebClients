@@ -13,7 +13,7 @@ import type {
     POSTSubscriptionAPIResponse,
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import { type MailThunkExtra } from '../store';
+import type { MailThunkExtra } from '../store';
 import { getPaginationQueryString } from './constants';
 import {
     type DeleteNewsletterSubscriptionPayload,

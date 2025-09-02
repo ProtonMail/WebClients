@@ -12,9 +12,9 @@ import {
     isRegularCycle,
     isTrial,
 } from '@proton/payments';
-import { type ProductParam } from '@proton/shared/lib/apps/product';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 
-import { type CouponConfigRendered } from '../coupon-config/useCouponConfig';
+import type { CouponConfigRendered } from '../coupon-config/useCouponConfig';
 import { isSamePlanCheckout } from './isSamePlanCheckout';
 import { notHigherThanAvailableOnBackend } from './payment';
 

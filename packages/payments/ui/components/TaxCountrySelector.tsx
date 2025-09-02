@@ -6,7 +6,7 @@ import { InlineLinkButton, Input } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 import { getStateName, isCountryWithRequiredPostalCode, isCountryWithStates } from '../../core/countries';
-import { type TaxCountryHook } from '../hooks/useTaxCountry';
+import type { TaxCountryHook } from '../hooks/useTaxCountry';
 import { CountriesDropdown, useCountries } from './CountriesDropdown';
 import { InputWithSelectorPrefix, WarningIcon } from './InputWithSelectorPrefix';
 import { StateSelector } from './StateSelector';

@@ -61,7 +61,7 @@ import {
 } from '@proton/components';
 import NonPrivateRecoverySection from '@proton/components/containers/account/NonPrivateRecoveySection';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
-import { type APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
 
 import { recoveryIds } from './recoveryIds';

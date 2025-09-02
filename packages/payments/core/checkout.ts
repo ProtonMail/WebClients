@@ -4,18 +4,14 @@ import { LUMO_APP_NAME } from '@proton/shared/lib/constants';
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 
 import { ADDON_NAMES, CYCLE, DEFAULT_CYCLE, PLANS, PLAN_NAMES, PLAN_TYPES } from './constants';
-import { type Currency, type FeatureLimitKey, type PlanIDs, type Pricing } from './interface';
+import type { Currency, FeatureLimitKey, PlanIDs, Pricing } from './interface';
 import { isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from './plan/addons';
 import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs, getPlanNameFromIDs } from './plan/helpers';
-import { type Plan, type PlansMap } from './plan/interface';
+import type { Plan, PlansMap } from './plan/interface';
 import { INCLUDED_IP_PRICING, getPrice } from './price-helpers';
 import { SubscriptionMode } from './subscription/constants';
 import { customCycles, getAddonMultiplier, getMembersFromPlanIDs, getPricingPerMember } from './subscription/helpers';
-import {
-    type EnrichedCheckResponse,
-    type Subscription,
-    type SubscriptionCheckResponse,
-} from './subscription/interface';
+import type { EnrichedCheckResponse, Subscription, SubscriptionCheckResponse } from './subscription/interface';
 
 export type RequiredCheckResponse = Pick<
     SubscriptionCheckResponse,

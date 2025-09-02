@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 import { Route, type RouteChildrenProps } from 'react-router-dom';
 
 import { ItemsProvider } from '@proton/pass/components/Item/Context/ItemsProvider';

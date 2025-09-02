@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import Price from '@proton/components/components/price/Price';
 import { OfferPrice } from '@proton/payments/ui';
 
-import { type Upsell } from '../../helpers';
+import type { Upsell } from '../../helpers';
 
 interface UpsellPriceProps {
     upsell: Upsell;

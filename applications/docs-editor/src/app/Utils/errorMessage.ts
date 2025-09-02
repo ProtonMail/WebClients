@@ -1,4 +1,4 @@
-import { type ErrorInfo } from 'react'
+import type { ErrorInfo } from 'react'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
 
 export const reportErrorToSentry = (error: unknown, errorInfo?: ErrorInfo) => {

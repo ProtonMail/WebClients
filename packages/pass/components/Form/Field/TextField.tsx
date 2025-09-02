@@ -1,11 +1,11 @@
 import type { ForwardRefRenderFunction } from 'react';
 import { forwardRef, useState } from 'react';
 
-import { type FieldProps } from 'formik';
+import type { FieldProps } from 'formik';
 
 import type { Input } from '@proton/atoms';
 import { InputFieldTwo } from '@proton/components';
-import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
+import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';

@@ -1,5 +1,5 @@
-import { type FC } from 'react';
-import { type RouteChildrenProps } from 'react-router-dom';
+import type { FC } from 'react';
+import type { RouteChildrenProps } from 'react-router-dom';
 
 import type { HeaderProps } from 'proton-pass-web/app/Views/Header/types';
 

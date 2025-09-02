@@ -1,4 +1,4 @@
-import { type Subscription } from '@proton/payments';
+import type { Subscription } from '@proton/payments';
 /* TODO: add all server events
  * in this type definition - it only
  * specifies the keys we're consuming

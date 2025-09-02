@@ -1,4 +1,4 @@
-import { type ServiceWorkerMessage } from 'proton-pass-web/app/ServiceWorker/types';
+import type { ServiceWorkerMessage } from 'proton-pass-web/app/ServiceWorker/types';
 import config from 'proton-pass-web/app/config';
 
 import { cleanCache, clearCache } from '@proton/pass/lib/api/cache';

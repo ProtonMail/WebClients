@@ -4,7 +4,7 @@ import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/m
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { type LogStorageData, createLogStore } from '@proton/pass/lib/logger/store';
-import { type ExtensionStorage } from '@proton/pass/types';
+import type { ExtensionStorage } from '@proton/pass/types';
 import { registerLoggerEffect } from '@proton/pass/utils/logger';
 
 export const createLoggerService = (storage: ExtensionStorage<LogStorageData>) => {

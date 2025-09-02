@@ -2,7 +2,7 @@ import { differenceInDays, fromUnixTime } from 'date-fns';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
-import { type FeatureCode } from '@proton/features/interface';
+import type { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { CYCLE, type PLANS, canModify, hasMigrationDiscount } from '@proton/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';

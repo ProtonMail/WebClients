@@ -15,7 +15,7 @@ import {
     useSettingsLink,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { type Subscription } from '@proton/payments';
+import type { Subscription } from '@proton/payments';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import { ShareCalendarSignatureVerificationError } from '@proton/shared/lib/calendar/sharing/shareProton/ShareCalendarSignatureVerificationError';

@@ -1,10 +1,10 @@
 import type { ForwardRefRenderFunction } from 'react';
 import { type FC, forwardRef, useMemo, useState } from 'react';
 
-import { type FieldProps } from 'formik';
+import type { FieldProps } from 'formik';
 
 import { InputFieldTwo, TextAreaTwo } from '@proton/components';
-import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
+import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import { useFieldControl } from '@proton/pass/hooks/useFieldControl';
 import { useMaxLengthLimiter } from '@proton/pass/hooks/useMaxLengthLimiter';
 import { usePasteLengthLimiter } from '@proton/pass/hooks/usePasteLengthLimiter';

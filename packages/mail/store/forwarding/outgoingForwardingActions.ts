@@ -4,8 +4,8 @@ import { addressKeysThunk } from '@proton/account/addressKeys';
 import { setAddressFlags } from '@proton/account/addressKeys/actions';
 import { type AddressesState, addressesThunk } from '@proton/account/addresses';
 import type { KtState } from '@proton/account/kt';
-import { type OrganizationKeyState } from '@proton/account/organizationKey';
-import { type UserKeysState } from '@proton/account/userKeys';
+import type { OrganizationKeyState } from '@proton/account/organizationKey';
+import type { UserKeysState } from '@proton/account/userKeys';
 import type { PrivateKeyReferenceV4, PublicKeyReference } from '@proton/crypto';
 import {
     getOutgoingAddressForwarding,

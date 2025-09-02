@@ -1,5 +1,5 @@
 import type { KeyRotationKeyPair } from '../api';
-import { type MaybeNull } from '../utils';
+import type { MaybeNull } from '../utils';
 import type { ShareRole, ShareType, VaultShareContent } from './shares';
 
 export enum NewUserInviteState {

@@ -23,7 +23,7 @@ import { useFlagsDriveDocsPublicSharing } from '../../flags/useFlagsDriveDocsPub
 // TODO: Remove this when events will be managed by sdk
 import { useDriveEventManager } from '../../store';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
-import { type SharingModalViewProps } from './SharingModalView';
+import type { SharingModalViewProps } from './SharingModalView';
 import { type DirectMember, MemberType } from './interfaces';
 
 export type SharingModalInnerProps = {

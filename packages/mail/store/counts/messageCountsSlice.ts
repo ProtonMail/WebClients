@@ -4,7 +4,7 @@ import { type ModelState, getInitialModelState, serverEvent } from '@proton/acco
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, createHooks, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { queryMessageCount } from '@proton/shared/lib/api/messages';
-import { type LabelCount } from '@proton/shared/lib/interfaces';
+import type { LabelCount } from '@proton/shared/lib/interfaces';
 
 import type { Element } from 'proton-mail/models/element';
 

@@ -1,11 +1,11 @@
 import type { FeatureCode } from '@proton/features';
-import { type Subscription, type SubscriptionPlan } from '@proton/payments';
+import type { Subscription, SubscriptionPlan } from '@proton/payments';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments';
 import { PLAN_TYPES } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { type ProtonConfig, type UserModel } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
-import { type Deal, type OfferConfig } from '../../interface';
+import type { Deal, OfferConfig } from '../../interface';
 import { getIsEligible } from './eligibility';
 
 const mockGetAppFromPathnameSafe = jest.fn();

@@ -28,12 +28,12 @@ import { useDriveCrypto } from '../../_crypto';
 import { useLink } from '../../_links';
 import { GLOBAL_FORBIDDEN_CHARACTERS } from '../../_links/link';
 import { useDebouncedFunction } from '../../_utils';
-import {
-    type LockedDeviceForRestore,
-    type LockedPhotosForRestore,
-    type LockedShareForRestore,
-    type LockedVolumeForRestore,
-    type ShareWithKey,
+import type {
+    LockedDeviceForRestore,
+    LockedPhotosForRestore,
+    LockedShareForRestore,
+    LockedVolumeForRestore,
+    ShareWithKey,
 } from './../interface';
 import useDefaultShare from './../useDefaultShare';
 import useShare from './../useShare';

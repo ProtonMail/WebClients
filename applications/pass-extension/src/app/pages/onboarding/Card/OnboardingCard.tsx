@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import clsx from '@proton/utils/clsx';
 

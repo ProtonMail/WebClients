@@ -1,4 +1,4 @@
-import { type OnHeadersReceivedListenerDetails } from 'electron';
+import type { OnHeadersReceivedListenerDetails } from 'electron';
 
 import config from '../app/config';
 import logger from '../utils/logger';

@@ -20,7 +20,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { type CheckSubscriptionData } from '../../core/api';
+import type { CheckSubscriptionData } from '../../core/api';
 import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS } from '../../core/billing-address/billing-address';
 import { getBillingAddressFromPaymentStatus } from '../../core/billing-address/billing-address-from-payments-status';
 import {
@@ -47,11 +47,11 @@ import { getPrice } from '../../core/price-helpers';
 import { SubscriptionMode } from '../../core/subscription/constants';
 import { FREE_PLAN } from '../../core/subscription/freePlans';
 import { isCheckForbidden } from '../../core/subscription/helpers';
-import {
-    type EnrichedCheckResponse,
-    type FullPlansMap,
-    type Subscription,
-    type SubscriptionCheckResponse,
+import type {
+    EnrichedCheckResponse,
+    FullPlansMap,
+    Subscription,
+    SubscriptionCheckResponse,
 } from '../../core/subscription/interface';
 import { SelectedPlan } from '../../core/subscription/selected-plan';
 import { isFreeSubscription } from '../../core/type-guards';

@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { Button, Card } from '@proton/atoms';
 import { Icon, type IconName } from '@proton/components';

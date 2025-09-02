@@ -1,4 +1,4 @@
-import { type User, type UserModel } from '@proton/shared/lib/interfaces';
+import type { User, UserModel } from '@proton/shared/lib/interfaces';
 import { getTestPlans } from '@proton/testing/data';
 
 import { ADDON_NAMES, DEFAULT_CURRENCY, FREE_SUBSCRIPTION, PLANS } from './constants';
@@ -11,9 +11,9 @@ import {
     isRegionalCurrency,
     mainCurrencies,
 } from './helpers';
-import { type PaymentStatus } from './interface';
-import { type Plan } from './plan/interface';
-import { type Subscription } from './subscription/interface';
+import type { PaymentStatus } from './interface';
+import type { Plan } from './plan/interface';
+import type { Subscription } from './subscription/interface';
 
 describe('payments core helpers', () => {
     describe('getPreferredCurrency', () => {

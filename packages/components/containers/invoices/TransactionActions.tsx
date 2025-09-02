@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import { useLoading } from '@proton/hooks';
-import { type Transaction } from '@proton/payments';
+import type { Transaction } from '@proton/payments';
 import isTruthy from '@proton/utils/isTruthy';
 
 interface Props {

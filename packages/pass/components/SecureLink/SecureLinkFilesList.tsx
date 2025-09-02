@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { FileAttachment } from '@proton/pass/components/FileAttachments/FileAttachment';
 import { FileAttachmentsView } from '@proton/pass/components/FileAttachments/FileAttachmentsView';

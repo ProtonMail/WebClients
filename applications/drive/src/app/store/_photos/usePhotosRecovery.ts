@@ -9,7 +9,7 @@ import { sendErrorReport } from '../../utils/errorHandling';
 import { useSharesStore } from '../../zustand/share/shares.store';
 import type { DecryptedLink } from '../_links';
 import { useLinksActions, useLinksListing } from '../_links';
-import { type Share, type ShareWithKey } from '../_shares';
+import type { Share, ShareWithKey } from '../_shares';
 import { waitFor } from '../_utils';
 
 export type RECOVERY_STATE =

@@ -1,6 +1,6 @@
 import { semver } from '@proton/pass/utils/string/semver';
 import { RELEASE_CATEGORIES } from '@proton/shared/lib/constants';
-import { type DesktopVersion } from '@proton/shared/lib/desktop/DesktopVersion';
+import type { DesktopVersion } from '@proton/shared/lib/desktop/DesktopVersion';
 
 export const getLatestRelease = (currentEnvironment: string | undefined, releaseList: DesktopVersion[]) => {
     let latestRelease = undefined;

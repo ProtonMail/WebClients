@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { type Action, type ThunkDispatch } from '@reduxjs/toolkit';
+import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 
 import { type ContactEmailsState, contactEmailsThunk } from '@proton/mail/store/contactEmails';
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
@@ -8,7 +8,7 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import noop from '@proton/utils/noop';
 
 import { listIncomingDelegatedAccess } from '../../incomingActions';
-import { type DelegatedAccessState } from '../../index';
+import type { DelegatedAccessState } from '../../index';
 import { type EnrichedIncomingDelegatedAccessReturnValue, selectEnrichedIncomingDelegatedAccess } from './selector';
 
 export interface IncomingItemsResult {

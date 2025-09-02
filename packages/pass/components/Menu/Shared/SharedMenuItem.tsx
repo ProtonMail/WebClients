@@ -2,7 +2,7 @@ import { memo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { type IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/components/components/icon/Icon';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getInitialFilters, getLocalPath } from '@proton/pass/components/Navigation/routing';

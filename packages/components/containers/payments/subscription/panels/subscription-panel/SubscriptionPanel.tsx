@@ -32,7 +32,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, DRIVE_SHORT_APP_NAME, FREE_VPN_CONNECTIONS, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
-import { type Organization, type VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Organization, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSpace } from '@proton/shared/lib/user/storage';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 import clsx from '@proton/utils/clsx';
