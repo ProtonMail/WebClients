@@ -59,6 +59,8 @@ export enum FeatureCode {
     NumAttachmentsWithoutEmbedded = 'NumAttachmentsWithoutEmbedded',
     NumberOfPreloadedConversations = 'NumberOfPreloadedConversations',
     PassNudgeDontShowAgain = 'PassNudgeDontShowAgain',
+    ShowReferralTrialEndedBanner = 'ShowReferralTrialEndedBanner',
+    ShowReferralTrialWillEndBanner = 'ShowReferralTrialWillEndBanner',
 
     // Flags needed by the one-dollar post-signup promo
     SubscriptionLastReminderDate = 'SubscriptionLastReminderDate',

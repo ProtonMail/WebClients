@@ -26,6 +26,7 @@ export const getUpgradePath = ({
     cycle,
     minimumCycle,
     maximumCycle,
+    disablePlanSelection,
 }: {
     user?: UserModel;
     plan?: PLANS;
@@ -37,6 +38,7 @@ export const getUpgradePath = ({
     cycle?: CYCLE;
     minimumCycle?: CYCLE;
     maximumCycle?: CYCLE;
+    disablePlanSelection?: boolean;
 }) => {
     const params = new URLSearchParams();
     if (plan) {
@@ -56,6 +58,9 @@ export const getUpgradePath = ({
     }
     if (maximumCycle) {
         params.set('maximumCycle', maximumCycle.toString());
+    }
+    if (disablePlanSelection) {
+        params.set('edit', 'disable');
     }
 
     if (!user || user.isFree) {
