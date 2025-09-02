@@ -36,12 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
-      "${ numberOfAddresses } address": [
-        "${ numberOfAddresses } адрас",
-        "${ numberOfAddresses } адрасы",
-        "${ numberOfAddresses } адрасоў",
-        "${ numberOfAddresses } адрасоў"
-      ],
       "A to Z": [
         "Ад А да Я"
       ],
@@ -329,9 +323,6 @@
       ],
       "Copy alias “${ name }”": [
         "Капіяваць псеўданім “${ name }”"
-      ],
-      "Copy email address": [
-        "Скапіяваць адрас электроннай пошты"
       ],
       "Copy email to clipboard": [
         "Скапіяваць ліст у буфер абмену"
@@ -822,9 +813,6 @@
       "Make it friendly": [
         "Зрабіць прыязным"
       ],
-      "Manage addresses": [
-        "Кіраванне адрасамі"
-      ],
       "Manage advanced account protections": [
         "Кіраваць пашыранай абаронай уліковага запісу"
       ],
@@ -920,6 +908,9 @@
       ],
       "More search options": [
         "Больш параметраў пошуку"
+      ],
+      "Most frequent": [
+        "Самыя частыя"
       ],
       "Most read": [
         "Найбольш чытаныя"
@@ -1082,6 +1073,9 @@
       ],
       "Read receipt sent": [
         "Апавяшчэнне аб прачытанні адпраўлена"
+      ],
+      "Recently read": [
+        "Нядаўна прачытаныя"
       ],
       "Recently received": [
         "Нядаўна атрыманыя"
@@ -1461,6 +1455,9 @@
       "Trust": [
         "Давяраць"
       ],
+      "Trust key": [
+        "Давяраць ключу"
+      ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
       ],
@@ -1507,7 +1504,7 @@
         "Падпіска скасавана"
       ],
       "Unsubscribing": [
-        "Скасаванне падпіскі"
+        "Скасаваць падпіску"
       ],
       "Untrust": [
         "Не давяраць"
@@ -4091,9 +4088,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Спрасціце сінхранізацыю і планаванне з дапамогай абагуленых календароў."
       ],
-      "This view shows messages sent to the following addresses:": [
-        "Гэты выгляд паказвае паведамленні, якія адпраўлены на наступныя адрасы:"
-      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Дадайце памочніка ў апісанні ў сваю падпіску, каб працягнуць карыстацца ім."
       ],
@@ -5351,8 +5345,8 @@
       "customer support": [
         "падтрымка кліентаў"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Сямейныя тарыфныя планы ў цяперашні час не падтрымліваюць знешнія ўліковыя запісы. Перад далучэннем стварыце адрас ${ BRAND_NAME }. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Сямейныя тарыфныя планы ў цяперашні час не падтрымліваюць знешнія ўліковыя запісы. Перад далучэннем стварыце адрас ${ BRAND_NAME }. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Калі вы прыміце запрашэнне, то ваш тарыфны план будзе зменены. Рэшта балансу вашай падпіскі вернецца на ваш рахунак."
@@ -5367,7 +5361,7 @@
         "Кіраванне адрасамі"
       ],
       "Owners of a plan with members cannot join another family plan.": [
-        "Уладальнікі тарыфнага плана з удзельнікамі не могуць далучацца да іншых сямейных тарыфных планаў."
+        "Уладальнікі тарыфнага плана з удзельнікамі не могуць далучацца да іншага сямейнага тарыфнага плана."
       ],
       "Sorry, you can't switch plans at this time.": [
         "У дадзены момант змена тарыфнага плана недаступна."
@@ -5770,7 +5764,7 @@
         "Цудоўна, што робіце сваю электронную пошту яшчэ больш бяспечнай, зручнай, і актуальнай! Мы павялічылі аб'ём вашага бясплатнага месца ў сховішчы да 1 ГБ."
       ],
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Змяніце ${ strongText } на ваш адрас ${ BRAND_NAME }"
+        "Змяніце ${ strongText } на свой адрас ${ BRAND_NAME }"
       ],
       "Changed accounts": [
         "Зменены ўліковы запіс"
@@ -6296,7 +6290,7 @@
         "Імпартаваць з Google"
       ],
       "Import from other": [
-        "Імпартаваць з іншых паштовых сэрвісаў"
+        "Імпартаваць з іншых пастаўшчыкоў"
       ],
       "Import from Outlook": [
         "Імпартаваць з Outlook"
@@ -6420,16 +6414,16 @@
         "${ elementsCount } размоў будзе пазначана як:"
       ],
       "${ elementsCount } conversation will be marked as read.": [
-        "Будзе пазначана як прачытаная ${ elementsCount } размова",
-        "Будзе пазначана як прачытаная ${ elementsCount } размовы",
-        "Будзе пазначана як прачытаная ${ elementsCount } размоў",
+        "Будзе пазначана прачытанай ${ elementsCount } размова",
+        "Будзе пазначана прачытанай ${ elementsCount } размовы",
+        "Будзе пазначана прачытанай ${ elementsCount } размоў",
         "Будзе пазначана як прачытаная ${ elementsCount } размоў"
       ],
       "${ elementsCount } conversation will be marked as unread.": [
-        "Будзе пазначана як непрачытаная ${ elementsCount } размова",
-        "Будзе пазначана як непрачытаная ${ elementsCount } размовы",
-        "Будзе пазначана як непрачытаная ${ elementsCount } размоў",
-        "Будзе пазначана як непрачытаная ${ elementsCount } размоў"
+        "Будзе пазначана непрачытанай ${ elementsCount } размова",
+        "Будзе пазначана непрачытанай ${ elementsCount } размовы",
+        "Будзе пазначана непрачытанай ${ elementsCount } размоў",
+        "Будзе пазначана непрачытанай ${ elementsCount } размоў"
       ],
       "${ elementsCount } conversation will be moved": [
         "Будзе перамешчана ${ elementsCount } размова",
@@ -6492,7 +6486,7 @@
         "Знойдзена ${ groupCounts } груп"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME }"
+        "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME } Scribe"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } можа абараніць і ваш бізнес."
@@ -6708,7 +6702,7 @@
         "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
-        "Запыт на скасаванне падпіскі на гэты спіс рассылкі будзе адпраўлены адпраўніку рассылкі і апрацаваны аўтаматычна."
+        "Запыт на скасаванне падпіскі ад гэтага спіса рассылкі будзе адпраўлены адпраўніку рассылкі і апрацаваны аўтаматычна."
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Бяспечнае падключэнне вельмі важна пры аддаленай працы. VPN абараняе даныя кампаніі ад кіберпагроз і захоўвае прыватнасць вашай працы."
@@ -7188,7 +7182,7 @@
         "Кожны код можа выкарыстоўвацца толькі адзін раз"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
-        "Без намаганняў кіруйце і скасоўвайце падпіску ад інфармацыйнай рассылкі, а таксама спіса рассылкі."
+        "Без намаганняў кіруйце і скасоўвайце падпіску ад інфармацыйнай рассылкі, а таксама на спіс рассылкі."
       ],
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
@@ -7456,9 +7450,6 @@
       ],
       "Included for free with your plan": [
         "Уваходзіць бясплатна ў ваш тарыфны план"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Уключае ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
@@ -8213,6 +8204,9 @@
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Адбылася памылка подпісу, якая выкарыстоўваецца для спраўджання кантактных звестак, што можа быць выклікана скіданнем пароля."
       ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Гэтыя размовы захоўваюцца тут у адпаведнасці з палітыкай захоўвання даных вашай арганізацыі."
+      ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Яны больш не змогуць адпраўляць вам лісты са спамам, калі не будуць ведаць ваш адрас электроннай пошты. Абараніце сваю паштовую скрыню з функцыяй Hide-my-email."
       ],
@@ -8376,7 +8370,7 @@
         "Для таго, каб скасаваць падпіску на гэту рассылку ад ${ boldFrom }, вам будзе накіраваны ліст з наступнымі падрабязнасцямі, якія вызначаюцца адпраўніком рассылкі:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
-        "Для таго, каб скасаваць падпіску на спіс рассылкі, мы перанакіруем вас на наступны URL-адрас, дзе вы атрымаеце інструкцыі ад адпраўніка рассылкі:"
+        "Вы будзеце перанакіраваны на наступны URL-адрас, каб скасаваць падпіску ад гэтага спіса рассылкі. Там вы атрымаеце інструкцыі ад адпраўніка рассылкі:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Для таго, каб выкарыстоўваць праверку адраса вы павінны давяраць аднаму або некалькім з даступных публічных ключоў, уключаючы той, які вы хочаце выкарыстоўваць для адпраўкі. Гэта прадухіляе падробку ключоў шыфравання."
@@ -8433,7 +8427,7 @@
         "Незахаваныя змены"
       ],
       "Unsubscribe": [
-        "Адпісацца"
+        "Скасаваць падпіску"
       ],
       "Unsupported file": [
         "Файл не падтрымліваецца"
@@ -8730,7 +8724,7 @@
         "У вас ёсць падпіска ${ planTitle } з пробным перыядам. У дадзены момант аплата не патрабуецца. Ваша падпіска будзе аўтаматычна падоўжана ў канцы пробнага перыяду."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
-        "Вы не пазначылі тэму ліста. Вы сапраўды хочаце ўсё роўна адправіць паведамленне?"
+        "Вы не пазначылі тэму ліста. Вы ўсё роўна хочаце адправіць паведамленне?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Вы дасягнулі 100% ёмістасці сховішча. Паспрабуйце вызваліць крыху прасторы або павялічце аб'ём сховішча ў сваім уліковым запісе, каб працягнуць ствараць новыя паведамленні."
@@ -9011,10 +9005,10 @@
     },
     "Key pinning": {
       "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
-        "Пры націску кнопкі “Давяраць ключу”, вы звяжаце дадзены публічны ключ з гэтым адпраўніком, і лісты з гэтага адраса будуць праходзіць аўтаматычную крыптаграфічную праверку."
+        "Пры націску кнопкі “Давяраць ключу”, вы звяжаце дадзены публічны ключ з гэтым адпраўніком. Лісты з гэтага адраса будуць аўтаматычна крыптаграфічна спраўджаны."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
-        "Пры націску кнопкі \"Давяраць ключу\", будзе створаны новы кантакт, і гэты публічны ключ прывяжацца да адпраўніка. Лісты з гэтага адрасу будуць аўтаматычна крыптаграфічна правярацца."
+        "Пры націску кнопкі \"Давяраць ключу\", будзе створаны новы кантакт, і гэты публічны ключ прывяжацца да адпраўніка. Лісты з гэтага адрасу будуць аўтаматычна крыптаграфічна спраўджаны."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Вы сапраўды хочаце давяраць асноўнаму публічнаму ключу з наступным адбіткам?",
@@ -9360,6 +9354,9 @@
       "Cash": [
         "Наяўныя"
       ],
+      "Categories badge": [
+        "Значок катэгорый"
+      ],
       "Category": [
         "Катэгорыя"
       ],
@@ -9521,6 +9518,9 @@
       ],
       "From: ${ fromEmail }": [
         "Ад: ${ fromEmail }"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Дапамажыце нам палепшыць будучую катэгарызацыю пошты"
       ],
       "Hide password": [
         "Схаваць пароль"
@@ -9810,6 +9810,9 @@
       "System information": [
         "Сістэмная інфармацыя"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "Катэгорыя абноўлена. Дзякуй за зваротную сувязь!"
+      ],
       "The filter is disabled. ${ enableButton }": [
         "Фільтр адключаны. ${ enableButton }"
       ],
@@ -9858,9 +9861,6 @@
       "Username": [
         "Імя карыстальніка"
       ],
-      "VAT": [
-        "ПДВ"
-      ],
       "Verification code": [
         "Код спраўджання"
       ],
@@ -9876,11 +9876,20 @@
       "Weak password": [
         "Ненадзейны пароль"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Нашы распрацоўшчыкі ўдасканалілі катэгарызацыю лістоў. Вашы водгукі дапамогуць зрабіць гэту функцыю яшчэ больш інтэлектуальнай і больш дакладнай."
+      ],
       "What happened?": [
         "Што здарылася?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "Якая ваша асноўная прычына скасавання або паніжэння тарыфнага плана?"
+      ],
+      "Which category should this be recategorized under?": [
+        "Пад якую катэгорыю гэта трэба перакласіфікаваць?"
+      ],
+      "Why am I seeing this?": [
+        "Чаму я гэта бачу?"
       ],
       "With attachment": [
         "З далучэннем"
@@ -10048,6 +10057,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Стварыць новы каляндар, каб кіраваць вашымі запрашэннямі"
+      ],
+      "Deleted": [
+        "Выдалена"
       ],
       "Drafts": [
         "Чарнавікі"
@@ -11178,7 +11190,7 @@
         "Усе праграмы ${ BRAND_NAME } і іх прэміяльныя функцыі"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
-        "Усе праграмы для бізнесу ${ BRAND_NAME } і прэміяльныя функцыі для абароны ўсяго вашага бізнесу."
+        "Усе праграмы для бізнесу ${ BRAND_NAME } і прэміяльныя функцыі для абароны ўсё вашай кампаніі."
       ],
       "Early access to new apps and features": [
         "Ранні доступ да новых праграм і функцый"
@@ -11388,7 +11400,7 @@
         "Магчымасць прагляду непрыватных уваходных лістоў карыстальнікаў так, як гэта робіць сам карыстальнік, уключаючы поўную інфармацыю пра паведамленні і кантактныя звесткі"
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
-        "Інструмент кіравання арганізацыяй, з дапамогай якога адміністратары могуць дадаваць/выдаляць карыстальнікаў, кіраваць сваім доступам да сэрвісаў ${ BRAND_NAME }, а таксама выконваць іншыя задачы."
+        "Інструмент кіравання арганізацыяй, з дапамогай якога адміністратары могуць дадаваць/выдаляць карыстальнікаў, кіраваць іх доступам да сэрвісаў ${ BRAND_NAME }, а таксама выконваць іншыя задачы."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Наша надзейная інфраструктура гарантуе вам пастаянны доступ да вашага ўліковага запісу"
@@ -11475,7 +11487,7 @@
         "Падтрымка пратаколаў абмену файламі, такіх як BitTorrent"
       ],
       "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
-        "Запампуйце ваш лагатып для бізнесу, каб персаналізаваць досвед вашых каманд у вэб-праграме ${ BRAND_NAME }"
+        "Запампуйце свой лагатып кампаніі, каб персаналізаваць досвед вашых каманд у вэб-праграме ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Выкарыстоўвайце свой уласны карыстальніцкі дамен электроннай пошты. Напрыклад, you@yourname.com"
@@ -11563,7 +11575,7 @@
         "${ Filter.Name } створаны"
       ],
       "${ reason } has been disabled": [
-        "${ reason } было адключана"
+        "${ reason } быў адключаны"
       ],
       "${ reason } has been enabled": [
         "${ reason } было ўключана"
@@ -12147,7 +12159,7 @@
     },
     "Payments": {
       "Billing Country": [
-        "Краіна выстаўлення рахунка"
+        "Краіна выстаўлення рахунку"
       ],
       "Card number": [
         "Нумар карткі"
@@ -12161,11 +12173,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змяненні. Дзякуй за ваша цярпенне."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Без уліку ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Без уліку падатка ў ${ taxRate }%: ${ taxAmount }"
+      ],
       "Got it": [
         "Зразумела"
       ],
       "I'm purchasing as a business": [
         "Я купляю як юрыдычная асоба"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Уключае ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "З улікам падатка ў ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "ММ/ГГ"
@@ -12181,6 +12205,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Падаўжаецца за ${ renewPriceStr }. Скасаваць можна ў любы час."
+      ],
+      "Taxes": [
+        "Падаткі"
       ],
       "terms & conditions": [
         "умовы выкарыстання"
@@ -12220,6 +12247,9 @@
       ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
+      ],
+      "VAT": [
+        "ПДВ"
       ],
       "VAT number": [
         "Нумар ПДВ"
@@ -12323,7 +12353,7 @@
         "${ emailAddress } пазначыў гэты ключ як састарэлы. Гэты ключ можа выкарыстоўвацца толькі для праверкі подпісу."
       ],
       "External key automatically fetched from keys.openpgp.org.": [
-        "Знешні ключ аўтаматычна атрыманы з сайта keys.openpgp.org."
+        "Знешні ключ аўтаматычна атрыманы з вэб-сайта keys.openpgp.org."
       ],
       "External key automatically fetched via WKD.": [
         "Знешні ключ аўтаматычна атрыманы праз WKD."
@@ -12767,7 +12797,7 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Выяўлены іншыя патэнцыяльныя ўцечкі ${ name } і ${ remainingCount }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+        "Выяўлены іншыя патэнцыяльныя ўцечкі з назвай ${ name } і колькасцю роўнай ${ remainingCount }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Выяўлена ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
@@ -12867,7 +12897,7 @@
         "Зашыфравана скразным метадам для праверанага атрымальніка PGP"
       ],
       "End-to-end encrypted to verified recipient": [
-        "Зашыфравана скразным метадам для праверанага атрымальніка"
+        "Зашыфравана скразным метадам для спраўджанага атрымальніка"
       ],
       "PGP-signed": [
         "Падпісана з дапамогай PGP"
@@ -13086,7 +13116,7 @@
         "Калі вы выйдзеце з сістэмы да скідання пароля, вы можаце страціць доступ да вашага ўліковага запісу."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "Вы можаце страціць доступ да вашага ўліковага запісу, калі выйсці з сістэмы без скідання пароля."
+        "Вы можаце страціць доступ да вашага ўліковага запісу, калі выйдзіце з сістэмы без скідання пароля."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "Вы зможаце скінуць свой пароль праз ${ boldTimeLeft }."
@@ -13124,7 +13154,7 @@
         "Не ўдалося праверыць адпраўніка: ${ verificationErrorsMessage }"
       ],
       "Sender's trusted keys verification failed": [
-        "Не ўдалося праверыць давераныя ключы адпраўніка"
+        "Не ўдалося спраўдзіць давераныя ключы адпраўніка"
       ]
     },
     "Signing preference for emails": {
@@ -13400,7 +13430,7 @@
         "Абараніце свой уліковы запіс ад пагроз з дамогай Sentinel"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
-        "Палепшыце свой тарыфны план і зэканомце больш грошай, купіўшы ${ planName } на 2 гады"
+        "Палепшыце свой тарыфны план і зэканомце больш грошай з ${ planName } на 2 гады"
       ]
     },
     "specialoffer: Tooltip": {
@@ -13970,7 +14000,7 @@
         "Ваша падпіска на тарыфным плане ${ planName } міне ${ expiryDate }. Будуць дададзены крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
-        "Ваш тарыфны план ${ planName } не толькі захоўвае вашы дзелавыя даныя і бяспеку зносін, але і падтрымлівае выкананне вашых патрабаванняў, вылучае ваш бізнес і захоўвае сувязь паміж вашай камандай."
+        "Ваш тарыфны план ${ planName } не толькі захоўвае вашы дзелавыя даныя і бяспеку зносін, але і падтрымлівае выкананне вашых мэт, вылучае ваш бізнес і захоўвае сувязь паміж вашай камандай."
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
@@ -14265,6 +14295,12 @@
       "Conversation removed from Starred.": [
         "З пазначаных зорачкай выдалена размова."
       ],
+      "Conversation updated": [
+        "Размова абноўлена",
+        "Размовы абноўлены",
+        "Размовы абноўлены",
+        "Размовы абноўлены"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Размовы ад ${ sendersList } будуць пазначаны як ${ labelsList }"
       ],
@@ -14339,6 +14375,12 @@
       ],
       "Message removed from Starred.": [
         "З пазначаных зорачкай выдалена паведамленне."
+      ],
+      "Message updated": [
+        "Паведамленне абноўлена",
+        "Паведамленні абноўлены",
+        "Паведамленні абноўлены",
+        "Паведамленні абноўлены"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Паведамленні ад ${ sendersList } будуць пазначаны як ${ labelsList }"
@@ -15533,7 +15575,7 @@
         "Давяраць новым ключам?"
       ],
       "Trust pinned keys?": [
-        "Пацвердзіць замацаваныя ключы?"
+        "Давяраць замацаваным ключам?"
       ],
       "Trust public key?": [
         "Давяраць публічнаму ключу?"
@@ -15630,9 +15672,6 @@
       ],
       "Your account is protected": [
         "Ваш уліковы запіс абаронены"
-      ],
-      "Your addresses": [
-        "Вашы адрасы"
       ],
       "Your changes are not synced yet": [
         "Пакуль вашы змены не сінхранізаваны"
@@ -15887,9 +15926,6 @@
         "${ n } кашалькі",
         "${ n } кашалькоў",
         "${ n } кашалькоў"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Больш бяспечны спосаб захоўвання Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin праз электронную пошту"

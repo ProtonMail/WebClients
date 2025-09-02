@@ -2193,6 +2193,9 @@
       "Error connecting to the Bitcoin API.": [
         "Pogreška prilikom spajanja na Bitcoin API."
       ],
+      "Failed to open to contact": [
+        "Neuspješno otvaranje kontakta"
+      ],
       "Folder name cannot be empty.": [
         "Naziv mape ne može biti prazan."
       ],
@@ -2346,6 +2349,9 @@
       ],
       "Validation error": [
         "Pogreška provjere valjanosti"
+      ],
+      "We were not able to load some of your invitations": [
+        "Nismo bili u mogućnosti učitati neke od Vaših pozivnica"
       ],
       "You have reached the maximum number of calendars.": [
         "Dosegli ste maksimalan broj kalendara."
@@ -2560,6 +2566,9 @@
       ],
       "customer support": [
         "korisnička podrška"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Obiteljski planovi pretplate trenutačno ne podržavaju vanjske korisničke račune. Izradite ${ BRAND_NAME } adresu prije pridraživanja. ${ link }"
       ],
       "Manage addresses": [
         "Upravljanje adresama"
@@ -4168,9 +4177,6 @@
       "Username": [
         "Korisničko ime"
       ],
-      "VAT": [
-        "PDV"
-      ],
       "Verification code": [
         "Kôd za provjeru"
       ],
@@ -4290,6 +4296,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Više informacija"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Za nastavak korištenja ${ BRAND_NAME }, provjerite da vaše premium značajke više nisu u upotrebi ili nadogradite svoj plan."
       ]
     },
     "Log preference": {
@@ -5004,17 +5013,35 @@
       "CVC": [
         "CVC"
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Bez ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Bez ${ taxRate }% poreza: ${ taxAmount }"
+      ],
       "Got it": [
         "Razumijem"
       ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Uključujući ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Uključujući ${ taxRate }% poreza: ${ taxAmount }"
+      ],
       "MM/YY": [
         "MM/GG"
+      ],
+      "Taxes": [
+        "Porezi"
       ],
       "terms & conditions": [
         "uvjeti i odredbe"
       ],
       "Timeout exceeded": [
         "Prekoračeno je vremensko ograničenje"
+      ],
+      "VAT": [
+        "Porez"
       ]
     },
     "Payments.Error": {

@@ -2866,9 +2866,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I neste trinn, vil du kunne sende inn et innskudd ved å bruke en Bitcoin-adresse."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inkludert ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Arvet fra overordnet mappe"
       ],
@@ -3371,9 +3368,6 @@
       ],
       "Thomas": [
         "Thomas"
-      ],
-      "VAT": [
-        "MVA"
       ],
       "Verification code": [
         "Verifiseringskode"
@@ -4533,11 +4527,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "I løpet av denne tiden vil du ikke kunne endre eller kansellere abonnementet ditt. Vent til betalingen er fullført før du prøver å gjøre noen endringer. Takk for tålmodigheten."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Ekskludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Ekskludert ${ taxRate }% avgifter: ${ taxAmount }"
+      ],
       "Got it": [
         "Skjønner"
       ],
       "I'm purchasing as a business": [
         "Jeg kjøper som en bedrift."
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inkludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inkludert ${ taxRate }% avgifter: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -4553,6 +4559,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, avbryt når som helst."
+      ],
+      "Taxes": [
+        "Avgifter"
       ],
       "terms & conditions": [
         "vilkår og betingelser"
@@ -4584,6 +4593,9 @@
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
+      ],
+      "VAT": [
+        "MVA"
       ],
       "VAT number": [
         "MVA-nummer"
@@ -6780,9 +6792,6 @@
       "${ n } wallet": [
         "${ n } lommebok",
         "${ n } lommebøker"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "En tryggere måte å oppbevare bitcoinene dine på"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-post"

@@ -220,6 +220,9 @@
       "Cancel": [
         "Anulare"
       ],
+      "Cancel request": [
+        "Anulare solicitare"
+      ],
       "Cancel subscription": [
         "Anulare abonament"
       ],
@@ -258,6 +261,9 @@
       ],
       "Claim this address": [
         "Revendicați această adresă"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Revendicați adresa gratuită ${ BRAND_NAME }"
       ],
       "Clear all formatting": [
         "Eliminare formatări"
@@ -784,9 +790,6 @@
       "Get verification code": [
         "Obținere cod de verificare"
       ],
-      "Give access now": [
-        "Acordare acces acum"
-      ],
       "Go back": [
         "Înapoi"
       ],
@@ -1081,6 +1084,9 @@
       "refresh the page": [
         "Împrospătați pagina"
       ],
+      "Refuse access": [
+        "Refuzare acces"
+      ],
       "Reject": [
         "Respingere"
       ],
@@ -1191,6 +1197,9 @@
       ],
       "Revoke ${ name }": [
         "Anulare ${ name }"
+      ],
+      "Revoke access": [
+        "Revocare acces"
       ],
       "Revoke all other sessions": [
         "Deconectare alte sesiuni"
@@ -1734,6 +1743,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Generare chei lipsă pentru adresa „${ emailAddress }”"
       ],
+      "Reconnect": [
+        "Reconectare"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Reconectați adresa „${ emailAddress }”"
+      ],
       "Saving": [
         "Se salvează"
       ],
@@ -1756,6 +1771,9 @@
       ],
       "Disabled": [
         "Dezactivată"
+      ],
+      "Disconnected": [
+        "Deconectat"
       ],
       "External": [
         "Extern"
@@ -5209,27 +5227,49 @@
       "${ BRAND_NAME } Account email": [
         "E-mail cont ${ BRAND_NAME }"
       ],
+      "${ days } day left": [
+        "Zile rămase: ${ days }",
+        "Zile rămase: ${ days }",
+        "Zile rămase: ${ days }"
+      ],
+      "${ hours } hour left": [
+        "Ore rămase: ${ hours }",
+        "Ore rămase: ${ hours }",
+        "Ore rămase: ${ hours }"
+      ],
+      "${ minutes } minute left": [
+        "Minute rămase: ${ minutes }",
+        "Minute rămase: ${ minutes }",
+        "Minute rămase: ${ minutes }"
+      ],
       "${ n } day": [
         "${ n } zi",
         "${ n } zile",
         "${ n } de zile"
       ],
-      "${ n } day left": [
-        "Zile rămase: ${ n }",
-        "Zile rămase: ${ n }",
-        "Zile rămase: ${ n }"
+      "${ user } is requesting emergency access to your account": [
+        "Utilizatorul ${ user } vă solicită accesul de urgență la cont."
       ],
       "${ user } will be able to use your account and change your data.": [
         "Utilizatorul ${ user } vă va putea folosi contul și schimba datele."
       ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "Utilizatorul ${ user } va fi deconectat de la contul dvs. și nu îl va mai putea accesa până la următoarea accesare de urgență."
+      ],
       "${ user } will no longer be able to request access to your account in case of emergency.": [
         "Utilizatorul ${ user } nu vă va mai putea solicita acces la cont în caz de urgență."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "Utilizatorul ${ user } nu vă va putea accesa contul până la următorul acces de urgență."
       ],
       "Access granted": [
         "Acces acordat"
       ],
       "Access granted on ${ formattedAccessibleAt }": [
         "Acces acordat lui ${ formattedAccessibleAt }"
+      ],
+      "Access request canceled": [
+        "Cerere de acces anulată"
       ],
       "Access requested": [
         "Accesul a fost solicitat"
@@ -5245,6 +5285,9 @@
       ],
       "Added on ${ formattedDate }": [
         "Adăugat la ${ formattedDate }"
+      ],
+      "Cancel request?": [
+        "Anulați solicitarea?"
       ],
       "Change access wait time": [
         "Modificare timp de așteptare pentru accesare"
@@ -5273,8 +5316,17 @@
       "Emergency access granted": [
         "Acces de urgență acordat"
       ],
+      "Emergency access refused": [
+        "Acces de urgență refuzat"
+      ],
+      "Emergency access request": [
+        "Solicitare de acces de urgență"
+      ],
       "Emergency access requested": [
         "Acces de urgență solicitat"
+      ],
+      "Emergency access revoked": [
+        "Acces de urgență revocat"
       ],
       "Emergency contact added": [
         "Contact de urgență adăugat"
@@ -5300,6 +5352,9 @@
       "Less than a day": [
         "Mai puțin de o zi"
       ],
+      "Less than a minute left": [
+        "Mai puțin de un minut rămas"
+      ],
       "None": [
         "Niciuna"
       ],
@@ -5318,6 +5373,12 @@
       "Protect your legacy with emergency access": [
         "Protejați-vă moștenirea cu accesul de urgență"
       ],
+      "Refuse access": [
+        "Refuzare acces"
+      ],
+      "Refuse access?": [
+        "Refuzați accesul?"
+      ],
       "Remove trusted contact": [
         "Eliminare contact aprobat"
       ],
@@ -5329,6 +5390,12 @@
       ],
       "Requesting access": [
         "Solicitare acces"
+      ],
+      "Revoke access": [
+        "Revocare acces"
+      ],
+      "Revoke access?": [
+        "Revocați accesul?"
       ],
       "Stop being trusted contact?": [
         "Încetați să mai fiți un contact de încredere?"
@@ -5342,11 +5409,19 @@
       "They may ask to access my account in case of an emergency.": [
         "S-ar putea să vă solicite să vă acceseze contul în caz de urgență."
       ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "I se va acorda acces automat peste **${ days } zi**, la **${ formattedAccessibleAt }**. Îi puteți respinge solicitarea sau îi puteți acorda acces imediat oricând.",
+        "Li se va acorda acces automat peste **${ days } zi**, la **${ formattedAccessibleAt }**. Le puteți respinge solicitarea sau le puteți acorda acces imediat oricând.",
+        "Li se va acorda acces automat peste **${ days } zi**, la **${ formattedAccessibleAt }**. Le puteți respinge solicitarea sau le puteți acorda acces imediat oricând."
+      ],
       "This will take effect immediately.": [
         "Acest lucru va intra în vigoare imediat."
       ],
       "Time required before automatically giving access": [
         "Timp necesar înainte de a acorda automat accesul"
+      ],
+      "Time required before automatically giving you access": [
+        "Timp necesar înainte de a vă acorda automat accesul"
       ],
       "Time required before automatically granting them access": [
         "Timp necesar înainte de a le acorda automat accesul."
@@ -5397,6 +5472,9 @@
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Nu veți mai putea solicita acces la contul lui ${ user } în caz de urgență."
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "Veți putea în continuare solicita acces la contul lui ${ user } mai târziu."
       ],
       "You'll receive access to their account immediately.": [
         "Veți primi acces la contul lor imediat."
@@ -6465,8 +6543,8 @@
       "customer support": [
         "suportul tehnic"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Planurile de familie nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Planurile de familie nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Dacă acceptați invitația, se va schimba planul curent, iar soldul rămas va fi returnat ca și credit în cont."
@@ -9238,9 +9316,6 @@
       "Include device, location, and IP details": [
         "Includere dispozitiv, loc și detalii IP"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inclusiv ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Măriți securitatea contului prin verificarea adresei de e-mail."
       ],
@@ -9837,9 +9912,6 @@
       ],
       "Please use another browser or download the file.": [
         "Folosiți alt tip de navigator web sau descărcați fișierul."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Verificați efectuarea plății în noua filă deschisă."
       ],
       "Please wait till your changes are synced with the server.": [
         "Așteptați până când modificările se sincronizează cu serverul."
@@ -10666,9 +10738,6 @@
       "Vault updated": [
         "Seiful a fost actualizat."
       ],
-      "Verification can take a few minutes.": [
-        "Verificarea poate dura câteva minute."
-      ],
       "Verification link expired": [
         "Legătura de verificare a expirat."
       ],
@@ -11397,6 +11466,9 @@
       ],
       "Donation": [
         "Donație"
+      ],
+      "Manual": [
+        "Manuală"
       ],
       "Modification": [
         "Modificare"
@@ -12916,9 +12988,6 @@
       ],
       "Value": [
         "Valoare"
-      ],
-      "VAT": [
-        "TVA"
       ],
       "Verification code": [
         "Cod de verificare"
@@ -16469,11 +16538,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "În acest timp, nu vă veți putea modifica sau anula abonamentul. Vă rugăm să așteptați până când plata este finalizată înainte de a încerca orice modificare. Vă mulțumim pentru răbdare."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluzând taxe de ${ taxRate }%: ${ taxAmount }"
+      ],
       "Got it": [
         "Am înțeles"
       ],
       "I'm purchasing as a business": [
         "Achiziționez în calitate de companie"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluzând taxe de ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "LL/AA"
@@ -16492,6 +16573,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Reînnoire cu ${ renewPriceStr }, anulați oricând."
+      ],
+      "Taxes": [
+        "Taxe"
       ],
       "terms & conditions": [
         "termeni și condiții"
@@ -16530,6 +16614,9 @@
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
+      ],
+      "VAT": [
+        "TVA"
       ],
       "VAT number": [
         "Valoare TVA"
@@ -22306,6 +22393,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }."
+      ],
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Adresa a fost deconectată. Trimiterea și primirea mesajelor sunt suspendate. Reconectați-vă pentru a activa din nou această adresă."
       ],
       "The import will start with the most recent messages.": [
         "Importarea va începe cu cele mai recente mesaje."

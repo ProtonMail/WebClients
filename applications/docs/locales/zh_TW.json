@@ -2563,6 +2563,11 @@
         "原訂自 ${ formattedStart } 起一事有變"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "信任的聯絡人"
+      ]
+    },
     "Error": {
       "\"${ sanitizedName }\" already exists": [
         "「${ sanitizedName }」已存在"
@@ -2698,6 +2703,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "外部邀請函暫時關閉。請稍後再試。"
+      ],
+      "Failed to open to contact": [
+        "無法開啟聯絡人"
       ],
       "Failed to rename document. Please try again later.": [
         "無法重新命名文件，請稍後重試。"
@@ -3316,8 +3324,8 @@
       "customer support": [
         "客服"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "家庭方案目前不支援外部帳號。請在加入前創建 ${ BRAND_NAME } 地址。${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "家庭方案目前不支援外部帳號。請在加入前創建 ${ BRAND_NAME } 地址。${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "若您接受邀請，我們會將您從目前的方案轉出，並將所有剩餘金額存入的您的帳號。"
@@ -4356,9 +4364,6 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "在下一步驟裡，您將可以使用比特幣數位錢包，提交單筆存款。"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "包含 ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Inherited from parent folder": [
         "繼承自上層資料夾"
@@ -5615,9 +5620,6 @@
       "Username": [
         "使用者名稱"
       ],
-      "VAT": [
-        "增值稅"
-      ],
       "Verification code": [
         "驗證碼"
       ],
@@ -5744,6 +5746,9 @@
       ],
       "Request an invite": [
         "需求邀請"
+      ],
+      "Resume now": [
+        "立即恢復"
       ],
       "settings": [
         "設定"
@@ -7413,11 +7418,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "目前您將暫時無法修改或取消您的訂購授權。請等待付款完成後，再進行修改。感謝您耐心等候。"
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "不包含 ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "不包含 ${ taxRate }% 稅金：${ taxAmount }"
+      ],
       "Got it": [
         "瞭解"
       ],
       "I'm purchasing as a business": [
         "我以公司名義購買"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "包含 ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "包含 ${ taxRate }% 稅金：${ taxAmount }"
       ],
       "MM/YY": [
         "MM/YY"
@@ -7430,6 +7447,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "更新價 ${ renewPriceStr }，任何時間都可取消。"
+      ],
+      "Taxes": [
+        "稅金"
       ],
       "terms & conditions": [
         "條款及細則"
@@ -7454,6 +7474,9 @@
       ],
       "Timeout exceeded": [
         "已經逾時"
+      ],
+      "VAT": [
+        "增值稅"
       ],
       "VAT number": [
         "增值稅編號（VAT）"
@@ -7508,8 +7531,14 @@
       "Business Number": [
         "營業人統一編號"
       ],
+      "Edit ABN": [
+        "編輯 ABN"
+      ],
       "Edit Business Number": [
         "編輯營業人統一編號"
+      ],
+      "Edit EIN": [
+        "編輯 EIN"
       ],
       "Edit VAT number": [
         "編輯增值稅編號（VAT）"
@@ -9440,9 +9469,6 @@
       ],
       "${ n } wallet": [
         "${ n } 錢包"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "更安全的方法持有Bitcoin"
       ],
       "Bitcoin via Email": [
         "透過電子郵件的比特幣"

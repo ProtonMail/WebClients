@@ -262,6 +262,9 @@
       "Claim this address": [
         "Diese Adresse beanspruchen"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Deine kostenlose ${ BRAND_NAME }-Adresse beanspruchen"
+      ],
       "Clear all formatting": [
         "Alle Formatierungen entfernen"
       ],
@@ -786,9 +789,6 @@
       ],
       "Get verification code": [
         "Verifizierungscode anfordern"
-      ],
-      "Give access now": [
-        "Jetzt Zugriff gewähren"
       ],
       "Go back": [
         "Zurück"
@@ -5264,13 +5264,21 @@
       "${ BRAND_NAME } Account email": [
         "${ BRAND_NAME }-Konto-E-Mail-Adresse"
       ],
+      "${ days } day left": [
+        "Noch ${ days } Tag",
+        "Noch ${ days } Tage"
+      ],
+      "${ hours } hour left": [
+        "Noch ${ hours } Stunde",
+        "Noch ${ hours } Stunden"
+      ],
+      "${ minutes } minute left": [
+        "Noch ${ minutes } Minute",
+        "Noch ${ minutes } Minuten"
+      ],
       "${ n } day": [
         "${ n } Tag",
         "${ n } Tage"
-      ],
-      "${ n } day left": [
-        "${ n } verbleibender Tag",
-        "${ n } verbleibende Tage"
       ],
       "${ user } is requesting emergency access to your account": [
         "${ user } fordert Notfallzugang auf dein Konto an."
@@ -5377,6 +5385,9 @@
       "Less than a day": [
         "Weniger als ein Tag"
       ],
+      "Less than a minute left": [
+        "Noch weniger als eine Minute"
+      ],
       "None": [
         "Keine"
       ],
@@ -5440,6 +5451,9 @@
       ],
       "Time required before automatically giving access": [
         "Benötigte Zeit, bevor du automatisch Zugriff gewährst"
+      ],
+      "Time required before automatically giving you access": [
+        "Zeit, die erforderlich ist, um dir automatisch Zugang zu gewähren"
       ],
       "Time required before automatically granting them access": [
         "Benötigte Zeit, bevor du ihnen automatisch Zugriff gewährst"
@@ -6552,8 +6566,8 @@
       "customer support": [
         "Kundendienst"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Familienabonnements unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-Adresse. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Familienabonnements unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-E-Mail-Adresse. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Wenn du die Einladung annimmst, wechseln wir dein aktuelles Abonnement und schreiben deinem Konto das verbleibende Guthaben gut."
@@ -9263,9 +9277,6 @@
       "Include device, location, and IP details": [
         "Geräte-, Standort- und IP-Details einschließen"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Einschließlich ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Erhöhe die Sicherheit deines Kontos, indem du deine E-Mail-Adresse verifizierst"
       ],
@@ -9853,9 +9864,6 @@
       ],
       "Please use another browser or download the file.": [
         "Bitte verwende einen anderen Browser oder lade die Datei herunter."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Bitte bestätige die Zahlung im neu geöffneten Tab."
       ],
       "Please wait till your changes are synced with the server.": [
         "Bitte warte, bis deine Änderungen mit dem Server synchronisiert wurden."
@@ -10675,9 +10683,6 @@
       ],
       "Vault updated": [
         "Tresor aktualisiert"
-      ],
-      "Verification can take a few minutes.": [
-        "Die Überprüfung kann einige Minuten dauern."
       ],
       "Verification link expired": [
         "Verifizierungslink ist abgelaufen"
@@ -12907,9 +12912,6 @@
       ],
       "Value": [
         "Wert"
-      ],
-      "VAT": [
-        "MwSt."
       ],
       "Verification code": [
         "Verifizierungscode"
@@ -16389,11 +16391,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Während dieser Zeit kannst du dein Abonnement nicht ändern oder kündigen. Bitte warte, bis deine Zahlung abgeschlossen ist, bevor du versuchst, Änderungen vorzunehmen. Wir danken dir für deine Geduld."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Ohne ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Ohne ${ taxRate } % Steuern: ${ taxAmount }"
+      ],
       "Got it": [
         "Verstanden"
       ],
       "I'm purchasing as a business": [
         "Ich kaufe als Unternehmen"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Einschließlich ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Einschließlich ${ taxRate } % Steuern: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/JJ"
@@ -16412,6 +16426,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Verlängert sich zu ${ renewPriceStr }, jederzeit kündbar."
+      ],
+      "Taxes": [
+        "Steuern"
       ],
       "terms & conditions": [
         "Allgemeine Geschäftsbedingungen"
@@ -16446,6 +16463,9 @@
       ],
       "Timeout exceeded": [
         "Zeitlimit überschritten"
+      ],
+      "VAT": [
+        "Mehrwertsteuer"
       ],
       "VAT number": [
         "Umsatzsteuernummer"
@@ -22142,8 +22162,8 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemunterordner werden in ${ MAIL_APP_NAME } als separate Ordner angezeigt"
       ],
-      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
-        "Die E-Mail-Adresse wurde getrennt. Das Senden von Nachrichten ist pausiert. Verbinde dich wieder, um diese E-Mail-Adresse wieder zu aktivieren."
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Die E-Mail-Adresse wurde getrennt. Das Senden und Empfangen von Nachrichten ist pausiert. Verbinde dich wieder, um diese E-Mail-Adresse wieder zu aktivieren."
       ],
       "The import will start with the most recent messages.": [
         "Der Import beginnt mit den neuesten Nachrichten."

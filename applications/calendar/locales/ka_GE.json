@@ -368,6 +368,9 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName }-ის მიღება"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "მიიღეთ უფასო ${ BRAND_NAME }-ის მისამართი"
+      ],
       "Get in touch": [
         "დაგვიკავშირდით"
       ],
@@ -4117,9 +4120,6 @@
       "customer support": [
         "მხარდაჭერის გუნდი"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "ოჯახის გეგმებს, ამჟამად, გარე ანგარიშების მხარდაჭერა არ გააჩნიათ. შეერთებამდე ${ BRAND_NAME }-ის ანგარიში შექმენით. ${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "თუ მოსაწევევს მიიღებთ, ჩვენ თქვენი მიმდინარე ტრიფიდან გადაგრთავთ და დარჩენილ ბალანსს ანგარიშზე დაგირიცხავთ."
       ],
@@ -5230,9 +5230,6 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "შემდეგ ნაბიჯზე თქვენ საშუალება გექნებათ, დეპოზიტი ბიტკოინის მისამართით გადმოგვცეთ."
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }%-ის ჩათვლით ${ taxName }: ${ price }"
       ],
       "Indexing events: ${ current }/${ total }": [
         "დაინდექსების მოვლენები: ${ current }/${ total }"
@@ -6591,9 +6588,6 @@
       ],
       "Username": [
         "მომხმარებლის სახელი"
-      ],
-      "VAT": [
-        "დღგ"
       ],
       "Verification code": [
         "შემოწმების კოდი"
@@ -8629,6 +8623,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "განახლების დრო ${ renewPriceStr }. გააუქმეთ ნებისმიერ დროს."
       ],
+      "Taxes": [
+        "გადასახადები"
+      ],
       "terms & conditions": [
         "პირობები და წესები"
       ],
@@ -8649,6 +8646,9 @@
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
+      ],
+      "VAT": [
+        "დღგ"
       ],
       "VAT number": [
         "დღგ ნომერი"
@@ -11335,9 +11335,6 @@
       "${ n } wallet": [
         "${ n } საფულე",
         "${ n } საფულე"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "უფრო უსაფრთხო გზა თქვენი Bitcoin-ის შესანახად"
       ],
       "Bitcoin via Email": [
         "Bitcoin ელფოსტით"
