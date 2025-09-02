@@ -3122,9 +3122,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Nel passaggio successivo, sarai in grado di inviare un deposito utilizzando un indirizzo Bitcoin."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incluso il ${ formattedTaxRate }% di ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Preso dalla cartella principale"
       ],
@@ -3609,9 +3606,6 @@
       ],
       "Thomas": [
         "Mario"
-      ],
-      "VAT": [
-        "IVA"
       ],
       "Verification code": [
         "Codice di verifica"
@@ -4760,11 +4754,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante questo periodo non sarà possibile modificare o annullare l'abbonamento. Si prega di attendere il completamento del pagamento prima di tentare qualsiasi modifica. Grazie per la pazienza."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Escludendo il ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Escluse tasse del ${ taxRate }%: ${ taxAmount }"
+      ],
       "Got it": [
         "Tutto chiaro"
       ],
       "I'm purchasing as a business": [
         "Sto acquistando come azienda"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluso il ${ taxRate }% di ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluse tasse del ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -4780,6 +4786,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Rinnova a ${ renewPriceStr }, annulla in qualsiasi momento."
+      ],
+      "Taxes": [
+        "Tasse"
       ],
       "terms & conditions": [
         "termini e condizioni"
@@ -4811,6 +4820,9 @@
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
+      ],
+      "VAT": [
+        "IVA"
       ],
       "VAT number": [
         "Numero partita IVA"
@@ -5764,9 +5776,6 @@
       "${ n } wallet": [
         "${ n } portafoglio",
         "${ n } portafogli"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Un modo più sicuro per conservare il tuo Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via email"
