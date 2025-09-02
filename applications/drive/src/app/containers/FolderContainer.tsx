@@ -19,6 +19,7 @@ import { FolderView } from '../sections/folders/FolderView';
 import { subscribeToFolderEvents } from '../sections/folders/subscribeToFolderEvents';
 import { useContextShareHandler, useDefaultShare, useDriveEventManager } from '../store';
 import { VolumeTypeForEvents, useVolumesState } from '../store/_volumes';
+import { getActionEventManager } from '../utils/ActionEventManager/ActionEventManager';
 import { getIsPublicContext } from '../utils/getIsPublicContext';
 import PreviewContainer from './PreviewContainer';
 
@@ -38,9 +39,7 @@ export default function FolderContainer({ type }: { type: LinkURLType }) {
     const driveEventManager = useDriveEventManager();
     const useSDK = useFlag('DriveWebSDKFolders');
     const isPublic = getIsPublicContext();
-    // TODO:WIP `&& false` needed if we want to merge this code before the work is ready, the FF needs to be enabled locally so we can work on it
-    const DriveViewComponent = useSDK && !isPublic && false ? FolderView : DriveViewDeprecated;
-
+    const DriveViewComponent = useSDK && !isPublic ? FolderView : DriveViewDeprecated;
     useFolderContainerTitle(
         useMemo(
             () => ({
@@ -79,10 +78,14 @@ export default function FolderContainer({ type }: { type: LinkURLType }) {
                 navigateToRoot();
                 return;
             }
+
             return { volumeId: share.volumeId, shareId, linkId };
         }
         return lastFolderPromise.current;
     }, [params.linkId, params.shareId, type]);
+
+    // In case we open preview, folder doesn't need to change.
+    lastFolderPromise.current = folderPromise;
 
     useEffect(() => {
         folderPromise
@@ -105,6 +108,7 @@ export default function FolderContainer({ type }: { type: LinkURLType }) {
         if (useSDK) {
             const unsubscribe = subscribeToFolderEvents();
             return () => {
+                void getActionEventManager().unsubscribeSdkEventsMyUpdates('folders');
                 unsubscribe();
             };
         }
@@ -136,9 +140,6 @@ export default function FolderContainer({ type }: { type: LinkURLType }) {
             });
         };
     }, [activeFolder.shareId]);
-
-    // In case we open preview, folder doesn't need to change.
-    lastFolderPromise.current = folderPromise;
 
     const shouldRenderDriveView = Boolean(activeFolder.shareId && activeFolder.linkId);
 
