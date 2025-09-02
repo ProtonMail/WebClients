@@ -353,6 +353,14 @@ export const convertCustomViewLabelsToAlmostAllMail = (labelID: string) => {
     return labelID;
 };
 
+export const convertCategoryLabelToCategoryAndInbox = (labelID: string) => {
+    if (isCategoryLabel(labelID)) {
+        return [MAILBOX_LABEL_IDS.INBOX, labelID];
+    }
+
+    return labelID;
+};
+
 export const getCustomViewFromRoute = (route: string) => {
     return Object.values(CUSTOM_VIEWS).find(({ route: customRoute }) => customRoute === route);
 };
