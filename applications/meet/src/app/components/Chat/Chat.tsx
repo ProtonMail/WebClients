@@ -5,9 +5,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { IcMagnifier } from '@proton/icons';
+import placeholder from '@proton/styles/assets/img/meet/chat-empty-state.png';
+import placeholderSearch from '@proton/styles/assets/img/meet/search-empty-state.png';
 
-import placeholder from '../../../assets/chat-empty-state.png';
-import placeholderSearch from '../../../assets/search-empty-state.png';
 import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMeetContext } from '../../contexts/MeetContext';
@@ -49,6 +49,7 @@ export const Chat = () => {
         wasAtBottomRef.current = el.scrollHeight - el.scrollTop - el.clientHeight < 10;
     };
 
+    // Handle scroll to bottom when chat opens or receiving new updates
     useEffect(() => {
         const el = scrollRef.current;
         if (!el) {
@@ -61,8 +62,9 @@ export const Chat = () => {
             el.scrollTop = el.scrollHeight;
         }
         prevMessageCountRef.current = messageCount;
-    }, [meetingRoomUpdates]);
+    }, [meetingRoomUpdates.length]);
 
+    // Handle marking messages as seen
     useEffect(() => {
         if (sideBarState[MeetingSideBars.Chat] && scrollRef.current) {
             scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
@@ -86,15 +88,17 @@ export const Chat = () => {
         );
     }, [meetingRoomUpdates, sortedParticipants]);
 
+    const lowerCaseSearchExpression = searchExpression.toLowerCase();
+
     const filteredMeetingRoomUpdates = useMemo(() => {
         if (!isSearchOn || !searchExpression) {
             return meetingRoomUpdates;
         }
         const filteredUpdates = meetingRoomUpdates.filter((item) =>
-            (item as MeetChatMessage)?.message?.toLowerCase().includes(searchExpression.toLowerCase())
+            (item as MeetChatMessage)?.message?.toLowerCase().includes(lowerCaseSearchExpression)
         );
         return filteredUpdates;
-    }, [isSearchOn, searchExpression, meetingRoomUpdates]);
+    }, [isSearchOn, lowerCaseSearchExpression, meetingRoomUpdates]);
 
     const hasNoMessages = !meetingRoomUpdates.length;
 

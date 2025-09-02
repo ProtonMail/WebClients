@@ -5,7 +5,7 @@ import generateUID from '@proton/utils/generateUID';
 
 import LogoBase, { type LogoProps } from './LogoBase';
 
-const WalletLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoProps) => {
+const MeetLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoProps) => {
     const [uid] = useState(generateUID('logo'));
 
     let logoWidth: number;
@@ -260,4 +260,4 @@ const WalletLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: Log
     );
 };
 
-export default WalletLogo;
+export default MeetLogo;

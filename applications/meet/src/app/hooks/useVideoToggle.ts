@@ -7,8 +7,6 @@ import { Track } from '@proton-meet/livekit-client';
 import { useMeetContext } from '../contexts/MeetContext';
 import { useParticipantResolution } from './useParticipantResolution';
 
-const increasedVideoQuality = process.env.LIVEKIT_INCREASED_VIDEO_QUALITY === 'true';
-
 export const useVideoToggle = () => {
     const { localParticipant } = useLocalParticipant();
     const participantResolution = useParticipantResolution();
@@ -39,7 +37,6 @@ export const useVideoToggle = () => {
                       }
                     : false;
                 const videoPublishInfo = {
-                    simulcast: increasedVideoQuality,
                     videoEncoding: participantResolution.encoding,
                 };
 

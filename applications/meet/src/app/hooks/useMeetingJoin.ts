@@ -1,19 +1,15 @@
 import { useCallback } from 'react';
 
-import type { RoomOptions } from '@proton-meet/livekit-client';
-import { type ExternalE2EEKeyProvider, Room } from '@proton-meet/livekit-client';
+import { type ExternalE2EEKeyProvider, Room, type RoomOptions } from '@proton-meet/livekit-client';
 import { c } from 'ttag';
 
 import { qualityConstants } from '../qualityConstants';
 import { QualityScenarios } from '../types';
 import { getE2EEOptions } from '../utils/getE2EEOptions';
 import { useMeetingSetup } from './srp/useMeetingSetup';
-import { useQualityLevel } from './useQualityLevel';
 
 export const useMeetingJoin = () => {
-    const defaultQuality = useQualityLevel();
-
-    const defaultResolution = qualityConstants[QualityScenarios.SmallView][defaultQuality];
+    const defaultResolution = qualityConstants[QualityScenarios.SmallView];
 
     const { getAccessDetails } = useMeetingSetup();
 

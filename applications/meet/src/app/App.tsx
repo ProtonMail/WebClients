@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Route, useHistory, useLocation } from 'react-router-dom';
 
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
+import { isWasmSupported } from '@proton/shared/lib/helpers/isWasmSupported';
 import useFlag from '@proton/unleash/useFlag';
 
 import { ComingSoon } from './components/ComingSoon/ComingSoon';
@@ -13,7 +14,6 @@ import { GuestContainer } from './containers/GuestContainer';
 import { ProtonMeetContainer } from './containers/ProtonMeetContainer';
 import { ProviderContainer } from './containers/ProviderContainer';
 import usePublicToken from './hooks/srp/usePublicToken';
-import { isWasmSupported } from './utils/wasmUtils';
 
 // @ts-ignore
 import meetTheme from './styles/meet.theme.css';

@@ -1,2 +1,2 @@
 export * from './useMeetings';
-export * from './useUserSettings';
+export * from './useMeetUserSettings';

@@ -15,7 +15,7 @@ export const validateTimeZone = (timeZone: string | undefined | null) => {
     return timeZone && !!timeZoneOptions.find((item) => item.value === timeZone);
 };
 
-export const validateDate = (date?: any) => {
+export const validateDate = (date?: any): date is Date => {
     const isDateInstance = date instanceof Date;
 
     return !!date && isDateInstance;

@@ -15,10 +15,11 @@ import {
 } from '@proton/shared/lib/calendar/vcalConverter';
 import { withRequiredProperties } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { type DateTimeModel, type EventModel, VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar';
+import { type DateTimeModel, type EventModel } from '@proton/shared/lib/interfaces/calendar';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import modelToFrequencyProperties from './modelToFrequencyProperties';
+import { hasVideoConf } from './utils';
 
 export const modelToDateProperty = ({ date, time, tzid }: DateTimeModel, isAllDay: boolean) => {
     const dateObject = {
@@ -153,21 +154,15 @@ const modelToDescriptionProperties = ({
     conferenceHost,
     conferenceProvider,
 }: Partial<EventModel>) => {
-    const hasVideoConf = !!(
-        conferenceUrl &&
-        conferenceId &&
-        ((conferenceProvider as VIDEO_CONFERENCE_PROVIDER) === VIDEO_CONFERENCE_PROVIDER.ZOOM ||
-            conferenceUrl.includes('zoom.us') ||
-            (conferenceProvider as VIDEO_CONFERENCE_PROVIDER) === VIDEO_CONFERENCE_PROVIDER.PROTON_MEET)
-    );
+    const modelHasVideoConf = hasVideoConf(conferenceId, conferenceUrl, conferenceProvider);
 
     // Return an empty object if there is no description and no video conference
-    if (!description && !hasVideoConf) {
+    if (!description && !modelHasVideoConf) {
         return {};
     }
 
     // Return the description if there is no video conference
-    if (description && !hasVideoConf) {
+    if (description && !modelHasVideoConf) {
         const cleanedDescription = removeVideoConfInfoFromDescription(description ?? '');
         return { description: { value: cleanedDescription?.slice(0, MAX_CHARS_API.EVENT_DESCRIPTION) } };
     }

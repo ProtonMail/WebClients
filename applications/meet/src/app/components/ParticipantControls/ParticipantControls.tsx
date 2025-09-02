@@ -72,33 +72,34 @@ export const ParticipantControls = () => {
     const anchorRef = useRef<HTMLButtonElement>(null);
 
     const {
-        devicePermissions: { camera, microphone },
+        devicePermissions: { camera: cameraPermission, microphone: microphonePermission },
     } = useDevicePermissionsContext();
 
-    const hasCameraPermission = camera === 'granted';
-    const hasMicrophonePermission = microphone === 'granted';
+    const hasCameraPermission = cameraPermission === 'granted';
+    const hasMicrophonePermission = microphonePermission === 'granted';
 
     const { microphones, cameras } = useDevices();
 
+    // Closing popups with device selection options upon losing permissions
     useEffect(() => {
         if (
-            camera !== 'granted' &&
-            camera !== prevDevicePermissionsRef.current.camera &&
+            cameraPermission !== 'granted' &&
+            cameraPermission !== prevDevicePermissionsRef.current.camera &&
             popupState[PopUpControls.Camera]
         ) {
             togglePopupState(PopUpControls.Camera);
         }
 
         if (
-            microphone !== 'granted' &&
-            microphone !== prevDevicePermissionsRef.current.microphone &&
+            microphonePermission !== 'granted' &&
+            microphonePermission !== prevDevicePermissionsRef.current.microphone &&
             popupState[PopUpControls.Microphone]
         ) {
             togglePopupState(PopUpControls.Microphone);
         }
 
-        prevDevicePermissionsRef.current = { camera, microphone };
-    }, [camera, microphone]);
+        prevDevicePermissionsRef.current = { camera: cameraPermission, microphone: microphonePermission };
+    }, [cameraPermission, microphonePermission]);
 
     const microphoneActionStatus = isMicrophoneEnabled ? 'off' : 'on';
     const cameraActionStatus = isCameraEnabled ? 'off' : 'on';
@@ -237,8 +238,8 @@ export const ParticipantControls = () => {
 
                                     void toggleAudio({ isEnabled: !isMicrophoneEnabled, audioDeviceId });
                                 }}
-                                indicatorContent={!microphoneHasWarning ? undefined : '!'}
-                                indicatorStatus={!microphoneHasWarning ? 'success' : 'warning'}
+                                indicatorContent={microphoneHasWarning ? '!' : undefined}
+                                indicatorStatus={microphoneHasWarning ? 'warning' : 'success'}
                                 ariaLabel={c('meet_2025 Alt').t`Toggle microphone`}
                             />
                             <CircleButton
@@ -258,8 +259,8 @@ export const ParticipantControls = () => {
                                         void toggleVideo({ isEnabled: !isCameraEnabled, videoDeviceId });
                                     }
                                 }}
-                                indicatorContent={!cameraHasWarning ? undefined : '!'}
-                                indicatorStatus={!cameraHasWarning ? 'success' : 'warning'}
+                                indicatorContent={cameraHasWarning ? '!' : undefined}
+                                indicatorStatus={cameraHasWarning ? 'warning' : 'success'}
                             />
                         </>
                     )}

@@ -4,5 +4,5 @@ import { selectUserSettings, userSettingsThunk } from '../slices';
 
 const hooks = createHooks(userSettingsThunk, selectUserSettings);
 
-export const useUserSettings = hooks.useValue;
-export const useGetUserSettings = hooks.useGet;
+export const useMeetUserSettings = hooks.useValue;
+export const useGetMeetUserSettings = hooks.useGet;
