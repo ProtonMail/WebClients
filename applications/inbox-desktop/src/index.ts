@@ -44,6 +44,7 @@ import { measureRequestTime } from "./utils/log/measureRequestTime";
 
     // Security addition
     app.enableSandbox();
+    // TWEAK
 
     // Config initialization
     saveAppID();
