@@ -5,7 +5,7 @@ import type { Message } from 'applications/lumo/src/app/types';
 import { useApi } from '@proton/components';
 import { getLogo } from '@proton/shared/lib/api/images';
 
-import { type SearchItem } from '../../../../../lib/toolCall/types';
+import type { SearchItem } from '../../../../../lib/toolCall/types';
 
 interface EnhancedToolCallResults {
     enhancedResults: EnhancedSearchItem[] | null;

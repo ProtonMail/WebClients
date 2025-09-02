@@ -12,7 +12,7 @@ import { useDebouncedRequest } from '../_api';
 import { EXTERNAL_INVITATIONS_ERROR_NAMES, useInvitations } from '../_invitations';
 import type { DecryptedLink } from '../_links';
 import { useLink } from '../_links';
-import { type ShareInvitationDetails } from '../_shares';
+import type { ShareInvitationDetails } from '../_shares';
 import { useVolumesState } from '../_volumes';
 
 export const useVolumeLinkView = () => {

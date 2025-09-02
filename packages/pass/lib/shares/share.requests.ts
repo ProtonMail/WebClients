@@ -3,14 +3,9 @@ import { c } from 'ttag';
 import { api } from '@proton/pass/lib/api/api';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import type { ShareType } from '@proton/pass/types';
-import {
-    type ActiveShareGetResponse,
-    type ShareGetResponse,
-    type ShareKeyResponse,
-    type ShareRole,
-} from '@proton/pass/types';
+import type { ActiveShareGetResponse, ShareGetResponse, ShareKeyResponse, ShareRole } from '@proton/pass/types';
 import type { ShareEditMemberAccessIntent, ShareRemoveMemberAccessIntent } from '@proton/pass/types/data/access.dto';
-import { type ShareMember } from '@proton/pass/types/data/invites';
+import type { ShareMember } from '@proton/pass/types/data/invites';
 import { logId, logger } from '@proton/pass/utils/logger';
 
 /* ⚠️ This endpoint is not paginated yet back-end side. */

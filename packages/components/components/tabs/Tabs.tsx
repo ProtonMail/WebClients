@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
-import { type IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
 import { useRightToLeft } from '@proton/components/containers/rightToLeft/useRightToLeft';
 import { equivalentReducer } from '@proton/components/hooks/useElementRect';

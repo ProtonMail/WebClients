@@ -2,7 +2,7 @@ import { type ReactNode, useState } from 'react';
 
 import { type WasmApiWalletAccount, WasmSortOrder } from '@proton/andromeda';
 import clsx from '@proton/utils/clsx';
-import { type IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { useResponsiveContainerContext } from '../../../contexts/ResponsiveContainerContext';
 import { TransactionContentHeader } from '../TransactionContentHeader';

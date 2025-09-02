@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import useConfig from '@proton/components/hooks/useConfig';
 import metrics from '@proton/metrics';
-import { type PLANS } from '@proton/payments';
+import type { PLANS } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { OrganizationExtended, User } from '@proton/shared/lib/interfaces';

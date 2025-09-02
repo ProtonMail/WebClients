@@ -1,4 +1,4 @@
-import { type CommentInterface, type CommentThreadInterface } from '@proton/docs-shared'
+import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
 import type { LexicalEditor } from 'lexical'
 import { useState, useEffect, Fragment } from 'react'
 import debounce from '@proton/utils/debounce'

@@ -6,7 +6,7 @@ import type { WasmApiEmailAddress, WasmApiWalletAccount } from '@proton/andromed
 import { Info, Prompt, Toggle, useModalState } from '@proton/components';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { type IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button } from '../../../atoms';
 import { WalletSetupModalKind, useWalletSetupModalContext } from '../../../contexts/WalletSetupModalContext';
@@ -55,9 +55,7 @@ export const EmailIntegrationInput = ({
     );
 
     const walletAccountCreation = (
-        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
         <span
-            // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
             tabIndex={0}
             key="prompt-button"
             className="p-0 link link-focus color-norm"
@@ -74,9 +72,8 @@ export const EmailIntegrationInput = ({
     );
 
     const learnMore = (
-        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events
         <span
-            // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
             tabIndex={0}
             key="prompt-button"
             className="p-0 link link-focus color-norm"

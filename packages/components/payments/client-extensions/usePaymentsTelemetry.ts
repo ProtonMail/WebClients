@@ -1,5 +1,5 @@
 import useApi from '@proton/components/hooks/useApi';
-import { type Cycle } from '@proton/payments';
+import type { Cycle } from '@proton/payments';
 import type { ADDON_NAMES, PLANS, PaymentMethodFlow } from '@proton/payments';
 import { type PaymentProcessorType, getSystemByHookType } from '@proton/payments';
 import { TelemetryMeasurementGroups, TelemetryPaymentsEvents } from '@proton/shared/lib/api/telemetry';

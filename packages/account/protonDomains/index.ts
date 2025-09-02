@@ -6,7 +6,7 @@ import { queryAvailableDomains, queryPremiumDomains } from '@proton/shared/lib/a
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { getInitialModelState } from '../initialModelState';
-import { type ModelState } from '../interface';
+import type { ModelState } from '../interface';
 
 const name = 'protonDomains' as const;
 

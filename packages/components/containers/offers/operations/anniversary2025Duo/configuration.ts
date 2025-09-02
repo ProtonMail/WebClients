@@ -6,7 +6,7 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import Anniversary2025Layout from '../../components/anniversary2025/Anniversary2025Layout';
 import { getAnniversary2025Title } from '../../helpers/anniversary2025';
-import { type OfferConfig } from '../../interface';
+import type { OfferConfig } from '../../interface';
 
 export const anniversary2025Duo: OfferConfig = {
     ID: 'anniversary-2025-duo',

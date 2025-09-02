@@ -5,7 +5,7 @@ import type { UpsellType } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import type { UpsellRef } from '@proton/pass/constants';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import { type MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
 
 type UpsellingState = { type: UpsellType; upsellRef: UpsellRef };
 type UpsellFn = (value: MaybeNull<UpsellingState>) => void;

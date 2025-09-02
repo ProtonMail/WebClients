@@ -1,7 +1,7 @@
 import { createAction, createReducer, createSelector } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
-import { type Priority } from '../../../remote/scheduler';
+import type { Priority } from '../../../remote/scheduler';
 import type { IdMapEntry, ListSpacesRemote, RemoteSpace } from '../../../remote/types';
 import type { SerializedSpace, Space, SpaceId } from '../../../types';
 import type { LumoState } from '../../store';

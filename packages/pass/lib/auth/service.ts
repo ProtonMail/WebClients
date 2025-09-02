@@ -4,13 +4,13 @@ import type { CreateNotificationOptions } from '@proton/components';
 import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
-import { type RefreshSessionData } from '@proton/pass/lib/api/refresh';
+import type { RefreshSessionData } from '@proton/pass/lib/api/refresh';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { getOfflineComponents, getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
 import type { Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
-import { type Api } from '@proton/pass/types';
+import type { Api } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
@@ -66,7 +66,7 @@ import {
     resumeSession,
     syncAuthSession,
 } from './session';
-import { type AuthStore } from './store';
+import type { AuthStore } from './store';
 
 export type AuthOptions = {
     /** `forceLock` will locally lock the session upon resuming */

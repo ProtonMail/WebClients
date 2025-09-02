@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { AccountActions } from 'proton-pass-web/app/Views/Sidebar/AccountActions';

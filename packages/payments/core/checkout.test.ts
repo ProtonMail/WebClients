@@ -2,7 +2,7 @@ import { PLANS_MAP } from '@proton/testing/data';
 
 import { getCheckout, getUsersAndAddons } from './checkout';
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from './constants';
-import { type Plan } from './plan/interface';
+import type { Plan } from './plan/interface';
 import { SubscriptionMode } from './subscription/constants';
 
 const getPlan = (data: Partial<Plan>) => {

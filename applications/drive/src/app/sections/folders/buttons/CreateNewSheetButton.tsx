@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { MimeIcon, ToolbarButton } from '@proton/components';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import { type FolderButtonProps } from './types';
+import type { FolderButtonProps } from './types';
 
 export const CreateNewSheetButton = ({ type, close, onClick }: FolderButtonProps) => {
     const title = c('Action').t`New spreadsheet`;

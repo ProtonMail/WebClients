@@ -5,7 +5,7 @@ import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
 
 import Anniversary2025Layout from '../../components/anniversary2025/Anniversary2025Layout';
 import { getAnniversary2025Title } from '../../helpers/anniversary2025';
-import { type OfferConfig } from '../../interface';
+import type { OfferConfig } from '../../interface';
 
 export const anniversary2025Bundle: OfferConfig = {
     ID: 'anniversary-2025-bundle',

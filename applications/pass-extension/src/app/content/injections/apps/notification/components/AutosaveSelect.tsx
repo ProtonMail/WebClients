@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import type { FormikContextType } from 'formik';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';

@@ -1,4 +1,4 @@
-import { type Cancellable } from '@proton/components';
+import type { Cancellable } from '@proton/components';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
 import TipBox from 'proton-mail/components/list/tip/TipBox';

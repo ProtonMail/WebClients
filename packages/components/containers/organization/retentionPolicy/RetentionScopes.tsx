@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { SetStateAction } from 'react';
 
-import { type FormikErrors } from 'formik';
+import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';

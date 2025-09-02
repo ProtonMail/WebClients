@@ -11,7 +11,7 @@ import { filterItemsByUserIdentifier } from '@proton/pass/lib/items/item.utils';
 import { AddressType, type MonitorAddress } from '@proton/pass/lib/monitor/types';
 import { selectLoginItems, selectNonAliasedLoginItems } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
-import { type ItemRevision, type LoginItem } from '@proton/pass/types';
+import type { ItemRevision, LoginItem } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { sortOn } from '@proton/pass/utils/fp/sort';

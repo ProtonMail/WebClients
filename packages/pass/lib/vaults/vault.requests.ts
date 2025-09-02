@@ -6,7 +6,7 @@ import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { getAllShareKeys } from '@proton/pass/lib/shares/share.requests';
 import { encodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
 import type { VaultTransferOwnerIntent } from '@proton/pass/types';
-import { type Share, type ShareContent, type ShareType, type VaultCreateRequest } from '@proton/pass/types';
+import type { Share, ShareContent, ShareType, VaultCreateRequest } from '@proton/pass/types';
 
 export const createVault = async (data: {
     content: ShareContent<ShareType.Vault>;

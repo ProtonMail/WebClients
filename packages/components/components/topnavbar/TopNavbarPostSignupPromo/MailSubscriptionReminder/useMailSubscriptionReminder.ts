@@ -2,8 +2,8 @@ import { useUser } from '@proton/account/user/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
 import { FeatureCode, useFeature } from '@proton/features';
 
-import { type PostSubscriptionOneDollarOfferState } from '../PostSignupOneDollar/interface';
-import { type OfferHookReturnValue } from '../common/interface';
+import type { PostSubscriptionOneDollarOfferState } from '../PostSignupOneDollar/interface';
+import type { OfferHookReturnValue } from '../common/interface';
 import { getIsUserEligibleForSubscriptionReminder } from './mailSubscriptionReminderHelper';
 
 export const useMailSubscriptionReminder = (): OfferHookReturnValue => {

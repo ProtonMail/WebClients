@@ -2,7 +2,7 @@ import { addDays, endOfDay } from 'date-fns';
 
 import * as cookiesModule from '@proton/shared/lib/helpers/cookies';
 
-import { type FeatureFlagToggle } from '../interface';
+import type { FeatureFlagToggle } from '../interface';
 import saveWhitelistedFlagInCookies, { UNLEASH_FLAG_COOKIE_NAME } from './UnleashCookiesProvider';
 
 // ------------------------------

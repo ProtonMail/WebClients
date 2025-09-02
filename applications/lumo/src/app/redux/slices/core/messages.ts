@@ -1,10 +1,10 @@
 import { createAction, createReducer } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
-import { type Priority } from '../../../remote/scheduler';
+import type { Priority } from '../../../remote/scheduler';
 import type { IdMapEntry, RemoteMessage } from '../../../remote/types';
 import type { MessagePub } from '../../../types';
-import { type ChunkAction, type FinishMessageAction, type Message, type MessageId } from '../../../types';
+import type { ChunkAction, FinishMessageAction, Message, MessageId } from '../../../types';
 
 export type PushMessageRequest = {
     id: MessageId;

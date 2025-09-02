@@ -12,7 +12,7 @@ import { type ItemsByShareId, type SharesState, reducerMap } from '@proton/pass/
 import { selectAllShares, selectItems, selectOrganizationVaultCreationDisabled } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { Maybe, ShareType } from '@proton/pass/types';
-import { type Share, type ShareGetResponse } from '@proton/pass/types';
+import type { Share, ShareGetResponse } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { partition } from '@proton/pass/utils/array/partition';
 import { prop } from '@proton/pass/utils/fp/lens';

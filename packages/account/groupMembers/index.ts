@@ -13,7 +13,7 @@ import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getGroupMember, getGroupMembers } from '@proton/shared/lib/api/groups';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
-import { type UpdateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
+import type { UpdateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import { type Api, GROUP_MEMBER_STATE, type GroupMember, type User } from '@proton/shared/lib/interfaces';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 

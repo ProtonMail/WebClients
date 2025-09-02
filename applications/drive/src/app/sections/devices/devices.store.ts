@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-import { type Device } from '@proton/drive';
+import type { Device } from '@proton/drive';
 
 import { getDeviceName } from './getDeviceName';
 

@@ -1,13 +1,13 @@
 import { fromUnixTime, isBefore } from 'date-fns';
 
-import { type Subscription } from '@proton/payments';
+import type { Subscription } from '@proton/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
 import isCheckAllowed from '../../helpers/isCheckAllowed';
 import { FREE_DOWNGRADER_LIMIT } from '../../helpers/offerPeriods';
-import { type OfferConfig } from '../../interface';
+import type { OfferConfig } from '../../interface';
 
 interface Props {
     protonConfig: ProtonConfig;

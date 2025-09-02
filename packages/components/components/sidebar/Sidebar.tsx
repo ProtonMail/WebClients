@@ -10,7 +10,7 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { getMeterColor } from '@proton/components/components/progress/Meter';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useConfig from '@proton/components/hooks/useConfig';
-import { type Subscription } from '@proton/payments';
+import type { Subscription } from '@proton/payments';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';

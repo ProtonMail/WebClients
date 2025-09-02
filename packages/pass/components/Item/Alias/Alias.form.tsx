@@ -1,6 +1,6 @@
 import { type FC, type PropsWithChildren, useEffect } from 'react';
 
-import { type FormikContextType } from 'formik';
+import type { FormikContextType } from 'formik';
 import { c } from 'ttag';
 
 import { Option } from '@proton/components';

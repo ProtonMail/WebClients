@@ -1,4 +1,4 @@
-import { type NodeEntity } from '@proton/drive';
+import type { NodeEntity } from '@proton/drive';
 
 export const dateToLegacyTimestamp = (date: Date) => Math.floor(date.getTime() / 1000);
 

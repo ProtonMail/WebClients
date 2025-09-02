@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import type { SessionKey } from '@proton/crypto';
 import { querySharedURLMetadata, querySharedURLPath } from '@proton/shared/lib/api/drive/sharing';
 import type { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
-import { type LinkMetaBatchPayload } from '@proton/shared/lib/interfaces/drive/link';
+import type { LinkMetaBatchPayload } from '@proton/shared/lib/interfaces/drive/link';
 
 import { linkMetaToEncryptedLink, usePublicSession } from '../../store/_api';
 import { type DecryptedLink, useLink } from '../../store/_links';

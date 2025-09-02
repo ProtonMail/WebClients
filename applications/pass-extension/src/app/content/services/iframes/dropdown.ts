@@ -16,7 +16,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { isShadowRoot, isVisible } from '@proton/pass/fathom';
 import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
-import { type Maybe, type MaybeNull } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';
 import { animatePositionChange } from '@proton/pass/utils/dom/position';
 import { isHTMLElement } from '@proton/pass/utils/dom/predicates';

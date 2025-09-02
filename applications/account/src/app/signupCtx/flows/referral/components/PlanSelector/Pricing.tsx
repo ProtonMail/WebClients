@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 import { c } from 'ttag';
 
 import { Price, SkeletonLoader } from '@proton/components';
-import { type PLANS } from '@proton/payments';
+import type { PLANS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 
 const Pricing = ({ plan }: { plan: PLANS }) => {

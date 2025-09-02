@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef, ReactElement, ReactNode } from 'react';
 
-import { type IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/components/components/icon/Icon';
 
 import type { OptionProps } from '../option/Option';
 import type { NodeOrBoolean } from '../v2/field/InputField';

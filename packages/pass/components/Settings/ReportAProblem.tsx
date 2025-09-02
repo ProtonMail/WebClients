@@ -13,7 +13,7 @@ import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { reportBugIntent } from '@proton/pass/store/actions';
 import { selectUser } from '@proton/pass/store/selectors';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
-import { type BugPayload } from '@proton/shared/lib/api/reports';
+import type { BugPayload } from '@proton/shared/lib/api/reports';
 
 import { SettingsPanel } from './SettingsPanel';
 

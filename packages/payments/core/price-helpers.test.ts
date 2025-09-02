@@ -1,7 +1,7 @@
 import { PLANS_MAP } from '@proton/testing/data';
 
 import { ADDON_NAMES, CYCLE, PLANS } from './constants';
-import { type Plan } from './plan/interface';
+import type { Plan } from './plan/interface';
 import { getPriceStartsFrom } from './price-helpers';
 
 describe('getPriceStartsFrom', () => {

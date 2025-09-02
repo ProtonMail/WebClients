@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { Button } from '@proton/atoms';
 import Modal from '@proton/components/components/modalTwo/Modal';

@@ -1,5 +1,5 @@
 import type { DecryptMessage } from './DecryptMessage'
-import { type Commit } from '@proton/docs-proto'
+import type { Commit } from '@proton/docs-proto'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '@proton/docs-shared'
 import type { DecryptedMessage } from '@proton/docs-shared'

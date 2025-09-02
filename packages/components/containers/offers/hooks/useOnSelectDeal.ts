@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
-import { type Currency } from '@proton/payments';
+import type { Currency } from '@proton/payments';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';

@@ -6,7 +6,7 @@ import { Button, Scroll } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { mimetypeForDownload } from '@proton/pass/lib/file-attachments/helpers';
-import { type Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types';
 import { download } from '@proton/pass/utils/dom/download';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 

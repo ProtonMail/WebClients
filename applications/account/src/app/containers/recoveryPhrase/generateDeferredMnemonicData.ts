@@ -1,4 +1,4 @@
-import { type PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
 import type { Api, DecryptedKey } from '@proton/shared/lib/interfaces';
 import { generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
 

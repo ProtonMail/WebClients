@@ -16,7 +16,7 @@ import {
 import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemContextMenu';
 import { useActions } from '../../store';
 import { useOpenInDocs } from '../../store/_documents';
-import { type LegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
+import type { LegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
 import { StopSharingButton } from './ContextMenuButtons/StopSharingButton';
 
 export function SharedByMeItemContextMenu({

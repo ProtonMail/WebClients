@@ -1,4 +1,4 @@
-import { type FormikErrors } from 'formik';
+import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
 import type { VaultFormValues } from '@proton/pass/types';

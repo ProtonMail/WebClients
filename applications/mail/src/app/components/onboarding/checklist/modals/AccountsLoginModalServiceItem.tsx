@@ -4,7 +4,7 @@ import { Button, ButtonLike } from '@proton/atoms';
 import { useActiveBreakpoint } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { type OnlineService } from '../constants';
+import type { OnlineService } from '../constants';
 
 import './AccountsLoginModalServiceItem.scss';
 

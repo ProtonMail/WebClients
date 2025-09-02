@@ -11,7 +11,7 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Label, MailSettings } from '@proton/shared/lib/interfaces';
 import { HUMAN_TO_LABEL_IDS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
-import { type MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
+import type { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';

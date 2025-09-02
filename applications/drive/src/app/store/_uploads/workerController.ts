@@ -1,6 +1,6 @@
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy, serverTime, updateServerTime } from '@proton/crypto';
-import { type ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import type { SafeErrorObject } from '@proton/utils/getSafeErrorObject';
 import { getSafeErrorObject } from '@proton/utils/getSafeErrorObject';
 

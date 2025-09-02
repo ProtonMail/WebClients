@@ -6,8 +6,8 @@ import { memberThunk } from '@proton/account/member';
 import { getPendingUnprivatizationRequest } from '@proton/account/member/actions';
 import { InlineLinkButton } from '@proton/atoms';
 import { useDispatch } from '@proton/redux-shared-store';
-import { type Member } from '@proton/shared/lib/interfaces';
-import { type ParsedUnprivatizationData } from '@proton/shared/lib/keys';
+import type { Member } from '@proton/shared/lib/interfaces';
+import type { ParsedUnprivatizationData } from '@proton/shared/lib/keys';
 
 import useModalState from '../../../components/modalTwo/useModalState';
 import TopBanner from '../../topBanners/TopBanner';

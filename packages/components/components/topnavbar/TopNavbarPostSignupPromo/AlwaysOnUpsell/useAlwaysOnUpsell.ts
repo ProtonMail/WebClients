@@ -6,7 +6,7 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import useFlag from '@proton/unleash/useFlag';
 
-import { type OfferHookReturnValue } from '../common/interface';
+import type { OfferHookReturnValue } from '../common/interface';
 
 type EligibilityProps = {
     protonConfig: ProtonConfig;

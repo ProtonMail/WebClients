@@ -1,5 +1,5 @@
 import type { WasmApiWalletTransaction, WasmTransactionDetails } from '@proton/andromeda';
-import { type SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
 
 export type DecryptedTransactionData = Omit<WasmApiWalletTransaction, 'ToList' | 'TransactionID' | 'Sender'> & {
     Sender: SenderObject | string | null;

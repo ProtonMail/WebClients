@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom-v5-compat';
 
 import { AlbumsView } from './PhotosWithAlbums/AlbumsView';

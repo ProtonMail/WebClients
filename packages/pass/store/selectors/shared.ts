@@ -4,7 +4,7 @@ import { isActive } from '@proton/pass/lib/items/item.predicates';
 import { sortItems } from '@proton/pass/lib/items/item.utils';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
 import type { ItemRevision, Share } from '@proton/pass/types';
-import { type SelectedItem } from '@proton/pass/types';
+import type { SelectedItem } from '@proton/pass/types';
 
 import { itemsFromSelection, selectAllItems, selectItem, selectItems, selectTrashedItems } from './items';
 import { selectItemShares, selectShare, selectShares } from './shares';

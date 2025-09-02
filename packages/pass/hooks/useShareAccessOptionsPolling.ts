@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import usePrevious from '@proton/hooks/usePrevious';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { getShareAccessOptions } from '@proton/pass/store/actions';
-import { type Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types';
 
 import { useRequest } from './useRequest';
 

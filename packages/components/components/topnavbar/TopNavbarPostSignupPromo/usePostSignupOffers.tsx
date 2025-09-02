@@ -1,7 +1,7 @@
-import { type ComponentType } from 'react';
+import type { ComponentType } from 'react';
 
 import { PLANS } from '@proton/payments';
-import { type APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { AlwaysOnUpsell } from './AlwaysOnUpsell/AlwaysOnUpsell';
 import { useAlwaysOnUpsell } from './AlwaysOnUpsell/useAlwaysOnUpsell';
@@ -15,7 +15,7 @@ import { DrivePostSignupOneDollar } from './PostSignupOneDollar/DrivePostSignupO
 import { useDrivePostSignupOneDollar } from './PostSignupOneDollar/DrivePostSignupOneDollar/useDrivePostSignupOneDollar';
 import { MailPostSignupOneDollar } from './PostSignupOneDollar/MailPostSignupOneDollar/MailPostSignupOneDollar';
 import { useMailPostSignupOneDollar } from './PostSignupOneDollar/MailPostSignupOneDollar/useMailPostSignupOneDollar';
-import { type OfferHookReturnValue } from './common/interface';
+import type { OfferHookReturnValue } from './common/interface';
 
 interface Props {
     app: APP_NAMES;

@@ -1,5 +1,5 @@
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
-import { type ExportData, type ExportedVault } from '@proton/pass/lib/export/types';
+import type { ExportData, ExportedVault } from '@proton/pass/lib/export/types';
 import { getExportFileName } from '@proton/pass/lib/file-attachments/helpers';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';

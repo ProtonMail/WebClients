@@ -1,5 +1,5 @@
 import { ProtonLogo } from '@proton/components';
-import { type FreePlanDefault, type Plan, type PlansMap } from '@proton/payments';
+import type { FreePlanDefault, Plan, PlansMap } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Audience, VPNServersCountData } from '@proton/shared/lib/interfaces';
 

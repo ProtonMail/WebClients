@@ -1,6 +1,6 @@
-import { type Draft, type PayloadAction } from '@reduxjs/toolkit';
+import type { Draft, PayloadAction } from '@reduxjs/toolkit';
 
-import { type ModelState } from '@proton/account';
+import type { ModelState } from '@proton/account';
 import {
     isCategoryLabel,
     isCustomFolder,
@@ -12,11 +12,11 @@ import {
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
-import { type LabelCount } from '@proton/shared/lib/interfaces';
-import { type Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { LabelCount } from '@proton/shared/lib/interfaces';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation } from 'proton-mail/models/conversation';
-import { type Element } from 'proton-mail/models/element';
+import type { Element } from 'proton-mail/models/element';
 
 import { getContextNumMessages, getContextNumUnread } from '../../helpers/conversation';
 

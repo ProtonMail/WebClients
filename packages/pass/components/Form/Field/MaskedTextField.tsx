@@ -1,6 +1,6 @@
-import { type FC, type RefObject } from 'react';
+import type { FC, RefObject } from 'react';
 
-import { type FactoryOpts } from 'imask/esm/masked/factory';
+import type { FactoryOpts } from 'imask/esm/masked/factory';
 
 import noop from '@proton/utils/noop';
 

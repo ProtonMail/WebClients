@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 import { useDispatch } from 'react-redux';
 
 import type { FormikErrors } from 'formik';

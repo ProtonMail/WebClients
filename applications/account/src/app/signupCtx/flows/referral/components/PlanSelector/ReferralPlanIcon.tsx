@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
-import { type SupportedReferralPlans } from '../../helpers/plans';
+import type { SupportedReferralPlans } from '../../helpers/plans';
 
 import './ReferralPlanIcon.scss';
 

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import { type Currency } from '@proton/payments';
+import type { Currency } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 
 interface PlanPriceProps {

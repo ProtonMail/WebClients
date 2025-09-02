@@ -1,4 +1,4 @@
-import { type ChangeEvent, type ReactNode } from 'react';
+import type { ChangeEvent, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,7 +6,7 @@ import { type WasmApiWalletAccount, WasmKeychainKind } from '@proton/andromeda';
 import { Input } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
-import { type IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, CoreButton } from '../../../atoms';
 import { useResponsiveContainerContext } from '../../../contexts/ResponsiveContainerContext';

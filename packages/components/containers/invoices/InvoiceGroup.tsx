@@ -21,7 +21,7 @@ import InvoiceTypeTitle from './InvoiceTypeTitle';
 import type { PdfPreviewControls } from './PaymentsPdfPreview';
 import PaymentsPdfPreview from './PaymentsPdfPreview';
 import { getInvoicePaymentsVersion } from './helpers';
-import { type InvoicesHook } from './useInvoices';
+import type { InvoicesHook } from './useInvoices';
 
 type Props = InvoicesHook & {
     onEdit: (invoice: Invoice) => Promise<void>;

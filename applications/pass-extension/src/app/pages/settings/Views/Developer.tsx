@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { DropdownDebug } from 'proton-pass-extension/lib/components/Settings/debug/DropdownDebug';
 import { NotificationDebug } from 'proton-pass-extension/lib/components/Settings/debug/NotificationDebug';

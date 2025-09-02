@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { MIN_FEE_RATE, PriorityTargetBlock } from '@proton/wallet';
 import { useNetworkFees } from '@proton/wallet/store';
 
-import { type TxBuilderHelper } from './useTxBuilder';
+import type { TxBuilderHelper } from './useTxBuilder';
 
 export const findNearestBlockTargetFeeRate = (
     blockEstimate: PriorityTargetBlock,

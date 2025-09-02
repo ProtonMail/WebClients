@@ -1,8 +1,8 @@
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 import Toolbar from 'proton-mail/components/toolbar/Toolbar';
-import { type ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
-import { type ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
+import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
+import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
 
 import type { MailboxActions, RouterNavigation } from '../interface';
 import { useMailboxLayoutProvider } from './MailboxLayoutContext';

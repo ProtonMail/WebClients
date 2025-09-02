@@ -1,7 +1,7 @@
-import { type Device } from '@proton/drive';
+import type { Device } from '@proton/drive';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { type StoreDevice } from './devices.store';
+import type { StoreDevice } from './devices.store';
 
 export const getDeviceName = (device: Device | StoreDevice): string => {
     if (typeof device.name === 'string') {

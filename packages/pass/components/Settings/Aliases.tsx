@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { AliasDomains } from '@proton/pass/components/Settings/Aliases/Domains/AliasDomains';
 import { AliasDomainsProvider } from '@proton/pass/components/Settings/Aliases/Domains/DomainsProvider';

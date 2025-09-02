@@ -24,7 +24,7 @@ import plusLogo from '@proton/styles/assets/img/illustrations/mail-plus-logo.svg
 import clsx from '@proton/utils/clsx';
 
 import { formatSimpleDate } from '../../../../helpers/date';
-import { type SNOOZE_DURATION } from '../constant';
+import type { SNOOZE_DURATION } from '../constant';
 import SnoozeHeader from './SnoozeHeader';
 
 interface Props {

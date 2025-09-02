@@ -5,7 +5,7 @@ import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 
-import { type useBookmarksPublicView } from '../../../store';
+import type { useBookmarksPublicView } from '../../../store';
 import { usePublicShareStore } from '../../../zustand/public/public-share.store';
 import { useSelection } from '../../FileBrowser';
 import { FileName } from '../../FileName';

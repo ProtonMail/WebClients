@@ -6,7 +6,7 @@ import useFeature from '@proton/features/useFeature';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { useFlag } from '@proton/unleash';
 
-import { type OfferHookReturnValue } from '../../common/interface';
+import type { OfferHookReturnValue } from '../../common/interface';
 import { getIsEligible } from '../helpers/eligibility';
 
 export const useGoUnlimited2025 = (): OfferHookReturnValue => {

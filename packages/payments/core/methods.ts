@@ -4,7 +4,7 @@ import { isDelinquent } from '@proton/shared/lib/user/helpers';
 import orderBy from '@proton/utils/orderBy';
 
 import { getPaymentMethods } from './api';
-import { type BillingAddress } from './billing-address/billing-address';
+import type { BillingAddress } from './billing-address/billing-address';
 import { isExpired as getIsExpired } from './cardDetails';
 import {
     type ADDON_NAMES,
@@ -32,7 +32,7 @@ import type {
 } from './interface';
 import { getIsB2BAudienceFromPlan } from './plan/helpers';
 import { getHas2024OfferCoupon } from './subscription/helpers';
-import { type Subscription } from './subscription/interface';
+import type { Subscription } from './subscription/interface';
 import { isFreeSubscription } from './type-guards';
 
 // SEPA helper. Can be removed if the API consistently returns the type of save SEPA in both cases: GET events and GET methods

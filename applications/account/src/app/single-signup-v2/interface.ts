@@ -5,15 +5,15 @@ import type { LocationDescriptor } from 'history';
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import type { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
 import type { BillingAddress, PaymentStatus, RequiredCheckResponse } from '@proton/payments';
-import {
-    type CYCLE,
-    type Currency,
-    type FreePlanDefault,
-    type PLANS,
-    type Plan,
-    type PlanIDs,
-    type PlansMap,
-    type SubscriptionPlan,
+import type {
+    CYCLE,
+    Currency,
+    FreePlanDefault,
+    PLANS,
+    Plan,
+    PlanIDs,
+    PlansMap,
+    SubscriptionPlan,
 } from '@proton/payments';
 import type { ExtensionApp } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

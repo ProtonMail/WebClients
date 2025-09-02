@@ -1,4 +1,4 @@
-import { type ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
+import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
 import ProtonPassRootStyles from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot.raw.scss';
 
 import { createCustomElement } from '@proton/pass/utils/dom/create-element';

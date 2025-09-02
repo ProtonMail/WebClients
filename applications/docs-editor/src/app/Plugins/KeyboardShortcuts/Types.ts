@@ -1,5 +1,5 @@
-import { type CustomKeyboardShortcuts } from './CustomKeyboardShortcuts'
-import { type DefaultKeyboardShortcuts } from './DefaultKeyboardShortcuts'
+import type { CustomKeyboardShortcuts } from './CustomKeyboardShortcuts'
+import type { DefaultKeyboardShortcuts } from './DefaultKeyboardShortcuts'
 
 export type KeyboardShortcutMatcher = {
   id: string

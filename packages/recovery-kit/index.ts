@@ -1,4 +1,4 @@
-import { type Template } from '@pdfme/common';
+import type { Template } from '@pdfme/common';
 import { generate } from '@pdfme/generator';
 
 import chunk from '@proton/utils/chunk';

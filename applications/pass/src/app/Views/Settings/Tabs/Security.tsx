@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { ClipboardSettings } from '@proton/pass/components/Settings/ClipboardSettings';
 import { ExtraPassword } from '@proton/pass/components/Settings/ExtraPassword';

@@ -9,7 +9,7 @@ import {
     getSubscriptionPatchUpdate,
 } from '@proton/shared/lib/helpers/newsletter';
 
-import { type EmailSubscription } from './constants/email-subscriptions';
+import type { EmailSubscription } from './constants/email-subscriptions';
 
 export interface EmailSubscriptionCheckboxesProps {
     loadingMap: { [key: string]: boolean };

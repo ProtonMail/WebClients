@@ -1,4 +1,3 @@
-/* eslint-disable curly */
 import { all, call, fork, put, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
@@ -25,7 +24,7 @@ import {
 } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { MaybeNull, PassPlanResponse, UserEvent } from '@proton/pass/types';
-import { type Api } from '@proton/pass/types';
+import type { Api } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { notIn } from '@proton/pass/utils/fp/predicates';
 import { logId, logger } from '@proton/pass/utils/logger';

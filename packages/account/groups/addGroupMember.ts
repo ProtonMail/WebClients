@@ -23,14 +23,14 @@ import { getDecryptedUserKeys, getEmailFromKey, splitKeys } from '@proton/shared
 import { getInternalParameters } from '@proton/shared/lib/keys/forward/forward';
 import noop from '@proton/utils/noop';
 
-import { type AddressesState } from '../addresses';
+import type { AddressesState } from '../addresses';
 import { replaceMemberAddressTokensIfNeeded } from '../addresses/replaceAddressToken';
 import { getGroupKey } from '../groups/getGroupKey';
 import { disableGroupAddressEncryption } from '../groups/setGroupAddressFlags';
 import type { KtState } from '../kt';
 import { getMemberAddresses, membersThunk } from '../members';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
-import { type UserKeysState } from '../userKeys';
+import type { UserKeysState } from '../userKeys';
 
 type RequiredState = AddressesState & UserKeysState & OrganizationKeyState & KtState;
 

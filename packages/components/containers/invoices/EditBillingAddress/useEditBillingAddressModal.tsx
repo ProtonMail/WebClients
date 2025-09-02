@@ -4,7 +4,7 @@ import { useModalTwoPromise } from '@proton/components/components/modalTwo/useMo
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import useLoading from '@proton/hooks/useLoading';
-import { type FullBillingAddress } from '@proton/payments';
+import type { FullBillingAddress } from '@proton/payments';
 
 import type { EditBillingAddressModalFullInputs } from './EditBillingAddressModal';
 import InvoiceTextNewModal, { type EditBillingAdressModalInputs } from './EditBillingAddressModal';

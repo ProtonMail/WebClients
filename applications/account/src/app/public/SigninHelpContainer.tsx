@@ -7,7 +7,7 @@ import { Icon } from '@proton/components';
 import { type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { type Paths } from '../content/helper';
+import type { Paths } from '../content/helper';
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Layout from '../public/Layout';

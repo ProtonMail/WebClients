@@ -1,5 +1,5 @@
-import { type PAYMENT_METHOD_TYPES } from '../constants';
-import { type PaymentProcessor } from './paymentProcessor';
+import type { PAYMENT_METHOD_TYPES } from '../constants';
+import type { PaymentProcessor } from './paymentProcessor';
 
 export type PaymentProcessorType =
     | 'paypal'

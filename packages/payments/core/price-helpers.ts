@@ -1,7 +1,7 @@
 import { ADDON_NAMES } from './constants';
 import { CYCLE, PLANS } from './constants';
-import { type Cycle, type PlanIDs } from './interface';
-import { type Plan, type PlansMap } from './plan/interface';
+import type { Cycle, PlanIDs } from './interface';
+import type { Plan, PlansMap } from './plan/interface';
 import { isLifetimePlan } from './subscription/helpers';
 
 export const INCLUDED_IP_PRICING = {

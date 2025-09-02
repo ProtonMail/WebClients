@@ -9,7 +9,7 @@ import {
     getCheckout,
 } from '@proton/payments';
 
-import { type CouponConfigRendered } from '../coupon-config/useCouponConfig';
+import type { CouponConfigRendered } from '../coupon-config/useCouponConfig';
 import { getShortBillingText } from '../helpers';
 import CycleItemView from './CycleItemView';
 

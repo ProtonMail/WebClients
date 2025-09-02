@@ -1,5 +1,5 @@
 import { createHeadlessEditor } from '@lexical/headless'
-import { type LexicalEditor, type SerializedEditorState } from 'lexical'
+import type { LexicalEditor, SerializedEditorState } from 'lexical'
 import { AllNodes } from '../../AllNodes'
 import { reportErrorToSentry } from '../../Utils/errorMessage'
 import type { DocxExportContext } from './DocxExport/LexicalToDocx/Context'

@@ -1,6 +1,6 @@
 import { forwardRef, useMemo } from 'react';
 
-import { type FormikContextType } from 'formik';
+import type { FormikContextType } from 'formik';
 import { c } from 'ttag';
 
 import { InviteStepMembers } from '@proton/pass/components/Invite/Steps/InviteStepMembers';

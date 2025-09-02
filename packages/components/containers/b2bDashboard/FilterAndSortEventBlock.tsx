@@ -1,4 +1,4 @@
-import { type FormEvent } from 'react';
+import type { FormEvent } from 'react';
 
 import { c } from 'ttag';
 
@@ -81,18 +81,22 @@ export const FilterAndSortEventsBlock = ({
     return (
         <div className="flex flex-row justify-space-between">
             <div className="w-full">
-                <form
-                    onSubmit={handleSubmit}
-                    className="flex flex-column md:flex-row gap-2 justify-between"
-                >
+                <form onSubmit={handleSubmit} className="flex flex-column md:flex-row gap-2 justify-between">
                     <div className="flex flex-column md:flex-row gap-2 *:min-size-auto">
-                        <div className="flex flex-column *:min-size-auto w-full leading-10 mb-2 w-custom" style={{ '--w-custom': '16rem' }}>
+                        <div
+                            className="flex flex-column *:min-size-auto w-full leading-10 mb-2 w-custom"
+                            style={{ '--w-custom': '16rem' }}
+                        >
                             <Label className="text-semibold p-0 h-6 mb-1" htmlFor="search">
                                 {c('Label').t`Search`}
                             </Label>
                             <Input
                                 value={keyword}
-                                placeholder={isOrganizationEvents ? c('Placeholder').t`Search users or details` : c('Placeholder').t`Search for an email or IP address`}
+                                placeholder={
+                                    isOrganizationEvents
+                                        ? c('Placeholder').t`Search users or details`
+                                        : c('Placeholder').t`Search for an email or IP address`
+                                }
                                 prefix={<Icon name="magnifier" />}
                                 onValue={setKeyword}
                                 className="md:max-h-auto"
@@ -100,7 +104,10 @@ export const FilterAndSortEventsBlock = ({
                             />
                         </div>
                         {hasFilterEvents && (
-                            <div className="flex flex-column leading-10 mb-2 w-custom" style={{ '--w-custom': '10rem' }}>
+                            <div
+                                className="flex flex-column leading-10 mb-2 w-custom"
+                                style={{ '--w-custom': '10rem' }}
+                            >
                                 <Label className="text-semibold p-0 h-6 mb-1" htmlFor="search">
                                     {c('Label').t`Event`}
                                 </Label>
@@ -130,7 +137,10 @@ export const FilterAndSortEventsBlock = ({
                                 viewportWidth['<=small'] && '*:min-size-auto flex-nowrap',
                             ])}
                         >
-                            <div className="flex-1 flex flex-column *:min-size-auto leading-10 w-custom" style={{ '--w-custom': '8rem' }}>
+                            <div
+                                className="flex-1 flex flex-column *:min-size-auto leading-10 w-custom"
+                                style={{ '--w-custom': '8rem' }}
+                            >
                                 <Label className="text-semibold p-0 h-6 mb-1" htmlFor="begin-date">
                                     {c('Label (begin date/advanced search)').t`From`}
                                 </Label>
@@ -149,7 +159,10 @@ export const FilterAndSortEventsBlock = ({
                             >
                                 -
                             </span>
-                            <div className="flex-1 flex flex-column *:min-size-auto leading-10 w-custom" style={{ '--w-custom': '8rem' }}>
+                            <div
+                                className="flex-1 flex flex-column *:min-size-auto leading-10 w-custom"
+                                style={{ '--w-custom': '8rem' }}
+                            >
                                 <Label className="text-semibold p-0 h-6 mb-1" htmlFor="end-date">
                                     {c('Label (end date/advanced search)').t`To`}
                                 </Label>

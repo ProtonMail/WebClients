@@ -1,6 +1,6 @@
 import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
 import type { FiltersState } from '@proton/pass/store/reducers';
-import { type MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
 import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
 import { type XorObfuscation, obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { objectFilter } from '@proton/pass/utils/object/filter';

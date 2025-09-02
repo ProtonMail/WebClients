@@ -10,7 +10,7 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import SaveLabel from './SaveLabel';
-import { type SummaryPlan } from './configuration';
+import type { SummaryPlan } from './configuration';
 
 interface Props {
     summaryPlan: SummaryPlan;

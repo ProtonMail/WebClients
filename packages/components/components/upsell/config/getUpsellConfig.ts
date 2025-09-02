@@ -1,7 +1,7 @@
 import { getHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
-import {
-    type OpenCallbackProps,
-    type OpenSubscriptionModalCallback,
+import type {
+    OpenCallbackProps,
+    OpenSubscriptionModalCallback,
 } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { CYCLE } from '@proton/payments';

@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';

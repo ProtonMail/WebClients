@@ -1,7 +1,7 @@
 import orderBy from '@proton/utils/orderBy';
 
 import { PAYMENT_METHOD_TYPES } from '../constants';
-import { type SavedPaymentMethod } from '../interface';
+import type { SavedPaymentMethod } from '../interface';
 
 /**
  * Some payment methods can be saved by the system to be used later in the subsequent payments.

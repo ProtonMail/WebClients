@@ -9,7 +9,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import B2BOnboardingFeatureItem from '@proton/components/components/onboarding/b2b/B2BOnboardingFeatureItem';
 import { getFeatures, getSections } from '@proton/components/components/onboarding/b2b/helpers';
-import { type B2BFeaturesID } from '@proton/components/components/onboarding/b2b/interface';
+import type { B2BFeaturesID } from '@proton/components/components/onboarding/b2b/interface';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import { TelemetryB2BOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';

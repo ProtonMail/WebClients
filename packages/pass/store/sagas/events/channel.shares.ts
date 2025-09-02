@@ -1,4 +1,3 @@
-/* eslint-disable curly */
 import type { Channel } from 'redux-saga';
 import { channel } from 'redux-saga';
 import { all, cancelled, fork, put, select, take, takeEvery } from 'redux-saga/effects';
@@ -13,7 +12,7 @@ import type { EventChannel } from '@proton/pass/store/sagas/events/types';
 import { selectAllShares } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ShareGetResponse } from '@proton/pass/types';
-import { type Api, type Maybe, type Share, type ShareRole, type SharesGetResponse } from '@proton/pass/types';
+import type { Api, Maybe, Share, ShareRole, SharesGetResponse } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';

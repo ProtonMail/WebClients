@@ -23,7 +23,7 @@ import { getLimitReachedText } from '@proton/pass/lib/invites/invite.utils';
 import { isItemShared } from '@proton/pass/lib/items/item.predicates';
 import { isShareManageable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { selectItem, selectOwnWritableVaults, selectPassPlan, selectShareOrThrow } from '@proton/pass/store/selectors';
-import { type SelectedItem } from '@proton/pass/types';
+import type { SelectedItem } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';

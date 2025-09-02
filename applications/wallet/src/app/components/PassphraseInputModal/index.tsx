@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { WasmWallet } from '@proton/andromeda';
-import { type ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useLoading from '@proton/hooks/useLoading';
 import { type IWasmApiWalletData, encryptWalletDataWithWalletKey, getPassphraseLocalStorageKey } from '@proton/wallet';

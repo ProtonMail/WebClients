@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
+
 import type { HandleEditMessage, HandleRegenerateMessage } from '../../../hooks/useLumoActions';
 import type { SiblingInfo } from '../../../hooks/usePreferredSiblings';
-import { type Message } from '../../../types';
+import type { Message } from '../../../types';
 import { MessageComponent } from './message/MessageComponent';
 
 export type MessageChainComponentProps = {
@@ -78,20 +79,20 @@ const useAutoScroll = (
 
     // Continuous scroll during generation
     // useEffect(() => {
-        // if (isGenerating && !userHasScrolledUp) {
-        //     // Start continuous scrolling during generation
-        //     generationScrollIntervalRef.current = setInterval(() => {
-        //         scrollToBottom();
-        //     }, 200);
-        // } else {
-        //     // Clear interval when not generating or user has scrolled up
-        //     if (generationScrollIntervalRef.current) {
-        //         clearInterval(generationScrollIntervalRef.current);
-        //         generationScrollIntervalRef.current = undefined;
-        //     }
-        // }
+    // if (isGenerating && !userHasScrolledUp) {
+    //     // Start continuous scrolling during generation
+    //     generationScrollIntervalRef.current = setInterval(() => {
+    //         scrollToBottom();
+    //     }, 200);
+    // } else {
+    //     // Clear interval when not generating or user has scrolled up
+    //     if (generationScrollIntervalRef.current) {
+    //         clearInterval(generationScrollIntervalRef.current);
+    //         generationScrollIntervalRef.current = undefined;
+    //     }
+    // }
 
-        // Cleanup on unmount
+    // Cleanup on unmount
     //     return () => {
     //         if (generationScrollIntervalRef.current) {
     //             clearInterval(generationScrollIntervalRef.current);

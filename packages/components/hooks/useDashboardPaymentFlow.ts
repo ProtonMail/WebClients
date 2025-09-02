@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
-import { type TelemetryPaymentFlow } from '../payments/client-extensions/usePaymentsTelemetry';
+import type { TelemetryPaymentFlow } from '../payments/client-extensions/usePaymentsTelemetry';
 import useShowVPNDashboard from './useShowVPNDashboard';
 
 const useDashboardPaymentFlow = (app: APP_NAMES): TelemetryPaymentFlow => {

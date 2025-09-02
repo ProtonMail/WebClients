@@ -28,7 +28,7 @@ import {
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { type Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { useGetFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';

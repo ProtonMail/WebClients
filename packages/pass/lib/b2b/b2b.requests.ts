@@ -1,7 +1,7 @@
 import { MAX_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import type { MaybeNull } from '@proton/pass/types';
-import { type ItemMarkAsReadRequest } from '@proton/pass/types';
+import type { ItemMarkAsReadRequest } from '@proton/pass/types';
 import { type B2BEvent, B2BEventName } from '@proton/pass/types/data/b2b';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import type { EventBundle } from '@proton/pass/utils/event/dispatcher';

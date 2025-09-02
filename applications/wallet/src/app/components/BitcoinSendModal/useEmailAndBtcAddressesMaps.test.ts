@@ -2,7 +2,7 @@ import { act } from 'react';
 
 import { renderHook } from '@testing-library/react-hooks';
 
-import { type Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 
 import { InvalidRecipientErrorCode, useEmailAndBtcAddressesMaps } from './useEmailAndBtcAddressesMaps';
 
