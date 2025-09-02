@@ -153,6 +153,9 @@
       "Claim this address": [
         "Bu adresi al"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Ücretsiz ${ BRAND_NAME } adresinizi alın"
+      ],
       "Close": [
         "Kapat"
       ],
@@ -1117,6 +1120,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "“${ emailAddress }” adresinin eksik anahtarlarını oluştur"
       ],
+      "Reconnect": [
+        "Yeniden bağlan"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "“${ emailAddress }” adresini yeniden bağla"
+      ],
       "Saving": [
         "Kaydediliyor"
       ],
@@ -1139,6 +1148,9 @@
       ],
       "Disabled": [
         "Kullanım dışı"
+      ],
+      "Disconnected": [
+        "Bağlı değil"
       ],
       "External": [
         "Dış"
@@ -4306,8 +4318,8 @@
       "customer support": [
         "müşteri desteği"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi oluşturun. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi alın. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Daveti kabul ederseniz, sizi geçerli tarifenizde çıkarırız ve kalan tutarı hesabınıza yatırırız."
@@ -6209,9 +6221,6 @@
       "Include device, location, and IP details": [
         "Aygıt, konum ve IP adresi ayrıntıları katılsın"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "%${ formattedTaxRate } ${ taxName } dahil: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "E-posta adresinizi doğrulayarak hesap güvenliğinizi artırın."
       ],
@@ -6611,9 +6620,6 @@
       ],
       "Please use another browser or download the file.": [
         "Lütfen başka bir tarayıcı kullanın ya da dosyayı indirin."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Lütfen açılan yeni sekmede ödemeyi doğrulayın."
       ],
       "Please wait till your changes are synced with the server.": [
         "Lütfen değişiklikleriniz sunucu ile eşitlenene kadar bekleyin."
@@ -7149,9 +7155,6 @@
       "Vault updated": [
         "Kasa güncellendi"
       ],
-      "Verification can take a few minutes.": [
-        "Doğrulama işlemi birkaç dakika sürebilir."
-      ],
       "Verification may take a few minutes.": [
         "Doğrulama işlemi birkaç dakika sürebilir."
       ],
@@ -7672,6 +7675,9 @@
       ],
       "Donation": [
         "Bağış"
+      ],
+      "Manual": [
+        "El ile"
       ],
       "Modification": [
         "Değişiklik"
@@ -8360,9 +8366,6 @@
       ],
       "Value": [
         "Değer"
-      ],
-      "VAT": [
-        "KDV"
       ],
       "Verification code": [
         "Doğrulama kodu"
@@ -10719,11 +10722,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "%${ taxRate } ${ taxName } hariç: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "%${ taxRate } vergi hariç: ${ taxAmount }"
+      ],
       "Got it": [
         "Anladım"
       ],
       "I'm purchasing as a business": [
         "Kurumsal olarak satın alıyorum"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "%${ taxRate } ${ taxName } dahil: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "%${ taxRate } vergi dahil: ${ taxAmount }"
       ],
       "MM/YY": [
         "AA/YY"
@@ -10742,6 +10757,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Taxes": [
+        "Vergiler"
       ],
       "terms & conditions": [
         "hükümler ve koşullar"
@@ -10776,6 +10794,9 @@
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
+      ],
+      "VAT": [
+        "KDV"
       ],
       "VAT number": [
         "KDV numarası"
@@ -14461,6 +14482,9 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"
       ],
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Adresin bağlantısı kesildi. İleti gönderimi ve alımı duraklatıldı. Bu adresi kullanıma almak için yeniden bağlanın."
+      ],
       "The import will start with the most recent messages.": [
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
       ],
@@ -15011,9 +15035,6 @@
       "${ n } wallet": [
         "${ n } cüzdan",
         "${ n } cüzdan"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bitcoin birikimlerinizi saklamanın daha güvenli bir yolu"
       ],
       "Bitcoin via Email": [
         "E-posta ile Bitcoin"
