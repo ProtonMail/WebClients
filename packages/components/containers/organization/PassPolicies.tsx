@@ -8,8 +8,9 @@ import SettingsLayout from '@proton/components/containers/account/SettingsLayout
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSection from '@proton/components/containers/account/SettingsSection';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { PassLockSelector } from '@proton/components/containers/pass/PassLockSelector';
+import { PauseList } from '@proton/components/containers/pass/pauseList/PauseListPolicy';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
@@ -84,6 +85,7 @@ const PassPolicies = () => {
     const showPasswordGenerator = useFlag('PassB2BPasswordGenerator');
     const showVaultCreation = useFlag('PassB2BVaultCreation');
     const showItemSharing = useFlag('PassB2BItemSharing');
+    const showPauseList = useFlag('PassB2BPauseList');
     const [organizationSettings, setOrganizationSettings] = useState<Maybe<OrganizationGetResponse>>();
 
     const policies = getPolicies({ showVaultCreation, showItemSharing });
@@ -147,7 +149,7 @@ const PassPolicies = () => {
 
     return (
         <>
-            <SettingsSection>
+            <SettingsSectionWide customWidth="90em">
                 <SettingsParagraph>
                     {c('Info').t`You can define the policies of ${PASS_APP_NAME} for the organization members.`}
                 </SettingsParagraph>
@@ -216,9 +218,26 @@ const PassPolicies = () => {
                                 />
                             </SubSettingsSection>
                         )}
+
+                        {showPauseList && (
+                            <SubSettingsSection
+                                id="pause-list"
+                                title={c('Title').t`Pause list`}
+                                className="container-section-sticky-section"
+                            >
+                                <div className="color-weak">
+                                    {c('Description')
+                                        .t`You can customize the list of domains where certain auto functions in ${PASS_APP_NAME} browser extension (Autofill, Autosuggest, Autosave) should not be run.`}
+                                </div>
+                                <div className="color-weak mb-4 text-semibold">
+                                    {c('Description').t`A checked box means the feature is disabled.`}
+                                </div>
+                                <PauseList />
+                            </SubSettingsSection>
+                        )}
                     </>
                 )}
-            </SettingsSection>
+            </SettingsSectionWide>
 
             {!didLoad.current && loading && <CircleLoader />}
             {!loading && !organizationSettings && <GenericError className="mt-16" />}

@@ -76,6 +76,7 @@ enum AccountFlag {
     PassB2BItemSharing = 'PassB2BItemSharing',
     CryptoPostQuantumOptIn = 'CryptoPostQuantumOptIn',
     PassB2BReports = 'PassB2BReports',
+    PassB2BPauseList = 'PassB2BPauseList',
     DeleteAccountMergeReason = 'DeleteAccountMergeReason',
     VPNDashboard = 'VPNDashboard',
     PasswordPolicy = 'PasswordPolicy',

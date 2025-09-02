@@ -202,7 +202,7 @@ export const PasswordGeneratorPolicyForm: FC<Props> = ({ onSubmit, config, loadi
                                 key={`option-${id}`}
                             />
                         ))}
-                        <hr className="my-4" />
+                        <hr className="my-4 max-w-custom" style={{ '--max-w-custom': '40rem' }} />
                         {memorablePasswordRules.map(({ label, id, length }) => (
                             <PasswordGeneratorPolicyOption
                                 label={label}
