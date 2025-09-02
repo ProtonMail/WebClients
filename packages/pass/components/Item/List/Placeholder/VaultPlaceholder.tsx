@@ -9,7 +9,7 @@ import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import { UpsellRef } from '@proton/pass/constants';
-import { selectAllVaults, selectOwnReadOnlyVaults, selectVaultLimits } from '@proton/pass/store/selectors';
+import { selectOwnReadOnlyVaults, selectVaultLimits, selectVisibleVaults } from '@proton/pass/store/selectors';
 import { prop } from '@proton/pass/utils/fp/lens';
 
 import { NoVaultPlaceholder } from './NoVaultPlaceholder';
@@ -29,7 +29,7 @@ export const VaultPlaceholder: FC = () => {
 
     /** May only happen if the organization doesn't allow vault creation
      * and default vault is not automatically created */
-    const hasNoVault = useSelector(selectAllVaults).length === 0;
+    const hasNoVault = useSelector(selectVisibleVaults).length === 0;
     if (hasNoVault) return <NoVaultPlaceholder />;
 
     if (showUpgrade) {
