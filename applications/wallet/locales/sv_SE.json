@@ -2862,9 +2862,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I nästa steg kommer du kunna skicka in en insättning med en Bitcoin-adress."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inklusive ${ formattedTaxRate } % ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Ärvd från överordnad mapp"
       ],
@@ -3364,9 +3361,6 @@
       ],
       "Thomas": [
         "Tomas"
-      ],
-      "VAT": [
-        "VAT"
       ],
       "Verification code": [
         "Verifieringskod"
@@ -4534,11 +4528,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denna tid kommer du inte att kunna ändra eller säga upp din prenumeration. Vänta tills din betalning är slutförd innan du försöker göra några ändringar. Tack för ditt tålamod."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Exklusive ${ taxRate } % moms: ${ taxAmount }"
+      ],
       "Got it": [
         "Jag förstår"
       ],
       "I'm purchasing as a business": [
         "Jag köper som ett företag"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inklusive ${ taxRate } % moms: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -4554,6 +4560,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Förnyas med ${ renewPriceStr }, avbryt när som helst."
+      ],
+      "Taxes": [
+        "Moms"
       ],
       "terms & conditions": [
         "användarvillkor"
@@ -6760,9 +6769,6 @@
       "${ n } wallet": [
         "${ n } plånbok",
         "${ n } plånböcker"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Ett säkrare sätt att hålla din Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-post"

@@ -4105,9 +4105,6 @@
       "customer support": [
         "apoio ao cliente"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Os planos de família não suportam atualmente contas externas. Crie um endereço ${ BRAND_NAME } antes de aderir. ${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, mudá-lo-emos do seu plano actual e creditaremos na sua conta qualquer saldo remanescente."
       ],
@@ -5243,9 +5240,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "No passo seguinte, poderá efetuar um depósito utilizando um endereço Bitcoin."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incluindo ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Indexing events: ${ current }/${ total }": [
         "A indexar eventos: ${ current }/${ total }"
       ],
@@ -6141,6 +6135,9 @@
       "Expired": [
         "Expirada"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Obsoleta"
       ],
@@ -6639,9 +6636,6 @@
       ],
       "Username": [
         "Nome de utilizador"
-      ],
-      "VAT": [
-        "IVA"
       ],
       "Verification code": [
         "Código de verificação"
@@ -8698,6 +8692,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renovação por ${ renewPriceStr } com possibilidade de cancelar a qualquer momento."
       ],
+      "Taxes": [
+        "Impostos"
+      ],
       "terms & conditions": [
         "os termos e condições"
       ],
@@ -8728,6 +8725,9 @@
       ],
       "Timeout exceeded": [
         "O tempo limite foi excedido."
+      ],
+      "VAT": [
+        "IVA"
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "A sua moeda foi alterada para euros (€) porque as transferências bancárias SEPA apenas aceitam pagamentos em euros."
@@ -8780,6 +8780,9 @@
     "Payments.VAT number name": {
       "ABN": [
         "Número de empresa australiano (ABN)"
+      ],
+      "Add ABN": [
+        "Adicionar ABN"
       ],
       "Business Number": [
         "Número da empresa"
@@ -11390,9 +11393,6 @@
       "${ n } wallet": [
         "${ n } carteira",
         "${ n } carteiras"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Uma maneira mais segura de conservar o seu Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"

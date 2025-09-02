@@ -220,6 +220,9 @@
       "Cancel": [
         "Annulla"
       ],
+      "Cancel request": [
+        "Annulla richiesta"
+      ],
       "Cancel subscription": [
         "Annulla abbonamento"
       ],
@@ -258,6 +261,9 @@
       ],
       "Claim this address": [
         "Ottieni questo indirizzo"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Ottieni il tuo indirizzo ${ BRAND_NAME } gratuito"
       ],
       "Clear all formatting": [
         "Cancella tutta la formattazione"
@@ -784,9 +790,6 @@
       "Get verification code": [
         "Invia il codice di verifica"
       ],
-      "Give access now": [
-        "Fornisci accesso ora"
-      ],
       "Go back": [
         "Torna indietro"
       ],
@@ -1081,6 +1084,9 @@
       "refresh the page": [
         "aggiorna la pagina"
       ],
+      "Refuse access": [
+        "Nega accesso"
+      ],
       "Reject": [
         "Rifiuta"
       ],
@@ -1191,6 +1197,9 @@
       ],
       "Revoke ${ name }": [
         "Revoca ${ name }"
+      ],
+      "Revoke access": [
+        "Revoca l'accesso"
       ],
       "Revoke all other sessions": [
         "Revoca tutte le altre sessioni"
@@ -5255,25 +5264,45 @@
       "${ BRAND_NAME } Account email": [
         "Email dell'account ${ BRAND_NAME }"
       ],
+      "${ days } day left": [
+        "${ days } giorno rimanente",
+        "${ days } giorni rimanenti"
+      ],
+      "${ hours } hour left": [
+        "${ hours } ora rimanente",
+        "${ hours } ore rimanenti"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes } minuto rimanente",
+        "${ minutes } minuti rimanenti\n"
+      ],
       "${ n } day": [
         "${ n } giorno",
         "${ n } giorni"
       ],
-      "${ n } day left": [
-        "${ n } un giorno alla scadenza",
-        "${ n } giorni rimasti"
+      "${ user } is requesting emergency access to your account": [
+        "${ user } sta richiedendo accesso di emergenza al tuo account"
       ],
       "${ user } will be able to use your account and change your data.": [
         "${ user } potrà usare il tuo account e cambiare i tuoi dati."
       ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user } verrà disconnesso dal tuo account e non potrà accedervi di nuovo fino al prossimo accesso di emergenza."
+      ],
       "${ user } will no longer be able to request access to your account in case of emergency.": [
         "${ user } non potrà più richiedere l'accesso al tuo account in caso di emergenza."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } non potrà accedere al tuo account fino al prossimo accesso d'emergenza."
       ],
       "Access granted": [
         "Accesso consentito"
       ],
       "Access granted on ${ formattedAccessibleAt }": [
         "Accesso concesso il ${ formattedAccessibleAt }"
+      ],
+      "Access request canceled": [
+        "Richiesta di accesso annullata"
       ],
       "Access requested": [
         "Accesso richiesto"
@@ -5289,6 +5318,9 @@
       ],
       "Added on ${ formattedDate }": [
         "Aggiunto il ${ formattedDate }"
+      ],
+      "Cancel request?": [
+        "Annulla la richiesta?"
       ],
       "Change access wait time": [
         "Modifica il tempo di attesa per l'accesso"
@@ -5317,8 +5349,17 @@
       "Emergency access granted": [
         "Accesso di emergenza concesso"
       ],
+      "Emergency access refused": [
+        "Accesso di emergenza rifiutato"
+      ],
+      "Emergency access request": [
+        "Richiesta di accesso di emergenza"
+      ],
       "Emergency access requested": [
         "Accesso di emergenza richiesto"
+      ],
+      "Emergency access revoked": [
+        "Accesso di emergenza revocato"
       ],
       "Emergency contact added": [
         "Contatto di emergenza aggiunto"
@@ -5344,6 +5385,9 @@
       "Less than a day": [
         "Meno di un giorno"
       ],
+      "Less than a minute left": [
+        "Meno di un minuto rimanente"
+      ],
       "None": [
         "Nessuna azione"
       ],
@@ -5362,6 +5406,12 @@
       "Protect your legacy with emergency access": [
         "Proteggi la tua eredità con l'accesso di emergenza"
       ],
+      "Refuse access": [
+        "Nega accesso"
+      ],
+      "Refuse access?": [
+        "Negare l'accesso?"
+      ],
       "Remove trusted contact": [
         "Rimuovi contatto attendibile"
       ],
@@ -5373,6 +5423,12 @@
       ],
       "Requesting access": [
         "Richiesta di accesso"
+      ],
+      "Revoke access": [
+        "Revoca l'accesso"
+      ],
+      "Revoke access?": [
+        "Revocare l'accesso?"
       ],
       "Stop being trusted contact?": [
         "Smettere di essere contatto attendibile?"
@@ -5386,11 +5442,18 @@
       "They may ask to access my account in case of an emergency.": [
         "Potrebbero chiedere di accedere al mio account in caso di emergenza."
       ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "Riceveranno l'accesso automaticamente tra **${ days } giorno**, il **${ formattedAccessibleAt }**. Puoi rifiutare la loro richiesta o dare loro accesso immediatamente in qualsiasi momento.",
+        "Riceveranno accesso automaticamente tra **${ days } giorni**, il **${ formattedAccessibleAt }**, puoi rifiutare la loro richiesta o concedere loro l'accesso immediatamente in qualsiasi momento."
+      ],
       "This will take effect immediately.": [
         "Questo avrà effetto immediatamente."
       ],
       "Time required before automatically giving access": [
         "Tempo richiesto prima di concedere automaticamente l'accesso"
+      ],
+      "Time required before automatically giving you access": [
+        "Tempo richiesto prima di concederti automaticamente l'accesso"
       ],
       "Time required before automatically granting them access": [
         "Tempo richiesto prima di concedere loro automaticamente l'accesso"
@@ -5440,6 +5503,9 @@
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Non potrai più richiedere di accedere all'account di ${ user } in caso di emergenza."
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "Potrai ancora richiedere di accedere all'account di ${ user } in un secondo momento."
       ],
       "You'll receive access to their account immediately.": [
         "Riceverai accesso al loro account immediatamente."
@@ -6500,8 +6566,8 @@
       "customer support": [
         "assistenza clienti"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "I piani famiglia non supportano account esterni al momento. Crea un indirizzo con ${ BRAND_NAME } prima di unirti. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "I piani famiglia non supportano account esterni al momento. Crea un indirizzo con ${ BRAND_NAME } prima di unirti. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se accetti l'invito, ti cambieremo piano. Il saldo eventualmente rimasto sarà accreditato sul tuo account."
@@ -9211,9 +9277,6 @@
       "Include device, location, and IP details": [
         "Includi dettagli relativi a dispositivo, posizione e indirizzo IP"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incluso il ${ formattedTaxRate }% di ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Aumenta la sicurezza del tuo account verificando il tuo indirizzo email."
       ],
@@ -9804,9 +9867,6 @@
       ],
       "Please use another browser or download the file.": [
         "Usa un altro browser o scarica il file."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Per favore verifica il pagamento nella nuova scheda che è stata aperta."
       ],
       "Please wait till your changes are synced with the server.": [
         "Attendi che le tue modifiche siano sincronizzate con il server."
@@ -10627,9 +10687,6 @@
       "Vault updated": [
         "Cassaforte aggiornata"
       ],
-      "Verification can take a few minutes.": [
-        "La verifica può richiedere alcuni minuti."
-      ],
       "Verification link expired": [
         "Link di verifica scaduto"
       ],
@@ -11342,6 +11399,9 @@
       ],
       "Donation": [
         "Donazione"
+      ],
+      "Manual": [
+        "Manuale"
       ],
       "Modification": [
         "Modifica"
@@ -12855,9 +12915,6 @@
       ],
       "Value": [
         "Valore"
-      ],
-      "VAT": [
-        "IVA"
       ],
       "Verification code": [
         "Codice di verifica"
@@ -16364,11 +16421,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante questo periodo non sarà possibile modificare o annullare l'abbonamento. Si prega di attendere il completamento del pagamento prima di tentare qualsiasi modifica. Grazie per la pazienza."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Escludendo il ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Escluse tasse del ${ taxRate }%: ${ taxAmount }"
+      ],
       "Got it": [
         "Tutto chiaro"
       ],
       "I'm purchasing as a business": [
         "Sto acquistando come azienda"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluso il ${ taxRate }% di ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluse tasse del ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -16387,6 +16456,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Rinnova a ${ renewPriceStr }, annulla in qualsiasi momento."
+      ],
+      "Taxes": [
+        "Tasse"
       ],
       "terms & conditions": [
         "termini e condizioni"
@@ -16421,6 +16493,9 @@
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
+      ],
+      "VAT": [
+        "IVA"
       ],
       "VAT number": [
         "Numero partita IVA"
@@ -22117,8 +22192,8 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ${ MAIL_APP_NAME }"
       ],
-      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
-        "L'indirizzo è stato disconnesso. L'invio dei messaggi è stato sospeso. Ricollegarsi per riattivare l'indirizzo."
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "L'indirizzo è stato disconnesso. L'invio e la ricezione dei messaggi sono stati sospesi. Riconnettiti per riattivare questo indirizzo."
       ],
       "The import will start with the most recent messages.": [
         "L'importazione inizierà con i messaggi più recenti."

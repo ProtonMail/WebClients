@@ -220,6 +220,9 @@
       "Cancel": [
         "İptal"
       ],
+      "Cancel request": [
+        "İsteği iptal et"
+      ],
       "Cancel subscription": [
         "Aboneliği iptal et"
       ],
@@ -258,6 +261,9 @@
       ],
       "Claim this address": [
         "Bu adresi al"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Ücretsiz ${ BRAND_NAME } adresinizi alın"
       ],
       "Clear all formatting": [
         "Tüm biçimlendirmeyi temizle"
@@ -784,9 +790,6 @@
       "Get verification code": [
         "Doğrulama kodu alın"
       ],
-      "Give access now": [
-        "Erişim izni ver"
-      ],
       "Go back": [
         "Geri dön"
       ],
@@ -1081,6 +1084,9 @@
       "refresh the page": [
         "sayfayı yenile"
       ],
+      "Refuse access": [
+        "Erişme izni isteğini reddet"
+      ],
       "Reject": [
         "Reddet"
       ],
@@ -1136,7 +1142,7 @@
         "Bir özellik istiyorum"
       ],
       "Request access": [
-        "Erişim isteyin"
+        "Erişme izni iste"
       ],
       "Request new code": [
         "Yeni kod iste"
@@ -1191,6 +1197,9 @@
       ],
       "Revoke ${ name }": [
         "${ name } sertifikasını geçersiz kıl"
+      ],
+      "Revoke access": [
+        "Erişme iznini geçersiz kıl"
       ],
       "Revoke all other sessions": [
         "Diğer tüm oturumları kapat"
@@ -1729,6 +1738,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "“${ emailAddress }” adresinin eksik anahtarlarını oluştur"
       ],
+      "Reconnect": [
+        "Yeniden bağlan"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "“${ emailAddress }” adresini yeniden bağla"
+      ],
       "Saving": [
         "Kaydediliyor"
       ],
@@ -1751,6 +1766,9 @@
       ],
       "Disabled": [
         "Kullanım dışı"
+      ],
+      "Disconnected": [
+        "Bağlı değil"
       ],
       "External": [
         "Dış"
@@ -5246,31 +5264,51 @@
       "${ BRAND_NAME } Account email": [
         "${ BRAND_NAME } hesabı e-posta adresi"
       ],
+      "${ days } day left": [
+        "${ days } gün kaldı",
+        "${ days } gün kaldı"
+      ],
+      "${ hours } hour left": [
+        "${ hours } saat kaldı",
+        "${ hours } saat kaldı"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes } dakika kaldı",
+        "${ minutes } dakika kaldı"
+      ],
       "${ n } day": [
         "${ n } gün",
         "${ n } gün"
       ],
-      "${ n } day left": [
-        "${ n } gün kaldı",
-        "${ n } gün kaldı"
+      "${ user } is requesting emergency access to your account": [
+        "${ user } hesabınızda acil durum erişme iznini kullanmak istiyor"
       ],
       "${ user } will be able to use your account and change your data.": [
         "${ user } hesabınızı kullanabilecek ve verilerinizi değiştirebilecek."
       ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user } kullanıcısının hesabınızdaki oturumu kapatılacak ve bir sonraki acil durumda erişme izni isteğine kadar hesabınıza erişemeyecek."
+      ],
       "${ user } will no longer be able to request access to your account in case of emergency.": [
-        "${ user } kullanıcısı, acil durumda hesabınıza erişim isteğinde bulunamayacak."
+        "${ user } kullanıcısı, acil durumda hesabınıza erişme isteğinde bulunamayacak."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } bir sonraki acil durumda erişme izni isteğine kadar hesabınıza erişemeyecek."
       ],
       "Access granted": [
-        "Erişim izni verildi"
+        "Erişme izni verildi"
       ],
       "Access granted on ${ formattedAccessibleAt }": [
-        "${ formattedAccessibleAt } zamanında erişim verildi"
+        "${ formattedAccessibleAt } zamanında erişme izni verildi"
+      ],
+      "Access request canceled": [
+        "Erişme izni isteği iptal edildi"
       ],
       "Access requested": [
-        "Erişim izni istendi"
+        "Erişme izni istendi"
       ],
       "Access will be granted on ${ formattedAccessibleAt }": [
-        "Erişim ${ formattedAccessibleAt } zamanında verilecek"
+        "Erişme izni ${ formattedAccessibleAt } zamanında verilecek"
       ],
       "Add": [
         "Ekle"
@@ -5281,11 +5319,14 @@
       "Added on ${ formattedDate }": [
         "${ formattedDate } tarihinde eklendi"
       ],
+      "Cancel request?": [
+        "İstek iptal edilsin mi?"
+      ],
       "Change access wait time": [
-        "Erişim bekleme süresini değiştir"
+        "Erişme izni bekleme süresini değiştir"
       ],
       "Change the time that ${ user } will have to wait before automatically giving them access.": [
-        "${ user } kullanıcısına otomatik olarak erişim izni verilmeden önce beklemesi gereken süreyi değiştirin."
+        "${ user } kullanıcısına otomatik olarak erişme izni verilmeden önce beklemesi gereken süreyi değiştirin."
       ],
       "Change wait time": [
         "Bekleme süresini değiştir"
@@ -5297,19 +5338,28 @@
         "Kullanımdan kaldırılmış"
       ],
       "Don't lose emergency access. Enable auto-renew today.": [
-        "Acil durum erişiminizi kaybetmeyin. Otomatik yenilemeyi bugün açın."
+        "Acil durumda erişime özelliğini kaybetmeyin. Otomatik yenilemeyi açın."
       ],
       "Emergency access": [
-        "Acil durum erişimi"
+        "Acil durumda erişme"
       ],
       "Emergency access for ${ user } removed": [
-        "${ user } için acil durum erişimi kaldırıldı"
+        "${ user } için acil durumda erişme izni kaldırıldı"
       ],
       "Emergency access granted": [
-        "Acil durum erişimi izni verildi"
+        "Acil durumda erişme izni verildi"
+      ],
+      "Emergency access refused": [
+        "Acil durumda erişme izni reddedildi"
+      ],
+      "Emergency access request": [
+        "Acil durumda erişme izni isteği"
       ],
       "Emergency access requested": [
-        "Acil durum erişimi izni istendi"
+        "Acil durumda erişme izni istendi"
+      ],
+      "Emergency access revoked": [
+        "Acil durumda erişme izni geçersiz kılındı"
       ],
       "Emergency contact added": [
         "Acil durum kişisi eklendi"
@@ -5321,10 +5371,10 @@
         "Otomatik yenilemeyi aç"
       ],
       "Give access now": [
-        "Erişim izni ver"
+        "Erişme izni ver"
       ],
       "Give immediate access?": [
-        "Hemen erişim verilsin mi?"
+        "Hemen erişme izni verilsin mi?"
       ],
       "Immediate": [
         "Hemen"
@@ -5335,6 +5385,9 @@
       "Less than a day": [
         "Bir günden daha az"
       ],
+      "Less than a minute left": [
+        "Bir dakikadan az kaldı"
+      ],
       "None": [
         "Yok"
       ],
@@ -5342,7 +5395,7 @@
         "Yalnızca "
       ],
       "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
-        "Yalnızca başka bir kullanıcının hesabını yönetmenizi gerektiren **geçerli bir durum** olduğunda acil durum erişim izni isteğinde bulunun."
+        "Yalnızca başka bir kullanıcının hesabını yönetmenizi gerektiren **geçerli bir durum** olduğunda acil durumda erişme izni isteğinde bulunun."
       ],
       "People I trust": [
         "Güvendiğim kişiler"
@@ -5351,19 +5404,31 @@
         "Bana güvenen kişiler"
       ],
       "Protect your legacy with emergency access": [
-        "Çalışmalarınızı acil durum erişimi ile koruyun."
+        "Çalışmalarınızı acil durumda erişme izni ile koruyun."
+      ],
+      "Refuse access": [
+        "Erişme iznini reddet"
+      ],
+      "Refuse access?": [
+        "Erişme izni reddedilsin mi?"
       ],
       "Remove trusted contact": [
         "Güvenilir kişiyi kaldır"
       ],
       "Renew to get emergency access again.": [
-        "Acil erişimi yeniden kazanmak için yenileyin."
+        "Acil durumda erişme özelliğini kullanabilmek için aboneliğinizi yenileyin."
       ],
       "Request access?": [
-        "Erişim istensin mi?"
+        "Erişme izni istensin mi?"
       ],
       "Requesting access": [
-        "Erişim izni isteniyor"
+        "Erişme izni isteniyor"
+      ],
+      "Revoke access": [
+        "Erişme iznini geçersiz kıl"
+      ],
+      "Revoke access?": [
+        "Erişme izni geçersiz kılınsın mı?"
       ],
       "Stop being trusted contact?": [
         "Güvenilir kişi olmayı bırakmak istiyor musunuz?"
@@ -5377,14 +5442,21 @@
       "They may ask to access my account in case of an emergency.": [
         "Acil bir durumda hesabıma erişme izni isteyebilir."
       ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "**${ days } gün** sonra **${ formattedAccessibleAt }** tarihinde otomatik olarak erişme izni verilecek. İsteği reddedebilir ya da hemen erişme izni verebilirsiniz.",
+        "**${ days } gün** sonra **${ formattedAccessibleAt }** tarihinde otomatik olarak erişme izni verilecek. İsteği reddedebilir ya da hemen erişme izni verebilirsiniz."
+      ],
       "This will take effect immediately.": [
         "Bu izin hemen etkin olacak."
       ],
       "Time required before automatically giving access": [
-        "Otomatik olarak erişim izni verilmeden önce beklenecek süre"
+        "Otomatik olarak erişme izni verilmeden önce beklenecek süre"
+      ],
+      "Time required before automatically giving you access": [
+        "Size otomatik olarak erişme izni verilmeden önce geçmesi gereken süre"
       ],
       "Time required before automatically granting them access": [
-        "Otomatik olarak erişim izni verilmeden önce beklenecek süre"
+        "Otomatik olarak erişme izni verilmeden önce beklenecek süre"
       ],
       "Trusted contact": [
         "Güvenilir kişi"
@@ -5402,22 +5474,22 @@
         "Bekleme süresi"
       ],
       "Wait time for access": [
-        "Erişim bekleme süresi"
+        "Erişme izni bekleme süresi"
       ],
       "Wait time saved": [
         "Bekleme süresi kaydedildi"
       ],
       "We’ll notify **${ user }** that you requested emergency access.": [
-        "Acil durum erişim izni istediğiniz **${ user }** kullanıcısına bildirilecek."
+        "Acil durumda erişme izni istediğiniz **${ user }** kullanıcısına bildirilecek."
       ],
       "You are signed in to the account ${ account }.": [
-        "${ account } hesabıyla oturum açtınız."
+        "${ account } hesabında oturum açtınız."
       ],
       "You can now access and manage their account.": [
         "Şimdi onun hesabına erişebilir ve yönetebilirsiniz."
       ],
       "You can remove their access at any time to regain exclusive control of your account.": [
-        "Hesabınıza yalnızca sizin erişmeniz için erişim izinlerini istediğiniz zaman kaldırabilirsiniz."
+        "Hesabınıza yalnızca sizin tarafınızdan erişilebilmesi için erişme izinlerini istediğiniz zaman kaldırabilirsiniz."
       ],
       "You have not been designated as an emergency contact for anyone yet.": [
         "Henüz kimse sizi acil durum kişisi olarak atamamış."
@@ -5427,10 +5499,13 @@
         "Olabilecek en fazla ${ controller.meta.count } güvenilir kişi sayısına ulaştınız."
       ],
       "You will be notified when someone requests emergency access.": [
-        "Birisi acil erişim izni isteğinde bulunduğunda bilgilendirileceksiniz."
+        "Birisi acil durumda erişme izni isteğinde bulunduğunda bilgilendirileceksiniz."
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
-        "Acil bir durumda, ${ user } hesabına erişim izni isteğinde bulunamayacaksınız."
+        "Acil bir durumda, ${ user } hesabına erişme izni isteğinde bulunamayacaksınız."
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "Daha sonra ${ user } hesabına erişme izni isteğinde bulunabilirsiniz."
       ],
       "You'll receive access to their account immediately.": [
         "Kullanıcının hesabına hemen erişebileceksiniz."
@@ -6491,8 +6566,8 @@
       "customer support": [
         "müşteri desteği"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi oluşturun. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi alın. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Daveti kabul ederseniz, sizi geçerli tarifenizde çıkarırız ve kalan tutarı hesabınıza yatırırız."
@@ -9202,9 +9277,6 @@
       "Include device, location, and IP details": [
         "Aygıt, konum ve IP adresi ayrıntıları katılsın"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "%${ formattedTaxRate } ${ taxName } dahil: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "E-posta adresinizi doğrulayarak hesap güvenliğinizi artırın."
       ],
@@ -9792,9 +9864,6 @@
       ],
       "Please use another browser or download the file.": [
         "Lütfen başka bir tarayıcı kullanın ya da dosyayı indirin."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Lütfen açılan yeni sekmede ödemeyi doğrulayın."
       ],
       "Please wait till your changes are synced with the server.": [
         "Lütfen değişiklikleriniz sunucu ile eşitlenene kadar bekleyin."
@@ -10615,9 +10684,6 @@
       "Vault updated": [
         "Kasa güncellendi"
       ],
-      "Verification can take a few minutes.": [
-        "Doğrulama işlemi birkaç dakika sürebilir."
-      ],
       "Verification link expired": [
         "Doğrulama bağlantısının geçerlilik süresi dolmuş"
       ],
@@ -11330,6 +11396,9 @@
       ],
       "Donation": [
         "Bağış"
+      ],
+      "Manual": [
+        "El ile"
       ],
       "Modification": [
         "Değişiklik"
@@ -12843,9 +12912,6 @@
       ],
       "Value": [
         "Değer"
-      ],
-      "VAT": [
-        "KDV"
       ],
       "Verification code": [
         "Doğrulama kodu"
@@ -16325,11 +16391,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "%${ taxRate } ${ taxName } hariç: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "%${ taxRate } vergi hariç: ${ taxAmount }"
+      ],
       "Got it": [
         "Anladım"
       ],
       "I'm purchasing as a business": [
         "Kurumsal olarak satın alıyorum"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "%${ taxRate } ${ taxName } dahil: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "%${ taxRate } vergi dahil: ${ taxAmount }"
       ],
       "MM/YY": [
         "AA/YY"
@@ -16348,6 +16426,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Taxes": [
+        "Vergiler"
       ],
       "terms & conditions": [
         "hükümler ve koşullar"
@@ -16382,6 +16463,9 @@
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
+      ],
+      "VAT": [
+        "KDV"
       ],
       "VAT number": [
         "KDV numarası"
@@ -20912,7 +20996,7 @@
         "E-posta gizliliği"
       ],
       "Emergency access": [
-        "Acil durum erişimi"
+        "Acil durumda erişme"
       ],
       "Enable advanced account protection": [
         "Gelişmiş hesap korumasını açın"
@@ -21541,7 +21625,7 @@
         "Oturum açıldı!"
       ],
       "Signed in to another account": [
-        "Başka bir hesaba oturum açıldı"
+        "Başka bir hesabın oturumu açıldı"
       ],
       "Signed in to member account": [
         "Üye hesabıyla oturum açıldı"
@@ -22077,6 +22161,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"
+      ],
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Adresin bağlantısı kesildi. İleti gönderimi ve alımı duraklatıldı. Bu adresi kullanıma almak için yeniden bağlanın."
       ],
       "The import will start with the most recent messages.": [
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
