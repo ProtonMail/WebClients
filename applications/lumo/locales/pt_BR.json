@@ -3122,9 +3122,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Na próxima etapa, poderá enviar um depósito usando um endereço Bitcoin."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incluindo ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Herdado da pasta acima"
       ],
@@ -3609,9 +3606,6 @@
       ],
       "Thomas": [
         "Andrea"
-      ],
-      "VAT": [
-        "IVA"
       ],
       "Verification code": [
         "Código de verificação"
@@ -4766,11 +4760,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante esse período, você não poderá modificar ou cancelar sua assinatura. Aguarde até que seu pagamento seja concluído antes de tentar qualquer alteração. Obrigado pela sua paciência."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excluindo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluindo ${ taxRate }% de impostos: ${ taxAmount }"
+      ],
       "Got it": [
         "Entendi"
       ],
       "I'm purchasing as a business": [
         "Estou comprando como empresa"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluindo ${ taxRate }${ taxName }${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluindo ${ taxRate }% de impostos: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -4786,6 +4792,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renova por ${ renewPriceStr }, cancele a qualquer momento."
+      ],
+      "Taxes": [
+        "Impostos"
       ],
       "terms & conditions": [
         "termos e condições"
@@ -4817,6 +4826,9 @@
       ],
       "Timeout exceeded": [
         "Tempo limite excedido"
+      ],
+      "VAT": [
+        "IVA"
       ],
       "VAT number": [
         "Número de IVA"
@@ -5770,9 +5782,6 @@
       "${ n } wallet": [
         "${ n } carteira",
         "${ n } carteiras"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Uma maneira mais segura de guardar seu Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
