@@ -43,7 +43,7 @@ export const handleSdkError = (
                 component: 'drive-sdk',
             },
             extra: {
-                fallbackMessage,
+                // Do not use fallbackMessage here, as it might include PII in some cases.
                 ...(error instanceof ServerError && {
                     serverErrorCode: error.code,
                     serverErrorStatusCode: error.statusCode,
