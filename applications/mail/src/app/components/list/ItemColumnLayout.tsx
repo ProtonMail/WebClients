@@ -49,6 +49,7 @@ interface Props {
     isSelected: boolean;
     attachmentsMetadata?: AttachmentsMetadata[];
     userSettings?: UserSettings;
+    index: number;
 }
 
 const ItemColumnLayout = ({
@@ -64,6 +65,7 @@ const ItemColumnLayout = ({
     senders,
     attachmentsMetadata = [],
     userSettings,
+    index,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
@@ -257,6 +259,7 @@ const ItemColumnLayout = ({
             {hasLabels && !isCompactView && (
                 <div className="flex flex-nowrap items-center max-w-full overflow-hidden gap-1">
                     <CategoryBadge
+                        index={index}
                         className="mt-1"
                         element={element}
                         labelIDs={Object.keys(getLabelIDs(element, labelID))}
