@@ -1,4 +1,9 @@
-import type { MaybeNull, OrgMemberVaultItemReport, UserMonitorReport } from '@proton/pass/types';
+import type {
+    MaybeNull,
+    OrgMemberVaultItemReport,
+    OrganizationUrlPauseEntryValues,
+    UserMonitorReport,
+} from '@proton/pass/types';
 
 export type OrganizationReportDTO = { page?: number; pageSize?: number };
 
@@ -10,4 +15,19 @@ export type MonitorReport = Partial<UserMonitorReport> & {
 export type UsageReport = OrgMemberVaultItemReport & {
     primaryEmail: string;
     lastActivityTime?: MaybeNull<number>;
+};
+
+export type PauseListEntryAddDTO = {
+    url: string;
+    values: OrganizationUrlPauseEntryValues;
+};
+
+export type PauseListEntryUpdateDTO = {
+    id: string;
+    values: OrganizationUrlPauseEntryValues;
+};
+
+export type PauseListEntryDeleteDTO = {
+    id: string;
+    url: string;
 };

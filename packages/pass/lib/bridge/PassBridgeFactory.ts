@@ -5,10 +5,14 @@ import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { createAlias, requestAllItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import {
+    addUrlPauseListEntry,
+    deleteUrlPauseListEntry,
     getOrganizationReports,
     getOrganizationSettings,
+    getUrlPauseList,
     setOrganizationSettings,
     setPasswordGeneratorPolicySettings,
+    updateUrlPauseListEntry,
 } from '@proton/pass/lib/organization/organization.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShares } from '@proton/pass/lib/shares/share.requests';
@@ -118,6 +122,12 @@ export const createPassBridge = (api: Api): PassBridge => {
                     },
                     reports: {
                         get: getOrganizationReports,
+                    },
+                    pauseList: {
+                        get: getUrlPauseList,
+                        add: addUrlPauseListEntry,
+                        update: updateUrlPauseListEntry,
+                        delete: deleteUrlPauseListEntry,
                     },
                 },
             };
