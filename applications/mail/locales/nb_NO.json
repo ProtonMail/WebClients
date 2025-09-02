@@ -36,10 +36,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butikk"
       ],
-      "${ numberOfAddresses } address": [
-        "${ numberOfAddresses } adresse",
-        "${ numberOfAddresses } adresser"
-      ],
       "A to Z": [
         "A til Å"
       ],
@@ -325,9 +321,6 @@
       ],
       "Copy alias “${ name }”": [
         "Kopier alias \"${ name }\""
-      ],
-      "Copy email address": [
-        "Kopier e-postadresse"
       ],
       "Copy email to clipboard": [
         "Kopier e-post til utklippstavlen"
@@ -812,9 +805,6 @@
       "Make it friendly": [
         "Gjør det vennlig"
       ],
-      "Manage addresses": [
-        "Administrer adresser"
-      ],
       "Manage advanced account protections": [
         "Administrer avansert kontobeskyttelse"
       ],
@@ -910,6 +900,9 @@
       ],
       "More search options": [
         "Flere søkealternativer"
+      ],
+      "Most frequent": [
+        "Hyppigst"
       ],
       "Most read": [
         "Mest lest"
@@ -1072,6 +1065,9 @@
       ],
       "Read receipt sent": [
         "Lesebekreftelse sendt"
+      ],
+      "Recently read": [
+        "Nylig leste"
       ],
       "Recently received": [
         "Nylig mottatt"
@@ -4049,9 +4045,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Forenkle synkronisering og planlegging med delte kalendere."
       ],
-      "This view shows messages sent to the following addresses:": [
-        "Denne visningen viser meldinger sendt til følgende adresser:"
-      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Hvis du vil fortsette å bruke skriveassistenten, legg den til i abonnementet ditt."
       ],
@@ -5279,8 +5272,8 @@
       "customer support": [
         "kundestøtte"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Familieplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Familieplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du godtar invitasjonen, bytter vi deg fra den nåværende planen og krediterer kontoen din med eventuell gjenværende saldo."
@@ -7223,9 +7216,6 @@
       "Included for free with your plan": [
         "Inkludert gratis i planen din"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inkludert ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Arvet fra overordnet mappe"
       ],
@@ -9066,6 +9056,9 @@
       "Cash": [
         "Kontant"
       ],
+      "Categories badge": [
+        "Kategorietikett"
+      ],
       "Category": [
         "Kategori"
       ],
@@ -9227,6 +9220,9 @@
       ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Hjelp oss med å forbedre den kommende e-postkategoriseringen"
       ],
       "Hide password": [
         "Skjul passord"
@@ -9516,6 +9512,9 @@
       "System information": [
         "Systeminformasjon"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "Kategorien er oppdatert, takk for tilbakemeldingen!"
+      ],
       "The filter is disabled. ${ enableButton }": [
         "Filteret er deaktivert. ${ enableButton }"
       ],
@@ -9564,9 +9563,6 @@
       "Username": [
         "Brukernavn"
       ],
-      "VAT": [
-        "MVA"
-      ],
       "Verification code": [
         "Verifiseringskode"
       ],
@@ -9582,11 +9578,20 @@
       "Weak password": [
         "Svakt passord"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Vi forbedrer hvordan e-post kategoriseres. Din tilbakemelding bidrar til å gjøre den smartere og mer nøyaktig."
+      ],
       "What happened?": [
         "Hva skjedde?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "Hva er hovedgrunnen til å kansellere eller nedgradere?"
+      ],
+      "Which category should this be recategorized under?": [
+        "Hvilken kategori skal dette omkategoriseres under?"
+      ],
+      "Why am I seeing this?": [
+        "Hvorfor ser jeg dette?"
       ],
       "With attachment": [
         "Med vedlegg"
@@ -9754,6 +9759,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Opprett en ny kalender for å behandle dine invitasjoner"
+      ],
+      "Deleted": [
+        "Slettet"
       ],
       "Drafts": [
         "Utkast"
@@ -11795,11 +11803,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "I løpet av denne tiden vil du ikke kunne endre eller kansellere abonnementet ditt. Vent til betalingen er fullført før du prøver å gjøre noen endringer. Takk for tålmodigheten."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Ekskludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Ekskludert ${ taxRate }% avgifter: ${ taxAmount }"
+      ],
       "Got it": [
         "Skjønner"
       ],
       "I'm purchasing as a business": [
         "Jeg kjøper som en bedrift."
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inkludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inkludert ${ taxRate }% avgifter: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -11815,6 +11835,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, avbryt når som helst."
+      ],
+      "Taxes": [
+        "Avgifter"
       ],
       "terms & conditions": [
         "vilkår og betingelser"
@@ -11846,6 +11869,9 @@
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
+      ],
+      "VAT": [
+        "MVA"
       ],
       "VAT number": [
         "MVA-nummer"
@@ -13761,6 +13787,10 @@
       "Conversation removed from Starred.": [
         "Samtale fjernet fra stjernemerket."
       ],
+      "Conversation updated": [
+        "Samtalen oppdatert",
+        "Samtaler oppdatert"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Samtaler fra ${ sendersList } merkes som ${ labelsList }"
       ],
@@ -13835,6 +13865,10 @@
       ],
       "Message removed from Starred.": [
         "Melding fjernet fra stjernemerket."
+      ],
+      "Message updated": [
+        "Meldingen oppdatert",
+        "Meldinger oppdatert"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Meldinger fra ${ sendersList } merkes som ${ labelsList }"
@@ -15077,9 +15111,6 @@
       "Your account is protected": [
         "Kontoen din er beskyttet"
       ],
-      "Your addresses": [
-        "Dine adresser"
-      ],
       "Your changes are not synced yet": [
         "Endringene dine er ikke synkronisert enda"
       ],
@@ -15307,9 +15338,6 @@
       "${ n } wallet": [
         "${ n } lommebok",
         "${ n } lommebøker"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "En tryggere måte å oppbevare bitcoinene dine på"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-post"

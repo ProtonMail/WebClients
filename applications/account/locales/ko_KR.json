@@ -220,6 +220,9 @@
       "Cancel": [
         "취소"
       ],
+      "Cancel request": [
+        "요청 취소"
+      ],
       "Cancel subscription": [
         "구독 취소"
       ],
@@ -258,6 +261,9 @@
       ],
       "Claim this address": [
         "주소 얻기"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "무료 ${ BRAND_NAME } 주소를 받으세요"
       ],
       "Clear all formatting": [
         "모든 서식 지우기"
@@ -784,9 +790,6 @@
       "Get verification code": [
         "인증코드 전송"
       ],
-      "Give access now": [
-        "즉시 접근 권한 부여"
-      ],
       "Go back": [
         "뒤로 가기"
       ],
@@ -1081,6 +1084,9 @@
       "refresh the page": [
         "페이지 새로고침"
       ],
+      "Refuse access": [
+        "접근 권한 거부"
+      ],
       "Reject": [
         "거절"
       ],
@@ -1191,6 +1197,9 @@
       ],
       "Revoke ${ name }": [
         "${ name } 취소하기"
+      ],
+      "Revoke access": [
+        "접근 권한 회수"
       ],
       "Revoke all other sessions": [
         "모든 세션 비활성화"
@@ -5174,23 +5183,41 @@
       "${ BRAND_NAME } Account email": [
         "${ BRAND_NAME } 계정 이메일"
       ],
+      "${ days } day left": [
+        "${ days }일 남음"
+      ],
+      "${ hours } hour left": [
+        "${ hours }시간 남음"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes }분 남음"
+      ],
       "${ n } day": [
         "${ n }일"
       ],
-      "${ n } day left": [
-        "${ n }일 남음"
+      "${ user } is requesting emergency access to your account": [
+        "${ user }님이 계정에 대한 비상 접근을 요청 중입니다"
       ],
       "${ user } will be able to use your account and change your data.": [
         "${ user }님이 사용자의 계정을 사용 및 데이터를 변경할 수 있게 됩니다."
       ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user }님이 사용자의 계정에서 로그아웃되며, 다음 긴급 접근 시까지 다시 접근할 수 없게 됩니다."
+      ],
       "${ user } will no longer be able to request access to your account in case of emergency.": [
         "비상시 ${ user }님이 사용자의 계정에 대한 접근을 더 이상 요청할 수 없게 됩니다."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user }님이 다음 비상 접근시까지 사용자의 계정에 접근할 수 없게 됩니다."
       ],
       "Access granted": [
         "엑세스 승인됨."
       ],
       "Access granted on ${ formattedAccessibleAt }": [
         "${ formattedAccessibleAt }에 접근이 허용됨"
+      ],
+      "Access request canceled": [
+        "접근 요청이 취소되었습니다"
       ],
       "Access requested": [
         "접근 요청됨"
@@ -5207,6 +5234,9 @@
       "Added on ${ formattedDate }": [
         "${ formattedDate }에 추가됨"
       ],
+      "Cancel request?": [
+        "요청을 취소합니까?"
+      ],
       "Change access wait time": [
         "접근 대기 시간 변경"
       ],
@@ -5217,7 +5247,7 @@
         "접근 대기 시간 변경"
       ],
       "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
-        "데이터를 신뢰할 수 있는 사람을 선택하십시오. 해당 사용자들이 이미 ${ BRAND_NAME } 계정을 가지고 있어야 합니다."
+        "데이터 접근에 신뢰할 수 있는 사람을 선택하십시오. 해당 사용자들이 이미 ${ BRAND_NAME } 계정을 가지고 있어야 합니다."
       ],
       "Disabled": [
         "비활성화됨"
@@ -5234,8 +5264,17 @@
       "Emergency access granted": [
         "긴급 접근이 승인됨"
       ],
+      "Emergency access refused": [
+        "긴급 접근 거부됨"
+      ],
+      "Emergency access request": [
+        "긴급 접근 요청"
+      ],
       "Emergency access requested": [
         "긴급 접근 요청됨"
+      ],
+      "Emergency access revoked": [
+        "긴급 접근 취소됨"
       ],
       "Emergency contact added": [
         "비상 연락처 추가됨"
@@ -5261,6 +5300,9 @@
       "Less than a day": [
         "하루 미만"
       ],
+      "Less than a minute left": [
+        "1분 미만 남음"
+      ],
       "None": [
         "없음"
       ],
@@ -5270,11 +5312,20 @@
       "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
         "긴급 접근은 **유효한 상황**이 발생하여 사용자가 다른 사용자의 계정을 관리해야 할 경우에만 요청하십시오."
       ],
+      "People I trust": [
+        "신뢰하는 사용자"
+      ],
       "People who trust me": [
-        "나를 신뢰하는 사람들"
+        "내가 신뢰하는 사람들"
       ],
       "Protect your legacy with emergency access": [
         "긴급 접근으로 당신의 유산을 보호하세요"
+      ],
+      "Refuse access": [
+        "접근 권한 거부"
+      ],
+      "Refuse access?": [
+        "접근 권한을 거부합니까?"
       ],
       "Remove trusted contact": [
         "신뢰된 연락처 제거"
@@ -5288,6 +5339,12 @@
       "Requesting access": [
         "접근 권한 요청 중"
       ],
+      "Revoke access": [
+        "접근 권한 회수"
+      ],
+      "Revoke access?": [
+        "접근 권한을 회수합니까?"
+      ],
       "Stop being trusted contact?": [
         "신뢰할 수 있는 연락처에서 해제합니까?"
       ],
@@ -5298,13 +5355,19 @@
         "저는 신뢰할 수 있는 연락처로 추가되었습니다. 비상 상황 발생 시 상대방의 계정에 접근할 수 있습니다."
       ],
       "They may ask to access my account in case of an emergency.": [
-        "해당 사용자들이 비상 시에 제 계정에 접근하도록 요청할 수 있습니다."
+        "아래 사용자들이 비상 시에 사용자의 계정에 접근하도록 요청할 수 있습니다."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "**${ days }**일 **${ formattedAccessibleAt }**일 후에 접근 권한이 자동으로 부여됩니다. 언제든지 요청을 거부하거나 즉시 접근 권한을 부여할 수 있습니다."
       ],
       "This will take effect immediately.": [
         "이 효력은 즉시 발생합니다."
       ],
       "Time required before automatically giving access": [
         "자동으로 접근 권한을 부여하기까지 필요한 시간"
+      ],
+      "Time required before automatically giving you access": [
+        "자동으로 사용자에게 접근 권한을 부여하기까지 필요한 시간"
       ],
       "Time required before automatically granting them access": [
         "자동으로 접근 권한을 부여하기 전에 필요한 시간"
@@ -5353,6 +5416,9 @@
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "비상시 ${ user }의 계정에 대한 접근을 더 이상 요청할 수 없게 됩니다"
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "추후에 ${ user }의 계정에 대한 접근을 여전히 요청할 수 있습니다."
       ],
       "You'll receive access to their account immediately.": [
         "즉시 사용자의 계정에 접근할 수 있게 됩니다."
@@ -6405,8 +6471,8 @@
       "customer support": [
         "고객 지원"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "현재 가족 요금제는 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "현재 가족 플랜이 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "초대를 수락하면, 현재 요금제에서 전환되고 남은 잔액이 사용자의 계좌로 환불됩니다."
@@ -9054,9 +9120,6 @@
       "Include device, location, and IP details": [
         "기기, 위치 및 IP 정보 포함"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }% ${ taxName } 포함: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "이메일 인증을 통해 계정 보안을 한차원 더 끌어올리세요."
       ],
@@ -9641,9 +9704,6 @@
       ],
       "Please use another browser or download the file.": [
         "파일을 다운로드 하거나 다른 브라우저를 사용하세요."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "열린 새 탭에서 결제를 확인하세요."
       ],
       "Please wait till your changes are synced with the server.": [
         "사용자의 변경이 서버에 동기화 될 때 까지 기다려 주세요."
@@ -10457,9 +10517,6 @@
       ],
       "Vault updated": [
         "금고를 업데이트했습니다"
-      ],
-      "Verification can take a few minutes.": [
-        "인증에 몇 분이 소요될 수 있습니다."
       ],
       "Verification link expired": [
         "인증 링크 만료됨"
@@ -12667,9 +12724,6 @@
       ],
       "Value": [
         "값"
-      ],
-      "VAT": [
-        "부가세"
       ],
       "Verification code": [
         "인증 코드"
@@ -16126,11 +16180,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "이 기간 동안 구독을 수정하거나 취소할 수 없습니다. 변경을 시도하기 전에 결제가 완료될 때까지 기다려 주세요. 기다려 주셔서 감사합니다."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName } 제외: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% 세금 제외: ${ taxAmount }"
+      ],
       "Got it": [
         "확인했습니다"
       ],
       "I'm purchasing as a business": [
         "사업체 용도로 구매합니다"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName } 포함: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% 세금 포함: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/YY (월/년)"
@@ -16149,6 +16215,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }에 갱신되며 언제나 취소할 수 있습니다."
+      ],
+      "Taxes": [
+        "세금"
       ],
       "terms & conditions": [
         "이용 약관"
@@ -16179,6 +16248,9 @@
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
+      ],
+      "VAT": [
+        "부가세"
       ],
       "VAT number": [
         "부가가치세 번호"
@@ -21778,8 +21850,8 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }의 시스템 하위폴더가 별도로 폴더를 표시합니다"
       ],
-      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
-        "주소가 연결 해제되었습니다. 메시지 전송이 일시 중지되었습니다. 다시 연결하여 주소를 다시 활성화하십시오."
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "주소가 연결 해제되었습니다. 메시지 송수신이 일시 정지되었습니다. 이 주소를 다시 활성화하려면 재로그인이 필요합니다."
       ],
       "The import will start with the most recent messages.": [
         "최근의 주된 메시지 불러오기가 곧 시작됩니다."

@@ -213,6 +213,15 @@
       "Choose a file or drag it here": [
         "Pilih berkas atau taruh di sini"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Klaim alamat ${ BRAND_NAME }"
+      ],
+      "Claim this address": [
+        "Klaim alamat ini"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Klaim alamat ${ BRAND_NAME } gratis Anda"
+      ],
       "Clear": [
         "Bersihkan"
       ],
@@ -311,9 +320,6 @@
       ],
       "Copy alias “${ name }”": [
         "Salin alias “${ name }”"
-      ],
-      "Copy email address": [
-        "Salin alamat email"
       ],
       "Copy email to clipboard": [
         "Salin email ke papan klip"
@@ -588,6 +594,9 @@
       "Get ${ planOrAppName }": [
         "Dapatkan ${ planOrAppName }"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Dapatkan alamat ${ BRAND_NAME } gratis"
+      ],
       "Get in touch": [
         "Hubungi kami"
       ],
@@ -792,9 +801,6 @@
       "Make it friendly": [
         "Buat lebih ramah"
       ],
-      "Manage addresses": [
-        "Kelola alamat"
-      ],
       "Manage advanced account protections": [
         "Kelola perlindungan akun lanjutan"
       ],
@@ -890,6 +896,9 @@
       ],
       "More search options": [
         "Opsi lainnya"
+      ],
+      "Most frequent": [
+        "Paling sering"
       ],
       "Most read": [
         "Paling sering dibaca"
@@ -1052,6 +1061,9 @@
       ],
       "Read receipt sent": [
         "Bukti baca terkirim"
+      ],
+      "Recently read": [
+        "Baru saja dibaca"
       ],
       "Recently received": [
         "Baru diterima"
@@ -4488,6 +4500,9 @@
       "Failed to load the STL preview": [
         "Pratinjau STL gagal dimuat"
       ],
+      "Failed to open to contact": [
+        "Kontak gagal dibuka"
+      ],
       "Filter with this name already exists": [
         "Filter dengan nama ini sudah ada"
       ],
@@ -5222,8 +5237,8 @@
       "customer support": [
         "layanan dukungan"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Paket keluarga saat ini tidak mendukung akun eksternal. Buat alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Paket keluarga saat ini tidak mendukung akun eksternal. Silakan buat alamat ${ BRAND_NAME } sebelum bergabung. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Apabila Anda menerima undangan ini, kami akan memindahkan Anda dari paket saat ini dan menagih akun Anda dengan saldo mana pun yang tersisa."
@@ -5624,6 +5639,9 @@
       ],
       "Checklist complete": [
         "Daftar centang selesai"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Klaim alamat ${ BRAND_NAME }"
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Selesaikan daftar centang ini dalam ${ daysCount } hari untuk menggandakan ruang penyimpanan Anda secara cuma-cuma."
@@ -6169,6 +6187,12 @@
       ],
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "Pengelola kata sandi ${ BRAND_NAME } memungkinkan Anda untuk menghasilkan, menyimpan, dan mengisi kata sandi secara otomatis sehingga Anda tidak akan perlu mengatur ulang kata sandi Anda lagi."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } memerlukan alamat ${ BRAND_NAME } untuk sinkronisasi dan pengenkripsian acara yang aman. ${ claimAddressButton }"
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } memerlukan alamat ${ BRAND_NAME } untuk sinkronisasi dan pengenkripsian acara yang aman. Klaim alamat ${ MAIL_APP_NAME } gratis Anda sekarang juga."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } kalender baru"
@@ -6884,6 +6908,9 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Nikmati pengalaman berkirim email yang lebih cepat dan terfokus dengan aplikasi desktop."
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Pastikan komunikasi yang sepenuhnya privat dan terenkripsi. Klaim alamat email ${ BRAND_NAME } gratis Anda sekarang juga."
+      ],
       "Enter the code from your authenticator app": [
         "Masukkan kode yang tertera pada aplikasi autentikator Anda"
       ],
@@ -7072,9 +7099,6 @@
       ],
       "Included for free with your plan": [
         "Terliput secara gratis dengan paket Anda"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Meliputi ${ taxName } ${ formattedTaxRate }%: ${ price }"
       ],
       "Inherited from parent folder": [
         "Diwariskan dari folder induk"
@@ -8886,6 +8910,9 @@
       "Cash": [
         "Tunai"
       ],
+      "Categories badge": [
+        "Lencana kategori"
+      ],
       "Category": [
         "Kategori"
       ],
@@ -9047,6 +9074,9 @@
       ],
       "From: ${ fromEmail }": [
         "Dari: ${ fromEmail }"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Bantu kami menyempurnakan fitur kategorisasi email yang akan datang"
       ],
       "Hide password": [
         "Sembunyikan kata sandi"
@@ -9336,6 +9366,9 @@
       "System information": [
         "Informasi sistem"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "Kategori ini telah diperbarui. Terima kasih atas tanggapan Anda!"
+      ],
       "The filter is disabled. ${ enableButton }": [
         "Filter ini sedang dinonaktifkan. ${ enableButton }"
       ],
@@ -9384,9 +9417,6 @@
       "Username": [
         "Nama pengguna"
       ],
-      "VAT": [
-        "PPN"
-      ],
       "Verification code": [
         "Kode verifikasi"
       ],
@@ -9402,11 +9432,20 @@
       "Weak password": [
         "Kata sandi yang lemah"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Kami tengah menyempurnakan bagaimana suatu email dikategorikan. Tanggapan Anda membantu fitur ini menjadi lebih cerdas dan akurat."
+      ],
       "What happened?": [
         "Apa yang terjadi?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "Apa alasan utamamu dalam membatalkan atau menurunkan paket?"
+      ],
+      "Which category should this be recategorized under?": [
+        "Pada kategori mana seharusnya email ini dikategorikan ulang?"
+      ],
+      "Why am I seeing this?": [
+        "Mengapa saya melihat ini?"
       ],
       "With attachment": [
         "Dengan lampiran"
@@ -9574,6 +9613,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Buat kalender baru untuk mengelola undangan Anda"
+      ],
+      "Deleted": [
+        "Dihapus"
       ],
       "Drafts": [
         "Draf"
@@ -9807,6 +9849,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Lebih lanjut"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Untuk terus menggunakan ${ BRAND_NAME }, silakan pastikan seluruh fitur premium Anda sudah tidak lagi digunakan atau tingkatkan paket Anda."
       ],
       "upgrade for more storage": [
         "tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan"
@@ -11576,11 +11621,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Selama periode ini, Anda tidak akan dapat mengubah atau membatalkan langganan Anda. Silakan tunggu hingga pembayaran Anda rampung sebelum mencoba untuk merubah suatu hal. Terima kasih atas kesabaran Anda."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Tanpa termasuk ${ taxName } ${ taxRate }%: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Tanpa termasuk pajak ${ taxRate }%: ${ taxAmount }"
+      ],
       "Got it": [
         "Paham"
       ],
       "I'm purchasing as a business": [
         "Saya membeli produk ini selaku pihak bisnis"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Meliputi ${ taxName } ${ taxRate }%: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Meliputi pajak ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "BB/TT"
@@ -11596,6 +11653,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Diperbarui seharga ${ renewPriceStr }, batalkan kapan saja."
+      ],
+      "Taxes": [
+        "Pajak"
       ],
       "terms & conditions": [
         "syarat & ketentuan"
@@ -11623,6 +11683,12 @@
       ],
       "Timeout exceeded": [
         "Batas waktu terlampaui"
+      ],
+      "VAT": [
+        "PPN"
+      ],
+      "VAT number": [
+        "Nomor PPN"
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Mata uang Anda telah diubah menjadi euro (€) karena transfer bank SEPA hanya mendukung pembayaran dalam euro."
@@ -11676,8 +11742,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Tambah ABN"
+      ],
+      "Add Business Number": [
+        "Sunting Nomor Bisnis"
+      ],
+      "Add EIN": [
+        "Tambah EIN"
+      ],
+      "Add VAT number": [
+        "Tambah nomor PPN"
+      ],
       "Business Number": [
         "Nomor Bisnis"
+      ],
+      "Edit ABN": [
+        "Sunting ABN"
+      ],
+      "Edit Business Number": [
+        "Sunting Nomor Bisnis"
+      ],
+      "Edit EIN": [
+        "Sunting EIN"
+      ],
+      "Edit VAT number": [
+        "Sunting nomor PPN"
       ],
       "EIN": [
         "NPWP"
@@ -11830,6 +11920,9 @@
       ],
       "Select a reason": [
         "Pilih alasan"
+      ],
+      "Select country": [
+        "Pilih negara"
       ],
       "Select state": [
         "Pilih negara bagian"
@@ -13443,6 +13536,9 @@
       "Conversation removed from Starred.": [
         "Percakapan dihapus dari Dibintangi."
       ],
+      "Conversation updated": [
+        "Percakapan diperbarui"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Percakapan yang berasal dari ${ sendersList } akan dilabeli sebagai ${ labelsList }"
       ],
@@ -13518,6 +13614,9 @@
       "Message removed from Starred.": [
         "Pesan dihapus dari Dibintangi."
       ],
+      "Message updated": [
+        "Pesan diperbarui"
+      ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Pesan yang berasal dari ${ sendersList } akan dilabeli sebagai ${ labelsList }"
       ],
@@ -13559,6 +13658,9 @@
       ],
       "Read receipt sent": [
         "Bukti baca terkirim"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "${ elementsCount } pesan dikategorikan ulang."
       ],
       "Self-destruction removed": [
         "Penghapusan otomatis dihapus"
@@ -13930,6 +14032,9 @@
       "Change password": [
         "Ubah kata sandi"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Klaim alamat ${ MAIL_APP_NAME } Anda"
+      ],
       "Clearing data": [
         "Membersihkan data"
       ],
@@ -14151,6 +14256,9 @@
       ],
       "Forward": [
         "Teruskan"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Dapatkan akses penuh ke ${ CALENDAR_APP_NAME }"
       ],
       "Get more from your VPN": [
         "Dapatkan yang lebh dari VPN Anda"
@@ -14939,9 +15047,6 @@
       ],
       "${ n } wallet": [
         "${ n } dompet"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Cara yang lebih aman untuk menyimpan Bitcoin Anda"
       ],
       "Bitcoin via Email": [
         "Bitcoin via email"

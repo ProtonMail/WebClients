@@ -158,6 +158,9 @@
       "Cancel": [
         "Poništi"
       ],
+      "Cancel request": [
+        "Poništi zahtjev"
+      ],
       "Cancel subscription": [
         "Otkaži pretplatu"
       ],
@@ -782,6 +785,9 @@
       "Refer a friend": [
         "Uputi prijatelja"
       ],
+      "Refresh": [
+        "Osvježi"
+      ],
       "Refresh status": [
         "Osvježi status"
       ],
@@ -790,6 +796,9 @@
       ],
       "refresh the page": [
         "osvježi stranicu"
+      ],
+      "Refuse access": [
+        "Nemoj dozvoliti pristup"
       ],
       "Reject": [
         "Odbiti"
@@ -877,6 +886,9 @@
       ],
       "Revoke": [
         "Opozovi"
+      ],
+      "Revoke access": [
+        "Uskrati pristup"
       ],
       "Revoke all other sessions": [
         "Opozovi sve ostale sesije"
@@ -1254,6 +1266,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Generiraj nedostajuće ključeve za adresu \"${ emailAddress }\""
       ],
+      "Reconnect": [
+        "Ponovno povezivanje"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Ponovno poveži adresu \"${ emailAddress }\""
+      ],
       "Saving": [
         "Spremanje"
       ],
@@ -1273,6 +1291,9 @@
       ],
       "Disabled": [
         "Onemogućeno"
+      ],
+      "Disconnected": [
+        "Odspojeno"
       ],
       "Inactive": [
         "Neaktivano"
@@ -3670,16 +3691,62 @@
       ]
     },
     "emergency_access": {
+      "${ days } day left": [
+        "Još ${ days } dan",
+        "Još ${ days } dana",
+        "Još ${ days } dana"
+      ],
+      "${ hours } hour left": [
+        "Još ${ hours } sat",
+        "Još ${ hours } sata",
+        "Još ${ hours } sati"
+      ],
       "${ n } day": [
         "${ n } dan",
         "${ n } dana",
         "${ n } dana"
       ],
+      "${ user } is requesting emergency access to your account": [
+        "${ user } zahtijeva hitni pristup vašem korisničkom računu"
+      ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user } bit će odjavljen s vašeg korisničkog računa i neće mu moći ponovno pristupiti do sljedećeg hitnog pristupa."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } neće moći pristupiti vašem korisničkom računu do sljedećeg hitnog pristupa."
+      ],
+      "Access request canceled": [
+        "Zahtjev za pristupom poništen"
+      ],
       "Add": [
         "Dodaj"
       ],
+      "Added on ${ formattedDate }": [
+        "Dodano ${ formattedDate }"
+      ],
+      "Cancel request?": [
+        "Poništi zahtjev?"
+      ],
       "Disabled": [
         "Onemogućeno"
+      ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "Nemojte izgubiti hitni pristup. Omogućite automatsku obnovu danas."
+      ],
+      "Emergency access refused": [
+        "Hitni pristup odbijen"
+      ],
+      "Emergency access request": [
+        "Zahtjev za hitnim pristupom"
+      ],
+      "Emergency access revoked": [
+        "Hitni pristup uskraćen"
+      ],
+      "Enable auto-renew": [
+        "Omogući automatsku obnovu"
+      ],
+      "Less than a minute left": [
+        "Još manje od minute"
       ],
       "None": [
         "Ništa"
@@ -3687,11 +3754,43 @@
       "Only ": [
         "Samo "
       ],
+      "Refuse access": [
+        "Nemoj dozvoliti pristup"
+      ],
+      "Refuse access?": [
+        "Nemoj dozvoliti pristup?"
+      ],
+      "Renew to get emergency access again.": [
+        "Obnovite kako biste ponovo dobili hitni pristup."
+      ],
+      "Revoke access": [
+        "Uskrati pristup?"
+      ],
+      "Revoke access?": [
+        "Uskrati pristup?"
+      ],
+      "Subscription expired": [
+        "Pretplata istekla"
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "Oni će automatski dobiti pristup za **${ days } dan**, u **${ formattedAccessibleAt }**, možete odbiti njihov zahtjev ili im dodijeliti pristup u bilo kojem trenutku.",
+        "Oni će automatski dobiti pristup za **${ days } dana**, u **${ formattedAccessibleAt }**, možete odbiti njihov zahtjev ili im dodijeliti pristup u bilo kojem trenutku.",
+        "Oni će automatski dobiti pristup za **${ days } dana**, u **${ formattedAccessibleAt }**, možete odbiti njihov zahtjev ili im dodijeliti pristup u bilo kojem trenutku."
+      ],
+      "Time required before automatically giving you access": [
+        "Vrijeme potrebno prije nego što vam se automatski omogući pristup"
+      ],
+      "Upgrade": [
+        "Nadogradnja"
+      ],
       "Upgrade to ${ planName }": [
         "Nadogradite za ${ planName }"
       ],
       "View request": [
         "Prikaži zahtjev"
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "I dalje ćete moći zatražiti pristup korisničkom računu korisnika ${ user } kasnije."
       ]
     },
     "Error": {
@@ -4312,6 +4411,9 @@
       ],
       "customer support": [
         "korisnička podrška"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Obiteljski planovi pretplate trenutačno ne podržavaju vanjske korisničke račune. Izradite ${ BRAND_NAME } adresu prije pridraživanja. ${ link }"
       ],
       "Invitation from ${ invitation.OrganizationName }": [
         "Pozivnica od ${ invitation.OrganizationName }"
@@ -5369,6 +5471,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Pristup računu je ograničen zbog neplaćenih faktura. Molimo kontaktirajte vašeg administratora."
       ],
+      "Account monitor": [
+        "Nadzor korisničkog računa"
+      ],
       "account recovery and data recovery method": [
         "metoda oporavka korisničkog računa i podataka"
       ],
@@ -5434,6 +5539,9 @@
       ],
       "Allocated": [
         "Dodijeljeno"
+      ],
+      "Allow logging of location and connection details": [
+        "Omogući bilježenje pojedinosti lokacije i veze"
       ],
       "Allow recovery by email": [
         "Omogući oporavak putem adrese e-pošte"
@@ -5651,6 +5759,9 @@
       "Disable recovery by phone number": [
         "Onemogući oporavak telefonskim brojem"
       ],
+      "Disabled on ${ boldValue }": [
+        "Onemogućeno ${ boldValue }"
+      ],
       "Discount": [
         "Popust"
       ],
@@ -5727,6 +5838,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Omoućite TLS ili SSL na vanjskoj usluzi ako je podržano."
+      ],
+      "Enabled on ${ boldValue }": [
+        "Omogućeno ${ boldValue }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Ponovno omogućavanje oporavka pomoću fraze generirat će novu frazu za oporavak."
@@ -5814,6 +5928,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "oslobodite prostor za pohranu brisanjem starijih poruka ili drugih podataka"
+      ],
+      "Gateway monitor": [
+        "Nadzor pristupnika"
       ],
       "Gateways": [
         "Pristupnici"
@@ -5913,6 +6030,9 @@
       ],
       "inactive": [
         "neaktivano"
+      ],
+      "Include device, location, and IP details": [
+        "Uključi detalje o uređaju, lokaciji i IP-u"
       ],
       "Inherited from parent folder": [
         "Nasljedno iz roditeljske mape"
@@ -6156,6 +6276,9 @@
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Članovi organizacije morat će otključati ${ PASS_APP_NAME } svojom lozinkom ili PIN-om itd."
       ],
+      "Organization monitor": [
+        "Nadzor organizacije"
+      ],
       "Organization size": [
         "Veličina organizacije"
       ],
@@ -6217,9 +6340,6 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Pokušajte ponovo, koristite drugi način plaćanja ili kontaktirajte PayPal za pomoć."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Potvrdite naplatu u novootvorenoj kartici vašeg preglednika."
       ],
       "Plus ${ numOfBreaches } more": [
         "I još ${ numOfBreaches }"
@@ -6631,9 +6751,6 @@
       "Vault updated": [
         "Ažuriran trezor"
       ],
-      "Verification can take a few minutes.": [
-        "Potvrda može potrajati nekoliko minuta."
-      ],
       "Verification link expired": [
         "Poveznica za pozivnicu je istekla"
       ],
@@ -6660,6 +6777,9 @@
       ],
       "Version history": [
         "Povijest verzija"
+      ],
+      "View VPN session details for your organization.": [
+        "Prikaz detalja VPN sesije za vašu organizaciju."
       ],
       "View, download, and manage your invoices.": [
         "Pregledajte, preuzmite i upravljajte fakturama."
@@ -6989,6 +7109,9 @@
       ],
       "Donation": [
         "Donacija"
+      ],
+      "Manual": [
+        "Upute"
       ],
       "Modification": [
         "Izmjena"
@@ -8215,9 +8338,6 @@
       "Value": [
         "Vrijednost"
       ],
-      "VAT": [
-        "PDV"
-      ],
       "Verification code": [
         "Kôd za provjeru"
       ],
@@ -8542,6 +8662,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Više informacija"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Za nastavak korištenja ${ BRAND_NAME }, provjerite da vaše premium značajke više nisu u upotrebi ili nadogradite svoj plan."
       ]
     },
     "Log event": {
@@ -8686,6 +8809,15 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Povežite svoju prilagođenu domenu s ${ BRAND_NAME } da biste postavili prilagođene adrese e-pošte (npr. vi@vašatvrtka.hr). Naš čarobnjak će vas voditi kroz ovaj proces."
+      ],
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "Pregledajte aktivnost ${ PASS_APP_NAME } u vašoj cijeloj organizaciji."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "Pregledajte promjene u vašoj organizaciji i druge administratorske aktivnosti."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "Pregledaj prijave, oporavke i sigurnosne događaje korisnika."
       ]
     },
     "Message display when a new app version is available": {
@@ -9560,6 +9692,9 @@
       "Invalid code": [
         "Nevažeći kôd"
       ],
+      "Invalid input. Search an email or detail.": [
+        "Neispravan unos. Pretražite adresu e-pošte ili pojedinost."
+      ],
       "Invalid input. Search an email or IP address.": [
         "Neispravan unos. Pretražite adresu e-pošte ili IP adresu."
       ],
@@ -9841,11 +9976,17 @@
       "It's too expensive": [
         "Preskupo je"
       ],
+      "Label as...": [
+        "Označi kao..."
+      ],
       "Left to Right": [
         "S lijeva na desno"
       ],
       "Mark as read": [
         "Označi kao pročitano"
+      ],
+      "Move to...": [
+        "Premjesti u..."
       ],
       "My reason isn't listed": [
         "Moj razlog nije naveden"
@@ -10315,11 +10456,26 @@
       "Card number": [
         "Broj kartice"
       ],
+      "Credits and discounts are reflected in your invoice": [
+        "Krediti i popusti su prikazani na vašem računu"
+      ],
       "CVC": [
         "CVC"
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Bez ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Bez ${ taxRate }% poreza: ${ taxAmount }"
+      ],
       "Got it": [
         "Razumijem"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Uključujući ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Uključujući ${ taxRate }% poreza: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/GG"
@@ -10327,11 +10483,17 @@
       "Processing payment": [
         "Obrada plaćanja"
       ],
+      "Taxes": [
+        "Porezi"
+      ],
       "terms & conditions": [
         "uvjeti i odredbe"
       ],
       "Timeout exceeded": [
         "Prekoračeno je vremensko ograničenje"
+      ],
+      "VAT": [
+        "Porez"
       ]
     },
     "Payments.Error": {
@@ -10487,6 +10649,9 @@
       ],
       "Search users": [
         "Pretraživanje korisnika"
+      ],
+      "Search users or details": [
+        "Pretraga korisnika ili pojedinosti"
       ],
       "Select": [
         "Odaberi"
@@ -12923,6 +13088,9 @@
       "Desktop": [
         "Desktop"
       ],
+      "Details": [
+        "Pojedinosti"
+      ],
       "Device": [
         "Uređaj"
       ],
@@ -13818,6 +13986,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Podmape sustava prikazat će se kao zasebne mape u ${ MAIL_APP_NAME }u"
+      ],
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Adresa je odspojena. Slanje i primanje poruka je zaustavljeno. Ponovno se povežite kako biste ponovno omogućili ovu adresu."
       ],
       "This address has been disabled": [
         "Ova adresa e-pošte je onemogućena"

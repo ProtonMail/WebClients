@@ -153,6 +153,9 @@
       "Claim this address": [
         "Revendicați această adresă"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Revendicați adresa gratuită ${ BRAND_NAME }"
+      ],
       "Close": [
         "Închidere"
       ],
@@ -1122,6 +1125,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Generare chei lipsă pentru adresa „${ emailAddress }”"
       ],
+      "Reconnect": [
+        "Reconectare"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Reconectați adresa „${ emailAddress }”"
+      ],
       "Saving": [
         "Se salvează"
       ],
@@ -1144,6 +1153,9 @@
       ],
       "Disabled": [
         "Dezactivată"
+      ],
+      "Disconnected": [
+        "Deconectat"
       ],
       "External": [
         "Extern"
@@ -4273,8 +4285,8 @@
       "customer support": [
         "suportul tehnic"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Planurile de familie nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Planurile de familie nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Dacă acceptați invitația, se va schimba planul curent, iar soldul rămas va fi returnat ca și credit în cont."
@@ -6237,9 +6249,6 @@
       "Include device, location, and IP details": [
         "Includere dispozitiv, loc și detalii IP"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inclusiv ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Măriți securitatea contului prin verificarea adresei de e-mail."
       ],
@@ -6646,9 +6655,6 @@
       ],
       "Please use another browser or download the file.": [
         "Folosiți alt tip de navigator web sau descărcați fișierul."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Verificați efectuarea plății în noua filă deschisă."
       ],
       "Please wait till your changes are synced with the server.": [
         "Așteptați până când modificările se sincronizează cu serverul."
@@ -7190,9 +7196,6 @@
       "Vault updated": [
         "Seiful a fost actualizat."
       ],
-      "Verification can take a few minutes.": [
-        "Verificarea poate dura câteva minute."
-      ],
       "Verification may take a few minutes.": [
         "Verificarea ar putea dura câteva minute."
       ],
@@ -7731,6 +7734,9 @@
       ],
       "Donation": [
         "Donație"
+      ],
+      "Manual": [
+        "Manuală"
       ],
       "Modification": [
         "Modificare"
@@ -8424,9 +8430,6 @@
       ],
       "Value": [
         "Valoare"
-      ],
-      "VAT": [
-        "TVA"
       ],
       "Verification code": [
         "Cod de verificare"
@@ -10835,11 +10838,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "În acest timp, nu vă veți putea modifica sau anula abonamentul. Vă rugăm să așteptați până când plata este finalizată înainte de a încerca orice modificare. Vă mulțumim pentru răbdare."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluzând taxe de ${ taxRate }%: ${ taxAmount }"
+      ],
       "Got it": [
         "Am înțeles"
       ],
       "I'm purchasing as a business": [
         "Achiziționez în calitate de companie"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluzând taxe de ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "LL/AA"
@@ -10858,6 +10873,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Reînnoire cu ${ renewPriceStr }, anulați oricând."
+      ],
+      "Taxes": [
+        "Taxe"
       ],
       "terms & conditions": [
         "termeni și condiții"
@@ -10896,6 +10914,9 @@
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
+      ],
+      "VAT": [
+        "TVA"
       ],
       "VAT number": [
         "Valoare TVA"
@@ -14645,6 +14666,9 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }."
       ],
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Adresa a fost deconectată. Trimiterea și primirea mesajelor sunt suspendate. Reconectați-vă pentru a activa din nou această adresă."
+      ],
       "The import will start with the most recent messages.": [
         "Importarea va începe cu cele mai recente mesaje."
       ],
@@ -15229,9 +15253,6 @@
         "Portofele: ${ n }",
         "Portofele: ${ n }",
         "Portofele: ${ n }"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "O metodă mai sigură de a vă păstra monedele Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"

@@ -259,6 +259,9 @@
       "Claim this address": [
         "Claim dit adres"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Claim uw gratis ${ BRAND_NAME }-adres"
+      ],
       "Clear all formatting": [
         "Alle opmaak wissen"
       ],
@@ -783,9 +786,6 @@
       ],
       "Get verification code": [
         "Krijg verificatie code"
-      ],
-      "Give access now": [
-        "Nu toegang geven"
       ],
       "Go back": [
         "Ga terug"
@@ -5265,10 +5265,6 @@
         "${ n } dag",
         "${ n } dagen"
       ],
-      "${ n } day left": [
-        "${ n } dag resterend",
-        "${ n } dagen resterend"
-      ],
       "${ user } is requesting emergency access to your account": [
         "${ user } vraagt om noodtoegang tot uw account"
       ],
@@ -6539,9 +6535,6 @@
       ],
       "customer support": [
         "klantondersteuning"
-      ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Family-abonnementen bieden op dit moment geen ondersteuning voor externe accounts. Maak een ${ BRAND_NAME }-adres aan voor u zich hierbij aansluit. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Als u de uitnodiging accepteert, zetten we uw huidige abonnement om en wordt een eventueel resterend saldo teruggestort."
@@ -9251,9 +9244,6 @@
       "Include device, location, and IP details": [
         "Inclusief apparaat-, locatie- en IP-gegevens"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inclusief ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Verhoog de beveiliging van uw account door uw e-mailadres te verifiëren."
       ],
@@ -9841,9 +9831,6 @@
       ],
       "Please use another browser or download the file.": [
         "Gebruik een andere browser of download het bestand."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Controleer de betaling op het nieuwe tabblad dat is geopend."
       ],
       "Please wait till your changes are synced with the server.": [
         "Wacht tot uw wijzigingen gesynchroniseerd zijn met de server."
@@ -10663,9 +10650,6 @@
       ],
       "Vault updated": [
         "Kluis bijgewerkt"
-      ],
-      "Verification can take a few minutes.": [
-        "Verificatie kan een paar minuten duren."
       ],
       "Verification link expired": [
         "Verificatielink is verlopen"
@@ -12895,9 +12879,6 @@
       ],
       "Value": [
         "Waarde"
-      ],
-      "VAT": [
-        "BTW"
       ],
       "Verification code": [
         "Verificatiecode"
@@ -22129,9 +22110,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
-      ],
-      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
-        "Het adres is losgekoppeld. Berichten verzenden is gepauzeerd. Maak opnieuw verbinding om dit adres opnieuw in te schakelen."
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."

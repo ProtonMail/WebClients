@@ -36,10 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
       ],
-      "${ numberOfAddresses } address": [
-        "Indirizzo ${ numberOfAddresses }",
-        "${ numberOfAddresses } indirizzi"
-      ],
       "A to Z": [
         "Dalla A alla Z"
       ],
@@ -325,9 +321,6 @@
       ],
       "Copy alias “${ name }”": [
         "Copia l'alias “${ name }”"
-      ],
-      "Copy email address": [
-        "Copia indirizzo email"
       ],
       "Copy email to clipboard": [
         "Copia email negli appunti"
@@ -812,9 +805,6 @@
       "Make it friendly": [
         "Rendilo amichevole"
       ],
-      "Manage addresses": [
-        "Gestisci indirizzi"
-      ],
       "Manage advanced account protections": [
         "Gestisci le protezioni avanzate dell'account"
       ],
@@ -910,6 +900,9 @@
       ],
       "More search options": [
         "Più opzioni di ricerca"
+      ],
+      "Most frequent": [
+        "Più frequente"
       ],
       "Most read": [
         "Più letti"
@@ -1072,6 +1065,9 @@
       ],
       "Read receipt sent": [
         "Conferma di lettura inviata"
+      ],
+      "Recently read": [
+        "Lette di recente"
       ],
       "Recently received": [
         "Ricevuti di recente"
@@ -4080,9 +4076,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Semplifica la sincronizzazione e la pianificazione con i calendari condivisi."
       ],
-      "This view shows messages sent to the following addresses:": [
-        "Questa vista mostra i messaggi inviati ai seguenti indirizzi:"
-      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Per continuare a utilizzare l'assistente alla scrittura, aggiungilo al tuo abbonamento."
       ],
@@ -5310,8 +5303,8 @@
       "customer support": [
         "assistenza clienti"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "I piani famiglia non supportano account esterni al momento. Crea un indirizzo con ${ BRAND_NAME } prima di unirti. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "I piani famiglia non supportano account esterni al momento. Crea un indirizzo con ${ BRAND_NAME } prima di unirti. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se accetti l'invito, ti cambieremo piano. Il saldo eventualmente rimasto sarà accreditato sul tuo account."
@@ -7254,9 +7247,6 @@
       "Included for free with your plan": [
         "Incluso gratuitamente nel tuo piano"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incluso il ${ formattedTaxRate }% di ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Preso dalla cartella principale"
       ],
@@ -7999,6 +7989,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Si è verificato un errore con la firma usata per verificare i dettagli del contatto, il che potrebbe risultare da un ripristino della password."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Le conversazioni sono conservate secondo la policy dell’organizzazione."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Non possono inviarti spam se non conoscono il tuo indirizzo email. Proteggi la tua posta in arrivo con gli alias Hide-my-email."
@@ -9595,9 +9588,6 @@
       "Username": [
         "Nome utente"
       ],
-      "VAT": [
-        "IVA"
-      ],
       "Verification code": [
         "Codice di verifica"
       ],
@@ -9785,6 +9775,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Crea un nuovo calendario per gestire i tuoi inviti"
+      ],
+      "Deleted": [
+        "Eliminato"
       ],
       "Drafts": [
         "Bozze"
@@ -11831,11 +11824,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante questo periodo non sarà possibile modificare o annullare l'abbonamento. Si prega di attendere il completamento del pagamento prima di tentare qualsiasi modifica. Grazie per la pazienza."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Escludendo il ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Escluse tasse del ${ taxRate }%: ${ taxAmount }"
+      ],
       "Got it": [
         "Tutto chiaro"
       ],
       "I'm purchasing as a business": [
         "Sto acquistando come azienda"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluso il ${ taxRate }% di ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluse tasse del ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -11851,6 +11856,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Rinnova a ${ renewPriceStr }, annulla in qualsiasi momento."
+      ],
+      "Taxes": [
+        "Tasse"
       ],
       "terms & conditions": [
         "termini e condizioni"
@@ -11882,6 +11890,9 @@
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
+      ],
+      "VAT": [
+        "IVA"
       ],
       "VAT number": [
         "Numero partita IVA"
@@ -13921,6 +13932,10 @@
       "Read receipt sent": [
         "Conferma di lettura inviata"
       ],
+      "Recategorized ${ elementsCount } message.": [
+        "Messaggio ricategorizzato ${ elementsCount }.",
+        "Ricategorizzati ${ elementsCount } messaggi."
+      ],
       "Self-destruction removed": [
         "Autodistruzione rimossa"
       ],
@@ -15114,9 +15129,6 @@
       "Your account is protected": [
         "Il tuo account è protetto"
       ],
-      "Your addresses": [
-        "I tuoi indirizzi"
-      ],
       "Your changes are not synced yet": [
         "Le tue modifiche non sono ancora sincronizzate"
       ],
@@ -15344,9 +15356,6 @@
       "${ n } wallet": [
         "${ n } portafoglio",
         "${ n } portafogli"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Un modo più sicuro per conservare il tuo Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via email"

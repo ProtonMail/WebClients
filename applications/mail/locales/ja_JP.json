@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "${ numberOfAddresses } address": [
-        "${ numberOfAddresses } 件のアドレス"
-      ],
       "A to Z": [
         "A～Z"
       ],
@@ -323,9 +320,6 @@
       ],
       "Copy alias “${ name }”": [
         "エイリアス「${ name }」をコピー"
-      ],
-      "Copy email address": [
-        "メールアドレスをコピー"
       ],
       "Copy email to clipboard": [
         "メールをコピー"
@@ -807,9 +801,6 @@
       "Make it friendly": [
         "フレンドリーにする"
       ],
-      "Manage addresses": [
-        "アドレスの管理"
-      ],
       "Manage advanced account protections": [
         "高度なアカウント保護を管理"
       ],
@@ -905,6 +896,9 @@
       ],
       "More search options": [
         "検索オプションを表示"
+      ],
+      "Most frequent": [
+        "最も頻度の高い"
       ],
       "Most read": [
         "既読が多い順"
@@ -1067,6 +1061,9 @@
       ],
       "Read receipt sent": [
         "開封確認が送信されました"
+      ],
+      "Recently read": [
+        "最近読んだもの"
       ],
       "Recently received": [
         "最近受信したもの"
@@ -4028,9 +4025,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "共有カレンダーで同期やスケジューリングを簡単に。"
       ],
-      "This view shows messages sent to the following addresses:": [
-        "このビューは次のアドレスに送信されたメッセージを表示します："
-      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "執筆アシスタントを引き続き使用するには、サブスクリプションを追加してください。"
       ],
@@ -5243,8 +5237,8 @@
       "customer support": [
         "カスタマーサポート"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "ファミリープランは現在外部のアカウントをサポートしていません。参加する前に${ BRAND_NAME }アドレスを作成してください。${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "ファミリープランは現在外部のアカウントをサポートしていません。参加する前に${ BRAND_NAME }アドレスを作成してください。${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "招待を受けると、あなたの現在のプランは変更され、残高があればあなたのアカウントクレジットに追加されます。"
@@ -7106,9 +7100,6 @@
       "Included for free with your plan": [
         "プランに無料で含まれています"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }% ${ taxName }: ${ price } を含む"
-      ],
       "Inherited from parent folder": [
         "親フォルダーから継承"
       ],
@@ -8919,6 +8910,9 @@
       "Cash": [
         "現金"
       ],
+      "Categories badge": [
+        "カテゴリバッジ"
+      ],
       "Category": [
         "カテゴリー"
       ],
@@ -9080,6 +9074,9 @@
       ],
       "From: ${ fromEmail }": [
         "送信者: ${ fromEmail }"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "今後のメール振り分け機能の改善にご協力ください。"
       ],
       "Hide password": [
         "パスワードを隠す"
@@ -9369,6 +9366,9 @@
       "System information": [
         "システム情報"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "カテゴリが更新されました、フィードバックありがとうございます！"
+      ],
       "The filter is disabled. ${ enableButton }": [
         "フィルターが無効です: ${ enableButton }"
       ],
@@ -9417,9 +9417,6 @@
       "Username": [
         "ユーザー名"
       ],
-      "VAT": [
-        "付加価値税"
-      ],
       "Verification code": [
         "認証コード"
       ],
@@ -9435,11 +9432,20 @@
       "Weak password": [
         "弱いパスワード"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "メールの分類方法を改善しております。お客様からのフィードバックは、より賢く正確な分類に役立ちます。"
+      ],
       "What happened?": [
         "どのような問題が発生しましたか?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "キャンセルまたはダウングレードの主な理由は何ですか？"
+      ],
+      "Which category should this be recategorized under?": [
+        "この項目はどのカテゴリに再分類すべきですか？"
+      ],
+      "Why am I seeing this?": [
+        "なぜこれが表示されるのですか？"
       ],
       "With attachment": [
         "添付ファイル付き"
@@ -9607,6 +9613,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "招待を管理するために新しいカレンダーを作成します"
+      ],
+      "Deleted": [
+        "削除しました"
       ],
       "Drafts": [
         "下書き"
@@ -11612,11 +11621,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "この期間中、サブスクリプションを変更またはキャンセルすることはできません。 変更を試みる前にお支払いが完了するまでお待ちください。お待ちください。"
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName }を除く: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% の税金を除く: ${ taxAmount }"
+      ],
       "Got it": [
         "分かりました"
       ],
       "I'm purchasing as a business": [
         "法人として購入します"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName }: ${ taxAmount } を含む"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% の税金込み: ${ taxAmount }"
       ],
       "MM/YY": [
         "月/年"
@@ -11632,6 +11653,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
+      ],
+      "Taxes": [
+        "税金"
       ],
       "terms & conditions": [
         "利用規約"
@@ -11659,6 +11683,9 @@
       ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
+      ],
+      "VAT": [
+        "付加価値税"
       ],
       "VAT number": [
         "VAT番号"
@@ -13509,6 +13536,9 @@
       "Conversation removed from Starred.": [
         "会話がスター付きから削除されました。"
       ],
+      "Conversation updated": [
+        "会話が更新されました"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList }との会話に${ labelsList }のラベルを付けます"
       ],
@@ -13584,6 +13614,9 @@
       "Message removed from Starred.": [
         "メッセージがスター付きから削除されました。"
       ],
+      "Message updated": [
+        "メッセージが更新されました"
+      ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList } からのメッセージに ${ labelsList } ラベルをつけます"
       ],
@@ -13625,6 +13658,9 @@
       ],
       "Read receipt sent": [
         "開封確認が送信されました"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "${ elementsCount }件のメッセージを再分類しました。"
       ],
       "Self-destruction removed": [
         "有効期限が削除されました"
@@ -14797,9 +14833,6 @@
       "Your account is protected": [
         "あなたのアカウントは保護されています"
       ],
-      "Your addresses": [
-        "あなたのアドレス"
-      ],
       "Your changes are not synced yet": [
         "変更は同期されていません"
       ],
@@ -15014,9 +15047,6 @@
       ],
       "${ n } wallet": [
         "${ n } 個のウォレット"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bitcoin を保持する安全な方法"
       ],
       "Bitcoin via Email": [
         "メールで Bitcoin"

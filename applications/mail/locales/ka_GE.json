@@ -214,6 +214,9 @@
       "Choose a file or drag it here": [
         "აირჩიეთ ფაილი ან გადმოათრიეთ აქ"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "${ BRAND_NAME }-ის მისამართის გამოთხოვა"
+      ],
       "Claim this address": [
         "ამ მისამართის გამოთხოვა"
       ],
@@ -315,9 +318,6 @@
       ],
       "Copy alias “${ name }”": [
         "ფსევდონიმის \"${ name }\" კოპირება"
-      ],
-      "Copy email address": [
-        "ელფოსტის მისამართის კოპირება"
       ],
       "Copy email to clipboard": [
         "ელფოსტის მისამართის ბაფერში კოპირება"
@@ -594,6 +594,9 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName }-ის მიღება"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "მიიღეთ უფასო ${ BRAND_NAME }-ის მისამართი"
+      ],
       "Get in touch": [
         "დაგვიკავშირდით"
       ],
@@ -799,9 +802,6 @@
       "Make it friendly": [
         "გახადეთ მეგობრული"
       ],
-      "Manage addresses": [
-        "მისამართების მართვა"
-      ],
       "Manage advanced account protections": [
         "ანგარიშის დამატებითი დაცვის მართვა"
       ],
@@ -897,6 +897,9 @@
       ],
       "More search options": [
         "მეტი ძებნის პარამეტრი"
+      ],
+      "Most frequent": [
+        "ყველაზე ხშირი"
       ],
       "Most read": [
         "ყველაზე წაკითხვადი"
@@ -1059,6 +1062,9 @@
       ],
       "Read receipt sent": [
         "წაკითხულობის ანგარიში გაიგზავნა"
+      ],
+      "Recently read": [
+        "ახლახან წაკითხული"
       ],
       "Recently received": [
         "ახლახან მიღებული"
@@ -5222,9 +5228,6 @@
       "customer support": [
         "მხარდაჭერის გუნდი"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "ოჯახის გეგმებს, ამჟამად, გარე ანგარიშების მხარდაჭერა არ გააჩნიათ. შეერთებამდე ${ BRAND_NAME }-ის ანგარიში შექმენით. ${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "თუ მოსაწევევს მიიღებთ, ჩვენ თქვენი მიმდინარე ტრიფიდან გადაგრთავთ და დარჩენილ ბალანსს ანგარიშზე დაგირიცხავთ."
       ],
@@ -5632,6 +5635,9 @@
       ],
       "Checklist complete": [
         "საკონტროლო სია დასრულდა"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "${ BRAND_NAME }-ის მისამართის გამოთხოვა"
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "დაასრულეთ ეს საკონტროლო სია ${ daysCount } დღეში და გაიორმაგეთ საცავი უფასოდ."
@@ -7120,9 +7126,6 @@
       ],
       "Included for free with your plan": [
         "თქვენი სატარიფო გეგმა მას უფასოდ შეიცავს"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }%-ის ჩათვლით ${ taxName }: ${ price }"
       ],
       "Inherited from parent folder": [
         "მემკვიდრეობით მშობელი საქაღალდისგან"
@@ -8910,6 +8913,9 @@
       "Cash": [
         "ხელზე ფული"
       ],
+      "Categories badge": [
+        "კატეგორიების სამკერდე ნიშანი"
+      ],
       "Category": [
         "კატეგორია"
       ],
@@ -9408,9 +9414,6 @@
       "Username": [
         "მომხმარებლის სახელი"
       ],
-      "VAT": [
-        "დღგ"
-      ],
       "Verification code": [
         "შემოწმების კოდი"
       ],
@@ -9431,6 +9434,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "რა არის მიზეზი სატარიფო გეგმის გაუქმების ან მისი დონის ჩამოწევის?"
+      ],
+      "Why am I seeing this?": [
+        "რატომ ვხედავ ამას?"
       ],
       "With attachment": [
         "მიმაგრებებით"
@@ -9598,6 +9604,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "თქვენი მოსაწვევების სამართავად შექმენით ახალი კალენდარი"
+      ],
+      "Deleted": [
+        "წაშლილია"
       ],
       "Drafts": [
         "მონახაზები"
@@ -11609,6 +11618,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "განახლების დრო ${ renewPriceStr }. გააუქმეთ ნებისმიერ დროს."
       ],
+      "Taxes": [
+        "გადასახადები"
+      ],
       "terms & conditions": [
         "პირობები და წესები"
       ],
@@ -11629,6 +11641,9 @@
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
+      ],
+      "VAT": [
+        "დღგ"
       ],
       "VAT number": [
         "დღგ ნომერი"
@@ -13518,6 +13533,10 @@
       "Conversation removed from Starred.": [
         "საუბარი წაიშალა ვარსკვლავიანებიდან."
       ],
+      "Conversation updated": [
+        "საუბარი განახლდა",
+        "საუბრები განახლდა"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList }-დან მოსულ საუბრებს გაუჩნდებათ ჭდე ${ labelsList }"
       ],
@@ -13592,6 +13611,10 @@
       ],
       "Message removed from Starred.": [
         "შეტყობინება წაიშალა ვარსკვლავიანებიდან."
+      ],
+      "Message updated": [
+        "შეტყობინება განახლდა",
+        "შეტყობინებები განახლდა"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList }-დან მოსულ შეტყობინებებს გაუჩნდებათ ჭდე ${ labelsList }"
@@ -14818,9 +14841,6 @@
       "Your account is protected": [
         "თქვენი ანგარიში დაცულია"
       ],
-      "Your addresses": [
-        "თქვენი მისამართები"
-      ],
       "Your changes are not synced yet": [
         "თქვენი ცვლილებები ჯერ სინქრონიზებული არაა"
       ],
@@ -15048,9 +15068,6 @@
       "${ n } wallet": [
         "${ n } საფულე",
         "${ n } საფულე"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "უფრო უსაფრთხო გზა თქვენი Bitcoin-ის შესანახად"
       ],
       "Bitcoin via Email": [
         "Bitcoin ელფოსტით"

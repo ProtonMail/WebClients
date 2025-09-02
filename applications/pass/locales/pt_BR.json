@@ -1655,6 +1655,9 @@
       "Extra password successfully removed": [
         "A senha adicional foi removida."
       ],
+      "Failed updating your vault organization": [
+        "Falha ao atualizar o cofre da sua organização"
+      ],
       "Fill in the CSV with your data": [
         "Preencha o CSV com seus dados"
       ],
@@ -2317,6 +2320,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "O cofre \"${ share.content.name }\" foi removido"
+      ],
+      "Vault organization successfully updated": [
+        "Cofre da organização atualizado com sucesso"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Cofres compartilhados: ${ vaultMembersCount } membro",
@@ -4229,6 +4235,9 @@
       ],
       "Grant permissions": [
         "Conceder permissões"
+      ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Cofres ocultos não serão visíveis durante a pesquisa e o preenchimento automático."
       ],
       "Hide-my-email aliases": [
         "Aliases do hide-my-email"

@@ -262,6 +262,9 @@
       "Claim this address": [
         "Confirmar este endereço"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Confirmar seu endereço de ${ BRAND_NAME }"
+      ],
       "Clear all formatting": [
         "Limpar toda a formatação"
       ],
@@ -786,9 +789,6 @@
       ],
       "Get verification code": [
         "Obter código de verificação"
-      ],
-      "Give access now": [
-        "Permitir acesso"
       ],
       "Go back": [
         "Voltar"
@@ -5264,25 +5264,45 @@
       "${ BRAND_NAME } Account email": [
         "${ BRAND_NAME } endereço de e-mail"
       ],
+      "${ days } day left": [
+        "${ days } dia restante",
+        "${ days } dias restantes"
+      ],
+      "${ hours } hour left": [
+        "${ hours } hora restante",
+        "${ hours } horas restantes"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes } minuto restante",
+        "${ minutes } minutos restantes"
+      ],
       "${ n } day": [
         "${ n } dia",
         "${ n } dias"
       ],
-      "${ n } day left": [
-        "${ n } dia restante",
-        "${ n } dias restantes"
+      "${ user } is requesting emergency access to your account": [
+        "${ user } está solicitando acesso de emergência à sua conta"
       ],
       "${ user } will be able to use your account and change your data.": [
         "${ user } poderá usar sua conta e mudar os seus dados."
       ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user } perderá acesso à sua conta, e não poderá acessá-la até o próximo acesso de emergência."
+      ],
       "${ user } will no longer be able to request access to your account in case of emergency.": [
         "${ user } não poderá mais solicitar acesso à sua conta em caso de emergência."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } não poderá acessar sua conta até o próximo acesso de emergência."
       ],
       "Access granted": [
         "Acesso garantido"
       ],
       "Access granted on ${ formattedAccessibleAt }": [
         "Acesso concedido em ${ formattedAccessibleAt }"
+      ],
+      "Access request canceled": [
+        "Solicitação de acesso cancelada"
       ],
       "Access requested": [
         "Acesso solicitado"
@@ -5316,6 +5336,9 @@
       ],
       "Disabled": [
         "Desativado"
+      ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "Não perca o acesso de emergência. Ative a renovação automática hoje."
       ],
       "Emergency access": [
         "Acesso de emergência"
@@ -5362,6 +5385,9 @@
       "Less than a day": [
         "Menos de um dia"
       ],
+      "Less than a minute left": [
+        "Menos de um minuto restante"
+      ],
       "None": [
         "Nenhum"
       ],
@@ -5389,6 +5415,9 @@
       "Remove trusted contact": [
         "Remover contato de confiança"
       ],
+      "Renew to get emergency access again.": [
+        "Renovar para conseguir o acesso de emergência novamente"
+      ],
       "Request access?": [
         "Solicitar acesso?"
       ],
@@ -5413,10 +5442,17 @@
       "They may ask to access my account in case of an emergency.": [
         "Eles podem pedir para acessar minha conta em caso de emergência."
       ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "Eles receberão acesso automaticamente em **${ days } dia**, em **${ formattedAccessibleAt }**, você pode rejeitar a solicitação deles ou dar-lhes acesso a qualquer momento.",
+        "Eles receberão acesso automaticamente em **${ days } dias**, em **${ formattedAccessibleAt }**, você pode rejeitar a solicitação deles ou dar-lhes acesso a qualquer momento."
+      ],
       "This will take effect immediately.": [
         "Isso entrará em vigor imediatamente."
       ],
       "Time required before automatically giving access": [
+        "Tempo necessário antes de conceder acesso automaticamente."
+      ],
+      "Time required before automatically giving you access": [
         "Tempo necessário antes de conceder acesso automaticamente."
       ],
       "Time required before automatically granting them access": [
@@ -5467,6 +5503,9 @@
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Você não poderá mais solicitar acesso à conta de${ user } em caso de emergência."
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "Você ainda poderá solicitar acesso à conta de ${ user } mais tarde."
       ],
       "You'll receive access to their account immediately.": [
         "Você receberá acesso à conta imediatamente."
@@ -6527,8 +6566,8 @@
       "customer support": [
         "suporte ao cliente"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Os planos de família não oferecem suporte a contas externas no momento. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Os planos familiares não suportam contas externas no momento. Crie um endereço para ${ BRAND_NAME } antes de participar.${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, seu plano atual será alterado e você receberá um crédito em sua conta com o saldo restante, se houver."
@@ -6831,6 +6870,9 @@
       ],
       "Secure streaming": [
         "Streaming seguro"
+      ],
+      "Stream from Netflix, HBO, and more": [
+        "Assista Netflix, HBO e muito mais"
       ]
     },
     "Features: Tooltip": {
@@ -7915,6 +7957,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de criptografia da ${ BRAND_NAME } significa que ninguém pode acessar sua senha - nem mesmo nós."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "O ${ CALENDAR_APP_NAME } exige um endereço ${ BRAND_NAME } para sincronização segura de eventos e criptografia. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } novo calendário",
         "${ calendarsToBeCreatedCount } novos calendários"
@@ -8307,6 +8352,9 @@
       ],
       "Allocated": [
         "Alocado"
+      ],
+      "Allow logging of location and connection details": [
+        "Permitir o registro de localização e detalhes de conexão"
       ],
       "Allow recovery by email": [
         "Permitir recuperação por e-mail"
@@ -8910,6 +8958,9 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Curta uma experiência de e-mail mais rápida e focada com o aplicativo para desktop."
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Garanta uma comunicação totalmente privada e criptografada. Resgate seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
+      ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "Digite sua senha para finalizar sua conta ${ BRAND_NAME } e comece a usar ${ VPN_APP_NAME } em todos os seus dispositivos!"
       ],
@@ -9226,8 +9277,8 @@
       "inactive": [
         "inativo"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incluindo ${ formattedTaxRate }% ${ taxName }: ${ price }"
+      "Include device, location, and IP details": [
+        "Incluir detalhes de dispositivo, localização e IP"
       ],
       "Increase your account security by verifying your email address.": [
         "Melhore a sua segurança da conta ao verificar seu endereço de e-mail."
@@ -9722,6 +9773,9 @@
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - e-mail personalizado excluído"
       ],
+      "Pass usage logs": [
+        "Registros de uso do Pass"
+      ],
       "password": [
         "senha"
       ],
@@ -9816,9 +9870,6 @@
       ],
       "Please use another browser or download the file.": [
         "Use outro navegador ou baixe o arquivo."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Verifique o pagamento na nova guia que foi aberta."
       ],
       "Please wait till your changes are synced with the server.": [
         "Aguarde até que suas alterações sejam sincronizadas com o servidor."
@@ -10639,9 +10690,6 @@
       "Vault updated": [
         "Cofre atualizado"
       ],
-      "Verification can take a few minutes.": [
-        "A verificação pode levar alguns minutos."
-      ],
       "Verification link expired": [
         "O link de verificação expirou"
       ],
@@ -10677,6 +10725,9 @@
       ],
       "View and manage your groups.": [
         "Ver e gerenciar seus grupos."
+      ],
+      "View VPN session details for your organization.": [
+        "Veja os detalhes da sessão VPN para sua organização."
       ],
       "View, download, and manage your invoices.": [
         "Ver, baixar e gerenciar suas notas ficais"
@@ -12868,9 +12919,6 @@
       "Value": [
         "Valor"
       ],
-      "VAT": [
-        "IVA"
-      ],
       "Verification code": [
         "Código de verificação"
       ],
@@ -13340,6 +13388,9 @@
       "Learn more": [
         "Saiba mais"
       ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Para continuar usando ${ BRAND_NAME }, certifique-se de que seus recursos do plano premium não estão mais em uso ou faça um upgrade no seu plano."
+      ],
       "upgrade for more storage": [
         "faça upgrade para mais armazenamento"
       ],
@@ -13593,6 +13644,15 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Conecte seu domínio personalizado ao ${ BRAND_NAME } para criar endereços de e-mail personalizados (por exemplo, você@sua-empresa.com). Nosso assistente guiará você no processo."
+      ],
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "Ver atividade de ${ PASS_APP_NAME } na sua organização."
+      ],
+      "View changes to your organization and other administrator activities.": [
+        "Ver alterações na sua organização e outras atividades de administrador."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "Ver informações de login, recuperação e segurança do usuário."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Sua avaliação gratuita terminou. O acesso a sua será desativada em breve. ${ action }"
@@ -16349,6 +16409,9 @@
       "Card number": [
         "Número do cartão"
       ],
+      "Credits and discounts are reflected in your invoice": [
+        "Créditos e descontos são mostrados na sua fatura."
+      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Atualmente a renovação automática da assinatura está desativada. Se você alterar a assinatura agora, a renovação automática será ativada novamente."
       ],
@@ -16358,11 +16421,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante esse período, você não poderá modificar ou cancelar sua assinatura. Aguarde até que seu pagamento seja concluído antes de tentar qualquer alteração. Obrigado pela sua paciência."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excluindo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluindo ${ taxRate }% de impostos: ${ taxAmount }"
+      ],
       "Got it": [
         "Entendi"
       ],
       "I'm purchasing as a business": [
         "Estou comprando como empresa"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluindo ${ taxRate }${ taxName }${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluindo ${ taxRate }% de impostos: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -16381,6 +16456,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renova por ${ renewPriceStr }, cancele a qualquer momento."
+      ],
+      "Taxes": [
+        "Impostos"
       ],
       "terms & conditions": [
         "termos e condições"
@@ -16415,6 +16493,9 @@
       ],
       "Timeout exceeded": [
         "Tempo limite excedido"
+      ],
+      "VAT": [
+        "IVA"
       ],
       "VAT number": [
         "Número de IVA"
@@ -17013,8 +17094,20 @@
       "download PDF": [
         "baixar PDF"
       ],
+      "I understand that if I lose my recovery phrase, I may permanently lose access to my account.": [
+        "Entendo que, se perder minha frase de recuperação, poderei perder o acesso à minha conta."
+      ],
+      "It’s the only way to recover everything—store it safely.": [
+        "É a única maneira de recuperar tudo — armazene-o com segurança."
+      ],
+      "Or ${ copyRecoverySwitchButton } as text.": [
+        "Ou ${ copyRecoverySwitchButton } como texto"
+      ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "Ou ${ downloadRecoveryKitSwitchButton } em vez disso."
+      ],
+      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "Seu **Kit de Recuperação** permite que você restaure sua ${ BRAND_NAME } se o seu log-in for bloqueado."
       ]
     },
     "RecoveryPhrase: Title": {
@@ -20633,6 +20726,9 @@
       "Connect apps and devices": [
         "Conectar aplicativos e dispositivos"
       ],
+      "Connect more addresses": [
+        "Conectar mais endereços"
+      ],
       "Connect organization": [
         "Conectar organização"
       ],
@@ -22108,8 +22204,8 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "As subpastas do sistema aparecerão como pastas separadas no ${ MAIL_APP_NAME }"
       ],
-      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
-        "O endereço foi desconectado. O envio de mensagens está pausado. Reconecte-se para ativar este endereço novamente."
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "O endereço foi desconectado. O envio e o recebimento de mensagens estão pausados. Reconecte-se para ativar este endereço novamente."
       ],
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."
@@ -22495,6 +22591,12 @@
       ],
       "Did you know?": [
         "Você sabia?"
+      ],
+      "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
+        "Proteja sua organização de violações de dados com ${ VPN_APP_NAME } para Empresas."
+      ],
+      "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
+        "Privacidade ilimitada para você e para quem você ama. A partir de ${ priceString }/mês."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Você pode proteger até ${ FAMILY_MAX_USERS } pessoas com ${ PLAN_NAMES[plan] }. A partir de apenas ${ priceString }/mês por conta."

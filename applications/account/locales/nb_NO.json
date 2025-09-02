@@ -262,6 +262,9 @@
       "Claim this address": [
         "Gjør krav på denne adressen"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Gjør krav på din gratis ${ BRAND_NAME }-adresse"
+      ],
       "Clear all formatting": [
         "Fjern all formattering"
       ],
@@ -786,9 +789,6 @@
       ],
       "Get verification code": [
         "Få verifiseringskode"
-      ],
-      "Give access now": [
-        "Gi tilgang nå"
       ],
       "Go back": [
         "Gå tilbake"
@@ -5209,10 +5209,6 @@
         "${ n } dag",
         "${ n } dager"
       ],
-      "${ n } day left": [
-        "${ n } dag igjen",
-        "${ n } dager igjen"
-      ],
       "${ user } is requesting emergency access to your account": [
         "${ user } ber om nødtilgang til kontoen din"
       ],
@@ -5381,6 +5377,9 @@
       ],
       "Time required before automatically giving access": [
         "Tid som kreves før automatisk tilgang gis"
+      ],
+      "Time required before automatically giving you access": [
+        "Tid som kreves før du automatisk får tilgang"
       ],
       "Time required before automatically granting them access": [
         "Tid som kreves før de automatisk får tilgang"
@@ -6493,8 +6492,8 @@
       "customer support": [
         "kundestøtte"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Familieplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Familieplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du godtar invitasjonen, bytter vi deg fra den nåværende planen og krediterer kontoen din med eventuell gjenværende saldo."
@@ -9204,9 +9203,6 @@
       "Include device, location, and IP details": [
         "Inkluder enhet, plassering og IP-detaljer"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inkludert ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Øk kontosikkerheten ved å verifisere e-postadressen din."
       ],
@@ -9797,9 +9793,6 @@
       ],
       "Please use another browser or download the file.": [
         "Bruk en annen nettleser eller last ned filen."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Bekreft betaling i den nye fanen som ble åpnet."
       ],
       "Please wait till your changes are synced with the server.": [
         "Vent til endringene dine er synkronisert med tjeneren."
@@ -10619,9 +10612,6 @@
       ],
       "Vault updated": [
         "Hvelv oppdatert"
-      ],
-      "Verification can take a few minutes.": [
-        "Verifisering kan ta noen minutter."
       ],
       "Verification link expired": [
         "Verifiseringskoblingen er utløpt"
@@ -12851,9 +12841,6 @@
       ],
       "Value": [
         "Verdi"
-      ],
-      "VAT": [
-        "MVA"
       ],
       "Verification code": [
         "Verifiseringskode"
@@ -16357,11 +16344,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "I løpet av denne tiden vil du ikke kunne endre eller kansellere abonnementet ditt. Vent til betalingen er fullført før du prøver å gjøre noen endringer. Takk for tålmodigheten."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Ekskludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Ekskludert ${ taxRate }% avgifter: ${ taxAmount }"
+      ],
       "Got it": [
         "Skjønner"
       ],
       "I'm purchasing as a business": [
         "Jeg kjøper som en bedrift."
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inkludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inkludert ${ taxRate }% avgifter: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -16380,6 +16379,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, avbryt når som helst."
+      ],
+      "Taxes": [
+        "Avgifter"
       ],
       "terms & conditions": [
         "vilkår og betingelser"
@@ -16414,6 +16416,9 @@
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
+      ],
+      "VAT": [
+        "MVA"
       ],
       "VAT number": [
         "MVA-nummer"
@@ -22105,8 +22110,8 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }."
       ],
-      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
-        "Adressen er koblet fra. Sending av meldinger er satt på pause. Koble til på nytt for å aktivere denne adressen igjen."
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Adressen er koblet fra. Sending og mottak av meldinger er satt på pause. Koble til på nytt for å aktivere denne adressen igjen."
       ],
       "The import will start with the most recent messages.": [
         "Importen starter med de nyeste meldingene."

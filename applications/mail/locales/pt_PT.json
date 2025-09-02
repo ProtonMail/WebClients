@@ -313,9 +313,6 @@
       "Copy alias “${ name }”": [
         "Copiar o alias «${ name }»"
       ],
-      "Copy email address": [
-        "Copiar o endereço de e-mail"
-      ],
       "Copy email to clipboard": [
         "Copiar mensagem para a área de transferência"
       ],
@@ -795,9 +792,6 @@
       ],
       "Make it friendly": [
         "Torná-lo amigável"
-      ],
-      "Manage addresses": [
-        "Gerir endereços"
       ],
       "Manage advanced account protections": [
         "Gerir as proteções avançadas da conta"
@@ -5207,9 +5201,6 @@
       "customer support": [
         "apoio ao cliente"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Os planos de família não suportam atualmente contas externas. Crie um endereço ${ BRAND_NAME } antes de aderir. ${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, mudá-lo-emos do seu plano actual e creditaremos na sua conta qualquer saldo remanescente."
       ],
@@ -7136,9 +7127,6 @@
       "Included for free with your plan": [
         "Incluído gratuitamente no seu plano"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incluindo ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Herdado da pasta principal"
       ],
@@ -8606,6 +8594,9 @@
       "Expired": [
         "Expirada"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Obsoleta"
       ],
@@ -9465,9 +9456,6 @@
       "Username": [
         "Nome de utilizador"
       ],
-      "VAT": [
-        "IVA"
-      ],
       "Verification code": [
         "Código de verificação"
       ],
@@ -9652,6 +9640,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Crie um calendário para gerir os seus convites."
+      ],
+      "Deleted": [
+        "Eliminado"
       ],
       "Drafts": [
         "Rascunhos"
@@ -11690,6 +11681,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renovação por ${ renewPriceStr } com possibilidade de cancelar a qualquer momento."
       ],
+      "Taxes": [
+        "Impostos"
+      ],
       "terms & conditions": [
         "os termos e condições"
       ],
@@ -11720,6 +11714,9 @@
       ],
       "Timeout exceeded": [
         "O tempo limite foi excedido."
+      ],
+      "VAT": [
+        "IVA"
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "A sua moeda foi alterada para euros (€) porque as transferências bancárias SEPA apenas aceitam pagamentos em euros."
@@ -11772,6 +11769,9 @@
     "Payments.VAT number name": {
       "ABN": [
         "Número de empresa australiano (ABN)"
+      ],
+      "Add ABN": [
+        "Adicionar ABN"
       ],
       "Business Number": [
         "Número da empresa"
@@ -15098,9 +15098,6 @@
       "${ n } wallet": [
         "${ n } carteira",
         "${ n } carteiras"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Uma maneira mais segura de conservar o seu Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"

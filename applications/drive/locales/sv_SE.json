@@ -165,6 +165,9 @@
       "Claim this address": [
         "Gör anspråk på denna adress"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Gör anspråk på din gratis ${ BRAND_NAME }-adress"
+      ],
       "Clear": [
         "Rensa"
       ],
@@ -3686,14 +3689,14 @@
       "We were not able to load some of your invitation to shared items": [
         "Vi kunde inte ladda några av dina inbjudningar till delade objekt"
       ],
+      "We were not able to load some of your invitations": [
+        "Vi kunde inte ladda några av dina inbjudningar"
+      ],
       "We were not able to load some of your saved shared links": [
         "Vi kunde inte ladda några av dina sparade delade länkar"
       ],
       "We were not able to load some of your shared items": [
         "Vi kunde inte ladda några av dina delade objekt"
-      ],
-      "We were not able to load some of your shared items details": [
-        "Vi kunde inte ladda några av dina delade objektdetaljer"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
@@ -4005,8 +4008,8 @@
       "customer support": [
         "kundsupport"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Familjepaket stöder för närvarande inte externa konton. Skapa en ${ BRAND_NAME }-adress innan du går med. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Familjepaket stöder för närvarande inte externa konton. Skapa en ${ BRAND_NAME }-adress innan du går med. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Om du accepterar inbjudan kommer vi att byta från ditt nuvarande paket och kreditera ditt konto med eventuellt återstående saldo."
@@ -5379,9 +5382,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I nästa steg kommer du kunna skicka in en insättning med en Bitcoin-adress."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inklusive ${ formattedTaxRate } % ${ taxName }: ${ price }"
-      ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexerar objekt ${ esProgress } av ${ totalProgressToShow }"
       ],
@@ -6475,6 +6475,9 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Ditt konto har minst en förfallen faktura. Ditt konto är begränsat. Fortsatt utebliven betalning kommer att blockera dina e-postmeddelanden och delningslänkar. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
+        "Din nuvarande webbläsare stöder inte nedladdning av stora filer/flera filer. Ladda ner appen för stationär dator för sömlösa uppladdningar och nedladdningar."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Din data är redo att importeras från ${ importedEmailAddressStrong } till ditt ${ BRAND_NAME }-konto."
       ],
@@ -7232,9 +7235,6 @@
       ],
       "Username": [
         "Användarnamn"
-      ],
-      "VAT": [
-        "VAT"
       ],
       "Verification code": [
         "Verifieringskod"
@@ -9559,11 +9559,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denna tid kommer du inte att kunna ändra eller säga upp din prenumeration. Vänta tills din betalning är slutförd innan du försöker göra några ändringar. Tack för ditt tålamod."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Exklusive ${ taxRate } % moms: ${ taxAmount }"
+      ],
       "Got it": [
         "Jag förstår"
       ],
       "I'm purchasing as a business": [
         "Jag köper som ett företag"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inklusive ${ taxRate } % moms: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -9579,6 +9591,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Förnyas med ${ renewPriceStr }, avbryt när som helst."
+      ],
+      "Taxes": [
+        "Moms"
       ],
       "terms & conditions": [
         "användarvillkor"
@@ -10702,6 +10717,9 @@
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } totalt lagringsutrymme"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } ger dig åtkomst till alla premiumfunktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }. Integritet är inbyggd så att du kan fortsätta använda den i vetskapen om att dina data och din identitet är säkra."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
@@ -12486,9 +12504,6 @@
       "${ n } wallet": [
         "${ n } plånbok",
         "${ n } plånböcker"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Ett säkrare sätt att hålla din Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-post"

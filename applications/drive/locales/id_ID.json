@@ -159,6 +159,12 @@
       "Choose a file or drag it here": [
         "Pilih berkas atau taruh di sini"
       ],
+      "Claim this address": [
+        "Klaim alamat ini"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Klaim alamat ${ BRAND_NAME } gratis Anda"
+      ],
       "Clear": [
         "Bersihkan"
       ],
@@ -464,6 +470,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Dapatkan ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Dapatkan alamat ${ BRAND_NAME } gratis"
       ],
       "Get in touch": [
         "Hubungi kami"
@@ -3169,6 +3178,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Nominal di bawah nilai minimum (${ minimumAmount })."
       ],
+      "An error occurred": [
+        "Terjadi kesalahan"
+      ],
       "An error occurred while loading alias options": [
         "Terdapat kesalahan pada saat memuat daftar opsi alias"
       ],
@@ -3282,6 +3294,9 @@
       ],
       "Failed to load the STL preview": [
         "Pratinjau STL gagal dimuat"
+      ],
+      "Failed to open to contact": [
+        "Kontak gagal dibuka"
       ],
       "Failed to resend invitation": [
         "Gagal mengirim ulang undangan"
@@ -3628,6 +3643,9 @@
       "Unknown location": [
         "Lokasi yang tidak diketahui"
       ],
+      "Unknown number of downloads": [
+        "Jumlah unduhan tidak diketahui"
+      ],
       "Unknown payment token status": [
         "Status token pembayaran tidak dikenal"
       ],
@@ -3655,14 +3673,14 @@
       "We were not able to load some of your invitation to shared items": [
         "Kami tidak dapat memuat sebagian undangan Anda ke item yang dibagikan"
       ],
+      "We were not able to load some of your invitations": [
+        "Kami tidak dapat memuat sebagian undangan Anda"
+      ],
       "We were not able to load some of your saved shared links": [
         "Kami tidak dapat memuat sebagian tautan berbagi yang Anda simpan"
       ],
       "We were not able to load some of your shared items": [
         "Kami tidak dapat memuat sebagian item yang Anda bagikan"
-      ],
-      "We were not able to load some of your shared items details": [
-        "Kami tidak dapat memuat sebagian rincian item terbagi Anda"
       ],
       "We were not able to load some of your shared items info": [
         "Kami tidak dapat memuat informasi sebagian item yang Anda bagikan"
@@ -3977,8 +3995,8 @@
       "customer support": [
         "layanan dukungan"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Paket keluarga saat ini tidak mendukung akun eksternal. Buat alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Paket keluarga saat ini tidak mendukung akun eksternal. Silakan buat alamat ${ BRAND_NAME } sebelum bergabung. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Apabila Anda menerima undangan ini, kami akan memindahkan Anda dari paket saat ini dan menagih akun Anda dengan saldo mana pun yang tersisa."
@@ -4572,6 +4590,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Teknologi enkripsi ${ BRAND_NAME } memastikan bahwa tidak ada siapa pun yang dapat mengakses kata sandi Anda — termasuk kami sendiri."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } memerlukan alamat ${ BRAND_NAME } untuk sinkronisasi dan pengenkripsian acara yang aman. ${ claimAddressButton }"
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } memerlukan alamat ${ BRAND_NAME } untuk sinkronisasi dan pengenkripsian acara yang aman. Klaim alamat ${ MAIL_APP_NAME } gratis Anda sekarang juga."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } kalender baru"
       ],
@@ -5109,6 +5133,9 @@
       "End-to-end encrypted": [
         "Terenkripsi secara end-to-end"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Pastikan komunikasi yang sepenuhnya privat dan terenkripsi. Klaim alamat email ${ BRAND_NAME } gratis Anda sekarang juga."
+      ],
       "Enter password": [
         "Masukkan kata sandi"
       ],
@@ -5288,9 +5315,6 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Pada langkah selanjutnya, Anda dapat mengirimkan deposit menggunakan alamat Bitcoin."
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Meliputi ${ taxName } ${ formattedTaxRate }%: ${ price }"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Mengindeks item ${ esProgress } dari ${ totalProgressToShow }"
@@ -7147,9 +7171,6 @@
       "Username": [
         "Nama pengguna"
       ],
-      "VAT": [
-        "PPN"
-      ],
       "Verification code": [
         "Kode verifikasi"
       ],
@@ -7389,6 +7410,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Lebih lanjut"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Untuk terus menggunakan ${ BRAND_NAME }, silakan pastikan seluruh fitur premium Anda sudah tidak lagi digunakan atau tingkatkan paket Anda."
       ],
       "upgrade for more storage": [
         "tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan"
@@ -9410,11 +9434,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Selama periode ini, Anda tidak akan dapat mengubah atau membatalkan langganan Anda. Silakan tunggu hingga pembayaran Anda rampung sebelum mencoba untuk merubah suatu hal. Terima kasih atas kesabaran Anda."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Tanpa termasuk ${ taxName } ${ taxRate }%: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Tanpa termasuk pajak ${ taxRate }%: ${ taxAmount }"
+      ],
       "Got it": [
         "Paham"
       ],
       "I'm purchasing as a business": [
         "Saya membeli produk ini selaku pihak bisnis"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Meliputi ${ taxName } ${ taxRate }%: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Meliputi pajak ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "BB/TT"
@@ -9430,6 +9466,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Diperbarui seharga ${ renewPriceStr }, batalkan kapan saja."
+      ],
+      "Taxes": [
+        "Pajak"
       ],
       "terms & conditions": [
         "syarat & ketentuan"
@@ -9457,6 +9496,12 @@
       ],
       "Timeout exceeded": [
         "Batas waktu terlampaui"
+      ],
+      "VAT": [
+        "PPN"
+      ],
+      "VAT number": [
+        "Nomor PPN"
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Mata uang Anda telah diubah menjadi euro (€) karena transfer bank SEPA hanya mendukung pembayaran dalam euro."
@@ -9510,8 +9555,32 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Tambah ABN"
+      ],
+      "Add Business Number": [
+        "Sunting Nomor Bisnis"
+      ],
+      "Add EIN": [
+        "Tambah EIN"
+      ],
+      "Add VAT number": [
+        "Tambah nomor PPN"
+      ],
       "Business Number": [
         "Nomor Bisnis"
+      ],
+      "Edit ABN": [
+        "Sunting ABN"
+      ],
+      "Edit Business Number": [
+        "Sunting Nomor Bisnis"
+      ],
+      "Edit EIN": [
+        "Sunting EIN"
+      ],
+      "Edit VAT number": [
+        "Sunting nomor PPN"
       ],
       "EIN": [
         "NPWP"
@@ -9643,6 +9712,9 @@
       ],
       "Select a reason": [
         "Pilih alasan"
+      ],
+      "Select country": [
+        "Pilih negara"
       ],
       "Select state": [
         "Pilih negara bagian"
@@ -11244,6 +11316,9 @@
       "Check for malicious files": [
         "Pindai berkas berbahaya"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Klaim alamat ${ MAIL_APP_NAME } Anda"
+      ],
       "Clearing data": [
         "Membersihkan data"
       ],
@@ -11502,6 +11577,9 @@
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults } hasil pencarian ditemukan"
       ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Dapatkan akses penuh ke ${ CALENDAR_APP_NAME }"
+      ],
       "Get more from your VPN": [
         "Dapatkan yang lebh dari VPN Anda"
       ],
@@ -11672,6 +11750,9 @@
       ],
       "Notes": [
         "Catatan"
+      ],
+      "Number of downloads": [
+        "Jumlah unduhan"
       ],
       "Number of items": [
         "Jumlah item"
@@ -12251,9 +12332,6 @@
       ],
       "${ n } wallet": [
         "${ n } dompet"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Cara yang lebih aman untuk menyimpan Bitcoin Anda"
       ],
       "Bitcoin via Email": [
         "Bitcoin via email"
