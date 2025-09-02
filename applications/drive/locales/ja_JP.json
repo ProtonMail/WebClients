@@ -162,6 +162,9 @@
       "Claim this address": [
         "このアドレスを取得"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "無料の${ BRAND_NAME }アドレスを取得"
+      ],
       "Clear": [
         "消去"
       ],
@@ -3670,14 +3673,14 @@
       "We were not able to load some of your invitation to shared items": [
         "共有アイテムへの招待の一部を読み込むことができませんでした"
       ],
+      "We were not able to load some of your invitations": [
+        "お客様の招待の一部を読み込めませんでした"
+      ],
       "We were not able to load some of your saved shared links": [
         "保存済みの共有リンクの一部を読み込むことができませんでした"
       ],
       "We were not able to load some of your shared items": [
         "共有アイテムの一部を読み込むことができませんでした"
-      ],
-      "We were not able to load some of your shared items details": [
-        "共有アイテムの一部の詳細を読み込むことができませんでした。"
       ],
       "We were not able to load some of your shared items info": [
         "共有アイテムの一部の情報を読み込むことができませんでした。"
@@ -3992,8 +3995,8 @@
       "customer support": [
         "カスタマーサポート"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "ファミリープランは現在外部のアカウントをサポートしていません。参加する前に${ BRAND_NAME }アドレスを作成してください。${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "ファミリープランは現在外部のアカウントをサポートしていません。参加する前に${ BRAND_NAME }アドレスを作成してください。${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "招待を受けると、あなたの現在のプランは変更され、残高があればあなたのアカウントクレジットに追加されます。"
@@ -5312,9 +5315,6 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "次のステップでは、Bitcoin アドレスを使用してデポジットを送信することができます。"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }% ${ taxName }: ${ price } を含む"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "${ totalProgressToShow }件のうち${ esProgress }件目のアイテムをインデックス中"
@@ -7170,9 +7170,6 @@
       ],
       "Username": [
         "ユーザー名"
-      ],
-      "VAT": [
-        "付加価値税"
       ],
       "Verification code": [
         "認証コード"
@@ -9380,11 +9377,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "この期間中、サブスクリプションを変更またはキャンセルすることはできません。 変更を試みる前にお支払いが完了するまでお待ちください。お待ちください。"
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName }を除く: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% の税金を除く: ${ taxAmount }"
+      ],
       "Got it": [
         "分かりました"
       ],
       "I'm purchasing as a business": [
         "法人として購入します"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName }: ${ taxAmount } を含む"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% の税金込み: ${ taxAmount }"
       ],
       "MM/YY": [
         "月/年"
@@ -9400,6 +9409,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
+      ],
+      "Taxes": [
+        "税金"
       ],
       "terms & conditions": [
         "利用規約"
@@ -9427,6 +9439,9 @@
       ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
+      ],
+      "VAT": [
+        "付加価値税"
       ],
       "VAT number": [
         "VAT番号"
@@ -12260,9 +12275,6 @@
       ],
       "${ n } wallet": [
         "${ n } 個のウォレット"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bitcoin を保持する安全な方法"
       ],
       "Bitcoin via Email": [
         "メールで Bitcoin"
