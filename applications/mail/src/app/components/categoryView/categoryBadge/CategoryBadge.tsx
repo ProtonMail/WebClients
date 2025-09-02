@@ -9,6 +9,7 @@ import {
     DropdownMenu,
     DropdownMenuButton,
     Icon,
+    Spotlight,
     useApi,
     useEventManager,
     useNotifications,
@@ -26,24 +27,28 @@ import { isElementMessage } from 'proton-mail/helpers/elements';
 import type { Element } from 'proton-mail/models/element';
 
 import { CategoryBadgeInfo } from './CategoryBadgeInfo';
+import { CategoryBadgeSpotlightContent, useCategoryBadgeSpotlight } from './CategoryBadgeSpotlight';
 import { DISABLED_BADGE, getCategoriesBadgeMapping } from './categoryViewConstants';
 import { isLabelIDCaregoryKey } from './categoryViewHelpers';
 import { useCategoryPing } from './useCategoryPing';
 import { useCategoryViewExperiment } from './useCategoryViewExperiment';
 
 interface Props {
+    index: number;
     element?: Element;
     labelIDs?: string[];
     className?: string;
 }
 
-export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
+export const CategoryBadge = ({ element, labelIDs, className, index }: Props) => {
     const theme = useTheme();
     const { canSeeCategoryLabel } = useCategoryViewExperiment();
 
     useCategoryPing();
 
     const api = useApi();
+
+    const spotlight = useCategoryBadgeSpotlight();
 
     const [labelValue, setLabelValue] = useState(() =>
         (labelIDs || []).find((labelID) => isLabelIDCaregoryKey(labelID))
@@ -100,23 +105,32 @@ export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
 
     return (
         <>
-            <button
-                ref={anchorRef}
-                onClick={(e) => {
-                    e.stopPropagation();
-
-                    toggle();
-                }}
-                disabled={loading}
-                className={clsx(
-                    'badge-label-norm text-semibold w-fit-content shrink-0 flex items-center gap-2',
-                    theme.information.dark ? data.darkClassName : data.className,
-                    className
-                )}
+            <Spotlight
+                borderRadius="xl"
+                closeIcon="cross-big"
+                show={spotlight.shouldShowSpotlight && index === 0}
+                content={<CategoryBadgeSpotlightContent />}
+                onDisplayed={spotlight.onDisplayed}
+                onClose={spotlight.onClose}
             >
-                {loading && <CircleLoader size="small" />}
-                {data.label}
-            </button>
+                <button
+                    ref={anchorRef}
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        spotlight.onClose();
+                        toggle();
+                    }}
+                    disabled={loading}
+                    className={clsx(
+                        'badge-label-norm text-semibold w-fit-content shrink-0 flex items-center gap-2',
+                        theme.information.dark ? data.darkClassName : data.className,
+                        className
+                    )}
+                >
+                    {loading && <CircleLoader size="small" />}
+                    {data.label}
+                </button>
+            </Spotlight>
 
             <Dropdown
                 anchorRef={anchorRef}
