@@ -15,13 +15,13 @@ export const Pagination = ({ totalPages, currentPage, onPageChange }: Pagination
 
     return (
         <div className="flex flex-nowrap gap-2 items-center user-select-none">
-            <Button shape="ghost" onClick={() => onPageChange(currentPage - 1)} disabled={isFirstPage}>
+            <Button shape="ghost" onClick={() => onPageChange(currentPage - 1)} disabled={isFirstPage} icon>
                 <IcChevronLeft alt={c('meet_2025 Action').t`Previous page`} />
             </Button>
             <div>
                 {currentPage + 1}/{totalPages}
             </div>
-            <Button shape="ghost" onClick={() => onPageChange(currentPage + 1)} disabled={isLastPage}>
+            <Button shape="ghost" onClick={() => onPageChange(currentPage + 1)} disabled={isLastPage} icon>
                 <IcChevronRight alt={c('meet_2025 Action').t`Next page`} />
             </Button>
         </div>

@@ -30,7 +30,8 @@
 	.close-button {
 		background-color: var(--interaction-weak);
 
-		&:hover {
+		&:hover,
+		&:focus {
 			background-color: var(--interaction-weak-minor-1);
 		}
 	}
@@ -38,7 +39,8 @@
 	.leave-meeting-button {
 		background-color: var(--signal-danger-major-3);
 
-		&:hover {
+		&:hover,
+		&:focus {
 			background-color: var(--signal-danger-minor-1);
 		}
 	}
@@ -46,7 +48,8 @@
 	.leave-meeting-button-admin {
 		background-color: var(--interaction-weak-major-1);
 
-		&:hover {
+		&:hover,
+		&:focus {
 			background-color: var(--interaction-weak);
 		}
 	}

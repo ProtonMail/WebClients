@@ -46,7 +46,11 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeader
                 onClick={() => setBugReportModal(true)}
                 hasCaret={false}
             >
-                <IcBug size={6} className="apps-dropdown-button-icon shrink-0 no-print" />
+                <IcBug
+                    size={6}
+                    className="apps-dropdown-button-icon shrink-0 no-print"
+                    alt={c('meet_2025 Alt').t`Report a problem`}
+                />
             </DropdownButton>
         </div>
     );

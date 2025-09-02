@@ -80,7 +80,7 @@ export const MeetingCreatedModal = ({
                     style={{ '--w-custom': '20.5rem', '--max-w-custom': '20.5rem', '--h-custom': '16.9375rem' }}
                 >
                     <div className="flex flex-column items-start">
-                        <div className="color-weak">Invitation preview</div>
+                        <div className="color-weak">{c('meet_2025 Info').t`Invitation preview`}</div>
                         <div className="text-lg text-semibold">
                             {c('meet_2025 Info')
                                 .t`${user.DisplayName} has invited you to a ${BRAND_NAME} ${MEET_SHORT_APP_NAME} meeting:`}
@@ -118,7 +118,7 @@ export const MeetingCreatedModal = ({
                     className="mt-4"
                     text={inviteText}
                     isPrimary={true}
-                    title={c('meet_2025 Action').t`invitation text`}
+                    title={c('meet_2025 Action').t`Copy invitation text`}
                 />
             </ModalTwoContent>
         </ModalTwo>

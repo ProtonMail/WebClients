@@ -4,7 +4,8 @@
 }
 
 .time-input-option {
-	&:hover {
+	&:hover,
+	&:focus {
 		background-color: var(--interaction-norm-minor-3) !important;
 		color: var(--text-norm) !important;
 	}

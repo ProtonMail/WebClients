@@ -15,13 +15,15 @@
 }
 
 .request-permission-button {
-	&:hover {
+	&:hover,
+	&:focus {
 		color: var(--text-invert) !important;
 	}
 }
 
 .do-not-request-permission-button {
-	&:hover {
+	&:hover,
+	&:focus {
 		color: var(--primary) !important;
 	}
 }

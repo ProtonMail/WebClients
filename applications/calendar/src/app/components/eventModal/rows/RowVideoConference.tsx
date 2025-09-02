@@ -166,7 +166,10 @@ export const RowVideoConference = ({
                                     shape="outline"
                                     size="small"
                                     icon
-                                />
+                                >
+                                    <span className="sr-only">{c('meet_2025 Label')
+                                        .t`Choose a video conference provider`}</span>
+                                </DropdownButton>
                                 <Dropdown
                                     className="w-custom"
                                     isOpen={isDropdownOpen}
