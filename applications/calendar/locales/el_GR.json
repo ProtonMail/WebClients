@@ -141,6 +141,9 @@
       "Claim this address": [
         "Διεκδικήστε αυτή τη διεύθυνση"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Δημιουργήστε τη δωρεάν ${ BRAND_NAME } διεύθυνσή σας"
+      ],
       "Clear": [
         "Καθαρισμός"
       ],
@@ -4161,8 +4164,8 @@
       "customer support": [
         "εξυπηρέτηση πελατών"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Τα οικογενειακά πλάνα δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Τα οικογενειακά πλάνα δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Εάν αποδεχτείτε την πρόσκληση, θα σας αλλάξουμε από το τρέχον πλάνο σας και θα πιστώσουμε στον λογαριασμό σας τυχόν υπόλοιπο."
@@ -5307,9 +5310,6 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Στο επόμενο βήμα, θα μπορείτε να υποβάλετε μια κατάθεση χρησιμοποιώντας μια διεύθυνση Bitcoin."
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Συμπεριλαμβανομένου ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Indexing events: ${ current }/${ total }": [
         "Ενημέρωση ευρετηρίου με εκδηλώσεις: ${ current }/${ total }"
@@ -6713,9 +6713,6 @@
       ],
       "Username": [
         "Όνομα Χρήστη"
-      ],
-      "VAT": [
-        "ΦΠΑ"
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
@@ -8778,11 +8775,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Κατά τη διάρκεια αυτής της περιόδου, δε θα μπορείτε να τροποποιήσετε ή να ακυρώσετε τη συνδρομή σας. Παρακαλούμε περιμένετε μέχρι να ολοκληρωθεί η πληρωμή σας πριν επιχειρήσετε οποιεσδήποτε αλλαγές. Σας ευχαριστούμε για την υπομονή σας."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Εξαιρουμένων ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Εξαιρουμένων ${ taxRate }% φόρων ${ taxAmount }"
+      ],
       "Got it": [
         "Το κατάλαβα"
       ],
       "I'm purchasing as a business": [
         "Αγοράζω ως επιχείρηση"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Συμπεριλαμβανομένου ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Συμπεριλαμβανομένων ${ taxRate }% φόρων ${ taxAmount }"
       ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
@@ -8798,6 +8807,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Ανανεώνει σε ${ renewPriceStr }, ακυρώστε ανά πάσα στιγμή."
+      ],
+      "Taxes": [
+        "Φόροι"
       ],
       "terms & conditions": [
         "όροι και προϋποθέσεις"
@@ -8829,6 +8841,9 @@
       ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
+      ],
+      "VAT": [
+        "ΦΠΑ"
       ],
       "VAT number": [
         "Αριθμός ΑΦΜ"
@@ -11550,9 +11565,6 @@
       "${ n } wallet": [
         "${ n } πορτοφόλι",
         "${ n } πορτοφόλια"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Ένας ασφαλέστερος τρόπος για να φυλάξετε τα Bitcoin σας"
       ],
       "Bitcoin via Email": [
         "Bitcoin μέσω Εmail"

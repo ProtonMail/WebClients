@@ -143,6 +143,9 @@
       "Claim this address": [
         "Nárokovať si túto adresu"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Získajte vašu bezplatnú ${ BRAND_NAME } adresu"
+      ],
       "Clear": [
         "Vyčistiť"
       ],
@@ -4235,8 +4238,8 @@
       "customer support": [
         "zákaznícka podpora"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Rodinné plány v súčasnosti nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Rodinné plány v súčasnosti nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Ak pozvánku prijmete, zameníme váš aktuálny plán a zostávajúcu čiastku pripíšeme k vášmu účtu ako kredit."
@@ -5461,9 +5464,6 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "V ďalšom kroku budete môcť odoslať vklad pomocou Bitcoin adresy."
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Vrátane ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Indexing events: ${ current }/${ total }": [
         "Indexovanie udalostí: ${ current }/${ total }"
@@ -6893,9 +6893,6 @@
       ],
       "Username": [
         "Používateľské meno"
-      ],
-      "VAT": [
-        "DPH"
       ],
       "Verification code": [
         "Overovací kód"
@@ -9080,11 +9077,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Počas tohto obdobia nebudete môcť upraviť ani zrušiť svoje predplatné. Pred pokusom o akékoľvek zmeny počkajte, kým bude vaša platba dokončená. Ďakujeme vám za vašu trpezlivosť."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "S výnimkou ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Bez zahrnutia ${ taxRate }% daní: ${ taxAmount }"
+      ],
       "Got it": [
         "Rozumiem"
       ],
       "I'm purchasing as a business": [
         "Nakupujem ako firma"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Vrátane ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Vrátane ${ taxRate }% daní: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/RR"
@@ -9100,6 +9109,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje sa za ${ renewPriceStr }, zrušiť môžete kedykoľvek."
+      ],
+      "Taxes": [
+        "Dane"
       ],
       "terms & conditions": [
         "podmienky používania"
@@ -9139,6 +9151,9 @@
       ],
       "Timeout exceeded": [
         "Prekročený časový limit"
+      ],
+      "VAT": [
+        "DPH"
       ],
       "VAT number": [
         "DIČ"
@@ -11990,9 +12005,6 @@
         "${ n } peňaženky",
         "${ n } peňaženiek",
         "${ n } peňaženiek"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bezpečnejší spôsob vlastnenia Bitcoinu"
       ],
       "Bitcoin via Email": [
         "Bitcoin cez email"
