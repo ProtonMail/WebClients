@@ -1,12 +1,12 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, PassLogo } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import type { PaymentsCheckout } from '@proton/payments';
 import { DARK_WEB_MONITORING_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import type { PaymentsCheckout } from '@proton/shared/lib/helpers/checkout';
 
 import './OfferModal.scss';
 

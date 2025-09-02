@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,7 +7,7 @@ import { Layout } from '../components/Layout/Layout';
 import { RecoveryKitAside } from './RecoveryKitAside';
 
 type Props = {
-    onContinue: () => void;
+    onContinue: () => Promise<void>;
 };
 
 export const RecoveryKitStep: FC<Props> = ({ onContinue }) => {
