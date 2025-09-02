@@ -262,6 +262,9 @@
       "Claim this address": [
         "Διεκδικήστε αυτή τη διεύθυνση"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Δημιουργήστε τη δωρεάν ${ BRAND_NAME } διεύθυνσή σας"
+      ],
       "Clear all formatting": [
         "Απαλοιφή μορφοποιήσεων"
       ],
@@ -786,9 +789,6 @@
       ],
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
-      ],
-      "Give access now": [
-        "Δώστε πρόσβαση τώρα"
       ],
       "Go back": [
         "Επιστροφή"
@@ -5205,13 +5205,21 @@
       "${ BRAND_NAME } Account email": [
         "${ BRAND_NAME } ηλεκτρονική διεύθυνση Λογαριασμού"
       ],
+      "${ days } day left": [
+        "${ days } ημέρα απομένει",
+        "${ days } ημέρες απομένουν"
+      ],
+      "${ hours } hour left": [
+        "${ hours } ώρα απομένει",
+        "${ hours } ώρες απομένουν"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes } λεπτό απομένει",
+        "${ minutes } λεπτά απομένουν"
+      ],
       "${ n } day": [
         "${ n } ημέρα",
         "${ n } ημέρες"
-      ],
-      "${ n } day left": [
-        "${ n } ημέρα απομένει",
-        "${ n } ημέρες απομένουν"
       ],
       "${ user } is requesting emergency access to your account": [
         "${ user } ζητάει επείγουσα πρόσβαση στον λογαριασμό σας"
@@ -5318,6 +5326,9 @@
       "Less than a day": [
         "Λιγότερο από μία ημέρα"
       ],
+      "Less than a minute left": [
+        "Απομένει λιγότερο από ένα λεπτό"
+      ],
       "None": [
         "Κανένας"
       ],
@@ -5381,6 +5392,9 @@
       ],
       "Time required before automatically giving access": [
         "Απαιτούμενος χρόνος πριν την αυτόματη παροχή πρόσβασης"
+      ],
+      "Time required before automatically giving you access": [
+        "Απαιτούμενος χρόνος πριν σας δοθεί αυτόματα πρόσβαση"
       ],
       "Time required before automatically granting them access": [
         "Απαιτούμενος χρόνος πριν την αυτόματη παροχή πρόσβασης σε αυτούς"
@@ -6493,8 +6507,8 @@
       "customer support": [
         "εξυπηρέτηση πελατών"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Τα οικογενειακά πλάνα δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Τα οικογενειακά πλάνα δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Εάν αποδεχτείτε την πρόσκληση, θα σας αλλάξουμε από το τρέχον πλάνο σας και θα πιστώσουμε στον λογαριασμό σας τυχόν υπόλοιπο."
@@ -9204,9 +9218,6 @@
       "Include device, location, and IP details": [
         "Περίληψη στοιχεία συσκευής, τοποθεσίας και IP"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Συμπεριλαμβανομένου ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Αυξήστε την ασφάλεια του λογαριασμού σας επαληθεύοντας τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
       ],
@@ -9794,9 +9805,6 @@
       ],
       "Please use another browser or download the file.": [
         "Χρησιμοποιήστε άλλο πρόγραμμα περιήγησης ή κατεβάστε το αρχείο."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Παρακαλώ επαληθεύστε τη πληρωμή που βρίσκεται στη νέα καρτέλα που έχει ανοιχτεί."
       ],
       "Please wait till your changes are synced with the server.": [
         "Παρακαλούμε περιμένετε έως ότου οι αλλαγές σας συγχρονιστούν με τον διακομιστή."
@@ -10616,9 +10624,6 @@
       ],
       "Vault updated": [
         "Η κρύπτη ενημερώθηκε"
-      ],
-      "Verification can take a few minutes.": [
-        "Η επαλήθευση μπορεί να πάρει μερικά λεπτά."
       ],
       "Verification link expired": [
         "Ο σύνδεσμος επαλήθευσης έληξε"
@@ -12848,9 +12853,6 @@
       ],
       "Value": [
         "Τιμή"
-      ],
-      "VAT": [
-        "ΦΠΑ"
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
@@ -16330,11 +16332,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Κατά τη διάρκεια αυτής της περιόδου, δε θα μπορείτε να τροποποιήσετε ή να ακυρώσετε τη συνδρομή σας. Παρακαλούμε περιμένετε μέχρι να ολοκληρωθεί η πληρωμή σας πριν επιχειρήσετε οποιεσδήποτε αλλαγές. Σας ευχαριστούμε για την υπομονή σας."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Εξαιρουμένων ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Εξαιρουμένων ${ taxRate }% φόρων ${ taxAmount }"
+      ],
       "Got it": [
         "Το κατάλαβα"
       ],
       "I'm purchasing as a business": [
         "Αγοράζω ως επιχείρηση"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Συμπεριλαμβανομένου ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Συμπεριλαμβανομένων ${ taxRate }% φόρων ${ taxAmount }"
       ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
@@ -16353,6 +16367,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Ανανεώνει σε ${ renewPriceStr }, ακυρώστε ανά πάσα στιγμή."
+      ],
+      "Taxes": [
+        "Φόροι"
       ],
       "terms & conditions": [
         "όροι και προϋποθέσεις"
@@ -16387,6 +16404,9 @@
       ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
+      ],
+      "VAT": [
+        "ΦΠΑ"
       ],
       "VAT number": [
         "Αριθμός ΑΦΜ"
@@ -22078,8 +22098,8 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Οι υποφάκελοι συστήματος θα εμφανιστούν στο ${ MAIL_APP_NAME } ως χωριστοί φάκελοι"
       ],
-      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
-        "Η διεύθυνση έχει αποσυνδεθεί. Η αποστολή μηνυμάτων έχει τεθεί σε παύση. Επανασυνδεθείτε για να ενεργοποιήσετε ξανά αυτή τη διεύθυνση."
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Η διεύθυνση έχει αποσυνδεθεί. Η αποστολή και η λήψη μηνυμάτων έχει τεθεί σε παύση. Επανασυνδεθείτε για να ενεργοποιήσετε ξανά αυτή τη διεύθυνση."
       ],
       "The import will start with the most recent messages.": [
         "Η εισαγωγή θα ξεκινήσει με τα πιο πρόσφατα μηνύματα."

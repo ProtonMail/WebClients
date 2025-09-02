@@ -36,12 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "${ numberOfAddresses } address": [
-        "${ numberOfAddresses } adresa",
-        "${ numberOfAddresses } adresy",
-        "${ numberOfAddresses } adres",
-        "${ numberOfAddresses } adres"
-      ],
       "A to Z": [
         "Od A do Z"
       ],
@@ -329,9 +323,6 @@
       ],
       "Copy alias “${ name }”": [
         "Kopírovat alias \"${ name }\""
-      ],
-      "Copy email address": [
-        "Kopírovat e-mailovou adresu"
       ],
       "Copy email to clipboard": [
         "Zkopírovat e-mail do schránky"
@@ -822,9 +813,6 @@
       "Make it friendly": [
         "Přátelská forma"
       ],
-      "Manage addresses": [
-        "Spravovat adresy"
-      ],
       "Manage advanced account protections": [
         "Spravovat pokročilé ochrany účtu"
       ],
@@ -920,6 +908,9 @@
       ],
       "More search options": [
         "Více možností vyhledávání"
+      ],
+      "Most frequent": [
+        "Nejčastější"
       ],
       "Most read": [
         "Nejčtenější"
@@ -1082,6 +1073,9 @@
       ],
       "Read receipt sent": [
         "Potvrzení o přečtení odesláno"
+      ],
+      "Recently read": [
+        "Nedávno čtené"
       ],
       "Recently received": [
         "Nedávno přijaté"
@@ -4094,9 +4088,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Zjednodušte synchronizaci a plánování pomocí sdílených kalendářů."
       ],
-      "This view shows messages sent to the following addresses:": [
-        "Toto zobrazení zobrazuje zprávy odeslané na následující adresy:"
-      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Pro pokračování v používání asistenta psaní, ho přidejte k vašemu předplatnému."
       ],
@@ -5354,8 +5345,8 @@
       "customer support": [
         "zákaznická podpora"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Rodinné tarify v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Tarify Family v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Pokud pozvánku přijmete, převedeme Vás ze stávajícího tarifu a na váš účet připíšeme zbývající částku."
@@ -7460,9 +7451,6 @@
       "Included for free with your plan": [
         "Bezplatně v rámci vašeho tarifu"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Včetně ${ formattedTaxRate } % ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Převzato z nadřazené složky"
       ],
@@ -8215,6 +8203,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Byla zjištěna chyba podpisu, použitém k ověření detailů kontaktu, což může být důsledkem resetu hesla."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Tyto konverzace jsou zde uchovávány na základě zásady uchovávání dat vaší organizace."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Nemohou vám zasílat spam, pokud neznají vaši e-mailovou adresu. Chraňte svou e-mailovou schránku pomocí funkce Hide-my-email."
@@ -9363,6 +9354,9 @@
       "Cash": [
         "Hotovost"
       ],
+      "Categories badge": [
+        "Štítek kategorií"
+      ],
       "Category": [
         "Kategorie"
       ],
@@ -9524,6 +9518,9 @@
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Pomozte nám vylepšit nastávající třídění pošty."
       ],
       "Hide password": [
         "Skrýt heslo"
@@ -9813,6 +9810,9 @@
       "System information": [
         "Informace o systému"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "Kategorie byla aktualizována, děkujeme za vaši zpětnou vazbu!"
+      ],
       "The filter is disabled. ${ enableButton }": [
         "Filtr je deaktivován. ${ enableButton }"
       ],
@@ -9861,9 +9861,6 @@
       "Username": [
         "Uživatelské jméno"
       ],
-      "VAT": [
-        "DPH"
-      ],
       "Verification code": [
         "Ověřovací kód"
       ],
@@ -9879,11 +9876,20 @@
       "Weak password": [
         "Slabé heslo"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Vylepšujeme způsob jak jsou emaily tříděny. Vaše zpětná vazba pomáhá, aby byl chytřejší a přesnější."
+      ],
       "What happened?": [
         "Co se stalo?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "Jaký je váš hlavní důvod pro zrušení nebo snížení vašeho předplatného?"
+      ],
+      "Which category should this be recategorized under?": [
+        "Do které kategorie by to mělo být přeřazeno?"
+      ],
+      "Why am I seeing this?": [
+        "Proč se mi to zobrazuje?"
       ],
       "With attachment": [
         "S přílohou"
@@ -10051,6 +10057,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Vytvořte nový kalendář pro správu pozvánek"
+      ],
+      "Deleted": [
+        "Smazáno"
       ],
       "Drafts": [
         "Koncepty"
@@ -12164,11 +12173,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Během této doby nebudete moci předplatné upravit ani zrušit. Než se pokusíte provést jakékoli změny, počkejte, dokud nebude platba dokončena. Děkujeme vám za trpělivost."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Bez ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Bez ${ taxRate }% daně: ${ taxAmount }"
+      ],
       "Got it": [
         "Rozumím"
       ],
       "I'm purchasing as a business": [
         "Kupuji jako firma"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Včetně ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Včetně ${ taxRate }% daně: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/RR"
@@ -12184,6 +12205,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje se za ${ renewPriceStr }, zrušit lze kdykoli."
+      ],
+      "Taxes": [
+        "Daně"
       ],
       "terms & conditions": [
         "smluvních podmínek užívání"
@@ -12223,6 +12247,9 @@
       ],
       "Timeout exceeded": [
         "Byl překročen časový limit"
+      ],
+      "VAT": [
+        "DPH"
       ],
       "VAT number": [
         "DIČ"
@@ -14268,6 +14295,12 @@
       "Conversation removed from Starred.": [
         "Konverzaci byla odebrána hvězdička."
       ],
+      "Conversation updated": [
+        "Konverzace aktualizována",
+        "Konverzace aktualizovány",
+        "Konverzace aktualizovány",
+        "Konverzace aktualizovány"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Konverzace od ${ sendersList } budou označeny jako ${ labelsList }"
       ],
@@ -14343,6 +14376,12 @@
       "Message removed from Starred.": [
         "Zprávě odebrána hvězdička."
       ],
+      "Message updated": [
+        "Zpráva aktualizována",
+        "Zprávy aktualizovány",
+        "Zprávy aktualizovány",
+        "Zprávy aktualizovány"
+      ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Zprávy od ${ sendersList } budou označeny jako ${ labelsList }"
       ],
@@ -14390,6 +14429,12 @@
       ],
       "Read receipt sent": [
         "Potvrzení o přečtení odesláno"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Změna kategorie ${ elementsCount } zprávy.",
+        "Změna kategorie ${ elementsCount } zpráv.",
+        "Změna kategorie ${ elementsCount } zpráv.",
+        "Změna kategorie ${ elementsCount } zpráv."
       ],
       "Self-destruction removed": [
         "Samozničení odebráno"
@@ -15628,9 +15673,6 @@
       "Your account is protected": [
         "Váš účet je chráněn"
       ],
-      "Your addresses": [
-        "Vaše adresy"
-      ],
       "Your changes are not synced yet": [
         "Vaše změny zatím nejsou synchronizovány"
       ],
@@ -15884,9 +15926,6 @@
         "${ n } peněženky",
         "${ n } peněženek",
         "${ n } peněženek"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bezpečnější způsob jak vlastnit Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin přes e-mail"

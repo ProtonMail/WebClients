@@ -36,10 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
-      "${ numberOfAddresses } address": [
-        "${ numberOfAddresses } dirección",
-        "${ numberOfAddresses } direcciones"
-      ],
       "A to Z": [
         "A-Z"
       ],
@@ -325,9 +321,6 @@
       ],
       "Copy alias “${ name }”": [
         "Copiar el alias «${ name }»"
-      ],
-      "Copy email address": [
-        "Copiar la dirección de correo electrónico"
       ],
       "Copy email to clipboard": [
         "Copiar correo al portapapeles"
@@ -812,9 +805,6 @@
       "Make it friendly": [
         "Hazlo más amigable"
       ],
-      "Manage addresses": [
-        "Administrar direcciones"
-      ],
       "Manage advanced account protections": [
         "Administrar protecciones avanzadas de la cuenta"
       ],
@@ -910,6 +900,9 @@
       ],
       "More search options": [
         "Más opciones de búsqueda"
+      ],
+      "Most frequent": [
+        "Más frecuente"
       ],
       "Most read": [
         "Más leído"
@@ -1072,6 +1065,9 @@
       ],
       "Read receipt sent": [
         "Confirmación de lectura enviada"
+      ],
+      "Recently read": [
+        "Leído recientemente"
       ],
       "Recently received": [
         "Recibidos recientemente"
@@ -4080,9 +4076,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifica la sincronización y la programación con calendarios compartidos."
       ],
-      "This view shows messages sent to the following addresses:": [
-        "Esta vista muestra mensajes enviados a las siguientes direcciones:"
-      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Para continuar usando el asistente de escritura, añádelo a tu suscripción."
       ],
@@ -5310,8 +5303,8 @@
       "customer support": [
         "atención al cliente"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Los planes familiares actualmente no admiten cuentas externas. Crea una dirección de ${ BRAND_NAME } antes de unirte. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Los planes familiares actualmente no admiten cuentas externas. Crea una dirección de ${ BRAND_NAME } antes de unirte. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si aceptas la invitación, te cambiaremos de plan y abonaremos en tu cuenta el saldo que quede restante."
@@ -7254,9 +7247,6 @@
       "Included for free with your plan": [
         "Incluido gratis con tu plan"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incluyendo ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Heredado de la carpeta principal"
       ],
@@ -7999,6 +7989,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Se ha producido un error con la firma utilizada para verificar los datos del contacto. Esto puede ser el resultado de un restablecimiento de contraseña."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Estas conversaciones se mantienen aquí según la política de retención de datos de su organización."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "No pueden enviarte spam si no conocen tu dirección de correo. Protege tu buzón con alias de Hide-my-email."
@@ -9097,6 +9090,9 @@
       "Cash": [
         "Efectivo"
       ],
+      "Categories badge": [
+        "Distintivo de las categorías"
+      ],
       "Category": [
         "Categoría"
       ],
@@ -9258,6 +9254,9 @@
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Ayúdanos a mejorar la próxima categorización de correo"
       ],
       "Hide password": [
         "Ocultar contraseña"
@@ -9547,6 +9546,9 @@
       "System information": [
         "Información del sistema"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "La categoría ha sido actualizada. Gracias por tus comentarios."
+      ],
       "The filter is disabled. ${ enableButton }": [
         "El filtro está desactivado. ${ enableButton }"
       ],
@@ -9595,9 +9597,6 @@
       "Username": [
         "Nombre de usuario"
       ],
-      "VAT": [
-        "IVA"
-      ],
       "Verification code": [
         "Código de verificación"
       ],
@@ -9613,11 +9612,20 @@
       "Weak password": [
         "Contraseña poco segura"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Estamos mejorando cómo se clasifican los correos electrónicos. Tus comentarios ayudarán a que sea más eficiente y preciso."
+      ],
       "What happened?": [
         "¿Qué ha ocurrido?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "¿Cuál es tu motivo principal por el que cancelas o bajas de plan?"
+      ],
+      "Which category should this be recategorized under?": [
+        "¿En qué categoría debería reasignarse esto?"
+      ],
+      "Why am I seeing this?": [
+        "¿Por qué veo esto?"
       ],
       "With attachment": [
         "Con archivo adjunto"
@@ -9786,6 +9794,9 @@
       "Create a new calendar to manage your invitations": [
         "Crear un calendario para gestionar tus invitaciones."
       ],
+      "Deleted": [
+        "Eliminado"
+      ],
       "Drafts": [
         "Borradores"
       ],
@@ -9916,7 +9927,7 @@
         "Programado"
       ],
       "Sent": [
-        "Enviada"
+        "Enviados"
       ],
       "settings": [
         "ajustes"
@@ -11826,11 +11837,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante este tiempo no podrás modificar o cancelar tu suscripción. Espera hasta que tu pago se complete antes de intentar cualquier cambio. Gracias por tu paciencia."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
+      ],
       "Got it": [
         "Entiendo"
       ],
       "I'm purchasing as a business": [
         "Estoy comprando como empresa"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -11846,6 +11869,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Se renueva por ${ renewPriceStr } y cancela cuando quieras."
+      ],
+      "Taxes": [
+        "Impuestos"
       ],
       "terms & conditions": [
         "los términos y condiciones"
@@ -11877,6 +11903,9 @@
       ],
       "Timeout exceeded": [
         "Se ha agotado el tiempo de espera."
+      ],
+      "VAT": [
+        "IVA"
       ],
       "VAT number": [
         "Número de IVA"
@@ -13797,6 +13826,10 @@
       "Conversation removed from Starred.": [
         "Conversación removida de Destacados."
       ],
+      "Conversation updated": [
+        "Conversación actualizada",
+        "Conversaciones actualizadas"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Las conversaciones de ${ sendersList } serán etiquetadas como ${ labelsList }"
       ],
@@ -15109,9 +15142,6 @@
       "Your account is protected": [
         "Tu cuenta está protegida."
       ],
-      "Your addresses": [
-        "Tus direcciones"
-      ],
       "Your changes are not synced yet": [
         "Tus cambios todavía no están sincronizados."
       ],
@@ -15339,9 +15369,6 @@
       "${ n } wallet": [
         "${ n } cartera",
         "${ n } carteras"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Una forma más segura de mantener tu Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin vía correo electrónico"

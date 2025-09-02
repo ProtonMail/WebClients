@@ -5080,12 +5080,6 @@
         "${ n } дня",
         "${ n } дня"
       ],
-      "${ n } day left": [
-        "${ n } день остался",
-        "${ n } дня осталось",
-        "${ n } дней осталось",
-        "${ n } дней осталось"
-      ],
       "Access granted": [
         "Доступ разрешён"
       ],
@@ -6134,9 +6128,6 @@
       ],
       "customer support": [
         "служба поддержки"
-      ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Семейные тарифы в настоящее время не поддерживают внешние аккаунты. Создайте адрес ${ BRAND_NAME } перед тем, как присоединиться. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Если вы примете приглашение, тарифный план будет изменен. Неиспользованный баланс возвратится на счет аккаунта."
@@ -8851,9 +8842,6 @@
       "inactive": [
         "неактивный"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Включая ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Повысьте защищенность своего аккаунта, подтвердив адрес вашей электронной почты."
       ],
@@ -9423,9 +9411,6 @@
       ],
       "Please use another browser or download the file.": [
         "Пожалуйста, воспользуйтесь другим браузером или загрузите файл."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Пожалуйста, подтвердите оплату в новой открывшейся вкладке."
       ],
       "Please wait till your changes are synced with the server.": [
         "Ожидайте пока изменения синхронизируются с сервером."
@@ -10227,9 +10212,6 @@
       ],
       "Vault updated": [
         "Хранилище обновлено"
-      ],
-      "Verification can take a few minutes.": [
-        "Проверка может занять несколько минут."
       ],
       "Verification link expired": [
         "Срок действия проверочной ссылки истёк"
@@ -12386,9 +12368,6 @@
       ],
       "Value": [
         "Значение"
-      ],
-      "VAT": [
-        "НДС"
       ],
       "Verification code": [
         "Код подтверждения"

@@ -220,6 +220,9 @@
       "Cancel": [
         "キャンセル"
       ],
+      "Cancel request": [
+        "リクエストをキャンセル"
+      ],
       "Cancel subscription": [
         "サブスクリプションをキャンセル"
       ],
@@ -258,6 +261,9 @@
       ],
       "Claim this address": [
         "このアドレスを取得"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "無料の${ BRAND_NAME }アドレスを取得"
       ],
       "Clear all formatting": [
         "書式をすべて消去"
@@ -784,9 +790,6 @@
       "Get verification code": [
         "認証コードを取得"
       ],
-      "Give access now": [
-        "今すぐアクセス権を付与"
-      ],
       "Go back": [
         "もどる"
       ],
@@ -1081,6 +1084,9 @@
       "refresh the page": [
         "ページを更新"
       ],
+      "Refuse access": [
+        "アクセスを拒否する"
+      ],
       "Reject": [
         "拒否"
       ],
@@ -1191,6 +1197,9 @@
       ],
       "Revoke ${ name }": [
         "${ name } を失効させる"
+      ],
+      "Revoke access": [
+        "アクセスの失効"
       ],
       "Revoke all other sessions": [
         "ほかのすべてのセッションを取り消す"
@@ -1724,6 +1733,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "アドレス「${ emailAddress }」の不足しているキーを生成します"
       ],
+      "Reconnect": [
+        "再接続"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "アドレス「${ emailAddress }」を再接続します"
+      ],
       "Saving": [
         "保存中"
       ],
@@ -1746,6 +1761,9 @@
       ],
       "Disabled": [
         "無効"
+      ],
+      "Disconnected": [
+        "切断されました"
       ],
       "External": [
         "外部"
@@ -5168,20 +5186,29 @@
       "${ n } day": [
         "${ n } 日"
       ],
-      "${ n } day left": [
-        "残り ${ n } 日"
+      "${ user } is requesting emergency access to your account": [
+        "${ user }がお客様のアカウントへの緊急アクセスをリクエストしています"
       ],
       "${ user } will be able to use your account and change your data.": [
         "${ user } はお客様のアカウントを使用し、お客様のデータを変更できるようになります。"
       ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user }はお客様のアカウントからサインアウトされ、次回の緊急アクセスまで再度アクセスすることはできません。"
+      ],
       "${ user } will no longer be able to request access to your account in case of emergency.": [
         "${ user }様は緊急時にお客様のアカウントへのアクセスをリクエストできなくなります。"
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } は、次回の緊急アクセスまでお客様のアカウントにアクセスできません。"
       ],
       "Access granted": [
         "アクセスが許可されました"
       ],
       "Access granted on ${ formattedAccessibleAt }": [
         "${ formattedAccessibleAt } にアクセスが許可されました"
+      ],
+      "Access request canceled": [
+        "アクセスリクエストがキャンセルされました"
       ],
       "Access requested": [
         "アクセスを要求されました。"
@@ -5197,6 +5224,9 @@
       ],
       "Added on ${ formattedDate }": [
         "${ formattedDate } に追加されました"
+      ],
+      "Cancel request?": [
+        "リクエストをキャンセルしますか？"
       ],
       "Change access wait time": [
         "アクセス待機時間の変更"
@@ -5225,8 +5255,17 @@
       "Emergency access granted": [
         "緊急アクセスが許可されました"
       ],
+      "Emergency access refused": [
+        "緊急アクセスが拒否されました"
+      ],
+      "Emergency access request": [
+        "緊急アクセスがリクエストされました"
+      ],
       "Emergency access requested": [
         "緊急アクセスが要求されました"
+      ],
+      "Emergency access revoked": [
+        "緊急アクセスが取り消されました"
       ],
       "Emergency contact added": [
         "緊急連絡先が追加されました"
@@ -5270,6 +5309,12 @@
       "Protect your legacy with emergency access": [
         "緊急アクセスでお客様の遺産を保護します"
       ],
+      "Refuse access": [
+        "アクセスを拒否する"
+      ],
+      "Refuse access?": [
+        "アクセスを拒否しますか？"
+      ],
       "Remove trusted contact": [
         "信頼済みの連絡先から削除"
       ],
@@ -5281,6 +5326,12 @@
       ],
       "Requesting access": [
         "アクセスをリクエストしています"
+      ],
+      "Revoke access": [
+        "アクセスの失効"
+      ],
+      "Revoke access?": [
+        "アクセスを取り消しますか？"
       ],
       "Stop being trusted contact?": [
         "信頼できる連絡先を停止しますか?"
@@ -5294,11 +5345,17 @@
       "They may ask to access my account in case of an emergency.": [
         "緊急の場合、自分のアカウントへのアクセスが求められることがあります。"
       ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "彼らは**${ days }日**後に、**${ formattedAccessibleAt }**に自動的にアクセスできるようになります。お客様はいつでも彼らのリクエストを拒否するか、すぐにアクセスを許可できます。"
+      ],
       "This will take effect immediately.": [
         "これは直ちに適用されます。"
       ],
       "Time required before automatically giving access": [
         "自動的にアクセスを付与するまでに必要な時間"
+      ],
+      "Time required before automatically giving you access": [
+        "自動的にお客様にアクセスを付与するまでに必要な時間"
       ],
       "Time required before automatically granting them access": [
         "自動的にアクセスを許可するまでに必要な時間"
@@ -5347,6 +5404,9 @@
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "緊急時に${ user }様のアカウントへのアクセスをリクエストできなくなります。"
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "後で${ user }様のアカウントへのアクセスをリクエストできるようになります。"
       ],
       "You'll receive access to their account immediately.": [
         "お客様は、すぐに彼らのアカウントにアクセスできるようになります。"
@@ -6399,8 +6459,8 @@
       "customer support": [
         "カスタマーサポート"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "ファミリープランは現在外部のアカウントをサポートしていません。参加する前に${ BRAND_NAME }アドレスを作成してください。${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "ファミリープランは現在外部のアカウントをサポートしていません。参加する前に${ BRAND_NAME }アドレスを作成してください。${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "招待を受けると、あなたの現在のプランは変更され、残高があればあなたのアカウントクレジットに追加されます。"
@@ -9048,9 +9108,6 @@
       "Include device, location, and IP details": [
         "デバイス、位置情報、IPの詳細を含める"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }% ${ taxName }: ${ price } を含む"
-      ],
       "Increase your account security by verifying your email address.": [
         "メールアドレスを確認することで、アカウントのセキュリティを高めることができます。"
       ],
@@ -9632,9 +9689,6 @@
       ],
       "Please use another browser or download the file.": [
         "他のブラウザを使用するか、このファイルをダウンロードしてください。"
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "新しいタブで支払いを確認してください。"
       ],
       "Please wait till your changes are synced with the server.": [
         "変更がサーバーで同期されるまでお待ちください。"
@@ -10449,9 +10503,6 @@
       "Vault updated": [
         "保管庫が更新されました"
       ],
-      "Verification can take a few minutes.": [
-        "検証に数分かかることがあります。"
-      ],
       "Verification link expired": [
         "検証リンクの有効期限が切れました"
       ],
@@ -11148,6 +11199,9 @@
       ],
       "Donation": [
         "寄付"
+      ],
+      "Manual": [
+        "マニュアル"
       ],
       "Modification": [
         "変更"
@@ -12655,9 +12709,6 @@
       ],
       "Value": [
         "値"
-      ],
-      "VAT": [
-        "付加価値税"
       ],
       "Verification code": [
         "認証コード"
@@ -16090,11 +16141,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "この期間中、サブスクリプションを変更またはキャンセルすることはできません。 変更を試みる前にお支払いが完了するまでお待ちください。お待ちください。"
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName }を除く: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% の税金を除く: ${ taxAmount }"
+      ],
       "Got it": [
         "分かりました"
       ],
       "I'm purchasing as a business": [
         "法人として購入します"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName }: ${ taxAmount } を含む"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% の税金込み: ${ taxAmount }"
       ],
       "MM/YY": [
         "月/年"
@@ -16113,6 +16176,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
+      ],
+      "Taxes": [
+        "税金"
       ],
       "terms & conditions": [
         "利用規約"
@@ -16143,6 +16209,9 @@
       ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
+      ],
+      "VAT": [
+        "付加価値税"
       ],
       "VAT number": [
         "VAT番号"
@@ -21747,6 +21816,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれぞれのフォルダーとして表示されます"
+      ],
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "アドレスは接続解除されました。メッセージの送信および受信は一時停止されています。このアドレスを再び有効にするには、再接続してください。"
       ],
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"

@@ -2885,9 +2885,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "În pasul următor, veți putea trimite o depunere folosind o adresă de Bitcoin."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inclusiv ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Moştenit de la folderul părinte"
       ],
@@ -3396,9 +3393,6 @@
       ],
       "Thomas": [
         "Toma"
-      ],
-      "VAT": [
-        "TVA"
       ],
       "Verification code": [
         "Cod de verificare"
@@ -4586,11 +4580,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "În acest timp, nu vă veți putea modifica sau anula abonamentul. Vă rugăm să așteptați până când plata este finalizată înainte de a încerca orice modificare. Vă mulțumim pentru răbdare."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluzând taxe de ${ taxRate }%: ${ taxAmount }"
+      ],
       "Got it": [
         "Am înțeles"
       ],
       "I'm purchasing as a business": [
         "Achiziționez în calitate de companie"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluzând taxe de ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "LL/AA"
@@ -4606,6 +4612,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Reînnoire cu ${ renewPriceStr }, anulați oricând."
+      ],
+      "Taxes": [
+        "Taxe"
       ],
       "terms & conditions": [
         "termeni și condiții"
@@ -4641,6 +4650,9 @@
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
+      ],
+      "VAT": [
+        "TVA"
       ],
       "VAT number": [
         "Valoare TVA"
@@ -6863,9 +6875,6 @@
         "Portofele: ${ n }",
         "Portofele: ${ n }",
         "Portofele: ${ n }"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "O metodă mai sigură de a vă păstra monedele Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"

@@ -220,6 +220,9 @@
       "Cancel": [
         "გაუქმება"
       ],
+      "Cancel request": [
+        "მოთხოვნის გაუქმება"
+      ],
       "Cancel subscription": [
         "გამოწერის გაუქმება"
       ],
@@ -730,6 +733,9 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName }-ის მიღება"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "მიიღეთ უფასო ${ BRAND_NAME }-ის მისამართი"
+      ],
       "Get a new encrypted email address": [
         "მიიღეთ ახალი დაშიფრული ელფოსტის მისამართი"
       ],
@@ -780,9 +786,6 @@
       ],
       "Get verification code": [
         "შემოწმების კოდის მიღება"
-      ],
-      "Give access now": [
-        "წვდომის მინიჭება ახლავე"
       ],
       "Go back": [
         "უკან დაბრუნება"
@@ -1066,6 +1069,9 @@
       "Refer a friend": [
         "მიმართეთ მეგობარს"
       ],
+      "Refresh": [
+        "განახლება"
+      ],
       "Refresh status": [
         "სტატუსის განახლება"
       ],
@@ -1074,6 +1080,9 @@
       ],
       "refresh the page": [
         "გვერდის განახლება"
+      ],
+      "Refuse access": [
+        "წვდომის უარყოფა"
       ],
       "Reject": [
         "უარყოფა"
@@ -1185,6 +1194,9 @@
       ],
       "Revoke ${ name }": [
         "${ name }-ის გაუქმება"
+      ],
+      "Revoke access": [
+        "წვდომის გაუქმება"
       ],
       "Revoke all other sessions": [
         "ყველა დანარჩენი სესიის გაუქმება"
@@ -1723,6 +1735,9 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "ნაკლული გასაღებების გენერაცია მისამართისთვის \"${ emailAddress }\""
       ],
+      "Reconnect": [
+        "თავიდან დაკავშირება"
+      ],
       "Saving": [
         "შენახვა"
       ],
@@ -1744,6 +1759,9 @@
         "ნაგულისხმევი"
       ],
       "Disabled": [
+        "გათიშულია"
+      ],
+      "Disconnected": [
         "გათიშულია"
       ],
       "External": [
@@ -5107,16 +5125,18 @@
       ]
     },
     "emergency_access": {
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME }-ის ანგარიშის ელფოსტა"
+      ],
       "${ n } day": [
         "${ n } დღე",
         "${ n } დღე"
       ],
-      "${ n } day left": [
-        "დარჩენილია ${ n } დღე",
-        "დარჩენილია ${ n } დღე"
-      ],
       "Access granted": [
         "წვდომა მონიჭებულია"
+      ],
+      "Access request canceled": [
+        "წვდომის მოთხოვნა გაუქმდა"
       ],
       "Access requested": [
         "წვდომა მოთხოვნილია"
@@ -5126,6 +5146,12 @@
       ],
       "Add emergency contact": [
         "სასწრაფო კონტაქტის დამატება"
+      ],
+      "Added on ${ formattedDate }": [
+        "დამატების თარიღია ${ formattedDate }"
+      ],
+      "Cancel request?": [
+        "გავაუქმო მოთხოვნა?"
       ],
       "Change access wait time": [
         "წვდომის მოლოდინის დროის შეცვლა"
@@ -5142,8 +5168,17 @@
       "Emergency access granted": [
         "სასწრაფო წვდომა მინიჭებულია"
       ],
+      "Emergency access refused": [
+        "სასწრაფო წვდომა უარყოფილია"
+      ],
+      "Emergency access request": [
+        "სასწრაფო წვდომის მოთხოვნა"
+      ],
       "Emergency access requested": [
         "სასწრაფო წვდომა მოთხოვნილია"
+      ],
+      "Emergency access revoked": [
+        "სასწრაფო წვდომა გაუქმდა"
       ],
       "Emergency contact added": [
         "სასწრაფო კონტაქტი დამატებულია"
@@ -5163,6 +5198,9 @@
       "Immediate": [
         "დაუყონებლივ"
       ],
+      "Included with ${ planName }": [
+        "მოჰყვება გეგმას ${ planName }"
+      ],
       "Less than a day": [
         "დღეზე ნაკლები"
       ],
@@ -5178,6 +5216,12 @@
       "People who trust me": [
         "ხალხი, რომელიც მენდობა"
       ],
+      "Refuse access": [
+        "წვდომის უარყოფა"
+      ],
+      "Refuse access?": [
+        "უარვყო წვდომა?"
+      ],
       "Remove trusted contact": [
         "სანდო კონტაქტის წაშლა"
       ],
@@ -5186,6 +5230,15 @@
       ],
       "Requesting access": [
         "მიმდინარეობს წვდომის მოთხოვნა"
+      ],
+      "Revoke access": [
+        "წვდომის გაუქმება"
+      ],
+      "Revoke access?": [
+        "გავაუქმო წვდომა?"
+      ],
+      "Stop being trusted contact?": [
+        "შევწყვიტო სანდო კონტაქტად ყოფნა?"
       ],
       "Subscription expired": [
         "გამოწერას ვადა ამოიწურა"
@@ -6259,9 +6312,6 @@
       ],
       "customer support": [
         "მხარდაჭერის გუნდი"
-      ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "ოჯახის გეგმებს, ამჟამად, გარე ანგარიშების მხარდაჭერა არ გააჩნიათ. შეერთებამდე ${ BRAND_NAME }-ის ანგარიში შექმენით. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "თუ მოსაწევევს მიიღებთ, ჩვენ თქვენი მიმდინარე ტრიფიდან გადაგრთავთ და დარჩენილ ბალანსს ანგარიშზე დაგირიცხავთ."
@@ -7893,6 +7943,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "ანგარიშთან წვდომა აკრძალულია გადაუხდელი ინვოისების გამო. დაუკავშირდით თქვენს ადმინისტრატორს."
       ],
+      "Account monitor": [
+        "ანგარიშის მონიტორინგი"
+      ],
       "account recovery and data recovery method": [
         "ანგარიშისა და მონაცემების აღდგენის მეთოდი"
       ],
@@ -8408,6 +8461,9 @@
       "Disabled countries": [
         "გამორთული ქვეყნები"
       ],
+      "Disabled on ${ boldValue }": [
+        "გათიშვის თარიღი ${ boldValue }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "2FA-ის გათიშვა თქვენს ანგარიშს ნაკლებად დაცულს გახდის. გააგრძელეთ, თუ ზუსტად იცით, რას აკეთებთ."
       ],
@@ -8558,6 +8614,9 @@
       ],
       "Enabled countries": [
         "ჩართული ქვეყნები"
+      ],
+      "Enabled on ${ boldValue }": [
+        "ჩართვის თარიღი ${ boldValue }"
       ],
       "Enabling auto-deletion…": [
         "ავტოამოცნობის ჩართვა…"
@@ -8717,6 +8776,9 @@
       ],
       "Gain visibility across your organization": [
         "აიმაღლეთ ხილვადობა თქვენს ორიგანიზაციაში"
+      ],
+      "Gateway monitor": [
+        "რაუტერის მონიტორი"
       ],
       "Gateways": [
         "რაუტერები"
@@ -8892,9 +8954,6 @@
       ],
       "inactive": [
         "არააქტიური"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }%-ის ჩათვლით ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "გაზარდეთ თქვენი ანგარიშის უსაფრთხოება თქვენი ელფოსტის მისამართის გადამოწმებით."
@@ -9325,6 +9384,9 @@
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "ორგანიზაციის წევრებს თავიანთი ${ PASS_APP_NAME }-ის განბლოკვა დასჭირდებათ თავისი პაროლით ან PIN-კოდით."
       ],
+      "Organization monitor": [
+        "ორგანიზაციის მონიტორინგი"
+      ],
       "Organization size": [
         "ორგანიზაციის ზომა"
       ],
@@ -9373,6 +9435,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - მორგებული ელფოსტა წაიშალა"
+      ],
+      "Pass usage logs": [
+        "Pass-ის გამოყენების ჟურნალი"
       ],
       "password": [
         "პაროლი"
@@ -9468,9 +9533,6 @@
       ],
       "Please use another browser or download the file.": [
         "სცადეთ სხვა ბრაუზერი ან ფაილი გადმოწერეთ."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "შეამოწმეთ გადახდა ახალგახსნილ ჩანართში."
       ],
       "Please wait till your changes are synced with the server.": [
         "მოითმინეთ, მიმდინარეობს თქვენი ცვლილებების სერვერთან სინქრონიზაცია."
@@ -10264,9 +10326,6 @@
       "Vault updated": [
         "საცავი განახლდა"
       ],
-      "Verification can take a few minutes.": [
-        "შემოწმებას რამდენიმე წუთი შეიძლება, დასჭირდეს."
-      ],
       "Verification link expired": [
         "გაადამოწმების ბმულის ვადა ამოიწურა"
       ],
@@ -10937,6 +10996,9 @@
       ],
       "Donation": [
         "შეწირულობა"
+      ],
+      "Manual": [
+        "ხელით"
       ],
       "Modification": [
         "ჩასწორება"
@@ -12441,9 +12503,6 @@
       ],
       "Value": [
         "მნიშვნელობა"
-      ],
-      "VAT": [
-        "დღგ"
       ],
       "Verification code": [
         "შემოწმების კოდი"
@@ -15063,11 +15122,17 @@
       "It's too expensive": [
         "ძალიან ძვირია"
       ],
+      "Label as...": [
+        "ჭდის დადება..."
+      ],
       "Left to Right": [
         "მარცხნიდან მარჯვნივ"
       ],
       "Mark as read": [
         "წაკითხულად მონიშვნა"
+      ],
+      "Move to...": [
+        "გადატანა სად..."
       ],
       "My reason isn't listed": [
         "ჩემი მიზეზი სიაში არაა"
@@ -15873,6 +15938,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "განახლების დრო ${ renewPriceStr }. გააუქმეთ ნებისმიერ დროს."
       ],
+      "Taxes": [
+        "გადასახადები"
+      ],
       "terms & conditions": [
         "პირობები და წესები"
       ],
@@ -15896,6 +15964,9 @@
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
+      ],
+      "VAT": [
+        "დღგ"
       ],
       "VAT number": [
         "დღგ ნომერი"
@@ -16130,6 +16201,9 @@
       ],
       "Search users": [
         "მომხმარებლების ძებნა"
+      ],
+      "Search users or details": [
+        "მომხმარებლების ან დეტალების ძებნა"
       ],
       "Select": [
         "აირჩიეთ"
@@ -20215,6 +20289,9 @@
       "Desktop": [
         "სამუშაო მაგიდა"
       ],
+      "Details": [
+        "დეტალები"
+      ],
       "Device": [
         "მოწყობილობა"
       ],
@@ -20967,6 +21044,9 @@
       "Signed in successfully!": [
         "შესვლა წარმატებულია!"
       ],
+      "Signed in to another account": [
+        "შესულია სხვა ანგარიშზე"
+      ],
       "Signed in to member account": [
         "შეხვედით სხვის ანგარიშში"
       ],
@@ -21063,6 +21143,9 @@
       ],
       "Time zone": [
         "დროის სარტყელი"
+      ],
+      "Try ${ AUTHENTICATOR_APP_NAME }": [
+        "სცადეთ ${ AUTHENTICATOR_APP_NAME }"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"

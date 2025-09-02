@@ -4548,6 +4548,15 @@
       ]
     },
     "emergency_access": {
+      "${ days } day left": [
+        "剩下${ days }天"
+      ],
+      "${ hours } hour left": [
+        "剩下${ hours }小時"
+      ],
+      "${ minutes } minute left": [
+        "剩下${ minutes }分鐘"
+      ],
       "${ n } day": [
         "${ n }天"
       ],
@@ -4560,8 +4569,17 @@
       "Disabled": [
         "停用"
       ],
+      "Less than a minute left": [
+        "剩不到一分鐘"
+      ],
       "None": [
         "無"
+      ],
+      "Time required before automatically giving you access": [
+        "自動授予您存取權限前所需的時間"
+      ],
+      "Trusted contact": [
+        "信任的聯絡人"
       ],
       "Upgrade to ${ planName }": [
         "升級至${ planName }"
@@ -5567,8 +5585,8 @@
       "customer support": [
         "客服"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "家庭方案目前不支援外部帳號。請在加入前創建 ${ BRAND_NAME } 地址。${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "家庭方案目前不支援外部帳號。請在加入前創建 ${ BRAND_NAME } 地址。${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "若您接受邀請，我們會將您從目前的方案轉出，並將所有剩餘金額存入的您的帳號。"
@@ -7950,9 +7968,6 @@
       "inactive": [
         "未使用"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "包含 ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "透過驗證您的電子郵件位址來增加您帳號的安全性。"
       ],
@@ -8477,9 +8492,6 @@
       ],
       "Please use another browser or download the file.": [
         "請使用其他瀏覽器或下載檔案。"
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "請在剛開啟的新索引標籤中驗證付款。"
       ],
       "Please wait till your changes are synced with the server.": [
         "請等待您的變更與伺服器同步。"
@@ -9224,9 +9236,6 @@
       ],
       "Vault updated": [
         "保管庫已更新"
-      ],
-      "Verification can take a few minutes.": [
-        "驗證或需時數分鐘。"
       ],
       "Verification link expired": [
         "驗證連結已過期"
@@ -11238,9 +11247,6 @@
       "Value": [
         "值"
       ],
-      "VAT": [
-        "增值稅"
-      ],
       "Verification code": [
         "驗證碼"
       ],
@@ -11571,6 +11577,9 @@
       ],
       "Request an invite": [
         "需求邀請"
+      ],
+      "Resume now": [
+        "立即恢復"
       ],
       "Set email address": [
         "設定電郵位址"
@@ -14264,11 +14273,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "目前您將暫時無法修改或取消您的訂購授權。請等待付款完成後，再進行修改。感謝您耐心等候。"
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "不包含 ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "不包含 ${ taxRate }% 稅金：${ taxAmount }"
+      ],
       "Got it": [
         "瞭解"
       ],
       "I'm purchasing as a business": [
         "我以公司名義購買"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "包含 ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "包含 ${ taxRate }% 稅金：${ taxAmount }"
       ],
       "MM/YY": [
         "MM/YY"
@@ -14284,6 +14305,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "更新價 ${ renewPriceStr }，任何時間都可取消。"
+      ],
+      "Taxes": [
+        "稅金"
       ],
       "terms & conditions": [
         "條款及細則"
@@ -14308,6 +14332,9 @@
       ],
       "Timeout exceeded": [
         "已經逾時"
+      ],
+      "VAT": [
+        "增值稅"
       ],
       "VAT number": [
         "增值稅編號（VAT）"
@@ -14362,8 +14389,14 @@
       "Business Number": [
         "營業人統一編號"
       ],
+      "Edit ABN": [
+        "編輯 ABN"
+      ],
       "Edit Business Number": [
         "編輯營業人統一編號"
+      ],
+      "Edit EIN": [
+        "編輯 EIN"
       ],
       "Edit VAT number": [
         "編輯增值稅編號（VAT）"
