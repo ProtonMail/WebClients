@@ -3,7 +3,8 @@
 }
 
 .search-cancel-button {
-	&:hover {
+	&:hover,
+	&:focus {
 		color: var(--primary) !important;
 	}
 }

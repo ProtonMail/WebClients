@@ -9,7 +9,8 @@
 		border-radius: 2rem;
 	}
 
-	&:hover {
+	&:hover,
+	&:focus {
 		background-color: var(--border-card) !important;
 		border-color: var(--border-card) !important;
 	}

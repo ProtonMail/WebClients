@@ -24,7 +24,8 @@
 .copy-meeting-link-button {
 	background-color: var(--interaction-weak);
 
-	&:hover {
+	&:hover,
+	&:focus {
 		background-color: var(--interaction-weak-major-1) !important;
 	}
 }

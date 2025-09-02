@@ -47,7 +47,7 @@ export const ParticipantHostControls = ({
                 size="small"
                 style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}
             >
-                <IcThreeDotsVertical />
+                <IcThreeDotsVertical alt={c('meet_2025 Alt').t`Participant host control options`} />
             </DropdownButton>
             <Dropdown
                 isOpen={isOpen}

@@ -6,7 +6,8 @@
 	block-size: rem(56);
 	background-color: var(--circle-button-bg, var(--interaction-weak-minor-1)) !important;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		background-color: var(--circle-button-bg, var(--interaction-weak-minor-1)) !important;
 	}
 }
@@ -16,7 +17,8 @@
 
 	color: var(--text-invert) !important;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		--circle-button-bg: var(--interaction-norm-minor-1);
 	}
 }
@@ -24,7 +26,8 @@
 .circle-button-default {
 	--circle-button-bg: var(--interaction-weak-minor-1);
 
-	&:hover {
+	&:hover,
+	&:focus {
 		--circle-button-bg: var(--interaction-weak-minor-2);
 	}
 }
@@ -32,7 +35,8 @@
 .circle-button-danger {
 	--circle-button-bg: var(--signal-danger-major-3);
 
-	&:hover {
+	&:hover,
+	&:focus {
 		--circle-button-bg: var(--signal-danger);
 	}
 }
@@ -40,7 +44,8 @@
 .circle-button-transparent {
 	--circle-button-bg: transparent;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		--circle-button-bg: color-mix(in srgb, var(--background-invert), transparent 76%) !important;
 	}
 }

@@ -8,7 +8,8 @@
 		outline: none;
 		box-shadow: none !important;
 
-		&:hover {
+		&:hover,
+		&:focus {
 			background-color: var(--background-norm);
 		}
 	}
