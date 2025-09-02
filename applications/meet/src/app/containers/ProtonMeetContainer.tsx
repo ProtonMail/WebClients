@@ -576,6 +576,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                                 getParticipants={() => getParticipants(meetingDetails.meetingId as string)}
                                 instantMeeting={instantMeetingRef.current}
                                 passphrase={password}
+                                guestMode={guestMode}
                             />
                         </RoomContext.Provider>
                     ) : (

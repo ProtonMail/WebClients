@@ -5,15 +5,15 @@ import NotificationsProvider from '@proton/components/containers/notifications/P
 import { MeetContext } from '../../contexts/MeetContext';
 import { UIStateContext } from '../../contexts/UIStateContext';
 import { MeetingSideBars } from '../../types';
-import { MeetingDetails } from './MeetingDetails';
+import { WrappedMeetingDetails } from './MeetingDetails';
 
 const mockMeetingName = 'Mock Meeting Name';
 
 const meetingLinkName = '1234567890';
 const mockLink = `https://example.com/join/${meetingLinkName}`;
 
-vi.mock('../../hooks/useMeetingList', () => ({
-    useMeetingList: () => [
+vi.mock('../../store', () => ({
+    useMeetings: () => [
         [
             {
                 MeetingLinkName: meetingLinkName,
@@ -27,7 +27,7 @@ vi.mock('../../hooks/useMeetingList', () => ({
 
 describe('MeetingDetails', () => {
     it('should return null if not open', () => {
-        render(<MeetingDetails />, {
+        render(<WrappedMeetingDetails />, {
             wrapper: ({ children }) => (
                 <NotificationsProvider>
                     <MeetContext.Provider
@@ -50,7 +50,7 @@ describe('MeetingDetails', () => {
     });
 
     it('should display the meeting name and the meeting link', () => {
-        render(<MeetingDetails />, {
+        render(<WrappedMeetingDetails />, {
             wrapper: ({ children }) => (
                 <NotificationsProvider>
                     <MeetContext.Provider
@@ -76,7 +76,7 @@ describe('MeetingDetails', () => {
     });
 
     it('should display the meeting details', () => {
-        render(<MeetingDetails />, {
+        render(<WrappedMeetingDetails />, {
             wrapper: ({ children }) => (
                 <NotificationsProvider>
                     <MeetContext.Provider

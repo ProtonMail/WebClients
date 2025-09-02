@@ -26,6 +26,7 @@ interface MeetContainerProps {
     getParticipants: () => Promise<void>;
     instantMeeting: boolean;
     passphrase: string;
+    guestMode: boolean;
 }
 
 export const MeetContainer = ({
@@ -51,6 +52,7 @@ export const MeetContainer = ({
     getParticipants,
     instantMeeting,
     passphrase,
+    guestMode,
 }: MeetContainerProps) => {
     const [quality, setQuality] = useState<VideoQuality>(VideoQuality.HIGH);
     const [page, setPage] = useState(0);
@@ -125,6 +127,7 @@ export const MeetContainer = ({
                     pagedParticipants,
                     pageCount,
                     passphrase,
+                    guestMode,
                 }}
             >
                 <UIStateProvider instantMeeting={instantMeeting}>
