@@ -4,10 +4,10 @@ import { sortItems } from '@proton/pass/lib/items/item.utils';
 import { PlanType } from '@proton/pass/types';
 
 import { selectAliasItems, selectLoginItems } from './items';
-import { selectAllVaults } from './shares';
+import { selectVisibleVaults } from './shares';
 import { selectUserPlan } from './user';
 
-export const selectVaultLimits = createSelector([selectAllVaults, selectUserPlan], (vaults, plan) => {
+export const selectVaultLimits = createSelector([selectVisibleVaults, selectUserPlan], (vaults, plan) => {
     const vaultLimit = plan?.VaultLimit ?? Number.MAX_SAFE_INTEGER;
 
     return {

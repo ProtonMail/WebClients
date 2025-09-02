@@ -1,5 +1,5 @@
-import type { FormEvent } from 'react';
-import { type FC, useState } from 'react';
+import type { FC, FormEvent } from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -11,7 +11,7 @@ import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { isShareVisible } from '@proton/pass/lib/shares/share.predicates';
 import { intoShareVisibilityMap } from '@proton/pass/lib/shares/share.utils';
 import { sharesVisibilityEdit } from '@proton/pass/store/actions';
-import { selectAllIncludingHiddenVaults, selectRequestInFlight } from '@proton/pass/store/selectors';
+import { selectAllVaults, selectRequestInFlight } from '@proton/pass/store/selectors';
 import type { ShareId, ShareVisibilityMap } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
@@ -19,7 +19,7 @@ const FORM_ID = 'organize-vaults';
 type Props = { onClose: () => void; onConfirm: (visibilityMap: ShareVisibilityMap) => void };
 
 export const OrganizeVaultsModal: FC<Props> = ({ onClose, onConfirm }) => {
-    const vaults = useSelector(selectAllIncludingHiddenVaults);
+    const vaults = useSelector(selectAllVaults);
     const [visibilityMap, setVisibilityMap] = useState<ShareVisibilityMap>(() => intoShareVisibilityMap(vaults));
 
     const loading = useSelector(selectRequestInFlight(sharesVisibilityEdit.requestID()));

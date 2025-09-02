@@ -7,16 +7,9 @@ import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/trans
 import type { ItemsByShareId } from '@proton/pass/store/reducers/items';
 import { withOptimisticItemsByShareId } from '@proton/pass/store/reducers/items';
 import { SelectorError } from '@proton/pass/store/selectors/errors';
-import { selectAllShareIds } from '@proton/pass/store/selectors/shares';
+import { selectVisibleShareIds } from '@proton/pass/store/selectors/shares';
 import type { State } from '@proton/pass/store/types';
-import type {
-    ItemRevision,
-    ItemRevisionWithOptimistic,
-    ItemType,
-    Maybe,
-    MaybeNull,
-    SelectedItem,
-} from '@proton/pass/types';
+import type { ItemRevision, ItemRevisionWithOptimistic, ItemType, Maybe, MaybeNull, SelectedItem } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
 import { and } from '@proton/pass/utils/fp/predicates';
 import isTruthy from '@proton/utils/isTruthy';
@@ -31,17 +24,18 @@ export const selectItemDrafts = (state: State) => state.items.drafts;
 export const selectNonFailedItems = createSelector(selectItemsState, asIfNotFailed);
 export const selectNonOptimisticItems = createSelector(selectItemsState, asIfNotOptimistic);
 export const selectItems = createSelector(selectItemsState, unwrapOptimisticState);
-// Intentionally boring name to push for using visibility filter by default
-export const selectAllIncludingHiddenItems = createSelector(selectItems, flattenItemsByShareId);
-export const selectAllItems = createSelector([selectAllIncludingHiddenItems, selectAllShareIds], (items, shareIds) =>
+export const selectAllItems = createSelector(selectItems, flattenItemsByShareId);
+
+export const selectVisibleItems = createSelector([selectAllItems, selectVisibleShareIds], (items, shareIds) =>
     items.filter(({ shareId }) => shareIds.has(shareId))
 );
-export const selectTrashedItems = createSelector(selectAllItems, (items) => items.filter(isTrashed));
-export const selectPinnedItems = createSelector(selectAllItems, (items) => items.filter(and(isActive, isPinned)));
+
+export const selectTrashedItems = createSelector(selectVisibleItems, (items) => items.filter(isTrashed));
+export const selectPinnedItems = createSelector(selectVisibleItems, (items) => items.filter(and(isActive, isPinned)));
 export const selectLatestDraft = createSelector(selectItemDrafts, (drafts) => first(drafts));
 
 export const selectItemsByType = <T extends ItemType>(type: T) =>
-    createSelector(selectAllItems, (items) => items.filter(isItemType<T>(type)));
+    createSelector(selectVisibleItems, (items) => items.filter(isItemType<T>(type)));
 
 export const selectLoginItems = selectItemsByType('login');
 export const selectAliasItems = selectItemsByType('alias');
@@ -64,9 +58,9 @@ export const selectItem = <T extends ItemType = ItemType>(shareId: string, itemI
         const idFromOptimisticId = byOptimisticId[itemId]?.itemId;
         const byItemId = items[shareId];
 
-        return (idFromOptimisticId
-            ? byItemId?.[idFromOptimisticId]
-            : byItemId?.[itemId]) satisfies Maybe<ItemRevision> as Maybe<ItemRevision<T>>;
+        return (idFromOptimisticId ? byItemId?.[idFromOptimisticId] : byItemId?.[itemId]) satisfies Maybe<ItemRevision> as Maybe<
+            ItemRevision<T>
+        >;
     });
 
 export const selectItemOrThrow = <T extends ItemType = ItemType>(shareId: string, itemId: string) =>
@@ -87,14 +81,12 @@ export const selectOptimisticItemState = (shareId: string, itemId: string) =>
         }
     );
 
-export const selectOptimisticFailedAction = (entityID: string) =>
-    createSelector([selectItemsState], selectFailedAction(entityID));
+export const selectOptimisticFailedAction = (entityID: string) => createSelector([selectItemsState], selectFailedAction(entityID));
 
 export const selectItemWithOptimistic = <T extends ItemType = ItemType>(shareId: string, itemId: string) =>
     createSelector(
         [selectItem<T>(shareId, itemId), selectOptimisticItemState(shareId, itemId)],
-        (item, { failed, optimistic }): Maybe<ItemRevisionWithOptimistic<T>> =>
-            item ? { ...item, failed, optimistic } : undefined
+        (item, { failed, optimistic }): Maybe<ItemRevisionWithOptimistic<T>> => (item ? { ...item, failed, optimistic } : undefined)
     );
 
 export const selectItemsByShareId = (shareId?: string) =>

@@ -15,7 +15,7 @@ import { PASS_DOWNLOAD_URL, UpsellRef } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { usePassExtensionInstalled } from '@proton/pass/hooks/usePassExtensionInstalled';
 import { useSelectorOnce } from '@proton/pass/hooks/useSelectorOnce';
-import { selectAllItems, selectPassPlan, selectUserPlan } from '@proton/pass/store/selectors';
+import { selectPassPlan, selectUserPlan, selectVisibleItems } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -42,7 +42,7 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const userPlan = useSelector(selectUserPlan);
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE && userPlan?.InternalName === 'free';
-    const hasItems = useSelectorOnce(selectAllItems).length > 0;
+    const hasItems = useSelectorOnce(selectVisibleItems).length > 0;
 
     const message = SpotlightMessage.WELCOME;
 
