@@ -8,6 +8,7 @@ import { CategoryBadge } from './CategoryBadge';
 import { CategoryBadgeInfo } from './CategoryBadgeInfo';
 import { DISABLED_BADGE } from './categoryViewConstants';
 import { hasCategoryLabel } from './categoryViewHelpers';
+import { useCategoryViewExperiment } from './useCategoryViewExperiment';
 
 import './ExtraMessageCategory.scss';
 
@@ -17,18 +18,16 @@ interface Props {
 }
 
 export const ExtraMessageCategory = ({ message, element }: Props) => {
-    if (!hasCategoryLabel(message.data?.LabelIDs)) {
-        return null;
-    }
+    const { canSeeCategoryLabel } = useCategoryViewExperiment();
 
-    if (getItem(DISABLED_BADGE)) {
+    if (!hasCategoryLabel(message.data?.LabelIDs) || !canSeeCategoryLabel || getItem(DISABLED_BADGE)) {
         return null;
     }
 
     return (
         <div className="category-badge-container">
             <RecipientType label="Category">
-                <CategoryBadge labelIDs={message.data?.LabelIDs} element={element} />
+                <CategoryBadge labelIDs={message.data?.LabelIDs} element={element} index={-1} />
                 <CategoryBadgeInfo className="mt-1" />
             </RecipientType>
         </div>

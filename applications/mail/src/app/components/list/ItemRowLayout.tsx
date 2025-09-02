@@ -46,6 +46,7 @@ interface Props {
     unread: boolean;
     onBack?: () => void;
     attachmentsMetadata?: AttachmentsMetadata[];
+    index: number;
 }
 
 const ItemRowLayout = ({
@@ -61,6 +62,7 @@ const ItemRowLayout = ({
     unread,
     onBack = () => {},
     attachmentsMetadata = [],
+    index,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
@@ -124,7 +126,7 @@ const ItemRowLayout = ({
                     isCollapsed={false}
                 />
 
-                <CategoryBadge labelIDs={Object.keys(getLabelIDs(element, labelID))} element={element} />
+                <CategoryBadge labelIDs={Object.keys(getLabelIDs(element, labelID))} element={element} index={index} />
 
                 <div
                     className={clsx('item-subject flex items-center flex-nowrap', loading && 'w-custom')}
