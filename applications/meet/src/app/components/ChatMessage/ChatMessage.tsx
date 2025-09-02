@@ -3,7 +3,9 @@ import { useLayoutEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { InputFieldTwo, TextAreaTwo, useHotkeys } from '@proton/components';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
+import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { IcMeetSend } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 

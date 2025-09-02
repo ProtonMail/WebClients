@@ -3,13 +3,11 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    InputFieldStacked,
-    InputFieldStackedGroup,
-    InputFieldTwo,
-    ModalTwo,
-    ModalTwoContent,
-} from '@proton/components';
+import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
+import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { useLoading } from '@proton/hooks';
 import { IcEye, IcEyeSlash } from '@proton/icons';
 

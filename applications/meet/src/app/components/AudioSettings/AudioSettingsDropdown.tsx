@@ -3,7 +3,8 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { Dropdown, DropdownSizeUnit } from '@proton/components';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';

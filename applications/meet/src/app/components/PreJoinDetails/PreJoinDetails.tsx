@@ -1,7 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { InputFieldStacked, InputFieldStackedGroup, InputFieldTwo, useNotifications } from '@proton/components';
+import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
+import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcMeetCopy } from '@proton/icons';
 
 import './PreJoinDetails.scss';

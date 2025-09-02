@@ -4,7 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useAppLink, useNotifications } from '@proton/components';
+import useAppLink from '@proton/components/components/link/useAppLink';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcPenSquare } from '@proton/icons';
 import { getMeetingLink } from '@proton/meet';
 import type { Meeting } from '@proton/meet/types/response-types';

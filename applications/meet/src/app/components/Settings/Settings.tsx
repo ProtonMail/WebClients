@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Toggle } from '@proton/components';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import clsx from '@proton/utils/clsx';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';

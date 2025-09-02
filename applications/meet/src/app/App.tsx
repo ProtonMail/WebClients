@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Route, useHistory, useLocation } from 'react-router-dom';
 
-import { ProtonApp } from '@proton/components';
+import ProtonApp from '@proton/components/containers/app/ProtonApp';
 import useFlag from '@proton/unleash/useFlag';
 
 import { ComingSoon } from './components/ComingSoon/ComingSoon';

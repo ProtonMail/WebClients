@@ -2,7 +2,8 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { useApi, useAuthentication } from '@proton/components';
+import useApi from '@proton/components/hooks/useApi';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useMeetErrorReporting } from '@proton/meet';
 import type { AccessTokenResponse, MeetingInfoResponse } from '@proton/meet/types/response-types';
 import { getUIDHeaders } from '@proton/shared/lib/fetch/headers';

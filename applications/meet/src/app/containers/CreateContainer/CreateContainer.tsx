@@ -5,7 +5,10 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
-import { InputFieldTwo, Option, PasswordInputTwo, SelectTwo } from '@proton/components';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import { IcArrowsRotate, IcKey, IcTextAlignLeft } from '@proton/icons';
 import { useCreateMeeting } from '@proton/meet/hooks/useCreateMeeting';
 import { MeetingType } from '@proton/meet/types/response-types';

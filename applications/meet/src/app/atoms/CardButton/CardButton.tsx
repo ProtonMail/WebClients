@@ -1,5 +1,5 @@
 import { Button } from '@proton/atoms';
-import { IcChevronRight } from '@proton/icons';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import clsx from '@proton/utils/clsx';
 
 import './CardButton.scss';

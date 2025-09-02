@@ -6,7 +6,7 @@ import type { ExternalE2EEKeyProvider, Room } from '@proton-meet/livekit-client'
 import { ConnectionStateInfo, type GroupKeyInfo } from '@proton-meet/proton-meet-core';
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import { CustomPasswordState } from '@proton/meet/types/response-types';

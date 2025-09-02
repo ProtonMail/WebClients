@@ -3,15 +3,12 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    AppsDropdown,
-    AuthenticatedBugModal,
-    BugModal,
-    UnAuthenticatedAppsDropdown,
-    UserDropdown,
-    useModalState,
-} from '@proton/components';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import AppsDropdown, { UnAuthenticatedAppsDropdown } from '@proton/components/containers/app/AppsDropdown';
+import UserDropdown from '@proton/components/containers/heading/UserDropdown';
+import AuthenticatedBugModal from '@proton/components/containers/support/AuthenticatedBugModal';
+import BugModal from '@proton/components/containers/support/BugModal';
 import { IcBug } from '@proton/icons';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
 import { APPS } from '@proton/shared/lib/constants';

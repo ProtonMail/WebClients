@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import { useApi } from '@proton/components';
+import useApi from '@proton/components/hooks/useApi';
 
 import type { ParticipantEntity } from '../types';
 

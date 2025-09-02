@@ -1,9 +1,6 @@
-import type { LocalVideoTrack } from '@proton-meet/livekit-client';
-
 import { useChat } from './useChat';
 import { useDynamicDeviceHandling } from './useDynamicDeviceHandling';
 import { useE2EE } from './useE2EE';
-import { useFaceTrackingPublisher } from './useFaceTrackingPublisher';
 import { useLocalParticipantQualityControl } from './useLocalParticipantQualityControl';
 import { useMediaDeviceSetup } from './useMediaDeviceSetup';
 import { usePaginationSizeUpdates } from './usePaginationSizeUpdates';
@@ -12,15 +9,8 @@ import { useParticipantNameMapUpdate } from './useParticipantNameMapUpdate';
 import { useParticipantVideoControls } from './useParticipantVideoControls';
 import { useScreenShareUpdates } from './useScreenShareUpdates';
 
-export const useMeetingInitialisation = ({
-    faceTrack,
-    isFaceTrackingEnabled,
-}: {
-    faceTrack: LocalVideoTrack | null;
-    isFaceTrackingEnabled: boolean;
-}) => {
+export const useMeetingInitialisation = () => {
     useE2EE();
-    useFaceTrackingPublisher({ faceTrack, isFaceTrackingEnabled });
     useParticipantVideoControls();
     useParticipantEvents();
     useChat();
