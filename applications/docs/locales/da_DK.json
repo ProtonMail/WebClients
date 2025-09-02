@@ -154,6 +154,9 @@
       "Claim this address": [
         "Gør krav på denne adresse"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Gør krav på din gratis ${ BRAND_NAME } address"
+      ],
       "Clear data": [
         "Ryd data"
       ],
@@ -3564,9 +3567,6 @@
       "customer support": [
         "kundeservice"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Familieabonnementer understøtter i øjeblikket ikke eksterne konti. Opret en ${ BRAND_NAME } adresse for du tilmelder dig. ${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du accepterer invitationen, overflytter vi dig fra dit nuværende abonnement og krediterer din konto med en eventuel restsaldo."
       ],
@@ -4726,9 +4726,6 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I det næste trin kan du foretage en indbetaling ved hjælp af en Bitcoin-adresse."
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inklusiv ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Inherited from parent folder": [
         "Nedarvet fra overordnet mappe"
@@ -6180,9 +6177,6 @@
       ],
       "Username": [
         "Brugernavn"
-      ],
-      "VAT": [
-        "Moms"
       ],
       "Verification code": [
         "Verifikationskode"
@@ -10446,9 +10440,6 @@
       "${ n } wallet": [
         "${ n } wallet",
         "${ n } wallets"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "En sikrere måde at gemme dine Bitcoin på"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
