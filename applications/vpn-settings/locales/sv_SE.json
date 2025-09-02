@@ -153,6 +153,9 @@
       "Claim this address": [
         "Gör anspråk på denna adress"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Gör anspråk på din gratis ${ BRAND_NAME }-adress"
+      ],
       "Close": [
         "Stäng"
       ],
@@ -1119,6 +1122,9 @@
       ],
       "Reconnect": [
         "Anslut igen"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Återanslut adress ”${ emailAddress }”"
       ],
       "Saving": [
         "Sparar"
@@ -4251,8 +4257,8 @@
       "customer support": [
         "kundsupport"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Familjepaket stöder för närvarande inte externa konton. Skapa en ${ BRAND_NAME }-adress innan du går med. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Familjepaket stöder för närvarande inte externa konton. Skapa en ${ BRAND_NAME }-adress innan du går med. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Om du accepterar inbjudan kommer vi att byta från ditt nuvarande paket och kreditera ditt konto med eventuellt återstående saldo."
@@ -5428,6 +5434,9 @@
       "(default)": [
         "(standard)"
       ],
+      "**Enable automatic backups** for peace of mind": [
+        "**Aktivera automatiska säkerhetskopieringar** för sinnesro"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Skaffa en ${ BRAND_NAME }-adress** för att använda alla ${ BRAND_NAME_TWO }-tjänster inklusive ${ MAIL_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -5804,6 +5813,9 @@
       "Disabled countries": [
         "Inaktiverade länder"
       ],
+      "Disabled on ${ boldValue }": [
+        "Inaktiverad på ${ boldValue }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Inaktivering av tvåfaktorsautentisering kommer göra ditt konto mindre säkert. Fortsätt endast om det är absolut nödvändigt."
       ],
@@ -5918,6 +5930,9 @@
       ],
       "Enabled countries": [
         "Aktiverade länder"
+      ],
+      "Enabled on ${ boldValue }": [
+        "Aktiverad på ${ boldValue }"
       ],
       "Enabling auto-deletion…": [
         "Aktiverar automatisk borttagning…"
@@ -6135,9 +6150,6 @@
       ],
       "Include device, location, and IP details": [
         "Inkludera enhet, plats och IP-detaljer"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inklusive ${ formattedTaxRate } % ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Öka ditt kontosäkerhet genom att verifiera din e-postadress."
@@ -6539,9 +6551,6 @@
       "Please use another browser or download the file.": [
         "Använd en annan webbläsare eller ladda ner filen."
       ],
-      "Please verify payment at the new tab which was opened.": [
-        "Verifiera betalningen i den nya fliken som öppnades."
-      ],
       "Please wait till your changes are synced with the server.": [
         "Vänta tills dina ändringar har synkroniserats med servern."
       ],
@@ -6812,6 +6821,9 @@
       "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
         "Gruppfunktionen stöds inte på din nuvarande prenumeration. Tidigare skapade grupper är inaktiverade och kan endast tas bort."
       ],
+      "The most secure and private two-factor authentication app, that's free and open-source.": [
+        "Den säkraste och mest privata appen för tvåfaktorsautentisering som är gratis och öppen källkod."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "Namnet kommer att vara synligt för dina användare när de är inloggade."
       ],
@@ -7066,9 +7078,6 @@
       ],
       "Vault updated": [
         "Valv uppdaterat"
-      ],
-      "Verification can take a few minutes.": [
-        "Verifiering kan ta några minuter."
       ],
       "Verification may take a few minutes.": [
         "Verifiering kan ta några minuter."
@@ -7584,6 +7593,9 @@
       ],
       "Donation": [
         "Donation"
+      ],
+      "Manual": [
+        "Manuell"
       ],
       "Modification": [
         "Modifiering"
@@ -8273,9 +8285,6 @@
       "Value": [
         "Värde"
       ],
-      "VAT": [
-        "VAT"
-      ],
       "Verification code": [
         "Verifieringskod"
       ],
@@ -8799,6 +8808,9 @@
       ],
       "View changes to your organization and other administrator activities.": [
         "Visa ändringar i din organisation och andra administratörsaktiviteter."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "Visa användarinloggning, återställning och säkerhetshändelser."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Din gratis provperiod har avslutats. Åtkomst till ditt konto kommer snart att inaktiveras. ${ action }"
@@ -10655,11 +10667,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denna tid kommer du inte att kunna ändra eller säga upp din prenumeration. Vänta tills din betalning är slutförd innan du försöker göra några ändringar. Tack för ditt tålamod."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Exklusive ${ taxRate } % moms: ${ taxAmount }"
+      ],
       "Got it": [
         "Jag förstår"
       ],
       "I'm purchasing as a business": [
         "Jag köper som ett företag"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inklusive ${ taxRate } % moms: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -10678,6 +10702,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Förnyas med ${ renewPriceStr }, avbryt när som helst."
+      ],
+      "Taxes": [
+        "Moms"
       ],
       "terms & conditions": [
         "användarvillkor"
@@ -12545,6 +12572,9 @@
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } totalt lagringsutrymme"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } ger dig åtkomst till alla premiumfunktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }. Integritet är inbyggd så att du kan fortsätta använda den i vetskapen om att dina data och din identitet är säkra."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
@@ -14556,6 +14586,9 @@
       "Did you know?": [
         "Visste du att?"
       ],
+      "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
+        "Obegränsad integritet för dig och en närstående. Från endast ${ priceString }/månad."
+      ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Du kan skydda upp till ${ FAMILY_MAX_USERS } personer med ${ PLAN_NAMES[plan] }. Från bara ${ priceString }/månad per konto."
       ],
@@ -14886,9 +14919,6 @@
       "${ n } wallet": [
         "${ n } plånbok",
         "${ n } plånböcker"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Ett säkrare sätt att hålla din Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-post"
