@@ -13,6 +13,8 @@ import {
 } from '@proton/payments';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
+import type { ReferralRegistrationPlan} from '@proton/shared/lib/api/core/referrals';
+import { postReferralRegistration } from '@proton/shared/lib/api/core/referrals';
 import { updateLocale } from '@proton/shared/lib/api/settings';
 import { getUser } from '@proton/shared/lib/api/user';
 import { type ProductParam } from '@proton/shared/lib/apps/product';
@@ -20,7 +22,7 @@ import { SessionSource } from '@proton/shared/lib/authentication/SessionInterfac
 import { type AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { localeCode } from '@proton/shared/lib/i18n';
-import type { Api, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
+import type { Api, KeyTransparencyActivation, ReferralData, User } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper, handleSetupKeys } from '@proton/shared/lib/keys';
 import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
@@ -28,7 +30,7 @@ import noop from '@proton/utils/noop';
 import generateDeferredMnemonicData from '../../../containers/recoveryPhrase/generateDeferredMnemonicData';
 import { type AccountData, SignupType } from '../../../signup/interfaces';
 
-export interface SubscriptionData2 {
+export interface SignupContextSubscriptionData {
     currency: Currency;
     cycle: Cycle;
     planIDs: PlanIDs;
@@ -36,11 +38,12 @@ export interface SubscriptionData2 {
     paymentToken: ExtendedTokenPayment | undefined;
     billingAddress: BillingAddress;
     vatNumber: string | undefined;
+    trial?: boolean;
 }
 
 const handleSubscribeUser = async (
     api: Api,
-    subscriptionData: SubscriptionData2,
+    subscriptionData: SignupContextSubscriptionData,
     productParam: ProductParam,
     hasZipCodeValidation: boolean,
     onPaymentSuccess?: () => void,
@@ -66,6 +69,7 @@ const handleSubscribeUser = async (
                     Cycle: subscriptionData.cycle,
                     BillingAddress: subscriptionData.billingAddress,
                     VatId: subscriptionData.vatNumber,
+                    ...(subscriptionData.trial ? { StartTrial: true } : {}),
                     ...{
                         Payment: subscriptionData.paymentToken,
                         Amount: subscriptionData.checkResult.AmountDue,
@@ -139,16 +143,20 @@ export const handleSetupUser = async ({
     keyTransparencyActivation,
     hasZipCodeValidation,
     traceSignupSentryError,
+    referralData,
+    referralRegistrationPlan,
 }: {
     accountData: AccountData;
     api: Api;
     persistent: boolean;
     trusted: boolean;
-    subscriptionData: SubscriptionData2 | undefined;
+    subscriptionData: SignupContextSubscriptionData | undefined;
     productParam: ProductParam;
     keyTransparencyActivation: KeyTransparencyActivation;
     hasZipCodeValidation: boolean;
     traceSignupSentryError: (error: any) => void;
+    referralData: ReferralData | undefined;
+    referralRegistrationPlan: ReferralRegistrationPlan | undefined;
 }) => {
     const { username, email, domain, password, signupType } = accountData;
 
@@ -172,7 +180,14 @@ export const handleSetupUser = async ({
     }).then((response): Promise<AuthResponse> => response.json());
 
     let subscription: Subscription | undefined;
-    if (subscriptionData) {
+    if (
+        subscriptionData &&
+        /**
+         * No need to create subscription for referrals.
+         * Referral registration will handle the subscription.
+         */
+        !referralData
+    ) {
         // Perform the subscription first to prevent "locked user" while setting up keys.
         subscription = await handleSubscribeUser(api, subscriptionData, productParam, hasZipCodeValidation);
     }
@@ -209,7 +224,20 @@ export const handleSetupUser = async ({
             api,
         });
     } catch (error) {
+        /**
+         * Silently error.
+         * We can continue signup flow
+         */
         traceSignupSentryError(error);
+    }
+
+    if (referralData) {
+        await api(
+            postReferralRegistration({
+                plan: referralRegistrationPlan,
+                referralData,
+            })
+        );
     }
 
     return {
