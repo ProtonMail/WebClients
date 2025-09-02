@@ -45,28 +45,31 @@ const PassSignup = () => {
 
     return (
         <main className="pass-signup flex min-h-full">
-            {step === Step.Signup && <AccountDetailsStep onContinue={() => setStep(Step.UpgradePlan)} />}
+            {step === Step.Signup && (
+                <AccountDetailsStep
+                    onContinue={async () => {
+                        await accountCreation();
+                        setStep(Step.RecoveryKit);
+                    }}
+                />
+            )}
+            {step === Step.RecoveryKit && <RecoveryKitStep onContinue={async () => setStep(Step.UpgradePlan)} />}
             {step === Step.UpgradePlan && (
                 <UpgradePlanStep
                     onContinue={async (payment: boolean) => {
                         if (payment) {
                             return setStep(Step.Payment);
                         }
-                        await accountCreation();
-                        setStep(Step.RecoveryKit);
+                        setStep(Step.InstallExtension);
                     }}
                 />
             )}
             {step === Step.Payment && (
                 <PaymentStep
-                    onContinue={async () => {
-                        await accountCreation();
-                        setStep(Step.RecoveryKit);
-                    }}
+                    onContinue={async () => setStep(Step.InstallExtension)}
                     onBack={() => setStep(Step.UpgradePlan)}
                 />
             )}
-            {step === Step.RecoveryKit && <RecoveryKitStep onContinue={() => setStep(Step.InstallExtension)} />}
             {step === Step.InstallExtension && <InstallExtensionStep />}
         </main>
     );
