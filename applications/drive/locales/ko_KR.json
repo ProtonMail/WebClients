@@ -162,6 +162,9 @@
       "Claim this address": [
         "주소 얻기"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "무료 ${ BRAND_NAME } 주소를 받으세요"
+      ],
       "Clear": [
         "비우기"
       ],
@@ -3670,14 +3673,14 @@
       "We were not able to load some of your invitation to shared items": [
         "공유된 항목에 대한 초대 일부를 가져올 수 없습니다"
       ],
+      "We were not able to load some of your invitations": [
+        "초대 중 일부를 불러올 수 없습니다"
+      ],
       "We were not able to load some of your saved shared links": [
         "저장된 링크 일부를 불러올 수 없었습니다"
       ],
       "We were not able to load some of your shared items": [
         "공유된 항목 중 일부를 가져올 수 없습니다"
-      ],
-      "We were not able to load some of your shared items details": [
-        "공유된 항목들 중 일부의 세부사항을 불러올 수 없습니다."
       ],
       "We were not able to load some of your shared items info": [
         "공유된 정보 중 일부를 가져올 수 없습니다"
@@ -3992,8 +3995,8 @@
       "customer support": [
         "고객 지원"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "현재 가족 요금제는 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "현재 가족 플랜이 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "초대를 수락하면, 현재 요금제에서 전환되고 남은 잔액이 사용자의 계좌로 환불됩니다."
@@ -5312,9 +5315,6 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "다음 단계에서, Bitcoin 주소를 사용하여 보증금을 제출할 수 있습니다."
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }% ${ taxName } 포함: ${ price }"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "항목 인덱싱 ${ totalProgressToShow }개 중 ${ esProgress }개"
@@ -7170,9 +7170,6 @@
       ],
       "Username": [
         "사용자 이름"
-      ],
-      "VAT": [
-        "부가세"
       ],
       "Verification code": [
         "인증 코드"
@@ -9380,11 +9377,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "이 기간 동안 구독을 수정하거나 취소할 수 없습니다. 변경을 시도하기 전에 결제가 완료될 때까지 기다려 주세요. 기다려 주셔서 감사합니다."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName } 제외: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% 세금 제외: ${ taxAmount }"
+      ],
       "Got it": [
         "확인했습니다"
       ],
       "I'm purchasing as a business": [
         "사업체 용도로 구매합니다"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName } 포함: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% 세금 포함: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/YY (월/년)"
@@ -9400,6 +9409,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }에 갱신되며 언제나 취소할 수 있습니다."
+      ],
+      "Taxes": [
+        "세금"
       ],
       "terms & conditions": [
         "이용 약관"
@@ -9427,6 +9439,9 @@
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
+      ],
+      "VAT": [
+        "부가세"
       ],
       "VAT number": [
         "부가가치세 번호"
@@ -12260,9 +12275,6 @@
       ],
       "${ n } wallet": [
         "${ n }개 지갑"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bitcoin을 보관하는 가장 안전한 방법"
       ],
       "Bitcoin via Email": [
         "Email을 통한 Bitcoin"

@@ -165,6 +165,9 @@
       "Claim this address": [
         "Confirmar este endereço"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Confirmar seu endereço de ${ BRAND_NAME }"
+      ],
       "Clear": [
         "Limpar"
       ],
@@ -391,6 +394,9 @@
       ],
       "Download apps": [
         "Baixar aplicativos"
+      ],
+      "Download info": [
+        "Fazer download de informações"
       ],
       "Download logs": [
         "Registros de downloads"
@@ -3281,6 +3287,9 @@
       "Device name does not match": [
         "O nome do dispositivo não corresponde"
       ],
+      "Diagnostics failed": [
+        "Diagnósticos falharam"
+      ],
       "Domain not available, try again later": [
         "Domínio indisponível. Tente novamente mais tarde."
       ],
@@ -3688,6 +3697,9 @@
       "Unknown location": [
         "Localização desconhecida"
       ],
+      "Unknown number of downloads": [
+        "Número desconhecido de downloads"
+      ],
       "Unknown payment token status": [
         "Status da token de pagamento desconhecido"
       ],
@@ -3703,14 +3715,29 @@
       "Validation error": [
         "Erro de validação"
       ],
+      "We were not able to load some invitations": [
+        "Não foi possível carregar alguns convites"
+      ],
+      "We were not able to load some items shared with you": [
+        "Não foi possível carregar alguns itens compartilhados por você."
+      ],
       "We were not able to load some of your bookmarks": [
         "Não foi possível carregar alguns dos seus marcadores"
+      ],
+      "We were not able to load some of your invitation to shared items": [
+        "Não foi possível carregar alguns dos seus convites para itens compartilhados"
+      ],
+      "We were not able to load some of your invitations": [
+        "Não foi possível carregar alguns dos seus convites"
+      ],
+      "We were not able to load some of your saved shared links": [
+        "Não foi possível carregar alguns de seus links compartilhados salvos"
       ],
       "We were not able to load some of your shared items": [
         "Não foi possível carregar alguns dos seus itens compartilhados"
       ],
-      "We were not able to load some of your shared items details": [
-        "Não foi possível carregar alguns detalhes dos seus itens compartilhados."
+      "We were not able to load some of your shared items info": [
+        "Não foi possível carregar algumas informações dos seus itens compartilhados"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Você não pode enviar um e-mail para mais de ${ maxContacts } destinatário",
@@ -4025,8 +4052,8 @@
       "customer support": [
         "suporte ao cliente"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Os planos de família não oferecem suporte a contas externas no momento. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Os planos familiares não suportam contas externas no momento. Crie um endereço para ${ BRAND_NAME } antes de participar.${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, seu plano atual será alterado e você receberá um crédito em sua conta com o saldo restante, se houver."
@@ -4640,6 +4667,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de criptografia da ${ BRAND_NAME } significa que ninguém pode acessar sua senha - nem mesmo nós."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "O ${ CALENDAR_APP_NAME } exige um endereço ${ BRAND_NAME } para sincronização segura de eventos e criptografia. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "O ${ CALENDAR_APP_NAME } exige um endereço ${ BRAND_NAME } para sincronização segura de eventos e para a criptografia. Resgate seu endereço ${ MAIL_APP_NAME } gratuito agora."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } novo calendário",
         "${ calendarsToBeCreatedCount } novos calendários"
@@ -5211,6 +5244,9 @@
       "End-to-end encrypted": [
         "Criptografado de ponta a ponta"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Garanta uma comunicação totalmente privada e criptografada. Resgate seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
+      ],
       "Enter password": [
         "Insira a senha"
       ],
@@ -5314,6 +5350,9 @@
       "Geoblocking": [
         "Bloqueio geográfico"
       ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "Obter registros e outras informações para suporte técnico e solução de problemas"
+      ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Baixe o aplicativo para fazer backup de fotos do seu telefone ou carregue-as aqui."
       ],
@@ -5390,9 +5429,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Na próxima etapa, poderá enviar um depósito usando um endereço Bitcoin."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incluindo ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexando itens ${ esProgress } de ${ totalProgressToShow }"
       ],
@@ -5404,6 +5440,9 @@
       ],
       "Initializing": [
         "Inicializando"
+      ],
+      "Integrity issues found": [
+        "Problemas de integridade encontrados"
       ],
       "Internet connection lost": [
         "Perda de conexão com a internet"
@@ -7265,9 +7304,6 @@
       "Username": [
         "Nome de usuário"
       ],
-      "VAT": [
-        "IVA"
-      ],
       "Verification code": [
         "Código de verificação"
       ],
@@ -7508,6 +7544,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Saiba mais"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Para continuar usando ${ BRAND_NAME }, certifique-se de que seus recursos do plano premium não estão mais em uso ou faça um upgrade no seu plano."
       ],
       "upgrade for more storage": [
         "faça upgrade para mais armazenamento"
@@ -9024,6 +9063,14 @@
       "Root folder failed to be loaded": [
         "Erro ao carregar a pasta raiz"
       ],
+      "Selected item was not removed from your list": [
+        "O item selecionado não foi removido da sua lista",
+        "Os itens selecionados não foram removidos da sua lista"
+      ],
+      "Selected items were successfully removed from your list": [
+        "Os itens selecionados foram removidos da sua lista com êxito.",
+        "Os itens selecionados foram removidos da sua lista com êxito."
+      ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "As fotos selecionadas já estão em «${ albumName }»."
       ],
@@ -9427,6 +9474,12 @@
       "No parent folder": [
         "Nenhuma pasta acima"
       ],
+      "Only current location": [
+        "Única a localização atual"
+      ],
+      "Only current location: ${ name }": [
+        "Única localização atual: ${ name }"
+      ],
       "Verify content": [
         "Verificar conteúdo"
       ],
@@ -9574,11 +9627,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante esse período, você não poderá modificar ou cancelar sua assinatura. Aguarde até que seu pagamento seja concluído antes de tentar qualquer alteração. Obrigado pela sua paciência."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excluindo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluindo ${ taxRate }% de impostos: ${ taxAmount }"
+      ],
       "Got it": [
         "Entendi"
       ],
       "I'm purchasing as a business": [
         "Estou comprando como empresa"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluindo ${ taxRate }${ taxName }${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluindo ${ taxRate }% de impostos: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -9594,6 +9659,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renova por ${ renewPriceStr }, cancele a qualquer momento."
+      ],
+      "Taxes": [
+        "Impostos"
       ],
       "terms & conditions": [
         "termos e condições"
@@ -9625,6 +9693,9 @@
       ],
       "Timeout exceeded": [
         "Tempo limite excedido"
+      ],
+      "VAT": [
+        "IVA"
       ],
       "VAT number": [
         "Número de IVA"
@@ -12539,9 +12610,6 @@
       "${ n } wallet": [
         "${ n } carteira",
         "${ n } carteiras"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Uma maneira mais segura de guardar seu Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"

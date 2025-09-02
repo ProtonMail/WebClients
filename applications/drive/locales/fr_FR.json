@@ -77,7 +77,7 @@
         "Ajouter un nouveau groupe"
       ],
       "Add note": [
-        "Ajoutez une note."
+        "Ajouter une note"
       ],
       "Add people or groups to share": [
         "Ajouter des personnes ou des groupes pour partager"
@@ -164,6 +164,9 @@
       ],
       "Claim this address": [
         "Revendiquer cette adresse"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Revendiquez votre adresse ${ BRAND_NAME } gratuite"
       ],
       "Clear": [
         "Effacer"
@@ -3733,9 +3736,6 @@
       "We were not able to load some of your shared items": [
         "Nous n'avons pas pu charger certains de vos éléments partagés."
       ],
-      "We were not able to load some of your shared items details": [
-        "Nous n'avons pas pu charger les informations de certains de vos éléments partagés."
-      ],
       "We were not able to load some of your shared items info": [
         "Nous n'avons pas pu charger certaines informations de vos éléments partagés."
       ],
@@ -4017,7 +4017,7 @@
         "Refuser l'invitation"
       ],
       "Got it": [
-        "Je l'ai"
+        "J'ai compris"
       ],
       "Switch plans": [
         "Changer d'abonnement"
@@ -4052,8 +4052,8 @@
       "customer support": [
         "service client"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Actuellement, les abonnements familiaux ne prennent pas en charge les comptes externes. Créez une adresse ${ BRAND_NAME } avant de rejoindre l'un de ces abonnements. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Actuellement, les abonnements familiaux ne prennent pas en charge les comptes externes. Créez une adresse ${ BRAND_NAME } avant de rejoindre l'un de ces abonnements. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si vous acceptez l'invitation, nous changerons votre abonnement actuel et nous créditerons votre compte de l'éventuel solde restant."
@@ -5428,9 +5428,6 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "À l'étape suivante, vous pourrez effectuer un versement à l'aide d'une adresse Bitcoin."
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Comprenant ${ formattedTaxRate } % de ${ taxName } : ${ price }"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexation de ${ esProgress } sur ${ totalProgressToShow }"
@@ -7306,9 +7303,6 @@
       ],
       "Username": [
         "Nom d'utilisateur"
-      ],
-      "VAT": [
-        "TVA"
       ],
       "Verification code": [
         "Code de vérification"
@@ -9195,7 +9189,7 @@
         "Payez à l'année et assurez-vous de bénéficier de notre meilleure offre."
       ],
       "Save": [
-        "Sauvegarder"
+        "Enregistrer"
       ],
       "Save big when you pay annually": [
         "Économisez un maximum en optant pour le paiement annuel !"
@@ -9628,11 +9622,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Pendant cette période, vous ne pourrez pas modifier ou annuler votre abonnement. Veuillez attendre que votre paiement soit terminé avant de tenter toute modification. Merci pour votre patience."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excluant ${ taxRate } % de ${ taxName } : ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluant ${ taxRate } % de taxes : ${ taxAmount }"
+      ],
       "Got it": [
-        "Je l'ai"
+        "J'ai compris"
       ],
       "I'm purchasing as a business": [
         "J'achète en tant qu'entreprise."
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Comprenant ${ taxRate } % de ${ taxName } : ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Comprenant ${ taxRate } % de taxes : ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -9648,6 +9654,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renouvellement au prix de ${ renewPriceStr } avec possibilité de résiliation à tout moment."
+      ],
+      "Taxes": [
+        "Taxes"
       ],
       "terms & conditions": [
         "les conditions générales d’utilisation"
@@ -9679,6 +9688,9 @@
       ],
       "Timeout exceeded": [
         "Le délai est dépassé."
+      ],
+      "VAT": [
+        "TVA"
       ],
       "VAT number": [
         "Numéro de TVA"
@@ -10232,7 +10244,7 @@
         "Annuler la demande"
       ],
       "Got it": [
-        "Je l'ai"
+        "J'ai compris"
       ],
       "Learn more": [
         "En savoir plus"
@@ -10269,7 +10281,7 @@
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "Déconnexion"
+        "Se déconnecter"
       ],
       "Stay signed in": [
         "Rester connecté"
@@ -12593,9 +12605,6 @@
       "${ n } wallet": [
         "${ n } portefeuille",
         "${ n } portefeuilles"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Un moyen plus sûr de conserver vos bitcoins"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
