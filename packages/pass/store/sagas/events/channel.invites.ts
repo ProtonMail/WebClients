@@ -1,4 +1,3 @@
-/* eslint-disable curly */
 import { all, fork, put, select } from 'redux-saga/effects';
 
 import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
@@ -7,11 +6,11 @@ import { type EventManagerEvent, NOOP_EVENT } from '@proton/pass/lib/events/mana
 import { decodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
 import { syncInvites } from '@proton/pass/store/actions';
 import type { InviteState } from '@proton/pass/store/reducers';
-import { selectAllVaults } from '@proton/pass/store/selectors';
+import { selectVisibleVaults } from '@proton/pass/store/selectors';
 import { selectInvites } from '@proton/pass/store/selectors/invites';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { InvitesGetResponse, MaybeNull, Share } from '@proton/pass/types';
-import { type Api, ShareType } from '@proton/pass/types';
+import type { Api, InvitesGetResponse, MaybeNull, Share } from '@proton/pass/types';
+import { ShareType } from '@proton/pass/types';
 import type { Invite } from '@proton/pass/types/data/invites';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -37,7 +36,7 @@ function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
 
     logger.info(`[ServerEvents::Invites] ${event.Invites.length} new invite(s) received`);
 
-    const vaults = (yield select(selectAllVaults)) as Share<ShareType.Vault>[];
+    const vaults = (yield select(selectVisibleVaults)) as Share<ShareType.Vault>[];
     const vaultIds = vaults.map(prop('vaultId'));
 
     const invites: MaybeNull<Invite>[] = yield Promise.all(
