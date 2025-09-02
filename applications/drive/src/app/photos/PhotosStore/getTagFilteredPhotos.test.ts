@@ -1,6 +1,6 @@
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
-import { type PhotoGridItem } from '../../store';
+import type { PhotoGridItem } from '../../store';
 import { getTagFilteredPhotos } from './getTagFilteredPhotos';
 
 jest.mock('../../store', () => ({

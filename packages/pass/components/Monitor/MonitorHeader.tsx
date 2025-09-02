@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 import { type RouteChildrenProps, Switch } from 'react-router-dom';
 
 import { c } from 'ttag';

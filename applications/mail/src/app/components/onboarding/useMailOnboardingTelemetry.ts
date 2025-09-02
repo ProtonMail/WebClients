@@ -7,7 +7,7 @@ import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
-import { type OnlineServicesKey } from './checklist/constants';
+import type { OnlineServicesKey } from './checklist/constants';
 
 type SendTelemetryCallback = <TEvent extends TelemetryMailOnboardingEvents>(
     event: TEvent,

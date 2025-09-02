@@ -5,7 +5,7 @@ import set from 'lodash/set';
 import type { AddressKeysState, ModelState, UserKeysState } from '@proton/account';
 import { dispatchGetAllAddressesKeys, getInitialModelState, userKeysThunk } from '@proton/account';
 import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities';
-import { type SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import {
     type AccountIdByDerivationPathAndWalletId,

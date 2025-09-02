@@ -3,6 +3,7 @@ import { type ChangeEvent, useEffect, useRef, useState } from 'react';
 import { fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
@@ -20,7 +21,7 @@ import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { clearLogs, queryLogs } from '@proton/shared/lib/api/logs';
 import { updateLogAuth } from '@proton/shared/lib/api/settings';
-import { type AuthLog } from '@proton/shared/lib/authlog';
+import type { AuthLog } from '@proton/shared/lib/authlog';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -33,7 +34,6 @@ import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import LogsTable from './LogsTable';
 import WipeLogsButton from './WipeLogsButton';
 import { getAllAuthenticationLogs } from './helper';
-import { useOrganization } from '@proton/account/organization/hooks';
 
 const INITIAL_STATE = {
     logs: [],
@@ -65,7 +65,17 @@ const LogsSection = () => {
 
         const data = Logs.reduce(
             (acc, log) => {
-                const { Time, IP, AppVersion, Device, Description, Location, Status, ProtectionDesc, InternetProvider } = log;
+                const {
+                    Time,
+                    IP,
+                    AppVersion,
+                    Device,
+                    Description,
+                    Location,
+                    Status,
+                    ProtectionDesc,
+                    InternetProvider,
+                } = log;
 
                 const row = [
                     fromUnixTime(Time).toISOString(),
@@ -268,8 +278,8 @@ const LogsSection = () => {
                 </div>
                 <LogsTable
                     logs={state.logs}
-                    logAuth={hasB2BLogs ? (organization?.Settings.LogAuth || 0) : basicLogAuth}
-                    protonSentinel={hasB2BLogs && false ? (organization?.Settings.HighSecurity || 0) : protonSentinel}
+                    logAuth={hasB2BLogs ? organization?.Settings.LogAuth || 0 : basicLogAuth}
+                    protonSentinel={hasB2BLogs && false ? organization?.Settings.HighSecurity || 0 : protonSentinel}
                     loading={loading || loadingRefresh}
                     error={error}
                 />

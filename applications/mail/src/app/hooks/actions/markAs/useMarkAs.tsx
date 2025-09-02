@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { type Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';

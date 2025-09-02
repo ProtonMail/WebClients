@@ -2,7 +2,7 @@ import { differenceInDays, format, fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { type Subscription } from '@proton/payments';
+import type { Subscription } from '@proton/payments';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl, getStaticURL } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';

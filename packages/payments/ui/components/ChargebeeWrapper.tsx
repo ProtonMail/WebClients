@@ -11,8 +11,8 @@ import type { ChargebeeCardProcessorHook } from '@proton/components/payments/rea
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
-import { type PAYMENT_METHOD_TYPES } from '../../core/constants';
-import { type ChargeableV5PaymentToken, type NonChargeableV5PaymentToken } from '../../core/interface';
+import type { PAYMENT_METHOD_TYPES } from '../../core/constants';
+import type { ChargeableV5PaymentToken, NonChargeableV5PaymentToken } from '../../core/interface';
 import type { CbIframeHandles } from './ChargebeeIframe';
 import { ChargebeeIframe } from './ChargebeeIframe';
 import { CountriesDropdown } from './CountriesDropdown';

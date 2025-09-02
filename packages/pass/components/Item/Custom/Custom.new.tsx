@@ -16,7 +16,7 @@ import { usePortal } from '@proton/pass/hooks/usePortal';
 import { validateCustomItemForm } from '@proton/pass/lib/validation/custom-item';
 import { selectPassPlan } from '@proton/pass/store/selectors/user';
 import type { ItemCustomType } from '@proton/pass/types';
-import { type CustomItemFormValues } from '@proton/pass/types';
+import type { CustomItemFormValues } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 
 import { CustomForm } from './Custom.form';

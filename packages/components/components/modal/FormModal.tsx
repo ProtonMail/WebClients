@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -56,7 +56,7 @@ const Modal = ({
     noValidate = false,
     mode = '',
     // Destructure these options so they are not passed to the DOM.
-    // eslint-disable-next-line no-unused-vars,@typescript-eslint/no-unused-vars
+
     disableCloseOnLocation,
     disableCloseOnOnEscape,
     submitProps,

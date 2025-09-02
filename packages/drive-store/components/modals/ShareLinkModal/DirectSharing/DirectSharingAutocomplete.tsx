@@ -8,7 +8,7 @@ import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import clsx from '@proton/utils/clsx';
 
-import { type ShareInvitee } from '../../../../store';
+import type { ShareInvitee } from '../../../../store';
 import { PermissionsDropdownMenu } from '../PermissionsDropdownMenu';
 import { DirectSharingAddressesInputItem } from './DirectSharingAddressesInputItem';
 import { getGroupsWithContactsMap } from './helpers/getGroupsWithContactsMap';

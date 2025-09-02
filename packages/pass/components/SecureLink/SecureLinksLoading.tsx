@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import { type FC } from 'react';
+import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { CircleLoader } from '@proton/atoms';

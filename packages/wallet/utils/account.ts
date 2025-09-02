@@ -1,5 +1,5 @@
 import { type WasmAccount, WasmApiBitcoinAddressesCreationPayload } from '@proton/andromeda';
-import { type DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 
 import { signData } from './crypto';
 

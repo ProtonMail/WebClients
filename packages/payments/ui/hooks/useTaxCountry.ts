@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { type PaymentFacade } from '@proton/components/payments/client-extensions';
+import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import { useFlag } from '@proton/unleash';
 
 import {
@@ -12,7 +12,7 @@ import {
     getBillingAddressStatus,
 } from '../../core/billing-address/billing-address';
 import { getDefaultState, isCountryWithRequiredPostalCode, isCountryWithStates } from '../../core/countries';
-import { type PaymentStatus } from '../../core/interface';
+import type { PaymentStatus } from '../../core/interface';
 import { getDefaultPostalCodeByStateCode } from '../../postal-codes/default-postal-codes';
 import { isPostalCodeValid } from '../../postal-codes/postal-codes-validation';
 

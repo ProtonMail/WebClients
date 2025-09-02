@@ -22,7 +22,7 @@ import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { getFilterDropdownData, shouldOpenUpsellOnFilterClick, shouldToggleFilter } from '../helper';
-import { type ModalFilterType } from '../interface';
+import type { ModalFilterType } from '../interface';
 import { useNewsletterSubscriptionTelemetry } from '../useNewsletterSubscriptionTelemetry';
 
 interface Props {

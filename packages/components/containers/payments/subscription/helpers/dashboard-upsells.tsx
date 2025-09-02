@@ -3,7 +3,7 @@ import { type ReactNode, useEffect } from 'react';
 import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms';
-import { type TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
+import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 import {
     CYCLE,

@@ -1,10 +1,10 @@
-import { type EitherOr, type Organization } from '@proton/shared/lib/interfaces';
+import type { EitherOr, Organization } from '@proton/shared/lib/interfaces';
 
 import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_TYPES } from './constants';
-import { type FreeSubscription, type PlanIDs } from './interface';
+import type { FreeSubscription, PlanIDs } from './interface';
 import { getSupportedAddons, isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from './plan/addons';
 import { getPlanNameFromIDs } from './plan/helpers';
-import { type Plan, type PlansMap } from './plan/interface';
+import type { Plan, PlansMap } from './plan/interface';
 import { getPricePerCycle, getPricePerMember } from './price-helpers';
 import {
     type AggregatedPricing,
@@ -17,7 +17,7 @@ import {
     hasLumoPlan,
     isManagedExternally,
 } from './subscription/helpers';
-import { type Subscription, type SubscriptionCheckResponse } from './subscription/interface';
+import type { Subscription, SubscriptionCheckResponse } from './subscription/interface';
 import { SelectedPlan } from './subscription/selected-plan';
 import { isFreeSubscription } from './type-guards';
 

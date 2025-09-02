@@ -6,7 +6,7 @@ import useMailShortDomainPostSubscriptionComposerSpotlight from '@proton/compone
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useDispatch } from '@proton/redux-shared-store';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import { type Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 
 type CreateShortDomainAddress = {
     /** Set short domain as default address after creation */

@@ -1,7 +1,7 @@
 import { addDays, fromUnixTime, subDays } from 'date-fns';
 
 import type { Feature } from '@proton/features';
-import { type Subscription } from '@proton/payments';
+import type { Subscription } from '@proton/payments';
 import { isTrial } from '@proton/payments';
 
 export const getShouldOpenReferralModal = ({

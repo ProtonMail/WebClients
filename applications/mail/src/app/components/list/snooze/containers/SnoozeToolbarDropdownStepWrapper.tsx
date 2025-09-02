@@ -8,7 +8,7 @@ import { useGetElementsFromIDs } from '../../../../hooks/mailbox/useElements';
 import { SOURCE_ACTION } from '../../list-telemetry/useListTelemetry';
 import SnoozeCustomTime from '../components/SnoozeCustomTime';
 import SnoozeDurationSelection from '../components/SnoozeDurationSelection';
-import { type SNOOZE_DURATION } from '../constant';
+import type { SNOOZE_DURATION } from '../constant';
 
 export const SnoozeToolbarDropdownStepWrapperProps = {
     className: 'min-w-custom h-auto',

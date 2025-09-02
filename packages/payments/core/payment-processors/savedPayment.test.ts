@@ -3,7 +3,7 @@ import { MOCK_TOKEN_RESPONSE, addTokensResponse } from '@proton/testing/lib/paym
 
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
 import { Autopay } from '../constants';
-import { type AmountAndCurrency, type SavedPaymentMethodInternal, type V5PaymentToken } from '../interface';
+import type { AmountAndCurrency, SavedPaymentMethodInternal, V5PaymentToken } from '../interface';
 import { SavedPaymentProcessor } from './savedPayment';
 
 describe('SavedPaymentProcessor', () => {

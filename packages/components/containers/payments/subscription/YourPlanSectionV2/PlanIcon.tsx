@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import LumoLogo from '@proton/components/components/logo/LumoLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';

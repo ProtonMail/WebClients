@@ -9,7 +9,7 @@ import Loader from '@proton/components/components/loader/Loader';
 import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
-import { type TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
+import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 import type { FreeSubscription, FullPlansMap } from '@proton/payments';
 import { CYCLE, type FreePlanDefault, type Subscription, hasLumoPlan } from '@proton/payments';
@@ -23,7 +23,7 @@ import useVariant from '@proton/unleash/useVariant';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { type Upsell } from '../helpers';
+import type { Upsell } from '../helpers';
 import CurrentPlanInfoWithUpsellSection from './Upsells/CurrentPlanInfoSection';
 import DuoBanner from './Upsells/DuoBanner';
 import DuoBannerExtendSubscription, { useDuoBannerExtendSubscription } from './Upsells/DuoBannerExtendSubscription';

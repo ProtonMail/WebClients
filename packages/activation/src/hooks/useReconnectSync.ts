@@ -11,8 +11,8 @@ import {
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { resumeSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectSyncByEmail } from '@proton/activation/src/logic/sync/sync.selectors';
-import { type WithLoading } from '@proton/hooks/useLoading';
-import { type Address } from '@proton/shared/lib/interfaces';
+import type { WithLoading } from '@proton/hooks/useLoading';
+import type { Address } from '@proton/shared/lib/interfaces';
 import { getIsBYOEAccount } from '@proton/shared/lib/keys';
 
 const useReconnectSync = (address: Address) => {

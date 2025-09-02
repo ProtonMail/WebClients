@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { vaultMoveAllItemsIntent } from '@proton/pass/store/actions';
-import { type VaultShareItem } from '@proton/pass/store/reducers';
+import type { VaultShareItem } from '@proton/pass/store/reducers';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 

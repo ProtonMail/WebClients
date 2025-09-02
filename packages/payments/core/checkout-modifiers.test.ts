@@ -1,7 +1,7 @@
 import { getCheckoutModifiers } from './checkout-modifiers';
 import { CYCLE } from './constants';
 import { SubscriptionMode } from './subscription/constants';
-import { type SubscriptionCheckResponse } from './subscription/interface';
+import type { SubscriptionCheckResponse } from './subscription/interface';
 
 describe('getCheckoutModifiers', () => {
     let checkResult: SubscriptionCheckResponse;

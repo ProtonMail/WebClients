@@ -9,7 +9,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import { type MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
 import { registerLoggerEffect } from '@proton/pass/utils/logger';
 
 type Props = { children: ReactNode; recycle?: boolean };

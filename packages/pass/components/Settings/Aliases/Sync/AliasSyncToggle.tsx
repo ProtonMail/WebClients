@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { AliasSyncDisabled } from '@proton/pass/components/Settings/Aliases/Sync/AliasSyncDisabled';

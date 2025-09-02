@@ -7,7 +7,7 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import UpsellFeatureList from '@proton/components/components/upsell/UpsellFeatureList';
 import type { UpsellFeatureName } from '@proton/components/components/upsell/constants';
 import useConfig from '@proton/components/hooks/useConfig';
-import { type Plan } from '@proton/payments';
+import type { Plan } from '@proton/payments';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getAbuseURL, getStaticURL, getTermsURL } from '@proton/shared/lib/helpers/url';
 import accountLockedImage from '@proton/styles/assets/img/illustrations/account-locked.svg';

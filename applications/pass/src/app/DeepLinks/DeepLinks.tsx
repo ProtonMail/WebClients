@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 import { Redirect, type RouteChildrenProps, useParams } from 'react-router-dom';
 
 import { UpsellRef } from '@proton/pass/constants';

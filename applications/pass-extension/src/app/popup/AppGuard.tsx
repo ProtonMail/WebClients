@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';

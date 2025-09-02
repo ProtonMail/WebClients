@@ -1,7 +1,7 @@
 import Price from '@proton/components/components/price/Price';
 import { COUPON_CODES, CYCLE, getCheckout } from '@proton/payments';
 
-import { type CouponConfig } from './interface';
+import type { CouponConfig } from './interface';
 
 export const monthlyNudgeConfig: CouponConfig = {
     coupons: [COUPON_CODES.ANNUALOFFER25],

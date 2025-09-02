@@ -1,6 +1,6 @@
 import { type ElementType, useState } from 'react';
 
-import { type FactoryArg } from 'imask/esm/masked/factory';
+import type { FactoryArg } from 'imask/esm/masked/factory';
 import { pipe } from 'imask/esm/masked/pipe';
 
 import type { ObfuscatedItemProperty } from '@proton/pass/types/data/obfuscation';

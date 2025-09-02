@@ -2,7 +2,7 @@ import { buildSubscription, buildUser } from '@proton/testing/builders';
 import { PLANS_MAP } from '@proton/testing/data';
 
 import { ADDON_NAMES, COUPON_CODES, CYCLE, FREE_SUBSCRIPTION, PLANS, PLAN_NAMES } from '../constants';
-import { type PlanIDs } from '../interface';
+import type { PlanIDs } from '../interface';
 import { SubscriptionPlatform } from './constants';
 import { FREE_PLAN } from './freePlans';
 import {
