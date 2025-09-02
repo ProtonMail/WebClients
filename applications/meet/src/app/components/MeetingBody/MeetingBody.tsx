@@ -10,7 +10,7 @@ import { useCurrentScreenShare } from '../../hooks/useCurrentScreenShare';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
 import { Chat } from '../Chat/Chat';
-import { MeetingDetails } from '../MeetingDetails/MeetingDetails';
+import { MeetingDetails, WrappedMeetingDetails } from '../MeetingDetails/MeetingDetails';
 import { MeetingReadyPopup } from '../MeetingReadyPopup/MeetingReadyPopup';
 import { NoDeviceDetectedInfo } from '../NoDeviceDetectedInfo/NoDeviceDetectedInfo';
 import { NoDeviceDetectedModal } from '../NoDeviceDetectedModal/NoDeviceDetectedModal';
@@ -34,7 +34,7 @@ export const MeetingBody = () => {
 
     const [participantSideBarOpen, setParticipantSideBarOpen] = useState(true);
 
-    const { participantNameMap, meetingLink, roomName } = useMeetContext();
+    const { participantNameMap, meetingLink, roomName, guestMode } = useMeetContext();
 
     const { sideBarState } = useUIStateContext();
 
@@ -105,7 +105,7 @@ export const MeetingBody = () => {
                         <Participants />
                         <Settings />
                         <Chat />
-                        <MeetingDetails />
+                        {guestMode ? <MeetingDetails /> : <WrappedMeetingDetails />}
                     </>
                 )}
             </div>

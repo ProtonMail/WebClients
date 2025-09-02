@@ -14,25 +14,17 @@ import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useCopyTextToClipboard } from '../../hooks/useCopyTextToClipboard';
-import { useMeetingList } from '../../hooks/useMeetingList';
+import { useMeetings } from '../../store';
 import { MeetingSideBars } from '../../types';
 
 import './MeetingDetails.scss';
 
-export const MeetingDetails = () => {
+export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting }) => {
     const copyTextToClipboard = useCopyTextToClipboard();
 
     const { meetingLink, roomName, passphrase } = useMeetContext();
 
     const { sideBarState, toggleSideBarState } = useUIStateContext();
-
-    const { meetingId } = parseMeetingLink(meetingLink);
-
-    const [meetings] = useMeetingList();
-
-    const currentMeeting = useMemo(() => {
-        return ((meetings ?? []) as Meeting[]).find((meeting) => meeting.MeetingLinkName === meetingId);
-    }, [meetings, meetingId]);
 
     const timeZone = currentMeeting?.TimeZone ?? Intl.DateTimeFormat().resolvedOptions().timeZone;
 
@@ -133,4 +125,18 @@ export const MeetingDetails = () => {
             </div>
         </SideBar>
     );
+};
+
+export const WrappedMeetingDetails = () => {
+    const { meetingLink } = useMeetContext();
+
+    const { meetingId } = parseMeetingLink(meetingLink);
+
+    const [meetings] = useMeetings();
+
+    const currentMeeting = useMemo(() => {
+        return ((meetings ?? []) as Meeting[]).find((meeting) => meeting.MeetingLinkName === meetingId);
+    }, [meetings, meetingId]);
+
+    return <MeetingDetails currentMeeting={currentMeeting} />;
 };

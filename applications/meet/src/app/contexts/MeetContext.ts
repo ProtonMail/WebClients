@@ -45,6 +45,7 @@ export interface MeetContextValues {
     pagedParticipants: (RemoteParticipant | LocalParticipant)[];
     pageCount: number;
     passphrase: string;
+    guestMode: boolean;
 }
 
 export const MeetContext = createContext<MeetContextValues>({
@@ -86,6 +87,7 @@ export const MeetContext = createContext<MeetContextValues>({
     pagedParticipants: [],
     pageCount: 0,
     passphrase: '',
+    guestMode: false,
 });
 
 export const useMeetContext = () => {
