@@ -153,6 +153,9 @@
       "Claim this address": [
         "Nárokovat tuto adresu"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Získejte vaší bezplatnou adresu ${ BRAND_NAME }"
+      ],
       "Close": [
         "Zavřít"
       ],
@@ -4303,8 +4306,8 @@
       "customer support": [
         "zákaznická podpora"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Rodinné tarify v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Tarify Family v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Pokud pozvánku přijmete, převedeme Vás ze stávajícího tarifu a na váš účet připíšeme zbývající částku."
@@ -5729,7 +5732,7 @@
         "Přiděleno"
       ],
       "Allow logging of location and connection details": [
-        "Povolit ligování polohy a detailů připojení"
+        "Povolit logování polohy a detailů připojení"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Umožňuje uživatelům připojit se k bezpečným sdíleným serverům ze sekce **Země** v aplikaci ${ VPN_APP_NAME }."
@@ -6328,9 +6331,6 @@
       "Include device, location, and IP details": [
         "Zahrnout detaily zařízení, polohu a IP"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Včetně ${ formattedTaxRate } % ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Zvyšte zabezpečení svého účtu ověřením vaší e-mailové adresy."
       ],
@@ -6741,9 +6741,6 @@
       ],
       "Please use another browser or download the file.": [
         "Použijte jiný prohlížeč nebo si soubor stáhněte."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Ověřte prosím platbu v nové záložce, která je již otevřena."
       ],
       "Please wait till your changes are synced with the server.": [
         "Počkejte prosím, dokud se vaše změny nesynchronizují se serverem."
@@ -7290,9 +7287,6 @@
       ],
       "Vault updated": [
         "Trezor aktualizován"
-      ],
-      "Verification can take a few minutes.": [
-        "Ověřování může trvat několik minut."
       ],
       "Verification may take a few minutes.": [
         "Ověřování může trvat několik minut."
@@ -7848,7 +7842,7 @@
         "Finanční příspěvky"
       ],
       "Manual": [
-        "Manuálně"
+        "Ruční"
       ],
       "Modification": [
         "Změna"
@@ -8547,9 +8541,6 @@
       ],
       "Value": [
         "Hodnota"
-      ],
-      "VAT": [
-        "DPH"
       ],
       "Verification code": [
         "Ověřovací kód"
@@ -10993,11 +10984,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Během této doby nebudete moci předplatné upravit ani zrušit. Než se pokusíte provést jakékoli změny, počkejte, dokud nebude platba dokončena. Děkujeme vám za trpělivost."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Bez ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Bez ${ taxRate }% daně: ${ taxAmount }"
+      ],
       "Got it": [
         "Rozumím"
       ],
       "I'm purchasing as a business": [
         "Kupuji jako firma"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Včetně ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Včetně ${ taxRate }% daně: ${ taxAmount }"
       ],
       "MM/YY": [
         "00/00"
@@ -11016,6 +11019,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje se za ${ renewPriceStr }, zrušit lze kdykoli."
+      ],
+      "Taxes": [
+        "Daně"
       ],
       "terms & conditions": [
         "smluvních podmínek užívání"
@@ -11058,6 +11064,9 @@
       ],
       "Timeout exceeded": [
         "Byl překročen časový limit"
+      ],
+      "VAT": [
+        "DPH"
       ],
       "VAT number": [
         "DIČ"
@@ -14878,8 +14887,8 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systémové podsložky se v ${ MAIL_APP_NAME } zobrazí jako samostatné složky"
       ],
-      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
-        "Adresa byla odpojena. Odesílání zpráv je pozastaveno. Znovu se připojte, abyste tuto adresu znovu aktivovali."
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Adresa byla odpojena. Odesílání a přijímání zpráv je pozastaveno. Znovu se připojte, abyste tuto adresu znovu povolili."
       ],
       "The import will start with the most recent messages.": [
         "Import začne nejnovějšími zprávami."
@@ -15486,9 +15495,6 @@
         "${ n } peněženky",
         "${ n } peněženek",
         "${ n } peněženek"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bezpečnější způsob jak vlastnit Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin přes e-mail"

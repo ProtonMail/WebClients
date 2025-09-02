@@ -153,6 +153,9 @@
       "Claim this address": [
         "Ottieni questo indirizzo"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Ottieni il tuo indirizzo ${ BRAND_NAME } gratuito"
+      ],
       "Close": [
         "Chiudi"
       ],
@@ -4315,8 +4318,8 @@
       "customer support": [
         "assistenza clienti"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "I piani famiglia non supportano account esterni al momento. Crea un indirizzo con ${ BRAND_NAME } prima di unirti. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "I piani famiglia non supportano account esterni al momento. Crea un indirizzo con ${ BRAND_NAME } prima di unirti. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se accetti l'invito, ti cambieremo piano. Il saldo eventualmente rimasto sarà accreditato sul tuo account."
@@ -6218,9 +6221,6 @@
       "Include device, location, and IP details": [
         "Includi dettagli relativi a dispositivo, posizione e indirizzo IP"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incluso il ${ formattedTaxRate }% di ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Aumenta la sicurezza del tuo account verificando il tuo indirizzo email."
       ],
@@ -6623,9 +6623,6 @@
       ],
       "Please use another browser or download the file.": [
         "Usa un altro browser o scarica il file."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Per favore verifica il pagamento nella nuova scheda che è stata aperta."
       ],
       "Please wait till your changes are synced with the server.": [
         "Attendi che le tue modifiche siano sincronizzate con il server."
@@ -7161,9 +7158,6 @@
       "Vault updated": [
         "Cassaforte aggiornata"
       ],
-      "Verification can take a few minutes.": [
-        "La verifica può richiedere alcuni minuti."
-      ],
       "Verification may take a few minutes.": [
         "La verifica potrebbe richiedere qualche minuto."
       ],
@@ -7688,6 +7682,9 @@
       ],
       "Donation": [
         "Donazione"
+      ],
+      "Manual": [
+        "Manuale"
       ],
       "Modification": [
         "Modifica"
@@ -8376,9 +8373,6 @@
       ],
       "Value": [
         "Valore"
-      ],
-      "VAT": [
-        "IVA"
       ],
       "Verification code": [
         "Codice di verifica"
@@ -10781,11 +10775,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante questo periodo non sarà possibile modificare o annullare l'abbonamento. Si prega di attendere il completamento del pagamento prima di tentare qualsiasi modifica. Grazie per la pazienza."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Escludendo il ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Escluse tasse del ${ taxRate }%: ${ taxAmount }"
+      ],
       "Got it": [
         "Tutto chiaro"
       ],
       "I'm purchasing as a business": [
         "Sto acquistando come azienda"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluso il ${ taxRate }% di ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluse tasse del ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -10804,6 +10810,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Rinnova a ${ renewPriceStr }, annulla in qualsiasi momento."
+      ],
+      "Taxes": [
+        "Tasse"
       ],
       "terms & conditions": [
         "termini e condizioni"
@@ -10838,6 +10847,9 @@
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
+      ],
+      "VAT": [
+        "IVA"
       ],
       "VAT number": [
         "Numero partita IVA"
@@ -14535,8 +14547,8 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ${ MAIL_APP_NAME }"
       ],
-      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
-        "L'indirizzo è stato disconnesso. L'invio dei messaggi è stato sospeso. Ricollegarsi per riattivare l'indirizzo."
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "L'indirizzo è stato disconnesso. L'invio e la ricezione dei messaggi sono stati sospesi. Riconnettiti per riattivare questo indirizzo."
       ],
       "The import will start with the most recent messages.": [
         "L'importazione inizierà con i messaggi più recenti."
@@ -15100,9 +15112,6 @@
       "${ n } wallet": [
         "${ n } portafoglio",
         "${ n } portafogli"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Un modo più sicuro per conservare il tuo Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via email"

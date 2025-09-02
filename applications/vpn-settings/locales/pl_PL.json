@@ -153,6 +153,9 @@
       "Claim this address": [
         "Uzyskaj ten adres"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Uzyskaj darmowy adres ${ BRAND_NAME }"
+      ],
       "Close": [
         "Zamknij"
       ],
@@ -4345,9 +4348,6 @@
       "customer support": [
         "wsparcie klienta"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Plany rodzinne nie są obsługiwane dla kont zewnętrznych. Przed dołączeniem utwórz adres ${ BRAND_NAME }. ${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jeśli zaakceptujesz zaproszenie, zmienimy obecny plan i obciążymy Twoje konto kwotą pozostałego salda."
       ],
@@ -6349,9 +6349,6 @@
       "inactive": [
         "nieaktywna"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Zawiera ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Zwiększ bezpieczeństwo konta, weryfikując adres pomocniczy."
       ],
@@ -6753,9 +6750,6 @@
       ],
       "Please use another browser or download the file.": [
         "Użyj innej przeglądarki lub pobierz plik."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Zweryfikuj płatność w nowej karcie przeglądarki."
       ],
       "Please wait till your changes are synced with the server.": [
         "Poczekaj na synchronizację zmian z serwerem."
@@ -7302,9 +7296,6 @@
       ],
       "Vault updated": [
         "Zaktualizowanie sejfu"
-      ],
-      "Verification can take a few minutes.": [
-        "Weryfikacja może zająć kilka minut."
       ],
       "Verification may take a few minutes.": [
         "Weryfikacja może zająć kilka minut."
@@ -8556,9 +8547,6 @@
       ],
       "Value": [
         "Wartość"
-      ],
-      "VAT": [
-        "podatku VAT"
       ],
       "Verification code": [
         "Kod weryfikacyjny"
@@ -12251,7 +12239,7 @@
         "${ n } miesiąc ZA DARMO",
         "${ n } miesiące ZA DARMO",
         "${ n } miesięcy ZA DARMO",
-        "${ n } miesiąca BEZPŁATNIE"
+        "${ n } miesiąca ZA DARMO"
       ]
     },
     "specialoffer: Deal details": {
@@ -15384,16 +15372,13 @@
         "${ n } konto na portfel",
         "${ n } konta na portfel",
         "${ n } kont na portfel",
-        "${ n } kont na portfel"
+        "${ n } konta na portfel"
       ],
       "${ n } wallet": [
         "${ n } portfel",
         "${ n } portfele",
         "${ n } portfeli",
         "${ n } portfela"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bezpieczniejszy sposób na przechowywanie Bitcoinów"
       ],
       "Bitcoin via Email": [
         "Bitcoin na adres e-mail"

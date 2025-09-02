@@ -153,6 +153,9 @@
       "Claim this address": [
         "Атрымаць гэты адрас"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Атрымайце свой бясплатны адрас ${ BRAND_NAME }"
+      ],
       "Close": [
         "Закрыць"
       ],
@@ -4303,8 +4306,8 @@
       "customer support": [
         "падтрымка кліентаў"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Сямейныя тарыфныя планы ў цяперашні час не падтрымліваюць знешнія ўліковыя запісы. Перад далучэннем стварыце адрас ${ BRAND_NAME }. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Сямейныя тарыфныя планы ў цяперашні час не падтрымліваюць знешнія ўліковыя запісы. Перад далучэннем стварыце адрас ${ BRAND_NAME }. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Калі вы прыміце запрашэнне, то ваш тарыфны план будзе зменены. Рэшта балансу вашай падпіскі вернецца на ваш рахунак."
@@ -4331,7 +4334,7 @@
         "Можна прыняць не больш за ${ n } запрашэнняў на працягу 6 месяцаў."
       ],
       "Owners of a plan with members cannot join another family plan.": [
-        "Уладальнікі тарыфнага плана з удзельнікамі не могуць далучацца да іншых сямейных тарыфных планаў."
+        "Уладальнікі тарыфнага плана з удзельнікамі не могуць далучацца да іншага сямейнага тарыфнага плана."
       ],
       "Pending": [
         "У чаканні"
@@ -5417,7 +5420,7 @@
         "${ hasTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength }, якія не належаць да SSO выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю."
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME }"
+        "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME } Scribe"
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
@@ -6328,9 +6331,6 @@
       "Include device, location, and IP details": [
         "Уключыць падрабязнасці аб прыладзе, месцазнаходжанні і IP"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Уключае ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Павялічце бяспеку свайго ўліковага запісу з дапамогай праверкі адраса электроннай пошты."
       ],
@@ -6738,9 +6738,6 @@
       ],
       "Please use another browser or download the file.": [
         "Скарыстайцеся іншым браўзерам або спампуйце файл."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Праверце плацеж у новай адкрытай укладцы."
       ],
       "Please wait till your changes are synced with the server.": [
         "Пачакайце, пакуль вашы змены сінхранізуюцца з серверам."
@@ -7287,9 +7284,6 @@
       ],
       "Vault updated": [
         "Сховішча абноўлена"
-      ],
-      "Verification can take a few minutes.": [
-        "Праверка можа заняць некалькі хвілін."
       ],
       "Verification may take a few minutes.": [
         "Праверка можа заняць некалькі хвілін."
@@ -8539,9 +8533,6 @@
       "Value": [
         "Значэнне"
       ],
-      "VAT": [
-        "ПДВ"
-      ],
       "Verification code": [
         "Код спраўджання"
       ],
@@ -9754,7 +9745,7 @@
         "Усе праграмы ${ BRAND_NAME } і іх прэміяльныя функцыі"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
-        "Усе праграмы для бізнесу ${ BRAND_NAME } і прэміяльныя функцыі для абароны ўсяго вашага бізнесу."
+        "Усе праграмы для бізнесу ${ BRAND_NAME } і прэміяльныя функцыі для абароны ўсё вашай кампаніі."
       ],
       "Early access to new apps and features": [
         "Ранні доступ да новых праграм і функцый"
@@ -10001,7 +9992,7 @@
         "Магчымасць прагляду непрыватных уваходных лістоў карыстальнікаў так, як гэта робіць сам карыстальнік, уключаючы поўную інфармацыю пра паведамленні і кантактныя звесткі"
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
-        "Інструмент кіравання арганізацыяй, з дапамогай якога адміністратары могуць дадаваць/выдаляць карыстальнікаў, кіраваць сваім доступам да сэрвісаў ${ BRAND_NAME }, а таксама выконваць іншыя задачы."
+        "Інструмент кіравання арганізацыяй, з дапамогай якога адміністратары могуць дадаваць/выдаляць карыстальнікаў, кіраваць іх доступам да сэрвісаў ${ BRAND_NAME }, а таксама выконваць іншыя задачы."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Наша надзейная інфраструктура гарантуе вам пастаянны доступ да вашага ўліковага запісу"
@@ -10088,7 +10079,7 @@
         "Падтрымка пратаколаў абмену файламі, такіх як BitTorrent"
       ],
       "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
-        "Запампуйце ваш лагатып для бізнесу, каб персаналізаваць досвед вашых каманд у вэб-праграме ${ BRAND_NAME }"
+        "Запампуйце свой лагатып кампаніі, каб персаналізаваць досвед вашых каманд у вэб-праграме ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Выкарыстоўвайце свой уласны карыстальніцкі дамен электроннай пошты. Напрыклад, vy@vashaimya.com"
@@ -10255,7 +10246,7 @@
     },
     "Notification": {
       "${ reason } has been disabled": [
-        "${ reason } было адключана"
+        "${ reason } быў адключаны"
       ],
       "${ reason } has been enabled": [
         "${ reason } было ўключана"
@@ -10961,7 +10952,7 @@
     },
     "Payments": {
       "Billing Country": [
-        "Краіна выстаўлення рахунка"
+        "Краіна выстаўлення рахунку"
       ],
       "Card number": [
         "Нумар карткі"
@@ -10978,11 +10969,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змяненні. Дзякуй за ваша цярпенне."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Без уліку ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Без уліку падатка ў ${ taxRate }%: ${ taxAmount }"
+      ],
       "Got it": [
         "Зразумела"
       ],
       "I'm purchasing as a business": [
         "Я купляю як юрыдычная асоба"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Уключае ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "З улікам падатка ў ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "ММ/ГГ"
@@ -11001,6 +11004,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Падаўжаецца за ${ renewPriceStr }. Скасаваць можна ў любы час."
+      ],
+      "Taxes": [
+        "Падаткі"
       ],
       "terms & conditions": [
         "умовы выкарыстання"
@@ -11043,6 +11049,9 @@
       ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
+      ],
+      "VAT": [
+        "ПДВ"
       ],
       "VAT number": [
         "Нумар ПДВ"
@@ -11873,7 +11882,7 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Выяўлены іншыя патэнцыяльныя ўцечкі ${ name } і ${ remainingCount }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+        "Выяўлены іншыя патэнцыяльныя ўцечкі з назвай ${ name } і колькасцю роўнай ${ remainingCount }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Выяўлена ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
@@ -12197,7 +12206,7 @@
         "Калі вы выйдзеце з сістэмы да скідання пароля, вы можаце страціць доступ да вашага ўліковага запісу."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "Вы можаце страціць доступ да вашага ўліковага запісу, калі выйсці з сістэмы без скідання пароля."
+        "Вы можаце страціць доступ да вашага ўліковага запісу, калі выйдзіце з сістэмы без скідання пароля."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "Вы зможаце скінуць свой пароль праз ${ boldTimeLeft }."
@@ -12489,7 +12498,7 @@
         "Абараніце свой уліковы запіс ад пагроз з дамогай Sentinel"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
-        "Палепшыце свой тарыфны план і зэканомце больш грошай, купіўшы ${ planName } на 2 гады"
+        "Палепшыце свой тарыфны план і зэканомце больш грошай з ${ planName } на 2 гады"
       ]
     },
     "specialoffer: Tooltip": {
@@ -13322,7 +13331,7 @@
         "Ваша падпіска на тарыфным плане ${ planName } міне ${ expiryDate }. Будуць дададзены крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
-        "Ваш тарыфны план ${ planName } не толькі захоўвае вашы дзелавыя даныя і бяспеку зносін, але і падтрымлівае выкананне вашых патрабаванняў, вылучае ваш бізнес і захоўвае сувязь паміж вашай камандай."
+        "Ваш тарыфны план ${ planName } не толькі захоўвае вашы дзелавыя даныя і бяспеку зносін, але і падтрымлівае выкананне вашых мэт, вылучае ваш бізнес і захоўвае сувязь паміж вашай камандай."
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
@@ -14863,8 +14872,8 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Сістэмныя падпапкі будуць адлюстроўвацца ў якасці асобных папак у ${ MAIL_APP_NAME }"
       ],
-      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
-        "Адрас адключаны. Адпраўка паведамленняў прыпынена. Перападключыцеся, каб уключыць гэты адрас яшчэ раз."
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Адрас адключаны. Функцыя адпраўкі і атрымання паведамленняў прыпынена. Перападключыцеся, каб уключыць гэты адрас яшчэ раз."
       ],
       "The import will start with the most recent messages.": [
         "Імпартаванне пачнецца з самых апошніх паведамленняў."
@@ -15454,9 +15463,6 @@
         "${ n } кашалькі",
         "${ n } кашалькоў",
         "${ n } кашалькоў"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Больш бяспечны спосаб захоўвання Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin праз электронную пошту"

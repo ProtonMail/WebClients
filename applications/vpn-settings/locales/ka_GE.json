@@ -423,6 +423,9 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName }-ის მიღება"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "მიიღეთ უფასო ${ BRAND_NAME }-ის მისამართი"
+      ],
       "Get a new encrypted email address": [
         "მიიღეთ ახალი დაშიფრული ელფოსტის მისამართი"
       ],
@@ -638,6 +641,9 @@
       ],
       "Refer a friend": [
         "მიმართეთ მეგობარს"
+      ],
+      "Refresh": [
+        "განახლება"
       ],
       "Refresh status": [
         "სტატუსის განახლება"
@@ -1111,6 +1117,9 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "ნაკლული გასაღებების გენერაცია მისამართისთვის \"${ emailAddress }\""
       ],
+      "Reconnect": [
+        "თავიდან დაკავშირება"
+      ],
       "Saving": [
         "შენახვა"
       ],
@@ -1132,6 +1141,9 @@
         "ნაგულისხმევი"
       ],
       "Disabled": [
+        "გათიშულია"
+      ],
+      "Disconnected": [
         "გათიშულია"
       ],
       "External": [
@@ -4187,9 +4199,6 @@
       "customer support": [
         "მხარდაჭერის გუნდი"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "ოჯახის გეგმებს, ამჟამად, გარე ანგარიშების მხარდაჭერა არ გააჩნიათ. შეერთებამდე ${ BRAND_NAME }-ის ანგარიში შექმენით. ${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "თუ მოსაწევევს მიიღებთ, ჩვენ თქვენი მიმდინარე ტრიფიდან გადაგრთავთ და დარჩენილ ბალანსს ანგარიშზე დაგირიცხავთ."
       ],
@@ -5401,6 +5410,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "ანგარიშთან წვდომა აკრძალულია გადაუხდელი ინვოისების გამო. დაუკავშირდით თქვენს ადმინისტრატორს."
       ],
+      "Account monitor": [
+        "ანგარიშის მონიტორინგი"
+      ],
       "Account successfully updated": [
         "ანგარში წარმატებით განახლდა"
       ],
@@ -5718,6 +5730,9 @@
       "Disabled countries": [
         "გამორთული ქვეყნები"
       ],
+      "Disabled on ${ boldValue }": [
+        "გათიშვის თარიღი ${ boldValue }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "2FA-ის გათიშვა თქვენს ანგარიშს ნაკლებად დაცულს გახდის. გააგრძელეთ, თუ ზუსტად იცით, რას აკეთებთ."
       ],
@@ -5830,6 +5845,9 @@
       "Enabled countries": [
         "ჩართული ქვეყნები"
       ],
+      "Enabled on ${ boldValue }": [
+        "ჩართვის თარიღი ${ boldValue }"
+      ],
       "Enabling auto-deletion…": [
         "ავტოამოცნობის ჩართვა…"
       ],
@@ -5931,6 +5949,9 @@
       ],
       "Gain visibility across your organization": [
         "აიმაღლეთ ხილვადობა თქვენს ორიგანიზაციაში"
+      ],
+      "Gateway monitor": [
+        "რაუტერის მონიტორი"
       ],
       "Gateways": [
         "რაუტერები"
@@ -6034,9 +6055,6 @@
       ],
       "inactive": [
         "არააქტიური"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }%-ის ჩათვლით ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "გაზარდეთ თქვენი ანგარიშის უსაფრთხოება თქვენი ელფოსტის მისამართის გადამოწმებით."
@@ -6331,6 +6349,9 @@
       "Or select a particular server:": [
         "ან აირჩიეთ სერვერი:"
       ],
+      "Organization monitor": [
+        "ორგანიზაციის მონიტორინგი"
+      ],
       "Organization size": [
         "ორგანიზაციის ზომა"
       ],
@@ -6351,6 +6372,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - მორგებული ელფოსტა წაიშალა"
+      ],
+      "Pass usage logs": [
+        "Pass-ის გამოყენების ჟურნალი"
       ],
       "password": [
         "პაროლი"
@@ -6425,9 +6449,6 @@
       ],
       "Please use another browser or download the file.": [
         "სცადეთ სხვა ბრაუზერი ან ფაილი გადმოწერეთ."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "შეამოწმეთ გადახდა ახალგახსნილ ჩანართში."
       ],
       "Please wait till your changes are synced with the server.": [
         "მოითმინეთ, მიმდინარეობს თქვენი ცვლილებების სერვერთან სინქრონიზაცია."
@@ -6945,9 +6966,6 @@
       "Vault updated": [
         "საცავი განახლდა"
       ],
-      "Verification can take a few minutes.": [
-        "შემოწმებას რამდენიმე წუთი შეიძლება, დასჭირდეს."
-      ],
       "Verification may take a few minutes.": [
         "გადამოწმებას შეიძლება, რამდენიმე წუთი დასჭირდეს."
       ],
@@ -7439,6 +7457,9 @@
       ],
       "Donation": [
         "შეწირულობა"
+      ],
+      "Manual": [
+        "ხელით"
       ],
       "Modification": [
         "ჩასწორება"
@@ -8124,9 +8145,6 @@
       ],
       "Value": [
         "მნიშვნელობა"
-      ],
-      "VAT": [
-        "დღგ"
       ],
       "Verification code": [
         "შემოწმების კოდი"
@@ -10454,6 +10472,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "განახლების დრო ${ renewPriceStr }. გააუქმეთ ნებისმიერ დროს."
       ],
+      "Taxes": [
+        "გადასახადები"
+      ],
       "terms & conditions": [
         "პირობები და წესები"
       ],
@@ -10477,6 +10498,9 @@
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
+      ],
+      "VAT": [
+        "დღგ"
       ],
       "VAT number": [
         "დღგ ნომერი"
@@ -10677,6 +10701,9 @@
       ],
       "Search users": [
         "მომხმარებლების ძებნა"
+      ],
+      "Search users or details": [
+        "მომხმარებლების ან დეტალების ძებნა"
       ],
       "Select": [
         "აირჩიეთ"
@@ -13384,6 +13411,9 @@
       "Description": [
         "აღწერა"
       ],
+      "Details": [
+        "დეტალები"
+      ],
       "Device": [
         "მოწყობილობა"
       ],
@@ -13851,6 +13881,9 @@
       ],
       "There are no groups": [
         "ჯგუფები არ არსებობს"
+      ],
+      "Try ${ AUTHENTICATOR_APP_NAME }": [
+        "სცადეთ ${ AUTHENTICATOR_APP_NAME }"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
@@ -14645,9 +14678,6 @@
       "${ n } wallet": [
         "${ n } საფულე",
         "${ n } საფულე"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "უფრო უსაფრთხო გზა თქვენი Bitcoin-ის შესანახად"
       ],
       "Bitcoin via Email": [
         "Bitcoin ელფოსტით"

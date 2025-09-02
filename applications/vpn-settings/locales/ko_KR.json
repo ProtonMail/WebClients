@@ -153,6 +153,9 @@
       "Claim this address": [
         "주소 얻기"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "무료 ${ BRAND_NAME } 주소를 받으세요"
+      ],
       "Close": [
         "닫기"
       ],
@@ -4240,8 +4243,8 @@
       "customer support": [
         "고객 지원"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "현재 가족 요금제는 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "현재 가족 플랜이 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "초대를 수락하면, 현재 요금제에서 전환되고 남은 잔액이 사용자의 계좌로 환불됩니다."
@@ -6082,9 +6085,6 @@
       "Include device, location, and IP details": [
         "기기, 위치 및 IP 정보 포함"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }% ${ taxName } 포함: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "이메일 인증을 통해 계정 보안을 한차원 더 끌어올리세요."
       ],
@@ -6483,9 +6483,6 @@
       ],
       "Please use another browser or download the file.": [
         "파일을 다운로드 하거나 다른 브라우저를 사용하세요."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "열린 새 탭에서 결제를 확인하세요."
       ],
       "Please wait till your changes are synced with the server.": [
         "사용자의 변경이 서버에 동기화 될 때 까지 기다려 주세요."
@@ -7014,9 +7011,6 @@
       ],
       "Vault updated": [
         "금고를 업데이트했습니다"
-      ],
-      "Verification can take a few minutes.": [
-        "인증에 몇 분이 소요될 수 있습니다."
       ],
       "Verification may take a few minutes.": [
         "인증에 몇 분이 소요될 수 있습니다."
@@ -8214,9 +8208,6 @@
       ],
       "Value": [
         "값"
-      ],
-      "VAT": [
-        "부가세"
       ],
       "Verification code": [
         "인증 코드"
@@ -10576,11 +10567,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "이 기간 동안 구독을 수정하거나 취소할 수 없습니다. 변경을 시도하기 전에 결제가 완료될 때까지 기다려 주세요. 기다려 주셔서 감사합니다."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName } 제외: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% 세금 제외: ${ taxAmount }"
+      ],
       "Got it": [
         "확인했습니다"
       ],
       "I'm purchasing as a business": [
         "사업체 용도로 구매합니다"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName } 포함: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% 세금 포함: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/YY (월/년)"
@@ -10599,6 +10602,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }에 갱신되며 언제나 취소할 수 있습니다."
+      ],
+      "Taxes": [
+        "세금"
       ],
       "terms & conditions": [
         "이용 약관"
@@ -10629,6 +10635,9 @@
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
+      ],
+      "VAT": [
+        "부가세"
       ],
       "VAT number": [
         "부가가치세 번호"
@@ -14254,8 +14263,8 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }의 시스템 하위폴더가 별도로 폴더를 표시합니다"
       ],
-      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
-        "주소가 연결 해제되었습니다. 메시지 전송이 일시 중지되었습니다. 다시 연결하여 주소를 다시 활성화하십시오."
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "주소가 연결 해제되었습니다. 메시지 송수신이 일시 정지되었습니다. 이 주소를 다시 활성화하려면 재로그인이 필요합니다."
       ],
       "The import will start with the most recent messages.": [
         "최근의 주된 메시지 불러오기가 곧 시작됩니다."
@@ -14817,9 +14826,6 @@
       ],
       "${ n } wallet": [
         "${ n }개 지갑"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bitcoin을 보관하는 가장 안전한 방법"
       ],
       "Bitcoin via Email": [
         "Email을 통한 Bitcoin"

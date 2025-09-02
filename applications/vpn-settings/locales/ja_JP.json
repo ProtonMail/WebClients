@@ -153,6 +153,9 @@
       "Claim this address": [
         "このアドレスを取得"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "無料の${ BRAND_NAME }アドレスを取得"
+      ],
       "Close": [
         "閉じる"
       ],
@@ -1112,6 +1115,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "アドレス「${ emailAddress }」の不足しているキーを生成します"
       ],
+      "Reconnect": [
+        "再接続"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "アドレス「${ emailAddress }」を再接続します"
+      ],
       "Saving": [
         "保存中"
       ],
@@ -1134,6 +1143,9 @@
       ],
       "Disabled": [
         "無効"
+      ],
+      "Disconnected": [
+        "切断されました"
       ],
       "External": [
         "外部"
@@ -4231,8 +4243,8 @@
       "customer support": [
         "カスタマーサポート"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "ファミリープランは現在外部のアカウントをサポートしていません。参加する前に${ BRAND_NAME }アドレスを作成してください。${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "ファミリープランは現在外部のアカウントをサポートしていません。参加する前に${ BRAND_NAME }アドレスを作成してください。${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "招待を受けると、あなたの現在のプランは変更され、残高があればあなたのアカウントクレジットに追加されます。"
@@ -6073,9 +6085,6 @@
       "Include device, location, and IP details": [
         "デバイス、位置情報、IPの詳細を含める"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }% ${ taxName }: ${ price } を含む"
-      ],
       "Increase your account security by verifying your email address.": [
         "メールアドレスを確認することで、アカウントのセキュリティを高めることができます。"
       ],
@@ -6471,9 +6480,6 @@
       ],
       "Please use another browser or download the file.": [
         "他のブラウザを使用するか、このファイルをダウンロードしてください。"
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "新しいタブで支払いを確認してください。"
       ],
       "Please wait till your changes are synced with the server.": [
         "変更がサーバーで同期されるまでお待ちください。"
@@ -7003,9 +7009,6 @@
       "Vault updated": [
         "保管庫が更新されました"
       ],
-      "Verification can take a few minutes.": [
-        "検証に数分かかることがあります。"
-      ],
       "Verification may take a few minutes.": [
         "認証には数分かかる場合があります。"
       ],
@@ -7516,6 +7519,9 @@
       ],
       "Donation": [
         "寄付"
+      ],
+      "Manual": [
+        "マニュアル"
       ],
       "Modification": [
         "変更"
@@ -8199,9 +8205,6 @@
       ],
       "Value": [
         "値"
-      ],
-      "VAT": [
-        "付加価値税"
       ],
       "Verification code": [
         "認証コード"
@@ -10537,11 +10540,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "この期間中、サブスクリプションを変更またはキャンセルすることはできません。 変更を試みる前にお支払いが完了するまでお待ちください。お待ちください。"
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName }を除く: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% の税金を除く: ${ taxAmount }"
+      ],
       "Got it": [
         "分かりました"
       ],
       "I'm purchasing as a business": [
         "法人として購入します"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName }: ${ taxAmount } を含む"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% の税金込み: ${ taxAmount }"
       ],
       "MM/YY": [
         "月/年"
@@ -10560,6 +10575,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
+      ],
+      "Taxes": [
+        "税金"
       ],
       "terms & conditions": [
         "利用規約"
@@ -10590,6 +10608,9 @@
       ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
+      ],
+      "VAT": [
+        "付加価値税"
       ],
       "VAT number": [
         "VAT番号"
@@ -14215,6 +14236,9 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれぞれのフォルダーとして表示されます"
       ],
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "アドレスは接続解除されました。メッセージの送信および受信は一時停止されています。このアドレスを再び有効にするには、再接続してください。"
+      ],
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"
       ],
@@ -14752,9 +14776,6 @@
       ],
       "${ n } wallet": [
         "${ n } 個のウォレット"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bitcoin を保持する安全な方法"
       ],
       "Bitcoin via Email": [
         "メールで Bitcoin"
