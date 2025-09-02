@@ -78,6 +78,10 @@ export type CustomAliasCreateRequest = {
     AliasName?: string | null;
     Item: ItemCreateRequest;
 };
+export type GetAliasDetailBulk = {
+    /* ItemsIDs to be retrieved. At most 100 */
+    ItemIDs: Id[];
+};
 export type SetAliasMailboxesRequest = {
     /* IDs for the mailboxes that will receive emails sent to this alias */
     MailboxIDs: number[];
@@ -518,6 +522,10 @@ export type ItemRevisionContentsResponse = {
     LastUseTime: number;
     /* Creation time of this revision */
     RevisionTime: number;
+};
+export type AliasDetailsBulkResponse = {
+    /* List of alias details for the given items. */
+    Aliases: AliasDetailsResponse[];
 };
 export type AliasDetailsResponse = {
     /* Alias email */
@@ -1072,6 +1080,7 @@ export type KeyRotationKeyPair = {
     /* Encrypted key encoded in base64 */
     Key: string;
 };
+export type Id = string;
 export type EncryptedId = string;
 export type CreatePendingAliasRequest = { PendingAliasID: Id; Item: ItemCreateRequest };
 export type ImportItemRequest = {
@@ -1108,7 +1117,6 @@ export type LinkFileToItemFileData = {
     /* File key encrypted with the item key represented in Base64 */
     FileKey: string;
 };
-export type Id = string;
 export type FileRestoreSingleInput = {
     FileID: Id;
     /* FileKey encrypted with the ItemKey, encoded in Base64 */
@@ -1251,6 +1259,7 @@ export type GroupInviteListItemResponse = {
     InvitedAddressID: Id;
     /* Share keys encrypted for the address key of the invited group and signed with the address keys of the inviter */
     Keys: KeyRotationKeyPair[];
+    VaultData: InviteVaultDataForUser;
     /* Base64 encrypted invite data */
     Data?: string | null;
     /* Creation time for the invite */
@@ -1676,6 +1685,10 @@ export type ApiResponse<Path extends string, Method extends string> =
     : Path extends `pass/v1/public_link/files/${string}/${string}/${string}` ?
         Method extends `get` ?
             string
+        :   never
+    : Path extends `pass/v1/share/${string}/alias/bulk/get` ?
+        Method extends `post` ?
+            AliasDetailsBulkResponse & { Code: ResponseCodeSuccess }
         :   never
     : Path extends `pass/v1/share/${string}/invite/new_user/batch` ?
         Method extends `post` ?
@@ -2185,6 +2198,10 @@ export type ApiRequestBody<Path extends string, Method extends string> =
     : Path extends `pass/v1/user/alias/mailbox/${string}/verify` ?
         Method extends `post` ?
             UserMailboxVerifyRequest
+        :   never
+    : Path extends `pass/v1/share/${string}/alias/bulk/get` ?
+        Method extends `post` ?
+            GetAliasDetailBulk
         :   never
     : Path extends `pass/v1/share/${string}/invite/new_user/batch` ?
         Method extends `post` ?
