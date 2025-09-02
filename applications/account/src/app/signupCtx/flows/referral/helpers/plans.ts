@@ -48,6 +48,10 @@ export const plansRequiringPaymentToken: SupportedReferralPlans[] = Object.entri
     .filter(([, { trial }]) => trial)
     .map(([plan]) => plan as SupportedReferralPlans);
 
+export const autoRenewingPlans: SupportedReferralPlans[] = Object.entries(referralPlanMap)
+    .filter(([, { trial }]) => trial)
+    .map(([plan]) => plan as SupportedReferralPlans);
+
 export const getReferralSelectedPlan = (plan: SupportedReferralPlans | undefined): ReferralSelectedPlan => {
     if (!plan || !(plan in referralPlanMap)) {
         return referralPlanMap[PLANS.BUNDLE];

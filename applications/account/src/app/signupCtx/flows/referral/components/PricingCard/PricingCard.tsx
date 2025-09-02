@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { VerticalStep, VerticalSteps } from '@proton/atoms';
 import { SkeletonLoader } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import { getTrialRenewalNoticeText } from '@proton/components/containers/payments/RenewalNotice';
 import { referralReward } from '@proton/components/containers/referral/constants';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { PLANS, PLAN_NAMES, TRIAL_DURATION_DAYS } from '@proton/payments';
@@ -16,7 +17,7 @@ import clsx from '@proton/utils/clsx';
 import { getReferrerName } from '../../../../helpers/signupSearchParams';
 import { getPlanIconPath } from '../../helpers/planIcons';
 import type { SupportedReferralPlans } from '../../helpers/plans';
-import { plansRequiringPaymentToken } from '../../helpers/plans';
+import { autoRenewingPlans, plansRequiringPaymentToken } from '../../helpers/plans';
 
 const LogoIconShape = ({ children, border = true }: { children: ReactNode; border?: boolean }) => {
     return (
@@ -124,6 +125,8 @@ const PricingFooter = () => {
 
     const priceWithDiscountPerMonth = getSimplePriceString(uiData.currency, uiData.withDiscountPerMonth);
 
+    const willAutoRenew = autoRenewingPlans.includes(payments.selectedPlan.name as SupportedReferralPlans);
+
     const total = (
         <>
             <div className="flex justify-space-between gap-2 text-lg">
@@ -136,7 +139,11 @@ const PricingFooter = () => {
             <div>
                 {hasFullCheckoutDetails ? (
                     <p className="m-0">
-                        {c('Signup').t`Then ${priceWithDiscountPerMonth} per month, if you subscribe.`}
+                        {willAutoRenew
+                            ? getTrialRenewalNoticeText({
+                                  renewCycle: uiData.renewCycle,
+                              })
+                            : c('Signup').t`Then ${priceWithDiscountPerMonth} per month, if you subscribe.`}
                     </p>
                 ) : (
                     <SkeletonLoader width="100%" height="1.25rem" />
