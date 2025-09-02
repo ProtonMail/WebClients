@@ -1048,6 +1048,9 @@
       "Refer a friend": [
         "Referencie um amigo"
       ],
+      "Refresh": [
+        "Atualizar"
+      ],
       "Refresh status": [
         "Atualizar estado"
       ],
@@ -5116,10 +5119,6 @@
         "${ n } dia",
         "${ n } dias"
       ],
-      "${ n } day left": [
-        "${ n } dia restante",
-        "${ n } dias restantes"
-      ],
       "Access granted": [
         "O acesso foi concedido."
       ],
@@ -6186,9 +6185,6 @@
       ],
       "customer support": [
         "apoio ao cliente"
-      ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Os planos de família não suportam atualmente contas externas. Crie um endereço ${ BRAND_NAME } antes de aderir. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, mudá-lo-emos do seu plano actual e creditaremos na sua conta qualquer saldo remanescente."
@@ -8821,9 +8817,6 @@
       "inactive": [
         "inativa"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incluindo ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Aumente a segurança da sua conta verificando o seu endereço de e-mail."
       ],
@@ -9399,9 +9392,6 @@
       ],
       "Please use another browser or download the file.": [
         "Utilize outro navegador ou transfira o ficheiro."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Verifique o pagamento no separador que abriu."
       ],
       "Please wait till your changes are synced with the server.": [
         "Aguarde até que as suas alterações sejam sincronizadas com o servidor."
@@ -10207,9 +10197,6 @@
       "Vault updated": [
         "O cofre foi atualizado."
       ],
-      "Verification can take a few minutes.": [
-        "A verificação pode levar alguns minutos."
-      ],
       "Verification link expired": [
         "A ligação de verificação expirou."
       ],
@@ -10911,6 +10898,9 @@
       "Donation": [
         "Donativo"
       ],
+      "Manual": [
+        "Manual"
+      ],
       "Modification": [
         "Modificação"
       ],
@@ -10973,6 +10963,11 @@
       ],
       "Primary": [
         "Primária"
+      ]
+    },
+    "Key type hint": {
+      "Faster": [
+        "Mais rápido"
       ]
     },
     "Keyboard shortcut name": {
@@ -12375,9 +12370,6 @@
       ],
       "Value": [
         "Valor"
-      ],
-      "VAT": [
-        "IVA"
       ],
       "Verification code": [
         "Código de verificação"
@@ -15833,6 +15825,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renovação por ${ renewPriceStr } com possibilidade de cancelar a qualquer momento."
       ],
+      "Taxes": [
+        "Impostos"
+      ],
       "terms & conditions": [
         "os termos e condições"
       ],
@@ -15866,6 +15861,9 @@
       ],
       "Timeout exceeded": [
         "O tempo limite foi excedido."
+      ],
+      "VAT": [
+        "IVA"
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Será faturado ${ amountToCharge } com o método de pagamento selecionado."
@@ -15921,6 +15919,9 @@
     "Payments.VAT number name": {
       "ABN": [
         "Número de empresa australiano (ABN)"
+      ],
+      "Add ABN": [
+        "Adicionar ABN"
       ],
       "Business Number": [
         "Número da empresa"
@@ -20006,6 +20007,9 @@
       ],
       "Desktop": [
         "Área de trabalho"
+      ],
+      "Details": [
+        "Detalhes"
       ],
       "Device": [
         "Dispositivo"

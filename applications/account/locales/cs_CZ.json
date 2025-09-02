@@ -262,6 +262,9 @@
       "Claim this address": [
         "Nárokovat tuto adresu"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Získejte vaší bezplatnou adresu ${ BRAND_NAME }"
+      ],
       "Clear all formatting": [
         "Odebrat veškeré formátování"
       ],
@@ -786,9 +789,6 @@
       ],
       "Get verification code": [
         "Odeslat ověřovací kód"
-      ],
-      "Give access now": [
-        "Udělit přístup nyní"
       ],
       "Go back": [
         "Zpět"
@@ -5249,29 +5249,53 @@
       "${ BRAND_NAME } Account email": [
         "E-mail účtu ${ BRAND_NAME }"
       ],
+      "${ days } day left": [
+        "Zbývá ${ days } den",
+        "Zbývají ${ days } dny",
+        "Zbývá ${ days } dnů",
+        "Zbývá ${ days } dnů"
+      ],
+      "${ hours } hour left": [
+        "Zbývá ${ hours } hodina",
+        "Zbývají ${ hours } hodiny",
+        "Zbývá ${ hours } hodin",
+        "Zbývá ${ hours } hodin"
+      ],
+      "${ minutes } minute left": [
+        "Zbývá ${ minutes } minuta",
+        "Zbývají ${ minutes } minuty",
+        "Zbývá ${ minutes } minut",
+        "Zbývá ${ minutes } minut"
+      ],
       "${ n } day": [
         "${ n } den",
         "${ n } dny",
         "${ n } dnů",
         "${ n } dnů"
       ],
-      "${ n } day left": [
-        "Zbývá ${ n } den",
-        "Zbývají ${ n } dny",
-        "Zbývá ${ n } dnů",
-        "Zbývá ${ n } dnů"
+      "${ user } is requesting emergency access to your account": [
+        "${ user } žádá o nouzový přístup k vašemu účtu"
       ],
       "${ user } will be able to use your account and change your data.": [
         "${ user } bude moci používat váš účet a měnit vaše data."
       ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user } bude odhlášen(a) z vašeho účtu a nebude mít k němu přístup až do dalšího nouzového přístupu."
+      ],
       "${ user } will no longer be able to request access to your account in case of emergency.": [
         "${ user } již nebude moci požádat o přístup k vašemu účtu v případě nouze."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } nebude mít přístup k vašemu účtu až do dalšího nouzového přístupu."
       ],
       "Access granted": [
         "Přístup povolen"
       ],
       "Access granted on ${ formattedAccessibleAt }": [
         "Přístup udělen ${ formattedAccessibleAt }"
+      ],
+      "Access request canceled": [
+        "Žádost o přístup zrušena"
       ],
       "Access requested": [
         "Přístup vyžádán"
@@ -5354,6 +5378,9 @@
       "Less than a day": [
         "Méně než den"
       ],
+      "Less than a minute left": [
+        "Zbývá méně než minuta"
+      ],
       "None": [
         "Neomezeně"
       ],
@@ -5408,10 +5435,19 @@
       "They may ask to access my account in case of an emergency.": [
         "Mohou požádat o přístup k mému účtu v případě nouze."
       ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "Přístup získají automaticky za **${ days } den**, **${ formattedAccessibleAt }**. Jejich žádost můžete kdykoli odmítnout nebo jim přístup poskytnout okamžitě.",
+        "Přístup získají automaticky za **${ days } dny**, **${ formattedAccessibleAt }**. Jejich žádost můžete kdykoli odmítnout nebo jim přístup poskytnout okamžitě.",
+        "Přístup získají automaticky za **${ days } dnů**, **${ formattedAccessibleAt }**. Jejich žádost můžete kdykoli odmítnout nebo jim přístup poskytnout okamžitě.",
+        "Přístup získají automaticky za **${ days } dnů**, **${ formattedAccessibleAt }**. Jejich žádost můžete kdykoli odmítnout nebo jim přístup poskytnout okamžitě."
+      ],
       "This will take effect immediately.": [
         "Tato změna se projeví okamžitě."
       ],
       "Time required before automatically giving access": [
+        "Doba potřebná před automatickým udělením přístupu"
+      ],
+      "Time required before automatically giving you access": [
         "Doba potřebná před automatickým udělením přístupu"
       ],
       "Time required before automatically granting them access": [
@@ -5428,6 +5464,12 @@
       ],
       "View request": [
         "Zobrazit žádost"
+      ],
+      "Wait time": [
+        "Doba čekání"
+      ],
+      "Wait time for access": [
+        "Doba čekání na přístup"
       ],
       "Wait time saved": [
         "Doba čekání uložena"
@@ -5458,6 +5500,9 @@
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "V případě nouze již nebudete moci požádat o přístup k účtu uživatele ${ user }."
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "Stále budete moci později požádat o přístup k účtu ${ user }."
       ],
       "You'll receive access to their account immediately.": [
         "Okamžitě získáte přístup k jejich účtu."
@@ -6534,8 +6579,8 @@
       "customer support": [
         "zákaznická podpora"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Rodinné tarify v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Tarify Family v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Pokud pozvánku přijmete, převedeme Vás ze stávajícího tarifu a na váš účet připíšeme zbývající částku."
@@ -8431,7 +8476,7 @@
         "Přiděleno"
       ],
       "Allow logging of location and connection details": [
-        "Povolit ligování polohy a detailů připojení"
+        "Povolit logování polohy a detailů připojení"
       ],
       "Allow recovery by email": [
         "Povolit obnovení e-mailem"
@@ -9369,9 +9414,6 @@
       "Include device, location, and IP details": [
         "Zahrnout detaily zařízení, polohu a IP"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Včetně ${ formattedTaxRate } % ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Zvyšte zabezpečení svého účtu ověřením vaší e-mailové adresy."
       ],
@@ -9974,9 +10016,6 @@
       ],
       "Please use another browser or download the file.": [
         "Použijte jiný prohlížeč nebo si soubor stáhněte."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Ověřte prosím platbu v nové záložce, která je již otevřena."
       ],
       "Please wait till your changes are synced with the server.": [
         "Počkejte prosím, dokud se vaše změny nesynchronizují se serverem."
@@ -10809,9 +10848,6 @@
       "Vault updated": [
         "Trezor aktualizován"
       ],
-      "Verification can take a few minutes.": [
-        "Ověřování může trvat několik minut."
-      ],
       "Verification link expired": [
         "Ověřovací odkaz vypršel"
       ],
@@ -10952,6 +10988,9 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Pokud je vypnuto, zabraňuje načítání obrázkových souborů na vašem zařízení bez vašeho vědomí."
+      ],
+      "When disabled, this prevents remote images from loading without your knowledge.": [
+        "Pokud je deaktivováno, zabraňuje načítání vzdálených obrázků bez vašeho vědomí."
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
         "Pokud je povoleno, zkontrolujeme, zda je ${ MAIL_APP_NAME } vaší výchozí e-mailovou aplikací, a upozorníme vás, pokud tomu tak není."
@@ -11555,7 +11594,7 @@
         "Finanční příspěvky"
       ],
       "Manual": [
-        "Manuálně"
+        "Ruční"
       ],
       "Modification": [
         "Změna"
@@ -13081,9 +13120,6 @@
       ],
       "Value": [
         "Hodnota"
-      ],
-      "VAT": [
-        "DPH"
       ],
       "Verification code": [
         "Ověřovací kód"
@@ -16681,11 +16717,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Během této doby nebudete moci předplatné upravit ani zrušit. Než se pokusíte provést jakékoli změny, počkejte, dokud nebude platba dokončena. Děkujeme vám za trpělivost."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Bez ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Bez ${ taxRate }% daně: ${ taxAmount }"
+      ],
       "Got it": [
         "Rozumím"
       ],
       "I'm purchasing as a business": [
         "Kupuji jako firma"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Včetně ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Včetně ${ taxRate }% daně: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/RR"
@@ -16704,6 +16752,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje se za ${ renewPriceStr }, zrušit lze kdykoli."
+      ],
+      "Taxes": [
+        "Daně"
       ],
       "terms & conditions": [
         "smluvních podmínek užívání"
@@ -16746,6 +16797,9 @@
       ],
       "Timeout exceeded": [
         "Byl překročen časový limit"
+      ],
+      "VAT": [
+        "DPH"
       ],
       "VAT number": [
         "DIČ"
@@ -17358,7 +17412,7 @@
         "Nebo ${ copyRecoverySwitchButton } jako text."
       ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
-        "Nebo namísto toho použít ${ downloadRecoveryKitSwitchButton }."
+        "Nebo namísto toho ${ downloadRecoveryKitSwitchButton }."
       ],
       "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
         "**Sada pro obnovu** vám umožní obnovit váš ${ BRAND_NAME } účet, pokud si ho uzamknete."
@@ -22609,8 +22663,8 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systémové podsložky se v ${ MAIL_APP_NAME } zobrazí jako samostatné složky"
       ],
-      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
-        "Adresa byla odpojena. Odesílání zpráv je pozastaveno. Znovu se připojte, abyste tuto adresu znovu aktivovali."
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Adresa byla odpojena. Odesílání a přijímání zpráv je pozastaveno. Znovu se připojte, abyste tuto adresu znovu povolili."
       ],
       "The import will start with the most recent messages.": [
         "Import začne nejnovějšími zprávami."

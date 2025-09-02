@@ -262,6 +262,9 @@
       "Claim this address": [
         "Gör anspråk på denna adress"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Gör anspråk på din gratis ${ BRAND_NAME }-adress"
+      ],
       "Clear all formatting": [
         "Rensa all formatering"
       ],
@@ -784,9 +787,6 @@
       "Get verification code": [
         "Skaffa verifieringskod"
       ],
-      "Give access now": [
-        "Ge åtkomst nu"
-      ],
       "Go back": [
         "Gå tillbaka"
       ],
@@ -1080,6 +1080,9 @@
       ],
       "refresh the page": [
         "uppdatera sidan"
+      ],
+      "Refuse access": [
+        "Neka åtkomst"
       ],
       "Reject": [
         "Avvisa"
@@ -1734,6 +1737,9 @@
       ],
       "Reconnect": [
         "Anslut igen"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Återanslut adress ”${ emailAddress }”"
       ],
       "Saving": [
         "Sparar"
@@ -5177,13 +5183,21 @@
       ]
     },
     "emergency_access": {
+      "${ days } day left": [
+        "${ days } dag kvar",
+        "${ days } dagar kvar"
+      ],
+      "${ hours } hour left": [
+        "${ hours } timme kvar",
+        "${ hours } timmar kvar"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes } minut kvar",
+        "${ minutes } minuter kvar"
+      ],
       "${ n } day": [
         "${ n } dag",
         "${ n } dagar"
-      ],
-      "${ n } day left": [
-        "${ n } dag kvar",
-        "${ n } dagar kvar"
       ],
       "${ user } is requesting emergency access to your account": [
         "${ user } begär nödåtkomst till ditt konto"
@@ -5191,14 +5205,23 @@
       "${ user } will be able to use your account and change your data.": [
         "${ user } kommer att kunna använda ditt konto och ändra dina data."
       ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user } kommer att loggas ut från ditt konto och kommer inte att kunna komma åt det igen förrän vid nästa nödåtkomst."
+      ],
       "${ user } will no longer be able to request access to your account in case of emergency.": [
         "${ user } kommer inte längre att kunna begära åtkomst till ditt konto i händelse av en nödsituation."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user } kommer inte att kunna komma åt ditt konto förrän nästa nödåtkomst."
       ],
       "Access granted": [
         "Åtkomst beviljad"
       ],
       "Access granted on ${ formattedAccessibleAt }": [
         "Åtkomst beviljad på ${ formattedAccessibleAt }"
+      ],
+      "Access request canceled": [
+        "Åtkomstbegäran avbruten"
       ],
       "Access requested": [
         "Åtkomst begärd"
@@ -5217,6 +5240,9 @@
       ],
       "Cancel request?": [
         "Avbryt begäran?"
+      ],
+      "Change access wait time": [
+        "Ändra väntetid för åtkomst"
       ],
       "Change the time that ${ user } will have to wait before automatically giving them access.": [
         "Ändra tiden som ${ user } måste vänta innan du automatiskt ger dem åtkomst."
@@ -5242,8 +5268,14 @@
       "Emergency access granted": [
         "Nödåtkomst beviljad"
       ],
+      "Emergency access refused": [
+        "Nödåtkomst nekad"
+      ],
       "Emergency access requested": [
         "Nödåtkomst begärd"
+      ],
+      "Emergency access revoked": [
+        "Nödåtkomst återkallad"
       ],
       "Emergency contact added": [
         "Nödkontakt tillagd"
@@ -5269,6 +5301,9 @@
       "Less than a day": [
         "Mindre än en dag"
       ],
+      "Less than a minute left": [
+        "Mindre än en minut kvar"
+      ],
       "None": [
         "Ingen"
       ],
@@ -5286,6 +5321,12 @@
       ],
       "Protect your legacy with emergency access": [
         "Skydda ditt arv med nödåtkomst"
+      ],
+      "Refuse access": [
+        "Neka åtkomst"
+      ],
+      "Refuse access?": [
+        "Neka åtkomst?"
       ],
       "Remove trusted contact": [
         "Ta bort betrodd kontakt"
@@ -5372,8 +5413,15 @@
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Du kommer inte längre att kunna begära åtkomst till kontot för ${ user } i händelse av en nödsituation."
       ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "Du kommer fortfarande att kunna begära åtkomst till kontot för ${ user } vid ett senare tillfälle."
+      ],
       "You'll receive access to their account immediately.": [
         "Du kommer få åtkomst till deras konto omedelbart."
+      ],
+      "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
+        "Du kommer få åtkomst till deras konto om **${ days } dag** eller när de godkänner din begäran.",
+        "Du kommer få åtkomst till deras konto om **${ days } dagar** eller när de godkänner din begäran."
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "Din nödkontakt ${ name } begär åtkomst till ditt konto."
@@ -6427,8 +6475,8 @@
       "customer support": [
         "kundsupport"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Familjepaket stöder för närvarande inte externa konton. Skapa en ${ BRAND_NAME }-adress innan du går med. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Familjepaket stöder för närvarande inte externa konton. Skapa en ${ BRAND_NAME }-adress innan du går med. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Om du accepterar inbjudan kommer vi att byta från ditt nuvarande paket och kreditera ditt konto med eventuellt återstående saldo."
@@ -8016,6 +8064,9 @@
       "**${ appName }** is not supported.": [
         "**${ appName }** stöds inte."
       ],
+      "**Enable automatic backups** for peace of mind": [
+        "**Aktivera automatiska säkerhetskopieringar** för sinnesro"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Skaffa en ${ BRAND_NAME }-adress** för att använda alla ${ BRAND_NAME_TWO }-tjänster inklusive ${ MAIL_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -8614,6 +8665,9 @@
       "Disabled countries": [
         "Inaktiverade länder"
       ],
+      "Disabled on ${ boldValue }": [
+        "Inaktiverad på ${ boldValue }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Inaktivering av tvåfaktorsautentisering kommer göra ditt konto mindre säkert. Fortsätt endast om det är absolut nödvändigt."
       ],
@@ -8768,6 +8822,9 @@
       "Enabled countries": [
         "Aktiverade länder"
       ],
+      "Enabled on ${ boldValue }": [
+        "Aktiverad på ${ boldValue }"
+      ],
       "Enabling auto-deletion…": [
         "Aktiverar automatisk borttagning…"
       ],
@@ -8866,6 +8923,9 @@
       ],
       "Example: ${ spfExample }": [
         "Exempel: ${ spfExample }"
+      ],
+      "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
+        "Befintliga end-to-end-krypterade vidarebefordringar av e-post måste återaktiveras manuellt under **${ autoReplySettingsTitle }** i inställningarna."
       ],
       "Expired": [
         "Löpt ut"
@@ -9116,9 +9176,6 @@
       ],
       "Include device, location, and IP details": [
         "Inkludera enhet, plats och IP-detaljer"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inklusive ${ formattedTaxRate } % ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Öka ditt kontosäkerhet genom att verifiera din e-postadress."
@@ -9705,9 +9762,6 @@
       "Please use another browser or download the file.": [
         "Använd en annan webbläsare eller ladda ner filen."
       ],
-      "Please verify payment at the new tab which was opened.": [
-        "Verifiera betalningen i den nya fliken som öppnades."
-      ],
       "Please wait till your changes are synced with the server.": [
         "Vänta tills dina ändringar har synkroniserats med servern."
       ],
@@ -9970,6 +10024,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
+        "SMTP-inlämning tillåter tjänster från tredje part eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. För att begära åtkomst, ${ createTicket } som beskriver dina användningsfall, vilka anpassade domäner du vill använda och förväntade e-postvolymer per timme och dagligen."
       ],
@@ -10133,6 +10190,9 @@
       ],
       "The most recent data update, excluding breaches.": [
         "Den senaste datauppdateringen, exklusive intrång."
+      ],
+      "The most secure and private two-factor authentication app, that's free and open-source.": [
+        "Den säkraste och mest privata appen för tvåfaktorsautentisering som är gratis och öppen källkod."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Namnet kommer att vara synligt för dina användare när de är inloggade."
@@ -10512,9 +10572,6 @@
       "Vault updated": [
         "Valv uppdaterat"
       ],
-      "Verification can take a few minutes.": [
-        "Verifiering kan ta några minuter."
-      ],
       "Verification link expired": [
         "Verifieringslänk löpt ut"
       ],
@@ -10655,6 +10712,9 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "När den är inaktiverad förhindrar detta att bildfiler laddas på din enhet utan din vetskap."
+      ],
+      "When disabled, this prevents remote images from loading without your knowledge.": [
+        "När detta är inaktiverat förhindrar det att fjärrbilder laddas utan din vetskap."
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
         "När det är aktiverat kommer vi kontrollera om ${ MAIL_APP_NAME } är din standardapplikation för e-post och avisera dig om det inte är det."
@@ -11214,6 +11274,9 @@
       ],
       "Donation": [
         "Donation"
+      ],
+      "Manual": [
+        "Manuell"
       ],
       "Modification": [
         "Modifiering"
@@ -12719,9 +12782,6 @@
       "Value": [
         "Värde"
       ],
-      "VAT": [
-        "VAT"
-      ],
       "Verification code": [
         "Verifieringskod"
       ],
@@ -13444,6 +13504,9 @@
       ],
       "View changes to your organization and other administrator activities.": [
         "Visa ändringar i din organisation och andra administratörsaktiviteter."
+      ],
+      "View user sign-in, recovery and security events.": [
+        "Visa användarinloggning, återställning och säkerhetshändelser."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Din gratis provperiod har avslutats. Åtkomst till ditt konto kommer snart att inaktiveras. ${ action }"
@@ -16213,11 +16276,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denna tid kommer du inte att kunna ändra eller säga upp din prenumeration. Vänta tills din betalning är slutförd innan du försöker göra några ändringar. Tack för ditt tålamod."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Exklusive ${ taxRate } % moms: ${ taxAmount }"
+      ],
       "Got it": [
         "Jag förstår"
       ],
       "I'm purchasing as a business": [
         "Jag köper som ett företag"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inklusive ${ taxRate } % moms: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -16236,6 +16311,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Förnyas med ${ renewPriceStr }, avbryt när som helst."
+      ],
+      "Taxes": [
+        "Moms"
       ],
       "terms & conditions": [
         "användarvillkor"
@@ -16631,6 +16709,11 @@
         "Uppgradera till ${ upsellPlanTitle }"
       ]
     },
+    "PQC compatibility warning": {
+      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
+        "Uppdatera **alla dina ${ BRAND_NAME }-mobilappar** till senaste versionen."
+      ]
+    },
     "PQC optin": {
       "Enable and generate keys": [
         "Aktivera och generera nycklar"
@@ -16810,6 +16893,9 @@
       ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "Eller ${ downloadRecoveryKitSwitchButton } istället."
+      ],
+      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "Ditt **Återställningskit** låter dig återställa ditt ${ BRAND_NAME }-konto om du är utelåst."
       ]
     },
     "RecoveryPhrase: Title": {
@@ -18142,6 +18228,9 @@
       "Secure file sharing": [
         "Säker fildelning"
       ],
+      "Secure vault sharing and link sharing": [
+        "Säker valvdelning och länkdelning"
+      ],
       "Securely share files, photos and documents": [
         "Dela filer, foton och dokument säkert"
       ],
@@ -19204,6 +19293,9 @@
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } totalt lagringsutrymme"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } ger dig åtkomst till alla premiumfunktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }. Integritet är inbyggd så att du kan fortsätta använda den i vetskapen om att dina data och din identitet är säkra."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
@@ -22211,6 +22303,9 @@
       ],
       "Did you know?": [
         "Visste du att?"
+      ],
+      "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
+        "Obegränsad integritet för dig och en närstående. Från endast ${ priceString }/månad."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Du kan skydda upp till ${ FAMILY_MAX_USERS } personer med ${ PLAN_NAMES[plan] }. Från bara ${ priceString }/månad per konto."

@@ -259,6 +259,9 @@
       "Claim this address": [
         "Uzyskaj ten adres"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Uzyskaj darmowy adres ${ BRAND_NAME }"
+      ],
       "Clear all formatting": [
         "Wyczyść formatowanie"
       ],
@@ -783,9 +786,6 @@
       ],
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
-      ],
-      "Give access now": [
-        "Przyznaj dostęp teraz"
       ],
       "Go back": [
         "Wróć"
@@ -5287,17 +5287,29 @@
       "${ BRAND_NAME } Account email": [
         "Konto ${ BRAND_NAME }"
       ],
+      "${ days } day left": [
+        "Pozostał ${ days } dzień",
+        "Pozostały ${ days } dni",
+        "Pozostało ${ days } dni",
+        "Pozostało ${ days } dni"
+      ],
+      "${ hours } hour left": [
+        "Pozostała ${ hours } godzina",
+        "Pozostały ${ hours } godziny",
+        "Pozostało ${ hours } godzin",
+        "Pozostało ${ hours } godziny"
+      ],
+      "${ minutes } minute left": [
+        "Pozostała ${ minutes } minuta",
+        "Pozostały ${ minutes } minuty",
+        "Pozostało ${ minutes } minut",
+        "Pozostało ${ minutes } minuty"
+      ],
       "${ n } day": [
         "${ n } dzień",
         "${ n } dni",
         "${ n } dni",
         "${ n } dnia"
-      ],
-      "${ n } day left": [
-        "Pozostał ${ n } dzień",
-        "Pozostały ${ n } dni",
-        "Pozostało ${ n } dni",
-        "Pozostało ${ n } dnia"
       ],
       "${ user } will be able to use your account and change your data.": [
         "Użytkownik ${ user } będzie mógł uzyskać dostęp do Twojego konta i danych."
@@ -5379,6 +5391,9 @@
       ],
       "Less than a day": [
         "Mniej niż dzień"
+      ],
+      "Less than a minute left": [
+        "Pozostała mniej niż minuta"
       ],
       "None": [
         "Brak"
@@ -6553,9 +6568,6 @@
       ],
       "customer support": [
         "wsparcie klienta"
-      ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Plany rodzinne nie są obsługiwane dla kont zewnętrznych. Przed dołączeniem utwórz adres ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jeśli zaakceptujesz zaproszenie, zmienimy obecny plan i obciążymy Twoje konto kwotą pozostałego salda."
@@ -9368,9 +9380,6 @@
       "inactive": [
         "nieaktywna"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Zawiera ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Zwiększ bezpieczeństwo konta, weryfikując adres pomocniczy."
       ],
@@ -9964,9 +9973,6 @@
       ],
       "Please use another browser or download the file.": [
         "Użyj innej przeglądarki lub pobierz plik."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Zweryfikuj płatność w nowej karcie przeglądarki."
       ],
       "Please wait till your changes are synced with the server.": [
         "Poczekaj na synchronizację zmian z serwerem."
@@ -10798,9 +10804,6 @@
       ],
       "Vault updated": [
         "Zaktualizowanie sejfu"
-      ],
-      "Verification can take a few minutes.": [
-        "Weryfikacja może zająć kilka minut."
       ],
       "Verification link expired": [
         "Link weryfikacyjny wygasł"
@@ -13071,9 +13074,6 @@
       ],
       "Value": [
         "Wartość"
-      ],
-      "VAT": [
-        "podatku VAT"
       ],
       "Verification code": [
         "Kod weryfikacyjny"
@@ -19019,7 +19019,7 @@
         "${ n } miesiąc ZA DARMO",
         "${ n } miesiące ZA DARMO",
         "${ n } miesięcy ZA DARMO",
-        "${ n } miesiąca BEZPŁATNIE"
+        "${ n } miesiąca ZA DARMO"
       ]
     },
     "specialoffer: Deal details": {
@@ -23259,7 +23259,7 @@
         "${ n } konto na portfel",
         "${ n } konta na portfel",
         "${ n } kont na portfel",
-        "${ n } kont na portfel"
+        "${ n } konta na portfel"
       ],
       "${ n } wallet": [
         "${ n } portfel",
