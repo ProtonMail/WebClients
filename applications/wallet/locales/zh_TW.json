@@ -1878,6 +1878,11 @@
         "優先支援"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "信任的聯絡人"
+      ]
+    },
     "Error": {
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "您的帳號名稱是 ${ user.Name }。如果要建立 ${ emailAddress } 這個電子郵件地址，請到「設定」>「身分 \n及地址」>「短網域名稱 (pm.me)」裡面去設定。"
@@ -2459,9 +2464,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "在下一步驟裡，您將可以使用比特幣數位錢包，提交單筆存款。"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "包含 ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "繼承自上層資料夾"
       ],
@@ -2934,9 +2936,6 @@
       ],
       "Thomas": [
         "湯姆斯"
-      ],
-      "VAT": [
-        "增值稅"
       ],
       "Verification code": [
         "驗證碼"
@@ -3948,11 +3947,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "目前您將暫時無法修改或取消您的訂購授權。請等待付款完成後，再進行修改。感謝您耐心等候。"
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "不包含 ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "不包含 ${ taxRate }% 稅金：${ taxAmount }"
+      ],
       "Got it": [
         "瞭解"
       ],
       "I'm purchasing as a business": [
         "我以公司名義購買"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "包含 ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "包含 ${ taxRate }% 稅金：${ taxAmount }"
       ],
       "MM/YY": [
         "MM/YY"
@@ -3965,6 +3976,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "更新價 ${ renewPriceStr }，任何時間都可取消。"
+      ],
+      "Taxes": [
+        "稅金"
       ],
       "terms & conditions": [
         "條款及細則"
@@ -3989,6 +4003,9 @@
       ],
       "Timeout exceeded": [
         "已經逾時"
+      ],
+      "VAT": [
+        "增值稅"
       ],
       "VAT number": [
         "增值稅編號（VAT）"
@@ -4043,8 +4060,14 @@
       "Business Number": [
         "營業人統一編號"
       ],
+      "Edit ABN": [
+        "編輯 ABN"
+      ],
       "Edit Business Number": [
         "編輯營業人統一編號"
+      ],
+      "Edit EIN": [
+        "編輯 EIN"
       ],
       "Edit VAT number": [
         "編輯增值稅編號（VAT）"
@@ -5233,9 +5256,6 @@
       ],
       "${ n } wallet": [
         "${ n } 錢包"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "更安全的方法持有Bitcoin"
       ],
       "Bitcoin via Email": [
         "透過電子郵件的比特幣"
