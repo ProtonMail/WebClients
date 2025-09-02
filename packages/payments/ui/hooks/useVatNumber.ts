@@ -6,10 +6,10 @@ import useLoading from '@proton/hooks/useLoading';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
 
-import { type ADDON_NAMES, type PLANS } from '../../core/constants';
-import { type PaymentsApi } from '../../core/interface';
+import type { ADDON_NAMES, PLANS } from '../../core/constants';
+import type { PaymentsApi } from '../../core/interface';
 import { getIsB2BAudienceFromPlan } from '../../core/plan/helpers';
-import { type TaxCountryHook } from './useTaxCountry';
+import type { TaxCountryHook } from './useTaxCountry';
 
 interface VatNumberHookProps {
     selectedPlanName: PLANS | ADDON_NAMES | undefined;

@@ -4,7 +4,7 @@ import { Icon, ToolbarButton } from '@proton/components';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import { isMultiSelect, noSelection } from '../../../components/sections/ToolbarButtons/utils';
-import { type FolderButtonProps } from './types';
+import type { FolderButtonProps } from './types';
 
 type Item = {
     uid: string;

@@ -17,9 +17,9 @@ import type { ReferralRegistrationPlan} from '@proton/shared/lib/api/core/referr
 import { postReferralRegistration } from '@proton/shared/lib/api/core/referrals';
 import { updateLocale } from '@proton/shared/lib/api/settings';
 import { getUser } from '@proton/shared/lib/api/user';
-import { type ProductParam } from '@proton/shared/lib/apps/product';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
-import { type AuthResponse } from '@proton/shared/lib/authentication/interface';
+import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { Api, KeyTransparencyActivation, ReferralData, User } from '@proton/shared/lib/interfaces';

@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
-import { type Plan } from '@proton/payments';
+import type { Plan } from '@proton/payments';
 import { BRAND_NAME, LUMO_APP_NAME } from '@proton/shared/lib/constants';
 
 import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';

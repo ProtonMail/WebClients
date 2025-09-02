@@ -1,4 +1,4 @@
-import { type AnyAction, type Middleware } from '@reduxjs/toolkit';
+import type { AnyAction, Middleware } from '@reduxjs/toolkit';
 import { createMemoryHistory } from 'history';
 import createSagaMiddleware from 'redux-saga';
 import { v4 as uuidv4 } from 'uuid';
@@ -21,9 +21,9 @@ import { addConversation, newConversationId, pushConversationRequest } from '../
 import { addMasterKey } from '../../redux/slices/core/credentials';
 import { addMessage, finishMessage, newMessageId, pushMessageRequest } from '../../redux/slices/core/messages';
 import { addSpace, newSpaceId, pushSpaceRequest } from '../../redux/slices/core/spaces';
-import { type LumoDispatch, type LumoSaga, type LumoSagaContext } from '../../redux/store';
+import type { LumoDispatch, LumoSaga, LumoSagaContext } from '../../redux/store';
 import { LumoApi } from '../../remote/api';
-import { type RemoteId } from '../../remote/types';
+import type { RemoteId } from '../../remote/types';
 import { serializeSpace } from '../../serialization';
 import type { AttachmentId } from '../../types';
 import {
@@ -43,7 +43,7 @@ import {
 } from '../../types';
 import { sleep } from '../../util/date';
 import type { MockDatabase } from './mock-server';
-import { type MockDbSpace } from './mock-server';
+import type { MockDbSpace } from './mock-server';
 
 export const USER_TEST_UID = 'test-uid';
 

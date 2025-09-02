@@ -1,7 +1,7 @@
 import { type DBSchema, type IDBPDatabase, deleteDB, openDB } from 'idb';
 
-import { type Maybe } from '@proton/pass/types/utils';
-import { type EncryptedPassCache } from '@proton/pass/types/worker/cache';
+import type { Maybe } from '@proton/pass/types/utils';
+import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';

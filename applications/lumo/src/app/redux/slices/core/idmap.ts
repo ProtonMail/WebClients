@@ -1,6 +1,6 @@
 import { createAction, createReducer } from '@reduxjs/toolkit';
 
-import { type IdMapEntry, type LocalId, type RemoteId, type ResourceType } from '../../../remote/types';
+import type { IdMapEntry, LocalId, RemoteId, ResourceType } from '../../../remote/types';
 
 export type IdMap = {
     local2remote: Record<ResourceType, Record<LocalId, RemoteId>>;

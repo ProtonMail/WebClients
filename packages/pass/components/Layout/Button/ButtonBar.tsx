@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import { type ButtonLikeSize } from '@proton/atoms';
+import type { ButtonLikeSize } from '@proton/atoms';
 import { ButtonGroup } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 

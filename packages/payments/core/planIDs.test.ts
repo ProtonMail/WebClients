@@ -1,12 +1,12 @@
 import { pick } from '@proton/shared/lib/helpers/object';
-import { type Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces';
 import { buildSubscription } from '@proton/testing/builders';
 import { PLANS_MAP, getLongTestPlans } from '@proton/testing/data';
 
 import { ADDON_NAMES, CYCLE, PLANS } from './constants';
-import { type PlanIDs } from './interface';
+import type { PlanIDs } from './interface';
 import { getPlanNameFromIDs } from './plan/helpers';
-import { type PlansMap } from './plan/interface';
+import type { PlansMap } from './plan/interface';
 import {
     clearPlanIDs,
     getPlanFromIDs,
@@ -18,8 +18,8 @@ import {
     switchPlan,
 } from './planIDs';
 import { SubscriptionPlatform } from './subscription/constants';
-import { type AggregatedPricing } from './subscription/helpers';
-import { type SubscriptionCheckResponse } from './subscription/interface';
+import type { AggregatedPricing } from './subscription/helpers';
+import type { SubscriptionCheckResponse } from './subscription/interface';
 import { SelectedPlan } from './subscription/selected-plan';
 
 const MOCK_ORGANIZATION = {} as Organization;

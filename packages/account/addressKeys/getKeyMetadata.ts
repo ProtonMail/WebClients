@@ -2,21 +2,21 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 import { type AlgorithmInfo, CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@proton/crypto';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import {
-    type Address,
-    type AddressKey,
-    type DecryptedAddressKey,
-    type DecryptedKey,
-    type Key,
-    type SignedKeyListItem,
-    type SimpleMap,
-    type UserModel,
+import type {
+    Address,
+    AddressKey,
+    DecryptedAddressKey,
+    DecryptedKey,
+    Key,
+    SignedKeyListItem,
+    SimpleMap,
+    UserModel,
 } from '@proton/shared/lib/interfaces';
 import { ParsedSignedKeyList, getDecryptedOrganizationKey, splitKeys } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 
-import { type AddressKeysState } from '../addressKeys';
+import type { AddressKeysState } from '../addressKeys';
 import type { KtState } from '../kt';
 import { userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';

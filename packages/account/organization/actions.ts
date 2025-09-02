@@ -1,7 +1,7 @@
-import { type UnknownAction } from '@reduxjs/toolkit';
-import { type ThunkAction } from 'redux-thunk';
+import type { UnknownAction } from '@reduxjs/toolkit';
+import type { ThunkAction } from 'redux-thunk';
 
-import { type ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
 import { updateQuota } from '@proton/shared/lib/api/members';
 import {

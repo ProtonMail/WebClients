@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import { type FolderButtonProps } from './types';
+import type { FolderButtonProps } from './types';
 
 export const CreateNewFileButton = ({ type, close, onClick }: FolderButtonProps) => {
     const title = c('Action').t`Create new text file`;

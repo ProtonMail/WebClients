@@ -13,7 +13,7 @@ import {
     useNotifications,
     useObserveDrawerIframeAppLocation,
 } from '@proton/components';
-import { type Subscription } from '@proton/payments';
+import type { Subscription } from '@proton/payments';
 import { getInvitation } from '@proton/shared/lib/api/calendars';
 import { getIsCalendarWritable } from '@proton/shared/lib/calendar/calendar';
 import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC, VIEWS } from '@proton/shared/lib/calendar/constants';

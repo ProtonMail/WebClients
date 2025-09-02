@@ -9,7 +9,7 @@ import { domIsBusy } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash';
 
-import { type OfferHookReturnValue } from '../../common/interface';
+import type { OfferHookReturnValue } from '../../common/interface';
 import { isRootFolder } from '../../common/topNavbarPromoHelpers';
 import type { PostSubscriptionOneDollarOfferState } from '../interface';
 import { shouldOpenPostSignupOffer } from '../postSignupOffersHelpers';

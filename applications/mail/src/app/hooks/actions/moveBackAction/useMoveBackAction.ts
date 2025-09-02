@@ -1,6 +1,6 @@
 import { useFolders, useLabels } from '@proton/mail/index';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
-import { type Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 

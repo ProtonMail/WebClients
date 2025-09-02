@@ -1,5 +1,5 @@
 import { CYCLE, PLANS } from './constants';
-import { type PlanIDs } from './interface';
+import type { PlanIDs } from './interface';
 import { getPlanNameFromIDs } from './plan/helpers';
 import { isValidPlanName } from './type-guards';
 

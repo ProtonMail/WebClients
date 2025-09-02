@@ -1,4 +1,4 @@
-import { type PassConfig } from '@proton/pass/hooks/usePassConfig';
+import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppUrlFromApiUrl } from '@proton/shared/lib/helpers/url';
 

@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { Field } from 'formik';
 import { c } from 'ttag';

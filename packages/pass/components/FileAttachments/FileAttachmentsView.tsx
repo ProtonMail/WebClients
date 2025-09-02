@@ -1,4 +1,4 @@
-import { type FC, type PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 import { useSelector } from 'react-redux';
 
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';

@@ -7,12 +7,12 @@ import { getIsExpectSignatureDisabled } from '@proton/shared/lib/helpers/address
 import type { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { setAddressFlagsHelper } from '@proton/shared/lib/keys/addressFlagsHelper';
 
-import { type AddressesState } from '../addresses';
+import type { AddressesState } from '../addresses';
 import { setNoEncryptFlag } from '../groups/index';
 import type { KtState } from '../kt';
 import { getKTActivation } from '../kt/actions';
-import { type OrganizationKeyState } from '../organizationKey';
-import { type UserKeysState } from '../userKeys';
+import type { OrganizationKeyState } from '../organizationKey';
+import type { UserKeysState } from '../userKeys';
 import { getGroupKey } from './getGroupKey';
 
 type RequiredState = AddressesState & UserKeysState & OrganizationKeyState & KtState;

@@ -24,7 +24,7 @@ import { useMailboxHotkeys } from 'proton-mail/hooks/mailbox/useMailboxHotkeys';
 import { useWelcomeFlag } from 'proton-mail/hooks/mailbox/useWelcomeFlag';
 import { DEFAULT_MIN_WIDTH_OF_MAILBOX_LIST } from 'proton-mail/hooks/useResizableUtils';
 import { selectComposersCount } from 'proton-mail/store/composers/composerSelectors';
-import { type ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
+import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { getFolderName } from '../helpers/labels';

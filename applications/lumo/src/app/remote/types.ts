@@ -1,12 +1,12 @@
-import {
-    type Base64,
-    type ConversationId,
-    type MessageId,
-    type SerializedAttachment,
-    type SerializedConversation,
-    type SerializedMessage,
-    type SerializedSpace,
-    type SpaceId,
+import type {
+    Base64,
+    ConversationId,
+    MessageId,
+    SerializedAttachment,
+    SerializedConversation,
+    SerializedMessage,
+    SerializedSpace,
+    SpaceId,
 } from '../types';
 
 // prettier-ignore

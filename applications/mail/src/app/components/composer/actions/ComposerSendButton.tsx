@@ -1,7 +1,7 @@
 import type { ReactNode, Ref } from 'react';
 import { forwardRef } from 'react';
 
-import { type ButtonLikeShape } from '@proton/atoms';
+import type { ButtonLikeShape } from '@proton/atoms';
 import type { Color } from '@proton/components/components/button/ButtonGroup';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 

@@ -1,14 +1,14 @@
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { type User, type UserModel } from '@proton/shared/lib/interfaces';
-import { type FeatureFlag } from '@proton/unleash';
+import type { User, UserModel } from '@proton/shared/lib/interfaces';
+import type { FeatureFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { type ADDON_NAMES, DEFAULT_CURRENCY, PLANS, signupFlows } from './constants';
 import type { Currency, Invoice, PaymentMethodFlow, PaymentStatus, PlainPaymentMethodType, PlanIDs } from './interface';
-import { type FreeSubscription } from './interface';
+import type { FreeSubscription } from './interface';
 import { getPlanNameFromIDs } from './plan/helpers';
-import { type Plan } from './plan/interface';
-import { type Subscription } from './subscription/interface';
+import type { Plan } from './plan/interface';
+import type { Subscription } from './subscription/interface';
 import { isValidPlanName } from './type-guards';
 
 export function isChargebeePaymentMethod(paymentMethodType: PlainPaymentMethodType | undefined) {

@@ -29,7 +29,7 @@ import {
     isTransferRetry,
     isTransferSkipError,
 } from '../../../utils/transfer';
-import { type LogCallback } from '../../_downloads';
+import type { LogCallback } from '../../_downloads';
 import { useDirectSharingInfo } from '../../_shares/useDirectSharingInfo';
 import { useTransferLog } from '../../_transfer';
 import { useGetMetricsUserPlan } from '../../_user/useGetMetricsUserPlan';

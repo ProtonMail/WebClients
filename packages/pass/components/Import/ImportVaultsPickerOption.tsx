@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Checkbox, Icon, Option, SelectTwo } from '@proton/components';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
-import { type ImportVault } from '@proton/pass/lib/import/types';
+import type { ImportVault } from '@proton/pass/lib/import/types';
 import { formatItemsCount } from '@proton/pass/lib/items/item.utils';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import type { MaybeNull } from '@proton/pass/types';

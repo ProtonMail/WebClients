@@ -14,7 +14,7 @@ import {
     signAndBroadcastPsbt,
 } from '../utils';
 import { useBlockchainClient } from './useBlockchainClient';
-import { type TxBuilderHelper } from './useTxBuilder';
+import type { TxBuilderHelper } from './useTxBuilder';
 
 export const usePsbt = ({ txBuilderHelpers }: { txBuilderHelpers: TxBuilderHelper }, shouldCreatePsbt = false) => {
     const blockchainClient = useBlockchainClient();

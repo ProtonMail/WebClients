@@ -15,16 +15,16 @@ import {
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
-import { type PaymentsContextOptimisticType, type PlanToCheck } from '@proton/payments/ui';
+import type { PaymentsContextOptimisticType, PlanToCheck } from '@proton/payments/ui';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { type ProductParam } from '@proton/shared/lib/apps/product';
-import { type ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { type APP_NAMES } from '@proton/shared/lib/constants';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import type { Optional, ReferralData } from '@proton/shared/lib/interfaces';
-import { type Unwrap } from '@proton/shared/lib/interfaces/utils';
+import type { Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 

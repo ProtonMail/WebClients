@@ -4,7 +4,7 @@ import type { ContextMenuProps } from '../../components/FileBrowser';
 import { useDetailsModal } from '../../components/modals/DetailsModal';
 import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal';
 import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemContextMenu';
-import { type SharedWithMeListingItemUI } from '../../zustand/sections/sharedWithMeListing.store';
+import type { SharedWithMeListingItemUI } from '../../zustand/sections/sharedWithMeListing.store';
 import { SharedWithMeActions } from './actions/SharedWithMeActions';
 
 export function SharedWithMeContextMenu({

@@ -1,4 +1,4 @@
-import { type Action } from 'redux';
+import type { Action } from 'redux';
 import { call as callEffect, put, race, take, takeEvery } from 'redux-saga/effects';
 
 import { isActionWithSender, withSender } from '@proton/pass/store/actions/enhancers/endpoint';

@@ -10,7 +10,7 @@ import {
     type Subscription,
     getPlansMap as getPlansMapInner,
 } from '@proton/payments';
-import { type UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { type GetPreferredCurrencyParamsHook, useCurrencies } from '../payments/client-extensions/useCurrencies';
 

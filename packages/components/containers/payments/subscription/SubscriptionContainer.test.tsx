@@ -33,7 +33,7 @@ import {
 } from '@proton/testing';
 import { buildUser } from '@proton/testing/builders';
 import { getLongTestPlans } from '@proton/testing/data';
-import { type FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
+import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
 
 import type { SubscriptionContainerProps } from './SubscriptionContainer';
 import SubscriptionContainer from './SubscriptionContainer';

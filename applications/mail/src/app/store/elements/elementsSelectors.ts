@@ -3,7 +3,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import type { ESStatus } from '@proton/encrypted-search';
 import { ES_EXTRA_RESULTS_LIMIT } from '@proton/encrypted-search';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
-import { type MailSettingState } from '@proton/mail/store/mailSettings';
+import type { MailSettingState } from '@proton/mail/store/mailSettings';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';

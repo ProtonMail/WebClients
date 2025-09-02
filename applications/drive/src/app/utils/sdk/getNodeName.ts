@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { type MaybeNode } from '@proton/drive';
+import type { MaybeNode } from '@proton/drive';
 
 export function getNodeName(node: MaybeNode): string {
     if (node.ok) {

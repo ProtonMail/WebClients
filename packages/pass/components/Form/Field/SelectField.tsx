@@ -1,10 +1,10 @@
 import type { FC, ForwardedRef, MutableRefObject } from 'react';
 import { useRef } from 'react';
 
-import { type FieldProps } from 'formik';
+import type { FieldProps } from 'formik';
 
 import { InputFieldTwo, SelectTwo } from '@proton/components';
-import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
+import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import { useFieldControl } from '@proton/pass/hooks/useFieldControl';
 import clsx from '@proton/utils/clsx';
 

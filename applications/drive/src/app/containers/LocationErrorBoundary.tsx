@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { type Location } from 'react-router-dom-v5-compat';
+import type { Location } from 'react-router-dom-v5-compat';
 
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 

@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { type PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
+import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { EXCLUDED_SETTINGS_KEYS } from '@proton/pass/store/reducers/settings';

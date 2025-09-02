@@ -1,12 +1,7 @@
 import { useState } from 'react';
 
 import { PAYMENT_METHOD_TYPES } from '../constants';
-import {
-    type AvailablePaymentMethod,
-    type Currency,
-    type PaymentMethodType,
-    type PlainPaymentMethodType,
-} from '../interface';
+import type { AvailablePaymentMethod, Currency, PaymentMethodType, PlainPaymentMethodType } from '../interface';
 
 export const getIsCurrencyOverriden = ({
     currentCurrency,

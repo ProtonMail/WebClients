@@ -5,7 +5,7 @@ import { buildMapFromWallets } from '@proton/wallet';
 import { useApiWalletsData, useBitcoinNetwork } from '@proton/wallet/store';
 
 import { BitcoinBlockchainContext } from '.';
-import { type WalletMap } from '../../types';
+import type { WalletMap } from '../../types';
 import { useBitcoinAddresses } from './useBitcoinAddresses';
 import { useWalletsChainData } from './useWalletsChainData';
 

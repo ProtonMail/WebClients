@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { type APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { RELEASE_CATEGORIES } from '../constants';
 
