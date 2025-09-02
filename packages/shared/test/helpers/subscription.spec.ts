@@ -1,4 +1,4 @@
-import { addWeeks } from 'date-fns';
+import { addWeeks, subDays } from 'date-fns';
 
 import {
     ADDON_NAMES,
@@ -16,6 +16,7 @@ import {
     hasCancellablePlan,
     hasLifetimeCoupon,
     hasSomeAddonOrPlan,
+    hasTrialExpiredLessThan4Weeks,
     isManagedExternally,
     isTrial,
     isTrialExpired,
@@ -105,6 +106,19 @@ describe('isTrialExpired', () => {
     });
 });
 
+describe('hasTrialExpiredLessThan4Weeks', () => {
+    it('returns true if trial expired less than 4 weeks ago', () => {
+        const ts = Math.round((subDays(new Date(), 27).getTime() - 1000) / 1000);
+        expect(hasTrialExpiredLessThan4Weeks({ ...subscription, PeriodEnd: ts })).toBe(true);
+    });
+
+    it('should detect non-expired subscription', () => {
+        // Add 2 weeks from now and convert Date to unix timestamp
+        const ts = Math.round((subDays(new Date(), 28).getTime() - 1000) / 1000);
+        expect(hasTrialExpiredLessThan4Weeks({ ...subscription, PeriodEnd: ts })).toBe(false);
+    });
+});
+
 describe('willTrialExpireInLessThan1Week', () => {
     it('should detect close expiration', () => {
         const ts = Math.round((addWeeks(new Date(), 1).getTime() - 1000) / 1000);
@@ -112,7 +126,6 @@ describe('willTrialExpireInLessThan1Week', () => {
     });
 
     it('should detect far expiration', () => {
-        // Add 2 weeks from now and convert Date to unix timestamp
         const ts = Math.round(addWeeks(new Date(), 2).getTime() / 1000);
         expect(willTrialExpireInLessThan1Week({ ...subscription, PeriodEnd: ts })).toBe(false);
     });

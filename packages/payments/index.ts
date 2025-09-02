@@ -425,6 +425,7 @@ export {
     regularCycles,
     willTrialExpire,
     willTrialExpireInLessThan1Week,
+    hasTrialExpiredLessThan4Weeks,
     type AggregatedPricing,
     type PricingForCycles,
 } from './core/subscription/helpers';
