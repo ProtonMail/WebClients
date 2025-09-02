@@ -25,7 +25,7 @@ export const useWakeLock = () => {
             releaseWakeLock = await turnOnWakeLock();
         };
 
-        enableWakeLock();
+        void enableWakeLock();
 
         return () => {
             if (releaseWakeLock) {

@@ -3,8 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
 import { APPS } from '@proton/shared/lib/constants';
-
-import logo from '../../../assets/meet-main-logo.png';
+import logo from '@proton/styles/assets/img/meet/meet-main-logo.png';
 
 import './ComingSoon.scss';
 

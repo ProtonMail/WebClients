@@ -1,7 +1,13 @@
 export const parseMeetingLink = (link: string) => {
-    const meetingId = link.split('#')?.[0]?.split('/')?.at(-1)?.replace('id-', '');
+    const parts = link.split('#');
 
-    const urlPassword = link.split('#').at(-1)?.replace('pwd-', '') ?? '';
+    if (parts.length !== 2 || !parts[0].includes('id-') || !parts[1].includes('pwd-')) {
+        throw new Error('Invalid meeting link');
+    }
+
+    const meetingId = parts[0]?.split('/')?.at(-1)?.replace('id-', '');
+
+    const urlPassword = parts[1]?.replace('pwd-', '') ?? '';
 
     return {
         meetingId,

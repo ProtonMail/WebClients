@@ -12,8 +12,7 @@ import BugModal from '@proton/components/containers/support/BugModal';
 import { IcBug } from '@proton/icons';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
 import { APPS } from '@proton/shared/lib/constants';
-
-import logo from '../../../assets/logo-with-name.png';
+import logo from '@proton/styles/assets/img/meet/logo-with-name.png';
 
 import './PageHeader.scss';
 

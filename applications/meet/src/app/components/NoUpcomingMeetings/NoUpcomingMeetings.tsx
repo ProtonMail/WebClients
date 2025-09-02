@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import callIcon from '@proton/styles/assets/img/meet/call-icon.svg';
 import useFlag from '@proton/unleash/useFlag';
-
-import callIcon from '../../../assets/call-icon.svg';
 
 import './NoUpcomingMeetings.scss';
 

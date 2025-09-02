@@ -56,12 +56,6 @@ export enum QualityScenarios {
     SmallView = 'SmallView',
 }
 
-export enum Quality {
-    Decreased = 'Decreased',
-    Default = 'Default',
-    Increased = 'Increased',
-}
-
 export enum ParticipantCapabilityPermission {
     NotAllowed = 0,
     Allowed = 1,

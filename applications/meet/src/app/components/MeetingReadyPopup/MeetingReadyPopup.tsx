@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
-
 import { c } from 'ttag';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
@@ -13,25 +11,7 @@ interface MeetingReadyPopupProps {
 }
 
 export const MeetingReadyPopup = ({ meetingLink }: MeetingReadyPopupProps) => {
-    const [showNotifications, setShowNotifications] = useState(false);
-
-    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
     const { meetingReadyPopupOpen, setMeetingReadyPopupOpen } = useUIStateContext();
-
-    useEffect(() => {
-        if (showNotifications) {
-            timeoutRef.current = setTimeout(() => {
-                setShowNotifications(false);
-            }, 2000);
-        }
-
-        return () => {
-            if (timeoutRef.current) {
-                clearTimeout(timeoutRef.current);
-            }
-        };
-    }, [showNotifications]);
 
     if (!meetingReadyPopupOpen) {
         return null;

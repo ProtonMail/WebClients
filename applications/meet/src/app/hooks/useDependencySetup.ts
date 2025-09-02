@@ -2,12 +2,12 @@ import { useEffect } from 'react';
 
 import useFlag from '@proton/unleash/useFlag';
 
-import { useGetUserSettings } from '../store';
+import { useGetMeetUserSettings } from '../store';
 import { useMeetingList } from './useMeetingList';
 
 const useAuthenticatedDependencySetup = () => {
     const [meetings, personalMeeting] = useMeetingList();
-    const getUserSettings = useGetUserSettings();
+    const getUserSettings = useGetMeetUserSettings();
 
     useEffect(() => {
         if (personalMeeting) {

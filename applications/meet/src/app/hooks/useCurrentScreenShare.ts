@@ -7,14 +7,11 @@ import { c } from 'ttag';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
-import { useScreenshareResolution } from './useScreenshareResolution';
-
-const increasedVideoQuality = process.env.LIVEKIT_INCREASED_VIDEO_QUALITY === 'true';
+import { screenShareQuality } from '../qualityConstants';
 
 export function useCurrentScreenShare() {
     const participants = useParticipants();
     const { localParticipant } = useLocalParticipant();
-    const screenshareResolution = useScreenshareResolution();
 
     const notifications = useNotifications();
 
@@ -64,9 +61,9 @@ export function useCurrentScreenShare() {
 
             const stream = await navigator.mediaDevices.getDisplayMedia({
                 video: {
-                    width: { max: screenshareResolution.resolution.width },
-                    height: { max: screenshareResolution.resolution.height },
-                    frameRate: screenshareResolution.encoding.maxFramerate,
+                    width: { max: screenShareQuality.resolution.width },
+                    height: { max: screenShareQuality.resolution.height },
+                    frameRate: screenShareQuality.encoding.maxFramerate,
                 },
             });
 
@@ -77,10 +74,9 @@ export function useCurrentScreenShare() {
             await localParticipant.publishTrack(localTrack, {
                 source: Track.Source.ScreenShare,
                 videoEncoding: {
-                    maxBitrate: screenshareResolution.encoding.maxBitrate,
-                    maxFramerate: screenshareResolution.encoding.maxFramerate,
+                    maxBitrate: screenShareQuality.encoding.maxBitrate,
+                    maxFramerate: screenShareQuality.encoding.maxFramerate,
                 },
-                simulcast: increasedVideoQuality,
             });
 
             mediaStreamTrack.onended = () => {

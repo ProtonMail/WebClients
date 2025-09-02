@@ -1,14 +1,9 @@
 import { useLocalParticipant } from '@livekit/components-react';
 
-import { audioQualityDetails } from '../qualityConstants';
-import { useQualityLevel } from './useQualityLevel';
+import { audioQuality } from '../qualityConstants';
 
 export const useAudioToggle = () => {
-    const quality = useQualityLevel();
-
     const { localParticipant } = useLocalParticipant();
-
-    const bitrate = audioQualityDetails[quality];
 
     const toggleAudio = async ({ isEnabled, audioDeviceId }: { isEnabled: boolean; audioDeviceId: string | null }) => {
         const audio = {
@@ -24,7 +19,7 @@ export const useAudioToggle = () => {
             isEnabled
                 ? {
                       audioPreset: {
-                          maxBitrate: bitrate,
+                          maxBitrate: audioQuality,
                       },
                   }
                 : undefined

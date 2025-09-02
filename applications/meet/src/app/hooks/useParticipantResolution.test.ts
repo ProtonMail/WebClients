@@ -2,7 +2,7 @@ import { useParticipants } from '@livekit/components-react';
 import { renderHook } from '@testing-library/react';
 
 import { qualityConstants } from '../qualityConstants';
-import { Quality, QualityScenarios } from '../types';
+import { QualityScenarios } from '../types';
 import * as useCurrentScreenShareFunctions from './useCurrentScreenShare';
 import { useParticipantResolution } from './useParticipantResolution';
 
@@ -30,7 +30,7 @@ describe('useParticipantResolution', () => {
 
         const { result } = renderHook(() => useParticipantResolution());
 
-        expect(result.current).toEqual(qualityConstants[QualityScenarios.PortraitView][Quality.Default]);
+        expect(result.current).toEqual(qualityConstants[QualityScenarios.PortraitView]);
     });
 
     it('should return the MediumView value if there is no screen share and having between 4 and 8 participants', () => {
@@ -44,7 +44,7 @@ describe('useParticipantResolution', () => {
 
         const { result } = renderHook(() => useParticipantResolution());
 
-        expect(result.current).toEqual(qualityConstants[QualityScenarios.MediumView][Quality.Default]);
+        expect(result.current).toEqual(qualityConstants[QualityScenarios.MediumView]);
     });
 
     it('should return the SmallView value if there is no screen share and having more than 8 participants', () => {
@@ -58,7 +58,7 @@ describe('useParticipantResolution', () => {
 
         const { result } = renderHook(() => useParticipantResolution());
 
-        expect(result.current).toEqual(qualityConstants[QualityScenarios.SmallView][Quality.Default]);
+        expect(result.current).toEqual(qualityConstants[QualityScenarios.SmallView]);
     });
 
     it('should return the value for screen share if there is a screen share', () => {
@@ -72,6 +72,6 @@ describe('useParticipantResolution', () => {
 
         const { result } = renderHook(() => useParticipantResolution());
 
-        expect(result.current).toEqual(qualityConstants[QualityScenarios.ScreenShare][Quality.Default]);
+        expect(result.current).toEqual(qualityConstants[QualityScenarios.ScreenShare]);
     });
 });
