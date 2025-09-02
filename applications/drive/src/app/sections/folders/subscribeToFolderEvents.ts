@@ -22,8 +22,10 @@ const getLegacyItemFromUid = async (uid: string, folder: FolderViewData) => {
     return legacyItem;
 };
 
-export const subscribeToFolderEvents = () =>
-    getActionEventManager().subscribe(ActionEventName.ALL, async (event) => {
+export const subscribeToFolderEvents = () => {
+    void getActionEventManager().subscribeSdkEventsMyUpdates('folders');
+
+    return getActionEventManager().subscribe(ActionEventName.ALL, async (event) => {
         const store = useFolderStore.getState();
         const { folder } = store;
         if (!folder) {
@@ -93,3 +95,4 @@ export const subscribeToFolderEvents = () =>
                 console.warn('Unhandled folders UI event', event);
         }
     });
+};
