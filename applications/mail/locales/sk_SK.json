@@ -36,12 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "${ numberOfAddresses } address": [
-        "${ numberOfAddresses } adresa",
-        "${ numberOfAddresses } adresy",
-        "${ numberOfAddresses } adries",
-        "${ numberOfAddresses } adries"
-      ],
       "A to Z": [
         "od A po Z"
       ],
@@ -329,9 +323,6 @@
       ],
       "Copy alias “${ name }”": [
         "Kopírovať alias \"${ name }\""
-      ],
-      "Copy email address": [
-        "Kopírovať emailovú adresu"
       ],
       "Copy email to clipboard": [
         "Skopírovať email do schránky"
@@ -822,9 +813,6 @@
       "Make it friendly": [
         "Priateľská forma"
       ],
-      "Manage addresses": [
-        "Spravovať adresy"
-      ],
       "Manage advanced account protections": [
         "Spravovať pokročilé ochrany účtu"
       ],
@@ -920,6 +908,9 @@
       ],
       "More search options": [
         "Viac možností vyhľadávania"
+      ],
+      "Most frequent": [
+        "Najčastejšie"
       ],
       "Most read": [
         "Najčítanejšie"
@@ -1082,6 +1073,9 @@
       ],
       "Read receipt sent": [
         "Potvrdenie o prečítaní bolo odoslané"
+      ],
+      "Recently read": [
+        "Nedávno čítané"
       ],
       "Recently received": [
         "Nedávno prijaté"
@@ -4094,9 +4088,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Zjednodušte si synchronizáciu a plánovanie pomocou zdieľaných kalendárov."
       ],
-      "This view shows messages sent to the following addresses:": [
-        "Toto zobrazenie ukazuje správy odoslané na nasledujúce adresy:"
-      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Ak chcete naďalej používať asistenta písania, pridajte si ho k predplatnému."
       ],
@@ -5354,8 +5345,8 @@
       "customer support": [
         "zákaznícka podpora"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Rodinné plány v súčasnosti nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Rodinné plány v súčasnosti nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Ak pozvánku prijmete, zameníme váš aktuálny plán a zostávajúcu čiastku pripíšeme k vášmu účtu ako kredit."
@@ -7460,9 +7451,6 @@
       "Included for free with your plan": [
         "Bezplatne vo vašom pláne"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Vrátane ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Zdedené z nadradeného priečinka"
       ],
@@ -9363,6 +9351,9 @@
       "Cash": [
         "Hotovosť"
       ],
+      "Categories badge": [
+        "Odznak kategórií"
+      ],
       "Category": [
         "Kategória"
       ],
@@ -9524,6 +9515,9 @@
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Pomôžte nám zlepšiť pripravované kategorizovanie pošty"
       ],
       "Hide password": [
         "Skryť heslo"
@@ -9813,6 +9807,9 @@
       "System information": [
         "Systémové informácie"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "Kategória bola aktualizovaná, ďakujeme za vašu spätnú väzbu!"
+      ],
       "The filter is disabled. ${ enableButton }": [
         "Filter je deaktivovaný. ${ enableButton }"
       ],
@@ -9861,9 +9858,6 @@
       "Username": [
         "Používateľské meno"
       ],
-      "VAT": [
-        "DPH"
-      ],
       "Verification code": [
         "Overovací kód"
       ],
@@ -9879,11 +9873,20 @@
       "Weak password": [
         "Slabé heslo"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Zlepšujeme spôsob kategorizácie emailov. Vaša spätná väzba nám pomáha robiť to inteligentnejšie a presnejšie."
+      ],
       "What happened?": [
         "Čo sa stalo?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "Aký je váš hlavný dôvod na zrušenie alebo zníženie predplatného?"
+      ],
+      "Which category should this be recategorized under?": [
+        "Do ktorej kategórie by sa to malo zaradiť?"
+      ],
+      "Why am I seeing this?": [
+        "Prečo to vidím?"
       ],
       "With attachment": [
         "S prílohou"
@@ -10051,6 +10054,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Vytvorte nový kalendár pre správu pozvánok"
+      ],
+      "Deleted": [
+        "Vymazané"
       ],
       "Drafts": [
         "Koncepty"
@@ -12164,11 +12170,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Počas tohto obdobia nebudete môcť upraviť ani zrušiť svoje predplatné. Pred pokusom o akékoľvek zmeny počkajte, kým bude vaša platba dokončená. Ďakujeme vám za vašu trpezlivosť."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "S výnimkou ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Bez zahrnutia ${ taxRate }% daní: ${ taxAmount }"
+      ],
       "Got it": [
         "Rozumiem"
       ],
       "I'm purchasing as a business": [
         "Nakupujem ako firma"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Vrátane ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Vrátane ${ taxRate }% daní: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/RR"
@@ -12184,6 +12202,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje sa za ${ renewPriceStr }, zrušiť môžete kedykoľvek."
+      ],
+      "Taxes": [
+        "Dane"
       ],
       "terms & conditions": [
         "podmienky používania"
@@ -12223,6 +12244,9 @@
       ],
       "Timeout exceeded": [
         "Prekročený časový limit"
+      ],
+      "VAT": [
+        "DPH"
       ],
       "VAT number": [
         "DIČ"
@@ -14268,6 +14292,12 @@
       "Conversation removed from Starred.": [
         "Konverzácia bola odstránená z obľúbených."
       ],
+      "Conversation updated": [
+        "Konverzácia aktualizovaná",
+        "Konverzácie aktualizované",
+        "Konverzácie aktualizované",
+        "Konverzácie aktualizované"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Konverzácia od ${ sendersList } budú označené ako ${ labelsList }"
       ],
@@ -14342,6 +14372,12 @@
       ],
       "Message removed from Starred.": [
         "Správa bola odstránená z obľúbených."
+      ],
+      "Message updated": [
+        "Správa aktualizovaná",
+        "Správy aktualizované",
+        "Správy aktualizované",
+        "Správy aktualizované"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Správy od ${ sendersList } budú označené ako ${ labelsList }"
@@ -15634,9 +15670,6 @@
       "Your account is protected": [
         "Váš účet je chránený"
       ],
-      "Your addresses": [
-        "Vaše adresy"
-      ],
       "Your changes are not synced yet": [
         "Vaše zmeny zatiaľ nie sú synchronizované"
       ],
@@ -15890,9 +15923,6 @@
         "${ n } peňaženky",
         "${ n } peňaženiek",
         "${ n } peňaženiek"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bezpečnejší spôsob vlastnenia Bitcoinu"
       ],
       "Bitcoin via Email": [
         "Bitcoin cez email"

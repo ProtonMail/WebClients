@@ -36,11 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
-      "${ numberOfAddresses } address": [
-        "Adrese: ${ numberOfAddresses }",
-        "Adrese: ${ numberOfAddresses }",
-        "Adrese: ${ numberOfAddresses }"
-      ],
       "A to Z": [
         "De la A la Z"
       ],
@@ -327,9 +322,6 @@
       ],
       "Copy alias “${ name }”": [
         "Copiază aliasul „${ name }”"
-      ],
-      "Copy email address": [
-        "Copiere adresă e-mail"
       ],
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
@@ -817,9 +809,6 @@
       "Make it friendly": [
         "Acceptare ca legitim"
       ],
-      "Manage addresses": [
-        "Gestionare adrese"
-      ],
       "Manage advanced account protections": [
         "Gestionați protecții avansate cont"
       ],
@@ -915,6 +904,9 @@
       ],
       "More search options": [
         "Mai multe opțiuni de căutare"
+      ],
+      "Most frequent": [
+        "Cele mai frecvente"
       ],
       "Most read": [
         "Cel mai citit"
@@ -1077,6 +1069,9 @@
       ],
       "Read receipt sent": [
         "Confirmare de citire trimisă"
+      ],
+      "Recently read": [
+        "Citite recent"
       ],
       "Recently received": [
         "Primite recent"
@@ -4070,9 +4065,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplificați sincronizarea și programarea cu calendare partajate."
       ],
-      "This view shows messages sent to the following addresses:": [
-        "Această vizualizare afișează mesaje trimise către următoarele adrese:"
-      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Pentru a continua să utilizați asistentul de scriere, adăugați-l la abonament."
       ],
@@ -5315,8 +5307,8 @@
       "customer support": [
         "suportul tehnic"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Planurile de familie nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Planurile de familie nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Dacă acceptați invitația, se va schimba planul curent, iar soldul rămas va fi returnat ca și credit în cont."
@@ -7340,9 +7332,6 @@
       "Included for free with your plan": [
         "Inclus gratuit cu planul actual"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inclusiv ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Moştenit de la folderul părinte"
       ],
@@ -8090,6 +8079,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "A apărut o eroare la semnătura folosită pentru a verifica datele de contact, care poate fi rezultatul resetării parolei."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Aceste conversații sunt păstrate aici pe baza politicii de păstrare a datelor organizației."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Ceilalți nu vă pot trimite mesaje nedorite dacă nu vă cunosc adresa de e-mail. Protejați-vă adresa folosind aliasuri hide-my-email."
@@ -9213,6 +9205,9 @@
       "Cash": [
         "Numerar"
       ],
+      "Categories badge": [
+        "Etichetă categorii"
+      ],
       "Category": [
         "Categoria"
       ],
@@ -9374,6 +9369,9 @@
       ],
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Ajutați-ne să îmbunătățim viitoarea clasificare a mesajelor"
       ],
       "Hide password": [
         "Ascundere parolă"
@@ -9663,6 +9661,9 @@
       "System information": [
         "Informații sistem"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "Categoria a fost actualizată, vă mulțumim pentru feedback!"
+      ],
       "The filter is disabled. ${ enableButton }": [
         "Filtrul este dezactivat. ${ enableButton }"
       ],
@@ -9711,9 +9712,6 @@
       "Username": [
         "Nume utilizator"
       ],
-      "VAT": [
-        "TVA"
-      ],
       "Verification code": [
         "Cod de verificare"
       ],
@@ -9729,11 +9727,20 @@
       "Weak password": [
         "Parolă slabă"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Îmbunătățim modul în care sunt categorizate mesajele. Feedbackul dvs. ne ajută ca acesta să devină mai inteligent și mai precis."
+      ],
       "What happened?": [
         "Ce s-a întâmplat?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "Care este motivul principal pentru anulare sau retrogradare?"
+      ],
+      "Which category should this be recategorized under?": [
+        "Sub ce categorie ar trebui să fie recategorizat?"
+      ],
+      "Why am I seeing this?": [
+        "De ce văd asta?"
       ],
       "With attachment": [
         "Cu atașamente"
@@ -9901,6 +9908,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Creați un calendar nou pentru a vă gestiona invitațiile"
+      ],
+      "Deleted": [
+        "Șterse"
       ],
       "Drafts": [
         "Ciorne"
@@ -11978,11 +11988,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "În acest timp, nu vă veți putea modifica sau anula abonamentul. Vă rugăm să așteptați până când plata este finalizată înainte de a încerca orice modificare. Vă mulțumim pentru răbdare."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluzând taxe de ${ taxRate }%: ${ taxAmount }"
+      ],
       "Got it": [
         "Am înțeles"
       ],
       "I'm purchasing as a business": [
         "Achiziționez în calitate de companie"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluzând taxe de ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "LL/AA"
@@ -11998,6 +12020,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Reînnoire cu ${ renewPriceStr }, anulați oricând."
+      ],
+      "Taxes": [
+        "Taxe"
       ],
       "terms & conditions": [
         "termeni și condiții"
@@ -12033,6 +12058,9 @@
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
+      ],
+      "VAT": [
+        "TVA"
       ],
       "VAT number": [
         "Valoare TVA"
@@ -14013,6 +14041,11 @@
       "Conversation removed from Starred.": [
         "Conversația a fost eliminată din favorite."
       ],
+      "Conversation updated": [
+        "Conversație actualizată",
+        "Conversații actualizate",
+        "Conversații actualizate"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Conversațiile din ${ sendersList } vor fi etichetate cu ${ labelsList }."
       ],
@@ -14088,6 +14121,11 @@
       "Message removed from Starred.": [
         "Mesajul a fost eliminat din „Favorite”."
       ],
+      "Message updated": [
+        "Mesaj actualizat",
+        "Mesaje actualizate",
+        "Mesaje actualizate"
+      ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Mesajele de la ${ sendersList } vor fi etichetate cu ${ labelsList }."
       ],
@@ -14133,6 +14171,11 @@
       ],
       "Read receipt sent": [
         "Confirmare de citire trimisă"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Mesaje recategorizate: ${ elementsCount }",
+        "Mesaje recategorizate: ${ elementsCount }",
+        "Mesaje recategorizate: ${ elementsCount }"
       ],
       "Self-destruction removed": [
         "Autodistrugere eliminată"
@@ -15349,9 +15392,6 @@
       "Your account is protected": [
         "Contul este protejat"
       ],
-      "Your addresses": [
-        "Adresele mele"
-      ],
       "Your changes are not synced yet": [
         "Modificările nu sunt încă sincronizate"
       ],
@@ -15592,9 +15632,6 @@
         "Portofele: ${ n }",
         "Portofele: ${ n }",
         "Portofele: ${ n }"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "O metodă mai sigură de a vă păstra monedele Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
