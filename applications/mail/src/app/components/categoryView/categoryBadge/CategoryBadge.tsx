@@ -30,6 +30,7 @@ import { CategoryBadgeInfo } from './CategoryBadgeInfo';
 import { CategoryBadgeSpotlightContent, useCategoryBadgeSpotlight } from './CategoryBadgeSpotlight';
 import { DISABLED_BADGE, getCategoriesBadgeMapping } from './categoryViewConstants';
 import { isLabelIDCaregoryKey } from './categoryViewHelpers';
+import { useCategoryPing } from './useCategoryPing';
 import { useCategoryViewExperiment } from './useCategoryViewExperiment';
 
 interface Props {
@@ -42,6 +43,8 @@ interface Props {
 export const CategoryBadge = ({ element, labelIDs, className, index }: Props) => {
     const theme = useTheme();
     const { canSeeCategoryLabel } = useCategoryViewExperiment();
+
+    useCategoryPing();
 
     const api = useApi();
 
