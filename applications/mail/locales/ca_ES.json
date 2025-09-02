@@ -36,10 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
-      "${ numberOfAddresses } address": [
-        "${ numberOfAddresses } adreça",
-        "${ numberOfAddresses } adreces"
-      ],
       "A to Z": [
         "De la A a la Z"
       ],
@@ -325,9 +321,6 @@
       ],
       "Copy alias “${ name }”": [
         "Copia l'àlies «${ name }»"
-      ],
-      "Copy email address": [
-        "Copia l'adreça de correu electrònic"
       ],
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
@@ -812,9 +805,6 @@
       "Make it friendly": [
         "Més amigable"
       ],
-      "Manage addresses": [
-        "Gestionar adreces"
-      ],
       "Manage advanced account protections": [
         "Gestiona les proteccions avançades del compte"
       ],
@@ -910,6 +900,9 @@
       ],
       "More search options": [
         "Més opcions de cerca"
+      ],
+      "Most frequent": [
+        "Més freqüent"
       ],
       "Most read": [
         "El més llegit"
@@ -1072,6 +1065,9 @@
       ],
       "Read receipt sent": [
         "S\"ha enviat la confirmació de lectura."
+      ],
+      "Recently read": [
+        "Llegit recentment"
       ],
       "Recently received": [
         "Rebuts recentment"
@@ -4052,9 +4048,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifiqueu la sincronització i la programació amb calendaris compartits."
       ],
-      "This view shows messages sent to the following addresses:": [
-        "Aquesta vista mostra missatges enviats a les següents adreces:"
-      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Per continuar utilitzant l'assistent d'escriptura, afegiu-lo a la vostra subscripció."
       ],
@@ -5282,8 +5275,8 @@
       "customer support": [
         "atenció al client"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Els plans familiars actualment no admeten comptes externs. Creeu una adreça de ${ BRAND_NAME } abans d'unir-vos-hi. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Els plans familiars actualment no suporten comptes externs. Creeu una adreça ${ BRAND_NAME } abans d'unir-vos-hi. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si accepteu la invitació, us canviarem del vostre pla actual i abonarem el saldo restant al vostre compte."
@@ -7226,9 +7219,6 @@
       "Included for free with your plan": [
         "S'inclou de franc amb el vostre pla"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incloent ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Heretat d'una carpeta principal"
       ],
@@ -7971,6 +7961,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "S'ha produït un error amb la signatura utilitzada per verificar els detalls del contacte. Això podria ser com a resultat d'un restabliment de contrasenya."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Aquestes converses es guarden aquí d'acord amb la política de conservació de dades de la vostra organització."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "No us poden enviar correu brossa si no saben la vostra adreça de correu electrònic. Protegiu la safata d'entrada amb els àlies de hide-my-email."
@@ -9069,6 +9062,9 @@
       "Cash": [
         "Efectiu"
       ],
+      "Categories badge": [
+        "Insígnia de categories"
+      ],
       "Category": [
         "Categoria"
       ],
@@ -9230,6 +9226,9 @@
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Ajudeu-nos a millorar la pròxima categorització del correu"
       ],
       "Hide password": [
         "Amaga la contrasenya"
@@ -9519,6 +9518,9 @@
       "System information": [
         "Informació del sistema"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "La categoria s'ha actualitzat, gràcies pels vostres comentaris!"
+      ],
       "The filter is disabled. ${ enableButton }": [
         "El filtre està desactivat. ${ enableButton }"
       ],
@@ -9567,9 +9569,6 @@
       "Username": [
         "Nom d'usuari"
       ],
-      "VAT": [
-        "IVA"
-      ],
       "Verification code": [
         "Codi de verificació"
       ],
@@ -9585,11 +9584,20 @@
       "Weak password": [
         "Contrasenya feble."
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Estem millorant com es categoritzen els correus electrònics. Els vostres comentaris ajuden a fer-ho més intel·ligent i precís."
+      ],
       "What happened?": [
         "Què ha passat?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "Quin és el vostre principal motiu per cancel·lar o reduir la subscripció?"
+      ],
+      "Which category should this be recategorized under?": [
+        "En quina categoria s'hauria de recategoritzar?"
+      ],
+      "Why am I seeing this?": [
+        "Per què veig això?"
       ],
       "With attachment": [
         "Amb adjunt"
@@ -9757,6 +9765,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Creeu un calendari nou per gestionar les vostres invitacions"
+      ],
+      "Deleted": [
+        "S'ha eliminat"
       ],
       "Drafts": [
         "Esborranys"
@@ -11798,11 +11809,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durant aquest temps, no podreu modificar ni cancel·lar la vostra subscripció. Espereu fins que s'hagi completat el pagament abans d'intentar qualsevol canvi. Gràcies per la vostra paciència."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exclòs el ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Exclòs el ${ taxRate }% d'impostos: ${ taxAmount }"
+      ],
       "Got it": [
         "Fet"
       ],
       "I'm purchasing as a business": [
         "Estic comprant com a empresa"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclòs el ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inclòs el ${ taxRate }% d'impostos: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -11818,6 +11841,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Es renovarà per ${ renewPriceStr } i ho podreu cancel·lar en qualsevol moment."
+      ],
+      "Taxes": [
+        "Impostos"
       ],
       "terms & conditions": [
         "els termes i condicions"
@@ -11849,6 +11875,9 @@
       ],
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
+      ],
+      "VAT": [
+        "IVA"
       ],
       "VAT number": [
         "Número d'IVA"
@@ -13764,6 +13793,10 @@
       "Conversation removed from Starred.": [
         "Aquesta conversa s'ha eliminat de Destacats."
       ],
+      "Conversation updated": [
+        "La conversa s'ha actualitzat",
+        "Les converses s'han actualitzat"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Les converses de ${ sendersList } s'etiquetaran com a ${ labelsList }"
       ],
@@ -13838,6 +13871,10 @@
       ],
       "Message removed from Starred.": [
         "S'ha eliminat aquest missatge de Destacats."
+      ],
+      "Message updated": [
+        "El missatge s'ha actualitzat",
+        "Els missatges s'han s actualitzat"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Els missatges de ${ sendersList } s'etiquetaran com a ${ labelsList }"
@@ -15080,9 +15117,6 @@
       "Your account is protected": [
         "El compte està protegit"
       ],
-      "Your addresses": [
-        "Les vostres adreces"
-      ],
       "Your changes are not synced yet": [
         "Els vostres canvis encara no estan sincronitzats"
       ],
@@ -15310,9 +15344,6 @@
       "${ n } wallet": [
         "${ n } cartera",
         "${ n } carteres"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Una manera més segura de mantenir el vostre Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via correu electrònic"
