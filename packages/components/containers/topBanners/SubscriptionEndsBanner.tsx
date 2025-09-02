@@ -8,7 +8,7 @@ import { REACTIVATE_SOURCE } from '@proton/components/containers/payments/subscr
 import { getReactivateSubscriptionAction } from '@proton/components/containers/payments/subscription/helpers/subscriptionExpires';
 import useConfig from '@proton/components/hooks/useConfig';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
-import { SubscriptionPlatform } from '@proton/payments';
+import { SubscriptionPlatform, isTrial } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -26,6 +26,10 @@ const SubscriptionEndsBanner = ({ app }: { app: APP_NAMES }) => {
     }
 
     if (showVPNDashboard) {
+        return null;
+    }
+
+    if (isTrial(subscription)) {
         return null;
     }
 
