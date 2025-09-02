@@ -1,4 +1,4 @@
-import { type Subscription } from '@proton/payments';
+import type { Subscription } from '@proton/payments';
 
 const format = (
     subscription: Subscription,

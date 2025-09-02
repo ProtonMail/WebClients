@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { type ContactEditProps } from '@proton/components';
+import type { ContactEditProps } from '@proton/components';
 import type { PublicKeyReference } from '@proton/crypto';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { Recipient } from '@proton/shared/lib/interfaces';

@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/prefer-tag-over-role */
 import clsx from '@proton/utils/clsx'
-import { type ComponentPropsWithoutRef, type ReactNode } from 'react'
+import type { ComponentPropsWithoutRef, ReactNode } from 'react'
 
 const POSITIONAL_CELL_CLASSES = [
   '[&:nth-child(1)]:grow [&:nth-child(1)]:px-5 [&:nth-child(1)]:basis-0',

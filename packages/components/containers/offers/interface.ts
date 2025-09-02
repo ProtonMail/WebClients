@@ -4,7 +4,7 @@ import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms';
 import type { IconName, IconSize } from '@proton/components/components/icon/Icon';
 import type { FeatureCode } from '@proton/features';
 import type { PlanIDs } from '@proton/payments';
-import { type COUPON_CODES, type CYCLE, type Currency } from '@proton/payments';
+import type { COUPON_CODES, CYCLE, Currency } from '@proton/payments';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
 export type OfferId =

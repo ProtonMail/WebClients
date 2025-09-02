@@ -3,7 +3,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import type { NotificationReducerState } from '@proton/pass/store/reducers/notification';
 import type { State } from '@proton/pass/store/types';
 import { InAppNotificationState, type Maybe } from '@proton/pass/types';
-import { type InAppNotification } from '@proton/pass/types/data/notification';
+import type { InAppNotification } from '@proton/pass/types/data/notification';
 
 export const selectNotificationState = ({ notification }: State): NotificationReducerState => notification;
 

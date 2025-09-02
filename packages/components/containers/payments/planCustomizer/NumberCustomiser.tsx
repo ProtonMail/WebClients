@@ -1,8 +1,8 @@
 import Info from '@proton/components/components/link/Info';
-import { type Plan } from '@proton/payments';
+import type { Plan } from '@proton/payments';
 
 import { ButtonNumberInput } from './ButtonNumberInput';
-import { type DecreaseBlockedReason, type IncreaseBlockedReason } from './helpers';
+import type { DecreaseBlockedReason, IncreaseBlockedReason } from './helpers';
 
 export interface NumberCustomiserProps {
     addon: Plan;

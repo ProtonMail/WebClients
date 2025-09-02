@@ -25,7 +25,7 @@ import {
     SubscriptionMode,
 } from '@proton/payments';
 import { useCbIframe } from '@proton/payments/ui';
-import { type Api, type User } from '@proton/shared/lib/interfaces';
+import type { Api, User } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 

@@ -28,7 +28,7 @@ import { everythingInPlanOrAppNameText, selectPlanOrAppNameText } from '@proton/
 import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 import { getStorageFeature, getSyncAndBackupFeature, getVersionHistory } from '../../../features/drive';
-import { type PlanCardFeatureDefinition } from '../../../features/interface';
+import type { PlanCardFeatureDefinition } from '../../../features/interface';
 import { getFoldersAndLabelsFeature, getNAddressesFeature, getNDomainsFeature } from '../../../features/mail';
 import { PASS_PLUS_VAULTS, get2FAAuthenticator, getHideMyEmailAliases, getVaults } from '../../../features/pass';
 import { PlanCardFeatureList } from '../../PlanCardFeatures';

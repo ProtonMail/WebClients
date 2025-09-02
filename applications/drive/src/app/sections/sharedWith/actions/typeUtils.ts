@@ -1,8 +1,8 @@
-import {
-    type BookmarkItem,
-    type DirectShareItem,
-    type InvitationItem,
-    type SharedWithMeListingItemUI,
+import type {
+    BookmarkItem,
+    DirectShareItem,
+    InvitationItem,
+    SharedWithMeListingItemUI,
 } from '../../../zustand/sections/sharedWithMeListing.store';
 import type { ItemTypeChecker } from './actionsItemsChecker';
 

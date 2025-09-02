@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import { type PaymentIntent } from '@proton/chargebee/lib';
+import type { PaymentIntent } from '@proton/chargebee/lib';
 import useLoading from '@proton/hooks/useLoading';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';

@@ -1,6 +1,6 @@
 import type { MutableRefObject, RefObject } from 'react';
 
-import { type FormikErrors } from 'formik';
+import type { FormikErrors } from 'formik';
 import type { Store } from 'redux';
 
 import { AccessTarget } from '@proton/pass/lib/access/types';

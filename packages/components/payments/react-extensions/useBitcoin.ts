@@ -16,10 +16,10 @@ import {
     getTokenStatus,
     isTokenPaymentMethod,
 } from '@proton/payments';
-import { type PaymentProcessorHook } from '@proton/payments';
+import type { PaymentProcessorHook } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { type Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 export const BITCOIN_POLLING_INTERVAL = 10000;
 

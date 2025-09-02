@@ -16,7 +16,7 @@ import {
     vaultEditSuccess,
 } from '@proton/pass/store/actions';
 import type { Share, ShareId } from '@proton/pass/types';
-import { type ShareType } from '@proton/pass/types';
+import type { ShareType } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';

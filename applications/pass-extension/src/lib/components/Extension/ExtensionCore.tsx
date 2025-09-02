@@ -33,7 +33,7 @@ import browser from '@proton/pass/lib/globals/browser';
 import { createI18nService } from '@proton/pass/lib/i18n/service';
 import { createSettingsService } from '@proton/pass/lib/settings/service';
 import type { LocalStoreData } from '@proton/pass/types';
-import { type ClientEndpoint, type MaybeNull } from '@proton/pass/types';
+import type { ClientEndpoint, MaybeNull } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { prop } from '@proton/pass/utils/fp/lens';
 import createStore from '@proton/shared/lib/helpers/store';

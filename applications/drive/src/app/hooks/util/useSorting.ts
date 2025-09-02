@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { type SortConfig, useMultiSortedList } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { type LinkShareUrl } from '../../store';
+import type { LinkShareUrl } from '../../store';
 import { logError } from '../../utils/errorHandling';
 
 export enum SortField {

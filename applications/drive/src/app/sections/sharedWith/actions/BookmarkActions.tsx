@@ -1,6 +1,6 @@
 import type { useConfirmActionModal } from '@proton/components';
 
-import { type BookmarkItem } from '../../../zustand/sections/sharedWithMeListing.store';
+import type { BookmarkItem } from '../../../zustand/sections/sharedWithMeListing.store';
 import { OpenBookmarkButton } from '../buttons/OpenBookmarkButton';
 import { RemoveBookmarkButton } from '../buttons/RemoveBookmarkButton';
 import { createItemChecker } from './actionsItemsChecker';

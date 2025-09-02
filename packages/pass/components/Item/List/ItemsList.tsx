@@ -14,7 +14,7 @@ import type { ItemScope } from '@proton/pass/components/Navigation/routing';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
 import { selectIsWritableVault } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
-import { type ItemRevision } from '@proton/pass/types';
+import type { ItemRevision } from '@proton/pass/types';
 
 const BulkEnabledRoutes: ItemScope[] = ['share', 'trash'];
 const canBulk = (prefix?: ItemScope) => prefix && BulkEnabledRoutes.includes(prefix);

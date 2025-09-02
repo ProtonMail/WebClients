@@ -6,7 +6,7 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 import useLoading from '@proton/hooks/useLoading';
 import { COUPON_CODES, CYCLE, type PLANS, getCheckout, getPlansMap } from '@proton/payments';
 
-import { type PriceData } from '../helpers/interface';
+import type { PriceData } from '../helpers/interface';
 import { roundToUpper } from '../helpers/paidUserNudgeHelper';
 
 interface Props {

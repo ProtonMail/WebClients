@@ -1,8 +1,8 @@
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { ThemeCode, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import type { Currency, PAYMENT_METHOD_TYPES } from '@proton/payments';
-import { type FreeSubscription, type Subscription } from '@proton/payments';
-import { type TaxCountryHook, type VatNumberHook } from '@proton/payments/ui';
+import type { FreeSubscription, Subscription } from '@proton/payments';
+import type { TaxCountryHook, VatNumberHook } from '@proton/payments/ui';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
 import { PaymentsNoApi } from './Payment';

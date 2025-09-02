@@ -23,7 +23,7 @@ import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 import { normalize } from '@proton/shared/lib/helpers/string';
-import { type NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
+import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import type { FolderItem } from 'proton-mail/hooks/useMailTreeView/interface';
 import { useMailFolderTreeView } from 'proton-mail/hooks/useMailTreeView/useMailFolderTreeView';

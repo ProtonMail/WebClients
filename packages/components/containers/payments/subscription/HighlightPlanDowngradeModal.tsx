@@ -14,7 +14,7 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getDifferenceInDays } from '@proton/shared/lib/date/date';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { type UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getSpace } from '@proton/shared/lib/user/storage';
 
 import type { ShortPlan } from '../features/interface';

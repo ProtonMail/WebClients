@@ -11,7 +11,7 @@ import { BilledUserInlineMessage } from '@proton/components/payments/client-exte
 import type { BitcoinHook } from '@proton/components/payments/react-extensions/useBitcoin';
 import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
-import { type ChargebeeDirectDebitProcessorHook } from '@proton/components/payments/react-extensions/useSepaDirectDebit';
+import type { ChargebeeDirectDebitProcessorHook } from '@proton/components/payments/react-extensions/useSepaDirectDebit';
 import { useStableLoading } from '@proton/hooks';
 import {
     type BillingAddressStatus,

@@ -1,4 +1,4 @@
-import { type UnknownAction } from '@reduxjs/toolkit';
+import type { UnknownAction } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 import { c } from 'ttag';
 

@@ -1,11 +1,11 @@
-import { type ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';
 import Time from '@proton/components/components/time/Time';
 import { IcCheckmark, IcClockCircleFilled, IcGlobe, IcMobile, IcServers, IcStorage, IcUserFilled } from '@proton/icons';
-import { type Subscription } from '@proton/payments';
+import type { Subscription } from '@proton/payments';
 import { getVPNDedicatedIPs } from '@proton/payments';
 import { DRIVE_SHORT_APP_NAME, FREE_VPN_CONNECTIONS, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';

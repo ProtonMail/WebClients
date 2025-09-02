@@ -6,7 +6,7 @@ import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 import { isValidStandaloneApp } from '../../helpers/anniversary2025';
 import isCheckAllowed from '../../helpers/isCheckAllowed';
 import OfferSubscription from '../../helpers/offerSubscription';
-import { type OfferConfig } from '../../interface';
+import type { OfferConfig } from '../../interface';
 
 interface Props {
     user: UserModel;

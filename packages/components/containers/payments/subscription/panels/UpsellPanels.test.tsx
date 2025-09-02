@@ -1,6 +1,6 @@
 import { render, screen, within } from '@testing-library/react';
 
-import { type Subscription } from '@proton/payments';
+import type { Subscription } from '@proton/payments';
 
 import {
     familyUpsell,

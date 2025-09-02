@@ -10,14 +10,7 @@ import type {
     SavedPaymentMethod,
     SubscriptionCheckResponse,
 } from '@proton/payments';
-import {
-    type Currency,
-    type Cycle,
-    type FreePlanDefault,
-    type Plan,
-    type PlansMap,
-    type Subscription,
-} from '@proton/payments';
+import type { Currency, Cycle, FreePlanDefault, Plan, PlansMap, Subscription } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';

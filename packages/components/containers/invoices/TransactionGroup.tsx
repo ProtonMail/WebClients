@@ -18,7 +18,7 @@ import PaymentsPdfPreview, { type PdfPreviewControls } from './PaymentsPdfPrevie
 import TransactionActions from './TransactionActions';
 import TransactionState from './TransactionState';
 import TransactionType from './TransactionType';
-import { type TransactionsHook } from './useTransactions';
+import type { TransactionsHook } from './useTransactions';
 
 const TransactionGroup = ({ transactions, loading, error, page }: TransactionsHook) => {
     const previewRef = useRef<PdfPreviewControls>(null);

@@ -1,8 +1,8 @@
 import { ADDON_NAMES, ADDON_PREFIXES, PLANS } from '../constants';
-import { type FreeSubscription, type PlanIDs } from '../interface';
-import { type Subscription } from '../subscription/interface';
+import type { FreeSubscription, PlanIDs } from '../interface';
+import type { Subscription } from '../subscription/interface';
 import { isFreeSubscription } from '../type-guards';
-import { type Addon } from './interface';
+import type { Addon } from './interface';
 
 type AddonOrName = Addon | ADDON_NAMES | PLANS;
 

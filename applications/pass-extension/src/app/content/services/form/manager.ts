@@ -22,7 +22,7 @@ import {
     removeClassifierFlags,
     removeProcessedFlag,
 } from '@proton/pass/fathom';
-import { type MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
 import { isHTMLElement, isInputElement } from '@proton/pass/utils/dom/predicates';
 import { debounceBuffer } from '@proton/pass/utils/fp/control';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
