@@ -4,42 +4,60 @@ import { APPS } from '@proton/shared/lib/constants';
 
 import { type AvailablePlan } from '../../../context/SignupContext';
 
-export const unlimited: { planIDs: PlanIDs } = {
-    planIDs: { [PLANS.BUNDLE]: 1 },
+type ReferralSelectedPlan = {
+    planIDs: PlanIDs;
+    trial?: boolean;
 };
 
-const mailPlus: { planIDs: PlanIDs } = {
+export const unlimited: ReferralSelectedPlan = {
+    planIDs: { [PLANS.BUNDLE]: 1 },
+    trial: true,
+};
+
+const mailPlus: ReferralSelectedPlan = {
     planIDs: { [PLANS.MAIL]: 1 },
 };
 
-const drivePlus: { planIDs: PlanIDs } = {
+const drivePlus: ReferralSelectedPlan = {
     planIDs: { [PLANS.DRIVE]: 1 },
 };
 
-const passPlus: { planIDs: PlanIDs } = {
+const passPlus: ReferralSelectedPlan = {
     planIDs: { [PLANS.PASS]: 1 },
 };
 
-const vpnPlus: { planIDs: PlanIDs } = {
+const vpnPlus: ReferralSelectedPlan = {
     planIDs: { [PLANS.VPN2024]: 1 },
+    trial: true,
 };
 
-type SupportedReferralPlans = PLANS.BUNDLE | PLANS.MAIL | PLANS.DRIVE | PLANS.PASS | PLANS.VPN2024;
+export type SupportedReferralPlans = PLANS.BUNDLE | PLANS.MAIL | PLANS.DRIVE | PLANS.PASS | PLANS.VPN2024;
 
-const referralPlanMap: Record<SupportedReferralPlans, PlanIDs> = {
-    [PLANS.BUNDLE]: unlimited.planIDs,
-    [PLANS.MAIL]: mailPlus.planIDs,
-    [PLANS.DRIVE]: drivePlus.planIDs,
-    [PLANS.PASS]: passPlus.planIDs,
-    [PLANS.VPN2024]: vpnPlus.planIDs,
+const referralPlanMap: Record<SupportedReferralPlans, ReferralSelectedPlan> = {
+    [PLANS.BUNDLE]: unlimited,
+    [PLANS.MAIL]: mailPlus,
+    [PLANS.DRIVE]: drivePlus,
+    [PLANS.PASS]: passPlus,
+    [PLANS.VPN2024]: vpnPlus,
 };
 
-export const getReferralPlanIDsFromPlan = (plan: PLANS | undefined): PlanIDs => {
+/**
+ * Trial plans require payment token
+ */
+export const plansRequiringPaymentToken: SupportedReferralPlans[] = Object.entries(referralPlanMap)
+    .filter(([, { trial }]) => trial)
+    .map(([plan]) => plan as SupportedReferralPlans);
+
+export const autoRenewingPlans: SupportedReferralPlans[] = Object.entries(referralPlanMap)
+    .filter(([, { trial }]) => trial)
+    .map(([plan]) => plan as SupportedReferralPlans);
+
+export const getReferralSelectedPlan = (plan: SupportedReferralPlans | undefined): ReferralSelectedPlan => {
     if (!plan || !(plan in referralPlanMap)) {
-        return {};
+        return referralPlanMap[PLANS.BUNDLE];
     }
 
-    return referralPlanMap[plan as SupportedReferralPlans];
+    return referralPlanMap[plan];
 };
 
 export const getAvailablePlansWithCycles = (plans: { planIDs: PlanIDs }[], cycles: Cycle[]): AvailablePlan[] => {

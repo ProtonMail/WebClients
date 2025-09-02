@@ -4,18 +4,20 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { VerticalStep, VerticalSteps } from '@proton/atoms';
-import { AppsLogos, SkeletonLoader } from '@proton/components';
+import { SkeletonLoader } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import { getTrialRenewalNoticeText } from '@proton/components/containers/payments/RenewalNotice';
 import { referralReward } from '@proton/components/containers/referral/constants';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES, TRIAL_DURATION_DAYS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
-import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { getReferrerName } from '../../../../helpers/signupSearchParams';
 import { getPlanIconPath } from '../../helpers/planIcons';
-import { FreeFeatures } from '../Features/FreeFeatures';
+import type { SupportedReferralPlans } from '../../helpers/plans';
+import { autoRenewingPlans, plansRequiringPaymentToken } from '../../helpers/plans';
 
 const LogoIconShape = ({ children, border = true }: { children: ReactNode; border?: boolean }) => {
     return (
@@ -73,9 +75,12 @@ const TrialExplanation = () => {
 
     const planName = PLAN_NAMES[selectedPlan.getPlanName()];
 
+    const creditCardRequired = plansRequiringPaymentToken.includes(selectedPlan.name as SupportedReferralPlans);
+
     return (
         <div className="px-4 lg:px-8">
-            <p className="mt-0 mb-2">{c('Signup').t`No credit card required:`}</p>
+            {!creditCardRequired && <p className="mt-0 mb-2">{c('Signup').t`No credit card required:`}</p>}
+
             <VerticalSteps className="vertical-steps--primary mb-0">
                 <VerticalStep
                     title={c('Signup').t`Create a ${BRAND_NAME} Account`}
@@ -100,25 +105,48 @@ const TrialExplanation = () => {
 
 const PricingFooter = () => {
     const payments = usePaymentOptimistic();
-    const { uiData } = payments;
-    const { checkout } = uiData;
 
     const hasFullCheckoutDetails = payments.initializationStatus.pricingInitialized && !payments.loadingPaymentDetails;
 
-    const priceWithDiscountPerMonth = getSimplePriceString(checkout.currency, checkout.withDiscountPerMonth);
+    const planToCheck = {
+        planIDs: { [payments.selectedPlan.name]: 1 },
+        currency: payments.currency,
+        cycle: payments.selectedPlan.cycle,
+    };
+
+    const { uiData } = payments.getPriceOrFallback({
+        ...planToCheck,
+        coupon: payments.getCoupon(planToCheck),
+        /**
+         * Ensure we check renewal price by setting trial to false
+         */
+        trial: false,
+    });
+
+    const priceWithDiscountPerMonth = getSimplePriceString(uiData.currency, uiData.withDiscountPerMonth);
+
+    const willAutoRenew = autoRenewingPlans.includes(payments.selectedPlan.name as SupportedReferralPlans);
 
     const total = (
         <>
             <div className="flex justify-space-between gap-2 text-lg">
                 <span className="text-semibold">{c('Signup').t`Total`}</span>
-                <span className="text-semibold">{c('Signup').t`Free for 14 days`}</span>
+                <span className="text-semibold">{
+                    // translator: full sentence "Free for 14 days"
+                    c('Signup').t`Free for ${TRIAL_DURATION_DAYS} days`
+                }</span>
             </div>
             <div>
                 {hasFullCheckoutDetails ? (
-                    <p className="m-0">{c('Signup')
-                        .t`Then ${priceWithDiscountPerMonth} per month, if you subscribe.`}</p>
+                    <p className="m-0">
+                        {willAutoRenew
+                            ? getTrialRenewalNoticeText({
+                                  renewCycle: uiData.renewCycle,
+                              })
+                            : c('Signup').t`Then ${priceWithDiscountPerMonth} per month, if you subscribe.`}
+                    </p>
                 ) : (
-                    <SkeletonLoader width="100%" height="1.4rem" />
+                    <SkeletonLoader width="100%" height="1.25rem" />
                 )}
             </div>
         </>
@@ -131,65 +159,13 @@ const PricingFooter = () => {
     );
 };
 
-const Free = () => {
-    return (
-        <div className="px-4 lg:px-8 flex flex-column">
-            <h2 className="text-lg text-semibold mt-0 mb-3">{c('Signup').t`Every free account comes with:`}</h2>
-            <div className="block lg:hidden">
-                <AppsLogos
-                    fullWidth
-                    logoSize={8}
-                    apps={[
-                        APPS.PROTONMAIL,
-                        APPS.PROTONCALENDAR,
-                        APPS.PROTONVPN_SETTINGS,
-                        APPS.PROTONDRIVE,
-                        APPS.PROTONPASS,
-                        APPS.PROTONDOCS,
-                    ]}
-                />
-            </div>
-            <div className="hidden lg:block">
-                <AppsLogos
-                    fullWidth
-                    iconShape="appIcon"
-                    logoSize={8}
-                    apps={[
-                        APPS.PROTONMAIL,
-                        APPS.PROTONCALENDAR,
-                        APPS.PROTONVPN_SETTINGS,
-                        APPS.PROTONDRIVE,
-                        APPS.PROTONPASS,
-                        APPS.PROTONDOCS,
-                    ]}
-                />
-            </div>
-            <hr className="my-4 lg:my-8" />
-            <ul className="unstyled flex flex-column gap-3 m-0">
-                <FreeFeatures />
-            </ul>
-        </div>
-    );
-};
-
 export const PricingCard = () => {
-    const payments = usePaymentOptimistic();
-    const { selectedPlan } = payments;
-
-    const isPaidPlan = selectedPlan.name !== PLANS.FREE;
-
     return (
         <section className={clsx('referral-signup-pricing-card w-full flex flex-column')}>
             <div className="referral-signup-pricing-card-inner rounded-xl fade-in w-full flex flex-column shadow-raised gap-4 lg:gap-8 py-4 lg:py-8 bg-norm">
-                {isPaidPlan ? (
-                    <>
-                        <PricingHeader />
-                        <TrialExplanation />
-                        <PricingFooter />
-                    </>
-                ) : (
-                    <Free />
-                )}
+                <PricingHeader />
+                <TrialExplanation />
+                <PricingFooter />
             </div>
         </section>
     );

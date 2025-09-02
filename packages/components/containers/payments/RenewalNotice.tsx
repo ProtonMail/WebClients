@@ -11,6 +11,7 @@ import {
     type CheckoutModifiers,
     type Coupon,
     type Currency,
+    type Cycle,
     PLANS,
     PLAN_NAMES,
     type PaymentsCheckout,
@@ -326,24 +327,31 @@ export const getCheckoutRenewNoticeText = ({
     });
 };
 
-const getTrialRenewalNoticeText = ({ checkResult, app }: { checkResult: RequiredCheckResponse; app: APP_NAMES }) => {
+export const getTrialRenewalNoticeText = ({ renewCycle }: { renewCycle: Cycle }) => {
     const trialEndDate = addDays(new Date(), TRIAL_DURATION_DAYS);
     const formattedDate = <Time>{getUnixTime(trialEndDate)}</Time>;
-    const cycle = checkResult.RenewCycle;
 
-    if (cycle === CYCLE.MONTHLY) {
-        return appendTermsAndConditionsLink(
-            c('b2b_trials_2025_Info')
-                .jt`After the trial ends on ${formattedDate}, it will become a paid subscription that auto-renews monthly on ${formattedDate}. You won’t be charged if you cancel before ${formattedDate}.`,
-            app
-        );
+    if (renewCycle === CYCLE.MONTHLY) {
+        return c('b2b_trials_2025_Info')
+            .jt`After the trial ends on ${formattedDate}, it will become a paid subscription that auto-renews monthly on ${formattedDate}. You won’t be charged if you cancel before ${formattedDate}.`;
     }
 
-    return appendTermsAndConditionsLink(
-        c('b2b_trials_2025_Info')
-            .jt`After the trial ends on ${formattedDate}, it will become a paid subscription that auto-renews every ${cycle} months on ${formattedDate}. You won’t be charged if you cancel before ${formattedDate}.`,
-        app
-    );
+    return c('b2b_trials_2025_Info')
+        .jt`After the trial ends on ${formattedDate}, it will become a paid subscription that auto-renews every ${renewCycle} months on ${formattedDate}. You won’t be charged if you cancel before ${formattedDate}.`;
+};
+
+const getTrialRenewalNoticeTextWithTermsAndConditions = ({
+    renewCycle,
+    app,
+}: {
+    renewCycle: Cycle | null;
+    app: APP_NAMES;
+}) => {
+    if (renewCycle === null) {
+        return '';
+    }
+
+    return appendTermsAndConditionsLink(getTrialRenewalNoticeText({ renewCycle }), app);
 };
 
 export const getCheckoutRenewNoticeTextFromCheckResult = ({
@@ -364,7 +372,7 @@ export const getCheckoutRenewNoticeTextFromCheckResult = ({
     const isTrial = checkResult.SubscriptionMode === SubscriptionMode.Trial;
 
     if (isTrial) {
-        return getTrialRenewalNoticeText({ checkResult, app });
+        return getTrialRenewalNoticeTextWithTermsAndConditions({ renewCycle: checkResult.RenewCycle, app });
     }
 
     return getCheckoutRenewNoticeText({

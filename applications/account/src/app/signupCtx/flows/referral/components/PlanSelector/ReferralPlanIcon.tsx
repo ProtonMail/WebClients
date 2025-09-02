@@ -1,15 +1,16 @@
 import { c } from 'ttag';
 
-import type { PLANS } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
+
+import { type SupportedReferralPlans } from '../../helpers/plans';
 
 import './ReferralPlanIcon.scss';
 
 interface Props {
     icon: string;
-    plan: PLANS;
+    plan: SupportedReferralPlans;
     selected: boolean;
-    handleClick: (plan: PLANS) => void;
+    handleClick: (plan: SupportedReferralPlans) => void;
     title: string;
     extraShortTitle?: string;
 }

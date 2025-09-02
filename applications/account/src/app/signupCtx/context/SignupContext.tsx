@@ -9,6 +9,7 @@ import {
     type ExtendedTokenPayment,
     PLANS,
     type PlanIDs,
+    SubscriptionMode,
     type TokenPayment,
     isTokenPayment,
     isV5PaymentToken,
@@ -17,7 +18,6 @@ import {
 import { type PaymentsContextOptimisticType, type PlanToCheck } from '@proton/payments/ui';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
-import { postReferralRegistration } from '@proton/shared/lib/api/core/referrals';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { type ProductParam } from '@proton/shared/lib/apps/product';
 import { type ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -30,8 +30,7 @@ import noop from '@proton/utils/noop';
 
 import sendRecoveryPhrasePayloadHelper from '../../containers/recoveryPhrase/sendRecoveryPhrasePayload';
 import type { DeferredMnemonicData } from '../../containers/recoveryPhrase/types';
-import type { SignupType } from '../../signup/interfaces';
-import { type AccountData } from '../../signup/interfaces';
+import type { AccountData, SignupType } from '../../signup/interfaces';
 import { handleSetupOrg } from '../../signup/signupActions';
 import {
     sendSignupAccountCreationTelemetry,
@@ -45,7 +44,7 @@ import { InvalidReferrerError, useReferralData } from './accountData/useReferral
 import { useSignupDomains } from './accountData/useSignupDomains';
 import { getClientType } from './helpers/getClientType';
 import { handleCreateUser } from './helpers/handleCreateUser';
-import { type SubscriptionData2, handleSetupUser } from './helpers/handleSetupUser';
+import { type SignupContextSubscriptionData, handleSetupUser } from './helpers/handleSetupUser';
 
 interface AccountFormDataConfig {
     /**
@@ -64,7 +63,7 @@ interface AccountFormDataConfig {
 interface SignupData {
     accountData?: AccountData;
     paymentData?: {
-        subscriptionData: SubscriptionData2;
+        subscriptionData: SignupContextSubscriptionData;
     };
 }
 
@@ -362,12 +361,22 @@ export const InnerSignupContextProvider = ({
             return;
         }
 
-        const paymentToken =
-            paymentData &&
-            isTokenPayment(paymentData.subscriptionData.paymentToken) &&
-            paymentData.subscriptionData.checkResult.AmountDue > 0
-                ? paymentData.subscriptionData.paymentToken.Details.Token
-                : undefined;
+        const paymentToken = (() => {
+            if (!paymentData) {
+                return undefined;
+            }
+
+            if (!isTokenPayment(paymentData.subscriptionData.paymentToken)) {
+                return undefined;
+            }
+
+            if (
+                paymentData.subscriptionData.checkResult.AmountDue > 0 ||
+                paymentData?.subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial
+            ) {
+                return paymentData.subscriptionData.paymentToken.Details.Token;
+            }
+        })();
 
         try {
             // Ensure crypto worker has loaded
@@ -450,6 +459,17 @@ export const InnerSignupContextProvider = ({
              */
             metrics.stopBatchingProcess();
 
+            const referralRegistrationPlan = (() => {
+                if (paymentsContext.selectedPlan.getPlanName() === PLANS.FREE) {
+                    return;
+                }
+
+                return {
+                    name: paymentsContext.selectedPlan.getPlanName(),
+                    cycle: paymentsContext.selectedPlan.cycle,
+                };
+            })();
+
             const setupUserResponse = await handleSetupUser({
                 accountData,
                 persistent,
@@ -460,30 +480,12 @@ export const InnerSignupContextProvider = ({
                 productParam: app,
                 hasZipCodeValidation,
                 traceSignupSentryError: traceSentryError,
+                referralData,
+                referralRegistrationPlan,
             });
 
             setupUserResponseRef.current = setupUserResponse;
             setRecoveryPhraseData(setupUserResponse.recoveryPhraseData);
-
-            if (referralData) {
-                const plan = (() => {
-                    if (paymentsContext.selectedPlan.getPlanName() === PLANS.FREE) {
-                        return;
-                    }
-
-                    return {
-                        name: paymentsContext.selectedPlan.getPlanName(),
-                        cycle: paymentsContext.selectedPlan.cycle,
-                    };
-                })();
-
-                await api(
-                    postReferralRegistration({
-                        plan,
-                        referralData,
-                    })
-                );
-            }
 
             stageRef.current = 'userSetup';
 
