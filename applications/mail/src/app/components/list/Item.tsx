@@ -156,7 +156,7 @@ const Item = ({
 
     return (
         <div className="item-container-wrapper relative" data-shortcut-target="item-container-wrapper">
-            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/prefer-tag-over-role */}
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/prefer-tag-over-role */}
             <div
                 onContextMenu={(event) => onContextMenu(event, element)}
                 onClick={handleClick}
@@ -213,6 +213,7 @@ const Item = ({
                     isSelected={isSelected}
                     attachmentsMetadata={filteredThumbnails}
                     userSettings={userSettings}
+                    index={index}
                 />
             </div>
         </div>
