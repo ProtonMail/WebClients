@@ -36,10 +36,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "${ numberOfAddresses } address": [
-        "${ numberOfAddresses } διεύθυνση",
-        "${ numberOfAddresses } διευθύνσεις"
-      ],
       "A to Z": [
         "Α έως Ω"
       ],
@@ -325,9 +321,6 @@
       ],
       "Copy alias “${ name }”": [
         "Αντιγραφή ψευδώνυμου “${ name }”"
-      ],
-      "Copy email address": [
-        "Αντιγραφή διεύθυνσης ηλεκτρονικού ταχυδρομείου"
       ],
       "Copy email to clipboard": [
         "Αντιγραφή μηνύματος στο πρόχειρο"
@@ -812,9 +805,6 @@
       "Make it friendly": [
         "Κάντε το φιλικό"
       ],
-      "Manage addresses": [
-        "Διαχείριση διευθύνσεων"
-      ],
       "Manage advanced account protections": [
         "Διαχείριση προηγμένων προστασιών λογαριασμού"
       ],
@@ -910,6 +900,9 @@
       ],
       "More search options": [
         "Περισσότερες επιλογές αναζήτησης"
+      ],
+      "Most frequent": [
+        "Πιο συχνά"
       ],
       "Most read": [
         "Πιο διαβασμένα"
@@ -1072,6 +1065,9 @@
       ],
       "Read receipt sent": [
         "Έγινε αποστολή αποδεικτικού ανάγνωσης"
+      ],
+      "Recently read": [
+        "Πρόσφατα αναγνωσμένα"
       ],
       "Recently received": [
         "Προσφάτως ληφθέντα"
@@ -4052,9 +4048,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Απλοποιήστε τον συγχρονισμό και τον προγραμματισμό με τα κοινοποιημένα ημερολόγια."
       ],
-      "This view shows messages sent to the following addresses:": [
-        "Αυτή η προβολή δείχνει τα μηνύματα που στάλθηκαν στις παρακάτω διευθύνσεις:"
-      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Για να συνεχίσετε να χρησιμοποιείτε τον βοηθό γραφής, προσθέστε τον στη συνδρομή σας."
       ],
@@ -5282,8 +5275,8 @@
       "customer support": [
         "εξυπηρέτηση πελατών"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Τα οικογενειακά πλάνα δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Τα οικογενειακά πλάνα δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Εάν αποδεχτείτε την πρόσκληση, θα σας αλλάξουμε από το τρέχον πλάνο σας και θα πιστώσουμε στον λογαριασμό σας τυχόν υπόλοιπο."
@@ -7226,9 +7219,6 @@
       "Included for free with your plan": [
         "Συμπεριλαμβάνεται δωρεάν με το πλάνο σας"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Συμπεριλαμβανομένου ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Κληρονoμήθηκαν από το γονικό φάκελο"
       ],
@@ -7971,6 +7961,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Υπήρξε ένα σφάλμα με την υπογραφή που χρησιμοποιήθηκε για την επαλήθευση των στοιχείων επαφής, το οποίο μπορεί να είναι το αποτέλεσμα επαναφοράς κωδικού πρόσβασης."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Αυτές οι συνομιλίες φυλάσσονται εδώ με βάση την πολιτική διατήρησης δεδομένων του οργανισμού σας."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Δεν μπορούν να σας στείλουν ανεπιθύμητα μηνύματα εάν δεν γνωρίζουν τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας. Προστατέψτε τα εισερχόμενά σας με hide-my-email ψευδώνυμα."
@@ -9069,6 +9062,9 @@
       "Cash": [
         "Μετρητά"
       ],
+      "Categories badge": [
+        "Ετικέτα κατηγοριών"
+      ],
       "Category": [
         "Κατηγορία"
       ],
@@ -9230,6 +9226,9 @@
       ],
       "From: ${ fromEmail }": [
         "Από: ${ fromEmail }"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Βοηθήστε μας να βελτιώσουμε την επικείμενη κατηγοριοποίηση των αλληλογραφιών."
       ],
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
@@ -9519,6 +9518,9 @@
       "System information": [
         "Πληροφορίες Συστήματος"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "Η κατηγορία έχει ενημερωθεί, ευχαριστούμε για τα σχόλιά σας!"
+      ],
       "The filter is disabled. ${ enableButton }": [
         "Το φίλτρο είναι απενεργοποιημένο. ${ enableButton }"
       ],
@@ -9567,9 +9569,6 @@
       "Username": [
         "Όνομα Χρήστη"
       ],
-      "VAT": [
-        "ΦΠΑ"
-      ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
       ],
@@ -9585,11 +9584,20 @@
       "Weak password": [
         "Αδύναμος κωδικός πρόσβασης"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Βελτιώνουμε τον τρόπο κατηγοριοποίησης των μηνυμάτων. Η ανατροφοδότησή σας βοηθά να γίνει πιο έξυπνο και ακριβές."
+      ],
       "What happened?": [
         "Τι συνέβη;"
       ],
       "What is your main reason for canceling or downgrading?": [
         "Ποιος είναι ο κύριος λόγος ακύρωσης ή υποβάθμισης;"
+      ],
+      "Which category should this be recategorized under?": [
+        "Σε ποια κατηγορία θα έπρεπε να ανακατηγοριοποιηθεί αυτό;"
+      ],
+      "Why am I seeing this?": [
+        "Γιατί το βλέπω αυτό;"
       ],
       "With attachment": [
         "Με συνημμένα"
@@ -9757,6 +9765,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Δημιουργήστε ένα νέο ημερολόγιο για να διαχειριστείτε τις προσκλήσεις σας"
+      ],
+      "Deleted": [
+        "Διαγραμμένα"
       ],
       "Drafts": [
         "Πρόχειρα"
@@ -11798,11 +11809,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Κατά τη διάρκεια αυτής της περιόδου, δε θα μπορείτε να τροποποιήσετε ή να ακυρώσετε τη συνδρομή σας. Παρακαλούμε περιμένετε μέχρι να ολοκληρωθεί η πληρωμή σας πριν επιχειρήσετε οποιεσδήποτε αλλαγές. Σας ευχαριστούμε για την υπομονή σας."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Εξαιρουμένων ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Εξαιρουμένων ${ taxRate }% φόρων ${ taxAmount }"
+      ],
       "Got it": [
         "Το κατάλαβα"
       ],
       "I'm purchasing as a business": [
         "Αγοράζω ως επιχείρηση"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Συμπεριλαμβανομένου ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Συμπεριλαμβανομένων ${ taxRate }% φόρων ${ taxAmount }"
       ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
@@ -11818,6 +11841,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Ανανεώνει σε ${ renewPriceStr }, ακυρώστε ανά πάσα στιγμή."
+      ],
+      "Taxes": [
+        "Φόροι"
       ],
       "terms & conditions": [
         "όροι και προϋποθέσεις"
@@ -11849,6 +11875,9 @@
       ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
+      ],
+      "VAT": [
+        "ΦΠΑ"
       ],
       "VAT number": [
         "Αριθμός ΑΦΜ"
@@ -13764,6 +13793,10 @@
       "Conversation removed from Starred.": [
         "Η συνομιλία αφαιρέθηκε από τις Σημασμένες."
       ],
+      "Conversation updated": [
+        "Η συνομιλία ενημερώθηκε",
+        "Η συνομιλίες ενημερώθηκαν"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Συνομιλίες από ${ sendersList } θα επισημαίνονται ως ${ labelsList }"
       ],
@@ -13838,6 +13871,10 @@
       ],
       "Message removed from Starred.": [
         "Το μήνυμα αφαιρέθηκε από τα Σημασμένα."
+      ],
+      "Message updated": [
+        "Το μήνυμα ενημερώθηκε",
+        "Τα μηνύματα ενημερώθηκαν"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Τα μηνύματα από ${ sendersList } θα επισημαίνονται ως ${ labelsList }"
@@ -15080,9 +15117,6 @@
       "Your account is protected": [
         "Ο λογαριασμός σας προστατεύεται"
       ],
-      "Your addresses": [
-        "Οι διευθύνσεις σας"
-      ],
       "Your changes are not synced yet": [
         "Οι αλλαγές σας δεν έχουν συγχρονιστεί ακόμα"
       ],
@@ -15310,9 +15344,6 @@
       "${ n } wallet": [
         "${ n } πορτοφόλι",
         "${ n } πορτοφόλια"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Ένας ασφαλέστερος τρόπος για να φυλάξετε τα Bitcoin σας"
       ],
       "Bitcoin via Email": [
         "Bitcoin μέσω Εmail"

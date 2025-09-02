@@ -36,10 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
-      "${ numberOfAddresses } address": [
-        "${ numberOfAddresses } adresse",
-        "${ numberOfAddresses } adresses"
-      ],
       "A to Z": [
         "De A à Z"
       ],
@@ -92,7 +88,7 @@
         "Ajouter un nouveau groupe"
       ],
       "Add note": [
-        "Ajoutez une note."
+        "Ajouter une note"
       ],
       "Add participant": [
         "Ajouter des participants"
@@ -325,9 +321,6 @@
       ],
       "Copy alias “${ name }”": [
         "Copier l'alias « ${ name } »"
-      ],
-      "Copy email address": [
-        "Copier l’adresse e-mail"
       ],
       "Copy email to clipboard": [
         "Copier l’adresse e-mail dans le presse-papiers"
@@ -737,7 +730,7 @@
         "Augmenter"
       ],
       "Inline": [
-        "Intégrée"
+        "dans le message"
       ],
       "Insert": [
         "Insérer"
@@ -811,9 +804,6 @@
       ],
       "Make it friendly": [
         "Plus amical"
-      ],
-      "Manage addresses": [
-        "Gérer les adresses"
       ],
       "Manage advanced account protections": [
         "Gérer les protections avancées du compte"
@@ -910,6 +900,9 @@
       ],
       "More search options": [
         "Plus d'options de recherche"
+      ],
+      "Most frequent": [
+        "Les plus fréquentes"
       ],
       "Most read": [
         "Les plus lus"
@@ -1072,6 +1065,9 @@
       ],
       "Read receipt sent": [
         "La confirmation de lecture a été envoyée."
+      ],
+      "Recently read": [
+        "Récemment lu"
       ],
       "Recently received": [
         "Récemment reçus"
@@ -4083,9 +4079,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifiez la synchronisation et la planification grâce aux calendriers partagés."
       ],
-      "This view shows messages sent to the following addresses:": [
-        "Cette vue montre les messages envoyés aux adresses suivantes :"
-      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Pour continuer à utiliser l'assistant d'écriture, ajoutez-le à votre abonnement"
       ],
@@ -5278,7 +5271,7 @@
         "Refuser l'invitation"
       ],
       "Got it": [
-        "Je l'ai"
+        "J'ai compris"
       ],
       "Switch plans": [
         "Changer d'abonnement"
@@ -5313,8 +5306,8 @@
       "customer support": [
         "service client"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Actuellement, les abonnements familiaux ne prennent pas en charge les comptes externes. Créez une adresse ${ BRAND_NAME } avant de rejoindre l'un de ces abonnements. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Actuellement, les abonnements familiaux ne prennent pas en charge les comptes externes. Créez une adresse ${ BRAND_NAME } avant de rejoindre l'un de ces abonnements. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si vous acceptez l'invitation, nous changerons votre abonnement actuel et nous créditerons votre compte de l'éventuel solde restant."
@@ -5690,8 +5683,8 @@
         "${ MAIL_APP_NAME } sur Play Store"
       ],
       "${ remainingDaysCount } day": [
-        "${ remainingDaysCount } jour restant",
-        "${ remainingDaysCount } jours restants"
+        "${ remainingDaysCount } jour",
+        "${ remainingDaysCount } jours"
       ],
       "${ remainingDaysCount } day left": [
         "${ remainingDaysCount } jour restant.",
@@ -6324,12 +6317,12 @@
         "${ currentProgress } sur ${ totalProgress }"
       ],
       "${ elementsCount } conversation will be labelled as:": [
-        "${ elementsCount } la conversation sera marquée comme :",
-        "${ elementsCount } les conversations seront marquées comme :"
+        "${ elementsCount } conversation aura ce label :",
+        "${ elementsCount } conversations auront ce label :"
       ],
       "${ elementsCount } conversation will be marked as read.": [
-        "${ elementsCount } la conversation sera marquée comme lue.",
-        "${ elementsCount } les conversations seront marquées comme lues."
+        "${ elementsCount } conversation sera marquée comme lue.",
+        "${ elementsCount } conversations seront marquées comme lues."
       ],
       "${ elementsCount } conversation will be marked as unread.": [
         "${ elementsCount } conversation sera marquée comme non lue.",
@@ -6340,8 +6333,8 @@
         "${ elementsCount } les conversations seront déplacées"
       ],
       "${ elementsCount } conversation will be unlabelled from:": [
-        "${ elementsCount } la conversation sera classée comme:",
-        "${ elementsCount } les conversations seront classées comme :"
+        "${ elementsCount } conversation n'aura plus ce label :",
+        "${ elementsCount } conversations n'auront plus ce label :"
       ],
       "${ elementsCount } message will be labelled as:": [
         "Le message ${ elementsCount } sera étiqueté comme suit :",
@@ -6476,8 +6469,8 @@
         "${ total } conversations"
       ],
       "${ total } message": [
-        "${ total } de message",
-        "${ total } des messages"
+        "${ total } message",
+        "${ total } messages"
       ],
       "${ trackersCount } email tracker blocked": [
         "${ trackersCount } traqueur d'e-mail verrouillé",
@@ -7116,8 +7109,8 @@
         "Expire dans moins de ${ hoursDiff } heures"
       ],
       "file attached": [
-        "Fichier joint",
-        "Fichiers joints"
+        "fichier joint",
+        "fichiers joints"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Les filtres fonctionnent sur tous les messages, y compris les messages entrants et envoyés. Chaque filtre doit contenir au moins un nom, une condition et une action."
@@ -7256,9 +7249,6 @@
       ],
       "Included for free with your plan": [
         "Inclus gratuitement dans votre abonnement"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Comprenant ${ formattedTaxRate } % de ${ taxName } : ${ price }"
       ],
       "Inherited from parent folder": [
         "Similaire au dossier principal"
@@ -8003,6 +7993,9 @@
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Il y a eu une erreur dans la signature utilisée pour vérifier les coordonnées. Cette erreur peut être due à une réinitialisation du mot de passe.\n"
       ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Ces conversations sont conservées ici conformément à la politique de conservation des données de votre organisation."
+      ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "On ne peut pas vous spammer si l'on ne connaît pas votre adresse e-mail. Protégez votre messagerie avec les alias « hide-my-email »."
       ],
@@ -8486,8 +8479,8 @@
         "Vous avez **${ count } de conversations ** stockées dans ce fichier"
       ],
       "You have **${ count } conversation** tagged with this label": [
-        "Vous avez **${ count } de conversation** associée à ce libellé",
-        "Vous avez.** ${ count } des conversations ** associées à ce libellé"
+        "Vous avez **${ count } conversation** marqué avec ce label.",
+        "Vous avez **${ count } conversations** marqué avec ce label."
       ],
       "You have **${ count } message** stored in this folder": [
         "Vous avez **${ count } message** stocké dans ce dossier",
@@ -9100,6 +9093,9 @@
       "Cash": [
         "Espèces"
       ],
+      "Categories badge": [
+        "Étiquette des catégories"
+      ],
       "Category": [
         "Catégorie"
       ],
@@ -9261,6 +9257,9 @@
       ],
       "From: ${ fromEmail }": [
         "De : ${ fromEmail }"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Aidez-nous à améliorer la prochaine catégorisation des e-mails"
       ],
       "Hide password": [
         "Masquer le mot de passe"
@@ -9550,6 +9549,9 @@
       "System information": [
         "Informations système"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "La catégorie a été mise à jour. Merci pour votre commentaire !"
+      ],
       "The filter is disabled. ${ enableButton }": [
         "Le filtre est désactivé. ${ enableButton }"
       ],
@@ -9598,9 +9600,6 @@
       "Username": [
         "Nom d'utilisateur"
       ],
-      "VAT": [
-        "TVA"
-      ],
       "Verification code": [
         "Code de vérification"
       ],
@@ -9616,11 +9615,20 @@
       "Weak password": [
         "Mot de passe peu sécurisé"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Nous améliorons la façon dont les messages sont catégorisés. Vos commentaires aident à le rendre plus intelligent et plus précis."
+      ],
       "What happened?": [
         "Que s'est-il passé ?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "Quelle est la principale raison pour laquelle vous annulez votre abonnement ou passez à un abonnement inférieur ?"
+      ],
+      "Which category should this be recategorized under?": [
+        "Dans quelle catégorie reclasser ceci ?"
+      ],
+      "Why am I seeing this?": [
+        "Pourquoi voyez-vous ceci ?"
       ],
       "With attachment": [
         "Avec pièce jointe"
@@ -9788,6 +9796,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Créez un nouveau calendrier pour gérer vos invitations."
+      ],
+      "Deleted": [
+        "Supprimé"
       ],
       "Drafts": [
         "Brouillons"
@@ -11339,7 +11350,7 @@
         "Payez à l'année et assurez-vous de bénéficier de notre meilleure offre."
       ],
       "Save": [
-        "Sauvegarder"
+        "Enregistrer"
       ],
       "Save big when you pay annually": [
         "Économisez un maximum en optant pour le paiement annuel !"
@@ -11829,11 +11840,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Pendant cette période, vous ne pourrez pas modifier ou annuler votre abonnement. Veuillez attendre que votre paiement soit terminé avant de tenter toute modification. Merci pour votre patience."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excluant ${ taxRate } % de ${ taxName } : ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluant ${ taxRate } % de taxes : ${ taxAmount }"
+      ],
       "Got it": [
-        "Je l'ai"
+        "J'ai compris"
       ],
       "I'm purchasing as a business": [
         "J'achète en tant qu'entreprise."
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Comprenant ${ taxRate } % de ${ taxName } : ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Comprenant ${ taxRate } % de taxes : ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -11849,6 +11872,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renouvellement au prix de ${ renewPriceStr } avec possibilité de résiliation à tout moment."
+      ],
+      "Taxes": [
+        "Taxes"
       ],
       "terms & conditions": [
         "les conditions générales d’utilisation"
@@ -11880,6 +11906,9 @@
       ],
       "Timeout exceeded": [
         "Le délai est dépassé."
+      ],
+      "VAT": [
+        "TVA"
       ],
       "VAT number": [
         "Numéro de TVA"
@@ -12310,8 +12339,8 @@
     },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
-        "${ remainingDays } jour/s",
-        "${ remainingDays } jour/s"
+        "${ remainingDays } j",
+        "${ remainingDays } j"
       ],
       "<1 d": [
         "<1 j"
@@ -12651,7 +12680,7 @@
         "Annuler la demande"
       ],
       "Got it": [
-        "Je l'ai"
+        "J'ai compris"
       ],
       "Learn more": [
         "En savoir plus"
@@ -12688,7 +12717,7 @@
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "Déconnexion"
+        "Se déconnecter"
       ],
       "Stay signed in": [
         "Rester connecté"
@@ -13641,8 +13670,8 @@
         "${ count } les conversations ont été supprimées"
       ],
       "${ count } draft deleted": [
-        "${ count } le brouillon a été supprimé",
-        "${ count } les brouillons ont été supprimés"
+        "${ count } brouillon supprimé",
+        "${ count } brouillons supprimés"
       ],
       "${ count } message deleted": [
         "${ count } message supprimé",
@@ -13721,8 +13750,8 @@
         "${ elementsCount } messages ont été déplacés dans ${ labelName }."
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
-        "${ elementsCount } message déplacé dans les spams et l'expéditeur a été ajouté à la liste de courrier indésirable.",
-        "${ elementsCount } messages déplacés dans les spams et les expéditeurs ont été ajoutés dans la liste de courrier indésirable."
+        "${ elementsCount } message déplacé dans le dossier Indésirables/spam et l'expéditeur ajouté à votre liste d'indésirables/spam.",
+        "${ elementsCount } messages déplacés dans le dossier Indésirables/spam et les expéditeurs ajoutés à votre liste d'indésirables/spam."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } message supprimé de ${ labelName }.",
@@ -13800,6 +13829,10 @@
       "Conversation removed from Starred.": [
         "La conversation a été retirée des favoris."
       ],
+      "Conversation updated": [
+        "La conversation a été mise à jour",
+        "Les conversations ont été mise à jour"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Les conversations de ${ sendersList } seront labellisées comme ${ labelsList }"
       ],
@@ -13874,6 +13907,10 @@
       ],
       "Message removed from Starred.": [
         "Le message a été retiré des favoris."
+      ],
+      "Message updated": [
+        "Le message a été mise à jour",
+        "Les messages ont été mise à jour"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Les messages de ${ sendersList } seront labellisés comme ${ labelsList }"
@@ -14155,7 +14192,7 @@
         "Obtenir mon adresse « @${ PM_DOMAIN } »"
       ],
       "Open ": [
-        "En cours "
+        "Ouvrir "
       ],
       "Show me how": [
         "Montrez-moi comment faire"
@@ -14974,7 +15011,7 @@
         "Mise en attente d'un message"
       ],
       "Snooze:": [
-        "Mise en attente:"
+        "Mise en attente :"
       ],
       "Sort conversations": [
         "Trier les conversations"
@@ -15115,9 +15152,6 @@
       ],
       "Your account is protected": [
         "Votre compte est protégé."
-      ],
-      "Your addresses": [
-        "Vos adresses"
       ],
       "Your changes are not synced yet": [
         "Vos modifications ne sont pas encore synchronisées."
@@ -15346,9 +15380,6 @@
       "${ n } wallet": [
         "${ n } portefeuille",
         "${ n } portefeuilles"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Un moyen plus sûr de conserver vos bitcoins"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"

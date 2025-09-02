@@ -36,12 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
-      "${ numberOfAddresses } address": [
-        "${ numberOfAddresses } adres",
-        "${ numberOfAddresses } adresy",
-        "${ numberOfAddresses } adresów",
-        "${ numberOfAddresses } adresów"
-      ],
       "A to Z": [
         "Od A do Z"
       ],
@@ -329,9 +323,6 @@
       ],
       "Copy alias “${ name }”": [
         "Kopiuj alias “${ name }”"
-      ],
-      "Copy email address": [
-        "Kopiuj adres e-mail"
       ],
       "Copy email to clipboard": [
         "Kopiuj adres e-mail do schowka"
@@ -821,9 +812,6 @@
       ],
       "Make it friendly": [
         "Zmień na tekst przyjazny"
-      ],
-      "Manage addresses": [
-        "Zarządzaj adresami"
       ],
       "Manage advanced account protections": [
         "Zarządzaj zaawansowanymi zabezpieczeniami konta"
@@ -4125,9 +4113,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Uprość synchronizację i planowanie za pomocą udostępnionych kalendarzy."
       ],
-      "This view shows messages sent to the following addresses:": [
-        "Ten widok pokazuje wiadomości wysłane na następujące adresy:"
-      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Aby używać asystenta pisania, dodaj go do swojej subskrypcji."
       ],
@@ -4514,7 +4499,7 @@
         "Wybierz datę w ciągu najbliższego ${ n } dnia.",
         "Wybierz datę w ciągu najbliższych ${ n } dni.",
         "Wybierz datę w ciągu najbliższych ${ n } dni.",
-        "Wybierz datę w ciągu najbliższych ${ n } dni."
+        "Wybierz datę w ciągu najbliższych ${ n } dnia."
       ],
       "Condition incomplete": [
         "Warunek jest niekompletny"
@@ -5378,9 +5363,6 @@
       ],
       "customer support": [
         "wsparcie klienta"
-      ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Plany rodzinne nie są obsługiwane dla kont zewnętrznych. Przed dołączeniem utwórz adres ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jeśli zaakceptujesz zaproszenie, zmienimy obecny plan i obciążymy Twoje konto kwotą pozostałego salda."
@@ -6640,7 +6622,7 @@
         "${ storage } przestrzeni dyskowej"
       ],
       "${ subscription.UnreadMessageCount } unread": [
-        "${ subscription.UnreadMessageCount } nieprzeczytanych",
+        "${ subscription.UnreadMessageCount } nieprzeczytana",
         "${ subscription.UnreadMessageCount } nieprzeczytane",
         "${ subscription.UnreadMessageCount } nieprzeczytanych",
         "${ subscription.UnreadMessageCount } nieprzeczytanych"
@@ -7327,7 +7309,7 @@
         "Wygasa za ${ minutesDiff } minutę",
         "Wygasa za ${ minutesDiff } minuty",
         "Wygasa za ${ minutesDiff } minut",
-        "Wygasa za ${ minutesDiff } minut"
+        "Wygasa za ${ minutesDiff } minuty"
       ],
       "Expires in less than ${ hoursDiff } hour": [
         "Wygasa za mniej niż ${ hoursDiff } godzinę",
@@ -7478,9 +7460,6 @@
       ],
       "Included for free with your plan": [
         "Za darmo w planie"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Zawiera ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Inherited from parent folder": [
         "Zastosowano z folderu nadrzędnego"
@@ -8235,6 +8214,9 @@
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Wystąpił błąd z podpisem używanym do weryfikowania szczegółów kontaktu, którego powodem może być zresetowane hasło."
       ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Wątki są przechowywane zgodnie z zasadami przechowywania danych obowiązującymi w organizacji."
+      ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Nie otrzymasz spamu, jeśli ktoś nie zna Twojego adresu e-mail. Chroń swoją pocztę za pomocą aliasów hide-my-email."
       ],
@@ -8428,7 +8410,7 @@
         "Śledzenie"
       ],
       "Trash existing messages": [
-        "Usuń istniejące wiadomości"
+        "Usuń obecne wiadomości"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Wypróbuj nowe funkcje, aktualizacje i usługi ${ BRAND_NAME } przed ich premierą. Spowoduje to odświeżenie strony"
@@ -9873,9 +9855,6 @@
       ],
       "Username": [
         "Nazwa użytkownika"
-      ],
-      "VAT": [
-        "podatku VAT"
       ],
       "Verification code": [
         "Kod weryfikacyjny"
@@ -13211,7 +13190,7 @@
         "${ n } miesiąc ZA DARMO",
         "${ n } miesiące ZA DARMO",
         "${ n } miesięcy ZA DARMO",
-        "${ n } miesiąca BEZPŁATNIE"
+        "${ n } miesiąca ZA DARMO"
       ]
     },
     "specialoffer: Deal details": {
@@ -14811,7 +14790,7 @@
         "Usuń ${ count } wątek",
         "Usuń ${ count } wątki",
         "Usuń ${ count } wątków",
-        "Usuń ${ count } wątów"
+        "Usuń ${ count } wątków"
       ],
       "Delete ${ count } draft": [
         "Usuń ${ count } szkic",
@@ -15533,9 +15512,6 @@
       "Your account is protected": [
         "Konto jest chronione"
       ],
-      "Your addresses": [
-        "Twoje adresy"
-      ],
       "Your changes are not synced yet": [
         "Zmiany nie zostały zsynchronizowane"
       ],
@@ -15782,16 +15758,13 @@
         "${ n } konto na portfel",
         "${ n } konta na portfel",
         "${ n } kont na portfel",
-        "${ n } kont na portfel"
+        "${ n } konta na portfel"
       ],
       "${ n } wallet": [
         "${ n } portfel",
         "${ n } portfele",
         "${ n } portfeli",
         "${ n } portfela"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bezpieczniejszy sposób na przechowywanie Bitcoinów"
       ],
       "Bitcoin via Email": [
         "Bitcoin na adres e-mail"
