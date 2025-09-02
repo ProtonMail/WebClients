@@ -262,6 +262,9 @@
       "Claim this address": [
         "Aconseguiu aquesta adreça"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Aconseguiu la vostra adreça gratuïta de ${ BRAND_NAME }"
+      ],
       "Clear all formatting": [
         "Esborra tot el format"
       ],
@@ -786,9 +789,6 @@
       ],
       "Get verification code": [
         "Obtenir codi de verificació"
-      ],
-      "Give access now": [
-        "Dona accés ara"
       ],
       "Go back": [
         "Torna enrere"
@@ -5205,13 +5205,21 @@
       "${ BRAND_NAME } Account email": [
         "Correu electrònic del compte ${ BRAND_NAME }"
       ],
+      "${ days } day left": [
+        "Queda ${ days } dia",
+        "Queden ${ days } dies."
+      ],
+      "${ hours } hour left": [
+        "Queda ${ hours } hora",
+        "Queden ${ hours } hores"
+      ],
+      "${ minutes } minute left": [
+        "Queda ${ minutes } minut",
+        "Queden ${ minutes } minuts"
+      ],
       "${ n } day": [
         "${ n } dia",
         "${ n } dies"
-      ],
-      "${ n } day left": [
-        "Queda ${ n } dia.",
-        "Queden ${ n } dies."
       ],
       "${ user } is requesting emergency access to your account": [
         "${ user } sol·licita accés d'emergència al seu compte"
@@ -5318,6 +5326,9 @@
       "Less than a day": [
         "Menys d'un dia"
       ],
+      "Less than a minute left": [
+        "Queda menys d'un minut"
+      ],
       "None": [
         "Cap"
       ],
@@ -5381,6 +5392,9 @@
       ],
       "Time required before automatically giving access": [
         "Temps necessari abans de proporcionar accés automàticament."
+      ],
+      "Time required before automatically giving you access": [
+        "Temps necessari abans de proporcionar-vos accés automàticament."
       ],
       "Time required before automatically granting them access": [
         "Temps necessari abans de concedir-los accés automàticament"
@@ -6493,8 +6507,8 @@
       "customer support": [
         "atenció al client"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Els plans familiars actualment no admeten comptes externs. Creeu una adreça de ${ BRAND_NAME } abans d'unir-vos-hi. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Els plans familiars actualment no suporten comptes externs. Creeu una adreça ${ BRAND_NAME } abans d'unir-vos-hi. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si accepteu la invitació, us canviarem del vostre pla actual i abonarem el saldo restant al vostre compte."
@@ -9204,9 +9218,6 @@
       "Include device, location, and IP details": [
         "Inclou detalls del dispositiu, la ubicació i l'IP"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incloent ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Augmenteu la seguretat del vostre compte verificant la vostra adreça electrònica."
       ],
@@ -9794,9 +9805,6 @@
       ],
       "Please use another browser or download the file.": [
         "Utilitzeu un altre navegador o descarregueu el fitxer."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Verifiqueu el pagament a la pestanya nova que s'ha obert."
       ],
       "Please wait till your changes are synced with the server.": [
         "Espereu fins que els canvis s'hagin sincronitzat amb el servidor."
@@ -10616,9 +10624,6 @@
       ],
       "Vault updated": [
         "S'ha actualitzat la caixa forta."
-      ],
-      "Verification can take a few minutes.": [
-        "La verificació pot trigar uns minuts."
       ],
       "Verification link expired": [
         "L'enllaç de verificació ha caducat"
@@ -12848,9 +12853,6 @@
       ],
       "Value": [
         "Valor"
-      ],
-      "VAT": [
-        "IVA"
       ],
       "Verification code": [
         "Codi de verificació"
@@ -16330,11 +16332,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durant aquest temps, no podreu modificar ni cancel·lar la vostra subscripció. Espereu fins que s'hagi completat el pagament abans d'intentar qualsevol canvi. Gràcies per la vostra paciència."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exclòs el ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Exclòs el ${ taxRate }% d'impostos: ${ taxAmount }"
+      ],
       "Got it": [
         "Fet"
       ],
       "I'm purchasing as a business": [
         "Estic comprant com a empresa"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclòs el ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inclòs el ${ taxRate }% d'impostos: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -16353,6 +16367,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Es renovarà per ${ renewPriceStr } i ho podreu cancel·lar en qualsevol moment."
+      ],
+      "Taxes": [
+        "Impostos"
       ],
       "terms & conditions": [
         "els termes i condicions"
@@ -16387,6 +16404,9 @@
       ],
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
+      ],
+      "VAT": [
+        "IVA"
       ],
       "VAT number": [
         "Número d'IVA"
@@ -22081,8 +22101,8 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les subcarpetes del sistema es mostraran com a carpetes independents a ${ MAIL_APP_NAME }"
       ],
-      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
-        "Aquesta adreça s'ha desconnectat. L'enviament de missatges està pausat. Torneu a connectar-vos per habilitar l'adreça de nou."
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "L'adreça s'ha desconnectat. L'enviament i la recepció de missatges estan pausats. Torneu a connectar-vos per habilitar aquesta adreça de nou."
       ],
       "The import will start with the most recent messages.": [
         "La importació començarà amb els missatges més recents."
