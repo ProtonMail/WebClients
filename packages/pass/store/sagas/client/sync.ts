@@ -11,8 +11,7 @@ import { notification } from '@proton/pass/store/actions';
 import { type ItemsByShareId, type SharesState, reducerMap } from '@proton/pass/store/reducers';
 import { selectAllShares, selectItems, selectOrganizationVaultCreationDisabled } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
-import type { Maybe, ShareType } from '@proton/pass/types';
-import type { Share, ShareGetResponse } from '@proton/pass/types';
+import type { Maybe, Share, ShareGetResponse, ShareType } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { partition } from '@proton/pass/utils/array/partition';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -71,9 +70,7 @@ export function* synchronize(type: SyncType) {
     /* In the case of a partial sync : inactive shares should
      * be resolved for both remote and local shares. */
     const totalInactiveShares =
-        type === SyncType.FULL
-            ? inactiveRemoteShares.length
-            : inactiveRemoteShares.length + inactiveCachedShareIds.length;
+        type === SyncType.FULL ? inactiveRemoteShares.length : inactiveRemoteShares.length + inactiveCachedShareIds.length;
 
     /* update the disabled shareIds list with any inactive remote shares */
     disabledShareIds.push(...inactiveRemoteShares.map(prop('shareId')));
