@@ -9,6 +9,7 @@ import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useCurrentScreenShare } from '../../hooks/useCurrentScreenShare';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
+import { useMeetingInitialisation } from '../../hooks/useMeetingInitialisation';
 import { Chat } from '../Chat/Chat';
 import { MeetingDetails, WrappedMeetingDetails } from '../MeetingDetails/MeetingDetails';
 import { MeetingReadyPopup } from '../MeetingReadyPopup/MeetingReadyPopup';
@@ -26,6 +27,8 @@ import { Settings } from '../Settings/Settings';
 import './MeetingBody.scss';
 
 export const MeetingBody = () => {
+    useMeetingInitialisation();
+
     const { videoTrack, participant, isLocal, stopScreenShare, screenShareVideoRef } = useCurrentScreenShare();
 
     const isLargerThanMd = useIsLargerThanMd();
