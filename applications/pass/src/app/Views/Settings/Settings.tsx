@@ -1,5 +1,5 @@
 import { type ComponentProps, type FC, useEffect, useMemo, useState } from 'react';
-import { type RouteChildrenProps } from 'react-router-dom';
+import type { RouteChildrenProps } from 'react-router-dom';
 
 import { c } from 'ttag';
 

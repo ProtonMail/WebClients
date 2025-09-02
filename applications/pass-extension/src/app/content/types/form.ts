@@ -1,4 +1,4 @@
-import { type AutofillOptions } from 'proton-pass-extension/app/content/utils/autofill';
+import type { AutofillOptions } from 'proton-pass-extension/app/content/utils/autofill';
 
 import type { FieldType, FormType, IdentityFieldType } from '@proton/pass/fathom';
 import type { AutosaveFormEntry, FormCredentials, Maybe, MaybeNull } from '@proton/pass/types';

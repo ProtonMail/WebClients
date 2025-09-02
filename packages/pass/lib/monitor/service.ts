@@ -7,7 +7,7 @@ import { intoSelectedItem } from '@proton/pass/lib/items/item.utils';
 import { selectMonitoredLogins } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { ShareId } from '@proton/pass/types';
-import { type UniqueItem } from '@proton/pass/types';
+import type { UniqueItem } from '@proton/pass/types';
 import { and, not, or } from '@proton/pass/utils/fp/predicates';
 import { seq } from '@proton/pass/utils/fp/promises';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';

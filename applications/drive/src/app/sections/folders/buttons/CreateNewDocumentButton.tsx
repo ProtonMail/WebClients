@@ -4,7 +4,7 @@ import { ToolbarButton } from '@proton/components';
 import { MimeIcon } from '@proton/components';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import { type FolderButtonProps } from './types';
+import type { FolderButtonProps } from './types';
 
 export const CreateNewDocumentButton = ({ type, close, onClick }: FolderButtonProps) => {
     const title = c('Action').t`New document`;

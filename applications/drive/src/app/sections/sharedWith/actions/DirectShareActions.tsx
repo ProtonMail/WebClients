@@ -17,7 +17,7 @@ import {
     PreviewButton as ToolbarPreviewButton,
 } from '../../../components/sections/ToolbarButtons';
 import { useOpenInDocs } from '../../../store/_documents';
-import { type DirectShareItem } from '../../../zustand/sections/sharedWithMeListing.store';
+import type { DirectShareItem } from '../../../zustand/sections/sharedWithMeListing.store';
 import { RemoveMeButton } from '../buttons/RemoveMeButton';
 import { createItemChecker, mapToLegacyFormat } from './actionsItemsChecker';
 

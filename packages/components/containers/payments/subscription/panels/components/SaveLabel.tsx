@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { type CYCLE, type Currency, type PLANS } from '@proton/payments';
+import type { CYCLE, Currency, PLANS } from '@proton/payments';
 import { getPlanToCheck, usePaymentsPreloaded } from '@proton/payments/ui';
 
 interface SaveLabelProps {

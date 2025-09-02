@@ -2,7 +2,7 @@ import { type FC, type PropsWithChildren, useCallback, useEffect, useMemo, useSt
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
-import { type FieldProps } from 'formik';
+import type { FieldProps } from 'formik';
 import { c } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';

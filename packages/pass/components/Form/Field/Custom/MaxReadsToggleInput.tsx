@@ -1,4 +1,4 @@
-import { type FC, type KeyboardEventHandler } from 'react';
+import type { FC, KeyboardEventHandler } from 'react';
 
 import { c } from 'ttag';
 

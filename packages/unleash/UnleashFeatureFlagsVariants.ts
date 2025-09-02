@@ -1,6 +1,6 @@
-import { type useVariant as useUnleashVariant } from '@unleash/proxy-client-react';
+import type { useVariant as useUnleashVariant } from '@unleash/proxy-client-react';
 
-import { type FeatureFlag } from './UnleashFeatureFlags';
+import type { FeatureFlag } from './UnleashFeatureFlags';
 
 /**
  * List of feature flags with a variant.

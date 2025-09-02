@@ -4,7 +4,7 @@ import { SignupType } from 'proton-account/src/app/signup/interfaces';
 import { c } from 'ttag';
 
 import { createSignupOAuthToken } from '@proton/activation/src/api';
-import { type CreateSignupOAuthTokenResponse } from '@proton/activation/src/api/api.interface';
+import type { CreateSignupOAuthTokenResponse } from '@proton/activation/src/api/api.interface';
 import AddBYOEModal from '@proton/activation/src/components/Modals/AddBYOEModal/AddBYOEModal';
 import { openOAuthPopup } from '@proton/activation/src/helpers/oAuthPopup';
 import { generateGoogleOAuthUrl, getOAuthRedirectURL } from '@proton/activation/src/hooks/useOAuthPopup.helpers';

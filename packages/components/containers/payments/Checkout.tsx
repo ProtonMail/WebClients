@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import Icon from '@proton/components/components/icon/Icon';
-import { type MethodsHook } from '@proton/components/payments/react-extensions';
+import type { MethodsHook } from '@proton/components/payments/react-extensions';
 import { type Currency, PAYMENT_METHOD_TYPES, type PlanIDs, isLifetimePlanSelected } from '@proton/payments';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 

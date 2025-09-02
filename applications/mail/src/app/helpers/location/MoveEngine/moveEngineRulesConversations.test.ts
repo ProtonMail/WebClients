@@ -2,7 +2,7 @@ import { describe } from '@jest/globals';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
-import { type Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import {
     ERROR_ELEMENT_NOT_CONVERSATION,
@@ -27,7 +27,7 @@ import {
     conversationStarredRules,
     conversationTrashRules,
 } from 'proton-mail/helpers/location/MoveEngine/moveEngineRulesConversations';
-import { type Conversation } from 'proton-mail/models/conversation';
+import type { Conversation } from 'proton-mail/models/conversation';
 
 const customLabels = [
     { ID: 'customLabelID', Name: 'Custom label' },

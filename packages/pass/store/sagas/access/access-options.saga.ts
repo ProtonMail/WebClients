@@ -11,7 +11,7 @@ import { getShareAccessOptions } from '@proton/pass/store/actions';
 import type { ShareItem } from '@proton/pass/store/reducers';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import { selectShareOrThrow } from '@proton/pass/store/selectors';
-import { type ShareMember } from '@proton/pass/types/data/invites';
+import type { ShareMember } from '@proton/pass/types/data/invites';
 import { or } from '@proton/pass/utils/fp/predicates';
 
 /** Access options resolution may duplicate member/invite data across

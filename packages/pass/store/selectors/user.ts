@@ -5,7 +5,7 @@ import { getPassPlan } from '@proton/pass/lib/user/user.plan';
 import { createUncachedSelector } from '@proton/pass/store/selectors/utils';
 import { selectDefaultVault } from '@proton/pass/store/selectors/vaults';
 import type { State } from '@proton/pass/store/types';
-import { type Maybe, type MaybeNull } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { oneOf } from '@proton/pass/utils/fp/predicates';

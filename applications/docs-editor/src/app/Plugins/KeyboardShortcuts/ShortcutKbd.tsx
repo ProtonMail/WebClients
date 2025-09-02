@@ -1,6 +1,6 @@
 import { Kbd } from '@proton/atoms'
 import { isMac } from '@proton/shared/lib/helpers/browser'
-import { type ComponentProps } from 'react'
+import type { ComponentProps } from 'react'
 
 const MacCommandKey = '\u{2318}'
 const CtrlKey = 'Ctrl'

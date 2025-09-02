@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { type Plan } from '@proton/payments';
+import type { Plan } from '@proton/payments';
 import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments';
 import { SelectedPlan } from '@proton/payments';
 import { hookWrapper } from '@proton/testing';

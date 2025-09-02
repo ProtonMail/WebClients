@@ -3,7 +3,7 @@ import { useState } from 'react';
 import compact from 'lodash/compact';
 import { c } from 'ttag';
 
-import { type WasmTransactionDetails } from '@proton/andromeda';
+import type { WasmTransactionDetails } from '@proton/andromeda';
 import { Icon, useModalStateWithData } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import arrowReceiveDarkSvg from '@proton/styles/assets/img/illustrations/arrow-receive-dark.svg';

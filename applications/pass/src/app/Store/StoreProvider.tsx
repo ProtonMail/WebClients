@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/ServiceWorkerProvider';
-import { type ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
+import type { ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
 import { deletePassDB, getDBCache, writeDBCache } from 'proton-pass-web/lib/database';
 import { getPersistedSessions } from 'proton-pass-web/lib/sessions';

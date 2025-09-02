@@ -6,7 +6,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { createSettingsService as createCoreSettingsService } from '@proton/pass/lib/settings/service';
 import { sanitizeSettings } from '@proton/pass/lib/settings/utils';
 import { updatePauseListItem } from '@proton/pass/store/actions';
-import { type ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { selectCanCreateItems, selectProxiedSettings } from '@proton/pass/store/selectors';
 import { logger } from '@proton/pass/utils/logger';
 

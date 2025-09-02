@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { addDays, addMonths, getUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';

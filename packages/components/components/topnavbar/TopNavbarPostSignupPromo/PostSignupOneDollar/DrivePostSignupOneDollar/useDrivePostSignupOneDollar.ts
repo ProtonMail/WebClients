@@ -5,8 +5,8 @@ import { FeatureCode, useFeature } from '@proton/features';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import useFlag from '@proton/unleash/useFlag';
 
-import { type OfferHookReturnValue } from '../../common/interface';
-import { type PostSubscriptionOneDollarOfferState } from '../interface';
+import type { OfferHookReturnValue } from '../../common/interface';
+import type { PostSubscriptionOneDollarOfferState } from '../interface';
 import { shouldOpenPostSignupOffer } from '../postSignupOffersHelpers';
 import { getIsUserEligibleForOneDollar } from './drivePostSignupOneDollarHelper';
 

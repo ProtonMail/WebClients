@@ -19,7 +19,7 @@ import type { EditorOrchestratorInterface } from './EditorOrchestratorInterface'
 import type { DocsApi } from '../../Api/DocsApi'
 import { PostApplicationError } from '../../Application/ApplicationEvent'
 import type { EditorControllerInterface } from '../../EditorController/EditorController'
-import { type DocumentState, type PublicDocumentState } from '../../State/DocumentState'
+import type { DocumentState, PublicDocumentState } from '../../State/DocumentState'
 import { DocParticipantTracker } from '../../ParticipantTracker/DocParticipantTracker'
 
 /**

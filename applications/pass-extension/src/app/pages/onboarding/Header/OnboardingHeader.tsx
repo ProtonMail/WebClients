@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { PassTextLogo } from '@proton/pass/components/Layout/Logo/PassTextLogo';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';

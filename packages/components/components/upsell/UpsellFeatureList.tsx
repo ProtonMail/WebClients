@@ -1,7 +1,7 @@
 import type { IconSize } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
-import { type Plan } from '@proton/payments';
+import type { Plan } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 import isFunction from '@proton/utils/isFunction';
 

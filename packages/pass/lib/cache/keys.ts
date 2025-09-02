@@ -1,8 +1,8 @@
-import { type AuthStore } from '@proton/pass/lib/auth/store';
+import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassEncryptionTag } from '@proton/pass/types';
 import type { Maybe } from '@proton/pass/types/utils';
-import { type EncryptedPassCache } from '@proton/pass/types/worker/cache';
+import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
 import { logger } from '@proton/pass/utils/logger';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 

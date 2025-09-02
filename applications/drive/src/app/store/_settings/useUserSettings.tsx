@@ -5,7 +5,7 @@ import { useApi, useDrivePlan } from '@proton/components';
 import { queryUpdateUserSettings } from '@proton/shared/lib/api/drive/user';
 import { DEFAULT_USER_SETTINGS } from '@proton/shared/lib/drive/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import { type PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
+import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import type {
     LayoutSetting,
     RevisionRetentionDaysSetting,

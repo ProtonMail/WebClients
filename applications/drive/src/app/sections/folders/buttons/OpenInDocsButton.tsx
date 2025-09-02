@@ -4,7 +4,7 @@ import { getOpenInDocsMimeIconName, getOpenInDocsString } from '@proton/shared/l
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import { hasFoldersSelected, isMultiSelect } from '../../../components/sections/ToolbarButtons/utils';
 import { useOpenInDocs } from '../../../store/_documents';
-import { type FolderButtonProps } from './types';
+import type { FolderButtonProps } from './types';
 
 type Item = {
     uid: string;

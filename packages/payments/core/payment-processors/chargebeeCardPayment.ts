@@ -6,7 +6,7 @@ import {
     isMessageBusResponseFailure,
     paymentAttemptRefusedChargebeeErrorName,
 } from '@proton/chargebee/lib';
-import { type Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 import { isPostalCode } from '../cardDetails';
 import { PAYMENT_METHOD_TYPES } from '../constants';
@@ -23,7 +23,7 @@ import type {
     PaymentStatus,
     V5PaymentToken,
 } from '../interface';
-import { type ChargebeeIframeEvents, type ChargebeeIframeHandles } from '../interface';
+import type { ChargebeeIframeEvents, ChargebeeIframeHandles } from '../interface';
 import { InvalidDataError, PaymentProcessor } from './paymentProcessor';
 
 export interface ChargebeeCardPaymentProcessorState {

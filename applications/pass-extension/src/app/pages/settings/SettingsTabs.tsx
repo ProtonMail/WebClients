@@ -23,7 +23,7 @@ import type { RequestForkData } from '@proton/pass/lib/auth/fork';
 import { clientSessionLocked } from '@proton/pass/lib/client';
 import { selectUser } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
-import { type Unpack } from '@proton/pass/types';
+import type { Unpack } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Aliases } from './Views/Aliases';

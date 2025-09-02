@@ -7,7 +7,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { SimpleSidebarListItemHeader } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { type MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { isAdminOrLoginAsAdmin } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
