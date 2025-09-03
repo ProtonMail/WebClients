@@ -1,0 +1,436 @@
+.lumo-sidebar {
+	display: flex;
+	flex-direction: column;
+	block-size: 100%;
+	padding: 12px;
+	gap: 8px;
+
+	// Remove list styling from Lumo Plus button
+	li {
+		list-style: none !important;
+		margin-inline-start: 0 !important;
+		padding-inline-start: 0 !important;
+	}
+
+	// Ensure Lumo Plus button matches other items
+	.navigation-item {
+		list-style: none !important;
+		margin: 0 !important;
+		padding: 0 !important;
+
+		.navigation-link,
+		button {
+			@extend .sidebar-item;
+
+			// Override any conflicting styles
+			border-radius: 8px !important;
+			block-size: 40px !important;
+			display: flex !important;
+			align-items: center !important;
+			padding: 8px !important;
+			padding-inline: 6px !important;
+
+			&:hover {
+				background-color: var(--background-weak) !important;
+			}
+		}
+	}
+}
+
+.sidebar-section {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+
+	&.sidebar-bottom {
+		margin-block-start: auto;
+		padding-block-start: 12px;
+		gap: 2px;
+	}
+}
+
+.search-section {
+	margin-block-end: 8px;
+}
+
+.search-container {
+	display: flex;
+	align-items: center;
+	inline-size: 100%;
+	block-size: 40px;
+	padding: 8px;
+	border-radius: 8px;
+	cursor: pointer;
+	padding-inline: 6px;
+	transition:
+		background-color 0.3s ease,
+		border 0.3s ease,
+		border-color 0.3s ease;
+	overflow: hidden; // Prevent text from showing when collapsed
+
+	// Always maintain input field styling initially
+	background-color: var(--background-weak);
+	border: 1px solid var(--border-weak);
+
+	// Collapsed state - gradually fade background and border
+	&.collapsed {
+		// Delay the background fade to allow smooth transition
+		transition-delay: 0.1s;
+		background-color: transparent;
+		border-color: transparent;
+		cursor: pointer;
+
+		&:hover {
+			background-color: var(--background-weak);
+			border-color: transparent;
+			transition-delay: 0s; // Remove delay on hover for immediate feedback
+		}
+	}
+
+	// Expanded state - full input field styling
+	&:not(.collapsed) {
+		background-color: var(--background-weak);
+		border-color: var(--border-weak);
+		cursor: text;
+		transition-delay: 0s; // No delay when expanding
+
+		&:focus-within {
+			border-color: var(--focus-outline);
+		}
+
+		&:hover {
+			border-color: var(--border-norm);
+		}
+	}
+
+	// Icon stays in fixed position
+	.sidebar-item-icon {
+		// Same positioning as other sidebar items
+		inline-size: 24px;
+		block-size: 24px;
+		margin-inline-end: 12px;
+		flex-shrink: 0;
+	}
+}
+
+.search-input-wrapper {
+	flex: 1;
+	opacity: 1;
+	transition: opacity 0.3s ease; // Smooth fade transition
+
+	&.hidden {
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+
+.sidebar-search-input {
+	inline-size: 100%;
+	border: none;
+	background: transparent;
+	outline: none;
+	font-size: 14px;
+	color: var(--text-norm);
+
+	&::placeholder {
+		color: var(--text-weak);
+		transition: opacity 0.6s ease; // Smooth transition for rotating text
+	}
+
+	&[readonly] {
+		pointer-events: none;
+	}
+
+	&:disabled {
+		color: var(--text-weak);
+		cursor: not-allowed;
+
+		&::placeholder {
+			color: var(--text-hint);
+		}
+	}
+}
+
+.search-label {
+	flex: 1;
+	font-size: 14px;
+	color: var(--text-norm);
+	opacity: 1;
+	transition: opacity 0.3s ease;
+
+	&.hidden {
+		// Smoothly fade out label during sidebar expansion
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+
+// Favorites and History section
+.favorites-history-section {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	margin-block-start: 4px;
+}
+
+// Chat history section
+.chat-history-section {
+	flex: 1;
+	min-block-size: 0;
+	margin-block: 8px;
+	margin-inline: 0;
+}
+
+// Base sidebar item styling
+.sidebar-item {
+	display: flex;
+	align-items: center;
+	inline-size: 100%;
+	block-size: 40px;
+	padding: 8px;
+	border: none;
+	background: transparent;
+	border-radius: 8px;
+	cursor: pointer;
+	text-decoration: none;
+	color: inherit;
+	font-size: 14px;
+	transition: background-color 0.15s ease;
+	padding-inline: 6px;
+
+	&:hover {
+		background-color: var(--background-weak);
+	}
+
+	&:focus {
+		outline: 2px solid var(--focus-outline);
+		outline-offset: -2px;
+	}
+}
+
+.sidebar-item-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	inline-size: 24px;
+	block-size: 24px;
+	flex-shrink: 0;
+	margin-inline-end: 12px;
+}
+
+.sidebar-item-text {
+	flex: 1;
+	text-align: start;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	opacity: 1;
+	transition: opacity 0.3s ease;
+
+	&.hidden {
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+
+.sidebar-section-header {
+	display: flex;
+	align-items: center;
+	block-size: 32px;
+	padding-block: 4px;
+	padding-inline: 8px;
+	margin-block: 8px 4px;
+	margin-inline: 0;
+	font-size: 12px;
+	color: var(--text-weak);
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+
+	svg,
+	.icon {
+		inline-size: 16px;
+		block-size: 16px;
+		margin-inline-end: 8px;
+		flex-shrink: 0;
+		opacity: 0.7;
+	}
+
+	// Text styling
+	span {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+// Desktop sidebar z-index to ensure it's above disclaimers and other content
+.sidebar {
+	z-index: 10; // Higher than disclaimer (z-1) but lower than mobile overlay (z-100)
+	position: relative;
+}
+
+// Mobile-specific sidebar enhancements (core positioning handled in index.scss)
+@media (width <= 768px) {
+	// Reset sidebar bottom padding on mobile
+	.sidebar-section.sidebar-bottom {
+		padding-block-start: 0;
+	}
+
+	// Mobile sidebar styling - white background and elegant drop shadow
+	.sidebar {
+		// White background for clean mobile appearance
+		background-color: white !important;
+
+		// Ensure sidebar is above backdrop and clickable
+		z-index: 100 !important;
+		position: relative !important; // Ensure z-index works
+
+		// Elegant drop shadow for mobile overlay
+		box-shadow:
+			2px 0 8px rgb(0 0 0 / 0.02),
+			0 0 20px rgb(0 0 0 / 0.04);
+
+		// Hide shadow when sidebar is hidden - but with transition
+		&:not(.sidebar-expanded) {
+			box-shadow: none;
+			transition-delay: 0s; // Remove shadow immediately when hiding
+		}
+
+		// When expanded, show shadow with slight delay
+		&.sidebar-expanded {
+			transition-delay: 0.1s; // Small delay for shadow to appear
+		}
+	}
+
+	// Subtle white overlay for mobile - elegant and minimal
+	.sidebar-backdrop {
+		position: fixed;
+		inset-block-start: 0;
+		inset-inline-start: 0;
+		inline-size: 100vw;
+		block-size: 100vh;
+		background-color: rgb(255 255 255 / 0.8) !important; // Very subtle white overlay
+		opacity: 1 !important;
+		pointer-events: auto !important;
+		z-index: 90 !important; // Behind sidebar (which is z-index: 100) but above content
+		transition: opacity 0.3s ease-in-out;
+
+		// backdrop-filter: blur(5px) !important; // Blur removed - was making content blurry
+	}
+
+	.lumo-sidebar {
+		padding: 16px;
+
+		// Ensure smooth mobile transitions
+		transition: transform 0.3s ease-in-out;
+		will-change: transform;
+
+		// Ensure sidebar content is clickable
+		position: relative;
+		z-index: 101; // Higher than sidebar container
+		pointer-events: auto;
+
+		// New chat and search sections are now conditionally rendered for mobile guests
+	}
+
+	// ChatGPT-style mobile header with logo and close button
+	.sidebar-mobile-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-block: 16px;
+		padding-inline: 20px 16px;
+		margin-block: -16px 0;
+		margin-inline: -16px; // Extend to edges, add bottom margin
+		border-block-end: 1px solid var(--border-weak);
+
+		.sidebar-mobile-logo {
+			.sidebar-logo {
+				block-size: 24px;
+				inline-size: auto;
+				max-inline-size: 100px;
+				opacity: 0.9;
+			}
+		}
+
+		.sidebar-mobile-close-btn {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			inline-size: 32px;
+			block-size: 32px;
+			background: transparent;
+			border: none;
+			border-radius: 6px;
+			color: var(--text-weak);
+			cursor: pointer;
+			transition: all 0.2s ease-in-out;
+
+			&:hover {
+				background: var(--background-weak);
+				color: var(--text-norm);
+			}
+
+			&:focus {
+				outline: 2px solid var(--focus-outline);
+				outline-offset: 2px;
+			}
+
+			svg {
+				inline-size: 16px;
+				block-size: 16px;
+			}
+		}
+	}
+
+	.sidebar-bottom-user-dropdown {
+		padding-block: 8px;
+		padding-inline: 16px;
+		margin-block: 0 -16px;
+		margin-inline: -16px;
+		border-block-start: 1px solid var(--border-weak);
+
+		button {
+			border: none;
+		}
+	}
+
+	// Lumo logo section for mobile sidebar - centered branding
+	.sidebar-logo-section {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-block: 24px 16px;
+		padding-inline: 16px;
+		margin-block-end: 8px;
+
+		.sidebar-logo {
+			block-size: 32px;
+			inline-size: auto;
+			max-inline-size: 120px;
+			opacity: 0.9;
+			transition: opacity 0.2s ease-in-out;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+	// Hide the close button inside the sidebar on mobile
+	.sidebar .hamburger-button,
+	.sidebar button[class*='hamburger'] {
+		display: none !important; // Hide close button inside sidebar
+	}
+
+	// Larger touch targets and spacing for mobile sidebar items
+	.sidebar-item {
+		block-size: 44px;
+		font-size: 16px;
+	}
+}
+
+.bg-white {
+	background-color: white !important;
+}
