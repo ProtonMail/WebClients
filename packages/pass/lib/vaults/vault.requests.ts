@@ -3,10 +3,8 @@ import { c } from 'ttag';
 import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
-import { getAllShareKeys } from '@proton/pass/lib/shares/share.requests';
 import { encodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
-import type { VaultTransferOwnerIntent } from '@proton/pass/types';
-import type { Share, ShareContent, ShareType, VaultCreateRequest } from '@proton/pass/types';
+import type { Share, ShareContent, ShareType, VaultCreateRequest, VaultTransferOwnerIntent } from '@proton/pass/types';
 
 export const createVault = async (data: {
     content: ShareContent<ShareType.Vault>;
@@ -28,15 +26,13 @@ export const createVault = async (data: {
     return share;
 };
 
+/** Pass `eventId` to avoid redundant API call for latest share
+ * event ID in `parseShareResponse` since we already know it. */
 export const editVault = async (
     shareId: string,
-    content: ShareContent<ShareType.Vault>
+    content: ShareContent<ShareType.Vault>,
+    eventId: string
 ): Promise<Share<ShareType.Vault>> => {
-    /* Future-proofing : retrieve all share keys
-     * and update the share in the crypto context */
-    const shareKeys = await getAllShareKeys(shareId);
-    await PassCrypto.updateShareKeys({ shareId, shareKeys });
-
     const encoded = encodeVaultContent(content);
     const encryptedVaultUpdate = await PassCrypto.updateVault({ shareId, content: encoded });
 
@@ -48,7 +44,7 @@ export const editVault = async (
         })
     ).Share!;
 
-    const share = await parseShareResponse<ShareType.Vault>(encryptedShare, { shareKeys });
+    const share = await parseShareResponse<ShareType.Vault>(encryptedShare, { eventId });
     if (!share) throw new Error(c('Error').t`Could not open updated vault`);
 
     return share;

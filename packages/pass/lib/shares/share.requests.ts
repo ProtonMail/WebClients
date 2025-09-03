@@ -1,5 +1,6 @@
 import { api } from '@proton/pass/lib/api/api';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
+import type { SharesState } from '@proton/pass/store/reducers';
 import type {
     ActiveShareGetResponse,
     Share,
@@ -82,9 +83,12 @@ export const editMemberAccess = async ({ shareId, userShareId, shareRoleId }: Sh
         data: { ShareRoleID: shareRoleId, ExpireTime: null },
     });
 
+/** Pass full `SharesState` to reuse existing event IDs and avoid
+ * redundant API calls in `parseShareResponse` for each share */
 export const toggleVisibility = async (
     SharesToHide: ShareId[],
-    SharesToUnhide: ShareId[]
+    SharesToUnhide: ShareId[],
+    shares: SharesState
 ): Promise<Share<ShareType.Vault>[]> => {
     const encryptedShares = (
         await api({
@@ -94,6 +98,13 @@ export const toggleVisibility = async (
         })
     ).Shares;
 
-    const shares = await Promise.all(encryptedShares.map((share) => parseShareResponse<ShareType.Vault>(share)));
-    return shares.filter(truthy);
+    return (
+        await Promise.all(
+            encryptedShares.map((share) =>
+                parseShareResponse<ShareType.Vault>(share, {
+                    eventId: shares[share.ShareID].eventId,
+                })
+            )
+        )
+    ).filter(truthy);
 };
