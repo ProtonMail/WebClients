@@ -1441,6 +1441,7 @@ const SingleSignupContainerV2 = ({
                         }}
                         mode={signupParameters.mode}
                         signupTrial={signupTrial}
+                        subscription={model.session?.subscription}
                     />
                 )}
                 {model.step === Steps.Loading && (
