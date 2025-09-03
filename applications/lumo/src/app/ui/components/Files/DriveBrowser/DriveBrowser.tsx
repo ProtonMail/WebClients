@@ -8,8 +8,11 @@ import Loader from '@proton/components/components/loader/Loader';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcArrowUpLine, IcCheckmarkCircle, IcPlusCircle } from '@proton/icons';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 // Import extracted components
 import lumoDrive from '@proton/styles/assets/img/lumo/lumo-drive.svg';
+
+import { MAX_FILE_SIZE } from '../../../../constants';
 
 import type { DriveNode } from '../../../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../../../hooks/useDriveSDK';
@@ -172,6 +175,17 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                 return;
             }
 
+            // Check file size limit before downloading
+            if (file.size && file.size > MAX_FILE_SIZE) {
+                const maxSizeFormatted = humanSize({ bytes: MAX_FILE_SIZE, unit: 'MB', fraction: 0 });
+                const fileSizeFormatted = humanSize({ bytes: file.size, unit: 'MB', fraction: 1 });
+                createNotification({
+                    text: c('collider_2025: Error').t`File "${file.name}" is too large (${fileSizeFormatted}). Maximum allowed size is ${maxSizeFormatted}.`,
+                    type: 'error',
+                });
+                return;
+            }
+
             try {
                 setDownloadingFile(file.nodeId);
                 setDownloadProgress(0);
@@ -179,6 +193,17 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                 const data = await downloadFile(file.nodeId, (progress) => {
                     setDownloadProgress(progress);
                 });
+
+                // Final size check after download (fallback validation)
+                if (data.byteLength > MAX_FILE_SIZE) {
+                    const maxSizeFormatted = humanSize({ bytes: MAX_FILE_SIZE, unit: 'MB', fraction: 0 });
+                    const fileSizeFormatted = humanSize({ bytes: data.byteLength, unit: 'MB', fraction: 1 });
+                    createNotification({
+                        text: c('collider_2025: Error').t`File "${file.name}" is too large (${fileSizeFormatted}). Maximum allowed size is ${maxSizeFormatted}.`,
+                        type: 'error',
+                    });
+                    return;
+                }
 
                 onFileSelect(file, new Uint8Array(data));
             } catch (error) {
@@ -189,7 +214,7 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                 setDownloadProgress(null);
             }
         },
-        [downloadFile, onFileSelect, onError]
+        [downloadFile, onFileSelect, onError, createNotification]
     );
 
     const handleBreadcrumbClick = useCallback(
@@ -227,6 +252,17 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
 
             for (const file of fileArray) {
                 try {
+                    // Check file size limit first
+                    if (file.size > MAX_FILE_SIZE) {
+                        const maxSizeFormatted = humanSize({ bytes: MAX_FILE_SIZE, unit: 'MB', fraction: 0 });
+                        const fileSizeFormatted = humanSize({ bytes: file.size, unit: 'MB', fraction: 1 });
+                        createNotification({
+                            text: c('collider_2025: Error').t`File "${file.name}" is too large (${fileSizeFormatted}). Maximum allowed size is ${maxSizeFormatted}.`,
+                            type: 'error',
+                        });
+                        continue; // Skip this file and continue with the next one
+                    }
+
                     setUploadProgress({ fileName: file.name, progress: 0 });
 
                     // Upload the file to Drive
@@ -502,10 +538,22 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                                                         // Estimate if file is too large for preview (roughly 150k tokens ≈ 600-750KB)
                                                         const estimatedTooLargeForPreview =
                                                             child.size && child.size > 750 * 1024; // 750KB threshold
+                                                        
+                                                        // Check if file exceeds our 10MB upload limit
+                                                        const exceedsFileSizeLimit = child.size && child.size > MAX_FILE_SIZE;
 
                                                         const getActionIcon = () => {
                                                             if (fileExists) {
                                                                 return () => <IcCheckmarkCircle />;
+                                                            }
+                                                            if (exceedsFileSizeLimit) {
+                                                                return () => (
+                                                                    <Icon
+                                                                        name="exclamation-triangle-filled"
+                                                                        className="color-danger"
+                                                                        size={4}
+                                                                    />
+                                                                );
                                                             }
                                                             if (estimatedTooLargeForPreview) {
                                                                 return () => (
@@ -535,15 +583,18 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                                                                           icon: getActionIcon(),
                                                                           label: fileExists
                                                                               ? 'Already in KB'
-                                                                              : estimatedTooLargeForPreview
-                                                                                ? 'File too large'
-                                                                                : downloadingFile === child.nodeId
-                                                                                  ? `Downloading (${Math.round(fileData.downloadProgress || 0)}%)`
-                                                                                  : 'Add to active',
+                                                                              : exceedsFileSizeLimit
+                                                                                ? 'Exceeds 10MB limit'
+                                                                                : estimatedTooLargeForPreview
+                                                                                  ? 'File too large'
+                                                                                  : downloadingFile === child.nodeId
+                                                                                    ? `Downloading (${Math.round(fileData.downloadProgress || 0)}%)`
+                                                                                    : 'Add to active',
                                                                           onClick: (e: React.MouseEvent) => {
                                                                               e.stopPropagation();
                                                                               if (
                                                                                   !fileExists &&
+                                                                                  !exceedsFileSizeLimit &&
                                                                                   !estimatedTooLargeForPreview
                                                                               ) {
                                                                                   void handleFileClick(child);
@@ -552,13 +603,16 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                                                                           disabled:
                                                                               downloadingFile === child.nodeId ||
                                                                               fileExists ||
+                                                                              exceedsFileSizeLimit ||
                                                                               estimatedTooLargeForPreview,
                                                                           loading: downloadingFile === child.nodeId,
                                                                           variant: fileExists
                                                                               ? 'secondary'
-                                                                              : estimatedTooLargeForPreview
-                                                                                ? 'secondary'
-                                                                                : 'primary',
+                                                                              : exceedsFileSizeLimit
+                                                                                ? 'danger'
+                                                                                : estimatedTooLargeForPreview
+                                                                                  ? 'secondary'
+                                                                                  : 'primary',
                                                                       },
                                                                   ]
                                                                 : [];
@@ -572,6 +626,7 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                                                                         ? () => handleFolderClick(child)
                                                                         : child.type === 'file' &&
                                                                             !fileExists &&
+                                                                            !exceedsFileSizeLimit &&
                                                                             !estimatedTooLargeForPreview
                                                                           ? () => handleFileClick(child)
                                                                           : undefined

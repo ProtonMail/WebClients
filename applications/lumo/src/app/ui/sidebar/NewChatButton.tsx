@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import clsx from 'clsx';
@@ -14,6 +14,26 @@ import { useGuestChatHandler } from '../../hooks/useGuestChatHandler';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { GuestChatDisclaimerModal } from '../components/GuestChatDisclaimerModal';
+
+// Hook to manage delayed text rendering for smooth animations
+const useDelayedTextVisibility = (isCollapsed: boolean) => {
+    const [shouldShowText, setShouldShowText] = useState(!isCollapsed);
+
+    useEffect(() => {
+        if (isCollapsed) {
+            // Immediately hide text when collapsing
+            setShouldShowText(false);
+        } else {
+            // Delay showing text to allow animation to complete
+            const timer = setTimeout(() => {
+                setShouldShowText(true);
+            }, 320); // Match the sidebar animation timing
+            return () => clearTimeout(timer);
+        }
+    }, [isCollapsed]);
+
+    return shouldShowText;
+};
 
 interface Props {
     isCollapsed: boolean;
@@ -88,11 +108,13 @@ const NewChatButton = ({ buttonProps, children, toolTipPlacement }: NewChatButto
 };
 
 const NewChatButtonSidebar = ({ isCollapsed, isSmallScreen }: Props) => {
+    const shouldShowText = useDelayedTextVisibility(isCollapsed);
+    
     if (isSmallScreen) {
         return null;
     }
 
-    const buttonClassName = clsx('w-full', isCollapsed && 'px-0 md:flex');
+    const buttonClassName = clsx('w-full flex items-center', isCollapsed ? 'justify-center px-0' : 'justify-start px-3');
 
     return (
         <div className="px-3 py-2 shrink-0 md:block">
@@ -105,11 +127,18 @@ const NewChatButtonSidebar = ({ isCollapsed, isSmallScreen }: Props) => {
                 }}
                 toolTipPlacement="right"
             >
-                {isCollapsed ? (
-                    <Icon name="pen-square" className="flex mx-auto" alt={c('collider_2025:Button').t`New chat`} />
-                ) : (
-                    c('collider_2025:Button').t`New chat`
-                )}
+                <div className="flex items-center gap-2">
+                    <Icon 
+                        name="pen-square" 
+                        className={clsx('shrink-0', isCollapsed && 'mx-auto')} 
+                        alt={c('collider_2025:Button').t`New chat`} 
+                    />
+                    {shouldShowText && (
+                        <span className="text-ellipsis">
+                            {c('collider_2025:Button').t`New chat`}
+                        </span>
+                    )}
+                </div>
             </NewChatButton>
         </div>
     );
