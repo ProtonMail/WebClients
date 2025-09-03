@@ -9,6 +9,7 @@ import { useMembers } from '@proton/account/members/hooks';
 import { getDomainAddressError } from '@proton/account/members/validateAddUser';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
+import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modals/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
 import ConnectGmailButton from '@proton/activation/src/components/SettingsArea/ConnectGmailButton';
 import { Button, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
@@ -18,8 +19,8 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import GenericError from '@proton/components/containers/error/GenericError';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { ALL_MEMBERS_ID, type APP_NAMES, BRAND_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
-import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
+import { ALL_MEMBERS_ID, APPS, type APP_NAMES, BRAND_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
+import { getAvailableAddressDomains, getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Member, Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
@@ -66,6 +67,8 @@ const AddressesWithMembers = ({
     const [{ premiumDomains, protonDomains }] = useProtonDomains();
     const [organizationKey] = useOrganizationKey();
     const [addressModalProps, setAddressModalOpen, renderAddressModal] = useModalState();
+    const [claimProtonAddressModalProps, setClaimProtonAddressModalOpen, renderClaimProtonAddressModal] =
+        useModalState();
 
     const { createNotification } = useNotifications();
     const [tmpMember, setTmpMember] = useState<Member | null>(null);
@@ -129,7 +132,13 @@ const AddressesWithMembers = ({
             return;
         }
         setTmpMember(member);
-        setAddressModalOpen(true);
+
+        if (getIsBYOEOnlyAccount(addresses) && isSelfSelected) {
+            setClaimProtonAddressModalOpen(true);
+            return;
+        } else {
+            setAddressModalOpen(true);
+        }
     };
 
     const currentMember = members?.[memberIndex];
@@ -175,7 +184,7 @@ const AddressesWithMembers = ({
                                     {c('Action').t`Add address`}
                                 </Button>
                             )}
-                            {hasAccessToBYOE && (
+                            {hasAccessToBYOE && isSelfSelected && (
                                 <ConnectGmailButton
                                     app={app}
                                     buttonText={c('loc_nightly: BYOE').t`Connect Gmail address`}
@@ -235,6 +244,9 @@ const AddressesWithMembers = ({
         <>
             {renderAddressModal && tmpMember && members && (
                 <AddressModal member={tmpMember} members={members} {...addressModalProps} />
+            )}
+            {renderClaimProtonAddressModal && (
+                <BYOEClaimProtonAddressModal toApp={APPS.PROTONMAIL} {...claimProtonAddressModalProps} />
             )}
             {loading ? <Loader /> : children}
         </>
