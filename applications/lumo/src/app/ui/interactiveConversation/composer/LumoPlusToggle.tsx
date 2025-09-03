@@ -4,12 +4,12 @@ import { c } from 'ttag';
 
 import { Spotlight, Toggle, useModalStateObject } from '@proton/components';
 import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import lumoPlusLogo from '@proton/styles/assets/img/lumo/lumo-plus-logo.svg';
 
 import { LUMO_UPGRADE_TRIGGER_CLASS } from '../../../constants';
-import useLumoPlusUpgradeWithTelemetry from '../../../hooks/useLumoPlusUpgradeWithTelemetry';
 import { useIsLumoSmallScreen } from '../../../hooks/useIsLumoSmallScreen';
+import useLumoPlusUpgradeWithTelemetry from '../../../hooks/useLumoPlusUpgradeWithTelemetry';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
+import LumoPlusLogoInline from '../../components/LumoPlusLogoInline';
 import GuestLumoPlusUpsellModal from '../../upsells/GuestLumoPlusUpsellModal';
 import LumoPlusBackdropOverlay from '../../upsells/LumoPlusBackdropOverlay';
 import LumoPlusUpsellModal from '../../upsells/LumoPlusUpsellModal';
@@ -50,8 +50,7 @@ const LumoPlusToggle = () => {
 
     const spotlightContent = (
         <div className="text-sm">
-            <img src={lumoPlusLogo} alt="lumo+" className="h-6 mb-2" />
-
+            <LumoPlusLogoInline height="24px" className="mb-2" />
             <p className="m-0 color-weak">
                 {c('collider_2025: Info')
                     .t`${LUMO_SHORT_APP_NAME} provide access to advanced models to help with more complex queries and provide better answers`}
@@ -75,7 +74,7 @@ const LumoPlusToggle = () => {
                     onMouseLeave={() => setShowSpotlight(false)}
                     className="inline-block flex flex-nowrap items-center gap-2"
                 >
-                    <img src={lumoPlusLogo} alt="lumo+" className="h-4" />
+                    <LumoPlusLogoInline height="16px" />
                     <Toggle
                         id="lumo-plus-toggle"
                         checked={false}
