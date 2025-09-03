@@ -934,6 +934,9 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "Získajte bezplatnú ${ BRAND_NAME } adresu"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Získajte vašu bezplatnú ${ BRAND_NAME } adresu"
       ]
     },
     "action": {
@@ -4275,6 +4278,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet využíva ${ usedSpace } úložiska, čo presahuje pridelený priestor ${ inviteSpace }. Odstráňte niektoré údaje alebo požiadajte správcu plánu o navýšenie úložiska."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Rodinné plány v súčasnosti nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -9135,6 +9141,24 @@
       ],
       "VAT number": [
         "DIČ"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "S výnimkou ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Bez zahrnutia ${ taxRate }% daní: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Vrátane ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Vrátane ${ taxRate }% daní: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Dane"
+      ],
+      "VAT": [
+        "DPH"
       ]
     },
     "Payments.Error": {

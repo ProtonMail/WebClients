@@ -926,6 +926,9 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "Få en gratis ${ BRAND_NAME }-adresse"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Gjør krav på din gratis ${ BRAND_NAME }-adresse"
       ]
     },
     "action": {
@@ -4206,6 +4209,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Kontoen din bruker ${ usedSpace } med lagringsplass som overskrider de ${ inviteSpace } tildelt deg. Slett noen data, eller be planadministratoren om å øke lagringsplassen."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Familieplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -6974,6 +6980,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Abonnementet ditt er avsluttet. ${ cta } og unngå tap av data."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "For å fortsette å bruke ${ BRAND_NAME }, må du sørge for at premiumfunksjonene dine ikke lenger er i bruk, eller oppgradere abonnementsplanen din."
       ]
     },
     "Log preference": {
@@ -8827,6 +8836,24 @@
       ],
       "VAT number": [
         "MVA-nummer"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Ekskludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Ekskludert ${ taxRate }% avgifter: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inkludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inkludert ${ taxRate }% avgifter: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Avgifter"
+      ],
+      "VAT": [
+        "MVA"
       ]
     },
     "Payments.Error": {
