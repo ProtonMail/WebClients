@@ -9,7 +9,7 @@ import { HOUR } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { getInitialModelState } from '../initialModelState';
-import { type ModelState } from '../interface';
+import type { ModelState } from '../interface';
 
 interface ReferralInfo {
     currency: string;
@@ -50,8 +50,12 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectReferralInfo = (state: ReferralInfoState) => state[name];
 const getReferralInfo = async (api: Api) => {
-    const { Currency, RefereeRewardAmount, ReferrerRewardAmount } = await api(getReferralInfoApi());
-    return constructReferralInfo(Currency, RefereeRewardAmount, ReferrerRewardAmount);
+    try {
+        const { Currency, RefereeRewardAmount, ReferrerRewardAmount } = await api(getReferralInfoApi());
+        return constructReferralInfo(Currency, RefereeRewardAmount, ReferrerRewardAmount);
+    } catch {
+        return defaultValue;
+    }
 };
 
 const modelThunk = createAsyncModelThunk<Model, ReferralInfoState, ProtonThunkArguments>(`${name}/fetch`, {
