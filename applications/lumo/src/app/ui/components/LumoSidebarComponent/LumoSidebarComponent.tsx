@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';
 import { Hamburger, Icon, UserDropdown, useFocusTrap } from '@proton/components';
+import lumoLogoFull from '@proton/styles/assets/img/lumo/lumo-logo-full.svg';
 import useConfig from '@proton/components/hooks/useConfig';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -13,7 +14,6 @@ import clsx from '@proton/utils/clsx';
 
 import { useSidebar } from '../../../providers/SidebarProvider';
 import { InvitesButton } from '../InvitesButton/InvitesButton';
-import { SignInLinkButton } from '../SignInLink';
 
 import './SidebarButton.scss';
 
@@ -123,7 +123,7 @@ const LumoSidebarComponent = ({
 
                 {isSmallScreen && !isGuest && expanded ? (
                     <>
-                        <div className="mobile-user-dropdown px-3 shrink-0 md:hidden mb-2">
+                        <div className="mobile-user-dropdown px-3 mt-1 shrink-0 md:hidden mb-2">
                             <UserDropdown app={APP_NAME} />
                         </div>
                         {isLumoEarlyAccessEnabled && (
@@ -134,8 +134,11 @@ const LumoSidebarComponent = ({
                     </>
                 ) : null}
                 {isSmallScreen && isGuest && expanded ? (
-                    <div className="px-3 shrink-0 md:hidden text-center mb-2">
-                        <SignInLinkButton className="w-full" />
+                    <div className="px-3 mt-1 shrink-0 md:hidden mb-2">
+                        {/* Lumo Logo */}
+                        <div className="sidebar-logo-section p-3">
+                            <img src={lumoLogoFull} alt="Lumo" className="sidebar-logo" />
+                        </div>
                     </div>
                 ) : null}
 
