@@ -1637,6 +1637,12 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Most frequent": [
+        "Mest frekvent"
+      ],
+      "Recently read": [
+        "Nyligen läst"
       ]
     },
     "action": {
@@ -5320,6 +5326,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ditt konto använder ${ usedSpace } lagringsutrymme, vilket överstiger ${ inviteSpace } du tilldelades. Ta bort lite data eller be administratören för paketet att öka ditt lagringsutrymme."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Familjepaket stöder för närvarande inte externa konton. Skapa en ${ BRAND_NAME }-adress innan du går med. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -7208,8 +7217,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9584,6 +9592,18 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Categories badge": [
+        "Kategorimärke"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "Kategorin har uppdaterats, tack för din feedback!"
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Vi förbättrar hur e-post kategoriseras. Din feedback hjälper till att göra det smartare och mer exakt."
+      ],
+      "Why am I seeing this?": [
+        "Varför ser jag detta?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9916,6 +9936,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du måste återaktivera dina nycklar för att se den uppdaterade inbjudan"
+      ],
+      "Deleted": [
+        "Borttagen"
       ]
     },
     "Link to calendar event": {
@@ -11484,6 +11507,9 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Din domän och din prenumeration är redo att användas."
+      ],
+      "Ad-free promise": [
+        "Annonsfritt löfte"
       ]
     },
     "Onboarding Proton": {
@@ -11818,6 +11844,21 @@
       ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Exklusive ${ taxRate } % moms: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inklusive ${ taxRate } % moms: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Moms"
       ]
     },
     "Payments.Error": {
@@ -13467,6 +13508,9 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } ger dig åtkomst till alla premiumfunktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }. Integritet är inbyggd så att du kan fortsätta använda den i vetskapen om att dina data och din identitet är säkra."
       ]
     },
     "subscription reminder": {
@@ -13854,6 +13898,18 @@
       ],
       "Billing details updated": [
         "Faktureringsuppgifterna har uppdaterats"
+      ],
+      "Conversation updated": [
+        "Konversation uppdaterad",
+        "Konversationer uppdaterade"
+      ],
+      "Message updated": [
+        "Meddelande uppdaterat",
+        "Meddelanden uppdaterade"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Omkategoriserade ${ elementsCount } meddelande.",
+        "Omkategoriserade ${ elementsCount } meddelanden."
       ]
     },
     "Success notification": {
@@ -15035,6 +15091,9 @@
       ],
       "Edit billing address": [
         "Redigera faktureringsadress"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Kategorier kommer!"
       ]
     },
     "Today icon tooltip in mini calendar": {

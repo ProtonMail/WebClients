@@ -1634,6 +1634,16 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "Obtén una dirección gratuita de ${ BRAND_NAME }"
+      ],
+      "Most frequent": [
+        "Más frecuente"
+      ],
+      "Recently read": [
+        "Leído recientemente"
+      ],
+      "Trust key": [
+        "Clave de confianza",
+        "Claves de confianza"
       ]
     },
     "action": {
@@ -5355,6 +5365,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Tu cuenta está usando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Los planes familiares actualmente no admiten cuentas externas. Crea una dirección de ${ BRAND_NAME } antes de unirte. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -7240,8 +7253,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8676,6 +8688,9 @@
       ],
       "No change will be made to the selected emails": [
         "No se hará ningún cambio a los correos electrónicos seleccionados"
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Estas conversaciones se mantienen aquí según la política de retención de datos de su organización."
       ]
     },
     "info": {
@@ -9640,6 +9655,27 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Categories badge": [
+        "Distintivo de las categorías"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Ayúdanos a mejorar las categorías eligiendo la que mejor se adapte a este correo electrónico. ¡Gracias por tu ayuda!"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Ayúdanos a mejorar la próxima categorización de correo"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "La categoría ha sido actualizada. Gracias por tus comentarios."
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Estamos mejorando cómo se clasifican los correos electrónicos. Tus comentarios ayudarán a que sea más eficiente y preciso."
+      ],
+      "Which category should this be recategorized under?": [
+        "¿En qué categoría debería reasignarse esto?"
+      ],
+      "Why am I seeing this?": [
+        "¿Por qué veo esto?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9908,7 +9944,7 @@
         "Programado"
       ],
       "Sent": [
-        "Enviada"
+        "Enviados"
       ],
       "settings": [
         "ajustes"
@@ -9972,6 +10008,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Necesitas reactivar tus claves para ver la invitación actualizada."
+      ],
+      "Deleted": [
+        "Eliminado"
       ]
     },
     "Link to calendar event": {
@@ -11878,6 +11917,24 @@
       ],
       "VAT number": [
         "Número de IVA"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Impuestos"
+      ],
+      "VAT": [
+        "IVA"
       ]
     },
     "Payments.Error": {
@@ -13929,6 +13986,10 @@
       ],
       "Billing details updated": [
         "Se han actualizado los datos de facturación."
+      ],
+      "Conversation updated": [
+        "Conversación actualizada",
+        "Conversaciones actualizadas"
       ]
     },
     "Success notification": {
@@ -15113,6 +15174,9 @@
       ],
       "Your addresses": [
         "Tus direcciones"
+      ],
+      "✨ Categories are coming!": [
+        "✨ ¡Llegan las categorías!"
       ]
     },
     "Today icon tooltip in mini calendar": {

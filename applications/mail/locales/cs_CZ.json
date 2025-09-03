@@ -1456,7 +1456,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -1649,6 +1652,12 @@
         "${ numberOfAddresses } adresy",
         "${ numberOfAddresses } adres",
         "${ numberOfAddresses } adres"
+      ],
+      "Most frequent": [
+        "Nejčastější"
+      ],
+      "Recently read": [
+        "Nedávno čtené"
       ]
     },
     "action": {
@@ -5399,6 +5408,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet používá ${ usedSpace } úložiště, což je více než ${ inviteSpace }, které vám byly přiděleny. Smažte některá data nebo požádejte správce tarifu o navýšení úložiště."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Tarify Family v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -7450,10 +7462,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -8930,6 +8939,9 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Zadejte vlastní heslo (jako důvěryhodný kontakt)."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Tyto konverzace jsou zde uchovávány na základě zásady uchovávání dat vaší organizace."
       ]
     },
     "info": {
@@ -9906,6 +9918,24 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Categories badge": [
+        "Štítek kategorií"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Pomozte nám vylepšit nastávající třídění pošty."
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "Kategorie byla aktualizována, děkujeme za vaši zpětnou vazbu!"
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Vylepšujeme způsob jak jsou emaily tříděny. Vaše zpětná vazba pomáhá, aby byl chytřejší a přesnější."
+      ],
+      "Which category should this be recategorized under?": [
+        "Do které kategorie by to mělo být přeřazeno?"
+      ],
+      "Why am I seeing this?": [
+        "Proč se mi to zobrazuje?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10238,6 +10268,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Pro zobrazení upravené pozvánky musíte znovu aktivovat své klíče"
+      ],
+      "Deleted": [
+        "Smazáno"
       ]
     },
     "Link to calendar event": {
@@ -12224,6 +12257,24 @@
       ],
       "VAT number": [
         "DIČ"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Bez ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Bez ${ taxRate }% daně: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Včetně ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Včetně ${ taxRate }% daně: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Daně"
+      ],
+      "VAT": [
+        "DPH"
       ]
     },
     "Payments.Error": {
@@ -14412,6 +14463,24 @@
       ],
       "Billing details updated": [
         "Fakturační údaje aktualizovány"
+      ],
+      "Conversation updated": [
+        "Konverzace aktualizována",
+        "Konverzace aktualizovány",
+        "Konverzace aktualizovány",
+        "Konverzace aktualizovány"
+      ],
+      "Message updated": [
+        "Zpráva aktualizována",
+        "Zprávy aktualizovány",
+        "Zprávy aktualizovány",
+        "Zprávy aktualizovány"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Změna kategorie ${ elementsCount } zprávy.",
+        "Změna kategorie ${ elementsCount } zpráv.",
+        "Změna kategorie ${ elementsCount } zpráv.",
+        "Změna kategorie ${ elementsCount } zpráv."
       ]
     },
     "Success notification": {

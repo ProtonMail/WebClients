@@ -1634,6 +1634,16 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Most frequent": [
+        "Häufigste"
+      ],
+      "Recently read": [
+        "Zuletzt gelesen"
+      ],
+      "Trust key": [
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
       ]
     },
     "action": {
@@ -5355,6 +5365,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Dein Konto verwendet Speicher in Höhe von ${ usedSpace }, was den dir zugewiesenen Speicherplatz von ${ inviteSpace } übersteigt. Lösche einige Daten oder bitte den Abonnement-Administrator, deinen Speicher zu erhöhen."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Familienabonnements unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-E-Mail-Adresse. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -7249,8 +7262,7 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -8676,6 +8688,9 @@
       ],
       "No change will be made to the selected emails": [
         "Es werden keine Änderungen an den ausgewählten E-Mails durchgeführt."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Diese Unterhaltungen werden hier entsprechend der Datenaufbewahrungsrichtlinie deiner Organisation aufbewahrt."
       ]
     },
     "info": {
@@ -9640,6 +9655,27 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Categories badge": [
+        "Kategorien-Kennzeichnung"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Hilf uns, Kategorien zu verbessern, indem du die auswählst, die am besten zu dieser E-Mail passt. Vielen Dank für deine Hilfe."
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Hilf uns, die kommende E-Mail-Kategorisierung zu verbessern."
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "Die Kategorie wurde aktualisiert, danke für dein Feedback."
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Wir verbessern, wie E-Mails kategorisiert werden. Dein Feedback hilft, es intelligenter und genauer zu machen."
+      ],
+      "Which category should this be recategorized under?": [
+        "Welcher Kategorie soll dies neu zugeordnet werden?"
+      ],
+      "Why am I seeing this?": [
+        "Warum sehe ich das?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9972,6 +10008,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du musst deine Schlüssel erneut aktivieren, um die aktualisierte Einladung anzeigen zu können."
+      ],
+      "Deleted": [
+        "Gelöscht"
       ]
     },
     "Link to calendar event": {
@@ -11878,6 +11917,24 @@
       ],
       "VAT number": [
         "Umsatzsteuernummer"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Ohne ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Ohne ${ taxRate } % Steuern: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Einschließlich ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Einschließlich ${ taxRate } % Steuern: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Steuern"
+      ],
+      "VAT": [
+        "Mehrwertsteuer"
       ]
     },
     "Payments.Error": {
@@ -13933,6 +13990,14 @@
       "Recategorized ${ elementsCount } message.": [
         "${ elementsCount } Nachricht neu kategorisiert.",
         "${ elementsCount } Nachrichten neu kategorisiert."
+      ],
+      "Conversation updated": [
+        "Unterhaltung aktualisiert",
+        "Unterhaltungen aktualisiert"
+      ],
+      "Message updated": [
+        "Nachricht aktualisiert",
+        "Nachrichten aktualisiert"
       ]
     },
     "Success notification": {
@@ -15117,6 +15182,9 @@
       ],
       "Edit billing address": [
         "Rechnungsadresse bearbeiten"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Kategorien kommen."
       ]
     },
     "Today icon tooltip in mini calendar": {

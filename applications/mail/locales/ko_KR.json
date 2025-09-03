@@ -1631,6 +1631,12 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "무료 ${ BRAND_NAME } 주소 받기"
+      ],
+      "Most frequent": [
+        "빈도순"
+      ],
+      "Recently read": [
+        "최근에 읽은순"
       ]
     },
     "action": {
@@ -5291,6 +5297,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "사용자의 계정이 할당된 ${ inviteSpace } 을(를) 초과하는 스토리지의 ${ usedSpace } 을(를) 사용하고 있습니다. 일부 데이터를 삭제하거나 요금제의 구매 관리자에게 저장 공간을 늘리도록 요청하세요."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "현재 가족 플랜이 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -8507,6 +8516,9 @@
       ],
       "Enter your own password (as trusted contact).": [
         "사용자 고유의 비밀번호 입력 (신뢰할 수 있는 연락처로서)"
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "대화가 사용자의 조직 데이터 보존 정책에 근거하여 여기에 보관됩니다."
       ]
     },
     "info": {
@@ -9465,6 +9477,24 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "Categories badge": [
+        "카테고리 배지"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "향후 메일의 분류를 개선하는데 도와주세요"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "카테고리가 업데이트되었습니다. 피드백 주셔서 감사합니다!"
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "이메일 분류 방식이 개선 중입니다. 회원님의 피드백은 이 기능을 더욱 지능적이고 정확하게 만드는데 있어서 큰 도움이 됩니다."
+      ],
+      "Which category should this be recategorized under?": [
+        "어떤 카테고리로 재분류되어야 한다고 생각하시나요?"
+      ],
+      "Why am I seeing this?": [
+        "왜 이 화면이 표시되나요?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9797,6 +9827,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "업데이트된 초대장을 보려면 키를 다시 활성화하셔야 합니다"
+      ],
+      "Deleted": [
+        "삭제됨"
       ]
     },
     "Link to calendar event": {
@@ -11663,6 +11696,24 @@
       ],
       "VAT number": [
         "부가가치세 번호"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName } 제외: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% 세금 제외: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName } 포함: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% 세금 포함: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "세금"
+      ],
+      "VAT": [
+        "부가세"
       ]
     },
     "Payments.Error": {
@@ -13653,6 +13704,12 @@
       ],
       "Recategorized ${ elementsCount } message.": [
         "${ elementsCount }개 메시지가 재분류되었습니다."
+      ],
+      "Conversation updated": [
+        "대화가 업데이트되었습니다"
+      ],
+      "Message updated": [
+        "메시지가 업데이트되었습니다"
       ]
     },
     "Success notification": {

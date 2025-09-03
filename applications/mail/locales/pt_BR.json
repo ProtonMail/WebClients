@@ -1436,7 +1436,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1637,6 +1638,12 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "Crie um endereço gratuito da ${ BRAND_NAME }"
+      ],
+      "Most frequent": [
+        "Mais frequentes"
+      ],
+      "Recently read": [
+        "Lido recentemente"
       ]
     },
     "action": {
@@ -5355,6 +5362,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Sua conta está usando ${ usedSpace } de armazenamento, o que excede o espaço de ${ inviteSpace } que você recebeu. Apague alguns dados ou peça ao administrador do plano para aumentar seu armazenamento."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Os planos familiares não suportam contas externas no momento. Crie um endereço para ${ BRAND_NAME } antes de participar.${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -7240,8 +7250,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -8667,6 +8676,18 @@
       ],
       "${ planName } expires today.": [
         "${ planName } expira hoje."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "O ${ CALENDAR_APP_NAME } exige um endereço ${ BRAND_NAME } para sincronização segura de eventos e criptografia. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "O ${ CALENDAR_APP_NAME } exige um endereço ${ BRAND_NAME } para sincronização segura de eventos e para a criptografia. Resgate seu endereço ${ MAIL_APP_NAME } gratuito agora."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Garanta uma comunicação totalmente privada e criptografada. Resgate seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Essas conversas são mantidas de acordo com a política de retenção de dados da sua organização."
       ]
     },
     "info": {
@@ -9631,6 +9652,27 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Categories badge": [
+        "Etiqueta de categorias"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Ajude a gente a melhorar as categorias escolhendo a que melhor se encaixa neste e-mail. Obrigado pela sua ajuda!"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Ajude-nos a melhorar a futura categorização de e-mails."
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "A categoria foi atualizada, agradecemos por seu feedback."
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Estamos melhorando como os e-mails são categorizados. Seu feedback ajuda a torná-lo mais inteligente e preciso."
+      ],
+      "Which category should this be recategorized under?": [
+        "Em qual categoria isso deveria ser recategorizado?"
+      ],
+      "Why am I seeing this?": [
+        "Porque estou vendo isso?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9963,6 +10005,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Você precisa reativar suas chaves para ver o convite atualizado"
+      ],
+      "Deleted": [
+        "Excluído"
       ]
     },
     "Link to calendar event": {
@@ -10023,6 +10068,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Sua assinatura terminou. ${ cta } e para evitar perda de dados."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Para continuar usando ${ BRAND_NAME }, certifique-se de que seus recursos do plano premium não estão mais em uso ou faça um upgrade no seu plano."
       ]
     },
     "Log preference": {
@@ -10776,6 +10824,10 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Até ${ n } usuário (${ adminsText }, ${ usersText })",
+        "Até ${ n } usuários (${ adminsText }, ${ usersText })"
       ]
     },
     "new_plans: feature highlight": {
@@ -11873,6 +11925,24 @@
       ],
       "VAT number": [
         "Número de IVA"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excluindo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluindo ${ taxRate }% de impostos: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluindo ${ taxRate }${ taxName }${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluindo ${ taxRate }% de impostos: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Impostos"
+      ],
+      "VAT": [
+        "IVA"
       ]
     },
     "Payments.Error": {
@@ -13936,6 +14006,14 @@
       "Recategorized ${ elementsCount } message.": [
         "Mensagem ${ elementsCount } recategorizada.",
         "Mensagens ${ elementsCount } recategorizadas."
+      ],
+      "Conversation updated": [
+        "Conversa atualizada",
+        "Conversas atualizadas"
+      ],
+      "Message updated": [
+        "Mensagem atualizada",
+        "Mensagens atualizadas"
       ]
     },
     "Success notification": {
@@ -15120,6 +15198,9 @@
       ],
       "Your addresses": [
         "Seus endereços"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Categorias estão chegando!"
       ]
     },
     "Today icon tooltip in mini calendar": {

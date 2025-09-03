@@ -1452,7 +1452,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Clave de confianza",
+        "Claves de confianza"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1637,6 +1638,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Most frequent": [
+        "Más frecuente"
+      ],
+      "Recently read": [
+        "Leído recientemente"
       ]
     },
     "action": {
@@ -5358,6 +5365,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "La cuenta está usando ${ usedSpace } de almacenamiento, que supera los ${ inviteSpace } que tiene asignados. Elimine algunos datos o solicite al administrador del plan que aumente el almacenamiento."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Los planes familiares actualmente no admiten cuentas externas. Cree una dirección de ${ BRAND_NAME } antes de unirse. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -7252,8 +7262,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9643,6 +9652,24 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Categories badge": [
+        "Distintivo de las categorías"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Ayúdenos a mejorar la próxima categorización de correo"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "Se actualizó la categoría. ¡Gracias por sus comentarios!"
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Estamos mejorando cómo se clasifican los correos electrónicos. Sus comentarios ayudarán a que sea más eficiente y preciso."
+      ],
+      "Which category should this be recategorized under?": [
+        "¿En qué categoría debería reasignarse esto?"
+      ],
+      "Why am I seeing this?": [
+        "¿Por qué veo esto?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9975,6 +10002,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Necesita reactivar las claves para ver la invitación actualizada"
+      ],
+      "Deleted": [
+        "Eliminada"
       ]
     },
     "Link to calendar event": {
@@ -11881,6 +11911,24 @@
       ],
       "VAT number": [
         "Número de IVA"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Impuestos"
+      ],
+      "VAT": [
+        "IVA"
       ]
     },
     "Payments.Error": {
@@ -13944,6 +13992,14 @@
       "Recategorized ${ elementsCount } message.": [
         "Se recategorizó ${ elementsCount } mensaje.",
         "Se recategorizaron ${ elementsCount } mensajes."
+      ],
+      "Conversation updated": [
+        "Conversación actualizada",
+        "Conversaciones actualizadas"
+      ],
+      "Message updated": [
+        "Mensaje actualizado",
+        "Mensajes actualizados"
       ]
     },
     "Success notification": {
