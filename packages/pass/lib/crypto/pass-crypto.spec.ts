@@ -216,7 +216,7 @@ describe('PassCrypto', () => {
             };
 
             /* register the share */
-            const share = await PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] });
+            const share = await PassCrypto.openShare({ encryptedShare, encryptedShareKeys: [shareKey] });
             const contentUpdate = randomContents();
             const vaultUpdate = await PassCrypto.updateVault({ shareId: share!.shareId, content: contentUpdate });
             const vaultKey = PassCrypto.getShareManager(share!.shareId).getVaultShareKey(42);
@@ -278,7 +278,7 @@ describe('PassCrypto', () => {
                 Flags: 0,
             };
 
-            const share = await PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] });
+            const share = await PassCrypto.openShare({ encryptedShare, encryptedShareKeys: [shareKey] });
             const shareManager = PassCrypto.getShareManager(encryptedShare.ShareID);
 
             expect(share!.content).toEqual(content);
@@ -303,7 +303,7 @@ describe('PassCrypto', () => {
 
             const shareUpdate = await PassCrypto.openShare({
                 encryptedShare: encryptedShareUpdate,
-                shareKeys: [shareKey, newShareKey],
+                encryptedShareKeys: [shareKey, newShareKey],
             });
 
             expect(shareManager.getShare()).toStrictEqual(shareUpdate);
@@ -341,7 +341,7 @@ describe('PassCrypto', () => {
                 Flags: 0,
             };
 
-            await expect(PassCrypto.openShare({ encryptedShare, shareKeys: [] })).rejects.toThrow(
+            await expect(PassCrypto.openShare({ encryptedShare, encryptedShareKeys: [] })).rejects.toThrow(
                 new PassCryptoShareError(`Empty share keys`)
             );
         });
@@ -383,7 +383,7 @@ describe('PassCrypto', () => {
                 Flags: 0,
             };
 
-            await expect(PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] })).rejects.toThrow(
+            await expect(PassCrypto.openShare({ encryptedShare, encryptedShareKeys: [shareKey] })).rejects.toThrow(
                 new PassCryptoShareError(`Missing vault key for rotation 2`)
             );
         });
@@ -424,7 +424,7 @@ describe('PassCrypto', () => {
                 Flags: 0,
             };
 
-            expect(await PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] })).toEqual(null);
+            expect(await PassCrypto.openShare({ encryptedShare, encryptedShareKeys: [shareKey] })).toEqual(null);
         });
     });
 
@@ -440,7 +440,7 @@ describe('PassCrypto', () => {
 
             const [encryptedShare, shareKey] = await createRandomShareResponses(userKey, address.ID);
             const shareId = encryptedShare.ShareID;
-            await PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] });
+            await PassCrypto.openShare({ encryptedShare, encryptedShareKeys: [shareKey] });
 
             const shareManager = PassCrypto.getShareManager(encryptedShare.ShareID);
 
@@ -455,10 +455,10 @@ describe('PassCrypto', () => {
                 UserKeyID: TEST_USER_KEY_ID,
             };
 
-            await PassCrypto.updateShareKeys({ shareId, shareKeys: [shareKey] });
+            await PassCrypto.updateShareKeys({ shareId, encryptedShareKeys: [shareKey] });
             expect(shareManager.addVaultShareKey).toHaveBeenCalledTimes(0);
 
-            await PassCrypto.updateShareKeys({ shareId, shareKeys: [shareKey, newShareKey] });
+            await PassCrypto.updateShareKeys({ shareId, encryptedShareKeys: [shareKey, newShareKey] });
             expect(shareManager.addVaultShareKey).toHaveBeenCalledTimes(1);
         });
     });
@@ -502,7 +502,7 @@ describe('PassCrypto', () => {
             await PassCrypto.hydrate({ user, addresses: [address], keyPassword: TEST_KEY_PASSWORD });
 
             const [encryptedShare, shareKey] = await createRandomShareResponses(userKey, address.ID);
-            await PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] });
+            await PassCrypto.openShare({ encryptedShare, encryptedShareKeys: [shareKey] });
             const vaultKey = await processes.openShareKey({ shareKey, userKeys: [userKey] });
 
             /* create item */

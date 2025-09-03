@@ -17,11 +17,11 @@ import type {
     VaultCreateRequest,
     VaultUpdateRequest,
 } from '@proton/pass/types/api';
+import type { FileID, FileIdentifier } from '@proton/pass/types/data';
 import type { ShareRole, ShareType } from '@proton/pass/types/data/shares';
 import type { MaybeNull } from '@proton/pass/types/utils';
 import type { Address, DecryptedAddressKey, DecryptedKey, User } from '@proton/shared/lib/interfaces';
 
-import type { FileID, FileIdentifier } from '@proton/pass/types/data';
 import type {
     InviteTargetKey,
     ItemId,
@@ -64,13 +64,17 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
     canOpenShare: (shareId: ShareId) => boolean;
     openShare: <T extends ShareType = ShareType>(data: {
         encryptedShare: ShareGetResponse;
-        shareKeys: ShareKeyResponse[];
+        encryptedShareKeys?: ShareKeyResponse[];
     }) => Promise<MaybeNull<TypedOpenedShare<T>>>;
-    updateShareKeys: (data: { shareId: ShareId; shareKeys: ShareKeyResponse[] }) => Promise<void>;
+    updateShareKeys: (data: { shareId: ShareId; encryptedShareKeys: ShareKeyResponse[] }) => Promise<void>;
     removeShare: (shareId: ShareId) => void;
     openItem: (data: { shareId: ShareId; encryptedItem: ItemRevisionContentsResponse }) => Promise<OpenedItem>;
     createItem: (data: { shareId: ShareId; content: Uint8Array<ArrayBuffer> }) => Promise<ItemCreateRequest>;
-    updateItem: (data: { content: Uint8Array<ArrayBuffer>; lastRevision: number; itemKey: ItemKey }) => Promise<ItemUpdateRequest>;
+    updateItem: (data: {
+        content: Uint8Array<ArrayBuffer>;
+        lastRevision: number;
+        itemKey: ItemKey;
+    }) => Promise<ItemUpdateRequest>;
     moveItem: (data: {
         encryptedItemKeys: EncodedItemKeyRotation[];
         itemId: ItemId;
@@ -106,7 +110,11 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
     createFileDescriptor: (
         data: FileIdentifier & { encryptionVersion: number; metadata: Uint8Array<ArrayBuffer> }
     ) => Promise<FileDescriptorProcessResult>;
-    openFileDescriptor: (data: { file: ItemFileOutput; itemKey: ItemKey; shareId: ShareId }) => Promise<Uint8Array<ArrayBuffer>>;
+    openFileDescriptor: (data: {
+        file: ItemFileOutput;
+        itemKey: ItemKey;
+        shareId: ShareId;
+    }) => Promise<Uint8Array<ArrayBuffer>>;
     createFileChunk: (data: {
         chunk: Blob;
         chunkIndex: number;
@@ -128,7 +136,10 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
     getFileKey: (data: FileIdentifier) => Uint8Array<ArrayBuffer>;
     encryptFileKey: (data: FileIdentifier & { itemKey: ItemKey }) => Promise<Uint8Array<ArrayBuffer>>;
     createSecureLink: (data: { itemKey: ItemKey }) => Promise<CreateSecureLinkData>;
-    openSecureLink: (data: { linkKey: string; publicLinkContent: PublicLinkGetContentResponse }) => Promise<Uint8Array<ArrayBuffer>>;
+    openSecureLink: (data: {
+        linkKey: string;
+        publicLinkContent: PublicLinkGetContentResponse;
+    }) => Promise<Uint8Array<ArrayBuffer>>;
     openLinkKey: (data: {
         encryptedLinkKey: string;
         linkKeyShareKeyRotation: number;
