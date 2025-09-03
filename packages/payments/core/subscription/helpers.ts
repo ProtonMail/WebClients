@@ -15,7 +15,7 @@ import {
     DEFAULT_CURRENCY,
     PLANS,
     PLAN_NAMES,
-    PLAN_SERVICES,
+    type PLAN_SERVICES,
     PLAN_TYPES,
     TRIAL_MAX_DEDICATED_IPS,
     TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
@@ -749,36 +749,6 @@ export const getPlanOffer = (plan: Plan) => {
         result.valid = true;
     }
     return result;
-};
-
-const IPS_INCLUDED_IN_PLAN: Partial<Record<PLANS, number>> = {
-    [PLANS.VPN_BUSINESS]: 1,
-    [PLANS.BUNDLE_PRO]: 0,
-    [PLANS.BUNDLE_PRO_2024]: 0,
-} as const;
-
-/**
- * Currently there is no convenient way to get the number of IPs for a VPN subscription.
- * There is no dedicated field for that in the API.
- * That's a hack that counts the number of IP addons.
- */
-export const getVPNDedicatedIPs = (subscription: Subscription | FreeSubscription | undefined) => {
-    const planName = getPlanName(subscription, PLAN_SERVICES.VPN);
-
-    // If you have other VPN plans, they don't have dedicated IPs
-    if (!planName) {
-        return 0;
-    }
-
-    // Some plans might have included IPs without any indication on the backend.
-    // For example, 1 IP is included in the Business plan
-    const includedIPs =
-        planName in IPS_INCLUDED_IN_PLAN ? (isTrial(subscription) ? 1 : IPS_INCLUDED_IN_PLAN[planName] || 0) : 0;
-
-    return (subscription as Subscription).Plans.reduce(
-        (acc, { Name: addonOrPlanName, Quantity }) => acc + (isIpAddon(addonOrPlanName) ? Quantity : 0),
-        includedIPs
-    );
 };
 
 export const getHasCoupon = (subscription: Subscription | undefined, coupon: string) => {
