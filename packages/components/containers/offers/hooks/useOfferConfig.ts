@@ -15,6 +15,22 @@ import { anniversary2025PassPlus } from '../operations/anniversary2025PassPlus/c
 import { useAnniversary2025PassPlus } from '../operations/anniversary2025PassPlus/useOffer';
 import { anniversary2025VPNPlus } from '../operations/anniversary2025VPNPlus/configuration';
 import { useAnniversary2025VPNPlus } from '../operations/anniversary2025VPNPlus/useOffer';
+import { backToSchoolBundle } from '../operations/backToSchoolBundle/configuration';
+import { useBackToSchoolBundle } from '../operations/backToSchoolBundle/useOffer';
+import { backToSchoolDrivePlus } from '../operations/backToSchoolDrivePlus/configuration';
+import { useBackToSchoolDrivePlus } from '../operations/backToSchoolDrivePlus/useOffer';
+import { backToSchoolDuo } from '../operations/backToSchoolDuo/configuration';
+import { useBackToSchoolDuo } from '../operations/backToSchoolDuo/useOffer';
+import { backToSchoolFamily } from '../operations/backToSchoolFamily/configuration';
+import { useBackToSchoolFamily } from '../operations/backToSchoolFamily/useOffer';
+import { backToSchoolMailPlus } from '../operations/backToSchoolMailPlus/configuration';
+import { useBackToSchoolMailPlus } from '../operations/backToSchoolMailPlus/useOffer';
+import { backToSchoolMailPlusToYearly } from '../operations/backToSchoolMailPlusToYearly/configuration';
+import { useBackToSchoolMailPlusToYearly } from '../operations/backToSchoolMailPlusToYearly/useOffer';
+import { useBackToSchoolPassPlus } from '../operations/backToSchoolPassPlus/useOffer';
+import { useBackToSchoolPassPlusToYearly } from '../operations/backToSchoolPassPlusToYearly/useOffer';
+import { useBackToSchoolVPNPlus } from '../operations/backToSchoolVPNPlus/useOffer';
+import { useBackToSchoolVPNPlusToYearly } from '../operations/backToSchoolVPNPlusToYearly/useOffer';
 import { goUnlimited2022Config } from '../operations/goUnlimited2022/configuration';
 import { useGoUnlimited2022 } from '../operations/goUnlimited2022/useOffer';
 import { mailTrial2023Config } from '../operations/mailTrial2023/configuration';
@@ -33,6 +49,16 @@ const configs: Record<OfferId, OfferConfig> = {
     'anniversary-2025-bundle': anniversary2025Bundle,
     'anniversary-2025-duo': anniversary2025Duo,
     'anniversary-2025-family': anniversary2025Family,
+    'back-to-school-drive-plus': backToSchoolDrivePlus,
+    'back-to-school-mail-plus': backToSchoolMailPlus,
+    'back-to-school-mail-plus-to-yearly': backToSchoolMailPlusToYearly,
+    'back-to-school-vpn-plus': backToSchoolDrivePlus,
+    'back-to-school-vpn-plus-to-yearly': backToSchoolMailPlusToYearly,
+    'back-to-school-pass-plus': backToSchoolMailPlus,
+    'back-to-school-pass-plus-to-yearly': backToSchoolMailPlusToYearly,
+    'back-to-school-bundle': backToSchoolBundle,
+    'back-to-school-duo': backToSchoolDuo,
+    'back-to-school-family': backToSchoolFamily,
 };
 
 const OFFERS_FEATURE_FLAGS = Object.values(configs).map(({ featureCode }) => featureCode);
@@ -40,6 +66,17 @@ const OFFERS_FEATURE_FLAGS = Object.values(configs).map(({ featureCode }) => fea
 const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
     // Preload FF to avoid single API requests
     useFeatures([FeatureCode.Offers, ...OFFERS_FEATURE_FLAGS]);
+
+    const backToSchoolMailPlus = useBackToSchoolMailPlus();
+    const backToSchoolMailPlusToYearly = useBackToSchoolMailPlusToYearly();
+    const backToSchoolDrivePlus = useBackToSchoolDrivePlus();
+    const backToSchoolVPNPlus = useBackToSchoolVPNPlus();
+    const backToSchoolVPNPlusToYearly = useBackToSchoolVPNPlusToYearly();
+    const backToSchoolPassPlus = useBackToSchoolPassPlus();
+    const backToSchoolPassPlusToYearly = useBackToSchoolPassPlusToYearly();
+    const backToSchoolBundle = useBackToSchoolBundle();
+    const backToSchoolDuo = useBackToSchoolDuo();
+    const backToSchoolFamily = useBackToSchoolFamily();
 
     // Other offers
     const passFamilyPlan2024Yearly = usePassFamilyPlan2024Yearly();
@@ -57,6 +94,17 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
 
     // Offer order matters
     const allOffers: Operation[] = [
+        backToSchoolMailPlus,
+        backToSchoolMailPlusToYearly,
+        backToSchoolDrivePlus,
+        backToSchoolVPNPlus,
+        backToSchoolVPNPlusToYearly,
+        backToSchoolPassPlus,
+        backToSchoolPassPlusToYearly,
+        backToSchoolBundle,
+        backToSchoolDuo,
+        backToSchoolFamily,
+
         anniversary2025MailPlus,
         anniversary2025DrivePlus,
         anniversary2025VPNPlus,
