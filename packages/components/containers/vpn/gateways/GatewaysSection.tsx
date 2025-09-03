@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, Href } from '@proton/atoms';
@@ -16,7 +15,7 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { PLANS, getCountryOptions, getVPNDedicatedIPs } from '@proton/payments';
+import { PLANS, getCountryOptions } from '@proton/payments';
 import { MINUTE, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { Organization } from '@proton/shared/lib/interfaces';
@@ -62,7 +61,6 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
     const [user] = useUser();
     const { createNotification } = useNotifications();
     const [userSettings] = useUserSettings();
-    const [subscription] = useSubscription();
     const [deletedLogicals, setDeletedLogicals] = useState<Record<string, boolean>>({});
     const [deletingLogicals, setDeletingLogicals] = useState<readonly string[]>([]);
     const [updatedLogicals, setUpdatedLogicals] = useState<Record<string, GatewayLogical>>({});
@@ -110,7 +108,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
     const { sortedList } = useSortedList(allGateways as Gateway[], { key: 'Name', direction: SORT_DIRECTION.ASC });
     const [openSubscriptionModal] = useSubscriptionModal();
 
-    if (!organization || !user || !subscription || !gateways || !locations) {
+    if (!organization || !user || !gateways || !locations) {
         return <Loader />;
     }
 
@@ -209,7 +207,8 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
 
     const isDeleted = (logical: GatewayLogical): boolean => !logical.Visible && logical.Servers?.length > 0;
 
-    const ipAddresses = getVPNDedicatedIPs(subscription);
+    const ipAddresses = organization?.MaxDedicatedIPs ?? 0;
+
     const deletedInCountries: Record<string, number> = {};
     const ipCount = allGateways.reduce((total, gateway) => {
         return (
