@@ -44,26 +44,64 @@
 	color: #8b7cf6; /* Fallback color */
 	background: linear-gradient(135deg, #FFAC2E 15.77%, #DD5DCC 38.40%, #1BA3FD 75.93%, #5325A2 99.84%);
 	background-clip: text;
-	background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 
 .sidebar {
 	background-color: inherit;
 
-	// Safari performance optimizations
-	will-change: transform;
-	backface-visibility: hidden;
-	transform: translateZ(0);
+	// Smooth width transitions for desktop
+	transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
 
-	// Smooth transitions for Safari
-	transition:
-		transform 0.3s ease-in-out,
-		inline-size 0.3s ease-in-out;
+	// Hardware acceleration
+	will-change: width, transform;
+	backface-visibility: hidden;
+
+	// Only apply translateZ on desktop to avoid conflicts with mobile translateX
+	@media (min-width: 769px) {
+		transform: translateZ(0);
+	}
 
 	&--collapsed {
-		// Hardware acceleration for collapsed state
-		transform: translateZ(0);
+		width: 64px; // Collapsed width - fits icons + padding
+	}
+
+	&:not(.sidebar--collapsed) {
+		width: 260px; // Expanded width - comfortable for text
+	}
+
+	// Mobile sidebar transitions - true overlay that doesn't affect layout
+	@media (max-width: 768px) {
+		position: fixed !important;
+		top: 0 !important;
+		left: 0 !important;
+		height: 100vh !important;
+		z-index: 100 !important;
+		width: 260px !important; // Always full width on mobile
+
+		// Force transitions to work even with immediate class changes
+		transition: transform 0.3s ease-in-out !important;
+		will-change: transform !important;
+
+		// Mobile hidden state - completely off-screen (default state)
+		transform: translateX(-100%) !important;
+
+		// Mobile overlay state - slide into view as overlay
+		&.sidebar-expanded {
+			transform: translateX(0) !important;
+		}
+
+		// Ensure transition works both ways
+		&:not(.sidebar-expanded) {
+			transform: translateX(-100%) !important;
+		}
+
+		// Ensure sidebar doesn't affect main content layout
+		margin: 0 !important;
+		padding: 0 !important;
+		// Remove any width that might affect layout calculations
+		flex: none !important;
+		flex-basis: auto !important;
 	}
 }
 
@@ -76,18 +114,96 @@
 	transform: translateZ(0);
 }
 
-// Safari-specific backdrop optimizations
+// Sidebar backdrop - base properties (mobile enhancements in LumoSidebar.scss)
 .sidebar-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	opacity: 1;
+	pointer-events: auto;
+	z-index: 90; // Behind sidebar (which is z-index: 100) but above content
+
 	// Use hardware acceleration for backdrop
 	will-change: opacity;
 	backface-visibility: hidden;
 	transform: translateZ(0);
 
 	// Smooth backdrop transitions
-	transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
 }
 
-// prevent extra padding in sidebar
+// Smooth content transitions in sidebar
+.sidebar-content {
+	// Use hardware acceleration for content transitions
+	will-change: opacity;
+	backface-visibility: hidden;
+	transform: translateZ(0);
+
+	// Prevent layout thrashing during transitions
+	contain: layout style paint;
+
+	// Smooth content fade-in
+	transition: opacity 0.15s ease-in-out;
+
+	&.is-loading {
+		opacity: 0.9;
+	}
+
+	&.is-loaded {
+		opacity: 1;
+	}
+}
+
+.navigation-link.is-active,
+.is-active {
+	background-color: transparent !important;
+	color: var(--text-norm) !important;
+
+
+	&.navigation-link {
+		font-weight: 600 !important;
+		border-radius: 8px;
+	}
+}
+
+.navigation-link:hover,
+.sidebar-list-item-button:hover,
+button:hover:not(.is-active) {
+	background-color: var(--background-weak) !important;
+	color: var(--text-norm) !important;
+	border-radius: 8px;
+	transition: background-color 0.15s ease-in-out;
+}
+
+.sidebar button:hover,
+.sidebar .navigation-link:hover {
+	background-color: var(--background-weak) !important;
+	border-radius: 8px;
+}
+
+.sidebar-list-item-content {
+	.shrink-0 {
+		min-width: 1rem;
+		width: 1rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+
+		will-change: transform;
+		backface-visibility: hidden;
+		transform: translateZ(0);
+	}
+
+
+	.text-ellipsis {
+		transition: opacity 0.15s ease-in-out;
+		will-change: opacity;
+	}
+}
+
 .navigation > .navigation-list:last-child,
 .navigation > div > .navigation-list:last-child {
 	padding-block-end: 0;
@@ -95,7 +211,7 @@
 
 html,
 body {
-	// enforce light theme regardless of user settings
+
 	color-scheme: only light;
 }
 
@@ -126,14 +242,14 @@ body {
 }
 
 .chat-container {
-	// border: 1px solid;
+
 	border-image: linear-gradient(134.93deg, rgb(226 219 255 / 0.3) -0.55%, rgb(226 219 255 / 0) 29.89%);
 	border-image-slice: 1;
 	border-radius: 1rem;
 	background-color: #ffffff0d;
 }
 
-// override for circle progression color
+
 .circle-chart-circle {
 	stroke: var(--primary);
 }
@@ -148,12 +264,12 @@ body {
 	border: none;
 }
 
-// override input element to fix outline in firefox
+
 .input-element:focus {
 	outline: none;
 }
 
-// force minimal layout shifts to improve safari ux
+
 .ProseMirror {
 	will-change: contents;
 	contain: layout;
@@ -206,7 +322,7 @@ body {
 .markdown-rendering {
 	display: flex;
 	flex-direction: column;
-	gap: 0.75rem; // space-y-3
+	gap: 0.75rem;
 	color: #24292e;
 	contain: layout style;
 	word-break: break-word;
@@ -221,7 +337,7 @@ body {
 		margin-block-start: 0.75rem;
 	}
 
-	// If an element appears after a header, we'll customize the margin based on the header size
+
 	> h1,
 	> h2,
 	> h3,
@@ -261,8 +377,8 @@ body {
 		white-space: normal;
 	}
 
-	// markdownheader styles
-	$line-height: 1.2; // Consistent line-height
+
+	$line-height: 1.2;
 
 	@for $i from 1 through 6 {
 		h#{$i} {
@@ -342,7 +458,7 @@ body {
 	pre {
 		margin-block: 0.75rem;
 
-		// border: 1px solid #e1e4e8;
+
 		border-radius: 0.5rem;
 		padding-block: 1.25rem;
 		padding-inline: 1rem;
@@ -409,7 +525,7 @@ body {
 		line-height: 1;
 	}
 
-	// markdown task list styles
+
 	ul.contains-task-list {
 		margin-inline-start: 0;
 
@@ -463,7 +579,7 @@ body {
 		overflow: visible;
 	}
 
-	// Token colors for syntax highlighting
+
 	.token.comment,
 	.token.prolog,
 	.token.doctype,
@@ -497,7 +613,7 @@ body {
 		color: #98c379;
 	}
 
-	// Skeleton loading animation
+
 	@keyframes loading {
 		0% {
 			background-position: 200% 0;
@@ -511,10 +627,10 @@ body {
 
 .link-over-btn {
 	&:hover {
-		color: var(--primary-hover); // hover:text-primary-hover
+		color: var(--primary-hover);
 	}
 
-	cursor: pointer; // cursor-pointer
+	cursor: pointer;
 }
 
 @media print {
@@ -544,7 +660,6 @@ body {
 	}
 }
 
-// override for Prompt component size
 .prompt {
 	&#{&} {
 		--size: #{rem(320)};
