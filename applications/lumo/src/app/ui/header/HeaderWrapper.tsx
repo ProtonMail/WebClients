@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { memo, useMemo } from 'react';
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -8,7 +8,6 @@ import { Href } from '@proton/atoms';
 import { Hamburger } from '@proton/components';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import lumoLogo from '@proton/styles/assets/img/lumo/lumo-logo-V3.svg';
-import lumoPlusLogo from '@proton/styles/assets/img/lumo/lumo-plus-logo.svg';
 
 import { useGuestChatHandler } from '../../hooks/useGuestChatHandler';
 // import { useLumoPlan } from '../../hooks/useLumoPlan';
@@ -16,17 +15,11 @@ import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
 import { GuestChatDisclaimerModal } from '../components/GuestChatDisclaimerModal';
+import LumoPlusLogoInline from '../components/LumoPlusLogoInline';
 
 export const LumoLogo = memo(() => {
     const { isGuest, handleGuestClick, handleDisclaimerClose, disclaimerModalProps } = useGuestChatHandler();
     const { hasLumoSeat } = useLumoPlan();
-
-    const logoSrc = useMemo(() => {
-        if (isGuest) {
-            return lumoLogo;
-        }
-        return hasLumoSeat ? lumoPlusLogo : lumoLogo;
-    }, [isGuest, hasLumoSeat]);
 
     const onGuestClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
@@ -37,7 +30,7 @@ export const LumoLogo = memo(() => {
         return (
             <>
                 <Link to="/" onClick={onGuestClick}>
-                    <img src={logoSrc} alt={LUMO_SHORT_APP_NAME} />
+                    <img src={lumoLogo} alt={LUMO_SHORT_APP_NAME} />
                 </Link>
                 {disclaimerModalProps.render && (
                     <GuestChatDisclaimerModal onClick={handleDisclaimerClose} {...disclaimerModalProps.modalProps} />
@@ -48,7 +41,7 @@ export const LumoLogo = memo(() => {
 
     return (
         <Link to="/">
-            <img src={logoSrc} alt={LUMO_SHORT_APP_NAME} />
+            {hasLumoSeat ? <LumoPlusLogoInline height="21px" /> : <img src={lumoLogo} alt={LUMO_SHORT_APP_NAME} />}
         </Link>
     );
 });

@@ -12,7 +12,6 @@ import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS, UPSELL_COMPONENT } from '@proto
 import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import lumoCatPlusCollar from '@proton/styles/assets/img/lumo/lumo-cat-plus-collar.svg';
 import lumoLogoFull from '@proton/styles/assets/img/lumo/lumo-logo-full.svg';
-import lumoPlusLogo from '@proton/styles/assets/img/lumo/lumo-plus-logo.svg';
 
 import { LUMO_PLUS_FREE_PATH_TO_ACCOUNT, LUMO_UPGRADE_TRIGGER_CLASS } from '../../../constants';
 import { useLumoCommon } from '../../../hooks/useLumoCommon';
@@ -20,6 +19,7 @@ import { useLumoPlan } from '../../../hooks/useLumoPlan';
 import { getInitials } from '../../../util/username';
 import CreateFreeAccountLink from '../CreateFreeAccountLink/CreateFreeAccountLink';
 import GetLumoPlusGuestButton from '../GetLumoPlusGuestButton/GetLumoPlusGuestButton';
+import LumoPlusLogoInline from '../LumoPlusLogoInline';
 import { SignInLinkButton } from '../SignInLink';
 import DeleteAllButton from './DeleteAllButton';
 
@@ -146,7 +146,7 @@ const LumoSettingsUpgradePanel = ({ isGuest = false }: { isGuest?: boolean }) =>
             <div className="flex flex-column flex-nowrap gap-4 flex-1">
                 {/* Header */}
                 <div className="flex items-center gap-2">
-                    <img src={lumoPlusLogo} alt="lumo+" style={{ height: '20px' }} />
+                    <LumoPlusLogoInline height="20px" />
                 </div>
 
                 {/* Subscription status message */}
