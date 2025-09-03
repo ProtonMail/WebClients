@@ -380,7 +380,6 @@ export {
     getUpgradedPlan,
     getValidAudience,
     getValidCycle,
-    getVPNDedicatedIPs,
     hasAddons,
     hasAIAssistant,
     hasAllProductsB2CPlan,

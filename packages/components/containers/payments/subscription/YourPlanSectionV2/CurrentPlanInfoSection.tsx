@@ -84,7 +84,7 @@ export const CurrentPlanInfoSection = ({
 
     const { UsedSpace = space.usedSpace, MaxSpace = space.maxSpace, MaxMembers = 1 } = organization || {};
 
-    const { userText } = getSubscriptionPanelText(user, organization, addresses, subscription);
+    const { userText } = getSubscriptionPanelText(user, organization, addresses);
 
     const showCustomizePlan = user.isPaid && user.canPay && getIsB2BAudienceFromSubscription(subscription);
 
@@ -149,7 +149,7 @@ export const CurrentPlanInfoSection = ({
                 <UsersSection MaxMembers={MaxMembers} userText={userText} />
                 <StorageSection user={user} usedSpace={UsedSpace} maxSpace={MaxSpace} />
                 <BillingDateSection subscription={subscription} />
-                <ServersSection subscription={subscription} />
+                <ServersSection organization={organization} />
                 <FreeVPNFeatures serversCount={serversCount} isFreeUser={isFree} />
             </div>
             {cta && <div className="flex items-center w-full xl:w-auto">{cta}</div>}
