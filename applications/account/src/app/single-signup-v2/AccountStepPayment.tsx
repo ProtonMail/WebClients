@@ -206,7 +206,7 @@ const AccountStepPayment = ({
                 await changeDefaultPaymentMethodBeforePayment(
                     normalApi,
                     source,
-                    // eslint-disable-next-line @typescript-eslint/no-use-before-define
+
                     paymentFacade.methods.savedMethods ?? []
                 );
 
@@ -468,6 +468,10 @@ const AccountStepPayment = ({
                                 return guaranteeElement;
                             }}
                             formInvalid={!isFormValid}
+                            // optimistic check result means that we didn't perform the actual check call because it was
+                            // forbidden due to combination of current subscription and the new plan/cycle/currency.
+                            // We aren't allowed to re-subscribe the same plan.
+                            disabled={model.subscriptionData.checkResult.optimistic}
                             {...buttonProps}
                         >
                             {isBitcoin ? c('pass_signup_2023: Action').t`Continue with Bitcoin` : cta}

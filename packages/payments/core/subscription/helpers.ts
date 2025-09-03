@@ -973,7 +973,7 @@ export function isForbiddenLumoPlus({
     plansMap,
 }: {
     subscription: Subscription | FreeSubscription | null | undefined;
-    newPlanName: PLANS | undefined;
+    newPlanName: PLANS | ADDON_NAMES | undefined;
     plansMap: PlansMap;
 }) {
     if (!subscription || newPlanName !== PLANS.LUMO) {
