@@ -181,7 +181,6 @@ enum MailFeatureFlag {
     ProtonTips = 'ProtonTips',
     ReplayOnboardingModal = 'ReplayOnboardingModal',
     MailMetrics = 'MailMetrics',
-    RemoveImageMetadata = 'RemoveImageMetadata',
     MailWebListTelemetry = 'MailWebListTelemetry',
     MailPostSignupOneDollarPromo = 'MailPostSignupOneDollarPromo',
     SubscriberNudgeMailMonthly = 'SubscriberNudgeMailMonthly',
