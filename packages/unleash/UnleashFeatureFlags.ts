@@ -185,7 +185,6 @@ enum MailFeatureFlag {
     MailPostSignupOneDollarPromo = 'MailPostSignupOneDollarPromo',
     SubscriberNudgeMailMonthly = 'SubscriberNudgeMailMonthly',
     RemoveReplyStyles = 'RemoveReplyStyles',
-    MailboxOptimisticRefactoring = 'MailboxOptimisticRefactoring',
     // Category view flags
     // Used to control the whole category view
     CategoryView = 'CategoryView',
