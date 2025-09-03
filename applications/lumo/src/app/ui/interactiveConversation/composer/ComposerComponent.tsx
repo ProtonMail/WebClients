@@ -8,9 +8,12 @@ import { Button, Tooltip } from '@proton/atoms';
 import { Icon, useNotifications } from '@proton/components';
 import { IcGlobe, IcMicrophone, IcPaperClip } from '@proton/icons';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 import lumoStart from '@proton/styles/assets/img/illustrations/lumo-arrow.svg';
 import lumoStop from '@proton/styles/assets/img/illustrations/lumo-stop.svg';
 import useFlag from '@proton/unleash/useFlag';
+
+import { MAX_FILE_SIZE } from '../../../constants';
 
 import type { HandleSendMessage } from '../../../hooks/useLumoActions';
 import { useTierErrors } from '../../../hooks/useTierErrors';
@@ -161,6 +164,17 @@ export const ComposerComponent = ({
     const handleFileProcessing = useCallback(
         async (file: File) => {
             try {
+                // Check file size limit first
+                if (file.size > MAX_FILE_SIZE) {
+                    const maxSizeFormatted = humanSize({ bytes: MAX_FILE_SIZE, unit: 'MB', fraction: 0 });
+                    const fileSizeFormatted = humanSize({ bytes: file.size, unit: 'MB', fraction: 1 });
+                    createNotification({
+                        text: c('collider_2025: Error').t`File "${file.name}" is too large (${fileSizeFormatted}). Maximum allowed size is ${maxSizeFormatted}.`,
+                        type: 'error',
+                    });
+                    return;
+                }
+
                 // Log file processing start for user feedback
                 console.log(`Starting file processing: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`);
 
@@ -206,7 +220,7 @@ export const ComposerComponent = ({
                 });
             }
         },
-        [dispatch, createNotification]
+        [dispatch, createNotification, messageChain]
     );
 
     const handleFileInputChange = useCallback(
