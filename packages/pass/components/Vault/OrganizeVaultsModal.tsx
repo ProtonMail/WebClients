@@ -12,11 +12,11 @@ import { isShareVisible } from '@proton/pass/lib/shares/share.predicates';
 import { intoShareVisibilityMap } from '@proton/pass/lib/shares/share.utils';
 import { sharesVisibilityEdit } from '@proton/pass/store/actions';
 import { selectAllVaults, selectRequestInFlight } from '@proton/pass/store/selectors';
-import type { ShareId, ShareVisibilityMap } from '@proton/pass/types';
+import type { ShareId, ShareVisibilityMap, VaultsVisibilityDTO } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
 const FORM_ID = 'organize-vaults';
-type Props = { onClose: () => void; onConfirm: (visibilityMap: ShareVisibilityMap) => void };
+type Props = { onClose: () => void; onConfirm: (visibility: VaultsVisibilityDTO) => void };
 
 export const OrganizeVaultsModal: FC<Props> = ({ onClose, onConfirm }) => {
     const vaults = useSelector(selectAllVaults);
@@ -30,17 +30,22 @@ export const OrganizeVaultsModal: FC<Props> = ({ onClose, onConfirm }) => {
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        /** Only include shares with changed visibility states. This prevents
-         * issues when the initial visibility map becomes stale due to background
-         * share updates while the modal is open. */
-        const changeMap = vaults.reduce<ShareVisibilityMap>((acc, vault) => {
-            if (isShareVisible(vault) !== visibilityMap[vault.shareId]) {
-                acc[vault.shareId] = visibilityMap[vault.shareId];
-            }
-            return acc;
-        }, {});
+        const dto = vaults.reduce<VaultsVisibilityDTO>(
+            (acc, vault) => {
+                /** Only include shares with changed visibility states. This
+                 * prevents issues when the initial visibility map becomes stale
+                 * due to background share updates while the modal is open. */
+                if (isShareVisible(vault) !== visibilityMap[vault.shareId]) {
+                    const visible = visibilityMap[vault.shareId];
+                    acc[visible ? 'sharesToUnhide' : 'sharesToHide'].push(vault.shareId);
+                }
 
-        onConfirm(changeMap);
+                return acc;
+            },
+            { sharesToHide: [], sharesToUnhide: [] }
+        );
+
+        onConfirm(dto);
     };
 
     return (
