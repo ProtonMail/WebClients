@@ -922,6 +922,9 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "無料の${ BRAND_NAME }アドレスを入手"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "無料の${ BRAND_NAME }アドレスを取得"
       ]
     },
     "action": {
@@ -4169,6 +4172,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "あなたのアカウントは割り当てられた ${ inviteSpace } を超える ${ usedSpace } のストレージを使用中です。一部のデータを削除するか、プラン管理者にストレージを増やしてもらう必要があります。"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "ファミリープランは現在外部のアカウントをサポートしていません。参加する前に${ BRAND_NAME }アドレスを作成してください。${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -8675,6 +8681,24 @@
       ],
       "VAT number": [
         "VAT番号"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName }を除く: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% の税金を除く: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName }: ${ taxAmount } を含む"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% の税金込み: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "税金"
+      ],
+      "VAT": [
+        "付加価値税"
       ]
     },
     "Payments.Error": {

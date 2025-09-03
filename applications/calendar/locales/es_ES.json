@@ -926,6 +926,9 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "Obtén una dirección gratuita de ${ BRAND_NAME }"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Obtén tu dirección gratuita de ${ BRAND_NAME }"
       ]
     },
     "action": {
@@ -4237,6 +4240,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Tu cuenta está usando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Los planes familiares actualmente no admiten cuentas externas. Crea una dirección de ${ BRAND_NAME } antes de unirte. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -8861,6 +8867,24 @@
       ],
       "VAT number": [
         "Número de IVA"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Impuestos"
+      ],
+      "VAT": [
+        "IVA"
       ]
     },
     "Payments.Error": {

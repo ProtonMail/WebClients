@@ -2692,6 +2692,9 @@
       ],
       "ZIP code is required": [
         "Poštanski broj je obavezan"
+      ],
+      "Failed to open to contact": [
+        "Neuspješno otvaranje kontakta"
       ]
     },
     "Error accepting calendar invitation": {
@@ -2939,6 +2942,9 @@
       ],
       "Manage addresses": [
         "Upravljanje adresama"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Obiteljski planovi pretplate trenutačno ne podržavaju vanjske korisničke račune. Izradite ${ BRAND_NAME } adresu prije pridraživanja. ${ link }"
       ]
     },
     "familyOffer_2023:Member downgrade modal": {
@@ -4625,6 +4631,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Više informacija"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Za nastavak korištenja ${ BRAND_NAME }, provjerite da vaše premium značajke više nisu u upotrebi ili nadogradite svoj plan."
       ]
     },
     "Log preference": {
@@ -5669,6 +5678,24 @@
       ],
       "Timeout exceeded": [
         "Prekoračeno je vremensko ograničenje"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Bez ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Bez ${ taxRate }% poreza: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Uključujući ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Uključujući ${ taxRate }% poreza: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Porezi"
+      ],
+      "VAT": [
+        "Porez"
       ]
     },
     "Payments.Error": {

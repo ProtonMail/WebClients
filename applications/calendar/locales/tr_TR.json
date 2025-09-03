@@ -926,6 +926,9 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "Ücretsiz bir ${ BRAND_NAME } adresi alın"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Ücretsiz ${ BRAND_NAME } adresinizi alın"
       ]
     },
     "action": {
@@ -4237,6 +4240,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Hesabınız, size ayrılmış ${ inviteSpace } boyutunu aşan ${ usedSpace } depolama alanı kullanıyor. Bazı verileri silin ya da tarife yöneticisinden depolama alanınızı artırmasını isteyin."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi alın. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -8861,6 +8867,24 @@
       ],
       "VAT number": [
         "KDV numarası"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "%${ taxRate } ${ taxName } hariç: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "%${ taxRate } vergi hariç: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "%${ taxRate } ${ taxName } dahil: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "%${ taxRate } vergi dahil: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Vergiler"
+      ],
+      "VAT": [
+        "KDV"
       ]
     },
     "Payments.Error": {

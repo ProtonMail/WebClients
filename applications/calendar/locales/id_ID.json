@@ -916,6 +916,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Masa uji coba aplikasi desktop Anda akan berakhir pada ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Claim this address": [
+        "Klaim alamat ini"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Klaim alamat ${ BRAND_NAME } gratis Anda"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Dapatkan alamat ${ BRAND_NAME } gratis"
       ]
     },
     "action": {
@@ -3774,6 +3783,9 @@
       ],
       "ZIP code is required": [
         "Kode pos diperlukan"
+      ],
+      "Failed to open to contact": [
+        "Kontak gagal dibuka"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4160,6 +4172,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Akun Anda menggunakan ruang penyimpanan sebesar ${ usedSpace }, yang melebihi batas ${ inviteSpace } yang dialokasikan kepada Anda. Hapus sebagian data atau minta kepada admin paket untuk meningkatkan ruang penyimpanan Anda."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Paket keluarga saat ini tidak mendukung akun eksternal. Silakan buat alamat ${ BRAND_NAME } sebelum bergabung. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -5999,6 +6014,12 @@
       ],
       "${ planName } expires today.": [
         "${ planName } akan kedaluwarsa hari ini."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } memerlukan alamat ${ BRAND_NAME } untuk sinkronisasi dan pengenkripsian acara yang aman. ${ claimAddressButton }"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Pastikan komunikasi yang sepenuhnya privat dan terenkripsi. Klaim alamat email ${ BRAND_NAME } gratis Anda sekarang juga."
       ]
     },
     "info": {
@@ -6868,6 +6889,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Langganan Anda telah berakhir. ${ cta } dan mencegah hilangnya data."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Untuk terus menggunakan ${ BRAND_NAME }, silakan pastikan seluruh fitur premium Anda sudah tidak lagi digunakan atau tingkatkan paket Anda."
       ]
     },
     "Log preference": {
@@ -8654,6 +8678,27 @@
       ],
       "Your payment is still being processed": [
         "Pembayaran Anda masih diproses"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Tanpa termasuk ${ taxName } ${ taxRate }%: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Tanpa termasuk pajak ${ taxRate }%: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Meliputi ${ taxName } ${ taxRate }%: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Meliputi pajak ${ taxRate }%: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Pajak"
+      ],
+      "VAT": [
+        "PPN"
+      ],
+      "VAT number": [
+        "Nomor PPN"
       ]
     },
     "Payments.Error": {
@@ -8709,6 +8754,30 @@
       ],
       "VAT number": [
         "Nomor PPN"
+      ],
+      "Add ABN": [
+        "Tambah ABN"
+      ],
+      "Add Business Number": [
+        "Sunting Nomor Bisnis"
+      ],
+      "Add EIN": [
+        "Tambah EIN"
+      ],
+      "Add VAT number": [
+        "Tambah nomor PPN"
+      ],
+      "Edit ABN": [
+        "Sunting ABN"
+      ],
+      "Edit Business Number": [
+        "Sunting Nomor Bisnis"
+      ],
+      "Edit EIN": [
+        "Sunting EIN"
+      ],
+      "Edit VAT number": [
+        "Sunting nomor PPN"
       ]
     },
     "PGP key encryption warning": {
@@ -8864,6 +8933,9 @@
       ],
       "VAT number": [
         "Nomor PPN"
+      ],
+      "Select country": [
+        "Pilih negara"
       ]
     },
     "Placeholder for contact group name": {
@@ -11071,6 +11143,9 @@
       ],
       "Edit billing address": [
         "Sunting alamat penagihan"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Klaim alamat ${ MAIL_APP_NAME } Anda"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

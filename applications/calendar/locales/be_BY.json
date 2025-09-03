@@ -816,7 +816,7 @@
         "Сёння"
       ],
       "Toggle Contacts app": [
-        "Пераключыць на праграму Кантакты"
+        "Пераключыць праграму Кантакты"
       ],
       "Toggle settings": [
         "Пераключэнне налад"
@@ -855,7 +855,7 @@
         "Палепшыць"
       ],
       "Upgrade for 200GB": [
-        "Палепшыць за 200 ГБ"
+        "Палепшыць да 200 ГБ"
       ],
       "Upgrade Now": [
         "Палепшыць"
@@ -934,6 +934,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Атрымайце свой бясплатны адрас ${ BRAND_NAME }"
       ]
     },
     "action": {
@@ -2976,7 +2979,7 @@
         "Дадайце папкі і файлы ў ${ DRIVE_APP_NAME } і запрасіце ўдзельнікаў каманды для прагляду або рэдагавання."
       ],
       "Also included": [
-        "Таксама ўключана"
+        "Таксама ўключае"
       ],
       "Automatically forward incoming email to another email address.": [
         "Аўтаматычна перасылайце ўваходныя лісты на іншы адрас электроннай пошты."
@@ -4243,7 +4246,7 @@
         "Кіраванне адрасамі"
       ],
       "Owners of a plan with members cannot join another family plan.": [
-        "Уладальнікі тарыфнага плана з удзельнікамі не могуць далучацца да іншых сямейных тарыфных планаў."
+        "Уладальнікі тарыфнага плана з удзельнікамі не могуць далучацца да іншага сямейнага тарыфнага плана."
       ],
       "Sorry, you can't switch plans at this time.": [
         "У дадзены момант змена тарыфнага плана недаступна."
@@ -4280,6 +4283,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш уліковы запіс выкарыстоўвае ${ usedSpace } сховішча, што перавышае абмежаванне на ${ inviteSpace }. Выдаліце некаторыя даныя або папрасіце адміністратара тарыфнага плана павялічыць даступны аб'ём у сховішчы."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Сямейныя тарыфныя планы ў цяперашні час не падтрымліваюць знешнія ўліковыя запісы. Перад далучэннем стварыце адрас ${ BRAND_NAME }. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -4824,7 +4830,7 @@
         "Імпартаваць з Google"
       ],
       "Import from other": [
-        "Імпартаваць з іншых паштовых сэрвісаў"
+        "Імпартаваць з іншых пастаўшчыкоў"
       ],
       "Import from Outlook": [
         "Імпартаваць з Outlook"
@@ -4921,7 +4927,7 @@
         "Знойдзена ${ groupCounts } груп"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME }"
+        "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME } Scribe"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
@@ -5113,7 +5119,7 @@
         "Любы карыстальнік з гэтай спасылкай зможа ўбачыць у вашым календары, ці маеце вы вольны час або заняты ўвесь дзень. Аднак, ён не зможа ўбачыць падрабязнасці падзеі, такія як загаловак, размяшчэнне або ўдзельнікаў."
       ],
       "Are you sure you want to discard your import?": [
-        "Вы сапраўды хочаце адхіліць імпартаванне?"
+        "Вы сапраўды хочаце адхіліць імпарт?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Прынамсі ${ BETTER_PASSWORD_LENGTH } сімвалаў"
@@ -5194,7 +5200,7 @@
         "Кантакт прызначаны групе ${ contactGroupName }"
       ],
       "Contact unassigned from group ${ contactGroupName }": [
-        "Прызначэнне кантакту скасавана ў групе ${ contactGroupName }"
+        "Прызначэнне кантакту скасавана з групы ${ contactGroupName }"
       ],
       "Copy the link to clipboard": [
         "Скапіяваць спасылку ў буфер абмену"
@@ -6148,7 +6154,7 @@
         "Вы дасягнулі максімальнай колькасці адрасоў у групе кантактаў:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
-        "Вы дасягнулі максімальнай колькасці адрасоў у групе кантактаў:"
+        "Вы дасягнулі максімальнай колькасці адрасоў у групе кантактаў."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. На 29 дзень лісты больш не будуць трапляць у вашу паштовую скрыню, а абагуленыя спасылкі на воблачным дыску будуць заблакіраваны, і вы больш не зможаце запампоўваць новыя файлы. Для ўзнаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
@@ -6196,7 +6202,7 @@
         "Ваш бясплатны пробны перыяд быў паспяхова пераўтвораны ў ${ cycle }-месячную падпіску. Яго падаўжэнне адбудзецца: ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Яго падаўжэнне адбудзецца: ${ nextBillingDate }."
+        "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Яе падаўжэнне адбудзецца: ${ nextBillingDate }."
       ],
       "Your information was found on ${ displayedDate }": [
         "Вашы звесткі былі знойдзены ${ displayedDate }"
@@ -7143,7 +7149,7 @@
         "Палепшыце, каб атрымаць поўны доступ"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ваша ${ driveStorage } запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ cta }."
+        "Ваша ${ driveStorage } запоўнена. Вызваліце месца або ${ cta }, каб запампоўваць або сінхранізаваць файлы."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
         "Ваша ${ mailStorage } запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ cta }."
@@ -7594,7 +7600,7 @@
         "${ options }-дзённая гісторыя версій файла"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
-        "Пажыццёвая прапанова ${ PASS_APP_NAME } + SimpleLogin"
+        "${ PASS_APP_NAME } + пажыццёвая прапанова SimpleLogin"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } з ${ n } псеўданімам hide-my-email",
@@ -8034,7 +8040,7 @@
         "Усе праграмы ${ BRAND_NAME } і іх прэміяльныя функцыі"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
-        "Усе праграмы для бізнесу ${ BRAND_NAME } і прэміяльныя функцыі для абароны ўсяго вашага бізнесу."
+        "Усе праграмы для бізнесу ${ BRAND_NAME } і прэміяльныя функцыі для абароны ўсё вашай кампаніі."
       ],
       "Early access to new apps and features": [
         "Ранні доступ да новых праграм і функцый"
@@ -8070,7 +8076,7 @@
         "Папулярны"
       ],
       "Protect sensitive business information and collaborate securely.": [
-        "Абарона адчувальных звестак бізнесу і бяспечнае супрацоўніцтва."
+        "Абарона адчувальнай інфармацыі бізнесу і бяспечнае супрацоўніцтва."
       ],
       "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
         "Абараніце сваю сям'ю з прэміяльнымі функцыямі ${ plusTitle } для 6 карыстальнікаў."
@@ -8223,7 +8229,7 @@
         "Меткі - гэта простыя тэгі, якія можна дадаваць да паведамленняў. Яны дазваляюць прасцей знаходзіць неабходныя лісты або ўжываць фільтры"
       ],
       "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
-        "Пажыццёвы доступ да прэміяльных функцый ${ PASS_APP_NAME } + SimpleLogin."
+        "Пажыццёвы доступ да ${ PASS_APP_NAME } + прэміяльныя функцыі SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Як і папка, сховішча з'яўляецца зручным спосаб арганізацыі вашых элементаў"
@@ -8244,7 +8250,7 @@
         "Магчымасць прагляду непрыватных уваходных лістоў карыстальнікаў так, як гэта робіць сам карыстальнік, уключаючы поўную інфармацыю пра паведамленні і кантактныя звесткі"
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
-        "Інструмент кіравання арганізацыяй, з дапамогай якога адміністратары могуць дадаваць/выдаляць карыстальнікаў, кіраваць сваім доступам да сэрвісаў ${ BRAND_NAME }, а таксама выконваць іншыя задачы."
+        "Інструмент кіравання арганізацыяй, з дапамогай якога адміністратары могуць дадаваць/выдаляць карыстальнікаў, кіраваць іх доступам да сэрвісаў ${ BRAND_NAME }, а таксама выконваць іншыя задачы."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Наша надзейная інфраструктура гарантуе вам пастаянны доступ да вашага ўліковага запісу"
@@ -8331,7 +8337,7 @@
         "Падтрымка пратаколаў абмену файламі, такіх як BitTorrent"
       ],
       "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
-        "Запампуйце ваш лагатып для бізнесу, каб персаналізаваць досвед вашых каманд у вэб-праграме ${ BRAND_NAME }"
+        "Запампуйце свой лагатып кампаніі, каб персаналізаваць досвед вашых каманд у вэб-праграме ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Выкарыстоўвайце свой уласны карыстальніцкі дамен электроннай пошты. Напрыклад, you@yourname.com"
@@ -8421,7 +8427,7 @@
     },
     "Notification": {
       "${ reason } has been disabled": [
-        "${ reason } было адключана"
+        "${ reason } быў адключаны"
       ],
       "${ reason } has been enabled": [
         "${ reason } было ўключана"
@@ -9058,7 +9064,7 @@
     },
     "Payments": {
       "Billing Country": [
-        "Краіна выстаўлення рахунка"
+        "Краіна выстаўлення рахунку"
       ],
       "Card number": [
         "Нумар карткі"
@@ -9070,7 +9076,7 @@
         "CVC"
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
-        "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змены. Дзякуй за ваша цярпенне."
+        "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змяненні. Дзякуй за ваша цярпенне."
       ],
       "Got it": [
         "Зразумела"
@@ -9140,6 +9146,24 @@
       ],
       "VAT number": [
         "Нумар ПДВ"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Без уліку ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Без уліку падатка ў ${ taxRate }%: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Уключае ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "З улікам падатка ў ${ taxRate }%: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Падаткі"
+      ],
+      "VAT": [
+        "ПДВ"
       ]
     },
     "Payments.Error": {
@@ -9234,7 +9258,7 @@
         "${ emailAddress } пазначыў гэты ключ як састарэлы. Гэты ключ можа выкарыстоўвацца толькі для праверкі подпісу."
       ],
       "External key automatically fetched from keys.openpgp.org.": [
-        "Знешні ключ аўтаматычна атрыманы з сайта keys.openpgp.org."
+        "Знешні ключ аўтаматычна атрыманы з вэб-сайта keys.openpgp.org."
       ],
       "External key automatically fetched via WKD.": [
         "Знешні ключ аўтаматычна атрыманы праз WKD."
@@ -9568,10 +9592,10 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Выяўлены іншыя патэнцыяльныя ўцечкі ${ name } і ${ remainingCount }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+        "Выяўлены іншыя патэнцыяльныя ўцечкі з назвай ${ name } і колькасцю роўнай ${ remainingCount }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Выяўлены ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+        "Выяўлена ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
@@ -9794,7 +9818,7 @@
         "Калі вы выйдзеце з сістэмы да скідання пароля, вы можаце страціць доступ да вашага ўліковага запісу."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "Вы можаце страціць доступ да вашага ўліковага запісу, калі выйсці з сістэмы без скідання пароля."
+        "Вы можаце страціць доступ да вашага ўліковага запісу, калі выйдзіце з сістэмы без скідання пароля."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "Вы зможаце скінуць свой пароль праз ${ boldTimeLeft }."
@@ -9871,7 +9895,7 @@
     },
     "Slack": {
       "Join Slack huddle": [
-        "Далучыцца да Slack Huddle"
+        "Далучайцеся да Slack Huddle"
       ]
     },
     "SmartBanner": {
@@ -10107,7 +10131,7 @@
         "Абараніце свой уліковы запіс ад пагроз з дамогай Sentinel"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
-        "Палепшыце свой тарыфны план і зэканомце больш грошай, купіўшы ${ planName } на 2 гады"
+        "Палепшыце свой тарыфны план і зэканомце больш грошай з ${ planName } на 2 гады"
       ]
     },
     "specialoffer: Tooltip": {
@@ -10630,7 +10654,7 @@
         "Ваша падпіска на тарыфным плане ${ planName } міне ${ expiryDate }. Будуць дададзены крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
-        "Ваш тарыфны план ${ planName } не толькі захоўвае вашы дзелавыя даныя і бяспеку зносін, але і падтрымлівае выкананне вашых патрабаванняў, вылучае ваш бізнес і захоўвае сувязь паміж вашай камандай."
+        "Ваш тарыфны план ${ planName } не толькі захоўвае вашы дзелавыя даныя і бяспеку зносін, але і падтрымлівае выкананне вашых мэт, вылучае ваш бізнес і захоўвае сувязь паміж вашай камандай."
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
