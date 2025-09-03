@@ -16,30 +16,34 @@ export interface Organization {
     ToMigrate: 0 | 1 | 2;
     BrokenSKL: 0 | 1;
     Email: string;
+
     MaxDomains: number;
     MaxAddresses: number;
     MaxCalendars: number;
     MaxSpace: number;
     MaxMembers: number;
     MaxAI: number;
+    MaxVPN: number;
     MaxLumo: number;
     MaxWallets: number;
     MaxSubWallets: number;
-    IsScimEnabled: boolean;
-    MaxVPN: number;
-    Features: number; // bits: 1 = catch-all addresses
-    Flags: number; // bits: 1 = loyalty, 2 = covid, 4 = smtp_submission, 8 = no_cycle_scheduled, 64 = dissident, 128 = proton, 256 = has phone support
+    MaxDedicatedIPs: number;
+
     UsedDomains: number;
-    UsedCalendars: number;
-    RequiresKey: number; // greater than 0 if the organization requires a key to be setup
-    RequiresDomain: number; // greater than 0 of the organization requires custom domain
     UsedAddresses: number;
+    UsedCalendars: number;
     UsedSpace: number;
-    AssignedSpace: number;
     UsedMembers: number;
-    UsedVPN: number;
     UsedAI: number;
     UsedLumo: number;
+    UsedVPN: number;
+
+    IsScimEnabled: boolean;
+    Features: number; // bits: 1 = catch-all addresses
+    Flags: number; // bits: 1 = loyalty, 2 = covid, 4 = smtp_submission, 8 = no_cycle_scheduled, 64 = dissident, 128 = proton, 256 = has phone support
+    RequiresKey: number; // greater than 0 if the organization requires a key to be setup
+    RequiresDomain: number; // greater than 0 of the organization requires custom domain
+    AssignedSpace: number;
     InvitationsRemaining: number;
     HasKeys: number;
     CreateTime: number;
