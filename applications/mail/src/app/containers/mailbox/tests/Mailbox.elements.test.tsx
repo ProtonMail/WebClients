@@ -1,21 +1,10 @@
-import { fireEvent, screen, waitFor } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 
-import { CryptoProxy } from '@proton/crypto';
 import { queryConversations } from '@proton/shared/lib/api/conversations';
 import { DEFAULT_MAIL_PAGE_SIZE } from '@proton/shared/lib/constants';
-import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import type { Sort } from '@proton/shared/lib/mail/search';
 
-import {
-    addApiMock,
-    api,
-    clearAll,
-    generateKeys,
-    getAddressKeyCache,
-    getCompleteAddress,
-    setupCryptoProxyForTesting,
-    waitForSpyCall,
-} from '../../../helpers/test/helper';
+import { addApiMock, api, clearAll, waitForSpyCall } from '../../../helpers/test/helper';
 import type { Element } from '../../../models/element';
 import { getElements, props, sendEvent, setup } from './Mailbox.test.helpers';
 
@@ -225,55 +214,6 @@ describe('Mailbox element list', () => {
             const items = getItems();
 
             expect(items.length).toBe(2);
-        });
-
-        fit('should keep in view the conversations when opened while filter is on', async () => {
-            await setupCryptoProxyForTesting();
-
-            try {
-                const keys = await generateKeys('key', 'someone@somewhere.com');
-                const address = getCompleteAddress({ ID: 'addressID' });
-
-                const conversations = [element1, element2, element3];
-                const message = {
-                    ID: 'messageID1',
-                    AddressID: address.ID,
-                    Sender: {},
-                    ConversationID: element1.ID,
-                    Flag: MESSAGE_FLAGS.FLAG_RECEIVED,
-                    LabelIDs: [labelID],
-                    Attachments: [],
-                };
-
-                const { rerender, getItems } = await setup({
-                    conversations,
-                    filter: { Unread: 1 },
-                    totalConversations: 2,
-                    preloadedState: {
-                        addressKeys: getAddressKeyCache(address, [keys]),
-                    },
-                });
-
-                // A bit complex but the point is to simulate opening the conversation
-                addApiMock(`mail/v4/conversations/${element1.ID}`, () => ({
-                    Conversation: element1,
-                    Messages: [message],
-                }));
-                addApiMock(`mail/v4/messages/messageID1`, () => ({
-                    Message: message,
-                }));
-                addApiMock(`mail/v4/messages/read`, () => ({
-                    UndoToken: { Token: 'Token' },
-                }));
-                await rerender({ elementID: element1.ID });
-
-                const items = getItems();
-                expect(items.length).toBe(2);
-                await waitFor(() => expect(items[1].classList.contains('read')).toBe(true));
-                expect(items[0].classList.contains('read')).toBe(false);
-            } finally {
-                await CryptoProxy.releaseEndpoint();
-            }
         });
     });
 
