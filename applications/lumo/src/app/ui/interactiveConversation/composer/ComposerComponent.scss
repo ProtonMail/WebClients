@@ -17,7 +17,7 @@
 		--ghost-bg-primary: #16141c;
 		--ghost-bg-secondary: #292733;
 		--ghost-border: #343140;
-		--ghost-text: #a7a4b5;
+		--ghost-text: white;
 		--ghost-text-weak: #8a8896;
 
 		border-color: var(--ghost-border);
@@ -65,8 +65,8 @@
 }
 
 .web-search-button.is-active {
-	background-color: rgb(186 186 247 / 0.3);
-	color: var(--interaction-norm);
+	background-color: rgb(186 186 247 / 0.3) !important;
+	color: var(--interaction-norm) !important;
 }
 
 $mobile-breakpoint-width: 680px;
