@@ -2,10 +2,10 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { Button } from '@proton/atoms';
 import { Alert3ds, SkeletonLoader } from '@proton/components';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
-import { referralReward } from '@proton/components/containers/referral/constants';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowLeft } from '@proton/icons';
@@ -46,6 +46,8 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
     const formRef = useRef<HTMLFormElement>(null);
 
     const [submitting, withSubmitting] = useLoading();
+
+    const [referralInfo] = useReferralInfo();
 
     const { options } = payments;
 
@@ -157,7 +159,8 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                         <SkeletonLoader width="70%" height="1.4rem" />
                     ) : (
                         <p className="m-0 text-lg">
-                            {c('Signup').t`And get ${referralReward} in credits, if you subscribe.`}
+                            {c('Signup')
+                                .t`And get ${referralInfo.uiData.refereeRewardAmount} in credits, if you subscribe.`}
                         </p>
                     )}
                 </div>
