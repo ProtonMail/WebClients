@@ -1,6 +1,5 @@
 import { c, msgid } from 'ttag';
 
-import { type Subscription, getVPNDedicatedIPs } from '@proton/payments';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { BRAND_NAME, LUMO_APP_NAME, ORGANIZATION_STATE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
@@ -84,8 +83,8 @@ const getVPNText = (user: UserModel, MaxMembers: number) => {
     return getVPNConnectionsText(1);
 };
 
-const getServersText = (subscription?: Subscription) => {
-    const ipAddresses = getVPNDedicatedIPs(subscription);
+const getServersText = (organization?: Organization) => {
+    const ipAddresses = organization?.MaxDedicatedIPs ?? 0;
 
     return c('Subscription attribute').ngettext(
         msgid`${ipAddresses} dedicated server`,
@@ -136,12 +135,7 @@ const getLumoText = (organization?: Organization) => {
  * @param organization Organization to get the subscription panel text
  * @returns Object with the subscription, address and domains text for both delinquant and non-delinquant organizations
  */
-export const getSubscriptionPanelText = (
-    user: UserModel,
-    organization?: Organization,
-    addresses?: Address[],
-    subscription?: Subscription
-) => {
+export const getSubscriptionPanelText = (user: UserModel, organization?: Organization, addresses?: Address[]) => {
     const {
         MaxDomains = 0,
         UsedAddresses: OrganizationUsedAddresses,
@@ -163,7 +157,7 @@ export const getSubscriptionPanelText = (
         domainsText: getDomainsText(isOrganizationDelinquent, MaxDomains, UsedDomains),
         calendarText: getCalendarText(user, MaxMembers),
         vpnText: getVPNText(user, MaxMembers),
-        serverText: getServersText(subscription),
+        serverText: getServersText(organization),
         maxVPNDevicesText: getMaxVPNDevicesText(),
         writingAssistantText: getWritingAssistantText(organization),
         lumoText: getLumoText(organization),
