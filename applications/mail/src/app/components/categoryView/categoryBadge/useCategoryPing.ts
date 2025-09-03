@@ -34,7 +34,6 @@ export const useCategoryPing = () => {
         }
 
         const lastPingDate = new Date(lastPing as string);
-        console.log(lastPingDate, { cond: differenceInHours(lastPingDate, new Date()) });
         if (differenceInHours(lastPingDate, new Date()) > 1) {
             void silentApi(badgePing());
             setItem(CATEGORY_TIME_PING, new Date().toISOString());
