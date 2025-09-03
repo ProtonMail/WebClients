@@ -1,9 +1,8 @@
-import { CYCLE } from '../constants';
-import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS, PLAN_NAMES, PLAN_SERVICES, PLAN_TYPES } from '../constants';
+import { CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS, PLAN_NAMES, PLAN_SERVICES, PLAN_TYPES } from '../constants';
 import type { Currency, Cycle } from '../interface';
 import type { FreePlanDefault } from '../plan/interface';
 import { SubscriptionMode } from './constants';
-import type { SubscriptionCheckResponse } from './interface';
+import type { EnrichedCheckResponse } from './interface';
 
 export const FREE_PLAN: FreePlanDefault = {
     ID: 'free',
@@ -48,7 +47,7 @@ export const FREE_PLAN: FreePlanDefault = {
 export const getFreeCheckResult = (
     currency: Currency = DEFAULT_CURRENCY,
     cycle: Cycle = DEFAULT_CYCLE
-): SubscriptionCheckResponse => {
+): EnrichedCheckResponse => {
     return {
         Amount: 0,
         AmountDue: 0,
@@ -64,6 +63,11 @@ export const getFreeCheckResult = (
         SubscriptionMode: SubscriptionMode.Regular,
         BaseRenewAmount: null,
         RenewCycle: null,
+        requestData: {
+            Plans: { [PLANS.FREE]: 1 },
+            Currency: currency,
+            Cycle: cycle,
+        },
     };
 };
 
