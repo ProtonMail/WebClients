@@ -14,22 +14,14 @@ interface Props {
     onSelect: (action: ATTACHMENT_DISPOSITION, removeImageMetadata?: boolean) => void;
     onClose: () => void;
     mailSettings?: MailSettings;
-    canRemoveImageMetadata?: boolean;
     canShowMetadataToggle?: boolean;
 }
 
-const ComposerInsertImageModal = ({
-    files,
-    onSelect,
-    onClose,
-    mailSettings,
-    canRemoveImageMetadata,
-    canShowMetadataToggle,
-}: Props) => {
+const ComposerInsertImageModal = ({ files, onSelect, onClose, mailSettings, canShowMetadataToggle }: Props) => {
     const [removeImageMetadata, setRemoveImageMetadata] = useState(!!mailSettings?.RemoveImageMetadata);
     const actions = (
         <>
-            {canRemoveImageMetadata && canShowMetadataToggle && mailSettings ? (
+            {canShowMetadataToggle && mailSettings ? (
                 <Label htmlFor="remove-image-metadata-checkbox" className="w-full flex flex-nowrap mb-3 items-center">
                     <Checkbox
                         id="remove-image-metadata-checkbox"
@@ -50,9 +42,7 @@ const ComposerInsertImageModal = ({
             <Button
                 color="norm"
                 fullWidth
-                onClick={() =>
-                    onSelect(ATTACHMENT_DISPOSITION.ATTACHMENT, removeImageMetadata && canRemoveImageMetadata)
-                }
+                onClick={() => onSelect(ATTACHMENT_DISPOSITION.ATTACHMENT, removeImageMetadata)}
                 data-testid="composer:insert-image-attachment"
                 autoFocus
             >
@@ -61,7 +51,7 @@ const ComposerInsertImageModal = ({
             <Button
                 color="norm"
                 fullWidth
-                onClick={() => onSelect(ATTACHMENT_DISPOSITION.INLINE, removeImageMetadata && canRemoveImageMetadata)}
+                onClick={() => onSelect(ATTACHMENT_DISPOSITION.INLINE, removeImageMetadata)}
                 data-testid="composer:insert-image-inline"
             >{c('Action').t`Inline`}</Button>
         </>

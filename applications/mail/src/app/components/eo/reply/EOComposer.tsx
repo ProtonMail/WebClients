@@ -134,7 +134,6 @@ const EOComposer = ({ referenceMessage, id, encryptionKey, outsideKey, numberOfR
                     files={imagesToInsert}
                     onClose={handleCloseInsertImageModal}
                     onSelect={handleUploadImage}
-                    canRemoveImageMetadata
                     mailSettings={EO_DEFAULT_MAILSETTINGS}
                 />
             )}
