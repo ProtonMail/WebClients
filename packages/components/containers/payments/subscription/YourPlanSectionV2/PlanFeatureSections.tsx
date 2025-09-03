@@ -6,10 +6,9 @@ import { Tooltip } from '@proton/atoms';
 import Time from '@proton/components/components/time/Time';
 import { IcCheckmark, IcClockCircleFilled, IcGlobe, IcMobile, IcServers, IcStorage, IcUserFilled } from '@proton/icons';
 import type { Subscription } from '@proton/payments';
-import { getVPNDedicatedIPs } from '@proton/payments';
 import { DRIVE_SHORT_APP_NAME, FREE_VPN_CONNECTIONS, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSpace } from '@proton/shared/lib/user/storage';
 import { getAutoSelectFromCountries, getCountriesWithoutPlus, getVpnDevices } from '@proton/shared/lib/vpn/features';
 
@@ -49,8 +48,8 @@ export const UsersSection = ({ MaxMembers, userText }: { MaxMembers: number; use
     return <FeatureElement icon={<IcUserFilled className="shrink-0" />} title={c('Info').t`Users`} text={userText} />;
 };
 
-export const ServersSection = ({ subscription }: { subscription?: Subscription }) => {
-    const servers = getVPNDedicatedIPs(subscription);
+export const ServersSection = ({ organization }: { organization?: Organization }) => {
+    const servers = organization?.MaxDedicatedIPs ?? 0;
     if (servers === 0) {
         return false;
     }
