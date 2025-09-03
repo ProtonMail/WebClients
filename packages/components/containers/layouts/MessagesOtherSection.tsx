@@ -20,7 +20,6 @@ import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
-import useFlag from '@proton/unleash/useFlag';
 
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../../components/editor/constants';
 import SettingsLayout from '../account/SettingsLayout';
@@ -54,7 +53,6 @@ const MessagesOtherSection = () => {
     const [loadingFontFace, withLoadingFontFace] = useLoading();
     const [loadingFontSize, withLoadingFontSize] = useLoading();
     const [loadingRemoveImageMetadata, withLoadingRemoveImageMetadata] = useLoading();
-    const removeImageMetadataFeatureFlag = useFlag('RemoveImageMetadata');
 
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
@@ -170,24 +168,22 @@ const MessagesOtherSection = () => {
                 </SettingsLayoutRight>
             </SettingsLayout>
 
-            {removeImageMetadataFeatureFlag ? (
-                <SettingsLayout>
-                    <SettingsLayoutLeft>
-                        <label htmlFor="removeImageMetadata" className="text-semibold">
-                            <span className="mr-2">{c('Label').t`Remove image metadata`}</span>
-                            <Info title={c('Tooltip').t`Remove metadata from images to protect your privacy.`} />
-                        </label>
-                    </SettingsLayoutLeft>
-                    <SettingsLayoutRight isToggleContainer>
-                        <RemoveImageMetadataToggle
-                            id="removeImageMetadata"
-                            removeImageMetadata={RemoveImageMetadata}
-                            loading={loadingRemoveImageMetadata}
-                            onChange={(newValue) => withLoadingRemoveImageMetadata(handleRemoveImageMetadata(newValue))}
-                        />
-                    </SettingsLayoutRight>
-                </SettingsLayout>
-            ) : null}
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label htmlFor="removeImageMetadata" className="text-semibold">
+                        <span className="mr-2">{c('Label').t`Remove image metadata`}</span>
+                        <Info title={c('Tooltip').t`Remove metadata from images to protect your privacy.`} />
+                    </label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight isToggleContainer>
+                    <RemoveImageMetadataToggle
+                        id="removeImageMetadata"
+                        removeImageMetadata={RemoveImageMetadata}
+                        loading={loadingRemoveImageMetadata}
+                        onChange={(newValue) => withLoadingRemoveImageMetadata(handleRemoveImageMetadata(newValue))}
+                    />
+                </SettingsLayoutRight>
+            </SettingsLayout>
         </>
     );
 };
