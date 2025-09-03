@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom-v5-compat';
 
 import { Loader } from '@proton/components';
+import { generateNodeUid } from '@proton/drive/index';
 import useLoading from '@proton/hooks/useLoading';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -27,13 +28,17 @@ const hasValidLinkType = (type: string) => {
     return type === LinkURLType.FILE || type === LinkURLType.FOLDER;
 };
 
+type DriveFolderWithUid = DriveFolder & {
+    uid: string;
+};
+
 export default function FolderContainer({ type }: { type: LinkURLType }) {
     const params = useParams<DriveSectionRouteProps>();
     const { shareId, linkId } = params;
     const { navigateToRoot, navigateToNoAccess } = useDriveNavigation();
     const { activeFolder, setFolder } = useActiveShare();
     const volumesState = useVolumesState();
-    const lastFolderPromise = useRef<Promise<DriveFolder | undefined>>();
+    const lastFolderPromise = useRef<Promise<DriveFolderWithUid | undefined>>();
     const [, setError] = useState();
     const { getDefaultShare, isShareAvailable } = useDefaultShare();
     const driveEventManager = useDriveEventManager();
@@ -59,6 +64,7 @@ export default function FolderContainer({ type }: { type: LinkURLType }) {
                     volumeId: defaultShare.volumeId,
                     shareId: defaultShare.shareId,
                     linkId: defaultShare.rootLinkId,
+                    uid: generateNodeUid(defaultShare.volumeId, defaultShare.rootLinkId),
                 };
             }
             setError(() => {
@@ -79,10 +85,10 @@ export default function FolderContainer({ type }: { type: LinkURLType }) {
                 return;
             }
 
-            return { volumeId: share.volumeId, shareId, linkId };
+            return { volumeId: share.volumeId, shareId, linkId, uid: generateNodeUid(share.volumeId, linkId) };
         }
         return lastFolderPromise.current;
-    }, [params.linkId, params.shareId, type]);
+    }, [shareId, linkId, type]);
 
     // In case we open preview, folder doesn't need to change.
     lastFolderPromise.current = folderPromise;
@@ -90,7 +96,8 @@ export default function FolderContainer({ type }: { type: LinkURLType }) {
     useEffect(() => {
         folderPromise
             .then((folder) => {
-                if (folder) {
+                const activeFolderUid = generateNodeUid(activeFolder.volumeId, activeFolder.linkId);
+                if (folder && folder.uid !== activeFolderUid) {
                     setFolder(folder);
                 }
             })
