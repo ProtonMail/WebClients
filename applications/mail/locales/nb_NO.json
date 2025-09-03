@@ -1634,6 +1634,16 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "Få en gratis ${ BRAND_NAME }-adresse"
+      ],
+      "Most frequent": [
+        "Hyppigst"
+      ],
+      "Recently read": [
+        "Nylig leste"
+      ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ]
     },
     "action": {
@@ -5324,6 +5334,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Kontoen din bruker ${ usedSpace } med lagringsplass som overskrider de ${ inviteSpace } tildelt deg. Slett noen data, eller be planadministratoren om å øke lagringsplassen."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Familieplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -7206,8 +7219,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8645,6 +8657,9 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Skriv inn ditt eget passord (som betrodd kontakt)."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Disse samtalene lagres her i henhold til organisasjonens retningslinje for dataoppbevaring."
       ]
     },
     "info": {
@@ -9609,6 +9624,24 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Categories badge": [
+        "Kategorietikett"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Hjelp oss med å forbedre den kommende e-postkategoriseringen"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "Kategorien er oppdatert, takk for tilbakemeldingen!"
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Vi forbedrer hvordan e-post kategoriseres. Din tilbakemelding bidrar til å gjøre den smartere og mer nøyaktig."
+      ],
+      "Which category should this be recategorized under?": [
+        "Hvilken kategori skal dette omkategoriseres under?"
+      ],
+      "Why am I seeing this?": [
+        "Hvorfor ser jeg dette?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9941,6 +9974,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du må aktivere nøklene på nytt for å se den oppdaterte invitasjonen"
+      ],
+      "Deleted": [
+        "Slettet"
       ]
     },
     "Link to calendar event": {
@@ -10001,6 +10037,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Abonnementet ditt er avsluttet. ${ cta } og unngå tap av data."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "For å fortsette å bruke ${ BRAND_NAME }, må du sørge for at premiumfunksjonene dine ikke lenger er i bruk, eller oppgradere abonnementsplanen din."
       ]
     },
     "Log preference": {
@@ -11844,6 +11883,24 @@
       ],
       "VAT number": [
         "MVA-nummer"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Ekskludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Ekskludert ${ taxRate }% avgifter: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inkludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inkludert ${ taxRate }% avgifter: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Avgifter"
+      ],
+      "VAT": [
+        "MVA"
       ]
     },
     "Payments.Error": {
@@ -13898,6 +13955,18 @@
       ],
       "Billing details updated": [
         "Faktureringsinformasjon oppdatert"
+      ],
+      "Conversation updated": [
+        "Samtalen oppdatert",
+        "Samtaler oppdatert"
+      ],
+      "Message updated": [
+        "Meldingen oppdatert",
+        "Meldinger oppdatert"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Omkategorisert ${ elementsCount } melding.",
+        "Omkategorisert ${ elementsCount } meldinger."
       ]
     },
     "Success notification": {

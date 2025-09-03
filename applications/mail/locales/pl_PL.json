@@ -4506,7 +4506,7 @@
         "Wybierz datę w ciągu najbliższego ${ n } dnia.",
         "Wybierz datę w ciągu najbliższych ${ n } dni.",
         "Wybierz datę w ciągu najbliższych ${ n } dni.",
-        "Wybierz datę w ciągu najbliższych ${ n } dni."
+        "Wybierz datę w ciągu najbliższych ${ n } dnia."
       ],
       "Condition incomplete": [
         "Warunek jest niekompletny"
@@ -6617,7 +6617,7 @@
         "${ storage } przestrzeni dyskowej"
       ],
       "${ subscription.UnreadMessageCount } unread": [
-        "${ subscription.UnreadMessageCount } nieprzeczytanych",
+        "${ subscription.UnreadMessageCount } nieprzeczytana",
         "${ subscription.UnreadMessageCount } nieprzeczytane",
         "${ subscription.UnreadMessageCount } nieprzeczytanych",
         "${ subscription.UnreadMessageCount } nieprzeczytanych"
@@ -7301,7 +7301,7 @@
         "Wygasa za ${ minutesDiff } minutę",
         "Wygasa za ${ minutesDiff } minuty",
         "Wygasa za ${ minutesDiff } minut",
-        "Wygasa za ${ minutesDiff } minut"
+        "Wygasa za ${ minutesDiff } minuty"
       ],
       "Expires in less than ${ hoursDiff } hour": [
         "Wygasa za mniej niż ${ hoursDiff } godzinę",
@@ -7463,10 +7463,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -8396,7 +8393,7 @@
         "Śledzenie"
       ],
       "Trash existing messages": [
-        "Usuń istniejące wiadomości"
+        "Usuń obecne wiadomości"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Wypróbuj nowe funkcje, aktualizacje i usługi ${ BRAND_NAME } przed ich premierą. Spowoduje to odświeżenie strony"
@@ -8943,6 +8940,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Subskrypcja zakończyła się. Aby zachować korzyści planu ${ planName }, wznów subskrypcję w sklepie Google Play do dnia ${ byDate }. ${ reactivateLink }"
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Wątki są przechowywane zgodnie z zasadami przechowywania danych obowiązującymi w organizacji."
       ]
     },
     "info": {
@@ -13203,7 +13203,7 @@
         "${ n } miesiąc ZA DARMO",
         "${ n } miesiące ZA DARMO",
         "${ n } miesięcy ZA DARMO",
-        "${ n } miesiąca BEZPŁATNIE"
+        "${ n } miesiąca ZA DARMO"
       ]
     },
     "specialoffer: Deal details": {
@@ -14800,7 +14800,7 @@
         "Usuń ${ count } wątek",
         "Usuń ${ count } wątki",
         "Usuń ${ count } wątków",
-        "Usuń ${ count } wątów"
+        "Usuń ${ count } wątków"
       ],
       "Delete ${ count } draft": [
         "Usuń ${ count } szkic",
@@ -15774,7 +15774,7 @@
         "${ n } konto na portfel",
         "${ n } konta na portfel",
         "${ n } kont na portfel",
-        "${ n } kont na portfel"
+        "${ n } konta na portfel"
       ],
       "${ n } wallet": [
         "${ n } portfel",

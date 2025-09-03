@@ -1628,6 +1628,15 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "無料の${ BRAND_NAME }アドレスを入手"
+      ],
+      "Most frequent": [
+        "最も頻度の高い"
+      ],
+      "Recently read": [
+        "最近読んだもの"
+      ],
+      "Trust key": [
+        "鍵を信頼する"
       ]
     },
     "action": {
@@ -5288,6 +5297,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "あなたのアカウントは割り当てられた ${ inviteSpace } を超える ${ usedSpace } のストレージを使用中です。一部のデータを削除するか、プラン管理者にストレージを増やしてもらう必要があります。"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "ファミリープランは現在外部のアカウントをサポートしていません。参加する前に${ BRAND_NAME }アドレスを作成してください。${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -7093,7 +7105,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -8504,6 +8516,9 @@
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "完全にプライベートで暗号化済みの通信を確保します。無料の${ BRAND_NAME }メールアドレスを今すぐ取得してください。"
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "これらの会話は、お客様の組織のデータ保持ポリシーに基づいてここに保持されています。"
       ]
     },
     "info": {
@@ -9462,6 +9477,24 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Categories badge": [
+        "カテゴリバッジ"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "今後のメール振り分け機能の改善にご協力ください。"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "カテゴリが更新されました、フィードバックありがとうございます！"
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "メールの分類方法を改善しております。お客様からのフィードバックは、より賢く正確な分類に役立ちます。"
+      ],
+      "Which category should this be recategorized under?": [
+        "この項目はどのカテゴリに再分類すべきですか？"
+      ],
+      "Why am I seeing this?": [
+        "なぜこれが表示されるのですか？"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9794,6 +9827,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "更新された招待を表示するには、鍵を再度有効にする必要があります"
+      ],
+      "Deleted": [
+        "削除しました"
       ]
     },
     "Link to calendar event": {
@@ -11660,6 +11696,24 @@
       ],
       "VAT number": [
         "VAT番号"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName }を除く: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% の税金を除く: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName }: ${ taxAmount } を含む"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% の税金込み: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "税金"
+      ],
+      "VAT": [
+        "付加価値税"
       ]
     },
     "Payments.Error": {
@@ -13647,6 +13701,15 @@
       ],
       "Billing details updated": [
         "請求の詳細が更新されました"
+      ],
+      "Conversation updated": [
+        "会話が更新されました"
+      ],
+      "Message updated": [
+        "メッセージが更新されました"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "${ elementsCount }件のメッセージを再分類しました。"
       ]
     },
     "Success notification": {

@@ -1634,6 +1634,16 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "Ottieni un indirizzo ${ BRAND_NAME } gratuito"
+      ],
+      "Most frequent": [
+        "Più frequente"
+      ],
+      "Recently read": [
+        "Lette di recente"
+      ],
+      "Trust key": [
+        "chiave attendibile",
+        "chiavi attendibili"
       ]
     },
     "action": {
@@ -5355,6 +5365,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Il tuo account sta usando ${ usedSpace } di spazio di archiviazione, mentre lo spazio a tua disposizione è inferiore: ${ inviteSpace }. Elimina dei dati o chiedi all'amministratore del piano di aumentarti lo spazio di archiviazione."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "I piani famiglia non supportano account esterni al momento. Crea un indirizzo con ${ BRAND_NAME } prima di unirti. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -7240,8 +7253,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -8676,6 +8688,9 @@
       "You selected **${ count } message** from this folder": [
         "Hai selezionato **${ count } messaggio** da questa cartella",
         "Hai selezionato **${ count } messaggi** da questa cartella"
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Le conversazioni sono conservate secondo la policy dell’organizzazione."
       ]
     },
     "info": {
@@ -9640,6 +9655,27 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Categories badge": [
+        "Badge categorie"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Aiutaci a migliorare le categorie scegliendo quella che si adatta meglio a questa email. Grazie per il tuo aiuto!"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Aiutaci a migliorare la prossima categorizzazione della posta"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "La categoria è stata aggiornata, grazie per il tuo feedback!"
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Stiamo migliorando la categorizzazione delle email. Il tuo feedback ci aiuta a renderla più intelligente e accurata."
+      ],
+      "Which category should this be recategorized under?": [
+        "Sotto quale categoria dovrebbe essere riclassificata?"
+      ],
+      "Why am I seeing this?": [
+        "Perché lo vedo?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9972,6 +10008,9 @@
       ],
       "Resume now": [
         "Riprendi ora"
+      ],
+      "Deleted": [
+        "Eliminato"
       ]
     },
     "Link to calendar event": {
@@ -11883,6 +11922,24 @@
       ],
       "VAT number": [
         "Numero partita IVA"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Escludendo il ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Escluse tasse del ${ taxRate }%: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluso il ${ taxRate }% di ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluse tasse del ${ taxRate }%: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Tasse"
+      ],
+      "VAT": [
+        "IVA"
       ]
     },
     "Payments.Error": {
@@ -13942,6 +13999,18 @@
       ],
       "Billing details updated": [
         "Informazioni di fatturazione aggiornati"
+      ],
+      "Conversation updated": [
+        "Conversazione aggiornata",
+        "Conversazioni aggiornate"
+      ],
+      "Message updated": [
+        "Messaggio aggiornato",
+        "Messaggi aggiornati"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Messaggio ricategorizzato ${ elementsCount }.",
+        "Ricategorizzati ${ elementsCount } messaggi."
       ]
     },
     "Success notification": {
@@ -15126,6 +15195,9 @@
       ],
       "Your addresses": [
         "I tuoi indirizzi"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Le categorie stanno arrivando!"
       ]
     },
     "Today icon tooltip in mini calendar": {

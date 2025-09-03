@@ -1452,7 +1452,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -1637,6 +1638,12 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Most frequent": [
+        "Πιο συχνά"
+      ],
+      "Recently read": [
+        "Πρόσφατα αναγνωσμένα"
       ]
     },
     "action": {
@@ -5327,6 +5334,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ο λογαριασμός σας χρησιμοποιεί αποθηκευτικό χώρο ${ usedSpace }, ο οποίος υπερβαίνει τα ${ inviteSpace } που σας έχουν εκχωρηθεί. Διαγράψτε ορισμένα δεδομένα ή ζητήστε από τον διαχειριστή του πλάνου να αυξήσει τον αποθηκευτικό σας χώρο."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Τα οικογενειακά πλάνα δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -7221,8 +7231,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8648,6 +8657,9 @@
       ],
       "${ planName } expires today.": [
         "Το ${ planName } λήγει σήμερα."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Αυτές οι συνομιλίες φυλάσσονται εδώ με βάση την πολιτική διατήρησης δεδομένων του οργανισμού σας."
       ]
     },
     "info": {
@@ -9612,6 +9624,24 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Categories badge": [
+        "Ετικέτα κατηγοριών"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Βοηθήστε μας να βελτιώσουμε την επικείμενη κατηγοριοποίηση των αλληλογραφιών."
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "Η κατηγορία έχει ενημερωθεί, ευχαριστούμε για τα σχόλιά σας!"
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Βελτιώνουμε τον τρόπο κατηγοριοποίησης των μηνυμάτων. Η ανατροφοδότησή σας βοηθά να γίνει πιο έξυπνο και ακριβές."
+      ],
+      "Which category should this be recategorized under?": [
+        "Σε ποια κατηγορία θα έπρεπε να ανακατηγοριοποιηθεί αυτό;"
+      ],
+      "Why am I seeing this?": [
+        "Γιατί το βλέπω αυτό;"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9944,6 +9974,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Πρέπει να επανενεργοποιήσετε τα κλειδιά σας για να δείτε την ενημερωμένη πρόσκληση"
+      ],
+      "Deleted": [
+        "Διαγραμμένα"
       ]
     },
     "Link to calendar event": {
@@ -11850,6 +11883,24 @@
       ],
       "VAT number": [
         "Αριθμός ΑΦΜ"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Εξαιρουμένων ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Εξαιρουμένων ${ taxRate }% φόρων ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Συμπεριλαμβανομένου ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Συμπεριλαμβανομένων ${ taxRate }% φόρων ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Φόροι"
+      ],
+      "VAT": [
+        "ΦΠΑ"
       ]
     },
     "Payments.Error": {
@@ -13908,6 +13959,14 @@
       "Recategorized ${ elementsCount } message.": [
         "Ανακατηγοριοποιήθηκε ${ elementsCount } μήνυμα.",
         "Ανακατηγοριοποιήθηκε ${ elementsCount } μηνύματα."
+      ],
+      "Conversation updated": [
+        "Η συνομιλία ενημερώθηκε",
+        "Η συνομιλίες ενημερώθηκαν"
+      ],
+      "Message updated": [
+        "Το μήνυμα ενημερώθηκε",
+        "Τα μηνύματα ενημερώθηκαν"
       ]
     },
     "Success notification": {

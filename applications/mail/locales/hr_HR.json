@@ -1159,6 +1159,12 @@
       ],
       "Zoom out": [
         "Smanji"
+      ],
+      "Most frequent": [
+        "Najčešće"
+      ],
+      "Recently read": [
+        "Nedavno pročitano"
       ]
     },
     "action": {
@@ -3349,6 +3355,9 @@
       ],
       "ZIP code is required": [
         "Poštanski broj je obavezan"
+      ],
+      "Failed to open to contact": [
+        "Neuspješno otvaranje kontakta"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3553,6 +3562,9 @@
       ],
       "Manage addresses": [
         "Upravljanje adresama"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Obiteljski planovi pretplate trenutačno ne podržavaju vanjske korisničke račune. Izradite ${ BRAND_NAME } adresu prije pridraživanja. ${ link }"
       ]
     },
     "familyOffer_2023:Member downgrade modal": {
@@ -4592,9 +4604,7 @@
         "Nasljedno iz roditeljske mape"
       ],
       "Insert image": [
-        "Umetni sliku",
-        "Umetni slike",
-        "Umetni slike"
+        "Umetni sliku"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -5930,6 +5940,27 @@
       ],
       "ZIP code": [
         "Poštanski broj"
+      ],
+      "Categories badge": [
+        "Oznaka kategorija"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Pomozite nam poboljšati kategorije odabirom one koja najbolje odgovara ovoj e-pošti. Hvala Vam na pomoći!"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Pomozite nam da poboljšamo nadolazeću kategorizaciju pošte"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "Kategorija je ažurirana, hvala na povratnoj informaciji!"
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Poboljšavamo način na koji su e-pošte kategorizirane. Vaše povratne informacije pomažu da to bude pametnije i točnije."
+      ],
+      "Which category should this be recategorized under?": [
+        "U koju kategoriju ovo treba prekategorizirati?"
+      ],
+      "Why am I seeing this?": [
+        "Zašto ovo vidim?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -6160,6 +6191,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Morate ponovno aktivirati vaše ključeve da biste vidjeli ažuriranu pozivnicu"
+      ],
+      "Deleted": [
+        "Izbrisano"
       ]
     },
     "Link to calendar event": {
@@ -6183,6 +6217,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Više informacija"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Za nastavak korištenja ${ BRAND_NAME }, provjerite da vaše premium značajke više nisu u upotrebi ili nadogradite svoj plan."
       ]
     },
     "Log preference": {
@@ -7070,6 +7107,24 @@
       ],
       "Timeout exceeded": [
         "Prekoračeno je vremensko ograničenje"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Bez ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Bez ${ taxRate }% poreza: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Uključujući ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Uključujući ${ taxRate }% poreza: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Porezi"
+      ],
+      "VAT": [
+        "Porez"
       ]
     },
     "Payments.Error": {
@@ -8205,6 +8260,11 @@
       ],
       "You have successfully unsubscribed": [
         "Uspješno ste poništili pretplatu"
+      ],
+      "Message updated": [
+        "Poruka ažurirana",
+        "Poruke ažurirane",
+        "Poruka ažurirano"
       ]
     },
     "Success notification": {
@@ -8941,6 +9001,9 @@
       ],
       "Edit billing address": [
         "Uredite adresu naplate"
+      ],
+      "✨ Categories are coming!": [
+        "✨Kategorije stižu!"
       ]
     },
     "Today icon tooltip in mini calendar": {

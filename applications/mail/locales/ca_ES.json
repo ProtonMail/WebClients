@@ -1452,7 +1452,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1637,6 +1638,12 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Most frequent": [
+        "Més freqüent"
+      ],
+      "Recently read": [
+        "Llegit recentment"
       ]
     },
     "action": {
@@ -5327,6 +5334,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "El vostre compte utilitza ${ usedSpace } d'emmagatzematge, que supera els ${ inviteSpace } que us van assignar. Elimineu algunes dades o demaneu a l'administrador del pla que augmenti l'emmagatzematge."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Els plans familiars actualment no suporten comptes externs. Creeu una adreça ${ BRAND_NAME } abans d'unir-vos-hi. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -7221,8 +7231,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -8648,6 +8657,9 @@
       ],
       "${ planName } expires today.": [
         "${ planName } caduca avui."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Aquestes converses es guarden aquí d'acord amb la política de conservació de dades de la vostra organització."
       ]
     },
     "info": {
@@ -9612,6 +9624,27 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Categories badge": [
+        "Insígnia de categories"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Ajuda'ns a millorar les categories escollint la que millor s'ajusti a aquest correu electrònic. Gràcies per la teva col·laboració!"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Ajudeu-nos a millorar la pròxima categorització del correu"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "La categoria s'ha actualitzat, gràcies pels vostres comentaris!"
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Estem millorant com es categoritzen els correus electrònics. Els vostres comentaris ajuden a fer-ho més intel·ligent i precís."
+      ],
+      "Which category should this be recategorized under?": [
+        "En quina categoria s'hauria de recategoritzar?"
+      ],
+      "Why am I seeing this?": [
+        "Per què veig això?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9944,6 +9977,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Cal que reactiveu les vostres claus per veure la invitació actualitzada"
+      ],
+      "Deleted": [
+        "S'ha eliminat"
       ]
     },
     "Link to calendar event": {
@@ -11850,6 +11886,24 @@
       ],
       "VAT number": [
         "Número d'IVA"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exclòs el ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Exclòs el ${ taxRate }% d'impostos: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclòs el ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inclòs el ${ taxRate }% d'impostos: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Impostos"
+      ],
+      "VAT": [
+        "IVA"
       ]
     },
     "Payments.Error": {
@@ -13908,6 +13962,14 @@
       "Recategorized ${ elementsCount } message.": [
         "S'ha canviat de categoria ${ elementsCount } missatge.",
         "S'han canviat de categoria ${ elementsCount } missatges."
+      ],
+      "Conversation updated": [
+        "La conversa s'ha actualitzat",
+        "Les converses s'han actualitzat"
+      ],
+      "Message updated": [
+        "El missatge s'ha actualitzat",
+        "Els missatges s'han s actualitzat"
       ]
     },
     "Success notification": {
@@ -15092,6 +15154,9 @@
       ],
       "Edit billing address": [
         "Edita l'adreça de la factura"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Arriben les categories!"
       ]
     },
     "Today icon tooltip in mini calendar": {

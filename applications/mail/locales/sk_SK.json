@@ -1649,6 +1649,12 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "Získajte bezplatnú ${ BRAND_NAME } adresu"
+      ],
+      "Most frequent": [
+        "Najčastejšie"
+      ],
+      "Recently read": [
+        "Nedávno čítané"
       ]
     },
     "action": {
@@ -5394,6 +5400,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet využíva ${ usedSpace } úložiska, čo presahuje pridelený priestor ${ inviteSpace }. Odstráňte niektoré údaje alebo požiadajte správcu plánu o navýšenie úložiska."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Rodinné plány v súčasnosti nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -7436,10 +7445,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -9901,6 +9907,24 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Categories badge": [
+        "Odznak kategórií"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Pomôžte nám zlepšiť pripravované kategorizovanie pošty"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "Kategória bola aktualizovaná, ďakujeme za vašu spätnú väzbu!"
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Zlepšujeme spôsob kategorizácie emailov. Vaša spätná väzba nám pomáha robiť to inteligentnejšie a presnejšie."
+      ],
+      "Which category should this be recategorized under?": [
+        "Do ktorej kategórie by sa to malo zaradiť?"
+      ],
+      "Why am I seeing this?": [
+        "Prečo to vidím?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10233,6 +10257,9 @@
       ],
       "Resume now": [
         "Pokračovať teraz"
+      ],
+      "Deleted": [
+        "Vymazané"
       ]
     },
     "Link to calendar event": {
@@ -12219,6 +12246,24 @@
       ],
       "VAT number": [
         "DIČ"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "S výnimkou ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Bez zahrnutia ${ taxRate }% daní: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Vrátane ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Vrátane ${ taxRate }% daní: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Dane"
+      ],
+      "VAT": [
+        "DPH"
       ]
     },
     "Payments.Error": {
@@ -14405,6 +14450,18 @@
         "${ elementsCount } prekategorizované správy.",
         "${ elementsCount } prekategorizovaných správ.",
         "${ elementsCount } prekategorizovaných správ."
+      ],
+      "Conversation updated": [
+        "Konverzácia aktualizovaná",
+        "Konverzácie aktualizované",
+        "Konverzácie aktualizované",
+        "Konverzácie aktualizované"
+      ],
+      "Message updated": [
+        "Správa aktualizovaná",
+        "Správy aktualizované",
+        "Správy aktualizované",
+        "Správy aktualizované"
       ]
     },
     "Success notification": {

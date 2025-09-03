@@ -1436,7 +1436,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1637,6 +1638,12 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "Ücretsiz bir ${ BRAND_NAME } adresi alın"
+      ],
+      "Most frequent": [
+        "En sık"
+      ],
+      "Recently read": [
+        "Son okunanlar"
       ]
     },
     "action": {
@@ -5358,6 +5365,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Hesabınız, size ayrılmış ${ inviteSpace } boyutunu aşan ${ usedSpace } depolama alanı kullanıyor. Bazı verileri silin ya da tarife yöneticisinden depolama alanınızı artırmasını isteyin."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi alın. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -7243,8 +7253,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -8679,6 +8688,9 @@
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Tümüyle güvenli ve şifrelenmiş iletişim sağlayın. Ücretsiz ${ BRAND_NAME } e-posta adresinizi şimdi alın."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Bu yazışmalar, kuruluşunuzun veri tutma ilkesine göre burada saklanır."
       ]
     },
     "info": {
@@ -9643,6 +9655,27 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Categories badge": [
+        "Kategoriler etiketi"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Kategoriler özelliğini geliştirmemize yardımcı olmak için bu e-postaya en uygun olanı seçin. Yardımınız için teşekkür ederiz!"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Yakında kullanılacak e-posta kategorilere ayırma özelliğini geliştirmemize yardımcı olun."
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "Kategori güncellendi. Geri bildiriminiz için teşekkür ederiz!"
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "E-postaların kategorilere ayrılma şeklini geliştiriyoruz. Geri bildiriminiz, bunu daha akıllı ve daha doğru yapmamıza yardımcı olacak."
+      ],
+      "Which category should this be recategorized under?": [
+        "Bu e-posta hangi kategori altına taşınmalı?"
+      ],
+      "Why am I seeing this?": [
+        "Bunu neden görüyorsunuz?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9975,6 +10008,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Güncellenen daveti görmek için anahtarlarınızı yeniden kullanıma almalısınız"
+      ],
+      "Deleted": [
+        "Silinmiş"
       ]
     },
     "Link to calendar event": {
@@ -11881,6 +11917,24 @@
       ],
       "VAT number": [
         "KDV numarası"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "%${ taxRate } ${ taxName } hariç: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "%${ taxRate } vergi hariç: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "%${ taxRate } ${ taxName } dahil: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "%${ taxRate } vergi dahil: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Vergiler"
+      ],
+      "VAT": [
+        "KDV"
       ]
     },
     "Payments.Error": {
@@ -13940,6 +13994,18 @@
       ],
       "Billing details updated": [
         "Fatura bilgileri güncellendi"
+      ],
+      "Conversation updated": [
+        "Yazışma güncellendi",
+        "Yazışmalar güncellendi"
+      ],
+      "Message updated": [
+        "İleti güncellendi",
+        "İletiler güncellendi"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "${ elementsCount } ileti yeniden düzenlendi.",
+        "${ elementsCount } ileti yeniden düzenlendi."
       ]
     },
     "Success notification": {
@@ -15124,6 +15190,9 @@
       ],
       "Your addresses": [
         "Adresleriniz"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Kategoriler özelliği geliyor!"
       ]
     },
     "Today icon tooltip in mini calendar": {

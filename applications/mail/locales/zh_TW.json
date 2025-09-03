@@ -4664,6 +4664,9 @@
       ],
       "ZIP code is required": [
         "郵遞區號為必要項目"
+      ],
+      "Failed to open to contact": [
+        "無法開啟聯絡人"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5023,6 +5026,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "您的帳號已使用 ${ usedSpace } 的儲存空間，這超過了為您分配的 ${ inviteSpace }。刪除一些資料或要求方案管理員增加您的儲存空間。"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "家庭方案目前不支援外部帳號。請在加入前創建 ${ BRAND_NAME } 地址。${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -6729,7 +6735,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖片"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -8014,6 +8020,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "您的免費試用已成功轉換為每月訂購授權。您的續訂日期為 ${ nextBillingDate }。"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "輕點幾下滑鼠，即可擁有整潔的收件匣"
       ]
     },
     "info": {
@@ -8933,6 +8942,9 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Why am I seeing this?": [
+        "為什麼我會看到此訊息？"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9208,6 +9220,12 @@
       ],
       "How to add users": [
         "如何新增使用者"
+      ],
+      "Deleted": [
+        "已刪除"
+      ],
+      "Resume now": [
+        "立即恢復"
       ]
     },
     "Link to calendar event": {
@@ -10942,6 +10960,24 @@
       ],
       "VAT number": [
         "增值稅編號（VAT）"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "不包含 ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "不包含 ${ taxRate }% 稅金：${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "包含 ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "包含 ${ taxRate }% 稅金：${ taxAmount }"
+      ],
+      "Taxes": [
+        "稅金"
+      ],
+      "VAT": [
+        "增值稅"
       ]
     },
     "Payments.Error": {
@@ -11001,6 +11037,12 @@
       ],
       "Edit VAT number": [
         "編輯增值稅編號（VAT）"
+      ],
+      "Edit ABN": [
+        "編輯 ABN"
+      ],
+      "Edit EIN": [
+        "編輯 EIN"
       ]
     },
     "PGP key encryption warning": {
@@ -12810,6 +12852,12 @@
       ],
       "Conversation removed from Starred.": [
         "已移除對話的星號。"
+      ],
+      "Conversation updated": [
+        "對話內容已更新"
+      ],
+      "Message updated": [
+        "訊息已更新"
       ]
     },
     "Success notification": {
@@ -14388,6 +14436,11 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "信任的聯絡人"
       ]
     }
   }
