@@ -228,7 +228,7 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
                             nodeId: (node as any).uid || (node as any).linkId || (node as any).nodeId,
                             name: (node as any).name,
                             type: isFile ? 'file' : 'folder',
-                            size: isFile ? (node as any).size : undefined,
+                            size: isFile ? ((node as any).size || (node as any).fileSize || (node as any).contentSize) : undefined,
                             mimeType: isFile ? (node as any).mimeType : undefined,
                             mediaType: isFile ? (node as any).mediaType : undefined,
                             modifiedTime: (node as any).modifyTime || (node as any).modifiedTime,

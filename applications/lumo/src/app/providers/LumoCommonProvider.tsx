@@ -36,7 +36,6 @@ const GuestLumoCommonProvider = ({ children }: { children: ReactNode }) => {
 
 const AuthenticatedLumoCommonProvider = ({ children, user }: LumoCommonProps) => {
     const [subscription] = useSubscription();
-
     const hasLumoSeat = user ? !!user.NumLumo : false;
     const hasLumoPlusAddon = subscription ? hasLumoAddon(subscription) : false;
     const isVisionary = subscription ? hasVisionary(subscription) : false;

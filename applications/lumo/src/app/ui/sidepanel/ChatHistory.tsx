@@ -1,14 +1,14 @@
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { InputFieldTwo } from '@proton/components';
 
 import { useLumoCommon } from '../../hooks/useLumoCommon';
 import { useConversation } from '../../providers/ConversationProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
+import { useSidebar } from '../../providers/SidebarProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectConversations } from '../../redux/selectors';
 import { sortByDate } from '../../util/date';
@@ -23,6 +23,7 @@ import { categorizeConversations, searchConversations } from './helpers';
 interface Props {
     refInputSearch: React.RefObject<HTMLInputElement>;
     onItemClick?: () => void;
+    searchInput?: string; // External search input value
 }
 
 /**
@@ -49,12 +50,12 @@ const getVisibleConversations = (
     return Object.values(conversationMap).filter((conversation) => !conversation.ghost);
 };
 
-export const ChatHistory = ({ refInputSearch, onItemClick }: Props) => {
+export const ChatHistory = ({ refInputSearch, onItemClick, searchInput = '' }: Props) => {
     const conversationMap = useLumoSelector(selectConversations);
-    const [searchInput, setSearchInput] = useState<string>('');
     const { conversationId } = useConversation(); //switch to using react-router-dom parameters
     const { isGuest, isLumoPaid } = useLumoCommon();
     const { isGhostChatMode } = useGhostChat();
+    const { isSmallScreen } = useSidebar();
 
     // Only show loading state during initial data fetch
     // const isLoading = !isGuest && !persistence.ready;
@@ -64,7 +65,8 @@ export const ChatHistory = ({ refInputSearch, onItemClick }: Props) => {
         const conversations = getVisibleConversations(conversationMap, isGuest, isGhostChatMode, conversationId);
 
         const sortedConversations = conversations.sort(sortByDate('desc'));
-        const favorites = sortedConversations.filter((conversation) => conversation.starred === true);
+        const allFavorites = sortedConversations.filter((conversation) => conversation.starred === true);
+        const favorites = searchConversations(allFavorites, searchInput); // Apply search filter to favorites
         const filteredConversations = searchConversations(sortedConversations, searchInput);
         const categorizedConversations = categorizeConversations(filteredConversations);
 
@@ -84,48 +86,36 @@ export const ChatHistory = ({ refInputSearch, onItemClick }: Props) => {
 
     return (
         <div className="h-full w-full flex flex-column flex-nowrap gap-2">
-            <InputFieldTwo
-                label={c('collider_2025:Placeholder').t`Search history`}
-                labelContainerClassName="sr-only"
-                dense
-                className="mt-1"
-                placeholder={c('collider_2025:Placeholder').t`Search history`}
-                value={searchInput}
-                onValue={setSearchInput}
-                disabled={isGuest}
-                prefix={<Icon name="magnifier" color="black" />}
-                ref={refInputSearch}
-            />
-            {!searchInput && (
+            {/* Show Favorites section - include starred conversations in search results */}
+            {favorites.length > 0 && (
                 <>
-                    <h3 className="text-rg text-sm flex flex-row flex-nowrap items-center gap-2 ml-2 pl-1 mt-2">
-                        <Icon name="star" className="shrink-0" />
-                        <span className="mt-0.5 text-semibold">{c('collider_2025:Title').t`Favorites`}</span>
-                    </h3>
-                    {favorites.length > 0 ? (
-                        <div className="max-h-custom overflow-y-auto" style={{ '--max-h-custom': '20%' }}>
-                            <RecentChatsList
-                                conversations={favorites}
-                                selectedConversationId={conversationId}
-                                onItemClick={onItemClick}
-                            />
-                        </div>
-                    ) : (
-                        <div className="color-weak text-sm mr-2 ml-3">
-                            {c('collider_2025:Title').t`Star a chat to save it as a favorite.`}
-                        </div>
-                    )}
-                    <hr className="mt-2 mb-0 border-bottom border-weak" />
+                    <div className="sidebar-section-header">
+                        <Icon name="star" size={4} />
+                        <span>{c('collider_2025:Title').t`Favorites`}</span>
+                    </div>
+                    <div className="max-h-custom overflow-y-auto" style={{ '--max-h-custom': '20%' }}>
+                        <RecentChatsList
+                            conversations={favorites}
+                            selectedConversationId={conversationId}
+                            onItemClick={onItemClick}
+                        />
+                    </div>
                 </>
             )}
+            
             <Scroll className="flex-1">
-                {/** feel free to remove this one if strong opposition */}
-                <h3 className="text-rg text-sm flex flex-row flex-nowrap items-center ml-2 pl-1 gap-2 mt-2 mb-3">
-                    <Icon name="clock-rotate-left" className="shrink-0" />
-                    <span className="mt-0.5 text-semibold">{c('collider_2025:Title').t`History`}</span>
-                </h3>
+                {/* History section header - hide for mobile guests to keep UI clean, but show when searching */}
+                {(searchInput || !(isSmallScreen && isGuest)) && (
+                    <div className="sidebar-section-header">
+                        <Icon name="clock-rotate-left" size={4} />
+                        <span>{c('collider_2025:Title').t`History`}</span>
+                    </div>
+                )}
 
-                {noConversationAtAll && (
+                {/* Enhanced sign-in section for all guest users */}
+                {isGuest && <ChatHistoryGuestUserUpsell />}
+                
+                {!isGuest && noConversationAtAll && (
                     <>
                         <div className="color-weak text-sm my-2 ml-3">
                             {c('collider_2025:Title').t`No chat history yet. Let's start chatting!`}
@@ -147,7 +137,7 @@ export const ChatHistory = ({ refInputSearch, onItemClick }: Props) => {
                             disabled={isGuest}
                             onItemClick={onItemClick}
                         />
-                        {isGuest && <ChatHistoryGuestUserUpsell />}
+
                     </>
                 )}
                 {lastWeek.length > 0 && (
