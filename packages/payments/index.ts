@@ -424,6 +424,7 @@ export {
     isAnyManagedExternally,
     isCancellableOnlyViaSupport,
     isCheckForbidden,
+    isForbiddenLumoPlus,
     isLifetimePlan,
     isManagedExternally,
     isRegularCycle,

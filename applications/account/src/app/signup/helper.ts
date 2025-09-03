@@ -2,18 +2,20 @@ import type { Location } from 'history';
 
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
-import type { BillingAddress, PaymentStatus, PaymentsApi } from '@proton/payments';
 import {
+    type BillingAddress,
     type CheckSubscriptionData,
     type Currency,
     type Cycle,
     DEFAULT_TAX_BILLING_ADDRESS,
+    type EnrichedCheckResponse,
     PLANS,
+    type PaymentStatus,
+    type PaymentsApi,
     type PlanIDs,
-    type SubscriptionCheckResponse,
     getFreeCheckResult,
+    hasPlanIDs,
 } from '@proton/payments';
-import { hasPlanIDs } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
@@ -36,7 +38,7 @@ export async function getSubscriptionPrices({
     coupon?: string;
     trial?: boolean;
     ValidateZipCode?: boolean;
-}): Promise<SubscriptionCheckResponse> {
+}): Promise<EnrichedCheckResponse> {
     if (!hasPlanIDs(planIDs) || planIDs[PLANS.FREE]) {
         return getFreeCheckResult(currency, cycle);
     }
@@ -78,7 +80,7 @@ export async function getSubscriptionPricesWithFallback<T>(
     }: {
         invalidZipCodeFallback: () => T;
     }
-): Promise<SubscriptionCheckResponse | T> {
+): Promise<EnrichedCheckResponse | T> {
     try {
         return await getSubscriptionPrices({
             paymentsApi,
