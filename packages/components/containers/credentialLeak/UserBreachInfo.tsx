@@ -2,17 +2,16 @@ import { c } from 'ttag';
 
 import Info from '@proton/components/components/link/Info';
 
+import BreachCombo from './BreachCombo';
 import { encryptedPasswordCode } from './BreachInfo';
+import type { BreachedCombo, ExposedData } from './models';
 
 interface UserBreachInfoProps {
     inModal?: boolean;
-    exposedData: {
-        code: string;
-        name: string;
-        values?: string[];
-    }[];
+    exposedData: ExposedData[];
+    breachedCombos?: BreachedCombo[];
 }
-const UserBreachInfo = ({ inModal = false, exposedData }: UserBreachInfoProps) => {
+const UserBreachInfo = ({ inModal = false, exposedData, breachedCombos = [] }: UserBreachInfoProps) => {
     // Filter out empty values, except for "Encrypted password"
     const personalExposedData = exposedData.filter(
         ({ name, values }) => name === 'Encrypted password' || (Array.isArray(values) && values.length !== 0)
@@ -44,29 +43,34 @@ const UserBreachInfo = ({ inModal = false, exposedData }: UserBreachInfoProps) =
                     {breachDetailsDisclaimer}
                 </div>
             )}
-            <div className="mb-4">
-                {personalExposedData.map(({ code, name, values }) => {
-                    const valuesStr = Array.isArray(values) ? values.join(', ') : '';
 
-                    return (
-                        <div className="flex flex-nowrap flex-column sm:flex-row w-full text-sm mb-2" key={name}>
-                            <span className="sm:w-1/3 color-weak flex flex-nowrap items-center">
-                                {name}
-                                {code === encryptedPasswordCode && (
-                                    <Info
-                                        className="pl-1"
-                                        title={c('Tooltip')
-                                            .t`Unless they are deciphered, encrypted passwords remain secure even if they are exposed.`}
-                                    />
-                                )}
-                            </span>
-                            <span className="sm:flex-1 pl-2 sm:pl-0 text-ellipsis" title={valuesStr}>
-                                {valuesStr}
-                            </span>
-                        </div>
-                    );
-                })}
-            </div>
+            {breachedCombos?.length > 0 ? (
+                <BreachCombo breachedCombos={breachedCombos} />
+            ) : (
+                <div className="mb-4">
+                    {personalExposedData.map(({ code, name, values }) => {
+                        const valuesStr = Array.isArray(values) ? values.join(', ') : '';
+
+                        return (
+                            <div className="flex flex-nowrap flex-column sm:flex-row w-full text-sm mb-2" key={name}>
+                                <span className="sm:w-1/3 color-weak flex flex-nowrap items-center">
+                                    {name}
+                                    {code === encryptedPasswordCode && (
+                                        <Info
+                                            className="pl-1"
+                                            title={c('Tooltip')
+                                                .t`Unless they are deciphered, encrypted passwords remain secure even if they are exposed.`}
+                                        />
+                                    )}
+                                </span>
+                                <span className="sm:flex-1 pl-2 sm:pl-0 text-ellipsis" title={valuesStr}>
+                                    {valuesStr}
+                                </span>
+                            </div>
+                        );
+                    })}
+                </div>
+            )}
         </>
     );
 };
