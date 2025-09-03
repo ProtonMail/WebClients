@@ -1,5 +1,8 @@
+import { ErrorBoundary } from '@proton/components';
+
 import { categoriesArray } from '../categoriesConstants';
 import { useRecategorizeElement } from '../useRecategorizeElement';
+import { CategoriesTabsError, CategoryTabError } from './CategoryTabsErrorts';
 import { Tab } from './Tab';
 import { TabState } from './tabsInterface';
 import { useCategoriesDrag } from './useCategoriesDrag';
@@ -11,7 +14,7 @@ interface Props {
 }
 
 // In the future, we will only display the categories the user has enabled
-export const CategoriesTabs = ({ labelID }: Props) => {
+export const CategoriesTabsList = ({ labelID }: Props) => {
     const recategorizeElement = useRecategorizeElement();
 
     const handleCategoryDrop = (categoryId: string, itemIds: string[]) => {
@@ -44,15 +47,26 @@ export const CategoriesTabs = ({ labelID }: Props) => {
 
                 return (
                     <div key={category.id} onDragOver={handleDragOver(category.id)} onDrop={handleDrop(category.id)}>
-                        <Tab
-                            id={category.id}
-                            icon={category.icon}
-                            colorShade={category.colorShade}
-                            tabState={tabState}
-                        />
+                        <ErrorBoundary component={<CategoryTabError />}>
+                            <Tab
+                                id={category.id}
+                                icon={category.icon}
+                                colorShade={category.colorShade}
+                                tabState={tabState}
+                            />
+                        </ErrorBoundary>
                     </div>
                 );
             })}
         </div>
+    );
+};
+
+// Used to wrap the categories composants with an error boundary and have a safe fallback component
+export const CategoriesTabs = ({ labelID }: Props) => {
+    return (
+        <ErrorBoundary component={<CategoriesTabsError />}>
+            <CategoriesTabsList labelID={labelID} />
+        </ErrorBoundary>
     );
 };
