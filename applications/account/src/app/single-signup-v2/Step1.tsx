@@ -31,10 +31,12 @@ import {
     CYCLE,
     type Currency,
     type Cycle,
+    type EnrichedCheckResponse,
     FREE_PLAN,
     type FullPlansMap,
     PLANS,
     type PlanIDs,
+    type Subscription,
     SubscriptionMode,
     type SubscriptionPlan,
     getCheckout,
@@ -46,6 +48,7 @@ import {
     getPlansMap,
     getPricingFromPlanIDs,
     getTotalFromPricing,
+    isCheckForbidden,
     isRegionalCurrency,
     switchPlan,
 } from '@proton/payments';
@@ -142,6 +145,7 @@ const Step1 = ({
     mode,
     onChangeCurrency,
     signupTrial,
+    subscription,
 }: {
     initialSessionsLength: boolean;
     signupConfiguration: SignupConfiguration;
@@ -178,6 +182,7 @@ const Step1 = ({
     // true iff trial detected through signupParameters (thus the signup prefix)
     // We do not use signupParameters.trial because trials only applies to the B2B audience
     signupTrial: boolean;
+    subscription?: Subscription;
 }) => {
     const mailTrialOfferEnabled = useFlag('MailTrialOffer');
     const driveTrialOfferEnabled = useFlag('DriveTrialOffer');
@@ -257,7 +262,16 @@ const Step1 = ({
         billingAddress: BillingAddress;
         coupon?: string;
         trial?: boolean;
-    }) => {
+    }): Promise<EnrichedCheckResponse> => {
+        if (isCheckForbidden(subscription, values.planIDs, values.cycle)) {
+            return getOptimisticCheckResult({
+                plansMap: model.plansMap,
+                planIDs: values.planIDs,
+                cycle: values.cycle,
+                currency: values.currency,
+            });
+        }
+
         const paymentsApi = await getSilentPaymentApi();
         return getSubscriptionPrices({
             paymentsApi,

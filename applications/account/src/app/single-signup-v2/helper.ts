@@ -1,5 +1,4 @@
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
-import type { SubscriptionCheckResponse } from '@proton/payments';
 import {
     type ADDON_NAMES,
     type BillingAddress,
@@ -21,6 +20,7 @@ import {
     type SavedPaymentMethod,
     type StrictPlan,
     type Subscription,
+    type SubscriptionCheckResponse,
     type SubscriptionPlan,
     getFreeCheckResult,
     getHas2024OfferCoupon,
@@ -35,6 +35,7 @@ import {
     getPricingFromPlanIDs,
     getSubscription,
     hasPlanIDs,
+    isForbiddenLumoPlus,
     isLifetimePlanSelected,
     isValidPlanName,
     switchPlan,
@@ -268,6 +269,14 @@ const getUpsell = ({
     }
 
     if (currentPlan && planParameters.defined) {
+        // if this is the case when user has a subscription and wants to buy Lumo Plus then we don't need to block them
+        // by showing the upsell. Insted, this situation will be handled in another function that will call
+        // `isForbiddenLumoPlus()` again and will replace the plan with PlanIDs { [currentPlanName]: 1,
+        // [lumo-addon-for-current-plan]: 1 }
+        if (isForbiddenLumoPlus({ subscription, newPlanName: planParameters.plan.Name, plansMap })) {
+            return noUpsell;
+        }
+
         if (planParameters.plan.Name === PLANS.VISIONARY) {
             return getUpsellData(planParameters.plan.Name);
         }
