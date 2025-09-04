@@ -1223,9 +1223,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde her ${ cycle } ayda bir otomatik olarak yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde aylık olarak otomatik yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
       ],
@@ -4430,11 +4427,17 @@
       "Contacts": [
         "Kişiler"
       ],
+      "Domain": [
+        "Etki alanı"
+      ],
       "Drawer": [
         "Çekmece"
       ],
       "Name": [
         "Ad"
+      ],
+      "Password ends with": [
+        "Parola şununla bitiyor"
       ],
       "Repeat event": [
         "Etkinliği yinele"
@@ -4444,6 +4447,9 @@
       ],
       "Security Center": [
         "Güvenlik merkezi"
+      ],
+      "Username": [
+        "Kullanıcı adı"
       ]
     },
     "Hint": {
@@ -11096,6 +11102,9 @@
       "Network error": [
         "Ağ sorunu"
       ],
+      "Next": [
+        "Sonraki"
+      ],
       "Night theme": [
         "Gece teması"
       ],
@@ -11110,6 +11119,9 @@
       ],
       "Open actions dropdown": [
         "İşlemler menüsünü aç"
+      ],
+      "Open pagination": [
+        "Sayfalandırmayı aç"
       ],
       "Org setup": [
         "Kuruluş ayarları"
@@ -11140,6 +11152,9 @@
       ],
       "Phone numbers": [
         "Telefon numaraları"
+      ],
+      "Previous": [
+        "Önceki"
       ],
       "Private browsing vs VPN": [
         "Gizli gezinme ile VPN karşılaştırması"

@@ -1309,6 +1309,17 @@
         "Terabajtů"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Doména"
+      ],
+      "Password ends with": [
+        "Heslo končí na"
+      ],
+      "Username": [
+        "Uživatelské jméno"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Položka \"${ payload.itemName }\" byla odmítnuta"
@@ -1884,7 +1895,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -4428,6 +4442,9 @@
       "MX record": [
         "MX záznam"
       ],
+      "Next": [
+        "Další"
+      ],
       "No excluded items": [
         "Žádné vyloučené položky"
       ],
@@ -4448,6 +4465,9 @@
       ],
       "No shared secure links": [
         "Žádné sdílené bezpečné odkazy"
+      ],
+      "Open pagination": [
+        "Otevřít stránkování"
       ],
       "Organize vaults": [
         "Organizovat trezory"
@@ -4484,6 +4504,9 @@
         "Upozorňujeme, že jednou smazané aliasy nelze obnovit.",
         "Upozorňujeme, že jednou smazané aliasy nelze obnovit.",
         "Upozorňujeme, že jednou smazané aliasy nelze obnovit."
+      ],
+      "Previous": [
+        "Předchozí"
       ],
       "Random Prefix Generation": [
         "Generování náhodné předpony"

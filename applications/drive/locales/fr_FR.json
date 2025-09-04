@@ -1407,9 +1407,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement tous les ${ cycle } mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
       ],
@@ -4262,14 +4259,23 @@
       "Create new shared album": [
         "Créer un nouvel album partagé"
       ],
+      "Domain": [
+        "Domaine"
+      ],
       "Drawer": [
         "Menu latéral"
+      ],
+      "Password ends with": [
+        "Le mot de passe se termine par"
       ],
       "Rename album": [
         "Modifier le nom de l'album"
       ],
       "Security Center": [
         "Centre de sécurité"
+      ],
+      "Username": [
+        "Nom d'utilisateur"
       ]
     },
     "Heading": {
@@ -11961,6 +11967,9 @@
       "Network error": [
         "Erreur réseau"
       ],
+      "Next": [
+        "Suivant"
+      ],
       "Night theme": [
         "Thème nuit"
       ],
@@ -12021,6 +12030,9 @@
       "Open actions dropdown": [
         "Ouvrir le menu déroulant des actions"
       ],
+      "Open pagination": [
+        "Ouvrir la pagination"
+      ],
       "Org setup": [
         "Configuration de l’organisation"
       ],
@@ -12062,6 +12074,9 @@
       ],
       "Preview": [
         "Aperçu"
+      ],
+      "Previous": [
+        "Précédent"
       ],
       "Private browsing vs VPN": [
         "Navigation privée versus VPN"

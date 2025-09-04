@@ -1408,6 +1408,9 @@
       "Spam": [
         "Spam"
       ],
+      "Start free trial": [
+        "Spustit zkušební verzi zdarma"
+      ],
       "Start import": [
         "Spustit import"
       ],
@@ -4203,6 +4206,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } je vaše výchozí e-mailová aplikace."
       ],
+      "A checked box means the feature is disabled.": [
+        "Zaškrtnuté políčko znamená, že je funkce deaktivována."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Přidejte složky a soubory do ${ DRIVE_APP_NAME } a pozvěte členy týmu k prohlížení nebo úpravám."
       ],
@@ -4347,14 +4353,17 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Můžete nadále zvát přátele, ale nebudete moci získávat další kredity"
       ],
+      "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Můžete si přizpůsobit seznam domén, ve kterých se nemají spouštět určité automatické funkce v rozšíření prohlížeče ${ PASS_APP_NAME } (automatické vyplňování, automatické doporučení, automatické ukládání)."
+      ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
         "V poli ${ PASS_APP_NAME } můžete vynutit pravidla pro hesla, která budou členové organizace používat při jejich generování"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Můžete importovat události ve formátu iCal (ICS soubor). Tento soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálně ${ MAX_IMPORT_EVENTS_STRING } událostí. Pokud je váš soubor větší, prosím rozdělte ho na menší soubory."
       ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "Obdržíte ${ referralReward } kreditů ${ BRAND_NAME }, když se osoba, kterou pozvete, zaregistruje k tarifu ${ BRAND_NAME }, a oni sami také obdrží ${ referralReward } kreditů do začátku."
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Obdržíte ${ referralInfo.referrerRewardAmount } kreditů ${ BRAND_NAME }, když se osoba, kterou pozvete, zaregistruje k tarifu ${ BRAND_NAME }, a oni sami také obdrží ${ referralInfo.refereeRewardAmount } kreditů do začátku."
       ]
     },
     "description": {
@@ -5759,6 +5768,9 @@
       ],
       "Invalid Sieve code": [
         "Neplatný Sieve kód"
+      ],
+      "Invalid URL": [
+        "Neplatná URL"
       ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"
@@ -7380,6 +7392,9 @@
       "Device": [
         "Zařízení"
       ],
+      "Domain": [
+        "Doména"
+      ],
       "Enter your email address": [
         "Zadejte svou e-mailovou adresu"
       ],
@@ -7412,6 +7427,9 @@
       ],
       "Organization key fingerprint": [
         "Otisk klíče organizace"
+      ],
+      "Password ends with": [
+        "Heslo končí na"
       ],
       "Payment details": [
         "Platební údaje"
@@ -7454,6 +7472,9 @@
       ],
       "User": [
         "Uživatel"
+      ],
+      "Username": [
+        "Uživatelské jméno"
       ]
     },
     "Header for addresses table": {
@@ -8213,6 +8234,12 @@
       ],
       "${ storage } storage": [
         "${ storage } úložiště"
+      ],
+      "${ url } added.": [
+        "Doména ${ url } přidána."
+      ],
+      "${ url } deleted.": [
+        "Doména ${ url } smazána."
       ],
       "${ userFound } user found": [
         "Nalezen ${ userFound } uživatel",
@@ -9237,11 +9264,11 @@
       "Get ${ upsellPlanName }": [
         "Získat ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Získejte **${ referrerRewardAmount } kreditů** za každého přítele, který se přihlásí k odběru."
+      ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Získejte přístup vytvořením účtu ${ BRAND_NAME } a přijetím pozvánky."
-      ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "Získejte a dejte **${ referralReward } kreditů** za každého přítele, který se přihlásí k odběru."
       ],
       "Get it on Google Play": [
         "Získat v Google Play"
@@ -10803,6 +10830,9 @@
       "URL link": [
         "URL odkaz"
       ],
+      "URL settings updated.": [
+        "Nastavení URL aktualizováno."
+      ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Ke generování a bezpečnému ukládání hesel používejte správce hesel, který zajistí silná hesla a snadnější přihlašování."
       ],
@@ -11439,6 +11469,9 @@
       "You’re all set": [
         "Vše je připraveno"
       ],
+      "Zero charge today": [
+        "Dnes bez poplatku"
+      ],
       "Zoom meeting": [
         "schůzku na Zoomu"
       ]
@@ -12044,6 +12077,9 @@
       "Account storage": [
         "Prostor pro účet"
       ],
+      "Action": [
+        "Akce"
+      ],
       "Actions": [
         "Akce"
       ],
@@ -12185,8 +12221,20 @@
       "Auto-unsubscribe": [
         "Automatické odhlášení odběru"
       ],
+      "Autofill": [
+        "Automatické vyplňování"
+      ],
+      "Autofill 2FA": [
+        "Automaticky vyplnit 2FA"
+      ],
       "Automatically save contacts": [
         "Automaticky ukládat kontakty"
+      ],
+      "Autosave": [
+        "Automatické uložení"
+      ],
+      "Autosuggest": [
+        "Automatické doporučení"
       ],
       "Awarded": [
         "Uděleno"
@@ -12430,6 +12478,9 @@
       ],
       "Domain name": [
         "Název domény"
+      ],
+      "Domains": [
+        "Domény"
       ],
       "Don't ask again": [
         "Příště se neptat"
@@ -12808,6 +12859,9 @@
       ],
       "Other amount": [
         "Jiná částka"
+      ],
+      "Passkeys": [
+        "Přístupové klíče"
       ],
       "Password": [
         "Heslo"
@@ -13916,8 +13970,8 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Přihlaste se ke svému ${ BRAND_NAME } účtu pro přístup ke všem šifrovaným službám ${ BRAND_NAME }, jako jsou ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a další. Nemáte účet? Vytvořte si ho ZDARMA."
       ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "Převezměte kontrolu nad svými daty pomocí koncového šifrování. Není potřeba platební karta."
+      "Take control of your data with end-to-end encryption": [
+        "Převezměte kontrolu nad svými daty pomocí koncového šifrování"
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "Vyzkoušejte ${ BRAND_NAME } zdarma pomocí tohoto odkazu"
@@ -18720,8 +18774,8 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Všechny základní služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "A získejte ${ referralReward } v kreditech, pokud se přihlásíte k odběru."
+      "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
+        "A získejte ${ referralInfo.uiData.refereeRewardAmount } v kreditech, pokud se přihlásíte k odběru."
       ],
       "Billing Cycle": [
         "Fakturační cyklus"
@@ -18786,11 +18840,11 @@
       "Free": [
         "Free"
       ],
-      "Free for 14 days": [
-        "Zdarma na 14 dnů"
+      "Free for ${ TRIAL_DURATION_DAYS } days": [
+        "Zdarma na ${ TRIAL_DURATION_DAYS } dnů"
       ],
-      "Get ${ referralReward } in credits": [
-        "Získejte ${ referralReward } v kreditech"
+      "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Získejte ${ referralInfo.uiData.refereeRewardAmount } v kreditech"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Získejte bezpečnou ${ MAIL_APP_NAME } adresu nebo ${ internalButton }"
@@ -18873,8 +18927,8 @@
       "Select ${ title }": [
         "Vybrat ${ title }"
       ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "Vyberte si službu a užijte si prémiovou verzi na 14 dní zdarma. Platební karta není vyžadována."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
+        "Vyberte si službu a užijte si prémiovou verzi na ${ TRIAL_DURATION_DAYS } dnů zdarma. Platební karta není vyžadována."
       ],
       "Selected": [
         "Vybráno"
@@ -18920,6 +18974,9 @@
       ],
       "Total": [
         "Celkem"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
+        "Vyzkoušejte zdarma ${ BRAND_NAME } na ${ TRIAL_DURATION_DAYS } dnů"
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "Vyzkoušejte ${ BRAND_NAME } na 14 dní zdarma"
@@ -21637,8 +21694,8 @@
       "Gift code": [
         "Dárkový kód"
       ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "Dejte ${ referralReward } a 2 týdny zdarma. Získáte kredity ve výši ${ referralReward }."
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Dejte ${ refereeRewardAmount } a 2 týdny zdarma. Získáte kredity ve výši ${ referrerRewardAmount }."
       ],
       "Group": [
         "Skupina"
@@ -21873,6 +21930,9 @@
       ],
       "Passwords made easy": [
         "Snadná správa hesel"
+      ],
+      "Pause list": [
+        "Seznam pozastavených"
       ],
       "Pay invoice": [
         "Zaplatit fakturu"
