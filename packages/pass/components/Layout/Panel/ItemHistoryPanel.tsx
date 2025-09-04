@@ -1,5 +1,4 @@
-import type { PropsWithChildren, ReactNode } from 'react';
-import type { FC, ReactElement } from 'react';
+import type { FC, PropsWithChildren, ReactElement, ReactNode } from 'react';
 
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import type { ItemType } from '@proton/pass/types';

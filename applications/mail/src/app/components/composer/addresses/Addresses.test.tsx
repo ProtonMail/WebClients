@@ -120,7 +120,7 @@ const setup = async ({
     const composerID = 'composer-test-id';
     const result = await mailTestRender(<Addresses {...DEFAULT_PROPS} composerID={composerID} />, {
         onStore: (store) => {
-            store.dispatch(
+            void store.dispatch(
                 addComposerAction({
                     ID: composerID,
                     messageID: nextMessage.localID || '',

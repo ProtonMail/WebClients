@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
-import type { TypedUseSelectorHook } from 'react-redux';
-import type { Selector } from 'react-redux';
+import type { Selector, TypedUseSelectorHook } from 'react-redux';
 
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
 

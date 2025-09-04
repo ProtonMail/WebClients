@@ -77,7 +77,7 @@ const props = {
 };
 
 const setupComposer = (store: MailStore, composerID: string) => {
-    store.dispatch(
+    void store.dispatch(
         addComposerAction({
             ID: composerID,
             messageID: message.localID || '',

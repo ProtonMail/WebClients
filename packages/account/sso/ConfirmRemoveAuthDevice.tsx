@@ -1,5 +1,4 @@
-import { format } from 'date-fns';
-import { fromUnixTime } from 'date-fns';
+import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';

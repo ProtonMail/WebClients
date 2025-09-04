@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import { Button, Tooltip } from '@proton/atoms';
 import type { IconName } from '@proton/components';

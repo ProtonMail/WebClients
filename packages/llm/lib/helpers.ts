@@ -16,8 +16,7 @@ import type {
     OpenedAssistantStatus,
     ParentToIframeMessage,
 } from '@proton/llm/lib/types';
-import { isRefineActionType } from '@proton/llm/lib/types';
-import { AssistantEvent } from '@proton/llm/lib/types';
+import { AssistantEvent, isRefineActionType } from '@proton/llm/lib/types';
 import { GENERATION_TYPE, checkHardwareForAssistant } from '@proton/shared/lib/assistant';
 import { isChromiumBased, isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { getMessageEventType } from '@proton/shared/lib/helpers/messageEvent';

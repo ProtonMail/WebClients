@@ -1,5 +1,4 @@
-import type { PropsWithChildren } from 'react';
-import type { FC } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import { ModalsChildren, ModalsProvider, NotificationsChildren, NotificationsProvider } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';

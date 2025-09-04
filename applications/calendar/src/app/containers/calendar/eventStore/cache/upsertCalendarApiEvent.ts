@@ -6,7 +6,7 @@ import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import type { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
 import type { CalendarEventsCache } from '../interface';
 import getComponentFromCalendarEventUnencryptedPart from './getComponentFromCalendarEventUnencryptedPart';
-import removeCalendarEventStoreRecord from './removeCalendarEventStoreRecord';
+import { removeCalendarEventStoreRecord } from './removeCalendarEventStoreRecord';
 import { getCalendarEventStoreRecord, upsertCalendarEventStoreRecord } from './upsertCalendarEventStoreRecord';
 
 const upsertCalendarApiEvent = (

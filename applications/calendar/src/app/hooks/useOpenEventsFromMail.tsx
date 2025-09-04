@@ -10,7 +10,7 @@ import type { Address } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import type { EventTargetAction } from '../containers/calendar/interface';
-import useOpenCalendarEvents from './useOpenCalendarEvents';
+import { useOpenCalendarEvents } from './useOpenCalendarEvents';
 import { useOpenEvent } from './useOpenEvent';
 
 interface Props {
