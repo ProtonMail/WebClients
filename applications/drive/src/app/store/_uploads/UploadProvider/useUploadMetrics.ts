@@ -9,9 +9,10 @@ import {
     getIsUnreachableError,
 } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
-import { isIgnoredErrorForReporting, sendErrorReport } from '../../../utils/errorHandling';
+import { isIgnoredErrorForReporting } from '../../../utils/errorHandling';
 import { is4xx, is5xx } from '../../../utils/errorHandling/apiErrors';
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import { UserAvailabilityTypes } from '../../../utils/metrics/types/userSuccessMetricsTypes';
@@ -170,7 +171,7 @@ export function getErrorCategory(error: any): UploadErrorCategoryType {
         return UploadErrorCategory.HTTPServerError;
     }
 
-    sendErrorReport(error, {
+    traceError(error, {
         tags: {
             label: 'upload-unknown-error',
         },

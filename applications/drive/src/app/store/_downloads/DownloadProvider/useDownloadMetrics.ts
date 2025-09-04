@@ -8,10 +8,11 @@ import {
     getIsTimeoutError,
     getIsUnreachableError,
 } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
-import { isAbortError, isIgnoredErrorForReporting, sendErrorReport } from '../../../utils/errorHandling';
+import { isAbortError, isIgnoredErrorForReporting } from '../../../utils/errorHandling';
 import { is4xx, is5xx, isCryptoEnrichedError } from '../../../utils/errorHandling/apiErrors';
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import { UserAvailabilityTypes } from '../../../utils/metrics/types/userSuccessMetricsTypes';
@@ -42,7 +43,7 @@ export function getErrorCategory(state: TransferState, error: any): DownloadErro
         return DownloadErrorCategory.HTTPServerError;
     }
 
-    sendErrorReport(error, {
+    traceError(error, {
         tags: {
             label: 'download-unknown-error',
         },
