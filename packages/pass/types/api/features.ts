@@ -7,6 +7,7 @@ export enum PassFeature {
     PassCustomTypeV1 = 'PassCustomTypeV1',
     PassEnableDesktopAutoUpdate = 'PassEnableDesktopAutoUpdate',
     PassExperimentalWebsiteRules = 'PassExperimentalWebsiteRules',
+    PassHideShowVault = 'PassHideShowVault',
     PassProtonAnniversaryPromo2025 = 'PassProtonAnniversaryPromo2025',
     PassRenameAdminToManager = 'PassRenameAdminToManager',
     PassWebInternalAlpha = 'PassWebInternalAlpha',
