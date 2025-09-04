@@ -7,6 +7,7 @@ import { getDevice } from '@proton/shared/lib/helpers/browser';
 
 import { useSelection } from '../../../components/FileBrowser';
 import useIsEditEnabled from '../../../components/sections/useIsEditEnabled';
+import { useDebug } from '../../../hooks/drive/useDebug';
 import { ActionsDropdown } from '../buttons/ActionsDropdown';
 import { CreateNewDocumentButton } from '../buttons/CreateNewDocumentButton';
 import { CreateNewFileButton } from '../buttons/CreateNewFileButton';
@@ -39,6 +40,7 @@ interface Props {
 
 export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelection = true }: Props) => {
     const isDesktop = !getDevice()?.type;
+    const debug = useDebug();
     const { viewportWidth } = useActiveBreakpoint();
     const selectionControls = useSelection();
     const isEditEnabled = useIsEditEnabled();
@@ -63,6 +65,7 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
             showLinkSharingModal,
             showFileSharingModal,
         },
+        uploadSdkFile: { sdkFileInputRef, sdkHandleFileClick, sdkHandleFileChange },
         uploadFile: { fileInputRef, handleFileClick, handleFileChange },
         uploadFolder: { folderInputRef, handleFolderClick, handleFolderChange },
         modals,
@@ -96,6 +99,7 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
                             <Vr />
                             {isDesktop && <UploadFolderButton type="toolbar" onClick={handleFolderClick} />}
                             <UploadFileButton type="toolbar" onClick={handleFileClick} />
+                            {debug && <UploadFileButton type="toolbar" onClick={sdkHandleFileClick} />}
                             <Vr />
                         </>
                     ) : null}
@@ -160,6 +164,7 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
                 <LayoutToolbarButton />
             </span>
             <input multiple type="file" ref={fileInputRef} className="hidden" onChange={handleFileChange} />
+            <input multiple type="file" ref={sdkFileInputRef} className="hidden" onChange={sdkHandleFileChange} />
             <input type="file" ref={folderInputRef} className="hidden" onChange={handleFolderChange} />
             {modals.renameModal}
             {modals.moveModal}
