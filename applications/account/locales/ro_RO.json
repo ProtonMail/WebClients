@@ -1408,6 +1408,9 @@
       "Spam": [
         "Nedorite"
       ],
+      "Start free trial": [
+        "Începeți probarea gratuită"
+      ],
       "Start import": [
         "Pornire importare"
       ],
@@ -4184,6 +4187,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } este aplicația de e-mail implicită."
       ],
+      "A checked box means the feature is disabled.": [
+        "O casetă bifată înseamnă că funcția e dezactivată."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Adăugați foldere și fișiere în ${ DRIVE_APP_NAME } și invitați membrii echipei să le vadă sau să le editeze."
       ],
@@ -4327,14 +4333,14 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Puteți continua să invitați prieteni, dar nu veți putea câștiga mai multe credite."
       ],
+      "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Vă puteți personaliza lista de domenii în care anumite funcții automate din extensia de navigator web ${ PASS_APP_NAME } (autocompletare, autosugerare, autosalvare) nu ar trebui să fie executate."
+      ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
         "Puteți aplica regulile pentru parole pe care membrii organizației le vor folosi atunci când generează o parolă în ${ PASS_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puteți importa evenimente în format iCal (fișier ICS). Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_EVENTS_STRING } evenimente. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
-      ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "Veți primi ${ referralReward } în credite ${ BRAND_NAME } atunci când persoana pe care o invitați se înscrie la un plan ${ BRAND_NAME } și aceasta va primi ${ referralReward } în credite pentru a începe."
       ]
     },
     "description": {
@@ -5728,6 +5734,9 @@
       ],
       "Invalid Sieve code": [
         "Cod Sieve nevalid."
+      ],
+      "Invalid URL": [
+        "Adresă URL nevalidă."
       ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
@@ -8133,6 +8142,12 @@
       "${ storage } storage": [
         "Stocare ${ storage }"
       ],
+      "${ url } added.": [
+        "S-a adăugat ${ url }."
+      ],
+      "${ url } deleted.": [
+        "S-a șters ${ url }."
+      ],
       "${ userFound } user found": [
         "S-a găsit ${ userFound } utilizator",
         "S-au găsit ${ userFound } utilizatori",
@@ -9142,9 +9157,6 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Obțineți acces creând un cont ${ BRAND_NAME } și acceptând invitația."
-      ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "Acordați și obțineți **${ referralReward } în credite** pentru fiecare persoană care se abonează."
       ],
       "Get it on Google Play": [
         "Descărcare din Magazin Play"
@@ -10693,6 +10705,9 @@
       "URL link": [
         "URL legătură web"
       ],
+      "URL settings updated.": [
+        "Setările adresei URL s-au actualizat."
+      ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Utilizați un manager de parole pentru a vă genera și stoca în siguranță parolele, asigurând parole puternice și conectări mai ușoare."
       ],
@@ -11315,6 +11330,9 @@
       "You’re all set": [
         "Totul e în regulă"
       ],
+      "Zero charge today": [
+        "Cost zero astăzi"
+      ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
       ]
@@ -11913,6 +11931,9 @@
       "Account storage": [
         "Spațiu cont"
       ],
+      "Action": [
+        "Acțiune"
+      ],
       "Actions": [
         "Acțiuni"
       ],
@@ -12054,8 +12075,20 @@
       "Auto-unsubscribe": [
         "Autodezabonare"
       ],
+      "Autofill": [
+        "Autocompletare"
+      ],
+      "Autofill 2FA": [
+        "Autocompletare A2F"
+      ],
       "Automatically save contacts": [
         "Salvare automată contacte"
+      ],
+      "Autosave": [
+        "Autosalvare"
+      ],
+      "Autosuggest": [
+        "Sugestie automată"
       ],
       "Awarded": [
         "Acreditat"
@@ -12299,6 +12332,9 @@
       ],
       "Domain name": [
         "Nume domeniu"
+      ],
+      "Domains": [
+        "Domenii"
       ],
       "Don't ask again": [
         "Nu mă mai întreba"
@@ -12677,6 +12713,9 @@
       ],
       "Other amount": [
         "Altă sumă"
+      ],
+      "Passkeys": [
+        "Chei de acces"
       ],
       "Password": [
         "Parola"
@@ -13777,8 +13816,8 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Conectați-vă la contul ${ BRAND_NAME } pentru a accesa toate serviciile ${ BRAND_NAME } criptate, cum ar fi ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și altele. NU aveți un cont? Creați unul GRATUIT."
       ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "Preluați controlul asupra datelor cu criptare bilaterală. Nu este necesar un card bancar."
+      "Take control of your data with end-to-end encryption": [
+        "Preluați controlul asupra datelor cu criptarea bilaterală"
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "Încercați ${ BRAND_NAME } gratuit cu această legătură web"
@@ -18506,9 +18545,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Toate serviciile de bază ale ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "Și primiți ${ referralReward } în credite, dacă vă abonați."
-      ],
       "Billing Cycle": [
         "Ciclu de facturare"
       ],
@@ -18572,11 +18608,8 @@
       "Free": [
         "Free"
       ],
-      "Free for 14 days": [
-        "Gratuit timp de 14 zile"
-      ],
-      "Get ${ referralReward } in credits": [
-        "Obțineți ${ referralReward } în credite"
+      "Free for ${ TRIAL_DURATION_DAYS } days": [
+        "Gratuit timp de ${ TRIAL_DURATION_DAYS } zile"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Obțineți o adresă ${ MAIL_APP_NAME } securizată sau ${ internalButton }"
@@ -18658,8 +18691,8 @@
       "Select ${ title }": [
         "Selectare ${ title }"
       ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "Selectați un serviciu și bucurați-vă de versiunea specială gratuit timp de 14 zile. Nu este necesar cardul de plată."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
+        "Selectați un serviciu și bucurați-vă de versiunea premium gratuit timp de ${ TRIAL_DURATION_DAYS } zile. Nu este necesar cardul de plată."
       ],
       "Selected": [
         "Selectat"
@@ -18705,6 +18738,9 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
+        "Încercați ${ BRAND_NAME } timp de ${ TRIAL_DURATION_DAYS } zile gratuit"
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "Încercați ${ BRAND_NAME } gratuit timp de 14 zile"
@@ -21370,9 +21406,6 @@
       "Gift code": [
         "Cod cadou"
       ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "Acordați ${ referralReward } în credite și două săptămâni gratuite. Obțineți ${ referralReward } în credite."
-      ],
       "Group": [
         "Grup"
       ],
@@ -21605,6 +21638,9 @@
       ],
       "Passwords made easy": [
         "Parole ușor de creat"
+      ],
+      "Pause list": [
+        "Listă suspendări"
       ],
       "Pay invoice": [
         "Plată factură"
