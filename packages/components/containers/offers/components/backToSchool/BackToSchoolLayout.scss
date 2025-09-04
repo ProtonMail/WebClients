@@ -1,0 +1,49 @@
+@import '~@proton/styles/scss/lib';
+
+.backToSchoolModalContent {
+	margin-block-start: 2rem;
+}
+
+.backToSchoolSquareBadge {
+	inline-size: 5rem;
+	block-size: 5rem;
+	background-color: #ffd000;
+	color: black;
+	text-transform: uppercase;
+	line-height: 1;
+}
+
+.backToSchoolPromoPrice {
+	font-size: 3rem;
+	margin-inline-end: 0.25rem;
+}
+
+.backToSchoolCTA {
+	background: #ffd000 !important;
+}
+
+.backToSchoolFeatures {
+	padding: 0;
+	list-style-type: none;
+
+	li {
+		padding-block: 0.5rem;
+		padding-inline: rem(12);
+		font-size: 1rem;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	li:nth-child(even) {
+		background: rgb(226 219 255 / 0.1);
+	}
+}
+
+.backToSchoolFeaturesDismiss {
+	color: white;
+
+	&:hover {
+		color: white;
+	}
+}
