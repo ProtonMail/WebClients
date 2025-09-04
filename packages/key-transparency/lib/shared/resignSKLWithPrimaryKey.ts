@@ -3,8 +3,7 @@ import type { ResignSKLWithPrimaryKeyArguments } from '@proton/shared/lib/interf
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { getSignedKeyListSignature } from '@proton/shared/lib/keys';
 
-import { fetchSignedKeyLists } from '../helpers/apiHelpers';
-import { fetchVerifiedEpoch, updateSignedKeyListSignature } from '../helpers/apiHelpers';
+import { fetchSignedKeyLists, fetchVerifiedEpoch, updateSignedKeyListSignature } from '../helpers/apiHelpers';
 import { ktSentryReportError } from '../helpers/utils';
 import { verifySKLSignature } from '../verification/verifyKeys';
 

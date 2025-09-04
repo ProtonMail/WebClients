@@ -1,8 +1,7 @@
 import type { Action, Draft } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
-import { ImportType } from '@proton/activation/src/interface';
-import { ImportProvider } from '@proton/activation/src/interface';
+import { ImportProvider, ImportType } from '@proton/activation/src/interface';
 import type { RequireSome } from '@proton/shared/lib/interfaces';
 
 import * as actions from './imapDraft.actions';

@@ -1,5 +1,4 @@
-import type { PropsWithChildren } from 'react';
-import type { FC } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import { PasswordGeneratorAction } from './PasswordGeneratorAction';
 import { PasswordHistoryActions } from './PasswordHistoryActions';

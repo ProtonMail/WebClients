@@ -21,7 +21,7 @@ import { useGetOpenedMailEvents } from '../../hooks/useGetOpenedMailEvents';
 import EncryptedSearchLibraryProvider from '../EncryptedSearchLibraryProvider';
 import AlarmContainer from '../alarms/AlarmContainer';
 import type { CalendarsAlarmsCache } from '../alarms/CacheInterface';
-import useCalendarsAlarmsEventListeners from '../alarms/useCalendarAlarmsEventListener';
+import { useCalendarsAlarmsEventListeners } from '../alarms/useCalendarAlarmsEventListener';
 import { getCalendarsAlarmsCache } from '../alarms/useCalendarsAlarms';
 import CalendarContainer from './CalendarContainer';
 import CalendarStartupModals from './CalendarStartupModals';

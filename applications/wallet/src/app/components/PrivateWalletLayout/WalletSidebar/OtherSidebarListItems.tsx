@@ -22,8 +22,7 @@ import {
     useSubscriptionModal,
     useToggle,
 } from '@proton/components';
-import { PLANS } from '@proton/payments';
-import { hasBundle, hasBundlePro, hasBundlePro2024, hasDuo, hasFamily } from '@proton/payments';
+import { PLANS, hasBundle, hasBundlePro, hasBundlePro2024, hasDuo, hasFamily } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store';
 import clsx from '@proton/utils/clsx';
 

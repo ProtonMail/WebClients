@@ -2,8 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Option, SelectTwo } from '@proton/components';
-import { useConfig } from '@proton/components';
+import { Option, SelectTwo, useConfig } from '@proton/components';
 
 type Props = {
     value?: string;

@@ -20,10 +20,11 @@ import type {
     AmountAndCurrency,
     ChargeableV5PaymentParameters,
     ChargebeeFetchedPaymentToken,
+    ChargebeeIframeEvents,
+    ChargebeeIframeHandles,
     PaymentStatus,
     V5PaymentToken,
 } from '../interface';
-import type { ChargebeeIframeEvents, ChargebeeIframeHandles } from '../interface';
 import { InvalidDataError, PaymentProcessor } from './paymentProcessor';
 
 export interface ChargebeeCardPaymentProcessorState {

@@ -5,14 +5,21 @@ import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { useContactEmailsCache, useGetVerificationPreferences } from '@proton/components';
 import { apiNotificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
 import { toInternalAttendee } from '@proton/shared/lib/calendar/attendees';
-import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
-import { EVENT_VERIFICATION_STATUS } from '@proton/shared/lib/calendar/constants';
+import {
+    EVENT_VERIFICATION_STATUS,
+    ICAL_ATTENDEE_ROLE,
+    ICAL_ATTENDEE_RSVP,
+    ICAL_ATTENDEE_STATUS,
+} from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDecryptionKeys } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { readSessionKeys } from '@proton/shared/lib/calendar/deserialize';
 import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
-import type { CalendarSettings, EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
-import type { AttendeeModel } from '@proton/shared/lib/interfaces/calendar';
-import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import type {
+    AttendeeModel,
+    CalendarEvent,
+    CalendarSettings,
+    EventModelReadView,
+} from '@proton/shared/lib/interfaces/calendar';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import type { CalendarViewEventData } from '../../containers/calendar/interface';

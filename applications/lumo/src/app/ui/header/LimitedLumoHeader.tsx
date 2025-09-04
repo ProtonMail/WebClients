@@ -1,9 +1,7 @@
-import { AppsDropdown } from '@proton/components';
-import { UserDropdown } from '@proton/components';
+import { AppsDropdown, UserDropdown } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { LumoHeader } from './HeaderWrapper';
-import { LumoLogo } from './HeaderWrapper';
+import { LumoHeader, LumoLogo } from './HeaderWrapper';
 
 const { PROTONLUMO } = APPS;
 

@@ -10,9 +10,10 @@ import {
 import { type ProtonForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
 import {
     type GetActiveSessionsResult,
+    getActiveSessions,
     getActiveSessionsResult,
+    resumeSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { getActiveSessions, resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { getProduceForkLoginResult } from '../actions/getProduceForkLoginResult';

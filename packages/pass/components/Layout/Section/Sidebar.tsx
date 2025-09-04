@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
-import type { PropsWithChildren } from 'react';
-import type { FC } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import { Logo, PassForBusinessLogo } from '@proton/components';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';

@@ -1,8 +1,7 @@
 import { apiMock } from '@proton/testing/lib/api';
 import { MOCK_TOKEN_RESPONSE, addTokensResponse } from '@proton/testing/lib/payments/api-endpoints';
 
-import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
-import { Autopay } from '../constants';
+import { Autopay, PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
 import type { AmountAndCurrency, SavedPaymentMethodInternal, V5PaymentToken } from '../interface';
 import { SavedPaymentProcessor } from './savedPayment';
 

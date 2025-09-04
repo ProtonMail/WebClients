@@ -14,7 +14,7 @@ import type {
 import type { SyncEventActionOperations } from '../../getSyncMultipleEventsPayload';
 import { getIsDeleteSyncOperation } from '../../getSyncMultipleEventsPayload';
 import type { CalendarsEventsCache } from '../interface';
-import removeCalendarEventStoreRecord from './removeCalendarEventStoreRecord';
+import { removeCalendarEventStoreRecord } from './removeCalendarEventStoreRecord';
 import upsertCalendarApiEvent from './upsertCalendarApiEvent';
 
 const getResponse = (responses: SyncMultipleApiResponses[], index: number) => {
