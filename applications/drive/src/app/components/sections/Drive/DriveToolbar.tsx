@@ -117,7 +117,6 @@ const DriveToolbar = ({
                 </>
             );
         }
-
         return (
             <>
                 <PreviewButton selectedBrowserItems={selectedItems} />
