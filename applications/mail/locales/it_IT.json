@@ -1447,6 +1447,10 @@
       "Trust": [
         "Considera attendibile"
       ],
+      "Trust key": [
+        "chiave attendibile",
+        "chiavi attendibili"
+      ],
       "Trust public key": [
         "Chiave pubblica attendibile"
       ],
@@ -1965,9 +1969,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni ${ cycle } mesi il ${ formattedDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese il ${ formattedDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
       ],
@@ -7254,8 +7255,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -9090,6 +9090,9 @@
       "Cash": [
         "Contanti"
       ],
+      "Categories badge": [
+        "Badge categorie"
+      ],
       "Category": [
         "Categoria"
       ],
@@ -9251,6 +9254,12 @@
       ],
       "From: ${ fromEmail }": [
         "Da: ${ fromEmail }"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Aiutaci a migliorare le categorie scegliendo quella che si adatta meglio a questa email. Grazie per il tuo aiuto!"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Aiutaci a migliorare la prossima categorizzazione della posta"
       ],
       "Hide password": [
         "Nascondi la password"
@@ -9540,6 +9549,9 @@
       "System information": [
         "Informazioni sul sistema"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "La categoria è stata aggiornata, grazie per il tuo feedback!"
+      ],
       "The filter is disabled. ${ enableButton }": [
         "Il filtro è disattivato. ${ enableButton }"
       ],
@@ -9603,11 +9615,20 @@
       "Weak password": [
         "Password debole"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Stiamo migliorando la categorizzazione delle email. Il tuo feedback ci aiuta a renderla più intelligente e accurata."
+      ],
       "What happened?": [
         "Cos'è successo?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "Qual è il tuo motivo principale per annullare o fare il downgrade?"
+      ],
+      "Which category should this be recategorized under?": [
+        "Sotto quale categoria dovrebbe essere riclassificata?"
+      ],
+      "Why am I seeing this?": [
+        "Perché lo vedo?"
       ],
       "With attachment": [
         "Con allegato"
@@ -13813,6 +13834,10 @@
       "Conversation removed from Starred.": [
         "Conversazione rimossa dai Preferiti."
       ],
+      "Conversation updated": [
+        "Conversazione aggiornata",
+        "Conversazioni aggiornate"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Le conversazioni da ${ sendersList } saranno etichettate come ${ labelsList }"
       ],
@@ -13887,6 +13912,10 @@
       ],
       "Message removed from Starred.": [
         "Messaggio rimosso dai Preferiti."
+      ],
+      "Message updated": [
+        "Messaggio aggiornato",
+        "Messaggi aggiornati"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "I messaggi da ${ sendersList } saranno etichettati come ${ labelsList }"
@@ -14752,6 +14781,9 @@
       "Newsletters view": [
         "Vista Newsletters"
       ],
+      "Next": [
+        "Successivo"
+      ],
       "Next conversation": [
         "Prossima conversazione"
       ],
@@ -14797,6 +14829,9 @@
       "Open actions dropdown": [
         "Apri menu delle azioni"
       ],
+      "Open pagination": [
+        "Apri paginazione"
+      ],
       "Org setup": [
         "Configurazione dell'organizzazione"
       ],
@@ -14826,6 +14861,9 @@
       ],
       "Preview": [
         "Anteprima"
+      ],
+      "Previous": [
+        "Precedente"
       ],
       "Previous conversation": [
         "Conversazione precedente"
@@ -15146,6 +15184,9 @@
       ],
       "Your subscriptions in one place": [
         "I tuoi abbonamenti in un unico posto"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Le categorie stanno arrivando!"
       ]
     },
     "Today icon tooltip in mini calendar": {
