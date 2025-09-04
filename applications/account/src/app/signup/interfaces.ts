@@ -3,14 +3,19 @@ import type { AddressGeneration, AppIntent, AuthSession } from '@proton/componen
 import type { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
 import type {
     BillingAddress,
+    Currency,
+    Cycle,
     ExtendedTokenPayment,
+    FreePlanDefault,
     PAYMENT_METHOD_TYPES,
     PaymentStatus,
+    Plan,
     PlanIDs,
+    PlansMap,
     SavedPaymentMethod,
+    Subscription,
     SubscriptionCheckResponse,
 } from '@proton/payments';
-import type { Currency, Cycle, FreePlanDefault, Plan, PlansMap, Subscription } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';

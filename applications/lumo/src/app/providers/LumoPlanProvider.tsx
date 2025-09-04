@@ -1,12 +1,11 @@
-import type { ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import React, { createContext, useContext } from 'react';
 
 import { useMember } from '@proton/account/member/hook';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { hasVisionary, isManagedExternally } from '@proton/payments';
-import { hasLumoAddon } from '@proton/payments';
+import { hasLumoAddon, hasVisionary, isManagedExternally } from '@proton/payments';
 import { isOrganization, isSuperAdmin } from '@proton/shared/lib/organization/helper';
 
 import { useIsGuest } from './IsGuestProvider';

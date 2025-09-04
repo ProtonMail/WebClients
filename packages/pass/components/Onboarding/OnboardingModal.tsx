@@ -3,8 +3,7 @@ import { type FC, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Step, Stepper } from '@proton/atoms';
-import { type ModalProps, ModalTwoFooter } from '@proton/components';
-import { ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import { type ModalProps, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import { PassIconLogo } from '@proton/pass/components/Layout/Logo/PassIconLogo';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import LottieView from 'lottie-react';
 import { c } from 'ttag';
 

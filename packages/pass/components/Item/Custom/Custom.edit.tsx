@@ -7,8 +7,7 @@ import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { validateCustomItemForm } from '@proton/pass/lib/validation/custom-item';
-import type { ItemCustomType, ItemRevision } from '@proton/pass/types';
-import type { CustomItemFormValues } from '@proton/pass/types';
+import type { CustomItemFormValues, ItemCustomType, ItemRevision } from '@proton/pass/types';
 
 import { CustomForm } from './Custom.form';
 import { getEditCustomInitialValues, getEditIntent } from './Custom.utils';

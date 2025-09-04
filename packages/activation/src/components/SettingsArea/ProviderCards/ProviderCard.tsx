@@ -14,8 +14,7 @@ import { startImapDraft } from '@proton/activation/src/logic/draft/imapDraft/ima
 import { startOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
 import { FeatureCode, useFeature } from '@proton/features';
-import { type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 
 import ProviderButton from './ProviderButton';
 

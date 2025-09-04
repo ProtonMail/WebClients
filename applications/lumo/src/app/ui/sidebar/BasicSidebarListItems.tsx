@@ -1,18 +1,17 @@
 import { forwardRef } from 'react';
 import type { LiHTMLAttributes } from 'react';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Href, Tooltip } from '@proton/atoms';
 import {
     SidebarList,
     SidebarListItemButton,
     SidebarListItemContent,
     SidebarListItemContentIcon,
+    useModalStateObject,
 } from '@proton/components';
-import { useModalStateObject } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useSidebar } from '../../providers/SidebarProvider';

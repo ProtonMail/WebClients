@@ -3,8 +3,7 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { Prompt } from '@proton/components';
-import { useFolders, useLabels } from '@proton/mail';
-import { useConversationCounts, useMessageCounts } from '@proton/mail';
+import { useConversationCounts, useFolders, useLabels, useMessageCounts } from '@proton/mail';
 import clsx from '@proton/utils/clsx';
 
 import { getLocationElementsCount } from 'proton-mail/helpers/elements';

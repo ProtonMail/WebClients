@@ -41,8 +41,7 @@ import {
     cleanSpace,
 } from '../../types';
 import { sleep } from '../../util/date';
-import type { MockDatabase } from './mock-server';
-import type { MockDbSpace } from './mock-server';
+import type { MockDatabase, MockDbSpace } from './mock-server';
 
 export const USER_TEST_UID = 'test-uid';
 

@@ -1,5 +1,12 @@
-import { CYCLE, type Cycle, DEFAULT_CURRENCY, DEFAULT_TAX_BILLING_ADDRESS, PLANS } from '@proton/payments';
-import { FREE_PLAN, getFreeCheckResult } from '@proton/payments';
+import {
+    CYCLE,
+    type Cycle,
+    DEFAULT_CURRENCY,
+    DEFAULT_TAX_BILLING_ADDRESS,
+    FREE_PLAN,
+    PLANS,
+    getFreeCheckResult,
+} from '@proton/payments';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { defaultVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 

@@ -669,7 +669,7 @@ const SingleSignupContainerV2 = ({
                 });
 
                 const planName = getPlanNameFromSession(session);
-                measure({
+                void measure({
                     event: TelemetryAccountSignupEvents.pageLoad,
                     dimensions: {
                         signedin: 'yes',
@@ -678,7 +678,7 @@ const SingleSignupContainerV2 = ({
                     },
                 });
             } else {
-                measure({
+                void measure({
                     event: TelemetryAccountSignupEvents.pageLoad,
                     dimensions: {
                         signedin: 'no',
@@ -687,7 +687,7 @@ const SingleSignupContainerV2 = ({
                     },
                 });
             }
-            measure({
+            void measure({
                 event: TelemetryAccountSignupEvents.bePaymentMethods,
                 dimensions: getPaymentMethodsAvailable(paymentMethodStatus.VendorStates),
             });
@@ -789,7 +789,7 @@ const SingleSignupContainerV2 = ({
                 paymentStatusPromise,
             ]);
 
-            measure({ event: TelemetryAccountSignupEvents.beSignOutSuccess, dimensions: {} });
+            void measure({ event: TelemetryAccountSignupEvents.beSignOutSuccess, dimensions: {} });
 
             setModelDiff({
                 optimistic: {},
@@ -905,7 +905,7 @@ const SingleSignupContainerV2 = ({
             });
 
             triggerModals({ planParameters: model.planParameters, session, upsell, subscriptionData });
-            measure({
+            void measure({
                 event: TelemetryAccountSignupEvents.beSignInSuccess,
                 dimensions: { plan: getPlanNameFromSession(session) },
             });
@@ -1173,7 +1173,7 @@ const SingleSignupContainerV2 = ({
             });
         }
 
-        measure(getSignupTelemetryData(model.plansMap, cache));
+        void measure(getSignupTelemetryData(model.plansMap, cache));
 
         return result.cache;
     };
@@ -1321,7 +1321,7 @@ const SingleSignupContainerV2 = ({
                         onOpenLogin={(options) => {
                             setTmpLoginEmail(options.email);
                             setLoginModal(true);
-                            measure({
+                            void measure({
                                 event: TelemetryAccountSignupEvents.userSignIn,
                                 dimensions: { location: options.location },
                             });

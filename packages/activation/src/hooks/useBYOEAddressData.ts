@@ -63,7 +63,7 @@ const useBYOEAddressData = (): [AddressData | undefined, boolean] => {
     };
 
     useEffect(() => {
-        getAddressData().then((res) => {
+        void getAddressData().then((res) => {
             setAddressData(res);
         });
     }, []);

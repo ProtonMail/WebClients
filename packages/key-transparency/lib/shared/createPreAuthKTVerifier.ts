@@ -9,8 +9,7 @@ import type {
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import { fetchSignedKeyLists } from '../helpers/apiHelpers';
-import { ktSentryReport } from '../helpers/utils';
-import { ktSentryReportError } from '../helpers/utils';
+import { ktSentryReport, ktSentryReportError } from '../helpers/utils';
 import { commitSKLToLS } from '../storage/storageHelpers';
 import { getDefaultKTLS } from './defaults';
 

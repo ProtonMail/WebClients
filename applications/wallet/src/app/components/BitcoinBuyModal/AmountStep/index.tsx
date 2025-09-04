@@ -13,9 +13,7 @@ import type {
     WasmQuote,
 } from '@proton/andromeda';
 import type { IconName } from '@proton/components';
-import { useNotifications } from '@proton/components';
-import { useSubscriptionModal } from '@proton/components';
-import { DropdownSizeUnit, Icon, useModalState } from '@proton/components';
+import { DropdownSizeUnit, Icon, useModalState, useNotifications, useSubscriptionModal } from '@proton/components';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import useLoading from '@proton/hooks/useLoading';

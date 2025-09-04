@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import type { ButtonLikeSize } from '@proton/atoms';
 import { Button, Tooltip } from '@proton/atoms';

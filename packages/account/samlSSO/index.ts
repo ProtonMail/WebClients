@@ -12,8 +12,7 @@ import { serverEvent } from '../eventLoop';
 import { initEvent } from '../init';
 import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
-import { type OrganizationState, organizationFulfilled } from '../organization';
-import { organizationThunk } from '../organization';
+import { type OrganizationState, organizationFulfilled, organizationThunk } from '../organization';
 import { type UserState, userFulfilled, userThunk } from '../user';
 
 const name = 'sso' as const;

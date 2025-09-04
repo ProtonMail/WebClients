@@ -145,7 +145,7 @@ import { getCleanSendDataFromSendPref, getSendPrefErrorMap } from '../../helpers
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import useBusySlots from '../../hooks/useBusySlots';
 import type { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
-import useOpenCalendarEvents from '../../hooks/useOpenCalendarEvents';
+import { useOpenCalendarEvents } from '../../hooks/useOpenCalendarEvents';
 import { useOpenEventsFromMail } from '../../hooks/useOpenEventsFromMail';
 import usePauseCalendarEventLoop from '../../hooks/usePauseCalendarEventLoop';
 import type {

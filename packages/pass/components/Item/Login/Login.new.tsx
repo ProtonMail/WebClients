@@ -30,8 +30,7 @@ import { bindOTPSanitizer, getSanitizedUserIdentifiers, sanitizeExtraField } fro
 import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '@proton/pass/lib/validation/alias';
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
 import { selectShowUsernameField, selectTOTPLimits, selectVaultLimits } from '@proton/pass/store/selectors';
-import type { LoginItemFormValues } from '@proton/pass/types';
-import type { LoginWithAliasCreationDTO } from '@proton/pass/types';
+import type { LoginItemFormValues, LoginWithAliasCreationDTO } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';

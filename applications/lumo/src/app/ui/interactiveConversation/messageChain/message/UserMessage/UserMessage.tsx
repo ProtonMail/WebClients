@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import type { Message, SiblingInfo } from 'applications/lumo/src/app/types';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';
@@ -10,13 +10,13 @@ import { Icon } from '@proton/components';
 import type { HandleEditMessage } from '../../../../../hooks/useLumoActions';
 import { useLumoSelector } from '../../../../../redux/hooks';
 import { selectAttachments } from '../../../../../redux/selectors';
+import type { Attachment } from '../../../../../types';
 import { sendMessageEditEvent } from '../../../../../util/telemetry';
 import { FileCard, FileContentModal } from '../../../../components/Files';
 import LumoMarkdown from '../../../../components/LumoMarkdown/LumoMarkdown';
 import SiblingSelector from '../../../../components/SiblingSelector';
 import useCollapsibleMessageContent from '../useCollapsibleMessageContent';
 import MessageEditor from './MessageEditor';
-import type { Attachment } from '../../../../../types';
 
 import './UserMessage.scss';
 
@@ -70,9 +70,8 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
 
     // Get full attachment data from Redux (shallow attachments in message only contain ID and basic metadata)
     const allAttachments = useLumoSelector(selectAttachments);
-    const fullAttachments = message.attachments?.map(shallowAttachment => 
-        allAttachments[shallowAttachment.id]
-    ).filter(Boolean) || [];
+    const fullAttachments =
+        message.attachments?.map((shallowAttachment) => allAttachments[shallowAttachment.id]).filter(Boolean) || [];
 
     const { contentRef, isCollapsed, showCollapseButton, toggleCollapse } = useCollapsibleMessageContent(message);
     const canBeCollapsed = showCollapseButton || hasAttachments;

@@ -1,5 +1,4 @@
-import type { AnyStorage, MaybeNull, MaybePromise } from '@proton/pass/types';
-import type { Maybe } from '@proton/pass/types';
+import type { AnyStorage, Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
 import { asyncLock, asyncQueue } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';

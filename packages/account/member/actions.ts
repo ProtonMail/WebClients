@@ -10,8 +10,14 @@ import {
     deleteMemberUnprivatizationInfo,
     queryMemberUnprivatizationInfo,
 } from '@proton/shared/lib/api/members';
-import type { Address, Api, InactiveKey, Member, Organization } from '@proton/shared/lib/interfaces';
-import type { MemberUnprivatizationOutput } from '@proton/shared/lib/interfaces';
+import type {
+    Address,
+    Api,
+    InactiveKey,
+    Member,
+    MemberUnprivatizationOutput,
+    Organization,
+} from '@proton/shared/lib/interfaces';
 import {
     type ParsedUnprivatizationData,
     acceptUnprivatization,

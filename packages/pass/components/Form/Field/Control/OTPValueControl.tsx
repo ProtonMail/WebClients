@@ -7,8 +7,7 @@ import { OTPDonut } from '@proton/pass/components/Otp/OTPDonut';
 import { OTPValue } from '@proton/pass/components/Otp/OTPValue';
 import type { OTPRendererHandles } from '@proton/pass/components/Otp/types';
 import { useOTPCode } from '@proton/pass/hooks/useOTPCode';
-import type { MaybeNull } from '@proton/pass/types';
-import type { OtpRequest } from '@proton/pass/types';
+import type { MaybeNull, OtpRequest } from '@proton/pass/types';
 
 import { ValueControl } from './ValueControl';
 
