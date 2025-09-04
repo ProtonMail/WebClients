@@ -294,3 +294,21 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 		}
 	}
 }
+
+[class*='offer-back-to-school-'] {
+	background: linear-gradient(190deg, #6d4aff 8.12%, #5a30ff 50.58%);
+	inline-size: 31rem;
+	color: white;
+	padding-inline: 1rem;
+	padding-block-start: 1.5rem;
+
+	.modal-two-content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.offer-close-button {
+		background: #fffc;
+		border-radius: 50%;
+	}
+}
