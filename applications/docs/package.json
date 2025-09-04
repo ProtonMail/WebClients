@@ -20,8 +20,8 @@
     "test:watch": "jest --watch --coverage=false"
   },
   "dependencies": {
-    "@lexical/utils": "0.30.0",
-    "@lexical/yjs": "0.30.0",
+    "@lexical/utils": "0.32.1",
+    "@lexical/yjs": "0.32.1",
     "@proton/account": "workspace:^",
     "@proton/atoms": "workspace:^",
     "@proton/components": "workspace:^",
