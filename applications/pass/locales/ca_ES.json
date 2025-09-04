@@ -1287,6 +1287,17 @@
         "Terabytes"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Domini"
+      ],
+      "Password ends with": [
+        "La contrasenya acaba amb"
+      ],
+      "Username": [
+        "Nom d'usuari"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "S'ha descartat l'element de «${ payload.itemName }»"
@@ -1832,6 +1843,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -4319,6 +4334,9 @@
       "MX record": [
         "Registre MX"
       ],
+      "Next": [
+        "Següent"
+      ],
       "No excluded items": [
         "No hi ha elements exclosos"
       ],
@@ -4339,6 +4357,9 @@
       ],
       "No shared secure links": [
         "Sense enllaços segurs compartits"
+      ],
+      "Open pagination": [
+        "Obrir paginació"
       ],
       "Organize vaults": [
         "Organitza les caixes fortes"
@@ -4373,6 +4394,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Recordeu que un cop eliminat, l'àlies no es pot recuperar.",
         "Recordeu que un cop eliminats, els àlies no es poden recuperar."
+      ],
+      "Previous": [
+        "Anterior"
       ],
       "Random Prefix Generation": [
         "Generació aleatòria de prefixos"

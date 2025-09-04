@@ -1287,6 +1287,17 @@
         "Terabayt"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Etki alanı"
+      ],
+      "Password ends with": [
+        "Parola şununla bitiyor"
+      ],
+      "Username": [
+        "Kullanıcı adı"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "\"${ payload.itemName }\" ögesi yok sayıldı"
@@ -1832,6 +1843,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -4319,6 +4334,9 @@
       "MX record": [
         "MX kaydı"
       ],
+      "Next": [
+        "Sonraki"
+      ],
       "No excluded items": [
         "Katılmayan bir öge yok"
       ],
@@ -4339,6 +4357,9 @@
       ],
       "No shared secure links": [
         "Paylaşılan bir güvenli bağlantı yok"
+      ],
+      "Open pagination": [
+        "Sayfalandırmayı aç"
       ],
       "Organize vaults": [
         "Kasaları düzenle"
@@ -4373,6 +4394,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Takma adın silindikten sonra geri alınamayacağını unutmayın",
         "Takma adın silindikten sonra geri alınamayacağını unutmayın"
+      ],
+      "Previous": [
+        "Önceki"
       ],
       "Random Prefix Generation": [
         "Rastgele ön ek oluşturma"

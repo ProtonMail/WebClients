@@ -1284,6 +1284,17 @@
         "Terabyte"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Domän"
+      ],
+      "Password ends with": [
+        "Lösenord slutar med"
+      ],
+      "Username": [
+        "Användarnamn"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Objekt ”${ payload.itemName }” avfärdades"
@@ -1826,6 +1837,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -4301,6 +4316,9 @@
       "MX record": [
         "MX-post"
       ],
+      "Next": [
+        "Nästa"
+      ],
       "No excluded items": [
         "Inga exkluderade objekt"
       ],
@@ -4321,6 +4339,9 @@
       ],
       "No shared secure links": [
         "Inga delade säkra länkar"
+      ],
+      "Open pagination": [
+        "Öppna sidnumrering"
       ],
       "Our welcome gift to you": [
         "Vår välkomstgåva till dig"
@@ -4352,6 +4373,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Observera att när aliaset väl har tagits bort kan det inte återställas.",
         "Observera att när alias väl har tagits bort kan de inte återställas."
+      ],
+      "Previous": [
+        "Föregående"
       ],
       "Random Prefix Generation": [
         "Slumpmässig prefixgenerering"
