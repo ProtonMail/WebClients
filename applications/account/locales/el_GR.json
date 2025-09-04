@@ -1408,6 +1408,9 @@
       "Spam": [
         "Ανεπιθύμητο"
       ],
+      "Start free trial": [
+        "Εκκίνηση δωρεάν δοκιμής"
+      ],
       "Start import": [
         "Έναρξη εισαγωγής"
       ],
@@ -4165,6 +4168,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "Το ${ MAIL_APP_NAME } είναι η προεπιλεγμένη εφαρμογή αλληλογραφίας σας."
       ],
+      "A checked box means the feature is disabled.": [
+        "Ένα επιλεγμένο πλαίσιο σημαίνει ότι η δυνατότητα είναι απενεργοποιημένη."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Προσθέστε φακέλους και αρχεία στο ${ DRIVE_APP_NAME } και προσκαλέστε μέλη της ομάδας για προβολή ή επεξεργασία."
       ],
@@ -4307,14 +4313,17 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Μπορείτε να συνεχίσετε να προσκαλείτε φίλους, αλλά δεν θα μπορείτε να κερδίσετε περισσότερες πιστώσεις"
       ],
+      "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Μπορείτε να προσαρμόσετε τη λίστα των τομέων στους οποίους ορισμένες αυτόματες λειτουργίες στην προέκταση προγράματος περιήγησης ${ PASS_APP_NAME } (Αυτόματη συμπλήρωση, Αυτόματη πρόταση, Αυτόματη αποθήκευση) δε θα πρέπει να εκτελούνται."
+      ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
         "Μπορείτε να επιβάλετε τους κανόνες κωδικού πρόσβασης που θα χρησιμοποιούν τα μέλη του οργανισμού όταν δημιουργούν έναν κωδικό πρόσβασης στο ${ PASS_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Μπορείτε να εισάγετε εκδηλώσεις σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_EVENTS_STRING } εκδηλώσεις.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
       ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "Θα λάβετε ${ referralReward } σε πίστωση στο ${ BRAND_NAME } όταν το άτομο που προσκαλείτε εγγραφεί σε ένα πλάνο ${ BRAND_NAME }, και θα λάβουν επίσης ${ referralReward } σε πιστώσεις για να ξεκινήσουν."
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Θα λάβετε ${ referralInfo.referrerRewardAmount } σε πίστωση στο ${ BRAND_NAME } όταν το άτομο που προσκαλείτε εγγραφεί σε ένα πλάνο ${ BRAND_NAME }, και θα λάβουν επίσης ${ referralInfo.refereeRewardAmount } σε πιστώσεις για να ξεκινήσουν."
       ]
     },
     "description": {
@@ -5697,6 +5706,9 @@
       ],
       "Invalid Sieve code": [
         "Μη έγκυρος κωδικός Sieve"
+      ],
+      "Invalid URL": [
+        "Μη έγκυρη διεύθυνση URL"
       ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
@@ -7280,6 +7292,9 @@
       "Device": [
         "Συσκευή"
       ],
+      "Domain": [
+        "Τομέας"
+      ],
       "Enter your email address": [
         "Εισάγετε τη διεύθυνση του ηλεκτρονικού ταχυδρομείου σας"
       ],
@@ -7312,6 +7327,9 @@
       ],
       "Organization key fingerprint": [
         "Αποτύπωμα κλειδιού οργανισμού"
+      ],
+      "Password ends with": [
+        "Ο κωδικός πρόσβασης τελειώνει με"
       ],
       "Payment details": [
         "Στοιχεία Πληρωμής"
@@ -7354,6 +7372,9 @@
       ],
       "User": [
         "Χρήστης"
+      ],
+      "Username": [
+        "Όνομα Χρήστη"
       ]
     },
     "Header for addresses table": {
@@ -8051,6 +8072,12 @@
       ],
       "${ storage } storage": [
         "${ storage } αποθηκευτικού χώρου"
+      ],
+      "${ url } added.": [
+        "${ url } προστέθηκε."
+      ],
+      "${ url } deleted.": [
+        "${ url } διαγράφηκε."
       ],
       "${ userFound } user found": [
         "${ userFound } χρήστης βρέθηκε",
@@ -9043,11 +9070,11 @@
       "Get ${ upsellPlanName }": [
         "Απόκτηση ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Κερδίστε **${ referrerRewardAmount } πιστώσεις** για κάθε φίλο που κάνει εγγραφή."
+      ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Αποκτήστε πρόσβαση με τη δημιουργία ενός λογαριασμού ${ BRAND_NAME } και με αποδοχή της πρόσκλησης."
-      ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "Κερδίστε και προσφέρετε **${ referralReward } πιστώσεις** για κάθε φίλο που κάνει εγγραφή."
       ],
       "Get it on Google Play": [
         "Αποκτήστε το στο Google Play"
@@ -10580,6 +10607,9 @@
       "URL link": [
         "Σύνδεσμος URL"
       ],
+      "URL settings updated.": [
+        "Οι ρυθμίσεις URL ενημερώθηκαν."
+      ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Χρησιμοποιήστε έναν διαχειριστή κωδικών πρόσβασης για να δημιουργήσετε και να αποθηκεύσετε με ασφάλεια τους κωδικούς πρόσβασής σας, εξασφαλίζοντας ισχυρούς κωδικούς πρόσβασης και ευκολότερες συνδέσεις."
       ],
@@ -11188,6 +11218,9 @@
       "You’re all set": [
         "Όλα έτοιμα!"
       ],
+      "Zero charge today": [
+        "Μηδενική χρέωση σήμερα"
+      ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
       ]
@@ -11779,6 +11812,9 @@
       "Account storage": [
         "Χωρητικότητα λογαριασμού"
       ],
+      "Action": [
+        "Ενέργεια"
+      ],
       "Actions": [
         "Ενέργειες"
       ],
@@ -11920,8 +11956,20 @@
       "Auto-unsubscribe": [
         "Αυτόματη κατάργηση εγγραφής"
       ],
+      "Autofill": [
+        "Αυτόματη συμπλήρωση"
+      ],
+      "Autofill 2FA": [
+        "Αυτόματη συμπλήρωση 2FA"
+      ],
       "Automatically save contacts": [
         "Αυτόματη αποθήκευση επαφών"
+      ],
+      "Autosave": [
+        "Αυτόματη αποθήκευση"
+      ],
+      "Autosuggest": [
+        "Αυτόματη πρόταση"
       ],
       "Awarded": [
         "Βραβευμένα"
@@ -12165,6 +12213,9 @@
       ],
       "Domain name": [
         "Όνομα domain"
+      ],
+      "Domains": [
+        "Τομείς"
       ],
       "Don't ask again": [
         "Να μην ερωτηθώ ξανά"
@@ -12543,6 +12594,9 @@
       ],
       "Other amount": [
         "Άλλο ποσό"
+      ],
+      "Passkeys": [
+        "Κλειδιά πρόσβασης"
       ],
       "Password": [
         "Κωδικός πρόσβασης"
@@ -13632,8 +13686,8 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Συνδεθείτε στον λογαριασμό σας ${ BRAND_NAME } για να αποκτήσετε πρόσβαση σε όλες τις κρυπτογραφημένες υπηρεσίες του ${ BRAND_NAME }, όπως ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } και περισσότερα. Δεν έχετε λογαριασμό; Δημιουργήστε ένα ΔΩΡΕΑΝ."
       ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "Πάρτε τον έλεγχο των δεδομένων σας με διατερματική κρυπτογράφηση. Δεν απαιτείται τραπεζική κάρτα."
+      "Take control of your data with end-to-end encryption": [
+        "Πάρτε τον έλεγχο των δεδομένων σας με κρυπτογράφηση από άκρο σε άκρο"
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "Δοκιμάστε το ${ BRAND_NAME } δωρεάν με αυτόν τον σύνδεσμο"
@@ -18265,8 +18319,8 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Όλες οι βασικές ${ BRAND_NAME } υπηρεσίες (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "Και λάβετε ${ referralReward } σε πιστώσεις, αν εγγραφείτε."
+      "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
+        "Και λάβετε ${ referralInfo.uiData.refereeRewardAmount } σε πιστώσεις, αν εγγραφείτε."
       ],
       "Billing Cycle": [
         "Κύκλος Χρέωσης"
@@ -18331,11 +18385,11 @@
       "Free": [
         "Δωρεάν"
       ],
-      "Free for 14 days": [
-        "Δωρεάν για 14 ημέρες"
+      "Free for ${ TRIAL_DURATION_DAYS } days": [
+        "Δωρεάν για ${ TRIAL_DURATION_DAYS } ημέρες"
       ],
-      "Get ${ referralReward } in credits": [
-        "Λάβετε ${ referralReward } σε πιστώσεις"
+      "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Λάβετε ${ referralInfo.uiData.refereeRewardAmount } σε πιστώσεις"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Αποκτήστε μια ασφαλή διεύθυνση ${ MAIL_APP_NAME }, ή ${ internalButton }"
@@ -18416,8 +18470,8 @@
       "Select ${ title }": [
         "Επιλογή ${ title }"
       ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "Επιλέξτε μια υπηρεσία και απολαύστε την premium έκδοση δωρεάν για 14 ημέρες. Δεν απαιτείται πιστωτική κάρτα."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
+        "Επιλέξτε μια υπηρεσία και απολαύστε την premium έκδοση για ${ TRIAL_DURATION_DAYS } ημέρες δωρεάν. Δεν απαιτείται πιστωτική κάρτα."
       ],
       "Selected": [
         "Επιλεγμένο"
@@ -18463,6 +18517,9 @@
       ],
       "Total": [
         "Σύνολο"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
+        "Δοκιμάστε ${ BRAND_NAME } για ${ TRIAL_DURATION_DAYS } ημέρες δωρεάν"
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "Δοκιμάστε το ${ BRAND_NAME } δωρεάν για 14 ημέρες"
@@ -21076,8 +21133,8 @@
       "Gift code": [
         "Κωδικός δώρου"
       ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "Δώστε ${ referralReward } και 2 εβδομάδες δωρεάν. Λάβετε ${ referralReward } πιστώσεις."
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Δώστε ${ refereeRewardAmount } και 2 εβδομάδες δωρεάν. Λάβετε ${ referrerRewardAmount } πιστώσεις."
       ],
       "Group": [
         "Ομάδα"
@@ -21310,6 +21367,9 @@
       ],
       "Passwords made easy": [
         "Οι κωδικοί πρόσβασης γίνονται εύκολοι"
+      ],
+      "Pause list": [
+        "Παύση λίστας"
       ],
       "Pay invoice": [
         "Πληρωμή τιμολογίου"

@@ -4129,6 +4129,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } თქვენი ნაგულისხმევი ელფოსტის აპლიკაციაა."
       ],
+      "A checked box means the feature is disabled.": [
+        "ჩართული ნიშნავს, რომ ეს ფუნქცია გამორთულია."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "დაამატეთ საქაღალდეები და ფაილები ${ DRIVE_APP_NAME }-ს და მოიწვიეთ გუნდის წევრები მის სანახავად, ან ჩასასწორებლად."
       ],
@@ -5503,6 +5506,9 @@
       ],
       "Invalid Sieve code": [
         "Sieve-ის არასწორი კოდი"
+      ],
+      "Invalid URL": [
+        "არასწორი URL"
       ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
@@ -8792,9 +8798,6 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "მიიღწეთ წვდომა ${ BRAND_NAME }-ის ანგარიშის შექმნით და მოსაწვევის დათანხმებით."
       ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "მიიღეთ და გაეცით **${ referralReward }-ის კრედიტები** ყოველი მეგობრისთვის, რომელიც გამოიწერს."
-      ],
       "Get it on Google Play": [
         "მიიღეთ ის Google Play-ზე"
       ],
@@ -11573,8 +11576,20 @@
       "Auto-unsubscribe": [
         "გამოწერის ავტომატური მოხსნა"
       ],
+      "Autofill": [
+        "ავტოშევსება"
+      ],
+      "Autofill 2FA": [
+        "2FA-ის ავტომატური შევსება"
+      ],
       "Automatically save contacts": [
         "კონტაქტების ავტომატური შენახვა"
+      ],
+      "Autosave": [
+        "ავტომატური შენახვა"
+      ],
+      "Autosuggest": [
+        "ავტომატური რჩევა"
       ],
       "Awarded": [
         "მინიჭებულია"
@@ -11818,6 +11833,9 @@
       ],
       "Domain name": [
         "დომენის სახელი"
+      ],
+      "Domains": [
+        "დომენები"
       ],
       "Don't ask again": [
         "აღარ მკითხო"
@@ -12193,6 +12211,9 @@
       ],
       "Other amount": [
         "სხვა რაოდენობა"
+      ],
+      "Passkeys": [
+        "წვდომის გასაღებები"
       ],
       "Password": [
         "პაროლი"
@@ -13266,9 +13287,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "შედით თქვენს ${ BRAND_NAME }-ის კალენდარში და იქონიეთ წვდომა ყველა დაშიფრულ ${ BRAND_NAME }-ის სერვისთან, როგორებიცაა ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } და სხვ. არ გაქვთ ანგარიში? შექმენით ის უფასოდ."
-      ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "აიღეთ თქვენი მონაცემების მართვა თქვენს ხელში გამჭოლი დაშიფვრით. ბანკის ბარათი საჭირო არაა."
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "სცადეთ ${ BRAND_NAME } უფასოდ ამ ბმულით"
@@ -17773,9 +17791,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "ყველა ${ BRAND_NAME }-ის სერვისი (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "და მიიღეთ ${ referralReward } კრედიტებში, თუ გამოიწერთ."
-      ],
       "Billing Cycle": [
         "ბილინგის ციკლი"
       ],
@@ -17838,12 +17853,6 @@
       ],
       "Free": [
         "Free"
-      ],
-      "Free for 14 days": [
-        "უფასო 14 დღით"
-      ],
-      "Get ${ referralReward } in credits": [
-        "მიიღეთ ${ referralReward } კრედიტებში"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "მიიღეთ დაცული ${ MAIL_APP_NAME }-ის მისამართი, ან ${ internalButton }"
@@ -17920,9 +17929,6 @@
       ],
       "Select ${ title }": [
         "აირჩიეთ ${ title }"
-      ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "აირჩიეთ სერვისი და ისიამოვნეთ ფასიანი ვერსიით 14 დღით უფასოდ. საკრედიტო ბარათი აუცილებელი არაა."
       ],
       "Selected": [
         "მონიშნულია"
@@ -20559,9 +20565,6 @@
       ],
       "Gift code": [
         "სასაჩუქრე კოდი"
-      ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "გაეცით ${ referralReward } და 2 კვირა უფასოდ. მიიღეთ ${ referralReward } კრედიტი."
       ],
       "Group": [
         "ჯგუფი"

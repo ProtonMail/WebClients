@@ -1408,6 +1408,9 @@
       "Spam": [
         "Søppelpost"
       ],
+      "Start free trial": [
+        "Start gratis prøveperiode"
+      ],
       "Start import": [
         "Start importen"
       ],
@@ -4165,6 +4168,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } er din standard e-postapplikasjon."
       ],
+      "A checked box means the feature is disabled.": [
+        "En avmerket boks betyr at funksjonen er deaktivert."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Legg til mapper og filer til ${ DRIVE_APP_NAME } og inviter teammedlemmer til å se eller redigere."
       ],
@@ -4307,14 +4313,14 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Du kan fortsette med å invitere venner, men du vil ikke være i stand til å tjene flere kreditter"
       ],
+      "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Du kan tilpasse listen over domener der visse autofunksjoner i ${ PASS_APP_NAME }-nettleserutvidelse (automatisk utfylling, automatisk forslag, automatisk lagring) ikke skal kjøres."
+      ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
         "Du kan håndheve passordreglene som organisasjonsmedlemmer skal bruke når de genererer et passord i ${ PASS_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere hendelser i iCal-format (ICS fil). Filen kan ha en maks størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og ha opp til ${ MAX_IMPORT_EVENTS_STRING } hendelser. Hvis filen er større, må du dele den opp i flere mindre filer."
-      ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "Du vil motta ${ referralReward } i ${ BRAND_NAME }-kreditt når personen du inviterer registrerer seg for en ${ BRAND_NAME }-plan, og de vil også få ${ referralReward } i kreditter for å komme i gang."
       ]
     },
     "description": {
@@ -5205,6 +5211,18 @@
       "${ BRAND_NAME } Account email": [
         "Kontoens e-postadresse ${ BRAND_NAME }"
       ],
+      "${ days } day left": [
+        "${ days } dag igjen",
+        "${ days } dager igjen"
+      ],
+      "${ hours } hour left": [
+        "${ hours } time igjen",
+        "${ hours } timer igjen"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes } minutt igjen",
+        "${ minutes } minutter igjen"
+      ],
       "${ n } day": [
         "${ n } dag",
         "${ n } dager"
@@ -5313,6 +5331,9 @@
       ],
       "Less than a day": [
         "Mindre enn en dag"
+      ],
+      "Less than a minute left": [
+        "Under ett minutt igjen"
       ],
       "None": [
         "Ingen"
@@ -5682,6 +5703,9 @@
       ],
       "Invalid Sieve code": [
         "Ugyldig Sieve-kode"
+      ],
+      "Invalid URL": [
+        "Ugyldig nettadresse"
       ],
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
@@ -8037,6 +8061,12 @@
       "${ storage } storage": [
         "${ storage } lagringsplass"
       ],
+      "${ url } added.": [
+        "${ url } lagt til."
+      ],
+      "${ url } deleted.": [
+        "${ url } slettet."
+      ],
       "${ userFound } user found": [
         "${ userFound } bruker funnet",
         "${ userFound } brukere funnet"
@@ -9030,9 +9060,6 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Få tilgang ved å opprette en ${ BRAND_NAME }-konto og akseptere invitasjonen."
-      ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "Få og gi **${ referralReward } kreditter** for hver venn som abonnerer."
       ],
       "Get it on Google Play": [
         "Hent den på Google Play"
@@ -10568,6 +10595,9 @@
       "URL link": [
         "Kobling til nettadresse"
       ],
+      "URL settings updated.": [
+        "Nettadresseinnstillinger oppdatert."
+      ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Bruk en passordbehandler til å generere og lagre passordene dine på en sikker måte, noe som sikrer sterke passord og enklere pålogginger."
       ],
@@ -11176,6 +11206,9 @@
       "You’re all set": [
         "Du er klar"
       ],
+      "Zero charge today": [
+        "Null kostnad i dag"
+      ],
       "Zoom meeting": [
         "Zoom-møte"
       ]
@@ -11767,6 +11800,9 @@
       "Account storage": [
         "Kontolagring"
       ],
+      "Action": [
+        "Handling"
+      ],
       "Actions": [
         "Handlinger"
       ],
@@ -11908,8 +11944,20 @@
       "Auto-unsubscribe": [
         "Auto-avmelding"
       ],
+      "Autofill": [
+        "Autofyll"
+      ],
+      "Autofill 2FA": [
+        "Autofyll 2FA"
+      ],
       "Automatically save contacts": [
         "Lagre automatisk kontakter"
+      ],
+      "Autosave": [
+        "Lagre automatisk"
+      ],
+      "Autosuggest": [
+        "Foreslå automatisk"
       ],
       "Awarded": [
         "Belønnet"
@@ -12153,6 +12201,9 @@
       ],
       "Domain name": [
         "Domenenavn"
+      ],
+      "Domains": [
+        "Domener"
       ],
       "Don't ask again": [
         "Ikke spør igjen"
@@ -12531,6 +12582,9 @@
       ],
       "Other amount": [
         "Annet beløp"
+      ],
+      "Passkeys": [
+        "Tilgangsnøkler"
       ],
       "Password": [
         "Passord"
@@ -13623,8 +13677,8 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Logg på din ${ BRAND_NAME }-konto for å få tilgang til alle krypterte ${ BRAND_NAME }-tjenester slik som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mer. Har du ikke en konto? Opprett en GRATIS."
       ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "Ta kontroll over dataene dine med ende-til-ende-kryptering. Ingen bankkort påkrevd."
+      "Take control of your data with end-to-end encryption": [
+        "Ta kontroll over dataene dine med ende-til-ende-kryptering"
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "Prøv ${ BRAND_NAME } gratis med denne koblingen"
@@ -18277,9 +18331,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grunnleggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "Og få ${ referralReward } i kreditter, hvis du abonnerer."
-      ],
       "Billing Cycle": [
         "Faktureringssyklus"
       ],
@@ -18343,11 +18394,8 @@
       "Free": [
         "Free"
       ],
-      "Free for 14 days": [
-        "Gratis i 14 dager"
-      ],
-      "Get ${ referralReward } in credits": [
-        "Få ${ referralReward } i kreditter"
+      "Free for ${ TRIAL_DURATION_DAYS } days": [
+        "Gratis i ${ TRIAL_DURATION_DAYS } dager"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Skaff deg en sikker ${ MAIL_APP_NAME }-adresse, eller ${ internalButton }"
@@ -18428,8 +18476,8 @@
       "Select ${ title }": [
         "Velg ${ title }"
       ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "Velg en tjeneste og nyt premiumversjonen i 14 dager gratis. Ingen kredittkort påkrevd."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
+        "Velg en tjeneste og nyt premiumversjonen i ${ TRIAL_DURATION_DAYS } dager gratis. Ingen kredittkort kreves."
       ],
       "Selected": [
         "Valgt"
@@ -18475,6 +18523,9 @@
       ],
       "Total": [
         "Totalt"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
+        "Prøv ${ BRAND_NAME } gratis i ${ TRIAL_DURATION_DAYS } dager"
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "Prøv ${ BRAND_NAME } gratis i 14 dager"
@@ -21088,9 +21139,6 @@
       "Gift code": [
         "Gavekode"
       ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "Gi ${ referralReward } og 2 uker gratis. Få ${ referralReward } kreditter."
-      ],
       "Group": [
         "Gruppe"
       ],
@@ -21322,6 +21370,9 @@
       ],
       "Passwords made easy": [
         "Passord på en enkel måte"
+      ],
+      "Pause list": [
+        "Pauseliste"
       ],
       "Pay invoice": [
         "Betal faktura"

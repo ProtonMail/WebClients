@@ -3980,6 +3980,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } er din standard-e-mailapplikation."
       ],
+      "A checked box means the feature is disabled.": [
+        "Et afkrydset felt betyder, at funktionen er deaktiveret."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Tilføj mapper og filer til ${ DRIVE_APP_NAME } og inviter teammedlemmer til at se eller redigere."
       ],
@@ -5150,6 +5153,9 @@
       ],
       "Invalid Sieve code": [
         "Ugyldig Sieve-kode"
+      ],
+      "Invalid URL": [
+        "Ugyldig URL"
       ],
       "Invalid verification code": [
         "Ugyldig verifikationskode"
@@ -10867,8 +10873,20 @@
       "Auto-unsubscribe": [
         "Auto-afmelding"
       ],
+      "Autofill": [
+        "Autofyld"
+      ],
+      "Autofill 2FA": [
+        "Autofyld 2FA"
+      ],
       "Automatically save contacts": [
         "Gem automatisk kontakter"
+      ],
+      "Autosave": [
+        "Gem automatisk"
+      ],
+      "Autosuggest": [
+        "Auto-forslag"
       ],
       "Awarded": [
         "Belønnet"
@@ -11106,6 +11124,9 @@
       ],
       "Domain name": [
         "Domænenavn"
+      ],
+      "Domains": [
+        "Domæner"
       ],
       "Don't ask again": [
         "Spørg ikke igen"
@@ -11481,6 +11502,9 @@
       ],
       "Other amount": [
         "Andet beløb"
+      ],
+      "Passkeys": [
+        "Adgangsnøgler"
       ],
       "Password": [
         "Adgangskode"
@@ -16732,9 +16756,6 @@
       ],
       "Free": [
         "Gratis"
-      ],
-      "Free for 14 days": [
-        "Gratis i 14 dage"
       ],
       "Highest VPN speed": [
         "Højeste VPN-hastighed"
