@@ -1,7 +1,7 @@
 import type { FunctionComponent } from 'react';
 import { useState } from 'react';
 
-import FlagProvider from '@unleash/proxy-client-react';
+import { FlagProvider } from '@unleash/proxy-client-react';
 
 import {
     AccountSpotlightsProvider,
@@ -36,7 +36,7 @@ const PrivateApp = ({ store, locales }: Props) => {
     const [state, setState] = useState(defaultState);
 
     useEffectOnce(() => {
-        (async () => {
+        void (async () => {
             try {
                 const result = await bootstrapApp({ store, locales });
                 setState({ MainContainer: result.MainContainer });

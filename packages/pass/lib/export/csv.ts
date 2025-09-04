@@ -1,7 +1,6 @@
 import { prop } from '@proton/pass/utils/fp/lens';
 
-import type { ExportCSVItem } from './types';
-import type { ExportData } from './types';
+import type { ExportCSVItem, ExportData } from './types';
 
 const EXPORT_AS_JSON_TYPES = ['creditCard', 'identity'];
 

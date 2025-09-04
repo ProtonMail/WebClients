@@ -4,15 +4,17 @@ import type { LocationDescriptor } from 'history';
 
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import type { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
-import type { BillingAddress, PaymentStatus, RequiredCheckResponse } from '@proton/payments';
 import type {
+    BillingAddress,
     CYCLE,
     Currency,
     FreePlanDefault,
     PLANS,
+    PaymentStatus,
     Plan,
     PlanIDs,
     PlansMap,
+    RequiredCheckResponse,
     SubscriptionPlan,
 } from '@proton/payments';
 import type { ExtensionApp } from '@proton/shared/lib/browser/extension';

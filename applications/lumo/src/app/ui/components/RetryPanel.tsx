@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import type { IconName } from '@proton/components';
@@ -96,7 +96,7 @@ export const RetryPanel: React.FC<RetryPanelProps> = ({ onRetry, disabled = fals
                         paddingTop: '12px',
                         paddingBottom: '12px',
                         margin: 0,
-                        boxSizing: 'border-box'
+                        boxSizing: 'border-box',
                     }}
                 />
                 <button
@@ -114,7 +114,7 @@ export const RetryPanel: React.FC<RetryPanelProps> = ({ onRetry, disabled = fals
                         transform: 'translateY(-50%)',
                         width: '28px',
                         height: '28px',
-                        zIndex: 10
+                        zIndex: 10,
                     }}
                 >
                     <Icon

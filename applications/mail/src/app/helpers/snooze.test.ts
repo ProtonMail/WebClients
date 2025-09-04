@@ -1,6 +1,7 @@
 import { format, getUnixTime, nextMonday, nextSaturday, set } from 'date-fns';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 import type { Element } from '../models/element';
 import { getSnoozeDate, getSnoozeNotificationText, getSnoozeTimeFromElement, getSnoozeUnixTime } from './snooze';
@@ -149,7 +150,7 @@ describe('snooze helpers - getSnoozeTimeFromElement', () => {
 describe('snooze helpers - getSnoozeDate', () => {
     const isSameTime = (date1: Date, date2: Date) => {
         const formatter = 'yyyy-MM-dd HH:mm:ss';
-        return format(date1, formatter) === format(date2, formatter);
+        return format(date1, formatter, { locale: dateLocale }) === format(date2, formatter, { locale: dateLocale });
     };
 
     it('Should return current date when no element', () => {

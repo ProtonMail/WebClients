@@ -1,5 +1,4 @@
-import type { FC } from 'react';
-import type { ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import { c } from 'ttag';
 

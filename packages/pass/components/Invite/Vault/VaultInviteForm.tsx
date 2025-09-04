@@ -10,8 +10,7 @@ import type { InviteAddressValidator } from '@proton/pass/hooks/invite/useAddres
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { type AccessKeys, AccessTarget } from '@proton/pass/lib/access/types';
 import { selectAccessMembers } from '@proton/pass/store/selectors';
-import type { InviteFormMemberItem, InviteFormStep, MaybeNull } from '@proton/pass/types';
-import type { VaultInviteFormValues } from '@proton/pass/types';
+import type { InviteFormMemberItem, InviteFormStep, MaybeNull, VaultInviteFormValues } from '@proton/pass/types';
 
 import { VaultHeading } from './VaultHeading';
 

@@ -22,8 +22,7 @@ import { PlanCardFeatureList } from '@proton/components/containers/payments/subs
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { CYCLE, type FreePlanDefault, PLANS, type Plan, type PlansMap } from '@proton/payments';
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
-import { APPS } from '@proton/shared/lib/constants';
-import { BRAND_NAME, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 

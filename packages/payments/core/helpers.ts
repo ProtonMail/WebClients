@@ -4,8 +4,15 @@ import type { FeatureFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { type ADDON_NAMES, DEFAULT_CURRENCY, PLANS, signupFlows } from './constants';
-import type { Currency, Invoice, PaymentMethodFlow, PaymentStatus, PlainPaymentMethodType, PlanIDs } from './interface';
-import type { FreeSubscription } from './interface';
+import type {
+    Currency,
+    FreeSubscription,
+    Invoice,
+    PaymentMethodFlow,
+    PaymentStatus,
+    PlainPaymentMethodType,
+    PlanIDs,
+} from './interface';
 import { getPlanNameFromIDs } from './plan/helpers';
 import type { Plan } from './plan/interface';
 import type { Subscription } from './subscription/interface';

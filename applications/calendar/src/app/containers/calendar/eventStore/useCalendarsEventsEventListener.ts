@@ -6,7 +6,7 @@ import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { CalendarEventManager } from '@proton/shared/lib/interfaces/calendar/EventManager';
 
 import type { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
-import removeCalendarEventStoreRecord from './cache/removeCalendarEventStoreRecord';
+import { removeCalendarEventStoreRecord } from './cache/removeCalendarEventStoreRecord';
 import upsertCalendarApiEventWithoutBlob from './cache/upsertCalendarApiEventWithoutBlobs';
 import type { CalendarsEventsCache } from './interface';
 

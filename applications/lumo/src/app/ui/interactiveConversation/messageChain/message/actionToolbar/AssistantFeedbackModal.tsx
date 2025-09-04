@@ -3,8 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Button, Tooltip } from '@proton/atoms';
 import {
     Checkbox,
     Icon,

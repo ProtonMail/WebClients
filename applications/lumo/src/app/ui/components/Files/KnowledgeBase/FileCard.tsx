@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';

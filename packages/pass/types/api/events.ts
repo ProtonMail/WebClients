@@ -1,9 +1,8 @@
-import type { Subscription } from '@proton/payments';
+import type { Invoice, Subscription } from '@proton/payments';
 /* TODO: add all server events
  * in this type definition - it only
  * specifies the keys we're consuming
  * in the extension sagas for now */
-import type { Invoice } from '@proton/payments';
 import type { EventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
 import type { Address, Organization, User, UserSettings } from '@proton/shared/lib/interfaces';
 import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';

@@ -16,6 +16,7 @@ import type {
     Currency,
     Cycle,
     ExistingPayment,
+    PaymentStatus,
     PlanIDs,
     SavedPaymentMethod,
     TokenPayment,
@@ -25,7 +26,6 @@ import type {
     WrappedCryptoPayment,
     WrappedPaypalPayment,
 } from './interface';
-import type { PaymentStatus } from './interface';
 import { formatPaymentMethods } from './methods';
 import { normalizePaymentMethodStatus } from './payment-status';
 import { PlanState } from './plan/constants';

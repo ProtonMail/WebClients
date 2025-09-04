@@ -1,7 +1,7 @@
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import LumoLink from '../../components/LumoLink';
+import { LumoLink } from '../../components/LumoLink';
 import type { Conversation, ConversationId } from '../../types';
 import ChatDropdownMenu from './ChatDropdownMenu';
 
