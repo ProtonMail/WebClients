@@ -24,7 +24,7 @@ import { isClonableItem, isItemShared, isMonitored, isPinned, isTrashed } from '
 import { isShareManageable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
-import { selectPassPlan, selectRequestInFlight, selectVisibleVaults } from '@proton/pass/store/selectors';
+import { selectAllVaults, selectPassPlan, selectRequestInFlight } from '@proton/pass/store/selectors';
 import { BitField, type ItemType, ShareRole, SpotlightMessage } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -74,7 +74,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const online = useConnectivity();
     const isVault = isVaultShare(share);
 
-    const vaults = useSelector(selectVisibleVaults);
+    const vaults = useSelector(selectAllVaults);
     const plan = useSelector(selectPassPlan);
     const monitored = isMonitored(revision);
     const loading = useItemLoading(revision);

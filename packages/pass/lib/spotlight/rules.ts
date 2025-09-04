@@ -5,6 +5,7 @@ import { hasAttachments, hasHadAttachments } from '@proton/pass/lib/items/item.p
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
     selectAliasItems,
+    selectAllItems,
     selectCanCreateItems,
     selectCreatedItemsCount,
     selectHasPendingShareAccess,
@@ -12,7 +13,6 @@ import {
     selectPassPlan,
     selectUserData,
     selectUserPlan,
-    selectVisibleItems,
 } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import { type Maybe, type MaybeNull, PlanType, SpotlightMessage } from '@proton/pass/types';
@@ -185,7 +185,7 @@ export const createFileAttachmentsDiscoveryRule = (store: Store<State>): Spotlig
         message: SpotlightMessage.FILE_ATTACHMENTS_DISCOVERY,
         when: (previous) => {
             const state = store.getState();
-            const hasFiles = selectVisibleItems(state).some(or(hasAttachments, hasHadAttachments));
+            const hasFiles = selectAllItems(state).some(or(hasAttachments, hasHadAttachments));
             if (hasFiles) return false;
 
             const plan = selectUserPlan(state);

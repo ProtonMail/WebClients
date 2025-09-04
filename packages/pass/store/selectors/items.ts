@@ -30,15 +30,15 @@ export const selectVisibleItems = createSelector([selectAllItems, selectVisibleS
     items.filter(({ shareId }) => shareIds.has(shareId))
 );
 
-export const selectTrashedItems = createSelector(selectVisibleItems, (items) => items.filter(isTrashed));
+export const selectTrashedItems = createSelector(selectAllItems, (items) => items.filter(isTrashed));
 export const selectPinnedItems = createSelector(selectVisibleItems, (items) => items.filter(and(isActive, isPinned)));
 export const selectLatestDraft = createSelector(selectItemDrafts, (drafts) => first(drafts));
 
-export const selectItemsByType = <T extends ItemType>(type: T) =>
+export const selectVisibleItemsByType = <T extends ItemType>(type: T) =>
     createSelector(selectVisibleItems, (items) => items.filter(isItemType<T>(type)));
 
-export const selectLoginItems = selectItemsByType('login');
-export const selectAliasItems = selectItemsByType('alias');
+export const selectLoginItems = selectVisibleItemsByType('login');
+export const selectAliasItems = selectVisibleItemsByType('alias');
 
 export const itemsFromSelection =
     (selection: SelectedItem[]) =>

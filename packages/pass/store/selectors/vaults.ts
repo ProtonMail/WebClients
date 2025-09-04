@@ -25,9 +25,9 @@ const createVaultsWithItemsCountSelector = (vaultSelector: Selector<State, Vault
         }))
     );
 
-export const selectVaultsWithItemsCount = createVaultsWithItemsCountSelector(selectVisibleVaults);
-export const selectWritableVaultsWithItemsCount = createVaultsWithItemsCountSelector(selectWritableVaults);
-export const selectWritableSharedVaultsWithItemsCount = createVaultsWithItemsCountSelector(selectWritableSharedVaults);
+export const selectVisibleVaultsWithCount = createVaultsWithItemsCountSelector(selectVisibleVaults);
+export const selectWritableVaultsWithCount = createVaultsWithItemsCountSelector(selectWritableVaults);
+export const selectWritableSharedVaultsWithCount = createVaultsWithItemsCountSelector(selectWritableSharedVaults);
 
 export const selectVaultItemsCount = (shareId: MaybeNull<string>) =>
     createSelector(
