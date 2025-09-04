@@ -11,6 +11,9 @@ export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions
                 port: null,
                 protocol: null,
                 shareIds: options.shareIds,
+                /** Tolerate autosave candidates to be hidden.
+                 * Avoids duplicating data unnecessarily */
+                visible: false,
             }),
             () => options.userIdentifier,
         ],
