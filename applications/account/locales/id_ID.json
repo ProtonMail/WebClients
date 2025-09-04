@@ -4146,6 +4146,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } merupakan aplikasi email bawaan Anda."
       ],
+      "A checked box means the feature is disabled.": [
+        "Boks yang tercentang merupakan tanda bahwa fitur tersebut sedang dinonaktifkan."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Tambahkan folder dan berkas ke ${ DRIVE_APP_NAME } dan undang anggota tim untuk meninjau atau menyunting berkas ini."
       ],
@@ -4292,9 +4295,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Anda dapat mengimpor acara dalam format iCal (berkas ICS). Berkas Anda harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung paling banyak ${ MAX_IMPORT_EVENTS_STRING } acara. Apabila berkas Anda melebihi persyaratan ini, mohon terlebih dahulu pisahkan menjadi berkas yang lebih kecil."
-      ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "Anda akan menerima ${ referralReward } dalam saldo ${ BRAND_NAME } pada saat pengguna yang Anda undang mendaftarkan diri mereka ke paket ${ BRAND_NAME }, dan mereka juga akan memperoleh saldo senilai ${ referralReward } sebagai imbalannya."
       ]
     },
     "description": {
@@ -5654,6 +5654,9 @@
       ],
       "Invalid Sieve code": [
         "Kode Sieve tidak valid"
+      ],
+      "Invalid URL": [
+        "URL tidak valid"
       ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
@@ -8937,9 +8940,6 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Dapatkan akses dengan membuat akun ${ BRAND_NAME } dan menerima undangan ini."
       ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "Dapatkan dan hadiahkan saldo senilai **${ referralReward }** untuk setiap teman yang mendaftar."
-      ],
       "Get it on Google Play": [
         "Dapatkan di Google Play"
       ],
@@ -11777,8 +11777,20 @@
       "Auto-unsubscribe": [
         "Batalkan langganan secara otomatis"
       ],
+      "Autofill": [
+        "Pengisian otomatis"
+      ],
+      "Autofill 2FA": [
+        "Isi 2FA otomatis"
+      ],
       "Automatically save contacts": [
         "Simpan kontak secara otomatis"
+      ],
+      "Autosave": [
+        "Simpan otomatis"
+      ],
+      "Autosuggest": [
+        "Saran otomatis"
       ],
       "Awarded": [
         "Penghargaan"
@@ -12022,6 +12034,9 @@
       ],
       "Domain name": [
         "Nama domain"
+      ],
+      "Domains": [
+        "Domain"
       ],
       "Don't ask again": [
         "Jangan tanyakan lagi"
@@ -12400,6 +12415,9 @@
       ],
       "Other amount": [
         "Jumlah lain"
+      ],
+      "Passkeys": [
+        "Passkey"
       ],
       "Password": [
         "Kata sandi"
@@ -13480,9 +13498,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Masuk ke Akun ${ BRAND_NAME } Anda untuk mengakses seluruh layanan ${ BRAND_NAME } terenkripsi seperti ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan masih banyak lagi. Belum memiliki akun? Buat akun baru secara GRATIS."
-      ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "Kendalikan data Anda sepenuhnya dengan enkripsi end-to-end. Tanpa perlu kartu bank."
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "Coba ${ BRAND_NAME } secara cuma-cuma dengan tautan ini"
@@ -18039,9 +18054,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Semua layanan ${ BRAND_NAME } dasar (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "Dan dapatkan saldo senilai ${ referralReward } apabila Anda berlangganan."
-      ],
       "Billing Cycle": [
         "Siklus Tagihan"
       ],
@@ -18104,12 +18116,6 @@
       ],
       "Free": [
         "Gratis"
-      ],
-      "Free for 14 days": [
-        "Gratis selama 14 hari"
-      ],
-      "Get ${ referralReward } in credits": [
-        "Dapatkan saldo senilai ${ referralReward }"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Dapatkan alamat ${ MAIL_APP_NAME } yang aman, atau ${ internalButton }"
@@ -18188,9 +18194,6 @@
       ],
       "Select ${ title }": [
         "Pilih ${ title }"
-      ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "Pilih salah satu layanan dan dapatkan versi premiumnya selama 14 hari secara cuma-cuma. Tanpa perlu kartu kredit."
       ],
       "Selected": [
         "Terpilih"
@@ -20796,9 +20799,6 @@
       ],
       "Gift code": [
         "Kode hadiah"
-      ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "Hadiahkan ${ referralReward } dan 2 minggu berlangganan secara cuma-cuma. Dapatkan saldo senilai ${ referralReward } sebagai imbalannya."
       ],
       "Group": [
         "Grup"

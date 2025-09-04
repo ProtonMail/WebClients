@@ -1877,9 +1877,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается раз в ${ cycle } мес. ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается ежемесячно ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
       ],
@@ -1891,9 +1888,6 @@
       ],
       "on ${ formattedDate }": [
         "в ${ formattedDate }"
-      ],
-      "Try it free for 14 days": [
-        "Попробуйте бесплатно в течение 14 дней"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "После отмены ваша бесплатная пробная версия не будет преобразована в платную подписку, но вы все равно сможете пользоваться преимуществами плана до конца пробного периода. После этого вы будете переведены на бесплатный план ${ BRAND_NAME }."
@@ -4057,6 +4051,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } является вашим почтовым приложением по умолчанию."
       ],
+      "A checked box means the feature is disabled.": [
+        "Установленный флажок означает, что функция отключена."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Добавляйте папки и файлы в ${ DRIVE_APP_NAME } и приглашайте членов команды для просмотра или изменения."
       ],
@@ -5341,6 +5338,9 @@
       ],
       "Invalid Sieve code": [
         "Недействительный код Sieve"
+      ],
+      "Invalid URL": [
+        "Недействительный URL"
       ],
       "Invalid verification code": [
         "Неверный код подтверждения"
@@ -11451,8 +11451,20 @@
       "Auto-unsubscribe": [
         "Автоматическая отписка"
       ],
+      "Autofill": [
+        "Автозаполнение"
+      ],
+      "Autofill 2FA": [
+        "Автозаполнение 2ФА"
+      ],
       "Automatically save contacts": [
         "Автоматическое сохранение контактов"
+      ],
+      "Autosave": [
+        "Автосохранение"
+      ],
+      "Autosuggest": [
+        "Автоподсказка"
       ],
       "Awarded": [
         "Присуждено"
@@ -11690,6 +11702,9 @@
       ],
       "Domain name": [
         "Доменное имя"
+      ],
+      "Domains": [
+        "Домены"
       ],
       "Don't ask again": [
         "Больше не спрашивать"
@@ -12065,6 +12080,9 @@
       ],
       "Other amount": [
         "Другая сумма"
+      ],
+      "Passkeys": [
+        "Ключи доступа"
       ],
       "Password": [
         "Пароль"
@@ -17447,9 +17465,6 @@
       ],
       "Free": [
         "Free"
-      ],
-      "Free for 14 days": [
-        "Бесплатно 14 дней"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Получите безопасный адрес ${ MAIL_APP_NAME } или ${ internalButton }"

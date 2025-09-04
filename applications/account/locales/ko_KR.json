@@ -1408,6 +1408,9 @@
       "Spam": [
         "스팸"
       ],
+      "Start free trial": [
+        "무료 체험 시작"
+      ],
       "Start import": [
         "가져오기 시작"
       ],
@@ -4146,6 +4149,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME }이 기본 메일 애플리케이션으로 설정되어 있지 않습니다."
       ],
+      "A checked box means the feature is disabled.": [
+        "해당 체크박스가 이 기능이 비활성화 상태임을 의미합니다."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "${ DRIVE_APP_NAME }에 폴더와 파일을 추가한 뒤 팀원을 초대하여 확인하거나 편집합니다."
       ],
@@ -4292,9 +4298,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal 포맷(ICS 파일)으로 이벤트를 불러올 수 있습니다. 파일 크기가 최대 ${ MAX_IMPORT_FILE_SIZE_STRING } 및 최대 ${ MAX_IMPORT_EVENTS_STRING }개의 이벤트를 포함하고 있어야 합니다. 만약 파일이 너무 크다면, 작은 파일들로 분할해 주세요."
-      ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "초대한 사용자가 ${ BRAND_NAME } 플랜을 구입하면 사용자는 ${ BRAND_NAME } 크레딧 ${ referralReward }을(를) 받게 되며, 초대한 사람 또한 처음 시작하는 데 필요한 ${ referralReward } 크레딧을 받게 됩니다."
       ]
     },
     "description": {
@@ -5666,6 +5669,9 @@
       ],
       "Invalid Sieve code": [
         "유효하지 않은 Sieve 코드"
+      ],
+      "Invalid URL": [
+        "유효하지 않은 URL"
       ],
       "Invalid verification code": [
         "잘못된 검증 코드"
@@ -8949,9 +8955,6 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "${ BRAND_NAME } 계정 생성 및 초대 수락하여 접근하세요."
       ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "구독하는 친구 한 명당 **${ referralReward } 크레딧**을 서로 주고받으세요."
-      ],
       "Get it on Google Play": [
         "Google Play에서 다운로드"
       ],
@@ -11792,8 +11795,20 @@
       "Auto-unsubscribe": [
         "자동 구독 취소"
       ],
+      "Autofill": [
+        "자동 완성"
+      ],
+      "Autofill 2FA": [
+        "2단계 인증 자동 완성"
+      ],
       "Automatically save contacts": [
         "자동으로 연락처 저장"
+      ],
+      "Autosave": [
+        "자동 저장"
+      ],
+      "Autosuggest": [
+        "자동 제안"
       ],
       "Awarded": [
         "지급 완료"
@@ -12037,6 +12052,9 @@
       ],
       "Domain name": [
         "도메인 이름"
+      ],
+      "Domains": [
+        "도메인"
       ],
       "Don't ask again": [
         "다시 묻지 않기"
@@ -12415,6 +12433,9 @@
       ],
       "Other amount": [
         "다른 금액"
+      ],
+      "Passkeys": [
+        "패스키"
       ],
       "Password": [
         "암호"
@@ -13498,9 +13519,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "${ BRAND_NAME } 계정에 로그인하여 ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } 등의 모든 암호화 된 ${ BRAND_NAME } 서비스를 사용해보세요. 계정이 없으신가요? 무료로 계정을 만들 수 있어요."
-      ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "종단간 암호화로 당신의 데이터에 주도권을 잡으세요. 신용카드 정보는 필요하지 않습니다."
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "${ BRAND_NAME }을(를) 이 링크로 무료 체험하세요."
@@ -18078,9 +18096,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "모든 기본 ${ BRAND_NAME } 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "그리고 구독시 크레딧으로 ${ referralReward }(을)를 받으세요."
-      ],
       "Billing Cycle": [
         "결제 주기"
       ],
@@ -18143,12 +18158,6 @@
       ],
       "Free": [
         "Free"
-      ],
-      "Free for 14 days": [
-        "14일간 무료"
-      ],
-      "Get ${ referralReward } in credits": [
-        "${ referralReward }의 크레딧 받기"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "안전한 ${ MAIL_APP_NAME } 주소를 받거나 ${ internalButton }"
@@ -18227,9 +18236,6 @@
       ],
       "Select ${ title }": [
         "${ title } 선택"
-      ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "서비스를 선택하여 프리미엄 버전을 14일간 무료로 경험해 보세요. 신용카드 정보는 필요하지 않습니다."
       ],
       "Selected": [
         "선택됨"
@@ -20829,9 +20835,6 @@
       ],
       "Gift code": [
         "기프트 코드"
-      ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "${ referralReward }을(를) 드리고 2주간 무료로 제공합니다. ${ referralReward } 크레딧을 받으세요."
       ],
       "Group": [
         "그룹"

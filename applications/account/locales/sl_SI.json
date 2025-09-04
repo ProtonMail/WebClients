@@ -3874,6 +3874,9 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vam omogočata varno in šifrirano sodelovanje z drugimi."
       ],
+      "A checked box means the feature is disabled.": [
+        "Potrjeno polje pomeni, da je funkcija onemogočena."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Dodajte mape in datoteke v ${ DRIVE_APP_NAME } ter povabite člane ekipe, da si jih ogledajo ali jih uredijo."
       ],
@@ -4963,6 +4966,9 @@
       ],
       "Invalid Sieve code": [
         "Neveljavna Sieve koda"
+      ],
+      "Invalid URL": [
+        "Neveljaven URL"
       ],
       "Invalid verification code": [
         "Neveljavna koda za preverjanje"
@@ -10450,8 +10456,20 @@
       "Auto-unsubscribe": [
         "Samodejno odjavite"
       ],
+      "Autofill": [
+        "Samodejno izpolnjevanje"
+      ],
+      "Autofill 2FA": [
+        "Samodejno izpolnjevanje 2FA"
+      ],
       "Automatically save contacts": [
         "Samodejno shrani stike"
+      ],
+      "Autosave": [
+        "Samodejno shranjevanje"
+      ],
+      "Autosuggest": [
+        "Samodejni predlog"
       ],
       "Awarded": [
         "Podeljeno."
@@ -10683,6 +10701,9 @@
       ],
       "Domain name": [
         "Ime domene"
+      ],
+      "Domains": [
+        "Domene"
       ],
       "Don't ask again": [
         "Ne sprašuj več"
@@ -11046,6 +11067,9 @@
       ],
       "Other amount": [
         "Druga vrednost"
+      ],
+      "Passkeys": [
+        "Identifikacijski ključi"
       ],
       "Password": [
         "Geslo"
@@ -16114,9 +16138,6 @@
       ],
       "Free": [
         "Brezplačno"
-      ],
-      "Free for 14 days": [
-        "Preizkusi brezplačno za 14 dni"
       ],
       "Highest VPN speed": [
         "Najhitrejši VPN"
