@@ -1223,9 +1223,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente cada ${ cycle } meses el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente cada mes el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
       ],
@@ -4430,11 +4427,17 @@
       "Contacts": [
         "Contactos"
       ],
+      "Domain": [
+        "Dominio"
+      ],
       "Drawer": [
         "Casilla"
       ],
       "Name": [
         "Nombre"
+      ],
+      "Password ends with": [
+        "La contraseña termina con"
       ],
       "Repeat event": [
         "Repetir el evento"
@@ -4444,6 +4447,9 @@
       ],
       "Security Center": [
         "Centro de seguridad"
+      ],
+      "Username": [
+        "Nombre de usuario"
       ]
     },
     "Hint": {
@@ -11096,6 +11102,9 @@
       "Network error": [
         "Error de red"
       ],
+      "Next": [
+        "Siguiente"
+      ],
       "Night theme": [
         "Tema de noche"
       ],
@@ -11110,6 +11119,9 @@
       ],
       "Open actions dropdown": [
         "Abrir menú de acciones"
+      ],
+      "Open pagination": [
+        "Abrir paginación"
       ],
       "Org setup": [
         "Configuración de la organización"
@@ -11140,6 +11152,9 @@
       ],
       "Phone numbers": [
         "Números de teléfono"
+      ],
+      "Previous": [
+        "Anterior"
       ],
       "Private browsing vs VPN": [
         "Navegación privada y VPN"
