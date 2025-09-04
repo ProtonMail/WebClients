@@ -2044,9 +2044,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co ${ cycle } mies. w dniu ${ formattedDate }. Nie zostaniesz obciążony(-a), jeśli anulujesz subskrypcję przed ${ formattedDate }."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony(-a), jeśli anulujesz subskrypcję przed ${ formattedDate }."
       ],
@@ -2058,9 +2055,6 @@
       ],
       "on ${ formattedDate }": [
         "dnia ${ formattedDate }"
-      ],
-      "Try it free for 14 days": [
-        "Wypróbuj za darmo przez 14 dni"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kiedy anulujesz, Twoja bezpłatna wersja próbna nie zostanie przekształcona w płatną subskrypcję, ale nadal możesz korzystać z funkcji planu do końca okresu próbnego. Następnie zostaniesz przeniesiony(-a) do planu ${ BRAND_NAME } Free."
@@ -4241,6 +4235,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } jest domyślną aplikacją pocztową."
       ],
+      "A checked box means the feature is disabled.": [
+        "Zaznaczone pole oznacza włączoną funkcję."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Dodawaj foldery i pliki do ${ DRIVE_APP_NAME } i zapraszaj użytkowników zespołu do ich przeglądania lub edytowania."
       ],
@@ -4390,9 +4387,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Możesz importować wydarzenia w formacie iCal (plik ICS). Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzeń. Podziel swój plik na mniejsze, jeśli jest zbyt duży."
-      ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "Otrzymasz ${ referralReward } w środkach ${ BRAND_NAME }, gdy zaproszona osoba zarejestruje się w planie ${ BRAND_NAME }. Użytkownik otrzyma również ${ referralReward } w środkach."
       ]
     },
     "description": {
@@ -5749,6 +5743,9 @@
       ],
       "Invalid Sieve code": [
         "Kod Sieve jest nieprawidłowy"
+      ],
+      "Invalid URL": [
+        "Adres URL jest nieprawidłowy"
       ],
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
@@ -9209,9 +9206,6 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Utwórz konto ${ BRAND_NAME } i zaakceptuj zaproszenie."
       ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "Zdobądź i przyznaj **${ referralReward } środków** za każdego znajomego, który zasubskrybuje plan."
-      ],
       "Get it on Google Play": [
         "Pobierz z Google Play"
       ],
@@ -12139,8 +12133,20 @@
       "Auto-unsubscribe": [
         "Automatyczne anulowanie subskrypcji"
       ],
+      "Autofill": [
+        "Uzupełnij"
+      ],
+      "Autofill 2FA": [
+        "Autouzupełnianie uwierzytelniania dwustopniowego"
+      ],
       "Automatically save contacts": [
         "Automatyczne zapisywanie kontaktów"
+      ],
+      "Autosave": [
+        "Automatyczne zapisywanie"
+      ],
+      "Autosuggest": [
+        "Automatyczne sugestie"
       ],
       "Awarded": [
         "Przyznano"
@@ -12384,6 +12390,9 @@
       ],
       "Domain name": [
         "Nazwa domeny"
+      ],
+      "Domains": [
+        "Domeny"
       ],
       "Don't ask again": [
         "Nie pytaj ponownie"
@@ -12762,6 +12771,9 @@
       ],
       "Other amount": [
         "Inna kwota"
+      ],
+      "Passkeys": [
+        "Klucze dostępu"
       ],
       "Password": [
         "Hasło"
@@ -13854,9 +13866,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Zaloguj się do konta ${ BRAND_NAME }, aby uzyskać dostęp do szyfrowanych usług ${ BRAND_NAME }, takich jak ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i wiele więcej. Nie masz konta? Załóż DARMOWE konto."
-      ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "Przejmij kontrolę nad swoimi danymi dzięki szyfrowaniu end-to-end. Karta płatnicza nie jest wymagana."
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "Wypróbuj plan ${ BRAND_NAME } za darmo za pomocą tego linku"
@@ -18607,9 +18616,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Wszystkie podstawowe usługi ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "Otrzymaj ${ referralReward } w środkach za subskrypcję."
-      ],
       "Billing Cycle": [
         "Cykl rozliczeniowy"
       ],
@@ -18672,12 +18678,6 @@
       ],
       "Free": [
         "Za darmo"
-      ],
-      "Free for 14 days": [
-        "Za darmo przez 14 dni"
-      ],
-      "Get ${ referralReward } in credits": [
-        "Uzyskaj ${ referralReward } w środkach"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Uzyskaj bezpieczny adres ${ MAIL_APP_NAME } lub ${ internalButton }"
@@ -18759,9 +18759,6 @@
       ],
       "Select ${ title }": [
         "Wybierz plan ${ title }"
-      ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "Wybierz usługę i korzystaj z wersji premium przez 14 dni za darmo. Karta płatnicza nie jest wymagana."
       ],
       "Selected": [
         "Wybrano"
@@ -21491,9 +21488,6 @@
       ],
       "Gift code": [
         "Kod podarunkowy"
-      ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "Przyznaj ${ referralReward } i 2 tygodnie planu za darmo. Zdobądź ${ referralReward } środków."
       ],
       "Group": [
         "Grupa"

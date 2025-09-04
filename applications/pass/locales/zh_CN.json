@@ -712,7 +712,7 @@
         "${ DARK_WEB_MONITORING_NAME } 通过付费计划提供。升级后可立即访问。"
       ],
       "${ total } other login uses the same password": [
-        "其他 ${ total } 个登录使用相同密码"
+        "其他 ${ total } 个登录项目使用相同密码"
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "2FA 给您的登录添加了另一层安全。${ PASS_APP_NAME } 通过储存并自动填充您的 2FA 验证码，让 2FA 变得更简单。"
@@ -1270,6 +1270,17 @@
         "TB"
       ]
     },
+    "Header": {
+      "Domain": [
+        "域名"
+      ],
+      "Password ends with": [
+        "密码结尾是"
+      ],
+      "Username": [
+        "用户名"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "“${ payload.itemName }” 项目被拒绝"
@@ -1650,7 +1661,7 @@
         "转发地址已复制到剪贴板。向该地址发送电子邮件，${ Email } 就会收到。"
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "生成的密码将在 ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 周内存储。"
+        "生成的密码将会保留${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS }周。"
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "通过为每个团队或项目创建一个保险库以此充分利用 Pass。"
@@ -1798,6 +1809,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -4245,6 +4259,9 @@
       "MX record": [
         "MX 记录"
       ],
+      "Next": [
+        "下一页"
+      ],
       "No excluded items": [
         "无除外项目"
       ],
@@ -4265,6 +4282,9 @@
       ],
       "No shared secure links": [
         "没有共享的安全链接"
+      ],
+      "Open pagination": [
+        "选择页码"
       ],
       "Our welcome gift to you": [
         "我们送给您的欢迎礼物"
@@ -4295,6 +4315,9 @@
       ],
       "Please note that once deleted, the alias can't be restored.": [
         "请注意，别名一旦删除就无法恢复。"
+      ],
+      "Previous": [
+        "上一页"
       ],
       "Random Prefix Generation": [
         "随机前缀生成"

@@ -3782,6 +3782,9 @@
       "${ MAIL_APP_NAME } is not your default mail application.": [
         "${ MAIL_APP_NAME }為非預設電子郵件應用程式."
       ],
+      "A checked box means the feature is disabled.": [
+        "勾選的選項表示以被禁用的功能"
+      ],
       "Also included": [
         "並包含"
       ],
@@ -3865,9 +3868,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
-      ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "當您邀請的人註冊一項 ${ BRAND_NAME } 方案時，您便會收到 ${ referralReward } 的 ${ BRAND_NAME } 獎勵額度。同時，他們也將獲得 ${ referralReward } 獎勵額度來開始使用服務。"
       ]
     },
     "description": {
@@ -4812,6 +4812,9 @@
       ],
       "Invalid Sieve code": [
         "Sieve 代碼無效"
+      ],
+      "Invalid URL": [
+        "URL 無效"
       ],
       "Invalid verification code": [
         "驗證碼無效"
@@ -7812,9 +7815,6 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "透過創建${ BRAND_NAME }帳號和接受邀請以取得存取權。"
       ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "您可取得並同時贈送 **${ referralReward } 獎勵額度** 給每一位訂購的朋友。"
-      ],
       "Get it on Google Play": [
         "於 Google Play取得"
       ],
@@ -10362,8 +10362,20 @@
       "Auto-unsubscribe": [
         "自動解除訂閱"
       ],
+      "Autofill": [
+        "自動填入"
+      ],
+      "Autofill 2FA": [
+        "自動填入雙重驗證"
+      ],
       "Automatically save contacts": [
         "自動儲存聯絡人"
+      ],
+      "Autosave": [
+        "自動儲存"
+      ],
+      "Autosuggest": [
+        "自動建議"
       ],
       "Awarded": [
         "獲得獎勵"
@@ -10598,6 +10610,9 @@
       ],
       "Domain name": [
         "網域名稱"
+      ],
+      "Domains": [
+        "網域"
       ],
       "Don't ask again": [
         "不要再次詢問"
@@ -10955,6 +10970,9 @@
       ],
       "Other amount": [
         "其它金額"
+      ],
+      "Passkeys": [
+        "密碼金鑰"
       ],
       "Password": [
         "密碼"
@@ -15655,9 +15673,6 @@
       "Free": [
         "免費"
       ],
-      "Free for 14 days": [
-        "免費體驗 14 天"
-      ],
       "Highest VPN speed": [
         "最高 VPN 速度"
       ],
@@ -18038,9 +18053,6 @@
       ],
       "Gift code": [
         "禮品代碼"
-      ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "提供 ${ referralReward } 並免費使用 2 星期。獲得 ${ referralReward } 獎勵額度。"
       ],
       "Group": [
         "群組"

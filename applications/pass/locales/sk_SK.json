@@ -1309,6 +1309,17 @@
         "terabajtov"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Doména"
+      ],
+      "Password ends with": [
+        "Heslo končí znakmi"
+      ],
+      "Username": [
+        "Používateľské meno"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Položka \"${ payload.itemName }\" bola zamietnutá"
@@ -1882,6 +1893,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -4425,6 +4442,9 @@
       "MX record": [
         "MX záznam"
       ],
+      "Next": [
+        "Ďalej"
+      ],
       "No excluded items": [
         "Žiadne vylúčené položky"
       ],
@@ -4445,6 +4465,9 @@
       ],
       "No shared secure links": [
         "Žiadne zdieľané bezpečné odkazy"
+      ],
+      "Open pagination": [
+        "Otvoriť stránkovanie"
       ],
       "Organize vaults": [
         "Usporiadať trezory"
@@ -4481,6 +4504,9 @@
         "Upozorňujeme, že vymazané aliasy nie je možné obnoviť.",
         "Upozorňujeme, že vymazané aliasy nie je možné obnoviť.",
         "Upozorňujeme, že vymazané aliasy nie je možné obnoviť."
+      ],
+      "Previous": [
+        "Predchádzajúci"
       ],
       "Random Prefix Generation": [
         "Generovanie náhodných predpôn"
