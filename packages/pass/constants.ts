@@ -127,6 +127,7 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassRenameAdminToManager]: false,
     [PassFeature.PassWebInternalAlpha]: false,
     [PassFeature.PassWebPrfUnlock]: false,
+    [PassFeature.PassHideShowVault]: false,
 };
 
 /** NOTE: Timeout mostly used to avoid Safari extension
