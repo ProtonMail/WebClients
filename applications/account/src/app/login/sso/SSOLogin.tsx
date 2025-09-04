@@ -3,8 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import type { AuthActionResponse, AuthCacheResult, AuthSession } from '@proton/components/containers/login/interface';
-import { AuthStep } from '@proton/components/containers/login/interface';
-import { SSOLoginCapabilites } from '@proton/components/containers/login/interface';
+import { AuthStep, SSOLoginCapabilites } from '@proton/components/containers/login/interface';
 import {
     handleChangeSSOUserKeysPassword,
     handleSSODeviceConfirmed,

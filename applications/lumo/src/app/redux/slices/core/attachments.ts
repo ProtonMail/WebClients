@@ -3,8 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import type { Priority } from '../../../remote/scheduler';
 import type { IdMapEntry, RemoteAttachment } from '../../../remote/types';
-import type { SerializedAttachment } from '../../../types';
-import type { Attachment, AttachmentId } from '../../../types';
+import type { Attachment, AttachmentId, SerializedAttachment } from '../../../types';
 
 export type PushAttachmentRequest = {
     id: AttachmentId;

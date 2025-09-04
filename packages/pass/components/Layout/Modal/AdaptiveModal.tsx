@@ -1,5 +1,4 @@
-import type { PropsWithChildren } from 'react';
-import type { FC, ReactNode } from 'react';
+import type { FC, PropsWithChildren, ReactNode } from 'react';
 
 import { c } from 'ttag';
 

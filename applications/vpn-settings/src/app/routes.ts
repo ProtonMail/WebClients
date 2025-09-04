@@ -1,8 +1,15 @@
 import { c } from 'ttag';
 
 import type { SectionConfig } from '@proton/components';
-import { Renew, type Subscription, hasLumoPlan, isManagedExternally } from '@proton/payments';
-import { getHasVpnB2BPlan, hasCancellablePlan, isCancellableOnlyViaSupport } from '@proton/payments';
+import {
+    Renew,
+    type Subscription,
+    getHasVpnB2BPlan,
+    hasCancellablePlan,
+    hasLumoPlan,
+    isCancellableOnlyViaSupport,
+    isManagedExternally,
+} from '@proton/payments';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';

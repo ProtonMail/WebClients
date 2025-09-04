@@ -2,8 +2,7 @@ import { createContext, useContext } from 'react';
 
 import noop from 'lodash/noop';
 
-import type { WalletCreationModalOwnProps } from '../../components';
-import type { WalletImportModalOwnProps } from '../../components';
+import type { WalletCreationModalOwnProps, WalletImportModalOwnProps } from '../../components';
 import type { WalletAccountCreationModalOwnProps } from '../../components/WalletAccountCreationModal';
 import type { WalletBackupModalOwnProps } from '../../components/WalletBackupModal';
 
