@@ -27,14 +27,13 @@ import useInstance from '@proton/hooks/useInstance';
 import { getHas2024OfferCoupon } from '@proton/payments';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getIsPassApp, getIsVPNApp, getToAppName } from '@proton/shared/lib/authentication/apps';
 import {
     getEmailSessionForkSearchParameter,
     getLocalIDForkSearchParameter,
     produceOAuthFork,
 } from '@proton/shared/lib/authentication/fork';
-import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
 import { handleLogoutFromURL } from '@proton/shared/lib/authentication/handleLogoutFromURL';
 import type { ActiveSession, GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getActiveSessions } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -56,6 +55,7 @@ import locales from '../locales';
 import LoginContainer, { type LoginContainerState } from '../login/LoginContainer';
 import { getLoginMeta } from '../login/loginPagesJson';
 import AppSwitcherContainer from '../public/AppSwitcherContainer';
+import AuthDesktop from '../public/AuthDesktop';
 import AuthExtension from '../public/AuthExtension';
 import CallScheduledPage from '../public/CallScheduledPage';
 import CloseTicketContainer from '../public/CloseTicketContainer';
@@ -89,10 +89,12 @@ import AccountLoaderPage from './AccountLoaderPage';
 import AccountPublicApp from './AccountPublicApp';
 import ExternalSSOConsumer from './ExternalSSOConsumer';
 import SingleSignupSwitchContainer from './SingleSignupSwitchContainer';
+import { type ProduceForkData, SSOType } from './actions/forkInterface';
 import { getActiveSessionLoginResult } from './actions/getActiveSessionLoginResult';
 import { getLoginResult } from './actions/getLoginResult';
 import { getSanitizedLocationDescriptorObject } from './actions/getSanitizedLocationDescriptorObject';
 import type { LoginLocationState, LoginResult } from './actions/interface';
+import { handleDesktopFork } from './fork/handleDesktopFork';
 import { handleOAuthFork } from './fork/handleOAuthFork';
 import { handleProtonFork } from './fork/handleProtonFork';
 import { UNAUTHENTICATED_ROUTES, getPaths, getPreAppIntent } from './helper';
@@ -406,6 +408,16 @@ const BasePublicApp = ({ sessions }: { sessions: ReturnType<typeof bootstrapApp>
                         {loader}
                     </AccountEffect>
                 </Route>
+                <Route path={SSO_PATHS.DESKTOP_SIGN_IN}>
+                    <AccountEffect
+                        onEffect={async () => {
+                            const result = await handleDesktopFork({ api: silentApi, paths });
+                            await handleActiveSessions(result.payload.activeSessionsResult, result.payload.fork);
+                        }}
+                    >
+                        {loader}
+                    </AccountEffect>
+                </Route>
                 <Route path={[SSO_PATHS.EXTERNAL_SSO_LOGIN, SSO_PATHS.EXTERNAL_SSO_REAUTH]}>
                     <UnAuthenticated>
                         <ExternalSSOConsumer
@@ -508,6 +520,11 @@ const BasePublicApp = ({ sessions }: { sessions: ReturnType<typeof bootstrapApp>
                 {locationState?.type === 'auth-ext' && (
                     <Route path="/auth-ext">
                         <AuthExtension state={locationState.payload} />
+                    </Route>
+                )}
+                {locationState?.type === 'auth-desktop' && (
+                    <Route path="/auth-desktop">
+                        <AuthDesktop state={locationState.payload} />
                     </Route>
                 )}
                 {locationState?.type === 'oauth-partners' && (
@@ -762,11 +779,14 @@ const BasePublicApp = ({ sessions }: { sessions: ReturnType<typeof bootstrapApp>
                                                                 if (locationState?.type !== 'confirm-oauth') {
                                                                     throw new Error('Missing state');
                                                                 }
+                                                                const uidApi = getUIDApi(
+                                                                    locationState.payload.session.data.UID,
+                                                                    normalApi
+                                                                );
                                                                 const url = await produceOAuthFork({
-                                                                    api: normalApi,
+                                                                    api: uidApi,
                                                                     oauthData:
                                                                         locationState.payload.data.payload.oauthData,
-                                                                    UID: locationState.payload.session.data.UID,
                                                                 });
                                                                 replaceUrl(url);
                                                             }}

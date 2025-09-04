@@ -6,6 +6,10 @@ import type { ExtensionForkResult, ExtensionForkResultPayload } from '@proton/sh
 import { type ExtensionApp, sendExtensionMessage } from '@proton/shared/lib/browser/extension';
 import { APPS } from '@proton/shared/lib/constants';
 import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';
+import errorPass from '@proton/styles/assets/img/extension/proton-pass-extension/error.svg';
+import successPass from '@proton/styles/assets/img/extension/proton-pass-extension/success.svg';
+import errorVpn from '@proton/styles/assets/img/extension/proton-vpn-browser-extension/error.svg';
+import successVpn from '@proton/styles/assets/img/extension/proton-vpn-browser-extension/success.svg';
 import successImg from '@proton/styles/assets/img/onboarding/proton-welcome.svg';
 import noop from '@proton/utils/noop';
 
@@ -16,20 +20,13 @@ import Text from './Text';
 
 export type AuthExtensionState = ExtensionForkResult & { app: ExtensionApp | undefined };
 
-const assets = require.context(`@proton/styles/assets/img/extension`, true, /.svg$/);
-
-const getAssetsForExtension = (appName: ExtensionApp): { [key in AuthExtensionState['type']]: string } => ({
-    success: assets(`./${appName}/success.svg`),
-    error: assets(`./${appName}/error.svg`),
-});
-
 const getExtensionAssets = (app?: ExtensionApp): { [key in AuthExtensionState['type']]: string } => {
     switch (app) {
         case APPS.PROTONPASSBROWSEREXTENSION:
         case APPS.PROTONEXTENSION:
-            return getAssetsForExtension(APPS.PROTONPASSBROWSEREXTENSION);
+            return { success: successPass, error: errorPass };
         case APPS.PROTONVPNBROWSEREXTENSION:
-            return getAssetsForExtension(APPS.PROTONVPNBROWSEREXTENSION);
+            return { success: successVpn, error: errorVpn };
         default:
             return { success: successImg, error: errorImg };
     }

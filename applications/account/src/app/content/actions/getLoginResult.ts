@@ -1,10 +1,10 @@
 import type { AppIntent, AuthSession } from '@proton/components/containers/login/interface';
+import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAppHref, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
 import { getShouldReAuth } from '@proton/shared/lib/authentication/fork';
-import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
 import { getOAuthSettingsUrl } from '@proton/shared/lib/authentication/fork/oauth2SettingsUrl';
 import { getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
 import { APPS, type APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
@@ -19,6 +19,7 @@ import { getReAuthState } from '../../public/ReAuthContainer';
 import { getOrganization } from '../../public/organization';
 import type { Paths } from '../helper';
 import type { LocalRedirect } from '../localRedirect';
+import { type ProduceForkData, SSOType } from './forkInterface';
 import { getProduceForkLoginResult } from './getProduceForkLoginResult';
 import { getSetupAddressLoginResult } from './getSetupAddressLoginResult';
 import type { LoginResult } from './interface';
@@ -158,7 +159,8 @@ export const getLoginResult = async ({
 
     // In any forking scenario, ignore the app switcher
     if (!maybeToApp && !forkState) {
-        const organization = await getOrganization({ session, api }).catch(noop);
+        const uidApi = getUIDApi(session.data.UID, api);
+        const organization = await getOrganization({ session, api: uidApi }).catch(noop);
         const appSwitcherState: AppSwitcherState = {
             session: { ...session, data: { ...session.data, Organization: organization } },
         };
@@ -250,6 +252,7 @@ export const getLoginResult = async ({
                 payload: {
                     searchParameters,
                     forkParameters: forkState.payload.forkParameters,
+                    desktopForkParameters: forkState.payload.desktopForkParameters,
                 },
             },
             session,

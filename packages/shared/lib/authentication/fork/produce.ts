@@ -9,7 +9,6 @@ import { pushForkSession } from '../../api/auth';
 import { getAppHref, getClientID } from '../../apps/helper';
 import type { APP_NAMES } from '../../constants';
 import { SSO_PATHS } from '../../constants';
-import { withUIDHeaders } from '../../fetch/headers';
 import { encodeBase64URL, uint8ArrayToString } from '../../helpers/encoding';
 import type { Api, User } from '../../interfaces';
 import type { PushForkResponse } from '../interface';
@@ -45,7 +44,7 @@ interface ProduceForkArguments {
 
 export const produceFork = async ({
     api,
-    session: { UID, keyPassword, offlineKey, persistedSession },
+    session: { keyPassword, offlineKey, persistedSession },
     forkParameters: { state, app, independent, forkType, forkVersion, payloadType, payloadVersion },
 }: ProduceForkArguments): Promise<ProduceForkPayload> => {
     const rawKey = crypto.getRandomValues(new Uint8Array(32));
@@ -71,14 +70,11 @@ export const produceFork = async ({
 
     const childClientID = getClientID(app);
     const { Selector: selector } = await api<PushForkResponse>(
-        withUIDHeaders(
-            UID,
-            pushForkSession({
-                Payload: encryptedPayload.blob,
-                ChildClientID: childClientID,
-                Independent: independent ? 1 : 0,
-            })
-        )
+        pushForkSession({
+            Payload: encryptedPayload.blob,
+            ChildClientID: childClientID,
+            Independent: independent ? 1 : 0,
+        })
     );
 
     return {
@@ -141,7 +137,7 @@ export const produceForkConsumption = (
     return getAppHref(`${SSO_PATHS.FORK}${search}${fragment}`, app);
 };
 
-const getWhitelistedProtocol = (app: APP_NAMES, redirectUrl: string) => {
+export const getWhitelistedProtocol = (app: APP_NAMES, redirectUrl: string) => {
     const protocol = redirectUrl.match(/^([^:]+:)\/\//)?.[1];
     if (!protocol) {
         return;
@@ -202,7 +198,7 @@ export interface ProduceForkParameters {
 }
 
 export interface ProduceForkParametersFull extends ProduceForkParameters {
-    localID: number;
+    localID: number | undefined;
 }
 
 export const getProduceForkParameters = (

@@ -12,7 +12,6 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
-import type { ProtonForkData } from '@proton/shared/lib/authentication/fork/interface';
 import { oauthAuthorizePartner } from '@proton/shared/lib/authentication/fork/oauth2';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
@@ -33,6 +32,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import noop from '@proton/utils/noop';
 
+import type { ProtonForkData } from '../content/actions/forkInterface';
 import { clearForkState, saveForkState } from './persistedForkState';
 
 export interface OAuthPartnersInitiateState {
