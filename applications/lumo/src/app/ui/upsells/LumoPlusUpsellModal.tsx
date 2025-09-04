@@ -4,18 +4,24 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components';
-import { ModalTwo, ModalTwoContent, ModalTwoHeader, Price, SettingsLink, useConfig } from '@proton/components';
+import {
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoHeader,
+    Price,
+    SUBSCRIPTION_STEPS,
+    useSubscriptionModal,
+} from '@proton/components';
 import type { IconName } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { CYCLE, PLANS } from '@proton/payments';
-import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoCatLoaf from '@proton/styles/assets/img/lumo/lumo-cat-loaf-upsell.svg';
 import lumoPlusLogo from '@proton/styles/assets/img/lumo/lumo-plus-logo.svg';
 
-import { LUMO_PLUS_FREE_PATH_TO_ACCOUNT } from '../../constants';
+import { sendSubscriptionModalInitializedEvent, sendSubscriptionModalSubscribedEvent } from '../../util/telemetry';
 import LumoPlusBackdropOverlay from './LumoPlusBackdropOverlay';
 
 import './LumoPlusUpsellModal.scss';
@@ -61,22 +67,47 @@ interface Props {
 // TODO: Add the logic to refresh after subscription is completed
 
 const LumoPlusUpsellModal = ({ modalProps, upsellRef, specialBackdrop = false }: Props) => {
-    // const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal] = useSubscriptionModal();
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
-    const { APP_NAME } = useConfig();
+    // const { APP_NAME } = useConfig();
     const [showModal, setShowModal] = useState(!specialBackdrop);
 
     const handleBackdropAnimationComplete = () => {
         setShowModal(true);
     };
 
-    const lumoPlusModalUpsellRef = getUpsellRefFromApp({
-        app: APP_NAME,
-        feature: LUMO_UPSELL_PATHS.LUMO_PLUS_UPGRADE_MODAL,
-        component: UPSELL_COMPONENT.BUTTON,
-        fromApp: APP_NAME,
-    });
-    const upgradeUrl = addUpsellPath(LUMO_PLUS_FREE_PATH_TO_ACCOUNT, lumoPlusModalUpsellRef);
+    // const lumoPlusModalUpsellRef = getUpsellRefFromApp({
+    //     app: APP_NAME,
+    //     feature: LUMO_UPSELL_PATHS.LUMO_PLUS_UPGRADE_MODAL,
+    //     component: UPSELL_COMPONENT.BUTTON,
+    //     fromApp: APP_NAME,
+    // });
+    // const upgradeUrl = addUpsellPath(LUMO_PLUS_FREE_PATH_TO_ACCOUNT, lumoPlusModalUpsellRef);
+
+    const handleSubscriptionModalSubscribed = () => {
+        modalProps.onClose();
+        sendSubscriptionModalSubscribedEvent(upsellRef);
+    };
+
+    const handleOpenSubscriptionModal = () => {
+        modalProps.onClose();
+
+        sendSubscriptionModalInitializedEvent(upsellRef);
+
+        openSubscriptionModal({
+            step: SUBSCRIPTION_STEPS.CHECKOUT,
+            disablePlanSelection: true,
+            maximumCycle: CYCLE.YEARLY,
+            plan: PLANS.LUMO,
+            onSubscribed: () => {
+                handleSubscriptionModalSubscribed();
+            },
+            metrics: {
+                source: 'upsells',
+            },
+            upsellRef,
+        });
+    };
 
     if (plansMapLoading) {
         return <Loader />;
@@ -131,8 +162,10 @@ const LumoPlusUpsellModal = ({ modalProps, upsellRef, specialBackdrop = false }:
 
                             <div className="mt-6 mb-6 text-center">
                                 <ButtonLike
-                                    as={SettingsLink}
-                                    path={upgradeUrl}
+                                    // as={SettingsLink}
+                                    // path={upgradeUrl}
+                                    as={undefined}
+                                    onClick={handleOpenSubscriptionModal}
                                     size="large"
                                     color="norm"
                                     shape="solid"
