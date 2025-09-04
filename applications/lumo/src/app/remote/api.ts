@@ -2,7 +2,7 @@
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 
-import { APP_NAME, APP_VERSION } from '../config';
+import config from '../config';
 import { ClientError, ConflictClientError } from '../redux/sagas';
 import type { Base64, MasterKey, MessageId, ProtonApiResponse } from '../types';
 import { LUMO_ELIGIBILITY, isProtonApiResponse, isRemoteId } from '../types';
@@ -114,7 +114,7 @@ export class LumoApi {
         }
 
         return {
-            ...getAppVersionHeaders(getClientID(APP_NAME), APP_VERSION),
+            ...getAppVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION),
             'x-pm-uid': this.uid,
         };
     }

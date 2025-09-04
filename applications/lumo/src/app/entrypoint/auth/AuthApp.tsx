@@ -27,7 +27,7 @@ import { FlagProvider } from '@proton/unleash';
 
 import { bootstrapApp } from '../../bootstrap';
 import LumoLoader from '../../components/LumoLoader';
-import * as config from '../../config';
+import config from '../../config';
 import locales from '../../locales';
 import type { LumoStore } from '../../redux/store';
 import { extraThunkArguments } from '../../redux/thunk';

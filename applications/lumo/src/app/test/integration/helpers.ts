@@ -10,7 +10,6 @@ import createApi from '@proton/shared/lib/api/createApi';
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import type { ProtonConfig, User } from '@proton/shared/lib/interfaces';
 
-import { APP_NAME, APP_VERSION } from '../../config';
 import { base64ToMasterKey, generateMasterKeyBase64, generateSpaceKeyBase64 } from '../../crypto';
 import type { AesKwCryptoKey } from '../../crypto/types';
 import { DbApi } from '../../indexedDb/db';
@@ -193,9 +192,9 @@ export async function setupTestEnvironment({
 
     const userId = existingUserId || generateFakeUserId();
     const mockUser = { ID: userId } as User;
-    const config: ProtonConfig = {
-        APP_VERSION,
-        APP_NAME,
+    const testConfig: ProtonConfig = {
+        APP_VERSION: '5.0.999.999',
+        APP_NAME: 'proton-lumo',
         API_URL: 'http://localhost',
         COMMIT: 'test-commit',
         DATE_VERSION: 'test-date',
@@ -208,7 +207,7 @@ export async function setupTestEnvironment({
         SSO_URL: '',
     };
 
-    const api = createApi({ config });
+    const api = createApi({ config: testConfig });
     const authentication = bootstrap.createAuthentication();
     authentication.setPersistent(false);
     const history = createMemoryHistory();
@@ -220,7 +219,7 @@ export async function setupTestEnvironment({
 
     const listenerMiddleware = createLumoListenerMiddleware({
         extra: {
-            config,
+            config: testConfig,
             api,
             authentication,
             history,
