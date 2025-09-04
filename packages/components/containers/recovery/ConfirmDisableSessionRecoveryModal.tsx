@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { userThunk } from '@proton/account/user';
+import { userSettingsThunk } from '@proton/account/userSettings';
 import { Button } from '@proton/atoms';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useApi from '@proton/components/hooks/useApi';
@@ -25,7 +25,7 @@ const ConfirmDisableSessionRecoveryModal = ({ open, onClose }: Props) => {
     const handleDisableSessionRecoveryToggle = async () => {
         try {
             await api(updateSessionAccountRecovery({ SessionAccountRecovery: 0 }));
-            await dispatch(userThunk({ cache: CacheType.None }));
+            await dispatch(userSettingsThunk({ cache: CacheType.None }));
             onClose();
             metrics.core_session_recovery_settings_update_total.increment({
                 status: 'success',
