@@ -16,7 +16,7 @@ import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatch
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import { selectCanCreateItems, selectShare, selectVisibleVaults } from '@proton/pass/store/selectors';
+import { selectAllVaults, selectCanCreateItems, selectShare } from '@proton/pass/store/selectors';
 import type { ItemType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import clsx from '@proton/utils/clsx';
@@ -37,7 +37,7 @@ export const QuickActionsPlaceholder: FC = () => {
     const scope = useItemScope();
 
     const navigate = useNavigate();
-    const hasMultipleVaults = useSelector(selectVisibleVaults).length > 1;
+    const hasMultipleVaults = useSelector(selectAllVaults).length > 1;
     const { selectedShareId } = filters;
 
     const selectedShare = useSelector(selectShare(selectedShareId));
