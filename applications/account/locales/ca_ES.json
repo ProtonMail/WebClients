@@ -1408,6 +1408,9 @@
       "Spam": [
         "Correu brossa"
       ],
+      "Start free trial": [
+        "Inicieu el període de prova gratuït"
+      ],
       "Start import": [
         "Comença la importació"
       ],
@@ -4165,6 +4168,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } és la vostra aplicació de correu per defecte."
       ],
+      "A checked box means the feature is disabled.": [
+        "Una casella marcada significa que la funció està desactivada."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Afegiu carpetes i fitxers al ${ DRIVE_APP_NAME } i convideu els membres de l'equip a veure'ls o a editar-los."
       ],
@@ -4307,14 +4313,17 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Podeu continuar convidant amics, però no podreu guanyar més crèdits"
       ],
+      "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Podeu personalitzar la llista de dominis on no s'han d'executar certes funcions automàtiques de l'extensió del navegador de ${ PASS_APP_NAME } (emplenament automàtic, suggeriment automàtic, desament automàtic)."
+      ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
         "Podeu fer complir les regles de contrasenya que els membres de l'organització utilitzaran quan generin una contrasenya a ${ PASS_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pots importar esdeveniments en format iCal (fitxer ICS).\nEl fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_EVENTS_STRING } esdeveniments. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
       ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "Obtindreu ${ referralReward } en crèdit de ${ BRAND_NAME } quan la persona que convideu subscrigui un pla de ${ BRAND_NAME }. I ella també rebrà ${ referralReward } en crèdits per començar."
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Rebreu ${ referralInfo.referrerRewardAmount } en crèdit de ${ BRAND_NAME } quan la persona que convideu creï un compte per a un pla de ${ BRAND_NAME }. I ella també rebrà ${ referralInfo.refereeRewardAmount } en crèdits per començar."
       ]
     },
     "description": {
@@ -5697,6 +5706,9 @@
       ],
       "Invalid Sieve code": [
         "El codi Sieve no és vàlid."
+      ],
+      "Invalid URL": [
+        "L'URL no és vàlid."
       ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
@@ -7280,6 +7292,9 @@
       "Device": [
         "Dispositiu"
       ],
+      "Domain": [
+        "Domini"
+      ],
       "Enter your email address": [
         "Introduïu la vostra adreça de correu electrònic"
       ],
@@ -7312,6 +7327,9 @@
       ],
       "Organization key fingerprint": [
         "Clau d'identificació de la clau d'organització"
+      ],
+      "Password ends with": [
+        "La contrasenya acaba amb"
       ],
       "Payment details": [
         "Detalls del pagament"
@@ -7354,6 +7372,9 @@
       ],
       "User": [
         "Usuari"
+      ],
+      "Username": [
+        "Nom d'usuari"
       ]
     },
     "Header for addresses table": {
@@ -8051,6 +8072,12 @@
       ],
       "${ storage } storage": [
         "${ storage } d'emmagatzematge"
+      ],
+      "${ url } added.": [
+        "S'ha afegit ${ url }."
+      ],
+      "${ url } deleted.": [
+        "S'ha eliminat ${ url }."
       ],
       "${ userFound } user found": [
         "S'ha trobat ${ userFound } usuari",
@@ -9043,11 +9070,11 @@
       "Get ${ upsellPlanName }": [
         "Obteniu ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Obtingueu **${ referrerRewardAmount } crèdits** per a cada amistat que es subscrigui."
+      ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Accedeix creant un compte ${ BRAND_NAME } i acceptant la invitació."
-      ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "Obtingueu i doneu **${ referralReward } crèdits** per a cada amistat que es subscrigui."
       ],
       "Get it on Google Play": [
         "Obteniu-la a Google Play"
@@ -10580,6 +10607,9 @@
       "URL link": [
         "Enllaç de l'URL"
       ],
+      "URL settings updated.": [
+        "S'han actualitzat les preferències de l'URL."
+      ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Utilitzeu un gestor de contrasenyes per a generar i emmagatzemar de forma segura les vostres contrasenyes, assegurant contrasenyes fortes i inicis de sessió més senzills."
       ],
@@ -11188,6 +11218,9 @@
       "You’re all set": [
         "Ja està tot llest!"
       ],
+      "Zero charge today": [
+        "Sense càrrec avui"
+      ],
       "Zoom meeting": [
         "reunió de Zoom"
       ]
@@ -11779,6 +11812,9 @@
       "Account storage": [
         "Emmagatzematge del compte"
       ],
+      "Action": [
+        "Acció"
+      ],
       "Actions": [
         "Accions"
       ],
@@ -11920,8 +11956,20 @@
       "Auto-unsubscribe": [
         "Anul·la la subscripció automàticament"
       ],
+      "Autofill": [
+        "Emplenament automàtic"
+      ],
+      "Autofill 2FA": [
+        "Emplena automàticament el 2FA"
+      ],
       "Automatically save contacts": [
         "Desa els contactes automàticament"
+      ],
+      "Autosave": [
+        "Desament automàtic"
+      ],
+      "Autosuggest": [
+        "Suggeriment automàtic"
       ],
       "Awarded": [
         "Premiat"
@@ -12165,6 +12213,9 @@
       ],
       "Domain name": [
         "Nom de domini"
+      ],
+      "Domains": [
+        "Dominis"
       ],
       "Don't ask again": [
         "No tornis a preguntar"
@@ -12543,6 +12594,9 @@
       ],
       "Other amount": [
         "Una altra quantitat"
+      ],
+      "Passkeys": [
+        "Claus d'accés"
       ],
       "Password": [
         "Contrasenya"
@@ -13632,8 +13686,8 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Inicieu la sessió al vostre compte ${ BRAND_NAME } per a accedir a tots els serveis xifrats de ${ BRAND_NAME } com ara ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, etc. No teniu un compte? Creeu-ne un GRATUÏTAMENT."
       ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "Preneu el control de les vostres dades amb xifratge d’extrem a extrem. No cal targeta bancària."
+      "Take control of your data with end-to-end encryption": [
+        "Preneu el control de les vostres dades amb xifratge d’extrem a extrem"
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "Proveu ${ BRAND_NAME } de franc amb aquest enllaç."
@@ -18268,8 +18322,8 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tots els serveis bàsics de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "I si us subscriviu, obtindreu ${ referralReward } en crèdits."
+      "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
+        "I si us subscriviu, obtindreu ${ referralInfo.uiData.refereeRewardAmount } en crèdits."
       ],
       "Billing Cycle": [
         "Cicle de facturació"
@@ -18334,11 +18388,11 @@
       "Free": [
         "Gratuït"
       ],
-      "Free for 14 days": [
-        "Prova gratuïta durant 14 dies"
+      "Free for ${ TRIAL_DURATION_DAYS } days": [
+        "Gratuït durant ${ TRIAL_DURATION_DAYS } dies"
       ],
-      "Get ${ referralReward } in credits": [
-        "Obtingueu ${ referralReward } en crèdits"
+      "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Obtingueu ${ referralInfo.uiData.refereeRewardAmount } en crèdits"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Obtingueu una adreça segura del ${ MAIL_APP_NAME } o ${ internalButton }"
@@ -18419,8 +18473,8 @@
       "Select ${ title }": [
         "Selecciona ${ title }"
       ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "Seleccioneu un servei i gaudiu de la versió prèmium de franc durant 14 dies. No cal targeta de crèdit."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
+        "Seleccioneu un servei i gaudiu de la versió prèmium de franc durant ${ TRIAL_DURATION_DAYS } dies. No cal targeta de crèdit."
       ],
       "Selected": [
         "Seleccionat"
@@ -18466,6 +18520,9 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
+        "Proveu ${ BRAND_NAME } de franc durant ${ TRIAL_DURATION_DAYS } dies"
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "Proveu ${ BRAND_NAME } de franc durant 14 dies"
@@ -21079,8 +21136,8 @@
       "Gift code": [
         "Codi regal"
       ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "Doneu ${ referralReward } i 2 setmanes de forma gratuïta. Obtingueu ${ referralReward } crèdits."
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Doneu ${ refereeRewardAmount } i 2 setmanes de franc. Obtingueu ${ referrerRewardAmount } crèdits."
       ],
       "Group": [
         "Grup"
@@ -21313,6 +21370,9 @@
       ],
       "Passwords made easy": [
         "Contrasenyes fàcils"
+      ],
+      "Pause list": [
+        "Llista de pausa"
       ],
       "Pay invoice": [
         "Paga la factura"

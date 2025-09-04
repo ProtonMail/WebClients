@@ -1040,6 +1040,9 @@
       "Spam": [
         "Neželjena pošta"
       ],
+      "Start free trial": [
+        "Započnite besplatni probni period"
+      ],
       "Start import": [
         "Započni uvoz"
       ],
@@ -3145,6 +3148,9 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Možete nastaviti pozivati prijatelje, ali nećete moći zaraditi više kredita"
       ],
+      "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Možete prilagoditi popis domena na kojima se određene automatske funkcije u proširenju preglednika ${ PASS_APP_NAME } (Automatsko popunjavanje, Automatski prijedlozi, Automatsko spremanje) ne bi trebale pokretati."
+      ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
         "Možete nametnuti pravila lozinke koja će članovi organizacije koristiti kada generiraju lozinku u ${ PASS_APP_NAME }."
       ],
@@ -3925,6 +3931,9 @@
       ],
       "Invalid Sieve code": [
         "Nevažeći Sieve kôd"
+      ],
+      "Invalid URL": [
+        "Nevažeći URL"
       ],
       "Invalid verification code": [
         "Nevažeći kôd za provjeru"
@@ -5415,6 +5424,12 @@
         "${ selectedFoldersCountLocalized } oznake odabrane",
         "${ selectedFoldersCountLocalized } oznaka odabrano"
       ],
+      "${ url } added.": [
+        "${ url } dodan/a."
+      ],
+      "${ url } deleted.": [
+        "${ url } obrisan/a."
+      ],
       "${ vaultLink } created": [
         "${ vaultLink } stvoreno"
       ],
@@ -6730,6 +6745,9 @@
       "URL link": [
         "URL poveznica"
       ],
+      "URL settings updated.": [
+        "Postavke URL-a ažurirane."
+      ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Koristite metodu oporavka za onemogućavanje Vaših metoda dvofaktorske autentikacije."
       ],
@@ -6992,6 +7010,9 @@
       ],
       "You’re all set": [
         "Sve je spremno"
+      ],
+      "Zero charge today": [
+        "Nema naplate danas"
       ],
       "Zoom meeting": [
         "Sastanak na Zoomu"
@@ -7498,6 +7519,9 @@
       "Account storage": [
         "Prostor za pohranu računa"
       ],
+      "Action": [
+        "Radnja"
+      ],
       "Actions": [
         "Radnje"
       ],
@@ -7600,8 +7624,14 @@
       "Auto-unsubscribe": [
         "Automatska odjava"
       ],
+      "Autofill": [
+        "Automatsko popunjavanje"
+      ],
       "Automatically save contacts": [
         "Automatsko spremanje kontakata"
+      ],
+      "Autosave": [
+        "Automatski spremi"
       ],
       "Awarded": [
         "Dodijeljeno"
@@ -7806,6 +7836,9 @@
       ],
       "Domain name": [
         "Naziv domene"
+      ],
+      "Domains": [
+        "Domeni"
       ],
       "Don't ask again": [
         "Ne pitaj ponovno"
@@ -8837,6 +8870,9 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Prijavite se na svoj ${ BRAND_NAME } račun kako biste pristupili svim šifriranim ${ BRAND_NAME } uslugama kao što su ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i druge. Nemate račun? Izradite ga BESPLATNO."
+      ],
+      "Take control of your data with end-to-end encryption": [
+        "Preuzmite kontrolu nad svojim podacima s end-to-end šifriranjem"
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "Isprobajte ${ BRAND_NAME } besplatno s ovom poveznicom"
@@ -11612,6 +11648,9 @@
       "Free": [
         "Free"
       ],
+      "Free for ${ TRIAL_DURATION_DAYS } days": [
+        "Besplatno ${ TRIAL_DURATION_DAYS } dana"
+      ],
       "Get a secure one from us, or ${ internalButton }": [
         "Nabavite sigurnu adresu e-pošte od nas, ili ${ internalButton }"
       ],
@@ -11645,6 +11684,9 @@
       "Select ${ title }": [
         "Odaberite ${ title }"
       ],
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
+        "Odaberite uslugu i uživaje premium pogodnostima ${ TRIAL_DURATION_DAYS } dana besplatno. Bankovna kartica nije potrebna."
+      ],
       "Selected": [
         "Odabrano"
       ],
@@ -11674,6 +11716,9 @@
       ],
       "Total": [
         "Ukupno"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
+        "Isprobajte ${ BRAND_NAME } ${ TRIAL_DURATION_DAYS } dana besplatno"
       ],
       "Unlimited folders, labels, and filters": [
         "Neograničen broj mapa, oznaka i filtara"
@@ -13277,9 +13322,6 @@
       "Gift code": [
         "Darovni kôd"
       ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "Dajte ${ referralReward } i 2 tjedna besplatno. Dobijte ${ referralReward } kredita."
-      ],
       "Group": [
         "Grupa"
       ],
@@ -13453,6 +13495,9 @@
       ],
       "Password generator rules": [
         "Pravila generatora lozinki"
+      ],
+      "Pause list": [
+        "Pauziraj listu"
       ],
       "Pay invoice": [
         "Plati račun"

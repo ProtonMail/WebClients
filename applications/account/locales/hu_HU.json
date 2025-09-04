@@ -4032,6 +4032,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "A(z) ${ MAIL_APP_NAME } az alapértelmezett levelező alkalmazás."
       ],
+      "A checked box means the feature is disabled.": [
+        "Egy bejelölt mező azt jelenti, hogy a funkció le van tiltva."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Adjon hozzá mappákat és fájlokat a ${ DRIVE_APP_NAME }-hoz, és hívjon meg csapattagokat megtekinteni vagy szerkeszteni."
       ],
@@ -5319,6 +5322,9 @@
       ],
       "Invalid Sieve code": [
         "Érvénytelen Sieve kód"
+      ],
+      "Invalid URL": [
+        "Érvénytelen URL cím"
       ],
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
@@ -11297,8 +11303,20 @@
       "Auto-unsubscribe": [
         "Automatikus leiratkozás"
       ],
+      "Autofill": [
+        "Automatikus kitöltés"
+      ],
+      "Autofill 2FA": [
+        "Kétlépcsős kód automatikus kitöltése"
+      ],
       "Automatically save contacts": [
         "Névjegyek automatikus mentése"
+      ],
+      "Autosave": [
+        "Automatikus mentés"
+      ],
+      "Autosuggest": [
+        "Automatikus javaslatok"
       ],
       "Awarded": [
         "Megszerezve"
@@ -11539,6 +11557,9 @@
       ],
       "Domain name": [
         "Domain név"
+      ],
+      "Domains": [
+        "Domain nevek"
       ],
       "Don't ask again": [
         "Ne kérdezze újra"
@@ -11914,6 +11935,9 @@
       ],
       "Other amount": [
         "Más összeg"
+      ],
+      "Passkeys": [
+        "Hozzáférési kulcsok"
       ],
       "Password": [
         "Jelszó"

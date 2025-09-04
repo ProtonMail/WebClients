@@ -1405,6 +1405,9 @@
       "Spam": [
         "Skräppost"
       ],
+      "Start free trial": [
+        "Starta gratis provperiod"
+      ],
       "Start import": [
         "Starta import"
       ],
@@ -4155,6 +4158,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } är din standardapplikation för e-post."
       ],
+      "A checked box means the feature is disabled.": [
+        "En ikryssad ruta betyder att funktionen är inaktiverad."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Lägg till mappar och filer i ${ DRIVE_APP_NAME } och bjud in gruppmedlemmar att visa eller redigera."
       ],
@@ -4302,9 +4308,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importera händelser i iCal-format (ICS-fil). Filen bör ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_EVENTS_STRING } händelser. Om din fil är större, dela upp den i mindre filer."
-      ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "Du får ${ referralReward } i ${ BRAND_NAME }-kredit när personen du bjuder in registrerar sig för ett ${ BRAND_NAME }-paket, och de får också ${ referralReward } i krediter för att komma igång."
       ]
     },
     "description": {
@@ -5665,6 +5668,9 @@
       ],
       "Invalid Sieve code": [
         "Ogiltig Sieve-kod"
+      ],
+      "Invalid URL": [
+        "Ogiltig URL"
       ],
       "Invalid verification code": [
         "Ogiltig verifieringskod"
@@ -7251,6 +7257,9 @@
       "Device": [
         "Enhet"
       ],
+      "Domain": [
+        "Domän"
+      ],
       "Enter your email address": [
         "Ange din e-postadress"
       ],
@@ -7283,6 +7292,9 @@
       ],
       "Organization key fingerprint": [
         "Organisations nyckelfingeravtryck"
+      ],
+      "Password ends with": [
+        "Lösenord slutar med"
       ],
       "Payment details": [
         "Betalningsdetaljer"
@@ -7325,6 +7337,9 @@
       ],
       "User": [
         "Användare"
+      ],
+      "Username": [
+        "Användarnamn"
       ]
     },
     "Header for addresses table": {
@@ -8016,6 +8031,12 @@
       ],
       "${ storage } storage": [
         "${ storage } lagringsutrymme"
+      ],
+      "${ url } added.": [
+        "${ url } tillagd"
+      ],
+      "${ url } deleted.": [
+        "${ url } borttagen."
       ],
       "${ userFound } user found": [
         "${ userFound } användare hittades",
@@ -9004,9 +9025,6 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Få åtkomst genom att skapa ett ${ BRAND_NAME }-konto och acceptera inbjudan."
-      ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "Få och ge **${ referralReward } krediter** för varje vän som prenumererar."
       ],
       "Get it on Google Play": [
         "Skaffa det på Google Play"
@@ -10527,6 +10545,9 @@
       "URL link": [
         "URL-länk"
       ],
+      "URL settings updated.": [
+        "URL-inställningar uppdaterade."
+      ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Använd en lösenordshanterare för att generera och lagra dina lösenord på ett säkert sätt, vilket säkerställer starka lösenord och enklare inloggningar."
       ],
@@ -11707,6 +11728,9 @@
       "Account storage": [
         "Kontolagring"
       ],
+      "Action": [
+        "Åtgärd"
+      ],
       "Actions": [
         "Åtgärder"
       ],
@@ -11848,8 +11872,20 @@
       "Auto-unsubscribe": [
         "Avsluta prenumeration automatiskt"
       ],
+      "Autofill": [
+        "Fyll automatiskt"
+      ],
+      "Autofill 2FA": [
+        "Autofyll 2FA"
+      ],
       "Automatically save contacts": [
         "Spara kontakter automatiskt"
+      ],
+      "Autosave": [
+        "Spara automatiskt"
+      ],
+      "Autosuggest": [
+        "Föreslå automatiskt"
       ],
       "Awarded": [
         "Belönades"
@@ -12093,6 +12129,9 @@
       ],
       "Domain name": [
         "Domännamn"
+      ],
+      "Domains": [
+        "Domäner"
       ],
       "Don't ask again": [
         "Fråga inte igen"
@@ -12471,6 +12510,9 @@
       ],
       "Other amount": [
         "Annat belopp"
+      ],
+      "Passkeys": [
+        "Passkeys"
       ],
       "Password": [
         "Lösenord"
@@ -13553,9 +13595,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Logga in på ditt ${ BRAND_NAME }-konto för att komma åt alla krypterade ${ BRAND_NAME }-tjänster som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och mer. Har du inget konto? Skapa ett GRATIS."
-      ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "Ta kontroll över dina data med end-to-end-kryptering. Inget bankkort krävs."
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "Prova ${ BRAND_NAME } gratis med denna länk"
@@ -18086,9 +18125,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alla grundläggande tjänster för ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "Och få ${ referralReward } i kredit, om du prenumererar."
-      ],
       "Billing Cycle": [
         "Faktureringsperiod"
       ],
@@ -18152,11 +18188,8 @@
       "Free": [
         "Free"
       ],
-      "Free for 14 days": [
-        "Gratis i 14 dagar"
-      ],
-      "Get ${ referralReward } in credits": [
-        "Få ${ referralReward } i krediter"
+      "Free for ${ TRIAL_DURATION_DAYS } days": [
+        "Gratis i ${ TRIAL_DURATION_DAYS } dagar"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Skaffa en säker ${ MAIL_APP_NAME }-adress eller ${ internalButton }"
@@ -18236,9 +18269,6 @@
       ],
       "Select ${ title }": [
         "Välj ${ title }"
-      ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "Välj en tjänst och njut av premiumversionen gratis i 14 dagar. Inget kreditkort krävs."
       ],
       "Selected": [
         "Vald"
@@ -20897,9 +20927,6 @@
       "Gift code": [
         "Presentkod"
       ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "Ge ${ referralReward } och 2 veckor gratis. Få ${ referralReward } krediter."
-      ],
       "Group": [
         "Grupp"
       ],
@@ -21137,6 +21164,9 @@
       ],
       "Passwords made easy": [
         "Lösenord på ett enkelt sätt"
+      ],
+      "Pause list": [
+        "Pauslista"
       ],
       "Pay invoice": [
         "Betala faktura"
