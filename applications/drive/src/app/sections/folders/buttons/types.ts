@@ -2,6 +2,7 @@ type FolderButtonType = 'toolbar' | 'context';
 
 type BaseProps = {
     type: FolderButtonType;
+    title?: string;
     onClick: () => void;
 };
 
