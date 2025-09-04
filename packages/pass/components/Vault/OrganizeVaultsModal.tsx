@@ -1,11 +1,11 @@
 import type { FC, FormEvent } from 'react';
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { Banner, Button } from '@proton/atoms';
-import { Checkbox, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { Checkbox, Icon, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { isShareVisible } from '@proton/pass/lib/shares/share.predicates';
@@ -20,9 +20,13 @@ type Props = { onClose: () => void; onConfirm: (visibility: VaultsVisibilityDTO)
 
 export const OrganizeVaultsModal: FC<Props> = ({ onClose, onConfirm }) => {
     const vaults = useSelector(selectAllVaults);
-    const [visibilityMap, setVisibilityMap] = useState<ShareVisibilityMap>(() => intoShareVisibilityMap(vaults));
-
+    const [visibilityMap, setVisibilityMap] = useState<ShareVisibilityMap>({});
     const loading = useSelector(selectRequestInFlight(sharesVisibilityEdit.requestID()));
+
+    const dirty = useMemo((): boolean => {
+        const current = intoShareVisibilityMap(vaults);
+        return Object.keys(visibilityMap).some((shareId) => current[shareId] !== visibilityMap[shareId]);
+    }, [visibilityMap, vaults]);
 
     const handleChange = (shareId: ShareId) => () =>
         setVisibilityMap((prev) => ({ ...prev, [shareId]: !prev[shareId] }));
@@ -48,9 +52,19 @@ export const OrganizeVaultsModal: FC<Props> = ({ onClose, onConfirm }) => {
         onConfirm(dto);
     };
 
+    useEffect(
+        () =>
+            setVisibilityMap((prev) => {
+                const next = intoShareVisibilityMap(vaults);
+                for (const shareId in prev) next[shareId] = prev[shareId];
+                return next;
+            }),
+        [vaults]
+    );
+
     return (
         <PassModal open onClose={onClose} enableCloseWhenClickOutside>
-            <ModalTwoHeader title={c('Title').t`Organize vaults`} />
+            <ModalTwoHeader title={c('Title').t`Organize vaults`} closeButtonProps={{ pill: true }} />
             <ModalTwoContent>
                 <Banner noIcon>{c('Title').t`Hidden vaults won’t be visible during search and autofill.`}</Banner>
 
@@ -72,7 +86,10 @@ export const OrganizeVaultsModal: FC<Props> = ({ onClose, onConfirm }) => {
                                 color={vault.content.display.color}
                                 icon={vault.content.display.icon}
                             />
-                            <span className="text-ellipsis">{vault.content.name}</span>
+                            <span className="flex-1 text-ellipsis">{vault.content.name}</span>
+                            {vault.shared && (
+                                <Icon name="users" color="var('--interaction-norm-contrast')" size={3.5} />
+                            )}
                         </Checkbox>
                     ))}
                 </form>
@@ -90,7 +107,7 @@ export const OrganizeVaultsModal: FC<Props> = ({ onClose, onConfirm }) => {
                     /** Prevent concurrent requests when multiple
                      * extension clients are open simultaneously and
                      * a visibility update is already in progress */
-                    disabled={loading}
+                    disabled={loading || !dirty}
                 >
                     {c('Action').t`Save`}
                 </Button>
