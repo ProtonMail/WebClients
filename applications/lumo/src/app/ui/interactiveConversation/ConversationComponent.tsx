@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import clsx from 'clsx';
 import { c } from 'ttag';
@@ -11,8 +11,10 @@ import { useLumoSelector } from '../../redux/hooks';
 import type { ConversationError } from '../../redux/slices/meta/errors';
 import { selectConversationErrors, selectTierErrors } from '../../redux/slices/meta/errors';
 import type { Conversation, Message, SiblingInfo } from '../../types';
+import type { RetryStrategy } from '../../types-api';
 import ErrorCard from '../components/ErrorCard';
 import { FilesManagementView } from '../components/Files';
+import RetryPanel from '../components/RetryPanel';
 import UpsellCard from '../components/UpsellCard';
 import { ComposerComponent } from './composer/ComposerComponent';
 import { ConversationHeader } from './messageChain/ConversationHeader';
@@ -20,6 +22,96 @@ import { MessageChainComponent } from './messageChain/MessageChainComponent';
 import { WebSearchSourcesView } from './messageChain/message/toolCall/WebSearchSourcesView';
 
 import './ConversationComponent.scss';
+
+// Floating Retry Panel Component
+interface FloatingRetryPanelProps {
+    buttonRef: HTMLElement;
+    onRetry: (retryStrategy: RetryStrategy, customInstructions?: string) => void;
+    onClose: () => void;
+}
+
+const FloatingRetryPanel = ({ buttonRef, onRetry, onClose }: FloatingRetryPanelProps) => {
+    const [position, setPosition] = useState<{ top: number; left: number } | null>(null);
+
+    // Calculate position immediately when component mounts
+    useEffect(() => {
+        if (buttonRef) {
+            const calculatePosition = () => {
+                const rect = buttonRef.getBoundingClientRect();
+                const panelWidth = 320; // Approximate width of the retry panel
+                const panelHeight = 200; // Approximate height of the retry panel
+                
+                // Position above the button by default
+                let top = rect.top - panelHeight - 8;
+                let left = rect.left + rect.width / 2 - panelWidth / 2;
+                
+                // Adjust if panel would go off screen
+                if (top < 0) {
+                    top = rect.bottom + 8; // Position below the button instead
+                }
+                if (left < 8) {
+                    left = 8;
+                } else if (left + panelWidth > window.innerWidth - 8) {
+                    left = window.innerWidth - panelWidth - 8;
+                }
+                
+                return { top, left };
+            };
+
+            // Calculate position immediately
+            setPosition(calculatePosition());
+        }
+    }, [buttonRef]);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            const target = event.target as Node;
+            if (buttonRef && !buttonRef.contains(target)) {
+                const panel = document.querySelector('.floating-retry-panel');
+                if (panel && !panel.contains(target)) {
+                    onClose();
+                }
+            }
+        };
+
+        const handleEscape = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                onClose();
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener('keydown', handleEscape);
+        
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('keydown', handleEscape);
+        };
+    }, [buttonRef, onClose]);
+
+    // Don't render until position is calculated to prevent flicker
+    if (!position) {
+        return null;
+    }
+
+    return (
+        <div
+            className="floating-retry-panel fixed z-50 bg-norm border border-weak rounded-xl shadow-lifted"
+            style={{
+                top: `${position.top}px`,
+                left: `${position.left}px`,
+                width: '320px',
+                opacity: 1,
+                transition: 'opacity 150ms ease-in-out'
+            }}
+        >
+            <RetryPanel
+                onRetry={onRetry}
+                className="border-none shadow-none"
+            />
+        </div>
+    );
+};
 
 interface ConversationComponentProps {
     messageChainRef: React.MutableRefObject<HTMLDivElement | null>;
@@ -61,6 +153,13 @@ const ConversationComponent = ({
         filterMessage?: Message;
         autoShowDriveBrowser?: boolean;
     }>({ type: null });
+
+    // Retry panel state
+    const [retryPanelState, setRetryPanelState] = useState<{
+        messageId: string | null;
+        show: boolean;
+        buttonRef: HTMLElement | null;
+    }>({ messageId: null, show: false, buttonRef: null });
 
     const conversationId = conversation?.id;
     const isGeneratingWithToolCall = isGenerating
@@ -105,6 +204,29 @@ const ConversationComponent = ({
         setOpenPanel((prev) => (prev.type === 'files' ? { type: 'files', filterMessage: undefined } : prev));
     }, []);
 
+    // Retry panel handlers
+    const handleRetryPanelToggle = useCallback((messageId: string, show: boolean, buttonRef?: HTMLElement) => {
+        setRetryPanelState({
+            messageId,
+            show,
+            buttonRef: buttonRef || null,
+        });
+    }, []);
+
+    const handleRetryPanelClose = useCallback(() => {
+        setRetryPanelState({ messageId: null, show: false, buttonRef: null });
+    }, []);
+
+    const handleRetry = useCallback((retryStrategy: RetryStrategy, customInstructions?: string) => {
+        if (retryPanelState.messageId) {
+            const message = messageChain.find(m => m.id === retryPanelState.messageId);
+            if (message) {
+                handleRegenerateMessage(message, isWebSearchButtonToggled, retryStrategy, customInstructions);
+            }
+        }
+        handleRetryPanelClose();
+    }, [retryPanelState.messageId, messageChain, handleRegenerateMessage, isWebSearchButtonToggled, handleRetryPanelClose]);
+
     return (
         <>
             {conversation && (
@@ -134,6 +256,7 @@ const ConversationComponent = ({
                         handleOpenSources={handleOpenSources}
                         handleOpenFiles={handleOpenFiles}
                         isWebSearchButtonToggled={isWebSearchButtonToggled}
+                        onRetryPanelToggle={handleRetryPanelToggle}
                     />
                     {/* TODO: update to show all conversations errors at some point */}
                     {conversationErrors.length > 0 && (
@@ -182,6 +305,15 @@ const ConversationComponent = ({
                     />
                 )}
             </div>
+
+            {/* Floating Retry Panel */}
+            {retryPanelState.show && retryPanelState.buttonRef && (
+                <FloatingRetryPanel
+                    buttonRef={retryPanelState.buttonRef}
+                    onRetry={handleRetry}
+                    onClose={handleRetryPanelClose}
+                />
+            )}
         </>
     );
 };

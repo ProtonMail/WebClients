@@ -90,11 +90,15 @@ function isGenerationTarget(value: any): value is GenerationTarget {
     return ['message', 'title', 'tool_call', 'tool_result'].includes(value);
 }
 
+export type RetryStrategy = 'simple' | 'try_again' | 'add_details' | 'more_concise' | 'think_longer' | 'custom';
+
 export interface ActionParams {
     actionType: 'send' | 'edit' | 'regenerate';
     newMessageContent?: string;
     originalMessage?: Message;
     isWebSearchButtonToggled?: boolean;
+    retryStrategy?: RetryStrategy;
+    customRetryInstructions?: string;
 }
 
 export interface ErrorContext {
