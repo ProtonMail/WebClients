@@ -1806,6 +1806,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
+      ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
@@ -4277,6 +4281,9 @@
       "MX record": [
         "MX ჩანაწერი"
       ],
+      "Next": [
+        "შემდეგი"
+      ],
       "No excluded items": [
         "ამოღებული ელემენტების გარეშე"
       ],
@@ -4297,6 +4304,9 @@
       ],
       "No shared secure links": [
         "გაზიარებული დაცული ბმულების გარეშე"
+      ],
+      "Open pagination": [
+        "გვერდების დანომრვა"
       ],
       "Organize vaults": [
         "საცავების დალაგება"
@@ -4331,6 +4341,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "დაიმახსოვრეთ, მას შემდეგ, რაც ფსევდონიმს წაშლით, მას ვერ აღადგენთ.",
         "დაიმახსოვრეთ, მას შემდეგ, რაც ფსევდონიმებს წაშლით, მას ვერ აღადგენთ."
+      ],
+      "Previous": [
+        "წინა"
       ],
       "Random Prefix Generation": [
         "შემთხვევითი პრეფიქსის შექმნა"

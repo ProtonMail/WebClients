@@ -1833,6 +1833,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
+      ],
       "Moving items": [
         "Spostamento degli elementi"
       ],
@@ -4319,6 +4323,9 @@
       "MX record": [
         "Record MX"
       ],
+      "Next": [
+        "Successivo"
+      ],
       "No excluded items": [
         "Nessun elemento escluso"
       ],
@@ -4339,6 +4346,9 @@
       ],
       "No shared secure links": [
         "Nessun link sicuro condiviso"
+      ],
+      "Open pagination": [
+        "Apri paginazione"
       ],
       "Organize vaults": [
         "Gestisci le casseforti"
@@ -4373,6 +4383,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Tieni presente che una volta eliminato, l'alias non potrà essere ripristinato.",
         "Tieni presente che una volta eliminati, gli alias non potranno essere ripristinati."
+      ],
+      "Previous": [
+        "Precedente"
       ],
       "Random Prefix Generation": [
         "Generazione casuale del prefisso"
