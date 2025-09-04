@@ -3,12 +3,7 @@ import { channel } from 'redux-saga';
 import { cancelled, fork, put, select, take } from 'redux-saga/effects';
 
 import type { ExportGenerator } from '@proton/pass/lib/export/archive';
-import {
-    createArchive,
-    createExportAttachmentsStream,
-    createExportDataStream,
-    getArchiveName,
-} from '@proton/pass/lib/export/archive';
+import { createArchive, createExportAttachmentsStream, createExportDataStream, getArchiveName } from '@proton/pass/lib/export/archive';
 import { createPassExportCSV } from '@proton/pass/lib/export/csv';
 import type { ExportResult } from '@proton/pass/lib/export/types';
 import { ExportFormat } from '@proton/pass/lib/export/types';
@@ -21,15 +16,7 @@ import { requestProgress } from '@proton/pass/store/request/actions';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import type { ExportThunk } from '@proton/pass/store/selectors';
 import { selectAllItems, selectExportData, selectOwnedVaults } from '@proton/pass/store/selectors';
-import type {
-    FileDescriptor,
-    IndexedByShareIdAndItemId,
-    ItemRevision,
-    MaybeNull,
-    SelectedItem,
-    Share,
-    TabId,
-} from '@proton/pass/types';
+import type { FileDescriptor, IndexedByShareIdAndItemId, ItemRevision, MaybeNull, SelectedItem, Share, TabId } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { and } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
@@ -112,16 +99,12 @@ export const exportUserData = createRequestSaga({
                 const totalItems = itemsWithAttachments.length;
 
                 iterators.push(
-                    createExportAttachmentsStream(
-                        itemsWithAttachments,
-                        ctrl.signal,
-                        (file, { shareId, itemId }, itemFilesCount) => {
-                            files[shareId] = files[shareId] ?? {};
-                            files[shareId][itemId] = files[shareId][itemId] ?? [];
-                            files[shareId][itemId].push(file);
-                            progressChannel.put({ totalItems, itemFilesCount, shareId, itemId });
-                        }
-                    )
+                    createExportAttachmentsStream(itemsWithAttachments, ctrl.signal, (file, { shareId, itemId }, itemFilesCount) => {
+                        files[shareId] = files[shareId] ?? {};
+                        files[shareId][itemId] = files[shareId][itemId] ?? [];
+                        files[shareId][itemId].push(file);
+                        progressChannel.put({ totalItems, itemFilesCount, shareId, itemId });
+                    })
                 );
             }
 
