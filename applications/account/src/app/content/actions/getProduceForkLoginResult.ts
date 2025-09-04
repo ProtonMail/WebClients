@@ -1,7 +1,9 @@
+import { signInWithAnotherDevicePush } from '@proton/account/signInWithAnotherDevice/signInWithAnotherDevicePush';
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { type OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getClientID, getProduct, isExtension } from '@proton/shared/lib/apps/helper';
@@ -12,16 +14,17 @@ import {
     produceFork,
     produceOAuthFork,
 } from '@proton/shared/lib/authentication/fork';
-import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
 import type { PushForkResponse } from '@proton/shared/lib/authentication/interface';
 import { APPS, type APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { Api } from '@proton/shared/lib/interfaces';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys/setupAddress';
 
+import type { AuthDesktopState } from '../../public/AuthDesktop';
 import type { AuthExtensionState } from '../../public/AuthExtension';
 import type { Paths } from '../helper';
+import { type ProduceForkData, SSOType } from './forkInterface';
 import { getProductDisabledLoginResult } from './getProductDisabledResult';
 import { getSetupAddressLoginResult } from './getSetupAddressLoginResult';
 import type { LoginResult } from './interface';
@@ -47,8 +50,14 @@ const getIsAppAvailable = (app: APP_NAMES, session: AuthSession) => {
     );
 };
 
+const getIsProductDisabledResult = (code: number) => {
+    return [API_CUSTOM_ERROR_CODES.SSO_APPLICATION_INVALID, API_CUSTOM_ERROR_CODES.APPLICATION_BLOCKED].some(
+        (errorCode) => errorCode === code
+    );
+};
+
 export const getProduceForkLoginResult = async ({
-    api,
+    api: normalApi,
     data,
     session,
     paths,
@@ -58,8 +67,10 @@ export const getProduceForkLoginResult = async ({
     session: AuthSession;
     paths: Paths;
 }): Promise<LoginResult> => {
+    const api = getUIDApi(session.data.UID, normalApi);
+
     if (data.type === SSOType.Proton) {
-        const { forkParameters, searchParameters } = data.payload;
+        const { forkParameters, desktopForkParameters, searchParameters } = data.payload;
         const { app } = forkParameters;
 
         // OAuth sessions are only allowed for the VPN browser extension at the moment. Throw a disallowed product error if a fork is attempted.
@@ -79,13 +90,10 @@ export const getProduceForkLoginResult = async ({
             if (isExtension(app)) {
                 const childClientID = getClientID(app);
                 const { Selector: selector } = await api<PushForkResponse>(
-                    withUIDHeaders(
-                        session.data.UID,
-                        pushForkSession({
-                            ChildClientID: childClientID,
-                            Independent: forkParameters.independent ? 1 : 0,
-                        })
-                    )
+                    pushForkSession({
+                        ChildClientID: childClientID,
+                        Independent: forkParameters.independent ? 1 : 0,
+                    })
                 );
                 const result = await produceExtensionFork({
                     app,
@@ -104,6 +112,31 @@ export const getProduceForkLoginResult = async ({
                 };
             }
 
+            if (desktopForkParameters) {
+                let result: AuthDesktopState['result'];
+                try {
+                    await signInWithAnotherDevicePush({
+                        api,
+                        qrCodePayload: desktopForkParameters.qrCodePayload,
+                        keyPassword: session.data.keyPassword,
+                    });
+                    result = { type: 'success' };
+                } catch (e) {
+                    const apiError = getApiError(e);
+                    // This specific error is handled in the outside catch handler
+                    if (getIsProductDisabledResult(apiError.code)) {
+                        throw e;
+                    }
+                    result = { type: 'error', errorMessage: getNonEmptyErrorMessage(e) };
+                }
+                const state: AuthDesktopState = { app, desktopForkParameters, result };
+                return {
+                    type: 'auth-desktop',
+                    payload: state,
+                    location: '/auth-desktop',
+                };
+            }
+
             const produceForkPayload = await produceFork({
                 api,
                 session: session.data,
@@ -119,11 +152,7 @@ export const getProduceForkLoginResult = async ({
             };
         } catch (e) {
             const { code } = getApiError(e);
-            if (
-                [API_CUSTOM_ERROR_CODES.SSO_APPLICATION_INVALID, API_CUSTOM_ERROR_CODES.APPLICATION_BLOCKED].some(
-                    (errorCode) => errorCode === code
-                )
-            ) {
+            if (getIsProductDisabledResult(code)) {
                 return getProductDisabledLoginResult({ app: forkParameters.app, session, paths, api });
             }
             throw e;
@@ -132,14 +161,13 @@ export const getProduceForkLoginResult = async ({
 
     if (data.type === SSOType.OAuth) {
         const { payload } = data;
-        const UID = session.data.UID;
         const {
             Access: { Accepted },
         } = await api<{
             Access: OAuthLastAccess;
-        }>(withUIDHeaders(UID, getOAuthLastAccess(payload.oauthData.clientID)));
+        }>(getOAuthLastAccess(payload.oauthData.clientID));
         if (Accepted) {
-            const url = new URL(await produceOAuthFork({ api, oauthData: payload.oauthData, UID }));
+            const url = new URL(await produceOAuthFork({ api, oauthData: payload.oauthData }));
             return {
                 type: 'done',
                 payload: {
