@@ -1448,7 +1448,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1968,9 +1969,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde her ${ cycle } ayda bir otomatik olarak yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde aylık olarak otomatik yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
       ],
@@ -5153,6 +5151,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME } bir ek parola ile kullanılırken takma adlar kullanılamaz."
       ],
+      "An error occured with the categories": [
+        "Kategoriler ile ilgili bir sorun çıktı"
+      ],
       "App currently unavailable": [
         "Uygulama şu anda kullanılamıyor"
       ],
@@ -5857,11 +5858,17 @@
       "Contacts": [
         "Kişiler"
       ],
+      "Domain": [
+        "Etki alanı"
+      ],
       "Drawer": [
         "Çekmece"
       ],
       "Hardware not compatible": [
         "Donanım uyumlu değil"
+      ],
+      "Password ends with": [
+        "Parola şununla bitiyor"
       ],
       "Report an issue": [
         "Sorun bildireceğim"
@@ -5880,6 +5887,9 @@
       ],
       "Tell us more": [
         "Bize daha fazla bilgi verin"
+      ],
+      "Username": [
+        "Kullanıcı adı"
       ]
     },
     "Hint": {
@@ -7257,8 +7267,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -7994,7 +8003,7 @@
         "Kişi bilgilerini doğrulamak için kullanılan imza ile ilgili bir sorun çıktı. Bu durum parola sıfırlama işleminden kaynaklanıyor olabilir."
       ],
       "These conversations are kept here based on your organization's data retention policy.": [
-        "Bu konuşmalar, kuruluşunuzun veri saklama politikasına göre burada saklanır."
+        "Bu yazışmalar, kuruluşunuzun veri tutma ilkesine göre burada saklanır."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "E-posta adresinizi bilmiyorlarsa size istenmeyen e-posta gönderemezler. hide-my-email takma adları ile e-posta kutunuzu koruyun."
@@ -9257,6 +9266,9 @@
       ],
       "From: ${ fromEmail }": [
         "Kimden: ${ fromEmail }"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Kategoriler özelliğini geliştirmemize yardımcı olmak için bu e-postaya en uygun olanı seçin. Yardımınız için teşekkür ederiz!"
       ],
       "Help us improve the upcoming mail categorization": [
         "Yakında kullanılacak e-posta kategorilere ayırma özelliğini geliştirmemize yardımcı olun."
@@ -14776,6 +14788,9 @@
       "Newsletters view": [
         "Duyurular görünümü"
       ],
+      "Next": [
+        "Sonraki"
+      ],
       "Next conversation": [
         "Sonraki yazışma"
       ],
@@ -14821,6 +14836,9 @@
       "Open actions dropdown": [
         "İşlemler menüsünü aç"
       ],
+      "Open pagination": [
+        "Sayfalandırmayı aç"
+      ],
       "Org setup": [
         "Kuruluş ayarları"
       ],
@@ -14850,6 +14868,9 @@
       ],
       "Preview": [
         "Ön izleme"
+      ],
+      "Previous": [
+        "Önceki"
       ],
       "Previous conversation": [
         "Önceki yazışma"
@@ -15170,6 +15191,9 @@
       ],
       "Your subscriptions in one place": [
         "Abonelikleriniz tek bir yerde"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Kategoriler özelliği geliyor!"
       ]
     },
     "Today icon tooltip in mini calendar": {

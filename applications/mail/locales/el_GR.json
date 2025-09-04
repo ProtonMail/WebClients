@@ -1448,7 +1448,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -5122,6 +5123,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Τα ψευδώνυμα δεν μπορούν να χρησιμοποιηθούν όταν είναι ενεργοποιημένος ένας επιπλέον κωδικός πρόσβασης στο ${ PASS_APP_NAME }."
       ],
+      "An error occured with the categories": [
+        "Παρουσιάστηκε ένα σφάλμα με τις κατηγορίες"
+      ],
       "App currently unavailable": [
         "Η εφαρμογή δεν είναι διαθέσιμη αυτήν τη στιγμή"
       ],
@@ -5826,11 +5830,17 @@
       "Contacts": [
         "Επαφές"
       ],
+      "Domain": [
+        "Τομέας"
+      ],
       "Drawer": [
         "Πλαϊνό πλαίσιο"
       ],
       "Hardware not compatible": [
         "Το υλικό δεν είναι συμβατό"
+      ],
+      "Password ends with": [
+        "Ο κωδικός πρόσβασης τελειώνει με"
       ],
       "Report an issue": [
         "Αναφορά προβλήματος"
@@ -5849,6 +5859,9 @@
       ],
       "Tell us more": [
         "Πείτε μας περισσότερα"
+      ],
+      "Username": [
+        "Όνομα Χρήστη"
       ]
     },
     "Hint": {
@@ -7226,8 +7239,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -9226,6 +9238,9 @@
       ],
       "From: ${ fromEmail }": [
         "Από: ${ fromEmail }"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Βοηθήστε μας να βελτιώσουμε τις κατηγορίες επιλέγοντας αυτή που ταιριάζει καλύτερα σε αυτό το email. Ευχαριστούμε για τη βοήθειά σας!"
       ],
       "Help us improve the upcoming mail categorization": [
         "Βοηθήστε μας να βελτιώσουμε την επικείμενη κατηγοριοποίηση των αλληλογραφιών."
@@ -14740,6 +14755,9 @@
       "Newsletters view": [
         "Προβολή ενημερωτικών δελτίων"
       ],
+      "Next": [
+        "Επόμενο"
+      ],
       "Next conversation": [
         "Επόμενη συνομιλία"
       ],
@@ -14785,6 +14803,9 @@
       "Open actions dropdown": [
         "Άνοιγμα αναπτυσσόμενων επιλογών"
       ],
+      "Open pagination": [
+        "Άνοιγμα σελιδοποίησης"
+      ],
       "Org setup": [
         "Ρύθμιση οργανισμού"
       ],
@@ -14814,6 +14835,9 @@
       ],
       "Preview": [
         "Προεπισκόπηση"
+      ],
+      "Previous": [
+        "Προηγούμενο"
       ],
       "Previous conversation": [
         "Προηγούμενη συνομιλία"
@@ -15134,6 +15158,9 @@
       ],
       "Your subscriptions in one place": [
         "Οι συνδρομές σας σε ένα μέρος"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Οι κατηγορίες έρχονται!"
       ]
     },
     "Today icon tooltip in mini calendar": {

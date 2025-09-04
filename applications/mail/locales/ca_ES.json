@@ -1448,7 +1448,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -5122,6 +5123,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Els àlies no es poden utilitzar quan s'ha activat una contrasenya addicional a ${ PASS_APP_NAME }."
       ],
+      "An error occured with the categories": [
+        "S'ha produït un error amb les categories"
+      ],
       "App currently unavailable": [
         "L'aplicació no està disponible actualment."
       ],
@@ -5826,11 +5830,17 @@
       "Contacts": [
         "Contactes"
       ],
+      "Domain": [
+        "Domini"
+      ],
       "Drawer": [
         "Panell lateral"
       ],
       "Hardware not compatible": [
         "Aquest maquinari no és compatible."
+      ],
+      "Password ends with": [
+        "La contrasenya acaba amb"
       ],
       "Report an issue": [
         "Informeu d'un problema"
@@ -5849,6 +5859,9 @@
       ],
       "Tell us more": [
         "Expliqueu-nos més"
+      ],
+      "Username": [
+        "Nom d'usuari"
       ]
     },
     "Hint": {
@@ -7226,8 +7239,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -9226,6 +9238,9 @@
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Ajudeu-nos a millorar les categories escollint la que millor s'ajusti a aquest correu electrònic. Gràcies per la vostra col·laboració!"
       ],
       "Help us improve the upcoming mail categorization": [
         "Ajudeu-nos a millorar la pròxima categorització del correu"
@@ -14740,6 +14755,9 @@
       "Newsletters view": [
         "Vista de butlletins"
       ],
+      "Next": [
+        "Següent"
+      ],
       "Next conversation": [
         "Conversa següent"
       ],
@@ -14785,6 +14803,9 @@
       "Open actions dropdown": [
         "Obrir el desplegable d'accions"
       ],
+      "Open pagination": [
+        "Obrir paginació"
+      ],
       "Org setup": [
         "Configuració de l'organització"
       ],
@@ -14814,6 +14835,9 @@
       ],
       "Preview": [
         "Vista prèvia"
+      ],
+      "Previous": [
+        "Anterior"
       ],
       "Previous conversation": [
         "Conversa anterior"
@@ -15134,6 +15158,9 @@
       ],
       "Your subscriptions in one place": [
         "Les vostres subscripcions en un sol lloc"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Arriben les categories!"
       ]
     },
     "Today icon tooltip in mini calendar": {
