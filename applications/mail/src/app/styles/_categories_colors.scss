@@ -1,0 +1,91 @@
+.hover\:mail-category-color:hover {
+	color: var(--cat-foreground);
+}
+
+.mail-category-color {
+	color: var(--cat-foreground);
+
+	[data-theme-mode='dark'] & {
+		color: var(--cat-foreground-dark);
+	}
+}
+
+.mail-category-border {
+	border-color: var(--cat-border);
+
+	[data-theme-mode='dark'] & {
+		border-color: var(--cat-border-dark);
+	}
+}
+
+.mail-category-count-bg {
+	background-color: var(--cat-background);
+
+	[data-theme-mode='dark'] & {
+		background-color: var(--cat-background-dark);
+	}
+}
+
+// Map data-color values to the variables used by the utilities
+[data-color='iris'] {
+	--cat-foreground: var(--color-iris-500);
+	--cat-foreground-dark: var(--color-iris-400);
+	--cat-background: var(--color-iris-50);
+	--cat-background-dark: var(--color-iris-900);
+	--cat-border: var(--color-iris-500);
+	--cat-border-dark: var(--color-iris-400);
+}
+
+[data-color='sky'] {
+	--cat-foreground: var(--color-sky-500);
+	--cat-foreground-dark: var(--color-sky-400);
+	--cat-background: var(--color-sky-50);
+	--cat-background-dark: var(--color-sky-900);
+	--cat-border: var(--color-sky-500);
+	--cat-border-dark: var(--color-sky-400);
+}
+
+[data-color='teal'] {
+	--cat-foreground: var(--color-teal-500);
+	--cat-foreground-dark: var(--color-teal-400);
+	--cat-background: var(--color-teal-50);
+	--cat-background-dark: var(--color-teal-900);
+	--cat-border: var(--color-teal-500);
+	--cat-border-dark: var(--color-teal-400);
+}
+
+[data-color='pink'] {
+	--cat-foreground: var(--color-pink-500);
+	--cat-foreground-dark: var(--color-pink-400);
+	--cat-background: var(--color-pink-50);
+	--cat-background-dark: var(--color-pink-900);
+	--cat-border: var(--color-pink-500);
+	--cat-border-dark: var(--color-pink-400);
+}
+
+[data-color='blue'] {
+	--cat-foreground: var(--color-blue-500);
+	--cat-foreground-dark: var(--color-blue-400);
+	--cat-background: var(--color-blue-50);
+	--cat-background-dark: var(--color-blue-900);
+	--cat-border: var(--color-blue-500);
+	--cat-border-dark: var(--color-blue-400);
+}
+
+[data-color='purple'] {
+	--cat-foreground: var(--color-purple-500);
+	--cat-foreground-dark: var(--color-purple-400);
+	--cat-background: var(--color-purple-50);
+	--cat-background-dark: var(--color-purple-900);
+	--cat-border: var(--color-purple-500);
+	--cat-border-dark: var(--color-purple-400);
+}
+
+[data-color='amber'] {
+	--cat-foreground: var(--color-amber-500);
+	--cat-foreground-dark: var(--color-amber-400);
+	--cat-background: var(--color-amber-50);
+	--cat-background-dark: var(--color-amber-900);
+	--cat-border: var(--color-amber-500);
+	--cat-border-dark: var(--color-amber-400);
+}

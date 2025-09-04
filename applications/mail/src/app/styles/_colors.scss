@@ -371,6 +371,14 @@ $colors: (
  * > If you really want to use the color value here, use '"" + $color-name'.
  */
 
+:root {
+	@each $color-name, $color-map in $colors {
+		@each $shade, $value in $color-map {
+			--color-#{'' + $color-name}-#{$shade}: #{$value};
+		}
+	}
+}
+
 @each $color-name, $color-map in $colors {
 	@each $shade, $value in $color-map {
 		.bg-#{'' + $color-name}-#{$shade} {

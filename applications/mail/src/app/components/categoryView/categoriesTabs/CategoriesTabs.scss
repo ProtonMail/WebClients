@@ -9,7 +9,7 @@
 
 		// The top border is needed to reserve the space but should be transparent when the tab is active
 		&.active {
-			border-block-start: rem(3) solid transparent;
+			border-block-start: rem(3) solid transparent !important;
 		}
 
 		&.neighbor {

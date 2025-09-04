@@ -9,17 +9,18 @@ import { CategoriesTabs } from './CategoriesTabs';
 
 describe('CategoriesTabs', () => {
     it.each([
-        { label: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, borderClass: 'border-iris-500' },
-        { label: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, borderClass: 'border-sky-500' },
-        { label: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, borderClass: 'border-teal-500' },
-        { label: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, borderClass: 'border-pink-500' },
-        { label: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, borderClass: 'border-blue-500' },
-        { label: MAILBOX_LABEL_IDS.CATEGORY_UPDATES, borderClass: 'border-purple-500' },
-        { label: MAILBOX_LABEL_IDS.CATEGORY_FORUMS, borderClass: 'border-amber-500' },
-    ])('should render the categories with the proper border class', async ({ label, borderClass }) => {
+        { label: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, colorShade: 'iris' },
+        { label: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, colorShade: 'sky' },
+        { label: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, colorShade: 'teal' },
+        { label: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, colorShade: 'pink' },
+        { label: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, colorShade: 'blue' },
+        { label: MAILBOX_LABEL_IDS.CATEGORY_UPDATES, colorShade: 'purple' },
+        { label: MAILBOX_LABEL_IDS.CATEGORY_FORUMS, colorShade: 'amber' },
+    ])('should render the categories with the proper border class', async ({ label, colorShade }) => {
         await mailTestRender(<CategoriesTabs labelID={label} />);
         const categoryTab = screen.getByTestId(`category-tab-${label}`);
-        expect(categoryTab).toHaveClass(borderClass);
+        expect(categoryTab).toHaveClass('mail-category-border');
+        expect(categoryTab.dataset.color).toStrictEqual(colorShade);
     });
 
     describe('error boundaries test', () => {
