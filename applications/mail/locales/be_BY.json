@@ -1435,7 +1435,7 @@
         "Пераключыць на праграму Каляндар"
       ],
       "Toggle Contacts app": [
-        "Пераключыць на праграму Кантакты"
+        "Пераключыць праграму Кантакты"
       ],
       "Toggle security center app": [
         "Пераключыць праграму цэнтра бяспекі"
@@ -1456,7 +1456,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -1522,7 +1525,7 @@
         "Палепшыць"
       ],
       "Upgrade for 200GB": [
-        "Палепшыць за 200 ГБ"
+        "Палепшыць да 200 ГБ"
       ],
       "Upgrade Now": [
         "Палепшыць"
@@ -3984,7 +3987,7 @@
         "Дадайце папкі і файлы ў ${ DRIVE_APP_NAME } і запрасіце ўдзельнікаў каманды для прагляду або рэдагавання."
       ],
       "Also included": [
-        "Таксама ўключана"
+        "Таксама ўключае"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Аўтаматычна ачышчайце лісты, якія перамешчаны ў Сметніцу і Спам больш за 30 дзён таму."
@@ -4195,7 +4198,7 @@
         "Я не змог падключыцца"
       ],
       "I only needed a VPN short-term": [
-        "Мне VPN быў патрэбны толькі на вызначаны тэрмін"
+        "Мне VPN быў патрэбны толькі на кароткі тэрмін"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Я выкарыстоўваю іншы ўліковы запіс ${ BRAND_NAME }"
@@ -4693,7 +4696,7 @@
         "Не знойдзена лістоў для імпартавання - уліковы запіс не мае ўваходных"
       ],
       "No external key retrieved for user is valid for sending": [
-        "Ніводны з атрыманых знешніх ключоў карыстальніка не падыходзіць для адпраўкі"
+        "Ніводны з атрыманых знешніх ключоў для карыстальніка не падыходзіць для адпраўкі"
       ],
       "No valid address found": [
         "Не знойдзена сапраўдных адрасоў"
@@ -5191,6 +5194,9 @@
     "Error message": {
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Псеўданімы не могуць быць выкарыстаны, калі дадатковы пароль уключаны ў ${ PASS_APP_NAME }."
+      ],
+      "An error occured with the categories": [
+        "Адбылася памылка з катэгорыямі"
       ],
       "App currently unavailable": [
         "Праграма часова недаступна"
@@ -5912,11 +5918,17 @@
       "Contacts": [
         "Кантакты"
       ],
+      "Domain": [
+        "Дамен"
+      ],
       "Drawer": [
         "Высоўнае меню"
       ],
       "Hardware not compatible": [
         "Несумяшчальнае абсталяванне"
+      ],
+      "Password ends with": [
+        "Пароль заканчваецца на"
       ],
       "Report an issue": [
         "Паведаміць аб праблеме"
@@ -5935,6 +5947,9 @@
       ],
       "Tell us more": [
         "Напішыце больш"
+      ],
+      "Username": [
+        "Імя карыстальніка"
       ]
     },
     "Hint": {
@@ -6852,7 +6867,7 @@
         "Вы сапраўды хочаце адхіліць змены?"
       ],
       "Are you sure you want to discard your import?": [
-        "Вы сапраўды хочаце адхіліць імпартаванне?"
+        "Вы сапраўды хочаце адхіліць імпарт?"
       ],
       "Are you sure you want to move all messages in this location to archive?": [
         "Вы сапраўды хочаце перамясціць усе паведамленні з гэтага месца ў архіў?"
@@ -7005,7 +7020,7 @@
         "Кантакт прызначаны групе ${ contactGroupName }"
       ],
       "Contact unassigned from group ${ contactGroupName }": [
-        "Прызначэнне кантакту скасавана ў групе ${ contactGroupName }"
+        "Прызначэнне кантакту скасавана з групы ${ contactGroupName }"
       ],
       "Copied to clipboard": [
         "Скапіявана ў буфер абмену"
@@ -7458,10 +7473,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8808,7 +8820,7 @@
         "Вы дасягнулі максімальнай колькасці адрасоў у групе кантактаў:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
-        "Вы дасягнулі максімальнай колькасці адрасоў у групе кантактаў:"
+        "Вы дасягнулі максімальнай колькасці адрасоў у групе кантактаў."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. На 29 дзень лісты больш не будуць трапляць у вашу паштовую скрыню, а абагуленыя спасылкі на воблачным дыску будуць заблакіраваны, і вы больш не зможаце запампоўваць новыя файлы. Для ўзнаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
@@ -8850,7 +8862,7 @@
         "Ваш бясплатны пробны перыяд быў паспяхова пераўтвораны ў ${ cycle }-месячную падпіску. Яго падаўжэнне адбудзецца: ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Яго падаўжэнне адбудзецца: ${ nextBillingDate }."
+        "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Яе падаўжэнне адбудзецца: ${ nextBillingDate }."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Ваша абсталяванне не падтрымлівае памочніка ў напісанні. Паспрабуйце запусціць яго на серверы."
@@ -9518,6 +9530,9 @@
       ],
       "From: ${ fromEmail }": [
         "Ад: ${ fromEmail }"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Дапамажыце нам палепшыць катэгорыі. Выберыце тую, якая найлепш пасуе гэтаму лісту. Дзякуй за вашу дапамогу!"
       ],
       "Help us improve the upcoming mail categorization": [
         "Дапамажыце нам палепшыць будучую катэгарызацыю пошты"
@@ -10307,7 +10322,7 @@
         "Палепшыце, каб атрымаць поўны доступ"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ваша ${ driveStorage } запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ cta }."
+        "Ваша ${ driveStorage } запоўнена. Вызваліце месца або ${ cta }, каб запампоўваць або сінхранізаваць файлы."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
         "Ваша ${ mailStorage } запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ cta }."
@@ -10750,7 +10765,7 @@
         "${ options }-дзённая гісторыя версій файла"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
-        "Пажыццёвая прапанова ${ PASS_APP_NAME } + SimpleLogin"
+        "${ PASS_APP_NAME } + пажыццёвая прапанова SimpleLogin"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } з ${ n } псеўданімам hide-my-email",
@@ -11220,13 +11235,13 @@
         "Наш тарыфны план ${ visionary } больш недаступны для новых падпісчыкаў і зараз ён з'яўляецца спецыяльным тарыфным планам для карыстальнікаў ${ BRAND_NAME } і прадугледжвае для іх спецыяльныя функцыі і перавагі."
       ],
       "Pay once, secure your passwords and identity forever.": [
-        "Заплаціце адзін раз, засцеражыце свае паролі і ідэнтычнасць назаўжды."
+        "Заплаціце адзін раз і абараніце свае паролі і ідэнтычнасць назаўсёды."
       ],
       "Popular": [
         "Папулярны"
       ],
       "Protect sensitive business information and collaborate securely.": [
-        "Абарона адчувальных звестак бізнесу і бяспечнае супрацоўніцтва."
+        "Абарона адчувальнай інфармацыі бізнесу і бяспечнае супрацоўніцтва."
       ],
       "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
         "Абараніце сваю сям'ю з прэміяльнымі функцыямі ${ plusTitle } для 6 карыстальнікаў."
@@ -11379,7 +11394,7 @@
         "Меткі - гэта простыя тэгі, якія можна дадаваць да паведамленняў. Яны дазваляюць прасцей знаходзіць неабходныя лісты або ўжываць фільтры"
       ],
       "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
-        "Пажыццёвы доступ да прэміяльных функцый ${ PASS_APP_NAME } + SimpleLogin."
+        "Пажыццёвы доступ да ${ PASS_APP_NAME } + прэміяльныя функцыі SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Як і папка, сховішча з'яўляецца зручным спосаб арганізацыі вашых элементаў"
@@ -11922,7 +11937,7 @@
         "Скарыстайцеся селектарам праграм злева ўверсе для атрымання доступу да ўсіх сэрвісаў ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ PASS_SHORT_APP_NAME }."
       ],
       "You will be able to change your theme any time in your settings.": [
-        "Вы зможаце змяніць тэму ў любы час праз налады."
+        "Вы можаце змяніць тэму ў любы час у наладах."
       ]
     },
     "Onboarding Trial": {
@@ -12243,7 +12258,7 @@
         "Гэты нумар будзе паказаны ва ўсіх будучых рахунках"
       ],
       "This payment method will become your new default for all future renewals.": [
-        "Гэты спосаб аплаты стане новым прадвызначаным для ўсіх будучых падаўжэнняў."
+        "Гэты спосаб аплаты стане новым прадвызначаным спосабам для ўсіх будучых падаўжэнняў."
       ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
@@ -13113,7 +13128,7 @@
         "${ passwordReset } цяпер даступна."
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "Калі вы выйдзеце з сістэмы да скідання пароля, вы можаце страціць доступ да вашага ўліковага запісу."
+        "Вы можаце страціць доступ да вашага ўліковага запісу, калі выйдзеце з сістэмы да скідання пароля."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
         "Вы можаце страціць доступ да вашага ўліковага запісу, калі выйдзіце з сістэмы без скідання пароля."
@@ -13172,7 +13187,7 @@
     },
     "Slack": {
       "Join Slack huddle": [
-        "Далучыцца да Slack Huddle"
+        "Далучайцеся да Slack Huddle"
       ]
     },
     "SmartBanner": {
@@ -15149,7 +15164,7 @@
         "Не ўдалося імпартаваць"
       ],
       "Import groups": [
-        "Імпартаванне груп"
+        "Імпарт груп"
       ],
       "Increase security with ${ VPN_APP_NAME }": [
         "Павялічце бяспеку з ${ VPN_APP_NAME }"
@@ -15292,6 +15307,9 @@
       "Newsletters view": [
         "Прагляд рассылкі"
       ],
+      "Next": [
+        "Далей"
+      ],
       "Next conversation": [
         "Наступная размова"
       ],
@@ -15337,6 +15355,9 @@
       "Open actions dropdown": [
         "Адкрыць спіс даступных дзеянняў"
       ],
+      "Open pagination": [
+        "Паказваць нумарацыю старонак"
+      ],
       "Org setup": [
         "Наладка арганізацыі"
       ],
@@ -15366,6 +15387,9 @@
       ],
       "Preview": [
         "Папярэдні прагляд"
+      ],
+      "Previous": [
+        "Папярэдні"
       ],
       "Previous conversation": [
         "Папярэдняя размова"
@@ -15690,6 +15714,9 @@
       ],
       "Your subscriptions in one place": [
         "Вашы падпіскі ў адным месцы"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Неўзабаве чакайце катэгорыі!"
       ]
     },
     "Today icon tooltip in mini calendar": {

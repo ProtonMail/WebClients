@@ -1455,9 +1455,6 @@
       "Trust": [
         "Dôverovať"
       ],
-      "Trust key": [
-        "Dôveryhodný kľúč"
-      ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
       ],
@@ -5192,6 +5189,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Aliasy nie je možné použiť, ak je v ${ PASS_APP_NAME } povolené dodatočné heslo."
       ],
+      "An error occured with the categories": [
+        "Došlo k chybe v kategóriách"
+      ],
       "App currently unavailable": [
         "Aplikácia momentálne nie je k dispozícii"
       ],
@@ -5912,11 +5912,17 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Domain": [
+        "Doména"
+      ],
       "Drawer": [
         "Bočný panel"
       ],
       "Hardware not compatible": [
         "Hardvér nie je kompatibilný"
+      ],
+      "Password ends with": [
+        "Heslo končí znakmi"
       ],
       "Report an issue": [
         "Nahlásiť problém"
@@ -5935,6 +5941,9 @@
       ],
       "Tell us more": [
         "Povedzte nám viac"
+      ],
+      "Username": [
+        "Používateľské meno"
       ]
     },
     "Hint": {
@@ -7458,10 +7467,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8203,6 +8209,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Je tam chyba v podpise používania na overenie detailu kontaktu, kedy je to možno dôvod na resetovanie hesla."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Tieto konverzácie sa uchovávajú na základe zásad uchovávania údajov vašej organizácie."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Ak nepoznajú vašu emailovú adresu, nemôžu vám posielať spam. Chráňte svoju emailovú schránku pomocou aliasov na skrytie emailu (hide-my-email)."
@@ -9515,6 +9524,9 @@
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Pomôžte nám vylepšiť kategórie výberom tej, ktorá najlepšie zodpovedá tejto emailovej správe. Ďakujeme za pomoc!"
       ],
       "Help us improve the upcoming mail categorization": [
         "Pomôžte nám zlepšiť pripravované kategorizovanie pošty"
@@ -15289,6 +15301,9 @@
       "Newsletters view": [
         "Zobrazenie newslettrerov"
       ],
+      "Next": [
+        "Ďalej"
+      ],
       "Next conversation": [
         "Ďalšia konverzácia"
       ],
@@ -15334,6 +15349,9 @@
       "Open actions dropdown": [
         "Otvoriť rozbaľovaciu ponuku"
       ],
+      "Open pagination": [
+        "Otvoriť stránkovanie"
+      ],
       "Org setup": [
         "Nastavenie organizácie"
       ],
@@ -15363,6 +15381,9 @@
       ],
       "Preview": [
         "Náhľad"
+      ],
+      "Previous": [
+        "Predchádzajúci"
       ],
       "Previous conversation": [
         "Predchádzajúca konverzácia"
@@ -15687,6 +15708,9 @@
       ],
       "Your subscriptions in one place": [
         "Vaše emailové odbery na jednom mieste"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Prichádzajú kategórie!"
       ]
     },
     "Today icon tooltip in mini calendar": {
