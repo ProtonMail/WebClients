@@ -27,6 +27,7 @@ export type MessageComponentProps = {
     isGenerating: boolean;
     isGeneratingWithToolCall: boolean;
     isWebSearchButtonToggled: boolean;
+    onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
 };
 
 // Use deep memo comparison to prevent unnecessary re-renders
@@ -80,6 +81,7 @@ const MessageComponentPure = ({
     isGenerating,
     isGeneratingWithToolCall,
     isWebSearchButtonToggled,
+    onRetryPanelToggle,
 }: MessageComponentProps) => {
     const messageContent = message?.content;
     const isUser = message.role === Role.User;
@@ -129,6 +131,7 @@ const MessageComponentPure = ({
                     onToggleMessageSource={handleOpenSources}
                     onToggleFilesManagement={handleOpenFiles}
                     isWebSearchButtonToggled={isWebSearchButtonToggled}
+                    onRetryPanelToggle={onRetryPanelToggle}
                 />
             )}
             {/* </div> */}

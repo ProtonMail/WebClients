@@ -16,7 +16,7 @@ import type { ConversationError } from '../redux/slices/meta/errors';
 import { useActionErrorHandler } from '../services/errors/useActionErrorHandler';
 import type { Attachment } from '../types';
 import { type ConversationId, type Message, Role, type Space, type SpaceId, getSpaceDek } from '../types';
-import type { ActionParams, ErrorContext } from '../types-api';
+import type { ActionParams, ErrorContext, RetryStrategy } from '../types-api';
 import {
     generateFakeConversationToShowTierError,
     regenerateMessage,
@@ -49,7 +49,7 @@ interface Props {
 }
 
 export type HandleSendMessage = (newMessage: string, enableExternalTools: boolean) => Promise<void>;
-export type HandleRegenerateMessage = (message: Message, isWebSearchButtonToggled: boolean) => Promise<void>;
+export type HandleRegenerateMessage = (message: Message, isWebSearchButtonToggled: boolean, retryStrategy?: RetryStrategy, customInstructions?: string) => Promise<void>;
 export type HandleEditMessage = (
     originalMessage: Message,
     newContent: string,
@@ -203,11 +203,32 @@ export const useLumoActions = ({
         guestTracking?.incrementCount();
     };
 
+    // Function to add retry instructions based on strategy
+    const getRetryInstructions = (strategy: RetryStrategy, customInstructions?: string): string => {
+        switch (strategy) {
+            case 'try_again':
+                return 'Please try again with the same approach.';
+            case 'add_details':
+                return 'Please provide a more detailed and comprehensive response with additional information, examples, and explanations.';
+            case 'more_concise':
+                return 'Please provide a shorter, more concise response that focuses on the key points only.';
+            case 'think_longer':
+                return 'Please take more time to carefully consider your response. Think through the problem step by step and provide a more thoughtful, well-reasoned answer.';
+            case 'custom':
+                return customInstructions || 'Please improve your response based on the user feedback.';
+            case 'simple':
+            default:
+                return '';
+        }
+    };
+
     const handleRegenerateAction = async (
         originalMessage: Message,
         spaceDek: any,
         signal: AbortSignal,
-        isWebSearchButtonToggled: boolean
+        isWebSearchButtonToggled: boolean,
+        retryStrategy: RetryStrategy = 'simple',
+        customInstructions?: string
     ) => {
         if (!originalMessage.parentId) {
             throw new Error(OPERATION_MESSAGES.NO_PARENT_EXISTS);
@@ -222,6 +243,7 @@ export const useLumoActions = ({
         const conversationId = originalMessage.conversationId;
         const parentMessageChain = buildLinearChain(messageMap, originalMessage.parentId, preferredSiblings);
         const messagesWithContext = await addContextToMessages(parentMessageChain, user, spaceDek);
+        const retryInstructions = getRetryInstructions(retryStrategy, customInstructions);
 
         // Create a new placeholder assistant message
         const assistantMessageId = newMessageId();
@@ -255,13 +277,14 @@ export const useLumoActions = ({
                 messagesWithContext,
                 signal,
                 enableExternalTools,
-                contextFilters
+                contextFilters,
+                retryInstructions
             )
         );
     };
 
     const handleMessageAction = async (actionParams: ActionParams) => {
-        const { actionType, newMessageContent, originalMessage } = actionParams;
+        const { actionType, newMessageContent, originalMessage, retryStrategy = 'simple', customRetryInstructions } = actionParams;
         const isWebSearchButtonToggled = !!actionParams.isWebSearchButtonToggled;
 
         // Validate input parameters
@@ -324,7 +347,7 @@ export const useLumoActions = ({
                 await handleEditAction(actionParams, originalMessage!, spaceDek, signal, isWebSearchButtonToggled);
             }
             if (actionType === 'regenerate') {
-                await handleRegenerateAction(originalMessage!, spaceDek, signal, isWebSearchButtonToggled);
+                await handleRegenerateAction(originalMessage!, spaceDek, signal, isWebSearchButtonToggled, retryStrategy, customRetryInstructions);
             }
         } catch (error: any) {
             handleActionError(error, errorContext);
@@ -346,7 +369,9 @@ export const useLumoActions = ({
 
     const handleRegenerateMessage: HandleRegenerateMessage = async (
         message: Message,
-        isWebSearchButtonToggled: boolean
+        isWebSearchButtonToggled: boolean,
+        retryStrategy = 'simple',
+        customInstructions?: string
     ) => {
         if (!message || isOperationInProgress()) {
             return;
@@ -355,6 +380,8 @@ export const useLumoActions = ({
             actionType: 'regenerate',
             originalMessage: message,
             isWebSearchButtonToggled,
+            retryStrategy,
+            customRetryInstructions: customInstructions,
         });
     };
 
