@@ -296,7 +296,6 @@ const LumoSettingsSidebar = ({
 
 const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?: () => void }) => {
     const { DATE_VERSION } = useConfig();
-    // const date = <Time format="PPP">{new Date(DATE_VERSION).getTime()}</Time>;
     return (
         <div>
             {!isGuest && (

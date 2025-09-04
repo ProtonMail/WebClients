@@ -1,7 +1,7 @@
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 
-import { APP_NAME, APP_VERSION } from '../config';
+import config from '../config';
 
 interface Subscription {
     PaymentToken?: string;
@@ -172,7 +172,7 @@ class PaymentApi {
         } else if (platform === 'android') {
             headers['x-pm-appversion'] = 'android-lumo@99.9.9';
         } else {
-            return getAppVersionHeaders(getClientID(APP_NAME), APP_VERSION);
+            return getAppVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
         }
 
         return headers;

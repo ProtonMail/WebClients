@@ -25,7 +25,7 @@ import { FlagProvider } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import LumoLoader from '../../components/LumoLoader';
-import * as config from '../../config';
+import config from '../../config';
 import locales from '../../locales';
 import { ConversationProvider } from '../../providers/ConversationProvider';
 import { GuestTrackingProvider } from '../../providers/GuestTrackingProvider';
