@@ -17,6 +17,7 @@ export type MessageChainComponentProps = {
     isGenerating?: boolean;
     isGeneratingWithToolCall?: boolean;
     isWebSearchButtonToggled: boolean;
+    onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
 };
 
 interface ScrollState {
@@ -237,6 +238,7 @@ export const MessageChainComponent = ({
     handleOpenSources,
     handleOpenFiles,
     isWebSearchButtonToggled,
+    onRetryPanelToggle,
 }: MessageChainComponentProps) => {
     const newMessageRef = useRef<HTMLDivElement | null>(null);
     const { userHasScrolledUp, scrollToBottom } = useAutoScroll(messageChainRef, messageChain, isGenerating);
@@ -309,6 +311,7 @@ export const MessageChainComponent = ({
                                 isGenerating={isGenerating || false}
                                 isGeneratingWithToolCall={isGeneratingWithToolCall || false}
                                 isWebSearchButtonToggled={isWebSearchButtonToggled}
+                                onRetryPanelToggle={onRetryPanelToggle}
                             />
                         </div>
                     );
