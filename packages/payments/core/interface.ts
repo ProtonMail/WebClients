@@ -18,8 +18,7 @@ import type {
     ThreeDsChallengePayload,
 } from '@proton/chargebee/lib';
 
-import type { PaymentsVersion } from './api';
-import type { CheckSubscriptionData } from './api';
+import type { CheckSubscriptionData, PaymentsVersion } from './api';
 import type { BillingAddress, FullBillingAddress } from './billing-address/billing-address';
 import type {
     ADDON_NAMES,

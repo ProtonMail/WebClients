@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { EditorContent } from '@tiptap/react';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';
@@ -14,7 +14,6 @@ import lumoStop from '@proton/styles/assets/img/illustrations/lumo-stop.svg';
 import useFlag from '@proton/unleash/useFlag';
 
 import { MAX_FILE_SIZE } from '../../../constants';
-
 import type { HandleSendMessage } from '../../../hooks/useLumoActions';
 import { useTierErrors } from '../../../hooks/useTierErrors';
 import useTipTapEditor from '../../../hooks/useTipTapEditor';
@@ -169,7 +168,8 @@ export const ComposerComponent = ({
                     const maxSizeFormatted = humanSize({ bytes: MAX_FILE_SIZE, unit: 'MB', fraction: 0 });
                     const fileSizeFormatted = humanSize({ bytes: file.size, unit: 'MB', fraction: 1 });
                     createNotification({
-                        text: c('collider_2025: Error').t`File "${file.name}" is too large (${fileSizeFormatted}). Maximum allowed size is ${maxSizeFormatted}.`,
+                        text: c('collider_2025: Error')
+                            .t`File "${file.name}" is too large (${fileSizeFormatted}). Maximum allowed size is ${maxSizeFormatted}.`,
                         type: 'error',
                     });
                     return;
@@ -464,7 +464,6 @@ export const ComposerComponent = ({
                                         <IcMicrophone size={6}></IcMicrophone>
                                     </Button>
                                 </div>
-
                             </div>
                         </div>
                     </div>

@@ -1,8 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import type { RequiredCheckResponse } from '@proton/payments';
-import { CYCLE } from '@proton/payments';
-import { SubscriptionMode, TaxInclusive } from '@proton/payments';
+import { CYCLE, SubscriptionMode, TaxInclusive } from '@proton/payments';
 
 import { TaxRow } from './TaxRow';
 

@@ -1,12 +1,13 @@
 import React from 'react';
 
-import Placeholder from '@tiptap/extension-placeholder';
-import type {Editor} from '@tiptap/react';
-import {isMobile} from '@proton/shared/lib/helpers/browser';
-import {useEditor} from '@tiptap/react';
-import {StarterKit} from '@tiptap/starter-kit';
-import {Markdown as TipTapMarkdown} from 'tiptap-markdown';
-import {c} from 'ttag';
+import { Placeholder } from '@tiptap/extension-placeholder';
+import type { Editor } from '@tiptap/react';
+import { useEditor } from '@tiptap/react';
+import { StarterKit } from '@tiptap/starter-kit';
+import { Markdown as TipTapMarkdown } from 'tiptap-markdown';
+import { c } from 'ttag';
+
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 interface UseTipTapEditorProps {
     onSubmitCallback: (editor: Editor | null) => void;
@@ -19,14 +20,14 @@ interface UseTipTapEditorProps {
 }
 
 const useTipTapEditor = ({
-                             onSubmitCallback,
-                             content,
-                             hasTierErrors,
-                             isGenerating,
-                             isProcessingAttachment,
-                             onFocus,
-                             onBlur,
-                         }: UseTipTapEditorProps) => {
+    onSubmitCallback,
+    content,
+    hasTierErrors,
+    isGenerating,
+    isProcessingAttachment,
+    onFocus,
+    onBlur,
+}: UseTipTapEditorProps) => {
     // Detect if we're on a mobile device
 
     const editor = useEditor({
@@ -85,7 +86,7 @@ const useTipTapEditor = ({
         },
         content: content || '',
         autofocus: true,
-        onFocus: ({editor}) => {
+        onFocus: ({ editor }) => {
             editor.commands.focus();
             onFocus?.();
         },
@@ -125,7 +126,7 @@ const useTipTapEditor = ({
 
     const editorContentMarkdown = editor?.storage.markdown.getMarkdown();
 
-    return {editor, handleSubmit, editorContentMarkdown};
+    return { editor, handleSubmit, editorContentMarkdown };
 };
 
 export default useTipTapEditor;

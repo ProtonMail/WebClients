@@ -13,8 +13,7 @@ import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useInviteForm } from '@proton/pass/hooks/invite/useInviteForm';
 import { AccessTarget } from '@proton/pass/lib/access/types';
 import { selectShareOrThrow } from '@proton/pass/store/selectors';
-import type { SelectedShare, ShareType } from '@proton/pass/types';
-import type { VaultInviteFormValues } from '@proton/pass/types';
+import type { SelectedShare, ShareType, VaultInviteFormValues } from '@proton/pass/types';
 
 import { FORM_ID, VaultInviteForm } from './VaultInviteForm';
 

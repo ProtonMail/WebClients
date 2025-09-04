@@ -26,12 +26,12 @@ import {
     defaultESStatus,
 } from './constants';
 import type { IndexingMetrics } from './esHelpers';
-import { estimateIndexingDuration } from './esHelpers';
 import {
     buildContentDB,
     buildMetadataDB,
     cacheIDB,
     esSentryReport,
+    estimateIndexingDuration,
     findItemIndex,
     gatherIndexingMetrics,
     getIndexKey,
@@ -48,7 +48,6 @@ import {
     uncachedSearch,
 } from './esHelpers';
 import type { IndexedDBRow } from './esIDB';
-import { readSize } from './esIDB';
 import {
     checkVersionedESDB,
     contentIndexingProgress,
@@ -60,6 +59,7 @@ import {
     readLimited,
     readNumContent,
     readNumMetadata,
+    readSize,
     setLimited,
     toggleEnabled,
     writeAllEvents,

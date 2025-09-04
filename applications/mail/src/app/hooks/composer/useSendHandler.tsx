@@ -3,8 +3,7 @@ import type { Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 
 import type { Cancellable } from '@proton/components';
-import { getOnlineStatus } from '@proton/components';
-import { useEventManager, useHandler, useNotifications } from '@proton/components';
+import { getOnlineStatus, useEventManager, useHandler, useNotifications } from '@proton/components';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';

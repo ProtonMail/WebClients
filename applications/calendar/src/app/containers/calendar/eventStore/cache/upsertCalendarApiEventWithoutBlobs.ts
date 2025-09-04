@@ -3,7 +3,7 @@ import type { CalendarEventWithoutBlob } from '@proton/shared/lib/interfaces/cal
 
 import type { CalendarEventsCache } from '../interface';
 import getComponentFromCalendarEventWithoutBlob from './getComponentFromCalendarEventWithoutBlob';
-import removeCalendarEventStoreRecord from './removeCalendarEventStoreRecord';
+import { removeCalendarEventStoreRecord } from './removeCalendarEventStoreRecord';
 import { getCalendarEventStoreRecord, upsertCalendarEventStoreRecord } from './upsertCalendarEventStoreRecord';
 
 const FIELDS_TO_KEEP = [

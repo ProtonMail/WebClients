@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -14,7 +14,7 @@ import type { Conversation, Message, SiblingInfo } from '../../types';
 import type { RetryStrategy } from '../../types-api';
 import ErrorCard from '../components/ErrorCard';
 import { FilesManagementView } from '../components/Files';
-import RetryPanel from '../components/RetryPanel';
+import { RetryPanel } from '../components/RetryPanel';
 import UpsellCard from '../components/UpsellCard';
 import { ComposerComponent } from './composer/ComposerComponent';
 import { ConversationHeader } from './messageChain/ConversationHeader';
@@ -40,11 +40,11 @@ const FloatingRetryPanel = ({ buttonRef, onRetry, onClose }: FloatingRetryPanelP
                 const rect = buttonRef.getBoundingClientRect();
                 const panelWidth = 320; // Approximate width of the retry panel
                 const panelHeight = 200; // Approximate height of the retry panel
-                
+
                 // Position above the button by default
                 let top = rect.top - panelHeight - 8;
                 let left = rect.left + rect.width / 2 - panelWidth / 2;
-                
+
                 // Adjust if panel would go off screen
                 if (top < 0) {
                     top = rect.bottom + 8; // Position below the button instead
@@ -54,7 +54,7 @@ const FloatingRetryPanel = ({ buttonRef, onRetry, onClose }: FloatingRetryPanelP
                 } else if (left + panelWidth > window.innerWidth - 8) {
                     left = window.innerWidth - panelWidth - 8;
                 }
-                
+
                 return { top, left };
             };
 
@@ -82,7 +82,7 @@ const FloatingRetryPanel = ({ buttonRef, onRetry, onClose }: FloatingRetryPanelP
 
         document.addEventListener('mousedown', handleClickOutside);
         document.addEventListener('keydown', handleEscape);
-        
+
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
             document.removeEventListener('keydown', handleEscape);
@@ -102,13 +102,10 @@ const FloatingRetryPanel = ({ buttonRef, onRetry, onClose }: FloatingRetryPanelP
                 left: `${position.left}px`,
                 width: '320px',
                 opacity: 1,
-                transition: 'opacity 150ms ease-in-out'
+                transition: 'opacity 150ms ease-in-out',
             }}
         >
-            <RetryPanel
-                onRetry={onRetry}
-                className="border-none shadow-none"
-            />
+            <RetryPanel onRetry={onRetry} className="border-none shadow-none" />
         </div>
     );
 };
@@ -217,15 +214,24 @@ const ConversationComponent = ({
         setRetryPanelState({ messageId: null, show: false, buttonRef: null });
     }, []);
 
-    const handleRetry = useCallback((retryStrategy: RetryStrategy, customInstructions?: string) => {
-        if (retryPanelState.messageId) {
-            const message = messageChain.find(m => m.id === retryPanelState.messageId);
-            if (message) {
-                handleRegenerateMessage(message, isWebSearchButtonToggled, retryStrategy, customInstructions);
+    const handleRetry = useCallback(
+        (retryStrategy: RetryStrategy, customInstructions?: string) => {
+            if (retryPanelState.messageId) {
+                const message = messageChain.find((m) => m.id === retryPanelState.messageId);
+                if (message) {
+                    handleRegenerateMessage(message, isWebSearchButtonToggled, retryStrategy, customInstructions);
+                }
             }
-        }
-        handleRetryPanelClose();
-    }, [retryPanelState.messageId, messageChain, handleRegenerateMessage, isWebSearchButtonToggled, handleRetryPanelClose]);
+            handleRetryPanelClose();
+        },
+        [
+            retryPanelState.messageId,
+            messageChain,
+            handleRegenerateMessage,
+            isWebSearchButtonToggled,
+            handleRetryPanelClose,
+        ]
+    );
 
     return (
         <>

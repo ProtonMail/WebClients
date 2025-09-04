@@ -1,14 +1,13 @@
-import { useCallback, useState, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms';
 import { Button, Tooltip } from '@proton/atoms';
 import type { IconSize } from '@proton/components';
-import { Icon } from '@proton/components';
-import type { PopperPlacement } from '@proton/components';
+import { Icon, type PopperPlacement } from '@proton/components';
 
 import { useGuestChatHandler } from '../../hooks/useGuestChatHandler';
 import { useGhostChat } from '../../providers/GhostChatProvider';
@@ -109,12 +108,15 @@ const NewChatButton = ({ buttonProps, children, toolTipPlacement }: NewChatButto
 
 const NewChatButtonSidebar = ({ isCollapsed, isSmallScreen }: Props) => {
     const shouldShowText = useDelayedTextVisibility(isCollapsed);
-    
+
     if (isSmallScreen) {
         return null;
     }
 
-    const buttonClassName = clsx('w-full flex items-center', isCollapsed ? 'justify-center px-0' : 'justify-start px-3');
+    const buttonClassName = clsx(
+        'w-full flex items-center',
+        isCollapsed ? 'justify-center px-0' : 'justify-start px-3'
+    );
 
     return (
         <div className="px-3 py-2 shrink-0 md:block">
@@ -128,16 +130,12 @@ const NewChatButtonSidebar = ({ isCollapsed, isSmallScreen }: Props) => {
                 toolTipPlacement="right"
             >
                 <div className="flex items-center gap-2">
-                    <Icon 
-                        name="pen-square" 
-                        className={clsx('shrink-0', isCollapsed && 'mx-auto')} 
-                        alt={c('collider_2025:Button').t`New chat`} 
+                    <Icon
+                        name="pen-square"
+                        className={clsx('shrink-0', isCollapsed && 'mx-auto')}
+                        alt={c('collider_2025:Button').t`New chat`}
                     />
-                    {shouldShowText && (
-                        <span className="text-ellipsis">
-                            {c('collider_2025:Button').t`New chat`}
-                        </span>
-                    )}
+                    {shouldShowText && <span className="text-ellipsis">{c('collider_2025:Button').t`New chat`}</span>}
                 </div>
             </NewChatButton>
         </div>
