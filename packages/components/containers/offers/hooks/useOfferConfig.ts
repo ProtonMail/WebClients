@@ -28,8 +28,11 @@ import { useBackToSchoolMailPlus } from '../operations/backToSchoolMailPlus/useO
 import { backToSchoolMailPlusToYearly } from '../operations/backToSchoolMailPlusToYearly/configuration';
 import { useBackToSchoolMailPlusToYearly } from '../operations/backToSchoolMailPlusToYearly/useOffer';
 import { useBackToSchoolPassPlus } from '../operations/backToSchoolPassPlus/useOffer';
+import { backToSchoolPassPlusToYearly } from '../operations/backToSchoolPassPlusToYearly/configuration';
 import { useBackToSchoolPassPlusToYearly } from '../operations/backToSchoolPassPlusToYearly/useOffer';
+import { backToSchoolVPNPlus } from '../operations/backToSchoolVPNPlus/configuration';
 import { useBackToSchoolVPNPlus } from '../operations/backToSchoolVPNPlus/useOffer';
+import { backToSchoolVPNPlusToYearly } from '../operations/backToSchoolVPNPlusToYearly/configuration';
 import { useBackToSchoolVPNPlusToYearly } from '../operations/backToSchoolVPNPlusToYearly/useOffer';
 import { goUnlimited2022Config } from '../operations/goUnlimited2022/configuration';
 import { useGoUnlimited2022 } from '../operations/goUnlimited2022/useOffer';
@@ -52,10 +55,10 @@ const configs: Record<OfferId, OfferConfig> = {
     'back-to-school-drive-plus': backToSchoolDrivePlus,
     'back-to-school-mail-plus': backToSchoolMailPlus,
     'back-to-school-mail-plus-to-yearly': backToSchoolMailPlusToYearly,
-    'back-to-school-vpn-plus': backToSchoolDrivePlus,
-    'back-to-school-vpn-plus-to-yearly': backToSchoolMailPlusToYearly,
+    'back-to-school-vpn-plus': backToSchoolVPNPlus,
+    'back-to-school-vpn-plus-to-yearly': backToSchoolVPNPlusToYearly,
     'back-to-school-pass-plus': backToSchoolMailPlus,
-    'back-to-school-pass-plus-to-yearly': backToSchoolMailPlusToYearly,
+    'back-to-school-pass-plus-to-yearly': backToSchoolPassPlusToYearly,
     'back-to-school-bundle': backToSchoolBundle,
     'back-to-school-duo': backToSchoolDuo,
     'back-to-school-family': backToSchoolFamily,
