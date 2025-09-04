@@ -1,0 +1,9 @@
+{
+    "name": "@proton/prettier-config-proton",
+    "main": "config.mjs",
+    "types": "config.d.ts",
+    "devDependencies": {
+        "eslint": "^9.34.0",
+        "prettier": "^3.6.2"
+    }
+}
