@@ -1,5 +1,5 @@
-import type { FC } from 'react';
-import { type MouseEvent, useCallback, useMemo } from 'react';
+import type { FC, MouseEvent } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';

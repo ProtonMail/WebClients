@@ -9,7 +9,7 @@ import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatch
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
 import { isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import { selectActiveSharedWithMeCount, selectShare, selectVaultsWithItemsCount } from '@proton/pass/store/selectors';
+import { selectActiveSharedWithMeCount, selectShare, selectVisibleVaultsWithCount } from '@proton/pass/store/selectors';
 import type { ShareType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
@@ -28,7 +28,7 @@ export const VaultMenu: FC<Props> = ({ render, onAction = noop }) => {
     const scope = useItemScope();
     const inTrash = scope === 'trash';
 
-    const vaults = useSelector(selectVaultsWithItemsCount);
+    const vaults = useSelector(selectVisibleVaultsWithCount);
     const selectedVault = useSelector(selectShare<ShareType.Vault>(selectedShareId));
 
     const selectedVaultOption = getVaultOptionInfo(selectedVault || (inTrash ? 'trash' : 'all'));

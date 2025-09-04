@@ -1,4 +1,3 @@
-/* eslint-disable curly */
 import type { Action } from 'redux';
 import type { Task } from 'redux-saga';
 import { all, cancel, fork, put, select, take } from 'redux-saga/effects';
@@ -50,14 +49,7 @@ const onShareEvent = (shareId: string) =>
         if ('error' in event) throw event.error;
 
         const { Events } = event;
-        const {
-            LatestEventID: eventId,
-            DeletedItemIDs,
-            UpdatedItems,
-            UpdatedShare,
-            LastUseItems,
-            FullRefresh,
-        } = Events;
+        const { LatestEventID: eventId, DeletedItemIDs, UpdatedItems, UpdatedShare, LastUseItems, FullRefresh } = Events;
         const currentEventId = ((yield select(selectShare(shareId))) as Maybe<ShareItem>)?.eventId;
 
         if (UpdatedItems.length > 0) {

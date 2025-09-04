@@ -6,8 +6,7 @@ import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
-import type { ShareId, ShareType, ShareVisibilityMap } from '@proton/pass/types';
-import type { Share, ShareSyncKeys } from '@proton/pass/types';
+import type { Share, ShareId, ShareSyncKeys, ShareType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const shareEventUpdate = createAction('share::event::update', (payload: Share) => withCache({ payload }));
@@ -23,17 +22,13 @@ export const shareEventDelete = createAction('share::event::delete', (share: Sha
     )({ payload: { shareId: share.shareId } })
 );
 
-export const sharesEventNew = createAction('shares::event::new', (payload: SynchronizationResult) =>
-    withCache({ payload })
-);
+export const sharesEventNew = createAction('shares::event::new', (payload: SynchronizationResult) => withCache({ payload }));
 
-export const sharesEventSync = createAction('shares::event::sync', (payload: Pick<Share, ShareSyncKeys>) =>
-    withCache({ payload })
-);
+export const sharesEventSync = createAction('shares::event::sync', (payload: Pick<Share, ShareSyncKeys>) => withCache({ payload }));
 
 export const sharesVisibilityEdit = requestActionsFactory<
-    { visibilityMap: ShareVisibilityMap },
-    { shares: Record<ShareId, Share<ShareType.Vault>> }
+    { sharesToHide: ShareId[]; sharesToUnhide: ShareId[] },
+    Record<ShareId, Share<ShareType.Vault>>
 >('shares::visibility')({
     intent: {
         prepare: (payload) =>
