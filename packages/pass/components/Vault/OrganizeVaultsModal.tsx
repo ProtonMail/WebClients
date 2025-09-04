@@ -61,7 +61,7 @@ export const OrganizeVaultsModal: FC<Props> = ({ onClose, onConfirm }) => {
                             checked={visibilityMap[vault.shareId]}
                             onChange={handleChange(vault.shareId)}
                             className={clsx(
-                                'w-full px-4 py-2 pl-2 pr-2 items-center',
+                                'flex flex-nowrap w-full px-4 py-2 pl-2 pr-2 items-center',
                                 index !== vaults.length - 1 && 'border-bottom border-weak'
                             )}
                         >
@@ -72,7 +72,7 @@ export const OrganizeVaultsModal: FC<Props> = ({ onClose, onConfirm }) => {
                                 color={vault.content.display.color}
                                 icon={vault.content.display.icon}
                             />
-                            <span className="ellipsis">{vault.content.name}</span>
+                            <span className="text-ellipsis">{vault.content.name}</span>
                         </Checkbox>
                     ))}
                 </form>
