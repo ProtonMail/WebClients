@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { c } from 'ttag';
 
 import { Loader } from '@proton/components';
@@ -5,17 +7,18 @@ import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import clsx from '@proton/utils/clsx';
 
 import FileRecoveryIcon from '../../../components/ResolveLockedVolumes/FileRecovery/FileRecoveryIcon';
-import type { TreeItem } from '../../../store';
 import { DriveSidebarListItem } from '../DriveSidebarListItem';
+import type { SidebarItem } from '../hooks/useSidebar.store';
+import { useSidebarStore } from '../hooks/useSidebar.store';
 import { DriveExpandButton } from './DriveExpandButton';
 
-interface DriveSidebarFoldersRootProps {
+type DriveSidebarFoldersRootProps = {
     shareId: string;
     linkId: string;
-    rootFolder?: TreeItem;
-    toggleExpand: (linkId: string) => void;
+    rootFolder: SidebarItem;
+    toggleExpand: (uid: string) => Promise<void>;
     collapsed: boolean;
-}
+};
 
 export const DriveSidebarFoldersRoot = ({
     shareId,
@@ -24,27 +27,31 @@ export const DriveSidebarFoldersRoot = ({
     toggleExpand,
     collapsed,
 }: DriveSidebarFoldersRootProps) => {
-    const isLoading = !rootFolder?.isLoaded;
-
     const url = `/${shareId}/${LinkURLType.FOLDER}/${linkId}`;
+    const { children } = useSidebarStore((state) => ({
+        children: state.getChildren(rootFolder.uid),
+    }));
+
+    const shouldShowArrow = useMemo(() => children.length || !rootFolder.hasLoadedChildren, [rootFolder]);
+
     return (
         <DriveSidebarListItem
             key="root"
             to={url}
             icon="inbox"
             shareId={shareId}
-            onDoubleClick={() => toggleExpand(linkId)}
+            onDoubleClick={() => toggleExpand(rootFolder.uid)}
             collapsed={collapsed}
         >
             <span className={clsx('text-ellipsis', collapsed && 'sr-only')}>{c('Title').t`My files`}</span>
-            {isLoading ? (
+            {rootFolder.isLoading ? (
                 <Loader className="drive-sidebar--icon inline-flex" />
             ) : (
-                rootFolder.children.length > 0 && (
+                shouldShowArrow && (
                     <DriveExpandButton
                         className="shrink-0"
                         expanded={rootFolder.isExpanded}
-                        onClick={() => toggleExpand(rootFolder.link.linkId)}
+                        onClick={() => toggleExpand(rootFolder.uid)}
                     />
                 )
             )}
