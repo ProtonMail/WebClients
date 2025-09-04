@@ -29,6 +29,7 @@ const CommonNodes = [
     with: (node: ListNode) => {
       return new CustomListNode(node.__listType, node.__start)
     },
+    withKlass: CustomListNode,
   },
   OverflowNode,
   QuoteNode,
