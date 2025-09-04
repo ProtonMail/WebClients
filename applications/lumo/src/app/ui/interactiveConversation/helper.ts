@@ -193,7 +193,8 @@ export function regenerateMessage(
     messagesWithContext: Message[],
     signal: AbortSignal,
     enableExternalTools: boolean,
-    contextFilters: any[] = []
+    contextFilters: any[] = [],
+    retryInstructions?: string
 ) {
     return async (dispatch: AppDispatch) => {
         dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
@@ -213,6 +214,18 @@ export function regenerateMessage(
 
         try {
             const turns = getFilteredTurns(messagesWithContext, contextFilters);
+
+            // Add retry instructions if provided
+            if (retryInstructions) {
+                // Insert a system message with retry instructions before the final assistant turn
+                const systemTurn = {
+                    role: Role.System,
+                    content: retryInstructions,
+                };
+                // Insert the system turn before the last turn (which should be the empty assistant turn)
+                turns.splice(-1, 0, systemTurn);
+            }
+
             await dispatch(
                 sendMessageWithRedux(api, turns, {
                     messageId: assistantMessageId,
