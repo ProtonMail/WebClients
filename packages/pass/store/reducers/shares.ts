@@ -15,8 +15,7 @@ import {
     vaultDeleteSuccess,
     vaultEditSuccess,
 } from '@proton/pass/store/actions';
-import type { Share, ShareId } from '@proton/pass/types';
-import type { ShareType } from '@proton/pass/types';
+import type { Share, ShareId, ShareType } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
@@ -52,8 +51,7 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
     }
 
     if (sharesVisibilityEdit.success.match(action)) {
-        const { shares } = action.payload;
-        return fullMerge(state, shares);
+        return fullMerge(state, action.payload);
     }
 
     if (shareEventUpdate.match(action)) {

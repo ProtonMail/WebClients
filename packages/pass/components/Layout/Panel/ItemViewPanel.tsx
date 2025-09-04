@@ -1,5 +1,5 @@
-import type { PropsWithChildren } from 'react';
-import { type FC, type ReactElement, useEffect, useState } from 'react';
+import type { FC, PropsWithChildren, ReactElement } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';

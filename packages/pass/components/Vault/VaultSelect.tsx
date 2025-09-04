@@ -17,8 +17,8 @@ import { UpsellRef } from '@proton/pass/constants';
 import type { VaultShareItem, WithItemCount } from '@proton/pass/store/reducers';
 import {
     selectVaultLimits,
-    selectWritableSharedVaultsWithItemsCount,
-    selectWritableVaultsWithItemsCount,
+    selectWritableSharedVaultsWithCount,
+    selectWritableVaultsWithCount,
 } from '@proton/pass/store/selectors';
 import { NOOP_LIST_SELECTOR } from '@proton/pass/store/selectors/utils';
 import type { MaybeNull } from '@proton/pass/types';
@@ -38,8 +38,8 @@ export type VaultSelectProps = Omit<ModalProps, 'onSubmit'> & {
 };
 
 const vaultSelector = {
-    [VaultSelectMode.Writable]: selectWritableVaultsWithItemsCount,
-    [VaultSelectMode.Shared]: selectWritableSharedVaultsWithItemsCount,
+    [VaultSelectMode.Writable]: selectWritableVaultsWithCount,
+    [VaultSelectMode.Shared]: selectWritableSharedVaultsWithCount,
 };
 
 /* if the user has downgraded : only allow him to select

@@ -1,4 +1,3 @@
-/* eslint-disable curly */
 import { all, fork, put, select } from 'redux-saga/effects';
 
 import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
@@ -10,8 +9,8 @@ import type { InviteState } from '@proton/pass/store/reducers';
 import { selectAllVaults } from '@proton/pass/store/selectors';
 import { selectInvites } from '@proton/pass/store/selectors/invites';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { InvitesGetResponse, MaybeNull, Share } from '@proton/pass/types';
-import { type Api, ShareType } from '@proton/pass/types';
+import type { Api, InvitesGetResponse, MaybeNull, Share } from '@proton/pass/types';
+import { ShareType } from '@proton/pass/types';
 import type { Invite } from '@proton/pass/types/data/invites';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';

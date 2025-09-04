@@ -24,6 +24,7 @@
 // _checkbox.scss override
 .checkbox-fakecheck,
 .radio-fakeradio {
+	flex-shrink: 0;
 	border-color: var(--border-norm);
 
 	&:hover {

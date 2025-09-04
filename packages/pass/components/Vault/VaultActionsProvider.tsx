@@ -19,7 +19,7 @@ import {
     sharesVisibilityEdit,
 } from '@proton/pass/store/actions';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
-import type { ShareVisibilityMap } from '@proton/pass/types';
+import type { VaultsVisibilityDTO } from '@proton/pass/types';
 import { type MaybeNull, ShareType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
@@ -93,10 +93,9 @@ export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         dispatch(shareLeaveIntent({ shareId, targetType: ShareType.Vault }));
     };
 
-    const onVaultOrganize = useCallback(
-        (visibilityMap: ShareVisibilityMap) => dispatch(sharesVisibilityEdit.intent({ visibilityMap })),
-        []
-    );
+    const onVaultOrganize = useCallback((dto: VaultsVisibilityDTO) => {
+        dispatch(sharesVisibilityEdit.intent(dto));
+    }, []);
 
     const actions = useMemo<VaultActionsContextValue>(
         () => ({
