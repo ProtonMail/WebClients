@@ -4020,6 +4020,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } on oletussähköpostisovelluksesi."
       ],
+      "A checked box means the feature is disabled.": [
+        "Rasti ruudussa tarkoittaa, että toiminto ei ole käytössä."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Lisää kansioita ja tiedostoja ${ DRIVE_APP_NAME }en ja kutsu tiimin jäseniä tarkastelemaan tai muokkaamaan."
       ],
@@ -5309,6 +5312,9 @@
       ],
       "Invalid Sieve code": [
         "Virheellinen Sieve-koodi"
+      ],
+      "Invalid URL": [
+        "Virheellinen URL"
       ],
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
@@ -11244,8 +11250,20 @@
       "Auto-unsubscribe": [
         "Automaattinen lopetus"
       ],
+      "Autofill": [
+        "Automaattitäyttö"
+      ],
+      "Autofill 2FA": [
+        "Automaattitäytä vahvistuskoodi"
+      ],
       "Automatically save contacts": [
         "Tallenna yhteystiedot automaattisesti"
+      ],
+      "Autosave": [
+        "Automaattitallennus"
+      ],
+      "Autosuggest": [
+        "Automaattiehdotus"
       ],
       "Awarded": [
         "Palkittu"
@@ -11486,6 +11504,9 @@
       ],
       "Domain name": [
         "Verkkotunnus"
+      ],
+      "Domains": [
+        "Verkkotunnukset"
       ],
       "Don't ask again": [
         "Älä kysy uudelleen"
@@ -11861,6 +11882,9 @@
       ],
       "Other amount": [
         "Muu summa"
+      ],
+      "Passkeys": [
+        "Pääsyavaimet"
       ],
       "Password": [
         "Salasana"
@@ -17166,9 +17190,6 @@
       "Free": [
         "Ilmainen"
       ],
-      "Free for 14 days": [
-        "Ilmainen 14 päivän ajan"
-      ],
       "Get a secure one from us, or ${ internalButton }": [
         "Hanki meiltä turvallinen, tai ${ internalButton }"
       ],
@@ -19763,9 +19784,6 @@
       ],
       "Gift code": [
         "Lahjakoodi"
-      ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "Anna ${ referralReward } ja 2 viikkoa ilmaiseksi. Saat ${ referralReward } krediittiä."
       ],
       "Group": [
         "Ryhmä"

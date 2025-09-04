@@ -1408,6 +1408,9 @@
       "Spam": [
         "İstenmeyen"
       ],
+      "Start free trial": [
+        "Ücretsiz deneme süresini başlat"
+      ],
       "Start import": [
         "İçe aktarmayı başlat"
       ],
@@ -2053,9 +2056,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde her ${ cycle } ayda bir otomatik olarak yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde aylık olarak otomatik yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
       ],
@@ -2067,9 +2067,6 @@
       ],
       "on ${ formattedDate }": [
         "${ formattedDate } tarihinde"
-      ],
-      "Try it free for 14 days": [
-        "14 gün boyunca ücretsiz deneyin"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "İptal ettiğinizde, ücretsiz denemeniz ücretli aboneliğe dönüştürülmez, ancak deneme süresi sonuna kadar plan avantajlarından yararlanmaya devam edebilirsiniz. Bundan sonra, ${ BRAND_NAME } Ücretsiz planına düşürüleceksiniz."
@@ -4224,6 +4221,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız."
       ],
+      "A checked box means the feature is disabled.": [
+        "Seçeneğin işaretlenmesi özelliğin kapatılmasını sağlar."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "${ DRIVE_APP_NAME } üzerine klasörler ve dosyalar ekleyerek bunları görüntülemeleri veya düzenlemeleri için ekip arkadaşarınızı davet edin."
       ],
@@ -4366,14 +4366,17 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Arkadaşlarınızı davet etmeyi sürdürebilirsiniz ancak artık daha fazla kredi kazanamazsınız"
       ],
+      "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
+        "${ PASS_APP_NAME } tarayıcı eklentisindeki belirli otomatik işlemlerin (otomatik doldurma, otomatik önerme, otomatik kaydetme gibi) yapılmayacağı etki alanlarının listesini özelleştirebilirsiniz."
+      ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME } uygulamasında kuruluş üyelerinin parola oluştururken kullanacakları parola kurallarını dayatabilirsiniz."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
       ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "Davet ettiğiniz kişi bir ${ BRAND_NAME } tarifesi ile hesap açtığında, size ${ BRAND_NAME } için ${ referralReward } kredi ve arkadaşınıza da başlaması için ${ referralReward } kredi verilir."
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Davet ettiğiniz kişi bir ${ BRAND_NAME } tarifesi ile hesap açtığında, size ${ BRAND_NAME } için ${ referralInfo.referrerRewardAmount } kredi ve arkadaşınıza da başlaması için ${ referralInfo.refereeRewardAmount } kredi verilir."
       ]
     },
     "description": {
@@ -5756,6 +5759,9 @@
       ],
       "Invalid Sieve code": [
         "Sieve kodu geçersiz"
+      ],
+      "Invalid URL": [
+        "Adres geçersiz"
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
@@ -7339,6 +7345,9 @@
       "Device": [
         "Aygıt"
       ],
+      "Domain": [
+        "Etki alanı"
+      ],
       "Enter your email address": [
         "E-posta adresinizi yazın"
       ],
@@ -7371,6 +7380,9 @@
       ],
       "Organization key fingerprint": [
         "Kuruluş anahtarı parmak izi"
+      ],
+      "Password ends with": [
+        "Parola şununla bitiyor"
       ],
       "Payment details": [
         "Ödeme ayrıntıları"
@@ -7413,6 +7425,9 @@
       ],
       "User": [
         "Kullanıcı"
+      ],
+      "Username": [
+        "Kullanıcı adı"
       ]
     },
     "Header for addresses table": {
@@ -8110,6 +8125,12 @@
       ],
       "${ storage } storage": [
         "${ storage } depolama alanı"
+      ],
+      "${ url } added.": [
+        "${ url } eklendi."
+      ],
+      "${ url } deleted.": [
+        "${ url } silindi."
       ],
       "${ userFound } user found": [
         "${ userFound } kullanıcı bulundu",
@@ -9102,11 +9123,11 @@
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } tarifesini edinin"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Abone olan her arkadaşınız için **${ referrerRewardAmount } kredi** kazanın."
+      ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Bir ${ BRAND_NAME } hesabı açarak ve daveti kabul ederek verilere erişebilirsiniz."
-      ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "Abone olan her arkadaşınız için **${ referralReward } kredi** kazanın ve hediye edin."
       ],
       "Get it on Google Play": [
         "Google Play üzerinden edinin"
@@ -10639,6 +10660,9 @@
       "URL link": [
         "Adres bağlantısı"
       ],
+      "URL settings updated.": [
+        "Adres ayarları güncellendi."
+      ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Parolalarınızı oluşturmak ve güvenli bir şekilde saklamak, güçlü parolalar oluşturmak ve daha kolay oturum açmak için bir parola yöneticisi kullanın."
       ],
@@ -11247,6 +11271,9 @@
       "You’re all set": [
         "Hazırsınız"
       ],
+      "Zero charge today": [
+        "Bugün herhangi bir şey ödemeyin"
+      ],
       "Zoom meeting": [
         "Zoom toplantısı"
       ]
@@ -11838,6 +11865,9 @@
       "Account storage": [
         "Hesap depolama alanı"
       ],
+      "Action": [
+        "İşlem"
+      ],
       "Actions": [
         "İşlemler"
       ],
@@ -11979,8 +12009,20 @@
       "Auto-unsubscribe": [
         "Otomatik abonelik sonlandırma"
       ],
+      "Autofill": [
+        "Otomatik doldurma"
+      ],
+      "Autofill 2FA": [
+        "Otomatik iki adımlı doğrulama doldurma"
+      ],
       "Automatically save contacts": [
         "Kişileri otomatik olarak kaydet"
+      ],
+      "Autosave": [
+        "Otomatik kaydet"
+      ],
+      "Autosuggest": [
+        "Otomatik öneri"
       ],
       "Awarded": [
         "Hediye edilen"
@@ -12224,6 +12266,9 @@
       ],
       "Domain name": [
         "Etki alanı adı"
+      ],
+      "Domains": [
+        "Etki alanları"
       ],
       "Don't ask again": [
         "Bir daha sorma"
@@ -12602,6 +12647,9 @@
       ],
       "Other amount": [
         "Diğer tutar"
+      ],
+      "Passkeys": [
+        "Geçiş anahtarları"
       ],
       "Password": [
         "Parola"
@@ -13691,8 +13739,8 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "${ BRAND_NAME } hesabınızda oturum açarak, ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi şifrelenmiş tüm ${ BRAND_NAME } hizmetlerine erişin. Hesabınız yok mu? Ücretsiz bir hesap açın."
       ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "Verilerinizin kontrolunu uçtan uca şifrelemeyle elinizde tutun. Kredi kartı gerekmez."
+      "Take control of your data with end-to-end encryption": [
+        "Verilerinizi uçtan uca şifrelemeyle elinizde tutun."
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "Bu bağlantı ile ${ BRAND_NAME } tarifesini ücretsiz olarak deneyin"
@@ -18329,8 +18377,8 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tüm temel ${ BRAND_NAME } hizmetleri (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "Ve abone olursanız, ${ referralReward } kredi kazanırsınız."
+      "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
+        "Ve abone olursanız, ${ referralInfo.uiData.refereeRewardAmount } kredi kazanırsınız."
       ],
       "Billing Cycle": [
         "Fatura dönemi"
@@ -18395,11 +18443,11 @@
       "Free": [
         "Ücretsiz"
       ],
-      "Free for 14 days": [
-        "14 gün ücretsiz"
+      "Free for ${ TRIAL_DURATION_DAYS } days": [
+        "${ TRIAL_DURATION_DAYS } gün süreyle ücretsiz"
       ],
-      "Get ${ referralReward } in credits": [
-        "${ referralReward } kredi kazanın"
+      "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "${ referralInfo.uiData.refereeRewardAmount } kredi kazanın"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Güvenli bir ${ MAIL_APP_NAME } adresi edinin ya da ${ internalButton }"
@@ -18480,8 +18528,8 @@
       "Select ${ title }": [
         "${ title } tarifesini seç"
       ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "Bir hizmet seçin ve ücretli sürümü 14 gün süreyle ücretsiz kullanın. Kredi kartı gerekmez."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
+        "Bir hizmet seçin ve ücretli sürümü ${ TRIAL_DURATION_DAYS } gün süreyle ücretsiz olarak kullanın. Kredi kartı gerekmez."
       ],
       "Selected": [
         "Seçilmiş"
@@ -18527,6 +18575,9 @@
       ],
       "Total": [
         "Toplam"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
+        "${ BRAND_NAME } hizmetini ${ TRIAL_DURATION_DAYS } gün süreyle ücretsiz deneyin"
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "${ BRAND_NAME } hizmetini 14 gün ücretsiz deneyin"
@@ -21140,8 +21191,8 @@
       "Gift code": [
         "Hediye kodu"
       ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "${ referralReward } ve 2 hafta ücretsiz kullanım verin. ${ referralReward } kredi kazanın."
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "${ refereeRewardAmount } ve 2 hafta ücretsiz kullanım verin. ${ referrerRewardAmount } kredi kazanın."
       ],
       "Group": [
         "Grup"
@@ -21374,6 +21425,9 @@
       ],
       "Passwords made easy": [
         "Parolalar artık daha kolay"
+      ],
+      "Pause list": [
+        "Duraklatma listesi"
       ],
       "Pay invoice": [
         "Faturayı öde"

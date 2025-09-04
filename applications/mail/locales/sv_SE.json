@@ -1447,9 +1447,6 @@
       "Trust": [
         "Lita på"
       ],
-      "Trust key": [
-        "Lita på nyckel"
-      ],
       "Trust public key": [
         "Lita på offentlig nyckel"
       ],
@@ -5115,6 +5112,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Alias kan inte användas när ett extra lösenord är aktiverat i ${ PASS_APP_NAME }."
       ],
+      "An error occured with the categories": [
+        "Ett fel uppstod med kategorierna"
+      ],
       "App currently unavailable": [
         "App är för närvarande inte tillgänglig"
       ],
@@ -5819,11 +5819,17 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Domain": [
+        "Domän"
+      ],
       "Drawer": [
         "Sidopanel"
       ],
       "Hardware not compatible": [
         "Hårdvara inte kompatibel"
+      ],
+      "Password ends with": [
+        "Lösenord slutar med"
       ],
       "Report an issue": [
         "Rapportera ett problem"
@@ -5842,6 +5848,9 @@
       ],
       "Tell us more": [
         "Berätta mer"
+      ],
+      "Username": [
+        "Användarnamn"
       ]
     },
     "Hint": {
@@ -7213,8 +7222,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -14684,6 +14692,9 @@
       "Newsletters view": [
         "Nyhetsbrevsvy"
       ],
+      "Next": [
+        "Nästa"
+      ],
       "Next conversation": [
         "Nästa konversation"
       ],
@@ -14729,6 +14740,9 @@
       "Open actions dropdown": [
         "Öppna rullgardinsmenyn för åtgärder"
       ],
+      "Open pagination": [
+        "Öppna sidnumrering"
+      ],
       "Org setup": [
         "Organisationsinställning"
       ],
@@ -14758,6 +14772,9 @@
       ],
       "Preview": [
         "Förhandsgranska"
+      ],
+      "Previous": [
+        "Föregående"
       ],
       "Previous conversation": [
         "Föregående konversation"
@@ -15075,6 +15092,9 @@
       ],
       "Your subscriptions in one place": [
         "Dina prenumerationer på ett ställe"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Kategorier kommer!"
       ]
     },
     "Today icon tooltip in mini calendar": {
