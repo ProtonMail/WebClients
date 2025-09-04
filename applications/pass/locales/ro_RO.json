@@ -1858,6 +1858,11 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -4372,6 +4377,9 @@
       "MX record": [
         "Înregistrare MX"
       ],
+      "Next": [
+        "Următoare"
+      ],
       "No excluded items": [
         "Nu sunt articole excluse"
       ],
@@ -4392,6 +4400,9 @@
       ],
       "No shared secure links": [
         "Nu există legături web partajate"
+      ],
+      "Open pagination": [
+        "Deschidere paginare"
       ],
       "Organize vaults": [
         "Organizare seifuri"
@@ -4427,6 +4438,9 @@
         "După ștergere, aliasul nu mai poate fi restaurat.",
         "După ștergere, aliasurile nu mai pot fi restaurate.",
         "După ștergere, aliasurile nu mai pot fi restaurate."
+      ],
+      "Previous": [
+        "Anterior"
       ],
       "Random Prefix Generation": [
         "Generare aleatorie prefix"

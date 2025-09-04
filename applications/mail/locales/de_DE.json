@@ -1447,6 +1447,10 @@
       "Trust": [
         "Vertrauen"
       ],
+      "Trust key": [
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
+      ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
       ],
@@ -1965,9 +1969,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich alle ${ cycle } Monate am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
       ],
@@ -5150,6 +5151,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Aliasse können nicht verwendet werden, wenn ein zusätzliches Passwort in ${ PASS_APP_NAME } aktiviert ist."
       ],
+      "An error occured with the categories": [
+        "Ein Fehler ist bei den Kategorien aufgetreten."
+      ],
       "App currently unavailable": [
         "App ist zurzeit nicht verfügbar"
       ],
@@ -5854,11 +5858,17 @@
       "Contacts": [
         "Kontakte"
       ],
+      "Domain": [
+        "Domain"
+      ],
       "Drawer": [
         "Seitenleiste"
       ],
       "Hardware not compatible": [
         "Hardware ist nicht kompatibel."
+      ],
+      "Password ends with": [
+        "Passwort endet mit"
       ],
       "Report an issue": [
         "Ein Problem melden"
@@ -5877,6 +5887,9 @@
       ],
       "Tell us more": [
         "Erzähl uns mehr"
+      ],
+      "Username": [
+        "Benutzername"
       ]
     },
     "Hint": {
@@ -7254,8 +7267,7 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -9254,6 +9266,9 @@
       ],
       "From: ${ fromEmail }": [
         "Von: ${ fromEmail }"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Hilf uns, Kategorien zu verbessern, indem du die auswählst, die am besten zu dieser E-Mail passt. Vielen Dank für deine Hilfe."
       ],
       "Help us improve the upcoming mail categorization": [
         "Hilf uns, die kommende E-Mail-Kategorisierung zu verbessern."
@@ -14773,6 +14788,9 @@
       "Newsletters view": [
         "Newsletter-Ansicht"
       ],
+      "Next": [
+        "Weiter"
+      ],
       "Next conversation": [
         "Nächste Unterhaltung"
       ],
@@ -14818,6 +14836,9 @@
       "Open actions dropdown": [
         "Auswahlliste „Aktionen“ öffnen"
       ],
+      "Open pagination": [
+        "Seitennummerierung öffnen"
+      ],
       "Org setup": [
         "Organisationseinrichtung"
       ],
@@ -14847,6 +14868,9 @@
       ],
       "Preview": [
         "Vorschau"
+      ],
+      "Previous": [
+        "Zurück"
       ],
       "Previous conversation": [
         "Vorherige Unterhaltung"
@@ -15167,6 +15191,9 @@
       ],
       "Your subscriptions in one place": [
         "Deine Abonnemente an einem Ort"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Kategorien kommen."
       ]
     },
     "Today icon tooltip in mini calendar": {

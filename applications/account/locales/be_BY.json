@@ -1408,6 +1408,9 @@
       "Spam": [
         "Спам"
       ],
+      "Start free trial": [
+        "Пачаць бясплатны пробны перыяд"
+      ],
       "Start import": [
         "Пачаць імпартаванне"
       ],
@@ -1496,7 +1499,7 @@
         "Палепшыць"
       ],
       "Upgrade for 200GB": [
-        "Палепшыць за 200 ГБ"
+        "Палепшыць да 200 ГБ"
       ],
       "Upgrade now": [
         "Палепшыць зараз"
@@ -4203,11 +4206,14 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } з'яўляецца вашай прадвызначанай паштовай праграмай."
       ],
+      "A checked box means the feature is disabled.": [
+        "Сцяжок азначае, што функцыя адключана."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Дадайце папкі і файлы ў ${ DRIVE_APP_NAME } і запрасіце ўдзельнікаў каманды для прагляду або рэдагавання."
       ],
       "Also included": [
-        "Таксама ўключана"
+        "Таксама ўключае"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Аўтаматычна ачышчайце лісты, якія перамешчаны ў Сметніцу і Спам больш за 30 дзён таму."
@@ -4347,14 +4353,17 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Вы можаце далей запрашаць сяброў, але вы не будзеце больш атрымліваць за гэта крэдыты"
       ],
+      "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Вы можаце наладзіць спіс даменаў, дзе пэўныя аўтаматычныя функцыі ў пашырэнні браўзера ${ PASS_APP_NAME } (аўтазапаўненне, аўтапрапанова, аўтазахаванне) не павінны працаваць."
+      ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
         "Вы можаце прымусова задаць правілы пароляў для таго, каб удзельнікі арганізацыі выкарыстоўвалі іх пры генерацыі пароляў у ${ PASS_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можаце імпартаваць падзеі ў фармаце iCal (файл ICS). Максімальна памер файла павінен быць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець не больш за ${ MAX_IMPORT_EVENTS_STRING } падзей. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
       ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "Вы атрымаеце ${ referralReward } у крэдытах ${ BRAND_NAME }, калі запрошаны вамі карыстальнік падпішацца на тарыфны план ${ BRAND_NAME }. У сваю чаргу карыстальнік таксама атрымае ${ referralReward } у якасці прывітальнага бонуса."
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Вы атрымаеце ${ referralInfo.referrerRewardAmount } у крэдытах ${ BRAND_NAME }, калі запрошаны вамі карыстальнік падпішацца на тарыфны план ${ BRAND_NAME }. У сваю чаргу карыстальнік таксама атрымае ${ referralInfo.refereeRewardAmount } у якасці прывітальнага бонуса."
       ]
     },
     "description": {
@@ -4466,7 +4475,7 @@
         "Я не змог падключыцца"
       ],
       "I only needed a VPN short-term": [
-        "Мне VPN быў патрэбны толькі на вызначаны тэрмін"
+        "Мне VPN быў патрэбны толькі на кароткі тэрмін"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Я выкарыстоўваю іншы ўліковы запіс ${ BRAND_NAME }"
@@ -5760,6 +5769,9 @@
       "Invalid Sieve code": [
         "Памылковы код Sieve"
       ],
+      "Invalid URL": [
+        "Памылковы URL-адрас"
+      ],
       "Invalid verification code": [
         "Памылковы праверачны код"
       ],
@@ -5806,7 +5818,7 @@
         "Не знойдзена лістоў для імпартавання - уліковы запіс не мае ўваходных"
       ],
       "No external key retrieved for user is valid for sending": [
-        "Ніводны з атрыманых знешніх ключоў карыстальніка не падыходзіць для адпраўкі"
+        "Ніводны з атрыманых знешніх ключоў для карыстальніка не падыходзіць для адпраўкі"
       ],
       "No image selected": [
         "Відарыс не выбраны"
@@ -7380,6 +7392,9 @@
       "Device": [
         "Прылада"
       ],
+      "Domain": [
+        "Дамен"
+      ],
       "Enter your email address": [
         "Увядзіце адрас сваёй электроннай пошты"
       ],
@@ -7412,6 +7427,9 @@
       ],
       "Organization key fingerprint": [
         "Адбітак ключа арганізацыі"
+      ],
+      "Password ends with": [
+        "Пароль заканчваецца на"
       ],
       "Payment details": [
         "Падрабязнасці плацяжу"
@@ -7454,6 +7472,9 @@
       ],
       "User": [
         "Карыстальнік"
+      ],
+      "Username": [
+        "Імя карыстальніка"
       ]
     },
     "Header for addresses table": {
@@ -8214,6 +8235,12 @@
       "${ storage } storage": [
         "${ storage } сховішча"
       ],
+      "${ url } added.": [
+        "${ url } дададзена."
+      ],
+      "${ url } deleted.": [
+        "${ url } выдалена."
+      ],
       "${ userFound } user found": [
         "Знойдзены ${ userFound } карыстальнік",
         "Знойдзены ${ userFound } карыстальнікі",
@@ -8554,7 +8581,7 @@
         "Вы сапраўды хочаце адхіліць змены?"
       ],
       "Are you sure you want to discard your import?": [
-        "Вы сапраўды хочаце адхіліць імпартаванне?"
+        "Вы сапраўды хочаце адхіліць імпарт?"
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Вы сапраўды хочаце даць гэтаму карыстальніку правы адміністратара?"
@@ -9237,11 +9264,11 @@
       "Get ${ upsellPlanName }": [
         "Атрымайце ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Атрымайце **${ referrerRewardAmount } крэдытаў** за кожнага сябра, які падпішацца."
+      ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Атрымайце доступ стварыўшы ўліковы запіс ${ BRAND_NAME } і прыміце запрашэнне."
-      ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "Вы і ваш сябар атрымаеце па **${ referralReward } крэдытаў** за кожную платную падпіску."
       ],
       "Get it on Google Play": [
         "Спампаваць у Google Play"
@@ -10800,6 +10827,9 @@
       "URL link": [
         "URL-спасылка"
       ],
+      "URL settings updated.": [
+        "Налады URL-адраса абноўлены."
+      ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Выкарыстоўвайце менеджар пароляў для генерацыі і бяспечнага захоўвання сваіх пароляў, што дае гарантыю іх надзейнасці і лёгкага ўваходу."
       ],
@@ -11356,7 +11386,7 @@
         "Ваш бясплатны пробны перыяд быў паспяхова пераўтвораны ў ${ cycle }-месячную падпіску. Яго падаўжэнне адбудзецца: ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Яго падаўжэнне адбудзецца: ${ nextBillingDate }."
+        "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Яе падаўжэнне адбудзецца: ${ nextBillingDate }."
       ],
       "Your friends get **2 weeks for free** on their chosen plan.": [
         "Вашы сябры атрымаюць **2 тыдні бясплатнага выкарыстання** на тым тарыфным плане, які яны выбралі."
@@ -11435,6 +11465,9 @@
       ],
       "You’re all set": [
         "Усё гатова"
+      ],
+      "Zero charge today": [
+        "Сёння нулявая плата"
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
@@ -12041,6 +12074,9 @@
       "Account storage": [
         "Сховішча ўліковага запісу"
       ],
+      "Action": [
+        "Дзеянне"
+      ],
       "Actions": [
         "Дзеянні"
       ],
@@ -12182,8 +12218,20 @@
       "Auto-unsubscribe": [
         "Аўтаскасаванне падпіскі"
       ],
+      "Autofill": [
+        "Аўтазапоўніць"
+      ],
+      "Autofill 2FA": [
+        "Аўтазапаўненне 2ФА"
+      ],
       "Automatically save contacts": [
         "Аўтаматычна захоўваць кантакты"
+      ],
+      "Autosave": [
+        "Аўтазахаванне"
+      ],
+      "Autosuggest": [
+        "Аўтапрапанова"
       ],
       "Awarded": [
         "Узнагароджаны"
@@ -12427,6 +12475,9 @@
       ],
       "Domain name": [
         "Даменнае імя"
+      ],
+      "Domains": [
+        "Дамены"
       ],
       "Don't ask again": [
         "Больш не пытаць"
@@ -12805,6 +12856,9 @@
       ],
       "Other amount": [
         "Іншая сума"
+      ],
+      "Passkeys": [
+        "Ключы доступу"
       ],
       "Password": [
         "Пароль"
@@ -13596,7 +13650,7 @@
         "Палепшыце, каб атрымаць поўны доступ"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ваша ${ driveStorage } запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ cta }."
+        "Ваша ${ driveStorage } запоўнена. Вызваліце месца або ${ cta }, каб запампоўваць або сінхранізаваць файлы."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
         "Ваша ${ mailStorage } запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ cta }."
@@ -13910,8 +13964,8 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Увайдзіце ў свой уліковы запіс ${ BRAND_NAME }, каб атрымаць доступ да ўсіх зашыфраваных сэрвісаў ${ BRAND_NAME }, такіх як ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і іншых. Не маеце ўліковага запісу? Стварыце яго БЯСПЛАТНА."
       ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "Вазьміце пад кантроль свае даныя з дапамогай скразнога шыфравання. Банкаўская картка не патрабуецца."
+      "Take control of your data with end-to-end encryption": [
+        "Вазьміце пад кантроль свае даныя з дапамогай скразнога шыфравання"
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "Паспрабуйце тарыфны план ${ BRAND_NAME } бясплатна па гэтай спасылцы"
@@ -14330,7 +14384,7 @@
         "${ options }-дзённая гісторыя версій файла"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
-        "Пажыццёвая прапанова ${ PASS_APP_NAME } + SimpleLogin"
+        "${ PASS_APP_NAME } + пажыццёвая прапанова SimpleLogin"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } з ${ n } псеўданімам hide-my-email",
@@ -14866,13 +14920,13 @@
         "Наш тарыфны план ${ visionary } больш недаступны для новых падпісчыкаў і зараз ён з'яўляецца спецыяльным тарыфным планам для карыстальнікаў ${ BRAND_NAME } і прадугледжвае для іх спецыяльныя функцыі і перавагі."
       ],
       "Pay once, secure your passwords and identity forever.": [
-        "Заплаціце адзін раз, засцеражыце свае паролі і ідэнтычнасць назаўжды."
+        "Заплаціце адзін раз і абараніце свае паролі і ідэнтычнасць назаўсёды."
       ],
       "Popular": [
         "Папулярны"
       ],
       "Protect sensitive business information and collaborate securely.": [
-        "Абарона адчувальных звестак бізнесу і бяспечнае супрацоўніцтва."
+        "Абарона адчувальнай інфармацыі бізнесу і бяспечнае супрацоўніцтва."
       ],
       "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
         "Абараніце сваю сям'ю з прэміяльнымі функцыямі ${ plusTitle } для 6 карыстальнікаў."
@@ -15095,7 +15149,7 @@
         "Меткі - гэта простыя тэгі, якія можна дадаваць да паведамленняў. Яны дазваляюць прасцей знаходзіць неабходныя лісты або ўжываць фільтры"
       ],
       "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
-        "Пажыццёвы доступ да прэміяльных функцый ${ PASS_APP_NAME } + SimpleLogin."
+        "Пажыццёвы доступ да ${ PASS_APP_NAME } + прэміяльныя функцыі SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Як і папка, сховішча з'яўляецца зручным спосаб арганізацыі вашых элементаў"
@@ -16766,7 +16820,7 @@
         "Гэты нумар будзе паказаны ва ўсіх будучых рахунках"
       ],
       "This payment method will become your new default for all future renewals.": [
-        "Гэты спосаб аплаты стане новым прадвызначаным для ўсіх будучых падаўжэнняў."
+        "Гэты спосаб аплаты стане новым прадвызначаным спосабам для ўсіх будучых падаўжэнняў."
       ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
@@ -18451,7 +18505,7 @@
         "${ passwordReset } цяпер даступна."
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "Калі вы выйдзеце з сістэмы да скідання пароля, вы можаце страціць доступ да вашага ўліковага запісу."
+        "Вы можаце страціць доступ да вашага ўліковага запісу, калі выйдзеце з сістэмы да скідання пароля."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
         "Вы можаце страціць доступ да вашага ўліковага запісу, калі выйдзіце з сістэмы без скідання пароля."
@@ -18693,8 +18747,8 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Усе базавыя сэрвісы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "І атрымайце ${ referralReward } у крэдытах, калі падпішацеся."
+      "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
+        "І атрымайце ${ referralInfo.uiData.refereeRewardAmount } у крэдытах, калі падпішацеся."
       ],
       "Billing Cycle": [
         "Перыяд аплаты"
@@ -18759,11 +18813,11 @@
       "Free": [
         "Бясплатна"
       ],
-      "Free for 14 days": [
-        "Бясплатна на працягу 14 дзён"
+      "Free for ${ TRIAL_DURATION_DAYS } days": [
+        "Бясплатна на працягу ${ TRIAL_DURATION_DAYS } дзён"
       ],
-      "Get ${ referralReward } in credits": [
-        "Атрымайце ${ referralReward } у крэдытах"
+      "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Атрымайце ${ referralInfo.uiData.refereeRewardAmount } у крэдытах"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Атрымайце бяспечны адрас ${ MAIL_APP_NAME } або ${ internalButton }"
@@ -18846,8 +18900,8 @@
       "Select ${ title }": [
         "Выберыце ${ title }"
       ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "Выберыце сэрвіс і атрымлівайце асалоду ад прэміяльнай версіі на працягу 14 дзён бясплатна. Крэдытная картка не патрабуецца."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
+        "Выберыце сэрвіс і атрымлівайце асалоду ад прэміяльнай версіі на працягу ${ TRIAL_DURATION_DAYS } дзён бясплатна. Крэдытная картка не патрабуецца."
       ],
       "Selected": [
         "Выбрана"
@@ -18893,6 +18947,9 @@
       ],
       "Total": [
         "Агулам"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
+        "Паспрабуйце ${ BRAND_NAME } бясплатна на працягу ${ TRIAL_DURATION_DAYS } дзён"
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "Паспрабуйце ${ BRAND_NAME } на 14 дзён бясплатна"
@@ -21610,8 +21667,8 @@
       "Gift code": [
         "Падарункавы код"
       ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "Атрымайце ${ referralReward } і 2 тыдні бясплатна. Атрымайце ${ referralReward } крэдытаў."
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Атрымайце ${ refereeRewardAmount } і 2 тыдні бясплатна. Атрымайце ${ referrerRewardAmount } крэдытаў."
       ],
       "Group": [
         "Група"
@@ -21674,7 +21731,7 @@
         "Не ўдалося імпартаваць"
       ],
       "Import groups": [
-        "Імпартаванне груп"
+        "Імпарт груп"
       ],
       "Import key": [
         "Імпартаваць ключ"
@@ -21846,6 +21903,9 @@
       ],
       "Passwords made easy": [
         "Без намаганняў стварайце паролі"
+      ],
+      "Pause list": [
+        "Спіс прыпыненых"
       ],
       "Pay invoice": [
         "Аплаціць рахунак"

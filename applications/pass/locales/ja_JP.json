@@ -1805,6 +1805,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
+      ],
       "Moving items": [
         "アイテムの移動"
       ],
@@ -4257,6 +4260,9 @@
       "MX record": [
         "MX レコード"
       ],
+      "Next": [
+        "次へ"
+      ],
       "No excluded items": [
         "除外項目なし"
       ],
@@ -4277,6 +4283,9 @@
       ],
       "No shared secure links": [
         "共有セキュアリンクはありません"
+      ],
+      "Open pagination": [
+        "ページネーションを開く"
       ],
       "Our welcome gift to you": [
         "あなたへのウェルカムギフト"
@@ -4307,6 +4316,9 @@
       ],
       "Please note that once deleted, the alias can't be restored.": [
         "削除したエイリアスは復元できませんので、ご注意ください。"
+      ],
+      "Previous": [
+        "前へ"
       ],
       "Random Prefix Generation": [
         "ランダムプレフィックス生成"

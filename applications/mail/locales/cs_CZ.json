@@ -1456,7 +1456,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -5192,6 +5195,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Aliasy nelze použít, pokud je v ${ PASS_APP_NAME } povoleno dodatečné heslo."
       ],
+      "An error occured with the categories": [
+        "Došlo k chybě v kategoriích"
+      ],
       "App currently unavailable": [
         "Aplikace je momentálně nedostupná"
       ],
@@ -5912,11 +5918,17 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Domain": [
+        "Doména"
+      ],
       "Drawer": [
         "Boční panel"
       ],
       "Hardware not compatible": [
         "Hardware není kompatibilní"
+      ],
+      "Password ends with": [
+        "Heslo končí na"
       ],
       "Report an issue": [
         "Nahlásit problém"
@@ -5935,6 +5947,9 @@
       ],
       "Tell us more": [
         "Řekněte nám více"
+      ],
+      "Username": [
+        "Uživatelské jméno"
       ]
     },
     "Hint": {
@@ -7458,10 +7473,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -9518,6 +9530,9 @@
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Pomozte nám vylepšit kategorie tím, že vyberete tu, která nejlépe odpovídá tomuto e-mailu. Děkujeme za vaši pomoc!"
       ],
       "Help us improve the upcoming mail categorization": [
         "Pomozte nám vylepšit nastávající třídění pošty."
@@ -15292,6 +15307,9 @@
       "Newsletters view": [
         "Zobrazení e-mailových zpravodajů"
       ],
+      "Next": [
+        "Další"
+      ],
       "Next conversation": [
         "Další konverzace"
       ],
@@ -15337,6 +15355,9 @@
       "Open actions dropdown": [
         "Otevřít seznam akcí"
       ],
+      "Open pagination": [
+        "Otevřít stránkování"
+      ],
       "Org setup": [
         "Nastavení organizace"
       ],
@@ -15366,6 +15387,9 @@
       ],
       "Preview": [
         "Náhled"
+      ],
+      "Previous": [
+        "Předchozí"
       ],
       "Previous conversation": [
         "Předchozí konverzace"
@@ -15690,6 +15714,9 @@
       ],
       "Your subscriptions in one place": [
         "Vaše e-mailové odběry na jednom místě"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Kategorie se blíží!"
       ]
     },
     "Today icon tooltip in mini calendar": {

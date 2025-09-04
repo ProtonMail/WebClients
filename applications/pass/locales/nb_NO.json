@@ -1833,6 +1833,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -4319,6 +4323,9 @@
       "MX record": [
         "MX-post"
       ],
+      "Next": [
+        "Neste"
+      ],
       "No excluded items": [
         "Ingen ekskluderte elementer"
       ],
@@ -4339,6 +4346,9 @@
       ],
       "No shared secure links": [
         "Ingen delte sikre koblinger"
+      ],
+      "Open pagination": [
+        "Åpne sidenummerering"
       ],
       "Organize vaults": [
         "Organiser hvelv"
@@ -4373,6 +4383,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet.",
         "Vær oppmerksom på at aliasene ikke kan gjenopprettes når de er slettet."
+      ],
+      "Previous": [
+        "Forrige"
       ],
       "Random Prefix Generation": [
         "Generering av tilfeldig prefiks"

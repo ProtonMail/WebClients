@@ -1833,6 +1833,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+      ],
       "Moving items": [
         "Items verplaatsen"
       ],
@@ -4319,6 +4323,9 @@
       "MX record": [
         "MX-record"
       ],
+      "Next": [
+        "Volgende"
+      ],
       "No excluded items": [
         "Geen uitgesloten onderdelen"
       ],
@@ -4339,6 +4346,9 @@
       ],
       "No shared secure links": [
         "Geen gedeelde beveiligde links"
+      ],
+      "Open pagination": [
+        "Paginering openen"
       ],
       "Organize vaults": [
         "Kluizen organiseren"
@@ -4373,6 +4383,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Houd er rekening mee dat de alias eenmaal verwijderd, niet kan worden hersteld.",
         "Houd er rekening mee dat aliassen eenmaal verwijderd, niet kunnen worden hersteld."
+      ],
+      "Previous": [
+        "Vorige"
       ],
       "Random Prefix Generation": [
         "Willekeurige Voorvoegsel Generatie"

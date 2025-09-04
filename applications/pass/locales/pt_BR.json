@@ -1834,7 +1834,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outra pasta apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -4322,6 +4323,9 @@
       "MX record": [
         "Registro MX"
       ],
+      "Next": [
+        "Próximo"
+      ],
       "No excluded items": [
         "Sem itens excluídos"
       ],
@@ -4342,6 +4346,9 @@
       ],
       "No shared secure links": [
         "Nenhum link seguro compartilhado"
+      ],
+      "Open pagination": [
+        "Abrir paginação"
       ],
       "Organize vaults": [
         "Organizar cofres"
@@ -4376,6 +4383,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Uma vez excluído, o alias não pode ser restaurado.",
         "Uma vez excluídos, os aliases não podem ser restaurados."
+      ],
+      "Previous": [
+        "Anterior"
       ],
       "Random Prefix Generation": [
         "Geração de prefixos aleatórios"

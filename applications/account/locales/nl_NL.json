@@ -2050,9 +2050,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ cycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
       ],
@@ -2064,9 +2061,6 @@
       ],
       "on ${ formattedDate }": [
         "op ${ formattedDate }"
-      ],
-      "Try it free for 14 days": [
-        "Probeer het 14 dagen gratis uit"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wanneer u opzegt, wordt uw gratis proefabonnement niet omgezet in een betaald abonnement, maar kunt u nog steeds van de voordelen van het abonnement genieten tot het einde van de proefperiode. Daarna wordt u gedowngraded naar het ${ BRAND_NAME } gratis abonnement."
@@ -4221,6 +4215,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } is uw standaard e-mailapplicatie."
       ],
+      "A checked box means the feature is disabled.": [
+        "Een selectievakje betekent dat de functie is uitgeschakeld."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Voeg mappen en bestanden toe aan ${ DRIVE_APP_NAME } en nodig teamleden uit om ze te bekijken of te bewerken."
       ],
@@ -4368,9 +4365,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "U kunt afspraken importeren in iCal formaat (. ics-bestand). Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en mag maximaal ${ MAX_IMPORT_EVENTS_STRING } afspraken bevatten. Als uw bestand groter is, splitst u het op in kleinere bestanden."
-      ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "U ontvangt ${ referralReward } aan ${ BRAND_NAME } tegoed wanneer de persoon die u uitnodigt zich inschrijft voor een ${ BRAND_NAME } abonnement, en zij ontvangen ook ${ referralReward } aan tegoed om van start te gaan."
       ]
     },
     "description": {
@@ -5726,6 +5720,9 @@
       ],
       "Invalid Sieve code": [
         "Ongeldige Sieve-code"
+      ],
+      "Invalid URL": [
+        "Ongeldige URL"
       ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
@@ -9072,9 +9069,6 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Krijg toegang door een ${ BRAND_NAME }-account te maken en de uitnodiging te accepteren."
       ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "Ontvang en geef **${ referralReward } tegoed** voor elke vriend die zich abonneert."
-      ],
       "Get it on Google Play": [
         "Download op Google Play"
       ],
@@ -11946,8 +11940,20 @@
       "Auto-unsubscribe": [
         "Auto-afmelden"
       ],
+      "Autofill": [
+        "Automatisch aanvullen"
+      ],
+      "Autofill 2FA": [
+        "Automatisch invullen 2FA"
+      ],
       "Automatically save contacts": [
         "Contacten automatisch opslaan"
+      ],
+      "Autosave": [
+        "Automatisch opslaan"
+      ],
+      "Autosuggest": [
+        "Automatische suggestie"
       ],
       "Awarded": [
         "Toegekend"
@@ -12191,6 +12197,9 @@
       ],
       "Domain name": [
         "Domeinnaam"
+      ],
+      "Domains": [
+        "Domeinen"
       ],
       "Don't ask again": [
         "Niet opnieuw vragen"
@@ -12569,6 +12578,9 @@
       ],
       "Other amount": [
         "Ander bedrag"
+      ],
+      "Passkeys": [
+        "Passkeys"
       ],
       "Password": [
         "Wachtwoord"
@@ -13657,9 +13669,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Log in in uw ${ BRAND_NAME }-account om toegang te krijgen tot al uw geëncrypteerde ${ BRAND_NAME } diensten zoals ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer. Geen account? Maak er GRATIS een."
-      ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "Neem de controle over uw gegevens met end-to-end versleuteling. Geen bankkaart vereist."
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "U kan ${ BRAND_NAME } gratis proberen met deze link."
@@ -18278,9 +18287,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle basisdiensten van ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "En ontvang ${ referralReward } aan tegoed, als u zich abonneert."
-      ],
       "Billing Cycle": [
         "Facturatiefrequentie"
       ],
@@ -18343,12 +18349,6 @@
       ],
       "Free": [
         "Free"
-      ],
-      "Free for 14 days": [
-        "14 dagen gratis"
-      ],
-      "Get ${ referralReward } in credits": [
-        "Krijg ${ referralReward } in tegoed"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Krijg een veilig ${ MAIL_APP_NAME }-adres, of ${ internalButton }"
@@ -18428,9 +18428,6 @@
       ],
       "Select ${ title }": [
         "Selecteer ${ title }"
-      ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "Selecteer een dienst en geniet 14 dagen gratis van de premiumversie. Geen kredietkaart vereist."
       ],
       "Selected": [
         "Geselecteerd"
@@ -21088,9 +21085,6 @@
       ],
       "Gift code": [
         "Geschenkcode"
-      ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "Geef ${ referralReward } en 2 weken gratis. Ontvang ${ referralReward } tegoed."
       ],
       "Group": [
         "Groep"

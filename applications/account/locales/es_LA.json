@@ -1408,6 +1408,9 @@
       "Spam": [
         "Spam"
       ],
+      "Start free trial": [
+        "Iniciar la prueba gratuita"
+      ],
       "Start import": [
         "Iniciar la importación"
       ],
@@ -2053,9 +2056,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente cada ${ cycle } meses el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente cada mes el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
       ],
@@ -2067,9 +2067,6 @@
       ],
       "on ${ formattedDate }": [
         "el ${ formattedDate }"
-      ],
-      "Try it free for 14 days": [
-        "Pruébelo gratis durante 14 días."
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Cuando cancele, su prueba gratuita no se convertirá en una suscripción de pago, pero aún podrá disfrutar de los beneficios del plan hasta el final del período de prueba. Después de eso, será degradado al plan ${ BRAND_NAME } Free."
@@ -4224,6 +4221,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } es su aplicación de correo por defecto."
       ],
+      "A checked box means the feature is disabled.": [
+        "Una casilla marcada significa que la función está desactivada."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Agregue carpetas y archivos a ${ DRIVE_APP_NAME } e invite a los miembros del equipo a ver o editar."
       ],
@@ -4366,14 +4366,17 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Puede seguir invitando amigos, pero no podrá ganar más créditos"
       ],
+      "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Puede personalizar la lista de dominios donde ciertas funciones automáticas en la extensión del navegador ${ PASS_APP_NAME } (completado automático, sugerencia automática, guardado automático) no deberían de ejecutarse."
+      ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
         "Puede aplicar las reglas de contraseña que usarán los miembros de la organización cuando generen una contraseña en ${ PASS_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puede importar eventos en formato iCal (archivos ICS). El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos.\nSi el archivo es más grande, debe dividirlo en archivos más pequeños."
       ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "Recibirá ${ referralReward } en crédito de ${ BRAND_NAME } cuando la persona que invite se registre para un plan de ${ BRAND_NAME } y también recibirán ${ referralReward } en créditos para empezar."
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Recibirá ${ referralInfo.referrerRewardAmount } en crédito de ${ BRAND_NAME } cuando la persona que invite se registre para un plan de ${ BRAND_NAME } y también recibirán ${ referralInfo.refereeRewardAmount } en créditos para empezar."
       ]
     },
     "description": {
@@ -5264,6 +5267,18 @@
       "${ BRAND_NAME } Account email": [
         "Correo de la cuenta de ${ BRAND_NAME }"
       ],
+      "${ days } day left": [
+        "${ days } día restante",
+        "${ days } días restantes"
+      ],
+      "${ hours } hour left": [
+        "${ hours } hora restante",
+        "${ hours } horas restantes"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes } minuto restante",
+        "${ minutes } minutos restantes"
+      ],
       "${ n } day": [
         "${ n } día",
         "${ n } días"
@@ -5372,6 +5387,9 @@
       ],
       "Less than a day": [
         "Menos de un día"
+      ],
+      "Less than a minute left": [
+        "Menos de un minuto restante"
       ],
       "None": [
         "Ninguna"
@@ -5741,6 +5759,9 @@
       ],
       "Invalid Sieve code": [
         "Código Sieve inválido"
+      ],
+      "Invalid URL": [
+        "URL inválida"
       ],
       "Invalid verification code": [
         "Código de verificación inválido"
@@ -7327,6 +7348,9 @@
       "Device": [
         "Dispositivo"
       ],
+      "Domain": [
+        "Dominio"
+      ],
       "Enter your email address": [
         "Ingrese su dirección de correo electrónico"
       ],
@@ -7359,6 +7383,9 @@
       ],
       "Organization key fingerprint": [
         "Huella digital de la clave de la organización"
+      ],
+      "Password ends with": [
+        "La contraseña termina con"
       ],
       "Payment details": [
         "Detalles del pago"
@@ -7401,6 +7428,9 @@
       ],
       "User": [
         "Usuario"
+      ],
+      "Username": [
+        "Nombre de usuario"
       ]
     },
     "Header for addresses table": {
@@ -8098,6 +8128,12 @@
       ],
       "${ storage } storage": [
         "${ storage } de almacenamiento"
+      ],
+      "${ url } added.": [
+        "${ url } añadido."
+      ],
+      "${ url } deleted.": [
+        "${ url } eliminado."
       ],
       "${ userFound } user found": [
         "${ userFound } usuario encontrado",
@@ -9090,11 +9126,11 @@
       "Get ${ upsellPlanName }": [
         "Obtener ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Obtenga **${ referrerRewardAmount } créditos** por cada persona que se suscriba."
+      ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Obtenga acceso al crear una cuenta de ${ BRAND_NAME } y aceptar la invitación."
-      ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "Obtenga y regale **${ referralReward } créditos** por cada persona que se suscriba."
       ],
       "Get it on Google Play": [
         "Obténgala en Google Play"
@@ -10627,6 +10663,9 @@
       "URL link": [
         "Enlace URL"
       ],
+      "URL settings updated.": [
+        "Ajustes de la URL actualizados"
+      ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Use un gestor de contraseñas para generar y almacenar de manera segura sus contraseñas, asegurando contraseñas fuertes e inicios de sesión más sencillos."
       ],
@@ -11235,6 +11274,9 @@
       "You’re all set": [
         "¡Ya está todo listo!"
       ],
+      "Zero charge today": [
+        "Hoy sin cargo alguno"
+      ],
       "Zoom meeting": [
         "reunión de Zoom"
       ]
@@ -11826,6 +11868,9 @@
       "Account storage": [
         "Almacenamiento de la cuenta"
       ],
+      "Action": [
+        "Acción"
+      ],
       "Actions": [
         "Acciones"
       ],
@@ -11967,8 +12012,20 @@
       "Auto-unsubscribe": [
         "Cancelar la suscripción automáticamente"
       ],
+      "Autofill": [
+        "Completado automático"
+      ],
+      "Autofill 2FA": [
+        "Autocompletar 2FA"
+      ],
       "Automatically save contacts": [
         "Guardar contactos automáticamente"
+      ],
+      "Autosave": [
+        "Guardar automáticamente"
+      ],
+      "Autosuggest": [
+        "Sugerencias automáticas"
       ],
       "Awarded": [
         "Otorgado"
@@ -12212,6 +12269,9 @@
       ],
       "Domain name": [
         "Nombre de dominio"
+      ],
+      "Domains": [
+        "Dominios"
       ],
       "Don't ask again": [
         "No volver a preguntar"
@@ -12590,6 +12650,9 @@
       ],
       "Other amount": [
         "Otra cantidad"
+      ],
+      "Passkeys": [
+        "Claves de acceso"
       ],
       "Password": [
         "Contraseña"
@@ -13679,8 +13742,8 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Inicie sesión en la cuenta de ${ BRAND_NAME } para acceder a todos los servicios cifrados de ${ BRAND_NAME } como ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más. ¿No tiene una cuenta? Cree una GRATIS."
       ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "Tome el control de sus datos con cifrado de extremo a extremo. No se requiere tarjeta bancaria."
+      "Take control of your data with end-to-end encryption": [
+        "Tome el control de sus datos con cifrado de extremo a extremo"
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "Pruebe ${ BRAND_NAME } gratis con este enlace"
@@ -18317,8 +18380,8 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos los servicios básicos de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "Y obtenga ${ referralReward } en créditos, si se suscribe."
+      "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
+        "Y obtenga ${ referralInfo.uiData.refereeRewardAmount } en créditos, si se suscribe."
       ],
       "Billing Cycle": [
         "Ciclo de facturación"
@@ -18383,11 +18446,11 @@
       "Free": [
         "Free"
       ],
-      "Free for 14 days": [
-        "Gratis por 14 días"
+      "Free for ${ TRIAL_DURATION_DAYS } days": [
+        "Gratis durante ${ TRIAL_DURATION_DAYS } días"
       ],
-      "Get ${ referralReward } in credits": [
-        "Obtenga ${ referralReward } en créditos"
+      "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Obtenga ${ referralInfo.uiData.refereeRewardAmount } en créditos"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Obtenga una dirección segura de ${ MAIL_APP_NAME } o ${ internalButton }"
@@ -18468,8 +18531,8 @@
       "Select ${ title }": [
         "Seleccionar ${ title }"
       ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "Seleccione un servicio y disfrute de la versión premium gratis por 14 días. No se requiere tarjeta de crédito."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
+        "Seleccione un servicio y disfrute de la versión premium gratis por ${ TRIAL_DURATION_DAYS } días. No se requiere tarjeta de crédito."
       ],
       "Selected": [
         "Seleccionado"
@@ -18515,6 +18578,9 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
+        "Prueba ${ BRAND_NAME } gratis durante ${ TRIAL_DURATION_DAYS } días"
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "Pruebe ${ BRAND_NAME } gratis durante 14 días"
@@ -21128,8 +21194,8 @@
       "Gift code": [
         "Código de regalo"
       ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "Regale ${ referralReward } y 2 semanas gratis. Obtenga ${ referralReward } créditos."
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Regale ${ refereeRewardAmount } y 2 semanas gratis. Obtenga ${ referrerRewardAmount } créditos."
       ],
       "Group": [
         "Grupo"
@@ -21362,6 +21428,9 @@
       ],
       "Passwords made easy": [
         "Contraseñas fáciles de crear"
+      ],
+      "Pause list": [
+        "Lista de pausa"
       ],
       "Pay invoice": [
         "Pagar factura"

@@ -4146,6 +4146,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "デフォルトのメールアプリは${ MAIL_APP_NAME }です。"
       ],
+      "A checked box means the feature is disabled.": [
+        "チェックボックスは、機能が無効になっていることを意味します。"
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "${ DRIVE_APP_NAME } にフォルダやファイルを追加し、チームメンバーを招待して表示または編集を許可します。"
       ],
@@ -4292,9 +4295,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal形式(ICSファイル)でイベントをインポートできます。ファイルの最大サイズは${ MAX_IMPORT_FILE_SIZE_STRING }で、最大${ MAX_IMPORT_EVENTS_STRING }件のイベントを含むことができます。ファイルがそれより大きい場合は、小さいファイルに分割してください。"
-      ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "招待した人が${ BRAND_NAME }のプランにサインアップすると、あなたは${ BRAND_NAME }のクレジットで${ referralReward }を受け取り、その方も開始時に${ referralReward }のクレジットを受け取ることができます。"
       ]
     },
     "description": {
@@ -5183,6 +5183,15 @@
       "${ BRAND_NAME } Account email": [
         "${ BRAND_NAME } アカウントメール"
       ],
+      "${ days } day left": [
+        "残り ${ days } 日"
+      ],
+      "${ hours } hour left": [
+        "残り ${ hours } 時間"
+      ],
+      "${ minutes } minute left": [
+        "残り ${ minutes } 分"
+      ],
       "${ n } day": [
         "${ n } 日"
       ],
@@ -5290,6 +5299,9 @@
       ],
       "Less than a day": [
         "１日未満"
+      ],
+      "Less than a minute left": [
+        "残り一分未満です"
       ],
       "None": [
         "なし"
@@ -5654,6 +5666,9 @@
       ],
       "Invalid Sieve code": [
         "無効な Sieve コード"
+      ],
+      "Invalid URL": [
+        "無効なURL"
       ],
       "Invalid verification code": [
         "無効な検証コード"
@@ -8937,9 +8952,6 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "${ BRAND_NAME } アカウントを作成し、招待を承諾することでアクセスできます。"
       ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "友達が登録するたびに、**${ referralReward } クレジット**を獲得できます。"
-      ],
       "Get it on Google Play": [
         "Google Playで入手する"
       ],
@@ -11777,8 +11789,20 @@
       "Auto-unsubscribe": [
         "自動登録解除"
       ],
+      "Autofill": [
+        "自動入力"
+      ],
+      "Autofill 2FA": [
+        "2要素認証自動入力"
+      ],
       "Automatically save contacts": [
         "連絡先を自動的に保存"
+      ],
+      "Autosave": [
+        "自動保存"
+      ],
+      "Autosuggest": [
+        "自動提案"
       ],
       "Awarded": [
         "進呈"
@@ -12022,6 +12046,9 @@
       ],
       "Domain name": [
         "ドメイン名"
+      ],
+      "Domains": [
+        "ドメイン"
       ],
       "Don't ask again": [
         "今後表示しない"
@@ -12400,6 +12427,9 @@
       ],
       "Other amount": [
         "その他の金額"
+      ],
+      "Passkeys": [
+        "パスキー"
       ],
       "Password": [
         "パスワード"
@@ -13480,9 +13510,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "${ BRAND_NAME } アカウントにログインすると、${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } など、暗号化された ${ BRAND_NAME } サービスのすべてにアクセスできます。 アカウントをお持ちでない場合は、 無料で作成してください。"
-      ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "エンドツーエンド暗号化でお客様のデータを管理しましょう。カードは不要です。"
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "このリンクから ${ BRAND_NAME } を無料でお試しください"
@@ -18039,9 +18066,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "すべての基本的な${ BRAND_NAME }サービス(${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "ご登録いただくと、${ referralReward }分のクレジットを獲得できます。"
-      ],
       "Billing Cycle": [
         "支払間隔"
       ],
@@ -18104,12 +18128,6 @@
       ],
       "Free": [
         "無料"
-      ],
-      "Free for 14 days": [
-        "14日間無料"
-      ],
-      "Get ${ referralReward } in credits": [
-        "${ referralReward }分のクレジットを獲得"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "安全な${ MAIL_APP_NAME }メールアドレスを入手するか${ internalButton }"
@@ -18188,9 +18206,6 @@
       ],
       "Select ${ title }": [
         "${ title } を選択"
-      ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "サービスを選んでプレミアムバージョンを14日間無料でお楽しみください。クレジットカードは不要です。"
       ],
       "Selected": [
         "選択済"
@@ -20796,9 +20811,6 @@
       ],
       "Gift code": [
         "ギフトコード"
-      ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "${ referralReward }を与え、2週間の無料期間を提供します。${ referralReward }クレジットを取得してください。"
       ],
       "Group": [
         "グループ"

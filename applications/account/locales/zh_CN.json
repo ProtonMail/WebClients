@@ -4065,6 +4065,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } 是您的默认邮件应用。"
       ],
+      "A checked box means the feature is disabled.": [
+        "选中复选框表示禁用该功能。"
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "在 ${ DRIVE_APP_NAME } 中添加文件夹和文件，并邀请团队成员查看或编辑。"
       ],
@@ -4212,8 +4215,8 @@
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
       ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "当您邀请他人注册 ${ BRAND_NAME } 时，您将获得 ${ referralReward } 的 ${ BRAND_NAME } 余额奖励，并且被邀请人也将获得 ${ referralReward } 余额奖励以供使用。"
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "当您邀请他人注册${ BRAND_NAME }时，您将获得${ referralInfo.referrerRewardAmount }的${ BRAND_NAME }余额奖励，并且被邀请人也将获得${ referralInfo.refereeRewardAmount }余额奖励以供使用。"
       ]
     },
     "description": {
@@ -5375,6 +5378,9 @@
       ],
       "Invalid Sieve code": [
         "Sieve 代码无效"
+      ],
+      "Invalid URL": [
+        "链接无效"
       ],
       "Invalid verification code": [
         "验证码无效"
@@ -6916,6 +6922,9 @@
       "Device": [
         "设备"
       ],
+      "Domain": [
+        "域名"
+      ],
       "Enter your email address": [
         "输入邮箱地址"
       ],
@@ -6948,6 +6957,9 @@
       ],
       "Organization key fingerprint": [
         "机构密钥指纹"
+      ],
+      "Password ends with": [
+        "密码结尾是"
       ],
       "Payment details": [
         "付款详情"
@@ -6984,6 +6996,9 @@
       ],
       "User": [
         "用户"
+      ],
+      "Username": [
+        "用户名"
       ]
     },
     "Header for addresses table": {
@@ -8569,11 +8584,11 @@
       "Get ${ upsellPlanName }": [
         "开通 ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "每当一位朋友订阅，您将获得**${ referrerRewardAmount }余额奖励**。"
+      ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "创建 ${ BRAND_NAME } 账户并接受邀请即可查看。"
-      ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "获得并赠送 **${ referralReward } 余额奖励** 给每位订阅的朋友"
       ],
       "Get it on Google Play": [
         "前往 Google Play 下载"
@@ -11319,8 +11334,20 @@
       "Auto-unsubscribe": [
         "自动退订邮件"
       ],
+      "Autofill": [
+        "自动填充"
+      ],
+      "Autofill 2FA": [
+        "自动填充 2FA"
+      ],
       "Automatically save contacts": [
         "自动保存联系人"
+      ],
+      "Autosave": [
+        "自动保存"
+      ],
+      "Autosuggest": [
+        "自动提示"
       ],
       "Awarded": [
         "已奖励"
@@ -11560,6 +11587,9 @@
         "域名"
       ],
       "Domain name": [
+        "域名"
+      ],
+      "Domains": [
         "域名"
       ],
       "Don't ask again": [
@@ -11939,6 +11969,9 @@
       ],
       "Other amount": [
         "其他金额"
+      ],
+      "Passkeys": [
+        "通行密钥"
       ],
       "Password": [
         "密码"
@@ -13001,9 +13034,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "登录到您的 ${ BRAND_NAME } 帐户以访问所有加密的 ${ BRAND_NAME } 服务，例如 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等等。 没有帐户？免费创建一个帐户。"
-      ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "通过端到端加密技术，全面掌控您的数据。无需银行卡。"
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "使用此链接免费试用 ${ BRAND_NAME }"
@@ -17296,8 +17326,8 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "所有基本 ${ BRAND_NAME } 服务 (${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "若您选择订阅，将获得 ${ referralReward } 余额奖励。"
+      "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
+        "若您选择订阅，将获得 ${ referralInfo.uiData.refereeRewardAmount } 余额奖励。"
       ],
       "Billing Cycle": [
         "计费周期"
@@ -17362,11 +17392,8 @@
       "Free": [
         "Free"
       ],
-      "Free for 14 days": [
-        "免费试用 14 天"
-      ],
-      "Get ${ referralReward } in credits": [
-        "获取 ${ referralReward } 余额奖励"
+      "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "获得${ referralInfo.uiData.refereeRewardAmount }余额奖励。"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "获取一个安全的 ${ MAIL_APP_NAME } 邮箱地址，或点击 ${ internalButton }"
@@ -17445,9 +17472,6 @@
       ],
       "Select ${ title }": [
         "选择 ${ title }"
-      ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "选择一项服务，即可免费享受 14 天高级版体验。无需信用卡。"
       ],
       "Selected": [
         "已选择"
@@ -20027,8 +20051,8 @@
       "Gift code": [
         "礼品码"
       ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "支付 ${ referralReward } 即可享受 2 周免费服务。获得 ${ referralReward } 余额奖励。"
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "给予${ refereeRewardAmount }余额奖励及2周免费服务，获得${ referrerRewardAmount }余额奖励。"
       ],
       "Group": [
         "群组"

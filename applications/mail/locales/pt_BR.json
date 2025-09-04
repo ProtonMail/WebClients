@@ -1448,7 +1448,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1968,9 +1969,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente a cada ${ cycle } meses em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
       ],
@@ -7257,8 +7255,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -9257,6 +9254,9 @@
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Ajude a gente a melhorar as categorias escolhendo a que melhor se encaixa neste e-mail. Obrigado pela sua ajuda!"
       ],
       "Help us improve the upcoming mail categorization": [
         "Ajude-nos a melhorar a futura categorização de e-mails."
@@ -14787,6 +14787,9 @@
       "Newsletters view": [
         "Visualização de boletins informativos"
       ],
+      "Next": [
+        "Próximo"
+      ],
       "Next conversation": [
         "Próxima conversa"
       ],
@@ -14832,6 +14835,9 @@
       "Open actions dropdown": [
         "Abrir menu de ações"
       ],
+      "Open pagination": [
+        "Abrir paginação"
+      ],
       "Org setup": [
         "Configuração da organização"
       ],
@@ -14861,6 +14867,9 @@
       ],
       "Preview": [
         "Pré-visualização"
+      ],
+      "Previous": [
+        "Anterior"
       ],
       "Previous conversation": [
         "Conversa anterior"
@@ -15181,6 +15190,9 @@
       ],
       "Your subscriptions in one place": [
         "Suas assinaturas em um só lugar"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Categorias estão chegando!"
       ]
     },
     "Today icon tooltip in mini calendar": {
