@@ -1,6 +1,7 @@
 import { useCallback, useRef, useState } from 'react';
 
 import type { HandleRegenerateMessage } from 'applications/lumo/src/app/hooks/useLumoActions';
+import type { RetryStrategy } from 'applications/lumo/src/app/types-api';
 import type { Message, SiblingInfo } from 'applications/lumo/src/app/types';
 import clsx from 'clsx';
 import { c } from 'ttag';
@@ -11,7 +12,7 @@ import { Icon, useModalStateObject } from '@proton/components';
 import { useTierErrors } from '../../../../../hooks/useTierErrors';
 import type { SearchItem } from '../../../../../lib/toolCall/types';
 import { useIsGuest } from '../../../../../providers/IsGuestProvider';
-import { sendMessageCopyEvent, sendMessageRegenerateEvent } from '../../../../../util/telemetry';
+import { sendMessageCopyEvent } from '../../../../../util/telemetry';
 import { ReferenceFilesButton } from '../../../../components/Files';
 import LumoButton from '../../../../components/LumoButton';
 import LinkWarningModal from '../../../../components/LumoMarkdown/LinkWarningModal';
@@ -36,7 +37,7 @@ interface AssistantActionToolbarProps {
     message: Message;
     isFinishedGenerating: boolean;
     siblingInfo: SiblingInfo;
-    handleRegenerateMessage: HandleRegenerateMessage;
+    handleRegenerate: (retryStrategy?: RetryStrategy, customInstructions?: string) => void;
     generationFailed: boolean;
     results: SearchItem[] | null;
     onToggleMessageSource: () => void;
@@ -44,13 +45,15 @@ interface AssistantActionToolbarProps {
     onToggleFilesManagement: (message?: Message) => void;
     markdownContainerRef: React.MutableRefObject<HTMLDivElement | null>;
     isWebSearchButtonToggled: boolean;
+    onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
+    retryButtonRef: React.RefObject<HTMLButtonElement>;
 }
 
 const AssistantActionToolbar = ({
     message,
     isFinishedGenerating,
     siblingInfo,
-    handleRegenerateMessage,
+    handleRegenerate,
     generationFailed,
     results,
     onToggleMessageSource,
@@ -58,17 +61,14 @@ const AssistantActionToolbar = ({
     onToggleFilesManagement,
     markdownContainerRef,
     isWebSearchButtonToggled,
+    onRetryPanelToggle,
+    retryButtonRef,
 }: AssistantActionToolbarProps) => {
     const { hasTierErrors } = useTierErrors();
     const isGuest = useIsGuest();
     const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
 
     const isMessageEmpty = !message?.content || message?.content?.trim()?.length === 0;
-
-    const handleRegenerate = () => {
-        sendMessageRegenerateEvent();
-        void handleRegenerateMessage(message, isWebSearchButtonToggled);
-    };
 
     const handleCopy = () => {
         sendMessageCopyEvent();
@@ -109,11 +109,16 @@ const AssistantActionToolbar = ({
                         className="lumo-no-copy"
                     />
                     <LumoButton
+                        buttonRef={retryButtonRef}
                         className="lumo-no-copy"
                         iconName="arrows-rotate"
                         title={c('collider_2025:Action').t`Regenerate`}
                         tooltipPlacement="top"
-                        onClick={handleRegenerate}
+                        onClick={() => {
+                            if (onRetryPanelToggle && retryButtonRef.current) {
+                                onRetryPanelToggle(message.id, true, retryButtonRef.current);
+                            }
+                        }}
                         disabled={!isFinishedGenerating || generationFailed || hasTierErrors}
                     />
                 </div>
@@ -141,6 +146,7 @@ interface AssistantMessageProps {
     onToggleMessageSource: (message: Message) => void;
     onToggleFilesManagement: (message?: Message) => void;
     isWebSearchButtonToggled: boolean;
+    onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
 }
 
 // Add CSS to enforce consistent message width
@@ -167,6 +173,7 @@ const AssistantMessage = ({
     isGenerating,
     isGeneratingWithToolCall,
     isWebSearchButtonToggled,
+    onRetryPanelToggle,
 }: AssistantMessageProps) => {
     const isFinishedGenerating = message?.status !== undefined;
     const generationFailed = message.status === 'failed';
@@ -174,6 +181,7 @@ const AssistantMessage = ({
     const linkWarningModal = useModalStateObject();
     const [currentLink, setCurrentLink] = useState<string>('');
     const markdownContainerRef = useRef<HTMLDivElement>(null);
+    const retryButtonRef = useRef<HTMLButtonElement>(null);
     const messageContent = preprocessContent(message?.content);
 
     const { query, results } = useToolCallInfo(message.toolCall, message.toolResult);
@@ -191,6 +199,10 @@ const AssistantMessage = ({
     const onToggleMessageSource = useCallback(() => {
         handleOpenSources(message);
     }, [handleOpenSources, message]);
+
+    const handleRegenerate = useCallback((retryStrategy: RetryStrategy = 'simple', customInstructions?: string) => {
+        handleRegenerateMessage(message, isWebSearchButtonToggled, retryStrategy, customInstructions);
+    }, [handleRegenerateMessage, message, isWebSearchButtonToggled]);
 
     return (
         <>
@@ -239,7 +251,7 @@ const AssistantMessage = ({
                                     <AssistantActionToolbar
                                         message={message}
                                         isFinishedGenerating={isFinishedGenerating}
-                                        handleRegenerateMessage={handleRegenerateMessage}
+                                        handleRegenerate={handleRegenerate}
                                         siblingInfo={siblingInfo}
                                         generationFailed={generationFailed}
                                         results={results}
@@ -248,6 +260,8 @@ const AssistantMessage = ({
                                         onToggleFilesManagement={(filterMessage) => handleOpenFiles(filterMessage)}
                                         markdownContainerRef={markdownContainerRef}
                                         isWebSearchButtonToggled={isWebSearchButtonToggled}
+                                        onRetryPanelToggle={onRetryPanelToggle}
+                                        retryButtonRef={retryButtonRef}
                                     />
                                 </div>
                             )
