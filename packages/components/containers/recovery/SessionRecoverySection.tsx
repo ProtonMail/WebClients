@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { userThunk } from '@proton/account/user';
+import { userSettingsThunk } from '@proton/account/userSettings';
 import { Button } from '@proton/atoms';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -52,7 +52,7 @@ export const SessionRecoverySection = () => {
     const handleEnableSessionRecoveryToggle = async () => {
         try {
             await api(updateSessionAccountRecovery({ SessionAccountRecovery: 1 }));
-            await dispatch(userThunk({ cache: CacheType.None }));
+            await dispatch(userSettingsThunk({ cache: CacheType.None }));
             metrics.core_session_recovery_settings_update_total.increment({
                 status: 'success',
             });
