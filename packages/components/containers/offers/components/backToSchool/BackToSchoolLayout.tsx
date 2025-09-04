@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import { CYCLE } from '@proton/payments';
 
 import hasOffer from '../../helpers/hasOffer';
 import type { OfferLayoutProps } from '../../interface';
@@ -15,25 +16,31 @@ export function BackToSchoolLayout(props: OfferLayoutProps) {
         return null;
     }
 
-    // TODO example data, use props instead
-    const discountPercent = 60;
-    const promoPricePerMonth = getSimplePriceString(props.currency, 330);
-    const normalPricePerMonth = getSimplePriceString(props.currency, 990);
+    const { currency, offer } = props;
+    const deal = offer.deals[0];
+    const features = deal.features?.() || [];
 
-    const isToYearlyUpsell = props.offer.ID.includes('-to-yearly');
-    const totalSavings = null;
+    const rawPromoPricePerMonth = deal.prices.withCoupon / CYCLE.YEARLY;
 
-    const features = props.offer.deals[0].features?.() || [];
+    const promoPricePerMonth = getSimplePriceString(currency, rawPromoPricePerMonth);
+    const normalPricePerMonth = getSimplePriceString(currency, deal.prices.withoutCouponMonthly);
+
+    const discountPercent = Math.round(100 - (rawPromoPricePerMonth / deal.prices.withoutCouponMonthly) * 100);
+
+    const isToYearlyUpsell = offer.ID.includes('-to-yearly');
+    const totalSavings = getSimplePriceString(
+        currency,
+        deal.prices.withoutCouponMonthly * CYCLE.YEARLY - deal.prices.withCoupon
+    );
 
     return (
         <>
             <div className="backToSchoolModalContent flex-1 flex flex-column">
-                <h1 className="mb-6 text-bold lh100">{props.offer.title?.()}</h1>
+                <h1 className="mb-6 text-bold lh100">{offer.title?.()}</h1>
 
                 <div className="flex items-center mb-4">
                     <div className="flex-1 flex flex-column">
-                        {/* TODO: why does it say "drive plus 200gb" and not just "drive plus"? */}
-                        <span className="text-4xl text-bold">{props.offer.deals[0].dealName}</span>
+                        <span className="text-4xl text-bold">{deal.dealName}</span>
                         <span className="text-lg">{
                             // translator: full sentence is e.g. "Proton VPN Plus for 12 months", "Proton Duo for 12 months"
                             c('q3campaign_2025: Title').t`for 12 months`
