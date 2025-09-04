@@ -15,12 +15,14 @@ import type {
 } from '@proton/andromeda';
 import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import { type GetQuotesArgs, resetQuotesByProvider, useWalletDispatch } from '@proton/wallet/store';
 import {
+    type GetQuotesArgs,
+    resetQuotesByProvider,
     useCountriesByProvider,
     useExchangeRate,
     useFiatCurrenciesByProvider,
     useGetQuotesByProvider,
+    useWalletDispatch,
 } from '@proton/wallet/store';
 
 import { BUY_BITCOIN_DEFAULT_AMOUNT } from '../../../constants/amount';

@@ -3,10 +3,10 @@ import type { Address, RequireSome } from '@proton/shared/lib/interfaces';
 import type {
     AttendeeComment,
     CalendarEvent,
+    PartstatData,
     VcalAttendeeProperty,
     VcalVeventComponent,
 } from '@proton/shared/lib/interfaces/calendar';
-import type { PartstatData } from '@proton/shared/lib/interfaces/calendar';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import type { AugmentedSendPreferences } from '../containers/calendar/interface';

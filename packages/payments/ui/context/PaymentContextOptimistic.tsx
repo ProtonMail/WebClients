@@ -1,6 +1,6 @@
 import { type ReactNode, createContext, useContext, useRef, useState } from 'react';
 
-import useHandler from '@proton/components/hooks/useHandler';
+import { useHandler } from '@proton/components/hooks/useHandler';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { defaultVPNServersCountData, getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import isTruthy from '@proton/utils/isTruthy';

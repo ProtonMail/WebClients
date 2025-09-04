@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';

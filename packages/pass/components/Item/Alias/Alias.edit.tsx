@@ -27,8 +27,7 @@ import { deobfuscateExtraFields, obfuscateExtraFields } from '@proton/pass/lib/i
 import { bindOTPSanitizer, formatDisplayNameWithEmail, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
 import { createEditAliasFormValidator } from '@proton/pass/lib/validation/alias';
 import { selectAliasDetails } from '@proton/pass/store/selectors';
-import type { AliasMailbox, EditAliasFormValues } from '@proton/pass/types';
-import type { MaybeNull } from '@proton/pass/types';
+import type { AliasMailbox, EditAliasFormValues, MaybeNull } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { awaiter } from '@proton/pass/utils/fp/promises';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';

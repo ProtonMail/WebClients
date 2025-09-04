@@ -1,9 +1,9 @@
 import { useCallback, useRef, useState } from 'react';
 
 import type { HandleRegenerateMessage } from 'applications/lumo/src/app/hooks/useLumoActions';
-import type { RetryStrategy } from 'applications/lumo/src/app/types-api';
 import type { Message, SiblingInfo } from 'applications/lumo/src/app/types';
-import clsx from 'clsx';
+import type { RetryStrategy } from 'applications/lumo/src/app/types-api';
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 import TurndownService from 'turndown';
 
@@ -200,9 +200,12 @@ const AssistantMessage = ({
         handleOpenSources(message);
     }, [handleOpenSources, message]);
 
-    const handleRegenerate = useCallback((retryStrategy: RetryStrategy = 'simple', customInstructions?: string) => {
-        handleRegenerateMessage(message, isWebSearchButtonToggled, retryStrategy, customInstructions);
-    }, [handleRegenerateMessage, message, isWebSearchButtonToggled]);
+    const handleRegenerate = useCallback(
+        (retryStrategy: RetryStrategy = 'simple', customInstructions?: string) => {
+            handleRegenerateMessage(message, isWebSearchButtonToggled, retryStrategy, customInstructions);
+        },
+        [handleRegenerateMessage, message, isWebSearchButtonToggled]
+    );
 
     return (
         <>

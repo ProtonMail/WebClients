@@ -2,7 +2,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { type Configuration, ProvidePlugin } from 'webpack';
 
 import { type WebpackEnvArguments, getWebpackOptions } from '@proton/pack/lib/config';
-import getConfig from '@proton/pack/webpack.config';
+import { getConfig } from '@proton/pack/webpack.config';
 import { addDevEntry, getIndexChunks } from '@proton/pack/webpack/entries';
 
 import appConfig from './appConfig';

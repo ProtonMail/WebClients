@@ -2,8 +2,7 @@ import { FREE_PLAN, PLANS, getPlanFromPlanIDs } from '@proton/payments';
 import { getIsLumoApp, getIsPassApp } from '@proton/shared/lib/authentication/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import type { Audience } from '@proton/shared/lib/interfaces';
-import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Audience, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 import type { PublicTheme } from '../containers/PublicThemeProvider';
 import { getAuthenticatorConfiguration } from './authenticator/configuration';

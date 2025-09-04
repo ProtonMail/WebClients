@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
 
-import type { UnknownAction } from '@reduxjs/toolkit';
-import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
+import type { Action, ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
 import type { SessionKey } from 'packages/crypto';
 import type { ThunkAction } from 'redux-thunk';
 

@@ -3,9 +3,8 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
-import { Button } from '@proton/atoms';
-import Icon from '@proton/components/components/icon/Icon';
+import { Button, CircleLoader } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import { ConfirmationPrompt } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
 import { UpsellingContext } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';

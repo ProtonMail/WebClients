@@ -15,16 +15,9 @@ import { getOrganizationSettings } from '@proton/pass/store/actions/creators/org
 import type { HydratedUserState } from '@proton/pass/store/reducers';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { SyncType } from '@proton/pass/store/sagas/client/sync';
-import {
-    selectAllAddresses,
-    selectLatestEventId,
-    selectUser,
-    selectUserPlan,
-    selectUserSettings,
-} from '@proton/pass/store/selectors';
+import { selectAllAddresses, selectLatestEventId, selectUser, selectUserPlan, selectUserSettings } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { MaybeNull, PassPlanResponse, UserEvent } from '@proton/pass/types';
-import type { Api } from '@proton/pass/types';
+import type { Api, MaybeNull, PassPlanResponse, UserEvent } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { notIn } from '@proton/pass/utils/fp/predicates';
 import { logId, logger } from '@proton/pass/utils/logger';
@@ -46,8 +39,7 @@ function* onUserRefreshed(user: User, keyPassword?: string) {
     const localUserKeyIds = (PassCrypto.getContext().userKeys ?? []).map(prop('ID'));
     const activeUserKeys = user.Keys.filter(({ Active }) => Active === 1);
 
-    const keysUpdated =
-        activeUserKeys.length !== localUserKeyIds.length || activeUserKeys.some(({ ID }) => notIn(localUserKeyIds)(ID));
+    const keysUpdated = activeUserKeys.length !== localUserKeyIds.length || activeUserKeys.some(({ ID }) => notIn(localUserKeyIds)(ID));
 
     if (keysUpdated && keyPassword) {
         logger.info(`[ServerEvents::User] Detected user keys update`);

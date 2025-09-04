@@ -4,10 +4,10 @@ import { InlineLinkButton } from '@proton/atoms';
 import {
     CreatePassAliasesForm,
     PassAliasesUpsellModal,
+    useAuthentication,
     useModalStateObject,
     usePassAliasesContext,
 } from '@proton/components';
-import { useAuthentication } from '@proton/components';
 import { encodeFilters } from '@proton/pass/components/Navigation/routing';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';

@@ -80,7 +80,7 @@ export const useToolCallResults = (results: SearchItem[] | null, message: Messag
             setEnhancedResults(withLogos);
         };
 
-        processResults();
+        void processResults();
     }, [message.status, resultsKey, api]); // Use resultsKey instead of results array
 
     return {

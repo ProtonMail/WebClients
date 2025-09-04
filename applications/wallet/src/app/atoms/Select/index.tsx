@@ -9,7 +9,7 @@ import CoreSearchableSelect from '@proton/components/components/selectTwo/Search
 import type { SelectTwoProps } from '@proton/components/components/selectTwo/SelectTwo';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
-import InputField from '@proton/components/components/v2/field/InputField';
+import { InputField } from '@proton/components/components/v2/field/InputField';
 import clsx from '@proton/utils/clsx';
 
 import '../InputFieldStacked/InputFieldStacked.scss';

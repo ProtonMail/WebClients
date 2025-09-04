@@ -1,6 +1,6 @@
 import React from 'react';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';

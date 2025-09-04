@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import type {
+    CustomItemFormValues,
     DeobfuscatedItem,
     ItemCreateIntent,
     ItemCustomType,
@@ -10,7 +11,6 @@ import type {
     MaybeNull,
     ShareId,
 } from '@proton/pass/types';
-import type { CustomItemFormValues } from '@proton/pass/types';
 import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1.static';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';

@@ -160,7 +160,7 @@ const CustomStep = ({
                             });
                             if (validateFlow()) {
                                 cacheRef.current = updatedCache;
-                                handleNextStep();
+                                void handleNextStep();
                             }
                         } catch (error) {
                             handleError(error);
@@ -189,7 +189,7 @@ const CustomStep = ({
                             });
                             if (validateFlow()) {
                                 cacheRef.current = cache;
-                                handleNextStep();
+                                void handleNextStep();
                             }
                         } catch (error) {
                             handleError(error);
@@ -216,7 +216,7 @@ const CustomStep = ({
                             await handleSetupOrg({ api, user, password, keyPassword, orgName });
 
                             if (validateFlow()) {
-                                handleNextStep();
+                                void handleNextStep();
                             }
                         } catch (error) {
                             handleError(error);
@@ -287,7 +287,7 @@ const CustomStep = ({
                             });
 
                             if (validateFlow()) {
-                                handleNextStep(app);
+                                void handleNextStep(app);
                             }
                         } catch (error) {
                             handleError(error);

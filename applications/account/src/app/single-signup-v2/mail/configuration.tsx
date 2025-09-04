@@ -2,8 +2,10 @@ import { c } from 'ttag';
 
 import { AppsLogos, MailLogo } from '@proton/components';
 import { getManageUserPermissionsAndAccessFeature } from '@proton/components/containers/payments/features/b2b';
-import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
-import { getSecurePersonalAndSharedCalendarFeature } from '@proton/components/containers/payments/features/calendar';
+import {
+    getCalendarAppFeature,
+    getSecurePersonalAndSharedCalendarFeature,
+} from '@proton/components/containers/payments/features/calendar';
 import {
     getCloudStorageAndSharingFeature,
     getFreeMailStorageFeature,

@@ -1,5 +1,4 @@
-import type { OrganizationState, PaymentStatusState } from '@proton/account';
-import type { SubscriptionState } from '@proton/account';
+import type { OrganizationState, PaymentStatusState, SubscriptionState } from '@proton/account';
 import type { PaymentStatus, Subscription } from '@proton/payments';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 

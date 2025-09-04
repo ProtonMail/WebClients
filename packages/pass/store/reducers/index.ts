@@ -6,7 +6,7 @@ import request from '@proton/pass/store/request/reducer';
 import type { State } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
 
-import access from './access';
+import { access } from './access';
 import alias from './alias';
 import files from './files';
 import filters from './filters';
@@ -18,7 +18,7 @@ import notification from './notification';
 import organization from './organization';
 import pwHistory from './pw-history';
 import settings from './settings';
-import shares from './shares';
+import { shares } from './shares';
 import user from './user';
 
 export * from './access';

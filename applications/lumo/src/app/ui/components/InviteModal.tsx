@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Button, Tooltip } from '@proton/atoms';
 import { useApi } from '@proton/components';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
-import InputField from '@proton/components/components/v2/field/InputField';
+import { InputField } from '@proton/components/components/v2/field/InputField';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { sendLumoInvitation } from '@proton/shared/lib/api/lumo';
