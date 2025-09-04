@@ -1,11 +1,19 @@
-import { c } from 'ttag';
-
 import { api } from '@proton/pass/lib/api/api';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
-import type { ShareType } from '@proton/pass/types';
-import type { ActiveShareGetResponse, ShareGetResponse, ShareKeyResponse, ShareRole } from '@proton/pass/types';
+import type { SharesState } from '@proton/pass/store/reducers';
+import type {
+    ActiveShareGetResponse,
+    Share,
+    ShareGetResponse,
+    ShareHideUnhideBatchRequest,
+    ShareId,
+    ShareKeyResponse,
+    ShareRole,
+    ShareType,
+} from '@proton/pass/types';
 import type { ShareEditMemberAccessIntent, ShareRemoveMemberAccessIntent } from '@proton/pass/types/data/access.dto';
 import type { ShareMember } from '@proton/pass/types/data/invites';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logId, logger } from '@proton/pass/utils/logger';
 
 /* ⚠️ This endpoint is not paginated yet back-end side. */
@@ -75,18 +83,28 @@ export const editMemberAccess = async ({ shareId, userShareId, shareRoleId }: Sh
         data: { ShareRoleID: shareRoleId, ExpireTime: null },
     });
 
-export const toggleVisibility = async (shareId: string, visible: boolean) => {
-    const encryptedShare = (
+/** Pass full `SharesState` to reuse existing event IDs and avoid
+ * redundant API calls in `parseShareResponse` for each share */
+export const toggleVisibility = async (
+    SharesToHide: ShareId[],
+    SharesToUnhide: ShareId[],
+    shares: SharesState
+): Promise<Share<ShareType.Vault>[]> => {
+    const encryptedShares = (
         await api({
-            url: `pass/v1/share/${shareId}/${visible ? 'unhide' : 'hide'}`,
+            url: `pass/v1/share/hide`,
             method: 'put',
+            data: { SharesToHide, SharesToUnhide } satisfies ShareHideUnhideBatchRequest,
         })
-    ).Share;
+    ).Shares;
 
-    const shareKeys = await getAllShareKeys(shareId);
-    const share = await parseShareResponse<ShareType.Vault>(encryptedShare, { shareKeys });
-
-    if (!share) throw new Error(c('Error').t`Could not open updated vault`);
-
-    return share;
+    return (
+        await Promise.all(
+            encryptedShares.map((share) =>
+                parseShareResponse<ShareType.Vault>(share, {
+                    eventId: shares[share.ShareID].eventId,
+                })
+            )
+        )
+    ).filter(truthy);
 };
