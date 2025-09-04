@@ -710,7 +710,7 @@
         "${ DARK_WEB_MONITORING_NAME } 通过付费计划提供。升级后可立即访问。"
       ],
       "${ total } other login uses the same password": [
-        "其他 ${ total } 个登录使用相同密码"
+        "其他 ${ total } 个登录项目使用相同密码"
       ],
       "A checked box means the feature is disabled.": [
         "选中复选框表示禁用该功能。"
@@ -1655,7 +1655,7 @@
         "转发地址已复制到剪贴板。向该地址发送电子邮件，${ Email } 就会收到。"
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "生成的密码将在 ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 周内存储。"
+        "生成的密码将会保留${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS }周。"
       ],
       "Generating alias...": [
         "正在生成别名..."
