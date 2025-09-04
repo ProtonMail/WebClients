@@ -9084,6 +9084,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/prettier-config-proton@workspace:^, @proton/prettier-config-proton@workspace:packages/prettier-config":
+  version: 0.0.0-use.local
+  resolution: "@proton/prettier-config-proton@workspace:packages/prettier-config"
+  dependencies:
+    eslint: "npm:^9.34.0"
+    prettier: "npm:^3.6.2"
+  languageName: unknown
+  linkType: soft
+
 "@proton/raw-images@workspace:^, @proton/raw-images@workspace:packages/raw-images":
   version: 0.0.0-use.local
   resolution: "@proton/raw-images@workspace:packages/raw-images"
@@ -36885,6 +36894,7 @@ __metadata:
     "@proton/crypto": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/payments": "workspace:^"
+    "@proton/prettier-config-proton": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/srp": "workspace:^"
     "@proton/utils": "workspace:^"
@@ -40166,6 +40176,7 @@ __metadata:
   resolution: "root@workspace:."
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
+    "@proton/prettier-config-proton": "workspace:^"
     "@proton/stylelint-config-proton": "workspace:^"
     "@trivago/prettier-plugin-sort-imports": "npm:^5.2.2"
     "@types/jest-when": "npm:^3.5.5"
