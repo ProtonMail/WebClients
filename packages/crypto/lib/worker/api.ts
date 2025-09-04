@@ -1016,6 +1016,7 @@ export class Api extends KeyManagementApi {
         // we first reformat the key to add & sign the new userIDs, then replace the userIDs of the original key.
         // To improve reformatting performance, we can drop subkeys beforehand, as they are not needed for the UserID
         const updatedSubkeys = updatedKey.subkeys;
+        updatedKey.subkeys = [];
         // NB: the private key params of the returned reformatted keys point to the same ones as `updatedKey`.
         // Hence, they will be cleared once the corresponding ref is cleared by the app -- no need to clear them now.
         const { publicKey: temporaryKeyWithNewUsers } = await reformatKey({
