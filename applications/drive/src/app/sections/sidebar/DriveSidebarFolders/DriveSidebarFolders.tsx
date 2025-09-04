@@ -1,22 +1,33 @@
-import { useEffect } from 'react';
-
-import { useFolderTree } from '../../../store';
+import type { SidebarItem } from '../hooks/useSidebar.store';
+import { useSidebarStore } from '../hooks/useSidebar.store';
+import { useSidebarFolders } from '../hooks/useSidebarFolders';
 import { DriveSidebarFoldersRoot } from './DriveSidebarFoldersRoot';
 import { DriveSidebarSubfolders } from './DriveSidebarSubfolders';
 
-interface DriveSidebarFoldersProps {
+type DriveSidebarFoldersProps = {
     shareId: string;
     linkId: string;
-    setSidebarLevel: (level: number) => void;
     collapsed: boolean;
-}
+    rootFolder: SidebarItem;
+};
 
-export const DriveSidebarFolders = ({ shareId, linkId, setSidebarLevel, collapsed }: DriveSidebarFoldersProps) => {
-    const { deepestOpenedLevel, rootFolder, toggleExpand } = useFolderTree(shareId, { rootLinkId: linkId });
+export const DriveSidebarFolders = ({ rootFolder, shareId, linkId, collapsed }: DriveSidebarFoldersProps) => {
+    const { loadFolderChildren } = useSidebarFolders();
+    const { toggleExpanded, getItem, getChildren } = useSidebarStore((state) => ({
+        toggleExpanded: state.toggleExpanded,
+        getItem: state.getItem,
+        getChildren: state.getChildren,
+    }));
 
-    useEffect(() => {
-        setSidebarLevel(deepestOpenedLevel);
-    }, [deepestOpenedLevel]);
+    const toggleExpand = async (uid: string) => {
+        const item = getItem(uid);
+        const wasExpanded = item?.isExpanded ?? false;
+        toggleExpanded(uid);
+
+        if (!wasExpanded) {
+            await loadFolderChildren(uid);
+        }
+    };
 
     return (
         <>
@@ -28,7 +39,12 @@ export const DriveSidebarFolders = ({ shareId, linkId, setSidebarLevel, collapse
                 collapsed={collapsed}
             />
             {!collapsed && (
-                <DriveSidebarSubfolders shareId={shareId} rootFolder={rootFolder} toggleExpand={toggleExpand} />
+                <DriveSidebarSubfolders
+                    key={rootFolder.uid}
+                    shareId={shareId}
+                    children={getChildren(rootFolder.uid)}
+                    toggleExpand={toggleExpand}
+                />
             )}
         </>
     );
