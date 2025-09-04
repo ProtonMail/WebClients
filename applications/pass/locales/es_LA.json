@@ -1287,6 +1287,17 @@
         "Terabytes"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Dominio"
+      ],
+      "Password ends with": [
+        "La contraseña termina con"
+      ],
+      "Username": [
+        "Nombre de usuario"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "El elemento \"${ payload.itemName }\" fue descartado"
@@ -1832,6 +1843,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -4319,6 +4334,9 @@
       "MX record": [
         "Registro MX"
       ],
+      "Next": [
+        "Siguiente"
+      ],
       "No excluded items": [
         "No hay elementos excluidos"
       ],
@@ -4339,6 +4357,9 @@
       ],
       "No shared secure links": [
         "No hay enlaces seguros compartidos"
+      ],
+      "Open pagination": [
+        "Abrir paginación"
       ],
       "Organize vaults": [
         "Organizar bóvedas"
@@ -4373,6 +4394,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Una vez eliminado, el alias no se puede recuperar.",
         "Una vez eliminados, los alias no se pueden recuperar."
+      ],
+      "Previous": [
+        "Anterior"
       ],
       "Random Prefix Generation": [
         "Generación aleatoria de prefijos"
