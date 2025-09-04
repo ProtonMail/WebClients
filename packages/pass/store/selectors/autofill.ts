@@ -56,6 +56,7 @@ export const selectAutofillLoginCandidates = ({
                       shareIds,
                       sortOn: 'priority',
                       strict,
+                      visible: true,
                   }),
                   createMatchDomainItemsSelector(subdomain ?? '', {
                       isPrivate,
@@ -64,6 +65,7 @@ export const selectAutofillLoginCandidates = ({
                       shareIds,
                       sortOn: 'lastUseTime',
                       strict,
+                      visible: true,
                   }),
               ],
               (domainMatches, subdomainMatches) => deduplicate(subdomainMatches.concat(domainMatches), itemEq)

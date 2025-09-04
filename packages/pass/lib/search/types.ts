@@ -20,6 +20,7 @@ export type SelectItemsByDomainOptions = {
     shareIds?: string[];
     sortOn?: 'priority' | 'lastUseTime';
     strict?: boolean;
+    visible?: boolean;
 };
 
 export type GetLoginCandidatesOptions = { url?: string; shareIds?: string[]; strict?: boolean };
