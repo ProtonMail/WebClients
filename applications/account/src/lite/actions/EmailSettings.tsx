@@ -24,13 +24,12 @@ import {
     updateViewMode,
 } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
-import { STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { DEFAULT_MAILSETTINGS, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import type {
     AUTO_DELETE_SPAM_AND_TRASH_DAYS,
     NEXT_MESSAGE_ON_MOVE,
     SWIPE_ACTION,
 } from '@proton/shared/lib/mail/mailSettings';
-import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { useAccountDispatch } from '../../app/store/hooks';
 import MobileSection from '../components/MobileSection';

@@ -5,18 +5,23 @@ import {
     AddonLimit,
     CURRENCIES,
     type Currency,
+    FREE_PLAN,
     MAX_DOMAIN_PRO_ADDON,
     MAX_IPS_ADDON,
     MAX_MEMBER_ADDON,
     PLANS,
     type Plan,
     fixPlanName,
+    getHas2024OfferCoupon,
     getPlanByName,
+    getPlanMaxIPs,
+    getSupportedAddons,
+    getValidCycle,
+    isDomainAddon,
+    isIpAddon,
+    isMemberAddon,
     planToPlanIDs,
 } from '@proton/payments';
-import { getSupportedAddons, isDomainAddon, isIpAddon, isMemberAddon } from '@proton/payments';
-import { getHas2024OfferCoupon, getPlanMaxIPs, getValidCycle } from '@proton/payments';
-import { FREE_PLAN } from '@proton/payments';
 import type { OtherProductParam, ProductParam } from '@proton/shared/lib/apps/product';
 import { otherProductParamValues } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

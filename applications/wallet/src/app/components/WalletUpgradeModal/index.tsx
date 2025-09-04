@@ -2,11 +2,10 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import type { ModalOwnProps } from '@proton/components';
-import { Prompt, SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components'
 import { Tooltip } from '@proton/atoms';
-import { PLANS } from '@proton/payments';
-import { hasBundle, hasBundlePro, hasBundlePro2024, hasDuo, hasFamily, hasVisionary } from '@proton/payments';
+import type { ModalOwnProps } from '@proton/components';
+import { Prompt, SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components';
+import { PLANS, hasBundle, hasBundlePro, hasBundlePro2024, hasDuo, hasFamily, hasVisionary } from '@proton/payments';
 import walletAtSignDark from '@proton/styles/assets/img/wallet/wallet-at-sign-dark.png';
 import walletAtSign from '@proton/styles/assets/img/wallet/wallet-at-sign.png';
 import walletBitcoinDark from '@proton/styles/assets/img/wallet/wallet-bitcoin-dark.jpg';

@@ -1,5 +1,4 @@
-import type { ComponentType } from 'react';
-import { type FC, memo } from 'react';
+import { type ComponentType, type FC, memo } from 'react';
 
 import { FileAttachmentsDiscovery } from '@proton/pass/components/Layout/Panel/ItemFeatureDiscovery/FileAttachmentsDiscovery';
 import type { ItemType } from '@proton/pass/types';

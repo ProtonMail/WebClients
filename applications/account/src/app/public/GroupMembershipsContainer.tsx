@@ -7,8 +7,11 @@ import { Button, CircleLoader } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components';
 import { GenericError, Prompt, useApi, useErrorHandler, useModalState } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { getExternalGroupMemberships } from '@proton/shared/lib/api/groups';
-import { acceptExternalGroupMembership, declineExternalGroupMembership } from '@proton/shared/lib/api/groups';
+import {
+    acceptExternalGroupMembership,
+    declineExternalGroupMembership,
+    getExternalGroupMemberships,
+} from '@proton/shared/lib/api/groups';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';

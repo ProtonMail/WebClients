@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
