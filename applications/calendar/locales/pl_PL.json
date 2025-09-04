@@ -1243,9 +1243,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co ${ cycle } mies. w dniu ${ formattedDate }. Nie zostaniesz obciążony(-a), jeśli anulujesz subskrypcję przed ${ formattedDate }."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony(-a), jeśli anulujesz subskrypcję przed ${ formattedDate }."
       ],
@@ -11451,6 +11448,9 @@
       "Network error": [
         "Błąd sieci"
       ],
+      "Next": [
+        "Dalej"
+      ],
       "Night theme": [
         "Ciemny motyw"
       ],
@@ -11465,6 +11465,9 @@
       ],
       "Open actions dropdown": [
         "Otwórz listę akcji"
+      ],
+      "Open pagination": [
+        "Otwórz stronicowanie"
       ],
       "Org setup": [
         "Konfiguracja organizacji"
@@ -11495,6 +11498,9 @@
       ],
       "Phone numbers": [
         "Numery telefonów"
+      ],
+      "Previous": [
+        "Wstecz"
       ],
       "Private browsing vs VPN": [
         "Prywatne przeglądanie Internetu a VPN"
