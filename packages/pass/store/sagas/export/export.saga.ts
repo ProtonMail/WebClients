@@ -15,7 +15,7 @@ import { exportData } from '@proton/pass/store/actions/creators/export';
 import { requestProgress } from '@proton/pass/store/request/actions';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import type { ExportThunk } from '@proton/pass/store/selectors';
-import { selectExportData, selectOwnedVaults, selectVisibleItems } from '@proton/pass/store/selectors';
+import { selectAllItems, selectExportData, selectOwnedVaults } from '@proton/pass/store/selectors';
 import type { FileDescriptor, IndexedByShareIdAndItemId, ItemRevision, MaybeNull, SelectedItem, Share, TabId } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { and } from '@proton/pass/utils/fp/predicates';
@@ -94,7 +94,7 @@ export const exportUserData = createRequestSaga({
                  * could end up blocking the main thread completely */
                 if (fs.type !== 'OPFS') throw new Error('Cannot export file-attachments at the moment');
 
-                const items: ItemRevision[] = yield select(selectVisibleItems);
+                const items: ItemRevision[] = yield select(selectAllItems);
                 const itemsWithAttachments = items.filter(and(hasAttachments, belongsToShares(ownedVaultShareIds)));
                 const totalItems = itemsWithAttachments.length;
 

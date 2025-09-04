@@ -5,21 +5,21 @@ import { sortItems } from '@proton/pass/lib/items/item.utils';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
 import type { ItemRevision, SelectedItem, Share } from '@proton/pass/types';
 
-import { itemsFromSelection, selectItem, selectItems, selectTrashedItems, selectVisibleItems } from './items';
-import { selectShare, selectShareState, selectVisibleItemShares } from './shares';
+import { itemsFromSelection, selectAllItems, selectItem, selectItems, selectTrashedItems } from './items';
+import { selectItemShares, selectShare, selectShareState } from './shares';
 
 export const isItemShared = (item?: ItemRevision, share?: Share): boolean => Boolean((item?.shareCount ?? 0) > 0 || share?.shared);
 
 export const selectItemShared = (shareId: string, itemId: string) =>
     createSelector([selectItem(shareId, itemId), selectShare(shareId)], isItemShared);
 
-export const selectSharedWithMe = createSelector([selectVisibleItemShares, selectItems], (itemShares, items) => {
+export const selectSharedWithMe = createSelector([selectItemShares, selectItems], (itemShares, items) => {
     const selection: SelectedItem[] = itemShares.map(({ shareId, targetId: itemId }) => ({ shareId, itemId }));
     const sharedWithMe = itemsFromSelection(selection)(items);
     return sortItems('recent')(sharedWithMe);
 });
 
-export const selectSharedByMe = createSelector([selectVisibleItems, selectShareState], (items, shares) => {
+export const selectSharedByMe = createSelector([selectAllItems, selectShareState], (items, shares) => {
     const sharedByMe = items.filter(({ shareId, shareCount = 0 }) => {
         if (shareCount <= 0) return false;
         const share = shares?.[shareId];

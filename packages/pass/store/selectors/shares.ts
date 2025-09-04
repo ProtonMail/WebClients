@@ -33,16 +33,17 @@ export const selectAllVaults = createSelector([selectAllShares], (s) => s.filter
 
 export const selectVisibleShares = createSelector(selectAllShares, (shares) => shares.filter(isShareVisible));
 export const selectVisibleShareIds = createSelector(selectVisibleShares, (shares) => new Set(shares.map(prop('shareId'))));
-export const selectVisibleItemShares = createSelector([selectVisibleShares], (s) => s.filter(isItemShare));
 export const selectVisibleVaults = createSelector([selectVisibleShares], (s) => s.filter(isVaultShare).sort(sortVaults));
 
-export const selectWritableShares = createSelector([selectVisibleShares], (v) => v.filter(isShareWritable));
-export const selectWritableVaults = createSelector([selectVisibleVaults], (v) => v.filter(isWritableVault));
-export const selectOwnedVaults = createSelector([selectVisibleVaults], (v) => v.filter(isOwnVault));
-export const selectNonOwnedVaults = createSelector([selectVisibleVaults], (v) => v.filter(not(isOwnVault)));
-export const selectOwnWritableVaults = createSelector([selectVisibleVaults], (v) => v.filter(isOwnWritableVault));
-export const selectOwnReadOnlyVaults = createSelector([selectVisibleVaults], (v) => v.filter(isOwnReadonlyVault));
-export const selectWritableSharedVaults = createSelector([selectVisibleVaults], (v) => v.filter(isWritableSharedVault));
+export const selectItemShares = createSelector([selectAllShares], (s) => s.filter(isItemShare));
+export const selectWritableShares = createSelector([selectAllShares], (v) => v.filter(isShareWritable));
+export const selectWritableVaults = createSelector([selectAllVaults], (v) => v.filter(isWritableVault));
+export const selectOwnedVaults = createSelector([selectAllVaults], (v) => v.filter(isOwnVault));
+export const selectNonOwnedVaults = createSelector([selectAllVaults], (v) => v.filter(not(isOwnVault)));
+export const selectOwnWritableVaults = createSelector([selectAllVaults], (v) => v.filter(isOwnWritableVault));
+export const selectOwnReadOnlyVaults = createSelector([selectAllVaults], (v) => v.filter(isOwnReadonlyVault));
+export const selectWritableSharedVaults = createSelector([selectAllVaults], (v) => v.filter(isWritableSharedVault));
+
 export const selectCanCreateItems = createSelector([selectWritableVaults], (v) => v.length > 0);
 
 export const selectShare =
