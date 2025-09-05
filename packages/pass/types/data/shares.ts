@@ -1,5 +1,6 @@
 import type { ShareId } from '@proton/pass/types/crypto';
 import type { Maybe } from '@proton/pass/types/utils';
+
 import type { VaultColor, VaultIcon } from '../protobuf/vault-v1.static';
 
 export enum ShareType {
@@ -49,15 +50,5 @@ export type ShareBase<T extends ShareType = ShareType> = {
 
 export type WithEventId<T> = T & { eventId: string };
 export type Share<T extends ShareType = ShareType> = WithEventId<ShareBase<T>>;
-
-export type ShareSyncKeys =
-    | 'canAutofill'
-    | 'newUserInvitesReady'
-    | 'owner'
-    | 'shared'
-    | 'shareId'
-    | 'shareRoleId'
-    | 'targetMaxMembers'
-    | 'targetMembers';
 
 export type ShareVisibilityMap = Record<ShareId, boolean>;
