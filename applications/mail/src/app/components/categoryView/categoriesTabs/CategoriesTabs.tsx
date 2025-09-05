@@ -1,10 +1,10 @@
 import { ErrorBoundary } from '@proton/components';
 
-import { categoriesArray } from '../categoriesConstants';
+import { useCategoryView } from '../useCategoryView';
 import { useRecategorizeElement } from '../useRecategorizeElement';
 import { CategoriesTabsError, CategoryTabError } from './CategoryTabsErrorts';
 import { Tab } from './Tab';
-import { TabState } from './tabsInterface';
+import { getTabState } from './categoriesTabsHelper';
 import { useCategoriesDrag } from './useCategoriesDrag';
 
 import './CategoriesTabs.scss';
@@ -16,6 +16,8 @@ interface Props {
 // In the future, we will only display the categories the user has enabled
 export const CategoriesTabsList = ({ labelID }: Props) => {
     const recategorizeElement = useRecategorizeElement();
+
+    const { activeCategories } = useCategoryView();
 
     const handleCategoryDrop = (categoryId: string, itemIds: string[]) => {
         void recategorizeElement(categoryId, itemIds);
@@ -32,18 +34,14 @@ export const CategoriesTabsList = ({ labelID }: Props) => {
             onDragLeave={handleDragLeave}
             onDragEnd={handleDragEnd}
         >
-            {categoriesArray.map((category, index) => {
-                let tabState: TabState = TabState.INACTIVE;
-                if (category.id === labelID) {
-                    tabState = TabState.ACTIVE;
-                } else if (category.id === dragOveredElementId) {
-                    tabState = TabState.DRAGGING_OVER;
-                } else if (dragOveredElementId) {
-                    const hoveredIndex = categoriesArray.findIndex((c) => c.id === dragOveredElementId);
-                    if (hoveredIndex === index - 1 || hoveredIndex === index + 1) {
-                        tabState = TabState.DRAGGING_NEIGHBOR;
-                    }
-                }
+            {activeCategories.map((category, index) => {
+                const tabState = getTabState({
+                    index,
+                    category,
+                    categoriesList: activeCategories,
+                    labelID,
+                    dragOveredElementId,
+                });
 
                 return (
                     <div key={category.id} onDragOver={handleDragOver(category.id)} onDrop={handleDrop(category.id)}>

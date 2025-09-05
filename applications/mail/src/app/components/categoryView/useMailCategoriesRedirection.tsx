@@ -4,12 +4,12 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
-import { useCategoryViewAccess } from 'proton-mail/components/categoryView/useCategoryViewAccess';
+import { useCategoryView } from './useCategoryView';
 
 export const useMailCategoriesRedirection = () => {
     const location = useLocation();
     const history = useHistory();
-    const categoryViewControl = useCategoryViewAccess();
+    const categoryViewControl = useCategoryView();
 
     useEffect(() => {
         if (

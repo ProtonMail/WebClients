@@ -5,11 +5,17 @@ import { useFlag } from '@proton/unleash';
 import { params } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-export const useCategoryViewAccess = () => {
+import { categoriesArray } from './categoriesConstants';
+
+export const useCategoryView = () => {
     const categoryViewAccess = useFlag('CategoryView');
     const mailParams = useMailSelector(params);
 
+    // This is hardcoded for now but will be replace by dynamic value once the edit modal is added
+    const activeCategories = categoriesArray;
+
     return {
+        activeCategories,
         categoryViewAccess,
         shouldShowTabs:
             categoryViewAccess &&
