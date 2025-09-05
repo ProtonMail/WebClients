@@ -3,7 +3,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { isActive } from '@proton/pass/lib/items/item.predicates';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
-import { selectItems, selectVisibleItems } from '@proton/pass/store/selectors/items';
+import { selectAllItems, selectItems } from '@proton/pass/store/selectors/items';
 import {
     selectOwnWritableVaults,
     selectShare,
@@ -52,7 +52,7 @@ export const selectDefaultVault = createSelector(
  * - Returns shareId of the latest item in user's writable vaults, sorted by creation time
  * - Falls back to user's default vault shareId if no writable items found */
 export const selectMostRecentVaultShareID = createSelector(
-    [selectOwnWritableVaults, selectWritableVaults, selectVisibleItems, selectDefaultVault],
+    [selectOwnWritableVaults, selectWritableVaults, selectAllItems, selectDefaultVault],
     (ownWritableVaults, writableVaults, items, defaultVault): Maybe<string> => {
         /** Only *own* writable vaults should be considered,
          * unless there are none (due to organization policy disabling vault creation),
