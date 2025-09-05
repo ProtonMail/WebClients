@@ -117,13 +117,16 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
     const { renewAmount, renewCurrency, renewLength } = (() => {
         if (upcoming && isUpcomingSubscriptionUnpaid) {
             return {
-                renewAmount: upcoming.BaseRenewAmount,
+                // using RenewAmount if BaseRenewAmount is not present. It's a fallback that can be removed in the
+                // future.
+                renewAmount: upcoming.BaseRenewAmount ?? upcoming.RenewAmount,
                 renewCurrency: upcoming.Currency,
                 renewLength: upcoming.Cycle,
             };
         }
 
         return {
+            // using RenewAmount if BaseRenewAmount is not present. It's a fallback that can be removed in the future.
             renewAmount: latestSubscription.BaseRenewAmount ?? latestSubscription.RenewAmount,
             renewCurrency: latestSubscription.Currency,
             renewLength: latestSubscription.Cycle,
