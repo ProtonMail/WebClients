@@ -39,7 +39,7 @@ export const createCustomElement = <T extends HTMLElement>(options: {
     const customElement = document.createElement(options.type) as T;
     const shadowRoot = customElement.attachShadow({ mode: 'closed' });
 
-    sendToE2eTests('shadowRoot', options.type, shadowRoot);
+    void sendToE2eTests('shadowRoot', options.type, shadowRoot);
 
     options.classNames?.forEach((className) => customElement.classList.add(className));
 

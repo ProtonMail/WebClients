@@ -1,4 +1,3 @@
-/* eslint-disable curly */
 import type { Action } from 'redux';
 import type { Task } from 'redux-saga';
 import { all, cancel, fork, take } from 'redux-saga/effects';

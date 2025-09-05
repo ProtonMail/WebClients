@@ -1,3 +1,4 @@
+import type { FC } from 'react';
 import { memo, useContext, useEffect, useRef } from 'react';
 
 import type { IconName } from '@proton/components';
@@ -21,7 +22,7 @@ import './Submenu.scss';
 
 type SubmenuItemsProps = { items: MenuItem[] };
 
-const SubmenuItems = memo(({ items }: SubmenuItemsProps) => {
+const SubmenuItemsRender: FC<SubmenuItemsProps> = ({ items }) => {
     const { onLink } = usePassCore();
     const last = useRef<HTMLDivElement>(null);
     const { isExpanded } = useContext(CollapsibleContext);
@@ -42,8 +43,9 @@ const SubmenuItems = memo(({ items }: SubmenuItemsProps) => {
             ref={idx === items.length - 1 ? last : undefined}
         />
     ));
-});
+};
 
+const SubmenuItems = memo(SubmenuItemsRender);
 SubmenuItems.displayName = 'SubmenuItemsMemo';
 
 type SubMenuProps = {

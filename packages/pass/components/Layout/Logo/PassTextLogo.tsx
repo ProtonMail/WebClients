@@ -1,3 +1,4 @@
+/* eslint-disable custom-rules/deprecate-sizing-classes */
 import { type ComponentPropsWithoutRef, useState } from 'react';
 
 import clsx from '@proton/utils/clsx';
