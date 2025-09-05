@@ -22,6 +22,7 @@ import type { Message } from '../../types';
 import { FilesManagementView } from '../components/Files';
 import { NewGhostChatButton } from '../components/NewGhostChatButton';
 import OnboardingModal from '../components/OnboardingModal';
+import WhatsNew from '../components/WhatsNew/WhatsNew';
 import { HeaderWrapper } from '../header/HeaderWrapper';
 import { ComposerComponent } from './composer/ComposerComponent';
 
@@ -356,6 +357,7 @@ const MainContainer = ({
                         isSmallScreen={isSmallScreen}
                     />
                 </div>
+                {!isGuest && <WhatsNew />}
 
                 {!isSmallScreen &&
                     (!isOnboardingCompleted ? (

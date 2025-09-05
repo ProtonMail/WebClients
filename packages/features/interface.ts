@@ -53,6 +53,7 @@ export enum FeatureCode {
     ElectronConvPreloadAmount = 'ElectronConvPreloadAmount',
     InboxDesktopFreeTrialDates = 'InboxDesktopFreeTrialDates',
     InboxDesktopFreeTrialReminders = 'InboxDesktopFreeTrialReminders',
+    LumoWhatsNewCard = 'LumoWhatsNewCard',
     MailActionsChunkSize = 'MailActionsChunkSize',
     MailServiceWorker = 'MailServiceWorker',
     NumAttachmentsWithoutEmbedded = 'NumAttachmentsWithoutEmbedded',
