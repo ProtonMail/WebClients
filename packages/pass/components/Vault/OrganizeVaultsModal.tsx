@@ -16,7 +16,12 @@ import type { ShareId, ShareVisibilityMap, VaultsVisibilityDTO } from '@proton/p
 import clsx from '@proton/utils/clsx';
 
 const FORM_ID = 'organize-vaults';
-type Props = { onClose: () => void; onConfirm: (visibility: VaultsVisibilityDTO) => void };
+const ICON_PROPS = { color: "var('--interaction-norm-contrast')", size: 3.5 } as const;
+
+type Props = {
+    onClose: () => void;
+    onConfirm: (visibility: VaultsVisibilityDTO) => void;
+};
 
 export const OrganizeVaultsModal: FC<Props> = ({ onClose, onConfirm }) => {
     const vaults = useSelector(selectAllVaults);
@@ -72,7 +77,7 @@ export const OrganizeVaultsModal: FC<Props> = ({ onClose, onConfirm }) => {
                     {vaults.map((vault, index) => (
                         <Checkbox
                             key={vault.shareId}
-                            checked={visibilityMap[vault.shareId]}
+                            checked={visibilityMap[vault.shareId] ?? true}
                             onChange={handleChange(vault.shareId)}
                             className={clsx(
                                 'flex flex-nowrap w-full px-4 py-2 pl-2 pr-2 items-center',
@@ -87,9 +92,7 @@ export const OrganizeVaultsModal: FC<Props> = ({ onClose, onConfirm }) => {
                                 icon={vault.content.display.icon}
                             />
                             <span className="flex-1 text-ellipsis">{vault.content.name}</span>
-                            {vault.shared && (
-                                <Icon name="users" color="var('--interaction-norm-contrast')" size={3.5} />
-                            )}
+                            {vault.shared && <Icon name="users" {...ICON_PROPS} />}
                         </Checkbox>
                     ))}
                 </form>
