@@ -11,6 +11,7 @@ export type SelectItemsOptions = {
     sort?: MaybeNull<ItemSortFilter>;
     trashed?: boolean;
     type?: MaybeNull<ItemType>;
+    visible?: boolean;
 };
 
 export type SelectItemsByDomainOptions = {
