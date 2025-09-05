@@ -198,11 +198,22 @@ export const ComposerComponent = ({
                         type: 'warning',
                     });
                 } else if (result.isUnsupported) {
-                    // Show toast notification for unsupported file
-                    createNotification({
-                        text: c('collider_2025: Error').t`File format not supported: ${result.fileName}`,
-                        type: 'error',
-                    });
+                    // Special message for PPTX files with conversion suggestions
+                    if (file.type === 'application/vnd.openxmlformats-officedocument.presentationml.presentation' || 
+                        file.type === 'application/vnd.ms-powerpoint' ||
+                        file.name.toLowerCase().endsWith('.pptx') ||
+                        file.name.toLowerCase().endsWith('.ppt')) {
+                        createNotification({
+                            text: c('collider_2025: Error').t`PowerPoint files are not supported. Please convert to PDF and upload the PDF version for better text extraction.`,
+                            type: 'warning',
+                        });
+                    } else {
+                        // Show generic unsupported file notification
+                        createNotification({
+                            text: c('collider_2025: Error').t`File format not supported: ${result.fileName}`,
+                            type: 'error',
+                        });
+                    }
                 } else if (!result.success && result.errorMessage) {
                     // Show toast notification for processing error
                     createNotification({
