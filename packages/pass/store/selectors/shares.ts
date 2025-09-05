@@ -33,7 +33,6 @@ export const selectAllVaults = createSelector([selectAllShares], (s) => s.filter
 
 export const selectVisibleShares = createSelector(selectAllShares, (shares) => shares.filter(isShareVisible));
 export const selectVisibleShareIds = createSelector(selectVisibleShares, (shares) => new Set(shares.map(prop('shareId'))));
-export const selectVisibleVaults = createSelector([selectVisibleShares], (s) => s.filter(isVaultShare).sort(sortVaults));
 
 export const selectItemShares = createSelector([selectAllShares], (s) => s.filter(isItemShare));
 export const selectWritableShares = createSelector([selectAllShares], (v) => v.filter(isShareWritable));
