@@ -1,5 +1,6 @@
-import type { ProduceForkData } from '@proton/shared/lib/authentication/fork/interface';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
+
+import type { ProduceForkData } from '../content/actions/forkInterface';
 
 export const saveForkState = (state: ProduceForkData) => {
     setItem('fork-state', JSON.stringify(state));

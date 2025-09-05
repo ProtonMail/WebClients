@@ -1,4 +1,4 @@
-import { deserializeQrCodePayload } from '@proton/account/signInWithAnotherDevice/qrCodePayload';
+import type { QRCodePayload } from '@proton/account/signInWithAnotherDevice/qrCodePayload';
 import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
 import { getForkEncryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
@@ -18,15 +18,13 @@ const getKey = async (encodedBytes: string) => {
 // Main function which takes a QR code and key password to push the session to the requested fork
 export const signInWithAnotherDevicePush = async ({
     api,
-    data,
+    qrCodePayload,
     keyPassword,
 }: {
     api: Api;
-    data: string;
+    qrCodePayload: QRCodePayload;
     keyPassword: string;
 }) => {
-    const qrCodePayload = deserializeQrCodePayload(data);
-
     let payload: string | undefined;
     // When encoded bytes is empty, no payload is expected
     if (qrCodePayload.encodedBytes) {
