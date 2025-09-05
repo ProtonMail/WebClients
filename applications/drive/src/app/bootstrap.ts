@@ -47,7 +47,16 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const run = async () => {
         const sessionFeature = measureFeaturePerformance(api, Features.globalBootstrapAppLoadSession);
         sessionFeature.start();
-        const sessionResult = await bootstrap.loadSession({ authentication, api, pathname, searchParams });
+        const sessionResult = await bootstrap.loadSession({
+            authentication,
+            api,
+            pathname,
+            searchParams,
+            performanceMeasure: {
+                consumeFork: measureFeaturePerformance(api, Features.sessionBootstrapConsumeFork),
+                resumeSession: measureFeaturePerformance(api, Features.sessionBootstrapResumeSession),
+            },
+        });
         sessionFeature.end(undefined, api);
         const history = bootstrap.createHistory({ sessionResult, pathname });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
