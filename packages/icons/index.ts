@@ -258,6 +258,30 @@ export type IconName =
     | 'map-pin'
     | 'megaphone-filled'
     | 'microphone'
+    | 'meet-camera'
+    | 'meet-camera-off'
+    | 'meet-camera-filled'
+    | 'meet-camera-filled-off'
+    | 'meet-chat'
+    | 'meet-connection-indicator'
+    | 'meet-copy'
+    | 'meet-microphone'
+    | 'meet-phone'
+    | 'meet-microphone-off'
+    | 'meet-microphone-filled'
+    | 'meet-microphone-filled-off'
+    | 'meet-more'
+    | 'meet-screen-share'
+    | 'meet-send'
+    | 'meet-settings'
+    | 'meet-shield-full'
+    | 'meet-shield'
+    | 'meet-speaker'
+    | 'meet-speaker-alt'
+    | 'meet-participants'
+    | 'meet-record'
+    | 'meet-rotate-camera'
+    | 'meet-user'
     | 'minus'
     | 'minus-circle'
     | 'minus-circle-filled'
@@ -671,6 +695,30 @@ export { IcMap } from './icons/IcMap';
 export { IcMapPin } from './icons/IcMapPin';
 export { IcMegaphoneFilled } from './icons/IcMegaphoneFilled';
 export { IcMicrophone } from './icons/IcMicrophone';
+export { IcMeetCamera } from './icons/IcMeetCamera';
+export { IcMeetCameraOff } from './icons/IcMeetCameraOff';
+export { IcMeetCameraFilled } from './icons/IcMeetCameraFilled';
+export { IcMeetCameraFilledOff } from './icons/IcMeetCameraFilledOff';
+export { IcMeetChat } from './icons/IcMeetChat';
+export { IcMeetConnectionIndicator } from './icons/IcMeetConnectionIndicator';
+export { IcMeetCopy } from './icons/IcMeetCopy';
+export { IcMeetMicrophone } from './icons/IcMeetMicrophone';
+export { IcMeetPhone } from './icons/IcMeetPhone';
+export { IcMeetMicrophoneOff } from './icons/IcMeetMicrophoneOff';
+export { IcMeetMicrophoneFilled } from './icons/IcMeetMicrophoneFilled';
+export { IcMeetMicrophoneFilledOff } from './icons/IcMeetMicrophoneFilledOff';
+export { IcMeetMore } from './icons/IcMeetMore';
+export { IcMeetScreenShare } from './icons/IcMeetScreenShare';
+export { IcMeetSend } from './icons/IcMeetSend';
+export { IcMeetSettings } from './icons/IcMeetSettings';
+export { IcMeetShieldFull } from './icons/IcMeetShieldFull';
+export { IcMeetShield } from './icons/IcMeetShield';
+export { IcMeetSpeaker } from './icons/IcMeetSpeaker';
+export { IcMeetSpeakerAlt } from './icons/IcMeetSpeakerAlt';
+export { IcMeetParticipants } from './icons/IcMeetParticipants';
+export { IcMeetRecord } from './icons/IcMeetRecord';
+export { IcMeetRotateCamera } from './icons/IcMeetRotateCamera';
+export { IcMeetUser } from './icons/IcMeetUser';
 export { IcMinus } from './icons/IcMinus';
 export { IcMinusCircle } from './icons/IcMinusCircle';
 export { IcMinusCircleFilled } from './icons/IcMinusCircleFilled';

@@ -1,0 +1,131 @@
+@import '~@proton/styles/scss/proton-meet';
+
+@import '~@proton/styles/scss/lib';
+
+@import '~@proton/styles/scss/layout/native';
+
+@import '~@proton/styles/scss/specifics/placeholder-loading', '~@proton/styles/scss/specifics/settings';
+
+.modal-two-backdrop {
+	background: transparent !important;
+}
+
+.lk-room-container {
+	block-size: 100%;
+	inline-size: 100%;
+}
+
+body {
+	background: var(--interaction-weak-minor-3);
+	position: relative;
+}
+
+.app-root {
+	position: relative;
+	z-index: 1;
+	background: var(--interaction-weak-minor-3);
+
+	--font-weight-bold: 700;
+
+	.h1,
+	.h2,
+	.h3,
+	.h4,
+	.h5,
+	.h6 {
+		font-weight: var(--font-weight-bold) !important;
+	}
+
+	.button {
+		font-weight: 600 !important;
+	}
+
+	font-weight: 500;
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+}
+
+$meet-background-colors:
+	var(--ui-purple-interaction-minor-3), var(--ui-green-interaction-minor-3), var(--interaction-norm-minor-3),
+	var(--ui-blue-interaction-minor-3), var(--ui-red-interaction-norm-minor-2), var(--ui-orange-interaction-minor-3);
+
+@for $i from 1 through 6 {
+	.meet-background-#{$i} {
+		background-color: nth($meet-background-colors, $i);
+	}
+}
+
+$profile-colors:
+	var(--ui-purple-interaction-minor-1), var(--ui-green-interaction-minor-1), var(--interaction-norm),
+	var(--ui-blue-interaction-minor-1), var(--ui-red-interaction-norm-major-1), var(--ui-orange-interaction-minor-1);
+
+@for $i from 1 through 6 {
+	.profile-background-#{$i} {
+		background: nth($profile-colors, $i);
+	}
+}
+
+@for $i from 1 through 6 {
+	.profile-color-#{$i} {
+		color: nth($profile-colors, $i) !important;
+	}
+}
+
+@for $i from 1 through 6 {
+	.tile-border-#{$i} {
+		border: 3px solid nth($profile-colors, $i);
+	}
+
+	.tile-border-#{$i}-small {
+		border: 2px solid nth($profile-colors, $i);
+	}
+}
+
+.gradient-overlay {
+	background-image: linear-gradient(180deg, rgb(0 0 0 / 0) 52.27%, rgb(0 0 0 / 0.6) 100%);
+}
+
+.meet-radius {
+	border-radius: 1.5rem;
+}
+
+.meet-font-weight {
+	font-weight: 500;
+}
+
+.dropdown-content {
+	background-image: none !important;
+	scrollbar-color: var(--interaction-weak) transparent !important;
+
+	&::-webkit-scrollbar-thumb {
+		background: var(--interaction-weak) !important;
+	}
+}
+
+.search-open-button {
+	color: var(--text-hint);
+
+	&:hover {
+		color: var(--color-norm);
+		background-color: transparent !important;
+	}
+}
+
+.device-selector-dropdown {
+	max-inline-size: 50vw !important;
+
+	.dropdown-content {
+		max-inline-size: 50vw !important;
+	}
+}
+
+.notification--info {
+	background-color: var(--interaction-norm-minor-3);
+	color: var(--text-norm);
+	white-space: nowrap;
+	max-inline-size: 30rem !important;
+	box-shadow: none !important;
+}
+
+.modal-two-dialog {
+	box-shadow: none !important;
+}

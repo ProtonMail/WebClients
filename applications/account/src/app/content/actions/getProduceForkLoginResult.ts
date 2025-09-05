@@ -46,6 +46,7 @@ const getIsAppAvailable = (app: APP_NAMES, session: AuthSession) => {
             user: session.data.User,
             context: 'app',
             isDocsHomepageAvailable: true,
+            isMeetAvailable: true,
         }).some((availableApp) => product === getProduct(availableApp))
     );
 };

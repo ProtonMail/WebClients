@@ -77,6 +77,7 @@ export interface OrganizationSettings {
     LogoID: string | null;
     ShowScribeWritingAssistant: boolean;
     VideoConferencingEnabled: boolean;
+    MeetVideoConferencingEnabled: boolean;
     AllowedProducts: SerializedOrganizationSettingsAllowedProduct[];
     // Settings for admin
     PasswordPolicies: PasswordPolicySettings;
@@ -86,6 +87,10 @@ export interface OrganizationSettings {
         Enforced: number;
     };
 }
+
+export type OrganizationSettingsBooleanProperties = {
+    [K in keyof OrganizationSettings]: OrganizationSettings[K] extends boolean ? K : never;
+}[keyof OrganizationSettings];
 
 export interface OrganizationExtended extends Organization {
     Settings: OrganizationSettings;
