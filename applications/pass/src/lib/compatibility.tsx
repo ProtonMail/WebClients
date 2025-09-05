@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-ambiguous-text */
 import type { ReactNode } from 'react';
 
 import { Href } from '@proton/atoms';
@@ -10,7 +9,8 @@ import { getBrowser, isEdgeChromium, isSafari } from '@proton/shared/lib/helpers
 
 const getWhiteListMessage = (feature: string) => (
     <strong key="browser-warning">
-        If using {getBrowser().name} in {feature} Mode, please allow {BRAND_NAME} domains in your security settings.{' '}
+        If using {getBrowser().name} in {feature} Mode, please allow {BRAND_NAME} domains in your security
+        settings.{' '}
     </strong>
 );
 
