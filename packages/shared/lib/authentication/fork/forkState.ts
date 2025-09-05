@@ -33,7 +33,6 @@ export const setForkStateData = (stateKey: string, data?: ForkState) => {
 export const getForkStateData = (stateKey: string, parameters: ConsumeForkParameters): ForkState => {
     const defaultForkState: ForkState = {
         url: parameters.returnUrl || '',
-        returnUrl: '',
         reloadDocument: false,
     };
 
@@ -46,8 +45,7 @@ export const getForkStateData = (stateKey: string, parameters: ConsumeForkParame
         }
         const { url, returnUrl, reloadDocument } = JSON.parse(data);
         return {
-            url,
-            returnUrl,
+            url: parameters.returnUrl || returnUrl || url,
             reloadDocument,
         };
     } catch (e: any) {

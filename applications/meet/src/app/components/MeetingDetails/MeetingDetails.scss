@@ -1,0 +1,14 @@
+.meeting-info-wrapper {
+	background-color: #ffffff0a;
+	border: 1px solid #ffffff05;
+	font-weight: 500 !important;
+
+	.time-cell {
+		white-space: nowrap;
+		word-break: keep-all;
+	}
+
+	tbody tr:last-child td {
+		border-block-end: none;
+	}
+}

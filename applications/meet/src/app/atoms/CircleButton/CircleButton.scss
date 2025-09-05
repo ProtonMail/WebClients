@@ -1,0 +1,75 @@
+@use 'sass:math';
+@import '~@proton/styles/scss/lib';
+
+.circle-button {
+	inline-size: rem(56);
+	block-size: rem(56);
+	background-color: var(--circle-button-bg, var(--interaction-weak-minor-1)) !important;
+
+	&:hover,
+	&:focus {
+		background-color: var(--circle-button-bg, var(--interaction-weak-minor-1)) !important;
+	}
+}
+
+.circle-button-active {
+	--circle-button-bg: var(--interaction-norm);
+
+	color: var(--text-invert) !important;
+
+	&:hover,
+	&:focus {
+		--circle-button-bg: var(--interaction-norm-minor-1);
+	}
+}
+
+.circle-button-default {
+	--circle-button-bg: var(--interaction-weak-minor-1);
+
+	&:hover,
+	&:focus {
+		--circle-button-bg: var(--interaction-weak-minor-2);
+	}
+}
+
+.circle-button-danger {
+	--circle-button-bg: var(--signal-danger-major-3);
+
+	&:hover,
+	&:focus {
+		--circle-button-bg: var(--signal-danger);
+	}
+}
+
+.circle-button-transparent {
+	--circle-button-bg: transparent;
+
+	&:hover,
+	&:focus {
+		--circle-button-bg: color-mix(in srgb, var(--background-invert), transparent 76%) !important;
+	}
+}
+
+.indicator-warning {
+	background: var(--signal-warning-major-1);
+	color: var(--text-invert);
+}
+
+.indicator-default {
+	background: var(--interaction-weak);
+	color: var(--text-norm);
+}
+
+.indicator-success {
+	background: var(--signal-success);
+	color: var(--text-invert);
+}
+
+.indicator-danger {
+	background: var(--signal-danger-major-3);
+	color: var(--text-norm);
+}
+
+.circle-button-tooltip::before {
+	border-block-start-color: var(--background-strong) !important;
+}
