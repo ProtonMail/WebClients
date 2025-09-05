@@ -1,4 +1,4 @@
-import { type ComponentType, type FC, memo } from 'react';
+import { type ComponentType, memo } from 'react';
 
 import { FileAttachmentsDiscovery } from '@proton/pass/components/Layout/Panel/ItemFeatureDiscovery/FileAttachmentsDiscovery';
 import type { ItemType } from '@proton/pass/types';
@@ -10,7 +10,7 @@ const discoveries: FeatureDiscovery[] = [
     { component: FileAttachmentsDiscovery, types: ['login', 'identity', 'creditCard'] },
 ];
 
-export const ItemFeatureDiscovery: FC<Props> = memo(({ type }) => (
+export const ItemFeatureDiscovery = memo(({ type }: Props) => (
     <div>
         {discoveries
             .filter(({ types }) => types.includes(type))

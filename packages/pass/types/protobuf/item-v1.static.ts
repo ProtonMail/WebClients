@@ -1,4 +1,3 @@
-/* eslint-disable */
 export enum WifiSecurity {
     /**
      * @generated from protobuf enum value: UnspecifiedWifiSecurity = 0;
