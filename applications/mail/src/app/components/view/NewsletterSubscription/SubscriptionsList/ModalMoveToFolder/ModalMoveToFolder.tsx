@@ -6,9 +6,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import {
     Checkbox,
-    FolderIcon,
     Icon,
-    InputFieldTwo,
     type ModalProps,
     Prompt,
     useApi,
@@ -25,6 +23,8 @@ import { hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
+import { MoveToSearchInput } from 'proton-mail/components/actions/MoveToSearchInput';
+import { MoveToTreeView } from 'proton-mail/components/actions/MoveToTreeView';
 import type { FolderItem } from 'proton-mail/hooks/useMailTreeView/interface';
 import { useMailFolderTreeView } from 'proton-mail/hooks/useMailTreeView/useMailFolderTreeView';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
@@ -105,10 +105,6 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
 
     const handleChange = () => {
         setApplyToFuture((val) => !val);
-    };
-
-    const handleSelectFolder = (folder: FolderItem) => {
-        setSelectedFolder(folder);
     };
 
     const handleSearch = (changeEvent: React.ChangeEvent<HTMLInputElement>) => {
@@ -222,51 +218,21 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
             }}
             {...props}
         >
-            <div className="modal-move-folder">
-                <InputFieldTwo
-                    id="search-input"
-                    unstyled
-                    labelContainerClassName="color-weak text-sm"
-                    inputContainerClassName="border-bottom border-primary"
+            <div>
+                <MoveToSearchInput
+                    title={c('Title').t`Move messages to`}
+                    placeholder={c('Placeholder').t`Filter folders`}
                     value={search}
                     onChange={handleSearch}
-                    label={c('Label').t`Move messages to`}
-                    data-prevent-arrow-navigation
-                    assistContainerClassName="h-2"
-                    prefix={<Icon name="magnifier" />}
-                    placeholder={c('Placeholder').t`Filter folders`}
                 />
-                <div className="modal-move-folder-list">
-                    <ul className="unstyled my-0 overflow-auto flex-auto">
-                        {treeView.map((folder) => (
-                            <li key={folder.ID}>
-                                <Button
-                                    fullWidth
-                                    shape={selectedFolder?.ID === folder.ID ? 'solid' : 'ghost'}
-                                    color={selectedFolder?.ID === folder.ID ? 'weak' : undefined}
-                                    className="text-left"
-                                    onClick={() => handleSelectFolder(folder)}
-                                    aria-pressed={selectedFolder?.ID === folder.ID}
-                                    data-testid={`button-folder-${folder.ID}`}
-                                >
-                                    <div data-level={folder.level} className="flex">
-                                        <FolderIcon
-                                            folder={folder}
-                                            name={folder.icon}
-                                            className="shrink-0 mr-2 mt-0.5 color-primary"
-                                        />
-                                        <span className="text-ellipsis flex-1" title={folder.Name}>
-                                            {folder.Name}
-                                        </span>
-                                        {selectedFolder?.ID === folder.ID && (
-                                            <Icon name="checkmark" className="text-success shrink-0 mt-0.5" />
-                                        )}
-                                    </div>
-                                </Button>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                <MoveToTreeView
+                    search={search}
+                    treeView={treeView}
+                    selectedFolder={selectedFolder}
+                    handleSelectFolder={(folder) => {
+                        setSelectedFolder(folder);
+                    }}
+                />
             </div>
         </Prompt>
     );
