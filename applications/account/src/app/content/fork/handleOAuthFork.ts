@@ -2,7 +2,6 @@ import type { AuthSession } from '@proton/components/containers/login/interface'
 import type { OAuthClientInfo } from '@proton/shared/lib/api/oauth';
 import { getOAuthClientInfo } from '@proton/shared/lib/api/oauth';
 import { getEmailSessionForkSearchParameter } from '@proton/shared/lib/authentication/fork';
-import { type OAuthData, type OAuthForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
 import {
     GetActiveSessionType,
     type GetActiveSessionsResult,
@@ -10,6 +9,7 @@ import {
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { Api } from '@proton/shared/lib/interfaces';
 
+import { type OAuthData, type OAuthForkData, SSOType } from '../actions/forkInterface';
 import { getProduceForkLoginResult } from '../actions/getProduceForkLoginResult';
 import type { LoginResult } from '../actions/interface';
 import type { Paths } from '../helper';
