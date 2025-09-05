@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
@@ -8,7 +8,7 @@ import { Checkbox, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@prot
 import type { ConfirmationModalProps } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { AutotypeKeyboardShortcut } from '@proton/pass/components/Item/Autotype/AutotypeKeyboardShortcut';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { type WithSpotlightRenderProps } from '@proton/pass/components/Spotlight/WithSpotlight';
+import type { WithSpotlightRenderProps } from '@proton/pass/components/Spotlight/WithSpotlight';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 type ConfirmAutotypeValues = { dontShowAgain: boolean };
