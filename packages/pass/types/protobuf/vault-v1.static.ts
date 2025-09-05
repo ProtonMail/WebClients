@@ -1,4 +1,3 @@
-/* eslint-disable */
 export enum VaultIcon {
     /**
      * @generated from protobuf enum value: ICON_UNSPECIFIED = 0;
