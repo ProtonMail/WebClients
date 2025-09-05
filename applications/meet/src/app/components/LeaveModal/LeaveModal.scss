@@ -1,0 +1,56 @@
+@import '~@proton/styles/scss/lib';
+
+.leave-button {
+	background-color: var(--signal-danger-major-3);
+
+	&:hover,
+	&:focus-within {
+		background-color: var(--signal-danger-minor-1);
+	}
+}
+
+.leave-modal {
+	.modal-two-dialog-container,
+	.modal-two-dialog {
+		inline-size: 90%;
+
+		@include media('>medium') {
+			inline-size: 24.5rem;
+			block-size: 16.25rem;
+		}
+
+		box-shadow: none !important;
+		background-color: var(--interaction-weak-minor-3) !important;
+	}
+
+	.modal-two-content {
+		block-size: 14.5rem !important;
+	}
+
+	.close-button {
+		background-color: var(--interaction-weak);
+
+		&:hover,
+		&:focus {
+			background-color: var(--interaction-weak-minor-1);
+		}
+	}
+
+	.leave-meeting-button {
+		background-color: var(--signal-danger-major-3);
+
+		&:hover,
+		&:focus {
+			background-color: var(--signal-danger-minor-1);
+		}
+	}
+
+	.leave-meeting-button-admin {
+		background-color: var(--interaction-weak-major-1);
+
+		&:hover,
+		&:focus {
+			background-color: var(--interaction-weak);
+		}
+	}
+}

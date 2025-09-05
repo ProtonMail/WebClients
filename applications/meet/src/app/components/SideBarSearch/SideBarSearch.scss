@@ -1,0 +1,10 @@
+.side-bar-search {
+	padding-inline-end: 0.5rem;
+}
+
+.search-cancel-button {
+	&:hover,
+	&:focus {
+		color: var(--primary) !important;
+	}
+}

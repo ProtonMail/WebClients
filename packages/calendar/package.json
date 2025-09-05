@@ -13,6 +13,7 @@
     },
     "dependencies": {
         "@proton/account": "workspace:^",
+        "@proton/meet": "workspace:^",
         "@proton/redux-shared-store-types": "workspace:^",
         "@reduxjs/toolkit": "^2.8.2",
         "react": "^18.3.1",

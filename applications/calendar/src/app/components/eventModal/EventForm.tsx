@@ -64,6 +64,7 @@ export interface EventFormProps {
     onDisplayBusySlots?: () => void;
     view: VIEWS;
     hasZoomError: boolean;
+    setIsVideoConferenceLoading: (value: boolean) => void;
 }
 
 const EventForm = ({
@@ -86,6 +87,7 @@ const EventForm = ({
     onDisplayBusySlots,
     view,
     hasZoomError,
+    setIsVideoConferenceLoading,
     ...props
 }: EventFormProps & HTMLAttributes<HTMLDivElement>) => {
     const isColorPerEventEnabled = useFlag('ColorPerEventWeb');
@@ -342,6 +344,7 @@ const EventForm = ({
                     setModel={setModel}
                     isCreateEvent={isCreateEvent}
                     hasZoomError={hasZoomError}
+                    setIsVideoConferenceLoading={setIsVideoConferenceLoading}
                 />
             )}
             {!isMinimal && showNotifications && notificationsRow}

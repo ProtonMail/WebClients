@@ -1,9 +1,9 @@
 import { addDays, isSameDay } from 'date-fns';
 
 import {
-    addZoomInfoToDescription,
-    removeZoomInfoFromDescription,
-} from '@proton/calendar/components/videoConferencing/zoom/zoomHelpers';
+    addVideoConfInfoToDescription,
+    removeVideoConfInfoFromDescription,
+} from '@proton/calendar/components/videoConferencing/videoConfHelpers';
 import { dedupeNotifications } from '@proton/shared/lib/calendar/alarms';
 import { modelToValarmComponent } from '@proton/shared/lib/calendar/alarms/modelToValarm';
 import { ICAL_EVENT_STATUS, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
@@ -19,6 +19,7 @@ import type { DateTimeModel, EventModel } from '@proton/shared/lib/interfaces/ca
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import modelToFrequencyProperties from './modelToFrequencyProperties';
+import { hasVideoConf } from './utils';
 
 export const modelToDateProperty = ({ date, time, tzid }: DateTimeModel, isAllDay: boolean) => {
     const dateObject = {
@@ -120,6 +121,8 @@ const modelToVideoConferenceProperties = ({
     conferencePassword,
     conferenceUrl,
     conferenceHost,
+    conferenceProvider,
+    encryptedTitle,
 }: Partial<EventModel>) => {
     if (!conferenceId || !conferenceUrl) {
         return;
@@ -129,7 +132,8 @@ const modelToVideoConferenceProperties = ({
         'x-pm-conference-id': {
             value: conferenceId,
             parameters: {
-                'x-pm-provider': '1',
+                'x-pm-provider': String(conferenceProvider),
+                ...(encryptedTitle && { 'x-pm-encrypted-title': encryptedTitle }),
             },
         },
         'x-pm-conference-url': {
@@ -148,30 +152,33 @@ const modelToDescriptionProperties = ({
     conferencePassword,
     conferenceUrl,
     conferenceHost,
+    conferenceProvider,
 }: Partial<EventModel>) => {
-    const hasZoom = !!(conferenceUrl && conferenceId);
+    const modelHasVideoConf = hasVideoConf(conferenceId, conferenceUrl, conferenceProvider);
 
-    // Return an empty object if there is no description and no Zoom meeting
-    if (!description && !hasZoom) {
+    // Return an empty object if there is no description and no video conference
+    if (!description && !modelHasVideoConf) {
         return {};
     }
 
-    // Return the description if there is no Zoom meeting
-    if (description && !hasZoom) {
-        const cleanedDescription = removeZoomInfoFromDescription(description ?? '');
+    // Return the description if there is no video conference
+    if (description && !modelHasVideoConf) {
+        const cleanedDescription = removeVideoConfInfoFromDescription(description ?? '');
         return { description: { value: cleanedDescription?.slice(0, MAX_CHARS_API.EVENT_DESCRIPTION) } };
     }
 
-    // We remove the Zoom info from the description to avoid saving it twice
-    const cleanedDescription = removeZoomInfoFromDescription(description ?? '');
-    // We slice the description smaller to avoid too long descriptions with the generated Zoom info
+    // We remove the video conferencing info from the description to avoid saving it twice
+    const cleanedDescription = removeVideoConfInfoFromDescription(description ?? '');
+    // We slice the description smaller to avoid too long descriptions with the generated video conferencing info
     const slicedDescription = cleanedDescription?.slice(0, MAX_CHARS_API.EVENT_DESCRIPTION);
-    const newDescription = addZoomInfoToDescription({
+
+    const newDescription = addVideoConfInfoToDescription({
         host: conferenceHost,
         meedingURL: conferenceUrl,
         password: conferencePassword,
         meetingId: conferenceId,
         description: slicedDescription,
+        provider: conferenceProvider,
     });
 
     return {

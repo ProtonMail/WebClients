@@ -1,26 +1,18 @@
-import { useEffect, useState } from 'react';
-
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { useOAuthToken } from '@proton/activation';
-import { OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { Button, CircleLoader } from '@proton/atoms';
-import { Icon, IconRow, ZoomUpsellModal, useApi, useModalStateObject, useNotifications } from '@proton/components';
+import type { ModalStateReturnObj } from '@proton/components';
+import { Icon, IconRow } from '@proton/components';
 import { IcVideoCamera } from '@proton/icons';
-import { createZoomMeeting } from '@proton/shared/lib/api/calendars';
-import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type { EventModel, VideoConferenceMeetingCreation } from '@proton/shared/lib/interfaces/calendar';
+import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
 import { VideoConferencingWidget } from '../videoConferencing/VideoConferencingWidget';
 import type { ZoomAccessLevel } from '../videoConferencing/constants';
-import { VIDEO_CONF_API_ERROR_CODES, VIDEO_CONF_SERVICES } from '../videoConferencing/constants';
-import { VideoConferenceZoomIntegration, useVideoConfTelemetry } from '../videoConferencing/useVideoConfTelemetry';
-import { shouldReconnectToZoom, shouldSeeLoadingButton, shouldSeeLoginButton } from './ZoomRowHelpers';
+import { VIDEO_CONF_SERVICES } from '../videoConferencing/constants';
+import { shouldSeeLoadingButton, shouldSeeLoginButton } from './ZoomRowHelpers';
 import type { ZoomIntegrationState } from './interface';
-import { useZoomOAuth } from './useZoomOAuth';
 
 const getIcon = (state?: ZoomIntegrationState) => {
     switch (state) {
@@ -44,143 +36,31 @@ interface Props {
     accessLevel: ZoomAccessLevel;
     onRowClick?: () => void;
     hasZoomError: boolean;
+    processState?: ZoomIntegrationState;
+    handleDelete: () => void;
+    handleReconnect: (shouldCreateMeeting: boolean) => void;
+    zoomUpsellModal: ModalStateReturnObj;
+    handleClick: () => void;
+    loadingConfig: boolean;
+    oauthTokenLoading: boolean;
 }
 
-export const ZoomRow = ({ model, setModel, accessLevel, onRowClick, hasZoomError }: Props) => {
+export const ZoomRow = ({
+    model,
+    accessLevel,
+    processState,
+    handleDelete,
+    handleReconnect,
+    handleClick,
+    loadingConfig,
+    oauthTokenLoading,
+}: Props) => {
     const [user] = useUser();
-
-    const [oAuthToken, oauthTokenLoading] = useOAuthToken();
-    const isUserConnectedToZoom = oAuthToken?.some(({ Provider }) => Provider === OAUTH_PROVIDER.ZOOM);
-
-    const [processState, setProcessState] = useState<ZoomIntegrationState | undefined>(undefined);
-
-    const { sendEventVideoConferenceZoomIntegration } = useVideoConfTelemetry();
-
-    const { loadingConfig, triggerZoomOAuth } = useZoomOAuth();
-    const { createNotification } = useNotifications();
-
-    const api = useApi();
-    const silentApi = getSilentApi(api);
-
-    const zoomUpsellModal = useModalStateObject();
-
-    useEffect(() => {
-        if (hasZoomError) {
-            setProcessState('zoom-reconnection-error');
-            return;
-        }
-
-        if (loadingConfig || oauthTokenLoading) {
-            setProcessState('loadingConfig');
-        } else if (model.conferenceUrl && !model.isConferenceTmpDeleted) {
-            setProcessState('meeting-present');
-        } else {
-            // We don't want to change the state while something is loading
-            if (processState !== 'loading') {
-                setProcessState(isUserConnectedToZoom ? 'connected' : 'disconnected');
-            }
-        }
-    }, [loadingConfig, oauthTokenLoading, hasZoomError]);
-
-    useEffect(() => {
-        if (model.conferenceUrl && !model.isConferenceTmpDeleted && processState !== 'zoom-reconnection-error') {
-            setProcessState('meeting-present');
-        }
-    }, [processState]);
 
     if (accessLevel === 'limited-access' && processState !== 'meeting-present') {
         // Paid MAIL users with setting disabled will have limited access only if meeting present
         return;
     }
-
-    const createVideoConferenceMeeting = async () => {
-        try {
-            const currentProcessState = processState;
-            setProcessState('loading');
-
-            const data = await silentApi<VideoConferenceMeetingCreation>(createZoomMeeting());
-
-            setModel({
-                ...model,
-                conferenceId: data?.VideoConference?.ID,
-                conferenceUrl: data?.VideoConference?.URL,
-                conferencePassword: data?.VideoConference?.Password,
-                conferenceHost: user.Email,
-            });
-
-            if (currentProcessState !== 'zoom-reconnection-error') {
-                setProcessState('meeting-present');
-            }
-
-            sendEventVideoConferenceZoomIntegration(VideoConferenceZoomIntegration.create_zoom_meeting);
-        } catch (e) {
-            const { code } = getApiError(e);
-            sendEventVideoConferenceZoomIntegration(
-                VideoConferenceZoomIntegration.create_zoom_meeting_failed,
-                String(code)
-            );
-
-            if (code === VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR) {
-                setProcessState('disconnected-error');
-                return;
-            } else {
-                createNotification({
-                    text: getApiErrorMessage(e) || c('Error').t`Failed to create meeting`,
-                    type: 'error',
-                });
-            }
-
-            // In case of error, we reset the state of the button to connected
-            setProcessState('connected');
-        }
-    };
-
-    const handleReconnect = (shouldCreateMeeting: boolean) => {
-        sendEventVideoConferenceZoomIntegration(VideoConferenceZoomIntegration.oauth_modal_displayed);
-        void triggerZoomOAuth(() => {
-            if (shouldCreateMeeting) {
-                void createVideoConferenceMeeting();
-                setProcessState('meeting-present');
-            } else {
-                createNotification({
-                    text: c('Error').t`You are reconnected to Zoom. You can save your event now.`,
-                });
-            }
-        });
-    };
-
-    const handleClick = async () => {
-        sendEventVideoConferenceZoomIntegration(VideoConferenceZoomIntegration.add_zoom_meeting_button);
-        onRowClick?.();
-
-        if (!user.hasPaidMail) {
-            sendEventVideoConferenceZoomIntegration(VideoConferenceZoomIntegration.free_mail_users_upsell);
-            zoomUpsellModal.openModal(true);
-            return;
-        }
-
-        if (shouldReconnectToZoom(processState)) {
-            handleReconnect(true);
-        } else if (model.conferenceUrl && model.isConferenceTmpDeleted) {
-            setModel({
-                ...model,
-                isConferenceTmpDeleted: false,
-            });
-            setProcessState('meeting-present');
-        } else {
-            await createVideoConferenceMeeting();
-        }
-    };
-
-    const handleDelete = async () => {
-        sendEventVideoConferenceZoomIntegration(VideoConferenceZoomIntegration.remove_zoom_meeting_button);
-
-        setModel({
-            ...model,
-            isConferenceTmpDeleted: true,
-        });
-        setProcessState('meeting-deleted');
-    };
 
     if (processState === 'zoom-reconnection-error') {
         return (
@@ -244,7 +124,6 @@ export const ZoomRow = ({ model, setModel, accessLevel, onRowClick, hasZoomError
 
     return (
         <>
-            {zoomUpsellModal.render && <ZoomUpsellModal modalProps={zoomUpsellModal.modalProps} />}
             <IconRow
                 icon={getIcon(processState)}
                 labelClassName={clsx(shouldSeeLoadingButton(processState) && 'my-auto p-0')}

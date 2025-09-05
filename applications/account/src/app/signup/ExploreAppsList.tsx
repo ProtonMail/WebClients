@@ -30,6 +30,7 @@ export const getExploreApps = ({
 } & Omit<Parameters<typeof getAvailableApps>[0], 'context'>) => {
     const user = options.user;
     const availableApps = getAvailableApps({ ...options, context: 'dropdown' });
+
     return [
         {
             name: APPS.PROTONMAIL,
@@ -80,6 +81,11 @@ export const getExploreApps = ({
             description: () => {
                 return c('collider_2025: app-switcher').t`Chat with a private AI assistant`;
             },
+        },
+        {
+            name: APPS.PROTONMEET,
+            bit: PRODUCT_BIT.MEET,
+            description: () => c('app-switcher').t`Talk confidentially`,
         },
     ]
         .sort((a, b) => {

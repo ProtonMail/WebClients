@@ -1,0 +1,8 @@
+.participants-list {
+	padding-block-start: 3.5rem;
+	scrollbar-color: var(--interaction-weak) transparent !important;
+
+	&::-webkit-scrollbar-thumb {
+		background: var(--interaction-weak) !important;
+	}
+}
