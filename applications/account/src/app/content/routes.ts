@@ -3,6 +3,7 @@ import { getCalendarAppRoutes } from '../containers/calendar/routes';
 import { getDocsAppRoutes } from '../containers/docs/routes';
 import { getDriveAppRoutes } from '../containers/drive/routes';
 import { getMailAppRoutes } from '../containers/mail/routes';
+import { getMeetAppRoutes } from '../containers/meet/routes';
 import { getOrganizationAppRoutes } from '../containers/organization/routes';
 import { getPassAppRoutes } from '../containers/pass/routes';
 import { getVpnAppRoutes } from '../containers/vpn/routes';
@@ -43,6 +44,7 @@ export const getRoutes = ({
     isB2BAuthLogsEnabled,
     isScribeEnabled,
     isZoomIntegrationEnabled,
+    isProtonMeetIntegrationEnabled,
     isCalendarHotkeysEnabled,
     isSharedServerFeatureEnabled,
     isCryptoPostQuantumOptInEnabled,
@@ -72,6 +74,7 @@ export const getRoutes = ({
             isUserGroupsMembershipFeatureEnabled,
             memberships,
             isZoomIntegrationEnabled,
+            isProtonMeetIntegrationEnabled,
             isB2BTrial,
             isReferralExpansionEnabled,
             referralInfo,
@@ -83,7 +86,14 @@ export const getRoutes = ({
             organization,
             isCryptoPostQuantumOptInEnabled,
         }),
-        calendar: getCalendarAppRoutes({ app, user, organization, isZoomIntegrationEnabled, isCalendarHotkeysEnabled }),
+        calendar: getCalendarAppRoutes({
+            app,
+            user,
+            organization,
+            isZoomIntegrationEnabled,
+            isProtonMeetIntegrationEnabled,
+            isCalendarHotkeysEnabled,
+        }),
         drive: getDriveAppRoutes({ app, isB2BDrive, canB2BHidePhotos }),
         docs: getDocsAppRoutes({ app }),
         pass: getPassAppRoutes({ app, user, organization, subscription, canDisplayB2BLogsPass, canDisplayPassReports }),
@@ -98,6 +108,7 @@ export const getRoutes = ({
             groups,
             isScribeEnabled,
             isZoomIntegrationEnabled,
+            isProtonMeetIntegrationEnabled,
             isSharedServerFeatureEnabled,
             isPasswordPolicyEnabled,
             isSsoForPbsEnabled,
@@ -105,6 +116,7 @@ export const getRoutes = ({
         }),
         vpn: getVpnAppRoutes({ app }),
         wallet: getWalletAppRoutes(),
+        meet: getMeetAppRoutes(),
     };
 };
 

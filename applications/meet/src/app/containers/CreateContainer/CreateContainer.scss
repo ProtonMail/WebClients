@@ -1,0 +1,113 @@
+.create-container {
+	.field-two-assist {
+		display: none !important;
+	}
+
+	.input,
+	.select {
+		background-color: var(--background-weak) !important;
+		border-radius: 1.5rem !important;
+		padding: 0.5rem !important;
+		border-width: 0.063rem !important;
+		border-style: solid;
+		border-color: var(--border-norm);
+	}
+
+	.select {
+		padding: 1.6rem !important;
+	}
+
+	.date-input {
+		padding: 0.45rem !important;
+		justify-content: center !important;
+		align-items: center !important;
+	}
+
+	.input.focus,
+	.input:not(.disabled):focus-within {
+		box-shadow: 0 0 0 0.063rem var(--interaction-norm);
+	}
+}
+
+.secondary-action-button {
+	background: var(--interaction-weak-minor-2) !important;
+
+	&:hover {
+		background: var(--interaction-weak-minor-3) !important;
+	}
+}
+
+.field {
+	&:focus {
+		box-shadow: 0 0 0 0.063rem var(--interaction-norm) !important;
+	}
+}
+
+.create-container-dropdown {
+	box-shadow: none !important;
+	border-radius: 1rem !important;
+	border: 1px solid var(--border-norm) !important;
+
+	.minicalendar {
+		.today-icon {
+			border-radius: var(--border-radius-full) !important;
+		}
+	}
+
+	.minicalendar-day {
+		opacity: 1 !important;
+		border: none !important;
+	}
+
+	.minicalendar-day--selected::before {
+		background-color: var(--interaction-norm) !important;
+		border-radius: var(--border-radius-full) !important;
+		color: var(--text-invert) !important;
+	}
+
+	.minicalendar-day--selected::after {
+		border: none !important;
+		background: transparent !important;
+	}
+
+	.minicalendar-day[aria-pressed='true'] {
+		background: transparent !important;
+	}
+
+	.minicalendar-day--selected .minicalendar-day-number {
+		color: var(--text-invert) !important;
+	}
+
+	.minicalendar-day[aria-current='date']::before {
+		border: none !important;
+	}
+
+	.minicalendar-day[aria-current='date']::after {
+		border-radius: var(--border-radius-full) !important;
+	}
+
+	.field {
+		border-color: var(--border-norm) !important;
+
+		&:focus {
+			box-shadow: 0 0 0 0.063rem var(--interaction-norm) !important;
+		}
+	}
+
+	.dropdown-content {
+		border-radius: 1rem !important;
+	}
+
+	.dropdown-item-button {
+		border-radius: var(--border-radius-xl);
+		background-color: var(--interaction-norm-minor-2);
+
+		&:hover {
+			background-color: var(--interaction-norm-minor-3) !important;
+		}
+	}
+
+	.dropdown-item--is-selected {
+		background-color: var(--interaction-norm-minor-2) !important;
+	}
+}

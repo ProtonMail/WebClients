@@ -1,0 +1,22 @@
+.participant-tile-body {
+	overflow: hidden;
+	aspect-ratio: 16 / 9;
+}
+
+.participant-tile-body__video {
+	display: block;
+	object-fit: cover;
+}
+
+.radius-normal {
+	border-radius: 1.75rem;
+}
+
+.radius-small {
+	border-radius: 1rem;
+}
+
+.participant-tile-name,
+.speaker-border {
+	z-index: +1;
+}

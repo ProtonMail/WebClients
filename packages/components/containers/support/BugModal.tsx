@@ -138,6 +138,13 @@ const getMailOptions = (): OptionItem[] => {
             clientType: CLIENT_TYPES.LUMO,
             app: APPS.PROTONLUMO,
         },
+        {
+            type: optionType,
+            value: 'Meet problem',
+            title: c('Bug category').t`Meet problem`,
+            clientType: CLIENT_TYPES.MEET,
+            app: APPS.PROTONMEET,
+        },
         { type: labelType, value: c('Group').t`Other category` },
         { type: optionType, value: 'Feature request', title: c('Bug category').t`Feature request` },
         { type: optionType, value: 'Other', title: c('Bug category').t`Other` },

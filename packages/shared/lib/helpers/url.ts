@@ -350,6 +350,10 @@ export const getAppStaticUrl = (app: APP_NAMES) => {
         return getStaticURL('/wallet');
     }
 
+    if (app === APPS.PROTONMEET) {
+        return getStaticURL('/meet');
+    }
+
     return getStaticURL('');
 };
 
