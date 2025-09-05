@@ -1,6 +1,6 @@
 import type { Ref } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Kbd, Vr } from '@proton/atoms';
 import { DropdownSizeUnit, Icon } from '@proton/components';
@@ -9,8 +9,8 @@ import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
-import LabelDropdown, { labelDropdownContentProps } from '../dropdown/LabelDropdown';
-import MoveDropdown, { moveDropdownContentProps } from '../dropdown/MoveDropdown';
+import { MoveToFolderDropdown, moveDropdownContentProps } from '../actions/MoveToFolderDropdown';
+import { MoveToLabelDropdown, labelDropdownContentProps } from '../actions/MoveToLabelDropdown';
 import ToolbarDropdown from './ToolbarDropdown';
 
 interface Props {
@@ -35,24 +35,28 @@ const LabelsAndFolders = ({
         return null;
     }
 
+    const selectedItems = selectedIDs.length;
+    const messageTitle = c('Title').ngettext(msgid`Move message to`, `Move messages to`, selectedItems);
+    const labelTitle = c('Title').ngettext(msgid`Label message as`, `Label messages as`, selectedItems);
+
     const titleMove = mailSettings.Shortcuts ? (
         <>
-            {c('Title').t`Move to`}
+            {messageTitle}
             <br />
             <Kbd shortcut="M" />
         </>
     ) : (
-        c('Title').t`Move to`
+        messageTitle
     );
 
     const titleLabel = mailSettings.Shortcuts ? (
         <>
-            {c('Title').t`Label as`}
+            {labelTitle}
             <br />
             <Kbd shortcut="L" />
         </>
     ) : (
-        c('Title').t`Label as`
+        labelTitle
     );
 
     return (
@@ -73,7 +77,7 @@ const LabelsAndFolders = ({
                 {{
                     contentProps: moveDropdownContentProps,
                     render: ({ onClose, onLock }) => (
-                        <MoveDropdown
+                        <MoveToFolderDropdown
                             labelID={labelID}
                             selectedIDs={selectedIDs}
                             onClose={onClose}
@@ -100,7 +104,7 @@ const LabelsAndFolders = ({
                 {{
                     contentProps: labelDropdownContentProps,
                     render: ({ onClose, onLock }) => (
-                        <LabelDropdown
+                        <MoveToLabelDropdown
                             labelID={labelID}
                             selectedIDs={selectedIDs}
                             onClose={onClose}

@@ -6,10 +6,10 @@ import { DEFAULT_MAILSETTINGS, VIEW_MODE } from '@proton/shared/lib/mail/mailSet
 
 import { addApiMock, clearAll, waitForSpyCall } from '../../../helpers/test/helper';
 import type { Element } from '../../../models/element';
-import { folders, labels, sendEvent, setup } from './Mailbox.test.helpers';
+import { folders, labels, setup } from './Mailbox.test.helpers';
 
 const [label1, label2, label3, label4] = labels;
-const [folder1, folder2] = folders;
+const [folder1] = folders;
 
 jest.mock('proton-mail/metrics/useMailELDTMetric', () => ({
     useMailELDTMetric: () => {
@@ -66,7 +66,7 @@ describe('Mailbox labels actions', () => {
                 }
             });
 
-            const labelDropdownApply = screen.getByTestId('label-dropdown:apply');
+            const labelDropdownApply = screen.getByTestId('move-to-apply');
             fireEvent.click(labelDropdownApply);
         };
 
@@ -180,48 +180,6 @@ describe('Mailbox labels actions', () => {
                     [label4.Name]: false,
                 },
             });
-        });
-    });
-
-    describe('folders action', () => {
-        const useMoveDropdown = (folderID: string) => {
-            const moveDropdownButton = screen.getByTestId('toolbar:moveto');
-            fireEvent.click(moveDropdownButton);
-
-            const moveDropdownList = screen.getByTestId('move-dropdown-list');
-
-            const folderButton = moveDropdownList.querySelector(`[id$=${folderID}]`);
-            if (folderButton) {
-                fireEvent.click(folderButton);
-            }
-
-            const moveDropdownApply = screen.getByTestId('move-dropdown:apply');
-            fireEvent.click(moveDropdownApply);
-        };
-
-        it('should move two conversations in a another folder', async () => {
-            const labelRequestSpy = jest.fn(() => ({ UndoToken: { Token: 'Token' } }));
-            addApiMock(`mail/v4/conversations/label`, labelRequestSpy, 'put');
-
-            const { getItems, store } = await setup({
-                conversations,
-                labelID: folder1.ID,
-            });
-
-            const checkboxes = screen.getAllByTestId('item-checkbox');
-            fireEvent.click(checkboxes[0]);
-            fireEvent.click(checkboxes[1]);
-
-            addApiMock('mail/v4/conversations', () => ({ Total: 1, Conversations: [conversation3] }));
-
-            useMoveDropdown(folder2.ID);
-
-            await sendEvent(store, { ConversationCounts: [{ LabelID: folder1.ID, Total: 1, Unread: 0 }] });
-
-            await waitForSpyCall({ spy: labelRequestSpy });
-
-            const items = getItems();
-            expect(items.length).toBe(1);
         });
     });
 

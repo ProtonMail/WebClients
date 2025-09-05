@@ -15,8 +15,8 @@ import { canMoveAll } from '../../helpers/labels';
 import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
 import useSnooze from '../../hooks/actions/useSnooze';
 import { useLabelActions } from '../../hooks/useLabelActions';
-import LabelDropdown, { labelDropdownContentProps } from '../dropdown/LabelDropdown';
-import MoveDropdown, { moveDropdownContentProps } from '../dropdown/MoveDropdown';
+import { MoveToFolderDropdown, moveDropdownContentProps } from '../actions/MoveToFolderDropdown';
+import { MoveToLabelDropdown, labelDropdownContentProps } from '../actions/MoveToLabelDropdown';
 import useListTelemetry, { ACTION_TYPE, SELECTED_RANGE, SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import SnoozeUpsellModal from '../list/snooze/components/SnoozeUpsellModal';
 import SnoozeToolbarDropdownStepWrapper, {
@@ -208,7 +208,7 @@ const MoreDropdown = ({
               {
                   contentProps: moveDropdownContentProps,
                   render: ({ onClose, onLock }) => (
-                      <MoveDropdown
+                      <MoveToFolderDropdown
                           labelID={labelID}
                           selectedIDs={selectedIDs}
                           onClose={onClose}
@@ -222,7 +222,7 @@ const MoreDropdown = ({
               {
                   contentProps: labelDropdownContentProps,
                   render: ({ onClose, onLock }) => (
-                      <LabelDropdown
+                      <MoveToLabelDropdown
                           labelID={labelID}
                           selectedIDs={selectedIDs}
                           onClose={onClose}

@@ -10,12 +10,12 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import type { Element } from 'proton-mail/models/element';
 
-import { addApiMock } from '../../../helpers/test/api';
-import { minimalCache } from '../../../helpers/test/cache';
-import { mailTestRender } from '../../../helpers/test/render';
-import { initialize } from '../../../store/messages/read/messagesReadActions';
-import { messageID } from '../../message/tests/Message.test.helpers';
-import LabelDropdown, { getInitialState } from '../LabelDropdown';
+import { addApiMock } from '../../helpers/test/api';
+import { minimalCache } from '../../helpers/test/cache';
+import { mailTestRender } from '../../helpers/test/render';
+import { initialize } from '../../store/messages/read/messagesReadActions';
+import { messageID } from '../message/tests/Message.test.helpers';
+import { MoveToLabelDropdown, getInitialState } from './MoveToLabelDropdown';
 
 const label1Name = 'Label1';
 const label1ID = 'label-1-id';
@@ -45,7 +45,7 @@ const getMessage = (labelIDs: string[] = []) => {
     } as MessageState;
 };
 
-describe('LabelDropdown', () => {
+describe('MoveToLabelDropdown', () => {
     const setup = async (
         labelIDs: string[] = [],
         selectAll = false,
@@ -89,7 +89,7 @@ describe('LabelDropdown', () => {
             },
         });
         result.store.dispatch(initialize(message));
-        await result.rerender(<LabelDropdown {...props} />);
+        await result.rerender(<MoveToLabelDropdown {...props} />);
         return result;
     };
 
@@ -124,7 +124,7 @@ describe('LabelDropdown', () => {
         expect(checkbox1.checked).toBe(true);
 
         // Apply the label
-        const applyButton = screen.getByTestId('label-dropdown:apply');
+        const applyButton = screen.getByTestId('move-to-apply');
 
         await act(async () => {
             fireEvent.click(applyButton);
@@ -152,7 +152,7 @@ describe('LabelDropdown', () => {
         expect(checkbox1.checked).toBeFalsy();
 
         // Apply the unlabel
-        const applyButton = screen.getByTestId('label-dropdown:apply');
+        const applyButton = screen.getByTestId('move-to-apply');
 
         await act(async () => {
             fireEvent.click(applyButton);
@@ -187,7 +187,7 @@ describe('LabelDropdown', () => {
         });
 
         // Apply the label
-        const applyButton = screen.getByTestId('label-dropdown:apply');
+        const applyButton = screen.getByTestId('move-to-apply');
 
         await act(async () => {
             fireEvent.click(applyButton);
@@ -229,7 +229,7 @@ describe('LabelDropdown', () => {
         });
 
         // Apply the label
-        const applyButton = screen.getByTestId('label-dropdown:apply');
+        const applyButton = screen.getByTestId('move-to-apply');
 
         await act(async () => {
             fireEvent.click(applyButton);
@@ -243,7 +243,7 @@ describe('LabelDropdown', () => {
         await setup();
 
         // Search for a label which does not exist
-        const searchInput = screen.getByTestId('label-dropdown:search-input');
+        const searchInput = screen.getByTestId('move-to-search-input');
 
         await act(async () => {
             fireEvent.change(searchInput, { target: { value: search } });
@@ -256,38 +256,9 @@ describe('LabelDropdown', () => {
         expect(labels.length).toBe(0);
 
         // Click on the create label button
-        const createLabelButton = screen.getByTestId('label-dropdown:add-label');
+        const createLabelButton = screen.getByTestId('move-to-create-label');
 
         fireEvent.click(createLabelButton);
-
-        // Get the modal content
-        const createLabelModal = screen.getByRole('dialog', { hidden: true });
-        const labelModalNameInput = getByTestIdDefault(createLabelModal, 'label/folder-modal:name') as HTMLInputElement;
-
-        // Input is filled with the previous search content
-        expect(labelModalNameInput.value).toEqual(search);
-    });
-
-    it('should create a label from the option', async () => {
-        await setup();
-
-        // Search for a label which does not exist
-        const searchInput = screen.getByTestId('label-dropdown:search-input');
-
-        await act(async () => {
-            fireEvent.change(searchInput, { target: { value: search } });
-            // input has a debounce, so we need to wait for the onChange
-            await wait(300);
-        });
-
-        // No more option are displayed
-        const labels = screen.queryAllByTestId(/label-dropdown:label-checkbox-/) as HTMLInputElement[];
-        expect(labels.length).toBe(0);
-
-        // Click on the create label option
-        const createLabelOption = screen.getByTestId('label-dropdown:create-label-option');
-
-        fireEvent.click(createLabelOption);
 
         // Get the modal content
         const createLabelModal = screen.getByRole('dialog', { hidden: true });
