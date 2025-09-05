@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Kbd, Tooltip } from '@proton/atoms';
 import { AutotypeKeyboardShortcut } from '@proton/pass/components/Item/Autotype/AutotypeKeyboardShortcut';
-import { type Item } from '@proton/pass/types';
+import type { Item } from '@proton/pass/types';
 import type { AutotypeAction } from '@proton/pass/types/desktop/autotype';
 import { AutotypeKey } from '@proton/pass/types/desktop/autotype';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';

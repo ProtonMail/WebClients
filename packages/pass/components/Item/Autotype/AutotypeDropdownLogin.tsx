@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { AutotypeDropdown } from '@proton/pass/components/Item/Autotype/AutotypeDropdown';
 import { useAutotypeActions } from '@proton/pass/hooks/autotype/useAutotypeActions';
