@@ -229,9 +229,7 @@ export async function serializeMessage(message: Message, spaceDek: AesGcmCryptoK
         const messagePub = getMessagePub(message);
         let encrypted: EncryptedData | undefined = undefined;
         if (!isEmptyMessagePriv(messagePriv)) {
-            console.log('serializeMessage: messagePriv:', messagePriv);
             const messagePrivJson = JSON.stringify(messagePriv);
-            console.log('serializeMessage: messagePrivJson:', messagePrivJson);
             const messagePrivJsonEncrypted = await encryptString(messagePrivJson, spaceDek, ad);
             encrypted = messagePrivJsonEncrypted;
         }
@@ -258,9 +256,7 @@ export async function deserializeMessage(
         let messagePriv: MessagePriv = {};
         if (encrypted !== undefined) {
             const messagePrivJson = await decryptString(encrypted, spaceDek, ad);
-            console.log('deserializeMessage: messagePrivJson:', messagePrivJson);
             messagePriv = JSON.parse(messagePrivJson);
-            console.log('deserializeMessage: messagePriv:', messagePriv);
             if (!isMessagePriv(messagePriv)) {
                 throw new Error('Deserialized object is not a MessagePriv');
             }
