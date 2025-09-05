@@ -2,6 +2,16 @@
 @import '~@proton/styles/scss/proton-lumo';
 @import '~@proton/styles/scss/lib';
 
+// body:before {
+//     position: fixed;
+//     display: flex;
+//     top: 0;
+//     background-color: red;
+//     color: white;
+//     left: 0;
+//     z-index: 12000;
+// }
+
 .main-text-container {
 	container-type: inline-size;
 	container-name: maintext;
@@ -42,7 +52,7 @@
 .lumo-gradient-text {
 	font-family: Syne, Inter, system-ui, sans-serif;
 	color: #8b7cf6; /* Fallback color */
-	background: linear-gradient(135deg, #FFAC2E 15.77%, #DD5DCC 38.40%, #1BA3FD 75.93%, #5325A2 99.84%);
+	background: linear-gradient(135deg, #ffac2e 15.77%, #dd5dcc 38.4%, #1ba3fd 75.93%, #5325a2 99.84%);
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
@@ -51,33 +61,35 @@
 	background-color: inherit;
 
 	// Smooth width transitions for desktop
-	transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
+	transition:
+		inline-size 0.3s ease-in-out,
+		transform 0.3s ease-in-out;
 
 	// Hardware acceleration
-	will-change: width, transform;
+	will-change: inline-size, transform;
 	backface-visibility: hidden;
 
 	// Only apply translateZ on desktop to avoid conflicts with mobile translateX
-	@media (min-width: 769px) {
+	@include media('>small') {
 		transform: translateZ(0);
 	}
 
 	&--collapsed {
-		width: 64px; // Collapsed width - fits icons + padding
+		inline-size: 64px; // Collapsed width - fits icons + padding
 	}
 
 	&:not(.sidebar--collapsed) {
-		width: 260px; // Expanded width - comfortable for text
+		inline-size: 260px; // Expanded width - comfortable for text
 	}
 
 	// Mobile sidebar transitions - true overlay that doesn't affect layout
-	@media (max-width: 768px) {
+	@include media('<=small') {
 		position: fixed !important;
-		top: 0 !important;
-		left: 0 !important;
-		height: 100vh !important;
+		inset-block-start: 0 !important;
+		inset-inline-start: 0 !important;
+		block-size: 100vh !important;
 		z-index: 100 !important;
-		width: 260px !important; // Always full width on mobile
+		inline-size: 260px !important; // Always full width on mobile
 
 		// Force transitions to work even with immediate class changes
 		transition: transform 0.3s ease-in-out !important;
@@ -99,6 +111,7 @@
 		// Ensure sidebar doesn't affect main content layout
 		margin: 0 !important;
 		padding: 0 !important;
+
 		// Remove any width that might affect layout calculations
 		flex: none !important;
 		flex-basis: auto !important;
@@ -117,10 +130,10 @@
 // Sidebar backdrop - base properties (mobile enhancements in LumoSidebar.scss)
 .sidebar-backdrop {
 	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
+	inset-block-start: 0;
+	inset-inline-start: 0;
+	inline-size: 100vw;
+	block-size: 100vh;
 	opacity: 1;
 	pointer-events: auto;
 	z-index: 90; // Behind sidebar (which is z-index: 100) but above content
@@ -131,7 +144,9 @@
 	transform: translateZ(0);
 
 	// Smooth backdrop transitions
-	transition: opacity 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+	transition:
+		opacity 0.3s ease-in-out,
+		backdrop-filter 0.3s ease-in-out;
 }
 
 // Smooth content transitions in sidebar
@@ -161,7 +176,6 @@
 	background-color: transparent !important;
 	color: var(--text-norm) !important;
 
-
 	&.navigation-link {
 		font-weight: 600 !important;
 		border-radius: 8px;
@@ -185,18 +199,15 @@ button:hover:not(.is-active) {
 
 .sidebar-list-item-content {
 	.shrink-0 {
-		min-width: 1rem;
-		width: 1rem;
+		min-inline-size: 1rem;
+		inline-size: 1rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-
-
 		will-change: transform;
 		backface-visibility: hidden;
 		transform: translateZ(0);
 	}
-
 
 	.text-ellipsis {
 		transition: opacity 0.15s ease-in-out;
@@ -211,7 +222,6 @@ button:hover:not(.is-active) {
 
 html,
 body {
-
 	color-scheme: only light;
 }
 
@@ -242,13 +252,11 @@ body {
 }
 
 .chat-container {
-
 	border-image: linear-gradient(134.93deg, rgb(226 219 255 / 0.3) -0.55%, rgb(226 219 255 / 0) 29.89%);
 	border-image-slice: 1;
 	border-radius: 1rem;
 	background-color: #ffffff0d;
 }
-
 
 .circle-chart-circle {
 	stroke: var(--primary);
@@ -264,11 +272,9 @@ body {
 	border: none;
 }
 
-
 .input-element:focus {
 	outline: none;
 }
-
 
 .ProseMirror {
 	will-change: contents;
@@ -337,7 +343,6 @@ body {
 		margin-block-start: 0.75rem;
 	}
 
-
 	> h1,
 	> h2,
 	> h3,
@@ -376,7 +381,6 @@ body {
 		margin-inline-start: 1.5em;
 		white-space: normal;
 	}
-
 
 	$line-height: 1.2;
 
@@ -457,8 +461,6 @@ body {
 
 	pre {
 		margin-block: 0.75rem;
-
-
 		border-radius: 0.5rem;
 		padding-block: 1.25rem;
 		padding-inline: 1rem;
@@ -525,7 +527,6 @@ body {
 		line-height: 1;
 	}
 
-
 	ul.contains-task-list {
 		margin-inline-start: 0;
 
@@ -579,7 +580,6 @@ body {
 		overflow: visible;
 	}
 
-
 	.token.comment,
 	.token.prolog,
 	.token.doctype,
@@ -612,7 +612,6 @@ body {
 	.token.inserted {
 		color: #98c379;
 	}
-
 
 	@keyframes loading {
 		0% {
