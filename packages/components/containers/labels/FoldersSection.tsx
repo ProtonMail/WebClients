@@ -65,6 +65,16 @@ export default function FoldersSection({ showPromptOnAction = false }: Props) {
         createNotification({ text: c('Success message after sorting folders').t`Folders sorted` });
     };
 
+    const handleClickUpsell = () => {
+        // For ET iOS, show the native upsell modal
+        if ((window as any).webkit?.messageHandlers.upsell) {
+            (window as any).webkit?.messageHandlers.upsell.postMessage('folders-action');
+            return;
+        } else {
+            handleUpsellModalDisplay(true);
+        }
+    };
+
     return (
         <SettingsSection>
             {loadingFolders ? (
@@ -105,10 +115,7 @@ export default function FoldersSection({ showPromptOnAction = false }: Props) {
                                 {c('Action').t`Add folder`}
                             </Button>
                         ) : (
-                            <MailUpsellButton
-                                onClick={() => handleUpsellModalDisplay(true)}
-                                text={c('Action').t`Get more folders`}
-                            />
+                            <MailUpsellButton onClick={handleClickUpsell} text={c('Action').t`Get more folders`} />
                         )}
                         {folders.length ? (
                             <Button
