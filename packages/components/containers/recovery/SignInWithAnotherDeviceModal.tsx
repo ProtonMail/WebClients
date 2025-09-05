@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { deserializeQrCodePayload } from '@proton/account/signInWithAnotherDevice/qrCodePayload';
 import { signInWithAnotherDevicePush } from '@proton/account/signInWithAnotherDevice/signInWithAnotherDevicePush';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
@@ -46,7 +47,7 @@ const SignInWithAnotherDeviceModal = (props: Props) => {
         try {
             await signInWithAnotherDevicePush({
                 api: getSilentApi(api),
-                data: qrCodeData,
+                qrCodePayload: deserializeQrCodePayload(qrCodeData),
                 keyPassword: authentication.getPassword(),
             });
             createNotification({ text: c('edm').t`You have successfully signed in to another device` });
