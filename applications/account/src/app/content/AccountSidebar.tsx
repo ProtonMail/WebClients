@@ -13,7 +13,7 @@ import {
     useAccountSpotlights,
 } from '@proton/components';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS } from '@proton/shared/lib/constants';
+import { MEET_SHORT_APP_NAME , APPS } from '@proton/shared/lib/constants';
 
 import SidebarListWrapper from '../containers/SidebarListWrapper';
 import CalendarSettingsSidebar from '../containers/calendar/CalendarSettingsSidebar';
@@ -36,6 +36,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
         [APPS.PROTONPASS]: c('Navigation').t`Pass vaults`,
         [APPS.PROTONDOCS]: c('Navigation').t`Documents`,
         [APPS.PROTONWALLET]: c('wallet_signup_2024:Navigation').t`Wallet`,
+        [APPS.PROTONMEET]: MEET_SHORT_APP_NAME,
         [APPS.PROTONLUMO]: c('collider_2025: Navigation').t`Conversations`,
     };
     const backButtonCopyTitle = {
@@ -46,6 +47,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
         [APPS.PROTONDOCS]: c('Navigation').t`Back to documents`,
         [APPS.PROTONWALLET]: c('wallet_signup_2024:Navigation').t`Back to wallet`,
         [APPS.PROTONLUMO]: c('collider_2025: Navigation').t`Back to conversations`,
+        [APPS.PROTONMEET]: c('Navigation').t`Back to ${MEET_SHORT_APP_NAME}`,
     };
 
     const backButtonText = backButtonCopy[app as keyof typeof backButtonCopy];
@@ -100,6 +102,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
                     {app === APPS.PROTONPASS && <SidebarListWrapper prefix={prefix} {...routes.pass} />}
                     {app === APPS.PROTONDOCS && <SidebarListWrapper prefix={prefix} {...routes.docs} />}
                     {app === APPS.PROTONWALLET && <SidebarListWrapper prefix={prefix} {...routes.wallet} />}
+                    {app === APPS.PROTONMEET && <SidebarListWrapper prefix={prefix} {...routes.meet} />}
                     {routes.organization.available && <SidebarListWrapper prefix={prefix} {...routes.organization} />}
                 </SidebarList>
             </SidebarNav>

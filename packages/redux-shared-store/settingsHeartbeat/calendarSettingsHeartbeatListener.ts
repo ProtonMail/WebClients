@@ -60,6 +60,7 @@ export const calendarSettingsHeartbeatListener = (startListening: AppStartListen
                     darkThemeName: PROTON_THEMES_MAP[DarkTheme].label,
                     themeMode: getThemeMode(Mode),
                     videoConference: formatBooleanForHeartbeat(organization.Settings.VideoConferencingEnabled),
+                    protonMeet: formatBooleanForHeartbeat(organization.Settings.MeetVideoConferencingEnabled),
                     autoDetectPrimaryTimezone: formatBooleanForHeartbeat(calendarSettings.AutoDetectPrimaryTimezone),
                     displaySecondaryTimezone: formatBooleanForHeartbeat(calendarSettings.DisplaySecondaryTimezone),
                     displayWeekNumber: formatBooleanForHeartbeat(calendarSettings.DisplayWeekNumber),

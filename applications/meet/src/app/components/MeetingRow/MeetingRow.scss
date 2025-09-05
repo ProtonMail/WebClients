@@ -1,0 +1,24 @@
+.meeting-row {
+	background-color: var(--background-card) !important;
+	border-radius: 2rem;
+	border-color: var(--border-card);
+
+	.join-button {
+		background-color: var(--interaction-weak) !important;
+
+		&:hover,
+		&:focus {
+			background-color: var(--interaction-weak-major-1) !important;
+			color: var(--text-norm) !important;
+		}
+	}
+
+	.copy-link-button {
+		background-color: var(--interaction-norm-minor-3) !important;
+
+		&:hover,
+		&:focus {
+			background-color: var(--interaction-norm-minor-2) !important;
+		}
+	}
+}

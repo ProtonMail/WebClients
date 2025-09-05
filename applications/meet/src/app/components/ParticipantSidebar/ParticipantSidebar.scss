@@ -1,0 +1,11 @@
+.hide-scrollbar {
+	scrollbar-width: none; /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+	display: none; /* Chrome, Safari, Opera */
+}
+
+.participant-sidebar-button {
+	z-index: 15 !important;
+}

@@ -1,0 +1,9 @@
+.chat-message {
+	white-space: pre-line;
+	word-break: break-word;
+	overflow: hidden;
+}
+
+.chat-message-one-line {
+	word-break: keep-all;
+}

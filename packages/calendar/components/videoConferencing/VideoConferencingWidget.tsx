@@ -6,11 +6,12 @@ import { Button, ButtonLike, Href } from '@proton/atoms';
 import { Collapsible, CollapsibleContent, CollapsibleHeader, Copy, Icon, IconRow } from '@proton/components';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcVideoCamera } from '@proton/icons';
-import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import clsx from '@proton/utils/clsx';
 
-import type { BaseMeetingUrls } from './constants';
+import { ProtonMeetPassword } from '../protonMeetIntegration/ProtonMeetPassword';
+import { EventDetailsRow } from './EventDetailsRow';
+import { type BaseMeetingUrls, VIDEO_CONF_SERVICES } from './constants';
 import { getVideoConfCopy, isVideoConfOnlyLink } from './videoConfHelpers';
 
 import './VideoConferencing.scss';
@@ -23,52 +24,6 @@ interface Props {
     handleDelete?: () => void;
     overrideJoinButton?: ReactNode;
 }
-
-const EventDetailsRow = ({
-    prefix,
-    suffix,
-    copySuccessText,
-    linkMode,
-}: {
-    prefix: string;
-    suffix: string;
-    copySuccessText: string;
-    linkMode?: boolean;
-}) => {
-    const { createNotification } = useNotifications();
-    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.stopPropagation();
-
-        textToClipboard(suffix);
-        createNotification({ text: copySuccessText });
-    };
-
-    if (linkMode) {
-        return (
-            <div className="flex flex-column items-start mb-2">
-                <p className="m-0">{prefix}</p>
-                <Button
-                    shape="underline"
-                    color="norm"
-                    size="small"
-                    className="p-0 block text-ellipsis max-w-full"
-                    onClick={handleClick}
-                >
-                    {suffix}
-                </Button>
-            </div>
-        );
-    }
-
-    return (
-        <button type="button" className="flex text-ellipsis max-w-full" onClick={handleClick}>
-            <p className="m-0 mr-1">{prefix}</p>
-            <p className="m-0 text-ellipsis color-weak max-w-full" title={suffix}>
-                {suffix}
-            </p>
-        </button>
-    );
-};
 
 export const VideoConferencingWidget = ({ data, location, handleDelete, overrideJoinButton }: Props) => {
     const { createNotification } = useNotifications();
@@ -128,20 +83,21 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
                         )}
                     </div>
                 </div>
-                {data.meetingId && (
+                {data.meetingId && data.service === VIDEO_CONF_SERVICES.ZOOM && (
                     <EventDetailsRow
                         prefix={c('Zoom Meeting').t`Meeting ID:`}
                         suffix={data.meetingId}
                         copySuccessText={c('Notification').t`Meeting ID copied to clipboard`}
                     />
                 )}
-                {data.password && (
+                {data.password && data.service === VIDEO_CONF_SERVICES.ZOOM && (
                     <EventDetailsRow
                         prefix={c('Zoom Meeting').t`Passcode:`}
                         suffix={data.password}
                         copySuccessText={c('Notification').t`Passcode copied to clipboard`}
                     />
                 )}
+                {data.service === VIDEO_CONF_SERVICES.PROTON_MEET && <ProtonMeetPassword />}
                 {!hasOnlyLink && (
                     <Collapsible className="mt-2" expandByDefault={isExpanded} externallyControlled>
                         <CollapsibleHeader
@@ -158,6 +114,7 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
                                 <Icon name="chevron-down" className={isExpanded ? 'rotateX-180' : ''} />
                             </button>
                         </CollapsibleHeader>
+
                         <CollapsibleContent onClick={(e) => e.stopPropagation()}>
                             <section className="mt-2">
                                 {data.meetingHost && validateEmailAddress(data.meetingHost) && (

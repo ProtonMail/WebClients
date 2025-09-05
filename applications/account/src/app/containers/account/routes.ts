@@ -60,6 +60,7 @@ export const getAccountAppRoutes = ({
     isUserGroupsMembershipFeatureEnabled,
     memberships,
     isZoomIntegrationEnabled,
+    isProtonMeetIntegrationEnabled,
     isB2BTrial,
     isReferralExpansionEnabled,
     referralInfo,
@@ -81,6 +82,7 @@ export const getAccountAppRoutes = ({
     isUserGroupsMembershipFeatureEnabled: boolean;
     memberships: GroupMembershipReturn[] | undefined;
     isZoomIntegrationEnabled: boolean;
+    isProtonMeetIntegrationEnabled: boolean;
     isB2BTrial: boolean;
     isReferralExpansionEnabled: boolean;
     referralInfo: {
@@ -124,9 +126,11 @@ export const getAccountAppRoutes = ({
     const showEasySwitchSection = (!isExternalUser || isBYOEUser) && app !== APPS.PROTONPASS && !isSSOUser;
 
     const showVideoConferenceSection =
-        isZoomIntegrationEnabled &&
+        (isZoomIntegrationEnabled || isProtonMeetIntegrationEnabled) &&
         !isExternalUser &&
-        (organization?.Settings.VideoConferencingEnabled || !hasPaidMail);
+        (organization?.Settings.VideoConferencingEnabled ||
+            organization?.Settings.MeetVideoConferencingEnabled ||
+            !hasPaidMail);
 
     const isAccountRecoveryAvailable = getIsAccountRecoveryAvailable(user);
     const isEmergencyAccessAvailable = getIsOutgoingDelegatedAccessAvailable(user);

@@ -1,0 +1,16 @@
+.display-none {
+	display: none !important;
+}
+
+.send-message-button {
+	background-color: var(--interaction-norm-minor-1) !important;
+}
+
+.hide-scrollbar {
+	scrollbar-width: none !important;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+	display: none; /* Chrome, Safari, Opera */
+	scrollbar-width: none !important;
+}

@@ -1,0 +1,35 @@
+@import '~@proton/styles/scss/lib';
+
+.meeting-ready-popup-container {
+	inset-inline-start: 0;
+
+	@include media('>medium') {
+		inset-inline-start: 1.75rem;
+	}
+}
+
+.meeting-ready-popup {
+	border-radius: 1.5rem;
+	z-index: 1000;
+}
+
+.meeting-ready-popup-meeting-link {
+	margin-block: 1rem 2.5rem;
+}
+
+.meeting-ready-popup-meeting-link-text {
+	word-break: break-all;
+}
+
+.copy-meeting-link-button {
+	background-color: var(--interaction-weak);
+
+	&:hover,
+	&:focus {
+		background-color: var(--interaction-weak-major-1) !important;
+	}
+}
+
+.meeting-ready-popup-title {
+	margin-block: 2rem;
+}

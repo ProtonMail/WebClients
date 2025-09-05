@@ -1,0 +1,43 @@
+@import '~@proton/styles/scss/lib';
+
+.device-settings-container {
+	inline-size: 100%;
+
+	@include media('>medium') {
+		inline-size: 41.69rem;
+		max-inline-size: 41.69rem;
+	}
+}
+
+.device-settings-container-loading {
+	display: none !important;
+
+	@include media('>medium') {
+		display: flex !important;
+	}
+}
+
+.device-settings {
+	background:
+		linear-gradient(180deg, rgb(0 0 0 / 0) 60.62%, rgb(0 0 0 / 0.4) 100%),
+		linear-gradient(0deg, var(--background-strong), var(--background-strong));
+	box-shadow: 0 0.5rem 2.5rem 0 #00000029;
+	border-radius: 2rem;
+	font-weight: 500;
+	inline-size: 100%;
+	flex-grow: 1;
+
+	@include media('>medium') {
+		inline-size: 41.69rem;
+		block-size: 23.25rem;
+		flex-grow: 0;
+	}
+}
+
+.white-border {
+	border-color: color-mix(in srgb, var(--background-invert), transparent 76%) !important;
+}
+
+.device-toggle-buttons {
+	z-index: +1;
+}

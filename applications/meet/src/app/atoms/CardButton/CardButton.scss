@@ -1,0 +1,17 @@
+@import '~@proton/styles/scss/lib';
+
+.card-button {
+	background-color: var(--background-card) !important;
+	border-radius: var(--border-radius-full);
+	border-color: var(--border-card);
+
+	@include media('>medium') {
+		border-radius: 2rem;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: var(--border-card) !important;
+		border-color: var(--border-card) !important;
+	}
+}

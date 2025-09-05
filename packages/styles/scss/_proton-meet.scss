@@ -1,0 +1,23 @@
+// Variables specific overrides
+// Nope
+
+// Configuration
+@import 'lib/';
+
+// Initialisation
+@import 'base/';
+
+// Layout
+@import 'layout/';
+
+// Components
+@import 'components/';
+
+// Helpers
+@import 'utilities/';
+
+:root {
+	--font-weight-medium: 500;
+	--scrollshadow-size: 1.8rem;
+	--scrollshadow-opacity: 0.15;
+}

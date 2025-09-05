@@ -1,0 +1,10 @@
+@import '~@proton/styles/scss/lib';
+
+.participant-controls-buttons {
+	inline-size: auto;
+	justify-content: center;
+
+	@include media('>medium') {
+		justify-content: initial;
+	}
+}

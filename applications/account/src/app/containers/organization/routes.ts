@@ -33,6 +33,7 @@ interface Props {
     groups: Group[] | undefined;
     isScribeEnabled?: boolean;
     isZoomIntegrationEnabled: boolean;
+    isProtonMeetIntegrationEnabled: boolean;
     isSharedServerFeatureEnabled: boolean;
     isPasswordPolicyEnabled: boolean;
     isSsoForPbsEnabled: boolean;
@@ -53,6 +54,7 @@ export const getOrganizationAppRoutes = ({
     groups,
     isScribeEnabled,
     isZoomIntegrationEnabled,
+    isProtonMeetIntegrationEnabled,
     isSharedServerFeatureEnabled,
     isPasswordPolicyEnabled,
     isSsoForPbsEnabled,
@@ -123,7 +125,7 @@ export const getOrganizationAppRoutes = ({
 
     // add test to only show if org is elligible for zoom
     const canShowVideoConferenceSection =
-        isZoomIntegrationEnabled &&
+        (isZoomIntegrationEnabled || isProtonMeetIntegrationEnabled) &&
         (hasActiveOrganizationKey || (isPartOfFamily && hasOrganization)) &&
         user.hasPaidMail &&
         videoConferenceValidApplications.has(app);

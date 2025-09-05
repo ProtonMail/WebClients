@@ -1,0 +1,11 @@
+.screen-share-heading {
+	background: var(--interaction-weak-minor-1);
+
+	.button {
+		background-color: transparent !important;
+
+		&:hover {
+			color: var(--interaction-norm-contrast);
+		}
+	}
+}
