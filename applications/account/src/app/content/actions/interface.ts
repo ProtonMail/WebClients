@@ -1,12 +1,13 @@
 import type { LocationDescriptor } from 'history';
 
 import type { AuthSession } from '@proton/components/containers/login/interface';
-import type { ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
 
 import type { AppSwitcherState } from '../../public/AppSwitcherContainer';
+import type { AuthDesktopState } from '../../public/AuthDesktop';
 import type { AuthExtensionState } from '../../public/AuthExtension';
 import type { OAuthPartnersCallbackState, OAuthPartnersInitiateState } from '../../public/OAuthPartnersContainer';
 import type { ReAuthState } from '../../public/ReAuthContainer';
+import type { ProduceForkData, SSOType } from './forkInterface';
 
 type LoginLocationStateData<Type, State> = {
     type: Type;
@@ -28,7 +29,8 @@ export type LoginLocationState =
     | LoginLocationStateData<'oauth-partners', OAuthPartnersInitiateState | OAuthPartnersCallbackState>
     | LoginLocationStateData<'reauth', ReAuthState>
     | LoginLocationStateData<'app-switcher', AppSwitcherState>
-    | LoginLocationStateData<'auth-ext', AuthExtensionState>;
+    | LoginLocationStateData<'auth-ext', AuthExtensionState>
+    | LoginLocationStateData<'auth-desktop', AuthDesktopState>;
 
 export interface LoginCompleteState {
     type: 'done';

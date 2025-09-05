@@ -1,7 +1,6 @@
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { ForkType, getShouldReAuth } from '@proton/shared/lib/authentication/fork';
-import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
 import {
     GetActiveSessionType,
     type GetActiveSessionsResult,
@@ -13,6 +12,7 @@ import type { OAuthPartnersInitiateState } from '../../public/OAuthPartnersConta
 import { getReAuthState } from '../../public/ReAuthContainer';
 import type { Paths } from '../helper';
 import type { LocalRedirect } from '../localRedirect';
+import { type ProduceForkData, SSOType } from './forkInterface';
 import { getLoginResult } from './getLoginResult';
 import { getProduceForkLoginResult } from './getProduceForkLoginResult';
 import { getSanitizedLocationDescriptorObject } from './getSanitizedLocationDescriptorObject';
@@ -94,7 +94,10 @@ export const getActiveSessionLoginResult = async ({
                 api,
                 data: {
                     type: SSOType.Proton,
-                    payload: { forkParameters },
+                    payload: {
+                        forkParameters,
+                        desktopForkParameters: forkState.payload.desktopForkParameters,
+                    },
                 },
                 session,
                 paths,
