@@ -10,7 +10,7 @@ crate-type = ["cdylib"]
 anyhow = "1.0.80"
 arboard = { version = "3.5.0", features = ["wayland-data-control"] }
 base64 = "=0.21.5"
-enigo = "0.6.1"
+enigo = { version = "0.6.1", default-features = false, features = ["libei_tokio"] }
 napi = { version = "2.12.2", features = ["async"] }
 napi-derive = "2.12.2"
 rand = "0.8.5"
