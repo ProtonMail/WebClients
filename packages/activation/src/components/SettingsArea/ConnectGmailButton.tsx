@@ -1,20 +1,24 @@
 import { c, msgid } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import GmailSyncModal from '@proton/activation/src/components/Modals/GmailSyncModal/GmailSyncModal';
 import ReachedLimitForwardingModal from '@proton/activation/src/components/Modals/ReachedLimitForwardingModal/ReachedLimitForwardingModal';
 import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '@proton/activation/src/constants';
 import useSetupGmailBYOEAddress from '@proton/activation/src/hooks/useSetupGmailBYOEAddress';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms';
-import { UpsellModal, useModalState } from '@proton/components';
+import { useModalState } from '@proton/components';
+import UpsellModal from '@proton/components/components/upsell/UpsellModal/UpsellModal';
 import useConfig from '@proton/components/hooks/useConfig';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { type APP_NAMES, MAIL_APP_NAME, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { isFree, isPaid } from '@proton/shared/lib/user/helpers';
 import forwardImg from '@proton/styles/assets/img/illustrations/new-upsells-img/easy-switch-forward.svg';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
+
+import GmailSyncModal from '../Modals/GmailSyncModal/GmailSyncModal';
 
 interface Props {
     app?: APP_NAMES;
@@ -30,6 +34,7 @@ const ConnectGmailButton = ({
     buttonText = c('Action').t`Set up auto-forwarding from Gmail`,
 }: Props) => {
     const [user, loadingUser] = useUser();
+    const [addresses, loadingAddresses] = useAddresses();
     const { APP_NAME } = useConfig();
 
     const { hasAccessToBYOE, isInMaintenance, handleSyncCallback, allSyncs } = useSetupGmailBYOEAddress();
@@ -48,7 +53,7 @@ const ConnectGmailButton = ({
             fromApp: app,
         }) || '';
 
-    const disabled = loadingUser || !user.hasNonDelinquentScope || isInMaintenance;
+    const disabled = loadingUser || loadingAddresses || !user.hasNonDelinquentScope || isInMaintenance;
 
     const handleCloseForwardingModal = (hasError?: boolean) => {
         if (!hasError) {
@@ -57,9 +62,17 @@ const ConnectGmailButton = ({
     };
 
     const handleAddForwarding = () => {
-        if (isFree(user) && allSyncs.length >= MAX_SYNC_FREE_USER) {
+        if (!addresses) {
+            return;
+        }
+        // Users should see a limit modal if reaching the maximum of BYOE addresses or syncs included in their plan.
+        const byoeAddresses = addresses.filter((address) => getIsBYOEAddress(address));
+
+        const addressesOrSyncs = byoeAddresses.length > allSyncs.length ? byoeAddresses : allSyncs;
+
+        if (isFree(user) && addressesOrSyncs.length >= MAX_SYNC_FREE_USER) {
             setUpsellForwardingModalProps(true);
-        } else if (isPaid(user) && allSyncs.length >= MAX_SYNC_PAID_USER) {
+        } else if (isPaid(user) && addressesOrSyncs.length >= MAX_SYNC_PAID_USER) {
             setReachedLimitForwardingModalProps(true);
         } else {
             setSyncModalProps(true);
