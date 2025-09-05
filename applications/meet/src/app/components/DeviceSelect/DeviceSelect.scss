@@ -1,0 +1,36 @@
+@use 'sass:math';
+@import '~@proton/styles/scss/lib';
+
+.device-select {
+	&#{&} {
+		padding-inline: 1.5rem;
+		border-color: var(--border-norm) !important;
+		outline: none;
+		box-shadow: none !important;
+
+		&:hover,
+		&:focus {
+			background-color: var(--background-norm);
+		}
+	}
+
+	.caret-icon {
+		margin-inline-start: 1rem !important;
+	}
+
+	.selected-label {
+		white-space: nowrap;
+	}
+}
+
+.device-select__dropdown-item {
+	background-color: transparent !important;
+	color: var(--color-weak);
+}
+
+.device-select--dropdown {
+	box-shadow: 0 0 rem(17) 0 #00000057 !important;
+	border-radius: rem(24) !important;
+	padding: rem(12) !important;
+	border: none !important;
+}

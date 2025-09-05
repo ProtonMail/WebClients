@@ -20,6 +20,9 @@ export enum VideoConferenceSource {
     teams_desc = 'teams_desc',
     teams_loc = 'teams_loc',
     int_zoom = 'int_zoom',
+    int_proton_meet = 'int_proton_meet',
+    proton_meet_desc = 'proton_meet_desc',
+    proton_meet_loc = 'proton_meet_loc',
 }
 
 export enum VideoConferenceZoomIntegration {
@@ -29,6 +32,11 @@ export enum VideoConferenceZoomIntegration {
     remove_zoom_meeting_button = 'remove_zoom_meeting_button',
     create_zoom_meeting = 'create_zoom_meeting',
     create_zoom_meeting_failed = 'create_zoom_meeting_failed',
+}
+
+export enum VideoConferenceProtonMeetIntegration {
+    create_proton_meet = 'create_proton_meet',
+    create_proton_meet_failed = 'create_proton_meet_failed',
 }
 
 export const useVideoConfTelemetry = () => {
@@ -60,16 +68,31 @@ export const useVideoConfTelemetry = () => {
         });
     };
 
-    const sendEventVideoConferenceZoomIntegration = (value: VideoConferenceZoomIntegration, errorCode?: string) => {
+    const sentEventZoom = (value: VideoConferenceZoomIntegration, errorCode?: string) => {
         sendReport(TelemetryCalendarVideoConferencing.video_conference_zoom_integration, {
             eventType: value,
             errorCode,
         });
     };
 
+    const sentEventProtonMeet = (value: VideoConferenceProtonMeetIntegration, errorCode?: string) => {
+        sendReport(TelemetryCalendarVideoConferencing.video_conference_proton_meet_integration, {
+            eventType: value,
+            errorCode,
+        });
+    };
+
+    const sentEventProtonMeetSettingsToggle = (value: boolean) => {
+        sendReport(TelemetryCalendarVideoConferencing.video_conference_proton_meet_settings_toggle, {
+            toggleValue: value ? 'on' : 'off',
+        });
+    };
+
     return {
         sendEventVideoConfSource,
         sendEventVideoConferenceSettingsToggle,
-        sendEventVideoConferenceZoomIntegration,
+        sentEventZoom,
+        sentEventProtonMeet,
+        sentEventProtonMeetSettingsToggle,
     };
 };

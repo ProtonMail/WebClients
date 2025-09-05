@@ -55,6 +55,8 @@ export const PROTON_SENTINEL_NAME = 'Proton Sentinel';
 export const DARK_WEB_MONITORING_NAME = 'Dark Web Monitoring';
 export const AUTHENTICATOR_SHORT_APP_NAME = 'Authenticator';
 export const AUTHENTICATOR_APP_NAME = `${BRAND_NAME} ${AUTHENTICATOR_SHORT_APP_NAME}`;
+export const MEET_SHORT_APP_NAME = 'Meet';
+export const MEET_APP_NAME = `${BRAND_NAME} ${MEET_SHORT_APP_NAME}`;
 
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
@@ -77,6 +79,7 @@ export const APPS = {
     PROTONSHEETSEDITOR: 'proton-sheets-editor',
     PROTONLUMO: 'proton-lumo',
     PROTONAUTHENTICATOR: 'proton-authenticator',
+    PROTONMEET: 'proton-meet',
 } as const;
 
 interface AppConfiguration {
@@ -309,6 +312,16 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         settingsSlug: '',
         product: Product.Authenticator,
     },
+    [APPS.PROTONMEET]: {
+        publicPath: '',
+        subdomain: 'meet',
+        name: MEET_APP_NAME,
+        bareName: 'Meet',
+        clientID: 'web-meet',
+        icon: 'brand-proton',
+        settingsSlug: 'meet',
+        product: Product.Meet,
+    },
 };
 
 export enum PRODUCT {
@@ -331,6 +344,7 @@ export enum PRODUCT_BIT {
     WALLET = 16,
     NEUTRON = 32,
     LUMO = 64,
+    MEET = 256,
 }
 
 export type APP_KEYS = keyof typeof APPS;
@@ -389,6 +403,8 @@ export const SSO_PATHS = {
     LUMO_SIGNUP: '/lumo/signup',
     LUMO_SIGN_IN: '/lumo',
     DESKTOP_SIGN_IN: '/desktop/login',
+    MEET_SIGNUP: '/meet/signup',
+    MEET_SIGN_IN: '/meet',
     SIGNUP: '/signup',
     START: '/start',
     INVITE: '/pre-invite',
@@ -905,6 +921,7 @@ export enum CLIENT_TYPES {
     WALLET = 6,
     LUMO = 9,
     AUTHENTICATOR = 10,
+    MEET = 11,
 }
 
 export enum TOKEN_TYPES {

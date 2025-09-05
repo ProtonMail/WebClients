@@ -1,0 +1,58 @@
+.toggle-button-body-on {
+	background-color: var(--interaction-weak-minor-1);
+
+	&:hover,
+	&:focus {
+		background-color: var(--interaction-weak);
+	}
+}
+
+.toggle-button-body-off {
+	background-color: var(--signal-danger-major-3);
+
+	&:hover,
+	&:focus {
+		background-color: var(--signal-danger-minor-1);
+	}
+}
+
+.toggle-button-circle {
+	transform: translateY(-50%);
+
+	path {
+		stroke: currentcolor !important;
+		stroke-width: 1.25px !important;
+		fill: currentcolor !important;
+	}
+}
+
+.toggle-button-circle-on {
+	background-color: var(--interaction-weak-minor-2);
+
+	&:hover,
+	&:focus {
+		background-color: var(--interaction-weak);
+	}
+}
+
+.toggle-button-circle-off {
+	background-color: var(--signal-danger-major-2);
+
+	&:hover,
+	&:focus {
+		background-color: var(--signal-danger-minor-1);
+	}
+}
+
+.toggle-button-hover-content {
+	box-shadow: 0 0.5rem 3rem 0 #0009;
+	background-color: var(--interaction-weak-minor-3);
+}
+
+.warning-indicator {
+	background: var(--signal-warning-major-1);
+}
+
+.toggle-button-tooltip::before {
+	border-block-start-color: var(--background-strong) !important;
+}

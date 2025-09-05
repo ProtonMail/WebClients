@@ -12,6 +12,7 @@ interface Props {
     app: APP_NAMES;
     user: UserModel;
     isZoomIntegrationEnabled: boolean;
+    isProtonMeetIntegrationEnabled: boolean;
     isCalendarHotkeysEnabled: boolean;
     organization?: Organization;
 }
@@ -25,6 +26,7 @@ export const getCalendarAppRoutes = ({
     user,
     organization,
     isZoomIntegrationEnabled,
+    isProtonMeetIntegrationEnabled,
     isCalendarHotkeysEnabled,
 }: Props) => {
     const isB2BAudience = getIsB2BAudienceFromPlan(organization?.PlanName);
@@ -34,7 +36,7 @@ export const getCalendarAppRoutes = ({
     const isMultiAccount = isB2BAudience || isFamilyOrg || isVisionary;
     const baseAccess = user.isAdmin && !user.isMember && user.hasPaidMail;
 
-    const canDisableZoomIntegration = isMultiAccount
+    const canDisableIntegrations = isMultiAccount
         ? // Organizations not setup should be able to disable the zoom integration feature
           // Setup organization manage the feature from the dedicated page in the settings
           baseAccess && !organization?.Name
@@ -73,7 +75,8 @@ export const getCalendarAppRoutes = ({
                     {
                         text: c('Title').t`Integrations`,
                         id: CALENDAR_SETTINGS_SECTION_ID.INTEGRATIONS,
-                        available: isZoomIntegrationEnabled && canDisableZoomIntegration,
+                        available:
+                            (isZoomIntegrationEnabled || isProtonMeetIntegrationEnabled) && canDisableIntegrations,
                     },
                     {
                         text: c('Title').t`Other preferences`,

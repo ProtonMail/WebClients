@@ -50,6 +50,10 @@ enum CommonFeatureFlag {
     LumoTooling = 'LumoTooling',
     LumoHighLoad = 'LumoHighLoad',
     LumoDeactivateGuestModeFrontend = 'LumoDeactivateGuestModeFrontend',
+    ScheduleInAdvance = 'ScheduleInAdvance',
+    AllowGuestInit = 'AllowGuestInit',
+    NewScheduleOption = 'NewScheduleOption',
+    PMVC2025 = 'PMVC2025',
 }
 
 enum AccountFlag {
@@ -205,6 +209,13 @@ enum WalletFlag {
     WalletExportTransaction = 'WalletExportTransaction',
 }
 
+enum MeetFeatureFlag {
+    MeetEarlyAccess = 'MeetEarlyAccess',
+    MeetEarlyAccessPublic = 'MeetEarlyAccessPublic',
+    MeetErrorReporting = 'MeetErrorReporting',
+    MeetPassphraseEnabled = 'MeetPassphraseEnabled',
+}
+
 export type FeatureFlag =
     | `${CommonFeatureFlag}`
     | `${AccountFlag}`
@@ -214,4 +225,5 @@ export type FeatureFlag =
     | `${DocsFeatureFlag}`
     | `${MailFeatureFlag}`
     | `${AdminFeatureFlag}`
-    | `${WalletFlag}`;
+    | `${WalletFlag}`
+    | `${MeetFeatureFlag}`;

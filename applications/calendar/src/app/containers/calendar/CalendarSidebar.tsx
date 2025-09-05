@@ -51,6 +51,7 @@ import noop from '@proton/utils/noop';
 
 import { useCalendarDispatch } from '../../store/hooks';
 import CalendarSidebarListItems from './CalendarSidebarListItems';
+import { ProtonMeetSpotlightWrapper } from './ProtonMeetSpotlightWrapper';
 
 export interface CalendarSidebarProps {
     addresses: Address[];
@@ -163,20 +164,25 @@ const CalendarSidebar = ({
 
     const primaryAction = (
         <Tooltip title={collapsed ? c('Action').t`New event` : null}>
-            <SidebarPrimaryButton
-                data-testid="calendar-view:new-event-button"
-                disabled={!onCreateEvent}
-                onClick={() => {
-                    onCreateEvent?.();
-                }}
-                className={clsx('hidden md:flex items-center justify-center flex-nowrap gap-2', collapsed && 'px-0')}
-            >
-                {collapsed ? (
-                    <Icon name="plus" className="flex mx-auto my-0.5" alt={c('Action').t`New event`} />
-                ) : (
-                    <span className="text-ellipsis">{c('Action').t`New event`}</span>
-                )}
-            </SidebarPrimaryButton>
+            <ProtonMeetSpotlightWrapper>
+                <SidebarPrimaryButton
+                    data-testid="calendar-view:new-event-button"
+                    disabled={!onCreateEvent}
+                    onClick={() => {
+                        onCreateEvent?.();
+                    }}
+                    className={clsx(
+                        'hidden md:flex items-center justify-center flex-nowrap gap-2',
+                        collapsed && 'px-0'
+                    )}
+                >
+                    {collapsed ? (
+                        <Icon name="plus" className="flex mx-auto my-0.5" alt={c('Action').t`New event`} />
+                    ) : (
+                        <span className="text-ellipsis">{c('Action').t`New event`}</span>
+                    )}
+                </SidebarPrimaryButton>
+            </ProtonMeetSpotlightWrapper>
         </Tooltip>
     );
 

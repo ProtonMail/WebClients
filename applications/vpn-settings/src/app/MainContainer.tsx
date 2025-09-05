@@ -102,6 +102,7 @@ const MainContainer: FunctionComponent = () => {
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
     const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
+    const isProtonMeetIntegrationEnabled = useFlag('NewScheduleOption');
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
     const isPasswordPolicyEnabled = useFlag('PasswordPolicy');
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
@@ -132,6 +133,7 @@ const MainContainer: FunctionComponent = () => {
         isPasswordPolicyEnabled,
         isSsoForPbsEnabled,
         isRetentionPoliciesEnabled,
+        isProtonMeetIntegrationEnabled,
     });
 
     const canEnableChat = useCanEnableChat(user);

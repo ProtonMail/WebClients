@@ -1,0 +1,47 @@
+@import '~@proton/styles/scss/lib';
+
+.personal-meeting-modal {
+	background: #0009;
+
+	.modal-two-dialog-container,
+	.modal-two-dialog {
+		box-shadow: none !important;
+
+		@include media('>medium') {
+			inline-size: 24.5rem;
+			block-size: 27.5rem;
+		}
+	}
+
+	.modal-two-content {
+		padding: 1rem !important;
+		padding-block-start: 0 !important;
+	}
+
+	.modal-two-header {
+		margin: 1rem;
+		margin-block-end: 0;
+	}
+
+	.join-button {
+		background-color: var(--interaction-norm);
+		color: var(--text-invert);
+
+		&:hover,
+		&:focus {
+			background-color: var(--interaction-norm-minor-1);
+			color: var(--text-invert);
+		}
+	}
+
+	.copy-button {
+		background-color: var(--interaction-weak);
+		color: var(--text-norm);
+
+		&:hover,
+		&:focus {
+			background-color: var(--interaction-weak-major-1);
+			color: var(--text-norm) !important;
+		}
+	}
+}

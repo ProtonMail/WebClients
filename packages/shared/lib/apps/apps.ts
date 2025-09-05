@@ -14,6 +14,7 @@ export interface GetAvailableAppsByUserTypeArguments {
     user?: User;
     context: AppContext;
     isDocsHomepageAvailable: boolean;
+    isMeetAvailable: boolean;
     oauth?: boolean;
 }
 
@@ -31,6 +32,7 @@ const allApps: APP_NAMES[] = [
     APPS.PROTONDOCS,
     APPS.PROTONWALLET,
     APPS.PROTONLUMO,
+    APPS.PROTONMEET,
 ];
 
 const allAppsSet: Set<APP_NAMES> = new Set(allApps);
@@ -70,6 +72,7 @@ const getAvailableAppsByUser = (options: GetAvailableAppsByUserTypeArguments): A
             APPS.PROTONDOCS,
             APPS.PROTONWALLET,
             APPS.PROTONLUMO,
+            APPS.PROTONMEET,
         ]);
     }
 
@@ -88,6 +91,9 @@ export const getAvailableApps = (
 
     if (options.context === 'dropdown' && !options.isDocsHomepageAvailable) {
         removeApps.add(APPS.PROTONDOCS);
+    }
+    if (options.context === 'dropdown' && !options.isMeetAvailable) {
+        removeApps.add(APPS.PROTONMEET);
     }
     const availableAppsByUser = getAvailableAppsByUser(options);
     const availableAppsByOrganization = getAvailableAppsByOrganization(options);

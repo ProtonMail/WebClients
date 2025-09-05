@@ -1,0 +1,18 @@
+.participant-host-controls-kick-button {
+	color: var(--signal-danger) !important;
+}
+
+.participant-host-controls-dropdown {
+	background-color: var(--background-secondary) !important;
+	box-shadow: none !important;
+	border: 1px solid var(--border-norm) !important;
+
+	.dropdown-content::before,
+	.dropdown-content::after {
+		display: none;
+	}
+
+	.dropdown-content {
+		background-color: var(--background-secondary);
+	}
+}

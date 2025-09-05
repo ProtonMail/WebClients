@@ -8,6 +8,7 @@ import { updateMember } from '@proton/shared/lib/api/calendars';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { CALENDAR_DISPLAY } from '@proton/shared/lib/calendar/constants';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
+import type { OrganizationSettingsBooleanProperties } from '@proton/shared/lib/interfaces';
 
 import { type CalendarsState, calendarsActions, calendarsThunk } from './index';
 
@@ -40,26 +41,28 @@ export const changeCalendarVisiblity = ({
     };
 };
 
-export const toggleZoomSettings = ({
+export const toggleOrganizationSetting = ({
     checked,
+    settingName,
 }: {
     checked: boolean;
+    settingName: OrganizationSettingsBooleanProperties;
 }): ThunkAction<Promise<void>, OrganizationState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
         try {
             extra.eventManager.stop();
             dispatch(
                 organizationActions.updateOrganizationSettings({
-                    value: { VideoConferencingEnabled: checked },
+                    value: { [settingName]: checked },
                 })
             );
 
-            await extra.api(updateOrganizationSettings({ VideoConferencingEnabled: checked }));
+            await extra.api(updateOrganizationSettings({ [settingName]: checked }));
         } catch (error) {
             // If the user doesn't fill password or the query fails, we rollback the state
             dispatch(
                 organizationActions.updateOrganizationSettings({
-                    value: { VideoConferencingEnabled: !checked },
+                    value: { [settingName]: !checked },
                 })
             );
             throw new Error();

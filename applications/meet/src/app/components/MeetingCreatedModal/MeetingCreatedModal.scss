@@ -1,0 +1,17 @@
+.meeting-created-modal-backdrop {
+	backdrop-filter: blur(10px);
+
+	.modal-two-dialog-container,
+	.modal-two-dialog {
+		inline-size: 24.5rem !important;
+		block-size: 33.375rem !important;
+	}
+
+	.modal-two-header {
+		margin: 1rem !important;
+	}
+}
+
+.meeting-link {
+	word-break: break-all;
+}

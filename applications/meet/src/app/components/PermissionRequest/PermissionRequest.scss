@@ -1,0 +1,29 @@
+.permission-request-backdrop {
+	background-color: color-mix(in srgb, var(--backdrop-norm), transparent 20%) !important;
+	border-radius: 1.5rem !important;
+}
+
+.permission-request-modal {
+	box-shadow: none !important;
+	inline-size: 24.5rem !important;
+	block-size: 24rem !important;
+	border-radius: 1.5rem !important;
+
+	.modal-two-header {
+		--margin: 1rem !important;
+	}
+}
+
+.request-permission-button {
+	&:hover,
+	&:focus {
+		color: var(--text-invert) !important;
+	}
+}
+
+.do-not-request-permission-button {
+	&:hover,
+	&:focus {
+		color: var(--primary) !important;
+	}
+}

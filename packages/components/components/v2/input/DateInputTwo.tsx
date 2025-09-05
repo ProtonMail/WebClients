@@ -44,6 +44,7 @@ interface Props extends Omit<InputProps, 'min' | 'max' | 'value' | 'onChange'> {
     fromFormatter?: (value: string, locale: Locale) => Date;
     toFormatter?: (value: Date, locale: Locale) => string;
     hasToday?: boolean;
+    dropdownClassName?: string;
 }
 const DateInputTwo = ({
     value,
@@ -61,6 +62,7 @@ const DateInputTwo = ({
     fromFormatter = fromFormatted,
     toFormatter = toFormatted,
     hasToday = true,
+    dropdownClassName,
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
@@ -217,6 +219,7 @@ const DateInputTwo = ({
                 anchorRef={anchorRef}
                 onClose={close}
                 disableDefaultArrowNavigation
+                className={dropdownClassName}
             >
                 <LocalizedMiniCalendar
                     date={actualValue}

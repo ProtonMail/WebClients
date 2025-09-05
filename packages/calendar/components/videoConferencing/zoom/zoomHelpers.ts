@@ -1,4 +1,4 @@
-import { type BaseMeetingUrls, SEPARATOR_PROTON_EVENTS, VIDEO_CONF_SERVICES } from '../constants';
+import { type BaseMeetingUrls, VIDEO_CONF_SERVICES } from '../constants';
 
 // Regular regex expecting a Zoom URL https://us05web.zoom.us/j/...
 const ZOOM_REGEX_LOCATION =
@@ -80,41 +80,4 @@ export const getZoomFromDescription = (description: string): BaseMeetingUrls => 
         password: description.match(ZOOM_REGEX_PASSCODE)?.[1].trim(),
         joiningInstructions: description.match(ZOOM_REGEX_JOINING_INSTRUCTIONS)?.[1].trim(),
     };
-};
-
-export const addZoomInfoToDescription = ({
-    host,
-    meedingURL,
-    password,
-    meetingId,
-    description = '',
-}: {
-    host?: string;
-    meedingURL?: string;
-    password?: string;
-    meetingId?: string;
-    description?: string;
-}): string => {
-    const hasZoomInfo = meetingId && meedingURL;
-    if (!hasZoomInfo) {
-        return description;
-    }
-
-    const zoomDetails = `
-${SEPARATOR_PROTON_EVENTS}
-Join Zoom Meeting: ${meedingURL} (ID: ${meetingId}${password ? `, passcode: ${password}` : ''})
-
-${host ? `Meeting host: ${host}` : ''}
-${SEPARATOR_PROTON_EVENTS}`;
-
-    return description ? `${description}${zoomDetails}` : zoomDetails;
-};
-
-const zoomInformationPattern = new RegExp(`\n?${SEPARATOR_PROTON_EVENTS}[\\s\\S]*?${SEPARATOR_PROTON_EVENTS}`, 'g');
-export const removeZoomInfoFromDescription = (description: string): string => {
-    return description.replace(zoomInformationPattern, '');
-};
-
-export const doesDescriptionContainZoomInfo = (description: string): boolean => {
-    return !!description.match(zoomInformationPattern);
 };

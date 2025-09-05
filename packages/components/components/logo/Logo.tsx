@@ -8,6 +8,7 @@ import DriveLogo from './DriveLogo';
 import type { LogoProps as LogoBaseProps, LogoVariant } from './LogoBase';
 import LumoLogo from './LumoLogo';
 import MailLogo from './MailLogo';
+import MeetLogo from './MeetLogo';
 import PassLogo from './PassLogo';
 import VpnLogo from './VpnLogo';
 import WalletLogo from './WalletLogo';
@@ -21,6 +22,7 @@ const {
     PROTONDOCS,
     PROTONWALLET,
     PROTONLUMO,
+    PROTONMEET,
 } = APPS;
 
 export type { LogoVariant };
@@ -61,6 +63,10 @@ const Logo = ({ appName, fallback = null, ...rest }: LogoProps) => {
 
     if (appName === PROTONLUMO) {
         return <LumoLogo {...rest} />;
+    }
+
+    if (appName === PROTONMEET) {
+        return <MeetLogo {...rest} />;
     }
 
     return fallback;

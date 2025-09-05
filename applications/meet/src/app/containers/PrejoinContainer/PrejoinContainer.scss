@@ -1,0 +1,24 @@
+@import '~@proton/styles/scss/lib';
+
+.action-button {
+	background-color: var(--interaction-weak-minor-1) !important;
+}
+
+.prejoin-container {
+	block-size: 100%;
+	padding: var(--space-4);
+	padding-block-start: 4.5rem;
+
+	@include media('>medium') {
+		padding: 0;
+		padding-block-start: 0;
+	}
+
+	.prejoin-container-content {
+		block-size: 100%;
+
+		@include media('>medium') {
+			block-size: initial;
+		}
+	}
+}
