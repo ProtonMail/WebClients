@@ -61,6 +61,7 @@ export const ItemsProvider: FC<PropsWithChildren> = ({ children }) => {
             shareId: trash ? null : filters.selectedShareId,
             sort: filters.sort,
             trashed: trash,
+            visible: !trash /** show trashed hidden item */,
         })
     );
 

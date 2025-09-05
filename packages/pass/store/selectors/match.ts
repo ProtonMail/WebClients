@@ -8,7 +8,7 @@ import type { SelectItemsByDomainOptions, SelectItemsOptions } from '@proton/pas
 import { itemsFromSelection, selectAllItems, selectItems, selectVisibleItems } from '@proton/pass/store/selectors/items';
 import { selectSecureLinks } from '@proton/pass/store/selectors/secure-links';
 import { selectSharedByMe, selectSharedWithMe } from '@proton/pass/store/selectors/shared';
-import { NOOP_LIST_SELECTOR, createUncachedSelector } from '@proton/pass/store/selectors/utils';
+import { NOOP_LIST_SELECTOR, createUncachedSelector, selectState } from '@proton/pass/store/selectors/utils';
 import type { State } from '@proton/pass/store/types';
 import type { ItemRevision, MaybeNull, SelectedItem } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -26,13 +26,18 @@ const selectShareIdFilter = (_: State, { shareId }: SelectItemsOptions) => share
 const selectSortFilter = (_: State, { sort }: SelectItemsOptions) => sort;
 const selectSearchFilter = (_: State, { search }: SelectItemsOptions) => search;
 const selectTypeFilter = (_: State, { type }: SelectItemsOptions) => type;
+const selectVisibleFilter = (_: State, { visible }: SelectItemsOptions) => visible;
 
 /** Search result selector is organized to separate sort from search, as sorting
  * can be computationally expensive when the number of items is high. The `search`
  * is expected to change more frequently than the shareId / sortOption */
 export const createMatchItemsSelector = () => {
+    const selectItemsByVisibility = createSelector([selectState, selectVisibleFilter], (state, visible) =>
+        (visible ? selectVisibleItems : selectAllItems)(state)
+    );
+
     const selectSortedItemsByShareId = createSelector(
-        [selectVisibleItems, selectTrashedFilter, selectShareIdFilter, selectSortFilter],
+        [selectItemsByVisibility, selectTrashedFilter, selectShareIdFilter, selectSortFilter],
         (items, trashed, shareId, sort) =>
             pipe(filterItemsByShareId(shareId), sortItems(sort))(items.filter(trashed ? isTrashed : isActive))
     );
