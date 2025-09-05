@@ -138,12 +138,12 @@ const LumoSettingsUpgradePanel = ({ isGuest = false }: { isGuest?: boolean }) =>
     return (
         <div
             className={
-                'settings-modal-panel flex flex-row gap-6 p-6 rounded-lg lumo-plus-settings-gradient ' +
-                (isGuest ? 'hidden sm:block' : '')
+                'settings-modal-panel flex flex-row gap-6 p-6 rounded-lg lumo-plus-settings-gradient border border-weak flex-nowrap '
+                // (isGuest ? 'hidden sm:block' : '')
             }
         >
             {/* Left side - Content */}
-            <div className="flex flex-column flex-nowrap gap-4 flex-1">
+            <div className="flex flex-column flex-nowrap gap-4 flex-1 w-1/2">
                 {/* Header */}
                 <div className="flex items-center gap-2">
                     <LumoPlusLogoInline height="20px" />
@@ -173,12 +173,12 @@ const LumoSettingsUpgradePanel = ({ isGuest = false }: { isGuest?: boolean }) =>
                 </ul>
 
                 {/* Action area - button or message */}
-                <div className="mt-2">{getActionContent()}</div>
+                <div className="mt-2 w-fit-content">{getActionContent()}</div>
             </div>
 
             {/* Right side - Lumo cat illustration */}
-            <div className="flex items-end justify-end shrink-0" style={{ width: '60%' }}>
-                <img src={lumoCatPlusCollar} alt="Lumo Plus Cat" style={{ width: '69%', height: 'auto' }} />
+            <div className="flex items-end justify-end shrink-0 w-1/2">
+                <img src={lumoCatPlusCollar} alt="Lumo Plus Cat" style={{ width: '80%', height: 'auto' }} />
             </div>
         </div>
     );

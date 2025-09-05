@@ -400,14 +400,14 @@ export const ComposerComponent = ({
                                         ref={uploadButtonRef}
                                         icon
                                         className={clsx(
-                                            'border-0 shrink-0 flex flex-row flex-nowrap gap-1 items-center color-weak',
+                                            'border-0 shrink-0 flex flex-row flex-nowrap gap-1 items-center color-weak p-2',
                                             showUploadMenu && 'is-active'
                                         )}
                                         onClick={handleUploadButtonClick}
                                         shape="ghost"
                                         size="small"
                                     >
-                                        <IcPaperClip size={6}></IcPaperClip>
+                                        <IcPaperClip size={isSmallScreen ? 6 : 4}></IcPaperClip>
                                         <span className="hidden sm:block text-sm mt-0.5">{c('collider_2025: Button')
                                             .t`Upload`}</span>
                                     </Button>
@@ -423,7 +423,7 @@ export const ComposerComponent = ({
                                     <Button
                                         icon
                                         className={clsx(
-                                            'web-search-button order-0 shrink-0 inline-flex flex-row flex-nowrap gap-1 items-center color-weak',
+                                            'web-search-button order-0 shrink-0 inline-flex flex-row flex-nowrap gap-1 items-center color-weak p-2',
                                             isWebSearchButtonToggled && 'is-active'
                                         )}
                                         disabled={hasAttachments}
@@ -431,7 +431,7 @@ export const ComposerComponent = ({
                                         shape="ghost"
                                         size="small"
                                     >
-                                        <IcGlobe size={6}></IcGlobe>
+                                        <IcGlobe size={isSmallScreen ? 6 : 4}></IcGlobe>
                                         <span className=" hidden sm:block text-sm mt-0.5">{c('collider_2025: Button')
                                             .t`Web search`}</span>
                                     </Button>
@@ -457,7 +457,7 @@ export const ComposerComponent = ({
                                     <Button
                                         icon
                                         id="voice-entry-mobile-button"
-                                        className="border-0 shrink-0 inline-flex flex-row flex-nowrap gap-1 items-center color-weak"
+                                        className="border-0 shrink-0 inline-flex flex-row flex-nowrap gap-1 items-center color-weak p-2"
                                         shape="ghost"
                                         size="small"
                                     >
