@@ -42,8 +42,14 @@ const ConfirmAutotypeCore: FC<ConfirmAutotypePropsCore> = ({
             <ModalTwoContent>
                 <div className="mb-2">{c('Info')
                     .t`Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.`}</div>
-                <div className="text-sm color-weak mb-4">{c('Info')
-                    .t`Depending on your operating system, you may need to grant accessiblity permission to ${PASS_APP_NAME}`}</div>
+                {BUILD_TARGET === 'darwin' && (
+                    <div className="text-sm color-weak mb-4">{c('Info')
+                        .t`You may need to grant accessiblity permission to ${PASS_APP_NAME}.`}</div>
+                )}
+                {BUILD_TARGET === 'linux' && (
+                    <div className="text-sm color-weak mb-4">{c('Info')
+                        .t`You may need to accept a permission prompt and may have to restart the application depending on your system.`}</div>
+                )}
                 <FormikProvider value={form}>
                     <Form id={FORM_ID}>
                         <Checkbox
