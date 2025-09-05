@@ -59,14 +59,8 @@ export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
         pandocFormat: 'csv'
     },
 
-    // Presentation formats
-    powerpoint: {
-        extensions: ['ppt', 'pptx'],
-        mimeTypes: ['application/vnd.ms-powerpoint', 'application/vnd.openxmlformats-officedocument.presentationml.presentation'],
-        description: 'PowerPoint Document',
-        category: 'presentation',
-        pandocFormat: 'pptx'
-    },
+    // Note: PowerPoint presentations are not supported
+    // Users should convert to PDF for text extraction
 
     // Text and markup formats
     plaintext: {
@@ -663,10 +657,6 @@ export function needsPandocConversion(mimeType: string): boolean {
         'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
         'application/vnd.oasis.opendocument.text',
         'application/rtf',
-        
-        // Presentation formats
-        'application/vnd.ms-powerpoint',
-        'application/vnd.openxmlformats-officedocument.presentationml.presentation',
     ]);
     
     return pandocTypes.has(normalizedMime);

@@ -31,6 +31,23 @@ export interface FileProcessingResponse {
 
 let pandocConverter: PandocConverter | null = null;
 
+// Performance optimization: Content truncation to prevent memory issues
+function truncateContent(content: string, maxChars: number = 500000): { content: string; wasTruncated: boolean } {
+    if (content.length <= maxChars) {
+        return { content, wasTruncated: false };
+    }
+    
+    console.log(`[Performance] Truncating content from ${content.length} to ${maxChars} characters`);
+    
+    const truncated = content.substring(0, maxChars);
+    const truncatedWithNotice = truncated + '\n\n--- Content truncated due to size limitations ---';
+    
+    return {
+        content: truncatedWithNotice,
+        wasTruncated: true
+    };
+}
+
 async function getPandocConverter(): Promise<PandocConverter> {
     if (!pandocConverter) {
         pandocConverter = new PandocConverter();
@@ -84,15 +101,38 @@ async function convertXlsxToCsv(fileData: FileProcessingRequest['file']): Promis
 }
 
 async function processFile(fileData: FileProcessingRequest['file']): Promise<FileProcessingResponse['result'] | null> {
+    const startTime = performance.now();
+    const fileSizeMB = fileData.size / (1024 * 1024);
+    console.log(`[Performance] Starting processing for ${fileData.name} (${fileData.type}, ${fileSizeMB.toFixed(2)}MB)`);
+    
+    // Performance optimization: Set size limits for different file types
+    const SIZE_LIMITS = {
+        'text/plain': 50, // 50MB
+        'text/csv': 100, // 100MB  
+        'application/pdf': 200, // 200MB
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': 150, // 150MB
+        'application/vnd.ms-excel': 150, // 150MB
+        'default': 50 // 50MB for other types
+    };
+    
+    const sizeLimit = SIZE_LIMITS[fileData.type as keyof typeof SIZE_LIMITS] || SIZE_LIMITS.default;
+    
+    if (fileSizeMB > sizeLimit) {
+        console.warn(`[Performance] File ${fileData.name} (${fileSizeMB.toFixed(2)}MB) exceeds size limit (${sizeLimit}MB)`);
+        throw new Error(`File too large: ${fileSizeMB.toFixed(1)}MB exceeds ${sizeLimit}MB limit for ${fileData.type}`);
+    }
+    
     try {
         switch (fileData.type) {
             case 'text/plain': {
                 const converted = new TextDecoder('utf-8').decode(fileData.data);
+                const truncated = truncateContent(converted);
                 return {
                     originalContent: converted,
-                    convertedContent: converted,
+                    convertedContent: truncated.content,
                     originalSize: converted.length,
-                    convertedSize: converted.length,
+                    convertedSize: truncated.content.length,
+                    truncated: truncated.wasTruncated,
                 };
             }
 
@@ -104,14 +144,17 @@ async function processFile(fileData: FileProcessingRequest['file']): Promise<Fil
                 const lines = csvContent.split('\n');
                 console.log(`CSV file has ${lines.length} lines`);
 
+                // Truncate large CSV files for performance
+                const truncated = truncateContent(csvContent);
+
                 return {
                     originalContent: csvContent,
-                    convertedContent: csvContent,
+                    convertedContent: truncated.content,
                     originalSize: csvContent.length,
-                    convertedSize: csvContent.length,
-                    truncated: false,
+                    convertedSize: truncated.content.length,
+                    truncated: truncated.wasTruncated,
                     originalRowCount: lines.length,
-                    processedRowCount: lines.length,
+                    processedRowCount: truncated.wasTruncated ? Math.floor(lines.length * (truncated.content.length / csvContent.length)) : lines.length,
                 };
             }
 
@@ -132,17 +175,18 @@ async function processFile(fileData: FileProcessingRequest['file']): Promise<Fil
                 const original = `[Binary ${fileData.type.includes('spreadsheetml') ? 'XLSX' : 'XLS'} file]`;
                 const csvData = await convertXlsxToCsv(fileData);
 
-                // Process complete CSV data
+                // Process and truncate CSV data for performance
                 const lines = csvData.split('\n');
+                const truncated = truncateContent(csvData);
 
                 return {
                     originalContent: original,
-                    convertedContent: csvData,
+                    convertedContent: truncated.content,
                     originalSize: fileData.data.byteLength,
-                    convertedSize: csvData.length,
-                    truncated: false,
+                    convertedSize: truncated.content.length,
+                    truncated: truncated.wasTruncated,
                     originalRowCount: lines.length,
-                    processedRowCount: lines.length,
+                    processedRowCount: truncated.wasTruncated ? Math.floor(lines.length * (truncated.content.length / csvData.length)) : lines.length,
                 };
             }
 
@@ -178,6 +222,8 @@ async function processFile(fileData: FileProcessingRequest['file']): Promise<Fil
                     const pandocFormat = mimeTypeToPandocFormat(fileData.type);
                     if (pandocFormat) {
                         console.log(`Processing ${fileData.type} with Pandoc (format: ${pandocFormat})`);
+                        
+                        
                         return await processFileWithPandoc(fileData, pandocFormat);
                     }
                 }
@@ -188,8 +234,14 @@ async function processFile(fileData: FileProcessingRequest['file']): Promise<Fil
             }
         }
     } catch (error) {
-        console.error('Error processing file:', error);
+        const endTime = performance.now();
+        const duration = endTime - startTime;
+        console.error(`[Performance] Error processing ${fileData.name} after ${duration.toFixed(2)}ms:`, error);
         throw error instanceof Error ? error : new Error(String(error));
+    } finally {
+        const endTime = performance.now();
+        const duration = endTime - startTime;
+        console.log(`[Performance] Completed processing ${fileData.name} in ${duration.toFixed(2)}ms`);
     }
 }
 
@@ -214,6 +266,13 @@ async function processFileWithPandoc(
         const pandoc = await getPandocConverter();
         const converted = await pandoc.convert(fileData.data, inputFormat);
 
+        // Check if conversion produced any content
+        if (!converted || converted.trim() === '') {
+            const errorMsg = `Pandoc conversion produced empty output for ${fileData.type}. This may indicate the format is not supported by the WASM build.`;
+            console.error(errorMsg);
+            throw new Error(errorMsg);
+        }
+
         return {
             originalContent: original,
             convertedContent: converted,
@@ -225,6 +284,7 @@ async function processFileWithPandoc(
         throw error instanceof Error ? error : new Error(String(error));
     }
 }
+
 
 async function convertPdfToText(fileData: FileProcessingRequest['file']): Promise<string> {
     const parseResult = await pdfParse(fileData.data);
