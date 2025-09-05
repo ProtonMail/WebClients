@@ -1,0 +1,8 @@
+@import '~@proton/styles/scss/lib';
+
+.label-dropdown-list {
+	@include media('>small') {
+		max-block-size: 13.5em;
+		min-block-size: 11em;
+	}
+}
