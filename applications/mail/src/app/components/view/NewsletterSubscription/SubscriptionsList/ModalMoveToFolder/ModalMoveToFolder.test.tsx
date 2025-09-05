@@ -1,6 +1,6 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
 
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { mailTestRender } from 'proton-mail/helpers/test/render';
 
@@ -55,7 +55,7 @@ describe('ModalBlockSender', () => {
         const moveButton = screen.getByTestId('move-button');
         expect(moveButton).toBeDisabled();
 
-        const folder = screen.getByTestId(`button-folder-${MAILBOX_LABEL_IDS.INBOX}`);
+        const folder = screen.getByTestId(`move-to-button-Inbox`);
         fireEvent.click(folder);
 
         expect(moveButton).toBeEnabled();
@@ -66,14 +66,20 @@ describe('ModalBlockSender', () => {
             <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={jest.fn} open={true} />
         );
 
-        const searchInput = screen.getByPlaceholderText('Filter folders');
-        fireEvent.change(searchInput, { target: { value: 'Inbox' } });
+        const searchInput = screen.getByTestId('move-to-search-input');
 
-        const inboxFolder = screen.getByTestId(`button-folder-${MAILBOX_LABEL_IDS.INBOX}`);
+        await act(async () => {
+            fireEvent.change(searchInput, { target: { value: 'Inbox' } });
+            await wait(200);
+        });
+
+        const inboxFolder = screen.getByTestId(`move-to-button-Inbox`);
         expect(inboxFolder).toBeInTheDocument();
 
-        const sentFolder = screen.queryByTestId(`button-folder-${MAILBOX_LABEL_IDS.SENT}`);
-        expect(sentFolder).not.toBeInTheDocument();
+        screen.debug();
+
+        const spamFolder = screen.queryByTestId(`move-to-button-Spam`);
+        expect(spamFolder).not.toBeInTheDocument();
     });
 
     it('should hide the create folder button if a folder with the same name exists', async () => {

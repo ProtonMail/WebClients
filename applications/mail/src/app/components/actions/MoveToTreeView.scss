@@ -1,6 +1,6 @@
 @import '~@proton/styles/scss/lib';
 
-.move-dropdown {
+.move-tree-view {
 	[data-level='1'] {
 		padding-inline-start: 1em;
 	}
@@ -9,9 +9,8 @@
 		padding-inline-start: 2em;
 	}
 
-	&-list {
-		@include media('>small') {
-			max-block-size: 15.5em;
-		}
+	@include media('>small') {
+		max-block-size: 13.5em;
+		min-block-size: 10em;
 	}
 }
