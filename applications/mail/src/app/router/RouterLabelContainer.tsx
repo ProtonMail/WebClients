@@ -8,7 +8,7 @@ import { useFolders } from '@proton/mail/index';
 import clsx from '@proton/utils/clsx';
 
 import { CategoriesTabs } from 'proton-mail/components/categoryView/categoriesTabs/CategoriesTabs';
-import { useCategoryViewAccess } from 'proton-mail/components/categoryView/useCategoryViewAccess';
+import { useCategoryView } from 'proton-mail/components/categoryView/useCategoryView';
 import MailboxList from 'proton-mail/components/list/MailboxList';
 import ResizableWrapper from 'proton-mail/components/list/ResizableWrapper';
 import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
@@ -85,7 +85,7 @@ export const RouterLabelContainer = ({
     const composersCount = useMailSelector(selectComposersCount);
     const breakpoints = useActiveBreakpoint();
 
-    const categoryViewControl = useCategoryViewAccess();
+    const categoryViewControl = useCategoryView();
 
     const [commanderModalProps, showCommander, commanderRender] = useModalState();
     const welcomeFlag = useWelcomeFlag([labelID, selectedIDs.length]);
