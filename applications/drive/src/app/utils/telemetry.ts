@@ -33,6 +33,10 @@ export enum Features {
     globalBootstrapAppPostLoad = 'globalBootstrapAppPostLoad',
     globalBootstrapAppUserSettingsAddress = 'globalBootstrapAppUserSettingsAddress',
     globalBootstrapAppLoadSession = 'globalBootstrapAppLoadSession',
+
+    // session specific features
+    sessionBootstrapConsumeFork = 'sessionBootstrapConsumeFork',
+    sessionBootstrapResumeSession = 'sessionBootstrapResumeSession',
 }
 
 /**
