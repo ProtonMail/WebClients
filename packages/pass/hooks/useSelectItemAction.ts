@@ -1,17 +1,16 @@
 import { useCallback, useRef } from 'react';
 
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { ItemSelectOptions } from '@proton/pass/components/Navigation/NavigationActions';
 import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
+import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import type { ItemRevision, Maybe, SelectedItem } from '@proton/pass/types';
 import { B2BEventName } from '@proton/pass/types/data/b2b';
 import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-
-import { usePassCore } from '../components/Core/PassCoreProvider';
-import { itemEq } from '../lib/items/item.predicates';
-import { isEmptyString } from '../utils/string/is-empty-string';
 
 type SelectItemActionDeps = {
     search: string;
@@ -45,7 +44,7 @@ export const useSelectItemAction = () => {
         selectItem(shareId, itemId, options);
 
         onTelemetry(TelemetryEventName.ItemRead, {}, { type: TelemetryItemType[type] });
-        onB2BEvent({ name: B2BEventName.ItemRead, timestamp: getEpoch(), itemId, shareId });
+        void onB2BEvent({ name: B2BEventName.ItemRead, timestamp: getEpoch(), itemId, shareId });
         if (!isEmptyString(ref.current.search)) onTelemetry(TelemetryEventName.SearchClick, {}, {});
     }, []);
 };

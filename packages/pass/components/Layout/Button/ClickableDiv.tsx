@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions,jsx-a11y/prefer-tag-over-role,jsx-a11y/interactive-supports-focus */
+/* eslint-disable jsx-a11y/click-events-have-key-events,jsx-a11y/prefer-tag-over-role,jsx-a11y/interactive-supports-focus */
 import { type FC, type ReactNode, useEffect, useRef } from 'react';
 
 import type { Maybe, MaybeNull } from '@proton/pass/types';
