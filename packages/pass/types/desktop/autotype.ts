@@ -1,4 +1,4 @@
-import { type IconName } from '@proton/components/components/icon/Icon';
+import type { IconName } from '@proton/components/components/icon/Icon';
 import type { WithSpotlightRenderProps } from '@proton/pass/components/Spotlight/WithSpotlight';
 import type { ReactNode } from 'react';
 
