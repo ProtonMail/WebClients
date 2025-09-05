@@ -153,6 +153,12 @@ export interface SessionPayloadData {
     reloadDocument?: boolean;
 }
 
+interface PerformanceMeasure {
+    start: () => void;
+    end: () => void;
+    clear: () => void;
+}
+
 export const loadSession = async ({
     authentication,
     api,
@@ -160,6 +166,7 @@ export const loadSession = async ({
     searchParams,
     unauthenticatedReturnUrl,
     localID: localIDParam,
+    performanceMeasure,
 }: {
     pathname: string;
     authentication: AuthenticationStore;
@@ -167,6 +174,10 @@ export const loadSession = async ({
     searchParams: URLSearchParams;
     unauthenticatedReturnUrl?: string;
     localID?: number;
+    performanceMeasure?: {
+        consumeFork: PerformanceMeasure;
+        resumeSession: PerformanceMeasure;
+    };
 }): Promise<SessionPayloadData> => {
     if (authentication.ready) {
         api.UID = authentication.UID;
@@ -193,7 +204,10 @@ export const loadSession = async ({
     try {
         if (localID === undefined) {
             if (pathname.startsWith(SSO_PATHS.FORK)) {
+                performanceMeasure?.consumeFork.start();
                 const result = await maybeConsumeFork({ api, mode: authentication.mode });
+                performanceMeasure?.consumeFork.end();
+
                 if (result) {
                     authentication.login(result.session);
                     api.UID = authentication.UID;
@@ -219,7 +233,10 @@ export const loadSession = async ({
             }
         }
 
+        performanceMeasure?.resumeSession.start();
         const result = await resumeSession({ api, localID });
+        performanceMeasure?.resumeSession.end();
+
         authentication.login(result);
         api.UID = authentication.UID;
         setLastUsedLocalID(authentication.localID);
