@@ -61,9 +61,8 @@
 	background-color: inherit;
 
 	// Smooth width transitions for desktop
-	transition:
-		inline-size 0.3s ease-in-out,
-		transform 0.3s ease-in-out;
+	transition: inline-size 0.3s ease-in-out,
+	transform 0.3s ease-in-out;
 
 	// Hardware acceleration
 	will-change: inline-size, transform;
@@ -144,9 +143,8 @@
 	transform: translateZ(0);
 
 	// Smooth backdrop transitions
-	transition:
-		opacity 0.3s ease-in-out,
-		backdrop-filter 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out,
+	backdrop-filter 0.3s ease-in-out;
 }
 
 // Smooth content transitions in sidebar
@@ -180,15 +178,6 @@
 		font-weight: 600 !important;
 		border-radius: 8px;
 	}
-}
-
-.navigation-link:hover,
-.sidebar-list-item-button:hover,
-button:hover:not(.is-active) {
-	background-color: var(--background-weak) !important;
-	color: var(--text-norm) !important;
-	border-radius: 8px;
-	transition: background-color 0.15s ease-in-out;
 }
 
 .sidebar button:hover,
