@@ -7,9 +7,9 @@ import { VaultMenuTrash } from '@proton/pass/components/Menu/Vault/VaultMenuTras
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
-import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
+import { isShareManageable, isShareVisible } from '@proton/pass/lib/shares/share.predicates';
 import { isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import { selectActiveSharedWithMeCount, selectShare, selectVisibleVaultsWithCount } from '@proton/pass/store/selectors';
+import { selectActiveSharedWithMeCount, selectShare, selectVaultsWithCount } from '@proton/pass/store/selectors';
 import type { ShareType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
@@ -28,27 +28,22 @@ export const VaultMenu: FC<Props> = ({ render, onAction = noop }) => {
     const scope = useItemScope();
     const inTrash = scope === 'trash';
 
-    const vaults = useSelector(selectVisibleVaultsWithCount);
+    const vaults = useSelector(selectVaultsWithCount);
     const selectedVault = useSelector(selectShare<ShareType.Vault>(selectedShareId));
 
     const selectedVaultOption = getVaultOptionInfo(selectedVault || (inTrash ? 'trash' : 'all'));
     const vaultActions = useVaultActions();
-    const activeSharedItemCount = useSelector(selectActiveSharedWithMeCount);
+    const totalSharedWithMe = useSelector(selectActiveSharedWithMeCount);
 
     const menu = useMemo(() => {
-        const totalItemCount =
-            vaults.reduce<number>((subtotal, { count }) => subtotal + count, 0) + activeSharedItemCount;
+        const totalItems = vaults.reduce<number>((subtotal, { count }) => subtotal + count, 0) + totalSharedWithMe;
         const ownedVaultCount = vaults.filter(isOwnVault).length;
 
         return (
             <>
-                <VaultMenuAll
-                    count={totalItemCount}
-                    selected={scope === 'share' && !selectedShareId}
-                    onAction={onAction}
-                />
+                <VaultMenuAll count={totalItems} selected={scope === 'share' && !selectedShareId} onAction={onAction} />
 
-                {vaults.map((vault) => (
+                {vaults.filter(isShareVisible).map((vault) => (
                     <VaultMenuItem
                         key={vault.shareId}
                         vault={vault}
@@ -68,7 +63,7 @@ export const VaultMenu: FC<Props> = ({ render, onAction = noop }) => {
                 <VaultMenuTrash selected={scope === 'trash'} onAction={onAction} />
             </>
         );
-    }, [vaults, vaultActions, selectedShareId, scope, activeSharedItemCount]);
+    }, [vaults, vaultActions, selectedShareId, scope, totalSharedWithMe]);
 
     return render?.(selectedVaultOption, menu) ?? menu;
 };
