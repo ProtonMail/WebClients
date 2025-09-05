@@ -56,9 +56,9 @@ import type { Element } from '../../../models/element';
 import { updateAttachment } from '../../../store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
 import { expireMessages } from '../../../store/messages/expire/messagesExpireActions';
+import { MoveToFolderDropdown, moveDropdownContentProps } from '../../actions/MoveToFolderDropdown';
+import { MoveToLabelDropdown, labelDropdownContentProps } from '../../actions/MoveToLabelDropdown';
 import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
-import LabelDropdown, { labelDropdownContentProps } from '../../dropdown/LabelDropdown';
-import MoveDropdown, { moveDropdownContentProps } from '../../dropdown/MoveDropdown';
 import CustomExpirationModal from '../modals/CustomExpirationModal';
 import MessageDetailsModal from '../modals/MessageDetailsModal';
 import MessageHeadersModal from '../modals/MessageHeadersModal';
@@ -256,7 +256,7 @@ const HeaderMoreDropdown = ({
               {
                   contentProps: moveDropdownContentProps,
                   render: ({ onClose, onLock }) => (
-                      <MoveDropdown
+                      <MoveToFolderDropdown
                           labelID={fromFolderID}
                           selectedIDs={selectedIDs}
                           onClose={onClose}
@@ -268,7 +268,12 @@ const HeaderMoreDropdown = ({
               {
                   contentProps: labelDropdownContentProps,
                   render: ({ onClose, onLock }) => (
-                      <LabelDropdown labelID={labelID} selectedIDs={selectedIDs} onClose={onClose} onLock={onLock} />
+                      <MoveToLabelDropdown
+                          labelID={labelID}
+                          selectedIDs={selectedIDs}
+                          onClose={onClose}
+                          onLock={onLock}
+                      />
                   ),
               },
               {
@@ -410,7 +415,7 @@ const HeaderMoreDropdown = ({
                         {{
                             contentProps: moveDropdownContentProps,
                             render: ({ onClose, onLock }) => (
-                                <MoveDropdown
+                                <MoveToFolderDropdown
                                     labelID={fromFolderID}
                                     selectedIDs={selectedIDs}
                                     onClose={onClose}
@@ -437,7 +442,7 @@ const HeaderMoreDropdown = ({
                         {{
                             contentProps: labelDropdownContentProps,
                             render: ({ onClose, onLock }) => (
-                                <LabelDropdown
+                                <MoveToLabelDropdown
                                     labelID={labelID}
                                     selectedIDs={selectedIDs}
                                     onClose={onClose}
