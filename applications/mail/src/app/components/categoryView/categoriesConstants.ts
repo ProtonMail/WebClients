@@ -1,6 +1,12 @@
 import type { IconName } from '@proton/icons';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+export interface CategoryTab {
+    colorShade: CATEGORIES_COLOR_SHADES;
+    icon: IconName;
+    id: MAILBOX_LABEL_IDS;
+}
+
 export enum CATEGORIES_COLOR_SHADES {
     IRIS = 'iris',
     SKY = 'sky',
@@ -12,11 +18,7 @@ export enum CATEGORIES_COLOR_SHADES {
 }
 
 // The order of the categories is important.
-export const categoriesArray: {
-    colorShade: CATEGORIES_COLOR_SHADES;
-    icon: IconName;
-    id: MAILBOX_LABEL_IDS;
-}[] = [
+export const categoriesArray: CategoryTab[] = [
     {
         colorShade: CATEGORIES_COLOR_SHADES.IRIS,
         icon: 'inbox-filled',

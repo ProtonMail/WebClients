@@ -16,7 +16,7 @@ import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 import { isAdminOrLoginAsAdmin } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 
-import { useCategoryViewAccess } from 'proton-mail/components/categoryView/useCategoryViewAccess';
+import { useCategoryView } from 'proton-mail/components/categoryView/useCategoryView';
 import MailHeader from 'proton-mail/components/header/MailHeader';
 import useScrollToTop from 'proton-mail/components/list/useScrollToTop';
 import { NewsletterSubscriptionView } from 'proton-mail/components/view/NewsletterSubscription/NewsletterSubscriptionView';
@@ -55,7 +55,7 @@ export const RouterMailboxContainer = () => {
 
     const [isResizing, setIsResizing] = useState(false);
 
-    const categoryViewControl = useCategoryViewAccess();
+    const categoryViewControl = useCategoryView();
 
     /**
      * Temporary: Router mailbox side effects
