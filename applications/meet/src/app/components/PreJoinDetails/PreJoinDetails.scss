@@ -1,0 +1,63 @@
+@import '~@proton/styles/scss/lib';
+
+.stacked-field {
+	&#{&} {
+		--stacked-field-border-radius: var(--border-radius-xl);
+		--stacked-field-background: var(--background-weak);
+		--field-focus-background-color: var(--background-weak);
+		--stacked-field-border-color: var(--border-norm);
+	}
+
+	.field-two-assist {
+		display: none;
+	}
+
+	&:focus-within::after {
+		box-shadow: 0 0 0 0.065rem var(--interaction-norm) !important;
+	}
+}
+
+.join-button {
+	&:hover,
+	&:focus {
+		color: var(--text-invert) !important;
+	}
+}
+
+.copy-button {
+	background-color: var(--interaction-norm-minor-3);
+	color: var(--interaction-norm);
+
+	&:hover,
+	&:focus {
+		background-color: var(--interaction-norm-minor-2);
+		color: var(--interaction-norm);
+	}
+
+	&:active,
+	&:focus {
+		color: var(--interaction-norm);
+	}
+}
+
+.continue-button {
+	&:hover,
+	&:focus {
+		color: var(--text-invert) !important;
+	}
+}
+
+.meeting-id-field {
+	&:focus-within::after {
+		box-shadow: none !important;
+		border: none !important;
+	}
+}
+
+.pre-join-details-name-input-field {
+	border-radius: 1rem;
+
+	@include media('>medium') {
+		border-radius: initial;
+	}
+}

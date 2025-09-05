@@ -36,12 +36,14 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
     ) => {
         const { APP_NAME } = useConfig();
         const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
+        const isMeetAvailable = useFlag('PMVC2025');
 
         const availableApps = getAvailableApps({
             context: 'dropdown',
             user,
             organization,
             isDocsHomepageAvailable,
+            isMeetAvailable,
         });
 
         if (availableApps.length <= 1) {

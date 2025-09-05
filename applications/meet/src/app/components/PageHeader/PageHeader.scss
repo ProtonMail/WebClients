@@ -1,0 +1,84 @@
+@import '~@proton/styles/scss/lib';
+
+.apps-dropdown-button,
+.settings-button {
+	background-color: #2b2e42 !important;
+	inline-size: 2.5rem !important;
+	block-size: 2.5rem !important;
+	border-radius: 100% !important;
+}
+
+.meet-page-header {
+	.user-dropdown-button {
+		font-size: 0.875rem !important;
+		border-width: 0 !important;
+		inline-size: fit-content;
+		padding: 0;
+
+		.user-dropdown-text {
+			text-align: end !important;
+		}
+
+		& > svg:first-child,
+		.user-dropdown-text {
+			display: none !important;
+		}
+
+		&::after {
+			display: none !important;
+		}
+
+		// Show them back on medium screens and up
+		@include media('>small') {
+			border-width: 1px !important;
+
+			.user-dropdown-text {
+				display: block !important;
+			}
+
+			&::after {
+				display: initial !important;
+			}
+
+			inline-size: initial;
+			padding: initial;
+		}
+
+		.user-initials-active,
+		.user-initials {
+			background-color: var(--ui-purple-interaction-minor-3) !important;
+			color: var(--ui-purple-interaction-minor-1) !important;
+			border-radius: 100% !important;
+		}
+
+		.user-initials {
+			inline-size: 2.5rem !important;
+			block-size: 2.5rem !important;
+		}
+
+		.user-dropdown-displayName,
+		.user-dropdown-email {
+			font-size: 0.875rem !important;
+		}
+	}
+
+	.logo {
+		block-size: 2.5rem;
+	}
+}
+
+.user-initials-active {
+	border-radius: 100% !important;
+}
+
+.recommended-actions {
+	color: var(--text-norm) !important;
+}
+
+.userDropdown {
+	box-shadow: none !important;
+}
+
+.dropdown {
+	box-shadow: none !important;
+}

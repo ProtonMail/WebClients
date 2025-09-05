@@ -380,7 +380,7 @@ const InteractiveCalendarView = ({
 
     const { viewportWidth } = useActiveBreakpoint();
 
-    const { sendEventVideoConferenceZoomIntegration } = useVideoConfTelemetry();
+    const { sentEventZoom } = useVideoConfTelemetry();
 
     const { modalsMap, closeModal, updateModal } = useModalsMap<ModalsMap>({
         createEventModal: { isOpen: false },
@@ -1680,6 +1680,13 @@ const InteractiveCalendarView = ({
         let isSingleEventUpdate = true;
         let notificationId = 0; // 0 is an invalid notification ID
 
+        // The Zoom integration needs to do a round trip with API to update Zoom events
+        // If a Zoom meeting is present, we do the sync before any Redux update
+        const hasZoomMeeting =
+            !!temporaryEvent.tmpData.conferenceId &&
+            !!temporaryEvent.tmpData.conferenceUrl &&
+            temporaryEvent.tmpData.conferenceUrl.includes('zoom.us');
+
         try {
             isSavingEvent.current = true;
             if (isChangePartstat && selfEmail && inviteActions.partstat) {
@@ -1735,9 +1742,6 @@ const InteractiveCalendarView = ({
                 isEditSingleOccurrenceEnabled,
             });
 
-            // The Zoom integration needs to do a round trip with API to update Zoom events
-            // If a Zoom meeting is present, we do the sync before any Redux update
-            const hasZoomMeeting = !!temporaryEvent.tmpData.conferenceId && !!temporaryEvent.tmpData.conferenceUrl;
             let syncRes: SyncMultipleApiResponse[] | undefined = undefined;
             if (hasZoomMeeting) {
                 try {
@@ -1745,7 +1749,7 @@ const InteractiveCalendarView = ({
                 } catch (e: any) {
                     // If the error is a video conference error, we open the oauth modal and try again
                     if (e?.cause === VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR) {
-                        sendEventVideoConferenceZoomIntegration(
+                        sentEventZoom(
                             VideoConferenceZoomIntegration.create_zoom_meeting_failed,
                             `${VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR}-intaractiveCalendar`
                         );
