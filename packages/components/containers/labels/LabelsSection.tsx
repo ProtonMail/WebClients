@@ -96,6 +96,16 @@ function LabelsSection({ showPromptOnAction }: Props) {
         setLocalLabels(labels);
     }, [labels]);
 
+    const handleClickUpsell = () => {
+        // For ET iOS, show the native upsell modal
+        if ((window as any).webkit?.messageHandlers.upsell) {
+            (window as any).webkit?.messageHandlers.upsell.postMessage('labels-action');
+            return;
+        } else {
+            handleUpsellModalDisplay(true);
+        }
+    };
+
     return (
         <SettingsSection>
             {loadingLabels ? (
@@ -108,10 +118,7 @@ function LabelsSection({ showPromptOnAction }: Props) {
                                 {c('Action').t`Add label`}
                             </Button>
                         ) : (
-                            <MailUpsellButton
-                                onClick={() => handleUpsellModalDisplay(true)}
-                                text={c('Action').t`Get more labels`}
-                            />
+                            <MailUpsellButton onClick={handleClickUpsell} text={c('Action').t`Get more labels`} />
                         )}
                         {localLabels.length ? (
                             <Button
