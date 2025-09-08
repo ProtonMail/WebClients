@@ -1371,7 +1371,7 @@
         "En fer clic a \"Prova\", accepteu els nostres ${ termsAndConditions }."
       ],
       "During the trial period, you can have up to 10 users.": [
-        "Durant el període de prova podeu tenir fins a 10 usuaris."
+        "Durant el període de prova podreu tenir fins a 10 usuaris."
       ],
       "free for ${ TRIAL_DURATION_DAYS } days": [
         "gratuït durant ${ TRIAL_DURATION_DAYS } dies"
@@ -1386,7 +1386,7 @@
         "Proveu-ho gratuïtament durant ${ TRIAL_DURATION_DAYS } dies"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "Si cancel·leu, la prova gratuïta no es convertirà en una subscripció de pagament, però podreu gaudir dels avantatges del pla fins al final del període de prova. Després d'això, passareu al ${ BRAND_NAME } pla gratuït."
+        "En cas que cancel·leu, la prova gratuïta no es convertirà en una subscripció de pagament, però podreu gaudir dels avantatges del pla fins al final del període de prova. Després d'això, passareu al pla gratuït ${ BRAND_NAME }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Podeu tenir fins a ${ TRIAL_MAX_DEDICATED_IPS } servidors dedicats durant el període de prova."
@@ -1776,7 +1776,7 @@
         "Problema de configuració manual"
       ],
       "Meet problem": [
-        "Coneix el problema"
+        "Coneixeu el problema"
       ],
       "Other": [
         "Altres"
@@ -10086,7 +10086,7 @@
     },
     "Notification": {
       "${ MEET_APP_NAME } video conferencing settings have been updated": [
-        "La configuració de les videoconferències del ${ MEET_APP_NAME } s'ha actualitzat"
+        "S'ha actualitzat la configuració de videoconferències de ${ MEET_APP_NAME }"
       ],
       "${ reason } has been disabled": [
         "${ reason } s'ha desactivat"
@@ -10104,10 +10104,10 @@
         "Codis de recuperació 2FA descarregats"
       ],
       "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
-        "No s'ha pogut actualitzar les preferències de videoconferència del ${ MEET_APP_NAME }"
+        "No s'ha pogut actualitzar les preferències de videoconferència de ${ MEET_APP_NAME }"
       ],
       "Failed to update Zoom video conferencing settings": [
-        "No s'ha pogut actualitzar les preferències de videoconferència del Zoom"
+        "No s'han pogut actualitzar les preferències de videoconferència de Zoom"
       ],
       "Invalid code": [
         "El codi no és vàlid."
@@ -10146,7 +10146,7 @@
         "L'autenticació de doble factor ja no és necessària"
       ],
       "Zoom video conferencing settings have been updated": [
-        "La configuració de les videoconferències del Zoom s'ha actualitzat"
+        "La configuració de les videoconferències de Zoom s'ha actualitzat"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -14503,7 +14503,7 @@
         "Els administradors poden gestionar els comptes d'usuari i donar privilegis d'administrador a altres usuaris. Només l'administrador principal pot editar el pla de l'organització."
       ],
       "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Permet afegir sense problemes enllaços de videoconferència del ${ MEET_APP_NAME } a les invitacions del vostre calendari."
+        "Permet afegir sense problemes enllaços de videoconferència de ${ MEET_APP_NAME } a les invitacions del vostre calendari."
       ],
       "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
         "Permet afegir sense problemes enllaços de videoconferència de Zoom a les invitacions del vostre calendari."

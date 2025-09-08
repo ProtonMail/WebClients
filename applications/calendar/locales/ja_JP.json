@@ -89,6 +89,9 @@
       "Add public holidays": [
         "祝日を追加"
       ],
+      "Add secret passphrase": [
+        "シークレットパスフレーズを追加"
+      ],
       "Add to group": [
         "グループに追加"
       ],
@@ -470,6 +473,9 @@
       "Join calendar": [
         "カレンダーに参加"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }で参加"
+      ],
       "Keep current time zone": [
         "現在のタイムゾーンを維持"
       ],
@@ -595,6 +601,9 @@
       ],
       "Open settings": [
         "設定を開く"
+      ],
+      "Passphrase": [
+        "パスフレーズ"
       ],
       "Pause indexing": [
         "インデックス作成を一時停止"
@@ -847,6 +856,9 @@
       ],
       "Update recovery phrase": [
         "回復用フレーズを更新"
+      ],
+      "Update secret passphrase": [
+        "シークレットパスフレーズを更新"
       ],
       "Upgrade": [
         "アップグレード"
@@ -1476,6 +1488,9 @@
       ],
       "Manual setup problem": [
         "手動セットアップに関する問題"
+      ],
+      "Meet problem": [
+        "Meetの問題"
       ],
       "Other": [
         "その他"
@@ -3501,8 +3516,14 @@
       "Event not found": [
         "イベントが見つかりません"
       ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "${ MEET_APP_NAME } ビデオ会議の作成に失敗しました。"
+      ],
       "Failed to create meeting": [
         "ミーティングの作成に失敗しました"
+      ],
+      "Failed to decrypt session key": [
+        "セッションキーの復号化に失敗しました"
       ],
       "Failed to get event": [
         "予定の取得に失敗しました"
@@ -3515,6 +3536,9 @@
       ],
       "Failed to open to contact": [
         "連絡先を開けませんでした"
+      ],
+      "Failed to update secret passphrase": [
+        "シークレットパスフレーズの更新に失敗しました"
       ],
       "First name is too long": [
         "名前が長すぎます。"
@@ -3641,6 +3665,9 @@
       ],
       "Organization key is not decrypted": [
         "組織の鍵が復号されていません"
+      ],
+      "Passphrase unavailable": [
+        "パスフレーズは利用できません"
       ],
       "Password is required": [
         "パスワードは必須です"
@@ -5252,8 +5279,17 @@
       "Expired": [
         "有効期限切れ"
       ],
+      "Failed to update meeting name": [
+        "ミーティング名の更新に失敗しました"
+      ],
+      "Failed to update meeting password": [
+        "ミーティングパスワードの更新に失敗しました"
+      ],
       "finance": [
         "ファイナンス"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "より高いセキュリティのために、パスフレーズを設定できます。それはカレンダーの招待には含まれませんので、ゲストには別途共有することを忘れないでください。"
       ],
       "Frequency modifications will be lost.": [
         "間隔の設定は失われます"
@@ -6285,6 +6321,9 @@
       "Account holder": [
         "アカウント所有者"
       ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "${ MEET_APP_NAME }会議を追加"
+      ],
       "Add email address": [
         "メールアドレスの追加"
       ],
@@ -6293,6 +6332,9 @@
       ],
       "Add to group": [
         "グループに追加"
+      ],
+      "Add Zoom meeting": [
+        "Zoomミーティングを追加"
       ],
       "Address": [
         "メールアドレス"
@@ -6597,6 +6639,9 @@
       "Participants": [
         "参加者"
       ],
+      "Passphrase:": [
+        "パスフレーズ:"
+      ],
       "Password": [
         "パスワード"
       ],
@@ -6711,6 +6756,9 @@
       "Verification code": [
         "認証コード"
       ],
+      "Video conference": [
+        "ビデオ会議"
+      ],
       "Vulnerable": [
         "脆弱"
       ],
@@ -6755,6 +6803,9 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Zoom meeting": [
+        "Zoom ミーティング"
       ]
     },
     "Label for contact group color": {
@@ -8157,6 +8208,9 @@
       ],
       "Passcode copied to clipboard": [
         "パスコードがクリップボードにコピーされました"
+      ],
+      "Passphrase copied to clipboard": [
+        "パスフレーズがクリップボードにコピーされました"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8926,6 +8980,9 @@
       ],
       "E.g., ": [
         "例: "
+      ],
+      "Enter passphrase": [
+        "パスフレーズを入力してください"
       ],
       "Filter groups": [
         "グループをフィルター"
@@ -9713,6 +9770,9 @@
       ]
     },
     "Spotlight": {
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME }が登場しました！"
+      ],
       "Color-code your calendar to better organize your day, track your time, and more.": [
         "カレンダーに色を付けて、予定を整理しましょう。"
       ],
@@ -9724,6 +9784,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "友達を ${ BRAND_NAME } に招待"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "カレンダーから直接、${ MEET_APP_NAME } の通話をスケジュール設定し、参加できます。"
       ],
       "Seamlessly create and add video meeting links to your events.": [
         "ビデオ会議を作成して、イベントにシームレスに追加"
@@ -10416,6 +10479,9 @@
       ],
       "Problem reported": [
         "問題が報告されました"
+      ],
+      "Secret passphrase updated": [
+        "シークレットパスフレーズが更新されました"
       ],
       "Undo in progress": [
         "取り消し中"

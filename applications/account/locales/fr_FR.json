@@ -1988,6 +1988,9 @@
       ],
       "Secure your communications": [
         "Sécurisez vos communications"
+      ],
+      "Talk confidentially": [
+        "Parler en toute confidentialité"
       ]
     },
     "Apps dropdown": {
@@ -2059,6 +2062,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Une fois la version d'essai terminée le ${ formattedDate }, elle deviendra un abonnement payant qui se renouvelle automatiquement tous les ${ renewCycle } mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
       ],
@@ -2076,6 +2082,9 @@
       ],
       "Try ${ selected } ${ freeForNDays }": [
         "Essayez ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Essayez-le gratuitement pendant ${ TRIAL_DURATION_DAYS } jours"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Lorsque vous annulez, votre essai gratuit ne sera pas converti en abonnement payant, mais vous pourrez toujours profiter des avantages de l'abonnement jusqu'à la fin de la période d'essai. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free."
@@ -2882,14 +2891,23 @@
       ]
     },
     "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Accès aux modèles d'IA avancés"
+      ],
       "Basic chat history": [
         "Historique de chat basique"
       ],
       "Full chat history with search": [
         "Historique complet des discussions avec recherche"
       ],
+      "Large file upload support": [
+        "Prise en charge du chargement de fichiers volumineux"
+      ],
       "Limited daily chats": [
         "Chats quotidiens limités"
+      ],
+      "Limited favorites": [
+        "Favoris limités"
       ],
       "Unlimited daily chats": [
         "Chats quotidiens illimités"
@@ -2900,16 +2918,30 @@
       "Upload and query multiple large files": [
         "Importer et consulter plusieurs fichiers volumineux"
       ],
+      "Upload and query small files": [
+        "Importer et consulter les petits fichiers"
+      ],
       "Web search access": [
         "Accès à la recherche web"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "Développé en Europe"
       ]
     },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } est une IA axée sur la confidentialité qui vous aide à accomplir davantage tout en garantissant la sécurité de vos données. Libérez tout son potentiel et profitez d'un accès anticipé aux nouvelles fonctionnalités dès leur introduction."
       ],
+      "Access to advanced AI models": [
+        "Accès aux modèles d'IA avancés"
+      ],
       "Add ${ LUMO_APP_NAME }": [
         "Ajouter ${ LUMO_APP_NAME }"
+      ],
+      "AI assistant that respects your privacy": [
+        "Assistant IA qui respecte votre vie privée"
       ],
       "Basic chat history": [
         "Historique de chat basique"
@@ -2919,6 +2951,9 @@
       ],
       "Full chat history with search": [
         "Historique complet des discussions avec recherche"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Discussions rapides et fonctionnalités d'IA avancées."
       ],
       "Limited daily chats": [
         "Chats quotidiens limités"
@@ -8509,6 +8544,9 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias d'adresse e-mail fonctionne comme une adresse e-mail. Il réduit toutefois le nombre de spams et permet de ne pas divulguer votre véritable adresse e-mail et identité."
       ],
+      "An error occurred while communicating with **${ applicationName }**": [
+        "Une erreur s'est produite lors de la communication avec **${ applicationName }**"
+      ],
       "An error occurred while communicating with the extension": [
         "Une erreur s'est produite lors de la communication avec l'extension."
       ],
@@ -11175,6 +11213,9 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Vous serez peut-être redirigé vers le site internet de votre banque."
+      ],
+      "You may now start using **${ applicationName }**": [
+        "Vous pouvez maintenant commencer à utiliser **${ applicationName }**"
       ],
       "You may now start using the extension": [
         "Vous pouvez maintenant commencer à utiliser l'extension."
@@ -15253,6 +15294,9 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } a été créé."
       ],
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "Les paramètres de vidéoconférence de ${ MEET_APP_NAME } ont été mis à jour"
+      ],
       "${ reason } has been disabled": [
         "${ reason } a été désactivé."
       ],
@@ -15273,6 +15317,12 @@
       ],
       "Email notifications have been enabled": [
         "Les notifications par e-mail ont été activées."
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "Échec de la mise à jour des paramètres de visioconférence de ${ MEET_APP_NAME }"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Échec de la mise à jour des paramètres de visioconférence de Zoom"
       ],
       "Invalid code": [
         "Le code n’est pas valide."
@@ -15321,6 +15371,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "L'authentification à deux facteurs (A2F) n'est plus obligatoire."
+      ],
+      "Zoom video conferencing settings have been updated": [
+        "Les paramètres de vidéoconférence de Zoom ont été mis à jour."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -17122,6 +17175,96 @@
       ],
       "Unknown": [
         "Inconnu"
+      ]
+    },
+    "q3campaign_2025: Action": {
+      "END-OF-SUMMER SALE": [
+        "PROMOTION DE FIN D'ÉTÉ"
+      ],
+      "Get the deal": [
+        "Profitez de l'offre"
+      ]
+    },
+    "q3campaign_2025: Info": {
+      "${ discountPercent }% off": [
+        "- ${ discountPercent } %"
+      ],
+      "${ normalPricePerMonth } /month": [
+        "${ normalPricePerMonth }/mois"
+      ],
+      "/month": [
+        "/mois"
+      ],
+      "1 TB data storage": [
+        "1 To d'espace de stockage de données"
+      ],
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "200 GB storage for files, photos & docs": [
+        "200 Go d'espace de stockage pour les fichiers, photos et documents"
+      ],
+      "3 TB data storage": [
+        "3 To d'espace de stockage de données"
+      ],
+      "500 GB storage": [
+        "500 Go d'espace de stockage"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accédez à plus de 15 000 serveurs dans plus de 120 pays"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Toutes les fonctionnalités premium de Mail, Pass, Drive, VPN et Calendar"
+      ],
+      "Built-in 2FA authenticator": [
+        "Authentificateur 2FA intégré"
+      ],
+      "Connect 10 devices at once": [
+        "Connectez 10 appareils en même temps"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+      ],
+      "Enjoy the fastest VPN speeds": [
+        "Profitez des vitesses VPN les plus rapides"
+      ],
+      "Individual accounts for 6 users": [
+        "Comptes individuels pour 6 utilisateurs"
+      ],
+      "Individual accounts for you and a partner": [
+        "Comptes individuels pour vous et un partenaire"
+      ],
+      "Online document editor": [
+        "Éditeur de documents en ligne"
+      ],
+      "Recover previous file versions": [
+        "Récupérez les versions précédentes des fichiers"
+      ],
+      "Save ${ totalSavings } and keep all your current features!": [
+        "Économisez ${ totalSavings } et conservez toutes vos fonctionnalités actuelles !"
+      ],
+      "Secure link, vault & item sharing": [
+        "Partage sécurisé de liens, de coffres-forts et d'éléments"
+      ],
+      "Stronger protection against cyber threats": [
+        "Une protection renforcée contre les cybermenaces"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Des dossiers, labels et filtres illimités"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nombre illimité d'alias « hide-my-email »"
+      ],
+      "Use your own email domain": [
+        "Utilisez votre propre domaine de messagerie"
+      ]
+    },
+    "q3campaign_2025: Title": {
+      "End-of-summer sale": [
+        "Soldes de fin d'été"
+      ],
+      "for 12 months": [
+        "pendant 12 mois"
       ]
     },
     "Recovery Email": {

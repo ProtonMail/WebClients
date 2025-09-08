@@ -1765,6 +1765,9 @@
       "Manual setup problem": [
         "手動セットアップに関する問題"
       ],
+      "Meet problem": [
+        "Meetの問題"
+      ],
       "Other": [
         "その他"
       ],
@@ -8310,6 +8313,9 @@
       "Verification code": [
         "認証コード"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } を利用したビデオ会議"
+      ],
       "Video conferencing with Zoom": [
         "Zoomでのビデオ会議"
       ],
@@ -9932,6 +9938,9 @@
       ]
     },
     "Notification": {
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "${ MEET_APP_NAME }ビデオ会議の設定が更新されました"
+      ],
       "${ reason } has been disabled": [
         "${ reason } が無効になりました"
       ],
@@ -9946,6 +9955,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "2要素認証回復コードをダウンロードしました"
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "${ MEET_APP_NAME } ビデオ会議設定の更新に失敗しました"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Zoom ビデオ会議設定の更新に失敗しました"
       ],
       "Invalid code": [
         "無効なコード"
@@ -9982,6 +9997,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "2要素認証はもう必要ありません"
+      ],
+      "Zoom video conferencing settings have been updated": [
+        "Zoomビデオ会議の設定が更新されました"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -14258,6 +14276,12 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "管理者はユーザーのアカウントを管理することができ、他のユーザーに管理者権限を与えることができます。プライマリー管理者のみが組織のプランを変更できます。"
+      ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "カレンダーの招待状にシームレスに${ MEET_APP_NAME }ビデオ会議のリンクを追加できるようにします。"
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "カレンダーの招待状にシームレスにZoomビデオ会議のリンクを追加できるようにします。"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "システムの昼夜モードに同期して、昼と夜の好みのテーマを自動的に切り替えます"
