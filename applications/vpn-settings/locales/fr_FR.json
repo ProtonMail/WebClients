@@ -1385,6 +1385,9 @@
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_DEDICATED_IPS } serveur dédié maximum pendant la version d'essai."
       ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_LUMO_SEATS } accès à ${ LUMO_SHORT_APP_NAME } pendant la période d’essai."
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_SCRIBE_SEATS } accès maximum à Scribe pendant la période d’essai."
       ],
@@ -1912,6 +1915,29 @@
       ],
       "Expand": [
         "Développer"
+      ]
+    },
+    "collider_2025: feature": {
+      "Basic chat history": [
+        "Historique de chat basique"
+      ],
+      "Full chat history with search": [
+        "Historique complet des discussions avec recherche"
+      ],
+      "Limited daily chats": [
+        "Chats quotidiens limités"
+      ],
+      "Unlimited daily chats": [
+        "Chats quotidiens illimités"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoris illimités pour un accès rapide"
+      ],
+      "Upload and query multiple large files": [
+        "Importer et consulter plusieurs fichiers volumineux"
+      ],
+      "Web search access": [
+        "Accès à la recherche web"
       ]
     },
     "collider_2025: Info": {
@@ -8374,6 +8400,9 @@
       "Verification code": [
         "Code de vérification"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Vidéoconférence avec ${ MEET_APP_NAME }"
+      ],
       "Video conferencing with Zoom": [
         "Vidéoconférence avec Zoom"
       ],
@@ -10082,9 +10111,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "L'authentification à deux facteurs (A2F) n'est plus obligatoire."
-      ],
-      "Video conferencing settings have been updated": [
-        "Les paramètres de vidéoconférence ont été mis à jour."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10151,7 +10177,7 @@
         "Payez à l'année et assurez-vous de bénéficier de notre meilleure offre."
       ],
       "Save": [
-        "Enregistrer"
+        "Économisez"
       ],
       "Save big when you pay annually": [
         "Économisez un maximum en optant pour le paiement annuel !"
@@ -14445,8 +14471,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Un administrateur peut gérer les comptes utilisateur ou accorder des droits administrateur aux autres utilisateurs. Seul l'administrateur principal peut modifier l'abonnement de l'organisation."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Permet d'ajouter de manière transparente des liens de vidéoconférence à vos invitations de calendrier."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Permet d'ajouter de manière transparente des liens de vidéoconférence de ${ MEET_APP_NAME } à vos invitations de calendrier."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Permet d'ajouter de manière transparente des liens de vidéoconférence Zoom à vos invitations de calendrier."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Basculez automatiquement entre vos thèmes préférés pour le jour et la nuit, en synchronisation avec les modes jour et nuit de votre système."

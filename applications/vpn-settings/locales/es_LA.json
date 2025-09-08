@@ -1361,6 +1361,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Después de que la prueba finalice el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente cada ${ renewCycle } meses el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente cada mes el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
       ],
@@ -1370,14 +1373,26 @@
       "During the trial period, you can have up to 10 users.": [
         "Durante el período de prueba, puede tener hasta 10 usuarios."
       ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "gratis durante ${ TRIAL_DURATION_DAYS } días"
+      ],
       "on ${ formattedDate }": [
         "el ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Pruebe ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Pruébelo gratis durante ${ TRIAL_DURATION_DAYS } días"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Cuando cancele, su prueba gratuita no se convertirá en una suscripción de pago, pero aún podrá disfrutar de los beneficios del plan hasta el final del período de prueba. Después de eso, será degradado al plan ${ BRAND_NAME } Free."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puede tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el período de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puede tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de ${ LUMO_SHORT_APP_NAME } durante el período de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
@@ -1908,12 +1923,50 @@
         "Expandir"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acceso a modelos de IA avanzados"
+      ],
+      "Basic chat history": [
+        "Historial de chat básico"
+      ],
+      "Full chat history with search": [
+        "Historial de chat completo con búsqueda"
+      ],
+      "Large file upload support": [
+        "Soporte para carga de archivos grandes"
+      ],
+      "Limited daily chats": [
+        "Chats diarios limitados"
+      ],
+      "Limited favorites": [
+        "Favoritos limitados"
+      ],
+      "Unlimited daily chats": [
+        "Chats diarios ilimitados"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoritos ilimitados para acceso rápido"
+      ],
+      "Upload and query multiple large files": [
+        "Cargar y consultar varios archivos grandes"
+      ],
+      "Upload and query small files": [
+        "Cargar y consultar archivos pequeños"
+      ],
+      "Web search access": [
+        "Acceso a búsqueda web"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } es una IA que prioriza la privacidad y le ayuda a hacer más, a la vez que mantiene sus datos seguros. Desbloquee todo su potencial y disfrute del acceso anticipado a nuevas funciones a medida que se introduzcan."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Agregar ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chats de gran velocidad y funciones de IA avanzadas."
       ]
     },
     "color": {
@@ -10076,9 +10129,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "La autenticación de dos factores ya no es requerida"
-      ],
-      "Video conferencing settings have been updated": [
-        "Se actualizaron los ajustes de videoconferencia."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -14438,9 +14488,6 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Los administradores pueden administrar cuentas de usuario y otorgar privilegios de administrador a otros usuarios. Solo el administrador principal puede editar el plan de la organización."
-      ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Permite fácilmente agregar enlaces a videoconferencias a sus invitaciones del calendario."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Cambie automáticamente entre los temas preferidos para el día y la noche en sincronía con los modos de día y noche del sistema"

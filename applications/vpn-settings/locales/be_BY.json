@@ -799,7 +799,7 @@
         "Адправіць напамін"
       ],
       "Set as album cover": [
-        "Усталяваць у якасці вокладкі альбома"
+        "Задаць у якасці вокладкі альбома"
       ],
       "Set catch-all": [
         "Задаць адрас для ўсёй пошты дамена"
@@ -1372,6 +1372,61 @@
         "Падзея не падтрымліваецца"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Падпіска стане платнай і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў ${ formattedDate }, пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Падпіска стане платнай і будзе аўтаматычна падаўжацца штомесяц ${ formattedDate }, пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Націскаючы на кнопку \"Паспрабаваць\", вы згаджаецеся з нашымі ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "На працягу пробнага перыяда ў вас можа быць да 10 карыстальнікаў."
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "бясплатна на працягу ${ TRIAL_DURATION_DAYS } дзён"
+      ],
+      "on ${ formattedDate }": [
+        "${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Паспрабуйце ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Паспрабуйце бясплатна на працягу ${ TRIAL_DURATION_DAYS } дзён"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Ваш бясплатны пробны перыяд не будзе пераўтвораны ў платную падпіску, калі адбудзецца скасаванне. Звярніце ўвагу, што вы ўсё яшчэ можаце атрымліваць асалоду ад пераваг тарыфнага плана да канца пробнага перыяду. Пасля яго завяршэння вы будзеце паніжаны да тарыфнага плана ${ BRAND_NAME } Free."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_DEDICATED_IPS } вылучаных сервераў на працягу пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_LUMO_SEATS } ліцэнзій ${ LUMO_SHORT_APP_NAME } на працягу пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_SCRIBE_SEATS } ліцэнзій Scribe на працягу пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_USERS } карыстальнікаў на працягу пробнага перыяду."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "У вас няма магчымасці дадаваць карыстальніцкія дамены падчас пробнага перыяду."
+      ],
+      "You have reached the trial limit.": [
+        "Дасягнута абмежаванне пробнага перыяду."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Сума да аплаты пасля пробнага перыяду"
+      ],
+      "Amount due now": [
+        "Сума да аплаты"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Скасаваць падпіску"
@@ -1740,6 +1795,9 @@
       "Manual setup problem": [
         "Праблема падчас наладжвання ўручную"
       ],
+      "Meet problem": [
+        "Праблема з Meet"
+      ],
       "Other": [
         "Іншае"
       ],
@@ -1890,6 +1948,52 @@
       ],
       "Expand": [
         "Разгарнуць"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Доступ да перадавых мадэляў ШІ"
+      ],
+      "Basic chat history": [
+        "Базавая гісторыя чата"
+      ],
+      "Full chat history with search": [
+        "Поўная гісторыя чатаў з пошукам"
+      ],
+      "Large file upload support": [
+        "Падтрымка запамоўвання вялікіх файлаў"
+      ],
+      "Limited daily chats": [
+        "Абмежаваная колькасць штодзённых чатаў"
+      ],
+      "Limited favorites": [
+        "Абмежаваная колькасць абраных"
+      ],
+      "Unlimited daily chats": [
+        "Неабмежаваныя штодзённыя чаты"
+      ],
+      "Unlimited favorites for quick access": [
+        "Неабмежаваная колькасць абраных для хуткага доступу"
+      ],
+      "Upload and query multiple large files": [
+        "Запампаваць і запытаць некалькі вялікіх файлаў"
+      ],
+      "Upload and query small files": [
+        "Запампаваць і запытаць маленькія файлы"
+      ],
+      "Web search access": [
+        "Доступ да пошуку ў інтэрнэце"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } — гэта ШІ, які арыентаваны на прыватнасць. Ён дапамагае рашаць больш задач і пры гэтым захоўвае вашы даныя ў бяспецы. Раскрыйце поўны патэнцыял праграмы і атрымлівайце асалоду ад ранняга доступу да новых функцый па меры іх укаранення."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Дадайце праграму ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Высокахуткасныя чаты і перадавыя функцыі ШІ."
       ]
     },
     "color": {
@@ -4394,7 +4498,7 @@
         "Вас запрашаюць далучыць свой уліковы запіс ${ BRAND_NAME } да гэтага сямейнага тарыфнага плана, каб разам выкарыстоўваць усе прэміяльныя функцыі ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
-        "Колькасць адрасоў электроннай пошты перавышае дазволенае значэнне вашага бягучага тарыфнага плана. ${ addressSettingsLink }"
+        "Колькасць адрасоў электроннай пошты вашага ўлікова запісу перавышае дазволенае значэнне для вашага бягучага тарыфнага плана. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш уліковы запіс выкарыстоўвае ${ usedSpace } сховішча, што перавышае абмежаванне на ${ inviteSpace }. Выдаліце некаторыя даныя або папрасіце адміністратара тарыфнага плана павялічыць даступны аб'ём у сховішчы."
@@ -8536,6 +8640,9 @@
       "Verification code": [
         "Код спраўджання"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Відэаканферэнцыя з ${ MEET_APP_NAME }"
+      ],
       "Video conferencing with Zoom": [
         "Відэаканферэнцыя з Zoom"
       ],
@@ -8894,7 +9001,7 @@
         "Ваша ${ driveStorage } запоўнена. Вызваліце месца або ${ cta }, каб запампоўваць або сінхранізаваць файлы."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
-        "Ваша ${ mailStorage } запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ cta }."
+        "Ваша ${ mailStorage } запоўнена. Вызваліце месца або ${ cta }, каб адпраўляць або прымаць лісты."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Ваш уліковы запіс пад пагрозай выдалення. Папрасіце свайго адміністратара палепшыць тарыфны план, каб пазбегнуць страты даных. ${ cta }"
@@ -10245,6 +10352,9 @@
       ]
     },
     "Notification": {
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "Налады відэаканферэнцыі ${ MEET_APP_NAME } абноўлены"
+      ],
       "${ reason } has been disabled": [
         "${ reason } быў адключаны"
       ],
@@ -10259,6 +10369,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "Спампаваныя коды аднаўлення 2ФА"
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "Не ўдалося абнавіць ${ MEET_APP_NAME } налады відэаканферэнцыі"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Не ўдалося абнавіць налады відэаканферэнцыі Zoom"
       ],
       "Invalid code": [
         "Памылковы код"
@@ -10296,8 +10412,8 @@
       "Two-factor authentication is not required anymore": [
         "Двухфактарная аўтэнтыфікацыя больш не патрабуецца"
       ],
-      "Video conferencing settings have been updated": [
-        "Налады відэаканферэнцыі абноўлены"
+      "Zoom video conferencing settings have been updated": [
+        "Налады відэаканферэнцыі Zoom абноўлены"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10364,7 +10480,7 @@
         "Плаціце штогод, каб атрымаць нашу лепшую прапанову"
       ],
       "Save": [
-        "Эканомія"
+        "Эканомце"
       ],
       "Save big when you pay annually": [
         "Эканомце больш пры гадавой аплаце"
@@ -10425,7 +10541,7 @@
         "Free"
       ],
       "Plus": [
-        "Плюс"
+        "Plus"
       ],
       "Storage": [
         "Сховішча"
@@ -10961,7 +11077,7 @@
         "Крэдыты і скідкі адлюстроўваюцца ў вашым рахунку"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
-        "У цяперашні час аўтаматычнае падаўжэнне падпіскі адключана. Калі змяніць падпіску цяпер, то аўтаматычнае падаўжэнне будзе ўключана паўторна."
+        "У цяперашні час аўтаматычнае падаўжэнне падпіскі адключана. Аўтаматычнае падаўжэнне будзе ўключана паўторна, калі змяніць падпіску цяпер."
       ],
       "CVC": [
         "CVC"
@@ -14797,8 +14913,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Адміністратары могуць кіраваць уліковымі запісамі карыстальнікаў і даваць правы адміністратара іншым карыстальнікам. Толькі асноўны адміністратар можа рэдагаваць тарыфны план арганізацыі."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Дазваляе бесперашкодна дадаваць спасылкі на відэаканферэнцыі ў запрашэнні вашага календара."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Дазваляе бесперашкодна дадаваць спасылкі на відэаканферэнцый ${ MEET_APP_NAME } у запрашэнні вашага календара."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Дазваляе бесперашкодна дадаваць спасылкі на відэаканферэнцый Zoom у запрашэнні вашага календара."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Аўтаматычна пераключацца паміж вашымі пажаданымі тэмамі для дня і ночы згодна з начным і дзённым рэжымам вашай сістэмы."

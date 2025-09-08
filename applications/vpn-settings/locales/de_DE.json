@@ -1361,6 +1361,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nachdem die Testversion am ${ formattedDate } endet, wird es zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate am ${ formattedDate } automatisch verlängert. Dir wird nichts berechnet, wenn du vor dem ${ formattedDate } kündigst."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
       ],
@@ -1370,14 +1373,26 @@
       "During the trial period, you can have up to 10 users.": [
         "Während des Testzeitraums kannst du bis zu 10 Benutzer haben."
       ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "Kostenlos für ${ TRIAL_DURATION_DAYS } Tage"
+      ],
       "on ${ formattedDate }": [
         "am ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Teste ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Teste es ${ TRIAL_DURATION_DAYS } Tage kostenlos"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wenn du kündigst, wird deine kostenlose Testversion nicht in ein kostenpflichtiges Abonnement umgewandelt, aber du kannst die Vorteile des Abonnements noch bis zum Ende des Testzeitraums nutzen. Danach wirst du auf das ${ BRAND_NAME } Free-Abonnement zurückgestuft."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_DEDICATED_IPS } dedizierte Server haben."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-Lizenzen haben."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-Lizenzen haben."
@@ -1760,6 +1775,9 @@
       "Manual setup problem": [
         "Problem mit der manuellen Einrichtung"
       ],
+      "Meet problem": [
+        "Meet-Problem"
+      ],
       "Other": [
         "Andere"
       ],
@@ -1908,12 +1926,50 @@
         "Erweitern"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Zugang zu erweiterten KI-Modellen"
+      ],
+      "Basic chat history": [
+        "Einfacher Chatverlauf"
+      ],
+      "Full chat history with search": [
+        "Vollständiger Chat-Verlauf mit Suche"
+      ],
+      "Large file upload support": [
+        "Unterstützt große Dateiuploads"
+      ],
+      "Limited daily chats": [
+        "Begrenzte tägliche Chats"
+      ],
+      "Limited favorites": [
+        "Begrenzte Favoriten"
+      ],
+      "Unlimited daily chats": [
+        "Unbegrenzte tägliche Chats"
+      ],
+      "Unlimited favorites for quick access": [
+        "Unbegrenzte Favoriten für schnellen Zugriff"
+      ],
+      "Upload and query multiple large files": [
+        "Mehrere große Dateien hochladen und abfragen"
+      ],
+      "Upload and query small files": [
+        "Kleine Dateien hochladen und abfragen"
+      ],
+      "Web search access": [
+        "Websuche-Zugriff"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } ist eine datenschutzorientierte KI, die dir hilft, mehr zu erledigen und gleichzeitig dafür sorgt, dass deine Daten sicher bleiben. Entfalte ihr volles Potenzial und genieße den Vorabzugriff auf neue Funktionen, sobald sie eingeführt werden."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } hinzufügen"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Schnelle Chats und erweiterte KI-Funktionen."
       ]
     },
     "color": {
@@ -8368,6 +8424,9 @@
       "Verification code": [
         "Verifizierungscode"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videokonferenz mit ${ MEET_APP_NAME }"
+      ],
       "Video conferencing with Zoom": [
         "Videokonferenzen mit Zoom"
       ],
@@ -10011,6 +10070,9 @@
       ]
     },
     "Notification": {
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "Die Videokonferenz-Einstellungen von ${ MEET_APP_NAME } wurden aktualisiert."
+      ],
       "${ reason } has been disabled": [
         "${ reason } wurde deaktiviert."
       ],
@@ -10025,6 +10087,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "2FA-Wiederherstellungscodes heruntergeladen."
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "Das Aktualisieren der ${ MEET_APP_NAME }-Videokonferenz-Einstellungen ist fehlgeschlagen"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Das Aktualisieren der Zoom-Videokonferenz-Einstellungen ist fehlgeschlagen"
       ],
       "Invalid code": [
         "Ungültiger Code"
@@ -10062,8 +10130,8 @@
       "Two-factor authentication is not required anymore": [
         "Die Zwei-Faktor-Authentifizierung ist nicht mehr erforderlich."
       ],
-      "Video conferencing settings have been updated": [
-        "Die Einstellungen für Videokonferenzen wurden aktualisiert"
+      "Zoom video conferencing settings have been updated": [
+        "Die Einstellungen für Zoom-Videokonferenzen wurden aktualisiert"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10130,7 +10198,7 @@
         "Jährlich zahlen, unser bestes Angebot sichern"
       ],
       "Save": [
-        "Speichern"
+        "Sparen"
       ],
       "Save big when you pay annually": [
         "Spare kräftig, wenn du jährlich bezahlst"
@@ -14417,8 +14485,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Admins können Benutzerkonten verwalten und anderen Benutzern Administratorrechte erteilen. Nur der Hauptadministrator kann das Abonnement der Organisation bearbeiten."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Ermöglicht das nahtlose Hinzufügen von Links zu Videokonferenzen zu deinen Kalendereinladungen."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Ermöglicht das nahtlose Hinzufügen von ${ MEET_APP_NAME }-Videokonferenz-Links zu deinen Kalendereinladungen."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Ermöglicht das nahtlose Hinzufügen von Zoom-Videokonferenz-Links zu deinen Kalendereinladungen."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisches Umschalten zwischen deinen bevorzugten Farbschemata für Tag und Nacht, synchron mit dem Tag- und Nachtmodus deines Systems."

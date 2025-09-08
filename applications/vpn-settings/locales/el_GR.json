@@ -1360,6 +1360,61 @@
         "Μη υποστηριζόμενη εκδήλωση"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες στις ${ formattedDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα στις ${ formattedDate }. Δεν θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Κάνοντας κλικ στο \"Δοκιμή\", συμφωνείτε με τους ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Κατά τη δοκιμαστική περίοδο, μπορείτε να έχετε έως και 10 χρήστες."
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "δωρεάν για ${ TRIAL_DURATION_DAYS } ημέρες"
+      ],
+      "on ${ formattedDate }": [
+        "στις ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Δοκιμάστε ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Δοκιμάστε το δωρεάν για ${ TRIAL_DURATION_DAYS } ημέρες"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Όταν ακυρώσετε, η δωρεάν δοκιμή σας δε θα μετατραπεί σε συνδρομή επί πληρωμή, αλλά θα εξακολουθείτε να απολαμβάνετε τα οφέλη του πλάνου μέχρι το τέλος της δοκιμαστικής περιόδου. Μετά από αυτό, θα υποβαθμιστείτε στο ${ BRAND_NAME } Free πλάνο."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Μπορείτε να έχετε έως ${ TRIAL_MAX_DEDICATED_IPS } αφιερωμένο διακομιστή κατά τη διάρκεια της δοκιμαστικής περιόδου."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_LUMO_SEATS } θέσεις ${ LUMO_SHORT_APP_NAME } κατά τη διάρκεια της δοκιμαστικής περιόδου."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_SCRIBE_SEATS } θέσεις Scribe κατά τη δοκιμαστική περίοδο."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_USERS } χρήστες κατά τη δοκιμαστική περίοδο."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Δεν μπορείτε να προσθέσετε προσαρμοσμένους τομείς κατά τη δοκιμαστική περίοδο."
+      ],
+      "You have reached the trial limit.": [
+        "Έχετε φτάσει το όριο της δοκιμής."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Οφειλόμενο ποσό μετά τη δοκιμαστική περίοδο"
+      ],
+      "Amount due now": [
+        "Οφειλόμενο ποσό τώρα"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Ακύρωση συνδρομής"
@@ -1720,6 +1775,9 @@
       "Manual setup problem": [
         "Πρόβλημα χειροκίνητης ρύθμισης"
       ],
+      "Meet problem": [
+        "Πρόβλημα Meet"
+      ],
       "Other": [
         "Άλλο"
       ],
@@ -1866,6 +1924,52 @@
       ],
       "Expand": [
         "Ανάπτυξη"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Πρόσβαση σε προηγμένα μοντέλα Τεχνητής Νοημοσύνης"
+      ],
+      "Basic chat history": [
+        "Βασικό ιστορικό συνομιλιών"
+      ],
+      "Full chat history with search": [
+        "Πλήρης ιστορία συνομιλίας με αναζήτηση"
+      ],
+      "Large file upload support": [
+        "Υποστήριξη για μεταφόρτωση μεγάλων αρχείων"
+      ],
+      "Limited daily chats": [
+        "Περιορισμένες καθημερινές συνομιλίες"
+      ],
+      "Limited favorites": [
+        "Περιορισμένα αγαπημένα"
+      ],
+      "Unlimited daily chats": [
+        "Απεριόριστες καθημερινές συνομιλίες"
+      ],
+      "Unlimited favorites for quick access": [
+        "Απεριόριστα αγαπημένα για γρήγορη πρόσβαση"
+      ],
+      "Upload and query multiple large files": [
+        "Ανεβάστε και αναζητήσετε πολλαπλά μεγάλα αρχεία"
+      ],
+      "Upload and query small files": [
+        "Ανεβάστε και αναζητήστε μικρά αρχεία"
+      ],
+      "Web search access": [
+        "Πρόσβαση στην αναζήτηση ιστού"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } είναι μια τεχνητή νοημοσύνη που δίνει προτεραιότητα στην ιδιωτικότητα και σας βοηθά να ολοκληρώσετε περισσότερα ενώ διατηρείτε τα δεδομένα σας ασφαλή. Ξεκλειδώστε όλες τις δυνατότητές της και απολαύστε πρόωρη πρόσβαση σε νέες δυνατότητες καθώς αυτές παρουσιάζονται."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Προσθήκη ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Υψηλής ταχύτητας συνομιλίες και προηγμένα χαρακτηριστικά AI."
       ]
     },
     "color": {
@@ -8320,6 +8424,9 @@
       "Verification code": [
         "Κωδικός επαλήθευσης"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Τηλεδιάσκεψη με ${ MEET_APP_NAME }"
+      ],
       "Video conferencing with Zoom": [
         "Τηλεδιάσκεψη με Zoom"
       ],
@@ -9971,6 +10078,9 @@
       ]
     },
     "Notification": {
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "Οι ρυθμίσεις τηλεδιάσκεψης του ${ MEET_APP_NAME } έχουν ενημερωθεί."
+      ],
       "${ reason } has been disabled": [
         "${ reason } έχει απενεργοποιηθεί"
       ],
@@ -9985,6 +10095,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "Λήψη κωδικών ανάκτησης 2FA"
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "Αποτυχία ενημέρωσης των ρυθμίσεων τηλεδιάσκεψης του ${ MEET_APP_NAME }"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Αποτυχία ενημέρωσης των ρυθμίσεων τηλεδιάσκεψης Zoom"
       ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
@@ -10022,8 +10138,8 @@
       "Two-factor authentication is not required anymore": [
         "Ο έλεγχος ταυτότητας δύο παραγόντων δεν απαιτείται πλέον"
       ],
-      "Video conferencing settings have been updated": [
-        "Οι ρυθμίσεις τηλεδιάσκεψης έχουν ενημερωθεί"
+      "Zoom video conferencing settings have been updated": [
+        "Οι ρυθμίσεις τηλεδιάσκεψης του Zoom έχουν ενημερωθεί."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10090,7 +10206,7 @@
         "Πληρώστε ετησίως, εξασφαλίστε την καλύτερη προσφορά μας"
       ],
       "Save": [
-        "Αποθήκευση"
+        "Εξοικονομήστε"
       ],
       "Save big when you pay annually": [
         "Εξοικονομήστε χρήματα όταν πληρώνετε ετησίως"
@@ -14376,8 +14492,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Οι διαχειριστές μπορούν να διαχειρίζονται λογαριασμούς χρηστών και να εκχωρούν δικαιώματα διαχειριστή σε άλλους χρήστες. Μόνο ο κύριος διαχειριστής μπορεί να επεξεργαστεί το πλάνο του οργανισμού."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Επιτρέπει την απρόσκοπτη προσθήκη συνδέσμων τηλεδιάσκεψης στις προσκλήσεις ημερολογίου σας."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Επιτρέπει την απρόσκοπτη προσθήκη συνδέσμων τηλεδιάσκεψης ${ MEET_APP_NAME } στις προσκλήσεις ημερολογίου σας."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Επιτρέπει την απρόσκοπτη προσθήκη συνδέσμων τηλεδιάσκεψης Zoom στις προσκλήσεις ημερολογίου σας."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Αυτόματη εναλλαγή μεταξύ των προτιμώμενων θεμάτων ημέρας και νύχτας σε συγχρονισμό με τις λειτουργίες ημέρας και νύχτας του συστήματός σας"

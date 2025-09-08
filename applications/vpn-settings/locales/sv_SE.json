@@ -1357,6 +1357,41 @@
         "Händelse stöds inte"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Genom att klicka på “Prova“ godkänner du våra ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Under provperioden kan du ha upp till 10 användare."
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "gratis i ${ TRIAL_DURATION_DAYS } dagar"
+      ],
+      "on ${ formattedDate }": [
+        "den ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Prova ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Prova det gratis i ${ TRIAL_DURATION_DAYS } dagar"
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_DEDICATED_IPS } dedikerad server under provperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-licenser under provperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-licenser under provperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_USERS } användare under provperioden."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Du kan inte lägga till anpassade domäner under provperioden."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Avsluta prenumeration"
@@ -1558,8 +1593,8 @@
         "Säkra inloggningar på alla dina enheter. Inkluderar obegränsat antal hide-my-email-alias, delning, integrerad 2FA, ${ DARK_WEB_MONITORING_NAME } och mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Säkra dina mail och schemalägg med end-to-end kryptering, det inkluderar ${ addresses } e-postadress, stöd for anpassade e-postdomäner, obegränsade hide-my-email-alias och mer.",
-        "Säkra dina mail och schemalägg med end-to-end kryptering, det inkluderar ${ addresses } e-postadresser, stöd for anpassade e-postdomäner, obegränsade hide-my-email-alias och mer."
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer.",
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadresser, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer."
@@ -1808,7 +1843,7 @@
         "Krypterad lösenordshanterare"
       ],
       "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
-        "Vårt grundläggande gratispaket med krypterad e-post och lagringsutrymme. Inga premiumfunktioner inkluderade."
+        "Vårt grundläggande gratispaket med end-to-end krypterad e-post och lagringsutrymme. Inga premiumfunktioner inkluderade."
       ],
       "Save ${ upsellSavings }": [
         "Spara ${ upsellSavings }"
@@ -1859,6 +1894,40 @@
       ],
       "Expand": [
         "Expandera"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Åtkomst till avancerade AI-modeller"
+      ],
+      "Basic chat history": [
+        "Grundläggande chatthistorik"
+      ],
+      "Full chat history with search": [
+        "Fullständig chatthistorik med sök"
+      ],
+      "Large file upload support": [
+        "Stöd för stora filuppladdningar"
+      ],
+      "Limited daily chats": [
+        "Begränsat antal dagliga chattar"
+      ],
+      "Limited favorites": [
+        "Begränsat antal favoriter"
+      ],
+      "Unlimited daily chats": [
+        "Obegränsat antal dagliga chattar"
+      ],
+      "Unlimited favorites for quick access": [
+        "Obegränsade favoriter för snabb åtkomst"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } är en AI som prioriterar integritet som hjälper dig att få mer gjort samtidigt som dina data hålls säkra. Lås upp dess fulla potential och njut av förhandstillgång till nya funktioner allt eftersom de introduceras."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Lägg till ${ LUMO_APP_NAME }"
       ]
     },
     "color": {
@@ -6196,6 +6265,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Det tar 10 dagar att ändra en servers land, så se till att ditt val är korrekt."
       ],
+      "It won't be linked to your ${ BRAND_NAME } Account, so there's **no risk of getting locked out**.": [
+        "Det kommer inte vara länkat till ditt ${ BRAND_NAME }-konto, så det finns **ingen risk att bli utelåst**."
+      ],
       "It's better to have:": [
         "Det är bättre att ha:"
       ],
@@ -8288,6 +8360,9 @@
       "Verification code": [
         "Verifieringskod"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videokonferens med ${ MEET_APP_NAME }"
+      ],
       "Video conferencing with Zoom": [
         "Videokonferenser med Zoom"
       ],
@@ -9951,6 +10026,9 @@
       "Downloaded 2FA recovery codes": [
         "Laddade ner 2FA-återställningskoder"
       ],
+      "Failed to update Zoom video conferencing settings": [
+        "Misslyckades att uppdatera Zoom-videokonferensinställningar"
+      ],
       "Invalid code": [
         "Ogiltig kod"
       ],
@@ -9986,9 +10064,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Tvåfaktorsautentisering krävs inte längre"
-      ],
-      "Video conferencing settings have been updated": [
-        "Inställningarna för videokonferenser har uppdaterats"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11079,6 +11154,9 @@
       ],
       "Ok": [
         "Ok"
+      ],
+      "Ownership verification": [
+        "Ägarskapsverifiering"
       ],
       "Unknown": [
         "Okänd"
@@ -14280,8 +14358,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratörer kan hantera användarkonton och ge administratörsrättigheter till andra användare. Endast den primära administratören kan redigera paketet för organisationen."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Gör det möjligt att sömlöst lägga till videokonferenslänkar till dina kalenderinbjudningar."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Gör det möjligt att sömlöst lägga till ${ MEET_APP_NAME }-videokonferenslänkar till dina kalenderinbjudningar."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Gör det möjligt att sömlöst lägga till Zoom-videokonferenslänkar till dina kalenderinbjudningar."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Växla automatiskt mellan dina föredragna teman för dag och natt i synk med ditt systems dag- och nattlägen"
@@ -14348,6 +14429,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermappar kommer att visas som separata mappar i ${ MAIL_APP_NAME }"
+      ],
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Adressen har kopplats från. Sändning och mottagning av meddelanden är pausad. Återanslut för att aktivera denna adress igen."
       ],
       "The import will start with the most recent messages.": [
         "Importering kommer att börja med de senaste meddelandena."

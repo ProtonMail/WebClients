@@ -1354,6 +1354,61 @@
         "지원되지 않는 이벤트"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }에 체험이 종료된 후, ${ formattedDate }에 ${ renewCycle }개월마다 자동 갱신되는 유료 구독으로 전환됩니다. ${ formattedDate } 이전에 취소시 요금이 부과되지 않습니다."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }에 체험이 종료된 후, 유료 구독으로 전환되어 매월 ${ formattedDate }에 자동 갱신됩니다. ${ formattedDate } 이전에 취소시 요금이 청구되지 않습니다."
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "\"체험\"을 클릭하면, ${ termsAndConditions }에 동의하는 것으로 간주됩니다."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "무료 체험 기간동안 최대 10명의 사용자를 추가할 수 있습니다."
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "${ TRIAL_DURATION_DAYS }일 무료 체험"
+      ],
+      "on ${ formattedDate }": [
+        "${ formattedDate }에"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "${ selected }을(를) ${ freeForNDays }로 사용해 보세요"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "${ TRIAL_DURATION_DAYS }일 무료 체험하세요"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "취소시 무료 체험이 유료 구독으로 전환되지 않지만, 체험 기간이 끝날 때까지 플랜의 혜택을 계속 누리실 수 있습니다. 기간 종료 후 ${ BRAND_NAME } 무료 요금제로 자동 다운그레이드됩니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_DEDICATED_IPS }개의 전용 서버를 사용할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_LUMO_SEATS }개의 ${ LUMO_SHORT_APP_NAME } 계정을 추가할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_SCRIBE_SEATS }개의 Scribe 사용 권한을 추가할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_USERS }명의 사용자를 추가할 수 있습니다."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "체험 기간 동안 사용자 지정 도메인을 추가할 수 없습니다."
+      ],
+      "You have reached the trial limit.": [
+        "무료 체험 한도에 도달했습니다."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "무료 체험 후 납부할 금액"
+      ],
+      "Amount due now": [
+        "지금 납부할 금액"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "구독 취소하기"
@@ -1854,6 +1909,52 @@
       ],
       "Expand": [
         "펼치기"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "고급 AI 모델 이용"
+      ],
+      "Basic chat history": [
+        "기본 채팅 기록"
+      ],
+      "Full chat history with search": [
+        "검색 기능이 포함된 전체 채팅 기록"
+      ],
+      "Large file upload support": [
+        "대용량 파일 업로드 지원"
+      ],
+      "Limited daily chats": [
+        "제한된 일일 채팅"
+      ],
+      "Limited favorites": [
+        "제한된 즐겨찾기"
+      ],
+      "Unlimited daily chats": [
+        "무제한 일일 채팅"
+      ],
+      "Unlimited favorites for quick access": [
+        "빠른 접근을 위한 무제한 즐겨찾기"
+      ],
+      "Upload and query multiple large files": [
+        "다중 대용량 파일 업로드 및 확인"
+      ],
+      "Upload and query small files": [
+        "저용량 파일 업로드 및 확인"
+      ],
+      "Web search access": [
+        "웹 검색 접근"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME }는 사용자의 데이터를 안전하게 보호하면서 더 많은 작업을 수행할 수 있도록 돕는 개인 정보 보호 중심 AI입니다. 모든 잠재력을 활용하고 새로운 기능이 출시될 때 얼리 액세스 혜택을 누려보세요."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME } 추가"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "고속 채팅 및 고급 AI 기능"
       ]
     },
     "color": {
@@ -8212,6 +8313,9 @@
       "Verification code": [
         "인증 코드"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }으로 화상 회의"
+      ],
       "Video conferencing with Zoom": [
         "Zoom 화상 회의"
       ],
@@ -9837,6 +9941,9 @@
       ]
     },
     "Notification": {
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "${ MEET_APP_NAME } 화상 회의 설정이 업데이트 되었습니다"
+      ],
       "${ reason } has been disabled": [
         "${ reason }이(가) 비활성화 되었습니다."
       ],
@@ -9851,6 +9958,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "다운로드한 2FA 복구 코드"
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "${ MEET_APP_NAME } 화상 회의 설정 업데이트 실패"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "줌 화상 회의 설정 업데이트 실패"
       ],
       "Invalid code": [
         "잘못된 코드입니다."
@@ -9888,8 +10001,8 @@
       "Two-factor authentication is not required anymore": [
         "이중 인증이 모두에게 필요하지 않습니다."
       ],
-      "Video conferencing settings have been updated": [
-        "화상 회의 설정이 변경되었습니다."
+      "Zoom video conferencing settings have been updated": [
+        "줌 화상 회의 설정이 업데이트 되었습니다"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9956,7 +10069,7 @@
         "매년 결제로 구독하여 최고의 할인 혜택을 받아가세요"
       ],
       "Save": [
-        "절약되는 가격:"
+        "할인"
       ],
       "Save big when you pay annually": [
         "매년 결제로 더 크게 절약하세요"
@@ -14188,8 +14301,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "조직 관리자는 다른 구성원의 사용자 계정을 관리하고 관리자 권한을 부여할 수 있습니다. 주 관리자만 조직의 플랜을 수정할 수 있습니다."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "캘린더 초대장에 화상 회의 링크를 원활하게 추가할 수 있습니다."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "캘린더 초대장에 ${ MEET_APP_NAME } 화상 회의 링크를 손쉽게 추가할 수 있습니다."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "캘린더 초대장에 줌 화상 회의 링크를 손쉽게 추가할 수 있습니다."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "시스템의 주/야간 모드와 동기화하여 선호하는 테마를 주/야간에 맞춰 자동으로 전환합니다"
