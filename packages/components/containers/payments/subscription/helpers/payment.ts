@@ -1,3 +1,5 @@
+import { isAfter } from 'date-fns';
+
 import {
     COUPON_CODES,
     CYCLE,
@@ -139,14 +141,58 @@ export function subscriptionExpires(
     }
 }
 
+const getVpnAutoCoupon = ({ coupon, planIDs, cycle, currency }: Parameters<typeof getAutoCoupon>[0]) => {
+    // user already provided a coupon
+    if (coupon) {
+        return;
+    }
+
+    const planAndCycleMatch =
+        [PLANS.VPN2024].some((plan) => planIDs?.[plan]) && [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle as any);
+    if (!planAndCycleMatch) {
+        return;
+    }
+
+    // This code was needed for testing purposes. After the dates mentioned below, feel free to remove the commented out
+    // code too.
+
+    // const now = (() => { if (localStorage.getItem('pretend_date')) { try { return new
+    // Date(localStorage.getItem('pretend_date') as string); } catch {}
+    //     }
+
+    //     return new Date();
+    // })();
+
+    const now = new Date();
+
+    // if you're reading this code after the hardcoded dates, feel free to remove the code that's not relevant in your
+    // light cone anymore. After 2025-09-25, we don't need VPN_INTRO_2025_UK and VPN_INTRO_2024 coupons. Only
+    // VPN_INTRO_2025 should remain.
+    const isAfterVpn2025CouponStartDate = isAfter(now, new Date('2025-09-25T10:00:00.000Z'));
+
+    if (isAfterVpn2025CouponStartDate) {
+        return COUPON_CODES.VPN_INTRO_2025;
+    }
+
+    const isAfterUkCouponStartDate = isAfter(now, new Date('2025-09-10T10:00:00.000Z'));
+
+    if (isAfterUkCouponStartDate && currency === 'GBP') {
+        return COUPON_CODES.VPN_INTRO_2025_UK;
+    }
+
+    return COUPON_CODES.VPN_INTRO_2024;
+};
+
 export const getAutoCoupon = ({
     planIDs,
     cycle,
     coupon,
     trial,
+    currency,
 }: {
     planIDs: PlanIDs;
     cycle: CYCLE;
+    currency: Currency;
     coupon?: string | null;
     trial?: boolean;
 }) => {
@@ -155,12 +201,9 @@ export const getAutoCoupon = ({
         return coupon || undefined;
     }
 
-    if (
-        !coupon &&
-        [PLANS.VPN2024].some((plan) => planIDs?.[plan]) &&
-        [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle as any)
-    ) {
-        return COUPON_CODES.VPN_INTRO_2024;
+    const vpnAutoCoupon = getVpnAutoCoupon({ coupon, planIDs, cycle, currency });
+    if (vpnAutoCoupon) {
+        return vpnAutoCoupon;
     }
 
     return coupon || undefined;

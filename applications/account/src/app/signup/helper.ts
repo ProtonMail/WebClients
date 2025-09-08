@@ -43,7 +43,7 @@ export async function getSubscriptionPrices({
         return getFreeCheckResult(currency, cycle);
     }
 
-    const coupon = getAutoCoupon({ coupon: maybeCoupon, planIDs, cycle, trial });
+    const coupon = getAutoCoupon({ coupon: maybeCoupon, planIDs, cycle, trial, currency });
 
     const data: CheckSubscriptionData = {
         Plans: planIDs,
