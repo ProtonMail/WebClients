@@ -81,7 +81,7 @@ export const MeetingBody = ({
                 screenShareTrack.publication.track.detach(screenShareVideoRef.current);
             }
         };
-    }, [isScreenShare, screenShareTrack]);
+    }, [isScreenShare]);
 
     return (
         <div
