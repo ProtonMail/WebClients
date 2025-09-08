@@ -476,6 +476,9 @@
       "Join calendar": [
         "Rejoindre le calendrier"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Rejoindre avec ${ MEET_APP_NAME }"
+      ],
       "Keep current time zone": [
         "Garder le fuseau horaire actuel"
       ],
@@ -857,6 +860,9 @@
       "Update recovery phrase": [
         "Mettre à jour la phrase de récupération"
       ],
+      "Update secret passphrase": [
+        "Mettre à jour la phrase secrète"
+      ],
       "Upgrade": [
         "Changer d'abonnement"
       ],
@@ -1232,6 +1238,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Une fois la version d'essai terminée le ${ formattedDate }, elle deviendra un abonnement payant qui se renouvelle automatiquement tous les ${ renewCycle } mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
       ],
@@ -1819,14 +1828,23 @@
       ]
     },
     "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Accès aux modèles d'IA avancés"
+      ],
       "Basic chat history": [
         "Historique de chat basique"
       ],
       "Full chat history with search": [
         "Historique complet des discussions avec recherche"
       ],
+      "Large file upload support": [
+        "Prise en charge du chargement de fichiers volumineux"
+      ],
       "Limited daily chats": [
         "Chats quotidiens limités"
+      ],
+      "Limited favorites": [
+        "Favoris limités"
       ],
       "Unlimited daily chats": [
         "Chats quotidiens illimités"
@@ -1836,6 +1854,9 @@
       ],
       "Upload and query multiple large files": [
         "Importer et consulter plusieurs fichiers volumineux"
+      ],
+      "Upload and query small files": [
+        "Importer et consulter les petits fichiers"
       ],
       "Web search access": [
         "Accès à la recherche web"
@@ -1847,6 +1868,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Ajouter ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Discussions rapides et fonctionnalités d'IA avancées."
       ]
     },
     "colon": {
@@ -3516,6 +3540,9 @@
       ],
       "Event not found": [
         "L'événement n'a pas été trouvé."
+      ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "Échec de la création de la conférence vidéo ${ MEET_APP_NAME }"
       ],
       "Failed to create meeting": [
         "La création de la réunion n'a pas abouti."
@@ -5333,6 +5360,9 @@
       ],
       "finance": [
         "finance"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Pour plus de sécurité, vous pouvez définir une phrase secrète. Elle ne sera pas incluse dans l'invitation de calendrier, n'oubliez pas de la partager avec vos invités séparément."
       ],
       "Frequency modifications will be lost.": [
         "Les modifications de fréquence seront perdues."
@@ -9305,6 +9335,96 @@
         "Message officiel de ${ BRAND_NAME }"
       ]
     },
+    "q3campaign_2025: Action": {
+      "END-OF-SUMMER SALE": [
+        "PROMOTION DE FIN D'ÉTÉ"
+      ],
+      "Get the deal": [
+        "Profitez de l'offre"
+      ]
+    },
+    "q3campaign_2025: Info": {
+      "${ discountPercent }% off": [
+        "- ${ discountPercent } %"
+      ],
+      "${ normalPricePerMonth } /month": [
+        "${ normalPricePerMonth }/mois"
+      ],
+      "/month": [
+        "/mois"
+      ],
+      "1 TB data storage": [
+        "1 To d'espace de stockage de données"
+      ],
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "200 GB storage for files, photos & docs": [
+        "200 Go d'espace de stockage pour les fichiers, photos et documents"
+      ],
+      "3 TB data storage": [
+        "3 To d'espace de stockage de données"
+      ],
+      "500 GB storage": [
+        "500 Go d'espace de stockage"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accédez à plus de 15 000 serveurs dans plus de 120 pays"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Toutes les fonctionnalités premium de Mail, Pass, Drive, VPN et Calendar"
+      ],
+      "Built-in 2FA authenticator": [
+        "Authentificateur 2FA intégré"
+      ],
+      "Connect 10 devices at once": [
+        "Connectez 10 appareils en même temps"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+      ],
+      "Enjoy the fastest VPN speeds": [
+        "Profitez des vitesses VPN les plus rapides"
+      ],
+      "Individual accounts for 6 users": [
+        "Comptes individuels pour 6 utilisateurs"
+      ],
+      "Individual accounts for you and a partner": [
+        "Comptes individuels pour vous et un partenaire"
+      ],
+      "Online document editor": [
+        "Éditeur de documents en ligne"
+      ],
+      "Recover previous file versions": [
+        "Récupérez les versions précédentes des fichiers"
+      ],
+      "Save ${ totalSavings } and keep all your current features!": [
+        "Économisez ${ totalSavings } et conservez toutes vos fonctionnalités actuelles !"
+      ],
+      "Secure link, vault & item sharing": [
+        "Partage sécurisé de liens, de coffres-forts et d'éléments"
+      ],
+      "Stronger protection against cyber threats": [
+        "Une protection renforcée contre les cybermenaces"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Des dossiers, labels et filtres illimités"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nombre illimité d'alias « hide-my-email »"
+      ],
+      "Use your own email domain": [
+        "Utilisez votre propre domaine de messagerie"
+      ]
+    },
+    "q3campaign_2025: Title": {
+      "End-of-summer sale": [
+        "Soldes de fin d'été"
+      ],
+      "for 12 months": [
+        "pendant 12 mois"
+      ]
+    },
     "Reload event button tooltip": {
       "Reload event": [
         "Recharger l'événement"
@@ -9927,6 +10047,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Inviter des amis à rejoindre ${ BRAND_NAME }"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Planifiez et rejoignez les appels ${ MEET_APP_NAME } directement depuis votre calendrier."
       ],
       "Seamlessly create and add video meeting links to your events.": [
         "Créez et ajoutez facilement des liens de réunion vidéo à vos événements."
@@ -10635,6 +10758,9 @@
       ],
       "Problem reported": [
         "Le problème a été signalé."
+      ],
+      "Secret passphrase updated": [
+        "Phrase secrète mise à jour"
       ],
       "Undo in progress": [
         "Annulation en cours"
