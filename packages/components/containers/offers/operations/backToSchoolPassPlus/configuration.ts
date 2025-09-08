@@ -33,8 +33,7 @@ export const backToSchoolPassPlus: OfferConfig = {
         },
     ],
     topButton: {
-        // TODO: appearance, variant
-        shape: 'outline',
+        shape: 'solid',
         getCTAContent: () => {
             // translator: button in the top right corner of the app (outside the modal)
             return c('q3campaign_2025: Action').t`END-OF-SUMMER SALE`;
@@ -42,7 +41,7 @@ export const backToSchoolPassPlus: OfferConfig = {
         icon: 'gift',
         iconSize: 4,
         gradient: false,
-        variant: '',
+        variant: 'yellow',
     },
     layout: BackToSchoolLayout,
 };
