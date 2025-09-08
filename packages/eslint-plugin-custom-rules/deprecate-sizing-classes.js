@@ -19,7 +19,6 @@ const deprecatedClasses = [
 
 export default {
     meta: {
-        type: 'suggestion',
         docs: {
             description: 'The old sizing system classes are deprecated, please use the new mobile-first sizing system.',
             url: 'https://design-system.protontech.ch/?path=/docs/css-utilities-sizing--fractions',

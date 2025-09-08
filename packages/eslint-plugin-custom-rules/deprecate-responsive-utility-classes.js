@@ -9,7 +9,6 @@ const deprecatedClasses = [
 
 export default {
     meta: {
-        type: 'suggestion',
         docs: {
             description:
                 'The old responsive system classes are deprecated, please use the new mobile-first responsive system.',
