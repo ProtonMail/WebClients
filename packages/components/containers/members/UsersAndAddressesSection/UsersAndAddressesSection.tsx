@@ -502,8 +502,8 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         allowStorageConfiguration={allowStorageConfiguration}
                         allowVpnAccessConfiguration={allowVpnAccessConfiguration}
                         allowPrivateMemberConfiguration={allowPrivateMemberConfiguration}
-                        allowAIAssistantConfiguration={allowAIAssistantConfiguration}
-                        allowLumoConfiguration={allowLumoConfiguration}
+                        allowAIAssistantConfiguration={allowAIAssistantConfiguration && !Boolean(tmpMember.SSO)}
+                        allowLumoConfiguration={allowLumoConfiguration && !Boolean(tmpMember.SSO)}
                         showAddressesSection={(() => {
                             const unprivatization = getMemberUnprivatizationMode(tmpMember);
                             return (
@@ -520,10 +520,10 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         organization={organization}
                         aiSeatsRemaining={aiSeatsRemaining}
                         lumoSeatsRemaining={lumoSeatsRemaining}
-                        allowAIAssistantConfiguration={allowAIAssistantConfiguration}
+                        allowAIAssistantConfiguration={allowAIAssistantConfiguration && !Boolean(tmpMember?.SSO)}
                         allowAIAssistantUpdate={allowAIAssistantUpdate}
                         allowStorageConfiguration={allowStorageConfiguration}
-                        allowLumoConfiguration={allowLumoConfiguration}
+                        allowLumoConfiguration={allowLumoConfiguration && !Boolean(tmpMember?.SSO)}
                         allowLumoUpdate={allowLumoUpdate}
                         {...userInviteOrEditModalProps}
                     />
