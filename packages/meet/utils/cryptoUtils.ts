@@ -10,6 +10,8 @@ import { srpGetVerify } from '@proton/shared/lib/srp';
 import { computeKeyPassword as computeBcryptHash, generateKeySalt as generateBcryptSalt } from '@proton/srp';
 import getRandomString from '@proton/utils/getRandomString';
 
+import { BASE_PASSWORD_LENGTH } from '../constants';
+
 export const PASSWORD_SEPARATOR = '_';
 
 export const getCombinedPassword = (urlPassword: string, customPassword: string) => {
@@ -198,7 +200,7 @@ export const prepareMeetingCryptoData = async ({
     api,
     noEncryptedPasswordReturn = false,
 }: PrepareMeetingCryptoDataParams) => {
-    const passwordBase = getRandomString(12);
+    const passwordBase = getRandomString(BASE_PASSWORD_LENGTH);
 
     const password = getCombinedPassword(passwordBase, customPassword);
 
