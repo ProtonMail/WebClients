@@ -1408,6 +1408,9 @@
       "Spam": [
         "迷惑メール"
       ],
+      "Start free trial": [
+        "無料トライアルを開始"
+      ],
       "Start import": [
         "インポート開始"
       ],
@@ -2039,6 +2042,66 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "現在休暇中のため、大変申し訳ありませんが、お送りいただいたメールをすぐには確認できない可能性があることをご了承ください。"
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "支払い詳細"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }にトライアルが終了すると、${ formattedDate }に${ renewCycle }ヶ月ごとに自動更新される有料のサブスクリプションに移行します。${ formattedDate }までにキャンセルした場合、料金は請求されません。"
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } にトライアルが終了すると、毎月 ${ formattedDate } に自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "「試す」をクリックすると、${ termsAndConditions } に同意したものとみなされます。"
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "トライアル期間中、最大10名のユーザーをご利用いただけます。"
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "${ TRIAL_DURATION_DAYS }日間無料"
+      ],
+      "on ${ formattedDate }": [
+        "${ formattedDate }に"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "${ selected } を${ freeForNDays }お試しください"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "${ TRIAL_DURATION_DAYS }日間無料でお試しください"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "キャンセルした場合、無料トライアルが有料サブスクリプションに変換されることはありませんが、トライアル期間の終了までは引き続きプランの恩恵を受けることができます。その後、${ BRAND_NAME } Freeプランにダウングレードされます。"
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_DEDICATED_IPS }の専用サーバーをご利用いただけます。"
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_LUMO_SEATS }の${ LUMO_SHORT_APP_NAME }シートをご利用いただけます。"
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_SCRIBE_SEATS }のスライブシートをご利用いただけます。"
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_USERS }ユーザーまでご利用いただけます。"
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "トライアル期間中にカスタムドメインを追加することはできません。"
+      ],
+      "You have reached the trial limit.": [
+        "トライアルの制限に達しました。"
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "トライアル終了後の支払い金額"
+      ],
+      "Amount due now": [
+        "現在の請求額"
       ]
     },
     "b2b_trials_Action": {
@@ -2801,6 +2864,112 @@
       ],
       "Expand": [
         "開く"
+      ]
+    },
+    "collider_2025: app-switcher": {
+      "Chat with a private AI assistant": [
+        "プライベートAIアシスタントとチャット"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "高度なAIモデルへのアクセス"
+      ],
+      "Basic chat history": [
+        "基本チャット履歴"
+      ],
+      "Full chat history with search": [
+        "検索機能付きの完全なチャット履歴"
+      ],
+      "Large file upload support": [
+        "大容量ファイルアップロードサポート"
+      ],
+      "Limited daily chats": [
+        "毎日のチャットの制限"
+      ],
+      "Limited favorites": [
+        "お気に入りの制限"
+      ],
+      "Unlimited daily chats": [
+        "無制限の毎日のチャット"
+      ],
+      "Unlimited favorites for quick access": [
+        "無制限のクイックアクセスのお気に入り"
+      ],
+      "Upload and query multiple large files": [
+        "複数大容量ファイルのアップロードと検索"
+      ],
+      "Upload and query small files": [
+        "小さなファイルのアップロードと検索"
+      ],
+      "Web search access": [
+        "ウェブ検索アクセス"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "ヨーロッパで構築され、拠点があります"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } は、プライバシーを第一に考えたAIで、お客様のデータを安全に保ちながら、より多くのことを達成するのに役立ちます。その可能性を最大限に引き出し、導入される新しい機能への早期アクセスをお楽しみください。"
+      ],
+      "Access to advanced AI models": [
+        "高度なAIモデルへのアクセス"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME }を追加"
+      ],
+      "AI assistant that respects your privacy": [
+        "お客様のプライバシーを尊重するAIアシスタント"
+      ],
+      "Basic chat history": [
+        "基本のチャット履歴"
+      ],
+      "Data never used for AI training": [
+        "データはAI学習には決して使用されません"
+      ],
+      "Full chat history with search": [
+        "検索機能付きの完全なチャット履歴"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "高速チャットと高度なAI機能。"
+      ],
+      "Limited daily chats": [
+        "毎日のチャットの制限"
+      ],
+      "Limited favorites": [
+        "お気に入りの制限"
+      ],
+      "Open source": [
+        "オープンソース"
+      ],
+      "Strict no-logs policy": [
+        "厳格なノーログポリシー"
+      ],
+      "Unlimited daily chats": [
+        "無制限の毎日のチャット"
+      ],
+      "Unlimited favorites for quick access": [
+        "無制限のクイックアクセスのお気に入り"
+      ],
+      "Upload and query multiple large files": [
+        "複数の大容量ファイルのアップロードと検索"
+      ],
+      "Upload and query small files": [
+        "小さなファイルのアップロードと検索"
+      ],
+      "Web search access": [
+        "ウェブ検索アクセス"
+      ]
+    },
+    "collider_2025: Navigation": {
+      "Back to conversations": [
+        "会話に戻る"
+      ],
+      "Conversations": [
+        "会話"
       ]
     },
     "color": {
@@ -4290,11 +4459,17 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "友達を招待し続けることはできますが、さらにクレジットを獲得することはできません。"
       ],
+      "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
+        "${ PASS_APP_NAME }ブラウザ拡張機能で、特定の自動機能（自動入力、自動提案、自動保存）を実行すべきではないドメインのリストをカスタマイズできます。"
+      ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
         "組織のメンバーが${ PASS_APP_NAME }でパスワードを生成する際に使用するパスワードルールを強制することができます。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal形式(ICSファイル)でイベントをインポートできます。ファイルの最大サイズは${ MAX_IMPORT_FILE_SIZE_STRING }で、最大${ MAX_IMPORT_EVENTS_STRING }件のイベントを含むことができます。ファイルがそれより大きい場合は、小さいファイルに分割してください。"
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "招待した人が${ BRAND_NAME }のプランにサインアップすると、お客様は${ BRAND_NAME }のクレジットで${ referralInfo.referrerRewardAmount }を受け取り、その方も開始時に${ referralInfo.refereeRewardAmount }のクレジットを受け取ることができます。"
       ]
     },
     "description": {
@@ -7233,6 +7408,9 @@
       "Device": [
         "デバイス"
       ],
+      "Domain": [
+        "ドメイン"
+      ],
       "Enter your email address": [
         "メールアドレスを入力してください"
       ],
@@ -7265,6 +7443,9 @@
       ],
       "Organization key fingerprint": [
         "組織用の鍵のフィンガープリント"
+      ],
+      "Password ends with": [
+        "パスワードの末尾"
       ],
       "Payment details": [
         "支払い詳細"
@@ -7307,6 +7488,9 @@
       ],
       "User": [
         "ユーザー"
+      ],
+      "Username": [
+        "ユーザー名"
       ]
     },
     "Header for addresses table": {
@@ -7973,6 +8157,12 @@
       ],
       "${ storage } storage": [
         "${ storage } ストレージ"
+      ],
+      "${ url } added.": [
+        "${ url } が追加されました。"
+      ],
+      "${ url } deleted.": [
+        "${ url } が削除されました。"
       ],
       "${ userFound } user found": [
         "${ userFound } 人のユーザーが見つかりました"
@@ -8948,6 +9138,9 @@
       ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } を入手"
+      ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "友達が登録するたびに、**${ referrerRewardAmount } クレジット**を獲得できます。"
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "${ BRAND_NAME } アカウントを作成し、招待を承諾することでアクセスできます。"
@@ -10470,6 +10663,9 @@
       "URL link": [
         "リンクの URL"
       ],
+      "URL settings updated.": [
+        "URL設定が更新されました。"
+      ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "パスワード マネージャーを使用してパスワードを生成して安全に保存し、強力なパスワードと簡単なサインインを確保します。"
       ],
@@ -11064,6 +11260,9 @@
       "You’re all set": [
         "準備完了です"
       ],
+      "Zero charge today": [
+        "本日請求はありません"
+      ],
       "Zoom meeting": [
         "Zoom ミーティング"
       ]
@@ -11647,6 +11846,9 @@
       ],
       "Account storage": [
         "アカウントの容量"
+      ],
+      "Action": [
+        "操作"
       ],
       "Actions": [
         "行動"
@@ -13511,6 +13713,9 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "${ BRAND_NAME } アカウントにログインすると、${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } など、暗号化された ${ BRAND_NAME } サービスのすべてにアクセスできます。 アカウントをお持ちでない場合は、 無料で作成してください。"
       ],
+      "Take control of your data with end-to-end encryption": [
+        "エンドツーエンド暗号化でデータを管理しましょう"
+      ],
       "Try ${ BRAND_NAME } for free with this link": [
         "このリンクから ${ BRAND_NAME } を無料でお試しください"
       ]
@@ -14948,9 +15153,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "2要素認証はもう必要ありません"
-      ],
-      "Video conferencing settings have been updated": [
-        "ビデオ会議の設定はアップデートされました"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15088,7 +15290,7 @@
         "毎年払い、安全な私たちの最高のオファー"
       ],
       "Save": [
-        "節約"
+        "お得"
       ],
       "Save big when you pay annually": [
         "年払いで大幅に節約"
@@ -18066,6 +18268,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "すべての基本的な${ BRAND_NAME }サービス(${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME })"
       ],
+      "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
+        "ご登録いただくと、${ referralInfo.uiData.refereeRewardAmount }分のクレジットを獲得できます。"
+      ],
       "Billing Cycle": [
         "支払間隔"
       ],
@@ -18128,6 +18333,12 @@
       ],
       "Free": [
         "無料"
+      ],
+      "Free for ${ TRIAL_DURATION_DAYS } days": [
+        "${ TRIAL_DURATION_DAYS }日間無料"
+      ],
+      "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "${ referralInfo.uiData.refereeRewardAmount }分のクレジットを獲得"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "安全な${ MAIL_APP_NAME }メールアドレスを入手するか${ internalButton }"
@@ -18207,6 +18418,9 @@
       "Select ${ title }": [
         "${ title } を選択"
       ],
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
+        "サービスを選んで、プレミアムバージョンを${ TRIAL_DURATION_DAYS }日間無料でお楽しみください。クレジットカードは不要です。"
+      ],
       "Selected": [
         "選択済"
       ],
@@ -18251,6 +18465,9 @@
       ],
       "Total": [
         "合計"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
+        "${ BRAND_NAME }を無料で${ TRIAL_DURATION_DAYS }日お試しください"
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "${ BRAND_NAME }を14日間無料でお試し"
@@ -20812,6 +21029,9 @@
       "Gift code": [
         "ギフトコード"
       ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "${ refereeRewardAmount }を与え、2週間の無料期間を提供します。${ referrerRewardAmount }クレジットを取得してください。"
+      ],
       "Group": [
         "グループ"
       ],
@@ -21042,6 +21262,9 @@
       ],
       "Passwords made easy": [
         "パスワードを簡単に"
+      ],
+      "Pause list": [
+        "一時停止リスト"
       ],
       "Pay invoice": [
         "請求の支払い"
@@ -21693,9 +21916,6 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "管理者はユーザーのアカウントを管理することができ、他のユーザーに管理者権限を与えることができます。プライマリー管理者のみが組織のプランを変更できます。"
-      ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "カレンダーの招待状にシームレスにビデオ会議のリンクを追加できるようにします。"
       ],
       "Any protection applied to suspicious activity": [
         "疑わしいアクティビティに適用される保護"

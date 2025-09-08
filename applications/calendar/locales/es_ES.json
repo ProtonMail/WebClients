@@ -89,6 +89,9 @@
       "Add public holidays": [
         "Añadir calendario de días festivos"
       ],
+      "Add secret passphrase": [
+        "Añadir una frase de contraseña secreta"
+      ],
       "Add to group": [
         "Añadir al grupo"
       ],
@@ -473,6 +476,9 @@
       "Join calendar": [
         "Unirse al calendario"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Únete con ${ MEET_APP_NAME }"
+      ],
       "Keep current time zone": [
         "Mantener la zona horaria actual"
       ],
@@ -599,6 +605,9 @@
       "Open settings": [
         "Abrir configuración"
       ],
+      "Passphrase": [
+        "Frase de contraseña"
+      ],
       "Pause indexing": [
         "Pausar la indexación"
       ],
@@ -691,6 +700,9 @@
       ],
       "Resume indexing": [
         "Reanudar la indexación"
+      ],
+      "Retry": [
+        "Reintentar"
       ],
       "Save": [
         "Guardar"
@@ -847,6 +859,9 @@
       ],
       "Update recovery phrase": [
         "Actualizar frase de recuperación"
+      ],
+      "Update secret passphrase": [
+        "Actualizar la frase de contraseña secreta"
       ],
       "Upgrade": [
         "Cambiar de plan"
@@ -3482,8 +3497,14 @@
       "Event not found": [
         "No se ha encontrado el evento."
       ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "Error al crear videoconferencia de ${ MEET_APP_NAME }"
+      ],
       "Failed to create meeting": [
         "Error al crear la reunión"
+      ],
+      "Failed to decrypt session key": [
+        "Error al descifrar la clave de sesión"
       ],
       "Failed to get event": [
         "Error al obtener el evento"
@@ -3496,6 +3517,9 @@
       ],
       "Failed to open to contact": [
         "Error al abrir el contacto"
+      ],
+      "Failed to update secret passphrase": [
+        "Error al actualizar la frase de contraseña secreta"
       ],
       "First name is too long": [
         "El nombre es demasiado largo."
@@ -3625,6 +3649,9 @@
       ],
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada."
+      ],
+      "Passphrase unavailable": [
+        "Frase de contraseña no disponible"
       ],
       "Password is required": [
         "Contraseña requerida"
@@ -5281,8 +5308,17 @@
       "Expired": [
         "Expirado"
       ],
+      "Failed to update meeting name": [
+        "Error al actualizar el nombre de la reunión"
+      ],
+      "Failed to update meeting password": [
+        "Error al actualizar la contraseña de la reunión"
+      ],
       "finance": [
         "finanzas"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Para mayor seguridad, puedes establecer una frase de contraseña (passphrase). No se incluirá en la invitación del calendario, recuerda compartirla con tus invitados por separado."
       ],
       "Frequency modifications will be lost.": [
         "Se perderán las modificaciones de frecuencia."
@@ -6327,6 +6363,9 @@
       "Account holder": [
         "Titular de la cuenta"
       ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "Añadir conferencia de ${ MEET_APP_NAME }"
+      ],
       "Add email address": [
         "Añadir correo electrónico"
       ],
@@ -6335,6 +6374,9 @@
       ],
       "Add to group": [
         "Añadir al grupo"
+      ],
+      "Add Zoom meeting": [
+        "Añadir una reunión de Zoom"
       ],
       "Address": [
         "Dirección"
@@ -6640,6 +6682,9 @@
       "Participants": [
         "Participantes"
       ],
+      "Passphrase:": [
+        "Frase de contraseña:"
+      ],
       "Password": [
         "Contraseña"
       ],
@@ -6754,6 +6799,9 @@
       "Verification code": [
         "Código de verificación"
       ],
+      "Video conference": [
+        "Videoconferencia"
+      ],
       "Vulnerable": [
         "Vulnerable"
       ],
@@ -6798,6 +6846,9 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Zoom meeting": [
+        "Reunión de Zoom"
       ]
     },
     "Label for contact group color": {
@@ -8235,6 +8286,9 @@
       ],
       "Passcode copied to clipboard": [
         "Se ha copiado el código de acceso al portapapeles."
+      ],
+      "Passphrase copied to clipboard": [
+        "Frase de contraseña copiada al portapapeles"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8443,7 +8497,7 @@
         "Paga anualmente y asegúrate nuestra mejor oferta."
       ],
       "Save": [
-        "Guardar"
+        "Ahorra"
       ],
       "Save big when you pay annually": [
         "¡Ahorra a lo grande pagando anualmente!"
@@ -9034,6 +9088,9 @@
       ],
       "E.g., ": [
         "P. ej., "
+      ],
+      "Enter passphrase": [
+        "Introducir la frase de contraseña"
       ],
       "Filter groups": [
         "Filtrar grupos"
@@ -9842,6 +9899,9 @@
       ]
     },
     "Spotlight": {
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } ya está aquí"
+      ],
       "Color-code your calendar to better organize your day, track your time, and more.": [
         "Codifica con colores tu calendario para organizar mejor tu día, realizar un seguimiento de tu tiempo y más."
       ],
@@ -9853,6 +9913,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invita amigos a ${ BRAND_NAME }"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Programa y únete a las llamadas de ${ MEET_APP_NAME } directamente desde tu calendario."
       ],
       "Seamlessly create and add video meeting links to your events.": [
         "Crea y añade fácilmente enlaces de reuniones de vídeo a tus eventos."
@@ -10561,6 +10624,9 @@
       ],
       "Problem reported": [
         "Se ha notificado el problema."
+      ],
+      "Secret passphrase updated": [
+        "Frase de contraseña secreta actualizada"
       ],
       "Undo in progress": [
         "Deshacer en progreso"

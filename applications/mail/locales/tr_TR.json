@@ -96,6 +96,9 @@
       "Add phone number": [
         "Telefon numarası ekle"
       ],
+      "Add secret passphrase": [
+        "Gizli parola ifadesi ekle"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } üzerine ekle"
       ],
@@ -757,6 +760,9 @@
       "Italic": [
         "Yatık"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } ile katıl"
+      ],
       "Keep my subscription": [
         "Aboneliğimi sürdür"
       ],
@@ -1012,6 +1018,9 @@
       "Page ${ pageNumber }": [
         "${ pageNumber }. sayfa"
       ],
+      "Passphrase": [
+        "Parola ifadesi"
+      ],
       "Pause": [
         "Duraklat"
       ],
@@ -1173,6 +1182,9 @@
       ],
       "Resume downloading": [
         "İndirmeyi sürdür"
+      ],
+      "Retry": [
+        "Yeniden dene"
       ],
       "Revert to original display": [
         "Özgün görünüme geri dön"
@@ -1448,8 +1460,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1510,6 +1521,9 @@
       ],
       "Update recovery phrase": [
         "Kurtarma ifadesini güncelle"
+      ],
+      "Update secret passphrase": [
+        "Gizli parola ifadesini güncelle"
       ],
       "Upgrade": [
         "Yükselt"
@@ -1969,23 +1983,29 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, ${ formattedDate } tarihinde başlayarak her ${ renewCycle } ayda bir otomatik olarak yenilenen ücretli bir aboneliğe dönüşecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde aylık olarak otomatik yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinden başlayarak otomatik olarak her ay yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucuya sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucunuz olabilir."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } koltuğunuz olabilir."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğuna sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğunuz olabilir."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_USERS } kullanıcıya sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_USERS } kullanıcınız olabilir."
       ],
       "You cannot add custom domains during the trial period.": [
-        "Deneme süresi boyunca özel alan adları ekleyemezsiniz."
+        "Deneme süresi boyunca özel etki alanları ekleyemezsiniz."
       ],
       "You have reached the trial limit.": [
-        "Deneme limitine ulaştınız."
+        "Deneme süresi sayısı sınırına ulaştınız."
       ]
     },
     "b2b_trials_Action": {
@@ -2220,6 +2240,9 @@
       ],
       "Manual setup problem": [
         "El ile kurulum sorunu"
+      ],
+      "Meet problem": [
+        "Meet sorunu"
       ],
       "Other": [
         "Diğer"
@@ -2646,12 +2669,50 @@
         "Genişlet"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Gelişmiş yapay zeka modellerine erişim"
+      ],
+      "Basic chat history": [
+        "Temel sohbet geçmişi"
+      ],
+      "Full chat history with search": [
+        "Arama ile tüm sohbet geçmişi"
+      ],
+      "Large file upload support": [
+        "Büyük dosya yükleme desteği"
+      ],
+      "Limited daily chats": [
+        "Sınırlı sayıda günlük sohbet"
+      ],
+      "Limited favorites": [
+        "Sınırlı sayıda sık kullanılan"
+      ],
+      "Unlimited daily chats": [
+        "Günlük sınırsız sayıda sohbet"
+      ],
+      "Unlimited favorites for quick access": [
+        "Hızlı erişim için sınırsız sayıda sık kullanılan"
+      ],
+      "Upload and query multiple large files": [
+        "Birden fazla büyük dosyayı yükleyip sorgulayın"
+      ],
+      "Upload and query small files": [
+        "Küçük dosyaları yükleyin ve sorgulayın"
+      ],
+      "Web search access": [
+        "Site arama erişimi"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } verilerinizin güvenliğini sağlarken, daha fazla iş yapmanıza yardımcı olan gizliliğe öncelik veren bir yapay zekadır. Tam potansiyelini açığa çıkarın ve yeni özellikler tanıtıldıkça erken erişimin keyfini çıkarın."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } uygulamasını ekle"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Yüksek hızlı sohbetler ve gelişmiş yapay zeka özellikleri."
       ]
     },
     "color": {
@@ -4560,6 +4621,9 @@
       "Failed to open to contact": [
         "Kişiye açılamadı"
       ],
+      "Failed to update secret passphrase": [
+        "Gizli parola ifadesi güncellenemedi"
+      ],
       "Filter with this name already exists": [
         "Aynı adlı bir süzgeç zaten var"
       ],
@@ -4688,6 +4752,9 @@
       ],
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
+      ],
+      "Passphrase unavailable": [
+        "Parola ifadesi kullanılamıyor"
       ],
       "Password is required": [
         "Parolanın yazılması zorunludur"
@@ -7137,6 +7204,9 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "E-postanıza istediğiniz zaman erişebilmek ve iyi bir mobil deneyim için ${ androidAppLink } ya da ${ iosAppLink } uygulamamızı indirin."
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Ek güvenlik için bir parola ayarlayabilirsiniz. Bu parola, takvim davetine eklenmez. Konuklarınızla ayrıca paylaşmayı unutmayın."
+      ],
       "For messages newer than ${ oldestDate }": [
         "${ oldestDate } tarihinden yeni iletiler için"
       ],
@@ -7267,7 +7337,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9021,12 +9092,6 @@
       "Also archive": [
         "Ayrıca arşivlensin"
       ],
-      "Always label sender's emails": [
-        "Göndericinin e-postaları şu şekilde etiketlensin"
-      ],
-      "Always move sender's emails": [
-        "Göndericinin e-postaları her zaman taşınsın"
-      ],
       "AND": [
         "VE"
       ],
@@ -9363,9 +9428,6 @@
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } ögesini taşı"
       ],
-      "Move messages to": [
-        "İletileri şuraya taşı"
-      ],
       "Move to": [
         "Şuraya taşı"
       ],
@@ -9405,6 +9467,9 @@
       "No label found": [
         "Herhangi bir etiket bulunamadı"
       ],
+      "No results found": [
+        "Herhangi bir sonuç bulunamadı"
+      ],
       "Not factually correct": [
         "Aslında doğru değil"
       ],
@@ -9443,6 +9508,9 @@
       ],
       "Participants": [
         "Katılımcılar"
+      ],
+      "Passphrase:": [
+        "Parola ifadesi:"
       ],
       "Password": [
         "Parola"
@@ -11282,6 +11350,9 @@
       "Passcode copied to clipboard": [
         "Parola panoya kopyalandı"
       ],
+      "Passphrase copied to clipboard": [
+        "Parola ifadesi panoya kopyalandı"
+      ],
       "Password has been set successfully": [
         "Parola ayarlandı"
       ],
@@ -12065,6 +12136,9 @@
       ],
       "End date": [
         "Bitiş tarihi"
+      ],
+      "Enter passphrase": [
+        "Parola ifadesini yazın"
       ],
       "Filter folders": [
         "Klasörleri süz"
@@ -13972,6 +14046,9 @@
         "${ elementsCount } ileti yeniden düzenlendi.",
         "${ elementsCount } ileti yeniden düzenlendi."
       ],
+      "Secret passphrase updated": [
+        "Gizli parola ifadesi güncellendi"
+      ],
       "Self-destruction removed": [
         "Kendini yok etme kaldırıldı"
       ],
@@ -14407,12 +14484,6 @@
       "Create contact": [
         "Kişi ekle"
       ],
-      "Create folder \"${ search }\"": [
-        "\"${ search }\" klasörü ekle"
-      ],
-      "Create label \"${ search }\"": [
-        "\"${ search }\" etiketi ekle"
-      ],
       "Create new group": [
         "Yeni grup ekle"
       ],
@@ -14665,6 +14736,10 @@
       "Label as": [
         "Etiketle"
       ],
+      "Label message as": [
+        "İleti şu şekilde etiketlensin",
+        "İletiler şu şekilde etiketlensin"
+      ],
       "Label options": [
         "Etiket ayarları"
       ],
@@ -14748,6 +14823,13 @@
       ],
       "Move all messages to trash": [
         "Tüm iletileri çöpe at"
+      ],
+      "Move message to": [
+        "İletiyi şuraya taşı",
+        "İletileri şuraya taşı"
+      ],
+      "Move messages to": [
+        "İletileri şuraya taşı"
       ],
       "Move to": [
         "Taşı"

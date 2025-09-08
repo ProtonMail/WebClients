@@ -1270,6 +1270,17 @@
         "테라바이트"
       ]
     },
+    "Header": {
+      "Domain": [
+        "도메인"
+      ],
+      "Password ends with": [
+        "비밀번호 마지막 글자"
+      ],
+      "Username": [
+        "사용자 이름"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "\"${ payload.itemName }\" 항목이 무시되었습니다."
@@ -1628,6 +1639,9 @@
       "Extra password successfully removed": [
         "추가 비밀번호가 성공적으로 삭제되었습니다"
       ],
+      "Failed updating your vault organization": [
+        "볼트 조직 업데이트 실패"
+      ],
       "Fill in the CSV with your data": [
         "사용자의 데이터인 CSV를 채워 넣으십시오"
       ],
@@ -1683,10 +1697,10 @@
         "${ PASS_APP_NAME }의 최고의 경험을 누리기 위하여, 필요한 확장 권한을 허용해 주세요."
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
-        "빠르게 로그인 정보를 자동으로 채우려면 ${ browser.title }용 ${ PASS_APP_NAME }를 설치하세요."
+        "빠르게 로그인 정보를 자동 완성하기 위해 ${ browser.title }용 ${ PASS_APP_NAME }를 설치하세요."
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
-        "빠르게 로그인 정보를 자동으로 채우려면 ${ browser.title }용 ${ PASS_APP_NAME }를 설치하세요. "
+        "빠르게 로그인 정보를 자동 완성하기 위해 ${ browser.title }용 ${ PASS_APP_NAME }를 설치하세요. "
       ],
       "Internet connection lost": [
         "인터넷 연결 없음"
@@ -1800,7 +1814,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동시키면 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -1935,7 +1949,7 @@
         "${ PASS_APP_NAME } 데이터를 내보내기 위해서는 추가 비밀번호를 입력하세요."
       ],
       "Please confirm your extra password in order to unregister your current lock.": [
-        "지금의 잠금을 등록 해제하기 위해 추가 비밀번호를 확인해 주세요."
+        "현재 잠금을 등록 해제하기 위해 추가 비밀번호를 확인해 주세요."
       ],
       "Please confirm your extra password in order to update the auto-lock time.": [
         "자동 잠금 시간을 업데이트하기 위해 추가 비밀번호를 확인해 주세요."
@@ -1950,13 +1964,13 @@
         "비밀번호를 사용하는 자동 잠금을 위해 비밀번호를 확인해 주세요."
       ],
       "Please confirm your password in order to unregister your current lock.": [
-        "지금의 잠금을 등록 해제하기 위해 비밀번호를 확인해 주세요."
+        "현재 잠금을 등록 해제하기 위해 비밀번호를 확인해 주세요."
       ],
       "Please confirm your password in order to update the auto-lock time.": [
         "자동 잠금 시간을 업데이트하기 위해 비밀번호를 확인해 주세요."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
-        "지금의 잠금을 등록 해제하려면 PIN 코드로 인증해주세요."
+        "현재 잠금을 등록 해제하려면 PIN 코드로 인증해주세요."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "이 설정을 수정하기 위해 PIN 코드를 입력해 주세요."
@@ -2789,7 +2803,7 @@
         "일회성 공유에 유용합니다"
       ],
       "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
-        "보안 상의 이유로 인해, 10분 동안 아무 행동이 없으면 ${ PASS_SHORT_APP_NAME }는 자동으로 잠깁니다"
+        "사용자의 보안을 위해, 10분 동안 아무런 작업이 없으면 ${ PASS_SHORT_APP_NAME }가 자동으로 잠깁니다."
       ],
       "Forwards to": [
         "다음으로 전달:"
@@ -2852,7 +2866,7 @@
         "호스트 이름"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
-        "${ PASS_SHORT_APP_NAME }을 잠금 해제하는 방법"
+        "${ PASS_SHORT_APP_NAME } 잠금 해제 방식 선택"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2999,7 +3013,7 @@
         "전체 구성원을 뷰어로 선택"
       ],
       "Make it your own.": [
-        "내 것으로 만들기."
+        "나만의 것으로 만들기"
       ],
       "max views reached": [
         "최대 보기 수 도달"
@@ -3281,7 +3295,7 @@
         "비밀 번호 관리자를 선택하세요"
       ],
       "Select your theme": [
-        "테마를 선택하세요"
+        "좋아하는 테마 선택"
       ],
       "Selected": [
         "선택됨"
@@ -3536,7 +3550,7 @@
         "나의 도메인"
       ],
       "Your passwords. Everywhere.": [
-        "어디에서나 확인하는 나의 비밀번호."
+        "언제 어디서나 확인하는 내 비밀번호"
       ],
       "ZIP": [
         "ZIP"
@@ -3678,7 +3692,7 @@
         "데이터에 파일 첨부 파일이 있는 경우 해당 파일은 불러오기되지 않습니다."
       ],
       "Include file attachments": [
-        "파일 첨부 파일 포함"
+        "첨부 파일 포함"
       ],
       "Not enough available storage space for the selected files.": [
         "선택한 파일에 대한 사용 가능한 스토리지 공간이 충분하지 않습니다."

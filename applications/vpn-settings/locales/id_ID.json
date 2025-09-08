@@ -1354,6 +1354,37 @@
         "Acara tidak didukung"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Dengan mengeklik \"Coba\", Anda menyatakan diri setuju dengan ${ termsAndConditions } kami."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Selama masa uji coba, Anda dapat memiliki hingga 10 pengguna."
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "gratis selama ${ TRIAL_DURATION_DAYS } hari"
+      ],
+      "on ${ formattedDate }": [
+        "pada ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Coba ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Coba gratis selama ${ TRIAL_DURATION_DAYS } hari"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Pada saat Anda membatalkan, uji coba gratis Anda tidak akan dialihkan menjadi langganan berbayar, namun Anda masih akan tetap dapat menikmati berbagai keutamaan paket berbayar hingga akhir masa uji coba Anda. Setelahnya, Anda akan diturunkan ke paket ${ BRAND_NAME } Free."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Jumlah tagihan setelah masa uji coba"
+      ],
+      "Amount due now": [
+        "Jumlah tagihan saat ini"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Batalkan langganan"
@@ -1709,6 +1740,9 @@
       ],
       "Manual setup problem": [
         "Masalah pemasangan manual"
+      ],
+      "Meet problem": [
+        "Masalah Meet"
       ],
       "Other": [
         "Lainnya"
@@ -8209,6 +8243,9 @@
       "Verification code": [
         "Kode verifikasi"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Konferensi video dengan ${ MEET_APP_NAME }"
+      ],
       "Video conferencing with Zoom": [
         "Pertemuan video dengan Zoom"
       ],
@@ -9831,6 +9868,9 @@
       ]
     },
     "Notification": {
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "Pengaturan konferensi video ${ MEET_APP_NAME } telah diperbarui"
+      ],
       "${ reason } has been disabled": [
         "${ reason } telah dinonaktifkan"
       ],
@@ -9845,6 +9885,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "Kode pemulihan 2FA terunduh"
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "Pengaturan konferensi video ${ MEET_APP_NAME } gagal diperbarui"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Pengaturan konferensi video Zoom gagal diperbarui"
       ],
       "Invalid code": [
         "Kode tidak valid"
@@ -9882,8 +9928,8 @@
       "Two-factor authentication is not required anymore": [
         "Autentikasi dua faktor tidak lagi dibutuhkan"
       ],
-      "Video conferencing settings have been updated": [
-        "Pengaturan konferensi video telah diperbarui"
+      "Zoom video conferencing settings have been updated": [
+        "Pengaturan konferensi video Zoom telah diperbarui"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9950,7 +9996,7 @@
         "Bayar per tahun, kantongi penawaran terbaik kami"
       ],
       "Save": [
-        "Simpan"
+        "Hemat"
       ],
       "Save big when you pay annually": [
         "Hemat besar-besaran pada saat Anda membayar secara tahunan"
@@ -14164,8 +14210,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Para admin dapat mengelola akun pengguna dan memberikan hak admin kepada pengguna lain. Hanya admin utama yang dapat menyunting paket organisasi."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Memungkinkan tautan konferensi video untuk ditambahkan secara terpadu ke undangan kalender Anda."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Memungkinkan tautan konferensi video ${ MEET_APP_NAME } untuk ditambahkan secara terpadu ke dalam undangan kalender Anda."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Memungkinkan tautan konferensi video Zoom untuk ditambahkan secara terpadu ke dalam undangan kalender Anda."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Sesuaikan tema aplikasi dengan mode terang dan gelap pada sistem Anda secara otomatis"

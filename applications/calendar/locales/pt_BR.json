@@ -89,6 +89,9 @@
       "Add public holidays": [
         "Adicionar feriados"
       ],
+      "Add secret passphrase": [
+        "Adicionar passphrase secreta"
+      ],
       "Add to group": [
         "Adicionar ao grupo"
       ],
@@ -473,6 +476,9 @@
       "Join calendar": [
         "Juntar ao calendário"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Participar com ${ MEET_APP_NAME }"
+      ],
       "Keep current time zone": [
         "Manter fuso horário atual"
       ],
@@ -599,6 +605,9 @@
       "Open settings": [
         "Abrir configurações"
       ],
+      "Passphrase": [
+        "Passphrase"
+      ],
       "Pause indexing": [
         "Pausar indexação"
       ],
@@ -691,6 +700,9 @@
       ],
       "Resume indexing": [
         "Retomar indexação"
+      ],
+      "Retry": [
+        "Tentar novamente"
       ],
       "Save": [
         "Salvar"
@@ -847,6 +859,9 @@
       ],
       "Update recovery phrase": [
         "Atualizar frase de recuperação"
+      ],
+      "Update secret passphrase": [
+        "Atualizar passphrase secreta"
       ],
       "Upgrade": [
         "Fazer upgrade"
@@ -1223,11 +1238,17 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Após a avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que se renova automaticamente a cada ${ renewCycle } meses em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Você pode ter até ${ TRIAL_MAX_DEDICATED_IPS } servidor dedicado durante o período de avaliação."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Você pode ter até ${ TRIAL_MAX_LUMO_SEATS } licenças do ${ LUMO_SHORT_APP_NAME } durante o período de avaliação."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Você pode ter até ${ TRIAL_MAX_SCRIBE_SEATS } licenças do Scribe durante o período de avaliação."
@@ -1806,12 +1827,50 @@
         "Expandir"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acesso a modelos de IA avançados"
+      ],
+      "Basic chat history": [
+        "Histórico de bate-papo básico"
+      ],
+      "Full chat history with search": [
+        "Histórico completo de bate-papos com pesquisa"
+      ],
+      "Large file upload support": [
+        "Suporte para envio de arquivos grandes"
+      ],
+      "Limited daily chats": [
+        "Bate-papos diários limitados"
+      ],
+      "Limited favorites": [
+        "Favoritos limitados"
+      ],
+      "Unlimited daily chats": [
+        "Bate-papos diários ilimitados"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoritos ilimitados para acesso rápido"
+      ],
+      "Upload and query multiple large files": [
+        "Enviar e consultar vários arquivos grandes"
+      ],
+      "Upload and query small files": [
+        "Enviar e consultar arquivos pequenos"
+      ],
+      "Web search access": [
+        "Acesso à pesquisa na web"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } é uma IA que prioriza a privacidade e ajuda você a fazer mais, mantendo seus dados seguros. Desbloqueie todo o potencial e tenha acesso antecipado a novas funcionalidades conforme forem lançadas."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Adicionar ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Bate-papos de alta velocidade e recursos avançados de IA."
       ]
     },
     "colon": {
@@ -3482,8 +3541,14 @@
       "Event not found": [
         "Evento não encontrado"
       ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "Falha ao criar videoconferência do ${ MEET_APP_NAME }"
+      ],
       "Failed to create meeting": [
         "Falha ao criar a reunião"
+      ],
+      "Failed to decrypt session key": [
+        "Falha ao descriptografar a chave de sessão"
       ],
       "Failed to get event": [
         "Falha ao obter o evento"
@@ -3496,6 +3561,9 @@
       ],
       "Failed to open to contact": [
         "Não foi possível abrir o contato."
+      ],
+      "Failed to update secret passphrase": [
+        "Falha ao atualizar a passphrase secreta"
       ],
       "First name is too long": [
         "Primeiro nome é muito longo"
@@ -3625,6 +3693,9 @@
       ],
       "Organization key is not decrypted": [
         "A chave de organização não está descriptografada"
+      ],
+      "Passphrase unavailable": [
+        "Passphrase indisponível"
       ],
       "Password is required": [
         "A senha é obrigatória"
@@ -4427,11 +4498,17 @@
       "Contacts": [
         "Contatos"
       ],
+      "Domain": [
+        "Domínio"
+      ],
       "Drawer": [
         "Painel lateral"
       ],
       "Name": [
         "Nome"
+      ],
+      "Password ends with": [
+        "Senha termina com"
       ],
       "Repeat event": [
         "Repetir evento"
@@ -4441,6 +4518,9 @@
       ],
       "Security Center": [
         "Central de segurança"
+      ],
+      "Username": [
+        "Nome de usuário"
       ]
     },
     "Hint": {
@@ -5272,8 +5352,17 @@
       "Expired": [
         "Expirado"
       ],
+      "Failed to update meeting name": [
+        "Não foi possível atualizar o nome da reunião"
+      ],
+      "Failed to update meeting password": [
+        "Não foi possível atualizar a senha da reunião"
+      ],
       "finance": [
         "finança"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Para segurança extra, você pode definir uma passphrase. Ela não será incluída no convite do calendário. Lembre-se de compartilhá-la com seus convidados separadamente."
       ],
       "Frequency modifications will be lost.": [
         "As modificações de frequência serão perdidas."
@@ -6318,6 +6407,9 @@
       "Account holder": [
         "Titular da conta"
       ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "Adicionar conferência do ${ MEET_APP_NAME }"
+      ],
       "Add email address": [
         "Adicionar endereços de e-mail"
       ],
@@ -6326,6 +6418,9 @@
       ],
       "Add to group": [
         "Adicionar ao grupo"
+      ],
+      "Add Zoom meeting": [
+        "Adicionar uma reunião do Zoom"
       ],
       "Address": [
         "Endereço"
@@ -6631,6 +6726,9 @@
       "Participants": [
         "Participantes"
       ],
+      "Passphrase:": [
+        "Passphrase:"
+      ],
       "Password": [
         "Senha"
       ],
@@ -6745,6 +6843,9 @@
       "Verification code": [
         "Código de verificação"
       ],
+      "Video conference": [
+        "Videoconferência"
+      ],
       "Vulnerable": [
         "Vulnerável"
       ],
@@ -6789,6 +6890,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Zoom meeting": [
+        "Reunião no Zoom"
       ]
     },
     "Label for contact group color": {
@@ -8231,6 +8335,9 @@
       ],
       "Passcode copied to clipboard": [
         "Código de acesso copiado para a área de transferência"
+      ],
+      "Passphrase copied to clipboard": [
+        "Passphrase copiada para a área de transferência"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8439,7 +8546,7 @@
         "Pague anualmente e assegure nossa melhor oferta"
       ],
       "Save": [
-        "Salvar"
+        "Economize"
       ],
       "Save big when you pay annually": [
         "Aproveite descontos incríveis ao pagar anualmente!"
@@ -9036,6 +9143,9 @@
       ],
       "E.g., ": [
         "Ex., "
+      ],
+      "Enter passphrase": [
+        "Digite a passphrase"
       ],
       "Filter groups": [
         "Filtrar grupos"
@@ -9844,6 +9954,9 @@
       ]
     },
     "Spotlight": {
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } chegou!"
+      ],
       "Color-code your calendar to better organize your day, track your time, and more.": [
         "Codifique seu calendário por cor para organizar melhor o seu dia, controlar seu tempo e muito mais."
       ],
@@ -9855,6 +9968,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convide amigos para ${ BRAND_NAME }"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Agende e participe de chamadas do ${ MEET_APP_NAME } diretamente do seu calendário."
       ],
       "Seamlessly create and add video meeting links to your events.": [
         "Crie e adicione facilmente links de videoconferência aos seus eventos."
@@ -10563,6 +10679,9 @@
       ],
       "Problem reported": [
         "Problema reportado"
+      ],
+      "Secret passphrase updated": [
+        "Passphrase secreta atualizada"
       ],
       "Undo in progress": [
         "Desfazer em andamento"
