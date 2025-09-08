@@ -33,7 +33,7 @@ export const useOnboardingChecklistModalsContext = () => {
 
 const OnboardingChecklistModalsProvider = ({ children }: { children: ReactNode }) => {
     const [user] = useUser();
-    const hasAccessToBYOE = useFlag('InboxBringYourOwnEmail') && isAdmin(user);
+    const hasAccessToBYOE = useFlag('InboxBringYourOwnEmailClient') && isAdmin(user);
 
     const [gmailForwardProps, setGmailForwardOpen, renderGmailForward] = useModalState();
     const [protectLoginProps, setProtectModalOpen, renderProtectInbox] = useModalState();
