@@ -4,6 +4,7 @@ import type { DocumentUpdate } from '@proton/docs-proto'
 import type { DecryptedMessage } from '@proton/docs-shared'
 import { mergeUpdates } from 'yjs'
 import type { LoggerInterface } from '@proton/utils/logs'
+import { decompressDocumentUpdate, isCompressedDocumentUpdate } from '../utils/document-update-compression'
 
 export type UpdatePair = {
   encrypted: DocumentUpdate
@@ -41,7 +42,16 @@ export class SquashAlgorithm implements UseCaseInterface<SquashResult> {
     const updatesToSquash = updates.slice(-numUpdatesToSquash)
     const unmodifiedUpdates = updates.slice(0, updates.length - numUpdatesToSquash)
 
-    const updatesAsSquashed = mergeUpdates(updatesToSquash.map((update) => update.decrypted.content)) as Uint8Array<ArrayBuffer>
+    const updatesAsSquashed = mergeUpdates(
+      updatesToSquash.map((update) => {
+        const decryptedContent = update.decrypted.content
+        if (isCompressedDocumentUpdate(decryptedContent)) {
+          return decompressDocumentUpdate(decryptedContent)
+        } else {
+          return decryptedContent
+        }
+      }),
+    ) as Uint8Array<ArrayBuffer>
 
     this.logger.info(`[Squash] Squashed ${updatesToSquash.length} updates`)
 
