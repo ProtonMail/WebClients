@@ -11,7 +11,6 @@ export const backToSchoolVPNPlusToYearly: OfferConfig = {
     ID: 'back-to-school-vpn-plus-to-yearly',
     title: getBackToSchoolTitle,
     featureCode: FeatureCode.OfferBackToSchoolVPNPlusToYearly,
-    autoPopUp: 'one-time',
     canBeDisabled: true,
     deals: [
         {
