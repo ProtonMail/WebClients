@@ -96,6 +96,9 @@
       "Add phone number": [
         "Adăugare număr de telefon"
       ],
+      "Add secret passphrase": [
+        "Adăugare frază de acces secretă"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Adăugare la ${ CALENDAR_APP_NAME }"
       ],
@@ -761,6 +764,9 @@
       "Italic": [
         "Înclinat"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Alăturați-vă cu ${ MEET_APP_NAME }"
+      ],
       "Keep my subscription": [
         "Îmi păstrez abonamentul"
       ],
@@ -1016,6 +1022,9 @@
       "Page ${ pageNumber }": [
         "Pagina ${ pageNumber }"
       ],
+      "Passphrase": [
+        "Fraza de acces"
+      ],
       "Pause": [
         "Suspendare"
       ],
@@ -1177,6 +1186,9 @@
       ],
       "Resume downloading": [
         "Reluare descărcare"
+      ],
+      "Retry": [
+        "Reîncercare"
       ],
       "Revert to original display": [
         "Revenire la afișarea inițială"
@@ -1451,11 +1463,6 @@
       "Trust": [
         "Aprobare"
       ],
-      "Trust key": [
-        "Cheie de încredere",
-        "Cheie de încredere",
-        "Chei de încredere"
-      ],
       "Trust public key": [
         "Aprobare cheie publică"
       ],
@@ -1515,6 +1522,9 @@
       ],
       "Update recovery phrase": [
         "Actualizare frază de recuperare"
+      ],
+      "Update secret passphrase": [
+        "Actualizare frază secretă de acces"
       ],
       "Upgrade": [
         "Modificare"
@@ -1980,6 +1990,32 @@
         "Expeditor verificat cu succes"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce se încheie perioada de probare la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni, la ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce probarea se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat lunar la data de ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licențe în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe Scribe în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_USERS } utilizatori în perioada de probare."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Nu puteți adăuga domenii personale în perioada de probare."
+      ],
+      "You have reached the trial limit.": [
+        "Ați atins limita perioadei de probare."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Anulare abonament"
@@ -2214,6 +2250,9 @@
       ],
       "Manual setup problem": [
         "Problemă setare manuală"
+      ],
+      "Meet problem": [
+        "Problemă Meet"
       ],
       "Other": [
         "Altele"
@@ -2640,6 +2679,52 @@
       ],
       "Expand": [
         "Extindere"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acces la modele AI avansate"
+      ],
+      "Basic chat history": [
+        "Istoric de bază conversații"
+      ],
+      "Full chat history with search": [
+        "Istoric complet al conversațiilor cu căutare"
+      ],
+      "Large file upload support": [
+        "Acceptare încărcare fișiere mari"
+      ],
+      "Limited daily chats": [
+        "Conversații zilnice limitate"
+      ],
+      "Limited favorites": [
+        "Favorite limitate"
+      ],
+      "Unlimited daily chats": [
+        "Conversații zilnice nelimitate"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favorite nelimitate pentru o accesare rapidă"
+      ],
+      "Upload and query multiple large files": [
+        "Încărcați și interogați mai multe fișiere mari"
+      ],
+      "Upload and query small files": [
+        "Încărcați și interogați fișiere mici"
+      ],
+      "Web search access": [
+        "Acces la căutare pe internet"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } este o aplicație de inteligență artificială axată pe confidențialitate, care vă ajută să realizați mai mult, păstrându-vă în același timp datele în siguranță. Deblocați-i întregul potențial și bucurați-vă de acces timpuriu la noile funcții pe măsură ce sunt introduse."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Adăugare ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Conversații rapide și funcții avansate de inteligență artificială."
       ]
     },
     "color": {
@@ -4558,6 +4643,9 @@
       "Failed to open to contact": [
         "Nu s-a putut deschide contactul."
       ],
+      "Failed to update secret passphrase": [
+        "Nu s-a putut actualiza fraza de acces secretă."
+      ],
       "Filter with this name already exists": [
         "Filtrul cu acest nume există deja."
       ],
@@ -4689,6 +4777,9 @@
       ],
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
+      ],
+      "Passphrase unavailable": [
+        "Frază de acces indisponibilă"
       ],
       "Password is required": [
         "Parola este obligatorie"
@@ -5158,6 +5249,9 @@
     "Error message": {
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Aliasurile nu pot fi folosite atunci când este activată o parolă suplimentară în ${ PASS_APP_NAME }."
+      ],
+      "An error occured with the categories": [
+        "A apărut o eroare cu categoriile."
       ],
       "App currently unavailable": [
         "Aplicație momentan indisponibilă"
@@ -5871,11 +5965,17 @@
       "Contacts": [
         "Contacte"
       ],
+      "Domain": [
+        "Domeniu"
+      ],
       "Drawer": [
         "Panou lateral"
       ],
       "Hardware not compatible": [
         "Dispozitiv incompatibil"
+      ],
+      "Password ends with": [
+        "Parola se termină cu"
       ],
       "Report an issue": [
         "Raportare problemă"
@@ -5894,6 +5994,9 @@
       ],
       "Tell us more": [
         "Spuneți-ne mai multe"
+      ],
+      "Username": [
+        "Nume de utilizator"
       ]
     },
     "Hint": {
@@ -7211,6 +7314,9 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Pentru acces oricând la e-mail și experiență mobilă optimizată, descărcați aplicația ${ androidAppLink } sau ${ iosAppLink }."
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Pentru un plus de securitate, puteți seta o frază de acces. Aceasta nu va fi inclusă în invitația de calendar, nu uitați să o partajați separat cu invitații."
+      ],
       "For messages newer than ${ oldestDate }": [
         "Pentru mesaje mai noi de ${ oldestDate }"
       ],
@@ -7344,7 +7450,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -9127,12 +9235,6 @@
       "Also archive": [
         "Și arhivare"
       ],
-      "Always label sender's emails": [
-        "Etichetare întotdeauna mesajele expeditorului"
-      ],
-      "Always move sender's emails": [
-        "Mutare întotdeauna mesajele expeditorului"
-      ],
       "AND": [
         "ȘI"
       ],
@@ -9469,9 +9571,6 @@
       "Move ${ sidebarElementName }": [
         "Mutare ${ sidebarElementName }"
       ],
-      "Move messages to": [
-        "Mutare mesaje în"
-      ],
       "Move to": [
         "Mutare în"
       ],
@@ -9511,6 +9610,9 @@
       "No label found": [
         "Nu există etichete"
       ],
+      "No results found": [
+        "Nu s-au găsit rezultate."
+      ],
       "Not factually correct": [
         "Nu este corect din punct de vedere faptic"
       ],
@@ -9549,6 +9651,9 @@
       ],
       "Participants": [
         "Participanți"
+      ],
+      "Passphrase:": [
+        "Fraza de acces:"
       ],
       "Password": [
         "Parola"
@@ -11423,6 +11528,9 @@
       "Passcode copied to clipboard": [
         "Codul de acces s-a copiat în memorie."
       ],
+      "Passphrase copied to clipboard": [
+        "Fraza de acces s-a copiat în memorie."
+      ],
       "Password has been set successfully": [
         "S-a reușit setarea parolei."
       ],
@@ -12211,6 +12319,9 @@
       ],
       "End date": [
         "Data de sfârșit"
+      ],
+      "Enter passphrase": [
+        "Introduceți fraza de acces"
       ],
       "Filter folders": [
         "Filtrare foldere"
@@ -14183,6 +14294,9 @@
         "Mesaje recategorizate: ${ elementsCount }",
         "Mesaje recategorizate: ${ elementsCount }"
       ],
+      "Secret passphrase updated": [
+        "Frază de acces secretă s-a actualizat."
+      ],
       "Self-destruction removed": [
         "Autodistrugere eliminată"
       ],
@@ -14632,12 +14746,6 @@
       "Create contact": [
         "Creare contact"
       ],
-      "Create folder \"${ search }\"": [
-        "Creare folder „${ search }”"
-      ],
-      "Create label \"${ search }\"": [
-        "Creare etichetă „${ search }”"
-      ],
       "Create new group": [
         "Creare grup"
       ],
@@ -14896,6 +15004,11 @@
       "Label as": [
         "Etichetare cu"
       ],
+      "Label message as": [
+        "Etichetare mesaj cu",
+        "Etichetare mesaje cu",
+        "Etichetare mesaje cu"
+      ],
       "Label options": [
         "Opțiuni etichetă"
       ],
@@ -14979,6 +15092,14 @@
       ],
       "Move all messages to trash": [
         "Mutare toate mesajele în „Gunoi”"
+      ],
+      "Move message to": [
+        "Mutare mesaj în",
+        "Mutare mesaje în",
+        "Mutare mesaje în"
+      ],
+      "Move messages to": [
+        "Mutare mesaje în"
       ],
       "Move to": [
         "Mutare în"
