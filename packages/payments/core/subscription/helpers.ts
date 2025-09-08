@@ -66,6 +66,17 @@ export function hasAnniversary2025Coupon(subscription: Subscription | FreeSubscr
     ).includes(subscription?.CouponCode || '');
 }
 
+export function hasSep2025Coupon(subscription: Subscription | FreeSubscription | undefined) {
+    return (
+        [
+            COUPON_CODES.SEP25SALE,
+            COUPON_CODES.SEP25BUNDLESALE,
+            COUPON_CODES.SEP25SALECS,
+            COUPON_CODES.SEP25BUNDLESALECS,
+        ] as string[]
+    ).includes(subscription?.CouponCode || '');
+}
+
 export function getSubscriptionPlanTitle(
     user: UserModel,
     subscription: Subscription | FreeSubscription | undefined
