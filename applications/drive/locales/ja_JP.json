@@ -1104,6 +1104,9 @@
       "Upload file": [
         "ファイルをアップロード"
       ],
+      "Upload File": [
+        "ファイルをアップロード"
+      ],
       "Upload files": [
         "ファイルをアップロード"
       ],
@@ -1392,6 +1395,32 @@
       ],
       "Unsupported event": [
         "サポートされていない予定です"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }にトライアルが終了すると、${ formattedDate }に${ renewCycle }ヶ月ごとに自動更新される有料のサブスクリプションに移行します。${ formattedDate }までにキャンセルした場合、料金は請求されません。"
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } にトライアルが終了すると、毎月 ${ formattedDate } に自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_DEDICATED_IPS }の専用サーバーをご利用いただけます。"
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_LUMO_SEATS }の${ LUMO_SHORT_APP_NAME }シートをご利用いただけます。"
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_SCRIBE_SEATS }のスライブシートをご利用いただけます。"
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_USERS }ユーザーまでご利用いただけます。"
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "トライアル期間中にカスタムドメインを追加することはできません。"
+      ],
+      "You have reached the trial limit.": [
+        "トライアルの制限に達しました。"
       ]
     },
     "b2b_trials_Action": {
@@ -1774,6 +1803,52 @@
       ],
       "Expand": [
         "開く"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "高度なAIモデルへのアクセス"
+      ],
+      "Basic chat history": [
+        "基本チャット履歴"
+      ],
+      "Full chat history with search": [
+        "検索機能付きの完全なチャット履歴"
+      ],
+      "Large file upload support": [
+        "大容量ファイルアップロードサポート"
+      ],
+      "Limited daily chats": [
+        "毎日のチャットの制限"
+      ],
+      "Limited favorites": [
+        "お気に入りの制限"
+      ],
+      "Unlimited daily chats": [
+        "無制限の毎日のチャット"
+      ],
+      "Unlimited favorites for quick access": [
+        "無制限のクイックアクセスのお気に入り"
+      ],
+      "Upload and query multiple large files": [
+        "複数大容量ファイルのアップロードと検索"
+      ],
+      "Upload and query small files": [
+        "小さなファイルのアップロードと検索"
+      ],
+      "Web search access": [
+        "ウェブ検索アクセス"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } は、プライバシーを第一に考えたAIで、お客様のデータを安全に保ちながら、より多くのことを達成するのに役立ちます。その可能性を最大限に引き出し、導入される新しい機能への早期アクセスをお楽しみください。"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME }を追加"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "高速チャットと高度なAI機能。"
       ]
     },
     "color": {
@@ -4199,14 +4274,23 @@
       "Create new shared album": [
         "新しい共有アルバムを作成"
       ],
+      "Domain": [
+        "ドメイン"
+      ],
       "Drawer": [
         "サイドパネル"
+      ],
+      "Password ends with": [
+        "パスワードの末尾"
       ],
       "Rename album": [
         "アルバム名を変更"
       ],
       "Security Center": [
         "セキュリティセンター"
+      ],
+      "Username": [
+        "ユーザー名"
       ]
     },
     "Heading": {
@@ -8945,7 +9029,7 @@
         "毎年払い、安全な私たちの最高のオファー"
       ],
       "Save": [
-        "節約"
+        "お得"
       ],
       "Save big when you pay annually": [
         "年払いで大幅に節約"

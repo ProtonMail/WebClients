@@ -89,6 +89,9 @@
       "Add public holidays": [
         "Feiertage hinzufügen"
       ],
+      "Add secret passphrase": [
+        "Geheime Passphrase hinzufügen"
+      ],
       "Add to group": [
         "Zu Gruppe hinzufügen"
       ],
@@ -473,6 +476,9 @@
       "Join calendar": [
         "Kalender beitreten"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Tritt ${ MEET_APP_NAME } bei"
+      ],
       "Keep current time zone": [
         "Aktuelle Zeitzone beibehalten"
       ],
@@ -599,6 +605,9 @@
       "Open settings": [
         "Einstellungen öffnen"
       ],
+      "Passphrase": [
+        "Passphrase"
+      ],
       "Pause indexing": [
         "Indizierung anhalten"
       ],
@@ -691,6 +700,9 @@
       ],
       "Resume indexing": [
         "Indizierung fortsetzten"
+      ],
+      "Retry": [
+        "Erneut versuchen"
       ],
       "Save": [
         "Speichern"
@@ -847,6 +859,9 @@
       ],
       "Update recovery phrase": [
         "Wiederherstellungsphrase aktualisieren"
+      ],
+      "Update secret passphrase": [
+        "Geheime Passphrase aktualisieren"
       ],
       "Upgrade": [
         "Wechseln"
@@ -1223,11 +1238,17 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nachdem die Testversion am ${ formattedDate } endet, wird es zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate am ${ formattedDate } automatisch verlängert. Dir wird nichts berechnet, wenn du vor dem ${ formattedDate } kündigst."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_DEDICATED_IPS } dedizierte Server haben."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-Lizenzen haben."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-Lizenzen haben."
@@ -1479,6 +1500,9 @@
       ],
       "Manual setup problem": [
         "Problem mit der manuellen Einrichtung"
+      ],
+      "Meet problem": [
+        "Meet-Problem"
       ],
       "Other": [
         "Andere"
@@ -1806,12 +1830,50 @@
         "Erweitern"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Zugang zu erweiterten KI-Modellen"
+      ],
+      "Basic chat history": [
+        "Einfacher Chatverlauf"
+      ],
+      "Full chat history with search": [
+        "Vollständiger Chat-Verlauf mit Suche"
+      ],
+      "Large file upload support": [
+        "Unterstützt große Dateiuploads"
+      ],
+      "Limited daily chats": [
+        "Begrenzte tägliche Chats"
+      ],
+      "Limited favorites": [
+        "Begrenzte Favoriten"
+      ],
+      "Unlimited daily chats": [
+        "Unbegrenzte tägliche Chats"
+      ],
+      "Unlimited favorites for quick access": [
+        "Unbegrenzte Favoriten für schnellen Zugriff"
+      ],
+      "Upload and query multiple large files": [
+        "Mehrere große Dateien hochladen und abfragen"
+      ],
+      "Upload and query small files": [
+        "Kleine Dateien hochladen und abfragen"
+      ],
+      "Web search access": [
+        "Websuche-Zugriff"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } ist eine datenschutzorientierte KI, die dir hilft, mehr zu erledigen und gleichzeitig dafür sorgt, dass deine Daten sicher bleiben. Entfalte ihr volles Potenzial und genieße den Vorabzugriff auf neue Funktionen, sobald sie eingeführt werden."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } hinzufügen"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Schnelle Chats und erweiterte KI-Funktionen."
       ]
     },
     "colon": {
@@ -3482,8 +3544,14 @@
       "Event not found": [
         "Termin nicht gefunden"
       ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "Das Erstellen einer ${ MEET_APP_NAME }-Videokonferenz ist fehlgeschlagen"
+      ],
       "Failed to create meeting": [
         "Fehler beim Erstellen des Meetings."
+      ],
+      "Failed to decrypt session key": [
+        "Entschlüsselung des Sitzungsschlüssels fehlgeschlagen"
       ],
       "Failed to get event": [
         "Fehler beim Abrufen des Termins."
@@ -3496,6 +3564,9 @@
       ],
       "Failed to open to contact": [
         "Fehler beim Öffnen des Kontakts"
+      ],
+      "Failed to update secret passphrase": [
+        "Geheime Passphrase konnte nicht aktualisiert werden"
       ],
       "First name is too long": [
         "Der Vorname ist zu lang."
@@ -3625,6 +3696,9 @@
       ],
       "Organization key is not decrypted": [
         "Organisationsschlüssel ist nicht entschlüsselt"
+      ],
+      "Passphrase unavailable": [
+        "Passphrase nicht verfügbar"
       ],
       "Password is required": [
         "Passwort ist erforderlich"
@@ -5281,8 +5355,17 @@
       "Expired": [
         "Abgelaufen"
       ],
+      "Failed to update meeting name": [
+        "Fehler beim Aktualisieren der Besprechungsbezeichnung"
+      ],
+      "Failed to update meeting password": [
+        "Fehler beim Aktualisieren des Besprechungspassworts"
+      ],
       "finance": [
         "Finanzen"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Für zusätzliche Sicherheit kannst du eine Passphrase festlegen. Diese wird nicht in der Kalendereinladung enthalten sein, denke daran, sie separat mit deinen Gästen zu teilen."
       ],
       "Frequency modifications will be lost.": [
         "Änderungen der Häufigkeit gehen verloren."
@@ -6327,6 +6410,9 @@
       "Account holder": [
         "Kontoinhaber"
       ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "${ MEET_APP_NAME }-Konferenz hinzufügen"
+      ],
       "Add email address": [
         "E-Mail-Adresse hinzufügen"
       ],
@@ -6335,6 +6421,9 @@
       ],
       "Add to group": [
         "Zu Gruppe hinzufügen"
+      ],
+      "Add Zoom meeting": [
+        "Zoom-Meeting hinzufügen"
       ],
       "Address": [
         "Anschrift"
@@ -6640,6 +6729,9 @@
       "Participants": [
         "Teilnehmer"
       ],
+      "Passphrase:": [
+        "Passphrase:"
+      ],
       "Password": [
         "Passwort"
       ],
@@ -6754,6 +6846,9 @@
       "Verification code": [
         "Verifizierungscode"
       ],
+      "Video conference": [
+        "Videokonferenz"
+      ],
       "Vulnerable": [
         "Verwundbar"
       ],
@@ -6798,6 +6893,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Zoom meeting": [
+        "Zoom-Meeting"
       ]
     },
     "Label for contact group color": {
@@ -8235,6 +8333,9 @@
       ],
       "Passcode copied to clipboard": [
         "Passcode in die Zwischenablage kopiert"
+      ],
+      "Passphrase copied to clipboard": [
+        "Passphrase in die Zwischenablage kopiert"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8443,7 +8544,7 @@
         "Jährlich zahlen, unser bestes Angebot sichern"
       ],
       "Save": [
-        "Speichern"
+        "Sparen"
       ],
       "Save big when you pay annually": [
         "Spare kräftig, wenn du jährlich bezahlst"
@@ -9034,6 +9135,9 @@
       ],
       "E.g., ": [
         "Z. B. "
+      ],
+      "Enter passphrase": [
+        "Passphrase eingeben"
       ],
       "Filter groups": [
         "Gruppen filtern"
@@ -9842,6 +9946,9 @@
       ]
     },
     "Spotlight": {
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } ist da."
+      ],
       "Color-code your calendar to better organize your day, track your time, and more.": [
         "Passe deinen Kalender mit Farben an, um deinen Tag besser zu organisieren, deine Zeit zu erfassen und vieles mehr."
       ],
@@ -9853,6 +9960,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Lade Freunde zu ${ BRAND_NAME } ein"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Plane und nimm an ${ MEET_APP_NAME }-Meetings direkt aus deinem Kalender teil."
       ],
       "Seamlessly create and add video meeting links to your events.": [
         "Erstelle nahtlos Links zu Videokonferenzen und füge diese zu deinem Termin hinzu."
@@ -10561,6 +10671,9 @@
       ],
       "Problem reported": [
         "Problem gemeldet"
+      ],
+      "Secret passphrase updated": [
+        "Geheime Passphrase aktualisiert"
       ],
       "Undo in progress": [
         "Widerrufen wird ausgeführt"

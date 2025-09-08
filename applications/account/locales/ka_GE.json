@@ -262,6 +262,9 @@
       "Claim this address": [
         "ამ მისამართის გამოთხოვა"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "${ BRAND_NAME }-ის უფასო მისამართის გამოთხოვა"
+      ],
       "Clear all formatting": [
         "ფორმატირების სრულად მოცილება"
       ],
@@ -1009,6 +1012,9 @@
       "Open": [
         "გახსნა"
       ],
+      "Open ${ applicationName }": [
+        "${ applicationName }-ის გახსნა"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
       ],
@@ -1405,6 +1411,9 @@
       "Spam": [
         "სპამი"
       ],
+      "Start free trial": [
+        "უფასო საცდელი ვერსიის ჩართვა"
+      ],
       "Start import": [
         "შემოტანის დაწყება"
       ],
@@ -1738,6 +1747,9 @@
       "Reconnect": [
         "თავიდან დაკავშირება"
       ],
+      "Reconnect address “${ emailAddress }”": [
+        "მისამართზე \"${ emailAddress }\" თავიდან მიერთება"
+      ],
       "Saving": [
         "შენახვა"
       ],
@@ -1961,6 +1973,9 @@
       ],
       "Secure your communications": [
         "დაიცავით თქვენი კომუნიკაცია"
+      ],
+      "Talk confidentially": [
+        "ისაუბრეთ კონფიდენციალურად"
       ]
     },
     "Apps dropdown": {
@@ -2024,6 +2039,33 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "გასული ვარ ოფისთან, ელფოსტასთან შეზღუდული წვდომით."
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "გადახდის დეტალები"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "უფასო ${ TRIAL_DURATION_DAYS } დღით"
+      ],
+      "on ${ formattedDate }": [
+        "${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "სცადეთ ${ selected } ${ freeForNDays }"
+      ],
+      "You have reached the trial limit.": [
+        "მიაღწიეთ გამოსაცდელი პერიოდის ზღვარს."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "გადასახდელი თანხა გამოსაცდელი პერიოდის შემდეგ"
+      ],
+      "Amount due now": [
+        "ახლა გადასახდელი თანხა"
       ]
     },
     "b2b_trials_Action": {
@@ -2421,6 +2463,9 @@
       "Manual setup problem": [
         "ხელით დაყენების პრობლემა"
       ],
+      "Meet problem": [
+        "Meet-ის პრობლემა"
+      ],
       "Other": [
         "სხვა"
       ],
@@ -2781,6 +2826,103 @@
       ],
       "Expand": [
         "ამოკეცვა"
+      ]
+    },
+    "collider_2025: app-switcher": {
+      "Chat with a private AI assistant": [
+        "ჩატი პირად ხი დამხმარესთან"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "წვდომა განვითარებულ ხი მოდელებთან"
+      ],
+      "Basic chat history": [
+        "საბაზისო ჩატის ისტორია"
+      ],
+      "Full chat history with search": [
+        "სრული ჩატის ისტორია ძებნით"
+      ],
+      "Large file upload support": [
+        "დიდი ფაილის ატვირთვის მხარდაჭერა"
+      ],
+      "Limited daily chats": [
+        "შეზღუდული ყოველდღიური ჩატები"
+      ],
+      "Limited favorites": [
+        "შეზღუდული რჩეულები"
+      ],
+      "Unlimited daily chats": [
+        "შეუზღუდავი ყოველდღიური ჩატები"
+      ],
+      "Unlimited favorites for quick access": [
+        "განუსაზღვრელი რჩეულები სწრაფი წვდომისთვის"
+      ],
+      "Upload and query multiple large files": [
+        "ატვირთეთ და დაამუშავეთ ბევრი დიდი ფაილი"
+      ],
+      "Upload and query small files": [
+        "ატვირტეთ და მოითხოვეთ პატარა ფაილები"
+      ],
+      "Web search access": [
+        "წვდომა ვებში ძებნასთან"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "აგებულია და დაფუძნებულია ევროპაში"
+      ]
+    },
+    "collider_2025: Info": {
+      "Access to advanced AI models": [
+        "წვდომა განვითარებულ ხი მოდელებთან"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME }-ის დამატება"
+      ],
+      "Basic chat history": [
+        "საბაზისო ჩატის ისტორია"
+      ],
+      "Data never used for AI training": [
+        "მონაცემები არასდროს იქნება გამოყენებული ხი-ის სავარჯიშოდ"
+      ],
+      "Full chat history with search": [
+        "სრული ჩატის ისტორია ძებნით"
+      ],
+      "Limited daily chats": [
+        "შეზღუდული ყოველდღიური ჩატები"
+      ],
+      "Limited favorites": [
+        "შეზღუდული რჩეულები"
+      ],
+      "Open source": [
+        "ღია კოდი"
+      ],
+      "Strict no-logs policy": [
+        "ჩვენ არ ვინახავთ ჟურნალს"
+      ],
+      "Unlimited daily chats": [
+        "შეუზღუდავი ყოველდღიური ჩატები"
+      ],
+      "Unlimited favorites for quick access": [
+        "განუსაზღვრელი რჩეულები სწრაფი წვდომისთვის"
+      ],
+      "Upload and query multiple large files": [
+        "ატვირთეთ და დაამუშავეთ ბევრი დიდი ფაილი"
+      ],
+      "Upload and query small files": [
+        "ატვირტეთ და მოითხოვეთ პატარა ფაილები"
+      ],
+      "Web search access": [
+        "წვდომა ვებში ძებნასთან"
+      ]
+    },
+    "collider_2025: Navigation": {
+      "Back to conversations": [
+        "საუბრებზე დაბრუნება"
+      ],
+      "Conversations": [
+        "საუბრები"
       ]
     },
     "color": {
@@ -5131,6 +5273,18 @@
       "${ BRAND_NAME } Account email": [
         "${ BRAND_NAME }-ის ანგარიშის ელფოსტა"
       ],
+      "${ days } day left": [
+        "დარჩენილია ${ days } დღე",
+        "დარჩენილია ${ days } დღე"
+      ],
+      "${ hours } hour left": [
+        "დარჩა ${ hours } საათი",
+        "დარჩა ${ hours } საათი"
+      ],
+      "${ minutes } minute left": [
+        "დარჩა ${ minutes } წუთი",
+        "დარჩა ${ minutes } წუთი"
+      ],
       "${ n } day": [
         "${ n } დღე",
         "${ n } დღე"
@@ -5167,6 +5321,9 @@
       ],
       "Emergency access": [
         "სასწრაფო წვდომა"
+      ],
+      "Emergency access for ${ user } removed": [
+        "სასწრაფო წვდომა მომხმარებლისთვის ${ user } წაიშალა"
       ],
       "Emergency access granted": [
         "სასწრაფო წვდომა მინიჭებულია"
@@ -5207,6 +5364,9 @@
       "Less than a day": [
         "დღეზე ნაკლები"
       ],
+      "Less than a minute left": [
+        "დარჩა წუთზე ნაკლები"
+      ],
       "None": [
         "არცერთი"
       ],
@@ -5228,6 +5388,9 @@
       "Remove trusted contact": [
         "სანდო კონტაქტის წაშლა"
       ],
+      "Renew to get emergency access again.": [
+        "განაახლეთ, რომ სასწრაფო წვდომა კიდევ გქონდეთ."
+      ],
       "Request access?": [
         "მოვითხოვო წვდომა?"
       ],
@@ -5245,6 +5408,9 @@
       ],
       "Subscription expired": [
         "გამოწერას ვადა ამოიწურა"
+      ],
+      "This will take effect immediately.": [
+        "ეს ძალაში დაუყოვნებლივ შევა."
       ],
       "Trusted contact": [
         "სანდო კონტაქტი"
@@ -7084,6 +7250,9 @@
       "Device": [
         "მოწყობილობა"
       ],
+      "Domain": [
+        "დომენი"
+      ],
       "Enter your email address": [
         "შეიყვანეთ თქვენი ელფოსტის მისამართი"
       ],
@@ -7116,6 +7285,9 @@
       ],
       "Organization key fingerprint": [
         "ორგანიზაციის გასაღების ანაბეჭდი"
+      ],
+      "Password ends with": [
+        "პაროლი მთავრდება"
       ],
       "Payment details": [
         "გადახდის დეტალები"
@@ -7158,6 +7330,9 @@
       ],
       "User": [
         "მომხმარებელი"
+      ],
+      "Username": [
+        "მომხმარებლის სახელი"
       ]
     },
     "Header for addresses table": {
@@ -7753,6 +7928,24 @@
         "${ n } მისამართი",
         "${ n } მისამართი"
       ],
+      "${ name } for Android": [
+        "${ name } Android-სთვის"
+      ],
+      "${ name } for GNU/Linux": [
+        "${ name } GNU/Linux-სთვის"
+      ],
+      "${ name } for iOS": [
+        "${ name } iOS-სთვის"
+      ],
+      "${ name } for macOS": [
+        "${ name } macOS-სთვის"
+      ],
+      "${ name } for Web": [
+        "${ name } ვებისთვის"
+      ],
+      "${ name } for Windows": [
+        "${ name } Windows-სთვის"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: არაავტორიზებული ელფოსტები კარანტინში ჩასმული ან უარყოფილი არ იქნება. ჩვულებრივ ხალხი ამას წეების გასამართად ან დასატესტად იყენებს."
       ],
@@ -7840,6 +8033,12 @@
       "${ storage } storage": [
         "${ storage } საცავი"
       ],
+      "${ url } added.": [
+        "${ url } დაემატა."
+      ],
+      "${ url } deleted.": [
+        "${ url } წაიშალა."
+      ],
       "${ userFound } user found": [
         "აღმოჩენილია ${ userFound } მომხმარებელი",
         "აღმოჩენილია ${ userFound } მომხმარებელი"
@@ -7892,6 +8091,9 @@
       ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**მოიწვიეთ მეგობრები** ${ BRAND_NAME }-ზე თქვენი რეფერალი ბმულით."
+      ],
+      "**Sync codes** to all your devices": [
+        "**დაასინქრონიზეთ კოდები** ყველა თქვენს მოწყობილობაზე"
       ],
       "+ ${ invisibleCount } More": [
         "+ კიდევ ${ invisibleCount }",
@@ -10284,6 +10486,9 @@
       "URL link": [
         "URL ბმული"
       ],
+      "URL settings updated.": [
+        "URL-ის პარამეტრები განახლდა."
+      ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "გამოიყენეთ პაროლების მმართველი თქვენი პაროლების გენერაციისა და უსაფრთხოს შესანახად. იქონიეთ ძლიერი პაროლები და გამოიყენეთ ისნი ადვილად."
       ],
@@ -10854,6 +11059,9 @@
       ],
       "You’re all set": [
         "ყველაფერი მზადაა"
+      ],
+      "Zero charge today": [
+        "დღეს არაფერს იხდით"
       ],
       "Zoom meeting": [
         "Zoom-ის შეხვედრა"
@@ -11434,6 +11642,9 @@
       ],
       "Account storage": [
         "ანგარიშის საცავი"
+      ],
+      "Action": [
+        "ქმედება"
       ],
       "Actions": [
         "ქმედებები"
@@ -13496,6 +13707,9 @@
       "Back": [
         "უკან"
       ],
+      "Back to ${ MEET_SHORT_APP_NAME }": [
+        "${ MEET_SHORT_APP_NAME }-ზე დაბრუნება"
+      ],
       "Back to calendar": [
         "კალენდარზე დაბრუნება"
       ],
@@ -14744,9 +14958,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "2FA ავთენტიკაცია აუცილებელი აღარაა"
-      ],
-      "Video conferencing settings have been updated": [
-        "ვიდეოკონფერენციის პარამეტრები განახლდა"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -14883,7 +15094,7 @@
         "გადაიხადეთ წელიწადში ერთხელ, მიიღეთ ჩვენ საუკეთესო შეთავაზება"
       ],
       "Save": [
-        "შენახვა"
+        "დაზოგეთ"
       ],
       "Save big when you pay annually": [
         "დაზოგეთ ბევრი, როცა წელიწადში ერთხელ იხდით"
@@ -17854,6 +18065,9 @@
       "Free": [
         "Free"
       ],
+      "Free for ${ TRIAL_DURATION_DAYS } days": [
+        "უფასო ${ TRIAL_DURATION_DAYS } დღით"
+      ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "მიიღეთ დაცული ${ MAIL_APP_NAME }-ის მისამართი, ან ${ internalButton }"
       ],
@@ -20089,6 +20303,9 @@
       "Choose user affiliations": [
         "აირჩიეთ მომხმარებლის წევრობა"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME }-ის მისამართის გამოთხოვა"
+      ],
       "Close": [
         "დახურვა"
       ],
@@ -20798,6 +21015,9 @@
       "Passwords made easy": [
         "პაროლები ახლა იოლია"
       ],
+      "Pause list": [
+        "შეჩერებულების სია"
+      ],
       "Pay invoice": [
         "ინვოისის გადახდა"
       ],
@@ -21282,6 +21502,9 @@
       "You have no resolved alerts": [
         "ამოხსნილი განგაშების გარეშე"
       ],
+      "You've successfully signed in!": [
+        "თქვენ წარმატებით შეხვედით!"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "თქვენი ${ planName }-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"
       ],
@@ -21443,9 +21666,6 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "ადმინებს შეუძლიათ მომხმარებლის ანგარიშებს მართვა და სხვა მომხმარებლებისთვის ადმინის პრივილეგიების მიცემა. ორგანიზაციის სატარიფო გეგმის ჩასწორება, მხოლოდ, ძირითად ადმინს შეუძლია."
-      ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "საშუალებას გაძლევთ, თქვენი კალენდრის მოსაწვევებში ვიდეოკონფერენციების ბმულები უპრობლემოდ ჩაამატოთ."
       ],
       "Any protection applied to suspicious activity": [
         "ნებისმიერი დაცვა, რომელიც საეჭვო აქტივობაზე გადატარდება"

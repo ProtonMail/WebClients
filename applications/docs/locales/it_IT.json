@@ -1134,11 +1134,17 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Dopo la prova termina il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnoverà automaticamente ogni ${ renewCycle } mesi il ${ formattedDate }. Non ti verrà addebitato nulla se annulli prima del ${ formattedDate }."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese il ${ formattedDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_DEDICATED_IPS } server dedicati durante il periodo di prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_LUMO_SEATS } licenze ${ LUMO_SHORT_APP_NAME } durante il periodo di prova."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze Scribe durante il periodo di prova."
@@ -1386,6 +1392,9 @@
       "Manual setup problem": [
         "Problema di configurazione manuale"
       ],
+      "Meet problem": [
+        "Si è verificato un problema"
+      ],
       "Other": [
         "Altro"
       ],
@@ -1523,12 +1532,50 @@
         "Espandi"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Accesso a modelli IA avanzati"
+      ],
+      "Basic chat history": [
+        "Cronologia chat di base"
+      ],
+      "Full chat history with search": [
+        "Cronologia chat completa con ricerca"
+      ],
+      "Large file upload support": [
+        "Caricamenti di file di grandi dimensioni"
+      ],
+      "Limited daily chats": [
+        "Numero limitato di chat al giorno"
+      ],
+      "Limited favorites": [
+        "Numero limitato di preferiti"
+      ],
+      "Unlimited daily chats": [
+        "Numero illimitato di chat al giorno"
+      ],
+      "Unlimited favorites for quick access": [
+        "Preferiti senza limiti per consultazione rapida"
+      ],
+      "Upload and query multiple large files": [
+        "Carica e consulta più file grandi"
+      ],
+      "Upload and query small files": [
+        "Carica e consulta file piccoli"
+      ],
+      "Web search access": [
+        "Accesso alla Ricerca Web"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } è un'IA orientata alla privacy che ti aiuta a fare di più, mantenendo sicuri i tuoi dati. Sblocca tutto il suo potenziale e goditi l'accesso anticipato alle nuove funzionalità non appena saranno introdotte."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Aggiungi ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chat veloci e funzioni AI avanzate."
       ]
     },
     "color": {
@@ -3851,8 +3898,17 @@
       ]
     },
     "Header": {
+      "Domain": [
+        "Dominio"
+      ],
       "Drawer": [
         "Pannello laterale"
+      ],
+      "Password ends with": [
+        "La password termina con"
+      ],
+      "Username": [
+        "Utente"
       ]
     },
     "Hint": {
@@ -8059,7 +8115,7 @@
         "Paga annualmente, assicurati la nostra migliore offerta"
       ],
       "Save": [
-        "Salva"
+        "Risparmia"
       ],
       "Save big when you pay annually": [
         "Risparmia di più pagando annualmente"

@@ -96,6 +96,9 @@
       "Add phone number": [
         "휴대전화 번호 추가"
       ],
+      "Add secret passphrase": [
+        "비밀 암호 문구 추가"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } 에 추가"
       ],
@@ -753,6 +756,9 @@
       "Italic": [
         "기울임"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }로 참여하기"
+      ],
       "Keep my subscription": [
         "내 구독 유지하기"
       ],
@@ -1008,6 +1014,9 @@
       "Page ${ pageNumber }": [
         "${ pageNumber }번째 페이지"
       ],
+      "Passphrase": [
+        "암호 문구"
+      ],
       "Pause": [
         "일시 중지"
       ],
@@ -1169,6 +1178,9 @@
       ],
       "Resume downloading": [
         "다운로드 재개"
+      ],
+      "Retry": [
+        "재시도"
       ],
       "Revert to original display": [
         "원래 모양으로 되돌리기"
@@ -1505,6 +1517,9 @@
       ],
       "Update recovery phrase": [
         "복구 코드 변경"
+      ],
+      "Update secret passphrase": [
+        "비밀 암호 문구 업데이트"
       ],
       "Upgrade": [
         "업그레이드"
@@ -1954,6 +1969,32 @@
       ],
       "Sender verification passed": [
         "발신자 검증 통과"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }에 체험이 종료된 후, ${ formattedDate }에 ${ renewCycle }개월마다 자동 갱신되는 유료 구독으로 전환됩니다. ${ formattedDate } 이전에 취소시 요금이 부과되지 않습니다."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }에 체험이 종료된 후, 유료 구독으로 전환되어 매월 ${ formattedDate }에 자동 갱신됩니다. ${ formattedDate } 이전에 취소시 요금이 청구되지 않습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_DEDICATED_IPS }개의 전용 서버를 사용할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_LUMO_SEATS }개의 ${ LUMO_SHORT_APP_NAME } 계정을 추가할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_SCRIBE_SEATS }개의 Scribe 사용 권한을 추가할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_USERS }명의 사용자를 추가할 수 있습니다."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "체험 기간 동안 사용자 지정 도메인을 추가할 수 없습니다."
+      ],
+      "You have reached the trial limit.": [
+        "무료 체험 한도에 도달했습니다."
       ]
     },
     "b2b_trials_Action": {
@@ -2608,6 +2649,52 @@
       ],
       "Expand": [
         "펼치기"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "고급 AI 모델 이용"
+      ],
+      "Basic chat history": [
+        "기본 채팅 기록"
+      ],
+      "Full chat history with search": [
+        "검색 기능이 포함된 전체 채팅 기록"
+      ],
+      "Large file upload support": [
+        "대용량 파일 업로드 지원"
+      ],
+      "Limited daily chats": [
+        "제한된 일일 채팅"
+      ],
+      "Limited favorites": [
+        "제한된 즐겨찾기"
+      ],
+      "Unlimited daily chats": [
+        "무제한 일일 채팅"
+      ],
+      "Unlimited favorites for quick access": [
+        "빠른 접근을 위한 무제한 즐겨찾기"
+      ],
+      "Upload and query multiple large files": [
+        "다중 대용량 파일 업로드 및 확인"
+      ],
+      "Upload and query small files": [
+        "저용량 파일 업로드 및 확인"
+      ],
+      "Web search access": [
+        "웹 검색 접근"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME }는 사용자의 데이터를 안전하게 보호하면서 더 많은 작업을 수행할 수 있도록 돕는 개인 정보 보호 중심 AI입니다. 모든 잠재력을 활용하고 새로운 기능이 출시될 때 얼리 액세스 혜택을 누려보세요."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME } 추가"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "고속 채팅 및 고급 AI 기능"
       ]
     },
     "color": {
@@ -4506,6 +4593,9 @@
       "Failed to open to contact": [
         "연락처 열기 실패"
       ],
+      "Failed to update secret passphrase": [
+        "암호 문구를 업데이트하는 데에 실패했습니다"
+      ],
       "Filter with this name already exists": [
         "이 이름의 필터가 이미 있습니다"
       ],
@@ -4631,6 +4721,9 @@
       ],
       "Organization key is not decrypted": [
         "조직 키는 해독되지 않았습니다"
+      ],
+      "Passphrase unavailable": [
+        "암호 문구 사용 불가"
       ],
       "Password is required": [
         "비밀번호가 필요함"
@@ -5086,6 +5179,9 @@
     "Error message": {
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME } 에서 추가 비밀번호 설정 시, 별칭을 사용할 수 없습니다."
+      ],
+      "An error occured with the categories": [
+        "카테고리에서 오류가 발생했습니다."
       ],
       "App currently unavailable": [
         "앱에서는 현재 사용 불가합니다."
@@ -5783,11 +5879,17 @@
       "Contacts": [
         "연락처"
       ],
+      "Domain": [
+        "도메인"
+      ],
       "Drawer": [
         "서랍"
       ],
       "Hardware not compatible": [
         "하드웨어가 호환되지 않음"
+      ],
+      "Password ends with": [
+        "비밀번호 마지막 글자"
       ],
       "Report an issue": [
         "문제 보고"
@@ -5806,6 +5908,9 @@
       ],
       "Tell us more": [
         "더 알려주세요"
+      ],
+      "Username": [
+        "사용자 이름"
       ]
     },
     "Hint": {
@@ -6982,6 +7087,9 @@
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "언제든지 이메일에 접근하고 최적화된 모바일 경험을 위해, ${ androidAppLink } 또는 ${ iosAppLink } 을(를)다운로드하세요."
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "추가 보안을 위해 암호 문구를 설정할 수 있습니다. 이는 캘린더 초대에 포함되지 않으므로 초대 손님과 별도로 공유해야 합니다."
       ],
       "For messages newer than ${ oldestDate }": [
         "${ oldestDate } 보다 새로운 메시지의 경우"
@@ -8835,12 +8943,6 @@
       "Also archive": [
         "보관함 포함"
       ],
-      "Always label sender's emails": [
-        "항상 발신자의 이메일에 라벨 지정"
-      ],
-      "Always move sender's emails": [
-        "항상 보낸 사람 이메일 이동"
-      ],
       "AND": [
         "및"
       ],
@@ -9081,6 +9183,9 @@
       "From: ${ fromEmail }": [
         "보낸 사람: ${ fromEmail }"
       ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "이 이메일에 적합한 카테고리를 선택하여 기능 성능을 향상하는데 도와주세요. 도움에 감사드립니다!"
+      ],
       "Help us improve the upcoming mail categorization": [
         "향후 메일의 분류를 개선하는데 도와주세요"
       ],
@@ -9174,9 +9279,6 @@
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } 이동"
       ],
-      "Move messages to": [
-        "다음 위치로 메시지 이동:"
-      ],
       "Move to": [
         "다음으로 이동"
       ],
@@ -9216,6 +9318,9 @@
       "No label found": [
         "라벨 발견되지 않음"
       ],
+      "No results found": [
+        "결과를 찾을 수 없습니다"
+      ],
       "Not factually correct": [
         "별로 정확하지 않습니다"
       ],
@@ -9254,6 +9359,9 @@
       ],
       "Participants": [
         "참가자"
+      ],
+      "Passphrase:": [
+        "암호 문구:"
       ],
       "Password": [
         "암호"
@@ -11058,6 +11166,9 @@
       "Passcode copied to clipboard": [
         "비밀번호를 클립보드에 복사했습니다"
       ],
+      "Passphrase copied to clipboard": [
+        "암호 문구를 클립보드에 복사했습니다"
+      ],
       "Password has been set successfully": [
         "비밀번호가 성공적으로 설정되었습니다"
       ],
@@ -11138,7 +11249,7 @@
         "매년 결제로 구독하여 최고의 할인 혜택을 받아가세요"
       ],
       "Save": [
-        "절약되는 가격:"
+        "할인"
       ],
       "Save big when you pay annually": [
         "매년 결제로 더 크게 절약하세요"
@@ -11836,6 +11947,9 @@
       ],
       "End date": [
         "종료일"
+      ],
+      "Enter passphrase": [
+        "암호 문구 입력"
       ],
       "Filter folders": [
         "폴더 필터"
@@ -13516,7 +13630,7 @@
         "대화가 ${ labelName }에 추가되었습니다."
       ],
       "Conversation deleted": [
-        "대화 지움"
+        "대화를 삭제했어요"
       ],
       "Conversation marked as read.": [
         "대화를 읽음으로 표시했습니다."
@@ -13667,6 +13781,9 @@
       ],
       "Recategorized ${ elementsCount } message.": [
         "${ elementsCount }개 메시지가 재분류되었습니다."
+      ],
+      "Secret passphrase updated": [
+        "비밀 암호 문구가 업데이트되었습니다"
       ],
       "Self-destruction removed": [
         "자동 폭파 삭제됨"
@@ -14089,12 +14206,6 @@
       "Create contact": [
         "연락처 추가"
       ],
-      "Create folder \"${ search }\"": [
-        "\"${ search }\" 폴더 생성"
-      ],
-      "Create label \"${ search }\"": [
-        "\"${ search }\" 라벨 생성"
-      ],
       "Create new group": [
         "새 그룹 만들기"
       ],
@@ -14341,6 +14452,9 @@
       "Label as": [
         "라벨 추가"
       ],
+      "Label message as": [
+        "메시지에 다음으로 라벨 지정"
+      ],
       "Label options": [
         "라벨 옵션"
       ],
@@ -14424,6 +14538,12 @@
       ],
       "Move all messages to trash": [
         "모든 메시지를 휴지통으로 이동"
+      ],
+      "Move message to": [
+        "다음 위치로 메시지 이동:"
+      ],
+      "Move messages to": [
+        "다음 위치로 메시지 이동:"
       ],
       "Move to": [
         "다음으로 이동"
@@ -14627,7 +14747,7 @@
         "플랜 선택"
       ],
       "Select a theme": [
-        "테마를 선택하세요"
+        "좋아하는 테마 선택"
       ],
       "Select action to take on contact group": [
         "연락처 그룹에 대해 수행할 작업 선택"
@@ -14865,6 +14985,9 @@
       ],
       "Your subscriptions in one place": [
         "뉴스레터 구독을 모아보기"
+      ],
+      "✨ Categories are coming!": [
+        "✨ 카테고리를 곧 만나보세요!"
       ]
     },
     "Today icon tooltip in mini calendar": {

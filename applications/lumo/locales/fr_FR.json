@@ -393,6 +393,9 @@
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_DEDICATED_IPS } serveur dédié maximum pendant la version d'essai."
       ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_LUMO_SEATS } accès à ${ LUMO_SHORT_APP_NAME } pendant la période d’essai."
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_SCRIBE_SEATS } accès maximum à Scribe pendant la période d’essai."
       ],
@@ -766,14 +769,26 @@
       ]
     },
     "collider_2025: Action": {
+      "Add from ${ DRIVE_APP_NAME }": [
+        "Ajouter depuis ${ DRIVE_APP_NAME }"
+      ],
+      "Browse ${ DRIVE_SHORT_APP_NAME }": [
+        "Parcourir ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Cancel": [
         "Annuler"
       ],
       "Continue": [
         "Continuer"
       ],
+      "Disable ghost mode": [
+        "Désactiver le mode fantôme"
+      ],
       "Dismiss": [
         "Fermer"
+      ],
+      "Enable ghost mode": [
+        "Activer le mode fantôme"
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus from only ${ price }": [
         "Profitez de ${ LUMO_SHORT_APP_NAME } Plus à partir de seulement ${ price }"
@@ -786,6 +801,9 @@
       ],
       "New chat": [
         "Nouvelle session de chat"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Ouvrir ${ DRIVE_APP_NAME }"
       ],
       "Report an issue": [
         "Signaler un problème"
@@ -804,11 +822,26 @@
       ],
       "Submit": [
         "Envoyer"
+      ],
+      "Try again": [
+        "Essayer à nouveau"
+      ],
+      "Upload a file": [
+        "Importer un fichier"
+      ],
+      "Upload file and add to knowledge base": [
+        "Importer un fichier et l'ajouter à la base de connaissances"
+      ],
+      "Upload from device": [
+        "Importer depuis un appareil"
       ]
     },
     "collider_2025: Button": {
       "Close": [
         "Fermer"
+      ],
+      "Delete all": [
+        "Tout supprimer"
       ],
       "Join waitlist": [
         "Rejoindre la liste d'attente"
@@ -821,6 +854,9 @@
       ],
       "Retry": [
         "Essayer à nouveau"
+      ],
+      "Try it now": [
+        "Essayez-les dès maintenant"
       ],
       "Upload": [
         "Importer"
@@ -865,6 +901,9 @@
       ]
     },
     "collider_2025: Characteristic Title": {
+      "Enter": [
+        "Entrer"
+      ],
       "Only you have access": [
         "Vous seul y avez accès"
       ],
@@ -888,6 +927,9 @@
       ]
     },
     "collider_2025: Description": {
+      "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
+        "Améliorez votre expérience d'IA privée et débloquez des modèles avancés et des fonctionnalités premium avec ${ LUMO_SHORT_APP_NAME } Plus."
+      ],
       "Last updated on ${ DATE_VERSION }": [
         "Dernière mise à jour le ${ DATE_VERSION }"
       ],
@@ -909,8 +951,17 @@
       ]
     },
     "collider_2025: Error": {
+      "Error processing file: ${ file.name }": [
+        "Erreur de traitement du fichier : ${ file.name }"
+      ],
+      "File already added: ${ result.fileName }": [
+        "Fichier déjà ajouté : ${ result.fileName }"
+      ],
       "Please select a category to describe what went wrong with the generated text": [
         "Sélectionnez une catégorie et expliquez ce qui n'a pas fonctionné avec le texte généré."
+      ],
+      "PowerPoint files are not supported. Please convert to PDF and upload the PDF version for better text extraction.": [
+        "Les fichiers PowerPoint ne sont pas pris en charge. Veuillez convertir au format PDF et importer la version PDF pour une meilleure extraction du texte."
       ],
       "Sign up for free to continue chatting and unlock access to chat history, starred chats, and more features.": [
         "Inscrivez-vous gratuitement pour continuer à discuter et débloquer l'accès à l'historique des chats, aux chats favoris et à d'autres fonctionnalités."
@@ -943,6 +994,9 @@
       "${ LUMO_SHORT_APP_NAME }'s a busy cat": [
         "${ LUMO_SHORT_APP_NAME } est un félin bien occupé !"
       ],
+      "Connection interrupted": [
+        "Connexion interrompue"
+      ],
       "Looks like there's a lot of traffic": [
         "Il semble qu’il y ait beaucoup de monde en ligne."
       ],
@@ -958,12 +1012,40 @@
         "Un problème est survenu lors de l'enregistrement de vos commentaires. Réessayez plus tard."
       ]
     },
+    "collider_2025: feature": {
+      "Basic chat history": [
+        "Historique de chat basique"
+      ],
+      "Full chat history with search": [
+        "Historique complet des discussions avec recherche"
+      ],
+      "Limited daily chats": [
+        "Chats quotidiens limités"
+      ],
+      "Unlimited daily chats": [
+        "Chats quotidiens illimités"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoris illimités pour un accès rapide"
+      ],
+      "Upload and query multiple large files": [
+        "Importer et consulter plusieurs fichiers volumineux"
+      ],
+      "Web search access": [
+        "Accès à la recherche web"
+      ]
+    },
     "collider_2025: Feature": {
       "Advanced models": [
         "Modèles avancés"
       ],
       "Web search": [
         "Recherche web"
+      ]
+    },
+    "collider_2025: Guest Signin": {
+      "Save your chats": [
+        "Enregistrez vos chats"
       ]
     },
     "collider_2025: Guest Upsell": {
@@ -977,14 +1059,29 @@
       ]
     },
     "collider_2025: Info": {
+      " of space": [
+        " d'espace"
+      ],
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } est une IA axée sur la confidentialité qui vous aide à accomplir davantage tout en garantissant la sécurité de vos données. Libérez tout son potentiel et profitez d'un accès anticipé aux nouvelles fonctionnalités dès leur introduction."
+      ],
+      "${ LUMO_SHORT_APP_NAME } provide access to advanced models to help with more complex queries and provide better answers": [
+        "${ LUMO_SHORT_APP_NAME } donne accès à des modèles avancés pour aider à gérer des requêtes plus complexes et fournir de meilleures réponses"
       ],
       "1 file": [
         "1 fichier"
       ],
+      "Access ${ DRIVE_APP_NAME }": [
+        "Accéder à ${ DRIVE_APP_NAME }"
+      ],
+      "Active": [
+        "Active"
+      ],
       "Add ${ LUMO_APP_NAME }": [
         "Ajouter ${ LUMO_APP_NAME }"
+      ],
+      "Adding to knowledge base...": [
+        "Ajout à la base de connaissances..."
       ],
       "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
         "Demandez ce que vous voulez à ${ LUMO_SHORT_APP_NAME }"
@@ -1025,6 +1122,9 @@
       "Error Processing File": [
         "Erreur lors du traitement du fichier"
       ],
+      "Exclude file": [
+        "Exclure le fichier"
+      ],
       "files": [
         "fichiers"
       ],
@@ -1040,8 +1140,14 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Ajoutez votre prompt et la réponse pour nous aider à améliorer la précision."
       ],
+      "Loading": [
+        "Chargement"
+      ],
       "Manage files": [
         "Gérer les fichiers"
+      ],
+      "Maybe later": [
+        "Peut-être plus tard"
       ],
       "No Content Available": [
         "Aucun contenu disponible"
@@ -1051,6 +1157,9 @@
       ],
       "No data rows found in this file.": [
         "Aucune ligne de donnée n'a été trouvée dans ce fichier."
+      ],
+      "No files available": [
+        "Aucun fichier disponible"
       ],
       "Note:": [
         "Note :"
@@ -1064,8 +1173,14 @@
       "Please wait for files to finish processing": [
         "Veuillez patienter pendant le traitement des fichiers."
       ],
+      "Press ${ shiftEnterBoldText } to ask": [
+        "Appuyez sur ${ shiftEnterBoldText } pour demander"
+      ],
       "Processed content": [
         "Contenu traité"
+      ],
+      "Processing ${ uploadProgress.fileName }": [
+        "Traitement de ${ uploadProgress.fileName }"
       ],
       "Processing file contents...": [
         "Traitement du contenu du fichier..."
@@ -1112,6 +1227,9 @@
       "Showing first": [
         "Afficher en premier"
       ],
+      "Space usage: ": [
+        "Espace utilisé : "
+      ],
       "Table view": [
         "Vue tableau"
       ],
@@ -1121,6 +1239,9 @@
       "This file appears to be empty or contains no extractable text content.": [
         "Ce fichier semble être vide ou ne contient aucun contenu textuel à extraire."
       ],
+      "This folder is empty": [
+        "Ce dossier est vide"
+      ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Pour pouvoir consulter cette conversation plus tard, connectez-vous ou créez un compte."
       ],
@@ -1129,6 +1250,12 @@
       ],
       "Unsupported File Type": [
         "Type de fichier non pris en charge"
+      ],
+      "Uploading ${ uploadProgress.fileName }": [
+        "Importation de ${ uploadProgress.fileName }"
+      ],
+      "used": [
+        "utilisée"
       ],
       "Watch for misspellings (e.g., proton.me vs pr0t0n.me)": [
         "Attention aux fautes d'orthographe (par exemple, proton.me vs pr0t0n.me)"
@@ -1210,6 +1337,22 @@
         "Dangereux ou problématique"
       ]
     },
+    "collider_2025: Legal disclaimer": {
+      "and": [
+        "et"
+      ],
+      "By using ${ LUMO_SHORT_APP_NAME }, you agree to our": [
+        "En utilisant ${ LUMO_SHORT_APP_NAME }, vous acceptez nos"
+      ]
+    },
+    "collider_2025: Legal link": {
+      "Privacy Policy": [
+        "Politique de confidentialité"
+      ],
+      "Terms": [
+        "Conditions générales d'utilisation"
+      ]
+    },
     "collider_2025: Link": {
       " contact your admin": [
         " contactez votre administrateur"
@@ -1269,7 +1412,15 @@
         "Général"
       ]
     },
+    "collider_2025: Status": {
+      "${ LUMO_SHORT_APP_NAME }+ is included in your Visionary plan and you have access to these features:": [
+        "${ LUMO_SHORT_APP_NAME }+ est inclus dans votre abonnement Visionary et vous avez accès à ces fonctionnalités :"
+      ]
+    },
     "collider_2025: Success": {
+      "All chats deleted successfully": [
+        "Toutes les conversations ont été supprimées."
+      ],
       "Thanks for the feedback!": [
         "Merci pour les commentaires."
       ]
@@ -1305,6 +1456,9 @@
       "Upload files": [
         "Importer des fichiers"
       ],
+      "Visionary": [
+        "Visionary"
+      ],
       "You're on the list": [
         "Vous êtes sur la liste."
       ],
@@ -1336,6 +1490,11 @@
         "Votre historique de chat est limité à 7 jours. Pour un historique de chat étendu et d'autres fonctionnalités premium, "
       ]
     },
+    "collider_2025: Upsell Title": {
+      "Get": [
+        "Obtenir"
+      ]
+    },
     "collider_2025: Waitlist Info": {
       "Thanks for joining the waitlist. We’ll email you when you can start chatting with ${ LUMO_SHORT_APP_NAME }.": [
         "Merci d'avoir rejoint la liste d'attente. Nous vous enverrons un e-mail lorsque vous pourrez commencer à discuter avec ${ LUMO_SHORT_APP_NAME }."
@@ -1348,6 +1507,9 @@
       ]
     },
     "collider_2025: Warning": {
+      "${ LUMO_SHORT_APP_NAME }'s a busy cat": [
+        "${ LUMO_SHORT_APP_NAME } est un félin bien occupé !"
+      ],
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
         "Suspect : ${ urlParts.subdomainCount } sous-domaine",
         "Suspect : ${ urlParts.subdomainCount } sous-domaines"
@@ -1359,8 +1521,14 @@
       ]
     },
     "collider_2025:Action": {
+      "Add details": [
+        "Ajouter des informations"
+      ],
       "Cancel": [
         "Annuler"
+      ],
+      "More concise": [
+        "Plus concis"
       ],
       "Next message": [
         "Message suivant"
@@ -1373,11 +1541,23 @@
       ],
       "Remove file": [
         "Supprimer le fichier"
+      ],
+      "Think longer": [
+        "Réfléchir plus longtemps"
+      ],
+      "Try again": [
+        "Essayer à nouveau"
+      ],
+      "What needs changed?": [
+        "Que faut-il modifier ?"
       ]
     },
     "collider_2025:Button": {
       "Cancel": [
         "Annuler"
+      ],
+      "Close sidebar": [
+        "Fermer la barre latérale"
       ],
       "Edit": [
         "Modifier"
@@ -1391,8 +1571,17 @@
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Profitez de ${ LUMO_SHORT_APP_NAME } Plus"
       ],
+      "Help and support": [
+        "Aide et support"
+      ],
+      "Hide sidebar": [
+        "Masquer la barre latérale"
+      ],
       "New chat": [
         "Nouvelle session de chat"
+      ],
+      "Search": [
+        "Recherche"
       ],
       "Send": [
         "Envoyer"
@@ -1425,6 +1614,9 @@
       ],
       "This message is empty. Sorry about that.": [
         "Ce message est vide. Nous en sommes désolés."
+      ],
+      "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
+        "Vos fichiers sont volumineux. ${ LUMO_SHORT_APP_NAME } ne pourra peut-être pas traiter toutes les informations."
       ]
     },
     "collider_2025:Label": {
@@ -1443,6 +1635,9 @@
       ],
       "Processing files, please wait...": [
         "Traitement des fichiers. Veuillez patienter..."
+      ],
+      "Search chats": [
+        "Rechercher des chats"
       ]
     },
     "collider_2025:Title": {
@@ -1458,6 +1653,9 @@
       "Favorites": [
         "Favoris"
       ],
+      "Ghost mode": [
+        "Mode fantôme"
+      ],
       "Hello! How can I help you today?": [
         "Bonjour ! Comment puis-je vous être utile ?"
       ],
@@ -1469,6 +1667,9 @@
       ],
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "Comment ${ LUMO_SHORT_APP_NAME } assure-t-il la confidentialité de vos conversations ?"
+      ],
+      "Introducing ${ LUMO_SHORT_APP_NAME } 1.1": [
+        "Voici ${ LUMO_SHORT_APP_NAME } 1.1"
       ],
       "Last 30 days": [
         "Les 30 derniers jours"
@@ -1490,6 +1691,9 @@
       ],
       "Today": [
         "Aujourd'hui"
+      ],
+      "What's new": [
+        "Nouveautés"
       ],
       "Whatever you ask me is:": [
         "Tout ce que vous me demandez est :"

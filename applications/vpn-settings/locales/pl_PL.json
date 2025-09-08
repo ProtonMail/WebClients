@@ -10259,9 +10259,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Uwierzytelnianie dwustopniowe nie jest wymagane"
-      ],
-      "Video conferencing settings have been updated": [
-        "Ustawienia wideokonferencji zostały zaktualizowane"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10328,7 +10325,7 @@
         "Płać rocznie i uzyskaj najlepszą ofertę"
       ],
       "Save": [
-        "Zapisz"
+        "Oszczędź"
       ],
       "Save big when you pay annually": [
         "Zaoszczędź więcej przy płatności rocznej"
@@ -11943,25 +11940,25 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Masz ${ timeRemaining.inDays } dzień na zresetowanie hasła.",
         "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inDays } dnia na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
         "Masz ${ timeRemaining.inDays } dnia na zresetowanie hasła."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Masz ${ timeRemaining.inHours } godzinę na zresetowanie hasła.",
         "Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła.",
         "Masz ${ timeRemaining.inHours } godzin na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inHours } godzin na zresetowanie hasła."
+        "Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Masz ${ timeRemaining.inMinutes } minutę na zresetowanie hasła.",
         "Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła.",
         "Masz ${ timeRemaining.inMinutes } minut na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inMinutes } minut na zresetowanie hasła."
+        "Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Masz ${ timeRemaining.inSeconds } sekundę na zresetowanie hasła.",
         "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inSeconds } sekund na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła.",
         "Masz ${ timeRemaining.inSeconds } sekund na zresetowanie hasła."
       ]
     },
@@ -12047,7 +12044,7 @@
         "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godzinę.",
         "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godziny.",
         "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godzin.",
-        "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours."
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godziny."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Aby upewnić się, że to Ty próbujesz zresetować hasło, czekamy 72 godziny przed zatwierdzeniem żądań. Hasło możesz zmienić za ${ boldTimeLeft }. ${ viewRequest }"
@@ -13013,7 +13010,7 @@
         "${ planNumberOfCalendars } kalendarz na użytkownika",
         "${ planNumberOfCalendars } kalendarze na użytkownika",
         "${ planNumberOfCalendars } kalendarzy na użytkownika",
-        "${ planNumberOfCalendars } kalendarzy na użytkownika"
+        "${ planNumberOfCalendars } kalendarza na użytkownika"
       ],
       "${ planNumberOfDomains } custom email domain": [
         "${ planNumberOfDomains } niestandardowa domena",
@@ -14709,9 +14706,6 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorzy mogą zarządzać kontami użytkowników i nadawać uprawnienia administratora innym użytkownikom. Tylko główny administrator może edytować plan organizacji."
-      ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Zezwalaj na dodawanie linków do wideokonferencji w zaproszeniach."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Przełączaj się między motywami na dzień i noc, synchronizując je z systemowymi trybami dziennymi i nocnymi"
