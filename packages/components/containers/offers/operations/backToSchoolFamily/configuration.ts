@@ -11,7 +11,6 @@ export const backToSchoolFamily: OfferConfig = {
     ID: 'back-to-school-family',
     title: getBackToSchoolTitle,
     featureCode: FeatureCode.OfferBackToSchoolFamily,
-    autoPopUp: 'one-time',
     canBeDisabled: true,
     deals: [
         {
