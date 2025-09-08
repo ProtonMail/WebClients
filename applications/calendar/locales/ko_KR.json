@@ -89,6 +89,9 @@
       "Add public holidays": [
         "공휴일 추가"
       ],
+      "Add secret passphrase": [
+        "비밀 암호 문구 추가"
+      ],
       "Add to group": [
         "그룹에 추가"
       ],
@@ -470,6 +473,9 @@
       "Join calendar": [
         "캘린더 가입"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }로 참여하기"
+      ],
       "Keep current time zone": [
         "현재 시간대 유지하기"
       ],
@@ -596,6 +602,9 @@
       "Open settings": [
         "설정 열기"
       ],
+      "Passphrase": [
+        "암호 문구"
+      ],
       "Pause indexing": [
         "인덱싱 일시 정지"
       ],
@@ -688,6 +697,9 @@
       ],
       "Resume indexing": [
         "인덱싱 다시 시작"
+      ],
+      "Retry": [
+        "재시도"
       ],
       "Save": [
         "저장"
@@ -844,6 +856,9 @@
       ],
       "Update recovery phrase": [
         "복구 코드 변경"
+      ],
+      "Update secret passphrase": [
+        "비밀 암호 문구 업데이트"
       ],
       "Upgrade": [
         "업그레이드"
@@ -1210,6 +1225,32 @@
     "Attendee role": {
       "Optional": [
         "선택 사항"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }에 체험이 종료된 후, ${ formattedDate }에 ${ renewCycle }개월마다 자동 갱신되는 유료 구독으로 전환됩니다. ${ formattedDate } 이전에 취소시 요금이 부과되지 않습니다."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }에 체험이 종료된 후, 유료 구독으로 전환되어 매월 ${ formattedDate }에 자동 갱신됩니다. ${ formattedDate } 이전에 취소시 요금이 청구되지 않습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_DEDICATED_IPS }개의 전용 서버를 사용할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_LUMO_SEATS }개의 ${ LUMO_SHORT_APP_NAME } 계정을 추가할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_SCRIBE_SEATS }개의 Scribe 사용 권한을 추가할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_USERS }명의 사용자를 추가할 수 있습니다."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "체험 기간 동안 사용자 지정 도메인을 추가할 수 없습니다."
+      ],
+      "You have reached the trial limit.": [
+        "무료 체험 한도에 도달했습니다."
       ]
     },
     "b2b_trials_Action": {
@@ -1767,6 +1808,52 @@
       ],
       "Expand": [
         "펼치기"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "고급 AI 모델 이용"
+      ],
+      "Basic chat history": [
+        "기본 채팅 기록"
+      ],
+      "Full chat history with search": [
+        "검색 기능이 포함된 전체 채팅 기록"
+      ],
+      "Large file upload support": [
+        "대용량 파일 업로드 지원"
+      ],
+      "Limited daily chats": [
+        "제한된 일일 채팅"
+      ],
+      "Limited favorites": [
+        "제한된 즐겨찾기"
+      ],
+      "Unlimited daily chats": [
+        "무제한 일일 채팅"
+      ],
+      "Unlimited favorites for quick access": [
+        "빠른 접근을 위한 무제한 즐겨찾기"
+      ],
+      "Upload and query multiple large files": [
+        "다중 대용량 파일 업로드 및 확인"
+      ],
+      "Upload and query small files": [
+        "저용량 파일 업로드 및 확인"
+      ],
+      "Web search access": [
+        "웹 검색 접근"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME }는 사용자의 데이터를 안전하게 보호하면서 더 많은 작업을 수행할 수 있도록 돕는 개인 정보 보호 중심 AI입니다. 모든 잠재력을 활용하고 새로운 기능이 출시될 때 얼리 액세스 혜택을 누려보세요."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME } 추가"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "고속 채팅 및 고급 AI 기능"
       ]
     },
     "colon": {
@@ -3426,8 +3513,14 @@
       "Event not found": [
         "이벤트를 찾을 수 없음"
       ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "${ MEET_APP_NAME } 화상 회의 생성 실패"
+      ],
       "Failed to create meeting": [
         "회의 만들기 실패"
+      ],
+      "Failed to decrypt session key": [
+        "세션 키 복호화 실패"
       ],
       "Failed to get event": [
         "이벤트 게시 실패"
@@ -3440,6 +3533,9 @@
       ],
       "Failed to open to contact": [
         "연락처 열기 실패"
+      ],
+      "Failed to update secret passphrase": [
+        "암호 문구를 업데이트하는 데에 실패했습니다"
       ],
       "First name is too long": [
         "이름이 너무 깁니다."
@@ -3566,6 +3662,9 @@
       ],
       "Organization key is not decrypted": [
         "조직 키는 해독되지 않았습니다"
+      ],
+      "Passphrase unavailable": [
+        "암호 문구 사용 불가"
       ],
       "Password is required": [
         "비밀번호가 필요함"
@@ -4356,11 +4455,17 @@
       "Contacts": [
         "연락처"
       ],
+      "Domain": [
+        "도메인"
+      ],
       "Drawer": [
         "서랍"
       ],
       "Name": [
         "이름"
+      ],
+      "Password ends with": [
+        "비밀번호 마지막 글자"
       ],
       "Repeat event": [
         "일정 반복"
@@ -4370,6 +4475,9 @@
       ],
       "Security Center": [
         "보안 센터"
+      ],
+      "Username": [
+        "사용자 이름"
       ]
     },
     "Hint": {
@@ -5168,8 +5276,17 @@
       "Expired": [
         "만료됨"
       ],
+      "Failed to update meeting name": [
+        "미팅 이름 업데이트 실패"
+      ],
+      "Failed to update meeting password": [
+        "미팅 암호 업데이트 실패"
+      ],
       "finance": [
         "금융정보"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "추가 보안을 위해 암호 문구를 설정할 수 있습니다. 이는 캘린더 초대에 포함되지 않으므로 초대 손님과 별도로 공유해야 합니다."
       ],
       "Frequency modifications will be lost.": [
         "빈도 수정사항을 잃게 됩니다."
@@ -6201,6 +6318,9 @@
       "Account holder": [
         "예금주"
       ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "${ MEET_APP_NAME } 회의 추가"
+      ],
       "Add email address": [
         "이메일 주소 추가"
       ],
@@ -6209,6 +6329,9 @@
       ],
       "Add to group": [
         "그룹에 추가"
+      ],
+      "Add Zoom meeting": [
+        "줌 미팅 추가"
       ],
       "Address": [
         "주소"
@@ -6513,6 +6636,9 @@
       "Participants": [
         "참가자"
       ],
+      "Passphrase:": [
+        "암호 문구:"
+      ],
       "Password": [
         "암호"
       ],
@@ -6627,6 +6753,9 @@
       "Verification code": [
         "인증 코드"
       ],
+      "Video conference": [
+        "화상 회의"
+      ],
       "Vulnerable": [
         "취약함"
       ],
@@ -6671,6 +6800,9 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "Zoom meeting": [
+        "줌 미팅"
       ]
     },
     "Label for contact group color": {
@@ -8073,6 +8205,9 @@
       ],
       "Passcode copied to clipboard": [
         "비밀번호를 클립보드에 복사했습니다"
+      ],
+      "Passphrase copied to clipboard": [
+        "암호 문구를 클립보드에 복사했습니다"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8260,7 +8395,7 @@
         "매년 결제로 구독하여 최고의 할인 혜택을 받아가세요"
       ],
       "Save": [
-        "절약되는 가격:"
+        "할인"
       ],
       "Save big when you pay annually": [
         "매년 결제로 더 크게 절약하세요"
@@ -8842,6 +8977,9 @@
       ],
       "E.g., ": [
         "예, "
+      ],
+      "Enter passphrase": [
+        "암호 문구 입력"
       ],
       "Filter groups": [
         "필터 그룹"
@@ -9641,6 +9779,9 @@
       "Invite friends to ${ BRAND_NAME }": [
         "친구를 ${ BRAND_NAME }에 초대하세요."
       ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "당신의 캘린더에서 바로 ${ MEET_APP_NAME } 통화 일정을 잡고 참여하세요."
+      ],
       "Seamlessly create and add video meeting links to your events.": [
         "이벤트에 화상 회의 링크를 원활히 생성 및 추가하세요."
       ],
@@ -10332,6 +10473,9 @@
       ],
       "Problem reported": [
         "문제 제보됨"
+      ],
+      "Secret passphrase updated": [
+        "비밀 암호 문구가 업데이트되었습니다"
       ],
       "Undo in progress": [
         "실행 취소 중"

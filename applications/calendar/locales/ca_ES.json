@@ -89,6 +89,9 @@
       "Add public holidays": [
         "Afegeix dies festius"
       ],
+      "Add secret passphrase": [
+        "Afegeix una frase de contrasenya secreta"
+      ],
       "Add to group": [
         "Afegeix al grup"
       ],
@@ -473,6 +476,9 @@
       "Join calendar": [
         "Uneix-me al calendari"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Uniu-vos amb ${ MEET_APP_NAME }"
+      ],
       "Keep current time zone": [
         "Mantén la zona horària actual"
       ],
@@ -599,6 +605,9 @@
       "Open settings": [
         "Obre les preferències"
       ],
+      "Passphrase": [
+        "Frase de contrasenya"
+      ],
       "Pause indexing": [
         "Posa la indexació en pausa"
       ],
@@ -691,6 +700,9 @@
       ],
       "Resume indexing": [
         "Continua la indexació"
+      ],
+      "Retry": [
+        "Reintenta"
       ],
       "Save": [
         "Desa"
@@ -847,6 +859,9 @@
       ],
       "Update recovery phrase": [
         "Actualitza la frase de recuperació"
+      ],
+      "Update secret passphrase": [
+        "Actualitza la frase de contrasenya secreta"
       ],
       "Upgrade": [
         "Millora"
@@ -1222,6 +1237,32 @@
         "Opcional"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Un cop finalitzat el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos el ${ formattedDate }. No se us carregarà cap import si la cancel·leu abans del ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada mes el ${ formattedDate }. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_DEDICATED_IPS } servidors dedicats durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_LUMO_SEATS } llicències de ${ LUMO_SHORT_APP_NAME } durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències Scribe durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_USERS } usuaris durant el període de prova."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "No podeu afegir dominis personalitzats durant el període de prova."
+      ],
+      "You have reached the trial limit.": [
+        "Heu arribat al límit de la prova."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Cancel·la la subscripció"
@@ -1459,6 +1500,9 @@
       ],
       "Manual setup problem": [
         "Problema de configuració manual"
+      ],
+      "Meet problem": [
+        "Coneix el problema"
       ],
       "Other": [
         "Altres"
@@ -1784,6 +1828,52 @@
       ],
       "Expand": [
         "Amplia"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Accés a models d'IA avançats"
+      ],
+      "Basic chat history": [
+        "Historial de xat bàsic"
+      ],
+      "Full chat history with search": [
+        "Historial de xat complet amb cerca"
+      ],
+      "Large file upload support": [
+        "Suport per a la càrrega de fitxers grans"
+      ],
+      "Limited daily chats": [
+        "Nombre de xats diaris limitat"
+      ],
+      "Limited favorites": [
+        "Nombre de preferits limitat"
+      ],
+      "Unlimited daily chats": [
+        "Xats diaris sense límits"
+      ],
+      "Unlimited favorites for quick access": [
+        "Preferits il·limitats per a un accés ràpid"
+      ],
+      "Upload and query multiple large files": [
+        "Carregueu i consulteu múltiples fitxers grans"
+      ],
+      "Upload and query small files": [
+        "Carregueu i consulteu fitxers petits"
+      ],
+      "Web search access": [
+        "Accés a la cerca web"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } és una IA que prioritza la privadesa i que us ajuda a fer més coses mantenint les vostres dades segures. Activeu-ne tot el potencial i gaudiu d'accés anticipat a noves característiques a mesura que s'introdueixin."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Afegiu ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Xats d'alta velocitat i característiques d'IA avançades."
       ]
     },
     "colon": {
@@ -3454,8 +3544,14 @@
       "Event not found": [
         "No s'ha trobat l'esdeveniment."
       ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "No s'ha pogut crear la videoconferència de ${ MEET_APP_NAME }"
+      ],
       "Failed to create meeting": [
         "No s'ha pogut crear la reunió."
+      ],
+      "Failed to decrypt session key": [
+        "No s'ha pogut desxifrar la clau de sessió"
       ],
       "Failed to get event": [
         "No s'ha pogut obtenir l'esdeveniment."
@@ -3468,6 +3564,9 @@
       ],
       "Failed to open to contact": [
         "No s'ha pogut obrir el contacte"
+      ],
+      "Failed to update secret passphrase": [
+        "No s'ha pogut actualitzar la frase de contrasenya secreta"
       ],
       "First name is too long": [
         "El nom és massa llarg."
@@ -3597,6 +3696,9 @@
       ],
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
+      ],
+      "Passphrase unavailable": [
+        "Frase de contrasenya no disponible"
       ],
       "Password is required": [
         "La contrasenya és obligatòria"
@@ -5253,8 +5355,17 @@
       "Expired": [
         "Caducat"
       ],
+      "Failed to update meeting name": [
+        "No s'ha pogut actualitzar el nom de la reunió"
+      ],
+      "Failed to update meeting password": [
+        "No s'ha pogut actualitzar la contrasenya de la reunió"
+      ],
       "finance": [
         "finances"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Per a més seguretat, podeu establir una frase de contrasenya. No s'inclourà a la invitació del calendari, recordeu de compartir-la amb els vostres convidats per separat."
       ],
       "Frequency modifications will be lost.": [
         "Es perdran les modificacions de freqüència."
@@ -6299,6 +6410,9 @@
       "Account holder": [
         "Titular del compte"
       ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "Afegeix videoconferència de ${ MEET_APP_NAME }"
+      ],
       "Add email address": [
         "Afegeix una adreça de correu electrònic"
       ],
@@ -6307,6 +6421,9 @@
       ],
       "Add to group": [
         "Afegeix al grup"
+      ],
+      "Add Zoom meeting": [
+        "Afegeix una reunió de Zoom"
       ],
       "Address": [
         "Adreça"
@@ -6612,6 +6729,9 @@
       "Participants": [
         "Participants"
       ],
+      "Passphrase:": [
+        "Frase de contrasenya:"
+      ],
       "Password": [
         "Contrasenya"
       ],
@@ -6726,6 +6846,9 @@
       "Verification code": [
         "Codi de verificació"
       ],
+      "Video conference": [
+        "Videoconferència"
+      ],
       "Vulnerable": [
         "Vulnerable"
       ],
@@ -6770,6 +6893,9 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Zoom meeting": [
+        "Reunió de Zoom"
       ]
     },
     "Label for contact group color": {
@@ -6966,7 +7092,7 @@
     },
     "locked_state_storage_banner: info": {
       "Learn more": [
-        "Per saber-ne més"
+        "Més informació"
       ],
       "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
         "Per continuar utilitzant ${ BRAND_NAME }, assegureu-vos que les vostres característiques prèmium ja no s'utilitzen o milloreu el pla."
@@ -8207,6 +8333,9 @@
       ],
       "Passcode copied to clipboard": [
         "El codi d'accés s'ha copiat al porta-retalls."
+      ],
+      "Passphrase copied to clipboard": [
+        "La frase de contrasenya s'ha copiat al porta-retalls"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8940,7 +9069,7 @@
         "Número d’identificació fiscal (EIN)"
       ],
       "VAT number": [
-        "NIF"
+        "Número d'IVA"
       ]
     },
     "PGP key encryption warning": {
@@ -9006,6 +9135,9 @@
       ],
       "E.g., ": [
         "Ex., "
+      ],
+      "Enter passphrase": [
+        "Introduïu la frase de contrasenya"
       ],
       "Filter groups": [
         "Filtra grups"
@@ -9436,7 +9568,7 @@
         "Fet"
       ],
       "Learn more": [
-        "Per saber-ne més"
+        "Més informació"
       ]
     },
     "session_recovery:in_progress:info": {
@@ -9814,6 +9946,9 @@
       ]
     },
     "Spotlight": {
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } ja és aquí!"
+      ],
       "Color-code your calendar to better organize your day, track your time, and more.": [
         "Codifiqueu amb colors el vostre calendari per a organitzar millor el dia, fer un seguiment del vostre temps, etc."
       ],
@@ -9825,6 +9960,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convida amistats a ${ BRAND_NAME }"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Programeu i uniu-vos a les trucades de ${ MEET_APP_NAME } directament des del vostre calendari."
       ],
       "Seamlessly create and add video meeting links to your events.": [
         "Creeu i afegiu enllaços de videotrucades als vostres esdeveniments."
@@ -10188,7 +10326,7 @@
         "Mantingueu el vostre equip segur en qualsevol lloc amb les nostres aplicacions per a web, iOS, Android, Windows, Mac i Linux."
       ],
       "Learn more": [
-        "Per saber-ne més"
+        "Més informació"
       ],
       "Learn more about our impact": [
         "Descobriu més sobre el nostre impacte"
@@ -10533,6 +10671,9 @@
       ],
       "Problem reported": [
         "S'ha notificat el problema."
+      ],
+      "Secret passphrase updated": [
+        "S'ha actualitzat la frase de contrasenya secreta"
       ],
       "Undo in progress": [
         "S'està desfent"
@@ -10948,7 +11089,7 @@
         "Configuració del correu"
       ],
       "Enable 2FA": [
-        "Activi l'autenticació 2FA"
+        "Activa el 2FA"
       ],
       "Enable advanced account protection": [
         "Activació de la protecció avançada del compte"

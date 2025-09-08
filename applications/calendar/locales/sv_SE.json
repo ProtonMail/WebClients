@@ -89,6 +89,9 @@
       "Add public holidays": [
         "Lägg till allmänna helgdagar"
       ],
+      "Add secret passphrase": [
+        "Lägg till hemlig lösenfras"
+      ],
       "Add to group": [
         "Lägg till i grupp"
       ],
@@ -473,6 +476,9 @@
       "Join calendar": [
         "Gå med i kalender"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Gå med i ${ MEET_APP_NAME }"
+      ],
       "Keep current time zone": [
         "Behåll nuvarande tidszon"
       ],
@@ -599,6 +605,9 @@
       "Open settings": [
         "Öppna inställningar"
       ],
+      "Passphrase": [
+        "Lösenfras"
+      ],
       "Pause indexing": [
         "Pausa indexering"
       ],
@@ -691,6 +700,9 @@
       ],
       "Resume indexing": [
         "Återuppta indexering"
+      ],
+      "Retry": [
+        "Försök igen"
       ],
       "Save": [
         "Spara"
@@ -847,6 +859,9 @@
       ],
       "Update recovery phrase": [
         "Uppdatera återställningsfras"
+      ],
+      "Update secret passphrase": [
+        "Uppdatera hemlig lösenfras"
       ],
       "Upgrade": [
         "Uppgradera"
@@ -1219,6 +1234,23 @@
         "Valfritt"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_DEDICATED_IPS } dedikerad server under provperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-licenser under provperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-licenser under provperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_USERS } användare under provperioden."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Du kan inte lägga till anpassade domäner under provperioden."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Avsluta prenumeration"
@@ -1366,8 +1398,8 @@
         "Säkra inloggningar på alla dina enheter. Inkluderar obegränsat antal hide-my-email-alias, delning, integrerad 2FA, ${ DARK_WEB_MONITORING_NAME } och mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Säkra dina mail och schemalägg med end-to-end kryptering, det inkluderar ${ addresses } e-postadress, stöd for anpassade e-postdomäner, obegränsade hide-my-email-alias och mer.",
-        "Säkra dina mail och schemalägg med end-to-end kryptering, det inkluderar ${ addresses } e-postadresser, stöd for anpassade e-postdomäner, obegränsade hide-my-email-alias och mer."
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer.",
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadresser, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer."
@@ -1737,7 +1769,7 @@
         "Krypterad lösenordshanterare"
       ],
       "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
-        "Vårt grundläggande gratispaket med krypterad e-post och lagringsutrymme. Inga premiumfunktioner inkluderade."
+        "Vårt grundläggande gratispaket med end-to-end krypterad e-post och lagringsutrymme. Inga premiumfunktioner inkluderade."
       ],
       "Save ${ upsellSavings }": [
         "Spara ${ upsellSavings }"
@@ -1777,6 +1809,40 @@
       ],
       "Expand": [
         "Expandera"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Åtkomst till avancerade AI-modeller"
+      ],
+      "Basic chat history": [
+        "Grundläggande chatthistorik"
+      ],
+      "Full chat history with search": [
+        "Fullständig chatthistorik med sök"
+      ],
+      "Large file upload support": [
+        "Stöd för stora filuppladdningar"
+      ],
+      "Limited daily chats": [
+        "Begränsat antal dagliga chattar"
+      ],
+      "Limited favorites": [
+        "Begränsat antal favoriter"
+      ],
+      "Unlimited daily chats": [
+        "Obegränsat antal dagliga chattar"
+      ],
+      "Unlimited favorites for quick access": [
+        "Obegränsade favoriter för snabb åtkomst"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } är en AI som prioriterar integritet som hjälper dig att få mer gjort samtidigt som dina data hålls säkra. Lås upp dess fulla potential och njut av förhandstillgång till nya funktioner allt eftersom de introduceras."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Lägg till ${ LUMO_APP_NAME }"
       ]
     },
     "colon": {
@@ -3450,6 +3516,9 @@
       "Failed to create meeting": [
         "Misslyckades att skapa möte"
       ],
+      "Failed to decrypt session key": [
+        "Misslyckades att avkryptera sessionsnyckel"
+      ],
       "Failed to get event": [
         "Misslyckades att hämta händelse"
       ],
@@ -3461,6 +3530,9 @@
       ],
       "Failed to open to contact": [
         "Misslyckades att öppna kontakt"
+      ],
+      "Failed to update secret passphrase": [
+        "Misslyckades att uppdatera hemlig lösenfras"
       ],
       "First name is too long": [
         "Förnamn är för långt"
@@ -3590,6 +3662,9 @@
       ],
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
+      ],
+      "Passphrase unavailable": [
+        "Lösenfras otillgänglig"
       ],
       "Password is required": [
         "Lösenord är obligatoriskt"
@@ -5243,8 +5318,17 @@
       "Expired": [
         "Löpt ut"
       ],
+      "Failed to update meeting name": [
+        "Misslyckades att uppdatera mötesnamn"
+      ],
+      "Failed to update meeting password": [
+        "Misslyckades att uppdatera möteslösenord"
+      ],
       "finance": [
         "finans"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "För extra säkerhet kan du ställa in en lösenfras. Den kommer inte att inkluderas i kalenderinbjudan, kom ihåg att dela den med dina gäster separat."
       ],
       "Frequency modifications will be lost.": [
         "Frekvensändringar kommer att gå förlorade."
@@ -6289,6 +6373,9 @@
       "Add to group": [
         "Lägg till i grupp"
       ],
+      "Add Zoom meeting": [
+        "Lägg till Zoom-möte"
+      ],
       "Address": [
         "Adress"
       ],
@@ -6593,6 +6680,9 @@
       "Participants": [
         "Deltagare"
       ],
+      "Passphrase:": [
+        "Lösenfras:"
+      ],
       "Password": [
         "Lösenord"
       ],
@@ -6707,6 +6797,9 @@
       "Verification code": [
         "Verifieringskod"
       ],
+      "Video conference": [
+        "Videokonferens"
+      ],
       "Vulnerable": [
         "Sårbart"
       ],
@@ -6751,6 +6844,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Zoom meeting": [
+        "Zoom-möte"
       ]
     },
     "Label for contact group color": {
@@ -8193,6 +8289,9 @@
       ],
       "Passcode copied to clipboard": [
         "Lösenkod kopierat till urklipp"
+      ],
+      "Passphrase copied to clipboard": [
+        "Lösenfras kopierat till urklipp"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8968,6 +9067,9 @@
       ],
       "E.g., ": [
         "T.ex., "
+      ],
+      "Enter passphrase": [
+        "Ange lösenfras"
       ],
       "Filter groups": [
         "Filtrera grupper"
@@ -9776,6 +9878,9 @@
       ]
     },
     "Spotlight": {
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } är här!"
+      ],
       "Color-code your calendar to better organize your day, track your time, and more.": [
         "Färgkoda din kalender för att bättre organisera din dag, hålla koll på din tid och mer."
       ],
@@ -10495,6 +10600,9 @@
       ],
       "Problem reported": [
         "Problem rapporterat"
+      ],
+      "Secret passphrase updated": [
+        "Hemlig lösenfras uppdaterad"
       ],
       "Undo in progress": [
         "Ångra pågår"

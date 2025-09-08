@@ -89,6 +89,9 @@
       "Add public holidays": [
         "Adăugare sărbători publice"
       ],
+      "Add secret passphrase": [
+        "Adăugare frază de acces secretă"
+      ],
       "Add to group": [
         "Adăugare la grup"
       ],
@@ -476,6 +479,9 @@
       "Join calendar": [
         "Alăturare la calendar"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Alăturați-vă cu ${ MEET_APP_NAME }"
+      ],
       "Keep current time zone": [
         "Păstrare fus orar actual"
       ],
@@ -602,6 +608,9 @@
       "Open settings": [
         "Deschidere setări"
       ],
+      "Passphrase": [
+        "Fraza de acces"
+      ],
       "Pause indexing": [
         "Pauză indexare"
       ],
@@ -694,6 +703,9 @@
       ],
       "Resume indexing": [
         "Reluare indexare"
+      ],
+      "Retry": [
+        "Reîncercare"
       ],
       "Save": [
         "Salvare"
@@ -850,6 +862,9 @@
       ],
       "Update recovery phrase": [
         "Actualizare frază de recuperare"
+      ],
+      "Update secret passphrase": [
+        "Actualizare frază secretă de acces"
       ],
       "Upgrade": [
         "Modificare"
@@ -1232,6 +1247,32 @@
         "Opțional"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce se încheie perioada de probare la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni, la ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce probarea se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat lunar la data de ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licențe în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe Scribe în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_USERS } utilizatori în perioada de probare."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Nu puteți adăuga domenii personale în perioada de probare."
+      ],
+      "You have reached the trial limit.": [
+        "Ați atins limita perioadei de probare."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Anulare abonament"
@@ -1471,6 +1512,9 @@
       ],
       "Manual setup problem": [
         "Problemă setare manuală"
+      ],
+      "Meet problem": [
+        "Problemă Meet"
       ],
       "Other": [
         "Altele"
@@ -1801,6 +1845,52 @@
       ],
       "Expand": [
         "Extindere"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acces la modele AI avansate"
+      ],
+      "Basic chat history": [
+        "Istoric de bază conversații"
+      ],
+      "Full chat history with search": [
+        "Istoric complet al conversațiilor cu căutare"
+      ],
+      "Large file upload support": [
+        "Acceptare încărcare fișiere mari"
+      ],
+      "Limited daily chats": [
+        "Conversații zilnice limitate"
+      ],
+      "Limited favorites": [
+        "Favorite limitate"
+      ],
+      "Unlimited daily chats": [
+        "Conversații zilnice nelimitate"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favorite nelimitate pentru o accesare rapidă"
+      ],
+      "Upload and query multiple large files": [
+        "Încărcați și interogați mai multe fișiere mari"
+      ],
+      "Upload and query small files": [
+        "Încărcați și interogați fișiere mici"
+      ],
+      "Web search access": [
+        "Acces la căutare pe internet"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } este o aplicație de inteligență artificială axată pe confidențialitate, care vă ajută să realizați mai mult, păstrându-vă în același timp datele în siguranță. Deblocați-i întregul potențial și bucurați-vă de acces timpuriu la noile funcții pe măsură ce sunt introduse."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Adăugare ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Conversații rapide și funcții avansate de inteligență artificială."
       ]
     },
     "colon": {
@@ -3482,8 +3572,14 @@
       "Event not found": [
         "Evenimentul nu a fost găsit."
       ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "Nu s-a putut crea o conferință video ${ MEET_APP_NAME }"
+      ],
       "Failed to create meeting": [
         "Crearea conferinței a eșuat"
+      ],
+      "Failed to decrypt session key": [
+        "Nu s-a putut decripta cheia de sesiune."
       ],
       "Failed to get event": [
         "Nu s-a putut obține evenimentul"
@@ -3496,6 +3592,9 @@
       ],
       "Failed to open to contact": [
         "Nu s-a putut deschide contactul."
+      ],
+      "Failed to update secret passphrase": [
+        "Nu s-a putut actualiza fraza de acces secretă."
       ],
       "First name is too long": [
         "Prenumele este prea lung."
@@ -3628,6 +3727,9 @@
       ],
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
+      ],
+      "Passphrase unavailable": [
+        "Frază de acces indisponibilă"
       ],
       "Password is required": [
         "Parola este obligatorie"
@@ -4442,11 +4544,17 @@
       "Contacts": [
         "Contacte"
       ],
+      "Domain": [
+        "Domeniu"
+      ],
       "Drawer": [
         "Panou lateral"
       ],
       "Name": [
         "Nume"
+      ],
+      "Password ends with": [
+        "Parola se termină cu"
       ],
       "Repeat event": [
         "Repetare eveniment"
@@ -4456,6 +4564,9 @@
       ],
       "Security Center": [
         "Centru de securitate"
+      ],
+      "Username": [
+        "Nume de utilizator"
       ]
     },
     "Hint": {
@@ -5320,8 +5431,17 @@
       "Expired": [
         "Expirat"
       ],
+      "Failed to update meeting name": [
+        "Actualizarea numelui întâlnirii a eșuat."
+      ],
+      "Failed to update meeting password": [
+        "Actualizarea parolei întâlnirii a eșuat."
+      ],
       "finance": [
         "finanțe"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Pentru un plus de securitate, puteți seta o frază de acces. Aceasta nu va fi inclusă în invitația de calendar, nu uitați să o partajați separat cu invitații."
       ],
       "Frequency modifications will be lost.": [
         "Modificările de frecvență vor fi pierdute."
@@ -6379,6 +6499,9 @@
       "Account holder": [
         "Titular cont"
       ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "Adăugare conferință ${ MEET_APP_NAME }"
+      ],
       "Add email address": [
         "Adăugare e-mail"
       ],
@@ -6387,6 +6510,9 @@
       ],
       "Add to group": [
         "Adăugare la grup"
+      ],
+      "Add Zoom meeting": [
+        "Adăugare întâlnire pe Zoom"
       ],
       "Address": [
         "Adresa"
@@ -6693,6 +6819,9 @@
       "Participants": [
         "Participanți"
       ],
+      "Passphrase:": [
+        "Fraza de acces:"
+      ],
       "Password": [
         "Parola"
       ],
@@ -6807,6 +6936,9 @@
       "Verification code": [
         "Cod de verificare"
       ],
+      "Video conference": [
+        "Conferință video"
+      ],
       "Vulnerable": [
         "Vulnerabilă"
       ],
@@ -6851,6 +6983,9 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Zoom meeting": [
+        "Conferință pe Zoom"
       ]
     },
     "Label for contact group color": {
@@ -8323,6 +8458,9 @@
       ],
       "Passcode copied to clipboard": [
         "Codul de acces s-a copiat în memorie."
+      ],
+      "Passphrase copied to clipboard": [
+        "Fraza de acces s-a copiat în memorie."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9153,6 +9291,9 @@
       "E.g., ": [
         "Ex.: "
       ],
+      "Enter passphrase": [
+        "Introduceți fraza de acces"
+      ],
       "Filter groups": [
         "Filtrare grupuri"
       ],
@@ -9981,6 +10122,9 @@
       ]
     },
     "Spotlight": {
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } a sosit!"
+      ],
       "Color-code your calendar to better organize your day, track your time, and more.": [
         "Colorați calendarul prin coduri de culori pentru a vă organiza mai bine ziua, pentru a vă urmări timpul și multe altele."
       ],
@@ -9992,6 +10136,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invitați persoane la ${ BRAND_NAME }"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Programați și alăturați-vă apelurilor ${ MEET_APP_NAME } direct din calendarul personal."
       ],
       "Seamlessly create and add video meeting links to your events.": [
         "Creați și adăugați fără probleme legături web pentru conferințe video la evenimentele create."
@@ -10716,6 +10863,9 @@
       ],
       "Problem reported": [
         "Problemă raportată"
+      ],
+      "Secret passphrase updated": [
+        "Frază de acces secretă s-a actualizat."
       ],
       "Undo in progress": [
         "Anulare în desfășurare"

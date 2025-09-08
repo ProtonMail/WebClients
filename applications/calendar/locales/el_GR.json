@@ -89,6 +89,9 @@
       "Add public holidays": [
         "Προσθήκη επίσημων αργιών"
       ],
+      "Add secret passphrase": [
+        "Προσθήκη μυστικής φράσης πρόσβασης"
+      ],
       "Add to group": [
         "Προσθήκη στην ομάδα"
       ],
@@ -473,6 +476,9 @@
       "Join calendar": [
         "Εγγραφή στο ημερολόγιο"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Συμμετάσχετε με ${ MEET_APP_NAME }"
+      ],
       "Keep current time zone": [
         "Διατήρηση τρέχουσας ζώνης ώρας"
       ],
@@ -599,6 +605,9 @@
       "Open settings": [
         "Άνοιγμα ρυθμίσεων"
       ],
+      "Passphrase": [
+        "Φράση πρόσβασης"
+      ],
       "Pause indexing": [
         "Παύση δημιουργίας ευρετηρίου"
       ],
@@ -691,6 +700,9 @@
       ],
       "Resume indexing": [
         "Συνέχιση δημιουργίας ευρετηρίου"
+      ],
+      "Retry": [
+        "Δοκιμάστε ξανά"
       ],
       "Save": [
         "Αποθήκευση"
@@ -847,6 +859,9 @@
       ],
       "Update recovery phrase": [
         "Ενημέρωση φράσης ανάκτησης"
+      ],
+      "Update secret passphrase": [
+        "Ενημέρωση μυστικής φράσης πρόσβασης"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -1222,6 +1237,32 @@
         "Προαιρετικό"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες στις ${ formattedDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα στις ${ formattedDate }. Δεν θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Μπορείτε να έχετε έως ${ TRIAL_MAX_DEDICATED_IPS } αφιερωμένο διακομιστή κατά τη διάρκεια της δοκιμαστικής περιόδου."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_LUMO_SEATS } θέσεις ${ LUMO_SHORT_APP_NAME } κατά τη διάρκεια της δοκιμαστικής περιόδου."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_SCRIBE_SEATS } θέσεις Scribe κατά τη δοκιμαστική περίοδο."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_USERS } χρήστες κατά τη δοκιμαστική περίοδο."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Δεν μπορείτε να προσθέσετε προσαρμοσμένους τομείς κατά τη δοκιμαστική περίοδο."
+      ],
+      "You have reached the trial limit.": [
+        "Έχετε φτάσει το όριο της δοκιμής."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Ακύρωση συνδρομής"
@@ -1459,6 +1500,9 @@
       ],
       "Manual setup problem": [
         "Πρόβλημα χειροκίνητης ρύθμισης"
+      ],
+      "Meet problem": [
+        "Πρόβλημα Meet"
       ],
       "Other": [
         "Άλλο"
@@ -1784,6 +1828,52 @@
       ],
       "Expand": [
         "Ανάπτυξη"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Πρόσβαση σε προηγμένα μοντέλα Τεχνητής Νοημοσύνης"
+      ],
+      "Basic chat history": [
+        "Βασικό ιστορικό συνομιλιών"
+      ],
+      "Full chat history with search": [
+        "Πλήρης ιστορία συνομιλίας με αναζήτηση"
+      ],
+      "Large file upload support": [
+        "Υποστήριξη για μεταφόρτωση μεγάλων αρχείων"
+      ],
+      "Limited daily chats": [
+        "Περιορισμένες καθημερινές συνομιλίες"
+      ],
+      "Limited favorites": [
+        "Περιορισμένα αγαπημένα"
+      ],
+      "Unlimited daily chats": [
+        "Απεριόριστες καθημερινές συνομιλίες"
+      ],
+      "Unlimited favorites for quick access": [
+        "Απεριόριστα αγαπημένα για γρήγορη πρόσβαση"
+      ],
+      "Upload and query multiple large files": [
+        "Ανεβάστε και αναζητήσετε πολλαπλά μεγάλα αρχεία"
+      ],
+      "Upload and query small files": [
+        "Ανεβάστε και αναζητήστε μικρά αρχεία"
+      ],
+      "Web search access": [
+        "Πρόσβαση στην αναζήτηση ιστού"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } είναι μια τεχνητή νοημοσύνη που δίνει προτεραιότητα στην ιδιωτικότητα και σας βοηθά να ολοκληρώσετε περισσότερα ενώ διατηρείτε τα δεδομένα σας ασφαλή. Ξεκλειδώστε όλες τις δυνατότητές της και απολαύστε πρόωρη πρόσβαση σε νέες δυνατότητες καθώς αυτές παρουσιάζονται."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Προσθήκη ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Υψηλής ταχύτητας συνομιλίες και προηγμένα χαρακτηριστικά AI."
       ]
     },
     "colon": {
@@ -3454,8 +3544,14 @@
       "Event not found": [
         "Η εκδήλωση δεν βρέθηκε"
       ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "Αποτυχία δημιουργίας τηλεδιάσκεψης ${ MEET_APP_NAME }"
+      ],
       "Failed to create meeting": [
         "Αποτυχία δημιουργίας σύσκεψης"
+      ],
+      "Failed to decrypt session key": [
+        "Αποτυχία αποκρυπτογράφησης του κλειδιού συνεδρίας"
       ],
       "Failed to get event": [
         "Αποτυχία λήψης εκδήλωσης"
@@ -3468,6 +3564,9 @@
       ],
       "Failed to open to contact": [
         "Αποτυχία ανοίγματος επαφής"
+      ],
+      "Failed to update secret passphrase": [
+        "Αποτυχία ενημέρωσης του μυστικού κωδικού πρόσβασης"
       ],
       "First name is too long": [
         "Το όνομα είναι πολύ μεγάλο"
@@ -3597,6 +3696,9 @@
       ],
       "Organization key is not decrypted": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
+      ],
+      "Passphrase unavailable": [
+        "Η φράση πρόσβασης δεν είναι διαθέσιμη"
       ],
       "Password is required": [
         "Απαιτείται κωδικός πρόσβασης"
@@ -5253,8 +5355,17 @@
       "Expired": [
         "Ληγμένο"
       ],
+      "Failed to update meeting name": [
+        "Αποτυχία ενημέρωσης του ονόματος της συνάντησης"
+      ],
+      "Failed to update meeting password": [
+        "Αποτυχία ενημέρωσης του κωδικού πρόσβασης της συνάντησης"
+      ],
       "finance": [
         "οικονομικά"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Για επιπλέον ασφάλεια, μπορείτε να ορίσετε μια φράση πρόσβασης. Δε θα περιληφθεί στην πρόσκληση του ημερολογίου, θυμηθείτε να τη μοιραστείτε με τους καλεσμένους σας ξεχωριστά."
       ],
       "Frequency modifications will be lost.": [
         "Οι τροποποιήσεις συχνότητας θα χαθούν."
@@ -6299,6 +6410,9 @@
       "Account holder": [
         "Δικαιούχος λογαριασμού"
       ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "Προσθέστε διάσκεψη ${ MEET_APP_NAME }"
+      ],
       "Add email address": [
         "Προσθήκη διεύθυνσης E-mail"
       ],
@@ -6307,6 +6421,9 @@
       ],
       "Add to group": [
         "Προσθήκη στην ομάδα"
+      ],
+      "Add Zoom meeting": [
+        "Προσθήκη τηλεδιάσκεψης Zoom"
       ],
       "Address": [
         "Διεύθυνση"
@@ -6612,6 +6729,9 @@
       "Participants": [
         "Συμμετέχοντες"
       ],
+      "Passphrase:": [
+        "Φράση πρόσβασης:"
+      ],
       "Password": [
         "Κωδικός πρόσβασης"
       ],
@@ -6726,6 +6846,9 @@
       "Verification code": [
         "Κωδικός επαλήθευσης"
       ],
+      "Video conference": [
+        "Τηλεδιάσκεψη"
+      ],
       "Vulnerable": [
         "Ευάλωτο"
       ],
@@ -6770,6 +6893,9 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Zoom meeting": [
+        "Τηλεδιάσκεψη Zoom"
       ]
     },
     "Label for contact group color": {
@@ -8207,6 +8333,9 @@
       ],
       "Passcode copied to clipboard": [
         "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
+      ],
+      "Passphrase copied to clipboard": [
+        "Ο φράση πρόσβασης αντιγράφηκε στο πρόχειρο"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8415,7 +8544,7 @@
         "Πληρώστε ετησίως, εξασφαλίστε την καλύτερη προσφορά μας"
       ],
       "Save": [
-        "Αποθήκευση"
+        "Εξοικονομήστε"
       ],
       "Save big when you pay annually": [
         "Εξοικονομήστε χρήματα όταν πληρώνετε ετησίως"
@@ -9006,6 +9135,9 @@
       ],
       "E.g., ": [
         "Για παράδειγμα, "
+      ],
+      "Enter passphrase": [
+        "Εισαγάγετε τη φράση πρόσβασης"
       ],
       "Filter groups": [
         "Φιλτράρισμα κατά ομάδες"
@@ -9814,6 +9946,9 @@
       ]
     },
     "Spotlight": {
+      "${ MEET_APP_NAME } is here!": [
+        "Το ${ MEET_APP_NAME } είναι εδώ!"
+      ],
       "Color-code your calendar to better organize your day, track your time, and more.": [
         "Κωδικοποιήστε χρωματικά το ημερολόγιό σας για να οργανώσετε καλύτερα την ημέρα σας, να παρακολουθείτε το χρόνο σας και πολλά άλλα."
       ],
@@ -9825,6 +9960,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Προσκαλέστε φίλους στο ${ BRAND_NAME }"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Προγραμματίστε και συμμετάσχετε στις κλήσεις του ${ MEET_APP_NAME } απευθείας από το ημερολόγιό σας."
       ],
       "Seamlessly create and add video meeting links to your events.": [
         "Δημιουργήστε και προσθέστε απρόσκοπτα συνδέσμους βιντεοσυσκέψεων στις εκδηλώσεις σας."
@@ -10533,6 +10671,9 @@
       ],
       "Problem reported": [
         "Η αναφορά του προβλήματος ολοκληρώθηκε"
+      ],
+      "Secret passphrase updated": [
+        "Η μυστική φράση πρόσβασης ενημερώθηκε"
       ],
       "Undo in progress": [
         "Αναίρεση σε εξέλιξη"
