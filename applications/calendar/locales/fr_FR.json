@@ -89,6 +89,9 @@
       "Add public holidays": [
         "Ajouter les jours fériés"
       ],
+      "Add secret passphrase": [
+        "Ajouter une phrase secrète"
+      ],
       "Add to group": [
         "Ajouter au groupe"
       ],
@@ -599,6 +602,9 @@
       "Open settings": [
         "Ouvrir les paramètres"
       ],
+      "Passphrase": [
+        "Phrase secrète"
+      ],
       "Pause indexing": [
         "Interrompre l'indexation"
       ],
@@ -691,6 +697,9 @@
       ],
       "Resume indexing": [
         "Reprendre l'indexation"
+      ],
+      "Retry": [
+        "Réessayer"
       ],
       "Save": [
         "Enregistrer"
@@ -1228,6 +1237,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_DEDICATED_IPS } serveur dédié maximum pendant la version d'essai."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_LUMO_SEATS } accès à ${ LUMO_SHORT_APP_NAME } pendant la période d’essai."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_SCRIBE_SEATS } accès maximum à Scribe pendant la période d’essai."
@@ -1804,6 +1816,29 @@
       ],
       "Expand": [
         "Développer"
+      ]
+    },
+    "collider_2025: feature": {
+      "Basic chat history": [
+        "Historique de chat basique"
+      ],
+      "Full chat history with search": [
+        "Historique complet des discussions avec recherche"
+      ],
+      "Limited daily chats": [
+        "Chats quotidiens limités"
+      ],
+      "Unlimited daily chats": [
+        "Chats quotidiens illimités"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoris illimités pour un accès rapide"
+      ],
+      "Upload and query multiple large files": [
+        "Importer et consulter plusieurs fichiers volumineux"
+      ],
+      "Web search access": [
+        "Accès à la recherche web"
       ]
     },
     "collider_2025: Info": {
@@ -3485,6 +3520,9 @@
       "Failed to create meeting": [
         "La création de la réunion n'a pas abouti."
       ],
+      "Failed to decrypt session key": [
+        "Le déchiffrement de la clé de session n'a pas abouti."
+      ],
       "Failed to get event": [
         "Impossible d'obtenir l'événement"
       ],
@@ -3496,6 +3534,9 @@
       ],
       "Failed to open to contact": [
         "Le contact n'a pas pu être ouvert."
+      ],
+      "Failed to update secret passphrase": [
+        "La mise à jour de la phrase secrète n'a pas abouti."
       ],
       "First name is too long": [
         "Le prénom est trop long."
@@ -3625,6 +3666,9 @@
       ],
       "Organization key is not decrypted": [
         "La clé de l'organisation n'est pas déchiffrée."
+      ],
+      "Passphrase unavailable": [
+        "La phrase secrète n'est pas disponible"
       ],
       "Password is required": [
         "Le mot de passe est nécessaire."
@@ -5281,6 +5325,12 @@
       "Expired": [
         "Expiré"
       ],
+      "Failed to update meeting name": [
+        "La mise à jour du nom de la réunion n'a pas abouti."
+      ],
+      "Failed to update meeting password": [
+        "La mise à jour du mot de passe de la réunion n'a pas abouti."
+      ],
       "finance": [
         "finance"
       ],
@@ -6327,6 +6377,9 @@
       "Account holder": [
         "Titulaire du compte"
       ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "Ajouter la conférence ${ MEET_APP_NAME }"
+      ],
       "Add email address": [
         "Ajouter une adresse e-mail"
       ],
@@ -6335,6 +6388,9 @@
       ],
       "Add to group": [
         "Ajouter au groupe"
+      ],
+      "Add Zoom meeting": [
+        "Ajouter une réunion Zoom"
       ],
       "Address": [
         "Adresse"
@@ -6640,6 +6696,9 @@
       "Participants": [
         "Participants"
       ],
+      "Passphrase:": [
+        "Phrase secrète :"
+      ],
       "Password": [
         "Mot de passe"
       ],
@@ -6754,6 +6813,9 @@
       "Verification code": [
         "Code de vérification"
       ],
+      "Video conference": [
+        "Vidéoconférence"
+      ],
       "Vulnerable": [
         "Vulnérable"
       ],
@@ -6798,6 +6860,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Zoom meeting": [
+        "Réunion Zoom"
       ]
     },
     "Label for contact group color": {
@@ -8235,6 +8300,9 @@
       ],
       "Passcode copied to clipboard": [
         "Le code d’accès a été copié dans le presse-papiers."
+      ],
+      "Passphrase copied to clipboard": [
+        "La phrase secrète a été copiée dans le presse-papiers."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8443,7 +8511,7 @@
         "Payez à l'année et assurez-vous de bénéficier de notre meilleure offre."
       ],
       "Save": [
-        "Enregistrer"
+        "Économisez"
       ],
       "Save big when you pay annually": [
         "Économisez un maximum en optant pour le paiement annuel !"
@@ -9034,6 +9102,9 @@
       ],
       "E.g., ": [
         "Par exemple, "
+      ],
+      "Enter passphrase": [
+        "Saisir la phrase secrète"
       ],
       "Filter groups": [
         "Filtrez les groupes."
@@ -9842,6 +9913,9 @@
       ]
     },
     "Spotlight": {
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } est là !"
+      ],
       "Color-code your calendar to better organize your day, track your time, and more.": [
         "Ajoutez des couleurs à votre calendrier pour mieux organiser votre journée, gérer votre temps et plus encore."
       ],

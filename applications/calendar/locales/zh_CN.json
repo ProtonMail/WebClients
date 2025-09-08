@@ -89,6 +89,9 @@
       "Add public holidays": [
         "添加公众假期"
       ],
+      "Add secret passphrase": [
+        "添加密码短语"
+      ],
       "Add to group": [
         "添加至群组"
       ],
@@ -461,6 +464,9 @@
       "Join calendar": [
         "加入日历"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "加入${ MEET_APP_NAME }"
+      ],
       "Keep current time zone": [
         "保留当前时区"
       ],
@@ -587,6 +593,9 @@
       "Open settings": [
         "打开设置"
       ],
+      "Passphrase": [
+        "密码短语"
+      ],
       "Pause indexing": [
         "暂停索引"
       ],
@@ -679,6 +688,9 @@
       ],
       "Resume indexing": [
         "恢复索引"
+      ],
+      "Retry": [
+        "重试"
       ],
       "Save": [
         "保存"
@@ -835,6 +847,9 @@
       ],
       "Update recovery phrase": [
         "更新恢复密语"
+      ],
+      "Update secret passphrase": [
+        "更新密码短语"
       ],
       "Upgrade": [
         "升级账户"
@@ -1200,6 +1215,14 @@
         "非必填"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
+      ],
+      "You have reached the trial limit.": [
+        "您已达到试用上限。"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "取消订阅"
@@ -1408,6 +1431,9 @@
       ],
       "Manual setup problem": [
         "手动设置问题"
+      ],
+      "Meet problem": [
+        "遇到问题"
       ],
       "Other": [
         "其他"
@@ -1725,6 +1751,11 @@
       ],
       "Expand": [
         "展开"
+      ]
+    },
+    "collider_2025: feature": {
+      "Unlimited daily chats": [
+        "无限聊天次数"
       ]
     },
     "colon": {
@@ -3391,6 +3422,9 @@
       "Failed to load OAuth modal.": [
         "无法加载 OAuth 模式。"
       ],
+      "Failed to update secret passphrase": [
+        "更新密码短语失败"
+      ],
       "First name is too long": [
         "名字太长。"
       ],
@@ -3516,6 +3550,9 @@
       ],
       "Organization key is not decrypted": [
         "机构密钥尚未解密"
+      ],
+      "Passphrase unavailable": [
+        "密码短语不可用"
       ],
       "Password is required": [
         "密码必须填写"
@@ -5115,6 +5152,9 @@
       "finance": [
         "金融"
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "为了增强安全性，您可以设置一个密码短语。它不会包含在日历邀请中，请记住单独与您的客人分享。"
+      ],
       "Frequency modifications will be lost.": [
         "频率修改将丢失"
       ],
@@ -6447,6 +6487,9 @@
       ],
       "Participants": [
         "参与者"
+      ],
+      "Passphrase:": [
+        "密码短语:"
       ],
       "Password": [
         "密码"
@@ -7999,6 +8042,9 @@
       ],
       "Passcode copied to clipboard": [
         "将密码复制到剪贴板"
+      ],
+      "Passphrase copied to clipboard": [
+        "将密码短语复制到剪贴板"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8183,7 +8229,7 @@
         "按年支付，确保我们的最佳优惠"
       ],
       "Save": [
-        "保存"
+        "节省"
       ],
       "Save big when you pay annually": [
         "按年付费可节省大量费用"
@@ -8705,6 +8751,9 @@
       ],
       "E.g., ": [
         "例如："
+      ],
+      "Enter passphrase": [
+        "输入密码短语"
       ],
       "Filter groups": [
         "查找群组"
@@ -10169,6 +10218,9 @@
       ],
       "Problem reported": [
         "问题报告"
+      ],
+      "Secret passphrase updated": [
+        "密码短语已更新"
       ],
       "Undo in progress": [
         "正在撤销"
