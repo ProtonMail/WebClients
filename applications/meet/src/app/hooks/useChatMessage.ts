@@ -41,7 +41,7 @@ export const useChatMessage = () => {
                 ...prev,
                 {
                     ...message,
-                    message: trimmedContent,
+                    message: sanitizedContent,
                     identity: room.localParticipant.identity,
                     name: displayName,
                     seen: true,
