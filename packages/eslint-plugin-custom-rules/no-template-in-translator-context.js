@@ -6,8 +6,6 @@ const isValidTranslatorNode = (node) => {
 
 export default {
     meta: {
-        type: 'problem',
-        fixable: 'code',
         docs: {
             description: 'Forbid template literals in translator contexts.',
             url: 'https://ttag.js.org/docs/context.html',
