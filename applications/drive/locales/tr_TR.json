@@ -1109,6 +1109,9 @@
       "Upload file": [
         "Dosya yükle"
       ],
+      "Upload File": [
+        "Dosya yükle"
+      ],
       "Upload files": [
         "Dosyaları yükle"
       ],
@@ -1407,23 +1410,29 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, ${ formattedDate } tarihinde başlayarak her ${ renewCycle } ayda bir otomatik olarak yenilenen ücretli bir aboneliğe dönüşecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde aylık olarak otomatik yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinden başlayarak otomatik olarak her ay yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucuya sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucunuz olabilir."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } koltuğunuz olabilir."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğuna sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğunuz olabilir."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_USERS } kullanıcıya sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_USERS } kullanıcınız olabilir."
       ],
       "You cannot add custom domains during the trial period.": [
-        "Deneme süresi boyunca özel alan adları ekleyemezsiniz."
+        "Deneme süresi boyunca özel etki alanları ekleyemezsiniz."
       ],
       "You have reached the trial limit.": [
-        "Deneme limitine ulaştınız."
+        "Deneme süresi sayısı sınırına ulaştınız."
       ]
     },
     "b2b_trials_Action": {
@@ -1664,6 +1673,9 @@
       "Manual setup problem": [
         "El ile kurulum sorunu"
       ],
+      "Meet problem": [
+        "Meet sorunu"
+      ],
       "Other": [
         "Diğer"
       ],
@@ -1812,12 +1824,50 @@
         "Genişlet"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Gelişmiş yapay zeka modellerine erişim"
+      ],
+      "Basic chat history": [
+        "Temel sohbet geçmişi"
+      ],
+      "Full chat history with search": [
+        "Arama ile tüm sohbet geçmişi"
+      ],
+      "Large file upload support": [
+        "Büyük dosya yükleme desteği"
+      ],
+      "Limited daily chats": [
+        "Sınırlı sayıda günlük sohbet"
+      ],
+      "Limited favorites": [
+        "Sınırlı sayıda sık kullanılan"
+      ],
+      "Unlimited daily chats": [
+        "Günlük sınırsız sayıda sohbet"
+      ],
+      "Unlimited favorites for quick access": [
+        "Hızlı erişim için sınırsız sayıda sık kullanılan"
+      ],
+      "Upload and query multiple large files": [
+        "Birden fazla büyük dosyayı yükleyip sorgulayın"
+      ],
+      "Upload and query small files": [
+        "Küçük dosyaları yükleyin ve sorgulayın"
+      ],
+      "Web search access": [
+        "Site arama erişimi"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } verilerinizin güvenliğini sağlarken, daha fazla iş yapmanıza yardımcı olan gizliliğe öncelik veren bir yapay zekadır. Tam potansiyelini açığa çıkarın ve yeni özellikler tanıtıldıkça erken erişimin keyfini çıkarın."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } uygulamasını ekle"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Yüksek hızlı sohbetler ve gelişmiş yapay zeka özellikleri."
       ]
     },
     "color": {
