@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
@@ -20,16 +21,16 @@ import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark, IcCrossBig } from '@proton/icons';
 import { labelConversations } from '@proton/shared/lib/api/conversations';
 import { labelMessages } from '@proton/shared/lib/api/messages';
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { getItem } from '@proton/shared/lib/helpers/storage';
-import clsx from '@proton/utils/clsx';
 
 import { isElementMessage } from 'proton-mail/helpers/elements';
 import type { Element } from 'proton-mail/models/element';
 
 import { CategoryBadgeInfo } from './CategoryBadgeInfo';
 import { CategoryBadgeSpotlightContent, useCategoryBadgeSpotlight } from './CategoryBadgeSpotlight';
-import { DISABLED_BADGE, getCategoriesBadgeMapping } from './categoryViewConstants';
-import { isLabelIDCaregoryKey } from './categoryViewHelpers';
+import { type CategoryBadgeMapping, DISABLED_BADGE, getCategoriesBadgeMapping } from './categoryViewConstants';
+import { isLabelIDCategoryKey } from './categoryViewHelpers';
 import { useCategoryPing } from './useCategoryPing';
 import { useCategoryViewExperiment } from './useCategoryViewExperiment';
 
@@ -51,7 +52,7 @@ export const CategoryBadge = ({ element, labelIDs, className, index }: Props) =>
     const spotlight = useCategoryBadgeSpotlight();
 
     const [labelValue, setLabelValue] = useState(() =>
-        (labelIDs || []).find((labelID) => isLabelIDCaregoryKey(labelID))
+        (labelIDs || []).find((labelID) => isLabelIDCategoryKey(labelID))
     );
 
     const { call } = useEventManager();
@@ -72,7 +73,7 @@ export const CategoryBadge = ({ element, labelIDs, className, index }: Props) =>
         return null;
     }
 
-    const handleCategoryClick = async (category: string) => {
+    const handleCategoryClick = async (category: CategoryLabelID) => {
         if (!element) {
             return;
         }
@@ -158,6 +159,8 @@ export const CategoryBadge = ({ element, labelIDs, className, index }: Props) =>
                         </Button>
                     </div>
                     {Object.entries(getCategoriesBadgeMapping()).map(([key, value]) => {
+                        const typedKey = key as keyof CategoryBadgeMapping;
+
                         const icon =
                             key === labelValue ? (
                                 <>
@@ -173,7 +176,7 @@ export const CategoryBadge = ({ element, labelIDs, className, index }: Props) =>
                                 key={key}
                                 onClick={(e) => {
                                     e.stopPropagation();
-                                    void withLoading(handleCategoryClick(key));
+                                    void withLoading(handleCategoryClick(typedKey));
                                 }}
                                 className="text-left"
                                 disabled={loading}

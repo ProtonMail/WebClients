@@ -1,13 +1,13 @@
-import { hasCategoryLabel, isLabelIDCaregoryKey } from './categoryViewHelpers';
+import { hasCategoryLabel, isLabelIDCategoryKey } from './categoryViewHelpers';
 
 describe('categoryViewHelpers', () => {
     describe('isLabelIDCaregoryKey', () => {
         it('should return true if the labelID is a category key', () => {
-            expect(isLabelIDCaregoryKey('20')).toBe(true);
+            expect(isLabelIDCategoryKey('20')).toBe(true);
         });
 
         it('should return false if the labelID is not a category key', () => {
-            expect(isLabelIDCaregoryKey('1')).toBe(false);
+            expect(isLabelIDCategoryKey('1')).toBe(false);
         });
     });
 

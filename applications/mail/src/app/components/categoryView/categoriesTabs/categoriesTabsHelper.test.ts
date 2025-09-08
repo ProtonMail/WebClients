@@ -1,13 +1,26 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import type { CategoryTab } from '../categoriesConstants';
-import { CATEGORIES_COLOR_SHADES, categoriesArray } from '../categoriesConstants';
+import { CATEGORIES_COLOR_SHADES } from '../categoriesConstants';
+import { getCategoryData } from '../categoriesHelpers';
 import { getTabState } from './categoriesTabsHelper';
 import { TabState } from './tabsInterface';
 
+const mockCategoriesData = [
+    MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+    MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+    MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+    MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
+    MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
+    MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+]
+    .map(getCategoryData)
+    .map((data) => ({ ...data, checked: true }));
+
 describe('CategoriesTabsHelper', () => {
     describe('getTabState', () => {
-        it('should return inactive when catgory is not selected nor dragged over', () => {
+        it('should return inactive when category is not selected nor dragged over', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                 colorShade: CATEGORIES_COLOR_SHADES.BLUE,
@@ -16,9 +29,9 @@ describe('CategoriesTabsHelper', () => {
             const tabState = getTabState({
                 index: 0,
                 category,
-                categoriesList: categoriesArray,
-                labelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
-                dragOveredElementId: undefined,
+                categoriesList: mockCategoriesData,
+                categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+                draggedOverCategoryId: undefined,
             });
             expect(tabState).toBe(TabState.INACTIVE);
         });
@@ -32,9 +45,9 @@ describe('CategoriesTabsHelper', () => {
             const tabState = getTabState({
                 index: 0,
                 category,
-                categoriesList: categoriesArray,
-                labelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
-                dragOveredElementId: undefined,
+                categoriesList: mockCategoriesData,
+                categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+                draggedOverCategoryId: undefined,
             });
             expect(tabState).toBe(TabState.ACTIVE);
         });
@@ -48,14 +61,14 @@ describe('CategoriesTabsHelper', () => {
             const tabState = getTabState({
                 index: 0,
                 category,
-                categoriesList: categoriesArray,
-                labelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
-                dragOveredElementId: MAILBOX_LABEL_IDS.CATEGORY_FORUMS.toString(),
+                categoriesList: mockCategoriesData,
+                categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                draggedOverCategoryId: MAILBOX_LABEL_IDS.CATEGORY_FORUMS.toString(),
             });
             expect(tabState).toBe(TabState.DRAGGING_OVER);
         });
 
-        it('should return actrive is categories is dragged over but is already active', () => {
+        it('should return active is categories is dragged over but is already active', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
                 colorShade: CATEGORIES_COLOR_SHADES.BLUE,
@@ -64,9 +77,9 @@ describe('CategoriesTabsHelper', () => {
             const tabState = getTabState({
                 index: 0,
                 category,
-                categoriesList: categoriesArray,
-                labelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
-                dragOveredElementId: MAILBOX_LABEL_IDS.CATEGORY_FORUMS.toString(),
+                categoriesList: mockCategoriesData,
+                categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+                draggedOverCategoryId: MAILBOX_LABEL_IDS.CATEGORY_FORUMS.toString(),
             });
             expect(tabState).toBe(TabState.ACTIVE);
         });
@@ -80,9 +93,9 @@ describe('CategoriesTabsHelper', () => {
             const tabState = getTabState({
                 index: 1,
                 category,
-                categoriesList: categoriesArray,
-                labelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
-                dragOveredElementId: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS.toString(),
+                categoriesList: mockCategoriesData,
+                categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                draggedOverCategoryId: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS.toString(),
             });
             expect(tabState).toBe(TabState.DRAGGING_NEIGHBOR);
         });
@@ -96,9 +109,9 @@ describe('CategoriesTabsHelper', () => {
             const tabState = getTabState({
                 index: 3,
                 category,
-                categoriesList: categoriesArray,
-                labelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
-                dragOveredElementId: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS.toString(),
+                categoriesList: mockCategoriesData,
+                categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                draggedOverCategoryId: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS.toString(),
             });
             expect(tabState).toBe(TabState.DRAGGING_NEIGHBOR);
         });

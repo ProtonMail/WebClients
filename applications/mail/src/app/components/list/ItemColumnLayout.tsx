@@ -23,7 +23,7 @@ import type { Element } from '../../models/element';
 import type { ESMessage } from '../../models/encryptedSearch';
 import { selectSnoozeDropdownState, selectSnoozeElement } from '../../store/snooze/snoozeSliceSelectors';
 import { CategoryBadge } from '../categoryView/categoryBadge/CategoryBadge';
-import { isLabelIDCaregoryKey } from '../categoryView/categoryBadge/categoryViewHelpers';
+import { isLabelIDCategoryKey } from '../categoryView/categoryBadge/categoryViewHelpers';
 import NumMessages from '../conversation/NumMessages';
 import ItemAction from './ItemAction';
 import ItemAttachmentIcon from './ItemAttachmentIcon';
@@ -105,7 +105,7 @@ const ItemColumnLayout = ({
         const allLabelIDs = Object.keys(getLabelIDs(element, labelID));
         const labelIDs = allLabelIDs.filter(
             // Remove the isLabelIDCaregoryKey test once the category label experiment is node
-            (ID) => labels?.find((label) => ID === label.ID) || isLabelIDCaregoryKey(ID)
+            (ID) => labels?.find((label) => ID === label.ID) || isLabelIDCategoryKey(ID)
         );
         return !!labelIDs.length;
     }, [element, labels, labelID]);

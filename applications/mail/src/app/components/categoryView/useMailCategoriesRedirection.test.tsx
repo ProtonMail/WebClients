@@ -2,7 +2,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { renderHook } from '@testing-library/react';
 
-import { useCategoryView } from './useCategoryView';
+import { useCategoriesView } from './useCategoriesView';
 import { useMailCategoriesRedirection } from './useMailCategoriesRedirection';
 
 jest.mock('react-router-dom', () => ({
@@ -12,8 +12,8 @@ jest.mock('react-router-dom', () => ({
 const mockUseLocation = useLocation as jest.Mock;
 const mockUseHistory = useHistory as jest.Mock;
 
-jest.mock('./useCategoryView');
-const mockedUseCategoryView = jest.mocked(useCategoryView);
+jest.mock('./useCategoriesView');
+const mockedUseCategoryView = jest.mocked(useCategoriesView);
 
 describe('useMailCategoriesRedirection', () => {
     const push = jest.fn();
