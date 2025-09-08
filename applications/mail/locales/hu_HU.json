@@ -1141,6 +1141,9 @@
       "Resume downloading": [
         "Letöltés folytatása"
       ],
+      "Retry": [
+        "Újra"
+      ],
       "Revert to original display": [
         "Visszatérés az eredeti megjelenéshez"
       ],
@@ -1413,6 +1416,9 @@
       ],
       "Trust": [
         "Megbízható"
+      ],
+      "Trust key": [
+        "Megbízható kulcs"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -7064,6 +7070,7 @@
         "Inicializálás…"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -8785,12 +8792,6 @@
       "Also archive": [
         "Archiválás is"
       ],
-      "Always label sender's emails": [
-        "A feladó leveleit mindig jelölje címkékkel"
-      ],
-      "Always move sender's emails": [
-        "A feladó leveleit mindig helyezze mappába"
-      ],
       "AND": [
         "ÉS"
       ],
@@ -9108,9 +9109,6 @@
       ],
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } áthelyezése"
-      ],
-      "Move messages to": [
-        "Üzenetek áthelyezése ide:"
       ],
       "Move to": [
         "Áthelyezés ide"
@@ -11046,7 +11044,7 @@
         "Fizessen évente, és használja ki legjobb ajánlatunkat"
       ],
       "Save": [
-        "Mentés"
+        "Spóroljon"
       ],
       "Save big when you pay annually": [
         "Spóroljon sokat, ha éves fizetést választ"
@@ -13920,12 +13918,6 @@
       ],
       "Create contact": [
         "Névjegy létrehozása"
-      ],
-      "Create folder \"${ search }\"": [
-        "\"${ search }\" mappa létrehozása"
-      ],
-      "Create label \"${ search }\"": [
-        "\"${ search }\" címke létrehozása"
       ],
       "Create new group": [
         "Új csoport létrehozása"

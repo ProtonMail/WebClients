@@ -96,6 +96,9 @@
       "Add phone number": [
         "Legg til telefonnummer"
       ],
+      "Add secret passphrase": [
+        "Legg til hemmelig passfrase"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Legg til i ${ CALENDAR_APP_NAME }"
       ],
@@ -757,6 +760,9 @@
       "Italic": [
         "Kursiv"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Bli med med ${ MEET_APP_NAME }"
+      ],
       "Keep my subscription": [
         "Behold mitt abonnement"
       ],
@@ -1012,6 +1018,9 @@
       "Page ${ pageNumber }": [
         "Side ${ pageNumber }"
       ],
+      "Passphrase": [
+        "Passfrase"
+      ],
       "Pause": [
         "Pause"
       ],
@@ -1173,6 +1182,9 @@
       ],
       "Resume downloading": [
         "Gjenoppta nedlasting"
+      ],
+      "Retry": [
+        "Prøv på nytt"
       ],
       "Revert to original display": [
         "Vend tilbake til opprinnelig visning"
@@ -1447,10 +1459,6 @@
       "Trust": [
         "Klarér"
       ],
-      "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
-      ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
       ],
@@ -1510,6 +1518,9 @@
       ],
       "Update recovery phrase": [
         "Oppdater gjenopprettingsfrase"
+      ],
+      "Update secret passphrase": [
+        "Oppdater hemmelig passfrase"
       ],
       "Upgrade": [
         "Oppgrader"
@@ -1968,6 +1979,32 @@
         "Avsenderbekreftelse bestått"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes ${ formattedDate }, vil det gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes ${ formattedDate }, vil det gå over til å bli et betalt abonnement som fornyes automatisk månedlig ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-lisenser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-lisenser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_USERS } brukere i prøveperioden."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Du kan ikke legge til egendefinerte domener i prøveperioden."
+      ],
+      "You have reached the trial limit.": [
+        "Du har nådd prøveperiodegrensen."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Avbryt abonnement"
@@ -2200,6 +2237,9 @@
       ],
       "Manual setup problem": [
         "Problem med manuell installasjon"
+      ],
+      "Meet problem": [
+        "Meet-problem"
       ],
       "Other": [
         "Annet"
@@ -2624,6 +2664,52 @@
       ],
       "Expand": [
         "Utvid"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Tilgang til avanserte KI-modeller"
+      ],
+      "Basic chat history": [
+        "Grunnleggende chatlogg"
+      ],
+      "Full chat history with search": [
+        "Full chatlogg med søk"
+      ],
+      "Large file upload support": [
+        "Støtte for opplasting av store filer"
+      ],
+      "Limited daily chats": [
+        "Begrenset antall daglige chatter"
+      ],
+      "Limited favorites": [
+        "Begrenset antall favoritter"
+      ],
+      "Unlimited daily chats": [
+        "Ubegrenset antall daglige chatter"
+      ],
+      "Unlimited favorites for quick access": [
+        "Ubegrenset antall favoritter for rask tilgang"
+      ],
+      "Upload and query multiple large files": [
+        "Last opp og søk i flere store filer"
+      ],
+      "Upload and query small files": [
+        "Last opp og søk i små filer"
+      ],
+      "Web search access": [
+        "Tilgang til nettsøk"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } er en personvernfokusert KI som hjelper deg å få mer gjort samtidig som dataene dine holdes sikre. Lås opp dens fulle potensial og nyt tidlig tilgang til nye funksjoner når de introduseres."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Legg til ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Høyhastighetschatter og avanserte KI-funksjoner."
       ]
     },
     "color": {
@@ -4532,6 +4618,9 @@
       "Failed to open to contact": [
         "Kontakten kunne ikke åpnes."
       ],
+      "Failed to update secret passphrase": [
+        "Kunne ikke oppdatere hemmelig passfrase"
+      ],
       "Filter with this name already exists": [
         "Et filter med dette navnet eksisterer allerede"
       ],
@@ -4660,6 +4749,9 @@
       ],
       "Organization key is not decrypted": [
         "Organisasjonsnøkkel er ikke dekryptert"
+      ],
+      "Passphrase unavailable": [
+        "Passfrase utilgjengelig"
       ],
       "Password is required": [
         "Passord kreves"
@@ -5122,6 +5214,9 @@
     "Error message": {
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Aliaser kan ikke brukes når et ekstra passord er aktivert i ${ PASS_APP_NAME }."
+      ],
+      "An error occured with the categories": [
+        "Det oppstod en feil med kategoriene"
       ],
       "App currently unavailable": [
         "App er for øyeblikket utilgjengelig"
@@ -5827,11 +5922,17 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Domain": [
+        "Domene"
+      ],
       "Drawer": [
         "Sidepanel"
       ],
       "Hardware not compatible": [
         "Maskinvare ikke kompatibel"
+      ],
+      "Password ends with": [
+        "Passordet slutter med"
       ],
       "Report an issue": [
         "Rapporter et problem"
@@ -5850,6 +5951,9 @@
       ],
       "Tell us more": [
         "Fortell oss mer"
+      ],
+      "Username": [
+        "Brukernavn"
       ]
     },
     "Hint": {
@@ -7097,6 +7201,9 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "For tilgang til e-post når som helst og optimalisert mobilopplevelse, last ned vår ${ androidAppLink } eller ${ iosAppLink }."
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "For ekstra sikkerhet kan du angi en passfrase. Den blir ikke inkludert i kalenderinvitasjonen, husk å dele den med gjestene dine separat."
+      ],
       "For messages newer than ${ oldestDate }": [
         "For meldinger nyere enn ${ oldestDate }"
       ],
@@ -7227,7 +7334,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8981,12 +9089,6 @@
       "Also archive": [
         "Arkiver i tillegg"
       ],
-      "Always label sender's emails": [
-        "Merk alltid avsenderens e-poster"
-      ],
-      "Always move sender's emails": [
-        "Alltid flytt avsenders e-poster"
-      ],
       "AND": [
         "OG"
       ],
@@ -9323,9 +9425,6 @@
       "Move ${ sidebarElementName }": [
         "Flytt ${ sidebarElementName }"
       ],
-      "Move messages to": [
-        "Flytt meldinger til"
-      ],
       "Move to": [
         "Flytt til"
       ],
@@ -9365,6 +9464,9 @@
       "No label found": [
         "Ingen etikett funnet"
       ],
+      "No results found": [
+        "Ingen resultater funnet"
+      ],
       "Not factually correct": [
         "Ikke faktisk korrekt"
       ],
@@ -9403,6 +9505,9 @@
       ],
       "Participants": [
         "Deltakere"
+      ],
+      "Passphrase:": [
+        "Passfrase:"
       ],
       "Password": [
         "Passord"
@@ -11242,6 +11347,9 @@
       "Passcode copied to clipboard": [
         "Passkode kopiert til utklippstavlen"
       ],
+      "Passphrase copied to clipboard": [
+        "Passfrase kopiert til utklippstavlen"
+      ],
       "Password has been set successfully": [
         "Passordet er angitt"
       ],
@@ -12025,6 +12133,9 @@
       ],
       "End date": [
         "Sluttdato"
+      ],
+      "Enter passphrase": [
+        "Skriv inn passfrase"
       ],
       "Filter folders": [
         "Filtrer mapper"
@@ -13927,6 +14038,9 @@
         "Omkategorisert ${ elementsCount } melding.",
         "Omkategorisert ${ elementsCount } meldinger."
       ],
+      "Secret passphrase updated": [
+        "Hemmelig passfrase oppdatert"
+      ],
       "Self-destruction removed": [
         "Selvdestruksjon fjernet"
       ],
@@ -14362,12 +14476,6 @@
       "Create contact": [
         "Opprett kontakt"
       ],
-      "Create folder \"${ search }\"": [
-        "Opprett mappe \"${ search }\""
-      ],
-      "Create label \"${ search }\"": [
-        "Opprett etikett \"${ search }\""
-      ],
       "Create new group": [
         "Opprett ny gruppe"
       ],
@@ -14620,6 +14728,10 @@
       "Label as": [
         "Merk som"
       ],
+      "Label message as": [
+        "Merk melding som",
+        "Merk meldinger som"
+      ],
       "Label options": [
         "Alternativer for etikett"
       ],
@@ -14703,6 +14815,13 @@
       ],
       "Move all messages to trash": [
         "Flytt alle meldingene til papirkurven"
+      ],
+      "Move message to": [
+        "Flytt melding til",
+        "Flytt meldinger til"
+      ],
+      "Move messages to": [
+        "Flytt meldinger til"
       ],
       "Move to": [
         "Flytt til"

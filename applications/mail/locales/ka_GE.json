@@ -96,6 +96,9 @@
       "Add phone number": [
         "ტელეფონის ნომრის დამატება"
       ],
+      "Add secret passphrase": [
+        "საიდუმლო ფრაზის დამატება"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME }-ში ჩამატება"
       ],
@@ -219,6 +222,9 @@
       ],
       "Claim this address": [
         "ამ მისამართის გამოთხოვა"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "${ BRAND_NAME }-ის უფასო მისამართის გამოთხოვა"
       ],
       "Clear": [
         "გასუფთავება"
@@ -754,6 +760,9 @@
       "Italic": [
         "კურსივი"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "გაწევრდით ${ MEET_APP_NAME }-ში"
+      ],
       "Keep my subscription": [
         "ჩემი გამოწერის შენარჩუნება"
       ],
@@ -1009,6 +1018,9 @@
       "Page ${ pageNumber }": [
         "გვერდი ${ pageNumber }"
       ],
+      "Passphrase": [
+        "საკვანძო ფრაზა"
+      ],
       "Pause": [
         "შეჩერება"
       ],
@@ -1170,6 +1182,9 @@
       ],
       "Resume downloading": [
         "გადმოწერის გაგრძელება"
+      ],
+      "Retry": [
+        "თავიდან"
       ],
       "Revert to original display": [
         "თავდაპირველ ეკრანზე დაბრუნება"
@@ -1444,10 +1459,6 @@
       "Trust": [
         "ნდობა"
       ],
-      "Trust key": [
-        "ნდობის გასაღები",
-        "ნდობის გასაღებები"
-      ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
       ],
@@ -1507,6 +1518,9 @@
       ],
       "Update recovery phrase": [
         "აღდგენის ფაზის განახლება"
+      ],
+      "Update secret passphrase": [
+        "საიდუმლო ფრაზის განახლება"
       ],
       "Upgrade": [
         "ტარიფის აწევა"
@@ -1950,6 +1964,11 @@
         "გამომგზავნის შემოწმება წარმატებულია"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "You have reached the trial limit.": [
+        "მიაღწიეთ გამოსაცდელი პერიოდის ზღვარს."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "გამოწერის გაუქმება"
@@ -2182,6 +2201,9 @@
       ],
       "Manual setup problem": [
         "ხელით დაყენების პრობლემა"
+      ],
+      "Meet problem": [
+        "Meet-ის პრობლემა"
       ],
       "Other": [
         "სხვა"
@@ -2603,6 +2625,46 @@
       ],
       "Expand": [
         "ამოკეცვა"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "წვდომა განვითარებულ ხი მოდელებთან"
+      ],
+      "Basic chat history": [
+        "საბაზისო ჩატის ისტორია"
+      ],
+      "Full chat history with search": [
+        "სრული ჩატის ისტორია ძებნით"
+      ],
+      "Large file upload support": [
+        "დიდი ფაილის ატვირთვის მხარდაჭერა"
+      ],
+      "Limited daily chats": [
+        "შეზღუდული ყოველდღიური ჩატები"
+      ],
+      "Limited favorites": [
+        "შეზღუდული რჩეულები"
+      ],
+      "Unlimited daily chats": [
+        "შეუზღუდავი ყოველდღიური ჩატები"
+      ],
+      "Unlimited favorites for quick access": [
+        "განუსაზღვრელი რჩეულები სწრაფი წვდომისთვის"
+      ],
+      "Upload and query multiple large files": [
+        "ატვირთეთ და დაამუშავეთ ბევრი დიდი ფაილი"
+      ],
+      "Upload and query small files": [
+        "ატვირტეთ და მოითხოვეთ პატარა ფაილები"
+      ],
+      "Web search access": [
+        "წვდომა ვებში ძებნასთან"
+      ]
+    },
+    "collider_2025: Info": {
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME }-ის დამატება"
       ]
     },
     "color": {
@@ -4488,6 +4550,9 @@
       "Failed to open to contact": [
         "კონტაქტისთვის გახსნა ჩავარდა"
       ],
+      "Failed to update secret passphrase": [
+        "საიდუმლო ფრაზის განახლება ჩავარდა"
+      ],
       "Filter with this name already exists": [
         "ფილტრი ამ სახელით უკვე არსებობს"
       ],
@@ -4616,6 +4681,9 @@
       ],
       "Organization key is not decrypted": [
         "ორგანიზაციის გასაღები გაშიფრული არაა"
+      ],
+      "Passphrase unavailable": [
+        "საკვანძო ფრაზა ხელმიუწვდომელია"
       ],
       "Password is required": [
         "პაროლი აუცილებელია"
@@ -5078,6 +5146,9 @@
     "Error message": {
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "ფსევდონიმებს ვერ გამოიყენებთ, როცა ${ PASS_APP_NAME }-ში დამატებითი პაროლია ჩართული."
+      ],
+      "An error occured with the categories": [
+        "შეცდომა კატეგორიებთან დაკავშირებით"
       ],
       "App currently unavailable": [
         "აპი ამჟამად ხელმიუწვდომელია"
@@ -5780,11 +5851,17 @@
       "Contacts": [
         "კონტაქტები"
       ],
+      "Domain": [
+        "დომენი"
+      ],
       "Drawer": [
         "უჯრა"
       ],
       "Hardware not compatible": [
         "აპარატურა თავსებადი არაა"
+      ],
+      "Password ends with": [
+        "პაროლი მთავრდება"
       ],
       "Report an issue": [
         "პრობლემის ანგარიშის გადაგზავნა"
@@ -5803,6 +5880,9 @@
       ],
       "Tell us more": [
         "გვითხარით მეტი"
+      ],
+      "Username": [
+        "მომხმარებლის სახელი"
       ]
     },
     "Hint": {
@@ -7138,7 +7218,8 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა"
+        "გამოსახულების ჩასმა",
+        "გამოსახულებების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -8835,12 +8916,6 @@
       "Also archive": [
         "არქივის ჩათვლით"
       ],
-      "Always label sender's emails": [
-        "გამომგზავნის ელფოსტებზე ჭდეების ყოველთვის დადება"
-      ],
-      "Always move sender's emails": [
-        "გამომგზავნის ელფოსტების ყოველთვის გადატანა"
-      ],
       "AND": [
         "და"
       ],
@@ -9171,9 +9246,6 @@
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName }-ის გადატანა"
       ],
-      "Move messages to": [
-        "შეტყობინების გადატანა სად"
-      ],
       "Move to": [
         "გადატანა სად"
       ],
@@ -9213,6 +9285,9 @@
       "No label found": [
         "ჭდეები ნაპოვნი არაა"
       ],
+      "No results found": [
+        "შედეგების გარეშე"
+      ],
       "Not factually correct": [
         "ფაქტიურად სწორი არაა"
       ],
@@ -9251,6 +9326,9 @@
       ],
       "Participants": [
         "მონაწილეები"
+      ],
+      "Passphrase:": [
+        "საკვანძო ფრაზა:"
       ],
       "Password": [
         "პაროლი"
@@ -11066,6 +11144,9 @@
       "Passcode copied to clipboard": [
         "წვდომის კოდი დაკოპირდა გაცვლის ბუფერში"
       ],
+      "Passphrase copied to clipboard": [
+        "საკვანძო ფრაზა დაკოპირდა გაცვლის ბუფერში"
+      ],
       "Password has been set successfully": [
         "პაროლი წარმატებით დადგა"
       ],
@@ -11140,7 +11221,7 @@
         "გადაიხადეთ წელიწადში ერთხელ, მიიღეთ ჩვენ საუკეთესო შეთავაზება"
       ],
       "Save": [
-        "შენახვა"
+        "დაზოგეთ"
       ],
       "Save big when you pay annually": [
         "დაზოგეთ ბევრი, როცა წელიწადში ერთხელ იხდით"
@@ -11785,6 +11866,9 @@
       ],
       "End date": [
         "დასრულების თარიღი"
+      ],
+      "Enter passphrase": [
+        "შეიყვანეთ საკვანძო ფრაზა"
       ],
       "Filter folders": [
         "საქაღალდეების გაფილტვრა"
@@ -13663,6 +13747,9 @@
       "Read receipt sent": [
         "წაკითხულობის ანგარიში გაიგზავნა"
       ],
+      "Secret passphrase updated": [
+        "საიდუმლო ფრაზა განახლდა"
+      ],
       "Self-destruction removed": [
         "თვითგანადგურება წაშლილია"
       ],
@@ -14047,6 +14134,9 @@
       "Change password": [
         "პაროლის შეცვლა"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME }-ის მისამართის გამოთხოვა"
+      ],
       "Clearing data": [
         "მონაცემების გასუფთავება"
       ],
@@ -14094,12 +14184,6 @@
       ],
       "Create contact": [
         "კონტაქტის შექმნა"
-      ],
-      "Create folder \"${ search }\"": [
-        "\"${ search }\" საქაღალდის შექმნა"
-      ],
-      "Create label \"${ search }\"": [
-        "ჭდის \"${ search }\" შექმნა"
       ],
       "Create new group": [
         "ახალი ჯგუფის შექმნა"
@@ -14350,6 +14434,10 @@
       "Label as": [
         "დანიშვნა, როგორც"
       ],
+      "Label message as": [
+        "შეტყობინების დანიშვნა, როგორც",
+        "შეტყობინეებბის დანიშვნა, როგორც"
+      ],
       "Label options": [
         "ჭდის მორგება"
       ],
@@ -14433,6 +14521,13 @@
       ],
       "Move all messages to trash": [
         "ყველა შეტყობინების გადატანა ნაგვის ყუთში"
+      ],
+      "Move message to": [
+        "შეტყობინების გადატანა სად",
+        "შეტყობინებების გადატანა სად"
+      ],
+      "Move messages to": [
+        "შეტყობინების გადატანა სად"
       ],
       "Move to": [
         "გადატანა სად"
@@ -14870,6 +14965,9 @@
       ],
       "Your subscriptions in one place": [
         "თქვენი გამოწერები ერთ ადგილას"
+      ],
+      "✨ Categories are coming!": [
+        "✨ კატეგორიები გზაშია!"
       ]
     },
     "Today icon tooltip in mini calendar": {

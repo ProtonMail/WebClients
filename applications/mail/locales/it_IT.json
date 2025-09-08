@@ -96,6 +96,9 @@
       "Add phone number": [
         "Aggiungi numero di telefono"
       ],
+      "Add secret passphrase": [
+        "Aggiungi frase d'accesso segreta"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Aggiungi a ${ CALENDAR_APP_NAME }"
       ],
@@ -757,6 +760,9 @@
       "Italic": [
         "Corsivo"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Unisciti con ${ MEET_APP_NAME }"
+      ],
       "Keep my subscription": [
         "Mantieni il mio abbonamento"
       ],
@@ -1012,6 +1018,9 @@
       "Page ${ pageNumber }": [
         "Pagina ${ pageNumber }"
       ],
+      "Passphrase": [
+        "Frase d'accesso"
+      ],
       "Pause": [
         "Metti in pausa"
       ],
@@ -1173,6 +1182,9 @@
       ],
       "Resume downloading": [
         "Riprendi il download"
+      ],
+      "Retry": [
+        "Riprova"
       ],
       "Revert to original display": [
         "Torna alla visualizzazione originale"
@@ -1447,10 +1459,6 @@
       "Trust": [
         "Considera attendibile"
       ],
-      "Trust key": [
-        "chiave attendibile",
-        "chiavi attendibili"
-      ],
       "Trust public key": [
         "Chiave pubblica attendibile"
       ],
@@ -1510,6 +1518,9 @@
       ],
       "Update recovery phrase": [
         "Aggiorna frase di recupero"
+      ],
+      "Update secret passphrase": [
+        "Aggiorna frase d'accesso segreta"
       ],
       "Upgrade": [
         "Effettua l'upgrade"
@@ -1969,11 +1980,17 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Dopo la prova termina il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnoverà automaticamente ogni ${ renewCycle } mesi il ${ formattedDate }. Non ti verrà addebitato nulla se annulli prima del ${ formattedDate }."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese il ${ formattedDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_DEDICATED_IPS } server dedicati durante il periodo di prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_LUMO_SEATS } licenze ${ LUMO_SHORT_APP_NAME } durante il periodo di prova."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze Scribe durante il periodo di prova."
@@ -2220,6 +2237,9 @@
       ],
       "Manual setup problem": [
         "Problema di configurazione manuale"
+      ],
+      "Meet problem": [
+        "Si è verificato un problema"
       ],
       "Other": [
         "Altro"
@@ -2646,12 +2666,50 @@
         "Espandi"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Accesso a modelli IA avanzati"
+      ],
+      "Basic chat history": [
+        "Cronologia chat di base"
+      ],
+      "Full chat history with search": [
+        "Cronologia chat completa con ricerca"
+      ],
+      "Large file upload support": [
+        "Caricamenti di file di grandi dimensioni"
+      ],
+      "Limited daily chats": [
+        "Numero limitato di chat al giorno"
+      ],
+      "Limited favorites": [
+        "Numero limitato di preferiti"
+      ],
+      "Unlimited daily chats": [
+        "Numero illimitato di chat al giorno"
+      ],
+      "Unlimited favorites for quick access": [
+        "Preferiti senza limiti per consultazione rapida"
+      ],
+      "Upload and query multiple large files": [
+        "Carica e consulta più file grandi"
+      ],
+      "Upload and query small files": [
+        "Carica e consulta file piccoli"
+      ],
+      "Web search access": [
+        "Accesso alla Ricerca Web"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } è un'IA orientata alla privacy che ti aiuta a fare di più, mantenendo sicuri i tuoi dati. Sblocca tutto il suo potenziale e goditi l'accesso anticipato alle nuove funzionalità non appena saranno introdotte."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Aggiungi ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chat veloci e funzioni AI avanzate."
       ]
     },
     "color": {
@@ -4560,6 +4618,9 @@
       "Failed to open to contact": [
         "Impossibile aprire il contatto"
       ],
+      "Failed to update secret passphrase": [
+        "Impossibile aggiornare la frase d'accesso segreta"
+      ],
       "Filter with this name already exists": [
         "Esiste già un filtro con questo nome"
       ],
@@ -4688,6 +4749,9 @@
       ],
       "Organization key is not decrypted": [
         "La chiave dell'organizzazione non è decriptata"
+      ],
+      "Passphrase unavailable": [
+        "Frase segreta non disponibile"
       ],
       "Password is required": [
         "Password necessaria"
@@ -5150,6 +5214,9 @@
     "Error message": {
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Gli alias non possono essere usati quando è abilitata la password aggiuntiva in ${ PASS_APP_NAME }."
+      ],
+      "An error occured with the categories": [
+        "Si è verificato un errore con le categorie"
       ],
       "App currently unavailable": [
         "App attualmente non disponibile"
@@ -5855,11 +5922,17 @@
       "Contacts": [
         "Contatti"
       ],
+      "Domain": [
+        "Dominio"
+      ],
       "Drawer": [
         "Pannello laterale"
       ],
       "Hardware not compatible": [
         "Hardware non compatibile"
+      ],
+      "Password ends with": [
+        "La password termina con"
       ],
       "Report an issue": [
         "Segnala un problema"
@@ -5878,6 +5951,9 @@
       ],
       "Tell us more": [
         "Dicci di più"
+      ],
+      "Username": [
+        "Utente"
       ]
     },
     "Hint": {
@@ -7125,6 +7201,9 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Per accedere in qualsiasi momento alla posta elettronica e ottimizzare l'esperienza mobile, scarica la nostra app ${ androidAppLink } o ${ iosAppLink }."
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Per maggiore sicurezza, puoi impostare una frase d'accesso. Non sarà inclusa nell'invito al calendario, ricorda di condividerla con i tuoi ospiti separatamente."
+      ],
       "For messages newer than ${ oldestDate }": [
         "Per i messaggi più recenti di ${ oldestDate }"
       ],
@@ -7255,7 +7334,8 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
@@ -9009,12 +9089,6 @@
       "Also archive": [
         "Sposta in archivio"
       ],
-      "Always label sender's emails": [
-        "Etichetta sempre le email del mittente"
-      ],
-      "Always move sender's emails": [
-        "Sposta sempre le email del mittente"
-      ],
       "AND": [
         "E"
       ],
@@ -9351,9 +9425,6 @@
       "Move ${ sidebarElementName }": [
         "Sposta ${ sidebarElementName }"
       ],
-      "Move messages to": [
-        "Sposta i messaggi in"
-      ],
       "Move to": [
         "Sposta in..."
       ],
@@ -9393,6 +9464,9 @@
       "No label found": [
         "Nessuna etichetta trovata"
       ],
+      "No results found": [
+        "Nessun risultato trovato"
+      ],
       "Not factually correct": [
         "Non è veritiero"
       ],
@@ -9431,6 +9505,9 @@
       ],
       "Participants": [
         "Partecipanti"
+      ],
+      "Passphrase:": [
+        "Frase d'accesso:"
       ],
       "Password": [
         "Password"
@@ -11275,6 +11352,9 @@
       "Passcode copied to clipboard": [
         "Codice copiato negli appunti"
       ],
+      "Passphrase copied to clipboard": [
+        "Frase d'accesso copiata negli appunti"
+      ],
       "Password has been set successfully": [
         "La password è stata impostata con successo"
       ],
@@ -11355,7 +11435,7 @@
         "Paga annualmente, assicurati la nostra migliore offerta"
       ],
       "Save": [
-        "Salva"
+        "Risparmia"
       ],
       "Save big when you pay annually": [
         "Risparmia di più pagando annualmente"
@@ -12058,6 +12138,9 @@
       ],
       "End date": [
         "Data di fine"
+      ],
+      "Enter passphrase": [
+        "Inserisci la frase di accesso"
       ],
       "Filter folders": [
         "Filtra cartelle"
@@ -13965,6 +14048,9 @@
         "Messaggio ricategorizzato ${ elementsCount }.",
         "Ricategorizzati ${ elementsCount } messaggi."
       ],
+      "Secret passphrase updated": [
+        "Frase d'accesso segreta aggiornata"
+      ],
       "Self-destruction removed": [
         "Autodistruzione rimossa"
       ],
@@ -14400,12 +14486,6 @@
       "Create contact": [
         "Crea contatto"
       ],
-      "Create folder \"${ search }\"": [
-        "Crea cartella \"${ search }\""
-      ],
-      "Create label \"${ search }\"": [
-        "Crea etichetta \"${ search }\""
-      ],
       "Create new group": [
         "Crea nuovo gruppo"
       ],
@@ -14658,6 +14738,10 @@
       "Label as": [
         "Etichetta come..."
       ],
+      "Label message as": [
+        "Etichetta messaggio come",
+        "Etichetta messaggi come"
+      ],
       "Label options": [
         "Opzioni etichetta"
       ],
@@ -14741,6 +14825,13 @@
       ],
       "Move all messages to trash": [
         "Sposta tutti i messaggi nel cestino"
+      ],
+      "Move message to": [
+        "Sposta messaggio in",
+        "Sposta messaggi in"
+      ],
+      "Move messages to": [
+        "Sposta messaggi in"
       ],
       "Move to": [
         "Sposta in..."
