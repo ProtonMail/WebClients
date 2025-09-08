@@ -531,6 +531,32 @@
         "Выведзіце прадукцыйнасць электроннай пошты на новыя ўзроўні. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Падпіска стане платнай і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў ${ formattedDate }, пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Падпіска стане платнай і будзе аўтаматычна падаўжацца штомесяц ${ formattedDate }, пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_DEDICATED_IPS } вылучаных сервераў на працягу пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_LUMO_SEATS } ліцэнзій ${ LUMO_SHORT_APP_NAME } на працягу пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_SCRIBE_SEATS } ліцэнзій Scribe на працягу пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_USERS } карыстальнікаў на працягу пробнага перыяду."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "У вас няма магчымасці дадаваць карыстальніцкія дамены падчас пробнага перыяду."
+      ],
+      "You have reached the trial limit.": [
+        "Дасягнута абмежаванне пробнага перыяду."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Скасаваць падпіску"
@@ -997,6 +1023,9 @@
       "Manual setup problem": [
         "Праблема падчас наладжвання ўручную"
       ],
+      "Meet problem": [
+        "Праблема з Meet"
+      ],
       "Other": [
         "Іншае"
       ],
@@ -1161,6 +1190,52 @@
       ],
       "Expand": [
         "Разгарнуць"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Доступ да перадавых мадэляў ШІ"
+      ],
+      "Basic chat history": [
+        "Базавая гісторыя чата"
+      ],
+      "Full chat history with search": [
+        "Поўная гісторыя чатаў з пошукам"
+      ],
+      "Large file upload support": [
+        "Падтрымка запамоўвання вялікіх файлаў"
+      ],
+      "Limited daily chats": [
+        "Абмежаваная колькасць штодзённых чатаў"
+      ],
+      "Limited favorites": [
+        "Абмежаваная колькасць абраных"
+      ],
+      "Unlimited daily chats": [
+        "Неабмежаваныя штодзённыя чаты"
+      ],
+      "Unlimited favorites for quick access": [
+        "Неабмежаваная колькасць абраных для хуткага доступу"
+      ],
+      "Upload and query multiple large files": [
+        "Запампаваць і запытаць некалькі вялікіх файлаў"
+      ],
+      "Upload and query small files": [
+        "Запампаваць і запытаць маленькія файлы"
+      ],
+      "Web search access": [
+        "Доступ да пошуку ў інтэрнэце"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } — гэта ШІ, які арыентаваны на прыватнасць. Ён дапамагае рашаць больш задач і пры гэтым захоўвае вашы даныя ў бяспецы. Раскрыйце поўны патэнцыял праграмы і атрымлівайце асалоду ад ранняга доступу да новых функцый па меры іх укаранення."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Дадайце праграму ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Высокахуткасныя чаты і перадавыя функцыі ШІ."
       ]
     },
     "color": {
@@ -4625,7 +4700,7 @@
         "Нумар карткі"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
-        "У цяперашні час аўтаматычнае падаўжэнне падпіскі адключана. Калі змяніць падпіску цяпер, то аўтаматычнае падаўжэнне будзе ўключана паўторна."
+        "У цяперашні час аўтаматычнае падаўжэнне падпіскі адключана. Аўтаматычнае падаўжэнне будзе ўключана паўторна, калі змяніць падпіску цяпер."
       ],
       "CVC": [
         "CVC"
