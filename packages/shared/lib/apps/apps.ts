@@ -59,11 +59,12 @@ const getAvailableAppsByUser = (options: GetAvailableAppsByUserTypeArguments): A
         return new Set([APPS.PROTONVPN_SETTINGS]);
     }
 
+    if (getIsGlobalSSOAccount(options.user)) {
+        // Drive is blocked for Global SSO users as of 22.02.2025. Only Pass and VPN are allowed for these users.
+        return new Set([APPS.PROTONPASS, APPS.PROTONVPN_SETTINGS]);
+    }
+
     if (getIsExternalUserWithoutProtonAddressCreation(options.user)) {
-        if (getIsGlobalSSOAccount(options.user)) {
-            // Drive is blocked for Global SSO users as of 22.02.2025. Only Pass and VPN are allowed for these users.
-            return new Set([APPS.PROTONPASS, APPS.PROTONVPN_SETTINGS]);
-        }
         // Public users without a proton address can't create a proton address themselves, so only these apps are ok
         return new Set([
             APPS.PROTONVPN_SETTINGS,
