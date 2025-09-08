@@ -1012,6 +1012,9 @@
       "Open": [
         "開く"
       ],
+      "Open ${ applicationName }": [
+        "${ applicationName } を開く"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
       ],
@@ -1979,6 +1982,9 @@
       ],
       "Secure your communications": [
         "コミュニケーションを保護します"
+      ],
+      "Talk confidentially": [
+        "安心して会話する"
       ]
     },
     "Apps dropdown": {
@@ -2503,6 +2509,9 @@
       ],
       "Manual setup problem": [
         "手動セットアップに関する問題"
+      ],
+      "Meet problem": [
+        "Meetの問題"
       ],
       "Other": [
         "その他"
@@ -8077,6 +8086,24 @@
       "${ n } address": [
         "${ n } 件のアドレス"
       ],
+      "${ name } for Android": [
+        "Android版${ name }"
+      ],
+      "${ name } for GNU/Linux": [
+        "GNU/Linux 版 ${ name }"
+      ],
+      "${ name } for iOS": [
+        "iOS版 ${ name }"
+      ],
+      "${ name } for macOS": [
+        "macOS版 ${ name }"
+      ],
+      "${ name } for Web": [
+        "ウェブ版 ${ name }"
+      ],
+      "${ name } for Windows": [
+        "Windows版${ name }"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: 不正なメールを隔離したり拒否したりしません。 通常、このポリシーはトラブルシューティングまたはテストにのみ使用されます。"
       ],
@@ -8424,6 +8451,9 @@
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "メールエイリアスはメールアドレスと同じように機能しますが、スパムを減らし、実際のメールアドレスと身元を隠します。"
+      ],
+      "An error occurred while communicating with **${ applicationName }**": [
+        "**${ applicationName }**との通信中にエラーが発生しました"
       ],
       "An error occurred while communicating with the extension": [
         "拡張機能との通信中にエラーが発生しました"
@@ -11065,6 +11095,9 @@
       "You may be redirected to your bank’s website.": [
         "銀行のウェブサイトに移動する場合があります。"
       ],
+      "You may now start using **${ applicationName }**": [
+        "これで**${ applicationName }**をご利用いただけるようになりました"
+      ],
       "You may now start using the extension": [
         "これで拡張機能の使用を開始できるようになります"
       ],
@@ -12948,6 +12981,9 @@
       "Verify keys with Key Transparency": [
         "Key Transparency で鍵を検証する"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } を利用したビデオ会議"
+      ],
       "Video conferencing with Zoom": [
         "Zoomでのビデオ会議"
       ],
@@ -13920,6 +13956,9 @@
       ],
       "Back": [
         "戻る"
+      ],
+      "Back to ${ MEET_SHORT_APP_NAME }": [
+        "${ MEET_SHORT_APP_NAME } に戻る"
       ],
       "Back to calendar": [
         "カレンダーに戻る"
@@ -15085,6 +15124,9 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } が作成されました"
       ],
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "${ MEET_APP_NAME }ビデオ会議の設定が更新されました"
+      ],
       "${ reason } has been disabled": [
         "${ reason } が無効になりました"
       ],
@@ -15105,6 +15147,12 @@
       ],
       "Email notifications have been enabled": [
         "メール通知は有効化されています"
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "${ MEET_APP_NAME } ビデオ会議設定の更新に失敗しました"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Zoom ビデオ会議設定の更新に失敗しました"
       ],
       "Invalid code": [
         "無効なコード"
@@ -15153,6 +15201,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "2要素認証はもう必要ありません"
+      ],
+      "Zoom video conferencing settings have been updated": [
+        "Zoomビデオ会議の設定が更新されました"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -21755,6 +21806,9 @@
       "You have no resolved alerts": [
         "解決されたアラートはありません"
       ],
+      "You've successfully signed in!": [
+        "正常にサインインしました！"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName }の無料トライアルは${ textDate }に終了します"
       ],
@@ -21916,6 +21970,12 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "管理者はユーザーのアカウントを管理することができ、他のユーザーに管理者権限を与えることができます。プライマリー管理者のみが組織のプランを変更できます。"
+      ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "カレンダーの招待状にシームレスに${ MEET_APP_NAME }ビデオ会議のリンクを追加できるようにします。"
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "カレンダーの招待状にシームレスにZoomビデオ会議のリンクを追加できるようにします。"
       ],
       "Any protection applied to suspicious activity": [
         "疑わしいアクティビティに適用される保護"
