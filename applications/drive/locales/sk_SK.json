@@ -1119,6 +1119,9 @@
       "Upload file": [
         "Nahrať súbor"
       ],
+      "Upload File": [
+        "Nahrať súbor"
+      ],
       "Upload files": [
         "Nahrať súbory"
       ],
@@ -1430,6 +1433,32 @@
         "Nepodporovaná udalosť"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa z neho stane platené predplatné, ktoré sa automaticky obnovuje každých ${ renewCycle } mesiacov dňa ${ formattedDate }. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje mesačne dňa ${ formattedDate }. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_DEDICATED_IPS } vyhradených serverov počas skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } miest počas skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_SCRIBE_SEATS } Scribe miest počas skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_USERS } používateľov počas skúšobného obdobia."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Počas skúšobného obdobia nemôžete pridať vlastné domény."
+      ],
+      "You have reached the trial limit.": [
+        "Dosiahli ste limit skúšobného obdobia."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Zrušiť predplatné"
@@ -1672,6 +1701,9 @@
       "Manual setup problem": [
         "Problém s ručným nastavením"
       ],
+      "Meet problem": [
+        "Problém s aplikáciou Meet"
+      ],
       "Other": [
         "Iné"
       ],
@@ -1822,6 +1854,52 @@
       ],
       "Expand": [
         "Rozbaliť"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Prístup k pokročilým modelom AI"
+      ],
+      "Basic chat history": [
+        "Základná história chatu"
+      ],
+      "Full chat history with search": [
+        "Úplná história chatu s vyhľadávaním"
+      ],
+      "Large file upload support": [
+        "Podpora nahrávania veľkých súborov"
+      ],
+      "Limited daily chats": [
+        "Obmedzené denné chaty"
+      ],
+      "Limited favorites": [
+        "Obmedzené obľúbené položky"
+      ],
+      "Unlimited daily chats": [
+        "Neobmedzené denné chaty"
+      ],
+      "Unlimited favorites for quick access": [
+        "Neobmedzené obľúbené položky pre rýchly prístup"
+      ],
+      "Upload and query multiple large files": [
+        "Nahrávanie a vyhľadávanie viacerých veľkých súborov"
+      ],
+      "Upload and query small files": [
+        "Nahrávanie a vyhľadávanie malých súborov"
+      ],
+      "Web search access": [
+        "Prístup k webovému vyhľadávaniu"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } je AI, ktorá kladie dôraz na ochranu súkromia a pomáha vám dosiahnuť viac pri zachovaní bezpečnosti vašich údajov. Využite jej plný potenciál a získajte skorý prístup k novým funkciám hneď po ich zavedení."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Pridať ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Vysokorýchlostné chaty a pokročilé funkcie AI"
       ]
     },
     "color": {
