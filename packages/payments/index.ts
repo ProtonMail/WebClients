@@ -384,6 +384,7 @@ export {
     hasAIAssistant,
     hasAllProductsB2CPlan,
     hasAnniversary2025Coupon,
+    hasSep2025Coupon,
     hasAnyBundlePro,
     hasBundle,
     hasBundlePro,
