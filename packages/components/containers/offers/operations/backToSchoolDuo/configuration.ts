@@ -30,7 +30,6 @@ export const backToSchoolDuo: OfferConfig = {
         },
     ],
     topButton: {
-        // TODO: appearance, variant
         shape: 'outline',
         getCTAContent: () => {
             // translator: button in the top right corner of the app (outside the modal)
@@ -39,7 +38,6 @@ export const backToSchoolDuo: OfferConfig = {
         icon: 'gift',
         iconSize: 4,
         gradient: false,
-        variant: '',
     },
     layout: BackToSchoolLayout,
 };
