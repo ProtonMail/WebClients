@@ -22,6 +22,7 @@ import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shar
 import { omit } from '@proton/shared/lib/helpers/object';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 import type { Api, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import { deviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecoveryHelper';
 import noop from '@proton/utils/noop';
 
@@ -211,6 +212,11 @@ const consumeForkSession = async ({
 
     if (!keyPassword) {
         throw new Error('Incorrect payload');
+    }
+
+    const decryptedKeys = await getDecryptedUserKeysHelper(user, keyPassword);
+    if (!decryptedKeys.length) {
+        throw new Error('Unable to decrypt keys');
     }
 
     const persistent = config.persistent;
