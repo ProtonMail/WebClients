@@ -12,6 +12,21 @@ import { useUIStateContext } from '../contexts/UIStateContext';
 import type { MeetChatMessage } from '../types';
 import { MeetingSideBars } from '../types';
 
+const isValidChatMessageString = (jsonString: string): boolean => {
+    const dangerousPatterns = [
+        '__proto__',
+        'constructor',
+        'prototype',
+        '__defineGetter__',
+        '__defineSetter__',
+        '__lookupGetter__',
+        '__lookupSetter__',
+    ];
+
+    const lowerStr = jsonString.toLowerCase();
+    return !dangerousPatterns.some((pattern) => lowerStr.includes(pattern));
+};
+
 export const useChat = () => {
     const room = useRoomContext();
 
@@ -32,7 +47,17 @@ export const useChat = () => {
             }
 
             try {
-                const decodedMessage = JSON.parse(new TextDecoder().decode(payload));
+                const decodedPayload = new TextDecoder().decode(payload);
+
+                if (
+                    !isValidChatMessageString(decodedPayload) ||
+                    decodedPayload.length === 0 ||
+                    decodedPayload.length > 50000
+                ) {
+                    return;
+                }
+
+                const decodedMessage = JSON.parse(decodedPayload);
 
                 const decryptedMessage = await mls?.decryptMessage(stringToUint8Array(decodedMessage.message));
 
@@ -43,7 +68,8 @@ export const useChat = () => {
                 const sanitizedMessage = sanitizeMessage(decryptedMessage.message);
 
                 const newMessage: MeetChatMessage = {
-                    ...decodedMessage,
+                    id: decodedMessage.id,
+                    timestamp: decodedMessage.timestamp,
                     identity: participant.identity,
                     name: participantNameMap[participant.identity] || participant.identity,
                     seen: isChatOpen,

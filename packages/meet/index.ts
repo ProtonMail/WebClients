@@ -12,5 +12,6 @@ export { useGetMeetingByLinkName } from './hooks/useGetMeetingByLinkName';
 export { parseMeetingLink } from './utils/parseMeetingLink';
 export { getMeetingLink } from './utils/getMeetingLink';
 export { useMeetErrorReporting } from './hooks/useMeetErrorReporting';
+export { isUrlPasswordValid } from './utils/isUrlPasswordValid';
 
 export type { CreateMeetingParams } from './types/types';
