@@ -40,7 +40,6 @@ const reportIssue = (context, node) => {
 
 export default {
     meta: {
-        type: 'suggestion',
         docs: {
             description: 'Try to use the TEST_TAGS enum constant.',
         },

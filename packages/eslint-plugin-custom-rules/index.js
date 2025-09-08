@@ -8,6 +8,9 @@ import noTemplateInTranslatorContext from './no-template-in-translator-context.j
 import validateTtag from './validate-ttag.js';
 
 export default {
+    meta: {
+        name: 'custom-rules',
+    },
     rules: {
         'date-formatting-locale': dateFormattingLocale,
         'deprecate-classes': deprecateClasses,
