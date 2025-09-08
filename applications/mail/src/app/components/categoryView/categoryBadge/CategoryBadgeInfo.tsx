@@ -1,7 +1,7 @@
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Info } from '@proton/components';
-import clsx from '@proton/utils/clsx';
 
 interface Props {
     className?: string;
@@ -9,7 +9,7 @@ interface Props {
 
 export const CategoryBadgeInfo = ({ className }: Props) => {
     return (
-        <div className={clsx('flex items-center x text-sm color-weak', className)}>
+        <div className={clsx('flex items-center text-sm color-weak', className)}>
             <span>{c('Label').t`Why am I seeing this?`}</span>
             <Info
                 buttonTabIndex={-1}

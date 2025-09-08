@@ -4,19 +4,19 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
-import { useCategoryView } from './useCategoryView';
+import { useCategoriesView } from './useCategoriesView';
 
 export const useMailCategoriesRedirection = () => {
     const location = useLocation();
-    const history = useHistory();
-    const categoryViewControl = useCategoryView();
+    const { push } = useHistory();
+    const categoryViewControl = useCategoriesView();
 
     useEffect(() => {
         if (
             categoryViewControl.categoryViewAccess &&
             location.pathname.includes(LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX])
         ) {
-            history.push(LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]);
+            push(LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]);
         }
-    }, [location, categoryViewControl]);
+    }, [location.pathname, categoryViewControl.categoryViewAccess, push]);
 };
