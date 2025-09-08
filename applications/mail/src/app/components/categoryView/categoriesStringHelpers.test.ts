@@ -1,21 +1,43 @@
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { getLabelFromCategoryId } from './categoriesStringHelpers';
+import { getDescriptionFromCategoryId, getLabelFromCategoryId } from './categoriesStringHelpers';
 
 describe('categoriesStringHelpers', () => {
-    it.each([
-        [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, 'Primary'],
-        [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, 'Social'],
-        [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, 'Promotions'],
-        [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, 'Newsletters'],
-        [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, 'Transactions'],
-        [MAILBOX_LABEL_IDS.CATEGORY_UPDATES, 'Updates'],
-        [MAILBOX_LABEL_IDS.CATEGORY_FORUMS, 'Forums'],
-    ])('should return the correct label for the category %s when the category is %s', (category, expectedLabel) => {
-        expect(getLabelFromCategoryId(category)).toBe(expectedLabel);
+    describe('getLabelFromCategoryId', () => {
+        const testArray: [CategoryLabelID, string][] = [
+            [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, 'Primary'],
+            [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, 'Social'],
+            [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, 'Promotions'],
+            [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, 'Newsletters'],
+            [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, 'Transactions'],
+            [MAILBOX_LABEL_IDS.CATEGORY_UPDATES, 'Updates'],
+            [MAILBOX_LABEL_IDS.CATEGORY_FORUMS, 'Forums'],
+        ];
+
+        it.each(testArray)(
+            'should return the correct label for the category %s when the category is %s',
+            (category, expectedLabel) => {
+                expect(getLabelFromCategoryId(category)).toBe(expectedLabel);
+            }
+        );
     });
 
-    it('should return unknown when the category is not found', () => {
-        expect(getLabelFromCategoryId('unknown' as MAILBOX_LABEL_IDS)).toBe('Unknown');
+    describe('getDescriptionFromCategoryId', () => {
+        const testArray: [CategoryLabelID, string][] = [
+            [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, 'Primary'],
+            [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, 'Social media updates and activity'],
+            [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, 'Deals, offers, marketing emails'],
+            [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, 'Non-promotional content and news'],
+            [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, 'Bookings, billings, and orders'],
+            [MAILBOX_LABEL_IDS.CATEGORY_UPDATES, 'Automated confirmations and alerts'],
+            [MAILBOX_LABEL_IDS.CATEGORY_FORUMS, 'Discussion board posts and threads'],
+        ];
+
+        it.each(testArray)(
+            'should return the correct label for the category %s when the category is %s',
+            (category, expectedLabel) => {
+                expect(getDescriptionFromCategoryId(category)).toBe(expectedLabel);
+            }
+        );
     });
 });

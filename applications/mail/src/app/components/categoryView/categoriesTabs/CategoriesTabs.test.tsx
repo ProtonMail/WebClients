@@ -4,8 +4,29 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { mailTestRender } from 'proton-mail/helpers/test/helper';
 
+import { getCategoryData } from '../categoriesHelpers';
 import * as helpers from '../categoriesStringHelpers';
 import { CategoriesTabs } from './CategoriesTabs';
+
+const mockCategoriesData = [
+    MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+    MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+    MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+    MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
+    MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
+    MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+]
+    .map(getCategoryData)
+    .map((data) => ({ ...data, checked: true }));
+
+jest.mock('../useCategoriesView', () => ({
+    useCategoriesView: jest.fn(() => ({
+        categoriesStore: [],
+        categoriesTabs: [],
+        activeCategoriesTabs: mockCategoriesData,
+    })),
+}));
 
 describe('CategoriesTabs', () => {
     it.each([
@@ -17,8 +38,9 @@ describe('CategoriesTabs', () => {
         { label: MAILBOX_LABEL_IDS.CATEGORY_UPDATES, colorShade: 'purple' },
         { label: MAILBOX_LABEL_IDS.CATEGORY_FORUMS, colorShade: 'amber' },
     ])('should render the categories with the proper border class', async ({ label, colorShade }) => {
-        await mailTestRender(<CategoriesTabs labelID={label} />);
+        await mailTestRender(<CategoriesTabs categoryLabelID={label} />);
         const categoryTab = screen.getByTestId(`category-tab-${label}`);
+
         expect(categoryTab).toHaveClass('mail-category-border');
         expect(categoryTab.dataset.color).toStrictEqual(colorShade);
     });
@@ -51,7 +73,7 @@ describe('CategoriesTabs', () => {
                 return mailTestRender(<CategoriesTabs labelID={MAILBOX_LABEL_IDS.CATEGORY_DEFAULT} />);
             });
 
-            const errorMessage = await screen.findByText('An error occured with the categories');
+            const errorMessage = await screen.findByText('An error occurred with the categories');
             expect(errorMessage).toBeInTheDocument();
 
             const refreshButton = await screen.findByText('Refresh the page');
@@ -66,7 +88,7 @@ describe('CategoriesTabs', () => {
                 return 'Label';
             });
 
-            await mailTestRender(<CategoriesTabs labelID={MAILBOX_LABEL_IDS.CATEGORY_DEFAULT} />);
+            await mailTestRender(<CategoriesTabs categoryLabelID={MAILBOX_LABEL_IDS.CATEGORY_DEFAULT} />);
 
             const errorMessage = await screen.findAllByText('Something went wrong');
             expect(errorMessage).toHaveLength(1);

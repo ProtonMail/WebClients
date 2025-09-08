@@ -1,16 +1,18 @@
 import { NavLink } from 'react-router-dom';
 
-import { Icon, type IconName } from '@proton/components';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { clsx } from 'clsx';
+
+import { Icon } from '@proton/components';
+import type { IconName } from '@proton/icons';
+import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
-import clsx from '@proton/utils/clsx';
 
 import type { CATEGORIES_COLOR_SHADES } from '../categoriesConstants';
 import { getLabelFromCategoryId } from '../categoriesStringHelpers';
 import { TabState } from './tabsInterface';
 
 interface Props {
-    id: MAILBOX_LABEL_IDS;
+    id: CategoryLabelID;
     count?: number;
     icon: IconName;
     colorShade: CATEGORIES_COLOR_SHADES;
@@ -30,20 +32,20 @@ export const Tab = ({ id, count, icon, tabState, colorShade }: Props) => {
                 tabState === TabState.INACTIVE && 'border border-transparent'
             )}
             role="tab"
-            aria-selected={tabState === 'active'}
+            aria-selected={tabState === TabState.ACTIVE}
             aria-label={getLabelFromCategoryId(id)}
             data-testid={`category-tab-${id}`}
             data-color={colorShade}
         >
-            <Icon className={clsx('shrink-0', tabState === 'active' && 'mail-category-color')} name={icon} />
+            <Icon className={clsx('shrink-0', tabState === TabState.ACTIVE && 'mail-category-color')} name={icon} />
             <span
                 title={getLabelFromCategoryId(id)}
-                className={clsx('tag-label tag-label-text', tabState === 'active' ? 'color-norm' : 'color-weak')}
+                className={clsx('tag-label tag-label-text', tabState === TabState.ACTIVE ? 'color-norm' : 'color-weak')}
             >
                 {getLabelFromCategoryId(id)}
             </span>
             {/* TODO: clarify how the count is supposed to work */}
-            {count && tabState === 'active' && (
+            {count && tabState === TabState.ACTIVE && (
                 <span className={clsx('tag-count px-1.5 py-0.5 text-sm mail-category-color mail-category-count-bg')}>
                     {count}
                 </span>

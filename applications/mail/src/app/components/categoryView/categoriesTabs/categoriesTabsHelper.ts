@@ -5,21 +5,21 @@ export const getTabState = ({
     index,
     category,
     categoriesList,
-    labelID,
-    dragOveredElementId,
+    categoryLabelID,
+    draggedOverCategoryId,
 }: {
     index: number;
     category: CategoryTab;
     categoriesList: CategoryTab[];
-    labelID: string;
-    dragOveredElementId?: string;
+    categoryLabelID: string;
+    draggedOverCategoryId?: string;
 }): TabState => {
-    if (category.id === labelID) {
+    if (category.id === categoryLabelID) {
         return TabState.ACTIVE;
-    } else if (category.id === dragOveredElementId) {
+    } else if (category.id === draggedOverCategoryId) {
         return TabState.DRAGGING_OVER;
-    } else if (dragOveredElementId) {
-        const hoveredIndex = categoriesList.findIndex((c) => c.id === dragOveredElementId);
+    } else if (draggedOverCategoryId) {
+        const hoveredIndex = categoriesList.findIndex((c) => c.id === draggedOverCategoryId);
         if (hoveredIndex === index - 1 || hoveredIndex === index + 1) {
             return TabState.DRAGGING_NEIGHBOR;
         }

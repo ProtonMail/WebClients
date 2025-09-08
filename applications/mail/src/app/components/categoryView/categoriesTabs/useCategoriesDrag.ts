@@ -8,7 +8,7 @@ interface UseCategoriesDragProps {
 
 export const useCategoriesDrag = ({ onDrop }: UseCategoriesDragProps) => {
     const isDragging = useRef<boolean>(false);
-    const [dragOveredElementId, setDragOveredElementId] = useState<string | undefined>();
+    const [draggedOverCategoryId, setDraggedOverCategoryId] = useState<string | undefined>();
 
     const handleDragOver: (categoryId: string) => DragEventHandler<HTMLDivElement> = (categoryId) => (event) => {
         if (!isDragging.current) {
@@ -16,7 +16,7 @@ export const useCategoriesDrag = ({ onDrop }: UseCategoriesDragProps) => {
         }
 
         event.preventDefault();
-        setDragOveredElementId(categoryId);
+        setDraggedOverCategoryId(categoryId);
     };
 
     const handleDragEnter: DragEventHandler<HTMLDivElement> = (event) => {
@@ -26,14 +26,14 @@ export const useCategoriesDrag = ({ onDrop }: UseCategoriesDragProps) => {
 
     const handleDragLeave: DragEventHandler<HTMLDivElement> = (event) => {
         if (!event.currentTarget.contains(event.relatedTarget as Node)) {
-            setDragOveredElementId(undefined);
+            setDraggedOverCategoryId(undefined);
         }
     };
 
     const handleDrop: (categoryId: string) => DragEventHandler<HTMLDivElement> = (categoryId) => (event) => {
         event.preventDefault();
         isDragging.current = false;
-        setDragOveredElementId(undefined);
+        setDraggedOverCategoryId(undefined);
 
         const draggedData = event.dataTransfer.getData(DRAG_ITEM_KEY);
         if (!draggedData) {
@@ -52,7 +52,7 @@ export const useCategoriesDrag = ({ onDrop }: UseCategoriesDragProps) => {
 
     const handleDragEnd: DragEventHandler<HTMLDivElement> = () => {
         isDragging.current = false;
-        setDragOveredElementId(undefined);
+        setDraggedOverCategoryId(undefined);
     };
 
     return {
@@ -61,6 +61,6 @@ export const useCategoriesDrag = ({ onDrop }: UseCategoriesDragProps) => {
         handleDragLeave,
         handleDrop,
         handleDragEnd,
-        dragOveredElementId,
+        draggedOverCategoryId,
     };
 };

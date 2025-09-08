@@ -16,7 +16,7 @@ export const CategoriesTabsError = () => {
     return (
         <div className="categories-tabs flex flex-row flex-nowrap px-4 h-fit-content border-bottom border-weak">
             <div className="tab-container flex flex-nowrap items-center text-no-decoration color-hint border border-transparent">
-                <span>{c('Error message').t`An error occured with the categories`}</span>
+                <span>{c('Error message').t`An error occurred with the categories`}</span>
                 <Button size="small" shape="ghost" className="color-weak" onClick={() => window.location.reload()}>
                     <Icon name="arrow-rotate-right" />
                     <span className="ml-4">{c('Action').t`Refresh the page`}</span>
