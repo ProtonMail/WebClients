@@ -30,7 +30,6 @@ export const backToSchoolBundle: OfferConfig = {
         },
     ],
     topButton: {
-        // TODO: appearance, variant
         shape: 'outline',
         getCTAContent: () => {
             // translator: button in the top right corner of the app (outside the modal)

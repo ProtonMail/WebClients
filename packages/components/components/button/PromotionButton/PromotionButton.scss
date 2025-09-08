@@ -81,6 +81,20 @@
 		}
 	}
 
+	&--yellow {
+		// used for some promotions
+		&#{&} {
+			&,
+			&:hover,
+			&:focus {
+				background: #ffd000;
+				color: #08031f;
+				border: 0;
+				border-radius: var(--border-radius-md);
+			}
+		}
+	}
+
 	// used for BF, to be used with ghost variant
 	&--bf-2024 {
 		&#{&} {
