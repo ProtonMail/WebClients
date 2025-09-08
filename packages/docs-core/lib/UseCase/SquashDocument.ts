@@ -8,7 +8,7 @@ import {
   CreateSquashCommit,
 } from '@proton/docs-proto'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import { Result } from '@proton/docs-shared'
+import { Result, GenerateUUID } from '@proton/docs-shared'
 import type { DocsApi } from '../Api/DocsApi'
 import type { EncryptMessage } from './EncryptMessage'
 import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
@@ -20,7 +20,6 @@ import type { VerifyCommit } from './VerifyCommit'
 import type { DecryptedCommit } from '../Models/DecryptedCommit'
 import type { SquashVerificationObjectionCallback } from '../Types/SquashVerificationObjection'
 import { SquashVerificationObjectionDecision } from '../Types/SquashVerificationObjection'
-import { GenerateUUID } from '@proton/docs-shared'
 import { metricsBucketNumberForUpdateCount } from '../Util/bucketNumberForUpdateCount'
 import type { LoggerInterface } from '@proton/utils/logs'
 
