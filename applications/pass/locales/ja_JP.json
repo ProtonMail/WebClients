@@ -1276,6 +1276,17 @@
         "テラバイト"
       ]
     },
+    "Header": {
+      "Domain": [
+        "ドメイン"
+      ],
+      "Password ends with": [
+        "パスワードの末尾"
+      ],
+      "Username": [
+        "ユーザー名"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "「${ payload.itemName }」アイテムは無視されました"
@@ -1634,6 +1645,9 @@
       "Extra password successfully removed": [
         "追加のパスワードが正常に削除されました"
       ],
+      "Failed updating your vault organization": [
+        "保管庫組織の更新に失敗しました"
+      ],
       "Fill in the CSV with your data": [
         "CSV にデータを入力します"
       ],
@@ -1804,9 +1818,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -2261,6 +2272,9 @@
       "Unverified": [
         "未検証"
       ],
+      "Updating vault organization...": [
+        "保管庫の組織を更新中…"
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "今すぐアップグレードしてプレミアム機能をアンロックしましょう"
       ],
@@ -2287,6 +2301,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "保管庫「${ share.content.name }」が削除されました"
+      ],
+      "Vault organization successfully updated": [
+        "保管庫の組織を更新しました"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "保管庫共有中： ${ vaultMembersCount } 人のメンバー"
@@ -4286,6 +4303,9 @@
       ],
       "Open pagination": [
         "ページネーションを開く"
+      ],
+      "Organize vaults": [
+        "保管庫を整理する"
       ],
       "Our welcome gift to you": [
         "あなたへのウェルカムギフト"
