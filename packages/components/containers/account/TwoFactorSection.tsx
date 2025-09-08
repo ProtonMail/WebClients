@@ -59,7 +59,7 @@ const TwoFactorSection = () => {
     const registeredKeys = userSettings['2FA']?.RegisteredKeys || [];
     const canEnableFido2 = hasTOTPEnabled || fido2WithoutTotp;
 
-    const canDisableTOTP = hasTOTPEnabled && !registeredKeys.length;
+    const canDisableTOTP = (hasTOTPEnabled && !registeredKeys.length) || fido2WithoutTotp;
 
     const [availableRecoveryMethods] = useAvailableRecoveryMethods();
     const hasRecoveryMethod = availableRecoveryMethods.length > 0;
