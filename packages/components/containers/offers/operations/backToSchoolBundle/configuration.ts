@@ -11,7 +11,6 @@ export const backToSchoolBundle: OfferConfig = {
     ID: 'back-to-school-bundle',
     title: getBackToSchoolTitle,
     featureCode: FeatureCode.OfferBackToSchoolBundle,
-    autoPopUp: 'one-time',
     canBeDisabled: true,
     deals: [
         {
