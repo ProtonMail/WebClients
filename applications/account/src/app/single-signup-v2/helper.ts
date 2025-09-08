@@ -803,11 +803,6 @@ export const getPlanCardSubscriptionData = async ({
             cycles
                 .map((cycle) => [planIDs, cycle] as const)
                 .map(async ([planIDs, cycle]): Promise<SubscriptionData> => {
-                    const coupon =
-                        maybeCoupon === null
-                            ? undefined
-                            : getAutoCoupon({ coupon: maybeCoupon, planIDs, cycle, trial });
-
                     // make sure that the plan and all its addons exist
                     const plansToCheck = Object.keys(planIDs) as (PLANS | ADDON_NAMES)[];
                     const plansExist = plansToCheck.every(
@@ -816,6 +811,11 @@ export const getPlanCardSubscriptionData = async ({
 
                     // we extract the currency of the currently selected plan in plansMap.
                     const currency = plansMap[plansToCheck[0]]?.Currency ?? DEFAULT_CURRENCY;
+
+                    const coupon =
+                        maybeCoupon === null
+                            ? undefined
+                            : getAutoCoupon({ coupon: maybeCoupon, planIDs, cycle, trial, currency });
 
                     // If there's no coupon we can optimistically calculate the price.
                     // In addition, if the selected plan doesn't exist, then we don't do the live check call.
