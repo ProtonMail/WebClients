@@ -29,7 +29,7 @@ import { shouldDisplayTotal } from '../../helpers/labels';
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
 import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
-import { useCategoryView } from '../categoryView/useCategoryView';
+import { useCategoriesView } from '../categoryView/useCategoriesView';
 import { folderLocation } from '../list/list-telemetry/listTelemetryHelper';
 import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import LocationAside from './LocationAside';
@@ -110,7 +110,7 @@ const SidebarItem = ({
     const [labels] = useLabels();
     const [folders] = useFolders();
 
-    const categoryViewControl = useCategoryView();
+    const categoryViewControl = useCategoriesView();
 
     const [refreshing, withRefreshing] = useLoading(false);
 
