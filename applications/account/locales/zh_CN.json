@@ -1990,6 +1990,14 @@
         "您好，我现在有事不在，暂时无法处理邮件。"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
+      ],
+      "You have reached the trial limit.": [
+        "您已达到试用上限。"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "取消订阅"
@@ -2363,6 +2371,9 @@
       "Manual setup problem": [
         "手动设置问题"
       ],
+      "Meet problem": [
+        "遇到问题"
+      ],
       "Other": [
         "其他"
       ],
@@ -2720,6 +2731,11 @@
       ],
       "Expand": [
         "展开"
+      ]
+    },
+    "collider_2025: feature": {
+      "Unlimited daily chats": [
+        "无限聊天次数"
       ]
     },
     "color": {
@@ -14469,9 +14485,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "双因素身份验证已设为非必需"
-      ],
-      "Video conferencing settings have been updated": [
-        "视频会议设置已更新"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -14606,7 +14619,7 @@
         "按年支付，确保我们的最佳优惠"
       ],
       "Save": [
-        "保存"
+        "节省"
       ],
       "Save big when you pay annually": [
         "按年付费可节省大量费用"
@@ -20920,9 +20933,6 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "管理员可以管理用户账户，并授予其他用户管理员权限。只有主要管理员可以编辑组织的计划。"
-      ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "允许在日历邀请中无缝添加视频会议链接。"
       ],
       "Any protection applied to suspicious activity": [
         "对于可疑操作所采取的所有防护措施"

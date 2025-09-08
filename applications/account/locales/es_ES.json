@@ -1985,6 +1985,9 @@
       ],
       "Secure your communications": [
         "Protege tus comunicaciones"
+      ],
+      "Talk confidentially": [
+        "Hablar confidencialmente"
       ]
     },
     "Apps dropdown": {
@@ -12955,6 +12958,9 @@
       "Verify keys with Key Transparency": [
         "Verificar las claves con el sistema Key Transparency"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videoconferencias con ${ MEET_APP_NAME }"
+      ],
       "Video conferencing with Zoom": [
         "Videoconferencia por Zoom"
       ],
@@ -13937,6 +13943,9 @@
       ],
       "Back": [
         "Atrás"
+      ],
+      "Back to ${ MEET_SHORT_APP_NAME }": [
+        "Volver a ${ MEET_SHORT_APP_NAME }"
       ],
       "Back to calendar": [
         "Volver al calendario"
@@ -15130,6 +15139,9 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } creado"
       ],
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "Se han actualizado los ajustes de videoconferencia de ${ MEET_APP_NAME }"
+      ],
       "${ reason } has been disabled": [
         "Se ha desactivado ${ reason }."
       ],
@@ -15150,6 +15162,12 @@
       ],
       "Email notifications have been enabled": [
         "Se han activado las notificaciones de correo electrónico."
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "Error al actualizar los ajustes de la videoconferencia de ${ MEET_APP_NAME }"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Error al actualizar los ajustes de la videoconferencia de Zoom"
       ],
       "Invalid code": [
         "Código no válido"
@@ -15199,8 +15217,8 @@
       "Two-factor authentication is not required anymore": [
         "La autenticación de dos factores ya no es requerida."
       ],
-      "Video conferencing settings have been updated": [
-        "Se han actualizado los ajustes de videoconferencia."
+      "Zoom video conferencing settings have been updated": [
+        "Se han actualizado los ajustes de videoconferencia de Zoom."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15343,7 +15361,7 @@
         "Paga anualmente y asegúrate nuestra mejor oferta."
       ],
       "Save": [
-        "Guardar"
+        "Ahorra"
       ],
       "Save big when you pay annually": [
         "¡Ahorra a lo grande pagando anualmente!"
@@ -22069,8 +22087,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Los administradores pueden administrar cuentas de usuario y otorgar privilegios de administrador a otros usuarios. Solo el administrador principal puede editar el plan de la organización."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Permite fácilmente añadir enlaces a videoconferencias a tus invitaciones de calendario."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Permite añadir fácilmente enlaces a videoconferencias de ${ MEET_APP_NAME } en tus invitaciones de calendario."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Permite añadir fácilmente enlaces a videoconferencias de Zoom en tus invitaciones de calendario."
       ],
       "Any protection applied to suspicious activity": [
         "Cualquier protección aplicada a una actividad sospechosa"

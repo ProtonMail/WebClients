@@ -1009,6 +1009,9 @@
       "Open": [
         "Öppna"
       ],
+      "Open ${ applicationName }": [
+        "Öppna ${ applicationName }"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
       ],
@@ -1979,6 +1982,9 @@
       ],
       "Secure your communications": [
         "Säkra din kommunikation"
+      ],
+      "Talk confidentially": [
+        "Prata konfidentiellt"
       ]
     },
     "Apps dropdown": {
@@ -2042,6 +2048,46 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Jag är inte på kontoret och har begränsad åtkomst till min e-post."
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Betalningsdetaljer"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Genom att klicka på “Prova“ godkänner du våra ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Under provperioden kan du ha upp till 10 användare."
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "gratis i ${ TRIAL_DURATION_DAYS } dagar"
+      ],
+      "on ${ formattedDate }": [
+        "den ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Prova ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Prova det gratis i ${ TRIAL_DURATION_DAYS } dagar"
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_DEDICATED_IPS } dedikerad server under provperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-licenser under provperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-licenser under provperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_USERS } användare under provperioden."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Du kan inte lägga till anpassade domäner under provperioden."
       ]
     },
     "b2b_trials_Action": {
@@ -2276,8 +2322,8 @@
         "Säkra inloggningar på alla dina enheter. Inkluderar obegränsat antal hide-my-email-alias, delning, integrerad 2FA, ${ DARK_WEB_MONITORING_NAME } och mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Säkra dina mail och schemalägg med end-to-end kryptering, det inkluderar ${ addresses } e-postadress, stöd for anpassade e-postdomäner, obegränsade hide-my-email-alias och mer.",
-        "Säkra dina mail och schemalägg med end-to-end kryptering, det inkluderar ${ addresses } e-postadresser, stöd for anpassade e-postdomäner, obegränsade hide-my-email-alias och mer."
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer.",
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadresser, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer."
@@ -2756,7 +2802,7 @@
         "Krypterad lösenordshanterare"
       ],
       "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
-        "Vårt grundläggande gratispaket med krypterad e-post och lagringsutrymme. Inga premiumfunktioner inkluderade."
+        "Vårt grundläggande gratispaket med end-to-end krypterad e-post och lagringsutrymme. Inga premiumfunktioner inkluderade."
       ],
       "Save ${ upsellSavings }": [
         "Spara ${ upsellSavings }"
@@ -2807,6 +2853,91 @@
       ],
       "Expand": [
         "Expandera"
+      ]
+    },
+    "collider_2025: app-switcher": {
+      "Chat with a private AI assistant": [
+        "Chatta med en privat AI-assistent"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Åtkomst till avancerade AI-modeller"
+      ],
+      "Basic chat history": [
+        "Grundläggande chatthistorik"
+      ],
+      "Full chat history with search": [
+        "Fullständig chatthistorik med sök"
+      ],
+      "Large file upload support": [
+        "Stöd för stora filuppladdningar"
+      ],
+      "Limited daily chats": [
+        "Begränsat antal dagliga chattar"
+      ],
+      "Limited favorites": [
+        "Begränsat antal favoriter"
+      ],
+      "Unlimited daily chats": [
+        "Obegränsat antal dagliga chattar"
+      ],
+      "Unlimited favorites for quick access": [
+        "Obegränsade favoriter för snabb åtkomst"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "Byggd och baserad i Europa"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } är en AI som prioriterar integritet som hjälper dig att få mer gjort samtidigt som dina data hålls säkra. Lås upp dess fulla potential och njut av förhandstillgång till nya funktioner allt eftersom de introduceras."
+      ],
+      "Access to advanced AI models": [
+        "Åtkomst till avancerade AI-modeller"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Lägg till ${ LUMO_APP_NAME }"
+      ],
+      "AI assistant that respects your privacy": [
+        "AI-assistent som respekterar din integritet"
+      ],
+      "Basic chat history": [
+        "Grundläggande chatthistorik"
+      ],
+      "Data never used for AI training": [
+        "Data används aldrig för AI-träning"
+      ],
+      "Full chat history with search": [
+        "Fullständig chatthistorik med sök"
+      ],
+      "Limited daily chats": [
+        "Begränsat antal dagliga chattar"
+      ],
+      "Limited favorites": [
+        "Begränsat antal favoriter"
+      ],
+      "Open source": [
+        "Öppen källkod"
+      ],
+      "Strict no-logs policy": [
+        "Strikt policy att inte logga"
+      ],
+      "Unlimited daily chats": [
+        "Obegränsat antal dagliga chattar"
+      ],
+      "Unlimited favorites for quick access": [
+        "Obegränsade favoriter för snabb åtkomst"
+      ]
+    },
+    "collider_2025: Navigation": {
+      "Back to conversations": [
+        "Tillbaka till konversationer"
+      ],
+      "Conversations": [
+        "Konversationer"
       ]
     },
     "color": {
@@ -7936,6 +8067,24 @@
         "${ n } adress",
         "${ n } adresser"
       ],
+      "${ name } for Android": [
+        "${ name } för Android"
+      ],
+      "${ name } for GNU/Linux": [
+        "${ name } för GNU/Linux"
+      ],
+      "${ name } for iOS": [
+        "${ name } för iOS"
+      ],
+      "${ name } for macOS": [
+        "${ name } för macOS"
+      ],
+      "${ name } for Web": [
+        "${ name } för webb"
+      ],
+      "${ name } for Windows": [
+        "${ name } för Windows"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: sätt inte i karantän eller avvisa ej oauktoriserade e-postmeddelanden. Vanligtvis använder människor bara denna policy för felsökning eller testning."
       ],
@@ -8309,6 +8458,9 @@
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Ett e-postalias fungerar som en e-postadress, men minskar skräppost och håller din faktiska e-postadress och identitet dold."
+      ],
+      "An error occurred while communicating with **${ applicationName }**": [
+        "Ett fel uppstod under kommunikationen med **${ applicationName }**"
       ],
       "An error occurred while communicating with the extension": [
         "Ett fel uppstod under kommunikationen med tillägget"
@@ -9023,6 +9175,9 @@
       "Get ${ upsellPlanName }": [
         "Skaffa ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Få **${ referrerRewardAmount } krediter** för varje vän som prenumererar."
+      ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Få åtkomst genom att skapa ett ${ BRAND_NAME }-konto och acceptera inbjudan."
       ],
@@ -9267,6 +9422,9 @@
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Det tar 10 dagar att ändra en servers land, så se till att ditt val är korrekt."
+      ],
+      "It won't be linked to your ${ BRAND_NAME } Account, so there's **no risk of getting locked out**.": [
+        "Det kommer inte vara länkat till ditt ${ BRAND_NAME }-konto, så det finns **ingen risk att bli utelåst**."
       ],
       "It's better to have:": [
         "Det är bättre att ha:"
@@ -10953,6 +11111,9 @@
       "You may be redirected to your bank’s website.": [
         "Du kan bli omdirigerad till webbplatsen för din bank."
       ],
+      "You may now start using **${ applicationName }**": [
+        "Du kan nu börja använda **${ applicationName }**"
+      ],
       "You may now start using the extension": [
         "Du kan nu börja använda tillägget"
       ],
@@ -11867,7 +12028,7 @@
         "Upptäckt primär tidszon automatiskt"
       ],
       "Auto-reply": [
-        "Autosvar"
+        "Automatiskt svar"
       ],
       "Auto-unsubscribe": [
         "Avsluta prenumeration automatiskt"
@@ -12830,6 +12991,9 @@
       "Verify keys with Key Transparency": [
         "Verifiera nycklar med Key Transparency"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videokonferens med ${ MEET_APP_NAME }"
+      ],
       "Video conferencing with Zoom": [
         "Videokonferenser med Zoom"
       ],
@@ -13596,6 +13760,9 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Logga in på ditt ${ BRAND_NAME }-konto för att komma åt alla krypterade ${ BRAND_NAME }-tjänster som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och mer. Har du inget konto? Skapa ett GRATIS."
       ],
+      "Take control of your data with end-to-end encryption": [
+        "Ta kontroll över dina data med end-to-end-kryptering"
+      ],
       "Try ${ BRAND_NAME } for free with this link": [
         "Prova ${ BRAND_NAME } gratis med denna länk"
       ]
@@ -13803,6 +13970,9 @@
       ],
       "Back": [
         "Tillbaka"
+      ],
+      "Back to ${ MEET_SHORT_APP_NAME }": [
+        "Tillbaka till ${ MEET_SHORT_APP_NAME }"
       ],
       "Back to calendar": [
         "Tillbaka till kalender"
@@ -15023,6 +15193,9 @@
       "Email notifications have been enabled": [
         "E-postaviseringar har aktiverats"
       ],
+      "Failed to update Zoom video conferencing settings": [
+        "Misslyckades att uppdatera Zoom-videokonferensinställningar"
+      ],
       "Invalid code": [
         "Ogiltig kod"
       ],
@@ -15070,9 +15243,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Tvåfaktorsautentisering krävs inte längre"
-      ],
-      "Video conferencing settings have been updated": [
-        "Inställningarna för videokonferenser har uppdaterats"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -16821,6 +16991,9 @@
       "Ok": [
         "Ok"
       ],
+      "Ownership verification": [
+        "Ägarskapsverifiering"
+      ],
       "Unknown": [
         "Okänd"
       ]
@@ -18104,6 +18277,10 @@
         "${ vpnServersCountData.paid.countries }+ land",
         "${ vpnServersCountData.paid.countries }+ länder"
       ],
+      "${ vpnServersCountData.paid.servers }+ server across": [
+        "${ vpnServersCountData.paid.servers }+ server över",
+        "${ vpnServersCountData.paid.servers }+ servrar över"
+      ],
       "/user": [
         "/användare"
       ],
@@ -18124,6 +18301,9 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alla grundläggande tjänster för ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
+        "Och få ${ referralInfo.uiData.refereeRewardAmount } i krediter, om du prenumererar."
       ],
       "Billing Cycle": [
         "Faktureringsperiod"
@@ -18190,6 +18370,9 @@
       ],
       "Free for ${ TRIAL_DURATION_DAYS } days": [
         "Gratis i ${ TRIAL_DURATION_DAYS } dagar"
+      ],
+      "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Få ${ referralInfo.uiData.refereeRewardAmount } i krediter"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Skaffa en säker ${ MAIL_APP_NAME }-adress eller ${ internalButton }"
@@ -18270,6 +18453,9 @@
       "Select ${ title }": [
         "Välj ${ title }"
       ],
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
+        "Välj en tjänst och njut av premiumversionen gratis i ${ TRIAL_DURATION_DAYS } dagar. Inget kreditkort krävs."
+      ],
       "Selected": [
         "Vald"
       ],
@@ -18314,6 +18500,9 @@
       ],
       "Total": [
         "Totalt"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
+        "Prova ${ BRAND_NAME } i ${ TRIAL_DURATION_DAYS } dagar gratis"
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "Prova ${ BRAND_NAME } gratis i 14 dagar"
@@ -20927,6 +21116,9 @@
       "Gift code": [
         "Presentkod"
       ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Ge ${ refereeRewardAmount } och 2 veckor gratis. Få ${ referrerRewardAmount } krediter."
+      ],
       "Group": [
         "Grupp"
       ],
@@ -21658,6 +21850,9 @@
       "You have no resolved alerts": [
         "Du har inga lösta varningar"
       ],
+      "You've successfully signed in!": [
+        "Du är inloggad!"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis provperiod för ${ planName } slutar den ${ textDate }"
       ],
@@ -21820,8 +22015,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratörer kan hantera användarkonton och ge administratörsrättigheter till andra användare. Endast den primära administratören kan redigera paketet för organisationen."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Gör det möjligt att sömlöst lägga till videokonferenslänkar till dina kalenderinbjudningar."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Gör det möjligt att sömlöst lägga till ${ MEET_APP_NAME }-videokonferenslänkar till dina kalenderinbjudningar."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Gör det möjligt att sömlöst lägga till Zoom-videokonferenslänkar till dina kalenderinbjudningar."
       ],
       "Any protection applied to suspicious activity": [
         "Allt skydd tillämpat till misstänkt aktivitet"
@@ -21948,6 +22146,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermappar kommer att visas som separata mappar i ${ MAIL_APP_NAME }"
+      ],
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Adressen har kopplats från. Sändning och mottagning av meddelanden är pausad. Återanslut för att aktivera denna adress igen."
       ],
       "The import will start with the most recent messages.": [
         "Importering kommer att börja med de senaste meddelandena."

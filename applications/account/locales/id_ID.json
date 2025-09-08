@@ -1012,6 +1012,9 @@
       "Open": [
         "Buka"
       ],
+      "Open ${ applicationName }": [
+        "Buka ${ applicationName }"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Buka pengaturan ${ CALENDAR_APP_NAME }"
       ],
@@ -1407,6 +1410,9 @@
       ],
       "Spam": [
         "Spam"
+      ],
+      "Start free trial": [
+        "Mulai uji coba gratis"
       ],
       "Start import": [
         "Mulai impor"
@@ -1976,6 +1982,9 @@
       ],
       "Secure your communications": [
         "Amankan komunikasi Anda"
+      ],
+      "Talk confidentially": [
+        "Bercakaplah secara rahasia"
       ]
     },
     "Apps dropdown": {
@@ -2039,6 +2048,42 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Saya sedang berada di luar kantor dengan akses email yang terbatas."
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Rincian pembayaran"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Dengan mengeklik \"Coba\", Anda menyatakan diri setuju dengan ${ termsAndConditions } kami."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Selama masa uji coba, Anda dapat memiliki hingga 10 pengguna."
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "gratis selama ${ TRIAL_DURATION_DAYS } hari"
+      ],
+      "on ${ formattedDate }": [
+        "pada ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Coba ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Coba gratis selama ${ TRIAL_DURATION_DAYS } hari"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Pada saat Anda membatalkan, uji coba gratis Anda tidak akan dialihkan menjadi langganan berbayar, namun Anda masih akan tetap dapat menikmati berbagai keutamaan paket berbayar hingga akhir masa uji coba Anda. Setelahnya, Anda akan diturunkan ke paket ${ BRAND_NAME } Free."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Jumlah tagihan setelah masa uji coba"
+      ],
+      "Amount due now": [
+        "Jumlah tagihan saat ini"
       ]
     },
     "b2b_trials_Action": {
@@ -2441,6 +2486,9 @@
       "Manual setup problem": [
         "Masalah pemasangan manual"
       ],
+      "Meet problem": [
+        "Masalah Meet"
+      ],
       "Other": [
         "Lainnya"
       ],
@@ -2801,6 +2849,68 @@
       ],
       "Expand": [
         "Lebarkan"
+      ]
+    },
+    "collider_2025: app-switcher": {
+      "Chat with a private AI assistant": [
+        "Berbicaralah dengan asisten AI pribadi"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "Dirancang dan berbasis di Eropa"
+      ]
+    },
+    "collider_2025: Info": {
+      "Access to advanced AI models": [
+        "Akses ke berbagai model AI lanjutan"
+      ],
+      "AI assistant that respects your privacy": [
+        "Asisten AI yang menghargai privasi Anda"
+      ],
+      "Basic chat history": [
+        "Riwayat percakapan dasar"
+      ],
+      "Data never used for AI training": [
+        "Data tidak pernah digunakan untuk melatih AI"
+      ],
+      "Full chat history with search": [
+        "Riwayat percakapan utuh dengan fitur pencarian"
+      ],
+      "Limited daily chats": [
+        "Percakapan harian dalam jumlah yang terbatas"
+      ],
+      "Limited favorites": [
+        "Favorit dalam jumlah yang terbatas"
+      ],
+      "Open source": [
+        "Open source"
+      ],
+      "Strict no-logs policy": [
+        "Kebijakan tanpa log yang ketat"
+      ],
+      "Unlimited daily chats": [
+        "Tanpa batasan jumlah percakapan harian"
+      ],
+      "Unlimited favorites for quick access": [
+        "Tanpa batasan jumlah favorit untuk akses yang cepat"
+      ],
+      "Upload and query multiple large files": [
+        "Unggah dan kuerikan beberapa berkas besar sekaligus"
+      ],
+      "Upload and query small files": [
+        "Unggah dan kuerikan berkas kecil"
+      ],
+      "Web search access": [
+        "Akses pencarian web"
+      ]
+    },
+    "collider_2025: Navigation": {
+      "Back to conversations": [
+        "Kembali ke percakapan"
+      ],
+      "Conversations": [
+        "Percakapan"
       ]
     },
     "color": {
@@ -4290,11 +4400,17 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Anda tetap dapat mengundang lebih banyak teman, namun Anda tidak akan lagi dapat memperoleh lebih banyak saldo"
       ],
+      "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Anda dapat menyesuaikan daftar domain di mana fungsi otomatis ekstensi browser ${ PASS_APP_NAME } tertentu (Isi Otomatis, Saran Otomatis, Simpan Otomatis) tidak akan berjalan."
+      ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
         "Anda dapat mewajibkan peraturan kata sandi tertentu yang akan harus diikuti oleh para anggota organisasi pada saat mereka menghasilkan kata sandi di ${ PASS_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Anda dapat mengimpor acara dalam format iCal (berkas ICS). Berkas Anda harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung paling banyak ${ MAX_IMPORT_EVENTS_STRING } acara. Apabila berkas Anda melebihi persyaratan ini, mohon terlebih dahulu pisahkan menjadi berkas yang lebih kecil."
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Anda akan menerima ${ referralInfo.referrerRewardAmount } dalam saldo ${ BRAND_NAME } pada saat pengguna yang Anda undang mendaftarkan diri mereka ke paket ${ BRAND_NAME }, dan mereka juga akan memperoleh saldo senilai ${ referralInfo.refereeRewardAmount } sebagai imbalannya."
       ]
     },
     "description": {
@@ -5183,6 +5299,15 @@
       "${ BRAND_NAME } Account email": [
         "Email Akun ${ BRAND_NAME }"
       ],
+      "${ days } day left": [
+        "${ days } hari tersisa"
+      ],
+      "${ hours } hour left": [
+        "${ hours } jam tersisa"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes } menit tersisa"
+      ],
       "${ n } day": [
         "${ n } hari"
       ],
@@ -5290,6 +5415,9 @@
       ],
       "Less than a day": [
         "Kurang dari satu hari"
+      ],
+      "Less than a minute left": [
+        "Kurang dari satu menit"
       ],
       "None": [
         "Tidak ada"
@@ -7881,6 +8009,24 @@
       "${ n } address": [
         "${ n } alamat"
       ],
+      "${ name } for Android": [
+        "${ name } untuk Android"
+      ],
+      "${ name } for GNU/Linux": [
+        "${ name } untuk GNU/Linux"
+      ],
+      "${ name } for iOS": [
+        "${ name } untuk iOS"
+      ],
+      "${ name } for macOS": [
+        "${ name } untuk macOS"
+      ],
+      "${ name } for Web": [
+        "${ name } untuk Web"
+      ],
+      "${ name } for Windows": [
+        "${ name } untuk Windows"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: meminta platform penerima untuk tidak mengarantina ataupun menolak email yang tidak berizin. Pada umumnya, pengaturan kebijakan ini hanya digunakan untuk menangani masalah atau menguji sesuatu."
       ],
@@ -7961,6 +8107,12 @@
       ],
       "${ storage } storage": [
         "Kuota penyimpanan ${ storage }"
+      ],
+      "${ url } added.": [
+        "${ url } ditambahkan."
+      ],
+      "${ url } deleted.": [
+        "${ url } dihapus."
       ],
       "${ userFound } user found": [
         "${ userFound } pengguna ditemukan"
@@ -8222,6 +8374,9 @@
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Alias email berfungsi seperti alamat email pada umumnya, namun alias akan mengurangi spam dan menjaga agar alamat email asli dan identitas diri Anda tersembunyi."
+      ],
+      "An error occurred while communicating with **${ applicationName }**": [
+        "Terjadi kesalahan pada saat berkomunikasi dengan **${ applicationName }**"
       ],
       "An error occurred while communicating with the extension": [
         "Terdapat kesalahan pada saat berkomunikasi dengan ekstensi"
@@ -8936,6 +9091,9 @@
       ],
       "Get ${ upsellPlanName }": [
         "Dapatkan ${ upsellPlanName }"
+      ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Dapatkan **saldo senilai ${ referrerRewardAmount }** untuk setiap teman yang mendaftar."
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Dapatkan akses dengan membuat akun ${ BRAND_NAME } dan menerima undangan ini."
@@ -10458,6 +10616,9 @@
       "URL link": [
         "Tautan URL"
       ],
+      "URL settings updated.": [
+        "Pengaturan URL diperbarui."
+      ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Gunakan pengelola kata sandi untuk menghasilkan dan menyimpan kata sandi Anda secara aman, yang menjamin kata sandi yang kuat dan entri masuk yang lebih mudah."
       ],
@@ -10857,6 +11018,9 @@
       "You may be redirected to your bank’s website.": [
         "Anda mungkin akan dialihkan ke situs web milik bank Anda."
       ],
+      "You may now start using **${ applicationName }**": [
+        "Anda kini dapat mulai menggunakan **${ applicationName }**"
+      ],
       "You may now start using the extension": [
         "Anda kini dapat mulai menggunakan ekstensi"
       ],
@@ -11051,6 +11215,9 @@
       ],
       "You’re all set": [
         "Anda sudah siap"
+      ],
+      "Zero charge today": [
+        "Tanpa biaya hari ini"
       ],
       "Zoom meeting": [
         "sesi meeting Zoom"
@@ -11635,6 +11802,9 @@
       ],
       "Account storage": [
         "Penyimpanan akun"
+      ],
+      "Action": [
+        "Tindakan"
       ],
       "Actions": [
         "Tindakan"
@@ -12734,6 +12904,9 @@
       "Verify keys with Key Transparency": [
         "Verifikasi kunci dengan Key Transparency"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Konferensi video dengan ${ MEET_APP_NAME }"
+      ],
       "Video conferencing with Zoom": [
         "Pertemuan video dengan Zoom"
       ],
@@ -13499,6 +13672,9 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Masuk ke Akun ${ BRAND_NAME } Anda untuk mengakses seluruh layanan ${ BRAND_NAME } terenkripsi seperti ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan masih banyak lagi. Belum memiliki akun? Buat akun baru secara GRATIS."
       ],
+      "Take control of your data with end-to-end encryption": [
+        "Kendalikan data Anda dengan enkripsi end-to-end"
+      ],
       "Try ${ BRAND_NAME } for free with this link": [
         "Coba ${ BRAND_NAME } secara cuma-cuma dengan tautan ini"
       ]
@@ -13703,6 +13879,9 @@
       ],
       "Back": [
         "Kembali"
+      ],
+      "Back to ${ MEET_SHORT_APP_NAME }": [
+        "Kembali ke ${ MEET_SHORT_APP_NAME }"
       ],
       "Back to calendar": [
         "Kembali ke kalender"
@@ -14868,6 +15047,9 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } dibuat"
       ],
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "Pengaturan konferensi video ${ MEET_APP_NAME } telah diperbarui"
+      ],
       "${ reason } has been disabled": [
         "${ reason } telah dinonaktifkan"
       ],
@@ -14888,6 +15070,12 @@
       ],
       "Email notifications have been enabled": [
         "Notifikasi email telah diaktifkan"
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "Pengaturan konferensi video ${ MEET_APP_NAME } gagal diperbarui"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Pengaturan konferensi video Zoom gagal diperbarui"
       ],
       "Invalid code": [
         "Kode tidak valid"
@@ -14937,8 +15125,8 @@
       "Two-factor authentication is not required anymore": [
         "Autentikasi dua faktor tidak lagi dibutuhkan"
       ],
-      "Video conferencing settings have been updated": [
-        "Pengaturan konferensi video telah diperbarui"
+      "Zoom video conferencing settings have been updated": [
+        "Pengaturan konferensi video Zoom telah diperbarui"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15076,7 +15264,7 @@
         "Bayar per tahun, kantongi penawaran terbaik kami"
       ],
       "Save": [
-        "Simpan"
+        "Hemat"
       ],
       "Save big when you pay annually": [
         "Hemat besar-besaran pada saat Anda membayar secara tahunan"
@@ -18054,6 +18242,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Semua layanan ${ BRAND_NAME } dasar (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
+        "Dan dapatkan saldo senilai ${ referralInfo.uiData.refereeRewardAmount } apabila Anda berlangganan."
+      ],
       "Billing Cycle": [
         "Siklus Tagihan"
       ],
@@ -18116,6 +18307,12 @@
       ],
       "Free": [
         "Gratis"
+      ],
+      "Free for ${ TRIAL_DURATION_DAYS } days": [
+        "Gratis untuk ${ TRIAL_DURATION_DAYS } hari"
+      ],
+      "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Dapatkan saldo senilai ${ referralInfo.uiData.refereeRewardAmount }"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Dapatkan alamat ${ MAIL_APP_NAME } yang aman, atau ${ internalButton }"
@@ -18195,6 +18392,9 @@
       "Select ${ title }": [
         "Pilih ${ title }"
       ],
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
+        "Pilih salah satu layanan dan nikmasi versi premium layanan ini selama ${ TRIAL_DURATION_DAYS } hari secara cuma-cuma. Tanpa perlu kartu kredit."
+      ],
       "Selected": [
         "Terpilih"
       ],
@@ -18239,6 +18439,9 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
+        "Coba ${ BRAND_NAME } gratis selama ${ TRIAL_DURATION_DAYS } hari"
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "Coba ${ BRAND_NAME } gratis selama 14 hari"
@@ -20800,6 +21003,9 @@
       "Gift code": [
         "Kode hadiah"
       ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Berikan ${ refereeRewardAmount } dan 2 minggu secara cuma-cuma. Dapatkan saldo senilai ${ referrerRewardAmount }."
+      ],
       "Group": [
         "Grup"
       ],
@@ -21030,6 +21236,9 @@
       ],
       "Passwords made easy": [
         "Kata sandi menjadi mudah"
+      ],
+      "Pause list": [
+        "Jeda daftar"
       ],
       "Pay invoice": [
         "Bayar faktur"
@@ -21520,6 +21729,9 @@
       "You have no resolved alerts": [
         "Anda tidak memiliki peringatan yang terselesaikan"
       ],
+      "You've successfully signed in!": [
+        "Anda telah berhasil masuk!"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Masa uji coba gratis ${ planName } Anda akan berakhir pada ${ textDate }"
       ],
@@ -21682,8 +21894,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Para admin dapat mengelola akun pengguna dan memberikan hak admin kepada pengguna lain. Hanya admin utama yang dapat menyunting paket organisasi."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Memungkinkan tautan konferensi video untuk ditambahkan secara terpadu ke undangan kalender Anda."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Memungkinkan tautan konferensi video ${ MEET_APP_NAME } untuk ditambahkan secara terpadu ke dalam undangan kalender Anda."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Memungkinkan tautan konferensi video Zoom untuk ditambahkan secara terpadu ke dalam undangan kalender Anda."
       ],
       "Any protection applied to suspicious activity": [
         "Segala perlindungan yang diterapkan terhadap aktivitas yang mencurigakan"
