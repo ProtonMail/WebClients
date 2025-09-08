@@ -66,7 +66,7 @@ export const CheckListGmailForward = ({
     'data-testid': dataTestId,
 }: CheckListItemProps) => {
     const [user] = useUser();
-    const hasAccessToBYOE = useFlag('InboxBringYourOwnEmail') && isAdmin(user);
+    const hasAccessToBYOE = useFlag('InboxBringYourOwnEmailClient') && isAdmin(user);
 
     const isInMaintenance = useFlag('MaintenanceImporter');
     // translator: This text is in bold inside the sentence "Set up auto-forwarding from Gmail"

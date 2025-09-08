@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/dom';
 
+import { useUser } from '@proton/account/user/hooks';
 import { useFeature } from '@proton/features';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -26,9 +27,13 @@ const subsections = [
 jest.mock('@proton/features/useFeature');
 const mockUseFeature = useFeature as jest.MockedFunction<any>;
 
+jest.mock('@proton/account/user/hooks');
+const mockUseUser = useUser as jest.MockedFunction<any>;
+
 describe('SettingsArea', () => {
     it('Should render a loader while loading feature flag', async () => {
         mockUseFeature.mockReturnValue({ feature: { Value: { GoogleMailSync: true } }, loading: true });
+        mockUseUser.mockReturnValue([{ Flags: [] }, false]);
 
         easySwitchRender(<SettingsArea config={settingsAreaConfig} app={APPS.PROTONMAIL} />);
 
@@ -38,6 +43,7 @@ describe('SettingsArea', () => {
 
     it('Should render the forward section if feature is enabled', async () => {
         mockUseFeature.mockReturnValue({ feature: { Value: { GoogleMailSync: true } }, loading: false });
+        mockUseUser.mockReturnValue([{ Flags: [] }, false]);
 
         easySwitchRender(<SettingsArea config={{ ...settingsAreaConfig, subsections }} app={APPS.PROTONMAIL} />);
 
