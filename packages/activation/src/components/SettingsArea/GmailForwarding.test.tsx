@@ -21,7 +21,7 @@ mockUseGetFlag.mockReturnValue(() => false);
 describe('GmailForwarding', () => {
     it('Should be enabled if user is not delinquent', () => {
         mockUseFlag.mockReturnValue(false);
-        mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true }, false]);
+        mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true, Flags: [] }, false]);
 
         easySwitchRender(<GmailForwarding app={APPS.PROTONMAIL} />);
 
@@ -31,7 +31,7 @@ describe('GmailForwarding', () => {
 
     it('Should be disabled if user is delinquent', () => {
         mockUseFlag.mockReturnValue(false);
-        mockUseUser.mockReturnValue([{ hasNonDelinquentScope: false }, false]);
+        mockUseUser.mockReturnValue([{ hasNonDelinquentScope: false, Flags: [] }, false]);
 
         easySwitchRender(<GmailForwarding app={APPS.PROTONMAIL} />);
 
@@ -41,7 +41,7 @@ describe('GmailForwarding', () => {
 
     it('Should be disabled if loading user is true', () => {
         mockUseFlag.mockReturnValue(false);
-        mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true }, true]);
+        mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true, Flags: [] }, true]);
 
         easySwitchRender(<GmailForwarding app={APPS.PROTONMAIL} />);
 
@@ -51,7 +51,7 @@ describe('GmailForwarding', () => {
 
     it('Should be disabled if maintenance mode is enabled', () => {
         mockUseFlag.mockReturnValue(true);
-        mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true }, false]);
+        mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true, Flags: [] }, false]);
 
         easySwitchRender(<GmailForwarding app={APPS.PROTONMAIL} />);
 
