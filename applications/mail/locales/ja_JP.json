@@ -1170,6 +1170,9 @@
       "Resume downloading": [
         "ダウンロードを再開"
       ],
+      "Retry": [
+        "再試行"
+      ],
       "Revert to original display": [
         "元の表示に戻す"
       ],
@@ -1442,9 +1445,6 @@
       ],
       "Trust": [
         "信頼する"
-      ],
-      "Trust key": [
-        "鍵を信頼する"
       ],
       "Trust public key": [
         "公開鍵を信頼"
@@ -1954,6 +1954,32 @@
       ],
       "Sender verification passed": [
         "送信者検証に成功しました"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }にトライアルが終了すると、${ formattedDate }に${ renewCycle }ヶ月ごとに自動更新される有料のサブスクリプションに移行します。${ formattedDate }までにキャンセルした場合、料金は請求されません。"
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } にトライアルが終了すると、毎月 ${ formattedDate } に自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_DEDICATED_IPS }の専用サーバーをご利用いただけます。"
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_LUMO_SEATS }の${ LUMO_SHORT_APP_NAME }シートをご利用いただけます。"
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_SCRIBE_SEATS }のスライブシートをご利用いただけます。"
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_USERS }ユーザーまでご利用いただけます。"
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "トライアル期間中にカスタムドメインを追加することはできません。"
+      ],
+      "You have reached the trial limit.": [
+        "トライアルの制限に達しました。"
       ]
     },
     "b2b_trials_Action": {
@@ -2608,6 +2634,52 @@
       ],
       "Expand": [
         "開く"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "高度なAIモデルへのアクセス"
+      ],
+      "Basic chat history": [
+        "基本チャット履歴"
+      ],
+      "Full chat history with search": [
+        "検索機能付きの完全なチャット履歴"
+      ],
+      "Large file upload support": [
+        "大容量ファイルアップロードサポート"
+      ],
+      "Limited daily chats": [
+        "毎日のチャットの制限"
+      ],
+      "Limited favorites": [
+        "お気に入りの制限"
+      ],
+      "Unlimited daily chats": [
+        "無制限の毎日のチャット"
+      ],
+      "Unlimited favorites for quick access": [
+        "無制限のクイックアクセスのお気に入り"
+      ],
+      "Upload and query multiple large files": [
+        "複数大容量ファイルのアップロードと検索"
+      ],
+      "Upload and query small files": [
+        "小さなファイルのアップロードと検索"
+      ],
+      "Web search access": [
+        "ウェブ検索アクセス"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } は、プライバシーを第一に考えたAIで、お客様のデータを安全に保ちながら、より多くのことを達成するのに役立ちます。その可能性を最大限に引き出し、導入される新しい機能への早期アクセスをお楽しみください。"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME }を追加"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "高速チャットと高度なAI機能。"
       ]
     },
     "color": {
@@ -5087,6 +5159,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "エイリアスは、${ PASS_APP_NAME } で追加のパスワードが有効になっている場合には使用できません。"
       ],
+      "An error occured with the categories": [
+        "カテゴリでエラーが発生しました"
+      ],
       "App currently unavailable": [
         "アプリは現在利用できません"
       ],
@@ -5783,11 +5858,17 @@
       "Contacts": [
         "連絡先"
       ],
+      "Domain": [
+        "ドメイン"
+      ],
       "Drawer": [
         "サイドパネル"
       ],
       "Hardware not compatible": [
         "ハードウェアと互換性がありません"
+      ],
+      "Password ends with": [
+        "パスワードの末尾"
       ],
       "Report an issue": [
         "問題を報告"
@@ -5806,6 +5887,9 @@
       ],
       "Tell us more": [
         "より詳しく教えてください"
+      ],
+      "Username": [
+        "ユーザー名"
       ]
     },
     "Hint": {
@@ -7110,7 +7194,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -8835,12 +8919,6 @@
       "Also archive": [
         "同時にアーカイブ"
       ],
-      "Always label sender's emails": [
-        "この差出人のメールを常にラベル付け"
-      ],
-      "Always move sender's emails": [
-        "この差出人のメールを常に移動"
-      ],
       "AND": [
         "かつ"
       ],
@@ -9081,6 +9159,9 @@
       "From: ${ fromEmail }": [
         "送信者: ${ fromEmail }"
       ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "このメールに最適なカテゴリを選択して、改善にご協力ください。ご協力ありがとうございます！"
+      ],
       "Help us improve the upcoming mail categorization": [
         "今後のメール振り分け機能の改善にご協力ください。"
       ],
@@ -9174,9 +9255,6 @@
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } へ移動"
       ],
-      "Move messages to": [
-        "メッセージを移動"
-      ],
       "Move to": [
         "移動先"
       ],
@@ -9215,6 +9293,9 @@
       ],
       "No label found": [
         "ラベルが見つかりませんでした"
+      ],
+      "No results found": [
+        "結果が見つかりません"
       ],
       "Not factually correct": [
         "正しくない"
@@ -11138,7 +11219,7 @@
         "毎年払い、安全な私たちの最高のオファー"
       ],
       "Save": [
-        "節約"
+        "お得"
       ],
       "Save big when you pay annually": [
         "年払いで大幅に節約"
@@ -14089,12 +14170,6 @@
       "Create contact": [
         "連絡先の作成"
       ],
-      "Create folder \"${ search }\"": [
-        "「${ search }」フォルダを作成"
-      ],
-      "Create label \"${ search }\"": [
-        "「${ search }」というラベルを作成"
-      ],
       "Create new group": [
         "新しいグループを作成"
       ],
@@ -14341,6 +14416,9 @@
       "Label as": [
         "ラベル付け"
       ],
+      "Label message as": [
+        "メッセージにラベル付け"
+      ],
       "Label options": [
         "ラベルオプション"
       ],
@@ -14424,6 +14502,12 @@
       ],
       "Move all messages to trash": [
         "すべてのメッセージをごみ箱へ移動"
+      ],
+      "Move message to": [
+        "メッセージを移動"
+      ],
+      "Move messages to": [
+        "メッセージを移動"
       ],
       "Move to": [
         "移動先"
@@ -14865,6 +14949,9 @@
       ],
       "Your subscriptions in one place": [
         "サブスクリプションを一元管理"
+      ],
+      "✨ Categories are coming!": [
+        "✨ カテゴリがまもなく登場します！"
       ]
     },
     "Today icon tooltip in mini calendar": {

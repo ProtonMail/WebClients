@@ -1174,6 +1174,9 @@
       "Resume downloading": [
         "Reanudar la descarga"
       ],
+      "Retry": [
+        "Reintentar"
+      ],
       "Revert to original display": [
         "Revertir a la vista original"
       ],
@@ -1448,8 +1451,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1969,11 +1971,17 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Después de que la prueba finalice el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente cada ${ renewCycle } meses el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente cada mes el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puede tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el período de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puede tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de ${ LUMO_SHORT_APP_NAME } durante el período de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
@@ -2646,12 +2654,50 @@
         "Expandir"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acceso a modelos de IA avanzados"
+      ],
+      "Basic chat history": [
+        "Historial de chat básico"
+      ],
+      "Full chat history with search": [
+        "Historial de chat completo con búsqueda"
+      ],
+      "Large file upload support": [
+        "Soporte para carga de archivos grandes"
+      ],
+      "Limited daily chats": [
+        "Chats diarios limitados"
+      ],
+      "Limited favorites": [
+        "Favoritos limitados"
+      ],
+      "Unlimited daily chats": [
+        "Chats diarios ilimitados"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoritos ilimitados para acceso rápido"
+      ],
+      "Upload and query multiple large files": [
+        "Cargar y consultar varios archivos grandes"
+      ],
+      "Upload and query small files": [
+        "Cargar y consultar archivos pequeños"
+      ],
+      "Web search access": [
+        "Acceso a búsqueda web"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } es una IA que prioriza la privacidad y le ayuda a hacer más, a la vez que mantiene sus datos seguros. Desbloquee todo su potencial y disfrute del acceso anticipado a nuevas funciones a medida que se introduzcan."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Agregar ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chats de gran velocidad y funciones de IA avanzadas."
       ]
     },
     "color": {
@@ -7267,7 +7313,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9021,12 +9068,6 @@
       "Also archive": [
         "Además archivar"
       ],
-      "Always label sender's emails": [
-        "Etiquetar siempre los correos de remitentes"
-      ],
-      "Always move sender's emails": [
-        "Mover siempre los correos de remitentes"
-      ],
       "AND": [
         "Y"
       ],
@@ -9362,9 +9403,6 @@
       ],
       "Move ${ sidebarElementName }": [
         "Mover ${ sidebarElementName }"
-      ],
-      "Move messages to": [
-        "Mover mensajes a"
       ],
       "Move to": [
         "Mover a"
@@ -14406,12 +14444,6 @@
       ],
       "Create contact": [
         "Crear contacto"
-      ],
-      "Create folder \"${ search }\"": [
-        "Crear carpeta \"${ search }\""
-      ],
-      "Create label \"${ search }\"": [
-        "Crear etiqueta \"${ search }\""
       ],
       "Create new group": [
         "Crear grupo nuevo"

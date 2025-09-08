@@ -96,6 +96,9 @@
       "Add phone number": [
         "添加电话号码"
       ],
+      "Add secret passphrase": [
+        "添加密码短语"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "添加到 ${ CALENDAR_APP_NAME }"
       ],
@@ -741,6 +744,9 @@
       "Italic": [
         "斜体"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "加入${ MEET_APP_NAME }"
+      ],
       "Keep my subscription": [
         "保留订阅"
       ],
@@ -993,6 +999,9 @@
       "Page ${ pageNumber }": [
         "${ pageNumber } 页"
       ],
+      "Passphrase": [
+        "密码短语"
+      ],
       "Pause": [
         "暂停"
       ],
@@ -1151,6 +1160,9 @@
       ],
       "Resume downloading": [
         "继续下载"
+      ],
+      "Retry": [
+        "重试"
       ],
       "Revert to original display": [
         "恢复到原显示样式"
@@ -1425,6 +1437,9 @@
       "Trust": [
         "信任"
       ],
+      "Trust key": [
+        "信任密钥"
+      ],
       "Trust public key": [
         "信任公钥"
       ],
@@ -1484,6 +1499,9 @@
       ],
       "Update recovery phrase": [
         "更新恢复密语"
+      ],
+      "Update secret passphrase": [
+        "更新密码短语"
       ],
       "Upgrade": [
         "升级账户"
@@ -1932,6 +1950,14 @@
         "发送方验证通过"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
+      ],
+      "You have reached the trial limit.": [
+        "您已达到试用上限。"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "取消订阅"
@@ -2135,6 +2161,9 @@
       ],
       "Manual setup problem": [
         "手动设置问题"
+      ],
+      "Meet problem": [
+        "遇到问题"
       ],
       "Other": [
         "其他"
@@ -2554,6 +2583,11 @@
       ],
       "Expand": [
         "展开"
+      ]
+    },
+    "collider_2025: feature": {
+      "Unlimited daily chats": [
+        "无限聊天次数"
       ]
     },
     "color": {
@@ -4438,6 +4472,9 @@
       "Failed to load the STL preview": [
         "加载 STL 预览失败"
       ],
+      "Failed to update secret passphrase": [
+        "更新密码短语失败"
+      ],
       "Filter with this name already exists": [
         "此名称与现有筛选规则重复"
       ],
@@ -4563,6 +4600,9 @@
       ],
       "Organization key is not decrypted": [
         "机构密钥尚未解密"
+      ],
+      "Passphrase unavailable": [
+        "密码短语不可用"
       ],
       "Password is required": [
         "密码必须填写"
@@ -6903,6 +6943,9 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "要随时访问电子邮件并获得优化的移动体验，请下载我们的 ${ androidAppLink } 或 ${ iosAppLink }。"
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "为了增强安全性，您可以设置一个密码短语。它不会包含在日历邀请中，请记住单独与您的客人分享。"
+      ],
       "For messages newer than ${ oldestDate }": [
         "搜索 ${ oldestDate } 之后的邮件"
       ],
@@ -7027,7 +7070,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert link": [
         "插入链接"
@@ -8731,12 +8774,6 @@
       "Also archive": [
         "同时归档"
       ],
-      "Always label sender's emails": [
-        "始终标记发件人的邮件"
-      ],
-      "Always move sender's emails": [
-        "以后自动移动此人的邮件"
-      ],
       "AND": [
         "且"
       ],
@@ -9064,9 +9101,6 @@
       "Move ${ sidebarElementName }": [
         "移动 ${ sidebarElementName }"
       ],
-      "Move messages to": [
-        "移动消息到"
-      ],
       "Move to": [
         "移动到"
       ],
@@ -9144,6 +9178,9 @@
       ],
       "Participants": [
         "参与者"
+      ],
+      "Passphrase:": [
+        "密码短语:"
       ],
       "Password": [
         "密码"
@@ -10924,6 +10961,9 @@
       "Passcode copied to clipboard": [
         "将密码复制到剪贴板"
       ],
+      "Passphrase copied to clipboard": [
+        "将密码短语复制到剪贴板"
+      ],
       "Password has been set successfully": [
         "密码已设置成功"
       ],
@@ -11001,7 +11041,7 @@
         "按年支付，确保我们的最佳优惠"
       ],
       "Save": [
-        "保存"
+        "节省"
       ],
       "Save big when you pay annually": [
         "按年付费可节省大量费用"
@@ -11636,6 +11676,9 @@
       ],
       "End date": [
         "结束日期"
+      ],
+      "Enter passphrase": [
+        "输入密码短语"
       ],
       "Filter folders": [
         "搜索文件夹"
@@ -13421,6 +13464,9 @@
       "Read receipt sent": [
         "回执已发送"
       ],
+      "Secret passphrase updated": [
+        "密码短语已更新"
+      ],
       "Self-destruction removed": [
         "自动销毁已取消"
       ],
@@ -13835,12 +13881,6 @@
       ],
       "Create contact": [
         "创建联系人"
-      ],
-      "Create folder \"${ search }\"": [
-        "创建文件夹 \"${ search }\""
-      ],
-      "Create label \"${ search }\"": [
-        "创建标签 \"${ search }\""
       ],
       "Create new group": [
         "创建群组"

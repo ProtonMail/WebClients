@@ -142,7 +142,7 @@
         "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontakt",
         "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontakty",
         "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontaktów",
-        "Każda grupa kontaktów może mieć co najwyżej ${ maxContacts } kontaktów."
+        "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontaktów"
       ],
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
@@ -1176,6 +1176,9 @@
       "Resume downloading": [
         "Wznów pobieranie"
       ],
+      "Retry": [
+        "Spróbuj ponownie"
+      ],
       "Revert to original display": [
         "Przywróć oryginalny widok"
       ],
@@ -1449,6 +1452,9 @@
       "Trust": [
         "Zaufaj"
       ],
+      "Trust key": [
+        "Zaufaj kluczowi"
+      ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
       ],
@@ -1612,7 +1618,7 @@
         "Tak, będę uczestniczyć"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontaktów",
+        "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontakt",
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontakty",
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontaktów",
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontakt"
@@ -3935,7 +3941,7 @@
       "Every ${ interval } day, ${ timesString }": [
         "Co ${ interval } dzień, ${ timesString }",
         "Co ${ interval } dni, ${ timesString }",
-        "Co ${ interval } dnia, ${ timesString }",
+        "Co ${ interval } dni, ${ timesString }",
         "Co ${ interval } dnia, ${ timesString }"
       ]
     },
@@ -3945,8 +3951,8 @@
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Co ${ interval } dzień, ${ untilString }",
-        "Co ${ interval } dnia, ${ untilString }",
-        "Co ${ interval } dnia, ${ untilString }",
+        "Co ${ interval } dni, ${ untilString }",
+        "Co ${ interval } dni, ${ untilString }",
         "Co ${ interval } dnia, ${ untilString }"
       ]
     },
@@ -7462,7 +7468,10 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz"
+        "Wstaw obraz",
+        "Wstaw obrazy",
+        "Wstaw obrazy",
+        "Wstaw obrazy"
       ],
       "Insert link": [
         "Wstaw link"
@@ -9268,12 +9277,6 @@
       "Also archive": [
         "Również archiwizuj"
       ],
-      "Always label sender's emails": [
-        "Zawsze oznacz wiadomości nadawców"
-      ],
-      "Always move sender's emails": [
-        "Zawsze przenieś wiadomości nadawców"
-      ],
       "AND": [
         "ORAZ"
       ],
@@ -9600,9 +9603,6 @@
       ],
       "Move ${ sidebarElementName }": [
         "Przenieś ${ sidebarElementName }"
-      ],
-      "Move messages to": [
-        "Przenieś wiadomość do"
       ],
       "Move to": [
         "Przenieś do"
@@ -11652,7 +11652,7 @@
         "Płać rocznie i uzyskaj najlepszą ofertę"
       ],
       "Save": [
-        "Zapisz"
+        "Oszczędź"
       ],
       "Save big when you pay annually": [
         "Zaoszczędź więcej przy płatności rocznej"
@@ -12933,25 +12933,25 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Masz ${ timeRemaining.inDays } dzień na zresetowanie hasła.",
         "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inDays } dnia na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
         "Masz ${ timeRemaining.inDays } dnia na zresetowanie hasła."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Masz ${ timeRemaining.inHours } godzinę na zresetowanie hasła.",
         "Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła.",
         "Masz ${ timeRemaining.inHours } godzin na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inHours } godzin na zresetowanie hasła."
+        "Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Masz ${ timeRemaining.inMinutes } minutę na zresetowanie hasła.",
         "Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła.",
         "Masz ${ timeRemaining.inMinutes } minut na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inMinutes } minut na zresetowanie hasła."
+        "Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Masz ${ timeRemaining.inSeconds } sekundę na zresetowanie hasła.",
         "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inSeconds } sekund na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła.",
         "Masz ${ timeRemaining.inSeconds } sekund na zresetowanie hasła."
       ]
     },
@@ -13025,7 +13025,7 @@
         "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godzinę.",
         "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godziny.",
         "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godzin.",
-        "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours."
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godziny."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Aby upewnić się, że to Ty próbujesz zresetować hasło, czekamy 72 godziny przed zatwierdzeniem żądań. Hasło możesz zmienić za ${ boldTimeLeft }. ${ viewRequest }"
@@ -13722,7 +13722,7 @@
         "${ planNumberOfCalendars } kalendarz na użytkownika",
         "${ planNumberOfCalendars } kalendarze na użytkownika",
         "${ planNumberOfCalendars } kalendarzy na użytkownika",
-        "${ planNumberOfCalendars } kalendarzy na użytkownika"
+        "${ planNumberOfCalendars } kalendarza na użytkownika"
       ],
       "${ planNumberOfDomains } custom email domain": [
         "${ planNumberOfDomains } niestandardowa domena",
@@ -14728,12 +14728,6 @@
       ],
       "Create contact": [
         "Utwórz kontakt"
-      ],
-      "Create folder \"${ search }\"": [
-        "Utwórz folder \"${ search }\""
-      ],
-      "Create label \"${ search }\"": [
-        "Utwórz etykietę \"${ search }\""
       ],
       "Create new group": [
         "Utwórz nową grupę"

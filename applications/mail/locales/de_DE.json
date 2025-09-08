@@ -96,6 +96,9 @@
       "Add phone number": [
         "Telefonnummer hinzufügen"
       ],
+      "Add secret passphrase": [
+        "Geheime Passphrase hinzufügen"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Hinzufügen zu ${ CALENDAR_APP_NAME }"
       ],
@@ -757,6 +760,9 @@
       "Italic": [
         "Kursiv"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Tritt ${ MEET_APP_NAME } bei"
+      ],
       "Keep my subscription": [
         "Behalte mein Abonnement"
       ],
@@ -1012,6 +1018,9 @@
       "Page ${ pageNumber }": [
         "Seite ${ pageNumber }"
       ],
+      "Passphrase": [
+        "Passphrase"
+      ],
       "Pause": [
         "Pausieren"
       ],
@@ -1173,6 +1182,9 @@
       ],
       "Resume downloading": [
         "Download fortsetzen"
+      ],
+      "Retry": [
+        "Erneut versuchen"
       ],
       "Revert to original display": [
         "Zurück zur ursprünglichen Darstellung"
@@ -1447,10 +1459,6 @@
       "Trust": [
         "Vertrauen"
       ],
-      "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
-      ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
       ],
@@ -1510,6 +1518,9 @@
       ],
       "Update recovery phrase": [
         "Wiederherstellungsphrase aktualisieren"
+      ],
+      "Update secret passphrase": [
+        "Geheime Passphrase aktualisieren"
       ],
       "Upgrade": [
         "Wechseln"
@@ -1969,11 +1980,17 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nachdem die Testversion am ${ formattedDate } endet, wird es zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate am ${ formattedDate } automatisch verlängert. Dir wird nichts berechnet, wenn du vor dem ${ formattedDate } kündigst."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_DEDICATED_IPS } dedizierte Server haben."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-Lizenzen haben."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-Lizenzen haben."
@@ -2220,6 +2237,9 @@
       ],
       "Manual setup problem": [
         "Problem mit der manuellen Einrichtung"
+      ],
+      "Meet problem": [
+        "Meet-Problem"
       ],
       "Other": [
         "Andere"
@@ -2646,12 +2666,50 @@
         "Erweitern"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Zugang zu erweiterten KI-Modellen"
+      ],
+      "Basic chat history": [
+        "Einfacher Chatverlauf"
+      ],
+      "Full chat history with search": [
+        "Vollständiger Chat-Verlauf mit Suche"
+      ],
+      "Large file upload support": [
+        "Unterstützt große Dateiuploads"
+      ],
+      "Limited daily chats": [
+        "Begrenzte tägliche Chats"
+      ],
+      "Limited favorites": [
+        "Begrenzte Favoriten"
+      ],
+      "Unlimited daily chats": [
+        "Unbegrenzte tägliche Chats"
+      ],
+      "Unlimited favorites for quick access": [
+        "Unbegrenzte Favoriten für schnellen Zugriff"
+      ],
+      "Upload and query multiple large files": [
+        "Mehrere große Dateien hochladen und abfragen"
+      ],
+      "Upload and query small files": [
+        "Kleine Dateien hochladen und abfragen"
+      ],
+      "Web search access": [
+        "Websuche-Zugriff"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } ist eine datenschutzorientierte KI, die dir hilft, mehr zu erledigen und gleichzeitig dafür sorgt, dass deine Daten sicher bleiben. Entfalte ihr volles Potenzial und genieße den Vorabzugriff auf neue Funktionen, sobald sie eingeführt werden."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } hinzufügen"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Schnelle Chats und erweiterte KI-Funktionen."
       ]
     },
     "color": {
@@ -4560,6 +4618,9 @@
       "Failed to open to contact": [
         "Fehler beim Öffnen des Kontakts"
       ],
+      "Failed to update secret passphrase": [
+        "Geheime Passphrase konnte nicht aktualisiert werden"
+      ],
       "Filter with this name already exists": [
         "Filter mit diesem Namen bereits vorhanden"
       ],
@@ -4688,6 +4749,9 @@
       ],
       "Organization key is not decrypted": [
         "Organisationsschlüssel ist nicht entschlüsselt"
+      ],
+      "Passphrase unavailable": [
+        "Passphrase nicht verfügbar"
       ],
       "Password is required": [
         "Passwort ist erforderlich"
@@ -7137,6 +7201,9 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Lade unsere ${ androidAppLink } oder ${ iosAppLink } herunter, um jederzeit auf deine E-Mails zugreifen zu können und ein optimiertes mobiles Erlebnis zu haben."
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Für zusätzliche Sicherheit kannst du eine Passphrase festlegen. Diese wird nicht in der Kalendereinladung enthalten sein, denke daran, sie separat mit deinen Gästen zu teilen."
+      ],
       "For messages newer than ${ oldestDate }": [
         "Für Nachrichten, die neuer sind als ${ oldestDate }"
       ],
@@ -7267,7 +7334,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -9021,12 +9089,6 @@
       "Also archive": [
         "Auch archivieren"
       ],
-      "Always label sender's emails": [
-        "Nachrichten dieses Absenders immer kategorisieren"
-      ],
-      "Always move sender's emails": [
-        "Nachrichten dieses Absenders immer verschieben"
-      ],
       "AND": [
         "UND"
       ],
@@ -9363,9 +9425,6 @@
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } verschieben"
       ],
-      "Move messages to": [
-        "Nachrichten verschieben nach"
-      ],
       "Move to": [
         "Verschieben nach"
       ],
@@ -9405,6 +9464,9 @@
       "No label found": [
         "Keine Kategorie gefunden"
       ],
+      "No results found": [
+        "Keine Ergebnisse gefunden"
+      ],
       "Not factually correct": [
         "Faktisch nicht korrekt"
       ],
@@ -9443,6 +9505,9 @@
       ],
       "Participants": [
         "Teilnehmer"
+      ],
+      "Passphrase:": [
+        "Passphrase:"
       ],
       "Password": [
         "Passwort"
@@ -11282,6 +11347,9 @@
       "Passcode copied to clipboard": [
         "Passcode in die Zwischenablage kopiert"
       ],
+      "Passphrase copied to clipboard": [
+        "Passphrase in die Zwischenablage kopiert"
+      ],
       "Password has been set successfully": [
         "Passwort wurde erfolgreich gesetzt"
       ],
@@ -11362,7 +11430,7 @@
         "Jährlich zahlen, unser bestes Angebot sichern"
       ],
       "Save": [
-        "Speichern"
+        "Sparen"
       ],
       "Save big when you pay annually": [
         "Spare kräftig, wenn du jährlich bezahlst"
@@ -12065,6 +12133,9 @@
       ],
       "End date": [
         "Enddatum"
+      ],
+      "Enter passphrase": [
+        "Passphrase eingeben"
       ],
       "Filter folders": [
         "Ordner filtern"
@@ -13972,6 +14043,9 @@
         "${ elementsCount } Nachricht neu kategorisiert.",
         "${ elementsCount } Nachrichten neu kategorisiert."
       ],
+      "Secret passphrase updated": [
+        "Geheime Passphrase aktualisiert"
+      ],
       "Self-destruction removed": [
         "Selbstzerstörung entfernt"
       ],
@@ -14407,12 +14481,6 @@
       "Create contact": [
         "Kontakt erstellen"
       ],
-      "Create folder \"${ search }\"": [
-        "Ordner „${ search }“ erstellen"
-      ],
-      "Create label \"${ search }\"": [
-        "Kategorie „${ search }“ erstellen"
-      ],
       "Create new group": [
         "Neue Gruppe erstellen"
       ],
@@ -14665,6 +14733,10 @@
       "Label as": [
         "Folgender Kategorie zuordnen"
       ],
+      "Label message as": [
+        "Nachricht kategorisieren als",
+        "Nachrichten kategorisieren als"
+      ],
       "Label options": [
         "Kategorieoptionen"
       ],
@@ -14748,6 +14820,13 @@
       ],
       "Move all messages to trash": [
         "Alle Nachrichten in den Papierkorb verschieben"
+      ],
+      "Move message to": [
+        "Nachricht verschieben nach",
+        "Nachrichten verschieben nach"
+      ],
+      "Move messages to": [
+        "Nachrichten verschieben nach"
       ],
       "Move to": [
         "Verschieben nach"

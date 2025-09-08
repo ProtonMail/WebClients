@@ -96,6 +96,9 @@
       "Add phone number": [
         "Προσθήκη αριθμού τηλεφώνου"
       ],
+      "Add secret passphrase": [
+        "Προσθήκη μυστικής φράσης πρόσβασης"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Προσθέστε στο ${ CALENDAR_APP_NAME }"
       ],
@@ -757,6 +760,9 @@
       "Italic": [
         "Πλάγια γραφή"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Συμμετάσχετε με ${ MEET_APP_NAME }"
+      ],
       "Keep my subscription": [
         "Διατηρήστε την συνδρομή μου"
       ],
@@ -1012,6 +1018,9 @@
       "Page ${ pageNumber }": [
         "Σελίδα ${ pageNumber }"
       ],
+      "Passphrase": [
+        "Φράση πρόσβασης"
+      ],
       "Pause": [
         "Παύση"
       ],
@@ -1173,6 +1182,9 @@
       ],
       "Resume downloading": [
         "Συνέχιση λήψης"
+      ],
+      "Retry": [
+        "Δοκιμάστε ξανά"
       ],
       "Revert to original display": [
         "Επαναφορά αρχικής εμφάνισης"
@@ -1448,8 +1460,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -1510,6 +1521,9 @@
       ],
       "Update recovery phrase": [
         "Ενημέρωση φράσης ανάκτησης"
+      ],
+      "Update secret passphrase": [
+        "Ενημέρωση μυστικής φράσης πρόσβασης"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -1968,6 +1982,32 @@
         "Η επαλήθευση του αποστολέα ολοκληρώθηκε επιτυχώς"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες στις ${ formattedDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα στις ${ formattedDate }. Δεν θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Μπορείτε να έχετε έως ${ TRIAL_MAX_DEDICATED_IPS } αφιερωμένο διακομιστή κατά τη διάρκεια της δοκιμαστικής περιόδου."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_LUMO_SEATS } θέσεις ${ LUMO_SHORT_APP_NAME } κατά τη διάρκεια της δοκιμαστικής περιόδου."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_SCRIBE_SEATS } θέσεις Scribe κατά τη δοκιμαστική περίοδο."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_USERS } χρήστες κατά τη δοκιμαστική περίοδο."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Δεν μπορείτε να προσθέσετε προσαρμοσμένους τομείς κατά τη δοκιμαστική περίοδο."
+      ],
+      "You have reached the trial limit.": [
+        "Έχετε φτάσει το όριο της δοκιμής."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Ακύρωση συνδρομής"
@@ -2200,6 +2240,9 @@
       ],
       "Manual setup problem": [
         "Πρόβλημα χειροκίνητης ρύθμισης"
+      ],
+      "Meet problem": [
+        "Πρόβλημα Meet"
       ],
       "Other": [
         "Άλλο"
@@ -2624,6 +2667,52 @@
       ],
       "Expand": [
         "Ανάπτυξη"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Πρόσβαση σε προηγμένα μοντέλα Τεχνητής Νοημοσύνης"
+      ],
+      "Basic chat history": [
+        "Βασικό ιστορικό συνομιλιών"
+      ],
+      "Full chat history with search": [
+        "Πλήρης ιστορία συνομιλίας με αναζήτηση"
+      ],
+      "Large file upload support": [
+        "Υποστήριξη για μεταφόρτωση μεγάλων αρχείων"
+      ],
+      "Limited daily chats": [
+        "Περιορισμένες καθημερινές συνομιλίες"
+      ],
+      "Limited favorites": [
+        "Περιορισμένα αγαπημένα"
+      ],
+      "Unlimited daily chats": [
+        "Απεριόριστες καθημερινές συνομιλίες"
+      ],
+      "Unlimited favorites for quick access": [
+        "Απεριόριστα αγαπημένα για γρήγορη πρόσβαση"
+      ],
+      "Upload and query multiple large files": [
+        "Ανεβάστε και αναζητήσετε πολλαπλά μεγάλα αρχεία"
+      ],
+      "Upload and query small files": [
+        "Ανεβάστε και αναζητήστε μικρά αρχεία"
+      ],
+      "Web search access": [
+        "Πρόσβαση στην αναζήτηση ιστού"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } είναι μια τεχνητή νοημοσύνη που δίνει προτεραιότητα στην ιδιωτικότητα και σας βοηθά να ολοκληρώσετε περισσότερα ενώ διατηρείτε τα δεδομένα σας ασφαλή. Ξεκλειδώστε όλες τις δυνατότητές της και απολαύστε πρόωρη πρόσβαση σε νέες δυνατότητες καθώς αυτές παρουσιάζονται."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Προσθήκη ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Υψηλής ταχύτητας συνομιλίες και προηγμένα χαρακτηριστικά AI."
       ]
     },
     "color": {
@@ -4532,6 +4621,9 @@
       "Failed to open to contact": [
         "Αποτυχία ανοίγματος επαφής"
       ],
+      "Failed to update secret passphrase": [
+        "Αποτυχία ενημέρωσης του μυστικού κωδικού πρόσβασης"
+      ],
       "Filter with this name already exists": [
         "Το φίλτρο με αυτό το όνομα υπάρχει ήδη"
       ],
@@ -4660,6 +4752,9 @@
       ],
       "Organization key is not decrypted": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
+      ],
+      "Passphrase unavailable": [
+        "Η φράση πρόσβασης δεν είναι διαθέσιμη"
       ],
       "Password is required": [
         "Απαιτείται κωδικός πρόσβασης"
@@ -7109,6 +7204,9 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Για πρόσβαση ανά πάσα στιγμή στο ηλεκτρονικό ταχυδρομείο και βελτιστοποιημένη εμπειρία κινητής τηλεφωνίας, κατεβάστε την εφαρμογή ${ androidAppLink } ή ${ iosAppLink }."
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Για επιπλέον ασφάλεια, μπορείτε να ορίσετε μια φράση πρόσβασης. Δε θα περιληφθεί στην πρόσκληση του ημερολογίου, θυμηθείτε να τη μοιραστείτε με τους καλεσμένους σας ξεχωριστά."
+      ],
       "For messages newer than ${ oldestDate }": [
         "Για μηνύματα νεότερα από ${ oldestDate }"
       ],
@@ -7239,7 +7337,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8993,12 +9092,6 @@
       "Also archive": [
         "Επίσης αρχειοθέτηση"
       ],
-      "Always label sender's emails": [
-        "Επισημαίνετε πάντα τα μηνύματα ηλεκτρονικού ταχυδρομείου του αποστολέα"
-      ],
-      "Always move sender's emails": [
-        "Μετακινείτε πάντα τα μηνύματα ηλεκτρονικού ταχυδρομείου του αποστολέα"
-      ],
       "AND": [
         "ΚΑΙ"
       ],
@@ -9335,9 +9428,6 @@
       "Move ${ sidebarElementName }": [
         "Μετακίνηση ${ sidebarElementName }"
       ],
-      "Move messages to": [
-        "Μετακίνηση μηνυμάτων σε"
-      ],
       "Move to": [
         "Μεταφορά σε"
       ],
@@ -9377,6 +9467,9 @@
       "No label found": [
         "Δεν βρέθηκε ετικέτα"
       ],
+      "No results found": [
+        "Δε βρέθηκαν αποτελέσματα"
+      ],
       "Not factually correct": [
         "Δεν αντιστοιχεί στην πραγματικότητα"
       ],
@@ -9415,6 +9508,9 @@
       ],
       "Participants": [
         "Συμμετέχοντες"
+      ],
+      "Passphrase:": [
+        "Φράση πρόσβασης:"
       ],
       "Password": [
         "Κωδικός πρόσβασης"
@@ -11254,6 +11350,9 @@
       "Passcode copied to clipboard": [
         "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
       ],
+      "Passphrase copied to clipboard": [
+        "Ο φράση πρόσβασης αντιγράφηκε στο πρόχειρο"
+      ],
       "Password has been set successfully": [
         "Ο κωδικός πρόσβασης ορίστηκε επιτυχώς"
       ],
@@ -11334,7 +11433,7 @@
         "Πληρώστε ετησίως, εξασφαλίστε την καλύτερη προσφορά μας"
       ],
       "Save": [
-        "Αποθήκευση"
+        "Εξοικονομήστε"
       ],
       "Save big when you pay annually": [
         "Εξοικονομήστε χρήματα όταν πληρώνετε ετησίως"
@@ -12037,6 +12136,9 @@
       ],
       "End date": [
         "Ημερομηνία Λήξης"
+      ],
+      "Enter passphrase": [
+        "Εισαγάγετε τη φράση πρόσβασης"
       ],
       "Filter folders": [
         "Φιλτράρισμα φακέλων"
@@ -13939,6 +14041,9 @@
         "Ανακατηγοριοποιήθηκε ${ elementsCount } μήνυμα.",
         "Ανακατηγοριοποιήθηκε ${ elementsCount } μηνύματα."
       ],
+      "Secret passphrase updated": [
+        "Η μυστική φράση πρόσβασης ενημερώθηκε"
+      ],
       "Self-destruction removed": [
         "Η αυτοκαταστροφή αφαιρέθηκε"
       ],
@@ -14374,12 +14479,6 @@
       "Create contact": [
         "Δημιουργία επαφής"
       ],
-      "Create folder \"${ search }\"": [
-        "Δημιουργία φακέλου \"${ search }\""
-      ],
-      "Create label \"${ search }\"": [
-        "Δημιουργία ετικέτας \"${ search }\""
-      ],
       "Create new group": [
         "Δημιουργία νέας ομάδας"
       ],
@@ -14632,6 +14731,10 @@
       "Label as": [
         "Απόδοση ετικετών"
       ],
+      "Label message as": [
+        "Επισήμανση μηνύματος ως",
+        "Επισήμανση μηνυμάτων ως"
+      ],
       "Label options": [
         "Επιλογές ετικέτας"
       ],
@@ -14715,6 +14818,13 @@
       ],
       "Move all messages to trash": [
         "Μετακίνηση όλων των μηνυμάτων στα Διαγραμμένα"
+      ],
+      "Move message to": [
+        "Μετακίνηση μηνύματος σε",
+        "Μετακίνηση μηνυμάτων σε"
+      ],
+      "Move messages to": [
+        "Μετακίνηση μηνυμάτων σε"
       ],
       "Move to": [
         "Μετακίνηση σε"

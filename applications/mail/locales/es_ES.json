@@ -96,6 +96,9 @@
       "Add phone number": [
         "Añadir número telefónico"
       ],
+      "Add secret passphrase": [
+        "Añadir una frase de contraseña secreta"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Añadir a ${ CALENDAR_APP_NAME }"
       ],
@@ -757,6 +760,9 @@
       "Italic": [
         "Cursiva"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Únete con ${ MEET_APP_NAME }"
+      ],
       "Keep my subscription": [
         "Mantener mi suscripción"
       ],
@@ -1012,6 +1018,9 @@
       "Page ${ pageNumber }": [
         "Página ${ pageNumber }"
       ],
+      "Passphrase": [
+        "Frase de contraseña"
+      ],
       "Pause": [
         "Pausa"
       ],
@@ -1173,6 +1182,9 @@
       ],
       "Resume downloading": [
         "Reanudar la descarga"
+      ],
+      "Retry": [
+        "Reintentar"
       ],
       "Revert to original display": [
         "Revertir a la vista original"
@@ -1447,10 +1459,6 @@
       "Trust": [
         "Confiar"
       ],
-      "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
-      ],
       "Trust public key": [
         "Confiar en la clave pública"
       ],
@@ -1510,6 +1518,9 @@
       ],
       "Update recovery phrase": [
         "Actualizar frase de recuperación"
+      ],
+      "Update secret passphrase": [
+        "Actualizar la frase de contraseña secreta"
       ],
       "Upgrade": [
         "Cambiar de plan"
@@ -4560,6 +4571,9 @@
       "Failed to open to contact": [
         "Error al abrir el contacto"
       ],
+      "Failed to update secret passphrase": [
+        "Error al actualizar la frase de contraseña secreta"
+      ],
       "Filter with this name already exists": [
         "Ya existe un filtro con este nombre."
       ],
@@ -4688,6 +4702,9 @@
       ],
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada."
+      ],
+      "Passphrase unavailable": [
+        "Frase de contraseña no disponible"
       ],
       "Password is required": [
         "Contraseña requerida"
@@ -7137,6 +7154,9 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Para acceder a tu correo electrónico en cualquier momento y disfrutar de una experiencia móvil optimizada, descarga nuestra aplicación desde ${ androidAppLink } o ${ iosAppLink }."
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Para mayor seguridad, puedes establecer una frase de contraseña (passphrase). No se incluirá en la invitación del calendario, recuerda compartirla con tus invitados por separado."
+      ],
       "For messages newer than ${ oldestDate }": [
         "Para mensajes más nuevos que ${ oldestDate }"
       ],
@@ -7267,7 +7287,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar una imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9021,12 +9042,6 @@
       "Also archive": [
         "Además archivar"
       ],
-      "Always label sender's emails": [
-        "Etiquetar siempre los correos de remitentes"
-      ],
-      "Always move sender's emails": [
-        "Mover siempre los correos de remitentes"
-      ],
       "AND": [
         "Y"
       ],
@@ -9363,9 +9378,6 @@
       "Move ${ sidebarElementName }": [
         "Mover ${ sidebarElementName }"
       ],
-      "Move messages to": [
-        "Mover los mensajes a"
-      ],
       "Move to": [
         "Mover a"
       ],
@@ -9405,6 +9417,9 @@
       "No label found": [
         "No se ha encontrado ninguna etiqueta."
       ],
+      "No results found": [
+        "No se encontraron resultados"
+      ],
       "Not factually correct": [
         "Los hechos no son correctos"
       ],
@@ -9443,6 +9458,9 @@
       ],
       "Participants": [
         "Participantes"
+      ],
+      "Passphrase:": [
+        "Frase de contraseña:"
       ],
       "Password": [
         "Contraseña"
@@ -11282,6 +11300,9 @@
       "Passcode copied to clipboard": [
         "Se ha copiado el código de acceso al portapapeles."
       ],
+      "Passphrase copied to clipboard": [
+        "Frase de contraseña copiada al portapapeles"
+      ],
       "Password has been set successfully": [
         "La contraseña ha sido cambiada."
       ],
@@ -11362,7 +11383,7 @@
         "Paga anualmente y asegúrate nuestra mejor oferta."
       ],
       "Save": [
-        "Guardar"
+        "Ahorra"
       ],
       "Save big when you pay annually": [
         "¡Ahorra a lo grande pagando anualmente!"
@@ -12065,6 +12086,9 @@
       ],
       "End date": [
         "Fecha de fin"
+      ],
+      "Enter passphrase": [
+        "Introducir la frase de contraseña"
       ],
       "Filter folders": [
         "Filtrar carpetas"
@@ -13920,6 +13944,10 @@
       "Message removed from Starred.": [
         "Mensaje removido de Destacados"
       ],
+      "Message updated": [
+        "Mensaje actualizado",
+        "Mensajes actualizados"
+      ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Los mensajes de ${ sendersList } serán etiquetados como ${ labelsList }"
       ],
@@ -13963,6 +13991,9 @@
       ],
       "Read receipt sent": [
         "Confirmación de lectura enviada"
+      ],
+      "Secret passphrase updated": [
+        "Frase de contraseña secreta actualizada"
       ],
       "Self-destruction removed": [
         "Se ha eliminado la destrucción automática."
@@ -14399,12 +14430,6 @@
       "Create contact": [
         "Crear contacto"
       ],
-      "Create folder \"${ search }\"": [
-        "Crear carpeta \"${ search }\""
-      ],
-      "Create label \"${ search }\"": [
-        "Crear una etiqueta \"${ search }\""
-      ],
       "Create new group": [
         "Crear grupo"
       ],
@@ -14657,6 +14682,10 @@
       "Label as": [
         "Etiquetar como"
       ],
+      "Label message as": [
+        "Etiquetar el mensaje como",
+        "Etiquetar los mensajes como"
+      ],
       "Label options": [
         "Opciones de etiqueta"
       ],
@@ -14740,6 +14769,13 @@
       ],
       "Move all messages to trash": [
         "Mover todos los mensajes a la papelera"
+      ],
+      "Move message to": [
+        "Mover el mensaje a",
+        "Mover los mensajes a"
+      ],
+      "Move messages to": [
+        "Mover los mensajes a"
       ],
       "Move to": [
         "Mover a"

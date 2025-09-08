@@ -1147,6 +1147,9 @@
       "Resume downloading": [
         "Jatka latausta"
       ],
+      "Retry": [
+        "Yritä uudelleen"
+      ],
       "Revert to original display": [
         "Palauta alkuperäinen näkymä"
       ],
@@ -1419,10 +1422,6 @@
       ],
       "Trust": [
         "Luota"
-      ],
-      "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -7065,7 +7064,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -8786,12 +8786,6 @@
       "Also archive": [
         "Siirrä samalla arkistoon"
       ],
-      "Always label sender's emails": [
-        "Merkitse lähettäjän viestit aina"
-      ],
-      "Always move sender's emails": [
-        "Siirrä lähettäjän viestit aina"
-      ],
       "AND": [
         "JA"
       ],
@@ -9115,9 +9109,6 @@
       ],
       "Move ${ sidebarElementName }": [
         "Siirrä ${ sidebarElementName }"
-      ],
-      "Move messages to": [
-        "Siirrä viestit kansioon"
       ],
       "Move to": [
         "Siirrä kohteeseen"
@@ -13887,12 +13878,6 @@
       ],
       "Create contact": [
         "Luo yhteystieto"
-      ],
-      "Create folder \"${ search }\"": [
-        "Luo kansio \"${ search }\""
-      ],
-      "Create label \"${ search }\"": [
-        "Luo tunniste \"${ search }\""
       ],
       "Create new group": [
         "Luo uusi ryhmä"
