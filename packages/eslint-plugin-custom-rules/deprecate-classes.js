@@ -254,7 +254,6 @@ const deprecatedClassNames = [
 
 export default {
     meta: {
-        type: 'suggestion',
         docs: {
             description: '',
             url: 'https://design-system.protontech.ch',

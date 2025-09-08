@@ -23,7 +23,9 @@ export default defineConfig(
             // @ts-expect-error -- Temporary types incompatibility pending flat config support
             'monorepo-cop': monorepoCop,
             'no-only-tests': noOnlyTests,
+            // @ts-expect-error -- Temporary types incompatibility pending flat config support
             lodash,
+            // @ts-expect-error -- Temporary types incompatibility pending flat config support
             '@protontech/enforce-uint8array-arraybuffer': protontechEnforceUint8ArrayArraybuffer,
             testingLibrary,
         },
