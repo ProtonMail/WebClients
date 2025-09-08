@@ -1012,6 +1012,9 @@
       "Open": [
         "Otvoriť"
       ],
+      "Open ${ applicationName }": [
+        "Otvoriť ${ applicationName }"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvoriť nastavenia ${ CALENDAR_APP_NAME }"
       ],
@@ -1997,6 +2000,9 @@
       ],
       "Secure your communications": [
         "Zabezpečte si vašu komunikáciu"
+      ],
+      "Talk confidentially": [
+        "Diskutujte dôverne"
       ]
     },
     "Apps dropdown": {
@@ -2060,6 +2066,66 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Som mimo kanceláriu s obmedzeným prístupom k emailu."
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Detaily platby"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa z neho stane platené predplatné, ktoré sa automaticky obnovuje každých ${ renewCycle } mesiacov dňa ${ formattedDate }. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje mesačne dňa ${ formattedDate }. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Kliknutím na „Vyskúšať“ súhlasíte s našimi ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Počas skúšobného obdobia môžete mať až 10 používateľov."
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "zadarmo na ${ TRIAL_DURATION_DAYS } dní"
+      ],
+      "on ${ formattedDate }": [
+        "dňa ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Vyskúšajte ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Vyskúšajte si to zadarmo na ${ TRIAL_DURATION_DAYS } dní"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Po zrušení sa vaša bezplatná skúšobná verzia neprevedie na platené predplatné, ale výhody plánu môžete využívať až do konca skúšobného obdobia. Po uplynutí tejto lehoty dôjde k zníženiu na ${ BRAND_NAME } Free plán."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_DEDICATED_IPS } vyhradených serverov počas skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } miest počas skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_SCRIBE_SEATS } Scribe miest počas skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_USERS } používateľov počas skúšobného obdobia."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Počas skúšobného obdobia nemôžete pridať vlastné domény."
+      ],
+      "You have reached the trial limit.": [
+        "Dosiahli ste limit skúšobného obdobia."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Splatná suma po skúšobnom období"
+      ],
+      "Amount due now": [
+        "Čiastka k zaplateniu teraz"
       ]
     },
     "b2b_trials_Action": {
@@ -2474,6 +2540,9 @@
       "Manual setup problem": [
         "Problém s ručným nastavením"
       ],
+      "Meet problem": [
+        "Problém s aplikáciou Meet"
+      ],
       "Other": [
         "Iné"
       ],
@@ -2843,6 +2912,112 @@
       ],
       "Expand": [
         "Rozbaliť"
+      ]
+    },
+    "collider_2025: app-switcher": {
+      "Chat with a private AI assistant": [
+        "Chatujte so súkromným AI asistentom"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Prístup k pokročilým modelom AI"
+      ],
+      "Basic chat history": [
+        "Základná história chatu"
+      ],
+      "Full chat history with search": [
+        "Úplná história chatu s vyhľadávaním"
+      ],
+      "Large file upload support": [
+        "Podpora nahrávania veľkých súborov"
+      ],
+      "Limited daily chats": [
+        "Obmedzené denné chaty"
+      ],
+      "Limited favorites": [
+        "Obmedzené obľúbené položky"
+      ],
+      "Unlimited daily chats": [
+        "Neobmedzené denné chaty"
+      ],
+      "Unlimited favorites for quick access": [
+        "Neobmedzené obľúbené položky pre rýchly prístup"
+      ],
+      "Upload and query multiple large files": [
+        "Nahrávanie a vyhľadávanie viacerých veľkých súborov"
+      ],
+      "Upload and query small files": [
+        "Nahrávanie a vyhľadávanie malých súborov"
+      ],
+      "Web search access": [
+        "Prístup k webovému vyhľadávaniu"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "Vytvorené a umiestnené v Európe"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } je AI, ktorá kladie dôraz na ochranu súkromia a pomáha vám dosiahnuť viac pri zachovaní bezpečnosti vašich údajov. Využite jej plný potenciál a získajte skorý prístup k novým funkciám hneď po ich zavedení."
+      ],
+      "Access to advanced AI models": [
+        "Prístup k pokročilým modelom AI"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Pridať ${ LUMO_APP_NAME }"
+      ],
+      "AI assistant that respects your privacy": [
+        "AI asistent, ktorý rešpektuje vaše súkromie"
+      ],
+      "Basic chat history": [
+        "Základná história chatu"
+      ],
+      "Data never used for AI training": [
+        "Údaje nikdy nepoužívané na trénovanie AI"
+      ],
+      "Full chat history with search": [
+        "Úplná história chatu s vyhľadávaním"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Vysokorýchlostné chaty a pokročilé funkcie AI"
+      ],
+      "Limited daily chats": [
+        "Obmedzené denné chaty"
+      ],
+      "Limited favorites": [
+        "Obmedzené obľúbené položky"
+      ],
+      "Open source": [
+        "Open source"
+      ],
+      "Strict no-logs policy": [
+        "Prísna zásada neuchovávania záznamov"
+      ],
+      "Unlimited daily chats": [
+        "Neobmedzené denné chaty"
+      ],
+      "Unlimited favorites for quick access": [
+        "Neobmedzené obľúbené položky pre rýchly prístup"
+      ],
+      "Upload and query multiple large files": [
+        "Nahrávanie a vyhľadávanie viacerých veľkých súborov"
+      ],
+      "Upload and query small files": [
+        "Nahrávanie a vyhľadávanie malých súborov"
+      ],
+      "Web search access": [
+        "Prístup k webovému vyhľadávaniu"
+      ]
+    },
+    "collider_2025: Navigation": {
+      "Back to conversations": [
+        "Späť ku konverzáciám"
+      ],
+      "Conversations": [
+        "Konverzácie"
       ]
     },
     "color": {
@@ -8109,6 +8284,24 @@
         "${ n } adries",
         "${ n } adries"
       ],
+      "${ name } for Android": [
+        "${ name } pre Android"
+      ],
+      "${ name } for GNU/Linux": [
+        "${ name } pre GNU/Linux"
+      ],
+      "${ name } for iOS": [
+        "${ name } pre iOS"
+      ],
+      "${ name } for macOS": [
+        "${ name } pre macOS"
+      ],
+      "${ name } for Web": [
+        "${ name } pre web"
+      ],
+      "${ name } for Windows": [
+        "${ name } pre Windows"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: neumiestňovať do karantény ani neodmietať neautorizované emaily. Obvykle túto zásadu ľudia používajú zvyčajne na diagnostiku a odstraňovanie problémov alebo na testovanie."
       ],
@@ -8534,6 +8727,9 @@
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Emailový alias funguje ako emailová adresa, ale znižuje množstvo spamu a udržuje vašu skutočnú emailovú adresu a identitu skrytú."
+      ],
+      "An error occurred while communicating with **${ applicationName }**": [
+        "Vyskytla sa chyba pri komunikácii s **${ applicationName }**"
       ],
       "An error occurred while communicating with the extension": [
         "Vyskytla sa chyba pri komunikácii s rozšírením"
@@ -11256,6 +11452,9 @@
       "You may be redirected to your bank’s website.": [
         "Môžete byť presmerovaní na webovú stránku vašej banky."
       ],
+      "You may now start using **${ applicationName }**": [
+        "Teraz môžete začať používať **${ applicationName }**"
+      ],
       "You may now start using the extension": [
         "Teraz môžete začať používať rozšírenie"
       ],
@@ -13178,6 +13377,9 @@
       "Verify keys with Key Transparency": [
         "Overenie kľúčov cez funkciu Transparentnosť kľúčov"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videokonferencie s ${ MEET_APP_NAME }"
+      ],
       "Video conferencing with Zoom": [
         "Videokonferencie s aplikáciou Zoom"
       ],
@@ -14180,6 +14382,9 @@
       ],
       "Back": [
         "Späť"
+      ],
+      "Back to ${ MEET_SHORT_APP_NAME }": [
+        "Späť do ${ MEET_SHORT_APP_NAME }"
       ],
       "Back to calendar": [
         "Späť do kalendára"
@@ -15429,6 +15634,9 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } bol vytvorený"
       ],
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "Nastavenia ${ MEET_APP_NAME } videokonferencií boli aktualizované."
+      ],
       "${ reason } has been disabled": [
         "${ reason } bol zakázaný"
       ],
@@ -15449,6 +15657,12 @@
       ],
       "Email notifications have been enabled": [
         "Emailové notifikácie boli povolené"
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "Nepodarilo sa aktualizovať nastavenia ${ MEET_APP_NAME } videokonferencií"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Nepodarilo sa aktualizovať nastavenia Zoom videokonferencií"
       ],
       "Invalid code": [
         "Neplatný kód"
@@ -15498,8 +15712,8 @@
       "Two-factor authentication is not required anymore": [
         "Dvojstupňové overovanie sa už nevyžaduje"
       ],
-      "Video conferencing settings have been updated": [
-        "Nastavenia videokonferencií boli aktualizované"
+      "Zoom video conferencing settings have been updated": [
+        "Nastavenia videokonferencií Zoom boli aktualizované."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -22399,6 +22613,9 @@
       "You have no resolved alerts": [
         "Nemáte žiadne nevyriešené upozornenia"
       ],
+      "You've successfully signed in!": [
+        "Úspešne ste sa prihlásili!"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaša bezplatná skúšobná verzia služby ${ planName } končí ${ textDate }"
       ],
@@ -22561,8 +22778,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Správcovia môžu spravovať používateľské účty a udeľovať oprávnenia správcu iným používateľom. Plán organizácie môže upravovať iba primárny správca."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Umožňuje bezproblémové pridávanie odkazov na videokonferencie do pozvánok v kalendári."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Umožňuje bezproblémové pridávanie odkazov na videokonferencie ${ MEET_APP_NAME } do pozvánok v kalendári."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Umožňuje bezproblémové pridávanie odkazov na videokonferencie Zoom do pozvánok v kalendári."
       ],
       "Any protection applied to suspicious activity": [
         "Akákoľvek ochrana použitá proti podozrivej činnosti"
