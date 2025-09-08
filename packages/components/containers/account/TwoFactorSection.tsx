@@ -3,8 +3,7 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button, InlineLinkButton } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Banner, BannerVariants, Button, InlineLinkButton, Tooltip } from '@proton/atoms';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
@@ -131,6 +130,14 @@ const TwoFactorSection = () => {
                     <Toggle checked={hasTOTPEnabled} id="twoFactorToggle" onChange={handleChangeTOTP} />
                 </SettingsLayoutRight>
             </SettingsLayout>
+            {hasFIDO2Enabled && !hasTOTPEnabled && (
+                <div className="mb-4">
+                    <Banner variant={BannerVariants.WARNING_OUTLINE}>
+                        {c('Info')
+                            .t`Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.`}
+                    </Banner>
+                </div>
+            )}
             {hasSecurityKeySupport && (
                 <>
                     {renderAddSecurityKeyModal && <AddSecurityKeyModal {...addSecurityKeyModal} />}
