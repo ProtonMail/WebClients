@@ -43,6 +43,7 @@ enum CommonFeatureFlag {
     SubscriberNudgeDriveMonthly = 'SubscriberNudgeDriveMonthly',
     B2BOnboarding = 'B2BOnboarding',
     InboxBringYourOwnEmail = 'InboxBringYourOwnEmail',
+    InboxBringYourOwnEmailClient = 'InboxBringYourOwnEmailClient',
     InboxBringYourOwnEmailSignup = 'InboxBringYourOwnEmailSignup',
     ReferralExpansion = 'ReferralExpansion',
     AlwaysOnUpsell = 'AlwaysOnUpsell',
