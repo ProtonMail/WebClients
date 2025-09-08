@@ -311,4 +311,8 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 		background: #fffc;
 		border-radius: 50%;
 	}
+
+	.modal-close-icon {
+		fill: black;
+	}
 }

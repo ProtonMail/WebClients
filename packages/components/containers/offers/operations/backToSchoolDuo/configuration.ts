@@ -11,7 +11,6 @@ export const backToSchoolDuo: OfferConfig = {
     ID: 'back-to-school-duo',
     title: getBackToSchoolTitle,
     featureCode: FeatureCode.OfferBackToSchoolDuo,
-    autoPopUp: 'one-time',
     canBeDisabled: true,
     deals: [
         {
