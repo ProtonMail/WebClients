@@ -17,6 +17,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 import { getHasFIDO2Support } from '@proton/shared/lib/webauthn/helper';
 import { getId } from '@proton/shared/lib/webauthn/id';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useAvailableRecoveryMethods } from '../../hooks/useSessionRecovery';
@@ -53,9 +54,10 @@ const TwoFactorSection = () => {
 
     const hasTOTPEnabled = getHasTOTPSettingEnabled(userSettings);
     const hasFIDO2Enabled = getHasFIDO2SettingEnabled(userSettings);
+    const fido2WithoutTotp = useFlag('Fido2WithoutTotp');
 
     const registeredKeys = userSettings['2FA']?.RegisteredKeys || [];
-    const canEnableFido2 = hasTOTPEnabled;
+    const canEnableFido2 = hasTOTPEnabled || fido2WithoutTotp;
 
     const canDisableTOTP = hasTOTPEnabled && !registeredKeys.length;
 
