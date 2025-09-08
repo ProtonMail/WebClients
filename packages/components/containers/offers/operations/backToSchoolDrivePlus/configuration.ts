@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { FeatureCode } from '@proton/features/interface';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments';
+import { DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { BackToSchoolLayout } from '../../components/backToSchool/BackToSchoolLayout';
 import { getBackToSchoolTitle } from '../../helpers/backToSchool';
@@ -16,7 +17,7 @@ export const backToSchoolDrivePlus: OfferConfig = {
     deals: [
         {
             ref: 'proton_sep_25_drive_plus_web',
-            dealName: 'Drive Plus', // Constant says 200GB, no time to investigate why
+            dealName: `${DRIVE_SHORT_APP_NAME} Plus`,
             couponCode: COUPON_CODES.SEP25SALE,
             planIDs: {
                 [PLANS.DRIVE]: 1,
