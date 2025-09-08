@@ -11,7 +11,6 @@ export const backToSchoolMailPlusToYearly: OfferConfig = {
     ID: 'back-to-school-mail-plus-to-yearly',
     title: getBackToSchoolTitle,
     featureCode: FeatureCode.OfferBackToSchoolMailPlusToYearly,
-    autoPopUp: 'one-time',
     canBeDisabled: true,
     deals: [
         {
