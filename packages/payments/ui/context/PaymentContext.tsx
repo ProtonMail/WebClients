@@ -72,6 +72,7 @@ export function getPlanToCheck(params: PlanToCheck): PlanToCheck {
         planIDs: params.planIDs,
         cycle: params.cycle,
         trial: params.trial,
+        currency: params.currency,
     });
 
     return { ...params, coupon };
