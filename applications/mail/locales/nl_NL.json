@@ -1168,6 +1168,9 @@
       "Resume downloading": [
         "Download hervatten"
       ],
+      "Retry": [
+        "Opnieuw proberen"
+      ],
       "Revert to original display": [
         "Terugkeren naar originele weergave"
       ],
@@ -1440,6 +1443,9 @@
       ],
       "Trust": [
         "Vertrouwen"
+      ],
+      "Trust key": [
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -7242,7 +7248,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -8993,12 +9000,6 @@
       "Also archive": [
         "Ook archiveren"
       ],
-      "Always label sender's emails": [
-        "Label altijd e-mails van afzenders"
-      ],
-      "Always move sender's emails": [
-        "Verplaats altijd mails van afzenders"
-      ],
       "AND": [
         "EN"
       ],
@@ -9325,9 +9326,6 @@
       ],
       "Move ${ sidebarElementName }": [
         "Verplaats ${ sidebarElementName }"
-      ],
-      "Move messages to": [
-        "Verplaats berichten naar"
       ],
       "Move to": [
         "Verplaatsen naar"
@@ -11310,7 +11308,7 @@
         "Betaal jaarlijks om te genieten van ons beste aanbod"
       ],
       "Save": [
-        "Opslaan"
+        "Bespaar"
       ],
       "Save big when you pay annually": [
         "Bespaar veel wanneer u jaarlijks betaalt"
@@ -14328,12 +14326,6 @@
       ],
       "Create contact": [
         "Contact aanmaken"
-      ],
-      "Create folder \"${ search }\"": [
-        "Map \"${ search }\" aanmaken"
-      ],
-      "Create label \"${ search }\"": [
-        "Label \"${ search }\" aanmaken"
       ],
       "Create new group": [
         "Nieuwe groep aanmaken"

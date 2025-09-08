@@ -1155,6 +1155,9 @@
       "Resume downloading": [
         "Nadaljuj s prenašanjem"
       ],
+      "Retry": [
+        "Poskusite znova"
+      ],
       "Revert to original display": [
         "Povrni na prvotni prikaz"
       ],
@@ -1427,6 +1430,9 @@
       ],
       "Trust": [
         "Zaupaj"
+      ],
+      "Trust key": [
+        "Zaupaj ključu"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -7178,7 +7184,10 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko"
+        "Vstavi sliko",
+        "Vstavi sliki",
+        "Vstavi slike",
+        "Vstavi slik"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -8915,12 +8924,6 @@
       "Also archive": [
         "Tudi arhiv"
       ],
-      "Always label sender's emails": [
-        "Vedno dodaj oznako pošiljateljevim sporočilom"
-      ],
-      "Always move sender's emails": [
-        "Vedno premakni pošiljateljeva sporočila"
-      ],
       "AND": [
         "IN"
       ],
@@ -9244,9 +9247,6 @@
       ],
       "Move ${ sidebarElementName }": [
         "Premakni ${ sidebarElementName }"
-      ],
-      "Move messages to": [
-        "Premakni sporočila v"
       ],
       "Move to": [
         "Premakni v"
@@ -14195,12 +14195,6 @@
       ],
       "Create contact": [
         "Ustvari stik"
-      ],
-      "Create folder \"${ search }\"": [
-        "Ustvari mapo \"${ search }\""
-      ],
-      "Create label \"${ search }\"": [
-        "Ustvari oznako \"${ search }\""
       ],
       "Create new group": [
         "Ustvari novo skupino"
