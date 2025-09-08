@@ -96,6 +96,9 @@
       "Add phone number": [
         "Adicionar número de telefone"
       ],
+      "Add secret passphrase": [
+        "Adicionar passphrase secreta"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Adicionar o ${ CALENDAR_APP_NAME }"
       ],
@@ -757,6 +760,9 @@
       "Italic": [
         "Itálico"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Participar com ${ MEET_APP_NAME }"
+      ],
       "Keep my subscription": [
         "Manter minha assinatura"
       ],
@@ -1012,6 +1018,9 @@
       "Page ${ pageNumber }": [
         "Página ${ pageNumber }"
       ],
+      "Passphrase": [
+        "Passphrase"
+      ],
       "Pause": [
         "Pausar"
       ],
@@ -1173,6 +1182,9 @@
       ],
       "Resume downloading": [
         "Retomar download"
+      ],
+      "Retry": [
+        "Tentar novamente"
       ],
       "Revert to original display": [
         "Retornar à exibição original"
@@ -1448,8 +1460,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1510,6 +1521,9 @@
       ],
       "Update recovery phrase": [
         "Atualizar frase de recuperação"
+      ],
+      "Update secret passphrase": [
+        "Atualizar passphrase secreta"
       ],
       "Upgrade": [
         "Fazer upgrade"
@@ -1969,11 +1983,17 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Após a avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que se renova automaticamente a cada ${ renewCycle } meses em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Você pode ter até ${ TRIAL_MAX_DEDICATED_IPS } servidor dedicado durante o período de avaliação."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Você pode ter até ${ TRIAL_MAX_LUMO_SEATS } licenças do ${ LUMO_SHORT_APP_NAME } durante o período de avaliação."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Você pode ter até ${ TRIAL_MAX_SCRIBE_SEATS } licenças do Scribe durante o período de avaliação."
@@ -2646,12 +2666,50 @@
         "Expandir"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acesso a modelos de IA avançados"
+      ],
+      "Basic chat history": [
+        "Histórico de bate-papo básico"
+      ],
+      "Full chat history with search": [
+        "Histórico completo de bate-papos com pesquisa"
+      ],
+      "Large file upload support": [
+        "Suporte para envio de arquivos grandes"
+      ],
+      "Limited daily chats": [
+        "Bate-papos diários limitados"
+      ],
+      "Limited favorites": [
+        "Favoritos limitados"
+      ],
+      "Unlimited daily chats": [
+        "Bate-papos diários ilimitados"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoritos ilimitados para acesso rápido"
+      ],
+      "Upload and query multiple large files": [
+        "Enviar e consultar vários arquivos grandes"
+      ],
+      "Upload and query small files": [
+        "Enviar e consultar arquivos pequenos"
+      ],
+      "Web search access": [
+        "Acesso à pesquisa na web"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } é uma IA que prioriza a privacidade e ajuda você a fazer mais, mantendo seus dados seguros. Desbloqueie todo o potencial e tenha acesso antecipado a novas funcionalidades conforme forem lançadas."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Adicionar ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Bate-papos de alta velocidade e recursos avançados de IA."
       ]
     },
     "color": {
@@ -4560,6 +4618,9 @@
       "Failed to open to contact": [
         "Não foi possível abrir o contato."
       ],
+      "Failed to update secret passphrase": [
+        "Falha ao atualizar a passphrase secreta"
+      ],
       "Filter with this name already exists": [
         "Já existe um filtro com este nome."
       ],
@@ -4688,6 +4749,9 @@
       ],
       "Organization key is not decrypted": [
         "A chave de organização não está descriptografada"
+      ],
+      "Passphrase unavailable": [
+        "Passphrase indisponível"
       ],
       "Password is required": [
         "A senha é obrigatória"
@@ -5150,6 +5214,9 @@
     "Error message": {
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Aliases não podem ser usados quando uma senha extra está ativada em ${ PASS_APP_NAME }"
+      ],
+      "An error occured with the categories": [
+        "Ocorreu um erro com as categorias"
       ],
       "App currently unavailable": [
         "Aplicativo atualmente indisponível"
@@ -5855,11 +5922,17 @@
       "Contacts": [
         "Contatos"
       ],
+      "Domain": [
+        "Domínio"
+      ],
       "Drawer": [
         "Painel lateral"
       ],
       "Hardware not compatible": [
         "Hardware não compatível"
+      ],
+      "Password ends with": [
+        "Senha termina com"
       ],
       "Report an issue": [
         "Reportar um problema"
@@ -5878,6 +5951,9 @@
       ],
       "Tell us more": [
         "Forneça mais informações"
+      ],
+      "Username": [
+        "Nome de usuário"
       ]
     },
     "Hint": {
@@ -7125,6 +7201,9 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Para acessar seu e-mail a qualquer momento e aproveitar uma experiência otimizada no seu dispositivo móvel, faça o download do nosso aplicativo para ${ androidAppLink } ou ${ iosAppLink }."
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Para segurança extra, você pode definir uma passphrase. Ela não será incluída no convite do calendário. Lembre-se de compartilhá-la com seus convidados separadamente."
+      ],
       "For messages newer than ${ oldestDate }": [
         "Para mensagens mais novas que ${ oldestDate }"
       ],
@@ -7255,7 +7334,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -9009,12 +9089,6 @@
       "Also archive": [
         "Também arquivar"
       ],
-      "Always label sender's emails": [
-        "Sempre marcar os e-mails do remetente"
-      ],
-      "Always move sender's emails": [
-        "Sempre mover os e-mails do remetente"
-      ],
       "AND": [
         "E"
       ],
@@ -9351,9 +9425,6 @@
       "Move ${ sidebarElementName }": [
         "Mover ${ sidebarElementName }"
       ],
-      "Move messages to": [
-        "Mover mensagens para"
-      ],
       "Move to": [
         "Mover para"
       ],
@@ -9393,6 +9464,9 @@
       "No label found": [
         "Nenhum marcador encontrado"
       ],
+      "No results found": [
+        "Nenhum resultado encontrado"
+      ],
       "Not factually correct": [
         "Não é factualmente correto"
       ],
@@ -9431,6 +9505,9 @@
       ],
       "Participants": [
         "Participantes"
+      ],
+      "Passphrase:": [
+        "Passphrase:"
       ],
       "Password": [
         "Senha"
@@ -11275,6 +11352,9 @@
       "Passcode copied to clipboard": [
         "Código de acesso copiado para a área de transferência"
       ],
+      "Passphrase copied to clipboard": [
+        "Passphrase copiada para a área de transferência"
+      ],
       "Password has been set successfully": [
         "A senha foi definida"
       ],
@@ -11355,7 +11435,7 @@
         "Pague anualmente e assegure nossa melhor oferta"
       ],
       "Save": [
-        "Salvar"
+        "Economize"
       ],
       "Save big when you pay annually": [
         "Aproveite descontos incríveis ao pagar anualmente!"
@@ -12064,6 +12144,9 @@
       ],
       "End date": [
         "Data final"
+      ],
+      "Enter passphrase": [
+        "Digite a passphrase"
       ],
       "Filter folders": [
         "Filtrar pastas"
@@ -13971,6 +14054,9 @@
         "Mensagem ${ elementsCount } recategorizada.",
         "Mensagens ${ elementsCount } recategorizadas."
       ],
+      "Secret passphrase updated": [
+        "Passphrase secreta atualizada"
+      ],
       "Self-destruction removed": [
         "Autodestruição removida"
       ],
@@ -14406,12 +14492,6 @@
       "Create contact": [
         "Criar contato"
       ],
-      "Create folder \"${ search }\"": [
-        "Criar pasta \"${ search }\""
-      ],
-      "Create label \"${ search }\"": [
-        "Criar o marcador \"${ search }\""
-      ],
       "Create new group": [
         "Criar um grupo"
       ],
@@ -14664,6 +14744,10 @@
       "Label as": [
         "Rotular como"
       ],
+      "Label message as": [
+        "Marcar mensagem como",
+        "Marcar mensagens como"
+      ],
       "Label options": [
         "Opções do marcador"
       ],
@@ -14747,6 +14831,13 @@
       ],
       "Move all messages to trash": [
         "Mover todas as mensagens para a lixeira"
+      ],
+      "Move message to": [
+        "Mover mensagem para",
+        "Mover mensagens para"
+      ],
+      "Move messages to": [
+        "Mover mensagens para"
       ],
       "Move to": [
         "Mover para"
