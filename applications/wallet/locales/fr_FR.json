@@ -520,6 +520,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Une fois la version d'essai terminée le ${ formattedDate }, elle deviendra un abonnement payant qui se renouvelle automatiquement tous les ${ renewCycle } mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
       ],
@@ -1167,14 +1170,23 @@
       ]
     },
     "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Accès aux modèles d'IA avancés"
+      ],
       "Basic chat history": [
         "Historique de chat basique"
       ],
       "Full chat history with search": [
         "Historique complet des discussions avec recherche"
       ],
+      "Large file upload support": [
+        "Prise en charge du chargement de fichiers volumineux"
+      ],
       "Limited daily chats": [
         "Chats quotidiens limités"
+      ],
+      "Limited favorites": [
+        "Favoris limités"
       ],
       "Unlimited daily chats": [
         "Chats quotidiens illimités"
@@ -1184,6 +1196,9 @@
       ],
       "Upload and query multiple large files": [
         "Importer et consulter plusieurs fichiers volumineux"
+      ],
+      "Upload and query small files": [
+        "Importer et consulter les petits fichiers"
       ],
       "Web search access": [
         "Accès à la recherche web"
@@ -1195,6 +1210,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Ajouter ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Discussions rapides et fonctionnalités d'IA avancées."
       ]
     },
     "color": {
