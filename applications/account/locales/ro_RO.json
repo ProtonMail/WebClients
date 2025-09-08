@@ -1012,6 +1012,9 @@
       "Open": [
         "Deschidere"
       ],
+      "Open ${ applicationName }": [
+        "Deschidere ${ applicationName }"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
       ],
@@ -1991,6 +1994,9 @@
       ],
       "Secure your communications": [
         "Securizați-vă informațiile"
+      ],
+      "Talk confidentially": [
+        "Discutați confidențial"
       ]
     },
     "Apps dropdown": {
@@ -2054,6 +2060,66 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Nu sunt la birou și am acces limitat la e-mail."
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Detalii de plată"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce se încheie perioada de probare la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni, la ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce probarea se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat lunar la data de ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Făcând clic pe «Încercare», sunteți de acord cu ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "În perioada de probare, puteți avea până la 10 utilizatori."
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "gratuit timp de ${ TRIAL_DURATION_DAYS } zile"
+      ],
+      "on ${ formattedDate }": [
+        "la ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Încercați ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Încercați-l gratuit timp de ${ TRIAL_DURATION_DAYS } zile"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Dacă anulați, perioada de probare gratuită nu va fi convertită într-un abonament cu plată, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de probare. După aceea, planul va fi retrogradat la ${ BRAND_NAME } Free."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licențe în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe Scribe în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_USERS } utilizatori în perioada de probare."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Nu puteți adăuga domenii personale în perioada de probare."
+      ],
+      "You have reached the trial limit.": [
+        "Ați atins limita perioadei de probare."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Suma datorată după probare"
+      ],
+      "Amount due now": [
+        "Suma datorată acum"
       ]
     },
     "b2b_trials_Action": {
@@ -2464,6 +2530,9 @@
       "Manual setup problem": [
         "Problemă setare manuală"
       ],
+      "Meet problem": [
+        "Problemă Meet"
+      ],
       "Other": [
         "Altele"
       ],
@@ -2830,6 +2899,112 @@
       ],
       "Expand": [
         "Extindere"
+      ]
+    },
+    "collider_2025: app-switcher": {
+      "Chat with a private AI assistant": [
+        "Conversați cu un asistent de IA privat"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acces la modele AI avansate"
+      ],
+      "Basic chat history": [
+        "Istoric de bază conversații"
+      ],
+      "Full chat history with search": [
+        "Istoric complet al conversațiilor cu căutare"
+      ],
+      "Large file upload support": [
+        "Acceptare încărcare fișiere mari"
+      ],
+      "Limited daily chats": [
+        "Conversații zilnice limitate"
+      ],
+      "Limited favorites": [
+        "Favorite limitate"
+      ],
+      "Unlimited daily chats": [
+        "Conversații zilnice nelimitate"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favorite nelimitate pentru o accesare rapidă"
+      ],
+      "Upload and query multiple large files": [
+        "Încărcați și interogați mai multe fișiere mari"
+      ],
+      "Upload and query small files": [
+        "Încărcați și interogați fișiere mici"
+      ],
+      "Web search access": [
+        "Acces la căutare pe internet"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "Construit și cu sediul în Europa"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } este o aplicație de inteligență artificială axată pe confidențialitate, care vă ajută să realizați mai mult, păstrându-vă în același timp datele în siguranță. Deblocați-i întregul potențial și bucurați-vă de acces timpuriu la noile funcții pe măsură ce sunt introduse."
+      ],
+      "Access to advanced AI models": [
+        "Acces la modele AI avansate"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Adăugare ${ LUMO_APP_NAME }"
+      ],
+      "AI assistant that respects your privacy": [
+        "Asistent de IA care vă respectă confidențialitatea"
+      ],
+      "Basic chat history": [
+        "Istoric de bază conversații"
+      ],
+      "Data never used for AI training": [
+        "Datele nu sunt utilizate niciodată pentru antrenarea IA"
+      ],
+      "Full chat history with search": [
+        "Istoric complet al conversațiilor cu căutare"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Conversații rapide și funcții avansate de inteligență artificială."
+      ],
+      "Limited daily chats": [
+        "Conversații zilnice limitate"
+      ],
+      "Limited favorites": [
+        "Favorite limitate"
+      ],
+      "Open source": [
+        "Cod sursă public"
+      ],
+      "Strict no-logs policy": [
+        "Politică strictă fără înregistrarea activității"
+      ],
+      "Unlimited daily chats": [
+        "Conversații zilnice nelimitate"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favorite nelimitate pentru o accesare rapidă"
+      ],
+      "Upload and query multiple large files": [
+        "Încărcați și interogați mai multe fișiere mari"
+      ],
+      "Upload and query small files": [
+        "Încărcați și interogați fișiere mici"
+      ],
+      "Web search access": [
+        "Acces la căutare pe internet"
+      ]
+    },
+    "collider_2025: Navigation": {
+      "Back to conversations": [
+        "Înapoi la conversații"
+      ],
+      "Conversations": [
+        "Conversații"
       ]
     },
     "color": {
@@ -4341,6 +4516,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puteți importa evenimente în format iCal (fișier ICS). Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_EVENTS_STRING } evenimente. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Veți primi ${ referralInfo.referrerRewardAmount } în credite ${ BRAND_NAME } atunci când persoana pe care o invitați se înscrie la un plan ${ BRAND_NAME } și aceasta va primi ${ referralInfo.refereeRewardAmount } în credite pentru a începe."
       ]
     },
     "description": {
@@ -7339,6 +7517,9 @@
       "Device": [
         "Dispozitiv"
       ],
+      "Domain": [
+        "Domeniu"
+      ],
       "Enter your email address": [
         "Introduceți adresa de e-mail"
       ],
@@ -7371,6 +7552,9 @@
       ],
       "Organization key fingerprint": [
         "Amprentă cheie organizație"
+      ],
+      "Password ends with": [
+        "Parola se termină cu"
       ],
       "Payment details": [
         "Detalii plată"
@@ -7413,6 +7597,9 @@
       ],
       "User": [
         "Utilizator"
+      ],
+      "Username": [
+        "Nume de utilizator"
       ]
     },
     "Header for addresses table": {
@@ -8031,6 +8218,24 @@
         "${ n } adrese",
         "${ n } de adrese"
       ],
+      "${ name } for Android": [
+        "${ name } pentru Android"
+      ],
+      "${ name } for GNU/Linux": [
+        "${ name } pentru GNU/Linux"
+      ],
+      "${ name } for iOS": [
+        "${ name } pentru iOS"
+      ],
+      "${ name } for macOS": [
+        "${ name } pentru macOS"
+      ],
+      "${ name } for Web": [
+        "${ name } pentru web"
+      ],
+      "${ name } for Windows": [
+        "${ name } pentru Windows"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: nu se pun în carantină sau nu se resping e-mailurile neautorizate. De obicei, se folosește această politică doar pentru depanare sau testare."
       ],
@@ -8430,6 +8635,9 @@
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias de e-mail funcționează ca o adresă de e-mail, dar reduce mesajele nedorite și vă păstrează adresa de e-mail și identitatea reală ascunse."
+      ],
+      "An error occurred while communicating with **${ applicationName }**": [
+        "A apărut o eroare în timpul comunicării cu **${ applicationName }**."
       ],
       "An error occurred while communicating with the extension": [
         "A apărut o eroare în timpul comunicării cu extensia."
@@ -9154,6 +9362,9 @@
       ],
       "Get ${ upsellPlanName }": [
         "Luați ${ upsellPlanName }"
+      ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Obțineți **${ referrerRewardAmount } credite** pentru fiecare prieten care se abonează."
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Obțineți acces creând un cont ${ BRAND_NAME } și acceptând invitația."
@@ -11125,6 +11336,9 @@
       "You may be redirected to your bank’s website.": [
         "Ar putea fi necesară redirecționarea spre pagina web a băncii."
       ],
+      "You may now start using **${ applicationName }**": [
+        "Acum puteți începe utilizarea **${ applicationName }**"
+      ],
       "You may now start using the extension": [
         "Acum puteți începe utilizarea extensiei"
       ],
@@ -13034,6 +13248,9 @@
       "Verify keys with Key Transparency": [
         "Verificare chei cu Key Transparency"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videoconferință cu ${ MEET_APP_NAME }"
+      ],
       "Video conferencing with Zoom": [
         "Conferință video cu Zoom"
       ],
@@ -14029,6 +14246,9 @@
       ],
       "Back": [
         "Înapoi"
+      ],
+      "Back to ${ MEET_SHORT_APP_NAME }": [
+        "Înapoi la ${ MEET_SHORT_APP_NAME }"
       ],
       "Back to calendar": [
         "Înapoi la calendar"
@@ -15250,6 +15470,9 @@
       "${ Filter.Name } created": [
         "S-a creat filtrul ${ Filter.Name }."
       ],
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "Setările conferințelor video ${ MEET_APP_NAME } au fost actualizate."
+      ],
       "${ reason } has been disabled": [
         "${ reason } a fost dezactivat"
       ],
@@ -15270,6 +15493,12 @@
       ],
       "Email notifications have been enabled": [
         "S-au activat notificările pe e-mail."
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "Nu s-au putut actualiza setările de conferință video ${ MEET_APP_NAME }."
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Nu s-au putut actualiza setările de conferință video Zoom."
       ],
       "Invalid code": [
         "Cod nevalid"
@@ -15319,8 +15548,8 @@
       "Two-factor authentication is not required anymore": [
         "Autentificarea cu doi factori nu mai este obligatorie."
       ],
-      "Video conferencing settings have been updated": [
-        "Setările conferințelor video au fost actualizate."
+      "Zoom video conferencing settings have been updated": [
+        "Setările conferințelor video Zoom au fost actualizate."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -18545,6 +18774,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Toate serviciile de bază ale ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
+        "Și primiți ${ referralInfo.uiData.refereeRewardAmount } în credite, dacă vă abonați."
+      ],
       "Billing Cycle": [
         "Ciclu de facturare"
       ],
@@ -18610,6 +18842,9 @@
       ],
       "Free for ${ TRIAL_DURATION_DAYS } days": [
         "Gratuit timp de ${ TRIAL_DURATION_DAYS } zile"
+      ],
+      "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Obțineți ${ referralInfo.uiData.refereeRewardAmount } în credite"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Obțineți o adresă ${ MAIL_APP_NAME } securizată sau ${ internalButton }"
@@ -21406,6 +21641,9 @@
       "Gift code": [
         "Cod cadou"
       ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Acordați ${ refereeRewardAmount } în credite și două săptămâni gratuite. Obțineți ${ referrerRewardAmount } în credite."
+      ],
       "Group": [
         "Grup"
       ],
@@ -22133,6 +22371,9 @@
       "You have no resolved alerts": [
         "Nu aveți alerte nerezolvate"
       ],
+      "You've successfully signed in!": [
+        "V-ați conectat!"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Probarea gratuită pentru ${ planName } se încheie ${ textDate }"
       ],
@@ -22295,8 +22536,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorii pot gestiona conturile de utilizatori și să acorde drepturi de administrare altor utilizatori. Doar administratorul principal poate modifica planul organizației."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Permite adăugarea de legături web spre conferințe video la invitațiile din calendar."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Permite adăugarea fără probleme a legăturilor de conferințe video ${ MEET_APP_NAME } la invitațiile personale din calendar."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Permite adăugarea fără probleme a legăturilor de conferințe video Zoom la invitațiile personale din calendar."
       ],
       "Any protection applied to suspicious activity": [
         "Tipul de protecție aplicat activităților suspecte."

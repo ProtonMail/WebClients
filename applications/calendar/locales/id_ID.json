@@ -89,6 +89,9 @@
       "Add public holidays": [
         "Tambahkan hari libur umum"
       ],
+      "Add secret passphrase": [
+        "Tambah frasa sandi rahasia"
+      ],
       "Add to group": [
         "Tambah ke grup"
       ],
@@ -144,13 +147,13 @@
         "Klaim alamat ${ BRAND_NAME } gratis Anda"
       ],
       "Clear": [
-        "Bersihkan"
+        "Hapus"
       ],
       "Clear browser data": [
         "Hapus data browser"
       ],
       "Clear data": [
-        "Bersihkan data"
+        "Hapus data"
       ],
       "Clear query": [
         "Hapus kueri"
@@ -689,6 +692,9 @@
       "Resume indexing": [
         "Lanjutkan pengindeksan"
       ],
+      "Retry": [
+        "Coba lagi"
+      ],
       "Save": [
         "Simpan"
       ],
@@ -844,6 +850,9 @@
       ],
       "Update recovery phrase": [
         "Perbarui frasa pemulihan"
+      ],
+      "Update secret passphrase": [
+        "Perbarui frasa sandi rahasia"
       ],
       "Upgrade": [
         "Tingkatkan"
@@ -1447,6 +1456,9 @@
       ],
       "Manual setup problem": [
         "Masalah pemasangan manual"
+      ],
+      "Meet problem": [
+        "Masalah Meet"
       ],
       "Other": [
         "Lainnya"
@@ -3426,6 +3438,9 @@
       "Event not found": [
         "Acara tidak ditemukan"
       ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "Konferensi video ${ MEET_APP_NAME } gagal dibuat"
+      ],
       "Failed to create meeting": [
         "Pertemuan gagal dibuat"
       ],
@@ -3440,6 +3455,9 @@
       ],
       "Failed to open to contact": [
         "Kontak gagal dibuka"
+      ],
+      "Failed to update secret passphrase": [
+        "Frasa sandi rahasia gagal diperbarui"
       ],
       "First name is too long": [
         "Nama depan terlalu panjang"
@@ -3566,6 +3584,9 @@
       ],
       "Organization key is not decrypted": [
         "Kunci organisasi tidak didekripsi"
+      ],
+      "Passphrase unavailable": [
+        "Frasa sandi tidak tersedia"
       ],
       "Password is required": [
         "Kata sandi diperlukan"
@@ -5168,8 +5189,14 @@
       "Expired": [
         "Kedaluwarsa"
       ],
+      "Failed to update meeting password": [
+        "Kata sandi pertemuan gagal diperbarui"
+      ],
       "finance": [
         "keuangan"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Untuk keamanan tambahan, Anda dapat mengatur frasa sandi. Frasa ini tidak akan disertakan dalam undangan kalender, sehingga pastikan Anda membagikan frasa ini kepada para tamu undangan Anda secara terpisah."
       ],
       "Frequency modifications will be lost.": [
         "Perubahan frekuensi akan hilang."
@@ -6210,6 +6237,9 @@
       "Add to group": [
         "Tambah ke grup"
       ],
+      "Add Zoom meeting": [
+        "Tambah pertemuan Zoom"
+      ],
       "Address": [
         "Alamat"
       ],
@@ -6513,6 +6543,9 @@
       "Participants": [
         "Peserta"
       ],
+      "Passphrase:": [
+        "Frasa sandi:"
+      ],
       "Password": [
         "Kata sandi"
       ],
@@ -6626,6 +6659,9 @@
       ],
       "Verification code": [
         "Kode verifikasi"
+      ],
+      "Video conference": [
+        "Konferensi video"
       ],
       "Vulnerable": [
         "Rentan"
@@ -8073,6 +8109,9 @@
       ],
       "Passcode copied to clipboard": [
         "Kode sandi disalin ke papan klip"
+      ],
+      "Passphrase copied to clipboard": [
+        "Frasa sandi disalin ke papan klip"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8260,7 +8299,7 @@
         "Bayar per tahun, kantongi penawaran terbaik kami"
       ],
       "Save": [
-        "Simpan"
+        "Hemat"
       ],
       "Save big when you pay annually": [
         "Hemat besar-besaran pada saat Anda membayar secara tahunan"
@@ -10333,6 +10372,9 @@
       "Problem reported": [
         "Masalah dilaporkan"
       ],
+      "Secret passphrase updated": [
+        "Frasa sandi rahasia diperbarui"
+      ],
       "Undo in progress": [
         "Pengurungan sedang berlangsung"
       ],
@@ -10604,7 +10646,7 @@
         "Klaim alamat ${ MAIL_APP_NAME } Anda"
       ],
       "Clearing data": [
-        "Membersihkan data"
+        "Menghapus data"
       ],
       "Collaborate on documents": [
         "Berkolaborasi dalam dokumen"

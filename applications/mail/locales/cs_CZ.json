@@ -96,6 +96,9 @@
       "Add phone number": [
         "Přidat telefonní číslo"
       ],
+      "Add secret passphrase": [
+        "Přidat tajné heslo"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Přidat do ${ CALENDAR_APP_NAME }"
       ],
@@ -765,6 +768,9 @@
       "Italic": [
         "Kurzíva"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Připojte se pomocí ${ MEET_APP_NAME }"
+      ],
       "Keep my subscription": [
         "Zachovat mé předplatné"
       ],
@@ -1020,6 +1026,9 @@
       "Page ${ pageNumber }": [
         "Stránka ${ pageNumber }"
       ],
+      "Passphrase": [
+        "Heslo"
+      ],
       "Pause": [
         "Pozastavit"
       ],
@@ -1181,6 +1190,9 @@
       ],
       "Resume downloading": [
         "Pokračovat ve stahování"
+      ],
+      "Retry": [
+        "Opakovat"
       ],
       "Revert to original display": [
         "Návrat k původnímu zobrazení"
@@ -1456,10 +1468,7 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -1520,6 +1529,9 @@
       ],
       "Update recovery phrase": [
         "Aktualizovat obnovovací frázi"
+      ],
+      "Update secret passphrase": [
+        "Aktualizovat tajné heslo"
       ],
       "Upgrade": [
         "Přejít na placený tarif"
@@ -1992,6 +2004,32 @@
         "Odesílatel úspěšně ověřen"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců, počínaje ${ formattedDate }. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje měsíčně, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude vám nic účtováno."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_DEDICATED_IPS } vyhrazený server během zkušební doby."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_LUMO_SEATS } licencí ${ LUMO_SHORT_APP_NAME } během zkušební doby."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_SCRIBE_SEATS } licencí Scribe během zkušební doby."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_USERS } uživatelů během zkušební doby."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Ve zkušební verzi nelze přidávat vlastní domény."
+      ],
+      "You have reached the trial limit.": [
+        "Dosáhli jste limitu zkušební verze."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Zrušit předplatné"
@@ -2228,6 +2266,9 @@
       ],
       "Manual setup problem": [
         "Problém s ručním nastavením"
+      ],
+      "Meet problem": [
+        "Problém s Meet"
       ],
       "Other": [
         "Ostatní"
@@ -2656,6 +2697,52 @@
       ],
       "Expand": [
         "Rozbalit"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Přístup k pokročilým modelům AI"
+      ],
+      "Basic chat history": [
+        "Základní historie konverzací"
+      ],
+      "Full chat history with search": [
+        "Úplná historie konverzací s vyhledáním"
+      ],
+      "Large file upload support": [
+        "Podpora nahrávání velkých souborů"
+      ],
+      "Limited daily chats": [
+        "Omezený denní limit konverzací"
+      ],
+      "Limited favorites": [
+        "Omezený počet oblíbených"
+      ],
+      "Unlimited daily chats": [
+        "Neomezený denní limit konverzací"
+      ],
+      "Unlimited favorites for quick access": [
+        "Neomezený počet oblíbených pro rychlý přístup"
+      ],
+      "Upload and query multiple large files": [
+        "Nahrávání a dotazování více velkých souborů"
+      ],
+      "Upload and query small files": [
+        "Nahrávání a dotazování malých souborů"
+      ],
+      "Web search access": [
+        "Přístup k vyhledávání na webu"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } je umělá inteligence s prioritou ochrany soukromí, která vám pomáhá zvládnout více a zároveň chrání vaše data. Využijte její plný potenciál a získejte přístup k novým funkcím ihned po jejich představení."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Přidat ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Velmi rychlé konverzace a pokročilé funkce AI."
       ]
     },
     "color": {
@@ -4584,6 +4671,9 @@
       "Failed to open to contact": [
         "Otevření kontaktu selhalo"
       ],
+      "Failed to update secret passphrase": [
+        "Aktualizace tajného hesla selhala"
+      ],
       "Filter with this name already exists": [
         "Filtr s tímto názvem již existuje"
       ],
@@ -4718,6 +4808,9 @@
       ],
       "Organization key is not decrypted": [
         "Klíč organizace není dešifrován"
+      ],
+      "Passphrase unavailable": [
+        "Heslo nedostupné"
       ],
       "Password is required": [
         "Heslo je povinná položka"
@@ -7337,6 +7430,9 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Chcete-li mít kdykoli přístup k e-mailu a optimalizované mobilní prostředí, stáhněte si naši aplikaci ${ androidAppLink } nebo ${ iosAppLink }."
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Pro zvýšení bezpečnosti můžete nastavit heslo. Nebude součástí pozvánky do kalendáře, nezapomeňte jej sdílet s hosty zvlášť."
+      ],
       "For messages newer than ${ oldestDate }": [
         "Pro zprávy novější než ${ oldestDate }"
       ],
@@ -7473,7 +7569,10 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -9285,12 +9384,6 @@
       "Also archive": [
         "Také archivovat"
       ],
-      "Always label sender's emails": [
-        "Vždy označit e-maily odesílatele"
-      ],
-      "Always move sender's emails": [
-        "Vždy přesunout e-maily odesílatele"
-      ],
       "AND": [
         "A"
       ],
@@ -9627,9 +9720,6 @@
       "Move ${ sidebarElementName }": [
         "Přesunout ${ sidebarElementName }"
       ],
-      "Move messages to": [
-        "Přesunout zprávy do"
-      ],
       "Move to": [
         "Přesunout do"
       ],
@@ -9669,6 +9759,9 @@
       "No label found": [
         "Nebyl nalezen žádný štítek"
       ],
+      "No results found": [
+        "Nebyly nalezeny žádné výsledky"
+      ],
       "Not factually correct": [
         "Není to fakticky správně"
       ],
@@ -9707,6 +9800,9 @@
       ],
       "Participants": [
         "Účastníci"
+      ],
+      "Passphrase:": [
+        "Heslo:"
       ],
       "Password": [
         "Heslo"
@@ -11616,6 +11712,9 @@
       "Passcode copied to clipboard": [
         "Přístupový kód zkopírován do schránky"
       ],
+      "Passphrase copied to clipboard": [
+        "Heslo zkopírováno do schránky"
+      ],
       "Password has been set successfully": [
         "Heslo bylo úspěšně nastaveno"
       ],
@@ -12409,6 +12508,9 @@
       ],
       "End date": [
         "Datum ukončení"
+      ],
+      "Enter passphrase": [
+        "Zadejte heslo"
       ],
       "Filter folders": [
         "Filtrovat složky"
@@ -14451,6 +14553,9 @@
         "Změna kategorie ${ elementsCount } zpráv.",
         "Změna kategorie ${ elementsCount } zpráv."
       ],
+      "Secret passphrase updated": [
+        "Tajné heslo aktualizováno"
+      ],
       "Self-destruction removed": [
         "Samozničení odebráno"
       ],
@@ -14914,12 +15019,6 @@
       "Create contact": [
         "Vytvořit kontakt"
       ],
-      "Create folder \"${ search }\"": [
-        "Vytvořit složku \"${ search }\""
-      ],
-      "Create label \"${ search }\"": [
-        "Vytvořit štítek \"${ search }\""
-      ],
       "Create new group": [
         "Vytvořit novou skupinu"
       ],
@@ -15184,6 +15283,12 @@
       "Label as": [
         "Přidat štítek"
       ],
+      "Label message as": [
+        "Označit zprávu jako",
+        "Označit zprávy jako",
+        "Označit zprávy jako",
+        "Označit zprávy jako"
+      ],
       "Label options": [
         "Nastavení štítku"
       ],
@@ -15267,6 +15372,15 @@
       ],
       "Move all messages to trash": [
         "Přesunout všechny zprávy do koše"
+      ],
+      "Move message to": [
+        "Přesunout zprávu do",
+        "Přesunout zprávy do",
+        "Přesunout zprávy do",
+        "Přesunout zprávy do"
+      ],
+      "Move messages to": [
+        "Přesunout zprávy do"
       ],
       "Move to": [
         "Přesunout do"

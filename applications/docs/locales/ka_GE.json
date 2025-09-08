@@ -154,6 +154,9 @@
       "Claim this address": [
         "ამ მისამართის გამოთხოვა"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "${ BRAND_NAME }-ის უფასო მისამართის გამოთხოვა"
+      ],
       "Clear data": [
         "მონაცემების გასუფთავება"
       ],
@@ -1115,6 +1118,11 @@
         "გაუთვალისწინებელი შემთხვევა"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "You have reached the trial limit.": [
+        "მიაღწიეთ გამოსაცდელი პერიოდის ზღვარს."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "გამოწერის გაუქმება"
@@ -1348,6 +1356,9 @@
       "Manual setup problem": [
         "ხელით დაყენების პრობლემა"
       ],
+      "Meet problem": [
+        "Meet-ის პრობლემა"
+      ],
       "Other": [
         "სხვა"
       ],
@@ -1480,6 +1491,46 @@
       ],
       "Expand": [
         "ამოკეცვა"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "წვდომა განვითარებულ ხი მოდელებთან"
+      ],
+      "Basic chat history": [
+        "საბაზისო ჩატის ისტორია"
+      ],
+      "Full chat history with search": [
+        "სრული ჩატის ისტორია ძებნით"
+      ],
+      "Large file upload support": [
+        "დიდი ფაილის ატვირთვის მხარდაჭერა"
+      ],
+      "Limited daily chats": [
+        "შეზღუდული ყოველდღიური ჩატები"
+      ],
+      "Limited favorites": [
+        "შეზღუდული რჩეულები"
+      ],
+      "Unlimited daily chats": [
+        "შეუზღუდავი ყოველდღიური ჩატები"
+      ],
+      "Unlimited favorites for quick access": [
+        "განუსაზღვრელი რჩეულები სწრაფი წვდომისთვის"
+      ],
+      "Upload and query multiple large files": [
+        "ატვირთეთ და დაამუშავეთ ბევრი დიდი ფაილი"
+      ],
+      "Upload and query small files": [
+        "ატვირტეთ და მოითხოვეთ პატარა ფაილები"
+      ],
+      "Web search access": [
+        "წვდომა ვებში ძებნასთან"
+      ]
+    },
+    "collider_2025: Info": {
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME }-ის დამატება"
       ]
     },
     "color": {
@@ -3773,8 +3824,17 @@
       ]
     },
     "Header": {
+      "Domain": [
+        "დომენი"
+      ],
       "Drawer": [
         "უჯრა"
+      ],
+      "Password ends with": [
+        "პაროლი მთავრდება"
+      ],
+      "Username": [
+        "მომხმარებლის სახელი"
       ]
     },
     "Hint": {
@@ -7817,7 +7877,7 @@
         "გადაიხადეთ წელიწადში ერთხელ, მიიღეთ ჩვენ საუკეთესო შეთავაზება"
       ],
       "Save": [
-        "შენახვა"
+        "დაზოგეთ"
       ],
       "Save big when you pay annually": [
         "დაზოგეთ ბევრი, როცა წელიწადში ერთხელ იხდით"
@@ -9629,6 +9689,9 @@
       ],
       "Change password": [
         "პაროლის შეცვლა"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME }-ის მისამართის გამოთხოვა"
       ],
       "Clearing data": [
         "მონაცემების გასუფთავება"

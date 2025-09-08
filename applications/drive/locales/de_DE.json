@@ -1109,6 +1109,9 @@
       "Upload file": [
         "Datei hochladen"
       ],
+      "Upload File": [
+        "Datei hochladen"
+      ],
       "Upload files": [
         "Dateien hochladen"
       ],
@@ -1407,11 +1410,17 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nachdem die Testversion am ${ formattedDate } endet, wird es zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate am ${ formattedDate } automatisch verlängert. Dir wird nichts berechnet, wenn du vor dem ${ formattedDate } kündigst."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_DEDICATED_IPS } dedizierte Server haben."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-Lizenzen haben."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-Lizenzen haben."
@@ -1664,6 +1673,9 @@
       "Manual setup problem": [
         "Problem mit der manuellen Einrichtung"
       ],
+      "Meet problem": [
+        "Meet-Problem"
+      ],
       "Other": [
         "Andere"
       ],
@@ -1812,12 +1824,50 @@
         "Erweitern"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Zugang zu erweiterten KI-Modellen"
+      ],
+      "Basic chat history": [
+        "Einfacher Chatverlauf"
+      ],
+      "Full chat history with search": [
+        "Vollständiger Chat-Verlauf mit Suche"
+      ],
+      "Large file upload support": [
+        "Unterstützt große Dateiuploads"
+      ],
+      "Limited daily chats": [
+        "Begrenzte tägliche Chats"
+      ],
+      "Limited favorites": [
+        "Begrenzte Favoriten"
+      ],
+      "Unlimited daily chats": [
+        "Unbegrenzte tägliche Chats"
+      ],
+      "Unlimited favorites for quick access": [
+        "Unbegrenzte Favoriten für schnellen Zugriff"
+      ],
+      "Upload and query multiple large files": [
+        "Mehrere große Dateien hochladen und abfragen"
+      ],
+      "Upload and query small files": [
+        "Kleine Dateien hochladen und abfragen"
+      ],
+      "Web search access": [
+        "Websuche-Zugriff"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } ist eine datenschutzorientierte KI, die dir hilft, mehr zu erledigen und gleichzeitig dafür sorgt, dass deine Daten sicher bleiben. Entfalte ihr volles Potenzial und genieße den Vorabzugriff auf neue Funktionen, sobald sie eingeführt werden."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } hinzufügen"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Schnelle Chats und erweiterte KI-Funktionen."
       ]
     },
     "color": {
@@ -9192,7 +9242,7 @@
         "Jährlich zahlen, unser bestes Angebot sichern"
       ],
       "Save": [
-        "Speichern"
+        "Sparen"
       ],
       "Save big when you pay annually": [
         "Spare kräftig, wenn du jährlich bezahlst"

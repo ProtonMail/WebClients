@@ -1133,6 +1133,32 @@
         "Ikke støttet hendelse"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes ${ formattedDate }, vil det gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes ${ formattedDate }, vil det gå over til å bli et betalt abonnement som fornyes automatisk månedlig ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-lisenser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-lisenser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_USERS } brukere i prøveperioden."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Du kan ikke legge til egendefinerte domener i prøveperioden."
+      ],
+      "You have reached the trial limit.": [
+        "Du har nådd prøveperiodegrensen."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Avbryt abonnement"
@@ -1366,6 +1392,9 @@
       "Manual setup problem": [
         "Problem med manuell installasjon"
       ],
+      "Meet problem": [
+        "Meet-problem"
+      ],
       "Other": [
         "Annet"
       ],
@@ -1501,6 +1530,52 @@
       ],
       "Expand": [
         "Utvid"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Tilgang til avanserte KI-modeller"
+      ],
+      "Basic chat history": [
+        "Grunnleggende chatlogg"
+      ],
+      "Full chat history with search": [
+        "Full chatlogg med søk"
+      ],
+      "Large file upload support": [
+        "Støtte for opplasting av store filer"
+      ],
+      "Limited daily chats": [
+        "Begrenset antall daglige chatter"
+      ],
+      "Limited favorites": [
+        "Begrenset antall favoritter"
+      ],
+      "Unlimited daily chats": [
+        "Ubegrenset antall daglige chatter"
+      ],
+      "Unlimited favorites for quick access": [
+        "Ubegrenset antall favoritter for rask tilgang"
+      ],
+      "Upload and query multiple large files": [
+        "Last opp og søk i flere store filer"
+      ],
+      "Upload and query small files": [
+        "Last opp og søk i små filer"
+      ],
+      "Web search access": [
+        "Tilgang til nettsøk"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } er en personvernfokusert KI som hjelper deg å få mer gjort samtidig som dataene dine holdes sikre. Lås opp dens fulle potensial og nyt tidlig tilgang til nye funksjoner når de introduseres."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Legg til ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Høyhastighetschatter og avanserte KI-funksjoner."
       ]
     },
     "color": {
@@ -3823,8 +3898,17 @@
       ]
     },
     "Header": {
+      "Domain": [
+        "Domene"
+      ],
       "Drawer": [
         "Sidepanel"
+      ],
+      "Password ends with": [
+        "Passordet slutter med"
+      ],
+      "Username": [
+        "Brukernavn"
       ]
     },
     "Hint": {

@@ -96,6 +96,9 @@
       "Add phone number": [
         "Tambah nomor telepon"
       ],
+      "Add secret passphrase": [
+        "Tambah frasa sandi rahasia"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Tambah ke ${ CALENDAR_APP_NAME }"
       ],
@@ -223,19 +226,19 @@
         "Klaim alamat ${ BRAND_NAME } gratis Anda"
       ],
       "Clear": [
-        "Bersihkan"
+        "Hapus"
       ],
       "Clear all formatting": [
         "Hapus seluruh pemformatan"
       ],
       "Clear application data": [
-        "Bersihkan data aplikasi"
+        "Hapus data aplikasi"
       ],
       "Clear browser data": [
         "Hapus data browser"
       ],
       "Clear data": [
-        "Bersihkan data"
+        "Hapus data"
       ],
       "clear it": [
         "hapus"
@@ -1170,6 +1173,9 @@
       "Resume downloading": [
         "Lanjutkan unduhan"
       ],
+      "Retry": [
+        "Coba lagi"
+      ],
       "Revert to original display": [
         "Kembalikan ke mode tampilan semula"
       ],
@@ -1443,9 +1449,6 @@
       "Trust": [
         "Percayai"
       ],
-      "Trust key": [
-        "Percayai kunci"
-      ],
       "Trust public key": [
         "Percayai kunci publik"
       ],
@@ -1505,6 +1508,9 @@
       ],
       "Update recovery phrase": [
         "Perbarui frasa pemulihan"
+      ],
+      "Update secret passphrase": [
+        "Perbarui frasa sandi rahasia"
       ],
       "Upgrade": [
         "Tingkatkan"
@@ -2186,6 +2192,9 @@
       ],
       "Manual setup problem": [
         "Masalah pemasangan manual"
+      ],
+      "Meet problem": [
+        "Masalah Meet"
       ],
       "Other": [
         "Lainnya"
@@ -4506,6 +4515,9 @@
       "Failed to open to contact": [
         "Kontak gagal dibuka"
       ],
+      "Failed to update secret passphrase": [
+        "Frasa sandi rahasia gagal diperbarui"
+      ],
       "Filter with this name already exists": [
         "Filter dengan nama ini sudah ada"
       ],
@@ -4631,6 +4643,9 @@
       ],
       "Organization key is not decrypted": [
         "Kunci organisasi tidak didekripsi"
+      ],
+      "Passphrase unavailable": [
+        "Frasa sandi tidak tersedia"
       ],
       "Password is required": [
         "Kata sandi diperlukan"
@@ -6983,6 +6998,9 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Untuk akses kapan saja dan pengalaman mobile yang lebih optimal, unduh aplikasi ${ androidAppLink } atau ${ iosAppLink } kami."
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Untuk keamanan tambahan, Anda dapat mengatur frasa sandi. Frasa ini tidak akan disertakan dalam undangan kalender, sehingga pastikan Anda membagikan frasa ini kepada para tamu undangan Anda secara terpisah."
+      ],
       "For messages newer than ${ oldestDate }": [
         "Untuk pesan yang lebih baru dari ${ oldestDate }"
       ],
@@ -8832,12 +8850,6 @@
       "Also archive": [
         "Arsipkan juga"
       ],
-      "Always label sender's emails": [
-        "Selalu labeli email pengirim"
-      ],
-      "Always move sender's emails": [
-        "Selalu pindahkan email pengirim"
-      ],
       "AND": [
         "DAN"
       ],
@@ -9171,9 +9183,6 @@
       "Move ${ sidebarElementName }": [
         "Pindahkan ${ sidebarElementName }"
       ],
-      "Move messages to": [
-        "Pindahkan pesan ke"
-      ],
       "Move to": [
         "Pindahkan ke"
       ],
@@ -9251,6 +9260,9 @@
       ],
       "Participants": [
         "Peserta"
+      ],
+      "Passphrase:": [
+        "Frasa sandi:"
       ],
       "Password": [
         "Kata sandi"
@@ -11055,6 +11067,9 @@
       "Passcode copied to clipboard": [
         "Kode sandi disalin ke papan klip"
       ],
+      "Passphrase copied to clipboard": [
+        "Frasa sandi disalin ke papan klip"
+      ],
       "Password has been set successfully": [
         "Kata sandi berhasil diatur"
       ],
@@ -11135,7 +11150,7 @@
         "Bayar per tahun, kantongi penawaran terbaik kami"
       ],
       "Save": [
-        "Simpan"
+        "Hemat"
       ],
       "Save big when you pay annually": [
         "Hemat besar-besaran pada saat Anda membayar secara tahunan"
@@ -13665,6 +13680,9 @@
       "Recategorized ${ elementsCount } message.": [
         "${ elementsCount } pesan dikategorikan ulang."
       ],
+      "Secret passphrase updated": [
+        "Frasa sandi rahasia diperbarui"
+      ],
       "Self-destruction removed": [
         "Penghapusan otomatis dihapus"
       ],
@@ -14039,7 +14057,7 @@
         "Klaim alamat ${ MAIL_APP_NAME } Anda"
       ],
       "Clearing data": [
-        "Membersihkan data"
+        "Menghapus data"
       ],
       "Collaborate on documents": [
         "Berkolaborasi dalam dokumen"
@@ -14085,12 +14103,6 @@
       ],
       "Create contact": [
         "Buat kontak"
-      ],
-      "Create folder \"${ search }\"": [
-        "Buat folder \"${ search }\""
-      ],
-      "Create label \"${ search }\"": [
-        "Buat label \"${ search }\""
       ],
       "Create new group": [
         "Buat grup baru"
@@ -14338,6 +14350,9 @@
       "Label as": [
         "Labeli sebagai"
       ],
+      "Label message as": [
+        "Labeli pesan sebagai"
+      ],
       "Label options": [
         "Pengaturan label"
       ],
@@ -14421,6 +14436,9 @@
       ],
       "Move all messages to trash": [
         "Pindahkan seluruh pesan ke sampah"
+      ],
+      "Move message to": [
+        "Pindahkan pesan ke"
       ],
       "Move to": [
         "Pindahkan ke"
@@ -14862,6 +14880,9 @@
       ],
       "Your subscriptions in one place": [
         "Seluruh langganan Anda dalam satu tempat"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Kategori akan segera hadir!"
       ]
     },
     "Today icon tooltip in mini calendar": {

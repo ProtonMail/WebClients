@@ -398,6 +398,32 @@
         "Pozvedněte e-mailovou produktivitu na novou úroveň. Dovolte ${ BRAND_NAME } Scribe pomoci vám se psaním, odpovídáním a korekturami vašich e-mailů."
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců, počínaje ${ formattedDate }. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje měsíčně, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude vám nic účtováno."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_DEDICATED_IPS } vyhrazený server během zkušební doby."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_LUMO_SEATS } licencí ${ LUMO_SHORT_APP_NAME } během zkušební doby."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_SCRIBE_SEATS } licencí Scribe během zkušební doby."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_USERS } uživatelů během zkušební doby."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Ve zkušební verzi nelze přidávat vlastní domény."
+      ],
+      "You have reached the trial limit.": [
+        "Dosáhli jste limitu zkušební verze."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Zrušit předplatné"
@@ -625,6 +651,9 @@
       "Manual setup problem": [
         "Problém s ručním nastavením"
       ],
+      "Meet problem": [
+        "Problém s Meet"
+      ],
       "Other": [
         "Ostatní"
       ],
@@ -752,6 +781,1109 @@
       ],
       "Expand": [
         "Rozbalit"
+      ]
+    },
+    "collider_2025": {
+      "Collapse": [
+        "Sbalit"
+      ],
+      "Delete": [
+        "Smazat"
+      ],
+      "Delete all": [
+        "Smazat vše"
+      ]
+    },
+    "collider_2025: Action": {
+      "Add from ${ DRIVE_APP_NAME }": [
+        "Přidat z ${ DRIVE_APP_NAME }"
+      ],
+      "Browse ${ DRIVE_SHORT_APP_NAME }": [
+        "Procházet ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Continue": [
+        "Pokračovat"
+      ],
+      "Disable ghost mode": [
+        "Deaktivovat neviditelný režim"
+      ],
+      "Dismiss": [
+        "Zavřít"
+      ],
+      "Enable ghost mode": [
+        "Povolit neviditelný režim"
+      ],
+      "Get ${ LUMO_SHORT_APP_NAME } Plus from only ${ price }": [
+        "Získejte ${ LUMO_SHORT_APP_NAME } Plus již od ${ price }"
+      ],
+      "Hide safety information": [
+        "Skrýt bezpečnostní informace"
+      ],
+      "I like this response": [
+        "Odpověď se mi líbí"
+      ],
+      "New chat": [
+        "Nová konverzace"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Otevřít ${ DRIVE_APP_NAME }"
+      ],
+      "Refresh folder contents": [
+        "Obnovit obsah složky"
+      ],
+      "Report an issue": [
+        "Nahlásit problém"
+      ],
+      "Send message": [
+        "Odeslat zprávu"
+      ],
+      "Show safety information": [
+        "Zobrazit bezpečnostní informace"
+      ],
+      "Start generating": [
+        "Začít generovat"
+      ],
+      "Stop generating": [
+        "Zastavit generování"
+      ],
+      "Submit": [
+        "Odeslat"
+      ],
+      "Try again": [
+        "Zkusit znovu"
+      ],
+      "Upgrade": [
+        "Navýšit tarif"
+      ],
+      "Upload a file": [
+        "Nahrát soubor"
+      ],
+      "Upload file and add to knowledge base": [
+        "Nahrát soubor a přidat do databáze znalostí"
+      ],
+      "Upload from device": [
+        "Nahrát ze zařízení"
+      ]
+    },
+    "collider_2025: Button": {
+      "Close": [
+        "Zavřít"
+      ],
+      "Delete all": [
+        "Smazat vše"
+      ],
+      "Join waitlist": [
+        "Připojit se na pořadník"
+      ],
+      "Learn more": [
+        "Více informací"
+      ],
+      "Open Link": [
+        "Otevřít odkaz"
+      ],
+      "Retry": [
+        "Opakovat"
+      ],
+      "Try it now": [
+        "Vyzkoušet nyní"
+      ],
+      "Upload": [
+        "Nahrát"
+      ],
+      "Web search": [
+        "Hledání na webu"
+      ]
+    },
+    "collider_2025: Characteristic": {
+      "${ LUMO_SHORT_APP_NAME }’s code is fully open source, so anyone can independently verify that it’s private and secure—and that we never use your data to train the model.": [
+        "${ LUMO_SHORT_APP_NAME } má otevřený zdrojový kód, takže kdokoli může nezávisle ověřit soukromí, bezpečnost a to, že k trénování modelu nikdy nepoužíváme vaše data."
+      ],
+      "Extended chat history": [
+        "Rozšířená historie konverzací"
+      ],
+      "Multiple large uploads": [
+        "Vícenásobné nahrávání velkých dat"
+      ],
+      "Not even ${ BRAND_NAME } can access our chat history.": [
+        "Ani ${ BRAND_NAME } nemá přístup k naší historii konverzací."
+      ],
+      "Our conversations are never used for training.": [
+        "Naše konverzace nejsou nikdy používány k trénování."
+      ],
+      "Priority access": [
+        "Prioritní přístup"
+      ],
+      "Thanks to zero-access encryption, your saved conversations can only be decoded and read on your device. Neither ${ BRAND_NAME } nor anyone else can see them.": [
+        "Díky šifrování s nulovým přístupem lze vaše uložené konverzace dešifrovat a číst pouze na vašem zařízení. Ani ${ BRAND_NAME }, ani nikdo jiný je nemůže vidět."
+      ],
+      "Unlike other assistants, I don't record our conversations.": [
+        "Na rozdíl od jiných asistentů, naše konverzace nezaznamenávám."
+      ],
+      "Unlimited daily chats": [
+        "Neomezený denní limit konverzací"
+      ],
+      "We keep no logs of what you ask, or what ${ LUMO_SHORT_APP_NAME } replies. Your chats can’t be seen, shared, or used to profile you. ${ LUMO_SHORT_APP_NAME } saves nothing on our servers.": [
+        "Nezaznamenáváme, na co se ptáte ani co odpovídá ${ LUMO_SHORT_APP_NAME }. Vaše konverzace nelze prohlížet, sdílet ani používat k profilování. ${ LUMO_SHORT_APP_NAME } nic neukládá na našich serverech."
+      ],
+      "Your data isn’t shared with advertisers, governments, or anyone else. ${ LUMO_SHORT_APP_NAME } is a European service subject to GDPR, so you can delete your data anytime.": [
+        "Vaše data nejsou sdílena s inzerenty, vládami ani nikým jiným. ${ LUMO_SHORT_APP_NAME } je evropská služba podléhající GDPR, takže svá data můžete kdykoli smazat."
+      ]
+    },
+    "collider_2025: Characteristic Title": {
+      "Enter": [
+        "Zadat"
+      ],
+      "Only you have access": [
+        "Pouze vy máte přístup"
+      ],
+      "Private": [
+        "Soukromé"
+      ],
+      "Safeguarded": [
+        "Zajištěno"
+      ],
+      "Tech that you can trust": [
+        "Technologie, které můžete důvěřovat"
+      ],
+      "Treated with respect": [
+        "Respektováno"
+      ],
+      "Your chats are yours alone": [
+        "Vaše konverzace patří pouze vám"
+      ],
+      "You’re in control": [
+        "Máte vše pod kontrolou"
+      ]
+    },
+    "collider_2025: Description": {
+      "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
+        "Vylepšete si soukromý zážitek s umělou inteligencí a odemkněte si pokročilé modely a prémiové funkce s aplikací ${ LUMO_SHORT_APP_NAME } Plus."
+      ],
+      "Last updated on ${ DATE_VERSION }": [
+        "Poslední aktualizace: ${ DATE_VERSION }"
+      ],
+      "Permanently delete your chats. This is irreversible.": [
+        "Trvale smazat vaše konverzace. Toto je nevratné."
+      ],
+      "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
+        "Přihlaste se pro přístup k účtu a odemknutí dalších funkcí. Nemáte účet? ${ createLink }"
+      ]
+    },
+    "collider_2025: Disclaimer": {
+      "External links may pose security risks. We are not responsible for the content of external sites. Please proceed at your own risk.": [
+        "Externí odkazy mohou představovat bezpečnostní rizika. Neneseme odpovědnost za obsah externích stránek. Pokračujte prosím na vlastní riziko."
+      ]
+    },
+    "collider_2025: Disclosure": {
+      "${ LUMO_SHORT_APP_NAME } can make mistakes. Please double-check responses.": [
+        "${ LUMO_SHORT_APP_NAME } se může mýlit. Prosím, zkontrolujte odpovědi."
+      ]
+    },
+    "collider_2025: Error": {
+      "Error processing ${ result.fileName }: ${ result.errorMessage }": [
+        "Chyba při zpracování ${ result.fileName }: ${ result.errorMessage }"
+      ],
+      "Error processing file: ${ file.name }": [
+        "Chyba při zpracování souboru: ${ file.name }"
+      ],
+      "Failed to process ${ DRIVE_SHORT_APP_NAME } file: ${ file.name }": [
+        "Nepodařilo se zpracovat soubor ${ DRIVE_SHORT_APP_NAME }: ${ file.name }"
+      ],
+      "File \"${ file.name }\" is too large (${ fileSizeFormatted }). Maximum allowed size is ${ maxSizeFormatted }.": [
+        "Soubor \"${ file.name }\" je příliš velký (${ fileSizeFormatted }). Maximální povolená velikost je ${ maxSizeFormatted }."
+      ],
+      "File already added: ${ result.fileName }": [
+        "Soubor již byl přidán: ${ result.fileName }"
+      ],
+      "File format not supported: ${ result.fileName }": [
+        "Formát souboru není podporován: ${ result.fileName }"
+      ],
+      "File uploaded but failed to add to knowledge base": [
+        "Soubor byl nahrán, ale nepodařilo se jej přidat do databáze znalostí"
+      ],
+      "Please select a category to describe what went wrong with the generated text": [
+        "Vyberte prosím kategorii, ve které popíšete, co je s vygenerovaným textem špatně"
+      ],
+      "PowerPoint files are not supported. Please convert to PDF and upload the PDF version for better text extraction.": [
+        "Soubory PowerPoint nejsou podporovány. Převeďte je prosím do formátu PDF a nahrajte verzi PDF pro lepší extrakci textu."
+      ],
+      "Sign up for free to continue chatting and unlock access to chat history, starred chats, and more features.": [
+        "Zaregistrujte se zdarma, abyste mohli pokračovat v konverzaci a získat přístup k historii konverzací, oblíbeným konverzacím a dalším funkcím."
+      ],
+      "The provided URL is invalid.": [
+        "Poskytnutá URL adresa je neplatná."
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited chats, extended history, access to advanced AI models, and more.": [
+        "Upgradujte na ${ LUMO_SHORT_APP_NAME } Plus pro neomezené konverzace, rozšířenou historii, přístup k pokročilým modelům AI a další."
+      ]
+    },
+    "collider_2025: Error Message": {
+      "If retrying doesn’t work, check back later or consider upgrading to ${ LUMO_SHORT_APP_NAME } Plus to jump to the front of the line during peak times.": [
+        "Pokud opakovaný pokus nefunguje, zkontrolujte to později nebo zvažte navýšení na ${ LUMO_SHORT_APP_NAME } Plus, abyste se ve špičce dostali na začátek fronty."
+      ],
+      "Please try asking a different question or making a different request.": [
+        "Zkuste prosím položit jinou otázku nebo zadat jiný požadavek."
+      ],
+      "We're experiencing unusually high demand. If retrying doesn't work, check back in a few minutes or upgrade for priority access to ${ LUMO_SHORT_APP_NAME }.": [
+        "Zaznamenáváme neobvykle vysokou poptávku. Pokud opakovaný pokus nefunguje, zkontrolujte to za několik minut nebo navyšte tarif pro přednostní přístup k ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Your request didn't go through or couldn't be completed. Try sending it again.": [
+        "Váš požadavek neprošel nebo nemohl být dokončen. Zkuste jej poslat znovu."
+      ],
+      "Your request was queued but the connection was interrupted. This usually happens when ${ LUMO_SHORT_APP_NAME } is experiencing high demand. Please try again.": [
+        "Váš požadavek byl zařazen do fronty, ale připojení bylo přerušeno. To se obvykle stává, když je vysoká poptávka po ${ LUMO_SHORT_APP_NAME }. Zkuste to prosím znovu."
+      ]
+    },
+    "collider_2025: Error Title": {
+      "${ LUMO_SHORT_APP_NAME } can't assist with that request. ": [
+        "${ LUMO_SHORT_APP_NAME } nemůže pomoci s tímto požadavkem. "
+      ],
+      "${ LUMO_SHORT_APP_NAME }'s a busy cat": [
+        "${ LUMO_SHORT_APP_NAME } je zaneprázdněná kočka"
+      ],
+      "Connection interrupted": [
+        "Připojení přerušeno"
+      ],
+      "Looks like there's a lot of traffic": [
+        "Vypadá to, že je velký provoz"
+      ],
+      "Something went wrong": [
+        "Něco se pokazilo"
+      ],
+      "You've reached your weekly chat limit": [
+        "Dosáhli jste týdenního limitu konverzací"
+      ]
+    },
+    "collider_2025: Failure": {
+      "There was an issue saving your feedback. Try again later.": [
+        "Při ukládání vaší zpětné vazby došlo k problému. Zkuste to prosím později."
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Přístup k pokročilým modelům AI"
+      ],
+      "Basic chat history": [
+        "Základní historie konverzací"
+      ],
+      "Full chat history with search": [
+        "Úplná historie konverzací s vyhledáním"
+      ],
+      "Large file upload support": [
+        "Podpora nahrávání velkých souborů"
+      ],
+      "Limited daily chats": [
+        "Omezený denní limit konverzací"
+      ],
+      "Limited favorites": [
+        "Omezený počet oblíbených"
+      ],
+      "Unlimited daily chats": [
+        "Neomezený denní limit konverzací"
+      ],
+      "Unlimited favorites for quick access": [
+        "Neomezený počet oblíbených pro rychlý přístup"
+      ],
+      "Upload and query multiple large files": [
+        "Nahrávání a dotazování více velkých souborů"
+      ],
+      "Upload and query small files": [
+        "Nahrávání a dotazování malých souborů"
+      ],
+      "Web search access": [
+        "Přístup k vyhledávání na webu"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Advanced models": [
+        "Pokročilé modely"
+      ],
+      "Large file uploads": [
+        "Nahrávání velkých souborů"
+      ],
+      "Unlimited chat history": [
+        "Neomezená historie konverzací"
+      ],
+      "Unlimited favourite chats": [
+        "Neomezené oblíbené konverzace"
+      ],
+      "Unlimited weekly chats": [
+        "Neomezený týdenní limit konverzací"
+      ],
+      "Web search": [
+        "Vyhledat na webu"
+      ]
+    },
+    "collider_2025: Guest Signin": {
+      "Save your chats": [
+        "Ukládejte své konverzace"
+      ],
+      "Sign in to save your conversations and access them from anywhere.": [
+        "Přihlaste se, abyste si uložili své konverzace a měli k nim přístup odkudkoli."
+      ]
+    },
+    "collider_2025: Guest Upsell": {
+      "Your chat history won't be saved. For extended chat history and other premium features, ": [
+        "Historie vašich konverzací nebude uložena. Pro rozšířenou historii konverzací a další prémiové funkce, "
+      ]
+    },
+    "collider_2025: Header": {
+      "Tell us more": [
+        "Řekněte nám více"
+      ]
+    },
+    "collider_2025: Info": {
+      " ${ BRAND_NAME } file is hidden (not supported yet)": [
+        " ${ BRAND_NAME } soubor je skrytý (zatím nepodporován)"
+      ],
+      " ${ BRAND_NAME } files are hidden (not supported yet)": [
+        " ${ BRAND_NAME } soubory jsou skryty (zatím nejsou podporovány)"
+      ],
+      " file is hidden (unsupported file type)": [
+        " soubor je skrytý (nepodporovaný typ souboru)"
+      ],
+      " files are hidden (unsupported file types)": [
+        " soubory jsou skryté (nepodporované typy souborů)"
+      ],
+      " of space": [
+        " místa"
+      ],
+      "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
+        "${ DRIVE_SHORT_APP_NAME } úložiště ještě není nastaveno"
+      ],
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } je umělá inteligence s prioritou ochrany soukromí, která vám pomáhá zvládnout více a zároveň chrání vaše data. Využijte její plný potenciál a získejte přístup k novým funkcím ihned po jejich představení."
+      ],
+      "${ LUMO_SHORT_APP_NAME } provide access to advanced models to help with more complex queries and provide better answers": [
+        "${ LUMO_SHORT_APP_NAME } poskytuje přístup k pokročilým modelům pro pomoc se složitějšími dotazy a pro poskytování lepších odpovědí"
+      ],
+      "1 file": [
+        "1 soubor"
+      ],
+      "Access ${ DRIVE_APP_NAME }": [
+        "Otevřít ${ DRIVE_APP_NAME }"
+      ],
+      "Active": [
+        "Aktivní"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Přidat ${ LUMO_APP_NAME }"
+      ],
+      "Add to active": [
+        "Přidat k aktivním"
+      ],
+      "Adding to knowledge base...": [
+        "Přidávání do databáze znalostí..."
+      ],
+      "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
+        "Zeptejte se na cokoli ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Be cautious of unfamiliar domains or excessive subdomains": [
+        "Dávejte si pozor na neznámé domény nebo nezvykle dlouhé subdomény"
+      ],
+      "characters": [
+        "znaků"
+      ],
+      "Chat knowledge": [
+        "Znalosti chatu"
+      ],
+      "Check this is the site you expect to visit": [
+        "Zkontrolujte, zda je to web, který očekáváte navštívit"
+      ],
+      "Close": [
+        "Zavřít"
+      ],
+      "columns": [
+        "sloupce"
+      ],
+      "columns found, no data rows": [
+        "nalezeny sloupce, žádné řádky dat"
+      ],
+      "Domain name": [
+        "Název domény"
+      ],
+      "Drag and drop your files here to add them to the chat.": [
+        "Přetáhněte soubory sem a přidejte je do konverzace."
+      ],
+      "Error Parsing Table": [
+        "Chyba při parsování tabulky"
+      ],
+      "Error processing attachment": [
+        "Chyba při zpracování přílohy"
+      ],
+      "Error Processing File": [
+        "Chyba zpracování souboru"
+      ],
+      "Exclude file": [
+        "Vyloučit soubor"
+      ],
+      "File capacity": [
+        "Kapacita souboru"
+      ],
+      "File capacity for this conversation": [
+        "Kapacita souborů pro tuto konverzaci"
+      ],
+      "File too large for preview (>150k tokens)": [
+        "Příliš velký soubor pro náhled (>150 tisíc tokenů)"
+      ],
+      "files": [
+        "soubory"
+      ],
+      "Files": [
+        "Soubory"
+      ],
+      "files are not currently supported for content extraction.": [
+        "soubory nejsou v současné době podporovány pro extrakci obsahu."
+      ],
+      "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using. ": [
+        "Pro každou konverzaci má ${ LUMO_SHORT_APP_NAME } kapacitu zpracovat omezené množství informací. Ukazatel průběhu zobrazuje, kolik kapacity využívají vaše aktuální soubory. "
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Velmi rychlé konverzace a pokročilé funkce AI."
+      ],
+      "How to identify safe links:": [
+        "Jak identifikovat bezpečné odkazy:"
+      ],
+      "Include your prompt and the response to help us improve accuracy.": [
+        "Uveďte vámi použitý požadavek a odpověď, abyste nám pomohli vylepšit přesnost."
+      ],
+      "Loading": [
+        "Načítání"
+      ],
+      "Looks like your ${ DRIVE_APP_NAME } hasn't been set up yet.": [
+        "Zdá se, že váš ${ DRIVE_APP_NAME } ještě nebyl nastaven."
+      ],
+      "Manage files": [
+        "Spravovat soubory"
+      ],
+      "Maybe later": [
+        "Možná později"
+      ],
+      "No Content Available": [
+        "Obsah není k dispozici"
+      ],
+      "No data rows found": [
+        "Nebyly nalezeny žádné řádky dat"
+      ],
+      "No data rows found in this file.": [
+        "V tomto souboru nebyly nalezeny žádné řádky dat."
+      ],
+      "No files available": [
+        "Žádné soubory nejsou k dispozici"
+      ],
+      "Note:": [
+        "Poznámka:"
+      ],
+      "of": [
+        "z"
+      ],
+      "Please share what you expected": [
+        "Prosím, uveďte to, co jste očekávali"
+      ],
+      "Please wait for files to finish processing": [
+        "Počkejte prosím na dokončení zpracování souborů"
+      ],
+      "Press ${ shiftEnterBoldText } to ask": [
+        "Stisknutím ${ shiftEnterBoldText } odešlete dotaz"
+      ],
+      "Processed content": [
+        "Zpracovaný obsah"
+      ],
+      "Processing ${ uploadProgress.fileName }": [
+        "Zpracování ${ uploadProgress.fileName }"
+      ],
+      "Processing file contents...": [
+        "Zpracování obsahu souboru..."
+      ],
+      "Remove": [
+        "Odebrat"
+      ],
+      "Remove file": [
+        "Odebrat soubor"
+      ],
+      "Remove message filter": [
+        "Odebrat filtr zpráv"
+      ],
+      "rows": [
+        "řádky"
+      ],
+      "rows with": [
+        "řádky s"
+      ],
+      "Save all your conversations in a chat history only you can see. Sign in or create an account.": [
+        "Uložte si všechny své konverzace do historie konverzací, kterou vidíte pouze vy. Přihlaste se nebo si vytvořte účet."
+      ],
+      "Secure connection (encrypted)": [
+        "Zabezpečené připojení (šifrované)"
+      ],
+      "selected": [
+        "vybráno"
+      ],
+      "Show all files": [
+        "Zobrazit všechny soubory"
+      ],
+      "Show Formatted": [
+        "Zobrazit formátované"
+      ],
+      "Show Raw": [
+        "Zobrazit nezpracované"
+      ],
+      "Show Table": [
+        "Zobrazit tabulku"
+      ],
+      "Showing": [
+        "Zobrazuji"
+      ],
+      "Showing first": [
+        "Zobrazeno první"
+      ],
+      "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
+        "Přihlaste se nebo si vytvořte účet, abyste mohli procházet a přidávat soubory ze svého ${ DRIVE_APP_NAME } (koncově šifrovaného cloudového úložiště) do svých znalostí chatu."
+      ],
+      "Space usage: ": [
+        "Využité úložiště: "
+      ],
+      "Table view": [
+        "Tabulkové zobrazení"
+      ],
+      "Talk to your admin for plan details": [
+        "Podrobnosti o plánu si vyžádejte u svého správce"
+      ],
+      "Talk to your admin to add ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Obraťte se na svého správce ohledně přidání ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
+        "Při zpracování tohoto souboru došlo k chybě. Obsah nemusí být čitelný nebo formát souboru nemusí být plně podporován."
+      ],
+      "This file appears to be empty or contains no extractable text content.": [
+        "Tento soubor se zdá být prázdný nebo neobsahuje žádný extrahovatelný textový obsah."
+      ],
+      "This folder is empty": [
+        "Tato složka je prázdná"
+      ],
+      "To get started, please open ${ DRIVE_APP_NAME } to set up your secure storage.": [
+        "Chcete-li začít, otevřete aplikaci ${ DRIVE_APP_NAME } a nastavte své zabezpečené úložiště."
+      ],
+      "To refer back to this conversation later, sign in or create an account.": [
+        "Chcete-li se později k této konverzaci vrátit, přihlaste se nebo si vytvořte účet."
+      ],
+      "Try the smartest version of ${ LUMO_SHORT_APP_NAME } with advanced capabilities.": [
+        "Vyzkoušejte nejchytřejší verzi ${ LUMO_SHORT_APP_NAME } s pokročilými funkcemi."
+      ],
+      "Trying...": [
+        "Zkouším..."
+      ],
+      "Unable to parse this file as a table. You can view the raw content instead.": [
+        "Nepodařilo se analyzovat tento soubor jako tabulku. Můžete místo toho zobrazit nezpracovaný obsah."
+      ],
+      "Unsupported File Type": [
+        "Nepodporovaný typ souboru"
+      ],
+      "Unused ": [
+        "Nepoužito "
+      ],
+      "Uploading ${ uploadProgress.fileName }": [
+        "Nahrávání ${ uploadProgress.fileName }"
+      ],
+      "used": [
+        "použito"
+      ],
+      "Watch for misspellings (e.g., proton.me vs pr0t0n.me)": [
+        "Dávejte si pozor na překlepy (např. proton.me vs pr0t0n.me)"
+      ],
+      "You are about to visit an external website:": [
+        "Chystáte se navštívit externí webovou stránku:"
+      ]
+    },
+    "collider_2025: Invite": {
+      "Email address is not valid": [
+        "E-mailová adresa je neplatná"
+      ],
+      "Email address is required": [
+        "E-mailová adresa je povinná"
+      ]
+    },
+    "collider_2025: Invite Button": {
+      "Close": [
+        "Zavřít"
+      ],
+      "Invite friends": [
+        "Pozvat přátele"
+      ],
+      "Maybe later": [
+        "Možná později"
+      ],
+      "Send invitation": [
+        "Odeslat pozvánku"
+      ]
+    },
+    "collider_2025: Invite Email Placeholder": {
+      "Your friend's email": [
+        "E-mail přátel"
+      ]
+    },
+    "collider_2025: Invite Info": {
+      "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
+        "Znáte někoho, kdo by ocenil AI chránící soukromí? Pozvěte je na pořadník ${ LUMO_SHORT_APP_NAME }. Zbývá vám ještě ${ remainingInvitesText } pozvánek."
+      ],
+      "You have ${ remainingInvitesText } invitations remaining.": [
+        "Zbývá Vám ${ remainingInvitesText } pozvánek."
+      ]
+    },
+    "collider_2025: Invite Sent": {
+      "Invitation sent": [
+        "Pozvánka odeslána"
+      ]
+    },
+    "collider_2025: Invite Success": {
+      "Invite sent!": [
+        "Pozvánka odeslána!"
+      ],
+      "No invites left  ": [
+        "Nezůstaly žádné pozvánky  "
+      ],
+      "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
+        "Děkujeme, že pomáháte ostatním objevit ${ LUMO_SHORT_APP_NAME }! Pokud budou k dispozici další pozvánky, dáme vám vědět."
+      ],
+      "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
+        "Pozvali jsme ${ emailText }. Dostanou informace, jak se přidat na pořadník."
+      ]
+    },
+    "collider_2025: Invite Title": {
+      "Invite friends to experience ${ LUMO_APP_NAME }": [
+        "Pozvěte přátele, aby vyzkoušeli ${ LUMO_APP_NAME }"
+      ]
+    },
+    "collider_2025: Label": {
+      "Did not follow instructions": [
+        "Neřídil(a) se pokyny"
+      ],
+      "Don't like the style": [
+        "Nelíbí se mi styl"
+      ],
+      "Not factually correct": [
+        "Není to fakticky správně"
+      ],
+      "Unsafe or problematic": [
+        "Nebezpečný nebo problematický"
+      ]
+    },
+    "collider_2025: Legal disclaimer": {
+      "and": [
+        "a"
+      ],
+      "By using ${ LUMO_SHORT_APP_NAME }, you agree to our": [
+        "Používáním ${ LUMO_SHORT_APP_NAME } souhlasíte s našimi"
+      ]
+    },
+    "collider_2025: Legal link": {
+      "Privacy Policy": [
+        "Zásady ochrany osobních údajů"
+      ],
+      "Terms": [
+        "Podmínky"
+      ]
+    },
+    "collider_2025: Link": {
+      " contact your admin": [
+        "kontaktujte svého správce"
+      ],
+      "add ${ LUMO_SHORT_APP_NAME } Plus": [
+        "přidat ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Přidat ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "Already have an account? ${ linkSignup }": [
+        "Máte již účet? ${ linkSignup }"
+      ],
+      "Create a free account": [
+        "Vytvořit účet zdarma"
+      ],
+      "create a free account.": [
+        "vytvořit bezplatný účet."
+      ],
+      "Get ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Získejte ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "New chat": [
+        "Nová konverzace"
+      ],
+      "Sign in": [
+        "Přihlásit se"
+      ],
+      "Upgrade": [
+        "Navýšení"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Navýšit na ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
+        "navýšit na ${ LUMO_SHORT_APP_NAME } Plus."
+      ]
+    },
+    "collider_2025: Pill": {
+      "Protected by ${ BRAND_NAME }": [
+        "Chráněno ${ BRAND_NAME }"
+      ]
+    },
+    "collider_2025: Placeholder": {
+      "New chat": [
+        "Nová konverzace"
+      ],
+      "Please share what you expected": [
+        "Prosím, uveďte to, co jste očekávali"
+      ]
+    },
+    "collider_2025: Settings Item": {
+      "Account": [
+        "Účet"
+      ],
+      "General": [
+        "Obecné"
+      ]
+    },
+    "collider_2025: Status": {
+      "${ LUMO_SHORT_APP_NAME }+ is included in your Visionary plan and you have access to these features:": [
+        "${ LUMO_SHORT_APP_NAME }+ je součástí vašeho tarifu Visionary a máte přístup k těmto funkcím:"
+      ],
+      "You are subscribed to ${ LUMO_SHORT_APP_NAME }+ and have access to these features:": [
+        "Předplatili jste si ${ LUMO_SHORT_APP_NAME }+ a máte přístup k těmto funkcím:"
+      ]
+    },
+    "collider_2025: Success": {
+      "All chats deleted successfully": [
+        "Všechny konverzace úspěšně smazány."
+      ],
+      "File added to knowledge base: ${ result.fileName }": [
+        "Soubor přidán do databáze znalostí: ${ result.fileName }"
+      ],
+      "File uploaded and added to knowledge base": [
+        "Soubor nahrán a přidán do databáze znalostí"
+      ],
+      "Thanks for the feedback!": [
+        "Děkujeme za zpětnou vazbu!"
+      ]
+    },
+    "collider_2025: Title": {
+      "${ LUMO_SHORT_APP_NAME } Plus": [
+        "${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "About ${ LUMO_SHORT_APP_NAME }": [
+        "O ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Delete all chats": [
+        "Smazat všechny konverzace"
+      ],
+      "Don't lose the thread": [
+        "Neztrácejte nit"
+      ],
+      "Guest": [
+        "Host"
+      ],
+      "Invalid Link": [
+        "Neplatný odkaz"
+      ],
+      "Opening External Link": [
+        "Otevírání externího odkazu"
+      ],
+      "Save your favorites": [
+        "Uložit své oblíbené"
+      ],
+      "Secure your spot": [
+        "Zajistěte si své místo"
+      ],
+      "Upload files": [
+        "Nahrát soubory"
+      ],
+      "Visionary": [
+        "Visionary"
+      ],
+      "You're on the list": [
+        "Jste na seznamu"
+      ],
+      "You're on the waitlist": [
+        "Jste na pořadníku"
+      ]
+    },
+    "collider_2025: Tooltip": {
+      "contact your admin to upgrade": [
+        "kontaktujte svého správce pro navýšení"
+      ]
+    },
+    "collider_2025: Top nav link": {
+      "About": [
+        "Informace"
+      ],
+      "By ${ BRAND_NAME }": [
+        "Od ${ BRAND_NAME }"
+      ],
+      "Try ${ MAIL_APP_NAME }": [
+        "Vyzkoušejte ${ MAIL_APP_NAME }"
+      ]
+    },
+    "collider_2025: Upsell": {
+      "Create free account": [
+        "Vytvořit bezplatný účet"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Your chat history is limited to 7 days. For extended chat history and other premium features, ": [
+        "Vaše historie konverzací je omezena na 7 dní. Pro rozšířenou historii konverzací a další prémiové funkce, "
+      ]
+    },
+    "collider_2025: Upsell Title": {
+      "Get": [
+        "Získejte"
+      ]
+    },
+    "collider_2025: Waitlist Info": {
+      "Thanks for joining the waitlist. We’ll email you when you can start chatting with ${ LUMO_SHORT_APP_NAME }.": [
+        "Děkujeme, že jste se připojili k čekací listině. Pošleme vám e-mail, až budete moci začít chatovat s ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Thanks for signing up. We’re gradually opening access to ${ LUMO_SHORT_APP_NAME } and will let you know when your spot opens.": [
+        "Děkujeme za registraci. Postupně otevíráme přístup k ${ LUMO_SHORT_APP_NAME } a dáme vám vědět, až se vaše místo uvolní."
+      ],
+      "We're gradually opening access to ${ LUMO_SHORT_APP_NAME }. Join the waitlist, and we’ll notify you when your spot becomes available.": [
+        "Postupně otevíráme přístup k ${ LUMO_SHORT_APP_NAME }. Přidejte se na pořadník a my vás upozorníme, až na vás přijde řada."
+      ]
+    },
+    "collider_2025: Warning": {
+      "${ LUMO_SHORT_APP_NAME }'s a busy cat": [
+        "${ LUMO_SHORT_APP_NAME } je zaneprázdněná kočka"
+      ],
+      "Suspicious: ${ urlParts.subdomainCount } subdomain": [
+        "Podezřelé: ${ urlParts.subdomainCount } subdoména",
+        "Podezřelé: ${ urlParts.subdomainCount } subdomény",
+        "Podezřelé: ${ urlParts.subdomainCount } subdomén",
+        "Podezřelé: ${ urlParts.subdomainCount } subdomén"
+      ],
+      "We're experiencing high traffic right now, but as a ${ LUMO_SHORT_APP_NAME } Plus customer, you're in the fast lane. We're prioritizing your requests as always.": [
+        "V současné době zaznamenáváme vysoký provoz, ale jako zákazník ${ LUMO_SHORT_APP_NAME } Plus jste v rychlém pruhu. Vaše požadavky vždy prioritizujeme."
+      ],
+      "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. ${ signInLink } for faster access.": [
+        "Máme vyšší než obvyklý provoz, takže odpovědi mohou být o něco pomalejší než obvykle. ${ signInLink } pro rychlejší přístup."
+      ],
+      "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for priority access during peak times.": [
+        "Máme vyšší provoz než obvykle, takže odpovědi mohou být o něco pomalejší. Navyšte na ${ LUMO_SHORT_APP_NAME } Plus pro přednostní přístup v době špičky."
+      ]
+    },
+    "collider_2025: Web Search": {
+      "Sources": [
+        "Zdroje"
+      ]
+    },
+    "collider_2025:Action": {
+      "Add details": [
+        "Přidat detaily"
+      ],
+      "Add more information to improve the response": [
+        "Přidejte více informací pro zlepšení odpovědi"
+      ],
+      "Ask the model to be more careful and thorough": [
+        "Požádejte model, aby byl opatrnější a důkladnější"
+      ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Describe desired changes...": [
+        "Popište požadované změny..."
+      ],
+      "More concise": [
+        "Stručnější"
+      ],
+      "Next message": [
+        "Další zpráva"
+      ],
+      "Previous message": [
+        "Předchozí zpráva"
+      ],
+      "Regenerate": [
+        "Znovu vygenerovat"
+      ],
+      "Remove file": [
+        "Odebrat soubor"
+      ],
+      "Request a shorter, more focused response": [
+        "Požádat o kratší a cílenější odpověď"
+      ],
+      "Retry with the same prompt": [
+        "Zkusit znovu stejný dotaz"
+      ],
+      "Think longer": [
+        "Přemýšlet déle"
+      ],
+      "Try again": [
+        "Zkusit znovu"
+      ],
+      "What needs changed?": [
+        "Co je třeba změnit?"
+      ]
+    },
+    "collider_2025:Button": {
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Close sidebar": [
+        "Zavřít postranní panel"
+      ],
+      "Edit": [
+        "Upravit"
+      ],
+      "Expand": [
+        "Rozbalit"
+      ],
+      "Favorite": [
+        "Oblíbené"
+      ],
+      "Get ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Získejte ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "Help and support": [
+        "Pomoc a podpora"
+      ],
+      "Hide sidebar": [
+        "Skrýt boční panel"
+      ],
+      "Manage chat knowledge files (${ totalFiles })": [
+        "Spravovat soubory znalostí chatu (${ totalFiles })"
+      ],
+      "Manage chat knowledge files(${ totalFiles })": [
+        "Spravovat soubory znalostí chatu (${ totalFiles })"
+      ],
+      "New chat": [
+        "Nová konverzace"
+      ],
+      "Search": [
+        "Hledat"
+      ],
+      "Send": [
+        "Odeslat"
+      ],
+      "Settings": [
+        "Nastavení"
+      ],
+      "Unfavorite": [
+        "Odebrat z oblíbených"
+      ],
+      "Untitled chat": [
+        "Nepojmenovaná konverzace"
+      ]
+    },
+    "collider_2025:Info": {
+      "AIs from Big Tech are built on harvesting your data. But ${ LUMO_SHORT_APP_NAME } is different. It was created by the scientists behind innovative, privacy-first services like ${ MAIL_APP_NAME } and ${ VPN_APP_NAME }. And it’s owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.": [
+        "AI od velkých technologických společností jsou založeny na sběru vašich dat. Ale ${ LUMO_SHORT_APP_NAME } je jiná. Byla vytvořena vědci, kteří stojí za inovativními, soukromí-prvními službami jako ${ MAIL_APP_NAME } a ${ VPN_APP_NAME }. A vlastní ji švýcarská nezisková organizace, jejímž posláním je prosazovat soukromí a nikdy nevydělávat peníze z uživatelských dat."
+      ],
+      "Conversation encrypted": [
+        "Konverzace šifrována"
+      ],
+      "Current chat:": [
+        "Aktuální konverzace:"
+      ],
+      "Processing file...": [
+        "Zpracovávám soubor..."
+      ],
+      "Processing...": [
+        "Zpracování..."
+      ],
+      "This message is empty. Sorry about that.": [
+        "Tato zpráva je prázdná. Omlouváme se."
+      ],
+      "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
+        "Vaše soubory jsou velké. ${ LUMO_SHORT_APP_NAME } nemusí zpracovat všechny informace."
+      ]
+    },
+    "collider_2025:Label": {
+      "Edit conversation title": [
+        "Upravit název konverzace"
+      ]
+    },
+    "collider_2025:Notification": {
+      "Code copied to clipboard": [
+        "Kód zkopírován do schránky"
+      ]
+    },
+    "collider_2025:Placeholder": {
+      "Ask anything…": [
+        "Zeptejte se na cokoli…"
+      ],
+      "Processing files, please wait...": [
+        "Zpracovávám soubory, čekejte prosím..."
+      ],
+      "Search chats": [
+        "Hledat konverzace"
+      ],
+      "Sign in required": [
+        "Vyžadováno přihlášení"
+      ]
+    },
+    "collider_2025:Title": {
+      "${ LUMO_SHORT_APP_NAME } 1.1 is much smarter, more capable, with improved awareness of recent events, ready to give you more thorough and useful answers.": [
+        "${ LUMO_SHORT_APP_NAME } 1.1 je mnohem chytřejší, schopnější, s vylepšeným povědomím o nedávných událostech, připravená vám poskytnout promyšlenější a užitečnější odpovědi."
+      ],
+      "An AI assistant should empower you, not exploit you for your data. That’s why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
+        "Asistent AI by vám měl pomáhat, nikoli vás využívat pro vaše data. Proto jsme vytvořili ${ LUMO_SHORT_APP_NAME }: abychom vám přinesli všechny výhody AI, aniž by bylo ohroženo vaše soukromí a bezpečnost dat."
+      ],
+      "Built by the team that knows privacy": [
+        "Vytvořeno týmem, který rozumí soukromí"
+      ],
+      "Earlier": [
+        "Dříve"
+      ],
+      "Favorites": [
+        "Oblíbené"
+      ],
+      "Ghost mode": [
+        "Neviditelný režim"
+      ],
+      "Hello! How can I help you today?": [
+        "Dobrý den! Jak Vám dnes mohu pomoci?"
+      ],
+      "Hey, I'm ${ LUMO_SHORT_APP_NAME }. Ask me anything. It's confidential.": [
+        "Ahoj, jsem ${ LUMO_SHORT_APP_NAME }. Zeptejte se mě na cokoli. Je to důvěrné."
+      ],
+      "History": [
+        "Historie"
+      ],
+      "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
+        "Jak ${ LUMO_SHORT_APP_NAME } udržuje naše konverzace v soukromí?"
+      ],
+      "Introducing ${ LUMO_SHORT_APP_NAME } 1.1": [
+        "Představujeme ${ LUMO_SHORT_APP_NAME } 1.1"
+      ],
+      "Last 30 days": [
+        "Posledních 30 dnů"
+      ],
+      "Last 7 days": [
+        "Posledních 7 dnů"
+      ],
+      "More options": [
+        "Více možností"
+      ],
+      "No chat history yet. Let's start chatting!": [
+        "Zatím žádná historie chatu. Začněme chatovat!"
+      ],
+      "No result.": [
+        "Žádný výsledek."
+      ],
+      "The AI that respects your privacy": [
+        "AI, která respektuje vaše soukromí"
+      ],
+      "This chat disappears when you close it and is never saved.": [
+        "Tento chat zmizí, když jej zavřete a není nikdy ukládán."
+      ],
+      "Today": [
+        "Dnes"
+      ],
+      "What's new": [
+        "Co je nového"
+      ],
+      "Whatever you ask me is:": [
+        "Na cokoli se mě zeptáte je:"
       ]
     },
     "color": {

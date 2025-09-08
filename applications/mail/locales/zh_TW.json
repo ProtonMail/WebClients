@@ -1110,6 +1110,9 @@
       "Resume downloading": [
         "繼續下載"
       ],
+      "Retry": [
+        "重試"
+      ],
       "Revert to original display": [
         "不要用暗黑模式顯示郵件"
       ],
@@ -6737,7 +6740,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖像"
+        "插入圖片"
       ],
       "Insert link": [
         "插入連結"
@@ -8330,12 +8333,6 @@
       "Also archive": [
         "同時封存"
       ],
-      "Always label sender's emails": [
-        "總是標籤寄件者的電子郵件"
-      ],
-      "Always move sender's emails": [
-        "總是移動寄件者的電子郵件"
-      ],
       "AND": [
         "且"
       ],
@@ -8654,9 +8651,6 @@
       "Move ${ sidebarElementName }": [
         "移動 ${ sidebarElementName }"
       ],
-      "Move messages to": [
-        "移動郵件至"
-      ],
       "Move to": [
         "移至"
       ],
@@ -8686,6 +8680,9 @@
       ],
       "No label found": [
         "找不到標籤"
+      ],
+      "No results found": [
+        "找不到相符的結果"
       ],
       "Not factually correct": [
         "與事實不符"
@@ -10492,7 +10489,7 @@
         "每年付款，安全及最適方案"
       ],
       "Save": [
-        "儲存"
+        "節省"
       ],
       "Special offer": [
         "特別優惠"
@@ -13210,12 +13207,6 @@
       "Create contact": [
         "創建聯絡人"
       ],
-      "Create folder \"${ search }\"": [
-        "創建資料夾「${ search }」"
-      ],
-      "Create label \"${ search }\"": [
-        "創建標籤「${ search }」"
-      ],
       "Create new group": [
         "創建新群組"
       ],
@@ -13444,6 +13435,9 @@
       "Label as": [
         "套用標籤"
       ],
+      "Label message as": [
+        "將郵件加上標籤"
+      ],
       "Label options": [
         "標籤選項"
       ],
@@ -13521,6 +13515,12 @@
       ],
       "Move all messages to trash": [
         "把所有郵件移至垃圾桶"
+      ],
+      "Move message to": [
+        "移動郵件至"
+      ],
+      "Move messages to": [
+        "移動郵件至"
       ],
       "Move to": [
         "移至"

@@ -96,6 +96,9 @@
       "Add phone number": [
         "Lägg till telefonnummer"
       ],
+      "Add secret passphrase": [
+        "Lägg till hemlig lösenfras"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Lägg till i ${ CALENDAR_APP_NAME }"
       ],
@@ -757,6 +760,9 @@
       "Italic": [
         "Kursiv"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Gå med i ${ MEET_APP_NAME }"
+      ],
       "Keep my subscription": [
         "Behåll min prenumeration"
       ],
@@ -1012,6 +1018,9 @@
       "Page ${ pageNumber }": [
         "Sida ${ pageNumber }"
       ],
+      "Passphrase": [
+        "Lösenfras"
+      ],
       "Pause": [
         "Pausa"
       ],
@@ -1173,6 +1182,9 @@
       ],
       "Resume downloading": [
         "Återuppta nedladdning"
+      ],
+      "Retry": [
+        "Försök igen"
       ],
       "Revert to original display": [
         "Återgå till originalvisning"
@@ -1447,6 +1459,9 @@
       "Trust": [
         "Lita på"
       ],
+      "Trust key": [
+        "Lita på nyckel"
+      ],
       "Trust public key": [
         "Lita på offentlig nyckel"
       ],
@@ -1506,6 +1521,9 @@
       ],
       "Update recovery phrase": [
         "Uppdatera återställningsfras"
+      ],
+      "Update secret passphrase": [
+        "Uppdatera hemlig lösenfras"
       ],
       "Upgrade": [
         "Uppgradera"
@@ -1961,6 +1979,23 @@
         "Avsändarverifiering godkänd"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_DEDICATED_IPS } dedikerad server under provperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-licenser under provperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-licenser under provperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_USERS } användare under provperioden."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Du kan inte lägga till anpassade domäner under provperioden."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Avsluta prenumeration"
@@ -2103,8 +2138,8 @@
         "Säkra inloggningar på alla dina enheter. Inkluderar obegränsat antal hide-my-email-alias, delning, integrerad 2FA, ${ DARK_WEB_MONITORING_NAME } och mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Säkra dina mail och schemalägg med end-to-end kryptering, det inkluderar ${ addresses } e-postadress, stöd for anpassade e-postdomäner, obegränsade hide-my-email-alias och mer.",
-        "Säkra dina mail och schemalägg med end-to-end kryptering, det inkluderar ${ addresses } e-postadresser, stöd for anpassade e-postdomäner, obegränsade hide-my-email-alias och mer."
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer.",
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadresser, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer."
@@ -2573,7 +2608,7 @@
         "Krypterad lösenordshanterare"
       ],
       "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
-        "Vårt grundläggande gratispaket med krypterad e-post och lagringsutrymme. Inga premiumfunktioner inkluderade."
+        "Vårt grundläggande gratispaket med end-to-end krypterad e-post och lagringsutrymme. Inga premiumfunktioner inkluderade."
       ],
       "Save ${ upsellSavings }": [
         "Spara ${ upsellSavings }"
@@ -2613,6 +2648,40 @@
       ],
       "Expand": [
         "Expandera"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Åtkomst till avancerade AI-modeller"
+      ],
+      "Basic chat history": [
+        "Grundläggande chatthistorik"
+      ],
+      "Full chat history with search": [
+        "Fullständig chatthistorik med sök"
+      ],
+      "Large file upload support": [
+        "Stöd för stora filuppladdningar"
+      ],
+      "Limited daily chats": [
+        "Begränsat antal dagliga chattar"
+      ],
+      "Limited favorites": [
+        "Begränsat antal favoriter"
+      ],
+      "Unlimited daily chats": [
+        "Obegränsat antal dagliga chattar"
+      ],
+      "Unlimited favorites for quick access": [
+        "Obegränsade favoriter för snabb åtkomst"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } är en AI som prioriterar integritet som hjälper dig att få mer gjort samtidigt som dina data hålls säkra. Lås upp dess fulla potential och njut av förhandstillgång till nya funktioner allt eftersom de introduceras."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Lägg till ${ LUMO_APP_NAME }"
       ]
     },
     "color": {
@@ -4521,6 +4590,9 @@
       "Failed to open to contact": [
         "Misslyckades att öppna kontakt"
       ],
+      "Failed to update secret passphrase": [
+        "Misslyckades att uppdatera hemlig lösenfras"
+      ],
       "Filter with this name already exists": [
         "Filter med detta namn finns redan"
       ],
@@ -4649,6 +4721,9 @@
       ],
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
+      ],
+      "Passphrase unavailable": [
+        "Lösenfras otillgänglig"
       ],
       "Password is required": [
         "Lösenord är obligatoriskt"
@@ -7092,6 +7167,9 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "För åtkomst när som helst till e-post och en optimerad mobilupplevelse, ladda ner vår ${ androidAppLink }- eller ${ iosAppLink }."
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "För extra säkerhet kan du ställa in en lösenfras. Den kommer inte att inkluderas i kalenderinbjudan, kom ihåg att dela den med dina gäster separat."
+      ],
       "For messages newer than ${ oldestDate }": [
         "För meddelanden nyare än ${ oldestDate }"
       ],
@@ -7222,7 +7300,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8080,7 +8159,7 @@
         "till ${ destinationElement }-mapp."
       ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
-        "För att undvika att bli av med de öppna flikarna i din webbläsare, använd skrivbordsappen."
+        "För att undvika att bli av med de öppna flikarna i din webbläsare, använd appen för stationär dator."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "För att slutföra din betalning, skicka ${ btcAmountBold } till adressen nedan."
@@ -8958,12 +9037,6 @@
       "Also archive": [
         "Arkivera också"
       ],
-      "Always label sender's emails": [
-        "Märk alltid avsändarens e-postmeddelanden"
-      ],
-      "Always move sender's emails": [
-        "Flytta alltid avsändarens e-postmeddelanden"
-      ],
       "AND": [
         "OCH"
       ],
@@ -9204,6 +9277,9 @@
       "From: ${ fromEmail }": [
         "Från: ${ fromEmail }"
       ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Hjälp oss att förbättra kategorier genom att välja den som bäst passar denna e-post. Tack för din hjälp!"
+      ],
       "Hide password": [
         "Dölj lösenord"
       ],
@@ -9294,9 +9370,6 @@
       "Move ${ sidebarElementName }": [
         "Flytta ${ sidebarElementName }"
       ],
-      "Move messages to": [
-        "Flytta meddelande till"
-      ],
       "Move to": [
         "Flytta till"
       ],
@@ -9336,6 +9409,9 @@
       "No label found": [
         "Ingen etikett hittades"
       ],
+      "No results found": [
+        "Inga resultat hittades"
+      ],
       "Not factually correct": [
         "Inte faktamässigt korrekt"
       ],
@@ -9374,6 +9450,9 @@
       ],
       "Participants": [
         "Deltagare"
+      ],
+      "Passphrase:": [
+        "Lösenfras:"
       ],
       "Password": [
         "Lösenord"
@@ -11215,6 +11294,9 @@
       "Passcode copied to clipboard": [
         "Lösenkod kopierat till urklipp"
       ],
+      "Passphrase copied to clipboard": [
+        "Lösenfras kopierat till urklipp"
+      ],
       "Password has been set successfully": [
         "Lösenord har ställts in"
       ],
@@ -11974,6 +12056,9 @@
       ],
       "End date": [
         "Slutdatum"
+      ],
+      "Enter passphrase": [
+        "Ange lösenfras"
       ],
       "Filter folders": [
         "Filtrera mappar"
@@ -13876,6 +13961,9 @@
         "Omkategoriserade ${ elementsCount } meddelande.",
         "Omkategoriserade ${ elementsCount } meddelanden."
       ],
+      "Secret passphrase updated": [
+        "Hemlig lösenfras uppdaterad"
+      ],
       "Self-destruction removed": [
         "Självförstörelse borttagen"
       ],
@@ -14311,12 +14399,6 @@
       "Create contact": [
         "Skapa kontakt"
       ],
-      "Create folder \"${ search }\"": [
-        "Skapa mapp ”${ search }”"
-      ],
-      "Create label \"${ search }\"": [
-        "Skapa etikett ”${ search }”"
-      ],
       "Create new group": [
         "Skapa ny grupp"
       ],
@@ -14569,6 +14651,10 @@
       "Label as": [
         "Märk som"
       ],
+      "Label message as": [
+        "Märk meddelande som",
+        "Märk meddelanden som"
+      ],
       "Label options": [
         "Etikettalternativ"
       ],
@@ -14652,6 +14738,13 @@
       ],
       "Move all messages to trash": [
         "Flytta alla meddelanden till papperskorg"
+      ],
+      "Move message to": [
+        "Flytta meddelande till",
+        "Flytta meddelanden till"
+      ],
+      "Move messages to": [
+        "Flytta meddelanden till"
       ],
       "Move to": [
         "Flytta till"

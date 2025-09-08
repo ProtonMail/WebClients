@@ -1372,6 +1372,61 @@
         "Nepodporovaná udalosť"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa z neho stane platené predplatné, ktoré sa automaticky obnovuje každých ${ renewCycle } mesiacov dňa ${ formattedDate }. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje mesačne dňa ${ formattedDate }. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Kliknutím na „Vyskúšať“ súhlasíte s našimi ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Počas skúšobného obdobia môžete mať až 10 používateľov."
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "zadarmo na ${ TRIAL_DURATION_DAYS } dní"
+      ],
+      "on ${ formattedDate }": [
+        "dňa ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Vyskúšajte ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Vyskúšajte si to zadarmo na ${ TRIAL_DURATION_DAYS } dní"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Po zrušení sa vaša bezplatná skúšobná verzia neprevedie na platené predplatné, ale výhody plánu môžete využívať až do konca skúšobného obdobia. Po uplynutí tejto lehoty dôjde k zníženiu na ${ BRAND_NAME } Free plán."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_DEDICATED_IPS } vyhradených serverov počas skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } miest počas skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_SCRIBE_SEATS } Scribe miest počas skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_USERS } používateľov počas skúšobného obdobia."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Počas skúšobného obdobia nemôžete pridať vlastné domény."
+      ],
+      "You have reached the trial limit.": [
+        "Dosiahli ste limit skúšobného obdobia."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Splatná suma po skúšobnom období"
+      ],
+      "Amount due now": [
+        "Čiastka k zaplateniu teraz"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Zrušiť predplatné"
@@ -1740,6 +1795,9 @@
       "Manual setup problem": [
         "Problém s ručným nastavením"
       ],
+      "Meet problem": [
+        "Problém s aplikáciou Meet"
+      ],
       "Other": [
         "Iné"
       ],
@@ -1890,6 +1948,52 @@
       ],
       "Expand": [
         "Rozbaliť"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Prístup k pokročilým modelom AI"
+      ],
+      "Basic chat history": [
+        "Základná história chatu"
+      ],
+      "Full chat history with search": [
+        "Úplná história chatu s vyhľadávaním"
+      ],
+      "Large file upload support": [
+        "Podpora nahrávania veľkých súborov"
+      ],
+      "Limited daily chats": [
+        "Obmedzené denné chaty"
+      ],
+      "Limited favorites": [
+        "Obmedzené obľúbené položky"
+      ],
+      "Unlimited daily chats": [
+        "Neobmedzené denné chaty"
+      ],
+      "Unlimited favorites for quick access": [
+        "Neobmedzené obľúbené položky pre rýchly prístup"
+      ],
+      "Upload and query multiple large files": [
+        "Nahrávanie a vyhľadávanie viacerých veľkých súborov"
+      ],
+      "Upload and query small files": [
+        "Nahrávanie a vyhľadávanie malých súborov"
+      ],
+      "Web search access": [
+        "Prístup k webovému vyhľadávaniu"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } je AI, ktorá kladie dôraz na ochranu súkromia a pomáha vám dosiahnuť viac pri zachovaní bezpečnosti vašich údajov. Využite jej plný potenciál a získajte skorý prístup k novým funkciám hneď po ich zavedení."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Pridať ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Vysokorýchlostné chaty a pokročilé funkcie AI"
       ]
     },
     "color": {
@@ -8542,6 +8646,9 @@
       "Verification code": [
         "Overovací kód"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videokonferencie s ${ MEET_APP_NAME }"
+      ],
       "Video conferencing with Zoom": [
         "Videokonferencie s aplikáciou Zoom"
       ],
@@ -10239,6 +10346,9 @@
       ]
     },
     "Notification": {
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "Nastavenia ${ MEET_APP_NAME } videokonferencií boli aktualizované."
+      ],
       "${ reason } has been disabled": [
         "${ reason } bol zakázaný"
       ],
@@ -10253,6 +10363,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "Stiahnuté obnovovacie kódy 2FA"
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "Nepodarilo sa aktualizovať nastavenia ${ MEET_APP_NAME } videokonferencií"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Nepodarilo sa aktualizovať nastavenia Zoom videokonferencií"
       ],
       "Invalid code": [
         "Neplatný kód"
@@ -10290,8 +10406,8 @@
       "Two-factor authentication is not required anymore": [
         "Dvojstupňové overovanie sa už nevyžaduje"
       ],
-      "Video conferencing settings have been updated": [
-        "Nastavenia videokonferencií boli aktualizované"
+      "Zoom video conferencing settings have been updated": [
+        "Nastavenia videokonferencií Zoom boli aktualizované."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -14794,8 +14910,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Správcovia môžu spravovať používateľské účty a udeľovať oprávnenia správcu iným používateľom. Plán organizácie môže upravovať iba primárny správca."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Umožňuje bezproblémové pridávanie odkazov na videokonferencie do pozvánok v kalendári."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Umožňuje bezproblémové pridávanie odkazov na videokonferencie ${ MEET_APP_NAME } do pozvánok v kalendári."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Umožňuje bezproblémové pridávanie odkazov na videokonferencie Zoom do pozvánok v kalendári."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automaticky prepínať medzi preferovanými motívmi počas dňa a noci, synchronizovane s motívmi vášho systému"

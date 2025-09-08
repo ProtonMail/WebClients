@@ -1781,7 +1781,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동시키면 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -1901,7 +1901,7 @@
         "${ PASS_APP_NAME } 데이터를 내보내기 위해서는 추가 비밀번호를 입력하세요."
       ],
       "Please confirm your extra password in order to unregister your current lock.": [
-        "지금의 잠금을 등록 해제하기 위해 추가 비밀번호를 확인해 주세요."
+        "현재 잠금을 등록 해제하기 위해 추가 비밀번호를 확인해 주세요."
       ],
       "Please confirm your extra password in order to update the auto-lock time.": [
         "자동 잠금 시간을 업데이트하기 위해 추가 비밀번호를 확인해 주세요."
@@ -1916,13 +1916,13 @@
         "비밀번호를 사용하는 자동 잠금을 위해 비밀번호를 확인해 주세요."
       ],
       "Please confirm your password in order to unregister your current lock.": [
-        "지금의 잠금을 등록 해제하기 위해 비밀번호를 확인해 주세요."
+        "현재 잠금을 등록 해제하기 위해 비밀번호를 확인해 주세요."
       ],
       "Please confirm your password in order to update the auto-lock time.": [
         "자동 잠금 시간을 업데이트하기 위해 비밀번호를 확인해 주세요."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
-        "지금의 잠금을 등록 해제하려면 PIN 코드로 인증해주세요."
+        "현재 잠금을 등록 해제하려면 PIN 코드로 인증해주세요."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "이 설정을 수정하기 위해 PIN 코드를 입력해 주세요."
@@ -3554,7 +3554,7 @@
         "데이터에 파일 첨부 파일이 있는 경우 해당 파일은 불러오기되지 않습니다."
       ],
       "Include file attachments": [
-        "파일 첨부 파일 포함"
+        "첨부 파일 포함"
       ],
       "Not enough available storage space for the selected files.": [
         "선택한 파일에 대한 사용 가능한 스토리지 공간이 충분하지 않습니다."

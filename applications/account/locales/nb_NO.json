@@ -1012,6 +1012,9 @@
       "Open": [
         "Åpne"
       ],
+      "Open ${ applicationName }": [
+        "Åpne ${ applicationName }"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åpne innstillingene for ${ CALENDAR_APP_NAME }"
       ],
@@ -1985,6 +1988,9 @@
       ],
       "Secure your communications": [
         "Sikre kommunikasjonen din"
+      ],
+      "Talk confidentially": [
+        "Snakk konfidensielt"
       ]
     },
     "Apps dropdown": {
@@ -2048,6 +2054,66 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Jeg er borte fra kontoret med begrenset tilgang til e-posten min."
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Betalingsinformasjon"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes ${ formattedDate }, vil det gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes ${ formattedDate }, vil det gå over til å bli et betalt abonnement som fornyes automatisk månedlig ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Ved å klikke på \"Prøv\", sier du deg enig med våre ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "I prøveperioden kan du ha opptil 10 brukere."
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "gratis i ${ TRIAL_DURATION_DAYS } dager"
+      ],
+      "on ${ formattedDate }": [
+        "på ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Prøv ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Prøv det gratis i ${ TRIAL_DURATION_DAYS } dager"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Når du avbryter, vil din gratis prøveversjon ikke bli konvertert til et betalt abonnement, men du kan fortsatt dra nytte av planfordeler til slutten av prøveperioden. Etter det blir du nedgradert til ${ BRAND_NAME } Free-planen."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-lisenser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-lisenser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_USERS } brukere i prøveperioden."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Du kan ikke legge til egendefinerte domener i prøveperioden."
+      ],
+      "You have reached the trial limit.": [
+        "Du har nådd prøveperiodegrensen."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Beløp som forfaller etter prøvetiden"
+      ],
+      "Amount due now": [
+        "Beløp å betale nå"
       ]
     },
     "b2b_trials_Action": {
@@ -2454,6 +2520,9 @@
       "Manual setup problem": [
         "Problem med manuell installasjon"
       ],
+      "Meet problem": [
+        "Meet-problem"
+      ],
       "Other": [
         "Annet"
       ],
@@ -2817,6 +2886,112 @@
       ],
       "Expand": [
         "Utvid"
+      ]
+    },
+    "collider_2025: app-switcher": {
+      "Chat with a private AI assistant": [
+        "Chat med en privat KI-assistent"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Tilgang til avanserte KI-modeller"
+      ],
+      "Basic chat history": [
+        "Grunnleggende chatlogg"
+      ],
+      "Full chat history with search": [
+        "Full chatlogg med søk"
+      ],
+      "Large file upload support": [
+        "Støtte for opplasting av store filer"
+      ],
+      "Limited daily chats": [
+        "Begrenset antall daglige chatter"
+      ],
+      "Limited favorites": [
+        "Begrenset antall favoritter"
+      ],
+      "Unlimited daily chats": [
+        "Ubegrenset antall daglige chatter"
+      ],
+      "Unlimited favorites for quick access": [
+        "Ubegrenset antall favoritter for rask tilgang"
+      ],
+      "Upload and query multiple large files": [
+        "Last opp og søk i flere store filer"
+      ],
+      "Upload and query small files": [
+        "Last opp og søk i små filer"
+      ],
+      "Web search access": [
+        "Tilgang til nettsøk"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "Utviklet og basert i Europa"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } er en personvernfokusert KI som hjelper deg å få mer gjort samtidig som dataene dine holdes sikre. Lås opp dens fulle potensial og nyt tidlig tilgang til nye funksjoner når de introduseres."
+      ],
+      "Access to advanced AI models": [
+        "Tilgang til avanserte KI-modeller"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Legg til ${ LUMO_APP_NAME }"
+      ],
+      "AI assistant that respects your privacy": [
+        "KI-assistent som respekterer personvernet ditt"
+      ],
+      "Basic chat history": [
+        "Grunnleggende chatlogg"
+      ],
+      "Data never used for AI training": [
+        "Data blir aldri brukt til KI-trening"
+      ],
+      "Full chat history with search": [
+        "Full chatlogg med søk"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Høyhastighetschatter og avanserte KI-funksjoner."
+      ],
+      "Limited daily chats": [
+        "Begrenset antall daglige chatter"
+      ],
+      "Limited favorites": [
+        "Begrenset antall favoritter"
+      ],
+      "Open source": [
+        "Åpen kildekode"
+      ],
+      "Strict no-logs policy": [
+        "Strenge retningslinjer mot loggføring"
+      ],
+      "Unlimited daily chats": [
+        "Ubegrenset antall daglige chatter"
+      ],
+      "Unlimited favorites for quick access": [
+        "Ubegrenset antall favoritter for rask tilgang"
+      ],
+      "Upload and query multiple large files": [
+        "Last opp og søk i flere store filer"
+      ],
+      "Upload and query small files": [
+        "Last opp og søk i små filer"
+      ],
+      "Web search access": [
+        "Tilgang til nettsøk"
+      ]
+    },
+    "collider_2025: Navigation": {
+      "Back to conversations": [
+        "Tilbake til samtaler"
+      ],
+      "Conversations": [
+        "Samtaler"
       ]
     },
     "color": {
@@ -4321,6 +4496,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere hendelser i iCal-format (ICS fil). Filen kan ha en maks størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og ha opp til ${ MAX_IMPORT_EVENTS_STRING } hendelser. Hvis filen er større, må du dele den opp i flere mindre filer."
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Du vil motta ${ referralInfo.referrerRewardAmount } i ${ BRAND_NAME }-kreditt når personen du inviterer registrerer seg for en ${ BRAND_NAME }-plan, og de vil også få ${ referralInfo.refereeRewardAmount } i kreditter for å komme i gang."
       ]
     },
     "description": {
@@ -7289,6 +7467,9 @@
       "Device": [
         "Enhet"
       ],
+      "Domain": [
+        "Domene"
+      ],
       "Enter your email address": [
         "Skriv inn din e-postadresse"
       ],
@@ -7321,6 +7502,9 @@
       ],
       "Organization key fingerprint": [
         "Organisasjonsnøkkelfingeravtrykk"
+      ],
+      "Password ends with": [
+        "Passordet slutter med"
       ],
       "Payment details": [
         "Betalingsinformasjon"
@@ -7363,6 +7547,9 @@
       ],
       "User": [
         "Bruker"
+      ],
+      "Username": [
+        "Brukernavn"
       ]
     },
     "Header for addresses table": {
@@ -7965,6 +8152,24 @@
         "${ n } adresse",
         "${ n } adresser"
       ],
+      "${ name } for Android": [
+        "${ name } for Android"
+      ],
+      "${ name } for GNU/Linux": [
+        "${ name } for GNU/Linux"
+      ],
+      "${ name } for iOS": [
+        "${ name } for iOS"
+      ],
+      "${ name } for macOS": [
+        "${ name } for macOS"
+      ],
+      "${ name } for Web": [
+        "${ name } for Web"
+      ],
+      "${ name } for Windows": [
+        "${ name } for Windows"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: ikke sett uautoriserte e-poster i karantene eller avvis e-poster. Vanligvis bruker folk bare denne policyen til å feilsøke eller teste."
       ],
@@ -8338,6 +8543,9 @@
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Et e-postalias fungerer som en e-postadresse, men reduserer søppelpost og holder den faktiske e-postadressen og identiteten din skjult."
+      ],
+      "An error occurred while communicating with **${ applicationName }**": [
+        "Det oppstod en feil under kommunikasjon med **${ applicationName }**"
       ],
       "An error occurred while communicating with the extension": [
         "Det oppstod en feil under kommunikasjon med utvidelsen"
@@ -9057,6 +9265,9 @@
       ],
       "Get ${ upsellPlanName }": [
         "Skaff deg ${ upsellPlanName }"
+      ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Få **${ referrerRewardAmount } kreditter** for hver venn som abonnerer."
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Få tilgang ved å opprette en ${ BRAND_NAME }-konto og akseptere invitasjonen."
@@ -11006,6 +11217,9 @@
       "You may be redirected to your bank’s website.": [
         "Du kan bli omdirigert til din banks nettside."
       ],
+      "You may now start using **${ applicationName }**": [
+        "Du kan nå begynne å bruke **${ applicationName }**"
+      ],
       "You may now start using the extension": [
         "Du kan nå begynne å bruke utvidelsen."
       ],
@@ -12902,6 +13116,9 @@
       "Verify keys with Key Transparency": [
         "Verifiser nøkler med Key Transparency"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videokonferanser med ${ MEET_APP_NAME }"
+      ],
       "Video conferencing with Zoom": [
         "Videokonferanser med Zoom"
       ],
@@ -13887,6 +14104,9 @@
       ],
       "Back": [
         "Tilbake"
+      ],
+      "Back to ${ MEET_SHORT_APP_NAME }": [
+        "Tilbake til ${ MEET_SHORT_APP_NAME }"
       ],
       "Back to calendar": [
         "Tilbake til kalender"
@@ -15080,6 +15300,9 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } opprettet"
       ],
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "Videokonferanseinnstillinger for ${ MEET_APP_NAME } er oppdatert"
+      ],
       "${ reason } has been disabled": [
         "${ reason } er deaktivert"
       ],
@@ -15100,6 +15323,12 @@
       ],
       "Email notifications have been enabled": [
         "E-postvarsler er aktivert"
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "Kunne ikke oppdatere videokonferanseinnstillinger for ${ MEET_APP_NAME }"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Kunne ikke oppdatere videokonferanseinnstillinger for Zoom"
       ],
       "Invalid code": [
         "Ugyldig kode"
@@ -15149,8 +15378,8 @@
       "Two-factor authentication is not required anymore": [
         "Tofaktorautentisering kreves ikke lenger"
       ],
-      "Video conferencing settings have been updated": [
-        "Innstillingene for videokonferanser er oppdatert"
+      "Zoom video conferencing settings have been updated": [
+        "Videokonferanseinnstillinger for Zoom er oppdatert"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -18331,6 +18560,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grunnleggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
+        "Og få ${ referralInfo.uiData.refereeRewardAmount } i kreditter, hvis du abonnerer."
+      ],
       "Billing Cycle": [
         "Faktureringssyklus"
       ],
@@ -18396,6 +18628,9 @@
       ],
       "Free for ${ TRIAL_DURATION_DAYS } days": [
         "Gratis i ${ TRIAL_DURATION_DAYS } dager"
+      ],
+      "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Få ${ referralInfo.uiData.refereeRewardAmount } i kreditter"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Skaff deg en sikker ${ MAIL_APP_NAME }-adresse, eller ${ internalButton }"
@@ -21139,6 +21374,9 @@
       "Gift code": [
         "Gavekode"
       ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Gi ${ refereeRewardAmount } og 2 uker gratis. Få ${ referrerRewardAmount } kreditter."
+      ],
       "Group": [
         "Gruppe"
       ],
@@ -21864,6 +22102,9 @@
       "You have no resolved alerts": [
         "Du har ingen løste varsler"
       ],
+      "You've successfully signed in!": [
+        "Du har logget inn!"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveperiode av ${ planName } slutter på ${ textDate }."
       ],
@@ -22026,8 +22267,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorer kan administrere brukerkontoer og gi administratorrettigheter til andre brukere. Bare den primære administratoren kan redigere planen for organisasjonen."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Gjør det mulig å sømløst legge til videokonferansekoblinger i kalenderinvitasjonene dine."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Gjør det mulig å sømløst legge til ${ MEET_APP_NAME }-videokonferansekoblinger i kalenderinvitasjonene dine."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Gjør det mulig å sømløst legge til Zoom-videokonferansekoblinger i kalenderinvitasjonene dine."
       ],
       "Any protection applied to suspicious activity": [
         "Enhver beskyttelse som brukes på mistenkelig aktivitet"

@@ -1012,6 +1012,9 @@
       "Open": [
         "Obre"
       ],
+      "Open ${ applicationName }": [
+        "Obre el ${ applicationName }"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
       ],
@@ -1985,6 +1988,9 @@
       ],
       "Secure your communications": [
         "Protegiu les vostres comunicacions"
+      ],
+      "Talk confidentially": [
+        "Parleu amb confidencialitat"
       ]
     },
     "Apps dropdown": {
@@ -2048,6 +2054,66 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Soc fora de l'oficina i amb accés limitat al meu correu electrònic."
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Detalls del pagament"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Un cop finalitzat el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos el ${ formattedDate }. No se us carregarà cap import si la cancel·leu abans del ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada mes el ${ formattedDate }. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "En fer clic a \"Prova\", accepteu els nostres ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Durant el període de prova podeu tenir fins a 10 usuaris."
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "gratuït durant ${ TRIAL_DURATION_DAYS } dies"
+      ],
+      "on ${ formattedDate }": [
+        "el ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Proveu ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Proveu-ho gratuïtament durant ${ TRIAL_DURATION_DAYS } dies"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Si cancel·leu, la prova gratuïta no es convertirà en una subscripció de pagament, però podreu gaudir dels avantatges del pla fins al final del període de prova. Després d'això, passareu al ${ BRAND_NAME } pla gratuït."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_DEDICATED_IPS } servidors dedicats durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_LUMO_SEATS } llicències de ${ LUMO_SHORT_APP_NAME } durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències Scribe durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_USERS } usuaris durant el període de prova."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "No podeu afegir dominis personalitzats durant el període de prova."
+      ],
+      "You have reached the trial limit.": [
+        "Heu arribat al límit de la prova."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Import a pagar després de la prova"
+      ],
+      "Amount due now": [
+        "Import a pagar ara"
       ]
     },
     "b2b_trials_Action": {
@@ -2454,6 +2520,9 @@
       "Manual setup problem": [
         "Problema de configuració manual"
       ],
+      "Meet problem": [
+        "Coneix el problema"
+      ],
       "Other": [
         "Altres"
       ],
@@ -2817,6 +2886,112 @@
       ],
       "Expand": [
         "Amplia"
+      ]
+    },
+    "collider_2025: app-switcher": {
+      "Chat with a private AI assistant": [
+        "Conversar amb un assistent d\"IA privat"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Accés a models d'IA avançats"
+      ],
+      "Basic chat history": [
+        "Historial de xat bàsic"
+      ],
+      "Full chat history with search": [
+        "Historial de xat complet amb cerca"
+      ],
+      "Large file upload support": [
+        "Suport per a la càrrega de fitxers grans"
+      ],
+      "Limited daily chats": [
+        "Nombre de xats diaris limitat"
+      ],
+      "Limited favorites": [
+        "Nombre de preferits limitat"
+      ],
+      "Unlimited daily chats": [
+        "Xats diaris sense límits"
+      ],
+      "Unlimited favorites for quick access": [
+        "Preferits il·limitats per a un accés ràpid"
+      ],
+      "Upload and query multiple large files": [
+        "Carregueu i consulteu múltiples fitxers grans"
+      ],
+      "Upload and query small files": [
+        "Carregueu i consulteu fitxers petits"
+      ],
+      "Web search access": [
+        "Accés a la cerca web"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "Construït i amb base a Europa"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } és una IA que prioritza la privadesa i que us ajuda a fer més coses mantenint les vostres dades segures. Activeu-ne tot el potencial i gaudiu d'accés anticipat a noves característiques a mesura que s'introdueixin."
+      ],
+      "Access to advanced AI models": [
+        "Accés a models d'IA avançats"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Afegiu ${ LUMO_APP_NAME }"
+      ],
+      "AI assistant that respects your privacy": [
+        "Assistent d'IA que respecta la vostra privacitat"
+      ],
+      "Basic chat history": [
+        "Historial de xat bàsic"
+      ],
+      "Data never used for AI training": [
+        "Dades mai utilitzades per a l'entrenament d'IA"
+      ],
+      "Full chat history with search": [
+        "Historial de xat complet amb cerca"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Xats d'alta velocitat i característiques d'IA avançades."
+      ],
+      "Limited daily chats": [
+        "Xats diaris limitats"
+      ],
+      "Limited favorites": [
+        "Preferits limitats"
+      ],
+      "Open source": [
+        "De codi obert"
+      ],
+      "Strict no-logs policy": [
+        "Política estricta de no conservació de registres"
+      ],
+      "Unlimited daily chats": [
+        "Xats diaris il·limitats"
+      ],
+      "Unlimited favorites for quick access": [
+        "Preferits il·limitats per a un accés ràpid"
+      ],
+      "Upload and query multiple large files": [
+        "Carregar i consultar múltiples fitxers grans"
+      ],
+      "Upload and query small files": [
+        "Carregar i consultar fitxers petits"
+      ],
+      "Web search access": [
+        "Accés a la cerca web"
+      ]
+    },
+    "collider_2025: Navigation": {
+      "Back to conversations": [
+        "Tornar a les converses"
+      ],
+      "Conversations": [
+        "Converses"
       ]
     },
     "color": {
@@ -7977,6 +8152,24 @@
         "${ n } adreça",
         "${ n } adreces"
       ],
+      "${ name } for Android": [
+        "${ name } per a l'Android"
+      ],
+      "${ name } for GNU/Linux": [
+        "${ name } per a GNU/Linux"
+      ],
+      "${ name } for iOS": [
+        "${ name } per a l'iOS"
+      ],
+      "${ name } for macOS": [
+        "${ name } per al macOS"
+      ],
+      "${ name } for Web": [
+        "${ name } per al web"
+      ],
+      "${ name } for Windows": [
+        "${ name } per a Windows"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: no posar en quarantena ni rebutjar correus electrònics no autoritzats. Normalment, la gent només utilitza aquesta política per solucionar problemes o fer proves."
       ],
@@ -8350,6 +8543,9 @@
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un àlies de correu electrònic funciona com una adreça de correu electrònic, però redueix el correu brossa i manté ocultes la vostra adreça de correu electrònic real i la vostra identitat."
+      ],
+      "An error occurred while communicating with **${ applicationName }**": [
+        "S'ha produït un error en comunicar-se amb **${ applicationName }**"
       ],
       "An error occurred while communicating with the extension": [
         "S'ha produït un error en comunicar amb l'extensió"
@@ -11018,6 +11214,9 @@
       "You may be redirected to your bank’s website.": [
         "És possible que se us redirigeixi al lloc web del vostre banc."
       ],
+      "You may now start using **${ applicationName }**": [
+        "Ara podeu començar a utilitzar el **${ applicationName }**"
+      ],
       "You may now start using the extension": [
         "Ara podeu començar a utilitzar l'extensió"
       ],
@@ -12914,6 +13113,9 @@
       "Verify keys with Key Transparency": [
         "Verifica les claus amb Key Transparency"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videoconferència amb ${ MEET_APP_NAME }"
+      ],
       "Video conferencing with Zoom": [
         "Videoconferència amb Zoom"
       ],
@@ -13372,7 +13574,7 @@
     },
     "locked_state_storage_banner: info": {
       "Learn more": [
-        "Per saber-ne més"
+        "Més informació"
       ],
       "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
         "Per continuar utilitzant ${ BRAND_NAME }, assegureu-vos que les vostres característiques prèmium ja no s'utilitzen o milloreu el pla."
@@ -13896,6 +14098,9 @@
       ],
       "Back": [
         "Torna"
+      ],
+      "Back to ${ MEET_SHORT_APP_NAME }": [
+        "Torna al ${ MEET_SHORT_APP_NAME }"
       ],
       "Back to calendar": [
         "Torna al Calendari"
@@ -15089,6 +15294,9 @@
       "${ Filter.Name } created": [
         "S'ha creat ${ Filter.Name }"
       ],
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "La configuració de les videoconferències del ${ MEET_APP_NAME } s'ha actualitzat"
+      ],
       "${ reason } has been disabled": [
         "${ reason } s'ha desactivat"
       ],
@@ -15109,6 +15317,12 @@
       ],
       "Email notifications have been enabled": [
         "S'han activat les notificacions per correu electrònic."
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "No s'ha pogut actualitzar les preferències de videoconferència del ${ MEET_APP_NAME }"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "No s'ha pogut actualitzar les preferències de videoconferència del Zoom"
       ],
       "Invalid code": [
         "El codi no és vàlid."
@@ -15158,8 +15372,8 @@
       "Two-factor authentication is not required anymore": [
         "L'autenticació de doble factor ja no és necessària"
       ],
-      "Video conferencing settings have been updated": [
-        "S'han actualitzat les preferències de videoconferència."
+      "Zoom video conferencing settings have been updated": [
+        "La configuració de les videoconferències del Zoom s'ha actualitzat"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -16551,7 +16765,7 @@
         "Número d’identificació fiscal (EIN)"
       ],
       "VAT number": [
-        "NIF"
+        "Número d'IVA"
       ]
     },
     "Permission": {
@@ -17980,7 +18194,7 @@
         "Fet"
       ],
       "Learn more": [
-        "Per saber-ne més"
+        "Més informació"
       ]
     },
     "session_recovery:in_progress:info": {
@@ -19689,7 +19903,7 @@
         "Mantingueu el vostre equip segur en qualsevol lloc amb les nostres aplicacions per a web, iOS, Android, Windows, Mac i Linux."
       ],
       "Learn more": [
-        "Per saber-ne més"
+        "Més informació"
       ],
       "Learn more about our impact": [
         "Descobriu més sobre el nostre impacte"
@@ -21864,6 +22078,9 @@
       "You have no resolved alerts": [
         "No teniu alertes resoltes"
       ],
+      "You've successfully signed in!": [
+        "Heu iniciat sessió correctament!"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La vostra prova gratuïta de ${ planName } acaba el ${ textDate }"
       ],
@@ -22026,8 +22243,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Els administradors poden gestionar els comptes d'usuari i donar privilegis d'administrador a altres usuaris. Només l'administrador principal pot editar el pla de l'organització."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Permet afegir sense problemes enllaços de videoconferència a les invitacions del vostre calendari."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Permet afegir sense problemes enllaços de videoconferència del ${ MEET_APP_NAME } a les invitacions del vostre calendari."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Permet afegir sense problemes enllaços de videoconferència de Zoom a les invitacions del vostre calendari."
       ],
       "Any protection applied to suspicious activity": [
         "Qualsevol protecció aplicada a l'activitat sospitosa"

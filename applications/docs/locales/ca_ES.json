@@ -1136,6 +1136,32 @@
         "Esdeveniment no suportat"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Un cop finalitzat el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos el ${ formattedDate }. No se us carregarà cap import si la cancel·leu abans del ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada mes el ${ formattedDate }. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_DEDICATED_IPS } servidors dedicats durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_LUMO_SEATS } llicències de ${ LUMO_SHORT_APP_NAME } durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències Scribe durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_USERS } usuaris durant el període de prova."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "No podeu afegir dominis personalitzats durant el període de prova."
+      ],
+      "You have reached the trial limit.": [
+        "Heu arribat al límit de la prova."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Cancel·la la subscripció"
@@ -1369,6 +1395,9 @@
       "Manual setup problem": [
         "Problema de configuració manual"
       ],
+      "Meet problem": [
+        "Coneix el problema"
+      ],
       "Other": [
         "Altres"
       ],
@@ -1504,6 +1533,52 @@
       ],
       "Expand": [
         "Amplia"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Accés a models d'IA avançats"
+      ],
+      "Basic chat history": [
+        "Historial de xat bàsic"
+      ],
+      "Full chat history with search": [
+        "Historial de xat complet amb cerca"
+      ],
+      "Large file upload support": [
+        "Suport per a la càrrega de fitxers grans"
+      ],
+      "Limited daily chats": [
+        "Nombre de xats diaris limitat"
+      ],
+      "Limited favorites": [
+        "Nombre de preferits limitat"
+      ],
+      "Unlimited daily chats": [
+        "Xats diaris sense límits"
+      ],
+      "Unlimited favorites for quick access": [
+        "Preferits il·limitats per a un accés ràpid"
+      ],
+      "Upload and query multiple large files": [
+        "Carregueu i consulteu múltiples fitxers grans"
+      ],
+      "Upload and query small files": [
+        "Carregueu i consulteu fitxers petits"
+      ],
+      "Web search access": [
+        "Accés a la cerca web"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } és una IA que prioritza la privadesa i que us ajuda a fer més coses mantenint les vostres dades segures. Activeu-ne tot el potencial i gaudiu d'accés anticipat a noves característiques a mesura que s'introdueixin."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Afegiu ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Xats d'alta velocitat i característiques d'IA avançades."
       ]
     },
     "color": {
@@ -6470,7 +6545,7 @@
     },
     "locked_state_storage_banner: info": {
       "Learn more": [
-        "Per saber-ne més"
+        "Més informació"
       ],
       "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
         "Per continuar utilitzant ${ BRAND_NAME }, assegureu-vos que les vostres característiques prèmium ja no s'utilitzen o milloreu el pla."
@@ -8488,7 +8563,7 @@
         "Número d’identificació fiscal (EIN)"
       ],
       "VAT number": [
-        "NIF"
+        "Número d'IVA"
       ]
     },
     "PGP key encryption warning": {
@@ -8983,7 +9058,7 @@
         "Fet"
       ],
       "Learn more": [
-        "Per saber-ne més"
+        "Més informació"
       ]
     },
     "session_recovery:in_progress:info": {
@@ -10100,7 +10175,7 @@
         "Buida la paperera"
       ],
       "Enable 2FA": [
-        "Activi l'autenticació 2FA"
+        "Activa el 2FA"
       ],
       "Enable advanced account protection": [
         "Activació de la protecció avançada del compte"

@@ -96,6 +96,9 @@
       "Add phone number": [
         "Ajouter un numéro de téléphone"
       ],
+      "Add secret passphrase": [
+        "Ajouter une phrase secrète"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Ajouter à ${ CALENDAR_APP_NAME }"
       ],
@@ -1012,6 +1015,9 @@
       "Page ${ pageNumber }": [
         "Page ${ pageNumber }"
       ],
+      "Passphrase": [
+        "Phrase secrète"
+      ],
       "Pause": [
         "Suspendre"
       ],
@@ -1173,6 +1179,9 @@
       ],
       "Resume downloading": [
         "Reprendre le téléchargement"
+      ],
+      "Retry": [
+        "Réessayer"
       ],
       "Revert to original display": [
         "Revenir à l'affichage d'origine"
@@ -1448,8 +1457,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance",
-        "Clés de confiance"
+        "La clé est fiable"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1974,6 +1982,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_DEDICATED_IPS } serveur dédié maximum pendant la version d'essai."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_LUMO_SEATS } accès à ${ LUMO_SHORT_APP_NAME } pendant la période d’essai."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_SCRIBE_SEATS } accès maximum à Scribe pendant la période d’essai."
@@ -2646,6 +2657,29 @@
         "Développer"
       ]
     },
+    "collider_2025: feature": {
+      "Basic chat history": [
+        "Historique de chat basique"
+      ],
+      "Full chat history with search": [
+        "Historique complet des discussions avec recherche"
+      ],
+      "Limited daily chats": [
+        "Chats quotidiens limités"
+      ],
+      "Unlimited daily chats": [
+        "Chats quotidiens illimités"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoris illimités pour un accès rapide"
+      ],
+      "Upload and query multiple large files": [
+        "Importer et consulter plusieurs fichiers volumineux"
+      ],
+      "Web search access": [
+        "Accès à la recherche web"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } est une IA axée sur la confidentialité qui vous aide à accomplir davantage tout en garantissant la sécurité de vos données. Libérez tout son potentiel et profitez d'un accès anticipé aux nouvelles fonctionnalités dès leur introduction."
@@ -2835,7 +2869,7 @@
         "Déplacer vers le dossier Brouillons"
       ],
       "Go to Inbox": [
-        "Déplacer vers le dossier Boite de réception"
+        "Déplacer vers le dossier Boîte de réception"
       ],
       "Go to Sent": [
         "Déplacer vers le dossier Envoyés"
@@ -4560,6 +4594,9 @@
       "Failed to open to contact": [
         "Le contact n'a pas pu être ouvert."
       ],
+      "Failed to update secret passphrase": [
+        "La mise à jour de la phrase secrète n'a pas abouti."
+      ],
       "Filter with this name already exists": [
         "Un filtre avec ce nom existe déjà."
       ],
@@ -4688,6 +4725,9 @@
       ],
       "Organization key is not decrypted": [
         "La clé de l'organisation n'est pas déchiffrée."
+      ],
+      "Passphrase unavailable": [
+        "La phrase secrète n'est pas disponible"
       ],
       "Password is required": [
         "Le mot de passe est nécessaire."
@@ -5006,7 +5046,7 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        "Les brouillons ne peuvent pas être déplacés dans le dossier Boite de réception."
+        "Les brouillons ne peuvent pas être déplacés dans le dossier Boîte de réception."
       ],
       "Drafts cannot be moved to Spam": [
         "Les brouillons ne peuvent pas être déplacées vers le dossier pourriels."
@@ -7267,7 +7307,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images."
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8481,7 +8522,7 @@
         "Vous recevrez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
       ],
       "You have ${ unread } in your inbox.": [
-        "Vous avez ${ unread } dans votre boite de réception."
+        "Vous avez ${ unread } dans votre boîte de réception."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Vous avez ** ${ count } de conversation ** stockée dans ce fichier",
@@ -8822,7 +8863,7 @@
         "Déplacer vers le dossier Brouillons"
       ],
       "Go to Inbox": [
-        "Déplacer vers le dossier Boite de réception"
+        "Déplacer vers le dossier Boîte de réception"
       ],
       "Go to Sent": [
         "Déplacer vers le dossier Envoyés"
@@ -8876,7 +8917,7 @@
         "Déplacer vers les archives"
       ],
       "Move to Inbox": [
-        "Déplacer vers la boite de réception"
+        "Déplacer vers la boîte de réception"
       ],
       "Move to Spam": [
         "Déplacer vers le dossier Indésirables/spam"
@@ -9020,12 +9061,6 @@
       ],
       "Also archive": [
         "Et archiver"
-      ],
-      "Always label sender's emails": [
-        "Toujours labelliser les messages des expéditeurs"
-      ],
-      "Always move sender's emails": [
-        "Toujours déplacer les messages des expéditeurs"
       ],
       "AND": [
         "ET"
@@ -9363,9 +9398,6 @@
       "Move ${ sidebarElementName }": [
         "Déplacer ${ sidebarElementName }"
       ],
-      "Move messages to": [
-        "Déplacer les messages vers"
-      ],
       "Move to": [
         "Déplacer vers"
       ],
@@ -9405,6 +9437,9 @@
       "No label found": [
         "Aucun label n'a été trouvé."
       ],
+      "No results found": [
+        "Aucun résultat trouvé."
+      ],
       "Not factually correct": [
         "Les faits ne sont pas corrects."
       ],
@@ -9443,6 +9478,9 @@
       ],
       "Participants": [
         "Participants"
+      ],
+      "Passphrase:": [
+        "Phrase secrète :"
       ],
       "Password": [
         "Mot de passe"
@@ -11282,6 +11320,9 @@
       "Passcode copied to clipboard": [
         "Le code d’accès a été copié dans le presse-papiers."
       ],
+      "Passphrase copied to clipboard": [
+        "La phrase secrète a été copiée dans le presse-papiers."
+      ],
       "Password has been set successfully": [
         "Le mot de passe a été défini."
       ],
@@ -11362,7 +11403,7 @@
         "Payez à l'année et assurez-vous de bénéficier de notre meilleure offre."
       ],
       "Save": [
-        "Enregistrer"
+        "Économisez"
       ],
       "Save big when you pay annually": [
         "Économisez un maximum en optant pour le paiement annuel !"
@@ -12065,6 +12106,9 @@
       ],
       "End date": [
         "Date de fin"
+      ],
+      "Enter passphrase": [
+        "Saisir la phrase secrète"
       ],
       "Filter folders": [
         "Filtrez les dossiers."
@@ -14407,12 +14451,6 @@
       "Create contact": [
         "Créer un contact"
       ],
-      "Create folder \"${ search }\"": [
-        "Créer un dossier « ${ search } »"
-      ],
-      "Create label \"${ search }\"": [
-        "Créer un label « ${ search } »"
-      ],
       "Create new group": [
         "Créer un nouveau groupe"
       ],
@@ -14748,6 +14786,13 @@
       ],
       "Move all messages to trash": [
         "Déplacer tous les messages vers la corbeille"
+      ],
+      "Move message to": [
+        "Déplacer le message vers",
+        "Déplacer les messages vers"
+      ],
+      "Move messages to": [
+        "Déplacer les messages vers"
       ],
       "Move to": [
         "Déplacer vers"

@@ -1287,6 +1287,17 @@
         "Terabyte"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Dominio"
+      ],
+      "Password ends with": [
+        "La password termina con"
+      ],
+      "Username": [
+        "Utente"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "L'elemento «${ payload.itemName }» è stato ignorato."
@@ -1832,10 +1843,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
