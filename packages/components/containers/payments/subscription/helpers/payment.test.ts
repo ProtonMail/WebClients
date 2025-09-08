@@ -1,8 +1,8 @@
-import { CYCLE, FREE_SUBSCRIPTION, PLANS, Renew } from '@proton/payments';
+import { COUPON_CODES, CYCLE, FREE_SUBSCRIPTION, PLANS, Renew } from '@proton/payments';
 import { buildSubscription } from '@proton/testing/builders';
 import { PLANS_MAP } from '@proton/testing/data';
 
-import { notHigherThanAvailableOnBackend, subscriptionExpires } from './payment';
+import { getAutoCoupon, notHigherThanAvailableOnBackend, subscriptionExpires } from './payment';
 
 describe('subscriptionExpires()', () => {
     it('should handle the case when subscription is not loaded yet', () => {
@@ -145,5 +145,172 @@ describe('notHigherThanAvailableOnBackend', () => {
         },
     ])('should cap cycle if the backend does not have available higher cycles', ({ plan, cycle, expected }) => {
         expect(notHigherThanAvailableOnBackend({ [plan]: 1 }, PLANS_MAP, cycle)).toEqual(expected);
+    });
+});
+
+describe('getAutoCoupon', () => {
+    beforeEach(() => {
+        jest.useFakeTimers();
+        // Set default date - can be overridden in individual tests with jest.setSystemTime()
+        jest.setSystemTime(new Date('2025-01-15T10:00:00.000Z'));
+    });
+
+    afterEach(() => {
+        jest.useRealTimers();
+    });
+
+    describe('trial scenarios', () => {
+        it('should return existing coupon when trial is true', () => {
+            const result = getAutoCoupon({
+                planIDs: { [PLANS.VPN2024]: 1 },
+                cycle: CYCLE.YEARLY,
+                currency: 'USD',
+                trial: true,
+                coupon: 'EXISTING_COUPON',
+            });
+            expect(result).toBe('EXISTING_COUPON');
+        });
+
+        it('should return undefined when trial is true and no coupon provided', () => {
+            const result = getAutoCoupon({
+                planIDs: { [PLANS.VPN2024]: 1 },
+                cycle: CYCLE.YEARLY,
+                currency: 'USD',
+                trial: true,
+            });
+            expect(result).toBeUndefined();
+        });
+    });
+
+    describe('VPN auto coupon logic', () => {
+        it('should return existing coupon if one is already provided', () => {
+            const result = getAutoCoupon({
+                planIDs: { [PLANS.VPN2024]: 1 },
+                cycle: CYCLE.YEARLY,
+                currency: 'USD',
+                coupon: 'EXISTING_COUPON',
+            });
+            expect(result).toBe('EXISTING_COUPON');
+        });
+
+        it('should return undefined for non-VPN plans', () => {
+            const result = getAutoCoupon({
+                cycle: CYCLE.YEARLY,
+                currency: 'USD',
+                planIDs: { [PLANS.MAIL]: 1 },
+            });
+            expect(result).toBeUndefined();
+        });
+
+        it('should return undefined for monthly cycle', () => {
+            const result = getAutoCoupon({
+                planIDs: { [PLANS.VPN2024]: 1 },
+                currency: 'USD',
+                cycle: CYCLE.MONTHLY,
+            });
+            expect(result).toBeUndefined();
+        });
+
+        describe('date-based coupon selection', () => {
+            it('should return VPN_INTRO_2024 before 2025-09-10', () => {
+                jest.setSystemTime(new Date('2025-09-09T10:00:00.000Z'));
+
+                const result = getAutoCoupon({
+                    planIDs: { [PLANS.VPN2024]: 1 },
+                    cycle: CYCLE.YEARLY,
+                    currency: 'USD',
+                });
+                expect(result).toBe(COUPON_CODES.VPN_INTRO_2024);
+            });
+
+            it('should return VPN_INTRO_2025_UK after 2025-09-10 for GBP currency', () => {
+                jest.setSystemTime(new Date('2025-09-15T10:00:00.000Z'));
+
+                const result = getAutoCoupon({
+                    planIDs: { [PLANS.VPN2024]: 1 },
+                    cycle: CYCLE.YEARLY,
+                    currency: 'GBP',
+                });
+                expect(result).toBe(COUPON_CODES.VPN_INTRO_2025_UK);
+            });
+
+            it('should return VPN_INTRO_2024 after 2025-09-10 for non-GBP currency', () => {
+                jest.setSystemTime(new Date('2025-09-15T10:00:00.000Z'));
+
+                const result = getAutoCoupon({
+                    planIDs: { [PLANS.VPN2024]: 1 },
+                    cycle: CYCLE.YEARLY,
+                    currency: 'USD',
+                });
+                expect(result).toBe(COUPON_CODES.VPN_INTRO_2024);
+            });
+
+            it('should return VPN_INTRO_2025 after 2025-09-25', () => {
+                jest.setSystemTime(new Date('2025-09-26T10:00:00.000Z'));
+
+                const result = getAutoCoupon({
+                    planIDs: { [PLANS.VPN2024]: 1 },
+                    cycle: CYCLE.YEARLY,
+                    currency: 'USD',
+                });
+                expect(result).toBe(COUPON_CODES.VPN_INTRO_2025);
+            });
+
+            it('should return VPN_INTRO_2025 after 2025-09-25 even for GBP currency', () => {
+                jest.setSystemTime(new Date('2025-09-26T10:00:00.000Z'));
+
+                const result = getAutoCoupon({
+                    planIDs: { [PLANS.VPN2024]: 1 },
+                    cycle: CYCLE.YEARLY,
+                    currency: 'GBP',
+                });
+                expect(result).toBe(COUPON_CODES.VPN_INTRO_2025);
+            });
+        });
+
+        describe('cycle requirements', () => {
+            it.each([CYCLE.YEARLY, CYCLE.TWO_YEARS])('should work for %s cycle', (cycle) => {
+                const result = getAutoCoupon({
+                    planIDs: { [PLANS.VPN2024]: 1 },
+                    currency: 'USD',
+                    cycle,
+                });
+                expect(result).toBe(COUPON_CODES.VPN_INTRO_2024);
+            });
+
+            it.each([CYCLE.MONTHLY, CYCLE.SIX, CYCLE.FIFTEEN, CYCLE.EIGHTEEN, CYCLE.THIRTY])(
+                'should not work for %s cycle',
+                (cycle) => {
+                    const result = getAutoCoupon({
+                        planIDs: { [PLANS.VPN2024]: 1 },
+                        currency: 'USD',
+                        cycle,
+                    });
+                    expect(result).toBeUndefined();
+                }
+            );
+        });
+    });
+
+    describe('edge cases', () => {
+        it('should handle null coupon', () => {
+            const result = getAutoCoupon({
+                planIDs: { [PLANS.VPN2024]: 1 },
+                cycle: CYCLE.YEARLY,
+                currency: 'USD',
+                coupon: null,
+            });
+            expect(result).toBe(COUPON_CODES.VPN_INTRO_2024);
+        });
+
+        it('should handle empty string coupon', () => {
+            const result = getAutoCoupon({
+                planIDs: { [PLANS.VPN2024]: 1 },
+                cycle: CYCLE.YEARLY,
+                currency: 'USD',
+                coupon: '',
+            });
+            expect(result).toBe(COUPON_CODES.VPN_INTRO_2024);
+        });
     });
 });
