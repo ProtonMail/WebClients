@@ -20,6 +20,10 @@
 
 .backToSchoolCTA {
 	background: #ffd000 !important;
+
+	--button-default-text-color: black;
+	--button-hover-text-color: black;
+	--button-active-text-color: black;
 }
 
 .backToSchoolFeatures {
@@ -41,9 +45,11 @@
 }
 
 .backToSchoolFeaturesDismiss {
-	color: white;
-
-	&:hover {
+	button {
 		color: white;
+
+		&:hover {
+			color: white;
+		}
 	}
 }
