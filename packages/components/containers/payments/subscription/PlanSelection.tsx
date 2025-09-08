@@ -577,7 +577,7 @@ const PlanSelection = (props: Props) => {
             : plansList[0]?.planName;
 
         const hasPlanWithCoupon = plansInAudience.some(
-            (plan) => !!getAutoCoupon({ planIDs: { [plan.Name]: 1 }, cycle, coupon })
+            (plan) => !!getAutoCoupon({ planIDs: { [plan.Name]: 1 }, cycle, currency, coupon })
         );
         const groupId = hasPlanWithCoupon ? `plan-selection-audience-${audience}` : undefined;
 

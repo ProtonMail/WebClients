@@ -792,6 +792,7 @@ const SubscriptionContainerInner = ({
                     coupon: copyNewModel.coupon,
                     planIDs: copyNewModel.planIDs,
                     cycle: copyNewModel.cycle,
+                    currency: copyNewModel.currency,
                 });
 
                 // PAY-1822. To put it simply, this code removes all the previously applied coupons or gift codes
