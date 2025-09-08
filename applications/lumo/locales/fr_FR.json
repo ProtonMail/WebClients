@@ -387,6 +387,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Une fois la version d'essai terminée le ${ formattedDate }, elle deviendra un abonnement payant qui se renouvelle automatiquement tous les ${ renewCycle } mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
       ],
@@ -1013,14 +1016,23 @@
       ]
     },
     "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Accès aux modèles d'IA avancés"
+      ],
       "Basic chat history": [
         "Historique de chat basique"
       ],
       "Full chat history with search": [
         "Historique complet des discussions avec recherche"
       ],
+      "Large file upload support": [
+        "Prise en charge du chargement de fichiers volumineux"
+      ],
       "Limited daily chats": [
         "Chats quotidiens limités"
+      ],
+      "Limited favorites": [
+        "Favoris limités"
       ],
       "Unlimited daily chats": [
         "Chats quotidiens illimités"
@@ -1031,6 +1043,9 @@
       "Upload and query multiple large files": [
         "Importer et consulter plusieurs fichiers volumineux"
       ],
+      "Upload and query small files": [
+        "Importer et consulter les petits fichiers"
+      ],
       "Web search access": [
         "Accès à la recherche web"
       ]
@@ -1038,6 +1053,9 @@
     "collider_2025: Feature": {
       "Advanced models": [
         "Modèles avancés"
+      ],
+      "Unlimited weekly chats": [
+        "Chats hebdomadaires illimités"
       ],
       "Web search": [
         "Recherche web"
@@ -1061,6 +1079,9 @@
     "collider_2025: Info": {
       " of space": [
         " d'espace"
+      ],
+      "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
+        "L'espace de stockage pour ${ DRIVE_SHORT_APP_NAME } n'est pas encore configuré."
       ],
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } est une IA axée sur la confidentialité qui vous aide à accomplir davantage tout en garantissant la sécurité de vos données. Libérez tout son potentiel et profitez d'un accès anticipé aux nouvelles fonctionnalités dès leur introduction."
@@ -1133,6 +1154,9 @@
       ],
       "files are not currently supported for content extraction.": [
         "fichiers ne sont pas actuellement pris en charge pour l'extraction de contenu."
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Discussions rapides et fonctionnalités d'IA avancées."
       ],
       "How to identify safe links:": [
         "Comment identifier des liens sécurisés :"
@@ -1638,6 +1662,9 @@
       ],
       "Search chats": [
         "Rechercher des chats"
+      ],
+      "Sign in required": [
+        "Connexion requise"
       ]
     },
     "collider_2025:Title": {
