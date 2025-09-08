@@ -7,6 +7,7 @@ import { CYCLE } from '@proton/payments';
 
 import hasOffer from '../../helpers/hasOffer';
 import type { OfferLayoutProps } from '../../interface';
+import OfferDisableButton from '../shared/OfferDisableButton';
 import pumpkin from './pumpkin.png';
 
 import './BackToSchoolLayout.scss';
@@ -32,6 +33,10 @@ export function BackToSchoolLayout(props: OfferLayoutProps) {
         currency,
         deal.prices.withoutCouponMonthly * CYCLE.YEARLY - deal.prices.withCoupon
     );
+
+    const acceptDeal = () => {
+        props.onSelectDeal(props.offer, props.offer.deals[0], props.currency);
+    };
 
     return (
         <>
@@ -79,8 +84,9 @@ export function BackToSchoolLayout(props: OfferLayoutProps) {
                         .jt`Save ${totalSavings} and keep all your current features!`}</span>
                 )}
 
-                <Button size="large" className="backToSchoolCTA mb-5 text-semibold">{c('q3campaign_2025: Action')
-                    .t`Get the deal`}</Button>
+                <Button size="large" className="backToSchoolCTA mb-5 text-semibold" onClick={acceptDeal}>{c(
+                    'q3campaign_2025: Action'
+                ).t`Get the deal`}</Button>
 
                 {/* Features */}
                 <ul className="backToSchoolFeatures mt-0 mb-6">
@@ -93,17 +99,18 @@ export function BackToSchoolLayout(props: OfferLayoutProps) {
                 </ul>
 
                 {/* Disclaimer */}
-                <div className="flex flex-column items-center text-center text-sm">
+                <div className="flex flex-column items-center text-center text-sm gap-2">
                     <span>
                         {c('q3campaign_2025: Info')
                             .t`Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.`}
                     </span>
 
-                    <Button color="weak" shape="underline" className="backToSchoolFeaturesDismiss">{c(
-                        'q3campaign_2025: Action'
-                    ).t`Don’t show this offer again.`}</Button>
+                    <div className="backToSchoolFeaturesDismiss">
+                        <OfferDisableButton {...props} />
+                    </div>
                 </div>
             </div>
+
             {/* Footer: pumpkin */}
             <img
                 className="grow-0 self-center mt-4"
