@@ -387,23 +387,29 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, ${ formattedDate } tarihinde başlayarak her ${ renewCycle } ayda bir otomatik olarak yenilenen ücretli bir aboneliğe dönüşecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde aylık olarak otomatik yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinden başlayarak otomatik olarak her ay yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucuya sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucunuz olabilir."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } koltuğunuz olabilir."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğuna sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğunuz olabilir."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_USERS } kullanıcıya sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_USERS } kullanıcınız olabilir."
       ],
       "You cannot add custom domains during the trial period.": [
-        "Deneme süresi boyunca özel alan adları ekleyemezsiniz."
+        "Deneme süresi boyunca özel etki alanları ekleyemezsiniz."
       ],
       "You have reached the trial limit.": [
-        "Deneme limitine ulaştınız."
+        "Deneme süresi sayısı sınırına ulaştınız."
       ]
     },
     "b2b_trials_Action": {
@@ -629,6 +635,9 @@
       "Manual setup problem": [
         "El ile kurulum sorunu"
       ],
+      "Meet problem": [
+        "Meet sorunu"
+      ],
       "Other": [
         "Diğer"
       ],
@@ -766,17 +775,29 @@
       ]
     },
     "collider_2025: Action": {
+      "Add from ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } uygulamasından ekle"
+      ],
+      "Browse ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } uygulamasına göz atın"
+      ],
       "Cancel": [
-        "İptal et"
+        "İptal"
       ],
       "Continue": [
         "İlerle"
       ],
+      "Disable ghost mode": [
+        "Hayalet kipini kapat"
+      ],
       "Dismiss": [
         "Yok say"
       ],
+      "Enable ghost mode": [
+        "Hayalet kipini aç"
+      ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus from only ${ price }": [
-        "${ LUMO_SHORT_APP_NAME } Plus'ı sadece ${ price } karşılığında edinin"
+        "${ LUMO_SHORT_APP_NAME } Plus tarifesini yalnızca ${ price } ile edinin"
       ],
       "Hide safety information": [
         "Güvenlik bilgilerini gizle"
@@ -785,7 +806,13 @@
         "Bu yanıtı beğendim"
       ],
       "New chat": [
-        "Yeni yazışma"
+        "Yeni sohbet"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } uygulamasını aç"
+      ],
+      "Refresh folder contents": [
+        "Klasör içeriklerini yenile"
       ],
       "Report an issue": [
         "Sorun bildireceğim"
@@ -794,21 +821,39 @@
         "İletiyi gönder"
       ],
       "Show safety information": [
-        "Güvenlik bilgilerini göster"
+        "Güvenlik bilgilerini görüntüle"
       ],
       "Start generating": [
-        "Oluşturmaya başlayın"
+        "Üretmeye başlayın"
       ],
       "Stop generating": [
-        "Oluşturmayı durdur"
+        "Üretmeyi durdur"
       ],
       "Submit": [
         "Gönder"
+      ],
+      "Try again": [
+        "Yeniden dene"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upload a file": [
+        "Bir dosya yükleyin"
+      ],
+      "Upload file and add to knowledge base": [
+        "Dosyayı yükle ve bilgi bankasına ekle"
+      ],
+      "Upload from device": [
+        "Aygıttan yükle"
       ]
     },
     "collider_2025: Button": {
       "Close": [
         "Kapat"
+      ],
+      "Delete all": [
+        "Tümünü sil"
       ],
       "Join waitlist": [
         "Bekleme listesine katılın"
@@ -817,62 +862,68 @@
         "Ayrıntılı bilgi alın"
       ],
       "Open Link": [
-        "Bağlantıyı Aç"
+        "Bağlantıyı aç"
       ],
       "Retry": [
         "Yeniden deneyin"
+      ],
+      "Try it now": [
+        "Şimdi deneyin"
       ],
       "Upload": [
         "Yükleme"
       ],
       "Web search": [
-        "Web araması"
+        "İnternet araması"
       ]
     },
     "collider_2025: Characteristic": {
       "${ LUMO_SHORT_APP_NAME }’s code is fully open source, so anyone can independently verify that it’s private and secure—and that we never use your data to train the model.": [
-        "${ LUMO_SHORT_APP_NAME }'ın kodu tamamen açık kaynaklıdır, bu nedenle herkes gizli ve güvenli olduğunu bağımsız olarak doğrulayabilir—ve verilerinizi modeli eğitmek için asla kullanmadığımızı."
+        "${ LUMO_SHORT_APP_NAME } kodu tümüyle açık kaynaklıdır. Böylece isteyen herkes gizli ve güvenli olduğunu bağımsız olarak doğrulayabilir. Ayrıca verilerinizi modeli eğitmek için kullanmadığımızı da görebilir."
       ],
       "Extended chat history": [
-        "Genişletilmiş yazışma geçmişi"
+        "Genişletilmiş sohbet geçmişi"
       ],
       "Multiple large uploads": [
         "Birden fazla büyük yükleme"
       ],
       "Not even ${ BRAND_NAME } can access our chat history.": [
-        "${ BRAND_NAME } bile yazışma geçmişimize erişemez."
+        "${ BRAND_NAME } bile sohbet geçmişimize erişemez."
       ],
       "Our conversations are never used for training.": [
-        "Yazışmalarımız asla eğitim için kullanılmaz."
+        "Sohbetleriniz asla yapay zekayı eğitmek için kullanılmaz."
       ],
       "Priority access": [
         "Öncelikli erişim"
       ],
       "Thanks to zero-access encryption, your saved conversations can only be decoded and read on your device. Neither ${ BRAND_NAME } nor anyone else can see them.": [
-        "Sıfır erişimli şifreleme sayesinde, kayıtlı yazışmalarınız yalnızca cihazınızda çözülebilir ve okunabilir. Ne ${ BRAND_NAME } ne de başka hiç kimse onları göremez."
+        "Sıfır erişim şifrelemesi ile, kayıtlı sohbetleriniz yalnızca aygıtınızda çözülebilir ve okunabilir. Ne ${ BRAND_NAME } ne de başka hiç kimse onları göremez."
       ],
       "Unlike other assistants, I don't record our conversations.": [
-        "Diğer asistanların aksine, yazışmalarımızı kaydetmiyorum."
+        "Diğer yardımcıların aksine, sohbetlerimizi kaydetmiyorum."
       ],
       "Unlimited daily chats": [
-        "Sınırsız günlük yazışmalar"
+        "Sınırsız günlük sohbet"
       ],
       "We keep no logs of what you ask, or what ${ LUMO_SHORT_APP_NAME } replies. Your chats can’t be seen, shared, or used to profile you. ${ LUMO_SHORT_APP_NAME } saves nothing on our servers.": [
-        "Ne sorduğunuzun veya ${ LUMO_SHORT_APP_NAME }'ın ne yanıtladığının kaydını tutmuyoruz. Yazışmalarınız görülemez, paylaşılamaz veya profilinizi oluşturmak için kullanılamaz. ${ LUMO_SHORT_APP_NAME } sunucularımızda hiçbir şey kaydetmez."
+        "Sorduklarınızın veya ${ LUMO_SHORT_APP_NAME } yanıtlarının kaydını tutmuyoruz. Sohbetleriniz görülemez, paylaşılamaz veya profilinizi oluşturmak için kullanılamaz. ${ LUMO_SHORT_APP_NAME } sunucularımıza herhangi bir şey kaydetmez."
       ],
       "Your data isn’t shared with advertisers, governments, or anyone else. ${ LUMO_SHORT_APP_NAME } is a European service subject to GDPR, so you can delete your data anytime.": [
-        "Verileriniz reklamverenlerle, hükümetlerle veya başka hiç kimseyle paylaşılmaz. ${ LUMO_SHORT_APP_NAME } GDPR'a tabi bir Avrupa hizmetidir, bu nedenle verilerinizi istediğiniz zaman silebilirsiniz."
+        "Verileriniz reklam verenlerle, hükümetlerle veya başka hiç kimseyle paylaşılmaz. ${ LUMO_SHORT_APP_NAME } GDPR yönetmeliği ile uyumlu bir Avrupa hizmetidir. Bu nedenle verilerinizi istediğiniz zaman silebilirsiniz."
       ]
     },
     "collider_2025: Characteristic Title": {
+      "Enter": [
+        "Yazın"
+      ],
       "Only you have access": [
-        "Yalnızca sizin erişiminiz var"
+        "Yalnızca siz erişebilirsiniz"
       ],
       "Private": [
-        "Korunan"
+        "Gizli"
       ],
       "Safeguarded": [
-        "Koruma altında"
+        "Korunuyor"
       ],
       "Tech that you can trust": [
         "Güvenebileceğiniz teknoloji"
@@ -881,23 +932,29 @@
         "Saygıyla ele alınır"
       ],
       "Your chats are yours alone": [
-        "Yazışmalarınız yalnızca size özeldir"
+        "Sohbetleriniz yalnızca size özeldir"
       ],
       "You’re in control": [
         "Kontrol sizde"
       ]
     },
     "collider_2025: Description": {
+      "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
+        "Güvenli yapay zeka deneyiminizi geliştirin ve ${ LUMO_SHORT_APP_NAME } Plus tarifesi ile gelişmiş modellere ve ücretli özelliklere erişin."
+      ],
       "Last updated on ${ DATE_VERSION }": [
         "Son güncelleme ${ DATE_VERSION } tarihinde"
       ],
+      "Permanently delete your chats. This is irreversible.": [
+        "Sohbetlerinizi kalıcı olarak silin. Bu işlem geri alınamaz."
+      ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
-        "Hesabınıza erişmek ve daha fazla özelliğin kilidini açmak için oturum açın. Bir hesabınız yok mu? ${ createLink }"
+        "Hesabınıza erişmek ve daha fazla özelliğe erişmek için oturum açın. Bir hesabınız yok mu? ${ createLink }"
       ]
     },
     "collider_2025: Disclaimer": {
       "External links may pose security risks. We are not responsible for the content of external sites. Please proceed at your own risk.": [
-        "Harici bağlantılar güvenlik riskleri taşıyabilir. Harici sitelerin içeriğinden sorumlu değiliz. Lütfen kendi sorumluluğunuzda ilerleyin."
+        "Dış bağlantılarda güvenlik riskleri olabilir. Dış sitelerin içeriğinden sorumlu değiliz. Lütfen sorumluluğun sizde olduğunu bilerek ilerleyin."
       ]
     },
     "collider_2025: Disclosure": {
@@ -906,39 +963,69 @@
       ]
     },
     "collider_2025: Error": {
+      "Error processing ${ result.fileName }: ${ result.errorMessage }": [
+        "${ result.fileName } işlenirken sorun çıktı: ${ result.errorMessage }"
+      ],
+      "Error processing file: ${ file.name }": [
+        "Dosya işlenirken sorun çıktı: ${ file.name }"
+      ],
+      "Failed to process ${ DRIVE_SHORT_APP_NAME } file: ${ file.name }": [
+        "${ DRIVE_SHORT_APP_NAME } dosyası işlenemedi: ${ file.name }"
+      ],
+      "File \"${ file.name }\" is too large (${ fileSizeFormatted }). Maximum allowed size is ${ maxSizeFormatted }.": [
+        "\"${ file.name }\" dosyası çok büyük (${ fileSizeFormatted }). En fazla ${ maxSizeFormatted } boyutunda olabilir."
+      ],
+      "File already added: ${ result.fileName }": [
+        "Dosya zaten eklenmiş: ${ result.fileName }"
+      ],
+      "File format not supported: ${ result.fileName }": [
+        "Dosya biçimi desteklenmiyor: ${ result.fileName }"
+      ],
+      "File uploaded but failed to add to knowledge base": [
+        "Dosya yüklendi ancak bilgi bankasına eklenemedi"
+      ],
       "Please select a category to describe what went wrong with the generated text": [
-        "Oluşturulan metinde neyin yanlış gittiğini açıklamak için lütfen bir kategori seçin"
+        "Üretilen yazıda neyin yanlış olduğunu açıklamak için lütfen bir kategori seçin"
+      ],
+      "PowerPoint files are not supported. Please convert to PDF and upload the PDF version for better text extraction.": [
+        "PowerPoint dosyaları desteklenmiyor. Yazıları daha iyi çıkarmak için lütfen sunumu PDF belgesine dönüştürün ve PDF dosyasını yükleyin."
       ],
       "Sign up for free to continue chatting and unlock access to chat history, starred chats, and more features.": [
-        "Yazışmaya devam etmek ve yazışma geçmişine, yıldızlı yazışmalara ve daha fazla özelliğe erişim sağlamak için ücretsiz kaydolun."
+        "Sohbeti sürdürmek ve sohbet geçmişine, yıldızlı sohbetlere ve daha fazla özelliğe erişmek için ücretsiz hesap açın."
       ],
       "The provided URL is invalid.": [
-        "Sağlanan URL geçersiz."
+        "Belirtilen adres geçersiz."
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited chats, extended history, access to advanced AI models, and more.": [
-        "Sınırsız yazışmalar, genişletilmiş geçmiş, gelişmiş yapay zeka modellerine erişim ve daha fazlası için ${ LUMO_SHORT_APP_NAME } Plus'a yükseltin."
+        "Sınırsız sohbet, genişletilmiş geçmiş, gelişmiş yapay zeka modellerine erişim ve diğer özellikler için ${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
       ]
     },
     "collider_2025: Error Message": {
       "If retrying doesn’t work, check back later or consider upgrading to ${ LUMO_SHORT_APP_NAME } Plus to jump to the front of the line during peak times.": [
-        "Yeniden denemek işe yaramazsa, daha sonra tekrar kontrol edin veya yoğun zamanlarda sıranın önüne geçmek için ${ LUMO_SHORT_APP_NAME } Plus'a yükseltmeyi düşünün."
+        "Yeniden denemek işe yaramazsa, bir süre sonra yeniden bakın veya yoğun zamanlarda sıranın önüne geçmek için ${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltmeyi değerlendirin."
       ],
       "Please try asking a different question or making a different request.": [
-        "Lütfen farklı bir soru sormayı veya farklı bir talepte bulunmayı deneyin."
+        "Lütfen farklı bir soru sormayı veya farklı bir istekte bulunmayı deneyin."
       ],
       "We're experiencing unusually high demand. If retrying doesn't work, check back in a few minutes or upgrade for priority access to ${ LUMO_SHORT_APP_NAME }.": [
-        "Olağandışı yüksek bir talep yaşıyoruz. Yeniden denemek işe yaramazsa, birkaç dakika sonra tekrar deneyin veya ${ LUMO_SHORT_APP_NAME }'a öncelikli erişim için yükseltme yapın."
+        "Olağandışı yüksek bir talep var. Yeniden denemek işe yaramazsa, birkaç dakika sonra yeniden deneyin veya öncelikli ${ LUMO_SHORT_APP_NAME } erişimi edinmek için tarifenizi yükseltin."
       ],
       "Your request didn't go through or couldn't be completed. Try sending it again.": [
-        "İsteğiniz işleme alınamadı veya tamamlanamadı. Yeniden göndermeyi deneyin."
+        "İsteğiniz üzerinden geçilemedi veya tamamlanamadı. Yeniden göndermeyi deneyin."
+      ],
+      "Your request was queued but the connection was interrupted. This usually happens when ${ LUMO_SHORT_APP_NAME } is experiencing high demand. Please try again.": [
+        "İsteğiniz sıraya alındı ancak bağlantı kesintiye uğradı. Bu durum genellikle ${ LUMO_SHORT_APP_NAME } tarafına yoğun istek yapıldığında yaşanır. Lütfen yeniden deneyin."
       ]
     },
     "collider_2025: Error Title": {
       "${ LUMO_SHORT_APP_NAME } can't assist with that request. ": [
-        "${ LUMO_SHORT_APP_NAME } bu isteğe yardımcı olamaz."
+        "${ LUMO_SHORT_APP_NAME } bu isteğe yardımcı olamaz. "
       ],
       "${ LUMO_SHORT_APP_NAME }'s a busy cat": [
         "${ LUMO_SHORT_APP_NAME } meşgul bir kedi"
+      ],
+      "Connection interrupted": [
+        "Bağlantı kesildi"
       ],
       "Looks like there's a lot of traffic": [
         "Trafik yoğun görünüyor"
@@ -947,25 +1034,80 @@
         "Bir sorun çıktı"
       ],
       "You've reached your weekly chat limit": [
-        "Haftalık yazışma limitinize ulaştınız"
+        "Haftalık sohbet sınırınıza ulaştınız"
       ]
     },
     "collider_2025: Failure": {
       "There was an issue saving your feedback. Try again later.": [
-        "Geri bildiriminizi kaydederken bir sorun oluştu. Daha sonra tekrar deneyin."
+        "Geri bildiriminizi kaydedilirken bir sorun çıktı. Bir süre sonra yeniden deneyin."
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Gelişmiş yapay zeka modellerine erişim"
+      ],
+      "Basic chat history": [
+        "Temel sohbet geçmişi"
+      ],
+      "Full chat history with search": [
+        "Arama ile tüm sohbet geçmişi"
+      ],
+      "Large file upload support": [
+        "Büyük dosya yükleme desteği"
+      ],
+      "Limited daily chats": [
+        "Sınırlı sayıda günlük sohbet"
+      ],
+      "Limited favorites": [
+        "Sınırlı sayıda sık kullanılan"
+      ],
+      "Unlimited daily chats": [
+        "Günlük sınırsız sayıda sohbet"
+      ],
+      "Unlimited favorites for quick access": [
+        "Hızlı erişim için sınırsız sayıda sık kullanılan"
+      ],
+      "Upload and query multiple large files": [
+        "Birden fazla büyük dosyayı yükleyip sorgulayın"
+      ],
+      "Upload and query small files": [
+        "Küçük dosyaları yükleyin ve sorgulayın"
+      ],
+      "Web search access": [
+        "Site arama erişimi"
       ]
     },
     "collider_2025: Feature": {
       "Advanced models": [
         "Gelişmiş modeller"
       ],
+      "Large file uploads": [
+        "Büyük dosya yüklemeleri"
+      ],
+      "Unlimited chat history": [
+        "Sınırsız sohbet geçmişi"
+      ],
+      "Unlimited favourite chats": [
+        "Sınırsız beğenilmiş sohbet"
+      ],
+      "Unlimited weekly chats": [
+        "Sınırsız sayıda haftalık sohbet"
+      ],
       "Web search": [
-        "Web araması"
+        "İnternet araması"
+      ]
+    },
+    "collider_2025: Guest Signin": {
+      "Save your chats": [
+        "Sohbetlerinizi kaydedin."
+      ],
+      "Sign in to save your conversations and access them from anywhere.": [
+        "Sohbetlerinizi kaydetmek ve onlara her yerden erişmek için oturum açın."
       ]
     },
     "collider_2025: Guest Upsell": {
       "Your chat history won't be saved. For extended chat history and other premium features, ": [
-        "Yazışma geçmişiniz kaydedilmeyecektir. Genişletilmiş yazışma geçmişi ve diğer premium özellikler için,"
+        "Sohbet geçmişiniz kaydedilmeyecek. Genişletilmiş sohbet geçmişi ve diğer ücretli özellikler için, "
       ]
     },
     "collider_2025: Header": {
@@ -974,50 +1116,98 @@
       ]
     },
     "collider_2025: Info": {
+      " ${ BRAND_NAME } file is hidden (not supported yet)": [
+        " ${ BRAND_NAME } dosyası gizlenmiş (henüz desteklenmiyor)"
+      ],
+      " ${ BRAND_NAME } files are hidden (not supported yet)": [
+        " ${ BRAND_NAME } dosyaları gizlenmiş (henüz desteklenmiyor)"
+      ],
+      " file is hidden (unsupported file type)": [
+        " dosya gizlenmiş (dosya türü desteklenmiyor)"
+      ],
+      " files are hidden (unsupported file types)": [
+        " dosya gizlenmiş (dosya türü desteklenmiyor)"
+      ],
+      " of space": [
+        " toplam alandan"
+      ],
+      "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
+        "${ DRIVE_SHORT_APP_NAME } depolama alanı henüz ayarlanmamış"
+      ],
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } verilerinizin güvenliğini sağlarken, daha fazla iş yapmanıza yardımcı olan gizliliğe öncelik veren bir yapay zekadır. Tam potansiyelini açığa çıkarın ve yeni özellikler tanıtıldıkça erken erişimin keyfini çıkarın."
+      ],
+      "${ LUMO_SHORT_APP_NAME } provide access to advanced models to help with more complex queries and provide better answers": [
+        "${ LUMO_SHORT_APP_NAME }, daha karmaşık sorgulara yardımcı olmak ve daha iyi yanıtlar sunmak için gelişmiş modellere erişim sağlar."
       ],
       "1 file": [
         "1 dosya"
       ],
+      "Access ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } erişimi"
+      ],
+      "Active": [
+        "Etkin"
+      ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } uygulamasını ekle"
       ],
+      "Add to active": [
+        "Etkin olana ekle"
+      ],
+      "Adding to knowledge base...": [
+        "Bilgi bankasına ekleniyor..."
+      ],
       "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
-        "${ LUMO_SHORT_APP_NAME }'a her şeyi sorun"
+        "${ LUMO_SHORT_APP_NAME } yardımcısına istediğiniz her şeyi sorun"
       ],
       "Be cautious of unfamiliar domains or excessive subdomains": [
-        "Tanıdık olmayan alan adlarına veya aşırı alt alan adlarına karşı dikkatli olun"
+        "Tanıdık olmayan etki alanlarına veya abartılı alt etki alanlarına karşı dikkatli olun"
       ],
       "characters": [
         "karakter"
       ],
+      "Chat knowledge": [
+        "Sohbet bilgisi"
+      ],
       "Check this is the site you expect to visit": [
-        "Ziyaret etmeyi beklediğiniz site olduğundan emin olun"
+        "Bunun ziyaret etmeyi beklediğiniz site olduğundan emin olun"
       ],
       "Close": [
         "Kapat"
       ],
       "columns": [
-        "sütunlar"
+        "sütun"
       ],
       "columns found, no data rows": [
-        "sütun bulundu, veri satırı yok"
+        "sütun bulundu, herhangi bir veri satırı yok"
       ],
       "Domain name": [
         "Etki alanı adı"
       ],
       "Drag and drop your files here to add them to the chat.": [
-        "Dosyalarınızı yazışmaya eklemek için buraya sürükleyip bırakın."
+        "Dosyalarınızı sohbete eklemek için sürükleyip buraya bırakın."
       ],
       "Error Parsing Table": [
-        "Tablo Ayrıştırılırken Hata"
+        "Tablo işlenirken sorun çıktı"
       ],
       "Error processing attachment": [
-        "Eklenti işlenirken hata"
+        "Ek dosya işlenirken sorun çıktı"
       ],
       "Error Processing File": [
-        "Dosya İşlenirken Hata"
+        "Dosya işlenirken sorun çıktı"
+      ],
+      "Exclude file": [
+        "Dosya katılmasın"
+      ],
+      "File capacity": [
+        "Dosya kapasitesi"
+      ],
+      "File capacity for this conversation": [
+        "Bu sohbetin dosya kapasitesi"
+      ],
+      "File too large for preview (>150k tokens)": [
+        "Dosya ön izleme için çok büyük (>150 bin kod)"
       ],
       "files": [
         "dosyalar"
@@ -1026,7 +1216,13 @@
         "Dosyalar"
       ],
       "files are not currently supported for content extraction.": [
-        "dosyalar şu anda içerik çıkarımı için desteklenmiyor."
+        "dosyalar şu anda içeriklerin çıkarılması için desteklenmiyor."
+      ],
+      "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using. ": [
+        "${ LUMO_SHORT_APP_NAME } her sohbette sınırlı miktarda bilgiyi işleyebilir. İlerleme çubuğu, var olan dosyalarınızın ne kadar kapasite kullandığını görüntüler. "
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Yüksek hızlı sohbetler ve gelişmiş yapay zeka özellikleri."
       ],
       "How to identify safe links:": [
         "Güvenli bağlantılar nasıl tanımlanır:"
@@ -1034,17 +1230,29 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Doğruluğu artırmamıza yardımcı olmak için isteğinizi ve yanıtını ekleyin."
       ],
+      "Loading": [
+        "Yükleniyor"
+      ],
+      "Looks like your ${ DRIVE_APP_NAME } hasn't been set up yet.": [
+        "${ DRIVE_APP_NAME } uygulamanız henüz ayarlanmamış gibi görünüyor."
+      ],
       "Manage files": [
         "Dosyaları yönet"
       ],
+      "Maybe later": [
+        "Belki sonra"
+      ],
       "No Content Available": [
-        "İçerik Yok"
+        "Kullanılabilecek bir içerik yok"
       ],
       "No data rows found": [
-        "Veri satırı bulunamadı"
+        "Herhangi bir veri satırı bulunamadı"
       ],
       "No data rows found in this file.": [
-        "Bu dosyada veri satırı bulunamadı."
+        "Bu dosyada herhangi bir veri satırı bulunamadı."
+      ],
+      "No files available": [
+        "Kullanılabilecek bir dosya yok"
       ],
       "Note:": [
         "Not:"
@@ -1058,8 +1266,14 @@
       "Please wait for files to finish processing": [
         "Dosyaların işlenmesi bitene kadar lütfen bekleyin"
       ],
+      "Press ${ shiftEnterBoldText } to ask": [
+        "Sormak için ${ shiftEnterBoldText } üzerine basın."
+      ],
       "Processed content": [
         "İşlenmiş içerik"
+      ],
+      "Processing ${ uploadProgress.fileName }": [
+        "${ uploadProgress.fileName } işleniyor"
       ],
       "Processing file contents...": [
         "Dosya içerikleri işleniyor..."
@@ -1071,64 +1285,97 @@
         "Dosyayı kaldır"
       ],
       "Remove message filter": [
-        "Mesaj filtresini kaldır"
+        "İleti süzgecini kaldır"
       ],
       "rows": [
         "satır"
       ],
       "rows with": [
-        "ile satırlar"
+        "satır şununla"
       ],
       "Save all your conversations in a chat history only you can see. Sign in or create an account.": [
-        "Tüm yazışmalarınızı yalnızca sizin görebileceğiniz bir yazışma geçmişine kaydedin. Oturum açın veya bir hesap oluşturun."
+        "Tüm sohbetlerinizi yalnızca sizin görebileceğiniz bir sohbet geçmişine kaydedin. Oturum veya bir hesap açın."
       ],
       "Secure connection (encrypted)": [
-        "Güvenli bağlantı (şifreli)"
+        "Güvenli bağlantı (şifrelenmiş)"
       ],
       "selected": [
         "seçilmiş"
       ],
       "Show all files": [
-        "Tüm dosyaları göster"
+        "Tüm dosyaları görüntüle"
       ],
       "Show Formatted": [
-        "Biçimlendirilmişi Göster"
+        "Biçimlendirilmiş görüntüle"
       ],
       "Show Raw": [
-        "Hamı Göster"
+        "Ham biçimi görüntüle"
       ],
       "Show Table": [
-        "Tabloyu Göster"
+        "Tabloyu görüntüle"
       ],
       "Showing": [
-        "Gösteriliyor"
+        "Görüntülenen"
       ],
       "Showing first": [
-        "İlk gösteriliyor"
+        "Görüntülenen ilk kayıt sayısı"
+      ],
+      "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
+        "Sohbet bilgi tabanınıza ${ DRIVE_APP_NAME } (uçtan uca şifrelenmiş bulut depolama alanı) hizmetinizdeki dosyalara göz atmak ve dosya eklemek için oturum açın veya bir hesap oluşturun."
+      ],
+      "Space usage: ": [
+        "Kullanılan alan: "
       ],
       "Table view": [
         "Tablo görünümü"
       ],
+      "Talk to your admin for plan details": [
+        "Tarife ayrıntıları için yöneticiniz ile görüşün"
+      ],
+      "Talk to your admin to add ${ LUMO_SHORT_APP_NAME } Plus": [
+        "${ LUMO_SHORT_APP_NAME } Plus eklemek için yöneticinizle görüşün"
+      ],
       "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
-        "Bu dosya işlenirken bir hata oluştu. İçerik okunamayabilir veya dosya formatı tam olarak desteklenmeyebilir."
+        "Bu dosya işlenirken bir sorun çıktı. İçerik okunamayabilir veya dosya biçimi tam olarak desteklenmiyor olabilir."
       ],
       "This file appears to be empty or contains no extractable text content.": [
-        "Bu dosya boş görünüyor veya çıkarılabilir metin içeriği içermiyor."
+        "Bu dosya boş görünüyor veya çıkarılabilecek bir yazı içermiyor."
+      ],
+      "This folder is empty": [
+        "Bu klasör boş"
+      ],
+      "To get started, please open ${ DRIVE_APP_NAME } to set up your secure storage.": [
+        "Başlamak için, güvenli depolama alanınızı ayarlamak üzere lütfen ${ DRIVE_APP_NAME } uygulamasını açın."
       ],
       "To refer back to this conversation later, sign in or create an account.": [
-        "Bu yazışmaya daha sonra geri dönmek için oturum açın veya bir hesap oluşturun."
+        "Bu sohbete daha sonra geri dönmek için oturum veya bir hesap açın."
+      ],
+      "Try the smartest version of ${ LUMO_SHORT_APP_NAME } with advanced capabilities.": [
+        "Gelişmiş yetenekleri olan en akıllı ${ LUMO_SHORT_APP_NAME } sürümünü deneyin."
+      ],
+      "Trying...": [
+        "Deneniyor..."
       ],
       "Unable to parse this file as a table. You can view the raw content instead.": [
-        "Bu dosya tablo olarak ayrıştırılamıyor. Bunun yerine ham içeriği görüntüleyebilirsiniz."
+        "Bu dosya tablo olarak işlenemedi. Bunun yerine ham içeriği görüntüleyebilirsiniz."
       ],
       "Unsupported File Type": [
-        "Desteklenmeyen Dosya Türü"
+        "Dosya türü desteklenmiyor"
+      ],
+      "Unused ": [
+        "Kullanılmamış "
+      ],
+      "Uploading ${ uploadProgress.fileName }": [
+        "Yükleniyor ${ uploadProgress.fileName }"
+      ],
+      "used": [
+        "kullanılmış"
       ],
       "Watch for misspellings (e.g., proton.me vs pr0t0n.me)": [
-        "Yazım yanlışlarına dikkat edin (örn. proton.me vs pr0t0n.me)"
+        "Yanlış anlaşılabilecek yazımlara dikkat edin (proton.me yerine pr0t0n.me gibi)"
       ],
       "You are about to visit an external website:": [
-        "Harici bir web sitesini ziyaret etmek üzeresiniz:"
+        "Bir dış siteyi ziyaret etmek üzeresiniz:"
       ]
     },
     "collider_2025: Invite": {
@@ -1136,7 +1383,7 @@
         "E-posta adresi geçersiz"
       ],
       "Email address is required": [
-        "Eposta adresi gerekiyor"
+        "E-posta adresi gereklidir"
       ]
     },
     "collider_2025: Invite Button": {
@@ -1160,10 +1407,10 @@
     },
     "collider_2025: Invite Info": {
       "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
-        "Gizlilik odaklı bir yapay zekadan faydalanacak birini tanıyor musunuz? Onları ${ LUMO_SHORT_APP_NAME } bekleme listesine katılmaya davet edin. Kalan davetiyeniz: ${ remainingInvitesText } davetiye."
+        "Gizlilik odaklı bir yapay zekadan faydalanacak birilerini tanıyor musunuz? Onları ${ LUMO_SHORT_APP_NAME } bekleme listesine katılmaya davet edin. Gönderebileceğiniz ${ remainingInvitesText } davetiyeniz var."
       ],
       "You have ${ remainingInvitesText } invitations remaining.": [
-        "Kalan davetiyeniz: ${ remainingInvitesText } davetiye."
+        "${ remainingInvitesText } davet hakkınız kaldı."
       ]
     },
     "collider_2025: Invite Sent": {
@@ -1176,18 +1423,18 @@
         "Davet gönderildi!"
       ],
       "No invites left  ": [
-        "Davetiye kalmadı"
+        "Gönderilebilecek bir davetiye kalmadı  "
       ],
       "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
-        "Başkalarının ${ LUMO_SHORT_APP_NAME }'ı keşfetmesine yardım ettiğiniz için teşekkür ederiz! Daha fazla davetiye mevcut olursa, sizi bilgilendireceğiz."
+        "Başkalarının ${ LUMO_SHORT_APP_NAME } yardımcısını keşfetmesine yardım ettiğiniz için teşekkür ederiz! Daha fazla davetiye verebilirsek, sizi bilgilendireceğiz."
       ],
       "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
-        "${ emailText } davet ettik. Bekleme listesine nasıl katılacaklarına dair talimatları alacaklar."
+        "${ emailText } davet edildi. Bekleme listesine nasıl katılacağı ile ilgili yönerge gönderildi."
       ]
     },
     "collider_2025: Invite Title": {
       "Invite friends to experience ${ LUMO_APP_NAME }": [
-        "${ LUMO_APP_NAME }'ı deneyimlemeleri için arkadaşlarınızı davet edin"
+        "Arkadaşlarınızı ${ LUMO_APP_NAME } deneyimlemeye davet edin"
       ]
     },
     "collider_2025: Label": {
@@ -1204,9 +1451,25 @@
         "Güvenli değil ya da sorunlu"
       ]
     },
+    "collider_2025: Legal disclaimer": {
+      "and": [
+        "ve"
+      ],
+      "By using ${ LUMO_SHORT_APP_NAME }, you agree to our": [
+        "${ LUMO_SHORT_APP_NAME } kullanarak şunları kabul etmiş olursunuz"
+      ]
+    },
+    "collider_2025: Legal link": {
+      "Privacy Policy": [
+        "Gizlilik ilkesi"
+      ],
+      "Terms": [
+        "Koşullar"
+      ]
+    },
     "collider_2025: Link": {
       " contact your admin": [
-        "yöneticinizle iletişime geçin"
+        " yöneticinizle görüşün"
       ],
       "add ${ LUMO_SHORT_APP_NAME } Plus": [
         "${ LUMO_SHORT_APP_NAME } Plus ekleyin"
@@ -1227,7 +1490,7 @@
         "${ LUMO_SHORT_APP_NAME } Plus edinin"
       ],
       "New chat": [
-        "Yeni yazışma"
+        "Yeni sohbet"
       ],
       "Sign in": [
         "Oturum aç"
@@ -1239,17 +1502,17 @@
         "${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin"
       ],
       "upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
-        "${ LUMO_SHORT_APP_NAME } plus tarifesine yükseltin."
+        "${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
       ]
     },
     "collider_2025: Pill": {
       "Protected by ${ BRAND_NAME }": [
-        "${ BRAND_NAME } tarafından korunmaktadır"
+        "${ BRAND_NAME } tarafından korunuyor"
       ]
     },
     "collider_2025: Placeholder": {
       "New chat": [
-        "Yeni yazışma"
+        "Yeni sohbet"
       ],
       "Please share what you expected": [
         "Lütfen ne beklediğinizi paylaşın"
@@ -1263,7 +1526,24 @@
         "Genel"
       ]
     },
+    "collider_2025: Status": {
+      "${ LUMO_SHORT_APP_NAME }+ is included in your Visionary plan and you have access to these features:": [
+        "${ LUMO_SHORT_APP_NAME }+ Visionary tarifenizde bulunuyor ve şu özelliklere erişebilirsiniz:"
+      ],
+      "You are subscribed to ${ LUMO_SHORT_APP_NAME }+ and have access to these features:": [
+        "${ LUMO_SHORT_APP_NAME }+ hizmetine abone oldunuz ve şu özelliklere erişebilirsiniz:"
+      ]
+    },
     "collider_2025: Success": {
+      "All chats deleted successfully": [
+        "Tüm sohbetler silindi"
+      ],
+      "File added to knowledge base: ${ result.fileName }": [
+        "Dosya bilgi bankasına eklendi: ${ result.fileName }"
+      ],
+      "File uploaded and added to knowledge base": [
+        "Dosya yüklendi ve bilgi bankasına eklendi"
+      ],
       "Thanks for the feedback!": [
         "Geri bildiriminiz için teşekkürler!"
       ]
@@ -1275,26 +1555,32 @@
       "About ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } hakkında"
       ],
+      "Delete all chats": [
+        "Tüm sohbetleri sil"
+      ],
       "Don't lose the thread": [
-        "Konuyu kaybetmeyin"
+        "Konudan uzaklaşmayın"
       ],
       "Guest": [
-        "Misafir"
+        "Konuk"
       ],
       "Invalid Link": [
-        "Geçersiz Bağlantı"
+        "Bağlantı geçersiz"
       ],
       "Opening External Link": [
-        "Harici Bağlantı Açılıyor"
+        "Dış bağlantı açılıyor"
       ],
       "Save your favorites": [
-        "Favorilerinizi kaydedin"
+        "Beğendiklerinizi kaydedin"
       ],
       "Secure your spot": [
-        "Yerinizi güvenceye alın"
+        "Yerinizi alın"
       ],
       "Upload files": [
         "Dosya yükle"
+      ],
+      "Visionary": [
+        "Visionary"
       ],
       "You're on the list": [
         "Listedesiniz"
@@ -1305,7 +1591,7 @@
     },
     "collider_2025: Tooltip": {
       "contact your admin to upgrade": [
-        "yükseltmek için yöneticinizle iletişime geçin"
+        "yükseltmek için yöneticinizle görüşün"
       ]
     },
     "collider_2025: Top nav link": {
@@ -1323,25 +1609,45 @@
       "Create free account": [
         "Ücretsiz hesap açın"
       ],
+      "Upgrade": [
+        "Yükselt"
+      ],
       "Your chat history is limited to 7 days. For extended chat history and other premium features, ": [
-        "Yazışma geçmişiniz 7 günle sınırlıdır. Genişletilmiş yazışma geçmişi ve diğer premium özellikler için,"
+        "Sohbet geçmişiniz 7 günle sınırlıdır. Genişletilmiş sohbet geçmişi ve diğer ücretli özellikler için, "
+      ]
+    },
+    "collider_2025: Upsell Title": {
+      "Get": [
+        "Edinin"
       ]
     },
     "collider_2025: Waitlist Info": {
       "Thanks for joining the waitlist. We’ll email you when you can start chatting with ${ LUMO_SHORT_APP_NAME }.": [
-        "Bekleme listesine katıldığınız için teşekkür ederiz. ${ LUMO_SHORT_APP_NAME } ile yazışmaya başlayabileceğiniz zaman size e-posta göndereceğiz."
+        "Bekleme listesine katıldığınız için teşekkür ederiz. ${ LUMO_SHORT_APP_NAME } ile sohbet etmeye başlayabileceğiniz zaman size e-posta göndereceğiz."
       ],
       "Thanks for signing up. We’re gradually opening access to ${ LUMO_SHORT_APP_NAME } and will let you know when your spot opens.": [
-        "Kaydolduğunuz için teşekkür ederiz. ${ LUMO_SHORT_APP_NAME }'a erişimi kademeli olarak açıyoruz ve yeriniz açıldığında sizi bilgilendireceğiz."
+        "Hesap açtığınız için teşekkür ederiz. ${ LUMO_SHORT_APP_NAME } erişimini aşamalı olarak açıyoruz ve yeriniz hazır olduğunda sizi bilgilendireceğiz."
       ],
       "We're gradually opening access to ${ LUMO_SHORT_APP_NAME }. Join the waitlist, and we’ll notify you when your spot becomes available.": [
-        "${ LUMO_SHORT_APP_NAME }'a erişimi kademeli olarak açıyoruz. Bekleme listesine katılın, yeriniz müsait olduğunda sizi bilgilendireceğiz."
+        "${ LUMO_SHORT_APP_NAME } erişimini aşamalı olarak açıyoruz. Bekleme listesine kaydolun. Yeriniz hazır olduğunda sizi bilgilendireceğiz."
       ]
     },
     "collider_2025: Warning": {
+      "${ LUMO_SHORT_APP_NAME }'s a busy cat": [
+        "${ LUMO_SHORT_APP_NAME } meşgul bir kedidir"
+      ],
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
-        "Şüpheli: ${ urlParts.subdomainCount } alt alan adı",
-        "Şüpheli: ${ urlParts.subdomainCount } alt alan adı"
+        "Şüpheli: ${ urlParts.subdomainCount } alt etki alanı",
+        "Şüpheli: ${ urlParts.subdomainCount } alt etki alanı"
+      ],
+      "We're experiencing high traffic right now, but as a ${ LUMO_SHORT_APP_NAME } Plus customer, you're in the fast lane. We're prioritizing your requests as always.": [
+        "Şu anda yoğun bir trafik var. Ancak bir ${ LUMO_SHORT_APP_NAME } Plus müşterisi olarak önceliklisiniz. İsteklerinize her zamanki gibi öncelik veriyoruz."
+      ],
+      "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. ${ signInLink } for faster access.": [
+        "Her zamankinden yoğun bir trafik var. Bu nedenle yanıtlar normalden biraz daha yavaş olabilir. Daha hızlı erişmek için ${ signInLink }."
+      ],
+      "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for priority access during peak times.": [
+        "Her zamankinden daha yoğun bir trafik var. Bu nedenle yanıtlar normalden biraz daha yavaş olabilir. Yoğun zamanlarda öncelikli erişim için ${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
       ]
     },
     "collider_2025: Web Search": {
@@ -1350,8 +1656,23 @@
       ]
     },
     "collider_2025:Action": {
+      "Add details": [
+        "Ayrıntıları ekleyin"
+      ],
+      "Add more information to improve the response": [
+        "Yanıtı geliştirmek için daha fazla bilgi ekleyin"
+      ],
+      "Ask the model to be more careful and thorough": [
+        "Modelden daha dikkatli ve kapsamlı olmasını isteyin."
+      ],
       "Cancel": [
-        "İptal et"
+        "İptal"
+      ],
+      "Describe desired changes...": [
+        "İstenilen değişiklikleri açıklayın..."
+      ],
+      "More concise": [
+        "Daha özlü"
       ],
       "Next message": [
         "Sonraki ileti"
@@ -1360,15 +1681,33 @@
         "Önceki ileti"
       ],
       "Regenerate": [
-        "Yeniden oluştur"
+        "Yeniden üret"
       ],
       "Remove file": [
         "Dosyayı kaldır"
+      ],
+      "Request a shorter, more focused response": [
+        "Daha kısa, daha odaklı bir yanıt isteyin."
+      ],
+      "Retry with the same prompt": [
+        "Aynı istemle yeniden dene"
+      ],
+      "Think longer": [
+        "Daha uzun düşünün"
+      ],
+      "Try again": [
+        "Yeniden dene"
+      ],
+      "What needs changed?": [
+        "Neyin değiştirilmesi gerekiyor?"
       ]
     },
     "collider_2025:Button": {
       "Cancel": [
-        "İptal et"
+        "İptal"
+      ],
+      "Close sidebar": [
+        "Kenar çubuğunu kapat"
       ],
       "Edit": [
         "Düzenle"
@@ -1377,13 +1716,28 @@
         "Genişlet"
       ],
       "Favorite": [
-        "Favori"
+        "Beğenilenlere ekle"
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "${ LUMO_SHORT_APP_NAME } Plus edinin"
       ],
+      "Help and support": [
+        "Yardım ve destek"
+      ],
+      "Hide sidebar": [
+        "Kenar çubuğunu gizle"
+      ],
+      "Manage chat knowledge files (${ totalFiles })": [
+        "Sohbet bilgi dosyaları yönetimi (${ totalFiles })"
+      ],
+      "Manage chat knowledge files(${ totalFiles })": [
+        "Sohbet bilgi dosyalarını yönetin (${ totalFiles })"
+      ],
       "New chat": [
-        "Yeni yazışma"
+        "Yeni sohbet"
+      ],
+      "Search": [
+        "Ara"
       ],
       "Send": [
         "Gönder"
@@ -1392,21 +1746,21 @@
         "Ayarlar"
       ],
       "Unfavorite": [
-        "Favorilerden çıkar"
+        "Beğenilenlerden kaldır"
       ],
       "Untitled chat": [
-        "Başlıksız yazışma"
+        "Başlıksız sohbet"
       ]
     },
     "collider_2025:Info": {
       "AIs from Big Tech are built on harvesting your data. But ${ LUMO_SHORT_APP_NAME } is different. It was created by the scientists behind innovative, privacy-first services like ${ MAIL_APP_NAME } and ${ VPN_APP_NAME }. And it’s owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.": [
-        "Büyük Teknoloji şirketlerinin yapay zekaları verilerinizi toplamak üzerine kuruludur. Ancak ${ LUMO_SHORT_APP_NAME } farklıdır. Yenilikçi, gizlilik odaklı ${ MAIL_APP_NAME } ve ${ VPN_APP_NAME } gibi hizmetlerin arkasındaki bilim insanları tarafından oluşturulmuştur. Ve misyonu gizliliği geliştirmek ve kullanıcı verilerinden asla para kazanmamak olan İsviçreli bir kar amacı gütmeyen kuruluşa aittir."
+        "Big Tech şirketlerinin yapay zekaları verilerinizi toplamak üzerine kuruludur. Ancak ${ LUMO_SHORT_APP_NAME } farklıdır. Yenilikçi, gizlilik odaklı ${ MAIL_APP_NAME } ve ${ VPN_APP_NAME } gibi hizmetlerin arkasındaki bilim insanları tarafından oluşturulmuştur. Amacı gizliliği iyileştirmek ve kullanıcı verilerinden asla para kazanmamak olan ve kar amacı gütmeyen İsviçreli bir kuruluşa aittir."
       ],
       "Conversation encrypted": [
-        "Yazışma şifrelendi"
+        "Sohbet şifrelendi"
       ],
       "Current chat:": [
-        "Mevcut yazışma:"
+        "Geçerli sohbet:"
       ],
       "Processing file...": [
         "Dosya işleniyor..."
@@ -1415,12 +1769,15 @@
         "İşleniyor..."
       ],
       "This message is empty. Sorry about that.": [
-        "Bu mesaj boş. Üzgünüz."
+        "Bu ileti boş. Üzgünüz."
+      ],
+      "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
+        "Dosyalarınız büyük. ${ LUMO_SHORT_APP_NAME } tüm bilgileri işleyemeyebilir."
       ]
     },
     "collider_2025:Label": {
       "Edit conversation title": [
-        "Yazışma başlığını düzenle"
+        "Sohbet başlığını düzenle"
       ]
     },
     "collider_2025:Notification": {
@@ -1430,36 +1787,51 @@
     },
     "collider_2025:Placeholder": {
       "Ask anything…": [
-        "Her şeyi sorun…"
+        "İstediğinizi sorun…"
       ],
       "Processing files, please wait...": [
         "Dosyalar işleniyor, lütfen bekleyin..."
+      ],
+      "Search chats": [
+        "Sohbetlerde ara"
+      ],
+      "Sign in required": [
+        "Oturum açmalısınız"
       ]
     },
     "collider_2025:Title": {
+      "${ LUMO_SHORT_APP_NAME } 1.1 is much smarter, more capable, with improved awareness of recent events, ready to give you more thorough and useful answers.": [
+        "${ LUMO_SHORT_APP_NAME } 1.1, çok daha akıllı, daha yetenekli, son etkinliklerle ilgili daha çok bilgi sahibi ve daha kapsamlı ve kullanışlı yanıtlar sunmaya hazır."
+      ],
       "An AI assistant should empower you, not exploit you for your data. That’s why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
-        "Bir yapay zeka asistanı sizi güçlendirmeli, verileriniz için sizi sömürmemeli. Bu yüzden ${ LUMO_SHORT_APP_NAME }'ı inşa ettik: Gizliliğinizden ve veri güvenliğinizden ödün vermeden yapay zekanın tüm faydalarını size sunmak için."
+        "Bir yapay zeka asistanı sizi güçlendirmeli, verileriniz için sizi sömürmemeli. Bu nedenle, gizliliğinizden ve veri güvenliğinizden ödün vermeden yapay zekanın tüm faydalarını size sunmak için ${ LUMO_SHORT_APP_NAME } hizmetini geliştirdik."
       ],
       "Built by the team that knows privacy": [
-        "Gizliliği bilen ekip tarafından oluşturulmuştur"
+        "Gizliliği bilen bir ekip tarafından geliştirildi"
       ],
       "Earlier": [
         "Daha önce"
       ],
       "Favorites": [
-        "Sık kullanılanlar"
+        "Beğenilenler"
+      ],
+      "Ghost mode": [
+        "Hayalet kipi"
       ],
       "Hello! How can I help you today?": [
         "Merhaba! Bugün size nasıl yardımcı olabilirim?"
       ],
       "Hey, I'm ${ LUMO_SHORT_APP_NAME }. Ask me anything. It's confidential.": [
-        "Merhaba, ben ${ LUMO_SHORT_APP_NAME }. Bana her şeyi sorun. Gizlidir."
+        "Merhaba, ben ${ LUMO_SHORT_APP_NAME }. Bana her şeyi sorun. Gizli kalacak."
       ],
       "History": [
         "Geçmiş"
       ],
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
-        "${ LUMO_SHORT_APP_NAME } yazışmalarımızı nasıl gizli tutar?"
+        "${ LUMO_SHORT_APP_NAME } sohbetlerinizi nasıl gizli tutar?"
+      ],
+      "Introducing ${ LUMO_SHORT_APP_NAME } 1.1": [
+        "${ LUMO_SHORT_APP_NAME } 1.1 yayınlandı"
       ],
       "Last 30 days": [
         "Son 30 gün"
@@ -1471,7 +1843,7 @@
         "Diğer seçenekler"
       ],
       "No chat history yet. Let's start chatting!": [
-        "Henüz yazışma geçmişi yok. Yazışmaya başlayalım!"
+        "Henüz bir sohbet geçmişi yok. Sohbete başlayalım!"
       ],
       "No result.": [
         "Herhangi bir sonuç bulunamadı."
@@ -1479,11 +1851,17 @@
       "The AI that respects your privacy": [
         "Gizliliğinize saygı duyan yapay zeka"
       ],
+      "This chat disappears when you close it and is never saved.": [
+        "Bu sohbet, kapattığınızda kaybolur ve asla kaydedilmez."
+      ],
       "Today": [
         "Bugün"
       ],
+      "What's new": [
+        "Yenilikler"
+      ],
       "Whatever you ask me is:": [
-        "Bana ne sorarsanız sorun:"
+        "Bana istediğinizi sorun:"
       ]
     },
     "color": {
@@ -4600,7 +4978,7 @@
     },
     "Option": {
       "Add to favorites": [
-        "Sık kullanılanlara ekle"
+        "Beğenilenlere ekle"
       ],
       "Delete": [
         "Sil"
@@ -4609,7 +4987,7 @@
         "Üst klasör yok"
       ],
       "Remove from favorites": [
-        "Sık kullanılanlardan kaldır"
+        "Beğenilenlerden kaldır"
       ]
     },
     "pass_signup_2023: Info": {
