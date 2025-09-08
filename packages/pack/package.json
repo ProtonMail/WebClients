@@ -13,13 +13,13 @@
         "pretty": "prettier --write  cli bin"
     },
     "dependencies": {
-        "@babel/core": "^7.28.3",
+        "@babel/core": "^7.28.4",
         "@babel/plugin-transform-class-properties": "^7.27.1",
         "@babel/plugin-transform-runtime": "^7.28.3",
         "@babel/preset-env": "^7.28.3",
         "@babel/preset-react": "^7.27.1",
         "@babel/preset-typescript": "^7.27.1",
-        "@babel/runtime": "^7.28.3",
+        "@babel/runtime": "^7.28.4",
         "@pmmmwh/react-refresh-webpack-plugin": "^0.6.1",
         "@sentry/webpack-plugin": "^1.21.0",
         "@swc/core": "^1.13.5",
@@ -33,7 +33,7 @@
         "cross-env": "^7.0.3",
         "css-loader": "^7.1.2",
         "css-minimizer-webpack-plugin": "^7.0.2",
-        "dedent": "^1.6.0",
+        "dedent": "^1.7.0",
         "esbuild-loader": "^4.3.0",
         "eslint-webpack-plugin": "^5.0.2",
         "execa": "^5.1.1",
@@ -61,7 +61,7 @@
         "webpack-subresource-integrity": "^5.1.0"
     },
     "devDependencies": {
-        "eslint": "^9.34.0",
+        "eslint": "^9.35.0",
         "prettier": "^3.6.2",
         "webpack-bundle-analyzer": "^4.10.2"
     },
