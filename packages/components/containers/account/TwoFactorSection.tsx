@@ -3,8 +3,7 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button, InlineLinkButton } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Banner, BannerVariants, Button, InlineLinkButton, Tooltip } from '@proton/atoms';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
@@ -17,6 +16,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 import { getHasFIDO2Support } from '@proton/shared/lib/webauthn/helper';
 import { getId } from '@proton/shared/lib/webauthn/id';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useAvailableRecoveryMethods } from '../../hooks/useSessionRecovery';
@@ -53,11 +53,12 @@ const TwoFactorSection = () => {
 
     const hasTOTPEnabled = getHasTOTPSettingEnabled(userSettings);
     const hasFIDO2Enabled = getHasFIDO2SettingEnabled(userSettings);
+    const fido2WithoutTotp = useFlag('Fido2WithoutTotp');
 
     const registeredKeys = userSettings['2FA']?.RegisteredKeys || [];
-    const canEnableFido2 = hasTOTPEnabled;
+    const canEnableFido2 = hasTOTPEnabled || fido2WithoutTotp;
 
-    const canDisableTOTP = hasTOTPEnabled && !registeredKeys.length;
+    const canDisableTOTP = (hasTOTPEnabled && !registeredKeys.length) || fido2WithoutTotp;
 
     const [availableRecoveryMethods] = useAvailableRecoveryMethods();
     const hasRecoveryMethod = availableRecoveryMethods.length > 0;
@@ -129,6 +130,14 @@ const TwoFactorSection = () => {
                     <Toggle checked={hasTOTPEnabled} id="twoFactorToggle" onChange={handleChangeTOTP} />
                 </SettingsLayoutRight>
             </SettingsLayout>
+            {hasFIDO2Enabled && !hasTOTPEnabled && (
+                <div className="mb-4">
+                    <Banner variant={BannerVariants.WARNING_OUTLINE}>
+                        {c('Info')
+                            .t`Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.`}
+                    </Banner>
+                </div>
+            )}
             {hasSecurityKeySupport && (
                 <>
                     {renderAddSecurityKeyModal && <AddSecurityKeyModal {...addSecurityKeyModal} />}
