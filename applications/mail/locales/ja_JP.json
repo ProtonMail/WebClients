@@ -96,6 +96,9 @@
       "Add phone number": [
         "電話番号を追加"
       ],
+      "Add secret passphrase": [
+        "シークレットパスフレーズを追加"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } に追加"
       ],
@@ -753,6 +756,9 @@
       "Italic": [
         "イタリック体"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }で参加"
+      ],
       "Keep my subscription": [
         "サブスクリプションを継続する"
       ],
@@ -1007,6 +1013,9 @@
       ],
       "Page ${ pageNumber }": [
         "${ pageNumber }ページ"
+      ],
+      "Passphrase": [
+        "パスフレーズ"
       ],
       "Pause": [
         "一時停止"
@@ -1505,6 +1514,9 @@
       ],
       "Update recovery phrase": [
         "回復用フレーズを更新"
+      ],
+      "Update secret passphrase": [
+        "シークレットパスフレーズを更新"
       ],
       "Upgrade": [
         "アップグレード"
@@ -2212,6 +2224,9 @@
       ],
       "Manual setup problem": [
         "手動セットアップに関する問題"
+      ],
+      "Meet problem": [
+        "Meetの問題"
       ],
       "Other": [
         "その他"
@@ -4578,6 +4593,9 @@
       "Failed to open to contact": [
         "連絡先を開けませんでした"
       ],
+      "Failed to update secret passphrase": [
+        "シークレットパスフレーズの更新に失敗しました"
+      ],
       "Filter with this name already exists": [
         "この名前のフィルターが既に存在します"
       ],
@@ -4703,6 +4721,9 @@
       ],
       "Organization key is not decrypted": [
         "組織の鍵が復号されていません"
+      ],
+      "Passphrase unavailable": [
+        "パスフレーズは利用できません"
       ],
       "Password is required": [
         "パスワードは必須です"
@@ -7067,6 +7088,9 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "メールと最適化されたモバイル体験へいつでもアクセスできるよう、 ${ androidAppLink } または ${ iosAppLink } をダウンロードしましょう。"
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "より高いセキュリティのために、パスフレーズを設定できます。それはカレンダーの招待には含まれませんので、ゲストには別途共有することを忘れないでください。"
+      ],
       "For messages newer than ${ oldestDate }": [
         "${ oldestDate } 以降のメッセージ"
       ],
@@ -7194,7 +7218,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -9336,6 +9360,9 @@
       "Participants": [
         "参加者"
       ],
+      "Passphrase:": [
+        "パスフレーズ:"
+      ],
       "Password": [
         "パスワード"
       ],
@@ -11139,6 +11166,9 @@
       "Passcode copied to clipboard": [
         "パスコードがクリップボードにコピーされました"
       ],
+      "Passphrase copied to clipboard": [
+        "パスフレーズがクリップボードにコピーされました"
+      ],
       "Password has been set successfully": [
         "パスワードは正常に設定されました"
       ],
@@ -11917,6 +11947,9 @@
       ],
       "End date": [
         "終了日"
+      ],
+      "Enter passphrase": [
+        "パスフレーズを入力してください"
       ],
       "Filter folders": [
         "フォルダの絞り込み"
@@ -13748,6 +13781,9 @@
       ],
       "Recategorized ${ elementsCount } message.": [
         "${ elementsCount }件のメッセージを再分類しました。"
+      ],
+      "Secret passphrase updated": [
+        "シークレットパスフレーズが更新されました"
       ],
       "Self-destruction removed": [
         "有効期限が削除されました"
