@@ -8524,7 +8524,7 @@ __metadata:
     chai-as-promised: "npm:^7.1.2"
     comlink: "npm:^4.4.2"
     eslint: "npm:^9.35.0"
-    eslint-plugin-chai-friendly: "npm:^0.8.0"
+    eslint-plugin-chai-friendly: "npm:^1.1.0"
     eslint-plugin-jasmine: "npm:^4.2.2"
     karma: "npm:^6.4.4"
     karma-chrome-launcher: "npm:^3.2.0"
@@ -23604,12 +23604,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-chai-friendly@npm:^0.8.0":
-  version: 0.8.0
-  resolution: "eslint-plugin-chai-friendly@npm:0.8.0"
+"eslint-plugin-chai-friendly@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "eslint-plugin-chai-friendly@npm:1.1.0"
   peerDependencies:
     eslint: ">=3.0.0"
-  checksum: 10c0/320045fc78b9f024327e3f0ba0acba7d8a333b1a706bed8edf4fcdb70b3fc024eb74fb17dd0730cb4dddea8db8aeca3f66541b1c689a67580c14d0cd49367cdd
+  checksum: 10c0/9872c85fecd65d20fdb6ba2cec7be9ad2ed44d5e166402f9136a1806687da4e5c40683f993e6b552468bc3267667bbbc2c7d0b4ec8d2fa153282182e0316625c
   languageName: node
   linkType: hard
 
