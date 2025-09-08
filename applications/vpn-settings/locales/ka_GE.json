@@ -153,6 +153,9 @@
       "Claim this address": [
         "ამ მისამართის გამოთხოვა"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "${ BRAND_NAME }-ის უფასო მისამართის გამოთხოვა"
+      ],
       "Close": [
         "დახურვა"
       ],
@@ -1120,6 +1123,9 @@
       "Reconnect": [
         "თავიდან დაკავშირება"
       ],
+      "Reconnect address “${ emailAddress }”": [
+        "მისამართზე \"${ emailAddress }\" თავიდან მიერთება"
+      ],
       "Saving": [
         "შენახვა"
       ],
@@ -1337,6 +1343,28 @@
       ],
       "Unsupported event": [
         "გაუთვალისწინებელი შემთხვევა"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "უფასო ${ TRIAL_DURATION_DAYS } დღით"
+      ],
+      "on ${ formattedDate }": [
+        "${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "სცადეთ ${ selected } ${ freeForNDays }"
+      ],
+      "You have reached the trial limit.": [
+        "მიაღწიეთ გამოსაცდელი პერიოდის ზღვარს."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "გადასახდელი თანხა გამოსაცდელი პერიოდის შემდეგ"
+      ],
+      "Amount due now": [
+        "ახლა გადასახდელი თანხა"
       ]
     },
     "b2b_trials_Action": {
@@ -1690,6 +1718,9 @@
       "Manual setup problem": [
         "ხელით დაყენების პრობლემა"
       ],
+      "Meet problem": [
+        "Meet-ის პრობლემა"
+      ],
       "Other": [
         "სხვა"
       ],
@@ -1833,6 +1864,46 @@
       ],
       "Expand": [
         "ამოკეცვა"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "წვდომა განვითარებულ ხი მოდელებთან"
+      ],
+      "Basic chat history": [
+        "საბაზისო ჩატის ისტორია"
+      ],
+      "Full chat history with search": [
+        "სრული ჩატის ისტორია ძებნით"
+      ],
+      "Large file upload support": [
+        "დიდი ფაილის ატვირთვის მხარდაჭერა"
+      ],
+      "Limited daily chats": [
+        "შეზღუდული ყოველდღიური ჩატები"
+      ],
+      "Limited favorites": [
+        "შეზღუდული რჩეულები"
+      ],
+      "Unlimited daily chats": [
+        "შეუზღუდავი ყოველდღიური ჩატები"
+      ],
+      "Unlimited favorites for quick access": [
+        "განუსაზღვრელი რჩეულები სწრაფი წვდომისთვის"
+      ],
+      "Upload and query multiple large files": [
+        "ატვირთეთ და დაამუშავეთ ბევრი დიდი ფაილი"
+      ],
+      "Upload and query small files": [
+        "ატვირტეთ და მოითხოვეთ პატარა ფაილები"
+      ],
+      "Web search access": [
+        "წვდომა ვებში ძებნასთან"
+      ]
+    },
+    "collider_2025: Info": {
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME }-ის დამატება"
       ]
     },
     "color": {
@@ -5371,6 +5442,9 @@
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**მიიღეთ ${ BRAND_NAME }-ის მისამართი** ${ BRAND_NAME_TWO }-ის ყველა სერვისის, ${ MAIL_SHORT_APP_NAME }-ის და ${ CALENDAR_SHORT_APP_NAME }-ის ჩათვლით, გამოსაყენებლად."
+      ],
+      "**Sync codes** to all your devices": [
+        "**დაასინქრონიზეთ კოდები** ყველა თქვენს მოწყობილობაზე"
       ],
       "+ ${ invisibleCount } More": [
         "+ კიდევ ${ invisibleCount }",
@@ -9818,9 +9892,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "2FA ავთენტიკაცია აუცილებელი აღარაა"
-      ],
-      "Video conferencing settings have been updated": [
-        "ვიდეოკონფერენციის პარამეტრები განახლდა"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9881,7 +9952,7 @@
         "გადაიხადეთ წელიწადში ერთხელ, მიიღეთ ჩვენ საუკეთესო შეთავაზება"
       ],
       "Save": [
-        "შენახვა"
+        "დაზოგეთ"
       ],
       "Save big when you pay annually": [
         "დაზოგეთ ბევრი, როცა წელიწადში ერთხელ იხდით"
@@ -13268,6 +13339,9 @@
       "Choose user affiliations": [
         "აირჩიეთ მომხმარებლის წევრობა"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME }-ის მისამართის გამოთხოვა"
+      ],
       "Close": [
         "დახურვა"
       ],
@@ -14063,9 +14137,6 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "ადმინებს შეუძლიათ მომხმარებლის ანგარიშებს მართვა და სხვა მომხმარებლებისთვის ადმინის პრივილეგიების მიცემა. ორგანიზაციის სატარიფო გეგმის ჩასწორება, მხოლოდ, ძირითად ადმინს შეუძლია."
-      ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "საშუალებას გაძლევთ, თქვენი კალენდრის მოსაწვევებში ვიდეოკონფერენციების ბმულები უპრობლემოდ ჩაამატოთ."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "ავტომატურად გადაერთეთ რჩეულ თემებს შორის დღისა და ღამისთვის თქვენი სისტემის დღისა და ღამის რეჟიმებთან ერთად"

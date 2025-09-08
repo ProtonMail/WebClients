@@ -1354,6 +1354,61 @@
         "サポートされていない予定です"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }にトライアルが終了すると、${ formattedDate }に${ renewCycle }ヶ月ごとに自動更新される有料のサブスクリプションに移行します。${ formattedDate }までにキャンセルした場合、料金は請求されません。"
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } にトライアルが終了すると、毎月 ${ formattedDate } に自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "「試す」をクリックすると、${ termsAndConditions } に同意したものとみなされます。"
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "トライアル期間中、最大10名のユーザーをご利用いただけます。"
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "${ TRIAL_DURATION_DAYS }日間無料"
+      ],
+      "on ${ formattedDate }": [
+        "${ formattedDate }に"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "${ selected } を${ freeForNDays }お試しください"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "${ TRIAL_DURATION_DAYS }日間無料でお試しください"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "キャンセルした場合、無料トライアルが有料サブスクリプションに変換されることはありませんが、トライアル期間の終了までは引き続きプランの恩恵を受けることができます。その後、${ BRAND_NAME } Freeプランにダウングレードされます。"
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_DEDICATED_IPS }の専用サーバーをご利用いただけます。"
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_LUMO_SEATS }の${ LUMO_SHORT_APP_NAME }シートをご利用いただけます。"
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_SCRIBE_SEATS }のスライブシートをご利用いただけます。"
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_USERS }ユーザーまでご利用いただけます。"
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "トライアル期間中にカスタムドメインを追加することはできません。"
+      ],
+      "You have reached the trial limit.": [
+        "トライアルの制限に達しました。"
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "トライアル終了後の支払い金額"
+      ],
+      "Amount due now": [
+        "現在の請求額"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "サブスクリプションをキャンセル"
@@ -1854,6 +1909,52 @@
       ],
       "Expand": [
         "開く"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "高度なAIモデルへのアクセス"
+      ],
+      "Basic chat history": [
+        "基本チャット履歴"
+      ],
+      "Full chat history with search": [
+        "検索機能付きの完全なチャット履歴"
+      ],
+      "Large file upload support": [
+        "大容量ファイルアップロードサポート"
+      ],
+      "Limited daily chats": [
+        "毎日のチャットの制限"
+      ],
+      "Limited favorites": [
+        "お気に入りの制限"
+      ],
+      "Unlimited daily chats": [
+        "無制限の毎日のチャット"
+      ],
+      "Unlimited favorites for quick access": [
+        "無制限のクイックアクセスのお気に入り"
+      ],
+      "Upload and query multiple large files": [
+        "複数大容量ファイルのアップロードと検索"
+      ],
+      "Upload and query small files": [
+        "小さなファイルのアップロードと検索"
+      ],
+      "Web search access": [
+        "ウェブ検索アクセス"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } は、プライバシーを第一に考えたAIで、お客様のデータを安全に保ちながら、より多くのことを達成するのに役立ちます。その可能性を最大限に引き出し、導入される新しい機能への早期アクセスをお楽しみください。"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME }を追加"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "高速チャットと高度なAI機能。"
       ]
     },
     "color": {
@@ -9881,9 +9982,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "2要素認証はもう必要ありません"
-      ],
-      "Video conferencing settings have been updated": [
-        "ビデオ会議の設定はアップデートされました"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9950,7 +10048,7 @@
         "毎年払い、安全な私たちの最高のオファー"
       ],
       "Save": [
-        "節約"
+        "お得"
       ],
       "Save big when you pay annually": [
         "年払いで大幅に節約"
@@ -14160,9 +14258,6 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "管理者はユーザーのアカウントを管理することができ、他のユーザーに管理者権限を与えることができます。プライマリー管理者のみが組織のプランを変更できます。"
-      ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "カレンダーの招待状にシームレスにビデオ会議のリンクを追加できるようにします。"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "システムの昼夜モードに同期して、昼と夜の好みのテーマを自動的に切り替えます"
