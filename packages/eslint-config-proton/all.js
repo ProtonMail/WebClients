@@ -1,7 +1,6 @@
-//@ts-check
-import tseslint from 'typescript-eslint';
+import { defineConfig } from 'eslint/config';
 
 import base from './base.js';
 import react from './react.js';
 
-export default tseslint.config(base, react);
+export default defineConfig(base, react);

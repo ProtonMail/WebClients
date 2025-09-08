@@ -1,13 +1,13 @@
-import { globalIgnores } from "eslint/config";
 import globals from "globals";
-import tseslint from "typescript-eslint";
+import { configs } from "typescript-eslint";
+import { defineConfig, globalIgnores } from "eslint/config";
 import js from "@eslint/js";
 import importPlugin from "eslint-plugin-import";
 
-export default tseslint.config(
+export default defineConfig(
     js.configs.recommended,
-    tseslint.configs.eslintRecommended,
-    tseslint.configs.recommended,
+    configs.eslintRecommended,
+    configs.recommended,
     importPlugin.flatConfigs.recommended,
     importPlugin.flatConfigs.electron,
     importPlugin.flatConfigs.typescript,
