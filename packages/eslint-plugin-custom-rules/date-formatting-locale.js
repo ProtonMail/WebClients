@@ -17,15 +17,11 @@ const isFormatCall = (node) => {
 
 export default {
     meta: {
-        type: 'suggestion',
         docs: {
             description: 'Enforce locale parameter in date-fns format function calls',
             category: 'Best Practices',
             recommended: true,
-            url: null,
         },
-        fixable: null,
-        schema: [],
     },
     create: (context) => {
         // Track if format is imported from date-fns and not shadowed
