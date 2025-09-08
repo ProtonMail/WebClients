@@ -1012,6 +1012,9 @@
       "Open": [
         "열기"
       ],
+      "Open ${ applicationName }": [
+        "${ applicationName } 열기"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } 설정 열기"
       ],
@@ -1979,6 +1982,9 @@
       ],
       "Secure your communications": [
         "안전하게 소통하세요"
+      ],
+      "Talk confidentially": [
+        "비밀리에 대화"
       ]
     },
     "Apps dropdown": {
@@ -2042,6 +2048,66 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "사무실에 가지 못해 이메일을 열람할 수 없는 상황입니다. 양해 부탁합니다."
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "결제 수단 상세 정보"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }에 체험이 종료된 후, ${ formattedDate }에 ${ renewCycle }개월마다 자동 갱신되는 유료 구독으로 전환됩니다. ${ formattedDate } 이전에 취소시 요금이 부과되지 않습니다."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }에 체험이 종료된 후, 유료 구독으로 전환되어 매월 ${ formattedDate }에 자동 갱신됩니다. ${ formattedDate } 이전에 취소시 요금이 청구되지 않습니다."
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "\"체험\"을 클릭하면, ${ termsAndConditions }에 동의하는 것으로 간주됩니다."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "무료 체험 기간동안 최대 10명의 사용자를 추가할 수 있습니다."
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "${ TRIAL_DURATION_DAYS }일 무료 체험"
+      ],
+      "on ${ formattedDate }": [
+        "${ formattedDate }에"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "${ selected }을(를) ${ freeForNDays }로 사용해 보세요"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "${ TRIAL_DURATION_DAYS }일 무료 체험하세요"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "취소시 무료 체험이 유료 구독으로 전환되지 않지만, 체험 기간이 끝날 때까지 플랜의 혜택을 계속 누리실 수 있습니다. 기간 종료 후 ${ BRAND_NAME } 무료 요금제로 자동 다운그레이드됩니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_DEDICATED_IPS }개의 전용 서버를 사용할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_LUMO_SEATS }개의 ${ LUMO_SHORT_APP_NAME } 계정을 추가할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_SCRIBE_SEATS }개의 Scribe 사용 권한을 추가할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_USERS }명의 사용자를 추가할 수 있습니다."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "체험 기간 동안 사용자 지정 도메인을 추가할 수 없습니다."
+      ],
+      "You have reached the trial limit.": [
+        "무료 체험 한도에 도달했습니다."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "무료 체험 후 납부할 금액"
+      ],
+      "Amount due now": [
+        "지금 납부할 금액"
       ]
     },
     "b2b_trials_Action": {
@@ -2804,6 +2870,112 @@
       ],
       "Expand": [
         "펼치기"
+      ]
+    },
+    "collider_2025: app-switcher": {
+      "Chat with a private AI assistant": [
+        "개인형 AI 어시스턴트와 대화하세요"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "고급 AI 모델 이용"
+      ],
+      "Basic chat history": [
+        "기본 채팅 기록"
+      ],
+      "Full chat history with search": [
+        "검색 기능이 포함된 전체 채팅 기록"
+      ],
+      "Large file upload support": [
+        "대용량 파일 업로드 지원"
+      ],
+      "Limited daily chats": [
+        "제한된 일일 채팅"
+      ],
+      "Limited favorites": [
+        "제한된 즐겨찾기"
+      ],
+      "Unlimited daily chats": [
+        "무제한 일일 채팅"
+      ],
+      "Unlimited favorites for quick access": [
+        "빠른 접근을 위한 무제한 즐겨찾기"
+      ],
+      "Upload and query multiple large files": [
+        "다중 대용량 파일 업로드 및 확인"
+      ],
+      "Upload and query small files": [
+        "저용량 파일 업로드 및 확인"
+      ],
+      "Web search access": [
+        "웹 검색 접근"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "유럽에서 개발 및 기반을 두고 있는 AI"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME }는 사용자의 데이터를 안전하게 보호하면서 더 많은 작업을 수행할 수 있도록 돕는 개인 정보 보호 중심 AI입니다. 모든 잠재력을 활용하고 새로운 기능이 출시될 때 얼리 액세스 혜택을 누려보세요."
+      ],
+      "Access to advanced AI models": [
+        "고급 AI 모델 이용"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME } 추가"
+      ],
+      "AI assistant that respects your privacy": [
+        "당신의 프라이버시를 존중하는 AI 어시스턴트"
+      ],
+      "Basic chat history": [
+        "기본 채팅 기록"
+      ],
+      "Data never used for AI training": [
+        "대화 데이터가 AI학습에 절대 사용되지 않음"
+      ],
+      "Full chat history with search": [
+        "검색 기능이 포함된 전체 채팅 기록"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "고속 채팅 및 고급 AI 기능"
+      ],
+      "Limited daily chats": [
+        "제한된 일일 채팅"
+      ],
+      "Limited favorites": [
+        "제한된 즐겨찾기"
+      ],
+      "Open source": [
+        "오픈 소스"
+      ],
+      "Strict no-logs policy": [
+        "엄격한 노로그 정책"
+      ],
+      "Unlimited daily chats": [
+        "무제한 일일 채팅"
+      ],
+      "Unlimited favorites for quick access": [
+        "빠른 접근을 위한 무제한 즐겨찾기"
+      ],
+      "Upload and query multiple large files": [
+        "다중 대용량 파일 업로드 및 확인"
+      ],
+      "Upload and query small files": [
+        "저용량 파일 업로드 및 확인"
+      ],
+      "Web search access": [
+        "웹 검색 접근"
+      ]
+    },
+    "collider_2025: Navigation": {
+      "Back to conversations": [
+        "대화로 돌아가기"
+      ],
+      "Conversations": [
+        "대화"
       ]
     },
     "color": {
@@ -4293,11 +4465,17 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "계속 친구들을 초대할 수 있으나, 더 이상 크레딧을 얻을 수 없습니다"
       ],
+      "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
+        "${ PASS_APP_NAME } 브라우저 확장 프로그램에서 특정 자동 기능(자동 완성, 자동 제안, 자동 저장)이 실행되지 않아야 하는 도메인 목록을 사용자 지정할 수 있습니다."
+      ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME }에서 비밀번호를 생성할 때 조직 구성원이 사용할 비밀번호에 대한 규칙을 강제할 수 있습니다."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal 포맷(ICS 파일)으로 이벤트를 불러올 수 있습니다. 파일 크기가 최대 ${ MAX_IMPORT_FILE_SIZE_STRING } 및 최대 ${ MAX_IMPORT_EVENTS_STRING }개의 이벤트를 포함하고 있어야 합니다. 만약 파일이 너무 크다면, 작은 파일들로 분할해 주세요."
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "초대한 사용자가 ${ BRAND_NAME } 플랜을 구입하면 사용자는 ${ BRAND_NAME } 크레딧 ${ referralInfo.referrerRewardAmount }을(를) 받게 되며, 초대한 사람 또한 처음 시작하는 데 필요한 ${ referralInfo.refereeRewardAmount } 크레딧을 받게 됩니다."
       ]
     },
     "description": {
@@ -5316,10 +5494,10 @@
         "긴급 접근은 **유효한 상황**이 발생하여 사용자가 다른 사용자의 계정을 관리해야 할 경우에만 요청하십시오."
       ],
       "People I trust": [
-        "신뢰하는 사용자"
+        "내가 신뢰하는 사용자"
       ],
       "People who trust me": [
-        "내가 신뢰하는 사람들"
+        "나를 신뢰하는 사용자"
       ],
       "Protect your legacy with emergency access": [
         "긴급 접근으로 당신의 유산을 보호하세요"
@@ -5409,7 +5587,7 @@
         "언제든지 접근 권한을 삭제하여 사용자의 계정에 대한 독점적인 통제권을 되찾을 수 있습니다."
       ],
       "You have not been designated as an emergency contact for anyone yet.": [
-        "아직 긴급 연락처로 지정한 사람이 없습니다."
+        "아직 나를 비상 연락처로 지정한 사용자가 없습니다."
       ],
       "You reached the maximum of ${ controller.meta.count } trusted contact.": [
         "최대 신뢰할 수 있는 연락처 개수, ${ controller.meta.count }개에 도달했습니다."
@@ -7236,6 +7414,9 @@
       "Device": [
         "기기"
       ],
+      "Domain": [
+        "도메인"
+      ],
       "Enter your email address": [
         "이메일 주소를 입력하세요"
       ],
@@ -7268,6 +7449,9 @@
       ],
       "Organization key fingerprint": [
         "조직 키 지문"
+      ],
+      "Password ends with": [
+        "비밀번호 마지막 글자"
       ],
       "Payment details": [
         "결제 수단 상세 정보"
@@ -7310,6 +7494,9 @@
       ],
       "User": [
         "사용자"
+      ],
+      "Username": [
+        "사용자 이름"
       ]
     },
     "Header for addresses table": {
@@ -7896,6 +8083,24 @@
       "${ n } address": [
         "${ n }개 주소"
       ],
+      "${ name } for Android": [
+        "안드로이드용 ${ name }"
+      ],
+      "${ name } for GNU/Linux": [
+        "GNU/리눅스용 ${ name }"
+      ],
+      "${ name } for iOS": [
+        "iOS용 ${ name }"
+      ],
+      "${ name } for macOS": [
+        "맥용 ${ name }"
+      ],
+      "${ name } for Web": [
+        "웹용 ${ name }"
+      ],
+      "${ name } for Windows": [
+        "윈도우용 ${ name }"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: 무단 이메일을 격리하거나 거부하지 마세요. 보통, 이 정책을 문제 해결이나 테스트에만 사용합니다."
       ],
@@ -7976,6 +8181,12 @@
       ],
       "${ storage } storage": [
         "저장공간 ${ storage }"
+      ],
+      "${ url } added.": [
+        "${ url } 추가됨."
+      ],
+      "${ url } deleted.": [
+        "${ url } 삭제됨."
       ],
       "${ userFound } user found": [
         "${ userFound }명 사용자 찾음"
@@ -8237,6 +8448,9 @@
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "이메일 별칭은 이메일 주소와 같이 동작하지만 스팸을 줄여주고 당신의 실제 이메일 주소와 신원을 감추어 줍니다."
+      ],
+      "An error occurred while communicating with **${ applicationName }**": [
+        "**${ applicationName }** 대화 중 오류 발생"
       ],
       "An error occurred while communicating with the extension": [
         "확장과 통신하는데 문제가 발생했습니다"
@@ -8951,6 +9165,9 @@
       ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } 받기"
+      ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "구독하는 친구 한 명당 **${ referrerRewardAmount } 크레딧**을 받아보세요."
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "${ BRAND_NAME } 계정 생성 및 초대 수락하여 접근하세요."
@@ -10476,6 +10693,9 @@
       "URL link": [
         "URL 링크"
       ],
+      "URL settings updated.": [
+        "URL 설정 업데이트되었습니다."
+      ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "비밀번호 관리자를 이용하면 비밀번호를 생성하고 안전하게 보관하여 강력한 비밀번호를 보장받고 로그인이 편리해집니다."
       ],
@@ -10875,6 +11095,9 @@
       "You may be redirected to your bank’s website.": [
         "은행 웹사이트로 리다이렉트 됩니다."
       ],
+      "You may now start using **${ applicationName }**": [
+        "이제 **${ applicationName }** 사용이 가능합니다."
+      ],
       "You may now start using the extension": [
         "확장을 사용할 수 있습니다"
       ],
@@ -11069,6 +11292,9 @@
       ],
       "You’re all set": [
         "모든 준비가 완료되었어요"
+      ],
+      "Zero charge today": [
+        "오늘 요금은 부과되지 않음"
       ],
       "Zoom meeting": [
         "Zoom 미팅"
@@ -11653,6 +11879,9 @@
       ],
       "Account storage": [
         "계정 저장공간"
+      ],
+      "Action": [
+        "동작"
       ],
       "Actions": [
         "작업"
@@ -12752,6 +12981,9 @@
       "Verify keys with Key Transparency": [
         "Key Transparency로 키 인증하기"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }으로 화상 회의"
+      ],
       "Video conferencing with Zoom": [
         "Zoom 화상 회의"
       ],
@@ -13520,6 +13752,9 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "${ BRAND_NAME } 계정에 로그인하여 ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } 등의 모든 암호화 된 ${ BRAND_NAME } 서비스를 사용해보세요. 계정이 없으신가요? 무료로 계정을 만들 수 있어요."
       ],
+      "Take control of your data with end-to-end encryption": [
+        "종단간 암호화로 당신의 데이터에 주도권을 잡으세요"
+      ],
       "Try ${ BRAND_NAME } for free with this link": [
         "${ BRAND_NAME }을(를) 이 링크로 무료 체험하세요."
       ]
@@ -13724,6 +13959,9 @@
       ],
       "Back": [
         "이전"
+      ],
+      "Back to ${ MEET_SHORT_APP_NAME }": [
+        "${ MEET_SHORT_APP_NAME }으로 돌아가기"
       ],
       "Back to calendar": [
         "캘린더로 돌아가기"
@@ -14889,6 +15127,9 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } 생성됨"
       ],
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "${ MEET_APP_NAME } 화상 회의 설정이 업데이트 되었습니다"
+      ],
       "${ reason } has been disabled": [
         "${ reason }이(가) 비활성화 되었습니다."
       ],
@@ -14909,6 +15150,12 @@
       ],
       "Email notifications have been enabled": [
         "이메일 알림이 활성화되었습니다."
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "${ MEET_APP_NAME } 화상 회의 설정 업데이트 실패"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "줌 화상 회의 설정 업데이트 실패"
       ],
       "Invalid code": [
         "잘못된 코드입니다."
@@ -14958,8 +15205,8 @@
       "Two-factor authentication is not required anymore": [
         "2단계 인증이 모든 구성원에게 요구되지 않습니다."
       ],
-      "Video conferencing settings have been updated": [
-        "화상 회의 설정이 변경되었습니다."
+      "Zoom video conferencing settings have been updated": [
+        "줌 화상 회의 설정이 업데이트 되었습니다"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15097,7 +15344,7 @@
         "매년 결제로 구독하여 최고의 할인 혜택을 받아가세요"
       ],
       "Save": [
-        "절약되는 가격:"
+        "할인"
       ],
       "Save big when you pay annually": [
         "매년 결제로 더 크게 절약하세요"
@@ -18096,6 +18343,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "모든 기본 ${ BRAND_NAME } 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
+        "그리고 구독시 크레딧으로 ${ referralInfo.uiData.refereeRewardAmount }(을)를 받으세요."
+      ],
       "Billing Cycle": [
         "결제 주기"
       ],
@@ -18158,6 +18408,12 @@
       ],
       "Free": [
         "Free"
+      ],
+      "Free for ${ TRIAL_DURATION_DAYS } days": [
+        "${ TRIAL_DURATION_DAYS }일 무료 체험"
+      ],
+      "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "${ referralInfo.uiData.refereeRewardAmount }의 크레딧 받기"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "안전한 ${ MAIL_APP_NAME } 주소를 받거나 ${ internalButton }"
@@ -18237,6 +18493,9 @@
       "Select ${ title }": [
         "${ title } 선택"
       ],
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
+        "서비스를 선택하여 프리미엄 버전을 ${ TRIAL_DURATION_DAYS }일간 무료로 경험해 보세요. 신용카드 정보는 필요하지 않습니다."
+      ],
       "Selected": [
         "선택됨"
       ],
@@ -18276,8 +18535,14 @@
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "구독시 매월 ${ priceWithDiscountPerMonth }(으)로 갱신됩니다."
       ],
+      "To redeem on your next paid subscription.": [
+        "다음 유료 구독 시 사용하실 수 있습니다."
+      ],
       "Total": [
         "합계"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
+        "${ BRAND_NAME }을(를) ${ TRIAL_DURATION_DAYS }일간 무료로 체험해 보세요."
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "14일 동안 무료로 ${ BRAND_NAME } 체험하기"
@@ -20836,6 +21101,9 @@
       "Gift code": [
         "기프트 코드"
       ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "${ refereeRewardAmount }을(를) 드리고 2주간 무료로 제공합니다. ${ referrerRewardAmount } 크레딧을 받아보세요."
+      ],
       "Group": [
         "그룹"
       ],
@@ -21066,6 +21334,9 @@
       ],
       "Passwords made easy": [
         "간편해진 비밀번호"
+      ],
+      "Pause list": [
+        "중단 목록"
       ],
       "Pay invoice": [
         "청구서 지불"
@@ -21556,6 +21827,9 @@
       "You have no resolved alerts": [
         "해결된 알림 없음"
       ],
+      "You've successfully signed in!": [
+        "로그인 성공!"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "사용자의 ${ planName } 무료 체험이 ${ textDate }에 종료됩니다."
       ],
@@ -21718,8 +21992,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "조직 관리자는 다른 구성원의 사용자 계정을 관리하고 관리자 권한을 부여할 수 있습니다. 주 관리자만 조직의 플랜을 수정할 수 있습니다."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "캘린더 초대장에 화상 회의 링크를 원활하게 추가할 수 있습니다."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "캘린더 초대장에 ${ MEET_APP_NAME } 화상 회의 링크를 손쉽게 추가할 수 있습니다."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "캘린더 초대장에 줌 화상 회의 링크를 손쉽게 추가할 수 있습니다."
       ],
       "Any protection applied to suspicious activity": [
         "의심스러운 활동에 적용되는 모든 보호"

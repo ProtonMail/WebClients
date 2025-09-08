@@ -1012,6 +1012,9 @@
       "Open": [
         "Ouvrir"
       ],
+      "Open ${ applicationName }": [
+        "Ouvrir ${ applicationName }"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ouvrir les paramètres de ${ CALENDAR_APP_NAME }"
       ],
@@ -2080,6 +2083,9 @@
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_DEDICATED_IPS } serveur dédié maximum pendant la version d'essai."
       ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_LUMO_SEATS } accès à ${ LUMO_SHORT_APP_NAME } pendant la période d’essai."
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_SCRIBE_SEATS } accès maximum à Scribe pendant la période d’essai."
       ],
@@ -2870,12 +2876,84 @@
         "Développer"
       ]
     },
+    "collider_2025: app-switcher": {
+      "Chat with a private AI assistant": [
+        "Discuter avec un assistant IA privé"
+      ]
+    },
+    "collider_2025: feature": {
+      "Basic chat history": [
+        "Historique de chat basique"
+      ],
+      "Full chat history with search": [
+        "Historique complet des discussions avec recherche"
+      ],
+      "Limited daily chats": [
+        "Chats quotidiens limités"
+      ],
+      "Unlimited daily chats": [
+        "Chats quotidiens illimités"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoris illimités pour un accès rapide"
+      ],
+      "Upload and query multiple large files": [
+        "Importer et consulter plusieurs fichiers volumineux"
+      ],
+      "Web search access": [
+        "Accès à la recherche web"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } est une IA axée sur la confidentialité qui vous aide à accomplir davantage tout en garantissant la sécurité de vos données. Libérez tout son potentiel et profitez d'un accès anticipé aux nouvelles fonctionnalités dès leur introduction."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Ajouter ${ LUMO_APP_NAME }"
+      ],
+      "Basic chat history": [
+        "Historique de chat basique"
+      ],
+      "Data never used for AI training": [
+        "Données jamais utilisées pour l'entraînement de l'IA"
+      ],
+      "Full chat history with search": [
+        "Historique complet des discussions avec recherche"
+      ],
+      "Limited daily chats": [
+        "Chats quotidiens limités"
+      ],
+      "Limited favorites": [
+        "Favoris limités"
+      ],
+      "Open source": [
+        "Open source"
+      ],
+      "Strict no-logs policy": [
+        "Politique stricte de non-journalisation (no log)"
+      ],
+      "Unlimited daily chats": [
+        "Chats quotidiens illimités"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoris illimités pour un accès rapide"
+      ],
+      "Upload and query multiple large files": [
+        "Importer et consulter plusieurs fichiers volumineux"
+      ],
+      "Upload and query small files": [
+        "Importer et consulter de petits fichiers"
+      ],
+      "Web search access": [
+        "Accès à la recherche web"
+      ]
+    },
+    "collider_2025: Navigation": {
+      "Back to conversations": [
+        "Retour aux conversations"
+      ],
+      "Conversations": [
+        "Conversations"
       ]
     },
     "color": {
@@ -5273,9 +5351,17 @@
       "${ BRAND_NAME } Account email": [
         "Adresse e-mail du compte ${ BRAND_NAME }"
       ],
+      "${ days } day left": [
+        "${ days } jour restant",
+        "${ days } jours restants"
+      ],
       "${ hours } hour left": [
         "${ hours } heure restante",
         "${ hours } heures restantes"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes } minute restante",
+        "${ minutes } minutes restantes"
       ],
       "${ n } day": [
         "${ n } jour",
@@ -5333,7 +5419,7 @@
         "Modifier le temps d'attente"
       ],
       "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
-        "Choisissez quelqu'un à qui vous faites confiance avec vos données. Cette personne doit déjà posséder un compte ${ BRAND_NAME }."
+        "Choisissez quelqu'un à qui vous pouvez confier vos données en toute confiance. Cette personne doit déjà posséder un compte ${ BRAND_NAME }."
       ],
       "Disabled": [
         "Désactivé"
@@ -5451,7 +5537,7 @@
         "Cela prendra effet immédiatement."
       ],
       "Time required before automatically giving access": [
-        "Temps d’attente avant d'accès automatique"
+        "Temps d’attente avant accès automatique"
       ],
       "Time required before automatically giving you access": [
         "Temps d’attente avant de vous donner l'accès automatiquement"
@@ -8030,6 +8116,24 @@
       "${ n } address": [
         "${ n } adresse",
         "${ n } adresses"
+      ],
+      "${ name } for Android": [
+        "${ name } pour Android"
+      ],
+      "${ name } for GNU/Linux": [
+        "${ name } pour GNU/Linux"
+      ],
+      "${ name } for iOS": [
+        "${ name } pour iOS"
+      ],
+      "${ name } for macOS": [
+        "${ name } pour macOS"
+      ],
+      "${ name } for Web": [
+        "${ name } pour le web"
+      ],
+      "${ name } for Windows": [
+        "${ name } pour Windows"
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none } : ne met pas en quarantaine ou ne rejette pas les messages non autorisés. Cette règle est généralement utilisée à des fins de dépannage ou de test."
@@ -11581,7 +11685,7 @@
         "Déplacer vers le dossier Brouillons"
       ],
       "Go to Inbox": [
-        "Déplacer vers le dossier Boite de réception"
+        "Déplacer vers le dossier Boîte de réception"
       ],
       "Go to Sent": [
         "Déplacer vers le dossier Envoyés"
@@ -11638,7 +11742,7 @@
         "Déplacer vers les archives"
       ],
       "Move to Inbox": [
-        "Déplacer vers la boite de réception"
+        "Déplacer vers la boîte de réception"
       ],
       "Move to Spam": [
         "Déplacer vers le dossier Indésirables/spam"
@@ -12968,6 +13072,9 @@
       "Verify keys with Key Transparency": [
         "Vérifier les clés en utilisant le système Key Transparency"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Vidéoconférence avec ${ MEET_APP_NAME }"
+      ],
       "Video conferencing with Zoom": [
         "Vidéoconférence avec Zoom"
       ],
@@ -13950,6 +14057,9 @@
       ],
       "Back": [
         "Précédent"
+      ],
+      "Back to ${ MEET_SHORT_APP_NAME }": [
+        "Revenir à ${ MEET_SHORT_APP_NAME }"
       ],
       "Back to calendar": [
         "Revenir au calendrier"
@@ -15211,9 +15321,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "L'authentification à deux facteurs (A2F) n'est plus obligatoire."
-      ],
-      "Video conferencing settings have been updated": [
-        "Les paramètres de vidéoconférence ont été mis à jour."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15356,7 +15463,7 @@
         "Payez à l'année et assurez-vous de bénéficier de notre meilleure offre."
       ],
       "Save": [
-        "Enregistrer"
+        "Économisez"
       ],
       "Save big when you pay annually": [
         "Économisez un maximum en optant pour le paiement annuel !"
@@ -21920,6 +22027,9 @@
       "You have no resolved alerts": [
         "Vous n'avez aucune alerte résolue."
       ],
+      "You've successfully signed in!": [
+        "Vous êtes bien connecté !"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Votre essai gratuit ${ planName } se termine le ${ textDate }."
       ],
@@ -22082,8 +22192,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Un administrateur peut gérer les comptes utilisateur ou accorder des droits administrateur aux autres utilisateurs. Seul l'administrateur principal peut modifier l'abonnement de l'organisation."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Permet d'ajouter de manière transparente des liens de vidéoconférence à vos invitations de calendrier."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Permet d'ajouter de manière transparente des liens de vidéoconférence de ${ MEET_APP_NAME } à vos invitations de calendrier."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Permet d'ajouter de manière transparente des liens de vidéoconférence Zoom à vos invitations de calendrier."
       ],
       "Any protection applied to suspicious activity": [
         "Toute protection appliquée aux activités suspectes"
