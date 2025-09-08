@@ -149,15 +149,11 @@ const ensureVariablesAreNotUsedTwiceNgettext = (node, context, singularArg, plur
 
 export default {
     meta: {
-        type: 'problem',
         docs: {
             description: 'Ensure proper usage of msgid template tag and counter variable in ngettext calls',
             category: 'Possible Errors',
             recommended: true,
-            url: null,
         },
-        fixable: null,
-        schema: [],
     },
     create: (context) => {
         return {
