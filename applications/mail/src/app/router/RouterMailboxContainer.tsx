@@ -9,14 +9,15 @@ import {
     PrivateMainArea,
     useActiveBreakpoint,
 } from '@proton/components';
-import { CATEGORY_LABEL_IDS_SET, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { isCategoryLabel } from '@proton/mail/helpers/location';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 import { isAdminOrLoginAsAdmin } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 
-import { useCategoryView } from 'proton-mail/components/categoryView/useCategoryView';
+import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
 import MailHeader from 'proton-mail/components/header/MailHeader';
 import useScrollToTop from 'proton-mail/components/list/useScrollToTop';
 import { NewsletterSubscriptionView } from 'proton-mail/components/view/NewsletterSubscription/NewsletterSubscriptionView';
@@ -55,7 +56,7 @@ export const RouterMailboxContainer = () => {
 
     const [isResizing, setIsResizing] = useState(false);
 
-    const categoryViewControl = useCategoryView();
+    const categoryViewControl = useCategoriesView();
 
     /**
      * Temporary: Router mailbox side effects
@@ -84,7 +85,7 @@ export const RouterMailboxContainer = () => {
             : MAILBOX_LABEL_IDS.INBOX;
 
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[destination]}`} />;
-    } else if (!categoryViewControl.categoryViewAccess && CATEGORY_LABEL_IDS_SET.has(labelID as MAILBOX_LABEL_IDS)) {
+    } else if (!categoryViewControl.categoryViewAccess && isCategoryLabel(labelID)) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
