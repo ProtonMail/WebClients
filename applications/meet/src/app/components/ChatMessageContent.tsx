@@ -5,7 +5,15 @@ const URL_REGEX = /https:\/\/[^\s<]+[^<.,:;"')\]\s]/g;
 
 const validateUrl = (url: string) => {
     try {
-        return { valid: true, url: new URL(url).href };
+        const parsedUrl = new URL(url);
+
+        if (parsedUrl.protocol !== 'https:' && parsedUrl.protocol !== 'http:') {
+            return { valid: false, url };
+        }
+
+        parsedUrl.hash = '';
+        parsedUrl.search = '';
+        return { valid: true, url: parsedUrl.href };
     } catch {
         return { valid: false, url };
     }
