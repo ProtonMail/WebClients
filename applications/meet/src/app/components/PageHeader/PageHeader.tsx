@@ -10,6 +10,7 @@ import UserDropdown from '@proton/components/containers/heading/UserDropdown';
 import AuthenticatedBugModal from '@proton/components/containers/support/AuthenticatedBugModal';
 import BugModal from '@proton/components/containers/support/BugModal';
 import { IcBug } from '@proton/icons';
+import { isUrlPasswordValid } from '@proton/meet/utils/isUrlPasswordValid';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
 import { APPS } from '@proton/shared/lib/constants';
 import logo from '@proton/styles/assets/img/meet/logo-with-name.png';
@@ -34,6 +35,16 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeader
                 returnUrl,
             },
         });
+
+    const handleSignInClick = () => {
+        const hash = window.location.hash;
+
+        if (!isUrlPasswordValid(hash)) {
+            return window.location.pathname.replace('/guest', '');
+        }
+
+        handleSignIn(window.location.pathname.replace('/guest', '') + window.location.hash);
+    };
 
     const buttons = (
         <div className="flex flex-nowrap gap-2 items-center w-custom" style={{ '--w-custom': 'fit-content' }}>
@@ -78,17 +89,7 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeader
                     {buttons}
                 </div>
                 {guestMode ? (
-                    <Button
-                        className="action-button rounded-full border-none"
-                        onClick={() =>
-                            handleSignIn(
-                                window.location.pathname.replace('/guest', '') +
-                                    window.location.search +
-                                    window.location.hash
-                            )
-                        }
-                        size="large"
-                    >
+                    <Button className="action-button rounded-full border-none" onClick={handleSignInClick} size="large">
                         {c('Action').t`Sign in`}
                     </Button>
                 ) : (
