@@ -8,11 +8,14 @@ import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
 
+import { useCategoriesShortcuts } from 'proton-mail/components/categoryView/useCategoriesShortcuts';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
     const history = useHistory<any>();
     const { Shortcuts, ShowMoved, AlmostAllMail } = useMailModel('MailSettings');
+
+    const { categoriesAndInboxShortcuts } = useCategoriesShortcuts();
 
     const navigateTo = (labelID: MAILBOX_LABEL_IDS) => {
         history.push(`/${LABEL_IDS_TO_HUMAN[labelID]}`);
@@ -20,17 +23,7 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
 
     return Shortcuts
         ? [
-              [
-                  'G',
-                  'I',
-                  (e) => {
-                      if (!isBusy(e)) {
-                          e.stopPropagation();
-                          e.preventDefault();
-                          navigateTo(MAILBOX_LABEL_IDS.INBOX);
-                      }
-                  },
-              ],
+              ...categoriesAndInboxShortcuts,
               [
                   'G',
                   'D',

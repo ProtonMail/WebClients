@@ -4,27 +4,15 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { mailTestRender } from 'proton-mail/helpers/test/helper';
 
-import { getCategoryData } from '../categoriesHelpers';
 import * as helpers from '../categoriesStringHelpers';
+import { mockActiveCategoriesData } from '../testUtils/helpers';
 import { CategoriesTabs } from './CategoriesTabs';
-
-const mockCategoriesData = [
-    MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
-    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-    MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
-    MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
-    MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
-    MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
-    MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
-]
-    .map(getCategoryData)
-    .map((data) => ({ ...data, checked: true }));
 
 jest.mock('../useCategoriesView', () => ({
     useCategoriesView: jest.fn(() => ({
         categoriesStore: [],
         categoriesTabs: [],
-        activeCategoriesTabs: mockCategoriesData,
+        activeCategoriesTabs: mockActiveCategoriesData,
     })),
 }));
 
