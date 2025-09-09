@@ -1,6 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import { protonDomainsReducer } from '@proton/account';
+import { protonDomainsReducer, retentionPoliciesReducer } from '@proton/account';
 import {
     calendarSettingsReducer,
     calendarsBootstrapReducer,
@@ -43,6 +43,7 @@ export const rootReducer = combineReducers({
     ...securityCenterReducer,
     ...breachesCountReducer,
     ...protonDomainsReducer,
+    ...retentionPoliciesReducer,
     ...newsletterSubscriptionsReducer,
 });
 

@@ -7,6 +7,7 @@ import { getRetentionRules } from '@proton/shared/lib/api/retentionPolicies';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
 import type { RetentionRule } from '@proton/shared/lib/interfaces/RetentionRule';
+import { isAdminOrLoginAsAdmin } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
 import { getInitialModelState } from '../initialModelState';
@@ -30,13 +31,14 @@ const initialState: SliceState = getInitialModelState<RetentionRule[]>();
 export const selectRetentionPolicies = (state: RetentionPoliciesState) => state[name];
 
 const canFetch = (user: UserModel, organization: Organization) => {
-    return user.isAdmin && organization?.ID;
+    return isAdminOrLoginAsAdmin(user) && organization?.ID;
 };
 
 const modelThunk = createAsyncModelThunk<Model, RetentionPoliciesState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument, dispatch }) => {
         const [user, organization] = await Promise.all([dispatch(userThunk()), dispatch(organizationThunk())]);
-        if (!canFetch(user, organization)) {
+        const flag = extraArgument.unleashClient.isEnabled('DataRetentionPolicy');
+        if (!flag || !canFetch(user, organization)) {
             return [];
         }
         return extraArgument
