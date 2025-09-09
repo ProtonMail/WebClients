@@ -202,9 +202,6 @@
       "Change page": [
         "Seite wechseln"
       ],
-      "Change password": [
-        "Passwort ändern"
-      ],
       "Change sorting": [
         "Reihenfolge ändern"
       ],
@@ -485,6 +482,9 @@
       ],
       "Edit address": [
         "E-Mail-Adresse bearbeiten"
+      ],
+      "Edit categories": [
+        "Kategorien bearbeiten"
       ],
       "Edit draft": [
         "Entwurf bearbeiten"
@@ -1458,10 +1458,6 @@
       ],
       "Trust": [
         "Vertrauen"
-      ],
-      "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -5219,8 +5215,8 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Aliasse können nicht verwendet werden, wenn ein zusätzliches Passwort in ${ PASS_APP_NAME } aktiviert ist."
       ],
-      "An error occured with the categories": [
-        "Ein Fehler ist bei den Kategorien aufgetreten."
+      "An error occurred with the categories": [
+        "Bei den Kategorien ist ein Fehler aufgetreten."
       ],
       "App currently unavailable": [
         "App ist zurzeit nicht verfügbar"
@@ -7338,7 +7334,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -8492,8 +8489,8 @@
       "You are about to open your default browser and visit:": [
         "Du bist dabei, deinen Standardbrowser zu öffnen und folgende Seite zu besuchen:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Du bist derzeit als „${ user.Name }“ (${ user.Email }) angemeldet."
+      "You are currently signed in as ${ username }.": [
+        "Du bist derzeit als „${ username }“ angemeldet."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du verwendest mehr Speicherplatz, als in einem ${ downgradedPlanName }-Abonnement enthalten sind. Bitte lösche einige Daten, um zu downgraden."
@@ -9122,6 +9119,9 @@
       "Authenticator app": [
         "Authentifizierungs-App"
       ],
+      "Automated confirmations and alerts": [
+        "Automatische Bestätigungen und Benachrichtigungen"
+      ],
       "BCC": [
         "BCC"
       ],
@@ -9133,6 +9133,9 @@
       ],
       "Blind Carbon Copy": [
         "Blindkopie"
+      ],
+      "Bookings, billings, and orders": [
+        "Buchungen, Abrechnungen und Bestellungen"
       ],
       "Browser": [
         "Browser"
@@ -9230,6 +9233,9 @@
       "Date:": [
         "Datum:"
       ],
+      "Deals, offers, marketing emails": [
+        "Angebote, Aktionen, Marketing-E-Mails"
+      ],
       "Delete": [
         "Löschen"
       ],
@@ -9241,6 +9247,9 @@
       ],
       "Did not follow instructions": [
         "Hat die Anweisungen nicht befolgt"
+      ],
+      "Discussion board posts and threads": [
+        "Beiträge und Threads im Diskussionsforum"
       ],
       "Do you have any suggestions for our team?": [
         "Hast du irgendwelche Vorschläge für unser Team?"
@@ -9470,6 +9479,9 @@
       "No results found": [
         "Keine Ergebnisse gefunden"
       ],
+      "Non-promotional content and news": [
+        "Werbefreie Inhalte und Neuigkeiten"
+      ],
       "Not factually correct": [
         "Faktisch nicht korrekt"
       ],
@@ -9581,6 +9593,9 @@
       "Search in": [
         "Suchen in"
       ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Wähle die Kategorien aus, die du einschließen möchtest, und aktiviere Benachrichtigungen, um über neue E-Mails in einer Kategorie benachrichtigt zu werden."
+      ],
       "Send auto-reply": [
         "Automatische Antwort senden"
       ],
@@ -9595,6 +9610,9 @@
       ],
       "Social": [
         "Soziale Medien"
+      ],
+      "Social media updates and activity": [
+        "Aktualisierungen und Aktivitäten in sozialen Medien"
       ],
       "Starred": [
         "Markiert"
@@ -9662,9 +9680,6 @@
       "Undisclosed Recipients": [
         "Verborgene Empfänger"
       ],
-      "Unknown": [
-        "Unbekannt"
-      ],
       "Unsafe or problematic": [
         "Unsicher oder problematisch"
       ],
@@ -9718,6 +9733,9 @@
       ],
       "Writing assistant": [
         "Schreibassistent"
+      ],
+      "You cannot disable all categories": [
+        "Du kannst nicht alle Kategorien deaktivieren"
       ],
       "Your alias": [
         "Dein Alias"
@@ -12398,7 +12416,7 @@
     },
     "q3campaign_2025: Info": {
       "${ discountPercent }% off": [
-        "${ discountPercent } % Rabatt"
+        "-${ discountPercent } %"
       ],
       "${ normalPricePerMonth } /month": [
         "${ normalPricePerMonth }/Monat"
@@ -14414,9 +14432,6 @@
       "Account security": [
         "Kontosicherheit"
       ],
-      "Account temporarily locked": [
-        "Konto vorübergehend gesperrt"
-      ],
       "Action all conversations": [
         "Auf alle Unterhaltungen anwenden"
       ],
@@ -14591,6 +14606,9 @@
       ],
       "Customize calendar import": [
         "Kalender-Import anpassen"
+      ],
+      "Customize categories": [
+        "Kategorien anpassen"
       ],
       "Customize your mail import": [
         "Mail-Import anpassen"

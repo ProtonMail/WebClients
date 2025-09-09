@@ -196,9 +196,6 @@
       "Change page": [
         "Lapozás"
       ],
-      "Change password": [
-        "Jelszó módosítása"
-      ],
       "Change sorting": [
         "Rendezés módosítása"
       ],
@@ -1416,6 +1413,9 @@
       ],
       "Trust": [
         "Megbízható"
+      ],
+      "Trust key": [
+        "Megbízható kulcs"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -7067,6 +7067,7 @@
         "Inicializálás…"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -8197,9 +8198,6 @@
       "You are about to open your default browser and visit:": [
         "Egy új böngésző fülön a következő címet fogja megnyitni:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve."
-      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Jelenleg több tárhelyet használ mint a ${ downgradedPlanName } csomagban elérhető. Töröljön vagy távolítson el adatokat a csomagváltáshoz."
       ],
@@ -9315,9 +9313,6 @@
       ],
       "Undisclosed Recipients": [
         "Címzettek nem láthatók"
-      ],
-      "Unknown": [
-        "Ismeretlen"
       ],
       "Unsafe or problematic": [
         "Nem biztonságos vagy problémás"

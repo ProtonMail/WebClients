@@ -202,9 +202,6 @@
       "Change page": [
         "Changer de page"
       ],
-      "Change password": [
-        "Changer le mot de passe"
-      ],
       "Change sorting": [
         "Modifier le tri"
       ],
@@ -485,6 +482,9 @@
       ],
       "Edit address": [
         "Modifier l'adresse"
+      ],
+      "Edit categories": [
+        "Modifier les catégories"
       ],
       "Edit draft": [
         "Modifier le brouillon"
@@ -1460,8 +1460,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance",
-        "Clés de confiance"
+        "La clé est fiable"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -5216,7 +5215,7 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Les alias ne peuvent pas être utilisés lorsqu'un mot de passe supplémentaire est activé dans ${ PASS_APP_NAME }."
       ],
-      "An error occured with the categories": [
+      "An error occurred with the categories": [
         "Une erreur est survenue avec les catégories"
       ],
       "App currently unavailable": [
@@ -7335,7 +7334,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images."
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8489,8 +8489,8 @@
       "You are about to open your default browser and visit:": [
         "Vous allez ouvrir votre navigateur par défaut et consulter :"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Vous êtes actuellement connecté en tant que ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Vous êtes actuellement connecté en tant que ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Vous utilisez plus d'espace de stockage que ce qui est prévu dans l'abonnement ${ downgradedPlanName }. Nous vous invitons à supprimer ou à retirer des données pour pouvoir passer à un abonnement inférieur."
@@ -9131,6 +9131,9 @@
       "Blind Carbon Copy": [
         "Copie carbone invisible"
       ],
+      "Bookings, billings, and orders": [
+        "Réservations, facturations et commandes"
+      ],
       "Browser": [
         "Navigateur"
       ],
@@ -9226,6 +9229,9 @@
       ],
       "Date:": [
         "Date :"
+      ],
+      "Deals, offers, marketing emails": [
+        "Offres, promotions, messages marketing"
       ],
       "Delete": [
         "Supprimer"
@@ -9467,6 +9473,9 @@
       "No results found": [
         "Aucun résultat trouvé."
       ],
+      "Non-promotional content and news": [
+        "Contenu non-promotionnel et actualités"
+      ],
       "Not factually correct": [
         "Les faits ne sont pas corrects."
       ],
@@ -9578,6 +9587,9 @@
       "Search in": [
         "Rechercher dans"
       ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Sélectionnez les catégories à inclure, et activez les notifications pour être alerté des nouveaux messages dans une catégorie."
+      ],
       "Send auto-reply": [
         "Envoyer une réponse automatique"
       ],
@@ -9659,9 +9671,6 @@
       "Undisclosed Recipients": [
         "Destinataires non divulgués"
       ],
-      "Unknown": [
-        "Inconnu"
-      ],
       "Unsafe or problematic": [
         "Dangereux ou problématique"
       ],
@@ -9715,6 +9724,9 @@
       ],
       "Writing assistant": [
         "Assistant d'écriture"
+      ],
+      "You cannot disable all categories": [
+        "Vous ne pouvez pas désactiver toutes les catégories"
       ],
       "Your alias": [
         "Vos alias"
@@ -14411,9 +14423,6 @@
       "Account security": [
         "Sécurité du compte"
       ],
-      "Account temporarily locked": [
-        "Compte temporairement verrouillé"
-      ],
       "Action all conversations": [
         "Appliquer à toutes les conversations"
       ],
@@ -14588,6 +14597,9 @@
       ],
       "Customize calendar import": [
         "Personnaliser l'importation du calendrier"
+      ],
+      "Customize categories": [
+        "Personnaliser les catégories"
       ],
       "Customize your mail import": [
         "Personnalisez votre importation de messagerie"
