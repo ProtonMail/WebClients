@@ -302,6 +302,10 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 	padding-inline: 1rem;
 	padding-block-start: 1.5rem;
 
+	.scroll-child {
+		overflow-y: scroll;
+	}
+
 	.modal-two-content {
 		display: flex;
 		flex-direction: column;
