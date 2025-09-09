@@ -204,9 +204,6 @@
       "Change page": [
         "Zmeniť stranu"
       ],
-      "Change password": [
-        "Zmeniť heslo"
-      ],
       "Change sorting": [
         "Zmeniť triedenie"
       ],
@@ -1466,6 +1463,9 @@
       ],
       "Trust": [
         "Dôverovať"
+      ],
+      "Trust key": [
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -5285,9 +5285,6 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Aliasy nie je možné použiť, ak je v ${ PASS_APP_NAME } povolené dodatočné heslo."
       ],
-      "An error occured with the categories": [
-        "Došlo k chybe v kategóriách"
-      ],
       "App currently unavailable": [
         "Aplikácia momentálne nie je k dispozícii"
       ],
@@ -7566,7 +7563,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8731,9 +8731,6 @@
       ],
       "You are about to open your default browser and visit:": [
         "Chystáte sa otvoriť váš predvolený prehliadač a navštíviť:"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Momentálne ste prihlásený ako ${ user.Name } (${ user.Email })."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Využívate viac úložiska než je zahrnuté v pláne ${ downgradedPlanName }. Vymažte alebo odstráňte údaje, aby ste mohli plán znížiť, prosím."
@@ -9947,9 +9944,6 @@
       ],
       "Undisclosed Recipients": [
         "Skrytí príjemcovia"
-      ],
-      "Unknown": [
-        "Neznáme"
       ],
       "Unsafe or problematic": [
         "Nebezpečné alebo problematické"
@@ -14850,9 +14844,6 @@
       ],
       "Account security": [
         "Zabezpečenie účtu"
-      ],
-      "Account temporarily locked": [
-        "Účet dočasne zablokovaný"
       ],
       "Action all conversations": [
         "Akcia všetkých konverzácií"

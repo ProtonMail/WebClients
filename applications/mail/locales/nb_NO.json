@@ -202,9 +202,6 @@
       "Change page": [
         "Endre side"
       ],
-      "Change password": [
-        "Endre passord"
-      ],
       "Change sorting": [
         "Endre sortering"
       ],
@@ -1458,10 +1455,6 @@
       ],
       "Trust": [
         "Klarér"
-      ],
-      "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -5219,9 +5212,6 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Aliaser kan ikke brukes når et ekstra passord er aktivert i ${ PASS_APP_NAME }."
       ],
-      "An error occured with the categories": [
-        "Det oppstod en feil med kategoriene"
-      ],
       "App currently unavailable": [
         "App er for øyeblikket utilgjengelig"
       ],
@@ -7338,7 +7328,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8491,9 +8482,6 @@
       ],
       "You are about to open your default browser and visit:": [
         "Du er i ferd med å åpne standardnettleseren din og besøke:"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Du er for øyeblikket pålogget som ${ user.Name } (${ user.Email })."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du bruker mer lagringsplass enn det som er inkludert i en ${ downgradedPlanName }-plan. Slett eller fjern data for å nedgradere."
@@ -9661,9 +9649,6 @@
       ],
       "Undisclosed Recipients": [
         "Ikke avslørte mottakere"
-      ],
-      "Unknown": [
-        "Ukjent"
       ],
       "Unsafe or problematic": [
         "Utrygt eller problematisk"
@@ -14318,9 +14303,6 @@
       ],
       "Account security": [
         "Kontosikkerhet"
-      ],
-      "Account temporarily locked": [
-        "Konto midlertidig låst"
       ],
       "Action all conversations": [
         "Handling på alle samtaler"

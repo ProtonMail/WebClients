@@ -199,9 +199,6 @@
       "Change page": [
         "Skift side"
       ],
-      "Change password": [
-        "Skift adgangskode"
-      ],
       "Change sorting": [
         "Skift sortering"
       ],
@@ -1443,6 +1440,9 @@
       ],
       "Trust": [
         "Hav tillid til"
+      ],
+      "Trust key": [
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -7153,7 +7153,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8304,9 +8305,6 @@
       "You are about to open your default browser and visit:": [
         "Du er ved at åbne din standardbrowser og besøge:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email })."
-      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du bruger mere lagerplads end inkluderet i et ${ downgradedPlanName }-abonnement. Slet eller fjern data for at fortsætte nedgraderingen."
       ],
@@ -9452,9 +9450,6 @@
       ],
       "Undisclosed Recipients": [
         "Oplyste modtagere"
-      ],
-      "Unknown": [
-        "Ukendt"
       ],
       "Unsafe or problematic": [
         "Usikkert eller problematisk"

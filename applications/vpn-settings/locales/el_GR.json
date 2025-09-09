@@ -6840,6 +6840,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Για ενεργοποίηση της διεύθυνσής σας, συνδεθείτε στο ${ MAIL_APP_NAME }"
       ],
+      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
+        "Η είσοδος με ένα κλειδί ασφαλείας δεν υποστηρίζεται ακόμα σε όλες τις εφαρμογές. Χωρίς TOTP, η είσοδος σε κάποιες εφαρμογές μπορεί να αποτύχει."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
       ],
@@ -7361,8 +7364,8 @@
       "You already have a free account": [
         "Έχετε ήδη έναν δωρεάν λογαριασμό"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Είστε συνδεδεμένος/η ως ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Είστε συνδεδεμένος/η ως ${ username }."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Προς το παρόν χρησιμοποιείτε ${ ipCount } από ${ ipAddresses } διαθέσιμου αποκλειστικού διακομιστή.",

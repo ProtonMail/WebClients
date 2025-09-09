@@ -7358,9 +7358,6 @@
       "You already have a free account": [
         "Ya tiene una cuenta gratuita"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Actualmente inició sesión como ${ user.Name } (${ user.Email })."
-      ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Actualmente está usando ${ ipCount } de ${ ipAddresses } servidor dedicado disponible.",
         "Actualmente está usando ${ ipCount } de ${ ipAddresses } servidores dedicados disponibles."
@@ -10094,6 +10091,9 @@
       "Downloaded 2FA recovery codes": [
         "Códigos de recuperación 2FA descargados"
       ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "Error al actualizar los ajustes de la videoconferencia de ${ MEET_APP_NAME }"
+      ],
       "Invalid code": [
         "Código inválido"
       ],
@@ -11246,7 +11246,7 @@
     },
     "q3campaign_2025: Info": {
       "${ discountPercent }% off": [
-        "${ discountPercent }% de descuento"
+        "-${ discountPercent }%"
       ],
       "${ normalPricePerMonth } /month": [
         "${ normalPricePerMonth } /mes"
@@ -14578,6 +14578,12 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Los administradores pueden administrar cuentas de usuario y otorgar privilegios de administrador a otros usuarios. Solo el administrador principal puede editar el plan de la organización."
+      ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Permite añadir fácilmente enlaces a videoconferencias de ${ MEET_APP_NAME } en sus invitaciones de calendario."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Permite añadir fácilmente enlaces a videoconferencias de Zoom en sus invitaciones de calendario."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Cambie automáticamente entre los temas preferidos para el día y la noche en sincronía con los modos de día y noche del sistema"

@@ -4956,8 +4956,8 @@
       "You are about to open your default browser and visit:": [
         "您將要開啟預設瀏覽器並造訪："
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "您目前已登入為 ${ user.Name } (${ user.Email })。"
+      "You are currently signed in as ${ username }.": [
+        "您目前已登入為 ${ username }。"
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "您已使用超出 ${ downgradedPlanName } 方案的空間，請刪除一些檔案來釋放空間方可降級。"

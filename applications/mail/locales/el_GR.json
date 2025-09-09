@@ -202,9 +202,6 @@
       "Change page": [
         "Αλλαγή σελίδας"
       ],
-      "Change password": [
-        "Αλλαγή κωδικού πρόσβασης"
-      ],
       "Change sorting": [
         "Αλλαγή ταξινόμησης"
       ],
@@ -1460,8 +1457,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -5219,9 +5215,6 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Τα ψευδώνυμα δεν μπορούν να χρησιμοποιηθούν όταν είναι ενεργοποιημένος ένας επιπλέον κωδικός πρόσβασης στο ${ PASS_APP_NAME }."
       ],
-      "An error occured with the categories": [
-        "Παρουσιάστηκε ένα σφάλμα με τις κατηγορίες"
-      ],
       "App currently unavailable": [
         "Η εφαρμογή δεν είναι διαθέσιμη αυτήν τη στιγμή"
       ],
@@ -7338,7 +7331,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8492,8 +8486,8 @@
       "You are about to open your default browser and visit:": [
         "Πρόκειται να ανοίξετε το προεπιλεγμένο πρόγραμμα περιήγησής σας και να επισκεφθείτε:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Είστε συνδεδεμένος/η ως ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Είστε συνδεδεμένος/η ως ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Χρησιμοποιείτε περισσότερο χώρο αποθήκευσης από αυτόν που περιλαμβάνεται σε ένα πλάνο ${ downgradedPlanName }. Παρακαλούμε διαγράψτε ή αφαιρέστε δεδομένα για να υποβαθμίσετε."
@@ -9661,9 +9655,6 @@
       ],
       "Undisclosed Recipients": [
         "Άγνωστοι παραλήπτες"
-      ],
-      "Unknown": [
-        "Άγνωστο"
       ],
       "Unsafe or problematic": [
         "Μη ασφαλές ή προβληματικό"
@@ -14318,9 +14309,6 @@
       ],
       "Account security": [
         "Ασφάλεια λογαριασμού"
-      ],
-      "Account temporarily locked": [
-        "Ο λογαριασμός έχει κλειδωθεί προσωρινά"
       ],
       "Action all conversations": [
         "Εφαρμογή σε όλες τις συνομιλίες"

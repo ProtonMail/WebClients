@@ -7444,9 +7444,6 @@
       "You already have a free account": [
         "Posiadasz już darmowe konto"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Zalogowano jako ${ user.Name } (${ user.Email })."
-      ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Używasz ${ ipCount } z ${ ipAddresses } dostępnego dedykowanego serwera.",
         "Używasz ${ ipCount } z ${ ipAddresses } dostępnych dedykowanych serwerów.",
@@ -11366,7 +11363,7 @@
     },
     "q3campaign_2025: Info": {
       "${ discountPercent }% off": [
-        "${ discountPercent }% taniej"
+        "-${ discountPercent }%"
       ],
       "${ normalPricePerMonth } /month": [
         "${ normalPricePerMonth } / miesiąc"

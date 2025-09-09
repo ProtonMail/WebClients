@@ -201,9 +201,6 @@
       "Change page": [
         "Ubah halaman"
       ],
-      "Change password": [
-        "Ubah kata sandi"
-      ],
       "Change sorting": [
         "Ubah pengurutan"
       ],
@@ -482,6 +479,9 @@
       ],
       "Edit address": [
         "Sunting alamat"
+      ],
+      "Edit categories": [
+        "Sunting kategori"
       ],
       "Edit draft": [
         "Sunting draf"
@@ -5102,6 +5102,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Alias tidak dapat digunakan pada saat kata sandi tambahan diaktifkan di ${ PASS_APP_NAME }."
       ],
+      "An error occurred with the categories": [
+        "Terjadi kesalahan dengan kategori"
+      ],
       "App currently unavailable": [
         "Aplikasi saat ini tidak tersedia"
       ],
@@ -8273,9 +8276,6 @@
       "You are about to open your default browser and visit:": [
         "Anda akan membuka browser bawaan Anda dan mengunjungi:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Anda sedang masuk sebagai ${ user.Name } (${ user.Email })."
-      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Anda menggunakan ruang penyimpanan lebih dari yang terliput pada paket ${ downgradedPlanName }. Silakan hapus sebagian data untuk dapat menurunkan paket."
       ],
@@ -8880,6 +8880,9 @@
       "Authenticator app": [
         "Aplikasi autentikator"
       ],
+      "Automated confirmations and alerts": [
+        "Konfirmasi dan peringatan otomatis"
+      ],
       "BCC": [
         "BCC"
       ],
@@ -8891,6 +8894,9 @@
       ],
       "Blind Carbon Copy": [
         "Tembusan Tertutup"
+      ],
+      "Bookings, billings, and orders": [
+        "Pembukuan, tagihan, dan pesanan"
       ],
       "Browser": [
         "Browser"
@@ -8988,6 +8994,9 @@
       "Date:": [
         "Tanggal:"
       ],
+      "Deals, offers, marketing emails": [
+        "Penawaran, promosi, dan email pemasaran"
+      ],
       "Delete": [
         "Hapus"
       ],
@@ -8999,6 +9008,9 @@
       ],
       "Did not follow instructions": [
         "Tidak mengikuti perintah"
+      ],
+      "Discussion board posts and threads": [
+        "Postingan dan utas forum diskusi"
       ],
       "Do you have any suggestions for our team?": [
         "Apakah Anda memiliki saran untuk tim kami?"
@@ -9222,6 +9234,9 @@
       "No label found": [
         "Tidak ada label yang ditemukan"
       ],
+      "Non-promotional content and news": [
+        "Konten dan berita non-promosional"
+      ],
       "Not factually correct": [
         "Tidak sesuai fakta"
       ],
@@ -9333,6 +9348,9 @@
       "Search in": [
         "Cari di"
       ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Pilih kategori untuk diikutsertakan dan aktifkan notifikasi untuk memperoleh peringatan pada saat terdapat email baru di kategori ini."
+      ],
       "Send auto-reply": [
         "Kirim pesan balasan otomatis"
       ],
@@ -9347,6 +9365,9 @@
       ],
       "Social": [
         "KTP"
+      ],
+      "Social media updates and activity": [
+        "Pembaruan dan aktivitas sosial media"
       ],
       "Starred": [
         "Dibintangi"
@@ -9414,9 +9435,6 @@
       "Undisclosed Recipients": [
         "Penerima yang Dirahasiakan"
       ],
-      "Unknown": [
-        "Tidak diketahui"
-      ],
       "Unsafe or problematic": [
         "Tidak aman atau bermasalah"
       ],
@@ -9470,6 +9488,9 @@
       ],
       "Writing assistant": [
         "Asisten penulisan"
+      ],
+      "You cannot disable all categories": [
+        "Anda tidak dapat menonaktifkan seluruh kategori"
       ],
       "Your alias": [
         "Alias Anda"
@@ -13945,9 +13966,6 @@
       "Account security": [
         "Keamanan akun"
       ],
-      "Account temporarily locked": [
-        "Akun sementara terkunci"
-      ],
       "Action all conversations": [
         "Terapkan pada seluruh percakapan"
       ],
@@ -14121,6 +14139,9 @@
       ],
       "Customize calendar import": [
         "Sesuaikan impor kalender"
+      ],
+      "Customize categories": [
+        "Sesuaikan kategori"
       ],
       "Customize your mail import": [
         "Sesuaikan impor email Anda"
