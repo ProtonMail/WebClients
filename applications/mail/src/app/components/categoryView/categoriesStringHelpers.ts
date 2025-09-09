@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 export const getLabelFromCategoryId = (id: CategoryLabelID) => {
     const CATEGORIES_LABEL_MAPPING: Record<CategoryLabelID, string> = {
@@ -29,4 +29,18 @@ export const getDescriptionFromCategoryId = (id: CategoryLabelID) => {
     };
 
     return CATEGORIES_DESCRIPTION_MAPPING[id];
+};
+
+export const getLabelFromCategoryIdInCommander = (id: CategoryLabelID) => {
+    const CATEGORIES_LABEL_MAPPING: Record<CategoryLabelID, string> = {
+        [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]: c('Label').t`Go to Primary`,
+        [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL]: c('Label').t`Go to Social`,
+        [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS]: c('Label').t`Go to Promotions`,
+        [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]: c('Label').t`Go to Newsletters`,
+        [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS]: c('Label').t`Go to Transactions`,
+        [MAILBOX_LABEL_IDS.CATEGORY_UPDATES]: c('Label').t`Go to Updates`,
+        [MAILBOX_LABEL_IDS.CATEGORY_FORUMS]: c('Label').t`Go to Forums`,
+    };
+
+    return CATEGORIES_LABEL_MAPPING[id];
 };

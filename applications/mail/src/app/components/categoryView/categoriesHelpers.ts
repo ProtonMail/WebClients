@@ -1,4 +1,4 @@
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import type { CategoryTab } from './categoriesConstants';
 import { CATEGORIES_COLOR_SHADES } from './categoriesConstants';
@@ -49,4 +49,18 @@ export const getCategoryData = (id: string): CategoryTab => {
         throw new Error(`Invalid category ID: ${id}`);
     }
     return data;
+};
+
+const CATEGORIES_SHORTCUTS_MAPPING: Record<CategoryLabelID, string[]> = {
+    [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]: ['G', 'I'],
+    [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL]: ['C', 'S'],
+    [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS]: ['C', 'P'],
+    [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]: ['C', 'N'],
+    [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS]: ['C', 'T'],
+    [MAILBOX_LABEL_IDS.CATEGORY_UPDATES]: ['C', 'U'],
+    [MAILBOX_LABEL_IDS.CATEGORY_FORUMS]: ['C', 'F'],
+};
+
+export const getCategoryCommanderKeyboardShortcut = (id: CategoryLabelID): string[] => {
+    return CATEGORIES_SHORTCUTS_MAPPING[id];
 };
