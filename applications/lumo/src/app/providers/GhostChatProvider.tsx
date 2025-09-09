@@ -38,7 +38,7 @@ export const GhostChatProvider = ({ children }: GhostChatProviderProps) => {
         (enabled: boolean) => {
             dispatch(setGhostChatModeAction(enabled));
         },
-        [dispatch]
+        [dispatch, isGhostChatModeRedux]
     );
 
     const toggleGhostChatMode = useCallback(() => {
