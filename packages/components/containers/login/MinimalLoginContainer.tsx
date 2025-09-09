@@ -17,19 +17,24 @@ import useLocalState from '@proton/components/hooks/useLocalState';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import type { Fido2Data, Fido2Response } from '@proton/shared/lib/authentication/interface';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import { getAuthentication } from '@proton/shared/lib/webauthn/get';
+import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import Tabs from '../../components/tabs/Tabs';
+import AuthSecurityKeyContent from '../account/fido/AuthSecurityKeyContent';
 import type { OnLoginCallback } from '../app/interface';
 import Challenge from '../challenge/Challenge';
 import ChallengeError from '../challenge/ChallengeError';
 import type { ChallengeRef, ChallengeResult } from '../challenge/interface';
 import AbuseModal from './AbuseModal';
-import type { AuthActionResponse, AuthCacheResult } from './interface';
+import type { AuthActionResponse, AuthCacheResult, AuthTypes } from './interface';
 import { AuthStep, AuthType } from './interface';
-import { handleLogin, handleNextLogin, handleTotp, handleUnlock } from './loginActions';
+import { handleFido2, handleLogin, handleNextLogin, handleTotp, handleUnlock } from './loginActions';
 
 const UnlockForm = ({
     onSubmit,
@@ -169,6 +174,94 @@ const TOTPForm = ({
     );
 };
 
+interface Fido2FormProps {
+    onSubmit: (data: Fido2Data) => Promise<void>;
+    fido2: Fido2Response;
+    cancelButton: ReactNode;
+}
+const Fido2Form = ({ onSubmit, fido2, cancelButton }: Fido2FormProps) => {
+    const [loading, withLoading] = useLoading(false);
+    const [fidoError, setFidoError] = useState(false);
+
+    return (
+        <>
+            <AuthSecurityKeyContent error={fidoError} />
+            <div className="flex justify-space-between">
+                <Button
+                    autoFocus={true}
+                    size="large"
+                    color="norm"
+                    type="submit"
+                    fullWidth
+                    loading={loading}
+                    className="mt-6"
+                    onClick={() => {
+                        if (loading) {
+                            return;
+                        }
+                        const run = async () => {
+                            let authenticationCredentialsPayload: Fido2Data;
+                            try {
+                                setFidoError(false);
+                                authenticationCredentialsPayload = await getAuthentication(fido2.AuthenticationOptions);
+                            } catch (error) {
+                                setFidoError(true);
+                                console.error(error);
+                                return;
+                            }
+                            await onSubmit(authenticationCredentialsPayload);
+                        };
+                        withLoading(run()).catch(noop);
+                    }}
+                >
+                    {c('Action').t`Authenticate`}
+                </Button>
+                {cancelButton}
+            </div>
+        </>
+    );
+};
+
+interface TwoFactorStepProps {
+    onSubmit: (data: { type: 'code'; payload: string } | { type: 'fido2'; payload: Fido2Data }) => Promise<void>;
+    fido2?: Fido2Response | null;
+    authTypes: AuthTypes;
+    cancelButton: ReactNode;
+}
+
+const TwoFactorStep = ({ onSubmit, fido2, authTypes, cancelButton }: TwoFactorStepProps) => {
+    const [tabIndex, setTabIndex] = useState(0);
+    return (
+        <Tabs
+            fullWidth
+            value={tabIndex}
+            onChange={setTabIndex}
+            tabs={[
+                authTypes.fido2 &&
+                    fido2 && {
+                        title: c('fido2: Label').t`Security key`,
+                        content: (
+                            <Fido2Form
+                                onSubmit={(payload) => onSubmit({ type: 'fido2', payload })}
+                                fido2={fido2}
+                                cancelButton={cancelButton}
+                            />
+                        ),
+                    },
+                authTypes.totp && {
+                    title: c('Label').t`Authenticator app`,
+                    content: (
+                        <TOTPForm
+                            onSubmit={(payload) => onSubmit({ type: 'code', payload })}
+                            cancelButton={cancelButton}
+                        />
+                    ),
+                },
+            ].filter(isTruthy)}
+        />
+    );
+};
+
 const LoginForm = ({
     onSubmit,
     hasChallenge,
@@ -298,6 +391,7 @@ interface Props {
     hasChallenge?: boolean;
     ignoreUnlock?: boolean;
     onStartAuth: () => Promise<void>;
+    fido2Support?: boolean;
 }
 
 const MinimalLoginContainer = ({
@@ -307,6 +401,7 @@ const MinimalLoginContainer = ({
     ignoreUnlock = false,
     needHelp,
     footer,
+    fido2Support,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const { createNotification } = useNotifications();
@@ -393,6 +488,7 @@ const MinimalLoginContainer = ({
                                 password,
                                 api: silentApi,
                                 ignoreUnlock,
+                                fido2Support,
                                 persistent: false,
                                 setupVPN: false,
                                 ktActivation: KeyTransparencyActivation.DISABLED,
@@ -405,15 +501,34 @@ const MinimalLoginContainer = ({
                 />
             )}
             {step === AuthStep.TWO_FA && cache && (
-                <TOTPForm
+                <TwoFactorStep
+                    fido2={cache.authResponse?.['2FA']?.FIDO2}
+                    authTypes={cache.authTypes}
                     cancelButton={cancelButton}
-                    onSubmit={(totp) => {
-                        return handleTotp({
-                            cache,
-                            totp,
-                        })
-                            .then(handleResult)
-                            .catch(handleError);
+                    onSubmit={async (data) => {
+                        if (data.type === 'code') {
+                            try {
+                                const result = await handleTotp({
+                                    cache,
+                                    totp: data.payload,
+                                });
+                                await handleResult(result);
+                            } catch (e) {
+                                handleError(e);
+                            }
+                        }
+
+                        if (data.type === 'fido2') {
+                            try {
+                                const result = await handleFido2({
+                                    cache,
+                                    payload: data.payload,
+                                });
+                                await handleResult(result);
+                            } catch (e) {
+                                handleError(e);
+                            }
+                        }
                     }}
                 />
             )}
