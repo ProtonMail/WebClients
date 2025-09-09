@@ -1452,7 +1452,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1637,6 +1638,30 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Add secret passphrase": [
+        "Adicionar passphrase secreta"
+      ],
+      "Edit categories": [
+        "Editar categorias"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Participar com ${ MEET_APP_NAME }"
+      ],
+      "Most frequent": [
+        "Mais frequentes"
+      ],
+      "Passphrase": [
+        "Passphrase"
+      ],
+      "Recently read": [
+        "Lido recentemente"
+      ],
+      "Retry": [
+        "Tentar novamente"
+      ],
+      "Update secret passphrase": [
+        "Atualizar passphrase secreta"
       ]
     },
     "action": {
@@ -1992,6 +2017,12 @@
       ],
       "You have reached the trial limit.": [
         "Você atingiu o limite de avaliação."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Após a avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que se renova automaticamente a cada ${ renewCycle } meses em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Você pode ter até ${ TRIAL_MAX_LUMO_SEATS } licenças do ${ LUMO_SHORT_APP_NAME } durante o período de avaliação."
       ]
     },
     "b2b_trials_Action": {
@@ -2262,6 +2293,9 @@
       ],
       "Website access problem": [
         "Problema de acesso ao site"
+      ],
+      "Meet problem": [
+        "Problema no Meet"
       ]
     },
     "Button": {
@@ -2658,6 +2692,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Adicionar ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Bate-papos de alta velocidade e recursos avançados de IA."
       ]
     },
     "color": {
@@ -5002,6 +5039,12 @@
       ],
       "ZIP code is required": [
         "O CEP é obrigatório."
+      ],
+      "Failed to update secret passphrase": [
+        "Falha ao atualizar a passphrase secreta"
+      ],
+      "Passphrase unavailable": [
+        "Passphrase indisponível"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5192,6 +5235,9 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Você ainda não tem nenhum contato. Comece criando um novo contato"
+      ],
+      "An error occurred with the categories": [
+        "Ocorreu um erro com as categorias"
       ]
     },
     "Error notification": {
@@ -5363,6 +5409,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Sua conta está usando ${ usedSpace } de armazenamento, o que excede o espaço de ${ inviteSpace } que você recebeu. Apague alguns dados ou peça ao administrador do plano para aumentar seu armazenamento."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Os planos familiares não suportam contas externas no momento. Crie um endereço para ${ BRAND_NAME } antes de participar.${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -5884,6 +5933,15 @@
       ],
       "Tell us more": [
         "Forneça mais informações"
+      ],
+      "Domain": [
+        "Domínio"
+      ],
+      "Password ends with": [
+        "Senha termina com"
+      ],
+      "Username": [
+        "Nome de usuário"
       ]
     },
     "Hint": {
@@ -7255,8 +7313,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -8675,6 +8732,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Você está a alguns cliques de distância de ter uma caixa de entrada organizada"
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "O ${ CALENDAR_APP_NAME } exige um endereço ${ BRAND_NAME } para sincronização segura de eventos e criptografia. ${ claimAddressButton }."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "O ${ CALENDAR_APP_NAME } exige um endereço ${ BRAND_NAME } para sincronização segura de eventos e para a criptografia. Resgate seu endereço ${ MAIL_APP_NAME } gratuito agora."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Garanta uma comunicação totalmente privada e criptografada. Resgate seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Para segurança extra, você pode definir uma passphrase. Ela não será incluída no convite do calendário. Lembre-se de compartilhá-la com seus convidados separadamente."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Essas conversas são mantidas de acordo com a política de retenção de dados da sua organização."
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Você está atualmente iniciado sessão como ${ username }."
       ]
     },
     "info": {
@@ -9639,6 +9714,33 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Categories badge": [
+        "Etiqueta de categorias"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Ajude a gente a melhorar as categorias escolhendo a que melhor se encaixa neste e-mail. Obrigado pela sua ajuda!"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Ajude-nos a melhorar a futura categorização de e-mails."
+      ],
+      "No results found": [
+        "Nenhum resultado encontrado"
+      ],
+      "Passphrase:": [
+        "Passphrase:"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "A categoria foi atualizada, agradecemos por seu feedback."
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Estamos melhorando como os e-mails são categorizados. Seu feedback ajuda a torná-lo mais inteligente e preciso."
+      ],
+      "Which category should this be recategorized under?": [
+        "Em qual categoria isso deveria ser recategorizado?"
+      ],
+      "Why am I seeing this?": [
+        "Porque estou vendo isso?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9971,6 +10073,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Você precisa reativar suas chaves para ver o convite atualizado"
+      ],
+      "Deleted": [
+        "Excluído"
       ]
     },
     "Link to calendar event": {
@@ -10031,6 +10136,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Sua assinatura terminou. ${ cta } e para evitar perda de dados."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Para continuar usando ${ BRAND_NAME }, certifique-se de que seus recursos do plano premium não estão mais em uso ou faça um upgrade no seu plano."
       ]
     },
     "Log preference": {
@@ -11263,6 +11371,9 @@
       ],
       "Trial started": [
         "Avaliação iniciada"
+      ],
+      "Passphrase copied to clipboard": [
+        "Passphrase copiada para a área de transferência"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11329,7 +11440,7 @@
         "Pague anualmente e assegure nossa melhor oferta"
       ],
       "Save": [
-        "Salvar"
+        "Economize"
       ],
       "Save big when you pay annually": [
         "Aproveite descontos incríveis ao pagar anualmente!"
@@ -11885,6 +11996,24 @@
       ],
       "Your payment is still being processed": [
         "Seu pagamento ainda está sendo processado"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excluindo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluindo ${ taxRate }% de impostos: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluindo ${ taxRate }${ taxName }${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluindo ${ taxRate }% de impostos: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Impostos"
+      ],
+      "VAT": [
+        "IVA"
       ]
     },
     "Payments.Error": {
@@ -12167,6 +12296,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Enter passphrase": [
+        "Digite a passphrase"
       ]
     },
     "Placeholder for contact group name": {
@@ -13948,6 +14080,17 @@
       ],
       "You have successfully unsubscribed": [
         "Você cancelou a inscrição"
+      ],
+      "Conversation updated": [
+        "Conversa atualizada",
+        "Conversas atualizadas"
+      ],
+      "Message updated": [
+        "Mensagem atualizada",
+        "Mensagens atualizadas"
+      ],
+      "Secret passphrase updated": [
+        "Passphrase secreta atualizada"
       ]
     },
     "Success notification": {
@@ -15132,6 +15275,29 @@
       ],
       "Your subscriptions in one place": [
         "Suas assinaturas em um só lugar"
+      ],
+      "Label message as": [
+        "Marcar mensagem como",
+        "Marcar mensagens como"
+      ],
+      "Move message to": [
+        "Mover mensagem para",
+        "Mover mensagens para"
+      ],
+      "Move messages to": [
+        "Mover mensagens para"
+      ],
+      "Next": [
+        "Próximo"
+      ],
+      "Open pagination": [
+        "Abrir paginação"
+      ],
+      "Previous": [
+        "Anterior"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Categorias estão chegando!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15706,6 +15872,131 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acesso a modelos de IA avançados"
+      ],
+      "Basic chat history": [
+        "Histórico de bate-papo básico"
+      ],
+      "Full chat history with search": [
+        "Histórico completo de bate-papos com pesquisa"
+      ],
+      "Large file upload support": [
+        "Suporte para envio de arquivos grandes"
+      ],
+      "Limited daily chats": [
+        "Bate-papos diários limitados"
+      ],
+      "Limited favorites": [
+        "Favoritos limitados"
+      ],
+      "Unlimited daily chats": [
+        "Bate-papos diários ilimitados"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoritos ilimitados para acesso rápido"
+      ],
+      "Upload and query multiple large files": [
+        "Enviar e consultar vários arquivos grandes"
+      ],
+      "Upload and query small files": [
+        "Enviar e consultar arquivos pequenos"
+      ],
+      "Web search access": [
+        "Acesso à pesquisa na web"
+      ]
+    },
+    "q3campaign_2025: Action": {
+      "END-OF-SUMMER SALE": [
+        "PROMOÇÃO DE FIM DE VERÃO"
+      ],
+      "Get the deal": [
+        "Aproveitar a oferta"
+      ]
+    },
+    "q3campaign_2025: Info": {
+      "${ discountPercent }% off": [
+        "${ discountPercent }% OFF"
+      ],
+      "${ normalPricePerMonth } /month": [
+        "${ normalPricePerMonth } /mês"
+      ],
+      "/month": [
+        "/mês"
+      ],
+      "1 TB data storage": [
+        "1 TB de armazenamento de dados"
+      ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "200 GB storage for files, photos & docs": [
+        "200 GB de armazenamento para arquivos, fotos e documentos"
+      ],
+      "3 TB data storage": [
+        "3 TB de armazenamento de dados"
+      ],
+      "500 GB storage": [
+        "500 GB de armazenamento"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Acesse mais de 15.000 servidores em mais de 120 países"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Todos os recursos premium do Mail, Pass, Drive, VPN e Calendar"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador A2F integrado"
+      ],
+      "Connect 10 devices at once": [
+        "Conecte 10 dispositivos de uma só vez"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Os descontos são baseados nos preços mensais padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
+      ],
+      "Enjoy the fastest VPN speeds": [
+        "Aproveite as velocidades de VPN mais rápidas"
+      ],
+      "Individual accounts for 6 users": [
+        "Contas individuais para 6 usuários"
+      ],
+      "Individual accounts for you and a partner": [
+        "Contas individuais para você e um parceiro"
+      ],
+      "Online document editor": [
+        "Editor de documentos on-line"
+      ],
+      "Recover previous file versions": [
+        "Recupere versões anteriores de arquivos"
+      ],
+      "Save ${ totalSavings } and keep all your current features!": [
+        "Economize ${ totalSavings } e mantenha todos os seus recursos atuais!"
+      ],
+      "Secure link, vault & item sharing": [
+        "Compartilhamento seguro de links, cofres e itens"
+      ],
+      "Stronger protection against cyber threats": [
+        "Proteção mais forte contra ameaças cibernéticas"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, marcadores e filtros ilimitados"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Aliases ilimitados do hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Use seu próprio domínio de e-mail"
+      ]
+    },
+    "q3campaign_2025: Title": {
+      "End-of-summer sale": [
+        "Promoção de fim de verão"
+      ],
+      "for 12 months": [
+        "por 12 meses"
       ]
     }
   }

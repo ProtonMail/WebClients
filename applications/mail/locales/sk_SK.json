@@ -409,7 +409,7 @@
         "Zmazať ${ selectedCount } skupinu kontaktov"
       ],
       "Delete all": [
-        "Výmazať všetko"
+        "Vymazať všetko"
       ],
       "Delete contact": [
         "Zmazať kontakt"
@@ -1649,6 +1649,27 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Add secret passphrase": [
+        "Pridajte tajnú prístupovú frázu"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Pripojte sa k ${ MEET_APP_NAME }"
+      ],
+      "Most frequent": [
+        "Najčastejšie"
+      ],
+      "Passphrase": [
+        "Prístupová fráza"
+      ],
+      "Recently read": [
+        "Nedávno čítané"
+      ],
+      "Retry": [
+        "Opakovať"
+      ],
+      "Update secret passphrase": [
+        "Aktualizovať tajnú prístupovú frázu"
       ]
     },
     "action": {
@@ -2267,6 +2288,9 @@
       ],
       "Website access problem": [
         "Problém s prístupom k stránke"
+      ],
+      "Meet problem": [
+        "Problém s aplikáciou Meet"
       ]
     },
     "Button": {
@@ -5042,6 +5066,12 @@
       ],
       "ZIP code is required": [
         "PSČ je povinné"
+      ],
+      "Failed to update secret passphrase": [
+        "Nepodarilo sa aktualizovať tajnú prístupovú frázu"
+      ],
+      "Passphrase unavailable": [
+        "Prístupová fráza nedostupná"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5407,6 +5437,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet využíva ${ usedSpace } úložiska, čo presahuje pridelený priestor ${ inviteSpace }. Odstráňte niektoré údaje alebo požiadajte správcu plánu o navýšenie úložiska."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Rodinné plány v súčasnosti nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -5944,6 +5977,15 @@
       ],
       "Tell us more": [
         "Povedzte nám viac"
+      ],
+      "Domain": [
+        "Doména"
+      ],
+      "Password ends with": [
+        "Heslo končí znakmi"
+      ],
+      "Username": [
+        "Používateľské meno"
       ]
     },
     "Hint": {
@@ -7470,10 +7512,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8938,6 +8977,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Pre väčšiu bezpečnosť môžete nastaviť prístupovú frázu. Tá nebude zahrnutá v pozvánke v kalendári, nezabudnite ju preto zdieľať so svojimi hosťami samostatne."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Tieto konverzácie sa uchovávajú na základe zásad uchovávania údajov vašej organizácie."
       ]
     },
     "info": {
@@ -9914,6 +9959,33 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Categories badge": [
+        "Odznak kategórií"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Pomôžte nám vylepšiť kategórie výberom tej, ktorá najlepšie zodpovedá tejto emailovej správe. Ďakujeme za pomoc!"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Pomôžte nám zlepšiť pripravované kategorizovanie pošty"
+      ],
+      "No results found": [
+        "Neboli nájdené žiadne výsledky"
+      ],
+      "Passphrase:": [
+        "Prístupová fráza:"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "Kategória bola aktualizovaná, ďakujeme za vašu spätnú väzbu!"
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Zlepšujeme spôsob kategorizácie emailov. Vaša spätná väzba nám pomáha robiť to inteligentnejšie a presnejšie."
+      ],
+      "Which category should this be recategorized under?": [
+        "Do ktorej kategórie by sa to malo zaradiť?"
+      ],
+      "Why am I seeing this?": [
+        "Prečo to vidím?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10246,6 +10318,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Pre zobrazenie upravenej pozvánky musíte znovu aktivovať svoje kľúče"
+      ],
+      "Deleted": [
+        "Vymazané"
       ]
     },
     "Link to calendar event": {
@@ -11606,6 +11681,9 @@
       ],
       "Trial started": [
         "Skúšobné obdobie začalo"
+      ],
+      "Passphrase copied to clipboard": [
+        "Prístupová fráza skopírovaná do schránky"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12232,6 +12310,24 @@
       ],
       "Your payment is still being processed": [
         "Vaša platba sa stále spracováva"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "S výnimkou ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Bez zahrnutia ${ taxRate }% daní: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Vrátane ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Vrátane ${ taxRate }% daní: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Dane"
+      ],
+      "VAT": [
+        "DPH"
       ]
     },
     "Payments.Error": {
@@ -12514,6 +12610,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Enter passphrase": [
+        "Zadajte prístupovú frázu"
       ]
     },
     "Placeholder for contact group name": {
@@ -14426,6 +14525,21 @@
       ],
       "You have successfully unsubscribed": [
         "Predplatné bolo úspešne zrušené"
+      ],
+      "Conversation updated": [
+        "Konverzácia aktualizovaná",
+        "Konverzácie aktualizované",
+        "Konverzácie aktualizované",
+        "Konverzácie aktualizované"
+      ],
+      "Message updated": [
+        "Správa aktualizovaná",
+        "Správy aktualizované",
+        "Správy aktualizované",
+        "Správy aktualizované"
+      ],
+      "Secret passphrase updated": [
+        "Tajná prístupová fráza aktualizovaná"
       ]
     },
     "Success notification": {
@@ -15654,6 +15768,33 @@
       ],
       "Your subscriptions in one place": [
         "Vaše emailové odbery na jednom mieste"
+      ],
+      "Label message as": [
+        "Označiť správu ako",
+        "Označiť správy ako",
+        "Označiť správy ako",
+        "Označiť správy ako"
+      ],
+      "Move message to": [
+        "Presunúť správu do",
+        "Presunúť správy do",
+        "Presunúť správy do",
+        "Presunúť správy do"
+      ],
+      "Move messages to": [
+        "Presunúť správy do"
+      ],
+      "Next": [
+        "Ďalej"
+      ],
+      "Open pagination": [
+        "Otvoriť stránkovanie"
+      ],
+      "Previous": [
+        "Predchádzajúci"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Prichádzajú kategórie!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16318,6 +16459,78 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa z neho stane platené predplatné, ktoré sa automaticky obnovuje každých ${ renewCycle } mesiacov dňa ${ formattedDate }. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje mesačne dňa ${ formattedDate }. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_DEDICATED_IPS } vyhradených serverov počas skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } miest počas skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_SCRIBE_SEATS } Scribe miest počas skúšobného obdobia."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_USERS } používateľov počas skúšobného obdobia."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Počas skúšobného obdobia nemôžete pridať vlastné domény."
+      ],
+      "You have reached the trial limit.": [
+        "Dosiahli ste limit skúšobného obdobia."
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Prístup k pokročilým modelom AI"
+      ],
+      "Basic chat history": [
+        "Základná história chatu"
+      ],
+      "Full chat history with search": [
+        "Úplná história chatu s vyhľadávaním"
+      ],
+      "Large file upload support": [
+        "Podpora nahrávania veľkých súborov"
+      ],
+      "Limited daily chats": [
+        "Obmedzené denné chaty"
+      ],
+      "Limited favorites": [
+        "Obmedzené obľúbené položky"
+      ],
+      "Unlimited daily chats": [
+        "Neobmedzené denné chaty"
+      ],
+      "Unlimited favorites for quick access": [
+        "Neobmedzené obľúbené položky pre rýchly prístup"
+      ],
+      "Upload and query multiple large files": [
+        "Nahrávanie a vyhľadávanie viacerých veľkých súborov"
+      ],
+      "Upload and query small files": [
+        "Nahrávanie a vyhľadávanie malých súborov"
+      ],
+      "Web search access": [
+        "Prístup k webovému vyhľadávaniu"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } je AI, ktorá kladie dôraz na ochranu súkromia a pomáha vám dosiahnuť viac pri zachovaní bezpečnosti vašich údajov. Využite jej plný potenciál a získajte skorý prístup k novým funkciám hneď po ich zavedení."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Pridať ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Vysokorýchlostné chaty a pokročilé funkcie AI"
       ]
     }
   }

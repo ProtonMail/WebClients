@@ -1634,6 +1634,31 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Add secret passphrase": [
+        "Añadir una frase de contraseña secreta"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Únete con ${ MEET_APP_NAME }"
+      ],
+      "Most frequent": [
+        "Más frecuente"
+      ],
+      "Passphrase": [
+        "Frase de contraseña"
+      ],
+      "Recently read": [
+        "Leído recientemente"
+      ],
+      "Retry": [
+        "Reintentar"
+      ],
+      "Trust key": [
+        "Clave de confianza",
+        "Claves de confianza"
+      ],
+      "Update secret passphrase": [
+        "Actualizar la frase de contraseña secreta"
       ]
     },
     "action": {
@@ -5002,6 +5027,12 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Failed to update secret passphrase": [
+        "Error al actualizar la frase de contraseña secreta"
+      ],
+      "Passphrase unavailable": [
+        "Frase de contraseña no disponible"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5363,6 +5394,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Tu cuenta está usando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Los planes familiares actualmente no admiten cuentas externas. Crea una dirección de ${ BRAND_NAME } antes de unirte. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -5884,6 +5918,15 @@
       ],
       "Tell us more": [
         "Cuéntanos más"
+      ],
+      "Domain": [
+        "Dominio"
+      ],
+      "Password ends with": [
+        "La contraseña termina con"
+      ],
+      "Username": [
+        "Nombre de usuario"
       ]
     },
     "Hint": {
@@ -7264,8 +7307,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8684,6 +8726,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Estás a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Para mayor seguridad, puedes establecer una frase de contraseña (passphrase). No se incluirá en la invitación del calendario, recuerda compartirla con tus invitados por separado."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Estas conversaciones se mantienen aquí según la política de retención de datos de su organización."
       ]
     },
     "info": {
@@ -9648,6 +9696,33 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Categories badge": [
+        "Distintivo de las categorías"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Ayúdanos a mejorar las categorías eligiendo la que mejor se adapte a este correo electrónico. ¡Gracias por tu ayuda!"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Ayúdanos a mejorar la próxima categorización de correo"
+      ],
+      "No results found": [
+        "No se encontraron resultados"
+      ],
+      "Passphrase:": [
+        "Frase de contraseña:"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "La categoría ha sido actualizada. Gracias por tus comentarios."
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Estamos mejorando cómo se clasifican los correos electrónicos. Tus comentarios ayudarán a que sea más eficiente y preciso."
+      ],
+      "Which category should this be recategorized under?": [
+        "¿En qué categoría debería reasignarse esto?"
+      ],
+      "Why am I seeing this?": [
+        "¿Por qué veo esto?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9916,7 +9991,7 @@
         "Programado"
       ],
       "Sent": [
-        "Enviada"
+        "Enviados"
       ],
       "settings": [
         "ajustes"
@@ -9980,6 +10055,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Necesitas reactivar tus claves para ver la invitación actualizada."
+      ],
+      "Deleted": [
+        "Eliminado"
       ]
     },
     "Link to calendar event": {
@@ -11270,6 +11348,9 @@
       ],
       "Trial started": [
         "La prueba ha iniciado."
+      ],
+      "Passphrase copied to clipboard": [
+        "Frase de contraseña copiada al portapapeles"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11336,7 +11417,7 @@
         "Paga anualmente y asegúrate nuestra mejor oferta."
       ],
       "Save": [
-        "Guardar"
+        "Ahorra"
       ],
       "Save big when you pay annually": [
         "¡Ahorra a lo grande pagando anualmente!"
@@ -11886,6 +11967,24 @@
       ],
       "Your payment is still being processed": [
         "Tu pago aún está siendo procesado."
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Impuestos"
+      ],
+      "VAT": [
+        "IVA"
       ]
     },
     "Payments.Error": {
@@ -12168,6 +12267,9 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Enter passphrase": [
+        "Introducir la frase de contraseña"
       ]
     },
     "Placeholder for contact group name": {
@@ -13945,6 +14047,17 @@
       ],
       "You have successfully unsubscribed": [
         "Has cancelado la suscripción."
+      ],
+      "Conversation updated": [
+        "Conversación actualizada",
+        "Conversaciones actualizadas"
+      ],
+      "Message updated": [
+        "Mensaje actualizado",
+        "Mensajes actualizados"
+      ],
+      "Secret passphrase updated": [
+        "Frase de contraseña secreta actualizada"
       ]
     },
     "Success notification": {
@@ -15129,6 +15242,29 @@
       ],
       "Your subscriptions in one place": [
         "Tus suscripciones en un solo lugar"
+      ],
+      "Label message as": [
+        "Etiquetar el mensaje como",
+        "Etiquetar los mensajes como"
+      ],
+      "Move message to": [
+        "Mover el mensaje a",
+        "Mover los mensajes a"
+      ],
+      "Move messages to": [
+        "Mover los mensajes a"
+      ],
+      "Next": [
+        "Siguiente"
+      ],
+      "Open pagination": [
+        "Abrir paginación"
+      ],
+      "Previous": [
+        "Anterior"
+      ],
+      "✨ Categories are coming!": [
+        "✨ ¡Llegan las categorías!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15703,6 +15839,96 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "q3campaign_2025: Action": {
+      "END-OF-SUMMER SALE": [
+        "OFERTA DE FINAL DE VERANO"
+      ],
+      "Get the deal": [
+        "Aprovecha la oferta"
+      ]
+    },
+    "q3campaign_2025: Info": {
+      "${ discountPercent }% off": [
+        "-${ discountPercent }%"
+      ],
+      "${ normalPricePerMonth } /month": [
+        "${ normalPricePerMonth } /mes"
+      ],
+      "/month": [
+        "/mes"
+      ],
+      "1 TB data storage": [
+        "1 TB de almacenamiento de datos"
+      ],
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "200 GB storage for files, photos & docs": [
+        "200 GB de almacenamiento para archivos, fotos y documentos"
+      ],
+      "3 TB data storage": [
+        "3 TB de almacenamiento de datos"
+      ],
+      "500 GB storage": [
+        "500 GB de almacenamiento"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Acceso a más de 15 000 servidores en más de 120 países"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Todas las funciones prémium de Mail, Pass, Drive, VPN y Calendar"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador de 2FA integrado"
+      ],
+      "Connect 10 devices at once": [
+        "Conecta 10 dispositivos a la vez"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en el precio mensual estándar. Tu suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ],
+      "Enjoy the fastest VPN speeds": [
+        "Disfruta de las velocidades de VPN más rápidas"
+      ],
+      "Individual accounts for 6 users": [
+        "Cuentas individuales para 6 usuarios"
+      ],
+      "Individual accounts for you and a partner": [
+        "Cuentas individuales para ti y otra persona"
+      ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
+      "Recover previous file versions": [
+        "Recupera las versiones previas de los archivos"
+      ],
+      "Save ${ totalSavings } and keep all your current features!": [
+        "¡Ahorra ${ totalSavings } y conserva todas tus funciones actuales!"
+      ],
+      "Secure link, vault & item sharing": [
+        "Uso compartido seguro de enlaces, cajas fuertes y elementos"
+      ],
+      "Stronger protection against cyber threats": [
+        "Mayor protección contra las ciberamenazas"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Número ilimitado de alias de hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Usa tu propio dominio de correo electrónico"
+      ]
+    },
+    "q3campaign_2025: Title": {
+      "End-of-summer sale": [
+        "Oferta de final de verano"
+      ],
+      "for 12 months": [
+        "durante 12 meses"
       ]
     }
   }

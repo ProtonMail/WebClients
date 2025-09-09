@@ -1452,7 +1452,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -1637,6 +1638,27 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Add secret passphrase": [
+        "Προσθήκη μυστικής φράσης πρόσβασης"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Συμμετάσχετε με ${ MEET_APP_NAME }"
+      ],
+      "Most frequent": [
+        "Πιο συχνά"
+      ],
+      "Passphrase": [
+        "Φράση πρόσβασης"
+      ],
+      "Recently read": [
+        "Πρόσφατα αναγνωσμένα"
+      ],
+      "Retry": [
+        "Δοκιμάστε ξανά"
+      ],
+      "Update secret passphrase": [
+        "Ενημέρωση μυστικής φράσης πρόσβασης"
       ]
     },
     "action": {
@@ -2239,6 +2261,9 @@
       ],
       "Website access problem": [
         "Πρόβλημα πρόσβασης ιστοσελίδας"
+      ],
+      "Meet problem": [
+        "Πρόβλημα Meet"
       ]
     },
     "Button": {
@@ -4974,6 +4999,12 @@
       ],
       "ZIP code is required": [
         "Απαιτείται ταχυδρομικός κώδικας"
+      ],
+      "Failed to update secret passphrase": [
+        "Αποτυχία ενημέρωσης του μυστικού κωδικού πρόσβασης"
+      ],
+      "Passphrase unavailable": [
+        "Η φράση πρόσβασης δεν είναι διαθέσιμη"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5335,6 +5366,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ο λογαριασμός σας χρησιμοποιεί αποθηκευτικό χώρο ${ usedSpace }, ο οποίος υπερβαίνει τα ${ inviteSpace } που σας έχουν εκχωρηθεί. Διαγράψτε ορισμένα δεδομένα ή ζητήστε από τον διαχειριστή του πλάνου να αυξήσει τον αποθηκευτικό σας χώρο."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Τα οικογενειακά πλάνα δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -5856,6 +5890,15 @@
       ],
       "Tell us more": [
         "Πείτε μας περισσότερα"
+      ],
+      "Domain": [
+        "Τομέας"
+      ],
+      "Password ends with": [
+        "Ο κωδικός πρόσβασης τελειώνει με"
+      ],
+      "Username": [
+        "Όνομα Χρήστη"
       ]
     },
     "Hint": {
@@ -7236,8 +7279,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8656,6 +8698,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Για επιπλέον ασφάλεια, μπορείτε να ορίσετε μια φράση πρόσβασης. Δε θα περιληφθεί στην πρόσκληση του ημερολογίου, θυμηθείτε να τη μοιραστείτε με τους καλεσμένους σας ξεχωριστά."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Αυτές οι συνομιλίες φυλάσσονται εδώ με βάση την πολιτική διατήρησης δεδομένων του οργανισμού σας."
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Είστε συνδεδεμένος/η ως ${ username }."
       ]
     },
     "info": {
@@ -9620,6 +9671,33 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Categories badge": [
+        "Ετικέτα κατηγοριών"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Βοηθήστε μας να βελτιώσουμε τις κατηγορίες επιλέγοντας αυτή που ταιριάζει καλύτερα σε αυτό το email. Ευχαριστούμε για τη βοήθειά σας!"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Βοηθήστε μας να βελτιώσουμε την επικείμενη κατηγοριοποίηση των αλληλογραφιών."
+      ],
+      "No results found": [
+        "Δε βρέθηκαν αποτελέσματα"
+      ],
+      "Passphrase:": [
+        "Φράση πρόσβασης:"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "Η κατηγορία έχει ενημερωθεί, ευχαριστούμε για τα σχόλιά σας!"
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Βελτιώνουμε τον τρόπο κατηγοριοποίησης των μηνυμάτων. Η ανατροφοδότησή σας βοηθά να γίνει πιο έξυπνο και ακριβές."
+      ],
+      "Which category should this be recategorized under?": [
+        "Σε ποια κατηγορία θα έπρεπε να ανακατηγοριοποιηθεί αυτό;"
+      ],
+      "Why am I seeing this?": [
+        "Γιατί το βλέπω αυτό;"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9952,6 +10030,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Πρέπει να επανενεργοποιήσετε τα κλειδιά σας για να δείτε την ενημερωμένη πρόσκληση"
+      ],
+      "Deleted": [
+        "Διαγραμμένα"
       ]
     },
     "Link to calendar event": {
@@ -11242,6 +11323,9 @@
       ],
       "Trial started": [
         "Η δοκιμαστική περίοδος ξεκίνησε"
+      ],
+      "Passphrase copied to clipboard": [
+        "Ο φράση πρόσβασης αντιγράφηκε στο πρόχειρο"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11308,7 +11392,7 @@
         "Πληρώστε ετησίως, εξασφαλίστε την καλύτερη προσφορά μας"
       ],
       "Save": [
-        "Αποθήκευση"
+        "Εξοικονομήστε"
       ],
       "Save big when you pay annually": [
         "Εξοικονομήστε χρήματα όταν πληρώνετε ετησίως"
@@ -11858,6 +11942,24 @@
       ],
       "Your payment is still being processed": [
         "Η πληρωμή σας βρίσκεται ακόμα υπό επεξεργασία"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Εξαιρουμένων ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Εξαιρουμένων ${ taxRate }% φόρων ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Συμπεριλαμβανομένου ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Συμπεριλαμβανομένων ${ taxRate }% φόρων ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Φόροι"
+      ],
+      "VAT": [
+        "ΦΠΑ"
       ]
     },
     "Payments.Error": {
@@ -12140,6 +12242,9 @@
       ],
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
+      ],
+      "Enter passphrase": [
+        "Εισαγάγετε τη φράση πρόσβασης"
       ]
     },
     "Placeholder for contact group name": {
@@ -13916,6 +14021,17 @@
       ],
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"
+      ],
+      "Conversation updated": [
+        "Η συνομιλία ενημερώθηκε",
+        "Η συνομιλίες ενημερώθηκαν"
+      ],
+      "Message updated": [
+        "Το μήνυμα ενημερώθηκε",
+        "Τα μηνύματα ενημερώθηκαν"
+      ],
+      "Secret passphrase updated": [
+        "Η μυστική φράση πρόσβασης ενημερώθηκε"
       ]
     },
     "Success notification": {
@@ -15100,6 +15216,29 @@
       ],
       "Your subscriptions in one place": [
         "Οι συνδρομές σας σε ένα μέρος"
+      ],
+      "Label message as": [
+        "Επισήμανση μηνύματος ως",
+        "Επισήμανση μηνυμάτων ως"
+      ],
+      "Move message to": [
+        "Μετακίνηση μηνύματος σε",
+        "Μετακίνηση μηνυμάτων σε"
+      ],
+      "Move messages to": [
+        "Μετακίνηση μηνυμάτων σε"
+      ],
+      "Next": [
+        "Επόμενο"
+      ],
+      "Open pagination": [
+        "Άνοιγμα σελιδοποίησης"
+      ],
+      "Previous": [
+        "Προηγούμενο"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Οι κατηγορίες έρχονται!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15674,6 +15813,78 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες στις ${ formattedDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα στις ${ formattedDate }. Δεν θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Μπορείτε να έχετε έως ${ TRIAL_MAX_DEDICATED_IPS } αφιερωμένο διακομιστή κατά τη διάρκεια της δοκιμαστικής περιόδου."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_LUMO_SEATS } θέσεις ${ LUMO_SHORT_APP_NAME } κατά τη διάρκεια της δοκιμαστικής περιόδου."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_SCRIBE_SEATS } θέσεις Scribe κατά τη δοκιμαστική περίοδο."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_USERS } χρήστες κατά τη δοκιμαστική περίοδο."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Δεν μπορείτε να προσθέσετε προσαρμοσμένους τομείς κατά τη δοκιμαστική περίοδο."
+      ],
+      "You have reached the trial limit.": [
+        "Έχετε φτάσει το όριο της δοκιμής."
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Πρόσβαση σε προηγμένα μοντέλα Τεχνητής Νοημοσύνης"
+      ],
+      "Basic chat history": [
+        "Βασικό ιστορικό συνομιλιών"
+      ],
+      "Full chat history with search": [
+        "Πλήρης ιστορία συνομιλίας με αναζήτηση"
+      ],
+      "Large file upload support": [
+        "Υποστήριξη για μεταφόρτωση μεγάλων αρχείων"
+      ],
+      "Limited daily chats": [
+        "Περιορισμένες καθημερινές συνομιλίες"
+      ],
+      "Limited favorites": [
+        "Περιορισμένα αγαπημένα"
+      ],
+      "Unlimited daily chats": [
+        "Απεριόριστες καθημερινές συνομιλίες"
+      ],
+      "Unlimited favorites for quick access": [
+        "Απεριόριστα αγαπημένα για γρήγορη πρόσβαση"
+      ],
+      "Upload and query multiple large files": [
+        "Ανεβάστε και αναζητήσετε πολλαπλά μεγάλα αρχεία"
+      ],
+      "Upload and query small files": [
+        "Ανεβάστε και αναζητήστε μικρά αρχεία"
+      ],
+      "Web search access": [
+        "Πρόσβαση στην αναζήτηση ιστού"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } είναι μια τεχνητή νοημοσύνη που δίνει προτεραιότητα στην ιδιωτικότητα και σας βοηθά να ολοκληρώσετε περισσότερα ενώ διατηρείτε τα δεδομένα σας ασφαλή. Ξεκλειδώστε όλες τις δυνατότητές της και απολαύστε πρόωρη πρόσβαση σε νέες δυνατότητες καθώς αυτές παρουσιάζονται."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Προσθήκη ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Υψηλής ταχύτητας συνομιλίες και προηγμένα χαρακτηριστικά AI."
       ]
     }
   }

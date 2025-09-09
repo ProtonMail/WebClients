@@ -1634,6 +1634,31 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Add secret passphrase": [
+        "Legg til hemmelig passfrase"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Bli med med ${ MEET_APP_NAME }"
+      ],
+      "Most frequent": [
+        "Hyppigst"
+      ],
+      "Passphrase": [
+        "Passfrase"
+      ],
+      "Recently read": [
+        "Nylig leste"
+      ],
+      "Retry": [
+        "Prøv på nytt"
+      ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
+      ],
+      "Update secret passphrase": [
+        "Oppdater hemmelig passfrase"
       ]
     },
     "action": {
@@ -2236,6 +2261,9 @@
       ],
       "Website access problem": [
         "Problem med tilgang til nettsted"
+      ],
+      "Meet problem": [
+        "Meet-problem"
       ]
     },
     "Button": {
@@ -4971,6 +4999,12 @@
       ],
       "ZIP code is required": [
         "Postnummer kreves"
+      ],
+      "Failed to update secret passphrase": [
+        "Kunne ikke oppdatere hemmelig passfrase"
+      ],
+      "Passphrase unavailable": [
+        "Passfrase utilgjengelig"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5332,6 +5366,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Kontoen din bruker ${ usedSpace } med lagringsplass som overskrider de ${ inviteSpace } tildelt deg. Slett noen data, eller be planadministratoren om å øke lagringsplassen."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Familieplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -5853,6 +5890,15 @@
       ],
       "Tell us more": [
         "Fortell oss mer"
+      ],
+      "Domain": [
+        "Domene"
+      ],
+      "Password ends with": [
+        "Passordet slutter med"
+      ],
+      "Username": [
+        "Brukernavn"
       ]
     },
     "Hint": {
@@ -7233,8 +7279,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8653,6 +8698,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "For ekstra sikkerhet kan du angi en passfrase. Den blir ikke inkludert i kalenderinvitasjonen, husk å dele den med gjestene dine separat."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Disse samtalene lagres her i henhold til organisasjonens retningslinje for dataoppbevaring."
       ]
     },
     "info": {
@@ -9617,6 +9668,33 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Categories badge": [
+        "Kategorietikett"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Hjelp oss med å forbedre kategorier ved å velge den som passer best til denne e-posten. Takk for hjelpen!"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Hjelp oss med å forbedre den kommende e-postkategoriseringen"
+      ],
+      "No results found": [
+        "Ingen resultater funnet"
+      ],
+      "Passphrase:": [
+        "Passfrase:"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "Kategorien er oppdatert, takk for tilbakemeldingen!"
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Vi forbedrer hvordan e-post kategoriseres. Din tilbakemelding bidrar til å gjøre den smartere og mer nøyaktig."
+      ],
+      "Which category should this be recategorized under?": [
+        "Hvilken kategori skal dette omkategoriseres under?"
+      ],
+      "Why am I seeing this?": [
+        "Hvorfor ser jeg dette?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9949,6 +10027,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du må aktivere nøklene på nytt for å se den oppdaterte invitasjonen"
+      ],
+      "Deleted": [
+        "Slettet"
       ]
     },
     "Link to calendar event": {
@@ -11239,6 +11320,9 @@
       ],
       "Trial started": [
         "Prøveperiode startet"
+      ],
+      "Passphrase copied to clipboard": [
+        "Passfrase kopiert til utklippstavlen"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11855,6 +11939,24 @@
       ],
       "Your payment is still being processed": [
         "Betalingen din behandles fortsatt"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Ekskludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Ekskludert ${ taxRate }% avgifter: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inkludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inkludert ${ taxRate }% avgifter: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Avgifter"
+      ],
+      "VAT": [
+        "MVA"
       ]
     },
     "Payments.Error": {
@@ -12137,6 +12239,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Enter passphrase": [
+        "Skriv inn passfrase"
       ]
     },
     "Placeholder for contact group name": {
@@ -13913,6 +14018,17 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avsluttet abonnementet"
+      ],
+      "Conversation updated": [
+        "Samtalen oppdatert",
+        "Samtaler oppdatert"
+      ],
+      "Message updated": [
+        "Meldingen oppdatert",
+        "Meldinger oppdatert"
+      ],
+      "Secret passphrase updated": [
+        "Hemmelig passfrase oppdatert"
       ]
     },
     "Success notification": {
@@ -15097,6 +15213,29 @@
       ],
       "Your subscriptions in one place": [
         "Dine abonnementer på ett sted"
+      ],
+      "Label message as": [
+        "Merk melding som",
+        "Merk meldinger som"
+      ],
+      "Move message to": [
+        "Flytt melding til",
+        "Flytt meldinger til"
+      ],
+      "Move messages to": [
+        "Flytt meldinger til"
+      ],
+      "Next": [
+        "Neste"
+      ],
+      "Open pagination": [
+        "Åpne sidenummerering"
+      ],
+      "Previous": [
+        "Forrige"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Kategorier kommer!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15671,6 +15810,78 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes ${ formattedDate }, vil det gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes ${ formattedDate }, vil det gå over til å bli et betalt abonnement som fornyes automatisk månedlig ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-lisenser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-lisenser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_USERS } brukere i prøveperioden."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Du kan ikke legge til egendefinerte domener i prøveperioden."
+      ],
+      "You have reached the trial limit.": [
+        "Du har nådd prøveperiodegrensen."
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Tilgang til avanserte KI-modeller"
+      ],
+      "Basic chat history": [
+        "Grunnleggende chatlogg"
+      ],
+      "Full chat history with search": [
+        "Full chatlogg med søk"
+      ],
+      "Large file upload support": [
+        "Støtte for opplasting av store filer"
+      ],
+      "Limited daily chats": [
+        "Begrenset antall daglige chatter"
+      ],
+      "Limited favorites": [
+        "Begrenset antall favoritter"
+      ],
+      "Unlimited daily chats": [
+        "Ubegrenset antall daglige chatter"
+      ],
+      "Unlimited favorites for quick access": [
+        "Ubegrenset antall favoritter for rask tilgang"
+      ],
+      "Upload and query multiple large files": [
+        "Last opp og søk i flere store filer"
+      ],
+      "Upload and query small files": [
+        "Last opp og søk i små filer"
+      ],
+      "Web search access": [
+        "Tilgang til nettsøk"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } er en personvernfokusert KI som hjelper deg å få mer gjort samtidig som dataene dine holdes sikre. Lås opp dens fulle potensial og nyt tidlig tilgang til nye funksjoner når de introduseres."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Legg til ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Høyhastighetschatter og avanserte KI-funksjoner."
       ]
     }
   }
