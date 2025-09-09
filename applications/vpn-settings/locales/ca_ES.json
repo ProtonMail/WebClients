@@ -6840,6 +6840,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicieu la sessió a ${ MAIL_APP_NAME } per activar la vostra adreça"
       ],
+      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
+        "L'inici de sessió amb una clau de seguretat encara no és compatible amb totes les aplicacions. Sense TOTP, és possible que l'inici de sessió en algunes aplicacions no funcioni."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
       ],
@@ -7361,8 +7364,8 @@
       "You already have a free account": [
         "Ja teniu un compte gratuït"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Actualment has iniciat sessió com a ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Heu iniciat sessió com a ${ username }."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Esteu utilitzant ${ ipCount } de ${ ipAddresses } servidor dedicat disponible.",

@@ -199,13 +199,10 @@
         "Копія"
       ],
       "Change email": [
-        "Змяніць эл. пошту"
+        "Змяніць электронную пошту"
       ],
       "Change page": [
         "Змяніць старонку"
-      ],
-      "Change password": [
-        "Змяніць пароль"
       ],
       "Change sorting": [
         "Змяніць сартаванне"
@@ -481,7 +478,7 @@
         "Спампаваць"
       ],
       "Download the desktop app": [
-        "Спампоўванне праграмы для камп'ютара"
+        "Спампаваць праграму для камп'ютара"
       ],
       "Downloading": [
         "Спампоўванне"
@@ -568,7 +565,7 @@
         "Экспартаваць групу кантактаў"
       ],
       "Export selection as .vcf": [
-        "Экспартаванне вылучэння ў фармат .vcf"
+        "Экспарт вылучэння ў фармат .vcf"
       ],
       "External encryption": [
         "Знешняе шыфраванне"
@@ -595,10 +592,10 @@
         "Пераслаць як далучэнне"
       ],
       "Generate password": [
-        "Згенерыраваць пароль"
+        "Згенераваць пароль"
       ],
       "Generate text": [
-        "Згенерыраваць тэкст"
+        "Згенераваць тэкст"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Атрымаць ${ planName } за ${ priceCoupon }"
@@ -1468,10 +1465,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -4879,7 +4873,7 @@
         "Паспрабуйце яшчэ раз або абнавіце старонку."
       ],
       "Please try generating the text again": [
-        "Паспрабуйце згенерыраваць тэкст паўторна"
+        "Паспрабуйце згенераваць тэкст паўторна"
       ],
       "Port is required": [
         "Патрабуецца ўвесці порт"
@@ -5291,9 +5285,6 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Псеўданімы не могуць быць выкарыстаны, калі дадатковы пароль уключаны ў ${ PASS_APP_NAME }."
       ],
-      "An error occured with the categories": [
-        "Адбылася памылка з катэгорыямі"
-      ],
       "App currently unavailable": [
         "Праграма часова недаступна"
       ],
@@ -5633,7 +5624,7 @@
     },
     "Filter Actions": {
       "Archive": [
-        "з архівам"
+        "Архіваваць"
       ],
       "Do not move": [
         "Не перамяшчаць"
@@ -6309,7 +6300,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "У залежнасці ад вашага пастаўшчыка паслуг электроннай пошты, спачатку вам можа спатрэбіцца згенерыраваць ${ knowledgeBaseLink } перад імпартаваннем у ${ BRAND_NAME }."
+        "У залежнасці ад вашага пастаўшчыка паслуг электроннай пошты, спачатку вам можа спатрэбіцца згенераваць ${ knowledgeBaseLink } перад імпартаваннем у ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Разгарніце выпадное меню, націснуўшы на 3 кропкі (...)."
@@ -7431,7 +7422,7 @@
         "Увайдзіце ў ${ mailLink } для дадавання дадатковых звестак і выдалення абмежаванняў."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
-        "Для доступу да электроннай пошты ў любы час і аптымізацыі працы, спампуйце ${ androidAppLink } або ${ iosAppLink }."
+        "Для доступу да электроннай пошты ў любы час і аптымізацыі працы мабільных прылад, спампуйце ${ androidAppLink } або ${ iosAppLink }."
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Для дадатковай бяспекі вы можаце задаць парольную фразу. Не забудзьце абагуліць яе з гасцямі асобна, бо яна не будзе ўключана ў запрашэнне календара."
@@ -7452,7 +7443,7 @@
         "Ад"
       ],
       "Generate text": [
-        "Згенерыраваць тэкст"
+        "Згенераваць тэкст"
       ],
       "Geoblocking": [
         "Геаблакіроўка"
@@ -7572,7 +7563,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8592,7 +8586,7 @@
         "Палепшыце свой тарыфны план, каб выкарыстоўваць аўтаматычны адказ, калі вы не можаце зрабіць гэта самі."
       ],
       "Upload picture": [
-        "Запампаваць малюнак"
+        "Запампоўванне малюнка"
       ],
       "Uppercase and lowercase letters": [
         "Маленькія і вялікія літары"
@@ -8738,8 +8732,8 @@
       "You are about to open your default browser and visit:": [
         "Вы збіраецеся адкрыць прадвызначаны браўзер і наведаць:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Вы ўжо ўвайшлі як ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Вы ўжо ўвайшлі як ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Вы выкарыстоўваеце больш сховішча, чым гэта прадугледжана тарыфным планам ${ downgradedPlanName }. Выдаліце або перамясціце даныя, калі вы ўсё яшчэ хочаце панізіць свой тарыфны план."
@@ -9953,9 +9947,6 @@
       ],
       "Undisclosed Recipients": [
         "Схаваныя атрымальнікі"
-      ],
-      "Unknown": [
-        "Невядома"
       ],
       "Unsafe or problematic": [
         "Небяспечны або праблематычны"
@@ -11538,7 +11529,7 @@
         "Абараніце сваю сям'ю ад шкодных вэб-сайтаў і атрымайце доступ да нашых высакахуткасных сервераў VPN для прагляду абранага змесціва"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
-        "Абараніце свой сапраўдны адрас электроннай пошты ад раскрыцця або ўцечкі з дапамогай псеўданімаў (адвольна згенерыраваных адрасоў электроннай пошты, якія перасылаюць лісты ў вашу асноўную паштовую скрыню)."
+        "Абараніце свой сапраўдны адрас электроннай пошты ад раскрыцця або ўцечкі з дапамогай псеўданімаў (адвольна згенераваных адрасоў электроннай пошты, якія перасылаюць лісты ў вашу асноўную паштовую скрыню)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Забяспечвае найвышэйшы ўзровень бяспекі, а таксама адмысловую падтрымку"
@@ -12507,7 +12498,7 @@
         "Адрас электроннай пошты"
       ],
       "End date": [
-        "Дата заканчэння"
+        "Дата завяршэння"
       ],
       "Enter passphrase": [
         "Увядзіце парольную фразу"
@@ -14857,9 +14848,6 @@
       "Account security": [
         "Бяспека ўліковага запісу"
       ],
-      "Account temporarily locked": [
-        "Уліковы запіс часова заблакіраваны"
-      ],
       "Action all conversations": [
         "Дзеянне да ўсіх размоў"
       ],
@@ -15885,7 +15873,7 @@
         "Загрузіць відарыс"
       ],
       "Not all information listed here was exposed for all users.": [
-        "Не ўсе пералічаныя тут звесткі былі скампраметаваныя для ўсіх карыстальнікаў."
+        "Не ўсе пералічаныя тут звесткі былі скампраметаваны для ўсіх карыстальнікаў."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберыце схему PGP, якая будзе выкарыстоўвацца пры падпісанні або шыфраванні для карыстальніка. Звярніце ўвагу, што PGP/Inline прымусова пераўтварае паведамленні ў звычайны тэкст"

@@ -10918,9 +10918,6 @@
       "You are about to open your default browser and visit:": [
         "Estás a punto de abrir tu navegador por defecto y visitar:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Actualmente estás conectado como ${ user.Name } (${ user.Email })."
-      ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Actualmente estás usando ${ ipCount } de ${ ipAddresses } servidor dedicado disponible.",
         "Actualmente estás usando ${ ipCount } de ${ ipAddresses } servidores dedicados disponibles."
@@ -17032,7 +17029,7 @@
     },
     "q3campaign_2025: Info": {
       "${ discountPercent }% off": [
-        "${ discountPercent }% de descuento"
+        "-${ discountPercent }%"
       ],
       "${ normalPricePerMonth } /month": [
         "${ normalPricePerMonth } /mes"

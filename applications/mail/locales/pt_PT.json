@@ -199,9 +199,6 @@
       "Change page": [
         "Alterar página"
       ],
-      "Change password": [
-        "Alterar a palavra-passe"
-      ],
       "Change sorting": [
         "Alterar a ordenação"
       ],
@@ -1431,6 +1428,9 @@
       ],
       "Trust": [
         "Confiar"
+      ],
+      "Trust key": [
+        "Confiar na chave"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -7134,7 +7134,8 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir uma imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -8275,9 +8276,6 @@
       ],
       "You are about to open your default browser and visit:": [
         "Está prestes a abrir o seu navegador predefinido e a visitar:"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Tem actualmente sessão iniciada como ${ user.Name } (${ user.Email })."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Está a utilizar mais armazenamento do que o incluído no plano ${ downgradedPlanName }. Elimine ou remova dados para optar por um plano inferior."
@@ -9427,9 +9425,6 @@
       ],
       "Undisclosed Recipients": [
         "Destinatários não divulgados"
-      ],
-      "Unknown": [
-        "Desconhecido"
       ],
       "Unsafe or problematic": [
         "Inseguro ou problemático"

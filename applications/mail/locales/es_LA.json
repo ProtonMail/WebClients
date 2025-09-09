@@ -199,9 +199,6 @@
       "Change page": [
         "Cambiar página"
       ],
-      "Change password": [
-        "Cambiar contraseña"
-      ],
       "Change sorting": [
         "Cambiar orden"
       ],
@@ -1451,8 +1448,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -5198,8 +5194,8 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Los alias no pueden usarse cuando la contraseña adicional está activa en ${ PASS_APP_NAME }."
       ],
-      "An error occured with the categories": [
-        "Ocurrió un error con las categorías"
+      "An error occurred with the categories": [
+        "Ha ocurrido un error con las categorías"
       ],
       "App currently unavailable": [
         "La aplicación no está disponible actualmente."
@@ -7314,7 +7310,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8468,9 +8465,6 @@
       "You are about to open your default browser and visit:": [
         "Está a punto de abrir su navegador por defecto y consultar:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Actualmente inició sesión como ${ user.Name } (${ user.Email })."
-      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Está usando más almacenamiento del que se incluye en un plan ${ downgradedPlanName }. Elimine o borre datos para poder cambiar de plan."
       ],
@@ -9110,6 +9104,9 @@
       "Blind Carbon Copy": [
         "Con copia oculta"
       ],
+      "Bookings, billings, and orders": [
+        "Reservaciones, facturas y órdenes"
+      ],
       "Browser": [
         "Navegador"
       ],
@@ -9443,6 +9440,9 @@
       "No label found": [
         "Ninguna etiqueta encontrada"
       ],
+      "Non-promotional content and news": [
+        "Noticias y contenido no promocional"
+      ],
       "Not factually correct": [
         "Los hechos no son correctos."
       ],
@@ -9632,9 +9632,6 @@
       "Undisclosed Recipients": [
         "Destinatarios ocultos"
       ],
-      "Unknown": [
-        "Desconocido"
-      ],
       "Unsafe or problematic": [
         "Inseguro o problemático"
       ],
@@ -9688,6 +9685,9 @@
       ],
       "Writing assistant": [
         "Asistente de escritura"
+      ],
+      "You cannot disable all categories": [
+        "No puedes desactivar todas las categorías"
       ],
       "Your alias": [
         "Su alias"
@@ -12362,7 +12362,7 @@
     },
     "q3campaign_2025: Info": {
       "${ discountPercent }% off": [
-        "${ discountPercent }% de descuento"
+        "-${ discountPercent }%"
       ],
       "${ normalPricePerMonth } /month": [
         "${ normalPricePerMonth } /mes"
@@ -14375,9 +14375,6 @@
       "Account security": [
         "Seguridad de la cuenta"
       ],
-      "Account temporarily locked": [
-        "Cuenta temporalmente bloqueada"
-      ],
       "Action all conversations": [
         "Acción en todas las conversaciones"
       ],
@@ -14552,6 +14549,9 @@
       ],
       "Customize calendar import": [
         "Personalice la importación del calendario"
+      ],
+      "Customize categories": [
+        "Personalizar categorías"
       ],
       "Customize your mail import": [
         "Personalice la importación del correo"
