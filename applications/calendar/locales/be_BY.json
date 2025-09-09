@@ -363,7 +363,7 @@
         "Экспартаваць групу кантактаў"
       ],
       "Export selection as .vcf": [
-        "Экспартаванне вылучэння ў фармат .vcf"
+        "Экспарт вылучэння ў фармат .vcf"
       ],
       "Forgot password?": [
         "Забылі пароль?"
@@ -372,7 +372,7 @@
         "Пераслаць як далучэнне"
       ],
       "Generate password": [
-        "Згенерыраваць пароль"
+        "Згенераваць пароль"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Атрымаць ${ planName } за ${ priceCoupon }"
@@ -4854,7 +4854,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "У залежнасці ад вашага пастаўшчыка паслуг электроннай пошты, спачатку вам можа спатрэбіцца згенерыраваць ${ knowledgeBaseLink } перад імпартаваннем у ${ BRAND_NAME }."
+        "У залежнасці ад вашага пастаўшчыка паслуг электроннай пошты, спачатку вам можа спатрэбіцца згенераваць ${ knowledgeBaseLink } перад імпартаваннем у ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Разгарніце выпадное меню, націснуўшы на 3 кропкі (...)."
@@ -6182,8 +6182,8 @@
       "You are about to open your default browser and visit:": [
         "Вы збіраецеся адкрыць прадвызначаны браўзер і наведаць:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Вы ўжо ўвайшлі як ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Вы ўжо ўвайшлі як ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Вы выкарыстоўваеце больш сховішча, чым гэта прадугледжана тарыфным планам ${ downgradedPlanName }. Выдаліце або перамясціце даныя, калі вы ўсё яшчэ хочаце панізіць свой тарыфны план."
@@ -8411,7 +8411,7 @@
         "Абараніце сваю сям'ю ад шкодных вэб-сайтаў і атрымайце доступ да нашых высакахуткасных сервераў VPN для прагляду абранага змесціва"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
-        "Абараніце свой сапраўдны адрас электроннай пошты ад раскрыцця або ўцечкі з дапамогай псеўданімаў (адвольна згенерыраваных адрасоў электроннай пошты, якія перасылаюць лісты ў вашу асноўную паштовую скрыню)."
+        "Абараніце свой сапраўдны адрас электроннай пошты ад раскрыцця або ўцечкі з дапамогай псеўданімаў (адвольна згенераваных адрасоў электроннай пошты, якія перасылаюць лісты ў вашу асноўную паштовую скрыню)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Забяспечвае найвышэйшы ўзровень бяспекі, а таксама адмысловую падтрымку"
@@ -11997,7 +11997,7 @@
         "Загрузіць відарыс"
       ],
       "Not all information listed here was exposed for all users.": [
-        "Не ўсе пералічаныя тут звесткі былі скампраметаваныя для ўсіх карыстальнікаў."
+        "Не ўсе пералічаныя тут звесткі былі скампраметаваны для ўсіх карыстальнікаў."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберыце схему PGP, якая будзе выкарыстоўвацца пры падпісанні або шыфраванні для карыстальніка. Звярніце ўвагу, што PGP/Inline прымусова пераўтварае паведамленні ў звычайны тэкст"
