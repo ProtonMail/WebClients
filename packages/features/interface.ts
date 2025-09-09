@@ -108,16 +108,16 @@ export enum FeatureCode {
     OfferAnniversary2025VPNPlus = 'OfferAnniversary2025VPNPlus',
 
     // Back to school
-    OfferBackToSchoolMailPlus = 'OfferQ3Sep2025MailPlus',
-    OfferBackToSchoolMailPlusToYearly = 'OfferQ3Sep2025MailPlusToYearly', // user already pays on monthly basis
-    OfferBackToSchoolDrivePlus = 'OfferQ3Sep2025DrivePlus', // does not have "to-yearly" offer!
-    OfferBackToSchoolVPNPlus = 'OfferQ3Sep2025VPNPlus',
-    OfferBackToSchoolVPNPlusToYearly = 'OfferQ3Sep2025VPNPlusToYearly',
-    OfferBackToSchoolPassPlus = 'OfferQ3Sep2025PassPlus',
-    OfferBackToSchoolPassPlusToYearly = 'OfferQ3Sep2025PassPlusToYearly',
-    OfferBackToSchoolBundle = 'OfferQ3Sep2025Bundle',
-    OfferBackToSchoolDuo = 'OfferQ3Sep2025Duo',
-    OfferBackToSchoolFamily = 'OfferQ3Sep2025Family',
+    OfferBackToSchoolMailPlus = 'OfferBackToSchoolMailPlus',
+    OfferBackToSchoolMailPlusToYearly = 'OfferBackToSchoolMailPlusToYearly', // user already pays on monthly basis
+    OfferBackToSchoolDrivePlus = 'OfferBackToSchoolDrivePlus', // does not have "to-yearly" offer!
+    OfferBackToSchoolVPNPlus = 'OfferBackToSchoolVPNPlus',
+    OfferBackToSchoolVPNPlusToYearly = 'OfferBackToSchoolVPNPlusToYearly',
+    OfferBackToSchoolPassPlus = 'OfferBackToSchoolPassPlus',
+    OfferBackToSchoolPassPlusToYearly = 'OfferBackToSchoolPassPlusToYearly',
+    OfferBackToSchoolBundle = 'OfferBackToSchoolBundle',
+    OfferBackToSchoolDuo = 'OfferBackToSchoolDuo',
+    OfferBackToSchoolFamily = 'OfferBackToSchoolFamily',
 
     Offers = 'Offers',
     PrivacyDropdownOpened = 'PrivacyDropdownOpened',
