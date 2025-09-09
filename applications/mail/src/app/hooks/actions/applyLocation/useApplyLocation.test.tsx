@@ -317,7 +317,6 @@ describe('useApplyLocation', () => {
                 });
 
                 expect(mockedLabelMessages).toHaveBeenCalledWith({
-                    isEncryptedSearch: false,
                     showSuccessNotification: true,
                     destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     labels: [],
@@ -347,7 +346,6 @@ describe('useApplyLocation', () => {
                 });
 
                 expect(mockedLabelMessages).toHaveBeenCalledWith({
-                    isEncryptedSearch: false,
                     showSuccessNotification: true,
                     destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     labels: [],
@@ -379,7 +377,6 @@ describe('useApplyLocation', () => {
 
                 expect(mockedLabelMessages).not.toHaveBeenCalled();
                 expect(mockedUnlabelMessages).toHaveBeenCalledWith({
-                    isEncryptedSearch: false,
                     showSuccessNotification: true,
                     destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     labels: [],
