@@ -26,11 +26,13 @@ import { isElementMessage } from '../../helpers/elements';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
 import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useGetElementsFromIDs, useGetMessagesOrElementsFromIDs } from '../../hooks/mailbox/useElements';
+import { useCategoriesView } from '../categoryView/useCategoriesView';
 import { folderLocation } from '../list/list-telemetry/listTelemetryHelper';
 import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import { MoveToDivider, MoveToDropdownButtons } from './MoveToComponents';
 import { MoveToSearchInput } from './MoveToSearchInput';
 import { MoveToTreeView } from './MoveToTreeView';
+import { getInboxCategoriesItems } from './moveToFolderDropdown.helper';
 
 export const moveDropdownContentProps = { className: 'flex flex-column flex-nowrap items-stretch' };
 
@@ -74,7 +76,9 @@ export const MoveToFolderDropdown = ({
 
     useEffect(() => onLock(!containFocus), [containFocus]);
 
-    const { list: treeview } = useMailFolderTreeView();
+    const { list: treeView } = useMailFolderTreeView();
+
+    const { shouldShowTabs, activeCategoriesTabs } = useCategoriesView();
 
     /*
      * When moving an element to SPAM, we want to open an "Unsubscribe modal" when items in the selections can be unsubscribed.
@@ -92,13 +96,13 @@ export const MoveToFolderDropdown = ({
         ? !!getMessagesAuthorizedToMove(elements as Message[], MAILBOX_LABEL_IDS.SPAM).length
         : true;
 
-    const list = treeview
+    const list = treeView
         .concat([
-            canMoveToInbox && {
-                ID: MAILBOX_LABEL_IDS.INBOX,
-                Name: c('Mailbox').t`Inbox`,
-                icon: 'inbox',
-            },
+            ...getInboxCategoriesItems({
+                canMoveToInbox,
+                shouldShowTabs,
+                activeCategoriesTabs,
+            }),
             { ID: MAILBOX_LABEL_IDS.ARCHIVE, Name: c('Mailbox').t`Archive`, icon: 'archive-box' },
             canMoveToSpam && {
                 ID: MAILBOX_LABEL_IDS.SPAM,

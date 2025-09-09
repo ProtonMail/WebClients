@@ -36,7 +36,12 @@ export const MoveToTreeView = ({ treeView, selectedFolder, handleSelectFolder, s
                                 data-testid={`move-to-button-${folder.Name}`}
                             >
                                 <div data-level={folder.level} className="flex">
-                                    <FolderIcon folder={folder} name={folder.icon} className="shrink-0 mr-2 mt-0.5" />
+                                    <FolderIcon
+                                        folder={folder}
+                                        name={folder.icon}
+                                        dataColor={folder?.folderIconProps?.color}
+                                        className={clsx('shrink-0 mr-2 mt-0.5', folder?.folderIconProps?.className)}
+                                    />
                                     <span className="text-ellipsis flex-1" title={folder.Name}>
                                         {folder.Name}
                                     </span>
