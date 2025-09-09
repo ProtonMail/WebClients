@@ -14,7 +14,6 @@ import { useMarkAllAs } from 'proton-mail/hooks/actions/markAs/useMarkAllAs';
 import { MOVE_BACK_ACTION_TYPES } from 'proton-mail/hooks/actions/moveBackAction/interfaces';
 import { useMoveBackAction } from 'proton-mail/hooks/actions/moveBackAction/useMoveBackAction';
 import { useGetConversationsByIDs } from 'proton-mail/hooks/conversation/useConversation';
-import useIsEncryptedSearch from 'proton-mail/hooks/useIsEncryptedSearch';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 import {
     markConversationsAsRead,
@@ -38,7 +37,6 @@ export interface MarkAsParams {
 export const useMarkAs = () => {
     const { markAllAs, selectAllMarkModal } = useMarkAllAs();
     const dispatch = useMailDispatch();
-    const isEncryptedSearch = useIsEncryptedSearch();
     const { sendSimpleActionReport } = useListTelemetry();
     const getConversationsByIDs = useGetConversationsByIDs();
     const handleOnBackMoveAction = useMoveBackAction();
@@ -71,7 +69,6 @@ export const useMarkAs = () => {
                                 elements,
                                 conversations,
                                 labelID,
-                                isEncryptedSearch,
                                 showSuccessNotification: !silent,
                             })
                         );
@@ -81,7 +78,6 @@ export const useMarkAs = () => {
                                 elements,
                                 conversations,
                                 labelID,
-                                isEncryptedSearch,
                                 showSuccessNotification: !silent,
                             })
                         );
@@ -92,7 +88,6 @@ export const useMarkAs = () => {
                             markConversationsAsRead({
                                 elements,
                                 labelID,
-                                isEncryptedSearch,
                                 showSuccessNotification: !silent,
                             })
                         );
@@ -101,7 +96,6 @@ export const useMarkAs = () => {
                             markConversationsAsUnread({
                                 elements,
                                 labelID,
-                                isEncryptedSearch,
                                 showSuccessNotification: !silent,
                             })
                         );

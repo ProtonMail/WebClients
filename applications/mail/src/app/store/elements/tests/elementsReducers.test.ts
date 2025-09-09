@@ -69,7 +69,6 @@ describe('elementsReducers', () => {
                         elements: [message1, message2],
                         conversations: [conversation1],
                         labelID,
-                        isEncryptedSearch: false,
                     },
                 },
             });
