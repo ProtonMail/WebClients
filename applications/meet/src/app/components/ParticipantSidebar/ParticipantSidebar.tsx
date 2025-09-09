@@ -23,7 +23,7 @@ export const ParticipantSidebar = ({
 
     return (
         <div
-            className="w-full h-full overflow-y-auto hide-scrollbar relative"
+            className="h-full overflow-y-auto hide-scrollbar relative shrink-0"
             onMouseEnter={() => setIsParticipantSidebarHovered(true)}
             onMouseLeave={() => setIsParticipantSidebarHovered(false)}
             style={{ overflow: participantSideBarOpen ? 'hidden' : 'visible' }}

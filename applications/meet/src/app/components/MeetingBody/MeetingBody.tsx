@@ -60,15 +60,6 @@ export const MeetingBody = ({
 
     const isSideBarOpen = Object.values(sideBarState).some((value) => value);
 
-    const getParticipantSideBarColumns = () => {
-        return participantSideBarOpen ? 'max-content' : '0px';
-    };
-
-    const defaultColumns = isLargerThanMd ? `8fr${isSideBarOpen ? ' minmax(0, 3fr)' : ''}` : '1fr';
-    const screenShareColumns = isLargerThanMd
-        ? `${isSideBarOpen ? 6 : 8}fr ${getParticipantSideBarColumns()}${isSideBarOpen ? ' minmax(0, 2fr)' : ''}`
-        : '1fr';
-
     const screenShareVideoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
@@ -121,20 +112,18 @@ export const MeetingBody = ({
                 />
             )}
             <div
-                className="w-full flex-1 overflow-hidden"
-                style={{
-                    display: 'grid',
-                    gridTemplateColumns: isScreenShare ? screenShareColumns : defaultColumns,
-                    gap: participantSideBarOpen || isSideBarOpen ? 16 : 0,
-                }}
+                className={clsx(
+                    'flex flex-nowrap w-full flex-1 overflow-hidden',
+                    participantSideBarOpen || isSideBarOpen ? 'gap-4' : 'gap-0'
+                )}
             >
                 {isScreenShare && (
                     <div
-                        className="bg-strong w-custom h-custom overflow-hidden mx-auto my-0 rounded relative"
+                        className="bg-strong h-full overflow-hidden mx-auto my-0 rounded relative shrink-1"
                         style={{
                             background: '#000',
-                            '--w-custom': isScreenShare ? '100%' : 0,
-                            '--h-custom': isScreenShare ? '100%' : 0,
+                            flexGrow: isSideBarOpen ? 6 : 8,
+                            flexBasis: 0,
                         }}
                     >
                         <video
@@ -152,15 +141,27 @@ export const MeetingBody = ({
                         setParticipantSideBarOpen={setParticipantSideBarOpen}
                     />
                 ) : (
-                    <>{(isLargerThanMd || !isSideBarOpen) && !isScreenShare && <ParticipantGrid />}</>
-                )}
-                {(isLargerThanMd || isSideBarOpen) && (
                     <>
+                        {(isLargerThanMd || !isSideBarOpen) && !isScreenShare && (
+                            <div
+                                className="h-full shrink-0"
+                                style={{
+                                    flexGrow: isSideBarOpen ? 6 : 8,
+                                    flexBasis: 0,
+                                }}
+                            >
+                                <ParticipantGrid />
+                            </div>
+                        )}
+                    </>
+                )}
+                {isSideBarOpen && (
+                    <div className="h-full shrink-0" style={{ flexGrow: isScreenShare ? 2 : 3, flexBasis: 0 }}>
                         <Participants />
                         <Settings />
                         <Chat />
                         {guestMode ? <MeetingDetails /> : <WrappedMeetingDetails />}
-                    </>
+                    </div>
                 )}
             </div>
             <ParticipantControls />
