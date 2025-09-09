@@ -418,7 +418,7 @@
         "Забылі спосаб аднаўлення?"
       ],
       "Generate password": [
-        "Згенерыраваць пароль"
+        "Згенераваць пароль"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Атрымаць ${ planName } за ${ priceCoupon }"
@@ -1128,7 +1128,7 @@
         "Згенерыраваць ключы, якія адсутнічаюць"
       ],
       "Generate missing keys for address “${ emailAddress }”": [
-        "Згенерыраваць прапушчаныя ключы для адраса “${ emailAddress }”"
+        "Згенераваць прапушчаныя ключы для адраса “${ emailAddress }”"
       ],
       "Reconnect": [
         "Перападключыцца"
@@ -5349,7 +5349,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "У залежнасці ад вашага пастаўшчыка паслуг электроннай пошты, спачатку вам можа спатрэбіцца згенерыраваць ${ knowledgeBaseLink } перад імпартаваннем у ${ BRAND_NAME }."
+        "У залежнасці ад вашага пастаўшчыка паслуг электроннай пошты, спачатку вам можа спатрэбіцца згенераваць ${ knowledgeBaseLink } перад імпартаваннем у ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Разгарніце выпадное меню, націснуўшы на 3 кропкі (...)."
@@ -7545,8 +7545,8 @@
       "You already have a free account": [
         "У вас ужо ёсць бясплатны ўліковы запіс"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Вы ўжо ўвайшлі як ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Вы ўжо ўвайшлі як ${ username }."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Цяпер вы выкарыстоўваеце ${ ipCount } вылучаны сервер з ${ ipAddresses } даступных вам.",
@@ -10126,7 +10126,7 @@
         "Абараніце сваю сям'ю ад шкодных вэб-сайтаў і атрымайце доступ да нашых высакахуткасных сервераў VPN для прагляду абранага змесціва"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
-        "Абараніце свой сапраўдны адрас электроннай пошты ад раскрыцця або ўцечкі з дапамогай псеўданімаў (адвольна згенерыраваных адрасоў электроннай пошты, якія перасылаюць лісты ў вашу асноўную паштовую скрыню)."
+        "Абараніце свой сапраўдны адрас электроннай пошты ад раскрыцця або ўцечкі з дапамогай псеўданімаў (адвольна згенераваных адрасоў электроннай пошты, якія перасылаюць лісты ў вашу асноўную паштовую скрыню)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Забяспечвае найвышэйшы ўзровень бяспекі, а таксама адмысловую падтрымку"
@@ -11322,7 +11322,7 @@
         "Напрыклад, "
       ],
       "End date": [
-        "Дата заканчэння"
+        "Дата завяршэння"
       ],
       "example@domain.com": [
         "pryklad@damen.com"

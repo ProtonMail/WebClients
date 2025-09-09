@@ -7302,9 +7302,6 @@
       "You already have a free account": [
         "U heeft al een gratis account"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "U bent momenteel aangemeld als ${ user.Name } (${ user.Email })."
-      ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "U gebruikt momenteel ${ ipCount } van uw ${ ipAddresses } beschikbare toegewijde server.",
         "U gebruikt momenteel ${ ipCount } van uw ${ ipAddresses } beschikbare toegewijde servers."
@@ -11146,7 +11143,7 @@
     },
     "q3campaign_2025: Info": {
       "${ discountPercent }% off": [
-        "${ discountPercent }% korting"
+        "-${ discountPercent }%"
       ],
       "${ normalPricePerMonth } /month": [
         "${ normalPricePerMonth } /maand"
