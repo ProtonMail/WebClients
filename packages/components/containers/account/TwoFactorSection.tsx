@@ -14,7 +14,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
-import { getHasFIDO2Support } from '@proton/shared/lib/webauthn/helper';
+import { getHasFIDO2Support, getHasWebAuthnSupport } from '@proton/shared/lib/webauthn/helper';
 import { getId } from '@proton/shared/lib/webauthn/id';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
@@ -93,7 +93,8 @@ const TwoFactorSection = () => {
             ? 'https://protonvpn.com/support/two-factor-authentication'
             : getKnowledgeBaseUrl('/two-factor-authentication-2fa');
 
-    const hasSecurityKeySupport = getHasFIDO2Support(APP_NAME, location.hostname);
+    const hasSecurityKeySupport =
+        getHasWebAuthnSupport() && getHasFIDO2Support({ appName: APP_NAME, hostname: location.hostname });
 
     return (
         <SettingsSection>
