@@ -922,6 +922,24 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
+      ],
+      "Add secret passphrase": [
+        "シークレットパスフレーズを追加"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "無料の${ BRAND_NAME }アドレスを取得"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }で参加"
+      ],
+      "Passphrase": [
+        "パスフレーズ"
+      ],
+      "Retry": [
+        "再試行"
+      ],
+      "Update secret passphrase": [
+        "シークレットパスフレーズを更新"
       ]
     },
     "action": {
@@ -1480,6 +1498,9 @@
       ],
       "Website access problem": [
         "ウェブサイトへのアクセスに関する問題"
+      ],
+      "Meet problem": [
+        "Meetの問題"
       ]
     },
     "Button": {
@@ -3791,6 +3812,18 @@
       ],
       "ZIP code is required": [
         "郵便番号は必須です"
+      ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "${ MEET_APP_NAME } ビデオ会議の作成に失敗しました。"
+      ],
+      "Failed to decrypt session key": [
+        "セッションキーの復号化に失敗しました"
+      ],
+      "Failed to update secret passphrase": [
+        "シークレットパスフレーズの更新に失敗しました"
+      ],
+      "Passphrase unavailable": [
+        "パスフレーズは利用できません"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4177,6 +4210,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "あなたのアカウントは割り当てられた ${ inviteSpace } を超える ${ usedSpace } のストレージを使用中です。一部のデータを削除するか、プラン管理者にストレージを増やしてもらう必要があります。"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "ファミリープランは現在外部のアカウントをサポートしていません。参加する前に${ BRAND_NAME }アドレスを作成してください。${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -4367,6 +4403,15 @@
       ],
       "Security Center": [
         "セキュリティセンター"
+      ],
+      "Domain": [
+        "ドメイン"
+      ],
+      "Password ends with": [
+        "パスワードの末尾"
+      ],
+      "Username": [
+        "ユーザー名"
       ]
     },
     "Hint": {
@@ -6022,6 +6067,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "お客様ご自身のアカウントデータは引き続き表示できますが、すべてのユーザーアカウントがお客様の組織から削除されます。"
+      ],
+      "Failed to update meeting name": [
+        "ミーティング名の更新に失敗しました"
+      ],
+      "Failed to update meeting password": [
+        "ミーティングパスワードの更新に失敗しました"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "より高いセキュリティのために、パスフレーズを設定できます。それはカレンダーの招待には含まれませんので、ゲストには別途共有することを忘れないでください。"
       ]
     },
     "info": {
@@ -6674,6 +6728,21 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "${ MEET_APP_NAME }会議を追加"
+      ],
+      "Add Zoom meeting": [
+        "Zoomミーティングを追加"
+      ],
+      "Passphrase:": [
+        "パスフレーズ:"
+      ],
+      "Video conference": [
+        "ビデオ会議"
+      ],
+      "Zoom meeting": [
+        "Zoom ミーティング"
       ]
     },
     "Label for contact group color": {
@@ -8076,6 +8145,9 @@
       ],
       "Passcode copied to clipboard": [
         "パスコードがクリップボードにコピーされました"
+      ],
+      "Passphrase copied to clipboard": [
+        "パスフレーズがクリップボードにコピーされました"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8263,7 +8335,7 @@
         "毎年払い、安全な私たちの最高のオファー"
       ],
       "Save": [
-        "節約"
+        "お得"
       ],
       "Save big when you pay annually": [
         "年払いで大幅に節約"
@@ -8683,6 +8755,24 @@
       ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName }を除く: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% の税金を除く: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName }: ${ taxAmount } を含む"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% の税金込み: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "税金"
+      ],
+      "VAT": [
+        "付加価値税"
       ]
     },
     "Payments.Error": {
@@ -8920,6 +9010,9 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Enter passphrase": [
+        "パスフレーズを入力してください"
       ]
     },
     "Placeholder for contact group name": {
@@ -9631,6 +9724,12 @@
       ],
       "Video conferencing is here!": [
         "ビデオ会議はここ！"
+      ],
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME }が登場しました！"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "カレンダーから直接、${ MEET_APP_NAME } の通話をスケジュール設定し、参加できます。"
       ]
     },
     "sso": {
@@ -10329,6 +10428,9 @@
       ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"
+      ],
+      "Secret passphrase updated": [
+        "シークレットパスフレーズが更新されました"
       ]
     },
     "Suffix": {
@@ -11130,6 +11232,15 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Next": [
+        "次へ"
+      ],
+      "Open pagination": [
+        "ページネーションを開く"
+      ],
+      "Previous": [
+        "前へ"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11656,6 +11767,78 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }にトライアルが終了すると、${ formattedDate }に${ renewCycle }ヶ月ごとに自動更新される有料のサブスクリプションに移行します。${ formattedDate }までにキャンセルした場合、料金は請求されません。"
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } にトライアルが終了すると、毎月 ${ formattedDate } に自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_DEDICATED_IPS }の専用サーバーをご利用いただけます。"
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_LUMO_SEATS }の${ LUMO_SHORT_APP_NAME }シートをご利用いただけます。"
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_SCRIBE_SEATS }のスライブシートをご利用いただけます。"
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_USERS }ユーザーまでご利用いただけます。"
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "トライアル期間中にカスタムドメインを追加することはできません。"
+      ],
+      "You have reached the trial limit.": [
+        "トライアルの制限に達しました。"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "高度なAIモデルへのアクセス"
+      ],
+      "Basic chat history": [
+        "基本チャット履歴"
+      ],
+      "Full chat history with search": [
+        "検索機能付きの完全なチャット履歴"
+      ],
+      "Large file upload support": [
+        "大容量ファイルアップロードサポート"
+      ],
+      "Limited daily chats": [
+        "毎日のチャットの制限"
+      ],
+      "Limited favorites": [
+        "お気に入りの制限"
+      ],
+      "Unlimited daily chats": [
+        "無制限の毎日のチャット"
+      ],
+      "Unlimited favorites for quick access": [
+        "無制限のクイックアクセスのお気に入り"
+      ],
+      "Upload and query multiple large files": [
+        "複数大容量ファイルのアップロードと検索"
+      ],
+      "Upload and query small files": [
+        "小さなファイルのアップロードと検索"
+      ],
+      "Web search access": [
+        "ウェブ検索アクセス"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } は、プライバシーを第一に考えたAIで、お客様のデータを安全に保ちながら、より多くのことを達成するのに役立ちます。その可能性を最大限に引き出し、導入される新しい機能への早期アクセスをお楽しみください。"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME }を追加"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "高速チャットと高度なAI機能。"
       ]
     }
   }

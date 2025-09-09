@@ -877,6 +877,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Retry": [
+        "重試"
       ]
     },
     "action": {
@@ -3566,6 +3569,9 @@
       ],
       "ZIP code is required": [
         "郵遞區號為必要項目"
+      ],
+      "Failed to open to contact": [
+        "無法開啟聯絡人"
       ]
     },
     "Error accepting calendar invitation": {
@@ -3952,6 +3958,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "您的帳號已使用 ${ usedSpace } 的儲存空間，這超過了為您分配的 ${ inviteSpace }。刪除一些資料或要求方案管理員增加您的儲存空間。"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "家庭方案目前不支援外部帳號。請在加入前創建 ${ BRAND_NAME } 地址。${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -5635,6 +5644,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "您的系統時區似乎已更改為 ${ timezone }。您要更新您的時區喜好設定嗎？"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "您目前已登入為 ${ username }。"
       ]
     },
     "info": {
@@ -6368,6 +6380,9 @@
       ],
       "What’s this?": [
         "這是什麼？"
+      ],
+      "Resume now": [
+        "立即恢復"
       ]
     },
     "Link label (optional)": {
@@ -7762,7 +7777,7 @@
         "每年付款，安全及最適方案"
       ],
       "Save": [
-        "儲存"
+        "節省"
       ],
       "Special offer": [
         "特別優惠"
@@ -8098,6 +8113,24 @@
       ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "不包含 ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "不包含 ${ taxRate }% 稅金：${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "包含 ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "包含 ${ taxRate }% 稅金：${ taxAmount }"
+      ],
+      "Taxes": [
+        "稅金"
+      ],
+      "VAT": [
+        "增值稅"
       ]
     },
     "Payments.Error": {
@@ -8157,6 +8190,12 @@
       ],
       "VAT number": [
         "增值稅編號（VAT）"
+      ],
+      "Edit ABN": [
+        "編輯 ABN"
+      ],
+      "Edit EIN": [
+        "編輯 EIN"
       ]
     },
     "PGP key encryption warning": {
@@ -10354,6 +10393,15 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Next": [
+        "下一頁"
+      ],
+      "Open pagination": [
+        "開啟分頁"
+      ],
+      "Previous": [
+        "上一頁"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10866,6 +10914,11 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "信任的聯絡人"
       ]
     }
   }

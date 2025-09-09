@@ -930,6 +930,24 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add secret passphrase": [
+        "Adăugare frază de acces secretă"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Revendicați adresa gratuită ${ BRAND_NAME }"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Alăturați-vă cu ${ MEET_APP_NAME }"
+      ],
+      "Passphrase": [
+        "Fraza de acces"
+      ],
+      "Retry": [
+        "Reîncercare"
+      ],
+      "Update secret passphrase": [
+        "Actualizare frază secretă de acces"
       ]
     },
     "action": {
@@ -1504,6 +1522,9 @@
       ],
       "Website access problem": [
         "Problemă accesare site web"
+      ],
+      "Meet problem": [
+        "Problemă Meet"
       ]
     },
     "Button": {
@@ -3859,6 +3880,18 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "Nu s-a putut crea o conferință video ${ MEET_APP_NAME }"
+      ],
+      "Failed to decrypt session key": [
+        "Nu s-a putut decripta cheia de sesiune."
+      ],
+      "Failed to update secret passphrase": [
+        "Nu s-a putut actualiza fraza de acces secretă."
+      ],
+      "Passphrase unavailable": [
+        "Frază de acces indisponibilă"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4251,6 +4284,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Contul utilizează ${ usedSpace } de stocare, care depășește cei ${ inviteSpace } care vi s-au alocat. Ștergeți unele date sau cereți administratorului planului să vă crească limita de stocare."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Planurile de familie nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -4453,6 +4489,15 @@
       ],
       "Security Center": [
         "Centru de securitate"
+      ],
+      "Domain": [
+        "Domeniu"
+      ],
+      "Password ends with": [
+        "Parola se termină cu"
+      ],
+      "Username": [
+        "Nume de utilizator"
       ]
     },
     "Hint": {
@@ -6190,6 +6235,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
+      ],
+      "Failed to update meeting name": [
+        "Actualizarea numelui întâlnirii a eșuat."
+      ],
+      "Failed to update meeting password": [
+        "Actualizarea parolei întâlnirii a eșuat."
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Pentru un plus de securitate, puteți seta o frază de acces. Aceasta nu va fi inclusă în invitația de calendar, nu uitați să o partajați separat cu invitații."
       ]
     },
     "info": {
@@ -6854,6 +6908,21 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "Adăugare conferință ${ MEET_APP_NAME }"
+      ],
+      "Add Zoom meeting": [
+        "Adăugare întâlnire pe Zoom"
+      ],
+      "Passphrase:": [
+        "Fraza de acces:"
+      ],
+      "Video conference": [
+        "Conferință video"
+      ],
+      "Zoom meeting": [
+        "Conferință pe Zoom"
       ]
     },
     "Label for contact group color": {
@@ -8326,6 +8395,9 @@
       ],
       "Passcode copied to clipboard": [
         "Codul de acces s-a copiat în memorie."
+      ],
+      "Passphrase copied to clipboard": [
+        "Fraza de acces s-a copiat în memorie."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8993,6 +9065,24 @@
       ],
       "Your payment is still being processed": [
         "Plata este încă în curs de procesare."
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluzând taxe de ${ taxRate }%: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluzând taxe de ${ taxRate }%: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Taxe"
+      ],
+      "VAT": [
+        "TVA"
       ]
     },
     "Payments.Error": {
@@ -9230,6 +9320,9 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Enter passphrase": [
+        "Introduceți fraza de acces"
       ]
     },
     "Placeholder for contact group name": {
@@ -9983,6 +10076,12 @@
       ],
       "Video conferencing is here!": [
         "Au sosit conferințele video!"
+      ],
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } a sosit!"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Programați și alăturați-vă apelurilor ${ MEET_APP_NAME } direct din calendarul personal."
       ]
     },
     "sso": {
@@ -10713,6 +10812,9 @@
       ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"
+      ],
+      "Secret passphrase updated": [
+        "Frază de acces secretă s-a actualizat."
       ]
     },
     "Suffix": {
@@ -11544,6 +11646,15 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Next": [
+        "Următoare"
+      ],
+      "Open pagination": [
+        "Deschidere paginare"
+      ],
+      "Previous": [
+        "Anterior"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12158,6 +12269,78 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce se încheie perioada de probare la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni, la ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce probarea se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat lunar la data de ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licențe în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe Scribe în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_USERS } utilizatori în perioada de probare."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Nu puteți adăuga domenii personale în perioada de probare."
+      ],
+      "You have reached the trial limit.": [
+        "Ați atins limita perioadei de probare."
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acces la modele AI avansate"
+      ],
+      "Basic chat history": [
+        "Istoric de bază conversații"
+      ],
+      "Full chat history with search": [
+        "Istoric complet al conversațiilor cu căutare"
+      ],
+      "Large file upload support": [
+        "Acceptare încărcare fișiere mari"
+      ],
+      "Limited daily chats": [
+        "Conversații zilnice limitate"
+      ],
+      "Limited favorites": [
+        "Favorite limitate"
+      ],
+      "Unlimited daily chats": [
+        "Conversații zilnice nelimitate"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favorite nelimitate pentru o accesare rapidă"
+      ],
+      "Upload and query multiple large files": [
+        "Încărcați și interogați mai multe fișiere mari"
+      ],
+      "Upload and query small files": [
+        "Încărcați și interogați fișiere mici"
+      ],
+      "Web search access": [
+        "Acces la căutare pe internet"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } este o aplicație de inteligență artificială axată pe confidențialitate, care vă ajută să realizați mai mult, păstrându-vă în același timp datele în siguranță. Deblocați-i întregul potențial și bucurați-vă de acces timpuriu la noile funcții pe măsură ce sunt introduse."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Adăugare ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Conversații rapide și funcții avansate de inteligență artificială."
       ]
     }
   }

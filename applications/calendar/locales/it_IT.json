@@ -926,6 +926,24 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La tua prova gratuita dell'applicazione desktop termina ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add secret passphrase": [
+        "Aggiungi frase d'accesso segreta"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Ottieni il tuo indirizzo ${ BRAND_NAME } gratuito"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Unisciti con ${ MEET_APP_NAME }"
+      ],
+      "Passphrase": [
+        "Frase d'accesso"
+      ],
+      "Retry": [
+        "Riprova"
+      ],
+      "Update secret passphrase": [
+        "Aggiorna frase d'accesso segreta"
       ]
     },
     "action": {
@@ -1240,6 +1258,12 @@
       ],
       "You have reached the trial limit.": [
         "Hai raggiunto il limite della prova."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Dopo la prova termina il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnoverà automaticamente ogni ${ renewCycle } mesi il ${ formattedDate }. Non ti verrà addebitato nulla se annulli prima del ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_LUMO_SEATS } licenze ${ LUMO_SHORT_APP_NAME } durante il periodo di prova."
       ]
     },
     "b2b_trials_Action": {
@@ -1515,6 +1539,9 @@
       ],
       "Website access problem": [
         "Problema di accesso al sito web"
+      ],
+      "Meet problem": [
+        "Si è verificato un problema"
       ]
     },
     "Button": {
@@ -1812,6 +1839,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Aggiungi ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chat veloci e funzioni AI avanzate."
       ]
     },
     "colon": {
@@ -3856,6 +3886,18 @@
       ],
       "ZIP code is required": [
         "Il codice postale è obbligatorio"
+      ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "Creazione della videoconferenza ${ MEET_APP_NAME } non riuscita"
+      ],
+      "Failed to decrypt session key": [
+        "Decriptazione della chiave di sessione non riuscita"
+      ],
+      "Failed to update secret passphrase": [
+        "Impossibile aggiornare la frase d'accesso segreta"
+      ],
+      "Passphrase unavailable": [
+        "Frase segreta non disponibile"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4245,6 +4287,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Il tuo account sta usando ${ usedSpace } di spazio di archiviazione, mentre lo spazio a tua disposizione è inferiore: ${ inviteSpace }. Elimina dei dati o chiedi all'amministratore del piano di aumentarti lo spazio di archiviazione."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "I piani famiglia non supportano account esterni al momento. Crea un indirizzo con ${ BRAND_NAME } prima di unirti. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -4441,6 +4486,15 @@
       ],
       "Security Center": [
         "Centro sicurezza"
+      ],
+      "Domain": [
+        "Dominio"
+      ],
+      "Password ends with": [
+        "La password termina con"
+      ],
+      "Username": [
+        "Utente"
       ]
     },
     "Hint": {
@@ -6137,6 +6191,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Potrai ancora visualizzare i dati del tuo account, ma tutti gli account utente verranno rimossi dalla tua organizzazione."
+      ],
+      "Failed to update meeting name": [
+        "Impossibile aggiornare il nome del dominio"
+      ],
+      "Failed to update meeting password": [
+        "Impossibile aggiornare la password della riunione"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Per maggiore sicurezza, puoi impostare una frase d'accesso. Non sarà inclusa nell'invito al calendario, ricorda di condividerla con i tuoi ospiti separatamente."
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Sei attualmente connesso come ${ username }."
       ]
     },
     "info": {
@@ -6795,6 +6861,21 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "Aggiungi conferenza ${ MEET_APP_NAME }"
+      ],
+      "Add Zoom meeting": [
+        "Aggiungi riunione Zoom"
+      ],
+      "Passphrase:": [
+        "Frase d'accesso:"
+      ],
+      "Video conference": [
+        "Videoconferenza"
+      ],
+      "Zoom meeting": [
+        "Riunione Zoom"
       ]
     },
     "Label for contact group color": {
@@ -8237,6 +8318,9 @@
       ],
       "Passcode copied to clipboard": [
         "Codice copiato negli appunti"
+      ],
+      "Passphrase copied to clipboard": [
+        "Frase d'accesso copiata negli appunti"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8445,7 +8529,7 @@
         "Paga annualmente, assicurati la nostra migliore offerta"
       ],
       "Save": [
-        "Salva"
+        "Risparmia"
       ],
       "Save big when you pay annually": [
         "Risparmia di più pagando annualmente"
@@ -8874,6 +8958,24 @@
       ],
       "Your payment is still being processed": [
         "Il tuo pagamento è ancora in fase di elaborazione."
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Escludendo il ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Escluse tasse del ${ taxRate }%: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluso il ${ taxRate }% di ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluse tasse del ${ taxRate }%: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Tasse"
+      ],
+      "VAT": [
+        "IVA"
       ]
     },
     "Payments.Error": {
@@ -9111,6 +9213,9 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Enter passphrase": [
+        "Inserisci la frase di accesso"
       ]
     },
     "Placeholder for contact group name": {
@@ -9843,6 +9948,12 @@
       ],
       "Video conferencing is here!": [
         "La videoconferenza è qui!"
+      ],
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } è qui!"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Pianifica e unisciti alle chiamate ${ MEET_APP_NAME } direttamente dal tuo calendario."
       ]
     },
     "sso": {
@@ -10557,6 +10668,9 @@
       ],
       "You have successfully unsubscribed": [
         "Abbonamento annullato con successo"
+      ],
+      "Secret passphrase updated": [
+        "Frase d'accesso segreta aggiornata"
       ]
     },
     "Suffix": {
@@ -11373,6 +11487,15 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ],
+      "Next": [
+        "Successivo"
+      ],
+      "Open pagination": [
+        "Apri paginazione"
+      ],
+      "Previous": [
+        "Precedente"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11943,6 +12066,131 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Accesso a modelli IA avanzati"
+      ],
+      "Basic chat history": [
+        "Cronologia chat di base"
+      ],
+      "Full chat history with search": [
+        "Cronologia chat completa con ricerca"
+      ],
+      "Large file upload support": [
+        "Caricamenti di file di grandi dimensioni"
+      ],
+      "Limited daily chats": [
+        "Numero limitato di chat al giorno"
+      ],
+      "Limited favorites": [
+        "Numero limitato di preferiti"
+      ],
+      "Unlimited daily chats": [
+        "Numero illimitato di chat al giorno"
+      ],
+      "Unlimited favorites for quick access": [
+        "Preferiti senza limiti per consultazione rapida"
+      ],
+      "Upload and query multiple large files": [
+        "Carica e consulta più file grandi"
+      ],
+      "Upload and query small files": [
+        "Carica e consulta file piccoli"
+      ],
+      "Web search access": [
+        "Accesso alla Ricerca Web"
+      ]
+    },
+    "q3campaign_2025: Action": {
+      "END-OF-SUMMER SALE": [
+        "SCONTI DI FINE ESTATE"
+      ],
+      "Get the deal": [
+        "Ottieni l'offerta"
+      ]
+    },
+    "q3campaign_2025: Info": {
+      "${ discountPercent }% off": [
+        "-${ discountPercent }%"
+      ],
+      "${ normalPricePerMonth } /month": [
+        "${ normalPricePerMonth } al mese"
+      ],
+      "/month": [
+        "/mese"
+      ],
+      "1 TB data storage": [
+        "1 TB di archiviazione dati"
+      ],
+      "15 GB storage": [
+        "15 GB di archiviazione"
+      ],
+      "200 GB storage for files, photos & docs": [
+        "200 GB di archiviazione per file, foto e documenti"
+      ],
+      "3 TB data storage": [
+        "3 TB di archiviazione dati"
+      ],
+      "500 GB storage": [
+        "500 GB di archiviazione"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accedi a oltre 15.000 server in oltre 120 Paesi"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Tutte le funzionalità premium di Mail, Pass, Drive, VPN e Calendar"
+      ],
+      "Built-in 2FA authenticator": [
+        "Strumento di autenticazione 2FA integrato"
+      ],
+      "Connect 10 devices at once": [
+        "Connetti 10 dispositivi contemporaneamente"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Gli sconti si basano sui prezzi mensili standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
+      ],
+      "Enjoy the fastest VPN speeds": [
+        "Goditi le velocità VPN più elevate"
+      ],
+      "Individual accounts for 6 users": [
+        "Account individuali per 6 utenti"
+      ],
+      "Individual accounts for you and a partner": [
+        "Account individuali per te e un'altra persona"
+      ],
+      "Online document editor": [
+        "Editor di documenti online"
+      ],
+      "Recover previous file versions": [
+        "Recupera le versioni precedenti dei file"
+      ],
+      "Save ${ totalSavings } and keep all your current features!": [
+        "Risparmia ${ totalSavings } e mantieni tutte le tue funzionalità attuali."
+      ],
+      "Secure link, vault & item sharing": [
+        "Condivisione sicura di link, casseforti ed elementi"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protezione più efficace dalle minacce informatiche"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Cartelle, etichette e filtri illimitati"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Alias hide-my-email illimitati"
+      ],
+      "Use your own email domain": [
+        "Usa il tuo dominio email personale"
+      ]
+    },
+    "q3campaign_2025: Title": {
+      "End-of-summer sale": [
+        "Sconti di fine estate"
+      ],
+      "for 12 months": [
+        "per 12 mesi"
       ]
     }
   }
