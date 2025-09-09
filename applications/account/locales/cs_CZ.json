@@ -10501,6 +10501,9 @@
       "Signed up": [
         "Zaregistrováno"
       ],
+      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
+        "Přihlašování bezpečnostním klíčem zatím není podporováno ve všech aplikacích. Bez TOTP se přihlášení do některých aplikací nemusí podařit."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
       ],
@@ -11293,8 +11296,8 @@
       "You are about to open your default browser and visit:": [
         "Chystáte se otevřít výchozí prohlížeč a navštívit:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Aktuálně jste přihlášeni jako ${ username }."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "V současné době využíváte ${ ipCount } z vašeho ${ ipAddresses } dostupného dedikovaného serveru.",
