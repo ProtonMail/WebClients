@@ -144,13 +144,13 @@
         "Klaim alamat ${ BRAND_NAME } gratis Anda"
       ],
       "Clear": [
-        "Bersihkan"
+        "Hapus"
       ],
       "Clear browser data": [
         "Hapus data browser"
       ],
       "Clear data": [
-        "Bersihkan data"
+        "Hapus data"
       ],
       "Clear query": [
         "Hapus kueri"
@@ -925,6 +925,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Masa uji coba aplikasi desktop Anda akan berakhir pada ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add secret passphrase": [
+        "Tambah frasa sandi rahasia"
+      ],
+      "Retry": [
+        "Coba lagi"
+      ],
+      "Update secret passphrase": [
+        "Perbarui frasa sandi rahasia"
       ]
     },
     "action": {
@@ -1483,6 +1492,9 @@
       ],
       "Website access problem": [
         "Masalah akses situs"
+      ],
+      "Meet problem": [
+        "Masalah Meet"
       ]
     },
     "Button": {
@@ -3794,6 +3806,15 @@
       ],
       "ZIP code is required": [
         "Kode pos diperlukan"
+      ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "Konferensi video ${ MEET_APP_NAME } gagal dibuat"
+      ],
+      "Failed to update secret passphrase": [
+        "Frasa sandi rahasia gagal diperbarui"
+      ],
+      "Passphrase unavailable": [
+        "Frasa sandi tidak tersedia"
       ]
     },
     "Error accepting calendar invitation": {
@@ -6022,6 +6043,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Anda akan tetap dapat melihat data milik akun Anda, namun seluruh akun pengguna akan dihapus dari organisasi Anda."
+      ],
+      "Failed to update meeting password": [
+        "Kata sandi pertemuan gagal diperbarui"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Untuk keamanan tambahan, Anda dapat mengatur frasa sandi. Frasa ini tidak akan disertakan dalam undangan kalender, sehingga pastikan Anda membagikan frasa ini kepada para tamu undangan Anda secara terpisah."
       ]
     },
     "info": {
@@ -6671,6 +6698,21 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "Tambah konferensi ${ MEET_APP_NAME }"
+      ],
+      "Add Zoom meeting": [
+        "Tambah pertemuan Zoom"
+      ],
+      "Passphrase:": [
+        "Frasa sandi:"
+      ],
+      "Video conference": [
+        "Konferensi video"
+      ],
+      "Zoom meeting": [
+        "Pertemuan Zoom"
       ]
     },
     "Label for contact group color": {
@@ -8073,6 +8115,9 @@
       ],
       "Passcode copied to clipboard": [
         "Kode sandi disalin ke papan klip"
+      ],
+      "Passphrase copied to clipboard": [
+        "Frasa sandi disalin ke papan klip"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8260,7 +8305,7 @@
         "Bayar per tahun, kantongi penawaran terbaik kami"
       ],
       "Save": [
-        "Simpan"
+        "Hemat"
       ],
       "Save big when you pay annually": [
         "Hemat besar-besaran pada saat Anda membayar secara tahunan"
@@ -10344,6 +10389,9 @@
       ],
       "You have successfully unsubscribed": [
         "Anda berhasil berhenti berlangganan"
+      ],
+      "Secret passphrase updated": [
+        "Frasa sandi rahasia diperbarui"
       ]
     },
     "Suffix": {
@@ -10604,7 +10652,7 @@
         "Klaim alamat ${ MAIL_APP_NAME } Anda"
       ],
       "Clearing data": [
-        "Membersihkan data"
+        "Menghapus data"
       ],
       "Collaborate on documents": [
         "Berkolaborasi dalam dokumen"

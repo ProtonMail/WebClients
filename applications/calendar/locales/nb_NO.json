@@ -929,6 +929,21 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add secret passphrase": [
+        "Legg til hemmelig passfrase"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Bli med med ${ MEET_APP_NAME }"
+      ],
+      "Passphrase": [
+        "Passfrase"
+      ],
+      "Retry": [
+        "Prøv på nytt"
+      ],
+      "Update secret passphrase": [
+        "Oppdater hemmelig passfrase"
       ]
     },
     "action": {
@@ -1495,6 +1510,9 @@
       ],
       "Website access problem": [
         "Problem med tilgang til nettsted"
+      ],
+      "Meet problem": [
+        "Meet-problem"
       ]
     },
     "Button": {
@@ -3828,6 +3846,18 @@
       ],
       "ZIP code is required": [
         "Postnummer kreves"
+      ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "Kunne ikke opprette ${ MEET_APP_NAME }-videokonferanse"
+      ],
+      "Failed to decrypt session key": [
+        "Kunne ikke dekryptere øktnøkkel"
+      ],
+      "Failed to update secret passphrase": [
+        "Kunne ikke oppdatere hemmelig passfrase"
+      ],
+      "Passphrase unavailable": [
+        "Passfrase utilgjengelig"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4413,6 +4443,15 @@
       ],
       "Security Center": [
         "Sikkerhetssenter"
+      ],
+      "Domain": [
+        "Domene"
+      ],
+      "Password ends with": [
+        "Passordet slutter med"
+      ],
+      "Username": [
+        "Brukernavn"
       ]
     },
     "Hint": {
@@ -6106,6 +6145,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil fortsatt kunne se dine egne kontodata, men alle brukerkontoer vil bli fjernet fra organisasjonen din."
+      ],
+      "Failed to update meeting name": [
+        "Kunne ikke oppdatere møtenavnet"
+      ],
+      "Failed to update meeting password": [
+        "Kunne ikke oppdatere møtepassordet"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "For ekstra sikkerhet kan du angi en passfrase. Den blir ikke inkludert i kalenderinvitasjonen, husk å dele den med gjestene dine separat."
       ]
     },
     "info": {
@@ -6761,6 +6809,21 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "Legg til ${ MEET_APP_NAME }-konferanse"
+      ],
+      "Add Zoom meeting": [
+        "Legg til Zoom-møte"
+      ],
+      "Passphrase:": [
+        "Passfrase:"
+      ],
+      "Video conference": [
+        "Videokonferanse"
+      ],
+      "Zoom meeting": [
+        "Zoom-møte"
       ]
     },
     "Label for contact group color": {
@@ -8198,6 +8261,9 @@
       ],
       "Passcode copied to clipboard": [
         "Passkode kopiert til utklippstavlen"
+      ],
+      "Passphrase copied to clipboard": [
+        "Passfrase kopiert til utklippstavlen"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9090,6 +9156,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Enter passphrase": [
+        "Skriv inn passfrase"
       ]
     },
     "Placeholder for contact group name": {
@@ -9822,6 +9891,12 @@
       ],
       "Video conferencing is here!": [
         "Videokonferanser er her!"
+      ],
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } er her!"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Planlegg og bli med i ${ MEET_APP_NAME }-samtaler rett fra kalenderen din."
       ]
     },
     "sso": {
@@ -10536,6 +10611,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avsluttet abonnementet"
+      ],
+      "Secret passphrase updated": [
+        "Hemmelig passfrase oppdatert"
       ]
     },
     "Suffix": {
@@ -11928,6 +12006,78 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes ${ formattedDate }, vil det gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes ${ formattedDate }, vil det gå over til å bli et betalt abonnement som fornyes automatisk månedlig ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-lisenser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-lisenser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_USERS } brukere i prøveperioden."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Du kan ikke legge til egendefinerte domener i prøveperioden."
+      ],
+      "You have reached the trial limit.": [
+        "Du har nådd prøveperiodegrensen."
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Tilgang til avanserte KI-modeller"
+      ],
+      "Basic chat history": [
+        "Grunnleggende chatlogg"
+      ],
+      "Full chat history with search": [
+        "Full chatlogg med søk"
+      ],
+      "Large file upload support": [
+        "Støtte for opplasting av store filer"
+      ],
+      "Limited daily chats": [
+        "Begrenset antall daglige chatter"
+      ],
+      "Limited favorites": [
+        "Begrenset antall favoritter"
+      ],
+      "Unlimited daily chats": [
+        "Ubegrenset antall daglige chatter"
+      ],
+      "Unlimited favorites for quick access": [
+        "Ubegrenset antall favoritter for rask tilgang"
+      ],
+      "Upload and query multiple large files": [
+        "Last opp og søk i flere store filer"
+      ],
+      "Upload and query small files": [
+        "Last opp og søk i små filer"
+      ],
+      "Web search access": [
+        "Tilgang til nettsøk"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } er en personvernfokusert KI som hjelper deg å få mer gjort samtidig som dataene dine holdes sikre. Lås opp dens fulle potensial og nyt tidlig tilgang til nye funksjoner når de introduseres."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Legg til ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Høyhastighetschatter og avanserte KI-funksjoner."
       ]
     }
   }

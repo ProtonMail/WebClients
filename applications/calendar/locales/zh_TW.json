@@ -877,6 +877,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Retry": [
+        "重試"
       ]
     },
     "action": {
@@ -5640,6 +5643,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "您的系統時區似乎已更改為 ${ timezone }。您要更新您的時區喜好設定嗎？"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "您目前已登入為 ${ username }。"
       ]
     },
     "info": {
@@ -7767,7 +7773,7 @@
         "每年付款，安全及最適方案"
       ],
       "Save": [
-        "儲存"
+        "節省"
       ],
       "Special offer": [
         "特別優惠"
