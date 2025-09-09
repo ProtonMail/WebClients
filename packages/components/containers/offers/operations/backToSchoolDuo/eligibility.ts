@@ -1,7 +1,6 @@
 import type { Subscription } from '@proton/payments';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
-import { userHasSupportedProduct } from '../../helpers/backToSchool';
 import OfferSubscription from '../../helpers/offerSubscription';
 import type { OfferConfig } from '../../interface';
 
@@ -20,7 +19,8 @@ export const getIsEligible = ({ user, subscription }: Props) => {
     const offerSubscription = new OfferSubscription(subscription);
     const isBundle = offerSubscription.hasBundle();
     const notUsedCurrentPromo = !offerSubscription.usedBackToSchoolPromo();
-    if (user.isPaid && userHasSupportedProduct(subscription) && isBundle && notUsedCurrentPromo) {
+
+    if (user.isPaid && isBundle && notUsedCurrentPromo) {
         return true;
     }
 
