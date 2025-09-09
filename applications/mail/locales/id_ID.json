@@ -223,19 +223,19 @@
         "Klaim alamat ${ BRAND_NAME } gratis Anda"
       ],
       "Clear": [
-        "Bersihkan"
+        "Hapus"
       ],
       "Clear all formatting": [
         "Hapus seluruh pemformatan"
       ],
       "Clear application data": [
-        "Bersihkan data aplikasi"
+        "Hapus data aplikasi"
       ],
       "Clear browser data": [
         "Hapus data browser"
       ],
       "Clear data": [
-        "Bersihkan data"
+        "Hapus data"
       ],
       "clear it": [
         "hapus"
@@ -1628,6 +1628,18 @@
       ],
       "Zoom out": [
         "Perkecil"
+      ],
+      "Add secret passphrase": [
+        "Tambah frasa sandi rahasia"
+      ],
+      "Edit categories": [
+        "Sunting kategori"
+      ],
+      "Retry": [
+        "Coba lagi"
+      ],
+      "Update secret passphrase": [
+        "Perbarui frasa sandi rahasia"
       ]
     },
     "action": {
@@ -2222,6 +2234,9 @@
       ],
       "Website access problem": [
         "Masalah akses situs"
+      ],
+      "Meet problem": [
+        "Masalah Meet"
       ]
     },
     "Button": {
@@ -4934,6 +4949,12 @@
       ],
       "ZIP code is required": [
         "Kode pos diperlukan"
+      ],
+      "Failed to update secret passphrase": [
+        "Frasa sandi rahasia gagal diperbarui"
+      ],
+      "Passphrase unavailable": [
+        "Frasa sandi tidak tersedia"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5122,6 +5143,9 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Anda belum memiliki kontak. Mulailah dengan membuat kontak baru"
+      ],
+      "An error occurred with the categories": [
+        "Terjadi kesalahan dengan kategori"
       ]
     },
     "Error notification": {
@@ -8506,6 +8530,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Anda hanya berjarak beberapa klik dari kotak masuk yang rapi"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Untuk keamanan tambahan, Anda dapat mengatur frasa sandi. Frasa ini tidak akan disertakan dalam undangan kalender, sehingga pastikan Anda membagikan frasa ini kepada para tamu undangan Anda secara terpisah."
       ]
     },
     "info": {
@@ -9479,6 +9506,33 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Automated confirmations and alerts": [
+        "Konfirmasi dan peringatan otomatis"
+      ],
+      "Bookings, billings, and orders": [
+        "Pembukuan, tagihan, dan pesanan"
+      ],
+      "Deals, offers, marketing emails": [
+        "Penawaran, promosi, dan email pemasaran"
+      ],
+      "Discussion board posts and threads": [
+        "Postingan dan utas forum diskusi"
+      ],
+      "Non-promotional content and news": [
+        "Konten dan berita non-promosional"
+      ],
+      "Passphrase:": [
+        "Frasa sandi:"
+      ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Pilih kategori untuk diikutsertakan dan aktifkan notifikasi untuk memperoleh peringatan pada saat terdapat email baru di kategori ini."
+      ],
+      "Social media updates and activity": [
+        "Pembaruan dan aktivitas sosial media"
+      ],
+      "You cannot disable all categories": [
+        "Anda tidak dapat menonaktifkan seluruh kategori"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11069,6 +11123,9 @@
       ],
       "Trial started": [
         "Masa uji coba dimulai"
+      ],
+      "Passphrase copied to clipboard": [
+        "Frasa sandi disalin ke papan klip"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11135,7 +11192,7 @@
         "Bayar per tahun, kantongi penawaran terbaik kami"
       ],
       "Save": [
-        "Simpan"
+        "Hemat"
       ],
       "Save big when you pay annually": [
         "Hemat besar-besaran pada saat Anda membayar secara tahunan"
@@ -13694,6 +13751,9 @@
       ],
       "You have successfully unsubscribed": [
         "Anda berhasil berhenti berlangganan"
+      ],
+      "Secret passphrase updated": [
+        "Frasa sandi rahasia diperbarui"
       ]
     },
     "Success notification": {
@@ -14039,7 +14099,7 @@
         "Klaim alamat ${ MAIL_APP_NAME } Anda"
       ],
       "Clearing data": [
-        "Membersihkan data"
+        "Menghapus data"
       ],
       "Collaborate on documents": [
         "Berkolaborasi dalam dokumen"
@@ -14862,6 +14922,18 @@
       ],
       "Your subscriptions in one place": [
         "Seluruh langganan Anda dalam satu tempat"
+      ],
+      "Customize categories": [
+        "Sesuaikan kategori"
+      ],
+      "Label message as": [
+        "Labeli pesan sebagai"
+      ],
+      "Move message to": [
+        "Pindahkan pesan ke"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Kategori akan segera hadir!"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -142,7 +142,7 @@
         "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontakt",
         "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontakty",
         "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontaktów",
-        "Każda grupa kontaktów może mieć co najwyżej ${ maxContacts } kontaktów."
+        "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontaktów"
       ],
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
@@ -1612,7 +1612,7 @@
         "Tak, będę uczestniczyć"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontaktów",
+        "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontakt",
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontakty",
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontaktów",
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontakt"
@@ -1634,6 +1634,9 @@
       ],
       "Zoom out": [
         "Pomniejsz"
+      ],
+      "Retry": [
+        "Spróbuj ponownie"
       ]
     },
     "action": {
@@ -3935,7 +3938,7 @@
       "Every ${ interval } day, ${ timesString }": [
         "Co ${ interval } dzień, ${ timesString }",
         "Co ${ interval } dni, ${ timesString }",
-        "Co ${ interval } dnia, ${ timesString }",
+        "Co ${ interval } dni, ${ timesString }",
         "Co ${ interval } dnia, ${ timesString }"
       ]
     },
@@ -3945,8 +3948,8 @@
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Co ${ interval } dzień, ${ untilString }",
-        "Co ${ interval } dnia, ${ untilString }",
-        "Co ${ interval } dnia, ${ untilString }",
+        "Co ${ interval } dni, ${ untilString }",
+        "Co ${ interval } dni, ${ untilString }",
         "Co ${ interval } dnia, ${ untilString }"
       ]
     },
@@ -11652,7 +11655,7 @@
         "Płać rocznie i uzyskaj najlepszą ofertę"
       ],
       "Save": [
-        "Zapisz"
+        "Oszczędź"
       ],
       "Save big when you pay annually": [
         "Zaoszczędź więcej przy płatności rocznej"
@@ -12933,25 +12936,25 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Masz ${ timeRemaining.inDays } dzień na zresetowanie hasła.",
         "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inDays } dnia na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
         "Masz ${ timeRemaining.inDays } dnia na zresetowanie hasła."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Masz ${ timeRemaining.inHours } godzinę na zresetowanie hasła.",
         "Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła.",
         "Masz ${ timeRemaining.inHours } godzin na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inHours } godzin na zresetowanie hasła."
+        "Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Masz ${ timeRemaining.inMinutes } minutę na zresetowanie hasła.",
         "Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła.",
         "Masz ${ timeRemaining.inMinutes } minut na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inMinutes } minut na zresetowanie hasła."
+        "Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Masz ${ timeRemaining.inSeconds } sekundę na zresetowanie hasła.",
         "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inSeconds } sekund na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła.",
         "Masz ${ timeRemaining.inSeconds } sekund na zresetowanie hasła."
       ]
     },
@@ -13025,7 +13028,7 @@
         "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godzinę.",
         "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godziny.",
         "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godzin.",
-        "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours."
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godziny."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Aby upewnić się, że to Ty próbujesz zresetować hasło, czekamy 72 godziny przed zatwierdzeniem żądań. Hasło możesz zmienić za ${ boldTimeLeft }. ${ viewRequest }"
@@ -13722,7 +13725,7 @@
         "${ planNumberOfCalendars } kalendarz na użytkownika",
         "${ planNumberOfCalendars } kalendarze na użytkownika",
         "${ planNumberOfCalendars } kalendarzy na użytkownika",
-        "${ planNumberOfCalendars } kalendarzy na użytkownika"
+        "${ planNumberOfCalendars } kalendarza na użytkownika"
       ],
       "${ planNumberOfDomains } custom email domain": [
         "${ planNumberOfDomains } niestandardowa domena",
@@ -16190,6 +16193,96 @@
       ],
       "Passcode:": [
         "Kod dostępu:"
+      ]
+    },
+    "q3campaign_2025: Action": {
+      "END-OF-SUMMER SALE": [
+        "WYPRZEDAŻ NA KONIEC LATA"
+      ],
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ]
+    },
+    "q3campaign_2025: Info": {
+      "${ discountPercent }% off": [
+        "-${ discountPercent }%"
+      ],
+      "${ normalPricePerMonth } /month": [
+        "${ normalPricePerMonth } / miesiąc"
+      ],
+      "/month": [
+        "/miesiąc"
+      ],
+      "1 TB data storage": [
+        "1 TB przestrzeni dyskowej na dane"
+      ],
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "200 GB storage for files, photos & docs": [
+        "200 GB przestrzeni dyskowej na pliki, zdjęcia i dokumenty"
+      ],
+      "3 TB data storage": [
+        "3 TB przestrzeni dyskowej na dane"
+      ],
+      "500 GB storage": [
+        "500 GB przestrzeni dyskowej"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Dostęp do ponad 15 000 serwerów w ponad 120 krajach"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Wszystkie funkcje premium usług Mail, Pass, Drive, VPN i Calendar"
+      ],
+      "Built-in 2FA authenticator": [
+        "Wbudowana aplikacja uwierzytelniająca"
+      ],
+      "Connect 10 devices at once": [
+        "Połącz 10 urządzeń jednocześnie"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zniżki są naliczane na podstawie standardowych cen miesięcznych. Twoja subskrypcja odnowi się po standardowej stawce rocznej, gdy zakończy się cykl rozliczeniowy."
+      ],
+      "Enjoy the fastest VPN speeds": [
+        "Ciesz się najszybszą prędkością VPN"
+      ],
+      "Individual accounts for 6 users": [
+        "Indywidualne konta dla 6 użytkowników"
+      ],
+      "Individual accounts for you and a partner": [
+        "Indywidualne konta dla Ciebie i partnera"
+      ],
+      "Online document editor": [
+        "Edytor dokumentów online"
+      ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
+      ],
+      "Save ${ totalSavings } and keep all your current features!": [
+        "Oszczędź ${ totalSavings } i zachowaj wszystkie obecne funkcje!"
+      ],
+      "Secure link, vault & item sharing": [
+        "Bezpieczne udostępnianie linków, sejfów i elementów"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silniejsza ochrona przed cyberzagrożeniami"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Nieograniczona liczba folderów, etykiet i filtrów"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nieograniczona liczba aliasów hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Możliwość użycia własnej domeny e-mail"
+      ]
+    },
+    "q3campaign_2025: Title": {
+      "End-of-summer sale": [
+        "Wyprzedaż na koniec lata"
+      ],
+      "for 12 months": [
+        "na 12 miesięcy"
       ]
     }
   }
