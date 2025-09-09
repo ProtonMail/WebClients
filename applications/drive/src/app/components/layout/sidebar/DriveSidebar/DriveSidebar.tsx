@@ -47,11 +47,7 @@ interface DriveSidebarProps {
     isNewUploadDisabled: boolean;
 }
 
-export const DriveSidebarDeprecated = ({
-    isNewUploadDisabled,
-    isHeaderExpanded,
-    toggleHeaderExpanded,
-}: DriveSidebarProps) => {
+const DriveSidebar = ({ isNewUploadDisabled, isHeaderExpanded, toggleHeaderExpanded }: DriveSidebarProps) => {
     const { activeShareId } = useActiveShare();
     const { getDefaultShare } = useDefaultShare();
     const debug = useDebug();
@@ -187,3 +183,5 @@ export const DriveSidebarDeprecated = ({
         </Sidebar>
     );
 };
+
+export default DriveSidebar;
