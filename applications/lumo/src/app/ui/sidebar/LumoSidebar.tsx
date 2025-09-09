@@ -96,7 +96,7 @@ const NewChatButton = ({ showText }: { showText: boolean }) => {
 
 // Chat History Section
 const ChatHistorySection = ({ searchValue }: { searchValue: string }) => {
-    const { shouldShowContent } = useSidebar();
+    const { shouldShowContent, closeOnItemClick } = useSidebar();
     const [showContent, setShowContent] = useState(false);
 
     useEffect(() => {
@@ -113,7 +113,11 @@ const ChatHistorySection = ({ searchValue }: { searchValue: string }) => {
     return (
         <div className="chat-history-section">
             {showContent ? (
-                <ChatHistory refInputSearch={{ current: null }} onItemClick={() => {}} searchInput={searchValue} />
+                <ChatHistory
+                    refInputSearch={{ current: null }}
+                    onItemClick={closeOnItemClick}
+                    searchInput={searchValue}
+                />
             ) : (
                 <ChatHistorySkeleton />
             )}
