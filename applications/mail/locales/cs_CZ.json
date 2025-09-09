@@ -204,9 +204,6 @@
       "Change page": [
         "Změnit stránku"
       ],
-      "Change password": [
-        "Změnit heslo"
-      ],
       "Change sorting": [
         "Změnit řazení"
       ],
@@ -1468,10 +1465,7 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -5291,9 +5285,6 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Aliasy nelze použít, pokud je v ${ PASS_APP_NAME } povoleno dodatečné heslo."
       ],
-      "An error occured with the categories": [
-        "Došlo k chybě v kategoriích"
-      ],
       "App currently unavailable": [
         "Aplikace je momentálně nedostupná"
       ],
@@ -7572,7 +7563,10 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -8738,8 +8732,8 @@
       "You are about to open your default browser and visit:": [
         "Chystáte se otevřít výchozí prohlížeč a navštívit:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Aktuálně jste přihlášeni jako ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Využíváte více úložiště než je dostupné v rámci tarifu ${ downgradedPlanName }. Prosím odstraňte některá data abyste mohli snížit své předplatné."
@@ -9953,9 +9947,6 @@
       ],
       "Undisclosed Recipients": [
         "Nezveřejnění příjemci"
-      ],
-      "Unknown": [
-        "Neznámé"
       ],
       "Unsafe or problematic": [
         "Nebezpečný nebo problematický"
@@ -14856,9 +14847,6 @@
       ],
       "Account security": [
         "Zabezpečení účtu"
-      ],
-      "Account temporarily locked": [
-        "Účet dočasně uzamčen"
       ],
       "Action all conversations": [
         "Akce všech konverzací"

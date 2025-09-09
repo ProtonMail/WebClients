@@ -201,9 +201,6 @@
       "Change page": [
         "ページの変更"
       ],
-      "Change password": [
-        "パスワードを変更"
-      ],
       "Change sorting": [
         "並べ替えの変更"
       ],
@@ -5180,9 +5177,6 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "エイリアスは、${ PASS_APP_NAME } で追加のパスワードが有効になっている場合には使用できません。"
       ],
-      "An error occured with the categories": [
-        "カテゴリでエラーが発生しました"
-      ],
       "App currently unavailable": [
         "アプリは現在利用できません"
       ],
@@ -7218,7 +7212,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -8366,9 +8360,6 @@
       "You are about to open your default browser and visit:": [
         "既定のブラウザーで次のページにアクセスしようとしています"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "現在 ${ user.Name } (${ user.Email }) でサインインしています。"
-      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "${ downgradedPlanName } プランに含まれるストレージを超えるストレージを使用しています。 ダウングレードするには、データを削除してください。"
       ],
@@ -9512,9 +9503,6 @@
       ],
       "Undisclosed Recipients": [
         "非公開の宛先"
-      ],
-      "Unknown": [
-        "不明"
       ],
       "Unsafe or problematic": [
         "安全でない、または問題がある"
@@ -14046,9 +14034,6 @@
       ],
       "Account security": [
         "アカウントのセキュリティ"
-      ],
-      "Account temporarily locked": [
-        "アカウントが一時的にロックされています"
       ],
       "Action all conversations": [
         "すべての会話を操作"

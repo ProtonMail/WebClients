@@ -201,9 +201,6 @@
       "Change page": [
         "페이지 변경"
       ],
-      "Change password": [
-        "비밀번호 변경"
-      ],
       "Change sorting": [
         "정렬 변경"
       ],
@@ -1454,6 +1451,9 @@
       ],
       "Trust": [
         "신뢰"
+      ],
+      "Trust key": [
+        "키 신뢰"
       ],
       "Trust public key": [
         "공개 키 신뢰하기"
@@ -5177,9 +5177,6 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME } 에서 추가 비밀번호 설정 시, 별칭을 사용할 수 없습니다."
       ],
-      "An error occured with the categories": [
-        "카테고리에서 오류가 발생했습니다."
-      ],
       "App currently unavailable": [
         "앱에서는 현재 사용 불가합니다."
       ],
@@ -8363,9 +8360,6 @@
       "You are about to open your default browser and visit:": [
         "기본 브라우저를 열고 다음을 방문합니다:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "현재 ${ user.Name } (${ user.Email })로 로그인 했습니다."
-      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "${ downgradedPlanName } 플랜에 포함된 저장 공간보다 더 많이 사용하고 계십니다. 다운그레이드를 진행하려면 일부 데이터를 지우거나 완전 삭제하세요."
       ],
@@ -9509,9 +9503,6 @@
       ],
       "Undisclosed Recipients": [
         "받는 사람 비공개"
-      ],
-      "Unknown": [
-        "알 수 없음"
       ],
       "Unsafe or problematic": [
         "안전하지 않거나 문제의 여지가 있습니다"
@@ -14043,9 +14034,6 @@
       ],
       "Account security": [
         "계정 보안"
-      ],
-      "Account temporarily locked": [
-        "계정 일시 잠김"
       ],
       "Action all conversations": [
         "전체 대화 조치"

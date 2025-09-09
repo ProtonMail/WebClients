@@ -202,9 +202,6 @@
       "Change page": [
         "Cambiar página"
       ],
-      "Change password": [
-        "Cambiar contraseña"
-      ],
       "Change sorting": [
         "Cambiar el orden"
       ],
@@ -1458,10 +1455,6 @@
       ],
       "Trust": [
         "Confiar"
-      ],
-      "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
       ],
       "Trust public key": [
         "Confiar en la clave pública"
@@ -5172,9 +5165,6 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Los alias no pueden usarse cuando la contraseña adicional está activa en ${ PASS_APP_NAME }."
       ],
-      "An error occured with the categories": [
-        "Se ha producido un error con las categorías"
-      ],
       "App currently unavailable": [
         "La aplicación no está disponible actualmente."
       ],
@@ -7291,7 +7281,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar una imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8444,9 +8435,6 @@
       ],
       "You are about to open your default browser and visit:": [
         "Estás a punto de abrir tu navegador por defecto y visitar:"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Actualmente estás conectado como ${ user.Name } (${ user.Email })."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Estás usando más almacenamiento del que se incluye en un plan ${ downgradedPlanName }. Elimina o borra datos para poder cambiar de plan."
@@ -9614,9 +9602,6 @@
       ],
       "Undisclosed Recipients": [
         "Destinatarios ocultos"
-      ],
-      "Unknown": [
-        "Desconocido"
       ],
       "Unsafe or problematic": [
         "No seguro o problemático"
@@ -12351,7 +12336,7 @@
     },
     "q3campaign_2025: Info": {
       "${ discountPercent }% off": [
-        "${ discountPercent }% de descuento"
+        "-${ discountPercent }%"
       ],
       "${ normalPricePerMonth } /month": [
         "${ normalPricePerMonth } /mes"
@@ -14362,9 +14347,6 @@
       ],
       "Account security": [
         "Seguridad de la cuenta"
-      ],
-      "Account temporarily locked": [
-        "Cuenta temporalmente bloqueada"
       ],
       "Action all conversations": [
         "Acción en todas las conversaciones"

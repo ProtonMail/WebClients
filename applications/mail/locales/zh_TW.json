@@ -198,9 +198,6 @@
       "Change page": [
         "跳至頁"
       ],
-      "Change password": [
-        "變更密碼"
-      ],
       "Chat with us": [
         "與我們往來對話"
       ],
@@ -6740,7 +6737,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖像"
+        "插入圖片"
       ],
       "Insert link": [
         "插入連結"
@@ -7795,8 +7792,8 @@
       "You are about to open your default browser and visit:": [
         "您將要開啟預設瀏覽器並造訪："
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "您目前已登入為 ${ user.Name } (${ user.Email })。"
+      "You are currently signed in as ${ username }.": [
+        "您目前已登入為 ${ username }。"
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "您已使用超出 ${ downgradedPlanName } 方案的空間，請刪除一些檔案來釋放空間方可降級。"
@@ -8860,9 +8857,6 @@
       ],
       "Undisclosed Recipients": [
         "隱名收件者"
-      ],
-      "Unknown": [
-        "未知的"
       ],
       "Unsafe or problematic": [
         "不安全或有問題的"

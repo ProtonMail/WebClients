@@ -201,9 +201,6 @@
       "Change page": [
         "Zmień stronę"
       ],
-      "Change password": [
-        "Zmień hasło"
-      ],
       "Change sorting": [
         "Zmień kolejność sortowania"
       ],
@@ -1451,6 +1448,9 @@
       ],
       "Trust": [
         "Zaufaj"
+      ],
+      "Trust key": [
+        "Zaufaj kluczowi"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -7465,7 +7465,10 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz"
+        "Wstaw obraz",
+        "Wstaw obrazy",
+        "Wstaw obrazy",
+        "Wstaw obrazy"
       ],
       "Insert link": [
         "Wstaw link"
@@ -8630,9 +8633,6 @@
       ],
       "You are about to open your default browser and visit:": [
         "Uruchomisz domyślną przeglądarkę i przejdziesz do:"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Zalogowano jako ${ user.Name } (${ user.Email })."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Używasz więcej przestrzeni dyskowej niż jest dostępna w planie ${ downgradedPlanName }. Aby obniżyć plan, zwolnij część miejsca."
@@ -9822,9 +9822,6 @@
       ],
       "Undisclosed Recipients": [
         "Nieznani odbiorcy"
-      ],
-      "Unknown": [
-        "Nieznany"
       ],
       "Unsafe or problematic": [
         "Problematyczny tekst"
@@ -12603,7 +12600,7 @@
     },
     "q3campaign_2025: Info": {
       "${ discountPercent }% off": [
-        "${ discountPercent }% taniej"
+        "-${ discountPercent }%"
       ],
       "${ normalPricePerMonth } /month": [
         "${ normalPricePerMonth } / miesiąc"

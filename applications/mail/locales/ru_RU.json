@@ -195,9 +195,6 @@
       "Change page": [
         "Изменить страницу"
       ],
-      "Change password": [
-        "Изменить пароль"
-      ],
       "Change sorting": [
         "Изменить сортировку"
       ],
@@ -1405,10 +1402,7 @@
         "Доверять"
       ],
       "Trust key": [
-        "Доверенный ключ",
-        "Доверенных ключа",
-        "Доверенных ключей",
-        "Доверенных ключей"
+        "Доверять ключу"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -7246,7 +7240,10 @@
         "Инициализация…"
       ],
       "Insert image": [
-        "Вставить изображение"
+        "Вставить изображение",
+        "Вставить изображения",
+        "Вставить изображения",
+        "Вставить изображения"
       ],
       "Insert link": [
         "Вставить ссылку"
@@ -8372,9 +8369,6 @@
       ],
       "You are about to open your default browser and visit:": [
         "Вы собираетесь открыть браузер по умолчанию и посетить:"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "В настоящее время вы вошли как ${ user.Name } (${ user.Email })."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Вы используете больше места в хранилище, чем включено в тариф ${ downgradedPlanName }. Удалите данные, чтобы перейти на более дешевую версию."
@@ -9507,9 +9501,6 @@
       ],
       "Undisclosed Recipients": [
         "Скрытые получатели"
-      ],
-      "Unknown": [
-        "Неизвестно"
       ],
       "Unsafe or problematic": [
         "Небезопасный или проблематичный"
@@ -12096,7 +12087,7 @@
     },
     "q3campaign_2025: Info": {
       "${ discountPercent }% off": [
-        "Скидка ${ discountPercent } %"
+        "-${ discountPercent } %"
       ],
       "${ normalPricePerMonth } /month": [
         "${ normalPricePerMonth } /месяц"
