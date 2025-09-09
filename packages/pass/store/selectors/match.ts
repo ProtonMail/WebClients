@@ -6,11 +6,11 @@ import { searchItems } from '@proton/pass/lib/search/match-items';
 import { ItemUrlMatch, getItemPriorityForUrl } from '@proton/pass/lib/search/match-url';
 import type { SelectItemsByDomainOptions, SelectItemsOptions } from '@proton/pass/lib/search/types';
 import { itemsFromSelection, selectAllItems, selectItems, selectVisibleItems } from '@proton/pass/store/selectors/items';
-import { selectSecureLinks } from '@proton/pass/store/selectors/secure-links';
+import { selectVisibleSecureLinks } from '@proton/pass/store/selectors/secure-links';
 import { selectSharedByMe, selectSharedWithMe } from '@proton/pass/store/selectors/shared';
 import { NOOP_LIST_SELECTOR, createUncachedSelector, selectState } from '@proton/pass/store/selectors/utils';
 import type { State } from '@proton/pass/store/types';
-import type { ItemRevision, MaybeNull, SelectedItem } from '@proton/pass/types';
+import type { ItemRevision, MaybeNull } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
@@ -62,22 +62,10 @@ export const createMatchSharedWithMeSelector = () =>
     });
 
 export const createMatchSecureLinksSelector = () => {
-    const selectSortedSecureLinkItems = createSelector([selectItems, selectSecureLinks], (items, secureLinks) => {
-        const { totalCount, selection } = Object.entries(secureLinks).reduce(
-            (acc, [shareId, byShareId]) => {
-                Object.entries(byShareId).forEach(([itemId, { length }]) => {
-                    acc.totalCount += length;
-                    if (length > 0) acc.selection.push({ shareId, itemId });
-                });
-
-                return acc;
-            },
-            { totalCount: 0, selection: <SelectedItem[]>[] }
-        );
-
-        const secureLinkItems = itemsFromSelection(selection)(items);
+    const selectSortedSecureLinkItems = createSelector([selectItems, selectVisibleSecureLinks], (items, secureLinks) => {
+        const secureLinkItems = itemsFromSelection(secureLinks)(items);
         const sorted = sortItems('recent')(secureLinkItems);
-        return { sorted, totalCount };
+        return { sorted, totalCount: secureLinks.length };
     });
 
     return createSelector([selectSortedSecureLinkItems, selectSearchFilter], ({ sorted, totalCount }, search): ItemsSearchResults => {

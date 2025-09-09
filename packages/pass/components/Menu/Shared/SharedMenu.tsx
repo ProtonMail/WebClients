@@ -11,9 +11,9 @@ import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import {
     selectPassPlan,
-    selectSecureLinksCount,
     selectSharedByMeCount,
     selectSharedWithMeCount,
+    selectVisibleSecureLinksCount,
 } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -28,7 +28,8 @@ export const SharedMenuContent: FC<Props> = ({ heading, onAction }) => {
 
     const sharedWithMeCount = useSelector(selectSharedWithMeCount);
     const sharedByMeCount = useSelector(selectSharedByMeCount);
-    const secureLinksCount = useSelector(selectSecureLinksCount);
+    const secureLinksCount = useSelector(selectVisibleSecureLinksCount);
+
     const elements = [
         sharedWithMeCount > 0 && (
             <SharedMenuItem
