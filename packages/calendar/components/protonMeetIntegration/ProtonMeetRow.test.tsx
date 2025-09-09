@@ -19,6 +19,13 @@ import {
 import { ProtonMeetRow } from './ProtonMeetRow';
 import { useProtonMeetIntegration } from './useProtonMeetIntegration';
 
+jest.mock('@proton/components/hooks/drawer/useDrawer', () => ({
+    __esModule: true,
+    default: jest.fn().mockReturnValue({
+        isDrawerApp: false,
+    }),
+}));
+
 jest.mock('../videoConferencing/useVideoConfTelemetry', () => {
     const original = jest.requireActual('../videoConferencing/useVideoConfTelemetry');
 

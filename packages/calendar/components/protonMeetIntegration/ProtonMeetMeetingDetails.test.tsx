@@ -8,6 +8,13 @@ import type { ProtonMeetMeetingDetailsProps } from './ProtonMeetMeetingDetails';
 import { ProtonMeetMeetingDetails } from './ProtonMeetMeetingDetails';
 import { ProtonMeetRowContext } from './ProtonMeetRowContext';
 
+jest.mock('@proton/components/hooks/drawer/useDrawer', () => ({
+    __esModule: true,
+    default: jest.fn().mockReturnValue({
+        isDrawerApp: false,
+    }),
+}));
+
 describe('ProtonMeetMeetingDetails', () => {
     const defaultProps = {
         passphrase: 'test-passphrase',
