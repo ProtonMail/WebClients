@@ -198,9 +198,6 @@
       "Change page": [
         "Zamenjaj stran"
       ],
-      "Change password": [
-        "Spremeni geslo"
-      ],
       "Change sorting": [
         "Spremeni razvrščanje"
       ],
@@ -1430,6 +1427,9 @@
       ],
       "Trust": [
         "Zaupaj"
+      ],
+      "Trust key": [
+        "Zaupaj ključu"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -7181,7 +7181,10 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko"
+        "Vstavi sliko",
+        "Vstavi sliki",
+        "Vstavi slike",
+        "Vstavi slik"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -8307,9 +8310,6 @@
       ],
       "You are about to open your default browser and visit:": [
         "Odprli boste svoj privzeti brskalnik in obiskali:"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Trenutno ste prijavljeni kot ${ user.Name } (${ user.Email })."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Uporabljate več prostora za shranjevanje, kot je vključenega v paketu ${ downgradedPlanName }. Za spremembo paketa izbrišite ali odstranite podatke."
@@ -9460,9 +9460,6 @@
       ],
       "Undisclosed Recipients": [
         "nerazkriti prejemniki"
-      ],
-      "Unknown": [
-        "Neznano"
       ],
       "Unsafe or problematic": [
         "Ni varno ali problematično"
