@@ -222,14 +222,6 @@ export const openNewTab = (url: string) => {
 // not sent for asset requests due to https://bugs.webkit.org/show_bug.cgi?id=171566
 export const doesNotSupportEarlyAccessVersion = () => isSafari() && Number(ua.browser.major) < 14;
 
-export const getHasWebAuthnSupport = () => {
-    try {
-        return !!navigator?.credentials?.create;
-    } catch (e) {
-        return false;
-    }
-};
-
 export async function detectStorageCapabilities(): Promise<{ isAccessible: boolean; hasIndexedDB: boolean }> {
     // Check for IndexedDB API
     const hasIndexedDB = 'indexedDB' in window;
