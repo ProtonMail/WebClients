@@ -5471,9 +5471,6 @@
       "You are about to open your default browser and visit:": [
         "Вы собираетесь открыть браузер по умолчанию и посетить:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "В настоящее время вы вошли как ${ user.Name } (${ user.Email })."
-      ],
       "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
         "В настоящее время вы просматриваете этот документ в режиме «только для просмотра». Свяжитесь с владельцем, чтобы запросить доступ к изменению и комментированию."
       ],
@@ -8544,7 +8541,7 @@
     },
     "q3campaign_2025: Info": {
       "${ discountPercent }% off": [
-        "Скидка ${ discountPercent } %"
+        "-${ discountPercent } %"
       ],
       "${ normalPricePerMonth } /month": [
         "${ normalPricePerMonth } /месяц"
