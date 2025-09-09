@@ -1,6 +1,10 @@
 import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { getDescriptionFromCategoryId, getLabelFromCategoryId } from './categoriesStringHelpers';
+import {
+    getDescriptionFromCategoryId,
+    getLabelFromCategoryId,
+    getLabelFromCategoryIdInCommander,
+} from './categoriesStringHelpers';
 
 describe('categoriesStringHelpers', () => {
     describe('getLabelFromCategoryId', () => {
@@ -37,6 +41,25 @@ describe('categoriesStringHelpers', () => {
             'should return the correct label for the category %s when the category is %s',
             (category, expectedLabel) => {
                 expect(getDescriptionFromCategoryId(category)).toBe(expectedLabel);
+            }
+        );
+    });
+
+    describe('getLabelFromCategoryIdInCommander', () => {
+        const testArray: [CategoryLabelID, string][] = [
+            [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, 'Go to Primary'],
+            [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, 'Go to Social'],
+            [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, 'Go to Promotions'],
+            [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, 'Go to Newsletters'],
+            [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, 'Go to Transactions'],
+            [MAILBOX_LABEL_IDS.CATEGORY_UPDATES, 'Go to Updates'],
+            [MAILBOX_LABEL_IDS.CATEGORY_FORUMS, 'Go to Forums'],
+        ];
+
+        it.each(testArray)(
+            'should return the correct label for the category %s when the category is %s',
+            (category, expectedLabel) => {
+                expect(getLabelFromCategoryIdInCommander(category)).toBe(expectedLabel);
             }
         );
     });
