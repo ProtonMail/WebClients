@@ -5586,8 +5586,8 @@
       "You are about to open your default browser and visit:": [
         "Du bist dabei, deinen Standardbrowser zu öffnen und folgende Seite zu besuchen:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Du bist derzeit als „${ user.Name }“ (${ user.Email }) angemeldet."
+      "You are currently signed in as ${ username }.": [
+        "Du bist derzeit als „${ username }“ angemeldet."
       ],
       "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
         "Du liest dir das Dokument gerade im Nur-Lesen-Modus durch. Kontaktiere den Besitzer des Dokuments, um Zugriff auf Bearbeiten und Kommentieren anzufragen."
@@ -8813,7 +8813,7 @@
     },
     "q3campaign_2025: Info": {
       "${ discountPercent }% off": [
-        "${ discountPercent } % Rabatt"
+        "-${ discountPercent } %"
       ],
       "${ normalPricePerMonth } /month": [
         "${ normalPricePerMonth }/Monat"
