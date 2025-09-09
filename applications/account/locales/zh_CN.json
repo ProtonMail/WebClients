@@ -991,6 +991,9 @@
       "Open": [
         "检查"
       ],
+      "Open ${ applicationName }": [
+        "打开 ${ applicationName }"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "打开 ${ CALENDAR_APP_NAME } 设置"
       ],
@@ -7598,6 +7601,24 @@
       "${ n } address": [
         "${ n } 个地址"
       ],
+      "${ name } for Android": [
+        "${ name } Android 版"
+      ],
+      "${ name } for GNU/Linux": [
+        "${ name } GNU/Linux 版"
+      ],
+      "${ name } for iOS": [
+        "${ name } iOS 版"
+      ],
+      "${ name } for macOS": [
+        "${ name } macOS 版"
+      ],
+      "${ name } for Web": [
+        "${ name }网页版"
+      ],
+      "${ name } for Windows": [
+        "${ name } Windows 版"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }：不隔离也不拒收未经授权的电子邮件，通常只用于调试。"
       ],
@@ -7921,6 +7942,9 @@
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "邮箱别名类似邮箱地址，但是可以用于减少垃圾邮件并隐藏您的真实邮箱地址和身份信息。"
+      ],
+      "An error occurred while communicating with **${ applicationName }**": [
+        "与**${ applicationName }**沟通出现错误"
       ],
       "An error occurred while communicating with the extension": [
         "与扩展程序传输数据失败"
@@ -10346,9 +10370,6 @@
       "You are about to open your default browser and visit:": [
         "您即将打开默认浏览器并访问："
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "您当前登录的用户为 ${ user.Name } (${ user.Email })。"
-      ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "有 ${ ipAddresses } 台专用服务器可以使用，其中有 ${ ipCount } 台正在使用。"
       ],
@@ -10477,6 +10498,9 @@
       ],
       "You may be redirected to your bank’s website.": [
         "您可能将转至银行网站。"
+      ],
+      "You may now start using **${ applicationName }**": [
+        "您现在可以开始使用**${ applicationName }**"
       ],
       "You may now start using the extension": [
         "扩展程序可以使用了"
@@ -20771,6 +20795,9 @@
       ],
       "You have no resolved alerts": [
         "您没有已解决的提醒"
+      ],
+      "You've successfully signed in!": [
+        "登入成功！"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "您的 ${ planName } 免费试用期将于 ${ textDate } 结束"
