@@ -5,7 +5,7 @@ import { sortItems } from '@proton/pass/lib/items/item.utils';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
 import type { ItemRevision, SelectedItem, Share } from '@proton/pass/types';
 
-import { itemsFromSelection, selectAllItems, selectItem, selectItems, selectTrashedItems } from './items';
+import { itemsFromSelection, selectItem, selectItems, selectTrashedItems, selectVisibleItems } from './items';
 import { selectItemShares, selectShare, selectShareState } from './shares';
 
 export const isItemShared = (item?: ItemRevision, share?: Share): boolean => Boolean((item?.shareCount ?? 0) > 0 || share?.shared);
@@ -19,7 +19,7 @@ export const selectSharedWithMe = createSelector([selectItemShares, selectItems]
     return sortItems('recent')(sharedWithMe);
 });
 
-export const selectSharedByMe = createSelector([selectAllItems, selectShareState], (items, shares) => {
+export const selectSharedByMe = createSelector([selectVisibleItems, selectShareState], (items, shares) => {
     const sharedByMe = items.filter(({ shareId, shareCount = 0 }) => {
         if (shareCount <= 0) return false;
         const share = shares?.[shareId];

@@ -21,7 +21,7 @@ import type { ImportFileReader, ImportPayload } from '@proton/pass/lib/import/ty
 import { ImportProvider } from '@proton/pass/lib/import/types';
 import { importItems, importReport } from '@proton/pass/store/actions';
 import { requestCancel } from '@proton/pass/store/request/actions';
-import { selectAliasItems, selectRequestProgress, selectUser } from '@proton/pass/store/selectors';
+import { selectAllAliasItems, selectRequestProgress, selectUser } from '@proton/pass/store/selectors';
 import type { MaybeNull, Result } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
 import { orThrow, pipe } from '@proton/pass/utils/fp/pipe';
@@ -99,7 +99,7 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
     const [supportedFileTypes, setSupportedFileTypes] = useState<string[]>([]);
 
     const user = useSelector(selectUser);
-    const aliases = useSelector(selectAliasItems);
+    const aliases = useSelector(selectAllAliasItems);
 
     const dispatch = useDispatch();
     const doImportItems = useRequestDispatch(importItems);

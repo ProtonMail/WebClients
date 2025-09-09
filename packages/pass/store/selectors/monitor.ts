@@ -10,7 +10,7 @@ import type { Maybe, ShareId } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
 import { and } from '@proton/pass/utils/fp/predicates';
 
-import { selectLoginItems } from './items';
+import { selectVisibleLoginItems } from './items';
 
 export const selectMonitorState = (state: State) => state.monitor;
 export const selectMonitorSettings = ({ user }: State) => user.monitor;
@@ -21,15 +21,12 @@ export const selectProtonBreaches = (state: State) => state.monitor?.proton;
 export const selectMonitorPreview = (state: State): Maybe<MonitorDomain> => first(state.monitor?.preview ?? []);
 
 export const selectMonitoredLogins = (shareIds?: ShareId[]) =>
-    createSelector(selectLoginItems, (items) => items.filter(and(isActiveMonitored, belongsToShares(shareIds))));
+    createSelector(selectVisibleLoginItems, (items) => items.filter(and(isActiveMonitored, belongsToShares(shareIds))));
 
-export const selectDuplicatePasswords = (shareIds?: ShareId[]) =>
-    createSelector(selectMonitoredLogins(shareIds), getDuplicatePasswords);
+export const selectDuplicatePasswords = (shareIds?: ShareId[]) => createSelector(selectMonitoredLogins(shareIds), getDuplicatePasswords);
 
 export const selectExcludedItems = (shareIds?: ShareId[]) =>
-    createSelector(selectLoginItems, (items) =>
-        items.filter(and(isExcluded, belongsToShares(shareIds))).map(intoSelectedItem)
-    );
+    createSelector(selectVisibleLoginItems, (items) => items.filter(and(isExcluded, belongsToShares(shareIds))).map(intoSelectedItem));
 
 export const selectMonitorSettingByType = (type: AddressType) =>
     createSelector(selectMonitorSettings, (settings) => {

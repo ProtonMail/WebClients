@@ -9,7 +9,7 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { selectAliasItems, selectLoginItems } from './items';
+import { selectVisibleAliasItems, selectVisibleLoginItems } from './items';
 
 export const selectAliasState = ({ alias }: State) => alias;
 export const selectAliasOptions = ({ alias }: State) => alias.aliasOptions;
@@ -23,16 +23,15 @@ export const selectMailboxesForAlias = (aliasEmail: string) =>
 
 export const selectAliasByAliasEmail = (aliasEmail: string) =>
     createSelector(
-        [selectAliasItems],
+        [selectVisibleAliasItems],
         (aliasItems): Maybe<ItemRevision<'alias'>> => aliasItems.find((item) => item.aliasEmail! === aliasEmail)
     );
 
 export const selectCanManageAlias = ({ user: { plan } }: State) => Boolean(plan?.ManageAlias);
-
-export const selectTrashedAliasCount = createSelector(selectAliasItems, (items) => items.filter(isTrashed).length);
+export const selectTrashedAliasCount = createSelector(selectVisibleAliasItems, (items) => items.filter(isTrashed).length);
 
 /** Filters out all login items which were created from an alias item */
-export const selectNonAliasedLoginItems = createSelector([selectLoginItems, selectAliasItems], (logins, aliases) => {
+export const selectNonAliasedLoginItems = createSelector([selectVisibleLoginItems, selectVisibleAliasItems], (logins, aliases) => {
     const aliasEmails = new Set<string>(aliases.map(prop('aliasEmail')).filter(isTruthy));
     return logins.filter((item) => isActive(item) && !aliasEmails.has(deobfuscate(item.data.content.itemEmail)));
 });

@@ -3,7 +3,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { sortItems } from '@proton/pass/lib/items/item.utils';
 import { PlanType } from '@proton/pass/types';
 
-import { selectAliasItems, selectLoginItems } from './items';
+import { selectAllAliasItems, selectAllLoginItems } from './items';
 import { selectAllVaults } from './shares';
 import { selectUserPlan } from './user';
 
@@ -18,7 +18,7 @@ export const selectVaultLimits = createSelector([selectAllVaults, selectUserPlan
     };
 });
 
-export const selectAliasLimits = createSelector([selectAliasItems, selectUserPlan], (aliases, plan) => {
+export const selectAliasLimits = createSelector([selectAllAliasItems, selectUserPlan], (aliases, plan) => {
     const aliasLimit = plan?.AliasLimit ?? Number.MAX_SAFE_INTEGER;
 
     return {
@@ -30,7 +30,7 @@ export const selectAliasLimits = createSelector([selectAliasItems, selectUserPla
     };
 });
 
-export const selectTOTPLimits = createSelector([selectLoginItems, selectUserPlan], (loginItems, plan) => {
+export const selectTOTPLimits = createSelector([selectAllLoginItems, selectUserPlan], (loginItems, plan) => {
     const totpLimit = plan?.TotpLimit;
     let needsUpgrade = false;
     let didDowngrade = false;
@@ -57,7 +57,5 @@ export const selectTOTPLimits = createSelector([selectLoginItems, selectUserPlan
 });
 
 export const selectExtraFieldLimits = createSelector([selectUserPlan], (plan) => {
-    return {
-        needsUpgrade: plan?.Type === PlanType.FREE,
-    };
+    return { needsUpgrade: plan?.Type === PlanType.FREE };
 });

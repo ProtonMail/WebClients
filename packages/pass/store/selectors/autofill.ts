@@ -2,7 +2,7 @@ import { belongsToShares, hasOTP, hasUserIdentifier, isActive, isPasskeyItem, it
 import type { PasskeyQueryPayload, SelectedPasskey } from '@proton/pass/lib/passkeys/types';
 import type { SelectAutofillCandidatesOptions, SelectOTPAutofillCandidateOptions } from '@proton/pass/lib/search/types';
 import { isAutofillableShare } from '@proton/pass/lib/shares/share.predicates';
-import { selectVisibleItems, selectVisibleItemsByType } from '@proton/pass/store/selectors/items';
+import { selectItemsFactory, selectVisibleItems } from '@proton/pass/store/selectors/items';
 import { selectVaultLimits } from '@proton/pass/store/selectors/limits';
 import { createMatchDomainItemsSelector } from '@proton/pass/store/selectors/match';
 import { selectVisibleShares } from '@proton/pass/store/selectors/shares';
@@ -26,7 +26,7 @@ export const selectAutofillableShareIDs = createUncachedSelector(
 );
 
 export const selectAutofillIdentityCandidates = (shareIds?: string[]) =>
-    createUncachedSelector(selectVisibleItemsByType('identity'), (items) =>
+    createUncachedSelector(selectItemsFactory('identity', true), (items) =>
         items.filter(and(isActive, belongsToShares(shareIds))).sort(sortOn('lastUseTime'))
     );
 

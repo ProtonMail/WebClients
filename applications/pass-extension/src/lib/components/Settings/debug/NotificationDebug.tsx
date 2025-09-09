@@ -6,13 +6,13 @@ import { Notification } from 'proton-pass-extension/app/content/injections/apps/
 import { NotificationAction } from 'proton-pass-extension/app/content/types';
 
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
-import { selectLoginItems } from '@proton/pass/store/selectors';
+import { selectAllLoginItems } from '@proton/pass/store/selectors';
 import { AppStatus, AutosaveMode } from '@proton/pass/types';
 
 import { MockIFrameApp } from './MockIFrameApp';
 
 export const NotificationDebug: FC = () => {
-    const loginItems = useSelector(selectLoginItems);
+    const loginItems = useSelector(selectAllLoginItems);
     const otpItem = loginItems.find((item) => Boolean(item.data.content.totpUri.v));
 
     return (

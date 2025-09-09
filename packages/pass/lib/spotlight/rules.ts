@@ -4,7 +4,7 @@ import { ITEM_COUNT_RATING_PROMPT } from '@proton/pass/constants';
 import { hasAttachments, hasHadAttachments } from '@proton/pass/lib/items/item.predicates';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
-    selectAliasItems,
+    selectAllAliasItems,
     selectAllItems,
     selectCanCreateItems,
     selectCreatedItemsCount,
@@ -174,7 +174,7 @@ export const createAliasDiscoveryRules = (store: Store<State>): SpotlightRule[] 
         createSpotlightRule({
             message,
             when: (previous) => {
-                const aliasCount = selectAliasItems(store.getState()).length;
+                const aliasCount = selectAllAliasItems(store.getState()).length;
                 return !previous && aliasCount > 2;
             },
         })
