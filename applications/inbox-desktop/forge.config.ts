@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 import { config as dotenvConf } from "dotenv";
 dotenvConf({ path: [".env", ".env.default"] });
 
@@ -156,6 +155,19 @@ const config: ForgeConfig = {
                         },
                     },
                 ],
+            },
+            devServer: {
+                client: {
+                    overlay: {
+                        runtimeErrors: (error) => {
+                            if (error?.message === "ResizeObserver loop completed with undelivered notifications.") {
+                                console.error(error);
+                                return false;
+                            }
+                            return true;
+                        },
+                    },
+                },
             },
         }),
         new FusesPlugin({
