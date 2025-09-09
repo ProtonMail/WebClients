@@ -53,7 +53,7 @@ const EditSecurityKeyModal = ({ id, name, onClose, ...rest }: Props) => {
                 return;
             }
         };
-        withLoading(run());
+        void withLoading(run());
     };
 
     return (
