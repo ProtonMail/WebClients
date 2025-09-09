@@ -6589,9 +6589,6 @@
       "You are about to open your default browser and visit:": [
         "Uruchomisz domyślną przeglądarkę i przejdziesz do:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Zalogowano jako ${ user.Name } (${ user.Email })."
-      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Używasz więcej przestrzeni dyskowej niż jest dostępna w planie ${ downgradedPlanName }. Aby obniżyć plan, zwolnij część miejsca."
       ],
@@ -10326,7 +10323,7 @@
     },
     "q3campaign_2025: Info": {
       "${ discountPercent }% off": [
-        "${ discountPercent }% taniej"
+        "-${ discountPercent }%"
       ],
       "${ normalPricePerMonth } /month": [
         "${ normalPricePerMonth } / miesiąc"
