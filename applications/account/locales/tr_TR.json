@@ -10288,6 +10288,9 @@
       "Signed up": [
         "Hesap açtı"
       ],
+      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
+        "Güvenlik anahtarı ile oturum açılması henüz tüm uygulamalarda desteklenmiyor. Tek kullanımlık parola olmadan, bazı uygulamalarda oturum açılamayabilir."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
       ],
@@ -11070,8 +11073,8 @@
       "You are about to open your default browser and visit:": [
         "Varsayılan tarayıcınızı açarak şu adrese gitmek üzeresiniz:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız."
+      "You are currently signed in as ${ username }.": [
+        "Şu anda ${ username } olarak oturum açmışsınız."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Şu anda size ayrılmış ${ ipAddresses } sunucudan ${ ipCount } sunucuyu kullanıyorsunuz.",
@@ -17187,7 +17190,7 @@
     },
     "q3campaign_2025: Info": {
       "${ discountPercent }% off": [
-        "%${ discountPercent } indirim"
+        "-%${ discountPercent }"
       ],
       "${ normalPricePerMonth } /month": [
         "${ normalPricePerMonth } /ay"

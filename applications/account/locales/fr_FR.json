@@ -11070,8 +11070,8 @@
       "You are about to open your default browser and visit:": [
         "Vous allez ouvrir votre navigateur par défaut et consulter :"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Vous êtes actuellement connecté en tant que ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Vous êtes actuellement connecté en tant que ${ username }."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Nombre de serveurs dédiés que vous utilisez : ${ ipCount } sur ${ ipAddresses }.",

@@ -199,9 +199,6 @@
       "Change page": [
         "Pagina veranderen"
       ],
-      "Change password": [
-        "Wachtwoord wijzigen"
-      ],
       "Change sorting": [
         "Sortering wijzigen"
       ],
@@ -1443,6 +1440,9 @@
       ],
       "Trust": [
         "Vertrouwen"
+      ],
+      "Trust key": [
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -7245,7 +7245,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -8396,9 +8397,6 @@
       "You are about to open your default browser and visit:": [
         "U staat op het punt uw standaardbrowser te openen om te bezoeken:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "U bent momenteel aangemeld als ${ user.Name } (${ user.Email })."
-      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "U gebruikt meer opslag dan is inbegrepen in een ${ downgradedPlanName } abonnement. Wis of verwijder gegevens om te kunnen downgraden."
       ],
@@ -9547,9 +9545,6 @@
       ],
       "Undisclosed Recipients": [
         "Niet-openbaar gemaakte ontvangers"
-      ],
-      "Unknown": [
-        "Onbekend"
       ],
       "Unsafe or problematic": [
         "Onveilig of problematisch"
@@ -12248,7 +12243,7 @@
     },
     "q3campaign_2025: Info": {
       "${ discountPercent }% off": [
-        "${ discountPercent }% korting"
+        "-${ discountPercent }%"
       ],
       "${ normalPricePerMonth } /month": [
         "${ normalPricePerMonth } /maand"
@@ -14252,9 +14247,6 @@
       ],
       "Account security": [
         "Accountbeveiliging"
-      ],
-      "Account temporarily locked": [
-        "Account tijdelijk geblokkeerd"
       ],
       "Action all conversations": [
         "Toepassen op alle gesprekken"

@@ -10423,9 +10423,6 @@
       "You are about to open your default browser and visit:": [
         "Вы собираетесь открыть браузер по умолчанию и посетить:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "В настоящее время вы вошли как ${ user.Name } (${ user.Email })."
-      ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступного выделенного сервера.",
         "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов.",
@@ -16248,7 +16245,7 @@
     },
     "q3campaign_2025: Info": {
       "${ discountPercent }% off": [
-        "Скидка ${ discountPercent } %"
+        "-${ discountPercent } %"
       ],
       "${ normalPricePerMonth } /month": [
         "${ normalPricePerMonth } /месяц"
