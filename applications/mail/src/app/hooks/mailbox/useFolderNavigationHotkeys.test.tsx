@@ -7,6 +7,14 @@ import { useFolderNavigationHotkeys } from './useFolderNavigationHotkeys';
 
 jest.mock('@proton/shared/lib/shortcuts/helpers', () => ({ __esModule: true, isBusy: jest.fn(() => false) }));
 
+const mockHookPush = jest.fn();
+jest.mock('proton-mail/components/categoryView/useCategoriesShortcuts', () => ({
+    __esModule: true,
+    useCategoriesShortcuts: jest.fn().mockReturnValue({
+        categoriesAndInboxShortcuts: [['G', 'I', (e: KeyboardEvent) => mockHookPush(e)]],
+    }),
+}));
+
 const event = {
     stopPropagation: jest.fn(),
     preventDefault: jest.fn(),
@@ -30,9 +38,8 @@ describe('useFolderNavigationHotkeys', () => {
         const firstShortCut = shortcuts[0];
         expect(firstShortCut).toStrictEqual(['G', 'I', expect.anything()]);
         (firstShortCut[2] as (e: KeyboardEvent) => void)(event);
-        expect(mockedPush).toHaveBeenCalledTimes(1);
-        expect(mockedPush).toHaveBeenCalledWith('/inbox');
-        mockedPush.mockClear();
+        expect(mockHookPush).toHaveBeenCalledTimes(1);
+        mockHookPush.mockClear();
 
         const secondShortCut = shortcuts[1];
         expect(secondShortCut).toStrictEqual(['G', 'D', expect.anything()]);
