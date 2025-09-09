@@ -1,43 +1,34 @@
 import type { ReactNode } from 'react';
 
-import type { SidebarItem } from '../hooks/useSidebar.store';
-import { useSidebarStore } from '../hooks/useSidebar.store';
+import type { TreeItem } from '../../../store';
 import { DriveSidebarSubfolder } from './DriveSidebarSubfolder';
 
-type Props = {
+interface Props {
     shareId: string;
-    children: SidebarItem[];
-    toggleExpand: (linkId: string) => Promise<void>;
+    rootFolder?: TreeItem;
+    toggleExpand: (linkId: string) => void;
     defaultLevel?: number;
-};
+}
 
-export const DriveSidebarSubfolders = ({ shareId, children, toggleExpand }: Props) => {
-    const { getChildren } = useSidebarStore((state) => ({
-        getChildren: state.getChildren,
-    }));
-
-    if (!children?.length) {
+export const DriveSidebarSubfolders = ({ shareId, rootFolder, toggleExpand, defaultLevel = 0 }: Props) => {
+    if (!rootFolder || !rootFolder.isExpanded || !rootFolder.children?.length) {
         return null;
     }
 
-    const folderReducer = (acc: ReactNode[], folder: SidebarItem): any[] => {
+    const folderReducer = (acc: ReactNode[], folder: TreeItem, level = defaultLevel): any[] => {
         acc.push(
             <DriveSidebarSubfolder
-                key={folder.uid}
+                key={folder.link.linkId}
                 shareId={shareId}
-                item={folder}
-                toggleExpand={() => toggleExpand(folder.uid)}
+                folder={folder}
+                level={level}
+                toggleExpand={() => toggleExpand(folder.link.linkId)}
             />
         );
-
-        const subChildren = getChildren(folder.uid);
-
-        if (folder.isExpanded && subChildren?.length) {
-            subChildren.forEach((child: SidebarItem) => folderReducer(acc, child));
+        if (folder.isExpanded && folder.children?.length) {
+            folder.children.forEach((subfolder: TreeItem) => folderReducer(acc, subfolder, level + 1));
         }
-
         return acc;
     };
-
-    return <>{children.reduce((acc: ReactNode[], folder: SidebarItem) => folderReducer(acc, folder), [])}</>;
+    return <>{rootFolder.children.reduce((acc: ReactNode[], folder: TreeItem) => folderReducer(acc, folder), [])}</>;
 };

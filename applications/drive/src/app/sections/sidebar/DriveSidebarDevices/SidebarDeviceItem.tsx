@@ -1,24 +1,21 @@
 import { useEffect } from 'react';
 
-import { splitNodeUid } from '@proton/drive';
-
-import DriveExpandButton from '../../../components/layout/sidebar/DriveSidebar/DriveSidebarFolders/DriveExpandButton';
-import DriveSidebarSubfolders from '../../../components/layout/sidebar/DriveSidebar/DriveSidebarFolders/DriveSidebarSubfolders';
-import DriveSidebarListItem from '../../../components/layout/sidebar/DriveSidebar/DriveSidebarListItem';
-import { generateSidebarItemStyle } from '../../../components/layout/sidebar/DriveSidebar/utils';
 import { useFolderTree } from '../../../store';
-import type { StoreDevice } from '../devices.store';
+import type { Device } from '../../../store/_devices';
+import { DriveExpandButton } from '../DriveSidebarFolders/DriveExpandButton';
+import { DriveSidebarSubfolders } from '../DriveSidebarFolders/DriveSidebarSubfolders';
+import { DriveSidebarListItem } from '../DriveSidebarListItem';
+import { generateSidebarItemStyle } from '../utils';
 
-export const DevicesSidebarItem = ({
+export const SidebarDeviceItem = ({
     device,
     setSidebarLevel,
 }: {
-    device: StoreDevice;
+    device: Device;
     setSidebarLevel: (level: number) => void;
 }) => {
-    const { nodeId } = splitNodeUid(device.rootFolderUid);
     const { deepestOpenedLevel, rootFolder, toggleExpand } = useFolderTree(device.shareId, {
-        rootLinkId: nodeId,
+        rootLinkId: device.linkId,
     });
 
     useEffect(() => {
@@ -28,7 +25,7 @@ export const DevicesSidebarItem = ({
     return (
         <div>
             <DriveSidebarListItem
-                to={`/${device.shareId}/folder/${nodeId}`}
+                to={`/${device.shareId}/folder/${device.linkId}`}
                 icon="tv"
                 shareId={device.shareId}
                 style={generateSidebarItemStyle(1)}
@@ -40,7 +37,7 @@ export const DevicesSidebarItem = ({
                 <DriveExpandButton
                     className="shrink-0"
                     expanded={Boolean(rootFolder?.isExpanded)}
-                    onClick={() => toggleExpand(nodeId)}
+                    onClick={() => toggleExpand(device.linkId)}
                 />
             </DriveSidebarListItem>
             <DriveSidebarSubfolders

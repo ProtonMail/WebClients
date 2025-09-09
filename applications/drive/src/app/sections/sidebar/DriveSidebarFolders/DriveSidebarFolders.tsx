@@ -1,33 +1,22 @@
-import type { SidebarItem } from '../hooks/useSidebar.store';
-import { useSidebarStore } from '../hooks/useSidebar.store';
-import { useSidebarFolders } from '../hooks/useSidebarFolders';
+import { useEffect } from 'react';
+
+import { useFolderTree } from '../../../store';
 import { DriveSidebarFoldersRoot } from './DriveSidebarFoldersRoot';
 import { DriveSidebarSubfolders } from './DriveSidebarSubfolders';
 
-type DriveSidebarFoldersProps = {
+interface DriveSidebarFoldersProps {
     shareId: string;
     linkId: string;
+    setSidebarLevel: (level: number) => void;
     collapsed: boolean;
-    rootFolder: SidebarItem;
-};
+}
 
-export const DriveSidebarFolders = ({ rootFolder, shareId, linkId, collapsed }: DriveSidebarFoldersProps) => {
-    const { loadFolderChildren } = useSidebarFolders();
-    const { toggleExpanded, getItem, getChildren } = useSidebarStore((state) => ({
-        toggleExpanded: state.toggleExpanded,
-        getItem: state.getItem,
-        getChildren: state.getChildren,
-    }));
+export const DriveSidebarFolders = ({ shareId, linkId, setSidebarLevel, collapsed }: DriveSidebarFoldersProps) => {
+    const { deepestOpenedLevel, rootFolder, toggleExpand } = useFolderTree(shareId, { rootLinkId: linkId });
 
-    const toggleExpand = async (uid: string) => {
-        const item = getItem(uid);
-        const wasExpanded = item?.isExpanded ?? false;
-        toggleExpanded(uid);
-
-        if (!wasExpanded) {
-            await loadFolderChildren(uid);
-        }
-    };
+    useEffect(() => {
+        setSidebarLevel(deepestOpenedLevel);
+    }, [deepestOpenedLevel]);
 
     return (
         <>
@@ -39,12 +28,7 @@ export const DriveSidebarFolders = ({ rootFolder, shareId, linkId, collapsed }: 
                 collapsed={collapsed}
             />
             {!collapsed && (
-                <DriveSidebarSubfolders
-                    key={rootFolder.uid}
-                    shareId={shareId}
-                    children={getChildren(rootFolder.uid)}
-                    toggleExpand={toggleExpand}
-                />
+                <DriveSidebarSubfolders shareId={shareId} rootFolder={rootFolder} toggleExpand={toggleExpand} />
             )}
         </>
     );
