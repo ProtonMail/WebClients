@@ -201,9 +201,6 @@
       "Change page": [
         "页面跳转"
       ],
-      "Change password": [
-        "更改密码"
-      ],
       "Change sorting": [
         "更改排序"
       ],
@@ -1436,6 +1433,9 @@
       ],
       "Trust": [
         "信任"
+      ],
+      "Trust key": [
+        "信任密钥"
       ],
       "Trust public key": [
         "信任公钥"
@@ -7067,7 +7067,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert link": [
         "插入链接"
@@ -8197,9 +8197,6 @@
       "You are about to open your default browser and visit:": [
         "您即将打开默认浏览器并访问："
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "您当前登录的用户为 ${ user.Name } (${ user.Email })。"
-      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "您使用的存储空间超过了 ${ downgradedPlanName } 计划中包含的存储空间。请删除一些数据以便降级。"
       ],
@@ -9137,6 +9134,9 @@
       "No label found": [
         "未找到标签"
       ],
+      "No results found": [
+        "没有找到相关结果"
+      ],
       "Not factually correct": [
         "事实错误"
       ],
@@ -9325,9 +9325,6 @@
       ],
       "Undisclosed Recipients": [
         "非公开收件人"
-      ],
-      "Unknown": [
-        "未知"
       ],
       "Unsafe or problematic": [
         "不安全或存在问题"
@@ -14122,6 +14119,9 @@
       "Label as": [
         "加标签"
       ],
+      "Label message as": [
+        "标示邮件为"
+      ],
       "Label options": [
         "标签选项"
       ],
@@ -14205,6 +14205,12 @@
       ],
       "Move all messages to trash": [
         "将所有邮件移至回收站"
+      ],
+      "Move message to": [
+        "把邮件移动到"
+      ],
+      "Move messages to": [
+        "把邮件移动到"
       ],
       "Move to": [
         "移动到"
