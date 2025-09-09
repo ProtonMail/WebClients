@@ -13,7 +13,7 @@ import { useEventListener } from './useHandler';
  * A Hotkey being an array means we have a "modifier" combination
  * of keys (e.g. "Cmd + K" would translate to ['Meta', 'K'])
  * */
-type Hotkey = KeyboardKeyType | KeyboardKeyType[];
+export type Hotkey = KeyboardKeyType | KeyboardKeyType[];
 
 /*
  * A Sequence is a suite of Hotkeys

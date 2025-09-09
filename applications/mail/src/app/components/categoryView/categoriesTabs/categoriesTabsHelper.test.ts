@@ -2,21 +2,9 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import type { CategoryTab } from '../categoriesConstants';
 import { CATEGORIES_COLOR_SHADES } from '../categoriesConstants';
-import { getCategoryData } from '../categoriesHelpers';
+import { mockActiveCategoriesData } from '../testUtils/helpers';
 import { getTabState } from './categoriesTabsHelper';
 import { TabState } from './tabsInterface';
-
-const mockCategoriesData = [
-    MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
-    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-    MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
-    MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
-    MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
-    MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
-    MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
-]
-    .map(getCategoryData)
-    .map((data) => ({ ...data, checked: true }));
 
 describe('CategoriesTabsHelper', () => {
     describe('getTabState', () => {
@@ -29,7 +17,7 @@ describe('CategoriesTabsHelper', () => {
             const tabState = getTabState({
                 index: 0,
                 category,
-                categoriesList: mockCategoriesData,
+                categoriesList: mockActiveCategoriesData,
                 categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
                 draggedOverCategoryId: undefined,
             });
@@ -45,7 +33,7 @@ describe('CategoriesTabsHelper', () => {
             const tabState = getTabState({
                 index: 0,
                 category,
-                categoriesList: mockCategoriesData,
+                categoriesList: mockActiveCategoriesData,
                 categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
                 draggedOverCategoryId: undefined,
             });
@@ -61,7 +49,7 @@ describe('CategoriesTabsHelper', () => {
             const tabState = getTabState({
                 index: 0,
                 category,
-                categoriesList: mockCategoriesData,
+                categoriesList: mockActiveCategoriesData,
                 categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                 draggedOverCategoryId: MAILBOX_LABEL_IDS.CATEGORY_FORUMS.toString(),
             });
@@ -77,7 +65,7 @@ describe('CategoriesTabsHelper', () => {
             const tabState = getTabState({
                 index: 0,
                 category,
-                categoriesList: mockCategoriesData,
+                categoriesList: mockActiveCategoriesData,
                 categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
                 draggedOverCategoryId: MAILBOX_LABEL_IDS.CATEGORY_FORUMS.toString(),
             });
@@ -93,7 +81,7 @@ describe('CategoriesTabsHelper', () => {
             const tabState = getTabState({
                 index: 1,
                 category,
-                categoriesList: mockCategoriesData,
+                categoriesList: mockActiveCategoriesData,
                 categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                 draggedOverCategoryId: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS.toString(),
             });
@@ -109,7 +97,7 @@ describe('CategoriesTabsHelper', () => {
             const tabState = getTabState({
                 index: 3,
                 category,
-                categoriesList: mockCategoriesData,
+                categoriesList: mockActiveCategoriesData,
                 categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                 draggedOverCategoryId: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS.toString(),
             });

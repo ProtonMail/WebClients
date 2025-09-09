@@ -1,7 +1,7 @@
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { CATEGORIES_COLOR_SHADES } from './categoriesConstants';
-import { getCategoryData } from './categoriesHelpers';
+import { getCategoryCommanderKeyboardShortcut, getCategoryData } from './categoriesHelpers';
 
 describe('categoriesHelpers', () => {
     describe('getCategoryData', () => {
@@ -69,5 +69,24 @@ describe('categoriesHelpers', () => {
         it('should throw if the ID is not part of the mapping', () => {
             expect(() => getCategoryData('27')).toThrow();
         });
+    });
+
+    describe('getCategoryCommanderKeyboardShortcut', () => {
+        const testArray: [CategoryLabelID, string[]][] = [
+            [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, ['G', 'I']],
+            [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, ['C', 'S']],
+            [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, ['C', 'P']],
+            [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, ['C', 'N']],
+            [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, ['C', 'T']],
+            [MAILBOX_LABEL_IDS.CATEGORY_UPDATES, ['C', 'U']],
+            [MAILBOX_LABEL_IDS.CATEGORY_FORUMS, ['C', 'F']],
+        ];
+
+        it.each(testArray)(
+            'should return the correct label for the category %s when the category is %s',
+            (category, expectedLabel) => {
+                expect(getCategoryCommanderKeyboardShortcut(category).join('')).toBe(expectedLabel.join(''));
+            }
+        );
     });
 });
