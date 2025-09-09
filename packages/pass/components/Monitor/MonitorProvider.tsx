@@ -12,13 +12,13 @@ import { intoAliasMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils'
 import type { AddressType, MonitorAddress } from '@proton/pass/lib/monitor/types';
 import { deleteCustomAddress, getBreaches } from '@proton/pass/store/actions';
 import {
-    selectAliasItems,
     selectCustomBreaches,
     selectDuplicatePasswords,
     selectExcludedItems,
     selectMonitorState,
     selectProtonBreaches,
     selectTotalBreaches,
+    selectVisibleAliasItems,
 } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 
@@ -36,7 +36,7 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const didLoad = useSelector(selectMonitorState) !== null;
 
-    const aliases = useSelector(selectAliasItems) ?? [];
+    const aliases = useSelector(selectVisibleAliasItems) ?? [];
     const proton = useSelector(selectProtonBreaches) ?? [];
     const custom = useSelector(selectCustomBreaches) ?? [];
     const count = useSelector(selectTotalBreaches) ?? 0;

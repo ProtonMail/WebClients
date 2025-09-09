@@ -64,6 +64,7 @@ export const VaultMenuTrash = memo(({ selected, onAction = noop }: Props) => {
                     onClick={onTrashRestore}
                     label={c('Label').t`Restore all items`}
                     icon="arrow-up-and-left"
+                    disabled={count === 0}
                 />,
 
                 <DropdownMenuButton
@@ -71,6 +72,7 @@ export const VaultMenuTrash = memo(({ selected, onAction = noop }: Props) => {
                     onClick={onTrashEmpty}
                     label={c('Label').t`Empty trash`}
                     icon="trash-cross"
+                    disabled={count === 0}
                     danger
                 />,
             ]}

@@ -5,9 +5,9 @@ import { isActive } from '@proton/pass/lib/items/item.predicates';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import { selectAllItems, selectItems } from '@proton/pass/store/selectors/items';
 import {
-    selectAllVaults,
     selectOwnWritableVaults,
     selectShare,
+    selectVisibleVaults,
     selectWritableSharedVaults,
     selectWritableVaults,
 } from '@proton/pass/store/selectors/shares';
@@ -25,7 +25,7 @@ const createVaultsWithItemsCountSelector = (vaultSelector: Selector<State, Vault
         }))
     );
 
-export const selectVaultsWithCount = createVaultsWithItemsCountSelector(selectAllVaults);
+export const selectVisibleVaultsWithCount = createVaultsWithItemsCountSelector(selectVisibleVaults);
 export const selectWritableVaultsWithCount = createVaultsWithItemsCountSelector(selectWritableVaults);
 export const selectWritableSharedVaultsWithCount = createVaultsWithItemsCountSelector(selectWritableSharedVaults);
 

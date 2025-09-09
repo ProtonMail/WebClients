@@ -30,15 +30,18 @@ export const selectVisibleItems = createSelector([selectAllItems, selectVisibleS
     items.filter(({ shareId }) => shareIds.has(shareId))
 );
 
-export const selectTrashedItems = createSelector(selectAllItems, (items) => items.filter(isTrashed));
+export const selectTrashedItems = createSelector(selectVisibleItems, (items) => items.filter(isTrashed));
 export const selectPinnedItems = createSelector(selectVisibleItems, (items) => items.filter(and(isActive, isPinned)));
 export const selectLatestDraft = createSelector(selectItemDrafts, (drafts) => first(drafts));
 
-export const selectVisibleItemsByType = <T extends ItemType>(type: T) =>
-    createSelector(selectVisibleItems, (items) => items.filter(isItemType<T>(type)));
+export const selectItemsFactory = <T extends ItemType>(type: T, visibleOnly: boolean) =>
+    createSelector(visibleOnly ? selectVisibleItems : selectAllItems, (items) => items.filter(isItemType<T>(type)));
 
-export const selectLoginItems = selectVisibleItemsByType('login');
-export const selectAliasItems = selectVisibleItemsByType('alias');
+export const selectAllLoginItems = selectItemsFactory('login', false);
+export const selectVisibleLoginItems = selectItemsFactory('login', true);
+
+export const selectAllAliasItems = selectItemsFactory('alias', false);
+export const selectVisibleAliasItems = selectItemsFactory('alias', true);
 
 export const itemsFromSelection =
     (selection: SelectedItem[]) =>
@@ -95,10 +98,10 @@ export const selectItemsByShareId = (shareId?: string) =>
     );
 
 export const selectItemsByUserIdentifier = (userIdentifier: string) =>
-    createSelector(selectLoginItems, filterItemsByUserIdentifier(userIdentifier));
+    createSelector(selectVisibleLoginItems, filterItemsByUserIdentifier(userIdentifier));
 
 export const selectItemsByEmail = (itemEmail?: MaybeNull<string>) =>
-    createSelector(selectLoginItems, (items) => {
+    createSelector(selectVisibleLoginItems, (items) => {
         if (!itemEmail) return;
         return items.find(hasEmail(itemEmail));
     });
