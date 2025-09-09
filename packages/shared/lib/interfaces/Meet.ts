@@ -3,6 +3,11 @@ export enum CustomPasswordState {
     PASSWORD_SET = 1,
 }
 
+export enum ProtonCalendarState {
+    NOT_FROM_PROTON_CALENDAR = 0,
+    FROM_PROTON_CALENDAR = 1,
+}
+
 export interface MeetingInfoResponse {
     MeetingInfo: {
         Salt: string;
@@ -52,6 +57,7 @@ export interface MeetingPayload {
     State?: MeetingState;
     Type: MeetingType;
     CustomPassword: CustomPasswordState;
+    ProtonCalendar?: ProtonCalendarState;
 }
 
 export interface Meeting extends Omit<MeetingPayload, 'Name'> {

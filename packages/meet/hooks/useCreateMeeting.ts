@@ -20,12 +20,13 @@ export const useCreateMeeting = () => {
         timeZone = null,
         customPassword = '',
         type = MeetingType.INSTANT,
+        protonCalendar = false,
     }: CreateMeetingParams) => {
         const { privateKey, addressId } = await getMeetingDependencies();
 
         try {
             const { response, passwordBase } = await saveMeeting({
-                params: { customPassword, meetingName, startTime, endTime, recurrence, timeZone, type },
+                params: { customPassword, protonCalendar, meetingName, startTime, endTime, recurrence, timeZone, type },
                 privateKey,
                 addressId,
             });

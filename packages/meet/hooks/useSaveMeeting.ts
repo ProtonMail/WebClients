@@ -1,7 +1,7 @@
 import { useApi } from '@proton/components';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { createMeetingCall } from '@proton/shared/lib/api/meet';
-import { CustomPasswordState, MeetingType } from '@proton/shared/lib/interfaces/Meet';
+import { CustomPasswordState, MeetingType, ProtonCalendarState } from '@proton/shared/lib/interfaces/Meet';
 import type { CreateMeetingResponse, RecurringType } from '@proton/shared/lib/interfaces/Meet';
 
 import type { CreateMeetingParams } from '../types/types';
@@ -14,7 +14,7 @@ export const useSaveMeeting = () => {
     const reportMeetError = useMeetErrorReporting();
 
     const saveMeeting = async ({
-        params: { customPassword, meetingName, startTime, endTime, recurrence, timeZone, type },
+        params: { customPassword, protonCalendar, meetingName, startTime, endTime, recurrence, timeZone, type },
         privateKey,
         addressId,
         noPasswordSave = false,
@@ -60,6 +60,9 @@ export const useSaveMeeting = () => {
                         ? CustomPasswordState.PASSWORD_SET
                         : CustomPasswordState.NO_PASSWORD,
                     Type: type ?? MeetingType.INSTANT,
+                    ProtonCalendar: !!protonCalendar
+                        ? ProtonCalendarState.FROM_PROTON_CALENDAR
+                        : ProtonCalendarState.NOT_FROM_PROTON_CALENDAR,
                 }),
             });
 
