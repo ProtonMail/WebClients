@@ -4,6 +4,7 @@ import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { CYCLE } from '@proton/payments';
+import { localeCode } from '@proton/shared/lib/i18n';
 
 import hasOffer from '../../helpers/hasOffer';
 import type { OfferLayoutProps } from '../../interface';
@@ -38,6 +39,8 @@ export function BackToSchoolLayout(props: OfferLayoutProps) {
         props.onSelectDeal(props.offer, props.offer.deals[0], props.currency);
     };
 
+    const discountTextClass = localeCode.startsWith('en_') ? 'h2' : 'h3';
+
     return (
         <>
             <div className="backToSchoolModalContent flex-1 flex flex-column">
@@ -54,7 +57,7 @@ export function BackToSchoolLayout(props: OfferLayoutProps) {
 
                     {/* Square badge */}
                     <div className="backToSchoolSquareBadge rounded flex items-center">
-                        <span className="h2 text-bold ml-3">{
+                        <span className={`${discountTextClass} text-bold ml-3`}>{
                             // translator: in English we have "50%" off, but with other languages, to save space, "-50%" could work better
                             c('q3campaign_2025: Info').jt`${discountPercent}% off`
                         }</span>
