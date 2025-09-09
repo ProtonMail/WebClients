@@ -1,3 +1,7 @@
+### Version 1.32.6
+
+- Update Electron for stability and security fixes.
+
 ### Version 1.32.5
 
 - Patch WebKit Linux native X25519 crypto bug
