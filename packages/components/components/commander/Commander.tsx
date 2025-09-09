@@ -23,6 +23,10 @@ export interface CommanderItemInterface {
     label: string;
     shortcuts?: string[];
     action: () => void;
+    iconProps?: {
+        iconClassName?: string;
+        iconDataColor?: string;
+    };
 }
 
 interface Props extends ModalProps {
@@ -150,7 +154,11 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
                                                 className="w-full flex items-center justify-space-between text-left p-3"
                                             >
                                                 <span className="flex items-center text-left text-pre">
-                                                    <Icon name={item.icon} className="mr-4" />
+                                                    <Icon
+                                                        name={item.icon}
+                                                        className={clsx('mr-4', item.iconProps?.iconClassName)}
+                                                        data-color={item.iconProps?.iconDataColor}
+                                                    />
                                                     <Mark value={value}>{item.label}</Mark>
                                                 </span>
                                                 <span className="ml-1">
