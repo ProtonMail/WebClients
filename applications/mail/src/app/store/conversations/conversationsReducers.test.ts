@@ -101,7 +101,6 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             elements,
-                            isEncryptedSearch: false,
                             labelID: inboxLabelID,
                         },
                     },
@@ -125,7 +124,6 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             elements,
-                            isEncryptedSearch: false,
                             labelID: inboxLabelID,
                         },
                     },
@@ -147,7 +145,6 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             elements,
-                            isEncryptedSearch: false,
                             labelID: inboxLabelID,
                         },
                     },

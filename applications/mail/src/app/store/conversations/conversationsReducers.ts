@@ -348,7 +348,7 @@ export const markMessagesAsReadPending = (
     action: PayloadAction<
         undefined,
         string,
-        { arg: { elements: Element[]; isEncryptedSearch: boolean; labelID: string; showSuccessNotification?: boolean } }
+        { arg: { elements: Element[]; labelID: string; showSuccessNotification?: boolean } }
     >
 ) => {
     const { elements } = action.meta.arg;
