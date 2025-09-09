@@ -913,6 +913,21 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
+      ],
+      "Add secret passphrase": [
+        "添加密码短语"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "加入${ MEET_APP_NAME }"
+      ],
+      "Passphrase": [
+        "密码短语"
+      ],
+      "Retry": [
+        "重试"
+      ],
+      "Update secret passphrase": [
+        "更新密码短语"
       ]
     },
     "action": {
@@ -1444,6 +1459,9 @@
       ],
       "Website access problem": [
         "网站连接问题"
+      ],
+      "Meet problem": [
+        "遇到问题"
       ]
     },
     "Button": {
@@ -3744,6 +3762,12 @@
       ],
       "ZIP code is required": [
         "必须填写邮政编码"
+      ],
+      "Failed to update secret passphrase": [
+        "更新密码短语失败"
+      ],
+      "Passphrase unavailable": [
+        "密码短语不可用"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5960,6 +5984,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "为了增强安全性，您可以设置一个密码短语。它不会包含在日历邀请中，请记住单独与您的客人分享。"
       ]
     },
     "info": {
@@ -6603,6 +6630,9 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Passphrase:": [
+        "密码短语:"
       ]
     },
     "Label for contact group color": {
@@ -7999,6 +8029,9 @@
       ],
       "Passcode copied to clipboard": [
         "将密码复制到剪贴板"
+      ],
+      "Passphrase copied to clipboard": [
+        "将密码短语复制到剪贴板"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8183,7 +8216,7 @@
         "按年支付，确保我们的最佳优惠"
       ],
       "Save": [
-        "保存"
+        "节省"
       ],
       "Save big when you pay annually": [
         "按年付费可节省大量费用"
@@ -8795,6 +8828,9 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Enter passphrase": [
+        "输入密码短语"
       ]
     },
     "Placeholder for contact group name": {
@@ -10181,6 +10217,9 @@
       ],
       "You have successfully unsubscribed": [
         "您已退订成功"
+      ],
+      "Secret passphrase updated": [
+        "密码短语已更新"
       ]
     },
     "Suffix": {
@@ -11496,6 +11535,19 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
+      ],
+      "You have reached the trial limit.": [
+        "您已达到试用上限。"
+      ]
+    },
+    "collider_2025: feature": {
+      "Unlimited daily chats": [
+        "无限聊天次数"
       ]
     }
   }
