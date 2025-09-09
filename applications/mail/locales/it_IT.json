@@ -202,9 +202,6 @@
       "Change page": [
         "Cambia pagina"
       ],
-      "Change password": [
-        "Cambia la password"
-      ],
       "Change sorting": [
         "Cambia ordinamento"
       ],
@@ -1458,10 +1455,6 @@
       ],
       "Trust": [
         "Considera attendibile"
-      ],
-      "Trust key": [
-        "chiave attendibile",
-        "chiavi attendibili"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -5219,9 +5212,6 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Gli alias non possono essere usati quando è abilitata la password aggiuntiva in ${ PASS_APP_NAME }."
       ],
-      "An error occured with the categories": [
-        "Si è verificato un errore con le categorie"
-      ],
       "App currently unavailable": [
         "App attualmente non disponibile"
       ],
@@ -7338,7 +7328,8 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
@@ -8492,8 +8483,8 @@
       "You are about to open your default browser and visit:": [
         "Stai per aprire il tuo browser predefinito e visitare:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Al momento hai effettuato l'accesso come ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Sei attualmente connesso come ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Stai utilizzando più spazio di archiviazione rispetto a quello incluso in un piano ${ downgradedPlanName }. Elimina o rimuovi dei dati per effettuare il downgrade."
@@ -9661,9 +9652,6 @@
       ],
       "Undisclosed Recipients": [
         "Destinatari nascosti"
-      ],
-      "Unknown": [
-        "Sconosciuto"
       ],
       "Unsafe or problematic": [
         "È poco sicuro o problematico"
@@ -12403,7 +12391,7 @@
     },
     "q3campaign_2025: Info": {
       "${ discountPercent }% off": [
-        "${ discountPercent }% di sconto"
+        "-${ discountPercent }%"
       ],
       "${ normalPricePerMonth } /month": [
         "${ normalPricePerMonth } al mese"
@@ -14418,9 +14406,6 @@
       ],
       "Account security": [
         "Sicurezza dell'account"
-      ],
-      "Account temporarily locked": [
-        "Account temporaneamente bloccato"
       ],
       "Action all conversations": [
         "Applica a tutte le conversazioni"

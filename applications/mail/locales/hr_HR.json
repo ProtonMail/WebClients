@@ -146,9 +146,6 @@
       "Change page": [
         "Promjeni stranicu"
       ],
-      "Change password": [
-        "Promjena lozinke"
-      ],
       "Change sorting": [
         "Promijeni sortiranje"
       ],
@@ -1030,6 +1027,9 @@
       ],
       "Trust": [
         "Vjeruj"
+      ],
+      "Trust key": [
+        "Ključ povjerenja"
       ],
       "Trust public key": [
         "Vjeruj javnom ključu"
@@ -3460,9 +3460,6 @@
       ]
     },
     "Error message": {
-      "An error occured with the categories": [
-        "Dogodila se pogreška sa kategorijama"
-      ],
       "Error: ${ errorMessage }": [
         "Pogreška: ${ errorMessage }"
       ],
@@ -4615,7 +4612,9 @@
         "Nasljedno iz roditeljske mape"
       ],
       "Insert image": [
-        "Umetni sliku"
+        "Umetni sliku",
+        "Umetni slike",
+        "Umetni slike"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -5918,9 +5917,6 @@
       ],
       "Undisclosed Recipients": [
         "Nedefinirani primatelji"
-      ],
-      "Unknown": [
-        "Nepoznato"
       ],
       "Updates": [
         "Ažuriranja"
