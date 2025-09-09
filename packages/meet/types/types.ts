@@ -8,4 +8,5 @@ export interface CreateMeetingParams {
     timeZone?: string | null;
     customPassword?: string;
     type?: MeetingType;
+    protonCalendar?: boolean;
 }

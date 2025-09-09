@@ -111,6 +111,7 @@ export const useProtonMeetIntegration = ({
             const { meetingLink, id, meeting } = await createProtonMeet({
                 meetingName: model.title,
                 type: MeetingType.SCHEDULED,
+                protonCalendar: true,
             });
 
             const { meetingId, urlPassword } = parseMeetingLink(meetingLink);
