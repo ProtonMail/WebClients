@@ -5542,9 +5542,6 @@
       "You are about to open your default browser and visit:": [
         "Estás a punto de abrir tu navegador por defecto y visitar:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Actualmente estás conectado como ${ user.Name } (${ user.Email })."
-      ],
       "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
         "Actualmente estás viendo este documento en modo de solo lectura. Ponte en contacto con el propietario para solicitarle acceso para editarlo y comentarlo."
       ],
@@ -8769,7 +8766,7 @@
     },
     "q3campaign_2025: Info": {
       "${ discountPercent }% off": [
-        "${ discountPercent }% de descuento"
+        "-${ discountPercent }%"
       ],
       "${ normalPricePerMonth } /month": [
         "${ normalPricePerMonth } /mes"
