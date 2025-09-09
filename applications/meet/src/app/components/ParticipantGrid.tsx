@@ -67,7 +67,7 @@ export const ParticipantGrid = () => {
     };
 
     return (
-        <div className="flex-1 min-h-0 overflow-y-auto">
+        <div className="flex-1 min-h-0 overflow-y-auto h-full">
             <div
                 className="w-full h-full"
                 style={{
