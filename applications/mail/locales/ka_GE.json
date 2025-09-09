@@ -1621,6 +1621,40 @@
       ],
       "Zoom out": [
         "დაპატარავება"
+      ],
+      "Add secret passphrase": [
+        "საიდუმლო ფრაზის დამატება"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "${ BRAND_NAME }-ის მისამართის გამოთხოვა"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "${ BRAND_NAME }-ის უფასო მისამართის გამოთხოვა"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "მიიღეთ უფასო ${ BRAND_NAME }-ის მისამართი"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "გაწევრდით ${ MEET_APP_NAME }-ში"
+      ],
+      "Most frequent": [
+        "ყველაზე ხშირი"
+      ],
+      "Passphrase": [
+        "საკვანძო ფრაზა"
+      ],
+      "Recently read": [
+        "ახლახან წაკითხული"
+      ],
+      "Retry": [
+        "თავიდან"
+      ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
+      ],
+      "Update secret passphrase": [
+        "საიდუმლო ფრაზის განახლება"
       ]
     },
     "action": {
@@ -2208,6 +2242,9 @@
       ],
       "Website access problem": [
         "ვებგვერდთან წვდომის პრობლემა"
+      ],
+      "Meet problem": [
+        "Meet-ის პრობლემა"
       ]
     },
     "Button": {
@@ -4914,6 +4951,12 @@
       ],
       "ZIP code is required": [
         "საფოსტო კოდი აუცილებელია"
+      ],
+      "Failed to update secret passphrase": [
+        "საიდუმლო ფრაზის განახლება ჩავარდა"
+      ],
+      "Passphrase unavailable": [
+        "საკვანძო ფრაზა ხელმიუწვდომელია"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5707,6 +5750,9 @@
       ],
       "You've unlocked 1 GB": [
         "განბლოკეთ 1 გბ"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "${ BRAND_NAME }-ის მისამართის გამოთხოვა"
       ]
     },
     "Gmail forwarding": {
@@ -5793,6 +5839,15 @@
       ],
       "Tell us more": [
         "გვითხარით მეტი"
+      ],
+      "Domain": [
+        "დომენი"
+      ],
+      "Password ends with": [
+        "პაროლი მთავრდება"
+      ],
+      "Username": [
+        "მომხმარებლის სახელი"
       ]
     },
     "Hint": {
@@ -7131,8 +7186,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
-        "გამოსახულებების ჩასმა"
+        "გამოსახულების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -9461,6 +9515,18 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Categories badge": [
+        "კატეგორიების სამკერდე ნიშანი"
+      ],
+      "No results found": [
+        "შედეგების გარეშე"
+      ],
+      "Passphrase:": [
+        "საკვანძო ფრაზა:"
+      ],
+      "Why am I seeing this?": [
+        "რატომ ვხედავ ამას?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9793,6 +9859,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "განახლებული მოსაწვევის სანახავად საჭიროა თქვენი გასაღების თავიდან გააქტიურება"
+      ],
+      "Deleted": [
+        "წაშლილია"
       ]
     },
     "Link to calendar event": {
@@ -11068,6 +11137,9 @@
       ],
       "Trial started": [
         "საცდელი პერიოდი დაიწყო"
+      ],
+      "Passphrase copied to clipboard": [
+        "საკვანძო ფრაზა დაკოპირდა გაცვლის ბუფერში"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11128,7 +11200,7 @@
         "გადაიხადეთ წელიწადში ერთხელ, მიიღეთ ჩვენ საუკეთესო შეთავაზება"
       ],
       "Save": [
-        "შენახვა"
+        "დაზოგეთ"
       ],
       "Save big when you pay annually": [
         "დაზოგეთ ბევრი, როცა წელიწადში ერთხელ იხდით"
@@ -11635,6 +11707,12 @@
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
+      ],
+      "Taxes": [
+        "გადასახადები"
+      ],
+      "VAT": [
+        "დღგ"
       ]
     },
     "Payments.Error": {
@@ -11914,6 +11992,9 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Enter passphrase": [
+        "შეიყვანეთ საკვანძო ფრაზა"
       ]
     },
     "Placeholder for contact group name": {
@@ -13666,6 +13747,17 @@
       ],
       "You have successfully unsubscribed": [
         "გამოწერა წარმატებით გაუქმდა"
+      ],
+      "Conversation updated": [
+        "საუბარი განახლდა",
+        "საუბრები განახლდა"
+      ],
+      "Message updated": [
+        "შეტყობინება განახლდა",
+        "შეტყობინებები განახლდა"
+      ],
+      "Secret passphrase updated": [
+        "საიდუმლო ფრაზა განახლდა"
       ]
     },
     "Success notification": {
@@ -14838,6 +14930,32 @@
       ],
       "Your subscriptions in one place": [
         "თქვენი გამოწერები ერთ ადგილას"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME }-ის მისამართის გამოთხოვა"
+      ],
+      "Label message as": [
+        "შეტყობინების დანიშვნა, როგორც",
+        "შეტყობინეებბის დანიშვნა, როგორც"
+      ],
+      "Move message to": [
+        "შეტყობინების გადატანა სად",
+        "შეტყობინებების გადატანა სად"
+      ],
+      "Move messages to": [
+        "შეტყობინების გადატანა სად"
+      ],
+      "Next": [
+        "შემდეგი"
+      ],
+      "Open pagination": [
+        "გვერდების დანომრვა"
+      ],
+      "Previous": [
+        "წინა"
+      ],
+      "✨ Categories are coming!": [
+        "✨ კატეგორიები გზაშია!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15406,6 +15524,51 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "You have reached the trial limit.": [
+        "მიაღწიეთ გამოსაცდელი პერიოდის ზღვარს."
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "წვდომა განვითარებულ ხი მოდელებთან"
+      ],
+      "Basic chat history": [
+        "საბაზისო ჩატის ისტორია"
+      ],
+      "Full chat history with search": [
+        "სრული ჩატის ისტორია ძებნით"
+      ],
+      "Large file upload support": [
+        "დიდი ფაილის ატვირთვის მხარდაჭერა"
+      ],
+      "Limited daily chats": [
+        "შეზღუდული ყოველდღიური ჩატები"
+      ],
+      "Limited favorites": [
+        "შეზღუდული რჩეულები"
+      ],
+      "Unlimited daily chats": [
+        "შეუზღუდავი ყოველდღიური ჩატები"
+      ],
+      "Unlimited favorites for quick access": [
+        "განუსაზღვრელი რჩეულები სწრაფი წვდომისთვის"
+      ],
+      "Upload and query multiple large files": [
+        "ატვირთეთ და დაამუშავეთ ბევრი დიდი ფაილი"
+      ],
+      "Upload and query small files": [
+        "ატვირტეთ და მოითხოვეთ პატარა ფაილები"
+      ],
+      "Web search access": [
+        "წვდომა ვებში ძებნასთან"
+      ]
+    },
+    "collider_2025: Info": {
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME }-ის დამატება"
       ]
     }
   }

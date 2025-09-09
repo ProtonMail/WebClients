@@ -214,19 +214,19 @@
         "Pilih berkas atau taruh di sini"
       ],
       "Clear": [
-        "Bersihkan"
+        "Hapus"
       ],
       "Clear all formatting": [
         "Hapus seluruh pemformatan"
       ],
       "Clear application data": [
-        "Bersihkan data aplikasi"
+        "Hapus data aplikasi"
       ],
       "Clear browser data": [
         "Hapus data browser"
       ],
       "Clear data": [
-        "Bersihkan data"
+        "Hapus data"
       ],
       "clear it": [
         "hapus"
@@ -1613,6 +1613,39 @@
       ],
       "Zoom out": [
         "Perkecil"
+      ],
+      "Add secret passphrase": [
+        "Tambah frasa sandi rahasia"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Klaim alamat ${ BRAND_NAME }"
+      ],
+      "Claim this address": [
+        "Klaim alamat ini"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Klaim alamat ${ BRAND_NAME } gratis Anda"
+      ],
+      "Edit categories": [
+        "Sunting kategori"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Dapatkan alamat ${ BRAND_NAME } gratis"
+      ],
+      "Most frequent": [
+        "Paling sering"
+      ],
+      "Recently read": [
+        "Baru saja dibaca"
+      ],
+      "Retry": [
+        "Coba lagi"
+      ],
+      "Trust key": [
+        "Percayai kunci"
+      ],
+      "Update secret passphrase": [
+        "Perbarui frasa sandi rahasia"
       ]
     },
     "action": {
@@ -2207,6 +2240,9 @@
       ],
       "Website access problem": [
         "Masalah akses situs"
+      ],
+      "Meet problem": [
+        "Masalah Meet"
       ]
     },
     "Button": {
@@ -4916,6 +4952,15 @@
       ],
       "ZIP code is required": [
         "Kode pos diperlukan"
+      ],
+      "Failed to open to contact": [
+        "Kontak gagal dibuka"
+      ],
+      "Failed to update secret passphrase": [
+        "Frasa sandi rahasia gagal diperbarui"
+      ],
+      "Passphrase unavailable": [
+        "Frasa sandi tidak tersedia"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5104,6 +5149,9 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Anda belum memiliki kontak. Mulailah dengan membuat kontak baru"
+      ],
+      "An error occurred with the categories": [
+        "Terjadi kesalahan dengan kategori"
       ]
     },
     "Error notification": {
@@ -5275,6 +5323,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Akun Anda menggunakan ruang penyimpanan sebesar ${ usedSpace }, yang melebihi batas ${ inviteSpace } yang dialokasikan kepada Anda. Hapus sebagian data atau minta kepada admin paket untuk meningkatkan ruang penyimpanan Anda."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Paket keluarga saat ini tidak mendukung akun eksternal. Silakan buat alamat ${ BRAND_NAME } sebelum bergabung. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -5699,6 +5750,9 @@
       ],
       "You've unlocked 1 GB": [
         "Anda telah memperoleh 1 GB"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Klaim alamat ${ BRAND_NAME }"
       ]
     },
     "Gmail forwarding": {
@@ -8479,6 +8533,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Anda hanya berjarak beberapa klik dari kotak masuk yang rapi"
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } memerlukan alamat ${ BRAND_NAME } untuk sinkronisasi dan pengenkripsian acara yang aman. ${ claimAddressButton }"
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } memerlukan alamat ${ BRAND_NAME } untuk sinkronisasi dan pengenkripsian acara yang aman. Klaim alamat ${ MAIL_APP_NAME } gratis Anda sekarang juga."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Pastikan komunikasi yang sepenuhnya privat dan terenkripsi. Klaim alamat email ${ BRAND_NAME } gratis Anda sekarang juga."
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Untuk keamanan tambahan, Anda dapat mengatur frasa sandi. Frasa ini tidak akan disertakan dalam undangan kalender, sehingga pastikan Anda membagikan frasa ini kepada para tamu undangan Anda secara terpisah."
       ]
     },
     "info": {
@@ -9437,6 +9503,51 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Automated confirmations and alerts": [
+        "Konfirmasi dan peringatan otomatis"
+      ],
+      "Bookings, billings, and orders": [
+        "Pembukuan, tagihan, dan pesanan"
+      ],
+      "Categories badge": [
+        "Lencana kategori"
+      ],
+      "Deals, offers, marketing emails": [
+        "Penawaran, promosi, dan email pemasaran"
+      ],
+      "Discussion board posts and threads": [
+        "Postingan dan utas forum diskusi"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Bantu kami menyempurnakan fitur kategorisasi email yang akan datang"
+      ],
+      "Non-promotional content and news": [
+        "Konten dan berita non-promosional"
+      ],
+      "Passphrase:": [
+        "Frasa sandi:"
+      ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Pilih kategori untuk diikutsertakan dan aktifkan notifikasi untuk memperoleh peringatan pada saat terdapat email baru di kategori ini."
+      ],
+      "Social media updates and activity": [
+        "Pembaruan dan aktivitas sosial media"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "Kategori ini telah diperbarui. Terima kasih atas tanggapan Anda!"
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Kami tengah menyempurnakan bagaimana suatu email dikategorikan. Tanggapan Anda membantu fitur ini menjadi lebih cerdas dan akurat."
+      ],
+      "Which category should this be recategorized under?": [
+        "Pada kategori mana seharusnya email ini dikategorikan ulang?"
+      ],
+      "Why am I seeing this?": [
+        "Mengapa saya melihat ini?"
+      ],
+      "You cannot disable all categories": [
+        "Anda tidak dapat menonaktifkan seluruh kategori"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9769,6 +9880,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Anda perlu mengaktifkan ulang kunci Anda untuk melihat undangan yang diperbarui"
+      ],
+      "Deleted": [
+        "Dihapus"
       ]
     },
     "Link to calendar event": {
@@ -9828,6 +9942,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Langganan Anda telah berakhir. ${ cta } dan mencegah hilangnya data."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Untuk terus menggunakan ${ BRAND_NAME }, silakan pastikan seluruh fitur premium Anda sudah tidak lagi digunakan atau tingkatkan paket Anda."
       ]
     },
     "Log preference": {
@@ -11021,6 +11138,9 @@
       ],
       "Trial started": [
         "Masa uji coba dimulai"
+      ],
+      "Passphrase copied to clipboard": [
+        "Frasa sandi disalin ke papan klip"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11087,7 +11207,7 @@
         "Bayar per tahun, kantongi penawaran terbaik kami"
       ],
       "Save": [
-        "Simpan"
+        "Hemat"
       ],
       "Save big when you pay annually": [
         "Hemat besar-besaran pada saat Anda membayar secara tahunan"
@@ -11629,6 +11749,27 @@
       ],
       "Your payment is still being processed": [
         "Pembayaran Anda masih diproses"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Tanpa termasuk ${ taxName } ${ taxRate }%: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Tanpa termasuk pajak ${ taxRate }%: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Meliputi ${ taxName } ${ taxRate }%: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Meliputi pajak ${ taxRate }%: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Pajak"
+      ],
+      "VAT": [
+        "PPN"
+      ],
+      "VAT number": [
+        "Nomor PPN"
       ]
     },
     "Payments.Error": {
@@ -11684,6 +11825,30 @@
       ],
       "VAT number": [
         "Nomor PPN"
+      ],
+      "Add ABN": [
+        "Tambah ABN"
+      ],
+      "Add Business Number": [
+        "Sunting Nomor Bisnis"
+      ],
+      "Add EIN": [
+        "Tambah EIN"
+      ],
+      "Add VAT number": [
+        "Tambah nomor PPN"
+      ],
+      "Edit ABN": [
+        "Sunting ABN"
+      ],
+      "Edit Business Number": [
+        "Sunting Nomor Bisnis"
+      ],
+      "Edit EIN": [
+        "Sunting EIN"
+      ],
+      "Edit VAT number": [
+        "Sunting nomor PPN"
       ]
     },
     "PGP key encryption warning": {
@@ -11884,6 +12049,9 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Select country": [
+        "Pilih negara"
       ]
     },
     "Placeholder for contact group name": {
@@ -13589,6 +13757,18 @@
       ],
       "You have successfully unsubscribed": [
         "Anda berhasil berhenti berlangganan"
+      ],
+      "Conversation updated": [
+        "Percakapan diperbarui"
+      ],
+      "Message updated": [
+        "Pesan diperbarui"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "${ elementsCount } pesan dikategorikan ulang."
+      ],
+      "Secret passphrase updated": [
+        "Frasa sandi rahasia diperbarui"
       ]
     },
     "Success notification": {
@@ -13931,7 +14111,7 @@
         "Ubah kata sandi"
       ],
       "Clearing data": [
-        "Membersihkan data"
+        "Menghapus data"
       ],
       "Collaborate on documents": [
         "Berkolaborasi dalam dokumen"
@@ -14742,6 +14922,33 @@
       ],
       "Your subscriptions in one place": [
         "Seluruh langganan Anda dalam satu tempat"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Klaim alamat ${ MAIL_APP_NAME } Anda"
+      ],
+      "Customize categories": [
+        "Sesuaikan kategori"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Dapatkan akses penuh ke ${ CALENDAR_APP_NAME }"
+      ],
+      "Label message as": [
+        "Labeli pesan sebagai"
+      ],
+      "Move message to": [
+        "Pindahkan pesan ke"
+      ],
+      "Next": [
+        "Selanjutnya"
+      ],
+      "Open pagination": [
+        "Buka paginasi"
+      ],
+      "Previous": [
+        "Sebelumnya"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Kategori akan segera hadir!"
       ]
     },
     "Today icon tooltip in mini calendar": {
