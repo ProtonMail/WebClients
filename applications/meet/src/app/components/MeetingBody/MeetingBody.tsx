@@ -146,7 +146,7 @@ export const MeetingBody = ({
                             <div
                                 className="h-full shrink-0"
                                 style={{
-                                    flexGrow: isSideBarOpen ? 6 : 8,
+                                    flexGrow: 8,
                                     flexBasis: 0,
                                 }}
                             >
