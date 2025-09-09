@@ -133,23 +133,18 @@ export const markMessagesAsRead = createAsyncThunk<
     {
         elements: Element[];
         conversations: Conversation[];
-        isEncryptedSearch: boolean;
         labelID: string;
         showSuccessNotification?: boolean;
     },
     MailThunkExtra
 >(
     'mailbox/markMessagesAsRead',
-    async (
-        { elements, labelID, isEncryptedSearch, showSuccessNotification = true, conversations },
-        { extra, dispatch }
-    ) => {
+    async ({ elements, labelID, showSuccessNotification = true, conversations }, { extra, dispatch }) => {
         try {
             dispatch(messageCountsActions.markMessagesAsReadPending({ elements, labelID }));
             dispatch(conversationCountsActions.markMessagesAsReadPending({ elements, labelID, conversations }));
             const result = await runAction({
                 extra,
-                finallyFetchEvents: isEncryptedSearch,
                 notificationText: showSuccessNotification
                     ? getNotificationTextMarked({
                           isMessage: false,
@@ -174,23 +169,18 @@ export const markMessagesAsUnread = createAsyncThunk<
     {
         elements: Element[];
         conversations: Conversation[];
-        isEncryptedSearch: boolean;
         labelID: string;
         showSuccessNotification?: boolean;
     },
     MailThunkExtra
 >(
     'mailbox/markMessagesAsUnread',
-    async (
-        { elements, labelID, isEncryptedSearch, showSuccessNotification = true, conversations },
-        { extra, dispatch }
-    ) => {
+    async ({ elements, labelID, showSuccessNotification = true, conversations }, { extra, dispatch }) => {
         try {
             dispatch(messageCountsActions.markMessagesAsUnreadPending({ elements, labelID }));
             dispatch(conversationCountsActions.markMessagesAsUnreadPending({ elements, labelID, conversations }));
             const result = await runAction({
                 extra,
-                finallyFetchEvents: isEncryptedSearch,
                 notificationText: showSuccessNotification
                     ? getNotificationTextMarked({
                           isMessage: true,
@@ -212,16 +202,15 @@ export const markMessagesAsUnread = createAsyncThunk<
 
 export const markConversationsAsRead = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
-    { elements: Element[]; labelID: string; isEncryptedSearch: boolean; showSuccessNotification?: boolean },
+    { elements: Element[]; labelID: string; showSuccessNotification?: boolean },
     MailThunkExtra
 >(
     'mailbox/markConversationsAsRead',
-    async ({ elements, labelID, isEncryptedSearch, showSuccessNotification = true }, { extra, dispatch }) => {
+    async ({ elements, labelID, showSuccessNotification = true }, { extra, dispatch }) => {
         try {
             dispatch(conversationCountsActions.markConversationsAsReadPending({ elements, labelID }));
             const result = await runAction({
                 extra,
-                finallyFetchEvents: isEncryptedSearch,
                 notificationText: showSuccessNotification
                     ? getNotificationTextMarked({
                           isMessage: false,
@@ -242,16 +231,15 @@ export const markConversationsAsRead = createAsyncThunk<
 
 export const markConversationsAsUnread = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
-    { elements: Element[]; labelID: string; isEncryptedSearch: boolean; showSuccessNotification?: boolean },
+    { elements: Element[]; labelID: string; showSuccessNotification?: boolean },
     MailThunkExtra
 >(
     'mailbox/markConversationsAsUnread',
-    async ({ elements, labelID, isEncryptedSearch, showSuccessNotification = true }, { extra, dispatch }) => {
+    async ({ elements, labelID, showSuccessNotification = true }, { extra, dispatch }) => {
         try {
             dispatch(conversationCountsActions.markConversationsAsUnreadPending({ elements, labelID }));
             const result = await runAction({
                 extra,
-                finallyFetchEvents: isEncryptedSearch,
                 notificationText: showSuccessNotification
                     ? getNotificationTextMarked({
                           isMessage: false,
@@ -281,7 +269,6 @@ export const labelMessages = createAsyncThunk<
         conversations: Conversation[];
         sourceLabelID: string;
         destinationLabelID: string;
-        isEncryptedSearch: boolean;
         showSuccessNotification?: boolean;
         labels: Label[];
         folders: Folder[];
@@ -297,7 +284,6 @@ export const labelMessages = createAsyncThunk<
             labels,
             folders,
             destinationLabelID,
-            isEncryptedSearch,
             showSuccessNotification = true,
             spamAction,
             conversations,
@@ -319,7 +305,6 @@ export const labelMessages = createAsyncThunk<
 
             const result = await runAction({
                 extra,
-                finallyFetchEvents: isEncryptedSearch,
                 notificationText: showSuccessNotification
                     ? getNotificationTextLabelAdded({
                           isMessage: true,
@@ -356,7 +341,6 @@ export const unlabelMessages = createAsyncThunk<
         conversations: Conversation[];
         sourceLabelID: string;
         destinationLabelID: string;
-        isEncryptedSearch: boolean;
         showSuccessNotification?: boolean;
         labels: Label[];
         folders: Folder[];
@@ -366,16 +350,7 @@ export const unlabelMessages = createAsyncThunk<
 >(
     'mailbox/unlabelMessages',
     async (
-        {
-            elements,
-            labels,
-            folders,
-            destinationLabelID,
-            isEncryptedSearch,
-            showSuccessNotification = true,
-            conversations,
-            onActionUndo,
-        },
+        { elements, labels, folders, destinationLabelID, showSuccessNotification = true, conversations, onActionUndo },
         { extra, dispatch }
     ) => {
         try {
@@ -390,7 +365,6 @@ export const unlabelMessages = createAsyncThunk<
             );
             const result = await runAction({
                 extra,
-                finallyFetchEvents: isEncryptedSearch,
                 notificationText: showSuccessNotification
                     ? getNotificationTextLabelRemoved({
                           isMessage: true,
@@ -424,7 +398,6 @@ export const labelConversations = createAsyncThunk<
         conversations: Conversation[];
         sourceLabelID: string;
         destinationLabelID: string;
-        isEncryptedSearch: boolean;
         showSuccessNotification?: boolean;
         labels: Label[];
         folders: Folder[];
@@ -441,7 +414,6 @@ export const labelConversations = createAsyncThunk<
             folders,
             destinationLabelID,
             sourceLabelID,
-            isEncryptedSearch,
             showSuccessNotification = true,
             spamAction,
             onActionUndo,
@@ -469,7 +441,7 @@ export const labelConversations = createAsyncThunk<
 
             const result = await runAction({
                 extra,
-                finallyFetchEvents: isEncryptedSearch || hasSentOrDraftMessages(conversations),
+                finallyFetchEvents: hasSentOrDraftMessages(conversations),
                 notificationText: showSuccessNotification
                     ? getNotificationTextLabelAdded({
                           isMessage: false,
@@ -506,7 +478,6 @@ export const unlabelConversations = createAsyncThunk<
     {
         conversations: Conversation[];
         destinationLabelID: string;
-        isEncryptedSearch: boolean;
         showSuccessNotification?: boolean;
         labels: Label[];
         folders: Folder[];
@@ -516,15 +487,7 @@ export const unlabelConversations = createAsyncThunk<
 >(
     'mailbox/unlabelConversations',
     async (
-        {
-            conversations,
-            labels,
-            folders,
-            destinationLabelID,
-            isEncryptedSearch,
-            showSuccessNotification = true,
-            onActionUndo,
-        },
+        { conversations, labels, folders, destinationLabelID, showSuccessNotification = true, onActionUndo },
         { extra, dispatch }
     ) => {
         try {
@@ -544,7 +507,7 @@ export const unlabelConversations = createAsyncThunk<
             );
             const result = await runAction({
                 extra,
-                finallyFetchEvents: isEncryptedSearch || hasSentOrDraftMessages(conversations),
+                finallyFetchEvents: hasSentOrDraftMessages(conversations),
                 notificationText: showSuccessNotification
                     ? getNotificationTextLabelRemoved({
                           isMessage: false,

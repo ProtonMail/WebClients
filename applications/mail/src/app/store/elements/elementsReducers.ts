@@ -587,7 +587,6 @@ export const markMessagesAsReadPending = (
             arg: {
                 elements: Element[];
                 conversations: Conversation[];
-                isEncryptedSearch: boolean;
                 labelID: string;
                 showSuccessNotification?: boolean;
             };
@@ -639,7 +638,6 @@ export const markMessagesAsUnreadPending = (
             arg: {
                 elements: Element[];
                 conversations: Conversation[];
-                isEncryptedSearch: boolean;
                 labelID: string;
                 showSuccessNotification?: boolean;
             };
@@ -690,7 +688,6 @@ export const markMessagesAsReadRejected = (
             arg: {
                 elements: Element[];
                 conversations: Conversation[];
-                isEncryptedSearch: boolean;
                 labelID: string;
                 showSuccessNotification?: boolean;
             };
@@ -713,7 +710,6 @@ export const markMessagesAsUnreadRejected = (
             arg: {
                 elements: Element[];
                 conversations: Conversation[];
-                isEncryptedSearch: boolean;
                 labelID: string;
                 showSuccessNotification?: boolean;
             };
