@@ -2,7 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { isAliasItem } from '@proton/pass/lib/items/item.predicates';
 import { selectItems, selectItemsState } from '@proton/pass/store/selectors/items';
-import { selectSecureLinks } from '@proton/pass/store/selectors/secure-links';
+import { selectSecureLinksState } from '@proton/pass/store/selectors/secure-links';
 import { isItemShared } from '@proton/pass/store/selectors/shared';
 import { selectShareState } from '@proton/pass/store/selectors/shares';
 import type { BulkSelectionDTO } from '@proton/pass/types';
@@ -26,7 +26,7 @@ export const selectBulkSelectionAliasCount = (dto: BulkSelectionDTO) =>
     );
 
 export const selectBulkHasSecureLinks = (dto: BulkSelectionDTO) =>
-    createSelector(selectSecureLinks, (secureLinks): boolean =>
+    createSelector(selectSecureLinksState, (secureLinks): boolean =>
         Object.entries(dto).some(([shareId, items]) => Object.keys(items).some((itemId) => Boolean(secureLinks[shareId]?.[itemId])))
     );
 
