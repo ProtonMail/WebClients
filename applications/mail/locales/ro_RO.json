@@ -1640,6 +1640,21 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Add secret passphrase": [
+        "Adăugare frază de acces secretă"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Alăturați-vă cu ${ MEET_APP_NAME }"
+      ],
+      "Passphrase": [
+        "Fraza de acces"
+      ],
+      "Retry": [
+        "Reîncercare"
+      ],
+      "Update secret passphrase": [
+        "Actualizare frază secretă de acces"
       ]
     },
     "action": {
@@ -2250,6 +2265,9 @@
       ],
       "Website access problem": [
         "Problemă accesare site web"
+      ],
+      "Meet problem": [
+        "Problemă Meet"
       ]
     },
     "Button": {
@@ -5002,6 +5020,12 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "Failed to update secret passphrase": [
+        "Nu s-a putut actualiza fraza de acces secretă."
+      ],
+      "Passphrase unavailable": [
+        "Frază de acces indisponibilă"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5894,6 +5918,15 @@
       ],
       "Tell us more": [
         "Spuneți-ne mai multe"
+      ],
+      "Domain": [
+        "Domeniu"
+      ],
+      "Password ends with": [
+        "Parola se termină cu"
+      ],
+      "Username": [
+        "Nume de utilizator"
       ]
     },
     "Hint": {
@@ -8789,6 +8822,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate."
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Pentru un plus de securitate, puteți seta o frază de acces. Aceasta nu va fi inclusă în invitația de calendar, nu uitați să o partajați separat cu invitații."
       ]
     },
     "info": {
@@ -9777,6 +9813,12 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "No results found": [
+        "Nu s-au găsit rezultate."
+      ],
+      "Passphrase:": [
+        "Fraza de acces:"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11437,6 +11479,9 @@
       ],
       "Trial started": [
         "Perioada de probă a început"
+      ],
+      "Passphrase copied to clipboard": [
+        "Fraza de acces s-a copiat în memorie."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12358,6 +12403,9 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Enter passphrase": [
+        "Introduceți fraza de acces"
       ]
     },
     "Placeholder for contact group name": {
@@ -14212,6 +14260,9 @@
       ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"
+      ],
+      "Secret passphrase updated": [
+        "Frază de acces secretă s-a actualizat."
       ]
     },
     "Success notification": {
@@ -15427,6 +15478,19 @@
       ],
       "✨ Categories are coming!": [
         "✨ Sosesc categoriile!"
+      ],
+      "Label message as": [
+        "Etichetare mesaj cu",
+        "Etichetare mesaje cu",
+        "Etichetare mesaje cu"
+      ],
+      "Move message to": [
+        "Mutare mesaj în",
+        "Mutare mesaje în",
+        "Mutare mesaje în"
+      ],
+      "Move messages to": [
+        "Mutare mesaje în"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16043,6 +16107,78 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce se încheie perioada de probare la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni, la ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce probarea se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat lunar la data de ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licențe în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe Scribe în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_USERS } utilizatori în perioada de probare."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Nu puteți adăuga domenii personale în perioada de probare."
+      ],
+      "You have reached the trial limit.": [
+        "Ați atins limita perioadei de probare."
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acces la modele AI avansate"
+      ],
+      "Basic chat history": [
+        "Istoric de bază conversații"
+      ],
+      "Full chat history with search": [
+        "Istoric complet al conversațiilor cu căutare"
+      ],
+      "Large file upload support": [
+        "Acceptare încărcare fișiere mari"
+      ],
+      "Limited daily chats": [
+        "Conversații zilnice limitate"
+      ],
+      "Limited favorites": [
+        "Favorite limitate"
+      ],
+      "Unlimited daily chats": [
+        "Conversații zilnice nelimitate"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favorite nelimitate pentru o accesare rapidă"
+      ],
+      "Upload and query multiple large files": [
+        "Încărcați și interogați mai multe fișiere mari"
+      ],
+      "Upload and query small files": [
+        "Încărcați și interogați fișiere mici"
+      ],
+      "Web search access": [
+        "Acces la căutare pe internet"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } este o aplicație de inteligență artificială axată pe confidențialitate, care vă ajută să realizați mai mult, păstrându-vă în același timp datele în siguranță. Deblocați-i întregul potențial și bucurați-vă de acces timpuriu la noile funcții pe măsură ce sunt introduse."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Adăugare ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Conversații rapide și funcții avansate de inteligență artificială."
       ]
     }
   }

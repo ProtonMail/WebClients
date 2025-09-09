@@ -1634,6 +1634,24 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Add secret passphrase": [
+        "Ajouter une phrase secrète"
+      ],
+      "Edit categories": [
+        "Modifier les catégories"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Rejoindre avec ${ MEET_APP_NAME }"
+      ],
+      "Passphrase": [
+        "Phrase secrète"
+      ],
+      "Retry": [
+        "Réessayer"
+      ],
+      "Update secret passphrase": [
+        "Mettre à jour la phrase secrète"
       ]
     },
     "action": {
@@ -1986,6 +2004,12 @@
       ],
       "You have reached the trial limit.": [
         "Vous avez atteint la limite de la version d'essai."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Une fois la version d'essai terminée le ${ formattedDate }, elle deviendra un abonnement payant qui se renouvelle automatiquement tous les ${ renewCycle } mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_LUMO_SEATS } accès à ${ LUMO_SHORT_APP_NAME } pendant la période d’essai."
       ]
     },
     "b2b_trials_Action": {
@@ -2652,6 +2676,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Ajouter ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Discussions rapides et fonctionnalités d'IA avancées."
       ]
     },
     "color": {
@@ -2835,7 +2862,7 @@
         "Déplacer vers le dossier Brouillons"
       ],
       "Go to Inbox": [
-        "Déplacer vers le dossier Boite de réception"
+        "Déplacer vers le dossier Boîte de réception"
       ],
       "Go to Sent": [
         "Déplacer vers le dossier Envoyés"
@@ -4996,6 +5023,12 @@
       ],
       "ZIP code is required": [
         "Le code postal est nécessaire."
+      ],
+      "Failed to update secret passphrase": [
+        "La mise à jour de la phrase secrète n'a pas abouti."
+      ],
+      "Passphrase unavailable": [
+        "La phrase secrète n'est pas disponible"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5006,7 +5039,7 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        "Les brouillons ne peuvent pas être déplacés dans le dossier Boite de réception."
+        "Les brouillons ne peuvent pas être déplacés dans le dossier Boîte de réception."
       ],
       "Drafts cannot be moved to Spam": [
         "Les brouillons ne peuvent pas être déplacées vers le dossier pourriels."
@@ -5189,6 +5222,9 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Vous n'avez pas encore de contact. Commencez par créer un nouveau contact."
+      ],
+      "An error occurred with the categories": [
+        "Une erreur est survenue avec les catégories"
       ]
     },
     "Error notification": {
@@ -8481,7 +8517,7 @@
         "Vous recevrez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
       ],
       "You have ${ unread } in your inbox.": [
-        "Vous avez ${ unread } dans votre boite de réception."
+        "Vous avez ${ unread } dans votre boîte de réception."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Vous avez ** ${ count } de conversation ** stockée dans ce fichier",
@@ -8689,6 +8725,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Pour plus de sécurité, vous pouvez définir une phrase secrète. Elle ne sera pas incluse dans l'invitation de calendrier, n'oubliez pas de la partager avec vos invités séparément."
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Vous êtes actuellement connecté en tant que ${ username }."
       ]
     },
     "info": {
@@ -8822,7 +8864,7 @@
         "Déplacer vers le dossier Brouillons"
       ],
       "Go to Inbox": [
-        "Déplacer vers le dossier Boite de réception"
+        "Déplacer vers le dossier Boîte de réception"
       ],
       "Go to Sent": [
         "Déplacer vers le dossier Envoyés"
@@ -8876,7 +8918,7 @@
         "Déplacer vers les archives"
       ],
       "Move to Inbox": [
-        "Déplacer vers la boite de réception"
+        "Déplacer vers la boîte de réception"
       ],
       "Move to Spam": [
         "Déplacer vers le dossier Indésirables/spam"
@@ -9671,6 +9713,36 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Automated confirmations and alerts": [
+        "Confirmations et alertes automatisées"
+      ],
+      "Bookings, billings, and orders": [
+        "Réservations, facturations et commandes"
+      ],
+      "Deals, offers, marketing emails": [
+        "Offres, promotions, messages marketing"
+      ],
+      "Discussion board posts and threads": [
+        "Publications et fils de discussion du forum"
+      ],
+      "No results found": [
+        "Aucun résultat trouvé."
+      ],
+      "Non-promotional content and news": [
+        "Contenu non-promotionnel et actualités"
+      ],
+      "Passphrase:": [
+        "Phrase secrète :"
+      ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Sélectionnez les catégories à inclure, et activez les notifications pour être alerté des nouveaux messages dans une catégorie."
+      ],
+      "Social media updates and activity": [
+        "Mises à jour et activité des réseaux sociaux"
+      ],
+      "You cannot disable all categories": [
+        "Vous ne pouvez pas désactiver toutes les catégories"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11296,6 +11368,9 @@
       ],
       "Trial started": [
         "La version d'essai a commencé."
+      ],
+      "Passphrase copied to clipboard": [
+        "La phrase secrète a été copiée dans le presse-papiers."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11362,7 +11437,7 @@
         "Payez à l'année et assurez-vous de bénéficier de notre meilleure offre."
       ],
       "Save": [
-        "Enregistrer"
+        "Économisez"
       ],
       "Save big when you pay annually": [
         "Économisez un maximum en optant pour le paiement annuel !"
@@ -12212,6 +12287,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Enter passphrase": [
+        "Saisir la phrase secrète"
       ]
     },
     "Placeholder for contact group name": {
@@ -14001,6 +14079,9 @@
       ],
       "You have successfully unsubscribed": [
         "La désinscription a été effectuée."
+      ],
+      "Secret passphrase updated": [
+        "Phrase secrète mise à jour"
       ]
     },
     "Success notification": {
@@ -15194,6 +15275,20 @@
       ],
       "✨ Categories are coming!": [
         "✨ Les catégories arrivent !"
+      ],
+      "Customize categories": [
+        "Personnaliser les catégories"
+      ],
+      "Label message as": [
+        "Labelliser le message comme",
+        "Labelliser les messages comme"
+      ],
+      "Move message to": [
+        "Déplacer le message vers",
+        "Déplacer les messages vers"
+      ],
+      "Move messages to": [
+        "Déplacer les messages vers"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15765,6 +15860,131 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Accès aux modèles d'IA avancés"
+      ],
+      "Basic chat history": [
+        "Historique de chat basique"
+      ],
+      "Full chat history with search": [
+        "Historique complet des discussions avec recherche"
+      ],
+      "Large file upload support": [
+        "Prise en charge du chargement de fichiers volumineux"
+      ],
+      "Limited daily chats": [
+        "Chats quotidiens limités"
+      ],
+      "Limited favorites": [
+        "Favoris limités"
+      ],
+      "Unlimited daily chats": [
+        "Chats quotidiens illimités"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoris illimités pour un accès rapide"
+      ],
+      "Upload and query multiple large files": [
+        "Importer et consulter plusieurs fichiers volumineux"
+      ],
+      "Upload and query small files": [
+        "Importer et consulter les petits fichiers"
+      ],
+      "Web search access": [
+        "Accès à la recherche web"
+      ]
+    },
+    "q3campaign_2025: Action": {
+      "END-OF-SUMMER SALE": [
+        "PROMOTION DE FIN D'ÉTÉ"
+      ],
+      "Get the deal": [
+        "Profitez de l'offre"
+      ]
+    },
+    "q3campaign_2025: Info": {
+      "${ discountPercent }% off": [
+        "- ${ discountPercent } %"
+      ],
+      "${ normalPricePerMonth } /month": [
+        "${ normalPricePerMonth }/mois"
+      ],
+      "/month": [
+        "/mois"
+      ],
+      "1 TB data storage": [
+        "1 To d'espace de stockage de données"
+      ],
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "200 GB storage for files, photos & docs": [
+        "200 Go d'espace de stockage pour les fichiers, photos et documents"
+      ],
+      "3 TB data storage": [
+        "3 To d'espace de stockage de données"
+      ],
+      "500 GB storage": [
+        "500 Go d'espace de stockage"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accédez à plus de 15 000 serveurs dans plus de 120 pays"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Toutes les fonctionnalités premium de Mail, Pass, Drive, VPN et Calendar"
+      ],
+      "Built-in 2FA authenticator": [
+        "Authentificateur 2FA intégré"
+      ],
+      "Connect 10 devices at once": [
+        "Connectez 10 appareils en même temps"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+      ],
+      "Enjoy the fastest VPN speeds": [
+        "Profitez des vitesses VPN les plus rapides"
+      ],
+      "Individual accounts for 6 users": [
+        "Comptes individuels pour 6 utilisateurs"
+      ],
+      "Individual accounts for you and a partner": [
+        "Comptes individuels pour vous et un partenaire"
+      ],
+      "Online document editor": [
+        "Éditeur de documents en ligne"
+      ],
+      "Recover previous file versions": [
+        "Récupérez les versions précédentes des fichiers"
+      ],
+      "Save ${ totalSavings } and keep all your current features!": [
+        "Économisez ${ totalSavings } et conservez toutes vos fonctionnalités actuelles !"
+      ],
+      "Secure link, vault & item sharing": [
+        "Partage sécurisé de liens, de coffres-forts et d'éléments"
+      ],
+      "Stronger protection against cyber threats": [
+        "Une protection renforcée contre les cybermenaces"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Des dossiers, labels et filtres illimités"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nombre illimité d'alias « hide-my-email »"
+      ],
+      "Use your own email domain": [
+        "Utilisez votre propre domaine de messagerie"
+      ]
+    },
+    "q3campaign_2025: Title": {
+      "End-of-summer sale": [
+        "Soldes de fin d'été"
+      ],
+      "for 12 months": [
+        "pendant 12 mois"
       ]
     }
   }
