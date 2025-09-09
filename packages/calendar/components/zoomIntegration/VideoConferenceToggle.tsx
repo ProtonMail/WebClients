@@ -9,6 +9,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
+import clsx from '@proton/utils/clsx';
 
 import { useVideoConfTelemetry } from '../videoConferencing/useVideoConfTelemetry';
 
@@ -65,7 +66,8 @@ export const VideoConferenceToggle = ({ withInfo }: Props) => {
                 <SettingsLayout className="gap-4">
                     <SettingsLayoutLeft>
                         <label htmlFor="zoomToggle" className="text-semibold">
-                            <span className="mr-2">{c('Label').t`Video conferencing with Zoom`}</span>
+                            <span className={clsx('mr-2', !withInfo && 'text-no-wrap')}>{c('Label')
+                                .t`Video conferencing with Zoom`}</span>
                             {withInfo && (
                                 <Info
                                     title={c('Tooltip')
@@ -89,7 +91,9 @@ export const VideoConferenceToggle = ({ withInfo }: Props) => {
                 <SettingsLayout className="gap-4">
                     <SettingsLayoutLeft>
                         <label htmlFor="protonMeetToggle" className="text-semibold">
-                            <span className="mr-2">{c('Label').t`Video conferencing with ${MEET_APP_NAME}`}</span>
+                            <span className={clsx('mr-2', !withInfo && 'text-no-wrap')}>
+                                {c('Label').t`Video conferencing with ${MEET_APP_NAME}`}
+                            </span>
                             {withInfo && (
                                 <Info
                                     title={c('Tooltip')
