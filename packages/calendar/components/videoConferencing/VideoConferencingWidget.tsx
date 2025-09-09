@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike, Href } from '@proton/atoms';
 import { Collapsible, CollapsibleContent, CollapsibleHeader, Copy, Icon, IconRow } from '@proton/components';
+import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcVideoCamera } from '@proton/icons';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -28,6 +29,8 @@ interface Props {
 export const VideoConferencingWidget = ({ data, location, handleDelete, overrideJoinButton }: Props) => {
     const { createNotification } = useNotifications();
     const [isExpanded, setIsExpanded] = useState(false);
+
+    const { isDrawerApp } = useDrawer();
 
     if (!data.meetingUrl) {
         return null;
@@ -59,7 +62,7 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
                 className="group-hover-opacity-container"
                 onClick={toggleExpanded}
             >
-                <div className={clsx('flex flex-col items-center justify-space-between', !hasOnlyLink && 'mb-2')}>
+                <div className={clsx('flex items-center justify-space-between flex-nowrap', !hasOnlyLink && 'mb-2')}>
                     {overrideJoinButton ? (
                         overrideJoinButton
                     ) : (
@@ -68,7 +71,7 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
                         </ButtonLike>
                     )}
 
-                    <div className="flex gap-2">
+                    <div className={clsx('flex flex-nowrap', isDrawerApp ? 'gap-1' : 'gap-2')}>
                         <Copy
                             value={data.meetingUrl}
                             shape="ghost"
