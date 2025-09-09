@@ -6022,8 +6022,8 @@
       "You are about to open your default browser and visit:": [
         "Esteu a punt d'obrir el navegador per defecte i visitar:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Actualment has iniciat sessió com a ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Heu iniciat sessió com a ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Esteu utilitzant més emmagatzematge del que hi ha inclòs al pla ${ downgradedPlanName }. Elimineu o traieu dades per a poder degradar."
