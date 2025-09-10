@@ -6,8 +6,9 @@ import { extractPrivateDomains } from '@proton/pass/lib/extension/tlds/parser';
 import { resolvePrivateDomains } from '@proton/pass/store/actions/creators/private-domains';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import type { RequestEntry, RequestStatus } from '@proton/pass/store/request/types';
-import { selectRequest } from '@proton/pass/store/selectors';
+import { selectFeatureFlag, selectRequest } from '@proton/pass/store/selectors';
 import type { Maybe } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 
 declare module '@proton/pass/store/events' {
     interface SagaEvents {
@@ -18,6 +19,9 @@ declare module '@proton/pass/store/events' {
 export default createRequestSaga({
     actions: resolvePrivateDomains,
     call: function* (_, options) {
+        const customTLDsEnabled: boolean = yield select(selectFeatureFlag(PassFeature.PassExtensionCustomTLDs));
+        if (!customTLDsEnabled) throw new Error('`PassExtensionCustomTLDs` disabled');
+
         const requestId = resolvePrivateDomains.requestID();
         const lastRequest: Maybe<RequestEntry<RequestStatus>> = yield select(selectRequest(requestId));
         const lastRequestedAt = lastRequest?.status === 'success' ? lastRequest.requestedAt : 0;
