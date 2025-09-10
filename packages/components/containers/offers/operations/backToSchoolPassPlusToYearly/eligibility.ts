@@ -4,6 +4,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime, hasPassViaSimpleLogin } from '@proton/shared/lib/user/helpers';
 
+import isCheckAllowed from '../../helpers/isCheckAllowed';
 import OfferSubscription from '../../helpers/offerSubscription';
 import type { OfferConfig } from '../../interface';
 
@@ -14,14 +15,14 @@ interface Props {
     offerConfig: OfferConfig;
 }
 
-export const getIsEligible = ({ user, subscription, protonConfig }: Props) => {
+export const getIsEligible = ({ user, subscription, protonConfig, offerConfig }: Props) => {
     if (user.isDelinquent || !user.canPay || user.isFree || subscription?.UpcomingSubscription) {
         return false;
     }
 
     if (subscription) {
         const offerSubscription = new OfferSubscription(subscription);
-        if (offerSubscription.usedBackToSchoolPromo()) {
+        if (offerSubscription.usedBackToSchoolPromo() || !isCheckAllowed(subscription, offerConfig)) {
             return false;
         }
     }
