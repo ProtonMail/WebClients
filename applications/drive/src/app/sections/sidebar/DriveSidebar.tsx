@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -40,6 +41,9 @@ import { logPerformanceMarker } from '../../utils/performance';
 import { ActionMenuButton } from './ActionMenu/ActionMenuButton';
 import { DriveSidebarFooter } from './DriveSidebarFooter';
 import { DriveSidebarList } from './DriveSidebarList';
+import { subscribeToSidebarEvents } from './hooks/subscribeToSidebarEvents';
+import { useSidebarStore } from './hooks/useSidebar.store';
+import { useSidebarFolders } from './hooks/useSidebarFolders';
 
 interface DriveSidebarProps {
     isHeaderExpanded: boolean;
@@ -62,6 +66,7 @@ export const DriveSidebar = ({ isNewUploadDisabled, isHeaderExpanded, toggleHead
     const [storageHeight, setStorageHeight] = useState<number>(0);
     const navigationRef = useRef<HTMLDivElement>(null);
     const storageRef = useRef<HTMLDivElement>(null);
+
     // This is same logic is in SidebarStorageUpsell to determine if we show the storage button
     const showStorage =
         getCanAddStorage({ user, subscription }) && (user.Subscribed === PRODUCT_BIT.DRIVE || user.Subscribed === 0);
@@ -69,11 +74,26 @@ export const DriveSidebar = ({ isNewUploadDisabled, isHeaderExpanded, toggleHead
     const collapsed = !showSideBar && !viewportWidth['<=small'];
     const currentStorage = storageRef.current;
 
+    const { loadFoldersRoot } = useSidebarFolders();
     const { isScrollPresent } = useLeftSidebarButton({
         navigationRef,
     });
 
+    const { setCollapsed } = useSidebarStore(
+        useShallow((state) => ({
+            setCollapsed: state.setCollapsed,
+        }))
+    );
+
     const logo = <SidebarLogo collapsed={collapsed} to="/drive" app={APPS.PROTONDRIVE} />;
+
+    useEffect(() => {
+        loadFoldersRoot();
+        const unsubscribe = subscribeToSidebarEvents();
+        return () => {
+            unsubscribe();
+        };
+    }, [loadFoldersRoot, subscribeToSidebarEvents]);
 
     useEffectOnce(() => {
         logPerformanceMarker('drive_performance_clicktonavrendered_histogram');
@@ -93,7 +113,8 @@ export const DriveSidebar = ({ isNewUploadDisabled, isHeaderExpanded, toggleHead
         if (currentStorage && currentStorage.clientHeight) {
             setStorageHeight(currentStorage.clientHeight);
         }
-    }, [currentStorage, collapsed]);
+        setCollapsed(collapsed);
+    }, [currentStorage, collapsed, setCollapsed, setStorageHeight]);
 
     const displayContactsInHeader = useDisplayContactsWidget();
 
@@ -132,7 +153,7 @@ export const DriveSidebar = ({ isNewUploadDisabled, isHeaderExpanded, toggleHead
         >
             <SidebarNav className="flex *:min-size-auto">
                 <div>
-                    <DriveSidebarList collapsed={collapsed} shareId={activeShareId} userShares={shares} />
+                    <DriveSidebarList shareId={activeShareId} userShares={shares} />
                     {displayContactsInHeader && <SidebarDrawerItems toggleHeaderDropdown={toggleHeaderExpanded} />}
                 </div>
 
