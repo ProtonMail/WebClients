@@ -46,7 +46,6 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
     const isEditEnabled = useIsEditEnabled();
     const { items, permissions, role } = useFolderStore(
         useShallow((state) => ({
-            folder: state.folder,
             permissions: state.permissions,
             items: state.getFolderItems(),
             role: state.role,

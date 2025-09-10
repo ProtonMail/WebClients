@@ -1,5 +1,7 @@
 import { useCallback, useMemo, useRef } from 'react';
 
+import { useShallow } from 'zustand/react/shallow';
+
 import { useActiveBreakpoint } from '@proton/components';
 import { splitNodeUid } from '@proton/drive/index';
 
@@ -38,7 +40,12 @@ const headerItemsLargeScreen: ListViewHeaderItem[] = [headerCells.name, headerCe
 const headerItemsSmallScreen: ListViewHeaderItem[] = [headerCells.name, headerCellsCommon.placeholder];
 
 export function DevicesBrowser() {
-    const { deviceList, isLoading } = useDeviceStore();
+    const { deviceList, isLoading } = useDeviceStore(
+        useShallow((state) => ({
+            deviceList: state.deviceList,
+            isLoading: state.isLoading,
+        }))
+    );
     const { layout } = useUserSettings();
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
     const { navigateToLink } = useDriveNavigation();
@@ -85,7 +92,6 @@ export function DevicesBrowser() {
         [navigateToLink, browserItems]
     );
 
-    /* eslint-disable react/display-name */
     const GridHeaderComponent = useMemo(
         () => () => {
             return null;

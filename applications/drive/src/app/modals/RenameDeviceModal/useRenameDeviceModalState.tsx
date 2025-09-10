@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { c } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { type ModalStateProps, useFormErrors, useNotifications } from '@proton/components';
 import { useDrive } from '@proton/drive';
@@ -26,7 +27,7 @@ export const useRenameDeviceModalState = ({
     const { drive } = useDrive();
     const { validator, onFormSubmit } = useFormErrors();
     const { createNotification } = useNotifications();
-    const { renameDevice } = useDeviceStore();
+    const { renameDevice } = useDeviceStore(useShallow((state) => ({ renameDevice: state.renameDevice })));
 
     const { handleError } = useSdkErrorHandler();
     const [inputName, setInputName] = useState(() => deviceName);
