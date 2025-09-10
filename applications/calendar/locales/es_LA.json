@@ -932,6 +932,18 @@
       ],
       "Retry": [
         "Reintentar"
+      ],
+      "Add secret passphrase": [
+        "Añadir una frase de contraseña secreta"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Unirse con ${ MEET_APP_NAME }"
+      ],
+      "Passphrase": [
+        "Frase de contraseña"
+      ],
+      "Update secret passphrase": [
+        "Actualizar la frase de contraseña secreta"
       ]
     },
     "action": {
@@ -1524,6 +1536,9 @@
       ],
       "Website access problem": [
         "Problema de acceso web"
+      ],
+      "Meet problem": [
+        "Problema de Meet"
       ]
     },
     "Button": {
@@ -3868,6 +3883,18 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "Error al crear videoconferencia de ${ MEET_APP_NAME }"
+      ],
+      "Failed to decrypt session key": [
+        "Error al descifrar la clave de sesión"
+      ],
+      "Failed to update secret passphrase": [
+        "Error al actualizar la frase de contraseña secreta"
+      ],
+      "Passphrase unavailable": [
+        "Frase de contraseña no disponible"
       ]
     },
     "Error accepting calendar invitation": {
@@ -6155,6 +6182,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrá seguir viendo los datos de su propia cuenta, pero todas las cuentas de usuario serán eliminadas de su organización."
+      ],
+      "Failed to update meeting name": [
+        "Error al actualizar el nombre de la reunión"
+      ],
+      "Failed to update meeting password": [
+        "Error al actualizar la contraseña de la reunión"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Para más seguridad, puede establecer una frase de contraseña. No se incluirá en la invitación del calendario, recuerde compartirla con sus invitados por separado."
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Actualmente inició sesión como ${ username }."
       ]
     },
     "info": {
@@ -6810,6 +6849,21 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "Añadir conferencia de ${ MEET_APP_NAME }"
+      ],
+      "Add Zoom meeting": [
+        "Añadir una reunión de Zoom"
+      ],
+      "Passphrase:": [
+        "Frase de contraseña:"
+      ],
+      "Video conference": [
+        "Videoconferencia"
+      ],
+      "Zoom meeting": [
+        "Reunión de Zoom"
       ]
     },
     "Label for contact group color": {
@@ -8247,6 +8301,9 @@
       ],
       "Passcode copied to clipboard": [
         "Código de acceso copiado al portapapeles"
+      ],
+      "Passphrase copied to clipboard": [
+        "Frase de contraseña copiada al portapapeles"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9139,6 +9196,9 @@
       ],
       "ZIP code": [
         "Código ZIP"
+      ],
+      "Enter passphrase": [
+        "Ingresar la frase de contraseña"
       ]
     },
     "Placeholder for contact group name": {
@@ -9871,6 +9931,12 @@
       ],
       "Video conferencing is here!": [
         "¡La videoconferencia ya está aquí!"
+      ],
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } ya está aquí"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Programe y únase a las llamadas de ${ MEET_APP_NAME } directamente desde su calendario."
       ]
     },
     "sso": {
@@ -10585,6 +10651,9 @@
       ],
       "You have successfully unsubscribed": [
         "Se ha desuscrito satisfactoriamente"
+      ],
+      "Secret passphrase updated": [
+        "Frase de contraseña secreta actualizada"
       ]
     },
     "Suffix": {
