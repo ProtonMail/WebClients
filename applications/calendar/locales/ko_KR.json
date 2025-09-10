@@ -6073,6 +6073,9 @@
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "추가 보안을 위해 암호 문구를 설정할 수 있습니다. 이는 캘린더 초대에 포함되지 않으므로 초대 손님과 별도로 공유해야 합니다."
+      ],
+      "You are currently signed in as ${ username }.": [
+        "현재 ${ username }(으)로 로그인 했습니다."
       ]
     },
     "info": {
@@ -9724,6 +9727,9 @@
       ],
       "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
         "당신의 캘린더에서 바로 ${ MEET_APP_NAME } 통화 일정을 잡고 참여하세요."
+      ],
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME }을 만나보세요!"
       ]
     },
     "sso": {
