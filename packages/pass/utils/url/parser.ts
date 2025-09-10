@@ -7,7 +7,7 @@ import { sanitizeURL } from './sanitize';
 import type { ParsedSender, ParsedUrl } from './types';
 import { isSupportedSenderUrl } from './utils';
 
-export const generateDomainCombinations = function* (domain: string, subdomain: MaybeNull<string>) {
+export const generateDomainCombinations = function* (domain: string, subdomain?: MaybeNull<string>) {
     if (!subdomain) {
         yield [domain];
         return;
@@ -22,7 +22,7 @@ export const generateDomainCombinations = function* (domain: string, subdomain: 
     }
 };
 
-export const parseUrl = (url?: string, customPrivateDomains?: Set<string>): ParsedUrl => {
+export const parseUrl = (url?: string, customPrivateDomains?: MaybeNull<Set<string>>): ParsedUrl => {
     const check = sanitizeURL(url ?? '');
 
     if (!check.valid) {
@@ -49,7 +49,11 @@ export const parseUrl = (url?: string, customPrivateDomains?: Set<string>): Pars
         for (const [nDomain, nSubdomain, ...rest] of generateDomainCombinations(domain, subdomain)) {
             if (customPrivateDomains.has(nDomain)) {
                 domain = nSubdomain ? `${nSubdomain}.${nDomain}` : nDomain;
-                domainWithoutSuffix = nSubdomain || nDomain.replace(new RegExp(`\\.${publicSuffix}$`), '');
+                domainWithoutSuffix = (() => {
+                    if (nSubdomain) return nSubdomain;
+                    if (!publicSuffix) return null;
+                    return nDomain.replace(new RegExp(`\\.${publicSuffix}$`), '');
+                })();
                 subdomain = rest.join('.') || null;
                 isPrivate = true;
                 break;

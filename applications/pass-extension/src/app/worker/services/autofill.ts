@@ -62,11 +62,12 @@ export const createAutoFillService = () => {
 
     const getLoginCandidates = withContext<(options: GetLoginCandidatesOptions) => ItemRevision<'login'>[]>(
         (ctx, options) => {
-            const privateDomains = state.privateDomains;
-            const parsedUrl = parseUrl(options.url, privateDomains || undefined);
-            return selectAutofillLoginCandidates({ ...parsedUrl, shareIds: options.shareIds, strict: options.strict })(
-                ctx.service.store.getState()
-            );
+            const parsedUrl = parseUrl(options.url, state.privateDomains);
+            return selectAutofillLoginCandidates({
+                ...parsedUrl,
+                shareIds: options.shareIds,
+                strict: options.strict,
+            })(ctx.service.store.getState());
         }
     );
 

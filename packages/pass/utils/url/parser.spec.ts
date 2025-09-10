@@ -1,4 +1,4 @@
-import { parseUrl } from './parser';
+import { generateDomainCombinations, parseUrl } from './parser';
 
 describe('URL parsers', () => {
     describe('parseUrl', () => {
@@ -159,7 +159,7 @@ describe('URL parsers', () => {
         });
 
         test('should respect custom private domains with multiple subdomains', () => {
-            const result = parseUrl('https://sub.chicken.food.blog', new Set(['chicken.food.blog']));
+            let result = parseUrl('https://sub.chicken.food.blog', new Set(['chicken.food.blog']));
             expect(result.displayName).toEqual('sub');
             expect(result.domain).toEqual('sub.chicken.food.blog');
             expect(result.port).toEqual(null);
@@ -168,10 +168,20 @@ describe('URL parsers', () => {
             expect(result.isPrivate).toEqual(true);
             expect(result.isSecure).toEqual(true);
             expect(result.protocol).toEqual('https:');
+
+            result = parseUrl('https://deep.sub.chicken.food.blog', new Set(['chicken.food.blog']));
+            expect(result.displayName).toEqual('sub');
+            expect(result.domain).toEqual('sub.chicken.food.blog');
+            expect(result.port).toEqual(null);
+            expect(result.subdomain).toEqual('deep.sub.chicken.food.blog');
+            expect(result.isTopLevelDomain).toEqual(false);
+            expect(result.isPrivate).toEqual(true);
+            expect(result.isSecure).toEqual(true);
+            expect(result.protocol).toEqual('https:');
         });
 
         test('should respect custom private domains with nested subdomains', () => {
-            const result = parseUrl('https://sub.chicken.food.blog', new Set(['food.blog']));
+            let result = parseUrl('https://sub.chicken.food.blog', new Set(['food.blog']));
             expect(result.displayName).toEqual('chicken');
             expect(result.domain).toEqual('chicken.food.blog');
             expect(result.port).toEqual(null);
@@ -180,6 +190,44 @@ describe('URL parsers', () => {
             expect(result.isPrivate).toEqual(true);
             expect(result.isSecure).toEqual(true);
             expect(result.protocol).toEqual('https:');
+
+            result = parseUrl('https://deep.sub.chicken.food.blog', new Set(['food.blog']));
+            expect(result.displayName).toEqual('chicken');
+            expect(result.domain).toEqual('chicken.food.blog');
+            expect(result.port).toEqual(null);
+            expect(result.subdomain).toEqual('deep.sub.chicken.food.blog');
+            expect(result.isTopLevelDomain).toEqual(false);
+            expect(result.isPrivate).toEqual(true);
+            expect(result.isSecure).toEqual(true);
+            expect(result.protocol).toEqual('https:');
+        });
+    });
+
+    describe('generateDomainCombinations', () => {
+        test('should yield only domain when subdomain is missing', () => {
+            let result = Array.from(generateDomainCombinations('example.com', null));
+            expect(result).toEqual([['example.com']]);
+
+            result = Array.from(generateDomainCombinations('example.com', undefined));
+            expect(result).toEqual([['example.com']]);
+
+            result = Array.from(generateDomainCombinations('example.com', ''));
+            expect(result).toEqual([['example.com']]);
+        });
+
+        test('should generate combinations for single subdomain', () => {
+            const result = Array.from(generateDomainCombinations('example.com', 'www'));
+            expect(result).toEqual([['example.com', 'www'], ['www.example.com']]);
+        });
+
+        test('should generate combinations for nested subdomains', () => {
+            const result = Array.from(generateDomainCombinations('example.com', 'a.b.c'));
+            expect(result).toEqual([
+                ['example.com', 'c', 'b', 'a'],
+                ['c.example.com', 'b', 'a'],
+                ['b.c.example.com', 'a'],
+                ['a.b.c.example.com'],
+            ]);
         });
     });
 });
