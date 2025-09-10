@@ -12,9 +12,8 @@ export const useTrashActions = () => {
     const { handleError } = useSdkErrorHandler();
     const { createTrashedItemsNotifications } = useListNotifications();
     const restoreItems = async (items: Item[]) => {
-        const uids = items.map((d) => d.uid);
         const restored = [];
-        getActionEventManager().emit({ type: ActionEventName.RESTORED_NODES, uids });
+        getActionEventManager().emit({ type: ActionEventName.RESTORED_NODES, items });
 
         try {
             const uids = items.map((t) => t.uid);
