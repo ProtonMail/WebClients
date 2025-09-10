@@ -6,7 +6,6 @@ import unique from '@proton/utils/unique';
 import { format } from '../../date-fns-utc';
 import type { WeekStartsOn } from '../../date-fns-utc/interface';
 import { getShortenDayFormat } from '../../date/date';
-import { toUTCDate } from '../../date/timezone';
 import type {
     VcalDateOrDateTimeProperty,
     VcalRruleProperty,
@@ -242,7 +241,7 @@ const getCustomWeeklyString = (
     locale: Locale
 ) => {
     const days = getWeeklyDays(byday);
-    const safeDays = unique([...days, startDate.getUTCDay()]);
+    const safeDays = unique([...days, startDate.getDay()]);
     // sort weekly days depending on the day the week starts
     const sortedWeekDays = safeDays.slice().sort((a: number, b: number) => {
         // shift days. Get a positive modulus
@@ -665,7 +664,7 @@ export const getFrequencyString = (
     dtstart: VcalDateOrDateTimeProperty,
     { weekStartsOn, locale }: Pick<GetTimezonedFrequencyStringOptions, 'weekStartsOn' | 'locale'>
 ) => {
-    const startFakeUtcDate = toUTCDate(dtstart.value);
+    const date = new Date(dtstart.value.year, dtstart.value.month - 1, dtstart.value.day);
 
     if (!getIsRruleSimple(rruleValue)) {
         if (!getIsRruleCustom(rruleValue)) {
@@ -694,12 +693,12 @@ export const getFrequencyString = (
             return getCustomDailyString(rruleValue, end, locale);
         }
         if (rruleValue.freq === FREQUENCY.WEEKLY) {
-            return getCustomWeeklyString(rruleValue, end, weekStartsOn, startFakeUtcDate, locale);
+            return getCustomWeeklyString(rruleValue, end, weekStartsOn, date, locale);
         }
         if (rruleValue.freq === FREQUENCY.MONTHLY) {
             const { byday, bysetpos } = rruleValue;
             const monthType = getMonthType(byday, bysetpos);
-            return getCustomMonthlyString(rruleValue, end, monthType, startFakeUtcDate, locale);
+            return getCustomMonthlyString(rruleValue, end, monthType, date, locale);
         }
         if (rruleValue.freq === FREQUENCY.YEARLY) {
             return getCustomYearlyString(rruleValue, end, locale);
@@ -709,7 +708,7 @@ export const getFrequencyString = (
         return c('Info').t`Daily`;
     }
     if (rruleValue.freq === FREQUENCY.WEEKLY) {
-        const startDay = startFakeUtcDate.getDay();
+        const startDay = date.getDay();
         if (startDay === 0) {
             return c('Weekly recurring event, frequency').t`Weekly on Sunday`;
         }
