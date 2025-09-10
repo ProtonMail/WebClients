@@ -1,7 +1,7 @@
 import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { createTestItem } from '@proton/pass/lib/items/item.test.utils';
-import type { Draft } from '@proton/pass/store/reducers';
+import type { Draft } from '@proton/pass/store/reducers/drafts';
 import type { IndexedByShareIdAndItemId, ItemRevision, LoginItem, SelectedItem } from '@proton/pass/types';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';

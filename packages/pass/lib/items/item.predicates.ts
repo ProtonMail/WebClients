@@ -1,4 +1,4 @@
-import type { Draft, EditDraft, NewDraft } from '@proton/pass/store/reducers';
+import type { Draft, EditDraft, NewDraft } from '@proton/pass/store/reducers/drafts';
 import type { Item, ItemExtraField, ItemRevision, ItemType, LoginItem, UniqueItem } from '@proton/pass/types';
 import { ItemFlag, ItemState } from '@proton/pass/types';
 import { and, not, oneOf, or } from '@proton/pass/utils/fp/predicates';
