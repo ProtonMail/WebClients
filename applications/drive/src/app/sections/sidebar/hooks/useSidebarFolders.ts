@@ -23,7 +23,12 @@ export const useSidebarFolders = () => {
         }))
     );
 
-    const { setDevice, setLoading: setDeviceLoading } = useDeviceStore();
+    const { setDevice, setDeviceLoading } = useDeviceStore(
+        useShallow((state) => ({
+            setDevice: state.setDevice,
+            setDeviceLoading: state.setLoading,
+        }))
+    );
     const { handleError } = useSdkErrorHandler();
 
     const loadFolderChildren = async (folderUid: string) => {

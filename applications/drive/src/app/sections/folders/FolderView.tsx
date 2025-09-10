@@ -38,15 +38,16 @@ export function FolderView() {
     const { sortedList, sortParams, setSorting } = useControlledSorting(folderItems, sort, changeSort);
     const sortedUids = sortedList.map((item) => item.uid);
     const browserViewProps = { layout, sortParams, setSorting, sortedList };
+    const activeFolderShareId = activeFolder.shareId;
 
     useEffect(() => {
         const ac = new AbortController();
-        void load(parentUid, activeFolder.shareId, ac);
+        void load(parentUid, activeFolderShareId, ac);
 
         return () => {
             ac.abort();
         };
-    }, [parentUid, activeFolder, load]);
+    }, [parentUid, activeFolderShareId, load]);
 
     const breadcrumbs = activeFolder && <DriveBreadcrumbs activeFolder={activeFolder} />;
 
