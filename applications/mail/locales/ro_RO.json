@@ -1655,6 +1655,9 @@
       ],
       "Update secret passphrase": [
         "Actualizare frază secretă de acces"
+      ],
+      "Edit categories": [
+        "Editare categorii"
       ]
     },
     "action": {
@@ -5218,6 +5221,9 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Încă nu aveți niciun contact. Începeți prin a crea un contact nou."
+      ],
+      "An error occurred with the categories": [
+        "A apărut o eroare cu categoriile."
       ]
     },
     "Error notification": {
@@ -7377,7 +7383,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8825,6 +8833,9 @@
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Pentru un plus de securitate, puteți seta o frază de acces. Aceasta nu va fi inclusă în invitația de calendar, nu uitați să o partajați separat cu invitații."
+      ],
+      "You are currently signed in as ${ username }.": [
+        "V-ați conectat cu ${ username }."
       ]
     },
     "info": {
@@ -9819,6 +9830,30 @@
       ],
       "Passphrase:": [
         "Fraza de acces:"
+      ],
+      "Automated confirmations and alerts": [
+        "Confirmări și alerte automate"
+      ],
+      "Bookings, billings, and orders": [
+        "Rezervări, facturări și comenzi"
+      ],
+      "Deals, offers, marketing emails": [
+        "Oferte, promoții, e-mailuri de marketing"
+      ],
+      "Discussion board posts and threads": [
+        "Publicări și fire de discuție pe forum"
+      ],
+      "Non-promotional content and news": [
+        "Conținut și știri non-promoționale"
+      ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Selectați categoriile de inclus și activați notificările pentru a primi alerte despre e-mailurile noi dintr-o categorie."
+      ],
+      "Social media updates and activity": [
+        "Actualizări și activitate pe rețelele sociale"
+      ],
+      "You cannot disable all categories": [
+        "Nu puteți dezactiva toate categoriile"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15491,6 +15526,9 @@
       ],
       "Move messages to": [
         "Mutare mesaje în"
+      ],
+      "Customize categories": [
+        "Personalizare categorii"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1448,8 +1448,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -1649,6 +1648,9 @@
       ],
       "Update secret passphrase": [
         "Ενημέρωση μυστικής φράσης πρόσβασης"
+      ],
+      "Edit categories": [
+        "Επεξεργασία κατηγοριών"
       ]
     },
     "action": {
@@ -5185,6 +5187,9 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Δεν έχετε καμία επαφή ακόμα. Ξεκινήστε δημιουργώντας μια νέα επαφή"
+      ],
+      "An error occurred with the categories": [
+        "Παρουσιάστηκε ένα σφάλμα με τις κατηγορίες"
       ]
     },
     "Error notification": {
@@ -7263,7 +7268,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -9679,6 +9685,51 @@
       ],
       "Passphrase:": [
         "Φράση πρόσβασης:"
+      ],
+      "Automated confirmations and alerts": [
+        "Αυτοματοποιημένες επιβεβαιώσεις και ειδοποιήσεις"
+      ],
+      "Bookings, billings, and orders": [
+        "Κρατήσεις, λογαριασμοί και παραγγελίες"
+      ],
+      "Deals, offers, marketing emails": [
+        "Συμφωνίες, προσφορές, διαφημιστικά email"
+      ],
+      "Discussion board posts and threads": [
+        "Δημοσιεύσεις και θέματα σε φόρουμ συζητήσεων"
+      ],
+      "Go to Forums": [
+        "Μετάβαση στα Φόρουμ"
+      ],
+      "Go to Newsletters": [
+        "Μετάβαση στα Ενημερωτικά Δελτία"
+      ],
+      "Go to Primary": [
+        "Μετάβαση στα Κύρια"
+      ],
+      "Go to Promotions": [
+        "Μετάβαση στις Προσφορές"
+      ],
+      "Go to Social": [
+        "Μετάβαση στα Κοινωνικά"
+      ],
+      "Go to Transactions": [
+        "Μετάβαση στις Συναλλαγές"
+      ],
+      "Go to Updates": [
+        "Μετάβαση στις Ενημερώσεις"
+      ],
+      "Non-promotional content and news": [
+        "Μη προωθητικό περιεχόμενο και ειδήσεις"
+      ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Επιλέξτε τις κατηγορίες που θέλετε να συμπεριλάβετε και ενεργοποιήστε τις ειδοποιήσεις για να ειδοποιείστε για νέα μηνύματα σε μια κατηγορία."
+      ],
+      "Social media updates and activity": [
+        "Ενημερώσεις και δραστηριότητες στα μέσα κοινωνικής δικτύωσης"
+      ],
+      "You cannot disable all categories": [
+        "Δεν μπορείτε να απενεργοποιήσετε όλες τις κατηγορίες"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15217,6 +15268,9 @@
       ],
       "Move messages to": [
         "Μετακίνηση μηνυμάτων σε"
+      ],
+      "Customize categories": [
+        "Προσαρμογή κατηγοριών"
       ]
     },
     "Today icon tooltip in mini calendar": {

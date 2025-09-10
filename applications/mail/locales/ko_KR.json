@@ -1643,6 +1643,9 @@
       ],
       "Update secret passphrase": [
         "비밀 암호 문구 업데이트"
+      ],
+      "Edit categories": [
+        "카테고리 편집"
       ]
     },
     "action": {
@@ -5143,6 +5146,9 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "연락처를 가지고 있지 않습니다. 새로운 연락처를 추가해 보세요"
+      ],
+      "An error occurred with the categories": [
+        "카테고리에서 오류가 발생했습니다."
       ]
     },
     "Error notification": {
@@ -6753,7 +6759,7 @@
         "만들기"
       ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
-        "여러개의 무료 계정을 만드는 것은 당사의 ${ termsLink }에 따라 허용되지 않습니다."
+        "여러개의 무료 계정을 생성하는 행위는 당사의 ${ termsLink }에 따라 허용되지 않습니다."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "이전 플랜 구독으로 사용하지 않은 부분에 대한 크레딧"
@@ -8542,6 +8548,9 @@
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "추가 보안을 위해 암호 문구를 설정할 수 있습니다. 이는 캘린더 초대에 포함되지 않으므로 초대 손님과 별도로 공유해야 합니다."
+      ],
+      "You are currently signed in as ${ username }.": [
+        "현재 ${ username }(으)로 로그인 했습니다."
       ]
     },
     "info": {
@@ -9524,6 +9533,51 @@
       ],
       "Passphrase:": [
         "암호 문구:"
+      ],
+      "Automated confirmations and alerts": [
+        "자동화된 확인 및 알림"
+      ],
+      "Bookings, billings, and orders": [
+        "예약, 청구 및 주문"
+      ],
+      "Deals, offers, marketing emails": [
+        "거래, 혜택, 마케팅 이메일"
+      ],
+      "Discussion board posts and threads": [
+        "토론 게시판 게시물 및 스레드"
+      ],
+      "Go to Forums": [
+        "포럼으로 이동"
+      ],
+      "Go to Newsletters": [
+        "뉴스레터로 이동"
+      ],
+      "Go to Primary": [
+        "중요로 이동"
+      ],
+      "Go to Promotions": [
+        "프로모션으로 이동"
+      ],
+      "Go to Social": [
+        "소셜으로 이동"
+      ],
+      "Go to Transactions": [
+        "거래로 이동"
+      ],
+      "Go to Updates": [
+        "업데이트로 이동"
+      ],
+      "Non-promotional content and news": [
+        "홍보성 없는 콘텐츠 및 뉴스"
+      ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "포함할 카테고리를 선택한 다음 알림을 활성화하여 해당 카테고리의 새 이메일에 대해 알림을 받아보세요."
+      ],
+      "Social media updates and activity": [
+        "소셜 미디어 업데이트 및 활동"
+      ],
+      "You cannot disable all categories": [
+        "전체 카테고리를 비활성화할 수 없습니다"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14928,6 +14982,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ 카테고리를 곧 만나보세요!"
+      ],
+      "Customize categories": [
+        "카테고리 맞춤 설정"
       ]
     },
     "Today icon tooltip in mini calendar": {
