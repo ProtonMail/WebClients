@@ -6,7 +6,7 @@ import type { FormikContextType, FormikTouched } from 'formik';
 
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { draftDiscard, draftSave } from '@proton/pass/store/actions';
-import type { Draft, DraftBase } from '@proton/pass/store/reducers';
+import type { Draft, DraftBase } from '@proton/pass/store/reducers/drafts';
 import { selectItemDrafts } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';

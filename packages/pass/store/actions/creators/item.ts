@@ -16,7 +16,7 @@ import {
     selectedItemKey,
 } from '@proton/pass/store/actions/requests';
 import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
-import type { Draft, DraftBase } from '@proton/pass/store/reducers';
+import type { Draft, DraftBase } from '@proton/pass/store/reducers/drafts';
 import { withRequest, withRequestFailure, withRequestProgress, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type {

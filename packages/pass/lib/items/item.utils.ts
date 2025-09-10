@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
-import type { Draft } from '@proton/pass/store/reducers';
+import type { Draft } from '@proton/pass/store/reducers/drafts';
 import type {
     BulkSelectionDTO,
     DeobfuscatedItem,

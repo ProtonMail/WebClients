@@ -2,7 +2,7 @@ import { all, put, select } from 'redux-saga/effects';
 
 import { matchDraftsForShare } from '@proton/pass/lib/items/item.utils';
 import { draftDiscard } from '@proton/pass/store/actions';
-import type { Draft } from '@proton/pass/store/reducers';
+import type { Draft } from '@proton/pass/store/reducers/drafts';
 import { selectItemDrafts } from '@proton/pass/store/selectors';
 
 export function* discardDrafts(shareId: string, itemIds?: string[]) {
