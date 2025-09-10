@@ -1,4 +1,6 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
+
+import { useShallow } from 'zustand/react/shallow';
 
 import { FileIcon, FileNameDisplay, Loader, SidebarListItem, SidebarListItemContent } from '@proton/components';
 import { splitNodeUid } from '@proton/drive/index';
@@ -6,25 +8,32 @@ import { splitNodeUid } from '@proton/drive/index';
 import SidebarListItemLink from '../../../components/layout/sidebar/SidebarListItemLink';
 import type { SidebarItem } from '../hooks/useSidebar.store';
 import { useSidebarStore } from '../hooks/useSidebar.store';
+import { useSidebarFolders } from '../hooks/useSidebarFolders';
 import { generateSidebarItemStyle } from '../utils';
 import { DriveExpandButton } from './DriveExpandButton';
 
 type Props = {
     shareId: string;
     item: SidebarItem;
-    toggleExpand: () => void;
 };
 
-export const DriveSidebarSubfolder = ({ shareId, item, toggleExpand }: Props) => {
+export const DriveSidebarSubfolder = ({ shareId, item }: Props) => {
+    const { toggleExpand } = useSidebarFolders();
     const isLoading = Boolean(item?.isLoading);
     const isExpanded = Boolean(item?.isExpanded);
     const linkId = splitNodeUid(item.uid).nodeId;
-
-    const { children } = useSidebarStore((state) => ({
-        children: state.getChildren(item.uid),
-    }));
+    const { children, setSidebarLevel } = useSidebarStore(
+        useShallow((state) => ({
+            children: state.getChildren(item.uid),
+            setSidebarLevel: state.setSidebarLevel,
+        }))
+    );
 
     const shouldShowArrow = useMemo(() => children.length || !item.hasLoadedChildren, [item, children]);
+
+    useEffect(() => {
+        setSidebarLevel(item.level);
+    }, [item.level, setSidebarLevel]);
 
     const handleFolderClick = (e: any) => {
         if (e.detail !== 1) {
@@ -44,7 +53,7 @@ export const DriveSidebarSubfolder = ({ shareId, item, toggleExpand }: Props) =>
             <SidebarListItemLink
                 to={`/${shareId}/folder/${linkId}`}
                 onClick={handleFolderClick}
-                onDoubleClick={toggleExpand}
+                onDoubleClick={() => toggleExpand(item.uid)}
             >
                 <SidebarListItemContent>
                     <div
@@ -52,7 +61,11 @@ export const DriveSidebarSubfolder = ({ shareId, item, toggleExpand }: Props) =>
                         data-testid="sidebar-sub-folders"
                         style={generateSidebarItemStyle(item.level)}
                     >
-                        <DriveExpandButton expanded={isExpanded} onClick={toggleExpand} style={expandeButtonStyle} />
+                        <DriveExpandButton
+                            expanded={isExpanded}
+                            onClick={() => toggleExpand(item.uid)}
+                            style={expandeButtonStyle}
+                        />
 
                         {isLoading ? (
                             <Loader className="flex shrink-0 drive-sidebar--icon" />
