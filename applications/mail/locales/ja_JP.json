@@ -1652,6 +1652,9 @@
       ],
       "Update secret passphrase": [
         "シークレットパスフレーズを更新"
+      ],
+      "Edit categories": [
+        "カテゴリを編集"
       ]
     },
     "action": {
@@ -5158,6 +5161,9 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "連絡先がありません。新しい連絡先を作成して始めましょう"
+      ],
+      "An error occurred with the categories": [
+        "カテゴリでエラーが発生しました"
       ]
     },
     "Error notification": {
@@ -7161,7 +7167,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -8563,6 +8569,9 @@
       ],
       "These conversations are kept here based on your organization's data retention policy.": [
         "これらの会話は、お客様の組織のデータ保持ポリシーに基づいてここに保持されています。"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "現在 ${ username } としてサインインしています。"
       ]
     },
     "info": {
@@ -9548,6 +9557,30 @@
       ],
       "Why am I seeing this?": [
         "なぜこれが表示されるのですか？"
+      ],
+      "Automated confirmations and alerts": [
+        "自動確認とアラート"
+      ],
+      "Bookings, billings, and orders": [
+        "予約、請求、注文"
+      ],
+      "Deals, offers, marketing emails": [
+        "お得な情報、特典、マーケティングメール"
+      ],
+      "Discussion board posts and threads": [
+        "掲示板の投稿とスレッド"
+      ],
+      "Non-promotional content and news": [
+        "プロモーション以外のコンテンツおよびニュース"
+      ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "含めるカテゴリを選択し、そのカテゴリ内の新しいメールについて通知を受け取れるように、通知を有効にしてください。"
+      ],
+      "Social media updates and activity": [
+        "ソーシャルメディアの更新とアクティビティ"
+      ],
+      "You cannot disable all categories": [
+        "すべてのカテゴリを無効化することはできません"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14955,6 +14988,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ カテゴリがまもなく登場します！"
+      ],
+      "Customize categories": [
+        "カテゴリのカスタマイズ"
       ]
     },
     "Today icon tooltip in mini calendar": {

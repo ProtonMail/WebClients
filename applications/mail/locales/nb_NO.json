@@ -1659,6 +1659,9 @@
       ],
       "Update secret passphrase": [
         "Oppdater hemmelig passfrase"
+      ],
+      "Edit categories": [
+        "Rediger kategorier"
       ]
     },
     "action": {
@@ -2263,7 +2266,7 @@
         "Problem med tilgang til nettsted"
       ],
       "Meet problem": [
-        "Meet-problem"
+        "Problem med Meet"
       ]
     },
     "Button": {
@@ -5195,6 +5198,9 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Du har ingen kontakter enda. Start ved å opprette en ny kontakt"
+      ],
+      "An error occurred with the categories": [
+        "Det oppstod en feil med kategoriene"
       ]
     },
     "Error notification": {
@@ -7279,7 +7285,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8704,6 +8711,9 @@
       ],
       "These conversations are kept here based on your organization's data retention policy.": [
         "Disse samtalene lagres her i henhold til organisasjonens retningslinje for dataoppbevaring."
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Du er for øyeblikket pålogget som ${ username }."
       ]
     },
     "info": {
@@ -9695,6 +9705,51 @@
       ],
       "Why am I seeing this?": [
         "Hvorfor ser jeg dette?"
+      ],
+      "Automated confirmations and alerts": [
+        "Automatiserte bekreftelser og varsler"
+      ],
+      "Bookings, billings, and orders": [
+        "Reservasjoner, faktureringer og ordrer"
+      ],
+      "Deals, offers, marketing emails": [
+        "Kampanjer, tilbud, markedsførings-e-poster"
+      ],
+      "Discussion board posts and threads": [
+        "Innlegg og tråder i diskusjonsforum"
+      ],
+      "Go to Forums": [
+        "Gå til forum"
+      ],
+      "Go to Newsletters": [
+        "Gå til nyhetsbrev"
+      ],
+      "Go to Primary": [
+        "Gå til primær"
+      ],
+      "Go to Promotions": [
+        "Gå til kampanjer"
+      ],
+      "Go to Social": [
+        "Gå til sosialt"
+      ],
+      "Go to Transactions": [
+        "Gå til transaksjoner"
+      ],
+      "Go to Updates": [
+        "Gå til oppdateringer"
+      ],
+      "Non-promotional content and news": [
+        "Ikke-salgsfremmende innhold og nyheter"
+      ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Velg kategoriene som skal inkluderes, og aktiver varsler for å bli varslet om nye e-poster i en kategori."
+      ],
+      "Social media updates and activity": [
+        "Oppdateringer og aktivitet på sosiale medier"
+      ],
+      "You cannot disable all categories": [
+        "Du kan ikke deaktivere alle kategorier"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15236,6 +15291,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "Customize categories": [
+        "Tilpass kategorier"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15814,10 +15872,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes ${ formattedDate }, vil det gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes ${ formattedDate }, vil det gå over til å bli et betalt abonnement som fornyes automatisk månedlig ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
@@ -15864,10 +15922,10 @@
         "Ubegrenset antall favoritter for rask tilgang"
       ],
       "Upload and query multiple large files": [
-        "Last opp og søk i flere store filer"
+        "Last opp og vis flere store filer"
       ],
       "Upload and query small files": [
-        "Last opp og søk i små filer"
+        "Last opp og vis små filer"
       ],
       "Web search access": [
         "Tilgang til nettsøk"

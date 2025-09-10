@@ -1670,6 +1670,9 @@
       ],
       "Update secret passphrase": [
         "Aktualizovať tajnú prístupovú frázu"
+      ],
+      "Edit categories": [
+        "Upraviť kategórie"
       ]
     },
     "action": {
@@ -5266,6 +5269,9 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Zatiaľ nemáte žiadny kontakt. Začnite vytvorením nového kontaktu"
+      ],
+      "An error occurred with the categories": [
+        "Došlo k chybe v kategóriách"
       ]
     },
     "Error notification": {
@@ -7512,7 +7518,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8983,6 +8992,9 @@
       ],
       "These conversations are kept here based on your organization's data retention policy.": [
         "Tieto konverzácie sa uchovávajú na základe zásad uchovávania údajov vašej organizácie."
+      ],
+      "You are currently signed in as ${ username }.": [
+        "V súčasnosti používate účet ako ${ username }."
       ]
     },
     "info": {
@@ -9986,6 +9998,30 @@
       ],
       "Why am I seeing this?": [
         "Prečo to vidím?"
+      ],
+      "Automated confirmations and alerts": [
+        "Automatické potvrdenia a upozornenia"
+      ],
+      "Bookings, billings, and orders": [
+        "Rezervácie, fakturácie a objednávky"
+      ],
+      "Deals, offers, marketing emails": [
+        "Ponuky, akcie, marketingové emaily"
+      ],
+      "Discussion board posts and threads": [
+        "Príspevky a vlákna diskusného fóra"
+      ],
+      "Non-promotional content and news": [
+        "Nepropagačný obsah a správy"
+      ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Vyberte kategórie, ktoré chcete zahrnúť, a povoľte notifikácie, aby ste boli upozornení na nové emaily v kategórii."
+      ],
+      "Social media updates and activity": [
+        "Aktualizácie a aktivita na sociálnych médiách"
+      ],
+      "You cannot disable all categories": [
+        "Nemôžete deaktivovať všetky kategórie"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15795,6 +15831,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Prichádzajú kategórie!"
+      ],
+      "Customize categories": [
+        "Prispôsobenie kategórií"
       ]
     },
     "Today icon tooltip in mini calendar": {
