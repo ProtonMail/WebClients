@@ -1,6 +1,6 @@
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 import type { SecurityCheckupSession } from '@proton/shared/lib/interfaces/securityCheckup';
-import SecurityCheckupCohort from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
+import { SecurityCheckupCohort } from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
 
 import {
     getSecurityCheckupSessionItem,
@@ -72,7 +72,7 @@ describe('securityCheckupSessionStorage', () => {
 
     test('returns session if valid session in storage', () => {
         const validSession: SecurityCheckupSession = {
-            initialCohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
+            initialCohort: SecurityCheckupCohort.Common.NO_RECOVERY_METHOD,
             createdTimestamp: Date.now(),
         };
         mockedGetItem.mockReturnValueOnce(JSON.stringify(validSession));
@@ -86,7 +86,7 @@ describe('securityCheckupSessionStorage', () => {
 describe('setSecurityCheckupSessionItem', () => {
     test('sets serialised item using correct key', () => {
         const validSession: SecurityCheckupSession = {
-            initialCohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
+            initialCohort: SecurityCheckupCohort.Common.NO_RECOVERY_METHOD,
             createdTimestamp: Date.now(),
         };
         setSecurityCheckupSessionItem(validSession, userId);
