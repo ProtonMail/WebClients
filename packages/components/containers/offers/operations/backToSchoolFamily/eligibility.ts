@@ -1,4 +1,4 @@
-import type { Subscription } from '@proton/payments';
+import { type Subscription, canModify } from '@proton/payments';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
 import OfferSubscription from '../../helpers/offerSubscription';
@@ -12,7 +12,13 @@ interface Props {
 }
 
 export const getIsEligible = ({ user, subscription }: Props) => {
-    if (user.isDelinquent || !user.canPay || !subscription || subscription.UpcomingSubscription) {
+    if (
+        user.isDelinquent ||
+        !user.canPay ||
+        !subscription ||
+        subscription.UpcomingSubscription ||
+        !canModify(subscription)
+    ) {
         return false;
     }
 
