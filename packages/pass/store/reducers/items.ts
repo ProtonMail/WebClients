@@ -1,15 +1,11 @@
 import type { Action, Reducer } from 'redux';
 
-import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemEntityID } from '@proton/pass/lib/items/item.utils';
 import { AddressType } from '@proton/pass/lib/monitor/types';
 import {
     aliasSyncPending,
     aliasSyncStatusToggle,
     bootSuccess,
-    draftDiscard,
-    draftSave,
-    draftsGarbageCollect,
     emptyTrashProgress,
     fileLinkPending,
     importItemsProgress,
@@ -35,10 +31,6 @@ import {
     itemsUsedEvent,
     resolveAddressMonitor,
     restoreTrashProgress,
-    secureLinkCreate,
-    secureLinkRemove,
-    secureLinksGet,
-    secureLinksRemoveInactive,
     setItemFlags,
     shareEventDelete,
     shareLeaveSuccess,
@@ -50,25 +42,20 @@ import {
 import type { WrappedOptimisticState } from '@proton/pass/store/optimistic/types';
 import { combineOptimisticReducers } from '@proton/pass/store/optimistic/utils/combine-optimistic-reducers';
 import withOptimistic from '@proton/pass/store/optimistic/with-optimistic';
-import type {
-    IndexedByShareIdAndItemId,
-    ItemId,
-    ItemRevision,
-    ItemType,
-    RequiredProps,
-    SecureLink,
-    ShareId,
-    UniqueItem,
-} from '@proton/pass/types';
+import type { IndexedByShareIdAndItemId, ItemRevision, RequiredProps, UniqueItem } from '@proton/pass/types';
 import { ContentFormatVersion, ItemFlag, ItemState } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
-import { eq, not, notIn, or } from '@proton/pass/utils/fp/predicates';
+import { notIn, or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { objectFilter } from '@proton/pass/utils/object/filter';
 import { objectMap } from '@proton/pass/utils/object/map';
 import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { toMap } from '@proton/shared/lib/helpers/object';
+
+import type { Draft } from './drafts';
+import { draftsReducer } from './drafts';
+import { secureLinksReducer } from './secure-links';
 
 /** itemIds are only guaranteed to be unique per share not globally,
  * therefore we must index the item entries by `shareId`  */
@@ -341,102 +328,6 @@ const itemsByOptimisticId: Reducer<ItemsByOptimisticId> = (state = {}, action) =
         const { optimisticId, item } = action.payload;
         const { itemId, shareId } = item;
         return fullMerge(state, { [optimisticId]: { shareId, itemId } });
-    }
-
-    return state;
-};
-
-/** revision number is stored on the `EditDraft` type in order
- * to future-proof drafts v2 : this will allow detecting stale
- * draft entries if an item was updated while having a draft. */
-export type DraftBase = { mode: 'new'; type: ItemType } | { mode: 'edit'; itemId: string; shareId: string; revision: number };
-
-export type Draft<V extends {} = any> = DraftBase & { formData: V };
-export type EditDraft = Extract<Draft, { mode: 'edit' }>;
-export type NewDraft = Extract<Draft, { mode: 'new' }>;
-
-/** Draft state now supports pushing multiple entries so as to future-proof
- * drafts v2. In the extension, we are stil relying on a single active draft
- * and all drafts will be garbage collected on extension boot. This behaviour
- * does not make sense for the web-app and is unavailable for web. */
-const draftsReducer: Reducer<Draft[]> = (state = [], action) => {
-    /* Ensures only one new item draft exists and that we do not
-     * have duplicates for item edit drafts */
-    const sanitizeDrafts = (drafts: Draft[], draft: DraftBase) => {
-        if (draft.mode === 'new') return drafts.filter(({ mode }) => mode !== 'new');
-        else return drafts.filter((entry) => entry.mode === 'new' || !itemEq(draft)(entry));
-    };
-
-    if (draftSave.match(action)) return [action.payload, ...sanitizeDrafts(state, action.payload)];
-    if (draftDiscard.match(action)) return sanitizeDrafts(state, action.payload);
-    if (draftsGarbageCollect.match(action)) return [];
-
-    return state;
-};
-
-export type SecureLinkState = IndexedByShareIdAndItemId<SecureLink[]>;
-
-const removeSecureLinksForItems = (state: SecureLinkState, shareId: ShareId, itemIds: ItemId[]): SecureLinkState =>
-    objectMap(state, (key, value) => (key === shareId ? objectFilter(value, notIn(itemIds)) : value));
-
-const removeSecureLinksForShare = (state: SecureLinkState, shareId: ShareId) => objectFilter(state, not(eq(shareId)));
-
-const secureLinksReducer: Reducer<SecureLinkState> = (state = {}, action) => {
-    if (or(secureLinksGet.success.match, secureLinksRemoveInactive.success.match)(action)) {
-        return action.payload.reduce<SecureLinkState>((acc, link) => {
-            const { shareId, itemId } = link;
-            const secureLink = acc[shareId]?.[itemId];
-
-            if (!secureLink) acc[shareId] = { ...(acc[shareId] ?? {}), [itemId]: [link] };
-            else secureLink.push(link);
-
-            return acc;
-        }, {});
-    }
-
-    if (secureLinkCreate.success.match(action)) {
-        const secureLink = action.payload;
-        const { shareId, itemId } = secureLink;
-        const links = state?.[shareId]?.[itemId] ?? [];
-
-        return partialMerge(state, { [shareId]: { [itemId]: links.concat(secureLink) } });
-    }
-
-    if (secureLinkRemove.success.match(action)) {
-        const { shareId, itemId, linkId } = action.payload;
-        const links = state[shareId][itemId].filter((link) => link.linkId !== linkId);
-
-        return links.length === 0
-            ? { ...state, [shareId]: objectDelete(state[shareId], itemId) }
-            : partialMerge(state, { [shareId]: { [itemId]: links } });
-    }
-
-    /** NOTE: Optimistically remove secure-links invalidated by vault
-     * or item operations: item moves/deletes and share deletes. */
-
-    if (itemDelete.success.match(action)) {
-        const { shareId, itemId } = action.payload;
-        return removeSecureLinksForItems(state, shareId, [itemId]);
-    }
-
-    if (itemsDeleteEvent.match(action)) {
-        const { shareId, itemIds } = action.payload;
-        return removeSecureLinksForItems(state, shareId, itemIds);
-    }
-
-    if (itemMove.success.match(action)) {
-        const { shareId, itemId } = action.payload.before;
-        return removeSecureLinksForItems(state, shareId, [itemId]);
-    }
-
-    if (or(itemBulkMoveProgress.match, vaultMoveAllItemsProgress.match, itemBulkDeleteProgress.match)(action)) {
-        const { shareId, batch } = action.payload;
-        const itemIds = batch.map(prop('itemId'));
-        return removeSecureLinksForItems(state, shareId, itemIds);
-    }
-
-    if (or(shareEventDelete.match, vaultDeleteSuccess.match)(action)) {
-        return removeSecureLinksForShare(state, action.payload.shareId);
     }
 
     return state;
