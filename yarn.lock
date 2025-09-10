@@ -36817,7 +36817,7 @@ __metadata:
     proxy-agent: "npm:^6.5.0"
     rimraf: "npm:^6.0.1"
     tinycolor2: "npm:^1.6.0"
-    totp-generator: "npm:^1.0.0"
+    totp-generator: "npm:^2.0.0"
     typescript: "npm:^5.9.2"
     vcf: "npm:^2.1.2"
     zod: "npm:^3.25.76"
@@ -43117,12 +43117,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"totp-generator@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "totp-generator@npm:1.0.0"
+"totp-generator@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "totp-generator@npm:2.0.0"
   dependencies:
     jssha: "npm:^3.3.1"
-  checksum: 10c0/a766e9c66eb5460e33f0d7bd917be3e1bea3a7848c61b553b1b591edd51cc8250df06a3a2176074f4f87548f40f4be1c4456b9bcd97c0ca9a08871c0172b8f91
+  checksum: 10c0/b1551a7f1f85e86b67afb2a063b5a3ba428783cd00fd2c45b9b8a934fbe1e21c6aa3c726047e2c3451f49567f512e3b418a77fd655a446a450fdd9ed98133ddd
   languageName: node
   linkType: hard
 
