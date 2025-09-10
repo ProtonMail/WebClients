@@ -1448,8 +1448,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1649,6 +1648,9 @@
       ],
       "Update secret passphrase": [
         "Gizli parola ifadesini güncelle"
+      ],
+      "Edit categories": [
+        "Kategorileri düzenle"
       ]
     },
     "action": {
@@ -5222,6 +5224,9 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Henüz herhangi bir kişiniz yok. Bir kişi ekleyerek başlayın"
+      ],
+      "An error occurred with the categories": [
+        "Kategoriler ile ilgili bir sorun çıktı."
       ]
     },
     "Error notification": {
@@ -7300,7 +7305,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9716,6 +9722,51 @@
       ],
       "Passphrase:": [
         "Parola ifadesi:"
+      ],
+      "Automated confirmations and alerts": [
+        "Otomatik onaylar ve uyarılar"
+      ],
+      "Bookings, billings, and orders": [
+        "Rezervasyonlar, faturalar ve siparişler"
+      ],
+      "Deals, offers, marketing emails": [
+        "Fırsatlar, teklifler, pazarlama e-postaları"
+      ],
+      "Discussion board posts and threads": [
+        "Tartışma panosu gönderileri ve konuları"
+      ],
+      "Go to Forums": [
+        "Forumlara git"
+      ],
+      "Go to Newsletters": [
+        "Duyurulara git"
+      ],
+      "Go to Primary": [
+        "Birincil e-postalara git"
+      ],
+      "Go to Promotions": [
+        "Fırsatlara git"
+      ],
+      "Go to Social": [
+        "Sosyal ağlara git"
+      ],
+      "Go to Transactions": [
+        "Hesap işlemlerine git"
+      ],
+      "Go to Updates": [
+        "Güncellemelere git"
+      ],
+      "Non-promotional content and news": [
+        "Fırsatlar dışındaki içerikler ve haberler"
+      ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Katılacak kategorileri seçin ve bir kategorideki yeni e-postaların bildirilmesi için bildirimleri açın."
+      ],
+      "Social media updates and activity": [
+        "Sosyal ağ güncellemeleri ve etkinlikleri"
+      ],
+      "You cannot disable all categories": [
+        "Tüm kategorileri kapatamazsınız"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15259,6 +15310,9 @@
       ],
       "Move messages to": [
         "İletileri şuraya taşı"
+      ],
+      "Customize categories": [
+        "Kategorileri özelleştir"
       ]
     },
     "Today icon tooltip in mini calendar": {
