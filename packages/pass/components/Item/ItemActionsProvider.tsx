@@ -16,10 +16,12 @@ import {
     ConfirmMoveItem,
 } from '@proton/pass/components/Item/Actions/ConfirmItemActions';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
+import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
 import type { ItemCloneLocationState } from '@proton/pass/hooks/items/useInitialValues';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
+import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import { isAliasItem, isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
 import { cloneItemName, getBulkSelectionCount } from '@proton/pass/lib/items/item.utils';
 import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
@@ -67,6 +69,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const store = useStore<State>();
+    const scope = useStatefulRef(useItemScope());
 
     const { closeVaultSelect, openVaultSelect, modalState } = useVaultSelectModalHandles();
 
@@ -183,7 +186,9 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                 const share = selectShareOrThrow(item.shareId)(state);
                 const shareId = isVaultShare(share) ? share.shareId : selectMostRecentVaultShareID(state);
 
-                navigate<ItemCloneLocationState>(getNewItemRoute(item.data.type), {
+                /** Note: preserve current route scope in order to avoid
+                 * changing the filtered items if viewing shared items */
+                navigate<ItemCloneLocationState>(getNewItemRoute(item.data.type, scope.current), {
                     state: {
                         clone: partialMerge(item, {
                             shareId,
