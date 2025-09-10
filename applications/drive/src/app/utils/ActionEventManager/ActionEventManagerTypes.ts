@@ -54,7 +54,7 @@ export interface TrashedNodesEvent {
 }
 export interface RestoredNodesEvent {
     type: ActionEventName.RESTORED_NODES;
-    uids: string[];
+    items: { uid: string; parentUid: string | undefined }[];
 }
 
 export interface RenamedNodesEvent {

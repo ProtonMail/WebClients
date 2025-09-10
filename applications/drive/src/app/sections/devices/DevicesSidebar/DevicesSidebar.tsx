@@ -1,31 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import 'core-js/actual/array/from-async';
-import { c } from 'ttag';
 
 import { Loader } from '@proton/components';
-import { useDrive } from '@proton/drive/index';
 import clsx from '@proton/utils/clsx';
 
 import DriveExpandButton from '../../../components/layout/sidebar/DriveSidebar/DriveSidebarFolders/DriveExpandButton';
 import DriveSidebarListItem from '../../../components/layout/sidebar/DriveSidebar/DriveSidebarListItem';
 import { getDevicesSectionName } from '../../../components/sections/Devices/constants';
-import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
+import { useSidebarFolders } from '../../sidebar/hooks/useSidebarFolders';
 import { type StoreDevice, useDeviceStore } from '../devices.store';
 import { DevicesSidebarItem } from './DevicesSidebarItem';
 
-export const DevicesSidebar = ({
-    setSidebarLevel,
-    collapsed,
-}: {
-    setSidebarLevel: (level: number) => void;
-    collapsed: boolean;
-}) => {
+export const DevicesSidebar = ({ collapsed }: { collapsed: boolean }) => {
     const [isListExpanded, setListExpanded] = useState(false);
-    const { setDevice, deviceList, isLoading, setLoading } = useDeviceStore();
-    const { handleError } = useSdkErrorHandler();
-
-    const { drive } = useDrive();
+    const { deviceList, isLoading } = useDeviceStore();
+    const { loadDevicesRoot } = useSidebarFolders();
 
     const toggleList = () => {
         setListExpanded((value) => !value);
@@ -34,29 +24,21 @@ export const DevicesSidebar = ({
     const sectionTitle = getDevicesSectionName();
 
     useEffect(() => {
-        const populateDevices = async () => {
-            setLoading(true);
-            try {
-                for await (const device of drive.iterateDevices()) {
-                    setDevice(device);
-                }
-            } catch (e) {
-                const errorNotiticationText = c('Notification').t`Error while listing devices`;
-                handleError(e, { fallbackMessage: errorNotiticationText });
-            }
-            setLoading(false);
-        };
-        void populateDevices();
-    }, [drive, setDevice, setLoading, handleError]);
+        void loadDevicesRoot();
+    }, [loadDevicesRoot]);
 
-    const sortedDevices = deviceList.sort((a: StoreDevice, b: StoreDevice) => {
-        const nameA = a.name.toUpperCase();
-        const nameB = b.name.toUpperCase();
-        if (nameA < nameB) {
-            return -1;
-        }
-        return nameA > nameB ? 1 : 0;
-    });
+    const sortedDevices = useMemo(
+        () =>
+            deviceList.sort((a: StoreDevice, b: StoreDevice) => {
+                const nameA = a.name.toUpperCase();
+                const nameB = b.name.toUpperCase();
+                if (nameA < nameB) {
+                    return -1;
+                }
+                return nameA > nameB ? 1 : 0;
+            }),
+        [deviceList]
+    );
 
     const showList = !collapsed && isListExpanded && sortedDevices.length > 0;
 
@@ -76,19 +58,12 @@ export const DevicesSidebar = ({
                     <Loader className="drive-sidebar--icon inline-flex shrink-0" />
                 ) : (
                     deviceList.length > 0 && (
-                        <DriveExpandButton
-                            className="shrink-0"
-                            expanded={isListExpanded}
-                            onClick={() => toggleList()}
-                        />
+                        <DriveExpandButton className="shrink-0" expanded={isListExpanded} onClick={toggleList} />
                     )
                 )}
             </DriveSidebarListItem>
 
-            {showList &&
-                sortedDevices.map((device) => (
-                    <DevicesSidebarItem key={device.uid} device={device} setSidebarLevel={setSidebarLevel} />
-                ))}
+            {showList && sortedDevices.map((device) => <DevicesSidebarItem key={device.uid} device={device} />)}
         </>
     );
 };

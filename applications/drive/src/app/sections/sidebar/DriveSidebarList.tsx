@@ -1,25 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 
 import { c } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { SidebarList } from '@proton/components';
-import { useDrive } from '@proton/drive/index';
 import clsx from '@proton/utils/clsx';
 
 import { type ShareWithKey, useDriveSharingFlags, useUserSettings } from '../../store';
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { DevicesSidebar } from '../devices/DevicesSidebar';
 import { DriveSidebarFolders } from './DriveSidebarFolders/DriveSidebarFolders';
 import { DriveSidebarListItem } from './DriveSidebarListItem';
 import { DriveSidebarSharedWithMe } from './DriveSidebarSharedWithMe/DriveSidebarSharedWithMe';
-import type { SidebarItem } from './hooks/useSidebar.store';
 import { useSidebarStore } from './hooks/useSidebar.store';
 
 type DriveSidebarListProps = {
     shareId?: string;
     userShares: ShareWithKey[];
-    collapsed: boolean;
 };
+
 export type TreeNodeItem = {
     uid: string;
     name: string;
@@ -33,41 +31,23 @@ export type SimpleNode = {
     name: string;
 };
 
-export const DriveSidebarList = ({ shareId, userShares, collapsed }: DriveSidebarListProps) => {
+export const DriveSidebarList = ({ shareId, userShares }: DriveSidebarListProps) => {
     const { photosEnabled } = useUserSettings();
-    const [sidebarWidth, setSidebarWidth] = useState('100%');
+    const { rootFolder, isCollapsed, sidebarLevel } = useSidebarStore(
+        useShallow((state) => ({
+            rootFolder: state.getRootFolder(),
+            isCollapsed: state.isCollapsed,
+            sidebarLevel: state.sidebarLevel,
+        }))
+    );
 
-    const { setItem } = useSidebarStore();
-
-    const setSidebarLevel = (level: number) => {
-        const extraWidth = Math.floor(level / 7) * 50;
-        setSidebarWidth(`${100 + extraWidth}%`);
-    };
+    const sidebarWidth = useMemo(() => {
+        const extraWidth = Math.floor(sidebarLevel / 7) * 50;
+        return `${100 + extraWidth}%`;
+    }, [sidebarLevel]);
 
     const { isDirectSharingDisabled } = useDriveSharingFlags();
     const showSharedWithMeSection = !isDirectSharingDisabled;
-    const { drive } = useDrive();
-    const [rootFolder, setRootFolder] = useState<SidebarItem>();
-
-    useEffect(() => {
-        const loadRootFolder = async () => {
-            const maybeRootFolder = await drive.getMyFilesRootFolder();
-            const { node } = getNodeEntity(maybeRootFolder);
-            const item = {
-                parentUid: undefined,
-                level: -1,
-                uid: node.uid,
-                name: node.name,
-                isExpanded: false,
-                isLoading: false,
-                hasLoadedChildren: false,
-            };
-            setItem(item);
-            setRootFolder(item);
-        };
-
-        loadRootFolder();
-    }, []);
 
     return (
         <SidebarList style={{ width: sidebarWidth, maxWidth: sidebarWidth }}>
@@ -75,33 +55,32 @@ export const DriveSidebarList = ({ shareId, userShares, collapsed }: DriveSideba
                 (userShare) =>
                     rootFolder && (
                         <DriveSidebarFolders
-                            rootFolder={rootFolder}
                             key={userShare.shareId}
+                            rootFolder={rootFolder}
                             shareId={userShare.shareId}
                             linkId={userShare.rootLinkId}
-                            collapsed={collapsed}
                         />
                     )
             )}
-            <DevicesSidebar collapsed={collapsed} setSidebarLevel={setSidebarLevel} />
+            <DevicesSidebar collapsed={isCollapsed} />
 
             {photosEnabled && (
-                <DriveSidebarListItem to="/photos" icon="image" collapsed={collapsed}>
-                    <span className={clsx('text-ellipsis', collapsed && 'sr-only')} title={c('Link').t`Photos`}>
+                <DriveSidebarListItem to="/photos" icon="image" collapsed={isCollapsed}>
+                    <span className={clsx('text-ellipsis', isCollapsed && 'sr-only')} title={c('Link').t`Photos`}>
                         {c('Link').t`Photos`}
                     </span>
                 </DriveSidebarListItem>
             )}
 
-            <DriveSidebarListItem to="/shared-urls" icon="link" shareId={shareId} collapsed={collapsed}>
-                <span className={clsx('text-ellipsis', collapsed && 'sr-only')} title={c('Link').t`Shared`}>{c('Link')
+            <DriveSidebarListItem to="/shared-urls" icon="link" shareId={shareId} collapsed={isCollapsed}>
+                <span className={clsx('text-ellipsis', isCollapsed && 'sr-only')} title={c('Link').t`Shared`}>{c('Link')
                     .t`Shared`}</span>
             </DriveSidebarListItem>
 
-            {showSharedWithMeSection && <DriveSidebarSharedWithMe shareId={shareId} collapsed={collapsed} />}
+            {showSharedWithMeSection && <DriveSidebarSharedWithMe shareId={shareId} collapsed={isCollapsed} />}
 
-            <DriveSidebarListItem to="/trash" icon="trash" shareId={shareId} collapsed={collapsed}>
-                <span className={clsx('text-ellipsis', collapsed && 'sr-only')} title={c('Link').t`Trash`}>{c('Link')
+            <DriveSidebarListItem to="/trash" icon="trash" shareId={shareId} collapsed={isCollapsed}>
+                <span className={clsx('text-ellipsis', isCollapsed && 'sr-only')} title={c('Link').t`Trash`}>{c('Link')
                     .t`Trash`}</span>
             </DriveSidebarListItem>
         </SidebarList>

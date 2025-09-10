@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react';
 
+import { useShallow } from 'zustand/react/shallow';
+
 import type { SidebarItem } from '../hooks/useSidebar.store';
 import { useSidebarStore } from '../hooks/useSidebar.store';
 import { DriveSidebarSubfolder } from './DriveSidebarSubfolder';
@@ -7,28 +9,22 @@ import { DriveSidebarSubfolder } from './DriveSidebarSubfolder';
 type Props = {
     shareId: string;
     children: SidebarItem[];
-    toggleExpand: (linkId: string) => Promise<void>;
     defaultLevel?: number;
 };
 
-export const DriveSidebarSubfolders = ({ shareId, children, toggleExpand }: Props) => {
-    const { getChildren } = useSidebarStore((state) => ({
-        getChildren: state.getChildren,
-    }));
+export const DriveSidebarSubfolders = ({ shareId, children }: Props) => {
+    const { getChildren } = useSidebarStore(
+        useShallow((state) => ({
+            getChildren: state.getChildren,
+        }))
+    );
 
     if (!children?.length) {
         return null;
     }
 
     const folderReducer = (acc: ReactNode[], folder: SidebarItem): any[] => {
-        acc.push(
-            <DriveSidebarSubfolder
-                key={folder.uid}
-                shareId={shareId}
-                item={folder}
-                toggleExpand={() => toggleExpand(folder.uid)}
-            />
-        );
+        acc.push(<DriveSidebarSubfolder key={folder.uid} shareId={shareId} item={folder} />);
 
         const subChildren = getChildren(folder.uid);
 

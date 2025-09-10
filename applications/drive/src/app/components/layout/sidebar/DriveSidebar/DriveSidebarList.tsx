@@ -48,7 +48,7 @@ const DriveSidebarList = ({ shareId, userShares, collapsed }: DriveSidebarListPr
                 />
             ))}
             {useSdkDevices ? (
-                <DevicesSidebarSDK collapsed={collapsed} setSidebarLevel={setSidebarLevel} />
+                <DevicesSidebarSDK collapsed={collapsed} />
             ) : (
                 <DriveSidebarDevicesDeprecated collapsed={collapsed} setSidebarLevel={setSidebarLevel} />
             )}

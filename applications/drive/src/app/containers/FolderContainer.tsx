@@ -20,7 +20,6 @@ import { FolderView } from '../sections/folders/FolderView';
 import { subscribeToFolderEvents } from '../sections/folders/subscribeToFolderEvents';
 import { useContextShareHandler, useDefaultShare, useDriveEventManager } from '../store';
 import { VolumeTypeForEvents, useVolumesState } from '../store/_volumes';
-import { getActionEventManager } from '../utils/ActionEventManager/ActionEventManager';
 import { getIsPublicContext } from '../utils/getIsPublicContext';
 import PreviewContainer from './PreviewContainer';
 
@@ -115,7 +114,6 @@ export default function FolderContainer({ type }: { type: LinkURLType }) {
         if (useSDK) {
             const unsubscribe = subscribeToFolderEvents();
             return () => {
-                void getActionEventManager().unsubscribeSdkEventsMyUpdates('folders');
                 unsubscribe();
             };
         }
