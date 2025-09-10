@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { c } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { type ModalStateProps, useFormErrors, useNotifications } from '@proton/components';
 import { useDrive } from '@proton/drive';
@@ -28,7 +29,7 @@ export const useRemoveDeviceModalState = ({
     const { drive } = useDrive();
     const { createNotification } = useNotifications();
     const { handleError } = useSdkErrorHandler();
-    const { removeDevice } = useDeviceStore();
+    const { removeDevice } = useDeviceStore(useShallow((state) => ({ removeDevice: state.removeDevice })));
     const [submitting, withSubmitting] = useLoading();
 
     const { validator, onFormSubmit } = useFormErrors();

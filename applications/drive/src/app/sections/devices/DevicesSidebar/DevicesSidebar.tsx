@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import 'core-js/actual/array/from-async';
+import { useShallow } from 'zustand/react/shallow';
 
 import { Loader } from '@proton/components';
 import clsx from '@proton/utils/clsx';
@@ -14,7 +15,12 @@ import { DevicesSidebarItem } from './DevicesSidebarItem';
 
 export const DevicesSidebar = ({ collapsed }: { collapsed: boolean }) => {
     const [isListExpanded, setListExpanded] = useState(false);
-    const { deviceList, isLoading } = useDeviceStore();
+    const { deviceList, isLoading } = useDeviceStore(
+        useShallow((state) => ({
+            deviceList: state.deviceList,
+            isLoading: state.isLoading,
+        }))
+    );
     const { loadDevicesRoot } = useSidebarFolders();
 
     const toggleList = () => {

@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { devtools, subscribeWithSelector } from 'zustand/middleware';
+import { devtools } from 'zustand/middleware';
 
 export type SidebarItem = {
     uid: string;
@@ -39,62 +39,60 @@ const initialState = {
 };
 
 export const useSidebarStore = create<SidebarStore>()(
-    subscribeWithSelector(
-        devtools((set, get) => ({
-            ...initialState,
-            setItem: (item: SidebarItem) =>
-                set((state) => {
-                    const newItems = new Map(state.items);
-                    newItems.set(item.uid, item);
-                    return { items: newItems };
-                }),
+    devtools((set, get) => ({
+        ...initialState,
+        setItem: (item: SidebarItem) =>
+            set((state) => {
+                const newItems = new Map(state.items);
+                newItems.set(item.uid, item);
+                return { items: newItems };
+            }),
 
-            updateItem: (uid: string, updates: Partial<Omit<SidebarItem, 'uid'>>) =>
-                set((state) => {
-                    const existingItem = state.items.get(uid);
-                    if (!existingItem) {
-                        return state;
-                    }
+        updateItem: (uid: string, updates: Partial<Omit<SidebarItem, 'uid'>>) =>
+            set((state) => {
+                const existingItem = state.items.get(uid);
+                if (!existingItem) {
+                    return state;
+                }
 
-                    const newItems = new Map(state.items);
-                    newItems.set(uid, {
-                        ...existingItem,
-                        ...updates,
-                    });
-                    return { items: newItems };
-                }),
+                const newItems = new Map(state.items);
+                newItems.set(uid, {
+                    ...existingItem,
+                    ...updates,
+                });
+                return { items: newItems };
+            }),
 
-            toggleExpanded: (uid: string) =>
-                set((state) => {
-                    const item = state.items.get(uid);
-                    if (!item) {
-                        return state;
-                    }
+        toggleExpanded: (uid: string) =>
+            set((state) => {
+                const item = state.items.get(uid);
+                if (!item) {
+                    return state;
+                }
 
-                    const newItems = new Map(state.items);
-                    newItems.set(uid, {
-                        ...item,
-                        isExpanded: !item.isExpanded,
-                    });
-                    return { items: newItems };
-                }),
+                const newItems = new Map(state.items);
+                newItems.set(uid, {
+                    ...item,
+                    isExpanded: !item.isExpanded,
+                });
+                return { items: newItems };
+            }),
 
-            removeItem: (uid: string) =>
-                set((state) => {
-                    const newItems = new Map(state.items);
-                    newItems.delete(uid);
-                    return { items: newItems };
-                }),
+        removeItem: (uid: string) =>
+            set((state) => {
+                const newItems = new Map(state.items);
+                newItems.delete(uid);
+                return { items: newItems };
+            }),
 
-            setCollapsed: (isCollapsed: boolean) => set({ isCollapsed }),
-            setSidebarLevel: (sidebarLevel: number) => set({ sidebarLevel }),
-            reset: () => set(initialState),
-            getItem: (uid: string) => get().items.get(uid),
-            getRootFolder: () => Array.from(get().items.values()).find((item) => !item.parentUid),
-            getChildren: (parentUid: string) =>
-                Array.from(get().items.values())
-                    .filter((node) => node.parentUid === parentUid)
-                    .sort((a, b) => a.name.localeCompare(b.name)),
-        }))
-    )
+        setCollapsed: (isCollapsed: boolean) => set({ isCollapsed }),
+        setSidebarLevel: (sidebarLevel: number) => set({ sidebarLevel }),
+        reset: () => set(initialState),
+        getItem: (uid: string) => get().items.get(uid),
+        getRootFolder: () => Array.from(get().items.values()).find((item) => !item.parentUid),
+        getChildren: (parentUid: string) =>
+            Array.from(get().items.values())
+                .filter((node) => node.parentUid === parentUid)
+                .sort((a, b) => a.name.localeCompare(b.name)),
+    }))
 );

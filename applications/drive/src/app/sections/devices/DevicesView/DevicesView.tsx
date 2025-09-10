@@ -1,5 +1,7 @@
 import { useMemo } from 'react';
 
+import { useShallow } from 'zustand/react/shallow';
+
 import { useAppTitle } from '@proton/components';
 import { splitNodeUid } from '@proton/drive/index';
 
@@ -13,7 +15,7 @@ import { DevicesBrowser } from './DevicesBrowser';
 export function DevicesView() {
     const sectionTitle = getDevicesSectionName();
     useAppTitle(sectionTitle);
-    const { deviceList } = useDeviceStore();
+    const { deviceList } = useDeviceStore(useShallow((state) => ({ deviceList: state.deviceList })));
 
     // Uses the legacy Device-Id because that's how the global file selection works right now
     const itemIds = useMemo(() => deviceList.map((device) => splitNodeUid(device.uid).nodeId), [deviceList]);
