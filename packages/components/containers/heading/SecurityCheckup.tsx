@@ -6,6 +6,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import useIsSentinelUser from '@proton/components/hooks/useIsSentinelUser';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
+import useFlag from '@proton/unleash/useFlag';
 
 export const SecurityCheckup = ({
     children,
@@ -17,6 +18,8 @@ export const SecurityCheckup = ({
     const isSecurityCheckupAvailable = useIsSecurityCheckupAvailable();
     const securityCheckup = useSecurityCheckup();
 
+    const isSentinelSafetyReviewEnabled = useFlag('SentinelSafetyReview');
+
     const securityCheckupParams = (() => {
         return new URLSearchParams({
             back: encodeURIComponent(window.location.href),
@@ -25,13 +28,24 @@ export const SecurityCheckup = ({
         });
     })();
 
-    return !isSentinelUser &&
-        isSecurityCheckupAvailable &&
-        (securityCheckup.actions.includes('phrase') || securityCheckup.furtherActions.includes('phrase'))
-        ? children({
-              toApp: APPS.PROTONACCOUNT,
-              to: `${SECURITY_CHECKUP_PATHS.ROOT}?${securityCheckupParams.toString()}`,
-              target: '_self',
-          })
-        : null;
+    if (isSentinelUser && !isSentinelSafetyReviewEnabled) {
+        return null;
+    }
+
+    if (!isSecurityCheckupAvailable) {
+        return null;
+    }
+
+    if (securityCheckup.actions.includes('phrase') || securityCheckup.furtherActions.includes('phrase')) {
+        /**
+         * Only show safety review prompt if phrase needs to be set
+         */
+        return children({
+            toApp: APPS.PROTONACCOUNT,
+            to: `${SECURITY_CHECKUP_PATHS.ROOT}?${securityCheckupParams.toString()}`,
+            target: '_self',
+        });
+    }
+
+    return null;
 };

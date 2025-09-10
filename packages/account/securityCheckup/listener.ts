@@ -8,8 +8,8 @@ import {
     getIsPerfectPhoneState,
     getIsPerfectPhraseState,
 } from '@proton/shared/lib/helpers/securityCheckup';
-import { MNEMONIC_STATUS, SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
-import SecurityCheckupCohort from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
+import { MNEMONIC_STATUS, SETTINGS_PROTON_SENTINEL_STATE, SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
+import { SecurityCheckupCohort } from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
 import type SecurityState from '@proton/shared/lib/interfaces/securityCheckup/SecurityState';
 import { getIsMnemonicAvailable } from '@proton/shared/lib/mnemonic';
 import { getIsRecoveryFileAvailable } from '@proton/shared/lib/recoveryFile/recoveryFile';
@@ -112,6 +112,7 @@ export const securityCheckupListener = (startListening: SharedStartListening<Req
                     isAvailable: isRecoveryFileAvailable,
                     isEnabled: !!userSettings.value.DeviceRecovery,
                 },
+                hasSentinelEnabled: userSettings.value.HighSecurity.Value === SETTINGS_PROTON_SENTINEL_STATE.ENABLED,
             };
 
             dispatch(actions.setSecurityState({ securityState }));
@@ -191,7 +192,7 @@ export const securityCheckupListener = (startListening: SharedStartListening<Req
             }
 
             const { cohort, session, securityState } = securityCheckup;
-            if (!cohort || cohort === SecurityCheckupCohort.NO_RECOVERY_METHOD) {
+            if (!cohort || cohort === SecurityCheckupCohort.Common.NO_RECOVERY_METHOD) {
                 // No change should have occurred
                 return;
             }
@@ -225,11 +226,11 @@ export const securityCheckupListener = (startListening: SharedStartListening<Req
                 event,
                 dimensions = {},
             }: { event?: TelemetryAccountSecurityCheckupEvents; dimensions?: Record<string, string> } = (() => {
-                if (cohort === SecurityCheckupCohort.COMPLETE_RECOVERY_MULTIPLE) {
+                if (cohort === SecurityCheckupCohort.Common.COMPLETE_RECOVERY) {
                     return { event: TelemetryAccountSecurityCheckupEvents.completeRecoveryMultiple };
                 }
 
-                if (cohort === SecurityCheckupCohort.COMPLETE_RECOVERY_SINGLE) {
+                if (cohort === SecurityCheckupCohort.Default.COMPLETE_RECOVERY_SINGLE) {
                     return {
                         event: TelemetryAccountSecurityCheckupEvents.completeRecoverySingle,
                         dimensions: {
@@ -238,8 +239,16 @@ export const securityCheckupListener = (startListening: SharedStartListening<Req
                     };
                 }
 
-                if (cohort === SecurityCheckupCohort.ACCOUNT_RECOVERY_ENABLED) {
+                if (cohort === SecurityCheckupCohort.Default.ACCOUNT_RECOVERY_ENABLED) {
                     return { event: TelemetryAccountSecurityCheckupEvents.accountRecoveryEnabled };
+                }
+
+                if (cohort === SecurityCheckupCohort.Sentinel.COMPLETE_RECOVERY_SENTINEL) {
+                    return { event: TelemetryAccountSecurityCheckupEvents.completeRecoverySentinel };
+                }
+
+                if (cohort === SecurityCheckupCohort.Sentinel.SENTINEL_RECOMMENDATIONS) {
+                    return { event: TelemetryAccountSecurityCheckupEvents.sentinelRecommendations };
                 }
 
                 return { event: undefined };

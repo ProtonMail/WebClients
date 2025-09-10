@@ -1,7 +1,7 @@
 import { differenceInMilliseconds } from 'date-fns';
 
 import type { SecurityCheckupSession } from '@proton/shared/lib/interfaces/securityCheckup';
-import type SecurityCheckupCohort from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
+import type { SecurityCheckupCohortType } from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
 
 import { SECURITY_SESSION_MAX_AGE } from '../consts';
 
@@ -10,7 +10,7 @@ const getValidSecurityCheckupSession = ({
     currentCohort,
 }: {
     currentSession: SecurityCheckupSession | undefined;
-    currentCohort: SecurityCheckupCohort;
+    currentCohort: SecurityCheckupCohortType;
 }) => {
     const createdTimestamp = Date.now();
     const nextSession = {

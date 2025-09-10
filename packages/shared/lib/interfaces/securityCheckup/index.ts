@@ -1,10 +1,16 @@
 import type { APP_NAMES } from '../../constants';
-import type SecurityCheckupCohort from './SecurityCheckupCohort';
+import type { SecurityCheckupCohortType } from './SecurityCheckupCohort';
 
-export type SecurityCheckupAction = 'phrase' | 'email' | 'phone' | 'device';
+export type SecurityCheckupAction =
+    | 'phrase'
+    | 'set-email'
+    | 'sentinel-email'
+    | 'set-phone'
+    | 'sentinel-phone'
+    | 'device';
 
 export interface SecurityCheckupSession {
-    initialCohort: SecurityCheckupCohort;
+    initialCohort: SecurityCheckupCohortType;
     createdTimestamp: number;
 }
 
