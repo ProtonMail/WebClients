@@ -2,7 +2,8 @@ import { BrowserWindow, screen } from "electron";
 import Store from "electron-store";
 import { ensureWindowIsVisible } from "../utils/view/windowBounds";
 import { mainLogger } from "../utils/log";
-import { DEFAULT_ZOOM_FACTOR, ZOOM_FACTOR_LIST, ZoomFactor, getZoom } from "../utils/view/viewManagement";
+import { getZoom } from "../utils/view/viewManagement";
+import { DEFAULT_ZOOM_FACTOR, ZOOM_FACTOR_LIST, ZoomFactor } from "../constants/zoom";
 
 export interface WindowBounds {
     zoom: ZoomFactor;
