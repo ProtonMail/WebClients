@@ -1,5 +1,7 @@
 import { useMemo } from 'react';
 
+import { useShallow } from 'zustand/react/shallow';
+
 import { Toolbar } from '@proton/components';
 import { splitNodeUid } from '@proton/drive';
 
@@ -12,7 +14,7 @@ import { DeviceRemoveButton } from './buttons/RemoveButton';
 import { DeviceRenameButton } from './buttons/RenameButton';
 
 export const DevicesToolbar = () => {
-    const { deviceList } = useDeviceStore();
+    const { deviceList } = useDeviceStore(useShallow((state) => ({ deviceList: state.deviceList })));
     const selectionControls = useSelection()!;
 
     // TODO: remove once useSelection is converted
