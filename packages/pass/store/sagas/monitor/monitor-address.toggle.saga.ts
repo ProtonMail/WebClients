@@ -5,7 +5,7 @@ import { updateItemFlags } from '@proton/pass/lib/items/item.requests';
 import { toggleCustomEmail, toggleProtonEmail } from '@proton/pass/lib/monitor/monitor.request';
 import { intoAliasMonitorAddress, intoCustomMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
 import { AddressType, type MonitorAddress } from '@proton/pass/lib/monitor/types';
-import { getBreaches, itemsEditSync, toggleAddressMonitor } from '@proton/pass/store/actions';
+import { getBreaches, itemsEditEvent, toggleAddressMonitor } from '@proton/pass/store/actions';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import { selectProtonBreaches } from '@proton/pass/store/selectors';
@@ -21,7 +21,7 @@ export default createRequestSaga({
                 const data = { SkipHealthCheck: !Monitor };
                 const encryptedItem: ItemRevisionContentsResponse = yield updateItemFlags(shareId, itemId, data);
                 const item: ItemRevision<'alias'> = yield parseItemRevision(shareId, encryptedItem);
-                yield put(itemsEditSync([item]));
+                yield put(itemsEditEvent([item]));
                 yield put(withRevalidate(getBreaches.intent()));
                 return intoAliasMonitorAddress(item);
             }

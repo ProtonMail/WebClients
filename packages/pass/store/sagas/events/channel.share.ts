@@ -11,9 +11,9 @@ import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { getShareLatestEventId, requestShare } from '@proton/pass/lib/shares/share.requests';
 import {
-    itemsDeleteSync,
-    itemsEditSync,
-    itemsUsedSync,
+    itemsDeleteEvent,
+    itemsEditEvent,
+    itemsUsedEvent,
     shareEvent,
     shareEventDelete,
     shareEventUpdate,
@@ -82,12 +82,12 @@ const onShareEvent = (shareId: string) =>
 
         if (DeletedItemIDs.length > 0) {
             yield discardDrafts(shareId, DeletedItemIDs);
-            yield put(itemsDeleteSync(shareId, DeletedItemIDs));
+            yield put(itemsDeleteEvent(shareId, DeletedItemIDs));
         }
 
         if (LastUseItems && LastUseItems.length > 0) {
             yield put(
-                itemsUsedSync(
+                itemsUsedEvent(
                     LastUseItems.map(({ ItemID, LastUseTime }) => ({
                         itemId: ItemID,
                         shareId,
@@ -104,7 +104,7 @@ const onShareEvent = (shareId: string) =>
                 )) as Maybe<ItemRevision>[]
             ).filter(truthy);
 
-            yield put(itemsEditSync(updatedItems));
+            yield put(itemsEditEvent(updatedItems));
         }
 
         if (FullRefresh) {
@@ -114,7 +114,7 @@ const onShareEvent = (shareId: string) =>
             if (share) {
                 yield put(shareEventUpdate(share));
                 const updatedItems: ItemRevision[] = yield requestItemsForShareId(shareId);
-                yield put(itemsEditSync(updatedItems));
+                yield put(itemsEditEvent(updatedItems));
             }
         }
 

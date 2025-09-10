@@ -13,10 +13,7 @@ import { isShareLocked, selectItemsByShareId } from '@proton/pass/store/selector
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision } from '@proton/pass/types';
 
-function* moveAllItemsWorker(
-    { onItemsUpdated }: RootSagaOptions,
-    { payload, meta }: ReturnType<typeof vaultMoveAllItemsIntent>
-) {
+function* moveAllItemsWorker({ onItemsUpdated }: RootSagaOptions, { payload, meta }: ReturnType<typeof vaultMoveAllItemsIntent>) {
     const { shareId, content, targetShareId } = payload;
 
     try {

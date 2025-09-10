@@ -30,9 +30,9 @@ import {
     itemRestore,
     itemTrash,
     itemUnpinSuccess,
-    itemsDeleteSync,
-    itemsEditSync,
-    itemsUsedSync,
+    itemsDeleteEvent,
+    itemsEditEvent,
+    itemsUsedEvent,
     resolveAddressMonitor,
     restoreTrashProgress,
     secureLinkCreate,
@@ -50,19 +50,19 @@ import {
 import type { WrappedOptimisticState } from '@proton/pass/store/optimistic/types';
 import { combineOptimisticReducers } from '@proton/pass/store/optimistic/utils/combine-optimistic-reducers';
 import withOptimistic from '@proton/pass/store/optimistic/with-optimistic';
-import {
-    ContentFormatVersion,
-    type IndexedByShareIdAndItemId,
-    ItemFlag,
-    type ItemRevision,
-    ItemState,
-    type ItemType,
-    type RequiredProps,
-    type SecureLink,
-    type UniqueItem,
+import type {
+    IndexedByShareIdAndItemId,
+    ItemId,
+    ItemRevision,
+    ItemType,
+    RequiredProps,
+    SecureLink,
+    ShareId,
+    UniqueItem,
 } from '@proton/pass/types';
+import { ContentFormatVersion, ItemFlag, ItemState } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
-import { notIn, or } from '@proton/pass/utils/fp/predicates';
+import { eq, not, notIn, or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { objectFilter } from '@proton/pass/utils/object/filter';
 import { objectMap } from '@proton/pass/utils/object/map';
@@ -114,10 +114,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         {
             initiate: (action) => itemCreate.intent.match(action) && getItemEntityID(action.payload),
             fail: (action) => itemCreate.failure.match(action) && getItemEntityID(action.payload),
-            revert: [
-                (action) => itemCreate.success.match(action) && getItemEntityID(action.payload),
-                itemCreateDismiss.optimisticMatch,
-            ],
+            revert: [(action) => itemCreate.success.match(action) && getItemEntityID(action.payload), itemCreateDismiss.optimisticMatch],
         },
         {
             initiate: (action) => itemEdit.intent.match(action) && getItemEntityID(action.payload),
@@ -219,12 +216,12 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
 
         if (fileLinkPending.success.match(action)) return updateItem(action.payload.item)(state);
 
-        if (itemsEditSync.match(action)) {
+        if (itemsEditEvent.match(action)) {
             const { items } = action.payload;
             return addItems(items)(state);
         }
 
-        if (itemsUsedSync.match(action)) {
+        if (itemsUsedEvent.match(action)) {
             const { items } = action.payload;
             return updateItems(items)(state);
         }
@@ -234,7 +231,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return { ...state, [shareId]: objectDelete(state[shareId], itemId) };
         }
 
-        if (itemsDeleteSync.match(action)) {
+        if (itemsDeleteEvent.match(action)) {
             const { shareId } = action.payload;
             const itemIds = new Set(action.payload.itemIds);
 
@@ -301,9 +298,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return fullMerge(
                 {
                     ...state,
-                    ...(shareId in state
-                        ? { [shareId]: objectFilter(state[shareId], notIn(batch.map(prop('itemId')))) }
-                        : {}),
+                    ...(shareId in state ? { [shareId]: objectFilter(state[shareId], notIn(batch.map(prop('itemId')))) } : {}),
                 },
                 { [targetShareId]: toMap(movedItems, 'itemId') }
             );
@@ -354,9 +349,7 @@ const itemsByOptimisticId: Reducer<ItemsByOptimisticId> = (state = {}, action) =
 /** revision number is stored on the `EditDraft` type in order
  * to future-proof drafts v2 : this will allow detecting stale
  * draft entries if an item was updated while having a draft. */
-export type DraftBase =
-    | { mode: 'new'; type: ItemType }
-    | { mode: 'edit'; itemId: string; shareId: string; revision: number };
+export type DraftBase = { mode: 'new'; type: ItemType } | { mode: 'edit'; itemId: string; shareId: string; revision: number };
 
 export type Draft<V extends {} = any> = DraftBase & { formData: V };
 export type EditDraft = Extract<Draft, { mode: 'edit' }>;
@@ -381,9 +374,16 @@ const draftsReducer: Reducer<Draft[]> = (state = [], action) => {
     return state;
 };
 
-const secureLinksReducer: Reducer<IndexedByShareIdAndItemId<SecureLink[]>> = (state = {}, action) => {
+export type SecureLinkState = IndexedByShareIdAndItemId<SecureLink[]>;
+
+const removeSecureLinksForItems = (state: SecureLinkState, shareId: ShareId, itemIds: ItemId[]): SecureLinkState =>
+    objectMap(state, (key, value) => (key === shareId ? objectFilter(value, notIn(itemIds)) : value));
+
+const removeSecureLinksForShare = (state: SecureLinkState, shareId: ShareId) => objectFilter(state, not(eq(shareId)));
+
+const secureLinksReducer: Reducer<SecureLinkState> = (state = {}, action) => {
     if (or(secureLinksGet.success.match, secureLinksRemoveInactive.success.match)(action)) {
-        return action.payload.reduce<IndexedByShareIdAndItemId<SecureLink[]>>((acc, link) => {
+        return action.payload.reduce<SecureLinkState>((acc, link) => {
             const { shareId, itemId } = link;
             const secureLink = acc[shareId]?.[itemId];
 
@@ -409,6 +409,34 @@ const secureLinksReducer: Reducer<IndexedByShareIdAndItemId<SecureLink[]>> = (st
         return links.length === 0
             ? { ...state, [shareId]: objectDelete(state[shareId], itemId) }
             : partialMerge(state, { [shareId]: { [itemId]: links } });
+    }
+
+    /** NOTE: Optimistically remove secure-links invalidated by vault
+     * or item operations: item moves/deletes and share deletes. */
+
+    if (itemDelete.success.match(action)) {
+        const { shareId, itemId } = action.payload;
+        return removeSecureLinksForItems(state, shareId, [itemId]);
+    }
+
+    if (itemsDeleteEvent.match(action)) {
+        const { shareId, itemIds } = action.payload;
+        return removeSecureLinksForItems(state, shareId, itemIds);
+    }
+
+    if (itemMove.success.match(action)) {
+        const { shareId, itemId } = action.payload.before;
+        return removeSecureLinksForItems(state, shareId, [itemId]);
+    }
+
+    if (or(itemBulkMoveProgress.match, vaultMoveAllItemsProgress.match, itemBulkDeleteProgress.match)(action)) {
+        const { shareId, batch } = action.payload;
+        const itemIds = batch.map(prop('itemId'));
+        return removeSecureLinksForItems(state, shareId, itemIds);
+    }
+
+    if (or(shareEventDelete.match, vaultDeleteSuccess.match)(action)) {
+        return removeSecureLinksForShare(state, action.payload.shareId);
     }
 
     return state;

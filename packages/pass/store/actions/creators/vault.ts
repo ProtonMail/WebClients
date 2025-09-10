@@ -11,21 +11,14 @@ import {
     vaultMoveAllItemsRequest,
     vaultTransferOwnerRequest,
 } from '@proton/pass/store/actions/requests';
-import {
-    withRequest,
-    withRequestFailure,
-    withRequestProgress,
-    withRequestSuccess,
-} from '@proton/pass/store/request/enhancers';
+import { withRequest, withRequestFailure, withRequestProgress, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import type { BatchItemRevisions, ItemRevision, Share, ShareContent, ShareId, ShareType } from '@proton/pass/types';
 import type { VaultTransferOwnerIntent } from '@proton/pass/types/data/vault.dto';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
-export const vaultCreationIntent = createAction(
-    'vault::creation::intent',
-    (payload: { content: ShareContent<ShareType.Vault> }) =>
-        withRequest({ status: 'start', id: vaultCreateRequest(uniqueId()) })({ payload })
+export const vaultCreationIntent = createAction('vault::creation::intent', (payload: { content: ShareContent<ShareType.Vault> }) =>
+    withRequest({ status: 'start', id: vaultCreateRequest(uniqueId()) })({ payload })
 );
 
 export const vaultCreationFailure = createAction(
@@ -54,10 +47,8 @@ export const vaultCreationSuccess = createAction(
     )
 );
 
-export const vaultEditIntent = createAction(
-    'vault::edit::intent',
-    (payload: { shareId: string; content: ShareContent<ShareType.Vault> }) =>
-        withRequest({ status: 'start', id: vaultEditRequest(payload.shareId) })({ payload })
+export const vaultEditIntent = createAction('vault::edit::intent', (payload: { shareId: string; content: ShareContent<ShareType.Vault> }) =>
+    withRequest({ status: 'start', id: vaultEditRequest(payload.shareId) })({ payload })
 );
 
 export const vaultEditFailure = createAction(
@@ -138,9 +129,7 @@ export const vaultMoveAllItemsIntent = createAction(
 
 export const vaultMoveAllItemsProgress = createAction(
     'vault::move::items::progress',
-    withRequestProgress((payload: BatchItemRevisions & { movedItems: ItemRevision[]; targetShareId: string }) =>
-        withCache({ payload })
-    )
+    withRequestProgress((payload: BatchItemRevisions & { movedItems: ItemRevision[]; targetShareId: string }) => withCache({ payload }))
 );
 
 export const vaultMoveAllItemsSuccess = createAction(
@@ -164,10 +153,11 @@ export const vaultMoveAllItemsFailure = createAction(
     )
 );
 
-export const vaultTransferOwnerIntent = createAction(
-    'vault::ownership::transfer::intent',
-    (payload: VaultTransferOwnerIntent) =>
-        withRequest({ status: 'start', id: vaultTransferOwnerRequest(payload.userShareId) })({ payload })
+export const vaultTransferOwnerIntent = createAction('vault::ownership::transfer::intent', (payload: VaultTransferOwnerIntent) =>
+    withRequest({
+        status: 'start',
+        id: vaultTransferOwnerRequest(payload.userShareId),
+    })({ payload })
 );
 
 export const vaultTransferOwnershipSuccess = createAction(
