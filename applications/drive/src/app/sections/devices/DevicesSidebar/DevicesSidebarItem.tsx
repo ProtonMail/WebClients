@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useShallow } from 'zustand/react/shallow';
 
 import { splitNodeUid } from '@proton/drive';
 
@@ -6,46 +6,23 @@ import DriveExpandButton from '../../../components/layout/sidebar/DriveSidebar/D
 import DriveSidebarListItem from '../../../components/layout/sidebar/DriveSidebar/DriveSidebarListItem';
 import { generateSidebarItemStyle } from '../../../components/layout/sidebar/DriveSidebar/utils';
 import { DriveSidebarSubfolders } from '../../sidebar/DriveSidebarFolders/DriveSidebarSubfolders';
-import type { SidebarItem } from '../../sidebar/hooks/useSidebar.store';
 import { useSidebarStore } from '../../sidebar/hooks/useSidebar.store';
+import { useSidebarFolders } from '../../sidebar/hooks/useSidebarFolders';
 import type { StoreDevice } from '../devices.store';
-import { getDeviceName } from '../getDeviceName';
 
-export const DevicesSidebarItem = ({
-    device,
-    // TODO: need to check with proper content
-    // setSidebarLevel,
-}: {
-    device: StoreDevice;
-    setSidebarLevel: (level: number) => void;
-}) => {
-    const { nodeId } = splitNodeUid(device.rootFolderUid);
+export const DevicesSidebarItem = ({ device }: { device: StoreDevice }) => {
+    const uid = device.rootFolderUid;
+    const { nodeId } = splitNodeUid(uid);
 
-    const { getChildren, setItem, updateItem, getItem } = useSidebarStore((state) => ({
-        getChildren: state.getChildren,
-        setItem: state.setItem,
-        updateItem: state.updateItem,
-        getItem: state.getItem,
-    }));
-
-    const deviceRootFolder: SidebarItem = {
-        uid: device.rootFolderUid,
-        name: getDeviceName(device),
-        level: 1,
-        parentUid: undefined,
-        isLoading: false,
-        isExpanded: !!getItem(device.rootFolderUid)?.isExpanded,
-        hasLoadedChildren: false,
-    };
-
-    useEffect(() => {
-        setItem(deviceRootFolder);
-    }, [device]);
-
-    const toggleExpand = async (uid: string) => {
-        const isExpanded = getItem(uid)?.isExpanded;
-        updateItem(uid, { isExpanded: !isExpanded });
-    };
+    const { isExpanded, children } = useSidebarStore(
+        useShallow((state) => {
+            return {
+                isExpanded: !!state.getItem(uid)?.isExpanded,
+                children: state.getChildren(uid),
+            };
+        })
+    );
+    const { toggleExpand } = useSidebarFolders();
 
     return (
         <div>
@@ -59,18 +36,9 @@ export const DevicesSidebarItem = ({
                 <span className="text-ellipsis" title={device.name} data-testid="sidebar-device-name">
                     {device.name}
                 </span>
-                <DriveExpandButton
-                    className="shrink-0"
-                    expanded={Boolean(deviceRootFolder.isExpanded)}
-                    onClick={() => toggleExpand(nodeId)}
-                />
+                <DriveExpandButton className="shrink-0" expanded={isExpanded} onClick={() => toggleExpand(uid)} />
             </DriveSidebarListItem>
-            <DriveSidebarSubfolders
-                key={deviceRootFolder.uid}
-                shareId={device.shareId}
-                children={getChildren(deviceRootFolder.uid)}
-                toggleExpand={toggleExpand}
-            />
+            {isExpanded && <DriveSidebarSubfolders key={uid} shareId={device.shareId} children={children} />}
         </div>
     );
 };
