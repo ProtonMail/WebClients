@@ -43,7 +43,7 @@
 	}
 
 	// Icons only view (xsmall)
-	@container (max-width: 450px) {
+	@container (max-width: #{rem(450)}) {
 		.tab-container {
 			.tag-label,
 			.tag-count {
@@ -57,7 +57,7 @@
 	}
 
 	// Only the selected category extended (xsmall to medium)
-	@container (min-width: 450px) and (max-width: 910px) {
+	@container (min-width: #{rem(450)}) and (max-width: #{rem(910)}) {
 		.tab-container {
 			.tag-label,
 			.tag-count {
@@ -83,7 +83,7 @@
 	}
 
 	// Fully extended view (medium to large)
-	@container (min-width: 910px) {
+	@container (min-width: #{rem(910)}) {
 		.tab-container {
 			.tag-label,
 			.tag-count {
@@ -101,7 +101,7 @@
 	}
 
 	// Large screen fully extended view (large)
-	@container (min-width: 1100px) {
+	@container (min-width: #{rem(1100)}) {
 		.tab-container {
 			.tag-label-text {
 				font-size: rem(13);
