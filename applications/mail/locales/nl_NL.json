@@ -96,6 +96,9 @@
       "Add phone number": [
         "Telefoonnummer toevoegen"
       ],
+      "Add secret passphrase": [
+        "Geheime wachtwoordzin toevoegen"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Toevoegen aan ${ CALENDAR_APP_NAME }"
       ],
@@ -483,6 +486,9 @@
       "Edit address": [
         "Adres bewerken"
       ],
+      "Edit categories": [
+        "Categorieën bewerken"
+      ],
       "Edit draft": [
         "Concept bewerken"
       ],
@@ -757,6 +763,9 @@
       "Italic": [
         "Schuin"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Deelnemen met ${ MEET_APP_NAME }"
+      ],
       "Keep my subscription": [
         "Mijn abonnement behouden"
       ],
@@ -901,6 +910,9 @@
       "More search options": [
         "Meer zoekopties"
       ],
+      "Most frequent": [
+        "Meest voorkomend"
+      ],
       "Most read": [
         "Meest gelezen"
       ],
@@ -1009,6 +1021,9 @@
       "Page ${ pageNumber }": [
         "Pagina ${ pageNumber }"
       ],
+      "Passphrase": [
+        "Wachtwoordzin"
+      ],
       "Pause": [
         "Onderbreken"
       ],
@@ -1062,6 +1077,9 @@
       ],
       "Read receipt sent": [
         "Ontvangstbewijs verzonden"
+      ],
+      "Recently read": [
+        "Onlangs gelezen"
       ],
       "Recently received": [
         "Onlangs ontvangen"
@@ -1444,6 +1462,9 @@
       "Trust": [
         "Vertrouwen"
       ],
+      "Trust key": [
+        "Vertrouwde sleutel"
+      ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
       ],
@@ -1503,6 +1524,9 @@
       ],
       "Update recovery phrase": [
         "Herstelzin bijwerken"
+      ],
+      "Update secret passphrase": [
+        "Geheime wachtwoordzin updaten"
       ],
       "Upgrade": [
         "Upgraden"
@@ -1962,11 +1986,17 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-plaatsen hebben tijdens de proefperiode."
@@ -2213,6 +2243,9 @@
       ],
       "Manual setup problem": [
         "Probleem met eigen setup"
+      ],
+      "Meet problem": [
+        "Meet probleem"
       ],
       "Other": [
         "Anders"
@@ -2639,12 +2672,47 @@
         "Uitvouwen"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Toegang tot geavanceerde AI-modellen"
+      ],
+      "Basic chat history": [
+        "Basis gespreksgeschiedenis"
+      ],
+      "Full chat history with search": [
+        "Volledige chatgeschiedenis met zoeken"
+      ],
+      "Large file upload support": [
+        "Ondersteuning voor het uploaden van grote bestanden"
+      ],
+      "Limited daily chats": [
+        "Beperkt aantal dagelijkse gesprekken"
+      ],
+      "Limited favorites": [
+        "Beperkte favorieten"
+      ],
+      "Unlimited daily chats": [
+        "Onbeperkt aantal dagelijkse gesprekken"
+      ],
+      "Unlimited favorites for quick access": [
+        "Onbeperkt favorieten voor snelle toegang"
+      ],
+      "Upload and query multiple large files": [
+        "Meerdere grote bestanden uploaden en opvragen"
+      ],
+      "Upload and query small files": [
+        "Kleine bestanden uploaden en opvragen"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } is een privacygerichte AI die u helpt meer gedaan te krijgen, terwijl uw gegevens veilig blijven. Ontgrendel het volledige potentieel en geniet van vroege toegang tot nieuwe functies zodra ze worden geïntroduceerd."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } toevoegen"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chats op hoge snelheid en geavanceerde AI-functies."
       ]
     },
     "color": {
@@ -4553,6 +4621,9 @@
       "Failed to open to contact": [
         "Contact maken mislukt"
       ],
+      "Failed to update secret passphrase": [
+        "Niet gelukt om geheime wachtwoordzin te updaten"
+      ],
       "Filter with this name already exists": [
         "Filter met deze naam bestaat reeds"
       ],
@@ -4681,6 +4752,9 @@
       ],
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
+      ],
+      "Passphrase unavailable": [
+        "Wachtwoordzin niet beschikbaar"
       ],
       "Password is required": [
         "Wachtwoord is vereist"
@@ -5144,6 +5218,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Aliassen kunnen niet worden gebruikt wanneer een extra wachtwoord is ingeschakeld in ${ PASS_APP_NAME }."
       ],
+      "An error occurred with the categories": [
+        "Er is een fout opgetreden met de categorieën"
+      ],
       "App currently unavailable": [
         "App momenteel niet beschikbaar"
       ],
@@ -5296,6 +5373,9 @@
       ],
       "customer support": [
         "klantondersteuning"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Family-abonnementen bieden op dit moment geen ondersteuning voor externe accounts. Maak een ${ BRAND_NAME }-adres aan voor u zich hierbij aansluit. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Als u de uitnodiging accepteert, zetten we uw huidige abonnement om en wordt een eventueel resterend saldo teruggestort."
@@ -5845,11 +5925,17 @@
       "Contacts": [
         "Contacten"
       ],
+      "Domain": [
+        "Domein"
+      ],
       "Drawer": [
         "Zijpaneel"
       ],
       "Hardware not compatible": [
         "Hardware niet compatibel"
+      ],
+      "Password ends with": [
+        "Wachtwoord eindigt met"
       ],
       "Report an issue": [
         "Meld een probleem"
@@ -5868,6 +5954,9 @@
       ],
       "Tell us more": [
         "Vertel ons meer"
+      ],
+      "Username": [
+        "Gebruikersnaam"
       ]
     },
     "Hint": {
@@ -7115,6 +7204,9 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Om altijd toegang te hebben tot e-mail en een geoptimaliseerde mobiele ervaring, download onze ${ androidAppLink } of ${ iosAppLink }-app."
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Voor extra veiligheid kunt u een wachtwoordzin instellen. Deze zal niet worden opgenomen in de agenda-uitnodiging, denk eraan om deze apart met uw gasten te delen."
+      ],
       "For messages newer than ${ oldestDate }": [
         "Voor berichten nieuwer dan ${ oldestDate }"
       ],
@@ -7245,7 +7337,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -7980,6 +8073,9 @@
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Er is iets misgegaan met de ondertekening tijdens het controleren van de contactgegevens, dat veroorzaakt kan zijn door het resetten van uw wachtwoord."
       ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Deze gesprekken worden hier bewaard op basis van het gegevensbewaarbeleid van uw organisatie."
+      ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Ze kunnen u geen spam versturen, als ze uw echte e-mailadres niet kennen. Bescherm uw inbox met Hide-my-email-aliassen."
       ],
@@ -8395,6 +8491,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "U staat op het punt uw standaardbrowser te openen om te bezoeken:"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "U bent momenteel aangemeld als ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "U gebruikt meer opslag dan is inbegrepen in een ${ downgradedPlanName } abonnement. Wis of verwijder gegevens om te kunnen downgraden."
@@ -9023,6 +9122,9 @@
       "Authenticator app": [
         "Authenticatie app"
       ],
+      "Automated confirmations and alerts": [
+        "Geautomatiseerde bevestigingen en meldingen"
+      ],
       "BCC": [
         "BCC"
       ],
@@ -9034,6 +9136,9 @@
       ],
       "Blind Carbon Copy": [
         "BCC"
+      ],
+      "Bookings, billings, and orders": [
+        "Boekingen, factureringen en bestellingen"
       ],
       "Browser": [
         "Browser"
@@ -9067,6 +9172,9 @@
       ],
       "Cash": [
         "Contant"
+      ],
+      "Categories badge": [
+        "Categorieën badge"
       ],
       "Category": [
         "Categorie"
@@ -9128,6 +9236,9 @@
       "Date:": [
         "Datum:"
       ],
+      "Deals, offers, marketing emails": [
+        "Aanbiedingen, acties, marketing-e-mails"
+      ],
       "Delete": [
         "Verwijderen"
       ],
@@ -9139,6 +9250,9 @@
       ],
       "Did not follow instructions": [
         "Heeft de instructies niet gevolgd"
+      ],
+      "Discussion board posts and threads": [
+        "Discussieforum berichten en discussiedraden"
       ],
       "Do you have any suggestions for our team?": [
         "Heeft u suggesties voor ons team?"
@@ -9229,6 +9343,33 @@
       ],
       "From: ${ fromEmail }": [
         "Van: ${ fromEmail }"
+      ],
+      "Go to Forums": [
+        "Ga naar Forums"
+      ],
+      "Go to Newsletters": [
+        "Ga naar Nieuwsbrieven"
+      ],
+      "Go to Primary": [
+        "Ga naar Primair"
+      ],
+      "Go to Promotions": [
+        "Ga naar Aanbiedingen"
+      ],
+      "Go to Social": [
+        "Ga naar Social"
+      ],
+      "Go to Transactions": [
+        "Ga naar Transacties"
+      ],
+      "Go to Updates": [
+        "Ga naar Updates"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Help ons de categorieën te verbeteren door de categorie te kiezen die het beste bij deze e-mail past. Bedankt voor uw hulp!"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Help ons de aankomende e-mailcategorisatie te verbeteren"
       ],
       "Hide password": [
         "Wachtwoord verbergen"
@@ -9359,6 +9500,12 @@
       "No label found": [
         "Geen label gevonden"
       ],
+      "No results found": [
+        "Geen resultaten gevonden"
+      ],
+      "Non-promotional content and news": [
+        "Niet-promotionele inhoud en nieuws"
+      ],
       "Not factually correct": [
         "Niet feitelijk correct"
       ],
@@ -9397,6 +9544,9 @@
       ],
       "Participants": [
         "Deelnemers"
+      ],
+      "Passphrase:": [
+        "Wachtwoordzin:"
       ],
       "Password": [
         "Wachtwoord"
@@ -9467,6 +9617,9 @@
       "Search in": [
         "Zoeken in"
       ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Selecteer de categorieën die u wilt opnemen, en schakel meldingen in om op de hoogte te worden gesteld van nieuwe e-mails in een categorie."
+      ],
       "Send auto-reply": [
         "Automatisch antwoord versturen"
       ],
@@ -9481,6 +9634,9 @@
       ],
       "Social": [
         "Sociaal"
+      ],
+      "Social media updates and activity": [
+        "Updates en activiteit op sociale media"
       ],
       "Starred": [
         "Favorieten"
@@ -9514,6 +9670,9 @@
       ],
       "System information": [
         "Systeeminformatie"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "De categorie is bijgewerkt, bedankt voor uw feedback!"
       ],
       "The filter is disabled. ${ enableButton }": [
         "Het filter is uitgeschakeld. ${ enableButton }"
@@ -9575,11 +9734,20 @@
       "Weak password": [
         "Zwak wachtwoord"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "We verbeteren hoe e-mails worden gecategoriseerd. Uw feedback helpt het slimmer en nauwkeuriger te maken."
+      ],
       "What happened?": [
         "Wat is er gebeurd?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "Wat is uw belangrijkste reden om te annuleren of te downgraden?"
+      ],
+      "Which category should this be recategorized under?": [
+        "Onder welke categorie moet dit worden heringedeeld?"
+      ],
+      "Why am I seeing this?": [
+        "Waarom zie ik dit?"
       ],
       "With attachment": [
         "Met bijlage"
@@ -9589,6 +9757,9 @@
       ],
       "Writing assistant": [
         "Schrijfassistent"
+      ],
+      "You cannot disable all categories": [
+        "U kunt niet alle categorieën uitschakelen."
       ],
       "Your alias": [
         "Uw alias"
@@ -9747,6 +9918,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Maak een nieuwe kalender om uw uitnodigingen te beheren"
+      ],
+      "Deleted": [
+        "Verwijderd"
       ],
       "Drafts": [
         "Concepten"
@@ -11218,6 +11392,9 @@
       "Passcode copied to clipboard": [
         "Passcode gekopieerd naar klembord"
       ],
+      "Passphrase copied to clipboard": [
+        "Wachtwoordzin gekopieerd naar klembord"
+      ],
       "Password has been set successfully": [
         "Wachtwoord is succesvol ingesteld"
       ],
@@ -11788,11 +11965,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Gedurende deze periode kunt u uw abonnement niet wijzigen of annuleren. Wacht tot uw betaling is voltooid voordat u wijzigingen aanbrengt. Bedankt voor uw geduld."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exclusief ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Exclusief ${ taxRate }% belastingen: ${ taxAmount }"
+      ],
       "Got it": [
         "Begrepen"
       ],
       "I'm purchasing as a business": [
         "Ik koop dit voor mijn bedrijf."
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclusief ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inclusief ${ taxRate }% belastingen: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/JJ"
@@ -11808,6 +11997,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Wordt verlengd voor ${ renewPriceStr }, altijd opzegbaar."
+      ],
+      "Taxes": [
+        "Belastingen"
       ],
       "terms & conditions": [
         "algemene voorwaarden"
@@ -11839,6 +12031,9 @@
       ],
       "Timeout exceeded": [
         "Time-out overschreden"
+      ],
+      "VAT": [
+        "BTW"
       ],
       "VAT number": [
         "BTW-nummer"
@@ -11983,6 +12178,9 @@
       ],
       "End date": [
         "Eind datum"
+      ],
+      "Enter passphrase": [
+        "Voer wachtwoordzin in"
       ],
       "Filter folders": [
         "Filter mappen"
@@ -13972,6 +14170,9 @@
         "Gecategoriseerd ${ elementsCount } bericht.",
         "Opnieuw Gecategoriseerde ${ elementsCount } berichten."
       ],
+      "Secret passphrase updated": [
+        "Geheime wachtwoordzin bijgewerkt"
+      ],
       "Self-destruction removed": [
         "Zelfvernietiging verwijderd"
       ],
@@ -14425,6 +14626,9 @@
       "Customize calendar import": [
         "Agenda-import aanpassen"
       ],
+      "Customize categories": [
+        "Categorieën aanpassen"
+      ],
       "Customize your mail import": [
         "Uw e-mailimport aanpassen"
       ],
@@ -14742,6 +14946,9 @@
       ],
       "Move all messages to trash": [
         "Alle berichten naar prullenbak verplaatsen"
+      ],
+      "Move messages to": [
+        "Verplaats berichten naar"
       ],
       "Move to": [
         "Verplaatsen naar"
@@ -15185,6 +15392,9 @@
       ],
       "Your subscriptions in one place": [
         "Uw abonnementen op één plek"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Categorieën komen eraan!"
       ]
     },
     "Today icon tooltip in mini calendar": {
