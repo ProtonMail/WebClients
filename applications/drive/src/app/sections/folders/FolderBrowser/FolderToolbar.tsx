@@ -104,9 +104,7 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
                     ) : null}
 
                     {shouldShowShareButton && <ShareToolbarButton onClick={showFileSharingModal} />}
-                    {shouldShowShareLinkButton && (
-                        <ShareLinkButton type="toolbar" selectedItems={selectedItems} onClick={showLinkSharingModal} />
-                    )}
+                    {shouldShowShareLinkButton && <ShareLinkButton type="toolbar" onClick={showLinkSharingModal} />}
                 </>
             );
         }
@@ -122,11 +120,7 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
                     <>
                         {shouldShowShareLinkButton && selectedItem && (
                             <>
-                                <ShareLinkButton
-                                    type="toolbar"
-                                    selectedItems={selectedItems}
-                                    onClick={showLinkSharingModal}
-                                />
+                                <ShareLinkButton type="toolbar" onClick={showLinkSharingModal} />
                                 <Vr />
                             </>
                         )}
@@ -143,7 +137,7 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
                         )}
                         <DetailsButton type="toolbar" selectedItems={selectedItems} onClick={showDetailsModal} />
 
-                        {permissions.canEdit && (
+                        {permissions.canTrash && (
                             <>
                                 <Vr />
                                 <TrashButton type="toolbar" selectedItems={selectedItems} />
@@ -172,6 +166,7 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
             {modals.detailsModal}
             {modals.filesDetailsModal}
             {modals.linkSharingModal}
+            {modals.fileSharingModal}
         </Toolbar>
     );
 };
