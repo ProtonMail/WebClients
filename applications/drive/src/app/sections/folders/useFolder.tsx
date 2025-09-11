@@ -42,7 +42,7 @@ export function useFolder() {
     const load = useCallback(
         async (folderNodeUid: string, folderShareId: string, ac: AbortController) => {
             const { setIsLoading, reset, setItem, setFolder, setRole, setPermissions } = useFolderStore.getState();
-            const { devices } = useDeviceStore.getState();
+            const { getByRootFolderUid } = useDeviceStore.getState();
             reset();
             setIsLoading(true);
 
@@ -51,10 +51,13 @@ export function useFolder() {
                 const error = Array.from(errors.values()).at(0);
                 handleFolderError(error as Error);
                 const legacyNode = await mapNodeToLegacyItem(node, folderShareId, drive);
-                const isDeviceRoot = !node.parentUid && devices.has(folderNodeUid);
-                const isDeviceFolder = isDeviceRoot || (legacyNode.rootUid && devices.has(legacyNode.rootUid));
+                const isDeviceRoot = !node.parentUid && !!getByRootFolderUid(folderNodeUid);
+                const isDeviceFolder = isDeviceRoot || (legacyNode.rootUid && !!getByRootFolderUid(legacyNode.rootUid));
                 const role = await getNodeEffectiveRole(node, drive);
                 const canEdit = role !== MemberRole.Viewer && !isDeviceRoot;
+                const canTrash = role !== MemberRole.Viewer;
+                const isRoot = !node.parentUid;
+                const isAdmin = role === MemberRole.Admin;
 
                 setFolder({
                     ...legacyNode,
@@ -63,14 +66,15 @@ export function useFolder() {
                 });
                 setRole(role);
                 setPermissions({
-                    canEdit: canEdit,
-                    canShare: role === MemberRole.Admin,
+                    canEdit,
+                    canShare: isAdmin && (isDeviceRoot || isRoot),
                     canCreateNode: canEdit,
                     canCreateDocs: isDocsEnabled && canEdit && !isDeviceFolder,
                     canCreateSheets: isSheetsEnabled && canEdit && !isDeviceFolder,
-                    canShareNode: role === MemberRole.Admin,
+                    canShareNode: isAdmin && !isDeviceRoot && !isRoot,
                     canMove: canEdit,
                     canRename: canEdit,
+                    canTrash,
                 });
 
                 for await (const maybeNode of drive.iterateFolderChildren(folderNodeUid, ac.signal)) {
