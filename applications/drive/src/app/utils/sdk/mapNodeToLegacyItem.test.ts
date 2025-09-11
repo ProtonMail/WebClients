@@ -98,7 +98,7 @@ describe('mapNodeToLegacyItem', () => {
             rootShareId: 'share-id-1',
             hasThumbnail: true,
             fileModifyTime: modifyTime / 1000,
-            size: 1000,
+            size: 1024,
             trashed: null,
             parentLinkId: parentId,
             parentUid: parentUid,
@@ -235,7 +235,7 @@ describe('mapNodeToLegacyItem', () => {
 
         const result = await mapNodeToLegacyItem(maybeNode, mockShareId, mockDrive);
 
-        expect(result.size).toBe(1500);
+        expect(result.size).toBe(2048);
         expect(result.activeRevision?.size).toBe(2048);
     });
 

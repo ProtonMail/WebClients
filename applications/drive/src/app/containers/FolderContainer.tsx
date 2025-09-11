@@ -89,12 +89,10 @@ export default function FolderContainer({ type }: { type: LinkURLType }) {
         return lastFolderPromise.current;
     }, [shareId, linkId, type]);
 
-    // In case we open preview, folder doesn't need to change.
-    lastFolderPromise.current = folderPromise;
-
     useEffect(() => {
         folderPromise
             .then((folder) => {
+                lastFolderPromise.current = folderPromise;
                 const activeFolderUid = generateNodeUid(activeFolder.volumeId, activeFolder.linkId);
                 if (folder && folder.uid !== activeFolderUid) {
                     setFolder(folder);
