@@ -16,9 +16,10 @@ import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
 import { CacheType } from '@proton/redux-utilities';
 import { updateEmail, updateResetEmail } from '@proton/shared/lib/api/settings';
+import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
-import { SETTINGS_PROTON_SENTINEL_STATE, SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
+import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
