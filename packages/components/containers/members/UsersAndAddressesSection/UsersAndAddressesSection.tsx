@@ -99,6 +99,7 @@ import SubUserDeleteModal from '../SubUserDeleteModal';
 import SubUserEditModal from '../SubUserEditModal';
 import UserInviteOrEditModal from '../UserInviteOrEditModal';
 import UserRemoveModal from '../UserRemoveModal';
+import { UnprivatizeUsersAction } from './UnprivatizeUsersAction';
 import UserAndAddressesSectionIntro from './UserAndAddressesSectionIntro';
 import UsersAndAddressesSectionHeader from './UsersAndAddressesSectionHeader';
 import UserTableBadge from './UsersTableBadge';
@@ -596,6 +597,8 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                     {c('Action').t`Add address`}
                                 </Button>
                             ) : null}
+
+                            <UnprivatizeUsersAction />
                         </>
                     )}
                 </div>
