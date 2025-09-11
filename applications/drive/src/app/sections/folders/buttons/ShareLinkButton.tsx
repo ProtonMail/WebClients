@@ -3,26 +3,11 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import { isMultiSelect, noSelection } from '../../../components/sections/ToolbarButtons/utils';
 import type { FolderButtonProps } from './types';
 
-type Item = {
-    uid: string;
-    name: string;
-};
-
-type Props = FolderButtonProps & {
-    selectedItems: Item[];
-};
-
-export const ShareLinkButton = ({ selectedItems, onClick, type, close }: Props) => {
-    if (noSelection(selectedItems) || isMultiSelect(selectedItems)) {
-        return null;
-    }
-
+export const ShareLinkButton = ({ onClick, type, close }: FolderButtonProps) => {
     const title = c('Action').t`Share`;
     const icon = 'user-plus' as const;
-
     if (type === 'toolbar') {
         return (
             <ToolbarButton
