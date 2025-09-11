@@ -14,6 +14,7 @@ import TopNavbarB2BOnboardingButton from '../../components/topnavbar/TopNavbarB2
 import TopNavbarList from '../../components/topnavbar/TopNavbarList';
 import TopNavbarListItem from '../../components/topnavbar/TopNavbarListItem';
 import TopNavbarUpsell from '../../components/topnavbar/TopNavbarUpsell';
+import useSubscriptionStateCookie from '../../hooks/subscriptionStateCookie/useSubscriptionStateCookie';
 import useConfig from '../../hooks/useConfig';
 import useIsPaidUserCookie from '../../hooks/useIsPaidUserCookie';
 
@@ -47,6 +48,7 @@ const PrivateHeader = ({
     app,
     className,
 }: Props) => {
+    useSubscriptionStateCookie();
     useIsPaidUserCookie();
 
     const { APP_NAME } = useConfig();
