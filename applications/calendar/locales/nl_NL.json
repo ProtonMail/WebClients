@@ -89,6 +89,9 @@
       "Add public holidays": [
         "Feestdagen toevoegen"
       ],
+      "Add secret passphrase": [
+        "Geheime wachtwoordzin toevoegen"
+      ],
       "Add to group": [
         "Aan groep toevoegen"
       ],
@@ -473,6 +476,9 @@
       "Join calendar": [
         "Vervoeg agenda"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Deelnemen met ${ MEET_APP_NAME }"
+      ],
       "Keep current time zone": [
         "Behoudt huidige tijdzone"
       ],
@@ -598,6 +604,9 @@
       ],
       "Open settings": [
         "Instellingen openen"
+      ],
+      "Passphrase": [
+        "Wachtwoordzin"
       ],
       "Pause indexing": [
         "Pauzeer indexeren"
@@ -850,6 +859,9 @@
       ],
       "Update recovery phrase": [
         "Herstelzin bijwerken"
+      ],
+      "Update secret passphrase": [
+        "Geheime wachtwoordzin updaten"
       ],
       "Upgrade": [
         "Upgraden"
@@ -1226,11 +1238,17 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-plaatsen hebben tijdens de proefperiode."
@@ -1482,6 +1500,9 @@
       ],
       "Manual setup problem": [
         "Probleem met eigen setup"
+      ],
+      "Meet problem": [
+        "Meet probleem"
       ],
       "Other": [
         "Anders"
@@ -1809,12 +1830,47 @@
         "Uitvouwen"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Toegang tot geavanceerde AI-modellen"
+      ],
+      "Basic chat history": [
+        "Basis gespreksgeschiedenis"
+      ],
+      "Full chat history with search": [
+        "Volledige chatgeschiedenis met zoeken"
+      ],
+      "Large file upload support": [
+        "Ondersteuning voor het uploaden van grote bestanden"
+      ],
+      "Limited daily chats": [
+        "Beperkt aantal dagelijkse gesprekken"
+      ],
+      "Limited favorites": [
+        "Beperkte favorieten"
+      ],
+      "Unlimited daily chats": [
+        "Onbeperkt aantal dagelijkse gesprekken"
+      ],
+      "Unlimited favorites for quick access": [
+        "Onbeperkt favorieten voor snelle toegang"
+      ],
+      "Upload and query multiple large files": [
+        "Meerdere grote bestanden uploaden en opvragen"
+      ],
+      "Upload and query small files": [
+        "Kleine bestanden uploaden en opvragen"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } is een privacygerichte AI die u helpt meer gedaan te krijgen, terwijl uw gegevens veilig blijven. Ontgrendel het volledige potentieel en geniet van vroege toegang tot nieuwe functies zodra ze worden geïntroduceerd."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } toevoegen"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chats op hoge snelheid en geavanceerde AI-functies."
       ]
     },
     "colon": {
@@ -3500,6 +3556,9 @@
       "Failed to open to contact": [
         "Contact maken mislukt"
       ],
+      "Failed to update secret passphrase": [
+        "Niet gelukt om geheime wachtwoordzin te updaten"
+      ],
       "First name is too long": [
         "Voornaam is te lang"
       ],
@@ -3628,6 +3687,9 @@
       ],
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
+      ],
+      "Passphrase unavailable": [
+        "Wachtwoordzin niet beschikbaar"
       ],
       "Password is required": [
         "Wachtwoord is vereist"
@@ -4195,6 +4257,9 @@
       "customer support": [
         "klantondersteuning"
       ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Family-abonnementen bieden op dit moment geen ondersteuning voor externe accounts. Maak een ${ BRAND_NAME }-adres aan voor u zich hierbij aansluit. ${ link }"
+      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Als u de uitnodiging accepteert, zetten we uw huidige abonnement om en wordt een eventueel resterend saldo teruggestort."
       ],
@@ -4427,11 +4492,17 @@
       "Contacts": [
         "Contacten"
       ],
+      "Domain": [
+        "Domein"
+      ],
       "Drawer": [
         "Zijpaneel"
       ],
       "Name": [
         "Naam"
+      ],
+      "Password ends with": [
+        "Wachtwoord eindigt met"
       ],
       "Repeat event": [
         "Gebeurtenis herhalen"
@@ -4441,6 +4512,9 @@
       ],
       "Security Center": [
         "Beveiligingscentrum"
+      ],
+      "Username": [
+        "Gebruikersnaam"
       ]
     },
     "Hint": {
@@ -5275,6 +5349,9 @@
       "finance": [
         "financiën"
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Voor extra veiligheid kunt u een wachtwoordzin instellen. Deze zal niet worden opgenomen in de agenda-uitnodiging, denk eraan om deze apart met uw gasten te delen."
+      ],
       "Frequency modifications will be lost.": [
         "Aanpassingen m.b.t. frequentie zullen verloren gaan."
       ],
@@ -5929,6 +6006,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "U staat op het punt uw standaardbrowser te openen om te bezoeken:"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "U bent momenteel aangemeld als ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "U gebruikt meer opslag dan is inbegrepen in een ${ downgradedPlanName } abonnement. Wis of verwijder gegevens om te kunnen downgraden."
@@ -6627,6 +6707,9 @@
       ],
       "Participants": [
         "Deelnemers"
+      ],
+      "Passphrase:": [
+        "Wachtwoordzin:"
       ],
       "Password": [
         "Wachtwoord"
@@ -8223,6 +8306,9 @@
       ],
       "Passcode copied to clipboard": [
         "Passcode gekopieerd naar klembord"
+      ],
+      "Passphrase copied to clipboard": [
+        "Wachtwoordzin gekopieerd naar klembord"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8800,11 +8886,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Gedurende deze periode kunt u uw abonnement niet wijzigen of annuleren. Wacht tot uw betaling is voltooid voordat u wijzigingen aanbrengt. Bedankt voor uw geduld."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exclusief ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Exclusief ${ taxRate }% belastingen: ${ taxAmount }"
+      ],
       "Got it": [
         "Begrepen"
       ],
       "I'm purchasing as a business": [
         "Ik koop dit voor mijn bedrijf."
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclusief ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inclusief ${ taxRate }% belastingen: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/JJ"
@@ -8820,6 +8918,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Wordt verlengd voor ${ renewPriceStr }, altijd opzegbaar."
+      ],
+      "Taxes": [
+        "Belastingen"
       ],
       "terms & conditions": [
         "algemene voorwaarden"
@@ -8851,6 +8952,9 @@
       ],
       "Timeout exceeded": [
         "Time-out overschreden"
+      ],
+      "VAT": [
+        "BTW"
       ],
       "VAT number": [
         "BTW-nummer"
@@ -9004,6 +9108,9 @@
       ],
       "E.g., ": [
         "Bijv., "
+      ],
+      "Enter passphrase": [
+        "Voer wachtwoordzin in"
       ],
       "Filter groups": [
         "Filter groepen"
@@ -10621,6 +10728,9 @@
       ],
       "Problem reported": [
         "Probleem gerapporteerd"
+      ],
+      "Secret passphrase updated": [
+        "Geheime wachtwoordzin bijgewerkt"
       ],
       "Undo in progress": [
         "Bezig met ongedaan maken"

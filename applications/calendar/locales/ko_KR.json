@@ -5939,6 +5939,9 @@
       "You are about to open your default browser and visit:": [
         "기본 브라우저를 열고 다음을 방문합니다:"
       ],
+      "You are currently signed in as ${ username }.": [
+        "현재 ${ username }(으)로 로그인 했습니다."
+      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "${ downgradedPlanName } 플랜에 포함된 저장 공간보다 더 많이 사용하고 계십니다. 다운그레이드를 진행하려면 일부 데이터를 지우거나 완전 삭제하세요."
       ],
@@ -9764,6 +9767,9 @@
       ]
     },
     "Spotlight": {
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME }을 만나보세요!"
+      ],
       "Color-code your calendar to better organize your day, track your time, and more.": [
         "캘린더를 색 부호화하여 하루의 정리, 시간의 추적과 다른 것을 더 좋게."
       ],
