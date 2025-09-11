@@ -483,6 +483,9 @@
       "Edit address": [
         "アドレスを編集"
       ],
+      "Edit categories": [
+        "カテゴリを編集"
+      ],
       "Edit draft": [
         "下書きを編集"
       ],
@@ -1454,9 +1457,6 @@
       ],
       "Trust": [
         "信頼する"
-      ],
-      "Trust key": [
-        "鍵を信頼する"
       ],
       "Trust public key": [
         "公開鍵を信頼"
@@ -5183,6 +5183,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "エイリアスは、${ PASS_APP_NAME } で追加のパスワードが有効になっている場合には使用できません。"
       ],
+      "An error occurred with the categories": [
+        "カテゴリでエラーが発生しました"
+      ],
       "App currently unavailable": [
         "アプリは現在利用できません"
       ],
@@ -7218,7 +7221,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -8366,6 +8369,9 @@
       "You are about to open your default browser and visit:": [
         "既定のブラウザーで次のページにアクセスしようとしています"
       ],
+      "You are currently signed in as ${ username }.": [
+        "現在 ${ username } としてサインインしています。"
+      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "${ downgradedPlanName } プランに含まれるストレージを超えるストレージを使用しています。 ダウングレードするには、データを削除してください。"
       ],
@@ -8970,6 +8976,9 @@
       "Authenticator app": [
         "認証アプリ"
       ],
+      "Automated confirmations and alerts": [
+        "自動確認とアラート"
+      ],
       "BCC": [
         "BCC"
       ],
@@ -8981,6 +8990,9 @@
       ],
       "Blind Carbon Copy": [
         "ブラインドカーボンコピー"
+      ],
+      "Bookings, billings, and orders": [
+        "予約、請求、注文"
       ],
       "Browser": [
         "ブラウザ"
@@ -9078,6 +9090,9 @@
       "Date:": [
         "日時："
       ],
+      "Deals, offers, marketing emails": [
+        "お得な情報、特典、マーケティングメール"
+      ],
       "Delete": [
         "削除"
       ],
@@ -9089,6 +9104,9 @@
       ],
       "Did not follow instructions": [
         "指示に従っていません"
+      ],
+      "Discussion board posts and threads": [
+        "掲示板の投稿とスレッド"
       ],
       "Do you have any suggestions for our team?": [
         "私たちのチームに対する提案はありますか?"
@@ -9179,6 +9197,27 @@
       ],
       "From: ${ fromEmail }": [
         "送信者: ${ fromEmail }"
+      ],
+      "Go to Forums": [
+        "フォーラムへ移動"
+      ],
+      "Go to Newsletters": [
+        "ニュースレターへ移動"
+      ],
+      "Go to Primary": [
+        "プライマリーへ移動"
+      ],
+      "Go to Promotions": [
+        "プロモーションへ移動"
+      ],
+      "Go to Social": [
+        "ソーシャルへ移動"
+      ],
+      "Go to Transactions": [
+        "取引へ移動"
+      ],
+      "Go to Updates": [
+        "アップデートへ移動"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "このメールに最適なカテゴリを選択して、改善にご協力ください。ご協力ありがとうございます！"
@@ -9318,6 +9357,9 @@
       "No results found": [
         "結果が見つかりません"
       ],
+      "Non-promotional content and news": [
+        "プロモーション以外のコンテンツおよびニュース"
+      ],
       "Not factually correct": [
         "正しくない"
       ],
@@ -9429,6 +9471,9 @@
       "Search in": [
         "検索対象"
       ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "含めるカテゴリを選択し、そのカテゴリ内の新しいメールについて通知を受け取れるように、通知を有効にしてください。"
+      ],
       "Send auto-reply": [
         "自動返信を送信"
       ],
@@ -9443,6 +9488,9 @@
       ],
       "Social": [
         "ソーシャル"
+      ],
+      "Social media updates and activity": [
+        "ソーシャルメディアの更新とアクティビティ"
       ],
       "Starred": [
         "スター付き"
@@ -9563,6 +9611,9 @@
       ],
       "Writing assistant": [
         "執筆アシスタント"
+      ],
+      "You cannot disable all categories": [
+        "すべてのカテゴリを無効化することはできません"
       ],
       "Your alias": [
         "あなたのエイリアス"
@@ -14217,6 +14268,9 @@
       ],
       "Customize calendar import": [
         "カレンダーのインポートをカスタマイズ"
+      ],
+      "Customize categories": [
+        "カテゴリのカスタマイズ"
       ],
       "Customize your mail import": [
         "メールのインポートをカスタマイズ"

@@ -486,6 +486,9 @@
       "Edit address": [
         "Επεξεργασία διεύθυνσης"
       ],
+      "Edit categories": [
+        "Επεξεργασία κατηγοριών"
+      ],
       "Edit draft": [
         "Τροποποίηση πρόχειρου"
       ],
@@ -1460,8 +1463,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -5219,6 +5221,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Τα ψευδώνυμα δεν μπορούν να χρησιμοποιηθούν όταν είναι ενεργοποιημένος ένας επιπλέον κωδικός πρόσβασης στο ${ PASS_APP_NAME }."
       ],
+      "An error occurred with the categories": [
+        "Παρουσιάστηκε ένα σφάλμα με τις κατηγορίες"
+      ],
       "App currently unavailable": [
         "Η εφαρμογή δεν είναι διαθέσιμη αυτήν τη στιγμή"
       ],
@@ -7335,7 +7340,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -9119,6 +9125,9 @@
       "Authenticator app": [
         "Εφαρμογή επαλήθευσης"
       ],
+      "Automated confirmations and alerts": [
+        "Αυτοματοποιημένες επιβεβαιώσεις και ειδοποιήσεις"
+      ],
       "BCC": [
         "Κρυφή Κοιν."
       ],
@@ -9130,6 +9139,9 @@
       ],
       "Blind Carbon Copy": [
         "Κρυφή Κοινοποίηση"
+      ],
+      "Bookings, billings, and orders": [
+        "Κρατήσεις, λογαριασμοί και παραγγελίες"
       ],
       "Browser": [
         "Πρόγραμμα περιήγησης"
@@ -9227,6 +9239,9 @@
       "Date:": [
         "Ημερομηνία:"
       ],
+      "Deals, offers, marketing emails": [
+        "Συμφωνίες, προσφορές, διαφημιστικά email"
+      ],
       "Delete": [
         "Διαγραφή"
       ],
@@ -9238,6 +9253,9 @@
       ],
       "Did not follow instructions": [
         "Δεν ακολούθησε τις οδηγίες"
+      ],
+      "Discussion board posts and threads": [
+        "Δημοσιεύσεις και θέματα σε φόρουμ συζητήσεων"
       ],
       "Do you have any suggestions for our team?": [
         "Έχετε να προτείνετε κάτι στην ομάδα μας;"
@@ -9328,6 +9346,27 @@
       ],
       "From: ${ fromEmail }": [
         "Από: ${ fromEmail }"
+      ],
+      "Go to Forums": [
+        "Μετάβαση στα Φόρουμ"
+      ],
+      "Go to Newsletters": [
+        "Μετάβαση στα Ενημερωτικά Δελτία"
+      ],
+      "Go to Primary": [
+        "Μετάβαση στα Κύρια"
+      ],
+      "Go to Promotions": [
+        "Μετάβαση στις Προσφορές"
+      ],
+      "Go to Social": [
+        "Μετάβαση στα Κοινωνικά"
+      ],
+      "Go to Transactions": [
+        "Μετάβαση στις Συναλλαγές"
+      ],
+      "Go to Updates": [
+        "Μετάβαση στις Ενημερώσεις"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Βοηθήστε μας να βελτιώσουμε τις κατηγορίες επιλέγοντας αυτή που ταιριάζει καλύτερα σε αυτό το email. Ευχαριστούμε για τη βοήθειά σας!"
@@ -9467,6 +9506,9 @@
       "No results found": [
         "Δε βρέθηκαν αποτελέσματα"
       ],
+      "Non-promotional content and news": [
+        "Μη προωθητικό περιεχόμενο και ειδήσεις"
+      ],
       "Not factually correct": [
         "Δεν αντιστοιχεί στην πραγματικότητα"
       ],
@@ -9578,6 +9620,9 @@
       "Search in": [
         "Αναζήτηση σε"
       ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Επιλέξτε τις κατηγορίες που θέλετε να συμπεριλάβετε και ενεργοποιήστε τις ειδοποιήσεις για να ειδοποιείστε για νέα μηνύματα σε μια κατηγορία."
+      ],
       "Send auto-reply": [
         "Αποστολή αυτόματης απάντησης"
       ],
@@ -9592,6 +9637,9 @@
       ],
       "Social": [
         "Κοινωνικά"
+      ],
+      "Social media updates and activity": [
+        "Ενημερώσεις και δραστηριότητες στα μέσα κοινωνικής δικτύωσης"
       ],
       "Starred": [
         "Με αστέρι"
@@ -9712,6 +9760,9 @@
       ],
       "Writing assistant": [
         "Βοηθός γραφής"
+      ],
+      "You cannot disable all categories": [
+        "Δεν μπορείτε να απενεργοποιήσετε όλες τις κατηγορίες"
       ],
       "Your alias": [
         "Το ψευδώνυμο σας"
@@ -14490,6 +14541,9 @@
       ],
       "Customize calendar import": [
         "Προσαρμογή εισαγωγής ημερολογίου"
+      ],
+      "Customize categories": [
+        "Προσαρμογή κατηγοριών"
       ],
       "Customize your mail import": [
         "Προσαρμογή εισαγωγής μηνυμάτων"

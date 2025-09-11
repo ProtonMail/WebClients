@@ -486,6 +486,9 @@
       "Edit address": [
         "Edita l'adreça"
       ],
+      "Edit categories": [
+        "Editar categories"
+      ],
       "Edit draft": [
         "Edita l'esborrany"
       ],
@@ -1460,8 +1463,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -5219,6 +5221,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Els àlies no es poden utilitzar quan s'ha activat una contrasenya addicional a ${ PASS_APP_NAME }."
       ],
+      "An error occurred with the categories": [
+        "S'ha produït un error amb les categories"
+      ],
       "App currently unavailable": [
         "L'aplicació no està disponible actualment."
       ],
@@ -7335,7 +7340,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -9119,6 +9125,9 @@
       "Authenticator app": [
         "Aplicació d'autenticació"
       ],
+      "Automated confirmations and alerts": [
+        "Confirmacions i alertes automatitzades"
+      ],
       "BCC": [
         "CCO"
       ],
@@ -9130,6 +9139,9 @@
       ],
       "Blind Carbon Copy": [
         "Còpia oculta"
+      ],
+      "Bookings, billings, and orders": [
+        "Reserves, factures i comandes"
       ],
       "Browser": [
         "Navegador"
@@ -9227,6 +9239,9 @@
       "Date:": [
         "Data:"
       ],
+      "Deals, offers, marketing emails": [
+        "Ofertes, promocions, correus electrònics de màrqueting"
+      ],
       "Delete": [
         "Elimina"
       ],
@@ -9238,6 +9253,9 @@
       ],
       "Did not follow instructions": [
         "No s'han seguit les instruccions"
+      ],
+      "Discussion board posts and threads": [
+        "Publicacions i fils del fòrum de discussió"
       ],
       "Do you have any suggestions for our team?": [
         "Teniu algun suggeriment pel nostre equip?"
@@ -9328,6 +9346,27 @@
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
+      ],
+      "Go to Forums": [
+        "Aneu als fòrums"
+      ],
+      "Go to Newsletters": [
+        "Aneu als butlletins"
+      ],
+      "Go to Primary": [
+        "Aneu al primari"
+      ],
+      "Go to Promotions": [
+        "Aneu a les promocions"
+      ],
+      "Go to Social": [
+        "Aneu al canal de continguts"
+      ],
+      "Go to Transactions": [
+        "Aneu a les transaccions"
+      ],
+      "Go to Updates": [
+        "Aneu a les actualitzacions"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Ajudeu-nos a millorar les categories escollint la que millor s'ajusti a aquest correu electrònic. Gràcies per la vostra col·laboració!"
@@ -9467,6 +9506,9 @@
       "No results found": [
         "No s'ha trobat cap resultat"
       ],
+      "Non-promotional content and news": [
+        "Contingut i notícies no promocionals"
+      ],
       "Not factually correct": [
         "Els fets no són correctes"
       ],
@@ -9578,6 +9620,9 @@
       "Search in": [
         "Cerca a"
       ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Seleccioneu les categories a incloure, i habiliteu-ne les notificacions per rebre alertes sobre correus electrònics nous en cada una."
+      ],
       "Send auto-reply": [
         "Enviar resposta automàtica"
       ],
@@ -9592,6 +9637,9 @@
       ],
       "Social": [
         "Social"
+      ],
+      "Social media updates and activity": [
+        "Actualitzacions i activitat de les xarxes socials"
       ],
       "Starred": [
         "Destacats"
@@ -9712,6 +9760,9 @@
       ],
       "Writing assistant": [
         "Assistent d'escriptura"
+      ],
+      "You cannot disable all categories": [
+        "No podeu desactivar totes les categories"
       ],
       "Your alias": [
         "El vostre àlies"
@@ -14490,6 +14541,9 @@
       ],
       "Customize calendar import": [
         "Personalitzeu la importació del calendari"
+      ],
+      "Customize categories": [
+        "Personalitzar categories"
       ],
       "Customize your mail import": [
         "Personalitzeu la importació del vostre correu electrònic"

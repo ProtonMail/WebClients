@@ -6930,6 +6930,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Conectați-vă la ${ MAIL_APP_NAME } pentru a vă activa adresa."
       ],
+      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
+        "Conectarea cu o cheie de securitate nu este încă suportată în toate aplicațiile. Fără TOTP, conectarea la unele aplicații poate eșua."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
       ],
@@ -7455,6 +7458,9 @@
       ],
       "You already have a free account": [
         "Deja aveți un cont gratuit"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "V-ați conectat cu ${ username }."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Servere dedicate folosite: ${ ipCount } din ${ ipAddresses } disponibile.",

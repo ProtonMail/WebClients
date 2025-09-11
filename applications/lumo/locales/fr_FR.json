@@ -635,6 +635,9 @@
       "Manual setup problem": [
         "Problème avec la configuration manuelle"
       ],
+      "Meet problem": [
+        "Problème avec Meet"
+      ],
       "Other": [
         "Autre"
       ],
@@ -1081,6 +1084,9 @@
       "Large file uploads": [
         "Chargement de fichiers volumineux"
       ],
+      "Unlimited chat history": [
+        "Historique de chat illimité"
+      ],
       "Unlimited favourite chats": [
         "Conversations favorites illimitées"
       ],
@@ -1146,6 +1152,9 @@
       "Add ${ LUMO_APP_NAME }": [
         "Ajouter ${ LUMO_APP_NAME }"
       ],
+      "Add to active": [
+        "Ajouter aux éléments actifs"
+      ],
       "Adding to knowledge base...": [
         "Ajout à la base de connaissances..."
       ],
@@ -1193,6 +1202,9 @@
       ],
       "File capacity": [
         "Capacité de stockage"
+      ],
+      "File capacity for this conversation": [
+        "Capacité du fichier pour cette conversation"
       ],
       "File too large for preview (>150k tokens)": [
         "Fichier trop grand pour l'aperçu (>150k jetons)"
@@ -1308,11 +1320,20 @@
       "Showing first": [
         "Afficher en premier"
       ],
+      "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
+        "Connectez-vous ou créez un compte pour parcourir et ajouter des fichiers depuis votre ${ DRIVE_APP_NAME } (espace de stockage cloud chiffré de bout en bout) à votre base de connaissances de chat."
+      ],
       "Space usage: ": [
         "Espace utilisé : "
       ],
       "Table view": [
         "Vue tableau"
+      ],
+      "Talk to your admin for plan details": [
+        "Contactez votre administrateur pour obtenir des informations sur l'abonnement."
+      ],
+      "Talk to your admin to add ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Contactez votre administrateur pour ajouter ${ LUMO_SHORT_APP_NAME } Plus."
       ],
       "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
         "Une erreur est survenue lors du traitement de ce fichier. Le contenu pourrait ne pas être lisible ou le format de fichier pourrait ne pas être entièrement pris en charge."
@@ -1624,6 +1645,9 @@
       ],
       "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. ${ signInLink } for faster access.": [
         "Nous rencontrons un trafic inhabituel, donc les réponses peuvent être un peu plus lentes que d'habitude. ${ signInLink } pour un accès plus rapide."
+      ],
+      "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for priority access during peak times.": [
+        "Nous rencontrons un trafic inhabituel, donc les réponses peuvent être un peu plus lentes que d'habitude. Passez à ${ LUMO_SHORT_APP_NAME } Plus pour un accès prioritaire pendant les heures de pointe."
       ]
     },
     "collider_2025: Web Search": {
@@ -1637,6 +1661,9 @@
       ],
       "Add more information to improve the response": [
         "Ajoutez plus d'informations pour améliorer la réponse"
+      ],
+      "Ask the model to be more careful and thorough": [
+        "Demander au modèle d'être plus attentif et rigoureux"
       ],
       "Cancel": [
         "Annuler"
@@ -1658,6 +1685,12 @@
       ],
       "Remove file": [
         "Supprimer le fichier"
+      ],
+      "Request a shorter, more focused response": [
+        "Demander une réponse plus courte et plus ciblée"
+      ],
+      "Retry with the same prompt": [
+        "Réessayer avec le même prompt"
       ],
       "Think longer": [
         "Réfléchir plus longtemps"
@@ -1693,6 +1726,12 @@
       ],
       "Hide sidebar": [
         "Masquer la barre latérale"
+      ],
+      "Manage chat knowledge files (${ totalFiles })": [
+        "Gérer les fichiers de connaissances de chat (${ totalFiles })"
+      ],
+      "Manage chat knowledge files(${ totalFiles })": [
+        "Gérer les fichiers de connaissance du chat (${ totalFiles })"
       ],
       "New chat": [
         "Nouvelle session de chat"
@@ -1761,6 +1800,9 @@
       ]
     },
     "collider_2025:Title": {
+      "${ LUMO_SHORT_APP_NAME } 1.1 is much smarter, more capable, with improved awareness of recent events, ready to give you more thorough and useful answers.": [
+        "${ LUMO_SHORT_APP_NAME } 1.1 est beaucoup plus intelligent, plus performant, avec une meilleure connaissance des événements récents, prêt à vous donner des réponses plus approfondies et utiles."
+      ],
       "An AI assistant should empower you, not exploit you for your data. That’s why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Un assistant IA devrait vous autonomiser, et non vous exploiter pour vos données. C'est pourquoi nous avons créé ${ LUMO_SHORT_APP_NAME } : pour vous apporter tous les avantages de l'IA, sans compromettre votre vie privée et la sécurité de vos données."
       ],
