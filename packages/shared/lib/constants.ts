@@ -612,6 +612,11 @@ export enum DRAFT_TYPE {
     PLAIN_TEXT = 'text/plain',
 }
 
+export enum SETTINGS_PROTON_SENTINEL_STATE {
+    DISABLED = 0,
+    ENABLED = 1,
+}
+
 export enum ORGANIZATION_FLAGS {
     LOYAL = 1,
     COVID = 2,
@@ -633,6 +638,11 @@ export enum ORGANIZATION_TWOFA_SETTING {
 export enum ORGANIZATION_STATE {
     ACTIVE = 1,
     DELINQUENT = 2,
+}
+
+export enum ORGANIZATION_POLICY_ENFORCED {
+    NO = 0,
+    YES = 1,
 }
 
 export enum APP_UPSELL_REF_PATH {

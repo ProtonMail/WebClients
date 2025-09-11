@@ -3,7 +3,7 @@ import { createSelector, createSlice } from '@reduxjs/toolkit';
 
 import type { UserSettingsState, UserState } from '@proton/account';
 import type { FeaturesReducerState } from '@proton/features';
-import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
+import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 
 const name = 'accountSecurity' as const;
 
