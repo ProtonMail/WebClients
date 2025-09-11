@@ -70,6 +70,10 @@ export interface SessionData {
         admin: boolean;
         subscribed: boolean;
         access: boolean;
+        /**
+         * If true then the current plan can't be purchased by the user
+         */
+        unavailable: boolean;
     };
 }
 

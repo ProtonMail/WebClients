@@ -13,10 +13,16 @@ import {
     isMemberAddon,
     isScribeAddon,
 } from '../plan/addons';
-import { getIsB2BAudienceFromPlan, getPlanNameFromIDs } from '../plan/helpers';
+import { getPlanFeatureLimit } from '../plan/feature-limits';
+import {
+    getIsB2BAudienceFromPlan,
+    getLumoAddonNameByPlan,
+    getPlanNameFromIDs,
+    getScribeAddonNameByPlan,
+} from '../plan/helpers';
 import type { Plan, PlansMap } from '../plan/interface';
 import { FREE_PLAN } from './freePlans';
-import { getLumoAddonNameByPlan, getPlanFeatureLimit, getPlanIDs, getScribeAddonNameByPlan } from './helpers';
+import { getPlanIDs } from './helpers';
 import type { Subscription } from './interface';
 import { getPlansMap } from './plans-map-wrapper';
 
