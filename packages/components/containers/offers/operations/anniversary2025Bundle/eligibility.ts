@@ -4,7 +4,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
 import { isValidStandaloneApp } from '../../helpers/anniversary2025';
-import isCheckAllowed from '../../helpers/isCheckAllowed';
+import isSubscriptionCheckAllowed from '../../helpers/isSubscriptionCheckAllowed';
 import OfferSubscription from '../../helpers/offerSubscription';
 import type { OfferConfig } from '../../interface';
 
@@ -21,7 +21,7 @@ export const getIsEligible = ({ user, subscription, protonConfig, offerConfig }:
     }
 
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
-    const checkAllowed = isCheckAllowed(subscription, offerConfig);
+    const subscriptionCheckAllowed = isSubscriptionCheckAllowed(subscription, offerConfig);
     const offerSubscription = new OfferSubscription(subscription);
     const isYearly = offerSubscription.isYearly() || offerSubscription.isTwoYears();
     const isYearlyMailPlus = offerSubscription.hasMail() && isYearly;
@@ -36,7 +36,7 @@ export const getIsEligible = ({ user, subscription, protonConfig, offerConfig }:
 
     return (
         hasValidApp &&
-        checkAllowed &&
+        subscriptionCheckAllowed &&
         canModifySubscription &&
         noAnniversary2025Coupon &&
         user.isPaid &&

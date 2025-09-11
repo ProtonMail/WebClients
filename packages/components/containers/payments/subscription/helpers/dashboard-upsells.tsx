@@ -14,11 +14,9 @@ import {
     PLANS,
     type Plan,
     type Subscription,
+    getHasConsumerVpnPlan,
     getIsB2BAudienceFromPlan,
     getPricePerCycle,
-} from '@proton/payments';
-import {
-    getHasConsumerVpnPlan,
     hasBundle,
     hasDeprecatedVPN,
     hasDrive,
@@ -34,6 +32,7 @@ import {
     hasVPNPassBundle,
     hasVpnBusiness,
     hasVpnPro,
+    isForbiddenModification,
     isTrial,
 } from '@proton/payments';
 import { type PreloadedPaymentsContextType, getPlanToCheck, usePaymentsPreloaded } from '@proton/payments/ui';
@@ -860,7 +859,11 @@ export const resolveUpsellsToDisplay = ({
         }
     };
 
-    return resolve().filter((maybeUpsell): maybeUpsell is Upsell => isTruthy(maybeUpsell));
+    const upsells = resolve()
+        .filter((maybeUpsell): maybeUpsell is Upsell => isTruthy(maybeUpsell))
+        .filter((upsell) => !subscription || !upsell.plan || !isForbiddenModification(subscription, upsell.plan));
+
+    return upsells;
 };
 
 export const useUpsellsToDisplay = (
