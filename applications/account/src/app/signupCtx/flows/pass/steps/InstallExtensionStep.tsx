@@ -50,7 +50,7 @@ export const InstallExtensionStep: FC = () => {
                 </ButtonLike>
             )}
             <Button className="mt-4" shape="ghost" color="norm" pill onClick={signup.login}>
-                {c('Action').t`Open ${PASS_APP_NAME} in a browser`}
+                {c('Action').t`Open ${PASS_APP_NAME} in your browser`}
             </Button>
             <div className="divider-gradient mt-20 w-full h-custom" style={{ '--h-custom': '1px' }} />
             <h4 className="text-xl text-bold my-6 text-center">{c('Title')
