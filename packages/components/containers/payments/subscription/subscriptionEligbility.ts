@@ -7,11 +7,12 @@ import {
     type PlansMap,
     type Subscription,
     getHas2024OfferCoupon,
+    getIsB2BAudienceFromSubscription,
     getPlan,
+    isForbiddenModification,
     isFreeSubscription,
     isPlanEnabled,
 } from '@proton/payments';
-import { getIsB2BAudienceFromSubscription } from '@proton/payments';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import type { OfferConfig } from '../../offers/interface';
@@ -256,9 +257,9 @@ export const getEligibility = ({
         return { type: 'not-eligible' };
     }
 
-    if (isPlanEnabled(offer.plan)) {
-        return okResult();
+    if (isForbiddenModification(subscription, offer.plan)) {
+        return { type: 'not-eligible' };
     }
 
-    return { type: 'not-eligible' };
+    return isPlanEnabled(offer.plan) ? okResult() : { type: 'not-eligible' };
 };
