@@ -4,7 +4,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
 import { isValidStandaloneApp } from '../../helpers/anniversary2025';
-import isCheckAllowed from '../../helpers/isCheckAllowed';
+import isSubscriptionCheckAllowed from '../../helpers/isSubscriptionCheckAllowed';
 import OfferSubscription from '../../helpers/offerSubscription';
 import type { OfferConfig } from '../../interface';
 
@@ -28,11 +28,11 @@ export const getIsEligible = ({ user, subscription, protonConfig, offerConfig }:
     const hasValidApp =
         isValidStandaloneApp(protonConfig.APP_NAME) ||
         (protonConfig.APP_NAME === APPS.PROTONACCOUNT && isValidStandaloneApp(parentApp));
-    const checkAllowed = isCheckAllowed(subscription, offerConfig);
+    const subscriptionCheckAllowed = isSubscriptionCheckAllowed(subscription, offerConfig);
 
     return (
         hasValidApp &&
-        checkAllowed &&
+        subscriptionCheckAllowed &&
         canModifySubscription &&
         noAnniversary2025Coupon &&
         user.canPay &&

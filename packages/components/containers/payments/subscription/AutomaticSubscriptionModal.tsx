@@ -30,9 +30,10 @@ import {
     SelectedPlan,
     type Subscription,
     fixPlanName,
+    getPlanName,
     getPlansMap,
+    getValidCycle,
 } from '@proton/payments';
-import { getPlanName, getValidCycle } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -153,7 +154,7 @@ const UnavailablePrompt = (rest: ModalProps) => {
             buttons={[<Button onClick={rest.onClose}>{c('bf2023: Action').t`Close`}</Button>]}
             {...rest}
         >
-            {getBoldFormattedText(c('bf2023: info').t`Sorry, this offer is not available with your current plan.`)}
+            {getBoldFormattedText(c('Payments').t`Sorry, this offer is not available with your current plan.`)}
         </Prompt>
     );
 };

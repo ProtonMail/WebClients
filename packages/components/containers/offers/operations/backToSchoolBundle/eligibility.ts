@@ -4,7 +4,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
 import { whichAppsUserBought } from '../../helpers/backToSchool';
-import isCheckAllowed from '../../helpers/isCheckAllowed';
+import isSubscriptionCheckAllowed from '../../helpers/isSubscriptionCheckAllowed';
 import OfferSubscription from '../../helpers/offerSubscription';
 import type { OfferConfig } from '../../interface';
 
@@ -16,7 +16,7 @@ interface Props {
 }
 
 export const getIsEligible = ({ user, subscription, protonConfig, offerConfig }: Props) => {
-    if (user.isDelinquent || !user.canPay || !subscription || !isCheckAllowed(subscription, offerConfig)) {
+    if (user.isDelinquent || !user.canPay || !subscription || !isSubscriptionCheckAllowed(subscription, offerConfig)) {
         return false;
     }
 

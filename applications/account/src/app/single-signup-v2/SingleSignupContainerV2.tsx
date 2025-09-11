@@ -115,6 +115,7 @@ import { SignupMode, Steps } from './interface';
 import type { TelemetryMeasurementData } from './measure';
 import { getPaymentMethodsAvailable, getPlanNameFromSession, getSignupTelemetryData } from './measure';
 import AccessModal from './modals/AccessModal';
+import PlanUnavailableModal from './modals/PlanUnavailableModal';
 import SubUserModal from './modals/SubUserModal';
 import UnlockModal from './modals/UnlockModal';
 import UpsellModal from './modals/UpsellModal';
@@ -246,6 +247,7 @@ const SingleSignupContainerV2 = ({
     const [visionaryModalProps, setVisionaryModal, renderVisionaryModal] = useModalState();
     const [subUserModalProps, setSubUserModal, renderSubUserModal] = useModalState();
     const [accessModalProps, setHasAccessModal, renderAccessModal] = useModalState();
+    const [planUnavailableModalProps, setHasPlanUnavailableModal, renderPlanUnavailableModal] = useModalState();
 
     const [signupParameters, setSignupParameters] = useState((): SignupParameters2 => {
         return getSignupParameters({
@@ -413,6 +415,11 @@ const SingleSignupContainerV2 = ({
 
         if (session.state.access) {
             setHasAccessModal(true);
+            return;
+        }
+
+        if (session.state.unavailable) {
+            setHasPlanUnavailableModal(true);
             return;
         }
 
@@ -1290,6 +1297,19 @@ const SingleSignupContainerV2 = ({
                     plansMap={model.plansMap}
                     upsellPlan={model.upsell.plan}
                     unlockPlan={model.upsell.unlockPlan}
+                    onSignOut={() => {
+                        return handleSignOut(true);
+                    }}
+                    onContinue={async () => {
+                        await handleStartUserOnboarding(getFreeSubscriptionData(model.subscriptionData));
+                    }}
+                />
+            )}
+            {renderPlanUnavailableModal && (
+                <PlanUnavailableModal
+                    {...planUnavailableModalProps}
+                    user={model.session?.resumedSessionResult.User}
+                    app={product}
                     onSignOut={() => {
                         return handleSignOut(true);
                     }}

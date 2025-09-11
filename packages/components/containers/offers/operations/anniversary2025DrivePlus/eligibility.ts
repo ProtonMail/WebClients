@@ -5,7 +5,7 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
-import isCheckAllowed from '../../helpers/isCheckAllowed';
+import isSubscriptionCheckAllowed from '../../helpers/isSubscriptionCheckAllowed';
 import { FREE_DOWNGRADER_LIMIT } from '../../helpers/offerPeriods';
 import type { OfferConfig } from '../../interface';
 
@@ -33,11 +33,11 @@ export const getIsEligible = ({
         protonConfig.APP_NAME === APPS.PROTONDRIVE ||
         (protonConfig.APP_NAME === APPS.PROTONACCOUNT && parentApp === APPS.PROTONDRIVE);
 
-    const checkAllowed = isCheckAllowed(subscription, offerConfig);
+    const subscriptionCheckAllowed = isSubscriptionCheckAllowed(subscription, offerConfig);
 
     return (
         hasValidApp &&
-        checkAllowed &&
+        subscriptionCheckAllowed &&
         user.isFree &&
         user.canPay &&
         !user.isDelinquent &&

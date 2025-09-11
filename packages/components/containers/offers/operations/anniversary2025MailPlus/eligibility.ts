@@ -5,7 +5,7 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
-import isCheckAllowed from '../../helpers/isCheckAllowed';
+import isSubscriptionCheckAllowed from '../../helpers/isSubscriptionCheckAllowed';
 import { FREE_DOWNGRADER_LIMIT } from '../../helpers/offerPeriods';
 import OfferSubscription from '../../helpers/offerSubscription';
 import type { OfferConfig } from '../../interface';
@@ -35,7 +35,7 @@ export const getIsEligible = ({
         protonConfig.APP_NAME === APPS.PROTONCALENDAR ||
         (protonConfig.APP_NAME === APPS.PROTONACCOUNT && parentApp === APPS.PROTONMAIL) ||
         (protonConfig.APP_NAME === APPS.PROTONACCOUNT && parentApp === APPS.PROTONCALENDAR);
-    const checkAllowed = isCheckAllowed(subscription, offerConfig);
+    const subscriptionCheckAllowed = isSubscriptionCheckAllowed(subscription, offerConfig);
 
     if (user.isPaid) {
         const offerSubscription = new OfferSubscription(subscription);
@@ -43,13 +43,18 @@ export const getIsEligible = ({
         const hasMailMonthly = offerSubscription.hasMail() && offerSubscription.isMonthly();
 
         return (
-            hasValidApp && checkAllowed && hasMailMonthly && canModifySubscription && user.canPay && !user.isDelinquent
+            hasValidApp &&
+            subscriptionCheckAllowed &&
+            hasMailMonthly &&
+            canModifySubscription &&
+            user.canPay &&
+            !user.isDelinquent
         );
     }
 
     return (
         hasValidApp &&
-        checkAllowed &&
+        subscriptionCheckAllowed &&
         isBefore(fromUnixTime(previousSubscriptionEndTime), FREE_DOWNGRADER_LIMIT) &&
         user.canPay &&
         !user.isDelinquent
