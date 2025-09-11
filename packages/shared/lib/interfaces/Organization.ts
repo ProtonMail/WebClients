@@ -1,6 +1,11 @@
 import type { PLANS } from '@proton/payments';
 import type { Product } from '@proton/shared/lib/ProductEnum';
-import type { ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
+import type {
+    ORGANIZATION_POLICY_ENFORCED,
+    ORGANIZATION_STATE,
+    ORGANIZATION_TWOFA_SETTING,
+    SETTINGS_PROTON_SENTINEL_STATE,
+} from '@proton/shared/lib/constants';
 
 import type { PasswordPolicySettings } from './PasswordPolicy';
 
@@ -82,9 +87,9 @@ export interface OrganizationSettings {
     // Settings for admin
     PasswordPolicies: PasswordPolicySettings;
     LogAuth: number; // 0 = no logging, 1 = loging default, 2 = loging detailed auth
-    HighSecurity: number; // 0 = no high security, 1 = high security enable
+    HighSecurity: SETTINGS_PROTON_SENTINEL_STATE; // 0 = no high security, 1 = high security enable
     OrganizationPolicy: {
-        Enforced: number;
+        Enforced: ORGANIZATION_POLICY_ENFORCED;
     };
 }
 

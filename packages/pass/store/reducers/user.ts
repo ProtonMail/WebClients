@@ -29,10 +29,10 @@ import type { PassFeature } from '@proton/pass/types/api/features';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { merge, partialMerge } from '@proton/pass/utils/object/merge';
+import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Address, SETTINGS_PASSWORD_MODE, SETTINGS_STATUS, User } from '@proton/shared/lib/interfaces';
-import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
 
 export type AddressState = { [addressId: string]: Address };
