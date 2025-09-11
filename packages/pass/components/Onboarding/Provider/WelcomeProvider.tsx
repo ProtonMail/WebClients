@@ -53,6 +53,10 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
     const steps = useMemo<OnboardingStep[]>(() => {
         if (!enabled) return [];
 
+        const welcome = new URLSearchParams(location.search).get('welcome') === 'true';
+        /* Show upsell step for free plans but not just after signup as they just refuse it already */
+        const showUpsell = isFreePlan && !welcome;
+
         return [
             {
                 key: 'look-and-feel',
@@ -87,7 +91,7 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
                 group: c('Label').t`Security`,
                 title: c('Label').t`How to unlock ${PASS_SHORT_APP_NAME}`,
             },
-            isFreePlan && {
+            showUpsell && {
                 key: 'upgrade',
                 shortTitle: c('Label').t`Unlock premium features`,
                 component: OnboardingUpgrade.Content,

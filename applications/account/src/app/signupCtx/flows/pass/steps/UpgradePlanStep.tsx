@@ -79,7 +79,7 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
             ],
         },
         {
-            title: c('Title').t`Plus`,
+            title: PLAN_NAMES[PLANS.PASS],
             price: getPrice(passPlus.planIDs),
             priceSubtitle: c('Subtitle').t`per month, billed annually`,
             buttonText: c('Action').t`Get Pass Plus`,
@@ -97,7 +97,7 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
             ],
         },
         {
-            title: c('Title').t`Family`,
+            title: PLAN_NAMES[PLANS.PASS_FAMILY],
             price: getPrice(family.planIDs),
             priceSubtitle: c('Subtitle').t`per month, billed annually`,
             buttonText: c('Action').t`Get Pass Family`,
@@ -120,9 +120,9 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
             featuresTitle: c('Label').t`The best of ${BRAND_NAME} with one subscription`,
             features: [
                 c('Label').t`500 GB Storage`,
-                c('Label').t`15 Extra email addresses`,
-                c('Label').t`10 VPN Devices`,
-                c('Label').t`Highest VPN Speed`,
+                c('Label').t`15 extra email addresses`,
+                c('Label').t`10 VPN devices`,
+                c('Label').t`Highest VPN speed`,
             ],
         },
     ];

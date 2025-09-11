@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { Icon, PassLogo } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import type { PaymentsCheckout } from '@proton/payments';
-import { DARK_WEB_MONITORING_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import './OfferModal.scss';
 
@@ -23,8 +23,8 @@ export const OfferModal: FC<OfferModalProps> = ({ uiData, loading, onClose, onCo
 
     const features = [
         c('Label').t`Unlimited Hide-my-email aliases`,
+        c('Label').t`Built-in 2FA authenticator`,
         c('Label').t`Vault, item & secure link sharing`,
-        DARK_WEB_MONITORING_NAME,
     ];
 
     return (
