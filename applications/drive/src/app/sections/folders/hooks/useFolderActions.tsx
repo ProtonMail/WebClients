@@ -96,6 +96,13 @@ export const useFolderActions = ({ selectedItems, shareId, linkId, volumeId }: P
                 shareId: item.rootShareId,
                 linkId: item.linkId,
             });
+        } else {
+            // In case nothing is selected we share the active folder
+            showLinkSharingModal({
+                volumeId,
+                shareId,
+                linkId,
+            });
         }
     };
 

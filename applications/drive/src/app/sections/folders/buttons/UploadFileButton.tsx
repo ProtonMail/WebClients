@@ -6,7 +6,7 @@ import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import type { FolderButtonProps } from './types';
 
 export const UploadFileButton = ({ type, close, onClick }: FolderButtonProps) => {
-    const title = c('Action').t`Upload File`;
+    const title = c('Action').t`Upload file`;
     const icon = 'file-arrow-in-up' as const;
 
     const handleClickWithClose = () => {
