@@ -5,9 +5,10 @@
     "rangeStrategy": "bump",
     "rebaseWhen": "conflicted",
     "prConcurrentLimit": 2,
+    "minimumReleaseAge": "3 days",
     "ignoreDeps": [
         "@protontech/drive-sdk",
-        "@​proton-meet/proton-meet-core",
+        "@proton-meet/proton-meet-core",
         "roosterjs",
         "emoji-mart",
         "@emoji-mart/data",
