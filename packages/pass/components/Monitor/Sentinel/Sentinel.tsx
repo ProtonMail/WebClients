@@ -12,8 +12,7 @@ import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { sentinelToggle } from '@proton/pass/store/actions';
 import { selectPassPlan, selectSentinelEligible, selectSentinelEnabled } from '@proton/pass/store/selectors';
-import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
-import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
+import { PROTON_SENTINEL_NAME, SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 
 type Props = { onUpsell: () => void };
 
