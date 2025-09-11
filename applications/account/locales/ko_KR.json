@@ -10183,6 +10183,9 @@
       "Signed up": [
         "가입 완료"
       ],
+      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
+        "보안 키로 로그인하는 기능은 모든 어플리케이션에서 아직 지원되지 않습니다. TOTP 없이는 일부 어플리케이션에서 로그인하지 못할 수 있습니다."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
       ],
@@ -10959,6 +10962,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "기본 브라우저를 열고 다음을 방문합니다:"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "현재 ${ username }(으)로 로그인 했습니다."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "현재 사용 가능한 전용 서버 ${ ipAddresses }개 중 ${ ipCount }개를 사용 중입니다."
