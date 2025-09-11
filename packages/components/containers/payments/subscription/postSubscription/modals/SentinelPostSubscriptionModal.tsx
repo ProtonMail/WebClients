@@ -7,8 +7,7 @@ import useApi from '@proton/components/hooks/useApi';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities';
 import { enableHighSecurity } from '@proton/shared/lib/api/settings';
-import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
-import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
+import { PROTON_SENTINEL_NAME, SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 import illustration from '@proton/styles/assets/img/illustrations/check.svg';
 
 import { SUBSCRIPTION_STEPS } from '../../constants';

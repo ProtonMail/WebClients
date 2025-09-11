@@ -25,11 +25,15 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { PROTON_SENTINEL_NAME, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import {
+    PROTON_SENTINEL_NAME,
+    SETTINGS_PROTON_SENTINEL_STATE,
+    SHARED_UPSELL_PATHS,
+    UPSELL_COMPONENT,
+} from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isProtonSentinelEligible } from '@proton/shared/lib/helpers/userSettings';
-import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
