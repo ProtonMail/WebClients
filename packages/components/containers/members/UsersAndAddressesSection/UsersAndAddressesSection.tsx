@@ -61,11 +61,12 @@ import { resendUnprivatizationLink } from '@proton/shared/lib/api/members';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { LUMO_SHORT_APP_NAME, MEMBER_PRIVATE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, EnhancedMember, Member } from '@proton/shared/lib/interfaces';
-import { MEMBER_STATE } from '@proton/shared/lib/interfaces';
+import { MEMBER_STATE, TwoFactorStatusFlags } from '@proton/shared/lib/interfaces';
 import {
     MemberUnprivatizationMode,
     getIsMemberDisabled,
@@ -732,9 +733,17 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                                     {c('Users table: badge').t`Pending admin access`}
                                                                 </UserTableBadge>
                                                             )}
-                                                            {member['2faStatus'] > 0 && (
+                                                            {hasBit(member['2faStatus'], TwoFactorStatusFlags.Totp) && (
                                                                 <UserTableBadge type="weak">
-                                                                    {c('Users table: badge').t`2FA`}
+                                                                    {c('Users table: badge').t`Authenticator app`}
+                                                                </UserTableBadge>
+                                                            )}
+                                                            {hasBit(
+                                                                member['2faStatus'],
+                                                                TwoFactorStatusFlags.Fido2
+                                                            ) && (
+                                                                <UserTableBadge type="weak">
+                                                                    {c('Users table: badge').t`Security key`}
                                                                 </UserTableBadge>
                                                             )}
                                                             {Boolean(member.SSO) && (
