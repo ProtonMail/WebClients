@@ -2063,10 +2063,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes ${ formattedDate }, vil det gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes ${ formattedDate }, vil det gå over til å bli et betalt abonnement som fornyes automatisk månedlig ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Ved å klikke på \"Prøv\", sier du deg enig med våre ${ termsAndConditions }."
@@ -2521,7 +2521,7 @@
         "Problem med manuell installasjon"
       ],
       "Meet problem": [
-        "Meet-problem"
+        "Problem med Meet"
       ],
       "Other": [
         "Annet"
@@ -2919,10 +2919,10 @@
         "Ubegrenset antall favoritter for rask tilgang"
       ],
       "Upload and query multiple large files": [
-        "Last opp og søk i flere store filer"
+        "Last opp og vis flere store filer"
       ],
       "Upload and query small files": [
-        "Last opp og søk i små filer"
+        "Last opp og vis små filer"
       ],
       "Web search access": [
         "Tilgang til nettsøk"
@@ -2977,10 +2977,10 @@
         "Ubegrenset antall favoritter for rask tilgang"
       ],
       "Upload and query multiple large files": [
-        "Last opp og søk i flere store filer"
+        "Last opp og vis flere store filer"
       ],
       "Upload and query small files": [
-        "Last opp og søk i små filer"
+        "Last opp og vis små filer"
       ],
       "Web search access": [
         "Tilgang til nettsøk"
@@ -10291,6 +10291,9 @@
       "Signed up": [
         "Registrert"
       ],
+      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
+        "Pålogging med en sikkerhetsnøkkel er ennå ikke støttet i alle applikasjoner. Uten TOTP kan pålogging til enkelte applikasjoner mislykkes."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
       ],
@@ -11072,6 +11075,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Du er i ferd med å åpne standardnettleseren din og besøke:"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Du er for øyeblikket pålogget som ${ username }."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Du bruker for øyeblikket ${ ipCount } tilgjengelig dedikert tjener ut av ${ ipAddresses }.",
