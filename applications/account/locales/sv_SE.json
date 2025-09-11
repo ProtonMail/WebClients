@@ -4439,6 +4439,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importera händelser i iCal-format (ICS-fil). Filen bör ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_EVENTS_STRING } händelser. Om din fil är större, dela upp den i mindre filer."
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Du får ${ referralInfo.referrerRewardAmount } i ${ BRAND_NAME }-kredit när personen du bjuder in registrerar sig för ett ${ BRAND_NAME }-paket, och de får också ${ referralInfo.refereeRewardAmount } i krediter för att komma igång."
       ]
     },
     "description": {
@@ -10196,6 +10199,9 @@
       ],
       "Signed up": [
         "Registrerade sig"
+      ],
+      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
+        "Inloggning med en säkerhetsnyckel stöds inte ännu i alla applikationer. Utan TOTP kan inloggningen till vissa applikationer misslyckas."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
