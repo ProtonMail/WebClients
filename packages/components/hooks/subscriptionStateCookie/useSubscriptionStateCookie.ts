@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 
+import { addDays } from 'date-fns';
+
 import { usePreviousSubscription } from '@proton/account/previousSubscription/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -11,7 +13,7 @@ import { encodeFreeSubscriptionData, encodePaidSubscriptionData } from './encodi
 
 const COOKIE_NAME = 'st'; // Stands for `Subscription Type`
 const today = new Date();
-const lastDayOfTheYear = new Date(today.getFullYear(), 11, 31, 23, 59, 59);
+const expirationDate = addDays(today, 60);
 const cookieDomain = `.${getSecondLevelDomain(window.location.hostname)}`;
 
 const setSubscriptionCookie = (cookieValue: string) => {
@@ -20,7 +22,7 @@ const setSubscriptionCookie = (cookieValue: string) => {
         cookieValue,
         cookieDomain,
         path: '/',
-        expirationDate: lastDayOfTheYear.toUTCString(),
+        expirationDate: expirationDate.toUTCString(),
         secure: true,
     });
 };
