@@ -11093,10 +11093,6 @@ __metadata:
     rxjs: "npm:^7.8.2"
     uzip: "npm:^0.20201231.0"
     xlsx: "npm:^0.18.5"
-  peerDependencies:
-    "@rowsncolumns/grid": "workspace:^"
-    "@rowsncolumns/spreadsheet": "workspace:^"
-    "@rowsncolumns/spreadsheet-state": "workspace:^"
   languageName: unknown
   linkType: soft
 
@@ -11148,10 +11144,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rowsncolumns/utils@workspace:vendor/rowsncolumns/utils"
   dependencies:
-    "@rowsncolumns/grid": "workspace:^"
+    "@rowsncolumns/common-types": "workspace:^"
     numfmt: "npm:^3.2.2"
-  peerDependencies:
-    "@rowsncolumns/grid": "workspace:^"
   languageName: unknown
   linkType: soft
 
