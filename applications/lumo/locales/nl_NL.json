@@ -387,11 +387,17 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-plaatsen hebben tijdens de proefperiode."
@@ -628,6 +634,9 @@
       ],
       "Manual setup problem": [
         "Probleem met eigen setup"
+      ],
+      "Meet problem": [
+        "Meet probleem"
       ],
       "Other": [
         "Anders"
@@ -955,6 +964,38 @@
         "Er is een probleem opgetreden bij het opslaan van uw feedback. Probeer het later opnieuw."
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Toegang tot geavanceerde AI-modellen"
+      ],
+      "Basic chat history": [
+        "Basis gespreksgeschiedenis"
+      ],
+      "Full chat history with search": [
+        "Volledige chatgeschiedenis met zoeken"
+      ],
+      "Large file upload support": [
+        "Ondersteuning voor het uploaden van grote bestanden"
+      ],
+      "Limited daily chats": [
+        "Beperkt aantal dagelijkse gesprekken"
+      ],
+      "Limited favorites": [
+        "Beperkte favorieten"
+      ],
+      "Unlimited daily chats": [
+        "Onbeperkt aantal dagelijkse gesprekken"
+      ],
+      "Unlimited favorites for quick access": [
+        "Onbeperkt favorieten voor snelle toegang"
+      ],
+      "Upload and query multiple large files": [
+        "Meerdere grote bestanden uploaden en opvragen"
+      ],
+      "Upload and query small files": [
+        "Kleine bestanden uploaden en opvragen"
+      ]
+    },
     "collider_2025: Feature": {
       "Advanced models": [
         "Geavanceerde modellen"
@@ -1027,6 +1068,9 @@
       ],
       "files are not currently supported for content extraction.": [
         "bestanden worden momenteel niet ondersteund voor inhoudsextractie."
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chats op hoge snelheid en geavanceerde AI-functies."
       ],
       "How to identify safe links:": [
         "Hoe u veilige links herkent:"
@@ -1129,65 +1173,6 @@
       ],
       "You are about to visit an external website:": [
         "U staat op het punt een externe website te bezoeken:"
-      ]
-    },
-    "collider_2025: Invite": {
-      "Email address is not valid": [
-        "E-mailadres is ongeldig"
-      ],
-      "Email address is required": [
-        "E-mailadres is vereist"
-      ]
-    },
-    "collider_2025: Invite Button": {
-      "Close": [
-        "Sluiten"
-      ],
-      "Invite friends": [
-        "Vrienden uitnodigen"
-      ],
-      "Maybe later": [
-        "Misschien later"
-      ],
-      "Send invitation": [
-        "Uitnodiging verzenden"
-      ]
-    },
-    "collider_2025: Invite Email Placeholder": {
-      "Your friend's email": [
-        "E-mail van uw vriend"
-      ]
-    },
-    "collider_2025: Invite Info": {
-      "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
-        "Kent u iemand die baat zou hebben bij een privacy-gerichte AI? Nodig hen uit om zich aan te melden voor de wachtlijst van ${ LUMO_SHORT_APP_NAME }. U hebt nog ${ remainingInvitesText } uitnodigingen over."
-      ],
-      "You have ${ remainingInvitesText } invitations remaining.": [
-        "U hebt nog ${ remainingInvitesText } uitnodigingen over."
-      ]
-    },
-    "collider_2025: Invite Sent": {
-      "Invitation sent": [
-        "Uitnodiging verzonden"
-      ]
-    },
-    "collider_2025: Invite Success": {
-      "Invite sent!": [
-        "Uitnodiging verzonden!"
-      ],
-      "No invites left  ": [
-        "Geen uitnodigingen meer over"
-      ],
-      "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
-        "Bedankt voor het helpen van anderen om ${ LUMO_SHORT_APP_NAME } te ontdekken! Als er meer uitnodigingen beschikbaar komen, laten we het u weten."
-      ],
-      "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
-        "Wij hebben ${ emailText } uitgenodigd. Zij ontvangen instructies over hoe ze zich kunnen aanmelden voor de wachtlijst."
-      ]
-    },
-    "collider_2025: Invite Title": {
-      "Invite friends to experience ${ LUMO_APP_NAME }": [
-        "Nodig vrienden uit om ${ LUMO_APP_NAME } te ervaren"
       ]
     },
     "collider_2025: Label": {
@@ -4713,11 +4698,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Gedurende deze periode kunt u uw abonnement niet wijzigen of annuleren. Wacht tot uw betaling is voltooid voordat u wijzigingen aanbrengt. Bedankt voor uw geduld."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exclusief ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Exclusief ${ taxRate }% belastingen: ${ taxAmount }"
+      ],
       "Got it": [
         "Begrepen"
       ],
       "I'm purchasing as a business": [
         "Ik koop dit voor mijn bedrijf."
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclusief ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inclusief ${ taxRate }% belastingen: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/JJ"
@@ -4733,6 +4730,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Wordt verlengd voor ${ renewPriceStr }, altijd opzegbaar."
+      ],
+      "Taxes": [
+        "Belastingen"
       ],
       "terms & conditions": [
         "algemene voorwaarden"
@@ -4764,6 +4764,9 @@
       ],
       "Timeout exceeded": [
         "Time-out overschreden"
+      ],
+      "VAT": [
+        "BTW"
       ],
       "VAT number": [
         "BTW-nummer"
