@@ -1471,10 +1471,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -4546,10 +4543,10 @@
         "Сума ніжэй за мінімум (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
-        "Пры загрузцы параметраў псеўданіма адбылася памылка"
+        "Адбылася памылка пры загрузцы параметраў псеўданіма"
       ],
       "An error occurred while saving your alias": [
-        "Пры захаванни вашага псеўданіма адбылася памылка"
+        "Адбылася памылка пры вашага псеўданіма"
       ],
       "Attachments are limited to ${ readableAttachmentMaxSize }": [
         "Далучэнні абмежаваныя да ${ readableAttachmentMaxSize }"
@@ -5164,16 +5161,16 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "Падчас чытання вашага файла ${ formattedFilename } адбылася памылка. Файл мае няправільны фармат."
+        "Адбылася памылка пры чытанні вашага файла ${ formattedFilename }. Файл мае няправільны фармат."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Падчас запампоўвання вашага файла ${ formattedFilename } адбылася памылка. Максімальны памер файла складае ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Адбылася памылка пры запампоўванні вашага файла ${ formattedFilename }. Максімальны памер файла складае ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Падчас запампоўвання вашага файла ${ formattedFilename } адбылася памылка. Дазволены толькі файлы ў фармаце ICS."
+        "Адбылася памылка пры запампоўванні вашага файла ${ formattedFilename }. Дазволены толькі файлы ў фармаце ICS."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Падчас запампоўвання вашага файла адбылася памылка. Ніводны файл не выбраны."
+        "Адбылася памылка пры запампоўвання вашага файла. Ніводны файл не выбраны."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Адбылася нечаканая памылка. Неабходна перазапусціць імпартаванне."
@@ -5210,16 +5207,16 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "Падчас чытання вашага файла ${ formattedFilename } адбылася памылка. Файл мае няправільны фармат."
+        "Адбылася памылка пры чытанні вашага файла ${ formattedFilename }. Файл мае няправільны фармат."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Падчас запампоўвання вашага файла ${ formattedFilename } адбылася памылка. Максімальны памер файла складае ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Адбылася памылка пры запампоўвання вашага файла ${ formattedFilename }. Максімальны памер файла складае ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Падчас запампоўвання вашага файла ${ formattedFilename } адбылася памылка. Ніводны файл з пашырэннем .csv або .vcf не выбраны"
+        "Адбылася памылка пры запампоўванні вашага файла ${ formattedFilename }. Ніводны файл з пашырэннем .csv або .vcf не выбраны"
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Падчас запампоўвання вашага файла адбылася памылка. Ніводны файл не выбраны."
+        "Адбылася памылка пры запампоўванні вашага файла. Ніводны файл не выбраны."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_CONTACTS_STRING } кантактаў."
@@ -6142,16 +6139,16 @@
         "${ totalImported } падзей з ${ totalToImport } зашыфравана і дададзена ў ваш каляндар"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
-        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартавана.",
-        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартавана.",
-        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартавана."
+        "Адбылася памылка пры шыфравання і дадавання падзеі. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
+        "Адбылася памылка пры шыфраванні і дадаванні падзей. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартавана.",
+        "Адбылася памылка пры шыфраванні і дадаванні падзей. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартавана.",
+        "Адбылася памылка пры шыфраванні і дадаванні падзей. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартавана."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Падчас шыфравання і дадавання вашай падзеі адбылася памылка. Ніводная падзея не была імпартавана."
+        "Адбылася памылка пры шыфраванні і дадаванні вашай падзеі. Ніводная падзея не была імпартавана."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "Падчас шыфравання і дадавання вашых падзей адбылася памылка. Ніводная падзея не была імпартавана."
+        "Адбылася памылка пры шыфраванні і дадаванні вашых падзей. Ніводная падзея не была імпартавана."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Шыфраванне і дадаванне кантактаў: ${ totalImported }/${ totalToImport }"
@@ -6205,13 +6202,13 @@
         "${ totalImported } кантактаў з ${ totalToImport } зашыфраваны і дададзены ў ваш спіс кантактаў"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Падчас шыфравання і дадавання вашага кантакту адбылася памылка. Ніводны кантакт не быў імпартаваны."
+        "Адбылася памылка пры шыфраванні і дадаванні вашага кантакту. Ніводны кантакт не быў імпартаваны."
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Падчас шыфравання і дадавання кантактаў адбылася памылка. Паспяхова імпартавана наступная колькасць кантактаў: ${ totalImported } з ${ totalToImport }."
+        "Адбылася памылка пры шыфраванні і дадаванні кантактаў адбылася памылка. Паспяхова імпартавана наступная колькасць кантактаў: ${ totalImported } з ${ totalToImport }."
       ],
       "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "Падчас шыфравання і дадавання вашых кантактаў адбылася памылка. Ніводны кантакт не быў імпартаваны."
+        "Адбылася памылка пры шыфраванні і дадаванні вашых кантактаў. Ніводны кантакт не быў імпартаваны."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Кантакт паспяхова імпартаваны. Імпартаваны кантакт цяпер з'явіцца ў вашым спісе кантактаў."
@@ -7575,7 +7572,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -9418,7 +9418,7 @@
         "Праграма аўтэнтыфікацыі"
       ],
       "Automated confirmations and alerts": [
-        "Аўтаматычныя пацверджанні і абвесткі"
+        "Аўтаматычныя пацвярджэнні і абвесткі"
       ],
       "BCC": [
         "Схаваная копія"
@@ -9532,7 +9532,7 @@
         "Дата:"
       ],
       "Deals, offers, marketing emails": [
-        "Зніжкі, прапановы, маркетынгавыя электронныя лісты"
+        "Акцыі, прапановы, маркетынгавыя лісты"
       ],
       "Delete": [
         "Выдаліць"
@@ -9547,7 +9547,7 @@
         "Не прытрымліваецца інструкцый"
       ],
       "Discussion board posts and threads": [
-        "Допісы і гутаркі дыскусійнай дошкі"
+        "Допісы дыскусійнай дошкі і гутаркі"
       ],
       "Do you have any suggestions for our team?": [
         "Ці ёсць у вас нейкія прапановы для нашай каманды?"
@@ -9638,6 +9638,27 @@
       ],
       "From: ${ fromEmail }": [
         "Ад: ${ fromEmail }"
+      ],
+      "Go to Forums": [
+        "Перайсці ў Форумы"
+      ],
+      "Go to Newsletters": [
+        "Перайсці ў Рассылкі"
+      ],
+      "Go to Primary": [
+        "Перайсці ў Асноўныя"
+      ],
+      "Go to Promotions": [
+        "Перайсці ў Рэкламу"
+      ],
+      "Go to Social": [
+        "Перайсці ў Сацыяльныя"
+      ],
+      "Go to Transactions": [
+        "Перайсці ў Трансакцыі"
+      ],
+      "Go to Updates": [
+        "Перайсці ў Абнаўленні"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Дапамажыце нам палепшыць катэгорыі. Выберыце тую, якая найлепш пасуе гэтаму лісту. Дзякуй за вашу дапамогу!"
@@ -9775,10 +9796,10 @@
         "Метка не знойдзена"
       ],
       "No results found": [
-        "Вынікі не знойдзены"
+        "Нічога не знойдзена"
       ],
       "Non-promotional content and news": [
-        "Нерэкламны кантэнт і навіны"
+        "Нерэкламны змесціва і навіны"
       ],
       "Not factually correct": [
         "Не адпавядае рэчаіснасці"
@@ -9892,7 +9913,7 @@
         "Шукаць у"
       ],
       "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
-        "Выберыце катэгорыі для ўключэння і ўключыце апавяшчэнні, каб атрымліваць абвесткі пра новыя электронныя лісты ў катэгорыі."
+        "Выберыце катэгорыі для ўключэння і ўключыце апавяшчэнні, каб атрымліваць абвесткі аб новых лістах у катэгорыі."
       ],
       "Send auto-reply": [
         "Адправіць аўтаматычны адказ"

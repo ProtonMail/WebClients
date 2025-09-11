@@ -486,6 +486,9 @@
       "Edit address": [
         "Adresi düzenle"
       ],
+      "Edit categories": [
+        "Kategorileri düzenle"
+      ],
       "Edit draft": [
         "Taslağı düzenle"
       ],
@@ -1460,8 +1463,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -5219,6 +5221,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME } bir ek parola ile kullanılırken takma adlar kullanılamaz."
       ],
+      "An error occurred with the categories": [
+        "Kategoriler ile ilgili bir sorun çıktı."
+      ],
       "App currently unavailable": [
         "Uygulama şu anda kullanılamıyor"
       ],
@@ -7335,7 +7340,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9119,6 +9125,9 @@
       "Authenticator app": [
         "Kimlik doğrulama uygulaması"
       ],
+      "Automated confirmations and alerts": [
+        "Otomatik onaylar ve uyarılar"
+      ],
       "BCC": [
         "Gizli kopya"
       ],
@@ -9130,6 +9139,9 @@
       ],
       "Blind Carbon Copy": [
         "Gizli kopya"
+      ],
+      "Bookings, billings, and orders": [
+        "Rezervasyonlar, faturalar ve siparişler"
       ],
       "Browser": [
         "Tarayıcı"
@@ -9227,6 +9239,9 @@
       "Date:": [
         "Tarih:"
       ],
+      "Deals, offers, marketing emails": [
+        "Fırsatlar, teklifler, pazarlama e-postaları"
+      ],
       "Delete": [
         "Sil"
       ],
@@ -9238,6 +9253,9 @@
       ],
       "Did not follow instructions": [
         "Yönergeleri izlemedi"
+      ],
+      "Discussion board posts and threads": [
+        "Tartışma panosu gönderileri ve konuları"
       ],
       "Do you have any suggestions for our team?": [
         "Ekibimizden herhangi bir öneri aldınız mı?"
@@ -9328,6 +9346,27 @@
       ],
       "From: ${ fromEmail }": [
         "Kimden: ${ fromEmail }"
+      ],
+      "Go to Forums": [
+        "Forumlara git"
+      ],
+      "Go to Newsletters": [
+        "Duyurulara git"
+      ],
+      "Go to Primary": [
+        "Birincil e-postalara git"
+      ],
+      "Go to Promotions": [
+        "Fırsatlara git"
+      ],
+      "Go to Social": [
+        "Sosyal ağlara git"
+      ],
+      "Go to Transactions": [
+        "Hesap işlemlerine git"
+      ],
+      "Go to Updates": [
+        "Güncellemelere git"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Kategoriler özelliğini geliştirmemize yardımcı olmak için bu e-postaya en uygun olanı seçin. Yardımınız için teşekkür ederiz!"
@@ -9467,6 +9506,9 @@
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
+      "Non-promotional content and news": [
+        "Fırsatlar dışındaki içerikler ve haberler"
+      ],
       "Not factually correct": [
         "Aslında doğru değil"
       ],
@@ -9578,6 +9620,9 @@
       "Search in": [
         "Şurada ara"
       ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Katılacak kategorileri seçin ve bir kategorideki yeni e-postaların bildirilmesi için bildirimleri açın."
+      ],
       "Send auto-reply": [
         "Otomatik yanıtlansın"
       ],
@@ -9592,6 +9637,9 @@
       ],
       "Social": [
         "Sosyal ağ"
+      ],
+      "Social media updates and activity": [
+        "Sosyal ağ güncellemeleri ve etkinlikleri"
       ],
       "Starred": [
         "Yıldızlı"
@@ -9712,6 +9760,9 @@
       ],
       "Writing assistant": [
         "Yazma yardımcısı"
+      ],
+      "You cannot disable all categories": [
+        "Tüm kategorileri kapatamazsınız"
       ],
       "Your alias": [
         "Takma adınız"
@@ -14585,6 +14636,9 @@
       ],
       "Customize calendar import": [
         "Takvim içe aktarma işlemini özelleştirin"
+      ],
+      "Customize categories": [
+        "Kategorileri özelleştir"
       ],
       "Customize your mail import": [
         "Posta içe aktarma işleminizi özelleştirin"
