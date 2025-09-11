@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { userSettingsActions } from '@proton/account/userSettings';
-import { Button, Href, InlineLinkButton } from '@proton/atoms';
+import { Button, InlineLinkButton } from '@proton/atoms';
 import Copy from '@proton/components/components/button/Copy';
 import Form from '@proton/components/components/form/Form';
 import QRCode from '@proton/components/components/image/QRCode';
@@ -20,7 +20,6 @@ import TotpInput from '@proton/components/components/v2/input/TotpInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import useApi from '@proton/components/hooks/useApi';
-import useConfig from '@proton/components/hooks/useConfig';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
@@ -28,10 +27,9 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TOTP_WRONG_ERROR, getSetupTotpSecret, setupTotp } from '@proton/shared/lib/api/settings';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
-import { APPS, BRAND_NAME, TWO_FA_RECOVERY_CODES_FILE_NAME } from '@proton/shared/lib/constants';
+import { TWO_FA_RECOVERY_CODES_FILE_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { getTOTPData } from '@proton/shared/lib/settings/twoFactor';
 import noop from '@proton/utils/noop';
@@ -54,20 +52,18 @@ interface SetupTOTPSecretResponse {
 }
 
 const STEPS = {
-    INFO: 1,
-    SCAN_CODE: 2,
-    CONFIRM_CODE: 3,
-    RECOVERY_CODES: 4,
+    SCAN_CODE: 1,
+    CONFIRM_CODE: 2,
+    RECOVERY_CODES: 3,
 };
 
 const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
-    const { APP_NAME } = useConfig();
     const [user] = useUser();
     const api = useApi();
     const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const [state, setState] = useState<ReturnType<typeof getTOTPData> | null>(null);
-    const [step, setStep] = useState(STEPS.INFO);
+    const [step, setStep] = useState(STEPS.SCAN_CODE);
     const [manualCode, setManualCode] = useState(false);
     const [recoveryCodes, setRecoveryCodes] = useState<string[]>([]);
     const [confirmationCode, setConfirmationCode] = useState('');
@@ -123,42 +119,6 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
 
         const { uri, sharedSecret, period, digits } = state;
 
-        if (step === STEPS.INFO) {
-            const twoFactorAuthLink =
-                APP_NAME === APPS.PROTONVPN_SETTINGS
-                    ? 'https://protonvpn.com/support/two-factor-authentication'
-                    : getKnowledgeBaseUrl('/two-factor-authentication-2fa');
-
-            // translator: complete sentence is: If you have never used two-factor authentication before, we strongly recommend you <link>read our two-factor authentication guide first</link>.
-            const guideButton = (
-                <Href key="0" href={twoFactorAuthLink}>{c('Info')
-                    .t`read our two-factor authentication guide first`}</Href>
-            );
-
-            const BRAND_NAME_TWO = BRAND_NAME;
-
-            return {
-                section: (
-                    <>
-                        <div className="mb-4">
-                            {c('Info')
-                                .t`This wizard will enable Two-Factor Authentication (2FA) on your ${BRAND_NAME} account. Two-factor authentication will make your ${BRAND_NAME_TWO} account more secure so we recommend enabling it.`}
-                        </div>
-                        <div className="mb-4">
-                            {
-                                // translator: complete sentence is: If you have never used two-factor authentication before, we strongly recommend you <link>read our two-factor authentication guide first</link>.
-                                c('Info')
-                                    .jt`If you have never used two-factor authentication before, we strongly recommend you ${guideButton}.`
-                            }
-                        </div>
-                    </>
-                ),
-                onSubmit() {
-                    setStep(STEPS.SCAN_CODE);
-                },
-            };
-        }
-
         const handleSubmitScan = () => {
             setStep(STEPS.CONFIRM_CODE);
         };
@@ -181,7 +141,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                     <>
                         <div className="mb-4">
                             {c('Info')
-                                .jt`Scan this code with your two-factor authentication device to set up your account. ${switchButton}.`}
+                                .jt`Scan this code with your authenticator app to set up your account. ${switchButton}.`}
                         </div>
                         <div className="text-center">
                             <QRCode value={uri} size={200} />
@@ -207,18 +167,18 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                     <>
                         <div className="mb-4">
                             {c('Info')
-                                .jt`Manually enter this information into your two-factor authentication device to set up your account. ${switchButton}.`}
+                                .jt`Manually enter this information into your authenticator app to set up your account. ${switchButton}.`}
                         </div>
                         <div>
                             <div className="flex flex-column sm:flex-row sm:items-center flex-nowrap max-w-full mb-2">
                                 <div className="sm:w-1/5 my-auto" id="label-key-desc">{c('Label').t`Key`}</div>
                                 <div className="sm:w-4/5 flex items-center text-bold">
-                                    {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
                                     <code
                                         className="text-ellipsis flex-1 py-2"
                                         data-testid="totp:secret-key"
                                         aria-label={labelCode}
                                         aria-describedby="label-key-desc"
+                                        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
                                         tabIndex={0}
                                         title={sharedSecret}
                                     >
@@ -260,7 +220,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                 try {
                     const result = await api<SetupTOTPResponse>(setupTotp(confirmationCode));
                     dispatch(userSettingsActions.update({ UserSettings: result.UserSettings }));
-                    createNotification({ text: c('Info').t`Two-factor authentication enabled` });
+                    createNotification({ text: c('Info').t`Authenticator app 2FA enabled` });
                     setRecoveryCodes(result.TwoFactorRecoveryCodes);
                     setStep(STEPS.RECOVERY_CODES);
                 } catch (error: any) {
@@ -362,7 +322,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
 
     return (
         <Modal as={Form} onSubmit={onSubmit} onClose={handleClose} size="medium" {...rest}>
-            <ModalHeader title={c('Title').t`Set up two-factor authentication`} />
+            <ModalHeader title={c('Title').t`Setup authenticator app 2FA`} />
             <ModalContent>{section}</ModalContent>
             <ModalFooter>
                 {cancelButtonText !== null ? (
