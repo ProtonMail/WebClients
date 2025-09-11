@@ -1,6 +1,6 @@
 import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
 import { TelemetryAccountSecurityCheckupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
+import { SECURITY_CHECKUP_PATHS, SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import {
     getIsPerfectDeviceRecoveryState,
@@ -8,7 +8,7 @@ import {
     getIsPerfectPhoneState,
     getIsPerfectPhraseState,
 } from '@proton/shared/lib/helpers/securityCheckup';
-import { MNEMONIC_STATUS, SETTINGS_PROTON_SENTINEL_STATE, SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
+import { MNEMONIC_STATUS, SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 import { SecurityCheckupCohort } from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
 import type SecurityState from '@proton/shared/lib/interfaces/securityCheckup/SecurityState';
 import { getIsMnemonicAvailable } from '@proton/shared/lib/mnemonic';
