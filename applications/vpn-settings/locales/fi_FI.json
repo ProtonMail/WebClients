@@ -627,6 +627,9 @@
       "Refer a friend": [
         "Kerro kaverille"
       ],
+      "Refresh": [
+        "Päivitä"
+      ],
       "Refresh status": [
         "Päivitä tila"
       ],
@@ -1272,6 +1275,11 @@
       ],
       "Unsupported event": [
         "Tapahtumaa ei tueta"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Kun peruutat, ilmainen kokeilujaksosi ei muutu maksulliseksi tilaukseksi, mutta voit silti nauttia tilauseduista kokeilujakson loppuun asti. Sen jälkeen sinut alennetaan ${ BRAND_NAME } Free -tilaukseen."
       ]
     },
     "b2b_trials_Action": {
@@ -5391,6 +5399,9 @@
       "Allocated": [
         "Varattu"
       ],
+      "Allow logging of location and connection details": [
+        "Salli sijainnin ja yhteyden tietojen lokikirjaus."
+      ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Salli käyttäjien yhdistää suojattuihin jaettuihin palvelimiin ${ VPN_APP_NAME } -sovelluksen **Maat**-osiosta."
       ],
@@ -5831,6 +5842,9 @@
       "Free forever": [
         "Pysyvästi ilmainen"
       ],
+      "Gateway monitor": [
+        "Yhdyskäytävän valvonta"
+      ],
       "Gateways": [
         "Yhdyskäytävät"
       ],
@@ -5933,6 +5947,9 @@
       ],
       "inactive": [
         "ei käytössä"
+      ],
+      "Include device, location, and IP details": [
+        "Sisällytä laite-, sijainti- ja IP-tiedot"
       ],
       "Increase your account security by verifying your email address.": [
         "Paranna tilisi suojausta vahvistamalla sähköpostiosoitteesi."
@@ -6220,6 +6237,9 @@
       ],
       "Or select a particular server:": [
         "Tai valitse tietty palvelin:"
+      ],
+      "Organization monitor": [
+        "Organisaatiovalvonta"
       ],
       "Organization size": [
         "Organisaation koko"
@@ -6843,6 +6863,9 @@
       ],
       "Version number successfully copied to clipboard": [
         "Versionumero kopioitiin leikepöydälle"
+      ],
+      "View VPN session details for your organization.": [
+        "Tarkastele organisaatiosi VPN-istunnon tietoja."
       ],
       "View, download, and manage your invoices.": [
         "Tarkastele, lataa ja hallinnoi laskujasi."
@@ -8494,6 +8517,9 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Määritä omia sähköpostiosoitteita (esim. nimesi@yrityksesi.fi) yhdistämällä oma verkkotunnuksesi ${ BRAND_NAME }iin. Ohjattu toiminto opastaa määrityksessä."
       ],
+      "View user sign-in, recovery and security events.": [
+        "Tarkastele käyttäjän kirjautumis-, palautus- ja turvallisuustapahtumia."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ilmainen kokeilusi on päättynyt. Tilisi käyttöoikeus päättyy pian. ${ action }"
       ]
@@ -9611,6 +9637,9 @@
       "Downloaded 2FA recovery codes": [
         "Lataa 2FA-palautuskoodit"
       ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "${ MEET_APP_NAME } videoneuvotteluasetusten päivitys epäonnistui."
+      ],
       "Invalid code": [
         "Virheellinen koodi"
       ],
@@ -10689,6 +10718,9 @@
       "Delete": [
         "Poista"
       ],
+      "Delete this scope": [
+        "Poista tämä viitealue"
+      ],
       "Edit": [
         "Muokkaa"
       ],
@@ -10718,9 +10750,15 @@
       ],
       "${ remainingCount } more": [
         "${ remainingCount } enemmän"
+      ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Luo organisaatiosi tietojensäilytyskäytännön mukaiset säilytyssäännöt. Käynnistää myös vanhentuneen tiedon automaattisen poiston."
       ]
     },
     "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "Säilytysajan päättymisen jälkeen"
+      ],
       "day": [
         "päivän",
         "päivän"
@@ -13628,6 +13666,9 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Ylläpitäjät voivat hallita käyttäjätilejä ja antaa ylläpito-oikeuksia muille käyttäjille. Vain ensisijainen ylläpitäjä voi muokata organisaation tilausta."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Mahdollistaa saumattoman Zoom-videoneuvottelulinkkien lisäämisen kalenterikutsuihin."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Vaihda valitsemiesi päivä- ja yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan mukaisesti"
