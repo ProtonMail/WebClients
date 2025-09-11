@@ -1411,10 +1411,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes ${ formattedDate }, vil det gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes ${ formattedDate }, vil det gå over til å bli et betalt abonnement som fornyes automatisk månedlig ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
@@ -1674,7 +1674,7 @@
         "Problem med manuell installasjon"
       ],
       "Meet problem": [
-        "Meet-problem"
+        "Problem med Meet"
       ],
       "Other": [
         "Annet"
@@ -1850,10 +1850,10 @@
         "Ubegrenset antall favoritter for rask tilgang"
       ],
       "Upload and query multiple large files": [
-        "Last opp og søk i flere store filer"
+        "Last opp og vis flere store filer"
       ],
       "Upload and query small files": [
-        "Last opp og søk i små filer"
+        "Last opp og vis små filer"
       ],
       "Web search access": [
         "Tilgang til nettsøk"
@@ -6482,6 +6482,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Du er i ferd med å åpne standardnettleseren din og besøke:"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Du er for øyeblikket pålogget som ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du bruker mer lagringsplass enn det som er inkludert i en ${ downgradedPlanName }-plan. Slett eller fjern data for å nedgradere."
