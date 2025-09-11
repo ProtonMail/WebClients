@@ -88,6 +88,7 @@ enum AccountFlag {
     PasswordPolicy = 'PasswordPolicy',
     SsoForPbs = 'SsoForPbs',
     DataRetentionPolicy = 'DataRetentionPolicy',
+    BulkUnprivatize = 'BulkUnprivatize',
 }
 
 enum PaymentsFlag {
