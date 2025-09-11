@@ -9,7 +9,6 @@ import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 
 import { encodeFreeSubscriptionData, encodePaidSubscriptionData } from './encoding';
 
-const DEBUG_SUBSCRIPTION_STATE_COOKIE = true;
 const COOKIE_NAME = 'st'; // Stands for `Subscription Type`
 const today = new Date();
 const lastDayOfTheYear = new Date(today.getFullYear(), 11, 31, 23, 59, 59);
@@ -44,35 +43,11 @@ const useSubscriptionStateCookie = () => {
         const { planName } = getSubscriptionPlanTitle(user, subscription);
         const cycle = subscription?.Cycle;
 
-        if (DEBUG_SUBSCRIPTION_STATE_COOKIE) {
-            console.log('[useSubscriptionStateCookie] Subscription data retrieved', {
-                planName,
-                cycle,
-                userIsPaid: user.isPaid,
-                hasHadSubscription,
-            });
-        }
-
         /**
          * Free users
          */
         if (!user.isPaid || !planName || !cycle) {
             const cookieValue = encodeFreeSubscriptionData({ hasHadSubscription });
-
-            if (DEBUG_SUBSCRIPTION_STATE_COOKIE) {
-                let reason = 'no cycle';
-                if (!user.isPaid) {
-                    reason = 'user not paid';
-                } else if (!planName) {
-                    reason = 'no plan name';
-                }
-
-                console.log('[useSubscriptionStateCookie] Setting cookie for free user', {
-                    cookieValue,
-                    hasHadSubscription,
-                    reason,
-                });
-            }
 
             setSubscriptionCookie(cookieValue);
 
@@ -83,14 +58,6 @@ const useSubscriptionStateCookie = () => {
          * Paid users
          */
         const cookieValue = encodePaidSubscriptionData({ planName, cycle });
-
-        if (DEBUG_SUBSCRIPTION_STATE_COOKIE) {
-            console.log('[useSubscriptionStateCookie] Setting cookie for paid user', {
-                cookieValue,
-                planName,
-                cycle,
-            });
-        }
 
         setSubscriptionCookie(cookieValue);
     }, [user, subscription, loading, hasHadSubscription]);
