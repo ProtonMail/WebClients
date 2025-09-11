@@ -1,6 +1,6 @@
 import type { ThemeSetting } from '@proton/shared/lib/themes/themes';
 
-import type { DENSITY } from '../constants';
+import type { DENSITY, ORGANIZATION_POLICY_ENFORCED, SETTINGS_PROTON_SENTINEL_STATE } from '../constants';
 import type { RegisteredKey } from '../webauthn/interface';
 import type { ChecklistId } from './Checklist';
 
@@ -19,11 +19,6 @@ export enum SETTINGS_LOG_AUTH_STATE {
     DISABLE = 0,
     BASIC = 1,
     ADVANCED = 2,
-}
-
-export enum SETTINGS_PROTON_SENTINEL_STATE {
-    DISABLED = 0,
-    ENABLED = 1,
 }
 
 export enum DARK_WEB_MONITORING_STATE {
@@ -244,6 +239,6 @@ export interface UserSettings {
     };
     UsedClientFlags: number;
     OrganizationPolicy: {
-        Enforced: number;
+        Enforced: ORGANIZATION_POLICY_ENFORCED;
     };
 }

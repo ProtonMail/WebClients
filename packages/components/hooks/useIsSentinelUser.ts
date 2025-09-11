@@ -1,6 +1,7 @@
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { MNEMONIC_STATUS, SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
+import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
+import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 
 import useIsMnemonicAvailable from './useIsMnemonicAvailable';
 
