@@ -33,6 +33,7 @@ import RemoveSecurityKeyModal from './fido/RemoveSecurityKeyModal';
 import { maxSecurityKeyLength } from './fido/constants';
 import DisableTOTPModal from './totp/DisableTOTPModal';
 import EnableTOTPModal from './totp/EnableTOTPModal';
+import { getSecurityKeySigningWarning } from './totp/getSecurityKeySigningWarning';
 
 const defaultTmpRemove = { keys: [], type: 'all' as const };
 
@@ -133,10 +134,7 @@ const TwoFactorSection = () => {
             </SettingsLayout>
             {hasFIDO2Enabled && !hasTOTPEnabled && (
                 <div className="mb-4">
-                    <Banner variant={BannerVariants.WARNING_OUTLINE}>
-                        {c('Info')
-                            .t`Signing in with a security key is not yet supported in all applications. Without TOTP via authenticator app, signing in to some applications may fail.`}
-                    </Banner>
+                    <Banner variant={BannerVariants.WARNING_OUTLINE}>{getSecurityKeySigningWarning()}</Banner>
                 </div>
             )}
             {hasSecurityKeySupport && (
